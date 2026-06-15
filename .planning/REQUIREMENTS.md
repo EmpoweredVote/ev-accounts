@@ -10,13 +10,13 @@ Full civic data layer for 7 remaining MA cities — Newton, Somerville, Lynn, Fa
 
 ## Officials Seeding (MAOF)
 
-- [ ] **MAOF-01**: Newton district + politician + office records committed and applied (migration)
-- [ ] **MAOF-02**: Somerville district + politician + office records committed and applied
-- [ ] **MAOF-03**: Lynn district + politician + office records committed and applied
-- [ ] **MAOF-04**: Fall River district + politician + office records committed and applied
-- [ ] **MAOF-05**: Waltham district + politician + office records committed and applied
-- [ ] **MAOF-06**: Medford district + politician + office records committed and applied
-- [ ] **MAOF-07**: New Bedford district + politician + office records committed and applied
+- [x] **MAOF-01**: Newton district + politician + office records committed and applied (migration)
+- [x] **MAOF-02**: Somerville district + politician + office records committed and applied
+- [x] **MAOF-03**: Lynn district + politician + office records committed and applied
+- [x] **MAOF-04**: Fall River district + politician + office records committed and applied
+- [x] **MAOF-05**: Waltham district + politician + office records committed and applied
+- [x] **MAOF-06**: Medford district + politician + office records committed and applied
+- [x] **MAOF-07**: New Bedford district + politician + office records committed and applied
 
 ## Stances (MAST)
 
@@ -63,13 +63,13 @@ Continues MAGE numbering from Phase 119 (MAGE-10..15).
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| MAOF-01 | Phase 120 | Pending |
-| MAOF-02 | Phase 120 | Pending |
-| MAOF-03 | Phase 120 | Pending |
-| MAOF-04 | Phase 120 | Pending |
-| MAOF-05 | Phase 120 | Pending |
-| MAOF-06 | Phase 120 | Pending |
-| MAOF-07 | Phase 120 | Pending |
+| MAOF-01 | Phase 120 | Complete |
+| MAOF-02 | Phase 120 | Complete |
+| MAOF-03 | Phase 120 | Complete |
+| MAOF-04 | Phase 120 | Complete |
+| MAOF-05 | Phase 120 | Complete |
+| MAOF-06 | Phase 120 | Complete |
+| MAOF-07 | Phase 120 | Complete |
 | MAST-01 | Phase 121 | Pending |
 | MAST-02 | Phase 121 | Pending |
 | MAST-06 | Phase 121 | Pending |
