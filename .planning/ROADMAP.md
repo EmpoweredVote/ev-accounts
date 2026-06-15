@@ -25,6 +25,8 @@
 - âœ… **v2.10 Virginia Coverage + LA County Finance** â€” Phases 109â€“113 (shipped 2026-06-11)
 - âœ… **v2.11 FEC Finance Completion + US House Geofencing** â€” Phases 114â€”116 (shipped 2026-06-12)
 - âœ… **v2.12 MA Expansion** â€” Phases 117â€”118 (shipped 2026-06-15)
+- âœ… **v2.13 MA City Council District Geofencing** â€” Phase 119 (shipped 2026-06-15)
+- 🔄 **v2.14 MA City Expansion Wave 2** â€” Phases 120â€”124 (in progress)
 
 ## Phases
 
@@ -1333,6 +1335,101 @@ Plans:
 4. Cambridge: unchanged (at-large council, no district rows needed).
 5. `SELECT COUNT(*) FROM essentials.districts WHERE state = 'ma' AND mtfcc IS NOT NULL AND tiger_geoid IS NULL` returns 0 — no orphaned per-ward rows without a backfilled tiger_geoid.
 
+
+### v2.14 MA City Expansion Wave 2 (Phases 120–124)
+
+---
+
+#### Phase 120: MA City Officials Seeding
+
+**Goal:** All 7 new MA cities have complete district, politician, and office records in the database so every subsequent phase has valid FK targets for stance and geofencing work.
+
+**Depends on:** Phase 119 (MA geofencing infrastructure established; migration numbering context)
+**Requirements:** MAOF-01, MAOF-02, MAOF-03, MAOF-04, MAOF-05, MAOF-06, MAOF-07
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. Newton: district rows committed; politician records for all council members and mayor; office rows linking politicians to districts; migration applied.
+2. Somerville: same complete stack (districts, politicians, offices) committed and applied.
+3. Lynn, Fall River, Waltham, Medford, New Bedford: same complete stack for each city, each in its own migration, all applied.
+4.  returns > 0 for every city.
+5. Zero politician records in this batch have NULL office links; zero district rows have NULL chamber_id.
+
+---
+
+#### Phase 121: Stance Research Wave 1 — Newton, Somerville, Medford
+
+**Goal:** Newton, Somerville, and Medford officials have sourced stance + context rows so their representatives appear with compass alignment data in the representatives feed.
+
+**Depends on:** Phase 120 (politician records must exist as FK targets)
+**Requirements:** MAST-01, MAST-02, MAST-06
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. Newton: every official has at least one stance row, or an explicit honest-skip entry in the migration; every stance row has a paired  row with a non-placeholder source URL.
+2. Somerville: same sourced stance + context coverage, honest-skip documented where no record found.
+3. Medford: same sourced stance + context coverage; Chair methodology applied; no stance inferred from party affiliation.
+4. Migration(s) applied to production;  (stance count per city) returns > 0 for all three cities.
+5. No unsourced stance rows: zero  rows for these officials where  is NULL or contains only placeholder text.
+
+---
+
+#### Phase 122: Stance Research Wave 2 — Lynn, Fall River, Waltham, New Bedford
+
+**Goal:** Lynn, Fall River, Waltham, and New Bedford officials have sourced stance + context rows, completing the full 7-city stance coverage for v2.14.
+
+**Depends on:** Phase 120 (politician records); Phase 121 complete (wave 1 methodology validated)
+**Requirements:** MAST-03, MAST-04, MAST-05, MAST-07
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. Lynn: all officials have sourced stances or documented honest-skips; every stance row has a real source URL in .
+2. Fall River: same sourced stance + context coverage.
+3. Waltham: same sourced stance + context coverage.
+4. New Bedford: same sourced stance + context coverage; Chair methodology applied; no party-inference stances.
+5. All 7 v2.14 cities combined: stance count increases from 0 to >= 1 per official with accessible public record; honest-skip log documents every skipped official with reason.
+
+---
+
+#### Phase 123: Ward Geofencing for All 7 Cities
+
+**Goal:** All 7 new MA cities have ward/district boundary polygons imported into  and ;  backfilled on all per-ward district rows; Path 0 join resolves a user address in each city to their ward councillor.
+
+**Depends on:** Phase 120 (district rows with correct geo_ids must exist before tiger_geoid backfill)
+**Requirements:** MAGE-16, MAGE-17, MAGE-18, MAGE-19, MAGE-20, MAGE-21, MAGE-22
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. Newton (MAGE-16): ward polygons imported;  backfilled on district rows; Path 0 SQL assertion returns the correct ward councillor for a Newton ward address.
+2. Somerville (MAGE-17): ward polygons imported;  backfilled; Path 0 verified.
+3. Lynn (MAGE-18), Fall River (MAGE-19), Waltham (MAGE-20): ward polygons imported;  backfilled; Path 0 verified for each city.
+4. Medford (MAGE-21), New Bedford (MAGE-22): ward polygons imported;  backfilled; Path 0 verified for each city.
+5.  returns 0 across all MA city council district rows after all backfills.
+
+---
+
+#### Phase 124: Phase Gate Verification
+
+**Goal:** All 21 v2.14 requirements are verifiably closed via SQL assertions and Path 0 spot checks for each city, producing a phase gate script that serves as the permanent audit record.
+
+**Depends on:** Phases 120–123 complete
+**Requirements:** MAOF-01..07 (verified via SQL), MAST-01..07 (verified via SQL), MAGE-16..22 (verified via Path 0)
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. A  script exists with labeled assertions covering all 7 cities across officials, stances, and geofencing.
+2. Every MAOF assertion passes: district + politician + office counts match expected minimums for each city.
+3. Every MAST assertion passes: stance count > 0 per city; zero unsourced stance rows (politician_context check).
+4. Every MAGE assertion passes: geofence_boundaries polygon count > 0 per city; tiger_geoid backfill count = 0 orphans.
+5. Path 0 human-verified for all 7 cities: a test address in each city returns the correct ward councillor via .
+
+---
+
 ---
 
 ## Progress
@@ -1444,3 +1541,8 @@ Plans:
 | 117. ma-city-official-stances | v2.12 | 3/3 | Complete | 2026-06-14 |
 | 118. ma-tiger-geofencing | v2.12 | 3/3 | Complete | 2026-06-15 |
 | 119. MA City Council District Geofencing | v2.13 | 4/4 | Complete | 2026-06-15 |
+| 120. MA City Officials Seeding | v2.14 | 0/TBD | Not started | — |
+| 121. Stance Research Wave 1 (Newton/Somerville/Medford) | v2.14 | 0/TBD | Not started | — |
+| 122. Stance Research Wave 2 (Lynn/Fall River/Waltham/New Bedford) | v2.14 | 0/TBD | Not started | — |
+| 123. Ward Geofencing — All 7 Cities | v2.14 | 0/TBD | Not started | — |
+| 124. Phase Gate Verification | v2.14 | 0/1 | Not started | — |

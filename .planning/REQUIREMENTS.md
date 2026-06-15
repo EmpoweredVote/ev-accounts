@@ -61,8 +61,26 @@ Continues MAGE numbering from Phase 119 (MAGE-10..15).
 
 ## Traceability
 
-| Requirement | Phase |
-|-------------|-------|
-| MAOF-01..07 | TBD — Officials Seeding |
-| MAST-01..07 | TBD — Stance Research |
-| MAGE-16..22 | TBD — Ward Geofencing |
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| MAOF-01 | Phase 120 | Pending |
+| MAOF-02 | Phase 120 | Pending |
+| MAOF-03 | Phase 120 | Pending |
+| MAOF-04 | Phase 120 | Pending |
+| MAOF-05 | Phase 120 | Pending |
+| MAOF-06 | Phase 120 | Pending |
+| MAOF-07 | Phase 120 | Pending |
+| MAST-01 | Phase 121 | Pending |
+| MAST-02 | Phase 121 | Pending |
+| MAST-06 | Phase 121 | Pending |
+| MAST-03 | Phase 122 | Pending |
+| MAST-04 | Phase 122 | Pending |
+| MAST-05 | Phase 122 | Pending |
+| MAST-07 | Phase 122 | Pending |
+| MAGE-16 | Phase 123 | Pending |
+| MAGE-17 | Phase 123 | Pending |
+| MAGE-18 | Phase 123 | Pending |
+| MAGE-19 | Phase 123 | Pending |
+| MAGE-20 | Phase 123 | Pending |
+| MAGE-21 | Phase 123 | Pending |
+| MAGE-22 | Phase 123 | Pending |

@@ -6,7 +6,7 @@ status: planning
 last_updated: "2026-06-15T00:00:00.000Z"
 last_activity: 2026-06-15
 progress:
-  total_phases: 0
+  total_phases: 5
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -17,18 +17,18 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-15 after v2.12 milestone archived)
+See: .planning/PROJECT.md (updated 2026-06-15 after v2.13 milestone complete)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.13 planning — next milestone TBD
-**Last shipped:** v2.12 MA Expansion — Phases 117–118, shipped 2026-06-15. 7 MA cities (512 stances, 71 officials, migrations 574–597) + MA TIGER geofencing (200 districts backfilled, migrations 619+622, all MAGE gates pass).
+**Current focus:** v2.14 — MA City Expansion Wave 2 (Phases 120–124)
+**Last shipped:** v2.13 MA City Council District Geofencing — Phase 119, shipped 2026-06-15. Per-ward Path 0 geofencing for 6 MA cities (Boston/Worcester/Springfield/Lowell/Brockton/Quincy); migrations 659–664; MAGE-10..15 all pass.
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: Phase 120 — MA City Officials Seeding (Not started)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-06-15 — Milestone v2.14 started
+Status: Roadmap defined; ready to plan Phase 120
+Last activity: 2026-06-15 — Roadmap created for v2.14
 
 ---
 
@@ -49,152 +49,88 @@ Plan: 118-03-PLAN.md ✅ COMPLETE
 Status: Phase 118 complete — all MAGE-00..05 gates pass; tiger_geoid backfilled on 200 MA state districts; Medford geo_id corrected; Path 0 confirmed for Porter Square Cambridge (STATE_LOWER 25083 + STATE_UPPER 25D27); human verify approved 2026-06-15.
 Last activity: 2026-06-15
 
-Phase: 116 — COMPLETE ✅
-Plan: 116-01-PLAN.md ✅
-Status: v2.11 milestone complete
-Last activity: 2026-06-12
-
-Phase 116 (national-us-house-tiger) — COMPLETE ✅
-UHGE-01 ✅ (436 us_house rows in geo_districts; 436 G5200 rows in geofence_boundaries)
-UHGE-02 ✅ (0 NATIONAL_LOWER districts with tiger_geoid IS NULL; 437 backfilled)
-UHGE-03 ✅ (Path 0 join verified for TX-1, tiger_geoid='4801', returns 1 NATIONAL_LOWER row)
-Plans: 116-01-PLAN.md ✅
-Key deviation: tl_2024_us_cd119.zip (national) returns 404 — script downloads 51 per-state files; SKIP_CODES '00' removed (at-large states use '00' for their single district)
-
-Phase 115 (senate-candidate-fec-research) — COMPLETE ✅
-FECF-04 ✅ (~32 Senate candidates FEC batch run; finance_summary populated where FEC match found)
-FECF-05 ✅ (Strauss/Jain marked not_applicable; NULL count ≤ 2)
-Plans: 115-01-PLAN.md ✅
-
-Phase 114 (fec-script-fix-and-sitting-members) — COMPLETE ✅
-FECF-01 ✅ (committee fallback + multi-cycle totals loop in fix-fec-name-mismatches.ts)
-FECF-02 ✅ (Ivey/Self/Warnock/Cruz all have non-null finance_summary)
-FECF-03 ✅ (LaMalfa/Swalwell resolved via direct search; fec_house rows confirmed)
-Plans: 114-01-PLAN.md ✅
-
-Phase 113 (va-federal-stances) — COMPLETE ✅
-VAST-04 ✅ (migration 341 applied, 105 stance rows, 11 reps)
-VAST-05 ✅ (all stances paired with context rows, 0 missing context)
-VAFI-01 ✅ (11/11 VA House reps FEC finance_summary populated — source=FEC, cycle=2026)
-VAFI-02 ✅ (VPAP assessed 2026-06-11 — HTML-only, no API/CSV, documented per REQUIREMENTS.md)
-Plans: 113-01-PLAN.md ✅, 113-02-PLAN.md ✅
-
-### Phase 110 Status (as of 2026-06-09)
-
-DONE (in DB, committed):
-
-- VAGE-01: G5220×100 SLDL delegate polygons in geofence_boundaries ✅
-- VAGE-02: G5210×40 SLDU senate polygons in geofence_boundaries ✅
-- VAGE-03: tiger_geoid backfill applied — migration 321 (commit a217d8b) ✅
-- VAIN-01: 100 delegate records — migration 319 (Essentials) ✅
-- VAIN-02: 11 VA federal House rep records — migration 311 (committed) ✅
-- Also: 3 state execs (316/317), 40 senators (318), Alexandria city (312), ACPS (313)
-
-REMAINING:
-
-- (none) — Phase 110 complete as of 2026-06-09
-
-Cross-team coordination (2026-06-09):
-
-- VAST-01 (exec stances): Essentials Phase 106 owns Spanberger/Hashmi/Jones
-- Phase 111 scope updated to senators only (ROADMAP updated, commit a217d8b)
-- Migration sync point: 322 = Essentials elections; 323 = our photo_origin_url
-- Next free number after both: 324
-
 ## Performance Metrics
 
-**v2.10 Scope — Virginia Coverage + LA County Finance — IN PROGRESS**
+**v2.14 Scope — MA City Expansion Wave 2 — IN PROGRESS**
 
-- Phases: 5 (109–113)
-- Requirements: 3/15 closed (VAST-02 ✅, VAST-04 ✅, VAST-05 partial ✅)
-- Plans complete: 5 (Phase 111 complete)
-- Started: 2026-06-08
+- Phases: 5 (120–124)
+- Requirements: 0/21 closed
+- Plans complete: 0
+- Started: 2026-06-15
 
-**v2.9 Scope — LA County Expansion — COMPLETE**
+**v2.13 Scope — MA City Council District Geofencing — COMPLETE**
 
-- Phases: 1 (108)
-- Requirements: 6/6 closed (LAOF-01–06)
-- Plans complete: 5
-- Shipped: 2026-06-08
+- Phases: 1 (119)
+- Requirements: 6/6 closed (MAGE-10..15)
+- Plans complete: 4
+- Shipped: 2026-06-15
 
-**v2.8 Scope — District of Columbia Coverage — COMPLETE**
+**v2.12 Scope — MA Expansion — COMPLETE**
 
-- Phases: 3 (105–107)
-- Requirements: 13/13 closed (DCIN-01/02/03/04, DCOF-01/02/03/04, DCST-01/02/03, DCFI-01/02)
+- Phases: 2 (117–118)
+- Requirements: all closed (7 MA cities + MAGE-00..05)
 - Plans complete: 6
-- Shipped: 2026-06-08
+- Shipped: 2026-06-15
 
-**v2.7 Scope — Source Integrity — COMPLETE**
-
-- Phases: 5 (100–104)
-- Requirements: 9/9 closed (SRCA-01/02, FEDX-01/02, STAX-01/02/03, QUAL-01/02)
-- Plans complete: 9
-- Shipped: 2026-06-07
-
-**v2.6 Scope — Data Quality & Elections — COMPLETE**
-
-- Phases: 5 (87, 88, 89, 90, 99)
-- Requirements: 12/12 closed (SACC-01/02/03/04, GAPF-01/02, FINA-01/02/03, ELEC-01/02/03)
-- Plans complete: 19
-- Shipped: 2026-06-05
-
-### v2.10 Requirements
+### v2.14 Requirements
 
 | Req | Phase | Description |
 |-----|-------|-------------|
-| LAFI-01 | 109 | CAL-ACCESS data assessed; finance_summary ingested for LA City Mayor + all Council members + Controller + Clerk |
-| LAFI-02 | 109 | Netfile assessed for other LA County cities; finance data ingested where accessible machine-readable data exists |
-| VAIN-01 | 110 | Politician + office records for all 100 VA House delegates committed and applied (migration 308) |
-| VAIN-02 | 110 | Politician + office records for 11 VA federal House reps committed and applied (migration 311) |
-| VAIN-03 ✅ | 110 | photo_origin_url populated for all new VA officials (executives, senators, delegates, House reps) — migration 323 |
-| VAGE-01 | 110 | TIGER 2024 VA SLDL polygons (100 House delegate districts) imported into essentials.geo_districts with GIST index |
-| VAGE-02 | 110 | TIGER 2024 VA SLDU polygons (40 Senate districts) imported into essentials.geo_districts |
-| VAGE-03 | 110 | tiger_geoid backfilled on all VA essentials.districts records for dual-column Path 0 join |
-| VAST-01 | TBD | Sourced stances for VA state executives (Governor, Lt. Governor, AG) — descoped from Phase 111 |
-| VAST-02 ✅ | 111 | Sourced stances for all 40 VA state senators (35 with rows + 5 honest-skips) — complete |
-| VAST-03 | 112 | Sourced stances for all 100 VA House delegates (honest-skip where no documentable evidence) |
-| VAST-04 ✅ | 113 | Sourced stances for 11 VA House reps (federal topics) — migration 341, 105 rows |
-| VAST-05 | 111, 112, 113 | Every new stance paired with inform.politician_context containing at least one real source URL |
-| VAFI-01 | 113 | FEC finance_summary fetched and stored for all 11 VA House reps |
-| VAFI-02 | 113 | VPAP data assessed for VA state officials; finance data ingested where machine-readable |
-| Phase 111-va-state-stances-senators P01 | 90 | 4 tasks | 3 files |
-| Phase 111-va-state-stances-senators P02 | 90 | 4 tasks | 3 files |
-| Phase 111 P02 | 90min | 4 tasks | 3 files |
-| Phase 112 P02 | 120 | 4 tasks | 2 files |
-| Phase 112 P03 | resumed | 4 tasks | 2 files |
+| MAOF-01 | 120 | Newton district + politician + office records |
+| MAOF-02 | 120 | Somerville district + politician + office records |
+| MAOF-03 | 120 | Lynn district + politician + office records |
+| MAOF-04 | 120 | Fall River district + politician + office records |
+| MAOF-05 | 120 | Waltham district + politician + office records |
+| MAOF-06 | 120 | Medford district + politician + office records |
+| MAOF-07 | 120 | New Bedford district + politician + office records |
+| MAST-01 | 121 | Sourced stances + context for Newton officials |
+| MAST-02 | 121 | Sourced stances + context for Somerville officials |
+| MAST-06 | 121 | Sourced stances + context for Medford officials |
+| MAST-03 | 122 | Sourced stances + context for Lynn officials |
+| MAST-04 | 122 | Sourced stances + context for Fall River officials |
+| MAST-05 | 122 | Sourced stances + context for Waltham officials |
+| MAST-07 | 122 | Sourced stances + context for New Bedford officials |
+| MAGE-16 | 123 | Newton ward polygons + tiger_geoid backfill + Path 0 |
+| MAGE-17 | 123 | Somerville ward polygons + tiger_geoid backfill + Path 0 |
+| MAGE-18 | 123 | Lynn ward polygons + tiger_geoid backfill + Path 0 |
+| MAGE-19 | 123 | Fall River ward polygons + tiger_geoid backfill + Path 0 |
+| MAGE-20 | 123 | Waltham ward polygons + tiger_geoid backfill + Path 0 |
+| MAGE-21 | 123 | Medford ward polygons + tiger_geoid backfill + Path 0 |
+| MAGE-22 | 123 | New Bedford ward polygons + tiger_geoid backfill + Path 0 |
 
-### v2.10 Phase Dependencies
+### v2.14 Phase Dependencies
 
 ```
-Phase 109 (LA County Finance)               — independent of VA work; runs in parallel with Phase 110
-Phase 110 (VA Official Records + Geofencing) — independent of Phase 109
-  └── Phase 111 (VA State Stances - Execs + Senators) — needs politician records as FK targets
-  └── Phase 112 (VA Delegate Stances)                 — needs delegate records as FK targets
-  └── Phase 113 (VA Federal Stances + Finance)         — needs federal rep records as FK targets
+Phase 120 (MA City Officials Seeding)                   — no dependencies; pure migration work
+  └── Phase 121 (Stance Research Wave 1: Newton/Somerville/Medford)  — needs Phase 120 FK targets
+  └── Phase 122 (Stance Research Wave 2: Lynn/Fall River/Waltham/New Bedford) — needs Phase 120 FK targets
+  └── Phase 123 (Ward Geofencing — All 7 Cities)        — needs Phase 120 district geo_ids
+Phase 124 (Phase Gate Verification)                     — needs Phases 120–123 complete
 ```
 
-### v2.10 Requirement Coverage
+Note: Phases 121, 122, and 123 can run in parallel once Phase 120 is complete. Stance phases (121, 122) must run one city at a time within each wave (rate limit concern). Geofencing cities in Phase 123 can be batched in a single plan.
+
+### v2.14 Requirement Coverage
 
 | Phase | Requirements | Count |
 |-------|-------------|-------|
-| 109 — LA County Finance | LAFI-01, LAFI-02 | 2 |
-| 110 — VA Official Records + Geofencing | VAIN-01, VAIN-02, VAIN-03, VAGE-01, VAGE-02, VAGE-03 | 6 |
-| 111 — VA State Stances - Executives + Senators | VAST-01, VAST-02, VAST-05 | 3 |
-| 112 — VA Delegate Stances | VAST-03, VAST-05 | 2 |
-| 113 — VA Federal Stances + Finance | VAST-04, VAST-05, VAFI-01, VAFI-02 | 4 |
-| **Total unique** | | **15 / 15** ✓ |
+| 120 — MA City Officials Seeding | MAOF-01..07 | 7 |
+| 121 — Stance Research Wave 1 | MAST-01, MAST-02, MAST-06 | 3 |
+| 122 — Stance Research Wave 2 | MAST-03, MAST-04, MAST-05, MAST-07 | 4 |
+| 123 — Ward Geofencing All 7 Cities | MAGE-16..22 | 7 |
+| 124 — Phase Gate Verification | cross-cutting gate for all 21 | — |
+| **Total unique** | | **21 / 21** ✓ |
 
-Note: VAST-05 is a cross-cutting quality requirement (every new stance must have a sourced context row). It applies to Phases 111, 112, and 113 — each stance phase is responsible for enforcing it. It is not a separate deliverable phase.
+### v2.14 Scope Notes (established 2026-06-15)
 
-### v2.10 Scope Notes (established 2026-06-08)
-
-- **VA government + chambers already committed**: essentials.governments stub (migration 304), state executive + Senate chambers (migration 306), 40 state senators (migration 307) — these are in the DB. Only delegates (migration 308) and federal House reps (migration 311) are drafted but untracked.
-- **Migration 308 and 311**: Both exist as untracked SQL files. Phase 110 reviews, renumbers if needed (last applied: 310), commits, and applies. Migration 311 may conflict with numbering — verify before applying.
-- **VA TIGER pipeline**: Same ogr2ogr + psql approach as CA (Phases 69-71). VA SLDL (100 delegate districts, layer = 'va_sldl') and SLDU (40 senate districts, layer = 'va_sldu'). Standard TIGER 2024 files — no special MapServer needed unlike DC wards.
-- **Finance tools**: FEC script from Phase 90 is reusable for VAFI-01 (11 VA House reps). VPAP (vpap.org) is the VA analog to CAL-ACCESS — assess machine-readability before attempting ingestion (VAFI-02).
-- **LA finance tools**: CAL-ACCESS covers LA City; Netfile covers most other CA cities. finance_summary column already exists and is surfaced on API from v2.6.
-- **VAST-05 cross-cutting**: Research-stances SKILL.md already enforces Chair methodology + real source URLs. Every stance written in Phases 111, 112, 113 must have a paired inform.politician_context row with at least one non-placeholder URL.
-- **Stance scope for VA officials**: State executives + senators → state-scope topics. VA federal House reps → federal topics (same scope as US House reps in Phases 101-102). Delegates → state-scope topics, honest-skip for less prominent members with no public record.
+- **Migration numbering**: Current DB max is 674. Next available migration: 675. Phase 120 starts at 675 (one per city = 7 migrations, 675–681).
+- **Cities already in DB**: Each of the 7 cities has a government stub + 1 chamber record. Zero districts, politicians, or offices exist yet.
+- **Officials seeding order**: Follow v2.12 Phase 117 pattern — `essentials.governments` → `essentials.chambers` (already exists) → `essentials.districts` → `essentials.politicians` → `essentials.offices`. One migration per city for clean rollback isolation.
+- **Stance research pattern**: Run one city at a time (rate limit concern, per MEMORY.md). Newton/Somerville/Medford in Wave 1 (Phase 121), Lynn/Fall River/Waltham/New Bedford in Wave 2 (Phase 122). Wave grouping mirrors v2.12 Phase 117 approach.
+- **Geofencing pattern**: Phase 123 follows Phase 119 pattern — ogr2ogr import from city GIS sources + psql backfill migration. PROJ_LIB on this machine: `C:\Program Files\GDAL\projlib`. Session pooler: `aws-0-*.pooler.supabase.com:5432`.
+- **MAGE numbering**: MAGE-16..22 continues from v2.13 (MAGE-10..15). MAGE-16 = Newton, MAGE-17 = Somerville, MAGE-18 = Lynn, MAGE-19 = Fall River, MAGE-20 = Waltham, MAGE-21 = Medford, MAGE-22 = New Bedford.
+- **Phase 121 includes Medford (MAST-06)**: Medford is grouped with Newton/Somerville (smaller cities with likely limited records) rather than Wave 2. Adjust if Medford proves larger.
+- **Phase 124 gate script**: Follow `verify-phase-119.sql` pattern (labeled SQL assertions, one per MAOF/MAST/MAGE requirement). Store at `backend/scripts/verify-phase-120-124.sql`.
 
 ## Accumulated Context
 
@@ -202,28 +138,23 @@ Note: VAST-05 is a cross-cutting quality requirement (every new stance must have
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
 
-### v2.9 Scope Notes (carry-forward)
+### v2.13 Scope Notes (carry-forward)
 
-- **LA County 27 cities**: Phase 108 seeded complete elected governing bodies for 27 LA County cities across 4 waves. West Hollywood FIPS 0684410 verified via Census Geocoder API.
-- **Phase gate pattern**: 8-assertion SQL script (backend/scripts/verify-la-county-108.sql) confirmed all Phase 108 deliverables. Same pattern applicable to Phase 110 VA verification.
-- **Assertion 7 join bug pattern**: Found in Phase 108 review — always verify DISTINCT in count assertions when joining across offices-to-districts to avoid overcounting officials sharing a district.
+- **Tiger_geoid backfill pattern**: For city council districts, `tiger_geoid` = city FIPS code padded to match `geo_districts.geoid` format. Always join on `(tiger_geoid, district_type)` — SLDL/SLDU share geoid format.
+- **ogr2ogr + psql pattern**: Use `ogr2ogr -f PostgreSQL PG:"..." input.shp -nln essentials.geofence_boundaries`. Session pooler IPv4 on Windows. PROJ_LIB must be set.
+- **Phase gate SQL pattern**: 8 labeled assertions, one per MAGE requirement. `ASSERT` or `DO $$ BEGIN IF NOT (...) THEN RAISE EXCEPTION ... END IF; END $$;` style.
+- **MAGE-05 filter**: Always add `mtfcc IN ('G5210','G5220')` when querying geofence_boundaries for MA state legislative layers — geo_id '25017' exists in both Middlesex County and 8th Bristol SLDL.
 
-### v2.8 Scope Notes (carry-forward)
+### v2.12 Scope Notes (carry-forward)
 
-- **DC official count**: 27 DC politician records in DB — Mayor (1), DC Council (13), AG (1), Shadow Senators (2), SBOE (9), EHN (1).
-- **TIGER layer naming convention**: dc_ward, ca_assembly, ca_senate, us_house. VA should follow: va_sldl (STATE_LOWER), va_sldu (STATE_UPPER).
-- **ogr2ogr + psql import**: Use session pooler aws-0-*.pooler.supabase.com:5432 (IPv4). PROJ_LIB must be set on Windows.
-- **DROP FUNCTION before arity changes**: Always DROP FUNCTION IF EXISTS before creating new overload; CREATE OR REPLACE does not remove old arity.
-
-### v2.7 Source Integrity Patterns (carry-forward)
-
-- **"Sourced" definition**: A stance counts as sourced only when inform.politician_context row exists AND sources is non-null AND contains at least one URL that is not empty or a placeholder string.
-- **Chair methodology**: Every stance value verified against the specific stance text for that Chair position — never infer from party affiliation.
-- **Deletion log format**: politician full_name, topic_key, former value, reason.
+- **512 stances, 71 officials**: v2.12 covered Boston/Cambridge/Worcester/Springfield/Lowell/Brockton/Quincy.
+- **Migration chunking**: If a stance SQL file exceeds Supabase editor limit, split into _chunk_1, _chunk_2, etc. Apply via execute_sql (not apply_migration for multi-chunk files).
+- **`BEGIN;` in one execute_sql + `COMMIT;` in another = silent rollback**: Use auto-commit for multi-chunk idempotent migrations.
+- **Cambridge officials**: query by district_id `cf3274f9-48c3-4e96-8273-3f6574add756`, not government_id (NULL on Cambridge districts).
 
 ### Open Blockers
 
-None for v2.10 start.
+None for v2.14 start.
 
 **Carried forward from v1.9 (non-blocking):**
 
@@ -259,8 +190,8 @@ None for v2.10 start.
 
 ## Session Continuity
 
-Last session: 2026-06-15T22:04:47.471Z
-Stopped at: context exhaustion at 75% (2026-06-15)
+Last session: 2026-06-15T00:00:00.000Z
+Stopped at: roadmap creation for v2.14
 Resume file: None
 
 ## Decisions
@@ -277,27 +208,14 @@ Resume file: None
 - psql-applied wave migrations (326–330) do NOT insert rows into `supabase_migrations.schema_migrations` — always pre-flight with SELECT MAX(version) before each wave, not STATE.md cache
 - Wave migration DO $$ verification must use `pc.politician_id IS NULL` not `pc.id IS NULL` — `inform.politician_context` has composite PK (politician_id, topic_id), no standalone `id` column
 - 5 honest-skipped senators (Head SD-3, Hackworth SD-5, Mulchi SD-9, Cifers SD-10, Srinivasan SD-32) — no documentable policy positions; VAST-02 satisfied as 35/40 with 5 documented skips
-- Wave 1 SW VA delegates (HD-43–52): all 10 are full honest-skips — no documentable policy positions found; migration 331 applied with 0 rows; VAST-05 trivially satisfied
-- [Phase ?]: Wave 2 non-contiguous IN() range — HD-53/54/55 + HD-37-42 cannot use BETWEEN
-- [Phase ?]: 4 of 9 Wave 2 delegates are honest-skips: Davis/McNamara/Franklin/Ballard — no survey completions
-- [Phase ?]: Wave 3 Justin L. Pence (HD-33) honest-skip — newly elected 2025, no documentable record
-- [Phase ?]: Wave 3 Hyland F. Fowler Jr. (HD-59) Family Foundation scorecard only — Ballotpedia blocked
-- [Phase 113]: Vindman (VA-07), McGuire (VA-09), Subramanyam (VA-10) limited to 1-2 stances each — sworn Jan 2025, very limited federal record; all remaining topics honest-skipped per no-party-inference constraint
-- [Phase 113]: Walkinshaw (VA-11) limited to 7 stances — special election Sept 2025, fewer months of federal record
-- [Phase 113]: Migration 341 file = 20260610000011_341_va_federal_reps_stances.sql; applied via execute_sql (not apply_migration)
 
 ## Operator Next Steps
 
-- Phase 119 PLANNED ✅ — 4 plans in 3 waves; MAGE-10..15 all covered; ready to execute
-- Phase 118 COMPLETE ✅ — MAGE-00..05 all pass; tiger_geoid backfill done (200 rows); verify-ma-tiger-import.sql updated; human verify approved 2026-06-15
-- Phase 118 — Plans 01+02+03 complete. MAGE-01 ✅ MAGE-02 ✅ MAGE-03 ✅ MAGE-04 ✅ MAGE-05 ✅
-- v2.12 MA TIGER Geofencing — Phase 118 COMPLETE ✅
-
-- Phase 114 COMPLETE — FECF-01 ✅, FECF-02 ✅, FECF-03 ✅ — 6 politicians financed, NULL count 40→34
-- v2.11 IN PROGRESS — 1/3 phases complete, 1/1 plan done
-- Next: Phase 115 — senate-candidate-fec-research (FECF-04, FECF-05)
-  - Research FEC IDs for ~32 2026 Senate candidates; batch ingest finance_summary
-  - Mark Paul Strauss + Ankit Jain as not_applicable in politician_sources
-- Then: Phase 116 — national-us-house-tiger (UHGE-01, UHGE-02, UHGE-03)
-  - Download TIGER 2024 tl_2024_us_cd119.zip; import all 435 polygons (ON CONFLICT for CA)
-  - Backfill tiger_geoid on all NATIONAL_LOWER districts; verify Path 0 for TX/NY address
+- v2.14 roadmap created (2026-06-15) — 5 phases (120–124), 21 requirements
+- Start: `/gsd:plan-phase 120` — MA City Officials Seeding (MAOF-01..07)
+  - One migration per city (Newton, Somerville, Lynn, Fall River, Waltham, Medford, New Bedford)
+  - Migration range: 675–681 (current DB max: 674)
+  - Pattern: governments stub already exists; add districts → politicians → offices
+- Then: Phase 121 (Newton/Somerville/Medford stances) and Phase 123 (geofencing) can be planned in parallel once Phase 120 complete
+- Phase 122 (Lynn/Fall River/Waltham/New Bedford stances) follows after Phase 121 validates the wave methodology
+- Phase 124 (phase gate) is last — requires all others complete
