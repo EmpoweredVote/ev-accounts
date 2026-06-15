@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.13
 milestone_name: MA City Council District Geofencing
-status: Ready to execute
+status: In progress — Wave 3 pending human verify
 last_updated: "2026-06-15"
 last_activity: 2026-06-15
 progress:
   total_phases: 1
   completed_phases: 0
   total_plans: 4
-  completed_plans: 0
-  percent: 0
+  completed_plans: 3
+  percent: 75
 ---
 
 # Project State
@@ -24,6 +24,13 @@ See: .planning/PROJECT.md (updated 2026-06-15 after v2.12 milestone archived)
 **Last shipped:** v2.12 MA Expansion — Phases 117–118, shipped 2026-06-15. 7 MA cities (512 stances, 71 officials, migrations 574–597) + MA TIGER geofencing (200 districts backfilled, migrations 619+622, all MAGE gates pass).
 
 ## Current Position
+
+Phase: 119-ma-city-council-district-geofencing — IN PROGRESS 🔄
+Plan: 119-01-PLAN.md ✅ COMPLETE — migration 659 applied; Boston 9 X0013 + 2 citywide rows have tiger_geoid
+Plan: 119-02-PLAN.md ✅ COMPLETE — Worcester Tier 3: 5 X0014 polygons + migration 660 (5 district rows + 5 re-links) [MAGE-11]
+Plan: 119-03-PLAN.md ✅ COMPLETE — Springfield/Lowell/Brockton/Quincy Tier 3: 29 X0014 polygons + migrations 661-664 [MAGE-12..15]
+Plan: 119-04-PLAN.md 🔄 IN PROGRESS — Phase gate verification (8 assertions + human Path 0 approval)
+Last activity: 2026-06-15
 
 Phase: 118-ma-tiger-geofencing — COMPLETE ✅
 Plan: 118-01-PLAN.md ✅ COMPLETE

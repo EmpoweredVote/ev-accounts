@@ -1320,10 +1320,10 @@ Full details: `.planning/milestones/v2.12-ROADMAP.md`
 **Plans:** 4 plans
 
 Plans:
-- [ ] 119-01-PLAN.md — Boston tiger_geoid backfill (migration 659)
-- [ ] 119-02-PLAN.md — Worcester boundary import script + migration 660
-- [ ] 119-03-PLAN.md — Springfield/Lowell/Brockton/Quincy shared script + migrations 661-664
-- [ ] 119-04-PLAN.md — Phase gate verification (8 assertions + Path 0 spot checks for all 6 cities)
+- [x] 119-01-PLAN.md — Boston tiger_geoid backfill (migration 659) ✅
+- [x] 119-02-PLAN.md — Worcester boundary import script + migration 660 ✅ MAGE-11
+- [x] 119-03-PLAN.md — Springfield/Lowell/Brockton/Quincy shared script + migrations 661-664 ✅ MAGE-12..15
+- [ ] 119-04-PLAN.md — Phase gate verification (8 assertions + Path 0 spot checks for all 6 cities) 🔄
 
 **Success Criteria** (what must be TRUE):
 
