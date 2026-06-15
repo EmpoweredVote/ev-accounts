@@ -271,7 +271,7 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
 
     // Child boundary: the office's specific district, or the whole-state outline
     // for statewide offices. Federal offices are overridden below to the state.
-    let boundaryRef = r.boundary_layer && r.boundary_geoid
+    let boundaryRef: BoundaryRef | null = r.boundary_layer && r.boundary_geoid
       ? { layer: r.boundary_layer, geoid: r.boundary_geoid }
       : (scope === 'statewide' ? stateRef : null);
 
@@ -292,10 +292,10 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
 
     // Attach inline geometry from the batch result.
     const childGeo = boundaryRef ? boundaryMap.get(`${boundaryRef.layer}:${boundaryRef.geoid}`) : undefined;
-    if (childGeo) boundaryRef = { ...boundaryRef, bbox: childGeo.bbox, geojson: childGeo.geojson };
+    if (childGeo) boundaryRef = { ...boundaryRef, bbox: childGeo.bbox, geojson: childGeo.geojson } as BoundaryRef;
 
     const frameGeo = frameRef ? boundaryMap.get(`${frameRef.layer}:${frameRef.geoid}`) : undefined;
-    if (frameGeo) frameRef = { ...frameRef, bbox: frameGeo.bbox, geojson: frameGeo.geojson };
+    if (frameGeo) frameRef = { ...frameRef, bbox: frameGeo.bbox, geojson: frameGeo.geojson } as BoundaryRef;
 
     return {
       raceId: r.race_id,
