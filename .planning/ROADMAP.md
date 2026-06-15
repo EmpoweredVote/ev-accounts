@@ -1346,7 +1346,11 @@ Plans:
 
 **Depends on:** Phase 119 (MA geofencing infrastructure established; migration numbering context)
 **Requirements:** MAOF-01, MAOF-02, MAOF-03, MAOF-04, MAOF-05, MAOF-06, MAOF-07
-**Plans:** TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 120-01-PLAN.md — Newton tiger_geoid backfill (migration 686) + apply
+- [ ] 120-02-PLAN.md — Phase gate: 9 SQL assertions confirming MAOF-01..07 fulfilled
 
 **Success Criteria** (what must be TRUE):
 
