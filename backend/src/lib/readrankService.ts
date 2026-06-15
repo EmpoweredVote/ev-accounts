@@ -1,6 +1,8 @@
 import crypto from 'node:crypto';
 import { pool } from './db.js';
 import { env } from './env.js';
+import { getBoundaryBatch } from './informBoundaryService.js';
+import type { BoundaryResult } from './informBoundaryService.js';
 
 /**
  * Read & Rank — blind candidate-match election tool.
@@ -29,6 +31,13 @@ function candidateToken(raceId: string, politicianId: string): string {
 // Types
 // ---------------------------------------------------------------------------
 
+interface BoundaryRef {
+  layer: string;
+  geoid: string;
+  bbox?: [number, number, number, number];
+  geojson?: { type: 'Polygon' | 'MultiPolygon'; coordinates: unknown };
+}
+
 export interface RaceSummary {
   raceId: string;
   positionName: string;
@@ -44,8 +53,8 @@ export interface RaceSummary {
   rankableTopicCount: number;
   tier: 'federal' | 'state' | 'local';
   scope: 'statewide' | 'district' | 'county' | 'citywide';
-  boundaryRef: { layer: string; geoid: string } | null;
-  frameRef: { layer: string; geoid: string } | null;
+  boundaryRef: BoundaryRef | null;
+  frameRef: BoundaryRef | null;
 }
 
 export interface BlindQuote {
@@ -227,6 +236,28 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     ORDER BY e.election_date ASC NULLS LAST
   `);
 
+  // Collect unique boundary refs to resolve in one batch query.
+  const refSet = new Set<string>();
+  const refList: Array<{ layer: string; geoid: string }> = [];
+  function addRef(layer: string | null, geoid: string | null) {
+    if (!layer || !geoid) return;
+    const key = `${layer}:${geoid}`;
+    if (!refSet.has(key)) { refSet.add(key); refList.push({ layer, geoid }); }
+  }
+  for (const r of rows) {
+    addRef(r.boundary_layer, r.boundary_geoid);
+    addRef(r.frame_layer, r.frame_geoid);
+    const fips = r.state ? USPS_TO_FIPS[r.state] : null;
+    if (fips) addRef('G4000', fips);
+    addRef('G4000', 'US');
+  }
+  let boundaryMap = new Map<string, BoundaryResult>();
+  try {
+    boundaryMap = await getBoundaryBatch(refList);
+  } catch {
+    // graceful degradation — races returned without embedded geometry
+  }
+
   const localSet = new Set(politicianIds ?? []);
   return rows.map((r) => {
     const { tier, scope } = deriveTierScope({
@@ -245,7 +276,7 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
       : (scope === 'statewide' ? stateRef : null);
 
     // Frame (parent to nest the child inside).
-    let frameRef: { layer: string; geoid: string } | null;
+    let frameRef: BoundaryRef | null;
     if (tier === 'federal') {
       boundaryRef = stateRef;                          // model B: federal child = home state
       frameRef = { layer: 'G4000', geoid: 'US' };
@@ -258,6 +289,13 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     } else {
       frameRef = stateRef;                             // county / state-leg / school → state
     }
+
+    // Attach inline geometry from the batch result.
+    const childGeo = boundaryRef ? boundaryMap.get(`${boundaryRef.layer}:${boundaryRef.geoid}`) : undefined;
+    if (childGeo) boundaryRef = { ...boundaryRef, bbox: childGeo.bbox, geojson: childGeo.geojson };
+
+    const frameGeo = frameRef ? boundaryMap.get(`${frameRef.layer}:${frameRef.geoid}`) : undefined;
+    if (frameGeo) frameRef = { ...frameRef, bbox: frameGeo.bbox, geojson: frameGeo.geojson };
 
     return {
       raceId: r.race_id,

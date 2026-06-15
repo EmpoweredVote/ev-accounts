@@ -3,7 +3,7 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 const { mockQuery } = vi.hoisted(() => ({ mockQuery: vi.fn() }));
 vi.mock('./db.js', () => ({ pool: { query: mockQuery } }));
 
-import { getBoundary } from './informBoundaryService.js';
+import { getBoundary, getBoundaryBatch } from './informBoundaryService.js';
 
 beforeEach(() => mockQuery.mockReset());
 
@@ -40,5 +40,60 @@ describe('getBoundary', () => {
       minx: null, miny: null, maxx: null, maxy: null, geojson: null,
     }] });
     expect(await getBoundary('G4110', '0644000')).toEqual({ hasBoundary: false });
+  });
+});
+
+describe('getBoundaryBatch', () => {
+  it('returns an empty map immediately when refs is empty (no DB query)', async () => {
+    const result = await getBoundaryBatch([]);
+    expect(result).toEqual(new Map());
+    expect(mockQuery).not.toHaveBeenCalled();
+  });
+
+  it('deduplicates refs and fires one query', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getBoundaryBatch([
+      { layer: 'G4110', geoid: '1805860' },
+      { layer: 'G4110', geoid: '1805860' }, // duplicate
+    ]);
+    expect(mockQuery).toHaveBeenCalledTimes(1);
+  });
+
+  it('returns a map keyed by "layer:geoid" for matching rows', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [
+      {
+        geo_id: '1805860', mtfcc: 'G4110', name: 'Bloomington city',
+        minx: -86.6, miny: 39.1, maxx: -86.4, maxy: 39.3,
+        geojson: '{"type":"Polygon","coordinates":[[[-86.6,39.1],[-86.4,39.1],[-86.4,39.3],[-86.6,39.1]]]}',
+      },
+    ] });
+    const result = await getBoundaryBatch([{ layer: 'G4110', geoid: '1805860' }]);
+    expect(result.size).toBe(1);
+    expect(result.get('G4110:1805860')).toMatchObject({
+      hasBoundary: true,
+      layer: 'G4110',
+      geoid: '1805860',
+      name: 'Bloomington city',
+      bbox: [-86.6, 39.1, -86.4, 39.3],
+      geojson: { type: 'Polygon' },
+    });
+  });
+
+  it('omits rows where geojson or bbox is null', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [
+      { geo_id: '9999', mtfcc: 'G4110', name: 'Unknown', minx: null, miny: null, maxx: null, maxy: null, geojson: null },
+    ] });
+    const result = await getBoundaryBatch([{ layer: 'G4110', geoid: '9999' }]);
+    expect(result.size).toBe(0);
+  });
+
+  it('passes user data as params — never interpolated into SQL', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getBoundaryBatch([
+      { layer: 'G4110', geoid: '1805860' },
+      { layer: 'G4020', geoid: '18105' },
+    ]);
+    const [, params] = mockQuery.mock.calls[0];
+    expect(params).toEqual(['G4110', '1805860', 'G4020', '18105']);
   });
 });

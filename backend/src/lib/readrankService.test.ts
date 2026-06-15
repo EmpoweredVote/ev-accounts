@@ -1,7 +1,10 @@
 // src/lib/readrankService.test.ts
 import { vi, describe, it, expect, beforeEach } from 'vitest';
 
-const { mockQuery } = vi.hoisted(() => ({ mockQuery: vi.fn() }));
+const { mockQuery, mockGetBoundaryBatch } = vi.hoisted(() => ({
+  mockQuery: vi.fn(),
+  mockGetBoundaryBatch: vi.fn(),
+}));
 vi.mock('./db.js', () => ({ pool: { query: mockQuery } }));
 vi.mock('./env.js', () => ({
   env: {
@@ -12,10 +15,16 @@ vi.mock('./env.js', () => ({
     ADMIN_INGEST_TOKEN: 'test-token',
   },
 }));
+vi.mock('./informBoundaryService.js', () => ({ getBoundaryBatch: mockGetBoundaryBatch }));
 
 import { getPlayableRaces, deriveTierScope } from './readrankService.js';
 
-beforeEach(() => mockQuery.mockReset());
+beforeEach(() => {
+  mockQuery.mockReset();
+  mockGetBoundaryBatch.mockReset();
+  // Default: return an empty map (no geometry) so existing tests are unaffected.
+  mockGetBoundaryBatch.mockResolvedValue(new Map());
+});
 
 describe('deriveTierScope', () => {
   it('uses mtfcc when present: G4110 -> local/citywide', () => {
@@ -202,5 +211,79 @@ describe('getPlayableRaces', () => {
     }] });
     const [race] = await getPlayableRaces();
     expect(race.districtLabel).toBeNull();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Geometry attachment tests
+// ---------------------------------------------------------------------------
+
+const BASE_ROW = {
+  race_id: 'race-1',
+  clean_position_name: 'City Council',
+  district_label: null,
+  election_id: 'election-1',
+  election_name: 'Bloomington 2026',
+  election_date: null,
+  jurisdiction_level: 'local',
+  state: 'IN',
+  boundary_layer: 'G4110',
+  boundary_geoid: '1805860',
+  frame_layer: 'G4020',
+  frame_geoid: '18105',
+  candidate_count: '2',
+  topic_count: '3',
+  quote_count: '6',
+  rankable_topic_count: '2',
+  politician_ids: ['pol-1', 'pol-2'],
+};
+
+const BLOOMINGTON_GEOM = { type: 'Polygon' as const, coordinates: [[[-86.6, 39.1], [-86.4, 39.1], [-86.4, 39.3], [-86.6, 39.1]]] };
+const MONROE_GEOM = { type: 'Polygon' as const, coordinates: [[[-87.0, 39.0], [-86.3, 39.0], [-86.3, 39.5], [-87.0, 39.0]]] };
+
+describe('getPlayableRaces — geometry attachment', () => {
+  it('attaches bbox and geojson to boundaryRef and frameRef when batch finds them', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [BASE_ROW] });
+    mockGetBoundaryBatch.mockResolvedValueOnce(new Map([
+      ['G4110:1805860', { layer: 'G4110', geoid: '1805860', name: 'Bloomington city', bbox: [-86.6, 39.1, -86.4, 39.3], geojson: BLOOMINGTON_GEOM, hasBoundary: true }],
+      ['G4020:18105', { layer: 'G4020', geoid: '18105', name: 'Monroe County', bbox: [-87.0, 39.0, -86.3, 39.5], geojson: MONROE_GEOM, hasBoundary: true }],
+    ]));
+
+    const races = await getPlayableRaces();
+
+    expect(races).toHaveLength(1);
+    expect(races[0].boundaryRef).toMatchObject({
+      layer: 'G4110',
+      geoid: '1805860',
+      bbox: [-86.6, 39.1, -86.4, 39.3],
+      geojson: BLOOMINGTON_GEOM,
+    });
+    expect(races[0].frameRef).toMatchObject({
+      layer: 'G4020',
+      geoid: '18105',
+      bbox: [-87.0, 39.0, -86.3, 39.5],
+      geojson: MONROE_GEOM,
+    });
+  });
+
+  it('returns races without geometry when getBoundaryBatch throws', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [BASE_ROW] });
+    mockGetBoundaryBatch.mockRejectedValueOnce(new Error('DB down'));
+
+    const races = await getPlayableRaces();
+
+    expect(races).toHaveLength(1);
+    expect(races[0].boundaryRef).toEqual({ layer: 'G4110', geoid: '1805860' });
+    expect(races[0].frameRef).toEqual({ layer: 'G4020', geoid: '18105' });
+  });
+
+  it('returns races without geometry when a ref is absent from the batch result', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [BASE_ROW] });
+    mockGetBoundaryBatch.mockResolvedValueOnce(new Map()); // empty — nothing found
+
+    const races = await getPlayableRaces();
+
+    expect(races[0].boundaryRef).toEqual({ layer: 'G4110', geoid: '1805860' });
+    expect(races[0].frameRef).toEqual({ layer: 'G4020', geoid: '18105' });
   });
 });
