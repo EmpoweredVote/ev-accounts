@@ -18,6 +18,7 @@
 
 import { pool } from './db.js';
 import type { EventKind } from './eventKinds.js';
+import type { EventEntityState } from './eventEntityRules.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -40,7 +41,8 @@ export interface Meeting {
   createdAt: string | null;
   updatedAt: string | null;
   // on-the-record fields
-  bodySlug: string | null;
+  chamberId: string | null;
+  raceId: string | null;
   sourceUrl: string | null;
   playbackKind: string | null;
   slug: string | null;
@@ -144,7 +146,8 @@ interface MeetingRow {
   speaker_count: string | null;
   created_at: string | null;
   updated_at: string | null;
-  body_slug: string | null;
+  chamber_id: string | null;
+  race_id: string | null;
   source_url: string | null;
   playback_kind: string | null;
   slug: string | null;
@@ -217,7 +220,8 @@ function mapMeeting(row: MeetingRow): Meeting {
     speakerCount: row.speaker_count !== null ? Number(row.speaker_count) : null,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
-    bodySlug: row.body_slug,
+    chamberId: row.chamber_id,
+    raceId: row.race_id,
     sourceUrl: row.source_url,
     playbackKind: row.playback_kind,
     slug: row.slug,
@@ -299,7 +303,7 @@ const MEETING_COLS = `
   id, title, event_kind, city, state, date::text AS date, meeting_type,
   duration_seconds, video_url, audio_source,
   status, segment_count, speaker_count, created_at, updated_at,
-  body_slug, source_url, playback_kind, slug, summary, processing_metadata
+  chamber_id, race_id, source_url, playback_kind, slug, summary, processing_metadata
 `;
 
 export async function getMeetings(
@@ -504,6 +508,8 @@ export async function createMeeting(data: {
   meetingType: string;
   title?: string | null;
   eventKind?: EventKind;
+  chamberId?: string | null;
+  raceId?: string | null;
   durationSeconds?: number | null;
   videoUrl?: string | null;
   audioSource?: string | null;
@@ -512,8 +518,8 @@ export async function createMeeting(data: {
   const { rows } = await pool.query<MeetingRow>(
     `INSERT INTO meetings.meetings
        (city, state, date, meeting_type, duration_seconds, video_url,
-        audio_source, status, title, event_kind)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+        audio_source, status, title, event_kind, chamber_id, race_id)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
      RETURNING ${MEETING_COLS}`,
     [
       data.city ?? null,
@@ -526,6 +532,8 @@ export async function createMeeting(data: {
       data.status ?? 'processing',
       data.title ?? null,
       data.eventKind ?? 'council',
+      data.chamberId ?? null,
+      data.raceId ?? null,
     ]
   );
   return mapMeeting(rows[0]);
@@ -537,6 +545,8 @@ export async function updateMeeting(
     city: string | null;
     title: string | null;
     eventKind: EventKind;
+    chamberId: string | null;
+    raceId: string | null;
     state: string;
     date: string;
     meetingType: string;
@@ -551,6 +561,8 @@ export async function updateMeeting(
 
   if (data.title !== undefined) { params.push(data.title); setClauses.push(`title = $${params.length}`); }
   if (data.eventKind !== undefined) { params.push(data.eventKind); setClauses.push(`event_kind = $${params.length}`); }
+  if (data.chamberId !== undefined) { params.push(data.chamberId); setClauses.push(`chamber_id = $${params.length}`); }
+  if (data.raceId !== undefined) { params.push(data.raceId); setClauses.push(`race_id = $${params.length}`); }
   if (data.city !== undefined) { params.push(data.city); setClauses.push(`city = $${params.length}`); }
   if (data.state !== undefined) { params.push(data.state); setClauses.push(`state = $${params.length}`); }
   if (data.date !== undefined) { params.push(data.date); setClauses.push(`date = $${params.length}`); }
@@ -576,6 +588,29 @@ export async function updateMeeting(
   );
 
   return rows.length > 0 ? mapMeeting(rows[0]) : null;
+}
+
+export async function getMeetingEntityState(
+  id: string
+): Promise<EventEntityState | null> {
+  const { rows } = await pool.query<{
+    event_kind: EventKind;
+    chamber_id: string | null;
+    race_id: string | null;
+  }>(
+    `SELECT event_kind, chamber_id, race_id
+     FROM meetings.meetings
+     WHERE id = $1`,
+    [id]
+  );
+
+  if (rows.length === 0) return null;
+
+  return {
+    eventKind: rows[0].event_kind,
+    chamberId: rows[0].chamber_id,
+    raceId: rows[0].race_id,
+  };
 }
 
 export async function deleteMeeting(id: string): Promise<boolean> {

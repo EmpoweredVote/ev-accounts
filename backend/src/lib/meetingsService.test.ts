@@ -8,6 +8,7 @@ vi.mock('./db.js', () => ({
 import {
   createMeeting,
   getMeetingById,
+  getMeetingEntityState,
   getMeetings,
   updateMeeting,
 } from './meetingsService.js';
@@ -40,7 +41,8 @@ const baseRow = {
   speaker_count: '9',
   created_at: '2026-02-19T00:00:00Z',
   updated_at: '2026-02-19T00:00:00Z',
-  body_slug: 'bloomington-cc',
+  chamber_id: '11111111-1111-4111-8111-111111111111',
+  race_id: null,
   source_url: null,
   playback_kind: 'youtube',
   slug: 'm1',
@@ -84,6 +86,9 @@ describe('getMeetingById (detail payload)', () => {
     expect(meeting!.title).toBe('Bloomington Council Budget Hearing');
     expect(meeting!.eventKind).toBe('council');
     expect(meeting!.city).toBeNull();
+    expect(meeting!.chamberId).toBe('11111111-1111-4111-8111-111111111111');
+    expect(meeting!.raceId).toBeNull();
+    expect('bodySlug' in meeting!).toBe(false);
     expect(meeting!.summary).toEqual(fullSummary);
     expect(meeting!.summaryPreview).not.toBeNull();
   });
@@ -100,6 +105,8 @@ describe('meeting writes', () => {
       meetingType: 'Governor Debate',
       title: 'California Governor Debate',
       eventKind: 'debate',
+      chamberId: null,
+      raceId: '22222222-2222-4222-8222-222222222222',
     });
 
     expect(mockQuery).toHaveBeenCalledWith(
@@ -115,6 +122,8 @@ describe('meeting writes', () => {
         'processing',
         'California Governor Debate',
         'debate',
+        null,
+        '22222222-2222-4222-8222-222222222222',
       ]
     );
   });
@@ -131,5 +140,17 @@ describe('meeting writes', () => {
       expect.stringContaining('title = $1, event_kind = $2'),
       ['Updated title', 'forum', 'm1']
     );
+  });
+
+  it('loads the current entity state for patch validation', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [baseRow] });
+
+    const state = await getMeetingEntityState('m1');
+
+    expect(state).toEqual({
+      eventKind: 'council',
+      chamberId: '11111111-1111-4111-8111-111111111111',
+      raceId: null,
+    });
   });
 });
