@@ -1488,8 +1488,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 126-01-PLAN.md — Headshots: bioguide→`unitedstates.github.io/images/congress/225x275` photo URLs (matches existing 148 federal photos); HEAD-validate, generate+apply migration 740, find-headshots fallback for 404s [USHR-04]
-- [ ] 126-02-PLAN.md — Consolidated `verify-phase-125-126.sql` (USHR-01..05 labeled assertions + Path 0 spot checks ≥5 states incl at-large + DC) [USHR-05]
+- [x] 126-01-PLAN.md — Headshots: 292 canonical congress URLs (migration 769) + 7 official Wikimedia portraits storage-mirrored via find-headshots; 299/299 [USHR-04]
+- [x] 126-02-PLAN.md — `verify-phase-125-126.sql` written + run; all USHR-01..05 assertions pass; Path 0 verified [USHR-05]
 
 **Success Criteria** (what must be TRUE):
 
@@ -1618,4 +1618,4 @@ Plans:
 | 123. Ward Geofencing — All 7 Cities | v2.14 | 4/4 | Complete ✅ | 2026-06-16 |
 | 124. Phase Gate Verification | v2.14 | 1/1 | Complete ✅ | 2026-06-16 |
 | 125. National House Rep Ingestion | v2.15 | 2/2 | Complete ✅ | 2026-06-16 |
-| 126. Headshots + Phase Gate Verification | v2.15 | 0/2 | Planned | — |
+| 126. Headshots + Phase Gate Verification | v2.15 | 2/2 | Complete ✅ | 2026-06-16 |
