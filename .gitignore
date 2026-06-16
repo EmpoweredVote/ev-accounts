@@ -57,3 +57,4 @@ __pycache__/
 *.pyo
 .venv/
 *.venv
+backend/.tmp-legislators-current.yaml
