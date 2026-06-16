@@ -12,7 +12,11 @@ findings:
   warning: 1
   info: 1
   total: 3
-status: issues_found
+status: resolved
+fixes_applied:
+  - CR-01: simplified assertion 7 in verify-phase-121.sql; removed dead v_migration_applied branch (commit 95e6bb96)
+  - WR-01: clarified migration 700 comment; explicit that both 680 and 700 must run in sequence (commit 9e5185f8)
+  - IN-01: skipped (info only, not in fix scope)
 ---
 
 # Phase 121: Code Review Report
