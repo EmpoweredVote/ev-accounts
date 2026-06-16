@@ -13,14 +13,14 @@
 -- ============================================================
 
 -- ============================================================
--- ASSERTION 1 — MAOF-01 (Newton politician count: 25)
+-- ASSERTION 1 — MAOF-01 (Newton politician count: 25; includes per-ward districts after Phase 123 re-link)
 -- ============================================================
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
   JOIN essentials.offices o ON o.politician_id = p.id
   JOIN essentials.districts d ON d.id = o.district_id
-  WHERE d.geo_id = '2545560' AND d.state = 'ma';
+  WHERE (d.geo_id = '2545560' OR d.geo_id LIKE 'newton-ma-council-ward-%') AND d.state = 'ma';
   IF v_count <> 25 THEN
     RAISE EXCEPTION 'ASSERTION 1 FAILED [MAOF-01]: expected 25 Newton politicians, found %', v_count;
   END IF;
@@ -28,14 +28,14 @@ DO $$ DECLARE v_count INTEGER; BEGIN
 END $$;
 
 -- ============================================================
--- ASSERTION 2 — MAOF-02 (Somerville politician count: 12)
+-- ASSERTION 2 — MAOF-02 (Somerville politician count: 12; includes per-ward districts after Phase 123 re-link)
 -- ============================================================
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
   JOIN essentials.offices o ON o.politician_id = p.id
   JOIN essentials.districts d ON d.id = o.district_id
-  WHERE d.geo_id = '2562535' AND d.state = 'ma';
+  WHERE (d.geo_id = '2562535' OR d.geo_id LIKE 'somerville-ma-council-ward-%') AND d.state = 'ma';
   IF v_count <> 12 THEN
     RAISE EXCEPTION 'ASSERTION 2 FAILED [MAOF-02]: expected 12 Somerville politicians, found %', v_count;
   END IF;
@@ -43,14 +43,14 @@ DO $$ DECLARE v_count INTEGER; BEGIN
 END $$;
 
 -- ============================================================
--- ASSERTION 3 — MAOF-03 (Lynn politician count: 12)
+-- ASSERTION 3 — MAOF-03 (Lynn politician count: 12; includes per-ward districts after Phase 123 re-link)
 -- ============================================================
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
   JOIN essentials.offices o ON o.politician_id = p.id
   JOIN essentials.districts d ON d.id = o.district_id
-  WHERE d.geo_id = '2537490' AND d.state = 'ma';
+  WHERE (d.geo_id = '2537490' OR d.geo_id LIKE 'lynn-ma-council-ward-%') AND d.state = 'ma';
   IF v_count <> 12 THEN
     RAISE EXCEPTION 'ASSERTION 3 FAILED [MAOF-03]: expected 12 Lynn politicians, found %', v_count;
   END IF;
@@ -58,14 +58,14 @@ DO $$ DECLARE v_count INTEGER; BEGIN
 END $$;
 
 -- ============================================================
--- ASSERTION 4 — MAOF-04 (Fall River politician count: 10)
+-- ASSERTION 4 — MAOF-04 (Fall River politician count: 10; at-large city — no per-ward re-link from Phase 123)
 -- ============================================================
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
   JOIN essentials.offices o ON o.politician_id = p.id
   JOIN essentials.districts d ON d.id = o.district_id
-  WHERE d.geo_id = '2523000' AND d.state = 'ma';
+  WHERE (d.geo_id = '2523000' OR d.geo_id LIKE 'fall-river-ma-council-ward-%') AND d.state = 'ma';
   IF v_count <> 10 THEN
     RAISE EXCEPTION 'ASSERTION 4 FAILED [MAOF-04]: expected 10 Fall River politicians, found %', v_count;
   END IF;
@@ -73,14 +73,14 @@ DO $$ DECLARE v_count INTEGER; BEGIN
 END $$;
 
 -- ============================================================
--- ASSERTION 5 — MAOF-05 (Waltham politician count: 16)
+-- ASSERTION 5 — MAOF-05 (Waltham politician count: 16; includes per-ward districts after Phase 123 re-link)
 -- ============================================================
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
   JOIN essentials.offices o ON o.politician_id = p.id
   JOIN essentials.districts d ON d.id = o.district_id
-  WHERE d.geo_id = '2572600' AND d.state = 'ma';
+  WHERE (d.geo_id = '2572600' OR d.geo_id LIKE 'waltham-ma-council-ward-%') AND d.state = 'ma';
   IF v_count <> 16 THEN
     RAISE EXCEPTION 'ASSERTION 5 FAILED [MAOF-05]: expected 16 Waltham politicians, found %', v_count;
   END IF;
@@ -95,7 +95,7 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   FROM essentials.politicians p
   JOIN essentials.offices o ON o.politician_id = p.id
   JOIN essentials.districts d ON d.id = o.district_id
-  WHERE d.geo_id = '2539835' AND d.state = 'ma';
+  WHERE (d.geo_id = '2539835' OR d.geo_id LIKE 'medford-ma-council-ward-%') AND d.state = 'ma';
   IF v_count <> 8 THEN
     RAISE EXCEPTION 'ASSERTION 6 FAILED [MAOF-06]: expected 8 Medford politicians, found %', v_count;
   END IF;
@@ -110,7 +110,7 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   FROM essentials.politicians p
   JOIN essentials.offices o ON o.politician_id = p.id
   JOIN essentials.districts d ON d.id = o.district_id
-  WHERE d.geo_id = '2545000' AND d.state = 'ma';
+  WHERE (d.geo_id = '2545000' OR d.geo_id LIKE 'new-bedford-ma-council-ward-%') AND d.state = 'ma';
   IF v_count <> 12 THEN
     RAISE EXCEPTION 'ASSERTION 7 FAILED [MAOF-07]: expected 12 New Bedford politicians, found %', v_count;
   END IF;
