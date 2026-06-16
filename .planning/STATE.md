@@ -25,11 +25,15 @@ See: .planning/PROJECT.md (updated 2026-06-16 after v2.14 milestone complete)
 
 ## Current Position
 
-Phase: 125 — National House Rep Ingestion (PLANNED — 2 plans)
-Plan: 125-01 (build script + generate migration 734, no apply), 125-02 (apply + verify)
-Status: Plans written; ready to execute. USHR-01/02/03. Migration 734 = next free number (disk max 733; pre-flight DB MAX before generate/apply).
-Last activity: 2026-06-16 — Phase 125 planned inline (gsd agents not installed); milestone research/SUMMARY.md is the technical basis. Decision: script GENERATES a reviewable SQL migration (not direct insert).
-Next: /gsd:execute-phase 125 (or /gsd:execute-plan 125-01)
+Phase: 125 — National House Rep Ingestion (COMPLETE ✅ — 2/2 plans)
+Plan: 125-01 ✅ (seed-national-house-reps.ts + generated migration 739); 125-02 ✅ (applied + verified)
+Status: USHR-01/02/03 satisfied. Migration 739 applied to production: 299 US House reps seeded, linked NATIONAL_LOWER reps 137→436. Idempotent (clean no-op re-run), 0 orphans, 0 'Democrat' rows, Path 0 verified (NY/TX/OH/IL/FL/AK/WY), CA/VA/MA untouched.
+Last activity: 2026-06-16 — Phase 125 executed inline (gsd agents not installed). 3 genuine House vacancies excluded by design (FL-20/GA-13/TX-23, confirmed absent from congress-legislators); dup DC row 1198 intentionally unlinked.
+Next: /gsd:plan-phase 126 (Headshots + Phase Gate Verification — USHR-04/05)
+
+### Open follow-up (not blocking)
+- **CA-29 stale office**: district 0629 has 2 linked offices (Luz Maria Rivas + Tony Cárdenas). Cárdenas left Congress — stale office from v2.2 CA seed. Pre-existing, out of scope for Phase 125. Clean up in a quick task or fold into v2.16.
+- **3 House vacancies** (FL-20/GA-13/TX-23): re-run seed script + apply once special elections seat members (idempotent).
 
 ## Previous Milestone Position (v2.13 — COMPLETE ✅)
 

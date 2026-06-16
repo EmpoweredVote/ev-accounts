@@ -12,9 +12,9 @@ Data source: `unitedstates/congress-legislators` `legislators-current.yaml`. Ins
 
 ## House Rep Seeding (USHR)
 
-- [ ] **USHR-01**: All sitting US House representatives for the 50 states + DC delegate are seeded as `essentials.politicians` + `essentials.offices` records, FK-linked to the correct `NATIONAL_LOWER` district via `tiger_geoid`, sourced from `legislators-current.yaml`.
-- [ ] **USHR-02**: Ingestion is idempotent and touches only currently-unseeded districts — the 137 already-linked reps and all other data are untouched; re-running is a no-op and creates no orphan politicians (every new politician has a linked office).
-- [ ] **USHR-03**: Data normalization correct — party mapped `Democrat→Democratic` (preserving v2.6 SACC-03 normalization); at-large districts (`district 0` → geoid suffix `00`) and the DC delegate handled; territory delegates (PR/GU/VI/AS/MP) excluded.
+- [x] **USHR-01**: All sitting US House representatives for the 50 states + DC delegate are seeded as `essentials.politicians` + `essentials.offices` records, FK-linked to the correct `NATIONAL_LOWER` district via `tiger_geoid`, sourced from `legislators-current.yaml`. ✅ Phase 125 (migration 739; 299 seeded; linked 137→436)
+- [x] **USHR-02**: Ingestion is idempotent and touches only currently-unseeded districts — the 137 already-linked reps and all other data are untouched; re-running is a no-op and creates no orphan politicians (every new politician has a linked office). ✅ Phase 125 (clean no-op re-run; 0 orphans)
+- [x] **USHR-03**: Data normalization correct — party mapped `Democrat→Democratic` (preserving v2.6 SACC-03 normalization); at-large districts (`district 0` → geoid suffix `00`) and the DC delegate handled; territory delegates (PR/GU/VI/AS/MP) excluded. ✅ Phase 125 (0 'Democrat' rows; at-large/territory handled)
 - [ ] **USHR-04**: Every newly-seeded House rep has a headshot (`photo_origin_url`) imported via the `find-headshots` skill, or is documented as no-photo-found.
 - [ ] **USHR-05**: Phase-gate verify SQL confirms national coverage — every YAML-listed current House rep (50 states + DC) is linked; Path 0 returns the correct rep for spot-check addresses across ≥5 states (including an at-large state and DC); zero orphan politicians; party-normalization assertion holds.
 
