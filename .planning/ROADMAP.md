@@ -1433,7 +1433,10 @@ Plans:
 
 **Depends on:** Phases 120–123 complete
 **Requirements:** MAOF-01..07 (verified via SQL), MAST-01..07 (verified via SQL), MAGE-16..22 (verified via Path 0)
-**Plans:** TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 124-01-PLAN.md — Write + run consolidated 44-assertion gate script; human-verify Path 0 for all 7 cities
 
 **Success Criteria** (what must be TRUE):
 
