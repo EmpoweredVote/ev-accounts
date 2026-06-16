@@ -25,7 +25,12 @@ See: .planning/PROJECT.md (updated 2026-06-15 after v2.13 milestone complete)
 
 ## Current Position
 
-Phase: Phase 123 — Ward Geofencing — All 7 Cities (IN PROGRESS)
+Phase: Phase 124 — Phase Gate Verification (PLANNED ✅ — 1 plan ready)
+Plan: 124-01-PLAN.md — write + run verify-phase-120-124.sql (44 assertions, all 21 requirements); human-verify Path 0 for all 7 cities
+Status: Phase 124 Planned — 1 plan in 1 wave; ready to execute
+Last activity: 2026-06-16 — Phase 124 planned; 124-01-PLAN.md written + checker passed
+
+Phase: Phase 123 — Ward Geofencing — All 7 Cities (COMPLETE ✅)
 Plan: 123-01-PLAN.md ✅ COMPLETE — load-ma-ward-boundaries.ts extended (11 CITY_CONFIGS entries); 54 X0014 ward polygons loaded for all 7 cities; migrations 706-712 pre-flight guards unblocked
 Plan: 123-02-PLAN.md ✅ COMPLETE — Migrations 706-709 applied; 31 per-ward district rows (newton=8, somerville=7, lynn=7, fall-river=9) with tiger_geoid; 22 office re-links; MAGE-16/17/18/19 district steps done
 Plan: 123-03-PLAN.md ✅ COMPLETE — Migrations 710-712 applied; 23 per-ward district rows (waltham=9, medford=8, new-bedford=6) with tiger_geoid; 15 office re-links; MAGE-20/21/22 district+re-link steps done
