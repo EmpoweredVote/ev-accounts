@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.14
 milestone_name: MA City Expansion Wave 2
-status: planning
+status: in_progress
 last_updated: "2026-06-15T00:00:00.000Z"
 last_activity: 2026-06-15
 progress:
   total_phases: 5
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  completed_phases: 1
+  total_plans: 2
+  completed_plans: 2
+  percent: 20
 ---
 
 # Project State
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-06-15 after v2.13 milestone complete)
 
 ## Current Position
 
-Phase: Phase 120 — MA City Officials Seeding (Not started)
-Plan: —
-Status: Roadmap defined; ready to plan Phase 120
-Last activity: 2026-06-15 — Roadmap created for v2.14
+Phase: Phase 120 — MA City Officials Seeding (COMPLETE ✅)
+Plan: 120-02 ✅
+Status: Phase 120 complete — MAOF-01..07 all pass; migration 687 applied; 9/9 gate assertions confirmed; Phases 121–123 unblocked
+Last activity: 2026-06-15 — Phase 120 executed and verified
 
 ---
 

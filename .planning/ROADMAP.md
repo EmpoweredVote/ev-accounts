@@ -1349,8 +1349,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 120-01-PLAN.md — Newton tiger_geoid backfill (migration 687) + apply
-- [ ] 120-02-PLAN.md — Phase gate: 9 SQL assertions confirming MAOF-01..07 fulfilled
+- [x] 120-01-PLAN.md — Newton tiger_geoid backfill (migration 687) + apply
+- [x] 120-02-PLAN.md — Phase gate: 9 SQL assertions confirming MAOF-01..07 fulfilled
 
 **Success Criteria** (what must be TRUE):
 
@@ -1545,7 +1545,7 @@ Plans:
 | 117. ma-city-official-stances | v2.12 | 3/3 | Complete | 2026-06-14 |
 | 118. ma-tiger-geofencing | v2.12 | 3/3 | Complete | 2026-06-15 |
 | 119. MA City Council District Geofencing | v2.13 | 4/4 | Complete | 2026-06-15 |
-| 120. MA City Officials Seeding | v2.14 | 0/TBD | Not started | — |
+| 120. MA City Officials Seeding | v2.14 | 2/2 | Complete ✅ | 2026-06-15 |
 | 121. Stance Research Wave 1 (Newton/Somerville/Medford) | v2.14 | 0/TBD | Not started | — |
 | 122. Stance Research Wave 2 (Lynn/Fall River/Waltham/New Bedford) | v2.14 | 0/TBD | Not started | — |
 | 123. Ward Geofencing — All 7 Cities | v2.14 | 0/TBD | Not started | — |
