@@ -132,20 +132,8 @@ END $$;
 
 -- ============================================================
 -- ASSERTION 7 — MAST-06 (Medford: zero officials with 0 stances)
---
--- Honest-skip is acceptable for Medford (migration 700 applied).
--- Any official with 0 stances is only a failure if migration 700
--- was not applied. Since migration 700 covers honest-skip entries,
--- a 0-count here means an official was genuinely missed entirely.
--- After Plan 01 (migration 700 + Liz Mullane stances), all 8
--- Medford officials should have at least 1 row in politician_answers.
 -- ============================================================
-DO $$ DECLARE v_count INTEGER; v_migration_applied BOOLEAN; BEGIN
-  -- Check if migration 700 was applied (honest-skip migration)
-  SELECT EXISTS (
-    SELECT 1 FROM supabase_migrations.schema_migrations WHERE version = '700'
-  ) INTO v_migration_applied;
-
+DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM (
     SELECT p.id
@@ -157,13 +145,10 @@ DO $$ DECLARE v_count INTEGER; v_migration_applied BOOLEAN; BEGIN
       SELECT 1 FROM inform.politician_answers pa WHERE pa.politician_id = p.id
     )
   ) officials_with_zero_stances;
-
-  IF v_count <> 0 AND v_migration_applied THEN
-    RAISE EXCEPTION 'ASSERTION 7 FAILED [MAST-06]: % Medford officials have zero stances even after migration 700 (honest-skip). Each official must have at least 1 row in politician_answers.', v_count;
-  ELSIF v_count <> 0 AND NOT v_migration_applied THEN
-    RAISE EXCEPTION 'ASSERTION 7 FAILED [MAST-06]: % Medford officials have zero stances AND migration 700 was not applied. Apply migration 700 first.', v_count;
+  IF v_count <> 0 THEN
+    RAISE EXCEPTION 'ASSERTION 7 FAILED [MAST-06]: % Medford officials have zero stances. Verify migration 700 was applied and politician office links are intact.', v_count;
   END IF;
-  RAISE NOTICE 'ASSERTION 7 PASSED [MAST-06]: % Medford officials with zero stances (expected 0); migration 700 applied: %', v_count, v_migration_applied;
+  RAISE NOTICE 'ASSERTION 7 PASSED [MAST-06]: % Medford officials with zero stances (expected 0)', v_count;
 END $$;
 
 -- ============================================================
