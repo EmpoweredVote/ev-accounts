@@ -25,6 +25,12 @@ See: .planning/PROJECT.md (updated 2026-06-15 after v2.13 milestone complete)
 
 ## Current Position
 
+Phase: Phase 121 — Stance Research Wave 1: Newton/Somerville/Medford (PLANNED ✅)
+Plan: 121-01-PLAN.md — Research Liz Mullane (only gap) + migration 700 [MAST-06]
+Plan: 121-02-PLAN.md — Phase gate SQL assertions + MAST-01/02/06 checkboxes [MAST-01, MAST-02, MAST-06]
+Status: Phase 121 planned — 2 plans, 2 waves. MAST-01/02 already met in DB (44/45 officials covered); Liz Mullane (Medford) is sole gap
+Last activity: 2026-06-15 — Phase 121 planned; plans verified (checker: PASSED)
+
 Phase: Phase 120 — MA City Officials Seeding (COMPLETE ✅)
 Plan: 120-02 ✅
 Status: Phase 120 complete — MAOF-01..07 all pass; migration 687 applied; 9/9 gate assertions confirmed; Phases 121–123 unblocked
