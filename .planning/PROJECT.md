@@ -215,15 +215,24 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Layer discriminator pattern for geo_districts | Single table with `layer TEXT NOT NULL` + `UNIQUE(layer, geoid)` — adding new district types (school districts) requires no schema change. | ✓ Good — school districts added in Phase 71 with zero schema change; v2.2 |
 | Fire-and-forget backfill after res.json() | `void pool.query(...).catch(e => console.warn(...))` after response sent; `districtRows.length === 0` guard prevents re-backfilling warm users. | ✓ Good — response latency unaffected; v2.2 |
 
-## Current Milestone: v2.14 MA City Expansion Wave 2
+## Current Milestone: v2.15 National House Rep Seeding (Tier 1)
+
+**Goal:** Every US resident who enters their address sees their actual sitting US House representative — seed the ~298 missing House politician + office records, FK-linked to the congressional districts that already geofence correctly (Phase 116). Stance research for these reps is Tier 2, deferred to v2.16+.
+
+**Target features:**
+- Bulk ingestion from `unitedstates/congress-legislators` `legislators-current.yaml` → `essentials.politicians` + `essentials.offices`, FK-linked to existing `NATIONAL_LOWER` districts via `tiger_geoid` (50 states + DC delegate; party normalized Democrat→Democratic; at-large/delegate edge cases handled; idempotent, unseeded-only)
+- Headshots for all newly-seeded reps (`find-headshots` skill)
+- Phase-gate verify SQL: every YAML-listed current House rep linked, Path 0 spot-checks across ≥5 states, no orphan politicians, party-normalization assertion
+
+**Explicitly out of scope (→ v2.16+):** stance research for the new reps; FEC finance data (separate FINA stream).
+
+---
+
+## Previous Milestone: v2.14 MA City Expansion Wave 2 (Phases 120–124, shipped 2026-06-16)
 
 **Goal:** Full civic data layer for 7 remaining MA cities — districts, officials, stances, and per-ward geofencing for Newton, Somerville, Lynn, Fall River, Waltham, Medford, and New Bedford.
 
-**Target features:**
-- District + official seeding for all 7 cities (chamber → districts → politicians → offices)
-- Stance research for all new officials (sourced, Chair methodology, honest-skip where no record)
-- Ward/district boundary polygon import + geofencing for all 7 cities (MAGE-16..22)
-- Phase gate SQL verification per city
+**Delivered:** All 21 requirements closed (MAOF-01..07, MAST-01..07, MAGE-16..22); 16 plans; consolidated phase gate `verify-phase-120-124.sql` (44 assertions, all pass); Path 0 human-approved for all 7 cities.
 
 ---
 
@@ -331,4 +340,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-15 — v2.14 started; v2.13 complete (Phase 119, 6 MA cities Tier 3 geofenced)*
+*Last updated: 2026-06-16 — v2.15 started (National House Rep Seeding, Tier 1); v2.14 complete (Phases 120–124, 7 MA cities)*

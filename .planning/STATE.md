@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.14
-milestone_name: MA City Expansion Wave 2
-status: complete
-last_updated: "2026-06-16"
-last_activity: 2026-06-16 — Phase 124 executed; verify-phase-120-124.sql all 44 assertions pass; Path 0 human-approved for all 7 cities; v2.14 COMPLETE
+milestone: v2.15
+milestone_name: National House Rep Seeding (Tier 1)
+status: planning
+last_updated: "2026-06-16T18:09:06.455Z"
+last_activity: 2026-06-16
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 16
-  completed_plans: 16
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -25,38 +25,10 @@ See: .planning/PROJECT.md (updated 2026-06-15 after v2.13 milestone complete)
 
 ## Current Position
 
-Phase: Phase 124 — Phase Gate Verification (COMPLETE ✅)
-Plan: 124-01-PLAN.md ✅ COMPLETE — verify-phase-120-124.sql written (955 lines, 44 assertions); all 44 pass; Path 0 human-approved for all 7 cities; MAOF WHERE clauses broadened to cover per-ward districts after Phase 123 re-link
-Status: Phase 124 COMPLETE ✅ — all 21 v2.14 requirements gate-verified; v2.14 MILESTONE COMPLETE
-Last activity: 2026-06-16 — Phase 124 executed: verify-phase-120-124.sql all 44 assertions pass; Newton=Ward2/Micley, Somerville=Ward3/Ewen-Campen, Lynn=Ward4/Megie-Maddrey, Waltham=Ward5/LaCava, New Bedford=Ward4/Baptiste, Fall River=citywide 9 at-large, Medford=citywide 7 at-large; human approved 2026-06-16
-
-Phase: Phase 123 — Ward Geofencing — All 7 Cities (COMPLETE ✅)
-Plan: 123-01-PLAN.md ✅ COMPLETE — load-ma-ward-boundaries.ts extended (11 CITY_CONFIGS entries); 54 X0014 ward polygons loaded for all 7 cities; migrations 706-712 pre-flight guards unblocked
-Plan: 123-02-PLAN.md ✅ COMPLETE — Migrations 706-709 applied; 31 per-ward district rows (newton=8, somerville=7, lynn=7, fall-river=9) with tiger_geoid; 22 office re-links; MAGE-16/17/18/19 district steps done
-Plan: 123-03-PLAN.md ✅ COMPLETE — Migrations 710-712 applied; 23 per-ward district rows (waltham=9, medford=8, new-bedford=6) with tiger_geoid; 15 office re-links; MAGE-20/21/22 district+re-link steps done
-Plan: 123-04-PLAN.md ✅ COMPLETE — verify-phase-123.sql written; 11 assertion blocks pass (MAGE-16..22); 7 Path 0 spot checks confirmed; human approved 2026-06-16
-Status: Phase 123 COMPLETE ✅ (4 plans done) — all 7 cities geofenced + phase gate passed + human approved; 54 total per-ward district rows + 37 total office re-links; MAGE-16..22 all closed
-Last activity: 2026-06-16 — Phase 123-04 executed: verify-phase-123.sql all assertions pass; Newton=Ward2/Micley, Somerville=Ward3/Ewen-Campen, Lynn=Ward4/Megie-Maddrey, Waltham=Ward5/LaCava, New Bedford=Ward4/Baptiste, Fall River=citywide 9 at-large, Medford=citywide 7 at-large
-
-Phase: Phase 122 — Stance Research Wave 2: Lynn/Fall River/Waltham/New Bedford (COMPLETE ✅)
-Plan: 122-01-PLAN.md ✅ COMPLETE — Migration 701 applied; Raposo/Pereira/Hart each 1 stance; Canuel honest-skip; MAST-04 satisfied
-Plan: 122-02-PLAN.md ✅ COMPLETE — Migration 702 applied; Baptiste 1 stance + Lopes 2 stances gap-filled; Pemberton honest-skip; MAST-07 satisfied
-Plan: 122-03-PLAN.md ✅ COMPLETE — Migrations 690-698 tracked (Waltham ward councillors); all 12 SQL assertions pass; MAST-03/04/05/07 complete
-Status: Phase 122 COMPLETE — MAST-03 ✅ MAST-04 ✅ MAST-05 ✅ MAST-07 ✅; all 12 gate assertions passed; verify-phase-122.sql written
-Last activity: 2026-06-16 — Phase 122-03 executed: MAST-03/04/05/07 gate passed; Lynn/Fall River/Waltham/New Bedford all covered; migrations 690-698 tracked; all 12 assertions pass
-
-Phase: Phase 121 — Stance Research Wave 1: Newton/Somerville/Medford (COMPLETE ✅)
-Plan: 121-01-PLAN.md ✅ COMPLETE — Migration 700 applied; Liz Mullane 6 stances + 6 context rows; MAST-06 satisfied
-Plan: 121-02-PLAN.md ✅ COMPLETE — Phase gate: all 9 SQL assertions passed; MAST-01/02/06 marked complete
-Status: Phase 121 COMPLETE — MAST-01 ✅ MAST-02 ✅ MAST-06 ✅; all 9 gate assertions passed; verify-phase-121.sql written
-Last activity: 2026-06-16 — Phase 121 executed: MAST-01/02/06 gate passed; Liz Mullane (Medford) addressed via migration 700
-
-Phase: Phase 120 — MA City Officials Seeding (COMPLETE ✅)
-Plan: 120-02 ✅
-Status: Phase 120 complete — MAOF-01..07 all pass; migration 687 applied; 9/9 gate assertions confirmed; Phases 121–123 unblocked
-Last activity: 2026-06-15 — Phase 120 executed and verified
-
----
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-06-16 — Milestone v2.15 started
 
 ## Previous Milestone Position (v2.13 — COMPLETE ✅)
 
