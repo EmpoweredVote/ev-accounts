@@ -22,12 +22,12 @@ Full civic data layer for 7 remaining MA cities — Newton, Somerville, Lynn, Fa
 
 All stances must follow Chair methodology: sourced from primary sources, real URL in `inform.politician_context`, honest-skip where no documentable record exists.
 
-- [ ] **MAST-01**: Sourced stances + context rows for all Newton officials (honest-skip where no record)
-- [ ] **MAST-02**: Sourced stances + context rows for all Somerville officials
+- [x] **MAST-01**: Sourced stances + context rows for all Newton officials (honest-skip where no record)
+- [x] **MAST-02**: Sourced stances + context rows for all Somerville officials
 - [ ] **MAST-03**: Sourced stances + context rows for all Lynn officials
 - [ ] **MAST-04**: Sourced stances + context rows for all Fall River officials
 - [ ] **MAST-05**: Sourced stances + context rows for all Waltham officials
-- [ ] **MAST-06**: Sourced stances + context rows for all Medford officials
+- [x] **MAST-06**: Sourced stances + context rows for all Medford officials
 - [ ] **MAST-07**: Sourced stances + context rows for all New Bedford officials
 
 ## Geofencing (MAGE)
@@ -70,9 +70,9 @@ Continues MAGE numbering from Phase 119 (MAGE-10..15).
 | MAOF-05 | Phase 120 | Complete |
 | MAOF-06 | Phase 120 | Complete |
 | MAOF-07 | Phase 120 | Complete |
-| MAST-01 | Phase 121 | Pending |
-| MAST-02 | Phase 121 | Pending |
-| MAST-06 | Phase 121 | Pending |
+| MAST-01 | Phase 121 | Complete |
+| MAST-02 | Phase 121 | Complete |
+| MAST-06 | Phase 121 | Complete |
 | MAST-03 | Phase 122 | Pending |
 | MAST-04 | Phase 122 | Pending |
 | MAST-05 | Phase 122 | Pending |

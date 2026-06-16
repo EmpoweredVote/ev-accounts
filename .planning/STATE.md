@@ -27,9 +27,9 @@ See: .planning/PROJECT.md (updated 2026-06-15 after v2.13 milestone complete)
 
 Phase: Phase 121 — Stance Research Wave 1: Newton/Somerville/Medford (IN PROGRESS 🔄)
 Plan: 121-01-PLAN.md ✅ COMPLETE — Migration 700 applied; Liz Mullane 6 stances + 6 context rows; MAST-06 satisfied
-Plan: 121-02-PLAN.md — Phase gate SQL assertions + MAST-01/02/06 checkboxes [MAST-01, MAST-02, MAST-06]
-Status: Phase 121 in progress — 121-01 complete; 121-02 (phase gate) remains
-Last activity: 2026-06-16 — 121-01 executed: migration 700 applied to production, 6 Liz Mullane stances verified
+Plan: 121-02-PLAN.md ✅ COMPLETE — Phase gate: all 9 SQL assertions passed; MAST-01/02/06 marked complete
+Status: Phase 121 COMPLETE — MAST-01 ✅ MAST-02 ✅ MAST-06 ✅; all 9 gate assertions passed; verify-phase-121.sql written
+Last activity: 2026-06-16 — Phase 121 executed: MAST-01/02/06 gate passed; Liz Mullane (Medford) addressed via migration 700
 
 Phase: Phase 120 — MA City Officials Seeding (COMPLETE ✅)
 Plan: 120-02 ✅
