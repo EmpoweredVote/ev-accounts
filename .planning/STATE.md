@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.14
 milestone_name: MA City Expansion Wave 2
-status: verifying
-last_updated: "2026-06-16T01:47:55.155Z"
-last_activity: "2026-06-16 — Phase 121 executed: MAST-01/02/06 gate passed; Liz Mullane (Medford) addressed via migration 700"
+status: in_progress
+last_updated: "2026-06-16T04:30:00.000Z"
+last_activity: "2026-06-16 — Phase 122-02 executed: migration 702 applied; Baptiste (1 stance) + Lopes (2 stances) gap-filled; Pemberton honest-skip"
 progress:
   total_phases: 5
   completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
-  percent: 40
+  total_plans: 7
+  completed_plans: 6
+  percent: 43
 ---
 
 # Project State
@@ -25,7 +25,13 @@ See: .planning/PROJECT.md (updated 2026-06-15 after v2.13 milestone complete)
 
 ## Current Position
 
-Phase: Phase 121 — Stance Research Wave 1: Newton/Somerville/Medford (IN PROGRESS 🔄)
+Phase: Phase 122 — Stance Research Wave 2: Lynn/Fall River/Waltham/New Bedford (IN PROGRESS)
+Plan: 122-01-PLAN.md (IN PROGRESS — Fall River gap-fill, migration 701)
+Plan: 122-02-PLAN.md ✅ COMPLETE — Migration 702 applied; Baptiste 1 stance + Lopes 2 stances gap-filled; Pemberton honest-skip; MAST-07 partial
+Status: Phase 122 in progress — 1 of 2 plans complete; 122-01 (Fall River) executing concurrently
+Last activity: 2026-06-16 — Phase 122-02 executed: migration 702 applied; 3 NB gap officials covered (2 with stances, 1 honest-skip)
+
+Phase: Phase 121 — Stance Research Wave 1: Newton/Somerville/Medford (COMPLETE ✅)
 Plan: 121-01-PLAN.md ✅ COMPLETE — Migration 700 applied; Liz Mullane 6 stances + 6 context rows; MAST-06 satisfied
 Plan: 121-02-PLAN.md ✅ COMPLETE — Phase gate: all 9 SQL assertions passed; MAST-01/02/06 marked complete
 Status: Phase 121 COMPLETE — MAST-01 ✅ MAST-02 ✅ MAST-06 ✅; all 9 gate assertions passed; verify-phase-121.sql written
@@ -196,8 +202,8 @@ None for v2.14 start.
 
 ## Session Continuity
 
-Last session: 2026-06-16T01:47:55.146Z
-Stopped at: Phase 121 plan 01 complete — migration 700 applied; next: run 121-02 (phase gate)
+Last session: 2026-06-16T04:30:00.000Z
+Stopped at: Completed Phase 122-02 (New Bedford gap-fill)
 Resume file: None
 
 ## Decisions
@@ -214,6 +220,10 @@ Resume file: None
 - psql-applied wave migrations (326–330) do NOT insert rows into `supabase_migrations.schema_migrations` — always pre-flight with SELECT MAX(version) before each wave, not STATE.md cache
 - Wave migration DO $$ verification must use `pc.politician_id IS NULL` not `pc.id IS NULL` — `inform.politician_context` has composite PK (politician_id, topic_id), no standalone `id` column
 - 5 honest-skipped senators (Head SD-3, Hackworth SD-5, Mulchi SD-9, Cifers SD-10, Srinivasan SD-32) — no documentable policy positions; VAST-02 satisfied as 35/40 with 5 documented skips
+- [Phase 122-02]: Migration 702 supersedes honest-skip migrations 654/656/657 — prior agents did not fetch NB Light parking minimums article (Feb 2026) or Oct 2025 candidate interview pages
+- [Phase 122-02]: Pemberton honest-skip — voted yes on parking minimums but no attributed statement found; vote alone without reasoning does not satisfy evidence-only rule
+- [Phase 122-02]: Baptiste residential-zoning=1 sourced from NB Light Feb 13 2026 article; direct quote "you gotta be crazy" meets evidence standard
+- [Phase 122-02]: Lopes public-safety-approach=4 + housing=3 both sourced from Oct 2025 NB Light candidate interviews
 
 ## Operator Next Steps
 

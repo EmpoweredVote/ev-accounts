@@ -28,7 +28,7 @@ All stances must follow Chair methodology: sourced from primary sources, real UR
 - [ ] **MAST-04**: Sourced stances + context rows for all Fall River officials
 - [ ] **MAST-05**: Sourced stances + context rows for all Waltham officials
 - [x] **MAST-06**: Sourced stances + context rows for all Medford officials
-- [ ] **MAST-07**: Sourced stances + context rows for all New Bedford officials
+- [x] **MAST-07**: Sourced stances + context rows for all New Bedford officials
 
 ## Geofencing (MAGE)
 
@@ -76,7 +76,7 @@ Continues MAGE numbering from Phase 119 (MAGE-10..15).
 | MAST-03 | Phase 122 | Pending |
 | MAST-04 | Phase 122 | Pending |
 | MAST-05 | Phase 122 | Pending |
-| MAST-07 | Phase 122 | Pending |
+| MAST-07 | Phase 122 | Complete |
 | MAGE-16 | Phase 123 | Pending |
 | MAGE-17 | Phase 123 | Pending |
 | MAGE-18 | Phase 123 | Pending |
