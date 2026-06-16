@@ -56,7 +56,7 @@ Phase 123 gate complete. verify-phase-123.sql written with 11 SQL assertion bloc
 | Task | Description | Status | Commit |
 |------|-------------|--------|--------|
 | 1 | Write and run verify-phase-123.sql (11 assertions + 7 Path 0 checks) | DONE | 6774aecb |
-| 2 | Human verify Path 0 results for geographic plausibility | AWAITING |  |
+| 2 | Human verify Path 0 results for geographic plausibility | APPROVED | — |
 
 ## What Was Built
 
