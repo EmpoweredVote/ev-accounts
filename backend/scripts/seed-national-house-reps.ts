@@ -44,7 +44,11 @@ const MIGRATIONS_DIR = path.join(process.cwd(), 'migrations');
 const TMP_YAML = path.join(process.cwd(), '.tmp-legislators-current.yaml');
 
 const MODE_GENERATE = process.argv.includes('--generate');
+const MODE_CHECK_PHOTOS = process.argv.includes('--check-photos');
+const MODE_GENERATE_PHOTOS = process.argv.includes('--generate-photos');
 // default is dry-run
+
+const PHOTO_BASE = 'https://unitedstates.github.io/images/congress/225x275';
 
 // USPS → 2-digit state FIPS (50 states + DC).
 const USPS_TO_FIPS: Record<string, string> = {
@@ -100,6 +104,38 @@ function downloadWithRedirects(url: string, destPath: string, depth = 0): Promis
 }
 
 const sqlStr = (s: string) => s.replace(/'/g, "''");
+
+/** HEAD-check a URL; true iff it resolves to 200 (following redirects). */
+function headOk(url: string, depth = 0): Promise<boolean> {
+  return new Promise((resolve) => {
+    if (depth > 5) return resolve(false);
+    const req = https.request(url, { method: 'HEAD', timeout: 15000 }, (res) => {
+      const code = res.statusCode ?? 0;
+      res.resume(); // drain
+      if ((code === 301 || code === 302 || code === 307 || code === 308) && res.headers.location) {
+        return headOk(res.headers.location, depth + 1).then(resolve);
+      }
+      resolve(code === 200);
+    });
+    req.on('error', () => resolve(false));
+    req.on('timeout', () => { req.destroy(); resolve(false); });
+    req.end();
+  });
+}
+
+/** Run async fn over items with bounded concurrency. */
+async function mapPool<T, R>(items: T[], limit: number, fn: (t: T) => Promise<R>): Promise<R[]> {
+  const out: R[] = new Array(items.length);
+  let i = 0;
+  async function worker() {
+    while (i < items.length) {
+      const idx = i++;
+      out[idx] = await fn(items[idx]);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  return out;
+}
 
 function normalizeParty(p: string): string {
   if (p === 'Democrat') return 'Democratic';
@@ -258,6 +294,79 @@ async function main() {
   // 2. Build roster (current House terms, keyed by tiger_geoid)
   const { byGeoid, skipped } = buildRoster(legislators);
   console.log(`  House roster (50 states + DC): ${byGeoid.size} reps; ${skipped.length} skipped (territories/unknown)`);
+
+  // ─── PHOTO MODES (--check-photos / --generate-photos) ───────────────────────
+  if (MODE_CHECK_PHOTOS || MODE_GENERATE_PHOTOS) {
+    const byExt = new Map<number, Rep>();
+    for (const rep of byGeoid.values()) byExt.set(rep.externalId, rep);
+
+    // Batch reps that still need a photo
+    const pres = await pool.query(
+      `SELECT external_id FROM essentials.politicians
+       WHERE external_id BETWEEN -56999 AND -1000
+         AND (photo_origin_url IS NULL OR photo_origin_url = '')
+       ORDER BY external_id`
+    );
+    const needing = pres.rows.map((r) => Number(r.external_id));
+    console.log(`  Batch reps needing photo: ${needing.length}`);
+
+    const checked = await mapPool(needing, 20, async (ext) => {
+      const rep = byExt.get(ext);
+      if (!rep || !rep.bioguide) return { ext, rep, url: '', ok: false, reason: 'no roster/bioguide match' };
+      const url = `${PHOTO_BASE}/${rep.bioguide}.jpg`;
+      const ok = await headOk(url);
+      return { ext, rep, url, ok, reason: ok ? '' : 'HEAD != 200' };
+    });
+    const ok = checked.filter((c) => c.ok);
+    const miss = checked.filter((c) => !c.ok);
+
+    console.log(`\n=== Photo check (${PHOTO_BASE}/{bioguide}.jpg) ===`);
+    console.log(`  OK:   ${ok.length}`);
+    console.log(`  MISS: ${miss.length}`);
+    miss.forEach((m) =>
+      console.log(`    MISS ext=${m.ext} ${m.rep ? `${m.rep.usps}-${m.rep.district === 0 ? 'AL' : m.rep.district} ${m.rep.fullName} (${m.rep.bioguide})` : '(no roster match)'} — ${m.reason}`)
+    );
+
+    if (MODE_GENERATE_PHOTOS) {
+      const diskNums = fs.readdirSync(MIGRATIONS_DIR)
+        .map((f) => parseInt(f.match(/^(\d+)/)?.[1] ?? '0', 10)).filter((n) => !Number.isNaN(n));
+      const diskMax = Math.max(0, ...diskNums);
+      let dbMax = 0;
+      try {
+        const mres = await pool.query(`SELECT MAX(version::int) AS m FROM supabase_migrations.schema_migrations WHERE version ~ '^[0-9]+$'`);
+        dbMax = mres.rows[0]?.m ?? 0;
+      } catch { /* disk wins */ }
+      const migrationNum = Math.max(diskMax, dbMax) + 1;
+      const outFile = path.join(MIGRATIONS_DIR, `${migrationNum}_national_house_rep_photos.sql`);
+      const values = ok.map((o) => `  (${o.ext}, '${o.url}')`).join(',\n');
+      const missList = miss.map((m) => `--   ext=${m.ext} ${m.rep ? `${m.rep.usps}-${m.rep.district === 0 ? 'AL' : m.rep.district} ${m.rep.fullName} (${m.rep.bioguide})` : '?'} — ${m.reason}`).join('\n') || '--   (none)';
+      const sql = `-- Migration ${migrationNum}: National US House Rep headshots (Tier 1)
+--
+-- Sets photo_origin_url for the Phase 125 batch reps (external_id -56999..-1000)
+-- to the unitedstates/images congressional photo (225x275, bioguide-keyed) — the same
+-- source/format already used by 148 existing federal members.
+-- Generated by backend/scripts/seed-national-house-reps.ts --generate-photos
+-- ${ok.length} reps with HEAD-validated photo; ${miss.length} excluded (no congress image — find-headshots fallback):
+${missList}
+-- Idempotent: guarded photo_origin_url IS NULL.
+
+BEGIN;
+
+UPDATE essentials.politicians p
+SET photo_origin_url = v.url
+FROM (VALUES
+${values}
+) AS v(ext, url)
+WHERE p.external_id = v.ext AND (p.photo_origin_url IS NULL OR p.photo_origin_url = '');
+
+COMMIT;
+`;
+      fs.writeFileSync(outFile, sql, 'utf-8');
+      console.log(`\nGENERATED: ${outFile} (${ok.length} photo UPDATEs)`);
+    }
+    await pool.end();
+    return;
+  }
 
   // 3. Query unseeded NATIONAL_LOWER districts
   const res = await pool.query(`
