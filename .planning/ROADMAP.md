@@ -27,6 +27,7 @@
 - âœ… **v2.12 MA Expansion** â€” Phases 117â€”118 (shipped 2026-06-15)
 - âœ… **v2.13 MA City Council District Geofencing** â€” Phase 119 (shipped 2026-06-15)
 - ✅ **v2.14 MA City Expansion Wave 2** — Phases 120–124 (shipped 2026-06-16)
+- 🔵 **v2.15 National House Rep Seeding (Tier 1)** — Phases 125–126 (in progress)
 
 ## Phases
 
@@ -1450,6 +1451,50 @@ Plans:
 
 ---
 
+### v2.15 National House Rep Seeding (Tier 1) (Phases 125–126)
+
+Geofencing is already complete (Phase 116/v2.11): 436 CD119 polygons + `tiger_geoid` on all 440 `NATIONAL_LOWER` rows. Only 137/435 House reps are seeded. This milestone fills the rep layer for the ~298 unseeded districts (≈40 states + IN/TX partials), FK-linked via `tiger_geoid`, sourced from `congress-legislators`. Stances = Tier 2 (v2.16+).
+
+---
+
+#### Phase 125: National House Rep Ingestion
+
+**Goal:** Every sitting US House representative for the 50 states + DC delegate has a politician + office record FK-linked to the correct `NATIONAL_LOWER` district via `tiger_geoid`, sourced from `legislators-current.yaml` — completing the address→district→rep loop nationally.
+
+**Depends on:** Phase 116 (national CD119 geofencing + `tiger_geoid` backfill — complete)
+**Requirements:** USHR-01, USHR-02, USHR-03
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. An idempotent ingestion script fetches `legislators-current.yaml`, filters to current `type='rep'` terms for the 50 states + DC, and seeds politician + office records using the migration-311 pattern (shared US House chamber UUID).
+2. Each seeded office links to the correct district via `tiger_geoid` (`FIPS + CD`, at-large `district 0` → suffix `00`); `representing_state` set; `politicians.office_id` backfilled.
+3. Party normalized `Democrat→Democratic`; `Republican`/`Independent` pass through; no `'Democrat'` rows introduced.
+4. Only currently-unseeded districts are touched (`LEFT JOIN offices WHERE politician_id IS NULL`); the 137 existing reps untouched; re-run is a no-op; zero orphan politicians (every new politician has a linked office).
+5. Post-ingest, `NATIONAL_LOWER` districts with a linked rep ≈ 435 − live vacancies + DC delegate; per-state coverage matches the YAML roster.
+
+---
+
+#### Phase 126: Headshots + Phase Gate Verification
+
+**Goal:** All newly-seeded House reps have headshots, and a consolidated SQL gate + Path 0 spot checks verifiably close all 5 USHR requirements, producing the permanent audit record.
+
+**Depends on:** Phase 125 (politician records must exist)
+**Requirements:** USHR-04, USHR-05
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. Every newly-seeded House rep has a `photo_origin_url` imported via `find-headshots`, or is logged as no-photo-found with reason.
+2. A `verify-phase-125-126.sql` script exists with labeled assertions covering national rep coverage, party normalization, and orphan-politician checks.
+3. Every YAML-listed current House rep (50 states + DC) resolves to a linked politician; zero `NATIONAL_LOWER` districts with a current member lack a rep.
+4. Path 0 returns the correct rep for spot-check addresses across ≥5 states, including one at-large state and DC.
+5. Zero orphan politicians (politician with no office) introduced by this milestone; party-normalization assertion passes (no `'Democrat'` rows among seeded reps).
+
+---
+
+---
+
 ## Progress
 
 
@@ -1564,3 +1609,5 @@ Plans:
 | 122. Stance Research Wave 2 (Lynn/Fall River/Waltham/New Bedford) | v2.14 | 3/3 | Complete ✅ | 2026-06-16 |
 | 123. Ward Geofencing — All 7 Cities | v2.14 | 4/4 | Complete ✅ | 2026-06-16 |
 | 124. Phase Gate Verification | v2.14 | 1/1 | Complete ✅ | 2026-06-16 |
+| 125. National House Rep Ingestion | v2.15 | 0/0 | Not started | — |
+| 126. Headshots + Phase Gate Verification | v2.15 | 0/0 | Not started | — |

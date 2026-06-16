@@ -6,7 +6,7 @@ status: planning
 last_updated: "2026-06-16T18:09:06.455Z"
 last_activity: 2026-06-16
 progress:
-  total_phases: 0
+  total_phases: 2
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -17,18 +17,19 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-15 after v2.13 milestone complete)
+See: .planning/PROJECT.md (updated 2026-06-16 after v2.14 milestone complete)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.14 — MA City Expansion Wave 2 (Phases 120–124)
-**Last shipped:** v2.13 MA City Council District Geofencing — Phase 119, shipped 2026-06-15. Per-ward Path 0 geofencing for 6 MA cities (Boston/Worcester/Springfield/Lowell/Brockton/Quincy); migrations 659–664; MAGE-10..15 all pass.
+**Current focus:** v2.15 — National House Rep Seeding (Tier 1) (Phases 125–126)
+**Last shipped:** v2.14 MA City Expansion Wave 2 — Phases 120–124, shipped 2026-06-16. 7 MA cities seeded + stance-researched + ward-geofenced; all 21 requirements (MAOF/MAST/MAGE) closed; verify-phase-120-124.sql 44 assertions pass.
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: Not started — roadmap created, ready to plan Phase 125
 Plan: —
-Status: Defining requirements
-Last activity: 2026-06-16 — Milestone v2.15 started
+Status: Roadmap approved (2 phases, USHR-01..05); research complete (.planning/research/SUMMARY.md)
+Last activity: 2026-06-16 — Milestone v2.15 started; requirements + roadmap approved and committed
+Next: /gsd:plan-phase 125 (National House Rep Ingestion)
 
 ## Previous Milestone Position (v2.13 — COMPLETE ✅)
 

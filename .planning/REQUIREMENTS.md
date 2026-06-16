@@ -1,86 +1,46 @@
-# Requirements: v2.14 MA City Expansion Wave 2
+# Requirements: v2.15 National House Rep Seeding (Tier 1)
 
-**Milestone:** v2.14  
+**Milestone:** v2.15  
 **Status:** Active  
-**Last updated:** 2026-06-15
+**Last updated:** 2026-06-16
 
-Full civic data layer for 7 remaining MA cities — Newton, Somerville, Lynn, Fall River, Waltham, Medford, and New Bedford. Each city currently has a government stub + 1 chamber in DB with zero districts, officials, or stances.
+Every US resident who enters their address sees their actual sitting US House representative. Geofencing infrastructure is already complete (Phase 116/v2.11): all 436 CD119 polygons imported and `tiger_geoid` backfilled on all 440 `NATIONAL_LOWER` district rows. Only 137/435 House reps are currently seeded. This milestone seeds the ~298 missing House politician + office records, FK-linked to the existing districts. **Stance research for these reps is Tier 2, deferred to v2.16+ (NOT in this milestone). FEC finance is a separate FINA stream, also out of scope.**
 
----
-
-## Officials Seeding (MAOF)
-
-- [x] **MAOF-01**: Newton district + politician + office records committed and applied (migration)
-- [x] **MAOF-02**: Somerville district + politician + office records committed and applied
-- [x] **MAOF-03**: Lynn district + politician + office records committed and applied
-- [x] **MAOF-04**: Fall River district + politician + office records committed and applied
-- [x] **MAOF-05**: Waltham district + politician + office records committed and applied
-- [x] **MAOF-06**: Medford district + politician + office records committed and applied
-- [x] **MAOF-07**: New Bedford district + politician + office records committed and applied
-
-## Stances (MAST)
-
-All stances must follow Chair methodology: sourced from primary sources, real URL in `inform.politician_context`, honest-skip where no documentable record exists.
-
-- [x] **MAST-01**: Sourced stances + context rows for all Newton officials (honest-skip where no record)
-- [x] **MAST-02**: Sourced stances + context rows for all Somerville officials
-- [x] **MAST-03**: Sourced stances + context rows for all Lynn officials
-- [x] **MAST-04**: Sourced stances + context rows for all Fall River officials
-- [x] **MAST-05**: Sourced stances + context rows for all Waltham officials
-- [x] **MAST-06**: Sourced stances + context rows for all Medford officials
-- [x] **MAST-07**: Sourced stances + context rows for all New Bedford officials
-
-## Geofencing (MAGE)
-
-Ward/district boundary polygons imported into `essentials.geo_districts` + `essentials.geofence_boundaries`; `tiger_geoid` backfilled on city council district rows; Path 0 join verified via SQL assertion.
-
-Continues MAGE numbering from Phase 119 (MAGE-10..15).
-
-- [ ] **MAGE-16**: Newton ward polygons imported; tiger_geoid backfilled on district rows; Path 0 verified
-- [ ] **MAGE-17**: Somerville ward polygons imported; tiger_geoid backfilled; Path 0 verified
-- [ ] **MAGE-18**: Lynn ward polygons imported; tiger_geoid backfilled; Path 0 verified
-- [ ] **MAGE-19**: Fall River ward polygons imported; tiger_geoid backfilled; Path 0 verified
-- [ ] **MAGE-20**: Waltham ward polygons imported; tiger_geoid backfilled; Path 0 verified
-- [ ] **MAGE-21**: Medford ward polygons imported; tiger_geoid backfilled; Path 0 verified
-- [ ] **MAGE-22**: New Bedford ward polygons imported; tiger_geoid backfilled; Path 0 verified
+Data source: `unitedstates/congress-legislators` `legislators-current.yaml`. Insert pattern reuses migration 311 (VA federal officials). Shared US House chamber UUID `c2facc31-7b13-428c-b7b9-32d0d3b95f76`. See `.planning/research/SUMMARY.md` for the full mapping + gotchas.
 
 ---
 
-## Future Requirements
+## House Rep Seeding (USHR)
 
-- Stance research for remaining MA cities not yet in DB (Lawrence, Framingham, Haverhill, Malden, etc.)
-- MA school district geofencing for cities added in v2.14
+- [ ] **USHR-01**: All sitting US House representatives for the 50 states + DC delegate are seeded as `essentials.politicians` + `essentials.offices` records, FK-linked to the correct `NATIONAL_LOWER` district via `tiger_geoid`, sourced from `legislators-current.yaml`.
+- [ ] **USHR-02**: Ingestion is idempotent and touches only currently-unseeded districts — the 137 already-linked reps and all other data are untouched; re-running is a no-op and creates no orphan politicians (every new politician has a linked office).
+- [ ] **USHR-03**: Data normalization correct — party mapped `Democrat→Democratic` (preserving v2.6 SACC-03 normalization); at-large districts (`district 0` → geoid suffix `00`) and the DC delegate handled; territory delegates (PR/GU/VI/AS/MP) excluded.
+- [ ] **USHR-04**: Every newly-seeded House rep has a headshot (`photo_origin_url`) imported via the `find-headshots` skill, or is documented as no-photo-found.
+- [ ] **USHR-05**: Phase-gate verify SQL confirms national coverage — every YAML-listed current House rep (50 states + DC) is linked; Path 0 returns the correct rep for spot-check addresses across ≥5 states (including an at-large state and DC); zero orphan politicians; party-normalization assertion holds.
+
+---
+
+## Future Requirements (deferred)
+
+- **Tier 2 (v2.16+)**: Sourced stance + context research for the ~298 newly-seeded House reps (one state/wave at a time per rate-limit rule). 21 compass topics, Chair methodology, honest-skip where no record.
+- FEC finance summary ingestion for newly-seeded House reps (FINA stream).
 
 ## Out of Scope
 
-- MA state executive stances (covered by Essentials team)
-- School district records for v2.14 cities (deferred)
-- Cities with population < 50k (deferred)
+- Stance research for the new reps (→ Tier 2, v2.16+)
+- FEC / campaign finance data (→ FINA stream)
+- US Senate (already fully covered: 50 `NATIONAL_UPPER`, 143 politicians)
+- Congressional district polygon import / `tiger_geoid` backfill (already complete — Phase 116/v2.11)
+- Non-voting territory delegates (PR/GU/VI/AS/MP) — no `NATIONAL_LOWER` district rows exist for them
 
 ---
 
 ## Traceability
 
-| Requirement | Phase | Status |
-|-------------|-------|--------|
-| MAOF-01 | Phase 120 | Complete |
-| MAOF-02 | Phase 120 | Complete |
-| MAOF-03 | Phase 120 | Complete |
-| MAOF-04 | Phase 120 | Complete |
-| MAOF-05 | Phase 120 | Complete |
-| MAOF-06 | Phase 120 | Complete |
-| MAOF-07 | Phase 120 | Complete |
-| MAST-01 | Phase 121 | Complete |
-| MAST-02 | Phase 121 | Complete |
-| MAST-06 | Phase 121 | Complete |
-| MAST-03 | Phase 122 | Complete |
-| MAST-04 | Phase 122 | Complete |
-| MAST-05 | Phase 122 | Complete |
-| MAST-07 | Phase 122 | Complete |
-| MAGE-16 | Phase 123 | Pending |
-| MAGE-17 | Phase 123 | Pending |
-| MAGE-18 | Phase 123 | Pending |
-| MAGE-19 | Phase 123 | Pending |
-| MAGE-20 | Phase 123 | Pending |
-| MAGE-21 | Phase 123 | Pending |
-| MAGE-22 | Phase 123 | Pending |
+| Requirement | Phase |
+|-------------|-------|
+| USHR-01 | 125 |
+| USHR-02 | 125 |
+| USHR-03 | 125 |
+| USHR-04 | 126 |
+| USHR-05 | 126 |
