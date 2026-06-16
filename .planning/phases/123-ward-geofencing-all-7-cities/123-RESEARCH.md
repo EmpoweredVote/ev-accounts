@@ -22,7 +22,7 @@ The `load-ma-ward-boundaries.ts` script already handles the MassGIS precinct dis
 
 **Primary recommendation:** Extend `load-ma-ward-boundaries.ts` to accept all 7 new cities (add configs). Run the script for each city. Then write one migration per city (7 migrations total) following the Phase 119 pattern — pre-flight assertion, per-ward district rows, tiger_geoid backfill, office re-links (where applicable).
 
-Next available migration number: **703** (last committed on-disk migration is 702). [VERIFIED: ls migrations/*.sql sorted]
+Next available migration number: **706** (migrations 703-705 are in use by prior work; canonical Phase 123 range is 706-712). [VERIFIED: plans use 706-712]
 
 ---
 
@@ -43,13 +43,13 @@ Next available migration number: **703** (last committed on-disk migration is 70
 
 | ID | Description | Research Support |
 |----|-------------|------------------|
-| MAGE-16 | Newton ward polygons imported; tiger_geoid backfilled on district rows; Path 0 verified | load-ma-ward-boundaries.ts --city NEWTON --ward-count 8 + migration 703 |
-| MAGE-17 | Somerville ward polygons imported; tiger_geoid backfilled; Path 0 verified | load-ma-ward-boundaries.ts --city SOMERVILLE --ward-count 7 + migration 704 |
-| MAGE-18 | Lynn ward polygons imported; tiger_geoid backfilled; Path 0 verified | load-ma-ward-boundaries.ts --city LYNN --ward-count 7 + migration 705 |
-| MAGE-19 | Fall River ward polygons imported; tiger_geoid backfilled; Path 0 verified | load-ma-ward-boundaries.ts --city FALL RIVER --ward-count 9 + migration 706 |
-| MAGE-20 | Waltham ward polygons imported; tiger_geoid backfilled; Path 0 verified | load-ma-ward-boundaries.ts --city WALTHAM --ward-count 9 + migration 707 |
-| MAGE-21 | Medford ward polygons imported; tiger_geoid backfilled; Path 0 verified | load-ma-ward-boundaries.ts --city MEDFORD --ward-count 8 + migration 708 |
-| MAGE-22 | New Bedford ward polygons imported; tiger_geoid backfilled; Path 0 verified | load-ma-ward-boundaries.ts --city NEW BEDFORD --ward-count 6 + migration 709 |
+| MAGE-16 | Newton ward polygons imported; tiger_geoid backfilled on district rows; Path 0 verified | load-ma-ward-boundaries.ts --city NEWTON --ward-count 8 + migration 706 |
+| MAGE-17 | Somerville ward polygons imported; tiger_geoid backfilled; Path 0 verified | load-ma-ward-boundaries.ts --city SOMERVILLE --ward-count 7 + migration 707 |
+| MAGE-18 | Lynn ward polygons imported; tiger_geoid backfilled; Path 0 verified | load-ma-ward-boundaries.ts --city LYNN --ward-count 7 + migration 708 |
+| MAGE-19 | Fall River ward polygons imported; tiger_geoid backfilled; Path 0 verified | load-ma-ward-boundaries.ts --city FALL RIVER --ward-count 9 + migration 709 |
+| MAGE-20 | Waltham ward polygons imported; tiger_geoid backfilled; Path 0 verified | load-ma-ward-boundaries.ts --city WALTHAM --ward-count 9 + migration 710 |
+| MAGE-21 | Medford ward polygons imported; tiger_geoid backfilled; Path 0 verified | load-ma-ward-boundaries.ts --city MEDFORD --ward-count 8 + migration 711 |
+| MAGE-22 | New Bedford ward polygons imported; tiger_geoid backfilled; Path 0 verified | load-ma-ward-boundaries.ts --city NEW BEDFORD --ward-count 6 + migration 712 |
 </phase_requirements>
 
 ---
@@ -163,7 +163,7 @@ This section is the single most important section for the planner. Every externa
 | mtfcc | `X0014` | Continues Phase 119 registry |
 | Office re-links needed? | **NO** — fully at-large council | No ward seats exist |
 
-**CRITICAL: Fall River import strategy differs from other cities.** Importing 9 ward polygons for boundary coverage is correct. However, migration 706 must NOT attempt any office re-links — all 9 councilors plus the Mayor are already linked to the citywide LOCAL row (geo_id='2523000'), and they must remain there. The migration only needs: (1) pre-flight assertion, (2) 9 per-ward district rows, (3) tiger_geoid on per-ward rows, (4) tiger_geoid on citywide LOCAL/LOCAL_EXEC if not already set. No UPDATE on essentials.offices.
+**CRITICAL: Fall River import strategy differs from other cities.** Importing 9 ward polygons for boundary coverage is correct. However, migration 709 must NOT attempt any office re-links — all 9 councilors plus the Mayor are already linked to the citywide LOCAL row (geo_id='2523000'), and they must remain there. The migration only needs: (1) pre-flight assertion, (2) 9 per-ward district rows, (3) tiger_geoid on per-ward rows, (4) tiger_geoid on citywide LOCAL/LOCAL_EXEC if not already set. No UPDATE on essentials.offices.
 
 **Why per-ward rows if no ward seats?** Having per-ward district rows enables future ward councillors if Fall River ever restructures its council, and enables the ward-boundary split in the UI even for at-large councillors (a user can see "Ward 5 representative: [all at-large councilors]"). For now, Path 0 will return all at-large councillors for any Fall River address (via the citywide LOCAL tiger_geoid), which is correct behavior.
 
@@ -219,7 +219,7 @@ This section is the single most important section for the planner. Every externa
 
 **CRITICAL: Medford geo_id is '2539835', NOT '2540115'.** Migration 591 seeded Medford with the wrong geo_id (2540115 = Melrose). Migration 622 fixed this. The correct geo_id for Medford is `2539835`. The external_id range for Medford politicians remains -2540115001 through -2540115008 (the external_id encoding was not changed by migration 622). This asymmetry is intentional: external_ids are internal identifiers, geo_id is the FIPS place code.
 
-**Same at-large-only treatment as Fall River** — import 8 ward polygons, no office re-links. Migration 708 inserts 8 per-ward district rows + tiger_geoid, nothing else.
+**Same at-large-only treatment as Fall River** — import 8 ward polygons, no office re-links. Migration 711 inserts 8 per-ward district rows + tiger_geoid, nothing else.
 
 ---
 
@@ -363,13 +363,13 @@ npx tsx scripts/load-ma-ward-boundaries.ts --city "NEW BEDFORD" --ward-count 6
 
 | Migration | City | Ward rows | Office re-links | Notes |
 |-----------|------|-----------|-----------------|-------|
-| 703 | Newton | 8 per-ward LOCAL | 8 | Ward councillors: -2545560018 through -2545560025 (non-sequential) |
-| 704 | Somerville | 7 per-ward LOCAL | 7 | Ward councillors: -2562535006 through -2562535012 |
-| 705 | Lynn | 7 per-ward LOCAL | 7 | Ward councillors: -2537490006 through -2537490012 |
-| 706 | Fall River | 9 per-ward LOCAL | 0 | At-large only — NO office re-links |
-| 707 | Waltham | 9 per-ward LOCAL | 9 | Ward councillors: -2572600008 through -2572600016 |
-| 708 | Medford | 8 per-ward LOCAL | 0 | At-large only — NO office re-links |
-| 709 | New Bedford | 6 per-ward LOCAL | 6 | Ward councillors: -2545000007 through -2545000012 |
+| 706 | Newton | 8 per-ward LOCAL | 8 | Ward councillors: -2545560018 through -2545560025 (non-sequential) |
+| 707 | Somerville | 7 per-ward LOCAL | 7 | Ward councillors: -2562535006 through -2562535012 |
+| 708 | Lynn | 7 per-ward LOCAL | 7 | Ward councillors: -2537490006 through -2537490012 |
+| 709 | Fall River | 9 per-ward LOCAL | 0 | At-large only — NO office re-links |
+| 710 | Waltham | 9 per-ward LOCAL | 9 | Ward councillors: -2572600008 through -2572600016 |
+| 711 | Medford | 8 per-ward LOCAL | 0 | At-large only — NO office re-links |
+| 712 | New Bedford | 6 per-ward LOCAL | 6 | Ward councillors: -2545000007 through -2545000012 |
 
 Each migration runs AFTER the corresponding city's import script has loaded ward polygons into `geofence_boundaries`.
 
@@ -430,7 +430,7 @@ WHERE politician_id = (
 -- Step 5: Verification DO block
 -- ... (assert 8 per-ward rows, tiger_geoid set, office re-links applied)
 
-INSERT INTO supabase_migrations.schema_migrations (version) VALUES ('703') ON CONFLICT (version) DO NOTHING;
+INSERT INTO supabase_migrations.schema_migrations (version) VALUES ('706') ON CONFLICT (version) DO NOTHING;
 
 COMMIT;
 ```
@@ -476,7 +476,7 @@ WHERE state = 'ma'
 
 -- Step 5: Verification DO block (no office re-link assertion)
 
-INSERT INTO supabase_migrations.schema_migrations (version) VALUES ('706') ON CONFLICT (version) DO NOTHING;
+INSERT INTO supabase_migrations.schema_migrations (version) VALUES ('709') ON CONFLICT (version) DO NOTHING;
 
 COMMIT;
 ```
@@ -552,7 +552,7 @@ No new packages are installed in this phase. All scripts use existing dependenci
   essentials.geofence_boundaries
   (geo_id='city-ma-council-ward-N', mtfcc='X0014')
          |
-   SQL Migrations (703 → 709, one per city)
+   SQL Migrations (706 → 712, one per city)
          |
          ▼
   essentials.districts
@@ -580,13 +580,13 @@ backend/
 ├── scripts/
 │   └── load-ma-ward-boundaries.ts    (extend CITY_CONFIGS with 7 new entries)
 └── migrations/
-    ├── 703_newton_council_ward_geofencing.sql
-    ├── 704_somerville_council_ward_geofencing.sql
-    ├── 705_lynn_council_ward_geofencing.sql
-    ├── 706_fall_river_council_ward_geofencing.sql  (no office re-links)
-    ├── 707_waltham_council_ward_geofencing.sql
-    ├── 708_medford_council_ward_geofencing.sql     (no office re-links)
-    └── 709_new_bedford_council_ward_geofencing.sql
+    ├── 706_newton_council_ward_geofencing.sql
+    ├── 707_somerville_council_ward_geofencing.sql
+    ├── 708_lynn_council_ward_geofencing.sql
+    ├── 709_fall_river_council_ward_geofencing.sql  (no office re-links)
+    ├── 710_waltham_council_ward_geofencing.sql
+    ├── 711_medford_council_ward_geofencing.sql     (no office re-links)
+    └── 712_new_bedford_council_ward_geofencing.sql
 ```
 
 ---
@@ -607,8 +607,8 @@ backend/
 ### Pitfall 1: Fall River and Medford have no ward councillors
 **What goes wrong:** Writing office re-link SQL for Fall River or Medford, causing migration to UPDATE 0 rows or (worse) silently re-linking wrong offices.
 **Why it happens:** Fall River has 9 MassGIS voting wards but 9 at-large council seats — no ward seats. Medford has 8 MassGIS voting wards but 7 at-large seats — no ward seats.
-**How to avoid:** Migration 706 (Fall River) and 708 (Medford) must have NO `UPDATE essentials.offices` steps. Migration verification DO block must NOT assert any office re-links.
-**Warning signs:** If you see office re-link SQL in migrations 706 or 708, the plan has a bug.
+**How to avoid:** Migration 709 (Fall River) and 711 (Medford) must have NO `UPDATE essentials.offices` steps. Migration verification DO block must NOT assert any office re-links.
+**Warning signs:** If you see office re-link SQL in migrations 709 or 711, the plan has a bug.
 
 ### Pitfall 2: FALL RIVER and NEW BEDFORD have spaces in TOWN filter
 **What goes wrong:** Script CLI arg parsing normalizes to uppercase but splits on space — `--city FALL RIVER` becomes `FALL` with `RIVER` as next arg, breaking the ward-count parse.
@@ -622,9 +622,9 @@ backend/
 **Warning signs:** Re-link UPDATE affects the wrong councillor (e.g., assigns Ward 2 polygon to Lisle Baker who represents Ward 7).
 
 ### Pitfall 4: Medford geo_id is 2539835, external_ids use 2540115
-**What goes wrong:** Using 2540115 as the Medford geo_id in migration 708 (the wrong Melrose FIPS that migration 591 originally used).
+**What goes wrong:** Using 2540115 as the Medford geo_id in migration 711 (the wrong Melrose FIPS that migration 591 originally used).
 **Why it happens:** Migration 591 had a bug (seeded Medford with Melrose's FIPS). Migration 622 fixed the geo_id to 2539835 but external_ids (-2540115001 through -2540115008) were not renamed.
-**How to avoid:** Migration 708 must use `geo_id = '2539835'` for Medford's citywide LOCAL rows. The pre-flight query for geofence_boundaries must also use `geo_id = '2539835'`. External_id range for politician lookup remains -2540115001..-2540115008.
+**How to avoid:** Migration 711 must use `geo_id = '2539835'` for Medford's citywide LOCAL rows. The pre-flight query for geofence_boundaries must also use `geo_id = '2539835'`. External_id range for politician lookup remains -2540115001..-2540115008.
 **Warning signs:** Pre-flight assertion for G4110 geofence fails (there is no G4110 for geo_id='2540115'; it was corrected to '2539835').
 
 ### Pitfall 5: TOWN field case sensitivity (inherited from Phase 119)
@@ -756,16 +756,18 @@ ASVS V5 (Input Validation): The WARD field values from MassGIS must be validated
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **Newton tiger_geoid — confirm via pre-flight SQL before writing migration 703**
+1. **Newton tiger_geoid — confirm via pre-flight SQL before writing migration 706**
    - What we know: Migration 699 was the on-disk canonical record. The 120-01-PLAN.md SUMMARY should confirm it was applied.
-   - Recommendation: Migration 703 pre-flight should include `SELECT tiger_geoid FROM essentials.districts WHERE geo_id='2545560' AND state='ma'` and RAISE EXCEPTION if NULL. If the backfill is missing, migration 703 can include it as an inline fix.
+   - Recommendation: Migration 706 pre-flight should include `SELECT tiger_geoid FROM essentials.districts WHERE geo_id='2545560' AND state='ma'` and RAISE EXCEPTION if NULL. If the backfill is missing, migration 706 can include it as an inline fix.
+   - RESOLVED: Plan 02 Task 1 action includes a `WHERE tiger_geoid IS NULL` no-op guard on Steps 3-4 for Newton citywide rows, making the migration safe regardless of prior backfill state. The pre-flight check in Plan 04's verify-phase-123.sql covers this assertion after execution.
 
 2. **Fall River ward polygon utility**
    - What we know: Fall River has 9 at-large councillors. Importing 9 ward polygons creates per-ward district rows with no councillors re-linked.
    - What's unclear: Does the planner want to import Fall River ward polygons at all? The MAGE-19 requirement says "ward polygons imported" — so yes.
    - Recommendation: Import all 9 polygons. The per-ward district rows exist as boundary data; the at-large councillors continue to resolve citywide.
+   - RESOLVED: Plan 02 includes migration 709 (Fall River) with 9 per-ward district row inserts and tiger_geoid backfill, explicitly omitting office re-links. MAGE-19 satisfied.
 
 ---
 

@@ -3,7 +3,8 @@
  *
  * Fetches ward/district precinct polygons from MassGIS WARDSPRECINCTS2022_POLY
  * FeatureServer and inserts dissolved per-ward/district polygons into
- * essentials.geofence_boundaries for Springfield, Lowell, Brockton, and Quincy.
+ * essentials.geofence_boundaries for Springfield, Lowell, Brockton, Quincy,
+ * Newton, Somerville, Lynn, Fall River, Waltham, Medford, and New Bedford.
  *
  * CRITICAL: Do NOT use this script for Worcester. Worcester has its own script
  * (load-worcester-council-boundaries.ts) that hits the city's own FeatureServer
@@ -11,8 +12,11 @@
  * MassGIS WARDSPRECINCTS2022_POLY has 10 voting wards for Worcester (60 precincts),
  * NOT the 5 council districts. Using this script for Worcester would load wrong data.
  *
- * CRITICAL: TOWN filter must be uppercase: SPRINGFIELD, LOWELL, BROCKTON, QUINCY.
+ * CRITICAL: TOWN filter must be uppercase: SPRINGFIELD, LOWELL, BROCKTON, QUINCY,
+ * NEWTON, SOMERVILLE, LYNN, FALL RIVER, WALTHAM, MEDFORD, NEW BEDFORD.
  * MassGIS TOWN field is stored in uppercase. Mixed-case queries return 0 results.
+ * City names with spaces (FALL RIVER, NEW BEDFORD) must be quoted on the CLI:
+ *   --city "FALL RIVER"  or  --city "NEW BEDFORD"
  *
  * CRITICAL: outSR=4326 IS REQUIRED. MassGIS serves Web Mercator (WKID 102100/3857)
  * by default. Omitting outSR causes geometries to be stored in the wrong CRS, which
@@ -23,10 +27,17 @@
  * Fields: TOWN (String, uppercase), WARD (String, "1".."8"), PRECINCT (String)
  *
  * Ward counts (verified via live MassGIS statistics query):
- *   Springfield: 8 wards, 64 precincts (8 per ward)
- *   Lowell:      8 districts, 32 precincts (4 per ward)
- *   Brockton:    7 wards, 28 precincts (4 per ward)
- *   Quincy:      6 wards, 30 precincts (5 per ward)
+ *   Springfield:  8 wards, 64 precincts (8 per ward)
+ *   Lowell:       8 districts, 32 precincts (4 per ward)
+ *   Brockton:     7 wards, 28 precincts (4 per ward)
+ *   Quincy:       6 wards, 30 precincts (5 per ward)
+ *   Newton:       8 wards, 32 precincts (4 per ward)
+ *   Somerville:   7 wards, 28 precincts (4 per ward)
+ *   Lynn:         7 wards, 28 precincts (4 per ward)
+ *   Fall River:   9 wards, 27 precincts (3 per ward)
+ *   Waltham:      9 wards, 18 precincts (2 per ward)
+ *   Medford:      8 wards, 16 precincts (2 per ward)
+ *   New Bedford:  6 wards, 36 precincts (6 per ward)
  *
  * Dissolution strategy: Fetch all precinct features for the city, group by WARD,
  * then INSERT each ward as a single dissolved polygon using ST_Union inside PostgreSQL
@@ -40,6 +51,13 @@
  *   npx tsx scripts/load-ma-ward-boundaries.ts --city LOWELL --ward-count 8
  *   npx tsx scripts/load-ma-ward-boundaries.ts --city BROCKTON --ward-count 7
  *   npx tsx scripts/load-ma-ward-boundaries.ts --city QUINCY --ward-count 6
+ *   npx tsx scripts/load-ma-ward-boundaries.ts --city NEWTON --ward-count 8
+ *   npx tsx scripts/load-ma-ward-boundaries.ts --city SOMERVILLE --ward-count 7
+ *   npx tsx scripts/load-ma-ward-boundaries.ts --city LYNN --ward-count 7
+ *   npx tsx scripts/load-ma-ward-boundaries.ts --city "FALL RIVER" --ward-count 9
+ *   npx tsx scripts/load-ma-ward-boundaries.ts --city WALTHAM --ward-count 9
+ *   npx tsx scripts/load-ma-ward-boundaries.ts --city MEDFORD --ward-count 8
+ *   npx tsx scripts/load-ma-ward-boundaries.ts --city "NEW BEDFORD" --ward-count 6
  */
 
 import 'dotenv/config';
@@ -82,6 +100,34 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
     geoIdPrefix: 'quincy-ma-council-ward-',
     wardLabel: 'Ward',
   },
+  NEWTON: {
+    geoIdPrefix: 'newton-ma-council-ward-',
+    wardLabel: 'Ward',
+  },
+  SOMERVILLE: {
+    geoIdPrefix: 'somerville-ma-council-ward-',
+    wardLabel: 'Ward',
+  },
+  LYNN: {
+    geoIdPrefix: 'lynn-ma-council-ward-',
+    wardLabel: 'Ward',
+  },
+  'FALL RIVER': {
+    geoIdPrefix: 'fall-river-ma-council-ward-',
+    wardLabel: 'Ward',
+  },
+  WALTHAM: {
+    geoIdPrefix: 'waltham-ma-council-ward-',
+    wardLabel: 'Ward',
+  },
+  MEDFORD: {
+    geoIdPrefix: 'medford-ma-council-ward-',
+    wardLabel: 'Ward',
+  },
+  'NEW BEDFORD': {
+    geoIdPrefix: 'new-bedford-ma-council-ward-',
+    wardLabel: 'Ward',
+  },
 };
 
 const ALLOWED_CITIES = Object.keys(CITY_CONFIGS);
@@ -97,9 +143,10 @@ function parseArgs(): { city: string; wardCount: number; dryRun: boolean } {
 
   if (cityIdx === -1 || wardIdx === -1) {
     console.error('Usage: npx tsx scripts/load-ma-ward-boundaries.ts --city CITY --ward-count N [--dry-run]');
-    console.error('  --city: one of SPRINGFIELD, LOWELL, BROCKTON, QUINCY');
-    console.error('  --ward-count: expected number of wards/districts (8, 8, 7, or 6)');
+    console.error('  --city: use --city CITY where CITY is a key in CITY_CONFIGS (e.g., SPRINGFIELD, NEWTON, "FALL RIVER")');
+    console.error('  --ward-count: expected number of wards/districts for the city');
     console.error('  --dry-run: fetch and validate without writing to DB');
+    console.error('  NOTE: City names with spaces must be quoted: --city "FALL RIVER" or --city "NEW BEDFORD"');
     console.error('');
     console.error('WARNING: Do NOT use this script for Worcester.');
     console.error('  Worcester uses load-worcester-council-boundaries.ts (city FeatureServer).');
@@ -109,6 +156,7 @@ function parseArgs(): { city: string; wardCount: number; dryRun: boolean } {
   const city = (args[cityIdx + 1] ?? '').toUpperCase();
   if (!ALLOWED_CITIES.includes(city)) {
     console.error(`ERROR: --city must be one of ${ALLOWED_CITIES.join(', ')}. Got: '${args[cityIdx + 1]}'`);
+    console.error('  NOTE: City names with spaces must be quoted: --city "FALL RIVER" or --city "NEW BEDFORD"');
     console.error('WARNING: Worcester is NOT supported — use load-worcester-council-boundaries.ts instead.');
     process.exit(1);
   }

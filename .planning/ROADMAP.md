@@ -1413,8 +1413,8 @@ Plans:
 
 Plans:
 - [ ] 123-01-PLAN.md — Extend load-ma-ward-boundaries.ts + import ward polygons for all 7 cities (54 total)
-- [ ] 123-02-PLAN.md — Migrations 703-706: Newton/Somerville/Lynn (re-links) + Fall River (at-large, no re-links)
-- [ ] 123-03-PLAN.md — Migrations 707-709: Waltham (re-links) + Medford (at-large) + New Bedford (re-links)
+- [ ] 123-02-PLAN.md — Migrations 706-709: Newton/Somerville/Lynn (re-links) + Fall River (at-large, no re-links)
+- [ ] 123-03-PLAN.md — Migrations 710-712: Waltham (re-links) + Medford (at-large) + New Bedford (re-links)
 - [ ] 123-04-PLAN.md — Phase gate SQL (7 MAGE assertions) + Path 0 human verify for all 7 cities
 
 **Success Criteria** (what must be TRUE):
