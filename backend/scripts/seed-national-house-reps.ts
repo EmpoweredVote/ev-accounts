@@ -206,6 +206,7 @@ BEGIN;
 DO $$
 DECLARE
   v_chamber INT;
+  v_total INT;
   v_unseeded INT;
 BEGIN
   SELECT COUNT(*) INTO v_chamber FROM essentials.chambers
@@ -214,15 +215,19 @@ BEGIN
     RAISE EXCEPTION 'Pre-flight FAILED: US House chamber ${US_HOUSE_CHAMBER} not found exactly once (got %)', v_chamber;
   END IF;
 
+  -- Guard against orphan politicians: districts MUST be loaded (Phase 116) before seeding.
+  -- Checks total (not unseeded) so a re-run after a successful apply is still a clean no-op.
+  SELECT COUNT(*) INTO v_total FROM essentials.districts WHERE district_type = 'NATIONAL_LOWER';
+  IF v_total < 435 THEN
+    RAISE EXCEPTION 'Pre-flight FAILED: only % NATIONAL_LOWER districts loaded (need >= 435; run Phase 116 first)', v_total;
+  END IF;
+
   SELECT COUNT(*) INTO v_unseeded
   FROM essentials.districts d
   LEFT JOIN essentials.offices o ON o.district_id = d.id
   WHERE d.district_type = 'NATIONAL_LOWER' AND o.politician_id IS NULL;
-  IF v_unseeded < ${matched.length} THEN
-    RAISE EXCEPTION 'Pre-flight FAILED: only % unseeded NATIONAL_LOWER districts, need >= ${matched.length}', v_unseeded;
-  END IF;
 
-  RAISE NOTICE 'Pre-flight passed: chamber=%, unseeded districts=%', v_chamber, v_unseeded;
+  RAISE NOTICE 'Pre-flight passed: chamber=%, total NATIONAL_LOWER districts=%, unseeded=% (re-run safe via ON CONFLICT + NOT EXISTS)', v_chamber, v_total, v_unseeded;
 END $$;
 
 ${blocks}
