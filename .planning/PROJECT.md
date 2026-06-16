@@ -86,6 +86,16 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ CTC + Civic Spaces integration: `GET /api/roles/me` (unfiltered) and `POST /api/roles/check` as canonical gate endpoints; `GET /api/contributor/me` filters to 3 contributor roles only — v1.9
 - ✓ Contributor portal at `app.empowered.vote/contributor`: dashboard with role grant cards, Compass Editor (jurisdiction-scoped), Candidate Coordinator (single-politician), Essentials Editor (field-level bio editor) — v1.9
 
+### Validated (v2.15)
+
+**Milestone: v2.15 National House Rep Seeding (Tier 1)** (Phases 125–126) — shipped 2026-06-16.
+
+- ✓ USHR-01: 299 US House reps seeded (politician + office), FK-linked to `NATIONAL_LOWER` districts via `tiger_geoid`; linked reps 137→436 — Phase 125
+- ✓ USHR-02: idempotent, unseeded-only ingestion; 0 orphans; clean no-op re-run; 137 pre-existing reps untouched — Phase 125
+- ✓ USHR-03: party normalized `Democrat→Democratic`; at-large/territory/vacancy edge cases handled — Phase 125
+- ✓ USHR-04: headshots 299/299 (292 canonical congress photos + 7 Wikimedia official portraits) — Phase 126
+- ✓ USHR-05: consolidated gate `verify-phase-125-126.sql` passes; Path 0 verified across 5 states + at-large + DC — Phase 126
+
 ### Validated (v2.10 - in progress)
 
 **Milestone: v2.10 Virginia Coverage + LA County Finance** — Phase 111 complete 2026-06-10.
@@ -134,7 +144,7 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 Part of the Empowered Vote platform — a civic infrastructure project aimed at reducing political polarization and improving democratic participation.
 
-**Current state (v2.12 complete — next milestone TBD):** ~80,000 lines of TypeScript (project-wide). 118 phases shipped. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–622 applied to production. 21 live compass topics, ~1,200+ politicians with data, full role system live. CA (52 us_house + 80 assembly + 40 senate + 975 school) + DC (8 wards) + VA (100 SLDL + 40 SLDU) + MA (160 SLDL + 40 SLDU) + all 435 US House TIGER geofencing live. VA: 40 state senators + 100 delegates + 11 federal House reps + state execs with stances in DB. MA: 7 cities (Boston, Cambridge, Worcester, Springfield, Lowell, Brockton, Quincy) with 512 stances across 71 officials. FEC finance data live for all reachable federal politicians; NATIONAL_UPPER NULL count: 1 (Armstrong OK). Elections Central page live at `/elections` with Utah 2026 Primary seeded. LA County: 27 cities with full elected governing bodies; 192 officials with CAL-ACCESS finance data.
+**Current state (v2.15 complete — next: v2.16 Tier 2):** ~80,000 lines of TypeScript (project-wide). 126 phases shipped. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–769 applied to production. 21 live compass topics, ~1,500+ politicians with data, full role system live. **All 435 US House districts now resolve to a sitting rep (436 linked offices, all with headshots) — Tier 1 done; stances pending (Tier 2).** CA (52 us_house + 80 assembly + 40 senate + 975 school) + DC (8 wards) + VA (100 SLDL + 40 SLDU) + MA (160 SLDL + 40 SLDU) + all 435 US House TIGER geofencing live. VA: 40 state senators + 100 delegates + 11 federal House reps + state execs with stances in DB. MA: 7 cities (Boston, Cambridge, Worcester, Springfield, Lowell, Brockton, Quincy) with 512 stances across 71 officials. FEC finance data live for all reachable federal politicians; NATIONAL_UPPER NULL count: 1 (Armstrong OK). Elections Central page live at `/elections` with Utah 2026 Primary seeded. LA County: 27 cities with full elected governing bodies; 192 officials with CAL-ACCESS finance data.
 
 **Pilot:** Bloomington, Indiana (Monroe County). Alpha cohort is small, invite-only, likely IU students and local civic participants. Data is manually curated at pilot scale.
 
@@ -214,17 +224,24 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | `DROP FUNCTION IF EXISTS` before changing function arity | `CREATE OR REPLACE` does not remove old arity overloads — creates ambiguous set that PostgreSQL refuses to resolve. Migration 094 fixed 093 silently-failing overload. | ✓ Good — added as migration checklist item; v2.2 |
 | Layer discriminator pattern for geo_districts | Single table with `layer TEXT NOT NULL` + `UNIQUE(layer, geoid)` — adding new district types (school districts) requires no schema change. | ✓ Good — school districts added in Phase 71 with zero schema change; v2.2 |
 | Fire-and-forget backfill after res.json() | `void pool.query(...).catch(e => console.warn(...))` after response sent; `districtRows.length === 0` guard prevents re-backfilling warm users. | ✓ Good — response latency unaffected; v2.2 |
+| Federal rep ingestion: script GENERATES a reviewable SQL migration (not direct insert) | Preserves the project's auditable-migration convention for record data; dry-run coverage report before any production write. | ✓ Good — migration 739 reviewed then applied; v2.15 |
+| Bulk-seed strategy: iterate the GAP (unseeded districts), not the roster | Auto-handles already-seeded states, territories (no district rows), and surfaces genuine vacancies explicitly instead of dropping them. | ✓ Good — cleanly excluded 3 real vacancies + dup DC row; v2.15 |
+| `external_id = -(state_fips*1000 + cd)` for seeded federal reps | Deterministic, collision-free negative-id scheme (verified 0 collisions); enables idempotent ON CONFLICT + scoped office_id backfill. | ✓ Good — v2.15 |
+| Pre-flight guards "districts loaded ≥435", not "unseeded ≥N" | Orphan-prevention intent without blocking re-runs; combined with ON CONFLICT + NOT EXISTS makes the migration a clean re-run no-op. | ✓ Good — fixed mid-execution; v2.15 |
+| Congress headshots via `unitedstates.github.io/.../225x275/{bioguide}.jpg` | Authoritative bulk source matching existing 148 federal photos; HEAD-validate, find-headshots fallback for repo lag. | ✓ Good — 299/299 covered; v2.15 |
+| SECURITY DEFINER RPCs are service_role-only; never add `auth.uid()` guards | Backend calls via `adminRpc`(service_role)/`pool.query` where `auth.uid()` is NULL; identity verified at Express layer. Accidental PUBLIC EXECUTE grant is the only risk → REVOKE `authenticated`. | ✓ Good — documented for EV-Backend IDOR audit; v2.15 |
 
-## Current Milestone: v2.15 National House Rep Seeding (Tier 1)
+## Next Milestone: v2.16 (Tier 2 — House Rep Stances) — not yet scoped
 
-**Goal:** Every US resident who enters their address sees their actual sitting US House representative — seed the ~298 missing House politician + office records, FK-linked to the congressional districts that already geofence correctly (Phase 116). Stance research for these reps is Tier 2, deferred to v2.16+.
+Stance research for the 299 House reps seeded in v2.15, one state/wave at a time (rate-limit rule), ~21 topics, Chair methodology. Run `/gsd:new-milestone` to scope.
 
-**Target features:**
-- Bulk ingestion from `unitedstates/congress-legislators` `legislators-current.yaml` → `essentials.politicians` + `essentials.offices`, FK-linked to existing `NATIONAL_LOWER` districts via `tiger_geoid` (50 states + DC delegate; party normalized Democrat→Democratic; at-large/delegate edge cases handled; idempotent, unseeded-only)
-- Headshots for all newly-seeded reps (`find-headshots` skill)
-- Phase-gate verify SQL: every YAML-listed current House rep linked, Path 0 spot-checks across ≥5 states, no orphan politicians, party-normalization assertion
+---
 
-**Explicitly out of scope (→ v2.16+):** stance research for the new reps; FEC finance data (separate FINA stream).
+## Previous Milestone: v2.15 National House Rep Seeding (Tier 1) (Phases 125–126, shipped 2026-06-16)
+
+**Goal:** Every US resident who enters their address sees their actual sitting US House representative — turn the already-complete national congressional geofencing (Phase 116/v2.11) into a usable feature.
+
+**Delivered:** 299 missing US House reps seeded from `unitedstates/congress-legislators`, FK-linked to existing `NATIONAL_LOWER` districts via `tiger_geoid` (linked reps 137→436); idempotent `seed-national-house-reps.ts` + migration 739; headshots 299/299 (292 canonical congress photos via migration 769 + 7 official Wikimedia portraits via `find-headshots`); consolidated gate `verify-phase-125-126.sql` (USHR-01..05 all pass, Path 0 verified WY(at-large)/NY/TX/OH/IL + DC). 3 genuine House vacancies (FL-20/GA-13/TX-23) excluded by design; stance research deferred to v2.16 (Tier 2).
 
 ---
 
@@ -340,4 +357,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-16 — v2.15 started (National House Rep Seeding, Tier 1); v2.14 complete (Phases 120–124, 7 MA cities)*
+*Last updated: 2026-06-16 — v2.15 COMPLETE (National House Rep Seeding, Tier 1; Phases 125–126, USHR-01..05); all 435 US House districts now resolve to a sitting rep (436 linked) with headshots. Next: v2.16 Tier 2 (House rep stances).*

@@ -1,5 +1,26 @@
 # Project Milestones: Empowered Accounts
 
+## v2.15 National House Rep Seeding (Tier 1) (Shipped: 2026-06-16)
+
+**Phases completed:** 2 phases, 4 plans
+
+**Goal:** Turn the already-complete national congressional geofencing (Phase 116/v2.11) into a usable feature — every US resident's address resolves to their actual sitting US House representative.
+
+**Key accomplishments:**
+
+- Seeded the 299 missing US House representatives (politician + office records) from `unitedstates/congress-legislators`, FK-linked to existing `NATIONAL_LOWER` districts via `tiger_geoid` — linked reps went from 137 → 436 (Phase 125, migration 739).
+- Built `backend/scripts/seed-national-house-reps.ts` — idempotent, reusable ingestion script (party normalized `Democrat→Democratic`, at-large/territory/vacancy handling) that re-runs cleanly to pick up newly-seated members.
+- Headshots for all 299: 292 via the canonical `unitedstates.github.io` congress photos (migration 769) + 7 recent members via `find-headshots` from official 119th-Congress Wikimedia portraits, storage-mirrored (Phase 126).
+- Consolidated phase gate `backend/scripts/verify-phase-125-126.sql` — all USHR-01..05 assertions pass; Path 0 verified across WY (at-large), NY, TX, OH, IL + DC.
+
+**Requirements:** 5/5 closed (USHR-01..05).
+
+**Known deferred items at close:** 23 pre-existing (see STATE.md Deferred Items) — 22 historical quick-tasks + 1 stale verification gap; none from v2.15.
+
+**Carry-forward:** 3 genuine House vacancies (FL-20/GA-13/TX-23) auto-fill on a seed re-run after special elections; CA-29 has a stale Tony Cárdenas office (pre-existing v2.2 data) to clean up; stance research for the 299 new reps = Tier 2 (v2.16).
+
+---
+
 ## v2.13 MA City Council District Geofencing (Shipped: 2026-06-15)
 
 **Delivered:** Per-ward Path 0 city council geofencing for 6 MA cities — Boston, Worcester, Springfield, Lowell, Brockton, and Quincy. Each city's council district polygons imported into `geofence_boundaries` + `geo_districts`; `tiger_geoid` backfilled on all city council district rows; Path 0 verified and human-approved for all 6 cities.
@@ -55,6 +76,7 @@
 **Requirements closed:** Phase 117 (7 MA cities, all gates pass) + Phase 118 (MAGE-00..05 pass, Path 0 live)
 
 **Known patterns established:**
+
 - `BEGIN;` in one `execute_sql` call + `COMMIT;` in another = silent rollback — use auto-commit for multi-chunk idempotent migrations
 - MAGE-05 geo_id collision: geo_id '25017' is both Middlesex County (G4020) and 8th Bristol SLDL (G5220) — always add mtfcc IN ('G5210','G5220') filter when querying geofence_boundaries for state legislative layers
 - PROJ_LIB on this machine: C:\Program Files\GDAL\projlib (not C:\OSGeo4W\share\proj as documented)

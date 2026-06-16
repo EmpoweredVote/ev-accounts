@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v2.15
 milestone_name: National House Rep Seeding (Tier 1)
-status: complete
-last_updated: "2026-06-16"
-last_activity: 2026-06-16 — Phase 126 complete; verify-phase-125-126.sql all USHR-01..05 pass; milestone v2.15 COMPLETE
+status: Awaiting next milestone
+last_updated: "2026-06-16T19:48:43.266Z"
+last_activity: 2026-06-16 — Milestone v2.15 completed and archived
 progress:
   total_phases: 2
   completed_phases: 2
@@ -25,22 +25,33 @@ See: .planning/PROJECT.md (updated 2026-06-16 after v2.14 milestone complete)
 
 ## Current Position
 
-Phase: 125 — National House Rep Ingestion (COMPLETE ✅ — 2/2 plans)
-Plan: 125-01 ✅ (seed-national-house-reps.ts + generated migration 739); 125-02 ✅ (applied + verified)
-Status: USHR-01/02/03 satisfied. Migration 739 applied to production: 299 US House reps seeded, linked NATIONAL_LOWER reps 137→436. Idempotent (clean no-op re-run), 0 orphans, 0 'Democrat' rows, Path 0 verified (NY/TX/OH/IL/FL/AK/WY), CA/VA/MA untouched.
-Last activity: 2026-06-16 — Phase 125 executed inline (gsd agents not installed). 3 genuine House vacancies excluded by design (FL-20/GA-13/TX-23, confirmed absent from congress-legislators); dup DC row 1198 intentionally unlinked.
-Next: milestone v2.15 COMPLETE — run /gsd:complete-milestone to archive, then /gsd:new-milestone for v2.16 (Tier 2: stance research for the 299 new House reps).
+Phase: Milestone v2.15 complete
+Plan: —
+Status: Awaiting next milestone
+Last activity: 2026-06-16 — Milestone v2.15 completed and archived
 
 ### Phase 126 COMPLETE ✅ (2026-06-16)
+
 - 126-01 ✅: headshots 299/299 — 292 canonical `unitedstates.github.io/images/congress/225x275` (migration 769) + 7 official Wikimedia 119th-Congress portraits storage-mirrored via find-headshots [USHR-04]
 - 126-02 ✅: `backend/scripts/verify-phase-125-126.sql` — all USHR-01..05 assertions pass; Path 0 verified WY(at-large)/NY/TX/OH/IL + DC [USHR-05]
 
 ### Milestone v2.15 COMPLETE ✅ — all 5 USHR requirements closed
+
 National House rep coverage live: 137→436 linked reps, all with headshots. Permanent audit: backend/scripts/verify-phase-125-126.sql.
 
 ### Open follow-up (not blocking)
+
 - **CA-29 stale office**: district 0629 has 2 linked offices (Luz Maria Rivas + Tony Cárdenas). Cárdenas left Congress — stale office from v2.2 CA seed. Pre-existing, out of scope for Phase 125. Clean up in a quick task or fold into v2.16.
 - **3 House vacancies** (FL-20/GA-13/TX-23): re-run seed script + apply once special elections seat members (idempotent).
+
+## Deferred Items
+
+Items acknowledged and deferred at v2.15 milestone close on 2026-06-16 (all pre-existing, none from v2.15). Sweep with `/gsd:cleanup`.
+
+| Category | Item | Status |
+|----------|------|--------|
+| quick_task | 22 historical quick-task dirs (001–022) | missing status markers (mostly completed long ago) |
+| verification_gap | 1 stale verification gap (pre-v2.15 phase) | open |
 
 ## Previous Milestone Position (v2.13 — COMPLETE ✅)
 
@@ -229,9 +240,4 @@ Resume file: None
 
 ## Operator Next Steps
 
-**v2.14 is COMPLETE.** Run `/clear` before starting next milestone.
-
-- Permanent audit record: `backend/scripts/verify-phase-120-124.sql` (44 assertions, all pass)
-- All 7 MA cities: Newton, Somerville, Lynn, Fall River, Waltham, Medford, New Bedford
-- 21 requirements closed: MAOF-01..07, MAST-01..07, MAGE-16..22
-- Next: define v2.15 or next milestone via `/gsd:new-milestone`
+- Start the next milestone with /gsd-new-milestone
