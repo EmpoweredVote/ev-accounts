@@ -68,6 +68,9 @@ export interface Speaker {
   politicianId: string | null;
   politicianSlug: string | null;
   createdAt: string | null;
+  localSlug: string | null;
+  localName: string | null;
+  localRole: string | null;
 }
 
 export interface Segment {
@@ -165,6 +168,9 @@ interface SpeakerRow {
   politician_id: string | null;
   politician_slug: string | null;
   created_at: string | null;
+  local_slug: string | null;
+  local_name: string | null;
+  local_role: string | null;
 }
 
 interface SegmentRow {
@@ -253,6 +259,9 @@ function mapSpeaker(row: SpeakerRow): Speaker {
     politicianId: row.politician_id,
     politicianSlug: row.politician_slug,
     createdAt: row.created_at,
+    localSlug: row.local_slug,
+    localName: row.local_name,
+    localRole: row.local_role,
   };
 }
 
@@ -351,11 +360,13 @@ export async function getMeetingById(
   const meeting = mapMeeting(meetingRows[0]);
 
   const { rows: speakerRows } = await pool.query<SpeakerRow>(
-    `SELECT id, meeting_id, label, display_name, confidence, id_method,
-            politician_id, politician_slug, created_at
-     FROM meetings.speakers
-     WHERE meeting_id = $1
-     ORDER BY label`,
+    `SELECT sp.id, sp.meeting_id, sp.label, sp.display_name, sp.confidence, sp.id_method,
+            sp.politician_id, sp.politician_slug, sp.local_slug, sp.created_at,
+            lp.name AS local_name, lp.role AS local_role
+     FROM meetings.speakers sp
+     LEFT JOIN meetings.local_people lp ON lp.slug = sp.local_slug
+     WHERE sp.meeting_id = $1
+     ORDER BY sp.label`,
     [id]
   );
 
