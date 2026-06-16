@@ -1,4 +1,4 @@
-# Roadmap: Empowered Accounts
+﻿# Roadmap: Empowered Accounts
 
 ## Milestones
 
@@ -26,7 +26,7 @@
 - âœ… **v2.11 FEC Finance Completion + US House Geofencing** â€” Phases 114â€”116 (shipped 2026-06-12)
 - âœ… **v2.12 MA Expansion** â€” Phases 117â€”118 (shipped 2026-06-15)
 - âœ… **v2.13 MA City Council District Geofencing** â€” Phase 119 (shipped 2026-06-15)
-- 🔄 **v2.14 MA City Expansion Wave 2** â€” Phases 120â€”124 (in progress)
+- ✅ **v2.14 MA City Expansion Wave 2** — Phases 120–124 (shipped 2026-06-16)
 
 ## Phases
 
@@ -1563,4 +1563,4 @@ Plans:
 | 121. Stance Research Wave 1 (Newton/Somerville/Medford) | v2.14 | 2/2 | Complete   | 2026-06-16 |
 | 122. Stance Research Wave 2 (Lynn/Fall River/Waltham/New Bedford) | v2.14 | 3/3 | Complete ✅ | 2026-06-16 |
 | 123. Ward Geofencing — All 7 Cities | v2.14 | 4/4 | Complete ✅ | 2026-06-16 |
-| 124. Phase Gate Verification | v2.14 | 0/1 | Not started | — |
+| 124. Phase Gate Verification | v2.14 | 1/1 | Complete ✅ | 2026-06-16 |
