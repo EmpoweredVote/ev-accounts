@@ -1409,15 +1409,21 @@ Plans:
 
 **Depends on:** Phase 120 (district rows with correct geo_ids must exist before tiger_geoid backfill)
 **Requirements:** MAGE-16, MAGE-17, MAGE-18, MAGE-19, MAGE-20, MAGE-21, MAGE-22
-**Plans:** TBD
+**Plans:** 4 plans
+
+Plans:
+- [ ] 123-01-PLAN.md — Extend load-ma-ward-boundaries.ts + import ward polygons for all 7 cities (54 total)
+- [ ] 123-02-PLAN.md — Migrations 703-706: Newton/Somerville/Lynn (re-links) + Fall River (at-large, no re-links)
+- [ ] 123-03-PLAN.md — Migrations 707-709: Waltham (re-links) + Medford (at-large) + New Bedford (re-links)
+- [ ] 123-04-PLAN.md — Phase gate SQL (7 MAGE assertions) + Path 0 human verify for all 7 cities
 
 **Success Criteria** (what must be TRUE):
 
-1. Newton (MAGE-16): ward polygons imported;  backfilled on district rows; Path 0 SQL assertion returns the correct ward councillor for a Newton ward address.
-2. Somerville (MAGE-17): ward polygons imported;  backfilled; Path 0 verified.
-3. Lynn (MAGE-18), Fall River (MAGE-19), Waltham (MAGE-20): ward polygons imported;  backfilled; Path 0 verified for each city.
-4. Medford (MAGE-21), New Bedford (MAGE-22): ward polygons imported;  backfilled; Path 0 verified for each city.
-5.  returns 0 across all MA city council district rows after all backfills.
+1. Newton (MAGE-16): ward polygons imported; tiger_geoid backfilled on district rows; Path 0 SQL assertion returns the correct ward councillor for a Newton ward address.
+2. Somerville (MAGE-17): ward polygons imported; tiger_geoid backfilled; Path 0 verified.
+3. Lynn (MAGE-18), Fall River (MAGE-19), Waltham (MAGE-20): ward polygons imported; tiger_geoid backfilled; Path 0 verified for each city.
+4. Medford (MAGE-21), New Bedford (MAGE-22): ward polygons imported; tiger_geoid backfilled; Path 0 verified for each city.
+5. tiger_geoid IS NULL returns 0 across all MA city council ward district rows after all backfills.
 
 ---
 
