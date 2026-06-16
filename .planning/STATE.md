@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.14
 milestone_name: MA City Expansion Wave 2
 status: executing
-last_updated: "2026-06-16T14:00:00.000Z"
-last_activity: "2026-06-16 — Phase 123-02 executed: migrations 706-709 applied; 31 per-ward district rows (newton=8, somerville=7, lynn=7, fall-river=9) + 22 office re-links; MAGE-16..19 district+re-link steps complete"
+last_updated: "2026-06-16T07:20:00.000Z"
+last_activity: "2026-06-16 — Phase 123-03 executed: migrations 710-712 applied; 23 per-ward district rows (waltham=9, medford=8, new-bedford=6) + 15 office re-links; MAGE-20/21/22 district+re-link steps complete"
 progress:
   total_phases: 5
   completed_phases: 3
   total_plans: 10
-  completed_plans: 11
-  percent: 68
+  completed_plans: 12
+  percent: 72
 ---
 
 # Project State
@@ -28,8 +28,9 @@ See: .planning/PROJECT.md (updated 2026-06-15 after v2.13 milestone complete)
 Phase: Phase 123 — Ward Geofencing — All 7 Cities (IN PROGRESS)
 Plan: 123-01-PLAN.md ✅ COMPLETE — load-ma-ward-boundaries.ts extended (11 CITY_CONFIGS entries); 54 X0014 ward polygons loaded for all 7 cities; migrations 706-712 pre-flight guards unblocked
 Plan: 123-02-PLAN.md ✅ COMPLETE — Migrations 706-709 applied; 31 per-ward district rows (newton=8, somerville=7, lynn=7, fall-river=9) with tiger_geoid; 22 office re-links; MAGE-16/17/18/19 district steps done
-Status: Phase 123 IN PROGRESS — 123-01 ✅ 123-02 ✅; 123-03 (phase gate for remaining cities Waltham/Medford/New Bedford + all 7 cities gate) remains
-Last activity: 2026-06-16 — Phase 123-02 executed: migrations 706-709 applied; 31 per-ward district rows + 22 office re-links; all post-verification gates PASSED
+Plan: 123-03-PLAN.md ✅ COMPLETE — Migrations 710-712 applied; 23 per-ward district rows (waltham=9, medford=8, new-bedford=6) with tiger_geoid; 15 office re-links; MAGE-20/21/22 district+re-link steps done
+Status: Phase 123 COMPLETE (3 plans done) — all 7 cities geofenced; 54 total per-ward district rows + 37 total office re-links; Phase 124 gate verification next
+Last activity: 2026-06-16 — Phase 123-03 executed: migrations 710-712 applied; 23 per-ward district rows + 15 office re-links; all post-verification gates PASSED; MAGE-20/21/22 complete
 
 Phase: Phase 122 — Stance Research Wave 2: Lynn/Fall River/Waltham/New Bedford (COMPLETE ✅)
 Plan: 122-01-PLAN.md ✅ COMPLETE — Migration 701 applied; Raposo/Pereira/Hart each 1 stance; Canuel honest-skip; MAST-04 satisfied
@@ -209,8 +210,8 @@ None for v2.14 start.
 
 ## Session Continuity
 
-Last session: 2026-06-16T12:00:00.000Z
-Stopped at: Completed Phase 123-01 (load-ma-ward-boundaries.ts extended + 54 ward polygons loaded for all 7 cities)
+Last session: 2026-06-16T07:20:00.000Z
+Stopped at: Completed Phase 123-03 (migrations 710-712 applied; Waltham 9-ward + Medford 8-ward at-large + New Bedford 6-ward; MAGE-20/21/22 complete)
 Resume file: None
 
 ## Decisions
@@ -231,6 +232,9 @@ Resume file: None
 - [Phase 122-02]: Pemberton honest-skip — voted yes on parking minimums but no attributed statement found; vote alone without reasoning does not satisfy evidence-only rule
 - [Phase 122-02]: Baptiste residential-zoning=1 sourced from NB Light Feb 13 2026 article; direct quote "you gotta be crazy" meets evidence standard
 - [Phase 122-02]: Lopes public-safety-approach=4 + housing=3 both sourced from Oct 2025 NB Light candidate interviews
+- [Phase 123-03]: Migration 711 uses '2539835' (corrected Medford FIPS) NOT '2540115' (Melrose FIPS from migration 591 bug) — citywide geo_id asymmetry documented in Pitfall 4 of RESEARCH.md
+- [Phase 123-03]: Medford Step 5 omitted — charter reform 2020 creates fully at-large council; migration 711 follows 709 (Fall River) at-large pattern with 2-gate post-verification only
+- [Phase 123-03]: Waltham ward councillors are sequential (external_ids -2572600008=Ward1 through -2572600016=Ward9) — unlike Newton which is non-sequential (Pitfall 3)
 
 ## Operator Next Steps
 
