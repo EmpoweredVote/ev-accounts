@@ -94,6 +94,92 @@ describe('getMeetingById (detail payload)', () => {
   });
 });
 
+describe('getMeetingById speakers with local_people', () => {
+  // Mock speaker rows: one essentials-linked, one local-person-linked.
+  const speakerRowEssentials = {
+    id: 'sp1',
+    meeting_id: 'm1',
+    label: 'SPEAKER_00',
+    display_name: 'Alice Mayor',
+    confidence: '0.95',
+    id_method: 'exact',
+    politician_id: 'pol-uuid-1',
+    politician_slug: 'alice-mayor',
+    created_at: '2026-02-19T00:00:00Z',
+    local_slug: null,
+    local_name: null,
+    local_role: null,
+  };
+
+  const speakerRowWithLocal = {
+    id: 'sp2',
+    meeting_id: 'm1',
+    label: 'SPEAKER_01',
+    display_name: 'Jane Candidate',
+    confidence: '0.80',
+    id_method: 'predicted',
+    politician_id: null,
+    politician_slug: null,
+    created_at: '2026-02-19T00:00:00Z',
+    local_slug: 'jane-candidate',
+    local_name: 'Jane Candidate',
+    local_role: 'candidate',
+  };
+
+  it('returns localSlug/localName/localRole on speakers linked to local_people', async () => {
+    mockQuery
+      .mockResolvedValueOnce({ rows: [baseRow] })          // meeting row
+      .mockResolvedValueOnce({ rows: [speakerRowEssentials, speakerRowWithLocal] }); // speakers
+
+    const meeting = await getMeetingById('m1');
+
+    expect(meeting).not.toBeNull();
+    expect(meeting!.speakers).toHaveLength(2);
+
+    // essentials-linked speaker: local fields must be null
+    const sp0 = meeting!.speakers[0];
+    expect(sp0.politicianSlug).toBe('alice-mayor');
+    expect(sp0.localSlug).toBeNull();
+    expect(sp0.localName).toBeNull();
+    expect(sp0.localRole).toBeNull();
+
+    // local-person speaker: local fields must be populated
+    const sp1 = meeting!.speakers[1];
+    expect(sp1.politicianSlug).toBeNull();
+    expect(sp1.localSlug).toBe('jane-candidate');
+    expect(sp1.localName).toBe('Jane Candidate');
+    expect(sp1.localRole).toBe('candidate');
+  });
+
+  it('every Speaker object returned by getMeetingById includes localSlug, localName, localRole keys', async () => {
+    mockQuery
+      .mockResolvedValueOnce({ rows: [baseRow] })
+      .mockResolvedValueOnce({ rows: [speakerRowEssentials] });
+
+    const meeting = await getMeetingById('m1');
+
+    expect(meeting).not.toBeNull();
+    const keys = Object.keys(meeting!.speakers[0]);
+    expect(keys).toContain('localSlug');
+    expect(keys).toContain('localName');
+    expect(keys).toContain('localRole');
+  });
+
+  it('the getMeetingById speaker query contains LEFT JOIN meetings.local_people', async () => {
+    mockQuery
+      .mockResolvedValueOnce({ rows: [baseRow] })
+      .mockResolvedValueOnce({ rows: [] });
+
+    await getMeetingById('m1');
+
+    // Second call is the speakers query
+    const calls = mockQuery.mock.calls;
+    expect(calls.length).toBeGreaterThanOrEqual(2);
+    const speakerQueryArg = calls[1][0] as string;
+    expect(speakerQueryArg).toContain('LEFT JOIN meetings.local_people');
+  });
+});
+
 describe('meeting writes', () => {
   it('writes title, eventKind, and a null city on create', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [baseRow] });
