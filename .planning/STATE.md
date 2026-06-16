@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v2.14
 milestone_name: MA City Expansion Wave 2
 status: in_progress
-last_updated: "2026-06-15T00:00:00.000Z"
-last_activity: 2026-06-15
+last_updated: "2026-06-16T01:38:40Z"
+last_activity: 2026-06-16
 progress:
   total_phases: 5
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 3
+  completed_plans: 3
   percent: 20
 ---
 
@@ -25,11 +25,11 @@ See: .planning/PROJECT.md (updated 2026-06-15 after v2.13 milestone complete)
 
 ## Current Position
 
-Phase: Phase 121 — Stance Research Wave 1: Newton/Somerville/Medford (PLANNED ✅)
-Plan: 121-01-PLAN.md — Research Liz Mullane (only gap) + migration 700 [MAST-06]
+Phase: Phase 121 — Stance Research Wave 1: Newton/Somerville/Medford (IN PROGRESS 🔄)
+Plan: 121-01-PLAN.md ✅ COMPLETE — Migration 700 applied; Liz Mullane 6 stances + 6 context rows; MAST-06 satisfied
 Plan: 121-02-PLAN.md — Phase gate SQL assertions + MAST-01/02/06 checkboxes [MAST-01, MAST-02, MAST-06]
-Status: Phase 121 planned — 2 plans, 2 waves. MAST-01/02 already met in DB (44/45 officials covered); Liz Mullane (Medford) is sole gap
-Last activity: 2026-06-15 — Phase 121 planned; plans verified (checker: PASSED)
+Status: Phase 121 in progress — 121-01 complete; 121-02 (phase gate) remains
+Last activity: 2026-06-16 — 121-01 executed: migration 700 applied to production, 6 Liz Mullane stances verified
 
 Phase: Phase 120 — MA City Officials Seeding (COMPLETE ✅)
 Plan: 120-02 ✅
@@ -196,8 +196,8 @@ None for v2.14 start.
 
 ## Session Continuity
 
-Last session: 2026-06-15T00:00:00.000Z
-Stopped at: roadmap creation for v2.14
+Last session: 2026-06-16T01:38:40Z
+Stopped at: Phase 121 plan 01 complete — migration 700 applied; next: run 121-02 (phase gate)
 Resume file: None
 
 ## Decisions

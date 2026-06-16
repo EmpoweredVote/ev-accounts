@@ -1368,7 +1368,12 @@ Plans:
 
 **Depends on:** Phase 120 (politician records must exist as FK targets)
 **Requirements:** MAST-01, MAST-02, MAST-06
-**Plans:** TBD
+**Plans:** 2 plans (1/2 complete)
+
+Plans:
+
+- [x] 121-01-PLAN.md — Research Liz Mullane + migration 700 (MAST-06) — completed 2026-06-16
+- [ ] 121-02-PLAN.md — Phase gate SQL assertions + MAST-01/02/06 checkboxes
 
 **Success Criteria** (what must be TRUE):
 
