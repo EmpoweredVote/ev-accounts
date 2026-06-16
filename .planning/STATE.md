@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.14
 milestone_name: MA City Expansion Wave 2
 status: executing
-last_updated: "2026-06-16T12:00:00.000Z"
-last_activity: "2026-06-16 — Phase 123-01 executed: extended load-ma-ward-boundaries.ts (11 CITY_CONFIGS) + loaded 54 X0014 dissolved ward polygons for all 7 MA cities; migrations 706-712 pre-flight guards unblocked"
+last_updated: "2026-06-16T14:00:00.000Z"
+last_activity: "2026-06-16 — Phase 123-02 executed: migrations 706-709 applied; 31 per-ward district rows (newton=8, somerville=7, lynn=7, fall-river=9) + 22 office re-links; MAGE-16..19 district+re-link steps complete"
 progress:
   total_phases: 5
   completed_phases: 3
   total_plans: 10
-  completed_plans: 10
-  percent: 65
+  completed_plans: 11
+  percent: 68
 ---
 
 # Project State
@@ -27,8 +27,9 @@ See: .planning/PROJECT.md (updated 2026-06-15 after v2.13 milestone complete)
 
 Phase: Phase 123 — Ward Geofencing — All 7 Cities (IN PROGRESS)
 Plan: 123-01-PLAN.md ✅ COMPLETE — load-ma-ward-boundaries.ts extended (11 CITY_CONFIGS entries); 54 X0014 ward polygons loaded for all 7 cities; migrations 706-712 pre-flight guards unblocked
-Status: Phase 123 IN PROGRESS — 123-01 ✅ (54 ward polygons loaded); 123-02 (migrations 706-712) and 123-03 (phase gate) remain
-Last activity: 2026-06-16 — Phase 123-01 executed: extended load-ma-ward-boundaries.ts + loaded 54 dissolved ward polygons (newton=8, somerville=7, lynn=7, fall-river=9, waltham=9, medford=8, new-bedford=6)
+Plan: 123-02-PLAN.md ✅ COMPLETE — Migrations 706-709 applied; 31 per-ward district rows (newton=8, somerville=7, lynn=7, fall-river=9) with tiger_geoid; 22 office re-links; MAGE-16/17/18/19 district steps done
+Status: Phase 123 IN PROGRESS — 123-01 ✅ 123-02 ✅; 123-03 (phase gate for remaining cities Waltham/Medford/New Bedford + all 7 cities gate) remains
+Last activity: 2026-06-16 — Phase 123-02 executed: migrations 706-709 applied; 31 per-ward district rows + 22 office re-links; all post-verification gates PASSED
 
 Phase: Phase 122 — Stance Research Wave 2: Lynn/Fall River/Waltham/New Bedford (COMPLETE ✅)
 Plan: 122-01-PLAN.md ✅ COMPLETE — Migration 701 applied; Raposo/Pereira/Hart each 1 stance; Canuel honest-skip; MAST-04 satisfied
