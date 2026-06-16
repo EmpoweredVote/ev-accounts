@@ -230,6 +230,8 @@ interface BudgetRow {
   period_label: string | null;
   total_budget: string; // numeric returned as string
   data_source: string | null;
+  source_url: string | null;   // municipal attribution (non-federal fallback)
+  source_date: string | null;  // municipal attribution (non-federal fallback)
   ds_display_name: string | null;
   ds_url: string | null;
   ds_base_url: string | null;
@@ -344,12 +346,21 @@ function mapBudget(row: BudgetRow): TreasuryBudget {
     period_label: row.period_label ?? null,
     total_budget: Number(row.total_budget),
     data_source: row.data_source,
-    data_source_info: row.ds_display_name && row.ds_url ? {
-      displayName: row.ds_display_name,
-      url: row.ds_url,
-      datasetUrl: row.ds_base_url ?? null,
-      fetchedAt: row.ds_last_synced_at ?? null,
-    } : null,
+    data_source_info: row.ds_display_name && row.ds_url
+      ? {
+          displayName: row.ds_display_name,
+          url: row.ds_url,
+          datasetUrl: row.ds_base_url ?? null,
+          fetchedAt: row.ds_last_synced_at ?? null,
+        }
+      : (row.data_source && row.source_url && row.source_date)
+      ? {
+          displayName: row.data_source,
+          url: row.source_url,
+          datasetUrl: row.source_url,
+          fetchedAt: row.source_date,
+        }
+      : null,
     hierarchy: row.hierarchy,
     generated_at: row.generated_at,
     created_at: row.created_at,
@@ -476,7 +487,8 @@ export async function getBudgetsByCityId(
   if (fiscalYear !== undefined) {
     const { rows } = await pool.query<BudgetRow>(
       `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.data_source, sr.display_name AS ds_display_name, sr.url AS ds_url,
+              b.data_source, b.source_url, b.source_date,
+              sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
               b.hierarchy, b.generated_at, b.created_at, b.updated_at
        FROM treasury.budgets b
@@ -495,7 +507,8 @@ export async function getBudgetsByCityId(
 
   const { rows } = await pool.query<BudgetRow>(
     `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-            b.data_source, sr.display_name AS ds_display_name, sr.url AS ds_url,
+            b.data_source, b.source_url, b.source_date,
+            sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
             b.hierarchy, b.generated_at, b.created_at, b.updated_at
      FROM treasury.budgets b
@@ -671,7 +684,8 @@ export async function getBudgetById(
 ): Promise<(TreasuryBudget & { categories: NestedCategory[] }) | null> {
   const { rows: budgetRows } = await pool.query<BudgetRow>(
     `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-            b.data_source, sr.display_name AS ds_display_name, sr.url AS ds_url,
+            b.data_source, b.source_url, b.source_date,
+            sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
             b.hierarchy, b.generated_at, b.created_at, b.updated_at
      FROM treasury.budgets b
