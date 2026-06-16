@@ -24,9 +24,9 @@ All stances must follow Chair methodology: sourced from primary sources, real UR
 
 - [x] **MAST-01**: Sourced stances + context rows for all Newton officials (honest-skip where no record)
 - [x] **MAST-02**: Sourced stances + context rows for all Somerville officials
-- [ ] **MAST-03**: Sourced stances + context rows for all Lynn officials
+- [x] **MAST-03**: Sourced stances + context rows for all Lynn officials
 - [x] **MAST-04**: Sourced stances + context rows for all Fall River officials
-- [ ] **MAST-05**: Sourced stances + context rows for all Waltham officials
+- [x] **MAST-05**: Sourced stances + context rows for all Waltham officials
 - [x] **MAST-06**: Sourced stances + context rows for all Medford officials
 - [x] **MAST-07**: Sourced stances + context rows for all New Bedford officials
 
@@ -73,9 +73,9 @@ Continues MAGE numbering from Phase 119 (MAGE-10..15).
 | MAST-01 | Phase 121 | Complete |
 | MAST-02 | Phase 121 | Complete |
 | MAST-06 | Phase 121 | Complete |
-| MAST-03 | Phase 122 | Pending |
+| MAST-03 | Phase 122 | Complete |
 | MAST-04 | Phase 122 | Complete |
-| MAST-05 | Phase 122 | Pending |
+| MAST-05 | Phase 122 | Complete |
 | MAST-07 | Phase 122 | Complete |
 | MAGE-16 | Phase 123 | Pending |
 | MAGE-17 | Phase 123 | Pending |
