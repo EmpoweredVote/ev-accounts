@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.14
 milestone_name: MA City Expansion Wave 2
-status: in_progress
-last_updated: "2026-06-16T01:38:40Z"
-last_activity: 2026-06-16
+status: verifying
+last_updated: "2026-06-16T01:47:55.155Z"
+last_activity: "2026-06-16 — Phase 121 executed: MAST-01/02/06 gate passed; Liz Mullane (Medford) addressed via migration 700"
 progress:
   total_phases: 5
-  completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
-  percent: 20
+  completed_phases: 2
+  total_plans: 4
+  completed_plans: 4
+  percent: 40
 ---
 
 # Project State
@@ -196,7 +196,7 @@ None for v2.14 start.
 
 ## Session Continuity
 
-Last session: 2026-06-16T01:38:40Z
+Last session: 2026-06-16T01:47:55.146Z
 Stopped at: Phase 121 plan 01 complete — migration 700 applied; next: run 121-02 (phase gate)
 Resume file: None
 
