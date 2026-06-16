@@ -1463,7 +1463,11 @@ Geofencing is already complete (Phase 116/v2.11): 436 CD119 polygons + `tiger_ge
 
 **Depends on:** Phase 116 (national CD119 geofencing + `tiger_geoid` backfill — complete)
 **Requirements:** USHR-01, USHR-02, USHR-03
-**Plans:** TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 125-01-PLAN.md — Build `seed-national-house-reps.ts` (fetch YAML, map, query unseeded districts) + generate reviewable migration 734 (no apply); dry-run coverage report [USHR-01, USHR-03]
+- [ ] 125-02-PLAN.md — Apply migration 734 to production + in-phase coverage/integrity verification [USHR-01, USHR-02, USHR-03]
 
 **Success Criteria** (what must be TRUE):
 
@@ -1609,5 +1613,5 @@ Geofencing is already complete (Phase 116/v2.11): 436 CD119 polygons + `tiger_ge
 | 122. Stance Research Wave 2 (Lynn/Fall River/Waltham/New Bedford) | v2.14 | 3/3 | Complete ✅ | 2026-06-16 |
 | 123. Ward Geofencing — All 7 Cities | v2.14 | 4/4 | Complete ✅ | 2026-06-16 |
 | 124. Phase Gate Verification | v2.14 | 1/1 | Complete ✅ | 2026-06-16 |
-| 125. National House Rep Ingestion | v2.15 | 0/0 | Not started | — |
+| 125. National House Rep Ingestion | v2.15 | 0/2 | Planned | — |
 | 126. Headshots + Phase Gate Verification | v2.15 | 0/0 | Not started | — |

@@ -25,11 +25,11 @@ See: .planning/PROJECT.md (updated 2026-06-16 after v2.14 milestone complete)
 
 ## Current Position
 
-Phase: Not started — roadmap created, ready to plan Phase 125
-Plan: —
-Status: Roadmap approved (2 phases, USHR-01..05); research complete (.planning/research/SUMMARY.md)
-Last activity: 2026-06-16 — Milestone v2.15 started; requirements + roadmap approved and committed
-Next: /gsd:plan-phase 125 (National House Rep Ingestion)
+Phase: 125 — National House Rep Ingestion (PLANNED — 2 plans)
+Plan: 125-01 (build script + generate migration 734, no apply), 125-02 (apply + verify)
+Status: Plans written; ready to execute. USHR-01/02/03. Migration 734 = next free number (disk max 733; pre-flight DB MAX before generate/apply).
+Last activity: 2026-06-16 — Phase 125 planned inline (gsd agents not installed); milestone research/SUMMARY.md is the technical basis. Decision: script GENERATES a reviewable SQL migration (not direct insert).
+Next: /gsd:execute-phase 125 (or /gsd:execute-plan 125-01)
 
 ## Previous Milestone Position (v2.13 — COMPLETE ✅)
 
