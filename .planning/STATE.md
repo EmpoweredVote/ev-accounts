@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.14
 milestone_name: MA City Expansion Wave 2
-status: in_progress
-last_updated: "2026-06-16T04:30:00.000Z"
-last_activity: "2026-06-16 — Phase 122-02 executed: migration 702 applied; Baptiste (1 stance) + Lopes (2 stances) gap-filled; Pemberton honest-skip"
+status: executing
+last_updated: "2026-06-16T03:46:05.450Z"
+last_activity: "2026-06-16 — Phase 122-02 executed: migration 702 applied; 3 NB gap officials covered (2 with stances, 1 honest-skip)"
 progress:
   total_phases: 5
   completed_phases: 2
   total_plans: 7
   completed_plans: 6
-  percent: 43
+  percent: 40
 ---
 
 # Project State
@@ -202,7 +202,7 @@ None for v2.14 start.
 
 ## Session Continuity
 
-Last session: 2026-06-16T04:30:00.000Z
+Last session: 2026-06-16T03:46:05.442Z
 Stopped at: Completed Phase 122-02 (New Bedford gap-fill)
 Resume file: None
 
