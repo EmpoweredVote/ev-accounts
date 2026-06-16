@@ -4,11 +4,10 @@
 -- Purpose: Insert/upsert stance data for Liz Mullane (At-Large City Councilor,
 --   Medford MA). politician_id = '5846208f-d354-4e01-aa0c-4328574357f1'
 --
--- Context: Migration 680 was applied as an honest-skip (no evidence found at
---   that time). Subsequent research in June 2026 found two real sourced URLs
---   — the Patch candidate profile (Oct 2025) and her campaign website
---   (liz4medford.com/platform) — with attributable policy positions on six topics.
---   This migration supersedes the honest-skip by inserting those stances.
+-- Context: Migration 680 was applied as an honest-skip (no INSERT rows — no evidence
+--   found at that time). This migration (700) ADDS the stances discovered in June 2026
+--   on top of 680's empty transaction. Both 680 and 700 must remain in the migration
+--   sequence; do not skip 680 when replaying from scratch.
 --
 -- Topic scope: 6 topics with direct sourced evidence. All other topics omitted
 --   (no neutral defaults). Local/city-level topics prioritized given her role as
