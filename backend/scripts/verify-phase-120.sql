@@ -131,20 +131,36 @@ DO $$ DECLARE v_count INTEGER; BEGIN
 END $$;
 
 -- ============================================================
--- ASSERTION 8 — Structural: Zero NULL office_id across all 7 cities (MAOF-01..07 composite)
+-- ASSERTION 8 — Structural: Zero NULL office_id + zero FK orphans across all 7 cities (MAOF-01..07 composite)
 -- ============================================================
-DO $$ DECLARE v_count INTEGER; BEGIN
-  SELECT COUNT(*) INTO v_count
+DO $$ DECLARE v_null_office INTEGER; v_orphans INTEGER; BEGIN
+  -- Check 8a: politicians linked via offices whose office_id is NULL
+  SELECT COUNT(*) INTO v_null_office
   FROM essentials.politicians p
   JOIN essentials.offices o ON o.politician_id = p.id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id IN ('2545560','2562535','2537490','2523000','2572600','2539835','2545000')
     AND d.state = 'ma'
     AND p.office_id IS NULL;
-  IF v_count <> 0 THEN
-    RAISE EXCEPTION 'ASSERTION 8 FAILED [MAOF-01..07]: % politicians have NULL office_id across the 7-city batch', v_count;
+
+  -- Check 8b: politicians in these districts with NO offices row at all (FK orphans)
+  SELECT COUNT(DISTINCT p.id) INTO v_orphans
+  FROM essentials.politicians p
+  JOIN essentials.offices o2 ON o2.politician_id = p.id
+  JOIN essentials.districts d2 ON d2.id = o2.district_id
+  WHERE d2.geo_id IN ('2545560','2562535','2537490','2523000','2572600','2539835','2545000')
+    AND d2.state = 'ma'
+    AND NOT EXISTS (
+      SELECT 1 FROM essentials.offices ox WHERE ox.politician_id = p.id
+    );
+
+  IF v_null_office <> 0 THEN
+    RAISE EXCEPTION 'ASSERTION 8 FAILED [MAOF-01..07]: % politicians have NULL office_id across the 7-city batch', v_null_office;
   END IF;
-  RAISE NOTICE 'ASSERTION 8 PASSED [MAOF-01..07]: % politicians with NULL office_id (expected 0)', v_count;
+  IF v_orphans <> 0 THEN
+    RAISE EXCEPTION 'ASSERTION 8 FAILED [MAOF-01..07]: % politicians in 7-city districts have no offices row (FK orphans)', v_orphans;
+  END IF;
+  RAISE NOTICE 'ASSERTION 8 PASSED [MAOF-01..07]: % NULL office_id, % FK orphans (both expected 0)', v_null_office, v_orphans;
 END $$;
 
 -- ============================================================
