@@ -231,9 +231,17 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Congress headshots via `unitedstates.github.io/.../225x275/{bioguide}.jpg` | Authoritative bulk source matching existing 148 federal photos; HEAD-validate, find-headshots fallback for repo lag. | ✓ Good — 299/299 covered; v2.15 |
 | SECURITY DEFINER RPCs are service_role-only; never add `auth.uid()` guards | Backend calls via `adminRpc`(service_role)/`pool.query` where `auth.uid()` is NULL; identity verified at Express layer. Accidental PUBLIC EXECUTE grant is the only risk → REVOKE `authenticated`. | ✓ Good — documented for EV-Backend IDOR audit; v2.15 |
 
-## Next Milestone: v2.16 (Tier 2 — House Rep Stances) — not yet scoped
+## Current Milestone: v2.16 National House Rep Stances (Tier 2)
 
-Stance research for the 299 House reps seeded in v2.15, one state/wave at a time (rate-limit rule), ~21 topics, Chair methodology. Run `/gsd:new-milestone` to scope.
+**Goal:** The newly-seeded US House reps show sourced compass alignment in the representatives feed. v2.16 covers a bounded first chunk — the 4 largest delegations (FL 27, NY 26, PA 17, IL 17 = 87 reps) — with the remaining ~212 reps continuing in v2.17+.
+
+**Target features:**
+- Sourced stances + paired `inform.politician_context` rows (real fetched URLs) for FL/NY/PA/IL House reps, ~21 compass topics, Chair methodology
+- One rep at a time (max 2) per the rate-limit rule; honest-skip any topic with no documentable evidence (never infer from party); 1–5 stance scale texts embedded per topic
+- State-batched waves (one phase per state) via the `research-stances` skill / `politician-stance-researcher` agent
+- Phase-gate verify SQL: every in-scope rep has ≥1 sourced stance or a documented skip; zero unsourced rows
+
+**Explicitly out of scope (→ v2.17+):** the other ~212 House reps (remaining states); FEC finance for these reps (FINA stream).
 
 ---
 

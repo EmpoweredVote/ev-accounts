@@ -1,34 +1,34 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.15
-milestone_name: National House Rep Seeding (Tier 1)
-status: Awaiting next milestone
-last_updated: "2026-06-16T19:48:43.266Z"
-last_activity: 2026-06-16 — Milestone v2.15 completed and archived
+milestone: v2.16
+milestone_name: National House Rep Stances (Tier 2)
+status: planning
+last_updated: "2026-06-17T00:41:46.032Z"
+last_activity: 2026-06-17
 progress:
-  total_phases: 2
-  completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-16 after v2.14 milestone complete)
+See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.15 — National House Rep Seeding (Tier 1) (Phases 125–126)
-**Last shipped:** v2.14 MA City Expansion Wave 2 — Phases 120–124, shipped 2026-06-16. 7 MA cities seeded + stance-researched + ward-geofenced; all 21 requirements (MAOF/MAST/MAGE) closed; verify-phase-120-124.sql 44 assertions pass.
+**Current focus:** v2.16 — National House Rep Stances (Tier 2), bounded chunk: FL/NY/PA/IL (87 reps), Phases 127–131
+**Last shipped:** v2.15 National House Rep Seeding (Tier 1) — Phases 125–126, shipped 2026-06-16. 299 US House reps seeded (137→436 linked) + headshots; USHR-01..05 closed; verify-phase-125-126.sql all pass.
 
 ## Current Position
 
-Phase: Milestone v2.15 complete
+Phase: Not started (defining requirements)
 Plan: —
-Status: Awaiting next milestone
-Last activity: 2026-06-16 — Milestone v2.15 completed and archived
+Status: Defining requirements
+Last activity: 2026-06-17 — Milestone v2.16 started
 
 ### Phase 126 COMPLETE ✅ (2026-06-16)
 
