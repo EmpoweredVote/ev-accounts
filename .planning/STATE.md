@@ -6,7 +6,7 @@ status: planning
 last_updated: "2026-06-17T00:41:46.032Z"
 last_activity: 2026-06-17
 progress:
-  total_phases: 0
+  total_phases: 5
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -25,10 +25,15 @@ See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: Not started — roadmap approved, ready to plan Phase 127
 Plan: —
-Status: Defining requirements
-Last activity: 2026-06-17 — Milestone v2.16 started
+Status: v2.16 roadmap approved — 5 phases (127 FL, 128 NY, 129 PA, 130 IL, 131 gate), USHS-01..05. Bounded chunk: 4 largest delegations (FL 27 / NY 26 / PA 17 / IL 17 = 87 reps). Remaining ~212 reps → v2.17+.
+Last activity: 2026-06-17 — Milestone v2.16 started; requirements + roadmap approved
+Next: /gsd:plan-phase 127 (FL House Rep Stances)
+
+### v2.16 reminders
+- Stance research ONE rep at a time (max 2); real source URL per stance in inform.politician_context; honest-skip topics with no evidence (never infer from party); embed 1–5 scale texts per topic. Use research-stances skill / politician-stance-researcher agent.
+- In-scope reps: external_id BETWEEN -56999 AND -1000 AND representing_state IN ('FL','NY','PA','IL').
 
 ### Phase 126 COMPLETE ✅ (2026-06-16)
 
