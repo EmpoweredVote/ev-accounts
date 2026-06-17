@@ -1518,7 +1518,11 @@ In-scope reps: `essentials.politicians` with `external_id BETWEEN -56999 AND -10
 
 **Depends on:** Phase 125 (FL reps seeded)
 **Requirements:** USHS-01
-**Plans:** TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 127-01-PLAN.md — Research + ingest FL batch A (14 reps, -12001..-12014); validates 3-concurrency [USHS-01]
+- [ ] 127-02-PLAN.md — Research + ingest FL batch B (13 reps); full FL coverage check [USHS-01]
 
 **Success Criteria** (what must be TRUE):
 1. Every FL House rep (external_id -56999..-1000, representing_state='FL') has ≥1 sourced stance OR a documented honest-skip.
@@ -1710,7 +1714,7 @@ In-scope reps: `essentials.politicians` with `external_id BETWEEN -56999 AND -10
 | 124. Phase Gate Verification | v2.14 | 1/1 | Complete ✅ | 2026-06-16 |
 | 125. National House Rep Ingestion | v2.15 | 2/2 | Complete ✅ | 2026-06-16 |
 | 126. Headshots + Phase Gate Verification | v2.15 | 2/2 | Complete ✅ | 2026-06-16 |
-| 127. FL House Rep Stances | v2.16 | 0/0 | Not started | — |
+| 127. FL House Rep Stances | v2.16 | 0/2 | Planned | — |
 | 128. NY House Rep Stances | v2.16 | 0/0 | Not started | — |
 | 129. PA House Rep Stances | v2.16 | 0/0 | Not started | — |
 | 130. IL House Rep Stances | v2.16 | 0/0 | Not started | — |

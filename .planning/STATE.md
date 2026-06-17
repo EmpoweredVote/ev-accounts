@@ -25,11 +25,11 @@ See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 ## Current Position
 
-Phase: Not started — roadmap approved, ready to plan Phase 127
-Plan: —
-Status: v2.16 roadmap approved — 5 phases (127 FL, 128 NY, 129 PA, 130 IL, 131 gate), USHS-01..05. Bounded chunk: 4 largest delegations (FL 27 / NY 26 / PA 17 / IL 17 = 87 reps). Remaining ~212 reps → v2.17+.
-Last activity: 2026-06-17 — Milestone v2.16 started; requirements + roadmap approved
-Next: /gsd:plan-phase 127 (FL House Rep Stances)
+Phase: 127 — FL House Rep Stances (PLANNED — 2 plans)
+Plan: 127-01 (batch A, 14 reps, validates 3-concurrency), 127-02 (batch B, 13 reps + coverage check)
+Status: Plans written; ready to execute. USHS-01. 27 FL reps (external_id -12001..-12028 minus -12020 vacancy), all 0 stances. research-stances skill, up to 3 concurrent (validate on batch A), WebFetch-only, fetch live topics fresh (44 live, skip city topics for federal), honest-skip where no evidence.
+Last activity: 2026-06-17 — Phase 127 planned inline (gsd agents not installed)
+Next: /gsd-execute-phase 127 (or /gsd-execute-plan 127-01)
 
 ### v2.16 reminders
 - Stance research up to 3 reps concurrently (premium tier; was 1-2 on Pro — validate on FL wave 127, drop back if empty-output/429 reappears); real source URL per stance in inform.politician_context; honest-skip topics with no evidence (never infer from party); embed 1–5 scale texts per topic. Use research-stances skill / politician-stance-researcher agent.
