@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.16
 milestone_name: National House Rep Stances (Tier 2)
-status: planning
+status: in-progress
 last_updated: "2026-06-17T00:41:46.032Z"
 last_activity: 2026-06-17
 progress:
   total_phases: 5
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  completed_phases: 1
+  total_plans: 2
+  completed_plans: 2
+  percent: 20
 ---
 
 # Project State
@@ -25,11 +25,19 @@ See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 ## Current Position
 
-Phase: 127 — FL House Rep Stances (PLANNED — 2 plans)
-Plan: 127-01 (batch A, 14 reps, validates 3-concurrency), 127-02 (batch B, 13 reps + coverage check)
-Status: Plans written; ready to execute. USHS-01. 27 FL reps (external_id -12001..-12028 minus -12020 vacancy), all 0 stances. research-stances skill, up to 3 concurrent (validate on batch A), WebFetch-only, fetch live topics fresh (44 live, skip city topics for federal), honest-skip where no evidence.
-Last activity: 2026-06-17 — Phase 127 planned inline (gsd agents not installed)
-Next: /gsd-execute-phase 127 (or /gsd-execute-plan 127-01)
+Phase: 127 — FL House Rep Stances (COMPLETE ✅ — 2/2 plans, 2026-06-17)
+Plan: 127-01 ✅ (batch A, 14 reps, 186 answers) · 127-02 ✅ (batch B, 13 reps, 208 answers + coverage gate)
+Status: USHS-01 substantially met. All 27 FL House reps now have sourced stances + paired context. 394 total FL answers, 0 answers lacking sourced context, 111 quotes (110 Read-&-Rank selected). 3-concurrency VALIDATED on premium tier (no empty-output/429) — cap=3 for the rest of v2.16. 25 federal topics (44 live minus city + judicial-*). CSVs: 2026-06-17-fl-house-batch-a.csv (commit b8279aca), -batch-b.csv (commit 0512d9bf).
+Last activity: 2026-06-17 — Phase 127 executed via /gsd-execute-phase (inline orchestration; politician-stance-researcher agents, 3 concurrent)
+Next: /gsd-plan-phase 128 (NY House Rep Stances, 26 reps)
+
+### v2.16 execution notes (carry-forward for 128–130)
+- **Concurrency = 3** confirmed safe on premium tier. Two session-limit pauses occurred mid-batch (usage limit, not 429) — agents that hadn't written their CSV re-dispatched cleanly on reset.
+- **Per-rep output files → merged + RFC-4180-validated** into the batch CSV avoids the concurrent-write race on a shared file.
+- **Embed scale via a shared `_TOPIC_SCALE.txt`** (fetched live) that each agent Reads — token-efficient and satisfies the embed-fresh-texts rule.
+- **Resolve politician_id by external_id→UUID map**, not name (variants like "John H. Rutherford").
+- **ADD an explicit RFC-4180 CSV-escaping rule to every agent prompt** — 2/27 agents (Donalds, WS) emitted malformed quotes (stray/quad quotes) that broke parsing; required repair/regen.
+- house.gov / congress.gov / govtrack / clerk.house.gov consistently 403 to WebFetch; productive sources = Ballotpedia, OnTheIssues (FL/ pages), Wikipedia, LCV scorecard.
 
 ### v2.16 reminders
 - Stance research up to 3 reps concurrently (premium tier; was 1-2 on Pro — validate on FL wave 127, drop back if empty-output/429 reappears); real source URL per stance in inform.politician_context; honest-skip topics with no evidence (never infer from party); embed 1–5 scale texts per topic. Use research-stances skill / politician-stance-researcher agent.
