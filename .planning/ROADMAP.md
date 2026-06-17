@@ -1506,7 +1506,7 @@ Plans:
 
 ### v2.16 National House Rep Stances (Tier 2) (Phases 127–131)
 
-Bounded first chunk of Tier 2 stance research for the 299 reps seeded in v2.15: the 4 largest delegations — FL (27), NY (26), PA (17), IL (17) = 87 reps. One rep at a time (rate-limit rule); every stance backed by a real source URL in `inform.politician_context`; honest-skip topics with no evidence; ~21 topics, Chair methodology, via the `research-stances` skill. Remaining ~212 reps → v2.17+.
+Bounded first chunk of Tier 2 stance research for the 299 reps seeded in v2.15: the 4 largest delegations — FL (27), NY (26), PA (17), IL (17) = 87 reps. Up to 3 reps concurrently (premium tier; validate on the FL wave); every stance backed by a real source URL in `inform.politician_context`; honest-skip topics with no evidence; ~21 topics, Chair methodology, via the `research-stances` skill. Remaining ~212 reps → v2.17+.
 
 In-scope reps: `essentials.politicians` with `external_id BETWEEN -56999 AND -1000 AND representing_state IN ('FL','NY','PA','IL')`.
 

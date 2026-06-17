@@ -7,7 +7,7 @@
 The 299 US House reps seeded in v2.15 (Tier 1) currently have ZERO compass stance data. This milestone gives a bounded first chunk — the 4 largest delegations (FL, NY, PA, IL = 87 reps) — sourced compass stances so they appear with alignment data in the representatives feed. Remaining ~212 reps continue in v2.17+.
 
 **Hard constraints (project memory):**
-- Run stance research ONE rep at a time (max 2), never mass-parallel — mass launches cause rate-limit hits with empty output.
+- Run stance research at most **3 reps concurrently** (premium tier; was 1-2 on Pro). Never mass-parallel (8-13) — that causes rate-limit hits with empty output. Validate 3-concurrency on the FL wave (Phase 127); drop back if the old failure signature reappears.
 - Every stance needs ≥1 REAL fetched source URL in `inform.politician_context`. NEVER infer stances from party affiliation. Honest-skip a topic if no documentable evidence is found.
 - Embed the 1–5 stance scale texts per topic in each researcher prompt (direction varies by topic).
 - ~21 compass topics, Chair methodology. Use the `research-stances` skill / `politician-stance-researcher` agent.

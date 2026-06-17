@@ -32,7 +32,7 @@ Last activity: 2026-06-17 — Milestone v2.16 started; requirements + roadmap ap
 Next: /gsd:plan-phase 127 (FL House Rep Stances)
 
 ### v2.16 reminders
-- Stance research ONE rep at a time (max 2); real source URL per stance in inform.politician_context; honest-skip topics with no evidence (never infer from party); embed 1–5 scale texts per topic. Use research-stances skill / politician-stance-researcher agent.
+- Stance research up to 3 reps concurrently (premium tier; was 1-2 on Pro — validate on FL wave 127, drop back if empty-output/429 reappears); real source URL per stance in inform.politician_context; honest-skip topics with no evidence (never infer from party); embed 1–5 scale texts per topic. Use research-stances skill / politician-stance-researcher agent.
 - In-scope reps: external_id BETWEEN -56999 AND -1000 AND representing_state IN ('FL','NY','PA','IL').
 
 ### Phase 126 COMPLETE ✅ (2026-06-16)
