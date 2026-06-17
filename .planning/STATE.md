@@ -28,8 +28,8 @@ See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 Phase: 127 — FL House Rep Stances (COMPLETE ✅ — 2/2 plans, 2026-06-17)
 Plan: 127-01 ✅ (batch A, 14 reps, 186 answers) · 127-02 ✅ (batch B, 13 reps, 208 answers + coverage gate)
 Status: USHS-01 substantially met. All 27 FL House reps now have sourced stances + paired context. 394 total FL answers, 0 answers lacking sourced context, 111 quotes (110 Read-&-Rank selected). 3-concurrency VALIDATED on premium tier (no empty-output/429) — cap=3 for the rest of v2.16. 25 federal topics (44 live minus city + judicial-*). CSVs: 2026-06-17-fl-house-batch-a.csv (commit b8279aca), -batch-b.csv (commit 0512d9bf).
-Last activity: 2026-06-17 — Phase 127 executed via /gsd-execute-phase (inline orchestration; politician-stance-researcher agents, 3 concurrent)
-Next: /gsd-plan-phase 128 (NY House Rep Stances, 26 reps)
+Last activity: 2026-06-17 — Phase 127 executed; Phase 128 (NY, 26 reps) PLANNED inline (2 plans, batches of 13: -36001..-36013 / -36014..-36026) mirroring the validated 127 playbook
+Next: /gsd-execute-phase 128 (NY House Rep Stances, 26 reps, USHS-02)
 
 ### v2.16 execution notes (carry-forward for 128–130)
 - **Concurrency = 3** confirmed safe on premium tier. Two session-limit pauses occurred mid-batch (usage limit, not 429) — agents that hadn't written their CSV re-dispatched cleanly on reset.
