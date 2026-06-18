@@ -1598,7 +1598,10 @@ Plans:
 
 **Depends on:** Phases 127–130 complete
 **Requirements:** USHS-05
-**Plans:** TBD
+**Plans:** 0/1 plans complete
+
+Plans:
+- [ ] 131-01-PLAN.md — Write + run verify-phase-127-131.sql (USHS-01..05 assertions); permanent v2.16 audit record [USHS-05]
 
 **Success Criteria** (what must be TRUE):
 1. A `verify-phase-127-131.sql` script exists with labeled assertions (one per state + cross-cutting sourcing check).
@@ -1730,4 +1733,4 @@ Plans:
 | 128. NY House Rep Stances | v2.16 | 2/2 | Complete   | 2026-06-18 |
 | 129. PA House Rep Stances | v2.16 | 2/2 | Complete | 2026-06-18 |
 | 130. IL House Rep Stances | v2.16 | 2/2 | Complete | 2026-06-18 |
-| 131. Phase Gate Verification | v2.16 | 0/0 | Not started | — |
+| 131. Phase Gate Verification | v2.16 | 0/1 | Planned | — |
