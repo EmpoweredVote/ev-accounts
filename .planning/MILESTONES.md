@@ -1,5 +1,27 @@
 # Project Milestones: Empowered Accounts
 
+## v2.16 National House Rep Stances (Tier 2) (Shipped: 2026-06-18)
+
+**Phases completed:** 5 phases (127–131), 9 plans
+
+**Goal:** Give the newly-seeded US House reps sourced compass alignment so they appear with data in the representatives feed — bounded first chunk of the 4 largest delegations (FL 27, NY 26, PA 17, IL 17 = 87 reps).
+
+**Key accomplishments:**
+
+- Researched and ingested **1,338 sourced compass stances across 87 US House reps** (FL 394, NY 412, PA 262, IL 270), each with a paired `inform.politician_context` row carrying real fetched source URLs — **0 unsourced rows** at close.
+- Held a strict evidence-over-party standard throughout: every value matched to exact stance text and traced to a fetched URL; honest-skip per topic where no evidence; never inferred from party. Agents verified the hard cases (Fitzpatrick moderate-R, Thompson/LaHood Respect-for-Marriage-Act votes, Sorensen deportation=4 via Laken Riley) rather than defaulting to party labels.
+- Validated a reusable, token-efficient research pipeline at **3-concurrency** (premium tier): shared `_TOPIC_SCALE.txt` (25 federal topics = 44 live minus 11 city + judicial-*), `politician-stance-researcher` agents writing per-rep CSVs, external_id→UUID resolution, and a canonical re-parse(`relax_column_count`)/re-stringify CSV-repair step that absorbed every escaping artifact (quad-quotes, unwrapped quote/name fields, trailing commas) for 0-problem merges.
+- Built the reusable external_id-keyed push (`backend/data/stance-research/pa-house-a/_push.ts`) — answers + context + quotes in one transaction with suffix-aware surname leak-check.
+- Consolidated phase gate `backend/scripts/verify-phase-127-131.sql` — read-only labeled assertions for USHS-01..05, all PASS against production (87/87 covered, 0 unsourced).
+
+**Requirements:** 5/5 closed (USHS-01..05).
+
+**Carry-forward:** Remaining ~212 US House reps (all other states) → v2.17+; FEC finance for the newly-seeded reps → FINA stream. 3 genuine vacancies (FL-20/GA-13/TX-23) auto-fill on seed re-run.
+
+**Stats:** ~25 commits · 2026-06-16 → 2026-06-18 · git range `feat(127-01)` → `docs(131)`.
+
+---
+
 ## v2.15 National House Rep Seeding (Tier 1) (Shipped: 2026-06-16)
 
 **Phases completed:** 2 phases, 4 plans

@@ -28,7 +28,7 @@
 - âœ… **v2.13 MA City Council District Geofencing** â€” Phase 119 (shipped 2026-06-15)
 - ✅ **v2.14 MA City Expansion Wave 2** — Phases 120–124 (shipped 2026-06-16)
 - ✅ **v2.15 National House Rep Seeding (Tier 1)** — Phases 125–126 (shipped 2026-06-16)
-- 🔵 **v2.16 National House Rep Stances (Tier 2)** — Phases 127–131 (in progress; FL/NY/PA/IL, 87 reps)
+- ✅ **v2.16 National House Rep Stances (Tier 2)** — Phases 127–131 (shipped 2026-06-18; FL/NY/PA/IL, 87 reps, 1,338 stances)
 
 ## Phases
 
@@ -1504,114 +1504,9 @@ Plans:
 
 ---
 
-### v2.16 National House Rep Stances (Tier 2) (Phases 127–131)
+### v2.16 National House Rep Stances (Tier 2) (Phases 127–131) — ✅ SHIPPED 2026-06-18
 
-Bounded first chunk of Tier 2 stance research for the 299 reps seeded in v2.15: the 4 largest delegations — FL (27), NY (26), PA (17), IL (17) = 87 reps. Up to 3 reps concurrently (premium tier; validate on the FL wave); every stance backed by a real source URL in `inform.politician_context`; honest-skip topics with no evidence; ~21 topics, Chair methodology, via the `research-stances` skill. Remaining ~212 reps → v2.17+.
-
-In-scope reps: `essentials.politicians` with `external_id BETWEEN -56999 AND -1000 AND representing_state IN ('FL','NY','PA','IL')`.
-
----
-
-#### Phase 127: FL House Rep Stances
-
-**Goal:** All 27 Florida US House reps have sourced compass stances + paired context rows so they show alignment in the representatives feed.
-
-**Depends on:** Phase 125 (FL reps seeded)
-**Requirements:** USHS-01
-**Plans:** 2/2 plans complete
-
-Plans:
-- [x] 127-01-PLAN.md — Research + ingest FL batch A (14 reps, -12001..-12014); validates 3-concurrency [USHS-01]
-- [x] 127-02-PLAN.md — Research + ingest FL batch B (13 reps); full FL coverage check [USHS-01]
-
-**Success Criteria** (what must be TRUE):
-1. Every FL House rep (external_id -56999..-1000, representing_state='FL') has ≥1 sourced stance OR a documented honest-skip.
-2. Every stance row has a paired `inform.politician_context` row with a real (non-placeholder) source URL.
-3. No stance inferred from party affiliation; Chair methodology applied.
-4. Migration(s) applied to production; honest-skip log documents every skipped rep/topic with reason.
-
----
-
-#### Phase 128: NY House Rep Stances
-
-**Goal:** All 26 New York US House reps have sourced compass stances + context rows.
-
-**Depends on:** Phase 125 (NY reps seeded)
-**Requirements:** USHS-02
-**Plans:** 2/2 plans complete
-
-Plans:
-- [x] 128-01-PLAN.md — Research + ingest NY batch A (13 reps, -36001..-36013) [USHS-02]
-- [x] 128-02-PLAN.md — Research + ingest NY batch B (13 reps, -36014..-36026); full NY coverage check [USHS-02]
-
-**Success Criteria** (what must be TRUE):
-1. Every NY House rep has ≥1 sourced stance OR a documented honest-skip.
-2. Every stance has a paired context row with a real source URL.
-3. No party-inference; Chair methodology applied.
-4. Migration(s) applied; honest-skip log complete.
-
----
-
-#### Phase 129: PA House Rep Stances
-
-**Goal:** All 17 Pennsylvania US House reps have sourced compass stances + context rows.
-
-**Depends on:** Phase 125 (PA reps seeded)
-**Requirements:** USHS-03
-**Plans:** 2/2 plans complete ✅
-
-Plans:
-- [x] 129-01-PLAN.md — Research + ingest PA batch A (9 reps, -42001..-42009) [USHS-03]
-- [x] 129-02-PLAN.md — Research + ingest PA batch B (8 reps, -42010..-42017); full PA coverage check [USHS-03]
-
-**Success Criteria** (what must be TRUE):
-1. Every PA House rep has ≥1 sourced stance OR a documented honest-skip.
-2. Every stance has a paired context row with a real source URL.
-3. No party-inference; Chair methodology applied.
-4. Migration(s) applied; honest-skip log complete.
-
----
-
-#### Phase 130: IL House Rep Stances
-
-**Goal:** All 17 Illinois US House reps have sourced compass stances + context rows.
-
-**Depends on:** Phase 125 (IL reps seeded)
-**Requirements:** USHS-04
-**Plans:** 2/2 plans complete ✅
-
-Plans:
-- [x] 130-01-PLAN.md — Research + ingest IL batch A (9 reps, -17001..-17009) [USHS-04]
-- [x] 130-02-PLAN.md — Research + ingest IL batch B (8 reps, -17010..-17017); full IL coverage check [USHS-04]
-
-**Success Criteria** (what must be TRUE):
-1. Every IL House rep has ≥1 sourced stance OR a documented honest-skip.
-2. Every stance has a paired context row with a real source URL.
-3. No party-inference; Chair methodology applied.
-4. Migration(s) applied; honest-skip log complete.
-
----
-
-#### Phase 131: Phase Gate Verification
-
-**Goal:** All USHS-01..04 are verifiably closed via SQL assertions, producing the permanent v2.16 audit record.
-
-**Depends on:** Phases 127–130 complete
-**Requirements:** USHS-05
-**Plans:** 1/1 plans complete ✅
-
-Plans:
-- [x] 131-01-PLAN.md — Write + run verify-phase-127-131.sql (USHS-01..05 assertions); permanent v2.16 audit record [USHS-05]
-
-**Success Criteria** (what must be TRUE):
-1. A `verify-phase-127-131.sql` script exists with labeled assertions (one per state + cross-cutting sourcing check).
-2. Every in-scope rep (FL/NY/PA/IL) has ≥1 sourced stance or a documented skip in the honest-skip log.
-3. Zero `inform.politician_answers` rows for in-scope reps lack a paired `inform.politician_context` row with a real source URL.
-4. Stance count for FL/NY/PA/IL reps increases from 0 to > 0 (per rep with accessible public record).
-
----
-
----
+Bounded Tier 2 stance research for the 4 largest delegations — FL (27), NY (26), PA (17), IL (17) = 87 reps, 1,338 sourced answers, 0 unsourced. All USHS-01..05 closed; gate `backend/scripts/verify-phase-127-131.sql` PASS. Full detail archived → [milestones/v2.16-ROADMAP.md](milestones/v2.16-ROADMAP.md).
 
 ## Progress
 

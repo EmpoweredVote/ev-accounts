@@ -144,7 +144,7 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 Part of the Empowered Vote platform — a civic infrastructure project aimed at reducing political polarization and improving democratic participation.
 
-**Current state (v2.15 complete — next: v2.16 Tier 2):** ~80,000 lines of TypeScript (project-wide). 126 phases shipped. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–769 applied to production. 21 live compass topics, ~1,500+ politicians with data, full role system live. **All 435 US House districts now resolve to a sitting rep (436 linked offices, all with headshots) — Tier 1 done; stances pending (Tier 2).** CA (52 us_house + 80 assembly + 40 senate + 975 school) + DC (8 wards) + VA (100 SLDL + 40 SLDU) + MA (160 SLDL + 40 SLDU) + all 435 US House TIGER geofencing live. VA: 40 state senators + 100 delegates + 11 federal House reps + state execs with stances in DB. MA: 7 cities (Boston, Cambridge, Worcester, Springfield, Lowell, Brockton, Quincy) with 512 stances across 71 officials. FEC finance data live for all reachable federal politicians; NATIONAL_UPPER NULL count: 1 (Armstrong OK). Elections Central page live at `/elections` with Utah 2026 Primary seeded. LA County: 27 cities with full elected governing bodies; 192 officials with CAL-ACCESS finance data.
+**Current state (v2.16 complete — next: v2.17 Tier 2 continuation):** ~80,000 lines of TypeScript (project-wide). 131 phases shipped. FL/NY/PA/IL US House reps (87) now have sourced compass stances (1,338 answers, 0 unsourced; gate verify-phase-127-131.sql). Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–769 applied to production. 21 live compass topics, ~1,500+ politicians with data, full role system live. **All 435 US House districts now resolve to a sitting rep (436 linked offices, all with headshots) — Tier 1 done; stances pending (Tier 2).** CA (52 us_house + 80 assembly + 40 senate + 975 school) + DC (8 wards) + VA (100 SLDL + 40 SLDU) + MA (160 SLDL + 40 SLDU) + all 435 US House TIGER geofencing live. VA: 40 state senators + 100 delegates + 11 federal House reps + state execs with stances in DB. MA: 7 cities (Boston, Cambridge, Worcester, Springfield, Lowell, Brockton, Quincy) with 512 stances across 71 officials. FEC finance data live for all reachable federal politicians; NATIONAL_UPPER NULL count: 1 (Armstrong OK). Elections Central page live at `/elections` with Utah 2026 Primary seeded. LA County: 27 cities with full elected governing bodies; 192 officials with CAL-ACCESS finance data.
 
 **Pilot:** Bloomington, Indiana (Monroe County). Alpha cohort is small, invite-only, likely IU students and local civic participants. Data is manually curated at pilot scale.
 
@@ -231,17 +231,20 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Congress headshots via `unitedstates.github.io/.../225x275/{bioguide}.jpg` | Authoritative bulk source matching existing 148 federal photos; HEAD-validate, find-headshots fallback for repo lag. | ✓ Good — 299/299 covered; v2.15 |
 | SECURITY DEFINER RPCs are service_role-only; never add `auth.uid()` guards | Backend calls via `adminRpc`(service_role)/`pool.query` where `auth.uid()` is NULL; identity verified at Express layer. Accidental PUBLIC EXECUTE grant is the only risk → REVOKE `authenticated`. | ✓ Good — documented for EV-Backend IDOR audit; v2.15 |
 
-## Current Milestone: v2.16 National House Rep Stances (Tier 2)
+## Current State: v2.16 complete — next: v2.17 (Tier 2 continuation)
 
-**Goal:** The newly-seeded US House reps show sourced compass alignment in the representatives feed. v2.16 covers a bounded first chunk — the 4 largest delegations (FL 27, NY 26, PA 17, IL 17 = 87 reps) — with the remaining ~212 reps continuing in v2.17+.
+v2.16 shipped 2026-06-18. The 4 largest US House delegations now show sourced compass alignment.
+**Next milestone (v2.17, not yet scoped):** stance research for the remaining ~212 US House reps
+(all other states). Run `/gsd-new-milestone` to scope it. Reusable playbook is proven across
+FL/NY/PA/IL — see STATE.md "v2.16 execution notes" and `backend/data/stance-research/pa-house-a/_push.ts`.
 
-**Target features:**
-- Sourced stances + paired `inform.politician_context` rows (real fetched URLs) for FL/NY/PA/IL House reps, ~21 compass topics, Chair methodology
-- One rep at a time (max 2) per the rate-limit rule; honest-skip any topic with no documentable evidence (never infer from party); 1–5 stance scale texts embedded per topic
-- State-batched waves (one phase per state) via the `research-stances` skill / `politician-stance-researcher` agent
-- Phase-gate verify SQL: every in-scope rep has ≥1 sourced stance or a documented skip; zero unsourced rows
+---
 
-**Explicitly out of scope (→ v2.17+):** the other ~212 House reps (remaining states); FEC finance for these reps (FINA stream).
+## Previous Milestone: v2.16 National House Rep Stances (Tier 2) (Phases 127–131, shipped 2026-06-18)
+
+**Goal:** The newly-seeded US House reps show sourced compass alignment in the representatives feed — bounded first chunk: the 4 largest delegations (FL 27, NY 26, PA 17, IL 17 = 87 reps).
+
+**Delivered:** All 5 requirements closed (USHS-01..05); 9 plans. **87/87 in-scope reps covered, 1,338 sourced answers, 0 unsourced** (FL 394 + NY 412 + PA 262 + IL 270). Every stance backed by a real fetched URL in `inform.politician_context`; evidence-over-party throughout (verified RFMA votes, purple-district deportation calibrations, no party-inference). Consolidated gate `backend/scripts/verify-phase-127-131.sql` — all USHS-01..05 assertions PASS against production. 3 genuine vacancies (FL-20/GA-13/TX-23) and 137 pre-existing reps correctly excluded. Methodology validated at 3-concurrency: shared `_TOPIC_SCALE.txt` (25 federal topics), external_id→UUID push, canonical CSV re-parse/re-stringify before merge. Remaining ~212 reps → v2.17+.
 
 ---
 
