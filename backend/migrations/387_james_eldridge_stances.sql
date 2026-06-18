@@ -1,0 +1,275 @@
+-- ============================================================================
+-- Migration 387: James B. Eldridge Stances
+-- ============================================================================
+-- Purpose: Insert/upsert stance data for James B. Eldridge (MA State Senator, 25D12).
+--
+-- Topic scope: All active compass topics attempted; evidence-only — topics with
+--   no evidence are omitted entirely (no neutral defaults per D-01).
+--
+-- Idempotency: ON CONFLICT (politician_id, topic_id) DO UPDATE on both tables.
+-- Apply to remote Supabase via Supabase MCP (mcp__supabase-local is remote production).
+-- ============================================================================
+
+-- Topic UUID reference (inform.compass_topics):
+-- abortion                         af2fdfd6-02c4-49df-b09c-cf8536f4773f
+-- ai-regulation                    666bf03d-81fc-4138-ab15-69ae734c9023
+-- campaign-finance                 92730f69-ae57-401c-8ad1-2d07834a895d
+-- childcare                        c1ac1330-47f7-44ec-baf3-c913d926b97c
+-- city-sanitation                  7687de4f-4d0b-462a-b803-bdfb23b16b42
+-- civil-rights                     0bc588c6-39e1-4084-b5de-cac909b8b762
+-- climate-change                   f1e44d66-5d27-4b51-b54f-b7ace86f6a3c
+-- data-centers                     4559b513-0fd8-4ed1-babd-f3b554162f40
+-- deportation                      44905f3b-e105-4f6c-afc7-5d223813dbac
+-- economic-development             eb3d1247-0de1-4b7f-baec-7259861efd53
+-- fossil-fuels                     a22215c3-6693-4bc2-b248-01aebba14570
+-- growth-and-development           fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4
+-- healthcare                       e8dad4a8-eb93-4931-91f5-d8fb5d7dd529
+-- homelessness                     4938766b-b45a-46e3-93bd-b8b30651271a
+-- homelessness-response            6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f
+-- housing                          669cac97-66a6-4087-b036-936fbe62efb3
+-- immigration                      4e2c69ce-591e-4197-9cd5-7aceff79d390
+-- jail-capacity                    c267e137-0ff9-4e7d-9d13-e3cea1756cd0
+-- judicial-access-to-justice       9d45acaf-1ba4-4cb8-95e1-5ed985223b91
+-- judicial-bail-pretrial           1fab5edf-6151-4da0-9704-a7f2113ba54c
+-- judicial-criminal-justice        9db07b16-1076-4b7d-ad89-ebe7b51f4336
+-- judicial-government-deference    e5e48f0e-8f3a-40e1-8080-889fea389603
+-- judicial-interpretation          448b1c9a-b6f3-42b8-8f39-d3bbb5bfa9ee
+-- judicial-police-accountability   7bad33eb-e93e-4d94-8822-97212d49bde5
+-- judicial-prosecution-priorities  abb99d95-cbb1-4617-8f8b-f220ef6028ca
+-- judicial-transparency            6674d87e-999d-433a-aab7-3f626f59fd5f
+-- local-environment                1935979c-b290-42e4-baa5-8cb0138b4ffa
+-- local-immigration                b9ccee94-ad96-4f10-b655-889d8e5abe92
+-- medicare/aid                     cab61e8a-64fe-4bbd-bc08-fe9914d0091b
+-- misinformation                   ddd65d64-9dc7-4208-a30f-59f4b9c0653d
+-- public-safety-approach           e9ebefcd-c496-45e8-b816-a79f8442ba85
+-- redistricting                    48cc9585-ec22-4f53-8d42-6839828dd36f
+-- religious-freedom                6b9ba6d9-1001-43f5-b073-4d37130696fd
+-- rent-regulation                  c308e8e8-caac-44f5-ab04-dbfecf40bbe2
+-- residential-zoning               d4f18138-a2e0-4110-b925-7387d9d0d16d
+-- same-sex-marriage                c5ab4eab-702f-49b8-9277-8ea53f3835c6
+-- school-vouchers                  00b95a6a-75db-4521-b523-3326bba938de
+-- social-security                  87d20824-a6e9-407b-983c-65440084a0ab
+-- tariffs                          683c8084-2281-4920-a07c-18439b2dd413
+-- taxes                            f7e5678d-dadd-4556-a2fc-446e24642ceb
+-- trans-athletes                   d1618b9c-0b9e-45af-b986-bb33d270b8e4
+-- transportation-priorities        ba59337e-30e2-4aba-a39a-426b3366eb27
+-- ukraine-support                  24e9212c-b011-422a-865c-093e35050901
+-- voting-rights                    d1792200-1d3b-4955-a0b7-0e6980d7a7b2
+
+BEGIN;
+
+-- James B. Eldridge (25D12, external_id=-210012)
+-- Politician UUID: 9ed1b75f-a314-4241-87ff-231de4aba963
+
+-- ----- James B. Eldridge / abortion -----
+INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        'af2fdfd6-02c4-49df-b09c-cf8536f4773f',
+        1.0)
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET value = EXCLUDED.value;
+
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        'af2fdfd6-02c4-49df-b09c-cf8536f4773f',
+        $$James B. Eldridge has been a champion for reproductive rights throughout his career in the Massachusetts legislature. He voted for the ROE Act in 2020 and backed subsequent legislation protecting abortion access. As a progressive representing the Middlesex and Worcester district including Acton and Marlborough, he has consistently been among the strongest voices defending abortion rights and reproductive healthcare as fundamental rights.$$,
+        ARRAY['https://malegislature.gov/Legislators/Profile/JBE0', 'https://ballotpedia.org/James_Eldridge']::text[]::text[])
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
+
+-- ----- James B. Eldridge / campaign-finance -----
+INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        '92730f69-ae57-401c-8ad1-2d07834a895d',
+        1.0)
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET value = EXCLUDED.value;
+
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        '92730f69-ae57-401c-8ad1-2d07834a895d',
+        $$James B. Eldridge has been one of the most vocal advocates for campaign finance reform in Massachusetts. He has sponsored legislation to establish a small-dollar public matching system for state elections, reduce contribution limits, and increase transparency. He has supported the creation of a voter-owned elections system and has been a consistent critic of the influence of large donors and corporate money on state politics.$$,
+        ARRAY['https://malegislature.gov/Legislators/Profile/JBE0', 'https://ballotpedia.org/James_Eldridge']::text[]::text[])
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
+
+-- ----- James B. Eldridge / civil-rights -----
+INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        '0bc588c6-39e1-4084-b5de-cac909b8b762',
+        1.0)
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET value = EXCLUDED.value;
+
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        '0bc588c6-39e1-4084-b5de-cac909b8b762',
+        $$James B. Eldridge has been a leading civil rights advocate in the Massachusetts Senate, championing LGBTQ+ rights, racial justice, immigrant rights, and anti-discrimination protections. He was a key sponsor of the Transgender Anti-Discrimination Bill and has backed marriage equality, hate crime protections, and criminal justice reform. He served as chair of the Joint Committee on the Judiciary, where he advanced several civil rights measures.$$,
+        ARRAY['https://malegislature.gov/Legislators/Profile/JBE0', 'https://ballotpedia.org/James_Eldridge']::text[]::text[])
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
+
+-- ----- James B. Eldridge / climate-change -----
+INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        'f1e44d66-5d27-4b51-b54f-b7ace86f6a3c',
+        1.0)
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET value = EXCLUDED.value;
+
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        'f1e44d66-5d27-4b51-b54f-b7ace86f6a3c',
+        $$James B. Eldridge has been a consistent champion for aggressive climate action in Massachusetts. He backed the 2021 Climate Act and has pushed for stronger climate policies. He has supported fossil fuel infrastructure restrictions, building electrification mandates, and clean energy expansion. He has linked climate policy with economic justice and has advocated for green jobs as an economic development strategy for his district.$$,
+        ARRAY['https://malegislature.gov/Legislators/Profile/JBE0', 'https://malegislature.gov/Bills/192/S9']::text[]::text[])
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
+
+-- ----- James B. Eldridge / fossil-fuels -----
+INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        'a22215c3-6693-4bc2-b248-01aebba14570',
+        1.0)
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET value = EXCLUDED.value;
+
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        'a22215c3-6693-4bc2-b248-01aebba14570',
+        $$James B. Eldridge has consistently opposed fossil fuel expansion and backed transition to clean energy. He has supported banning fossil fuel hookups in new buildings, opposed new natural gas infrastructure, and championed clean energy standards. He has backed fossil fuel divestment for state pension funds and has been a vocal critic of natural gas and oil industry influence on Massachusetts energy policy.$$,
+        ARRAY['https://malegislature.gov/Legislators/Profile/JBE0', 'https://malegislature.gov/Bills/192/S9']::text[]::text[])
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
+
+-- ----- James B. Eldridge / healthcare -----
+INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        'e8dad4a8-eb93-4931-91f5-d8fb5d7dd529',
+        1.0)
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET value = EXCLUDED.value;
+
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        'e8dad4a8-eb93-4931-91f5-d8fb5d7dd529',
+        $$James B. Eldridge has supported expanding healthcare access as a right, including backing single-payer healthcare studies and MassHealth expansions. He has championed mental health parity and behavioral health reform. He served on the Joint Committee on Healthcare Financing and has backed legislation to control drug prices, expand coverage, and address healthcare inequities. He supports universal healthcare coverage.$$,
+        ARRAY['https://malegislature.gov/Legislators/Profile/JBE0', 'https://ballotpedia.org/James_Eldridge']::text[]::text[])
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
+
+-- ----- James B. Eldridge / housing -----
+INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        '669cac97-66a6-4087-b036-936fbe62efb3',
+        1.0)
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET value = EXCLUDED.value;
+
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        '669cac97-66a6-4087-b036-936fbe62efb3',
+        $$James B. Eldridge has been a strong advocate for affordable housing, tenant protections, and housing production. He backed the Affordable Homes Act and has sponsored legislation for zoning reform to increase housing production. He has supported tenant protections including just-cause eviction and rent stabilization proposals, and has been a key voice for affordable housing in the Acton-Marlborough area. He has consistently prioritized housing affordability over unrestricted market development.$$,
+        ARRAY['https://malegislature.gov/Legislators/Profile/JBE0', 'https://malegislature.gov/Bills/193/SD3030']::text[]::text[])
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
+
+-- ----- James B. Eldridge / immigration -----
+INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        '4e2c69ce-591e-4197-9cd5-7aceff79d390',
+        1.0)
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET value = EXCLUDED.value;
+
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        '4e2c69ce-591e-4197-9cd5-7aceff79d390',
+        $$James B. Eldridge has been a champion for immigrant rights in the Massachusetts legislature. He was a key sponsor of the Work and Family Mobility Act and the TRUST Act limiting ICE cooperation. He has backed expanded access to public services for undocumented residents, opposed anti-immigrant rhetoric, and advocated for a humane immigration system. He has been recognized by immigrant rights organizations for his consistent advocacy.$$,
+        ARRAY['https://malegislature.gov/Bills/192/S2684', 'https://malegislature.gov/Legislators/Profile/JBE0']::text[]::text[])
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
+
+-- ----- James B. Eldridge / public-safety-approach -----
+INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        'e9ebefcd-c496-45e8-b816-a79f8442ba85',
+        1.0)
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET value = EXCLUDED.value;
+
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        'e9ebefcd-c496-45e8-b816-a79f8442ba85',
+        $$James B. Eldridge has been a leading advocate for criminal justice reform and alternatives to incarceration. He served as chair of the Joint Committee on the Judiciary and championed bail reform, decarceration, and police accountability. He backed the 2020 Police Reform Act and has pushed for even more comprehensive reforms. He has advocated for addressing root causes of crime through investment in communities, education, and mental health services rather than increased policing.$$,
+        ARRAY['https://malegislature.gov/Legislators/Profile/JBE0', 'https://malegislature.gov/Bills/191/H4886']::text[]::text[])
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
+
+-- ----- James B. Eldridge / redistricting -----
+INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        '48cc9585-ec22-4f53-8d42-6839828dd36f',
+        1.0)
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET value = EXCLUDED.value;
+
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        '48cc9585-ec22-4f53-8d42-6839828dd36f',
+        $$James B. Eldridge has advocated for independent redistricting reform to remove partisan influence from the process of drawing legislative district lines. He has backed establishing an independent redistricting commission for Massachusetts to ensure fair representation and reduce gerrymandering. This has been a consistent good-government reform priority for him.$$,
+        ARRAY['https://malegislature.gov/Legislators/Profile/JBE0', 'https://ballotpedia.org/James_Eldridge']::text[]::text[])
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
+
+-- ----- James B. Eldridge / taxes -----
+INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        'f7e5678d-dadd-4556-a2fc-446e24642ceb',
+        1.0)
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET value = EXCLUDED.value;
+
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        'f7e5678d-dadd-4556-a2fc-446e24642ceb',
+        $$James B. Eldridge has been a strong supporter of progressive taxation and was an early champion of the Fair Share Amendment. He has backed increasing taxes on corporations and wealthy individuals to fund public investments in education, healthcare, and climate. He has opposed tax cuts for the wealthy and corporate tax preferences, arguing the state must invest in its people and communities.$$,
+        ARRAY['https://malegislature.gov/Legislators/Profile/JBE0', 'https://ballotpedia.org/Massachusetts_Question_1,_Income_Tax_for_Education_and_Transportation_Amendment_(2022)']::text[]::text[])
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
+
+-- ----- James B. Eldridge / voting-rights -----
+INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        'd1792200-1d3b-4955-a0b7-0e6980d7a7b2',
+        1.0)
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET value = EXCLUDED.value;
+
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+VALUES ('9ed1b75f-a314-4241-87ff-231de4aba963',
+        'd1792200-1d3b-4955-a0b7-0e6980d7a7b2',
+        $$James B. Eldridge has been a tireless advocate for expanding voting rights in Massachusetts. He backed the VOTES Act, automatic voter registration, same-day registration, and has sponsored legislation to allow municipalities to permit non-citizen voting in local elections. He has championed open primaries and election reform. Voting rights and democratic participation have been a core issue throughout his legislative career.$$,
+        ARRAY['https://malegislature.gov/Bills/192/S2545', 'https://malegislature.gov/Legislators/Profile/JBE0']::text[]::text[])
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
+
+COMMIT;
+
+-- ============================================================================
+-- Verification queries (run after applying):
+-- ============================================================================
+--
+-- Row count for this politician (must be >= 12 topics):
+-- SELECT COUNT(*) FROM inform.politician_answers WHERE politician_id = '9ed1b75f-a314-4241-87ff-231de4aba963';
+--
+-- Context pairing (must return 0 — every answer must have a context row):
+-- SELECT COUNT(*) FROM inform.politician_answers pa
+-- LEFT JOIN inform.politician_context pc
+--   ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id
+-- WHERE pa.politician_id = '9ed1b75f-a314-4241-87ff-231de4aba963'
+--   AND pc.politician_id IS NULL;
+--
+-- Citation check (must return 0 — every context row must have sources):
+-- SELECT COUNT(*) FROM inform.politician_context
+-- WHERE politician_id = '9ed1b75f-a314-4241-87ff-231de4aba963'
+--   AND (sources IS NULL OR array_length(sources, 1) IS NULL OR array_length(sources, 1) = 0);
