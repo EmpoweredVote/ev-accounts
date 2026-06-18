@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.16
 milestone_name: National House Rep Stances (Tier 2)
-status: in-progress
-last_updated: "2026-06-17T00:41:46.032Z"
-last_activity: 2026-06-17
+status: complete
+last_updated: "2026-06-18T00:00:00.000Z"
+last_activity: 2026-06-18
 progress:
   total_phases: 5
-  completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
-  percent: 40
+  completed_phases: 5
+  total_plans: 9
+  completed_plans: 9
+  percent: 100
 ---
 
 # Project State
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 ## Current Position
 
-Phase: 130 — IL House Rep Stances (COMPLETE ✅ — 2/2 plans, 2026-06-18)
-Plan: 130-01 ✅ (batch A, 9 reps, 157 answers) · 130-02 ✅ (batch B, 8 reps, 113 answers + coverage gate)
-Status: USHS-04 substantially met. All 17 IL House reps now have sourced stances + paired context. 270 total IL answers, 0 answers lacking sourced context, 68 quotes. CSVs: 2026-06-18-il-house-batch-a.csv (commit a66d5dc8), -batch-b.csv (commit 0f9e1ac3). IL = FIPS 17 (external_id -17001..-17017).
-Prior: Phase 129 ✅ (PA, 17 reps, 262 answers, USHS-03 — 24e47925/f8f76385). Phase 128 ✅ (NY, 26 reps, 412, USHS-02). Phase 127 ✅ (FL, 27 reps, 394, USHS-01).
-Last activity: 2026-06-18 — Phase 130 executed via /gsd-execute-phase (inline; 3-concurrency held, no session-limit pauses). Escaping carryforward worked: García name-field quotes + Bost/Krishnamoorthi quad-quote/unwrapped-quote artifacts all caught by the `""""`→`"""` pre-collapse + canonical re-parse/re-stringify step; both merges 0 problems. Reps 127–130 (FL/NY/PA/IL = 87) all done.
-Next: /gsd-execute-phase 131 (Phase Gate Verification, USHS-05 — SQL assertions for USHS-01..04, permanent v2.16 audit record). NOTE: 131 is currently 0/0 plans (Not started) — run /gsd-plan-phase 131 first.
+Phase: 131 — Phase Gate Verification (COMPLETE ✅ — 1/1 plan, 2026-06-18) — MILESTONE v2.16 COMPLETE
+Plan: 131-01 ✅ — backend/scripts/verify-phase-127-131.sql; ran against production, ALL USHS-01..05 PASS (exit 0). Commit 77632c12.
+Status: v2.16 (US House Rep Stances Tier 2) DONE. 87/87 in-scope FL/NY/PA/IL reps covered, 1,338 sourced answers (FL 394 + NY 412 + PA 262 + IL 270), 0 unsourced. Gate: FL 27/27, NY 26/26, PA 17/17, IL 17/17.
+Prior: 130 ✅ (IL, 270, USHS-04 — a66d5dc8/0f9e1ac3). 129 ✅ (PA, 262, USHS-03). 128 ✅ (NY, 412, USHS-02). 127 ✅ (FL, 394, USHS-01).
+Last activity: 2026-06-18 — Phase 131 executed via /gsd-execute-phase (inline; read-only psql gate, all assertions pass first run). Milestone v2.16 closed.
+Next: Run /gsd-complete-milestone to archive v2.16. Then v2.17+ for remaining ~212 US House reps (Tier 2 continuation). Permanent audit: backend/scripts/verify-phase-127-131.sql.
 
 ### v2.16 execution notes (carry-forward for 128–130)
 - **Concurrency = 3** confirmed safe on premium tier. Two session-limit pauses occurred mid-batch (usage limit, not 429) — agents that hadn't written their CSV re-dispatched cleanly on reset.
