@@ -1,0 +1,8 @@
+-- Migration 745: Katrina Manning (Hawthorne Council) Stances
+-- Phase 133 — Hawthorne. Katrina Manning, external_id -700351, UUID fc64110f-80f5-43a8-b5c2-f814219024fc.
+BEGIN;
+INSERT INTO inform.politician_answers (politician_id, topic_id, value) VALUES ('fc64110f-80f5-43a8-b5c2-f814219024fc','6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f',2.0) ON CONFLICT (politician_id, topic_id) DO UPDATE SET value=EXCLUDED.value;
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources) VALUES ('fc64110f-80f5-43a8-b5c2-f814219024fc','6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f',$$Council Member Manning has made helping the homeless a stated priority since her 2022 election, favoring a services-oriented response to homelessness.$$,ARRAY['https://lasentinel.net/manning-brings-passion-to-serve-others-as-hawthorne-councilmember.html']::text[]::text[]) ON CONFLICT (politician_id, topic_id) DO UPDATE SET reasoning=EXCLUDED.reasoning, sources=EXCLUDED.sources;
+INSERT INTO inform.politician_answers (politician_id, topic_id, value) VALUES ('fc64110f-80f5-43a8-b5c2-f814219024fc','eb3d1247-0de1-4b7f-baec-7259861efd53',2.0) ON CONFLICT (politician_id, topic_id) DO UPDATE SET value=EXCLUDED.value;
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources) VALUES ('fc64110f-80f5-43a8-b5c2-f814219024fc','eb3d1247-0de1-4b7f-baec-7259861efd53',$$Manning lists economic development among her core council priorities for Hawthorne.$$,ARRAY['https://lasentinel.net/manning-brings-passion-to-serve-others-as-hawthorne-councilmember.html']::text[]::text[]) ON CONFLICT (politician_id, topic_id) DO UPDATE SET reasoning=EXCLUDED.reasoning, sources=EXCLUDED.sources;
+COMMIT;
