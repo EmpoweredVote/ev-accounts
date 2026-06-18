@@ -124,12 +124,14 @@ router.post('/elections-by-area', optionalAuth, async (req: Request, res: Respon
       return;
     }
 
-    const { geoIds, stateAbbrev } = await getOverlappingGeoIdsForArea(geo_id.trim(), mtfcc.trim());
+    const { geoPairs, stateAbbrev } = await getOverlappingGeoIdsForArea(geo_id.trim(), mtfcc.trim());
 
-    const dataStatus = geoIds.length === 0 ? 'no-geofence-data' : 'fresh';
+    const dataStatus = geoPairs.length === 0 ? 'no-geofence-data' : 'fresh';
     res.setHeader('X-Data-Status', dataStatus);
 
-    const elections = await getElectionsByGeoIds(geoIds, stateAbbrev);
+    // Pass (geo_id, mtfcc) pairs so the elections lookup applies the MTFCC guard
+    // and does not leak colliding 5-digit GEOIDs (e.g. Iron County vs Senate 21).
+    const elections = await getElectionsByGeoIds(geoPairs, stateAbbrev);
     res.status(200).json({ elections });
   } catch (err) {
     console.error('[POST /essentials/browse/elections-by-area] error:', err);

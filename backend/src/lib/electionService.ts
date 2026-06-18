@@ -1,4 +1,5 @@
 import { pool } from './db.js';
+import { MTFCC_DISTRICT_TYPE_GUARD, type GeoPair } from './geoIdGuard.js';
 
 // ANTIPARTISAN RATIONALE: party excluded from candidate records.
 // Party context for primary elections lives on the RACE (races.primary_party), never on candidates.
@@ -355,14 +356,20 @@ export async function getCandidateById(candidateId: string): Promise<CandidateDe
  * - Statewide races (office_id IS NULL): matched by e.state = state
  */
 export async function getElectionsByGeoIds(
-  geoIds: (string | null | undefined)[],
+  geoPairs: (GeoPair | null | undefined)[],
   state: string | null | undefined
 ): Promise<ElectionResult[]> {
-  const activeGeoIds = geoIds.filter((g): g is string => !!g);
+  // Drop empties and any pair missing its MTFCC (without it we cannot safely
+  // disambiguate colliding 5-digit GEOIDs, so it must not match by geo_id alone).
+  const activePairs = geoPairs.filter(
+    (p): p is GeoPair => !!p && !!p.geo_id && !!p.mtfcc
+  );
+  const pairGeoIds = activePairs.map((p) => p.geo_id);
+  const pairMtfccs = activePairs.map((p) => p.mtfcc);
 
   let districtRows: ElectionRow[] = [];
 
-  if (activeGeoIds.length > 0) {
+  if (activePairs.length > 0) {
     const districtQueryText = `
       SELECT DISTINCT
         e.id           AS election_id,
@@ -394,14 +401,15 @@ export async function getElectionsByGeoIds(
       ) pi ON rc.politician_id IS NOT NULL
       JOIN essentials.offices o ON o.id = r.office_id
       JOIN essentials.districts d ON d.id = o.district_id
-      WHERE d.geo_id = ANY($1::text[])
-        AND (
+      JOIN unnest($1::text[], $2::text[]) AS gp(geo_id, mtfcc)
+        ON gp.geo_id = d.geo_id AND ${MTFCC_DISTRICT_TYPE_GUARD}
+      WHERE (
           (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
           OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
         )
       ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
     `;
-    const result = await pool.query<ElectionRow>(districtQueryText, [activeGeoIds]);
+    const result = await pool.query<ElectionRow>(districtQueryText, [pairGeoIds, pairMtfccs]);
     districtRows = result.rows;
   }
 
