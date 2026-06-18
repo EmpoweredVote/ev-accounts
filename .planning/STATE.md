@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 ## Current Position
 
-Phase: 128 — NY House Rep Stances (COMPLETE ✅ — 2/2 plans, 2026-06-17)
-Plan: 128-01 ✅ (batch A, 13 reps, 201 answers) · 128-02 ✅ (batch B, 13 reps, 211 answers + coverage gate)
-Status: USHS-02 substantially met. All 26 NY House reps now have sourced stances + paired context. 412 total NY answers, 0 answers lacking sourced context, 138 quotes (136 RR-selected). CSVs: 2026-06-17-ny-house-batch-a.csv (commit fbd3767f), -batch-b.csv (commit 52b583a5).
-Prior: Phase 127 ✅ (FL, 27 reps, 394 answers, USHS-01) — CSVs commits b8279aca / 0512d9bf.
-Last activity: 2026-06-17 — Phase 128 executed via /gsd-execute-phase (inline; 3-concurrency held; 1 CSV-escaping repair vs 2 in FL — the per-prompt escaping rule helped)
-Next: /gsd-execute-phase 129 (PA House Rep Stances, 17 reps, USHS-03 — PLANNED: 129-01 batch A 9 reps -42001..-42009, 129-02 batch B 8 reps -42010..-42017). Then 130 (IL, 17, USHS-04), 131 (gate).
+Phase: 129 — PA House Rep Stances (COMPLETE ✅ — 2/2 plans, 2026-06-18)
+Plan: 129-01 ✅ (batch A, 9 reps, 136 answers) · 129-02 ✅ (batch B, 8 reps, 126 answers + coverage gate)
+Status: USHS-03 substantially met. All 17 PA House reps now have sourced stances + paired context. 262 total PA answers, 0 answers lacking sourced context, 65 quotes (all RR-selected). CSVs: 2026-06-17-pa-house-batch-a.csv (commit 24e47925), -batch-b.csv (commit f8f76385).
+Prior: Phase 128 ✅ (NY, 26 reps, 412 answers, USHS-02 — commits fbd3767f/52b583a5). Phase 127 ✅ (FL, 27 reps, 394 answers, USHS-01).
+Last activity: 2026-06-18 — Phase 129 executed via /gsd-execute-phase (inline; 3-concurrency held; one 10pm-PT session-limit pause mid-batch-A re-dispatched cleanly; Mackenzie emitted systematic quad-quote `""""` artifacts — added a `""""`→`"""` pre-collapse guard + canonical re-parse/re-stringify per CSV before merge; both merges 0 problems).
+Next: /gsd-execute-phase 130 (IL House Rep Stances, 17 reps, USHS-04). Then 131 (phase gate).
 
 ### v2.16 execution notes (carry-forward for 128–130)
 - **Concurrency = 3** confirmed safe on premium tier. Two session-limit pauses occurred mid-batch (usage limit, not 429) — agents that hadn't written their CSV re-dispatched cleanly on reset.
