@@ -58,3 +58,20 @@ __pycache__/
 .venv/
 *.venv
 backend/.tmp-legislators-current.yaml
+
+# Playwright MCP session artifacts (screenshots / page snapshots)
+.playwright-mcp/
+backend/.tmp-national-cd119/
+
+# One-shot migration apply/verify helpers & scratch (not durable record)
+backend/scripts/_*
+backend/migrations/_*.sql
+
+# Stance-research working scratch (chunked SQL, agent prompts, wave topic dumps)
+backend/data/stance-research/_*
+backend/data/stance-research/agent_prompt_*.txt
+backend/data/stance-research/agent-prompt-*.txt
+backend/data/stance-research/wave*
+
+# Per-rep stance-researcher agent memory (scratch; MEMORY.md stays tracked)
+backend/.claude/agent-memory/politician-stance-researcher/stance_*.md
