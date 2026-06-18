@@ -1,3 +1,10 @@
+-- ⚠️ SUPERSEDED / DO NOT RE-RUN (annotated 2026-06-18).
+--   This migration created a DUPLICATE election 'UT 2026 Primary' (id 585f588b) alongside the
+--   canonical, discovery-pipeline-seeded '2026 Utah Primary' (id 02dee6b2). Its races had no
+--   office_id, so they were served statewide (Part B) and Utah voters saw duplicate races.
+--   The duplicate was removed by migration 773_ut_remove_duplicate_primary.sql. Re-running this
+--   would re-introduce the duplicate. Kept for history only.
+--
 -- Migration 267: UT 2026 Primary — Phase 99 Plan 03
 -- Seeds election, races, and race_candidates for the Utah June 23, 2026 primary.
 -- Idempotent: ON CONFLICT DO NOTHING throughout.
