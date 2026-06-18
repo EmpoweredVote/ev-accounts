@@ -30,7 +30,7 @@ Plan: 128-01 ✅ (batch A, 13 reps, 201 answers) · 128-02 ✅ (batch B, 13 reps
 Status: USHS-02 substantially met. All 26 NY House reps now have sourced stances + paired context. 412 total NY answers, 0 answers lacking sourced context, 138 quotes (136 RR-selected). CSVs: 2026-06-17-ny-house-batch-a.csv (commit fbd3767f), -batch-b.csv (commit 52b583a5).
 Prior: Phase 127 ✅ (FL, 27 reps, 394 answers, USHS-01) — CSVs commits b8279aca / 0512d9bf.
 Last activity: 2026-06-17 — Phase 128 executed via /gsd-execute-phase (inline; 3-concurrency held; 1 CSV-escaping repair vs 2 in FL — the per-prompt escaping rule helped)
-Next: /gsd-plan-phase 129 (PA House Rep Stances, 17 reps, USHS-03) — then 130 (IL, 17, USHS-04), 131 (gate)
+Next: /gsd-execute-phase 129 (PA House Rep Stances, 17 reps, USHS-03 — PLANNED: 129-01 batch A 9 reps -42001..-42009, 129-02 batch B 8 reps -42010..-42017). Then 130 (IL, 17, USHS-04), 131 (gate).
 
 ### v2.16 execution notes (carry-forward for 128–130)
 - **Concurrency = 3** confirmed safe on premium tier. Two session-limit pauses occurred mid-batch (usage limit, not 429) — agents that hadn't written their CSV re-dispatched cleanly on reset.

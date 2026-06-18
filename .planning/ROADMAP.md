@@ -1558,7 +1558,11 @@ Plans:
 
 **Depends on:** Phase 125 (PA reps seeded)
 **Requirements:** USHS-03
-**Plans:** TBD
+**Plans:** 0/2 plans complete
+
+Plans:
+- [ ] 129-01-PLAN.md — Research + ingest PA batch A (9 reps, -42001..-42009) [USHS-03]
+- [ ] 129-02-PLAN.md — Research + ingest PA batch B (8 reps, -42010..-42017); full PA coverage check [USHS-03]
 
 **Success Criteria** (what must be TRUE):
 1. Every PA House rep has ≥1 sourced stance OR a documented honest-skip.
@@ -1720,6 +1724,6 @@ Plans:
 | 126. Headshots + Phase Gate Verification | v2.15 | 2/2 | Complete ✅ | 2026-06-16 |
 | 127. FL House Rep Stances | v2.16 | 2/2 | Complete   | 2026-06-17 |
 | 128. NY House Rep Stances | v2.16 | 2/2 | Complete   | 2026-06-18 |
-| 129. PA House Rep Stances | v2.16 | 0/0 | Not started | — |
+| 129. PA House Rep Stances | v2.16 | 0/2 | Planned | — |
 | 130. IL House Rep Stances | v2.16 | 0/0 | Not started | — |
 | 131. Phase Gate Verification | v2.16 | 0/0 | Not started | — |
