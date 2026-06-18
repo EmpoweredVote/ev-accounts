@@ -7,10 +7,10 @@ last_updated: "2026-06-17T00:41:46.032Z"
 last_activity: 2026-06-17
 progress:
   total_phases: 5
-  completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
-  percent: 20
+  completed_phases: 2
+  total_plans: 4
+  completed_plans: 4
+  percent: 40
 ---
 
 # Project State
@@ -25,11 +25,12 @@ See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 ## Current Position
 
-Phase: 127 — FL House Rep Stances (COMPLETE ✅ — 2/2 plans, 2026-06-17)
-Plan: 127-01 ✅ (batch A, 14 reps, 186 answers) · 127-02 ✅ (batch B, 13 reps, 208 answers + coverage gate)
-Status: USHS-01 substantially met. All 27 FL House reps now have sourced stances + paired context. 394 total FL answers, 0 answers lacking sourced context, 111 quotes (110 Read-&-Rank selected). 3-concurrency VALIDATED on premium tier (no empty-output/429) — cap=3 for the rest of v2.16. 25 federal topics (44 live minus city + judicial-*). CSVs: 2026-06-17-fl-house-batch-a.csv (commit b8279aca), -batch-b.csv (commit 0512d9bf).
-Last activity: 2026-06-17 — Phase 127 executed; Phase 128 (NY, 26 reps) PLANNED inline (2 plans, batches of 13: -36001..-36013 / -36014..-36026) mirroring the validated 127 playbook
-Next: /gsd-execute-phase 128 (NY House Rep Stances, 26 reps, USHS-02)
+Phase: 128 — NY House Rep Stances (COMPLETE ✅ — 2/2 plans, 2026-06-17)
+Plan: 128-01 ✅ (batch A, 13 reps, 201 answers) · 128-02 ✅ (batch B, 13 reps, 211 answers + coverage gate)
+Status: USHS-02 substantially met. All 26 NY House reps now have sourced stances + paired context. 412 total NY answers, 0 answers lacking sourced context, 138 quotes (136 RR-selected). CSVs: 2026-06-17-ny-house-batch-a.csv (commit fbd3767f), -batch-b.csv (commit 52b583a5).
+Prior: Phase 127 ✅ (FL, 27 reps, 394 answers, USHS-01) — CSVs commits b8279aca / 0512d9bf.
+Last activity: 2026-06-17 — Phase 128 executed via /gsd-execute-phase (inline; 3-concurrency held; 1 CSV-escaping repair vs 2 in FL — the per-prompt escaping rule helped)
+Next: /gsd-plan-phase 129 (PA House Rep Stances, 17 reps, USHS-03) — then 130 (IL, 17, USHS-04), 131 (gate)
 
 ### v2.16 execution notes (carry-forward for 128–130)
 - **Concurrency = 3** confirmed safe on premium tier. Two session-limit pauses occurred mid-batch (usage limit, not 429) — agents that hadn't written their CSV re-dispatched cleanly on reset.

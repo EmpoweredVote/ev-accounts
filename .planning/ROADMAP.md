@@ -1538,11 +1538,11 @@ Plans:
 
 **Depends on:** Phase 125 (NY reps seeded)
 **Requirements:** USHS-02
-**Plans:** 0/2 plans complete
+**Plans:** 2/2 plans complete
 
 Plans:
-- [ ] 128-01-PLAN.md — Research + ingest NY batch A (13 reps, -36001..-36013) [USHS-02]
-- [ ] 128-02-PLAN.md — Research + ingest NY batch B (13 reps, -36014..-36026); full NY coverage check [USHS-02]
+- [x] 128-01-PLAN.md — Research + ingest NY batch A (13 reps, -36001..-36013) [USHS-02]
+- [x] 128-02-PLAN.md — Research + ingest NY batch B (13 reps, -36014..-36026); full NY coverage check [USHS-02]
 
 **Success Criteria** (what must be TRUE):
 1. Every NY House rep has ≥1 sourced stance OR a documented honest-skip.
@@ -1719,7 +1719,7 @@ Plans:
 | 125. National House Rep Ingestion | v2.15 | 2/2 | Complete ✅ | 2026-06-16 |
 | 126. Headshots + Phase Gate Verification | v2.15 | 2/2 | Complete ✅ | 2026-06-16 |
 | 127. FL House Rep Stances | v2.16 | 2/2 | Complete   | 2026-06-17 |
-| 128. NY House Rep Stances | v2.16 | 0/2 | Planned | — |
+| 128. NY House Rep Stances | v2.16 | 2/2 | Complete   | 2026-06-18 |
 | 129. PA House Rep Stances | v2.16 | 0/0 | Not started | — |
 | 130. IL House Rep Stances | v2.16 | 0/0 | Not started | — |
 | 131. Phase Gate Verification | v2.16 | 0/0 | Not started | — |
