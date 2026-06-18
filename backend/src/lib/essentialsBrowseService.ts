@@ -10,6 +10,7 @@
 
 import { pool } from './db.js';
 import type { PoliticianFlatRecord, FinanceSummary } from './essentialsService.js';
+import { MTFCC_DISTRICT_TYPE_GUARD } from './geoIdGuard.js';
 
 // FIPS → state abbreviation mapping
 const FIPS_TO_ABBREV: Record<string, string> = {
@@ -117,7 +118,7 @@ export async function getAreasForState(stateAbbrev: string): Promise<BrowseArea[
 export async function getOverlappingGeoIdsForArea(
   geoId: string,
   mtfcc: string
-): Promise<{ geoIds: string[]; stateAbbrev: string | null }> {
+): Promise<{ geoIds: string[]; geoPairs: Array<{ geo_id: string; mtfcc: string }>; stateAbbrev: string | null }> {
   const intersectionQuery = `
     SELECT DISTINCT gb2.geo_id, gb2.mtfcc
     FROM essentials.geofence_boundaries gb1
@@ -129,14 +130,27 @@ export async function getOverlappingGeoIdsForArea(
       -- Larger non-city districts that CONTAIN the area's center point
       OR (public.ST_Contains(gb2.geometry, public.ST_PointOnSurface(gb1.geometry))
           AND gb2.mtfcc NOT IN ('G4110', 'G4120'))
-      -- Legislative districts that have ANY geometric overlap
+      -- Legislative districts that genuinely overlap the area (interiors
+      -- intersect). NOT ST_Touches excludes neighbors that merely share a
+      -- boundary edge (zero-area touch), which previously surfaced the wrong
+      -- senator/representative for border cities. A real split — e.g. a city
+      -- divided across two senate districts — has overlapping interiors and is
+      -- kept (verified: Alpine stays in both SD-19 ~62% and SD-21 ~38%).
       OR (public.ST_Intersects(gb1.geometry, gb2.geometry)
+          AND NOT public.ST_Touches(gb1.geometry, gb2.geometry)
           AND gb2.mtfcc IN ('G5200', 'G5210', 'G5220'))
     )
   `;
 
   const { rows: geoMatches } = await pool.query(intersectionQuery, [geoId, mtfcc]);
   const geoIds = [geoId, ...geoMatches.map((r) => r.geo_id as string)];
+  // Keep each candidate geo_id paired with the MTFCC of the geofence it came
+  // from, so downstream district matching can apply MTFCC_DISTRICT_TYPE_GUARD
+  // and avoid the 5-digit GEOID collision (e.g. State Senate 21 vs Iron County).
+  const geoPairs = [
+    { geo_id: geoId, mtfcc },
+    ...geoMatches.map((r) => ({ geo_id: r.geo_id as string, mtfcc: r.mtfcc as string })),
+  ];
 
   const { rows: areaRows } = await pool.query(
     `SELECT state FROM essentials.geofence_boundaries WHERE geo_id = $1 AND mtfcc = $2 LIMIT 1`,
@@ -146,7 +160,7 @@ export async function getOverlappingGeoIdsForArea(
   const stateFips = areaRows.length > 0 ? (areaRows[0].state as string) : null;
   const stateAbbrev = stateFips ? FIPS_TO_ABBREV[stateFips] ?? null : null;
 
-  return { geoIds, stateAbbrev };
+  return { geoIds, geoPairs, stateAbbrev };
 }
 
 /**
@@ -164,9 +178,11 @@ export async function getPoliticiansByArea(
   mtfcc: string
 ): Promise<PoliticianFlatRecord[]> {
   // Step 1: Compute all overlapping district geo_ids + resolved state via shared helper
-  const { geoIds: allGeoIds, stateAbbrev } = await getOverlappingGeoIdsForArea(geoId, mtfcc);
+  const { geoPairs, stateAbbrev } = await getOverlappingGeoIdsForArea(geoId, mtfcc);
 
-  if (allGeoIds.length === 0) return [];
+  if (geoPairs.length === 0) return [];
+  const pairGeoIds = geoPairs.map((p) => p.geo_id);
+  const pairMtfccs = geoPairs.map((p) => p.mtfcc);
 
   // Step 2: Find politicians in matched districts
   const politicianQuery = `
@@ -192,6 +208,8 @@ export async function getPoliticiansByArea(
            COALESCE(gvb.website_url, '') AS government_body_url,
            COALESCE(ch.website_url, '') AS chamber_url
     FROM essentials.districts d
+    JOIN unnest($1::text[], $2::text[]) AS gp(geo_id, mtfcc)
+      ON gp.geo_id = d.geo_id AND ${MTFCC_DISTRICT_TYPE_GUARD}
     JOIN essentials.offices o ON o.district_id = d.id
     JOIN essentials.politicians p ON o.politician_id = p.id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
@@ -200,12 +218,11 @@ export async function getPoliticiansByArea(
       ON gvb.state = d.state
       AND gvb.geo_id = d.geo_id
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
-    WHERE d.geo_id = ANY($1)
-    AND p.is_active = true
+    WHERE p.is_active = true
     ORDER BY p.id
   `;
 
-  const { rows: polRows } = await pool.query(politicianQuery, [allGeoIds]);
+  const { rows: polRows } = await pool.query(politicianQuery, [pairGeoIds, pairMtfccs]);
 
   // Step 3: Use stateAbbrev (resolved by getOverlappingGeoIdsForArea) to add statewide officials
   let statewideRows: typeof polRows = [];

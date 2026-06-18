@@ -13,10 +13,41 @@ import {
 } from '../lib/essentialsService.js';
 import type { JurisdictionGeoIds } from '../lib/essentialsService.js';
 import { getElectionsByCoordinate, getElectionsByGeoIds, getCandidateById } from '../lib/electionService.js';
+import type { GeoPair } from '../lib/geoIdGuard.js';
 import { getVoterInfo } from '../lib/voterInfoService.js';
 import { GeocodingError, geocodeAddress } from '../lib/geocodingService.js';
 import { pool } from '../lib/db.js';
 import { adminRpc } from '../lib/supabase.js';
+
+/**
+ * Build MTFCC-tagged (geo_id, mtfcc) pairs from a connected profile's typed
+ * jurisdiction geo_id slots. Each slot has a known layer, so we attach the
+ * matching MTFCC — this lets getElectionsByGeoIds apply MTFCC_DISTRICT_TYPE_GUARD
+ * and avoid 5-digit GEOID collisions (e.g. a county_geo_id of "49021" must not
+ * also match State Senate District 21). Empty slots are dropped downstream.
+ */
+function electionGeoPairsFromSlots(slots: {
+  congressional_geo_id?: string | null;
+  state_senate_geo_id?: string | null;
+  state_house_geo_id?: string | null;
+  county_geo_id?: string | null;
+  school_district_geo_id?: string | null;
+  city_council_geo_id?: string | null;
+  municipality_geo_id?: string | null;
+}): GeoPair[] {
+  const slotMtfcc: Array<[string | null | undefined, string]> = [
+    [slots.congressional_geo_id, 'G5200'],
+    [slots.state_senate_geo_id, 'G5210'],
+    [slots.state_house_geo_id, 'G5220'],
+    [slots.county_geo_id, 'G4020'],
+    [slots.school_district_geo_id, 'G5400'],
+    [slots.city_council_geo_id, 'G4110'],
+    [slots.municipality_geo_id, 'G4110'],
+  ];
+  return slotMtfcc
+    .filter(([geoId]) => !!geoId)
+    .map(([geoId, mtfcc]) => ({ geo_id: geoId as string, mtfcc }));
+}
 
 /**
  * Essentials router — address-search and other top-level essentials routes.
@@ -748,9 +779,7 @@ router.get('/elections/me', requireAuth, requireConnected, async (req: Request, 
   if (j && (j.congressional_geo_id || j.state_senate_geo_id || j.county_geo_id)) {
     try {
       const elections = await getElectionsByGeoIds(
-        [j.congressional_geo_id, j.state_senate_geo_id, j.state_house_geo_id,
-         j.county_geo_id, j.school_district_geo_id, j.city_council_geo_id,
-         j.municipality_geo_id],
+        electionGeoPairsFromSlots(j),
         j.jurisdiction_state
       );
       res.setHeader('X-Formatted-Address', [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
@@ -797,9 +826,15 @@ router.get('/elections/me', requireAuth, requireConnected, async (req: Request, 
 
         if (jd.congressional || jd.state_senate || jd.county) {
           const elections = await getElectionsByGeoIds(
-            [jd.congressional, jd.state_senate, jd.state_house,
-             jd.county, jd.school_district, jd.city_council,
-             jd.municipality],
+            electionGeoPairsFromSlots({
+              congressional_geo_id: jd.congressional,
+              state_senate_geo_id: jd.state_senate,
+              state_house_geo_id: jd.state_house,
+              county_geo_id: jd.county,
+              school_district_geo_id: jd.school_district,
+              city_council_geo_id: jd.city_council,
+              municipality_geo_id: jd.municipality,
+            }),
             j.jurisdiction_state
           );
           res.setHeader('X-Formatted-Address', [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
