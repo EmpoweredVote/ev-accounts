@@ -1578,7 +1578,11 @@ Plans:
 
 **Depends on:** Phase 125 (IL reps seeded)
 **Requirements:** USHS-04
-**Plans:** TBD
+**Plans:** 0/2 plans complete
+
+Plans:
+- [ ] 130-01-PLAN.md — Research + ingest IL batch A (9 reps, -17001..-17009) [USHS-04]
+- [ ] 130-02-PLAN.md — Research + ingest IL batch B (8 reps, -17010..-17017); full IL coverage check [USHS-04]
 
 **Success Criteria** (what must be TRUE):
 1. Every IL House rep has ≥1 sourced stance OR a documented honest-skip.
@@ -1725,5 +1729,5 @@ Plans:
 | 127. FL House Rep Stances | v2.16 | 2/2 | Complete   | 2026-06-17 |
 | 128. NY House Rep Stances | v2.16 | 2/2 | Complete   | 2026-06-18 |
 | 129. PA House Rep Stances | v2.16 | 2/2 | Complete | 2026-06-18 |
-| 130. IL House Rep Stances | v2.16 | 0/0 | Not started | — |
+| 130. IL House Rep Stances | v2.16 | 0/2 | Planned | — |
 | 131. Phase Gate Verification | v2.16 | 0/0 | Not started | — |
