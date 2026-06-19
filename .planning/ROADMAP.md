@@ -61,7 +61,8 @@
   1. Every in-scope OH and NC US House rep (29 total, `external_id` state_fips 39 and 37, no pre-existing answers) has ≥1 sourced compass stance in `inform.politician_answers`.
   2. Every answer row has a paired `inform.politician_context` row carrying a real, fetched source URL — **zero unsourced rows** at wave close.
   3. Topics with no documentable evidence for a given rep are honest-skipped and documented per rep; no value is inferred from party affiliation.
-**Plans:** 4 plans
+
+**Plans:** 4 plans
 
 - [x] 132-01-PLAN.md — OH batch A (OH-1..OH-8, external_id -39001..-39008, 8 reps)
 - [x] 132-02-PLAN.md — OH batch B (OH-9..OH-15, external_id -39009..-39015, 7 reps)
@@ -127,7 +128,15 @@
   2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
 
-**Plans:** TBD
+**Plans:** 8 plans (all wave 1, mutually independent)
+- [ ] 135-01-PLAN.md — TN batch A: TN-1..TN-5 (5 reps) research + push
+- [ ] 135-02-PLAN.md — TN batch B: TN-6..TN-9 (4 reps) research + push (closes TN)
+- [ ] 135-03-PLAN.md — CO batch A: CO-1..CO-4 (4 reps) research + push
+- [ ] 135-04-PLAN.md — CO batch B: CO-5..CO-8 (4 reps) research + push (closes CO)
+- [ ] 135-05-PLAN.md — MN batch A: MN-1..MN-4 (4 reps) research + push
+- [ ] 135-06-PLAN.md — MN batch B: MN-5..MN-8 (4 reps) research + push (closes MN)
+- [ ] 135-07-PLAN.md — MO batch A: MO-1..MO-4 (4 reps) research + push
+- [ ] 135-08-PLAN.md — MO batch B: MO-5..MO-8 (4 reps) research + push (closes MO + Phase 135)
 
 ---
 
