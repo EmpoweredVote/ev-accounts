@@ -115,3 +115,86 @@ export async function getBoundaryBatch(
   }
   return result;
 }
+
+/** A computed frame: the dissolved union of the counties a district overlaps. */
+export interface UnionFrame {
+  bbox: [number, number, number, number];
+  geojson: { type: 'Polygon' | 'MultiPolygon'; coordinates: unknown };
+}
+
+/**
+ * Frame geometry for state-legislative districts: the union of the counties
+ * (G4020) each district actually overlaps, so a small district renders against
+ * its surrounding counties rather than the whole state. Keyed by "layer:geoid"
+ * of the *district* (the child), matching the refs passed in.
+ *
+ * Counties are matched by genuine areal overlap — ST_Intersects (GiST-indexed)
+ * then a positive ST_Area(ST_Intersection) so districts sharing only an edge
+ * with a neighbouring county don't drag that county into the frame. Geometry is
+ * simplified and antimeridian-shifted exactly like getBoundary, so the embedded
+ * frame matches the child's projection conventions.
+ */
+export async function getCountyUnionFrames(
+  refs: Array<{ layer: string; geoid: string }>,
+): Promise<Map<string, UnionFrame>> {
+  const unique = new Map<string, { layer: string; geoid: string }>();
+  for (const ref of refs) unique.set(`${ref.layer}:${ref.geoid}`, ref);
+  if (unique.size === 0) return new Map();
+
+  const pairs = [...unique.values()];
+  // VALUES needs explicit types on the first row so the JOIN columns resolve to text.
+  const values = pairs
+    .map((_, i) => (i === 0 ? `($1::text, $2::text)` : `($${i * 2 + 1}, $${i * 2 + 2})`))
+    .join(', ');
+
+  const { rows } = await pool.query<{
+    layer: string; geoid: string;
+    minx: number | null; miny: number | null; maxx: number | null; maxy: number | null;
+    geojson: string | null;
+  }>(
+    `WITH dist AS (
+       SELECT v.layer, v.geoid, gb.geometry
+       FROM (VALUES ${values}) AS v(layer, geoid)
+       JOIN essentials.geofence_boundaries gb
+         ON gb.mtfcc = v.layer AND gb.geo_id = v.geoid
+     ),
+     u AS (
+       SELECT d.layer, d.geoid, ST_Multi(ST_Union(c.geometry)) AS geom
+       FROM dist d
+       JOIN essentials.geofence_boundaries c
+         ON c.mtfcc = 'G4020'
+        AND ST_Intersects(c.geometry, d.geometry)
+        AND ST_Area(ST_Intersection(c.geometry, d.geometry)) > 1e-9
+       GROUP BY d.layer, d.geoid
+     ),
+     s AS (
+       SELECT layer, geoid,
+              CASE WHEN (ST_XMax(geom) - ST_XMin(geom)) > 180
+                   THEN ST_ShiftLongitude(geom) ELSE geom END AS geom
+       FROM u
+     )
+     SELECT layer, geoid,
+            ST_XMin(ST_Envelope(geom)) AS minx, ST_YMin(ST_Envelope(geom)) AS miny,
+            ST_XMax(ST_Envelope(geom)) AS maxx, ST_YMax(ST_Envelope(geom)) AS maxy,
+            ST_AsGeoJSON(ST_SimplifyPreserveTopology(geom, 0.001)) AS geojson
+     FROM s`,
+    pairs.flatMap((r) => [r.layer, r.geoid]),
+  );
+
+  const result = new Map<string, UnionFrame>();
+  for (const row of rows) {
+    if (!row.geojson || row.minx == null || row.miny == null || row.maxx == null || row.maxy == null) continue;
+    let geojson: UnionFrame['geojson'];
+    try {
+      geojson = JSON.parse(row.geojson);
+    } catch {
+      console.warn(`[getCountyUnionFrames] malformed geojson for ${row.layer}:${row.geoid}, skipping`);
+      continue;
+    }
+    result.set(`${row.layer}:${row.geoid}`, {
+      bbox: [Number(row.minx), Number(row.miny), Number(row.maxx), Number(row.maxy)],
+      geojson,
+    });
+  }
+  return result;
+}

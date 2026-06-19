@@ -1,9 +1,10 @@
 // src/lib/readrankService.test.ts
 import { vi, describe, it, expect, beforeEach } from 'vitest';
 
-const { mockQuery, mockGetBoundaryBatch } = vi.hoisted(() => ({
+const { mockQuery, mockGetBoundaryBatch, mockGetCountyUnionFrames } = vi.hoisted(() => ({
   mockQuery: vi.fn(),
   mockGetBoundaryBatch: vi.fn(),
+  mockGetCountyUnionFrames: vi.fn(),
 }));
 vi.mock('./db.js', () => ({ pool: { query: mockQuery } }));
 vi.mock('./env.js', () => ({
@@ -15,15 +16,20 @@ vi.mock('./env.js', () => ({
     ADMIN_INGEST_TOKEN: 'test-token',
   },
 }));
-vi.mock('./informBoundaryService.js', () => ({ getBoundaryBatch: mockGetBoundaryBatch }));
+vi.mock('./informBoundaryService.js', () => ({
+  getBoundaryBatch: mockGetBoundaryBatch,
+  getCountyUnionFrames: mockGetCountyUnionFrames,
+}));
 
 import { getPlayableRaces, deriveTierScope, deriveOfficeSeat } from './readrankService.js';
 
 beforeEach(() => {
   mockQuery.mockReset();
   mockGetBoundaryBatch.mockReset();
+  mockGetCountyUnionFrames.mockReset();
   // Default: return an empty map (no geometry) so existing tests are unaffected.
   mockGetBoundaryBatch.mockResolvedValue(new Map());
+  mockGetCountyUnionFrames.mockResolvedValue(new Map());
 });
 
 describe('deriveTierScope', () => {
@@ -168,6 +174,61 @@ describe('getPlayableRaces', () => {
     }] });
     const [race] = await getPlayableRaces();
     expect(race.frameRef).toEqual({ layer: 'G4110', geoid: '1805860' });
+  });
+
+  it('county-council district (X% / district_type COUNTY): frame = the SQL-resolved county', async () => {
+    // #3b: the SQL routes X% COUNTY layers to a G4020 container; the mapping
+    // passes that frame_layer/frame_geoid straight through.
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'rcc', position_name: 'Salt Lake County Council District 5', district_label: 'District 5',
+      district_type: 'COUNTY',
+      election_id: 'e', election_name: 'UT 2026', election_date: null,
+      jurisdiction_level: 'county', state: 'UT',
+      boundary_layer: 'X0001', boundary_geoid: 'ocd-division/country:us/state:ut/county:salt_lake/council_district:5',
+      frame_layer: 'G4020', frame_geoid: '49035',
+      candidate_count: '2', topic_count: '1', quote_count: '6', rankable_topic_count: '1',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    const [race] = await getPlayableRaces();
+    expect(race.boundaryRef).toEqual({ layer: 'X0001', geoid: 'ocd-division/country:us/state:ut/county:salt_lake/council_district:5' });
+    expect(race.frameRef).toEqual({ layer: 'G4020', geoid: '49035' });
+  });
+
+  it('state-leg district: frame = the county-union (computed geometry, embedded inline)', async () => {
+    // #2: G5210/G5220 children frame against the union of overlapping counties.
+    const unionGeom = { type: 'MultiPolygon' as const, coordinates: [[[[-112.1, 40.4], [-111.7, 40.4], [-111.7, 40.9], [-112.1, 40.4]]]] };
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'rsl', position_name: 'Utah State Senate District 13', district_label: 'District 13',
+      district_type: 'STATE_UPPER',
+      election_id: 'e', election_name: 'UT 2026', election_date: null,
+      jurisdiction_level: 'state', state: 'UT',
+      boundary_layer: 'G5210', boundary_geoid: '49013', frame_layer: null, frame_geoid: null,
+      candidate_count: '3', topic_count: '3', quote_count: '12', rankable_topic_count: '3',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
+      ['G5210:49013', { bbox: [-112.1, 40.4, -111.7, 40.9], geojson: unionGeom }],
+    ]));
+    const [race] = await getPlayableRaces();
+    expect(race.boundaryRef).toMatchObject({ layer: 'G5210', geoid: '49013' });
+    expect(race.frameRef).toEqual({
+      layer: 'G4020U', geoid: '49013', bbox: [-112.1, 40.4, -111.7, 40.9], geojson: unionGeom,
+    });
+  });
+
+  it('state-leg district: falls back to the state frame when no county union is found', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'rsl2', position_name: 'Utah State House District 21', district_label: 'District 21',
+      district_type: 'STATE_LOWER',
+      election_id: 'e', election_name: 'UT 2026', election_date: null,
+      jurisdiction_level: 'state', state: 'UT',
+      boundary_layer: 'G5220', boundary_geoid: '49021', frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '2', quote_count: '6', rankable_topic_count: '2',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map()); // empty — no union
+    const [race] = await getPlayableRaces();
+    expect(race.frameRef).toEqual({ layer: 'G4000', geoid: '49' }); // UT state outline
   });
 
   it('derives office/seat from raw position_name + district_label via deriveOfficeSeat', async () => {

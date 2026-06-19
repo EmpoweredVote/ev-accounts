@@ -1,8 +1,8 @@
 import crypto from 'node:crypto';
 import { pool } from './db.js';
 import { env } from './env.js';
-import { getBoundaryBatch } from './informBoundaryService.js';
-import type { BoundaryResult } from './informBoundaryService.js';
+import { getBoundaryBatch, getCountyUnionFrames } from './informBoundaryService.js';
+import type { BoundaryResult, UnionFrame } from './informBoundaryService.js';
 
 /**
  * Read & Rank — blind candidate-match election tool.
@@ -307,8 +307,11 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     LEFT JOIN LATERAL (
       SELECT fp.mtfcc AS frame_layer, fp.geo_id AS frame_geoid
       FROM essentials.geofence_boundaries fp
-      WHERE fp.mtfcc = CASE WHEN d.mtfcc = 'G4110' THEN 'G4020'
-                            WHEN d.mtfcc LIKE 'X%'  THEN 'G4110' END
+      WHERE fp.mtfcc = CASE
+              WHEN d.mtfcc = 'G4110' THEN 'G4020'                              -- city  → county
+              WHEN d.mtfcc LIKE 'X%' AND d.district_type = 'COUNTY' THEN 'G4020' -- county council → county
+              WHEN d.mtfcc LIKE 'X%' THEN 'G4110'                             -- city ward → city
+            END
         AND ST_Contains(fp.geometry, ST_PointOnSurface(cb.geometry))
       ORDER BY ST_Area(fp.geometry) ASC
       LIMIT 1
@@ -339,6 +342,21 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     boundaryMap = await getBoundaryBatch(refList);
   } catch {
     // graceful degradation — races returned without embedded geometry
+  }
+
+  // State-legislative districts frame against the union of counties they overlap
+  // (not the whole state), so a small district reads against nearby geography.
+  const slegRefs: Array<{ layer: string; geoid: string }> = [];
+  for (const r of rows) {
+    if ((r.boundary_layer === 'G5210' || r.boundary_layer === 'G5220') && r.boundary_geoid) {
+      slegRefs.push({ layer: r.boundary_layer, geoid: r.boundary_geoid });
+    }
+  }
+  let unionFrameMap = new Map<string, UnionFrame>();
+  try {
+    unionFrameMap = await getCountyUnionFrames(slegRefs);
+  } catch {
+    // graceful degradation — these races fall back to the state frame below
   }
 
   const localSet = new Set(politicianIds ?? []);
@@ -372,11 +390,18 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     } else if (scope === 'statewide') {
       frameRef = null;                                 // Governor: state alone
     } else if (childLayer === 'G4110' || childLayer.startsWith('X')) {
-      frameRef = r.frame_layer && r.frame_geoid        // city→county / ward→city (SQL containment)
+      frameRef = r.frame_layer && r.frame_geoid        // city→county / county-council→county / ward→city
         ? { layer: r.frame_layer, geoid: r.frame_geoid }
         : null;
+    } else if (childLayer === 'G5210' || childLayer === 'G5220') {
+      // State-leg district → union of overlapping counties (computed geometry,
+      // embedded inline). Falls back to the state outline if the union is empty.
+      const uf = r.boundary_geoid ? unionFrameMap.get(`${childLayer}:${r.boundary_geoid}`) : undefined;
+      frameRef = uf
+        ? { layer: 'G4020U', geoid: r.boundary_geoid as string, bbox: uf.bbox, geojson: uf.geojson }
+        : stateRef;
     } else {
-      frameRef = stateRef;                             // county / state-leg / school → state
+      frameRef = stateRef;                             // county / school → state
     }
 
     // Attach inline geometry from the batch result.
