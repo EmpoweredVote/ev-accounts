@@ -187,6 +187,8 @@ export function deriveOfficeSeat(input: {
   const dt = (input.districtType ?? '').toUpperCase();
 
   if (LEGISLATIVE_OFFICE[dt]) {
+    // normalizeSeat extracts the canonical token; confirm it's a real seat type
+    // before using it, otherwise fall back to deriving the seat from positionName.
     const fromLabel = normalizeSeat(input.districtLabel);
     const seat = fromLabel && /^(District|At-Large|Ward|Division|Seat)/i.test(fromLabel)
       ? fromLabel
@@ -201,7 +203,7 @@ export function deriveOfficeSeat(input: {
     .replace(/United States Senator/gi, 'US Senator');
 
   let seat: string | null = null;
-  const sepRe = /\s*(?:,|[-–])\s+/g;
+  const sepRe = /\s*(?:,|[-–—])\s+/g;
   let sepMatch: RegExpExecArray | null;
   while ((sepMatch = sepRe.exec(office)) !== null) {
     const norm = normalizeSeat(office.slice(sepMatch.index + sepMatch[0].length));

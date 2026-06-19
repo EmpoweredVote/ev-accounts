@@ -356,4 +356,18 @@ describe('deriveOfficeSeat', () => {
       positionName: 'City Council', districtLabel: 'At Large', districtType: 'LOCAL', state: 'IN',
     })).toEqual({ office: 'City Council', seat: 'At-Large' });
   });
+
+  it('exec: splits seat on a hyphen separator', () => {
+    expect(deriveOfficeSeat({
+      positionName: 'Monroe County Commissioner - District 1', districtLabel: null,
+      districtType: 'COUNTY', state: 'IN',
+    })).toEqual({ office: 'Monroe County Commissioner', seat: 'District 1' });
+  });
+
+  it('exec: splits seat on an en-dash separator', () => {
+    expect(deriveOfficeSeat({
+      positionName: 'Monroe County Commissioner – District 2', districtLabel: null,
+      districtType: 'COUNTY', state: 'IN',
+    })).toEqual({ office: 'Monroe County Commissioner', seat: 'District 2' });
+  });
 });
