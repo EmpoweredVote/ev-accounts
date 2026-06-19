@@ -64,7 +64,7 @@
 **Plans:** 4 plans
 
 - [x] 132-01-PLAN.md — OH batch A (OH-1..OH-8, external_id -39001..-39008, 8 reps)
-- [ ] 132-02-PLAN.md — OH batch B (OH-9..OH-15, external_id -39009..-39015, 7 reps)
+- [x] 132-02-PLAN.md — OH batch B (OH-9..OH-15, external_id -39009..-39015, 7 reps)
 - [ ] 132-03-PLAN.md — NC batch A (NC-1..NC-7, external_id -37001..-37007, 7 reps)
 - [ ] 132-04-PLAN.md — NC batch B (NC-8..NC-14, external_id -37008..-37014, 7 reps)
 
@@ -1823,7 +1823,7 @@ Bounded Tier 2 stance research for the 4 largest delegations — FL (27), NY (26
 | 129. PA House Rep Stances | v2.16 | 2/2 | Complete | 2026-06-18 |
 | 130. IL House Rep Stances | v2.16 | 2/2 | Complete | 2026-06-18 |
 | 131. Phase Gate Verification | v2.16 | 1/1 | Complete | 2026-06-18 |
-| 132. OH + NC House Rep Stances | v2.17 | 1/4 | In Progress|  |
+| 132. OH + NC House Rep Stances | v2.17 | 2/4 | In Progress|  |
 | 133. GA + MI House Rep Stances | v2.17 | 0/0 | Not started | - |
 | 134. NJ + WA + AZ House Rep Stances | v2.17 | 0/0 | Not started | - |
 | 135. TN + CO + MN + MO House Rep Stances | v2.17 | 0/0 | Not started | - |
