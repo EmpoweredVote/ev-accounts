@@ -183,8 +183,8 @@ export async function getLegislativeByPolitician(
     end_date: row.end_date ? (row.end_date as Date).toISOString() : null,
     is_current: row.is_current ?? false,
     external_id: row.external_id ?? '',
-    bill_count: Number(row.bill_count) ?? 0,
-    vote_count: Number(row.vote_count) ?? 0,
+    bill_count: Number(row.bill_count) || 0,
+    vote_count: Number(row.vote_count) || 0,
   }));
 }
 
