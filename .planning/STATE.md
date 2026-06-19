@@ -6,7 +6,7 @@ status: planning
 last_updated: "2026-06-19T00:02:12.113Z"
 last_activity: 2026-06-19
 progress:
-  total_phases: 0
+  total_phases: 9
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -20,15 +20,55 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.16 — National House Rep Stances (Tier 2), bounded chunk: FL/NY/PA/IL (87 reps), Phases 127–131
-**Last shipped:** v2.15 National House Rep Seeding (Tier 1) — Phases 125–126, shipped 2026-06-16. 299 US House reps seeded (137→436 linked) + headshots; USHR-01..05 closed; verify-phase-125-126.sql all pass.
+**Current focus:** v2.17 — National House Rep Stances (Tier 2 continuation), remaining 212 reps across 38 states in 8 largest-delegation-first waves, Phases 132–140
+**Last shipped:** v2.16 National House Rep Stances (Tier 2) — Phases 127–131, shipped 2026-06-18. FL/NY/PA/IL = 87 reps, 1,338 sourced answers, 0 unsourced; USHS-01..05 closed; verify-phase-127-131.sql all pass.
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 132 — OH + NC House Rep Stances (next to plan)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-06-19 — Milestone v2.17 started
+Status: Roadmap complete — ready to plan Phase 132
+Last activity: 2026-06-19 — Milestone v2.17 roadmap created (Phases 132–140, USHS-06..14)
+
+### v2.17 Requirement Coverage
+
+| Phase | Requirement | Scope (reps) | Count |
+|-------|-------------|--------------|-------|
+| 132 — OH + NC House Rep Stances | USHS-06 | OH 15 + NC 14 | 29 |
+| 133 — GA + MI House Rep Stances | USHS-07 | GA 13 + MI 13 | 26 |
+| 134 — NJ + WA + AZ House Rep Stances | USHS-08 | NJ 12 + WA 10 + AZ 9 | 31 |
+| 135 — TN + CO + MN + MO House Rep Stances | USHS-09 | TN 9 + CO 8 + MN 8 + MO 8 | 33 |
+| 136 — WI + AL + SC + KY House Rep Stances | USHS-10 | WI 8 + AL 7 + SC 7 + KY 6 | 28 |
+| 137 — LA + CT + IN + OK + AR + IA House Rep Stances | USHS-11 | LA 6 + CT 5 + IN 5 + OK 5 + AR 4 + IA 4 | 29 |
+| 138 — KS + MS + NV + NE + NM House Rep Stances | USHS-12 | KS 4 + MS 4 + NV 4 + NE 3 + NM 3 | 18 |
+| 139 — Single/Low-Rep States | USHS-13 | HI/ID/MT/NH/RI/WV (2 ea) + AK/DE/ND/SD/VT/WY (1 ea) | 18 |
+| 140 — Phase Gate Verification | USHS-14 | consolidated gate for all 212 | — |
+| **Total unique reps** | | | **212 / 212** ✓ |
+
+All 9 requirements (USHS-06..14) mapped 1:1 to phases 132–140 — 100% coverage, no orphans.
+
+### v2.17 Phase Dependencies
+
+```
+Phase 132 (OH+NC)                — independent wave (state_fips 39, 37)
+Phase 133 (GA+MI)                — independent wave (state_fips 13, 26)
+Phase 134 (NJ+WA+AZ)             — independent wave (state_fips 34, 53, 04)
+Phase 135 (TN+CO+MN+MO)          — independent wave (state_fips 47, 08, 27, 29)
+Phase 136 (WI+AL+SC+KY)          — independent wave (state_fips 55, 01, 45, 21)
+Phase 137 (LA+CT+IN+OK+AR+IA)    — independent wave (state_fips 22, 09, 18, 40, 05, 19)
+Phase 138 (KS+MS+NV+NE+NM)       — independent wave (state_fips 20, 28, 32, 31, 35)
+Phase 139 (Single/Low-Rep)       — independent wave (12 states, 1–2 reps each)
+Phase 140 (Phase Gate)           — needs Phases 132–139 complete
+```
+
+Phases 132–139 are mutually independent (each filters a disjoint set of states by `external_id` state_fips, `floor((-external_id)/1000)`) and may run in any order or in parallel. Phase 140 (consolidated gate) depends on all eight waves.
+
+### v2.17 Execution Methodology (carry-forward for plan-phase)
+
+- **In-scope rep filter:** `external_id BETWEEN -56999 AND -1000 AND NOT EXISTS (answers)`; state via `floor((-external_id)/1000)`. 212 reps total.
+- **Production project ref:** `kxsdzaojfaibhuzmclfq`.
+- **Reuse:** shared `_TOPIC_SCALE.txt` (25 federal topics), `politician-stance-researcher` at 3-concurrency, per-rep CSV → canonical re-parse(`relax_column_count`)/re-stringify → merge, external_id→UUID push (`backend/data/stance-research/pa-house-a/_push.ts`), gate pattern `backend/scripts/verify-phase-127-131.sql` → new `verify-phase-132-140.sql`.
+- **Rules:** real source URL per stance in `inform.politician_context`; honest-skip per topic where no evidence; never infer from party; embed 1–5 scale texts per topic.
 
 ### v2.16 execution notes (carry-forward for 128–130)
 

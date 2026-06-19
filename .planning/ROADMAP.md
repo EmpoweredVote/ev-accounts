@@ -29,8 +29,177 @@
 - ✅ **v2.14 MA City Expansion Wave 2** — Phases 120–124 (shipped 2026-06-16)
 - ✅ **v2.15 National House Rep Seeding (Tier 1)** — Phases 125–126 (shipped 2026-06-16)
 - ✅ **v2.16 National House Rep Stances (Tier 2)** — Phases 127–131 (shipped 2026-06-18; FL/NY/PA/IL, 87 reps, 1,338 stances)
+- 🔄 **v2.17 National House Rep Stances (Tier 2 continuation)** — Phases 132–140 (active; remaining 212 reps across 38 states, USHS-06..14)
 
 ## Phases
+
+### v2.17 National House Rep Stances (Tier 2 continuation) (Phases 132–140)
+
+**Milestone goal:** Complete national US House stance coverage — give the remaining **212 seeded US House reps** (across all 38 not-yet-covered states) sourced compass alignment in the representatives feed, so every US resident's sitting House rep shows up with compass data, not just the 87 in FL/NY/PA/IL.
+
+**Pure scale-out of the proven v2.16 pipeline — no new architecture, no research spike.** Researched largest-delegation-first in 8 multi-state waves (132–139) so coverage is maximized early if interrupted, then a consolidated phase gate (140).
+
+**Carry-forward execution methodology (for `/gsd-plan-phase`):**
+- **In-scope rep filter:** `essentials.politicians` rows with `external_id BETWEEN -56999 AND -1000 AND NOT EXISTS (SELECT 1 FROM inform.politician_answers a WHERE a.politician_id = p.id)` — 212 reps total. **State derived from external_id:** `state_fips = floor((-external_id)/1000)`. Each wave phase filters its own disjoint set of state FIPS, so phases 132–139 touch non-overlapping rep sets.
+- **Production project ref:** `kxsdzaojfaibhuzmclfq`.
+- **Reuse:** shared `_TOPIC_SCALE.txt` (25 federal topics = 44 live minus 11 city + judicial-*) fetched live and Read by each agent; `politician-stance-researcher` agent at **3-concurrency** (premium tier, validated v2.16); per-rep CSV → canonical re-parse(`relax_column_count`)/re-stringify → merge (absorbs quad-quote/unwrapped-quote/trailing-comma artifacts); external_id→UUID push (`backend/data/stance-research/pa-house-a/_push.ts` — answers + context + quotes in one txn, suffix-aware surname leak-check); gate pattern (`backend/scripts/verify-phase-127-131.sql`).
+- **Stance rules (non-negotiable):** real fetched source URL per stance in `inform.politician_context`; honest-skip per topic where no evidence; **never infer from party**; embed the 1–5 stance scale texts per topic. Productive sources = Ballotpedia, OnTheIssues, Wikipedia, LCV scorecard; house.gov/congress.gov/govtrack/clerk.house.gov consistently 403 to WebFetch.
+
+---
+
+#### Phase 132: OH + NC House Rep Stances
+
+**Goal:** All in-scope OH (15) + NC (14) US House reps = **29 reps** have sourced compass stances in the representatives feed, each backed by a real source URL.
+
+**Depends on:** Nothing (independent wave; filters state_fips OH=39, NC=37)
+
+**Requirements:** USHS-06
+
+**Success Criteria** (what must be TRUE):
+  1. Every in-scope OH and NC US House rep (29 total, `external_id` state_fips 39 and 37, no pre-existing answers) has ≥1 sourced compass stance in `inform.politician_answers`.
+  2. Every answer row has a paired `inform.politician_context` row carrying a real, fetched source URL — **zero unsourced rows** at wave close.
+  3. Topics with no documentable evidence for a given rep are honest-skipped and documented per rep; no value is inferred from party affiliation.
+
+**Plans:** TBD
+
+---
+
+#### Phase 133: GA + MI House Rep Stances
+
+**Goal:** All in-scope GA (13) + MI (13) US House reps = **26 reps** have sourced compass stances, each backed by a real source URL.
+
+**Depends on:** Nothing (independent wave; filters state_fips GA=13, MI=26)
+
+**Requirements:** USHS-07
+
+**Success Criteria** (what must be TRUE):
+  1. Every in-scope GA and MI US House rep (26 total, no pre-existing answers) has ≥1 sourced compass stance.
+  2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
+  3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
+
+**Plans:** TBD
+
+---
+
+#### Phase 134: NJ + WA + AZ House Rep Stances
+
+**Goal:** All in-scope NJ (12) + WA (10) + AZ (9) US House reps = **31 reps** have sourced compass stances, each backed by a real source URL.
+
+**Depends on:** Nothing (independent wave; filters state_fips NJ=34, WA=53, AZ=04)
+
+**Requirements:** USHS-08
+
+**Success Criteria** (what must be TRUE):
+  1. Every in-scope NJ, WA, and AZ US House rep (31 total, no pre-existing answers) has ≥1 sourced compass stance.
+  2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
+  3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
+
+**Plans:** TBD
+
+---
+
+#### Phase 135: TN + CO + MN + MO House Rep Stances
+
+**Goal:** All in-scope TN (9) + CO (8) + MN (8) + MO (8) US House reps = **33 reps** have sourced compass stances, each backed by a real source URL.
+
+**Depends on:** Nothing (independent wave; filters state_fips TN=47, CO=08, MN=27, MO=29)
+
+**Requirements:** USHS-09
+
+**Success Criteria** (what must be TRUE):
+  1. Every in-scope TN, CO, MN, and MO US House rep (33 total, no pre-existing answers) has ≥1 sourced compass stance.
+  2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
+  3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
+
+**Plans:** TBD
+
+---
+
+#### Phase 136: WI + AL + SC + KY House Rep Stances
+
+**Goal:** All in-scope WI (8) + AL (7) + SC (7) + KY (6) US House reps = **28 reps** have sourced compass stances, each backed by a real source URL.
+
+**Depends on:** Nothing (independent wave; filters state_fips WI=55, AL=01, SC=45, KY=21)
+
+**Requirements:** USHS-10
+
+**Success Criteria** (what must be TRUE):
+  1. Every in-scope WI, AL, SC, and KY US House rep (28 total, no pre-existing answers) has ≥1 sourced compass stance.
+  2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
+  3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
+
+**Plans:** TBD
+
+---
+
+#### Phase 137: LA + CT + IN + OK + AR + IA House Rep Stances
+
+**Goal:** All in-scope LA (6) + CT (5) + IN (5) + OK (5) + AR (4) + IA (4) US House reps = **29 reps** have sourced compass stances, each backed by a real source URL.
+
+**Depends on:** Nothing (independent wave; filters state_fips LA=22, CT=09, IN=18, OK=40, AR=05, IA=19)
+
+**Requirements:** USHS-11
+
+**Success Criteria** (what must be TRUE):
+  1. Every in-scope LA, CT, IN, OK, AR, and IA US House rep (29 total, no pre-existing answers) has ≥1 sourced compass stance.
+  2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
+  3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
+
+**Plans:** TBD
+
+---
+
+#### Phase 138: KS + MS + NV + NE + NM House Rep Stances
+
+**Goal:** All in-scope KS (4) + MS (4) + NV (4) + NE (3) + NM (3) US House reps = **18 reps** have sourced compass stances, each backed by a real source URL.
+
+**Depends on:** Nothing (independent wave; filters state_fips KS=20, MS=28, NV=32, NE=31, NM=35)
+
+**Requirements:** USHS-12
+
+**Success Criteria** (what must be TRUE):
+  1. Every in-scope KS, MS, NV, NE, and NM US House rep (18 total, no pre-existing answers) has ≥1 sourced compass stance.
+  2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
+  3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
+
+**Plans:** TBD
+
+---
+
+#### Phase 139: Single/Low-Rep States House Rep Stances
+
+**Goal:** All in-scope reps in the 12 smallest-delegation states — HI/ID/MT/NH/RI/WV (2 each) + AK/DE/ND/SD/VT/WY (1 each, at-large) = **18 reps** — have sourced compass stances, each backed by a real source URL.
+
+**Depends on:** Nothing (independent wave; filters state_fips HI=15, ID=16, MT=30, NH=33, RI=44, WV=54, AK=02, DE=10, ND=38, SD=46, VT=50, WY=56)
+
+**Requirements:** USHS-13
+
+**Success Criteria** (what must be TRUE):
+  1. Every in-scope rep across the 12 single/low-rep states (18 total, no pre-existing answers) has ≥1 sourced compass stance.
+  2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
+  3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
+
+**Plans:** TBD
+
+---
+
+#### Phase 140: Phase Gate Verification
+
+**Goal:** A single read-only, labeled-assertion SQL script confirms all 212 in-scope US House reps (across all 38 states) have sourced stance coverage with zero unsourced rows — the consolidated proof that v2.17 is complete.
+
+**Depends on:** Phases 132–139 (all eight waves must be complete before the consolidated gate is meaningful)
+
+**Requirements:** USHS-14
+
+**Success Criteria** (what must be TRUE):
+  1. `backend/scripts/verify-phase-132-140.sql` (following the `verify-phase-127-131.sql` pattern) runs read-only and every labeled assertion PASSES against production.
+  2. The script asserts all 212 in-scope reps (`external_id BETWEEN -56999 AND -1000`, the v2.17 set) have ≥1 stance, and that **zero** answer rows lack a paired `inform.politician_context` row with a real source URL.
+  3. Per-state coverage counts are asserted (covered = in-scope for each of the 38 states), surfacing any rep that was missed.
+
+**Plans:** TBD
+
+---
+
 
 <details>
 <summary>âœ… v2.9 LA County Expansion (Phase 108) â€” SHIPPED 2026-06-08</summary>
@@ -1629,3 +1798,12 @@ Bounded Tier 2 stance research for the 4 largest delegations — FL (27), NY (26
 | 129. PA House Rep Stances | v2.16 | 2/2 | Complete | 2026-06-18 |
 | 130. IL House Rep Stances | v2.16 | 2/2 | Complete | 2026-06-18 |
 | 131. Phase Gate Verification | v2.16 | 1/1 | Complete | 2026-06-18 |
+| 132. OH + NC House Rep Stances | v2.17 | 0/0 | Not started | - |
+| 133. GA + MI House Rep Stances | v2.17 | 0/0 | Not started | - |
+| 134. NJ + WA + AZ House Rep Stances | v2.17 | 0/0 | Not started | - |
+| 135. TN + CO + MN + MO House Rep Stances | v2.17 | 0/0 | Not started | - |
+| 136. WI + AL + SC + KY House Rep Stances | v2.17 | 0/0 | Not started | - |
+| 137. LA + CT + IN + OK + AR + IA House Rep Stances | v2.17 | 0/0 | Not started | - |
+| 138. KS + MS + NV + NE + NM House Rep Stances | v2.17 | 0/0 | Not started | - |
+| 139. Single/Low-Rep States House Rep Stances | v2.17 | 0/0 | Not started | - |
+| 140. Phase Gate Verification | v2.17 | 0/0 | Not started | - |
