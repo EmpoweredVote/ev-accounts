@@ -207,7 +207,7 @@ describe('getPlayableRaces', () => {
       politician_ids: ['p1', 'p2'],
     }] });
     mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
-      ['G5210:49013', { bbox: [-112.1, 40.4, -111.7, 40.9], geojson: unionGeom }],
+      ['G5210:49013', { bbox: [-112.1, 40.4, -111.7, 40.9], geojson: unionGeom, countyGeoIds: [] }],
     ]));
     const [race] = await getPlayableRaces();
     expect(race.boundaryRef).toMatchObject({ layer: 'G5210', geoid: '49013' });
@@ -347,6 +347,76 @@ describe('getPlayableRaces — geometry attachment', () => {
 
     expect(races[0].boundaryRef).toEqual({ layer: 'G4110', geoid: '1805860' });
     expect(races[0].frameRef).toEqual({ layer: 'G4020', geoid: '18105' });
+  });
+});
+
+describe('getPlayableRaces — countyGeoIds', () => {
+  it('uses the G4020 frame geoid for a city race', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [BASE_ROW] }); // G4110 framed to G4020 18105
+    const [race] = await getPlayableRaces();
+    expect(race.countyGeoIds).toEqual(['18105']);
+  });
+
+  it('uses the boundary geoid for a county race', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      ...BASE_ROW,
+      position_name: 'County Commission',
+      jurisdiction_level: 'county',
+      boundary_layer: 'G4020', boundary_geoid: '18105',
+      frame_layer: null, frame_geoid: null,
+    }] });
+    const [race] = await getPlayableRaces();
+    expect(race.countyGeoIds).toEqual(['18105']);
+  });
+
+  it('uses the union member counties for a state-legislative district', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      ...BASE_ROW,
+      position_name: 'State Senate District 21',
+      jurisdiction_level: 'state',
+      boundary_layer: 'G5210', boundary_geoid: '49021',
+      frame_layer: null, frame_geoid: null,
+    }] });
+    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
+      ['G5210:49021', { bbox: [0, 0, 1, 1], geojson: { type: 'MultiPolygon', coordinates: [] }, countyGeoIds: ['49035', '49045'] }],
+    ]));
+    const [race] = await getPlayableRaces();
+    expect(race.countyGeoIds).toEqual(['49035', '49045']);
+  });
+
+  it('is [] for a statewide race', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      ...BASE_ROW,
+      position_name: 'Governor',
+      jurisdiction_level: 'state',
+      boundary_layer: null, boundary_geoid: null,
+      frame_layer: null, frame_geoid: null,
+    }] });
+    const [race] = await getPlayableRaces();
+    expect(race.countyGeoIds).toEqual([]);
+  });
+
+  it('is [] for a school district race (v1 boundary)', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      ...BASE_ROW,
+      position_name: 'School Board',
+      jurisdiction_level: 'local',
+      boundary_layer: 'G5400', boundary_geoid: '1800001',
+      frame_layer: null, frame_geoid: null,
+    }] });
+    const [race] = await getPlayableRaces();
+    expect(race.countyGeoIds).toEqual([]);
+  });
+
+  it('is [] for a city ward framed to a city, not a county', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      ...BASE_ROW,
+      position_name: 'City Council Ward 3',
+      boundary_layer: 'X0001', boundary_geoid: 'WARD3',
+      frame_layer: 'G4110', frame_geoid: '1805860',
+    }] });
+    const [race] = await getPlayableRaces();
+    expect(race.countyGeoIds).toEqual([]);
   });
 });
 

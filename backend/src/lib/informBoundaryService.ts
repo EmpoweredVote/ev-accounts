@@ -120,6 +120,8 @@ export async function getBoundaryBatch(
 export interface UnionFrame {
   bbox: [number, number, number, number];
   geojson: { type: 'Polygon' | 'MultiPolygon'; coordinates: unknown };
+  /** GEOIDs of the G4020 counties this district overlaps. Drives the county relevance tier. */
+  countyGeoIds: string[];
 }
 
 /**
@@ -151,6 +153,7 @@ export async function getCountyUnionFrames(
     layer: string; geoid: string;
     minx: number | null; miny: number | null; maxx: number | null; maxy: number | null;
     geojson: string | null;
+    county_geoids: string[] | null;
   }>(
     `WITH dist AS (
        SELECT v.layer, v.geoid, gb.geometry
@@ -159,7 +162,8 @@ export async function getCountyUnionFrames(
          ON gb.mtfcc = v.layer AND gb.geo_id = v.geoid
      ),
      u AS (
-       SELECT d.layer, d.geoid, ST_Multi(ST_Union(c.geometry)) AS geom
+       SELECT d.layer, d.geoid, ST_Multi(ST_Union(c.geometry)) AS geom,
+              array_agg(DISTINCT c.geo_id ORDER BY c.geo_id) AS county_geoids
        FROM dist d
        JOIN essentials.geofence_boundaries c
          ON c.mtfcc = 'G4020'
@@ -168,12 +172,12 @@ export async function getCountyUnionFrames(
        GROUP BY d.layer, d.geoid
      ),
      s AS (
-       SELECT layer, geoid,
+       SELECT layer, geoid, county_geoids,
               CASE WHEN (ST_XMax(geom) - ST_XMin(geom)) > 180
                    THEN ST_ShiftLongitude(geom) ELSE geom END AS geom
        FROM u
      )
-     SELECT layer, geoid,
+     SELECT layer, geoid, county_geoids,
             ST_XMin(ST_Envelope(geom)) AS minx, ST_YMin(ST_Envelope(geom)) AS miny,
             ST_XMax(ST_Envelope(geom)) AS maxx, ST_YMax(ST_Envelope(geom)) AS maxy,
             ST_AsGeoJSON(ST_SimplifyPreserveTopology(geom, 0.001)) AS geojson
@@ -194,6 +198,7 @@ export async function getCountyUnionFrames(
     result.set(`${row.layer}:${row.geoid}`, {
       bbox: [Number(row.minx), Number(row.miny), Number(row.maxx), Number(row.maxy)],
       geojson,
+      countyGeoIds: row.county_geoids ?? [],
     });
   }
   return result;

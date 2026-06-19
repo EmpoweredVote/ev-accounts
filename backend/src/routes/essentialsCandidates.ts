@@ -115,6 +115,7 @@ router.post('/search', optionalAuth, async (req: Request, res: Response): Promis
     res.status(200).json({
       politicians: result.politicians,
       tribal_land: result.tribal_land ?? { on_reservation: false },
+      county: result.county ?? null,
     });
   } catch (err: unknown) {
     const code = (err as { code?: string }).code;

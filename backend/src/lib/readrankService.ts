@@ -55,6 +55,9 @@ export interface RaceSummary {
   scope: 'statewide' | 'district' | 'county' | 'citywide';
   boundaryRef: BoundaryRef | null;
   frameRef: BoundaryRef | null;
+  /** GEOIDs of the counties this race belongs to (set, since state-leg districts cross
+   *  county lines). [] for statewide / federal / unframed races. */
+  countyGeoIds: string[];
 }
 
 export interface BlindQuote {
@@ -411,6 +414,22 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     const frameGeo = frameRef ? boundaryMap.get(`${frameRef.layer}:${frameRef.geoid}`) : undefined;
     if (frameGeo) frameRef = { ...frameRef, bbox: frameGeo.bbox, geojson: frameGeo.geojson } as BoundaryRef;
 
+    // County set for the relevance tier. county/city/ward-council come from the
+    // single G4020 boundary or frame already computed; state-leg districts use the
+    // union member counties; everything else has no single county → [].
+    let countyGeoIds: string[] = [];
+    if (scope === 'county' && childLayer === 'G4020' && r.boundary_geoid) {
+      countyGeoIds = [r.boundary_geoid];
+    } else if (
+      (childLayer === 'G4110' || childLayer.startsWith('X')) &&
+      r.frame_layer === 'G4020' && r.frame_geoid
+    ) {
+      countyGeoIds = [r.frame_geoid];
+    } else if (childLayer === 'G5210' || childLayer === 'G5220') {
+      const uf = r.boundary_geoid ? unionFrameMap.get(`${childLayer}:${r.boundary_geoid}`) : undefined;
+      countyGeoIds = uf?.countyGeoIds ?? [];
+    }
+
     return {
       raceId: r.race_id,
       office,
@@ -427,6 +446,7 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
       scope,
       boundaryRef,
       frameRef,
+      countyGeoIds,
       isLocal: localSet.size > 0 && (r.politician_ids ?? []).some((id) => localSet.has(id)),
     };
   });
