@@ -131,6 +131,93 @@ const USPS_TO_FIPS: Record<string, string> = {
   WV: '54', WI: '55', WY: '56',
 };
 
+/** USPS → full state name, for stripping a redundant state prefix off statewide-exec offices. */
+const USPS_TO_NAME: Record<string, string> = {
+  AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California',
+  CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware', FL: 'Florida', GA: 'Georgia',
+  HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois', IN: 'Indiana', IA: 'Iowa',
+  KS: 'Kansas', KY: 'Kentucky', LA: 'Louisiana', ME: 'Maine', MD: 'Maryland',
+  MA: 'Massachusetts', MI: 'Michigan', MN: 'Minnesota', MS: 'Mississippi', MO: 'Missouri',
+  MT: 'Montana', NE: 'Nebraska', NV: 'Nevada', NH: 'New Hampshire', NJ: 'New Jersey',
+  NM: 'New Mexico', NY: 'New York', NC: 'North Carolina', ND: 'North Dakota', OH: 'Ohio',
+  OK: 'Oklahoma', OR: 'Oregon', PA: 'Pennsylvania', RI: 'Rhode Island', SC: 'South Carolina',
+  SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah', VT: 'Vermont',
+  VA: 'Virginia', WA: 'Washington', WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming',
+  DC: 'District of Columbia',
+};
+
+/** Chamber-neutral office title for each legislative district_type (ADR-0001). */
+const LEGISLATIVE_OFFICE: Record<string, string> = {
+  STATE_LOWER: 'State Representative',
+  STATE_UPPER: 'State Senator',
+  NATIONAL_LOWER: 'US Representative',
+  NATIONAL_UPPER: 'US Senator',
+};
+
+const WORD_TO_NUM: Record<string, number> = {
+  first: 1, second: 2, third: 3, fourth: 4, fifth: 5, sixth: 6, seventh: 7, eighth: 8,
+  ninth: 9, tenth: 10, eleventh: 11, twelfth: 12, thirteenth: 13, fourteenth: 14,
+  fifteenth: 15, sixteenth: 16, seventeenth: 17, eighteenth: 18, nineteenth: 19, twentieth: 20,
+};
+
+/** Normalize a district/seat phrase to its canonical seat token, or null.
+ *  "State House District 21" -> "District 21"; "Ninth District" -> "District 9";
+ *  "District 060" -> "District 60"; "At Large" -> "At-Large"; "" / null -> null. */
+export function normalizeSeat(raw: string | null): string | null {
+  if (!raw) return null;
+  let s = raw.trim();
+  if (!s) return null;
+  s = s.replace(
+    /\b(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth)\s+district\b/i,
+    (_m, w: string) => `District ${WORD_TO_NUM[w.toLowerCase()]}`,
+  );
+  s = s.replace(/\bdistrict\s+0*(\d+)/i, 'District $1');
+  s = s.replace(/\bat[\s-]?large\b/i, 'At-Large');
+  const m = s.match(/\b(District\s+\d+|At-Large|Ward\s+\d+|Division\s+\d+|Seat\s+\d+)\b/i);
+  return m ? m[1].replace(/\s+/g, ' ') : s;
+}
+
+/** Derive a clean office + seat for a race tile (ADR-0001). */
+export function deriveOfficeSeat(input: {
+  positionName: string;
+  districtLabel: string | null;
+  districtType: string | null;
+  state: string | null;
+}): { office: string; seat: string | null } {
+  const dt = (input.districtType ?? '').toUpperCase();
+
+  if (LEGISLATIVE_OFFICE[dt]) {
+    return {
+      office: LEGISLATIVE_OFFICE[dt],
+      seat: normalizeSeat(input.districtLabel) ?? normalizeSeat(input.positionName),
+    };
+  }
+
+  // Executive / local / unknown: keep the place-qualified name, split any trailing
+  // comma district, and drop a redundant statewide state prefix.
+  let office = (input.positionName ?? '').trim()
+    .replace(/United States Representative/gi, 'US Representative')
+    .replace(/United States Senator/gi, 'US Senator');
+
+  let seat: string | null = null;
+  const comma = office.indexOf(', ');
+  if (comma > 0) {
+    const norm = normalizeSeat(office.slice(comma + 2));
+    if (norm && /^(District|At-Large|Ward|Division|Seat)/i.test(norm)) {
+      seat = norm;
+      office = office.slice(0, comma);
+    }
+  }
+
+  if (input.state) {
+    const full = USPS_TO_NAME[input.state.toUpperCase()];
+    const alt = full ? `|${full}` : '';
+    office = office.replace(new RegExp(`^(${input.state}${alt})\\s+`, 'i'), '');
+  }
+
+  return { office: office.trim(), seat: seat ?? normalizeSeat(input.districtLabel) };
+}
+
 /** Tier from jurisdiction_level; scope prefers the mtfcc geometry class, else position name. */
 export function deriveTierScope(input: {
   jurisdiction_level: string | null;

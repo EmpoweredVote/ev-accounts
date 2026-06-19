@@ -17,7 +17,7 @@ vi.mock('./env.js', () => ({
 }));
 vi.mock('./informBoundaryService.js', () => ({ getBoundaryBatch: mockGetBoundaryBatch }));
 
-import { getPlayableRaces, deriveTierScope } from './readrankService.js';
+import { getPlayableRaces, deriveTierScope, deriveOfficeSeat } from './readrankService.js';
 
 beforeEach(() => {
   mockQuery.mockReset();
@@ -285,5 +285,74 @@ describe('getPlayableRaces — geometry attachment', () => {
 
     expect(races[0].boundaryRef).toEqual({ layer: 'G4110', geoid: '1805860' });
     expect(races[0].frameRef).toEqual({ layer: 'G4020', geoid: '18105' });
+  });
+});
+
+describe('deriveOfficeSeat', () => {
+  it('legislative STATE_LOWER: office from district_type, seat extracted from chamber label', () => {
+    expect(deriveOfficeSeat({
+      positionName: 'Utah State House District 21', districtLabel: 'State House District 21',
+      districtType: 'STATE_LOWER', state: 'UT',
+    })).toEqual({ office: 'State Representative', seat: 'District 21' });
+  });
+
+  it('legislative STATE_UPPER -> State Senator', () => {
+    expect(deriveOfficeSeat({
+      positionName: 'Utah State Senate District 13', districtLabel: 'State Senate District 13',
+      districtType: 'STATE_UPPER', state: 'UT',
+    })).toEqual({ office: 'State Senator', seat: 'District 13' });
+  });
+
+  it('legislative NATIONAL_LOWER: word-ordinal + federal abbreviation', () => {
+    expect(deriveOfficeSeat({
+      positionName: 'United States Representative, Ninth District', districtLabel: 'Ninth District',
+      districtType: 'NATIONAL_LOWER', state: 'IN',
+    })).toEqual({ office: 'US Representative', seat: 'District 9' });
+  });
+
+  it('legislative: strips leading zeros from the seat', () => {
+    expect(deriveOfficeSeat({
+      positionName: 'State Representative, District 061', districtLabel: 'District 061',
+      districtType: 'STATE_LOWER', state: 'IN',
+    })).toEqual({ office: 'State Representative', seat: 'District 61' });
+  });
+
+  it('legislative: recovers seat from positionName when districtLabel is null', () => {
+    expect(deriveOfficeSeat({
+      positionName: 'Utah State House District 44', districtLabel: null,
+      districtType: 'STATE_LOWER', state: 'UT',
+    })).toEqual({ office: 'State Representative', seat: 'District 44' });
+  });
+
+  it('county executive: keeps place-qualified office, takes seat from label', () => {
+    expect(deriveOfficeSeat({
+      positionName: 'Monroe County Commissioner', districtLabel: 'District 1',
+      districtType: 'COUNTY', state: 'IN',
+    })).toEqual({ office: 'Monroe County Commissioner', seat: 'District 1' });
+  });
+
+  it('city executive: keeps the place in the office, no seat', () => {
+    expect(deriveOfficeSeat({
+      positionName: 'Los Angeles Mayor', districtLabel: null,
+      districtType: 'LOCAL_EXEC', state: 'CA',
+    })).toEqual({ office: 'Los Angeles Mayor', seat: null });
+  });
+
+  it('statewide exec: drops a redundant state abbreviation prefix', () => {
+    expect(deriveOfficeSeat({
+      positionName: 'CA Governor', districtLabel: null, districtType: null, state: 'CA',
+    })).toEqual({ office: 'Governor', seat: null });
+  });
+
+  it('statewide exec: drops a redundant full-state-name prefix', () => {
+    expect(deriveOfficeSeat({
+      positionName: 'California Governor', districtLabel: null, districtType: null, state: 'CA',
+    })).toEqual({ office: 'Governor', seat: null });
+  });
+
+  it('at-large seat normalizes spelling', () => {
+    expect(deriveOfficeSeat({
+      positionName: 'City Council', districtLabel: 'At Large', districtType: 'LOCAL', state: 'IN',
+    })).toEqual({ office: 'City Council', seat: 'At-Large' });
   });
 });
