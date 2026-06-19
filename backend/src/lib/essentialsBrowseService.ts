@@ -10,7 +10,7 @@
 
 import { pool } from './db.js';
 import type { PoliticianFlatRecord, FinanceSummary } from './essentialsService.js';
-import { MTFCC_DISTRICT_TYPE_GUARD } from './geoIdGuard.js';
+import { MTFCC_DISTRICT_TYPE_GUARD, type GeoPair } from './geoIdGuard.js';
 
 // FIPS → state abbreviation mapping
 const FIPS_TO_ABBREV: Record<string, string> = {
@@ -103,54 +103,80 @@ export async function getAreasForState(stateAbbrev: string): Promise<BrowseArea[
   });
 }
 
+// Geofence MTFCCs that are valid "seed" areas for overlap resolution: counties,
+// places/cities, townships, and explicit local divisions. Legislative geofences
+// (G52xx) are never seeds — they are RESULTS of resolution, not browse areas.
+const AREA_SEED_MTFCCS = ['G4020', 'G4040', 'G4110', 'G4120', 'X0001'];
+
+/**
+ * Resolve every geofence boundary that overlaps a set of seed area geofences,
+ * using the bidirectional PostGIS logic that mirrors the address path's
+ * ST_Covers stack — but for an AREA (all overlapping districts) rather than a
+ * single point:
+ *   1. Sub-districts whose representative point falls WITHIN a seed
+ *   2. Larger non-city districts that CONTAIN a seed's center point
+ *   3. County / school / legislative districts whose interiors GENUINELY overlap
+ *      a seed (ST_Intersects but NOT a zero-area boundary touch)
+ *
+ * Branch 3 is the key to completeness: county (G4020) and school (G54xx) used to
+ * be captured by center-containment only (branches 1–2), so an area straddling
+ * two counties or two school districts missed the ones not centered on it. They
+ * are now matched by real interior overlap, exactly like legislative districts.
+ *
+ * Returns the matched (geo_id, mtfcc) pairs (seeds excluded — callers prepend
+ * their own seeds). Each pair carries the MTFCC of the geofence it came from so
+ * downstream district matching can apply MTFCC_DISTRICT_TYPE_GUARD and avoid the
+ * 5-digit GEOID collision (e.g. State House 35 vs Salt Lake County, both 49035).
+ */
+export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoPair[]> {
+  if (seeds.length === 0) return [];
+  const seedGeoIds = seeds.map((s) => s.geo_id);
+  const seedMtfccs = seeds.map((s) => s.mtfcc);
+
+  const intersectionQuery = `
+    SELECT DISTINCT gb2.geo_id, gb2.mtfcc
+    FROM unnest($1::text[], $2::text[]) AS seed(geo_id, mtfcc)
+    JOIN essentials.geofence_boundaries gb1
+      ON gb1.geo_id = seed.geo_id AND gb1.mtfcc = seed.mtfcc
+    JOIN essentials.geofence_boundaries gb2
+      ON NOT (gb2.geo_id = gb1.geo_id AND gb2.mtfcc = gb1.mtfcc)
+    WHERE (
+      -- Sub-districts whose representative point falls WITHIN the area
+      public.ST_Contains(gb1.geometry, public.ST_PointOnSurface(gb2.geometry))
+      -- Larger non-city districts that CONTAIN the area's center point
+      OR (public.ST_Contains(gb2.geometry, public.ST_PointOnSurface(gb1.geometry))
+          AND gb2.mtfcc NOT IN ('G4110', 'G4120'))
+      -- County / school / legislative districts that genuinely overlap the area
+      -- (interiors intersect). NOT ST_Touches excludes neighbors that merely
+      -- share a boundary edge (zero-area touch), which would otherwise surface
+      -- adjacent counties / districts for border areas. A real split — e.g. a
+      -- city divided across two senate districts, or straddling two school
+      -- districts — has overlapping interiors and is kept (verified: Alpine
+      -- stays in both SD-19 ~62% and SD-21 ~38%).
+      OR (public.ST_Intersects(gb1.geometry, gb2.geometry)
+          AND NOT public.ST_Touches(gb1.geometry, gb2.geometry)
+          AND gb2.mtfcc IN ('G5200', 'G5210', 'G5220', 'G4020', 'G5400', 'G5410', 'G5420'))
+    )
+  `;
+
+  const { rows } = await pool.query(intersectionQuery, [seedGeoIds, seedMtfccs]);
+  return rows.map((r) => ({ geo_id: r.geo_id as string, mtfcc: r.mtfcc as string }));
+}
+
 /**
  * Compute all overlapping district geo_ids for a given area boundary, plus the
- * area's resolved state abbreviation.
- *
- * Extracted from getPoliticiansByArea so it can be shared with elections lookups.
- * Uses the same bidirectional PostGIS intersection logic:
- *   1. Sub-districts whose center falls WITHIN the area
- *   2. Larger non-city districts that CONTAIN the area's center
- *   3. Legislative districts that INTERSECT the area
+ * area's resolved state abbreviation. Shared by getPoliticiansByArea and the
+ * elections-by-area lookup.
  *
  * The returned `geoIds` array always includes the input `geoId` itself first.
  */
 export async function getOverlappingGeoIdsForArea(
   geoId: string,
   mtfcc: string
-): Promise<{ geoIds: string[]; geoPairs: Array<{ geo_id: string; mtfcc: string }>; stateAbbrev: string | null }> {
-  const intersectionQuery = `
-    SELECT DISTINCT gb2.geo_id, gb2.mtfcc
-    FROM essentials.geofence_boundaries gb1
-    JOIN essentials.geofence_boundaries gb2 ON gb2.geo_id != gb1.geo_id
-    WHERE gb1.geo_id = $1 AND gb1.mtfcc = $2
-    AND (
-      -- Sub-districts whose representative point falls WITHIN the area
-      public.ST_Contains(gb1.geometry, public.ST_PointOnSurface(gb2.geometry))
-      -- Larger non-city districts that CONTAIN the area's center point
-      OR (public.ST_Contains(gb2.geometry, public.ST_PointOnSurface(gb1.geometry))
-          AND gb2.mtfcc NOT IN ('G4110', 'G4120'))
-      -- Legislative districts that genuinely overlap the area (interiors
-      -- intersect). NOT ST_Touches excludes neighbors that merely share a
-      -- boundary edge (zero-area touch), which previously surfaced the wrong
-      -- senator/representative for border cities. A real split — e.g. a city
-      -- divided across two senate districts — has overlapping interiors and is
-      -- kept (verified: Alpine stays in both SD-19 ~62% and SD-21 ~38%).
-      OR (public.ST_Intersects(gb1.geometry, gb2.geometry)
-          AND NOT public.ST_Touches(gb1.geometry, gb2.geometry)
-          AND gb2.mtfcc IN ('G5200', 'G5210', 'G5220'))
-    )
-  `;
-
-  const { rows: geoMatches } = await pool.query(intersectionQuery, [geoId, mtfcc]);
-  const geoIds = [geoId, ...geoMatches.map((r) => r.geo_id as string)];
-  // Keep each candidate geo_id paired with the MTFCC of the geofence it came
-  // from, so downstream district matching can apply MTFCC_DISTRICT_TYPE_GUARD
-  // and avoid the 5-digit GEOID collision (e.g. State Senate 21 vs Iron County).
-  const geoPairs = [
-    { geo_id: geoId, mtfcc },
-    ...geoMatches.map((r) => ({ geo_id: r.geo_id as string, mtfcc: r.mtfcc as string })),
-  ];
+): Promise<{ geoIds: string[]; geoPairs: GeoPair[]; stateAbbrev: string | null }> {
+  const matches = await resolveOverlappingGeoPairs([{ geo_id: geoId, mtfcc }]);
+  const geoIds = [geoId, ...matches.map((m) => m.geo_id)];
+  const geoPairs: GeoPair[] = [{ geo_id: geoId, mtfcc }, ...matches];
 
   const { rows: areaRows } = await pool.query(
     `SELECT state FROM essentials.geofence_boundaries WHERE geo_id = $1 AND mtfcc = $2 LIMIT 1`,
@@ -161,6 +187,55 @@ export async function getOverlappingGeoIdsForArea(
   const stateAbbrev = stateFips ? FIPS_TO_ABBREV[stateFips] ?? null : null;
 
   return { geoIds, geoPairs, stateAbbrev };
+}
+
+/**
+ * Resolve the full overlapping district stack (city + county + every overlapping
+ * school / legislative / state-board district) for a list of government geo_ids,
+ * mirroring the area browse. Looks up the area-type geofences for those
+ * government geo_ids (plus an optional county geofence), then resolves overlaps
+ * via resolveOverlappingGeoPairs.
+ *
+ * Governments whose boundaries aren't loaded contribute no geofence seeds and so
+ * resolve to no district pairs — callers still surface their officials via the
+ * direct government → chamber → office path.
+ */
+export async function getOverlappingGeoIdsForGovernments(
+  governmentGeoIds: string[],
+  countyGeoId?: string
+): Promise<{ geoPairs: GeoPair[]; stateAbbrev: string | null }> {
+  if (governmentGeoIds.length === 0) return { geoPairs: [], stateAbbrev: null };
+
+  const lookupGeoIds = countyGeoId ? [...governmentGeoIds, countyGeoId] : governmentGeoIds;
+  const { rows: seedRows } = await pool.query(
+    `SELECT DISTINCT geo_id, mtfcc, state
+       FROM essentials.geofence_boundaries
+      WHERE geo_id = ANY($1) AND mtfcc = ANY($2)`,
+    [lookupGeoIds, AREA_SEED_MTFCCS]
+  );
+
+  const seeds: GeoPair[] = seedRows.map((r) => ({ geo_id: r.geo_id as string, mtfcc: r.mtfcc as string }));
+  // Ensure the explicit county seed is present even if its G4020 geofence wasn't
+  // returned above (e.g. countyGeoId not among governmentGeoIds).
+  if (countyGeoId && !seeds.some((s) => s.geo_id === countyGeoId && s.mtfcc === 'G4020')) {
+    seeds.push({ geo_id: countyGeoId, mtfcc: 'G4020' });
+  }
+
+  const matches = await resolveOverlappingGeoPairs(seeds);
+
+  // Dedup the union of seeds + matches by (geo_id, mtfcc).
+  const seen = new Set<string>();
+  const geoPairs = [...seeds, ...matches].filter((p) => {
+    const k = `${p.geo_id}::${p.mtfcc}`;
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+
+  const stateFips = (seedRows.find((r) => r.state)?.state as string | undefined) ?? null;
+  const stateAbbrev = stateFips ? FIPS_TO_ABBREV[stateFips] ?? null : null;
+
+  return { geoPairs, stateAbbrev };
 }
 
 /**
@@ -380,11 +455,70 @@ export async function getPoliticiansByArea(
   return politicians;
 }
 
+// District-politician SELECT shared by the geofence-resolved lookups. Identical
+// to getPoliticiansByArea's Step 2 projection so both produce the same shape.
+const DISTRICT_POLITICIAN_SELECT = `
+  DISTINCT ON (p.id)
+  p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
+  p.preferred_name, p.name_suffix, p.party,
+  COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url, p.web_form_url,
+  p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+  p.finance_summary,
+  COALESCE(p.valid_from, '') AS term_start,
+  COALESCE(p.valid_to, '') AS term_end,
+  COALESCE(p.term_date_precision, '') AS term_date_precision,
+  COALESCE(p.appointment_date::text, '') AS appointment_date,
+  o.title AS office_title, o.representing_state, o.representing_city,
+  o.is_appointed_position, o.is_vacant, o.vacant_since,
+  p.is_appointed, o.faces_retention_vote,
+  d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
+  ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
+  ch.election_frequency, ch.policy_engagement_level,
+  g.name AS government_name, g.type AS government_type,
+  COALESCE(gvb.display_name, '') AS government_body_name,
+  COALESCE(gvb.website_url, '') AS government_body_url,
+  COALESCE(ch.website_url, '') AS chamber_url`;
+
+/**
+ * Fetch active politicians for a set of resolved (geo_id, mtfcc) district pairs,
+ * applying MTFCC_DISTRICT_TYPE_GUARD so the 5-digit GEOID collision and
+ * unpopulated districts.mtfcc are both handled. Shared by the geofence-resolved
+ * portion of the government-list browse.
+ */
+async function fetchDistrictPoliticianRows(geoPairs: GeoPair[]): Promise<Record<string, unknown>[]> {
+  if (geoPairs.length === 0) return [];
+  const { rows } = await pool.query<Record<string, unknown>>(
+    `
+      SELECT ${DISTRICT_POLITICIAN_SELECT}
+      FROM essentials.districts d
+      JOIN unnest($1::text[], $2::text[]) AS gp(geo_id, mtfcc)
+        ON gp.geo_id = d.geo_id AND ${MTFCC_DISTRICT_TYPE_GUARD}
+      JOIN essentials.offices o ON o.district_id = d.id
+      JOIN essentials.politicians p ON o.politician_id = p.id
+      LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
+      LEFT JOIN essentials.governments g ON g.id = ch.government_id
+      LEFT JOIN essentials.government_bodies gvb
+        ON gvb.state = d.state
+        AND gvb.geo_id = d.geo_id
+        AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
+      WHERE p.is_active = true
+      ORDER BY p.id
+    `,
+    [geoPairs.map((p) => p.geo_id), geoPairs.map((p) => p.mtfcc)]
+  );
+  return rows;
+}
+
 /**
  * Find all politicians for a specific list of government geo_ids.
- * Queries directly through governments → chambers → offices → politicians,
- * bypassing the geofence/district infrastructure (for jurisdictions whose
- * city boundaries and district records haven't been loaded).
+ *
+ * Combines three sources, deduped by politician id:
+ *   1. Officials linked directly through governments → chambers → offices (city /
+ *      township at-large offices, incl. those with no district/geofence record).
+ *   2. Statewide + federal officials for the resolved state.
+ *   3. The full overlapping district stack (county, school, state board, state
+ *      house/senate, US House) resolved from the government geofences — the same
+ *      stack the area browse returns.
  */
 export async function getPoliticiansByGovernmentList(
   governmentGeoIds: string[],
@@ -479,109 +613,19 @@ export async function getPoliticiansByGovernmentList(
     statewideRows = swRows;
   }
 
-  // Third query: PostGIS intersection for US House (NATIONAL_LOWER) reps
-  // whose congressional district boundary (G5200) intersects the given county boundary (G4020).
-  // Only runs when countyGeoId is provided — zero impact on existing callers.
-  let congressionalRows: typeof rows = [];
-  if (countyGeoId) {
-    const { rows: cdRows } = await pool.query<Record<string, unknown>>(`
-      SELECT DISTINCT ON (p.id)
-             p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
-             p.preferred_name, p.name_suffix, p.party,
-             COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
-             p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
-             p.finance_summary,
-             COALESCE(p.valid_from, '') AS term_start,
-             COALESCE(p.valid_to, '') AS term_end,
-             COALESCE(p.term_date_precision, '') AS term_date_precision,
-             COALESCE(p.appointment_date::text, '') AS appointment_date,
-             o.title AS office_title, o.representing_state, o.representing_city,
-             o.is_appointed_position, o.is_vacant, o.vacant_since,
-             p.is_appointed, o.faces_retention_vote,
-             d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
-             ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
-             ch.election_frequency, ch.policy_engagement_level,
-             g.name AS government_name, g.type AS government_type,
-             COALESCE(gvb.display_name, '') AS government_body_name,
-             COALESCE(gvb.website_url, '') AS government_body_url,
-             COALESCE(ch.website_url, '') AS chamber_url
-      FROM essentials.geofence_boundaries county_gb
-      JOIN essentials.geofence_boundaries cd_gb
-        ON public.ST_Intersects(county_gb.geometry, cd_gb.geometry)
-       AND cd_gb.mtfcc IN ('G5200', 'G5210', 'G5220')
-      JOIN essentials.districts d
-        ON d.geo_id = cd_gb.geo_id
-       AND d.mtfcc = cd_gb.mtfcc
-      JOIN essentials.offices o ON o.district_id = d.id
-      JOIN essentials.politicians p ON p.id = o.politician_id AND p.is_active = true
-      LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
-      LEFT JOIN essentials.governments g ON g.id = ch.government_id
-      LEFT JOIN essentials.government_bodies gvb
-        ON gvb.state = d.state
-       AND gvb.geo_id = d.geo_id
-       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
-      WHERE county_gb.geo_id = $1
-        AND county_gb.mtfcc = 'G4020'
-      ORDER BY p.id
-    `, [countyGeoId]);
-    congressionalRows = cdRows;
-  }
-
-  // Fourth query: PostGIS intersection for congressional/state reps whose district
-  // boundary intersects the city/place geofence (G4110/G4040). Handles city-level
-  // browse (e.g. Cambridge MA) where no countyGeoId is passed but the government
-  // geo_id itself has a geofence polygon.
-  let cityDistrictRows: typeof rows = [];
-  {
-    const SELECT_FIELDS_CD = `
-      DISTINCT ON (p.id)
-      p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
-      p.preferred_name, p.name_suffix, p.party,
-      COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
-      p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
-      p.finance_summary,
-      COALESCE(p.valid_from, '') AS term_start,
-      COALESCE(p.valid_to, '') AS term_end,
-      COALESCE(p.term_date_precision, '') AS term_date_precision,
-      COALESCE(p.appointment_date::text, '') AS appointment_date,
-      o.title AS office_title, o.representing_state, o.representing_city,
-      o.is_appointed_position, o.is_vacant, o.vacant_since,
-      p.is_appointed, o.faces_retention_vote,
-      d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
-      ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
-      ch.election_frequency, ch.policy_engagement_level,
-      g.name AS government_name, g.type AS government_type,
-      COALESCE(gvb.display_name, '') AS government_body_name,
-      COALESCE(gvb.website_url, '') AS government_body_url,
-      COALESCE(ch.website_url, '') AS chamber_url
-    `;
-    const { rows: cdRows } = await pool.query<Record<string, unknown>>(`
-      SELECT ${SELECT_FIELDS_CD}
-      FROM essentials.geofence_boundaries city_gb
-      JOIN essentials.geofence_boundaries cd_gb
-        ON public.ST_Intersects(city_gb.geometry, cd_gb.geometry)
-       AND cd_gb.mtfcc IN ('G5200', 'G5210', 'G5220')
-      JOIN essentials.districts d
-        ON d.geo_id = cd_gb.geo_id
-       AND d.mtfcc = cd_gb.mtfcc
-      JOIN essentials.offices o ON o.district_id = d.id
-      JOIN essentials.politicians p ON p.id = o.politician_id AND p.is_active = true
-      LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
-      LEFT JOIN essentials.governments g ON g.id = ch.government_id
-      LEFT JOIN essentials.government_bodies gvb
-        ON gvb.state = d.state
-       AND gvb.geo_id = d.geo_id
-       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
-      WHERE city_gb.geo_id = ANY($1)
-        AND city_gb.mtfcc IN ('G4110', 'G4040', 'G4120')
-      ORDER BY p.id
-    `, [governmentGeoIds]);
-    cityDistrictRows = cdRows;
-  }
+  // District officials resolved from the government geofences: county, school,
+  // state board, state house/senate, and US House reps whose district boundary
+  // overlaps the city/place (or the optional county) geofence. Mirrors the
+  // address/area path's full overlapping stack via resolveOverlappingGeoPairs +
+  // the MTFCC guard. Subsumes the previous county-only and city-geofence
+  // congressional/legislative supplements, and additionally surfaces the county
+  // + school + state-board officials those omitted (the reported bug).
+  const { geoPairs: districtPairs } = await getOverlappingGeoIdsForGovernments(governmentGeoIds, countyGeoId);
+  const districtRows = await fetchDistrictPoliticianRows(districtPairs);
 
   // Merge and deduplicate by politician ID
   const seen = new Set<string>();
-  const allRows = [...rows, ...statewideRows, ...congressionalRows, ...cityDistrictRows].filter((r) => {
+  const allRows = [...rows, ...statewideRows, ...districtRows].filter((r) => {
     const id = r.id as string;
     if (seen.has(id)) return false;
     seen.add(id);
