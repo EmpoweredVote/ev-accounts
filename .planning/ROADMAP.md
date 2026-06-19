@@ -97,7 +97,7 @@
 
 #### Phase 134: NJ + WA + AZ House Rep Stances
 
-**Goal:** All in-scope NJ (12) + WA (10) + AZ (9) US House reps = **31 reps** have sourced compass stances, each backed by a real source URL.
+**Goal:** All in-scope NJ (12) + WA (10) + AZ (9) US House reps = **31 reps** have sourced compass stances, each backed by a real source URL. — ✅ COMPLETE 2026-06-19 (6 plans 134-01..06; 31/31 reps, 409 sourced answers (NJ 158 + WA 138 + AZ 113), 0 unsourced).
 
 **Depends on:** Nothing (independent wave; filters state_fips NJ=34, WA=53, AZ=04)
 
@@ -1825,7 +1825,7 @@ Bounded Tier 2 stance research for the 4 largest delegations — FL (27), NY (26
 | 131. Phase Gate Verification | v2.16 | 1/1 | Complete | 2026-06-18 |
 | 132. OH + NC House Rep Stances | v2.17 | 4/4 | Complete   | 2026-06-19 |
 | 133. GA + MI House Rep Stances | v2.17 | 4/4 | Complete   | 2026-06-19 |
-| 134. NJ + WA + AZ House Rep Stances | v2.17 | 0/0 | Not started | - |
+| 134. NJ + WA + AZ House Rep Stances | v2.17 | 6/6 | Complete   | 2026-06-19 |
 | 135. TN + CO + MN + MO House Rep Stances | v2.17 | 0/0 | Not started | - |
 | 136. WI + AL + SC + KY House Rep Stances | v2.17 | 0/0 | Not started | - |
 | 137. LA + CT + IN + OK + AR + IA House Rep Stances | v2.17 | 0/0 | Not started | - |

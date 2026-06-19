@@ -20,15 +20,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 133 ✅ complete — next: Phase 134 (NJ + WA + AZ)
+**Current focus:** Phase 134 ✅ complete — next: Phase 135 (TN + CO + MN + MO)
 **Last shipped:** v2.16 National House Rep Stances (Tier 2) — Phases 127–131, shipped 2026-06-18. FL/NY/PA/IL = 87 reps, 1,338 sourced answers, 0 unsourced; USHS-01..05 closed; verify-phase-127-131.sql all pass.
 
 ## Current Position
 
-Phase: 133 (GA + MI House Rep Stances) — ✅ COMPLETE 2026-06-19 (USHS-07; 26/26 reps, 379 answers, 0 unsourced)
-Plan: 4 of 4 complete
-Status: Phase 133 done — ready for /gsd-plan-phase 134 (NJ+WA+AZ)
-Last activity: 2026-06-19 -- Phase 133 complete (GA+MI House stances): 26/26 reps, 379 answers, 0 unsourced
+Phase: 134 (NJ + WA + AZ House Rep Stances) — ✅ COMPLETE 2026-06-19 (USHS-08; 31/31 reps, 409 answers, 0 unsourced)
+Plan: 6 of 6 complete
+Status: Phase 134 done — ready for /gsd-plan-phase 135 (TN+CO+MN+MO)
+Last activity: 2026-06-19 -- Phase 134 complete (NJ+WA+AZ House stances): 31/31 reps, 409 answers, 0 unsourced
 
 ### v2.17 Requirement Coverage
 
