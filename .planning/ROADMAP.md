@@ -40,6 +40,7 @@
 **Pure scale-out of the proven v2.16 pipeline — no new architecture, no research spike.** Researched largest-delegation-first in 8 multi-state waves (132–139) so coverage is maximized early if interrupted, then a consolidated phase gate (140).
 
 **Carry-forward execution methodology (for `/gsd-plan-phase`):**
+
 - **In-scope rep filter:** `essentials.politicians` rows with `external_id BETWEEN -56999 AND -1000 AND NOT EXISTS (SELECT 1 FROM inform.politician_answers a WHERE a.politician_id = p.id)` — 212 reps total. **State derived from external_id:** `state_fips = floor((-external_id)/1000)`. Each wave phase filters its own disjoint set of state FIPS, so phases 132–139 touch non-overlapping rep sets.
 - **Production project ref:** `kxsdzaojfaibhuzmclfq`.
 - **Reuse:** shared `_TOPIC_SCALE.txt` (25 federal topics = 44 live minus 11 city + judicial-*) fetched live and Read by each agent; `politician-stance-researcher` agent at **3-concurrency** (premium tier, validated v2.16); per-rep CSV → canonical re-parse(`relax_column_count`)/re-stringify → merge (absorbs quad-quote/unwrapped-quote/trailing-comma artifacts); external_id→UUID push (`backend/data/stance-research/pa-house-a/_push.ts` — answers + context + quotes in one txn, suffix-aware surname leak-check); gate pattern (`backend/scripts/verify-phase-127-131.sql`).
@@ -56,15 +57,23 @@
 **Requirements:** USHS-06
 
 **Success Criteria** (what must be TRUE):
+
   1. Every in-scope OH and NC US House rep (29 total, `external_id` state_fips 39 and 37, no pre-existing answers) has ≥1 sourced compass stance in `inform.politician_answers`.
   2. Every answer row has a paired `inform.politician_context` row carrying a real, fetched source URL — **zero unsourced rows** at wave close.
   3. Topics with no documentable evidence for a given rep are honest-skipped and documented per rep; no value is inferred from party affiliation.
+**Plans:** 4 plans
 
-**Plans:** 4 plans
 - [ ] 132-01-PLAN.md — OH batch A (OH-1..OH-8, external_id -39001..-39008, 8 reps)
 - [ ] 132-02-PLAN.md — OH batch B (OH-9..OH-15, external_id -39009..-39015, 7 reps)
 - [ ] 132-03-PLAN.md — NC batch A (NC-1..NC-7, external_id -37001..-37007, 7 reps)
 - [ ] 132-04-PLAN.md — NC batch B (NC-8..NC-14, external_id -37008..-37014, 7 reps)
+
+**Cross-cutting constraints:**
+
+- Every politician_answers row written has a paired inform.politician_context row with a non-empty sources array of REAL fetched URLs
+- No stance inferred from party affiliation — every value matches the exact stance text and traces to a fetched URL
+- Live topics fetched fresh from inform.compass_topics; city + judicial-* topics skipped (25 federal topics in scope)
+- Stance counts for all politicians OTHER than the 7 batch-B reps are unchanged
 
 ---
 
@@ -77,6 +86,7 @@
 **Requirements:** USHS-07
 
 **Success Criteria** (what must be TRUE):
+
   1. Every in-scope GA and MI US House rep (26 total, no pre-existing answers) has ≥1 sourced compass stance.
   2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
@@ -94,6 +104,7 @@
 **Requirements:** USHS-08
 
 **Success Criteria** (what must be TRUE):
+
   1. Every in-scope NJ, WA, and AZ US House rep (31 total, no pre-existing answers) has ≥1 sourced compass stance.
   2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
@@ -111,6 +122,7 @@
 **Requirements:** USHS-09
 
 **Success Criteria** (what must be TRUE):
+
   1. Every in-scope TN, CO, MN, and MO US House rep (33 total, no pre-existing answers) has ≥1 sourced compass stance.
   2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
@@ -128,6 +140,7 @@
 **Requirements:** USHS-10
 
 **Success Criteria** (what must be TRUE):
+
   1. Every in-scope WI, AL, SC, and KY US House rep (28 total, no pre-existing answers) has ≥1 sourced compass stance.
   2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
@@ -145,6 +158,7 @@
 **Requirements:** USHS-11
 
 **Success Criteria** (what must be TRUE):
+
   1. Every in-scope LA, CT, IN, OK, AR, and IA US House rep (29 total, no pre-existing answers) has ≥1 sourced compass stance.
   2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
@@ -162,6 +176,7 @@
 **Requirements:** USHS-12
 
 **Success Criteria** (what must be TRUE):
+
   1. Every in-scope KS, MS, NV, NE, and NM US House rep (18 total, no pre-existing answers) has ≥1 sourced compass stance.
   2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
@@ -179,6 +194,7 @@
 **Requirements:** USHS-13
 
 **Success Criteria** (what must be TRUE):
+
   1. Every in-scope rep across the 12 single/low-rep states (18 total, no pre-existing answers) has ≥1 sourced compass stance.
   2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
@@ -196,6 +212,7 @@
 **Requirements:** USHS-14
 
 **Success Criteria** (what must be TRUE):
+
   1. `backend/scripts/verify-phase-132-140.sql` (following the `verify-phase-127-131.sql` pattern) runs read-only and every labeled assertion PASSES against production.
   2. The script asserts all 212 in-scope reps (`external_id BETWEEN -56999 AND -1000`, the v2.17 set) have ≥1 stance, and that **zero** answer rows lack a paired `inform.politician_context` row with a real source URL.
   3. Per-state coverage counts are asserted (covered = in-scope for each of the 38 states), surfacing any rep that was missed.
@@ -203,7 +220,6 @@
 **Plans:** TBD
 
 ---
-
 
 <details>
 <summary>âœ… v2.9 LA County Expansion (Phase 108) â€” SHIPPED 2026-06-08</summary>
@@ -1372,6 +1388,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [ ] 113-01-PLAN.md â€” Phase gate SQL scaffold (verify-va-federal-113.sql): VAST-04, VAST-05, VAFI-01, VAFI-02 assertions
 - [ ] 113-02-PLAN.md â€” FEC finance ingestion for 11 VA House reps (VAFI-01) + VPAP assessment (VAFI-02)
 
@@ -1445,6 +1462,7 @@ Plans:
 **Plans:** 2 plans âœ… COMPLETE 2026-06-11
 
 Plans:
+
 - [x] 113-01-PLAN.md â€” Phase gate SQL scaffold (verify-va-federal-113.sql): VAST-04, VAST-05, VAFI-01, VAFI-02 assertions
 - [x] 113-02-PLAN.md â€” FEC finance ingestion for 11 VA House reps (VAFI-01) + VPAP assessment (VAFI-02)
 
@@ -1497,6 +1515,7 @@ Full details: `.planning/milestones/v2.12-ROADMAP.md`
 **Plans:** 4 plans
 
 Plans:
+
 - [x] 119-01-PLAN.md — Boston tiger_geoid backfill (migration 659) ✅
 - [x] 119-02-PLAN.md — Worcester boundary import script + migration 660 ✅ MAGE-11
 - [x] 119-03-PLAN.md — Springfield/Lowell/Brockton/Quincy shared script + migrations 661-664 ✅ MAGE-12..15
@@ -1509,7 +1528,6 @@ Plans:
 3. At-large councillors in all 6 cities remain linked to the citywide district row (no regression).
 4. Cambridge: unchanged (at-large council, no district rows needed).
 5. `SELECT COUNT(*) FROM essentials.districts WHERE state = 'ma' AND mtfcc IS NOT NULL AND tiger_geoid IS NULL` returns 0 — no orphaned per-ward rows without a backfilled tiger_geoid.
-
 
 ### v2.14 MA City Expansion Wave 2 (Phases 120–124)
 
@@ -1524,6 +1542,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [x] 120-01-PLAN.md — Newton tiger_geoid backfill (migration 687) + apply
 - [x] 120-02-PLAN.md — Phase gate: 9 SQL assertions confirming MAOF-01..07 fulfilled
 
@@ -1587,6 +1606,7 @@ Plans:
 **Plans:** 4 plans
 
 Plans:
+
 - [x] 123-01-PLAN.md — Extend load-ma-ward-boundaries.ts + import ward polygons for all 7 cities (54 total)
 - [x] 123-02-PLAN.md — Migrations 706-709: Newton/Somerville/Lynn (re-links) + Fall River (at-large, no re-links)
 - [x] 123-03-PLAN.md — Migrations 710-712: Waltham (re-links) + Medford (at-large) + New Bedford (re-links)
@@ -1611,6 +1631,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
+
 - [ ] 124-01-PLAN.md — Write + run consolidated 44-assertion gate script; human-verify Path 0 for all 7 cities
 
 **Success Criteria** (what must be TRUE):
@@ -1640,6 +1661,7 @@ Geofencing is already complete (Phase 116/v2.11): 436 CD119 polygons + `tiger_ge
 **Plans:** 2 plans
 
 Plans:
+
 - [x] 125-01-PLAN.md — Built `seed-national-house-reps.ts`; generated migration 739 (299 matched reps; 4 excluded: dup DC + 3 vacancies) [USHR-01, USHR-03]
 - [x] 125-02-PLAN.md — Applied migration 739; linked reps 137→436; idempotent; Path 0 verified; CA/VA/MA untouched [USHR-01, USHR-02, USHR-03]
 
@@ -1662,6 +1684,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [x] 126-01-PLAN.md — Headshots: 292 canonical congress URLs (migration 769) + 7 official Wikimedia portraits storage-mirrored via find-headshots; 299/299 [USHR-04]
 - [x] 126-02-PLAN.md — `verify-phase-125-126.sql` written + run; all USHR-01..05 assertions pass; Path 0 verified [USHR-05]
 
@@ -1682,8 +1705,6 @@ Plans:
 Bounded Tier 2 stance research for the 4 largest delegations — FL (27), NY (26), PA (17), IL (17) = 87 reps, 1,338 sourced answers, 0 unsourced. All USHS-01..05 closed; gate `backend/scripts/verify-phase-127-131.sql` PASS. Full detail archived → [milestones/v2.16-ROADMAP.md](milestones/v2.16-ROADMAP.md).
 
 ## Progress
-
-
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
