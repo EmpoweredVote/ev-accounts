@@ -231,12 +231,19 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Congress headshots via `unitedstates.github.io/.../225x275/{bioguide}.jpg` | Authoritative bulk source matching existing 148 federal photos; HEAD-validate, find-headshots fallback for repo lag. | ✓ Good — 299/299 covered; v2.15 |
 | SECURITY DEFINER RPCs are service_role-only; never add `auth.uid()` guards | Backend calls via `adminRpc`(service_role)/`pool.query` where `auth.uid()` is NULL; identity verified at Express layer. Accidental PUBLIC EXECUTE grant is the only risk → REVOKE `authenticated`. | ✓ Good — documented for EV-Backend IDOR audit; v2.15 |
 
-## Current State: v2.16 complete — next: v2.17 (Tier 2 continuation)
+## Current Milestone: v2.17 National House Rep Stances (Tier 2 continuation)
 
-v2.16 shipped 2026-06-18. The 4 largest US House delegations now show sourced compass alignment.
-**Next milestone (v2.17, not yet scoped):** stance research for the remaining ~212 US House reps
-(all other states). Run `/gsd-new-milestone` to scope it. Reusable playbook is proven across
-FL/NY/PA/IL — see STATE.md "v2.16 execution notes" and `backend/data/stance-research/pa-house-a/_push.ts`.
+**Goal:** Complete national US House stance coverage — give the remaining 212 seeded US House reps (across all 38 not-yet-covered states) sourced compass alignment in the representatives feed, so every US resident's sitting House rep shows up with compass data, not just the 87 in FL/NY/PA/IL.
+
+**Target features:**
+- Sourced compass stances for all 212 remaining seeded US House reps, researched largest-delegation-first in ~8 multi-state waves (OH/NC → GA/MI → NJ/WA/AZ → TN/CO/MN/MO → WI/AL/SC/KY → LA/CT/IN/OK/AR/IA → KS/MS/NV/NE/NM → 12 single/low-rep states).
+- Every stance backed by a real fetched source URL in `inform.politician_context`; honest-skip per topic where no evidence exists; never infer from party.
+- Reuse the v2.16 pipeline at 3-concurrency: shared `_TOPIC_SCALE.txt` (25 federal topics), `politician-stance-researcher` agents → per-rep CSVs → canonical re-parse/merge → external_id→UUID push (`_push.ts`).
+- Consolidated phase gate (verify SQL) asserting all 212 covered with 0 unsourced rows.
+
+**Scope:** 212 reps, 38 states. Already covered (excluded): FL/NY/PA/IL (v2.16) + CA/VA/TX/MA and other pre-existing reps. FEC finance for the newly-seeded reps is a separate FINA stream, not in scope.
+
+**Current State:** v2.16 shipped 2026-06-18 (87/87 FL/NY/PA/IL reps, 1,338 sourced answers, 0 unsourced; gate `verify-phase-127-131.sql`). v2.17 scoped 2026-06-18; defining requirements (USHS-06..14) → roadmap (phases 132–140). Playbook proven across FL/NY/PA/IL — see STATE.md "v2.16 execution notes" and `backend/data/stance-research/pa-house-a/_push.ts`.
 
 ---
 
@@ -368,4 +375,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-16 — v2.15 COMPLETE (National House Rep Seeding, Tier 1; Phases 125–126, USHR-01..05); all 435 US House districts now resolve to a sitting rep (436 linked) with headshots. Next: v2.16 Tier 2 (House rep stances).*
+*Last updated: 2026-06-18 — v2.17 STARTED (National House Rep Stances, Tier 2 continuation). Scope: 212 remaining seeded US House reps across 38 states, largest-delegation-first in ~8 waves; requirements USHS-06..14, phases 132–140. v2.16 (FL/NY/PA/IL, 87 reps) shipped 2026-06-18.*

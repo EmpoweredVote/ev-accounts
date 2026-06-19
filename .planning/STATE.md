@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.16
-milestone_name: National House Rep Stances (Tier 2)
-status: complete
-last_updated: "2026-06-18T00:00:00.000Z"
-last_activity: 2026-06-18
+milestone: v2.17
+milestone_name: National House Rep Stances (Tier 2 continuation)
+status: planning
+last_updated: "2026-06-19T00:02:12.113Z"
+last_activity: 2026-06-19
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 9
-  completed_plans: 9
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -25,14 +25,13 @@ See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 ## Current Position
 
-Phase: 131 — Phase Gate Verification (COMPLETE ✅ — 1/1 plan, 2026-06-18) — MILESTONE v2.16 COMPLETE
-Plan: 131-01 ✅ — backend/scripts/verify-phase-127-131.sql; ran against production, ALL USHS-01..05 PASS (exit 0). Commit 77632c12.
-Status: v2.16 (US House Rep Stances Tier 2) DONE. 87/87 in-scope FL/NY/PA/IL reps covered, 1,338 sourced answers (FL 394 + NY 412 + PA 262 + IL 270), 0 unsourced. Gate: FL 27/27, NY 26/26, PA 17/17, IL 17/17.
-Prior: 130 ✅ (IL, 270, USHS-04 — a66d5dc8/0f9e1ac3). 129 ✅ (PA, 262, USHS-03). 128 ✅ (NY, 412, USHS-02). 127 ✅ (FL, 394, USHS-01).
-Last activity: 2026-06-18 — Phase 131 executed via /gsd-execute-phase (inline; read-only psql gate, all assertions pass first run). Milestone v2.16 closed.
-Next: Run /gsd-complete-milestone to archive v2.16. Then v2.17+ for remaining ~212 US House reps (Tier 2 continuation). Permanent audit: backend/scripts/verify-phase-127-131.sql.
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-06-19 — Milestone v2.17 started
 
 ### v2.16 execution notes (carry-forward for 128–130)
+
 - **Concurrency = 3** confirmed safe on premium tier. Two session-limit pauses occurred mid-batch (usage limit, not 429) — agents that hadn't written their CSV re-dispatched cleanly on reset.
 - **Per-rep output files → merged + RFC-4180-validated** into the batch CSV avoids the concurrent-write race on a shared file.
 - **Embed scale via a shared `_TOPIC_SCALE.txt`** (fetched live) that each agent Reads — token-efficient and satisfies the embed-fresh-texts rule.
@@ -41,6 +40,7 @@ Next: Run /gsd-complete-milestone to archive v2.16. Then v2.17+ for remaining ~2
 - house.gov / congress.gov / govtrack / clerk.house.gov consistently 403 to WebFetch; productive sources = Ballotpedia, OnTheIssues (FL/ pages), Wikipedia, LCV scorecard.
 
 ### v2.16 reminders
+
 - Stance research up to 3 reps concurrently (premium tier; was 1-2 on Pro — validate on FL wave 127, drop back if empty-output/429 reappears); real source URL per stance in inform.politician_context; honest-skip topics with no evidence (never infer from party); embed 1–5 scale texts per topic. Use research-stances skill / politician-stance-researcher agent.
 - In-scope reps: external_id BETWEEN -56999 AND -1000 AND representing_state IN ('FL','NY','PA','IL').
 
