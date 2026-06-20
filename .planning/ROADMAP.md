@@ -218,7 +218,7 @@ Plans:
 
 #### Phase 139: Single/Low-Rep States House Rep Stances
 
-**Goal:** All in-scope reps in the 12 smallest-delegation states — HI/ID/MT/NH/RI/WV (2 each) + AK/DE/ND/SD/VT/WY (1 each, at-large) = **18 reps** — have sourced compass stances, each backed by a real source URL.
+**Goal:** All in-scope reps in the 12 smallest-delegation states — HI/ID/MT/NH/RI/WV (2 each) + AK/DE/ND/SD/VT/WY (1 each, at-large) = **18 reps** — have sourced compass stances, each backed by a real source URL. — ✅ COMPLETE 2026-06-20 (3 plans 139-01..03; 18/18 reps, 192 sourced answers (HI+ID+MT 64 + NH+RI+WV 58 + at-large 70), 0 unsourced).
 
 **Depends on:** Nothing (independent wave; filters state_fips HI=15, ID=16, MT=30, NH=33, RI=44, WV=54, AK=02, DE=10, ND=38, SD=46, VT=50, WY=56)
 
@@ -231,9 +231,9 @@ Plans:
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
 
 **Plans:**
-- [ ] 139-01-PLAN.md — HI + ID + MT House reps (6 reps) research + push
-- [ ] 139-02-PLAN.md — NH + RI + WV House reps (6 reps) research + push
-- [ ] 139-03-PLAN.md — AK + DE + ND + SD + VT + WY at-large reps (6 reps) research + push
+- [x] 139-01-PLAN.md — HI + ID + MT House reps (6 reps, 64 sourced, 0 unsourced)
+- [x] 139-02-PLAN.md — NH + RI + WV House reps (6 reps, 58 sourced, 0 unsourced)
+- [x] 139-03-PLAN.md — AK + DE + ND + SD + VT + WY at-large reps (6 reps, 70 sourced, 0 unsourced)
 
 ---
 
@@ -1864,5 +1864,5 @@ Bounded Tier 2 stance research for the 4 largest delegations — FL (27), NY (26
 | 136. WI + AL + SC + KY House Rep Stances | v2.17 | 8/8 | Complete   | 2026-06-20 |
 | 137. LA + CT + IN + OK + AR + IA House Rep Stances | v2.17 | 6/6 | Complete   | 2026-06-20 |
 | 138. KS + MS + NV + NE + NM House Rep Stances | v2.17 | 5/5 | Complete | 2026-06-20 |
-| 139. Single/Low-Rep States House Rep Stances | v2.17 | 0/3 | Planned | - |
+| 139. Single/Low-Rep States House Rep Stances | v2.17 | 3/3 | Complete | 2026-06-20 |
 | 140. Phase Gate Verification | v2.17 | 0/0 | Not started | - |

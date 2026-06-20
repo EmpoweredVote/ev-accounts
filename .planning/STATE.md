@@ -21,15 +21,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 138 — KS + MS + NV + NE + NM House Rep Stances (COMPLETE 2026-06-20); next Phase 139 (single/low-rep states, USHS-13)
+**Current focus:** Phase 139 — Single/Low-Rep States House Rep Stances (COMPLETE 2026-06-20); all 8 research waves (132–139) done; next Phase 140 (consolidated all-212 gate, USHS-14)
 **Last shipped:** v2.16 National House Rep Stances (Tier 2) — Phases 127–131, shipped 2026-06-18. FL/NY/PA/IL = 87 reps, 1,338 sourced answers, 0 unsourced; USHS-01..05 closed; verify-phase-127-131.sql all pass.
 
 ## Current Position
 
-Phase: 138 — COMPLETE
-Plan: 5 of 5
-Status: Phase 138 complete — 18/18 reps, 233 sourced answers, 0 unsourced (USHS-12)
-Last activity: 2026-06-20 -- Phase 138 marked complete
+Phase: 139 — COMPLETE
+Plan: 3 of 3
+Status: Phase 139 complete — 18/18 reps, 192 sourced answers, 0 unsourced (USHS-13); all 8 waves 132–139 done
+Last activity: 2026-06-20 -- Phase 139 marked complete
 
 ### v2.17 Requirement Coverage
 
