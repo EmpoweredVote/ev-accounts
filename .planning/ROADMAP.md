@@ -230,7 +230,10 @@ Plans:
   2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
 
-**Plans:** TBD
+**Plans:**
+- [ ] 139-01-PLAN.md — HI + ID + MT House reps (6 reps) research + push
+- [ ] 139-02-PLAN.md — NH + RI + WV House reps (6 reps) research + push
+- [ ] 139-03-PLAN.md — AK + DE + ND + SD + VT + WY at-large reps (6 reps) research + push
 
 ---
 
@@ -1861,5 +1864,5 @@ Bounded Tier 2 stance research for the 4 largest delegations — FL (27), NY (26
 | 136. WI + AL + SC + KY House Rep Stances | v2.17 | 8/8 | Complete   | 2026-06-20 |
 | 137. LA + CT + IN + OK + AR + IA House Rep Stances | v2.17 | 6/6 | Complete   | 2026-06-20 |
 | 138. KS + MS + NV + NE + NM House Rep Stances | v2.17 | 5/5 | Complete | 2026-06-20 |
-| 139. Single/Low-Rep States House Rep Stances | v2.17 | 0/0 | Not started | - |
+| 139. Single/Low-Rep States House Rep Stances | v2.17 | 0/3 | Planned | - |
 | 140. Phase Gate Verification | v2.17 | 0/0 | Not started | - |
