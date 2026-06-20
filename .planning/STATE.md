@@ -3,10 +3,10 @@ gsd_state_version: 1.0
 milestone: v2.18
 milestone_name: State Leaders
 status: planning
-last_updated: "2026-06-20T22:56:12.132Z"
+last_updated: "2026-06-20T23:30:00.000Z"
 last_activity: 2026-06-20
 progress:
-  total_phases: 0
+  total_phases: 4
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -17,195 +17,131 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
+See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.17 COMPLETE 2026-06-20 — Phase 140 gate PASSED (all USHS-06..14). All 9 phases 132–140 done. Next: /gsd-complete-milestone to archive v2.17.
-**Last shipped:** v2.16 National House Rep Stances (Tier 2) — Phases 127–131, shipped 2026-06-18. FL/NY/PA/IL = 87 reps, 1,338 sourced answers, 0 unsourced; USHS-01..05 closed; verify-phase-127-131.sql all pass.
+**Current focus:** v2.18 State Leaders — roadmap written; Phase 141 (Roster Lock + Seed) is next.
+**Last shipped:** v2.17 National House Rep Stances (Tier 2 continuation) — Phases 132–140, shipped 2026-06-20. 212 reps, 211 covered + McDowell NC-6 honest-skip, 0 unsourced; USHS-06..14 closed; verify-phase-132-140.sql all pass.
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 141 — Roster Lock + Seed (not started)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-06-20 — Milestone v2.18 started
+Status: Roadmap complete; ready for `/gsd-plan-phase 141`
+Last activity: 2026-06-20 — Roadmap created for v2.18
 
-### v2.17 Requirement Coverage
+### v2.18 Requirement Coverage
 
-| Phase | Requirement | Scope (reps) | Count |
-|-------|-------------|--------------|-------|
-| 132 — OH + NC House Rep Stances | USHS-06 | OH 15 + NC 14 | 29 |
-| 133 — GA + MI House Rep Stances | USHS-07 | GA 13 + MI 13 | 26 |
-| 134 — NJ + WA + AZ House Rep Stances | USHS-08 | NJ 12 + WA 10 + AZ 9 | 31 |
-| 135 — TN + CO + MN + MO House Rep Stances | USHS-09 | TN 9 + CO 8 + MN 8 + MO 8 | 33 |
-| 136 — WI + AL + SC + KY House Rep Stances | USHS-10 | WI 8 + AL 7 + SC 7 + KY 6 | 28 |
-| 137 — LA + CT + IN + OK + AR + IA House Rep Stances | USHS-11 | LA 6 + CT 5 + IN 5 + OK 5 + AR 4 + IA 4 | 29 |
-| 138 — KS + MS + NV + NE + NM House Rep Stances | USHS-12 | KS 4 + MS 4 + NV 4 + NE 3 + NM 3 | 18 |
-| 139 — Single/Low-Rep States | USHS-13 | HI/ID/MT/NH/RI/WV (2 ea) + AK/DE/ND/SD/VT/WY (1 ea) | 18 |
-| 140 — Phase Gate Verification | USHS-14 | consolidated gate for all 212 | — |
-| **Total unique reps** | | | **212 / 212** ✓ |
+| Phase | Requirement | Scope | Description |
+|-------|-------------|-------|-------------|
+| 141 — Roster Lock + Seed | SEXR-01 | 50 states | Authoritative elected-Big-5 roster with selection_method + source per exception |
+| 141 — Roster Lock + Seed | SEXR-02 | 208 offices | Idempotent gap seed: politician + office records, dedup on (STATE_EXEC, state, role_canonical) |
+| 141 — Roster Lock + Seed | SEXR-03 | 208 offices | role_canonical populated on all in-scope Big 5 offices (new + backfill) |
+| 141 — Roster Lock + Seed | SEXR-04 | new execs | Headshots on every newly-seeded exec |
+| 142 — Stance Wave 1 (Gov + AG) | SEXS-01 | prompt | Office-type evidence guidance in researcher prompt before first dispatch |
+| 142 — Stance Wave 1 (Gov + AG) | SEXS-02 (partial) | 93 execs | Sourced stances for all in-scope Governors (50) + AGs (43) lacking stances |
+| 143 — Stance Wave 2 (SoS + Treasurer + LtGov) | SEXS-02 (completing) | 115 execs | Sourced stances for all in-scope SoS (35) + Treasurer (37) + LtGov (43) lacking stances |
+| 144 — Phase Gate | SEXR-05 | ≥3 states | Feed surfacing smoke test (no code change; STATE_EXEC already wired) |
+| 144 — Phase Gate | SEXS-03 | all 208 | Consolidated read-only SQL gate: all offices filled, 0 unsourced, state-code clean |
+| **Total unique requirements** | | | **8 / 8** ✓ |
 
-All 9 requirements (USHS-06..14) mapped 1:1 to phases 132–140 — 100% coverage, no orphans.
+All 8 requirements (SEXR-01..05, SEXS-01..03) mapped to phases 141–144 — 100% coverage, no orphans.
 
-### v2.17 Phase Dependencies
+### v2.18 Phase Dependencies
 
 ```
-Phase 132 (OH+NC)                — independent wave (state_fips 39, 37)
-Phase 133 (GA+MI)                — independent wave (state_fips 13, 26)
-Phase 134 (NJ+WA+AZ)             — independent wave (state_fips 34, 53, 04)
-Phase 135 (TN+CO+MN+MO)          — independent wave (state_fips 47, 08, 27, 29)
-Phase 136 (WI+AL+SC+KY)          — independent wave (state_fips 55, 01, 45, 21)
-Phase 137 (LA+CT+IN+OK+AR+IA)    — independent wave (state_fips 22, 09, 18, 40, 05, 19)
-Phase 138 (KS+MS+NV+NE+NM)       — independent wave (state_fips 20, 28, 32, 31, 35)
-Phase 139 (Single/Low-Rep)       — independent wave (12 states, 1–2 reps each)
-Phase 140 (Phase Gate)           — needs Phases 132–139 complete
+Phase 141 (Roster Lock + Seed)                    — no dependencies; must run first (roster gates everything)
+  └── Phase 142 (Stance Wave 1: Gov + AG)          — needs Phase 141 UUIDs; SEXS-01 prompt update is plan 142-01
+  └── Phase 143 (Stance Wave 2: SoS+Treasurer+LtGov) — needs Phase 141 UUIDs; recommended after 142 (proxy-row calibration)
+Phase 144 (Phase Gate)                            — needs Phases 141, 142, 143 complete
 ```
 
-Phases 132–139 are mutually independent (each filters a disjoint set of states by `external_id` state_fips, `floor((-external_id)/1000)`) and may run in any order or in parallel. Phase 140 (consolidated gate) depends on all eight waves.
+Phases 142 and 143 are independent of each other (disjoint office types) but both require Phase 141. Phase 144 requires all three preceding phases complete.
 
-### v2.17 Execution Methodology (carry-forward for plan-phase)
+### v2.18 Execution Methodology (carry-forward for plan-phase)
 
-- **In-scope rep filter:** `external_id BETWEEN -56999 AND -1000 AND NOT EXISTS (answers)`; state via `floor((-external_id)/1000)`. 212 reps total.
+- **In-scope filter:** `WHERE d.district_type = 'STATE_EXEC' AND NOT EXISTS (SELECT 1 FROM inform.politician_answers a WHERE a.politician_id = p.id)` — scope to politician UUIDs, not external_id range (exec external_ids are heterogeneous across states).
 - **Production project ref:** `kxsdzaojfaibhuzmclfq`.
-- **Reuse:** shared `_TOPIC_SCALE.txt` (25 federal topics), `politician-stance-researcher` at 3-concurrency, per-rep CSV → canonical re-parse(`relax_column_count`)/re-stringify → merge, external_id→UUID push (`backend/data/stance-research/pa-house-a/_push.ts`), gate pattern `backend/scripts/verify-phase-127-131.sql` → new `verify-phase-132-140.sql`.
-- **Rules:** real source URL per stance in `inform.politician_context`; honest-skip per topic where no evidence; never infer from party; embed 1–5 scale texts per topic.
+- **Seed dedup key:** `(district_type='STATE_EXEC', state=XX, role_canonical)` on districts — never title string. Dry-run gap query must return 0 new rows for the 9 already-seeded states before any INSERT executes.
+- **external_id scheme:** `-(state_fips * 10000 + office_seq)` per new state — verify 0 collisions against live negative IDs before authoring; document chosen scheme in migration header comment.
+- **State code:** always uppercase 2-char postal abbreviation; include post-insert assertion in every migration (`state = upper(state)` check).
+- **geo_id:** `'{state_fips}'` (string, e.g. `'48'` for TX) — never NULL or empty; gate asserts `COUNT(*) WHERE geo_id IS NULL OR geo_id = '' = 0`.
+- **Office-type evidence guidance (mandatory before stance dispatch):** Gov = bill signings/vetoes/EOs; AG = filed lawsuits/amicus briefs/multistate coalitions (coalition counts ONLY when coalition has a published position directly on topic); Treasurer = investment/divestment decisions (documented fund actions); SoS = specific election administration actions (not role description); LtGov = honest-partial if no independent record.
+- **Stance pipeline reuse:** `_TOPIC_SCALE.txt` (25 topics, unchanged from v2.16/v2.17), `politician-stance-researcher` at **3-concurrency**, per-exec CSV → `_merge.ts` → external_id-keyed `_push.ts`; proxy-row review gate standard before every push.
+- **Existing records:** CA execs fully stanced — never re-research. IN Governor already stanced. Run stance gap diagnostic (COUNT(pa.id) per STATE_EXEC politician UUID) before authoring any research plans.
+- **True denominator:** 208 (not 250). AZ Lt Gov deferred (Prop 131, eff. Jan 2027); documented in Phase 144 gate as known exclusion.
 
-### v2.16 execution notes (carry-forward for 128–130)
+### v2.18 Key Data Points (from research)
 
-- **Concurrency = 3** confirmed safe on premium tier. Two session-limit pauses occurred mid-batch (usage limit, not 429) — agents that hadn't written their CSV re-dispatched cleanly on reset.
-- **Per-rep output files → merged + RFC-4180-validated** into the batch CSV avoids the concurrent-write race on a shared file.
-- **Embed scale via a shared `_TOPIC_SCALE.txt`** (fetched live) that each agent Reads — token-efficient and satisfies the embed-fresh-texts rule.
-- **Resolve politician_id by external_id→UUID map**, not name (variants like "John H. Rutherford").
-- **ADD an explicit RFC-4180 CSV-escaping rule to every agent prompt** — 2/27 agents (Donalds, WS) emitted malformed quotes (stray/quad quotes) that broke parsing; required repair/regen.
-- house.gov / congress.gov / govtrack / clerk.house.gov consistently 403 to WebFetch; productive sources = Ballotpedia, OnTheIssues (FL/ pages), Wikipedia, LCV scorecard.
+**208-office breakdown:**
+- 50 Governor (all states)
+- 43 Lt. Governor (excl. ME/NH/OR/WY=none; TN/WV=Senate Speaker by statute; AZ=deferred eff.2027)
+- 43 Attorney General (excl. AK/HI/NH/NJ/WY=Gov appoints; ME=legislature; TN=Supreme Court)
+- 35 Secretary of State (excl. AK/HI/UT=no office; DE/FL/NJ/NY/OK/PA/TX/VA=Gov appoints; ME/NH/TN=legislature)
+- 37 Treasurer (excl. TX/MN/MT/NY=abolished/absorbed; AK/GA/HI/MI/NJ/VA=Gov appoints; ME/MD/NH/TN=legislature; FL=CFO, NY/TX=Comptroller are in-scope equiv)
 
-### v2.16 reminders
+**9 already-seeded states (68 records):**
+- CA: all 5 Big 5 + extras — fully stanced, no action needed for records
+- IN: Gov stanced; AG/SoS/Treasurer missing stances (need research); check if AG/SoS/Treasurer records exist
+- MA: all 5 Big 5 seeded (Auditor also there but not Big 5)
+- MD: Gov+LtGov+AG in scope (3); Comptroller seeded but NOT Big 5 for MD; Treasurer leg-elected
+- ME: Gov is only in-scope Big 5 (1); 0 stances on all existing records
+- OR: Gov+AG+SoS+Treasurer in scope (4; no LtGov); check stance coverage
+- TX: Gov+LtGov+AG in scope (3); Comptroller = Treasurer equiv already seeded; SoS is appointed (OUT)
+- UT: Gov+LtGov+AG+Treasurer in scope (4; no SoS); check if AG+Treasurer records exist
+- VA: Gov+LtGov+AG in scope (3); SoS+Treasurer appointed — VA already has all 3 records
 
-- Stance research up to 3 reps concurrently (premium tier; was 1-2 on Pro — validate on FL wave 127, drop back if empty-output/429 reappears); real source URL per stance in inform.politician_context; honest-skip topics with no evidence (never infer from party); embed 1–5 scale texts per topic. Use research-stances skill / politician-stance-researcher agent.
-- In-scope reps: external_id BETWEEN -56999 AND -1000 AND representing_state IN ('FL','NY','PA','IL').
+**41 states with zero STATE_EXEC records** — all in-scope Big 5 must be seeded from scratch.
 
-### Phase 126 COMPLETE ✅ (2026-06-16)
+### v2.18 Critical Pitfall Reminders
 
-- 126-01 ✅: headshots 299/299 — 292 canonical `unitedstates.github.io/images/congress/225x275` (migration 769) + 7 official Wikimedia 119th-Congress portraits storage-mirrored via find-headshots [USHR-04]
-- 126-02 ✅: `backend/scripts/verify-phase-125-126.sql` — all USHR-01..05 assertions pass; Path 0 verified WY(at-large)/NY/TX/OH/IL + DC [USHR-05]
+1. **Phantom offices:** Use 208-office matrix from FEATURES.md — never a 50x5 flat grid. ME=1, TN=1, NJ=2, AK=2, HI=2, WY=3, MD=3, TX=3, VA=3.
+2. **Dedup on (STATE_EXEC, state, role_canonical)** — never title string. Title strings are inconsistent ("Indiana Governor" vs "Governor" vs "California Governor").
+3. **Uppercase state code always** — lowercase `or` silently breaks feed routing (migration 223 production defect). Post-insert assertion mandatory.
+4. **geo_id = '{fips}'** (string, non-empty) — never NULL; gate asserts this.
+5. **Verify all officeholders from live source** — 37 gubernatorial races ran in 2024; January 2026 inaugurations may not be in training data.
+6. **Stance gap diagnostic before dispatch** — filter by `NOT EXISTS` on `inform.politician_answers` keyed on politician UUID; never re-research stanced execs (CA execs, IN Governor).
+7. **external_id collision check** — query `SELECT external_id FROM essentials.politicians WHERE external_id < 0 ORDER BY external_id` before authoring any new state migration.
+8. **Office-type evidence before first dispatch** (SEXS-01) — exec actions are not floor votes; AG multistate coalitions count only with published topical platform.
 
-### Milestone v2.15 COMPLETE ✅ — all 5 USHR requirements closed
+### v2.17 Execution Notes (archive reference for pipeline reuse)
 
-National House rep coverage live: 137→436 linked reps, all with headshots. Permanent audit: backend/scripts/verify-phase-125-126.sql.
-
-### Open follow-up (not blocking)
-
-- **CA-29 stale office**: district 0629 has 2 linked offices (Luz Maria Rivas + Tony Cárdenas). Cárdenas left Congress — stale office from v2.2 CA seed. Pre-existing, out of scope for Phase 125. Clean up in a quick task or fold into v2.16.
-- **3 House vacancies** (FL-20/GA-13/TX-23): re-run seed script + apply once special elections seat members (idempotent).
+- **Concurrency = 3** confirmed safe on premium tier.
+- **Per-rep output files → merged + RFC-4180-validated** into the batch CSV.
+- **Embed scale via a shared `_TOPIC_SCALE.txt`** (fetched live) that each agent Reads — token-efficient.
+- **Resolve politician_id by external_id→UUID map**, not name.
+- **Proxy-row drop rule (standing):** "overall record alignment", coalition membership without published topical platform, office role description — all dropped before push. Caucus membership counts ONLY when caucus has a published platform directly on that topic.
+- **One-try-per-URL efficiency rule** — agents that hang on a URL re-fetch loop blow the session; one fetch attempt per URL, then move on.
+- **MCP Supabase tokens expire ~1 hour** — fall back to `node --import tsx` + `pool` from `backend/src/lib/db.js` for verification queries; load `dotenv/config`.
+- **`_push.ts` does NOT load dotenv** — run with `set -a && source .env && set +a && node --import tsx .../​_push.ts <csv>`.
 
 ## Deferred Items
 
-Items acknowledged and deferred — first at v2.15 close (2026-06-16), re-acknowledged at v2.17 close (2026-06-20). All pre-existing, none from v2.15/v2.16/v2.17. Sweep with `/gsd:cleanup`.
+Items acknowledged at v2.17 close (2026-06-20). All pre-existing, none from v2.17/v2.18.
 
 | Category | Item | Status |
 |----------|------|--------|
 | quick_task | 22 historical quick-task dirs (001–022) | missing status markers (mostly completed long ago) |
 | verification_gap | Phase 109 (v2.9 LA County) — 109-VERIFICATION.md | human_needed (stale, pre-v2.15) |
-
-## Previous Milestone Position (v2.13 — COMPLETE ✅)
-
-Phase: 119-ma-city-council-district-geofencing — COMPLETE ✅
-Plan: 119-01-PLAN.md ✅ COMPLETE — migration 659 applied; Boston 9 X0013 + 2 citywide rows have tiger_geoid [MAGE-10]
-Plan: 119-02-PLAN.md ✅ COMPLETE — Worcester Tier 3: 5 X0014 polygons + migration 660 (5 district rows + 5 re-links) [MAGE-11]
-Plan: 119-03-PLAN.md ✅ COMPLETE — Springfield/Lowell/Brockton/Quincy Tier 3: 29 X0014 polygons + migrations 661-664 [MAGE-12..15]
-Plan: 119-04-PLAN.md ✅ COMPLETE — Phase gate: 8 SQL assertions pass + Path 0 human-approved for all 6 cities [MAGE-10..15]
-Status: Phase 119 complete — MAGE-10 ✅ MAGE-11 ✅ MAGE-12 ✅ MAGE-13 ✅ MAGE-14 ✅ MAGE-15 ✅; per-ward Path 0 geofencing confirmed for Boston/Worcester/Springfield/Lowell/Brockton/Quincy; human verify approved 2026-06-15.
-Last activity: 2026-06-15
-
-Phase: 118-ma-tiger-geofencing — COMPLETE ✅
-Plan: 118-01-PLAN.md ✅ COMPLETE
-Plan: 118-02-PLAN.md ✅ COMPLETE
-Plan: 118-03-PLAN.md ✅ COMPLETE
-Status: Phase 118 complete — all MAGE-00..05 gates pass; tiger_geoid backfilled on 200 MA state districts; Medford geo_id corrected; Path 0 confirmed for Porter Square Cambridge (STATE_LOWER 25083 + STATE_UPPER 25D27); human verify approved 2026-06-15.
-Last activity: 2026-06-15
+| carry_forward | AZ Lt Governor (Prop 131 eff. Jan 2027) | deferred to v2.19+ per requirements |
+| carry_forward | McDowell NC-6 (−37006) honest-skip | await future documentable record; auto-fill later |
+| carry_forward | 3 House vacancies (FL-20/GA-13/TX-23) | re-run seed script once special elections seat members |
 
 ## Performance Metrics
 
-**v2.14 Scope — MA City Expansion Wave 2 — COMPLETE ✅**
+**v2.17 Scope — National House Rep Stances (Tier 2 continuation) — COMPLETE ✅**
 
-- Phases: 5 (120–124)
-- Requirements: 21/21 closed (MAOF-01..07, MAST-01..07, MAGE-16..22)
-- Plans complete: 16
-- Shipped: 2026-06-16
+- Phases: 9 (132–140)
+- Requirements: 9/9 closed (USHS-06..14)
+- Plans complete: ~45
+- Shipped: 2026-06-20
 
-**v2.13 Scope — MA City Council District Geofencing — COMPLETE**
+**v2.18 Scope — State Leaders — IN PROGRESS**
 
-- Phases: 1 (119)
-- Requirements: 6/6 closed (MAGE-10..15)
-- Plans complete: 4
-- Shipped: 2026-06-15
-
-**v2.12 Scope — MA Expansion — COMPLETE**
-
-- Phases: 2 (117–118)
-- Requirements: all closed (7 MA cities + MAGE-00..05)
-- Plans complete: 6
-- Shipped: 2026-06-15
-
-### v2.14 Requirements
-
-| Req | Phase | Description |
-|-----|-------|-------------|
-| MAOF-01 | 120 | Newton district + politician + office records |
-| MAOF-02 | 120 | Somerville district + politician + office records |
-| MAOF-03 | 120 | Lynn district + politician + office records |
-| MAOF-04 | 120 | Fall River district + politician + office records |
-| MAOF-05 | 120 | Waltham district + politician + office records |
-| MAOF-06 | 120 | Medford district + politician + office records |
-| MAOF-07 | 120 | New Bedford district + politician + office records |
-| MAST-01 | 121 | Sourced stances + context for Newton officials |
-| MAST-02 | 121 | Sourced stances + context for Somerville officials |
-| MAST-06 | 121 | Sourced stances + context for Medford officials |
-| MAST-03 | 122 | Sourced stances + context for Lynn officials |
-| MAST-04 | 122 | Sourced stances + context for Fall River officials |
-| MAST-05 | 122 | Sourced stances + context for Waltham officials |
-| MAST-07 | 122 | Sourced stances + context for New Bedford officials |
-| MAGE-16 | 123 | Newton ward polygons + tiger_geoid backfill + Path 0 |
-| MAGE-17 | 123 | Somerville ward polygons + tiger_geoid backfill + Path 0 |
-| MAGE-18 | 123 | Lynn ward polygons + tiger_geoid backfill + Path 0 |
-| MAGE-19 | 123 | Fall River ward polygons + tiger_geoid backfill + Path 0 |
-| MAGE-20 | 123 | Waltham ward polygons + tiger_geoid backfill + Path 0 |
-| MAGE-21 | 123 | Medford ward polygons + tiger_geoid backfill + Path 0 |
-| MAGE-22 | 123 | New Bedford ward polygons + tiger_geoid backfill + Path 0 |
-
-### v2.14 Phase Dependencies
-
-```
-Phase 120 (MA City Officials Seeding)                   — no dependencies; pure migration work
-  └── Phase 121 (Stance Research Wave 1: Newton/Somerville/Medford)  — needs Phase 120 FK targets
-  └── Phase 122 (Stance Research Wave 2: Lynn/Fall River/Waltham/New Bedford) — needs Phase 120 FK targets
-  └── Phase 123 (Ward Geofencing — All 7 Cities)        — needs Phase 120 district geo_ids
-Phase 124 (Phase Gate Verification)                     — needs Phases 120–123 complete
-```
-
-Note: Phases 121, 122, and 123 can run in parallel once Phase 120 is complete. Stance phases (121, 122) must run one city at a time within each wave (rate limit concern). Geofencing cities in Phase 123 can be batched in a single plan.
-
-### v2.14 Requirement Coverage
-
-| Phase | Requirements | Count |
-|-------|-------------|-------|
-| 120 — MA City Officials Seeding | MAOF-01..07 | 7 |
-| 121 — Stance Research Wave 1 | MAST-01, MAST-02, MAST-06 | 3 |
-| 122 — Stance Research Wave 2 | MAST-03, MAST-04, MAST-05, MAST-07 | 4 |
-| 123 — Ward Geofencing All 7 Cities | MAGE-16..22 | 7 |
-| 124 — Phase Gate Verification | cross-cutting gate for all 21 | — |
-| **Total unique** | | **21 / 21** ✓ |
-
-### v2.14 Scope Notes (established 2026-06-15)
-
-- **Migration numbering**: Current DB max is 674. Next available migration: 675. Phase 120 starts at 675 (one per city = 7 migrations, 675–681).
-- **Cities already in DB**: Each of the 7 cities has a government stub + 1 chamber record. Zero districts, politicians, or offices exist yet.
-- **Officials seeding order**: Follow v2.12 Phase 117 pattern — `essentials.governments` → `essentials.chambers` (already exists) → `essentials.districts` → `essentials.politicians` → `essentials.offices`. One migration per city for clean rollback isolation.
-- **Stance research pattern**: Run one city at a time (rate limit concern, per MEMORY.md). Newton/Somerville/Medford in Wave 1 (Phase 121), Lynn/Fall River/Waltham/New Bedford in Wave 2 (Phase 122). Wave grouping mirrors v2.12 Phase 117 approach.
-- **Geofencing pattern**: Phase 123 follows Phase 119 pattern — ogr2ogr import from city GIS sources + psql backfill migration. PROJ_LIB on this machine: `C:\Program Files\GDAL\projlib`. Session pooler: `aws-0-*.pooler.supabase.com:5432`.
-- **MAGE numbering**: MAGE-16..22 continues from v2.13 (MAGE-10..15). MAGE-16 = Newton, MAGE-17 = Somerville, MAGE-18 = Lynn, MAGE-19 = Fall River, MAGE-20 = Waltham, MAGE-21 = Medford, MAGE-22 = New Bedford.
-- **Phase 121 includes Medford (MAST-06)**: Medford is grouped with Newton/Somerville (smaller cities with likely limited records) rather than Wave 2. Adjust if Medford proves larger.
-- **Phase 124 gate script**: Follow `verify-phase-119.sql` pattern (labeled SQL assertions, one per MAOF/MAST/MAGE requirement). Store at `backend/scripts/verify-phase-120-124.sql`.
+- Phases: 4 (141–144)
+- Requirements: 8/8 mapped (0 closed)
+- Plans complete: 0
+- Started: 2026-06-20
 
 ## Accumulated Context
 
@@ -213,30 +149,32 @@ Note: Phases 121, 122, and 123 can run in parallel once Phase 120 is complete. S
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
 
-### v2.13 Scope Notes (carry-forward)
+### v2.18 Scope Notes (established 2026-06-20)
 
-- **Tiger_geoid backfill pattern**: For city council districts, `tiger_geoid` = city FIPS code padded to match `geo_districts.geoid` format. Always join on `(tiger_geoid, district_type)` — SLDL/SLDU share geoid format.
-- **ogr2ogr + psql pattern**: Use `ogr2ogr -f PostgreSQL PG:"..." input.shp -nln essentials.geofence_boundaries`. Session pooler IPv4 on Windows. PROJ_LIB must be set.
-- **Phase gate SQL pattern**: 8 labeled assertions, one per MAGE requirement. `ASSERT` or `DO $$ BEGIN IF NOT (...) THEN RAISE EXCEPTION ... END IF; END $$;` style.
-- **MAGE-05 filter**: Always add `mtfcc IN ('G5210','G5220')` when querying geofence_boundaries for MA state legislative layers — geo_id '25017' exists in both Middlesex County and 8th Bristol SLDL.
+- **True denominator = 208**, not 250. Count: 50+43+43+35+37 = 208. AZ LtGov deferred (eff. Jan 2027, not seated yet).
+- **Stance phases split by office type** (not by state) because evidence types differ across offices. Governors+AGs (richer archives) in Wave 1, SoS+Treasurer+LtGov in Wave 2.
+- **SEXS-01 (prompt update) is plan 142-01**, not a standalone phase. It must be the first plan of Phase 142.
+- **SEXS-02 spans both waves 142+143.** Assigned to Phase 143 (completing phase). Phase 142 carries partial SEXS-02 for Gov+AG.
+- **Feed surfacing (SEXR-05) is a smoke test in the gate**, not a build phase. `STATE_EXEC` is already enumerated in `essentialsService.ts` at both query sites — no code change needed.
+- **MD Comptroller is NOT a Big 5 Treasurer equivalent for MD.** MD in-scope = Gov + LtGov + AG only (3). NY/TX Comptrollers ARE the Treasurer equivalent (absorbed duties). FL CFO is the Treasurer equivalent.
+- **MA title aliases:** MA Secretary of the Commonwealth = `role_canonical = secretary_of_state`. MA Treasurer and Receiver-General = `role_canonical = treasurer`.
+- **TN has only 1 in-scope office** (Governor). LtGov = Senate Speaker by statute, AG = Supreme Court appoints, SoS + Treasurer = legislature. Do not seed TN AG/SoS/Treasurer/LtGov.
+- **NJ has 2 in-scope offices** (Governor + LtGov on ticket). All other NJ Big 5 are Governor-appointed.
+- **WV and TN "LtGov" exclusion:** Both are Senate Presidents designated by statute — not popularly elected. Do NOT seed as LtGov.
+- **AL FIPS = 01 (single digit):** `-(01 * 10000 + seq)` = -10001..-10005 range; verify no collision with AL House reps which used `-1001..-1007`.
 
-### v2.12 Scope Notes (carry-forward)
+### v2.13–v2.14 Scope Notes (carry-forward for reference)
 
-- **512 stances, 71 officials**: v2.12 covered Boston/Cambridge/Worcester/Springfield/Lowell/Brockton/Quincy.
-- **Migration chunking**: If a stance SQL file exceeds Supabase editor limit, split into _chunk_1, _chunk_2, etc. Apply via execute_sql (not apply_migration for multi-chunk files).
-- **`BEGIN;` in one execute_sql + `COMMIT;` in another = silent rollback**: Use auto-commit for multi-chunk idempotent migrations.
-- **Cambridge officials**: query by district_id `cf3274f9-48c3-4e96-8273-3f6574add756`, not government_id (NULL on Cambridge districts).
+- **Tiger_geoid backfill pattern**: For city council districts, `tiger_geoid` = city FIPS code padded to match `geo_districts.geoid` format. Always join on `(tiger_geoid, district_type)`.
+- **Phase gate SQL pattern**: 8+ labeled assertions, one per requirement. `DO $$ BEGIN IF NOT (...) THEN RAISE EXCEPTION ... END IF; END $$;` style.
+- **MAGE-05 filter**: Always add `mtfcc IN ('G5210','G5220')` when querying geofence_boundaries for MA state legislative layers.
 
 ### Open Blockers
 
-None for v2.14 start.
-
-**Carried forward from v1.9 (non-blocking):**
-
-- Verify app.empowered.vote in Render CORS_ORIGIN env var
-- Smoke-test admin grant UI → adminRouter → grant_role RPC chain end-to-end in production
-- Backport district-join approach to getMatchingGrant (compass_stance_editor — currently fail-open)
-- v1.6 phases 42–43 (Decommission + DNS, Integration Documentation) still pending
+None for v2.18 start. Run the live diagnostic queries at plan authoring time:
+1. `SELECT state, COUNT(*) FROM essentials.districts WHERE district_type='STATE_EXEC' GROUP BY state ORDER BY state` — confirm 9-state baseline and exact record counts before authoring seeds.
+2. `SELECT p.full_name, p.external_id, COUNT(pa.id) as stance_count FROM essentials.politicians p JOIN essentials.offices o ON o.politician_id = p.id JOIN essentials.districts d ON d.id = o.district_id LEFT JOIN inform.politician_answers pa ON pa.politician_id = p.id WHERE d.district_type = 'STATE_EXEC' GROUP BY p.id ORDER BY stance_count, p.full_name` — stance gap diagnostic for 9 existing states.
+3. `SELECT external_id FROM essentials.politicians WHERE external_id < 0 ORDER BY external_id` — existing negative IDs for collision-free external_id scheme design.
 
 ### Quick Tasks Completed
 
@@ -265,33 +203,22 @@ None for v2.14 start.
 
 ## Session Continuity
 
-Last session: 2026-06-16T08:15:41.946Z
-Stopped at: context exhaustion at 80% (2026-06-16)
+Last session: 2026-06-20
+Stopped at: roadmap creation for v2.18
 Resume file: None
 
 ## Decisions
 
+- [v2.18 roadmap]: SEXS-02 assigned to Phase 143 (completing phase) — spans both Wave 1 (Gov+AG) and Wave 2 (SoS+Treasurer+LtGov); Phase 142 carries it partially; 143 closes it
+- [v2.18 roadmap]: Feed surfacing (SEXR-05) is a smoke test in Phase 144, not a build phase — STATE_EXEC already enumerated in essentialsService.ts lines 669-716 and 1585-1598
+- [v2.18 roadmap]: external_id scheme for new states = `-(state_fips * 10000 + office_seq)` — safest non-overlapping range; must verify 0 collisions against live DB before authoring
 - [Phase 118-01]: Migration number 619 (not 600) — disk files 600–618 already taken by Phase 117 stance files; DB MAX was 604 at execution time; disk wins
 - [Phase 118-01]: PROJ_LIB path is C:\Program Files\GDAL\projlib (not C:\OSGeo4W\share\proj as documented in CONTEXT.md)
 - [Phase 118-02]: Migration number 622 (not 601) — DB MAX was 619; disk highest was 621 (621_malakie_stances.sql); use 622 for Medford fix + city tiger_geoid backfill
-- [Phase 118-03]: MAGE-05 requires mtfcc IN ('G5210','G5220') filter — geo_id '25017' exists as both Middlesex County (G4020) and 8th Bristol SLDL District (G5220); unfiltered subquery returns 3 rows; mtfcc filter returns correct 2 rows
-- [Phase 114]: FEC /candidates/search/ principal_committees uses .committee_id not .id — fix field name in fetchFecData()
-- [Phase 114]: Use DIRECT_FEC_ID_OVERRIDES for stale congress-legislators YAML entries (Ivey H2MD04232, Self H2TX00064)
-- [Phase 114]: resolveViaDirectSearch restricted to known CA House members (LaMalfa/Swalwell) — hardcodes state=CA,office=H so must not run for other politicians
-- [Phase 114]: politician_sources has no unique constraint on (essentials_politician_id, source_system) — use DELETE+INSERT for DIRECT path upsert
-- Phase 111 scoped to senators only — VAST-01 (VA state executives) was descoped from Phase 111; not yet assigned to a phase
-- psql-applied wave migrations (326–330) do NOT insert rows into `supabase_migrations.schema_migrations` — always pre-flight with SELECT MAX(version) before each wave, not STATE.md cache
-- Wave migration DO $$ verification must use `pc.politician_id IS NULL` not `pc.id IS NULL` — `inform.politician_context` has composite PK (politician_id, topic_id), no standalone `id` column
-- 5 honest-skipped senators (Head SD-3, Hackworth SD-5, Mulchi SD-9, Cifers SD-10, Srinivasan SD-32) — no documentable policy positions; VAST-02 satisfied as 35/40 with 5 documented skips
-- [Phase 122-02]: Migration 702 supersedes honest-skip migrations 654/656/657 — prior agents did not fetch NB Light parking minimums article (Feb 2026) or Oct 2025 candidate interview pages
-- [Phase 122-02]: Pemberton honest-skip — voted yes on parking minimums but no attributed statement found; vote alone without reasoning does not satisfy evidence-only rule
-- [Phase 122-02]: Baptiste residential-zoning=1 sourced from NB Light Feb 13 2026 article; direct quote "you gotta be crazy" meets evidence standard
-- [Phase 122-02]: Lopes public-safety-approach=4 + housing=3 both sourced from Oct 2025 NB Light candidate interviews
-- [Phase 123-03]: Migration 711 uses '2539835' (corrected Medford FIPS) NOT '2540115' (Melrose FIPS from migration 591 bug) — citywide geo_id asymmetry documented in Pitfall 4 of RESEARCH.md
-- [Phase 123-03]: Medford Step 5 omitted — charter reform 2020 creates fully at-large council; migration 711 follows 709 (Fall River) at-large pattern with 2-gate post-verification only
-- [Phase 123-03]: Waltham ward councillors are sequential (external_ids -2572600008=Ward1 through -2572600016=Ward9) — unlike Newton which is non-sequential (Pitfall 3)
+- [Phase 118-02]: MAGE-05 requires mtfcc IN ('G5210','G5220') filter — geo_id '25017' exists as both Middlesex County (G4020) and 8th Bristol SLDL District (G5220); unfiltered subquery returns 3 rows; mtfcc filter returns correct 2 rows
+- [Phase 118-03]: Medford Step 5 omitted — charter reform 2020 creates fully at-large council; migration 711 follows 709 (Fall River) at-large pattern with 2-gate post-verification only
 - [Phase 123-04]: Fall River and Medford Path 0 spot checks require essentialsService join pattern (d.geo_id=gb.geo_id + G4110 discriminator) — citywide LOCAL rows have mtfcc=NULL; tiger_geoid join (gb.mtfcc=d.mtfcc) fails silently for NULL vs G4110
 
 ## Operator Next Steps
 
-- Start the next milestone with /gsd-new-milestone
+- Run `/gsd-plan-phase 141` — Phase 141: Roster Lock + Seed (Records + Headshots)

@@ -16,13 +16,13 @@
 - [ ] **SEXR-02**: All *missing* elected Big 5 records (politician + office) are seeded across all 50 states — idempotently and gap-based. Existing records are detected by `(district_type='STATE_EXEC', uppercase state, role_canonical)`, never by title string; external_id range is verified collision-free against production before authoring; each seed asserts uppercase `state` and non-empty `geo_id`; the 68 existing records and all non-Big-5 officers are left untouched.
 - [ ] **SEXR-03**: `role_canonical` is populated for every in-scope Big 5 office (`governor`, `lt_governor`, `attorney_general`, `secretary_of_state`, `treasurer`), including backfill on the pre-existing Big 5 records.
 - [ ] **SEXR-04**: Every newly-seeded exec has a headshot (official state .gov / Ballotpedia / Wikimedia portrait, storage-mirrored per the find-headshots pattern).
-- [ ] **SEXR-05**: Newly-seeded execs are verified to surface in `GET /representatives/me` by state code for an in-state address (smoke-test on ≥3 newly-seeded states; no backend code change expected since `STATE_EXEC` is already enumerated in the feed query).
+- [ ] **SEXR-05**: Newly-seeded execs are verified to surface in `GET /representatives/me` by state code for an in-state address (smoke-test on 3 or more newly-seeded states; no backend code change expected since `STATE_EXEC` is already enumerated in the feed query).
 
 ### State Executive Stances (SEXS)
 
 - [ ] **SEXS-01**: The stance researcher prompt is extended with office-type evidence guidance before first dispatch — AG (lawsuits / amicus / multistate coalitions), Treasurer (investment / divestment policy), Secretary of State (election administration actions), Lt. Governor (honest-partial when no independent record) — so exec actions map to compass topics without over-reading.
-- [ ] **SEXS-02**: Every in-scope elected exec has sourced compass stances — newly-seeded *and* the existing stance gaps (IN AG/SoS/Treasurer, all of ME, all of TX) — with each answer row paired to an `inform.politician_context` row carrying a real fetched source URL. **Zero unsourced rows** at close; honest-skip per topic where no evidence; the proxy-row review gate applies; never inferred from party.
-- [ ] **SEXS-03**: A consolidated read-only, labeled-assertion SQL phase gate (mirroring `verify-phase-132-140.sql`) confirms every elected Big 5 office is filled (208 minus documented deferrals), **zero** answer rows lack a paired source-bearing context row, and state-code accessibility holds — all assertions PASS against production.
+- [ ] **SEXS-02**: Every in-scope elected exec has sourced compass stances — newly-seeded *and* the existing stance gaps (IN AG/SoS/Treasurer, all of ME, all of TX) — with each answer row paired to an `inform.politician_context` row carrying a real fetched source URL. Zero unsourced rows at close; honest-skip per topic where no evidence; the proxy-row review gate applies; never inferred from party.
+- [ ] **SEXS-03**: A consolidated read-only, labeled-assertion SQL phase gate (mirroring `verify-phase-132-140.sql`) confirms every elected Big 5 office is filled (208 minus documented deferrals), zero answer rows lack a paired source-bearing context row, and state-code accessibility holds — all assertions PASS against production.
 
 ---
 
@@ -46,13 +46,11 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SEXR-01 | TBD (roadmap) | pending |
-| SEXR-02 | TBD (roadmap) | pending |
-| SEXR-03 | TBD (roadmap) | pending |
-| SEXR-04 | TBD (roadmap) | pending |
-| SEXR-05 | TBD (roadmap) | pending |
-| SEXS-01 | TBD (roadmap) | pending |
-| SEXS-02 | TBD (roadmap) | pending |
-| SEXS-03 | TBD (roadmap) | pending |
-
-*Traceability filled by the roadmapper.*
+| SEXR-01 | Phase 141 — Roster Lock + Seed | pending |
+| SEXR-02 | Phase 141 — Roster Lock + Seed | pending |
+| SEXR-03 | Phase 141 — Roster Lock + Seed | pending |
+| SEXR-04 | Phase 141 — Roster Lock + Seed | pending |
+| SEXR-05 | Phase 144 — Phase Gate | pending |
+| SEXS-01 | Phase 142 — Stance Wave 1 (Gov + AG) | pending |
+| SEXS-02 | Phase 143 — Stance Wave 2 (SoS + Treasurer + LtGov) | pending |
+| SEXS-03 | Phase 144 — Phase Gate | pending |
