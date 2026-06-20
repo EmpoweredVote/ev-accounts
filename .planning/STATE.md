@@ -21,15 +21,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 139 — Single/Low-Rep States House Rep Stances (COMPLETE 2026-06-20); all 8 research waves (132–139) done; next Phase 140 (consolidated all-212 gate, USHS-14)
+**Current focus:** v2.17 COMPLETE 2026-06-20 — Phase 140 gate PASSED (all USHS-06..14). All 9 phases 132–140 done. Next: /gsd-complete-milestone to archive v2.17.
 **Last shipped:** v2.16 National House Rep Stances (Tier 2) — Phases 127–131, shipped 2026-06-18. FL/NY/PA/IL = 87 reps, 1,338 sourced answers, 0 unsourced; USHS-01..05 closed; verify-phase-127-131.sql all pass.
 
 ## Current Position
 
-Phase: 139 — COMPLETE
-Plan: 3 of 3
-Status: Phase 139 complete — 18/18 reps, 192 sourced answers, 0 unsourced (USHS-13); all 8 waves 132–139 done
-Last activity: 2026-06-20 -- Phase 139 marked complete
+Phase: 140 — COMPLETE (v2.17 milestone complete)
+Plan: 1 of 1
+Status: Phase 140 gate PASSED — all USHS-06..14 assertions green (211/212 covered + McDowell honest-skip, 0 unsourced). v2.17 done; ready for /gsd-complete-milestone.
+Last activity: 2026-06-20 -- Phase 140 marked complete; v2.17 milestone complete
 
 ### v2.17 Requirement Coverage
 

@@ -239,7 +239,7 @@ Plans:
 
 #### Phase 140: Phase Gate Verification
 
-**Goal:** A single read-only, labeled-assertion SQL script confirms all 212 in-scope US House reps (across all 38 states) have sourced stance coverage with zero unsourced rows — the consolidated proof that v2.17 is complete.
+**Goal:** A single read-only, labeled-assertion SQL script confirms all 212 in-scope US House reps (across all 38 states) have sourced stance coverage with zero unsourced rows — the consolidated proof that v2.17 is complete. — ✅ COMPLETE 2026-06-20 (1 plan; verify-phase-132-140.sql, all USHS-06..14 PASS; 211/212 covered + McDowell −37006 honest-skip, 0 unsourced).
 
 **Depends on:** Phases 132–139 (all eight waves must be complete before the consolidated gate is meaningful)
 
@@ -252,7 +252,7 @@ Plans:
   3. Per-state coverage counts are asserted (covered = in-scope for each of the 38 states), surfacing any rep that was missed. (Refinement: OH+NC is 28/29 — McDowell NC-6 −37006 is the one documented Phase-132 honest-skip; USHS-14a pins the sole gap to exactly −37006.)
 
 **Plans:**
-- [ ] 140-01-PLAN.md — author + run verify-phase-132-140.sql (USHS-06..14 labeled assertions)
+- [x] 140-01-PLAN.md — verify-phase-132-140.sql authored + run; all USHS-06..14 assertions PASS (211/212 covered + McDowell honest-skip, 0 unsourced)
 
 ---
 
@@ -1866,4 +1866,4 @@ Bounded Tier 2 stance research for the 4 largest delegations — FL (27), NY (26
 | 137. LA + CT + IN + OK + AR + IA House Rep Stances | v2.17 | 6/6 | Complete   | 2026-06-20 |
 | 138. KS + MS + NV + NE + NM House Rep Stances | v2.17 | 5/5 | Complete | 2026-06-20 |
 | 139. Single/Low-Rep States House Rep Stances | v2.17 | 3/3 | Complete | 2026-06-20 |
-| 140. Phase Gate Verification | v2.17 | 0/1 | Planned | - |
+| 140. Phase Gate Verification | v2.17 | 1/1 | Complete | 2026-06-20 |
