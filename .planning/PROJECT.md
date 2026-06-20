@@ -249,7 +249,20 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 
 **v2.17 shipped 2026-06-20** — national US House stance coverage is complete. Combined with v2.16, the entire seeded national House layer (299 reps = 87 FL/NY/PA/IL + 212 across the other 38 states) now has sourced compass alignment: **298/299 covered, 0 unsourced**, the single gap being McDowell NC-6 (documented honest-skip, brand-new freshman with no record). Permanent audits: `backend/scripts/verify-phase-127-131.sql` (v2.16) + `backend/scripts/verify-phase-132-140.sql` (v2.17, all USHS-06..14 PASS).
 
-**Next milestone goals (candidates):** auto-fill McDowell NC-6 once a record exists; FEC finance for the newly-seeded national House reps (FINA stream); or pivot to the next coverage/data-quality priority. Defined fresh via `/gsd-new-milestone`.
+---
+
+## Current Milestone: v2.18 State Leaders
+
+**Goal:** Every US resident sees their state's elected Big 5 executives — Governor, Lt. Governor, Attorney General, Secretary of State, and Treasurer (whichever of the five their state actually elects) — in the representatives feed with sourced compass alignment, across all 50 states.
+
+**Target features:**
+- **Authoritative elected-Big-5 roster** — per state, which of the five offices are *elected* (vs. appointed or nonexistent), sourced from NGA / Ballotpedia / state .gov. This roster is the source of truth that prevents phantom offices (e.g. ME & OR have no Lt. Governor; TX abolished its elected Treasurer and appoints its SoS; UT has no SoS; VA/MD appoint their SoS).
+- **Idempotent gap seed** — create only *missing* politician + office records (politician + office + headshot) for the elected Big 5; detect existing records by **state + office kind**, NOT by title string (existing titles are inconsistent: "Indiana Governor" vs "Governor" vs "Texas Governor"). Leave the 68 existing `STATE_EXEC` records and all non-Big-5 statewide officers (Auditor, Controller, Commissioners, etc.) untouched.
+- **Gap-based stance research** — source compass stances for every elected Big 5 exec that lacks them (newly-seeded reps + the existing IN AG/SoS/Treasurer, all of ME, all of TX), reusing the proven v2.16/v2.17 pipeline (real source URL per stance, honest-skip where no evidence, never infer from party).
+- **Feed surfacing** — confirm/wire `STATE_EXEC` into `GET /representatives/me` by state code (the path `NATIONAL_UPPER` senators already use; statewide = no `tiger_geoid` polygons). CA execs already carry stances, so a path likely exists — verify and extend to all 50 states.
+- **Phase gate** — consolidated read-only SQL verification: every elected Big 5 office filled, 0 unsourced rows, state-code accessibility holds.
+
+**Gap baseline at milestone start (verified against prod 2026-06-20):** 68 `STATE_EXEC` records across only 9 states (CA, IN, MA, MD, ME, OR, TX, UT, VA); **41 states have zero state execs**. Stance gaps exist even in present states (ME 0/4, TX 0/3-elected, IN missing AG/SoS/Treasurer). Big 5 is the *elected subset per state* — never a flat 50×5 grid.
 
 ---
 
@@ -389,4 +402,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-20 — v2.17 SHIPPED (National House Rep Stances, Tier 2 continuation). 212 in-scope reps across 38 states covered (211 + McDowell NC-6 honest-skip), 0 unsourced; gate `verify-phase-132-140.sql` all USHS-06..14 PASS. National US House stance layer now 298/299. Next milestone via /gsd-new-milestone.*
+*Last updated: 2026-06-20 — v2.18 STARTED (State Leaders). Goal: elected Big 5 statewide execs (Gov, Lt Gov, AG, SoS, Treasurer) in all 50 states with sourced stances + state-code feed surfacing. Gap-based/idempotent: 68 STATE_EXEC records exist across 9 states; 41 states empty; stance gaps in IN/ME/TX. Defining requirements → roadmap.*

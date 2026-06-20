@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.17
-milestone_name: National House Rep Stances
-status: Awaiting next milestone
-last_updated: "2026-06-20T22:18:15.292Z"
-last_activity: 2026-06-20 — Milestone v2.17 completed and archived
+milestone: v2.18
+milestone_name: State Leaders
+status: planning
+last_updated: "2026-06-20T22:56:12.132Z"
+last_activity: 2026-06-20
 progress:
-  total_phases: 51
-  completed_phases: 9
-  total_plans: 45
-  completed_plans: 56
-  percent: 18
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 ## Current Position
 
-Phase: Milestone v2.17 complete
+Phase: Not started (defining requirements)
 Plan: —
-Status: Awaiting next milestone
-Last activity: 2026-06-20 — Milestone v2.17 completed and archived
+Status: Defining requirements
+Last activity: 2026-06-20 — Milestone v2.18 started
 
 ### v2.17 Requirement Coverage
 
