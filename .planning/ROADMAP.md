@@ -129,14 +129,14 @@
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
 
 **Plans:** 8 plans (all wave 1, mutually independent)
-- [ ] 135-01-PLAN.md — TN batch A: TN-1..TN-5 (5 reps) research + push
-- [ ] 135-02-PLAN.md — TN batch B: TN-6..TN-9 (4 reps) research + push (closes TN)
-- [ ] 135-03-PLAN.md — CO batch A: CO-1..CO-4 (4 reps) research + push
-- [ ] 135-04-PLAN.md — CO batch B: CO-5..CO-8 (4 reps) research + push (closes CO)
-- [ ] 135-05-PLAN.md — MN batch A: MN-1..MN-4 (4 reps) research + push
-- [ ] 135-06-PLAN.md — MN batch B: MN-5..MN-8 (4 reps) research + push (closes MN)
-- [ ] 135-07-PLAN.md — MO batch A: MO-1..MO-4 (4 reps) research + push
-- [ ] 135-08-PLAN.md — MO batch B: MO-5..MO-8 (4 reps) research + push (closes MO + Phase 135)
+- [x] 135-01-PLAN.md — TN batch A: TN-1..TN-5 (5 reps) research + push
+- [x] 135-02-PLAN.md — TN batch B: TN-6..TN-9 (4 reps) research + push (closes TN)
+- [x] 135-03-PLAN.md — CO batch A: CO-1..CO-4 (4 reps) research + push
+- [x] 135-04-PLAN.md — CO batch B: CO-5..CO-8 (4 reps) research + push (closes CO)
+- [x] 135-05-PLAN.md — MN batch A: MN-1..MN-4 (4 reps) research + push
+- [x] 135-06-PLAN.md — MN batch B: MN-5..MN-8 (4 reps) research + push (closes MN)
+- [x] 135-07-PLAN.md — MO batch A: MO-1..MO-4 (4 reps) research + push
+- [x] 135-08-PLAN.md — MO batch B: MO-5..MO-8 (4 reps) research + push (closes MO + Phase 135)
 
 ---
 
@@ -1835,7 +1835,7 @@ Bounded Tier 2 stance research for the 4 largest delegations — FL (27), NY (26
 | 132. OH + NC House Rep Stances | v2.17 | 4/4 | Complete   | 2026-06-19 |
 | 133. GA + MI House Rep Stances | v2.17 | 4/4 | Complete   | 2026-06-19 |
 | 134. NJ + WA + AZ House Rep Stances | v2.17 | 6/6 | Complete   | 2026-06-19 |
-| 135. TN + CO + MN + MO House Rep Stances | v2.17 | 0/0 | Not started | - |
+| 135. TN + CO + MN + MO House Rep Stances | v2.17 | 8/8 | Complete   | 2026-06-20 |
 | 136. WI + AL + SC + KY House Rep Stances | v2.17 | 0/0 | Not started | - |
 | 137. LA + CT + IN + OK + AR + IA House Rep Stances | v2.17 | 0/0 | Not started | - |
 | 138. KS + MS + NV + NE + NM House Rep Stances | v2.17 | 0/0 | Not started | - |

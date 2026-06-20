@@ -1,16 +1,17 @@
 ---
 gsd_state_version: 1.0
 milestone: v2.17
-milestone_name: National House Rep Stances (Tier 2 continuation)
-status: executing
-last_updated: "2026-06-19T14:47:09.063Z"
-last_activity: 2026-06-19 -- Phase 133 complete (GA+MI House stances, USHS-07): 26/26 reps, 379 answers, 0 unsourced
+milestone_name: National House Rep Stances
+status: completed
+stopped_at: context exhaustion at 80% (2026-06-16)
+last_updated: "2026-06-20T03:36:47.897Z"
+last_activity: 2026-06-20 -- Phase 135 marked complete
 progress:
-  total_phases: 51
-  completed_phases: 0
-  total_plans: 4
-  completed_plans: 11
-  percent: 0
+  total_phases: 9
+  completed_phases: 4
+  total_plans: 22
+  completed_plans: 22
+  percent: 44
 ---
 
 # Project State
@@ -20,15 +21,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 134 ✅ complete — next: Phase 135 (TN + CO + MN + MO)
+**Current focus:** Phase 135 — TN + CO + MN + MO House Rep Stances
 **Last shipped:** v2.16 National House Rep Stances (Tier 2) — Phases 127–131, shipped 2026-06-18. FL/NY/PA/IL = 87 reps, 1,338 sourced answers, 0 unsourced; USHS-01..05 closed; verify-phase-127-131.sql all pass.
 
 ## Current Position
 
-Phase: 134 (NJ + WA + AZ House Rep Stances) — ✅ COMPLETE 2026-06-19 (USHS-08; 31/31 reps, 409 answers, 0 unsourced)
-Plan: 6 of 6 complete
-Status: Phase 134 done — ready for /gsd-plan-phase 135 (TN+CO+MN+MO)
-Last activity: 2026-06-19 -- Phase 134 complete (NJ+WA+AZ House stances): 31/31 reps, 409 answers, 0 unsourced
+Phase: 135 — COMPLETE
+Plan: 1 of 8
+Status: Phase 135 complete
+Last activity: 2026-06-20 -- Phase 135 marked complete
 
 ### v2.17 Requirement Coverage
 
