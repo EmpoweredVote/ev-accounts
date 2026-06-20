@@ -123,6 +123,11 @@ const MTFCC_SCOPE: Record<string, Scope> = {
   G5420: 'district',  // unified school district
 };
 
+/** Sub-state layers whose county membership is resolved by polygon overlap (ST_Intersects)
+ *  for the read-rank county relevance tier: state-leg districts, school districts, townships.
+ *  Their visual frame is unchanged — this only populates countyGeoIds. */
+const COUNTY_OVERLAP_LAYERS = new Set(['G5210', 'G5220', 'G5400', 'G5410', 'G5420', 'G4040']);
+
 /** USPS → 2-digit state FIPS, for the statewide state-outline boundary (mtfcc G4000). */
 const USPS_TO_FIPS: Record<string, string> = {
   AL: '01', AK: '02', AZ: '04', AR: '05', CA: '06', CO: '08', CT: '09', DE: '10',
@@ -349,15 +354,15 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
 
   // State-legislative districts frame against the union of counties they overlap
   // (not the whole state), so a small district reads against nearby geography.
-  const slegRefs: Array<{ layer: string; geoid: string }> = [];
+  const overlapRefs: Array<{ layer: string; geoid: string }> = [];
   for (const r of rows) {
-    if ((r.boundary_layer === 'G5210' || r.boundary_layer === 'G5220') && r.boundary_geoid) {
-      slegRefs.push({ layer: r.boundary_layer, geoid: r.boundary_geoid });
+    if (r.boundary_layer && COUNTY_OVERLAP_LAYERS.has(r.boundary_layer) && r.boundary_geoid) {
+      overlapRefs.push({ layer: r.boundary_layer, geoid: r.boundary_geoid });
     }
   }
   let unionFrameMap = new Map<string, UnionFrame>();
   try {
-    unionFrameMap = await getCountyUnionFrames(slegRefs);
+    unionFrameMap = await getCountyUnionFrames(overlapRefs);
   } catch {
     // graceful degradation — these races fall back to the state frame below
   }
@@ -415,8 +420,8 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     if (frameGeo) frameRef = { ...frameRef, bbox: frameGeo.bbox, geojson: frameGeo.geojson } as BoundaryRef;
 
     // County set for the relevance tier. county/city/ward-council come from the
-    // single G4020 boundary or frame already computed; state-leg districts use the
-    // union member counties; everything else has no single county → [].
+    // single G4020 boundary or frame already computed; state-leg, school, and
+    // township districts use the overlapping-county set; everything else → [].
     let countyGeoIds: string[] = [];
     if (scope === 'county' && childLayer === 'G4020' && r.boundary_geoid) {
       countyGeoIds = [r.boundary_geoid];
@@ -425,7 +430,7 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
       r.frame_layer === 'G4020' && r.frame_geoid
     ) {
       countyGeoIds = [r.frame_geoid];
-    } else if (childLayer === 'G5210' || childLayer === 'G5220') {
+    } else if (COUNTY_OVERLAP_LAYERS.has(childLayer)) {
       const uf = r.boundary_geoid ? unionFrameMap.get(`${childLayer}:${r.boundary_geoid}`) : undefined;
       countyGeoIds = uf?.countyGeoIds ?? [];
     }

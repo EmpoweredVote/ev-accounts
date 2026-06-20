@@ -396,7 +396,37 @@ describe('getPlayableRaces — countyGeoIds', () => {
     expect(race.countyGeoIds).toEqual([]);
   });
 
-  it('is [] for a school district race (v1 boundary)', async () => {
+  it('uses the union member counties for a school district', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      ...BASE_ROW,
+      position_name: 'School Board',
+      jurisdiction_level: 'local',
+      boundary_layer: 'G5400', boundary_geoid: '1800001',
+      frame_layer: null, frame_geoid: null,
+    }] });
+    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
+      ['G5400:1800001', { bbox: [0, 0, 1, 1], geojson: { type: 'MultiPolygon', coordinates: [] }, countyGeoIds: ['18105'] }],
+    ]));
+    const [race] = await getPlayableRaces();
+    expect(race.countyGeoIds).toEqual(['18105']);
+  });
+
+  it('uses the union member counties for a township', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      ...BASE_ROW,
+      position_name: 'Township Trustee',
+      jurisdiction_level: 'local',
+      boundary_layer: 'G4040', boundary_geoid: '1899999',
+      frame_layer: null, frame_geoid: null,
+    }] });
+    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
+      ['G4040:1899999', { bbox: [0, 0, 1, 1], geojson: { type: 'MultiPolygon', coordinates: [] }, countyGeoIds: ['18105', '18021'] }],
+    ]));
+    const [race] = await getPlayableRaces();
+    expect(race.countyGeoIds).toEqual(['18105', '18021']);
+  });
+
+  it('is [] for a school district with no resolved county overlap', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
       ...BASE_ROW,
       position_name: 'School Board',

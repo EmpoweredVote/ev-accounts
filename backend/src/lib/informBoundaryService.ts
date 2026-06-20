@@ -125,10 +125,11 @@ export interface UnionFrame {
 }
 
 /**
- * Frame geometry for state-legislative districts: the union of the counties
- * (G4020) each district actually overlaps, so a small district renders against
- * its surrounding counties rather than the whole state. Keyed by "layer:geoid"
- * of the *district* (the child), matching the refs passed in.
+ * Frame geometry + member county GEOIDs for sub-state districts (state-legislative,
+ * school, township): the union of the counties (G4020) each district actually overlaps.
+ * The union geometry is used as the visual frame for state-leg districts; the member
+ * GEOIDs (countyGeoIds) drive read-rank's county relevance tier for all of them.
+ * Keyed by "layer:geoid" of the district (the child), matching the refs passed in.
  *
  * Counties are matched by genuine areal overlap — ST_Intersects (GiST-indexed)
  * then a positive ST_Area(ST_Intersection) so districts sharing only an edge
