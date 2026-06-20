@@ -154,7 +154,17 @@
   2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
 
-**Plans:** TBD
+**Plans:** 8 plans (all wave 1, mutually independent)
+
+Plans:
+- [ ] 136-01-PLAN.md — WI batch A (WI-1..WI-4, ext -55001..-55004)
+- [ ] 136-02-PLAN.md — WI batch B (WI-5..WI-8, ext -55005..-55008)
+- [ ] 136-03-PLAN.md — AL batch A (AL-1..AL-4, ext -1001..-1004)
+- [ ] 136-04-PLAN.md — AL batch B (AL-5..AL-7, ext -1005..-1007)
+- [ ] 136-05-PLAN.md — SC batch A (SC-1..SC-4, ext -45001..-45004)
+- [ ] 136-06-PLAN.md — SC batch B (SC-5..SC-7, ext -45005..-45007)
+- [ ] 136-07-PLAN.md — KY batch A (KY-1..KY-3, ext -21001..-21003)
+- [ ] 136-08-PLAN.md — KY batch B (KY-4..KY-6, ext -21004..-21006)
 
 ---
 
