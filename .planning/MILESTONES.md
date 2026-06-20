@@ -1,5 +1,28 @@
 # Project Milestones: Empowered Accounts
 
+## v2.17 National House Rep Stances (Tier 2 continuation) (Shipped: 2026-06-20)
+
+**Phases completed:** 9 phases (132–140), 45 plans
+
+**Goal:** Extend sourced compass coverage to every remaining seeded US House rep — the 212 reps across the 38 states not covered by v2.16 (FL/NY/PA/IL) — completing the national US House stance layer. Researched largest-delegation-first in 8 waves (132–139) so coverage maximized early if interrupted, then a consolidated gate (140).
+
+**Key accomplishments:**
+
+- Researched and ingested sourced compass stances for **212 in-scope US House reps across 38 states** — 211 fully covered + 1 documented honest-skip (McDowell NC-6, brand-new freshman, no record) — each answer paired with an `inform.politician_context` row carrying a real fetched source URL. **0 unsourced rows** at close.
+- Held the chair-philosophy / evidence-over-party standard throughout: every value matched to exact stance text and traced to a fetched URL; honest-skip per topic where no evidence; never inferred from party. Dropped ~23 caucus/committee-membership and "overall-record" proxy rows at review across phases 138–139, refining the rule that caucus membership counts only when the caucus has a published platform directly on that topic.
+- Reused the v2.16 pipeline verbatim at **3-concurrency**: shared `_TOPIC_SCALE.txt` (25 federal topics), `politician-stance-researcher` agents → per-rep CSV → RFC-4180 `_merge.ts` (0-problem merges every batch) → external_id-keyed `_push.ts` (answers + context + quotes in one transaction, suffix-aware surname leak-check, 0 leaks across the milestone).
+- Added a standing one-try-per-URL efficiency rule to every agent prompt after a 6.5-hour WebFetch stall in phase 137 — all subsequent agents finished in 1–6 min.
+- Caught two roster traps by querying production before authoring (not assuming the obvious pattern): Indiana's non-contiguous in-scope set (137) and the at-large states' `-{fips}000` external_ids (139).
+- Consolidated phase gate `backend/scripts/verify-phase-132-140.sql` — read-only labeled assertions for USHS-06..14, all PASS against production (per-wave coverage + 211/212 with the McDowell gap pinned to exactly -37006 + 0 unsourced).
+
+**Requirements:** 9/9 closed (USHS-06..14).
+
+**Carry-forward:** McDowell NC-6 awaits a documentable record (auto-fill later). FEC finance for these reps → FINA stream. Combined with v2.16, the full seeded national House layer (299 reps = 87 + 212) is now 298/299 covered.
+
+**Stats:** ~85 commits (v2.16..HEAD) · 2026-06-18 → 2026-06-20 · git range `feat(132-*)` → `docs(140)`. Honest-skip/proxy discipline: 1 full rep skip + ~23 proxy rows dropped.
+
+---
+
 ## v2.16 National House Rep Stances (Tier 2) (Shipped: 2026-06-18)
 
 **Phases completed:** 5 phases (127–131), 9 plans

@@ -2,16 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.17
 milestone_name: National House Rep Stances
-status: completed
-stopped_at: context exhaustion at 80% (2026-06-16)
-last_updated: "2026-06-20T16:05:03.803Z"
-last_activity: 2026-06-20 -- Phase 137 marked complete
+status: Awaiting next milestone
+last_updated: "2026-06-20T22:18:15.292Z"
+last_activity: 2026-06-20 — Milestone v2.17 completed and archived
 progress:
-  total_phases: 9
-  completed_phases: 6
-  total_plans: 36
-  completed_plans: 36
-  percent: 67
+  total_phases: 51
+  completed_phases: 9
+  total_plans: 45
+  completed_plans: 56
+  percent: 18
 ---
 
 # Project State
@@ -26,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-06-16 after v2.15 milestone complete)
 
 ## Current Position
 
-Phase: 140 — COMPLETE (v2.17 milestone complete)
-Plan: 1 of 1
-Status: Phase 140 gate PASSED — all USHS-06..14 assertions green (211/212 covered + McDowell honest-skip, 0 unsourced). v2.17 done; ready for /gsd-complete-milestone.
-Last activity: 2026-06-20 -- Phase 140 marked complete; v2.17 milestone complete
+Phase: Milestone v2.17 complete
+Plan: —
+Status: Awaiting next milestone
+Last activity: 2026-06-20 — Milestone v2.17 completed and archived
 
 ### v2.17 Requirement Coverage
 
@@ -101,12 +100,12 @@ National House rep coverage live: 137→436 linked reps, all with headshots. Per
 
 ## Deferred Items
 
-Items acknowledged and deferred at v2.15 milestone close on 2026-06-16 (all pre-existing, none from v2.15). Sweep with `/gsd:cleanup`.
+Items acknowledged and deferred — first at v2.15 close (2026-06-16), re-acknowledged at v2.17 close (2026-06-20). All pre-existing, none from v2.15/v2.16/v2.17. Sweep with `/gsd:cleanup`.
 
 | Category | Item | Status |
 |----------|------|--------|
 | quick_task | 22 historical quick-task dirs (001–022) | missing status markers (mostly completed long ago) |
-| verification_gap | 1 stale verification gap (pre-v2.15 phase) | open |
+| verification_gap | Phase 109 (v2.9 LA County) — 109-VERIFICATION.md | human_needed (stale, pre-v2.15) |
 
 ## Previous Milestone Position (v2.13 — COMPLETE ✅)
 
