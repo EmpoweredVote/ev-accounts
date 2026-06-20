@@ -123,9 +123,9 @@ const MTFCC_SCOPE: Record<string, Scope> = {
   G5420: 'district',  // unified school district
 };
 
-/** Sub-state layers whose county membership is resolved by polygon overlap (ST_Intersects)
- *  for the read-rank county relevance tier: state-leg districts, school districts, townships.
- *  Their visual frame is unchanged — this only populates countyGeoIds. */
+/** Sub-state layers whose overlapping counties (ST_Intersects, via getCountyUnionFrames)
+ *  drive BOTH the read-rank county relevance tier (countyGeoIds) and the county-union
+ *  visual frame (G4020U): state-leg districts, school districts, townships. */
 const COUNTY_OVERLAP_LAYERS = new Set(['G5210', 'G5220', 'G5400', 'G5410', 'G5420', 'G4040']);
 
 /** USPS → 2-digit state FIPS, for the statewide state-outline boundary (mtfcc G4000). */
@@ -401,15 +401,16 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
       frameRef = r.frame_layer && r.frame_geoid        // city→county / county-council→county / ward→city
         ? { layer: r.frame_layer, geoid: r.frame_geoid }
         : null;
-    } else if (childLayer === 'G5210' || childLayer === 'G5220') {
-      // State-leg district → union of overlapping counties (computed geometry,
-      // embedded inline). Falls back to the state outline if the union is empty.
+    } else if (COUNTY_OVERLAP_LAYERS.has(childLayer)) {
+      // Sub-state district (state-leg / school / township) → union of overlapping
+      // counties (computed geometry, embedded inline). Falls back to the state
+      // outline if the union is empty.
       const uf = r.boundary_geoid ? unionFrameMap.get(`${childLayer}:${r.boundary_geoid}`) : undefined;
       frameRef = uf
         ? { layer: 'G4020U', geoid: r.boundary_geoid as string, bbox: uf.bbox, geojson: uf.geojson }
         : stateRef;
     } else {
-      frameRef = stateRef;                             // county / school → state
+      frameRef = stateRef;                             // county → state
     }
 
     // Attach inline geometry from the batch result.

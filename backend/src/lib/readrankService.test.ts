@@ -231,6 +231,34 @@ describe('getPlayableRaces', () => {
     expect(race.frameRef).toEqual({ layer: 'G4000', geoid: '49' }); // UT state outline
   });
 
+  it('school district: frame = the county-union (computed geometry, embedded inline)', async () => {
+    const unionGeom = { type: 'MultiPolygon' as const, coordinates: [[[[-86.6, 39.0], [-86.3, 39.0], [-86.3, 39.5], [-86.6, 39.0]]]] };
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      ...BASE_ROW,
+      position_name: 'School Board', jurisdiction_level: 'local',
+      boundary_layer: 'G5400', boundary_geoid: '1800001', frame_layer: null, frame_geoid: null,
+    }] });
+    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
+      ['G5400:1800001', { bbox: [-86.6, 39.0, -86.3, 39.5], geojson: unionGeom, countyGeoIds: ['18105'] }],
+    ]));
+    const [race] = await getPlayableRaces();
+    expect(race.boundaryRef).toMatchObject({ layer: 'G5400', geoid: '1800001' });
+    expect(race.frameRef).toEqual({
+      layer: 'G4020U', geoid: '1800001', bbox: [-86.6, 39.0, -86.3, 39.5], geojson: unionGeom,
+    });
+  });
+
+  it('township: falls back to the state frame when no county union is found', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      ...BASE_ROW,
+      position_name: 'Township Trustee', jurisdiction_level: 'local',
+      boundary_layer: 'G4040', boundary_geoid: '1899999', frame_layer: null, frame_geoid: null,
+    }] });
+    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map()); // empty — no union
+    const [race] = await getPlayableRaces();
+    expect(race.frameRef).toEqual({ layer: 'G4000', geoid: '18' }); // IN state outline (BASE_ROW state)
+  });
+
   it('derives office/seat from raw position_name + district_label via deriveOfficeSeat', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
       race_id: 'rd', position_name: 'Monroe County Commissioner - District 1', district_label: 'District 1',
