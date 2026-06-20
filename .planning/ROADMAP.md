@@ -182,7 +182,14 @@ Plans:
   2. Every answer row has a paired `inform.politician_context` row with a real fetched source URL — **zero unsourced rows**.
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
 
-**Plans:** TBD
+**Plans:** 6 plans (one per state, all wave 1, mutually independent)
+
+- [ ] 137-01-PLAN.md — LA House reps (LA-1..LA-6, 6 reps) research + push
+- [ ] 137-02-PLAN.md — CT House reps (CT-1..CT-5, 5 reps) research + push
+- [ ] 137-03-PLAN.md — IN House reps (IN-1,2,3,5,6, 5 reps, non-contiguous) research + push
+- [ ] 137-04-PLAN.md — OK House reps (OK-1..OK-5, 5 reps) research + push
+- [ ] 137-05-PLAN.md — AR House reps (AR-1..AR-4, 4 reps, single-thousands) research + push
+- [ ] 137-06-PLAN.md — IA House reps (IA-1..IA-4, 4 reps) research + push
 
 ---
 
