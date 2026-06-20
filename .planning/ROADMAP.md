@@ -195,7 +195,7 @@ Plans:
 
 #### Phase 138: KS + MS + NV + NE + NM House Rep Stances
 
-**Goal:** All in-scope KS (4) + MS (4) + NV (4) + NE (3) + NM (3) US House reps = **18 reps** have sourced compass stances, each backed by a real source URL.
+**Goal:** All in-scope KS (4) + MS (4) + NV (4) + NE (3) + NM (3) US House reps = **18 reps** have sourced compass stances, each backed by a real source URL. — ✅ COMPLETE 2026-06-20 (5 plans 138-01..05; 18/18 reps, 233 sourced answers (KS 54 + MS 54 + NV 56 + NE 39 + NM 30), 0 unsourced).
 
 **Depends on:** Nothing (independent wave; filters state_fips KS=20, MS=28, NV=32, NE=31, NM=35)
 
@@ -208,11 +208,11 @@ Plans:
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
 
 **Plans:**
-- [ ] 138-01-PLAN.md — KS House reps (KS-1..KS-4, 4 reps) research + push
-- [ ] 138-02-PLAN.md — MS House reps (MS-1..MS-4, 4 reps) research + push
-- [ ] 138-03-PLAN.md — NV House reps (NV-1..NV-4, 4 reps) research + push
-- [ ] 138-04-PLAN.md — NE House reps (NE-1..NE-3, 3 reps) research + push
-- [ ] 138-05-PLAN.md — NM House reps (NM-1..NM-3, 3 reps) research + push
+- [x] 138-01-PLAN.md — KS House reps (KS-1..KS-4, 4 reps, 54 sourced, 0 unsourced)
+- [x] 138-02-PLAN.md — MS House reps (MS-1..MS-4, 4 reps, 54 sourced, 0 unsourced)
+- [x] 138-03-PLAN.md — NV House reps (NV-1..NV-4, 4 reps, 56 sourced, 0 unsourced)
+- [x] 138-04-PLAN.md — NE House reps (NE-1..NE-3, 3 reps, 39 sourced, 0 unsourced)
+- [x] 138-05-PLAN.md — NM House reps (NM-1..NM-3, 3 reps, 30 sourced, 0 unsourced)
 
 ---
 
@@ -1860,6 +1860,6 @@ Bounded Tier 2 stance research for the 4 largest delegations — FL (27), NY (26
 | 135. TN + CO + MN + MO House Rep Stances | v2.17 | 8/8 | Complete   | 2026-06-20 |
 | 136. WI + AL + SC + KY House Rep Stances | v2.17 | 8/8 | Complete   | 2026-06-20 |
 | 137. LA + CT + IN + OK + AR + IA House Rep Stances | v2.17 | 6/6 | Complete   | 2026-06-20 |
-| 138. KS + MS + NV + NE + NM House Rep Stances | v2.17 | 0/5 | Planned | - |
+| 138. KS + MS + NV + NE + NM House Rep Stances | v2.17 | 5/5 | Complete | 2026-06-20 |
 | 139. Single/Low-Rep States House Rep Stances | v2.17 | 0/0 | Not started | - |
 | 140. Phase Gate Verification | v2.17 | 0/0 | Not started | - |
