@@ -184,12 +184,12 @@ Plans:
 
 **Plans:** 6 plans (one per state, all wave 1, mutually independent)
 
-- [ ] 137-01-PLAN.md — LA House reps (LA-1..LA-6, 6 reps) research + push
-- [ ] 137-02-PLAN.md — CT House reps (CT-1..CT-5, 5 reps) research + push
-- [ ] 137-03-PLAN.md — IN House reps (IN-1,2,3,5,6, 5 reps, non-contiguous) research + push
-- [ ] 137-04-PLAN.md — OK House reps (OK-1..OK-5, 5 reps) research + push
-- [ ] 137-05-PLAN.md — AR House reps (AR-1..AR-4, 4 reps, single-thousands) research + push
-- [ ] 137-06-PLAN.md — IA House reps (IA-1..IA-4, 4 reps) research + push
+- [x] 137-01-PLAN.md — LA House reps (LA-1..LA-6, 6 reps) research + push
+- [x] 137-02-PLAN.md — CT House reps (CT-1..CT-5, 5 reps) research + push
+- [x] 137-03-PLAN.md — IN House reps (IN-1,2,3,5,6, 5 reps, non-contiguous) research + push
+- [x] 137-04-PLAN.md — OK House reps (OK-1..OK-5, 5 reps) research + push
+- [x] 137-05-PLAN.md — AR House reps (AR-1..AR-4, 4 reps, single-thousands) research + push
+- [x] 137-06-PLAN.md — IA House reps (IA-1..IA-4, 4 reps) research + push
 
 ---
 
@@ -1854,7 +1854,7 @@ Bounded Tier 2 stance research for the 4 largest delegations — FL (27), NY (26
 | 134. NJ + WA + AZ House Rep Stances | v2.17 | 6/6 | Complete   | 2026-06-19 |
 | 135. TN + CO + MN + MO House Rep Stances | v2.17 | 8/8 | Complete   | 2026-06-20 |
 | 136. WI + AL + SC + KY House Rep Stances | v2.17 | 8/8 | Complete   | 2026-06-20 |
-| 137. LA + CT + IN + OK + AR + IA House Rep Stances | v2.17 | 0/0 | Not started | - |
+| 137. LA + CT + IN + OK + AR + IA House Rep Stances | v2.17 | 6/6 | Complete   | 2026-06-20 |
 | 138. KS + MS + NV + NE + NM House Rep Stances | v2.17 | 0/0 | Not started | - |
 | 139. Single/Low-Rep States House Rep Stances | v2.17 | 0/0 | Not started | - |
 | 140. Phase Gate Verification | v2.17 | 0/0 | Not started | - |
