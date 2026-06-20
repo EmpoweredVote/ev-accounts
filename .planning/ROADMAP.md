@@ -157,14 +157,14 @@
 **Plans:** 8 plans (all wave 1, mutually independent)
 
 Plans:
-- [ ] 136-01-PLAN.md — WI batch A (WI-1..WI-4, ext -55001..-55004)
-- [ ] 136-02-PLAN.md — WI batch B (WI-5..WI-8, ext -55005..-55008)
-- [ ] 136-03-PLAN.md — AL batch A (AL-1..AL-4, ext -1001..-1004)
-- [ ] 136-04-PLAN.md — AL batch B (AL-5..AL-7, ext -1005..-1007)
-- [ ] 136-05-PLAN.md — SC batch A (SC-1..SC-4, ext -45001..-45004)
-- [ ] 136-06-PLAN.md — SC batch B (SC-5..SC-7, ext -45005..-45007)
-- [ ] 136-07-PLAN.md — KY batch A (KY-1..KY-3, ext -21001..-21003)
-- [ ] 136-08-PLAN.md — KY batch B (KY-4..KY-6, ext -21004..-21006)
+- [x] 136-01-PLAN.md — WI batch A (WI-1..WI-4, ext -55001..-55004)
+- [x] 136-02-PLAN.md — WI batch B (WI-5..WI-8, ext -55005..-55008)
+- [x] 136-03-PLAN.md — AL batch A (AL-1..AL-4, ext -1001..-1004)
+- [x] 136-04-PLAN.md — AL batch B (AL-5..AL-7, ext -1005..-1007)
+- [x] 136-05-PLAN.md — SC batch A (SC-1..SC-4, ext -45001..-45004)
+- [x] 136-06-PLAN.md — SC batch B (SC-5..SC-7, ext -45005..-45007)
+- [x] 136-07-PLAN.md — KY batch A (KY-1..KY-3, ext -21001..-21003)
+- [x] 136-08-PLAN.md — KY batch B (KY-4..KY-6, ext -21004..-21006)
 
 ---
 
@@ -1846,7 +1846,7 @@ Bounded Tier 2 stance research for the 4 largest delegations — FL (27), NY (26
 | 133. GA + MI House Rep Stances | v2.17 | 4/4 | Complete   | 2026-06-19 |
 | 134. NJ + WA + AZ House Rep Stances | v2.17 | 6/6 | Complete   | 2026-06-19 |
 | 135. TN + CO + MN + MO House Rep Stances | v2.17 | 8/8 | Complete   | 2026-06-20 |
-| 136. WI + AL + SC + KY House Rep Stances | v2.17 | 0/0 | Not started | - |
+| 136. WI + AL + SC + KY House Rep Stances | v2.17 | 8/8 | Complete   | 2026-06-20 |
 | 137. LA + CT + IN + OK + AR + IA House Rep Stances | v2.17 | 0/0 | Not started | - |
 | 138. KS + MS + NV + NE + NM House Rep Stances | v2.17 | 0/0 | Not started | - |
 | 139. Single/Low-Rep States House Rep Stances | v2.17 | 0/0 | Not started | - |
