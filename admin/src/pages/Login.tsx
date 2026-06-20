@@ -78,11 +78,17 @@ export default function Login() {
 
       sessionStorage.setItem('admin_token', token);
 
-      // In local dev, stay on the local SPA instead of bouncing to production.
-      const isLocal =
-        window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      const target = validRedirect || (isLocal ? '/admin' : 'https://login.empowered.vote/profile');
-      window.location.href = target;
+      // After login, honor an explicit (validated) redirect target; otherwise
+      // navigate to /profile on the CURRENT origin. Previously this hard-coded
+      // https://login.empowered.vote/profile, which threw users who logged in on
+      // another origin (e.g. accounts.empowered.vote) off-origin — their
+      // just-saved session lived in this origin's storage, not login's, so they
+      // landed logged-out and had to sign in a second time.
+      if (validRedirect) {
+        window.location.href = validRedirect;
+      } else {
+        navigate('/profile');
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred');
     } finally {

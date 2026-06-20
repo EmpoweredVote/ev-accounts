@@ -160,6 +160,8 @@ export interface AddressSearchResult {
   } | null;
   matchedAddress: string;
   tribal_land: { on_reservation: boolean; name?: string };
+  /** User's home county (5-digit FIPS GEOID + name), or null when unresolved. */
+  county: { geoid: string; name: string } | null;
 }
 
 export interface PoliticianRecord {
@@ -556,6 +558,21 @@ export async function getPoliticiansFlatList(
  *
  * Returns { politicians: [], jurisdiction: null } when no boundaries match.
  */
+
+/** Pick the user's county (GEOID + name) from the geofence district rows.
+ *  A county is the row with mtfcc G4020 or district_type COUNTY. Null when absent. */
+export function pickCountyFromDistrictRows(
+  rows: Array<{ mtfcc?: string | null; district_type?: string | null; geo_id?: string | null; district_label?: string | null }>,
+): { geoid: string; name: string } | null {
+  // Prefer the COUNTY row; fall back to any G4020 row only if no COUNTY row exists.
+  // (County-level courts can also be G4020 with the same county geo_id but a court name.)
+  const row =
+    rows.find((r) => r.district_type === 'COUNTY') ??
+    rows.find((r) => r.mtfcc === 'G4020');
+  if (!row || !row.geo_id) return null;
+  return { geoid: row.geo_id, name: row.district_label ?? '' };
+}
+
 export async function getRepresentativesByAddress(
   address: string,
   { includeChallengers = false }: { includeChallengers?: boolean } = {}
@@ -730,6 +747,7 @@ export async function getRepresentativesByAddress(
       jurisdiction: null,
       matchedAddress,
       tribal_land: tribal_land ?? { on_reservation: false },
+      county: null,
     };
   }
 
@@ -794,7 +812,8 @@ export async function getRepresentativesByAddress(
     mtfcc: firstRow.mtfcc ?? '',
   };
 
-  return { politicians, jurisdiction, matchedAddress, tribal_land };
+  const county = pickCountyFromDistrictRows(districtResult.rows);
+  return { politicians, jurisdiction, matchedAddress, tribal_land, county };
 }
 
 // ---------------------------------------------------------------------------

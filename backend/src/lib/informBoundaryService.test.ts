@@ -3,7 +3,7 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 const { mockQuery } = vi.hoisted(() => ({ mockQuery: vi.fn() }));
 vi.mock('./db.js', () => ({ pool: { query: mockQuery } }));
 
-import { getBoundary, getBoundaryBatch } from './informBoundaryService.js';
+import { getBoundary, getBoundaryBatch, getCountyUnionFrames } from './informBoundaryService.js';
 
 beforeEach(() => mockQuery.mockReset());
 
@@ -95,5 +95,42 @@ describe('getBoundaryBatch', () => {
     ]);
     const [, params] = mockQuery.mock.calls[0];
     expect(params).toEqual(['G4110', '1805860', 'G4020', '18105']);
+  });
+});
+
+describe('getCountyUnionFrames', () => {
+  it('returns an empty map and fires no query when refs is empty', async () => {
+    const out = await getCountyUnionFrames([]);
+    expect(out.size).toBe(0);
+    expect(mockQuery).not.toHaveBeenCalled();
+  });
+
+  it('exposes member county geoids alongside the union frame', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      layer: 'G5220', geoid: '49021',
+      minx: -112.5, miny: 40.0, maxx: -111.5, maxy: 40.9,
+      geojson: '{"type":"MultiPolygon","coordinates":[]}',
+      county_geoids: ['49035', '49045'],
+    }] });
+
+    const out = await getCountyUnionFrames([{ layer: 'G5220', geoid: '49021' }]);
+
+    expect(out.get('G5220:49021')).toMatchObject({
+      bbox: [-112.5, 40.0, -111.5, 40.9],
+      countyGeoIds: ['49035', '49045'],
+    });
+  });
+
+  it('defaults countyGeoIds to [] when the column is null', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      layer: 'G5220', geoid: '49021',
+      minx: -112.5, miny: 40.0, maxx: -111.5, maxy: 40.9,
+      geojson: '{"type":"MultiPolygon","coordinates":[]}',
+      county_geoids: null,
+    }] });
+
+    const out = await getCountyUnionFrames([{ layer: 'G5220', geoid: '49021' }]);
+
+    expect(out.get('G5220:49021')?.countyGeoIds).toEqual([]);
   });
 });

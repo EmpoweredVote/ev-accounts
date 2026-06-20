@@ -1,8 +1,8 @@
 import crypto from 'node:crypto';
 import { pool } from './db.js';
 import { env } from './env.js';
-import { getBoundaryBatch } from './informBoundaryService.js';
-import type { BoundaryResult } from './informBoundaryService.js';
+import { getBoundaryBatch, getCountyUnionFrames } from './informBoundaryService.js';
+import type { BoundaryResult, UnionFrame } from './informBoundaryService.js';
 
 /**
  * Read & Rank — blind candidate-match election tool.
@@ -40,8 +40,8 @@ interface BoundaryRef {
 
 export interface RaceSummary {
   raceId: string;
-  positionName: string;
-  districtLabel: string | null;
+  office: string;
+  seat: string | null;
   electionName: string;
   electionDate: string | null;
   state: string | null;
@@ -55,6 +55,9 @@ export interface RaceSummary {
   scope: 'statewide' | 'district' | 'county' | 'citywide';
   boundaryRef: BoundaryRef | null;
   frameRef: BoundaryRef | null;
+  /** GEOIDs of the counties this race belongs to (set, since state-leg districts cross
+   *  county lines). [] for statewide / federal / unframed races. */
+  countyGeoIds: string[];
 }
 
 export interface BlindQuote {
@@ -120,6 +123,11 @@ const MTFCC_SCOPE: Record<string, Scope> = {
   G5420: 'district',  // unified school district
 };
 
+/** Sub-state layers whose overlapping counties (ST_Intersects, via getCountyUnionFrames)
+ *  drive BOTH the read-rank county relevance tier (countyGeoIds) and the county-union
+ *  visual frame (G4020U): state-leg districts, school districts, townships. */
+const COUNTY_OVERLAP_LAYERS = new Set(['G5210', 'G5220', 'G5400', 'G5410', 'G5420', 'G4040']);
+
 /** USPS → 2-digit state FIPS, for the statewide state-outline boundary (mtfcc G4000). */
 const USPS_TO_FIPS: Record<string, string> = {
   AL: '01', AK: '02', AZ: '04', AR: '05', CA: '06', CO: '08', CT: '09', DE: '10',
@@ -130,6 +138,99 @@ const USPS_TO_FIPS: Record<string, string> = {
   SC: '45', SD: '46', TN: '47', TX: '48', UT: '49', VT: '50', VA: '51', WA: '53',
   WV: '54', WI: '55', WY: '56',
 };
+
+/** USPS → full state name, for stripping a redundant state prefix off statewide-exec offices. */
+const USPS_TO_NAME: Record<string, string> = {
+  AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California',
+  CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware', FL: 'Florida', GA: 'Georgia',
+  HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois', IN: 'Indiana', IA: 'Iowa',
+  KS: 'Kansas', KY: 'Kentucky', LA: 'Louisiana', ME: 'Maine', MD: 'Maryland',
+  MA: 'Massachusetts', MI: 'Michigan', MN: 'Minnesota', MS: 'Mississippi', MO: 'Missouri',
+  MT: 'Montana', NE: 'Nebraska', NV: 'Nevada', NH: 'New Hampshire', NJ: 'New Jersey',
+  NM: 'New Mexico', NY: 'New York', NC: 'North Carolina', ND: 'North Dakota', OH: 'Ohio',
+  OK: 'Oklahoma', OR: 'Oregon', PA: 'Pennsylvania', RI: 'Rhode Island', SC: 'South Carolina',
+  SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah', VT: 'Vermont',
+  VA: 'Virginia', WA: 'Washington', WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming',
+  DC: 'District of Columbia',
+};
+
+/** Chamber-neutral office title for each legislative district_type (ADR-0001). */
+const LEGISLATIVE_OFFICE: Record<string, string> = {
+  STATE_LOWER: 'State Representative',
+  STATE_UPPER: 'State Senator',
+  NATIONAL_LOWER: 'US Representative',
+  NATIONAL_UPPER: 'US Senator',
+};
+
+const WORD_TO_NUM: Record<string, number> = {
+  first: 1, second: 2, third: 3, fourth: 4, fifth: 5, sixth: 6, seventh: 7, eighth: 8,
+  ninth: 9, tenth: 10, eleventh: 11, twelfth: 12, thirteenth: 13, fourteenth: 14,
+  fifteenth: 15, sixteenth: 16, seventeenth: 17, eighteenth: 18, nineteenth: 19, twentieth: 20,
+};
+
+/** Normalize a district/seat phrase to its canonical seat token, or null.
+ *  "State House District 21" -> "District 21"; "Ninth District" -> "District 9";
+ *  "District 060" -> "District 60"; "At Large" -> "At-Large"; "" / null -> null. */
+export function normalizeSeat(raw: string | null): string | null {
+  if (!raw) return null;
+  let s = raw.trim();
+  if (!s) return null;
+  s = s.replace(
+    /\b(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth)\s+district\b/i,
+    (_m, w: string) => `District ${WORD_TO_NUM[w.toLowerCase()]}`,
+  );
+  s = s.replace(/\bdistrict\s+0*(\d+)/i, 'District $1');
+  s = s.replace(/\bat[\s-]?large\b/i, 'At-Large');
+  const m = s.match(/\b(District\s+\d+|At-Large|Ward\s+\d+|Division\s+\d+|Seat\s+\d+)\b/i);
+  return m ? m[1].replace(/\s+/g, ' ') : s;
+}
+
+/** Derive a clean office + seat for a race tile (ADR-0001). */
+export function deriveOfficeSeat(input: {
+  positionName: string;
+  districtLabel: string | null;
+  districtType: string | null;
+  state: string | null;
+}): { office: string; seat: string | null } {
+  const dt = (input.districtType ?? '').toUpperCase();
+
+  if (LEGISLATIVE_OFFICE[dt]) {
+    // normalizeSeat extracts the canonical token; confirm it's a real seat type
+    // before using it, otherwise fall back to deriving the seat from positionName.
+    const fromLabel = normalizeSeat(input.districtLabel);
+    const seat = fromLabel && /^(District|At-Large|Ward|Division|Seat)/i.test(fromLabel)
+      ? fromLabel
+      : normalizeSeat(input.positionName);
+    return { office: LEGISLATIVE_OFFICE[dt], seat };
+  }
+
+  // Executive / local / unknown: keep the place-qualified name, split any trailing
+  // comma district, and drop a redundant statewide state prefix.
+  let office = (input.positionName ?? '').trim()
+    .replace(/United States Representative/gi, 'US Representative')
+    .replace(/United States Senator/gi, 'US Senator');
+
+  let seat: string | null = null;
+  const sepRe = /\s*(?:,|[-–—])\s+/g;
+  let sepMatch: RegExpExecArray | null;
+  while ((sepMatch = sepRe.exec(office)) !== null) {
+    const norm = normalizeSeat(office.slice(sepMatch.index + sepMatch[0].length));
+    if (norm && /^(District|At-Large|Ward|Division|Seat)/i.test(norm)) {
+      seat = norm;
+      office = office.slice(0, sepMatch.index);
+      break;
+    }
+  }
+
+  if (input.state) {
+    const esc = (v: string) => v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const full = USPS_TO_NAME[input.state.toUpperCase()];
+    const alt = full ? `|${esc(full)}` : '';
+    office = office.replace(new RegExp(`^(${esc(input.state)}${alt})\\s+`, 'i'), '');
+  }
+
+  return { office: office.trim(), seat: seat ?? normalizeSeat(input.districtLabel) };
+}
 
 /** Tier from jurisdiction_level; scope prefers the mtfcc geometry class, else position name. */
 export function deriveTierScope(input: {
@@ -158,7 +259,7 @@ export function deriveTierScope(input: {
 
 export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSummary[]> {
   const { rows } = await pool.query<{
-    race_id: string; clean_position_name: string; district_label: string | null;
+    race_id: string; position_name: string; district_label: string | null; district_type: string | null;
     election_id: string; election_name: string;
     election_date: Date | null; jurisdiction_level: string | null; state: string | null;
     boundary_layer: string | null; boundary_geoid: string | null;
@@ -167,19 +268,9 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     politician_ids: string[];
   }>(`
     SELECT r.id AS race_id,
-           CASE
-             WHEN d.label IS NOT NULL AND d.label <> '' AND d.label <> r.position_name
-               AND r.position_name ILIKE '%' || d.label
-             THEN NULLIF(TRIM(BOTH ' -–' FROM LEFT(r.position_name, LENGTH(r.position_name) - LENGTH(d.label))), '')
-             ELSE r.position_name
-           END AS clean_position_name,
-           CASE
-             WHEN d.label IS NOT NULL AND d.label <> '' AND d.label <> r.position_name
-               AND r.position_name ILIKE '%' || d.label
-               AND NULLIF(TRIM(BOTH ' -–' FROM LEFT(r.position_name, LENGTH(r.position_name) - LENGTH(d.label))), '') IS NOT NULL
-             THEN d.label
-             ELSE NULL
-           END AS district_label,
+           r.position_name,
+           d.label AS district_label,
+           d.district_type,
            e.id AS election_id, e.name AS election_name, e.election_date,
            e.jurisdiction_level, e.state,
            d.mtfcc AS boundary_layer,
@@ -224,14 +315,17 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     LEFT JOIN LATERAL (
       SELECT fp.mtfcc AS frame_layer, fp.geo_id AS frame_geoid
       FROM essentials.geofence_boundaries fp
-      WHERE fp.mtfcc = CASE WHEN d.mtfcc = 'G4110' THEN 'G4020'
-                            WHEN d.mtfcc LIKE 'X%'  THEN 'G4110' END
+      WHERE fp.mtfcc = CASE
+              WHEN d.mtfcc = 'G4110' THEN 'G4020'                              -- city  → county
+              WHEN d.mtfcc LIKE 'X%' AND d.district_type = 'COUNTY' THEN 'G4020' -- county council → county
+              WHEN d.mtfcc LIKE 'X%' THEN 'G4110'                             -- city ward → city
+            END
         AND ST_Contains(fp.geometry, ST_PointOnSurface(cb.geometry))
       ORDER BY ST_Area(fp.geometry) ASC
       LIMIT 1
     ) frame ON (d.mtfcc = 'G4110' OR d.mtfcc LIKE 'X%')
     GROUP BY r.id, r.position_name, e.id, e.name, e.election_date, e.jurisdiction_level, e.state,
-             d.mtfcc, d.label, COALESCE(d.geo_id, d.tiger_geoid), frame.frame_layer, frame.frame_geoid
+             d.mtfcc, d.label, d.district_type, COALESCE(d.geo_id, d.tiger_geoid), frame.frame_layer, frame.frame_geoid
     HAVING COUNT(DISTINCT rc.politician_id) >= 2
     ORDER BY e.election_date ASC NULLS LAST
   `);
@@ -258,11 +352,32 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     // graceful degradation — races returned without embedded geometry
   }
 
+  // State-legislative districts frame against the union of counties they overlap
+  // (not the whole state), so a small district reads against nearby geography.
+  const overlapRefs: Array<{ layer: string; geoid: string }> = [];
+  for (const r of rows) {
+    if (r.boundary_layer && COUNTY_OVERLAP_LAYERS.has(r.boundary_layer) && r.boundary_geoid) {
+      overlapRefs.push({ layer: r.boundary_layer, geoid: r.boundary_geoid });
+    }
+  }
+  let unionFrameMap = new Map<string, UnionFrame>();
+  try {
+    unionFrameMap = await getCountyUnionFrames(overlapRefs);
+  } catch {
+    // graceful degradation — these races fall back to the state frame below
+  }
+
   const localSet = new Set(politicianIds ?? []);
   return rows.map((r) => {
+    const { office, seat } = deriveOfficeSeat({
+      positionName: r.position_name,
+      districtLabel: r.district_label,
+      districtType: r.district_type,
+      state: r.state,
+    });
     const { tier, scope } = deriveTierScope({
       jurisdiction_level: r.jurisdiction_level,
-      position_name: r.clean_position_name,
+      position_name: r.position_name,
       mtfcc: r.boundary_layer,
     });
     const fips = r.state ? USPS_TO_FIPS[r.state] : undefined;
@@ -283,11 +398,19 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     } else if (scope === 'statewide') {
       frameRef = null;                                 // Governor: state alone
     } else if (childLayer === 'G4110' || childLayer.startsWith('X')) {
-      frameRef = r.frame_layer && r.frame_geoid        // city→county / ward→city (SQL containment)
+      frameRef = r.frame_layer && r.frame_geoid        // city→county / county-council→county / ward→city
         ? { layer: r.frame_layer, geoid: r.frame_geoid }
         : null;
+    } else if (COUNTY_OVERLAP_LAYERS.has(childLayer)) {
+      // Sub-state district (state-leg / school / township) → union of overlapping
+      // counties (computed geometry, embedded inline). Falls back to the state
+      // outline if the union is empty.
+      const uf = r.boundary_geoid ? unionFrameMap.get(`${childLayer}:${r.boundary_geoid}`) : undefined;
+      frameRef = uf
+        ? { layer: 'G4020U', geoid: r.boundary_geoid as string, bbox: uf.bbox, geojson: uf.geojson }
+        : stateRef;
     } else {
-      frameRef = stateRef;                             // county / state-leg / school → state
+      frameRef = stateRef;                             // county → state
     }
 
     // Attach inline geometry from the batch result.
@@ -297,10 +420,26 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     const frameGeo = frameRef ? boundaryMap.get(`${frameRef.layer}:${frameRef.geoid}`) : undefined;
     if (frameGeo) frameRef = { ...frameRef, bbox: frameGeo.bbox, geojson: frameGeo.geojson } as BoundaryRef;
 
+    // County set for the relevance tier. county/city/ward-council come from the
+    // single G4020 boundary or frame already computed; state-leg, school, and
+    // township districts use the overlapping-county set; everything else → [].
+    let countyGeoIds: string[] = [];
+    if (scope === 'county' && childLayer === 'G4020' && r.boundary_geoid) {
+      countyGeoIds = [r.boundary_geoid];
+    } else if (
+      (childLayer === 'G4110' || childLayer.startsWith('X')) &&
+      r.frame_layer === 'G4020' && r.frame_geoid
+    ) {
+      countyGeoIds = [r.frame_geoid];
+    } else if (COUNTY_OVERLAP_LAYERS.has(childLayer)) {
+      const uf = r.boundary_geoid ? unionFrameMap.get(`${childLayer}:${r.boundary_geoid}`) : undefined;
+      countyGeoIds = uf?.countyGeoIds ?? [];
+    }
+
     return {
       raceId: r.race_id,
-      positionName: r.clean_position_name,
-      districtLabel: r.district_label,
+      office,
+      seat,
       electionName: r.election_name,
       electionDate: r.election_date ? new Date(r.election_date).toISOString().slice(0, 10) : null,
       state: r.state,
@@ -313,6 +452,7 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
       scope,
       boundaryRef,
       frameRef,
+      countyGeoIds,
       isLocal: localSet.size > 0 && (r.politician_ids ?? []).some((id) => localSet.has(id)),
     };
   });

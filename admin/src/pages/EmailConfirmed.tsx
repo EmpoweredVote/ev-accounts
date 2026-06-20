@@ -41,8 +41,10 @@ export default function EmailConfirmed() {
 
         sessionStorage.setItem('admin_token', accessToken);
 
-        // Clear the tokens from the URL before navigating
-        window.location.replace('https://login.empowered.vote/profile');
+        // Navigate to /profile on the CURRENT origin (replace drops the token
+        // hash from history). Hard-coding login.empowered.vote here threw users
+        // who confirmed on another origin off-origin, losing the just-set session.
+        navigate('/profile', { replace: true });
       } catch {
         setError(true);
       }
