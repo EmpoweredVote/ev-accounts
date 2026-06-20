@@ -249,9 +249,10 @@ Plans:
 
   1. `backend/scripts/verify-phase-132-140.sql` (following the `verify-phase-127-131.sql` pattern) runs read-only and every labeled assertion PASSES against production.
   2. The script asserts all 212 in-scope reps (`external_id BETWEEN -56999 AND -1000`, the v2.17 set) have ≥1 stance, and that **zero** answer rows lack a paired `inform.politician_context` row with a real source URL.
-  3. Per-state coverage counts are asserted (covered = in-scope for each of the 38 states), surfacing any rep that was missed.
+  3. Per-state coverage counts are asserted (covered = in-scope for each of the 38 states), surfacing any rep that was missed. (Refinement: OH+NC is 28/29 — McDowell NC-6 −37006 is the one documented Phase-132 honest-skip; USHS-14a pins the sole gap to exactly −37006.)
 
-**Plans:** TBD
+**Plans:**
+- [ ] 140-01-PLAN.md — author + run verify-phase-132-140.sql (USHS-06..14 labeled assertions)
 
 ---
 
@@ -1865,4 +1866,4 @@ Bounded Tier 2 stance research for the 4 largest delegations — FL (27), NY (26
 | 137. LA + CT + IN + OK + AR + IA House Rep Stances | v2.17 | 6/6 | Complete   | 2026-06-20 |
 | 138. KS + MS + NV + NE + NM House Rep Stances | v2.17 | 5/5 | Complete | 2026-06-20 |
 | 139. Single/Low-Rep States House Rep Stances | v2.17 | 3/3 | Complete | 2026-06-20 |
-| 140. Phase Gate Verification | v2.17 | 0/0 | Not started | - |
+| 140. Phase Gate Verification | v2.17 | 0/1 | Planned | - |
