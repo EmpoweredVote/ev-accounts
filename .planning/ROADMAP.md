@@ -116,16 +116,16 @@ Wave 3 (headshots per batch, parallel; 141-12 runs the full gate):
 **Plans:** 10 plans, 3 waves
 
 Plans:
-- [ ] 142-01-PLAN.md — SEXS-01: extend politician-stance-researcher prompt with office-type evidence guidance (all 5 exec types)
-- [ ] 142-02-PLAN.md — Batch A (10): FL/NY/IL/PA/TX Gov+AG stances
-- [ ] 142-03-PLAN.md — Batch B (9): OH/GA/NC/MI Gov+AG + NJ Gov stances
-- [ ] 142-04-PLAN.md — Batch C (10): WA/AZ/MO/WI Gov+AG + TN Gov + IN AG stances
-- [ ] 142-05-PLAN.md — Batch D (10): CO/MN/SC/AL/LA Gov+AG stances
-- [ ] 142-06-PLAN.md — Batch E (10): KY/OK/CT/AR/MS Gov+AG stances
-- [ ] 142-07-PLAN.md — Batch F (10): NV/IA/KS/NM/NE Gov+AG stances
-- [ ] 142-08-PLAN.md — Batch G (10): ID/WV/RI/MT/VT Gov+AG stances
-- [ ] 142-09-PLAN.md — Batch H (11): HI/NH/AK/WY/ME Gov + DE/SD/ND Gov+AG stances
-- [ ] 142-10-PLAN.md — Phase-142 gate: verify-phase-142.sql (Gov+AG coverage + zero-unsourced)
+- [x] 142-01-PLAN.md — SEXS-01: extend politician-stance-researcher prompt with office-type evidence guidance (all 5 exec types)
+- [x] 142-02-PLAN.md — Batch A (10): FL/NY/IL/PA/TX Gov+AG stances
+- [x] 142-03-PLAN.md — Batch B (9): OH/GA/NC/MI Gov+AG + NJ Gov stances
+- [x] 142-04-PLAN.md — Batch C (10): WA/AZ/MO/WI Gov+AG + TN Gov + IN AG stances
+- [x] 142-05-PLAN.md — Batch D (10): CO/MN/SC/AL/LA Gov+AG stances
+- [x] 142-06-PLAN.md — Batch E (10): KY/OK/CT/AR/MS Gov+AG stances
+- [x] 142-07-PLAN.md — Batch F (10): NV/IA/KS/NM/NE Gov+AG stances
+- [x] 142-08-PLAN.md — Batch G (10): ID/WV/RI/MT/VT Gov+AG stances
+- [x] 142-09-PLAN.md — Batch H (11): HI/NH/AK/WY/ME Gov + DE/SD/ND Gov+AG stances
+- [x] 142-10-PLAN.md — Phase-142 gate: verify-phase-142.sql (Gov+AG coverage + zero-unsourced)
 
 ---
 
@@ -171,7 +171,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 141. Roster Lock + Seed | 12/12 | Complete   | 2026-06-21 |
-| 142. Stance Wave 1 (Gov + AG) | 0/TBD | Not started | - |
+| 142. Stance Wave 1 (Gov + AG) | 10/10 | ✅ Complete | 2026-06-21 |
 | 143. Stance Wave 2 (SoS + Treasurer + LtGov) | 0/TBD | Not started | - |
 | 144. Phase Gate | 0/1 | Not started | - |
 
