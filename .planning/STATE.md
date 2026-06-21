@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.18
 milestone_name: State Leaders
 status: executing
-last_updated: "2026-06-21T01:18:02.683Z"
-last_activity: 2026-06-21 -- Phase 141 planning complete
+last_updated: "2026-06-21T03:14:54.577Z"
+last_activity: 2026-06-21 -- Phase 141 Wave 1 complete (records seeded); paused before headshots (Wave 2)
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 12
-  completed_plans: 0
-  percent: 0
+  completed_plans: 7
+  percent: 58
 ---
 
 # Project State
@@ -20,15 +20,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.18 State Leaders — roadmap written; Phase 141 (Roster Lock + Seed) is next.
+**Current focus:** v2.18 State Leaders — Phase 141 Wave 1 (records) COMPLETE: 209 in-scope Big-5 offices live in prod (175 seeded across 41 states + 34 backfilled in 9 existing states), gate SEXR-01/02/03 + D-10a/b PASS. PAUSED before Wave 2 headshots (plans 141-08..12) pending user go-ahead.
 **Last shipped:** v2.17 National House Rep Stances (Tier 2 continuation) — Phases 132–140, shipped 2026-06-20. 212 reps, 211 covered + McDowell NC-6 honest-skip, 0 unsourced; USHS-06..14 closed; verify-phase-132-140.sql all pass.
 
 ## Current Position
 
-Phase: 141 — Roster Lock + Seed (planned: 12 plans, 2 waves)
-Plan: —
-Status: Ready to execute
-Last activity: 2026-06-21 -- Phase 141 planning complete
+Phase: 141 — Roster Lock + Seed (7/12 plans complete)
+Plan: Wave 1 done (141-01..07); Wave 2 (141-08..12 headshots) NOT started
+Status: Paused before headshots per user pacing choice
+Last activity: 2026-06-21 -- Phase 141 Wave 1 complete (records seeded)
 
 ### v2.18 Requirement Coverage
 

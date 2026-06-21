@@ -79,15 +79,15 @@
 **Plans:** 12 plans across 3 waves (next migrations 946-957)
 
 Wave 1 (existing-record handling, parallel):
-- [ ] 141-01-PLAN.md — verify-phase-141.sql gate + role_canonical backfill (8 states) + UT NULL external_id fix
-- [ ] 141-02-PLAN.md — IN SoS+Treasurer gap-seed (canonical-government trap) + IN role_canonical backfill
+- [x] 141-01-PLAN.md — verify-phase-141.sql gate + role_canonical backfill (8 states) + UT NULL external_id fix
+- [x] 141-02-PLAN.md — IN SoS+Treasurer gap-seed (canonical-government trap) + IN role_canonical backfill
 
 Wave 2 (41 empty-state seeds, parallel, 35 offices each):
-- [ ] 141-03-PLAN.md — seed batch A: AK, AL, FL, IL, MS, NC, NY, SD
-- [ ] 141-04-PLAN.md — seed batch B: AR, GA, HI, IA, MO, ND, OK, VT
-- [ ] 141-05-PLAN.md — seed batch C: CO, KS, MI, NE, NJ, OH, PA, WA
-- [ ] 141-06-PLAN.md — seed batch D: CT, KY, MN, NH, NV, RI, TN, WI, WV
-- [ ] 141-07-PLAN.md — seed batch E: AZ, DE, ID, LA, MT, NM, SC, WY
+- [x] 141-03-PLAN.md — seed batch A: AK, AL, FL, IL, MS, NC, NY, SD
+- [x] 141-04-PLAN.md — seed batch B: AR, GA, HI, IA, MO, ND, OK, VT
+- [x] 141-05-PLAN.md — seed batch C: CO, KS, MI, NE, NJ, OH, PA, WA
+- [x] 141-06-PLAN.md — seed batch D: CT, KY, MN, NH, NV, RI, TN, WI, WV
+- [x] 141-07-PLAN.md — seed batch E: AZ, DE, ID, LA, MT, NM, SC, WY
 
 Wave 3 (headshots per batch, parallel; 141-12 runs the full gate):
 - [ ] 141-08-PLAN.md — headshots batch A + IN
@@ -158,7 +158,7 @@ Wave 3 (headshots per batch, parallel; 141-12 runs the full gate):
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 141. Roster Lock + Seed | 0/TBD | Not started | - |
+| 141. Roster Lock + Seed | 7/12 | In Progress|  |
 | 142. Stance Wave 1 (Gov + AG) | 0/TBD | Not started | - |
 | 143. Stance Wave 2 (SoS + Treasurer + LtGov) | 0/TBD | Not started | - |
 | 144. Phase Gate | 0/1 | Not started | - |
