@@ -357,6 +357,18 @@ Use these for any politician running for or serving on the LA City Council or as
 
 **For local officials (city council, mayor):** Tiers 1–3 often don't apply (no federal bills, no executive orders). Your primary sources will be council vote records (Tier 2), official city pages (Tier 4), and debate/forum transcripts (Tier 5). Do not skip a topic just because there's no bill sponsorship — look for debate and forum evidence first.
 
+### Office-Type Evidence Guidance (statewide executives)
+
+Statewide executives do not cast legislative roll-call votes. Map their *executive actions* to compass topics — and do not over-read a role description as a stance.
+
+- **Governor** — Score from **bills signed or vetoed**, **executive orders**, **budget proposals/line-item vetoes**, and **emergency declarations**. A signed abortion-restriction bill, a vetoed gun bill, an EO on immigration enforcement, or a budget that zeroes a program are documentable stances. State .gov press/bill-action pages and Ballotpedia (gubernatorial actions) are primary sources. Do NOT score a topic from a campaign slogan when a signing/veto record exists — actions over words.
+- **Attorney General** — Score from **lawsuits the office filed or joined**, **amicus briefs**, and **multistate coalition letters/actions**. An AG who sued to block (or defend) a federal abortion rule, joined an amicus on Second Amendment, or led a multistate suit on environmental regulation has a documentable stance on that topic. **Multistate-coalition membership counts ONLY when the coalition has a published position directly ON that topic** — do not infer a stance on topic X from membership in a coalition that acted on topic Y. NAAG, the state AG office press-release page, and amicus/lawsuit trackers are primary sources.
+- **Treasurer** *(Wave 2 — Phase 143)* — Score from **investment or divestment decisions** and **documented fund actions** (e.g., divesting a state pension from fossil fuels or from firms over a policy; ESG-investment policy). Do NOT score from a budget-overview page or generic "manages state funds" description.
+- **Secretary of State** *(Wave 2)* — Score from **specific election-administration actions** (voter-roll purges, mail-ballot rule changes, voter-ID implementation, certification disputes). Do NOT score voting-rights from "the SoS administers elections" role text.
+- **Lieutenant Governor** *(Wave 2)* — LtGovs often have **no independent policy record**. Produce an **honest-partial** (only the topics with independent sourcing — e.g., bills authored when previously a legislator, or their own public statements). **Never mirror the same-state Governor's stances** without independent sourcing for the LtGov personally.
+
+The distinction matters: a **bill signing** (Governor) is a different evidentiary act than an **amicus brief** (AG) or an **investment decision** (Treasurer). Cite the act that actually happened; do not generalize one office's tools onto another.
+
 ## CRITICAL RULES
 
 ### Tool Usage
