@@ -144,7 +144,24 @@ Plans:
   3. Lt Governor honest-partials are correctly modeled: thin records produce honest-partial (4–8 topics), not zero stances; no Lt Gov stance mirrors the same-state Governor without independent sourcing.
   4. Treasurer stances are sourced from investment/divestment decisions or documented fund actions — not from budget overview page descriptions; SoS stances are sourced from specific election administration actions — not from "SoS administers elections" role descriptions.
 
-**Plans:** TBD
+**Scope (prod-verified 2026-06-21):** 103 in-scope unstanced execs = 37 Lt Gov + 32 SoS + 34 Treasurer. (No SEXS-01 prompt-update plan — the researcher prompt already carries all 5 office-type guidance from Phase 142-01.)
+
+**Plans:** 11 plans, 2 waves — 10 state-grouped batches (largest-population-first, all of a state's SoS+Treas+LtGov in one batch, mutually independent) + per-phase gate
+
+Wave 1 (batch research + push, parallel, depends_on []):
+- [ ] 143-01-PLAN.md — batch A (11): TX/FL/NY/PA LtGov+Treas + IL LtGov+SoS+Treas
+- [ ] 143-02-PLAN.md — batch B (10): OH(3) + GA LtGov+SoS + NC(3) + MI LtGov+SoS
+- [ ] 143-03-PLAN.md — batch C (11): NJ LtGov + WA(3) + AZ SoS+Treas + IN SoS+Treas (positive ids) + MO(3)
+- [ ] 143-04-PLAN.md — batch D (11): WI(3) + CO(3) + MN LtGov+SoS + SC(3)
+- [ ] 143-05-PLAN.md — batch E (9): AL(3) + LA(3) + KY(3)
+- [ ] 143-06-PLAN.md — batch F (11): OK LtGov+Treas + CT(3) + IA(3) + NV(3)
+- [ ] 143-07-PLAN.md — batch G (9): AR(3) + MS(3) + KS(3)
+- [ ] 143-08-PLAN.md — batch H (9): NM(3) + NE(3) + ID(3)
+- [ ] 143-09-PLAN.md — batch I (10): WV SoS+Treas + HI LtGov + MT LtGov+SoS + RI(3) + DE LtGov+Treas
+- [ ] 143-10-PLAN.md — batch J (12): SD(3) + ND(3) + AK LtGov + VT(3) + WY SoS+Treas
+
+Wave 2 (gate, depends_on all 10 batches):
+- [ ] 143-11-PLAN.md — verify-phase-143.sql (SoS=35 / Treas=38 / LtGov=43 coverage + zero-unsourced)
 
 ---
 
@@ -172,7 +189,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 141. Roster Lock + Seed | 12/12 | Complete   | 2026-06-21 |
 | 142. Stance Wave 1 (Gov + AG) | 10/10 | ✅ Complete | 2026-06-21 |
-| 143. Stance Wave 2 (SoS + Treasurer + LtGov) | 0/TBD | Not started | - |
+| 143. Stance Wave 2 (SoS + Treasurer + LtGov) | 0/11 | Planned | - |
 | 144. Phase Gate | 0/1 | Not started | - |
 
 </details>
