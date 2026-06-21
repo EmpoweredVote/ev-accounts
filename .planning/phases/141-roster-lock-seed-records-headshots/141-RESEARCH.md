@@ -49,7 +49,7 @@
 
 ## Summary
 
-Phase 141 is a pure data milestone with no schema changes, no backend routing changes, and no new dependencies. All technical patterns are established. The core challenge is executing the 208-office matrix correctly — seeding all in-scope elected offices while leaving the 9 already-seeded states' records untouched.
+Phase 141 is a pure data milestone with no schema changes, no backend routing changes, and no new dependencies. All technical patterns are established. The core challenge is executing the 209-office matrix correctly — seeding all in-scope elected offices while leaving the 9 already-seeded states' records untouched.
 
 **The prod DB baseline (verified 2026-06-21):** 9 states have STATE_EXEC records but they are mostly NOT the Big-5 district-labeled format. Only IN, MD, MA, ME, UT, VA have dedicated per-office labeled districts. OR, TX, and CA use a shared label ("Oregon (Statewide)", "Texas Governor" per-office, "California" shared). The 41 states with zero STATE_EXEC records need full seeding. IN is missing SoS and Treasurer labeled districts. UT has 5 NULL external_ids that block idempotency.
 
@@ -134,7 +134,7 @@ Legend: **ELECTED** = in-scope | **TICKET** = elected on joint ticket with Gov |
 *AZ Lt Gov: deferred — Prop 131 eff. Jan 2027; documented exclusion in Phase 144 gate. AZ counts as 4 for seeding (Gov+AG+SoS+Treasurer in scope now; LtGov seeded post-2026 election).
 
 **Count verification:**
-- 50 Gov + 43 LtGov (excl. ME/NH/OR/WY=NONE; TN/WV=not elected; AZ=deferred) + 43 AG (excl. AK/HI/NH/NJ/WY=APPT; ME/TN=LEG/SC) + 35 SoS (excl. AK/HI/UT=NONE; DE/FL/NJ/NY/OK/PA/TX/VA=APPT; ME/NH/TN=LEG) + 37 Treasurer (excl. MN/MT=abolished; TX/NY=Comptroller equiv IN scope; FL=CFO IN scope; AK/GA/HI/MI/NJ/VA=APPT; ME/MD/NH/TN=LEG) = **208**
+- 50 Gov + 43 LtGov (excl. ME/NH/OR/WY=NONE; TN/WV=not elected; AZ=deferred) + 43 AG (excl. AK/HI/NH/NJ/WY=APPT; ME/TN=LEG/SC) + 35 SoS (excl. AK/HI/UT=NONE; DE/FL/NJ/NY/OK/PA/TX/VA=APPT; ME/NH/TN=LEG) + 38 Treasurer (50 − 12 exclusions: MN/MT=abolished [2]; AK/GA/HI/MI/NJ/VA=APPT [6]; ME/MD/NH/TN=LEG [4]; NY/TX Comptroller + FL CFO ARE counted as treasurer per D-01/D-02) = **209**
 
 **Resolved open cases:**
 - **WA Treasurer:** ELECTED (popularly elected on partisan ballot per Wikipedia, confirmed 2026-06-21). [VERIFIED: Wikipedia "Washington State Treasurer"]
@@ -354,7 +354,7 @@ Wikipedia "List of current..." articles (verified per D-11)
   + State .gov biography pages (cross-check)
         |
         v
-  Validated 208-office roster (SEXR-01)
+  Validated 209-office roster (SEXR-01)
         |
         v
   Gap query against prod:
@@ -645,8 +645,8 @@ None — verified: no runtime state rename/refactor in scope.
 
 | Req ID | Behavior | Test Type | Automated Command | File Exists? |
 |--------|----------|-----------|-------------------|-------------|
-| SEXR-01 | 208 in-scope offices are identified in roster matrix | manual (matrix in this doc) | `SELECT COUNT(*) FROM essentials.districts WHERE district_type='STATE_EXEC' AND state=upper(state)` asserts >= 208 labeled districts | ❌ Wave 0 |
-| SEXR-02 | All 208 in-scope Big-5 offices have a seeded politician+office | SQL assertion | `SELECT count with NOT EXISTS check` in verify-phase-141.sql | ❌ Wave 0 |
+| SEXR-01 | 209 in-scope offices are identified in roster matrix | manual (matrix in this doc) | `SELECT COUNT(*) FROM essentials.districts WHERE district_type='STATE_EXEC' AND state=upper(state)` asserts >= 209 labeled districts | ❌ Wave 0 |
+| SEXR-02 | All 209 in-scope Big-5 offices have a seeded politician+office | SQL assertion | `SELECT count with NOT EXISTS check` in verify-phase-141.sql | ❌ Wave 0 |
 | SEXR-03 | All in-scope offices have non-null role_canonical | SQL assertion | `SELECT COUNT(*) FROM ...offices WHERE role_canonical IS NULL AND in-scope` = 0 | ❌ Wave 0 |
 | SEXR-04 | All newly-seeded execs have a headshot | SQL assertion | `SELECT count of politician_images JOIN politicians WHERE external_id IN new-range` | ❌ Wave 0 |
 
@@ -659,8 +659,8 @@ None — verified: no runtime state rename/refactor in scope.
 ### Wave 0 Gaps
 
 - [ ] `backend/scripts/verify-phase-141.sql` — covers SEXR-01..04 with labeled SQL assertions:
-  - SEXR-01: COUNT of STATE_EXEC districts with labeled Big-5 roles = 208 (minus AZ LtGov + documented exclusions)
-  - SEXR-02: For each in-scope (state, role_canonical) pair from the 208-office matrix — assert EXISTS a politician+office in prod
+  - SEXR-01: COUNT of STATE_EXEC districts with labeled Big-5 roles = 209 (minus AZ LtGov + documented exclusions)
+  - SEXR-02: For each in-scope (state, role_canonical) pair from the 209-office matrix — assert EXISTS a politician+office in prod
   - SEXR-03: COUNT of in-scope offices with `role_canonical IS NULL` = 0
   - SEXR-04: COUNT of in-scope politicians with no `politician_images` row = 0
   - SEXR-D10: COUNT of STATE_EXEC districts with `state != upper(state)` = 0
@@ -676,25 +676,29 @@ No authentication, authorization, or user-facing input validation changes in thi
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Indiana dual-office risk for existing SoS/Treasurer**
    - What we know: Diego Morales (SoS) and Daniel Elliott (Treasurer) already exist as politicians linked to the shared "Indiana" district. New labeled "Indiana Secretary of State" and "Indiana Treasurer" districts must be created for SEXR-02.
    - What's unclear: Whether to create new offices for the existing politicians (linking them to new labeled districts) while leaving old offices in place, or to reassign existing offices to new districts.
    - Recommendation: Create new labeled districts + new offices linking existing politicians via ON CONFLICT DO NOTHING. Old offices under the shared "Indiana" district can remain (they have `is_appointed_position=true` for most; check if SoS/Treasurer under shared district also have this flag). The planner should explicitly decide and document.
+   - **RESOLVED:** Per plan 141-02 — create new labeled "Indiana Secretary of State" / "Indiana Treasurer" districts + new offices linking the existing Morales/Elliott politician records via their canonical UUIDs (resolved by external_id 642977 / 688298); leave the old shared-"Indiana"-district offices in place untouched (D-09). No politician records duplicated.
 
 2. **Indiana government row duplication**
    - What we know: 22+ "State of Indiana" rows exist in `essentials.governments` (prod Q5 output).
    - What's unclear: Which is the canonical one referenced by existing IN chambers/offices. 
    - Recommendation: Before authoring any IN migration, query `SELECT DISTINCT g.id, g.name FROM essentials.governments g JOIN essentials.chambers c ON c.government_id = g.id WHERE g.state = 'IN' AND g.name = 'State of Indiana' LIMIT 1` to identify the canonical government row, and use that specific UUID in the pre-flight assertion.
+   - **RESOLVED:** Per plan 141-02 — resolve the canonical "State of Indiana" government UUID by the chamber-join query at migration-authoring time and pin that specific UUID in the pre-flight assertion; the IN seed reuses the existing canonical government row, never inserting a new one.
 
 3. **WV/TN "LtGov" records in prod**
    - What we know: WV and TN are both NOT ELECTED for LtGov (Senate President by statute). Neither has STATE_EXEC records currently. The matrix correctly shows WV LtGov as NOT ELECTED.
    - Recommendation: Do NOT seed WV or TN LtGov. Seed only in-scope offices per the matrix.
+   - **RESOLVED:** WV and TN LtGov are EXCLUDED per the validated matrix (both NOT ELECTED — Senate President by statute); neither is seeded and neither counts toward the 209 denominator.
 
 4. **OR shared vs per-office district model**
    - What we know: OR's 5 execs all share one district label "Oregon (Statewide)". This works for feed surfacing (all return on state code match). role_canonical backfill must target individual offices via chamber name.
    - Recommendation: Leave OR's district structure as-is (no need to re-architect to per-office labeled format). role_canonical UPDATE should use `JOIN essentials.chambers ON chamber_name LIKE '%Governor%'` etc.
+   - **RESOLVED:** OR district structure left as-is (shared "Oregon (Statewide)" label); role_canonical is assigned per-office via the chamber-name join (`JOIN essentials.chambers ON chamber_name LIKE '%Governor%'` etc.), never via district label (Pitfall 1).
 
 ---
 
@@ -728,14 +732,14 @@ No authentication, authorization, or user-facing input validation changes in thi
 |---|-------|---------|---------------|
 | A1 | Python PIL (Pillow) is available for headshot processing | Environment Availability | Fallback: use `sharp` (Node.js) or manual headshot upload; low risk |
 | A2 | 2024-elected governors (37 states) are correctly reflected in Wikipedia "List of current United States governors" | 50-State Matrix | Stale governor names in seeds; requires fixing with new migration; medium risk — mitigated by D-11 requiring live fetch per officeholder |
-| A3 | WA Treasurer is popularly elected | 50-State Matrix | AZ-style deferral needed; 1 office reduction from 208 to 207 denominator; LOW risk — confirmed via WebFetch of Wikipedia article |
+| A3 | WA Treasurer is popularly elected | 50-State Matrix | RESOLVED: confirmed ELECTED via WebFetch of Wikipedia (see Resolved open cases); WA Treasurer IS in scope — no deferral, no denominator reduction (209 stands) |
 
 **Confirmed-verified claims (not assumed):**
 - OR external_id collision for -(fips*100000+seq): VERIFIED by prod query
 - IN government row duplication: VERIFIED by prod query (22+ rows)
 - UT NULL external_ids: VERIFIED by prod query (all 5 UT politicians have external_id=NULL)
 - IN SoS/Treasurer missing labeled districts: VERIFIED by prod query
-- 208-office denominator: VERIFIED by arithmetic from FEATURES.md matrix
+- 209-office denominator: VERIFIED by arithmetic from FEATURES.md matrix (50 Gov + 43 LtGov + 43 AG + 35 SoS + 38 Treasurer)
 - WA Treasurer elected: VERIFIED by Wikipedia WebFetch
 
 ---

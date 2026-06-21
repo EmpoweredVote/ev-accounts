@@ -30,7 +30,7 @@ created: 2026-06-20
 ## Sampling Rate
 
 - **After each seed migration commit:** Run the quick per-state count (`SELECT state, COUNT(*) FROM essentials.districts WHERE district_type='STATE_EXEC' GROUP BY state ORDER BY state`).
-- **After each wave merge:** Run `verify-state-exec-baseline.ts` full diagnostic (gap vs the 208-office matrix).
+- **After each wave merge:** Run `verify-state-exec-baseline.ts` full diagnostic (gap vs the 209-office matrix).
 - **Before phase close (Phase 144 gate is separate):** `verify-phase-141.sql` — all labeled assertions PASS.
 - **Max feedback latency:** ~15 seconds.
 
@@ -40,8 +40,8 @@ created: 2026-06-20
 
 | Requirement | Behavior | Test Type | Automated Command / Assertion | File Exists | Status |
 |-------------|----------|-----------|-------------------------------|-------------|--------|
-| SEXR-01 | The 50-state roster names elected vs appointed/legislature/nonexistent per Big-5 office, with a source URL per exception + officeholder per in-scope office; in-scope count = 208 | manual (matrix in RESEARCH.md) + SQL | matrix reviewed; `verify-phase-141.sql` asserts labeled STATE_EXEC Big-5 districts ≈ 208 (minus documented exclusions: AZ LtGov) | ❌ W0 | ⬜ pending |
-| SEXR-02 | Every in-scope (state, role_canonical) Big-5 office has a seeded politician + office; 0 phantom offices; 0 duplicates | SQL assertion | `verify-phase-141.sql`: for each of 208 matrix pairs `EXISTS` politician+office; AND `NOT EXISTS` non-elected/phantom office | ❌ W0 | ⬜ pending |
+| SEXR-01 | The 50-state roster names elected vs appointed/legislature/nonexistent per Big-5 office, with a source URL per exception + officeholder per in-scope office; in-scope count = 209 | manual (matrix in RESEARCH.md) + SQL | matrix reviewed; `verify-phase-141.sql` asserts labeled STATE_EXEC Big-5 districts = 209 (per-role: Gov 50 / LtGov 43 / AG 43 / SoS 35 / Treasurer 38; minus documented exclusion: AZ LtGov) | ❌ W0 | ⬜ pending |
+| SEXR-02 | Every in-scope (state, role_canonical) Big-5 office has a seeded politician + office; 0 phantom offices; 0 duplicates | SQL assertion | `verify-phase-141.sql`: for each of 209 matrix pairs `EXISTS` politician+office; AND `NOT EXISTS` non-elected/phantom office | ❌ W0 | ⬜ pending |
 | SEXR-03 | Every in-scope Big-5 office has non-null `role_canonical` (incl. alias mapping: FL CFO / NY+TX Comptroller → treasurer; MA Secretary of the Commonwealth → secretary_of_state) | SQL assertion | `COUNT(*) FROM essentials.offices o JOIN ... WHERE in-scope AND role_canonical IS NULL` = 0 | ❌ W0 | ⬜ pending |
 | SEXR-04 | Every newly-seeded exec has a headshot (verify actual mechanism: `photo_origin_url` column + storage mirror per v2.15/find-headshots, NOT assumed `politician_images`) | SQL assertion | `COUNT` of newly-seeded execs (external_id in new range) with NULL/empty headshot = 0 | ❌ W0 | ⬜ pending |
 | D-10 | Every STATE_EXEC district has uppercase `state` AND non-empty `geo_id` (the 223a lowercase-`or` defect guard) | SQL assertion | `COUNT(*) WHERE district_type='STATE_EXEC' AND (state != upper(state) OR geo_id IS NULL OR geo_id='')` = 0 | ❌ W0 | ⬜ pending |

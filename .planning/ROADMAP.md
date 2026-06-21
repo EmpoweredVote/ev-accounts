@@ -30,20 +30,20 @@
 - ✅ **v2.15 National House Rep Seeding (Tier 1)** — Phases 125–126 (shipped 2026-06-16)
 - ✅ **v2.16 National House Rep Stances (Tier 2)** — Phases 127–131 (shipped 2026-06-18; FL/NY/PA/IL, 87 reps, 1,338 stances)
 - ✅ **v2.17 National House Rep Stances (Tier 2 continuation)** — Phases 132–140 (shipped 2026-06-20; remaining 212 reps across 38 states, USHS-06..14)
-- 🔄 **v2.18 State Leaders** — Phases 141–144 (in progress; elected Big 5 statewide execs, 208 offices, 50 states)
+- 🔄 **v2.18 State Leaders** — Phases 141–144 (in progress; elected Big 5 statewide execs, 209 offices, 50 states)
 
 ## Phases
 
 <details open>
-<summary>🔄 v2.18 State Leaders (Phases 141–144) — IN PROGRESS (208 elected Big 5 execs, 50 states; SEXR-01..05, SEXS-01..03)</summary>
+<summary>🔄 v2.18 State Leaders (Phases 141–144) — IN PROGRESS (209 elected Big 5 execs, 50 states; SEXR-01..05, SEXS-01..03)</summary>
 
 ### v2.18 State Leaders (Phases 141–144)
 
 **Milestone goal:** Every US resident sees their state's elected Big 5 executives — Governor, Lt. Governor, Attorney General, Secretary of State, and Treasurer (whichever of the five their state actually elects) — in the representatives feed with sourced compass alignment, across all 50 states.
 
-**Pure data milestone — no backend code changes.** `STATE_EXEC` is already enumerated in `essentialsService.ts` at both feed query sites (lines 669–716 and 1585–1598); seeding data makes execs appear automatically. The core challenges are scope (208 popularly elected offices, not 250) and evidence quality (exec actions differ from legislative floor votes; researcher prompt must be updated before any dispatch).
+**Pure data milestone — no backend code changes.** `STATE_EXEC` is already enumerated in `essentialsService.ts` at both feed query sites (lines 669–716 and 1585–1598); seeding data makes execs appear automatically. The core challenges are scope (209 popularly elected offices, not 250) and evidence quality (exec actions differ from legislative floor votes; researcher prompt must be updated before any dispatch).
 
-**True denominator: 208 elected offices across 50 states.** Breakdown: 50 Gov + 43 LtGov + 43 AG + 35 SoS + 37 Treasurer = 208. Remaining 42 = appointed/legislature-elected/abolished/nonexistent per the FEATURES.md matrix (each exception sourced). AZ Lt Governor is deferred (Prop 131 eff. Jan 2027) and documented as a known exclusion in the gate.
+**True denominator: 209 elected offices across 50 states.** Breakdown: 50 Gov + 43 LtGov + 43 AG + 35 SoS + 38 Treasurer = 209. Remaining 41 = appointed/legislature-elected/abolished/nonexistent per the FEATURES.md matrix (each exception sourced). AZ Lt Governor is deferred (Prop 131 eff. Jan 2027) and documented as a known exclusion in the gate.
 
 **Gap baseline at start (verified 2026-06-20):** 68 `STATE_EXEC` records across only 9 states (CA, IN, MA, MD, ME, OR, TX, UT, VA); 41 states empty; stance gaps in IN (AG/SoS/Treasurer), ME (all 4 records have 0 stances), TX (3 in-scope execs, some may lack stances). CA execs are fully stanced — never re-research them.
 
@@ -63,7 +63,7 @@
 
 #### Phase 141: Roster Lock + Seed (Records + Headshots)
 
-**Goal:** Authoritative 208-office roster is locked, all missing elected Big 5 politician + office records are seeded across all 50 states, `role_canonical` is populated on every in-scope office, and every newly-seeded exec has a headshot.
+**Goal:** Authoritative 209-office roster is locked, all missing elected Big 5 politician + office records are seeded across all 50 states, `role_canonical` is populated on every in-scope office, and every newly-seeded exec has a headshot.
 
 **Depends on:** Nothing (first phase; roster lock is the gate for everything else)
 
@@ -119,7 +119,7 @@ Wave 3 (headshots per batch, parallel; 141-12 runs the full gate):
 
 #### Phase 143: Stance Research Wave 2 — SoS + Treasurer + Lt Gov
 
-**Goal:** All in-scope Secretaries of State (35), Treasurers (37, including FL CFO / NY/TX Comptrollers), and Lieutenant Governors (43) that lack stances have sourced compass stances, closing the full SEXS-02 requirement across all 208 in-scope execs.
+**Goal:** All in-scope Secretaries of State (35), Treasurers (38, including FL CFO / NY/TX Comptrollers), and Lieutenant Governors (43) that lack stances have sourced compass stances, closing the full SEXS-02 requirement across all 209 in-scope execs.
 
 **Depends on:** Phase 141 (UUIDs must exist); Phase 142 recommended to be complete first so proxy-row calibration from Wave 1 carries forward, but technically independent if Wave 2 is authored after SEXS-01 prompt update lands
 
