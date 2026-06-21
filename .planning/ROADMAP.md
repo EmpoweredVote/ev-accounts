@@ -74,9 +74,27 @@
   1. A per-state table names which of the Big 5 offices are popularly elected vs. appointed/legislature-elected/nonexistent, with a cited source per non-elected exception and an officeholder name + verified URL per in-scope office — this roster is the source of truth that prevents phantom offices.
   2. All 41 previously-empty states have `STATE_EXEC` politician + office + district records for their in-scope elected Big 5; gaps in the 9 existing states (IN AG/SoS/Treasurer, UT AG/Treasurer, ME is only Gov, TX SoS is appointed so only Gov+LtGov+AG in scope) are filled or confirmed-correct; `SELECT COUNT(*) WHERE district_type='STATE_EXEC'` grows to ~208 in-scope records (plus pre-existing non-Big-5 officers untouched).
   3. `role_canonical` is populated (`governor`, `lt_governor`, `attorney_general`, `secretary_of_state`, `treasurer`) on every in-scope Big 5 office record, including backfill on pre-existing Big 5 records; role_canonical is correct for title-alias offices (FL CFO = `treasurer`, NY/TX Comptroller = `treasurer`, MA Secretary of the Commonwealth = `secretary_of_state`).
-  4. Every newly-seeded exec has a headshot URL in `photo_origin_url`, mirrored to Supabase storage per the `find-headshots` pattern; no newly-seeded exec is headshot-free after this phase.
+  4. Every newly-seeded exec has a headshot row in `essentials.politician_images` (column `url`), mirrored to the `politician_photos` Supabase Storage bucket per the migration-271 storage-mirror pattern (the `find-headshots` skill is not on disk; the pattern is inline in migration 271); no newly-seeded exec is headshot-free after this phase except documented honest-skips.
 
-**Plans:** TBD
+**Plans:** 12 plans across 3 waves (next migrations 946-957)
+
+Wave 1 (existing-record handling, parallel):
+- [ ] 141-01-PLAN.md — verify-phase-141.sql gate + role_canonical backfill (8 states) + UT NULL external_id fix
+- [ ] 141-02-PLAN.md — IN SoS+Treasurer gap-seed (canonical-government trap) + IN role_canonical backfill
+
+Wave 2 (41 empty-state seeds, parallel, 35 offices each):
+- [ ] 141-03-PLAN.md — seed batch A: AK, AL, FL, IL, MS, NC, NY, SD
+- [ ] 141-04-PLAN.md — seed batch B: AR, GA, HI, IA, MO, ND, OK, VT
+- [ ] 141-05-PLAN.md — seed batch C: CO, KS, MI, NE, NJ, OH, PA, WA
+- [ ] 141-06-PLAN.md — seed batch D: CT, KY, MN, NH, NV, RI, TN, WI, WV
+- [ ] 141-07-PLAN.md — seed batch E: AZ, DE, ID, LA, MT, NM, SC, WY
+
+Wave 3 (headshots per batch, parallel; 141-12 runs the full gate):
+- [ ] 141-08-PLAN.md — headshots batch A + IN
+- [ ] 141-09-PLAN.md — headshots batch B
+- [ ] 141-10-PLAN.md — headshots batch C
+- [ ] 141-11-PLAN.md — headshots batch D
+- [ ] 141-12-PLAN.md — headshots batch E + full verify-phase-141.sql gate
 
 ---
 

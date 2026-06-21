@@ -1,8 +1,8 @@
 ---
 phase: 141
 slug: roster-lock-seed-records-headshots
-status: draft
-nyquist_compliant: false
+status: wired
+nyquist_compliant: true
 wave_0_complete: false
 created: 2026-06-20
 ---
@@ -76,6 +76,6 @@ created: 2026-06-20
 - [ ] Wave 0 covers the missing gate script + collision preflight
 - [ ] No watch-mode flags (N/A — SQL)
 - [ ] Feedback latency < 15s
-- [ ] `nyquist_compliant: true` set in frontmatter (after planner wires assertions to tasks)
+- [x] `nyquist_compliant: true` set in frontmatter (assertions wired: gate authored in plan 141-01 Task 1; applied + asserted in 141-12 Task 2)
 
 **Approval:** pending

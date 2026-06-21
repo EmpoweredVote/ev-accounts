@@ -8,7 +8,7 @@ last_activity: 2026-06-20 — Roadmap created for v2.18
 progress:
   total_phases: 4
   completed_phases: 0
-  total_plans: 0
+  total_plans: 12
   completed_plans: 0
   percent: 0
 ---
@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 ## Current Position
 
-Phase: 141 — Roster Lock + Seed (not started)
+Phase: 141 — Roster Lock + Seed (planned: 12 plans, 2 waves)
 Plan: —
-Status: Roadmap complete; ready for `/gsd-plan-phase 141`
+Status: Planned — 12 plans across 2 waves; ready for `/gsd-execute-phase 141`
 Last activity: 2026-06-20 — Roadmap created for v2.18
 
 ### v2.18 Requirement Coverage
@@ -142,7 +142,7 @@ Items acknowledged at v2.17 close (2026-06-20). All pre-existing, none from v2.1
 
 - Phases: 4 (141–144)
 - Requirements: 8/8 mapped (0 closed)
-- Plans complete: 0
+- Plans planned: 12 (Phase 141); 0 complete
 - Started: 2026-06-20
 
 ## Accumulated Context
@@ -224,4 +224,4 @@ Resume file: .planning/phases/141-roster-lock-seed-records-headshots/141-CONTEXT
 
 ## Operator Next Steps
 
-- Run `/gsd-plan-phase 141` — Phase 141: Roster Lock + Seed (Records + Headshots)
+- Run `/gsd-execute-phase 141` — 12 plans, 2 waves (Wave 1: 7 record/seed plans incl. gate; Wave 2: 5 headshot plans)
