@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v2.18
 milestone_name: State Leaders
-status: planning
-last_updated: "2026-06-20T23:30:00.000Z"
-last_activity: 2026-06-20
+status: completed
+last_updated: "2026-06-21T00:22:23.507Z"
+last_activity: 2026-06-20 — Roadmap created for v2.18
 progress:
   total_phases: 4
   completed_phases: 0
@@ -74,6 +74,7 @@ Phases 142 and 143 are independent of each other (disjoint office types) but bot
 ### v2.18 Key Data Points (from research)
 
 **208-office breakdown:**
+
 - 50 Governor (all states)
 - 43 Lt. Governor (excl. ME/NH/OR/WY=none; TN/WV=Senate Speaker by statute; AZ=deferred eff.2027)
 - 43 Attorney General (excl. AK/HI/NH/NJ/WY=Gov appoints; ME=legislature; TN=Supreme Court)
@@ -81,6 +82,7 @@ Phases 142 and 143 are independent of each other (disjoint office types) but bot
 - 37 Treasurer (excl. TX/MN/MT/NY=abolished/absorbed; AK/GA/HI/MI/NJ/VA=Gov appoints; ME/MD/NH/TN=legislature; FL=CFO, NY/TX=Comptroller are in-scope equiv)
 
 **9 already-seeded states (68 records):**
+
 - CA: all 5 Big 5 + extras — fully stanced, no action needed for records
 - IN: Gov stanced; AG/SoS/Treasurer missing stances (need research); check if AG/SoS/Treasurer records exist
 - MA: all 5 Big 5 seeded (Auditor also there but not Big 5)
@@ -172,6 +174,7 @@ Full key decisions log in PROJECT.md. All prior milestone decisions archived in 
 ### Open Blockers
 
 None for v2.18 start. Run the live diagnostic queries at plan authoring time:
+
 1. `SELECT state, COUNT(*) FROM essentials.districts WHERE district_type='STATE_EXEC' GROUP BY state ORDER BY state` — confirm 9-state baseline and exact record counts before authoring seeds.
 2. `SELECT p.full_name, p.external_id, COUNT(pa.id) as stance_count FROM essentials.politicians p JOIN essentials.offices o ON o.politician_id = p.id JOIN essentials.districts d ON d.id = o.district_id LEFT JOIN inform.politician_answers pa ON pa.politician_id = p.id WHERE d.district_type = 'STATE_EXEC' GROUP BY p.id ORDER BY stance_count, p.full_name` — stance gap diagnostic for 9 existing states.
 3. `SELECT external_id FROM essentials.politicians WHERE external_id < 0 ORDER BY external_id` — existing negative IDs for collision-free external_id scheme design.
@@ -203,9 +206,9 @@ None for v2.18 start. Run the live diagnostic queries at plan authoring time:
 
 ## Session Continuity
 
-Last session: 2026-06-20
-Stopped at: roadmap creation for v2.18
-Resume file: None
+Last session: 2026-06-21T00:22:23.498Z
+Stopped at: Phase 141 context gathered
+Resume file: .planning/phases/141-roster-lock-seed-records-headshots/141-CONTEXT.md
 
 ## Decisions
 
