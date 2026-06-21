@@ -1,0 +1,22 @@
+-- 924_andrea_alarcon_stances.sql — Phase 146 Wave 4 — AUDIT-ONLY (NOT registered in schema_migrations)
+-- Andrea Alarcón (external_id 692518, Palmdale D5).
+--
+-- HONEST BLANK — NO STANCES APPLIED. This is the correct evidence-only outcome (feedback_stance_no_default_value):
+-- diligent research across cityofpalmdaleca.gov (bio /308), AV Press, heySoCal, AV Times, Fox LA, MyNewsLA,
+-- and Ballotpedia surfaced no documented position that maps cleanly to a compass chair.
+--
+-- Notable: the Jan 2023 anti-"homeless village" council resolution quote was CONFIRMED to be Alarcón's
+-- (as Mayor Pro Tem she proposed the revised language: "It makes the point known without declaring war on
+-- the City of Los Angeles"; heysocal.com 2023-01-12). It was deliberately NOT converted into a homelessness
+-- stance because it is a jurisdiction/funding position (opposing LA relocating its unhoused to Palmdale), not
+-- a position on how Palmdale treats unhoused people locally (the enforcement-vs-services axis the homelessness
+-- chairs measure); her framing was explicitly the moderating one. Mapping it to a chair would misrepresent her.
+--
+-- Her official bio (civil-rights/voting-rights attorney, environmental-justice settlement, AQMD + Recycled
+-- Water Authority boards) is career background, not citable council policy positions (no-inference-from-bio rule).
+--
+-- GAP / future work: a deeper dive into individual PrimeGov agenda/minutes roll-call votes (some AV Press
+-- coverage was paywalled/rate-limited this pass) could surface explicit positions later. No defaulted values
+-- were inserted; a blank spoke is the honest result.
+--
+-- (No INSERTs. Ledger stays 919.)
