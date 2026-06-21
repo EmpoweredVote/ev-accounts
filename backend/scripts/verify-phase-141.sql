@@ -95,7 +95,10 @@ BEGIN
       AND (d.label ~* '(Governor|Attorney General|Secretary of State|Treasurer|Comptroller|Chief Financial Officer)')
       AND o.role_canonical IS NULL
       -- exclude documented out-of-scope labeled offices that legitimately stay NULL:
-      AND d.label NOT IN ('Maryland Comptroller','Maryland State Treasurer','Utah State Auditor')
+      --   MD Comptroller + State Treasurer (D-02 — separate appointed Treasurer, not Big-5);
+      --   UT State Auditor (not Big-5); ME AG/SoS/Treasurer (legislature-elected, ME in-scope = Governor only).
+      AND d.label NOT IN ('Maryland Comptroller','Maryland State Treasurer','Utah State Auditor',
+                          'Maine Attorney General','Maine Secretary of State','Maine Treasurer')
   ) THEN
     RAISE EXCEPTION 'SEXR-03 FAILED: a phase-labeled Big-5 STATE_EXEC district has an office with NULL role_canonical (missed backfill)';
   END IF;
