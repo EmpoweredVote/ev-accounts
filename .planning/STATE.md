@@ -20,15 +20,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.18 State Leaders — Phase 141 COMPLETE (all 12 plans). 209 in-scope elected Big-5 offices live in prod, role_canonical-tagged, 173 headshots + 2 documented honest-skips (Haeder SD-Treasurer, McGrane ID-SoS). Gate verify-phase-141.sql ALL-PASS (SEXR-01..04 + D-10a/b). NEXT: `/gsd-plan-phase 142` (stance Wave 1 — Gov + AG).
+**Current focus:** v2.18 State Leaders — Phase 141 COMPLETE (209 offices + 175 headshots, gate all-pass). Phase 142 PLANNED (10 plans, 3 waves; plan-checker PASS): SEXS-01 prompt update + 80 unstanced Gov+AG stances @≤3-concurrency + gate. NEXT: `/gsd-execute-phase 142` (Wave 2 dispatches politician-stance-researcher — validate first triple before continuing).
 **Last shipped:** v2.17 National House Rep Stances (Tier 2 continuation) — Phases 132–140, shipped 2026-06-20. 212 reps, 211 covered + McDowell NC-6 honest-skip, 0 unsourced; USHS-06..14 closed; verify-phase-132-140.sql all pass.
 
 ## Current Position
 
-Phase: 141 — Roster Lock + Seed (12/12 plans COMPLETE)
-Plan: all done; gate verify-phase-141.sql ALL-PASS
-Status: Phase 141 complete — next is Phase 142 (stance Wave 1)
-Last activity: 2026-06-21 -- Phase 141 complete (records + headshots)
+Phase: 142 — Stance Wave 1 (Gov + AG) — PLANNED (10 plans, 3 waves)
+Plan: ready to execute; plan-checker PASS (0 blockers)
+Status: Phase 141 complete; Phase 142 planned — next is /gsd-execute-phase 142
+Last activity: 2026-06-21 -- Phase 142 planned (stance Wave 1)
 
 ### v2.18 Requirement Coverage
 
