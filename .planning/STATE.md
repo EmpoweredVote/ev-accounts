@@ -4,13 +4,13 @@ milestone: v2.18
 milestone_name: State Leaders
 status: executing
 last_updated: "2026-06-21T03:14:54.577Z"
-last_activity: 2026-06-21 -- Phase 141 Wave 1 complete (records seeded); paused before headshots (Wave 2)
+last_activity: 2026-06-21 -- Phase 141 COMPLETE (records + headshots); gate all-PASS
 progress:
   total_phases: 4
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 12
-  completed_plans: 7
-  percent: 58
+  completed_plans: 12
+  percent: 25
 ---
 
 # Project State
@@ -20,15 +20,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.18 State Leaders — Phase 141 Wave 1 (records) COMPLETE: 209 in-scope Big-5 offices live in prod (175 seeded across 41 states + 34 backfilled in 9 existing states), gate SEXR-01/02/03 + D-10a/b PASS. PAUSED before Wave 2 headshots (plans 141-08..12) pending user go-ahead.
+**Current focus:** v2.18 State Leaders — Phase 141 COMPLETE (all 12 plans). 209 in-scope elected Big-5 offices live in prod, role_canonical-tagged, 173 headshots + 2 documented honest-skips (Haeder SD-Treasurer, McGrane ID-SoS). Gate verify-phase-141.sql ALL-PASS (SEXR-01..04 + D-10a/b). NEXT: `/gsd-plan-phase 142` (stance Wave 1 — Gov + AG).
 **Last shipped:** v2.17 National House Rep Stances (Tier 2 continuation) — Phases 132–140, shipped 2026-06-20. 212 reps, 211 covered + McDowell NC-6 honest-skip, 0 unsourced; USHS-06..14 closed; verify-phase-132-140.sql all pass.
 
 ## Current Position
 
-Phase: 141 — Roster Lock + Seed (7/12 plans complete)
-Plan: Wave 1 done (141-01..07); Wave 2 (141-08..12 headshots) NOT started
-Status: Paused before headshots per user pacing choice
-Last activity: 2026-06-21 -- Phase 141 Wave 1 complete (records seeded)
+Phase: 141 — Roster Lock + Seed (12/12 plans COMPLETE)
+Plan: all done; gate verify-phase-141.sql ALL-PASS
+Status: Phase 141 complete — next is Phase 142 (stance Wave 1)
+Last activity: 2026-06-21 -- Phase 141 complete (records + headshots)
 
 ### v2.18 Requirement Coverage
 

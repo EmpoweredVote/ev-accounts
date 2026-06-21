@@ -90,11 +90,11 @@ Wave 2 (41 empty-state seeds, parallel, 35 offices each):
 - [x] 141-07-PLAN.md — seed batch E: AZ, DE, ID, LA, MT, NM, SC, WY
 
 Wave 3 (headshots per batch, parallel; 141-12 runs the full gate):
-- [ ] 141-08-PLAN.md — headshots batch A + IN
-- [ ] 141-09-PLAN.md — headshots batch B
-- [ ] 141-10-PLAN.md — headshots batch C
-- [ ] 141-11-PLAN.md — headshots batch D
-- [ ] 141-12-PLAN.md — headshots batch E + full verify-phase-141.sql gate
+- [x] 141-08-PLAN.md — headshots batch A + IN
+- [x] 141-09-PLAN.md — headshots batch B
+- [x] 141-10-PLAN.md — headshots batch C
+- [x] 141-11-PLAN.md — headshots batch D
+- [x] 141-12-PLAN.md — headshots batch E + full verify-phase-141.sql gate
 
 ---
 
@@ -158,7 +158,7 @@ Wave 3 (headshots per batch, parallel; 141-12 runs the full gate):
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 141. Roster Lock + Seed | 7/12 | In Progress|  |
+| 141. Roster Lock + Seed | 12/12 | Complete   | 2026-06-21 |
 | 142. Stance Wave 1 (Gov + AG) | 0/TBD | Not started | - |
 | 143. Stance Wave 2 (SoS + Treasurer + LtGov) | 0/TBD | Not started | - |
 | 144. Phase Gate | 0/1 | Not started | - |
