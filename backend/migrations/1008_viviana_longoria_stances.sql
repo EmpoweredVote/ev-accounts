@@ -1,0 +1,18 @@
+-- 1008_viviana_longoria_stances.sql
+-- Phase 151 Wave 4 (ELMN-01): Viviana Longoria (El Monte City Council District 4 / Mayor Pro Tem, ext_id 657386).
+-- AUDIT-ONLY. Idempotent. NOT registered in schema_migrations (ledger stays 1001).
+--
+-- RESULT: ZERO evidenced stances — honest full blank (NO rows inserted).
+-- Seated Nov 2024 (~7-month record). PRE-TENURE rule bars the July 2024 police MOU vote (not hers).
+-- No usable issue record: did NOT complete Ballotpedia 2024 Candidate Connection / any voter-guide survey;
+-- official bio is policy-free; Voter's Edge/Maplight (2022 City Treasurer entry) defunct. Her only attributable
+-- post-seating actions (2025 minutes) are routine procedural participation (seconding a 7-0 pedestrian-safety MOU
+-- and a police medical-legal services agreement; thanking the police chief) — none expresses a compass chair.
+-- Per evidence-only / no-default / no-pad rules, every topic is an HONEST BLANK.
+--
+-- Sources consulted (no scoreable evidence):
+--   https://ballotpedia.org/Viviana_Longoria_(El_Monte_City_Council_District_4,_California,_candidate_2024)
+--   https://www.ci.el-monte.ca.us/642/Viviana-Longoria
+--   https://www.ci.el-monte.ca.us/AgendaCenter/ViewFile/Minutes/_03122025-1252
+--
+-- No SQL to apply. This file documents the honest gap for the phase record.

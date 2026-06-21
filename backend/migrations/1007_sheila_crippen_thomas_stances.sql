@@ -1,0 +1,19 @@
+-- 1007_sheila_crippen_thomas_stances.sql
+-- Phase 151 Wave 4 (ELMN-01): Sheila Crippen-Thomas (El Monte City Council District 1, ext_id -201202).
+-- AUDIT-ONLY. Idempotent. NOT registered in schema_migrations (ledger stays 1001).
+--
+-- RESULT: ZERO evidenced stances — honest full blank (NO rows inserted).
+-- She was seated Nov 2024 (~7-month record). PRE-TENURE rule bars attributing the July 2024 police MOU vote
+-- (and any pre-Nov-2024 council action) to her. Her own record is not recoverable in compass-mappable form:
+--   - Did NOT complete Ballotpedia's 2024 Candidate Connection survey.
+--   - Her only substantive candidate questionnaire (San Gabriel Valley Tribune, MSN syndication) is behind a
+--     blocked/empty publisher domain — no campaign-stated positions verifiable to her own words.
+--   - Post-seating council record (Feb 12 2025 minutes) is procedural/civic only — no directional policy chair.
+-- Per the evidence-only / no-default / no-pad rules, every topic is an HONEST BLANK. Padding would be a guess.
+--
+-- Sources consulted (no scoreable evidence):
+--   https://ballotpedia.org/Sheila_Crippen_Thomas_(El_Monte_City_Council_District_1,_California,_candidate_2024)
+--   https://www.ci.el-monte.ca.us/687/Sheila-Crippen-Thomas
+--   https://www.ci.el-monte.ca.us/AgendaCenter/ViewFile/Minutes/_02122025-1243
+--
+-- No SQL to apply. This file documents the honest gap for the phase record.
