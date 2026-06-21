@@ -109,10 +109,9 @@ END $$;
 -- Newly-seeded set = the 41 previously-empty states (d.state NOT IN the 9 pre-existing states) PLUS Indiana's
 -- two re-linked execs Morales (642977) + Elliott (688298). Scoped BY STATE (never a bare external_id magnitude
 -- test — the pre-existing CA/MA/MD/ME/OR/TX/VA/UT/IN exec ids are also <= -100001 and are out of scope for
--- Phase 141 headshots). The two documented honest-skips (no free-licensed portrait on Wikipedia/.gov/Ballotpedia
--- — Ballotpedia anti-bot blocked) are pinned by external_id and surfaced as a NOTICE, not a failure (McDowell
--- precedent): -1600004 Phil McGrane (ID Secretary of State). [Josh Haeder SD-Treasurer resolved 2026-06-21
--- from a user-supplied portrait.]
+-- Phase 141 headshots). All 175 newly-seeded execs now have a headshot — 0 honest-skips (Josh Haeder SD-Treasurer
+-- and Phil McGrane ID-SoS, initially unreachable via Wikipedia/.gov, were resolved 2026-06-21 from user-supplied
+-- portraits).
 DO $$
 DECLARE v_missing INT; v_list TEXT;
 BEGIN
@@ -127,12 +126,11 @@ BEGIN
       d.state NOT IN ('CA','IN','MA','MD','ME','OR','TX','UT','VA')  -- the 41 newly-seeded states
       OR p.external_id IN (642977, 688298)                           -- IN Morales + Elliott (re-linked)
     )
-    AND p.external_id NOT IN (-1600004)                              -- 1 documented honest-skip
     AND NOT EXISTS (SELECT 1 FROM essentials.politician_images pi WHERE pi.politician_id = p.id);
   IF v_missing <> 0 THEN
-    RAISE EXCEPTION 'SEXR-04 FAILED: % newly-seeded execs lack a politician_images row (beyond the 1 documented honest-skip): %', v_missing, v_list;
+    RAISE EXCEPTION 'SEXR-04 FAILED: % newly-seeded execs lack a politician_images row: %', v_missing, v_list;
   END IF;
-  RAISE NOTICE 'SEXR-04 PASS: all newly-seeded execs have a headshot except 1 documented honest-skip (-1600004 Phil McGrane ID-SoS)';
+  RAISE NOTICE 'SEXR-04 PASS: all 175 newly-seeded execs have a headshot (0 honest-skips)';
 END $$;
 
 -- ===== D-10a: no in-scope Big-5 STATE_EXEC district has a non-uppercase state code (223a lowercase trap) =====

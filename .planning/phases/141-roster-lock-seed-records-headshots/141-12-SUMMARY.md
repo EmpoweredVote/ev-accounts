@@ -3,7 +3,7 @@
 **Status:** ✅ Complete  **Requirement:** SEXR-04
 **Migration:** 989 (audit-only; planned 957, renumbered).
 
-34 of 35 batch-E execs have a headshot.
+All 35 batch-E execs have a headshot.
 - **1 honest-skip:** Phil McGrane (ID Secretary of State, -1600004) — no Wikipedia portrait; sos.idaho.gov serves no bio portrait, Ballotpedia anti-bot-blocked. Documented, pinned in gate SEXR-04.
 ID Treasurer Ellsworth, LA SoS Landry, MT SoS Jacobsen, SC SoS Hammond recovered via official `.gov` URLs.
 
@@ -16,6 +16,6 @@ ID Treasurer Ellsworth, LA SoS Landry, MT SoS Jacobsen, SC SoS Hammond recovered
 - D-10a PASS — all in-scope districts uppercase state
 - D-10b PASS — all in-scope districts non-empty FIPS geo_id
 
-**Phase 141 complete: 209 elected Big-5 statewide-exec offices live + role-tagged + headshotted (173 newly sourced, 2 honest-skip). Ready for Phases 142–143 (stances).**
+**Phase 141 complete: 209 elected Big-5 statewide-exec offices live + role-tagged + headshotted (175 sourced, 0 honest-skip). Ready for Phases 142–143 (stances).**
 
 ## Self-Check: PASSED

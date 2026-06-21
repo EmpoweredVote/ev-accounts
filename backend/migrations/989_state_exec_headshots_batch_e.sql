@@ -3,7 +3,7 @@
 -- Actual headshot uploads to the politician_photos bucket + politician_images INSERTs happened LIVE via
 -- backend/scripts/seed-state-exec-headshots.py (Wikipedia pageimages -> PIL crop 4:5 -> 600x750 LANCZOS q90).
 -- These INSERTs reproduce that record idempotently (column `url`, WHERE NOT EXISTS). Re-apply = no-op.
--- Batch E: 34 headshots recorded, 1 honest-skip.
+-- Batch E: 35 headshots recorded.
 -- Run: psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f backend/migrations/989_state_exec_headshots_batch_e.sql
 
 BEGIN;
@@ -79,6 +79,14 @@ SELECT gen_random_uuid(), (SELECT id FROM essentials.politicians WHERE external_
        'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/ae007cc6-29f6-4b29-8f42-1770ed9f2d8a-headshot.jpg', 'default', 'public_domain'
 WHERE NOT EXISTS (SELECT 1 FROM essentials.politician_images
   WHERE politician_id=(SELECT id FROM essentials.politicians WHERE external_id=-1600005));
+
+-- Phil McGrane (ID, ext -1600004) — public_domain
+--   source: C:/tmp/phil-mcgrane-id-sos.jpg
+INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
+SELECT gen_random_uuid(), (SELECT id FROM essentials.politicians WHERE external_id=-1600004),
+       'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/ade5ce47-25a7-4332-848f-877404875f0e-headshot.jpg', 'default', 'public_domain'
+WHERE NOT EXISTS (SELECT 1 FROM essentials.politician_images
+  WHERE politician_id=(SELECT id FROM essentials.politicians WHERE external_id=-1600004));
 
 -- Raul Labrador (ID, ext -1600003) — public_domain
 --   source: https://upload.wikimedia.org/wikipedia/commons/5/5b/Raul_Labrador_115th.jpg
@@ -280,7 +288,6 @@ SELECT gen_random_uuid(), (SELECT id FROM essentials.politicians WHERE external_
 WHERE NOT EXISTS (SELECT 1 FROM essentials.politician_images
   WHERE politician_id=(SELECT id FROM essentials.politicians WHERE external_id=-5600001));
 
--- HONEST-SKIPS (no free-licensed portrait found; McDowell precedent):
---   ext -1600004 Phil McGrane (ID): no-lead-image
+-- No honest-skips in this batch.
 
 COMMIT;
