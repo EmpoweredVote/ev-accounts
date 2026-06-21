@@ -611,6 +611,87 @@ export async function getFederalContext(): Promise<FederalContext> {
   return { annual_summary, metrics, source_display_names };
 }
 
+// ── Org financial summary (Treasury Tracker cross-team request 2026-06-20) ────
+// Serves treasury.org_financial_summary — one reconciled per-org (municipality_id +
+// fiscal_year) financial row for the donor-facing transparency view. Every row carries
+// source_name/source_url/source_date (the always-sourced standard). goal_amount/goal_label
+// are added by a forward migration (Treasury Tracker Phase 76); `SELECT *` + `?? null` keeps
+// this forward-safe — the two columns serve automatically once they exist, null until then.
+export interface OrgFinancialSummary {
+  municipality_id: string;
+  fiscal_year: number;
+  balance: number;
+  balance_as_of: string;
+  monthly_burn: number;
+  burn_window_months: number;
+  runway_months: number | null;
+  income_gross: number;
+  income_fees: number;
+  income_net: number;
+  income_by_source: { source: string; gross: number; fee: number; net: number }[];
+  recon_variance: number | null;
+  recon_explanation: string | null;
+  recon_by_source: { source: string; platform_net: number; bank_deposits: number; variance: number }[];
+  unmatched_deposits: { date: string; amount: number; description: string }[];
+  goal_amount: number | null; // NEW (Treasury Tracker Phase 76 migration; null until it lands)
+  goal_label: string | null; //  NEW (Treasury Tracker Phase 76 migration; null until it lands)
+  source_name: string;
+  source_url: string | null;
+  source_date: string;
+}
+
+/**
+ * Fetch the reconciled financial summary for an org by municipality UUID.
+ * Returns the row for the given fiscal_year, or the latest FY row when omitted.
+ * Returns null if no row exists for that org/FY.
+ */
+export async function getOrgFinancialSummary(
+  municipalityId: string,
+  fiscalYear?: number
+): Promise<OrgFinancialSummary | null> {
+  const { rows } =
+    fiscalYear !== undefined
+      ? await pool.query(
+          `SELECT * FROM treasury.org_financial_summary
+           WHERE municipality_id = $1 AND fiscal_year = $2
+           LIMIT 1`,
+          [municipalityId, fiscalYear]
+        )
+      : await pool.query(
+          `SELECT * FROM treasury.org_financial_summary
+           WHERE municipality_id = $1
+           ORDER BY fiscal_year DESC
+           LIMIT 1`,
+          [municipalityId]
+        );
+  if (rows.length === 0) return null;
+  const r = rows[0];
+  const num = (v: unknown) => (v === null || v === undefined ? null : Number(v));
+  const arr = <T>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : []);
+  return {
+    municipality_id: r.municipality_id,
+    fiscal_year: Number(r.fiscal_year),
+    balance: Number(r.balance),
+    balance_as_of: r.balance_as_of,
+    monthly_burn: Number(r.monthly_burn),
+    burn_window_months: Number(r.burn_window_months),
+    runway_months: num(r.runway_months),
+    income_gross: Number(r.income_gross),
+    income_fees: Number(r.income_fees),
+    income_net: Number(r.income_net),
+    income_by_source: arr(r.income_by_source),
+    recon_variance: num(r.recon_variance),
+    recon_explanation: r.recon_explanation ?? null,
+    recon_by_source: arr(r.recon_by_source),
+    unmatched_deposits: arr(r.unmatched_deposits),
+    goal_amount: num(r.goal_amount), // undefined (column absent) -> null
+    goal_label: r.goal_label ?? null,
+    source_name: r.source_name,
+    source_url: r.source_url ?? null,
+    source_date: r.source_date,
+  };
+}
+
 // Enrichment: plain-language context for opaque fund/category names
 export interface CategoryEnrichment {
   plainName: string;

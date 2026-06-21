@@ -33,6 +33,7 @@ import {
   createBudgetLineItem,
   getEnrichmentQueueStatus,
   getFederalContext,
+  getOrgFinancialSummary,
 } from '../lib/treasuryService.js';
 
 const router = Router();
@@ -118,6 +119,48 @@ router.get(
       res.status(200).json(budgets);
     } catch (err) {
       console.error('[GET /treasury/cities/:cityId/budgets] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
+
+// GET /api/treasury/orgs/:id/financial-summary
+// Optional query: ?fiscal_year=2026 (latest available FY if omitted)
+// Cross-team request (Treasury Tracker, 2026-06-20): reconciled per-org financial
+// summary (treasury.org_financial_summary) for the donor-facing transparency view.
+// Always-sourced, public read. NOTE: /orgs/ is its own namespace — no static-path-
+// before-:id collision with /cities or /federal. Service uses SELECT * so the
+// goal_amount/goal_label columns (Treasury Tracker Phase 76 migration) serve forward-safely.
+router.get(
+  '/orgs/:id/financial-summary',
+  optionalAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    const id = req.params.id as string;
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'INVALID_ID', message: 'Invalid UUID format' });
+      return;
+    }
+
+    const fiscalYearRaw = req.query.fiscal_year as string | undefined;
+    let fiscalYear: number | undefined;
+    if (fiscalYearRaw !== undefined) {
+      const parsed = Number(fiscalYearRaw);
+      if (!Number.isInteger(parsed) || parsed < 1900 || parsed > 2100) {
+        res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid fiscal_year' });
+        return;
+      }
+      fiscalYear = parsed;
+    }
+
+    try {
+      const summary = await getOrgFinancialSummary(id, fiscalYear);
+      if (!summary) {
+        res.status(404).json({ code: 'NOT_FOUND', message: 'Org financial summary not found' });
+        return;
+      }
+      res.status(200).json(summary);
+    } catch (err) {
+      console.error('[GET /treasury/orgs/:id/financial-summary] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
     }
   }
