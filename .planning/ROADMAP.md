@@ -113,7 +113,19 @@ Wave 3 (headshots per batch, parallel; 141-12 runs the full gate):
   3. Every answer row for this wave has a paired `inform.politician_context` row carrying a real, fetched source URL — **zero unsourced rows** at wave close.
   4. Topics with no documentable evidence for a given exec are honest-skipped; no stance is inferred from party affiliation or "overall record alignment"; AG stances from multistate coalition membership are accepted only when the coalition has a published position directly on that topic.
 
-**Plans:** TBD
+**Plans:** 10 plans, 3 waves
+
+Plans:
+- [ ] 142-01-PLAN.md — SEXS-01: extend politician-stance-researcher prompt with office-type evidence guidance (all 5 exec types)
+- [ ] 142-02-PLAN.md — Batch A (10): FL/NY/IL/PA/TX Gov+AG stances
+- [ ] 142-03-PLAN.md — Batch B (9): OH/GA/NC/MI Gov+AG + NJ Gov stances
+- [ ] 142-04-PLAN.md — Batch C (10): WA/AZ/MO/WI Gov+AG + TN Gov + IN AG stances
+- [ ] 142-05-PLAN.md — Batch D (10): CO/MN/SC/AL/LA Gov+AG stances
+- [ ] 142-06-PLAN.md — Batch E (10): KY/OK/CT/AR/MS Gov+AG stances
+- [ ] 142-07-PLAN.md — Batch F (10): NV/IA/KS/NM/NE Gov+AG stances
+- [ ] 142-08-PLAN.md — Batch G (10): ID/WV/RI/MT/VT Gov+AG stances
+- [ ] 142-09-PLAN.md — Batch H (11): HI/NH/AK/WY/ME Gov + DE/SD/ND Gov+AG stances
+- [ ] 142-10-PLAN.md — Phase-142 gate: verify-phase-142.sql (Gov+AG coverage + zero-unsourced)
 
 ---
 
