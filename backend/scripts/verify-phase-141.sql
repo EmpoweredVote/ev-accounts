@@ -106,11 +106,12 @@ BEGIN
 END $$;
 
 -- ===== SEXR-04: every NEWLY-SEEDED exec has a politician_images row (except documented honest-skips) =====
--- Newly-seeded set = the 41 empty states (external_id in the -(fips*100000+seq) range, i.e. <= -100001
--- AND a STATE_EXEC in-scope office) PLUS Indiana's two re-linked execs Morales (642977) + Elliott (688298),
--- which have POSITIVE external_ids. EXCLUDE Utah (-49000xx) and the 8 other pre-existing states — those are
--- existing records, not newly-seeded, and no headshot plan covers them (their headshot gaps are out of scope
--- for Phase 141). Scoped by the STATE_EXEC + role_canonical join, never by a bare external_id sign test.
+-- Newly-seeded set = the 41 previously-empty states (d.state NOT IN the 9 pre-existing states) PLUS Indiana's
+-- two re-linked execs Morales (642977) + Elliott (688298). Scoped BY STATE (never a bare external_id magnitude
+-- test — the pre-existing CA/MA/MD/ME/OR/TX/VA/UT/IN exec ids are also <= -100001 and are out of scope for
+-- Phase 141 headshots). The two documented honest-skips (no free-licensed portrait on Wikipedia/.gov/Ballotpedia
+-- — Ballotpedia anti-bot blocked) are pinned by external_id and surfaced as a NOTICE, not a failure (McDowell
+-- precedent): -4600005 Josh Haeder (SD Treasurer), -1600004 Phil McGrane (ID Secretary of State).
 DO $$
 DECLARE v_missing INT; v_list TEXT;
 BEGIN
@@ -122,16 +123,15 @@ BEGIN
   WHERE d.district_type='STATE_EXEC'
     AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
     AND (
-      (p.external_id <= -100001 AND p.external_id NOT BETWEEN -4900009 AND -4900001)  -- 41 empty states, exclude UT
-      OR p.external_id IN (642977, 688298)                                            -- IN Morales + Elliott
+      d.state NOT IN ('CA','IN','MA','MD','ME','OR','TX','UT','VA')  -- the 41 newly-seeded states
+      OR p.external_id IN (642977, 688298)                           -- IN Morales + Elliott (re-linked)
     )
+    AND p.external_id NOT IN (-4600005, -1600004)                    -- 2 documented honest-skips
     AND NOT EXISTS (SELECT 1 FROM essentials.politician_images pi WHERE pi.politician_id = p.id);
   IF v_missing <> 0 THEN
-    -- Honest-skips (no portrait found after all sources) are documented in the relevant 141-08..12 SUMMARY.
-    -- Until headshot batches run, this RAISES by design. Documented honest-skips are surfaced here for review.
-    RAISE EXCEPTION 'SEXR-04 FAILED: % newly-seeded execs lack a politician_images row: %', v_missing, v_list;
+    RAISE EXCEPTION 'SEXR-04 FAILED: % newly-seeded execs lack a politician_images row (beyond the 2 documented honest-skips): %', v_missing, v_list;
   END IF;
-  RAISE NOTICE 'SEXR-04 PASS: every newly-seeded exec has a headshot (or documented honest-skip)';
+  RAISE NOTICE 'SEXR-04 PASS: all newly-seeded execs have a headshot except 2 documented honest-skips (-4600005 Josh Haeder SD-Treasurer, -1600004 Phil McGrane ID-SoS)';
 END $$;
 
 -- ===== D-10a: no in-scope Big-5 STATE_EXEC district has a non-uppercase state code (223a lowercase trap) =====
