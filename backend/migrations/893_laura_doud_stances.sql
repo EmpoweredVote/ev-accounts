@@ -1,0 +1,13 @@
+-- Migration 893: Laura Doud (Long Beach City Auditor, -700053) — evidence-only compass stances
+-- Phase 142 Wave 4. AUDIT-ONLY (raw SQL; NOT in schema_migrations).
+--
+-- INTENTIONAL HONEST BLANK — 0 stances. Laura Doud has served as the elected City Auditor since
+-- 2006, a deliberately nonpartisan oversight role. Her entire public record is audit work
+-- (waste/fraud detection, revenue-recovery audits, fiscal oversight) and contains NO documented
+-- policy positions that map to any compass topic. Per the evidence-only / no-default rule, the
+-- correct output is zero placements — a blank profile, not fabricated or defaulted values.
+--
+-- No INSERTs. This file documents the decision so the 881–893 sequence is complete and auditable.
+-- (Researched 2026-06-19; multiple sources confirmed no substantive policy stances.)
+
+-- (intentionally no SQL statements)
