@@ -3,7 +3,7 @@
 -- Actual headshot uploads to the politician_photos bucket + politician_images INSERTs happened LIVE via
 -- backend/scripts/seed-state-exec-headshots.py (Wikipedia pageimages -> PIL crop 4:5 -> 600x750 LANCZOS q90).
 -- These INSERTs reproduce that record idempotently (column `url`, WHERE NOT EXISTS). Re-apply = no-op.
--- Batch A: 34 headshots recorded, 1 honest-skip.
+-- Batch A: 35 headshots recorded.
 -- Run: psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f backend/migrations/985_state_exec_headshots_batch_a.sql
 
 BEGIN;
@@ -248,6 +248,14 @@ SELECT gen_random_uuid(), (SELECT id FROM essentials.politicians WHERE external_
 WHERE NOT EXISTS (SELECT 1 FROM essentials.politician_images
   WHERE politician_id=(SELECT id FROM essentials.politicians WHERE external_id=-3600001));
 
+-- Josh Haeder (SD, ext -4600005) — public_domain
+--   source: C:/tmp/josh-haeder-SD-treasurer.jpg
+INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
+SELECT gen_random_uuid(), (SELECT id FROM essentials.politicians WHERE external_id=-4600005),
+       'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/03775e01-1655-43f1-a506-e55bbce429f0-headshot.jpg', 'default', 'public_domain'
+WHERE NOT EXISTS (SELECT 1 FROM essentials.politician_images
+  WHERE politician_id=(SELECT id FROM essentials.politicians WHERE external_id=-4600005));
+
 -- Monae Johnson (SD, ext -4600004) — public_domain
 --   source: https://sdsos.gov/general-information/assets/Secretary%20Johnson_Pic2024.5.jpg
 INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
@@ -280,7 +288,6 @@ SELECT gen_random_uuid(), (SELECT id FROM essentials.politicians WHERE external_
 WHERE NOT EXISTS (SELECT 1 FROM essentials.politician_images
   WHERE politician_id=(SELECT id FROM essentials.politicians WHERE external_id=-4600001));
 
--- HONEST-SKIPS (no free-licensed portrait found; McDowell precedent):
---   ext -4600005 Josh Haeder (SD): no-lead-image
+-- No honest-skips in this batch.
 
 COMMIT;

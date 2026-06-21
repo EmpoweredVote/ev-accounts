@@ -17,7 +17,7 @@
 - **Roster (SEXR-01):** authoritative 209-office elected Big-5 matrix, live-verified June 2026.
 - **Records (SEXR-02):** 175 newly-seeded offices across 41 previously-empty states (migrations 980-984) + IN SoS/Treasurer re-linked (950); 34 pre-existing offices retained.
 - **role_canonical (SEXR-03):** populated on all 209 in-scope offices (backfill migrations 949/950 for 9 existing states; seeds set it inline).
-- **Headshots (SEXR-04):** 173 sourced/processed/uploaded (migrations 985-989, audit-only). 2 honest-skips: Josh Haeder (SD Treasurer), Phil McGrane (ID SoS) — no free-licensed portrait, Ballotpedia anti-bot-blocked.
+- **Headshots (SEXR-04):** 174 sourced/processed/uploaded (migrations 985-989, audit-only). 1 honest-skip: Josh Haeder (SD Treasurer), Phil McGrane (ID SoS) — no free-licensed portrait, Ballotpedia anti-bot-blocked.
 
 ## Honest-skips (documented, McDowell precedent)
 - `-4600005` Josh Haeder — South Dakota State Treasurer

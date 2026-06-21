@@ -111,7 +111,8 @@ END $$;
 -- test — the pre-existing CA/MA/MD/ME/OR/TX/VA/UT/IN exec ids are also <= -100001 and are out of scope for
 -- Phase 141 headshots). The two documented honest-skips (no free-licensed portrait on Wikipedia/.gov/Ballotpedia
 -- — Ballotpedia anti-bot blocked) are pinned by external_id and surfaced as a NOTICE, not a failure (McDowell
--- precedent): -4600005 Josh Haeder (SD Treasurer), -1600004 Phil McGrane (ID Secretary of State).
+-- precedent): -1600004 Phil McGrane (ID Secretary of State). [Josh Haeder SD-Treasurer resolved 2026-06-21
+-- from a user-supplied portrait.]
 DO $$
 DECLARE v_missing INT; v_list TEXT;
 BEGIN
@@ -126,12 +127,12 @@ BEGIN
       d.state NOT IN ('CA','IN','MA','MD','ME','OR','TX','UT','VA')  -- the 41 newly-seeded states
       OR p.external_id IN (642977, 688298)                           -- IN Morales + Elliott (re-linked)
     )
-    AND p.external_id NOT IN (-4600005, -1600004)                    -- 2 documented honest-skips
+    AND p.external_id NOT IN (-1600004)                              -- 1 documented honest-skip
     AND NOT EXISTS (SELECT 1 FROM essentials.politician_images pi WHERE pi.politician_id = p.id);
   IF v_missing <> 0 THEN
-    RAISE EXCEPTION 'SEXR-04 FAILED: % newly-seeded execs lack a politician_images row (beyond the 2 documented honest-skips): %', v_missing, v_list;
+    RAISE EXCEPTION 'SEXR-04 FAILED: % newly-seeded execs lack a politician_images row (beyond the 1 documented honest-skip): %', v_missing, v_list;
   END IF;
-  RAISE NOTICE 'SEXR-04 PASS: all newly-seeded execs have a headshot except 2 documented honest-skips (-4600005 Josh Haeder SD-Treasurer, -1600004 Phil McGrane ID-SoS)';
+  RAISE NOTICE 'SEXR-04 PASS: all newly-seeded execs have a headshot except 1 documented honest-skip (-1600004 Phil McGrane ID-SoS)';
 END $$;
 
 -- ===== D-10a: no in-scope Big-5 STATE_EXEC district has a non-uppercase state code (223a lowercase trap) =====

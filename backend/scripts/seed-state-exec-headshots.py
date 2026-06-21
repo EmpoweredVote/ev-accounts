@@ -168,7 +168,8 @@ def run_manual(manual_path):
         uuid, name = str(row[0]), row[1]
         res = {'external_id': ext, 'full_name': name, 'state': '?', 'uuid': uuid}
         try:
-            img = Image.open(io.BytesIO(download(url)))
+            raw = open(url, 'rb').read() if not url.startswith('http') else download(url)
+            img = Image.open(io.BytesIO(raw))
             if img.mode != 'RGB': img = img.convert('RGB')
             if img.width < 120 or img.height < 120:
                 raise Exception(f'too-small:{img.width}x{img.height}')
