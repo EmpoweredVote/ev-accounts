@@ -182,7 +182,7 @@ Wave 2 (gate, depends_on all 10 batches):
 **Plans:** 1 plan (Wave 1)
 
 Plans:
-- [ ] 144-01-PLAN.md — Consolidated v2.18 read-only SQL gate (verify-phase-141-144.sql): re-asserts 209 records / 199 stance coverage / 10 honest-skips / 0 unsourced / in-scope hygiene, plus SEXR-05 feed smoke-test for NC+WA+CO
+- [x] 144-01-PLAN.md — Consolidated v2.18 read-only SQL gate (verify-phase-141-144.sql): re-asserts 209 records / 199 stance coverage / 10 honest-skips / 0 unsourced / in-scope hygiene, plus SEXR-05 feed smoke-test for NC+WA+CO
 
 ---
 
@@ -193,7 +193,7 @@ Plans:
 | 141. Roster Lock + Seed | 12/12 | Complete   | 2026-06-21 |
 | 142. Stance Wave 1 (Gov + AG) | 10/10 | ✅ Complete | 2026-06-21 |
 | 143. Stance Wave 2 (SoS + Treasurer + LtGov) | 11/11 | ✅ Complete | 2026-06-21 |
-| 144. Phase Gate | 0/1 | Not started | - |
+| 144. Phase Gate | 1/1 | Complete   | 2026-06-22 |
 
 </details>
 

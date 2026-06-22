@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.18
 milestone_name: State Leaders
-status: executing
-last_updated: "2026-06-21T12:00:00.000Z"
-last_activity: 2026-06-21 -- Phase 142 COMPLETE (Gov+AG stances Wave 1); gate all-PASS
+status: complete
+last_updated: "2026-06-22T14:31:31.137Z"
+last_activity: 2026-06-22 -- Phase 144 complete; v2.18 State Leaders milestone DONE (gate all-PASS, psql exit 0)
 progress:
   total_phases: 4
-  completed_phases: 2
-  total_plans: 22
-  completed_plans: 22
-  percent: 50
+  completed_phases: 4
+  total_plans: 34
+  completed_plans: 34
+  percent: 100
 ---
 
 # Project State
@@ -20,15 +20,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.18 State Leaders — Phases 141 + 142 COMPLETE. Phase 142 (SEXS-01 + SEXS-02 wave 1) shipped 80 Gov/AG: 79 sourced + 1 documented honest-skip (OH AG -3900003 Andy Wilson, 13-day appointee), 0 unsourced, ~1,030 answer rows across 8 batches; verify-phase-142.sql all-PASS (Gov 50, AG 42). NEXT: `/gsd-plan-phase 143` (Stance Wave 2 — SoS + Treasurer + Lt Gov).
-**Last shipped:** v2.17 National House Rep Stances (Tier 2 continuation) — Phases 132–140, shipped 2026-06-20. 212 reps, 211 covered + McDowell NC-6 honest-skip, 0 unsourced; USHS-06..14 closed; verify-phase-132-140.sql all pass.
+**Current focus:** v2.18 State Leaders COMPLETE — ready for milestone close (`/gsd-complete-milestone`)
+**Last shipped:** v2.18 State Leaders — Phases 141–144, completed 2026-06-22. 209 elected Big-5 statewide execs seeded across 50 states + headshots; 199 stance-covered (gov50/ag42/sos34/treas34/lt39) + 10 documented honest-skips, 0 unsourced; SEXR-01..05 + SEXS-01..03 closed; verify-phase-141-144.sql consolidated gate all-PASS (psql exit 0).
 
 ## Current Position
 
-Phase: 142 — Stance Wave 1 (Gov + AG) — ✅ COMPLETE (10/10 plans, gate all-PASS)
-Plan: —
-Status: Phases 141 + 142 complete; next is /gsd-plan-phase 143 (Wave 2: SoS + Treasurer + Lt Gov)
-Last activity: 2026-06-21 -- Phase 142 complete (Gov+AG stances Wave 1, gate green)
+Phase: 144 (phase-gate-feed-surfacing-consolidated-verification) — COMPLETE ✅
+Plan: 1 of 1 complete
+Status: v2.18 State Leaders milestone COMPLETE (all 4 phases, gate all-PASS)
+Last activity: 2026-06-22 -- Phase 144 complete; v2.18 milestone done
 
 ### v2.18 Requirement Coverage
 
