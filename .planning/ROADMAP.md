@@ -179,7 +179,10 @@ Wave 2 (gate, depends_on all 10 batches):
   2. All `STATE_EXEC` districts have an uppercase two-letter state code (`state = upper(state)`) and a non-empty `geo_id` — the gate asserts `COUNT(*) WHERE district_type='STATE_EXEC' AND (state != upper(state) OR geo_id IS NULL OR geo_id = '') = 0`.
   3. `GET /representatives/me` returns the correct newly-seeded exec for users with a stored state code in at least 3 states that had zero STATE_EXEC records before this milestone (smoke test — no backend code change required).
 
-**Plans:** TBD
+**Plans:** 1 plan (Wave 1)
+
+Plans:
+- [ ] 144-01-PLAN.md — Consolidated v2.18 read-only SQL gate (verify-phase-141-144.sql): re-asserts 209 records / 199 stance coverage / 10 honest-skips / 0 unsourced / in-scope hygiene, plus SEXR-05 feed smoke-test for NC+WA+CO
 
 ---
 
