@@ -1,0 +1,27 @@
+-- 1025_inglewood_gray_stances.sql
+-- Phase 153 Wave 4 (INGL-01): evidence-only compass stances for Councilwoman Gloria D. Gray
+--   (Inglewood District 1, won March 2023 runoff vs. Dotson; ext_id 666261, pol 7a04bf87-ab95-4ae7-a142-9899662637b1).
+-- AUDIT-ONLY: NOT registered in schema_migrations (ledger stays 1019).
+--
+-- RESULT: ZERO stances — HONEST BLANK (no DB rows inserted; this file documents the rationale).
+--
+-- Per the evidence-only CHAIRS model and the no-default rule (feedback_stance_no_default_value,
+-- feedback_compass_chairs_not_polarity): no Inglewood-D1-specific position by Gray cleanly matches any
+-- chair in the live topic menu, so the correct, honest outcome is NO stance rows.
+--
+-- What WAS found (real, Gray-specific, but unmappable to a chair):
+--   * Police body cameras + oversight/transparency is her one clear recurring theme. When the council
+--     approved a ~$6.3M body-cam/ALPR package she said "Technology alone does not create public trust"
+--     and pushed for training/policy discussion. This is an ACCOUNTABILITY/OVERSIGHT position, which does
+--     NOT match any public-safety-approach chair (those are funding-level chairs: redirect / co-responders /
+--     crisis-teams / more-staffing / top-priority). Forcing chair 3 would be a guess -> omitted.
+--       Sources: https://laist.com/news/politics/inglewood-city-council-police-body-cams-automated-license-plate-readers
+--                https://www.cityofinglewood.org/m/newsflash/home/detail/887
+--   * Campaign generalities (transparency, accessible government, safe/attractive/prosperous neighborhoods)
+--     are civic-virtue boilerplate, not chair-matching positions.
+--   * Her decades on the West Basin Municipal Water District board are a DIFFERENT office; no Inglewood
+--     council water/climate position maps to a compass chair without speculation.
+--   * Short council tenure (since 2023) + health-excused absence since ~Dec 2025 (missed key votes) =
+--     genuinely thin record. A blank compass is the trustworthy result, not a defaulted one.
+--
+-- No SQL to apply. Intentionally a no-op documentation file so the rationale is version-controlled.
