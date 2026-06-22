@@ -701,3 +701,129 @@ export async function getPoliticiansByGovernmentList(
 
   return politicians;
 }
+
+// ---------------------------------------------------------------------------
+// getStatewideOfficials — "browse a state" entry point.
+//
+// Returns officials that aren't tied to a specific city/district: state
+// executives (Governor, Lt. Gov, AG, Secretary of State, Treasurer, …), the
+// state's US Senators, and federal executive/judicial officials. Same statewide
+// supplement the by-government-list / by-area paths layer on top of local
+// officials, surfaced on its own. State legislature and US House are excluded
+// (district-based — they need an address/area).
+// ---------------------------------------------------------------------------
+
+function mapBrowseRow(row: Record<string, unknown>): PoliticianFlatRecord {
+  return {
+    id: row.id as string,
+    external_id: row.external_id != null ? Number(row.external_id) : null,
+    first_name: (row.first_name as string) ?? '',
+    middle_initial: (row.middle_initial as string) ?? '',
+    last_name: (row.last_name as string) ?? '',
+    preferred_name: (row.preferred_name as string) ?? '',
+    name_suffix: (row.name_suffix as string) ?? '',
+    full_name: (row.full_name as string) ?? '',
+    party: (row.party as string) ?? '',
+    photo_origin_url: (row.photo_origin_url as string) ?? '',
+    web_form_url: (row.web_form_url as string) ?? '',
+    urls: (row.urls as string[]) ?? null,
+    email_addresses: (row.email_addresses as string[]) ?? null,
+    office_title: (row.office_title as string) ?? '',
+    representing_state: (row.representing_state as string) ?? '',
+    representing_city: (row.representing_city as string) ?? '',
+    district_type: (row.district_type as string) ?? '',
+    district_label: (row.district_label as string) ?? '',
+    district_id: (row.district_id as string) ?? '',
+    geo_id: (row.geo_id as string) ?? '',
+    mtfcc: (row.mtfcc as string) ?? '',
+    chamber_name: (row.chamber_name as string) ?? '',
+    chamber_name_formal: (row.chamber_name_formal as string) ?? '',
+    government_name: (row.government_name as string) ?? '',
+    government_body_name: (row.government_body_name as string) ?? '',
+    government_body_url: (row.government_body_url as string) ?? '',
+    chamber_url: (row.chamber_url as string) ?? '',
+    government_type: (row.government_type as string) ?? '',
+    is_elected: !(row.is_appointed_position as boolean),
+    is_appointed: (row.is_appointed as boolean) ?? false,
+    faces_retention_vote: (row.faces_retention_vote as boolean) ?? false,
+    election_frequency: (row.election_frequency as string) ?? '',
+    policy_engagement_level: (row.policy_engagement_level as 'full' | 'record_only' | 'none') ?? 'full',
+    committees: [],
+    bio_text: (row.bio_text as string) ?? null,
+    slug: (row.slug as string) ?? null,
+    is_incumbent: (row.is_incumbent as boolean) ?? false,
+    term_start: (row.term_start as string) ?? '',
+    term_end: (row.term_end as string) ?? '',
+    term_date_precision: (row.term_date_precision as string) ?? '',
+    appointment_date: (row.appointment_date as string) ?? '',
+    office_description: '',
+    next_primary_date: '',
+    next_general_date: '',
+    images: [],
+    is_vacant: (row.is_vacant as boolean) ?? false,
+    vacant_since: (row.vacant_since as string | null) ?? null,
+    finance_summary: (row.finance_summary as FinanceSummary | null) ?? null,
+  };
+}
+
+async function attachBrowseImages(politicians: PoliticianFlatRecord[]): Promise<void> {
+  if (politicians.length === 0) return;
+  const ids = politicians.map((p) => p.id);
+  const { rows: imgRows } = await pool.query(
+    `SELECT id, politician_id, url, type, COALESCE(photo_license, '') AS photo_license, focal_point FROM essentials.politician_images WHERE politician_id = ANY($1)`,
+    [ids]
+  );
+  const imageMap = new Map<string, Array<{ id: string; url: string; type: string; photo_license: string; focal_point: string | null }>>();
+  for (const r of imgRows) {
+    const pid = r.politician_id as string;
+    if (!imageMap.has(pid)) imageMap.set(pid, []);
+    imageMap.get(pid)!.push({ id: r.id as string, url: r.url as string, type: r.type as string, photo_license: r.photo_license as string, focal_point: (r.focal_point as string) ?? null });
+  }
+  for (const p of politicians) p.images = imageMap.get(p.id) ?? [];
+}
+
+export async function getStatewideOfficials(stateAbbrev: string): Promise<PoliticianFlatRecord[]> {
+  const abbrev = (stateAbbrev || '').trim().toUpperCase();
+  if (!abbrev || !ABBREV_TO_FIPS[abbrev]) return [];
+
+  const { rows } = await pool.query<Record<string, unknown>>(`
+    SELECT DISTINCT ON (p.id)
+           p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
+           p.preferred_name, p.name_suffix, p.party,
+           COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           p.finance_summary,
+           COALESCE(p.valid_from, '') AS term_start,
+           COALESCE(p.valid_to, '') AS term_end,
+           COALESCE(p.term_date_precision, '') AS term_date_precision,
+           COALESCE(p.appointment_date::text, '') AS appointment_date,
+           o.title AS office_title, o.representing_state, o.representing_city,
+           o.is_appointed_position, o.is_vacant, o.vacant_since,
+           p.is_appointed, o.faces_retention_vote,
+           d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
+           ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
+           ch.election_frequency, ch.policy_engagement_level,
+           g.name AS government_name, g.type AS government_type,
+           COALESCE(gvb.display_name, '') AS government_body_name,
+           COALESCE(gvb.website_url, '') AS government_body_url,
+           COALESCE(ch.website_url, '') AS chamber_url
+    FROM essentials.districts d
+    JOIN essentials.offices o ON o.district_id = d.id
+    JOIN essentials.politicians p ON o.politician_id = p.id
+    LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
+    LEFT JOIN essentials.governments g ON g.id = ch.government_id
+    LEFT JOIN essentials.government_bodies gvb
+      ON gvb.state = d.state
+      AND gvb.geo_id = d.geo_id
+      AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
+    WHERE d.district_type IN ('NATIONAL_UPPER', 'STATE_EXEC', 'NATIONAL_EXEC', 'NATIONAL_JUDICIAL')
+      AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
+      AND p.is_active = true
+      AND p.is_incumbent = true
+    ORDER BY p.id
+  `, [abbrev]);
+
+  const politicians = rows.map(mapBrowseRow);
+  await attachBrowseImages(politicians);
+  return politicians;
+}

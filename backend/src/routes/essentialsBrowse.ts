@@ -28,6 +28,7 @@ import {
   getAreasForState,
   getPoliticiansByArea,
   getPoliticiansByGovernmentList,
+  getStatewideOfficials,
   getOverlappingGeoIdsForArea,
 } from '../lib/essentialsBrowseService.js';
 import { getElectionsByGeoIds, getElectionsByGovernmentGeoIds } from '../lib/electionService.js';
@@ -185,6 +186,28 @@ router.post('/by-government-list', optionalAuth, async (req: Request, res: Respo
     res.status(200).json(politicians);
   } catch (err) {
     console.error('[POST /essentials/browse/by-government-list] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/browse/states/:state/officials
+// "Browse a state" — statewide officials (state executives + US Senators +
+// federal executive/judicial). No address/geofence required.
+// ---------------------------------------------------------------------------
+
+router.get('/states/:state/officials', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const state = String(req.params.state ?? '').trim();
+    if (!state) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'state is required' });
+      return;
+    }
+    const politicians = await getStatewideOfficials(state);
+    res.setHeader('Cache-Control', 'public, max-age=300');
+    res.status(200).json(politicians);
+  } catch (err) {
+    console.error('[GET /essentials/browse/states/:state/officials] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
