@@ -150,10 +150,11 @@ router.post('/elections-by-area', optionalAuth, async (req: Request, res: Respon
 
 router.post('/by-government-list', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   try {
-    const { government_geo_ids, state, county_geo_id } = req.body as {
+    const { government_geo_ids, state, county_geo_id, skip_overlap } = req.body as {
       government_geo_ids?: unknown;
       state?: unknown;
       county_geo_id?: unknown;
+      skip_overlap?: unknown;
     };
 
     if (!Array.isArray(government_geo_ids) || government_geo_ids.length === 0) {
@@ -182,7 +183,7 @@ router.post('/by-government-list', optionalAuth, async (req: Request, res: Respo
       ? state.trim().toUpperCase()
       : STATE_FIPS[ids[0]?.slice(0, 2) ?? ''];
 
-    const politicians = await getPoliticiansByGovernmentList(ids, stateAbbrev, { countyGeoId });
+    const politicians = await getPoliticiansByGovernmentList(ids, stateAbbrev, { countyGeoId, skipOverlap: skip_overlap === true });
     res.status(200).json(politicians);
   } catch (err) {
     console.error('[POST /essentials/browse/by-government-list] error:', err);

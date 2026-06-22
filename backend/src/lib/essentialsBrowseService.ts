@@ -523,10 +523,10 @@ async function fetchDistrictPoliticianRows(geoPairs: GeoPair[]): Promise<Record<
 export async function getPoliticiansByGovernmentList(
   governmentGeoIds: string[],
   stateAbbrev?: string,
-  options: { countyGeoId?: string } = {}
+  options: { countyGeoId?: string; skipOverlap?: boolean } = {}
 ): Promise<PoliticianFlatRecord[]> {
   if (governmentGeoIds.length === 0) return [];
-  const { countyGeoId } = options;
+  const { countyGeoId, skipOverlap } = options;
 
   const { rows } = await pool.query<Record<string, unknown>>(`
     SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
@@ -620,8 +620,15 @@ export async function getPoliticiansByGovernmentList(
   // the MTFCC guard. Subsumes the previous county-only and city-geofence
   // congressional/legislative supplements, and additionally surfaces the county
   // + school + state-board officials those omitted (the reported bug).
-  const { geoPairs: districtPairs } = await getOverlappingGeoIdsForGovernments(governmentGeoIds, countyGeoId);
-  const districtRows = await fetchDistrictPoliticianRows(districtPairs);
+  // skipOverlap: for a county browse we want only the county government's own
+  // officials (board + sheriff/DA/assessor) plus statewide — NOT every district
+  // that overlaps the (county-sized) geofence, which would pull in all the cities,
+  // school boards, etc. inside it (hundreds of officials).
+  let districtRows: typeof rows = [];
+  if (!skipOverlap) {
+    const { geoPairs: districtPairs } = await getOverlappingGeoIdsForGovernments(governmentGeoIds, countyGeoId);
+    districtRows = await fetchDistrictPoliticianRows(districtPairs);
+  }
 
   // Merge and deduplicate by politician ID
   const seen = new Set<string>();
