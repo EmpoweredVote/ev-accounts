@@ -65,9 +65,15 @@ BEGIN
   RAISE NOTICE 'SEXR-01/02-consolidated PASS: 209 in-scope STATE_EXEC offices (gov 50 / lt 43 / ag 43 / sos 35 / treas 38); AZ LtGov deferred per Prop 131 (baked into lt=43)';
 END $$;
 
--- ===== SEXR-03-consolidated: role_canonical populated (non-NULL, Big-5 set) and no in-scope (state,role) duplicated =====
+-- ===== SEXR-03-consolidated: every in-scope (state,role_canonical) pair is represented exactly once per state =====
+-- role_canonical is populated on all 209 in-scope offices BY CONSTRUCTION (SEXR-01/02 above asserts exact per-role
+-- state counts 50/43/43/35/38 — a missing canonical row would drop that count). So the meaningful SEXR-03 check is
+-- that no state has a DUPLICATE in-scope (state, role_canonical) pair (the dedup invariant from migration 192).
+-- NOTE: out-of-scope STATE_EXEC offices (ME AG/SoS/Treasurer = legislature-selected; MD elected Comptroller + MD
+-- appointed Treasurer; IN Comptroller; plus legacy duplicate "State of Indiana" rows for IN SoS/Treasurer) correctly
+-- carry NULL role_canonical and are intentionally NOT in scope — we do NOT flag NULL-role offices by title.
 DO $$
-DECLARE v_dup INT; v_null INT;
+DECLARE v_dup INT;
 BEGIN
   SELECT count(*) INTO v_dup FROM (
     SELECT d.state, o.role_canonical
@@ -76,20 +82,10 @@ BEGIN
       AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
     GROUP BY d.state, o.role_canonical HAVING count(*) > 1
   ) dups;
-  -- An in-scope office whose role_canonical is NULL is structurally excluded by the IN-list; this asserts the
-  -- join key is populated for every STATE_EXEC office that carries one of the Big-5 role values.
-  SELECT count(*) INTO v_null
-  FROM essentials.offices o JOIN essentials.districts d ON d.id = o.district_id
-  WHERE d.district_type='STATE_EXEC' AND o.role_canonical IS NULL
-    AND o.title IS NOT NULL
-    AND o.title ~* '(governor|attorney general|secretary of state|treasurer|comptroller|chief financial)';
   IF v_dup <> 0 THEN
     RAISE EXCEPTION 'SEXR-03-consolidated FAILED: % in-scope (state,role_canonical) STATE_EXEC pair(s) duplicated', v_dup;
   END IF;
-  IF v_null <> 0 THEN
-    RAISE EXCEPTION 'SEXR-03-consolidated FAILED: % STATE_EXEC office(s) with a Big-5-looking title have NULL role_canonical', v_null;
-  END IF;
-  RAISE NOTICE 'SEXR-03-consolidated PASS: role_canonical populated, no in-scope (state,role) pair duplicated';
+  RAISE NOTICE 'SEXR-03-consolidated PASS: no in-scope (state,role_canonical) pair duplicated (role_canonical populated by construction per SEXR-01/02)';
 END $$;
 
 -- ===== SEXR-04-consolidated: every newly-seeded exec has a politician_images.url headshot =====
@@ -156,3 +152,118 @@ BEGIN
   END IF;
   RAISE NOTICE 'SEXS-03-coverage PASS: 199 in-scope execs sourced (gov 50 / ag 42 / sos 34 / treas 34 / lt 39)';
 END $$;
+
+-- ===== SEXS-03-skip: the in-scope-uncovered exec set across ALL 5 roles = EXACTLY the 10 documented honest-skips =====
+-- Belt-and-suspenders (USHS-14a / SEXS-02-skip pattern): pins every documented whole-record honest-skip to its
+-- exact external_id so a real future miss fails loudly here rather than being absorbed into a slack count.
+-- v_expected was captured VERBATIM from the live production query (ORDER BY o.role_canonical, p.external_id) on
+-- 2026-06-22 — NOT hand-ordered (143 lesson: the expected literal MUST match the query ORDER BY exactly).
+DO $$
+DECLARE v_uncovered TEXT;
+DECLARE v_expected TEXT := '-3900003 Andy Wilson (OH/attorney_general); -4000002 Matt Pinnell (OK/lt_governor); -3900002 Jim Tressel (OH/lt_governor); -3100002 Joe Kelly (NE/lt_governor); -1900002 Chris Cournoyer (IA/lt_governor); -4500004 Mark Hammond (SC/secretary_of_state); -4600005 Josh Haeder (SD/treasurer); -2800005 David McRae (MS/treasurer); -2100005 Mark Metcalf (KY/treasurer); -100005 Young Boozer (AL/treasurer)';
+BEGIN
+  SELECT string_agg(p.external_id::text || ' ' || p.full_name || ' (' || d.state || '/' || o.role_canonical || ')', '; ' ORDER BY o.role_canonical, p.external_id)
+  INTO v_uncovered
+  FROM essentials.politicians p
+  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.districts d ON d.id = o.district_id
+  WHERE d.district_type='STATE_EXEC'
+    AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
+    AND NOT EXISTS (SELECT 1 FROM inform.politician_answers pa WHERE pa.politician_id = p.id);
+  IF v_uncovered IS DISTINCT FROM v_expected THEN
+    RAISE EXCEPTION 'SEXS-03-skip FAILED: in-scope-uncovered exec set should be exactly the 10 documented honest-skips, found: %', COALESCE(v_uncovered, '(none)');
+  END IF;
+  RAISE NOTICE 'SEXS-03-skip PASS: the 10 uncovered in-scope execs are exactly the documented whole-record honest-skips (1 AG + 1 SoS + 4 Treasurer + 4 LtGov)';
+END $$;
+
+-- ===== SEXS-03-unsourced: ZERO in-scope STATE_EXEC answer rows lack a paired context row with a real (http) source =====
+DO $$
+DECLARE v_un INT;
+BEGIN
+  SELECT count(*) INTO v_un
+  FROM inform.politician_answers pa
+  JOIN essentials.politicians p ON p.id = pa.politician_id
+  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.districts d ON d.id = o.district_id
+  LEFT JOIN inform.politician_context c ON c.politician_id = pa.politician_id AND c.topic_id = pa.topic_id
+  WHERE d.district_type='STATE_EXEC'
+    AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
+    AND (c.politician_id IS NULL OR c.sources IS NULL OR array_length(c.sources,1) < 1 OR c.sources[1] NOT LIKE 'http%');
+  IF v_un <> 0 THEN
+    RAISE EXCEPTION 'SEXS-03-unsourced FAILED: % in-scope STATE_EXEC answer row(s) lack an http-sourced paired context row', v_un;
+  END IF;
+  RAISE NOTICE 'SEXS-03-unsourced PASS: 0 in-scope STATE_EXEC answer rows lack a paired http-sourced context row';
+END $$;
+
+-- ===== SEXR-05 feed-surfacing smoke test =====
+-- Replicates the production GET /representatives/me STATE_EXEC feed predicate (essentialsService.ts line ~706,
+-- identical at ~1589): district_type='STATE_EXEC' AND d.state=$1 AND (p.is_active OR o.is_vacant) AND
+-- COALESCE(p.is_incumbent,true). Narrowed to the Big-5 in-scope set. NC/WA/CO are NEWLY-SEEDED states
+-- (zero STATE_EXEC records before v2.18); each must surface all 5 of its Big-5 execs incl. its seeded governor.
+
+-- ===== SEXR-05-feed-A (NC): exactly 5 execs surface, incl. governor -3700001 (Josh Stein) =====
+DO $$
+DECLARE v_n INT; v_gov INT;
+BEGIN
+  SELECT count(*),
+         count(*) FILTER (WHERE o.role_canonical='governor' AND p.external_id = -3700001)
+  INTO v_n, v_gov
+  FROM essentials.districts d
+  JOIN essentials.offices o ON o.district_id = d.id
+  JOIN essentials.politicians p ON p.id = o.politician_id
+  WHERE d.district_type='STATE_EXEC' AND d.state='NC'
+    AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
+    AND (p.is_active=true OR o.is_vacant=true) AND COALESCE(p.is_incumbent,true)=true;
+  IF v_n <> 5 OR v_gov <> 1 THEN
+    RAISE EXCEPTION 'SEXR-05-feed-A FAILED: NC feed should surface 5 execs incl. governor -3700001, found % execs (gov match=%)', v_n, v_gov;
+  END IF;
+  RAISE NOTICE 'SEXR-05-feed-A PASS: NC surfaces 5 newly-seeded execs incl. governor -3700001 (Josh Stein)';
+END $$;
+
+-- ===== SEXR-05-feed-B (WA): exactly 5 execs surface, incl. governor -5300001 (Bob Ferguson) =====
+DO $$
+DECLARE v_n INT; v_gov INT;
+BEGIN
+  SELECT count(*),
+         count(*) FILTER (WHERE o.role_canonical='governor' AND p.external_id = -5300001)
+  INTO v_n, v_gov
+  FROM essentials.districts d
+  JOIN essentials.offices o ON o.district_id = d.id
+  JOIN essentials.politicians p ON p.id = o.politician_id
+  WHERE d.district_type='STATE_EXEC' AND d.state='WA'
+    AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
+    AND (p.is_active=true OR o.is_vacant=true) AND COALESCE(p.is_incumbent,true)=true;
+  IF v_n <> 5 OR v_gov <> 1 THEN
+    RAISE EXCEPTION 'SEXR-05-feed-B FAILED: WA feed should surface 5 execs incl. governor -5300001, found % execs (gov match=%)', v_n, v_gov;
+  END IF;
+  RAISE NOTICE 'SEXR-05-feed-B PASS: WA surfaces 5 newly-seeded execs incl. governor -5300001 (Bob Ferguson)';
+END $$;
+
+-- ===== SEXR-05-feed-C (CO): exactly 5 execs surface, incl. governor -800001 (Jared Polis) =====
+DO $$
+DECLARE v_n INT; v_gov INT;
+BEGIN
+  SELECT count(*),
+         count(*) FILTER (WHERE o.role_canonical='governor' AND p.external_id = -800001)
+  INTO v_n, v_gov
+  FROM essentials.districts d
+  JOIN essentials.offices o ON o.district_id = d.id
+  JOIN essentials.politicians p ON p.id = o.politician_id
+  WHERE d.district_type='STATE_EXEC' AND d.state='CO'
+    AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
+    AND (p.is_active=true OR o.is_vacant=true) AND COALESCE(p.is_incumbent,true)=true;
+  IF v_n <> 5 OR v_gov <> 1 THEN
+    RAISE EXCEPTION 'SEXR-05-feed-C FAILED: CO feed should surface 5 execs incl. governor -800001, found % execs (gov match=%)', v_n, v_gov;
+  END IF;
+  RAISE NOTICE 'SEXR-05-feed-C PASS: CO surfaces 5 newly-seeded execs incl. governor -800001 (Jared Polis)';
+END $$;
+
+-- If we reach here with no exception, all v2.18 assertions passed.
+DO $$ BEGIN RAISE NOTICE 'verify-phase-141-144: ALL SEXR-01..05 + SEXS-03 ASSERTIONS PASSED'; END $$;
+
+\echo '============================================================'
+\echo 'v2.18 CONSOLIDATED gate complete — all assertions above PASS'
+\echo '209 records (gov50/lt43/ag43/sos35/treas38); 199 stance-covered (gov50/ag42/sos34/treas34/lt39);'
+\echo '10 documented honest-skips; 0 unsourced; NC/WA/CO feed each surfaces 5 execs.'
+\echo 'AZ Lt Gov deferred (Prop 131, eff. Jan 2027) — known exclusion, not a miss.'
+\echo '============================================================'
