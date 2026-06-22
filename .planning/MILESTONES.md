@@ -1,5 +1,33 @@
 # Project Milestones: Empowered Accounts
 
+## v2.18 State Leaders (Shipped: 2026-06-22)
+
+**Phases completed:** 4 phases (141–144), 34 plans
+
+**Goal:** Full-stack coverage of every popularly-elected statewide "Big 5" executive (Governor, Lt. Governor, Attorney General, Secretary of State, Treasurer) across all 50 states — authoritative records, headshots, and sourced compass stances — with a consolidated production gate proving the whole milestone. Pure data milestone; no backend code (STATE_EXEC was already wired into the feed query).
+
+**Key accomplishments:**
+
+- Seeded an authoritative **209-office elected Big-5 roster across all 50 states** (gov 50 / lt-gov 43 / AG 43 / SoS 35 / treasurer 38), deduped on `(STATE_EXEC, state, role_canonical)` — never title string — with `role_canonical` populated, uppercase state codes, non-empty `geo_id`, and a documented `-(state_fips*100000+seq)` external_id scheme verified collision-free. Phantom/appointed/legislature-selected offices correctly excluded per the validated 50-state matrix.
+- Imported **173+ headshots** for every newly-seeded exec via `essentials.politician_images.url`, including `.gov`-recovered images for hard cases (ID Treasurer Ellsworth, LA SoS Landry, MT SoS Jacobsen, SC SoS Hammond).
+- Researched and ingested **sourced compass stances for 199 in-scope execs** (gov 50 / AG 42 / SoS 34 / treasurer 34 / lt-gov 39) with office-type evidence guidance (Gov=bill signings/vetoes/EOs, AG=lawsuits/amicus/coalitions, Treasurer=fund actions, SoS=election-admin, LtGov=honest-partial) — every answer paired to an `inform.politician_context` row with a real fetched source URL. **0 unsourced rows** at close; never inferred from party.
+- Held the evidence-over-party standard rigorously across genuinely narrow-record offices: **10 documented whole-record honest-skips** (OH AG Wilson; SC SoS Hammond; treasurers Boozer-AL/Metcalf-KY/McRae-MS/Haeder-SD; lt-govs Cournoyer-IA/Kelly-NE/Tressel-OH/Pinnell-OK), each pinned by exact external_id in the gate so any future regression fails loudly. SSM=5 kept only on documented anti-recognition litigation/votes/amendments.
+- Shipped a single consolidated read-only production gate `verify-phase-141-144.sql` — 11 labeled assertions (records, dedup, headshots, state-code hygiene, per-role coverage, the 10-id honest-skip pin, zero-unsourced, and a SEXR-05 feed-surfacing SQL simulation for NC/WA/CO) — all PASS, psql exit 0; gsd-verifier 6/6.
+
+**Requirements:** 8/8 closed (SEXR-01..05, SEXS-01..03).
+
+**Stats:**
+
+- 4 phases (141–144), 34 plans, 45 commits
+- 3 days (2026-06-20 → 2026-06-22)
+- Git range: `feat(141-01)` → `docs(144)`
+
+**Known deferred items at close:** 23 (22 historical quick-task dirs 001–022 + 1 stale Phase-109 verification gap — all pre-existing, none from v2.18; see STATE.md Deferred Items). Plus carry-forwards: AZ Lt Gov (Prop 131, eff. Jan 2027) and 3 House vacancies (FL-20/GA-13/TX-23) awaiting special elections.
+
+**What's next:** v2.19+ — AZ Lt Gov seating (post-Jan 2027), House vacancy backfills, and continued stance/coverage expansion.
+
+---
+
 ## v2.17 National House Rep Stances (Tier 2 continuation) (Shipped: 2026-06-20)
 
 **Phases completed:** 9 phases (132–140), 45 plans

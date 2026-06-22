@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v2.18
 milestone_name: State Leaders
-status: complete
-last_updated: "2026-06-22T14:31:31.137Z"
-last_activity: 2026-06-22 -- Phase 144 complete; v2.18 State Leaders milestone DONE (gate all-PASS, psql exit 0)
+status: Awaiting next milestone
+last_updated: "2026-06-22T14:47:07.700Z"
+last_activity: 2026-06-22 — Milestone v2.18 completed and archived
 progress:
   total_phases: 4
   completed_phases: 4
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 ## Current Position
 
-Phase: 144 (phase-gate-feed-surfacing-consolidated-verification) — COMPLETE ✅
-Plan: 1 of 1 complete
-Status: v2.18 State Leaders milestone COMPLETE (all 4 phases, gate all-PASS)
-Last activity: 2026-06-22 -- Phase 144 complete; v2.18 milestone done
+Phase: Milestone v2.18 complete
+Plan: —
+Status: Awaiting next milestone
+Last activity: 2026-06-22 — Milestone v2.18 completed and archived
 
 ### v2.18 Requirement Coverage
 
@@ -119,7 +119,7 @@ Phases 142 and 143 are independent of each other (disjoint office types) but bot
 
 ## Deferred Items
 
-Items acknowledged at v2.17 close (2026-06-20). All pre-existing, none from v2.17/v2.18.
+Re-acknowledged at v2.18 close (2026-06-22). All pre-existing, none from v2.18.
 
 | Category | Item | Status |
 |----------|------|--------|
@@ -224,4 +224,4 @@ Resume file: .planning/phases/141-roster-lock-seed-records-headshots/141-CONTEXT
 
 ## Operator Next Steps
 
-- Run `/gsd-execute-phase 141` — 12 plans, 2 waves (Wave 1: 7 record/seed plans incl. gate; Wave 2: 5 headshot plans)
+- Start the next milestone with /gsd-new-milestone

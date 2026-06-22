@@ -86,6 +86,14 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ CTC + Civic Spaces integration: `GET /api/roles/me` (unfiltered) and `POST /api/roles/check` as canonical gate endpoints; `GET /api/contributor/me` filters to 3 contributor roles only — v1.9
 - ✓ Contributor portal at `app.empowered.vote/contributor`: dashboard with role grant cards, Compass Editor (jurisdiction-scoped), Candidate Coordinator (single-politician), Essentials Editor (field-level bio editor) — v1.9
 
+### Validated (v2.18)
+
+**Milestone: v2.18 State Leaders** (Phases 141–144) — shipped 2026-06-22.
+
+- ✓ SEXR-01..04: authoritative elected-Big-5 roster locked + idempotent gap seed across all 50 states — 209 in-scope offices (gov 50 / lt-gov 43 / AG 43 / SoS 35 / treasurer 38), deduped on `(STATE_EXEC, state, role_canonical)`, `role_canonical` populated, uppercase state + non-empty geo_id, every newly-seeded exec with a headshot — Phase 141
+- ✓ SEXS-01..02: office-type evidence guidance in the researcher prompt, then sourced compass stances for all in-scope execs lacking them across two waves (Gov+AG, then SoS+Treasurer+LtGov) — 199 covered + 10 documented whole-record honest-skips, 0 unsourced, never inferred from party — Phases 142–143
+- ✓ SEXR-05 + SEXS-03: consolidated read-only gate `verify-phase-141-144.sql` — 11 labeled assertions (records, dedup, headshots, state-code hygiene, per-role coverage, 10-id honest-skip pin, zero-unsourced) plus a SEXR-05 feed-surfacing SQL simulation for NC/WA/CO — all PASS against production — Phase 144
+
 ### Validated (v2.17)
 
 **Milestone: v2.17 National House Rep Stances (Tier 2 continuation)** (Phases 132–140) — shipped 2026-06-20.
@@ -247,22 +255,17 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 
 ## Current State
 
-**v2.17 shipped 2026-06-20** — national US House stance coverage is complete. Combined with v2.16, the entire seeded national House layer (299 reps = 87 FL/NY/PA/IL + 212 across the other 38 states) now has sourced compass alignment: **298/299 covered, 0 unsourced**, the single gap being McDowell NC-6 (documented honest-skip, brand-new freshman with no record). Permanent audits: `backend/scripts/verify-phase-127-131.sql` (v2.16) + `backend/scripts/verify-phase-132-140.sql` (v2.17, all USHS-06..14 PASS).
+**v2.18 shipped 2026-06-22** — every state's elected Big 5 statewide executives are now in the platform across all 50 states. **209 elected offices seeded** (gov 50 / lt-gov 43 / AG 43 / SoS 35 / treasurer 38) with headshots, **199 stance-covered** (gov 50 / AG 42 / SoS 34 / treasurer 34 / lt-gov 39) + 10 documented whole-record honest-skips, **0 unsourced**. The consolidated production gate `backend/scripts/verify-phase-141-144.sql` (11 labeled assertions incl. the SEXR-05 feed-surfacing simulation) passes read-only against prod. No backend code shipped — `STATE_EXEC` was already wired into the feed query. AZ Lt Gov deferred (Prop 131, eff. Jan 2027). Prior coverage layers remain: national House (`verify-phase-127-131.sql` + `verify-phase-132-140.sql`).
+
+**Next:** Planning next milestone (`/gsd:new-milestone`).
 
 ---
 
-## Current Milestone: v2.18 State Leaders
+## Previous Milestone: v2.18 State Leaders (Phases 141–144, shipped 2026-06-22)
 
 **Goal:** Every US resident sees their state's elected Big 5 executives — Governor, Lt. Governor, Attorney General, Secretary of State, and Treasurer (whichever of the five their state actually elects) — in the representatives feed with sourced compass alignment, across all 50 states.
 
-**Target features:**
-- **Authoritative elected-Big-5 roster** — per state, which of the five offices are *elected* (vs. appointed or nonexistent), sourced from NGA / Ballotpedia / state .gov. This roster is the source of truth that prevents phantom offices (e.g. ME & OR have no Lt. Governor; TX abolished its elected Treasurer and appoints its SoS; UT has no SoS; VA/MD appoint their SoS).
-- **Idempotent gap seed** — create only *missing* politician + office records (politician + office + headshot) for the elected Big 5; detect existing records by **state + office kind**, NOT by title string (existing titles are inconsistent: "Indiana Governor" vs "Governor" vs "Texas Governor"). Leave the 68 existing `STATE_EXEC` records and all non-Big-5 statewide officers (Auditor, Controller, Commissioners, etc.) untouched.
-- **Gap-based stance research** — source compass stances for every elected Big 5 exec that lacks them (newly-seeded reps + the existing IN AG/SoS/Treasurer, all of ME, all of TX), reusing the proven v2.16/v2.17 pipeline (real source URL per stance, honest-skip where no evidence, never infer from party).
-- **Feed surfacing** — confirm/wire `STATE_EXEC` into `GET /representatives/me` by state code (the path `NATIONAL_UPPER` senators already use; statewide = no `tiger_geoid` polygons). CA execs already carry stances, so a path likely exists — verify and extend to all 50 states.
-- **Phase gate** — consolidated read-only SQL verification: every elected Big 5 office filled, 0 unsourced rows, state-code accessibility holds.
-
-**Gap baseline at milestone start (verified against prod 2026-06-20):** 68 `STATE_EXEC` records across only 9 states (CA, IN, MA, MD, ME, OR, TX, UT, VA); **41 states have zero state execs**. Stance gaps exist even in present states (ME 0/4, TX 0/3-elected, IN missing AG/SoS/Treasurer). Big 5 is the *elected subset per state* — never a flat 50×5 grid.
+**Delivered:** All 8 requirements closed (SEXR-01..05, SEXS-01..03); 34 plans across 4 phases. **209 in-scope elected offices seeded** across all 50 states (deduped on `(STATE_EXEC, state, role_canonical)` — never title string — with `role_canonical` populated, uppercase state codes, non-empty `geo_id`, and a collision-free `-(state_fips*100000+seq)` external_id scheme), each newly-seeded exec given a headshot (incl. `.gov`-recovered hard cases). **199 execs stance-covered** (gov 50 / AG 42 / SoS 34 / treasurer 34 / lt-gov 39), every answer paired to a real fetched source URL, **0 unsourced**, with office-type evidence guidance (Gov=signings/vetoes/EOs, AG=lawsuits/amicus/coalitions, Treasurer=fund actions, SoS=election-admin, LtGov=honest-partial). **10 documented whole-record honest-skips** pinned by exact external_id in the gate (OH AG; SC SoS; 4 treasurers; 4 lt-govs) — genuinely narrow-record offices where honest-skip beat inference; SSM=5 kept only on documented anti-recognition litigation/votes/amendments. Single consolidated read-only gate `verify-phase-141-144.sql` (11 assertions, all PASS, psql exit 0; gsd-verifier 6/6). AZ Lt Gov deferred (Prop 131). Execution lesson: never add a NULL-`role_canonical`-by-title heuristic to a records gate — it false-fails on legitimately-out-of-scope offices (legislature-selected, appointed) and legacy duplicate rows; exact per-role counts already guard a missing canonical row.
 
 ---
 
@@ -402,4 +405,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-20 — v2.18 STARTED (State Leaders). Goal: elected Big 5 statewide execs (Gov, Lt Gov, AG, SoS, Treasurer) in all 50 states with sourced stances + state-code feed surfacing. Gap-based/idempotent: 68 STATE_EXEC records exist across 9 states; 41 states empty; stance gaps in IN/ME/TX. Defining requirements → roadmap.*
+*Last updated: 2026-06-22 — after v2.18 State Leaders milestone (Phases 141–144 shipped). 209 elected Big-5 offices seeded across 50 states + headshots; 199 stance-covered + 10 honest-skips, 0 unsourced; consolidated gate verify-phase-141-144.sql all-PASS. All 8 reqs (SEXR-01..05, SEXS-01..03) closed. Next: planning next milestone.*
