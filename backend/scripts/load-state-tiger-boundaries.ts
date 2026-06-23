@@ -41,6 +41,7 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   OR: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   MD: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   VA: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
+  NV: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   DC: new Set(['sldl']),
 };
 
@@ -93,6 +94,7 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
   OR: ['Portland city'],
   MD: ['Baltimore city'],
   VA: ['Alexandria city'],
+  NV: ['Las Vegas city', 'Henderson city', 'North Las Vegas city', 'Boulder City city'],
 };
 
 // STATE_RUN_MAKEVALID: per-state ST_MakeValid layer set (Phase 131 D-07..D-09)
@@ -107,6 +109,7 @@ const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
   OR: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   MD: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   VA: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
+  NV: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   DC: new Set(['sldl']),
 };
 
@@ -964,6 +967,53 @@ async function processLayer(
         throw err;
       }
       console.log(`  [${layer}] VA MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
+  // ── NV MTFCC pre-flight assertion (Phase 158) ───────────────────────────────
+  // For NV (state='32'), count records satisfying the same filters as the upsert
+  // pass BEFORE any DB write. Assertion failure is named and fatal.
+  // sldl and place values are set to 0 so dry-run MtfccAssertionError reveals actual count.
+  // Plan 02 updates these values before the live load.
+  //
+  // sldl and sldu TIGER shapefiles are state-scoped (FIPS 32 in filename);
+  // filterByStatefp is false for these layers — no STATEFP filter in pre-flight count.
+  if (fipsArg === '32') {
+    const EXPECTED_NV_MTFCC: Record<string, number> = {
+      cd119: 4,   // 4 NV congressional districts (post-2022 redistricting)
+      sldu:  21,  // 21 NV State Senate districts, single-member
+      sldl: 0,    // SENTINEL — Task 3 dry-run reveals actual count; NV Assembly is 42 single-member districts, so expect ~42
+      place: 0,   // SENTINEL — Task 3 dry-run reveals actual count; expect ~19 G4110 incorporated cities per D-04
+      county: 17, // 16 NV counties + Carson City as an independent city-county = 17 county-equivalents
+    };
+    if (layer in EXPECTED_NV_MTFCC) {
+      const expected = EXPECTED_NV_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layer === 'place') {
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[NV MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 32 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] NV MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
     }
   }
 
