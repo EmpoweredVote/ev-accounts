@@ -1,0 +1,4 @@
+# processed binaries live in Supabase Storage; review.html + _review.json hold base64 (heavy) — not tracked
+*.jpg
+review.html
+_review.json
