@@ -1,15 +1,15 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.18
-milestone_name: State Leaders
+milestone: v2.19
+milestone_name: Local Civic Coverage
 status: Awaiting next milestone
-last_updated: "2026-06-22T14:47:07.700Z"
-last_activity: 2026-06-22 — Milestone v2.18 completed and archived
+last_updated: "2026-06-23T00:00:00.000Z"
+last_activity: 2026-06-23 — Milestone v2.19 formalized (retroactive) and archived
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 34
-  completed_plans: 34
+  total_phases: 3
+  completed_phases: 3
+  total_plans: 0
+  completed_plans: 0
   percent: 100
 ---
 
@@ -20,32 +20,29 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.18 State Leaders COMPLETE — ready for milestone close (`/gsd-complete-milestone`)
-**Last shipped:** v2.18 State Leaders — Phases 141–144, completed 2026-06-22. 209 elected Big-5 statewide execs seeded across 50 states + headshots; 199 stance-covered (gov50/ag42/sos34/treas34/lt39) + 10 documented honest-skips, 0 unsourced; SEXR-01..05 + SEXS-01..03 closed; verify-phase-141-144.sql consolidated gate all-PASS (psql exit 0).
+**Current focus:** v2.19 Local Civic Coverage COMPLETE + archived (formalized retroactively). Awaiting next milestone.
+**Last shipped:** v2.19 Local Civic Coverage — Phases 145–147 (inline-executed), formalized 2026-06-23. Falls Church VA (17) + Greene County MO (13) + Springfield MO (16): 46 records, 4 geofence boundaries, 118 evidence-only stances (0 unsourced), 46 headshots, 3 essentials coverage entries; LCC-01..05 closed. Migrations 1047–1049; git range a488232a → ef1a364f.
 
 ## Current Position
 
-Phase: Milestone v2.18 complete
+Phase: Milestone v2.19 complete
 Plan: —
 Status: Awaiting next milestone
-Last activity: 2026-06-22 — Milestone v2.18 completed and archived
+Last activity: 2026-06-23 — Milestone v2.19 formalized (retroactive) and archived
 
-### v2.18 Requirement Coverage
+### v2.19 Requirement Coverage
 
-| Phase | Requirement | Scope | Description |
-|-------|-------------|-------|-------------|
-| 141 — Roster Lock + Seed | SEXR-01 | 50 states | Authoritative elected-Big-5 roster with selection_method + source per exception |
-| 141 — Roster Lock + Seed | SEXR-02 | 208 offices | Idempotent gap seed: politician + office records, dedup on (STATE_EXEC, state, role_canonical) |
-| 141 — Roster Lock + Seed | SEXR-03 | 208 offices | role_canonical populated on all in-scope Big 5 offices (new + backfill) |
-| 141 — Roster Lock + Seed | SEXR-04 | new execs | Headshots on every newly-seeded exec |
-| 142 — Stance Wave 1 (Gov + AG) | SEXS-01 | prompt | Office-type evidence guidance in researcher prompt before first dispatch |
-| 142 — Stance Wave 1 (Gov + AG) | SEXS-02 (partial) | 93 execs | Sourced stances for all in-scope Governors (50) + AGs (43) lacking stances |
-| 143 — Stance Wave 2 (SoS + Treasurer + LtGov) | SEXS-02 (completing) | 115 execs | Sourced stances for all in-scope SoS (35) + Treasurer (37) + LtGov (43) lacking stances |
-| 144 — Phase Gate | SEXR-05 | ≥3 states | Feed surfacing smoke test (no code change; STATE_EXEC already wired) |
-| 144 — Phase Gate | SEXS-03 | all 208 | Consolidated read-only SQL gate: all offices filled, 0 unsourced, state-code clean |
-| **Total unique requirements** | | | **8 / 8** ✓ |
+| Requirement | Phase 145 (Falls Church VA) | Phase 146 (Greene County MO) | Phase 147 (Springfield MO) |
+|-------------|:---------------------------:|:----------------------------:|:--------------------------:|
+| LCC-01 Records   | ✅ 17 | ✅ 13 | ✅ 16 |
+| LCC-02 Boundaries | ✅ school G5420 | ✅ county G4020 | ✅ place G4110 + school G5420 |
+| LCC-03 Stances   | ✅ 55 | ✅ 26 | ✅ 37 |
+| LCC-04 Headshots | ✅ 17 | ✅ 13 | ✅ 16 |
+| LCC-05 Coverage  | ✅ COVERAGE_STATES | ✅ COVERAGE_COUNTIES | ✅ COVERAGE_STATES |
 
-All 8 requirements (SEXR-01..05, SEXS-01..03) mapped to phases 141–144 — 100% coverage, no orphans.
+All 5 requirements (LCC-01..05) delivered across phases 145–147 — 46 records · 4 boundaries · 118 stances (0 unsourced) · 46 headshots · 3 coverage entries. Executed inline (no plan dirs); per-jurisdiction deep-dive memory files are the build record.
+
+> v2.18 State Leaders requirement coverage + execution detail archived in `.planning/milestones/v2.18-*` and `MILESTONES.md`.
 
 ### v2.18 Phase Dependencies
 
@@ -138,12 +135,19 @@ Re-acknowledged at v2.18 close (2026-06-22). All pre-existing, none from v2.18.
 - Plans complete: ~45
 - Shipped: 2026-06-20
 
-**v2.18 Scope — State Leaders — IN PROGRESS**
+**v2.18 Scope — State Leaders — COMPLETE ✅**
 
 - Phases: 4 (141–144)
-- Requirements: 8/8 mapped (0 closed)
-- Plans planned: 12 (Phase 141); 0 complete
-- Started: 2026-06-20
+- Requirements: 8/8 closed (SEXR-01..05, SEXS-01..03)
+- Plans complete: 34
+- Shipped: 2026-06-22
+
+**v2.19 Scope — Local Civic Coverage — COMPLETE ✅**
+
+- Phases: 3 (145–147), executed inline (no plan dirs)
+- Requirements: 5/5 closed (LCC-01..05)
+- Output: 46 records, 4 boundaries, 118 stances (0 unsourced), 46 headshots, 3 coverage entries
+- Shipped: 2026-06-23 (formalized retroactively)
 
 ## Accumulated Context
 
@@ -206,9 +210,9 @@ None for v2.18 start. Run the live diagnostic queries at plan authoring time:
 
 ## Session Continuity
 
-Last session: 2026-06-21T00:22:23.498Z
-Stopped at: Phase 141 context gathered
-Resume file: .planning/phases/141-roster-lock-seed-records-headshots/141-CONTEXT.md
+Last session: 2026-06-23
+Stopped at: v2.19 Local Civic Coverage formalized retroactively (Falls Church VA / Greene County MO / Springfield MO) and archived; tag v2.19 created
+Resume file: — (awaiting next milestone)
 
 ## Decisions
 
@@ -224,4 +228,4 @@ Resume file: .planning/phases/141-roster-lock-seed-records-headshots/141-CONTEXT
 
 ## Operator Next Steps
 
-- Start the next milestone with /gsd-new-milestone
+- v2.19 Local Civic Coverage formalized + archived (retroactive). Start the next milestone with /gsd-new-milestone, or continue local coverage informally (more cities/counties; CA-city builds Burbank/Norwalk/Bellflower available to fold into a future local-coverage milestone).

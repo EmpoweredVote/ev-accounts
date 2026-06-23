@@ -2,6 +2,35 @@
 
 *A living document updated after each milestone. Lessons feed forward into future planning.*
 
+## Milestone: v2.19 — Local Civic Coverage
+
+**Shipped:** 2026-06-23 (formalized retroactively)
+**Phases:** 3 (145–147, inline-executed) | **Commits:** 9 (this repo) + 3 (essentials) | **Timeline:** 2 days (2026-06-22 → 2026-06-23)
+
+### What Was Built
+- Three new local jurisdictions fully covered: **Falls Church VA** (17 officials, Alexandria template), **Greene County MO** (13, LA County template), **Springfield MO** (16, city + SPS school board). 46 records, 4 geofence boundaries, 118 evidence-only stances (0 unsourced), 46 headshots, 3 essentials coverage entries. Migrations 1047–1049.
+- A Springfield resident now stacks four coverage layers at one address — city + SPS school district + Greene County + Missouri statewide execs (the last from v2.18).
+
+### What Worked
+- **Reusing locked blueprints.** Each build was a near-mechanical application of a prior template (Alexandria for independent VA cities, LA County for counties), so the work was fast and the structural traps were already known and documented.
+- **Evidence-only discipline held under source walls.** Where political-record sources were fetch-walled (Ballotpedia JS-empty, VoteSmart 403, News-Leader paywall, sgfcitizen 429), officials were left as honest blanks rather than padded from party — keeping the 0-unsourced invariant across all three builds.
+- **Clean-sourcing pass on headshots.** Springfield's default CivicEngage portraits had a baked-in decorative ring; the operator rejected them and a targeted re-source (SPS `meet-the-board`, Daily Citizen press) produced clean alternates rather than shipping degraded images.
+
+### What Was Inefficient
+- **Executed entirely outside GSD tracking, then reconstructed.** All three builds shipped inline with no requirements/roadmap/phase dirs, so this milestone had to be reverse-engineered from git history and memory deep-dives — and the first scope pass undercounted (missed the CA-city siblings) until the full post-v2.18 commit log was pulled. Lesson: even informal coverage builds benefit from a one-line roadmap entry at the time, so the milestone boundary isn't ambiguous later.
+- **County boundaries weren't pre-loaded.** MO had zero county geofences, so Greene County needed a live TIGERweb import before the feed would surface anyone — an easy-to-miss prerequisite for any first-in-state county build.
+
+### Patterns Established
+- **`chambers.slug` collides across same-named cities** (generated column) — Springfield MO silently bound to Springfield MA's council chamber. **Always scope chamber lookups/guards by unique government name + chamber name, never slug**, and assert the right N offices landed in the intended chamber.
+- **TIGERweb layer map for non-county boundaries:** Incorporated Places = `Places_CouSub_ConCity_SubMCD/MapServer` layer 4 (G4110); Unified School Districts = `School/MapServer` layer 0 (G5420); Counties = `State_County/MapServer` layer 1 (G4020). School districts are NOT always coterminous with the city — fetch the real boundary, don't copy the place polygon (Falls Church's school *was* coterminous; Springfield's was not).
+- **Coverage-type split:** cities → `COVERAGE_STATES` (landing chip + typeahead, `hasContext: true` = purple); counties → `COVERAGE_COUNTIES` (search-only, `skip_overlap=1` shows only the county's own officials).
+
+### Key Lessons
+- Informal/inline execution is fine for templated coverage work, but **mark the milestone boundary as you go** — a stray ROADMAP line is cheap insurance against the reconstruction cost paid here.
+- The first-in-state build for any jurisdiction type carries a hidden boundary-import prerequisite (no loaded geofence = nobody surfaces, regardless of records).
+
+---
+
 ## Milestone: v2.18 — State Leaders
 
 **Shipped:** 2026-06-22

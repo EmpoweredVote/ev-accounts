@@ -31,8 +31,22 @@
 - ✅ **v2.16 National House Rep Stances (Tier 2)** — Phases 127–131 (shipped 2026-06-18; FL/NY/PA/IL, 87 reps, 1,338 stances)
 - ✅ **v2.17 National House Rep Stances (Tier 2 continuation)** — Phases 132–140 (shipped 2026-06-20; remaining 212 reps across 38 states, USHS-06..14)
 - ✅ **v2.18 State Leaders** — Phases 141–144 (shipped 2026-06-22; elected Big 5 statewide execs, 209 offices / 50 states, 199 stance-covered + 10 honest-skips, consolidated gate all-PASS)
+- ✅ **v2.19 Local Civic Coverage** — Phases 145–147 (shipped 2026-06-23; Falls Church VA + Greene County MO + Springfield MO — 46 records / 118 stances / 46 headshots / 4 boundaries; inline-executed, formalized retroactively)
 
 ## Phases
+
+<details>
+<summary>✅ v2.19 Local Civic Coverage (Phases 145–147) — SHIPPED 2026-06-23 (Falls Church VA / Greene County MO / Springfield MO; 46 records, 118 stances [0 unsourced], 46 headshots, 4 geofence boundaries; LCC-01..05 closed; inline-executed)</summary>
+
+### v2.19 Local Civic Coverage (Phases 145–147)
+
+> Executed **inline** (not GSD-phased) at user request, then formalized retroactively 2026-06-23. No plan directories — the per-jurisdiction deep-dive memory files are the build record. Git range `a488232a` → `ef1a364f`. Three sibling CA-city builds (Burbank/Norwalk/Bellflower, phases 154–156) and the Nevada work (phases 158–159, essentials team) are out of scope.
+
+- **Phase 145 — Falls Church VA Coverage** ✅ — Alexandria-template independent city. 17 officials (7 council + 3 constitutional officers + 7 FCCPS school board) across 2 governments; coterminous school `G5420` geofence; 55 stances (10/17 stanced); 17 `.gov` headshots; `COVERAGE_STATES` purple chip. Migration 1047. Commits `a488232a`/`0d388c07`/`cf9adc6e`.
+- **Phase 146 — Greene County MO Coverage** ✅ — LA-County-template county (FIPS 29077). 13 officials (commission + sheriff + prosecutor + county officers) on one `COUNTY` district; county `G4020` polygon imported from TIGERweb; 26 stances (5/13 stanced); 13 `greenecountymo.gov` headshots; `COVERAGE_COUNTIES` search-only. Migration 1048. Commits `448c3761`/`3d77073a`/`951b9310`.
+- **Phase 147 — Springfield MO Coverage** ✅ — city + SPS R-XII school board (Greene County seat). 16 officials (9 council + 7 board); place `G4110` + school `G5420` boundaries; 37 stances (9/16 stanced); 16 headshots (clean-sourcing pass); `COVERAGE_STATES`. Migration 1049. Commits `dad06979`/`a3f9269b`/`ef1a364f`. Trap caught: `chambers.slug` collides with Springfield MA → scope chamber lookups by government name, never slug.
+
+</details>
 
 <details>
 <summary>✅ v2.18 State Leaders (Phases 141–144) — SHIPPED 2026-06-22 (209 elected Big 5 execs / 50 states; 199 stance-covered + 10 honest-skips; 0 unsourced; SEXR-01..05, SEXS-01..03 closed)</summary>

@@ -1,5 +1,36 @@
 # Project Milestones: Empowered Accounts
 
+## v2.19 Local Civic Coverage (Shipped: 2026-06-23)
+
+**Phases completed:** 3 phases (145–147), executed inline (no plan dirs), formalized retroactively
+
+**Goal:** Full-stack local coverage for three new jurisdictions — Falls Church VA, Greene County MO, and Springfield MO — so each resident sees their full slate of locally-elected officials (city council, constitutional/county officers, school board) in the representatives feed, with sourced compass alignment, headshots, and the geofence + essentials-coverage plumbing that makes each jurisdiction discoverable. Pure data + coverage; no backend code in this repo.
+
+**Key accomplishments:**
+
+- Seeded **46 elected officials** across three jurisdictions on established blueprints — Falls Church VA (17: council + constitutional officers + FCCPS board, Alexandria template), Greene County MO (13: commission + sheriff + prosecutor + county officers, LA County template), Springfield MO (16: council + SPS R-XII board) — each on the correct government → chamber → district structure with collision-checked `-(geo_id || seq)` external_ids; appointed/shared offices correctly excluded.
+- Imported **4 geofence boundaries** so every jurisdiction surfaces for a resident point — Falls Church coterminous school `G5420` (copied from the place polygon), Greene County `G4020` (Census TIGERweb `State_County` layer 1 — MO had zero county boundaries loaded), Springfield place `G4110` + school-district `G5420` (TIGERweb Places layer 4 + School layer 0, school fetched separately as non-coterminous). All verified `ST_Covers` at an in-jurisdiction point + a far negative control.
+- Researched and ingested **118 evidence-only compass stances** (Falls Church 55 / Greene County 26 / Springfield 37), every answer paired to an `inform.politician_context` row with a real fetched source URL — **0 unsourced**. Honest blanks where the record is source-walled (ministerial officers, freshmen, a 429-rate-limited SPS questionnaire host) — never inferred from party. Local-governance topics; national topics correctly skipped.
+- Imported **46 headshots** at 600×750, Storage-mirrored + `politician_images` rows — including a **clean-sourcing pass** on Springfield (rejected the default CivicEngage thumbnails' baked-in decorative ring; sourced SPS board from `sps.org/meet-the-board`, council from Springfield Daily Citizen press).
+- Added **3 essentials coverage entries** (separate repo, Netlify deploy): Falls Church + Springfield as `COVERAGE_STATES` (landing chip + typeahead, purple `hasContext`), Greene County as `COVERAGE_COUNTIES` (search-only, `skip_overlap=1`). A Springfield resident now sees city + SPS + Greene County + Missouri-statewide officials together.
+
+**Requirements:** 5/5 closed (LCC-01..05).
+
+**Stats:**
+
+- 3 jurisdictions, 46 records, 4 boundaries, 118 stances (0 unsourced), 46 headshots, 3 coverage entries
+- Migrations 1047 (Falls Church) / 1048 (Greene County) / 1049 (Springfield)
+- 9 commits in this repo (`a488232a` → `ef1a364f`) + 3 coverage commits in the essentials repo
+- 3 phases (145–147), executed inline; 2 days (2026-06-22 → 2026-06-23)
+
+**Execution note:** This milestone was executed informally (inline, at user request — not GSD-phased) right after v2.18 closed, then formalized retroactively. Phases 145–147 have no plan directories; the per-jurisdiction deep-dive memory files are the authoritative build record. Sibling CA-city builds (Burbank/Norwalk/Bellflower, phases 154–156) and the Nevada work (phases 158–159, essentials team) ran in the same window and are out of scope.
+
+**Key lesson:** `essentials.chambers.slug` is a generated column that collides across same-named cities — "Springfield City Council" silently resolved to Springfield, **Massachusetts** until chamber lookups were scoped by unique government name instead of slug. Scope chamber lookups/guards by government name + chamber name, never slug.
+
+**What's next:** Next milestone TBD — continue local civic coverage (more cities/counties) or pivot. CA cities (Burbank/Norwalk/Bellflower) remain available to fold into a future local-coverage milestone.
+
+---
+
 ## v2.18 State Leaders (Shipped: 2026-06-22)
 
 **Phases completed:** 4 phases (141–144), 34 plans

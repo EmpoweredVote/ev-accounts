@@ -86,6 +86,12 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ CTC + Civic Spaces integration: `GET /api/roles/me` (unfiltered) and `POST /api/roles/check` as canonical gate endpoints; `GET /api/contributor/me` filters to 3 contributor roles only — v1.9
 - ✓ Contributor portal at `app.empowered.vote/contributor`: dashboard with role grant cards, Compass Editor (jurisdiction-scoped), Candidate Coordinator (single-politician), Essentials Editor (field-level bio editor) — v1.9
 
+### Validated (v2.19)
+
+**Milestone: v2.19 Local Civic Coverage** (Phases 145–147, inline-executed) — shipped 2026-06-23.
+
+- ✓ LCC-01..05: full-stack local coverage for Falls Church VA (17 officials), Greene County MO (13), and Springfield MO (16) — 46 records, 4 geofence boundaries, 118 evidence-only stances (0 unsourced), 46 headshots, 3 essentials coverage entries; each on an established blueprint (Alexandria / LA County / city+school), national topics correctly skipped, honest blanks where source-walled — Phases 145–147
+
 ### Validated (v2.18)
 
 **Milestone: v2.18 State Leaders** (Phases 141–144) — shipped 2026-06-22.
@@ -255,9 +261,19 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 
 ## Current State
 
+**v2.19 shipped 2026-06-23 (formalized retroactively)** — three new local jurisdictions are fully covered: Falls Church VA (17 officials), Greene County MO (13), and Springfield MO (16). 46 records, 4 geofence boundaries, **118 evidence-only stances (0 unsourced)**, 46 headshots, and 3 essentials coverage entries (migrations 1047–1049). A Springfield resident now sees city + SPS school district + Greene County + Missouri statewide execs at one address. Executed inline (not GSD-phased); CA-city siblings (Burbank/Norwalk/Bellflower) and the Nevada work (essentials team) ran the same week but are out of this milestone's scope. Git range `a488232a` → `ef1a364f`.
+
 **v2.18 shipped 2026-06-22** — every state's elected Big 5 statewide executives are now in the platform across all 50 states. **209 elected offices seeded** (gov 50 / lt-gov 43 / AG 43 / SoS 35 / treasurer 38) with headshots, **199 stance-covered** (gov 50 / AG 42 / SoS 34 / treasurer 34 / lt-gov 39) + 10 documented whole-record honest-skips, **0 unsourced**. The consolidated production gate `backend/scripts/verify-phase-141-144.sql` (11 labeled assertions incl. the SEXR-05 feed-surfacing simulation) passes read-only against prod. No backend code shipped — `STATE_EXEC` was already wired into the feed query. AZ Lt Gov deferred (Prop 131, eff. Jan 2027). Prior coverage layers remain: national House (`verify-phase-127-131.sql` + `verify-phase-132-140.sql`).
 
-**Next:** Planning next milestone (`/gsd:new-milestone`).
+**Next:** Next milestone TBD — continue local civic coverage (more cities/counties; CA-city builds available to fold in) or pivot.
+
+---
+
+## Previous Milestone: v2.19 Local Civic Coverage (Phases 145–147, shipped 2026-06-23)
+
+**Goal:** Full-stack local coverage for three new jurisdictions — Falls Church VA, Greene County MO, and Springfield MO — so each resident sees their full slate of locally-elected officials (council, constitutional/county officers, school board) in the feed, with sourced compass alignment, headshots, and geofence + essentials-coverage plumbing.
+
+**Delivered:** All 5 requirements closed (LCC-01..05), executed inline (no plan dirs), formalized retroactively. **46 elected officials** seeded — Falls Church VA (17, Alexandria template), Greene County MO (13, LA County template), Springfield MO (16, city + SPS R-XII board) — on correct government → chamber → district structures with collision-checked `-(geo_id||seq)` external_ids. **4 geofence boundaries** imported (FC coterminous school G5420; Greene County G4020 from TIGERweb; Springfield place G4110 + non-coterminous school G5420). **118 evidence-only stances** (FC 55 / Greene 26 / Springfield 37), every answer paired to a real fetched source URL, **0 unsourced**, honest blanks where source-walled. **46 headshots** (clean-sourcing pass on Springfield). **3 essentials coverage entries** (FC + Springfield COVERAGE_STATES purple; Greene County COVERAGE_COUNTIES search-only). Migrations 1047–1049; git range `a488232a` → `ef1a364f`. **Key lesson:** `essentials.chambers.slug` is a generated column that collides across same-named cities (Springfield MO silently bound to Springfield MA) — scope chamber lookups by government name, never slug. Out of scope: CA-city siblings (phases 154–156) and Nevada (phases 158–159, essentials team).
 
 ---
 
