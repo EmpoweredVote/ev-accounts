@@ -134,10 +134,10 @@ async function main() {
     );
     const expectedCounts: Record<string, number> = {
       G4020: 17,  // 16 NV counties + Carson City independent city-county
-      G4110: 0,   // confirmed via dry-run — NV G4110 incorporated places (placeholder; updated after Task 3)
+      G4110: 19,  // confirmed via dry-run 2026-06-23 — 19 NV G4110 incorporated places
       G5200: 4,   // 4 NV congressional districts (post-2022 redistricting)
       G5210: 21,  // 21 NV State Senate districts (single-member)
-      G5220: 0,   // confirmed via dry-run — NV Assembly districts (placeholder; updated after Task 3)
+      G5220: 42,  // confirmed via dry-run 2026-06-23 — 42 NV G5220 single-member Assembly polygons
     };
     const actualCounts: Record<string, number> = {};
     for (const row of countRes.rows) {

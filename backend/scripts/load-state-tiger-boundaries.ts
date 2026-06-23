@@ -982,8 +982,8 @@ async function processLayer(
     const EXPECTED_NV_MTFCC: Record<string, number> = {
       cd119: 4,   // 4 NV congressional districts (post-2022 redistricting)
       sldu:  21,  // 21 NV State Senate districts, single-member
-      sldl: 0,    // SENTINEL — Task 3 dry-run reveals actual count; NV Assembly is 42 single-member districts, so expect ~42
-      place: 0,   // SENTINEL — Task 3 dry-run reveals actual count; expect ~19 G4110 incorporated cities per D-04
+      sldl: 42,   // confirmed via dry-run 2026-06-23 — 42 NV G5220 single-member Assembly polygons
+      place: 19,  // confirmed via dry-run 2026-06-23 — 19 NV G4110 incorporated places
       county: 17, // 16 NV counties + Carson City as an independent city-county = 17 county-equivalents
     };
     if (layer in EXPECTED_NV_MTFCC) {
