@@ -1,0 +1,552 @@
+[
+  {
+    "politician_id": "e96d7f56-b798-4ad2-b469-78646b83e040",
+    "external_id": -2970000001,
+    "full_name": "Jeff Schrag",
+    "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+    "topic_key": "data-centers",
+    "value": 3,
+    "reasoning": "In June 2026 Mayor Schrag supported a 150-day administrative pause on data center development to allow robust public dialogue and creation of a public-interest evaluation framework before approving specific projects. This reflects an impact-assessment-and-community-dialogue approach consistent with allowing development only after impact assessments and community benefit review.",
+    "sources": [
+      "https://www.springfieldmo.gov/CivicAlerts.aspx"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "c9b6d933-17a0-4f97-81e0-3b8f49d05f85",
+    "external_id": -2970000003,
+    "full_name": "Craig Hosmer",
+    "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+    "topic_key": "campaign-finance",
+    "value": 2,
+    "reasoning": "Hosmer co-sponsored and supported Springfield's individual campaign contribution limit ordinance ($2,825 cap) passed by city council in May 2026. He echoed fellow councilmembers' framing that the bill was a compromise representing progress toward limiting donor influence in local elections. This reflects a stance favoring strict limits on donations to reduce the role of money in politics.",
+    "sources": [
+      "https://www.ksmu.org/news/2026-05-04/springfield-city-council-approves-campaign-finance-contribution-limits"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "c9b6d933-17a0-4f97-81e0-3b8f49d05f85",
+    "external_id": -2970000003,
+    "full_name": "Craig Hosmer",
+    "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+    "topic_key": "residential-zoning",
+    "value": 2,
+    "reasoning": "Hosmer cast the sole dissenting vote against the East Division apartment complex rezoning (Nov 2025) and the sole dissent on the Chimney Rock subdivision (Feb 2025), arguing against sprawl and developer-driven planning. He co-sponsored a Feb 2026 resolution to protect the city charter's referendum process on zoning from a state bill that would have stripped citizens' petition rights. His pattern is consistent with allowing only modest density increases with strong community accountability before rezoning.",
+    "sources": [
+      "https://www.ksmu.org/news/2025-11-04/springfield-city-council-approves-controversial-east-division-rezoning",
+      "https://www.ksmu.org/news/2025-02-10/springfield-city-council-votes-8-1-to-approve-controversial-new-subdivision-layout",
+      "https://www.ksmu.org/news/2026-02-09/springfield-city-council-approves-resolution-to-maintain-local-control-and-initiate-community-conversation"
+    ],
+    "quote_text": "We're taking farmland on the outskirts of the city of Springfield and building [an] apartment complex. No city planner looking at this objectively would say that's a good idea. Nobody. We let developers plan our city.",
+    "quote_deidentified": "We're taking farmland on the outskirts of the city and building [an] apartment complex. No city planner looking at this objectively would say that's a good idea. Nobody. We let developers plan our city."
+  },
+  {
+    "politician_id": "c9b6d933-17a0-4f97-81e0-3b8f49d05f85",
+    "external_id": -2970000003,
+    "full_name": "Craig Hosmer",
+    "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+    "topic_key": "growth-and-development",
+    "value": 2,
+    "reasoning": "Hosmer was consistently the sole no vote against outward sprawl developments — dissenting on two separate rezoning approvals — and explicitly argued for infill over farmland conversion. He co-sponsored a resolution to preserve citizen referendum rights on zoning decisions. His stated position is that market-driven developer planning overrides community interest and growth should be constrained to where infrastructure supports it.",
+    "sources": [
+      "https://www.ksmu.org/news/2025-11-04/springfield-city-council-approves-controversial-east-division-rezoning",
+      "https://www.ksmu.org/news/2026-02-09/springfield-city-council-approves-resolution-to-maintain-local-control-and-initiate-community-conversation"
+    ],
+    "quote_text": "We're taking farmland on the outskirts of the city of Springfield and building [an] apartment complex. No city planner looking at this objectively would say that's a good idea. Nobody. We let developers plan our city.",
+    "quote_deidentified": "We're taking farmland on the outskirts of the city and building [an] apartment complex. No city planner looking at this objectively would say that's a good idea. Nobody. We let developers plan our city."
+  },
+  {
+    "politician_id": "c9b6d933-17a0-4f97-81e0-3b8f49d05f85",
+    "external_id": -2970000003,
+    "full_name": "Craig Hosmer",
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "topic_key": "housing",
+    "value": 3,
+    "reasoning": "Hosmer expressed support for the Restore SGF affordable housing program (July 2024) — a city-backed initiative using grants and loans to support homeownership in historically underserved neighborhoods. He voted against rezoning large apartment complexes but did not oppose affordable housing programs. His position reflects targeted support for subsidized affordable housing projects consistent with stance 3.",
+    "sources": [
+      "https://www.ksmu.org/news/2024-07-11/leaders-of-restore-sgf-tell-springfield-city-council-the-program-is-having-an-impact",
+      "https://www.ksmu.org/news/2025-02-10/springfield-city-council-votes-8-1-to-approve-controversial-new-subdivision-layout"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "c9b6d933-17a0-4f97-81e0-3b8f49d05f85",
+    "external_id": -2970000003,
+    "full_name": "Craig Hosmer",
+    "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+    "topic_key": "economic-development",
+    "value": 3,
+    "reasoning": "Hosmer co-sponsored the resolution to protect Springfield's community referendum process against a state bill that would have removed citizen oversight of rezoning. His statements frame unchecked developer-driven development as a problem. He did not oppose economic development generally — he supported the city-funded Restore SGF program — but conditions development activity on community benefit and planning standards.",
+    "sources": [
+      "https://www.ksmu.org/news/2026-02-09/springfield-city-council-approves-resolution-to-maintain-local-control-and-initiate-community-conversation",
+      "https://www.ksmu.org/news/2024-07-11/leaders-of-restore-sgf-tell-springfield-city-council-the-program-is-having-an-impact"
+    ],
+    "quote_text": "There's been one successful referendum on a zoning issue since the charter has been in place. The chamber is upset because they lost.",
+    "quote_deidentified": "There's been one successful referendum on a zoning issue since the charter has been in place. The chamber is upset because they lost."
+  },
+  {
+    "politician_id": "c9b6d933-17a0-4f97-81e0-3b8f49d05f85",
+    "external_id": -2970000003,
+    "full_name": "Craig Hosmer",
+    "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+    "topic_key": "city-sanitation",
+    "value": 3,
+    "reasoning": "Hosmer voiced support for strengthening Springfield's nuisance and housing code to target illegal signs on public property (June 2026), stating the city has needed to act on this for a long time. This reflects a code-enforcement approach to maintaining city cleanliness consistent with enforcing anti-dumping and property maintenance laws against property owners.",
+    "sources": [
+      "https://www.ksmu.org/news/2026-06-09/city-of-springfield-looks-to-strengthen-its-nuisance-and-housing-code-to-target-illegal-signs"
+    ],
+    "quote_text": "I think this is something that makes us look bad as a city. We've got telephone poles covered with signs...and I think this is something that we've needed to do for a long time.",
+    "quote_deidentified": "I think this is something that makes us look bad as a city. We've got telephone poles covered with signs...and I think this is something that we've needed to do for a long time."
+  },
+  {
+    "politician_id": "c9b6d933-17a0-4f97-81e0-3b8f49d05f85",
+    "external_id": -2970000003,
+    "full_name": "Craig Hosmer",
+    "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+    "topic_key": "public-safety-approach",
+    "value": 3,
+    "reasoning": "Hosmer co-sponsored a resolution for Springfield City Council to review Springfield Police Department operational guidelines (Feb 2026), indicating engagement with police accountability and oversight rather than either defunding or unconditional budget expansion. No evidence of pushing for major reallocation to social services or opposing crisis response additions; the review co-sponsorship reflects a balanced reform approach.",
+    "sources": [
+      "https://www.ksmu.org/news/2026-02-03/springfield-city-council-approves-review-of-spd-guidelines"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "12f957fb-08e5-4443-9bcc-582b049ff4f5",
+    "external_id": -2970000004,
+    "full_name": "Callie Carroll",
+    "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+    "topic_key": "public-safety-approach",
+    "value": 3,
+    "reasoning": "Carroll voted yes in a 9-0 council vote (Aug 2024) to place a 3/4-cent sales tax on the November ballot, splitting revenue between police/firefighter pension support and community/parks projects. Her vote supported both law enforcement funding and broader community investment, consistent with maintaining current public safety funding while adding broader service capacity.",
+    "sources": [
+      "https://www.ksmu.org/news/2024-08-06/springfield-city-council-sends-sales-tax-proposal-to-voters-in-november",
+      "https://www.springfieldmo.gov/Directory.aspx?EID=452"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "12f957fb-08e5-4443-9bcc-582b049ff4f5",
+    "external_id": -2970000004,
+    "full_name": "Callie Carroll",
+    "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+    "topic_key": "economic-development",
+    "value": 3,
+    "reasoning": "Carroll works as Business Development and Shareholder Relations Officer at Old Missouri Bank and chairs the City Council Community Involvement Committee. She voted yes on an Oct 2024 amendment to advance the Sunshine & National rezoning (5-3 vote), supporting a development proposal proceeding through review. Her professional background and vote patterns suggest targeted development with community accountability rather than maximum-incentive or minimal-government approaches.",
+    "sources": [
+      "https://www.springfieldmo.gov/Directory.aspx?EID=452",
+      "https://www.ksmu.org/news/2024-10-08/no-springfield-city-council-vote-yet-on-sunshine-and-national-rezoning-case"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "12f957fb-08e5-4443-9bcc-582b049ff4f5",
+    "external_id": -2970000004,
+    "full_name": "Callie Carroll",
+    "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+    "topic_key": "homelessness-response",
+    "value": 3,
+    "reasoning": "Carroll served on council when Springfield approved a $5M federal grant application for chronic homelessness housing (Nov 2024) and the city partnered with nonprofits on outreach and tiny homes. No direct Carroll statement advocating strict camping enforcement or purely housing-first policy. The council's documented pattern of investing in shelter and services while maintaining standard public space rules is consistent with stance 3.",
+    "sources": [
+      "https://www.ksmu.org/news/2024-11-01/numerous-bills-on-agenda-for-november-4-springfield-city-council-meeting",
+      "https://www.ksmu.org/news/2024-05-03/springfield-homeless-nonprofit-reveals-it-closed-revive-66-campsite-to-focus-on-tiny-home-developments"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "12f957fb-08e5-4443-9bcc-582b049ff4f5",
+    "external_id": -2970000004,
+    "full_name": "Callie Carroll",
+    "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+    "topic_key": "transportation-priorities",
+    "value": 3,
+    "reasoning": "Carroll voted yes (8-0 unanimous, Nov 2023) on accepting over $150,000 in federal grants for two pedestrian and bike walkability projects (Sunset Street and Sherman Parkway). The city funded local match through its existing 8-cent transportation tax, maintaining roads while selectively adding pedestrian improvements where density supports it.",
+    "sources": [
+      "https://www.ksmu.org/news/2023-11-07/springfield-city-council-approves-funding-for-two-walkability-projects",
+      "https://www.springfieldmo.gov/Directory.aspx?EID=452"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "12f957fb-08e5-4443-9bcc-582b049ff4f5",
+    "external_id": -2970000004,
+    "full_name": "Callie Carroll",
+    "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+    "topic_key": "residential-zoning",
+    "value": 3,
+    "reasoning": "Carroll voted yes on the Oct 2024 amendment to advance the Sunshine & National rezoning (5-3). The council also approved apartment complex rezonings near commercial corridors (Nov 2023) and Carroll was in the 8-1 majority on a new subdivision (Feb 2025). This pattern supports allowing multifamily and mixed-use near commercial corridors while the broader code and review process remains in place.",
+    "sources": [
+      "https://www.ksmu.org/news/2024-10-08/no-springfield-city-council-vote-yet-on-sunshine-and-national-rezoning-case",
+      "https://www.ksmu.org/news/2023-11-07/springfield-city-council-considers-rezoning-plans-for-two-more-apartment-complexes",
+      "https://www.ksmu.org/news/2025-02-10/springfield-city-council-votes-8-1-to-approve-controversial-new-subdivision-layout"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "d18c04e4-98cb-48b6-bd0a-4f15f2f92ef4",
+    "external_id": -2970000005,
+    "full_name": "Derek Lee",
+    "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+    "topic_key": "public-safety-approach",
+    "value": 4,
+    "reasoning": "Lee's stated post-election priorities were public safety and fully staffing the police department. He voted yes (9-0, Aug 2024) on a sales tax measure that included police/firefighter pension funding and pay raises. His explicit campaign emphasis on police staffing levels aligns squarely with increasing police staffing and pay to improve response times and deter crime.",
+    "sources": [
+      "https://www.ksmu.org/news/2023-04-05/who-won-races-for-springfield-mayor-and-city-council-ozarks-public-radio-has-the-recap",
+      "https://www.ksmu.org/news/2024-08-06/springfield-city-council-sends-sales-tax-proposal-to-voters-in-november"
+    ],
+    "quote_text": "I want to work on public safety, and I want to work towards getting the police department fully staffed.",
+    "quote_deidentified": "I want to work on public safety, and I want to work towards getting the police department fully staffed."
+  },
+  {
+    "politician_id": "d18c04e4-98cb-48b6-bd0a-4f15f2f92ef4",
+    "external_id": -2970000005,
+    "full_name": "Derek Lee",
+    "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+    "topic_key": "economic-development",
+    "value": 4,
+    "reasoning": "Lee has owned Lee Engineering and Associates in Springfield for over 20 years working on development projects. He voted yes on the Oct 2024 Sunshine & National rezoning amendment (5-3) supporting a development project advancing. His professional background in private development engineering and consistent pro-development voting record align with actively competing for major development with significant infrastructure investment.",
+    "sources": [
+      "https://www.springfieldmo.gov/directory.aspx?EID=635",
+      "https://www.ksmu.org/news/2024-10-08/no-springfield-city-council-vote-yet-on-sunshine-and-national-rezoning-case"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "d18c04e4-98cb-48b6-bd0a-4f15f2f92ef4",
+    "external_id": -2970000005,
+    "full_name": "Derek Lee",
+    "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+    "topic_key": "transportation-priorities",
+    "value": 3,
+    "reasoning": "Lee serves as Springfield City Council Liaison to the Ozarks Transportation Organization (OTO), the regional MPO responsible for road and transit planning across the metro area. He voted yes (8-0, Nov 2023) on pedestrian/bike walkability grants. The OTO liaison role involves balancing regional road maintenance with multimodal planning, consistent with maintaining roads while selectively adding transit and pedestrian improvements.",
+    "sources": [
+      "https://www.springfieldmo.gov/directory.aspx?EID=635",
+      "https://www.ksmu.org/news/2023-11-07/springfield-city-council-approves-funding-for-two-walkability-projects"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "d18c04e4-98cb-48b6-bd0a-4f15f2f92ef4",
+    "external_id": -2970000005,
+    "full_name": "Derek Lee",
+    "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+    "topic_key": "residential-zoning",
+    "value": 3,
+    "reasoning": "Lee voted yes on the Oct 2024 Sunshine & National rezoning amendment (5-3) and the council approved apartment complex rezonings near commercial corridors (Nov 2023). He was in the 8-1 majority on a new subdivision (Feb 2025). This pattern supports multifamily and mixed-use development near commercial corridors proceeding through standard review.",
+    "sources": [
+      "https://www.ksmu.org/news/2024-10-08/no-springfield-city-council-vote-yet-on-sunshine-and-national-rezoning-case",
+      "https://www.ksmu.org/news/2023-11-07/springfield-city-council-considers-rezoning-plans-for-two-more-apartment-complexes",
+      "https://www.ksmu.org/news/2025-02-10/springfield-city-council-votes-8-1-to-approve-controversial-new-subdivision-layout"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "d18c04e4-98cb-48b6-bd0a-4f15f2f92ef4",
+    "external_id": -2970000005,
+    "full_name": "Derek Lee",
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "topic_key": "housing",
+    "value": 3,
+    "reasoning": "Lee seconded the motion (6-1, June 2025) to reserve $458,342 toward a potential rental inspection program, signaling support for targeted housing quality oversight without rent control. His voting record on apartment rezoning (Nov 2023, Oct 2024) shows support for increasing supply through permitting. This reflects targeted help via easier permits and limited oversight rather than rent caps or a purely market-only approach.",
+    "sources": [
+      "https://www.ksmu.org/news/2025-06-10/springfield-city-council-votes-to-reserve-458k-toward-possible-rental-inspection-program",
+      "https://www.ksmu.org/news/2023-11-07/springfield-city-council-considers-rezoning-plans-for-two-more-apartment-complexes"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "d18c04e4-98cb-48b6-bd0a-4f15f2f92ef4",
+    "external_id": -2970000005,
+    "full_name": "Derek Lee",
+    "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+    "topic_key": "homelessness-response",
+    "value": 3,
+    "reasoning": "The council under which Lee served applied for $5M in federal chronic homelessness housing grants (Nov 2024) and collaborated with nonprofits on tiny homes and outreach day centers. Lee seconded the motion to fund a rental inspection program (June 2025), showing concern for housing quality. No evidence Lee advocated for strict camping bans or purely housing-first approaches — record reflects services plus reasonable enforcement.",
+    "sources": [
+      "https://www.ksmu.org/news/2025-06-10/springfield-city-council-votes-to-reserve-458k-toward-possible-rental-inspection-program",
+      "https://www.ksmu.org/news/2024-11-01/numerous-bills-on-agenda-for-november-4-springfield-city-council-meeting"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "d01ea1a5-c39a-42c4-8481-61b00984b72f",
+    "external_id": -2970000006,
+    "full_name": "Monica Horton",
+    "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+    "topic_key": "campaign-finance",
+    "value": 2,
+    "reasoning": "Horton voted against advancing a substitute campaign finance ordinance in April 2026 that critics said weakened the original bill by removing the ethics commission and adding loopholes. She was one of only two council members to oppose the substitute, stating the original bill aligned with her view and that certain provisions of the substitute were still \"up in the air\" for her.",
+    "sources": [
+      "https://www.ksmu.org/news/2026-04-21/substitute-springfield-city-council-mayoral-campaign-finance-limit-bill-moves-forward",
+      "https://www.springfieldmo.gov/directory.aspx?EID=458"
+    ],
+    "quote_text": "elements that are up in the air for her",
+    "quote_deidentified": "elements that are up in the air for the Council Member"
+  },
+  {
+    "politician_id": "d01ea1a5-c39a-42c4-8481-61b00984b72f",
+    "external_id": -2970000006,
+    "full_name": "Monica Horton",
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "topic_key": "housing",
+    "value": 3,
+    "reasoning": "Horton's official council profile lists \"missing middle housing\" as one of her explicit Zone 1 advocacy priorities, alongside nuisance properties and neighborhood-scale commercial development. This indicates support for increasing housing density and affordability tools beyond the status quo but falls short of a mandate for large-scale public housing or rent caps.",
+    "sources": [
+      "https://www.springfieldmo.gov/directory.aspx?EID=458"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "d01ea1a5-c39a-42c4-8481-61b00984b72f",
+    "external_id": -2970000006,
+    "full_name": "Monica Horton",
+    "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+    "topic_key": "economic-development",
+    "value": 3,
+    "reasoning": "Horton's official council profile cites \"desirable neighborhood-scale commercial development\" as a Zone 1 priority and frames economic mobility as a systemic goal. She serves on the Finance and Administration Committee and questioned a proposed new staff hire for redevelopment in May 2026 — indicating she supports targeted economic development with accountability, not blanket corporate subsidies or unfettered market development.",
+    "sources": [
+      "https://www.springfieldmo.gov/directory.aspx?EID=458",
+      "https://www.ksmu.org/news/2026-05-27/city-council-question-on-budget-highlights-goals-on-redevelopment"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "5e9fe7ff-167e-483a-8eea-fc1d5d43efea",
+    "external_id": -2970000008,
+    "full_name": "Brandon Jenson",
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "topic_key": "housing",
+    "value": 3,
+    "reasoning": "Jenson explicitly stated \"Thank you for increasing the supply of housing in our community. We need every unit we can get\" when addressing apartment developers (Nov 2023), and voted to approve the East Division rezoning despite urban sprawl concerns saying \"the need for housing is too great.\" He also sponsored the rental inspection pilot program (Nov 2025) and reserved $458K in budget funds for its expansion (Jun 2025), reflecting a mixed approach of supporting new supply alongside tenant protection mechanisms.",
+    "sources": [
+      "https://www.ksmu.org/news/2023-11-07/springfield-city-council-considers-rezoning-plans-for-two-more-apartment-complexes",
+      "https://www.ksmu.org/news/2025-11-04/springfield-city-council-approves-controversial-east-division-rezoning",
+      "https://www.ksmu.org/news/2025-06-10/springfield-city-council-votes-to-reserve-458k-toward-possible-rental-inspection-program"
+    ],
+    "quote_text": "Thank you for increasing the supply of housing in our community. We need every unit we can get.",
+    "quote_deidentified": "Thank you for increasing the supply of housing in our community. We need every unit we can get."
+  },
+  {
+    "politician_id": "5e9fe7ff-167e-483a-8eea-fc1d5d43efea",
+    "external_id": -2970000008,
+    "full_name": "Brandon Jenson",
+    "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+    "topic_key": "growth-and-development",
+    "value": 4,
+    "reasoning": "Jenson voted yes on the controversial East Division outlying rezoning (Nov 2025), acknowledging sprawl concerns but concluding \"the need for housing is too great,\" indicating a strong pro-development tilt. He supported the Commercial-Pacific Street TIF redevelopment and consistently voted with the council majority on development approvals, suggesting an orientation toward streamlining growth.",
+    "sources": [
+      "https://www.ksmu.org/news/2025-11-04/springfield-city-council-approves-controversial-east-division-rezoning",
+      "https://www.ksmu.org/news/2024-04-09/council-approves-blight-designation-redevelopment-plan-for-springfields-historic-commercial-street"
+    ],
+    "quote_text": "At some point we're going to have to draw a line in the sand. But until we can drive that market shift, the need for housing is too great.",
+    "quote_deidentified": "At some point we're going to have to draw a line in the sand. But until we can drive that market shift, the need for housing is too great."
+  },
+  {
+    "politician_id": "5e9fe7ff-167e-483a-8eea-fc1d5d43efea",
+    "external_id": -2970000008,
+    "full_name": "Brandon Jenson",
+    "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+    "topic_key": "residential-zoning",
+    "value": 3,
+    "reasoning": "Jenson co-sponsored the Feb 2026 resolution defending Springfield's charter provision allowing citizen referendum petitions on rezoning decisions, stating \"the charter is the collective voice of 75 years of Springfieldians\" — preserving neighborhood input mechanisms. At the same time he consistently voted to approve multifamily housing near existing corridors. He abstained on the University Heights remand vote (Oct 2025), reflecting a case-by-case approach rather than a blanket pro- or anti-density stance.",
+    "sources": [
+      "https://www.ksmu.org/news/2026-02-03/springfield-city-council-member-questions-chambers-support-of-bill-that-would-impact-the-city",
+      "https://www.ksmu.org/news/2026-02-09/springfield-city-council-approves-resolution-to-maintain-local-control-and-initiate-community-conversation",
+      "https://www.ksmu.org/news/2025-10-07/springfield-city-council-hears-arguments-on-university-heights-rezoning"
+    ],
+    "quote_text": "the charter is the collective voice of 75 years of Springfieldians",
+    "quote_deidentified": "the charter is the collective voice of 75 years of Springfieldians"
+  },
+  {
+    "politician_id": "5e9fe7ff-167e-483a-8eea-fc1d5d43efea",
+    "external_id": -2970000008,
+    "full_name": "Brandon Jenson",
+    "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+    "topic_key": "public-safety-approach",
+    "value": 4,
+    "reasoning": "Jenson co-sponsored a Feb 2026 resolution calling for a review of Springfield Police Department guidelines to improve traffic enforcement, stating \"We wonder why people feel unsafe in our community despite crime trends generally decreasing, and it's because people see little acts of lawlessness every single day with relatively few examples of enforcement.\" He framed the SPD review as a data request aimed at removing enforcement obstacles — reflecting a pro-enforcement orientation rather than a redirect-funding approach.",
+    "sources": [
+      "https://www.ksmu.org/news/2026-02-03/springfield-city-council-approves-review-of-spd-guidelines"
+    ],
+    "quote_text": "We wonder why people feel unsafe in our community despite crime trends generally decreasing, and it's because people see little acts of lawlessness every single day with relatively few examples of enforcement when it happens.",
+    "quote_deidentified": "We wonder why people feel unsafe in our community despite crime trends generally decreasing, and it's because people see little acts of lawlessness every single day with relatively few examples of enforcement when it happens."
+  },
+  {
+    "politician_id": "5e9fe7ff-167e-483a-8eea-fc1d5d43efea",
+    "external_id": -2970000008,
+    "full_name": "Brandon Jenson",
+    "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+    "topic_key": "campaign-finance",
+    "value": 2,
+    "reasoning": "Jenson spoke in favor of the Springfield campaign finance contribution limits ordinance (May 2026), though he stated the final substitute bill was \"fundamentally weaker policy\" than he had wanted, indicating he pushed for stricter limits. He supported moving forward, saying he believes the bill is \"better than no bill\" and \"hopes this is just the first step\" — suggesting a preference for stronger limits on political donations.",
+    "sources": [
+      "https://www.ksmu.org/news/2026-05-04/springfield-city-council-approves-campaign-finance-contribution-limits"
+    ],
+    "quote_text": "the passage of a substitute bill at the last regular meeting resulted in a fundamentally weaker policy",
+    "quote_deidentified": "the passage of a substitute bill at the last regular meeting resulted in a fundamentally weaker policy"
+  },
+  {
+    "politician_id": "5e9fe7ff-167e-483a-8eea-fc1d5d43efea",
+    "external_id": -2970000008,
+    "full_name": "Brandon Jenson",
+    "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+    "topic_key": "transportation-priorities",
+    "value": 3,
+    "reasoning": "Jenson serves as the City Council Liaison to the Ozarks Transportation Organization and raised pedestrian connectivity concerns on a Grand Street apartment project in Oct 2023, asking whether the city was considering improvements including \"providing some sort of pedestrian connectivity across Grand.\" His background in community planning and liaison role suggest active interest in multimodal infrastructure, but no strong primary-mode advocacy found.",
+    "sources": [
+      "https://www.ksmu.org/news/2023-10-03/springfield-city-council-considers-community-center-residential-developments",
+      "https://www.springfieldmo.gov/directory.aspx?EID=454"
+    ],
+    "quote_text": "is the city considering any improvements — they added a median partly along Grand Street to help with some of the ingress and egress issues out of the Walmart Neighborhood Market. But is there any consideration of extending that median and/or ideally providing some sort of pedestrian connectivity across Grand?",
+    "quote_deidentified": "Is the city considering any improvements — they added a median partly along Grand Street to help with some of the ingress and egress issues out of the Walmart Neighborhood Market. But is there any consideration of extending that median and/or ideally providing some sort of pedestrian connectivity across Grand?"
+  },
+  {
+    "politician_id": "5e9fe7ff-167e-483a-8eea-fc1d5d43efea",
+    "external_id": -2970000008,
+    "full_name": "Brandon Jenson",
+    "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+    "topic_key": "economic-development",
+    "value": 3,
+    "reasoning": "Jenson serves as Finance and Administration Committee Chair and his professional background is as Director of Community Impact at United Way of the Ozarks and former CDBG program manager for the Missouri Department of Economic Development — roles focused on targeted community benefits. He voted with the council majority on the Commercial-Pacific Street TIF redevelopment plan (7-2) and was active on the ARPA Review Committee. This profile aligns with community-benefit-focused incentives rather than maximum-subsidy competition.",
+    "sources": [
+      "https://www.springfieldmo.gov/directory.aspx?EID=454",
+      "https://www.ksmu.org/news/2024-04-09/council-approves-blight-designation-redevelopment-plan-for-springfields-historic-commercial-street"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "22c2450c-7df5-40cc-b68c-7b31375dd1b0",
+    "external_id": -2970000009,
+    "full_name": "Bruce Adib-Yazdi",
+    "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+    "topic_key": "growth-and-development",
+    "value": 3,
+    "reasoning": "Adib-Yazdi voted YES on rezoning a 7.5-acre site for a 182-unit apartment complex (May 2026, 7-2 vote), stating his campaign priorities were \"strategic growth, strong neighborhoods and citizen engagement\" and that \"all three have to happen at the same time.\" He frames growth as requiring proactive planning alongside neighborhood integrity and citizen input — consistent with investing in infrastructure to support responsible expansion rather than removing regulatory barriers.",
+    "sources": [
+      "https://www.ksmu.org/news/2026-05-05/182-unit-apartment-complex-to-be-built-near-walnut-lawn-and-maryland-in-springfield",
+      "https://www.springfieldmo.gov/directory.aspx?EID=894"
+    ],
+    "quote_text": "My campaign when I ran included strategic growth, strong neighborhoods and citizen engagement. The reality is you can't pick one of those. It's all three. All three have to happen at the same time. We need strategic growth in our city. We need neighborhoods that are strong, and we need citizen engagement. And I believe that this project has achieved all three of those things.",
+    "quote_deidentified": "My campaign when I ran included strategic growth, strong neighborhoods and citizen engagement. The reality is you can't pick one of those. It's all three. All three have to happen at the same time. We need strategic growth in our city. We need neighborhoods that are strong, and we need citizen engagement. And I believe that this project has achieved all three of those things."
+  },
+  {
+    "politician_id": "22c2450c-7df5-40cc-b68c-7b31375dd1b0",
+    "external_id": -2970000009,
+    "full_name": "Bruce Adib-Yazdi",
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "topic_key": "housing",
+    "value": 2,
+    "reasoning": "Adib-Yazdi is VP of Development at the Vecino Group, a firm specializing in affordable housing development nationwide, and holds a professional architecture license. He voted YES on the 182-unit apartment rezoning in May 2026, and KSMU reports housing is one of the Springfield City Council's three primary goals he works toward. His professional career is built on expanding affordable housing supply, consistent with stance 2.",
+    "sources": [
+      "https://www.ksmu.org/news/2026-05-05/182-unit-apartment-complex-to-be-built-near-walnut-lawn-and-maryland-in-springfield",
+      "https://www.springfieldmo.gov/directory.aspx?EID=894",
+      "https://www.ksmu.org/show/making-democracy-work/2025-10-08/springfield-city-council-member-elected-in-april-talks-about-acclimating-to-the-new-role"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "22c2450c-7df5-40cc-b68c-7b31375dd1b0",
+    "external_id": -2970000009,
+    "full_name": "Bruce Adib-Yazdi",
+    "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+    "topic_key": "residential-zoning",
+    "value": 3,
+    "reasoning": "Adib-Yazdi voted YES on rezoning a single-family/PD site to allow a 4-story, 182-unit multifamily apartment complex in May 2026. He cited strategic growth and strong neighborhoods together, suggesting he supports multifamily density near commercial corridors (Walnut Lawn/Maryland is a commercial corridor) while emphasizing neighborhood compatibility and citizen engagement rather than citywide blanket upzoning.",
+    "sources": [
+      "https://www.ksmu.org/news/2026-05-05/182-unit-apartment-complex-to-be-built-near-walnut-lawn-and-maryland-in-springfield",
+      "https://www.springfieldmo.gov/directory.aspx?EID=894"
+    ],
+    "quote_text": "My campaign when I ran included strategic growth, strong neighborhoods and citizen engagement. The reality is you can't pick one of those. It's all three. All three have to happen at the same time.",
+    "quote_deidentified": "My campaign when I ran included strategic growth, strong neighborhoods and citizen engagement. The reality is you can't pick one of those. It's all three. All three have to happen at the same time."
+  },
+  {
+    "politician_id": "22c2450c-7df5-40cc-b68c-7b31375dd1b0",
+    "external_id": -2970000009,
+    "full_name": "Bruce Adib-Yazdi",
+    "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+    "topic_key": "economic-development",
+    "value": 3,
+    "reasoning": "Adib-Yazdi praised the Springfield City Council's April 2026 approval of a land disposal to the Community Foundation of the Ozarks as \"a very creative way to solve a particular issue,\" commending the staff. He is a board member of the Urban Land Institute's Southwest Missouri chapter. Economic growth is listed as one of his three primary council goals per KSMU. His record shows support for targeted development tools with community benefit, not blanket corporate subsidies.",
+    "sources": [
+      "https://www.ksmu.org/news/2026-04-06/springfield-city-council-approves-agreement-with-a-local-nonprofit-that-will-benefit-the-downtown-area",
+      "https://www.springfieldmo.gov/directory.aspx?EID=894"
+    ],
+    "quote_text": "I do believe this is a very creative way to solve a particular issue, and I commend the staff and the team that worked on it.",
+    "quote_deidentified": "I do believe this is a very creative way to solve a particular issue, and I commend the staff and the team that worked on it."
+  },
+  {
+    "politician_id": "22c2450c-7df5-40cc-b68c-7b31375dd1b0",
+    "external_id": -2970000009,
+    "full_name": "Bruce Adib-Yazdi",
+    "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+    "topic_key": "transportation-priorities",
+    "value": 2,
+    "reasoning": "Adib-Yazdi has an active civic role with Ozark Greenways (a trails/cycling nonprofit) and is a personal cycling enthusiast who serves on the Springfield Traffic Advisory Board. His professional architecture background at the Urban Land Institute and his neighborhood association leadership reflect documented commitment to multimodal infrastructure, consistent with equal investment in roads and non-automotive options.",
+    "sources": [
+      "https://www.springfieldmo.gov/directory.aspx?EID=894"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "22c2450c-7df5-40cc-b68c-7b31375dd1b0",
+    "external_id": -2970000009,
+    "full_name": "Bruce Adib-Yazdi",
+    "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+    "topic_key": "local-environment",
+    "value": 2,
+    "reasoning": "Adib-Yazdi is the City Council Liaison to the Ozarks Headwaters Recycling and Materials Management District, a direct committee assignment with an environmental mandate. He is also an active member of Ozark Greenways, a conservation and trails organization. These documented civic commitments reflect a pro-environment orientation consistent with protecting parks and requiring developers to offset environmental impact.",
+    "sources": [
+      "https://www.springfieldmo.gov/directory.aspx?EID=894"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "politician_id": "9f37819e-ed2a-4698-af04-8574e0f858c1",
+    "external_id": -2928860002,
+    "full_name": "Sarah Hough",
+    "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+    "topic_key": "school-vouchers",
+    "value": 2,
+    "reasoning": "At a March 2025 candidate forum Hough stated \"public schools are the bedrock of a thriving community\" and expressed skepticism toward state-level open enrollment legislation, noting SPS is already an open enrollment district and there are \"a lot of unanswered questions\" about the proposal. This aligns with prioritizing public school funding while being cautious about school-choice expansion — closest match to stance 2 (prioritize public school funding while restricting vouchers/choice).",
+    "sources": [
+      "https://www.ksmu.org/show/informed-voter-coalition/2025-03-26/candidates-for-springfield-school-board-share-their-views-ahead-of-the-april-8-municipal-election"
+    ],
+    "quote_text": "\"public schools are the bedrock of a thriving community\"",
+    "quote_deidentified": "The Board Vice President stated that \"public schools are the bedrock of a thriving community.\""
+  },
+  {
+    "politician_id": "7519c4f2-77ed-4ad0-a0dc-9495080c61db",
+    "external_id": -2928860006,
+    "full_name": "Gail Smart",
+    "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+    "topic_key": "school-vouchers",
+    "value": 2,
+    "reasoning": "Smart opposed open enrollment (school choice) in a March 2025 KSMU Informed Voter Coalition interview, citing resource and transportation constraints: SPS lacks enough bus drivers to transport students to other districts. Her opposition is practical rather than ideological, aligning with prioritizing public school funding while not endorsing universal school choice. The question asked about Missouri's open enrollment bills (public-to-public transfers), the closest analog to the school-vouchers topic.",
+    "sources": [
+      "https://www.ksmu.org/show/informed-voter-coalition/2025-03-26/candidates-for-springfield-school-board-share-their-views-ahead-of-the-april-8-municipal-election"
+    ],
+    "quote_text": "\"I do not think that I would be a supporter of this. I think that it has a lot of issues that need to be thought through because, from what I understand, the home district would be responsible for transporting these kids to a different district, and we don't have enough bus drivers for the students that we have that want to ride the bus. So, I would not be in favor of this.\"",
+    "quote_deidentified": "The Board Member stated: \"I do not think that I would be a supporter of this. I think that it has a lot of issues that need to be thought through because, from what I understand, the home district would be responsible for transporting these kids to a different district, and we don't have enough bus drivers for the students that we have that want to ride the bus. So, I would not be in favor of this.\""
+  }
+]
