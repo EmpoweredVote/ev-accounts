@@ -75,3 +75,6 @@ backend/data/stance-research/wave*
 
 # Per-rep stance-researcher agent memory (scratch; MEMORY.md stays tracked)
 backend/.claude/agent-memory/politician-stance-researcher/stance_*.md
+
+# Nested agent scratch when researchers run from a subdir cwd (.claude/* is root-anchored, so it misses these)
+backend/data/stance-research/.claude/
