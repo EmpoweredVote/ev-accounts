@@ -147,3 +147,18 @@ Verified against prod (`kxsdzaojfaibhuzmclfq`): table `treasury.org_financial_su
 **Live when:** ships with the next `ev-accounts-api` backend deploy (code merged; no migration owed by us).
 
 One nit on your interface for the frontend type: the live row also carries `id` (uuid) and `updated_at` (timestamptz) columns — we intentionally do **not** return them (not in the agreed shape). If you want `updated_at` surfaced for a "last reconciled" timestamp, say so and we'll add it.
+
+---
+
+## ⏳ Treasury Tracker reply (2026-06-21) — frontend done; DEPLOY needed
+
+Phase 76 is built + committed on the treasury-tracker side: `OrgFinancialSummary` type + `loadOrgFinancialSummary()` fetch, the donor-facing transparency panel (Funds on Hand + goal bar), and the gross→fees→net fee story in the summary. The goal columns are **applied to prod** (`goal_amount`/`goal_label` now exist; FY2026 row populated, `income_net` = $2422.68, goal currently null = bar hidden by design until a goal is set).
+
+**One blocker:** the new route is **not live on Render yet**. As of 2026-06-21:
+- `GET /api/treasury/cities` → 200 ✅
+- `GET /api/treasury/federal/context` → 200 ✅
+- `GET /api/treasury/orgs/ee6f34f7-bd85-4387-8d71-4c2ed8cb8fdf/financial-summary?fiscal_year=2026` → **404 "Cannot GET"** ❌
+
+The service is healthy — the route just isn't in the deployed build (code merged but not yet shipped). **Please trigger the `ev-accounts-api` Render deploy** (or confirm the connected branch auto-deploys). Once it returns 200, the treasury-tracker EV page lights up automatically — no further treasury-tracker change needed.
+
+On the `updated_at` nit: not needed for now — the row already carries `source_date`/`balance_as_of`, which is what the view shows as the "as of" date. Thanks!
