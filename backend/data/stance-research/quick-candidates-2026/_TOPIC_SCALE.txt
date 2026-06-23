@@ -1,0 +1,108 @@
+QUICK CANDIDATES 2026 — TOPIC SCALE (gap topics for CA Gov + LA Mayor deep-coverage build).
+Match documented evidence to the EXACT stance text. Direction varies per topic — NEVER infer from party.
+A candidate's `value` MUST be the integer (1-5) whose text best matches a REAL, fetched, cited source.
+If no genuine evidence exists for a candidate on a topic, OMIT the row (honest-skip) — do not guess.
+
+=== campaign-finance ===
+Q: What rules should govern money in political campaigns and elections?
+  1 = ban all private money in politics and publicly fund campaigns
+  2 = strictly limit corporate donations and dark money groups
+  3 = require full disclosure of all political donations
+  4 = reduce restrictions on political donations and spending
+  5 = eliminate all campaign finance laws and limits
+
+=== childcare ===
+Q: How should government address the cost and availability of childcare?
+  1 = Establishing publicly funded universal childcare so that all families have access regardless of income
+  2 = Significantly expanding subsidies and provider grants to make childcare affordable for low- and middle-income families
+  3 = Offering targeted tax credits and subsidies for families below a set income threshold while supporting providers through training and facility grants
+  4 = Reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies reserved for the lowest-income families
+  5 = Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers
+
+=== data-centers ===
+Q: How should government manage the growth of large-scale data centers?
+  1 = Imposing a moratorium on new data center construction until energy infrastructure can support demand without raising costs for residential ratepayers
+  2 = Requiring data centers to fund their own dedicated power generation and barring utilities from passing data center infrastructure costs to residential customers
+  3 = Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval
+  4 = Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts
+  5 = Welcoming data center investment with competitive incentives and minimal regulatory barriers, trusting that economic growth and tax revenue will benefit all residents
+
+=== economic-development ===
+Q: How should your city attract businesses and support economic development?
+  1 = No corporate tax incentives; invest in public services and infrastructure to attract business organically
+  2 = Small business support and local entrepreneur programs only; avoid large corporate subsidies
+  3 = Targeted incentives for specific industries with community benefit agreements and job quality requirements
+  4 = Compete actively for major employers with significant tax abatements and infrastructure investment
+  5 = Offer maximum incentives to attract any large employer; economic growth is the top city priority
+
+=== growth-and-development ===
+Q: How should your city manage population growth and new development?
+  1 = Impose growth limits; require voter approval for major annexations or large-scale developments
+  2 = Allow growth only where existing infrastructure can support it; slow approvals until capacity catches up
+  3 = Plan proactively — invest in infrastructure ahead of growth to support responsible expansion
+  4 = Streamline permitting, reduce fees, and actively recruit development to grow the city's tax base
+  5 = Remove regulatory barriers to development entirely; let market demand determine growth pace
+
+=== jail-capacity ===
+Q: How should government respond to jail overcrowding and criminal justice demand?
+  1 = Redirecting incarceration funding into community-based mental health, addiction, housing, and restorative justice programs to shrink the jail system
+  2 = Reducing the incarcerated population through pretrial diversion, bail reform, and treatment alternatives rather than building new capacity
+  3 = Upgrading jail facilities only as needed to meet constitutional standards, without expanding overall capacity
+  4 = Building additional jail capacity to address overcrowding and facility deficiencies
+  5 = Expanding jail capacity and enforcement as the primary response to crime, prioritizing detention over alternatives
+
+=== medicare/aid ===
+Q: How should Medicare and Medicaid be funded and structured?
+  1 = expand Medicare to cover everyone regardless of age
+  2 = lower Medicare age to 55 and expand Medicaid significantly
+  3 = improve current programs while controlling costs
+  4 = partially privatize Medicare and reduce Medicaid coverage
+  5 = phase out both programs and use private insurance only
+
+=== misinformation ===
+Q: What responsibility do platforms and government have in combating online misinformation?
+  1 = require platforms to remove all false information and regulate algorithms
+  2 = mandate fact-checking and transparency in how algorithms promote content
+  3 = encourage voluntary standards for combating misinformation online
+  4 = protect free speech online and prevent government censorship
+  5 = ban any government involvement in content moderation decisions
+
+=== religious-freedom ===
+Q: What role should religion play in government, public institutions, and policymaking?
+  1 = strictly separate religion from all public institutions and prohibit religious exemptions from civil rights laws.
+  2 = protect religious freedom while ensuring it doesn't override anti-discrimination protections in employment and housing.
+  3 = balance protecting religious practices with maintaining equal treatment under the law for all citizens.
+  4 = protect religious freedom and allow faith-based exemptions from laws that conflict with sincere religious beliefs.
+  5 = strongly protect religious freedom and allow religious organizations complete autonomy in their operations and hiring practices.
+
+=== rent-regulation ===
+Q: What role should your city play in regulating rents and protecting tenants?
+  1 = Expand rent control to all rental units with strong tenant protections and just-cause eviction requirements
+  2 = Strengthen existing rent stabilization and extend coverage to more units
+  3 = Maintain current tenant protections while allowing market rents for new construction
+  4 = Limit rent regulations to subsidized units; allow market rents broadly
+  5 = Oppose rent control entirely; rents should be set by the market without government intervention
+
+=== same-sex-marriage ===
+Q: What legal recognition should same-sex marriages receive?
+  1 = require all states to recognize same-sex marriages and provide full federal benefits and protections.
+  2 = allow same-sex marriage nationwide while protecting some organizations' right to decline participation.
+  3 = let each state decide its own same-sex marriage laws without federal interference.
+  4 = recognize civil unions for same-sex couples but reserve marriage for opposite-sex couples.
+  5 = make same-sex marriage illegal and define marriage as only between one man and one woman.
+
+=== trans-athletes ===
+Q: How should sports leagues determine eligibility for transgender athletes?
+  1 = allow all transgender athletes to compete on teams matching their gender identity without any restrictions or requirements.
+  2 = should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition.
+  3 = create separate transgender divisions or allow case-by-case decisions based on individual circumstances and sport requirements.
+  4 = require transgender athletes to compete only on teams matching their biological sex assigned at birth.
+  5 = completely ban all transgender athletes from competing in any organized sports competitions.
+
+=== transportation-priorities ===
+Q: Where should your city focus its transportation investment?
+  1 = Prioritize pedestrian infrastructure, cycling networks, and public transit; reduce parking requirements citywide
+  2 = Invest equally in roads and multimodal options; require bike lanes and sidewalks on all new road projects
+  3 = Maintain roads while selectively adding transit connections and pedestrian improvements where density supports it
+  4 = Focus on road capacity and traffic flow; transportation investment should serve the majority who drive
+  5 = Prioritize highway access and abundant free parking as the foundation of local transportation policy
