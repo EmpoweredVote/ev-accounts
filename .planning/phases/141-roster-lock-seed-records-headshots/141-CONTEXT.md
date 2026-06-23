@@ -52,7 +52,7 @@ Lock the authoritative ~208-office elected-Big-5 roster (which of Governor / Lt.
 - `.planning/PROJECT.md` §"Current Milestone: v2.18 State Leaders" — gap baseline + Key Decisions
 
 ### Research (this milestone — read before authoring)
-- `.planning/research/SUMMARY.md` — synthesized findings; 208 denominator, build order, external_id conflict resolution
+- `.planning/research/SUMMARY.md` — synthesized findings; 209 denominator (exact, matrix-derived; "~208" elsewhere is an earlier approximation), build order, external_id conflict resolution
 - `.planning/research/FEATURES.md` — the 50-state elected-Big-5 matrix + per-office exception sources (the roster skeleton for SEXR-01)
 - `.planning/research/ARCHITECTURE.md` — feed-surfacing trace, seed model, external_id scheme rationale
 - `.planning/research/PITFALLS.md` — dedup/state-code/external_id traps + office-type evidence framework (matters in 142–143)
