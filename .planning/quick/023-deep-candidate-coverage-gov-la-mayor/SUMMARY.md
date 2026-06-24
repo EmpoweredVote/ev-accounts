@@ -99,6 +99,20 @@ Also fixed the public-safety quote to verbatim ("**second** largest city … lev
 Verified post-push: corrected dates/figures/quote present in DB; 0 stale wrong-fact strings remain.
 Bass row sources are now anchored on primary city/government URLs where available.
 
+## Follow-up: Hilton + Becerra primary-source fact-check + corrections
+Ran the same verification on the 11 Governor stances added in this task (Hilton 7, Becerra 4),
+checking each cited campaign page/PDF, verbatim quotes, figures, and value mapping.
+H1, H3, H7, B1 fully clean. **7 corrections applied + re-pushed:**
+- **H2** (rent-regulation): quote "restore the California Dream of a single family home" was not on the page → corrected to verbatim "The starter home was the foundation of the California Dream."
+- **H4** (growth-and-development): "five-year freeze on new housing regulations" mischaracterized → corrected to "regulations not be changed more than once every five years."
+- **H5** (medicare/aid): dead cited URL → working `/policy/hilton-launches-califordable-...` URL.
+- **H6** (transportation): dropped unsupported "highways rank 49th–50th" sub-claim; noted it's a joint GOP-slate pledge; trimmed to the live HSR-pledge source.
+- **B2** (growth-and-development): quote restored to verbatim incl. "(e.g., 180 days)".
+- **B3** (jail-capacity, priority): cited "June 2000 alternative-sentencing vote" did NOT exist on the source → removed; value 2 kept but re-grounded on the real CURE 80% (Dec 2000) rating + AG record, with an explicit lower-confidence note that his 2026 platform has no CJ section.
+- **B4** (rent-regulation): truncated quote restored to full verbatim sentence ("…within the statewide framework that keeps housing construction moving forward").
+Verified in DB: corrected facts/quotes present, 0 stale wrong-fact strings, values unchanged.
+All four candidates in this task have now had a primary-source verification pass.
+
 ## Files
 - `backend/data/stance-research/quick-candidates-2026/` — `_TOPIC_SCALE.txt`, `hilton.csv`,
   `becerra.csv`, `bass.csv` (header-only), `raman.csv` (header-only), `_push.ts`,
