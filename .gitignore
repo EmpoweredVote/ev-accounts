@@ -5,6 +5,7 @@ backend/node_modules/
 # Build outputs
 dist/
 backend/dist/
+*.tsbuildinfo
 
 # Environment files
 .env
@@ -38,7 +39,10 @@ supabase/.branches/
 supabase/.temp/
 
 # Stance research and topic draft outputs (keep dirs via .gitkeep)
+# Per-run review CSVs live in dated subdirs too, so match recursively — keep
+# markdown summaries/benchmarks and debate-turn source transcripts tracked.
 backend/data/stance-research/*.csv
+backend/data/stance-research/**/*.csv
 backend/data/topic-drafts/*.json
 
 # Coverage tracker data — version-controlled source of truth.
@@ -69,6 +73,7 @@ backend/migrations/_*.sql
 
 # Stance-research working scratch (chunked SQL, agent prompts, wave topic dumps)
 backend/data/stance-research/_*
+backend/data/stance-research/**/_*
 backend/data/stance-research/agent_prompt_*.txt
 backend/data/stance-research/agent-prompt-*.txt
 backend/data/stance-research/wave*
