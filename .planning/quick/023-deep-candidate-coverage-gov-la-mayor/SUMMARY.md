@@ -79,6 +79,26 @@ Enriched CSVs: `bass_enriched.csv`, `raman_enriched.csv`; refs `_TOPIC_SCALE_LOC
 `_bass_current.txt`, `_raman_current.txt`. One CSV-quoting fix (stray comma on 2 Bass rows)
 normalized via csv writer before push.
 
+## Follow-up: Bass primary-source fact-check + corrections
+Because the Bass enrichment leaned on secondary sources (mayor.lacity.gov/lamayor.org returned
+403 to WebFetch), ran a dedicated verification agent using a real browser (Playwright bypassed
+the 403s) to check her specific figures/dates against PRIMARY records (mayor.lacity.gov executive
+directives, planning.lacity.gov, controller/budget docs, LADWP, govtrack/congress.gov, Metro).
+
+14 mayoral claims + all 4 federal spot-checks CONFIRMED. **7 errors found and corrected** in the
+live data (reasoning rewritten + sources upgraded to primary on 8 rows, re-pushed):
+1. ED 1 ≠ the Dec 12 2022 emergency declaration — ED 1 was issued **Dec 16 2022** (homelessness).
+2. "Executive Directive 1 (June 2023)" date wrong — ED 1 was Dec 16 2022; June 2023 was its 1st amendment (housing, residential-zoning).
+3. Amendment conflation — single-family exclusion + 1,443 units = **June 2023**; July 2024 revision = historic/hillside/RSO-12+ (housing, residential-zoning).
+4. "$200M encampment cleanup" unsupported → Inside Safe ≈ **$250M** (city-sanitation, homelessness-response).
+5. "LAHSA underspent" → it was the **city's** homelessness budget (HUD mis-attribution); figures/quote correct (homelessness, homelessness-response).
+6. RSO overhaul "December 2024" → **December 23 2025** (rent-regulation).
+7. ARP childcare "$39B to stabilization grants" → $39B total, **$24B** stabilization grants (childcare).
+Also fixed the public-safety quote to verbatim ("**second** largest city … levels not seen since 1995").
+
+Verified post-push: corrected dates/figures/quote present in DB; 0 stale wrong-fact strings remain.
+Bass row sources are now anchored on primary city/government URLs where available.
+
 ## Files
 - `backend/data/stance-research/quick-candidates-2026/` — `_TOPIC_SCALE.txt`, `hilton.csv`,
   `becerra.csv`, `bass.csv` (header-only), `raman.csv` (header-only), `_push.ts`,
