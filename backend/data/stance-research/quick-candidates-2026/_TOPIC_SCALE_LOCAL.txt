@@ -1,0 +1,180 @@
+LA MAYOR LOCAL-TIER TOPIC SCALE (22 topics). Match documented evidence to the EXACT stance text.
+Direction varies per topic - never infer from party. Keep the candidate's existing value unless
+you find clear contradicting evidence (flag it if so).
+
+=== abortion ===
+Q: What legal framework should govern abortion access?
+  1 = ensure abortion is legal, accessible, and publicly funded at all stages of pregnancy.
+  2 = keep abortion legal and accessible through the second trimester with rare exceptions afterward.
+  3 = allow abortion in the first trimester and in cases of rape, incest, or maternal health risks.
+  4 = restrict abortion to only cases involving rape, incest, or serious threats to the mother's life.
+  5 = ban abortion completely with no exceptions and impose criminal penalties for providers and patients.
+
+=== campaign-finance ===
+Q: What rules should govern money in political campaigns and elections?
+  1 = ban all private money in politics and publicly fund campaigns
+  2 = strictly limit corporate donations and dark money groups
+  3 = require full disclosure of all political donations
+  4 = reduce restrictions on political donations and spending
+  5 = eliminate all campaign finance laws and limits
+
+=== childcare ===
+Q: How should government address the cost and availability of childcare?
+  1 = Establishing publicly funded universal childcare so that all families have access regardless of income
+  2 = Significantly expanding subsidies and provider grants to make childcare affordable for low- and middle-income families
+  3 = Offering targeted tax credits and subsidies for families below a set income threshold while supporting providers through training and facility grants
+  4 = Reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies reserved for the lowest-income families
+  5 = Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers
+
+=== city-sanitation ===
+Q: How should your city approach street cleanliness and sanitation?
+  1 = Significantly expand sanitation staffing, cleaning frequency, and free community disposal access; treat poor conditions as a services failure
+  2 = Increase sanitation crews and prioritize historically underserved neighborhoods to equalize cleanliness citywide
+  3 = Maintain current sanitation services while enforcing anti-dumping laws for businesses and large property owners
+  4 = Rely primarily on enforcement of anti-littering and property maintenance laws; hold residents and businesses responsible
+  5 = Privatize sanitation services and require residents and businesses to contract for cleanup directly
+
+=== civil-rights ===
+Q: What role should government play in addressing racial and social inequality?
+  1 = mandate racial equity requirements in all institutions and provide reparations
+  2 = strengthen civil rights enforcement and address systemic discrimination
+  3 = maintain current civil rights laws while promoting equal opportunity
+  4 = limit federal civil rights enforcement to clear cases of discrimination
+  5 = eliminate affirmative action and all race-based government programs
+
+=== climate-change ===
+Q: What priority should climate change receive in energy and economic policy?
+  1 = declare a climate emergency and ban all activities that increase carbon emissions
+  2 = rapidly transition to renewable energy and phase out fossil fuels by 2030
+  3 = invest in clean energy while gradually reducing reliance on fossil fuels
+  4 = let market forces drive any transition to cleaner energy sources
+  5 = reject climate change policies and focus on economic growth instead
+
+=== data-centers ===
+Q: How should government manage the growth of large-scale data centers?
+  1 = Imposing a moratorium on new data center construction until energy infrastructure can support demand without raising costs for residential ratepayers
+  2 = Requiring data centers to fund their own dedicated power generation and barring utilities from passing data center infrastructure costs to residential customers
+  3 = Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval
+  4 = Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts
+  5 = Welcoming data center investment with competitive incentives and minimal regulatory barriers, trusting that economic growth and tax revenue will benefit all residents
+
+=== economic-development ===
+Q: How should your city attract businesses and support economic development?
+  1 = No corporate tax incentives; invest in public services and infrastructure to attract business organically
+  2 = Small business support and local entrepreneur programs only; avoid large corporate subsidies
+  3 = Targeted incentives for specific industries with community benefit agreements and job quality requirements
+  4 = Compete actively for major employers with significant tax abatements and infrastructure investment
+  5 = Offer maximum incentives to attract any large employer; economic growth is the top city priority
+
+=== fossil-fuels ===
+Q: What role should fossil fuels play in the nation's energy future?
+  1 = immediately ban all new fossil fuel drilling and extraction
+  2 = stop issuing new permits for fossil fuel drilling
+  3 = maintain current levels of fossil fuel production with existing environmental regulations
+  4 = expand fossil fuel drilling permits
+  5 = remove environmental restrictions and maximize fossil fuel extraction
+
+=== growth-and-development ===
+Q: How should your city manage population growth and new development?
+  1 = Impose growth limits; require voter approval for major annexations or large-scale developments
+  2 = Allow growth only where existing infrastructure can support it; slow approvals until capacity catches up
+  3 = Plan proactively — invest in infrastructure ahead of growth to support responsible expansion
+  4 = Streamline permitting, reduce fees, and actively recruit development to grow the city's tax base
+  5 = Remove regulatory barriers to development entirely; let market demand determine growth pace
+
+=== homelessness ===
+Q: How should government address people sleeping or camping in public spaces?
+  1 = Protecting the right to sleep in public spaces and redirecting enforcement budgets toward permanent supportive housing and mental health services
+  2 = Decriminalizing public sleeping while investing in shelter capacity, outreach workers, and voluntary service connections
+  3 = Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system
+  4 = Prohibiting encampments on public property with graduated warnings and penalties, while requiring jurisdictions to maintain basic shelter options
+  5 = Banning public camping and sleeping with criminal penalties to maintain public safety and order, relying on existing social services for those who seek help
+
+=== homelessness-response ===
+Q: What should be your city's primary strategy for addressing homelessness?
+  1 = Housing-first: provide permanent supportive housing with no preconditions; avoid criminalization entirely
+  2 = Expand shelter capacity and services as the primary strategy; use enforcement only after services are offered
+  3 = Invest in outreach, shelter, and mental health services while enforcing reasonable public space rules
+  4 = Enforce anti-camping ordinances as the primary tool while maintaining basic outreach programs
+  5 = Prioritize strict enforcement of trespassing and camping bans; minimize city spending on homeless services
+
+=== housing ===
+Q: What role should government play in making sure people can afford housing?
+  1 = Directly build and operate public housing so anyone who needs a home can get one
+  2 = Use rent caps, require new developments to include affordable units, and publicly fund new housing
+  3 = Offer targeted help like subsidies for affordable projects, first-time buyer assistance, and easier building permits
+  4 = Cut regulations and zoning rules so private developers can build more housing
+  5 = Stay out of housing entirely and let the market decide prices and supply
+
+=== jail-capacity ===
+Q: How should government respond to jail overcrowding and criminal justice demand?
+  1 = Redirecting incarceration funding into community-based mental health, addiction, housing, and restorative justice programs to shrink the jail system
+  2 = Reducing the incarcerated population through pretrial diversion, bail reform, and treatment alternatives rather than building new capacity
+  3 = Upgrading jail facilities only as needed to meet constitutional standards, without expanding overall capacity
+  4 = Building additional jail capacity to address overcrowding and facility deficiencies
+  5 = Expanding jail capacity and enforcement as the primary response to crime, prioritizing detention over alternatives
+
+=== local-environment ===
+Q: How should your city balance new development with environmental preservation?
+  1 = Require significant green space, tree preservation, and environmental review before approving any development
+  2 = Protect existing parks and tree canopy strictly; require developers to fully offset any environmental impact
+  3 = Apply consistent environmental standards while giving developers reasonable flexibility on implementation
+  4 = Allow developers to pay fees in lieu of on-site preservation; prioritize economic activity over green space
+  5 = Remove local environmental restrictions beyond what state and federal law requires
+
+=== local-immigration ===
+Q: How should your city's police department relate to federal immigration enforcement?
+  1 = Refuse all ICE detainers; prohibit city employees from sharing immigration status information with federal agencies
+  2 = Comply only with court-ordered detainers; protect undocumented crime victims and witnesses from referral
+  3 = Follow federal law as required but do not use city resources for proactive immigration enforcement
+  4 = Honor ICE detainers and share information proactively when federal agencies request it
+  5 = Direct city police to actively assist with immigration enforcement and support federal detention operations
+
+=== public-safety-approach ===
+Q: How should your city fund and operate public safety services?
+  1 = Redirect a significant portion of the police budget to social services, mental health, and community programs
+  2 = Maintain current police staffing but shift non-violent calls to unarmed mental health co-responders
+  3 = Keep current public safety funding while adding crisis response teams for mental health and addiction calls
+  4 = Increase police staffing, equipment, and pay to improve response times and deter crime
+  5 = Make expanding the police budget the top city spending priority over other municipal services
+
+=== religious-freedom ===
+Q: What role should religion play in government, public institutions, and policymaking?
+  1 = strictly separate religion from all public institutions and prohibit religious exemptions from civil rights laws.
+  2 = protect religious freedom while ensuring it doesn't override anti-discrimination protections in employment and housing.
+  3 = balance protecting religious practices with maintaining equal treatment under the law for all citizens.
+  4 = protect religious freedom and allow faith-based exemptions from laws that conflict with sincere religious beliefs.
+  5 = strongly protect religious freedom and allow religious organizations complete autonomy in their operations and hiring practices.
+
+=== rent-regulation ===
+Q: What role should your city play in regulating rents and protecting tenants?
+  1 = Expand rent control to all rental units with strong tenant protections and just-cause eviction requirements
+  2 = Strengthen existing rent stabilization and extend coverage to more units
+  3 = Maintain current tenant protections while allowing market rents for new construction
+  4 = Limit rent regulations to subsidized units; allow market rents broadly
+  5 = Oppose rent control entirely; rents should be set by the market without government intervention
+
+=== residential-zoning ===
+Q: What should guide decisions about housing density and neighborhood character in your city?
+  1 = Protect existing neighborhood character strictly; require community votes before any rezoning
+  2 = Allow modest density increases (duplexes, accessory units) with strong design review and neighborhood input
+  3 = Allow multifamily and mixed-use near commercial corridors while protecting most residential zones
+  4 = Upzone broadly to allow multifamily by right; streamline approvals and reduce parking requirements
+  5 = Eliminate single-family-only zoning; allow any housing type on any lot citywide
+
+=== trans-athletes ===
+Q: How should sports leagues determine eligibility for transgender athletes?
+  1 = allow all transgender athletes to compete on teams matching their gender identity without any restrictions or requirements.
+  2 = should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition.
+  3 = create separate transgender divisions or allow case-by-case decisions based on individual circumstances and sport requirements.
+  4 = require transgender athletes to compete only on teams matching their biological sex assigned at birth.
+  5 = completely ban all transgender athletes from competing in any organized sports competitions.
+
+=== transportation-priorities ===
+Q: Where should your city focus its transportation investment?
+  1 = Prioritize pedestrian infrastructure, cycling networks, and public transit; reduce parking requirements citywide
+  2 = Invest equally in roads and multimodal options; require bike lanes and sidewalks on all new road projects
+  3 = Maintain roads while selectively adding transit connections and pedestrian improvements where density supports it
+  4 = Focus on road capacity and traffic flow; transportation investment should serve the majority who drive
+  5 = Prioritize highway access and abundant free parking as the foundation of local transportation policy
+

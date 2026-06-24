@@ -57,6 +57,28 @@ Reused the project stance pipeline: 4 `politician-stance-researcher` agents (3 c
   rows have non-empty reasoning + ≥1 source (0 bad).
 - Image rows confirmed `press_use` + cache-busted URLs for both.
 
+## Follow-up: LA Mayor reasoning enrichment (same day)
+After the initial pass, deepened the reasoning + sourcing on every existing local-tier stance
+for both LA Mayor candidates so the Bass↔Raman head-to-head is rich, specific, and well-sourced.
+Two `politician-stance-researcher` agents rewrote each stance with LA-specific evidence
+(Executive Directives + dates, Council File numbers, budget/dollar figures, named programs,
+dated quotes) and added a 2nd–3rd source to thin entries. Re-pushed via `_push.ts` (upsert
+overwrites reasoning/sources/quotes).
+
+Result (verified):
+- **Bass** — 20 local-tier stances, avg reasoning ~450→**819 chars**, every row ≥2 sources. No value changes.
+- **Raman** — 18 local-tier stances, avg reasoning ~500→**1,084 chars**, every row ≥3 sources.
+- **2 evidence-based value changes (Raman), flagged by the agent:**
+  - `transportation-priorities` 2 → **1** (more protected bike-lane miles than any CD; platform = transit/bike-first + citywide parking reduction + Vision Zero mandate).
+  - `city-sanitation` 3 → **2** (CF 24-0906 equity beautification investment + services-first platform, not anti-dumping enforcement).
+  Both move Raman further from Bass (sanitation 3, transp 3), sharpening the contrast — reversible if undesired.
+
+Source-access note: mayor.lacity.gov / lamayor.org returned 403 and LA Times was fetch-blocked;
+Bass evidence leaned on Wikipedia (Mayor of LA section), OnTheIssues, and live LAist articles.
+Enriched CSVs: `bass_enriched.csv`, `raman_enriched.csv`; refs `_TOPIC_SCALE_LOCAL.txt`,
+`_bass_current.txt`, `_raman_current.txt`. One CSV-quoting fix (stray comma on 2 Bass rows)
+normalized via csv writer before push.
+
 ## Files
 - `backend/data/stance-research/quick-candidates-2026/` — `_TOPIC_SCALE.txt`, `hilton.csv`,
   `becerra.csv`, `bass.csv` (header-only), `raman.csv` (header-only), `_push.ts`,
