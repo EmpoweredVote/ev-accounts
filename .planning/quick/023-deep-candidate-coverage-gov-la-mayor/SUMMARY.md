@@ -113,6 +113,38 @@ H1, H3, H7, B1 fully clean. **7 corrections applied + re-pushed:**
 Verified in DB: corrected facts/quotes present, 0 stale wrong-fact strings, values unchanged.
 All four candidates in this task have now had a primary-source verification pass.
 
+## Follow-up: pre-existing Governor stances verified (Hilton 17 + Becerra 24)
+Extended the primary-source fact-check to the stances that existed BEFORE this task (created by
+an earlier pipeline). Two WebFetch verification agents audited all 41 rows against cited sources
++ the full 1-5 scale. Recurring problem: genuine positions cited to the WRONG page (claim not
+actually on the cited URL), plus several party/philosophy inferences that violate evidence-only.
+
+**4 honest-skips deleted** (no on-topic evidence — answer + context + quotes removed):
+- Hilton `misinformation` (reasoning admitted it was inferred from "being a Fox host").
+- Becerra `redistricting` (Citizens Redistricting Commission claim not on the cited page),
+  `trans-athletes` (zero athlete-specific evidence; only a general HRC rating), and
+  `ukraine-support` (self-admitted "no direct source located").
+
+**3 value corrections:** Hilton civil-rights 5→4 (no affirmative-action source; only anti-DEI-
+curriculum evidence) and voting-rights 4→3 (cited plan is about counting *speed*, explicitly
+"does not change election laws" — no photo-ID/voter-roll position); Becerra ai-regulation 4→3
+(platform requires audits/disclosure "with industry at the table," NOT pre-release approval).
+
+**Claim/quote/source fixes (re-pushed):** removed unsupported claims cited to the wrong page —
+Hilton homelessness (fabricated "enforce the law" quote → real "deal forcefully with crime,
+homelessness…"), immigration (garbled sentence), climate (re-attributed quote to the CalMatters
+primary article), taxes ($100k → current $150k), data-centers (flagged as inference). Becerra:
+campaign-finance (dropped non-existent "soft money" vote), childcare (dropped early-childhood
+quote + parental-leave vote), homelessness (verbatim Housing First quote), immigration (dropped
+border-fence/Muslim-ban claims), medicare/aid (dropped unverified 24M ACA + Ryan Budget),
+same-sex-marriage (re-cited DOMA to /rights + verbatim "live and love without restraint"),
+social-security (dropped lockbox vote), taxes (dropped Bush-tax-cuts vote), data-centers/healthcare
+(quotes tightened to verbatim).
+
+Verified in DB: value changes applied, 0 stale wrong-fact strings, 4 skips removed. Both Governors
+now sit at **22 state-tier stances** — symmetric, fully fact-checked head-to-head. All 4 candidates
+plus all their pre-existing stances have now had a primary-source verification pass.
+
 ## Files
 - `backend/data/stance-research/quick-candidates-2026/` — `_TOPIC_SCALE.txt`, `hilton.csv`,
   `becerra.csv`, `bass.csv` (header-only), `raman.csv` (header-only), `_push.ts`,
