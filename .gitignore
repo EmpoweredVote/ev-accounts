@@ -78,3 +78,14 @@ backend/.claude/agent-memory/politician-stance-researcher/stance_*.md
 
 # Nested agent scratch when researchers run from a subdir cwd (.claude/* is root-anchored, so it misses these)
 backend/data/stance-research/.claude/
+
+# Other AI/agent tool scratch dirs (mirror of the .claude/ handling above)
+.agents/
+.codex/
+.superpowers/
+
+# CDK synth output (build artifact; infra/node_modules already covered by node_modules/)
+infra/cdk.out/
+
+# One-off generated analysis report (scratch, not a durable record)
+bug_analysis_report.html
