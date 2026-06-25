@@ -81,10 +81,27 @@ async function fetchDistrictRaceRows(geoPairs: (GeoPair | null | undefined)[]): 
   return rows;
 }
 
+// District types that are statewide (or nation-wide, surfaced per state): the
+// state executives (Governor, Lt. Gov, AG, Sec. of State, Treasurer, Comptroller,
+// etc.), US Senate, and President. These are matched by state — never by the
+// user's sub-state district stack — so they must appear for every resident.
+const STATEWIDE_DISTRICT_TYPES = ['STATE_EXEC', 'NATIONAL_UPPER', 'NATIONAL_EXEC'];
+
 /**
- * Statewide / at-large races (office_id IS NULL) for a state — Governor, US
- * Senate, President, etc. State code must be uppercase (elections.state is always
- * uppercase; districts.state is mixed-case 'ut'/'UT').
+ * Statewide / at-large races for a state — Governor, statewide execs, US Senate,
+ * President. State code must be uppercase (elections.state is always uppercase;
+ * districts.state is mixed-case 'ut'/'UT').
+ *
+ * A race qualifies as statewide when EITHER:
+ *   - it has no office link (r.office_id IS NULL) — the canonical convention, OR
+ *   - its office maps to a statewide district_type (STATE_EXEC / NATIONAL_UPPER /
+ *     NATIONAL_EXEC).
+ * The second branch makes the feed resilient to races that were seeded WITH an
+ * office_id (a recurring ingestion mistake): such a race was previously invisible
+ * — skipped here for having an office_id, and skipped by the district/government
+ * paths because a whole-state "district" is not in any resident's local stack.
+ * Sub-state offices (STATE_LOWER/UPPER, NATIONAL_LOWER, county/local) are
+ * deliberately excluded — they remain geography-matched by fetchDistrictRaceRows.
  */
 async function fetchStatewideRaceRows(state: string): Promise<ElectionRow[]> {
   const { rows } = await pool.query<ElectionRow>(
@@ -95,12 +112,17 @@ async function fetchStatewideRaceRows(state: string): Promise<ElectionRow[]> {
       JOIN essentials.races r ON r.election_id = e.id
       LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
       ${PHOTO_LATERAL}
-      WHERE r.office_id IS NULL
-        AND e.state = $1
+      LEFT JOIN essentials.offices o ON o.id = r.office_id
+      LEFT JOIN essentials.districts d ON d.id = o.district_id
+      WHERE e.state = $1
+        AND (
+          r.office_id IS NULL
+          OR d.district_type = ANY($2::text[])
+        )
         AND ${ELECTION_VISIBILITY_WINDOW}
       ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
     `,
-    [state]
+    [state, STATEWIDE_DISTRICT_TYPES]
   );
   return rows;
 }
