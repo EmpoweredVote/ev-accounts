@@ -207,12 +207,12 @@ None for v2.18 start. Run the live diagnostic queries at plan authoring time:
 | 020 | FC post history tab on DashboardPage — PostHistory component with cursor pagination | 2026-04-17 | 0da4072 | [020-build-fc-post-history-feature-on-account](./quick/020-build-fc-post-history-feature-on-account/) |
 | 021 | Add candidate support to compass compare | 2026-05-14 | 5eb3852 | [021-add-candidate-support-to-compass-compar](./quick/021-add-candidate-support-to-compass-compar/) |
 | 022 | Fix Malik inversion bug, run 24 stance ingest scripts (255 rows), extend compassService dual-path fallback | 2026-05-15 | 01b3bfe | [022-run-pending-stance-ingest-and-extend-ca](./quick/022-run-pending-stance-ingest-and-extend-ca/) |
-| 023 | Deep candidate coverage — CA Gov (Hilton/Becerra) +11 sourced stances + 2 headshots; LA Mayor (Bass/Raman) reasoning enriched (38 stances, avg 819/1084 chars, 2 Raman value changes) | 2026-06-23 | — | [023-deep-candidate-coverage-gov-la-mayor](./quick/023-deep-candidate-coverage-gov-la-mayor/) |
+| 023 | Deep candidate coverage — CA Gov (Hilton/Becerra) +11 sourced stances + 2 headshots; LA Mayor (Bass/Raman) reasoning enriched; ALL 4 candidates + pre-existing stances primary-source fact-checked (4 honest-skips deleted, value/quote/source corrections); both Govs at 22 symmetric state-tier | 2026-06-23 | c96d749f | [023-deep-candidate-coverage-gov-la-mayor](./quick/023-deep-candidate-coverage-gov-la-mayor/) |
 
 ## Session Continuity
 
-Last session: 2026-06-23
-Stopped at: v2.19 Local Civic Coverage formalized retroactively (Falls Church VA / Greene County MO / Springfield MO) and archived; tag v2.19 created
+Last session: 2026-06-24
+Stopped at: Quick task 023 COMPLETE — CA Gov (Hilton/Becerra) + LA Mayor (Bass/Raman) deep candidate coverage, enrichment, and full primary-source fact-check; all live + pushed (c96d749f)
 Resume file: — (awaiting next milestone)
 
 ## Decisions

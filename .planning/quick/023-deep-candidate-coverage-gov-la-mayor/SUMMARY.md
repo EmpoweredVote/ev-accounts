@@ -1,7 +1,7 @@
 ---
 slug: deep-candidate-coverage-gov-la-mayor
 status: complete
-completed: 2026-06-23
+completed: 2026-06-24
 ---
 
 # Summary: Deep candidate coverage — CA Governor + LA Mayor head-to-heads
