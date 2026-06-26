@@ -2,15 +2,15 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 import express from 'express';
 import request from 'supertest';
 
-const { mockGetPeople, mockGetPersonBySlug, mockGetAppearancesBySlug } = vi.hoisted(() => ({
+const { mockGetPeople, mockGetPersonById, mockGetAppearancesById } = vi.hoisted(() => ({
   mockGetPeople: vi.fn(),
-  mockGetPersonBySlug: vi.fn(),
-  mockGetAppearancesBySlug: vi.fn(),
+  mockGetPersonById: vi.fn(),
+  mockGetAppearancesById: vi.fn(),
 }));
 vi.mock('../lib/peopleService.js', () => ({
   getPeople: mockGetPeople,
-  getPersonBySlug: mockGetPersonBySlug,
-  getAppearancesBySlug: mockGetAppearancesBySlug,
+  getPersonById: mockGetPersonById,
+  getAppearancesById: mockGetAppearancesById,
 }));
 vi.mock('../middleware/auth.js', () => ({
   optionalAuth: (_req: unknown, _res: unknown, next: () => void) => next(),
@@ -21,9 +21,10 @@ import peopleRouter from './people.js';
 const app = express();
 app.use('/api/people', peopleRouter);
 
+const POL_ID = '11111111-1111-1111-1111-111111111111';
+
 const samplePerson = {
-  slug: 'john-hamilton',
-  politicianId: '11111111-1111-1111-1111-111111111111',
+  politicianId: POL_ID,
   name: 'John Hamilton',
   headshotUrl: null,
   party: 'Democratic',
@@ -37,8 +38,8 @@ const samplePerson = {
 
 beforeEach(() => {
   mockGetPeople.mockReset();
-  mockGetPersonBySlug.mockReset();
-  mockGetAppearancesBySlug.mockReset();
+  mockGetPersonById.mockReset();
+  mockGetAppearancesById.mockReset();
 });
 
 describe('GET /api/people', () => {
@@ -58,36 +59,36 @@ describe('GET /api/people', () => {
   });
 });
 
-describe('GET /api/people/:slug', () => {
-  it('422 on an invalid slug, service not called', async () => {
-    const res = await request(app).get('/api/people/Bad!Slug');
+describe('GET /api/people/:id', () => {
+  it('422 on a non-UUID id, service not called', async () => {
+    const res = await request(app).get('/api/people/not-a-uuid');
     expect(res.status).toBe(422);
-    expect(mockGetPersonBySlug).not.toHaveBeenCalled();
+    expect(mockGetPersonById).not.toHaveBeenCalled();
   });
 
   it('404 when the person is unknown', async () => {
-    mockGetPersonBySlug.mockResolvedValueOnce(null);
-    const res = await request(app).get('/api/people/nobody-here');
+    mockGetPersonById.mockResolvedValueOnce(null);
+    const res = await request(app).get(`/api/people/${POL_ID}`);
     expect(res.status).toBe(404);
   });
 
   it('200 with the person detail', async () => {
-    mockGetPersonBySlug.mockResolvedValueOnce({ ...samplePerson, bioText: 'Mayor since 2016.' });
-    const res = await request(app).get('/api/people/john-hamilton');
+    mockGetPersonById.mockResolvedValueOnce({ ...samplePerson, bioText: 'Mayor since 2016.' });
+    const res = await request(app).get(`/api/people/${POL_ID}`);
     expect(res.status).toBe(200);
     expect(res.body.bioText).toBe('Mayor since 2016.');
-    expect(mockGetPersonBySlug).toHaveBeenCalledWith('john-hamilton');
+    expect(mockGetPersonById).toHaveBeenCalledWith(POL_ID);
   });
 });
 
-describe('GET /api/people/:slug/appearances', () => {
-  it('422 on an invalid slug, service not called', async () => {
-    const res = await request(app).get('/api/people/Bad!Slug/appearances');
+describe('GET /api/people/:id/appearances', () => {
+  it('422 on a non-UUID id, service not called', async () => {
+    const res = await request(app).get('/api/people/not-a-uuid/appearances');
     expect(res.status).toBe(422);
-    expect(mockGetAppearancesBySlug).not.toHaveBeenCalled();
+    expect(mockGetAppearancesById).not.toHaveBeenCalled();
   });
 
-  it('200 with slug and appearances', async () => {
+  it('200 with id and appearances', async () => {
     const appearance = {
       meetingId: '22222222-2222-2222-2222-222222222222',
       city: 'Bloomington',
@@ -96,9 +97,10 @@ describe('GET /api/people/:slug/appearances', () => {
       playbackKind: 'youtube',
       segments: [{ segmentIndex: 4, startTime: 120.5, endTime: 150, text: 'Thank you.' }],
     };
-    mockGetAppearancesBySlug.mockResolvedValueOnce([appearance]);
-    const res = await request(app).get('/api/people/john-hamilton/appearances');
+    mockGetAppearancesById.mockResolvedValueOnce([appearance]);
+    const res = await request(app).get(`/api/people/${POL_ID}/appearances`);
     expect(res.status).toBe(200);
-    expect(res.body).toEqual({ slug: 'john-hamilton', appearances: [appearance] });
+    expect(res.body).toEqual({ id: POL_ID, appearances: [appearance] });
+    expect(mockGetAppearancesById).toHaveBeenCalledWith(POL_ID);
   });
 });

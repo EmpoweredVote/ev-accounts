@@ -1,9 +1,9 @@
 /**
  * peopleService — people who speak in published meetings.
  *
- * Roster source: DISTINCT politician_slug from meetings.speakers, enriched
- * from essentials.politicians via the shared slug. Speakers without a
- * politician_slug (unidentified) are not listed.
+ * Roster source: DISTINCT politician_id from meetings.speakers, enriched
+ * from essentials.politicians via the shared id. Speakers without a
+ * politician_id (unidentified) are not listed.
  *
  * Same architecture rules as meetingsService:
  *   - meetings.* and essentials.* are NOT PostgREST-exposed; pool.query() only
@@ -18,8 +18,7 @@ import { pool } from './db.js';
 // ---------------------------------------------------------------------------
 
 export interface Person {
-  slug: string;
-  politicianId: string | null;
+  politicianId: string;
   name: string;
   headshotUrl: string | null;
   party: string | null;
@@ -56,8 +55,7 @@ export interface Appearance {
 // ---------------------------------------------------------------------------
 
 interface PersonRow {
-  slug: string;
-  politician_id: string | null;
+  politician_id: string;
   name: string;
   headshot_url: string | null;
   party: string | null;
@@ -88,7 +86,6 @@ interface AppearanceRow {
 
 function mapPerson(row: PersonRow): Person {
   return {
-    slug: row.slug,
     politicianId: row.politician_id,
     name: row.name,
     headshotUrl: row.headshot_url,
@@ -110,14 +107,14 @@ function mapPersonDetail(row: PersonRow): PersonDetail {
 // Queries
 // ---------------------------------------------------------------------------
 
-// Shared SELECT for roster and profile. GROUP BY (slug, p.id) is valid:
-// p.id is essentials.politicians' PK, so p.* columns are functionally
-// dependent; the lateral office columns must be grouped explicitly.
+// Shared SELECT for roster and profile. Keyed on essentials.politicians.id
+// (politician_slug is NULL for ~99.4% of rows, incl. candidates). GROUP BY p.id
+// is valid: it is the PK, so p.* columns are functionally dependent; the lateral
+// office columns must be grouped explicitly.
 const PERSON_SELECT = `
   SELECT
-    sp.politician_slug                                                       AS slug,
     p.id                                                                     AS politician_id,
-    COALESCE(p.full_name, MAX(sp.display_name), sp.politician_slug)          AS name,
+    COALESCE(p.full_name, MAX(sp.display_name))                              AS name,
     COALESCE(NULLIF(p.photo_custom_url, ''), NULLIF(p.photo_origin_url, '')) AS headshot_url,
     p.party                                                                  AS party,
     p.bio_text                                                               AS bio_text,
@@ -129,7 +126,7 @@ const PERSON_SELECT = `
     MAX(m.date)::text                                                        AS last_spoke_date
   FROM meetings.speakers sp
   JOIN meetings.meetings m ON m.id = sp.meeting_id
-  LEFT JOIN essentials.politicians p ON p.slug = sp.politician_slug
+  JOIN essentials.politicians p ON p.id = sp.politician_id
   LEFT JOIN LATERAL (
     SELECT o.title AS office_title, d.label AS district, g.name AS jurisdiction
     FROM essentials.offices o
@@ -143,7 +140,7 @@ const PERSON_SELECT = `
 `;
 
 const PERSON_GROUP_BY = `
-  GROUP BY sp.politician_slug, p.id, off.office_title, off.district, off.jurisdiction
+  GROUP BY p.id, off.office_title, off.district, off.jurisdiction
 `;
 
 export async function getPeople(filters?: { city?: string }): Promise<Person[]> {
@@ -156,7 +153,7 @@ export async function getPeople(filters?: { city?: string }): Promise<Person[]> 
 
   const { rows } = await pool.query<PersonRow>(
     `${PERSON_SELECT}
-     WHERE sp.politician_slug IS NOT NULL
+     WHERE sp.politician_id IS NOT NULL
      ${cityClause}
      ${PERSON_GROUP_BY}
      ORDER BY name`,
@@ -166,26 +163,27 @@ export async function getPeople(filters?: { city?: string }): Promise<Person[]> 
   return rows.map(mapPerson);
 }
 
-export async function getPersonBySlug(slug: string): Promise<PersonDetail | null> {
+export async function getPersonById(politicianId: string): Promise<PersonDetail | null> {
   const { rows } = await pool.query<PersonRow>(
     `${PERSON_SELECT}
-     WHERE sp.politician_slug = $1
+     WHERE sp.politician_id = $1
      ${PERSON_GROUP_BY}`,
-    [slug]
+    [politicianId]
   );
 
   return rows.length > 0 ? mapPersonDetail(rows[0]) : null;
 }
 
-export async function getAppearancesBySlug(slug: string): Promise<Appearance[]> {
+export async function getAppearancesById(politicianId: string): Promise<Appearance[]> {
   const { rows } = await pool.query<AppearanceRow>(
     `SELECT s.meeting_id, s.segment_index, s.start_time, s.end_time, s.text,
             m.city, m.meeting_type, m.date::text AS date, m.playback_kind
      FROM meetings.segments s
+     JOIN meetings.speakers sp ON sp.id = s.speaker_id
      JOIN meetings.meetings m ON m.id = s.meeting_id
-     WHERE s.politician_slug = $1
+     WHERE sp.politician_id = $1
      ORDER BY m.date DESC, s.meeting_id, s.segment_index`,
-    [slug]
+    [politicianId]
   );
 
   const byMeeting = new Map<string, Appearance>();

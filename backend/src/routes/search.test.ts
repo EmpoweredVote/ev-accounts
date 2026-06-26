@@ -30,7 +30,7 @@ const sampleResponse = {
       startTime: 1843.2,
       endTime: 1851,
       speakerName: 'John Hamilton',
-      politicianSlug: 'john-hamilton',
+      politicianId: '11111111-1111-1111-1111-111111111111',
       snippet: 'we have to talk about [[[housing]]] before the',
     },
   ],
@@ -63,8 +63,14 @@ describe('GET /api/search validation', () => {
     expect(mockSearchSegments).not.toHaveBeenCalled();
   });
 
-  it('422 when speaker is not a valid slug', async () => {
+  it('422 when speaker is not a valid politician id', async () => {
     const res = await request(app).get('/api/search?q=housing&speaker=Bad!Slug');
+    expect(res.status).toBe(422);
+    expect(mockSearchSegments).not.toHaveBeenCalled();
+  });
+
+  it('422 when speaker is a valid slug but not a UUID', async () => {
+    const res = await request(app).get('/api/search?q=housing&speaker=john-hamilton');
     expect(res.status).toBe(422);
     expect(mockSearchSegments).not.toHaveBeenCalled();
   });
@@ -93,13 +99,13 @@ describe('GET /api/search results', () => {
   it('passes city, speaker, and page through', async () => {
     mockSearchSegments.mockResolvedValueOnce({ ...sampleResponse, page: 3 });
     const res = await request(app).get(
-      '/api/search?q=housing&city=Bloomington&speaker=john-hamilton&page=3'
+      '/api/search?q=housing&city=Bloomington&speaker=33333333-3333-3333-3333-333333333333&page=3'
     );
     expect(res.status).toBe(200);
     expect(mockSearchSegments).toHaveBeenCalledWith({
       q: 'housing',
       city: 'Bloomington',
-      speaker: 'john-hamilton',
+      speaker: '33333333-3333-3333-3333-333333333333',
       page: 3,
     });
   });
