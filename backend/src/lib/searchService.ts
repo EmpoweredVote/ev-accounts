@@ -32,7 +32,7 @@ export interface SearchResult {
   startTime: number;
   endTime: number;
   speakerName: string | null;
-  politicianSlug: string | null;
+  politicianId: string | null;
   snippet: string;
 }
 
@@ -52,7 +52,7 @@ interface SearchRow {
   start_time: string;
   end_time: string;
   speaker_name: string | null;
-  politician_slug: string | null;
+  politician_id: string | null;
   snippet: string;
 }
 
@@ -70,7 +70,7 @@ function mapResult(row: SearchRow): SearchResult {
     startTime: Number(row.start_time),
     endTime: Number(row.end_time),
     speakerName: row.speaker_name,
-    politicianSlug: row.politician_slug,
+    politicianId: row.politician_id,
     snippet: row.snippet,
   };
 }
@@ -95,7 +95,7 @@ export async function searchSegments(opts: {
   const params: unknown[] = [q];
   if (speaker !== undefined) {
     params.push(speaker);
-    conditions.push(`s.politician_slug = $${params.length}`);
+    conditions.push(`sp.politician_id = $${params.length}`);
   }
   if (city !== undefined) {
     params.push(city);
@@ -110,17 +110,18 @@ export async function searchSegments(opts: {
     pool.query<SearchRow>(
       `WITH hits AS (
          SELECT s.meeting_id, s.segment_index, s.start_time, s.end_time,
-                s.speaker_name, s.politician_slug, s.text,
+                s.speaker_name, sp.politician_id, s.text,
                 ts_rank(s.tsv, websearch_to_tsquery('english', $1)) AS rank,
                 m.city, m.meeting_type, m.date::text AS date
          FROM meetings.segments s
          JOIN meetings.meetings m ON m.id = s.meeting_id
+         LEFT JOIN meetings.speakers sp ON sp.id = s.speaker_id
          WHERE ${where}
          ORDER BY rank DESC, m.date DESC, s.meeting_id, s.segment_index
          LIMIT $${limitParam} OFFSET $${offsetParam}
        )
        SELECT meeting_id, city, meeting_type, date, segment_index,
-              start_time, end_time, speaker_name, politician_slug,
+              start_time, end_time, speaker_name, politician_id,
               ts_headline('english', text, websearch_to_tsquery('english', $1),
                           'StartSel=[[[, StopSel=]]], MaxWords=40, MinWords=20') AS snippet
        FROM hits
@@ -131,6 +132,7 @@ export async function searchSegments(opts: {
       `SELECT COUNT(*) AS count
        FROM meetings.segments s
        JOIN meetings.meetings m ON m.id = s.meeting_id
+       LEFT JOIN meetings.speakers sp ON sp.id = s.speaker_id
        WHERE ${where}`,
       params
     ),

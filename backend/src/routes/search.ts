@@ -16,12 +16,12 @@ import { searchSegments } from '../lib/searchService.js';
 
 const router = Router();
 
-const SLUG_REGEX = /^[a-z0-9][a-z0-9_-]{0,99}$/;
+const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const MAX_QUERY_LENGTH = 200;
 // Caps the OFFSET an unauthenticated caller can force (page * 25 rows).
 const MAX_PAGE = 400;
 
-// GET /api/search?q=affordable+housing&city=Bloomington&speaker=john-hamilton&page=1
+// GET /api/search?q=affordable+housing&city=Bloomington&speaker=11111111-1111-1111-1111-111111111111&page=1
 router.get('/', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   const q = typeof req.query.q === 'string' ? req.query.q.trim() : '';
   if (q.length === 0 || q.length > MAX_QUERY_LENGTH) {
@@ -47,8 +47,8 @@ router.get('/', optionalAuth, async (req: Request, res: Response): Promise<void>
 
   let speaker: string | undefined;
   if (req.query.speaker !== undefined) {
-    if (typeof req.query.speaker !== 'string' || !SLUG_REGEX.test(req.query.speaker)) {
-      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'speaker must be a valid slug' });
+    if (typeof req.query.speaker !== 'string' || !UUID_REGEX.test(req.query.speaker)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'speaker must be a valid politician id' });
       return;
     }
     speaker = req.query.speaker;
