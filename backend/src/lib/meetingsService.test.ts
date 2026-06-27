@@ -42,7 +42,7 @@ const baseRow = {
   created_at: '2026-02-19T00:00:00Z',
   updated_at: '2026-02-19T00:00:00Z',
   chamber_id: '11111111-1111-4111-8111-111111111111',
-  race_id: null,
+  race_ids: [],
   source_url: null,
   playback_kind: 'youtube',
   slug: 'm1',
@@ -87,7 +87,7 @@ describe('getMeetingById (detail payload)', () => {
     expect(meeting!.eventKind).toBe('council');
     expect(meeting!.city).toBeNull();
     expect(meeting!.chamberId).toBe('11111111-1111-4111-8111-111111111111');
-    expect(meeting!.raceId).toBeNull();
+    expect(meeting!.raceIds).toEqual([]);
     expect('bodySlug' in meeting!).toBe(false);
     expect(meeting!.summary).toEqual(fullSummary);
     expect(meeting!.summaryPreview).not.toBeNull();
@@ -192,7 +192,6 @@ describe('meeting writes', () => {
       title: 'California Governor Debate',
       eventKind: 'debate',
       chamberId: null,
-      raceId: '22222222-2222-4222-8222-222222222222',
     });
 
     expect(mockQuery).toHaveBeenCalledWith(
@@ -209,7 +208,6 @@ describe('meeting writes', () => {
         'California Governor Debate',
         'debate',
         null,
-        '22222222-2222-4222-8222-222222222222',
       ]
     );
   });
@@ -236,7 +234,58 @@ describe('meeting writes', () => {
     expect(state).toEqual({
       eventKind: 'council',
       chamberId: '11111111-1111-4111-8111-111111111111',
-      raceId: null,
     });
+  });
+});
+
+describe('raceIds (event_races)', () => {
+  it('maps race_ids array onto the meeting payload', async () => {
+    mockQuery
+      .mockResolvedValueOnce({ rows: [{ ...baseRow, event_kind: 'forum', race_ids: ['race-clerk', 'race-pros'] }] })
+      .mockResolvedValueOnce({ rows: [] }); // getMeetingById's 2nd (speakers) query
+    const m = await getMeetingById('m1');
+    expect(m).not.toBeNull();
+    expect(m!.raceIds).toEqual(['race-clerk', 'race-pros']);
+  });
+
+  it('defaults raceIds to [] when null', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{ ...baseRow, race_ids: null }] });
+    const [item] = await getMeetings();
+    expect(item.raceIds).toEqual([]);
+  });
+
+  it('filters meetings by raceId via event_races', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [baseRow] });
+    await getMeetings({ raceId: '22222222-2222-4222-8222-222222222222' });
+    const sql = mockQuery.mock.calls[0][0] as string;
+    const params = mockQuery.mock.calls[0][1] as unknown[];
+    expect(sql).toMatch(/meetings\.event_races/);
+    expect(params).toContain('22222222-2222-4222-8222-222222222222');
+  });
+});
+
+describe('admin writes no longer touch race_id', () => {
+  it('createMeeting INSERT omits race_id', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [baseRow] });
+    await createMeeting({ state: 'IN', date: '2026-02-18', meetingType: 'City Council' });
+    const sql = mockQuery.mock.calls[0][0] as string;
+    // Only inspect the write portion (column list / VALUES), not RETURNING —
+    // MEETING_COLS legitimately reads er.race_id from meetings.event_races.
+    const writeClause = sql.slice(0, sql.indexOf('RETURNING'));
+    expect(writeClause).not.toMatch(/\brace_id\b/);
+  });
+
+  it('updateMeeting SET omits race_id', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [baseRow] });
+    await updateMeeting('m1', { title: 'New Title' });
+    const calls = mockQuery.mock.calls.map((c) => c[0] as string);
+    // Inspect the SET clause only (between UPDATE and RETURNING); the RETURNING
+    // MEETING_COLS subquery reads er.race_id from meetings.event_races.
+    expect(
+      calls.some((s) => {
+        const m = /UPDATE meetings\.meetings([\s\S]*?)RETURNING/.exec(s);
+        return m !== null && /\brace_id\b/.test(m[1]);
+      })
+    ).toBe(false);
   });
 });
