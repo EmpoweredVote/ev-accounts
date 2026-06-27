@@ -1,6 +1,32 @@
-# PLAN (PAUSED): Stance research for 7 challenger candidates — 2026 statewide races
+# PLAN (COMPLETE ✅): Stance research for 7 challenger candidates — 2026 statewide races
 
-Status: **PLANNED, not started.** Paused near context limit 2026-06-27. Execute in a fresh session.
+Status: **COMPLETE 2026-06-27.** Executed via 3-concurrent research waves + primary-source
+verification pass (UUID-keyed push). Data is live in DB; no deploy needed.
+
+## OUTCOME (71 evidence-only stances across 5 candidates; 2 whole-record honest-skips)
+| candidate | race | stances | quotes | notes |
+|---|---|---|---|---|
+| Hannah Pingree | ME Gov (D) | 20 | 9 | open seat; campaign site + LD 1020 marriage equality |
+| Andy Ellis | MD Gov (Green) | 20 | 7 | sourced from gp.org / mdgreens.org platform he runs on |
+| Bobby Charles | ME Gov (R) | 13 | 8 | Maine Wire op-eds/speeches + BDN debate coverage |
+| Dan Cox | MD Gov (R) | 10 | 6 | OnTheIssues + MD legislative bill sponsorships |
+| Rick Bennett | ME Gov (I) | 8 | 1 | sitting state senator; roll-call votes verified |
+| James B. Rutledge III | MD AG (R) | **0** | 0 | whole-record honest-skip — no fetchable sources (ran unopposed, primary 6/23) |
+| Sonya Dunn | MD Comptroller (R) | **0** | 0 | whole-record honest-skip — no fetchable sources (no campaign site, primary 6/23) |
+
+**Verification pass deleted 16 rows** (12 post-push + 3 pre-push + 1 redistricting) that were
+inference dressed up with URLs — confirming [[feedback_stance_no_assumption]]:
+- pre-push drops: cox/misinformation (election-fraud≠content-moderation), ellis/trans-athletes
+  (self-admitted "platform doesn't address"), bennett/housing (invalid topic_key + speculative)
+- post-push drops: cox {fossil-fuels, trans-athletes, jail-capacity}, charles {data-centers,
+  economic-development, civil-rights}, bennett {abortion — oppo-research framing, not a Bennett
+  position}, pingree {redistricting}, ellis {homelessness, jail-capacity, misinformation, rent-regulation}
+- corrections: fabricated figures stripped (pingree $25M/4,850 childcare), truncated quotes fixed
+  (cox voting-rights), value remaps (cox abortion 5→4 per his bills' rape/incest exceptions;
+  ellis deportation 1→2 per platform's "clear and present danger" carve-out)
+
+Incumbent baselines for parity: Wes Moore 21, Brooke Lierman 16 (MD AG Brown not in this DB count).
+ME Gov is an open seat (no incumbent baseline).
 
 ## Goal
 Give the 7 challenger records (created for headshots, currently 0 stances) full
