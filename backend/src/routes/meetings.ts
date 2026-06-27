@@ -45,11 +45,12 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 // GET /api/meetings
 // Optional query: ?city=Indianapolis&state=IN&status=completed
 router.get('/', optionalAuth, async (req: Request, res: Response): Promise<void> => {
-  const filters: { city?: string; state?: string; status?: string } = {};
+  const filters: { city?: string; state?: string; status?: string; raceId?: string } = {};
 
   if (typeof req.query.city === 'string') filters.city = req.query.city;
   if (typeof req.query.state === 'string') filters.state = req.query.state;
   if (typeof req.query.status === 'string') filters.status = req.query.status;
+  if (typeof req.query.raceId === 'string') filters.raceId = req.query.raceId;
 
   try {
     const meetings = await getMeetings(Object.keys(filters).length > 0 ? filters : undefined);
@@ -173,7 +174,6 @@ const createMeetingSchema = z.object({
   title: z.string().trim().min(1).optional().nullable(),
   eventKind: z.enum(EVENT_KINDS).default('council'),
   chamberId: z.string().uuid().optional().nullable(),
-  raceId: z.string().uuid().optional().nullable(),
   durationSeconds: z.number().int().positive().optional().nullable(),
   videoUrl: z.string().url().optional().nullable(),
   audioSource: z.string().optional().nullable(),
@@ -195,7 +195,6 @@ router.post(
       const entityError = validateEventEntities({
         eventKind: parsed.data.eventKind,
         chamberId: parsed.data.chamberId ?? null,
-        raceId: parsed.data.raceId ?? null,
       });
       if (entityError) {
         res.status(422).json({
@@ -223,7 +222,6 @@ const updateMeetingSchema = z.object({
   title: z.string().trim().min(1).optional().nullable(),
   eventKind: z.enum(EVENT_KINDS).optional(),
   chamberId: z.string().uuid().optional().nullable(),
-  raceId: z.string().uuid().optional().nullable(),
   durationSeconds: z.number().int().positive().optional().nullable(),
   videoUrl: z.string().url().optional().nullable(),
   audioSource: z.string().optional().nullable(),
@@ -263,10 +261,6 @@ router.patch(
           parsed.data.chamberId !== undefined
             ? parsed.data.chamberId
             : current.chamberId,
-        raceId:
-          parsed.data.raceId !== undefined
-            ? parsed.data.raceId
-            : current.raceId,
       };
 
       const entityError = validateEventEntities(nextState);
