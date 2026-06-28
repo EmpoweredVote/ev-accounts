@@ -1,332 +1,187 @@
 # Architecture Research
 
-**Domain:** Statewide executive integration into existing politician/district/feed schema
-**Researched:** 2026-06-20
-**Confidence:** HIGH — all findings from direct code reading of production source
+**Domain:** 2026 US House candidate surfacing — "type address → see House race in /elections"
+**Researched:** 2026-06-27
+**Confidence:** HIGH (traced live code file:line + inspected production schema and data)
 
 ---
 
-## Surfacing Code Path: How STATE_EXEC Reaches `GET /representatives/me`
+## TL;DR — the definitive answer
 
-### The Two-Query Architecture
+**v2.20 is PURE DATA. No code change is required to surface a House race on /elections.** The `races → offices → districts → geofence` join in `getElectionsByCoordinate` already matches US House races to a resident's address by coordinate, and the CA scaffolding (all 53 district `races` rows linked to incumbent offices) is **already seeded**. What is missing is only `essentials.race_candidates` rows.
 
-`GET /representatives/me` (`backend/src/routes/essentials.ts:509`) runs one of three paths (Path 0 / Path 1 / Path 1.5), all of which ultimately call `getRepresentativesByJurisdiction()` in `backend/src/lib/essentialsService.ts`. That function executes **two queries in sequence**:
-
-**Query 1 — district-based (geo_id lookup):**
-Matches `NATIONAL_LOWER`, `STATE_UPPER`, `STATE_LOWER`, `COUNTY`, `SCHOOL` districts via stored geo_ids.
-
-**Query 2 — statewide (state-code lookup, lines 1585–1598):**
-```sql
-WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
-AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
-AND (p.is_active = true OR o.is_vacant = true)
-AND COALESCE(p.is_incumbent, true) = true
-AND (d.district_type != 'JUDICIAL' OR LENGTH(d.geo_id) != 5)
-```
-
-The `$1` state parameter is derived from the user's congressional geo_id:
-```sql
-SELECT state FROM essentials.districts
-WHERE geo_id = $1 AND district_type = 'NATIONAL_LOWER' LIMIT 1
-```
-
-`STATE_EXEC` is already enumerated in this `IN` clause. The same clause appears identically in `getRepresentativesByAddress()` (the anonymous address-search path) at line 706.
-
-### State Code Derivation — Critical Dependency
-
-Both the Path 0 and Path 1 routes derive `d.state` from the congressional (NATIONAL_LOWER) geo_id. The statewide query only fires **if `congressional` is non-null** (line 1578: `if (congressional)`). This means:
-
-- A user who has set their location and has a valid `congressional_geo_id` (or a `user_districts` row with `us_house` layer) will automatically get all STATE_EXEC records for their state.
-- The state code comes from `essentials.districts.state` on the NATIONAL_LOWER district row, which uses 2-char uppercase postal abbreviation (e.g. `'CA'`, `'IN'`).
-- STATE_EXEC districts must use **uppercase postal abbreviation** in `essentials.districts.state` — lowercase was a confirmed bug in OR migration 223 (fixed in 223a).
-
-### Verdict: STATE_EXEC Already Surfaces for the 9 Covered States
-
-For any user in CA, IN, MA, MD, ME, OR, TX, UT, or VA who has set their location, existing STATE_EXEC records already surface today — no feed-surfacing code change is required. The 9 existing states are working by the existing state-code path. The v2.18 work is **data-only** for those states (gap-fill stances). For the 41 uncovered states, surfacing will begin automatically as soon as their STATE_EXEC records are seeded — no code change needed.
-
-**Feed-surfacing work required: NONE.** This is a data-seed milestone, not a code milestone.
+- **PATH B (`/elections`) is the canonical path for House races.** It is the only path that surfaces on the Elections page.
+- **PATH A (candidacy offices) does NOT appear on /elections — proven, not assumed.** All 27 `Candidate for U.S. Senate — <State>` offices have **0** matching `race_candidates` rows and **0** `races` referencing them (live query below). They surface only in the representatives feed.
+- **CA Wave-1 work = insert `race_candidates` only** (races + offices + geofences already exist).
+- **TX / FL / NY Wave-1 work = create the `races` rows first, then insert `race_candidates`** (their US House races are not yet seeded).
 
 ---
 
-## Component Boundaries
+## The two paths, resolved with evidence
 
-### Existing Components — No Modification Needed
+### PATH A — Representatives feed (`getRepresentativesByAddress`, `essentialsService.ts`)
 
-| Component | File | Role in v2.18 |
-|-----------|------|---------------|
-| `getRepresentativesByAddress()` | `essentialsService.ts:576` | Already includes STATE_EXEC in statewide query — no change |
-| `getRepresentativesByJurisdiction()` | `essentialsService.ts:1495` | Already includes STATE_EXEC in statewide query — no change |
-| `GET /representatives/me` route | `essentials.ts:509` | No change — all paths call the above functions |
-| `inform.politician_answers` | DB table | No schema change — same write path as all other politicians |
-| `inform.politician_context` | DB table | No schema change — same write path |
-| Stance research pipeline | `backend/data/stance-research/*/` | Reused verbatim (same `_TOPIC_SCALE.txt`, `_push.ts` pattern) |
+A candidate surfaces as an `essentials.offices` row (e.g. `Candidate for U.S. Senate — Louisiana`) linked to the state's US-Senate district, filtered by `p.is_active = true`. The query joins `geofence_boundaries → districts → offices → politicians` and never touches `races`/`race_candidates`:
 
-### New Components Required per Milestone
+- `essentialsService.ts:651` `JOIN essentials.offices o ON o.district_id = d.id`
+- `essentialsService.ts:664` `AND (p.is_active = true OR o.is_vacant = true)`
 
-| Component | Type | Purpose |
-|-----------|------|---------|
-| Authoritative elected-Big-5 roster | Data file / research | Source of truth for which offices are elected per state |
-| `governments` + `chambers` stub records | SQL migrations | One government + N chambers per new state (40+ states need this) |
-| `essentials.districts` (STATE_EXEC) | SQL migration | One district per office per state |
-| `essentials.politicians` + `essentials.offices` | SQL migration | One politician + one office per exec |
-| Headshot back-fill | Script / migration | Gubernatorial portraits from official state .gov or Wikipedia |
-| Stance research CSV + push | Per-state scripts | Reused v2.16/v2.17 pipeline, per-exec rather than per-rep |
-| Phase gate SQL | `backend/scripts/verify-phase-*.sql` | Read-only assertions: all Big-5 offices filled, 0 unsourced |
+Migration 042 explicitly forbids `race_candidates` from this path:
+> `042_election_schema.sql:160` — "WARNING: race_candidates must NEVER be joined into the geofence search path (getRepresentativesByAddress)."
+
+### PATH B — Elections page `/elections` (`getElectionsByCoordinate`, `electionService.ts`)
+
+`GET /api/essentials/elections?lat=&lng=` (`essentials.ts:109`) and `/elections-by-address` (`essentials.ts:140`) both call `getElectionsByCoordinate`, which builds elections→races→candidates strictly from the three migration-042 tables. The district-matched query (`electionService.ts:284-303`):
+
+```
+FROM essentials.elections e
+JOIN essentials.races r ON r.election_id = e.id
+LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id     -- candidates
+JOIN essentials.offices o ON o.id = r.office_id                  -- race→office
+JOIN essentials.districts d ON d.id = o.district_id              -- office→district
+JOIN essentials.geofence_boundaries gb                          -- district→polygon
+  ON gb.geo_id = d.geo_id AND (d.mtfcc IS NULL OR d.mtfcc='' OR gb.mtfcc = d.mtfcc)
+WHERE gb.geometry IS NOT NULL
+  AND public.ST_Covers(gb.geometry, ST_MakePoint($lng,$lat))     -- coordinate match
+  AND <ELECTION_VISIBILITY_WINDOW>
+```
+
+**This is how a House race matches a resident's district:** by `office.district_id → districts.geo_id` + PostGIS `ST_Covers` of the geofence polygon. No `geo_id` on the race itself; the race inherits geography through its `office_id`.
+
+#### Proof that Path A is invisible to /elections (live production query)
+
+```
+=== Candidacy offices (Path A) titled 'Candidate for U.S. ...' ===
+"Candidate for U.S. Senate — Louisiana"   offices: 4   matching_race_candidate_rows: 0
+"Candidate for U.S. Senate — Michigan"    offices: 4   matching_race_candidate_rows: 0
+... (all 27 rows) ... matching_race_candidate_rows: 0
+
+=== Path A offices: races referencing their office_id ===
+"Candidate for U.S. Senate — Alabama"  NATIONAL_UPPER  geo_id 01  races_on_this_office: 0
+... (every row) ... races_on_this_office: 0
+```
+
+The LA Senate Path-A candidates had **zero** `race_candidates` rows and **zero** `races` on their offices → they appeared **only in the representatives feed, never on /elections.** Item 2 is settled.
 
 ---
 
-## Idempotent Seeding Model
+## Required rows to make a 2026 US House race appear on /elections
 
-### One STATE_EXEC District Per Office (Not Per State)
+Joining backward from `getElectionsByCoordinate`, a race surfaces when this full chain exists AND the election passes the visibility window:
 
-The established pattern (confirmed in CA migration 190, MA 154, MD 270, VA 317, OR 223, ME 169) is **one `essentials.districts` row per executive office**, not one per state. Each district has:
+| # | Table | Required row | Notes |
+|---|-------|--------------|-------|
+| 1 | `essentials.elections` | 1 per state per election event | e.g. "CA 2026 Statewide General", `election_type='general'`, `state='CA'`, `election_date='2026-11-03'`. **Already exists for CA.** |
+| 2 | `essentials.offices` | the district's `U.S. Representative` office | **Already exists for all 435 districts** (v2.15, holds the sitting incumbent). Reuse it — do NOT create a new office. |
+| 3 | `essentials.districts` | `NATIONAL_LOWER` row, `geo_id`=`SSCC` (e.g. `0612`), `mtfcc='G5200'` | **Already exists (all 435, TIGER-geofenced).** |
+| 4 | `essentials.geofence_boundaries` | polygon for `(geo_id, 'G5200')` | **Already exists.** Confirmed CA-12 (`0612`,`G5200`) `has_geom=true`. |
+| 5 | `essentials.races` | 1 per district, `office_id`→the district's House office, `election_id`→#1, `position_name` e.g. `'U.S. Representative District 12'` | **Exists for all 53 CA.** **MISSING for TX/FL/NY** — must be created. |
+| 6 | `essentials.race_candidates` | 1 per candidate, `race_id`→#5, `politician_id`→record (incumbent or seeded challenger), `full_name`, `is_incumbent`, `candidate_status='active'` | **THE CORE MISSING DATA — 0 candidates in 52/53 CA House races, 0 for TX/FL/NY.** |
 
-- `district_type = 'STATE_EXEC'`
-- `state = '{STATE}'` — 2-char uppercase postal abbreviation
-- `geo_id = '{FIPS}'` — numeric state FIPS code as text (e.g. `'06'` for CA, `'18'` for IN, `'51'` for VA)
-- `label = '{State} {Role}'` — human-readable, e.g. `'Indiana Governor'`
-- `district_id = ''` — always empty string (named strings were a bug in OR 223)
-- `mtfcc = ''` — always empty string (no TIGER MTFCC for exec offices)
-
-### Dedup Key: `(state, label)` on `essentials.districts`
-
-The correct idempotent guard for a STATE_EXEC district is:
-```sql
-WHERE NOT EXISTS (
-  SELECT 1 FROM essentials.districts
-  WHERE district_type = 'STATE_EXEC'
-    AND state = '{STATE}'
-    AND label = '{State} {Role}'
-)
+### Visibility window (must pass — `electionService.ts:24-27`)
 ```
-
-The `label` encodes both the state and the office kind (e.g. `'Indiana Governor'`, `'Indiana Attorney General'`). **Do not use title string from `essentials.offices`** — those titles are inconsistent across states (e.g. "Governor", "Indiana Governor", "Texas Governor"). The label on `essentials.districts` is the stable dedup key.
-
-For the offices table, the guard is:
-```sql
-WHERE NOT EXISTS (
-  SELECT 1 FROM essentials.offices o
-  WHERE o.district_id = d.id
-    AND o.chamber_id = (SELECT id FROM essentials.chambers
-                        WHERE name = '{State} {Role}' AND government_id = ...)
-)
+(election_type != 'general' AND election_date >= CURRENT_DATE - 30 days)
+OR (election_type = 'general' AND election_date >= DATE_TRUNC('year', CURRENT_DATE))
 ```
+The Nov-3-2026 general elections satisfy this for all of 2026. ✓
 
-### role_canonical Column
+### `race_candidates` exact insert shape (live schema — note 2 cols beyond migration 042)
+`id (default), race_id, politician_id (nullable), full_name (NOT NULL), first_name, last_name, photo_url, is_incumbent (default false), candidate_status (default 'active' CHECK active|withdrawn|filed), last_verified_at, source, external_id, occupational_designation, website_url`
 
-`essentials.offices.role_canonical` exists (added in migration 154) and is populated for MA Treasurer (`'treasurer'`) and MA Secretary (`'secretary_of_state'`) only. It is **never read by any service code** — it was added for future cross-state role queries that have not been implemented. For v2.18, set it for the Big 5 roles to enable future cross-state queries: `'governor'`, `'lt_governor'`, `'attorney_general'`, `'secretary_of_state'`, `'treasurer'`. Leave it NULL for non-Big-5 offices that are being left untouched.
+The model: link `politician_id` to the politician record (incumbents + seeded challengers both have records here per the project's seed convention). Photos/stances flow automatically through `politician_id` — the feed's `PHOTO_LATERAL` (`electionService.ts:48`) does `COALESCE(rc.photo_url, pi.url)` against `politician_images`.
 
 ---
 
-## External ID Scheme
-
-### Established Pattern: `-{FIPS_zero_padded}{OFFSET}`
-
-| State | FIPS | Pattern | Example |
-|-------|------|---------|---------|
-| CA | 06 | `-{06}{OFFSET}` → 7-8 digits | `-6000101` through `-6000108` |
-| MA | 25 | `-{200}{OFFSET}` → 6 digits | `-200001` through `-200007` (non-standard due to collision on `-200002`) |
-| MD | 24 | `-{240}{OFFSET}` → 6 digits | `-240001` through `-240005` |
-| OR | 41 | `-{410}{OFFSET}` → 7 digits | `-4100001` through `-4100005` |
-| ME | 23 | `-{230}{OFFSET}` → 6 digits | `-230001` through (check) |
-| VA | 51 | `-{510}{OFFSET}` → 7 digits | `-510001` through `-510003` |
-
-**Recommended scheme for v2.18:** Use `-(FIPS * 100 + offset)` where FIPS is zero-padded to 2 digits and offset is 01-09 for the Big 5. The formula `-(state_fips * 100 + offset)` maps cleanly:
-- Indiana (FIPS 18): `-1801` through `-1805`
-- Wyoming (FIPS 56): `-5601` through `-5605`
-
-**Collision check:** Federal seeded reps use `-(state_fips * 1000 + cd)` — minimum is `-1001` (AL CD1). State exec IDs `-(fips * 100 + offset)` will be `-101` through `-5609`. These overlap with the federal range for states FIPS 10+. **Use `-(fips * 100000 + offset)` instead** to stay safely below the federal minimum of `-1001` and above the existing exec ranges.
-
-The safest collision-free scheme that also aligns with the established FIPS-prefix pattern used by MD/OR/VA:
+## Production state of the target data (live inventory, 2026-06-27)
 
 ```
-external_id = -(state_fips * 100000 + seq)
+Wave-1 US House race coverage by state FIPS:
+  06 (CA): house_races 53   candidates 6     ← races seeded, candidates ~0
+  48 (TX): (none)                            ← NO races seeded
+  12 (FL): (none)                            ← NO races seeded
+  36 (NY): (none)                            ← NO races seeded
+
+CA-53 House races: office_has_holder=true for ALL 53  (race.office_id = the incumbent's office)
+CA-12 example: race "U.S. Representative District 12" → office U.S. Representative
+               → holder Lateefah Simon (is_incumbent, is_active) → district geo_id 0612 / G5200 (geofenced)
 ```
 
-Where `seq` is 1-99 (one per office). This gives:
-- Indiana (18): `-1800001` through `-1800005`
-- All 50 states: range `-100001` through `-5600099`
-- No collision with NATIONAL_LOWER range (`-(fips * 1000 + cd)` = `-1001` through `-56001`)
-- No collision with existing execs (CA `-6000101`+ uses 7-digit with different multiplier; verify against existing records before finalizing any new state's range)
+So the CA scaffolding is a turnkey target: every district race already points at the incumbent's office. Seeding the incumbent + challengers as `race_candidates` on the existing race rows is all CA needs.
 
-**Practical recommendation:** Before creating any new state's seed migration, run a live query to confirm the proposed external_id range is clear:
-```sql
-SELECT external_id FROM essentials.politicians
-WHERE external_id BETWEEN -{fips}00001 AND -{fips}99999;
-```
+Existing `race_candidates` model rows (Utah/Indiana US House) confirm the convention: each row carries `politician_id`, `full_name`, `is_incumbent`, `candidate_status='active'`, `source` (`sos_excel`/`sos_filing`).
 
 ---
 
-## Data Flow
+## Empty state: "district resolves but race not seeded at all"
 
-### Seed Migration Pattern (4-step, established across all 9 existing states)
-
-```
-Step 1: assert government row exists (DO $$ RAISE EXCEPTION if count != 1)
-Step 2: INSERT INTO essentials.districts (one per office, WHERE NOT EXISTS on state+label)
-Step 3: INSERT INTO essentials.chambers (one per office, WHERE NOT EXISTS on name+government_id)
-Step 4: CTE per exec:
-          WITH ins_p AS (INSERT INTO essentials.politicians ON CONFLICT(external_id) DO NOTHING RETURNING id)
-          INSERT INTO essentials.offices ... WHERE NOT EXISTS on (district_id, chamber_id)
-Step 5: UPDATE essentials.politicians SET office_id = o.id WHERE office_id IS NULL (scoped to external_id range)
-```
-
-### Stance Write Path — No Changes
-
-`inform.politician_answers` and `inform.politician_context` are keyed on `(politician_id, topic_id)`. State execs are full `essentials.politicians` records and receive stances via the identical external_id → UUID lookup used by the v2.16/v2.17 push scripts. No schema or code change needed.
-
-### Feed Read Path — No Changes
-
-```
-GET /representatives/me
-  → Path 0/1/1.5 all call getRepresentativesByJurisdiction(jurisdiction)
-      → Query 1: district-based geo_id lookup (congressional / state_senate / state_house / county / school)
-      → Query 2: statewide lookup
-           WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', ...)
-           AND d.state = {state_from_congressional_district}
-           (STATE_EXEC already enumerated)
-```
+**This is NOT in this repo and is NOT a backend code change.** The backend contract is invariant: `getElectionsByCoordinate` returns an array; when no race chain matches, `groupElectionRows([])` returns `[]` (`electionGrouping.ts:144`), and the route responds `200 { elections: [] }` (`essentials.ts:120`; test contract `tests/integration/essentials-elections.test.ts`). There is no "no elections" branch in the backend — the empty-state message is rendered by the **Essentials frontend** (separate repo at `C:\Transparent Motivations\essentials`, consumes the API; see MEMORY `reference_essentials_frontend_deploy`). v2.20 therefore needs no empty-state work in this repo. If a "no race for your district yet" message is desired, that is a one-line Essentials-app change, out of this milestone's scope.
 
 ---
 
-## System Overview
+## Recommended build order (per Wave-1 state)
 
 ```
-                    essentials.districts
-                    (district_type='STATE_EXEC',
-                     state='XX', geo_id='{FIPS}',
-                     label='{State} {Role}')
-                              |
-                              | district_id FK
-                              v
-                    essentials.offices
-                    (title='{Role}',
-                     representing_state='XX',
-                     is_appointed_position=false,   ← elected only
-                     role_canonical='{key}')
-                              |
-                              | politician_id FK
-                              v
-                    essentials.politicians
-                    (external_id=-(fips*100000+seq),
-                     is_active=true, is_incumbent=true)
-                              |
-              ________________|________________
-             |                                 |
-             v                                 v
-inform.politician_answers           inform.politician_context
-(politician_id, topic_id, value)    (politician_id, topic_id, sources[])
-             |                                 |
-             |__________________________________|
-                              |
-                              v
-              getRepresentativesByJurisdiction()
-              (statewide query: WHERE d.state = $1
-               AND d.district_type IN (..., 'STATE_EXEC', ...))
-                              |
-                              v
-              GET /api/essentials/representatives/me
-              GET /api/essentials/address-search
+[Resident address]
+   ↓ Census geocode (lat,lng)        — already live
+[ST_Covers geofence polygon]         — already live, all 435 districts
+   ↓ districts.geo_id (06NN, G5200)
+[essentials.races]  ← office_id → incumbent's U.S. Representative office
+   ↓
+[essentials.race_candidates]  ← incumbent + challengers (politician_id)
+   ↓ PHOTO_LATERAL + stances via politician_id
+[/elections response]
 ```
 
----
-
-## Suggested Build Order
-
-### Why This Order
-
-1. **Roster first** — the elected-Big-5 roster determines exactly what to seed; building it first prevents mid-migration scope corrections (e.g. discovering TX has no elected Treasurer after writing the migration).
-2. **Governments + chambers before politicians** — politicians reference chambers, chambers reference governments; FK order matters.
-3. **Seed before stances** — stance push needs the politician UUID, which comes from the seed.
-4. **Gate last** — verifies the full chain (district → office → politician → stances → surfacing).
-
-### Build Order
-
-| Phase | Work | New or Modified |
-|-------|------|-----------------|
-| Phase A: Roster | Research + document elected Big-5 per state (NGA / Ballotpedia / state .gov). Per-state JSON or CSV: state, office kind, current officeholder, FIPS. Mark appointed vs. elected. | New data file |
-| Phase B: Governments + Chambers | For the ~41 states without a government row or exec chambers, create stub government + chamber rows. Idempotent. Reuse existing pattern from v2.3 (50-state government stubs). | New migration(s) |
-| Phase C: Districts + Politicians + Offices | Per-state seed migrations: STATE_EXEC districts, politicians, offices. One migration per state wave (group by roster size). Only elected offices. | New migrations |
-| Phase D: Headshots | Official gubernatorial portraits and exec headshots from state .gov / Wikipedia. `photo_origin_url` or `photo_custom_url` on `essentials.politicians`. | Migrations or script |
-| Phase E: Stance Research | Per-exec CSV research using v2.16/v2.17 pipeline. Batched at 3-concurrency. external_id-keyed push. Same honest-skip and no-inference rules. | New scripts + migrations |
-| Phase F: Gate | Read-only SQL gate: all elected Big-5 offices filled per state, 0 unsourced rows, state-code surfacing verified for a sample address per state. | New SQL script |
-
----
-
-## Architectural Patterns to Follow
-
-### Pattern 1: Pre-flight Government Assertion
-
-Every state exec migration since MD (270) begins with a `DO $$` block asserting the government row exists and has exactly 1 row. This catches ordering errors (e.g. seeding exec before the government stub) at migration time rather than silently inserting orphaned records.
-
-### Pattern 2: Label-Keyed District Dedup
-
-State is not enough — multiple offices per state share the same FIPS geo_id. The `(state, label)` compound key on `essentials.districts` is the correct idempotency guard. The label is `'{State} {Role}'` where Role is the official role name as it appears in the chamber.
-
-### Pattern 3: Elected-Only Filter via `is_appointed_position`
-
-The feed already filters by `AND COALESCE(p.is_incumbent, true) = true` but not by `is_appointed_position`. The `is_elected` field on `PoliticianFlatRecord` is derived as `!row.is_appointed_position`. For v2.18, only seed offices where the position is voter-elected — set `is_appointed_position=false` for elected offices and `is_appointed_position=true` for appointed ones (e.g. MD Treasurer, ME AG/SoS/Treasurer). The frontend uses `is_elected` to distinguish.
-
-### Pattern 4: Uppercase State Abbreviation
-
-`essentials.districts.state` must use uppercase postal abbreviation (`'CA'` not `'ca'`). Lowercase was a confirmed production bug in OR migration 223 that required a separate fix migration (223a). The statewide query in `getRepresentativesByJurisdiction()` uses `d.state = $1` where `$1` comes from `SELECT state FROM essentials.districts WHERE geo_id = $1 AND district_type = 'NATIONAL_LOWER'` — those NATIONAL_LOWER rows already use uppercase.
-
----
-
-## Anti-Patterns to Avoid
-
-### Anti-Pattern 1: Seeding Non-Elected Officers
-
-**What people do:** Seed all 5 Big-5 offices for every state without checking whether the office is elected or appointed.
-**Why it's wrong:** MD Treasurer, ME AG/SoS/Treasurer, VA SoS, TX SoS, UT SoS — these are appointed, not elected. Setting `is_appointed_position=false` for them misrepresents the office. More importantly, v2.18's goal is "elected Big 5" and seeding appointed officials balloons scope without adding product value.
-**Do this instead:** Use the authoritative roster (Phase A) to mark each office as elected or appointed. Seed both with correct flags; present only elected ones as "your representatives."
-
-### Anti-Pattern 2: Deduping on office title string
-
-**What people do:** Check for existing records with `WHERE o.title = 'Governor'` or `WHERE o.title = 'Indiana Governor'` to detect existing Big-5 records.
-**Why it's wrong:** Title strings are inconsistent across states and across migrations. VA uses `'Governor'`, OR uses `'Governor'`, MA uses `'Governor'` — all are the same role but distinguishable only by their linked district.
-**Do this instead:** Dedup on `(essentials.districts.state, essentials.districts.label)` for the district, and on `(district_id, chamber_id)` for the office. These are the established guards in every existing migration.
-
-### Anti-Pattern 3: Skipping the government pre-flight assertion
-
-**What people do:** Assume the government row exists because it was seeded in a prior migration.
-**Why it's wrong:** If migrations are applied out of order or to a non-production DB, missing government rows cause silent orphan records (no FK violation because `chamber_id` could be NULL or reference a wrong government).
-**Do this instead:** Begin every state exec migration with `DO $$ IF COUNT(*) != 1 THEN RAISE EXCEPTION ... END IF; $$` asserting the government row exists.
-
-### Anti-Pattern 4: Using a shared STATE_EXEC district across all offices in a state
-
-**What people do:** Create one `STATE_EXEC` district per state and link all exec offices to it (treating it like the NATIONAL_UPPER pattern where 2 senators share one district row).
-**Why it's wrong:** A shared district means the feed query returns all exec offices when matching the single district, which is correct — but the idempotency guards for offices break down (the `WHERE NOT EXISTS on (district_id, chamber_id)` guard becomes the only distinguishing factor, which depends on chambers existing first). More critically: the `label` on the shared district loses specificity. CA, MA, MD, OR, VA all use **one district per office** — follow this pattern.
-**Do this instead:** One `essentials.districts` row per executive office, with `label = '{State} {Role}'`.
+1. **Candidate records first (the real work).** For each Nov-3 general-ballot candidate not already in `essentials.politicians`: seed politician + headshot + federal-24-topic chairs-not-polarity stances (existing pipeline). Sitting incumbents already exist + are stanced (v2.15–v2.17); a stance-gap diagnostic at plan time surfaces any incumbent below threshold.
+2. **CA — insert `race_candidates` only.** Reuse `scripts/ingest-ca-sos-2026-challengers.ts` as the template (find race by `position_name` → insert candidates, idempotent on name collision). The 53 race rows + offices + geofences already exist. Seed the incumbent as `is_incumbent=true` + challengers as `is_incumbent=false` on each existing race.
+3. **TX / FL / NY — create `races` first, then `race_candidates`.** One `races` row per district (`office_id` = that district's existing `U.S. Representative` office, `election_id` = the state's general election — create the `elections` row if absent, mirroring "CA 2026 Statewide General"), then insert candidates. `importElectionData.ts` / `seed-la-county-2026-primary-state-federal.sql` are the working precedents.
+4. **Verify by coordinate.** For each Wave-1 state, run `getElectionsByCoordinate(lat,lng)` (or curl `/api/essentials/elections-by-address`) for a known address in a seeded district; assert the House race + candidates + headshots come back. This is the existing v2.6 ELEC-01 Playwright-style verification pattern.
+5. **Re-check post-primary.** Most CA/TX/NY primaries are done; FL primary is Aug 18 — seed the known field now, re-confirm nominees after (the operator's "seed the upcoming-vote field now, don't guess the general winner" rule from the Senate track).
 
 ---
 
 ## Integration Points
 
-| Integration | How It Works | Notes |
-|-------------|-------------|-------|
-| `GET /representatives/me` | Statewide query already includes `STATE_EXEC` — zero code change | Conditioned on `congressional` geo_id being non-null |
-| `GET /essentials/address-search` | Same statewide query at line 706 — already includes `STATE_EXEC` | Works for anonymous address lookup too |
-| Stance pipeline (`_push.ts`) | external_id → UUID lookup in `essentials.politicians` | No change to push logic |
-| Headshot backfill | `photo_origin_url` or `photo_custom_url` on `essentials.politicians` | Same column as all other politicians |
-| Phase gate SQL | New `backend/scripts/verify-phase-{N}.sql` | Pattern: `verify-phase-132-140.sql`; assert per-state counts + 0 unsourced |
+| Boundary | Communication | Notes |
+|----------|---------------|-------|
+| Census Geocoder → backend | HTTP, lng/lat | already live; `$1=lng, $2=lat` PostGIS order |
+| geofence ↔ race | `office.district_id → districts.geo_id` + `ST_Covers` | race has NO geo_id of its own — geography is inherited via `office_id`. A race seeded with `office_id IS NULL` would be treated as **statewide** (`fetchStatewideRaceRows`, `electionService.ts:106-128`) and would NOT geo-match a district — so House races MUST carry `office_id`. |
+| candidate → photo/stances | `race_candidates.politician_id` | `COALESCE(rc.photo_url, politician_images.url)`; stances served by separate compass endpoints keyed on `politician_id`. Always link the record, don't denormalize. |
+| Essentials frontend ↔ API | `GET /api/essentials/elections[-by-address]` | empty-state UI lives there; backend always returns `{elections:[]}`. |
+
+---
+
+## Anti-Patterns (specific to this milestone)
+
+### AP-1: Seeding House candidates via Path-A candidacy offices
+**What people do:** Copy the Senate model — make a `Candidate for U.S. House — <State> <N>` office.
+**Why it's wrong:** Proven invisible to /elections (0 races, 0 race_candidates on every Path-A office). It would only show in the representatives feed, which is not the v2.20 goal.
+**Do this instead:** Seed `race_candidates` rows on the district race (Path B).
+
+### AP-2: Seeding a House race with `office_id IS NULL`
+**What people do:** Create a `races` row without linking the office.
+**Why it's wrong:** `office_id IS NULL` is the *statewide* convention (`electionService.ts:118-121`); the race would match every resident of the state, not the specific district, and would be mis-classified as a statewide race.
+**Do this instead:** Always set `races.office_id` to the district's existing `U.S. Representative` office.
+
+### AP-3: Creating a duplicate office/politician for an incumbent running again
+**What people do:** Make a new politician/office record for the sitting rep as a "candidate."
+**Why it's wrong:** v2.4 made duplicate records (two "Andy Barr"); breaks the feed and stance attribution.
+**Do this instead:** Reuse the existing politician record; add a `race_candidates` row with `is_incumbent=true` pointing at it.
 
 ---
 
 ## Sources
 
-All findings from direct code reading (HIGH confidence):
-
-- Feed surfacing: `backend/src/lib/essentialsService.ts` lines 1574–1598 (Path 0/1 statewide query), lines 669–716 (address-search statewide query)
-- Route handler: `backend/src/routes/essentials.ts` lines 509–741
-- Seed pattern: `backend/migrations/190_ca_state_executives.sql` (CA, one-per-office model)
-- Seed pattern: `backend/migrations/154_ma_state_executives.sql` (MA, role_canonical, label dedup)
-- Seed pattern: `backend/migrations/270_md_state_executives.sql` (MD, appointed vs elected distinction)
-- Seed pattern: `backend/migrations/317_va_state_executives.sql` (VA, uppercase state, empty district_id)
-- Seed pattern: `backend/migrations/223_or_executive_officials.sql` (OR, FIPS-prefix external_id)
-- Upstream bug fix: `backend/migrations/223a_or_executive_district_fix.sql` (lowercase state bug)
+- `backend/src/lib/electionService.ts:24-330` (HIGH — `getElectionsByCoordinate` race→office→district→geofence join; visibility window; statewide vs district branch)
+- `backend/src/lib/electionGrouping.ts:133-204` (HIGH — empty-array grouping, district_type inference)
+- `backend/src/lib/essentialsService.ts:51-62, 576-735` (HIGH — representatives feed is_active filter; UPCOMING_ELECTIONS_LATERAL)
+- `backend/src/lib/geoIdGuard.ts:15-28` (HIGH — MTFCC→district_type guard, `G5200`→`NATIONAL_LOWER`)
+- `backend/src/routes/essentials.ts:109-160` (HIGH — `/elections` + `/elections-by-address` handlers; always `{elections:[]}`)
+- `backend/migrations/042_election_schema.sql` (HIGH — elections/races/race_candidates schema + the "never join race_candidates into geofence path" warning)
+- Live production DB inspection 2026-06-27 (HIGH — 53 CA House races seeded w/ 0 candidates; TX/FL/NY absent; 27 Path-A offices w/ 0 race_candidates & 0 races; CA-12 geofence present; race_candidates 16-col schema)
+- `backend/scripts/ingest-ca-sos-2026-challengers.ts` (HIGH — canonical race_candidates seed pattern)
+- MEMORY `project_2026_senate_coverage.md` (HIGH — Path-A model description, confirmed against live data)
 
 ---
-
-*Architecture research for: v2.18 State Leaders — statewide exec integration*
-*Researched: 2026-06-20*
+*Architecture research for: 2026 US House candidate surfacing (v2.20)*
+*Researched: 2026-06-27*

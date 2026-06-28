@@ -1,216 +1,220 @@
 # Pitfalls Research
 
-**Domain:** Civic data platform — adding elected Big 5 state executives to an existing multi-tier politician database
-**Researched:** 2026-06-20
-**Confidence:** HIGH (all pitfalls grounded in actual production migrations and confirmed defects in this codebase)
+**Domain:** Adding 2026 US House general-election candidate coverage (CA/TX/FL/NY, 144 districts) to an existing civic-data platform
+**Researched:** 2026-06-27
+**Confidence:** HIGH (verified against current `electionService.ts`, `essentialsService.ts`, migrations 196/1074/042, and project memory of the v2.4 Senate run + the LA re-check)
+
+> Scope note: these are pitfalls specific to ADDING the 2026 House field, not generic data-entry advice. The four highest-impact traps for THIS milestone — duplicate incumbent records, the lost-incumbent-primary assumption, stance over-read, and seed-now/prune-later discipline — are the first four Critical Pitfalls and are covered with concrete how-to.
 
 ---
 
 ## Critical Pitfalls
 
-### Pitfall 1: Seeding Phantom Offices — Appointed Officers Treated as Elected
+### Pitfall 1: Duplicate incumbent records (the "two Andy Barrs" trap)
 
 **What goes wrong:**
-The roster phase produces a naive 50×5 grid and seeds all five roles for every state. This creates politician and office records for appointed positions that should never appear in the elected-rep feed — Maine AG/SoS/Treasurer (legislature-elected), TX SoS (governor-appointed), UT SoS (does not exist), VA SoS (governor-appointed), MD SoS (governor-appointed). Users in those states see the wrong person listed as an "elected" official they can hold accountable.
+A sitting House incumbent running for re-election already has an `essentials.politicians` row + a `NATIONAL_LOWER` office (seeded in v2.15, stanced in v2.16/v2.17). A naive "seed the 2026 field" script creates a SECOND politician row for the same person (new headshot, partial stance set, new external_id). This is exactly what v2.4 did — it created duplicate "Andy Barr" records — and it took migration 1074 (David Brock Smith) to clean up an analogous Senate dupe later.
 
 **Why it happens:**
-"Big 5" is shorthand that implies a flat grid. The temptation is to treat all five roles as structurally identical and source names from a single aggregator (e.g., NGA/Ballotpedia) without reading the "how selected" column carefully. Maine is especially deceptive: it has an AG, SoS, and Treasurer, but all three are elected by the state legislature in Joint Convention — not by voters.
+- The candidate-seeding source (Ballotpedia, FEC, ballot field) lists the incumbent as "a candidate" with no link back to the existing record, so the importer treats them as net-new.
+- New House candidacy is represented by a `race_candidates` row (and/or a `Candidate for U.S. House` office), a different object than the incumbent's sitting `NATIONAL_LOWER` office — easy to conflate "needs a candidacy row" with "needs a politician row."
+- Match-by-name is unreliable (suffixes, preferred names, middle initials), so importers skip the de-dup check.
 
 **How to avoid:**
-The roster phase must produce a per-state table with explicit columns: `office`, `selection_method` (voter-elected / legislature-elected / governor-appointed / does not exist), and source URL. Each row must be individually verified against the state .gov or Ballotpedia "How selected" section — never defaulted. A Big 5 office is only in scope when `selection_method = voter-elected`.
+- **Reuse the existing politician record; never create a new one for an incumbent.** The milestone goal already states "sitting incumbents are already stanced (v2.15–v2.17)" — so the in-scope NEW work is challengers + open-seat candidates only.
+- Run a **stance-gap / existence diagnostic at plan time** (PROJECT.md already calls for this): for each of the 144 districts, query the existing `NATIONAL_LOWER` office → politician. If the incumbent is the 2026 nominee, link the new `race_candidates` row to the **existing** `politician_id`; add no new politician row.
+- Represent candidacy via the `race_candidates` link (and an office row only if you also want them in an offices-based view), **not** a duplicate politician. Migration 1074's lesson: "candidacy is represented by the race_candidate link, not an office."
+- Seed challengers (NULL `external_id`, low-profile) and open-seat candidates as new records; sitting officials running keep their existing `external_id`.
 
 **Warning signs:**
-- Any state with all five offices checked without a source URL per office
-- ME, TX, UT, VA, MD not listed as partial/exception states on the roster
-- `is_appointed_position=false` on a Maine AG, SoS, or Treasurer record
+- Two `essentials.politicians` rows with the same/near-same `full_name`.
+- A district where the incumbent appears twice in any view, or where a "candidate" record has 0–3 stances while another record for the same person has 20+.
+- Importer logs "INSERT" for a name that should already exist.
 
-**Phase to address:**
-Roster phase (Phase 1 of the milestone). The roster is the gate — seed and stance phases must be derived from it, never independently deciding scope.
+**Phase to address:** Diagnostic phase (first) — before any seeding. Gate assertion: zero duplicate `(full_name)` within a state, and every incumbent-nominee `race_candidates` row points at the pre-existing `politician_id`.
 
 ---
 
-### Pitfall 2: Duplicating Existing Records via Title-String Dedup
+### Pitfall 2: Assuming the incumbent is the nominee (lost-primary trap)
 
 **What goes wrong:**
-The seed migration matches existing records by `office_title` or `label` string, fails to find an existing "Indiana Governor" because the new migration checks for "Governor", and creates a second politician + office + district for the same person. The dedup migration (CA's `192_ca_exec_dedup.sql`) required hardcoded UUIDs and a three-step delete/update/repair cycle to undo — expensive and risky to replay on 68 existing records across 9 states.
+Some 2026 House "incumbents" LOST their primary and are NOT on the November ballot (research flagged NY-10 Goldman and NY-13 Espaillat). If the seeding logic auto-assumes "incumbent = general-election candidate," it surfaces a person who is not actually running and omits the real nominee who beat them.
 
 **Why it happens:**
-Existing STATE_EXEC titles are inconsistent across states. Migration `103` used "Texas Governor" (state-prefixed). Migration `154` used "Governor" (short form, MA-namespaced via chamber). Migration `190` used "California Governor" (state-prefixed label). A title-string check like `WHERE title = 'Governor'` misses "Indiana Governor"; a check for "Indiana Governor" misses "Governor". The CA dedup (`192`) is proof this trap already fired once in production.
+- "Incumbent" is a status on the person, not a statement about the current ballot. The reps feed legitimately shows the sitting incumbent (they hold the office until Jan), but the ELECTIONS feed must show the actual general-ballot field.
+- Primaries are staggered and some are decided after seeding starts; a stale roster assumes incumbency carries forward.
 
 **How to avoid:**
-The seed migration must dedup on `(district_type='STATE_EXEC', state='XX')` for the existence check, not on title strings. The gap query should be:
-```sql
-SELECT state FROM <roster>
-WHERE NOT EXISTS (
-  SELECT 1 FROM essentials.districts d
-  JOIN essentials.offices o ON o.district_id = d.id
-  JOIN essentials.politicians p ON p.id = o.politician_id
-  WHERE d.district_type = 'STATE_EXEC'
-    AND d.state = roster.state_code
-    AND <office_kind_match>  -- role_canonical or chamber name pattern
-    AND p.is_active = true
-)
-```
-This is the "iterate the gap, not the roster" principle (established v2.15, KEY DECISION in PROJECT.md).
+- **Verify the actual general-election nominee per district from a primary-results source** (Ballotpedia/Wikipedia per district), never derive it from incumbency. Ballotpedia blocks WebFetch — use Wikipedia or Playwright (project-confirmed).
+- Keep the two concepts separate: the sitting incumbent stays in the **reps feed** (`is_incumbent=true`, surfaced regardless of candidacy); the **elections feed** `race_candidates` rows reflect only who is actually on the Nov ballot.
+- For a defeated incumbent: they remain a valid sitting rep (reps feed) but get **no active `race_candidates` row** for the 2026 general (or `candidate_status='withdrawn'` if one was seeded pre-primary). The primary winner gets the active `race_candidates` row.
 
 **Warning signs:**
-- Seed migration uses `WHERE title = 'Governor'` or `WHERE label LIKE '%Governor%'` without also scoping by `state` and checking the existing chamber structure
-- A state that already has STATE_EXEC records (CA, IN, MA, MD, ME, OR, TX, UT, VA) produces new rows instead of zero rows when the migration is dry-run against production
+- A district's general-election field contains the incumbent but the primary-results source shows they lost.
+- The real nominee (challenger who won the primary) has no record.
+- NY-10 / NY-13 specifically — treat as known cases, verify explicitly.
 
-**Phase to address:**
-Seed phase (Phase 2). The gap query must be written and executed as a diagnostic read before authoring any INSERT statements. Verify output from prod ref `kxsdzaojfaibhuzmclfq` shows exactly 0 new rows for the 9 already-seeded states.
+**Phase to address:** Per-district nominee-resolution phase. Gate: each in-scope district's general `race_candidates` set matches a verified primary-results source; flagged lost-incumbent districts (NY-10, NY-13, others discovered) explicitly confirmed.
 
 ---
 
-### Pitfall 3: Lowercase `state` Code on STATE_EXEC Districts Silently Breaking Feed Routing
+### Pitfall 3: Stance over-read — agents inject plausible-but-false chairs even with cited URLs
 
 **What goes wrong:**
-A STATE_EXEC district inserted with `state='or'` (lowercase) never appears in any user's representative feed — the query at `essentialsService.ts:707` filters `WHERE d.state = $1` where `$1` is the uppercase two-letter postal abbreviation. The politician record exists in the database but is completely invisible. This defect already shipped to production in migration `223` and required a repair migration (`223a`).
+The stance-research agents pin a compass value (1–5) the cited source does not actually support — e.g. reading a boilerplate "protect Social Security" line into a pinned social-security chair, or inferring fossil-fuels from an anti-CCS/45Q clause (both literally caught and DROPPED on Jamie Davis in the Senate run). The URL is real but the value is polarity-inference, not evidence. This is the exact failure mode that produced 16 deleted rows in the 7-challenger pass.
 
 **Why it happens:**
-State codes are passed as `$1` from user district cache (which stores uppercase postal abbreviations, e.g. `'OR'`). There is no CHECK constraint on `essentials.districts.state` enforcing uppercase. A migration author writing the state code by hand will occasionally use lowercase, mixed-case, or a FIPS code (`'41'`) instead of the postal abbreviation.
+- WebFetch summaries are LOSSY — the agent adjudicates a chair from a paraphrase that flattened the nuance.
+- Agents map party/ideology onto a "plausible" chair when the source is ambiguous, violating "chairs not polarity."
+- Low-profile House challengers have thin platforms, so agents over-read whatever boilerplate exists.
 
 **How to avoid:**
-Every new STATE_EXEC district INSERT must use the uppercase two-letter postal abbreviation (e.g., `'OR'`, `'TX'`, `'WY'`). Include a post-insert assertion in the migration:
-```sql
-DO $$ BEGIN
-  IF EXISTS (
-    SELECT 1 FROM essentials.districts
-    WHERE district_type = 'STATE_EXEC' AND state != upper(state)
-  ) THEN RAISE EXCEPTION 'state column contains non-uppercase values'; END IF;
-END $$;
-```
-The gate SQL must also assert `state = upper(state)` across all STATE_EXEC rows.
+- **Mandatory primary-source verification pass on every agent stance row** — re-fetch raw quotes (Playwright/raw fetch, not the lossy summary) and adjudicate the exact chair; delete or correct anything that is polarity-inference. Verify EXISTING stances too where touched.
+- Enforce "chairs not polarity": the value must come from evidence showing the specific scale position, never from party. Embed the exact 1–5 stance texts per topic in the agent prompt (direction varies by topic — never "5=progressive").
+- **Honest-skip any topic with no real fetched source** — not even a middle value. Whole-record honest-skip is allowed and should be pinned in the gate (like the v2.18 10-id pins, the Rutledge/Dunn MD skips).
+- Apply the FEDERAL 24-topic set (federal adds social-security, tariffs, ukraine-support; drops 5 state-only). Don't carry state-only topics onto federal House candidates.
 
 **Warning signs:**
-- Any state code with lowercase letters in the migration source
-- A newly seeded exec who does not appear in the feed for users in that state immediately after migration apply
+- A stance row whose source is a campaign "issues" boilerplate line with no specific position.
+- social-security / fossil-fuels / immigration chairs pinned from a single vague clause.
+- A thin challenger with a suspiciously complete 24-topic set.
 
-**Phase to address:**
-Seed phase (Phase 2). The assertion should be part of the migration itself, not a post-hoc check.
+**Phase to address:** Every stance-research phase, as a required verification sub-step before push. Gate: 0 unsourced stances; spot-check pinned chairs against raw quotes.
 
 ---
 
-### Pitfall 4: Gov+LtGov Ticket Turnover — Wrong Officeholders from Stale Sources
+### Pitfall 4: Seed-now / prune-later without preserving records (the re-check discipline)
 
 **What goes wrong:**
-Many governors and lieutenant governors took office January 2026 after 2024 elections (37 gubernatorial races in 2024). Virginia's 2025 elections replaced all three Big 5 slots (Spanberger/Hashmi/Jones, confirmed per migration 317). Sources cached before January 2026 — Wikipedia article snapshots, training data, cached NGA pages — may list the outgoing governor. The record is seeded with the wrong person's name, stances are researched for someone who is no longer in office, and the error persists until manually corrected.
+FL primary is Aug 18 (and other late primaries); the field must be seeded NOW so residents get data for the upcoming vote. After the primary, losers must be removed from the live field — but a hard DELETE destroys the record, stances, headshot, and FEC data that took real work to build, and breaks any FK references.
 
 **Why it happens:**
-The roster phase uses aggregator sources (NGA.org, Ballotpedia) that are generally current but can lag 1-4 weeks post-inauguration. Research agents working from training knowledge rather than fetching current state .gov pages will produce stale rosters. VA is the highest-risk case because its January 2026 transition was recent.
+- The instinct after a primary is to "remove the losers," and DELETE is the obvious verb.
+- Two different prune mechanisms exist for the two surfacing paths (see Pitfall 5), so a partial prune leaves the loser visible in one place.
 
-**How to avoid:**
-Every officeholder name in the roster must be verified from a live fetch of the current state .gov governor/executive page, not from training data or a cached aggregator. For states with January 2026 inaugurations, the fetch must post-date January 2026. The roster phase output should include the URL fetched and the date fetched for each row.
-
-For any state in the 9 already-seeded set, also verify the existing record is current — do not assume it is. Migration 317 is a proof point that VA was updated, but an IN, ME, or TX exec who changed in 2024 may not have been updated yet.
+**How to avoid (the LA re-check pattern, project-validated):**
+- To retire a loser: **`UPDATE essentials.politicians SET is_active=false`** — preserves the record + stances + headshot + FEC; the reps feed filters `p.is_active=true` so they drop out.
+- For the elections feed, set `essentials.race_candidates.candidate_status='withdrawn'` for the loser (the candidate-detail path already excludes `candidate_status != 'withdrawn'`); keep the winner's row active.
+- Re-research the advancing thin-stance candidate against PRIMARY sources only after they win.
+- Operator principle: seed the PRIMARY/RUNOFF field now (data for the upcoming vote), don't wait for or guess the general winner.
 
 **Warning signs:**
-- Any officeholder name that matches the 2022-inaugurated governor rather than the 2026-inaugurated one for states with 2024 elections (e.g., NC, WI, MO, NH, WV, ND, UT, WA, VT, OR)
-- Roster sourced from a single URL with no date verification
+- A migration with `DELETE FROM essentials.politicians` for a primary loser.
+- A retired candidate still appearing in one feed but not the other.
+- Lost stance/headshot work that has to be re-done.
 
-**Phase to address:**
-Roster phase (Phase 1). Every row must include a verified source URL and the research agent must explicitly fetch the state .gov page, not rely on training memory.
+**Phase to address:** Build the re-check as an explicit deferred task/phase keyed to primary dates (FL Aug 18 + any other late ones). Document the two-path prune (is_active=false AND candidate_status='withdrawn') in the phase plan.
 
 ---
 
-### Pitfall 5: Stance Evidence Mismatch by Office Type — Over-reading or Under-sourcing Exec Actions
+### Pitfall 5: Two-surfacing-paths confusion — candidate appears in one place but not the other
 
 **What goes wrong:**
-Research agents apply the legislator evidence framework to executive officials and produce either (a) underpopulated stances ("no floor votes found") or (b) over-read proxy rows ("AG's office issued a press release mentioning climate"). State executives act via different mechanisms than legislators, and each role type has specific legitimate evidence forms.
+There are TWO independent ways a candidate surfaces, with different requirements. A candidate seeded for one path is invisible in the other, so it "works" when testing one screen and silently fails on another.
+
+**The two paths (verified in code):**
+1. **Reps feed** (`getRepresentativesByJurisdiction` in `essentialsService.ts`): matches the user's congressional geo_id → `NATIONAL_LOWER` district → office → politician. Critically it filters **`AND COALESCE(p.is_incumbent, true) = true`** — so a challenger (`is_incumbent=false`) does NOT appear here. This path shows the sitting rep, not the challenger field.
+2. **Elections feed** (`fetchDistrictRaceRows` in `electionService.ts`): matches the congressional geo_id (via the MTFCC guard) → `races` → `race_candidates`. This is where the full general-ballot field (incumbent + challengers) shows. Photos join via `rc.politician_id`; stances require a linked `politician_id`.
 
 **Why it happens:**
-The v2.16/v2.17 pipeline was built for legislators. The TOPIC_SCALE instructions reference floor votes, co-sponsorships, and caucus memberships — all irrelevant for executives. Governors sign or veto bills; AGs file lawsuits, join multistate coalitions, and submit amicus briefs; Treasurers make investment/divestment decisions; SoS officials administer election policy. An agent trained on the legislative framework will either skip legitimate exec evidence or accept office-action descriptions that don't actually document a position.
+- The Senate "Path A" model surfaces challengers via a `Candidate for U.S. Senate — <State>` **office** row, a third pattern. Carrying that to House without checking the House feed query leads to candidates seeded as offices the elections feed (which reads `race_candidates`) never shows — or vice versa.
+- The reps feed's `is_incumbent=true` filter is non-obvious; a challenger seeded "correctly" as a politician+office still won't appear there.
 
 **How to avoid:**
-The stance research skill prompt must be updated with office-type-specific evidence guidance before any research agents are dispatched. Per office type:
-
-- **Governor:** Bill signings/vetoes (documented at legislature.state.gov or governor press room), executive orders (official EO archive), public statements in official press releases. Inaugural address is acceptable for broad position statements. Campaign platform is documentary (above the caucus bar) for recent inaugurees.
-- **Lt. Governor:** Same sources as Governor for any stated positions; also committee assignments if Lt Gov presides over a specific domain. Thin records are common — honest-partial is correct; never infer from governor's positions.
-- **Attorney General:** Multistate coalition membership is acceptable ONLY when the coalition has a published policy position directly on that topic (analogous to the caucus rule). Filed lawsuits or amicus briefs are the strongest evidence — document the case name and docket. Declined to join a coalition = evidence of opposite position (document the news source). Department-issued guidance or opinion letters are legitimate. AG's political party alone is never sufficient.
-- **Secretary of State:** Election administration actions (certifying results, refusing to certify, suing over election rules, issuing voting guidance) map to the `voting` and `elections` topics. Public statements on specific election legislation are valid. "Administers elections" as a role description alone is not a documented stance.
-- **Treasurer:** Investment/divestment decisions (documented fund actions or board votes) are the strongest evidence for topics like climate (fossil fuel divestment), tariffs (trade bond positions), and healthcare (state pension coverage decisions). ESG policy statements from the state investment board are legitimate. Budget proposal priorities are acceptable for fiscal topics.
-
-The proxy-row drop rules from v2.17 still apply: "overall record alignment" rows, coalition membership without a published topical platform, and committee role ≠ any topic are all dropped. An honest-partial with 4-8 stances is correct for a Treasurer or Lt. Gov who lacks documented positions on most compass topics.
+- **Decide the House surfacing path explicitly in research/requirements** (PROJECT.md flags this as an open question: "resolve elections-page vs. representatives-feed surfacing path"). For "see your 2026 House race field," the **elections feed via `race_candidates`** is the correct path — the only path that shows non-incumbent challengers.
+- A House general-election candidate needs: a `races` row for the district (office linked to the `NATIONAL_LOWER` district), a `race_candidates` row per candidate, and (for stances + photo) a linked `politician_id`.
+- Don't rely on the offices-based reps feed to show challengers — its `is_incumbent=true` filter excludes them by design.
+- If a small code change is needed (e.g. to surface the House race block on the Elections page), scope it in the surfacing-path phase rather than assuming pure-data.
 
 **Warning signs:**
-- Any AG stance sourced only from "AG's office works on [topic]" or "AG is a Democrat/Republican"
-- Any Treasurer stance sourced only from a budget overview page without a specific fund action
-- Any SoS stance sourced from "SoS administers elections" without a specific policy action
-- Lt Gov stances that exactly mirror the same-state Governor's stances without independent sourcing
+- A challenger with a `Candidate for U.S. House` office but no `race_candidates` row → invisible on Elections page.
+- A `race_candidates` row with NULL `politician_id` → no stances, no photo (PHOTO_LATERAL keys off `rc.politician_id`).
+- Candidate visible on a politician detail page but not in the user's address-based Elections result.
 
-**Phase to address:**
-Stance research phase (Phase 3). The updated skill prompt is the prevention; the proxy-row review gate (now standard since Phase 138) catches any that slip through.
+**Phase to address:** Surfacing-path resolution phase (early — determines pure-data vs. code change). Gate: a test address in each Wave-1 state returns its House race with the full candidate field on the Elections feed.
 
 ---
 
-### Pitfall 6: Re-researching Already-Stanced Executives (Scope Creep into Existing Records)
+### Pitfall 6: Thin-sourcing for low-profile challengers → over-filling instead of honest-skip
 
 **What goes wrong:**
-The stance phase dispatches agents for all STATE_EXEC officials in the in-scope states, including CA officials who already have complete compass coverage and IN Governor who already has stances. The push script overwrites existing well-sourced stances with new research, potentially downgrading quality or introducing errors.
+Many of the 144 districts include obscure challengers (third-party, perennial, late-filing) with almost no fetchable record. The temptation is to fill a fuller stance set than evidence supports, or to skip the candidate entirely and leave the race field incomplete.
 
 **Why it happens:**
-The v2.16/v2.17 pipeline filtered by `WHERE NOT EXISTS (SELECT 1 FROM inform.politician_answers WHERE politician_id = p.id)` scoped to the external_id range. For state execs, the external_id scheme is heterogeneous (positive legacy IDs for some CA execs, -06000xxx for others after migration 192, -200xxx for MA, -510xxx for VA). A naive filter on external_id range will miss some already-stanced records.
+- A race "looks done" with the incumbent + one major challenger, but a third ballot-qualified candidate has only a one-page site.
+- Source walls: Ballotpedia/VoteSmart/voter-guide pages return 403/blank via WebFetch.
 
 **How to avoid:**
-The stance gap query must use the same pattern as v2.17: filter by `NOT EXISTS` on `inform.politician_answers`, keyed on the politician UUID — not on external_id range. For the 9 already-seeded states, run the diagnostic before authoring any research plans:
-```sql
-SELECT p.full_name, p.external_id, COUNT(pa.id) as stance_count
-FROM essentials.politicians p
-JOIN essentials.offices o ON o.politician_id = p.id
-JOIN essentials.districts d ON d.id = o.district_id
-LEFT JOIN inform.politician_answers pa ON pa.politician_id = p.id
-WHERE d.district_type = 'STATE_EXEC'
-GROUP BY p.id, p.full_name, p.external_id
-ORDER BY stance_count, p.full_name;
-```
-Only dispatch research agents for rows where `stance_count = 0`.
+- Seed the candidate **record** (name, party-on-race, headshot if findable) even when stances are thin — the field must reflect the actual ballot.
+- Honest-skip stance topics with no evidence; a low-profile House challenger commonly yields ~5–9 honest stances max (matches the Senate experience: Davis 9, the 7-challenger spread 8–20). Campaign site + a local-news candidate Q&A is the usable vein.
+- Whole-record honest-skip (record seeded, 0 stances, documented) is acceptable and gate-pinnable — like Rutledge/Dunn in the MD work.
 
 **Warning signs:**
-- Stance research plan includes CA Governor Newsom, CA AG Bonta, or any CA exec (all are fully stanced)
-- Plan includes any IN Governor (already stanced per PROJECT.md context)
+- A perennial/third-party candidate with a full 24-topic set.
+- A race field missing a ballot-qualified candidate because "no sources."
 
-**Phase to address:**
-Stance research phase (Phase 3) setup — gap diagnostic must be the first step before any research agents are dispatched.
+**Phase to address:** Stance-research phases; gate allows documented whole-record skips pinned by id.
 
 ---
 
-### Pitfall 7: Dedup Key Collision in the `external_id` Scheme
+### Pitfall 7: Headshot sourcing for obscure challengers + antipartisan display constraint
 
 **What goes wrong:**
-The state exec external_id scheme is not uniform across the 9 existing states. CA used `-06000101` through `-06000108`. MA used `-200001` through `-200007` (with a gap at `-200002` due to a pre-existing collision with CA politician Curren D. Price Jr.). TX used `-100202` through `-100207`. A new 41-state batch that adopts one pattern will collide with an existing range if it accidentally uses `-{FIPS}00X` for a FIPS code that was already used differently.
+(a) Obscure challengers have no clean headshot, leading to missing photos or a low-quality scrape. (b) Party gets attached to the candidate card instead of the race, violating the antipartisan mission.
 
 **Why it happens:**
-The negative external_id space was allocated ad hoc per migration. There is no global registry or reserved-range table. CA used `-(fips*1000000 + sequential)`. TX used a flat negative sequence. MA used a flat negative sequence starting at -200001. A new migration for AL (FIPS 01) using `-01000101` would be fine; one using `-200008` would collide with MA's next available slot.
+- Headshots for low-profile candidates often exist only as a Ballotpedia thumb or a campaign couple-photo needing a crop.
+- Importers habitually put party on the candidate; the platform's convention is party on the race.
 
 **How to avoid:**
-Before authoring the seed migration for any new state, query production for the full range of existing negative external_ids among STATE_EXEC politicians and define a non-overlapping range. The safest convention for v2.18 is `-(state_fips * 10000 + office_seq)` which gives each state 9,999 exec slots. Verify 0 collisions with a pre-flight SELECT before the batch INSERT. Document the chosen scheme explicitly in the migration header comment.
+- Headshots: follow find-headshots conventions — upload to `politician_photos/<politician_id>/default.jpg`, insert `essentials.politician_images` `type='default'`, set `photo_origin_url`. Process to 600x750 (4:5, Lanczos, q90), composite alpha→white. Ballotpedia thumbs (200x300) are the reliable `press_use` fallback; crop campaign group/couple photos when that's all that exists.
+- Antipartisan: **party context lives on the RACE (`races.primary_party`), never on the candidate** — enforced at the query layer (`electionService.ts` header comment). Do not populate party as a displayed candidate attribute in the elections feed.
 
 **Warning signs:**
-- `ON CONFLICT (external_id) DO NOTHING` silently skips a politician because the external_id was already taken by a different politician
-- Post-migration row count is less than expected
+- Candidate cards displaying party in the elections feed.
+- Missing `politician_images` row → no photo even though `photo_url` looks set.
 
-**Phase to address:**
-Seed phase (Phase 2). The external_id scheme must be defined in the roster phase and verified for collisions before the seed migration is written.
+**Phase to address:** Headshot phase + the surfacing-path phase (verify no party on candidate card).
 
 ---
 
-### Pitfall 8: Missing `geo_id` on STATE_EXEC Districts Breaks Feed Geo-Matching
+### Pitfall 8: FEC rate limits / name-match failures at 144-district scale
 
 **What goes wrong:**
-STATE_EXEC districts with `geo_id=''` (empty string) existed in the original migrations (TX `103`, OR `223`) and were patched in `223a` and implicitly by later migrations. A new state migration that uses empty string or NULL for `geo_id` will seed records that appear in the database but may be unreachable depending on future geo-matching logic additions.
+FEC ingestion times out or silently name-mismatches the committee (the project already has a known FEC name-match queue with LaMalfa/Swalwell-type failures). At 144 districts × multiple candidates, rate limits and mismatches multiply.
 
 **Why it happens:**
-STATE_EXEC districts do not use TIGER polygon matching (there's no geofence for "the whole state"). The current feed query (`essentialsService.ts:707`) filters only by `d.state = $1` for STATE_EXEC rows, so `geo_id` is not currently load-bearing in the query path. This makes the defect invisible in testing — the records surface correctly despite the bad value — but creates a latent data quality problem.
+- FEC committee lookup is name-keyed and brittle; high request volume hits rate limits (the Senate run had persistent timeouts on ~5 federal politicians).
 
 **How to avoid:**
-Every STATE_EXEC district must have `geo_id = '{state_fips}'` (the two-digit state FIPS code as a string, e.g., `'48'` for TX, `'23'` for ME). This is already the established pattern in migration `154` (MA) and `317` (VA). Include a gate assertion: `WHERE district_type='STATE_EXEC' AND (geo_id IS NULL OR geo_id = '')` should return 0 rows.
+- Treat FEC finance as best-effort enrichment, not a blocker (`finance_summary` is nullable; null for non-federal already handled).
+- Throttle requests; reuse the existing fix-FEC-name-mismatches script pattern; record which candidates have no FEC ID rather than retrying indefinitely.
 
 **Warning signs:**
-- Any `geo_id = ''` or `NULL` on a STATE_EXEC district in a new migration
-- FIPS code inserted as an integer (`48`) rather than a string (`'48'`)
+- Repeated FEC timeouts on the same IDs; finance attributed to the wrong committee.
 
-**Phase to address:**
-Seed phase (Phase 2). The gate SQL should assert non-empty `geo_id` on all STATE_EXEC rows.
+**Phase to address:** Optional finance-enrichment phase (low priority; not on the critical path for the "see your race" goal).
+
+---
+
+### Pitfall 9: Malformed CSV from research agents + stale-quote duplication on re-push
+
+**What goes wrong:**
+(a) Stance-researcher agents emit malformed CSVs constantly — a stray trailing comma yields 11 fields, a missing field yields 9 (canonical 10). (b) On a quote-text correction, the push INSERTs a NEW quote and leaves the stale one selected, so the candidate shows a stale/duplicate quote. Apostrophe/encoding in quote text compounds this.
+
+**Why it happens:**
+- Agents don't enforce a fixed field count; quote pushes are insert-only with no replace.
+
+**How to avoid:**
+- **Field-count-validate and normalize every CSV before `_push_*.ts`** (re-parse → re-stringify to canonical 10 fields).
+- On any quote correction: **wipe `essentials.quotes` for the pid, then re-push** the verified set for a clean quote set.
+- New low-profile records (NULL external_id) push via `_push_uuid.ts`; sitting-official records (external_id) push via `_push.ts`.
+- Bash cwd resets between calls — `cd /c/EV-Accounts/backend &&` in the SAME compound command; run node with `--env-file=.env`.
+
+**Warning signs:**
+- Push errors on field count; a candidate showing two quotes for one topic or a quote that contradicts the corrected value.
+
+**Phase to address:** Every stance-research phase (push hygiene sub-step).
 
 ---
 
@@ -218,99 +222,82 @@ Seed phase (Phase 2). The gate SQL should assert non-empty `geo_id` on all STATE
 
 | Shortcut | Immediate Benefit | Long-term Cost | When Acceptable |
 |----------|-------------------|----------------|-----------------|
-| Use NGA or Ballotpedia as sole elected/appointed source | Fast roster construction | May lag post-inauguration by weeks; NGA lists appointed AGs as if elected in some states | Never for a milestone that spans all 50 states; always verify against state .gov |
-| One migration per state (41 states = 41 migrations) | Easy to review individually | Migration directory bloat; numbering pressure | Group by natural batches (e.g., 10 states per migration) to stay within reasonable migration count |
-| Skip `role_canonical` on new exec offices | Simpler migration | `role_canonical` is the only mechanism to normalize cross-state title aliases at query time for future features | Set it now for all Treasurer and SoS offices; NA for Governor/LtGov/AG which have standard titles |
-| Research stances for all 50 governors at once | Parallelism | Rate limit hits; no per-batch validation; proxy rows go unreviewed | Use the 3-concurrency cap, validate first wave before proceeding (MEMORY.md standing rule) |
-| Infer LtGov stances from same-ticket Governor | Fast fill for sparse record | Violates the evidence-over-party guardrail; Lt Gov and Gov may diverge on compass topics | Never — honest-partial is always correct |
-
----
+| Hard-DELETE primary losers instead of `is_active=false` | One-line cleanup | Destroys stances/headshot/FEC; breaks FKs; loses audit trail | Never — use `is_active=false` + `candidate_status='withdrawn'` |
+| New politician row for an incumbent "candidate" | Importer is simpler (no de-dup) | Duplicate records (v2.4 Andy Barr; migration 1074 cleanup) | Never — reuse existing record |
+| Infer a chair from party when source is thin | Fuller-looking coverage | Trust erosion; mass deletions in verification pass | Never — honest-skip |
+| Seed challengers only as offices (Senate Path A) for House | Mirrors prior milestone | Invisible on Elections feed (which reads `race_candidates`) | Never for House — use `race_candidates` |
+| Skip FEC enrichment for hard name-matches | Avoids rate-limit churn | Some candidates lack finance | Acceptable — finance is best-effort, nullable |
 
 ## Integration Gotchas
 
 | Integration | Common Mistake | Correct Approach |
 |-------------|----------------|------------------|
-| Feed surfacing (`GET /representatives/me`) | Assuming STATE_EXEC is already wired for new states because CA works | The query filters `d.state = $1` — the state code on the district must match the user's stored state exactly. Test with a user in a newly seeded state to confirm. CA works because it was seeded; new states work only after their districts are seeded with correct uppercase state codes. |
-| Ballotpedia "How selected" | Reading the "partisan election" badge and assuming voter-elected | Some offices labeled as "partisan election" are elected by the legislature in partisan votes (ME). Always read the "Ballotpedia describes this office as..." section or the state constitution source. |
-| NGA Governor directory | Using NGA as the sole source for the full Big 5 roster | NGA covers only Governors and Lt. Governors. AG/SoS/Treasurer selection methods must be sourced from state constitutions or Ballotpedia. |
-| Existing IN/ME/TX gap-fill stances | Treating these as new research | These politicians already have records — only stances are missing. The push must use their existing politician UUIDs, not create new records. Query the UUID before dispatching research. |
-| `role_canonical` query | Assuming the column exists on all offices tables | `role_canonical` was added in migration `154`. It exists. But it is currently NULL on most exec offices (only MA Treasurer and SoS have it set). Do not build feed logic that depends on `role_canonical` being non-null for Big 5 filtering — use `district_type = 'STATE_EXEC'` instead. |
-
----
-
-## Performance Traps
-
-| Trap | Symptoms | Prevention | When It Breaks |
-|------|----------|------------|----------------|
-| Dispatching 41-state stance research in a single wave | Agent queue exhaustion, rate limit hits, empty output on some agents | Cap at 3 concurrent research agents (MEMORY.md); validate first 3-rep wave before proceeding | At >3 concurrent on premium tier |
-| Full-table scan of `inform.politician_answers` to find stance gaps | Slow gap diagnostic | Scope by politician UUID list derived from `WHERE d.district_type='STATE_EXEC'`; do not scan the full 10k+ answer table | Not a problem at current scale, but scope it correctly from the start |
-| Chamber subquery without `government_id` scope | Returns multiple chambers with same name from different states | Always include `AND government_id = (SELECT id FROM essentials.governments WHERE name = 'State of X' AND state = 'XX')` in chamber lookups | Any migration where two states share a chamber name (e.g., "Governor" is used in CA and VA) |
-
----
+| Reps feed (`essentialsService`) | Expecting challengers to appear | It filters `is_incumbent=true` — only the sitting rep shows; challengers surface via the elections feed |
+| Elections feed (`electionService`) | Seeding candidate as an office only | Seed a `race_candidates` row (+ linked `politician_id` for stances/photo) |
+| Ballotpedia | WebFetch the page | Blocked — use Wikipedia or Playwright for primary results / headshot thumbs |
+| FEC | Retry timeouts indefinitely; trust name-match | Throttle; reuse fix-name-mismatch script; record "no FEC ID" |
+| `race_candidates.politician_id` | Leaving NULL | NULL → no stances and no photo (PHOTO_LATERAL keys off it) |
 
 ## Security Mistakes
 
 | Mistake | Risk | Prevention |
 |---------|------|------------|
-| Setting `is_appointed=false` on an appointed official | User sees a governor-appointed SoS labeled as an elected official they voted for, undermining trust | The roster phase must explicitly set `is_appointed_position=true` for every legislature-elected or governor-appointed office; never default to false |
-| Seeding stances for an official who is no longer in office | Stances attributed to a departed official damage data credibility | Verify incumbency before researching stances; set `is_incumbent=false` and `is_active=false` for outgoing officials rather than researching their stances |
+| Displaying party on candidate card | Violates antipartisan mission (a product/trust requirement) | Party lives on `races.primary_party` only; enforced at query layer |
+| Surfacing a withdrawn/retired candidate | Misinforms voters about the ballot | Prune both paths (`is_active=false` + `candidate_status='withdrawn'`) |
 
----
+## UX Pitfalls
+
+| Pitfall | User Impact | Better Approach |
+|---------|-------------|-----------------|
+| Showing a defeated incumbent as a 2026 candidate | Voter sees a non-candidate; misses real nominee | Verify nominee per district; defeated incumbent stays in reps feed, not the general field |
+| Incomplete race field (missing ballot-qualified candidate) | Race looks done but a real candidate is absent | Seed every ballot-qualified candidate even if stances are thin |
+| Stale/duplicate quote on a candidate | Contradictory or wrong attribution | Wipe `essentials.quotes` for the pid then re-push |
 
 ## "Looks Done But Isn't" Checklist
 
-- [ ] **Roster completeness:** Every state has a source URL per office, not just per state — ME's three appointed execs need individual source confirmation.
-- [ ] **Elected filter applied:** Confirm the count of in-scope (voter-elected) execs matches the roster. ME=1, TX=3, OR=4, UT=4, VA=3, MD=3. Any deviation needs explanation.
-- [ ] **Existing record gap verification:** Run the stance count diagnostic against production before dispatching any research agents. CA should show all 8 with stances; IN should show Governor stanced, AG/SoS/Treasurer at 0.
-- [ ] **State code case check:** `SELECT DISTINCT state FROM essentials.districts WHERE district_type='STATE_EXEC'` should return only uppercase two-letter codes.
-- [ ] **Feed test per new state:** Manually verify at least 3 newly-seeded states return the correct exec in `GET /representatives/me` for a user with a stored state code in that state.
-- [ ] **Proxy-row review gate:** Before any push, review agent output for AG/Treasurer/SoS stances that cite only "office works on X topic" or "coalition membership" without a specific action. Drop them.
-- [ ] **external_id collision check:** `SELECT external_id FROM essentials.politicians WHERE external_id < 0 ORDER BY external_id` — verify no new exec external_id overlaps any existing negative ID.
-- [ ] **`geo_id` non-empty:** `SELECT COUNT(*) FROM essentials.districts WHERE district_type='STATE_EXEC' AND (geo_id IS NULL OR geo_id = '')` must return 0 after seed migrations.
-
----
+- [ ] **Incumbent reuse:** Every incumbent-nominee candidacy links to the EXISTING `politician_id` — verify zero duplicate `full_name` within a state.
+- [ ] **Nominee correctness:** Each district's general field matches a verified primary-results source — verify NY-10, NY-13, and any other flagged lost-incumbent.
+- [ ] **Both surfacing paths:** A test address in CA/TX/FL/NY returns its House race on the Elections feed — verify the challenger field is present, not just the incumbent.
+- [ ] **`race_candidates.politician_id` set:** Every candidate with stances/headshot links its politician — verify no NULL where data exists.
+- [ ] **Stance verification pass:** Every pinned chair re-checked against a raw quote — verify 0 unsourced, 0 polarity-inference.
+- [ ] **Party placement:** No party on candidate cards — verify it reads from `races.primary_party`.
+- [ ] **Re-check task scheduled:** FL Aug 18 (+ other late primaries) deferred prune task documented with the two-path method.
 
 ## Recovery Strategies
 
 | Pitfall | Recovery Cost | Recovery Steps |
 |---------|---------------|----------------|
-| Phantom appointed office seeded | MEDIUM | Set `is_active=false` on the politician and `is_vacant=true` on the office; do not delete (preserve FK integrity); add a correction migration with the fix documented |
-| Duplicate politician created (title-dedup failure) | HIGH | Requires a dedup migration in the style of `192_ca_exec_dedup.sql`: null out `office_id`, delete duplicate office, delete duplicate politician, delete duplicate district, update original politician's external_id, fix any corrupted title — all in one transaction |
-| Lowercase `state` code on district | LOW | One-line UPDATE with a WHERE clause scoped to the bad FIPS, as in migration `223a` |
-| Wrong officeholder name (stale roster) | MEDIUM | Update `full_name`, `first_name`, `last_name` on the politician row; if stances were already researched for the old person, delete them and re-research for the current officeholder |
-| Over-populated proxy stances pushed | MEDIUM | DELETE from `inform.politician_answers` and `inform.politician_context` WHERE `politician_id IN (...)` AND topic_id IN (...) for the affected rows; re-research with the corrected evidence standard |
-
----
+| Duplicate incumbent record | MEDIUM | Migration-1074 pattern: pick survivor (richest stances/headshot/race link), move offices onto it, delete dup's redundant children + row, guard by name |
+| Wrong nominee surfaced | LOW | Add/activate the real nominee's `race_candidates` row; `withdrawn`/`is_active=false` the non-candidate |
+| Over-read stances shipped | LOW–MEDIUM | Re-fetch raw quotes; delete inference rows (16-row precedent); wipe + re-push quotes |
+| Loser hard-deleted | HIGH | Re-seed record + re-research stances + re-source headshot/FEC from scratch |
+| Candidate in one path only | LOW | Add the missing `race_candidates` row or link `politician_id` |
 
 ## Pitfall-to-Phase Mapping
 
 | Pitfall | Prevention Phase | Verification |
 |---------|------------------|--------------|
-| Phantom appointed offices | Phase 1: Roster | Per-state table with `selection_method` column; count of voter-elected offices matches known exceptions (ME=1, TX=3, etc.) |
-| Title-string dedup failure | Phase 2: Seed | Dry-run gap query against prod returns 0 rows for 9 already-seeded states |
-| Lowercase state code | Phase 2: Seed | Post-migration assertion in migration SQL + gate SQL `upper(state)` check |
-| Stale officeholders | Phase 1: Roster | Source URL + fetch date per row; explicit check for 2024-election states |
-| Wrong evidence type for exec office | Phase 3: Stances | Updated TOPIC_SCALE / skill prompt with AG/Treasurer/SoS guidance before first agent dispatch |
-| Re-researching stanced execs | Phase 3: Stances | Stance gap diagnostic run before any research plans authored |
-| external_id collision | Phase 2: Seed | Pre-flight SELECT for collision; documented scheme in migration header |
-| Empty `geo_id` | Phase 2: Seed | Gate SQL asserts 0 rows with `geo_id IS NULL OR geo_id = ''` for `district_type='STATE_EXEC'` |
-| Feed not surfacing new states | Phase 4: Feed surfacing | Smoke test: user with stored state code in 3 newly-seeded states hits `GET /representatives/me` and sees the correct exec |
-
----
+| Duplicate incumbent records | Diagnostic phase (first) | Gate: 0 duplicate full_name per state; incumbent-nominee links to existing politician_id |
+| Lost-primary / wrong nominee | Nominee-resolution phase | Gate: general field matches primary-results source; NY-10/NY-13 confirmed |
+| Stance over-read | Each stance phase (verification sub-step) | Gate: 0 unsourced; spot-check chairs vs raw quotes |
+| Seed-now / prune-later | Deferred re-check task (per primary date) | Both paths pruned; records preserved |
+| Two surfacing paths | Surfacing-path phase (early) | Gate: test address returns full House field on Elections feed |
+| Thin-source over-fill | Stance phases | Gate: documented whole-record skips pinned by id |
+| Headshots + antipartisan | Headshot phase | All new candidates have `politician_images`; no party on card |
+| FEC rate/name-match | Finance enrichment (optional) | Best-effort; "no FEC ID" recorded |
+| Malformed CSV / stale quotes | Each stance phase (push hygiene) | Field-count-validated CSV; clean quote set per pid |
 
 ## Sources
 
-- Migration `103_texas_state_federal_officials.sql` — TX exec pattern (title-prefixed chambers, flat negative external_ids)
-- Migration `154_ma_state_executives.sql` — MA exec pattern (role_canonical established, -200xxx scheme, external_id -200002 gap from CA collision)
-- Migration `169_me_state_executives.sql` — ME exec pattern (legislature-elected AG/SoS/Treasurer documented with is_appointed_position=true)
-- Migration `190_ca_state_executives.sql` — CA exec first attempt (seeded duplicates because pre-existing records existed)
-- Migration `192_ca_exec_dedup.sql` — CA dedup repair (hardcoded UUIDs, three-step cycle — the cost of title-string dedup failure)
-- Migration `223_or_executive_officials.sql` + `223a_or_executive_district_fix.sql` — OR lowercase state code defect and repair
-- Migration `317_va_state_executives.sql` — VA exec pattern (2025 election turnover; pre-flight government row assertion)
-- `backend/src/lib/essentialsService.ts:707` — STATE_EXEC feed query (`WHERE d.state = $1`) confirming state-code matching is the sole filter for exec surfacing
-- PROJECT.md v2.18 section — milestone scope, gap baseline (68 records / 9 states), known exceptions (ME/OR no LtGov, TX no elected Treasurer/appointed SoS, UT no SoS, VA/MD appointed SoS)
-- PROJECT.md Key Decisions — "iterate the gap, not the roster" (v2.15); v2.17 proxy-row drop rules (agent efficiency, caucus membership standards); 3-concurrency cap (MEMORY.md)
+- `backend/src/lib/essentialsService.ts` (reps-feed query; `is_incumbent=true` filter, ~lines 1495–1599) — HIGH
+- `backend/src/lib/electionService.ts` (elections feed; `race_candidates` path, antipartisan rationale, visibility window) — HIGH
+- `backend/migrations/196_us_senate_candidates_2026.sql` (candidate-office seeding pattern, idempotency) — HIGH
+- `backend/migrations/1074_dedupe_david_brock_smith.sql` (duplicate-record recovery pattern) — HIGH
+- `backend/migrations/042_election_schema.sql` (`candidate_status` enum: active/withdrawn/filed) — HIGH
+- Project memory `project_2026_senate_coverage.md` (Path A, LA re-check, malformed-CSV/stale-quote traps) — HIGH
+- Project memory `feedback_stance_no_assumption.md`, `feedback_chairs_not_polarity.md` (no-inference rules, 16 deleted rows) — HIGH
+- PROJECT.md v2.20 milestone definition (surfacing-path open question, stance-gap diagnostic, seed-now/re-check) — HIGH
 
 ---
-*Pitfalls research for: v2.18 State Leaders — elected Big 5 statewide executives across 50 states*
-*Researched: 2026-06-20*
+*Pitfalls research for: 2026 US House candidate coverage (v2.20)*
+*Researched: 2026-06-27*
