@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
 status: executing
-last_updated: "2026-06-28T15:27:53.408Z"
-last_activity: 2026-06-28 -- Phase 148 planning complete
+last_updated: "2026-06-28T16:09:36.676Z"
+last_activity: 2026-06-28
 progress:
   total_phases: 6
   completed_phases: 0
   total_plans: 2
-  completed_plans: 0
+  completed_plans: 1
   percent: 0
 ---
 
@@ -20,15 +20,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.19 Local Civic Coverage COMPLETE + archived (formalized retroactively). Awaiting next milestone.
+**Current focus:** Phase 148 — field-resolution-stance-gap-diagnostic
 **Last shipped:** v2.19 Local Civic Coverage — Phases 145–147 (inline-executed), formalized 2026-06-23. Falls Church VA (17) + Greene County MO (13) + Springfield MO (16): 46 records, 4 geofence boundaries, 118 evidence-only stances (0 unsourced), 46 headshots, 3 essentials coverage entries; LCC-01..05 closed. Migrations 1047–1049; git range a488232a → ef1a364f.
 
 ## Current Position
 
-Phase: Not started (roadmap complete; awaiting plan-phase)
-Plan: —
+Phase: 148 (field-resolution-stance-gap-diagnostic) — EXECUTING
+Plan: 2 of 2
 Status: Ready to execute
-Last activity: 2026-06-28 -- Phase 148 planning complete
+Last activity: 2026-06-28
 Next: `/gsd-plan-phase 148` (Field Resolution + Stance-Gap Diagnostic — must run first)
 
 ### v2.20 Phase Dependencies
@@ -250,12 +250,13 @@ None for v2.18 start. Run the live diagnostic queries at plan authoring time:
 | 021 | Add candidate support to compass compare | 2026-05-14 | 5eb3852 | [021-add-candidate-support-to-compass-compar](./quick/021-add-candidate-support-to-compass-compar/) |
 | 022 | Fix Malik inversion bug, run 24 stance ingest scripts (255 rows), extend compassService dual-path fallback | 2026-05-15 | 01b3bfe | [022-run-pending-stance-ingest-and-extend-ca](./quick/022-run-pending-stance-ingest-and-extend-ca/) |
 | 023 | Deep candidate coverage — CA Gov (Hilton/Becerra) +11 sourced stances + 2 headshots; LA Mayor (Bass/Raman) reasoning enriched; ALL 4 candidates + pre-existing stances primary-source fact-checked (4 honest-skips deleted, value/quote/source corrections); both Govs at 22 symmetric state-tier | 2026-06-23 | c96d749f | [023-deep-candidate-coverage-gov-la-mayor](./quick/023-deep-candidate-coverage-gov-la-mayor/) |
+| Phase 148 P01 | 5 min | 2 tasks | 2 files |
 
 ## Session Continuity
 
-Last session: 2026-06-24
+Last session: 2026-06-28T16:06:22.245Z
 Stopped at: Quick task 023 COMPLETE — CA Gov (Hilton/Becerra) + LA Mayor (Bass/Raman) deep candidate coverage, enrichment, and full primary-source fact-check; all live + pushed (c96d749f)
-Resume file: — (awaiting next milestone)
+Resume file: None
 
 ## Decisions
 
@@ -268,6 +269,7 @@ Resume file: — (awaiting next milestone)
 - [Phase 118-02]: MAGE-05 requires mtfcc IN ('G5210','G5220') filter — geo_id '25017' exists as both Middlesex County (G4020) and 8th Bristol SLDL District (G5220); unfiltered subquery returns 3 rows; mtfcc filter returns correct 2 rows
 - [Phase 118-03]: Medford Step 5 omitted — charter reform 2020 creates fully at-large council; migration 711 follows 709 (Fall River) at-large pattern with 2-gate post-verification only
 - [Phase 123-04]: Fall River and Medford Path 0 spot checks require essentialsService join pattern (d.geo_id=gb.geo_id + G4110 discriminator) — citywide LOCAL rows have mtfcc=NULL; tiger_geoid join (gb.mtfcc=d.mtfcc) fails silently for NULL vs G4110
+- [Phase ?]: [Phase 148-01]: Map incumbents by (NATIONAL_LOWER, geo_id) — never computed external_id (CA -6000301 verified live; -(fips*1000+cd) mis-keys CA/TX). Wave-1 stance gap: 73 zero / 59 partial / 10 done / 2 vacant (FL-20 1220, TX-23 4823).
 
 ## Operator Next Steps
 

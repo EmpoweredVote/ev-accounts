@@ -83,7 +83,7 @@ CA/TX/NY are independent of each other once field resolution (Phase 148) is done
 Plans:
 **Wave 1**
 
-- [ ] 148-01-PLAN.md — DB incumbent->politician_id map + per-incumbent stance-gap counts/top-up tiers + vacancy enumeration (148-incumbent-map.csv)
+- [x] 148-01-PLAN.md — DB incumbent->politician_id map + per-incumbent stance-gap counts/top-up tiers + vacancy enumeration (148-incumbent-map.csv)
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
@@ -188,7 +188,7 @@ CA/TX/NY are independent of each other once field resolution (Phase 148) is done
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 148. Field Resolution + Stance-Gap Diagnostic | 0/2 | Not started | - |
+| 148. Field Resolution + Stance-Gap Diagnostic | 1/2 | In Progress|  |
 | 149. CA Candidate Seeding (race_candidates only) | 0/? | Not started | - |
 | 150. TX + NY Candidate Seeding (create races) | 0/? | Not started | - |
 | 151. FL Candidate Seeding (provisional) | 0/? | Not started | - |
