@@ -22,6 +22,19 @@ The foundational account infrastructure for Empowered Vote. A three-tier system 
 
 Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
 
+## Current Milestone: v2.20 2026 US House Candidate Coverage (Wave 1)
+
+**Goal:** Every resident of the covered states can enter their address into Elections and see their 2026 US House race — the actual Nov 3 general-ballot field — each candidate with a headshot and chairs-not-polarity, evidence-only stances. (Senate shows "if available" from its own existing track.)
+
+**Target features:**
+- 2026 US House candidate records for the Nov-3 general-ballot field (major-party nominees + ballot-qualified independents/third-party) in the Wave-1 states — **CA (52), TX (38), FL (28), NY (26) = 144 districts**. New work is challengers + open-seat candidates; sitting incumbents are already stanced (v2.15–v2.17), so a stance-gap diagnostic runs at plan time.
+- Headshot per new candidate (find-headshots conventions).
+- Sourced compass stances per candidate across the **federal 24-topic** set — chairs-not-polarity, every answer backed by a real fetched source, honest-skip where no evidence; never inferred from party.
+- The House race surfaces for a resident's address in Elections (resolve elections-page vs. representatives-feed surfacing path in research — determines pure-data vs. small code change).
+- Seed the currently-known field now + re-check post-primary (most CA/TX/NY primaries done; FL primary Aug 18).
+
+**Out of scope (v2.20):** Senate races (own track), states beyond the top-4 delegations (→ v2.21+), primary-only/withdrawn candidates, the curated-out 20 non-federal topics.
+
 ## Requirements
 
 ### Validated
@@ -421,4 +434,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-22 — after v2.18 State Leaders milestone (Phases 141–144 shipped). 209 elected Big-5 offices seeded across 50 states + headshots; 199 stance-covered + 10 honest-skips, 0 unsourced; consolidated gate verify-phase-141-144.sql all-PASS. All 8 reqs (SEXR-01..05, SEXS-01..03) closed. Next: planning next milestone.*
+*Last updated: 2026-06-27 — starting v2.20 2026 US House Candidate Coverage (Wave 1: CA/TX/FL/NY, 144 districts). Nov-3 ballot field, federal 24-topic chairs-not-polarity stances + headshots, seed-now + re-check primaries. Prior milestone v2.19 Local Civic Coverage shipped 2026-06-23. Next: research → requirements → roadmap.*

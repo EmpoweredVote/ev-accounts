@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.19
-milestone_name: Local Civic Coverage
-status: Awaiting next milestone
-last_updated: "2026-06-23T00:00:00.000Z"
-last_activity: 2026-06-23 — Milestone v2.19 formalized (retroactive) and archived
+milestone: v2.20
+milestone_name: 2026 US House Candidate Coverage
+status: planning
+last_updated: "2026-06-28T06:39:28.213Z"
+last_activity: 2026-06-28
 progress:
-  total_phases: 3
-  completed_phases: 3
+  total_phases: 0
+  completed_phases: 0
   total_plans: 0
   completed_plans: 0
-  percent: 100
+  percent: 0
 ---
 
 # Project State
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 ## Current Position
 
-Phase: Milestone v2.19 complete
+Phase: Not started (defining requirements)
 Plan: —
-Status: Awaiting next milestone
-Last activity: 2026-06-23 — Milestone v2.19 formalized (retroactive) and archived
+Status: Defining requirements
+Last activity: 2026-06-28 — Milestone v2.20 started
 
 ### v2.19 Requirement Coverage
 
