@@ -12,7 +12,7 @@
 
 ### Field Resolution
 
-- [ ] **USHC-01**: The verified Nov-3 general-ballot field is identified for all 144 Wave-1 districts (CA/TX/FL/NY) — major-party nominees + ballot-qualified independents/third-party — with CA/TX/NY marked decided and FL marked provisional (qualified field, pre-Aug-18-primary), and every race where the incumbent is NOT the 2026 nominee (lost-primary / retirement / open seat) explicitly flagged.
+- [x] **USHC-01**: The verified Nov-3 general-ballot field is identified for all 144 Wave-1 districts (CA/TX/FL/NY) — major-party nominees + ballot-qualified independents/third-party — with CA/TX/NY marked decided and FL marked provisional (qualified field, pre-Aug-18-primary), and every race where the incumbent is NOT the 2026 nominee (lost-primary / retirement / open seat) explicitly flagged.
 
 ### Candidate Records
 
@@ -61,7 +61,7 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| USHC-01 Field Resolution | Phase 148 | pending |
+| USHC-01 Field Resolution | Phase 148 | ✅ complete |
 | USHC-02 Candidate Records | Phase 149 (anchor; continued 150 TX+NY, 151 FL) | pending |
 | USHC-03 Race Wiring | Phase 149 (anchor; continued 150 TX+NY, 151 FL) | pending |
 | USHC-04 Headshots | Phase 149 (anchor; continued 150 TX+NY, 151 FL) | pending |

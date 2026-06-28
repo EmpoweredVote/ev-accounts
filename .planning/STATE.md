@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
-status: executing
-last_updated: "2026-06-28T16:09:36.676Z"
+status: verifying
+last_updated: "2026-06-28T16:39:23.168Z"
 last_activity: 2026-06-28
 progress:
   total_phases: 6
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
-  percent: 0
+  completed_plans: 2
+  percent: 17
 ---
 
 # Project State
@@ -25,11 +25,11 @@ See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 ## Current Position
 
-Phase: 148 (field-resolution-stance-gap-diagnostic) — EXECUTING
-Plan: 2 of 2
-Status: Ready to execute
+Phase: 148 (field-resolution-stance-gap-diagnostic) — COMPLETE (2/2 plans)
+Plan: 2 of 2 — done
+Status: Phase 148 complete; USHC-01 closed. Field table locked for all 144 Wave-1 districts.
 Last activity: 2026-06-28
-Next: `/gsd-plan-phase 148` (Field Resolution + Stance-Gap Diagnostic — must run first)
+Next: `/gsd-plan-phase 149` (CA Seeding — race_candidates only; reads 148-field-table.csv existing_race_id + general_candidates)
 
 ### v2.20 Phase Dependencies
 
@@ -254,7 +254,7 @@ None for v2.18 start. Run the live diagnostic queries at plan authoring time:
 
 ## Session Continuity
 
-Last session: 2026-06-28T16:06:22.245Z
+Last session: 2026-06-28T16:38:39.587Z
 Stopped at: Quick task 023 COMPLETE — CA Gov (Hilton/Becerra) + LA Mayor (Bass/Raman) deep candidate coverage, enrichment, and full primary-source fact-check; all live + pushed (c96d749f)
 Resume file: None
 
@@ -270,6 +270,8 @@ Resume file: None
 - [Phase 118-03]: Medford Step 5 omitted — charter reform 2020 creates fully at-large council; migration 711 follows 709 (Fall River) at-large pattern with 2-gate post-verification only
 - [Phase 123-04]: Fall River and Medford Path 0 spot checks require essentialsService join pattern (d.geo_id=gb.geo_id + G4110 discriminator) — citywide LOCAL rows have mtfcc=NULL; tiger_geoid join (gb.mtfcc=d.mtfcc) fails silently for NULL vs G4110
 - [Phase ?]: [Phase 148-01]: Map incumbents by (NATIONAL_LOWER, geo_id) — never computed external_id (CA -6000301 verified live; -(fips*1000+cd) mis-keys CA/TX). Wave-1 stance gap: 73 zero / 59 partial / 10 done / 2 vacant (FL-20 1220, TX-23 4823).
+- [Phase 148-02]: nominee_status taxonomy extended to 7 values — added incumbent-redistricted (CA Prop 50 + TX mid-decade, 12 districts) + incumbent-deceased (CA-1 LaMalfa). 144 rows: 109 renominated / 17 retired / 12 redistricted / 3 lost-primary / 2 vacancy / 1 deceased. 274 new candidate records needed (CA 38 / TX 48 / FL 155-provisional / NY 33). NY-10 Goldman + NY-13 Espaillat re-confirmed lost-primary (Axios/Wiki); NY-7 Velázquez + NY-12 Nadler retired; FL-20/TX-23 vacancy.
+- [Phase 148-02]: CA existing_race_id join is races.office_id->offices.district_id->districts.geo_id (races has NO direct geo_id); all 52 resolved live from "CA 2026 Statewide General" (728d0074), 0 race_candidates baseline. FL field provisional (Aug-18 primary) = full per-party qualified field, pruned in Phase 153. 148-verify.sql passes read-only (4 assertions, psql exit 0).
 
 ## Operator Next Steps
 

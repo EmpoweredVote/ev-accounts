@@ -87,7 +87,7 @@ CA/TX/NY are independent of each other once field resolution (Phase 148) is done
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 148-02-PLAN.md — verified Nov-3 field per district (Wikipedia/FEC) + non-incumbent-nominee flags + new-vs-reuse classification; assembles 148-FIELD-TABLE.md/.csv + 148-verify.sql
+- [x] 148-02-PLAN.md — verified Nov-3 field per district (Wikipedia/FEC) + non-incumbent-nominee flags + new-vs-reuse classification; assembles 148-FIELD-TABLE.md/.csv + 148-verify.sql
 
 ---
 
@@ -188,7 +188,7 @@ CA/TX/NY are independent of each other once field resolution (Phase 148) is done
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 148. Field Resolution + Stance-Gap Diagnostic | 1/2 | In Progress|  |
+| 148. Field Resolution + Stance-Gap Diagnostic | 2/2 | Complete   | 2026-06-28 |
 | 149. CA Candidate Seeding (race_candidates only) | 0/? | Not started | - |
 | 150. TX + NY Candidate Seeding (create races) | 0/? | Not started | - |
 | 151. FL Candidate Seeding (provisional) | 0/? | Not started | - |
