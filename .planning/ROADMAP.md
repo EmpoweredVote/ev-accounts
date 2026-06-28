@@ -45,6 +45,7 @@
 **PURE-DATA milestone — no backend code.** Surfacing is **Path B**: the elections feed (`getElectionsByCoordinate`, `electionService.ts`) reading `essentials.races` + `essentials.race_candidates`, geography inherited through `office_id → districts.geo_id` + PostGIS `ST_Covers`. Research traced this live (file:line) and proved Path A (Senate-style candidacy offices) is **invisible** to `/elections` (0 races, 0 race_candidates) and the reps feed filters `is_incumbent=true` (excludes every challenger). No empty-state work in this repo — the "race not covered" message lives in the separate Essentials frontend repo; backend always returns `{elections:[]}`.
 
 **Per-state work split (research-confirmed):**
+
 - **CA** = insert `race_candidates` only — all 53 House `races` + offices + geofences are pre-seeded (turnkey; validates the pattern first). Template: `scripts/ingest-ca-sos-2026-challengers.ts`.
 - **TX + NY** = author `elections` (if absent) + `races` rows first, then `race_candidates`. Both fields decided (TX March 3 + May 26 runoff; NY June 23). Precedents: `importElectionData.ts`, `seed-la-county-2026-primary-state-federal.sql`.
 - **FL** = provisional field from the FL DoE tab-delimited download (`downloadcanlist.asp`), seed-now (qualifying closed → universe final); primary Aug 18 → prune losers in Phase 153.
@@ -79,9 +80,13 @@ CA/TX/NY are independent of each other once field resolution (Phase 148) is done
   4. The set of genuinely-new candidates needing records (challengers + open-seat candidates) is enumerated per state, distinct from incumbents/previously-seeded figures that reuse existing records.
 
 **Plans:** 2 plans, 2 waves
+Plans:
+**Wave 1**
 
-Plans:
 - [ ] 148-01-PLAN.md — DB incumbent->politician_id map + per-incumbent stance-gap counts/top-up tiers + vacancy enumeration (148-incumbent-map.csv)
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 148-02-PLAN.md — verified Nov-3 field per district (Wikipedia/FEC) + non-incumbent-nominee flags + new-vs-reuse classification; assembles 148-FIELD-TABLE.md/.csv + 148-verify.sql
 
 ---
@@ -250,10 +255,12 @@ Plans:
 **Plans:** 12 plans across 3 waves (next migrations 946-957)
 
 Wave 1 (existing-record handling, parallel):
+
 - [x] 141-01-PLAN.md — verify-phase-141.sql gate + role_canonical backfill (8 states) + UT NULL external_id fix
 - [x] 141-02-PLAN.md — IN SoS+Treasurer gap-seed (canonical-government trap) + IN role_canonical backfill
 
 Wave 2 (41 empty-state seeds, parallel, 35 offices each):
+
 - [x] 141-03-PLAN.md — seed batch A: AK, AL, FL, IL, MS, NC, NY, SD
 - [x] 141-04-PLAN.md — seed batch B: AR, GA, HI, IA, MO, ND, OK, VT
 - [x] 141-05-PLAN.md — seed batch C: CO, KS, MI, NE, NJ, OH, PA, WA
@@ -261,6 +268,7 @@ Wave 2 (41 empty-state seeds, parallel, 35 offices each):
 - [x] 141-07-PLAN.md — seed batch E: AZ, DE, ID, LA, MT, NM, SC, WY
 
 Wave 3 (headshots per batch, parallel; 141-12 runs the full gate):
+
 - [x] 141-08-PLAN.md — headshots batch A + IN
 - [x] 141-09-PLAN.md — headshots batch B
 - [x] 141-10-PLAN.md — headshots batch C
@@ -287,6 +295,7 @@ Wave 3 (headshots per batch, parallel; 141-12 runs the full gate):
 **Plans:** 10 plans, 3 waves
 
 Plans:
+
 - [x] 142-01-PLAN.md — SEXS-01: extend politician-stance-researcher prompt with office-type evidence guidance (all 5 exec types)
 - [x] 142-02-PLAN.md — Batch A (10): FL/NY/IL/PA/TX Gov+AG stances
 - [x] 142-03-PLAN.md — Batch B (9): OH/GA/NC/MI Gov+AG + NJ Gov stances
@@ -320,6 +329,7 @@ Plans:
 **Plans:** 11 plans, 2 waves — 10 state-grouped batches (largest-population-first, all of a state's SoS+Treas+LtGov in one batch, mutually independent) + per-phase gate
 
 Wave 1 (batch research + push, parallel, depends_on []):
+
 - [x] 143-01-PLAN.md — batch A (11): TX/FL/NY/PA LtGov+Treas + IL LtGov+SoS+Treas
 - [x] 143-02-PLAN.md — batch B (10): OH(3) + GA LtGov+SoS + NC(3) + MI LtGov+SoS
 - [x] 143-03-PLAN.md — batch C (11): NJ LtGov + WA(3) + AZ SoS+Treas + IN SoS+Treas (positive ids) + MO(3)
@@ -332,6 +342,7 @@ Wave 1 (batch research + push, parallel, depends_on []):
 - [x] 143-10-PLAN.md — batch J (12): SD(3) + ND(3) + AK LtGov + VT(3) + WY SoS+Treas
 
 Wave 2 (gate, depends_on all 10 batches):
+
 - [x] 143-11-PLAN.md — verify-phase-143.sql (SoS=35 / Treas=38 / LtGov=43 coverage + zero-unsourced)
 
 ---
@@ -353,6 +364,7 @@ Wave 2 (gate, depends_on all 10 batches):
 **Plans:** 1 plan (Wave 1)
 
 Plans:
+
 - [x] 144-01-PLAN.md — Consolidated v2.18 read-only SQL gate (verify-phase-141-144.sql): re-asserts 209 records / 199 stance coverage / 10 honest-skips / 0 unsourced / in-scope hygiene, plus SEXR-05 feed smoke-test for NC+WA+CO
 
 ---
@@ -469,6 +481,7 @@ Plans:
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
 
 **Plans:** 8 plans (all wave 1, mutually independent)
+
 - [x] 135-01-PLAN.md — TN batch A: TN-1..TN-5 (5 reps) research + push
 - [x] 135-02-PLAN.md — TN batch B: TN-6..TN-9 (4 reps) research + push (closes TN)
 - [x] 135-03-PLAN.md — CO batch A: CO-1..CO-4 (4 reps) research + push
@@ -497,6 +510,7 @@ Plans:
 **Plans:** 8 plans (all wave 1, mutually independent)
 
 Plans:
+
 - [x] 136-01-PLAN.md — WI batch A (WI-1..WI-4, ext -55001..-55004)
 - [x] 136-02-PLAN.md — WI batch B (WI-5..WI-8, ext -55005..-55008)
 - [x] 136-03-PLAN.md — AL batch A (AL-1..AL-4, ext -1001..-1004)
@@ -548,6 +562,7 @@ Plans:
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
 
 **Plans:**
+
 - [x] 138-01-PLAN.md — KS House reps (KS-1..KS-4, 4 reps, 54 sourced, 0 unsourced)
 - [x] 138-02-PLAN.md — MS House reps (MS-1..MS-4, 4 reps, 54 sourced, 0 unsourced)
 - [x] 138-03-PLAN.md — NV House reps (NV-1..NV-4, 4 reps, 56 sourced, 0 unsourced)
@@ -571,6 +586,7 @@ Plans:
   3. No-evidence topics are honest-skipped and documented per rep; no party-inference.
 
 **Plans:**
+
 - [x] 139-01-PLAN.md — HI + ID + MT House reps (6 reps, 64 sourced, 0 unsourced)
 - [x] 139-02-PLAN.md — NH + RI + WV House reps (6 reps, 58 sourced, 0 unsourced)
 - [x] 139-03-PLAN.md — AK + DE + ND + SD + VT + WY at-large reps (6 reps, 70 sourced, 0 unsourced)
@@ -592,6 +608,7 @@ Plans:
   3. Per-state coverage counts are asserted (covered = in-scope for each of the 38 states), surfacing any rep that was missed. (Refinement: OH+NC is 28/29 — McDowell NC-6 −37006 is the one documented Phase-132 honest-skip; USHS-14a pins the sole gap to exactly −37006.)
 
 **Plans:**
+
 - [x] 140-01-PLAN.md — verify-phase-132-140.sql authored + run; all USHS-06..14 assertions PASS (211/212 covered + McDowell honest-skip, 0 unsourced)
 
 </details>

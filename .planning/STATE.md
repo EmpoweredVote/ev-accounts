@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
-status: roadmapped
-last_updated: "2026-06-28T06:39:28.213Z"
-last_activity: 2026-06-28
+status: executing
+last_updated: "2026-06-28T15:27:53.408Z"
+last_activity: 2026-06-28 -- Phase 148 planning complete
 progress:
   total_phases: 6
   completed_phases: 0
-  total_plans: 0
+  total_plans: 2
   completed_plans: 0
   percent: 0
 ---
@@ -27,10 +27,9 @@ See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 Phase: Not started (roadmap complete; awaiting plan-phase)
 Plan: —
-Status: Roadmapped — 6 phases (148–153), USHC-01..07 mapped, 100% coverage
-Last activity: 2026-06-28 — Milestone v2.20 roadmapped (Phases 148–153)
+Status: Ready to execute
+Last activity: 2026-06-28 -- Phase 148 planning complete
 Next: `/gsd-plan-phase 148` (Field Resolution + Stance-Gap Diagnostic — must run first)
-
 
 ### v2.20 Phase Dependencies
 
