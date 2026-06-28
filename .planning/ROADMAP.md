@@ -80,7 +80,8 @@ CA/TX/NY are independent of each other once field resolution (Phase 148) is done
   4. The set of genuinely-new candidates needing records (challengers + open-seat candidates) is enumerated per state, distinct from incumbents/previously-seeded figures that reuse existing records.
 
 **Plans:** 2 plans, 2 waves
-Plans:
+
+Plans:
 **Wave 1**
 
 - [x] 148-01-PLAN.md — DB incumbent->politician_id map + per-incumbent stance-gap counts/top-up tiers + vacancy enumeration (148-incumbent-map.csv)
@@ -108,7 +109,27 @@ CA/TX/NY are independent of each other once field resolution (Phase 148) is done
   3. Every newly-seeded CA candidate has a headshot (Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`); no candidate card displays party (party reads from `races.primary_party`).
   4. Every CA candidate lacking them has sourced federal-24-topic chairs-not-polarity stances — each answer paired to an `inform.politician_context` row with a real fetched source URL, 0 unsourced, primary-source-verified before push, honest-skip (incl. documented whole-record skip) where evidence is thin; already-stanced incumbents skipped via the diagnostic.
 
-**Plans:** TBD
+**Plans:** 11 plans, 4 waves
+
+Plans:
+**Wave 1**
+- [ ] 149-01-PLAN.md — record reconciliation + race_candidates seed (38 new politicians + 104 rows) + Raul Ruiz CA-25 dedup
+- [ ] 149-02-PLAN.md — author 149-verify.sql gate (House-scoped, write-free, USHC-02/03/04/05 + D-04 assertions)
+
+**Wave 2** *(blocked on 149-01)*
+- [ ] 149-03-PLAN.md — headshots for the 38 new CA candidates (find-headshots conventions)
+
+**Wave 3** *(blocked on 149-01; stance batches, ≤3-concurrent research)*
+- [ ] 149-04-PLAN.md — stances CA-1..9
+- [ ] 149-05-PLAN.md — stances CA-10..18
+- [ ] 149-06-PLAN.md — stances CA-19..26 (incl. Ruiz canonical record)
+- [ ] 149-07-PLAN.md — stances CA-27..37 challengers/reuse (partials/done skipped per D-01)
+- [ ] 149-08-PLAN.md — stances CA-38..44 (open/redistricted seats + CA-40 R-vs-R)
+- [ ] 149-09-PLAN.md — stances CA-45..48
+- [ ] 149-10-PLAN.md — stances CA-49..52
+
+**Wave 4** *(blocked on all)*
+- [ ] 149-11-PLAN.md — run 149-verify.sql green + coordinate-surfacing smoke (≥3 in-district CA House races)
 
 ---
 
@@ -189,7 +210,7 @@ CA/TX/NY are independent of each other once field resolution (Phase 148) is done
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 148. Field Resolution + Stance-Gap Diagnostic | 2/2 | Complete   | 2026-06-28 |
-| 149. CA Candidate Seeding (race_candidates only) | 0/? | Not started | - |
+| 149. CA Candidate Seeding (race_candidates only) | 0/11 | Not started | - |
 | 150. TX + NY Candidate Seeding (create races) | 0/? | Not started | - |
 | 151. FL Candidate Seeding (provisional) | 0/? | Not started | - |
 | 152. Coordinate Verification Gate | 0/? | Not started | - |
