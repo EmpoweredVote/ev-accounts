@@ -5,14 +5,20 @@ export interface EventEntityState {
   chamberId: string | null;
 }
 
+/**
+ * Validate a meeting's event-entity state.
+ *
+ * There are currently no hard requirements:
+ *  - races are derived from a meeting's linked candidates by the pipeline and
+ *    stored in meetings.event_races (not set here);
+ *  - chamber_id is optional for council/school_board — a multi-seat body
+ *    (e.g. Bloomington Common Council = 7 per-seat chambers sharing one slug)
+ *    has no single chamber to pin, so a missing chamber must not block.
+ *
+ * Kept as the single place to reintroduce entity rules if that changes.
+ */
 export function validateEventEntities(
-  state: EventEntityState
+  _state: EventEntityState
 ): string | null {
-  if (
-    (state.eventKind === 'council' || state.eventKind === 'school_board') &&
-    state.chamberId === null
-  ) {
-    return `chamberId is required for eventKind ${state.eventKind}`;
-  }
   return null;
 }
