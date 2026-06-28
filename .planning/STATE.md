@@ -2,7 +2,7 @@
 gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
-status: verifying
+status: phase-complete
 last_updated: "2026-06-28T16:39:23.168Z"
 last_activity: 2026-06-28
 progress:
