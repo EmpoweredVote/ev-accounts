@@ -123,12 +123,10 @@ describe('POST /api/meetings', () => {
     expect(mockCreateMeeting).not.toHaveBeenCalled();
   });
 
-  it.each([
-    ['council', null, 'chamberId is required'],
-    ['school_board', null, 'chamberId is required'],
-  ])(
-    'rejects invalid create entity state for %s',
-    async (eventKind, chamberId, message) => {
+  it.each(['council', 'school_board'])(
+    'accepts %s create without a chamber (chamber optional for multi-seat bodies)',
+    async (eventKind) => {
+      mockCreateMeeting.mockResolvedValueOnce({ id: MEETING_ID, eventKind, chamberId: null });
       const response = await request(app)
         .post('/api/meetings')
         .send({
@@ -137,12 +135,11 @@ describe('POST /api/meetings', () => {
           date: '2026-06-02',
           meetingType: 'Event',
           eventKind,
-          chamberId,
+          chamberId: null,
         });
 
-      expect(response.status).toBe(422);
-      expect(response.body.message).toContain(message);
-      expect(mockCreateMeeting).not.toHaveBeenCalled();
+      expect(response.status).toBe(201);
+      expect(mockCreateMeeting).toHaveBeenCalled();
     }
   );
 });
