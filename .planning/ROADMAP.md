@@ -32,8 +32,161 @@
 - ✅ **v2.17 National House Rep Stances (Tier 2 continuation)** — Phases 132–140 (shipped 2026-06-20; remaining 212 reps across 38 states, USHS-06..14)
 - ✅ **v2.18 State Leaders** — Phases 141–144 (shipped 2026-06-22; elected Big 5 statewide execs, 209 offices / 50 states, 199 stance-covered + 10 honest-skips, consolidated gate all-PASS)
 - ✅ **v2.19 Local Civic Coverage** — Phases 145–147 (shipped 2026-06-23; Falls Church VA + Greene County MO + Springfield MO — 46 records / 118 stances / 46 headshots / 4 boundaries; inline-executed, formalized retroactively)
+- 🔄 **v2.20 2026 US House Candidate Coverage (Wave 1)** — Phases 148–153 (planning 2026-06-28; CA 52 / TX 38 / FL 28 / NY 26 = 144 districts; Nov-3 general-ballot field, federal-24-topic chairs-not-polarity stances + headshots, pure-data elections-feed surfacing; USHC-01..07)
 
 ## Phases
+
+### v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–153 🔄 ACTIVE
+
+**Milestone goal:** Every resident of the Wave-1 states (CA, TX, FL, NY) can enter their address into Elections and see their 2026 US House race — the actual Nov-3 general-ballot field — each candidate with a headshot and chairs-not-polarity, evidence-only stances. Senate shows "if available" from its own existing track.
+
+**Scope:** The 4 largest House delegations — **CA (52), TX (38), FL (28), NY (26) = 144 districts**. Nov-3 general-ballot field (major-party nominees + ballot-qualified independents/third-party). New work = challengers + open-seat candidates; sitting incumbents are already stanced (v2.15–v2.17) and reuse their existing records. Wave 1 of a multi-milestone program; remaining ~291 districts → v2.21+.
+
+**PURE-DATA milestone — no backend code.** Surfacing is **Path B**: the elections feed (`getElectionsByCoordinate`, `electionService.ts`) reading `essentials.races` + `essentials.race_candidates`, geography inherited through `office_id → districts.geo_id` + PostGIS `ST_Covers`. Research traced this live (file:line) and proved Path A (Senate-style candidacy offices) is **invisible** to `/elections` (0 races, 0 race_candidates) and the reps feed filters `is_incumbent=true` (excludes every challenger). No empty-state work in this repo — the "race not covered" message lives in the separate Essentials frontend repo; backend always returns `{elections:[]}`.
+
+**Per-state work split (research-confirmed):**
+- **CA** = insert `race_candidates` only — all 53 House `races` + offices + geofences are pre-seeded (turnkey; validates the pattern first). Template: `scripts/ingest-ca-sos-2026-challengers.ts`.
+- **TX + NY** = author `elections` (if absent) + `races` rows first, then `race_candidates`. Both fields decided (TX March 3 + May 26 runoff; NY June 23). Precedents: `importElectionData.ts`, `seed-la-county-2026-primary-state-federal.sql`.
+- **FL** = provisional field from the FL DoE tab-delimited download (`downloadcanlist.asp`), seed-now (qualifying closed → universe final); primary Aug 18 → prune losers in Phase 153.
+
+CA/TX/NY are independent of each other once field resolution (Phase 148) is done.
+
+**Carry-forward execution methodology (for `/gsd-plan-phase`):**
+
+- **Production project ref:** `kxsdzaojfaibhuzmclfq`.
+- **Two highest-cost traps, prevented by Phase 148 (diagnostic-first):** (1) duplicate incumbent records (the v2.4 two-Andy-Barrs / migration-1074 failure) — reuse the existing `politician_id`, never INSERT a new politician row for a sitting rep; (2) lost-incumbent-primary assumption — NY-10 Goldman and NY-13 Espaillat both LOST 6/23; verify the nominee per district from a primary-results source, never derive from incumbency.
+- **`race_candidates` insert shape:** `race_id` → the district race, `politician_id` (NON-NULL — NULL means no stances + no photo, PHOTO_LATERAL keys off it), `full_name`, `is_incumbent`, `candidate_status='active'`, `source`. **Never** `office_id IS NULL` on a House race (that is the statewide convention → matches every resident of the state). **Never** party on the candidate card — party lives on `races.primary_party` only (antipartisan invariant, enforced at query layer).
+- **Stance pipeline reuse:** **federal 24-topic** set (`_TOPIC_SCALE_FULL.txt` — adds social-security/tariffs/ukraine, drops 5 state-only), `politician-stance-researcher` at **3-concurrency**, per-candidate CSV → field-count-validated/canonical re-stringify → `_merge.ts` → push (`_push_uuid.ts` for new NULL-external_id challengers; `_push.ts` for existing-external_id records). **Mandatory primary-source verification sub-step before every push** (re-fetch raw quotes via Playwright, delete polarity-inference; the prior 7-challenger pass deleted 16 inference rows). **0-unsourced gate**; honest-skip thin topics; whole-record honest-skip allowed + gate-pinned by id. Embed exact 1–5 stance texts per topic (never "5=progressive"). On any quote correction, wipe `essentials.quotes` for the pid then re-push.
+- **Field-discovery fetch-walls:** Ballotpedia returns blank (Cloudflare) and long Wikipedia pages return TOC-only via WebFetch — use **Playwright** / raw-wikitext / section anchors. **Register a free FEC API key** (`api.data.gov/signup`, 1000/hr) — DEMO_KEY's 10/hr will stall the 144-district pull; one paginated per-state call (`?office=H&state={ST}&election_year=2026`), not per-district. FL: use the tab-delimited bulk download, bypasses the ASP SPA.
+- **Two-path prune (Phase 153, FL only):** retire a primary loser via `essentials.politicians.is_active=false` (reps feed) **AND** `essentials.race_candidates.candidate_status='withdrawn'` (elections feed) — **never hard-DELETE** (preserves record/stances/headshot/FEC). Re-research advancing thin-stance winners against primary sources.
+- **Finance is best-effort / out of scope:** challenger `finance_summary` deferred to v2.21+; record "no FEC ID" rather than retrying.
+
+---
+
+#### Phase 148: Field Resolution + Stance-Gap Diagnostic
+
+**Goal:** The verified Nov-3 general-ballot field is locked for all 144 Wave-1 districts, every district where the incumbent is NOT the 2026 nominee is explicitly flagged, and every district incumbent is mapped to its existing `politician_id` — so no seeding phase can create a duplicate incumbent or surface a non-candidate.
+
+**Depends on:** Nothing (first phase; diagnostic gates everything else — must run before any seeding)
+
+**Requirements:** USHC-01
+
+**Success Criteria** (what must be TRUE):
+
+  1. A per-district field table exists for all 144 districts (CA 52 / TX 38 / FL 28 / NY 26) listing each Nov-3 general-ballot candidate (major-party nominees + ballot-qualified independents/third-party), with CA/TX/NY marked `decided` and FL marked `provisional` (qualified field, pre-Aug-18-primary).
+  2. Every district where the incumbent is NOT the 2026 nominee (lost-primary, retirement, open seat) is explicitly flagged — including the known cases NY-10 (Goldman lost) and NY-13 (Espaillat lost), confirmed from a primary-results source, and CA top-two same-party generals confirmed from results (not assumed one-D-one-R).
+  3. A stance-gap / existence diagnostic maps each district's sitting incumbent to its existing `essentials.politicians` record (`politician_id`) and reports its current stance count — so incumbent-nominees link to the existing record and any incumbent below the federal-24 threshold is surfaced for top-up.
+  4. The set of genuinely-new candidates needing records (challengers + open-seat candidates) is enumerated per state, distinct from incumbents/previously-seeded figures that reuse existing records.
+
+**Plans:** TBD
+
+---
+
+#### Phase 149: CA Candidate Seeding (race_candidates only — turnkey)
+
+**Goal:** Every CA US House race surfaces its full Nov-3 candidate field on `/elections` for an in-district address — incumbent + challengers as `race_candidates` rows on the 53 pre-seeded races, each new candidate with a record, headshot, and federal-24 evidence-only stances. This is the lowest-friction state and validates the seed + headshot + stance pattern before the create-races states.
+
+**Depends on:** Phase 148 (verified CA field + incumbent `politician_id` map)
+
+**Requirements:** USHC-02, USHC-03, USHC-04, USHC-05
+
+> USHC-02/03/04/05 are state-partitioned, cross-cutting requirements anchored here (the first seeding phase, where the pipeline is established) and **continued** in Phases 150 (TX+NY) and 151 (FL). Phase 152's gate asserts the full 144-district completion across all three seeding phases.
+
+**Success Criteria** (what must be TRUE):
+
+  1. Every CA US House race (all 52 districts) surfaces on `/elections` for an in-district test coordinate via `essentials.race_candidates` inserted on the existing race rows; each candidate row has a NON-NULL `politician_id` and `candidate_status='active'`, the incumbent flagged `is_incumbent=true`.
+  2. Every CA incumbent-nominee links to its EXISTING `politician_id` (zero duplicate `full_name` within CA); only genuinely-new challengers/open-seat candidates get new `essentials.politicians` records, party normalized (Democratic, not Democrat).
+  3. Every newly-seeded CA candidate has a headshot (Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`); no candidate card displays party (party reads from `races.primary_party`).
+  4. Every CA candidate lacking them has sourced federal-24-topic chairs-not-polarity stances — each answer paired to an `inform.politician_context` row with a real fetched source URL, 0 unsourced, primary-source-verified before push, honest-skip (incl. documented whole-record skip) where evidence is thin; already-stanced incumbents skipped via the diagnostic.
+
+**Plans:** TBD
+
+---
+
+#### Phase 150: TX + NY Candidate Seeding (create races, then candidates)
+
+**Goal:** Every TX and NY US House race surfaces its full Nov-3 candidate field on `/elections` — differing from CA only in needing `elections`/`races` rows authored first. Both fields are decided (TX runoff + NY 6/23).
+
+**Depends on:** Phase 148 (verified TX/NY field, incl. NY lost-incumbent flags); independent of Phase 149 (different states) but sequenced after it to inherit the validated CA pipeline.
+
+**Requirements:** USHC-02, USHC-03, USHC-04, USHC-05 (continuation — TX + NY portion; see Phase 149 anchor note)
+
+**Success Criteria** (what must be TRUE):
+
+  1. An `essentials.elections` row exists per state (created if absent, mirroring "CA 2026 Statewide General", `election_date='2026-11-03'`) and one `essentials.races` row per district (`office_id` = that district's existing `U.S. Representative` office — NEVER `office_id IS NULL`).
+  2. Every TX (38) and NY (26) district surfaces its full candidate field on `/elections` for an in-district test coordinate via `race_candidates`, each row `politician_id`-linked and `candidate_status='active'`; NY-10/NY-13 (and any other flagged) show the primary WINNER as the active candidate, the defeated incumbent absent from the active general field.
+  3. Every newly-seeded TX/NY candidate has a headshot and federal-24 chairs-not-polarity stances (0 unsourced, primary-source-verified, honest-skip where thin); incumbent-nominees reuse existing records (zero duplicate `full_name` per state); no party on candidate cards.
+
+**Plans:** TBD
+
+---
+
+#### Phase 151: FL Candidate Seeding (provisional qualified field)
+
+**Goal:** Every FL US House race surfaces its full qualified Nov-3 field on `/elections` now — seeded provisionally from the FL DoE download (qualifying closed → universe final) so residents get upcoming-vote data before the Aug 18 primary; losers pruned in Phase 153.
+
+**Depends on:** Phase 148 (FL qualified field marked provisional); independent of Phases 149/150 (different state) but sequenced after them.
+
+**Requirements:** USHC-02, USHC-03, USHC-04, USHC-05 (continuation — FL portion; see Phase 149 anchor note)
+
+**Success Criteria** (what must be TRUE):
+
+  1. `essentials.elections` + one `races` row per FL district (all 28, `office_id` → the district House office) + `race_candidates` for every qualified candidate exist, sourced from the FL DoE `downloadcanlist.asp` tab-delimited field; every FL district surfaces its field on `/elections` for an in-district test coordinate.
+  2. Every newly-seeded FL candidate has a record (reuse existing for incumbents, zero duplicate `full_name`), a headshot, and federal-24 chairs-not-polarity stances (0 unsourced, primary-source-verified, honest-skip where thin); no party on candidate cards.
+  3. The FL field is recorded as `provisional` (multiple same-party candidates per district may be present pre-primary by design); the seed does NOT guess or pre-prune the general winner — Aug 18 reconciliation is deferred to Phase 153.
+
+**Plans:** TBD
+
+---
+
+#### Phase 152: Coordinate Verification Gate
+
+**Goal:** A consolidated read-only gate proves the milestone end-to-end across all 144 districts — for each Wave-1 state a test address resolves to its district and the House race displays the expected candidate field on `/elections`, with 0 unsourced stances and 0 duplicate-incumbent records.
+
+**Depends on:** Phases 149, 150, 151 (all three seeding phases complete; FL counts as provisional)
+
+**Requirements:** USHC-06
+
+**Success Criteria** (what must be TRUE):
+
+  1. For a known in-district address in each Wave-1 state (CA/TX/FL/NY), `getElectionsByCoordinate` / `/api/essentials/elections-by-address` returns the resident's US House race with the full candidate field — and the assertion checks the CHALLENGER field is present, not just the incumbent (Pitfall-5 two-path confusion).
+  2. The gate asserts 0 unsourced stance rows across all newly-seeded Wave-1 candidates and 0 duplicate-incumbent `essentials.politicians` records across the 144 districts; any documented whole-record stance honest-skips are pinned by id.
+  3. Every `race_candidates` row across the 144 districts has a NON-NULL `politician_id` (so headshots + stances resolve) and no candidate card surfaces party (party reads from `races.primary_party`); FL rows are present and marked provisional.
+
+**Plans:** TBD
+
+---
+
+#### Phase 153: FL Post-Primary Re-Check (time-gated — executes after Aug 18, 2026)
+
+**Goal:** After the FL primary, the 28 FL districts are reconciled to final nominees via the two-path prune — losers retired (records preserved), advancing nominees confirmed, any new nominee given a record + headshot + stances — closing out the provisional FL coverage shipped in Wave 1.
+
+**Depends on:** Phase 151 (provisional FL field seeded) AND the FL primary date — **DATE-GATED: planned now, executes/closes on or after 2026-08-18.** Phases 148–152 ship the live Wave-1 experience before this re-check.
+
+**Requirements:** USHC-07
+
+**Success Criteria** (what must be TRUE):
+
+  1. Every FL primary loser is retired via BOTH paths — `essentials.politicians.is_active=false` AND `essentials.race_candidates.candidate_status='withdrawn'` — with NO hard-DELETE (record, stances, headshot, FEC preserved); the retired candidate no longer appears in either the reps feed or the active `/elections` field.
+  2. Each FL district's advancing general-election nominee is confirmed against the certified Aug-18 results and remains the active `race_candidates` row; any candidate who became the nominee but lacked complete coverage gets a record + headshot + primary-source-verified federal-24 stances.
+  3. Advancing thin-stance winners are re-researched against primary sources; FL is re-marked `decided` (no longer provisional), and the Phase 152 gate (or its FL re-run) passes for the final FL field.
+
+**Plans:** TBD
+
+---
+
+### Progress
+
+| Phase | Plans Complete | Status | Completed |
+|-------|----------------|--------|-----------|
+| 148. Field Resolution + Stance-Gap Diagnostic | 0/? | Not started | - |
+| 149. CA Candidate Seeding (race_candidates only) | 0/? | Not started | - |
+| 150. TX + NY Candidate Seeding (create races) | 0/? | Not started | - |
+| 151. FL Candidate Seeding (provisional) | 0/? | Not started | - |
+| 152. Coordinate Verification Gate | 0/? | Not started | - |
+| 153. FL Post-Primary Re-Check (date-gated Aug 18) | 0/? | Not started | - |
+
+---
 
 <details>
 <summary>✅ v2.19 Local Civic Coverage (Phases 145–147) — SHIPPED 2026-06-23 (Falls Church VA / Greene County MO / Springfield MO; 46 records, 118 stances [0 unsourced], 46 headshots, 4 geofence boundaries; LCC-01..05 closed; inline-executed)</summary>

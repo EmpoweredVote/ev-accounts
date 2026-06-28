@@ -2,11 +2,11 @@
 gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
-status: planning
+status: roadmapped
 last_updated: "2026-06-28T06:39:28.213Z"
 last_activity: 2026-06-28
 progress:
-  total_phases: 0
+  total_phases: 6
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -25,10 +25,53 @@ See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: Not started (roadmap complete; awaiting plan-phase)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-06-28 — Milestone v2.20 started
+Status: Roadmapped — 6 phases (148–153), USHC-01..07 mapped, 100% coverage
+Last activity: 2026-06-28 — Milestone v2.20 roadmapped (Phases 148–153)
+Next: `/gsd-plan-phase 148` (Field Resolution + Stance-Gap Diagnostic — must run first)
+
+
+### v2.20 Phase Dependencies
+
+```
+Phase 148 (Field Resolution + Stance-Gap Diagnostic)   — no deps; MUST run first (gates all seeding)
+  ├── Phase 149 (CA Seeding — race_candidates only)     — needs 148; turnkey (53 races pre-seeded); validates pattern
+  ├── Phase 150 (TX + NY Seeding — create races first)  — needs 148; independent of 149/151; sequenced after 149
+  └── Phase 151 (FL Seeding — provisional qualified)    — needs 148; independent of 149/150; sequenced after 150
+Phase 152 (Coordinate Verification Gate)               — needs 149, 150, 151 complete
+Phase 153 (FL Post-Primary Re-Check)                   — needs 151 AND date ≥ 2026-08-18 (DATE-GATED; executes after FL primary)
+```
+
+CA/TX/NY are independent of each other once Phase 148 resolves the field; the 149→150→151 order is for pipeline inheritance, not data dependency. Phase 153 is planned now but **executes/closes after the FL primary (Aug 18, 2026)** — Phases 148–152 ship the live Wave-1 experience (116 final + 28 provisional districts) before this re-check.
+
+### v2.20 Requirement Coverage (target)
+
+| Requirement | Phase 148 | Phase 149 (CA) | Phase 150 (TX+NY) | Phase 151 (FL) | Phase 152 | Phase 153 |
+|-------------|:---------:|:--------------:|:-----------------:|:--------------:|:---------:|:---------:|
+| USHC-01 Field Resolution | ◻ | | | | | |
+| USHC-02 Records | | ◻ anchor | ◻ | ◻ | | |
+| USHC-03 Race Wiring | | ◻ anchor | ◻ | ◻ | | |
+| USHC-04 Headshots | | ◻ anchor | ◻ | ◻ | | |
+| USHC-05 Stances | | ◻ anchor | ◻ | ◻ | | |
+| USHC-06 Verification Gate | | | | | ◻ | |
+| USHC-07 FL Re-Check | | | | | | ◻ (date-gated) |
+
+100% coverage: all 7 USHC requirements mapped, no orphans. USHC-02/03/04/05 are state-partitioned (anchored at 149, continued 150/151; gate at 152).
+
+### v2.20 Execution Methodology (carry-forward for plan-phase)
+
+- **Production project ref:** `kxsdzaojfaibhuzmclfq`.
+- **PURE DATA — no backend code.** Surfacing = Path B: elections feed reading `essentials.races` + `essentials.race_candidates`; geography inherited via `office_id → districts.geo_id` + `ST_Covers`. Path A (candidacy offices) is invisible to /elections; reps feed filters `is_incumbent=true` (excludes challengers). Empty-state UI is in the separate Essentials frontend repo, not this milestone.
+- **Per-state work split:** CA = insert `race_candidates` only (53 races pre-seeded; template `scripts/ingest-ca-sos-2026-challengers.ts`). TX/NY = author `elections`+`races` first, then candidates. FL = provisional from FL DoE tab-delimited download, seed-now.
+- **`race_candidates` shape:** non-null `politician_id` (NULL = no stances/photo), `candidate_status=active`, incumbent `is_incumbent=true`; NEVER `office_id IS NULL` on a House race (statewide convention); NEVER party on candidate card (lives on `races.primary_party`).
+- **Two costliest traps, prevented by Phase 148:** (1) duplicate incumbent records (v2.4 two-Andy-Barrs / mig-1074) — reuse existing `politician_id`; (2) lost-incumbent-primary (NY-10 Goldman, NY-13 Espaillat both lost 6/23) — verify nominee per district from results, never from incumbency.
+- **Stance pipeline:** federal 24-topic set (`_TOPIC_SCALE_FULL.txt`), `politician-stance-researcher` at 3-concurrency, per-candidate CSV → field-count-validate → `_merge.ts` → `_push_uuid.ts` (new NULL-external_id) / `_push.ts` (existing). **Mandatory primary-source verification pass before every push** (re-fetch raw quotes via Playwright; prior pass deleted 16 inference rows). 0-unsourced gate; honest-skip thin topics; whole-record skip allowed + gate-pinned. Wipe `essentials.quotes` per pid before re-push on any quote correction.
+- **Fetch-walls:** Ballotpedia blank + Wikipedia TOC-only → Playwright/raw-wikitext. Register free FEC key (api.data.gov/signup, 1000/hr; DEMO_KEY 10/hr stalls); one paginated per-state call. FL: tab-delimited bulk download bypasses the ASP SPA.
+- **Two-path prune (Phase 153, FL):** `politicians.is_active=false` AND `race_candidates.candidate_status=withdrawn` — NEVER hard-DELETE. Re-research advancing thin winners against primary sources.
+- **Finance out of scope:** challenger `finance_summary` → v2.21+; record no-FEC-ID rather than retry.
+
+> v2.19 / v2.18 requirement coverage + methodology below are HISTORICAL (shipped milestones).
 
 ### v2.19 Requirement Coverage
 
