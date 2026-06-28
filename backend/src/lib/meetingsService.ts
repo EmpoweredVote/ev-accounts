@@ -45,6 +45,8 @@ export interface Meeting {
   raceIds: string[];
   sourceUrl: string | null;
   playbackKind: string | null;
+  clipStartSeconds: number | null;
+  clipEndSeconds: number | null;
   slug: string | null;
   summary: unknown | null;
   processingMetadata: unknown | null;
@@ -153,6 +155,8 @@ interface MeetingRow {
   race_ids: string[] | null;
   source_url: string | null;
   playback_kind: string | null;
+  clip_start_seconds: string | null;
+  clip_end_seconds: string | null;
   slug: string | null;
   summary: unknown | null;
   processing_metadata: unknown | null;
@@ -230,6 +234,8 @@ function mapMeeting(row: MeetingRow): Meeting {
     raceIds: row.race_ids ?? [],
     sourceUrl: row.source_url,
     playbackKind: row.playback_kind,
+    clipStartSeconds: row.clip_start_seconds !== null ? Number(row.clip_start_seconds) : null,
+    clipEndSeconds: row.clip_end_seconds !== null ? Number(row.clip_end_seconds) : null,
     slug: row.slug,
     summary: row.summary,
     processingMetadata: row.processing_metadata,
@@ -318,7 +324,7 @@ const MEETING_COLS = `
      WHERE er.meeting_id = meetings.meetings.id),
     ARRAY[]::uuid[]
   ) AS race_ids,
-  source_url, playback_kind, slug, summary, processing_metadata
+  source_url, playback_kind, clip_start_seconds, clip_end_seconds, slug, summary, processing_metadata
 `;
 
 export async function getMeetings(
