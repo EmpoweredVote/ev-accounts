@@ -78,7 +78,11 @@ CA/TX/NY are independent of each other once field resolution (Phase 148) is done
   3. A stance-gap / existence diagnostic maps each district's sitting incumbent to its existing `essentials.politicians` record (`politician_id`) and reports its current stance count — so incumbent-nominees link to the existing record and any incumbent below the federal-24 threshold is surfaced for top-up.
   4. The set of genuinely-new candidates needing records (challengers + open-seat candidates) is enumerated per state, distinct from incumbents/previously-seeded figures that reuse existing records.
 
-**Plans:** TBD
+**Plans:** 2 plans, 2 waves
+
+Plans:
+- [ ] 148-01-PLAN.md — DB incumbent->politician_id map + per-incumbent stance-gap counts/top-up tiers + vacancy enumeration (148-incumbent-map.csv)
+- [ ] 148-02-PLAN.md — verified Nov-3 field per district (Wikipedia/FEC) + non-incumbent-nominee flags + new-vs-reuse classification; assembles 148-FIELD-TABLE.md/.csv + 148-verify.sql
 
 ---
 
@@ -179,7 +183,7 @@ CA/TX/NY are independent of each other once field resolution (Phase 148) is done
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 148. Field Resolution + Stance-Gap Diagnostic | 0/? | Not started | - |
+| 148. Field Resolution + Stance-Gap Diagnostic | 0/2 | Not started | - |
 | 149. CA Candidate Seeding (race_candidates only) | 0/? | Not started | - |
 | 150. TX + NY Candidate Seeding (create races) | 0/? | Not started | - |
 | 151. FL Candidate Seeding (provisional) | 0/? | Not started | - |
