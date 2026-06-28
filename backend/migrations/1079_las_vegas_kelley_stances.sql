@@ -1,0 +1,25 @@
+-- Migration 1079: City of Las Vegas stances - Kara Kelley (Council Member, Ward 2) (AUDIT-ONLY)
+--
+-- Phase 162 (CLARK-02). AUDIT-ONLY: NOT registered in the migration ledger;
+-- the structural ledger stays at 1075.
+--
+-- GENUINE FULL BLANK - ZERO stances placed. This is the honest, expected
+-- evidence-only outcome, NOT an oversight:
+--   - Kelley was APPOINTED (not elected) to fill Victoria Seaman's Ward 2 seat
+--     on/around Sept 30, 2025 - a very thin council record.
+--   - She pledged in writing NOT to run in 2026 and stated she has no desire to
+--     be an elected official; did not speak at her swearing-in.
+--   - Her only documented priorities are generic and non-mappable to discrete
+--     compass chairs: "the budget"/fiscal challenges (no tax direction specified);
+--     "addressing homelessness" (no approach specified - housing-first vs shelter
+--     vs enforcement); "removing small-business obstacles" (a general aspiration).
+--   - Per the no-inference rule, her Chamber-of-Commerce background and past
+--     private advocacy (Lake Mead intake-straw sales tax) were NOT converted into
+--     compass positions. No individual council votes on compass topics were
+--     attributable to her.
+--
+-- No defaulted values; a blank spoke is the honest answer. Revisit if/when she
+-- accrues a citable voting record (her interim/non-candidate status means one may
+-- never materialize). No INSERTs - this migration is intentionally a no-op.
+
+-- (no executable statements - documented full blank)
