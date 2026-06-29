@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
 status: executing
-last_updated: "2026-06-29T04:52:08.789Z"
+last_updated: "2026-06-29T05:21:52.383Z"
 last_activity: 2026-06-29
 progress:
   total_phases: 6
   completed_phases: 1
   total_plans: 13
-  completed_plans: 4
-  percent: 17
+  completed_plans: 5
+  percent: 38
 ---
 
 # Project State
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 ## Current Position
 
 Phase: 149 (CA Candidate Seeding (race_candidates only — turnkey)) — EXECUTING
-Plan: 3 of 11
+Plan: 4 of 11
 Status: Ready to execute
 Last activity: 2026-06-29
 Next: `/gsd-plan-phase 149` (CA Seeding — race_candidates only; reads 148-field-table.csv existing_race_id + general_candidates)
@@ -253,10 +253,11 @@ None for v2.18 start. Run the live diagnostic queries at plan authoring time:
 | Phase 148 P01 | 5 min | 2 tasks | 2 files |
 | Phase 149 P1 | 18min | 2 tasks | 2 files |
 | Phase 149 P02 | 12min | 1 tasks | 1 files |
+| Phase 149 P03 | 15min | 1 tasks | 2 files |
 
 ## Session Continuity
 
-Last session: 2026-06-29T04:51:14.403Z
+Last session: 2026-06-29T05:21:06.420Z
 Stopped at: Quick task 023 COMPLETE — CA Gov (Hilton/Becerra) + LA Mayor (Bass/Raman) deep candidate coverage, enrichment, and full primary-source fact-check; all live + pushed (c96d749f)
 Resume file: None
 
@@ -278,6 +279,7 @@ Resume file: None
 - [Phase ?]: [Phase 149-01]: essentials.politicians has NO updated_at column — UPDATE must not set it (migration rollback caught it).
 - [Phase ?]: [Phase 149-01]: CA seeded 38 NEW + 66 REUSE (38 matches 148, 0 live name-flips); redistricted runners (Bera CA-3/Kiley CA-6/Calvert CA-40) reuse pid is_incumbent=false; Ruiz dup 05349fa0 retired, CA-25 wired to 5238b298; mig 1091; 104 race_candidates, Gov race untouched (76).
 - [Phase ?]: USHC-02c reuse pin excludes Linda Sánchez CA-41 (new record -6014101, not pid reuse); gate House-scoped NATIONAL_LOWER+728d0074; USHC-04/05 fail pre-Wave-2/3 by design
+- [Phase ?]: [Phase 149-03]: CA House headshot wrong-person guard hardened (title must contain candidate first+surname, reject election/place/event + non-political disambiguators); base guard false-passed 21/25; auto-pass imaged 4/36; 32 to manual; USHC-04 PARTIAL
 
 ## Operator Next Steps
 

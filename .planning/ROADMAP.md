@@ -117,7 +117,7 @@ Plans:
 - [x] 149-02-PLAN.md — author 149-verify.sql gate (House-scoped, write-free, USHC-02/03/04/05 + D-04 assertions)
 
 **Wave 2** *(blocked on 149-01)*
-- [ ] 149-03-PLAN.md — headshots for the 38 new CA candidates (find-headshots conventions)
+- [x] 149-03-PLAN.md — headshots for the 38 new CA candidates (find-headshots conventions)
 
 **Wave 3** *(blocked on 149-01; stance batches, ≤3-concurrent research)*
 - [ ] 149-04-PLAN.md — stances CA-1..9
@@ -210,7 +210,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 148. Field Resolution + Stance-Gap Diagnostic | 2/2 | Complete   | 2026-06-28 |
-| 149. CA Candidate Seeding (race_candidates only) | 2/11 | In Progress|  |
+| 149. CA Candidate Seeding (race_candidates only) | 3/11 | In Progress|  |
 | 150. TX + NY Candidate Seeding (create races) | 0/? | Not started | - |
 | 151. FL Candidate Seeding (provisional) | 0/? | Not started | - |
 | 152. Coordinate Verification Gate | 0/? | Not started | - |
