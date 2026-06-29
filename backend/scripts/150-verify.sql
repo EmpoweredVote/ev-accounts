@@ -321,7 +321,12 @@ BEGIN
   SELECT politician_id, reason FROM (VALUES
     ('e6908ff7-834c-4078-9e35-593d000982dd'::uuid, 'Yolanda Prince TX-1 (-4810101): no fetchable primary-source positions -- no completed Candidate Connection survey, no Ballotpedia campaign-site quote, KETK/nbcrightnow articles Cloudflare-walled on every fetch attempt'),
     ('848e2aa5-328d-47c8-9dfa-e425b60b9ca4'::uuid, 'Ronald Whitfield TX-18 (-4811801): no fetchable primary-source positions -- no completed Candidate Connection survey, no campaign-site quote on Ballotpedia, no campaign website surfaced in search; party-inference refused'),
-    ('96721078-0aed-4414-86df-d6c26f755646'::uuid, 'Martha Fierro TX-29 (-4812901): no fetchable primary-source positions -- no completed Candidate Connection survey, no Ballotpedia campaign quote, only social-media pages (no issues content); party-inference refused')
+    ('96721078-0aed-4414-86df-d6c26f755646'::uuid, 'Martha Fierro TX-29 (-4812901): no fetchable primary-source positions -- no completed Candidate Connection survey, no Ballotpedia campaign quote, only social-media pages (no issues content); party-inference refused'),
+    -- 150-10 (TX-31..38): Eric Flores TX-34 R -- campaign site (ericflores.com/priorities + /abouteric)
+    -- and Ballotpedia carry only bullet-point slogans ("SECURE THE BORDER", "ENERGY INDEPENDENCE",
+    -- "SAFEGUARD SENIORS' BENEFITS") with no policy specifics that pin a chair; no completed Candidate
+    -- Connection survey. Per chairs-not-polarity, ambiguous slogans cannot pin a value; party-inference refused.
+    ('66e11441-bc75-4d06-b5b3-d371463abef4'::uuid, 'Eric Flores TX-34 (-4813401): no fetchable primary-source positions -- campaign site + Ballotpedia carry only bullet-point slogans (SECURE THE BORDER / ENERGY INDEPENDENCE / SAFEGUARD SENIORS BENEFITS) with no chair-pinning specifics; no Candidate Connection survey; party-inference refused')
   ) AS v(politician_id, reason)
   ORDER BY politician_id;
 
