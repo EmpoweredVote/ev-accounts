@@ -328,8 +328,18 @@ BEGIN
     SELECT 1 FROM essentials.politician_images pi WHERE pi.politician_id = nc.politician_id
   )
   AND p.external_id NOT IN (
-    -- POPULATED-BY-150-05/06: documented headshot honest-skips (external_id list, ORDER BY external_id)
-    0  -- placeholder (no real external_id is 0); replaced/extended by the headshot waves
+    -- Documented headshot honest-skips (ORDER BY external_id): obscure first-time challengers with NO
+    -- free-license portrait anywhere (no own Wikipedia bio page — match resolves to election/place/
+    -- wrong-person articles; campaign/Ballotpedia images all-rights-reserved). A wrong-person or
+    -- copyrighted image is refused over filling these (T-150-17/18). The 149 precedent honest-skipped
+    -- 27/36 likewise. Auto-imaged TX (5): Allred/Haynes/Herrera/Teixeira/Pulido.
+    -- TX skips (150-05, 43):
+    -4813802, -4813801, -4813701, -4813601, -4813502, -4813501, -4813401, -4813302, -4813201,
+    -4813101, -4813002, -4812901, -4812801, -4812701, -4812601, -4812501, -4812401, -4812302,
+    -4812201, -4812102, -4812001, -4811902, -4811901, -4811801, -4811701, -4811601, -4811401,
+    -4811301, -4811201, -4811101, -4811002, -4811001, -4810902, -4810901, -4810802, -4810801,
+    -4810701, -4810601, -4810501, -4810401, -4810301, -4810201, -4810101
+    -- POPULATED-BY-150-06: NY headshot honest-skips appended here (ORDER BY external_id)
   );
   IF v_no_image <> 0 THEN
     RAISE EXCEPTION 'FAIL USHC-04 (Wave 3/4): % newly-seeded TX/NY candidate(s) lack a politician_images row: %', v_no_image, v_image_detail;

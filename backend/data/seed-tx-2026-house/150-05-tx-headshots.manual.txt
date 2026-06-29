@@ -1,0 +1,12 @@
+# 150-05 TX manual headshot sources (external_id|image_url_or_path|license)
+# Format: free-license (.gov / Wikimedia Commons / explicitly-free) portraits ONLY.
+#
+# Auto-imaged from Wikipedia (5, NOT listed here): Colin Allred (-4813301, PD),
+#   Frederick Haynes III (-4813001, cc-by-3.0), Brandon Herrera (-4812301, cc-by-2.0),
+#   Mark Teixeira (-4812101, cc-by-sa-2.0), Bobby Pulido (-4811501, cc-by-4.0).
+#
+# The remaining 43 new TX challengers have NO free-license portrait discoverable (no own
+# Wikipedia bio page; campaign/Ballotpedia portraits are all-rights-reserved). They are
+# documented honest-skips pinned by external_id in scripts/150-verify.sql (USHC-04). A
+# wrong-person or copyrighted image is refused over filling them (T-150-17/18). A future
+# dedicated manual-sourcing pass can add lines below as free portraits surface.
