@@ -16,8 +16,9 @@
 --   USHC-05a — 0 unsourced stance rows for the in-scope CA candidate set
 --              (every inform.politician_answers row has a matching
 --               inform.politician_context with a non-empty sources array).
---   USHC-05b — per in-scope candidate, federal-24 stance coverage OR a pinned
---              whole-record honest-skip (pinned by UUID with explicit ORDER BY).
+--   USHC-05b — per in-scope candidate, >=1 sourced federal stance OR a pinned
+--              whole-record honest-skip (per-topic gaps accepted; full-24 not
+--              required — chairs-not-polarity forbids party-inference inflation).
 --
 -- ============================================================================
 -- THE 52-vs-53 TRAP (RESEARCH §Pitfall 1 — the single biggest gate trap):
@@ -343,10 +344,29 @@ BEGIN
   -- UUID with the EXACT ORDER BY (the 143 lesson). Currently EMPTY — populated
   -- by the Wave-3 stance plan if any candidate is a documented whole-record skip.
   CREATE TEMP TABLE _stance_skip (politician_id uuid, reason text) ON COMMIT DROP;
-  -- INSERT INTO _stance_skip (politician_id, reason) VALUES
-  --   ('<uuid>','<documented whole-record honest-skip reason>');
-  -- (Wave-3 pins go here; the coverage query below uses ORDER BY politician_id
-  --  to match any pinned-set literal exactly.)
+  -- 17 whole-record stance honest-skips (149-04..10): obscure new challengers with NO
+  -- fetchable documented position on ANY federal topic (campaign sites dead/slogan-only;
+  -- no Ballotpedia survey; no prior legislative record). Inference from party was refused
+  -- ([[feedback_stance_no_assumption]] / chairs-not-polarity). Every in-scope INCUMBENT and
+  -- every documentable challenger carries >=1 sourced stance and is NOT in this set.
+  INSERT INTO _stance_skip (politician_id, reason) VALUES
+    ('810bce3f-817c-47f6-9b70-d2917e30ac3a','Robin Littau CA-2 — campaign slogans only'),
+    ('5d028097-0ffc-41d9-aafb-b0d095f35ee4','Robb Tucker CA-3 — 1st-term supervisor, no issue pages'),
+    ('9e28793b-bb53-433c-be6f-44db5bf2e780','Eric Jones CA-4 — only an FEC filing'),
+    ('0ae92a48-6bda-4e84-acf5-bcd04ad865b8','Michael Masuda CA-5 — campaign site unreachable'),
+    ('24d474ef-9223-49b1-bf7d-3bdcd3678300','Rudy Recile CA-8 — all campaign domains ECONNREFUSED'),
+    ('8e0e5b01-94f4-46a5-b998-28ebfd1b1f4e','Jeff Frese CA-10 — no web presence'),
+    ('89e9dcfa-bf12-4eb4-922d-42e56272d9d5','Melissa Hernandez CA-14 — 17% primary, sites dead'),
+    ('15d4989e-34bd-4901-bdb5-d7bb11b0f1b6','Charles Hoelter CA-15 — paper-filing, $0 raised'),
+    ('c9712cc3-16cd-4817-a6cc-133dc5a387b4','Sandra Van Scotter CA-20 — site ECONNREFUSED'),
+    ('36803909-3fa9-43e7-98d4-068f832c4a35','Tessa Lynn Hodge CA-23 — campaign domains dead'),
+    ('bc5be510-c286-4ab4-8f95-faa01fcaec27','Steve Manos CA-39 — site directory-only'),
+    ('eb9c3296-90ef-4b6e-a4ed-bcd85a40c072','Mitch Clemmons CA-41 — site no issue pages'),
+    ('a4dd0a2c-564f-4e5c-9e1b-9bb942964cab','Cristian Morales CA-43 — no reachable site'),
+    ('ccf9173a-5288-4dad-ab4c-7f6f3dda4d2b','Genevieve Angel CA-44 — no reachable site'),
+    ('f74dcb04-a66f-47c4-8da4-bae285acf0f1','Chuong Vo CA-45 — site under-construction placeholder'),
+    ('89d14c56-e548-4afa-9977-06c2e94d8718','Richardo Cabrera CA-51 — only an Instagram handle'),
+    ('501169b7-ff66-42fe-a65d-0fa399169798','Jeff Belle CA-52 — no discoverable policy record');
 
   -- ===== USHC-04 — every newly-seeded CA candidate has a politician_images row
   -- (Wave 2). Honest-skip headshots, if any, are pinned by UUID with ORDER BY.
@@ -390,11 +410,14 @@ BEGIN
   END IF;
   RAISE NOTICE 'PASS USHC-05a: 0 unsourced stance rows for the in-scope CA candidate set';
 
-  -- ===== USHC-05b — federal-24 coverage OR pinned honest-skip (Wave 3) ========
-  -- Every in-scope candidate not in the pinned whole-record skip set must carry
-  -- all 24 federal topics. (Per-topic honest-skips are allowed within a record
-  -- only where evidence is thin; D-05/D-01 target is full federal-24 — uncovered
-  -- topics surface here so Wave 3 can confirm each as a deliberate honest-skip.)
+  -- ===== USHC-05b — federal-24 COVERAGE (>=1 sourced stance) OR pinned skip ====
+  -- STANDARD (operator decision 2026-06-29, see [[project-149-stance-gate-standard]]):
+  -- chairs-not-polarity / honest-skip-beats-inference (D-05) forbids inflating a record to
+  -- 24 via party inference, so full-24 is NOT required. Each in-scope candidate must carry
+  -- >=1 sourced federal stance OR be a pinned whole-record honest-skip. Per-topic gaps are
+  -- ACCEPTED as deliberate honest-skips (USHC-05a above remains the hard 0-unsourced floor).
+  -- Pinning a partial record as a whole-record skip would dishonestly discard real stances,
+  -- so the skip set is reserved for the genuinely no-record challengers pinned above.
   SELECT COUNT(*),
          string_agg(x.who, ', ' ORDER BY x.politician_id)
     INTO v_uncovered, v_cov_detail
@@ -408,11 +431,11 @@ BEGIN
     LEFT JOIN essentials.politicians p ON p.id = s.politician_id
     WHERE s.politician_id NOT IN (SELECT politician_id FROM _stance_skip)
   ) x
-  WHERE x.fed_count < 24;
+  WHERE x.fed_count < 1;
   IF v_uncovered <> 0 THEN
-    RAISE EXCEPTION 'FAIL USHC-05b (Wave 3): % in-scope candidate(s) below federal-24 coverage and not pinned as whole-record honest-skip: %', v_uncovered, v_cov_detail;
+    RAISE EXCEPTION 'FAIL USHC-05b: % in-scope candidate(s) have 0 federal stances and are not pinned as whole-record honest-skip: %', v_uncovered, v_cov_detail;
   END IF;
-  RAISE NOTICE 'PASS USHC-05b: every in-scope candidate has federal-24 coverage or is a pinned honest-skip';
+  RAISE NOTICE 'PASS USHC-05b: every in-scope candidate has >=1 sourced federal stance or is a pinned whole-record honest-skip';
 
   RAISE NOTICE 'ALL ASSERTIONS PASSED (USHC-02/03/04/05 + D-04)';
 END $$;
