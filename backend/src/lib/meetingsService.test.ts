@@ -7,6 +7,7 @@ vi.mock('./db.js', () => ({
 
 import {
   createMeeting,
+  firstSentence,
   getMeetingById,
   getMeetingEntityState,
   getMeetings,
@@ -48,20 +49,40 @@ const baseRow = {
   slug: 'm1',
   summary: fullSummary,
   processing_metadata: null,
+  thumbnail_url: 'https://x.supabase.co/storage/v1/object/public/meeting-thumbnails/m1.jpg',
 };
 
 beforeEach(() => mockQuery.mockReset());
 
 describe('getMeetings (list payload)', () => {
-  it('omits the full summary JSONB but keeps a truncated summaryPreview', async () => {
-    mockQuery.mockResolvedValueOnce({ rows: [baseRow] });
+  it('omits the full summary JSONB but keeps the first-sentence summaryPreview', async () => {
+    mockQuery.mockResolvedValueOnce({
+      rows: [
+        {
+          ...baseRow,
+          summary: {
+            ...fullSummary,
+            executive_summary:
+              'The council deferred the rezoning vote. A traffic study is due next month.',
+          },
+        },
+      ],
+    });
 
     const [item] = await getMeetings();
 
     expect('summary' in item).toBe(false);
-    expect(item.summaryPreview).not.toBeNull();
-    expect(item.summaryPreview!.length).toBeLessThanOrEqual(160);
-    expect(item.summaryPreview!.endsWith('…')).toBe(true);
+    expect(item.summaryPreview).toBe('The council deferred the rezoning vote.');
+  });
+
+  it('returns the full first sentence without truncation, even when long', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [baseRow] });
+
+    const [item] = await getMeetings();
+
+    // baseRow's executive_summary is one long single sentence — returned whole.
+    expect(item.summaryPreview).toBe(fullSummary.executive_summary);
+    expect(item.summaryPreview!.endsWith('…')).toBe(false);
   });
 
   it('returns a null summaryPreview when there is no summary', async () => {
@@ -71,6 +92,61 @@ describe('getMeetings (list payload)', () => {
 
     expect('summary' in item).toBe(false);
     expect(item.summaryPreview).toBeNull();
+  });
+
+  it('returns the thumbnailUrl on list items', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [baseRow] });
+
+    const [item] = await getMeetings();
+
+    expect(item.thumbnailUrl).toBe(
+      'https://x.supabase.co/storage/v1/object/public/meeting-thumbnails/m1.jpg',
+    );
+  });
+
+  it('returns a null thumbnailUrl when the column is null', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{ ...baseRow, thumbnail_url: null }] });
+
+    const [item] = await getMeetings();
+
+    expect(item.thumbnailUrl).toBeNull();
+  });
+});
+
+describe('firstSentence', () => {
+  it('returns only the first sentence of a multi-sentence summary', () => {
+    expect(
+      firstSentence('The council approved the rezoning. Then they recessed.'),
+    ).toBe('The council approved the rezoning.');
+  });
+
+  it('returns a long single sentence whole (no cap)', () => {
+    const long =
+      'The League of Women Voters hosted two candidate forums on June 9, 2026—one for Indiana House District 61 and one for Monroe County Commissioner.';
+    expect(firstSentence(long)).toBe(long);
+  });
+
+  it('trims surrounding whitespace', () => {
+    expect(firstSentence('   Leading and trailing spaces.  Second.')).toBe(
+      'Leading and trailing spaces.',
+    );
+  });
+
+  it('returns the whole string when there is no terminator', () => {
+    expect(firstSentence('A fragment with no terminator')).toBe(
+      'A fragment with no terminator',
+    );
+  });
+
+  it('handles question and exclamation marks', () => {
+    expect(firstSentence('What happened next? A lot.')).toBe('What happened next?');
+  });
+
+  it('returns null for empty or missing input', () => {
+    expect(firstSentence('')).toBeNull();
+    expect(firstSentence(null)).toBeNull();
+    expect(firstSentence(undefined)).toBeNull();
+    expect(firstSentence('   ')).toBeNull();
   });
 });
 

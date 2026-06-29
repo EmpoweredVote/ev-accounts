@@ -51,6 +51,7 @@ export interface Meeting {
   summary: unknown | null;
   processingMetadata: unknown | null;
   summaryPreview: string | null;
+  thumbnailUrl: string | null;
 }
 
 /**
@@ -160,6 +161,7 @@ interface MeetingRow {
   slug: string | null;
   summary: unknown | null;
   processing_metadata: unknown | null;
+  thumbnail_url: string | null;
 }
 
 interface SpeakerRow {
@@ -213,6 +215,20 @@ interface VoteRecordRow {
 // Mappers (explicit camelCase — NEVER spread rows)
 // ---------------------------------------------------------------------------
 
+/**
+ * First sentence of `text` — everything up to and including the first `.`/`!`/`?`
+ * that is followed by whitespace or end-of-string. Trimmed. Returns null for
+ * empty/missing input; returns the whole trimmed string when there is no
+ * terminator. No length cap: the meeting list shows the full first sentence.
+ */
+export function firstSentence(text: string | null | undefined): string | null {
+  if (!text) return null;
+  const trimmed = text.trim();
+  if (!trimmed) return null;
+  const match = /^.*?[.!?](?=\s|$)/s.exec(trimmed);
+  return match ? match[0] : trimmed;
+}
+
 function mapMeeting(row: MeetingRow): Meeting {
   return {
     id: row.id,
@@ -239,11 +255,10 @@ function mapMeeting(row: MeetingRow): Meeting {
     slug: row.slug,
     summary: row.summary,
     processingMetadata: row.processing_metadata,
-    summaryPreview: (() => {
-      const ex = (row.summary as { executive_summary?: string } | null)?.executive_summary;
-      if (!ex) return null;
-      return ex.length > 160 ? ex.slice(0, 157).trimEnd() + "…" : ex;
-    })(),
+    summaryPreview: firstSentence(
+      (row.summary as { executive_summary?: string } | null)?.executive_summary,
+    ),
+    thumbnailUrl: row.thumbnail_url ?? null,
   };
 }
 
@@ -324,7 +339,8 @@ const MEETING_COLS = `
      WHERE er.meeting_id = meetings.meetings.id),
     ARRAY[]::uuid[]
   ) AS race_ids,
-  source_url, playback_kind, clip_start_seconds, clip_end_seconds, slug, summary, processing_metadata
+  source_url, playback_kind, clip_start_seconds, clip_end_seconds, slug, summary, processing_metadata,
+  thumbnail_url
 `;
 
 export async function getMeetings(
