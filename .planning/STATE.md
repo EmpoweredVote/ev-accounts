@@ -2,16 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
-status: ready_to_plan
-last_updated: 2026-06-29T17:58:42.335Z
+status: planning
+last_updated: "2026-06-29T18:13:47.337Z"
 last_activity: 2026-06-29
 progress:
   total_phases: 6
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 13
   completed_plans: 13
-  percent: 17
-stopped_at: Phase 149 complete (11/11) — ready to discuss Phase 150
+  percent: 33
 ---
 
 # Project State
@@ -260,9 +259,9 @@ None for v2.18 start. Run the live diagnostic queries at plan authoring time:
 
 ## Session Continuity
 
-Last session: 2026-06-29T05:21:06.420Z
-Stopped at: Quick task 023 COMPLETE — CA Gov (Hilton/Becerra) + LA Mayor (Bass/Raman) deep candidate coverage, enrichment, and full primary-source fact-check; all live + pushed (c96d749f)
-Resume file: None
+Last session: 2026-06-29T18:13:47.327Z
+Stopped at: Phase 150 context gathered
+Resume file: .planning/phases/150-tx-ny-candidate-seeding-create-races-then-candidates/150-CONTEXT.md
 
 ## Decisions
 
