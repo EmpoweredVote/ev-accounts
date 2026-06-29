@@ -151,12 +151,12 @@ Plans:
 
 Plans:
 **Wave 1** *(scaffold + gate authoring; parallel)*
-- [ ] 150-01-PLAN.md — author 2 elections + 64 races (38 TX + 26 NY) on existing House offices (the create-races step CA did not need)
-- [ ] 150-02-PLAN.md — author 150-verify.sql gate (per-state TX/NY-scoped; USHC-02/03/04/05 + D-01/D-02/D-03/D-05; NY-partial exclusion)
+- [x] 150-01-PLAN.md — author 2 elections + 64 races (38 TX + 26 NY) on existing House offices (the create-races step CA did not need)
+- [x] 150-02-PLAN.md — author 150-verify.sql gate (per-state TX/NY-scoped; USHC-02/03/04/05 + D-01/D-02/D-03/D-05; NY-partial exclusion)
 
 **Wave 2** *(record reconciliation + race_candidates wiring; TX/NY parallel; blocked on 150-01)*
-- [ ] 150-03-PLAN.md — TX records + race_candidates (live D-03 dedup: Casar→TX-37 reuse, Allred new, Toth reuse; lost incumbents absent)
-- [ ] 150-04-PLAN.md — NY records + race_candidates (lost-primary winners Lander/Avila Chevalier; seed-all minor lines Cohen/Smullen; 24 incumbents reused)
+- [x] 150-03-PLAN.md — TX records + race_candidates (live D-03 dedup: Casar→TX-37 reuse, Allred new, Toth reuse; lost incumbents absent)
+- [x] 150-04-PLAN.md — NY records + race_candidates (lost-primary winners Lander/Avila Chevalier; seed-all minor lines Cohen/Smullen; 24 incumbents reused)
 
 **Wave 3** *(headshots + stances; <=3-concurrent research; blocked on Wave 2)*
 - [ ] 150-05-PLAN.md — headshots for new TX candidates (shared seed-tx-ny-house-headshots.py)
@@ -232,7 +232,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 148. Field Resolution + Stance-Gap Diagnostic | 2/2 | Complete   | 2026-06-28 |
 | 149. CA Candidate Seeding (race_candidates only) | 11/11 | Complete    | 2026-06-29 |
-| 150. TX + NY Candidate Seeding (create races) | 0/12 | Planned | - |
+| 150. TX + NY Candidate Seeding (create races) | 4/12 | In Progress|  |
 | 151. FL Candidate Seeding (provisional) | 0/? | Not started | - |
 | 152. Coordinate Verification Gate | 0/? | Not started | - |
 | 153. FL Post-Primary Re-Check (date-gated Aug 18) | 0/? | Not started | - |
