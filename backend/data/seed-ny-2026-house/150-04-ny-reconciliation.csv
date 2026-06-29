@@ -1,0 +1,55 @@
+cd,geo_id,race_id,full_name,party_from_field,decision,target_politician_id,assign_external_id,is_incumbent,source_url
+1,3601,f1415ce1-250b-49d5-afc1-b0f0f624b044,Nick LaLota,Republican,REUSE,,-36001,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_1
+1,3601,f1415ce1-250b-49d5-afc1-b0f0f624b044,Chris Gallant,Democratic,NEW,,-3610101,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_1
+2,3602,05d23321-9f87-412e-9b21-34c812b16c4d,Andrew R. Garbarino,Republican,REUSE,,-36002,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_2
+2,3602,05d23321-9f87-412e-9b21-34c812b16c4d,Patrick Halpin,Democratic,NEW,,-3610201,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_2
+3,3603,e091d25a-1c46-45c0-8835-f0d84ae06173,Thomas R. Suozzi,Democratic,REUSE,,-36003,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_3
+3,3603,e091d25a-1c46-45c0-8835-f0d84ae06173,Mike LiPetri,Republican,NEW,,-3610301,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_3
+4,3604,e03c23bc-1676-49e6-8e3c-f4c00dde548d,Laura Gillen,Democratic,REUSE,,-36004,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_4
+4,3604,e03c23bc-1676-49e6-8e3c-f4c00dde548d,Jeanine Driscoll,Republican,NEW,,-3610401,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_4
+5,3605,87d3ba4f-2a14-4af0-aea9-b3430b136155,Gregory W. Meeks,Democratic,REUSE,,-36005,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_5
+5,3605,87d3ba4f-2a14-4af0-aea9-b3430b136155,George Marsh,Republican,NEW,,-3610501,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_5
+6,3606,7061d405-60ca-49df-b23d-f0dee8ec7345,Grace Meng,Democratic,REUSE,,-36006,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_6
+6,3606,7061d405-60ca-49df-b23d-f0dee8ec7345,Joseph Chou,Republican,NEW,,-3610601,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_6
+7,3607,221c4481-3039-44a2-8455-928fa2cba87e,Claire Valdez,Democratic,NEW,,-3610701,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_7
+7,3607,221c4481-3039-44a2-8455-928fa2cba87e,Melvin Rivera,Republican,NEW,,-3610702,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_7
+8,3608,ed0a4ce0-ff59-40b4-8a81-501f72a197c6,Hakeem S. Jeffries,Democratic,REUSE,,-36008,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_8
+8,3608,ed0a4ce0-ff59-40b4-8a81-501f72a197c6,Lewis Mizrahi,Republican,NEW,,-3610801,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_8
+9,3609,b56f4f54-8945-4d6e-8e55-b6812a7c79d3,Yvette D. Clarke,Democratic,REUSE,,-36009,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_9
+9,3609,b56f4f54-8945-4d6e-8e55-b6812a7c79d3,Joel Anabilah-Azumah,Republican,NEW,,-3610901,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_9
+10,3610,a11fd498-9cf0-4319-8742-e73ef941c738,Brad Lander,Democratic,NEW,,-3611001,false,https://www.axios.com/2026/06/24/dan-goldman-brad-lander-mamdani-new-york-primary
+10,3610,a11fd498-9cf0-4319-8742-e73ef941c738,Jennifer Moore,Republican,NEW,,-3611002,false,https://www.axios.com/2026/06/24/dan-goldman-brad-lander-mamdani-new-york-primary
+11,3611,ac2e8d2e-186b-4570-86a5-a02a1bad3f67,Nicole Malliotakis,Republican,REUSE,,-36011,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_11
+11,3611,ac2e8d2e-186b-4570-86a5-a02a1bad3f67,Michael DeCillis,Democratic,NEW,,-3611101,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_11
+12,3612,2e48b131-f593-4d6e-91dc-4b8c42e59bc1,Micah Lasher,Democratic,NEW,,-3611201,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_12
+12,3612,2e48b131-f593-4d6e-91dc-4b8c42e59bc1,Caroline Shinkle,Republican,NEW,,-3611202,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_12
+13,3613,08b0a874-5fc5-4d02-ac61-986ebc2238bb,Darializa Avila Chevalier,Democratic,NEW,,-3611301,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_13
+13,3613,08b0a874-5fc5-4d02-ac61-986ebc2238bb,Jomo M. Williams,Republican,NEW,,-3611302,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_13
+13,3613,08b0a874-5fc5-4d02-ac61-986ebc2238bb,Bob Cohen,Working Families,NEW,,-3611303,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_13
+14,3614,7f0ae969-0667-4ab1-8ae1-3e6508bc9477,Alexandria Ocasio-Cortez,Democratic,REUSE,,-36014,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_14
+14,3614,7f0ae969-0667-4ab1-8ae1-3e6508bc9477,Diamant Hysenaj,Republican,NEW,,-3611401,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_14
+15,3615,32d39b1d-30e4-470e-8ef4-64c1192acccc,Ritchie Torres,Democratic,REUSE,,-36015,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_15
+15,3615,32d39b1d-30e4-470e-8ef4-64c1192acccc,Stylo Sapaskis,Republican,NEW,,-3611501,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_15
+16,3616,fcb869e9-2fee-4551-8920-ae5fc161769a,George Latimer,Democratic,REUSE,,-36016,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_16
+16,3616,fcb869e9-2fee-4551-8920-ae5fc161769a,Joseph Cinquemani,Republican,NEW,,-3611601,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_16
+17,3617,82d021d3-f4e9-4465-a5e9-d2ef8358df34,Michael Lawler,Republican,REUSE,,-36017,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_17
+17,3617,82d021d3-f4e9-4465-a5e9-d2ef8358df34,Cait Conley,Democratic,NEW,,-3611701,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_17
+18,3618,1a49995f-8de3-434f-968b-ac9ef8168752,Patrick Ryan,Democratic,REUSE,,-36018,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_18
+18,3618,1a49995f-8de3-434f-968b-ac9ef8168752,Jacqueline Auringer,Republican,NEW,,-3611801,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_18
+19,3619,9f71abe0-0049-4010-a43f-0adbe6d8a4b3,Josh Riley,Democratic,REUSE,,-36019,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_19
+19,3619,9f71abe0-0049-4010-a43f-0adbe6d8a4b3,Peter Oberacker,Republican,NEW,,-3611901,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_19
+20,3620,ad4f7917-d49e-47e3-b60b-e0f73e95d3b1,Paul Tonko,Democratic,REUSE,,-36020,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_20
+20,3620,ad4f7917-d49e-47e3-b60b-e0f73e95d3b1,Ralph Ambrosio,Republican,NEW,,-3612001,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_20
+21,3621,6cd0af96-9d2f-4990-9a78-036d60fc2f40,Anthony Constantino,Republican,NEW,,-3612101,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_21
+21,3621,6cd0af96-9d2f-4990-9a78-036d60fc2f40,Blake Gendebien,Democratic,NEW,,-3612102,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_21
+21,3621,6cd0af96-9d2f-4990-9a78-036d60fc2f40,Robert Smullen,Conservative,NEW,,-3612103,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_21
+22,3622,92365231-af4e-49c4-969a-e24f2005ab01,John W. Mannion,Democratic,REUSE,,-36022,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_22
+22,3622,92365231-af4e-49c4-969a-e24f2005ab01,Kailee Buller,Republican,NEW,,-3612201,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_22
+23,3623,920d5128-79d8-4446-9d0d-b39e3482e6b4,Nicholas A. Langworthy,Republican,REUSE,,-36023,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_23
+23,3623,920d5128-79d8-4446-9d0d-b39e3482e6b4,Aaron Gies,Democratic,NEW,,-3612301,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_23
+24,3624,8f8dbd3b-f01e-4096-b6c5-5aff7f960321,Claudia Tenney,Republican,REUSE,,-36024,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_24
+24,3624,8f8dbd3b-f01e-4096-b6c5-5aff7f960321,Alissa Ellman,Democratic,NEW,,-3612401,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_24
+25,3625,c7a0aafc-63b3-475e-bf52-ba1111470024,Joseph D. Morelle,Democratic,REUSE,,-36025,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_25
+25,3625,c7a0aafc-63b3-475e-bf52-ba1111470024,Virginia McIntyre,Republican,NEW,,-3612501,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_25
+26,3626,5cbfc002-fbe7-44cb-a295-4498f1681b4f,Timothy M. Kennedy,Democratic,REUSE,,-36026,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_26
+26,3626,5cbfc002-fbe7-44cb-a295-4498f1681b4f,Dennis Hannon,Republican,NEW,,-3612601,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_York#District_26
