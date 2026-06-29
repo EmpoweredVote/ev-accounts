@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
-status: phase-complete
-last_updated: "2026-06-28T16:39:23.168Z"
-last_activity: 2026-06-28
+status: executing
+last_updated: "2026-06-29T00:04:33.569Z"
+last_activity: 2026-06-29 -- Phase 149 planning complete
 progress:
   total_phases: 6
   completed_phases: 1
-  total_plans: 2
+  total_plans: 13
   completed_plans: 2
-  percent: 17
+  percent: 15
 ---
 
 # Project State
@@ -27,8 +27,8 @@ See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 Phase: 148 (field-resolution-stance-gap-diagnostic) — COMPLETE (2/2 plans)
 Plan: 2 of 2 — done
-Status: Phase 148 complete; USHC-01 closed. Field table locked for all 144 Wave-1 districts.
-Last activity: 2026-06-28
+Status: Ready to execute
+Last activity: 2026-06-29 -- Phase 149 planning complete
 Next: `/gsd-plan-phase 149` (CA Seeding — race_candidates only; reads 148-field-table.csv existing_race_id + general_candidates)
 
 ### v2.20 Phase Dependencies
