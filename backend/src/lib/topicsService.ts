@@ -7,6 +7,7 @@
  */
 
 import { pool } from './db.js';
+import type { EventKind } from './eventKinds.js';
 
 export interface TopicListEntry {
   topicKey: string;
@@ -17,6 +18,10 @@ export interface TopicListEntry {
 
 export interface TopicItem {
   meetingId: string;
+  title: string | null;
+  eventKind: EventKind;
+  eventOrgs: string[];
+  sourceTitle: string | null;
   city: string;
   meetingType: string;
   date: string;
@@ -74,11 +79,17 @@ export async function getTopicByKey(topicKey: string): Promise<TopicDetail | nul
   );
 
   const { rows } = await pool.query<{
-    meeting_id: string; city: string; meeting_type: string; date: string;
+    meeting_id: string; title: string | null; event_kind: EventKind;
+    event_orgs: string[] | null; source_title: string | null;
+    city: string; meeting_type: string; date: string;
     playback_kind: string | null; section_index: string; section_title: string | null;
     section_type: string | null; start_time: string | null; status: string;
   }>(
-    `SELECT mt.meeting_id, m.city, m.meeting_type, m.date::text AS date,
+    `SELECT mt.meeting_id, m.title, m.event_kind,
+            m.processing_metadata->>'source_title' AS source_title,
+            (SELECT COALESCE(array_agg(eo.org_name ORDER BY eo.created_at), ARRAY[]::text[])
+             FROM meetings.event_orgs eo WHERE eo.meeting_id = m.slug) AS event_orgs,
+            m.city, m.meeting_type, m.date::text AS date,
             m.playback_kind, mt.section_index, mt.section_title, mt.section_type,
             mt.start_time, mt.status
      FROM meetings.meeting_topics mt
@@ -95,6 +106,10 @@ export async function getTopicByKey(topicKey: string): Promise<TopicDetail | nul
     title: titleRows[0]?.title ?? null,
     items: rows.map((r) => ({
       meetingId: r.meeting_id,
+      title: r.title,
+      eventKind: r.event_kind,
+      eventOrgs: r.event_orgs ?? [],
+      sourceTitle: r.source_title,
       city: r.city,
       meetingType: r.meeting_type,
       date: r.date,
