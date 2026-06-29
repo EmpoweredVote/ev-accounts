@@ -1,0 +1,49 @@
+# 149-03 manual headshot second-source list (Phase 149, v2.20).
+# Format (one per line): external_id|image_url_or_local_path|license
+#   - external_id: the candidate's negative external_id (-601xxxx band).
+#   - image_url_or_local_path: a DIRECT free-license portrait URL (.gov / campaign / Ballotpedia
+#     free-license / Wikimedia Commons) OR a local file path.
+#   - license: short license string (e.g. public_domain, cc_by-sa_4.0). Pipeline rejects non-free.
+# Run after filling:  python scripts/seed-ca-house-headshots.py --manual data/seed-ca-2026-house/149-03-headshots.manual.txt
+#
+# The Wikipedia AUTO pass (executor) imaged 4 candidates with genuine own-name person pages:
+#   Jim Desmond (-6014801), Chuong Vo (-6014501), Kevin Lincoln (-6011301), Richard Pan (-6010601).
+# The 32 candidates below have NO usable free Wikipedia portrait (no own page, or the bare/search
+# match landed on an election/place/event article or a same-name different individual — rejected by
+# the hardened wrong-person guard). They need a human-verified second-source portrait. The executor
+# intentionally left these blank — sourcing is the orchestrator's job (it has web tools). DO NOT
+# invent URLs; verify each portrait is the correct individual and free-licensed before adding.
+#
+# external_id | candidate | district | wiki-auto skip reason
+# -6015201 | Jeff Belle | CA-52 | desc-not-political ("boeing b-17f bomber")
+# -6015101 | Richardo Cabrera | CA-51 | not-candidate-person-page (election article)
+# -6014901 | Armen Kurdian | CA-49 | not-candidate-person-page (election article)
+# -6014701 | Jenny Le Roux | CA-47 | not-candidate-person-page (2022 CA gubernatorial election)
+# -6014601 | David Pan | CA-46 | no-lead-image
+# -6014401 | Genevieve Angel | CA-44 | desc-not-political ("category 4 pacific hurricane")
+# -6014301 | Cristian Morales | CA-43 | desc-not-political ("mexican boxer")
+# -6014201 | Brian Burley | CA-42 | not-candidate-person-page (election article)
+# -6014102 | Mitch Clemmons | CA-41 | not-candidate-person-page ("Baskets (TV series)")
+# -6013901 | Steve Manos | CA-39 | not-candidate-person-page ("Palm Springs, California")
+# -6013802 | Pedro Antonio Casas | CA-38 | not-candidate-person-page ("José Antonio Aguirre")
+# -6012901 | Angélica María Dueñas | CA-29 | not-candidate-person-page (2022 election article)
+# -6012601 | Sam Gallucci | CA-26 | desc-not-political ("house elections for the 120th congress")
+# -6012401 | Bob Smith | CA-24 | desc-not-political ("canadian musician and criminal")
+# -6012301 | Tessa Lynn Hodge | CA-23 | not-candidate-person-page (election article)
+# -6012201 | Randy Villegas | CA-22 | not-candidate-person-page (election article)
+# -6012101 | Kyle Kirkland | CA-21 | no-wikipedia-page
+# -6012001 | Sandra Van Scotter | CA-20 | not-candidate-person-page (election article)
+# -6011901 | Peter Verbica | CA-19 | not-candidate-person-page (election article)
+# -6011801 | Shane Lewis | CA-18 | not-candidate-person-page ("Shane Lewis (racing driver)")
+# -6011701 | Ritesh Tandon | CA-17 | desc-not-political ("2021 US supreme court case")
+# -6011601 | Peter Sundin Soulé | CA-16 | not-candidate-person-page (election article)
+# -6011501 | Charles Hoelter | CA-15 | not-candidate-person-page (election article)
+# -6011401 | Melissa Hernandez | CA-14 | not-candidate-person-page (CA-14 special election)
+# -6011201 | Jamie Joyce | CA-12 | no-lead-image
+# -6011001 | Jeff Frese | CA-10 | not-candidate-person-page (election article)
+# -6010901 | John McBride | CA-9 | not-candidate-person-page ("Danny McBride" — actor)
+# -6010801 | Rudy Recile | CA-8 | not-candidate-person-page (election article)
+# -6010501 | Michael Masuda | CA-5 | not-candidate-person-page (election article)
+# -6010401 | Eric Jones | CA-4 | not-candidate-person-page (election article)
+# -6010301 | Robb Tucker | CA-3 | desc-not-political ("1974 single by eagles")
+# -6010201 | Robin Littau | CA-2 | not-candidate-person-page (election article)
