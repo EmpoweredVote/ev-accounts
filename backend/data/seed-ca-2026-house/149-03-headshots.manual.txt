@@ -47,3 +47,17 @@
 # -6010401 | Eric Jones | CA-4 | not-candidate-person-page (election article)
 # -6010301 | Robb Tucker | CA-3 | desc-not-political ("1974 single by eagles")
 # -6010201 | Robin Littau | CA-2 | not-candidate-person-page (election article)
+#
+# === MANUAL SECOND-SOURCE PASS (orchestrator, 2026-06-29) ===
+# 6 verified free-license portraits located (Wikimedia Commons CC/PD + 1 city-gov PD).
+# Each confirmed correct-person + free-license before adding (see 149-03-SUMMARY.md honest-skip table for the 26 with no free portrait).
+# -6012201 Randy Villegas CA-22 — Commons CC BY 4.0, "Randy Villegas at Vota Palooza in 2024" (Visalia event, matches Visalia school-board candidate)
+-6012201|https://upload.wikimedia.org/wikipedia/commons/6/62/Randy_Villegas_at_Vota_Palooza_in_2024.jpg|cc_by_4.0
+# -6013901 Steve Manos CA-39 — City of Lake Elsinore official councilmember headshot, public domain (CA PRA gov work)
+-6013901|https://www.lake-elsinore.org/ImageRepository/Document?documentID=4751|public_domain
+# -6012101 Kyle Kirkland CA-21 — Commons CC BY 3.0 (World Poker Tour 2018), "Club One Casino President Kyle Kirkland" = Fresno candidate
+-6012101|https://upload.wikimedia.org/wikipedia/commons/9/9d/Kyle_Kirkland%2C_2018.jpg|cc_by_3.0
+# -6011401 Melissa Hernandez CA-14 — Commons PD, official City of Dublin councilmember/mayor portrait = CA-14 candidate
+-6011401|https://upload.wikimedia.org/wikipedia/commons/d/da/Melissa_Hernandez%2C_2020.jpg|public_domain
+# -6010301 Robb Tucker CA-3 — Commons PD, official Nevada County Supervisor portrait (nevadacountyca.gov) = CA-3 candidate
+-6010301|https://upload.wikimedia.org/wikipedia/commons/d/d3/Robb_Tucker%2C_2025.jpg|public_domain
