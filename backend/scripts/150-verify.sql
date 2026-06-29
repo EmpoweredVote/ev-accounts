@@ -314,7 +314,14 @@ BEGIN
   -- query's ORDER BY (143 lesson). EMPTY now — POPULATED-BY-150-07..11 for genuinely no-record
   -- challengers (campaign sites dead/slogan-only; no Ballotpedia survey; inference refused).
   CREATE TEMP TABLE _stance_skip (politician_id uuid, reason text) ON COMMIT DROP;
-  -- (no rows yet)
+  -- 150-07 (TX-1..10): genuinely no-record challengers (no completed Ballotpedia Candidate
+  -- Connection survey, no campaign-website quote on Ballotpedia, news coverage Cloudflare-walled
+  -- to every fetch attempt; party-inference refused). Pinned by exact UUID WITH ORDER BY (143 lesson).
+  INSERT INTO _stance_skip (politician_id, reason)
+  SELECT politician_id, reason FROM (VALUES
+    ('e6908ff7-834c-4078-9e35-593d000982dd'::uuid, 'Yolanda Prince TX-1 (-4810101): no fetchable primary-source positions -- no completed Candidate Connection survey, no Ballotpedia campaign-site quote, KETK/nbcrightnow articles Cloudflare-walled on every fetch attempt')
+  ) AS v(politician_id, reason)
+  ORDER BY politician_id;
 
   -- ===== USHC-04 — every newly-seeded TX/NY candidate has a politician_images row ====
   -- Headshot honest-skips (no free-license portrait anywhere) pinned by exact external_id
