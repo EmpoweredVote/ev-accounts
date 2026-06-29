@@ -2,15 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
-status: executing
-last_updated: "2026-06-29T05:21:52.383Z"
+status: ready_to_plan
+last_updated: 2026-06-29T17:58:42.335Z
 last_activity: 2026-06-29
 progress:
   total_phases: 6
   completed_phases: 1
   total_plans: 13
-  completed_plans: 5
-  percent: 38
+  completed_plans: 13
+  percent: 17
+stopped_at: Phase 149 complete (11/11) — ready to discuss Phase 150
 ---
 
 # Project State
@@ -20,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 149 — CA Candidate Seeding (race_candidates only — turnkey)
+**Current focus:** Phase 150 — tx + ny candidate seeding (create races, then candidates)
 **Last shipped:** v2.19 Local Civic Coverage — Phases 145–147 (inline-executed), formalized 2026-06-23. Falls Church VA (17) + Greene County MO (13) + Springfield MO (16): 46 records, 4 geofence boundaries, 118 evidence-only stances (0 unsourced), 46 headshots, 3 essentials coverage entries; LCC-01..05 closed. Migrations 1047–1049; git range a488232a → ef1a364f.
 
 ## Current Position
 
-Phase: 149 (CA Candidate Seeding (race_candidates only — turnkey)) — EXECUTING (partial; stance wave pending)
-Plan: 4 of 11 done (149-01 seed, 149-02 gate, 149-03 headshots) + corrective mig 1092
-Status: Wave 1 + headshots done; USHC-02/03/04 satisfied. Stance wave (USHC-05: 149-04..10) + final gate (149-11) PENDING — deferred to a fresh session for verification rigor.
+Phase: 150
+Plan: Not started
+Status: Ready to plan
 Last activity: 2026-06-29
 Done this session: mig 1091 (104 race_candidates on 52 CA House races, 36 new politician records, Ruiz CA-25 dedup); mig 1092 (dedup 2 redistricted/figure incumbents — Linda Sánchez CA-41 reuses sitting CA-38 incumbent Linda T. Sanchez -100037; Hilda Solis CA-38 reuses existing Hilda L. Solis 683398; new-candidate scope 38→36); 149-verify.sql authored; headshots 9 imaged (4 auto + 5 manual) + 27 documented honest-skips; headshot wrong-person guard hardened.
 Next: `/gsd-execute-phase 149 --wave 2` (resumes incomplete wave-2 plans = the 7 stance batches 149-04..10; 149-03 already has SUMMARY and is skipped), then 149-11 gate. Stance scope = 36 new candidates + 36 zero-stance CA incumbents at federal-24; ≤3 concurrent researchers; mandatory primary-source verification before push; D-01 zero-only (skip 7 partials + 9 done).

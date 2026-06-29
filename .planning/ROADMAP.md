@@ -109,7 +109,7 @@ Plans:
   3. Every newly-seeded CA candidate has a headshot (Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`); no candidate card displays party (party reads from `races.primary_party`).
   4. Every CA candidate lacking them has sourced federal-24-topic chairs-not-polarity stances — each answer paired to an `inform.politician_context` row with a real fetched source URL, 0 unsourced, primary-source-verified before push, honest-skip (incl. documented whole-record skip) where evidence is thin; already-stanced incumbents skipped via the diagnostic.
 
-**Plans:** 11 plans, 4 waves
+**Plans:** 11/11 plans complete
 
 Plans:
 **Wave 1**
@@ -120,16 +120,16 @@ Plans:
 - [x] 149-03-PLAN.md — headshots for the 38 new CA candidates (find-headshots conventions)
 
 **Wave 3** *(blocked on 149-01; stance batches, ≤3-concurrent research)*
-- [ ] 149-04-PLAN.md — stances CA-1..9
-- [ ] 149-05-PLAN.md — stances CA-10..18
-- [ ] 149-06-PLAN.md — stances CA-19..26 (incl. Ruiz canonical record)
-- [ ] 149-07-PLAN.md — stances CA-27..37 challengers/reuse (partials/done skipped per D-01)
-- [ ] 149-08-PLAN.md — stances CA-38..44 (open/redistricted seats + CA-40 R-vs-R)
-- [ ] 149-09-PLAN.md — stances CA-45..48
-- [ ] 149-10-PLAN.md — stances CA-49..52
+- [x] 149-04-PLAN.md — stances CA-1..9
+- [x] 149-05-PLAN.md — stances CA-10..18
+- [x] 149-06-PLAN.md — stances CA-19..26 (incl. Ruiz canonical record)
+- [x] 149-07-PLAN.md — stances CA-27..37 challengers/reuse (partials/done skipped per D-01)
+- [x] 149-08-PLAN.md — stances CA-38..44 (open/redistricted seats + CA-40 R-vs-R)
+- [x] 149-09-PLAN.md — stances CA-45..48
+- [x] 149-10-PLAN.md — stances CA-49..52
 
 **Wave 4** *(blocked on all)*
-- [ ] 149-11-PLAN.md — run 149-verify.sql green + coordinate-surfacing smoke (≥3 in-district CA House races)
+- [x] 149-11-PLAN.md — run 149-verify.sql green + coordinate-surfacing smoke (≥3 in-district CA House races)
 
 ---
 
@@ -210,7 +210,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 148. Field Resolution + Stance-Gap Diagnostic | 2/2 | Complete   | 2026-06-28 |
-| 149. CA Candidate Seeding (race_candidates only) | 3/11 | In Progress|  |
+| 149. CA Candidate Seeding (race_candidates only) | 11/11 | Complete    | 2026-06-29 |
 | 150. TX + NY Candidate Seeding (create races) | 0/? | Not started | - |
 | 151. FL Candidate Seeding (provisional) | 0/? | Not started | - |
 | 152. Coordinate Verification Gate | 0/? | Not started | - |

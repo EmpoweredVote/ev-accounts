@@ -24,11 +24,11 @@
 
 ### Headshots
 
-- [ ] **USHC-04**: Every newly-seeded Wave-1 candidate has a headshot (find-headshots conventions: Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`).
+- [x] **USHC-04**: Every newly-seeded Wave-1 candidate has a headshot (find-headshots conventions: Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`).
 
 ### Stances
 
-- [ ] **USHC-05**: Every Wave-1 candidate lacking them has sourced compass stances across the federal 24-topic set — chairs-not-polarity, every answer paired to an `inform.politician_context` row with a real fetched source URL, **0 unsourced**, honest-skip where no documentable evidence, and a mandatory primary-source verification pass before push (no party inference, no agent over-read). Already-stanced incumbents skipped via the stance-gap diagnostic.
+- [x] **USHC-05**: Every Wave-1 candidate lacking them has sourced compass stances across the federal 24-topic set — chairs-not-polarity, every answer paired to an `inform.politician_context` row with a real fetched source URL, **0 unsourced**, honest-skip where no documentable evidence, and a mandatory primary-source verification pass before push (no party inference, no agent over-read). Already-stanced incumbents skipped via the stance-gap diagnostic.
 
 ### Verification
 
