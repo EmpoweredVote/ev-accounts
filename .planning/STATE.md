@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
 status: executing
-last_updated: "2026-06-29T00:04:33.569Z"
-last_activity: 2026-06-29 -- Phase 149 planning complete
+last_updated: "2026-06-29T04:40:05.103Z"
+last_activity: 2026-06-29
 progress:
   total_phases: 6
   completed_phases: 1
   total_plans: 13
-  completed_plans: 2
-  percent: 15
+  completed_plans: 3
+  percent: 17
 ---
 
 # Project State
@@ -20,15 +20,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 148 — field-resolution-stance-gap-diagnostic
+**Current focus:** Phase 149 — CA Candidate Seeding (race_candidates only — turnkey)
 **Last shipped:** v2.19 Local Civic Coverage — Phases 145–147 (inline-executed), formalized 2026-06-23. Falls Church VA (17) + Greene County MO (13) + Springfield MO (16): 46 records, 4 geofence boundaries, 118 evidence-only stances (0 unsourced), 46 headshots, 3 essentials coverage entries; LCC-01..05 closed. Migrations 1047–1049; git range a488232a → ef1a364f.
 
 ## Current Position
 
-Phase: 148 (field-resolution-stance-gap-diagnostic) — COMPLETE (2/2 plans)
-Plan: 2 of 2 — done
+Phase: 149 (CA Candidate Seeding (race_candidates only — turnkey)) — EXECUTING
+Plan: 2 of 11
 Status: Ready to execute
-Last activity: 2026-06-29 -- Phase 149 planning complete
+Last activity: 2026-06-29
 Next: `/gsd-plan-phase 149` (CA Seeding — race_candidates only; reads 148-field-table.csv existing_race_id + general_candidates)
 
 ### v2.20 Phase Dependencies
@@ -251,10 +251,11 @@ None for v2.18 start. Run the live diagnostic queries at plan authoring time:
 | 022 | Fix Malik inversion bug, run 24 stance ingest scripts (255 rows), extend compassService dual-path fallback | 2026-05-15 | 01b3bfe | [022-run-pending-stance-ingest-and-extend-ca](./quick/022-run-pending-stance-ingest-and-extend-ca/) |
 | 023 | Deep candidate coverage — CA Gov (Hilton/Becerra) +11 sourced stances + 2 headshots; LA Mayor (Bass/Raman) reasoning enriched; ALL 4 candidates + pre-existing stances primary-source fact-checked (4 honest-skips deleted, value/quote/source corrections); both Govs at 22 symmetric state-tier | 2026-06-23 | c96d749f | [023-deep-candidate-coverage-gov-la-mayor](./quick/023-deep-candidate-coverage-gov-la-mayor/) |
 | Phase 148 P01 | 5 min | 2 tasks | 2 files |
+| Phase 149 P1 | 18min | 2 tasks | 2 files |
 
 ## Session Continuity
 
-Last session: 2026-06-28T16:38:39.587Z
+Last session: 2026-06-29T04:39:15.359Z
 Stopped at: Quick task 023 COMPLETE — CA Gov (Hilton/Becerra) + LA Mayor (Bass/Raman) deep candidate coverage, enrichment, and full primary-source fact-check; all live + pushed (c96d749f)
 Resume file: None
 
@@ -272,6 +273,9 @@ Resume file: None
 - [Phase ?]: [Phase 148-01]: Map incumbents by (NATIONAL_LOWER, geo_id) — never computed external_id (CA -6000301 verified live; -(fips*1000+cd) mis-keys CA/TX). Wave-1 stance gap: 73 zero / 59 partial / 10 done / 2 vacant (FL-20 1220, TX-23 4823).
 - [Phase 148-02]: nominee_status taxonomy extended to 7 values — added incumbent-redistricted (CA Prop 50 + TX mid-decade, 12 districts) + incumbent-deceased (CA-1 LaMalfa). 144 rows: 109 renominated / 17 retired / 12 redistricted / 3 lost-primary / 2 vacancy / 1 deceased. 274 new candidate records needed (CA 38 / TX 48 / FL 155-provisional / NY 33). NY-10 Goldman + NY-13 Espaillat re-confirmed lost-primary (Axios/Wiki); NY-7 Velázquez + NY-12 Nadler retired; FL-20/TX-23 vacancy.
 - [Phase 148-02]: CA existing_race_id join is races.office_id->offices.district_id->districts.geo_id (races has NO direct geo_id); all 52 resolved live from "CA 2026 Statewide General" (728d0074), 0 race_candidates baseline. FL field provisional (Aug-18 primary) = full per-party qualified field, pruned in Phase 153. 148-verify.sql passes read-only (4 assertions, psql exit 0).
+- [Phase ?]: [Phase 149-01]: New CA House challenger external_id scheme = -(6010000 + cd*100 + seq); -(6000000+cd*100+seq) COLLIDED with -6000xxx incumbents; -6010000..-6015999 band verified empty.
+- [Phase ?]: [Phase 149-01]: essentials.politicians has NO updated_at column — UPDATE must not set it (migration rollback caught it).
+- [Phase ?]: [Phase 149-01]: CA seeded 38 NEW + 66 REUSE (38 matches 148, 0 live name-flips); redistricted runners (Bera CA-3/Kiley CA-6/Calvert CA-40) reuse pid is_incumbent=false; Ruiz dup 05349fa0 retired, CA-25 wired to 5238b298; mig 1091; 104 race_candidates, Gov race untouched (76).
 
 ## Operator Next Steps
 

@@ -16,11 +16,11 @@
 
 ### Candidate Records
 
-- [ ] **USHC-02**: Every Wave-1 candidate has exactly one `essentials.politicians` record — incumbents and previously-seeded figures reuse their existing record (no duplicate politician rows), only genuinely new candidates get new records; party normalized (Democratic, not Democrat).
+- [x] **USHC-02**: Every Wave-1 candidate has exactly one `essentials.politicians` record — incumbents and previously-seeded figures reuse their existing record (no duplicate politician rows), only genuinely new candidates get new records; party normalized (Democratic, not Democrat).
 
 ### Race Wiring (Elections surfacing)
 
-- [ ] **USHC-03**: Every Wave-1 US House race surfaces on `/elections` for an in-district address via `essentials.races` + `essentials.race_candidates` — CA candidates inserted into the 53 pre-seeded House races; TX/FL/NY `elections` + `races` rows authored first, then `race_candidates` — with `race_candidates.politician_id` linked for every candidate (non-null) so stances and headshots resolve.
+- [x] **USHC-03**: Every Wave-1 US House race surfaces on `/elections` for an in-district address via `essentials.races` + `essentials.race_candidates` — CA candidates inserted into the 53 pre-seeded House races; TX/FL/NY `elections` + `races` rows authored first, then `race_candidates` — with `race_candidates.politician_id` linked for every candidate (non-null) so stances and headshots resolve.
 
 ### Headshots
 
