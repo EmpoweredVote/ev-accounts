@@ -1,0 +1,77 @@
+cd,geo_id,race_id,full_name,party_from_field,decision,target_politician_id,assign_external_id,is_incumbent,source_url
+1,4801,a282204e-d645-4496-9ecc-c1d7a5e1a842,Nathaniel Moran,Republican,REUSE,,-100301,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_1
+1,4801,a282204e-d645-4496-9ecc-c1d7a5e1a842,Yolanda Prince,Democratic,NEW,,-4810101,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_1
+2,4802,52aba312-6c76-4591-a27c-c569da854ab5,Steve Toth,Republican,REUSE,,-100515,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_2
+2,4802,52aba312-6c76-4591-a27c-c569da854ab5,Shaun Finnie,Democratic,NEW,,-4810201,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_2
+3,4803,516d9125-674f-472e-8f41-dcbca7d74d16,Keith Self,Republican,REUSE,,-100303,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_3
+3,4803,516d9125-674f-472e-8f41-dcbca7d74d16,Evan Hunt,Democratic,NEW,,-4810301,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_3
+4,4804,dd49e721-3905-409d-92e5-18505beacf39,Pat Fallon,Republican,REUSE,,-100304,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_4
+4,4804,dd49e721-3905-409d-92e5-18505beacf39,Jason Pearce,Democratic,NEW,,-4810401,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_4
+5,4805,c09ed536-07e5-4dca-a77d-e3b636a724c4,Lance Gooden,Republican,REUSE,,-100305,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_5
+5,4805,c09ed536-07e5-4dca-a77d-e3b636a724c4,Chelsey Hockett,Democratic,NEW,,-4810501,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_5
+6,4806,1ae3afe8-a646-4dcd-8c4c-304b8446ae8f,Jake Ellzey,Republican,REUSE,,-100306,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_6
+6,4806,1ae3afe8-a646-4dcd-8c4c-304b8446ae8f,Danny Minton,Democratic,NEW,,-4810601,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_6
+7,4807,4547a4e0-bed6-4be0-a866-0f6b56259cfc,Lizzie Fletcher,Democratic,REUSE,,-100307,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_7
+7,4807,4547a4e0-bed6-4be0-a866-0f6b56259cfc,Alexander Hale,Republican,NEW,,-4810701,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_7
+8,4808,857ff454-abb5-4a03-873b-4f0ada1e5477,Jessica Steinmann,Republican,NEW,,-4810801,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_8
+8,4808,857ff454-abb5-4a03-873b-4f0ada1e5477,Laura Jones,Democratic,NEW,,-4810802,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_8
+9,4809,95e43ee0-6b5f-4374-86b0-2bfc9c1e7476,Leticia Gutierrez,Democratic,NEW,,-4810901,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_9
+9,4809,95e43ee0-6b5f-4374-86b0-2bfc9c1e7476,Alex Mealer,Republican,NEW,,-4810902,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_9
+10,4810,350d53d9-2b4f-46e6-8aea-0e4d011f704d,Chris Gober,Republican,NEW,,-4811001,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_10
+10,4810,350d53d9-2b4f-46e6-8aea-0e4d011f704d,Caitlin Rourk,Democratic,NEW,,-4811002,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_10
+11,4811,820f6a52-f5d0-4a62-9838-a2d776a4e9d7,August Pfluger,Republican,REUSE,,-100311,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_11
+11,4811,820f6a52-f5d0-4a62-9838-a2d776a4e9d7,Claire Reynolds,Democratic,NEW,,-4811101,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_11
+12,4812,ff027afa-9b90-40a1-b420-60f0eca83a64,Craig Goldman,Republican,REUSE,,-100312,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_12
+12,4812,ff027afa-9b90-40a1-b420-60f0eca83a64,Angela Rodriguez Prilliman,Democratic,NEW,,-4811201,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_12
+13,4813,a2492843-6c86-4209-9278-a235f5bbf533,Ronny Jackson,Republican,REUSE,,-100313,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_13
+13,4813,a2492843-6c86-4209-9278-a235f5bbf533,Mark Nair,Democratic,NEW,,-4811301,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_13
+14,4814,5b04befe-6ecf-4483-ac2a-564778cecf22,Randy Weber,Republican,REUSE,,-100314,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_14
+14,4814,5b04befe-6ecf-4483-ac2a-564778cecf22,Thurman Bartie,Democratic,NEW,,-4811401,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_14
+15,4815,7f41e478-86b6-489c-bf7d-9b4d655b8100,Monica De La Cruz,Republican,REUSE,,-100315,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_15
+15,4815,7f41e478-86b6-489c-bf7d-9b4d655b8100,Bobby Pulido,Democratic,NEW,,-4811501,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_15
+16,4816,8124ea17-ccb4-4b76-a4dd-3c31a493f35a,Veronica Escobar,Democratic,REUSE,,-100316,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_16
+16,4816,8124ea17-ccb4-4b76-a4dd-3c31a493f35a,Adam Bauman,Republican,NEW,,-4811601,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_16
+17,4817,b6c2e0bd-e4c5-459c-b505-6d60a55bc8a1,Pete Sessions,Republican,REUSE,,-100317,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_17
+17,4817,b6c2e0bd-e4c5-459c-b505-6d60a55bc8a1,Casey Shepard,Democratic,NEW,,-4811701,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_17
+18,4818,85a70c63-1305-45b5-9824-4f65c8b79f6a,Christian Menefee,Democratic,REUSE,,-100318,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_18
+18,4818,85a70c63-1305-45b5-9824-4f65c8b79f6a,Ronald Whitfield,Republican,NEW,,-4811801,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_18
+19,4819,aad5f023-705d-4432-9185-07d8ea0268f0,Tom Sell,Republican,NEW,,-4811901,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_19
+19,4819,aad5f023-705d-4432-9185-07d8ea0268f0,Kyle Rable,Democratic,NEW,,-4811902,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_19
+20,4820,f1a24132-f288-4716-8995-08896825674d,Joaquin Castro,Democratic,REUSE,,-100320,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_20
+20,4820,f1a24132-f288-4716-8995-08896825674d,Edgardo Baez,Republican,NEW,,-4812001,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_20
+21,4821,71e280a7-0ec9-4d19-80cc-7798b305a36b,Mark Teixeira,Republican,NEW,,-4812101,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_21
+21,4821,71e280a7-0ec9-4d19-80cc-7798b305a36b,Kristin Hook,Democratic,NEW,,-4812102,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_21
+22,4822,ef2f9063-233b-4a2a-8ded-fea5094cdc98,Troy Nehls,Republican,REUSE,,-100322,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_22
+22,4822,ef2f9063-233b-4a2a-8ded-fea5094cdc98,Marquette Greene-Scott,Democratic,NEW,,-4812201,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_22
+23,4823,78fd8f9d-9ca6-473a-be0b-07d6cce916ec,Brandon Herrera,Republican,NEW,,-4812301,false,https://www.cbsnews.com/news/tony-gonzales-drops-out-of-house-runoff-race-after-admitting-affair-with-aide/
+23,4823,78fd8f9d-9ca6-473a-be0b-07d6cce916ec,Katy Padilla Stout,Democratic,NEW,,-4812302,false,https://www.cbsnews.com/news/tony-gonzales-drops-out-of-house-runoff-race-after-admitting-affair-with-aide/
+24,4824,f506ed58-7ea3-4284-b891-5ee5bbaeb9dd,Beth Van Duyne,Republican,REUSE,,-100324,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_24
+24,4824,f506ed58-7ea3-4284-b891-5ee5bbaeb9dd,Kevin Burge,Democratic,NEW,,-4812401,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_24
+25,4825,d438d09a-321b-42a0-b92d-31925704a5fc,Roger Williams,Republican,REUSE,,-100325,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_25
+25,4825,d438d09a-321b-42a0-b92d-31925704a5fc,Dione Sims,Democratic,NEW,,-4812501,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_25
+26,4826,7124e03f-9f72-424b-8312-aa23564e7ef8,Brandon Gill,Republican,REUSE,,-100326,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_26
+26,4826,7124e03f-9f72-424b-8312-aa23564e7ef8,Steven Shook,Democratic,NEW,,-4812601,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_26
+27,4827,b56bcde8-0686-4970-a05b-4234477f32b8,Michael Cloud,Republican,REUSE,,-100327,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_27
+27,4827,b56bcde8-0686-4970-a05b-4234477f32b8,Tanya Lloyd,Democratic,NEW,,-4812701,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_27
+28,4828,bfaf1f49-e9a6-46df-b6af-9b632f43da66,Henry Cuellar,Democratic,REUSE,,-100328,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_28
+28,4828,bfaf1f49-e9a6-46df-b6af-9b632f43da66,Tano Tijerina,Republican,NEW,,-4812801,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_28
+29,4829,7e2bfe3b-81c9-4114-b751-b81449df488d,Sylvia Garcia,Democratic,REUSE,,-100329,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_29
+29,4829,7e2bfe3b-81c9-4114-b751-b81449df488d,Martha Fierro,Republican,NEW,,-4812901,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_29
+30,4830,c7bc3023-6936-42da-a618-3f683f4c8a3b,Frederick Haynes III,Democratic,NEW,,-4813001,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_30
+30,4830,c7bc3023-6936-42da-a618-3f683f4c8a3b,Everett Jackson,Republican,NEW,,-4813002,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_30
+31,4831,06d2ed59-b6bc-4907-91f7-a85a91e6b27b,John Carter,Republican,REUSE,,-100331,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_31
+31,4831,06d2ed59-b6bc-4907-91f7-a85a91e6b27b,Justin Early,Democratic,NEW,,-4813101,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_31
+32,4832,2f07eaa0-2f9e-4386-906a-7c40dc2c25c4,Dan Barrios,Democratic,REUSE,e8c863a7-d116-480e-a81f-47d26f45e264,,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_32
+32,4832,2f07eaa0-2f9e-4386-906a-7c40dc2c25c4,Jace Yarbrough,Republican,NEW,,-4813201,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_32
+33,4833,38114e7e-e713-4ad8-a402-2688b2a2f33b,Colin Allred,Democratic,NEW,,-4813301,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_33
+33,4833,38114e7e-e713-4ad8-a402-2688b2a2f33b,Patrick Gillespie,Republican,NEW,,-4813302,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_33
+34,4834,402a28dd-b59b-420a-b9e9-8e0a4b5fcced,Vicente Gonzalez,Democratic,REUSE,,-100334,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_34
+34,4834,402a28dd-b59b-420a-b9e9-8e0a4b5fcced,Eric Flores,Republican,NEW,,-4813401,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_34
+35,4835,77f914d0-4143-42ae-ac11-e2f6f8f3dd86,Johnny Garcia,Democratic,NEW,,-4813501,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_35
+35,4835,77f914d0-4143-42ae-ac11-e2f6f8f3dd86,Carlos De La Cruz,Republican,NEW,,-4813502,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_35
+36,4836,75502a2a-dc2b-4fa6-93c4-e4afb498b7ab,Brian Babin,Republican,REUSE,,-100336,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_36
+36,4836,75502a2a-dc2b-4fa6-93c4-e4afb498b7ab,Rhonda Hart,Democratic,NEW,,-4813601,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_36
+37,4837,7a69ab9f-2b15-48cf-b407-9b7b1de207a5,Greg Casar,Democratic,REUSE,,-100335,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_37
+37,4837,7a69ab9f-2b15-48cf-b407-9b7b1de207a5,Lauren Peña,Republican,NEW,,-4813701,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_37
+38,4838,7ff2347a-c959-4da8-bfd1-af816ad2e5d5,Jon Bonck,Republican,NEW,,-4813801,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_38
+38,4838,7ff2347a-c959-4da8-bfd1-af816ad2e5d5,Melissa McDonough,Democratic,NEW,,-4813802,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas#District_38
