@@ -16,6 +16,7 @@
  */
 
 import { pool } from './db.js';
+import type { EventKind } from './eventKinds.js';
 
 export const SEARCH_PAGE_SIZE = 25;
 
@@ -25,6 +26,10 @@ export const SEARCH_PAGE_SIZE = 25;
 
 export interface SearchResult {
   meetingId: string;
+  title: string | null;
+  eventKind: EventKind;
+  eventOrgs: string[];
+  sourceTitle: string | null;
   city: string;
   meetingType: string;
   date: string;
@@ -45,6 +50,10 @@ export interface SearchResponse {
 
 interface SearchRow {
   meeting_id: string;
+  title: string | null;
+  event_kind: EventKind;
+  event_orgs: string[] | null;
+  source_title: string | null;
   city: string;
   meeting_type: string;
   date: string;
@@ -63,6 +72,10 @@ interface SearchRow {
 function mapResult(row: SearchRow): SearchResult {
   return {
     meetingId: row.meeting_id,
+    title: row.title,
+    eventKind: row.event_kind,
+    eventOrgs: row.event_orgs ?? [],
+    sourceTitle: row.source_title,
     city: row.city,
     meetingType: row.meeting_type,
     date: row.date,
@@ -112,7 +125,11 @@ export async function searchSegments(opts: {
          SELECT s.meeting_id, s.segment_index, s.start_time, s.end_time,
                 s.speaker_name, sp.politician_id, s.text,
                 ts_rank(s.tsv, websearch_to_tsquery('english', $1)) AS rank,
-                m.city, m.meeting_type, m.date::text AS date
+                m.city, m.meeting_type, m.date::text AS date,
+                m.title, m.event_kind,
+                m.processing_metadata->>'source_title' AS source_title,
+                (SELECT COALESCE(array_agg(eo.org_name ORDER BY eo.created_at), ARRAY[]::text[])
+                 FROM meetings.event_orgs eo WHERE eo.meeting_id = m.slug) AS event_orgs
          FROM meetings.segments s
          JOIN meetings.meetings m ON m.id = s.meeting_id
          LEFT JOIN meetings.speakers sp ON sp.id = s.speaker_id
@@ -120,7 +137,8 @@ export async function searchSegments(opts: {
          ORDER BY rank DESC, m.date DESC, s.meeting_id, s.segment_index
          LIMIT $${limitParam} OFFSET $${offsetParam}
        )
-       SELECT meeting_id, city, meeting_type, date, segment_index,
+       SELECT meeting_id, title, event_kind, event_orgs, source_title,
+              city, meeting_type, date, segment_index,
               start_time, end_time, speaker_name, politician_id,
               ts_headline('english', text, websearch_to_tsquery('english', $1),
                           'StartSel=[[[, StopSel=]]], MaxWords=40, MinWords=20') AS snippet

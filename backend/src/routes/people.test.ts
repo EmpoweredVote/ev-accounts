@@ -91,6 +91,10 @@ describe('GET /api/people/:id/appearances', () => {
   it('200 with id and appearances', async () => {
     const appearance = {
       meetingId: '22222222-2222-2222-2222-222222222222',
+      title: null,
+      eventKind: 'council',
+      eventOrgs: [],
+      sourceTitle: null,
       city: 'Bloomington',
       meetingType: 'City Council',
       date: '2026-02-18',

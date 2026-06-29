@@ -12,6 +12,7 @@
  */
 
 import { pool } from './db.js';
+import type { EventKind } from './eventKinds.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -43,6 +44,10 @@ export interface AppearanceSegment {
 
 export interface Appearance {
   meetingId: string;
+  title: string | null;
+  eventKind: EventKind;
+  eventOrgs: string[];
+  sourceTitle: string | null;
   city: string;
   meetingType: string;
   date: string;
@@ -74,6 +79,10 @@ interface AppearanceRow {
   start_time: string;
   end_time: string;
   text: string;
+  title: string | null;
+  event_kind: EventKind;
+  event_orgs: string[] | null;
+  source_title: string | null;
   city: string;
   meeting_type: string;
   date: string;
@@ -177,7 +186,11 @@ export async function getPersonById(politicianId: string): Promise<PersonDetail 
 export async function getAppearancesById(politicianId: string): Promise<Appearance[]> {
   const { rows } = await pool.query<AppearanceRow>(
     `SELECT s.meeting_id, s.segment_index, s.start_time, s.end_time, s.text,
-            m.city, m.meeting_type, m.date::text AS date, m.playback_kind
+            m.city, m.meeting_type, m.date::text AS date, m.playback_kind,
+            m.title, m.event_kind,
+            m.processing_metadata->>'source_title' AS source_title,
+            (SELECT COALESCE(array_agg(eo.org_name ORDER BY eo.created_at), ARRAY[]::text[])
+             FROM meetings.event_orgs eo WHERE eo.meeting_id = m.slug) AS event_orgs
      FROM meetings.segments s
      JOIN meetings.speakers sp ON sp.id = s.speaker_id
      JOIN meetings.meetings m ON m.id = s.meeting_id
@@ -192,6 +205,10 @@ export async function getAppearancesById(politicianId: string): Promise<Appearan
     if (!appearance) {
       appearance = {
         meetingId: row.meeting_id,
+        title: row.title,
+        eventKind: row.event_kind,
+        eventOrgs: row.event_orgs ?? [],
+        sourceTitle: row.source_title,
         city: row.city,
         meetingType: row.meeting_type,
         date: row.date,
