@@ -147,7 +147,28 @@ Plans:
   2. Every TX (38) and NY (26) district surfaces its full candidate field on `/elections` for an in-district test coordinate via `race_candidates`, each row `politician_id`-linked and `candidate_status='active'`; NY-10/NY-13 (and any other flagged) show the primary WINNER as the active candidate, the defeated incumbent absent from the active general field.
   3. Every newly-seeded TX/NY candidate has a headshot and federal-24 chairs-not-polarity stances (0 unsourced, primary-source-verified, honest-skip where thin); incumbent-nominees reuse existing records (zero duplicate `full_name` per state); no party on candidate cards.
 
-**Plans:** TBD
+**Plans:** 12 plans, 4 waves
+
+Plans:
+**Wave 1** *(scaffold + gate authoring; parallel)*
+- [ ] 150-01-PLAN.md — author 2 elections + 64 races (38 TX + 26 NY) on existing House offices (the create-races step CA did not need)
+- [ ] 150-02-PLAN.md — author 150-verify.sql gate (per-state TX/NY-scoped; USHC-02/03/04/05 + D-01/D-02/D-03/D-05; NY-partial exclusion)
+
+**Wave 2** *(record reconciliation + race_candidates wiring; TX/NY parallel; blocked on 150-01)*
+- [ ] 150-03-PLAN.md — TX records + race_candidates (live D-03 dedup: Casar→TX-37 reuse, Allred new, Toth reuse; lost incumbents absent)
+- [ ] 150-04-PLAN.md — NY records + race_candidates (lost-primary winners Lander/Avila Chevalier; seed-all minor lines Cohen/Smullen; 24 incumbents reused)
+
+**Wave 3** *(headshots + stances; <=3-concurrent research; blocked on Wave 2)*
+- [ ] 150-05-PLAN.md — headshots for new TX candidates (shared seed-tx-ny-house-headshots.py)
+- [ ] 150-06-PLAN.md — headshots for new NY candidates (reuse shared script)
+- [ ] 150-07-PLAN.md — TX-1..10 federal-24 stances (zero incumbents + new challengers)
+- [ ] 150-08-PLAN.md — TX-11..20 federal-24 stances
+- [ ] 150-09-PLAN.md — TX-21..30 federal-24 stances (incl. TX-23 open seat)
+- [ ] 150-10-PLAN.md — TX-31..38 federal-24 stances (incl. Casar -100335)
+- [ ] 150-11-PLAN.md — NEW NY candidates federal-24 stances (NY partials left as-is per D-01)
+
+**Wave 4** *(consolidated gate; blocked on all)*
+- [ ] 150-12-PLAN.md — run 150-verify.sql green + 150-coordinate-smoke.ts (>=3 TX + >=3 NY in-district races surface with challenger)
 
 ---
 
@@ -211,7 +232,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 148. Field Resolution + Stance-Gap Diagnostic | 2/2 | Complete   | 2026-06-28 |
 | 149. CA Candidate Seeding (race_candidates only) | 11/11 | Complete    | 2026-06-29 |
-| 150. TX + NY Candidate Seeding (create races) | 0/? | Not started | - |
+| 150. TX + NY Candidate Seeding (create races) | 0/12 | Planned | - |
 | 151. FL Candidate Seeding (provisional) | 0/? | Not started | - |
 | 152. Coordinate Verification Gate | 0/? | Not started | - |
 | 153. FL Post-Primary Re-Check (date-gated Aug 18) | 0/? | Not started | - |
