@@ -1,0 +1,62 @@
+FEDERAL-24 TOPIC SCALE — assign each topic the value (1–5) whose EXACT TEXT matches the candidate's DOCUMENTED record.
+The topic_key in your CSV MUST exactly match one of these keys (note "medicare/aid" contains a slash). Do NOT invent slugs.
+
+FIVE-CHAIRS RULE: each topic's five values are five distinct positions = five named chairs. value=1 is NOT "progressive" and value=5 is NOT "conservative" — direction varies by topic. Find the chair the DOCUMENTED EVIDENCE places them in (votes, cosponsored bills, official statements, campaign positions). NEVER infer from party. If no documented position exists for a topic, SKIP it (omit the row) — honest-skip beats inference. No fabricated quotes/figures/URLs; every source_url must be one you actually fetched that supports the value.
+
+abortion — "What legal framework should govern abortion access?"
+  1=ensure legal/accessible/publicly funded at all stages | 2=keep legal/accessible through 2nd trimester, rare exceptions after | 3=allow first trimester + rape/incest/maternal health | 4=restrict to only rape/incest/serious threat to mother's life | 5=ban completely with no exceptions + criminal penalties
+ai-regulation — "How much should government oversee AI development/deployment?"
+  1=allow companies to develop/deploy freely, no govt interference | 2=suggest safety guidelines but voluntary | 3=require developers to disclose risks + be liable for harm | 4=require safety testing + ban high-risk uses (hiring/healthcare/policing) | 5=strict approval requirements + ban AI that could cause serious harm
+campaign-finance — "What rules should govern money in campaigns?"
+  1=ban all private money, publicly fund campaigns | 2=strictly limit corporate donations + dark money | 3=require full disclosure of all donations | 4=reduce restrictions on donations/spending | 5=eliminate all campaign finance laws/limits
+childcare — "How should govt address cost/availability of childcare?"
+  1=publicly funded universal childcare regardless of income | 2=significantly expand subsidies + provider grants for low/middle-income | 3=targeted tax credits/subsidies below an income threshold + provider grants | 4=reduce regulations to increase supply, limited subsidies for lowest-income only | 5=leave to private market/families, no subsidies/mandates
+civil-rights — "What role should govt play in racial/social inequality?"
+  1=mandate racial equity requirements in all institutions + reparations | 2=strengthen civil rights enforcement + address systemic discrimination | 3=maintain current civil rights laws while promoting equal opportunity | 4=limit federal enforcement to clear cases of discrimination | 5=eliminate affirmative action + all race-based govt programs
+climate-change — "What priority should climate change receive?"
+  1=declare climate emergency + ban all activities increasing carbon emissions | 2=rapidly transition to renewables + phase out fossil fuels by 2030 | 3=invest in clean energy while gradually reducing fossil fuel reliance | 4=let market forces drive any transition | 5=reject climate change policies, focus on economic growth
+deportation — "Who should be deported, how aggressively?"
+  1=stop deportations entirely, protect undocumented residents | 2=only deport people convicted of serious violent crimes | 3=focus on recent arrivals while leaving long-term residents | 4=deport everyone without legal status, starting with criminal records | 5=move quickly to deport all undocumented regardless of ties
+fossil-fuels — "What role should fossil fuels play in the energy future?"
+  1=immediately ban all new fossil fuel drilling/extraction | 2=stop issuing new permits for drilling | 3=maintain current production with existing environmental regs | 4=expand drilling permits | 5=remove environmental restrictions, maximize extraction
+healthcare — "What role should govt play in healthcare access?"
+  1=free healthcare for everyone, paid for + run by public sector | 2=everyone has affordable coverage via mix of public + regulated private | 3=help those who can't afford care, expand senior/low-income programs, keep private for others | 4=only help poorest, leave others to employers/private | 5=stay out entirely, private markets handle all
+homelessness — "How should govt address public sleeping/camping?"
+  1=protect right to sleep in public, redirect enforcement budgets to housing/mental health | 2=decriminalize public sleeping + invest in shelter/outreach/voluntary services | 3=allow enforcement only when shelter beds available, cite-to-services | 4=prohibit encampments with graduated warnings/penalties + require basic shelter | 5=ban public camping with criminal penalties, rely on existing services
+housing — "What role should govt play in housing affordability?"
+  1=directly build/operate public housing for anyone who needs it | 2=rent caps + require affordable units in new developments + publicly fund housing | 3=targeted subsidies for affordable projects, first-time buyer help, easier permits | 4=cut regulations/zoning so private developers build more | 5=stay out entirely, let market decide
+immigration — "How welcoming/restrictive toward immigrants?"
+  1=easier legal immigration + all immigrants incl undocumented fully use public services | 2=keep legal immigration open, most residents use services regardless of status | 3=keep immigration levels/rules where they are | 4=harder to immigrate legally + limit services to legal status | 5=stop most legal immigration + block services for those without legal status
+medicare/aid — "How should Medicare/Medicaid be funded/structured?"
+  1=expand Medicare to cover everyone regardless of age | 2=lower Medicare age to 55 + expand Medicaid significantly | 3=improve current programs while controlling costs | 4=partially privatize Medicare + reduce Medicaid | 5=phase out both, private insurance only
+misinformation — "What responsibility for online misinformation?"
+  1=require platforms to remove all false info + regulate algorithms | 2=mandate fact-checking + algorithm transparency | 3=encourage voluntary standards | 4=protect free speech online + prevent govt censorship | 5=ban any govt involvement in content moderation
+redistricting — "Who should draw district boundaries?"
+  1=independent citizens' commissions, no elected officials at any level | 2=independent commissions with equal representation from both major parties | 3=bipartisan legislative committees with supermajority approval | 4=state legislatures with court oversight to prevent extreme partisan bias | 5=the party that controls the legislature without outside interference
+religious-freedom — "What role should religion play in govt/public institutions?"
+  1=strictly separate religion from public institutions, no religious exemptions from civil rights laws | 2=protect religious freedom but don't override anti-discrimination protections | 3=balance religious practice with equal treatment under law | 4=protect religious freedom + allow faith-based exemptions from conflicting laws | 5=strongly protect, allow religious orgs complete autonomy in operations/hiring
+same-sex-marriage — "What legal recognition for same-sex marriages?"
+  1=require all states to recognize + full federal benefits | 2=allow nationwide while protecting some orgs' right to decline | 3=let each state decide without federal interference | 4=recognize civil unions but reserve marriage for opposite-sex | 5=make illegal, define marriage as one man one woman
+school-vouchers — "What role should vouchers/school choice play?"
+  1=fully fund public schools + eliminate vouchers | 2=prioritize public funding, restrict vouchers to low-income lacking options | 3=fund public at current levels + allow means-tested vouchers with accountability | 4=expand voucher eligibility to most families, maintain baseline public funding | 5=universal vouchers, funding follows student to any school
+social-security — "How should Social Security be funded/structured?"
+  1=expand benefits significantly + remove income cap on payroll taxes | 2=increase benefits modestly + raise taxes on higher earners | 3=small adjustments to benefits/taxes to keep stable | 4=gradually raise retirement age + reduce benefits for higher earners | 5=transition to private investment accounts individuals control
+tariffs — "How should trade policy balance domestic industry with global commerce?"
+  1=eliminate all tariffs, completely free trade | 2=reduce most tariffs while keeping some on environmentally harmful products | 3=use tariffs selectively to protect key American industries/jobs | 4=increase tariffs on countries that don't trade fairly | 5=impose high tariffs on all imports to bring back manufacturing
+taxes — "How should govt balance taxes against public services?"
+  1=significantly raise taxes on wealthy/large companies to fund MORE public services | 2=moderately raise taxes on wealthy/large companies to fund EXISTING services | 3=keep current tax system mostly as-is, small adjustments to close loopholes | 4=cut taxes for everyone + scale back public services | 5=drastically cut taxes + shrink government
+trans-athletes — "How should leagues determine transgender athlete eligibility?"
+  1=allow all transgender athletes on teams matching gender identity, no restrictions | 2=allow on teams matching gender identity after basic documentation | 3=separate transgender divisions or case-by-case decisions | 4=require competing on teams matching biological sex assigned at birth | 5=completely ban all transgender athletes from organized sports
+voting-rights — "How should voter access balance with election security?"
+  1=automatically register all eligible citizens + allow online voting | 2=expand early voting + no-excuse mail-in voting for all | 3=standardize voter ID requirements while ensuring free IDs available | 4=require photo ID + regularly update/purge voter rolls | 5=mandate in-person voting with strict photo ID, eliminate mail-in except military overseas
+ukraine-support — "What level of support for Ukraine?"
+  1=significantly increase military aid + commit until complete victory over Russia | 2=continue current levels of military/economic aid to help Ukraine defend itself | 3=provide limited humanitarian aid while encouraging diplomatic negotiations | 4=reduce aid + focus American resources on domestic priorities | 5=end all aid immediately + stay out of the conflict
+
+CSV OUTPUT CONTRACT — header EXACTLY:
+full_name,politician_id,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3,quote_text,quote_deidentified
+- politician_id: the UUID given in your task, in EVERY row
+- value: integer 1–5 matching the exact stance text above
+- reasoning: 1–3 sentences citing the specific vote/bill/statement that places them in that chair
+- source_url_1..3: REAL URLs you actually fetched (≥1 required; leave 2/3 blank if only one)
+- quote_text: short verbatim quote from a source if available (else blank); quote_deidentified: same quote with name/pronouns replaced by neutral terms (else blank)
+- RFC-4180: wrap any field containing a comma in double-quotes. Do not emit extra columns.
