@@ -25,13 +25,22 @@ See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 ## Current Position
 
-Phase: 150 (tx-ny-candidate-seeding-create-races-then-candidates) — EXECUTING
-Plan: 1 of 12
-Status: Executing Phase 150
-Last activity: 2026-06-29 -- Phase 150 execution started
-Done this session: mig 1091 (104 race_candidates on 52 CA House races, 36 new politician records, Ruiz CA-25 dedup); mig 1092 (dedup 2 redistricted/figure incumbents — Linda Sánchez CA-41 reuses sitting CA-38 incumbent Linda T. Sanchez -100037; Hilda Solis CA-38 reuses existing Hilda L. Solis 683398; new-candidate scope 38→36); 149-verify.sql authored; headshots 9 imaged (4 auto + 5 manual) + 27 documented honest-skips; headshot wrong-person guard hardened.
-Next: `/gsd-execute-phase 149 --wave 2` (resumes incomplete wave-2 plans = the 7 stance batches 149-04..10; 149-03 already has SUMMARY and is skipped), then 149-11 gate. Stance scope = 36 new candidates + 36 zero-stance CA incumbents at federal-24; ≤3 concurrent researchers; mandatory primary-source verification before push; D-01 zero-only (skip 7 partials + 9 done).
-⚠ Stance-batch self-checks (149-05..10) over-scope unsourced checks to all active candidates in the geo range (false-fail-only on pre-existing incumbent data; final gate is correctly in-scope) — narrow to in-scope pids if a batch self-check trips.
+Phase: 150 (TX+NY candidate seeding) — IN PROGRESS, 6/12 plans done (Waves 1–4 complete)
+Plan: Wave 3 stance batches (150-07..11) — VALIDATION BATCH PAUSED (see blocker below)
+Status: Structural foundation DONE + gate-green (USHC-02/03/04 + D-02/D-05 PASS); stance workstream paused for operator pacing decision
+Last activity: 2026-06-29 -- waves 1–4 executed inline; stance pipeline validated on 1 candidate, hit blocker
+
+### Phase 150 done this session (commits on master, data live in prod):
+- **150-01** mig 1109: 2 elections + 64 races (TX 38 geo 4801–4838 / NY 26 geo 3601–3626). TX election `783b7506-dd52-47a1-a85a-9ffc363f8a04`, NY `80a2b03d-f583-4156-a272-d51abbda0b0a`.
+- **150-02** `backend/scripts/150-verify.sql`: per-state write-free gate. USHC-04 honest-skip pins (70: 43 TX + 27 NY) + USHC-02c reuse pins live.
+- **150-03** mig 1110: TX 48 new politicians + 76 race_candidates. D-03 dedup: Casar TX-35→TX-37 reuse -100335; Toth TX-2 reuse -100515; **Dan Barrios TX-32 reuse e8c863a7** (Richardson councilmember = same person, web-confirmed); Allred NEW. New band -4810101..-4813802.
+- **150-04** mig 1111: NY 33 new + 54 race_candidates. Goldman/Espaillat absent→Lander/Avila Chevalier active; minor lines Cohen(WF)/Smullen(Cons) seeded. New band -3610101..-3612601.
+- **150-05/06** headshots: 11 auto-imaged (5 TX: Allred/Haynes/Herrera/Teixeira/Pulido; 6 NY: Oberacker/Lasher/Lander/Valdez/LiPetri/Gallant), 70 gate-pinned honest-skips. Shared `seed-tx-ny-house-headshots.py --state TX|NY`. USHC-04 PASSES.
+
+### ⚠ STANCE BLOCKER (150-07..11) — operator decision needed:
+Validation batch (TX-1..10, 20 in-scope candidates) surfaced: (a) **session limit hit** on first 3-concurrent wave (0 output); (b) single incumbent = **81k tokens / 49 tool calls**, 10/24 topics; (c) **primary sources 403/blank-walled** (GovTrack/congress.gov/house.gov/Ballotpedia) → values lean on OnTheIssues aggregator + pre-incumbency 2022 campaign positions; (d) **the mandatory D-05 primary-source verification pass is itself blocked** by the same walls (needs Playwright-per-URL at ~107-candidate scale); (e) Moran abortion=4 is a visible over-read. Moran CSV produced but NOT pushed (unverified; scratch in `tx-2026-house-b1/`). `_FED24_SCALE.txt` extract built.
+Stance in-scope: TX = all 76 active (D-01 all-zero-incumbent); NY = 33 new only (D-01 partials untouched). ~107 needing federal-24.
+Next: operator chooses stance pacing/approach. Then 150-12 final gate + coordinate smoke.
 
 ### v2.20 Phase Dependencies
 
