@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
-status: planning
-last_updated: "2026-06-29T18:13:47.337Z"
-last_activity: 2026-06-29
+status: executing
+last_updated: "2026-06-29T18:38:30.211Z"
+last_activity: 2026-06-29 -- Phase 150 planning complete
 progress:
   total_phases: 6
   completed_phases: 2
-  total_plans: 13
+  total_plans: 25
   completed_plans: 13
   percent: 33
 ---
@@ -27,8 +27,8 @@ See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 Phase: 150
 Plan: Not started
-Status: Ready to plan
-Last activity: 2026-06-29
+Status: Ready to execute
+Last activity: 2026-06-29 -- Phase 150 planning complete
 Done this session: mig 1091 (104 race_candidates on 52 CA House races, 36 new politician records, Ruiz CA-25 dedup); mig 1092 (dedup 2 redistricted/figure incumbents — Linda Sánchez CA-41 reuses sitting CA-38 incumbent Linda T. Sanchez -100037; Hilda Solis CA-38 reuses existing Hilda L. Solis 683398; new-candidate scope 38→36); 149-verify.sql authored; headshots 9 imaged (4 auto + 5 manual) + 27 documented honest-skips; headshot wrong-person guard hardened.
 Next: `/gsd-execute-phase 149 --wave 2` (resumes incomplete wave-2 plans = the 7 stance batches 149-04..10; 149-03 already has SUMMARY and is skipped), then 149-11 gate. Stance scope = 36 new candidates + 36 zero-stance CA incumbents at federal-24; ≤3 concurrent researchers; mandatory primary-source verification before push; D-01 zero-only (skip 7 partials + 9 done).
 ⚠ Stance-batch self-checks (149-05..10) over-scope unsourced checks to all active candidates in the geo range (false-fail-only on pre-existing incumbent data; final gate is correctly in-scope) — narrow to in-scope pids if a batch self-check trips.
