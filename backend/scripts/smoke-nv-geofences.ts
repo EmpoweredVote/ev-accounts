@@ -38,10 +38,11 @@ const TEST_ADDRESSES: AddressTest[] = [
     label: 'Las Vegas Strip (unincorporated Clark County)',
     lon: -115.1728,
     lat: 36.1147,
-    expectedMtfcc: ['G4020', 'G5200', 'G5210', 'G5220'],
+    expectedMtfcc: ['G4020', 'G5200', 'G5210', 'G5220', 'G5420'],
     forbiddenMtfcc: ['G4110', 'G4040'],
     expectedGeoIds: {
       G4020: '32003', // Clark County
+      G5420: '3200060', // Clark County School District (CCSD covers the whole county)
     },
   },
   {
@@ -50,9 +51,10 @@ const TEST_ADDRESSES: AddressTest[] = [
     label: 'City of Las Vegas (City Hall)',
     lon: -115.1497,
     lat: 36.1716,
-    expectedMtfcc: ['G4020', 'G4110', 'G5200', 'G5210', 'G5220'],
+    expectedMtfcc: ['G4020', 'G4110', 'G5200', 'G5210', 'G5220', 'G5420'],
     expectedGeoIds: {
       G4020: '32003', // Clark County
+      G5420: '3200060', // Clark County School District (CCSD covers the whole county)
     },
   },
   {
@@ -61,9 +63,10 @@ const TEST_ADDRESSES: AddressTest[] = [
     label: 'Henderson NV (City Hall)',
     lon: -114.9817,
     lat: 36.0397,
-    expectedMtfcc: ['G4020', 'G4110', 'G5200', 'G5210', 'G5220'],
+    expectedMtfcc: ['G4020', 'G4110', 'G5200', 'G5210', 'G5220', 'G5420'],
     expectedGeoIds: {
       G4020: '32003', // Clark County
+      G5420: '3200060', // Clark County School District (CCSD covers the whole county)
     },
   },
   {
@@ -72,9 +75,10 @@ const TEST_ADDRESSES: AddressTest[] = [
     label: 'North Las Vegas NV (City Hall)',
     lon: -115.1175,
     lat: 36.1989,
-    expectedMtfcc: ['G4020', 'G4110', 'G5200', 'G5210', 'G5220'],
+    expectedMtfcc: ['G4020', 'G4110', 'G5200', 'G5210', 'G5220', 'G5420'],
     expectedGeoIds: {
       G4020: '32003', // Clark County
+      G5420: '3200060', // Clark County School District (CCSD covers the whole county)
     },
   },
   {
@@ -83,9 +87,10 @@ const TEST_ADDRESSES: AddressTest[] = [
     label: 'Boulder City NV (City Hall)',
     lon: -114.8330,
     lat: 35.9786,
-    expectedMtfcc: ['G4020', 'G4110', 'G5200', 'G5210', 'G5220'],
+    expectedMtfcc: ['G4020', 'G4110', 'G5200', 'G5210', 'G5220', 'G5420'],
     expectedGeoIds: {
       G4020: '32003', // Clark County
+      G5420: '3200060', // Clark County School District (CCSD covers the whole county)
     },
   },
 ];
