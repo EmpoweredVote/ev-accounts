@@ -25,11 +25,13 @@ See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 ## Current Position
 
-Phase: 149 (CA Candidate Seeding (race_candidates only — turnkey)) — EXECUTING
-Plan: 4 of 11
-Status: Ready to execute
+Phase: 149 (CA Candidate Seeding (race_candidates only — turnkey)) — EXECUTING (partial; stance wave pending)
+Plan: 4 of 11 done (149-01 seed, 149-02 gate, 149-03 headshots) + corrective mig 1092
+Status: Wave 1 + headshots done; USHC-02/03/04 satisfied. Stance wave (USHC-05: 149-04..10) + final gate (149-11) PENDING — deferred to a fresh session for verification rigor.
 Last activity: 2026-06-29
-Next: `/gsd-plan-phase 149` (CA Seeding — race_candidates only; reads 148-field-table.csv existing_race_id + general_candidates)
+Done this session: mig 1091 (104 race_candidates on 52 CA House races, 36 new politician records, Ruiz CA-25 dedup); mig 1092 (dedup 2 redistricted/figure incumbents — Linda Sánchez CA-41 reuses sitting CA-38 incumbent Linda T. Sanchez -100037; Hilda Solis CA-38 reuses existing Hilda L. Solis 683398; new-candidate scope 38→36); 149-verify.sql authored; headshots 9 imaged (4 auto + 5 manual) + 27 documented honest-skips; headshot wrong-person guard hardened.
+Next: `/gsd-execute-phase 149 --wave 2` (resumes incomplete wave-2 plans = the 7 stance batches 149-04..10; 149-03 already has SUMMARY and is skipped), then 149-11 gate. Stance scope = 36 new candidates + 36 zero-stance CA incumbents at federal-24; ≤3 concurrent researchers; mandatory primary-source verification before push; D-01 zero-only (skip 7 partials + 9 done).
+⚠ Stance-batch self-checks (149-05..10) over-scope unsourced checks to all active candidates in the geo range (false-fail-only on pre-existing incumbent data; final gate is correctly in-scope) — narrow to in-scope pids if a batch self-check trips.
 
 ### v2.20 Phase Dependencies
 

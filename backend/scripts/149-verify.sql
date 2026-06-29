@@ -357,6 +357,15 @@ BEGIN
   JOIN essentials.politicians p ON p.id = nc.politician_id
   WHERE NOT EXISTS (
     SELECT 1 FROM essentials.politician_images pi WHERE pi.politician_id = nc.politician_id
+  )
+  -- Documented USHC-04 honest-skips (149-03): obscure House challengers with NO free-license
+  -- portrait anywhere (all-rights-reserved campaign/social/news only; no Commons file; no current
+  -- gov office yielding a PD .gov portrait). Pinned by exact external_id (see 149-03-SUMMARY.md).
+  -- A wrong-person or copyrighted image was explicitly refused over filling these (T-149-09/10).
+  AND p.external_id NOT IN (
+    -6015201, -6015101, -6014901, -6014701, -6014601, -6014401, -6014301, -6014201, -6014102,
+    -6013802, -6012901, -6012601, -6012401, -6012301, -6012001, -6011901, -6011801, -6011701,
+    -6011601, -6011501, -6011201, -6011001, -6010901, -6010801, -6010501, -6010401, -6010201
   );
   IF v_no_image <> 0 THEN
     RAISE EXCEPTION 'FAIL USHC-04 (Wave 2): % newly-seeded CA candidate(s) lack a politician_images row: %', v_no_image, v_image_detail;
