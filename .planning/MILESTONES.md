@@ -1,5 +1,25 @@
 # Project Milestones: Empowered Accounts
 
+## v2.20 2026 US House Candidate Coverage (Wave 1) (Shipped: 2026-06-30)
+
+**Phases completed:** 5 phases (148–152), 32 plans. Git tag `v2.20`.
+
+**Goal:** Every resident of the four largest-delegation states (CA, TX, FL, NY) can enter their address into Elections and see their 2026 US House race — the actual Nov-3 general-ballot field — each candidate with a headshot and chairs-not-polarity, evidence-only stances. Pure-data milestone (no backend code); surfacing via the elections feed (`races` + `race_candidates`, PostGIS `ST_Covers`).
+
+**Key accomplishments:**
+
+- **144 districts wired** across CA (52) / TX (38) / FL (28) / NY (26) — **415 active `race_candidates`**, 306 of them challengers/open-seat, surfacing on `/elections` for any in-district address. New challenger/open-seat records created; sitting incumbents reuse their existing `politician_id` (no duplicate-incumbent rows — the v2.4 two-Andy-Barrs trap, guarded by the Phase 148 diagnostic).
+- **Federal 24-topic chairs-not-polarity stances, 0 unsourced** — every answer paired to a sourced `politician_context` row, mandatory primary-source verification pass before push, honest-skip (gate-pinned by id) where no documentable evidence.
+- **Headshots** for newly-seeded candidates via the hardened find-headshots pipeline (free-license only, wrong-person guard); documented honest-skips where no free portrait exists.
+- **Per-state seeding:** CA turnkey (`race_candidates` into 53 pre-seeded races, mig 1091); TX+NY authored `elections`+`races` first (migs 1109–1111); FL provisional field from the FL DoE bulk download (mig 1116), all marked `PROVISIONAL:` pending the Aug-18 primary.
+- **Consolidated milestone gate (Phase 152):** `152-verify.sql` — 8 labeled all-144-district assertions PASS read-only against prod (scope 144, 0 NULL politician_id, 0 unsourced, 0 dup-incumbent, FL provisional, no party column); `152-coordinate-smoke.ts` — 4/4 states surface their House race with the challenger-inclusive field (Pitfall-5 two-path guard). gsd-verifier 8/8.
+
+**Requirements:** USHC-01 through USHC-06 closed. **USHC-07 carried forward** to Phase 153 (FL post-primary reconciliation) — genuinely time-gated to ≥ 2026-08-18, not a quality gap.
+
+**Known deferred items at close:** 23 (22 long-standing quick-tasks pre-dating this milestone + USHC-07/Phase-153 time-gated carry-forward; see STATE.md Deferred Items).
+
+---
+
 ## v2.19 Local Civic Coverage (Shipped: 2026-06-23)
 
 **Phases completed:** 3 phases (145–147), executed inline (no plan dirs), formalized retroactively

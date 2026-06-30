@@ -22,7 +22,12 @@ The foundational account infrastructure for Empowered Vote. A three-tier system 
 
 Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
 
-## Current Milestone: v2.20 2026 US House Candidate Coverage (Wave 1)
+## Current Milestone: Between milestones (v2.20 shipped 2026-06-30)
+
+v2.20 2026 US House Candidate Coverage (Wave 1) is complete and archived. Next milestone TBD — see **Next** under Current State (v2.21 House Wave 2, or more local civic coverage). Phase 153 (FL post-primary re-check) is a date-gated carry-forward (≥ 2026-08-18).
+
+<details>
+<summary>v2.20 2026 US House Candidate Coverage (Wave 1) — goal &amp; scope (shipped)</summary>
 
 **Goal:** Every resident of the covered states can enter their address into Elections and see their 2026 US House race — the actual Nov 3 general-ballot field — each candidate with a headshot and chairs-not-polarity, evidence-only stances. (Senate shows "if available" from its own existing track.)
 
@@ -34,6 +39,8 @@ Every platform feature can answer "does this user have permission to do X?" with
 - Seed the currently-known field now + re-check post-primary (most CA/TX/NY primaries done; FL primary Aug 18).
 
 **Out of scope (v2.20):** Senate races (own track), states beyond the top-4 delegations (→ v2.21+), primary-only/withdrawn candidates, the curated-out 20 non-federal topics.
+
+</details>
 
 ## Requirements
 
@@ -98,6 +105,18 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ `PATCH /api/essentials/politicians/:id` — essentials_data_editor gated; restricted field whitelist (bio, office_title, photo_origin_url, preferred_name); fail-CLOSED on NULL politician geoid — v1.9
 - ✓ CTC + Civic Spaces integration: `GET /api/roles/me` (unfiltered) and `POST /api/roles/check` as canonical gate endpoints; `GET /api/contributor/me` filters to 3 contributor roles only — v1.9
 - ✓ Contributor portal at `app.empowered.vote/contributor`: dashboard with role grant cards, Compass Editor (jurisdiction-scoped), Candidate Coordinator (single-politician), Essentials Editor (field-level bio editor) — v1.9
+
+### Validated (v2.20)
+
+**Milestone: v2.20 2026 US House Candidate Coverage (Wave 1)** (Phases 148–152) — shipped 2026-06-30.
+
+- ✓ USHC-01: verified Nov-3 general-ballot field resolved for all 144 Wave-1 districts (CA/TX/FL/NY), incumbent-not-nominee races flagged — Phase 148
+- ✓ USHC-02: every Wave-1 candidate has exactly one `essentials.politicians` record (incumbents reuse existing; 0 duplicate-incumbent rows) — Phases 149/150/151
+- ✓ USHC-03: every Wave-1 US House race surfaces on `/elections` via `races` + `race_candidates` with non-null `politician_id` — Phases 149/150/151
+- ✓ USHC-04: headshots for newly-seeded candidates (free-license, wrong-person-guarded; documented honest-skips) — Phases 149/150/151
+- ✓ USHC-05: federal-24 chairs-not-polarity sourced stances, 0 unsourced, primary-source verification pass, honest-skip where no evidence — Phases 149/150/151
+- ✓ USHC-06: consolidated read-only milestone gate — `152-verify.sql` 8/8 + `152-coordinate-smoke.ts` 4/4, both green vs prod (415 active candidates, 0 unsourced, 0 dup-incumbent) — Phase 152
+- ⏳ USHC-07: FL post-primary re-check — **carried forward to Phase 153, time-gated ≥ 2026-08-18** (FL provisional field shipped this milestone)
 
 ### Validated (v2.19)
 
@@ -274,11 +293,13 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 
 ## Current State
 
+**v2.20 shipped 2026-06-30** — the 2026 US House general-ballot field is live for the four largest-delegation states. **144 districts** (CA 52 / TX 38 / FL 28 / NY 26), **415 active `race_candidates`** (306 challengers/open-seat) surfacing on `/elections` for any in-district address, with federal-24 chairs-not-polarity stances (**0 unsourced**), headshots, and 0 duplicate-incumbent records. New challengers/open-seat candidates seeded; incumbents reuse existing records. Per-state: CA turnkey (mig 1091), TX+NY authored elections+races first (migs 1109–1111), FL provisional from FL DoE bulk download (mig 1116, marked `PROVISIONAL:`). Consolidated read-only gate `152-verify.sql` (8/8) + `152-coordinate-smoke.ts` (4/4) pass against prod; gsd-verifier 8/8. USHC-01..06 closed. **USHC-07 (FL post-primary re-check) carried forward to Phase 153 — time-gated ≥ 2026-08-18.** Pure-data milestone (no backend code; elections-feed surfacing). Tag `v2.20`.
+
 **v2.19 shipped 2026-06-23 (formalized retroactively)** — three new local jurisdictions are fully covered: Falls Church VA (17 officials), Greene County MO (13), and Springfield MO (16). 46 records, 4 geofence boundaries, **118 evidence-only stances (0 unsourced)**, 46 headshots, and 3 essentials coverage entries (migrations 1047–1049). A Springfield resident now sees city + SPS school district + Greene County + Missouri statewide execs at one address. Executed inline (not GSD-phased); CA-city siblings (Burbank/Norwalk/Bellflower) and the Nevada work (essentials team) ran the same week but are out of this milestone's scope. Git range `a488232a` → `ef1a364f`.
 
 **v2.18 shipped 2026-06-22** — every state's elected Big 5 statewide executives are now in the platform across all 50 states. **209 elected offices seeded** (gov 50 / lt-gov 43 / AG 43 / SoS 35 / treasurer 38) with headshots, **199 stance-covered** (gov 50 / AG 42 / SoS 34 / treasurer 34 / lt-gov 39) + 10 documented whole-record honest-skips, **0 unsourced**. The consolidated production gate `backend/scripts/verify-phase-141-144.sql` (11 labeled assertions incl. the SEXR-05 feed-surfacing simulation) passes read-only against prod. No backend code shipped — `STATE_EXEC` was already wired into the feed query. AZ Lt Gov deferred (Prop 131, eff. Jan 2027). Prior coverage layers remain: national House (`verify-phase-127-131.sql` + `verify-phase-132-140.sql`).
 
-**Next:** Next milestone TBD — continue local civic coverage (more cities/counties; CA-city builds available to fold in) or pivot.
+**Next:** Next milestone TBD. Two live threads: (1) **v2.21 House Wave 2** — the remaining ~291 US House districts beyond CA/TX/FL/NY, reusing the now-proven elections-feed pipeline; (2) continue local civic coverage (more cities/counties; CA-city builds available to fold in). Plus the date-gated **Phase 153** (FL post-primary re-check) re-enters via `/gsd-plan-phase 153` after 2026-08-18.
 
 ---
 
@@ -434,4 +455,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-27 — starting v2.20 2026 US House Candidate Coverage (Wave 1: CA/TX/FL/NY, 144 districts). Nov-3 ballot field, federal 24-topic chairs-not-polarity stances + headshots, seed-now + re-check primaries. Prior milestone v2.19 Local Civic Coverage shipped 2026-06-23. Next: research → requirements → roadmap.*
+*Last updated: 2026-06-30 — after v2.20 2026 US House Candidate Coverage (Wave 1) milestone. Shipped CA/TX/FL/NY = 144 districts, 415 active candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed, USHC-07/Phase-153 carried forward (time-gated ≥ 2026-08-18). Next milestone TBD (v2.21 House Wave 2 or more local coverage).*

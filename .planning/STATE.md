@@ -2,16 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
-status: ready_to_plan
-last_updated: 2026-06-30T04:24:01.119Z
-last_activity: 2026-06-30
+status: Awaiting next milestone
+last_updated: "2026-06-30T04:31:47.125Z"
+last_activity: 2026-06-30 — Milestone v2.20 completed and archived
 progress:
   total_phases: 6
   completed_phases: 5
   total_plans: 32
   completed_plans: 32
   percent: 83
-stopped_at: Phase 152 complete (1/1) — ready to discuss Phase 153
 ---
 
 # Project State
@@ -26,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 ## Current Position
 
-Phase: 153
-Plan: Not started
-Status: Ready to plan
-Last activity: 2026-06-30
+Phase: Milestone v2.20 complete
+Plan: —
+Status: Awaiting next milestone
+Last activity: 2026-06-30 — Milestone v2.20 completed and archived
 
 ### Phase 150 done this session (commits on master, data live in prod):
 
@@ -172,15 +171,17 @@ Phases 142 and 143 are independent of each other (disjoint office types) but bot
 
 ## Deferred Items
 
-Re-acknowledged at v2.18 close (2026-06-22). All pre-existing, none from v2.18.
+Re-acknowledged at v2.20 close (2026-06-30). The quick-tasks + Phase-109 gap + AZ-LtGov / McDowell / House-vacancy carry-forwards all pre-date v2.20; USHC-07/Phase-153 is the v2.20 time-gated carry-forward.
 
 | Category | Item | Status |
 |----------|------|--------|
 | quick_task | 22 historical quick-task dirs (001–022) | missing status markers (mostly completed long ago) |
 | verification_gap | Phase 109 (v2.9 LA County) — 109-VERIFICATION.md | human_needed (stale, pre-v2.15) |
-| carry_forward | AZ Lt Governor (Prop 131 eff. Jan 2027) | deferred to v2.19+ per requirements |
+| carry_forward | **USHC-07 / Phase 153 — FL post-primary re-check** | **time-gated: executes ≥ 2026-08-18** (FL provisional field shipped in v2.20; two-path prune of primary losers + confirm advancing nominees after the Aug-18 FL primary) |
+| carry_forward | AZ Lt Governor (Prop 131 eff. Jan 2027) | deferred per requirements |
 | carry_forward | McDowell NC-6 (−37006) honest-skip | await future documentable record; auto-fill later |
 | carry_forward | 3 House vacancies (FL-20/GA-13/TX-23) | re-run seed script once special elections seat members |
+| carry_forward | v2.21+ remaining ~291 US House districts (beyond CA/TX/FL/NY) | next Wave of the multi-milestone House program |
 
 ## Performance Metrics
 
@@ -204,6 +205,13 @@ Re-acknowledged at v2.18 close (2026-06-22). All pre-existing, none from v2.18.
 - Requirements: 5/5 closed (LCC-01..05)
 - Output: 46 records, 4 boundaries, 118 stances (0 unsourced), 46 headshots, 3 coverage entries
 - Shipped: 2026-06-23 (formalized retroactively)
+
+**v2.20 Scope — 2026 US House Candidate Coverage (Wave 1) — COMPLETE ✅**
+
+- Phases: 5 (148–152), 32 plans
+- Requirements: 6/7 closed (USHC-01..06); USHC-07/Phase-153 carried forward (time-gated ≥ 2026-08-18)
+- Output: 144 districts (CA 52 / TX 38 / FL 28 / NY 26), 415 active race_candidates, federal-24 stances (0 unsourced), headshots, consolidated gate 8/8 + coordinate smoke 4/4
+- Shipped: 2026-06-30 (tag v2.20)
 
 ## Accumulated Context
 
@@ -297,4 +305,4 @@ Resume file: None
 
 ## Operator Next Steps
 
-- v2.19 Local Civic Coverage formalized + archived (retroactive). Start the next milestone with /gsd-new-milestone, or continue local coverage informally (more cities/counties; CA-city builds Burbank/Norwalk/Bellflower available to fold into a future local-coverage milestone).
+- Start the next milestone with /gsd-new-milestone
