@@ -4,7 +4,7 @@
 
 **Scope:** The next 8 House delegations by size (all ≥ 11 seats) — **PA (17), IL (17), OH (15), GA (14), NC (14), MI (13), NJ (12), VA (11) = 113 districts**. Nov-3 general-ballot field (major-party nominees + ballot-qualified independents/third-party). New work = challengers + open-seat candidates; sitting incumbents already stanced (v2.16/v2.17) and reuse their existing records. Wave 2 of a multi-milestone program; remaining ~178 districts (38 smaller-delegation states) → Wave 3+.
 
-**Method (settled, inherited from v2.20):** Surfacing via the elections feed (`essentials.races` + `race_candidates`) — PURE DATA, no backend code (Path B; surfacing path proven in v2.20). Per-state seed split: author `elections` + `races` rows first where none pre-exist, then `race_candidates` with non-null `politician_id`. Stances: federal 24-topic set, chairs-not-polarity, evidence-only, mandatory primary-source verification pass, 0 unsourced. Never infer from party. Two costliest traps — duplicate-incumbent records and lost-incumbent-primary — prevented up front by the Phase-148-style field-resolution diagnostic (verify nominee per district from results, never from incumbency).
+**Method (settled, inherited from v2.20):** Surfacing via the elections feed (`essentials.races` + `race_candidates`) — PURE DATA, no backend code (Path B; surfacing path proven in v2.20). Per-state seed split: author `elections` + `races` rows first where none pre-exist, then `race_candidates` with non-null `politician_id`. Stances: federal 24-topic set, chairs-not-polarity, evidence-only, mandatory primary-source verification pass, 0 unsourced. Never infer from party. Two costliest traps — duplicate-incumbent records and lost-incumbent-primary — prevented up front by the Phase-154-style field-resolution diagnostic (verify nominee per district from results, never from incumbency).
 
 ---
 
@@ -57,9 +57,9 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| USHC2-01 Field Resolution | _(filled by roadmap)_ | pending |
-| USHC2-02 Candidate Records | _(filled by roadmap)_ | pending |
-| USHC2-03 Race Wiring | _(filled by roadmap)_ | pending |
-| USHC2-04 Headshots | _(filled by roadmap)_ | pending |
-| USHC2-05 Stances | _(filled by roadmap)_ | pending |
-| USHC2-06 Verification Gate | _(filled by roadmap)_ | pending |
+| USHC2-01 Field Resolution | Phase 154 | Pending |
+| USHC2-02 Candidate Records | Phase 155 (anchor), 156, 157 | Pending |
+| USHC2-03 Race Wiring | Phase 155 (anchor), 156, 157 | Pending |
+| USHC2-04 Headshots | Phase 155 (anchor), 156, 157 | Pending |
+| USHC2-05 Stances | Phase 155 (anchor), 156, 157 | Pending |
+| USHC2-06 Verification Gate | Phase 158 | Pending |

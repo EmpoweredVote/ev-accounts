@@ -33,8 +33,142 @@
 - ✅ **v2.18 State Leaders** — Phases 141–144 (shipped 2026-06-22; elected Big 5 statewide execs, 209 offices / 50 states, 199 stance-covered + 10 honest-skips, consolidated gate all-PASS)
 - ✅ **v2.19 Local Civic Coverage** — Phases 145–147 (shipped 2026-06-23; Falls Church VA + Greene County MO + Springfield MO — 46 records / 118 stances / 46 headshots / 4 boundaries; inline-executed, formalized retroactively)
 - ✅ **v2.20 2026 US House Candidate Coverage (Wave 1)** — Phases 148–152 (shipped 2026-06-30; CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active candidates, federal-24 stances [0 unsourced], 0 dup-incumbent; consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward — time-gated ≥ 2026-08-18)
+- 🔄 **v2.21 2026 US House Candidate Coverage (Wave 2)** — Phases 154–158 (planning 2026-06-30; PA 17 / IL 17 / OH 15 / GA 14 / NC 14 / MI 13 / NJ 12 / VA 11 = 113 districts; Nov-3 general-ballot field, federal-24-topic chairs-not-polarity stances + headshots, pure-data elections-feed surfacing; USHC2-01..06)
 
 ## Phases
+
+### v2.21 2026 US House Candidate Coverage (Wave 2) — Phases 154–158 🔄 ACTIVE
+
+**Milestone goal:** Every resident of the next 8 largest-delegation states (PA, IL, OH, GA, NC, MI, NJ, VA) can enter their address into Elections and see their 2026 US House race — the actual Nov-3 general-ballot field — each candidate with a headshot and chairs-not-polarity, evidence-only stances. Reuses the fully-proven v2.20 elections-feed pipeline.
+
+**Scope:** The next 8 House delegations by size (all ≥ 11 seats) — **PA (17), IL (17), OH (15), GA (14), NC (14), MI (13), NJ (12), VA (11) = 113 districts**. Nov-3 general-ballot field (major-party nominees + ballot-qualified independents/third-party). New work = challengers + open-seat candidates; sitting incumbents are already stanced (v2.16/v2.17) and reuse their existing records. Wave 2 of a multi-milestone program; remaining ~178 districts (38 smaller-delegation states) → Wave 3+.
+
+**PURE-DATA milestone — no backend code.** Surfacing is **Path B**: the elections feed (`getElectionsByCoordinate`, `electionService.ts`) reading `essentials.races` + `essentials.race_candidates`, geography inherited through `office_id → districts.geo_id` + PostGIS `ST_Covers`. Path A (Senate-style candidacy offices) is invisible to `/elections`. No empty-state UI work in this repo.
+
+**Per-state work split (all 8 states need elections + races authored first — none have pre-seeded 2026 House races):**
+
+All 8 Wave-2 states follow the TX+NY pattern from Phase 150: author `elections` + `races` rows first (if absent), then `race_candidates`. None of the 8 states have pre-seeded 2026 House races (unlike CA in v2.20, which was a turnkey race_candidates-only state). The Phase 154 diagnostic confirms existing incumbent `politician_id` maps per district and the stance-gap baseline so no seeding phase creates a duplicate incumbent.
+
+**Carry-forward execution methodology (for `/gsd-plan-phase`):**
+
+- **Production project ref:** `kxsdzaojfaibhuzmclfq`.
+- **Two highest-cost traps, prevented by Phase 154 (diagnostic-first):** (1) duplicate incumbent records — reuse the existing `politician_id` (already seeded in v2.15–v2.17), never INSERT a new politician row for a sitting rep; (2) lost-incumbent-primary — verify the nominee per district from a primary-results source (PA/IL/OH/GA/NC all held primaries by June 30), never derive from incumbency. (GA-13 is a known open seat/vacancy; verify current status.)
+- **`race_candidates` insert shape:** `race_id` → the district race, `politician_id` (NON-NULL), `full_name`, `is_incumbent`, `candidate_status='active'`, `source`. **Never** `office_id IS NULL` on a House race. **Never** party on the candidate card — party lives on `races.primary_party` only (antipartisan invariant).
+- **Elections + races authoring:** for each state, create one `essentials.elections` row (`election_date='2026-11-03'`, e.g. "PA 2026 Statewide General") and one `essentials.races` row per district (`office_id` = the existing `U.S. Representative` office for that district; **NEVER** `office_id IS NULL` on a House race).
+- **external_id scheme for new challengers:** `-(state_fips * 10000 + cd * 100 + seq)` pattern (mirroring v2.20's Wave-1 allocation for TX/NY; verify 0 collisions against live negative IDs per state before any insert). PA fips=42, IL=17, OH=39, GA=13, NC=37, MI=26, NJ=34, VA=51.
+- **Stance pipeline reuse:** **federal 24-topic** set (`_TOPIC_SCALE_FULL.txt` — adds social-security/tariffs/ukraine, drops 5 state-only), `politician-stance-researcher` at **3-concurrency**, per-candidate CSV → field-count-validated/canonical re-stringify → `_merge.ts` → push (`_push_uuid.ts` for new NULL-external_id challengers; `_push.ts` for existing external_id records). **Mandatory primary-source verification sub-step before every push** (re-fetch raw quotes via Playwright, delete polarity-inference). **0-unsourced gate**; honest-skip thin topics; whole-record honest-skip allowed + gate-pinned by id. Embed exact 1–5 stance texts per topic.
+- **Fetch-walls:** Ballotpedia blank (Cloudflare) + long Wikipedia pages TOC-only → use Playwright / raw-wikitext / section anchors. FEC API: register a free key (api.data.gov/signup, 1000/hr) — one paginated per-state call (`?office=H&state={ST}&election_year=2026`).
+- **VA special note:** VA-11 (Gerry Connolly retired March 2025 due to illness — seat vacant, special election may have run before Nov; verify current status at plan time). VA statewide geofencing (SLDU/SLDL) is already in the DB from v2.10 — NATIONAL_LOWER VA district offices and geofences are present from v2.15.
+- **NJ special note:** NJ-8 (Rob Menendez Jr.) and NJ incumbents — all NJ reps seeded in v2.15; verify against primary results.
+- **Finance is best-effort / out of scope:** challenger `finance_summary` deferred; record no-FEC-ID rather than retry.
+
+---
+
+#### Phase 154: Field Resolution + Stance-Gap Diagnostic
+
+**Goal:** The verified Nov-3 general-ballot field is locked for all 113 Wave-2 districts (PA/IL/OH/GA/NC/MI/NJ/VA), every district where the incumbent is NOT the 2026 nominee is explicitly flagged, and every district incumbent is mapped to its existing `politician_id` — so no seeding phase can create a duplicate incumbent or surface a non-candidate.
+
+**Depends on:** Nothing (first phase; diagnostic gates everything else — must run before any seeding)
+
+**Requirements:** USHC2-01
+
+**Success Criteria** (what must be TRUE):
+
+  1. A per-district field table exists for all 113 districts (PA 17 / IL 17 / OH 15 / GA 14 / NC 14 / MI 13 / NJ 12 / VA 11) listing each Nov-3 general-ballot candidate (major-party nominees + ballot-qualified independents/third-party), with every state marked `decided` (all Wave-2 states have completed their primaries before the Wave-2 build window).
+  2. Every district where the incumbent is NOT the 2026 nominee (lost-primary, retirement, open seat, vacancy, deceased) is explicitly flagged — including known cases such as GA-13 (vacancy), VA-11 (Connolly retirement/illness) — confirmed from a primary-results or official source, never derived from incumbency alone.
+  3. A stance-gap / existence diagnostic maps each district's sitting incumbent to its existing `essentials.politicians` record (`politician_id`) and reports current stance count — so incumbent-nominees link to the existing record and any incumbent below the federal-24 threshold is surfaced for potential top-up.
+  4. The set of genuinely-new candidates needing records (challengers + open-seat candidates) is enumerated per state and per district, distinct from incumbents/previously-seeded figures that reuse existing records; a per-state new-record count is produced as the authoritative input for each seeding phase.
+
+**Plans:** TBD
+
+---
+
+#### Phase 155: PA + IL Candidate Seeding (create elections + races, then candidates)
+
+**Goal:** Every PA and IL US House race surfaces its full Nov-3 candidate field on `/elections` for an in-district address — both states need `elections`/`races` rows authored first, then candidate records and `race_candidates` wired, headshots for newly-seeded candidates, and federal-24 chairs-not-polarity stances. PA (17) + IL (17) = 34 districts.
+
+**Depends on:** Phase 154 (verified PA/IL field + incumbent `politician_id` map)
+
+**Requirements:** USHC2-02, USHC2-03, USHC2-04, USHC2-05
+
+> USHC2-02/03/04/05 are state-partitioned, cross-cutting requirements anchored here (the first seeding phase, where the per-state pipeline is established for Wave 2) and **continued** in Phases 156 (OH+GA+NC) and 157 (MI+NJ+VA). Phase 158's gate asserts full 113-district completion across all three seeding phases.
+
+**Success Criteria** (what must be TRUE):
+
+  1. An `essentials.elections` row exists for each of PA and IL (created if absent, mirroring "TX 2026 Statewide General" pattern, `election_date='2026-11-03'`) and one `essentials.races` row per district (all 17 PA + all 17 IL) with `office_id` pointing to the existing `U.S. Representative` office for that district — **never** `office_id IS NULL` on a House race.
+  2. Every PA (17) and IL (17) district surfaces its full candidate field on `/elections` for an in-district test coordinate via `race_candidates`, each row `politician_id`-linked and `candidate_status='active'`; non-incumbent nominees in races where the incumbent retired/lost are the active candidates, not the previous incumbents; zero duplicate `full_name` per state for incumbent-reuse rows.
+  3. Every newly-seeded PA/IL candidate has a headshot (Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`; free-license, wrong-person-guarded; documented honest-skips where no free portrait exists); no candidate card surfaces party (party reads from `races.primary_party`).
+  4. Every PA/IL candidate lacking federal-24 stances has sourced chairs-not-polarity stances — each answer paired to an `inform.politician_context` row with a real fetched source URL, 0 unsourced, primary-source-verified before push, honest-skip (per-topic or whole-record) where evidence is thin; already-stanced incumbents skipped via the Phase 154 diagnostic.
+
+**Plans:** TBD
+
+---
+
+#### Phase 156: OH + GA + NC Candidate Seeding (create elections + races, then candidates)
+
+**Goal:** Every OH, GA, and NC US House race surfaces its full Nov-3 candidate field on `/elections` — all three states need `elections`/`races` rows authored first, then candidate records, race_candidates wiring, headshots, and federal-24 stances. OH (15) + GA (14) + NC (14) = 43 districts.
+
+**Depends on:** Phase 154 (verified OH/GA/NC field + incumbent `politician_id` map); independent of Phase 155 (different states) but sequenced after it to inherit the validated pipeline.
+
+**Requirements:** USHC2-02, USHC2-03, USHC2-04, USHC2-05 (continuation — OH + GA + NC portion; see Phase 155 anchor note)
+
+**Success Criteria** (what must be TRUE):
+
+  1. An `essentials.elections` row exists for each of OH, GA, and NC and one `essentials.races` row per district (15 OH + 14 GA + 14 NC) with `office_id` → the existing `U.S. Representative` office; every district surfaces its full candidate field on `/elections` for an in-district test coordinate via `race_candidates`, each row `politician_id`-linked.
+  2. Every newly-seeded OH/GA/NC candidate has a headshot; incumbent-nominees reuse existing records (zero duplicate `full_name` per state); no party on candidate cards; GA-13 open-seat or current status is handled correctly (no ghost incumbent record created).
+  3. Every OH/GA/NC candidate lacking federal-24 stances has sourced chairs-not-polarity stances — 0 unsourced, primary-source-verified before push, honest-skip where evidence is thin; already-stanced incumbents (all OH/GA/NC reps stanced in v2.17) skipped via the diagnostic.
+
+**Plans:** TBD
+
+---
+
+#### Phase 157: MI + NJ + VA Candidate Seeding (create elections + races, then candidates)
+
+**Goal:** Every MI, NJ, and VA US House race surfaces its full Nov-3 candidate field on `/elections` — all three states need `elections`/`races` rows authored first, then candidates, race_candidates wiring, headshots, and federal-24 stances. MI (13) + NJ (12) + VA (11) = 36 districts.
+
+**Depends on:** Phase 154 (verified MI/NJ/VA field + incumbent `politician_id` map); independent of Phases 155/156 (different states) but sequenced after them to inherit the validated pipeline.
+
+**Requirements:** USHC2-02, USHC2-03, USHC2-04, USHC2-05 (continuation — MI + NJ + VA portion; see Phase 155 anchor note)
+
+**Success Criteria** (what must be TRUE):
+
+  1. An `essentials.elections` row exists for each of MI, NJ, and VA and one `essentials.races` row per district (13 MI + 12 NJ + 11 VA) with `office_id` → the existing `U.S. Representative` office; every district surfaces its full candidate field on `/elections` for an in-district test coordinate via `race_candidates`, each row `politician_id`-linked; VA-11 vacancy/special-election status is handled correctly (no stale officeholder record wired as incumbent-nominee without verification).
+  2. Every newly-seeded MI/NJ/VA candidate has a headshot; incumbent-nominees reuse existing records (zero duplicate `full_name` per state); no party on candidate cards.
+  3. Every MI/NJ/VA candidate lacking federal-24 stances has sourced chairs-not-polarity stances — 0 unsourced, primary-source-verified before push, honest-skip where evidence is thin; already-stanced incumbents (all MI/NJ/VA reps stanced in v2.17) skipped via the diagnostic.
+
+**Plans:** TBD
+
+---
+
+#### Phase 158: Coordinate Verification Gate
+
+**Goal:** A consolidated read-only gate proves the milestone end-to-end across all 113 Wave-2 districts — for each Wave-2 state a test address resolves to its district and the House race displays the expected candidate field on `/elections`, with 0 unsourced stances and 0 duplicate-incumbent records.
+
+**Depends on:** Phases 155, 156, 157 (all three seeding phases complete)
+
+**Requirements:** USHC2-06
+
+**Success Criteria** (what must be TRUE):
+
+  1. For a known in-district address in each Wave-2 state (PA/IL/OH/GA/NC/MI/NJ/VA), `getElectionsByCoordinate` / `/api/essentials/elections-by-address` returns the resident's US House race with the full candidate field — and the assertion checks the CHALLENGER field is present, not just the incumbent (Pitfall-5 two-path guard inherited from v2.20).
+  2. The gate asserts 0 unsourced stance rows across all newly-seeded Wave-2 candidates and 0 duplicate-incumbent `essentials.politicians` records across the 113 districts; any documented whole-record stance honest-skips are pinned by id in the gate script.
+  3. Every `race_candidates` row across the 113 districts has a NON-NULL `politician_id` (so headshots + stances resolve) and no candidate card surfaces party (party reads from `races.primary_party`); the gate script asserts all 113 districts have at least one active `race_candidates` row.
+
+**Plans:** TBD
+
+---
+
+### Progress
+
+| Phase | Plans Complete | Status | Completed |
+|-------|----------------|--------|-----------|
+| 154. Field Resolution + Stance-Gap Diagnostic | 0/? | Not started | - |
+| 155. PA + IL Candidate Seeding (create races) | 0/? | Not started | - |
+| 156. OH + GA + NC Candidate Seeding (create races) | 0/? | Not started | - |
+| 157. MI + NJ + VA Candidate Seeding (create races) | 0/? | Not started | - |
+| 158. Coordinate Verification Gate | 0/? | Not started | - |
+
+---
 
 <details>
 <summary>✅ v2.20 2026 US House Candidate Coverage (Wave 1) (Phases 148–152) — SHIPPED 2026-06-30 (CA 52 / TX 38 / FL 28 / NY 26 = 144 districts; 415 active candidates, federal-24 stances [0 unsourced], 0 dup-incumbent; consolidated gate 152-verify.sql 8/8 + 152-coordinate-smoke.ts 4/4; USHC-01..06 closed. USHC-07 + Phase 153 carried forward — FL post-primary re-check, time-gated ≥ 2026-08-18)</summary>
@@ -249,11 +383,11 @@ Plans:
 | 150. TX + NY Candidate Seeding (create races) | 12/12 | Complete   | 2026-06-29 |
 | 151. FL Candidate Seeding (provisional) | 6/6 | Complete   | 2026-06-29 |
 | 152. Coordinate Verification Gate | 1/1 | Complete    | 2026-06-30 |
-| 153. FL Post-Primary Re-Check (date-gated Aug 18) | 0/? | Not started (carried forward — time-gated ≥ 2026-08-18) | - |
-
-</details>
+| 153. FL Post-Primary Re-Check (date-gated Aug 18) | 0/? | Not started | - |
 
 ---
+
+</details>
 
 <details>
 <summary>✅ v2.19 Local Civic Coverage (Phases 145–147) — SHIPPED 2026-06-23 (Falls Church VA / Greene County MO / Springfield MO; 46 records, 118 stances [0 unsourced], 46 headshots, 4 geofence boundaries; LCC-01..05 closed; inline-executed)</summary>
@@ -786,3 +920,5 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 - [x] Phase 33: Essentials Integration Guide (1/1 plan) — completed 2026-03-19
 
 Full details: `.planning/milestones/v1.5-ROADMAP.md`
+
+</details>
