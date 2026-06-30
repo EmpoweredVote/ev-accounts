@@ -157,8 +157,7 @@ BEGIN
   INSERT INTO _reuse_pid (geo_id, expected_pid, external_id, who) VALUES
     ('1223','b4040115-b3ea-4500-89cf-1ddaecafc94e',-12022,'Lois Frankel (-12022) active FL-23'),
     ('1225','1cb8827c-6ae0-4fcf-884c-94ad2246f15d',-12023,'Jared Moskowitz (-12023) active FL-25'),
-    ('1220','097623b0-3063-4943-a13c-89d213ca5829',-12025,'Debbie Wasserman Schultz (-12025) active FL-20')
-  ORDER BY external_id;
+    ('1220','097623b0-3063-4943-a13c-89d213ca5829',-12025,'Debbie Wasserman Schultz (-12025) active FL-20');
   SELECT COUNT(*) INTO v_reuse_missing
   FROM _reuse_pid rp
   WHERE NOT EXISTS (
@@ -193,8 +192,7 @@ BEGIN
     ('1222',-12022,'Lois Frankel (redistricted FL-22->FL-23)'),
     ('1223',-12023,'Jared Moskowitz (redistricted FL-23->FL-25)'),
     ('1224',-12024,'Frederica Wilson (retired)'),
-    ('1225',-12025,'Debbie Wasserman Schultz (redistricted FL-25->FL-20)')
-  ORDER BY external_id;
+    ('1225',-12025,'Debbie Wasserman Schultz (redistricted FL-25->FL-20)');
   SELECT COUNT(*) INTO v_lost_active
   FROM _lost l
   JOIN _house h ON h.geo_id = l.old_geo AND h.candidate_status = 'active' AND h.external_id = l.external_id;
