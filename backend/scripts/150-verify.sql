@@ -156,8 +156,11 @@ BEGIN
   -- candidate anywhere in its state (redistricted runners appear in their NEW district).
   -- EXCLUDED (intentionally NOT in the set): lost-primary (TX-2 Crenshaw, NY-10 Goldman,
   -- NY-13 Espaillat), retired (TX-8/10/19/21/37/38, NY-7/12/21), and the 4 redistricted-away
-  -- TX incumbents (TX-9 Green / TX-30 Crockett / TX-32 Johnson / TX-33 Veasey) whose new-district
-  -- reuse is ADDED here from the 150-03 reconciliation (POPULATED-BY-150-03 marker below).
+  -- TX incumbents (TX-9 Green -100309 / TX-30 Crockett -100330 / TX-32 Johnson -100332 /
+  -- TX-33 Veasey -100333). 150-03 RECONCILIATION (live-confirmed 2026-06-29): all 4 are ABSENT
+  -- from EVERY 2026 TX field (they did not re-run anywhere in TX; their old seats carry entirely
+  -- new nominees) -> NO reuse-pin addition. Pinning them here would FALSE-FAIL USHC-02c, which
+  -- requires each pinned pid to be an active candidate. Marker resolved: nothing to populate.
   CREATE TEMP TABLE _reuse_pid (st text, expected_pid uuid, who text) ON COMMIT DROP;
   INSERT INTO _reuse_pid (st, expected_pid, who) VALUES
     -- TX renominated home incumbents (25)
@@ -188,7 +191,8 @@ BEGIN
     ('TX','c4ad307f-b38a-409c-8190-8dedad609d88','Brian Babin TX-36'),
     -- TX cross-district reuse: Greg Casar (TX-35 incumbent pid) active in TX-37
     ('TX','24e22813-4b39-4305-979d-1ea5f210a4f4','Greg Casar (TX-35 pid, active TX-37)'),
-    -- POPULATED-BY-150-03: TX-9 Green / TX-30 Crockett / TX-32 Johnson / TX-33 Veasey new-district reuse
+    -- (TX-9/30/32/33 redistricted-away incumbents: resolved by 150-03 reconciliation -> NOT pinned;
+    --  see USHC-02c header note. They are absent from every 2026 TX field.)
     -- NY renominated home incumbents (21)
     ('NY','4c5a2401-4b0c-4a48-9225-11c2ad768a12','Nick LaLota NY-1'),
     ('NY','587df016-35d9-43af-b839-db4899c384fc','Andrew R. Garbarino NY-2'),
