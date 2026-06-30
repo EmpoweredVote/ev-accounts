@@ -33,7 +33,7 @@
 - ✅ **v2.18 State Leaders** — Phases 141–144 (shipped 2026-06-22; elected Big 5 statewide execs, 209 offices / 50 states, 199 stance-covered + 10 honest-skips, consolidated gate all-PASS)
 - ✅ **v2.19 Local Civic Coverage** — Phases 145–147 (shipped 2026-06-23; Falls Church VA + Greene County MO + Springfield MO — 46 records / 118 stances / 46 headshots / 4 boundaries; inline-executed, formalized retroactively)
 - ✅ **v2.20 2026 US House Candidate Coverage (Wave 1)** — Phases 148–152 (shipped 2026-06-30; CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active candidates, federal-24 stances [0 unsourced], 0 dup-incumbent; consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward — time-gated ≥ 2026-08-18)
-- 🔄 **v2.21 2026 US House Candidate Coverage (Wave 2)** — Phases 154–159 (planning 2026-06-30; PA 17 / IL 17 / OH 15 / GA 14 / NC 14 / NJ 12 / VA 11 = 100 decided + MI 13 date-gated = 113 districts; Nov-3 general-ballot field, federal-24-topic chairs-not-polarity stances + headshots, pure-data elections-feed surfacing; USHC2-01..06)
+- 🔄 **v2.21 2026 US House Candidate Coverage (Wave 2)** — Phases 154–159 (planning 2026-06-30; PA 17 / IL 17 / OH 15 / GA 14 / NC 14 / NJ 12 = 89 decided + MI 13 & VA 11 date-gated (both Aug-4 primaries) = 113 districts; Nov-3 general-ballot field, federal-24-topic chairs-not-polarity stances + headshots, pure-data elections-feed surfacing; USHC2-01..06)
 
 ## Phases
 

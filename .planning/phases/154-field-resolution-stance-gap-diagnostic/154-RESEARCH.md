@@ -13,7 +13,7 @@
 
 - **D-01:** MI is date-gated (≥ 2026-08-04). Build the 7 decided states now (100 districts: PA/IL/OH/GA/NC/NJ/VA); a separate date-gated MI phase (≥ 2026-08-04) seeds MI's real nominees.
 - **D-01a:** Phase 154 still produces the MI incumbent `politician_id` map + stance-gap (MI incumbents already seeded v2.15–v2.17). Only MI nominee/challenger field is deferred. MI districts appear in the field table tagged `pending-primary (Aug-4)`.
-- **D-01b:** Roadmap restructuring required (already applied): Phase 157 = NJ+VA (23 districts); Phase 158 gate covers 100 decided-state districts; Phase 159 = date-gated MI.
+- **D-01b:** Roadmap restructuring applied: Phase 157 = NJ-only (12 districts); Phase 158 gate covers 89 decided-state districts; Phase 159 = date-gated MI+VA (24 districts). (VA folded into 159 after the Aug-4-primary finding below.)
 - **D-02:** Report-only stance gap for partial incumbents. No top-up. Only new candidates + zero-stance incumbents get stance research downstream.
 - **D-03:** Inclusion bar = every candidate officially ballot-qualified for Nov-3 general. Exclude primary-only also-rans and uncertified write-ins.
 - **D-04:** Resolve current officeholder AND 2026 nominee from official/results sources — never from 2024 incumbency. VA-11, NJ-11, GA-13 confirmed per this decision (see Special Seat Resolutions below).
@@ -97,7 +97,7 @@ The federal-24 topic set is confirmed at exactly 24 topics in the live DB. The `
 
 This is a planning decision, not a research decision. The research documents the constraint; the plan must encode the chosen path. Option (a) avoids blocking Phase 157 on Aug 4; option (b) is simpler if Phase 157 can wait.
 
-**The ROADMAP's "6 decided states + VA" claim is incorrect at build time.** CONTEXT.md D-01 says "7 decided states (PA/IL/OH/GA/NC/NJ/VA = 100 districts)" but VA is not decided on June 30. The plan-time field table will have 88 decided districts (PA 17 + IL 17 + OH 15 + GA 14 + NC 14 + NJ 12) + 13 MI pending + 11 VA pending = 113 total.
+**The ROADMAP's "7 decided states" claim is incorrect at build time.** CONTEXT.md D-01 originally said "7 decided states (PA/IL/OH/GA/NC/NJ/VA = 100 districts)" but VA is not decided on June 30 (Aug-4 primary). The plan-time field table has **89 decided districts** (PA 17 + IL 17 + OH 15 + GA 14 + NC 14 + NJ 12 = 89) + 13 MI pending + 11 VA pending = 113 total. (Earlier drafts of this file wrote "88" — that is an arithmetic slip; 17+17+15+14+14+12 = 89.)
 
 ---
 
@@ -184,7 +184,7 @@ Live Postgres DB (kxsdzaojfaibhuzmclfq)
               |
               v
         154-incumbent-map.csv  ← write to .planning/phases/154-.../
-        (113 rows: 100 decided + 13 MI pending)
+        (113 rows: 89 decided + 24 pending-primary [MI 13 + VA 11])
 
 External sources (web research, plan-time artifact assembly):
   State SoS results + Wikipedia + Ballotpedia (via Playwright)
@@ -510,7 +510,7 @@ All four of the above are **new-record needs** for the seeding phases (D-04a).
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Clay Fuller (GA-14) — in DB or not?**
    - What we know: Fuller won the GA-14 special election April 7, 2026, replacing MTG. MTG exists in the DB (v2.17). Fuller was seated post-v2.17.
