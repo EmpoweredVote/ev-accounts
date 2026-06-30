@@ -186,13 +186,13 @@ Plans:
   2. Every newly-seeded FL candidate (155) has a `politician_id`-linked record (reuse existing for incumbents/cross-district redistricted, zero duplicate `full_name`). **Coverage depth is scoped by the records-now/stances-at-153 decision (CONTEXT D-01):** the **17 independent/NPA new candidates** (Nov-final, not pruned by the primary) get headshots + federal-24 chairs-not-polarity stances now (0 unsourced, primary-source-verified, honest-skip where thin); the **~138 partisan (R/D) primary candidates** get records only — their headshots + stances are deferred to Phase 153 once the field narrows to actual nominees. The 27 partial-stance incumbents are left as-is (zero-only top-up rule). No party on candidate cards.
   3. The FL field is recorded as `provisional` (multiple same-party candidates per district may be present pre-primary by design); the seed does NOT guess or pre-prune the general winner — Aug 18 reconciliation is deferred to Phase 153.
 
-**Plans:** 6 plans, 4 waves
-- [ ] 151-01-PLAN.md — W1: author FL 2026 Statewide General election + create FL-20 office + 28 provisional races (description sentinel)
-- [ ] 151-02-PLAN.md — W1: author 151-verify.sql gate (single-state FL '12', provisional-aware, 17-independents-only stance scope, no per-party cap)
-- [ ] 151-03-PLAN.md — W2: live dedup reconciliation + insert ~155 new records + wire all race_candidates (full provisional field, 3 reuse + Cherfilus-NEW)
-- [ ] 151-04-PLAN.md — W3: headshots for the 17 independent/NPA new candidates only
-- [ ] 151-05-PLAN.md — W3: full-24 chairs-not-polarity stances for the 17 independents only (0 unsourced, honest-skip thin)
-- [ ] 151-06-PLAN.md — W4: run 151-verify.sql green + 151-coordinate-smoke.ts (FL-10 uncontested minActive=1)
+**Plans:** 6 plans, 4 waves — **COMPLETE 2026-06-29** (gate 13/13 PASS + smoke 4/4; gsd-verifier 8/8). 28 races/181 candidates/158 new records; 17 independents = 6 stanced (36 answers, 0 unsourced) + 11 honest-skip, 17 headshot-skip. 138 partisan + 27 incumbents records-only → Phase 153.
+- [x] 151-01-PLAN.md — W1: author FL 2026 Statewide General election + create FL-20 office + 28 provisional races (description sentinel) — mig 1115
+- [x] 151-02-PLAN.md — W1: author 151-verify.sql gate (single-state FL '12', provisional-aware, 17-independents-only stance scope, no per-party cap)
+- [x] 151-03-PLAN.md — W2: live dedup reconciliation + insert 158 new records + wire all race_candidates (181 full provisional field, 3 reuse + Cherfilus-NEW) — mig 1116
+- [x] 151-04-PLAN.md — W3: headshots for the 17 independent/NPA new candidates only (17/17 honest-skip)
+- [x] 151-05-PLAN.md — W3: full-24 chairs-not-polarity stances for the 17 independents only (6 stanced/11 skip, 0 unsourced)
+- [x] 151-06-PLAN.md — W4: run 151-verify.sql green + 151-coordinate-smoke.ts (FL-10 uncontested minActive=1)
 
 ---
 
@@ -239,7 +239,7 @@ Plans:
 | 148. Field Resolution + Stance-Gap Diagnostic | 2/2 | Complete   | 2026-06-28 |
 | 149. CA Candidate Seeding (race_candidates only) | 11/11 | Complete    | 2026-06-29 |
 | 150. TX + NY Candidate Seeding (create races) | 12/12 | Complete   | 2026-06-29 |
-| 151. FL Candidate Seeding (provisional) | 0/? | Planning | - |
+| 151. FL Candidate Seeding (provisional) | 6/6 | Complete   | 2026-06-29 |
 | 152. Coordinate Verification Gate | 0/? | Not started | - |
 | 153. FL Post-Primary Re-Check (date-gated Aug 18) | 0/? | Not started | - |
 
