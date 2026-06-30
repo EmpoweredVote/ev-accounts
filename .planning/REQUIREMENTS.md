@@ -58,8 +58,10 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | USHC2-01 Field Resolution | Phase 154 | Pending |
-| USHC2-02 Candidate Records | Phase 155 (anchor), 156, 157 | Pending |
-| USHC2-03 Race Wiring | Phase 155 (anchor), 156, 157 | Pending |
-| USHC2-04 Headshots | Phase 155 (anchor), 156, 157 | Pending |
-| USHC2-05 Stances | Phase 155 (anchor), 156, 157 | Pending |
-| USHC2-06 Verification Gate | Phase 158 | Pending |
+| USHC2-02 Candidate Records | Phase 155 (anchor), 156, 157, 159 (MI) | Pending |
+| USHC2-03 Race Wiring | Phase 155 (anchor), 156, 157, 159 (MI) | Pending |
+| USHC2-04 Headshots | Phase 155 (anchor), 156, 157, 159 (MI) | Pending |
+| USHC2-05 Stances | Phase 155 (anchor), 156, 157, 159 (MI) | Pending |
+| USHC2-06 Verification Gate | Phase 158 (100 decided districts), 159 (MI) | Pending |
+
+> **MI is date-gated (D-01):** MI's congressional primary is Aug 4, 2026. Phase 154 resolves MI only to declared-field + incumbent-map; MI nominee seeding + verification is the date-gated Phase 159 (≥ 2026-08-04). Phases 155/156/157 + the Phase 158 gate cover the 100 decided-state districts; Phase 159 completes the milestone to 113.

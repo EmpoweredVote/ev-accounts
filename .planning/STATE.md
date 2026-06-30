@@ -3,10 +3,10 @@ gsd_state_version: 1.0
 milestone: v2.21
 milestone_name: 2026 US House Candidate Coverage (Wave 2)
 status: completed
-last_updated: "2026-06-30T07:11:43.486Z"
+last_updated: "2026-06-30T07:18:18.533Z"
 last_activity: 2026-06-30 — v2.21 ROADMAP.md written
 progress:
-  total_phases: 5
+  total_phases: 6
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -105,6 +105,12 @@ Re-acknowledged at v2.20 close (2026-06-30).
 - Target: 113 districts (PA 17 / IL 17 / OH 15 / GA 14 / NC 14 / MI 13 / NJ 12 / VA 11)
 
 ## Accumulated Context
+
+### Roadmap Evolution
+
+- Phase 157 edited: MI+NJ+VA -> NJ+VA (23 districts); MI split to date-gated Phase 159
+- Phase 158 edited: gate scoped to 100 decided-state districts; MI verified in 159
+- Phase 159 added: MI Candidate Seeding + Verification, date-gated >= 2026-08-04 (MI primary Aug 4)
 
 ### Key Decisions
 
