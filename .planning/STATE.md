@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
 status: executing
-last_updated: "2026-06-29T20:38:56.619Z"
-last_activity: 2026-06-29 -- Phase 150 execution started
+last_updated: "2026-06-30T04:07:52.621Z"
+last_activity: 2026-06-30 -- Phase 152 planning complete
 progress:
   total_phases: 6
-  completed_phases: 2
-  total_plans: 25
-  completed_plans: 13
-  percent: 33
+  completed_phases: 4
+  total_plans: 32
+  completed_plans: 31
+  percent: 67
 ---
 
 # Project State
@@ -27,10 +27,11 @@ See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 Phase: 150 (TX+NY candidate seeding) — IN PROGRESS, 6/12 plans done (Waves 1–4 complete)
 Plan: Wave 3 stance batches (150-07..11) — VALIDATION BATCH PAUSED (see blocker below)
-Status: Structural foundation DONE + gate-green (USHC-02/03/04 + D-02/D-05 PASS); stance workstream paused for operator pacing decision
-Last activity: 2026-06-29 -- waves 1–4 executed inline; stance pipeline validated on 1 candidate, hit blocker
+Status: Ready to execute
+Last activity: 2026-06-30 -- Phase 152 planning complete
 
 ### Phase 150 done this session (commits on master, data live in prod):
+
 - **150-01** mig 1109: 2 elections + 64 races (TX 38 geo 4801–4838 / NY 26 geo 3601–3626). TX election `783b7506-dd52-47a1-a85a-9ffc363f8a04`, NY `80a2b03d-f583-4156-a272-d51abbda0b0a`.
 - **150-02** `backend/scripts/150-verify.sql`: per-state write-free gate. USHC-04 honest-skip pins (70: 43 TX + 27 NY) + USHC-02c reuse pins live.
 - **150-03** mig 1110: TX 48 new politicians + 76 race_candidates. D-03 dedup: Casar TX-35→TX-37 reuse -100335; Toth TX-2 reuse -100515; **Dan Barrios TX-32 reuse e8c863a7** (Richardson councilmember = same person, web-confirmed); Allred NEW. New band -4810101..-4813802.
@@ -38,6 +39,7 @@ Last activity: 2026-06-29 -- waves 1–4 executed inline; stance pipeline valida
 - **150-05/06** headshots: 11 auto-imaged (5 TX: Allred/Haynes/Herrera/Teixeira/Pulido; 6 NY: Oberacker/Lasher/Lander/Valdez/LiPetri/Gallant), 70 gate-pinned honest-skips. Shared `seed-tx-ny-house-headshots.py --state TX|NY`. USHC-04 PASSES.
 
 ### ⚠ STANCE BLOCKER (150-07..11) — operator decision needed:
+
 Validation batch (TX-1..10, 20 in-scope candidates) surfaced: (a) **session limit hit** on first 3-concurrent wave (0 output); (b) single incumbent = **81k tokens / 49 tool calls**, 10/24 topics; (c) **primary sources 403/blank-walled** (GovTrack/congress.gov/house.gov/Ballotpedia) → values lean on OnTheIssues aggregator + pre-incumbency 2022 campaign positions; (d) **the mandatory D-05 primary-source verification pass is itself blocked** by the same walls (needs Playwright-per-URL at ~107-candidate scale); (e) Moran abortion=4 is a visible over-read. Moran CSV produced but NOT pushed (unverified; scratch in `tx-2026-house-b1/`). `_FED24_SCALE.txt` extract built.
 Stance in-scope: TX = all 76 active (D-01 all-zero-incumbent); NY = 33 new only (D-01 partials untouched). ~107 needing federal-24.
 Next: operator chooses stance pacing/approach. Then 150-12 final gate + coordinate smoke.
