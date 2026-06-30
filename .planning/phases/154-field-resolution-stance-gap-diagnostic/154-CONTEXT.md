@@ -15,7 +15,9 @@ A **read-only, write-free diagnostic** that gates all Wave-2 seeding. It produce
 
 Analog of Wave-1's Phase 148. Writes NO production rows; output is diagnostic artifacts + a write-free `154-verify.sql` gate.
 
-**Scope split (see D-01):** Phase 154 **fully resolves the 7 decided states** (PA/IL/OH/GA/NC/NJ/VA = 100 districts) and builds the incumbent `politician_id` map for **all 8 states incl. MI** (MI incumbents already exist in the DB). It does **not** resolve MI's 2026 *nominees* — MI's primary is Aug 4, 2026, so nominee resolution is deferred to the date-gated MI phase.
+**Scope split (see D-01):** Phase 154 **fully resolves the 6 decided states** (PA/IL/OH/GA/NC/NJ = 89 districts) and builds the incumbent `politician_id` map for **all 8 states incl. MI and VA**. It does **not** resolve MI's or VA's 2026 *nominees* — both congressional primaries are Aug 4, 2026, so nominee resolution for both is deferred to the date-gated Phase 159 (MI+VA). MI and VA districts appear in the field table tagged `pending-primary (Aug-4)`.
+
+> **CORRECTION (applied at planning, 2026-06-30):** This CONTEXT originally listed VA among the "7 decided states (100 districts)." That is **wrong** — Virginia moved its 2026 congressional primary from June to **August 4, 2026** (verified against the VA Dept. of Elections + Ballotpedia in `154-RESEARCH.md`). VA is therefore `pending-primary (Aug-4)`, identical to MI, and is folded into the date-gated Phase 159. Decided scope is **6 states / 89 districts**; deferred is **MI 13 + VA 11 = 24**; total still 113. All D-01 references below are read with VA == MI treatment.
 
 </domain>
 
@@ -23,9 +25,9 @@ Analog of Wave-1's Phase 148. Writes NO production rows; output is diagnostic ar
 ## Implementation Decisions
 
 ### MI primary timing (Aug 4, 2026 — after the build window)
-- **D-01:** MI is handled as a **date-gated final phase**, NOT provisional-seeded. Build the 7 decided states now (100 districts: PA/IL/OH/GA/NC/NJ/VA); a separate **date-gated MI phase (≥ 2026-08-04)** seeds MI's *real* nominees. No provisional MI records, no two-path prune. This keeps the committed 113-district scope and avoids the FL/Wave-1 prune churn (MI is a single state with a near-term primary, so waiting for real results is cheaper than provisional + prune).
-- **D-01a:** Phase 154 still produces the **MI incumbent `politician_id` map + stance-gap** now (MI incumbents are already seeded v2.15–v2.17 and don't depend on the primary). Only MI's *nominee/challenger field* is deferred. MI districts appear in the field table tagged `pending-primary (Aug-4)`.
-- **D-01b:** **Roadmap restructuring required** (flag for `/gsd-phase` or the planner — see Deferred/Notes): split Phase 157 from `MI+NJ+VA` → **`NJ+VA` (23 districts)**; the Phase 158 gate covers the **100 decided-state districts**; add a **new date-gated MI phase (≥ Aug 4)** that seeds MI nominees + verifies (MI mini-gate). The milestone closes after the MI phase.
+- **D-01:** MI **and VA** are handled as a **date-gated final phase**, NOT provisional-seeded. Build the 6 decided states now (89 districts: PA/IL/OH/GA/NC/NJ); a separate **date-gated Phase 159 (≥ 2026-08-04)** seeds MI's *and VA's* *real* nominees. No provisional MI/VA records, no two-path prune. This keeps the committed 113-district scope and avoids the FL/Wave-1 prune churn (both have near-term Aug-4 primaries, so waiting for real results is cheaper than provisional + prune).
+- **D-01a:** Phase 154 still produces the **MI and VA incumbent `politician_id` map + stance-gap** now (their incumbents are already seeded v2.15–v2.17 and don't depend on the primary). Only the MI/VA *nominee/challenger field* is deferred. MI and VA districts appear in the field table tagged `pending-primary (Aug-4)`. (Exception: VA-11's current member Walkinshaw was special-seated Sep 2025, post-v2.17 — he is a new-record need, not a mappable incumbent; see D-04a.)
+- **D-01b:** **Roadmap restructuring APPLIED at planning (2026-06-30):** Phase 157 = **NJ-only (12 districts)**; the Phase 158 gate covers the **89 decided-state districts (PA/IL/OH/GA/NC/NJ)**; Phase 159 = **date-gated MI+VA (24 districts, ≥ Aug 4)** that seeds MI+VA nominees + verifies (MI+VA mini-gate). The milestone closes after Phase 159. (Updated from the original split which placed VA in Phase 157 as "decided" — see the CORRECTION banner above.)
 
 ### Partial-incumbent stance top-up
 - **D-02:** **Report only, no top-up.** The diagnostic surfaces incumbents below the federal-24 threshold for visibility, but Wave-2 stance research covers only **genuinely-new candidates + zero-stance incumbents**. Partial-stance incumbents (already partially covered in v2.16/v2.17) are left untouched. Inherits Wave-1 policy (NY partials were explicitly untouched). USHC2-05 only covers candidates *lacking* stances.
@@ -84,8 +86,9 @@ Analog of Wave-1's Phase 148. Writes NO production rows; output is diagnostic ar
 ## Specific Ideas
 
 - MI 2026 congressional primary confirmed **Aug 4, 2026** (Michigan SoS election-dates PDF; Congress Countdown) — the basis for D-01.
-- Per-state primary status (verify at plan time, but as researched 2026-06-30): PA, IL, OH, GA, NC, NJ, VA primaries all held by the build window; **MI is the sole undecided state**.
-- Field table must mark MI rows `pending-primary (Aug-4)` and the 7 others `decided`.
+- **VA 2026 congressional primary is ALSO Aug 4, 2026** (VA moved it from June to August; verified VA Dept. of Elections + Ballotpedia "August 4 primary" district pages, `154-RESEARCH.md`). The earlier "VA decided" note here was wrong — superseded by the CORRECTION banner above.
+- Per-state primary status (verified 2026-06-30): PA, IL, OH, GA, NC, NJ primaries held by the build window (`decided`); **MI and VA are both undecided** (Aug-4 primaries).
+- Field table must mark **MI (13) and VA (11)** rows `pending-primary (Aug-4)` and the **6 others (PA/IL/OH/GA/NC/NJ = 89)** `decided`.
 
 </specifics>
 
