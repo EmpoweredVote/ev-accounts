@@ -1,0 +1,14 @@
+# 151-04 FL independent headshots — manual 2nd-source list
+# Format: external_id|image_url_or_path|license
+#
+# RESULT: 0 manual sources. All 17 FL independent/NPA new candidates were honest-skipped.
+# The automatic Wikipedia pass (seed-fl-house-headshots.py --state FL) found NO free-license
+# portrait for any of the 17 — every match resolved to an election page or a wrong-person
+# (e.g. "Tyler Davis" -> President John Tyler; "Andrew Parrott" -> a special-election page).
+# These are obscure minor-line/NPA candidates with no Wikipedia bio and no free-license
+# campaign/.gov/Ballotpedia portrait. Per the find-headshots honest-skip rule (never a
+# wrong-person or all-rights-reserved image), all 17 are documented honest-skips, pinned by
+# external_id in 151-verify.sql `_headshot_skip`. Matches the 149 (27/36 skipped) / 150
+# (70 skipped) precedent. The candidate cards still surface by name on /elections.
+#
+# (no entries)

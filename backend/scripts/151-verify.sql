@@ -249,8 +249,50 @@ BEGIN
 
   -- Whole-record honest-skip sets (POPULATED-BY-151-04 / 151-05). Pinned by exact UUID w/ ORDER BY.
   CREATE TEMP TABLE _stance_skip (politician_id uuid, reason text) ON COMMIT DROP;
+  -- 151-05: 11 of the 17 independents are genuinely-no-record (no campaign-site issues page, no
+  -- Ballotpedia/Vote411/localcandidates survey, no news coverage of positions; FEC filing only).
+  -- Whole-record honest-skip, pinned by exact UUID w/ ORDER BY (143 lesson). The other 6 ARE stanced
+  -- (D'Arrigo 8, Pavlik 8, Mark Davis 7, Klein 6, Rojas 4, Simmons 3 = 36 sourced answers).
+  INSERT INTO _stance_skip (politician_id, reason)
+  SELECT politician_id, reason FROM (VALUES
+    ('d669df8a-a3b6-4285-9191-415350ae7b63'::uuid,'Tyler Davis FL-1: campaign site (5 pages) has no policy positions; no Ballotpedia/survey/news'),
+    ('7685991f-3a98-4466-a14c-51537ec9a795'::uuid,'Todd Schaefer FL-4: FEC filing only; no campaign site/Ballotpedia/survey/news positions'),
+    ('5441d1e3-a076-4150-b380-80926141a2a0'::uuid,'Andrew Parrott FL-6: bare Squarespace landing page, no policy content; no Ballotpedia/survey'),
+    ('4cbd1a55-a43d-4cab-a1a3-073b3e13bf90'::uuid,'Branden Scrivener FL-12: FEC filing only; no campaign site/Ballotpedia/survey/news positions'),
+    ('3e64cdd5-9adb-4572-961c-181097ace328'::uuid,'Michael Quirk FL-17: FEC filing only; no website/Ballotpedia/survey/news positions'),
+    ('ec4c275a-1cdf-4712-8659-365cfe4e6f05'::uuid,'Seth Haskins FL-19: no website/Ballotpedia/survey/news with positions'),
+    ('e6339c75-bf1e-4945-9fff-751a91c55325'::uuid,'Alexander Cooke FL-21: no fetchable website/Ballotpedia/survey/news positions'),
+    ('35b78dec-ad0b-4330-9f08-ee26f8321693'::uuid,'Kedner MaximeDe FL-20: FEC filing only; no website/Ballotpedia/survey/news positions'),
+    ('4160a61e-9b4c-4e10-8b83-5ceaf800f211'::uuid,'Andy Daro FL-24: campaign site has only vague platform language, no positions on the 24 topics'),
+    ('04fa59d6-2bba-476a-99b6-d7898c6dd895'::uuid,'Patricia Gonzalez FL-24: no website/Ballotpedia/survey/news with documentable positions'),
+    ('a651d578-3a9b-424d-8539-4242af6c3871'::uuid,'Deborah Ann Meidinger Hosey FL-26: FEC filing only (Jun 2026); no website/Ballotpedia/survey/news positions')
+  ) AS v(politician_id, reason)
+  ORDER BY politician_id;
   CREATE TEMP TABLE _headshot_skip (external_id int, reason text) ON COMMIT DROP;
-  -- (empty placeholders; W3 plans INSERT their documented skips here with explicit ORDER BY)
+  -- 151-04: all 17 FL independent/NPA new candidates honest-skipped for headshots — no free-license
+  -- portrait anywhere (Wikipedia auto-pass found only election-page / wrong-person matches; no campaign/
+  -- .gov/Ballotpedia free image). Never a wrong-person or all-rights-reserved image (149/150 precedent).
+  INSERT INTO _headshot_skip (external_id, reason)
+  SELECT external_id, reason FROM (VALUES
+    (-1210104,'Tyler Davis FL-1: no free-license portrait (Wikipedia match = President John Tyler; no campaign/.gov free image)'),
+    (-1210305,'Mike Klein FL-3: no free-license portrait (only election-page match)'),
+    (-1210405,'Todd Schaefer FL-4: no free-license portrait (only election-page match)'),
+    (-1210609,'Andrew Parrott FL-6: no free-license portrait (special-election page match)'),
+    (-1210610,'Alec Pavlik FL-6: no free-license portrait (only election-page match)'),
+    (-1211203,'Branden Scrivener FL-12: no free-license portrait (only election-page match)'),
+    (-1211304,'Tony D''Arrigo FL-13: no free-license portrait (only election-page match)'),
+    (-1211609,'Mark Davis FL-16: no free-license portrait (only election-page match)'),
+    (-1211703,'Michael Quirk FL-17: no free-license portrait (only election-page match)'),
+    (-1211802,'Deva Simmons FL-18: no free-license portrait (only election-page match)'),
+    (-1211914,'Seth Haskins FL-19: no free-license portrait (only election-page match)'),
+    (-1212009,'Kedner MaximeDe FL-20: no free-license portrait (only election-page match)'),
+    (-1212103,'Alexander Cooke FL-21: no free-license portrait (only election-page match)'),
+    (-1212409,'Andy Daro FL-24: no free-license portrait (only election-page match)'),
+    (-1212410,'Patricia Gonzalez FL-24: no free-license portrait (gubernatorial-election page match)'),
+    (-1212602,'Deborah Ann Meidinger Hosey FL-26: no free-license portrait (only election-page match)'),
+    (-1212802,'Eddy Rojas FL-28: no free-license portrait (only election-page match)')
+  ) AS v(external_id, reason)
+  ORDER BY external_id;
 
   -- ===== USHC-04 — every in-scope independent has a politician_images row (or pinned skip) ====
   SELECT COUNT(*),
