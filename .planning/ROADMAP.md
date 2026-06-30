@@ -182,11 +182,17 @@ Plans:
 
 **Success Criteria** (what must be TRUE):
 
-  1. `essentials.elections` + one `races` row per FL district (all 28, `office_id` → the district House office) + `race_candidates` for every qualified candidate exist, sourced from the FL DoE `downloadcanlist.asp` tab-delimited field; every FL district surfaces its field on `/elections` for an in-district test coordinate.
-  2. Every newly-seeded FL candidate has a record (reuse existing for incumbents, zero duplicate `full_name`), a headshot, and federal-24 chairs-not-polarity stances (0 unsourced, primary-source-verified, honest-skip where thin); no party on candidate cards.
+  1. `essentials.elections` + one `races` row per FL district (all 28, `office_id` → the district House office; **FL-20's office created first — currently vacant, no office row**) + `race_candidates` for every qualified candidate exist, sourced/reconciled against the FL DoE `downloadcanlist.asp` tab-delimited field; every FL district surfaces its full field on `/elections` for an in-district test coordinate.
+  2. Every newly-seeded FL candidate (155) has a `politician_id`-linked record (reuse existing for incumbents/cross-district redistricted, zero duplicate `full_name`). **Coverage depth is scoped by the records-now/stances-at-153 decision (CONTEXT D-01):** the **17 independent/NPA new candidates** (Nov-final, not pruned by the primary) get headshots + federal-24 chairs-not-polarity stances now (0 unsourced, primary-source-verified, honest-skip where thin); the **~138 partisan (R/D) primary candidates** get records only — their headshots + stances are deferred to Phase 153 once the field narrows to actual nominees. The 27 partial-stance incumbents are left as-is (zero-only top-up rule). No party on candidate cards.
   3. The FL field is recorded as `provisional` (multiple same-party candidates per district may be present pre-primary by design); the seed does NOT guess or pre-prune the general winner — Aug 18 reconciliation is deferred to Phase 153.
 
-**Plans:** TBD
+**Plans:** 6 plans, 4 waves
+- [ ] 151-01-PLAN.md — W1: author FL 2026 Statewide General election + create FL-20 office + 28 provisional races (description sentinel)
+- [ ] 151-02-PLAN.md — W1: author 151-verify.sql gate (single-state FL '12', provisional-aware, 17-independents-only stance scope, no per-party cap)
+- [ ] 151-03-PLAN.md — W2: live dedup reconciliation + insert ~155 new records + wire all race_candidates (full provisional field, 3 reuse + Cherfilus-NEW)
+- [ ] 151-04-PLAN.md — W3: headshots for the 17 independent/NPA new candidates only
+- [ ] 151-05-PLAN.md — W3: full-24 chairs-not-polarity stances for the 17 independents only (0 unsourced, honest-skip thin)
+- [ ] 151-06-PLAN.md — W4: run 151-verify.sql green + 151-coordinate-smoke.ts (FL-10 uncontested minActive=1)
 
 ---
 
@@ -219,7 +225,7 @@ Plans:
 **Success Criteria** (what must be TRUE):
 
   1. Every FL primary loser is retired via BOTH paths — `essentials.politicians.is_active=false` AND `essentials.race_candidates.candidate_status='withdrawn'` — with NO hard-DELETE (record, stances, headshot, FEC preserved); the retired candidate no longer appears in either the reps feed or the active `/elections` field.
-  2. Each FL district's advancing general-election nominee is confirmed against the certified Aug-18 results and remains the active `race_candidates` row; any candidate who became the nominee but lacked complete coverage gets a record + headshot + primary-source-verified federal-24 stances.
+  2. Each FL district's advancing general-election nominee is confirmed against the certified Aug-18 results and remains the active `race_candidates` row; **every advancing partisan nominee (whose headshot + stances were deferred from Phase 151 per the records-now/stances-at-153 split) gets its headshot + primary-source-verified federal-24 chairs-not-polarity stances here** — this is the bulk stance work intentionally moved out of Phase 151. (The 17 independents + 27 incumbents already covered in 151 carry forward.)
   3. Advancing thin-stance winners are re-researched against primary sources; FL is re-marked `decided` (no longer provisional), and the Phase 152 gate (or its FL re-run) passes for the final FL field.
 
 **Plans:** TBD
@@ -232,8 +238,8 @@ Plans:
 |-------|----------------|--------|-----------|
 | 148. Field Resolution + Stance-Gap Diagnostic | 2/2 | Complete   | 2026-06-28 |
 | 149. CA Candidate Seeding (race_candidates only) | 11/11 | Complete    | 2026-06-29 |
-| 150. TX + NY Candidate Seeding (create races) | 4/12 | In Progress|  |
-| 151. FL Candidate Seeding (provisional) | 0/? | Not started | - |
+| 150. TX + NY Candidate Seeding (create races) | 12/12 | Complete   | 2026-06-29 |
+| 151. FL Candidate Seeding (provisional) | 0/? | Planning | - |
 | 152. Coordinate Verification Gate | 0/? | Not started | - |
 | 153. FL Post-Primary Re-Check (date-gated Aug 18) | 0/? | Not started | - |
 
