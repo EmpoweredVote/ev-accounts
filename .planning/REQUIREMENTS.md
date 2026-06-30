@@ -62,11 +62,11 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | USHC-01 Field Resolution | Phase 148 | ✅ complete |
-| USHC-02 Candidate Records | Phase 149 (anchor; continued 150 TX+NY, 151 FL) | pending |
-| USHC-03 Race Wiring | Phase 149 (anchor; continued 150 TX+NY, 151 FL) | pending |
-| USHC-04 Headshots | Phase 149 (anchor; continued 150 TX+NY, 151 FL) | pending |
-| USHC-05 Stances | Phase 149 (anchor; continued 150 TX+NY, 151 FL) | pending |
-| USHC-06 Verification Gate | Phase 152 | pending |
+| USHC-02 Candidate Records | Phase 149 (anchor; continued 150 TX+NY, 151 FL) | ✅ complete (verified all-144 by Phase 152 gate) |
+| USHC-03 Race Wiring | Phase 149 (anchor; continued 150 TX+NY, 151 FL) | ✅ complete (verified all-144 by Phase 152 gate) |
+| USHC-04 Headshots | Phase 149 (anchor; continued 150 TX+NY, 151 FL) | ✅ complete (verified all-144 by Phase 152 gate) |
+| USHC-05 Stances | Phase 149 (anchor; continued 150 TX+NY, 151 FL) | ✅ complete (verified all-144 by Phase 152 gate) |
+| USHC-06 Verification Gate | Phase 152 | ✅ complete |
 | USHC-07 FL Post-Primary Re-Check | Phase 153 (date-gated — executes ≥ 2026-08-18) | pending |
 
 > **Cross-cutting note:** USHC-02/03/04/05 are state-partitioned requirements delivered incrementally across the three seeding phases — **Phase 149 (CA)** is the anchor (pattern + pipeline established), **Phase 150 (TX+NY)** and **Phase 151 (FL)** continue them. Phase 152 asserts full 144-district completion. Coverage is 100%: all 7 requirements mapped, no orphans.

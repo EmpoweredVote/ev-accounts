@@ -2,8 +2,8 @@
 gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
-status: verifying
-last_updated: "2026-06-30T04:18:08.115Z"
+status: ready_to_plan
+last_updated: 2026-06-30T04:24:01.119Z
 last_activity: 2026-06-30
 progress:
   total_phases: 6
@@ -11,6 +11,7 @@ progress:
   total_plans: 32
   completed_plans: 32
   percent: 83
+stopped_at: Phase 152 complete (1/1) — ready to discuss Phase 153
 ---
 
 # Project State
@@ -20,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 152 — Coordinate Verification Gate
+**Current focus:** Phase 153 — fl post primary re check (time gated — executes after aug 18, 2026)
 **Last shipped:** v2.19 Local Civic Coverage — Phases 145–147 (inline-executed), formalized 2026-06-23. Falls Church VA (17) + Greene County MO (13) + Springfield MO (16): 46 records, 4 geofence boundaries, 118 evidence-only stances (0 unsourced), 46 headshots, 3 essentials coverage entries; LCC-01..05 closed. Migrations 1047–1049; git range a488232a → ef1a364f.
 
 ## Current Position
 
-Phase: 152 (Coordinate Verification Gate) — EXECUTING
-Plan: 1 of 1
-Status: Phase complete — ready for verification
+Phase: 153
+Plan: Not started
+Status: Ready to plan
 Last activity: 2026-06-30
 
 ### Phase 150 done this session (commits on master, data live in prod):
