@@ -84,10 +84,10 @@ All 8 Wave-2 states follow the TX+NY pattern from Phase 150: author `elections` 
 
 Plans:
 **Wave 1**
-- [ ] 154-01-PLAN.md — DB incumbent->politician_id map (all 8 states, by NATIONAL_LOWER+geo_id) + per-incumbent federal-24 stance-gap + vacancy/special-seat enumeration (incl. GA-14 Query-C check); emits 154-incumbent-map.csv (113 rows)
+- [x] 154-01-PLAN.md — DB incumbent->politician_id map (all 8 states, by NATIONAL_LOWER+geo_id) + per-incumbent federal-24 stance-gap + vacancy/special-seat enumeration (incl. GA-14 Query-C check); emits 154-incumbent-map.csv (113 rows)
 
 **Wave 2** *(blocked on 154-01)*
-- [ ] 154-02-PLAN.md — verified Nov-3 field table (89 decided + 24 pending-primary) with non-incumbent-nominee flags + the four special seats (GA-13/NJ-11/VA-11/GA-14); CSV validator + write-free 154-verify.sql baseline gate (asserts no MI/VA decided field)
+- [x] 154-02-PLAN.md — verified Nov-3 field table (89 decided + 24 pending-primary) with non-incumbent-nominee flags + the four special seats (GA-13/NJ-11/VA-11/GA-14); CSV validator + write-free 154-verify.sql baseline gate (asserts no MI/VA decided field)
 
 ---
 
@@ -189,7 +189,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 154. Field Resolution + Stance-Gap Diagnostic | 0/2 | Not started | - |
+| 154. Field Resolution + Stance-Gap Diagnostic | 2/2 | Complete   | 2026-06-30 |
 | 155. PA + IL Candidate Seeding (create races) | 0/? | Not started | - |
 | 156. OH + GA + NC Candidate Seeding (create races) | 0/? | Not started | - |
 | 157. NJ Candidate Seeding (create races) | 0/? | Not started | - |
