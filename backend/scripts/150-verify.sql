@@ -326,7 +326,26 @@ BEGIN
     -- and Ballotpedia carry only bullet-point slogans ("SECURE THE BORDER", "ENERGY INDEPENDENCE",
     -- "SAFEGUARD SENIORS' BENEFITS") with no policy specifics that pin a chair; no completed Candidate
     -- Connection survey. Per chairs-not-polarity, ambiguous slogans cannot pin a value; party-inference refused.
-    ('66e11441-bc75-4d06-b5b3-d371463abef4'::uuid, 'Eric Flores TX-34 (-4813401): no fetchable primary-source positions -- campaign site + Ballotpedia carry only bullet-point slogans (SECURE THE BORDER / ENERGY INDEPENDENCE / SAFEGUARD SENIORS BENEFITS) with no chair-pinning specifics; no Candidate Connection survey; party-inference refused')
+    ('66e11441-bc75-4d06-b5b3-d371463abef4'::uuid, 'Eric Flores TX-34 (-4813401): no fetchable primary-source positions -- campaign site + Ballotpedia carry only bullet-point slogans (SECURE THE BORDER / ENERGY INDEPENDENCE / SAFEGUARD SENIORS BENEFITS) with no chair-pinning specifics; no Candidate Connection survey; party-inference refused'),
+    -- 150-11 (NY new candidates): 15 genuinely-no-record candidates -- obscure challengers in safe seats
+    -- and thin minor-line candidates (D-02). No completed Candidate Connection survey, no Ballotpedia
+    -- campaign-website quote, and no campaign-site issues content (only social-media pages or signup
+    -- splash); party-inference refused. The other 18 new NY candidates ARE stanced (federal-24 or per-topic skip).
+    ('3e01989c-c39a-4b5b-8241-33b94b0a5723'::uuid, 'Chris Gallant NY-1 (-3610101): no fetchable positions -- no CC survey, no campaign-site quote, no issues content surfaced; party-inference refused'),
+    ('10694e2e-674a-434b-8494-8078bfd74b1d'::uuid, 'Joseph Chou NY-6 (-3610601): no fetchable positions -- only an Instagram page, no CC survey or issues content; party-inference refused'),
+    ('089af06d-5b18-42cc-8600-69e7805157af'::uuid, 'Lewis Mizrahi NY-8 (-3610801): no fetchable positions -- no CC survey, no campaign site, no issues content; party-inference refused'),
+    ('55523050-7ac6-40c6-8f6b-7548344c2938'::uuid, 'Michael DeCillis NY-11 (-3611101): no fetchable positions -- only a Facebook page, no CC survey or campaign-site issues; party-inference refused'),
+    ('1e3c7e39-81c3-4681-8899-15f8733b7a9d'::uuid, 'Caroline Shinkle NY-12 (-3611202): no fetchable positions -- only social-media pages, no CC survey or issues content; party-inference refused'),
+    ('bc3a324b-7610-4d2c-a7c7-962e1e8676e6'::uuid, 'Jomo M. Williams NY-13 (-3611302): no fetchable positions -- no dedicated Ballotpedia article, no campaign site/issues surfaced; party-inference refused'),
+    ('6e44f905-4434-4a2a-9128-61f205832ca5'::uuid, 'Bob Cohen NY-13 WF (-3611303): minor-line (Working Families) candidate -- no CC survey, no campaign-site quote, no issues content; party-inference refused'),
+    ('759855ff-3d90-4009-9e33-7f9b56665922'::uuid, 'Diamant Hysenaj NY-14 (-3611401): no fetchable positions -- only social-media pages, no CC survey or issues content; party-inference refused'),
+    ('9e676848-0c44-4032-a99e-ee71cd1a457a'::uuid, 'Stylo Sapaskis NY-15 (-3611501): no fetchable positions -- no CC survey, no campaign site, no issues content; party-inference refused'),
+    ('c77fc70d-5a01-442c-8ae9-696c37b74009'::uuid, 'Jacqueline Auringer NY-18 (-3611801): no fetchable positions -- no CC survey, no campaign-site quote, no issues content; party-inference refused'),
+    ('6476f3b8-8726-4cb7-a587-693fa8cfd7fa'::uuid, 'Ralph Ambrosio NY-20 (-3612001): no fetchable positions -- only social-media pages, no CC survey or campaign-site issues; party-inference refused'),
+    ('a7251548-0d88-4448-b729-a7cc3906e59f'::uuid, 'Robert Smullen NY-21 Conservative (-3612103): minor-line candidate -- no CC survey, no campaign-site quote, only Assembly social media; party-inference refused'),
+    ('ce26e99b-dbb7-44b1-ac55-dc2e8f936ee6'::uuid, 'Aaron Gies NY-23 (-3612301): no fetchable positions -- only social-media/faculty pages, no CC survey or campaign-site issues; party-inference refused'),
+    ('76cd8771-d971-46f0-b9fa-fe4afafa7aad'::uuid, 'George Marsh NY-5 (-3610501): no fetchable positions -- no CC survey, no campaign site, no issues content; party-inference refused'),
+    ('3d9c40d1-62aa-44e5-ab42-116315bc48a8'::uuid, 'Jennifer Moore NY-10 (-3611002): no fetchable positions -- no CC survey, no campaign-site quote, no issues content; party-inference refused')
   ) AS v(politician_id, reason)
   ORDER BY politician_id;
 
