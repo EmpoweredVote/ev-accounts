@@ -222,6 +222,7 @@ BEGIN
   INSERT INTO _winners (st, geo_id, who) VALUES
     ('PA','4203','Chris Rabb'),      -- PA-3 (Evans retired)
     ('IL','1702','Donna Miller'),    -- IL-2 (Kelly -> Senate)
+    ('IL','1704','Patty Garcia'),    -- IL-4 (García retired) — certified D nominee re-confirmed in 155-04
     ('IL','1707','La Shawn Ford'),   -- IL-7 (Davis retired)
     ('IL','1708','Melissa Bean'),    -- IL-8 (Krishnamoorthi -> Senate)
     ('IL','1709','Daniel Biss');     -- IL-9 (Schakowsky retired)
@@ -238,12 +239,16 @@ BEGIN
   RAISE NOTICE 'PASS D-04: 6 lost/retired incumbents absent; certified nominees active (IL-4 winner pin added by 155-04)';
 
   -- ===== D-02 — minor-line / multi-candidate fields seeded (party-agnostic presence) ==
+  -- NOTE: PA independents (PA-10 Harman/Long, PA-13 Thomas) are DEFERRED to a post-Aug-10 date-gated
+  -- re-check — PA's independent nomination-paper deadline is Aug 3, 2026 and none are ballot-certified
+  -- as of seed time (155-03 SUMMARY). They are NOT seeded this phase, so they are NOT asserted here.
+  -- IL independents/new-party petition directly onto the general ballot (confirmed Ballotpedia/Wikipedia
+  -- general-election lists) and ARE seeded.
   CREATE TEMP TABLE _minor (st text, geo_id text, who text) ON COMMIT DROP;
   INSERT INTO _minor (st, geo_id, who) VALUES
-    ('PA','4210','Isabelle Harman'),  -- PA-10 Independent
-    ('PA','4210','Steven Long'),      -- PA-10 Independent
-    ('PA','4213','Cody Thomas'),      -- PA-13 Independent
-    ('IL','1702','Ashley Banks');     -- IL-2 Independent
+    ('IL','1702','Ashley Banks'),         -- IL-2 Independent
+    ('IL','1704','Ed Hershey'),           -- IL-4 Working Class Party
+    ('IL','1704','Byron Sigcho-Lopez');   -- IL-4 Independent
   SELECT COUNT(*) INTO v_minor_missing
   FROM _minor m
   WHERE NOT EXISTS (
@@ -252,9 +257,9 @@ BEGIN
       AND h.candidate_status = 'active' AND lower(h.full_name) = lower(m.who)
   );
   IF v_minor_missing <> 0 THEN
-    RAISE EXCEPTION 'FAIL D-02: % minor-line candidate(s) (Harman/Long/Thomas/Banks) not seeded as active', v_minor_missing;
+    RAISE EXCEPTION 'FAIL D-02: % minor-line candidate(s) (IL-2 Banks / IL-4 Hershey+Sigcho-Lopez) not seeded as active', v_minor_missing;
   END IF;
-  RAISE NOTICE 'PASS D-02: PA-10 Harman+Long / PA-13 Thomas / IL-2 Banks seeded as active (minor lines not dropped)';
+  RAISE NOTICE 'PASS D-02: IL-2 Banks + IL-4 Hershey/Sigcho-Lopez seeded as active (minor lines not dropped; PA independents deferred to date-gated re-check)';
 
   -- ==========================================================================
   -- In-scope STANCE/HEADSHOT sets (D-01 symmetry — BOTH states exclude incumbents).
