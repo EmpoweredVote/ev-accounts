@@ -57,7 +57,7 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| USHC2-01 Field Resolution | Phase 154 | Pending |
+| USHC2-01 Field Resolution | Phase 154 | Done (2026-06-30) |
 | USHC2-02 Candidate Records | Phase 155 (anchor), 156, 157, 159 (MI) | Pending |
 | USHC2-03 Race Wiring | Phase 155 (anchor), 156, 157, 159 (MI) | Pending |
 | USHC2-04 Headshots | Phase 155 (anchor), 156, 157, 159 (MI) | Pending |
