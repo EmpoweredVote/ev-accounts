@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v2.21
 milestone_name: 2026 US House Candidate Coverage (Wave 2)
-status: planning
-last_updated: "2026-06-30T05:43:31.095Z"
-last_activity: 2026-06-30
+status: completed
+last_updated: "2026-06-30T07:11:43.486Z"
+last_activity: 2026-06-30 — v2.21 ROADMAP.md written
 progress:
   total_phases: 5
   completed_phases: 0
@@ -156,9 +156,9 @@ None at roadmap time. Run diagnostic queries at Phase 154 plan authoring:
 
 ## Session Continuity
 
-Last session: 2026-06-30
-Stopped at: v2.21 roadmap written
-Resume file: None
+Last session: 2026-06-30T07:11:43.476Z
+Stopped at: Phase 154 context gathered
+Resume file: .planning/phases/154-field-resolution-stance-gap-diagnostic/154-CONTEXT.md
 
 ## Operator Next Steps
 
