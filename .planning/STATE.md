@@ -2,15 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.21
 milestone_name: 2026 US House Candidate Coverage (Wave 2)
-status: executing
-last_updated: "2026-06-30T18:39:55.422Z"
+status: ready_to_plan
+last_updated: 2026-06-30T19:09:02.241Z
 last_activity: 2026-06-30 -- Phase 154 execution started
 progress:
   total_phases: 6
   completed_phases: 0
   total_plans: 2
-  completed_plans: 0
+  completed_plans: 34
   percent: 0
+stopped_at: Phase 154 complete (2/2) — ready to discuss Phase 159
 ---
 
 # Project State
@@ -20,15 +21,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-30 after v2.21 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 154 — Field Resolution + Stance-Gap Diagnostic
+**Current focus:** Phase 159 — mi candidate seeding verification date gated primary aug 4 2
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 154 (Field Resolution + Stance-Gap Diagnostic) — EXECUTING
-Plan: 1 of 2
-Status: Executing Phase 154
-Last activity: 2026-06-30 -- Phase 154 execution started
+Phase: 159
+Plan: Not started
+Status: Ready to plan
+Last activity: 2026-06-30
 
 ## v2.21 Phase Dependencies
 

@@ -80,7 +80,7 @@ All 8 Wave-2 states follow the TX+NY pattern from Phase 150: author `elections` 
   3. A stance-gap / existence diagnostic maps each district's sitting incumbent (all 8 states) to its existing `essentials.politicians` record (`politician_id`) and reports current stance count. Per D-02 the diagnostic only **reports** incumbents below the federal-24 threshold — partial incumbents are NOT topped up in Wave 2; only new candidates + zero-stance incumbents get stance research.
   4. The set of genuinely-new candidates needing records (challengers + open-seat/special-seated candidates) is enumerated per state and per district, distinct from incumbents/previously-seeded figures that reuse existing records; a per-state new-record count is produced as the authoritative input for each seeding phase (MI + VA counts are provisional until Phase 159).
 
-**Plans:** 2 plans, 2 waves
+**Plans:** 2/2 plans complete
 
 Plans:
 **Wave 1**
@@ -189,7 +189,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 154. Field Resolution + Stance-Gap Diagnostic | 2/2 | Complete   | 2026-06-30 |
+| 154. Field Resolution + Stance-Gap Diagnostic | 2/2 | Complete    | 2026-06-30 |
 | 155. PA + IL Candidate Seeding (create races) | 0/? | Not started | - |
 | 156. OH + GA + NC Candidate Seeding (create races) | 0/? | Not started | - |
 | 157. NJ Candidate Seeding (create races) | 0/? | Not started | - |

@@ -12,7 +12,7 @@
 
 ### Field Resolution
 
-- [ ] **USHC2-01**: The verified Nov-3 general-ballot field is identified for all 113 Wave-2 districts (PA/IL/OH/GA/NC/MI/NJ/VA) — major-party nominees + ballot-qualified independents/third-party — with each race where the incumbent is NOT the 2026 nominee (lost-primary / retirement / redistricting / vacancy / deceased) explicitly flagged via the nominee-status taxonomy, and the per-state challenger/open-seat stance gap diagnosed against existing incumbent records.
+- [x] **USHC2-01**: The verified Nov-3 general-ballot field is identified for all 113 Wave-2 districts (PA/IL/OH/GA/NC/MI/NJ/VA) — major-party nominees + ballot-qualified independents/third-party — with each race where the incumbent is NOT the 2026 nominee (lost-primary / retirement / redistricting / vacancy / deceased) explicitly flagged via the nominee-status taxonomy, and the per-state challenger/open-seat stance gap diagnosed against existing incumbent records.
 
 ### Candidate Records
 
