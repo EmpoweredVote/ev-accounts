@@ -215,7 +215,7 @@ Plans:
 Plans:
 **Wave 1**
 
-- [ ] 152-01-PLAN.md — consolidated read-only milestone gate: author 152-verify.sql (8 USHC-06 assertions over all 144 districts) + 152-coordinate-smoke.ts (4-state coordinate surfacing)
+- [x] 152-01-PLAN.md — consolidated read-only milestone gate: author 152-verify.sql (8 USHC-06 assertions over all 144 districts) + 152-coordinate-smoke.ts (4-state coordinate surfacing)
 
 ---
 
@@ -245,7 +245,7 @@ Plans:
 | 149. CA Candidate Seeding (race_candidates only) | 11/11 | Complete    | 2026-06-29 |
 | 150. TX + NY Candidate Seeding (create races) | 12/12 | Complete   | 2026-06-29 |
 | 151. FL Candidate Seeding (provisional) | 6/6 | Complete   | 2026-06-29 |
-| 152. Coordinate Verification Gate | 0/1 | Planned | - |
+| 152. Coordinate Verification Gate | 1/1 | Complete   | 2026-06-30 |
 | 153. FL Post-Primary Re-Check (date-gated Aug 18) | 0/? | Not started | - |
 
 ---

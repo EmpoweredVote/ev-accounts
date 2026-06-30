@@ -32,7 +32,7 @@
 
 ### Verification
 
-- [ ] **USHC-06**: A consolidated read-only gate proves the milestone — for each Wave-1 state a test address resolves to its district and the House race displays the expected candidate field on `/elections`; asserts 0 unsourced stance rows and 0 duplicate-incumbent politician records across the 144 districts.
+- [x] **USHC-06**: A consolidated read-only gate proves the milestone — for each Wave-1 state a test address resolves to its district and the House race displays the expected candidate field on `/elections`; asserts 0 unsourced stance rows and 0 duplicate-incumbent politician records across the 144 districts.
 
 ### Post-Primary Re-Check (time-gated)
 

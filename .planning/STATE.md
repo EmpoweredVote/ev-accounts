@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.20
 milestone_name: 2026 US House Candidate Coverage
-status: executing
-last_updated: "2026-06-30T04:07:52.621Z"
-last_activity: 2026-06-30 -- Phase 152 planning complete
+status: verifying
+last_updated: "2026-06-30T04:18:08.115Z"
+last_activity: 2026-06-30
 progress:
   total_phases: 6
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 32
-  completed_plans: 31
-  percent: 67
+  completed_plans: 32
+  percent: 83
 ---
 
 # Project State
@@ -20,15 +20,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 150 — tx-ny-candidate-seeding-create-races-then-candidates
+**Current focus:** Phase 152 — Coordinate Verification Gate
 **Last shipped:** v2.19 Local Civic Coverage — Phases 145–147 (inline-executed), formalized 2026-06-23. Falls Church VA (17) + Greene County MO (13) + Springfield MO (16): 46 records, 4 geofence boundaries, 118 evidence-only stances (0 unsourced), 46 headshots, 3 essentials coverage entries; LCC-01..05 closed. Migrations 1047–1049; git range a488232a → ef1a364f.
 
 ## Current Position
 
-Phase: 150 (TX+NY candidate seeding) — IN PROGRESS, 6/12 plans done (Waves 1–4 complete)
-Plan: Wave 3 stance batches (150-07..11) — VALIDATION BATCH PAUSED (see blocker below)
-Status: Ready to execute
-Last activity: 2026-06-30 -- Phase 152 planning complete
+Phase: 152 (Coordinate Verification Gate) — EXECUTING
+Plan: 1 of 1
+Status: Phase complete — ready for verification
+Last activity: 2026-06-30
 
 ### Phase 150 done this session (commits on master, data live in prod):
 
@@ -270,9 +270,9 @@ None for v2.18 start. Run the live diagnostic queries at plan authoring time:
 
 ## Session Continuity
 
-Last session: 2026-06-29T18:13:47.327Z
+Last session: 2026-06-30T04:18:08.104Z
 Stopped at: Phase 150 context gathered
-Resume file: .planning/phases/150-tx-ny-candidate-seeding-create-races-then-candidates/150-CONTEXT.md
+Resume file: None
 
 ## Decisions
 
