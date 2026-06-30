@@ -67,7 +67,7 @@ All 8 Wave-2 states follow the TX+NY pattern from Phase 150: author `elections` 
 
 #### Phase 154: Field Resolution + Stance-Gap Diagnostic
 
-**Goal:** The verified Nov-3 general-ballot field is locked for the **7 decided states** (PA/IL/OH/GA/NC/NJ/VA = 100 districts), every district where the incumbent is NOT the 2026 nominee is explicitly flagged, and every district incumbent **across all 8 states (incl. MI)** is mapped to its existing `politician_id` — so no seeding phase can create a duplicate incumbent or surface a non-candidate. MI's *nominees* are deferred to date-gated Phase 159 (MI primary is Aug 4, 2026); MI districts are resolved here only to the declared-field + incumbent-map level. See `154-CONTEXT.md` D-01..D-04 for the four locked decisions this phase implements.
+**Goal:** The verified Nov-3 general-ballot field is locked for the **6 decided states** (PA/IL/OH/GA/NC/NJ = 89 districts), every district where the incumbent is NOT the 2026 nominee is explicitly flagged, and every district incumbent **across all 8 states (incl. MI + VA)** is mapped to its existing `politician_id` — so no seeding phase can create a duplicate incumbent or surface a non-candidate. **MI's AND VA's** *nominees* are deferred to date-gated Phase 159 (both 2026 congressional primaries are Aug 4, 2026 — VA moved its primary from June to Aug 4, verified in `154-RESEARCH.md`); MI + VA districts are resolved here only to the declared-field + incumbent-map level. See `154-CONTEXT.md` D-01..D-04 for the four locked decisions this phase implements.
 
 **Depends on:** Nothing (first phase; diagnostic gates everything else — must run before any seeding)
 
@@ -75,12 +75,19 @@ All 8 Wave-2 states follow the TX+NY pattern from Phase 150: author `elections` 
 
 **Success Criteria** (what must be TRUE):
 
-  1. A per-district field table exists for all 113 districts listing each Nov-3 general-ballot candidate (the inclusion bar is **every candidate ballot-qualified for the Nov-3 general** — major-party nominees + ballot-qualified independents/third-party + certified write-ins; D-03). The 7 decided states (PA/IL/OH/GA/NC/NJ/VA = 100) are marked `decided`; **MI (13) is marked `pending-primary (Aug-4)`** — its declared candidates are captured but nominees are resolved in Phase 159.
-  2. Every district where the incumbent is NOT the 2026 nominee (lost-primary, retirement, open seat, vacancy, deceased, special-seated) is explicitly flagged — including GA-13 (open/vacancy), VA-11 (Connolly vacancy / 2025 special), NJ-11 (Sherrill vacated → NJ governor) — by resolving the **current officeholder AND the 2026 nominee from an official/results source, never derived from incumbency** (D-04). Any current member seated by a post-v2.17 special election (not yet in the DB) is enumerated as a new-record need, taxonomy-tagged; no ghost incumbent records.
+  1. A per-district field table exists for all 113 districts listing each Nov-3 general-ballot candidate (the inclusion bar is **every candidate ballot-qualified for the Nov-3 general** — major-party nominees + ballot-qualified independents/third-party + certified write-ins; D-03). The 6 decided states (PA/IL/OH/GA/NC/NJ = 89) are marked `decided`; **MI (13) and VA (11) = 24 are marked `pending-primary (Aug-4)`** — their declared candidates are captured but nominees are resolved in date-gated Phase 159.
+  2. Every district where the incumbent is NOT the 2026 nominee (lost-primary, retirement, open seat, vacancy, deceased, special-seated) is explicitly flagged — including GA-13 (open/vacancy), VA-11 (Connolly vacancy → Walkinshaw special-seated Sep 2025), NJ-11 (Sherrill vacated → NJ governor) — by resolving the **current officeholder AND the 2026 nominee from an official/results source, never derived from incumbency** (D-04). Any current member seated by a post-v2.17 special election (not yet in the DB) is enumerated as a new-record need, taxonomy-tagged; no ghost incumbent records.
   3. A stance-gap / existence diagnostic maps each district's sitting incumbent (all 8 states) to its existing `essentials.politicians` record (`politician_id`) and reports current stance count. Per D-02 the diagnostic only **reports** incumbents below the federal-24 threshold — partial incumbents are NOT topped up in Wave 2; only new candidates + zero-stance incumbents get stance research.
-  4. The set of genuinely-new candidates needing records (challengers + open-seat/special-seated candidates) is enumerated per state and per district, distinct from incumbents/previously-seeded figures that reuse existing records; a per-state new-record count is produced as the authoritative input for each seeding phase (MI's count is provisional until Phase 159).
+  4. The set of genuinely-new candidates needing records (challengers + open-seat/special-seated candidates) is enumerated per state and per district, distinct from incumbents/previously-seeded figures that reuse existing records; a per-state new-record count is produced as the authoritative input for each seeding phase (MI + VA counts are provisional until Phase 159).
 
-**Plans:** TBD
+**Plans:** 2 plans, 2 waves
+
+Plans:
+**Wave 1**
+- [ ] 154-01-PLAN.md — DB incumbent->politician_id map (all 8 states, by NATIONAL_LOWER+geo_id) + per-incumbent federal-24 stance-gap + vacancy/special-seat enumeration (incl. GA-14 Query-C check); emits 154-incumbent-map.csv (113 rows)
+
+**Wave 2** *(blocked on 154-01)*
+- [ ] 154-02-PLAN.md — verified Nov-3 field table (89 decided + 24 pending-primary) with non-incumbent-nominee flags + the four special seats (GA-13/NJ-11/VA-11/GA-14); CSV validator + write-free 154-verify.sql baseline gate (asserts no MI/VA decided field)
 
 ---
 
@@ -182,7 +189,7 @@ All 8 Wave-2 states follow the TX+NY pattern from Phase 150: author `elections` 
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 154. Field Resolution + Stance-Gap Diagnostic | 0/? | Not started | - |
+| 154. Field Resolution + Stance-Gap Diagnostic | 0/2 | Not started | - |
 | 155. PA + IL Candidate Seeding (create races) | 0/? | Not started | - |
 | 156. OH + GA + NC Candidate Seeding (create races) | 0/? | Not started | - |
 | 157. NJ Candidate Seeding (create races) | 0/? | Not started | - |
