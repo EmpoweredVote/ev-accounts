@@ -22,9 +22,22 @@ The foundational account infrastructure for Empowered Vote. A three-tier system 
 
 Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
 
-## Current Milestone: Between milestones (v2.20 shipped 2026-06-30)
+## Current Milestone: v2.21 2026 US House Candidate Coverage (Wave 2)
 
-v2.20 2026 US House Candidate Coverage (Wave 1) is complete and archived. Next milestone TBD — see **Next** under Current State (v2.21 House Wave 2, or more local civic coverage). Phase 153 (FL post-primary re-check) is a date-gated carry-forward (≥ 2026-08-18).
+**Goal:** Every resident of the next 8 largest-delegation states can enter their address into Elections and see their 2026 US House race — the actual Nov-3 general-ballot field — each candidate with a headshot and chairs-not-polarity, evidence-only federal-24 stances. Reuses the fully-proven v2.20 elections-feed pipeline.
+
+**Scope — 113 districts across 8 states (all delegations ≥ 11):** PA 17 · IL 17 · OH 15 · GA 14 · NC 14 · MI 13 · NJ 12 · VA 11.
+
+**Target features:**
+- 2026 US House candidate records for the Nov-3 general-ballot field (major-party nominees + ballot-qualified independents/third-party). New work is challengers + open-seat candidates; sitting incumbents are already stanced (v2.16/v2.17) and reuse existing records, so a stance-gap diagnostic runs at plan time.
+- Headshot per new candidate (find-headshots conventions).
+- Sourced compass stances per new candidate across the **federal 24-topic** set — chairs-not-polarity, every answer backed by a real fetched source, honest-skip where no evidence; never inferred from party.
+- Each US House race surfaces for a resident's address on `/elections` via `races` + `race_candidates` (pure-data, Path B — no backend code; surfacing path proven in v2.20).
+- Consolidated read-only verification gate + coordinate smoke covering all 8 states.
+
+**Out of scope (v2.21):** the remaining ~178 districts in the 38 smaller-delegation states (→ Wave 3+), Senate races (own track), challenger `finance_summary` (→ later), primary-only/withdrawn candidates, the curated-out 20 non-federal topics, FL post-primary re-check (Phase 153, separate date-gated carry-forward ≥ 2026-08-18).
+
+**Phase numbering:** continues from v2.20; Phase 153 is the reserved FL carry-forward, so Wave 2 phases start at **154**.
 
 <details>
 <summary>v2.20 2026 US House Candidate Coverage (Wave 1) — goal &amp; scope (shipped)</summary>
@@ -455,4 +468,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-30 — after v2.20 2026 US House Candidate Coverage (Wave 1) milestone. Shipped CA/TX/FL/NY = 144 districts, 415 active candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed, USHC-07/Phase-153 carried forward (time-gated ≥ 2026-08-18). Next milestone TBD (v2.21 House Wave 2 or more local coverage).*
+*Last updated: 2026-06-30 — v2.21 2026 US House Candidate Coverage (Wave 2) started. Scope: PA/IL/OH/GA/NC/MI/NJ/VA = 113 districts (all delegations ≥ 11), reusing the proven v2.20 elections-feed pipeline (challengers + open-seat; incumbents already stanced). Wave 2 phases start at 154 (153 reserved for the FL post-primary re-check). Previous milestone v2.20 (CA/TX/FL/NY = 144 districts) shipped 2026-06-30.*

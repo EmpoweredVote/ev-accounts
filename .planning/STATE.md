@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.20
-milestone_name: 2026 US House Candidate Coverage
-status: Awaiting next milestone
-last_updated: "2026-06-30T04:31:47.125Z"
-last_activity: 2026-06-30 — Milestone v2.20 completed and archived
+milestone: v2.21
+milestone_name: 2026 US House Candidate Coverage (Wave 2)
+status: planning
+last_updated: "2026-06-30T05:43:31.095Z"
+last_activity: 2026-06-30
 progress:
-  total_phases: 6
-  completed_phases: 5
-  total_plans: 32
-  completed_plans: 32
-  percent: 83
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-06-20 after v2.18 milestone started)
 
 ## Current Position
 
-Phase: Milestone v2.20 complete
+Phase: Not started (defining requirements)
 Plan: —
-Status: Awaiting next milestone
-Last activity: 2026-06-30 — Milestone v2.20 completed and archived
+Status: Defining requirements
+Last activity: 2026-06-30 — Milestone v2.21 started
 
 ### Phase 150 done this session (commits on master, data live in prod):
 
