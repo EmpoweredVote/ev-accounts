@@ -2,6 +2,40 @@
 
 *A living document updated after each milestone. Lessons feed forward into future planning.*
 
+## Milestone: v2.20 — 2026 US House Candidate Coverage (Wave 1)
+
+**Shipped:** 2026-06-30
+**Phases:** 5 (148–152) | **Plans:** 32 | **Timeline:** ~2 days (scoped 2026-06-28, executed 2026-06-28→29, closed 06-30)
+
+### What Was Built
+The Nov-3 2026 US House general-ballot field for the four largest-delegation states — CA (52) / TX (38) / FL (28) / NY (26) = **144 districts, 415 active `race_candidates`** — surfacing on `/elections` for any in-district address via the elections feed (`races` + `race_candidates`, PostGIS `ST_Covers`). Federal-24 chairs-not-polarity stances (0 unsourced), headshots, 0 duplicate-incumbent records. Pure-data milestone, no backend code. Proven by the Phase 152 consolidated gate (`152-verify.sql` 8/8 + `152-coordinate-smoke.ts` 4/4).
+
+### What Worked
+- **Diagnostic-first phase (148) prevented the two highest-cost traps** — the v2.4 two-Andy-Barrs duplicate-incumbent failure and the lost-incumbent-primary assumption (NY-10 Goldman / NY-13 Espaillat both lost 6/23). Resolving the field + stance-gap up front meant the seeding phases never INSERTed a duplicate politician row.
+- **CA-turnkey-first sequencing (149) validated the pipeline** before the harder author-elections-then-candidates work in TX+NY (150) and FL (151). Each phase reused the prior's stance/headshot/repair scripts.
+- **Consolidated gate as a single milestone proof (152)** — one `152-verify.sql` re-asserting all-144 invariants + a 4-state coordinate smoke gave a clean, re-runnable green surface, mirroring the v2.18 `verify-phase-141-144.sql` precedent.
+- **0-unsourced as an existence check, not coverage** — the key insight that let the consolidated gate coexist with FL's intentionally-incomplete provisional field without false-failing.
+
+### What Was Inefficient
+- **Stance-researcher agents emit malformed CSVs** (trailing-comma 11-col rows, quadruple-`""""` quote typos, unquoted-reasoning-with-commas) — required a reusable relax-parse + canonical-restringify repair pipeline + `source_url_1` misalignment guard. Now standard, but cost rework in 149 before it was systematized.
+- **Quote verbatim-verification** — aggregator quote strings were only ~60% locatable on the exact cited URL; quotes were withheld from push (values+reasoning+sources only) pending a deferred Read-and-Rank pass.
+- **`milestone.complete` auto-extracted accomplishments were noisy** (CA-149-heavy, empty "Status:" lines) — hand-rewritten at close.
+
+### Patterns Established
+- **Pure-data elections-feed surfacing (Path B)**: `race_candidates.politician_id` NON-NULL (NULL = no stances/photo); never `office_id IS NULL` on a House race; party lives on `races.primary_party` only (antipartisan invariant, enforced at query layer + gate-asserted via `information_schema`).
+- **Provisional-field convention**: pre-primary fields seeded now with a `PROVISIONAL:` race-description sentinel + a date-gated re-check phase for the prune (two-path: `is_active=false` AND `candidate_status='withdrawn'`, never hard-DELETE).
+- **Consolidated milestone gate = fold per-phase gates' invariants into one all-scope assertion surface** + a multi-sample coordinate smoke asserting the challenger (not just incumbent) surfaces.
+
+### Key Lessons
+- A milestone-level "0 unsourced / 0 duplicate" gate must be an **existence check**, never a per-entity coverage requirement, or it false-fails on intentionally-deferred scope (FL pre-primary).
+- PL/pgSQL `RAISE` treats a literal `%` in the message as a format placeholder — escape `%%` or avoid it (`PROVISIONAL:*`).
+- Time-gated work (FL post-primary) is a legitimate **carry-forward at milestone close**, exactly like AZ-LtGov at v2.18 — ship the deliverable, document the carry-forward, don't block the milestone.
+
+### Cost Observations
+- Model mix: opus (planner/orchestrator) + sonnet (researchers/executor/verifier/checker).
+- Inline-sequential stance research at ≤3 concurrency (premium-tier rate-limit ceiling).
+- Notable: the diagnostic-first phase is the cheapest insurance in the program — it converts the two most expensive failure modes into plan-time facts.
+
 ## Milestone: v2.19 — Local Civic Coverage
 
 **Shipped:** 2026-06-23 (formalized retroactively)
