@@ -108,7 +108,18 @@ Plans:
   3. Every newly-seeded PA/IL candidate has a headshot (Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`; free-license, wrong-person-guarded; documented honest-skips where no free portrait exists); no candidate card surfaces party (party reads from `races.primary_party`).
   4. Every PA/IL candidate lacking federal-24 stances has sourced chairs-not-polarity stances — each answer paired to an `inform.politician_context` row with a real fetched source URL, 0 unsourced, primary-source-verified before push, honest-skip (per-topic or whole-record) where evidence is thin; already-stanced incumbents skipped via the Phase 154 diagnostic.
 
-**Plans:** TBD
+**Plans:** 9 plans
+
+Plans:
+- [ ] 155-01-PLAN.md — Author PA + IL elections + races scaffold (2 elections, 34 races on existing offices)
+- [ ] 155-02-PLAN.md — Author write-free 155-verify.sql per-state gate (USHC2-02/03/04/05 + decisions)
+- [ ] 155-03-PLAN.md — PA reconciliation + new records + race_candidates wiring (17 districts)
+- [ ] 155-04-PLAN.md — IL reconciliation (certified-general re-confirm) + records + race_candidates (17 districts)
+- [ ] 155-05-PLAN.md — Shared PA/IL headshot pipeline + run PA new candidates
+- [ ] 155-06-PLAN.md — Run shared headshot pipeline for IL new candidates
+- [ ] 155-07-PLAN.md — Federal-24 chairs-not-polarity stances for new PA candidates (0 unsourced)
+- [ ] 155-08-PLAN.md — Federal-24 chairs-not-polarity stances for new IL candidates (0 unsourced)
+- [ ] 155-09-PLAN.md — Run consolidated 155-verify.sql green + PA/IL coordinate-surfacing smoke
 
 ---
 
