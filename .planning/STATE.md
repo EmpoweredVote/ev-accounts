@@ -27,9 +27,10 @@ See: .planning/PROJECT.md (updated 2026-06-30 after v2.21 milestone started)
 ## Current Position
 
 Phase: 155
-Plan: Not started (9 plans authored, plan-checker PASS)
-Status: Ready to execute
+Plan: Waves 1–2 complete (155-01..04 of 9); paused before Wave 3 (headshots/stances)
+Status: In progress — PA+IL races + candidate records seeded to prod; Wave 3–4 pending
 Last activity: 2026-06-30
+Carry-forward opened: PA independents (Aug-3 filing deadline) → post-Aug-10 date-gated re-check (FL-153 pattern)
 
 ## v2.21 Phase Dependencies
 
