@@ -267,7 +267,14 @@ BEGIN
   -- politician_id (143 lesson). POPULATED-BY-157-05: thin/no-source minor & first-time challengers
   -- whose primary sources are dead/JS-walled; party-inference refused (chairs-not-polarity).
   CREATE TEMP TABLE _stance_skip (politician_id uuid, reason text) ON COMMIT DROP;
-  -- (populated by 157-05)
+  -- POPULATED-BY-157-05: 4 of 15 new NJ candidates are whole-record honest-skips — no fetchable
+  -- primary-source positions anywhere (dead campaign sites, empty Ballotpedia, no coverage);
+  -- party-inference refused (chairs-not-polarity). ORDER BY politician_id (143 lesson).
+  INSERT INTO _stance_skip (politician_id, reason) VALUES
+    ('3fa31dfc-90ab-432a-be41-a27d91dbeb92', 'Ryan Michael Kelly NJ-3 (Affordability Accountability People) — no campaign site, empty Ballotpedia, no coverage; party-line name is not a platform'),
+    ('a339de8c-3d8a-49ea-a3e6-c6d9aa1db870', 'Damon Galdo NJ-1 — campaign sites ECONNREFUSED, empty Ballotpedia, NJ Globe coverage is bio/horse-race only, no policy positions'),
+    ('ce32b48e-7caa-4814-94fc-5e78880294d1', 'Michael McGuire NJ-3 — campaign site under construction, empty Ballotpedia, only vague affordability/veterans themes; no scorable positions'),
+    ('ceb5cd67-4ef1-4a33-a100-bfb6c0ae90f3', 'Adam Rueda NJ-5 (Humane Sustainable Future) — no campaign site, empty Ballotpedia, no coverage; party-line name is not a platform');
 
   -- Headshot honest-skip set (no free-license portrait anywhere). Pinned by exact external_id WITH
   -- ORDER BY external_id (143 lesson). POPULATED-BY-157-04 (NJ headshot pass).
