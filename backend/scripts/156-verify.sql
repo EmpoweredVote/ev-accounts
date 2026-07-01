@@ -353,7 +353,22 @@ BEGIN
     ('afb4ccea-8530-4e54-a075-9b4168924326', 'Elizabeth Kirtley OH-6 — site ECONNREFUSED, no record'),
     ('d923d20a-3ba6-46a2-a0d2-49534685ca3c', 'Cleophus Dulaney OH-3 — site ECONNREFUSED, Ballotpedia stub'),
     ('ec72b7c5-635a-4590-a730-7e1bd62ce2f7', 'John Hancock OH-1 (L) — no campaign/platform; LPO lists Stoops for OH-1 (154 field flag)');
-  -- (156-08 GA + 156-09 NC skip rows appended below by those waves)
+  INSERT INTO _stance_skip (politician_id, reason) VALUES
+    -- GA (156-08): 13 whole-record skips of 18 — no fetchable primary-source positions; party-inference refused
+    ('16aca704-48ca-40dc-826e-8af5bb12dee3', 'James Duffe GA-4 — campaign domains ECONNREFUSED, no record'),
+    ('23daee91-beb1-405d-be9b-c1a62f3de6fa', 'John Salvesen GA-5 — no reachable site/Ballotpedia/press'),
+    ('3467ec59-d701-4e4e-899b-34756dee3ebf', 'Anthony Kozycki GA-7 — all domains refused, no Ballotpedia'),
+    ('407ca254-9f51-4aa2-becb-2f1e9ca5ea70', 'Pamela DeLancy GA-10 — Ballotpedia empty, site redirects, no coverage'),
+    ('57a9bf3e-4889-4b35-8a44-57430e7717ae', 'Houston Gaines GA-10 — GA-legislature roll-call record JS-walled (SPA); Ballotpedia/OTI empty'),
+    ('66cae409-332e-4b3c-a352-675dcbb58863', 'Jasmine Clark GA-13 — GA-legislature roll-call record JS-walled (SPA); Ballotpedia/OTI empty'),
+    ('8f9a8213-108f-45b6-a3bc-295dbe19339a', 'Kevin Martin GA-6 — site has only values language, no positions'),
+    ('a8e23eef-136d-4cf1-bb0f-f5203c0eea81', 'Kelly Esti GA-8 — domains refused, no Ballotpedia/press'),
+    ('aacada00-5cff-4a4e-9bd6-c0e4935df79f', 'Jim Kingston GA-1 — no published issue positions (bio only)'),
+    ('be8701e2-af66-440f-84e4-1dd72525df86', 'Jonathan Chavez GA-13 — domains refused, no Ballotpedia/Wikipedia'),
+    ('d2e4cc46-d553-410a-8733-16692b7ae64e', 'Caitlyn Gegen GA-9 — no online footprint in fetchable sources'),
+    ('f7bf88b3-caa2-4856-9395-e0354b060828', 'Ceretta Smith GA-12 — site launching-soon placeholder, no content'),
+    ('fcd56384-a715-4ae9-8804-b24bdfa46768', 'Matt Day GA-2 — site offline, no Ballotpedia/OTI/Wikipedia');
+  -- (156-09 NC skip rows appended below)
 
   -- Headshot honest-skip set (no free-license portrait anywhere). Pinned by exact external_id WITH
   -- ORDER BY external_id (143 lesson). POPULATED-BY-156-06 (OH/GA/NC headshot pass).
