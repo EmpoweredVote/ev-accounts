@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v2.21
 milestone_name: 2026 US House Candidate Coverage
 status: executing
-stopped_at: Phase 158 complete (89-district gate); next Phase 159 (MI+VA, date-gated ≥ 2026-08-04)
-last_updated: "2026-07-01T17:30:00.000Z"
-last_activity: 2026-07-01 -- Phase 158 marked complete
+stopped_at: Phase 158 complete (89-district gate); Phase 159 REFRAMED to MI+VA primary-field-now + Aug-5 cull — planning
+last_updated: "2026-07-01T18:30:00.000Z"
+last_activity: 2026-07-01 -- Phase 159 reframed (seed primary field now, cull Aug 5); planning kicked off
 progress:
   total_phases: 6
   completed_phases: 5
@@ -113,6 +113,7 @@ Re-acknowledged at v2.20 close (2026-06-30).
 - Phase 157 edited: MI+NJ+VA -> NJ+VA (23 districts); MI split to date-gated Phase 159
 - Phase 158 edited: gate scoped to 100 decided-state districts; MI verified in 159
 - Phase 159 added: MI Candidate Seeding + Verification, date-gated >= 2026-08-04 (MI primary Aug 4)
+- Phase 159 REFRAMED (2026-07-01): "wait until Aug 4, seed decided nominees" -> "seed full pre-primary qualified field NOW (all parties, records+headshots+full federal-24 stances) + post-primary cull >= Aug 5". Applies FL's provisional-field pattern (Phase 151 seed -> 153 cull) to MI+VA. Rationale: serve primary voters at the Aug-4 civic moment; FL already does this (181-cand provisional field live) — MI/VA were the un-principled dark exception. DB-confirmed: FL 181 active cands, VA 0 (races scaffolded), MI 0 (fully dark). VA primary date verified Aug-4 (moved from June). Operator chose FULL coverage (accepts loser stance work discarded at cull).
 
 ### Key Decisions
 

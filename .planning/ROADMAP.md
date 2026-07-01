@@ -33,7 +33,7 @@
 - ✅ **v2.18 State Leaders** — Phases 141–144 (shipped 2026-06-22; elected Big 5 statewide execs, 209 offices / 50 states, 199 stance-covered + 10 honest-skips, consolidated gate all-PASS)
 - ✅ **v2.19 Local Civic Coverage** — Phases 145–147 (shipped 2026-06-23; Falls Church VA + Greene County MO + Springfield MO — 46 records / 118 stances / 46 headshots / 4 boundaries; inline-executed, formalized retroactively)
 - ✅ **v2.20 2026 US House Candidate Coverage (Wave 1)** — Phases 148–152 (shipped 2026-06-30; CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active candidates, federal-24 stances [0 unsourced], 0 dup-incumbent; consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward — time-gated ≥ 2026-08-18)
-- 🔄 **v2.21 2026 US House Candidate Coverage (Wave 2)** — Phases 154–159 (planning 2026-06-30; PA 17 / IL 17 / OH 15 / GA 14 / NC 14 / NJ 12 = 89 decided + MI 13 & VA 11 date-gated (both Aug-4 primaries) = 113 districts; Nov-3 general-ballot field, federal-24-topic chairs-not-polarity stances + headshots, pure-data elections-feed surfacing; USHC2-01..06)
+- 🔄 **v2.21 2026 US House Candidate Coverage (Wave 2)** — Phases 154–159 (planning 2026-06-30; PA 17 / IL 17 / OH 15 / GA 14 / NC 14 / NJ 12 = 89 decided (Phase 158 gate ✅) + MI 13 & VA 11 = 24 primary-field-now + Aug-5 cull (Phase 159; both Aug-4 primaries) = 113 districts; federal-24-topic chairs-not-polarity stances + headshots, pure-data elections-feed surfacing; USHC2-01..06)
 
 ## Phases
 
@@ -192,22 +192,25 @@ Plans:
 
 ---
 
-#### Phase 159: MI + VA Candidate Seeding + Verification (DATE-GATED — execute ≥ 2026-08-04, after the MI & VA primaries)
+#### Phase 159: MI + VA Primary-Field Coverage (seed NOW) + Post-Primary Cull (≥ 2026-08-05)
 
-**Goal:** Every Michigan **and Virginia** US House race surfaces its full Nov-3 candidate field on `/elections` — MI's and VA's `elections`/`races` rows authored, candidate records + `race_candidates` wired to the REAL post-primary nominees, headshots for newly-seeded candidates, federal-24 chairs-not-polarity stances, and a MI+VA verification gate — closing the milestone to the full 113 districts. MI (13) + VA (11) = 24 districts.
+**Strategy change (2026-07-01):** Reframed from "wait until Aug 4, seed decided nominees" to **"seed the full pre-primary qualified field NOW so MI + VA primary voters (voting Aug 4) can understand their options, then cull losers ≥ Aug 5"** — applying FL's proven provisional-field pattern (Phase 151 seed → Phase 153 cull) to MI + VA. Rationale: the tool's mission is to serve voters *at* the civic moment; a primary is the highest-engagement moment and in safe seats *is* the deciding contest. FL already does this (181-candidate provisional field live); MI/VA were the un-principled exception. Operator opted for **full** coverage (records + headshots + full federal-24 sourced stances on every qualified candidate), accepting that stance work on primary losers is discarded at the cull.
 
-**Depends on:** Phase 154 (verified MI + VA incumbent `politician_id` maps + declared fields) **AND date ≥ 2026-08-04** — both Michigan's and Virginia's 2026 congressional primaries are Aug 4, 2026, so nominees are not knowable before then; this phase seeds the REAL post-primary field, never a provisional one (decision D-01 in `154-CONTEXT.md`; VA-primary date verified in `154-RESEARCH.md`). Sequenced after Phase 158 (the decided-state gate); independent of 155/156/157 in data terms.
+**Goal:** Every Michigan **and Virginia** US House race surfaces its full pre-primary qualified candidate field (all parties) on `/elections` NOW — MI's and VA's `elections`/`races` rows authored/populated, candidate records + `race_candidates` wired for every ballot-qualified primary candidate, headshots, full federal-24 chairs-not-polarity stances — then a **post-primary cull sub-phase (≥ Aug 5)** prunes primary losers to `candidate_status='withdrawn'`/inactive and confirms advancing nominees, followed by the MI+VA verification gate. MI (13) + VA (11) = 24 districts.
+
+**Depends on:** Phase 154 (verified MI + VA incumbent `politician_id` maps + declared fields). **Seeding is NOT date-gated — execute now.** Only the cull sub-phase (159-C) is date-gated ≥ 2026-08-05 (day after the Aug-4 MI & VA primaries). Independent of 155/156/157 in data terms; the decided-state gate (158) is already complete.
 
 **Requirements:** USHC2-02, USHC2-03, USHC2-04, USHC2-05 (MI + VA portion — completes the state-partitioned set), USHC2-06 (MI + VA verification — completes the milestone gate)
 
 **Success Criteria** (what must be TRUE):
 
-  1. An `essentials.elections` row exists for MI ("MI 2026 Statewide General", `election_date='2026-11-03'`) **and VA** ("VA 2026 Statewide General") and one `essentials.races` row per district (all 13 MI + all 11 VA) with `office_id` → the existing `U.S. Representative` office; every MI and VA district surfaces its full post-primary candidate field on `/elections` for an in-district test coordinate via `race_candidates`, each row `politician_id`-linked and `candidate_status='active'`.
-  2. Candidates reflect the REAL Aug-4 primary winners (verified from MI SoS / VA Dept. of Elections results, never derived from incumbency); incumbent-nominees reuse existing records (zero duplicate `full_name`); **VA-11's special-seated member Walkinshaw (seated Sep 2025, not in DB pre-Phase-154) gets a new record, not a stale-incumbent map**; newly-seeded candidates have headshots (wrong-person-guarded; documented honest-skips); no party on candidate cards.
-  3. Every MI and VA candidate lacking federal-24 stances has sourced chairs-not-polarity stances — each answer paired to an `inform.politician_context` row with a real fetched source URL, 0 unsourced, primary-source-verified before push, honest-skip where evidence is thin; already-stanced incumbents skipped via the Phase 154 diagnostic.
-  4. A MI+VA verification gate (read-only, mirroring Phase 158) asserts: an in-district MI and VA address → the House race with the CHALLENGER field present (Pitfall-5 two-path guard); 0 unsourced; 0 duplicate-incumbent; all 13 MI + 11 VA districts have ≥1 active `race_candidates` row. Combined with Phase 158, the full 113-district milestone is proven.
+  1. **(seed now)** An `essentials.elections` row exists for MI ("MI 2026 Statewide General", `election_date='2026-11-03'`) — VA's already exists — and one `essentials.races` row per district (all 13 MI + all 11 VA); every MI and VA district surfaces its **full pre-primary qualified field** on `/elections` for an in-district test coordinate via `race_candidates`, each row `politician_id`-linked and `candidate_status='active'`. Following FL's precedent, the qualified field attaches to the Nov-3 general race rows as a provisional field (no separate primary-election rows).
+  2. **(seed now)** Candidates are the ballot-qualified primary field (all parties), sourced from MI SoS / VA Dept. of Elections candidate lists, never derived from incumbency; incumbent-candidates reuse existing records (zero duplicate `full_name`); **VA-11's special-seated member Walkinshaw (seated Sep 2025) gets a new record, not a stale-incumbent map**; newly-seeded candidates have headshots (wrong-person-guarded; documented honest-skips); no party on candidate cards.
+  3. **(seed now)** Every MI and VA candidate lacking federal-24 stances has sourced chairs-not-polarity stances — each answer paired to an `inform.politician_context` row with a real fetched source URL, 0 unsourced, primary-source-verified before push, honest-skip where evidence is thin; already-stanced incumbents skipped via the Phase 154 diagnostic.
+  4. **(cull ≥ Aug 5, sub-phase 159-C)** After the Aug-4 primaries, each district's non-advancing candidates are set inactive (`candidate_status`), the advancing nominee(s) confirmed from official results, and the two-path prune verified — mirroring FL Phase 153. Discarded losers' stance rows may be retained (historical) or pruned per the FL-153 convention.
+  5. **(gate)** A MI+VA verification gate (read-only, mirroring Phase 158) asserts: an in-district MI and VA address → the House race with the full field present (Pitfall-5 two-path guard); 0 unsourced; 0 duplicate-incumbent; all 13 MI + 11 VA districts have ≥1 active `race_candidates` row. Combined with Phase 158, the full 113-district milestone is proven.
 
-**Plans:** TBD
+**Plans:** TBD — expected shape: 159-A (MI seed: elections+races+candidates+headshots+stances), 159-B (VA seed: candidates onto existing races+headshots+stances), 159-C (post-primary cull ≥ Aug 5, date-gated), 159-D (MI+VA verification gate).
 
 ---
 
@@ -220,7 +223,7 @@ Plans:
 | 156. OH + GA + NC Candidate Seeding (create races) | 10/10 | Complete   | 2026-07-01 |
 | 157. NJ Candidate Seeding (create races) | 6/6 | Complete | 2026-07-01 |
 | 158. Coordinate Verification Gate (89 decided-state districts) | 1/1 | Complete ✅ | 2026-07-01 |
-| 159. MI + VA Candidate Seeding + Verification (date-gated ≥ 2026-08-04) | 0/? | Not started | - |
+| 159. MI + VA Primary-Field Coverage (seed now) + Post-Primary Cull (≥ 2026-08-05) | 0/? | Not started | - |
 
 ---
 
