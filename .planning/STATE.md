@@ -26,9 +26,9 @@ See: .planning/PROJECT.md (updated 2026-06-30 after v2.21 milestone started)
 
 ## Current Position
 
-Phase: 155 — COMPLETE ✅ (all 9 plans; gate green exit 0 + coordinate smoke green 6/6)
-Plan: 155-01..09 done
-Status: PA+IL Wave-2 seeding delivered to prod. NEXT: Phase 156 (OH+GA+NC)
+Phase: 156 — PLANNED ✅ (10 plans/4 waves, plan-checker PASS iter 1)
+Plan: 156-01..10 authored; ready to execute
+Status: Phase 155 (PA+IL) COMPLETE + pushed. Phase 156 (OH+GA+NC) planned. NEXT: /gsd-execute-phase 156
 Last activity: 2026-06-30
 Carry-forward opened: PA independents (Aug-3 filing deadline) → post-Aug-10 date-gated re-check (FL-153 pattern)
 
