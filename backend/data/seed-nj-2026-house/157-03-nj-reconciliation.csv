@@ -1,0 +1,28 @@
+cd,geo_id,race_id,full_name,party_from_field,decision,target_politician_id,assign_external_id,is_incumbent,source_url
+1,3401,86b52a52-b7ec-424b-8736-bf0f480b5e15,Donald Norcross,Democratic,REUSE,b74a616d-9c47-4328-8c25-b1a3dc0a4f9d,-34001,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+1,3401,86b52a52-b7ec-424b-8736-bf0f480b5e15,Damon Galdo,Republican,NEW,,-340101,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+2,3402,bab7fa90-2102-420a-8b8f-0da4c8c655f1,Jefferson Van Drew,Republican,REUSE,ac328544-b0d7-4714-8487-e2467f9713e8,-34002,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+2,3402,bab7fa90-2102-420a-8b8f-0da4c8c655f1,Zack Mullock,Democratic,NEW,,-340201,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+3,3403,298389a6-f686-48db-a95e-3fb2ba62c10a,"Herbert C. Conaway, Jr.",Democratic,REUSE,f0235587-d1e8-412d-970c-16b50b2b185f,-34003,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+3,3403,298389a6-f686-48db-a95e-3fb2ba62c10a,Michael McGuire,Republican,NEW,,-340301,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+3,3403,298389a6-f686-48db-a95e-3fb2ba62c10a,Steven Welzer,Green,NEW,,-340302,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+3,3403,298389a6-f686-48db-a95e-3fb2ba62c10a,Ryan Michael Kelly,Affordability Accountability People,NEW,,-340303,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+4,3404,3af838f9-b1c3-4ecb-b7f3-574b430dd7ff,Christopher H. Smith,Republican,REUSE,99022a78-79ea-417c-8a7c-0bc5f773e329,-34004,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+4,3404,3af838f9-b1c3-4ecb-b7f3-574b430dd7ff,Rachel Peace,Democratic,NEW,,-340401,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+5,3405,800d91c5-52b1-4780-b94f-9858d760f051,Josh Gottheimer,Democratic,REUSE,c4251d10-6fba-4a5a-b8a9-f4b2f4634f0d,-34005,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+5,3405,800d91c5-52b1-4780-b94f-9858d760f051,Sean Kirrane,Republican,NEW,,-340501,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+5,3405,800d91c5-52b1-4780-b94f-9858d760f051,Adam Rueda,Humane Sustainable Future,NEW,,-340502,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+6,3406,5ae7000e-bfc9-4cdf-94e2-923cc7ee63c3,"Frank Pallone, Jr.",Democratic,REUSE,332de859-029c-43ff-baa7-0113ad436d0f,-34006,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+6,3406,5ae7000e-bfc9-4cdf-94e2-923cc7ee63c3,Hillary Herzig,Republican,NEW,,-340601,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+7,3407,102137a4-cde9-42a7-ac82-58a252c07366,"Thomas H. Kean, Jr.",Republican,REUSE,1bc949f5-0696-481c-979b-64cfd494983a,-34007,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+7,3407,102137a4-cde9-42a7-ac82-58a252c07366,Rebecca Bennett,Democratic,NEW,,-340701,false,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+8,3408,90c5e29a-a5a8-47ec-9003-4b4b851cca92,Robert Menendez,Democratic,REUSE,fc7a00d6-c552-4627-87f7-b0fc5cfe486c,-34008,true,https://newjerseyglobe.com/congress/the-final-list-of-whos-running-for-congress-in-new-jersey-in-2026/
+9,3409,b4f42a0f-0599-4d57-9776-d1375e69bfd3,Nellie Pou,Democratic,REUSE,149d987d-78f6-4547-92d4-19b103a62f5e,-34009,true,https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_New_Jersey
+9,3409,b4f42a0f-0599-4d57-9776-d1375e69bfd3,Rosie Pino,Republican,NEW,,-340901,false,https://thehill.com/homenews/campaign/new-jersey-rosie-pino-wins-republican-primary/
+10,3410,371cbe0b-f54a-4338-b608-2a167a282ef1,LaMonica McIver,Democratic,REUSE,c8cd097f-ce28-40b1-8236-18bc111ad868,-34010,true,https://newjerseyglobe.com/congress/the-final-list-of-whos-running-for-congress-in-new-jersey-in-2026/
+10,3410,371cbe0b-f54a-4338-b608-2a167a282ef1,Carmen Bucco,Republican,NEW,,-341001,false,https://newjerseyglobe.com/congress/the-final-list-of-whos-running-for-congress-in-new-jersey-in-2026/
+11,3411,c47045f6-6dd3-46c8-8615-9acbfbcf95e8,Analilia Mejia,Democratic,REUSE,93874414-6d14-4c12-87b2-d254b3855570,-34011,true,"https://ballotpedia.org/New_Jerseys_11th_Congressional_District_election,_2026"
+11,3411,c47045f6-6dd3-46c8-8615-9acbfbcf95e8,Joe Hathaway,Republican,NEW,,-341101,false,"https://ballotpedia.org/New_Jerseys_11th_Congressional_District_election,_2026"
+12,3412,f87e6f4b-6e82-40d8-a7a5-adfacb0988fd,Bonnie Watson Coleman,Democratic,REUSE-NO-ROW,a75a3e6e-31ff-4870-8aea-501e41326fd1,-34012,false,https://newjerseyglobe.com/congress/hamawy-wins-wide-open-nj-12-race-in-major-victory-for-the-left/
+12,3412,f87e6f4b-6e82-40d8-a7a5-adfacb0988fd,Adam Hamawy,Democratic,NEW,,-341201,false,https://newjerseyglobe.com/congress/hamawy-wins-wide-open-nj-12-race-in-major-victory-for-the-left/
+12,3412,f87e6f4b-6e82-40d8-a7a5-adfacb0988fd,Gregg Mele,Republican,NEW,,-341202,false,https://newjerseyglobe.com/congress/hamawy-wins-wide-open-nj-12-race-in-major-victory-for-the-left/
