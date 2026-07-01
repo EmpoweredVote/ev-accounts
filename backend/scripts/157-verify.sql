@@ -272,7 +272,25 @@ BEGIN
   -- Headshot honest-skip set (no free-license portrait anywhere). Pinned by exact external_id WITH
   -- ORDER BY external_id (143 lesson). POPULATED-BY-157-04 (NJ headshot pass).
   CREATE TEMP TABLE _img_skip (external_id bigint, reason text) ON COMMIT DROP;
-  -- (populated by 157-04)
+  -- POPULATED-BY-157-04: 14 of 15 new NJ candidates have no free-license portrait (only Adam Hamawy
+  -- -341201 imaged via Wikipedia). Wikipedia search returned only election-article pages (not bio
+  -- pages) for the rest; Ballotpedia/campaign images are copyrighted (not free-license); non-incumbent
+  -- challengers have no federal .gov portrait. wrong-person/historical fill refused. ORDER BY external_id (143).
+  INSERT INTO _img_skip (external_id, reason) VALUES
+    (-341202, 'Gregg Mele NJ-12 — no free-license portrait; Wikipedia only election-article page; Ballotpedia/campaign copyrighted; wrong-person/historical fill refused'),
+    (-341101, 'Joe Hathaway NJ-11 — no free-license portrait; Wikipedia only district-special page; Ballotpedia/campaign copyrighted; wrong-person/historical fill refused'),
+    (-341001, 'Carmen Bucco NJ-10 — no free-license portrait; Wikipedia only election-article page; Ballotpedia/campaign copyrighted; wrong-person/historical fill refused'),
+    (-340901, 'Rosie Pino NJ-9 — no free-license portrait; Wikipedia only election-article page; Ballotpedia/campaign copyrighted; wrong-person/historical fill refused'),
+    (-340701, 'Rebecca Bennett NJ-7 — no free-license portrait; Wikipedia only election-article page; Ballotpedia/campaign copyrighted; wrong-person/historical fill refused'),
+    (-340601, 'Hillary Herzig NJ-6 — no free-license portrait; Wikipedia only election-article page; Ballotpedia/campaign copyrighted; wrong-person/historical fill refused'),
+    (-340502, 'Adam Rueda NJ-5 (Humane Sustainable Future) — no free-license portrait; minor-line, no bio image; wrong-person/historical fill refused'),
+    (-340501, 'Sean Kirrane NJ-5 — no free-license portrait; Wikipedia only election-article page; Ballotpedia/campaign copyrighted; wrong-person/historical fill refused'),
+    (-340401, 'Rachel Peace NJ-4 — no free-license portrait; Wikipedia only election-article page; Ballotpedia/campaign copyrighted; wrong-person/historical fill refused'),
+    (-340303, 'Ryan Michael Kelly NJ-3 (Affordability Accountability People) — no free-license portrait; minor-line, no bio image; wrong-person/historical fill refused'),
+    (-340302, 'Steven Welzer NJ-3 (Green) — no free-license portrait; minor-line, no bio image; wrong-person/historical fill refused'),
+    (-340301, 'Michael McGuire NJ-3 — no free-license portrait; Wikipedia only election-article page; Ballotpedia/campaign copyrighted; wrong-person/historical fill refused'),
+    (-340201, 'Zack Mullock NJ-2 — no free-license portrait; Wikipedia only election-article page; Ballotpedia/campaign copyrighted; wrong-person/historical fill refused'),
+    (-340101, 'Damon Galdo NJ-1 — no free-license portrait; Wikipedia only election-article page; Ballotpedia/campaign copyrighted; wrong-person/historical fill refused');
 
   -- ===== USHC2-04 — every newly-seeded NJ candidate has a politician_images row ====
   SELECT COUNT(*),

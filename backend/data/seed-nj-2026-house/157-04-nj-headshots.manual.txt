@@ -1,0 +1,12 @@
+# 157-04 NJ manual headshot sources — external_id|image_url_or_path|license
+# Format: one line per candidate with a confirmed FREE-LICENSE (public-domain / CC / .gov) portrait.
+#
+# NJ auto-pass result (seed-nj-house-headshots.py --state NJ): 1/15 imaged (Adam Hamawy -341201 via
+# Wikipedia public_domain). The remaining 14 new candidates have NO free-license portrait:
+#   - Wikipedia search returned only the 2026 election-article / district-special pages (not bio pages).
+#   - Ballotpedia + campaign-site portraits are copyrighted (not free-license) — cannot ingest.
+#   - Non-incumbent challengers hold no federal office, so no PD .gov portrait exists.
+# Per the no-placeholder / no-wrong-person rule, these 14 are documented honest-skips (pinned by
+# external_id in 157-verify.sql _img_skip). No manual free-license source found.
+#
+# (No manual lines — no free-license portraits located.)
