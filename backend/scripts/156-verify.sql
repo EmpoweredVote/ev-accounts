@@ -368,7 +368,31 @@ BEGIN
     ('d2e4cc46-d553-410a-8733-16692b7ae64e', 'Caitlyn Gegen GA-9 — no online footprint in fetchable sources'),
     ('f7bf88b3-caa2-4856-9395-e0354b060828', 'Ceretta Smith GA-12 — site launching-soon placeholder, no content'),
     ('fcd56384-a715-4ae9-8804-b24bdfa46768', 'Matt Day GA-2 — site offline, no Ballotpedia/OTI/Wikipedia');
-  -- (156-09 NC skip rows appended below)
+  INSERT INTO _stance_skip (politician_id, reason) VALUES
+    -- NC (156-09): 23 whole-record skips of 25 new candidates — no fetchable positions; party-inference refused
+    ('0bc9ff71-1042-4709-8fb1-95696c5abd0d', 'Kimberly Hardy NC-7 — domains ECONNREFUSED, Ballotpedia empty'),
+    ('159e0a9e-cf36-4746-8e70-6f1fb1a54831', 'Gene Douglass NC-2 — domains refused, Ballotpedia blank'),
+    ('1b5e957a-d6b8-4dbe-8810-74fc51f23fe7', 'Jamie Ager NC-11 — site 403-walled, only bipartisan positioning quote'),
+    ('21152a8e-df76-4431-9421-9c453b186400', 'Jack Codiga NC-12 — no live site, Ballotpedia stub empty'),
+    ('29cf2aa9-cab9-4c40-b4b4-126979993ec7', 'Robert Luffman NC-5 (L) — no site/positions (only NC-US-House L in NCSBE CSV)'),
+    ('2c4d2cae-b8a9-4f09-a0a6-360993cb8c2b', 'Raymond Smith Jr. NC-3 — parked domain, no NCGA listing, no positions'),
+    ('2da39a56-c9af-42b8-ab0f-8df57aaea4aa', 'Steven Swinton NC-13 (L) — Ballotpedia stub empty, domains refused'),
+    ('3419ad7b-c8f5-49e1-b991-fec5a9ab8522', 'Colby Watson NC-8 — no campaign site, Ballotpedia empty'),
+    ('3fec016b-9ab5-49ec-98ab-4f3d6f95ba42', 'Cyril Jefferson NC-6 — site placeholder, only service-philosophy quote; no positions'),
+    ('4335903a-c92f-4837-aba2-437c194fb980', 'Anthony Aguilar NC-13 (Green) — candidate confirmed but no platform/positions'),
+    ('43c05b1c-c982-469a-876a-5d877ee1e646', 'John Rogers NC-11 (I) — no site/Ballotpedia/coverage'),
+    ('501716bb-8e1e-425b-bb9a-1efa37567e6b', 'Ashley Bell NC-10 — site ECONNREFUSED, no positions'),
+    ('5a29fb0c-bb87-4010-b088-f4e0004ce8e3', 'Steven Feldman NC-10 (L) — Ballotpedia stub empty, domains down'),
+    ('6017aebf-8ffc-4439-9aab-b124403c8855', 'Max Ganorkar NC-4 — domains ECONNREFUSED, Ballotpedia empty'),
+    ('a2a6161f-9307-43c7-bc9f-f7ab4d0ec012', 'Chuck Hubbard NC-5 — domains ECONNREFUSED, no fetchable positions'),
+    ('b4f00822-9ed2-4ce7-99b0-c63e665a8194', 'Lakesha Womack NC-14 — consulting site only, no political content'),
+    ('b7696695-7f79-416b-a5fa-92377f0a9e99', 'Daniel Cavender NC-3 (L) — domains refused, not in NCSBE filing CSV'),
+    ('be809286-916e-4e74-9ded-bf3137aeb8c3', 'Guy Meilleur NC-4 (L) — domain not live, LPNC no 2026 entry'),
+    ('c6973125-95c1-4ec4-aa96-69cc8d08cdfe', 'Paul Barringer NC-13 — parked domains, no positions (NOT the 1778-1844 legislator)'),
+    ('c91ee44d-9532-4fdc-b04d-5791b1e1c9af', 'Matt Laszacs NC-2 (L) — domains refused, not in NCSBE filing CSV'),
+    ('ca1208ad-61ae-4b45-a2e6-4fd12cb90973', 'Travis Groo NC-11 (L) — no site/Ballotpedia/coverage'),
+    ('e9f52a4b-73b0-4d50-8346-526851df066c', 'Tom Bailey NC-1 (L) — parked domain, not in NCSBE filing CSV (see carry-forward flag)'),
+    ('fcd46138-4de8-4ef6-98a1-0fe34d85135c', 'Maad Abu-Ghazalah NC-7 (L) — domains ECONNREFUSED, no positions');
 
   -- Headshot honest-skip set (no free-license portrait anywhere). Pinned by exact external_id WITH
   -- ORDER BY external_id (143 lesson). POPULATED-BY-156-06 (OH/GA/NC headshot pass).
