@@ -188,7 +188,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 158-01-PLAN.md — Author write-free 158-verify.sql consolidated 89-district gate + 158-coordinate-smoke.ts 6-state surfacing smoke (USHC2-06)
+- [x] 158-01-PLAN.md — Author write-free 158-verify.sql consolidated 89-district gate + 158-coordinate-smoke.ts 6-state surfacing smoke (USHC2-06) — COMPLETE 2026-07-01 (gate 8/8 PASS exit 0 + smoke 6/6 GREEN; gsd-verifier 10/10; commit 7ac3b738)
 
 ---
 
@@ -219,7 +219,7 @@ Plans:
 | 155. PA + IL Candidate Seeding (create races) | 0/? | Not started | - |
 | 156. OH + GA + NC Candidate Seeding (create races) | 10/10 | Complete   | 2026-07-01 |
 | 157. NJ Candidate Seeding (create races) | 6/6 | Complete | 2026-07-01 |
-| 158. Coordinate Verification Gate (89 decided-state districts) | 0/1 | Not started | - |
+| 158. Coordinate Verification Gate (89 decided-state districts) | 1/1 | Complete ✅ | 2026-07-01 |
 | 159. MI + VA Candidate Seeding + Verification (date-gated ≥ 2026-08-04) | 0/? | Not started | - |
 
 ---
