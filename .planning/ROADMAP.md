@@ -185,7 +185,10 @@ Plans:
   2. The gate asserts 0 unsourced stance rows across all newly-seeded decided-state candidates and 0 duplicate-incumbent `essentials.politicians` records across the 89 decided-state districts; any documented whole-record stance honest-skips are pinned by id in the gate script.
   3. Every `race_candidates` row across the 89 decided-state districts has a NON-NULL `politician_id` (so headshots + stances resolve) and no candidate card surfaces party (party reads from `races.primary_party`); the gate script asserts all 89 decided-state districts have at least one active `race_candidates` row.
 
-**Plans:** TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 158-01-PLAN.md — Author write-free 158-verify.sql consolidated 89-district gate + 158-coordinate-smoke.ts 6-state surfacing smoke (USHC2-06)
 
 ---
 
@@ -216,7 +219,7 @@ Plans:
 | 155. PA + IL Candidate Seeding (create races) | 0/? | Not started | - |
 | 156. OH + GA + NC Candidate Seeding (create races) | 10/10 | Complete   | 2026-07-01 |
 | 157. NJ Candidate Seeding (create races) | 6/6 | Complete | 2026-07-01 |
-| 158. Coordinate Verification Gate (89 decided-state districts) | 0/? | Not started | - |
+| 158. Coordinate Verification Gate (89 decided-state districts) | 0/1 | Not started | - |
 | 159. MI + VA Candidate Seeding + Verification (date-gated ≥ 2026-08-04) | 0/? | Not started | - |
 
 ---
