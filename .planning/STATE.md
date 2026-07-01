@@ -1,17 +1,17 @@
 ---
 gsd_state_version: 1.0
 milestone: v2.21
-milestone_name: 2026 US House Candidate Coverage (Wave 2)
-status: in_progress
-last_updated: 2026-06-30T19:09:02.241Z
-last_activity: 2026-06-30 -- Phase 155 COMPLETE (PA+IL seeded, gate+smoke green)
+milestone_name: 2026 US House Candidate Coverage
+status: completed
+stopped_at: Phase 154 context gathered
+last_updated: "2026-07-01T06:27:18.761Z"
+last_activity: 2026-07-01 -- Phase 156 marked complete
 progress:
   total_phases: 6
-  completed_phases: 2
-  total_plans: 9
-  completed_plans: 9
-  percent: 33
-stopped_at: Phase 155 complete (9/9) — ready to plan Phase 156 (OH+GA+NC)
+  completed_phases: 3
+  total_plans: 21
+  completed_plans: 21
+  percent: 50
 ---
 
 # Project State
@@ -21,15 +21,15 @@ stopped_at: Phase 155 complete (9/9) — ready to plan Phase 156 (OH+GA+NC)
 See: .planning/PROJECT.md (updated 2026-06-30 after v2.21 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 155 — PA + IL candidate seeding (planned; 9 plans, ready to execute)
+**Current focus:** Phase 156 — oh-ga-nc-candidate-seeding-create-elections-races-then-candi
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 156 — PLANNED ✅ (10 plans/4 waves, plan-checker PASS iter 1)
-Plan: 156-01..10 authored; ready to execute
-Status: Phase 155 (PA+IL) COMPLETE + pushed. Phase 156 (OH+GA+NC) planned. NEXT: /gsd-execute-phase 156
-Last activity: 2026-06-30
+Phase: 156 — COMPLETE
+Plan: 1 of 10
+Status: Phase 156 complete
+Last activity: 2026-07-01 -- Phase 156 marked complete
 Carry-forward opened: PA independents (Aug-3 filing deadline) → post-Aug-10 date-gated re-check (FL-153 pattern)
 
 ## v2.21 Phase Dependencies

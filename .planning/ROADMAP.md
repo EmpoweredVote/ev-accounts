@@ -140,16 +140,16 @@ Plans:
 **Plans:** 10 plans (4 waves)
 
 Plans:
-- [ ] 156-01-PLAN.md — Author OH/GA/NC elections + 43 races (create-races-first; GA-13 vacancy office check)
-- [ ] 156-02-PLAN.md — Author write-free 156-verify.sql per-state gate (McDowell in-scope; GA-13 no-absence-pin)
-- [ ] 156-03-PLAN.md — OH records + race_candidates wiring (15 districts, seed-all minor lines)
-- [ ] 156-04-PLAN.md — GA records + wiring (GA-1/10/11 open/retired; GA-13 true vacancy Clark+Chavez)
-- [ ] 156-05-PLAN.md — NC records + wiring (14 districts, heavy third-party field; McDowell active incumbent)
-- [ ] 156-06-PLAN.md — Headshots for new OH/GA/NC candidates (shared pipeline, honest-skips pinned)
-- [ ] 156-07-PLAN.md — Federal-24 chairs-not-polarity stances for new OH candidates (0 unsourced)
-- [ ] 156-08-PLAN.md — Federal-24 stances for new GA candidates incl. GA-13 Clark/Chavez (0 unsourced)
-- [ ] 156-09-PLAN.md — Federal-24 stances for new NC candidates + NC-6 McDowell by external_id (0 unsourced)
-- [ ] 156-10-PLAN.md — Run consolidated 156-verify.sql green + OH/GA/NC coordinate smoke (GA-13 sample)
+- [x] 156-01-PLAN.md — Author OH/GA/NC elections + 43 races (create-races-first; GA-13 vacancy office check)
+- [x] 156-02-PLAN.md — Author write-free 156-verify.sql per-state gate (McDowell in-scope; GA-13 no-absence-pin)
+- [x] 156-03-PLAN.md — OH records + race_candidates wiring (15 districts, seed-all minor lines)
+- [x] 156-04-PLAN.md — GA records + wiring (GA-1/10/11 open/retired; GA-13 true vacancy Clark+Chavez)
+- [x] 156-05-PLAN.md — NC records + wiring (14 districts, heavy third-party field; McDowell active incumbent)
+- [x] 156-06-PLAN.md — Headshots for new OH/GA/NC candidates (shared pipeline, honest-skips pinned)
+- [x] 156-07-PLAN.md — Federal-24 chairs-not-polarity stances for new OH candidates (0 unsourced)
+- [x] 156-08-PLAN.md — Federal-24 stances for new GA candidates incl. GA-13 Clark/Chavez (0 unsourced)
+- [x] 156-09-PLAN.md — Federal-24 stances for new NC candidates + NC-6 McDowell by external_id (0 unsourced)
+- [x] 156-10-PLAN.md — Run consolidated 156-verify.sql green + OH/GA/NC coordinate smoke (GA-13 sample)
 
 ---
 
@@ -214,7 +214,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 154. Field Resolution + Stance-Gap Diagnostic | 2/2 | Complete    | 2026-06-30 |
 | 155. PA + IL Candidate Seeding (create races) | 0/? | Not started | - |
-| 156. OH + GA + NC Candidate Seeding (create races) | 0/? | Not started | - |
+| 156. OH + GA + NC Candidate Seeding (create races) | 10/10 | Complete   | 2026-07-01 |
 | 157. NJ Candidate Seeding (create races) | 0/? | Not started | - |
 | 158. Coordinate Verification Gate (89 decided-state districts) | 0/? | Not started | - |
 | 159. MI + VA Candidate Seeding + Verification (date-gated ≥ 2026-08-04) | 0/? | Not started | - |
