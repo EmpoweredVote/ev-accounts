@@ -1,0 +1,9 @@
+# 155-05 PA headshots — manual 2nd-source list (external_id|image_url_or_path|license)
+# Auto Wikipedia pass imaged 2/17: Paige Cognetti (-420801, cc_by_2.0), Chris Rabb (-420301, cc0).
+# The other 15 PA new candidates are obscure first-time challengers with NO own Wikipedia bio page /
+# no free lead image. Per the MEMORY one-try rule + find-headshots free-license guard, no free-license
+# 2nd-source portrait was found (campaign & Ballotpedia images are all-rights-reserved). All 15 are
+# documented honest-skips, pinned by external_id in backend/scripts/155-verify.sql (_img_skip).
+# A wrong-person or copyrighted image is refused over filling (T-155-19/20).
+#
+# (no manual rows — all non-auto PA candidates are honest-skips)

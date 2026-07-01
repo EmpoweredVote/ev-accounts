@@ -295,8 +295,51 @@ BEGIN
   CREATE TEMP TABLE _stance_skip (politician_id uuid, reason text) ON COMMIT DROP;
 
   -- Headshot honest-skip set (no free-license portrait anywhere). Pinned by exact external_id WITH
-  -- ORDER BY. EMPTY now — POPULATED-BY-155-05/06. A wrong-person/copyrighted image is refused over filling.
+  -- ORDER BY external_id (143 lesson). POPULATED-BY-155-05 (PA, 15) + 155-06 (IL, 22) = 37 of 45 new
+  -- candidates. 8 imaged (PA: Cognetti/Rabb; IL: Biss/Bean/Ford/Sigcho-Lopez/Miller/Hanson). Obscure
+  -- first-time challengers with no own Wikipedia bio page / no free lead image; campaign & Ballotpedia
+  -- images all-rights-reserved; the hardened wrong-person guard refused every non-candidate match
+  -- (Pelosi/Rutherford-Hayes/"The Colourist"/"Fresh Prince of Bel-Air"/Senate-election pages). A
+  -- wrong-person or copyrighted image is refused over filling (T-155-19/20). 150 precedent: 43/48 TX + 27/33 NY.
   CREATE TEMP TABLE _img_skip (external_id bigint, reason text) ON COMMIT DROP;
+  INSERT INTO _img_skip (external_id, reason) VALUES
+    (-421701, 'Tony Guy — no free-license portrait (no-lead-image); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-421601, 'Justin Wagner — no free-license portrait (wrong-person guard: "The Colourist"); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-421501, 'Ray Bilger — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-421401, 'David Alan Bradstock — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-421301, 'Beth Farnham — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-421201, 'James Hayes — no free-license portrait (wrong-person guard: Rutherford B. Hayes); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-421101, 'Nancy Mannion — no free-license portrait (wrong-person guard: Nancy Pelosi); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-421001, 'Janelle Stelson — no free-license portrait (no-lead-image); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-420901, 'Rachel Wallace — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-420701, 'Bob Brooks — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-420601, 'Marty Young — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-420501, 'Nicholas Manganaro — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-420401, 'Aurora Stuski — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-420201, 'Jessica Arriaga — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-420101, 'Bob Harvie — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-171701, 'Dillan Vancil — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-171601, 'Paul Nolley — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-171501, 'Jennifer Todd — no free-license portrait (no-lead-image); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-171401, 'James Marter — no free-license portrait (wrong-person guard: 2024 election page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-171301, 'Jeff Wilson — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-171201, 'Julie Fortier — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-171101, 'Jeff Walter — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-171001, 'Carl Lambrecht — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-170902, 'John Elleson — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-170802, 'Jennifer Davis — no free-license portrait (wrong-person guard: Senate-election page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-170702, 'Chad Koppie — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-170601, 'Niki Conforti — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-170406, 'Mayra Macías — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-170405, 'Chris Getty — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-170404, 'Lindsay Church — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-170403, 'Ed Hershey — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-170402, 'Lupe Castillo — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-170401, 'Patty Garcia — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-170301, 'Angel Oakley — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-170203, 'Ashley Banks — no free-license portrait (wrong-person guard: "The Fresh Prince of Bel-Air"); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-170202, 'Mike Noack — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused'),
+    (-170101, 'Christian Maxwell — no free-license portrait (no own bio page); campaign/Ballotpedia all-rights-reserved; wrong-person fill refused');
 
   -- ===== USHC2-04 — every newly-seeded PA/IL candidate has a politician_images row ====
   SELECT COUNT(*),

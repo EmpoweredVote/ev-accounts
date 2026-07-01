@@ -1,0 +1,9 @@
+# 155-06 IL headshots — manual 2nd-source list (external_id|image_url_or_path|license)
+# Auto Wikipedia pass imaged 6/28: Daniel Biss (-170901), Melissa Bean (-170801), La Shawn Ford (-170701),
+# Tommy Hanson (-170501), Byron Sigcho-Lopez (-170407), Donna Miller (-170201).
+# The other 22 IL new candidates are obscure first-time challengers with NO own Wikipedia bio page /
+# no free lead image. No free-license 2nd-source portrait found (campaign & Ballotpedia all-rights-reserved).
+# All 22 are documented honest-skips, pinned by external_id in backend/scripts/155-verify.sql (_img_skip).
+# A wrong-person or copyrighted image is refused over filling (T-155-19/20).
+#
+# (no manual rows — all non-auto IL candidates are honest-skips)
