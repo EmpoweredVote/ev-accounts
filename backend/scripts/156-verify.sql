@@ -341,7 +341,19 @@ BEGIN
   -- politician_id (143 lesson). POPULATED-BY-156-07/08/09: thin/no-source minor & first-time
   -- challengers whose primary sources are dead/JS-walled; party-inference refused (chairs-not-polarity).
   CREATE TEMP TABLE _stance_skip (politician_id uuid, reason text) ON COMMIT DROP;
-  -- (rows appended by 156-07 OH / 156-08 GA / 156-09 NC)
+  INSERT INTO _stance_skip (politician_id, reason) VALUES
+    -- OH (156-07): 10 whole-record skips of 19 — no fetchable primary-source positions; party-inference refused
+    ('2e23b789-8003-4f85-ae06-9401711429d8', 'Maria Jukic OH-14 — campaign site under development; no fetchable positions'),
+    ('31ed91bc-f2f7-41d3-b08b-2d0f7b22beda', 'Jennifer Mazzuckelli OH-2 — no fetchable positions (site down, Ballotpedia empty)'),
+    ('44d8e07d-1b11-4b5b-95e5-86e6c13ca320', 'Mike Kirchner OH-11 — no fetchable positions (site ECONNREFUSED)'),
+    ('4d5e028c-5a9c-4f6b-b408-0f97996cd5b2', 'Joshua Kolasinski OH-4 — no issues content anywhere'),
+    ('5371d8cf-6e66-47e1-a70b-7d5a7b470969', 'Brian Poindexter OH-7 — ActBlue-only, no policy specifics'),
+    ('5c41400a-8ba5-4334-9add-bbfcc49cba03', 'Tamie Wilson OH-4 (I) — site 404s, Ballotpedia blank'),
+    ('9e92b2e5-1222-4b58-8fe0-75a895be662f', 'Don Leonard OH-15 — site ECONNREFUSED, all sources blocked'),
+    ('afb4ccea-8530-4e54-a075-9b4168924326', 'Elizabeth Kirtley OH-6 — site ECONNREFUSED, no record'),
+    ('d923d20a-3ba6-46a2-a0d2-49534685ca3c', 'Cleophus Dulaney OH-3 — site ECONNREFUSED, Ballotpedia stub'),
+    ('ec72b7c5-635a-4590-a730-7e1bd62ce2f7', 'John Hancock OH-1 (L) — no campaign/platform; LPO lists Stoops for OH-1 (154 field flag)');
+  -- (156-08 GA + 156-09 NC skip rows appended below by those waves)
 
   -- Headshot honest-skip set (no free-license portrait anywhere). Pinned by exact external_id WITH
   -- ORDER BY external_id (143 lesson). POPULATED-BY-156-06 (OH/GA/NC headshot pass).
