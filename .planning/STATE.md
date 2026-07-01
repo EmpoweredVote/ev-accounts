@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.21
 milestone_name: 2026 US House Candidate Coverage
-status: completed
-stopped_at: Phase 154 context gathered
-last_updated: "2026-07-01T06:27:18.761Z"
-last_activity: 2026-07-01 -- Phase 156 marked complete
+status: executing
+stopped_at: Phase 157 complete; next Phase 158 (89-district gate)
+last_updated: "2026-07-01T16:42:54.656Z"
+last_activity: 2026-07-01 -- Phase 157 marked complete
 progress:
   total_phases: 6
-  completed_phases: 3
-  total_plans: 21
-  completed_plans: 21
-  percent: 50
+  completed_phases: 4
+  total_plans: 27
+  completed_plans: 27
+  percent: 67
 ---
 
 # Project State
@@ -21,15 +21,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-30 after v2.21 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 156 — oh-ga-nc-candidate-seeding-create-elections-races-then-candi
+**Current focus:** Phase 158 — Coordinate Verification Gate (89 decided-state districts); Phase 157 (NJ) COMPLETE ✅
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 156 — COMPLETE
-Plan: 1 of 10
-Status: Phase 156 complete
-Last activity: 2026-07-01 -- Phase 156 marked complete
+Phase: 157 — COMPLETE (6/6 plans; gate 11/11 PASS + coordinate smoke 4/4; gsd-verifier 12/12)
+Plan: 6 of 6
+Status: Phase 157 complete; next Phase 158
+Last activity: 2026-07-01 -- Phase 157 marked complete
 Carry-forward opened: PA independents (Aug-3 filing deadline) → post-Aug-10 date-gated re-check (FL-153 pattern)
 
 ## v2.21 Phase Dependencies
@@ -49,10 +49,10 @@ Phases 155/156/157 each cover disjoint states so are data-independent once Phase
 | Requirement | Phase 154 | Phase 155 (PA+IL) | Phase 156 (OH+GA+NC) | Phase 157 (MI+NJ+VA) | Phase 158 |
 |-------------|:---------:|:-----------------:|:--------------------:|:--------------------:|:---------:|
 | USHC2-01 Field Resolution | ◻ | | | | |
-| USHC2-02 Records | | ◻ anchor | ◻ | ◻ | |
-| USHC2-03 Race Wiring | | ◻ anchor | ◻ | ◻ | |
-| USHC2-04 Headshots | | ◻ anchor | ◻ | ◻ | |
-| USHC2-05 Stances | | ◻ anchor | ◻ | ◻ | |
+| USHC2-02 Records | | ◻ anchor | ◻ | ✅ NJ | |
+| USHC2-03 Race Wiring | | ◻ anchor | ◻ | ✅ NJ | |
+| USHC2-04 Headshots | | ◻ anchor | ◻ | ✅ NJ | |
+| USHC2-05 Stances | | ◻ anchor | ◻ | ✅ NJ | |
 | USHC2-06 Verification Gate | | | | | ◻ |
 
 100% coverage: all 6 USHC2 requirements mapped, no orphans. USHC2-02/03/04/05 are state-partitioned (anchored at 155, continued 156/157; gate at 158).
