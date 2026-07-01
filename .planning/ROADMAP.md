@@ -211,9 +211,9 @@ Plans:
   5. **(gate)** A MI+VA verification gate (read-only, mirroring Phase 158) asserts: an in-district MI and VA address → the House race with the full field present (Pitfall-5 two-path guard); 0 unsourced; 0 duplicate-incumbent; all 13 MI + 11 VA districts have ≥1 active `race_candidates` row. Combined with Phase 158, the full 113-district milestone is proven.
 
 **Plans:** 6 plans in 4 waves (planned 2026-07-01)
-- [ ] 159-01-PLAN.md — 159-A MI seed: 1 election + 13 provisional races + full qualified field (~56 new records, James/Stevens vacate) [wave 1]
+- [x] 159-01-PLAN.md — 159-A MI seed: 1 election + 13 provisional races + full qualified field (~56 new records, James/Stevens vacate) [wave 1]
 - [ ] 159-02-PLAN.md — 159-A MI headshots + federal-24 stances for new MI candidates [wave 2]
-- [ ] 159-03-PLAN.md — 159-B VA candidates onto 11 existing races (~40 new, Walkinshaw reused) [wave 1]
+- [x] 159-03-PLAN.md — 159-B VA candidates onto 11 existing races (~40 new, Walkinshaw reused) [wave 1]
 - [ ] 159-04-PLAN.md — 159-B VA headshots + stances (new + 3 thin-incumbent top-ups) [wave 2]
 - [ ] 159-05-PLAN.md — 159-C post-primary cull, DATE-GATED ≥ 2026-08-05 (two-path prune + indep reconcile) [wave 3, non-autonomous]
 - [ ] 159-06-PLAN.md — 159-D MI+VA verification gate + coordinate smoke (union with 158 = 113 districts) [wave 4]
@@ -229,7 +229,7 @@ Plans:
 | 156. OH + GA + NC Candidate Seeding (create races) | 10/10 | Complete   | 2026-07-01 |
 | 157. NJ Candidate Seeding (create races) | 6/6 | Complete | 2026-07-01 |
 | 158. Coordinate Verification Gate (89 decided-state districts) | 1/1 | Complete ✅ | 2026-07-01 |
-| 159. MI + VA Primary-Field Coverage (seed now) + Post-Primary Cull (≥ 2026-08-05) | 0/6 | Planned | - |
+| 159. MI + VA Primary-Field Coverage (seed now) + Post-Primary Cull (≥ 2026-08-05) | 2/6 | In Progress|  |
 
 ---
 

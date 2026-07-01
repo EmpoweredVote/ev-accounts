@@ -3,16 +3,23 @@ gsd_state_version: 1.0
 milestone: v2.21
 milestone_name: 2026 US House Candidate Coverage
 status: executing
-stopped_at: Phase 159 PLANNED (6 plans, 4 waves; plan-checker PASS 0-blockers) — waves 1-2 runnable NOW; wave 3 (159-05 cull) date-gated >= Aug-5
-last_updated: "2026-07-01T19:15:00.000Z"
-last_activity: 2026-07-01 -- Phase 159 planned (reframed to primary-field-now + Aug-5 cull); ready to execute waves 1-2
+last_updated: "2026-07-01T23:03:38.101Z"
+last_activity: 2026-07-01 -- Phase 159 Wave 1 complete (159-01 MI + 159-03 VA seeded); paused before Wave 2
+stopped_at: "Phase 159 Wave 1 COMPLETE (159-01 MI + 159-03 VA); PAUSED per operator before Wave 2 (headshots+stances). Waves 3-4 (cull+gate) DATE-GATED >= 2026-08-05."
 progress:
   total_phases: 6
   completed_phases: 5
-  total_plans: 28
-  completed_plans: 28
-  percent: 83
+  total_plans: 34
+  completed_plans: 30
+  percent: 88
 ---
+
+<!-- CARRY-FORWARD (opened Phase 159-03, 2026-07-01): VA-5/6/9 incumbent office->district links
+     rotated in essentials.offices (CD5->Cline, CD6->Griffith, CD9->McGuire) vs true delegation
+     (VA-5 McGuire, VA-6 Cline, VA-9 Griffith per GovTrack/Wikipedia + districts OCD labels).
+     Elections feed wired CORRECTLY in 159-03; REPS feed still rotated. Fix = 3-office politician_id
+     swap (out of Phase 159 scope). Needs operator decision. -->
+
 
 # Project State
 
@@ -21,15 +28,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-30 after v2.21 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 158 (89-district decided-state gate) COMPLETE ✅; next Phase 159 (MI+VA, DATE-GATED ≥ 2026-08-04)
+**Current focus:** Phase 159 — MI + VA Primary-Field Coverage (seed now) + Post-Primary Cull
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 158 — COMPLETE (1/1 plan; gate 8/8 PASS exit 0 + coordinate smoke 6/6 GREEN; gsd-verifier 10/10 live-prod)
-Plan: 1 of 1
-Status: Phase 158 complete; next Phase 159 (MI+VA seeding + gate, DATE-GATED ≥ 2026-08-04)
-Last activity: 2026-07-01 -- Phase 158 marked complete
+Phase: 159 (MI + VA Primary-Field Coverage (seed now) + Post-Primary Cull) — EXECUTING
+Plan: 1 of 6
+Status: Executing Phase 159
+Last activity: 2026-07-01 -- Phase 159 execution started
 Carry-forward opened: PA independents (Aug-3 filing deadline) → post-Aug-10 date-gated re-check (FL-153 pattern)
 
 ## v2.21 Phase Dependencies
