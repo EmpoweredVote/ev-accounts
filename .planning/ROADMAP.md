@@ -137,7 +137,19 @@ Plans:
   2. Every newly-seeded OH/GA/NC candidate has a headshot; incumbent-nominees reuse existing records (zero duplicate `full_name` per state); no party on candidate cards; GA-13 open-seat or current status is handled correctly (no ghost incumbent record created).
   3. Every OH/GA/NC candidate lacking federal-24 stances has sourced chairs-not-polarity stances — 0 unsourced, primary-source-verified before push, honest-skip where evidence is thin; already-stanced incumbents (all OH/GA/NC reps stanced in v2.17) skipped via the diagnostic.
 
-**Plans:** TBD
+**Plans:** 10 plans (4 waves)
+
+Plans:
+- [ ] 156-01-PLAN.md — Author OH/GA/NC elections + 43 races (create-races-first; GA-13 vacancy office check)
+- [ ] 156-02-PLAN.md — Author write-free 156-verify.sql per-state gate (McDowell in-scope; GA-13 no-absence-pin)
+- [ ] 156-03-PLAN.md — OH records + race_candidates wiring (15 districts, seed-all minor lines)
+- [ ] 156-04-PLAN.md — GA records + wiring (GA-1/10/11 open/retired; GA-13 true vacancy Clark+Chavez)
+- [ ] 156-05-PLAN.md — NC records + wiring (14 districts, heavy third-party field; McDowell active incumbent)
+- [ ] 156-06-PLAN.md — Headshots for new OH/GA/NC candidates (shared pipeline, honest-skips pinned)
+- [ ] 156-07-PLAN.md — Federal-24 chairs-not-polarity stances for new OH candidates (0 unsourced)
+- [ ] 156-08-PLAN.md — Federal-24 stances for new GA candidates incl. GA-13 Clark/Chavez (0 unsourced)
+- [ ] 156-09-PLAN.md — Federal-24 stances for new NC candidates + NC-6 McDowell by external_id (0 unsourced)
+- [ ] 156-10-PLAN.md — Run consolidated 156-verify.sql green + OH/GA/NC coordinate smoke (GA-13 sample)
 
 ---
 
