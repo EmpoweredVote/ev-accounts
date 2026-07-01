@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.21
 milestone_name: 2026 US House Candidate Coverage (Wave 2)
-status: ready_to_execute
+status: in_progress
 last_updated: 2026-06-30T19:09:02.241Z
-last_activity: 2026-06-30 -- Phase 155 planned (9 plans, plan-checker PASS)
+last_activity: 2026-06-30 -- Phase 155 COMPLETE (PA+IL seeded, gate+smoke green)
 progress:
   total_phases: 6
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 9
-  completed_plans: 2
-  percent: 17
-stopped_at: Phase 155 planned (9 plans, 4 waves) — ready to execute
+  completed_plans: 9
+  percent: 33
+stopped_at: Phase 155 complete (9/9) — ready to plan Phase 156 (OH+GA+NC)
 ---
 
 # Project State
@@ -26,9 +26,9 @@ See: .planning/PROJECT.md (updated 2026-06-30 after v2.21 milestone started)
 
 ## Current Position
 
-Phase: 155
-Plan: Waves 1–2 complete (155-01..04 of 9); paused before Wave 3 (headshots/stances)
-Status: In progress — PA+IL races + candidate records seeded to prod; Wave 3–4 pending
+Phase: 155 — COMPLETE ✅ (all 9 plans; gate green exit 0 + coordinate smoke green 6/6)
+Plan: 155-01..09 done
+Status: PA+IL Wave-2 seeding delivered to prod. NEXT: Phase 156 (OH+GA+NC)
 Last activity: 2026-06-30
 Carry-forward opened: PA independents (Aug-3 filing deadline) → post-Aug-10 date-gated re-check (FL-153 pattern)
 
