@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v2.21
 milestone_name: 2026 US House Candidate Coverage
 status: executing
-stopped_at: Phase 158 complete (89-district gate); Phase 159 REFRAMED to MI+VA primary-field-now + Aug-5 cull — planning
-last_updated: "2026-07-01T18:30:00.000Z"
-last_activity: 2026-07-01 -- Phase 159 reframed (seed primary field now, cull Aug 5); planning kicked off
+stopped_at: Phase 159 PLANNED (6 plans, 4 waves; plan-checker PASS 0-blockers) — waves 1-2 runnable NOW; wave 3 (159-05 cull) date-gated >= Aug-5
+last_updated: "2026-07-01T19:15:00.000Z"
+last_activity: 2026-07-01 -- Phase 159 planned (reframed to primary-field-now + Aug-5 cull); ready to execute waves 1-2
 progress:
   total_phases: 6
   completed_phases: 5
