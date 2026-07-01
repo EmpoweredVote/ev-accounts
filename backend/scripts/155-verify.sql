@@ -289,10 +289,39 @@ BEGIN
     'religious-freedom','same-sex-marriage','school-vouchers','social-security',
     'tariffs','taxes','trans-athletes','voting-rights','ukraine-support');
 
-  -- Whole-record stance honest-skip set (USHS-14a pattern). Pinned by exact UUID WITH the
-  -- query's ORDER BY (143 lesson). EMPTY now — POPULATED-BY-155-07/08 for genuinely no-record
-  -- challengers (campaign sites dead/slogan-only; no Ballotpedia survey; inference refused).
+  -- Whole-record stance honest-skip set (USHS-14a pattern). Pinned by exact UUID, ORDER BY
+  -- politician_id (143 lesson). POPULATED-BY-155-07/08: 25 of the 45 new PA/IL candidates are
+  -- genuinely no-record — obscure first-time challengers whose campaign sites are dead/ECONNREFUSED
+  -- or JS-walled, with empty Ballotpedia and 403/404/429 local news. Party-inference refused per
+  -- chairs-not-polarity. The other 20 new candidates carry >=1 sourced federal stance. (150 precedent:
+  -- 15+ NY challengers whole-record-skipped likewise.)
   CREATE TEMP TABLE _stance_skip (politician_id uuid, reason text) ON COMMIT DROP;
+  INSERT INTO _stance_skip (politician_id, reason) VALUES
+    ('01e1c605-ae26-454a-8a07-e716ecb94682', 'Carl Lambrecht (-171001) — no fetchable primary-source positions; party-inference refused'),
+    ('19840ff5-e2ab-44a4-8653-1ae11e640946', 'Mayra Macías (-170406) — no fetchable primary-source positions; party-inference refused'),
+    ('2085c1c2-f4f1-4cba-8fc4-857fc6260ce8', 'Julie Fortier (-171201) — no fetchable primary-source positions; party-inference refused'),
+    ('2328f66c-1d18-43d9-aaa2-9b4a4b1b870a', 'Ray Bilger (-421501) — no fetchable primary-source positions; party-inference refused'),
+    ('2cdc15e1-c187-438a-8b8e-fa77b95e55ad', 'James Hayes (-421201) — no fetchable primary-source positions; party-inference refused'),
+    ('30b9e404-4c84-4cb0-baab-5193ba0ffa74', 'Jeff Wilson (-171301) — no fetchable primary-source positions; party-inference refused'),
+    ('33470757-69ba-4b50-a77e-5b268afd0444', 'Jessica Arriaga (-420201) — no fetchable primary-source positions; party-inference refused'),
+    ('3af97f78-0f7d-4b21-9ea8-6fc722180d27', 'Beth Farnham (-421301) — no fetchable primary-source positions; party-inference refused'),
+    ('3f14687c-b517-4245-be93-1d10872015bc', 'Justin Wagner (-421601) — no fetchable primary-source positions; party-inference refused'),
+    ('3f28f820-964d-46b1-9744-f80954587087', 'Lindsay Church (-170404) — no fetchable primary-source positions; party-inference refused'),
+    ('40553bf3-57e9-49dc-9113-ceea8fdc09f2', 'James Marter (-171401) — no fetchable primary-source positions; party-inference refused'),
+    ('453f001c-a51e-41d6-baf4-689184db6539', 'Rachel Wallace (-420901) — no fetchable primary-source positions; party-inference refused'),
+    ('51739cbe-e706-4700-a658-7e0186bfdfb1', 'Jeff Walter (-171101) — no fetchable primary-source positions; party-inference refused'),
+    ('630fd17c-99de-46f9-9d11-1c6f9cc4aad8', 'Patty Garcia (-170401) — no fetchable primary-source positions; party-inference refused'),
+    ('672d84a9-26c8-4dad-a8be-6f68fc6f93d0', 'Nicholas Manganaro (-420501) — no fetchable primary-source positions; party-inference refused'),
+    ('6817ed47-c6e3-455a-bbc0-3393f3852f62', 'Mike Noack (-170202) — no fetchable primary-source positions; party-inference refused'),
+    ('74f87114-0627-4c75-8fed-f419ad4d66af', 'Jennifer Todd (-171501) — no fetchable primary-source positions; party-inference refused'),
+    ('8710545f-5b82-4494-b015-9dfd864d773c', 'Chad Koppie (-170702) — no fetchable primary-source positions; party-inference refused'),
+    ('a2792a55-75ed-414b-bdb8-f0f25dbbda7f', 'Jennifer Davis (-170802) — no fetchable primary-source positions; party-inference refused'),
+    ('adc2e7ca-1ab6-4f94-9484-10160a90ff78', 'Aurora Stuski (-420401) — no fetchable primary-source positions; party-inference refused'),
+    ('c658d4c4-ac7e-4af2-818c-7620c00b9a34', 'Tony Guy (-421701) — no fetchable primary-source positions; party-inference refused'),
+    ('ca2e0488-3940-43ae-a0f7-090ca1d358c5', 'Christian Maxwell (-170101) — no fetchable primary-source positions; party-inference refused'),
+    ('dd3ab4db-c67f-493f-b94a-b2f704592ede', 'Marty Young (-420601) — no fetchable primary-source positions; party-inference refused'),
+    ('ebce5da2-1cd1-4c46-b692-3b2a6e859860', 'Chris Getty (-170405) — no fetchable primary-source positions; party-inference refused'),
+    ('fdb0ca1e-c7c5-4f9a-8a8c-ce193687f7e8', 'Ashley Banks (-170203) — no fetchable primary-source positions; party-inference refused');
 
   -- Headshot honest-skip set (no free-license portrait anywhere). Pinned by exact external_id WITH
   -- ORDER BY external_id (143 lesson). POPULATED-BY-155-05 (PA, 15) + 155-06 (IL, 22) = 37 of 45 new
