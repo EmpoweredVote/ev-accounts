@@ -9,8 +9,16 @@
  */
 
 import { pool } from './db.js';
+import { cache } from './cache.js';
 import type { PoliticianFlatRecord, FinanceSummary } from './essentialsService.js';
 import { MTFCC_DISTRICT_TYPE_GUARD, type GeoPair } from './geoIdGuard.js';
+
+// Overlap resolution is pure geometry — it only changes when geofence boundaries
+// are (re)loaded, which happens during seeding, not at request time. Caching the
+// result keyed by the seed set makes repeat browses of the same area near-instant.
+// TTL is kept modest (1h) so a freshly-seeded city surfaces its new overlaps
+// within the hour without a manual cache bust.
+const OVERLAP_CACHE_TTL_SECONDS = 3600;
 
 // FIPS → state abbreviation mapping
 const FIPS_TO_ABBREV: Record<string, string> = {
@@ -133,34 +141,76 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
   const seedGeoIds = seeds.map((s) => s.geo_id);
   const seedMtfccs = seeds.map((s) => s.mtfcc);
 
+  // Cache keyed by the canonical (order-independent) seed set.
+  const cacheKey = `overlap:v1:${seeds
+    .map((s) => `${s.geo_id}::${s.mtfcc}`)
+    .sort()
+    .join(',')}`;
+  const cached = await cache.get<GeoPair[]>(cacheKey);
+  if (cached !== null) return cached;
+
+  // Split what used to be a single OR of three spatial predicates into a UNION
+  // ALL of three branches, each with an explicit bounding-box pre-filter
+  // (`&&`). Postgres cannot drive a GIST index through an OR of mixed-direction
+  // spatial predicates, so the old query did a full sequential scan of every
+  // geofence polygon (~4s for a single area). With one predicate structure per
+  // branch and a `&&` pre-filter, the planner uses the GIST index on
+  // geofence_boundaries.geometry to reduce each branch to an index-driven
+  // nested-loop join. Result semantics are identical — `&&` is a necessary
+  // condition for every branch's exact predicate, and the outer DISTINCT
+  // reproduces the original SELECT DISTINCT over the OR.
   const intersectionQuery = `
-    SELECT DISTINCT gb2.geo_id, gb2.mtfcc
-    FROM unnest($1::text[], $2::text[]) AS seed(geo_id, mtfcc)
-    JOIN essentials.geofence_boundaries gb1
-      ON gb1.geo_id = seed.geo_id AND gb1.mtfcc = seed.mtfcc
-    JOIN essentials.geofence_boundaries gb2
-      ON NOT (gb2.geo_id = gb1.geo_id AND gb2.mtfcc = gb1.mtfcc)
-    WHERE (
-      -- Sub-districts whose representative point falls WITHIN the area
-      public.ST_Contains(gb1.geometry, public.ST_PointOnSurface(gb2.geometry))
-      -- Larger non-city districts that CONTAIN the area's center point
-      OR (public.ST_Contains(gb2.geometry, public.ST_PointOnSurface(gb1.geometry))
-          AND gb2.mtfcc NOT IN ('G4110', 'G4120'))
-      -- County / school / legislative districts that genuinely overlap the area
-      -- (interiors intersect). NOT ST_Touches excludes neighbors that merely
-      -- share a boundary edge (zero-area touch), which would otherwise surface
-      -- adjacent counties / districts for border areas. A real split — e.g. a
-      -- city divided across two senate districts, or straddling two school
-      -- districts — has overlapping interiors and is kept (verified: Alpine
-      -- stays in both SD-19 ~62% and SD-21 ~38%).
-      OR (public.ST_Intersects(gb1.geometry, gb2.geometry)
-          AND NOT public.ST_Touches(gb1.geometry, gb2.geometry)
-          AND gb2.mtfcc IN ('G5200', 'G5210', 'G5220', 'G4020', 'G5400', 'G5410', 'G5420'))
-    )
+    SELECT DISTINCT t.geo_id, t.mtfcc
+    FROM (
+      -- Branch 1: sub-districts whose representative point falls WITHIN the area
+      SELECT gb2.geo_id, gb2.mtfcc
+      FROM unnest($1::text[], $2::text[]) AS seed(geo_id, mtfcc)
+      JOIN essentials.geofence_boundaries gb1
+        ON gb1.geo_id = seed.geo_id AND gb1.mtfcc = seed.mtfcc
+      JOIN essentials.geofence_boundaries gb2
+        ON NOT (gb2.geo_id = gb1.geo_id AND gb2.mtfcc = gb1.mtfcc)
+       AND gb1.geometry OPERATOR(public.&&) gb2.geometry
+      WHERE public.ST_Contains(gb1.geometry, public.ST_PointOnSurface(gb2.geometry))
+
+      UNION ALL
+
+      -- Branch 2: larger non-city districts that CONTAIN the area's center point
+      SELECT gb2.geo_id, gb2.mtfcc
+      FROM unnest($1::text[], $2::text[]) AS seed(geo_id, mtfcc)
+      JOIN essentials.geofence_boundaries gb1
+        ON gb1.geo_id = seed.geo_id AND gb1.mtfcc = seed.mtfcc
+      JOIN essentials.geofence_boundaries gb2
+        ON NOT (gb2.geo_id = gb1.geo_id AND gb2.mtfcc = gb1.mtfcc)
+       AND gb2.geometry OPERATOR(public.&&) gb1.geometry
+      WHERE gb2.mtfcc NOT IN ('G4110', 'G4120')
+        AND public.ST_Contains(gb2.geometry, public.ST_PointOnSurface(gb1.geometry))
+
+      UNION ALL
+
+      -- Branch 3: county / school / legislative districts that genuinely overlap
+      -- the area (interiors intersect). NOT ST_Touches excludes neighbors that
+      -- merely share a boundary edge (zero-area touch), which would otherwise
+      -- surface adjacent counties / districts for border areas. A real split —
+      -- e.g. a city divided across two senate districts, or straddling two
+      -- school districts — has overlapping interiors and is kept (verified:
+      -- Alpine stays in both SD-19 ~62% and SD-21 ~38%).
+      SELECT gb2.geo_id, gb2.mtfcc
+      FROM unnest($1::text[], $2::text[]) AS seed(geo_id, mtfcc)
+      JOIN essentials.geofence_boundaries gb1
+        ON gb1.geo_id = seed.geo_id AND gb1.mtfcc = seed.mtfcc
+      JOIN essentials.geofence_boundaries gb2
+        ON NOT (gb2.geo_id = gb1.geo_id AND gb2.mtfcc = gb1.mtfcc)
+       AND gb1.geometry OPERATOR(public.&&) gb2.geometry
+      WHERE gb2.mtfcc IN ('G5200', 'G5210', 'G5220', 'G4020', 'G5400', 'G5410', 'G5420')
+        AND public.ST_Intersects(gb1.geometry, gb2.geometry)
+        AND NOT public.ST_Touches(gb1.geometry, gb2.geometry)
+    ) t
   `;
 
   const { rows } = await pool.query(intersectionQuery, [seedGeoIds, seedMtfccs]);
-  return rows.map((r) => ({ geo_id: r.geo_id as string, mtfcc: r.mtfcc as string }));
+  const result = rows.map((r) => ({ geo_id: r.geo_id as string, mtfcc: r.mtfcc as string }));
+  await cache.set(cacheKey, result, OVERLAP_CACHE_TTL_SECONDS);
+  return result;
 }
 
 /**
