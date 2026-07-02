@@ -14,11 +14,9 @@ progress:
   percent: 88
 ---
 
-<!-- CARRY-FORWARD (opened Phase 159-03, 2026-07-01): VA-5/6/9 incumbent office->district links
-     rotated in essentials.offices (CD5->Cline, CD6->Griffith, CD9->McGuire) vs true delegation
-     (VA-5 McGuire, VA-6 Cline, VA-9 Griffith per GovTrack/Wikipedia + districts OCD labels).
-     Elections feed wired CORRECTLY in 159-03; REPS feed still rotated. Fix = 3-office politician_id
-     swap (out of Phase 159 scope). Needs operator decision. -->
+<!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
+     3-cycle swap of offices.politician_id + politicians.office_id back-refs. Both elections + reps
+     feeds now consistent: CD-5 McGuire, CD-6 Cline, CD-9 Griffith. Idempotent (re-run = UPDATE 0). -->
 
 
 # Project State
