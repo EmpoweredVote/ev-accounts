@@ -1,6 +1,10 @@
 # MI 2026 House manual headshot sources — external_id|image_url|license
 # Recovered notables the auto Wikipedia guard rejected (name/desc mismatch), human-verified free-license.
-# Michael Bouchard (MI-10 R, Oakland County Sheriff): auto rejected — WP page titled "Mike Bouchard" (first-name mismatch). CC BY 2.0.
--261004|https://upload.wikimedia.org/wikipedia/commons/7/7d/Mike_Bouchard_2006.jpg|cc_by_2.0
+# Michael Bouchard (MI-10 R): REVERTED 2026-07-02 — WRONG PERSON. The 2026 MI-10 candidate is
+# "Captain Mike Bouchard" (Army NG, 82nd/101st Airborne), the SON of Oakland County Sheriff Mike
+# Bouchard. The Mike_Bouchard_2006.jpg photo is the FATHER (2006 Senate campaign). The auto-guard's
+# first-name-mismatch rejection was CORRECT; this manual override was the error. politician_images
+# row + storage object deleted. Now an honest-skip (no free-license portrait of the son found).
+# -261004|https://upload.wikimedia.org/wikipedia/commons/7/7d/Mike_Bouchard_2006.jpg|cc_by_2.0  ← DO NOT RESTORE
 # Bridget Brink (MI-7 D, fmr US Ambassador to Ukraine): auto rejected desc "american diplomat" as non-political. Official State Dept photo = public domain (federal work).
 -260701|https://commons.wikimedia.org/wiki/Special:FilePath/Bridget%20A.%20Brink%20official%20photo.jpg|public_domain
