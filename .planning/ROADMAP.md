@@ -140,7 +140,7 @@ Plans:
 **Wave 2**
 
 - [ ] 161-03-PLAN.md — AZ federal-24 stances (0-unsourced), pushed as AZ slice before Jul-21
-- [ ] 161-04-PLAN.md — WA seed (elections + 10 races + ~60 records + race_candidates + headshots)
+- [x] 161-04-PLAN.md — WA seed (elections + 10 races + ~60 records + race_candidates + headshots)
 
 **Wave 3**
 
@@ -289,7 +289,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 160. Field Resolution + Stance-Gap Diagnostic | 7/7 | Complete    | 2026-07-03 |
-| 161. WA + AZ + TN + MA Candidate Seeding | 2/11 | In Progress|  |
+| 161. WA + AZ + TN + MA Candidate Seeding | 3/11 | In Progress|  |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
 | 164. KY + OR + CT + OK + AR + IA + KS + MS Candidate Seeding | 0/? | Not started | - |
