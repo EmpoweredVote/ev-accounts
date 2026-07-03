@@ -312,7 +312,10 @@ For each TN geo_id (4701..4709):
 | A3 | TN-1/2/3 (Harshbarger/Burchett/Fleischmann, East TN) will score "not severe" and TN-9 (Cohen, dismantled) will score "severe" | Summary / Common Pitfalls #1 | Based on convergent reporting (Shelby/Davidson county splits) but not a district-by-district GIS diff — the phase's own audit task must confirm precisely, including TN-4/5/6/7/8 which are also reported as touched by the Nashville/Memphis county exchanges and may also warrant severe classification |
 | A4 | No new npm/pip packages are needed for this phase | Package Legitimacy Audit | If the TN correspondence audit needs a shapefile/GIS diff library not already installed, a package legitimacy check would be newly required — low risk since the qualitative county-level approach (Don't Hand-Roll table) avoids this dependency entirely |
 
-## Open Questions
+## Open Questions (RESOLVED)
+
+> All three questions are disposed of by the final plan set (plan-checker pass 2026-07-03):
+> Q1 → RESOLVED: the classification IS 161-01's deliverable (audit plan runs first, emits the machine-readable severe list TN seeding consumes). Q2 → RESOLVED: deferred to Phase 164.1 (polygon-refresh/dual-map, now inserted in ROADMAP) — this phase writes no geofence data. Q3 → RESOLVED: every migration-authoring task re-checks `ls backend/migrations` at author time; plans sequence 1187–1193 with one migration author per wave.
 
 1. **Exact TN severity classification (which of TN-4 through TN-9 are "severe")**
    - What we know: Shelby County (Memphis) splits three ways among new CD-5/8/9; Davidson County (Nashville) splits three ways among new CD-4/6/7; TN-9 (Cohen) is explicitly dismantled; TN-1/2/3 (East TN) are reported unaffected by every source found.
