@@ -84,7 +84,7 @@
 Plans:
 **Wave 1**
 
-- [ ] 160-01-PLAN.md — DB diagnostics: 178-row incumbent+stance-gap map, negative external_id collision audit, pre-existing race/candidate audit
+- [x] 160-01-PLAN.md — DB diagnostics: 178-row incumbent+stance-gap map, negative external_id collision audit, pre-existing race/candidate audit
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
@@ -248,7 +248,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 160. Field Resolution + Stance-Gap Diagnostic | 0/? | Not started | - |
+| 160. Field Resolution + Stance-Gap Diagnostic | 1/7 | In Progress|  |
 | 161. WA + AZ + TN + MA Candidate Seeding | 0/? | Not started | - |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |

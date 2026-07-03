@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage (Wave 3)
 status: executing
-last_updated: "2026-07-03T04:02:23.992Z"
-last_activity: 2026-07-03 -- Phase 160 planning complete
+last_updated: "2026-07-03T04:42:21.175Z"
+last_activity: 2026-07-03
 progress:
   total_phases: 8
   completed_phases: 0
   total_plans: 7
-  completed_plans: 0
+  completed_plans: 1
   percent: 0
 ---
 
@@ -24,15 +24,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.22 Wave 3 — 38 remaining states / 178 districts. Roadmap created 2026-07-03: Phase 160 (diagnostic) → Phases 161–165 (seeding) → Phase 166 (gate) → Phase 167 (date-gated post-primary reconciliation). Next: `/gsd-plan-phase 160`. v2.21 tail (159-05/06 MI+VA cull+gate) preserved, date-gated ≥ 2026-08-05.
+**Current focus:** Phase 160 — field-resolution-stance-gap-diagnostic
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 160 (Field Resolution + Stance-Gap Diagnostic) — Not started
-Plan: —
+Phase: 160 (field-resolution-stance-gap-diagnostic) — EXECUTING
+Plan: 2 of 7
 Status: Ready to execute
-Last activity: 2026-07-03 -- Phase 160 planning complete
+Last activity: 2026-07-03
 
 ## v2.22 Phase Dependencies
 
@@ -182,12 +182,13 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 | 021 | Add candidate support to compass compare | 2026-05-14 | 5eb3852 | [021-add-candidate-support-to-compass-compar](./quick/021-add-candidate-support-to-compass-compar/) |
 | 022 | Fix Malik inversion bug, run 24 stance ingest scripts (255 rows), extend compassService dual-path fallback | 2026-05-15 | 01b3bfe | [022-run-pending-stance-ingest-and-extend-ca](./quick/022-run-pending-stance-ingest-and-extend-ca/) |
 | 023 | Deep candidate coverage — CA Gov (Hilton/Becerra) +11 sourced stances + 2 headshots; LA Mayor (Bass/Raman) reasoning enriched; ALL 4 candidates + pre-existing stances primary-source fact-checked (4 honest-skips deleted, value/quote/source corrections); both Govs at 22 symmetric state-tier | 2026-06-23 | c96d749f | [023-deep-candidate-coverage-gov-la-mayor](./quick/023-deep-candidate-coverage-gov-la-mayor/) |
+| Phase 160 P01 | 10min | 3 tasks | 6 files |
 
 ## Session Continuity
 
-Last session: 2026-07-03T02:59:54.922Z
-Stopped at: Phase 160 context gathered
-Resume file: .planning/phases/160-field-resolution-stance-gap-diagnostic/160-CONTEXT.md
+Last session: 2026-07-03T04:42:21.161Z
+Stopped at: Completed 160-01-PLAN.md (DB diagnostics: 178-row incumbent map, 16-district collision audit, 59-row pre-existence audit)
+Resume file: .planning/phases/160-field-resolution-stance-gap-diagnostic/160-02-PLAN.md
 
 ## Operator Next Steps
 
@@ -214,3 +215,5 @@ Resume file: .planning/phases/160-field-resolution-stance-gap-diagnostic/160-CON
 - [v2.18 roadmap]: SEXS-02 assigned to Phase 143 (completing phase) — spans both Wave 1 (Gov+AG) and Wave 2 (SoS+Treasurer+LtGov); Phase 142 carries it partially; 143 closes it
 - [v2.18 roadmap]: Feed surfacing (SEXR-05) is a smoke test in Phase 144, not a build phase — STATE_EXEC already enumerated in essentialsService.ts lines 669-716 and 1585-1598
 - [v2.18 roadmap]: external_id scheme for new states = `-(state_fips * 10000 + office_seq)` — safest non-overlapping range; must verify 0 collisions against live DB before authoring
+- [Phase 160-01]: diag-160-external-id-collision.ts hardcodes KY-CD1 and OK-CD1 to safe_start_seq=200 per Critical Finding 6, not just a saturation-threshold heuristic
+- [Phase 160-01]: diag-160-race-preexistence-audit.ts uses LEFT JOIN race_candidates so 0-candidate pre-scaffolded races (MD/OR) still emit a full-column audit row with existing_race_id populated

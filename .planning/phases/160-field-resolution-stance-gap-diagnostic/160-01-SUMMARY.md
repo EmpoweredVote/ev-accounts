@@ -136,3 +136,7 @@ None - no external service configuration required. All three scripts run against
 ---
 *Phase: 160-field-resolution-stance-gap-diagnostic*
 *Completed: 2026-07-03*
+
+## Self-Check: PASSED
+
+All 7 created files confirmed present on disk; all 5 referenced commit hashes (`bd6ab8ae`, `4a231916`, `1777a02c`, `9881ed7f`, `40275c52`) confirmed present in `git log`.

@@ -12,7 +12,7 @@
 
 ### Field Resolution
 
-- [ ] **USHC3-01**: The verified 2026 ballot field is resolved for all 178 districts across the 38 remaining states — every state classified by primary date (decided vs late-primary); decided states get the confirmed Nov-3 general-ballot field (major-party nominees + ballot-qualified independents/third-party) with every incumbent-not-nominee race explicitly flagged; late-primary states get the full qualified pre-primary field from official filing lists; incumbent map + stance-gap baseline built and collision-free negative `external_id` bands verified per state before any insert.
+- [x] **USHC3-01**: The verified 2026 ballot field is resolved for all 178 districts across the 38 remaining states — every state classified by primary date (decided vs late-primary); decided states get the confirmed Nov-3 general-ballot field (major-party nominees + ballot-qualified independents/third-party) with every incumbent-not-nominee race explicitly flagged; late-primary states get the full qualified pre-primary field from official filing lists; incumbent map + stance-gap baseline built and collision-free negative `external_id` bands verified per state before any insert.
 
 ### Candidate Records
 
