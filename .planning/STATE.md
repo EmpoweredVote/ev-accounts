@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage (Wave 3)
 status: planning
-last_updated: "2026-07-03T16:02:25.283Z"
+last_updated: "2026-07-03T17:52:08.847Z"
 last_activity: 2026-07-03
 progress:
-  total_phases: 8
+  total_phases: 9
   completed_phases: 1
-  total_plans: 7
+  total_plans: 18
   completed_plans: 7
-  percent: 13
+  percent: 11
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
@@ -133,6 +133,7 @@ Re-acknowledged at v2.20 close (2026-06-30).
 - Phase 159 REFRAMED (2026-07-01): "wait until Aug 4, seed decided nominees" -> "seed full pre-primary qualified field NOW (all parties, records+headshots+full federal-24 stances) + post-primary cull >= Aug 5". Applies FL's provisional-field pattern (Phase 151 seed -> 153 cull) to MI+VA. Rationale: serve primary voters at the Aug-4 civic moment; FL already does this (181-cand provisional field live) — MI/VA were the un-principled dark exception. DB-confirmed: FL 181 active cands, VA 0 (races scaffolded), MI 0 (fully dark). VA primary date verified Aug-4 (moved from June). Operator chose FULL coverage (accepts loser stance work discarded at cull).
 - Phase 159 Waves 1-2 COMPLETE (2026-07-01/02): 159-01 MI seed (migs 1146/1147: 1 election + 13 races, 56 new pols + 67 active rc) + 159-03 VA seed (mig 1148: 46 new pols + 58 active rc onto 11 existing races) + mig 1149 VA-5/6/9 office-rotation fix; 159-02 MI stances (46/56, 344 rows, 0 unsourced, 10 pinned skips; headshots 4) + 159-04 VA stances (37 stanced, 288 rows, 0 unsourced, 9 genuine skips after spot-audit found 13/22 pins FALSE; headshots 6). Exact skip pins in 159-02/159-04 SUMMARY.md. Key lessons in memory (project_phase159_wave1): header-only CSV without a search trail ≠ honest-skip (21/25 false); Bouchard father/son wrong-person revert — trust the auto-guard's first-name-mismatch rejection.
 - **v2.22 roadmap created (2026-07-03):** Phases 160–167 derived from USHC3-01..07. Generalizes the v2.21 Phase-159 "seed full provisional field now, cull later" principle to ALL late-primary states in Wave 3 (not a special case) — every seeding phase (161–165) may contain a mix of decided and late-primary states, resolved per-district by Phase 160. Grouping: largest-delegation-first, load-balanced 33-38 districts/phase (37/33/36/38/34), same methodology as v2.20/v2.21 (5 phases total kept the granularity comparable despite 178 vs 113/144 districts, per "standard" granularity guidance).
+- Phase 164.1 inserted after Phase 164: Cross-State District Polygon Refresh + Dual-Map Design (TN/MO/AL/LA/UT) — D-01c from Phase 161 discussion: redistricted-state polygons must refresh before Phase 165 (UT full re-key) and well before Nov-3; un-gates TN districts withheld under 161 D-01b; likely needs backend query changes (dual-map: reps feed on current-representation boundaries until Jan 2027, elections on 2026 boundaries) (URGENT)
 
 ### Key Decisions
 

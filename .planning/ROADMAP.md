@@ -217,6 +217,16 @@ Plans:
 
 ---
 
+### Phase 164.1: Cross-State District Polygon Refresh + Dual-Map Design (TN/MO/AL/LA/UT) (INSERTED)
+
+**Goal:** [Urgent work - to be planned]
+**Requirements**: TBD
+**Depends on:** Phase 164
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd-plan-phase 164.1 to break down)
+
 #### Phase 165: Small-Delegation States Candidate Seeding (17 states, create elections + races, then candidates)
 
 **Goal:** Every US House race in the 17 smallest remaining delegations surfaces its full ballot field on `/elections` — all 17 states need `elections`/`races` rows authored first, then candidates, race_candidates wiring, headshots, and federal-24 stances. NV (4) + UT (4) + NM (3) + NE (3) + WV (2) + ID (2) + HI (2) + ME (2) + NH (2) + RI (2) + MT (2) + AK (1) + DE (1) + ND (1) + SD (1) + VT (1) + WY (1) = 34 districts. This phase closes the milestone's seeding scope — the union of Phases 161–165 covers all 178 Wave-3 districts.
