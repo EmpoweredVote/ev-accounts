@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage (Wave 3)
-status: planning
-last_updated: "2026-07-03T01:21:56.369Z"
-last_activity: 2026-07-03
+status: Roadmap approved; ready for `/gsd-plan-phase 160`
+last_updated: "2026-07-03T02:59:54.931Z"
+last_activity: 2026-07-03 — v2.22 roadmap created (Phases 160–167)
 progress:
   total_phases: 8
   completed_phases: 0
@@ -185,9 +185,9 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 
 ## Session Continuity
 
-Last session: 2026-07-02
-Stopped at: Phase 159 Waves 1-2 complete; all v2.21 remaining work is calendar-gated; v2.22 roadmap created 2026-07-03
-Resume file: .planning/phases/159-mi-candidate-seeding-verification-date-gated-primary-aug-4-2/ (159-05/06 plans + 159-02/159-04 SUMMARY.md skip pins). For v2.22: `/gsd-plan-phase 160`.
+Last session: 2026-07-03T02:59:54.922Z
+Stopped at: Phase 160 context gathered
+Resume file: .planning/phases/160-field-resolution-stance-gap-diagnostic/160-CONTEXT.md
 
 ## Operator Next Steps
 
