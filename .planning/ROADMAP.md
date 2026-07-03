@@ -80,7 +80,16 @@
   3. A collision-free negative `external_id` band (`-(state_fips*10000 + cd*100 + seq)`) is verified with 0 collisions against live negative IDs for each of the 38 states before any insert.
   4. The set of genuinely-new candidates needing records (challengers, open-seat, special-seated) is enumerated per state and per district, distinct from incumbents/previously-seeded figures that reuse existing records — a per-state new-record count is produced as the authoritative input for all five seeding phases.
 
-**Plans:** TBD
+**Plans:** 7 plans
+
+Plans:
+- [ ] 160-01-PLAN.md — DB diagnostics: 178-row incumbent+stance-gap map, negative external_id collision audit, pre-existing race/candidate audit
+- [ ] 160-02-PLAN.md — Field resolution: Phase-161 group (WA/AZ/TN/MA, 37 late-primary) + validated 19-col template
+- [ ] 160-03-PLAN.md — Field resolution: Phase-162 group (IN/MD/MN/MO, 33) + IN-9 bug + zero-tier flags
+- [ ] 160-04-PLAN.md — Field resolution: Phase-163 group (WI/CO/AL/SC/LA, 36) + AL district-split + LA jungle-primary
+- [ ] 160-05-PLAN.md — Field resolution: Phase-164 group (KY/OR/CT/OK/AR/IA/KS/MS, 38) + OR races + KY/OK collision notes
+- [ ] 160-06-PLAN.md — Field resolution: Phase-165 group (17 small states, 34) + AK/ME RCV over-indulgence + NV/UT/ME reconciliation
+- [ ] 160-07-PLAN.md — Merge master field-table.csv (178/88-decided-90-late) + validator + write-free 160-verify.sql gate + Phase-167 clusters
 
 ---
 
