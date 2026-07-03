@@ -563,19 +563,19 @@ Verified patterns from this session's live DB queries (all executed successfully
 
 ---
 
-## Open Questions
+## Open Questions (all RESOLVED)
 
-1. **Does `essentials.politicians.external_id` have a UNIQUE (or similar) DB constraint?**
+1. **Does `essentials.politicians.external_id` have a UNIQUE (or similar) DB constraint?** **(RESOLVED — resolved-by-plan: 160-01's collision-audit task (Part B) documents the constraint's presence/absence as part of its output; no separate action needed.)**
    - What we know: 16 districts have collision risk under the naive formula; a UNIQUE constraint would turn a silent-overwrite risk into a hard INSERT failure (safer, fails loud).
    - What's unclear: Whether such a constraint exists — not checked this session.
    - Recommendation: Verify via `\d essentials.politicians` or an information_schema query at plan time; if no UNIQUE constraint exists, the live pre-INSERT collision check (Pattern 2) becomes even more critical since a silent overwrite is possible, not just a loud failure.
 
-2. **Are NV-2's stale primary-era data and the IN-9 incumbent-flag bug isolated, or do similar bugs exist in ME's or UT's pre-existing rows?**
+2. **Are NV-2's stale primary-era data and the IN-9 incumbent-flag bug isolated, or do similar bugs exist in ME's or UT's pre-existing rows?** **(RESOLVED — 160-01's race-preexistence-audit task now emits a full-column dump of every pre-existing ME/MD/MA/NV/OR/IN/UT race/candidate row with a per-row anomaly flag, so the owning seeding phases (162/163/165) inherit a complete column-level audit before building on them.)**
    - What we know: IN-9's bug (wrong incumbent flags) and NV-2's NULL-politician_id are confirmed; ME's and UT's rows were spot-checked and looked structurally sound (correct incumbent flags on Blake Moore/Celeste Maloy/Mike Kennedy in UT; ME's rows are simply incomplete, not obviously wrong).
    - What's unclear: A full field-by-field data-quality audit of all 29+ pre-existing rows wasn't performed (this session verified existence and gross correctness, not every column).
    - Recommendation: The Phase-160 plan should include an explicit "reconcile, don't recreate" task per affected state (ME, MD, MA, NV, OR, IN, UT) that audits every column of the pre-existing rows before the owning seeding phase (162/163/165) builds on them.
 
-3. **What is Phase 167's exact per-cluster date-gated structure, given the 90 late-primary districts span primary dates from Jul 21 (AZ) through Sep 15 (DE)?**
+3. **What is Phase 167's exact per-cluster date-gated structure, given the 90 late-primary districts span primary dates from Jul 21 (AZ) through Sep 15 (DE)?** **(RESOLVED — Claude's Discretion per CONTEXT.md D-05; delivered by 160-07's Phase-167 primary-date cluster table grouping every state's exact 2026 primary date by calendar week.)**
    - What we know: The late-primary districts don't share one date — they span nearly 2 months across 5+ distinct clusters (Jul: AZ; Aug 4: WA/MO/KS/AL-1267-no-wait-Aug11; Aug 6: TN; Aug 8: HI; Aug 11: MN/WI/CT/VT/AL-1/2/6/7; Aug 18: AK/WY; Sep 1: MA; Sep 8: NH; Sep 9: RI; Sep 15: DE; LA's Aug 5-7 qualifying is its own case).
    - What's unclear: Whether Phase 167 should have one plan per date-cluster (7-8 plans) or a smaller number of coarser clusters (e.g., "August primaries" vs "September primaries").
    - Recommendation: This is explicitly Claude's Discretion per CONTEXT.md D-05 ("the Phase-167 primary-date-cluster output format"); Phase 160 should at minimum produce the per-state exact primary date so the eventual Phase-167 planner can group as needed. Recommend clustering by calendar week for practicality (5-7 clusters).

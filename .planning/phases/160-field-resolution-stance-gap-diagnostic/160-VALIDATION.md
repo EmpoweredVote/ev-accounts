@@ -2,7 +2,7 @@
 phase: 160
 slug: field-resolution-stance-gap-diagnostic
 status: draft
-nyquist_compliant: false
+nyquist_compliant: true
 wave_0_complete: false
 created: 2026-07-03
 ---
@@ -81,6 +81,6 @@ created: 2026-07-03
 - [ ] Wave 0 covers all MISSING references (the 5 scripts + 3 output CSVs above)
 - [ ] No watch-mode flags
 - [ ] Feedback latency < 60s
-- [ ] `nyquist_compliant: true` set in frontmatter
+- [x] `nyquist_compliant: true` set in frontmatter
 
-**Approval:** pending
+**Approval:** approved 2026-07-03
