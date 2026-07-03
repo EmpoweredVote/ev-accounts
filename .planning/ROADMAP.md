@@ -92,7 +92,7 @@ Plans:
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 160-03-PLAN.md — Field resolution: Phase-162 group (IN/MD/MN/MO, 33) + IN-9 bug + zero-tier flags
+- [x] 160-03-PLAN.md — Field resolution: Phase-162 group (IN/MD/MN/MO, 33) + IN-9 bug + zero-tier flags
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
@@ -248,7 +248,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 160. Field Resolution + Stance-Gap Diagnostic | 2/7 | In Progress|  |
+| 160. Field Resolution + Stance-Gap Diagnostic | 3/7 | In Progress|  |
 | 161. WA + AZ + TN + MA Candidate Seeding | 0/? | Not started | - |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
