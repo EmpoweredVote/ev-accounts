@@ -1,42 +1,38 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.21
-milestone_name: 2026 US House Candidate Coverage
-status: executing
-last_updated: "2026-07-02T00:00:00.000Z"
-last_activity: 2026-07-02 -- Phase 159 Wave 2 complete (159-02 MI + 159-04 VA stances/headshots); Waves 3-4 date-gated
-stopped_at: "Phase 159 Waves 1-2 COMPLETE (159-01/03 seed + 159-02/04 stances/headshots, all pushed). Waves 3-4 (159-05 cull + 159-06 gate) DATE-GATED >= 2026-08-05 (MI+VA primaries Aug-4). Nothing in v2.21 is runnable before then."
+milestone: v2.22
+milestone_name: 2026 US House Candidate Coverage (Wave 3)
+status: planning
+last_updated: "2026-07-03T01:21:56.369Z"
+last_activity: 2026-07-03
 progress:
-  total_phases: 6
-  completed_phases: 5
-  total_plans: 34
-  completed_plans: 32
-  percent: 94
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
      3-cycle swap of offices.politician_id + politicians.office_id back-refs. Both elections + reps
      feeds now consistent: CD-5 McGuire, CD-6 Cline, CD-9 Griffith. Idempotent (re-run = UPDATE 0). -->
 
-
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-30 after v2.21 milestone started)
+See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 159 — MI + VA Primary-Field Coverage (seed now) + Post-Primary Cull
+**Current focus:** v2.22 Wave 3 — 38 remaining states / 178 districts (defining requirements). v2.21 tail (159-05/06 MI+VA cull+gate) preserved, date-gated ≥ 2026-08-05.
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 159 (MI + VA Primary-Field Coverage (seed now) + Post-Primary Cull) — WAVES 1-2 COMPLETE; WAVES 3-4 DATE-GATED ≥ 2026-08-05
-Plan: 4 of 6 complete (159-01/02/03/04); 159-05 (post-primary cull) + 159-06 (gate) locked until ≥ 2026-08-05
-Status: Paused on calendar gate — MI+VA primaries are Aug-4; 159-05 has an explicit run-early STOP
-Last activity: 2026-07-02 -- Wave 2 complete: MI 46/56 stanced (344 rows, 0 unsourced, 10 pinned skips, cac368d2); VA 37 stanced (288 rows, 0 unsourced, 9 genuine skips after 13/22 false-skip spot-audit recovery, b606317b). All pushed.
-Carry-forward opened: PA independents (Aug-3 filing deadline) → post-Aug-10 date-gated re-check (FL-153 pattern)
-Ballot flags queued for 159-05 cull (verify vs official results ≥ Aug-5): MI — Prieto -261108 / Goci -261301 / King -261305 / Murphy -261104 / S.Baker -261101 disqualified, Rais -260704 off-ballot; VA — Roma, Van Meter, Cook, Hall withdrawn (VA-9 D field = Crockett/Murphy/Powers)
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-07-03 — Milestone v2.22 started
 
 ## v2.21 Phase Dependencies
 

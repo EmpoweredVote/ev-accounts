@@ -22,22 +22,39 @@ The foundational account infrastructure for Empowered Vote. A three-tier system 
 
 Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
 
-## Current Milestone: v2.21 2026 US House Candidate Coverage (Wave 2)
+## Current Milestone: v2.22 2026 US House Candidate Coverage (Wave 3 — National Completion)
+
+**Goal:** Every US resident — in all 435 districts — can enter their address into Elections and see their 2026 US House race: the actual Nov-3 general-ballot field, each candidate with a headshot and chairs-not-polarity, evidence-only federal-24 stances. Completes the multi-milestone House program by covering the final 38 states.
+
+**Scope — 178 districts across the 38 remaining states (all delegations ≤ 10):** WA 10 · AZ 9 · TN 9 · MA 9 · IN 9 · MD 8 · MN 8 · MO 8 · WI 8 · CO 8 · AL 7 · SC 7 · LA 6 · KY 6 · OR 6 · CT 5 · OK 5 · AR 4 · IA 4 · KS 4 · MS 4 · NV 4 · UT 4 · NM 3 · NE 3 · WV 2 · ID 2 · HI 2 · ME 2 · NH 2 · RI 2 · MT 2 · AK 1 · DE 1 · ND 1 · SD 1 · VT 1 · WY 1.
+
+**Target features:**
+- Field-resolution diagnostic across all 38 states (Phase-154 pattern): primary status per state (decided vs late-primary), verified ballot field per district, incumbent map + stance-gap check, collision-free external_id bands.
+- 2026 US House candidate records for ~178 districts — create elections+races first (TX/NY pattern; none of the 38 states have pre-seeded 2026 races); sitting incumbents are already stanced (v2.16/v2.17) and reuse existing records.
+- Primary-decided states seed the final general-ballot field; late-primary states seed the **full provisional field** (proven FL/MI/VA pattern) with date-gated post-primary culls.
+- Headshot per new candidate (find-headshots conventions, wrong-person guard).
+- Sourced compass stances per new candidate across the **federal 24-topic** set — chairs-not-polarity, every answer backed by a real fetched source, honest-skip where no evidence; never inferred from party.
+- Each US House race surfaces for a resident's address on `/elections` via `races` + `race_candidates` (pure-data, Path B — no backend code; surfacing path proven in v2.20/v2.21).
+- Consolidated read-only verification gate + coordinate smoke covering all 38 states.
+
+**Out of scope (v2.22):** Senate races (own track), challenger `finance_summary` (→ later), primary-only/withdrawn candidates, the curated-out 20 non-federal topics, the v2.21 MI+VA post-primary cull (159-05/06, date-gated ≥ 2026-08-05) and the v2.20 FL re-check (Phase 153, ≥ 2026-08-18) — both are separate carry-forwards.
+
+**Phase numbering:** starts at **160** (159 dirs preserved for the v2.21 date-gated tail); phases 177/178 are reserved by a parallel session (Hillsboro/Tigard OR) and must not be reused.
+
+<details>
+<summary>v2.21 2026 US House Candidate Coverage (Wave 2) — goal &amp; scope (Waves 1-2 of work complete; 159-05/06 date-gated ≥ 2026-08-05)</summary>
 
 **Goal:** Every resident of the next 8 largest-delegation states can enter their address into Elections and see their 2026 US House race — the actual Nov-3 general-ballot field — each candidate with a headshot and chairs-not-polarity, evidence-only federal-24 stances. Reuses the fully-proven v2.20 elections-feed pipeline.
 
 **Scope — 113 districts across 8 states (all delegations ≥ 11):** PA 17 · IL 17 · OH 15 · GA 14 · NC 14 · MI 13 · NJ 12 · VA 11.
 
-**Target features:**
-- 2026 US House candidate records for the Nov-3 general-ballot field (major-party nominees + ballot-qualified independents/third-party). New work is challengers + open-seat candidates; sitting incumbents are already stanced (v2.16/v2.17) and reuse existing records, so a stance-gap diagnostic runs at plan time.
-- Headshot per new candidate (find-headshots conventions).
-- Sourced compass stances per new candidate across the **federal 24-topic** set — chairs-not-polarity, every answer backed by a real fetched source, honest-skip where no evidence; never inferred from party.
-- Each US House race surfaces for a resident's address on `/elections` via `races` + `race_candidates` (pure-data, Path B — no backend code; surfacing path proven in v2.20).
-- Consolidated read-only verification gate + coordinate smoke covering all 8 states.
+**Status at v2.22 start (2026-07-02):** Phases 154–158 complete + Phase 159 Waves 1-2 complete (MI+VA full provisional fields seeded, stanced, 0 unsourced). Remaining: 159-05 post-primary cull + 159-06 gate, date-gated ≥ 2026-08-05 (MI+VA primaries Aug-4) — closes USHC2-06. PA independents re-check ≥ 2026-08-10.
 
 **Out of scope (v2.21):** the remaining ~178 districts in the 38 smaller-delegation states (→ Wave 3+), Senate races (own track), challenger `finance_summary` (→ later), primary-only/withdrawn candidates, the curated-out 20 non-federal topics, FL post-primary re-check (Phase 153, separate date-gated carry-forward ≥ 2026-08-18).
 
 **Phase numbering:** continues from v2.20; Phase 153 is the reserved FL carry-forward, so Wave 2 phases start at **154**.
+
+</details>
 
 <details>
 <summary>v2.20 2026 US House Candidate Coverage (Wave 1) — goal &amp; scope (shipped)</summary>
@@ -468,4 +485,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-30 — v2.21 2026 US House Candidate Coverage (Wave 2) started. Scope: PA/IL/OH/GA/NC/MI/NJ/VA = 113 districts (all delegations ≥ 11), reusing the proven v2.20 elections-feed pipeline (challengers + open-seat; incumbents already stanced). Wave 2 phases start at 154 (153 reserved for the FL post-primary re-check). Previous milestone v2.20 (CA/TX/FL/NY = 144 districts) shipped 2026-06-30.*
+*Last updated: 2026-07-02 — v2.22 2026 US House Candidate Coverage (Wave 3 — National Completion) started. Scope: the 38 remaining states = 178 districts (all delegations ≤ 10), completing all 435 districts; primary-decided states seed final fields, late-primary states seed full provisional fields (FL/MI/VA pattern) with date-gated culls. Wave 3 phases start at 160 (159 preserved for the v2.21 date-gated tail; 177/178 reserved by a parallel session). v2.21 Waves 1-2 done; its 159-05/06 cull+gate is date-gated ≥ 2026-08-05.*
