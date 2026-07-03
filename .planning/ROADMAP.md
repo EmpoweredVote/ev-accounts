@@ -100,7 +100,7 @@ Plans:
 
 **Wave 5** *(blocked on Wave 4 completion)*
 
-- [ ] 160-05-PLAN.md — Field resolution: Phase-164 group (KY/OR/CT/OK/AR/IA/KS/MS, 38) + OR races + KY/OK collision notes
+- [x] 160-05-PLAN.md — Field resolution: Phase-164 group (KY/OR/CT/OK/AR/IA/KS/MS, 38) + OR races + KY/OK collision notes
 
 **Wave 6** *(blocked on Wave 5 completion)*
 
@@ -248,7 +248,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 160. Field Resolution + Stance-Gap Diagnostic | 4/7 | In Progress|  |
+| 160. Field Resolution + Stance-Gap Diagnostic | 5/7 | In Progress|  |
 | 161. WA + AZ + TN + MA Candidate Seeding | 0/? | Not started | - |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
