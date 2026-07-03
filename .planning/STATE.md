@@ -181,7 +181,7 @@ Resume file: .planning/phases/159-mi-candidate-seeding-verification-date-gated-p
 - **≥ 2026-08-05:** `/gsd-execute-phase 159` Waves 3-4 (159-05 post-primary cull vs official MI SoS / VA results, then 159-06 24-district gate) — closes USHC2-06 and v2.21
 - **≥ 2026-08-10:** PA independents re-check (Aug-3 filing deadline; FL-153 pattern)
 - **≥ 2026-08-18:** Phase 153 — FL post-primary re-check (USHC-07 carry-forward from v2.20)
-- **Anytime:** scope Wave 3 (~178 remaining districts) via `/gsd-new-milestone`; remaining Phase 156 flag = GA legislator Playwright stance enhancement (Clark/Gaines)
+- **Anytime:** scope Wave 3 (~178 remaining districts) via `/gsd-new-milestone`. Phase 156 flags all closed (2026-07-02, c7d5ccc9): Clark/Gaines/Hancock stanced via Playwright (16 sourced stances, 3 skip pins retired, gate 11/11). Only minor note left: iSideWith vote-corroboration for McDowell/Christian.
 - ~~`/gsd-cleanup`~~ DONE 2026-07-02 (v2.20 dirs 148-152 → milestones/v2.20-phases/, b5084500)
 - ~~Phase 156 carry-forwards #1/#2~~ DONE 2026-07-02 (mig 1168, 37701cf7): NC field reconciled vs official NCSBE general list — all 9 NC Libertarians certified (feared mass-prune was false); pruned Rogers NC-11 + Aguilar NC-13 (not certified, 0 stances/imgs); added Bo Whitehead (Green, NC-8, honest-skip pinned). OH-1: Hancock confirmed certified Libertarian nominee (won May-5 primary 91.2% over Stoops write-in; LPO site listing = stale endorsement) — no data change. 156 gate re-run 11/11 PASS.
 - Note: a parallel session is working Phases 177/178 (Hillsboro/Tigard OR) in this repo — avoid collisions on those phase dirs and Oregon data
