@@ -93,7 +93,11 @@ async function main(): Promise<void> {
   const audits: DistrictAudit[] = [];
   for (const [st, fips] of Object.entries(FIPS)) {
     const numDistricts = DELEG[st];
-    for (let cd = 1; cd <= numDistricts; cd++) {
+    // At-large states are keyed cd=0 / geo_id XX00 in essentials.districts and the
+    // incumbent map — their live band is -(fips*10000 + 0*100 + seq). A 1..1 loop
+    // would test a nonexistent CD1 band and report false assurance (CR-01).
+    const cds = numDistricts === 1 ? [0] : Array.from({ length: numDistricts }, (_, i) => i + 1);
+    for (const cd of cds) {
       const collisions: number[] = [];
       for (let seq = 1; seq <= MAX_SEQ; seq++) {
         const candidate = -(fips * 10000 + cd * 100 + seq);
@@ -134,7 +138,7 @@ async function main(): Promise<void> {
     }
   }
 
-  console.log(`\nTotal colliding districts: ${audits.length} (expected 16)\n`);
+  console.log(`\nTotal colliding districts: ${audits.length} (19 as of 2026-07-03 incl. at-large cd=0 bands: AK 4 / DE 26 / VT 5)\n`);
 
   // -----------------------------------------------------------------------
   // ALTERNATE SUB-BAND REQUIRED warning for near-saturated districts.
