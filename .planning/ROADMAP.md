@@ -80,7 +80,7 @@
   3. A collision-free negative `external_id` band (`-(state_fips*10000 + cd*100 + seq)`) is verified with 0 collisions against live negative IDs for each of the 38 states before any insert.
   4. The set of genuinely-new candidates needing records (challengers, open-seat, special-seated) is enumerated per state and per district, distinct from incumbents/previously-seeded figures that reuse existing records — a per-state new-record count is produced as the authoritative input for all five seeding phases.
 
-**Plans:** 7 plans
+**Plans:** 7/7 plans complete
 Plans:
 **Wave 1**
 
@@ -248,7 +248,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 160. Field Resolution + Stance-Gap Diagnostic | 7/7 | Complete   | 2026-07-03 |
+| 160. Field Resolution + Stance-Gap Diagnostic | 7/7 | Complete    | 2026-07-03 |
 | 161. WA + AZ + TN + MA Candidate Seeding | 0/? | Not started | - |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
