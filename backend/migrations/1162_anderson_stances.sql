@@ -44,6 +44,13 @@ BEGIN
   IF n <> 4 THEN
     RAISE EXCEPTION 'Expected % answers, found % — topic_key mismatch dropped rows', 4, n;
   END IF;
+  -- Context-parity gate (WR-03): the context VALUES list is a verbatim
+  -- duplicate of the answers list; count it too so a single-sided edit
+  -- cannot silently drop or skew reasoning/sources rows.
+  SELECT COUNT(*) INTO n FROM inform.politician_context WHERE politician_id = 'af1382e1-7b67-4729-8d6c-ec1bab0625bd';
+  IF n <> 4 THEN
+    RAISE EXCEPTION 'Expected % context rows, found % — answers/context VALUES lists diverged', 4, n;
+  END IF;
 END $$;
 
 COMMIT;
