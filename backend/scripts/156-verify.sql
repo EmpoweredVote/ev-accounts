@@ -20,7 +20,8 @@
 --               no incumbent pid). Assert instead Jasmine Clark AND Jonathan Chavez are BOTH active in
 --               the GA-13 (geo 1313) race, both non-null politician_id, neither is_incumbent=true.
 --   D-02      — named minor-line / multi-candidate fields are seeded (party-agnostic presence):
---               OH-4 Independent Tamie Wilson + NC-11 Independent John Rogers pinned by name here; the
+--               OH-4 Independent Tamie Wilson + NC-8 Green Bo Whitehead pinned by name here (NC-11
+--               Rogers pin retired 2026-07-02 by mig 1168 — not NCSBE-certified, pruned); the
 --               OH/NC Libertarian + NC-13 Green lines are structurally covered by USHC2-03a and pinned
 --               by the seeding waves (156-03/05 append named minor-line rows to _minor).
 --   USHC2-04  — every newly-seeded OH/GA/NC candidate (politician_id in the new-candidate external_id
@@ -289,10 +290,13 @@ BEGIN
   -- Named independents pinned here; the OH/NC Libertarian + NC-13 Green lines are structurally
   -- covered by USHC2-03a and appended to _minor by the seeding waves (156-03/05) once their
   -- certified names are confirmed (D-03 re-confirm may trim unqualified lines).
+  -- 2026-07-02 mig-1168 reconciliation vs the OFFICIAL NCSBE general list: NC-11 John Rogers is
+  -- NOT certified -> pruned to 'withdrawn' (pin removed here); NC-8 Bo Whitehead (Green, filed
+  -- 06/15/2026) IS certified -> pinned active instead.
   CREATE TEMP TABLE _minor (st text, geo_id text, who text) ON COMMIT DROP;
   INSERT INTO _minor (st, geo_id, who) VALUES
     ('OH','3904','Tamie Wilson'),   -- OH-4 Independent
-    ('NC','3711','John Rogers');    -- NC-11 Independent
+    ('NC','3708','Bo Whitehead');   -- NC-8 Green (mig 1168)
   SELECT COUNT(*) INTO v_minor_missing
   FROM _minor m
   WHERE NOT EXISTS (
@@ -301,9 +305,9 @@ BEGIN
       AND h.candidate_status = 'active' AND lower(h.full_name) = lower(m.who)
   );
   IF v_minor_missing <> 0 THEN
-    RAISE EXCEPTION 'FAIL D-02: % minor-line candidate(s) (OH-4 Wilson / NC-11 Rogers) not seeded as active', v_minor_missing;
+    RAISE EXCEPTION 'FAIL D-02: % minor-line candidate(s) (OH-4 Wilson / NC-8 Whitehead) not seeded as active', v_minor_missing;
   END IF;
-  RAISE NOTICE 'PASS D-02: OH-4 Wilson + NC-11 Rogers seeded as active (minor lines not dropped)';
+  RAISE NOTICE 'PASS D-02: OH-4 Wilson + NC-8 Whitehead seeded as active (minor lines not dropped)';
 
   -- ==========================================================================
   -- In-scope STANCE/HEADSHOT sets (D-01 ASYMMETRY — exclude ALL partial incumbents EXCEPT McDowell).
@@ -393,6 +397,15 @@ BEGIN
     ('ca1208ad-61ae-4b45-a2e6-4fd12cb90973', 'Travis Groo NC-11 (L) — no site/Ballotpedia/coverage'),
     ('e9f52a4b-73b0-4d50-8346-526851df066c', 'Tom Bailey NC-1 (L) — parked domain, not in NCSBE filing CSV (see carry-forward flag)'),
     ('fcd46138-4de8-4ef6-98a1-0fe34d85135c', 'Maad Abu-Ghazalah NC-7 (L) — domains ECONNREFUSED, no positions');
+  -- 2026-07-02 mig-1168: NC-8 Bo Whitehead (Green) added post-primary (certified 06/15/2026 per
+  -- NCSBE general list). Whole-record honest-skip WITH search trail: 2x web search = no coverage;
+  -- Ballotpedia bio = stub (no Candidate Connection survey, no positions); NCSBE filing contact =
+  -- email only, no campaign site. Pinned by external_id (uuid is migration-generated).
+  -- (Rogers -371103 / Aguilar -371302 pins above are now INERT — both pruned to 'withdrawn' by
+  -- mig 1168, so they leave _in_scope; kept for the historical record.)
+  INSERT INTO _stance_skip (politician_id, reason)
+  SELECT p.id, 'Bo Whitehead NC-8 (Green) — Ballotpedia stub, no survey/site/coverage (mig 1168)'
+  FROM essentials.politicians p WHERE p.external_id = -370802;
 
   -- Headshot honest-skip set (no free-license portrait anywhere). Pinned by exact external_id WITH
   -- ORDER BY external_id (143 lesson). POPULATED-BY-156-06 (OH/GA/NC headshot pass).
@@ -430,6 +443,7 @@ BEGIN
     (-371101, 'Jamie Ager — no free-license portrait; obscure challenger/minor-line, no own bio image; wrong-person/historical fill refused'),
     (-371002, 'Steven Feldman — no free-license portrait; obscure challenger/minor-line, no own bio image; wrong-person/historical fill refused'),
     (-371001, 'Ashley Bell — no free-license portrait; obscure challenger/minor-line, no own bio image; wrong-person/historical fill refused'),
+    (-370802, 'Bo Whitehead — no portrait anywhere (Ballotpedia Submit-photo placeholder); added post-primary by mig 1168'),
     (-370801, 'Colby Watson — no free-license portrait; obscure challenger/minor-line, no own bio image; wrong-person/historical fill refused'),
     (-370702, 'Maad Abu-Ghazalah — no free-license portrait; obscure challenger/minor-line, no own bio image; wrong-person/historical fill refused'),
     (-370701, 'Kimberly Hardy — no free-license portrait; obscure challenger/minor-line, no own bio image; wrong-person/historical fill refused'),
