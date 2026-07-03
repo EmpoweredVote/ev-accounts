@@ -134,8 +134,8 @@ Plans:
 Plans:
 **Wave 1**
 
-- [ ] 161-01-PLAN.md — TN old-vs-new map correspondence audit (D-01a); enumerates severe geo_ids to seed-but-withhold
-- [ ] 161-02-PLAN.md — AZ seed end-to-end first (elections + 9 races + 32 records + race_candidates + headshots); live before Jul-21 primary
+- [x] 161-01-PLAN.md — TN old-vs-new map correspondence audit (D-01a); enumerates severe geo_ids to seed-but-withhold
+- [x] 161-02-PLAN.md — AZ seed end-to-end first (elections + 9 races + 32 records + race_candidates + headshots); live before Jul-21 primary
 
 **Wave 2**
 
@@ -289,7 +289,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 160. Field Resolution + Stance-Gap Diagnostic | 7/7 | Complete    | 2026-07-03 |
-| 161. WA + AZ + TN + MA Candidate Seeding | 0/11 | Not started | - |
+| 161. WA + AZ + TN + MA Candidate Seeding | 2/11 | In Progress|  |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
 | 164. KY + OR + CT + OK + AR + IA + KS + MS Candidate Seeding | 0/? | Not started | - |
