@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2.21
 milestone_name: 2026 US House Candidate Coverage
 status: executing
-last_updated: "2026-07-01T23:03:38.101Z"
-last_activity: 2026-07-01 -- Phase 159 Wave 1 complete (159-01 MI + 159-03 VA seeded); paused before Wave 2
-stopped_at: "Phase 159 Wave 1 COMPLETE (159-01 MI + 159-03 VA); PAUSED per operator before Wave 2 (headshots+stances). Waves 3-4 (cull+gate) DATE-GATED >= 2026-08-05."
+last_updated: "2026-07-02T00:00:00.000Z"
+last_activity: 2026-07-02 -- Phase 159 Wave 2 complete (159-02 MI + 159-04 VA stances/headshots); Waves 3-4 date-gated
+stopped_at: "Phase 159 Waves 1-2 COMPLETE (159-01/03 seed + 159-02/04 stances/headshots, all pushed). Waves 3-4 (159-05 cull + 159-06 gate) DATE-GATED >= 2026-08-05 (MI+VA primaries Aug-4). Nothing in v2.21 is runnable before then."
 progress:
   total_phases: 6
   completed_phases: 5
   total_plans: 34
-  completed_plans: 30
-  percent: 88
+  completed_plans: 32
+  percent: 94
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
@@ -31,11 +31,12 @@ See: .planning/PROJECT.md (updated 2026-06-30 after v2.21 milestone started)
 
 ## Current Position
 
-Phase: 159 (MI + VA Primary-Field Coverage (seed now) + Post-Primary Cull) — EXECUTING
-Plan: 1 of 6
-Status: Executing Phase 159
-Last activity: 2026-07-01 -- Phase 159 execution started
+Phase: 159 (MI + VA Primary-Field Coverage (seed now) + Post-Primary Cull) — WAVES 1-2 COMPLETE; WAVES 3-4 DATE-GATED ≥ 2026-08-05
+Plan: 4 of 6 complete (159-01/02/03/04); 159-05 (post-primary cull) + 159-06 (gate) locked until ≥ 2026-08-05
+Status: Paused on calendar gate — MI+VA primaries are Aug-4; 159-05 has an explicit run-early STOP
+Last activity: 2026-07-02 -- Wave 2 complete: MI 46/56 stanced (344 rows, 0 unsourced, 10 pinned skips, cac368d2); VA 37 stanced (288 rows, 0 unsourced, 9 genuine skips after 13/22 false-skip spot-audit recovery, b606317b). All pushed.
 Carry-forward opened: PA independents (Aug-3 filing deadline) → post-Aug-10 date-gated re-check (FL-153 pattern)
+Ballot flags queued for 159-05 cull (verify vs official results ≥ Aug-5): MI — Prieto -261108 / Goci -261301 / King -261305 / Murphy -261104 / S.Baker -261101 disqualified, Rais -260704 off-ballot; VA — Roma, Van Meter, Cook, Hall withdrawn (VA-9 D field = Crockett/Murphy/Powers)
 
 ## v2.21 Phase Dependencies
 
@@ -51,16 +52,16 @@ Phases 155/156/157 each cover disjoint states so are data-independent once Phase
 
 ## v2.21 Requirement Coverage
 
-| Requirement | Phase 154 | Phase 155 (PA+IL) | Phase 156 (OH+GA+NC) | Phase 157 (MI+NJ+VA) | Phase 158 |
-|-------------|:---------:|:-----------------:|:--------------------:|:--------------------:|:---------:|
-| USHC2-01 Field Resolution | ◻ | | | | |
-| USHC2-02 Records | | ◻ anchor | ◻ | ✅ NJ | |
-| USHC2-03 Race Wiring | | ◻ anchor | ◻ | ✅ NJ | |
-| USHC2-04 Headshots | | ◻ anchor | ◻ | ✅ NJ | |
-| USHC2-05 Stances | | ◻ anchor | ◻ | ✅ NJ | |
-| USHC2-06 Verification Gate | | | | | ✅ (89 decided; MI+VA → 159) |
+| Requirement | Phase 154 | Phase 155 (PA+IL) | Phase 156 (OH+GA+NC) | Phase 157 (NJ) | Phase 159 (MI+VA) |
+|-------------|:---------:|:-----------------:|:--------------------:|:--------------:|:-----------------:|
+| USHC2-01 Field Resolution | ✅ | | | | |
+| USHC2-02 Records | | ✅ anchor | ✅ | ✅ NJ | ✅ seeded (Wave 1) |
+| USHC2-03 Race Wiring | | ✅ anchor | ✅ | ✅ NJ | ✅ seeded (Wave 1) |
+| USHC2-04 Headshots | | ✅ anchor | ✅ | ✅ NJ | ✅ (Wave 2) |
+| USHC2-05 Stances | | ✅ anchor | ✅ | ✅ NJ | ✅ (Wave 2) |
+| USHC2-06 Verification Gate | | | | Phase 158 ✅ (89 decided) | ◻ 159-06 gate (≥ Aug-5, after 159-05 cull) |
 
-100% coverage: all 6 USHC2 requirements mapped, no orphans. USHC2-02/03/04/05 are state-partitioned (anchored at 155, continued 156/157; gate at 158).
+100% coverage: all 6 USHC2 requirements mapped, no orphans. Remaining open work: 159-05 (MI+VA post-primary cull) + 159-06 (24-district gate), both date-gated ≥ 2026-08-05.
 
 ## v2.21 Execution Methodology (carry-forward for plan-phase)
 
@@ -119,6 +120,7 @@ Re-acknowledged at v2.20 close (2026-06-30).
 - Phase 158 edited: gate scoped to 100 decided-state districts; MI verified in 159
 - Phase 159 added: MI Candidate Seeding + Verification, date-gated >= 2026-08-04 (MI primary Aug 4)
 - Phase 159 REFRAMED (2026-07-01): "wait until Aug 4, seed decided nominees" -> "seed full pre-primary qualified field NOW (all parties, records+headshots+full federal-24 stances) + post-primary cull >= Aug 5". Applies FL's provisional-field pattern (Phase 151 seed -> 153 cull) to MI+VA. Rationale: serve primary voters at the Aug-4 civic moment; FL already does this (181-cand provisional field live) — MI/VA were the un-principled dark exception. DB-confirmed: FL 181 active cands, VA 0 (races scaffolded), MI 0 (fully dark). VA primary date verified Aug-4 (moved from June). Operator chose FULL coverage (accepts loser stance work discarded at cull).
+- Phase 159 Waves 1-2 COMPLETE (2026-07-01/02): 159-01 MI seed (migs 1146/1147: 1 election + 13 races, 56 new pols + 67 active rc) + 159-03 VA seed (mig 1148: 46 new pols + 58 active rc onto 11 existing races) + mig 1149 VA-5/6/9 office-rotation fix; 159-02 MI stances (46/56, 344 rows, 0 unsourced, 10 pinned skips; headshots 4) + 159-04 VA stances (37 stanced, 288 rows, 0 unsourced, 9 genuine skips after spot-audit found 13/22 pins FALSE; headshots 6). Exact skip pins in 159-02/159-04 SUMMARY.md. Key lessons in memory (project_phase159_wave1): header-only CSV without a search trail ≠ honest-skip (21/25 false); Bouchard father/son wrong-person revert — trust the auto-guard's first-name-mismatch rejection.
 
 ### Key Decisions
 
@@ -170,13 +172,17 @@ None at roadmap time. Run diagnostic queries at Phase 154 plan authoring:
 
 ## Session Continuity
 
-Last session: 2026-06-30T07:11:43.476Z
-Stopped at: Phase 154 context gathered
-Resume file: .planning/phases/154-field-resolution-stance-gap-diagnostic/154-CONTEXT.md
+Last session: 2026-07-02
+Stopped at: Phase 159 Waves 1-2 complete; all v2.21 remaining work is calendar-gated
+Resume file: .planning/phases/159-mi-candidate-seeding-verification-date-gated-primary-aug-4-2/ (159-05/06 plans + 159-02/159-04 SUMMARY.md skip pins)
 
 ## Operator Next Steps
 
-- Plan Phase 154 with `/gsd-plan-phase 154`
+- **≥ 2026-08-05:** `/gsd-execute-phase 159` Waves 3-4 (159-05 post-primary cull vs official MI SoS / VA results, then 159-06 24-district gate) — closes USHC2-06 and v2.21
+- **≥ 2026-08-10:** PA independents re-check (Aug-3 filing deadline; FL-153 pattern)
+- **≥ 2026-08-18:** Phase 153 — FL post-primary re-check (USHC-07 carry-forward from v2.20)
+- **Anytime:** `/gsd-cleanup` (v2.20 phase dirs 148-152 still in .planning/phases/); Phase 156 carry-forwards (NCSBE NC-minor-line prune, OH-1 Stoops-vs-Hancock); or scope Wave 3 (~178 remaining districts) via `/gsd-new-milestone`
+- Note: a parallel session is working Phases 177/178 (Hillsboro/Tigard OR) in this repo — avoid collisions on those phase dirs and Oregon data
 
 ## Decisions
 
