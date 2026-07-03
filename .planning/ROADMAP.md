@@ -96,7 +96,7 @@ Plans:
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
-- [ ] 160-04-PLAN.md — Field resolution: Phase-163 group (WI/CO/AL/SC/LA, 36) + AL district-split + LA jungle-primary
+- [x] 160-04-PLAN.md — Field resolution: Phase-163 group (WI/CO/AL/SC/LA, 36) + AL district-split + LA jungle-primary
 
 **Wave 5** *(blocked on Wave 4 completion)*
 
@@ -248,7 +248,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 160. Field Resolution + Stance-Gap Diagnostic | 3/7 | In Progress|  |
+| 160. Field Resolution + Stance-Gap Diagnostic | 4/7 | In Progress|  |
 | 161. WA + AZ + TN + MA Candidate Seeding | 0/? | Not started | - |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
