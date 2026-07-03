@@ -1,55 +1,57 @@
-# Requirements — v2.21 2026 US House Candidate Coverage (Wave 2)
+# Requirements — v2.22 2026 US House Candidate Coverage (Wave 3 — National Completion)
 
-**Milestone goal:** Every resident of the next 8 largest-delegation states can enter their address into Elections and see their 2026 US House race — the actual Nov-3 general-ballot field — each candidate with a headshot and chairs-not-polarity, evidence-only federal-24 stances. Reuses the fully-proven v2.20 elections-feed pipeline.
+**Milestone goal:** Every US resident — in all 435 districts — can enter their address into Elections and see their 2026 US House race: the actual Nov-3 general-ballot field, each candidate with a headshot and chairs-not-polarity, evidence-only federal-24 stances. Completes the multi-milestone House program by covering the final 38 states.
 
-**Scope:** The next 8 House delegations by size (all ≥ 11 seats) — **PA (17), IL (17), OH (15), GA (14), NC (14), MI (13), NJ (12), VA (11) = 113 districts**. Nov-3 general-ballot field (major-party nominees + ballot-qualified independents/third-party). New work = challengers + open-seat candidates; sitting incumbents already stanced (v2.16/v2.17) and reuse their existing records. Wave 2 of a multi-milestone program; remaining ~178 districts (38 smaller-delegation states) → Wave 3+.
+**Scope:** The 38 remaining states (all delegations ≤ 10) = **178 districts**: WA 10 · AZ 9 · TN 9 · MA 9 · IN 9 · MD 8 · MN 8 · MO 8 · WI 8 · CO 8 · AL 7 · SC 7 · LA 6 · KY 6 · OR 6 · CT 5 · OK 5 · AR 4 · IA 4 · KS 4 · MS 4 · NV 4 · UT 4 · NM 3 · NE 3 · WV 2 · ID 2 · HI 2 · ME 2 · NH 2 · RI 2 · MT 2 · AK 1 · DE 1 · ND 1 · SD 1 · VT 1 · WY 1. New work = challengers + open-seat candidates; sitting incumbents already stanced (v2.16/v2.17) and reuse their existing records. With Waves 1 (144) + 2 (113) this closes all 435 districts.
 
-**Method (settled, inherited from v2.20):** Surfacing via the elections feed (`essentials.races` + `race_candidates`) — PURE DATA, no backend code (Path B; surfacing path proven in v2.20). Per-state seed split: author `elections` + `races` rows first where none pre-exist, then `race_candidates` with non-null `politician_id`. Stances: federal 24-topic set, chairs-not-polarity, evidence-only, mandatory primary-source verification pass, 0 unsourced. Never infer from party. Two costliest traps — duplicate-incumbent records and lost-incumbent-primary — prevented up front by the Phase-154-style field-resolution diagnostic (verify nominee per district from results, never from incumbency).
+**Method (settled, inherited from v2.20/v2.21):** Surfacing via the elections feed (`essentials.races` + `race_candidates`) — PURE DATA, no backend code (Path B). All 38 states follow the create-races-first pattern (one `elections` row per state + one `races` row per district → existing `NATIONAL_LOWER` office; never `office_id IS NULL`). **Primary-status split (the v2.21 Phase-159 principle):** primary-decided states seed the final general-ballot field; late-primary states (Aug–Sep primaries) seed the full qualified pre-primary field marked `PROVISIONAL:`, then reconcile against official results after each primary (prune losers, confirm nominees) — the proven FL/MI/VA pattern. Stances: federal 24-topic set, chairs-not-polarity, evidence-only, mandatory primary-source verification pass, 0 unsourced, never inferred from party. Two costliest traps — duplicate-incumbent records and lost-incumbent-primary — prevented up front by the field-resolution diagnostic.
 
 ---
 
-## v2.21 Requirements
+## v2.22 Requirements
 
 ### Field Resolution
 
-- [x] **USHC2-01**: The verified Nov-3 general-ballot field is identified for all 113 Wave-2 districts (PA/IL/OH/GA/NC/MI/NJ/VA) — major-party nominees + ballot-qualified independents/third-party — with each race where the incumbent is NOT the 2026 nominee (lost-primary / retirement / redistricting / vacancy / deceased) explicitly flagged via the nominee-status taxonomy, and the per-state challenger/open-seat stance gap diagnosed against existing incumbent records.
+- [ ] **USHC3-01**: The verified 2026 ballot field is resolved for all 178 districts across the 38 remaining states — every state classified by primary date (decided vs late-primary); decided states get the confirmed Nov-3 general-ballot field (major-party nominees + ballot-qualified independents/third-party) with every incumbent-not-nominee race explicitly flagged; late-primary states get the full qualified pre-primary field from official filing lists; incumbent map + stance-gap baseline built and collision-free negative `external_id` bands verified per state before any insert.
 
 ### Candidate Records
 
-- [ ] **USHC2-02**: Every Wave-2 candidate has exactly one `essentials.politicians` record — incumbents and previously-seeded figures reuse their existing record (no duplicate politician rows), only genuinely new candidates get new records; party normalized (Democratic, not Democrat); collision-free negative `external_id` scheme verified against live IDs per state before any insert.
+- [ ] **USHC3-02**: Every Wave-3 candidate has exactly one `essentials.politicians` record — incumbents and previously-seeded figures reuse their existing record (0 duplicate politician rows), only genuinely new candidates get new records; party normalized (Democratic, not Democrat); external_ids follow the verified collision-free per-state scheme.
 
 ### Race Wiring (Elections surfacing)
 
-- [ ] **USHC2-03**: Every Wave-2 US House race surfaces on `/elections` for an in-district address via `essentials.races` + `essentials.race_candidates` — `elections` + `races` rows authored first for any state lacking pre-seeded 2026 House races, then `race_candidates` — with `race_candidates.politician_id` linked for every candidate (non-null, `candidate_status=active`, never `office_id IS NULL` on a House race) so stances and headshots resolve.
+- [ ] **USHC3-03**: Every Wave-3 US House race surfaces on `/elections` for an in-district address via `essentials.races` + `essentials.race_candidates` — `elections` + `races` rows authored first per state (none of the 38 states have pre-seeded 2026 House races), then `race_candidates` with non-null `politician_id`, `candidate_status=active`, incumbents flagged `is_incumbent=true`, never `office_id IS NULL`, party never on the candidate card.
 
 ### Headshots
 
-- [ ] **USHC2-04**: Every newly-seeded Wave-2 candidate has a headshot (find-headshots conventions: Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`; free-license, wrong-person-guarded, documented honest-skips where none found).
+- [ ] **USHC3-04**: Every newly-seeded Wave-3 candidate has a headshot (find-headshots conventions: Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`; free-license, wrong-person-guarded, documented honest-skips where none found).
 
 ### Stances
 
-- [ ] **USHC2-05**: Every Wave-2 candidate lacking them has sourced compass stances across the federal 24-topic set — chairs-not-polarity, every answer paired to an `inform.politician_context` row with a real fetched source URL, **0 unsourced**, honest-skip (per-topic or whole-record) where no documentable evidence, and a mandatory primary-source verification pass before push (no party inference, no agent over-read). Already-stanced incumbents skipped via the stance-gap diagnostic.
+- [ ] **USHC3-05**: Every newly-seeded Wave-3 candidate has sourced compass stances across the federal 24-topic set — chairs-not-polarity, every answer paired to an `inform.politician_context` row with a real fetched source URL, **0 unsourced**, honest-skip (per-topic or whole-record, gate-pinned with a written search trail) where no documentable evidence, and a mandatory primary-source verification pass before push. Already-stanced incumbents skipped via the stance-gap diagnostic.
 
 ### Verification
 
-- [ ] **USHC2-06**: A consolidated read-only gate proves the milestone — for each of the 8 Wave-2 states a test address resolves to its district and the House race displays the expected candidate field on `/elections`; asserts 0 unsourced stance rows and 0 duplicate-incumbent politician records across the 113 districts.
+- [ ] **USHC3-06**: A consolidated read-only gate proves the milestone — coordinate smoke resolves a test address to its district and House race with the expected candidate field on `/elections` for a representative sample of the 38 states; asserts 0 unsourced stance rows, 0 duplicate-incumbent records, and 0 NULL `politician_id`/`office_id` across all 178 districts.
+
+- [ ] **USHC3-07**: Every late-primary state is reconciled against official results after its primary — primary losers pruned (two-path: race_candidates deactivated + orphan check), advancing nominees confirmed, `PROVISIONAL:` flags cleared — date-gated per state primary date; Sep-primary states may carry forward past the main build (FL-153 pattern).
 
 ---
 
-## Future Requirements (deferred to Wave 3+)
+## Future Requirements (deferred)
 
-- [ ] Remaining ~178 US House districts (the 38 smaller-delegation states beyond the top-12), in largest-delegation-first waves.
-- [ ] Challenger FEC finance summaries (`finance_summary`) for newly-seeded candidates — reuse the existing FEC ingestion + name-match queue.
+- [ ] Challenger FEC finance summaries (`finance_summary`) for newly-seeded candidates — reuse the existing FEC ingestion + name-match queue (→ v2.23+).
 - [ ] Viewer-personalized compass alignment / multi-candidate compass overlay on the race display (rendering concern; no schema change).
+- [ ] Post-special-election re-seeds for any House vacancies filled after Wave-3 close.
 
-## Out of Scope (v2.21)
+## Out of Scope (v2.22)
 
-- The remaining ~178 districts in the 38 smaller-delegation states — deferred to later waves.
 - 2026 Senate races — own existing per-race track; not part of this milestone.
-- Primary-only / withdrawn / also-ran candidates not on the Nov-3 general ballot.
+- Primary-only / withdrawn / also-ran candidates not qualified for the ballot being seeded.
 - The 20 non-federal compass topics (state/local/judicial-only) — federal office scopes to 24 topics by design.
-- Backend / frontend code changes — surfacing is pure-data (proven in v2.20); the `/elections` "race not covered" empty state lives in the separate Essentials frontend repo.
-- FL post-primary re-check (Phase 153) — separate date-gated carry-forward (≥ 2026-08-18) from v2.20, not part of Wave 2.
+- Backend / frontend code changes — surfacing is pure-data (proven in v2.20/v2.21).
+- The v2.21 MI+VA post-primary cull + gate (159-05/06, date-gated ≥ 2026-08-05) and PA independents re-check (≥ 2026-08-10) — v2.21 carry-forwards, executed from the preserved Phase 159 plans.
+- FL post-primary re-check (Phase 153, ≥ 2026-08-18) — v2.20 carry-forward.
 
 ---
 
@@ -57,11 +59,12 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| USHC2-01 Field Resolution | Phase 154 | Done (2026-06-30) |
-| USHC2-02 Candidate Records | Phase 155 (anchor), 156, 157, 159 (MI) | Pending |
-| USHC2-03 Race Wiring | Phase 155 (anchor), 156, 157, 159 (MI) | Pending |
-| USHC2-04 Headshots | Phase 155 (anchor), 156, 157, 159 (MI) | Pending |
-| USHC2-05 Stances | Phase 155 (anchor), 156, 157, 159 (MI) | Pending |
-| USHC2-06 Verification Gate | Phase 158 (100 decided districts), 159 (MI) | Pending |
+| USHC3-01 Field Resolution | TBD (roadmap) | Pending |
+| USHC3-02 Candidate Records | TBD (roadmap) | Pending |
+| USHC3-03 Race Wiring | TBD (roadmap) | Pending |
+| USHC3-04 Headshots | TBD (roadmap) | Pending |
+| USHC3-05 Stances | TBD (roadmap) | Pending |
+| USHC3-06 Verification Gate | TBD (roadmap) | Pending |
+| USHC3-07 Post-Primary Reconciliation | TBD (roadmap) | Pending |
 
-> **MI is date-gated (D-01):** MI's congressional primary is Aug 4, 2026. Phase 154 resolves MI only to declared-field + incumbent-map; MI nominee seeding + verification is the date-gated Phase 159 (≥ 2026-08-04). Phases 155/156/157 + the Phase 158 gate cover the 100 decided-state districts; Phase 159 completes the milestone to 113.
+> **Phase numbering:** v2.22 phases start at **160** (159 dirs preserved for the v2.21 date-gated tail). **Phases 177/178 are reserved** by a parallel session (Hillsboro/Tigard OR) and must not be assigned.
