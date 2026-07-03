@@ -104,7 +104,7 @@ Plans:
 
 **Wave 6** *(blocked on Wave 5 completion)*
 
-- [ ] 160-06-PLAN.md — Field resolution: Phase-165 group (17 small states, 34) + AK/ME RCV over-indulgence + NV/UT/ME reconciliation
+- [x] 160-06-PLAN.md — Field resolution: Phase-165 group (17 small states, 34) + AK/ME RCV over-indulgence + NV/UT/ME reconciliation
 
 **Wave 7** *(blocked on Wave 6 completion)*
 
@@ -248,7 +248,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 160. Field Resolution + Stance-Gap Diagnostic | 5/7 | In Progress|  |
+| 160. Field Resolution + Stance-Gap Diagnostic | 6/7 | In Progress|  |
 | 161. WA + AZ + TN + MA Candidate Seeding | 0/? | Not started | - |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
