@@ -355,16 +355,21 @@ BEGIN
     ('5c41400a-8ba5-4334-9add-bbfcc49cba03', 'Tamie Wilson OH-4 (I) — site 404s, Ballotpedia blank'),
     ('9e92b2e5-1222-4b58-8fe0-75a895be662f', 'Don Leonard OH-15 — site ECONNREFUSED, all sources blocked'),
     ('afb4ccea-8530-4e54-a075-9b4168924326', 'Elizabeth Kirtley OH-6 — site ECONNREFUSED, no record'),
-    ('d923d20a-3ba6-46a2-a0d2-49534685ca3c', 'Cleophus Dulaney OH-3 — site ECONNREFUSED, Ballotpedia stub'),
-    ('ec72b7c5-635a-4590-a730-7e1bd62ce2f7', 'John Hancock OH-1 (L) — no campaign/platform; LPO lists Stoops for OH-1 (154 field flag)');
+    ('d923d20a-3ba6-46a2-a0d2-49534685ca3c', 'Cleophus Dulaney OH-3 — site ECONNREFUSED, Ballotpedia stub');
+  -- 2026-07-02: Hancock (ec72b7c5) pin RETIRED — he IS the certified OH-1 Libertarian nominee
+  -- (won May-5 primary; the LPO-lists-Stoops flag was a stale endorsement, see mig 1168 header).
+  -- Stanced 2 topics (taxes, campaign-finance) from his Ballotpedia Candidate Connection survey +
+  -- campaign-website platform quoted verbatim by Ballotpedia. Passes USHC2-05b on real coverage.
   INSERT INTO _stance_skip (politician_id, reason) VALUES
     -- GA (156-08): 13 whole-record skips of 18 — no fetchable primary-source positions; party-inference refused
     ('16aca704-48ca-40dc-826e-8af5bb12dee3', 'James Duffe GA-4 — campaign domains ECONNREFUSED, no record'),
     ('23daee91-beb1-405d-be9b-c1a62f3de6fa', 'John Salvesen GA-5 — no reachable site/Ballotpedia/press'),
     ('3467ec59-d701-4e4e-899b-34756dee3ebf', 'Anthony Kozycki GA-7 — all domains refused, no Ballotpedia'),
     ('407ca254-9f51-4aa2-becb-2f1e9ca5ea70', 'Pamela DeLancy GA-10 — Ballotpedia empty, site redirects, no coverage'),
-    ('57a9bf3e-4889-4b35-8a44-57430e7717ae', 'Houston Gaines GA-10 — GA-legislature roll-call record JS-walled (SPA); Ballotpedia/OTI empty'),
-    ('66cae409-332e-4b3c-a352-675dcbb58863', 'Jasmine Clark GA-13 — GA-legislature roll-call record JS-walled (SPA); Ballotpedia/OTI empty'),
+    -- 2026-07-02: Gaines (57a9bf3e) + Clark (66cae409) pins RETIRED — Playwright enhancement pass
+    -- stanced both from candidate-stated campaign platforms (houstongaines.com/issues, jasmine4ga.com/agenda
+    -- + press release + 19thnews): Gaines 6 topics, Clark 8 topics, 0 unsourced. They must now pass
+    -- USHC2-05b on real coverage, not a pin.
     ('8f9a8213-108f-45b6-a3bc-295dbe19339a', 'Kevin Martin GA-6 — site has only values language, no positions'),
     ('a8e23eef-136d-4cf1-bb0f-f5203c0eea81', 'Kelly Esti GA-8 — domains refused, no Ballotpedia/press'),
     ('aacada00-5cff-4a4e-9bd6-c0e4935df79f', 'Jim Kingston GA-1 — no published issue positions (bio only)'),
