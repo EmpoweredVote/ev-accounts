@@ -81,14 +81,33 @@
   4. The set of genuinely-new candidates needing records (challengers, open-seat, special-seated) is enumerated per state and per district, distinct from incumbents/previously-seeded figures that reuse existing records — a per-state new-record count is produced as the authoritative input for all five seeding phases.
 
 **Plans:** 7 plans
-
 Plans:
+**Wave 1**
+
 - [ ] 160-01-PLAN.md — DB diagnostics: 178-row incumbent+stance-gap map, negative external_id collision audit, pre-existing race/candidate audit
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 160-02-PLAN.md — Field resolution: Phase-161 group (WA/AZ/TN/MA, 37 late-primary) + validated 19-col template
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
 - [ ] 160-03-PLAN.md — Field resolution: Phase-162 group (IN/MD/MN/MO, 33) + IN-9 bug + zero-tier flags
+
+**Wave 4** *(blocked on Wave 3 completion)*
+
 - [ ] 160-04-PLAN.md — Field resolution: Phase-163 group (WI/CO/AL/SC/LA, 36) + AL district-split + LA jungle-primary
+
+**Wave 5** *(blocked on Wave 4 completion)*
+
 - [ ] 160-05-PLAN.md — Field resolution: Phase-164 group (KY/OR/CT/OK/AR/IA/KS/MS, 38) + OR races + KY/OK collision notes
+
+**Wave 6** *(blocked on Wave 5 completion)*
+
 - [ ] 160-06-PLAN.md — Field resolution: Phase-165 group (17 small states, 34) + AK/ME RCV over-indulgence + NV/UT/ME reconciliation
+
+**Wave 7** *(blocked on Wave 6 completion)*
+
 - [ ] 160-07-PLAN.md — Merge master field-table.csv (178/88-decided-90-late) + validator + write-free 160-verify.sql gate + Phase-167 clusters
 
 ---
@@ -346,13 +365,16 @@ Plans:
 
 Plans:
 **Wave 1**
+
 - [x] 149-01-PLAN.md — record reconciliation + race_candidates seed (38 new politicians + 104 rows) + Raul Ruiz CA-25 dedup
 - [x] 149-02-PLAN.md — author 149-verify.sql gate (House-scoped, write-free, USHC-02/03/04/05 + D-04 assertions)
 
 **Wave 2** *(blocked on 149-01)*
+
 - [x] 149-03-PLAN.md — headshots for the 38 new CA candidates (find-headshots conventions)
 
 **Wave 3** *(blocked on 149-01; stance batches, ≤3-concurrent research)*
+
 - [x] 149-04-PLAN.md — stances CA-1..9
 - [x] 149-05-PLAN.md — stances CA-10..18
 - [x] 149-06-PLAN.md — stances CA-19..26 (incl. Ruiz canonical record)
@@ -362,6 +384,7 @@ Plans:
 - [x] 149-10-PLAN.md — stances CA-49..52
 
 **Wave 4** *(blocked on all)*
+
 - [x] 149-11-PLAN.md — run 149-verify.sql green + coordinate-surfacing smoke (≥3 in-district CA House races)
 
 ---
@@ -384,14 +407,17 @@ Plans:
 
 Plans:
 **Wave 1** *(scaffold + gate authoring; parallel)*
+
 - [x] 150-01-PLAN.md — author 2 elections + 64 races (38 TX + 26 NY) on existing House offices (the create-races step CA did not need)
 - [x] 150-02-PLAN.md — author 150-verify.sql gate (per-state TX/NY-scoped; USHC-02/03/04/05 + D-01/D-02/D-03/D-05; NY-partial exclusion)
 
 **Wave 2** *(record reconciliation + race_candidates wiring; TX/NY parallel; blocked on 150-01)*
+
 - [x] 150-03-PLAN.md — TX records + race_candidates (live D-03 dedup: Casar→TX-37 reuse, Allred new, Toth reuse; lost incumbents absent)
 - [x] 150-04-PLAN.md — NY records + race_candidates (lost-primary winners Lander/Avila Chevalier; seed-all minor lines Cohen/Smullen; 24 incumbents reused)
 
 **Wave 3** *(headshots + stances; <=3-concurrent research; blocked on Wave 2)*
+
 - [x] 150-05-PLAN.md — headshots for new TX candidates (shared seed-tx-ny-house-headshots.py)
 - [x] 150-06-PLAN.md — headshots for new NY candidates (reuse shared script)
 - [x] 150-07-PLAN.md — TX-1..10 federal-24 stances (zero incumbents + new challengers)
@@ -401,6 +427,7 @@ Plans:
 - [x] 150-11-PLAN.md — NEW NY candidates federal-24 stances (NY partials left as-is per D-01)
 
 **Wave 4** *(consolidated gate; blocked on all)*
+
 - [x] 150-12-PLAN.md — run 150-verify.sql green + 150-coordinate-smoke.ts (>=3 TX + >=3 NY in-district races surface with challenger)
 
 ---
@@ -420,6 +447,7 @@ Plans:
   3. The FL field is recorded as `provisional` (multiple same-party candidates per district may be present pre-primary by design); the seed does NOT guess or pre-prune the general winner — Aug 18 reconciliation is deferred to Phase 153.
 
 **Plans:** 6 plans, 4 waves — **COMPLETE 2026-06-29** (gate 13/13 PASS + smoke 4/4; gsd-verifier 8/8). 28 races/181 candidates/158 new records; 17 independents = 6 stanced (36 answers, 0 unsourced) + 11 honest-skip, 17 headshot-skip. 138 partisan + 27 incumbents records-only → Phase 153.
+
 - [x] 151-01-PLAN.md — W1: author FL 2026 Statewide General election + create FL-20 office + 28 provisional races (description sentinel) — mig 1115
 - [x] 151-02-PLAN.md — W1: author 151-verify.sql gate (single-state FL '12', provisional-aware, 17-independents-only stance scope, no per-party cap)
 - [x] 151-03-PLAN.md — W2: live dedup reconciliation + insert 158 new records + wire all race_candidates (181 full provisional field, 3 reuse + Cherfilus-NEW) — mig 1116
