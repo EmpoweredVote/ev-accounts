@@ -104,4 +104,24 @@ WHERE NOT EXISTS (
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -4173657)
 );
 
+-- Post-verification gate (WR-02): every INSERT block above must have produced
+-- (or found, on re-apply) an image row whose url embeds that politician's own
+-- UUID. Catches two silent failure modes: (a) a NULL politician_id from a
+-- missing politicians row (orphan insert), and (b) a hand-pasted {uuid} url
+-- segment that does not match the politician the row points at (would 404).
+-- ORCHESTRATOR: if any INSERT block was deleted for a FAILED (GAP) official,
+-- lower the expected count 7 to the number of remaining blocks.
+DO $$
+DECLARE n INTEGER;
+BEGIN
+  SELECT COUNT(*) INTO n
+  FROM essentials.politician_images pi
+  JOIN essentials.politicians p ON p.id = pi.politician_id
+  WHERE p.external_id BETWEEN -4173657 AND -4173651
+    AND pi.url LIKE '%' || pi.politician_id::text || '%';
+  IF n <> 7 THEN
+    RAISE EXCEPTION 'Expected 7 Tigard politician_images rows with url embedding the politician uuid, found %', n;
+  END IF;
+END $$;
+
 COMMIT;
