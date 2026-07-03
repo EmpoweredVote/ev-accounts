@@ -31,7 +31,15 @@ ON CONFLICT (politician_id, topic_id) DO UPDATE SET reasoning = EXCLUDED.reasoni
 
 DO $$
 DECLARE n INTEGER;
+        v_ext BIGINT;
 BEGIN
+  -- Identity gate (WR-01): the hardcoded politician UUID must belong to the
+  -- intended official's external_id — a wrong-but-existing UUID would satisfy
+  -- the FK and the count gate below while silently misattributing stances.
+  SELECT external_id INTO v_ext FROM essentials.politicians WHERE id = 'af1382e1-7b67-4729-8d6c-ec1bab0625bd';
+  IF v_ext IS DISTINCT FROM -4173652 THEN
+    RAISE EXCEPTION 'UUID af1382e1-7b67-4729-8d6c-ec1bab0625bd does not belong to external_id -4173652 (Tom Anderson) — found %', v_ext;
+  END IF;
   SELECT COUNT(*) INTO n FROM inform.politician_answers WHERE politician_id = 'af1382e1-7b67-4729-8d6c-ec1bab0625bd';
   IF n <> 4 THEN
     RAISE EXCEPTION 'Expected % answers, found % — topic_key mismatch dropped rows', 4, n;
