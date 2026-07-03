@@ -87,3 +87,8 @@ None - no external service configuration required.
 ---
 *Phase: 161-wa-az-tn-ma-candidate-seeding-create-elections-races-then-ca*
 *Completed: 2026-07-03*
+
+## Self-Check: PASSED
+
+- FOUND: `.planning/phases/161-wa-az-tn-ma-candidate-seeding-create-elections-races-then-ca/161-tn-correspondence-audit.md`
+- FOUND: commit `906d0d1b` in `git log --oneline --all`
