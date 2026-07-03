@@ -6,7 +6,7 @@ status: planning
 last_updated: "2026-07-03T01:21:56.369Z"
 last_activity: 2026-07-03
 progress:
-  total_phases: 0
+  total_phases: 8
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -24,60 +24,68 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.22 Wave 3 — 38 remaining states / 178 districts (defining requirements). v2.21 tail (159-05/06 MI+VA cull+gate) preserved, date-gated ≥ 2026-08-05.
+**Current focus:** v2.22 Wave 3 — 38 remaining states / 178 districts. Roadmap created 2026-07-03: Phase 160 (diagnostic) → Phases 161–165 (seeding) → Phase 166 (gate) → Phase 167 (date-gated post-primary reconciliation). Next: `/gsd-plan-phase 160`. v2.21 tail (159-05/06 MI+VA cull+gate) preserved, date-gated ≥ 2026-08-05.
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 160 (Field Resolution + Stance-Gap Diagnostic) — Not started
 Plan: —
-Status: Defining requirements
-Last activity: 2026-07-03 — Milestone v2.22 started
+Status: Roadmap approved; ready for `/gsd-plan-phase 160`
+Last activity: 2026-07-03 — v2.22 roadmap created (Phases 160–167)
 
-## v2.21 Phase Dependencies
+## v2.22 Phase Dependencies
 
 ```
-Phase 154 (Field Resolution + Stance-Gap Diagnostic)   — no deps; MUST run first (gates all seeding)
-  ├── Phase 155 (PA + IL Seeding — create races + candidates)   — needs 154; anchors USHC2-02/03/04/05
-  ├── Phase 156 (OH + GA + NC Seeding — create races + candidates) — needs 154; sequenced after 155
-  └── Phase 157 (MI + NJ + VA Seeding — create races + candidates) — needs 154; sequenced after 156
-Phase 158 (Coordinate Verification Gate)               — needs 155, 156, 157 complete
+Phase 160 (Field Resolution + Stance-Gap Diagnostic)         — no deps; MUST run first (gates all seeding)
+  ├── Phase 161 (WA+AZ+TN+MA Seeding — create races + candidates)                    — needs 160; anchors USHC3-02/03/04/05
+  ├── Phase 162 (IN+MD+MN+MO Seeding — create races + candidates)                    — needs 160; sequenced after 161
+  ├── Phase 163 (WI+CO+AL+SC+LA Seeding — create races + candidates)                 — needs 160; sequenced after 162
+  ├── Phase 164 (KY+OR+CT+OK+AR+IA+KS+MS Seeding — create races + candidates)        — needs 160; sequenced after 163
+  └── Phase 165 (17 small-delegation states Seeding — create races + candidates)     — needs 160; sequenced after 164
+Phase 166 (Consolidated Verification Gate)                   — needs 161, 162, 163, 164, 165 complete
+Phase 167 (Post-Primary Reconciliation, date-gated Aug–Sep 2026) — needs 160 (provisional fields seeded) + each cluster's actual primary date; may extend past Phase 166 close (Sep clusters carry forward, FL-153/159-05 precedent)
 ```
 
-Phases 155/156/157 each cover disjoint states so are data-independent once Phase 154 resolves the field; the sequential order 155→156→157 is for pipeline inheritance, not data dependency (identical to v2.20's 149→150→151 pattern). All 8 Wave-2 states follow the TX+NY (create-races-first) pattern — none have pre-seeded 2026 House races.
+Phases 161–165 each cover disjoint states so are data-independent once Phase 160 resolves the field; the sequential order 161→162→163→164→165 is for pipeline inheritance, not data dependency (identical to v2.20's 149→150→151 and v2.21's 155→156→157 pattern). All 38 Wave-3 states follow the create-races-first pattern — none have pre-seeded 2026 House races.
 
-## v2.21 Requirement Coverage
+## v2.22 Requirement Coverage
 
-| Requirement | Phase 154 | Phase 155 (PA+IL) | Phase 156 (OH+GA+NC) | Phase 157 (NJ) | Phase 159 (MI+VA) |
-|-------------|:---------:|:-----------------:|:--------------------:|:--------------:|:-----------------:|
-| USHC2-01 Field Resolution | ✅ | | | | |
-| USHC2-02 Records | | ✅ anchor | ✅ | ✅ NJ | ✅ seeded (Wave 1) |
-| USHC2-03 Race Wiring | | ✅ anchor | ✅ | ✅ NJ | ✅ seeded (Wave 1) |
-| USHC2-04 Headshots | | ✅ anchor | ✅ | ✅ NJ | ✅ (Wave 2) |
-| USHC2-05 Stances | | ✅ anchor | ✅ | ✅ NJ | ✅ (Wave 2) |
-| USHC2-06 Verification Gate | | | | Phase 158 ✅ (89 decided) | ◻ 159-06 gate (≥ Aug-5, after 159-05 cull) |
+| Requirement | Phase 160 | 161 (WA+AZ+TN+MA) | 162 (IN+MD+MN+MO) | 163 (WI+CO+AL+SC+LA) | 164 (KY+OR+CT+OK+AR+IA+KS+MS) | 165 (17 small states) | Phase 166 | Phase 167 |
+|-------------|:---------:|:------------------:|:------------------:|:----------------------:|:--------------------------------:|:------------------------:|:---------:|:---------:|
+| USHC3-01 Field Resolution | ✅ | | | | | | | |
+| USHC3-02 Records | | ✅ anchor | ✅ | ✅ | ✅ | ✅ | | |
+| USHC3-03 Race Wiring | | ✅ anchor | ✅ | ✅ | ✅ | ✅ | | |
+| USHC3-04 Headshots | | ✅ anchor | ✅ | ✅ | ✅ | ✅ | | |
+| USHC3-05 Stances | | ✅ anchor | ✅ | ✅ | ✅ | ✅ | | |
+| USHC3-06 Verification Gate | | | | | | | ✅ | |
+| USHC3-07 Post-Primary Reconciliation | | | | | | | | ◻ date-gated |
 
-100% coverage: all 6 USHC2 requirements mapped, no orphans. Remaining open work: 159-05 (MI+VA post-primary cull) + 159-06 (24-district gate), both date-gated ≥ 2026-08-05.
+100% coverage: all 7 USHC3 requirements mapped to Phases 160–167, no orphans. District load per seeding phase: 161=37, 162=33, 163=36, 164=38, 165=34 (sum 178).
 
-## v2.21 Execution Methodology (carry-forward for plan-phase)
+## v2.22 Execution Methodology (carry-forward for plan-phase)
 
 - **Production project ref:** `kxsdzaojfaibhuzmclfq`.
 - **PURE DATA — no backend code.** Surfacing = Path B: elections feed reading `essentials.races` + `essentials.race_candidates`; geography inherited via `office_id → districts.geo_id` + `ST_Covers`. Path A invisible to /elections; reps feed filters `is_incumbent=true` (excludes challengers).
-- **All 8 states: create elections + races first.** None of the 8 Wave-2 states have pre-seeded 2026 House races. All follow the TX+NY Phase-150 pattern: one `essentials.elections` row per state (`election_date='2026-11-03'`, e.g. "PA 2026 Statewide General") + one `essentials.races` row per district with `office_id` → the existing `NATIONAL_LOWER` US House office for that district. **NEVER** `office_id IS NULL` on a House race.
+- **All 38 states: create elections + races first.** None of the 38 Wave-3 states have pre-seeded 2026 House races. All follow the TX+NY Phase-150 pattern: one `essentials.elections` row per state (`election_date='2026-11-03'`) + one `essentials.races` row per district with `office_id` → the existing `NATIONAL_LOWER` US House office for that district. **NEVER** `office_id IS NULL` on a House race.
 - **`race_candidates` shape:** non-null `politician_id`, `candidate_status=active`, incumbent `is_incumbent=true`; NEVER party on candidate card (lives on `races.primary_party`).
-- **Two costliest traps, prevented by Phase 154:** (1) duplicate incumbent records — reuse existing `politician_id` (already seeded v2.15–v2.17); (2) lost-incumbent-primary (PA/IL/OH/GA/NC all held primaries) — verify nominee per district from results, never from incumbency. GA-13 open seat and VA-11 Connolly retirement require special handling.
-- **external_id scheme for new challengers:** `-(state_fips * 10000 + cd * 100 + seq)` — verify 0 collisions per state before authoring. State FIPS: PA=42, IL=17, OH=39, GA=13, NC=37, MI=26, NJ=34, VA=51.
-- **Stance pipeline:** federal 24-topic set (`_TOPIC_SCALE_FULL.txt`), `politician-stance-researcher` at 3-concurrency, per-candidate CSV → field-count-validate → `_merge.ts` → `_push_uuid.ts` (new NULL-external_id) / `_push.ts` (existing). **Mandatory primary-source verification pass before every push.** 0-unsourced gate; honest-skip thin topics; whole-record skip allowed + gate-pinned. Wipe `essentials.quotes` per pid before re-push on any quote correction.
-- **Fetch-walls:** Ballotpedia blank + Wikipedia TOC-only → Playwright/raw-wikitext. Register free FEC key (api.data.gov/signup, 1000/hr); one paginated per-state call.
-- **Finance out of scope:** challenger `finance_summary` → v2.22+; record no-FEC-ID rather than retry.
-- **VA note:** VA-11 vacancy — verify current officeholder status at plan time (Connolly retired March 2025; special election may have filled or be scheduled). VA NATIONAL_LOWER district offices and geofencing are present from v2.15/v2.10.
-- **Scope groupings:**
-  - Phase 155: PA (17) + IL (17) = 34 districts (largest two; anchor the pipeline)
-  - Phase 156: OH (15) + GA (14) + NC (14) = 43 districts (mid-tier, largest batch by volume)
-  - Phase 157: MI (13) + NJ (12) + VA (11) = 36 districts (final three)
-  - Phase 158: gate across all 113 districts
+- **Two costliest traps, prevented by Phase 160:** (1) duplicate incumbent records — reuse existing `politician_id` (already seeded v2.15–v2.17); (2) lost-incumbent-primary — verify nominee per district from results in decided states, never from incumbency.
+- **Primary-status split (generalized from v2.21 Phase-159):** decided states seed the confirmed general field; late-primary states seed the FULL qualified pre-primary field marked `PROVISIONAL:` in the SAME seeding phase (never deferred to a separate date-gated seeding phase) — only the post-primary cull (Phase 167) is date-gated.
+- **external_id scheme for new challengers:** `-(state_fips * 10000 + cd * 100 + seq)` — same scheme as Waves 1/2; verify 0 collisions per state before authoring. State FIPS: WA=53, AZ=04, TN=47, MA=25, IN=18, MD=24, MN=27, MO=29, WI=55, CO=08, AL=01, SC=45, LA=22, KY=21, OR=41, CT=09, OK=40, AR=05, IA=19, KS=20, MS=28, NV=32, UT=49, NM=35, NE=31, WV=54, ID=16, HI=15, ME=23, NH=33, RI=44, MT=30, AK=02, DE=10, ND=38, SD=46, VT=50, WY=56.
+- **Stance pipeline:** federal 24-topic set (`_TOPIC_SCALE_FULL.txt`), `politician-stance-researcher` at **3-concurrency (never more)**, per-candidate CSV → field-count-validate → `_merge.ts` → `_push_uuid.ts` (new NULL-external_id) / `_push.ts` (existing). **Mandatory primary-source verification pass before every push.** 0-unsourced gate; honest-skip thin topics — a header-only CSV without a documented search trail is NOT a valid skip (21/25 false skips caught in v2.21's 159 Wave-2 spot-audit); whole-record skip allowed + gate-pinned with a written search trail. Wipe `essentials.quotes` per pid before re-push on any quote correction.
+- **Fetch-walls:** Ballotpedia blank + Wikipedia TOC-only → Playwright/raw-wikitext. Bluesky public JSON bypasses JS walls; r.jina.ai works on many news sites. Register/reuse the free FEC key (api.data.gov/signup, 1000/hr); one paginated per-state call.
+- **Headshot trap:** trust the find-headshots auto-guard's first-name-mismatch rejection (Bouchard father/son wrong-person trap from v2.21 159-Wave-1) — do not override it.
+- **Finance out of scope:** challenger `finance_summary` → future milestone; record no-FEC-ID rather than retry.
+- **Scope groupings (largest-delegation-first, load-balanced ~33-38 districts/phase):**
+  - Phase 161: WA (10) + AZ (9) + TN (9) + MA (9) = 37 districts (largest four; anchor the pipeline)
+  - Phase 162: IN (9) + MD (8) + MN (8) + MO (8) = 33 districts
+  - Phase 163: WI (8) + CO (8) + AL (7) + SC (7) + LA (6) = 36 districts
+  - Phase 164: KY (6) + OR (6) + CT (5) + OK (5) + AR (4) + IA (4) + KS (4) + MS (4) = 38 districts
+  - Phase 165: NV (4) + UT (4) + NM (3) + NE (3) + WV (2) + ID (2) + HI (2) + ME (2) + NH (2) + RI (2) + MT (2) + AK (1) + DE (1) + ND (1) + SD (1) + VT (1) + WY (1) = 34 districts (17 states)
+  - Phase 166: gate across all 178 districts
+  - Phase 167: date-gated post-primary reconciliation, per-state-cluster plans (exact clusters resolved by Phase 160's primary-date research)
 
-> v2.20 requirement coverage + methodology below are HISTORICAL (shipped milestone). See .planning/milestones/v2.20-ROADMAP.md for full v2.20 phase details.
+> v2.20 and v2.21 requirement coverage + methodology are HISTORICAL (v2.20 fully shipped; v2.21 Waves 1-2 complete, 159-05/06 tail date-gated ≥ 2026-08-05). See `.planning/milestones/v2.20-ROADMAP.md` and `.planning/milestones/v2.21-ROADMAP.md` for full phase details, and `.planning/ROADMAP.md`'s collapsed v2.21/v2.20 sections for the carried-forward execution methodology text below.
 
 ## Deferred Items
 
@@ -91,7 +99,8 @@ Re-acknowledged at v2.20 close (2026-06-30).
 | carry_forward | AZ Lt Governor (Prop 131 eff. Jan 2027) | deferred per requirements |
 | carry_forward | McDowell NC-6 (−37006) honest-skip | await future documentable record; auto-fill later |
 | carry_forward | 3 House vacancies (FL-20/GA-13/TX-23) | re-run seed script once special elections seat members |
-| carry_forward | v2.22+ remaining ~178 US House districts (beyond top-12 delegations) | next Wave of the multi-milestone House program |
+| carry_forward | v2.21 159-05/06 — MI+VA post-primary cull + gate | date-gated: executes ≥ 2026-08-05 (day after Aug-4 MI+VA primaries) |
+| carry_forward | v2.22+ remaining ~178 US House districts (beyond top-12 delegations) | **NOW IN PROGRESS as v2.22 Phases 160–167** (roadmap created 2026-07-03) |
 
 ## Performance Metrics
 
@@ -102,11 +111,17 @@ Re-acknowledged at v2.20 close (2026-06-30).
 - Output: 144 districts (CA 52 / TX 38 / FL 28 / NY 26), 415 active race_candidates, federal-24 stances (0 unsourced), headshots, consolidated gate 8/8 + coordinate smoke 4/4
 - Shipped: 2026-06-30 (tag v2.20)
 
-**v2.21 Scope — 2026 US House Candidate Coverage (Wave 2) — IN PROGRESS**
+**v2.21 Scope — 2026 US House Candidate Coverage (Wave 2) — Waves 1-2 COMPLETE, tail date-gated**
 
-- Phases: 5 (154–158), plans TBD
-- Requirements: 0/6 closed (USHC2-01..06)
-- Target: 113 districts (PA 17 / IL 17 / OH 15 / GA 14 / NC 14 / MI 13 / NJ 12 / VA 11)
+- Phases: 6 (154–159), plans mostly complete
+- Requirements: 5/6 closed (USHC2-01..05); USHC2-06 partial (89-district decided-state gate ✅; MI+VA gate pending 159-06, date-gated ≥ 2026-08-05)
+- Output so far: 113 districts total (89 decided + 24 MI+VA provisional-seeded/stanced)
+
+**v2.22 Scope — 2026 US House Candidate Coverage (Wave 3 — National Completion) — PLANNING**
+
+- Phases: 8 (160–167), plans TBD
+- Requirements: 0/7 closed (USHC3-01..07)
+- Target: 178 districts across the final 38 states (WA 10 down to AK/DE/ND/SD/VT/WY 1 each)
 
 ## Accumulated Context
 
@@ -117,6 +132,7 @@ Re-acknowledged at v2.20 close (2026-06-30).
 - Phase 159 added: MI Candidate Seeding + Verification, date-gated >= 2026-08-04 (MI primary Aug 4)
 - Phase 159 REFRAMED (2026-07-01): "wait until Aug 4, seed decided nominees" -> "seed full pre-primary qualified field NOW (all parties, records+headshots+full federal-24 stances) + post-primary cull >= Aug 5". Applies FL's provisional-field pattern (Phase 151 seed -> 153 cull) to MI+VA. Rationale: serve primary voters at the Aug-4 civic moment; FL already does this (181-cand provisional field live) — MI/VA were the un-principled dark exception. DB-confirmed: FL 181 active cands, VA 0 (races scaffolded), MI 0 (fully dark). VA primary date verified Aug-4 (moved from June). Operator chose FULL coverage (accepts loser stance work discarded at cull).
 - Phase 159 Waves 1-2 COMPLETE (2026-07-01/02): 159-01 MI seed (migs 1146/1147: 1 election + 13 races, 56 new pols + 67 active rc) + 159-03 VA seed (mig 1148: 46 new pols + 58 active rc onto 11 existing races) + mig 1149 VA-5/6/9 office-rotation fix; 159-02 MI stances (46/56, 344 rows, 0 unsourced, 10 pinned skips; headshots 4) + 159-04 VA stances (37 stanced, 288 rows, 0 unsourced, 9 genuine skips after spot-audit found 13/22 pins FALSE; headshots 6). Exact skip pins in 159-02/159-04 SUMMARY.md. Key lessons in memory (project_phase159_wave1): header-only CSV without a search trail ≠ honest-skip (21/25 false); Bouchard father/son wrong-person revert — trust the auto-guard's first-name-mismatch rejection.
+- **v2.22 roadmap created (2026-07-03):** Phases 160–167 derived from USHC3-01..07. Generalizes the v2.21 Phase-159 "seed full provisional field now, cull later" principle to ALL late-primary states in Wave 3 (not a special case) — every seeding phase (161–165) may contain a mix of decided and late-primary states, resolved per-district by Phase 160. Grouping: largest-delegation-first, load-balanced 33-38 districts/phase (37/33/36/38/34), same methodology as v2.20/v2.21 (5 phases total kept the granularity comparable despite 178 vs 113/144 districts, per "standard" granularity guidance).
 
 ### Key Decisions
 
@@ -134,11 +150,12 @@ Full key decisions log in PROJECT.md. All prior milestone decisions archived in 
 
 ### Open Blockers
 
-None at roadmap time. Run diagnostic queries at Phase 154 plan authoring:
+None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 
-1. `SELECT d.geo_id, p.full_name, p.external_id, COUNT(pa.id) as stance_count FROM essentials.politicians p JOIN essentials.offices o ON o.politician_id = p.id JOIN essentials.districts d ON d.id = o.district_id LEFT JOIN inform.politician_answers pa ON pa.politician_id = p.id WHERE d.district_type = 'NATIONAL_LOWER' AND d.state IN ('PA','IL','OH','GA','NC','MI','NJ','VA') GROUP BY d.geo_id, p.full_name, p.external_id ORDER BY d.state, d.geo_id` — incumbent map + stance-gap baseline.
+1. `SELECT d.geo_id, p.full_name, p.external_id, COUNT(pa.id) as stance_count FROM essentials.politicians p JOIN essentials.offices o ON o.politician_id = p.id JOIN essentials.districts d ON d.id = o.district_id LEFT JOIN inform.politician_answers pa ON pa.politician_id = p.id WHERE d.district_type = 'NATIONAL_LOWER' AND d.state IN ('WA','AZ','TN','MA','IN','MD','MN','MO','WI','CO','AL','SC','LA','KY','OR','CT','OK','AR','IA','KS','MS','NV','UT','NM','NE','WV','ID','HI','ME','NH','RI','MT','AK','DE','ND','SD','VT','WY') GROUP BY d.geo_id, p.full_name, p.external_id ORDER BY d.state, d.geo_id` — incumbent map + stance-gap baseline for all 38 states.
 2. `SELECT external_id FROM essentials.politicians WHERE external_id < 0 ORDER BY external_id` — existing negative IDs for collision-free external_id scheme design per state.
 3. Per-state: `SELECT COUNT(*) FROM essentials.races r JOIN essentials.elections el ON el.id = r.election_id WHERE el.election_date = '2026-11-03' AND r.office_id IN (SELECT o.id FROM essentials.offices o JOIN essentials.districts d ON d.id = o.district_id WHERE d.district_type = 'NATIONAL_LOWER' AND d.state = '{ST}')` — confirm no pre-seeded 2026 races exist before authoring.
+4. Per-state 2026 congressional primary date lookup (official SoS sources) — the classification input for the decided/late-primary split and for clustering Phase 167's date-gated plans.
 
 ### Quick Tasks Completed
 
@@ -169,21 +186,27 @@ None at roadmap time. Run diagnostic queries at Phase 154 plan authoring:
 ## Session Continuity
 
 Last session: 2026-07-02
-Stopped at: Phase 159 Waves 1-2 complete; all v2.21 remaining work is calendar-gated
-Resume file: .planning/phases/159-mi-candidate-seeding-verification-date-gated-primary-aug-4-2/ (159-05/06 plans + 159-02/159-04 SUMMARY.md skip pins)
+Stopped at: Phase 159 Waves 1-2 complete; all v2.21 remaining work is calendar-gated; v2.22 roadmap created 2026-07-03
+Resume file: .planning/phases/159-mi-candidate-seeding-verification-date-gated-primary-aug-4-2/ (159-05/06 plans + 159-02/159-04 SUMMARY.md skip pins). For v2.22: `/gsd-plan-phase 160`.
 
 ## Operator Next Steps
 
+- **Anytime:** `/gsd-plan-phase 160` to begin v2.22 Wave 3 (Field Resolution + Stance-Gap Diagnostic across the 38 remaining states).
 - **≥ 2026-08-05:** `/gsd-execute-phase 159` Waves 3-4 (159-05 post-primary cull vs official MI SoS / VA results, then 159-06 24-district gate) — closes USHC2-06 and v2.21
 - **≥ 2026-08-10:** PA independents re-check (Aug-3 filing deadline; FL-153 pattern)
 - **≥ 2026-08-18:** Phase 153 — FL post-primary re-check (USHC-07 carry-forward from v2.20)
-- **Anytime:** scope Wave 3 (~178 remaining districts) via `/gsd-new-milestone`. Phase 156 flags ALL closed (2026-07-02): Clark/Gaines/Hancock stanced via Playwright (16 stances, c7d5ccc9); iSideWith corroboration done (data-only) — McDowell 6 topics vote-corroborated via Ballotpedia 119th key votes (H.R.1/S.5/H.R.875/H.R.28/H.R.22), Christian 5 confirmed + 2 CORRECTED (voting-rights 3→2, fossil-fuels 2→3) + 2 added (social-security 1, housing 3) from his 2026 platform; McDowell 22 / Christian 20 stances, 0 unsourced, gate re-run PASS. NOTE: Christian won the May-5 OH-12 D primary (nominee vs Balderson); Ballotpedia lists a Joshua Hager (I) in NC-6 but he is NOT on the official NCSBE certified list — correctly absent from DB.
 - ~~`/gsd-cleanup`~~ DONE 2026-07-02 (v2.20 dirs 148-152 → milestones/v2.20-phases/, b5084500)
 - ~~Phase 156 carry-forwards #1/#2~~ DONE 2026-07-02 (mig 1168, 37701cf7): NC field reconciled vs official NCSBE general list — all 9 NC Libertarians certified (feared mass-prune was false); pruned Rogers NC-11 + Aguilar NC-13 (not certified, 0 stances/imgs); added Bo Whitehead (Green, NC-8, honest-skip pinned). OH-1: Hancock confirmed certified Libertarian nominee (won May-5 primary 91.2% over Stoops write-in; LPO site listing = stale endorsement) — no data change. 156 gate re-run 11/11 PASS.
-- Note: a parallel session is working Phases 177/178 (Hillsboro/Tigard OR) in this repo — avoid collisions on those phase dirs and Oregon data
+- Note: a parallel session is working Phases 177/178 (Hillsboro/Tigard OR) in this repo — avoid collisions on those phase dirs and Oregon data. **v2.22 phase numbers (160-167) do not conflict with 177/178.**
 
 ## Decisions
 
+- [v2.22 roadmap]: Phases start at 160 (159 dirs preserved for the v2.21 date-gated tail); 177/178 remain reserved and are not approached (v2.22 runs 160-167, well clear).
+- [v2.22 roadmap]: Phase 160 (diagnostic) generalizes the v2.21 Phase-159 principle to all 38 states — every seeding phase may mix decided and late-primary states, resolved per-district; late-primary states seed the full provisional field in the SAME seeding phase, never a separate date-gated seeding phase.
+- [v2.22 roadmap]: 5 seeding phases (161-165), largest-delegation-first, load-balanced by district count (37/33/36/38/34 = 178), not by state count — mirrors v2.20's 149-150-151 and v2.21's 155-156-157 grouping logic.
+- [v2.22 roadmap]: Phase 161 (WA+AZ+TN+MA, 37 districts) is the anchor seeding phase for USHC3-02/03/04/05; Phases 162-165 are continuations.
+- [v2.22 roadmap]: Phase 166 (gate) depends on all 5 seeding phases; Phase 167 (post-primary reconciliation) is structured as per-state-primary-date-cluster plans, authored once Phase 160 resolves exact clusters; Sep-primary clusters may carry forward past milestone close (FL-153/159-05 precedent).
+- [v2.22 roadmap]: external_id scheme continues unchanged: -(state_fips * 10000 + cd * 100 + seq); verify 0 collisions per state before authoring.
 - [v2.21 roadmap]: All 8 Wave-2 states follow the TX+NY (create-races-first) pattern — none have pre-seeded 2026 House races; CA-style turnkey does not apply.
 - [v2.21 roadmap]: Phase 155 (PA+IL, 34 districts) is the anchor seeding phase for USHC2-02/03/04/05; phases 156+157 are continuations. This mirrors v2.20's Phase 149 (CA) as anchor.
 - [v2.21 roadmap]: Grouping by size with load balance: 154 (diag) → 155 (PA+IL=34) → 156 (OH+GA+NC=43) → 157 (MI+NJ+VA=36) → 158 (gate). 5 phases total, "standard" granularity.

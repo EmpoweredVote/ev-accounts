@@ -59,12 +59,27 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| USHC3-01 Field Resolution | TBD (roadmap) | Pending |
-| USHC3-02 Candidate Records | TBD (roadmap) | Pending |
-| USHC3-03 Race Wiring | TBD (roadmap) | Pending |
-| USHC3-04 Headshots | TBD (roadmap) | Pending |
-| USHC3-05 Stances | TBD (roadmap) | Pending |
-| USHC3-06 Verification Gate | TBD (roadmap) | Pending |
-| USHC3-07 Post-Primary Reconciliation | TBD (roadmap) | Pending |
+| USHC3-01 Field Resolution | Phase 160 | Pending |
+| USHC3-02 Candidate Records | Phases 161 (anchor), 162, 163, 164, 165 | Pending |
+| USHC3-03 Race Wiring | Phases 161 (anchor), 162, 163, 164, 165 | Pending |
+| USHC3-04 Headshots | Phases 161 (anchor), 162, 163, 164, 165 | Pending |
+| USHC3-05 Stances | Phases 161 (anchor), 162, 163, 164, 165 | Pending |
+| USHC3-06 Verification Gate | Phase 166 | Pending |
+| USHC3-07 Post-Primary Reconciliation | Phase 167 (date-gated, Aug–Sep 2026) | Pending |
 
-> **Phase numbering:** v2.22 phases start at **160** (159 dirs preserved for the v2.21 date-gated tail). **Phases 177/178 are reserved** by a parallel session (Hillsboro/Tigard OR) and must not be assigned.
+100% coverage: all 7 USHC3 requirements mapped to phases 160–167, no orphans.
+
+> **Phase numbering:** v2.22 phases run **160–167** (159 dirs preserved for the v2.21 date-gated tail). **Phases 177/178 are reserved** by a parallel session (Hillsboro/Tigard OR) and must not be assigned.
+
+**Phase grouping (largest-delegation-first, load-balanced):**
+
+| Phase | States | Districts |
+|-------|--------|-----------|
+| 160 | Field Resolution + Stance-Gap Diagnostic (all 38 states) | 178 (diagnostic only) |
+| 161 | WA, AZ, TN, MA | 37 |
+| 162 | IN, MD, MN, MO | 33 |
+| 163 | WI, CO, AL, SC, LA | 36 |
+| 164 | KY, OR, CT, OK, AR, IA, KS, MS | 38 |
+| 165 | NV, UT, NM, NE, WV, ID, HI, ME, NH, RI, MT, AK, DE, ND, SD, VT, WY | 34 |
+| 166 | Consolidated Verification Gate (all 38 states) | 178 (gate only) |
+| 167 | Post-Primary Reconciliation (late-primary states, date-gated) | subset of 178 |
