@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage (Wave 3)
-status: executing
-last_updated: "2026-07-03T08:20:07.355Z"
+status: verifying
+last_updated: "2026-07-03T08:35:50.349Z"
 last_activity: 2026-07-03
 progress:
   total_phases: 8
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 7
-  completed_plans: 6
-  percent: 0
+  completed_plans: 7
+  percent: 13
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
@@ -31,7 +31,7 @@ See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 Phase: 160 (field-resolution-stance-gap-diagnostic) — EXECUTING
 Plan: 7 of 7
-Status: Ready to execute
+Status: Phase complete — ready for verification
 Last activity: 2026-07-03
 
 ## v2.22 Phase Dependencies
@@ -183,11 +183,12 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 | 022 | Fix Malik inversion bug, run 24 stance ingest scripts (255 rows), extend compassService dual-path fallback | 2026-05-15 | 01b3bfe | [022-run-pending-stance-ingest-and-extend-ca](./quick/022-run-pending-stance-ingest-and-extend-ca/) |
 | 023 | Deep candidate coverage — CA Gov (Hilton/Becerra) +11 sourced stances + 2 headshots; LA Mayor (Bass/Raman) reasoning enriched; ALL 4 candidates + pre-existing stances primary-source fact-checked (4 honest-skips deleted, value/quote/source corrections); both Govs at 22 symmetric state-tier | 2026-06-23 | c96d749f | [023-deep-candidate-coverage-gov-la-mayor](./quick/023-deep-candidate-coverage-gov-la-mayor/) |
 | Phase 160 P01 | 10min | 3 tasks | 6 files |
+| Phase 160 P07 | 25min | 3 tasks | 4 files |
 
 ## Session Continuity
 
-Last session: 2026-07-03T08:20:07.341Z
-Stopped at: Completed 160-06-PLAN.md
+Last session: 2026-07-03T08:35:50.334Z
+Stopped at: Completed 160-07-PLAN.md (phase gate — Phase 160 ready for verify-work)
 Resume file: None
 
 ## Operator Next Steps
@@ -217,3 +218,4 @@ Resume file: None
 - [v2.18 roadmap]: external_id scheme for new states = `-(state_fips * 10000 + office_seq)` — safest non-overlapping range; must verify 0 collisions against live DB before authoring
 - [Phase 160-01]: diag-160-external-id-collision.ts hardcodes KY-CD1 and OK-CD1 to safe_start_seq=200 per Critical Finding 6, not just a saturation-threshold heuristic
 - [Phase 160-01]: diag-160-race-preexistence-audit.ts uses LEFT JOIN race_candidates so 0-candidate pre-scaffolded races (MD/OR) still emit a full-column audit row with existing_race_id populated
+- [Phase 160-07]: 160-verify.sql A2 rewritten (not copied) from the 154 template to assert the DISCOVERED 29-race baseline (ME2/MD8/MA9/NV4/OR6) + race_candidates counts (NV=9/MA=2/ME=2/MD=0/OR=0), never a blanket 0-races/0-candidates claim.

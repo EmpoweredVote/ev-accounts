@@ -108,7 +108,7 @@ Plans:
 
 **Wave 7** *(blocked on Wave 6 completion)*
 
-- [ ] 160-07-PLAN.md — Merge master field-table.csv (178/88-decided-90-late) + validator + write-free 160-verify.sql gate + Phase-167 clusters
+- [x] 160-07-PLAN.md — Merge master field-table.csv (178/88-decided-90-late) + validator + write-free 160-verify.sql gate + Phase-167 clusters
 
 ---
 
@@ -248,7 +248,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 160. Field Resolution + Stance-Gap Diagnostic | 6/7 | In Progress|  |
+| 160. Field Resolution + Stance-Gap Diagnostic | 7/7 | Complete   | 2026-07-03 |
 | 161. WA + AZ + TN + MA Candidate Seeding | 0/? | Not started | - |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
