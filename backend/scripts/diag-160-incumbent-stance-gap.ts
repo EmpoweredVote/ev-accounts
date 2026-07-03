@@ -12,7 +12,7 @@
  * 0-holder row between this diagnostic run and seeding time, it self-flags via the
  * unexpected-vacancy WARNING block below rather than being silently missed.
  *
- * SELECT-ONLY. Never INSERT/UPDATE/DELETE. Never pass --commit. Re-runnable / idempotent.
+ * SELECT-ONLY. No write statements of any kind, ever. Never pass --commit. Re-runnable / idempotent.
  *
  * Run with:
  *   cd /c/EV-Accounts/backend && set -a && source .env && set +a \
