@@ -88,7 +88,7 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 160-02-PLAN.md — Field resolution: Phase-161 group (WA/AZ/TN/MA, 37 late-primary) + validated 19-col template
+- [x] 160-02-PLAN.md — Field resolution: Phase-161 group (WA/AZ/TN/MA, 37 late-primary) + validated 19-col template
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
@@ -248,7 +248,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 160. Field Resolution + Stance-Gap Diagnostic | 1/7 | In Progress|  |
+| 160. Field Resolution + Stance-Gap Diagnostic | 2/7 | In Progress|  |
 | 161. WA + AZ + TN + MA Candidate Seeding | 0/? | Not started | - |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
