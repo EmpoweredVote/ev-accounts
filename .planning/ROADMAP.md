@@ -129,7 +129,37 @@ Plans:
   3. Every newly-seeded WA/AZ/TN/MA candidate has a headshot (Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`; free-license, wrong-person-guarded; documented honest-skips where none found); no candidate card surfaces party.
   4. Every WA/AZ/TN/MA candidate lacking federal-24 stances has sourced chairs-not-polarity stances — each answer paired to an `inform.politician_context` row with a real fetched source URL, 0 unsourced, primary-source-verified before push, honest-skip (per-topic or whole-record, gate-pinned with a written search trail) where evidence is thin; already-stanced incumbents skipped via the Phase 160 diagnostic.
 
-**Plans:** TBD
+**Plans:** 11 plans, 6 waves
+
+Plans:
+**Wave 1**
+
+- [ ] 161-01-PLAN.md — TN old-vs-new map correspondence audit (D-01a); enumerates severe geo_ids to seed-but-withhold
+- [ ] 161-02-PLAN.md — AZ seed end-to-end first (elections + 9 races + 32 records + race_candidates + headshots); live before Jul-21 primary
+
+**Wave 2**
+
+- [ ] 161-03-PLAN.md — AZ federal-24 stances (0-unsourced), pushed as AZ slice before Jul-21
+- [ ] 161-04-PLAN.md — WA seed (elections + 10 races + ~60 records + race_candidates + headshots)
+
+**Wave 3**
+
+- [ ] 161-05-PLAN.md — WA federal-24 stances (0-unsourced)
+- [ ] 161-06-PLAN.md — TN seed (2 elections + 9 severity-routed races + 73 records + headshots); severe districts withheld via election_id
+
+**Wave 4**
+
+- [ ] 161-07-PLAN.md — TN stances part 1 (TN-1..5, ~36); sets up shared tn-2026-house dir
+- [ ] 161-08-PLAN.md — MA candidates-only seed onto 9 existing races (18 records + headshots); Clark/Pressley un-duplicated
+
+**Wave 5**
+
+- [ ] 161-09-PLAN.md — TN stances part 2 (TN-6..9, ~37)
+- [ ] 161-10-PLAN.md — MA federal-24 stances (0-unsourced)
+
+**Wave 6**
+
+- [ ] 161-11-PLAN.md — 37-district mini-gate: 161-verify.sql + 161-coordinate-smoke.ts (incl. severe-TN zero-race negative sample)
 
 ---
 
@@ -249,7 +279,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 160. Field Resolution + Stance-Gap Diagnostic | 7/7 | Complete    | 2026-07-03 |
-| 161. WA + AZ + TN + MA Candidate Seeding | 0/? | Not started | - |
+| 161. WA + AZ + TN + MA Candidate Seeding | 0/11 | Not started | - |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
 | 164. KY + OR + CT + OK + AR + IA + KS + MS Candidate Seeding | 0/? | Not started | - |
