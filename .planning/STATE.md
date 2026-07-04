@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage (Wave 3)
-status: verifying
-last_updated: "2026-07-04T17:06:56.106Z"
+status: planning
+last_updated: "2026-07-04T17:45:51.916Z"
 last_activity: 2026-07-04
 progress:
   total_phases: 9
   completed_phases: 2
   total_plans: 18
-  completed_plans: 18
+  completed_plans: 50
   percent: 22
 ---
 
@@ -24,14 +24,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 161 — WA + AZ + TN + MA Candidate Seeding (create elections + races, then candidates)
+**Current focus:** Phase 162 — IN + MD + MN + MO Candidate Seeding
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 161 (WA + AZ + TN + MA Candidate Seeding (create elections + races, then candidates)) — EXECUTING
-Plan: 11 of 11
-Status: Phase complete — ready for verification
+Phase: 162
+Plan: Not started
+Status: Ready to plan
 Last activity: 2026-07-04
 
 ## v2.22 Phase Dependencies

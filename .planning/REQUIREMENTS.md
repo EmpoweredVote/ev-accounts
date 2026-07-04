@@ -60,10 +60,10 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | USHC3-01 Field Resolution | Phase 160 | Complete (2026-07-03) |
-| USHC3-02 Candidate Records | Phases 161 (anchor), 162, 163, 164, 165 | Pending |
-| USHC3-03 Race Wiring | Phases 161 (anchor), 162, 163, 164, 165 | Pending |
-| USHC3-04 Headshots | Phases 161 (anchor), 162, 163, 164, 165 | Pending |
-| USHC3-05 Stances | Phases 161 (anchor), 162, 163, 164, 165 | Pending |
+| USHC3-02 Candidate Records | Phases 161 (anchor), 162, 163, 164, 165 | In progress — 161 anchor complete (2026-07-04): AZ/WA/TN/MA, 183 new records |
+| USHC3-03 Race Wiring | Phases 161 (anchor), 162, 163, 164, 165 | In progress — 161 anchor complete (2026-07-04): 37 districts surface (5 severe-TN withheld by design) |
+| USHC3-04 Headshots | Phases 161 (anchor), 162, 163, 164, 165 | In progress — 161 anchor complete (2026-07-04): 167 documented honest-skips |
+| USHC3-05 Stances | Phases 161 (anchor), 162, 163, 164, 165 | In progress — 161 anchor complete (2026-07-04): 0 unsourced, 59 pinned whole-record skips |
 | USHC3-06 Verification Gate | Phase 166 | Pending |
 | USHC3-07 Post-Primary Reconciliation | Phase 167 (date-gated, Aug–Sep 2026) | Pending |
 

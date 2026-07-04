@@ -129,7 +129,7 @@ Plans:
   3. Every newly-seeded WA/AZ/TN/MA candidate has a headshot (Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`; free-license, wrong-person-guarded; documented honest-skips where none found); no candidate card surfaces party.
   4. Every WA/AZ/TN/MA candidate lacking federal-24 stances has sourced chairs-not-polarity stances — each answer paired to an `inform.politician_context` row with a real fetched source URL, 0 unsourced, primary-source-verified before push, honest-skip (per-topic or whole-record, gate-pinned with a written search trail) where evidence is thin; already-stanced incumbents skipped via the Phase 160 diagnostic.
 
-**Plans:** 11 plans, 6 waves
+**Plans:** 11/11 plans complete
 
 Plans:
 **Wave 1**
@@ -289,7 +289,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 160. Field Resolution + Stance-Gap Diagnostic | 7/7 | Complete    | 2026-07-03 |
-| 161. WA + AZ + TN + MA Candidate Seeding | 11/11 | Complete   | 2026-07-04 |
+| 161. WA + AZ + TN + MA Candidate Seeding | 11/11 | Complete    | 2026-07-04 |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
 | 164. KY + OR + CT + OK + AR + IA + KS + MS Candidate Seeding | 0/? | Not started | - |
