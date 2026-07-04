@@ -84,6 +84,8 @@ completed: 2026-07-04
 
 The plan's headshot task states MO incumbents are "already imaged in prior phases." **This is false for MO: 6 of 7 renominated incumbents lack a headshot** — Ann Wagner (-29002), Robert F. Onder Jr. (-29003), Mark Alford (-29004), Emanuel Cleaver (-29005), Eric Burlison (-29007), Jason Smith (-29008). Only Wesley Bell (-29001) is imaged. These are sitting members of Congress with near-certain free Wikipedia portraits; the gap appears to trace to v2.15/v2.16 seeding, NOT this phase. Not a plan-02 blocker (USHC3-04 covers *newly-seeded* candidates; all 58 new MO candidates are imaged-or-skipped), but a real product gap surfacing on the reps feed and the 2907/2908 general races. **Recommendation:** a quick targeted (band-less, by-external_id) find-headshots pass for these 6 — decision deferred to operator.
 
+**RESOLVED (operator chose quick-fix):** added a `'MO-INC': (-29008, -29001, 'Missouri')` band to `seed-mo-house-headshots.py` and ran it — 5/6 auto-uploaded (Wagner, Alford, Cleaver, Burlison, Smith; all public-domain/CC-BY-SA official portraits). The 6th, Robert F. Onder Jr., was a false-skip (guard rejected the "Bob Onder" Wikipedia page on first-name mismatch — "Bob" ≠ "Robert"); confirmed same person (119th-Congress official portrait, MO-3, born 1962) and backfilled via `--manual` mode. **All 7 MO incumbents now imaged.**
+
 ## Carry-forward for 162-03/04 (MO stances)
 
 - 58 new MO candidates + zero-tier incumbents are the stance-research targets. Per D-03a, incumbents + evidenced majors first, fringe filers last. Push per state (never one mega-push); PROD is the durable store (stance CSVs gitignored).

@@ -59,6 +59,11 @@ POLITICAL_KW = ['politic', 'governor', 'attorney general', 'secretary of state',
 # (see module docstring, D-01b).
 BANDS = {
     'MO': (-290899, -290101, 'Missouri'),
+    # Incumbent backfill (162-02 finding): 6 of 7 renominated MO incumbents (-29001..-29008) were
+    # NOT imaged in prior phases (v2.15/16 gap). This band-less-of-challengers entry backfills them;
+    # already-imaged incumbents (Bell -29001) are auto-excluded by the NOT EXISTS politician_images
+    # filter. Same hardened guards apply.
+    'MO-INC': (-29008, -29001, 'Missouri'),
 }
 
 def wiki_get(params):
