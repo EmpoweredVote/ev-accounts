@@ -80,21 +80,32 @@ WHERE NOT EXISTS (
 -- The 5th councilor seat (-4115555) is genuinely VACANT — no politician row exists for it, and
 -- it correctly has NO politician_images row here. Do not add one.
 
--- Post-verification gate (url-embeds-uuid): asserts the sourced count of politician_images rows
--- whose url embeds the politician's own uuid. Expected count is 4, matching the confirmed 4/4
--- direct-download sourcing (best in the milestone, no fallback chain needed). Catches two silent
--- failure modes: (a) a NULL politician_id from a missing politicians row (orphan insert), and
--- (b) a url uuid segment that does not match the politician the row points at (would 404).
+-- Post-verification gate (url-embeds-uuid): asserts EVERY politician uuid this migration's
+-- INSERTs target has a politician_images row whose url embeds that same uuid. The gate derives
+-- its identity set from the SAME uuid literals the INSERTs use (the VALUES list below) rather
+-- than a hardcoded external_id range — a clone that edits the INSERT uuids but forgets the gate
+-- now fails loudly instead of passing vacuously against the previous city's rows (182-REVIEW
+-- WR-04). Catches: (a) a missing/orphaned insert for any targeted uuid, and (b) a url uuid
+-- segment that does not match the politician the row points at (would 404).
+-- WHEN CLONING FOR A NEW CITY: replace the uuid VALUES list below with the new city's uuids —
+-- it is the same list as the INSERT blocks above; keep them in sync.
 DO $$
-DECLARE n INTEGER;
+DECLARE missing INTEGER;
 BEGIN
-  SELECT COUNT(*) INTO n
-  FROM essentials.politician_images pi
-  JOIN essentials.politicians p ON p.id = pi.politician_id
-  WHERE p.external_id BETWEEN -4115554 AND -4115551
-    AND pi.url LIKE '%' || pi.politician_id::text || '%';
-  IF n <> 4 THEN
-    RAISE EXCEPTION 'Expected 4 Cornelius politician_images rows with url embedding the politician uuid, found %', n;
+  SELECT COUNT(*) INTO missing
+  FROM (VALUES
+    ('856f7e70-a846-4ba3-a0df-e7d8146ed11a'::uuid),  -- Jeffrey C. Dalin
+    ('f75a20a9-1a22-4d23-ac9c-ac1040e27754'::uuid),  -- Angeles Godinez Valencia
+    ('31df8939-d8ba-4b54-9c69-18317d7096ee'::uuid),  -- Edgar Baker
+    ('18d8515e-3b3e-4d53-a1a3-4eece6e17dcc'::uuid)   -- Edén López
+  ) AS expected(pid)
+  WHERE NOT EXISTS (
+    SELECT 1 FROM essentials.politician_images pi
+    WHERE pi.politician_id = expected.pid
+      AND pi.url LIKE '%' || expected.pid::text || '%'
+  );
+  IF missing <> 0 THEN
+    RAISE EXCEPTION 'Cornelius headshot gate: % targeted politician uuid(s) lack a politician_images row with a uuid-embedding url', missing;
   END IF;
 END $$;
 
