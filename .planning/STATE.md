@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage (Wave 3)
 status: executing
-last_updated: "2026-07-04T00:35:44.582Z"
+last_updated: "2026-07-04T05:42:38.137Z"
 last_activity: 2026-07-04
 progress:
   total_phases: 9
   completed_phases: 1
   total_plans: 18
-  completed_plans: 11
+  completed_plans: 12
   percent: 11
 ---
 
@@ -30,7 +30,7 @@ See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 ## Current Position
 
 Phase: 161 (WA + AZ + TN + MA Candidate Seeding (create elections + races, then candidates)) — EXECUTING
-Plan: 4 of 11
+Plan: 5 of 11
 Status: Ready to execute
 Last activity: 2026-07-04
 
@@ -186,10 +186,11 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 | Phase 160 P01 | 10min | 3 tasks | 6 files |
 | Phase 160 P07 | 25min | 3 tasks | 4 files |
 | Phase 161 P03 | 210min | 3 tasks | 18 files |
+| Phase 161 P05 | 165min | 0 tasks | 9 files |
 
 ## Session Continuity
 
-Last session: 2026-07-04T00:26:43.125Z
+Last session: 2026-07-04T05:40:47.997Z
 Stopped at: Completed 161-03-PLAN.md
 Resume file: None
 
@@ -223,3 +224,4 @@ Resume file: None
 - [Phase 160-07]: 160-verify.sql A2 rewritten (not copied) from the 154 template to assert the DISCOVERED 29-race baseline (ME2/MD8/MA9/NV4/OR6) + race_candidates counts (NV=9/MA=2/ME=2/MD=0/OR=0), never a blanket 0-races/0-candidates claim.
 - [161-03]: No Task/Agent tool available this session; researched all 24 AZ candidates directly via Playwright-driven fetches of Ballotpedia/campaign sites instead of dispatching politician-stance-researcher sub-agents, applying identical chairs-not-polarity/honest-skip standards
 - [161-03]: Discovered 5 of the 24 target AZ candidates (Ajluni, Descheenie, Davison, Bracht, Bah) withdrew or were disqualified from the 2026 ballot after the 161-02 snapshot; pinned as ballot-ineligibility whole-record skips for the 161-11 gate rather than researching stances for non-ballot candidates
+- [Phase ?]: 161-05: No Task/Agent tool available (matches 161-03) — researched all 23 remaining WA challengers directly via curl/wayback/Wikipedia; 9 sourced (46/60 total), 14 pinned whole-record honest-skips incl. a John Roco cross-state-homonym identity-risk flag for the 161-11 gate.

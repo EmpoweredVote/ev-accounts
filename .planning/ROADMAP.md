@@ -144,7 +144,7 @@ Plans:
 
 **Wave 3**
 
-- [ ] 161-05-PLAN.md — WA federal-24 stances (0-unsourced)
+- [x] 161-05-PLAN.md — WA federal-24 stances (0-unsourced)
 - [ ] 161-06-PLAN.md — TN seed (2 elections + 9 severity-routed races + 73 records + headshots); severe districts withheld via election_id
 
 **Wave 4**
@@ -289,7 +289,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 160. Field Resolution + Stance-Gap Diagnostic | 7/7 | Complete    | 2026-07-03 |
-| 161. WA + AZ + TN + MA Candidate Seeding | 4/11 | In Progress|  |
+| 161. WA + AZ + TN + MA Candidate Seeding | 5/11 | In Progress|  |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
 | 164. KY + OR + CT + OK + AR + IA + KS + MS Candidate Seeding | 0/? | Not started | - |
