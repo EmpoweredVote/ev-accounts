@@ -154,7 +154,7 @@ Plans:
 
 **Wave 5**
 
-- [ ] 161-09-PLAN.md — TN stances part 2 (TN-6..9, ~37)
+- [x] 161-09-PLAN.md — TN stances part 2 (TN-6..9, ~37)
 - [ ] 161-10-PLAN.md — MA federal-24 stances (0-unsourced)
 
 **Wave 6**
@@ -289,7 +289,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 160. Field Resolution + Stance-Gap Diagnostic | 7/7 | Complete    | 2026-07-03 |
-| 161. WA + AZ + TN + MA Candidate Seeding | 8/11 | In Progress|  |
+| 161. WA + AZ + TN + MA Candidate Seeding | 9/11 | In Progress|  |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
 | 164. KY + OR + CT + OK + AR + IA + KS + MS Candidate Seeding | 0/? | Not started | - |
