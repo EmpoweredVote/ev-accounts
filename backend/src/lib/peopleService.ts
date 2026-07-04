@@ -124,7 +124,7 @@ const PERSON_SELECT = `
   SELECT
     p.id                                                                     AS politician_id,
     COALESCE(p.full_name, MAX(sp.display_name))                              AS name,
-    COALESCE(NULLIF(p.photo_custom_url, ''), NULLIF(p.photo_origin_url, '')) AS headshot_url,
+    COALESCE(NULLIF(p.photo_custom_url, ''), pi.url)                         AS headshot_url,
     p.party                                                                  AS party,
     p.bio_text                                                               AS bio_text,
     off.office_title,
@@ -146,10 +146,18 @@ const PERSON_SELECT = `
     ORDER BY o.id
     LIMIT 1
   ) off ON true
+  -- Actual portrait image from Supabase Storage. photo_origin_url is a
+  -- source/citation page (Wikipedia, Ballotpedia, voter guide), NOT an image,
+  -- so headshot_url uses the custom override then this default image only.
+  LEFT JOIN LATERAL (
+    SELECT url FROM essentials.politician_images
+    WHERE politician_id = p.id AND type = 'default'
+    LIMIT 1
+  ) pi ON true
 `;
 
 const PERSON_GROUP_BY = `
-  GROUP BY p.id, off.office_title, off.district, off.jurisdiction
+  GROUP BY p.id, off.office_title, off.district, off.jurisdiction, pi.url
 `;
 
 export async function getPeople(filters?: { city?: string }): Promise<Person[]> {
