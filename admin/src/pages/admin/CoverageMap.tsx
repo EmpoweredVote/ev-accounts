@@ -34,7 +34,11 @@ function scoreColor(score: number | undefined): string {
   const ch = (i: number) => Math.round(RAMP_FROM[i] + (RAMP_TO[i] - RAMP_FROM[i]) * t);
   return `rgb(${ch(0)}, ${ch(1)}, ${ch(2)})`;
 }
-function electionStateColor(s: StateElection | undefined): string { return s ? scoreColor(s.coverage) : NOT_STARTED; }
+function electionStateColor(s: StateElection | undefined): string {
+  if (!s) return NOT_STARTED;
+  if (s.races_total === 0) return NO_RACE_DATA;
+  return scoreColor(s.coverage <= 0 ? 0.01 : s.coverage);
+}
 function electionCountyColor(c: CountyElection | undefined): string {
   if (!c) return NOT_STARTED;
   if (c.status === 'unknown') return NO_RACE_DATA;

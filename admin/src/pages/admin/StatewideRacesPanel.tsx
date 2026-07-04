@@ -9,10 +9,22 @@ import type { StateElection } from './coverageTypes';
 
 interface Props {
   stateElection: StateElection | null;
+  /** True while the elections dataset is still lazy-fetching, so the panel shows a
+   *  loading affordance instead of flashing blank (a state can be selected before
+   *  `elecStates` resolves, e.g. flipping to elections mode with a state already picked). */
+  loading?: boolean;
 }
 
-export function StatewideRacesPanel({ stateElection }: Props) {
-  if (!stateElection) return null;
+export function StatewideRacesPanel({ stateElection, loading = false }: Props) {
+  if (!stateElection) {
+    if (!loading) return null;
+    return (
+      <div className="flex items-center gap-3 rounded-lg bg-white px-4 py-3 shadow dark:bg-gray-900">
+        <div className="h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-ev-teal dark:border-gray-600 dark:border-t-ev-teal-light" />
+        <p className="text-sm text-gray-500 dark:text-gray-400">Loading statewide races…</p>
+      </div>
+    );
+  }
 
   const { statewideRaces, countyCoverage } = stateElection;
 
