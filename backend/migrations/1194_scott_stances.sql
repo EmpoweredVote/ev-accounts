@@ -48,6 +48,32 @@ BEGIN
   IF n <> 3 THEN
     RAISE EXCEPTION 'Expected % context rows, found % — answers/context VALUES lists diverged', 3, n;
   END IF;
+  -- Content-correspondence gate (WR-04, 181-REVIEW): the count checks above
+  -- can't catch a hand-edit that changes one table's topic set (or blanks
+  -- its reasoning/sources) without mirroring the other — both would still
+  -- report the same N. Assert set equality on topic_id between the two
+  -- tables for this politician, and that every context row carries
+  -- non-empty reasoning and sources.
+  SELECT COUNT(*) INTO n FROM inform.politician_answers a
+  WHERE a.politician_id = '8bf23d4d-d3e2-4cbd-99ff-863fb80f7ae4'
+    AND NOT EXISTS (
+      SELECT 1 FROM inform.politician_context c
+      WHERE c.politician_id = a.politician_id AND c.topic_id = a.topic_id
+        AND c.reasoning IS NOT NULL AND length(trim(c.reasoning)) > 0
+        AND c.sources IS NOT NULL AND array_length(c.sources, 1) > 0
+    );
+  IF n <> 0 THEN
+    RAISE EXCEPTION '% answers row(s) have no corresponding non-empty context row (topic_id mismatch or empty reasoning/sources)', n;
+  END IF;
+  SELECT COUNT(*) INTO n FROM inform.politician_context c
+  WHERE c.politician_id = '8bf23d4d-d3e2-4cbd-99ff-863fb80f7ae4'
+    AND NOT EXISTS (
+      SELECT 1 FROM inform.politician_answers a
+      WHERE a.politician_id = c.politician_id AND a.topic_id = c.topic_id
+    );
+  IF n <> 0 THEN
+    RAISE EXCEPTION '% context row(s) reference a topic_id with no corresponding answers row', n;
+  END IF;
 END $$;
 
 COMMIT;
