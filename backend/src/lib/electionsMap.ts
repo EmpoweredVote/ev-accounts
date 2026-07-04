@@ -65,3 +65,22 @@ export function classifyCounty(races: RaceRow[]): ClassifiedCounty {
   // `scored` with coverage: 0 means races exist here but none have candidates yet (distinct from `unknown` = no races resolve to this county).
   return { status: 'scored', coverage: raceCoverage(races), races };
 }
+
+/**
+ * Partition a state's races into statewide/legislative vs county/local-pinnable
+ * buckets, using resolveRaceCountyFips as the single source of truth for the
+ * split (null → statewide, non-null → countyPinnable). Pure, no I/O.
+ */
+export function classifyRaces(
+  races: RaceRow[],
+  countyOcdToFips: Map<string, string>,
+  placeSlugToFips: Map<string, string>,
+): { statewide: RaceRow[]; countyPinnable: RaceRow[] } {
+  const statewide: RaceRow[] = [];
+  const countyPinnable: RaceRow[] = [];
+  for (const r of races) {
+    const cf = resolveRaceCountyFips(r.ocd_id, countyOcdToFips, placeSlugToFips);
+    (cf ? countyPinnable : statewide).push(r);
+  }
+  return { statewide, countyPinnable };
+}
