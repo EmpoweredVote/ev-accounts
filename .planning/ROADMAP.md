@@ -177,7 +177,20 @@ Plans:
   2. Every newly-seeded IN/MD/MN/MO candidate has a headshot; incumbent-nominees reuse existing records (zero duplicate `full_name` per state); no party on candidate cards.
   3. Every IN/MD/MN/MO candidate lacking federal-24 stances has sourced chairs-not-polarity stances — 0 unsourced, primary-source-verified before push, honest-skip where evidence is thin; already-stanced incumbents skipped via the diagnostic.
 
-**Plans:** TBD
+**Plans:** 11 plans (10 waves)
+
+Plans:
+- [ ] 162-01-PLAN.md — MO old-vs-new map correspondence audit (D-01a; severe geo_id list)
+- [ ] 162-02-PLAN.md — MO seed end-to-end: 2 elections (general + withheld Polygon Pending), 8 severity-routed races, 58 new records, headshots
+- [ ] 162-03-PLAN.md — MO stances batch A (incumbents-skipped + evidenced majors incl. Bush) + scaffold + push
+- [ ] 162-04-PLAN.md — MO stances batch B (remaining filers) + push (MO stance-complete)
+- [ ] 162-05-PLAN.md — MN seed end-to-end: 1 election, 8 races, 35 new records, headshots (vanilla)
+- [ ] 162-06-PLAN.md — MN stances (35 targets) + scaffold + push
+- [ ] 162-07-PLAN.md — IN-9 flag fix (D-02, first) + IN seed: 1 election, 9 races, 12 new records, headshots
+- [ ] 162-08-PLAN.md — MD candidates-only onto 8 existing races: 13 new + 7 incumbent rows, headshots (D-04 reuse)
+- [ ] 162-09-PLAN.md — IN stances (12 new + 3 zero-tier incumbents) + scaffold + push
+- [ ] 162-10-PLAN.md — MD stances (13 new + 8 zero-tier incumbents) + scaffold + push
+- [ ] 162-11-PLAN.md — 33-district mini-gate: 162-verify.sql (+ MO-SEVERE + IN9-FLAG) + 162-coordinate-smoke.ts
 
 ---
 
