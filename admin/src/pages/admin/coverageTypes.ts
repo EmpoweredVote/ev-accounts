@@ -28,9 +28,11 @@ export interface CountyScore {
   treasury: 'none' | 'partial' | 'full';
 }
 
+export interface ElectionRace { race_id: string; position_name: string; seats: number; candidate_count: number; ocd_id: string | null; }
 export interface StateElection {
   fips: string; code: string; election_date: string; election_type: string;
   coverage: number; races_total: number; races_covered: number;
+  countyCoverage: { status: 'unknown' | 'scored'; coverage: number; races_total: number; races_covered: number };
+  statewideRaces: ElectionRace[];
 }
-export interface ElectionRace { race_id: string; position_name: string; seats: number; candidate_count: number; ocd_id: string | null; }
 export interface CountyElection { fips: string; name: string; status: 'unknown' | 'scored'; coverage: number; races: ElectionRace[]; }
