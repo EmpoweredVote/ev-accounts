@@ -122,3 +122,17 @@ Ready for Plan 02 to add route-level test coverage and Plan 03 to consume `count
 ---
 *Phase: 168-elections-accuracy-fix*
 *Completed: 2026-07-04*
+
+## Self-Check: PASSED
+
+All created/modified files verified present:
+- FOUND: backend/src/lib/electionsMap.ts
+- FOUND: backend/src/lib/electionsMap.test.ts
+- FOUND: backend/src/lib/electionsMapService.ts
+- FOUND: .planning/workstreams/coverage-map/phases/168-elections-accuracy-fix/168-01-SUMMARY.md
+
+All commits verified present in git log:
+- FOUND: a95d13a2 (test)
+- FOUND: 9c7670c6 (feat)
+- FOUND: a0985672 (feat)
+- FOUND: 67b003fa (docs)
