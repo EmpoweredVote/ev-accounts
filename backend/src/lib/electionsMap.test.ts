@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { raceCoverage, resolveRaceCountyFips, classifyCounty, toSlug, PLACE_STRIP, type RaceRow } from './electionsMap.js';
+import { raceCoverage, resolveRaceCountyFips, classifyCounty, classifyRaces, toSlug, PLACE_STRIP, type RaceRow } from './electionsMap.js';
 
 const race = (over: Partial<RaceRow> = {}): RaceRow => ({
   race_id: 'r', position_name: 'X', seats: 1, candidate_count: 0, ocd_id: null, ...over,
@@ -53,5 +53,64 @@ describe('classifyCounty', () => {
     const c = classifyCounty([race({ candidate_count: 1 }), race({ candidate_count: 0 })]);
     expect(c.status).toBe('scored');
     expect(c.coverage).toBe(50);
+  });
+});
+
+describe('classifyRaces', () => {
+  const countyOcdToFips = new Map([['ocd-division/country:us/state:ut/county:salt_lake', '49035']]);
+  const placeSlugToFips = new Map([['provo', '49049']]);
+
+  it('returns both buckets empty for an empty race set', () => {
+    const { statewide, countyPinnable } = classifyRaces([], countyOcdToFips, placeSlugToFips);
+    expect(statewide).toEqual([]);
+    expect(countyPinnable).toEqual([]);
+  });
+
+  it('puts an all-statewide set (cd/sldu/sldl/bare-state/null) entirely into statewide', () => {
+    const races = [
+      race({ race_id: 'cd', ocd_id: 'ocd-division/country:us/state:ut/cd:1' }),
+      race({ race_id: 'sldu', ocd_id: 'ocd-division/country:us/state:ut/sldu:5' }),
+      race({ race_id: 'sldl', ocd_id: 'ocd-division/country:us/state:ut/sldl:5' }),
+      race({ race_id: 'bare', ocd_id: 'ocd-division/country:us/state:ut' }),
+      race({ race_id: 'nullocd', ocd_id: null }),
+    ];
+    const { statewide, countyPinnable } = classifyRaces(races, countyOcdToFips, placeSlugToFips);
+    expect(statewide).toHaveLength(5);
+    expect(countyPinnable).toHaveLength(0);
+  });
+
+  it('partitions a mixed set with no overlap and no loss', () => {
+    const races = [
+      race({ race_id: 'cd', ocd_id: 'ocd-division/country:us/state:ut/cd:1' }),
+      race({ race_id: 'county', ocd_id: 'ocd-division/country:us/state:ut/county:salt_lake' }),
+      race({ race_id: 'place', ocd_id: 'ocd-division/country:us/state:ut/place:provo' }),
+      race({ race_id: 'bare', ocd_id: 'ocd-division/country:us/state:ut' }),
+    ];
+    const { statewide, countyPinnable } = classifyRaces(races, countyOcdToFips, placeSlugToFips);
+    expect(statewide.map((r) => r.race_id).sort()).toEqual(['bare', 'cd']);
+    expect(countyPinnable.map((r) => r.race_id).sort()).toEqual(['county', 'place']);
+    expect(statewide.length + countyPinnable.length).toBe(races.length);
+  });
+
+  it('resolves a place-resolvable race and a nested county sub-district race to countyPinnable', () => {
+    const races = [
+      race({ race_id: 'place', ocd_id: 'ocd-division/country:us/state:ut/place:provo' }),
+      race({ race_id: 'nested-county', ocd_id: 'ocd-division/country:us/state:ut/county:salt_lake/council_district:5' }),
+    ];
+    const { statewide, countyPinnable } = classifyRaces(races, countyOcdToFips, placeSlugToFips);
+    expect(statewide).toHaveLength(0);
+    expect(countyPinnable.map((r) => r.race_id).sort()).toEqual(['nested-county', 'place']);
+  });
+
+  it('puts cd/sldu/sldl/bare-state races into statewide', () => {
+    const races = [
+      race({ race_id: 'cd', ocd_id: 'ocd-division/country:us/state:ut/cd:1' }),
+      race({ race_id: 'sldu', ocd_id: 'ocd-division/country:us/state:ut/sldu:5' }),
+      race({ race_id: 'sldl', ocd_id: 'ocd-division/country:us/state:ut/sldl:5' }),
+      race({ race_id: 'bare', ocd_id: 'ocd-division/country:us/state:ut' }),
+    ];
+    const { statewide, countyPinnable } = classifyRaces(races, countyOcdToFips, placeSlugToFips);
+    expect(statewide.map((r) => r.race_id).sort()).toEqual(['bare', 'cd', 'sldl', 'sldu']);
+    expect(countyPinnable).toHaveLength(0);
   });
 });
