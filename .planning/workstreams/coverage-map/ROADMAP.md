@@ -28,15 +28,15 @@
   2. Clicking a state in elections mode opens a panel listing that state's statewide/legislative races with their candidate coverage.
   3. A state with only statewide races (the Michigan case) no longer displays 100% while every county drill-down shows empty — state-level and county-level numbers are computed from consistent denominators over the same race data.
 
-**Plans:** 1/3 plans executed
+**Plans:** 3/3 plans complete
 **Wave 1**
 
 - [x] 168-01-PLAN.md — Backend: partition getElectionsStateScores into two numbers via classifyRaces (ELEC-01, ELEC-03) [wave 1]
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 168-02-PLAN.md — Backend test: route-level cross-endpoint denominator consistency, new admin.test.ts (ELEC-03) [wave 2]
-- [ ] 168-03-PLAN.md — Frontend: StatewideRacesPanel + CoverageMap fill/N-A repoint + CoveragePage mount (ELEC-01/02/03, D-01/02/03) [wave 2]
+- [x] 168-02-PLAN.md — Backend test: route-level cross-endpoint denominator consistency, new admin.test.ts (ELEC-03) [wave 2]
+- [x] 168-03-PLAN.md — Frontend: StatewideRacesPanel + CoverageMap fill/N-A repoint + CoveragePage mount (ELEC-01/02/03, D-01/02/03) [wave 2]
 
 ---
 
@@ -121,7 +121,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 168. Elections Accuracy Fix | 1/3 | In Progress|  |
+| 168. Elections Accuracy Fix | 3/3 | Complete   | 2026-07-04 |
 | 169. DB-Derived Coverage Core | 0/TBD | Not started | - |
 | 170. City/Place Drill-down | 0/TBD | Not started | - |
 | 171. User-Relevant Coverage Metric | 0/TBD | Not started | - |
