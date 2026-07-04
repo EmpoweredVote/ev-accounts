@@ -21,9 +21,12 @@ Requirements for this milestone. Each maps to roadmap phases.
 
 ### Elections Accuracy (ELEC)
 
-- [ ] **ELEC-01**: Elections coverage reports statewide/legislative races and county/local-pinnable races as separately computed metrics per state — a state with only statewide races can no longer display an undifferentiated 100%
-- [ ] **ELEC-02**: Clicking a state in elections mode shows a statewide-races panel listing its statewide/legislative races with candidate coverage
-- [ ] **ELEC-03**: State-level and county-level elections numbers are computed from consistent denominators — clicking a state never shows data that contradicts its map score (the Michigan bug)
+- [x] **ELEC-01**: Elections coverage reports statewide/legislative races and county/local-pinnable races as separately computed metrics per state — a state with only statewide races can no longer display an undifferentiated 100%
+- [x] **ELEC-02**: Clicking a state in elections mode shows a statewide-races panel listing its statewide/legislative races with candidate coverage
+- [x] **ELEC-03**: State-level and county-level elections numbers are computed from consistent denominators — clicking a state never shows data that contradicts its map score (the Michigan bug)
+- [ ] **ELEC-04**: Elections coverage is measured as a 3-tier depth indicator (Tier 1 = candidate names only; Tier 2 = names + compass stances OR transparent motivations; Tier 3 = names + stances + transparent motivations), replacing the single breadth count of races with ≥1 candidate — with tier thresholds defined once and reused by backend computation and UI
+- [ ] **ELEC-05**: Per-race and per-panel readouts show a covered/total breakdown by tier (each race row shows its own tier; the panel header shows totals per tier), so admin sees depth of civic data, not just whether any candidate name exists
+- [ ] **ELEC-06**: The `StateElection`/`RaceRow` payload contract and the state choropleth fill + legend reflect the tiered metric — a state with names but no stances/motivations no longer reads as fully covered
 
 ### City Drill-down (CITY)
 
@@ -75,9 +78,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CMAP-04 | 169 | Pending |
 | CMAP-05 | 170 | Pending |
 | CMAP-06 | 169 | Pending |
-| ELEC-01 | 168 | Pending |
-| ELEC-02 | 168 | Pending |
-| ELEC-03 | 168 | Pending |
+| ELEC-01 | 168 | Complete |
+| ELEC-02 | 168 | Complete |
+| ELEC-03 | 168 | Complete |
+| ELEC-04 | 168.1 | Pending |
+| ELEC-05 | 168.1 | Pending |
+| ELEC-06 | 168.1 | Pending |
 | CITY-01 | 170 | Pending |
 | CITY-02 | 170 | Pending |
 | UAPI-01 | 171 | Pending |
@@ -85,8 +91,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | UAPI-03 | 172 | Pending |
 
 **Coverage:**
-- v2.23 requirements: 14 total
-- Mapped to phases: 14
+
+- v2.23 requirements: 17 total
+- Mapped to phases: 17
 - Unmapped: 0 ✓
 
 ---

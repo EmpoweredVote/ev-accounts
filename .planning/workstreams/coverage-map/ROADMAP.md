@@ -40,6 +40,28 @@
 
 ---
 
+#### Phase 168.1: Depth-Aware 3-Tier Elections Coverage (INSERTED)
+
+**Goal:** Elections coverage measures *depth*, not just *breadth* — a race is no longer simply "covered" because it has one candidate name. Coverage is reported as a 3-tier indicator (names only · names + stances-or-motivations · all three) with a covered/total readout by tier, so admin can see how complete each race's civic data actually is.
+
+**Depends on:** Phase 168 (extends the statewide/legislative `classifyRaces` split and the `StateElection`/`RaceRow` contract this phase enriches; must be built on the corrected geographic denominators, not the old lumped number). Inserted here — before Phases 169/171/172 build on the elections signal — so the metric contract stabilizes before the DB-derived core, the user-relevant metric, and the public API consume it.
+
+**Requirements:** ELEC-04, ELEC-05, ELEC-06
+
+**Success Criteria** (what must be TRUE):
+
+  1. Each statewide/legislative race is classified into one of three coverage tiers — Tier 1 (candidate names only), Tier 2 (names + compass stances OR transparent motivations), Tier 3 (names + stances + transparent motivations) — computed in the backend from live data, with the tier thresholds defined once and reused by both the computation and the UI.
+  2. The `StatewideRacesPanel` and its panel header show a covered/total readout broken down by tier (not a single breadth count), and each race row shows its own tier.
+  3. The state choropleth fill and legend reflect the tiered metric rather than the breadth-only "≥1 candidate" number, and a state with candidate names but no stances/motivations no longer reads as fully covered.
+
+**UI hint:** yes
+
+**Plans:** 0 plans
+
+Plans:
+
+- [ ] TBD (run /gsd-plan-phase 168.1 to break down)
+
 #### Phase 169: DB-Derived Coverage Core
 
 **Goal:** The admin coverage map's completeness picture comes from the live database for every state in the union — no state is invisible or miscounted because a coverage YAML file does or doesn't exist for it.
@@ -121,11 +143,12 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 168. Elections Accuracy Fix | 3/3 | Complete   | 2026-07-04 |
+| 168. Elections Accuracy Fix | 3/3 | Complete    | 2026-07-04 |
+| 168.1. Depth-Aware 3-Tier Elections Coverage | 0/TBD | Not started | - |
 | 169. DB-Derived Coverage Core | 0/TBD | Not started | - |
 | 170. City/Place Drill-down | 0/TBD | Not started | - |
 | 171. User-Relevant Coverage Metric | 0/TBD | Not started | - |
 | 172. Port-Ready Public API | 0/TBD | Not started | - |
 
 ---
-*Roadmap re-homed from the offline v2.20/148–152 draft to v2.23/168–172 (coverage-map workstream) on 2026-07-04. 14/14 requirements mapped.*
+*Roadmap re-homed from the offline v2.20/148–152 draft to v2.23/168–172 (coverage-map workstream) on 2026-07-04. 17/17 requirements mapped (Phase 168.1 inserted 2026-07-04).*
