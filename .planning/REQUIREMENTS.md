@@ -16,15 +16,15 @@
 
 ### Candidate Records
 
-- [ ] **USHC3-02**: Every Wave-3 candidate has exactly one `essentials.politicians` record — incumbents and previously-seeded figures reuse their existing record (0 duplicate politician rows), only genuinely new candidates get new records; party normalized (Democratic, not Democrat); external_ids follow the verified collision-free per-state scheme.
+- [x] **USHC3-02**: Every Wave-3 candidate has exactly one `essentials.politicians` record — incumbents and previously-seeded figures reuse their existing record (0 duplicate politician rows), only genuinely new candidates get new records; party normalized (Democratic, not Democrat); external_ids follow the verified collision-free per-state scheme.
 
 ### Race Wiring (Elections surfacing)
 
-- [ ] **USHC3-03**: Every Wave-3 US House race surfaces on `/elections` for an in-district address via `essentials.races` + `essentials.race_candidates` — `elections` + `races` rows authored first per state (none of the 38 states have pre-seeded 2026 House races), then `race_candidates` with non-null `politician_id`, `candidate_status=active`, incumbents flagged `is_incumbent=true`, never `office_id IS NULL`, party never on the candidate card.
+- [x] **USHC3-03**: Every Wave-3 US House race surfaces on `/elections` for an in-district address via `essentials.races` + `essentials.race_candidates` — `elections` + `races` rows authored first per state (none of the 38 states have pre-seeded 2026 House races), then `race_candidates` with non-null `politician_id`, `candidate_status=active`, incumbents flagged `is_incumbent=true`, never `office_id IS NULL`, party never on the candidate card.
 
 ### Headshots
 
-- [ ] **USHC3-04**: Every newly-seeded Wave-3 candidate has a headshot (find-headshots conventions: Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`; free-license, wrong-person-guarded, documented honest-skips where none found).
+- [x] **USHC3-04**: Every newly-seeded Wave-3 candidate has a headshot (find-headshots conventions: Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`; free-license, wrong-person-guarded, documented honest-skips where none found).
 
 ### Stances
 

@@ -159,7 +159,7 @@ Plans:
 
 **Wave 6**
 
-- [ ] 161-11-PLAN.md — 37-district mini-gate: 161-verify.sql + 161-coordinate-smoke.ts (incl. severe-TN zero-race negative sample)
+- [x] 161-11-PLAN.md — 37-district mini-gate: 161-verify.sql + 161-coordinate-smoke.ts (incl. severe-TN zero-race negative sample)
 
 ---
 
@@ -289,7 +289,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 160. Field Resolution + Stance-Gap Diagnostic | 7/7 | Complete    | 2026-07-03 |
-| 161. WA + AZ + TN + MA Candidate Seeding | 10/11 | In Progress|  |
+| 161. WA + AZ + TN + MA Candidate Seeding | 11/11 | Complete   | 2026-07-04 |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
 | 164. KY + OR + CT + OK + AR + IA + KS + MS Candidate Seeding | 0/? | Not started | - |

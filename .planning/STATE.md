@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage (Wave 3)
-status: executing
-last_updated: "2026-07-04T05:42:38.137Z"
+status: verifying
+last_updated: "2026-07-04T17:06:56.106Z"
 last_activity: 2026-07-04
 progress:
   total_phases: 9
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 18
-  completed_plans: 12
-  percent: 11
+  completed_plans: 18
+  percent: 22
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
@@ -30,8 +30,8 @@ See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 ## Current Position
 
 Phase: 161 (WA + AZ + TN + MA Candidate Seeding (create elections + races, then candidates)) — EXECUTING
-Plan: 5 of 11
-Status: Ready to execute
+Plan: 11 of 11
+Status: Phase complete — ready for verification
 Last activity: 2026-07-04
 
 ## v2.22 Phase Dependencies
@@ -187,11 +187,12 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 | Phase 160 P07 | 25min | 3 tasks | 4 files |
 | Phase 161 P03 | 210min | 3 tasks | 18 files |
 | Phase 161 P05 | 165min | 0 tasks | 9 files |
+| Phase 161 P11 | 90m | 2 tasks | 3 files |
 
 ## Session Continuity
 
-Last session: 2026-07-04T05:40:47.997Z
-Stopped at: Completed 161-03-PLAN.md
+Last session: 2026-07-04T17:06:56.091Z
+Stopped at: Completed 161-11-PLAN.md (phase 161 complete, ready for verification)
 Resume file: None
 
 ## Operator Next Steps
@@ -225,3 +226,5 @@ Resume file: None
 - [161-03]: No Task/Agent tool available this session; researched all 24 AZ candidates directly via Playwright-driven fetches of Ballotpedia/campaign sites instead of dispatching politician-stance-researcher sub-agents, applying identical chairs-not-polarity/honest-skip standards
 - [161-03]: Discovered 5 of the 24 target AZ candidates (Ajluni, Descheenie, Davison, Bracht, Bah) withdrew or were disqualified from the 2026 ballot after the 161-02 snapshot; pinned as ballot-ineligibility whole-record skips for the 161-11 gate rather than researching stances for non-ballot candidates
 - [Phase ?]: 161-05: No Task/Agent tool available (matches 161-03) — researched all 23 remaining WA challengers directly via curl/wayback/Wikipedia; 9 sourced (46/60 total), 14 pinned whole-record honest-skips incl. a John Roco cross-state-homonym identity-risk flag for the 161-11 gate.
+- [Phase ?]: [161-11]: AZ roster reconciliation applied via migration 1204 (candidate_status='withdrawn' for 5 ballot-ineligible candidates), excluding them from the gate's active-scoped in-scope set
+- [Phase ?]: [161-11]: 161-verify.sql + 161-coordinate-smoke.ts both green against prod -- all 37 WA/AZ/TN/MA districts satisfy USHC3-02/03/04/05, TN severe-district withholding proven end-to-end
