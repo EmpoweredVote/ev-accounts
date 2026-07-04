@@ -29,11 +29,14 @@
   3. A state with only statewide races (the Michigan case) no longer displays 100% while every county drill-down shows empty — state-level and county-level numbers are computed from consistent denominators over the same race data.
 
 **Plans:** 3 plans in 2 waves
+**Wave 1**
 
 - [ ] 168-01-PLAN.md — Backend: partition getElectionsStateScores into two numbers via classifyRaces (ELEC-01, ELEC-03) [wave 1]
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 168-02-PLAN.md — Backend test: route-level cross-endpoint denominator consistency, new admin.test.ts (ELEC-03) [wave 2]
 - [ ] 168-03-PLAN.md — Frontend: StatewideRacesPanel + CoverageMap fill/N-A repoint + CoveragePage mount (ELEC-01/02/03, D-01/02/03) [wave 2]
-
 
 ---
 
