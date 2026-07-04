@@ -28,7 +28,7 @@
 
 ### Stances
 
-- [ ] **USHC3-05**: Every newly-seeded Wave-3 candidate has sourced compass stances across the federal 24-topic set — chairs-not-polarity, every answer paired to an `inform.politician_context` row with a real fetched source URL, **0 unsourced**, honest-skip (per-topic or whole-record, gate-pinned with a written search trail) where no documentable evidence, and a mandatory primary-source verification pass before push. Already-stanced incumbents skipped via the stance-gap diagnostic.
+- [x] **USHC3-05**: Every newly-seeded Wave-3 candidate has sourced compass stances across the federal 24-topic set — chairs-not-polarity, every answer paired to an `inform.politician_context` row with a real fetched source URL, **0 unsourced**, honest-skip (per-topic or whole-record, gate-pinned with a written search trail) where no documentable evidence, and a mandatory primary-source verification pass before push. Already-stanced incumbents skipped via the stance-gap diagnostic.
 
 ### Verification
 
