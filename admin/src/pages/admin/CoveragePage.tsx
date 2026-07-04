@@ -9,6 +9,7 @@ import { useEffect, useMemo, useState, useCallback } from 'react';
 import { apiFetch } from '../../lib/api';
 import { CoverageMap } from './CoverageMap';
 import { CoverageTable } from './CoverageTable';
+import { StatewideRacesPanel } from './StatewideRacesPanel';
 import type { StateScore, CountyScore, StateElection, CountyElection, Metric } from './coverageTypes';
 
 export function CoveragePage() {
@@ -166,6 +167,12 @@ export function CoveragePage() {
           onSelectCounty={onSelectCounty}
         />
       </div>
+
+      {/* STATEWIDE RACES PANEL (below map) — elections mode, only once a state is selected;
+          renders alongside the county view (map's own drill-down), never in place of it (D-02) */}
+      {metric === 'elections' && selected && (
+        <StatewideRacesPanel stateElection={elecStatesByFips.get(selected.fips) ?? null} />
+      )}
 
       {/* TABLE (below) — completeness only; whole page scrolls (no inner scroll box) */}
       {metric === 'completeness' && (
