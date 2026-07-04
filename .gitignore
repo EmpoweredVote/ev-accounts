@@ -94,3 +94,6 @@ infra/cdk.out/
 
 # One-off generated analysis report (scratch, not a durable record)
 bug_analysis_report.html
+
+# GSD per-session active workstream pointer (local only)
+.planning/active-workstream
