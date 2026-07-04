@@ -8,16 +8,21 @@
  */
 import { pool } from './db.js';
 import { STATE_ABBR_TO_FIPS } from './treasuryService.js';
-import { toSlug, PLACE_STRIP, raceCoverage, resolveRaceCountyFips, classifyCounty, type RaceRow } from './electionsMap.js';
+import { toSlug, PLACE_STRIP, raceCoverage, resolveRaceCountyFips, classifyCounty, classifyRaces, type RaceRow } from './electionsMap.js';
 
 export interface StateElection {
   fips: string;
   code: string;
   election_date: string;
   election_type: string;
+  // Statewide/legislative races only (D-01: this is the number that colors the map).
   coverage: number;
   races_total: number;
   races_covered: number;
+  // County/local-pinnable races only, N/A-safe via `status` (D-03: never a fake 0%).
+  countyCoverage: { status: 'unknown' | 'scored'; coverage: number; races_total: number; races_covered: number };
+  // Full statewide/legislative race list for the ELEC-02 panel — no new query.
+  statewideRaces: RaceRow[];
 }
 
 export interface CountyElection {
@@ -126,13 +131,23 @@ export async function getElectionsStateScores(opts: { refresh?: boolean } = {}):
       if (!fips) continue;
       const nd = await nextElectionDate(code.toUpperCase());
       if (!nd) continue;
-      const races = await racesForStateDate(code.toUpperCase(), nd.date);
-      const covered = races.filter((r) => r.candidate_count > 0).length;
+      const [races, countyMap, placeMap] = await Promise.all([
+        racesForStateDate(code.toUpperCase(), nd.date),
+        countyOcdToFips(fips),
+        placeSlugToFips(fips),
+      ]);
+      const { statewide, countyPinnable } = classifyRaces(races, countyMap, placeMap);
+      const stateCovered = statewide.filter((r) => r.candidate_count > 0).length;
+      const countyCovered = countyPinnable.filter((r) => r.candidate_count > 0).length;
       out.push({
         fips, code,
         election_date: nd.date, election_type: nd.type,
-        coverage: raceCoverage(races),
-        races_total: races.length, races_covered: covered,
+        coverage: raceCoverage(statewide),
+        races_total: statewide.length, races_covered: stateCovered,
+        countyCoverage: countyPinnable.length === 0
+          ? { status: 'unknown', coverage: 0, races_total: 0, races_covered: 0 }
+          : { status: 'scored', coverage: raceCoverage(countyPinnable), races_total: countyPinnable.length, races_covered: countyCovered },
+        statewideRaces: statewide,
       });
     }
     return out;
