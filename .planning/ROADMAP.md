@@ -213,7 +213,7 @@ Plans:
 Plans:
 - [x] 163-01-PLAN.md — AL + LA old-vs-new correspondence audits (severe geo_id lists; gates AL/LA seeding)
 - [x] 163-02-PLAN.md — WI seed (8 districts, 28 new, vanilla PROVISIONAL) + headshots
-- [ ] 163-03-PLAN.md — CO seed (8 districts, 9 new, decided; DeGette lost-primary excluded from CO-1) + headshots
+- [x] 163-03-PLAN.md — CO seed (8 districts, 9 new, decided; DeGette lost-primary excluded from CO-1) + headshots
 - [ ] 163-04-PLAN.md — AL seed (7 districts, 21 new, severity-routed withholding + late-primary split) + headshots
 - [ ] 163-05-PLAN.md — SC seed (7 districts, 16 new, decided; Jul-15 independent window re-check) + headshots
 - [ ] 163-06-PLAN.md — LA seed (6 districts, 27 new, jungle-primary primary_party=NULL + severity-routed withholding) + headshots
@@ -317,7 +317,7 @@ Plans:
 | 160. Field Resolution + Stance-Gap Diagnostic | 7/7 | Complete    | 2026-07-03 |
 | 161. WA + AZ + TN + MA Candidate Seeding | 11/11 | Complete    | 2026-07-04 |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
-| 163. WI + CO + AL + SC + LA Candidate Seeding | 2/11 | In Progress|  |
+| 163. WI + CO + AL + SC + LA Candidate Seeding | 3/11 | In Progress|  |
 | 164. KY + OR + CT + OK + AR + IA + KS + MS Candidate Seeding | 0/? | Not started | - |
 | 165. Small-Delegation States Candidate Seeding (17 states) | 0/? | Not started | - |
 | 166. Consolidated Verification Gate | 0/? | Not started | - |

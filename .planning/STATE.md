@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage (Wave 3)
 status: executing
-last_updated: "2026-07-05T20:35:43.471Z"
+last_updated: "2026-07-05T21:13:40.375Z"
 last_activity: 2026-07-05
 progress:
   total_phases: 9
   completed_phases: 3
   total_plans: 40
-  completed_plans: 31
+  completed_plans: 32
   percent: 33
 ---
 
@@ -30,7 +30,7 @@ See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 ## Current Position
 
 Phase: 163 (wi-co-al-sc-la-candidate-seeding-create-elections-races-then) — EXECUTING
-Plan: 3 of 11
+Plan: 4 of 11
 Status: Ready to execute
 Last activity: 2026-07-05
 
@@ -190,10 +190,11 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 | Phase 161 P11 | 90m | 2 tasks | 3 files |
 | Phase 163 P01 | 55min | 2 tasks | 3 files |
 | Phase 163 P02 | 35min | 3 tasks | 5 files |
+| Phase 163 P03 | 20 | 3 tasks | 5 files |
 
 ## Session Continuity
 
-Last session: 2026-07-05T20:35:43.455Z
+Last session: 2026-07-05T21:04:10.261Z
 Stopped at: Completed 163-02-PLAN.md (WI 2026 House seed + headshots)
 Resume file: None
 
@@ -234,3 +235,5 @@ Resume file: None
 - [Phase 163]: 163-01: LA severe geo_id set = {2202, 2206} (2/6), sourced from an enrolled-statute (SB8-2024 vs SB121-2026) parish-by-parish diff; LA-4 flagged borderline for downstream spot-check
 - [Phase 163-02]: WI-7 Tiffany (retired to run for Governor) is REUSE-NO-ROW open seat, no active House row; WI-2 legitimately 2-candidate all-D race (Pocan+Alexander), no Republican filed, verified not an error
 - [Phase 163-02]: seed-wi-house-headshots.py hardened with a _FOREIGN_NATIONALITY guard after Douglas Alexander (WI-2) resolved to a British Labour MP homonym; bad upload deleted from prod before commit
+- [Phase 163]: 163-03: DeGette CO-1 lost-primary treated as REUSE-NO-ROW (new incumbent-transition pattern, third variant); her existing record/office/19 stances untouched, not wired into CO-1 race_candidates
+- [Phase 163]: 163-03: CO decided-field race description follows the IN 'Confirmed nominees' convention, not PROVISIONAL
