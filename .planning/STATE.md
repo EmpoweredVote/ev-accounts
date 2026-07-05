@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage (Wave 3)
 status: executing
-last_updated: "2026-07-05T19:44:58.883Z"
+last_updated: "2026-07-05T20:35:43.471Z"
 last_activity: 2026-07-05
 progress:
   total_phases: 9
   completed_phases: 3
   total_plans: 40
-  completed_plans: 30
+  completed_plans: 31
   percent: 33
 ---
 
@@ -30,7 +30,7 @@ See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 ## Current Position
 
 Phase: 163 (wi-co-al-sc-la-candidate-seeding-create-elections-races-then) — EXECUTING
-Plan: 2 of 11
+Plan: 3 of 11
 Status: Ready to execute
 Last activity: 2026-07-05
 
@@ -189,11 +189,12 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 | Phase 161 P05 | 165min | 0 tasks | 9 files |
 | Phase 161 P11 | 90m | 2 tasks | 3 files |
 | Phase 163 P01 | 55min | 2 tasks | 3 files |
+| Phase 163 P02 | 35min | 3 tasks | 5 files |
 
 ## Session Continuity
 
-Last session: 2026-07-05T19:44:58.505Z
-Stopped at: Completed 163-01-PLAN.md (AL+LA correspondence audits)
+Last session: 2026-07-05T20:35:43.455Z
+Stopped at: Completed 163-02-PLAN.md (WI 2026 House seed + headshots)
 Resume file: None
 
 ## Operator Next Steps
@@ -231,3 +232,5 @@ Resume file: None
 - [Phase ?]: [161-11]: 161-verify.sql + 161-coordinate-smoke.ts both green against prod -- all 37 WA/AZ/TN/MA districts satisfy USHC3-02/03/04/05, TN severe-district withholding proven end-to-end
 - [Phase 163]: 163-01: AL severe geo_id set = {0102} only (1/7); AL-1/6/7 needed special primaries procedurally but score below the severity rubric on evidence
 - [Phase 163]: 163-01: LA severe geo_id set = {2202, 2206} (2/6), sourced from an enrolled-statute (SB8-2024 vs SB121-2026) parish-by-parish diff; LA-4 flagged borderline for downstream spot-check
+- [Phase 163-02]: WI-7 Tiffany (retired to run for Governor) is REUSE-NO-ROW open seat, no active House row; WI-2 legitimately 2-candidate all-D race (Pocan+Alexander), no Republican filed, verified not an error
+- [Phase 163-02]: seed-wi-house-headshots.py hardened with a _FOREIGN_NATIONALITY guard after Douglas Alexander (WI-2) resolved to a British Labour MP homonym; bad upload deleted from prod before commit
