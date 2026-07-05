@@ -56,11 +56,13 @@
 
 **UI hint:** yes
 
-**Plans:** 0 plans
+**Plans:** 3 plans
 
 Plans:
 
-- [ ] TBD (run /gsd-plan-phase 168.1 to break down)
+- [ ] 168.1-01-PLAN.md — Pure tier classifier + weighted-score helpers + unit tests in electionsMap.ts (ELEC-04) [wave 1]
+- [ ] 168.1-02-PLAN.md — Backend service: extend racesForStateDate SQL + wire tiers/weighted score into getElectionsStateScores + StateElection payload (ELEC-04, ELEC-06) [wave 2]
+- [ ] 168.1-03-PLAN.md — Frontend: coverageTypes mirror + StatewideRacesPanel per-tier readout + CoverageMap depth-score fill/hover (ELEC-05, ELEC-06) [wave 3]
 
 #### Phase 169: DB-Derived Coverage Core
 
@@ -144,7 +146,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 168. Elections Accuracy Fix | 3/3 | Complete    | 2026-07-04 |
-| 168.1. Depth-Aware 3-Tier Elections Coverage | 0/TBD | Not started | - |
+| 168.1. Depth-Aware 3-Tier Elections Coverage | 0/3 | Planned | - |
 | 169. DB-Derived Coverage Core | 0/TBD | Not started | - |
 | 170. City/Place Drill-down | 0/TBD | Not started | - |
 | 171. User-Relevant Coverage Metric | 0/TBD | Not started | - |
