@@ -46,18 +46,45 @@ export async function nextElectionDate(stateAbbr: string): Promise<{ date: strin
   return rows[0] ? { date: rows[0].election_date, type: rows[0].election_type } : null;
 }
 
+/**
+ * Signals (these come from the ACTUAL data, not proxy flags):
+ *   stanced — candidate's politician has ≥1 compass answer in inform.politician_answers.
+ *     NOT politicians.last_stances_researched_at: that timestamp is unstamped for
+ *     bulk-loaded states (CA/OR have 0 stamped despite 228/108 with answers), so
+ *     it badly under-reported stance coverage.
+ *   motivated — candidate's politician has ≥1 contribution. The contributions table keys on
+ *     politician_source_id, which is NOT an essentials id — it joins through
+ *     transparent_motivations.politician_sources.essentials_politician_id.
+ */
 /** All races (any level) across every elections row on a given date for a state. */
 export async function racesForStateDate(stateAbbr: string, date: string): Promise<RaceRow[]> {
   const { rows } = await pool.query<{
     race_id: string; position_name: string; seats: number; candidate_count: string; ocd_id: string | null;
+    active_count: string; stanced_count: string; motivated_count: string;
   }>(
     `SELECT r.id AS race_id, r.position_name, r.seats,
-            COUNT(rc.id) AS candidate_count, d.ocd_id
+            COUNT(rc.id) AS candidate_count, d.ocd_id,
+            COUNT(rc.id) FILTER (
+              WHERE COALESCE(rc.candidate_status, 'active') <> 'withdrawn')                AS active_count,
+            COUNT(rc.id) FILTER (
+              WHERE COALESCE(rc.candidate_status, 'active') <> 'withdrawn'
+                AND ans.politician_id IS NOT NULL)                                          AS stanced_count,
+            COUNT(rc.id) FILTER (
+              WHERE COALESCE(rc.candidate_status, 'active') <> 'withdrawn'
+                AND don.politician_id IS NOT NULL)                                          AS motivated_count
        FROM essentials.elections e
        JOIN essentials.races r ON r.election_id = e.id
        LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
        LEFT JOIN essentials.offices o ON o.id = r.office_id
        LEFT JOIN essentials.districts d ON d.id = o.district_id
+       LEFT JOIN essentials.politicians p ON p.id = rc.politician_id
+       LEFT JOIN (SELECT DISTINCT politician_id FROM inform.politician_answers) ans
+              ON ans.politician_id = p.id
+       LEFT JOIN (
+         SELECT DISTINCT ps.essentials_politician_id AS politician_id
+           FROM transparent_motivations.politician_sources ps
+           JOIN transparent_motivations.contributions c ON c.politician_source_id = ps.id
+       ) don ON don.politician_id = p.id
       WHERE e.state = $1 AND e.election_date = $2
       GROUP BY r.id, r.position_name, r.seats, d.ocd_id`,
     [stateAbbr, date],
@@ -68,10 +95,9 @@ export async function racesForStateDate(stateAbbr: string, date: string): Promis
     seats: Number(r.seats),
     candidate_count: Number(r.candidate_count),
     ocd_id: r.ocd_id,
-    // TODO(168.1-02): wire real active/stanced/motivated aggregates via SQL FILTER joins.
-    active_count: 0,
-    stanced_count: 0,
-    motivated_count: 0,
+    active_count: Number(r.active_count),
+    stanced_count: Number(r.stanced_count),
+    motivated_count: Number(r.motivated_count),
   }));
 }
 
