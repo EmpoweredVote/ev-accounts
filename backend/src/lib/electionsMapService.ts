@@ -8,7 +8,10 @@
  */
 import { pool } from './db.js';
 import { STATE_ABBR_TO_FIPS } from './treasuryService.js';
-import { toSlug, PLACE_STRIP, raceCoverage, resolveRaceCountyFips, classifyCounty, classifyRaces, type RaceRow } from './electionsMap.js';
+import {
+  toSlug, PLACE_STRIP, raceCoverage, resolveRaceCountyFips, classifyCounty, classifyRaces,
+  classifyRaceTier, weightedDepthScore, type RaceRow,
+} from './electionsMap.js';
 
 export interface StateElection {
   fips: string;
@@ -19,10 +22,14 @@ export interface StateElection {
   coverage: number;
   races_total: number;
   races_covered: number;
+  // Weighted 3-tier depth score (D-04) over statewide/legislative races, 0..100.
+  depthScore: number;
+  // Per-tier tallies over the same statewide/legislative race set.
+  tierCounts: { t0: number; t1: number; t2: number; t3: number };
   // County/local-pinnable races only, N/A-safe via `status` (D-03: never a fake 0%).
   countyCoverage: { status: 'unknown' | 'scored'; coverage: number; races_total: number; races_covered: number };
   // Full statewide/legislative race list for the ELEC-02 panel — no new query.
-  statewideRaces: RaceRow[];
+  statewideRaces: (RaceRow & { tier: 0 | 1 | 2 | 3 })[];
 }
 
 export interface CountyElection {
@@ -169,15 +176,23 @@ export async function getElectionsStateScores(opts: { refresh?: boolean } = {}):
       const { statewide, countyPinnable } = classifyRaces(races, countyMap, placeMap);
       const stateCovered = statewide.filter((r) => r.candidate_count > 0).length;
       const countyCovered = countyPinnable.filter((r) => r.candidate_count > 0).length;
+      const tierCounts = { t0: 0, t1: 0, t2: 0, t3: 0 };
+      const statewideWithTier = statewide.map((r) => {
+        const tier = classifyRaceTier({ active: r.active_count, stanced: r.stanced_count, motivated: r.motivated_count });
+        tierCounts[`t${tier}` as keyof typeof tierCounts]++;
+        return { ...r, tier };
+      });
       out.push({
         fips, code,
         election_date: nd.date, election_type: nd.type,
         coverage: raceCoverage(statewide),
         races_total: statewide.length, races_covered: stateCovered,
+        depthScore: weightedDepthScore(statewideWithTier.map((r) => r.tier)),
+        tierCounts,
         countyCoverage: countyPinnable.length === 0
           ? { status: 'unknown', coverage: 0, races_total: 0, races_covered: 0 }
           : { status: 'scored', coverage: raceCoverage(countyPinnable), races_total: countyPinnable.length, races_covered: countyCovered },
-        statewideRaces: statewide,
+        statewideRaces: statewideWithTier,
       });
     }
     return out;
