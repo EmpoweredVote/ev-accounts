@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage (Wave 3)
-status: planning
-last_updated: "2026-07-04T18:14:28.656Z"
-last_activity: 2026-07-04
+status: executing
+last_updated: "2026-07-05T19:44:58.883Z"
+last_activity: 2026-07-05
 progress:
   total_phases: 9
-  completed_phases: 2
-  total_plans: 18
-  completed_plans: 18
-  percent: 22
+  completed_phases: 3
+  total_plans: 40
+  completed_plans: 30
+  percent: 33
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
@@ -24,15 +24,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 162 — IN + MD + MN + MO Candidate Seeding
+**Current focus:** Phase 163 — wi-co-al-sc-la-candidate-seeding-create-elections-races-then
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 162
-Plan: Not started
-Status: Ready to plan
-Last activity: 2026-07-04
+Phase: 163 (wi-co-al-sc-la-candidate-seeding-create-elections-races-then) — EXECUTING
+Plan: 2 of 11
+Status: Ready to execute
+Last activity: 2026-07-05
 
 ## v2.22 Phase Dependencies
 
@@ -188,12 +188,13 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 | Phase 161 P03 | 210min | 3 tasks | 18 files |
 | Phase 161 P05 | 165min | 0 tasks | 9 files |
 | Phase 161 P11 | 90m | 2 tasks | 3 files |
+| Phase 163 P01 | 55min | 2 tasks | 3 files |
 
 ## Session Continuity
 
-Last session: 2026-07-04T18:14:28.632Z
-Stopped at: Phase 162 context gathered
-Resume file: .planning/phases/162-in-md-mn-mo-candidate-seeding-create-elections-races-then-ca/162-CONTEXT.md
+Last session: 2026-07-05T19:44:58.505Z
+Stopped at: Completed 163-01-PLAN.md (AL+LA correspondence audits)
+Resume file: None
 
 ## Operator Next Steps
 
@@ -228,3 +229,5 @@ Resume file: .planning/phases/162-in-md-mn-mo-candidate-seeding-create-elections
 - [Phase ?]: 161-05: No Task/Agent tool available (matches 161-03) — researched all 23 remaining WA challengers directly via curl/wayback/Wikipedia; 9 sourced (46/60 total), 14 pinned whole-record honest-skips incl. a John Roco cross-state-homonym identity-risk flag for the 161-11 gate.
 - [Phase ?]: [161-11]: AZ roster reconciliation applied via migration 1204 (candidate_status='withdrawn' for 5 ballot-ineligible candidates), excluding them from the gate's active-scoped in-scope set
 - [Phase ?]: [161-11]: 161-verify.sql + 161-coordinate-smoke.ts both green against prod -- all 37 WA/AZ/TN/MA districts satisfy USHC3-02/03/04/05, TN severe-district withholding proven end-to-end
+- [Phase 163]: 163-01: AL severe geo_id set = {0102} only (1/7); AL-1/6/7 needed special primaries procedurally but score below the severity rubric on evidence
+- [Phase 163]: 163-01: LA severe geo_id set = {2202, 2206} (2/6), sourced from an enrolled-statute (SB8-2024 vs SB121-2026) parish-by-parish diff; LA-4 flagged borderline for downstream spot-check
