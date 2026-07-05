@@ -68,6 +68,10 @@ export async function racesForStateDate(stateAbbr: string, date: string): Promis
     seats: Number(r.seats),
     candidate_count: Number(r.candidate_count),
     ocd_id: r.ocd_id,
+    // TODO(168.1-02): wire real active/stanced/motivated aggregates via SQL FILTER joins.
+    active_count: 0,
+    stanced_count: 0,
+    motivated_count: 0,
   }));
 }
 

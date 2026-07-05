@@ -12,7 +12,8 @@ import {
 } from './electionsMap.js';
 
 const race = (over: Partial<RaceRow> = {}): RaceRow => ({
-  race_id: 'r', position_name: 'X', seats: 1, candidate_count: 0, ocd_id: null, ...over,
+  race_id: 'r', position_name: 'X', seats: 1, candidate_count: 0, ocd_id: null,
+  active_count: 0, stanced_count: 0, motivated_count: 0, ...over,
 });
 
 describe('raceCoverage', () => {
