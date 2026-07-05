@@ -56,11 +56,11 @@
 
 **UI hint:** yes
 
-**Plans:** 3 plans
+**Plans:** 1/3 plans executed
 Plans:
 **Wave 1**
 
-- [ ] 168.1-01-PLAN.md — Pure tier classifier + weighted-score helpers + unit tests in electionsMap.ts (ELEC-04) [wave 1]
+- [x] 168.1-01-PLAN.md — Pure tier classifier + weighted-score helpers + unit tests in electionsMap.ts (ELEC-04) [wave 1]
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
@@ -152,7 +152,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 168. Elections Accuracy Fix | 3/3 | Complete    | 2026-07-04 |
-| 168.1. Depth-Aware 3-Tier Elections Coverage | 0/3 | Planned | - |
+| 168.1. Depth-Aware 3-Tier Elections Coverage | 1/3 | In Progress|  |
 | 169. DB-Derived Coverage Core | 0/TBD | Not started | - |
 | 170. City/Place Drill-down | 0/TBD | Not started | - |
 | 171. User-Relevant Coverage Metric | 0/TBD | Not started | - |

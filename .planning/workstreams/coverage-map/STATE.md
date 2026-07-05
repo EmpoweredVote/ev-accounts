@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.23
 milestone_name: Coverage Map 1.1
-current_plan: Not started
+current_plan: 1
 status: executing
-stopped_at: Phase 168.1 context gathered
-last_updated: "2026-07-05T00:58:48.039Z"
-last_activity: 2026-07-05 -- Phase 168.1 planning complete
+stopped_at: Completed 168.1-01-PLAN.md
+last_updated: "2026-07-05T01:15:24.692Z"
+last_activity: 2026-07-05
 progress:
   total_phases: 6
   completed_phases: 1
   total_plans: 6
-  completed_plans: 3
+  completed_plans: 4
   percent: 17
 ---
 
@@ -19,15 +19,15 @@ progress:
 
 ## Current Position
 
-Phase: 168.1
-Plan: none yet
+Phase: 168.1 (depth-aware-3-tier-elections-coverage) — EXECUTING
+Plan: 2 of 3
 Status: Ready to execute
-Last activity: 2026-07-05 -- Phase 168.1 planning complete
+Last activity: 2026-07-05
 
 ## Progress
 
 **Phases Complete:** 1 / 6
-**Current Plan:** Not started
+**Current Plan:** 1
 
 ## Accumulated Context
 
@@ -37,6 +37,16 @@ Last activity: 2026-07-05 -- Phase 168.1 planning complete
 
 ## Session Continuity
 
-**Stopped At:** Phase 168.1 context gathered
+**Stopped At:** Completed 168.1-01-PLAN.md
 **Next recommended run:** /gsd-plan-phase 168.1 (or /gsd-discuss-phase 168.1 first)
-**Resume File:** .planning/workstreams/coverage-map/phases/168.1-depth-aware-3-tier-elections-coverage/168.1-CONTEXT.md
+**Resume File:** None
+
+## Performance Metrics
+
+| Phase | Plan | Duration | Notes |
+|-------|------|----------|-------|
+| Phase 168.1 P01 | 2min | 2 tasks | 3 files |
+
+## Decisions
+
+- [Phase 168.1]: classifyRaceTier/weightedDepthScore implemented exactly per D-01/D-04, with zero-array guard mirroring raceCoverage's existing empty-set idiom
