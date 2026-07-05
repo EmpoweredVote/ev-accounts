@@ -4,14 +4,14 @@ milestone: v2.23
 milestone_name: Coverage Map 1.1
 current_plan: 1
 status: executing
-stopped_at: Completed 168.1-01-PLAN.md
-last_updated: "2026-07-05T01:15:24.692Z"
+stopped_at: Completed 168.1-02-PLAN.md
+last_updated: "2026-07-05T01:23:52.990Z"
 last_activity: 2026-07-05
 progress:
   total_phases: 6
   completed_phases: 1
   total_plans: 6
-  completed_plans: 4
+  completed_plans: 5
   percent: 17
 ---
 
@@ -20,7 +20,7 @@ progress:
 ## Current Position
 
 Phase: 168.1 (depth-aware-3-tier-elections-coverage) — EXECUTING
-Plan: 2 of 3
+Plan: 3 of 3
 Status: Ready to execute
 Last activity: 2026-07-05
 
@@ -37,7 +37,7 @@ Last activity: 2026-07-05
 
 ## Session Continuity
 
-**Stopped At:** Completed 168.1-01-PLAN.md
+**Stopped At:** Completed 168.1-02-PLAN.md
 **Next recommended run:** /gsd-plan-phase 168.1 (or /gsd-discuss-phase 168.1 first)
 **Resume File:** None
 
@@ -46,7 +46,9 @@ Last activity: 2026-07-05
 | Phase | Plan | Duration | Notes |
 |-------|------|----------|-------|
 | Phase 168.1 P01 | 2min | 2 tasks | 3 files |
+| Phase 168.1 P02 | 12min | 3 tasks | 2 files |
 
 ## Decisions
 
 - [Phase 168.1]: classifyRaceTier/weightedDepthScore implemented exactly per D-01/D-04, with zero-array guard mirroring raceCoverage's existing empty-set idiom
+- [Phase 168.1]: racesForStateDate SQL extended with FILTER-join stance/motivation aggregates mirroring coverageMapService.statsByJurisdiction; active_count keeps null-politician_id rows per D-03

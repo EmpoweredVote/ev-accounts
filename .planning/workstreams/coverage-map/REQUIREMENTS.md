@@ -26,7 +26,7 @@ Requirements for this milestone. Each maps to roadmap phases.
 - [x] **ELEC-03**: State-level and county-level elections numbers are computed from consistent denominators — clicking a state never shows data that contradicts its map score (the Michigan bug)
 - [x] **ELEC-04**: Elections coverage is measured as a 3-tier depth indicator (Tier 1 = candidate names only; Tier 2 = names + compass stances OR transparent motivations; Tier 3 = names + stances + transparent motivations), replacing the single breadth count of races with ≥1 candidate — with tier thresholds defined once and reused by backend computation and UI
 - [ ] **ELEC-05**: Per-race and per-panel readouts show a covered/total breakdown by tier (each race row shows its own tier; the panel header shows totals per tier), so admin sees depth of civic data, not just whether any candidate name exists
-- [ ] **ELEC-06**: The `StateElection`/`RaceRow` payload contract and the state choropleth fill + legend reflect the tiered metric — a state with names but no stances/motivations no longer reads as fully covered
+- [x] **ELEC-06**: The `StateElection`/`RaceRow` payload contract and the state choropleth fill + legend reflect the tiered metric — a state with names but no stances/motivations no longer reads as fully covered
 
 ### City Drill-down (CITY)
 
@@ -83,7 +83,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ELEC-03 | 168 | Complete |
 | ELEC-04 | 168.1 | Complete |
 | ELEC-05 | 168.1 | Pending |
-| ELEC-06 | 168.1 | Pending |
+| ELEC-06 | 168.1 | Complete |
 | CITY-01 | 170 | Pending |
 | CITY-02 | 170 | Pending |
 | UAPI-01 | 171 | Pending |
