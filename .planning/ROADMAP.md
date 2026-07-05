@@ -208,7 +208,20 @@ Plans:
   2. Every newly-seeded WI/CO/AL/SC/LA candidate has a headshot; incumbent-nominees reuse existing records (zero duplicate `full_name` per state); no party on candidate cards.
   3. Every WI/CO/AL/SC/LA candidate lacking federal-24 stances has sourced chairs-not-polarity stances — 0 unsourced, primary-source-verified before push, honest-skip where evidence is thin; already-stanced incumbents skipped via the diagnostic.
 
-**Plans:** TBD
+**Plans:** 11 plans
+
+Plans:
+- [ ] 163-01-PLAN.md — AL + LA old-vs-new correspondence audits (severe geo_id lists; gates AL/LA seeding)
+- [ ] 163-02-PLAN.md — WI seed (8 districts, 28 new, vanilla PROVISIONAL) + headshots
+- [ ] 163-03-PLAN.md — CO seed (8 districts, 9 new, decided; DeGette lost-primary excluded from CO-1) + headshots
+- [ ] 163-04-PLAN.md — AL seed (7 districts, 21 new, severity-routed withholding + late-primary split) + headshots
+- [ ] 163-05-PLAN.md — SC seed (7 districts, 16 new, decided; Jul-15 independent window re-check) + headshots
+- [ ] 163-06-PLAN.md — LA seed (6 districts, 27 new, jungle-primary primary_party=NULL + severity-routed withholding) + headshots
+- [ ] 163-07-PLAN.md — WI stances (28 new candidates, federal-24, 0-unsourced)
+- [ ] 163-08-PLAN.md — AL stances (21 new candidates incl. severe-district, federal-24, 0-unsourced)
+- [ ] 163-09-PLAN.md — LA stances (27 new candidates incl. LA-5 open seat + severe-district, federal-24, 0-unsourced)
+- [ ] 163-10-PLAN.md — CO + SC stances (25 new candidates, consolidated, federal-24, 0-unsourced)
+- [ ] 163-11-PLAN.md — Consolidated 36-district verify.sql + coordinate-smoke (AL-SEVERE + LA-SEVERE + CO1-DEGETTE blocks)
 
 ---
 
