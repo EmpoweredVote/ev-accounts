@@ -220,7 +220,7 @@ Plans:
 - [ ] 163-07-PLAN.md — WI stances (28 new candidates, federal-24, 0-unsourced)
 - [ ] 163-08-PLAN.md — AL stances (21 new candidates incl. severe-district, federal-24, 0-unsourced)
 - [ ] 163-09-PLAN.md — LA stances (27 new candidates incl. LA-5 open seat + severe-district, federal-24, 0-unsourced)
-- [ ] 163-10-PLAN.md — CO + SC stances (25 new candidates, consolidated, federal-24, 0-unsourced)
+- [ ] 163-10-PLAN.md — CO + SC stances (25 new candidates, consolidated, federal-24, 0-unsourced) [PARTIAL: CO half done on PROD 2026-07-05 — 9/9, 50 sourced rows, 0 unsourced; SC half (16) pending → SUMMARY + close when SC done]
 - [ ] 163-11-PLAN.md — Consolidated 36-district verify.sql + coordinate-smoke (AL-SEVERE + LA-SEVERE + CO1-DEGETTE blocks)
 
 ---
