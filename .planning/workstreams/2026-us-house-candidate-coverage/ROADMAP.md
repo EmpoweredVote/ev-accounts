@@ -239,7 +239,30 @@ Plans:
   2. Every newly-seeded candidate across these 8 states has a headshot; incumbent-nominees reuse existing records (zero duplicate `full_name` per state); no party on candidate cards.
   3. Every candidate across these 8 states lacking federal-24 stances has sourced chairs-not-polarity stances — 0 unsourced, primary-source-verified before push, honest-skip where evidence is thin; already-stanced incumbents skipped via the diagnostic.
 
-**Plans:** TBD
+**Plans:** 13 plans (3 waves)
+
+Plans:
+**Wave 1** *(seed — disjoint states/migrations; recommended order per D-06: KS, CT, OR first)*
+
+- [ ] 164-01-PLAN.md — KS seed (4 districts, 22 new, PROVISIONAL Aug-4; KS-1 seq 3 / KS-2 seq 10) + headshots
+- [ ] 164-02-PLAN.md — CT seed (5 districts, 16 new, PROVISIONAL Aug-11 convention/petition field; D-02 unconfirmed include/hold; Larson primary reuse) + headshots
+- [ ] 164-03-PLAN.md — OR seed (6 districts, 7 new, existing-race reuse D-03; OR-1 seq 14) + headshots
+- [ ] 164-04-PLAN.md — KY seed (6 districts, 15 new, decided; KY-4 Massie/KY-6 Barr open seats; KY-1 seq 200) + headshots
+- [ ] 164-05-PLAN.md — OK + IA seed (10 + 9 new, decided; OK-1/IA-2/IA-4 open seats; OK-1 seq 200) + headshots
+- [ ] 164-06-PLAN.md — AR + MS seed (6 + 8 new, decided vanilla, no open seats) + headshots
+
+**Wave 2** *(stances — each depends on its seed plan; disjoint per-state dirs)*
+
+- [ ] 164-07-PLAN.md — KS stances (22 new, federal-24, 0-unsourced)
+- [ ] 164-08-PLAN.md — CT stances (16 new, federal-24, 0-unsourced)
+- [ ] 164-09-PLAN.md — OR stances (7 new, federal-24, 0-unsourced)
+- [ ] 164-10-PLAN.md — KY stances (15 new incl. open-seat nominees, federal-24, 0-unsourced)
+- [ ] 164-11-PLAN.md — OK + IA stances (10 + 9 new, federal-24, 0-unsourced)
+- [ ] 164-12-PLAN.md — AR + MS stances (6 + 8 new, federal-24, 0-unsourced)
+
+**Wave 3** *(consolidated gate)*
+
+- [ ] 164-13-PLAN.md — Consolidated 38-district 164-verify.sql (OPEN-SEAT + OR-REUSE + PROVISIONAL + COLLISION-BAND blocks) + 164-coordinate-smoke.ts (8 positive samples)
 
 ---
 
@@ -318,7 +341,7 @@ Plans:
 | 161. WA + AZ + TN + MA Candidate Seeding | 11/11 | Complete    | 2026-07-04 |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 6/11 | In Progress|  |
-| 164. KY + OR + CT + OK + AR + IA + KS + MS Candidate Seeding | 0/? | Not started | - |
+| 164. KY + OR + CT + OK + AR + IA + KS + MS Candidate Seeding | 0/13 | Planned     | - |
 | 165. Small-Delegation States Candidate Seeding (17 states) | 0/? | Not started | - |
 | 166. Consolidated Verification Gate | 0/? | Not started | - |
 | 167. Post-Primary Reconciliation (date-gated, Aug–Sep 2026) | 0/? | Not started | - |
