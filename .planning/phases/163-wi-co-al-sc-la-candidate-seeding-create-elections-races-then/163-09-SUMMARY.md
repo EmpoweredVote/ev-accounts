@@ -21,8 +21,8 @@ execution_mode: 1 politician-stance-researcher agent per district (7 agents incl
 - LA-2 (WITHHELD/severe, vs Carter): **Collins SKIP** (one-page shell site)
 - LA-3 (vs Higgins): LeBrun 8, Day 7; **Walker SKIP**
 - LA-4 (vs Speaker Johnson): Morott 13 (R), Gromlich 6 (D), Cable 5 (D), Nichols 2 (R)
-- LA-5 (OPEN — Letlow→Senate, 13-candidate field): Echols 7 (R), Fleenor 7 (D), Foy 7 (D), Nyman 7 (D), Garcia 6 (D), Cordell 5 (R), Wyatt 5 (R), Mebruer 4 (R), Firment 3 (R), Miguez 3 (R), Edmonds 2 (R), McKay 2 (D), Magee 1 (R)
-- LA-6 (WITHHELD/severe, vs Fields): Davis 7 (R), Appeaning 1 (R), Johnson 1 (R); **Williams SKIP**
+- LA-5 (OPEN — Letlow→Senate, now 12 after Edmonds re-key): Echols 7 (R), Fleenor 7 (D), Foy 7 (D), Nyman 7 (D), Garcia 6 (D), Cordell 5 (R), Wyatt 5 (R), Mebruer 4 (R), Firment 3 (R), Miguez 3 (R), McKay 2 (D), Magee 1 (R)
+- LA-6 (WITHHELD/severe, vs Fields, now 6 incl. Edmonds): Davis 7 (R), Edmonds 2 (R, re-keyed -220605), Appeaning 1 (R), Johnson 1 (R); **Williams SKIP**
 
 ### Whole-record skips (GATE-PIN for 163-11) — all trails in `la-2026-house/_SKIPS.md`
 | external_id | name | district | reason |
@@ -39,7 +39,7 @@ execution_mode: 1 politician-stance-researcher agent per district (7 agents incl
 - Sources: campaign sites (rarely name-guessable in LA — found via DuckDuckGo-via-jina), sitting-legislator bill authorship (Miguez SB208, Firment HB419, Edmonds SB313/GATOR), bayouprogressive.com forum coverage (LA-5 Dem field), BallotReady. Ballotpedia fully dead for LA; FEC DEMO_KEY rate-limited.
 
 ## Flags for downstream
-- **⚠ SEED MIS-KEY — Rick Edmonds (-220503):** seeded under LA-5, but his own site + Ballotpedia say he's running for **LA-6** (Letlow's old seat). Combined with Larry Davis (-220602) who "switched LA-5→LA-6 in Feb 2026," there is real LA-5/LA-6 filing churn. Edmonds' stances (school-vouchers/taxes) are valid regardless of district. **Recommend operator verify Edmonds' district vs the 163-06 seed and re-key if needed (Phase-167 / 164.1 cross-state work).**
+- **✅ RESOLVED — Rick Edmonds re-keyed -220503 (LA-5) → -220605 (LA-6), mig 1230 (2026-07-06):** Verified via primary sources that Edmonds initially qualified for LA-5 on Feb-11-2026 (what the Phase-160 field table / seed captured) but SWITCHED to LA-6 to challenge Cleo Fields (D) — driven by the SB121/Act 2 redistricting that made LA-6 a White-majority Baton-Rouge-centered seat (his campaign-site body copy, Livingston Parish News finance-committee story, Louisiana Illuminator/Ballotpedia coverage of the switch; the "5th" page-title + announcement articles are stale). Same LA-5→LA-6 churn as Larry Davis (-220602). Migration moved his race_candidates row to the LA-6 (withheld "Polygon Pending") race and re-keyed external_id for band consistency; his 2 stances ride on his UUID untouched. Corrected active counts: **LA-5 = 12, LA-6 = 6.** (Note: LA-5's original "13-candidate open field" framing was pre-switch.)
 - **FIELD-DATA — Tia LeBrun (-220302):** switched registration D→No Party (~June 2026, per Bayou Progressive) — do not label Democrat; note for the 167 re-pull.
 - LA-2 + LA-6 candidates are on the WITHHELD "Polygon Pending" election per 163-06 seed (severe districts, hidden from /elections; stances complete regardless).
 - LA jungle primary Nov 2026; *Callais* redistricting case → a gubernatorial attempt to suspend the 2026 congressional primary was a live LA-5 issue (scored under redistricting). Post-election cull applies.
@@ -51,4 +51,4 @@ execution_mode: 1 politician-stance-researcher agent per district (7 agents incl
 ## For 163-11 gate
 - LA 0-unsourced + 22/27 covered with the 5 pinned skips above.
 - Confirm LA exactly-6-jungle-races (primary_party NULL) still holds; LA-2/LA-6 on withheld election.
-- **Resolve the Edmonds -220503 LA-5-vs-LA-6 district question before the gate's per-district race-count assertions.**
+- **Edmonds question resolved (mig 1230): gate per-district active counts are now LA-5 = 12, LA-6 = 6** (was 13 / 5). LA-6 severe candidates now = Appeaning/Davis/Johnson/Williams/Edmonds.
