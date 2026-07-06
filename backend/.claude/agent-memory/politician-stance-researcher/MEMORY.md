@@ -76,4 +76,6 @@ Compacted (grouped) index — one line per entry group; full detail lives in eac
 
 **IN-7 2026 US House sitting incumbent:** [Carson-D-tenured](stance_andre_carson_in07.md)-18/24-ext_id-499408-carson.house.gov+congress.gov-both-need-jina,govtrack-IDs-can-resolve-WRONG-member-verify-page-matches-target
 
+**AL-2 2026 special GOP primary (Aug 11, 2026; 163-08):** [6 candidates](stance_al2_2026_special_gop_primary.md) — Marques-R-sitting-StateRep-Trump-endorsed(6/24,richest), McKee-R-vet(6/24), Harris-R(3/24), Richardson-R-vet(3/24), Matthews-R(2/24), Horn-R(**1/24-only**,thinnest,SoS-campaign-recycled). Ballotpedia FULLY dead (direct+jina both blank/403); FEC DEMO_KEY exhausted (429); DDG-via-jina found all 6 campaign sites; algop.org qualified-candidates page = good AL special-election roster source.
+
 **CO 2026 US House new candidates (163-10):** [9-candidates-50-rows](stance_co_2026_house_163_10.md)-Rutinel(11)/Kiros(5)/Peterson(3)/Dennison(4)/Romero(8)/Laubacher(6)/Killin(7)/Clark(1)/Bennett(5)-0-unsourced-**gate-query-schema-flag**(plan's pc.answer_id/pc.source_url columns DON'T EXIST live; real schema is politician_context(politician_id,topic_id,sources[]) — corrected join used)-BallotReady-Timothy-Bennett-wrong-person-trap(AL-city-council-homonym)-Rutinel-mid-campaign-position-shift(recency-rule-applied,spokesperson-quotes-excluded)
