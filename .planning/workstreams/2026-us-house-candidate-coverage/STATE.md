@@ -2,16 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage (Wave 3)
-status: ready_to_plan
-last_updated: 2026-07-07T03:39:52.459Z
-last_activity: 2026-07-06 -- Phase 164 execution started
+status: planning
+last_updated: "2026-07-07T05:01:46.485Z"
+last_activity: 2026-07-07
 progress:
   total_phases: 9
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 53
-  completed_plans: 85
-  percent: 44
-stopped_at: Phase 164 complete (13/13) — ready to discuss Phase 164.1
+  completed_plans: 53
+  percent: 56
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
@@ -195,9 +194,9 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 
 ## Session Continuity
 
-Last session: 2026-07-06T22:15:40.810Z
-Stopped at: Phase 164 context gathered
-Resume file: .planning/phases/164-ky-or-ct-ok-ar-ia-ks-ms-candidate-seeding-create-elections-r/164-CONTEXT.md
+Last session: 2026-07-07T05:01:46.473Z
+Stopped at: Phase 164.1 context gathered
+Resume file: .planning/phases/164.1-cross-state-district-polygon-refresh-dual-map-design-tn-mo-a/164.1-CONTEXT.md
 
 ## Operator Next Steps
 
