@@ -1,0 +1,41 @@
+# HI + NH 165-06 reconciliation. LATE-PRIMARY -> PROVISIONAL (HI cull >= 2026-08-08; NH cull >= 2026-09-08). HI field = olvr.hawaii.gov In-Primary ONLY (excluded Issued: Belatti/Burd/Cuadra/Frazier/Gisa/Curtis/Lucas-Tadeo/Martin). NH-1 OPEN (Pappas -> Senate, NO-ROW). EXCLUDED NH-2 pending-independents (window to 2026-09-02 -> 167): Black/Mahrou/Sykes.
+state,cd,full_name,party_from_field,decision,external_id,is_incumbent
+HI,1,"Ed Case",Democratic,REUSE-INCUMBENT,-15001,true
+HI,2,"Jill N. Tokuda",Democratic,REUSE-INCUMBENT,-15002,true
+HI,1,"Jennifer Booker",Democratic,NEW,-150101,false
+HI,1,"Ben Fatula",Democratic,NEW,-150102,false
+HI,1,"Jarrett Keohokalole",Democratic,NEW,-150103,false
+HI,1,"Nicholas Kiswanto",Democratic,NEW,-150104,false
+HI,1,"Nathan Berning",Nonpartisan,NEW,-150105,false
+HI,1,"Jordan Conley",Green,NEW,-150106,false
+HI,1,"Adriel Lam",Republican,NEW,-150107,false
+HI,2,"Kirill Basin",Democratic,NEW,-150201,false
+HI,2,"Greg Guithues",Democratic,NEW,-150202,false
+HI,2,"Steven King",Democratic,NEW,-150203,false
+HI,2,"Brenton Awa",Republican,NEW,-150204,false
+HI,2,"Edward Codelia",Nonpartisan,NEW,-150205,false
+HI,2,"Randall Terry",Nonpartisan,NEW,-150206,false
+NH,1,"Chris Pappas",Democratic,RETIRED-NO-ROW (US Senate run),-33001,false
+NH,2,"Maggie Goodlander",Democratic,REUSE-INCUMBENT,-33002,true
+NH,1,"Carleigh Beriont",Democratic,NEW,-330133,false
+NH,1,"Sarah Chadzynski",Democratic,NEW,-330134,false
+NH,1,"Bill Conlin",Democratic,NEW,-330135,false
+NH,1,"Matthew Emerson",Democratic,NEW,-330136,false
+NH,1,"Heath Howard",Democratic,NEW,-330137,false
+NH,1,"Stefany Shaheen",Democratic,NEW,-330138,false
+NH,1,"Sarah Bella Spinosa",Democratic,NEW,-330139,false
+NH,1,"Maura Sullivan",Democratic,NEW,-330140,false
+NH,1,"Christian Urrutia",Democratic,NEW,-330141,false
+NH,1,"Lindsey Anderson",Republican,NEW,-330142,false
+NH,1,"Melissa Bailey",Republican,NEW,-330143,false
+NH,1,"Brian Cole",Republican,NEW,-330144,false
+NH,1,"Anthony DiLorenzo",Republican,NEW,-330145,false
+NH,1,"Hollie Noveletsky",Republican,NEW,-330146,false
+NH,2,"Paige Beauchemin",Democratic,NEW,-330201,false
+NH,2,"Michael Callis",Republican,NEW,-330202,false
+NH,2,"Dan Nicholson",Republican,NEW,-330203,false
+NH,2,"Victor Orlando",Republican,NEW,-330204,false
+NH,2,"Lily Tang Williams",Republican,NEW,-330205,false
+NH,2,"Scott Matthew Black",Independent,EXCLUDE-PENDING-PETITION (167; window to 2026-09-02),,false
+NH,2,"Robbie Mahrou",Independent,EXCLUDE-PENDING-PETITION (167; window to 2026-09-02),,false
+NH,2,"Sterling Thomas Sykes",Independent,EXCLUDE-PENDING-PETITION (167; window to 2026-09-02),,false
