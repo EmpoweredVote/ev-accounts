@@ -15,16 +15,14 @@
 --   d.district_type='NATIONAL_LOWER' AND substr(d.geo_id,1,2) IN ('04','53','47','25').
 --   NEVER write a cross-state or election-wide count.
 --
--- TN SEVERE-DISTRICT WITHHOLDING (D-01b, novel this phase):
---   161-01's correspondence audit (161-tn-correspondence-audit.md) scored 5 of TN's 9
---   old-numbered districts SEVERE (>25% population moved to a different new-map CD, or the
---   district's anchor city/county changed): geo_id 4704, 4705, 4706, 4708, 4709. Their races'
---   election_id points at "TN 2026 Congressional Redistricting - Polygon Pending" (a
---   deliberately non-general, >30-days-past-dated election row), so
---   electionService.ts's ELECTION_VISIBILITY_WINDOW evaluates false and they do NOT surface
---   on /elections while remaining fully seeded (office_id is NEVER null; essentials.offices
---   is never touched). The 4 non-severe TN districts (4701, 4702, 4703, 4707) surface via
---   the normal 'TN 2026 Statewide General' election exactly like every other state.
+-- TN SEVERE-DISTRICT WITHHOLDING (D-01b) — FLIPPED TO SURFACING 2026-07-07:
+--   161-01's correspondence audit scored 5 of TN's 9 districts SEVERE (4704, 4705,
+--   4706, 4708, 4709); 161-06 withheld them by pointing their races at the past-dated
+--   "TN 2026 Congressional Redistricting - Polygon Pending" special. Phase 164.1-04
+--   imported TN's 2026-vintage polygons (mtfcc='G5200V26', TNMap/HB 7003), passed the
+--   D-10 3-layer verify bar, and migration 1247 re-pointed the 5 severe races to
+--   'TN 2026 Statewide General'. CRITERION 6 now asserts ALL 9 TN districts SURFACING
+--   (positive). The Polygon Pending election row persists as a historical artifact.
 --
 -- AZ ROSTER RECONCILIATION (applied by migration 1204, same session as this gate):
 --   5 AZ candidates seeded active by migration 1188 (161-02) were discovered during 161-03's
@@ -206,28 +204,30 @@ BEGIN
   RAISE NOTICE 'PASS PARTY: race_candidates has no party/party_affiliation column (party reads from races.primary_party only)';
 
   -- ==========================================================================
-  -- CRITERION 6 (NEW, no prior precedent) — TN severe-district non-surfacing invariant.
-  --   Every severe geo_id's race election_id MUST equal tn_withheld_eid (leaked=0);
-  --   every non-severe TN geo_id's race election_id MUST equal tn_gen_eid (surfaced_ok=4).
+  -- CRITERION 6 — TN all-districts-surfacing invariant.
+  --   FLIPPED 2026-07-07 by Phase 164.1-04 (migration 1247): TN's 2026-vintage
+  --   polygons (mtfcc='G5200V26') are imported and the D-10 3-layer bar passed,
+  --   so the 5 formerly-withheld severe races (4704/4705/4706/4708/4709) were
+  --   re-pointed from 'Polygon Pending' to the TN general. ALL 9 TN districts
+  --   MUST now be wired to tn_gen_eid (per the 163-11 standing instruction).
   -- ==========================================================================
   SELECT COUNT(DISTINCT geo_id) INTO v_leaked
   FROM _house
   WHERE st = 'TN'
-    AND geo_id = ANY(ARRAY['4704', '4705', '4706', '4708', '4709'])
-    AND race_election_id <> tn_withheld_eid;
+    AND race_election_id = tn_withheld_eid;
   IF v_leaked <> 0 THEN
-    RAISE EXCEPTION 'FAIL TN-SEVERE-WITHHELD: % severe TN race(s) wired to a surfacing election (expected all 5 -> Polygon Pending)', v_leaked;
+    RAISE EXCEPTION 'FAIL TN-STILL-WITHHELD: % TN race(s) still wired to Polygon Pending (expected 0 after the 164.1-04 un-withhold flip)', v_leaked;
   END IF;
 
   SELECT COUNT(DISTINCT geo_id) INTO v_surfaced_ok
   FROM _house
   WHERE st = 'TN'
-    AND geo_id = ANY(ARRAY['4701', '4702', '4703', '4707'])
+    AND geo_id = ANY(ARRAY['4701', '4702', '4703', '4704', '4705', '4706', '4707', '4708', '4709'])
     AND race_election_id = tn_gen_eid;
-  IF v_surfaced_ok <> 4 THEN
-    RAISE EXCEPTION 'FAIL TN-NONSEVERE-SURFACING: expected all 4 non-severe TN districts wired to TN 2026 Statewide General, got %', v_surfaced_ok;
+  IF v_surfaced_ok <> 9 THEN
+    RAISE EXCEPTION 'FAIL TN-SURFACING: expected all 9 TN districts wired to TN 2026 Statewide General, got %', v_surfaced_ok;
   END IF;
-  RAISE NOTICE 'PASS TN-SEVERE: all 5 severe TN races (4704/4705/4706/4708/4709) -> Polygon Pending (withheld); all 4 non-severe TN races (4701/4702/4703/4707) -> TN 2026 Statewide General (surfacing)';
+  RAISE NOTICE 'PASS TN-SURFACING: all 9 TN races (4701-4709) -> TN 2026 Statewide General (severe set un-withheld 2026-07-07 via mig 1247, G5200V26 polygons live)';
 
   -- ==========================================================================
   -- CRITERION 7 — AZ roster reconciliation: the 5 ballot-ineligible candidates
@@ -434,5 +434,5 @@ BEGIN
   END IF;
   RAISE NOTICE 'PASS COVERAGE: every in-scope AZ/WA/TN/MA new candidate has >=1 sourced stance or is a pinned whole-record honest-skip (59 pinned)';
 
-  RAISE NOTICE 'ALL ASSERTIONS PASSED (USHC3-02/03/04/05, 37 districts: AZ 9 / WA 10 / TN 9 / MA 9, TN severe withholding verified)';
+  RAISE NOTICE 'ALL ASSERTIONS PASSED (USHC3-02/03/04/05, 37 districts: AZ 9 / WA 10 / TN 9 / MA 9, all 9 TN districts surfacing post-164.1 un-withhold)';
 END $$;
