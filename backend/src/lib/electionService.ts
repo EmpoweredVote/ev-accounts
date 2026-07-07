@@ -290,9 +290,24 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
     ${PHOTO_LATERAL}
     JOIN essentials.offices o ON o.id = r.office_id
     JOIN essentials.districts d ON d.id = o.district_id
-    JOIN essentials.geofence_boundaries gb
-      ON gb.geo_id = d.geo_id
-      AND (d.mtfcc IS NULL OR d.mtfcc = '' OR gb.mtfcc = d.mtfcc)
+    -- D-01 dual-map opt-in: prefer the 2026-vintage congressional geometry
+    -- (mtfcc = 'G5200V26') for a NATIONAL_LOWER geo_id when one exists, else
+    -- fall back to the current-vintage branch. States with no G5200V26 rows
+    -- fall straight through — zero blast radius until 2026 polygons land.
+    JOIN LATERAL (
+      SELECT geometry FROM essentials.geofence_boundaries gbv
+       WHERE gbv.geo_id = d.geo_id AND gbv.mtfcc = 'G5200V26'
+         AND d.district_type = 'NATIONAL_LOWER'
+      UNION ALL
+      SELECT geometry FROM essentials.geofence_boundaries gbo
+       WHERE gbo.geo_id = d.geo_id
+         AND (d.mtfcc IS NULL OR d.mtfcc = '' OR gbo.mtfcc = d.mtfcc)
+         AND NOT EXISTS (
+           SELECT 1 FROM essentials.geofence_boundaries x
+            WHERE x.geo_id = d.geo_id AND x.mtfcc = 'G5200V26'
+         )
+      LIMIT 1
+    ) gb ON true
     WHERE gb.geometry IS NOT NULL
       AND public.ST_Covers(
         gb.geometry,
