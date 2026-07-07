@@ -31,6 +31,8 @@ export function ReadRankQuotesPage() {
   const [loadingTopics, setLoadingTopics] = useState(false);
   const [topicsError, setTopicsError] = useState<string | null>(null);
   const [savingId, setSavingId] = useState<string | null>(null);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editForm, setEditForm] = useState({ quoteText: '', deidentifiedText: '', sourceUrl: '', sourceName: '' });
 
   useEffect(() => {
     apiFetch<{ politicians: PoliticianWithQuotes[] }>('/admin/readrank-quotes/politicians')
@@ -61,6 +63,20 @@ export function ReadRankQuotesPage() {
     } finally { setLoadingTopics(false); }
   }
 
+  // Re-fetch the expanded politician's topics and refresh the list-row counts.
+  async function refetchTopics(politicianId: string) {
+    const data = await apiFetch<{ topics: AdminTopicQuotes[] }>(
+      `/admin/readrank-quotes?politician_id=${encodeURIComponent(politicianId)}`,
+    );
+    setTopics(data.topics);
+    const all = data.topics.flatMap((t) => t.quotes);
+    setPoliticians((prev) => prev.map((p) =>
+      p.id === politicianId
+        ? { ...p, quoteCount: all.length, selectedCount: all.filter((q) => q.readrankSelected).length }
+        : p,
+    ));
+  }
+
   async function select(quoteId: string) {
     if (!expandedId) return;
     setSavingId(quoteId); setTopicsError(null);
@@ -69,20 +85,59 @@ export function ReadRankQuotesPage() {
         method: 'PUT',
         body: JSON.stringify({ quote_id: quoteId }),
       });
-      const data = await apiFetch<{ topics: AdminTopicQuotes[] }>(
-        `/admin/readrank-quotes?politician_id=${encodeURIComponent(expandedId)}`,
-      );
-      setTopics(data.topics);
-      // refresh counts in list
-      setPoliticians((prev) => prev.map((p) => {
-        if (p.id !== expandedId) return p;
-        const selected = data.topics.flatMap((t) => t.quotes).filter((q) => q.readrankSelected).length;
-        return { ...p, selectedCount: selected };
-      }));
+      await refetchTopics(expandedId);
     } catch (e) {
       setTopicsError(e instanceof Error ? e.message : 'Failed to select');
     } finally { setSavingId(null); }
   }
+
+  function startEdit(q: AdminQuote) {
+    setEditingId(q.id);
+    setTopicsError(null);
+    setEditForm({
+      quoteText: q.quoteText,
+      deidentifiedText: q.deidentifiedText ?? '',
+      sourceUrl: q.sourceUrl ?? '',
+      sourceName: q.sourceName ?? '',
+    });
+  }
+
+  async function saveEdit(quoteId: string) {
+    if (!expandedId) return;
+    setSavingId(quoteId); setTopicsError(null);
+    const nullIfBlank = (s: string) => (s.trim() === '' ? null : s);
+    try {
+      await apiFetch('/admin/readrank-quotes', {
+        method: 'PATCH',
+        body: JSON.stringify({
+          quote_id: quoteId,
+          quote_text: editForm.quoteText,
+          deidentified_text: nullIfBlank(editForm.deidentifiedText),
+          source_url: nullIfBlank(editForm.sourceUrl),
+          source_name: nullIfBlank(editForm.sourceName),
+        }),
+      });
+      setEditingId(null);
+      await refetchTopics(expandedId);
+    } catch (e) {
+      setTopicsError(e instanceof Error ? e.message : 'Failed to save quote');
+    } finally { setSavingId(null); }
+  }
+
+  async function remove(quoteId: string) {
+    if (!expandedId) return;
+    if (!confirm('Delete this quote permanently?')) return;
+    setSavingId(quoteId); setTopicsError(null);
+    try {
+      await apiFetch(`/admin/readrank-quotes/${encodeURIComponent(quoteId)}`, { method: 'DELETE' });
+      if (editingId === quoteId) setEditingId(null);
+      await refetchTopics(expandedId);
+    } catch (e) {
+      setTopicsError(e instanceof Error ? e.message : 'Failed to delete quote');
+    } finally { setSavingId(null); }
+  }
+
+  const fieldClass = 'w-full text-sm border border-gray-300 dark:border-gray-600 rounded px-2 py-1 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-ev-blue';
 
   return (
     <div className="p-6 max-w-4xl">
@@ -174,16 +229,87 @@ export function ReadRankQuotesPage() {
                             title={q.deidentifiedText ? 'Use this quote for Read & Rank' : 'No de-identified text — cannot be selected'}
                           />
                           <div className="flex-1 min-w-0">
-                            <p className="text-sm text-gray-900 dark:text-white">
-                              {q.deidentifiedText ?? (
-                                <span className="italic text-gray-400 dark:text-gray-500">(no de-identified text)</span>
-                              )}
-                            </p>
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">verbatim: {q.quoteText}</p>
-                            {q.sourceUrl && (
-                              <a className="text-xs text-ev-blue hover:underline" href={q.sourceUrl} target="_blank" rel="noreferrer">
-                                {q.sourceName ?? q.sourceUrl}
-                              </a>
+                            {editingId === q.id ? (
+                              <div className="space-y-2">
+                                <div>
+                                  <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-0.5">Verbatim quote</label>
+                                  <textarea
+                                    className={fieldClass}
+                                    rows={2}
+                                    value={editForm.quoteText}
+                                    onChange={(e) => setEditForm((f) => ({ ...f, quoteText: e.target.value }))}
+                                  />
+                                </div>
+                                <div>
+                                  <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-0.5">De-identified text</label>
+                                  <textarea
+                                    className={fieldClass}
+                                    rows={2}
+                                    value={editForm.deidentifiedText}
+                                    onChange={(e) => setEditForm((f) => ({ ...f, deidentifiedText: e.target.value }))}
+                                  />
+                                </div>
+                                <div className="flex gap-2">
+                                  <input
+                                    className={fieldClass}
+                                    placeholder="Source URL"
+                                    value={editForm.sourceUrl}
+                                    onChange={(e) => setEditForm((f) => ({ ...f, sourceUrl: e.target.value }))}
+                                  />
+                                  <input
+                                    className={fieldClass}
+                                    placeholder="Source name"
+                                    value={editForm.sourceName}
+                                    onChange={(e) => setEditForm((f) => ({ ...f, sourceName: e.target.value }))}
+                                  />
+                                </div>
+                                <div className="flex gap-2 pt-1">
+                                  <button
+                                    className="text-xs px-3 py-1 rounded bg-ev-blue text-white hover:bg-ev-blue/90 disabled:opacity-50"
+                                    disabled={savingId === q.id || editForm.quoteText.trim() === ''}
+                                    onClick={() => saveEdit(q.id)}
+                                  >
+                                    {savingId === q.id ? 'Saving…' : 'Save'}
+                                  </button>
+                                  <button
+                                    className="text-xs px-3 py-1 rounded border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-ev-blue disabled:opacity-50"
+                                    disabled={savingId === q.id}
+                                    onClick={() => setEditingId(null)}
+                                  >
+                                    Cancel
+                                  </button>
+                                </div>
+                              </div>
+                            ) : (
+                              <>
+                                <p className="text-sm text-gray-900 dark:text-white">
+                                  {q.deidentifiedText ?? (
+                                    <span className="italic text-gray-400 dark:text-gray-500">(no de-identified text)</span>
+                                  )}
+                                </p>
+                                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">verbatim: {q.quoteText}</p>
+                                <div className="flex items-center gap-3 mt-1">
+                                  {q.sourceUrl && (
+                                    <a className="text-xs text-ev-blue hover:underline" href={q.sourceUrl} target="_blank" rel="noreferrer">
+                                      {q.sourceName ?? q.sourceUrl}
+                                    </a>
+                                  )}
+                                  <button
+                                    className="text-xs text-ev-blue hover:underline disabled:opacity-50 ml-auto"
+                                    disabled={savingId === q.id}
+                                    onClick={() => startEdit(q)}
+                                  >
+                                    Edit
+                                  </button>
+                                  <button
+                                    className="text-xs text-ev-red hover:underline disabled:opacity-50"
+                                    disabled={savingId === q.id}
+                                    onClick={() => remove(q.id)}
+                                  >
+                                    Delete
+                                  </button>
+                                </div>
+                              </>
                             )}
                           </div>
                         </li>

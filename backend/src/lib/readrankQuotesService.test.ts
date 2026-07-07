@@ -8,7 +8,7 @@ const { mockQuery, mockConnect, mockClientQuery, mockRelease } = vi.hoisted(() =
 }));
 vi.mock('./db.js', () => ({ pool: { query: mockQuery, connect: mockConnect } }));
 
-import { listReadrankQuotes, selectReadrankQuote } from './readrankQuotesService.js';
+import { listReadrankQuotes, selectReadrankQuote, updateReadrankQuote, deleteReadrankQuote } from './readrankQuotesService.js';
 
 beforeEach(() => {
   mockQuery.mockReset();
@@ -69,5 +69,74 @@ describe('selectReadrankQuote', () => {
     const sql = mockClientQuery.mock.calls.map((c) => String(c[0]));
     expect(sql).toContain('ROLLBACK');
     expect(mockRelease).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('updateReadrankQuote', () => {
+  const validFields = { quoteText: 'new verbatim', deidentifiedText: 'new deid', sourceUrl: 'https://x', sourceName: 'X' };
+
+  it('throws when the quote id does not exist', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await expect(updateReadrankQuote('nope', validFields)).rejects.toThrow(/not found/i);
+    expect(mockQuery).toHaveBeenCalledTimes(1); // no UPDATE issued
+  });
+
+  it('rejects clearing de-identified text on a selected quote', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{ readrank_selected: true }] });
+    await expect(
+      updateReadrankQuote('q1', { ...validFields, deidentifiedText: null }),
+    ).rejects.toThrow(/de-identified/i);
+    expect(mockQuery).toHaveBeenCalledTimes(1); // guard fires before UPDATE
+  });
+
+  it('rejects whitespace-only de-identified text on a selected quote', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{ readrank_selected: true }] });
+    await expect(
+      updateReadrankQuote('q1', { ...validFields, deidentifiedText: '   ' }),
+    ).rejects.toThrow(/de-identified/i);
+    expect(mockQuery).toHaveBeenCalledTimes(1);
+  });
+
+  it('updates only the four content columns, never id/topic/selected fields', async () => {
+    mockQuery
+      .mockResolvedValueOnce({ rows: [{ readrank_selected: false }] }) // existence + selected lookup
+      .mockResolvedValueOnce({ rowCount: 1 });                          // UPDATE
+    await updateReadrankQuote('q1', validFields);
+    const updateCall = mockQuery.mock.calls[1];
+    const sql = String(updateCall[0]);
+    expect(sql).toMatch(/UPDATE\s+essentials\.quotes/i);
+    expect(sql).toMatch(/quote_text\s*=/i);
+    expect(sql).toMatch(/deidentified_text\s*=/i);
+    expect(sql).toMatch(/source_url\s*=/i);
+    expect(sql).toMatch(/source_name\s*=/i);
+    expect(sql).not.toMatch(/politician_id\s*=/i);
+    expect(sql).not.toMatch(/topic_key\s*=/i);
+    expect(sql).not.toMatch(/readrank_selected\s*=/i);
+    expect(updateCall[1]).toEqual(['q1', 'new verbatim', 'new deid', 'https://x', 'X']);
+  });
+
+  it('allows null de-identified text when the quote is not selected', async () => {
+    mockQuery
+      .mockResolvedValueOnce({ rows: [{ readrank_selected: false }] })
+      .mockResolvedValueOnce({ rowCount: 1 });
+    await expect(
+      updateReadrankQuote('q1', { ...validFields, deidentifiedText: null }),
+    ).resolves.toBeUndefined();
+    expect(mockQuery.mock.calls[1][1]).toEqual(['q1', 'new verbatim', null, 'https://x', 'X']);
+  });
+});
+
+describe('deleteReadrankQuote', () => {
+  it('throws when nothing was deleted', async () => {
+    mockQuery.mockResolvedValueOnce({ rowCount: 0 });
+    await expect(deleteReadrankQuote('nope')).rejects.toThrow(/not found/i);
+  });
+
+  it('deletes the row by id', async () => {
+    mockQuery.mockResolvedValueOnce({ rowCount: 1 });
+    await expect(deleteReadrankQuote('q1')).resolves.toBeUndefined();
+    const call = mockQuery.mock.calls[0];
+    expect(String(call[0])).toMatch(/DELETE\s+FROM\s+essentials\.quotes/i);
+    expect(call[1]).toEqual(['q1']);
   });
 });

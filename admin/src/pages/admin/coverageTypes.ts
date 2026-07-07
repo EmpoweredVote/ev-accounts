@@ -28,9 +28,15 @@ export interface CountyScore {
   treasury: 'none' | 'partial' | 'full';
 }
 
+export interface ElectionRace { race_id: string; position_name: string; seats: number; candidate_count: number; ocd_id: string | null; tier: 0 | 1 | 2 | 3; }
 export interface StateElection {
   fips: string; code: string; election_date: string; election_type: string;
   coverage: number; races_total: number; races_covered: number;
+  // Weighted 3-tier depth score (D-04) over statewide/legislative races, 0..100.
+  depthScore: number;
+  // Per-tier tallies over the same statewide/legislative race set.
+  tierCounts: { t0: number; t1: number; t2: number; t3: number };
+  countyCoverage: { status: 'unknown' | 'scored'; coverage: number; races_total: number; races_covered: number };
+  statewideRaces: ElectionRace[];
 }
-export interface ElectionRace { race_id: string; position_name: string; seats: number; candidate_count: number; ocd_id: string | null; }
 export interface CountyElection { fips: string; name: string; status: 'unknown' | 'scored'; coverage: number; races: ElectionRace[]; }

@@ -1,0 +1,121 @@
+import { vi, describe, it, expect, beforeEach } from 'vitest';
+import express from 'express';
+import request from 'supertest';
+
+// readrankQuotesAdmin.ts pulls in adminService.js (supabase.js + db.js) and requireAdmin.js
+// at module scope. None are exercised here, but importing the router pulls them in
+// transitively; without these mocks supabase.js's env validation process.exit(1)s in test.
+// Mirrors the admin.test.ts convention.
+vi.mock('../lib/db.js', () => ({ pool: { query: vi.fn() } }));
+vi.mock('../lib/supabase.js', () => ({ supabaseAdmin: {}, adminRpc: vi.fn() }));
+
+vi.mock('../middleware/auth.js', () => ({
+  requireAuth: (req: { userId?: string }, _res: unknown, next: () => void) => { req.userId = 'admin-1'; next(); },
+}));
+vi.mock('../middleware/requireAdmin.js', () => ({
+  requireAdmin: (_req: unknown, _res: unknown, next: () => void) => next(),
+}));
+
+const { mockUpdate, mockDelete, mockLogAdminAction } = vi.hoisted(() => ({
+  mockUpdate: vi.fn(),
+  mockDelete: vi.fn(),
+  mockLogAdminAction: vi.fn(),
+}));
+vi.mock('../lib/readrankQuotesService.js', () => ({
+  listReadrankPoliticians: vi.fn(),
+  listReadrankQuotes: vi.fn(),
+  selectReadrankQuote: vi.fn(),
+  updateReadrankQuote: mockUpdate,
+  deleteReadrankQuote: mockDelete,
+}));
+vi.mock('../lib/adminService.js', () => ({ logAdminAction: mockLogAdminAction }));
+
+import readrankRouter from './readrankQuotesAdmin.js';
+
+const app = express();
+app.use(express.json());
+app.use('/api/admin/readrank-quotes', readrankRouter);
+
+const UUID = '11111111-1111-1111-1111-111111111111';
+
+beforeEach(() => {
+  mockUpdate.mockReset();
+  mockDelete.mockReset();
+  mockLogAdminAction.mockReset();
+  mockLogAdminAction.mockResolvedValue(undefined);
+});
+
+describe('PATCH /api/admin/readrank-quotes', () => {
+  const body = { quote_id: UUID, quote_text: 'v', deidentified_text: 'd', source_url: 'https://x', source_name: 'X' };
+
+  it('422 when quote_id is not a uuid', async () => {
+    const res = await request(app).patch('/api/admin/readrank-quotes').send({ ...body, quote_id: 'nope' });
+    expect(res.status).toBe(422);
+    expect(mockUpdate).not.toHaveBeenCalled();
+  });
+
+  it('422 when quote_text is empty', async () => {
+    const res = await request(app).patch('/api/admin/readrank-quotes').send({ ...body, quote_text: '' });
+    expect(res.status).toBe(422);
+    expect(mockUpdate).not.toHaveBeenCalled();
+  });
+
+  it('200 updates and audit-logs with quote_id + changed fields', async () => {
+    mockUpdate.mockResolvedValue(undefined);
+    const res = await request(app).patch('/api/admin/readrank-quotes').send(body);
+    expect(res.status).toBe(200);
+    expect(mockUpdate).toHaveBeenCalledWith(UUID, {
+      quoteText: 'v', deidentifiedText: 'd', sourceUrl: 'https://x', sourceName: 'X',
+    });
+    expect(mockLogAdminAction).toHaveBeenCalledWith(
+      'admin-1', 'readrank_quote.update', null, expect.objectContaining({ quote_id: UUID }),
+    );
+  });
+
+  it('accepts null for the nullable fields', async () => {
+    mockUpdate.mockResolvedValue(undefined);
+    const res = await request(app)
+      .patch('/api/admin/readrank-quotes')
+      .send({ quote_id: UUID, quote_text: 'v', deidentified_text: null, source_url: null, source_name: null });
+    expect(res.status).toBe(200);
+    expect(mockUpdate).toHaveBeenCalledWith(UUID, {
+      quoteText: 'v', deidentifiedText: null, sourceUrl: null, sourceName: null,
+    });
+  });
+
+  it('404 when the service reports the quote is not found', async () => {
+    mockUpdate.mockRejectedValue(new Error('Quote not found'));
+    const res = await request(app).patch('/api/admin/readrank-quotes').send(body);
+    expect(res.status).toBe(404);
+  });
+
+  it('422 when the service rejects clearing de-identified text', async () => {
+    mockUpdate.mockRejectedValue(new Error('Cannot remove de-identified text from a selected quote'));
+    const res = await request(app).patch('/api/admin/readrank-quotes').send(body);
+    expect(res.status).toBe(422);
+  });
+});
+
+describe('DELETE /api/admin/readrank-quotes/:quoteId', () => {
+  it('422 when the id param is not a uuid', async () => {
+    const res = await request(app).delete('/api/admin/readrank-quotes/nope');
+    expect(res.status).toBe(422);
+    expect(mockDelete).not.toHaveBeenCalled();
+  });
+
+  it('200 deletes and audit-logs with the quote_id', async () => {
+    mockDelete.mockResolvedValue(undefined);
+    const res = await request(app).delete(`/api/admin/readrank-quotes/${UUID}`);
+    expect(res.status).toBe(200);
+    expect(mockDelete).toHaveBeenCalledWith(UUID);
+    expect(mockLogAdminAction).toHaveBeenCalledWith(
+      'admin-1', 'readrank_quote.delete', null, expect.objectContaining({ quote_id: UUID }),
+    );
+  });
+
+  it('404 when the service reports the quote is not found', async () => {
+    mockDelete.mockRejectedValue(new Error('Quote not found'));
+    const res = await request(app).delete(`/api/admin/readrank-quotes/${UUID}`);
+    expect(res.status).toBe(404);
+  });
+});

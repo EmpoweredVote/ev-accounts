@@ -34,7 +34,11 @@ function scoreColor(score: number | undefined): string {
   const ch = (i: number) => Math.round(RAMP_FROM[i] + (RAMP_TO[i] - RAMP_FROM[i]) * t);
   return `rgb(${ch(0)}, ${ch(1)}, ${ch(2)})`;
 }
-function electionStateColor(s: StateElection | undefined): string { return s ? scoreColor(s.coverage) : NOT_STARTED; }
+function electionStateColor(s: StateElection | undefined): string {
+  if (!s) return NOT_STARTED;
+  if (s.races_total === 0) return NO_RACE_DATA;
+  return scoreColor(s.depthScore <= 0 ? 0.01 : s.depthScore);
+}
 function electionCountyColor(c: CountyElection | undefined): string {
   if (!c) return NOT_STARTED;
   if (c.status === 'unknown') return NO_RACE_DATA;
@@ -146,7 +150,20 @@ export function CoverageMap(props: Props) {
       elecReadout = (
         <>
           <span className="font-medium">{hover.name}</span>
-          {es ? <span className="ml-2 tabular-nums text-gray-500 dark:text-gray-400">{es.coverage}%</span> : <span className="ml-2 text-gray-400">no upcoming election</span>}
+          {es ? (
+            <>
+              <span className="ml-2 tabular-nums text-gray-500 dark:text-gray-400">{es.depthScore}</span>
+              <span className="ml-2 text-gray-400">
+                (T3 {es.tierCounts.t3} · T2 {es.tierCounts.t2} · T1 {es.tierCounts.t1})
+              </span>
+              <span className="ml-2 text-gray-400">
+                · county:{' '}
+                {es.countyCoverage.status === 'unknown' ? 'N/A — no county-level races' : <span className="tabular-nums">{es.countyCoverage.coverage}%</span>}
+              </span>
+            </>
+          ) : (
+            <span className="ml-2 text-gray-400">no upcoming election</span>
+          )}
         </>
       );
     } else {
