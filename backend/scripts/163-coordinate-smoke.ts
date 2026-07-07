@@ -14,11 +14,11 @@
  *   SC geoId '4501' (SC-1, open, 4 candidates)             surfaces via 'SC 2026 Statewide General'
  *   LA geoId '2205' (LA-5, open jungle field, 12 cands)    surfaces via 'LA 2026 Statewide General'
  *
- * NEW negative samples (mirror 162's MO-severe test): a coordinate inside a SEVERE AL district
- * (AL-2, geo '0102') and a SEVERE LA district (LA-6, geo '2206', Cleo Fields' dissolved
- * majority-Black seat) must each surface ZERO House races when scoped to that state's SURFACING
- * election -- because their real election_id is the withheld 'XX 2026 Congressional Redistricting
- * - Polygon Pending' row, which electionService.ts's ELECTION_VISIBILITY_WINDOW never returns.
+ * FLIPPED 2026-07-07 (Phase 164.1-05, migrations 1248/1249): the severe AL-2 (0102) and
+ * LA-2/LA-6 (2202/2206) districts were un-withheld after their 2026-vintage polygons
+ * (mtfcc='G5200V26') landed and the D-10 3-layer bar passed. They are now POSITIVE
+ * samples; the former severe-negative block is gone. The geofence join mirrors the
+ * deployed post-164.1 vintage-preference LATERAL (prefers G5200V26 when present).
  *
  * SELECT-only. Mirrors src/lib/electionService.ts getElectionsByCoordinate Part A (ST_Covers).
  * All PostGIS calls use the public. schema prefix.
@@ -48,15 +48,13 @@ const SAMPLES: Sample[] = [
   { state: 'AL', geoId: '0101', minActive: 2 }, // AL-1, open, contested
   { state: 'SC', geoId: '4501', minActive: 2 }, // SC-1, open, contested
   { state: 'LA', geoId: '2205', minActive: 2 }, // LA-5, open jungle field
+  // Former severe negatives, un-withheld 2026-07-07 (164.1-05 / migs 1248+1249) — now positive:
+  { state: 'AL', geoId: '0102', minActive: 2 }, // AL-2, contested (7 active at flip)
+  { state: 'LA', geoId: '2202', minActive: 2 }, // LA-2, contested (2 active at flip)
+  { state: 'LA', geoId: '2206', minActive: 2 }, // LA-6, Edmonds' race, contested (6 active at flip)
 ];
 
-// Severe negative samples: one severe geo_id per withholding state (AL-2, LA-6).
-const SEVERE_NEGATIVES: { state: 'AL' | 'LA'; geoId: string }[] = [
-  { state: 'AL', geoId: '0102' }, // AL-2, severity-routed to the withheld election
-  { state: 'LA', geoId: '2206' }, // LA-6, Cleo Fields' dissolved seat, severity-routed to the withheld election
-];
-
-const MIN_DISTRICTS = 5;
+const MIN_SAMPLES = 8;
 
 async function main() {
   const eids: Record<string, string> = {};
@@ -77,13 +75,16 @@ async function main() {
     const cfg = STATE_CONFIG[s.state];
     const eid = eids[s.state];
 
+    // Post-164.1: prefer the 2026-vintage (G5200V26) geometry when one exists —
+    // mirrors the deployed vintage-preference resolution (AL/LA are dual-map states).
     const pt = await pool.query(
       `SELECT public.ST_X(public.ST_PointOnSurface(gb.geometry)) AS lng,
               public.ST_Y(public.ST_PointOnSurface(gb.geometry)) AS lat
        FROM essentials.geofence_boundaries gb
        JOIN essentials.districts d
-         ON d.geo_id = gb.geo_id AND (d.mtfcc IS NULL OR d.mtfcc = '' OR gb.mtfcc = d.mtfcc)
+         ON d.geo_id = gb.geo_id AND (d.mtfcc IS NULL OR d.mtfcc = '' OR gb.mtfcc = d.mtfcc OR gb.mtfcc = 'G5200V26')
        WHERE gb.geo_id = $1 AND d.district_type = 'NATIONAL_LOWER' AND gb.geometry IS NOT NULL
+       ORDER BY CASE WHEN gb.mtfcc = 'G5200V26' THEN 0 ELSE 1 END
        LIMIT 1`,
       [s.geoId]
     );
@@ -93,6 +94,8 @@ async function main() {
     }
     const { lng, lat } = pt.rows[0];
 
+    // Mirror getElectionsByCoordinate Part A post-164.1 -- the vintage-preference
+    // LATERAL (prefers G5200V26 for a geo_id when present, else the old branch).
     const surf = await pool.query(
       `SELECT r.id AS race_id,
               COUNT(*) FILTER (WHERE rc.candidate_status = 'active') AS active_cands,
@@ -101,8 +104,20 @@ async function main() {
        FROM essentials.races r
        JOIN essentials.offices o ON o.id = r.office_id
        JOIN essentials.districts d ON d.id = o.district_id
-       JOIN essentials.geofence_boundaries gb
-         ON gb.geo_id = d.geo_id AND (d.mtfcc IS NULL OR d.mtfcc = '' OR gb.mtfcc = d.mtfcc)
+       JOIN LATERAL (
+         SELECT geometry FROM essentials.geofence_boundaries gbv
+          WHERE gbv.geo_id = d.geo_id AND gbv.mtfcc = 'G5200V26'
+            AND d.district_type = 'NATIONAL_LOWER'
+         UNION ALL
+         SELECT geometry FROM essentials.geofence_boundaries gbo
+          WHERE gbo.geo_id = d.geo_id
+            AND (d.mtfcc IS NULL OR d.mtfcc = '' OR gbo.mtfcc = d.mtfcc)
+            AND NOT EXISTS (
+              SELECT 1 FROM essentials.geofence_boundaries x
+               WHERE x.geo_id = d.geo_id AND x.mtfcc = 'G5200V26'
+            )
+         LIMIT 1
+       ) gb ON true
        LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
        WHERE r.election_id = $1
          AND d.district_type = 'NATIONAL_LOWER'
@@ -147,61 +162,19 @@ async function main() {
     }
   }
 
-  // ==========================================================================
-  // NEW negative samples: a coordinate inside a SEVERE AL district (0102) and a SEVERE LA
-  // district (2206) must each surface ZERO House races when scoped to that state's SURFACING
-  // election. Proves the D-01b election_id-substitution withholding works end-to-end via the
-  // coordinate path for BOTH AL and LA.
-  // ==========================================================================
-  for (const neg of SEVERE_NEGATIVES) {
-    const cfg = STATE_CONFIG[neg.state];
-    const eid = eids[neg.state];
-
-    const negPt = await pool.query(
-      `SELECT public.ST_X(public.ST_PointOnSurface(gb.geometry)) AS lng,
-              public.ST_Y(public.ST_PointOnSurface(gb.geometry)) AS lat
-       FROM essentials.geofence_boundaries gb
-       JOIN essentials.districts d
-         ON d.geo_id = gb.geo_id AND (d.mtfcc IS NULL OR d.mtfcc = '' OR gb.mtfcc = d.mtfcc)
-       WHERE gb.geo_id = $1 AND d.district_type = 'NATIONAL_LOWER' AND gb.geometry IS NOT NULL
-       LIMIT 1`,
-      [neg.geoId]
-    );
-    if (!negPt.rows.length) {
-      failures.push(`${neg.state} ${neg.geoId} (severe negative sample): no NATIONAL_LOWER geofence boundary`);
-      continue;
-    }
-    const { lng, lat } = negPt.rows[0];
-    const negSurf = await pool.query(
-      `SELECT r.id AS race_id
-       FROM essentials.races r
-       JOIN essentials.offices o ON o.id = r.office_id
-       JOIN essentials.districts d ON d.id = o.district_id
-       JOIN essentials.geofence_boundaries gb
-         ON gb.geo_id = d.geo_id AND (d.mtfcc IS NULL OR d.mtfcc = '' OR gb.mtfcc = d.mtfcc)
-       WHERE r.election_id = $1
-         AND d.district_type = 'NATIONAL_LOWER'
-         AND substr(d.geo_id, 1, 2) = $4
-         AND gb.geometry IS NOT NULL
-         AND public.ST_Covers(gb.geometry, public.ST_SetSRID(public.ST_MakePoint($2::float8, $3::float8), 4326))`,
-      [eid, lng, lat, cfg.geoPrefix]
-    );
-    if (negSurf.rows.length > 0) {
-      failures.push(`${neg.state} ${neg.geoId} (severe negative sample): expected ZERO House races on the surfacing election, got ${negSurf.rows.length} (withholding leaked)`);
-    } else {
-      console.log(`PASS ${neg.state} ${neg.geoId} (severe negative sample): coordinate (${(+lat).toFixed(4)},${(+lng).toFixed(4)}) surfaced ZERO House races on ${cfg.election} -- D-01b withholding confirmed end-to-end`);
-    }
-  }
+  // (The former AL/LA severe-negative block was removed 2026-07-07: AL-2 and
+  // LA-2/LA-6 were un-withheld by Phase 164.1-05 / migrations 1248+1249 and are
+  // now positive SAMPLES above.)
 
   if (failures.length) {
     console.error('FAIL coordinate smoke:\n  ' + failures.join('\n  '));
     process.exit(1);
   }
-  if (surfaced < MIN_DISTRICTS) {
-    console.error(`FAIL: only ${surfaced} of ${MIN_DISTRICTS} states surfaced cleanly (need all ${MIN_DISTRICTS})`);
+  if (surfaced < MIN_SAMPLES) {
+    console.error(`FAIL: only ${surfaced} of ${MIN_SAMPLES} sample districts surfaced cleanly (need all ${MIN_SAMPLES})`);
     process.exit(1);
   }
-  console.log(`\nCOORDINATE SMOKE GREEN: ${surfaced}/5 states surface their US House race with full challenger-inclusive field (WI/CO/AL/SC/LA), AND the severe AL (0102) + severe LA (2206) negative samples correctly surface zero races.`);
+  console.log(`\nCOORDINATE SMOKE GREEN: ${surfaced}/${MIN_SAMPLES} sample districts surface their US House race with full challenger-inclusive field (WI/CO/SC + all-surfacing AL incl. 0102 and LA incl. 2202/2206 on 2026 boundaries).`);
   await pool.end();
 }
 

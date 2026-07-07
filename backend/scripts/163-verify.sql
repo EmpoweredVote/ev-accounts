@@ -4,12 +4,12 @@
 -- WI + CO + AL + SC + LA 2026 US House field (36 districts: WI 8, CO 8, AL 7, SC 7, LA 6).
 -- Cloned structurally from the validated 162-verify.sql (per-state scoping + honest-skip
 -- pin discipline), with THREE novel blocks:
---   * AL-SEVERE  — clone of 162's MO-SEVERE non-surfacing assertion, for AL's 1 severe
---                  district (geo 0102 -> withheld 'AL 2026 Congressional Redistricting -
---                  Polygon Pending'; the other 6 -> 'AL 2026 Statewide General').
---   * LA-SEVERE  — same structure for LA's 2 severe districts (geo 2202/2206 -> withheld
---                  'LA 2026 Congressional Redistricting - Polygon Pending'; the other 4 ->
---                  'LA 2026 Statewide General'), PLUS the LA jungle-model invariant:
+--   * AL-SURFACING — FLIPPED 2026-07-07 (Phase 164.1-05, mig 1248): AL's G5200V26
+--                  polygons landed + D-10 bar passed, so severe AL-2 (0102) was
+--                  un-withheld. Asserts ALL 7 AL districts -> 'AL 2026 Statewide General'.
+--   * LA-SURFACING — FLIPPED 2026-07-07 (Phase 164.1-05, mig 1249): severe LA-2/LA-6
+--                  (2202/2206) un-withheld. Asserts ALL 6 LA districts -> 'LA 2026
+--                  Statewide General', PLUS the LA jungle-model invariant:
 --                  exactly 6 LA races, every LA race primary_party IS NULL, no Dec-2026 runoff.
 --   * CO1-DEGETTE — novel (analogous to 162's IN9-FLAG): CO-1 (geo 0801) has exactly 2 active
 --                  candidates and DeGette (pid 610bb358-...) is absent (she lost the primary).
@@ -218,51 +218,53 @@ BEGIN
   RAISE NOTICE 'PASS PARTY: race_candidates has no party/party_affiliation column';
 
   -- ==========================================================================
-  -- CRITERION 6 (NEW, AL-SEVERE) — AL severe-district non-surfacing invariant.
-  --   AL-2 (geo 0102) race election_id MUST equal al_withheld_eid (leaked=0);
-  --   the 6 non-severe AL geo_ids' race election_id MUST equal al_gen_eid (surfaced_ok=6).
+  -- CRITERION 6 (AL-SURFACING) — all-AL-districts-surfacing invariant.
+  --   FLIPPED 2026-07-07 by Phase 164.1-05 (migration 1248): AL's 2026-vintage
+  --   polygons (G5200V26, SCOTUS-reinstated 2023 map, BVAP-verified) landed and
+  --   the D-10 bar passed, so severe AL-2 (0102) was re-pointed to the general.
+  --   ALL 7 AL districts MUST be wired to al_gen_eid; none to al_withheld_eid.
   -- ==========================================================================
   SELECT COUNT(DISTINCT geo_id) INTO v_al_leaked
   FROM _house
   WHERE st = 'AL'
-    AND geo_id = '0102'
-    AND race_election_id <> al_withheld_eid;
+    AND race_election_id = al_withheld_eid;
   IF v_al_leaked <> 0 THEN
-    RAISE EXCEPTION 'FAIL AL-SEVERE-WITHHELD: severe AL-2 (0102) race wired to a surfacing election (expected -> Polygon Pending)';
+    RAISE EXCEPTION 'FAIL AL-STILL-WITHHELD: % AL race(s) still wired to Polygon Pending (expected 0 after the 164.1-05 un-withhold flip)', v_al_leaked;
   END IF;
 
   SELECT COUNT(DISTINCT geo_id) INTO v_al_surfaced_ok
   FROM _house
   WHERE st = 'AL'
-    AND geo_id = ANY(ARRAY['0101', '0103', '0104', '0105', '0106', '0107'])
+    AND geo_id = ANY(ARRAY['0101', '0102', '0103', '0104', '0105', '0106', '0107'])
     AND race_election_id = al_gen_eid;
-  IF v_al_surfaced_ok <> 6 THEN
-    RAISE EXCEPTION 'FAIL AL-NONSEVERE-SURFACING: expected all 6 non-severe AL districts wired to AL 2026 Statewide General, got %', v_al_surfaced_ok;
+  IF v_al_surfaced_ok <> 7 THEN
+    RAISE EXCEPTION 'FAIL AL-SURFACING: expected all 7 AL districts wired to AL 2026 Statewide General, got %', v_al_surfaced_ok;
   END IF;
-  RAISE NOTICE 'PASS AL-SEVERE: AL-2 (0102) -> Polygon Pending (withheld); all 6 non-severe (0101/0103/0104/0105/0106/0107) -> AL 2026 Statewide General (surfacing)';
+  RAISE NOTICE 'PASS AL-SURFACING: all 7 AL races (0101-0107) -> AL 2026 Statewide General (AL-2 un-withheld 2026-07-07 via mig 1248, G5200V26 polygons live)';
 
   -- ==========================================================================
-  -- CRITERION 7 (NEW, LA-SEVERE) — LA severe-district non-surfacing + jungle-model invariant.
-  --   LA-2 (2202) + LA-6 (2206) race election_id MUST equal la_withheld_eid (leaked=0);
-  --   the 4 non-severe LA geo_ids' race election_id MUST equal la_gen_eid (surfaced_ok=4).
+  -- CRITERION 7 (LA-SURFACING) — all-LA-districts-surfacing + jungle-model invariant.
+  --   FLIPPED 2026-07-07 by Phase 164.1-05 (migration 1249): LA's 2026-vintage
+  --   polygons (G5200V26, SB121/Act 2) landed and the D-10 bar passed, so severe
+  --   LA-2 (2202) + LA-6 (2206) were re-pointed to the general. ALL 6 LA
+  --   districts MUST be wired to la_gen_eid; none to la_withheld_eid.
   --   PLUS: every LA race primary_party IS NULL (jungle), and no Dec-2026 LA runoff election exists.
   -- ==========================================================================
   SELECT COUNT(DISTINCT geo_id) INTO v_la_leaked
   FROM _house
   WHERE st = 'LA'
-    AND geo_id = ANY(ARRAY['2202', '2206'])
-    AND race_election_id <> la_withheld_eid;
+    AND race_election_id = la_withheld_eid;
   IF v_la_leaked <> 0 THEN
-    RAISE EXCEPTION 'FAIL LA-SEVERE-WITHHELD: % severe LA race(s) wired to a surfacing election (expected both 2202/2206 -> Polygon Pending)', v_la_leaked;
+    RAISE EXCEPTION 'FAIL LA-STILL-WITHHELD: % LA race(s) still wired to Polygon Pending (expected 0 after the 164.1-05 un-withhold flip)', v_la_leaked;
   END IF;
 
   SELECT COUNT(DISTINCT geo_id) INTO v_la_surfaced_ok
   FROM _house
   WHERE st = 'LA'
-    AND geo_id = ANY(ARRAY['2201', '2203', '2204', '2205'])
+    AND geo_id = ANY(ARRAY['2201', '2202', '2203', '2204', '2205', '2206'])
     AND race_election_id = la_gen_eid;
-  IF v_la_surfaced_ok <> 4 THEN
-    RAISE EXCEPTION 'FAIL LA-NONSEVERE-SURFACING: expected all 4 non-severe LA districts wired to LA 2026 Statewide General, got %', v_la_surfaced_ok;
+  IF v_la_surfaced_ok <> 6 THEN
+    RAISE EXCEPTION 'FAIL LA-SURFACING: expected all 6 LA districts wired to LA 2026 Statewide General, got %', v_la_surfaced_ok;
   END IF;
 
   -- jungle-model: every LA race primary_party IS NULL
@@ -279,7 +281,7 @@ BEGIN
   IF v_la_runoff <> 0 THEN
     RAISE EXCEPTION 'FAIL LA-RUNOFF: % December-2026 LA runoff election row(s) exist (expected 0 -- contingent runoff not seeded)', v_la_runoff;
   END IF;
-  RAISE NOTICE 'PASS LA-SEVERE: LA-2/LA-6 (2202/2206) -> Polygon Pending (withheld); 4 non-severe (2201/2203/2204/2205) -> LA 2026 Statewide General; all 6 LA races primary_party NULL (jungle); no Dec-2026 runoff';
+  RAISE NOTICE 'PASS LA-SURFACING: all 6 LA races (2201-2206) -> LA 2026 Statewide General (LA-2/LA-6 un-withheld 2026-07-07 via mig 1249); all 6 primary_party NULL (jungle); no Dec-2026 runoff';
 
   -- ==========================================================================
   -- CRITERION 8 (NEW, CO1-DEGETTE) — CO-1 (geo 0801) has exactly 2 active candidates and
@@ -420,5 +422,5 @@ BEGIN
   END IF;
   RAISE NOTICE 'PASS COVERAGE: every in-scope WI/CO/AL/SC/LA new candidate has >=1 sourced stance or is a pinned whole-record honest-skip (10 pinned)';
 
-  RAISE NOTICE 'ALL ASSERTIONS PASSED (USHC3-02/03/04/05, 36 districts: WI 8 / CO 8 / AL 7 / SC 7 / LA 6; AL+LA severe withholding + LA jungle-model + CO-1 DeGette exclusion verified)';
+  RAISE NOTICE 'ALL ASSERTIONS PASSED (USHC3-02/03/04/05, 36 districts: WI 8 / CO 8 / AL 7 / SC 7 / LA 6; all AL+LA districts surfacing post-164.1 un-withhold + LA jungle-model + CO-1 DeGette exclusion verified)';
 END $$;
