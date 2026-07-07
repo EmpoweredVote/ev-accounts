@@ -233,19 +233,21 @@ Federal-24 topic set confirmed identical (`_TOPIC_SCALE_FULL.txt` exists per-sta
 
 **If this table is empty:** N/A — see entries above; all are LOW-MEDIUM risk and none block planning, but A3 and A5 should be re-verified with a fresh live query/web check at plan-authoring time before SQL generation.
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **Do Ronald Russell (ME-1) and Matthew Dunlap (ME-2) already have dormant politician records from the primary stage?**
+*All 3 questions are operationally resolved via live-verification tasks embedded in the plans (plan-checker confirmed 2026-07-07): OQ1 → 165-01 Task 1 live pid lookup; OQ2 → 165-03 Task 1 live date check; OQ3 → handled as Claude's Discretion in 165-03 (`primary_party=NULL`, Phase-163 jungle precedent).*
+
+1. **(RESOLVED in 165-01 Task 1)** **Do Ronald Russell (ME-1) and Matthew Dunlap (ME-2) already have dormant politician records from the primary stage?**
    - What we know: Both appeared as named candidates in ME's `'2026 Maine State Primary'` races (per `160-race-preexistence-audit.csv`), but their primary-stage rows show `candidate_pid` blank/NULL in that audit snapshot — unlike UT's primary candidates, who mostly DO have real pids.
    - What's unclear: Whether a pid was created for either of them at some later point between the audit snapshot (pre-2026-06-13) and now.
    - Recommendation: Run a live `SELECT * FROM essentials.politicians WHERE full_name ILIKE '%russell%' OR full_name ILIKE '%dunlap%'` scoped sensibly before generating the ME migration — reuse any hit, create fresh only if none found.
 
-2. **AK's exact 2026 congressional primary date**
+2. **(RESOLVED in 165-03 Task 1)** **AK's exact 2026 congressional primary date**
    - What we know: AK's primary is referenced generically as "26prim" in the source URL; the field table doesn't carry an explicit date the way CT/KS do.
    - What's unclear: The exact calendar date, needed for the PROVISIONAL description's cull-date reference.
    - Recommendation: Check `elections.alaska.gov` directly at plan/seed time (AK primaries have historically landed in mid-August).
 
-3. **Should the AK race truly be `primary_party=NULL`, or does the milestone want each candidate's declared party preserved as `races.primary_party` for research/audit purposes even if not surfaced?**
+3. **(RESOLVED — Claude's Discretion in 165-03: `primary_party=NULL`)** **Should the AK race truly be `primary_party=NULL`, or does the milestone want each candidate's declared party preserved as `races.primary_party` for research/audit purposes even if not surfaced?**
    - What we know: The schema supports `primary_party=NULL` cleanly (Phase 163 precedent); `race_candidates` never carries a party column regardless.
    - What's unclear: Whether `discuss-phase` (if run before planning) will confirm this framing or propose an alternative representation.
    - Recommendation: Flag as Claude's Discretion in the plan unless CONTEXT.md locks it; the choice has zero user-facing surfacing impact either way since candidate cards never show party.
