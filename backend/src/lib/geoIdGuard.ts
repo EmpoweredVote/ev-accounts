@@ -24,7 +24,9 @@ export const MTFCC_DISTRICT_TYPE_GUARD = `(
     OR (gp.mtfcc = 'X0002' AND d.district_type = 'SCHOOL')
     OR (gp.mtfcc = 'X0003' AND d.district_type = 'STATE_BOARD')
     OR (gp.mtfcc LIKE 'X%' AND gp.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL','COUNTY'))
-    OR (gp.mtfcc NOT IN ('G5210','G5220','G5200','G4020','G4040','G4110','G4120','G5400','G5410','G5420') AND gp.mtfcc NOT LIKE 'X%')
+    -- G5200V26 (2026-vintage congressional boundaries) is intentionally excluded from this
+    -- catch-all: only the elections opt-in join (electionService.ts) may resolve against it.
+    OR (gp.mtfcc NOT IN ('G5210','G5220','G5200','G4020','G4040','G4110','G4120','G5400','G5410','G5420','G5200V26') AND gp.mtfcc NOT LIKE 'X%')
   )`;
 
 /** A geo_id paired with the MTFCC of the layer it was sourced from. */
