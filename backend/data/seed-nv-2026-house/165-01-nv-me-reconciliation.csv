@@ -1,0 +1,11 @@
+state,key,race_id,full_name,party_from_field,decision,assign_external_id,is_incumbent,source
+NV,NV1,a5295941-38b1-4c7f-8edf-39097ad3fb0a,"Bobby Khan",No Political Party,NEW,-320174,false,"NV SoS 2026 general candidate list (decided; nvsos.gov/home/showpublisheddocument/20105)"
+NV,NV1,a5295941-38b1-4c7f-8edf-39097ad3fb0a,"Steven St John",No Political Party,NEW,-320175,false,"NV SoS 2026 general candidate list (decided; nvsos.gov/home/showpublisheddocument/20105)"
+NV,NV3,79e7fb35-a73a-478c-847d-553e9ad11e7c,"Jon Kamerath",Independent American,NEW,-320301,false,"NV SoS 2026 general candidate list (decided; nvsos.gov/home/showpublisheddocument/20105)"
+NV,NV4,81eb1a27-b710-42c3-a27c-a2c0153c2820,"Russell Best",Independent American,NEW,-320479,false,"NV SoS 2026 general candidate list (decided; nvsos.gov/home/showpublisheddocument/20105)"
+NV,NV4,81eb1a27-b710-42c3-a27c-a2c0153c2820,"William Johnson",No Political Party,NEW,-320480,false,"NV SoS 2026 general candidate list (decided; nvsos.gov/home/showpublisheddocument/20105)"
+ME,ME1,d92aa73a-17db-4ba1-bfaf-46640f66f8f5,"Ronald Russell",Republican,NEW,-230103,false,"ME 2026 general field (decided; en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Maine; RCV general)"
+ME,ME2,aa63d55d-80b8-42b9-9aa5-0713387f65fb,"Matthew Dunlap",Democratic,NEW,-230203,false,"ME 2026 general field (decided; en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Maine; RCV general)"
+NV,NV2,0c470cc0-5250-43f1-b7f7-57778cadacc6,"Lynn Chapman",Independent American,FIX-NULL-PID (new politician + UPDATE rc 08dfb911),-320251,false,"NV SoS 2026 general candidate list (decided; nvsos.gov/home/showpublisheddocument/20105)"
+ME,ME1,d92aa73a-17db-4ba1-bfaf-46640f66f8f5,"Chellie Pingree",,STATUS-NORMALIZE filed->active,-230201,true,"ME 2026 general field (decided; en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Maine; RCV general)"
+ME,ME2,aa63d55d-80b8-42b9-9aa5-0713387f65fb,"Paul LePage",,STATUS-NORMALIZE filed->active,-410014,false,"ME 2026 general field (decided; en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Maine; RCV general)"
