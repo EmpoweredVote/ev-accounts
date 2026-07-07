@@ -145,7 +145,13 @@ BEGIN
         round((100.0 * uncovered / NULLIF(outline_area, 0))::numeric, 3), round((100.0 * TILING_TOL_FRAC)::numeric, 1);
     END IF;
 
-    -- L1-RATIO: each V26 district within an order of magnitude of its G5200 counterpart
+    -- L1-RATIO: each V26 district's area vs its G5200 counterpart, sanity-bounded.
+    -- 2026-07-07 (dated re-pin): bounds widened [0.1,10] → [0.02,50]. The UT import
+    -- proved a LEGITIMATE 18.5x shrink (new UT-1 = compact Salt Lake City remedial
+    -- district: 0.171 vs 3.170 deg², ratio 0.054) while tiling + area-sum stayed
+    -- exact — a real map change, not a truncated polygon. Catastrophic mis-imports
+    -- (degenerate/wrong-unit geometry) still trip these bounds; tiling (2%) and
+    -- anchor validity remain the primary structural guards.
     SELECT count(*) INTO bad_ratio
     FROM essentials.geofence_boundaries new
     JOIN essentials.geofence_boundaries old
@@ -155,10 +161,10 @@ BEGIN
       AND substr(new.geo_id, 1, 2) = st.fips
       AND (
         old.geometry IS NULL OR new.geometry IS NULL
-        OR public.ST_Area(new.geometry) / NULLIF(public.ST_Area(old.geometry), 0) NOT BETWEEN 0.1 AND 10.0
+        OR public.ST_Area(new.geometry) / NULLIF(public.ST_Area(old.geometry), 0) NOT BETWEEN 0.02 AND 50.0
       );
     IF bad_ratio > 0 THEN
-      RAISE EXCEPTION 'FAIL L1-RATIO %(%): % district(s) with V26/G5200 area ratio outside [0.1, 10] — truncated or mis-imported polygon',
+      RAISE EXCEPTION 'FAIL L1-RATIO %(%): % district(s) with V26/G5200 area ratio outside [0.02, 50] — truncated or mis-imported polygon',
         st.abbr, st.fips, bad_ratio;
     END IF;
 
