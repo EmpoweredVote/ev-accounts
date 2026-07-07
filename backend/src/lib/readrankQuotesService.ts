@@ -79,6 +79,39 @@ export async function listReadrankQuotes(politicianId: string): Promise<AdminTop
   return order.map((k) => byTopic.get(k)!);
 }
 
+export interface ReadrankQuoteUpdate {
+  quoteText: string;
+  deidentifiedText: string | null;
+  sourceUrl: string | null;
+  sourceName: string | null;
+}
+
+export async function updateReadrankQuote(quoteId: string, fields: ReadrankQuoteUpdate): Promise<void> {
+  const { rows } = await pool.query<{ readrank_selected: boolean }>(
+    `SELECT readrank_selected FROM essentials.quotes WHERE id = $1`,
+    [quoteId],
+  );
+  if (rows.length === 0) throw new Error('Quote not found');
+
+  const deidentifiedText = fields.deidentifiedText;
+  // Mirror the selectReadrankQuote guard: a selected quote must keep de-identified text.
+  if (rows[0].readrank_selected && !deidentifiedText?.trim()) {
+    throw new Error('Cannot remove de-identified text from a selected quote');
+  }
+
+  await pool.query(
+    `UPDATE essentials.quotes
+        SET quote_text = $2, deidentified_text = $3, source_url = $4, source_name = $5
+      WHERE id = $1`,
+    [quoteId, fields.quoteText, deidentifiedText, fields.sourceUrl, fields.sourceName],
+  );
+}
+
+export async function deleteReadrankQuote(quoteId: string): Promise<void> {
+  const { rowCount } = await pool.query(`DELETE FROM essentials.quotes WHERE id = $1`, [quoteId]);
+  if (!rowCount) throw new Error('Quote not found');
+}
+
 export async function selectReadrankQuote(quoteId: string): Promise<void> {
   const { rows } = await pool.query<{ politician_id: string; topic_key: string; deidentified_text: string | null }>(
     `SELECT politician_id, topic_key, deidentified_text FROM essentials.quotes WHERE id = $1`,

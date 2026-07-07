@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
 import { logAdminAction } from '../lib/adminService.js';
-import { listReadrankPoliticians, listReadrankQuotes, selectReadrankQuote } from '../lib/readrankQuotesService.js';
+import { listReadrankPoliticians, listReadrankQuotes, selectReadrankQuote, updateReadrankQuote, deleteReadrankQuote } from '../lib/readrankQuotesService.js';
 
 const router = Router();
 router.use(requireAuth, requireAdmin);
@@ -60,6 +60,70 @@ router.put('/select', async (req: Request, res: Response): Promise<void> => {
     const msg = err instanceof Error ? err.message : 'Failed to select quote';
     const code = /not found/i.test(msg) ? 404 : /de-identified/i.test(msg) ? 422 : 500;
     if (code === 500) console.error('[PUT /admin/readrank-quotes/select] error:', err);
+    res.status(code).json({ error: msg });
+  }
+});
+
+const updateBody = z.object({
+  quote_id: z.string().uuid(),
+  quote_text: z.string().min(1),
+  deidentified_text: z.string().nullable(),
+  source_url: z.string().nullable(),
+  source_name: z.string().nullable(),
+});
+
+// PATCH /api/admin/readrank-quotes — edit a quote's text/source
+router.patch('/', async (req: Request, res: Response): Promise<void> => {
+  const parsed = updateBody.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({ error: 'quote_id (uuid) and non-empty quote_text are required' });
+    return;
+  }
+  const { quote_id, quote_text, deidentified_text, source_url, source_name } = parsed.data;
+  try {
+    await updateReadrankQuote(quote_id, {
+      quoteText: quote_text,
+      deidentifiedText: deidentified_text,
+      sourceUrl: source_url,
+      sourceName: source_name,
+    });
+    await logAdminAction(
+      (req as AuthenticatedRequest).userId,
+      'readrank_quote.update',
+      null,
+      { quote_id, quote_text, deidentified_text, source_url, source_name },
+    );
+    res.status(200).json({ ok: true });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : 'Failed to update quote';
+    const code = /not found/i.test(msg) ? 404 : /de-identified/i.test(msg) ? 422 : 500;
+    if (code === 500) console.error('[PATCH /admin/readrank-quotes] error:', err);
+    res.status(code).json({ error: msg });
+  }
+});
+
+const deleteParams = z.object({ quoteId: z.string().uuid() });
+
+// DELETE /api/admin/readrank-quotes/:quoteId — remove a quote entirely
+router.delete('/:quoteId', async (req: Request, res: Response): Promise<void> => {
+  const parsed = deleteParams.safeParse(req.params);
+  if (!parsed.success) {
+    res.status(422).json({ error: 'quoteId (uuid) is required' });
+    return;
+  }
+  try {
+    await deleteReadrankQuote(parsed.data.quoteId);
+    await logAdminAction(
+      (req as AuthenticatedRequest).userId,
+      'readrank_quote.delete',
+      null,
+      { quote_id: parsed.data.quoteId },
+    );
+    res.status(200).json({ ok: true });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : 'Failed to delete quote';
+    const code = /not found/i.test(msg) ? 404 : 500;
+    if (code === 500) console.error('[DELETE /admin/readrank-quotes/:quoteId] error:', err);
     res.status(code).json({ error: msg });
   }
 });
