@@ -297,7 +297,34 @@ Plans:
   3. Every candidate across these 17 states lacking federal-24 stances has sourced chairs-not-polarity stances — 0 unsourced, primary-source-verified before push, honest-skip where evidence is thin; already-stanced incumbents skipped via the diagnostic.
   4. With Phases 161–165 complete, all 178 Wave-3 districts have at least one active `race_candidates` row with a NON-NULL `politician_id` — the full input set for the Phase 166 consolidated gate.
 
-**Plans:** TBD
+**Plans:** 17 plans
+
+Plans:
+**Wave 1** *(seed — 17 disjoint states, no migration/file overlap; run INLINE; execute the 3 special tracks first — 165-01 NV+ME cheapest, 165-02 UT contract-bound, 165-03 AK)*
+
+- [ ] 165-01-PLAN.md — Track 1: NV + ME candidates-only reconciliation (reuse 6 pre-existing races; 5 NV new + Chapman NULL-pid fix + 2 ME new; NO new elections/races) + headshots
+- [ ] 165-02-PLAN.md — Track 2: UT court-ordered re-key (new election + 4 races on existing offices 4901-4904; Moore->4902/Maloy->4903/Kennedy->4904 re-link; 4901 open; offices NOTOUCH per binding contract) + headshots
+- [ ] 165-03-PLAN.md — Track 3: AK nonpartisan top-four-RCV (1 election + 1 jungle race primary_party=NULL; 14 new + Begich; PROVISIONAL) + headshots
+- [ ] 165-04-PLAN.md — NM + NE seed (6 districts, decided; NE-2 open seat; safe_start_seq NM-1=26/NM-2=51/NM-3=82/NE-3=60; exclude Ahlman/Budke/Cohen) + headshots
+- [ ] 165-05-PLAN.md — WV + ID seed (4 districts, decided; ID multi-party; standard seq) + headshots
+- [ ] 165-06-PLAN.md — HI + NH seed (4 districts, late-primary PROVISIONAL; HI In-Primary filter; NH-1 14-candidate open; NH-1 seq>=33; exclude Belatti/Burd + Black/Mahrou/Sykes) + headshots
+- [ ] 165-07-PLAN.md — RI + DE + VT + WY seed (5 districts, late-primary PROVISIONAL; DE seq=48 MANDATORY; VT seq=6; WY 18-candidate open seat) + headshots
+- [ ] 165-08-PLAN.md — MT + ND + SD seed (4 districts, decided; MT-1 + SD open seats; MT-2 seq>=85; exclude Persico/Eisenhauer/Neville/Tuttle/Pittman) + headshots
+
+**Wave 2** *(stances — each depends on its seed plan; disjoint per-state dirs; 3-concurrency max)*
+
+- [ ] 165-09-PLAN.md — NV + ME stances (incl. zero-tier Pingree FULL research; RCV over-indulgence for ME)
+- [ ] 165-10-PLAN.md — UT stances (new challengers via _push.ts + UUID re-links McAdams/Crosby/Udell/Larsen via _push_uuid.ts)
+- [ ] 165-11-PLAN.md — AK stances (14 new; MAXIMAL RCV over-indulgence; Begich skipped)
+- [ ] 165-12-PLAN.md — NM + NE stances
+- [ ] 165-13-PLAN.md — WV + ID stances (ID third-party by evidence, never party inference)
+- [ ] 165-14-PLAN.md — HI + NH stances (crowded HI + NH-1 14-field; multi-wave)
+- [ ] 165-15-PLAN.md — RI + DE + VT + WY stances (WY 18-field = largest single load, own wave sequence)
+- [ ] 165-16-PLAN.md — MT + ND + SD stances
+
+**Wave 3** *(consolidated gate)*
+
+- [ ] 165-17-PLAN.md — Consolidated 34-district 165-verify.sql (NV-RECONCILE + ME-RECONCILE + UT-REKEY NOTOUCH + AK-FIELD + PROVISIONAL + COLLISION-BAND blocks) + 165-coordinate-smoke.ts (17 positive samples)
 
 ---
 
@@ -348,7 +375,7 @@ Plans:
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
 | 163. WI + CO + AL + SC + LA Candidate Seeding | 6/11 | In Progress|  |
 | 164. KY + OR + CT + OK + AR + IA + KS + MS Candidate Seeding | 13/13 | Complete    | 2026-07-07 |
-| 165. Small-Delegation States Candidate Seeding (17 states) | 0/? | Not started | - |
+| 165. Small-Delegation States Candidate Seeding (17 states) | 0/17 | Not started | - |
 | 166. Consolidated Verification Gate | 0/? | Not started | - |
 | 167. Post-Primary Reconciliation (date-gated, Aug–Sep 2026) | 0/? | Not started | - |
 
