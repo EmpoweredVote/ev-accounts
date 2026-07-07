@@ -101,6 +101,8 @@ Re-acknowledged at v2.20 close (2026-06-30).
 | carry_forward | 3 House vacancies (FL-20/GA-13/TX-23) | re-run seed script once special elections seat members |
 | carry_forward | v2.21 159-05/06 — MI+VA post-primary cull + gate | date-gated: executes ≥ 2026-08-05 (day after Aug-4 MI+VA primaries) |
 | carry_forward | v2.22+ remaining ~178 US House districts (beyond top-12 delegations) | **NOW IN PROGRESS as v2.22 Phases 160–167** (roadmap created 2026-07-03) |
+| carry_forward | **MO revert branch (164.1-07)** — if the referendum qualifies by 2026-08-04, MO does ZERO polygon work, stays withheld, and the revert diverts to **Phase 167's MO cluster** | date-gated: decision ≥ 2026-08-04 (SOS Hoskins certification) |
+| carry_forward | **Jan-2027 boundary promotion** — promote G5200V26→canonical + offices re-key + user_districts/connected_profiles re-resolve + retire D-11 fallback | date-gated ≥ 2027-01-03; spec: `164.1-jan2027-boundary-promotion-spec.md` |
 
 ## Performance Metrics
 
@@ -200,7 +202,11 @@ Resume file: .planning/phases/164.1-cross-state-district-polygon-refresh-dual-ma
 
 ## Operator Next Steps
 
-- **Anytime:** `/gsd-plan-phase 160` to begin v2.22 Wave 3 (Field Resolution + Stance-Gap Diagnostic across the 38 remaining states).
+- **Anytime:** `/gsd-plan-phase 165` (UT dependency satisfied — 164.1 Wave 2 delivered UT G5200V26 polygons + `164.1-ut-wiring-contract.md`).
+- **≥ 2026-08-04:** `/gsd-execute-phase 164.1 --wave 4` — Plan 164.1-07, MO date-gated (SOS Hoskins certification decision): map-holds branch = MO G5200V26 import + un-withhold 2902-2906 + flip the 162 gate; referendum-qualifies branch = zero polygon work, MO stays withheld, divert to Phase 167's MO cluster.
+- **≥ 2027-01-03:** plan the Jan-2027 boundary-promotion phase per `164.1-jan2027-boundary-promotion-spec.md` — promote G5200V26→canonical, re-key `essentials.offices` (UT wiring contract + state correspondences), re-resolve `connect.user_districts`, refresh `connected_profiles.congressional_geo_id`, and RETIRE the D-11 `resolve_congressional_2026` read-path fallback.
+- **D-11 SHIPPED in 164.1 (2026-07-07) — delivered, NOT an accepted limitation:** differential-zone Connected-tier users' `/elections` is corrected in-phase by a read-only live fallback (`connect.resolve_congressional_2026`, migration 1246 — decrypts server-side, ST_Covers vs G5200V26, FIPS 47/29/01/22/49 only, NO cache mutation) substituted in Paths 1/1.5 of `/api/elections/me`. Live-proven by the 1641 smoke's direct-RPC sentinel probe for TN/AL/LA/UT. The Jan-2027 promotion phase retires it once the cache is authoritative.
+- **Phase 166 inheritance:** the consolidated gate inherits the FLIPPED (now positive) TN/AL/LA severe assertions — 161-verify asserts all 9 TN surfacing, 163-verify asserts all 7 AL + 6 LA surfacing — and the 13 un-withheld districts (TN 4704/4705/4706/4708/4709 + AL 0102 + LA 2202/2206 + their non-severe peers already surfacing) join the 178-district assertion set; MO's 5 severe (2902-2906) stay asserted-withheld until Plan 164.1-07 clears.
 - **≥ 2026-08-05:** `/gsd-execute-phase 159` Waves 3-4 (159-05 post-primary cull vs official MI SoS / VA results, then 159-06 24-district gate) — closes USHC2-06 and v2.21
 - **≥ 2026-08-10:** PA independents re-check (Aug-3 filing deadline; FL-153 pattern)
 - **≥ 2026-08-18:** Phase 153 — FL post-primary re-check (USHC-07 carry-forward from v2.20)
