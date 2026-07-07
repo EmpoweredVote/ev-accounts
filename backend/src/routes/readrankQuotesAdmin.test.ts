@@ -46,7 +46,7 @@ beforeEach(() => {
 });
 
 describe('PATCH /api/admin/readrank-quotes', () => {
-  const body = { quote_id: UUID, quote_text: 'v', deidentified_text: 'd', source_url: 'https://x', source_name: 'X' };
+  const body = { quote_id: UUID, quote_text: 'v', deidentified_text: 'd', source_url: 'https://x', source_name: 'X', editor_note: 'note' };
 
   it('422 when quote_id is not a uuid', async () => {
     const res = await request(app).patch('/api/admin/readrank-quotes').send({ ...body, quote_id: 'nope' });
@@ -65,7 +65,7 @@ describe('PATCH /api/admin/readrank-quotes', () => {
     const res = await request(app).patch('/api/admin/readrank-quotes').send(body);
     expect(res.status).toBe(200);
     expect(mockUpdate).toHaveBeenCalledWith(UUID, {
-      quoteText: 'v', deidentifiedText: 'd', sourceUrl: 'https://x', sourceName: 'X',
+      quoteText: 'v', deidentifiedText: 'd', sourceUrl: 'https://x', sourceName: 'X', editorNote: 'note',
     });
     expect(mockLogAdminAction).toHaveBeenCalledWith(
       'admin-1', 'readrank_quote.update', null, expect.objectContaining({ quote_id: UUID }),
@@ -76,10 +76,10 @@ describe('PATCH /api/admin/readrank-quotes', () => {
     mockUpdate.mockResolvedValue(undefined);
     const res = await request(app)
       .patch('/api/admin/readrank-quotes')
-      .send({ quote_id: UUID, quote_text: 'v', deidentified_text: null, source_url: null, source_name: null });
+      .send({ quote_id: UUID, quote_text: 'v', deidentified_text: null, source_url: null, source_name: null, editor_note: null });
     expect(res.status).toBe(200);
     expect(mockUpdate).toHaveBeenCalledWith(UUID, {
-      quoteText: 'v', deidentifiedText: null, sourceUrl: null, sourceName: null,
+      quoteText: 'v', deidentifiedText: null, sourceUrl: null, sourceName: null, editorNote: null,
     });
   });
 

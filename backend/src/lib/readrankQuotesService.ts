@@ -48,6 +48,7 @@ export interface AdminQuote {
   deidentifiedText: string | null;
   sourceUrl: string | null;
   sourceName: string | null;
+  editorNote: string | null;
   readrankSelected: boolean;
 }
 export interface AdminTopicQuotes {
@@ -58,10 +59,11 @@ export interface AdminTopicQuotes {
 export async function listReadrankQuotes(politicianId: string): Promise<AdminTopicQuotes[]> {
   const { rows } = await pool.query<{
     id: string; topic_key: string; quote_text: string; deidentified_text: string | null;
-    source_url: string | null; source_name: string | null; readrank_selected: boolean;
+    source_url: string | null; source_name: string | null; editor_note: string | null;
+    readrank_selected: boolean;
   }>(
     `SELECT id, lower(topic_key) AS topic_key, quote_text, deidentified_text,
-            source_url, source_name, readrank_selected
+            source_url, source_name, editor_note, readrank_selected
        FROM essentials.quotes
       WHERE politician_id = $1
       ORDER BY lower(topic_key) ASC, readrank_selected DESC, created_at ASC NULLS LAST, id ASC`,
@@ -73,7 +75,8 @@ export async function listReadrankQuotes(politicianId: string): Promise<AdminTop
     if (!byTopic.has(r.topic_key)) { byTopic.set(r.topic_key, { topicKey: r.topic_key, quotes: [] }); order.push(r.topic_key); }
     byTopic.get(r.topic_key)!.quotes.push({
       id: r.id, quoteText: r.quote_text, deidentifiedText: r.deidentified_text,
-      sourceUrl: r.source_url, sourceName: r.source_name, readrankSelected: r.readrank_selected,
+      sourceUrl: r.source_url, sourceName: r.source_name, editorNote: r.editor_note,
+      readrankSelected: r.readrank_selected,
     });
   }
   return order.map((k) => byTopic.get(k)!);
@@ -84,6 +87,7 @@ export interface ReadrankQuoteUpdate {
   deidentifiedText: string | null;
   sourceUrl: string | null;
   sourceName: string | null;
+  editorNote: string | null;
 }
 
 export async function updateReadrankQuote(quoteId: string, fields: ReadrankQuoteUpdate): Promise<void> {
@@ -101,9 +105,9 @@ export async function updateReadrankQuote(quoteId: string, fields: ReadrankQuote
 
   await pool.query(
     `UPDATE essentials.quotes
-        SET quote_text = $2, deidentified_text = $3, source_url = $4, source_name = $5
+        SET quote_text = $2, deidentified_text = $3, source_url = $4, source_name = $5, editor_note = $6
       WHERE id = $1`,
-    [quoteId, fields.quoteText, deidentifiedText, fields.sourceUrl, fields.sourceName],
+    [quoteId, fields.quoteText, deidentifiedText, fields.sourceUrl, fields.sourceName, fields.editorNote],
   );
 }
 

@@ -70,6 +70,7 @@ const updateBody = z.object({
   deidentified_text: z.string().nullable(),
   source_url: z.string().nullable(),
   source_name: z.string().nullable(),
+  editor_note: z.string().nullable(),
 });
 
 // PATCH /api/admin/readrank-quotes — edit a quote's text/source
@@ -79,19 +80,20 @@ router.patch('/', async (req: Request, res: Response): Promise<void> => {
     res.status(422).json({ error: 'quote_id (uuid) and non-empty quote_text are required' });
     return;
   }
-  const { quote_id, quote_text, deidentified_text, source_url, source_name } = parsed.data;
+  const { quote_id, quote_text, deidentified_text, source_url, source_name, editor_note } = parsed.data;
   try {
     await updateReadrankQuote(quote_id, {
       quoteText: quote_text,
       deidentifiedText: deidentified_text,
       sourceUrl: source_url,
       sourceName: source_name,
+      editorNote: editor_note,
     });
     await logAdminAction(
       (req as AuthenticatedRequest).userId,
       'readrank_quote.update',
       null,
-      { quote_id, quote_text, deidentified_text, source_url, source_name },
+      { quote_id, quote_text, deidentified_text, source_url, source_name, editor_note },
     );
     res.status(200).json({ ok: true });
   } catch (err) {

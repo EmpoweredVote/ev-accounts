@@ -15,6 +15,7 @@ interface AdminQuote {
   deidentifiedText: string | null;
   sourceUrl: string | null;
   sourceName: string | null;
+  editorNote: string | null;
   readrankSelected: boolean;
 }
 interface AdminTopicQuotes { topicKey: string; quotes: AdminQuote[]; }
@@ -32,7 +33,7 @@ export function ReadRankQuotesPage() {
   const [topicsError, setTopicsError] = useState<string | null>(null);
   const [savingId, setSavingId] = useState<string | null>(null);
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [editForm, setEditForm] = useState({ quoteText: '', deidentifiedText: '', sourceUrl: '', sourceName: '' });
+  const [editForm, setEditForm] = useState({ quoteText: '', deidentifiedText: '', sourceUrl: '', sourceName: '', editorNote: '' });
 
   useEffect(() => {
     apiFetch<{ politicians: PoliticianWithQuotes[] }>('/admin/readrank-quotes/politicians')
@@ -99,6 +100,7 @@ export function ReadRankQuotesPage() {
       deidentifiedText: q.deidentifiedText ?? '',
       sourceUrl: q.sourceUrl ?? '',
       sourceName: q.sourceName ?? '',
+      editorNote: q.editorNote ?? '',
     });
   }
 
@@ -115,6 +117,7 @@ export function ReadRankQuotesPage() {
           deidentified_text: nullIfBlank(editForm.deidentifiedText),
           source_url: nullIfBlank(editForm.sourceUrl),
           source_name: nullIfBlank(editForm.sourceName),
+          editor_note: nullIfBlank(editForm.editorNote),
         }),
       });
       setEditingId(null);
@@ -249,6 +252,15 @@ export function ReadRankQuotesPage() {
                                     onChange={(e) => setEditForm((f) => ({ ...f, deidentifiedText: e.target.value }))}
                                   />
                                 </div>
+                                <div>
+                                  <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-0.5">Editor note (why selected / what edited)</label>
+                                  <textarea
+                                    className={fieldClass}
+                                    rows={2}
+                                    value={editForm.editorNote}
+                                    onChange={(e) => setEditForm((f) => ({ ...f, editorNote: e.target.value }))}
+                                  />
+                                </div>
                                 <div className="flex gap-2">
                                   <input
                                     className={fieldClass}
@@ -288,6 +300,11 @@ export function ReadRankQuotesPage() {
                                   )}
                                 </p>
                                 <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">verbatim: {q.quoteText}</p>
+                                {q.editorNote && (
+                                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                    <span className="font-medium">editor note:</span> {q.editorNote}
+                                  </p>
+                                )}
                                 <div className="flex items-center gap-3 mt-1">
                                   {q.sourceUrl && (
                                     <a className="text-xs text-ev-blue hover:underline" href={q.sourceUrl} target="_blank" rel="noreferrer">

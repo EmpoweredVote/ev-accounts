@@ -73,7 +73,7 @@ describe('selectReadrankQuote', () => {
 });
 
 describe('updateReadrankQuote', () => {
-  const validFields = { quoteText: 'new verbatim', deidentifiedText: 'new deid', sourceUrl: 'https://x', sourceName: 'X' };
+  const validFields = { quoteText: 'new verbatim', deidentifiedText: 'new deid', sourceUrl: 'https://x', sourceName: 'X', editorNote: 'note' };
 
   it('throws when the quote id does not exist', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [] });
@@ -109,10 +109,11 @@ describe('updateReadrankQuote', () => {
     expect(sql).toMatch(/deidentified_text\s*=/i);
     expect(sql).toMatch(/source_url\s*=/i);
     expect(sql).toMatch(/source_name\s*=/i);
+    expect(sql).toMatch(/editor_note\s*=/i);
     expect(sql).not.toMatch(/politician_id\s*=/i);
     expect(sql).not.toMatch(/topic_key\s*=/i);
     expect(sql).not.toMatch(/readrank_selected\s*=/i);
-    expect(updateCall[1]).toEqual(['q1', 'new verbatim', 'new deid', 'https://x', 'X']);
+    expect(updateCall[1]).toEqual(['q1', 'new verbatim', 'new deid', 'https://x', 'X', 'note']);
   });
 
   it('allows null de-identified text when the quote is not selected', async () => {
@@ -122,7 +123,7 @@ describe('updateReadrankQuote', () => {
     await expect(
       updateReadrankQuote('q1', { ...validFields, deidentifiedText: null }),
     ).resolves.toBeUndefined();
-    expect(mockQuery.mock.calls[1][1]).toEqual(['q1', 'new verbatim', null, 'https://x', 'X']);
+    expect(mockQuery.mock.calls[1][1]).toEqual(['q1', 'new verbatim', null, 'https://x', 'X', 'note']);
   });
 });
 
