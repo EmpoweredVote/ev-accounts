@@ -1,0 +1,29 @@
+# RI+DE+VT+WY 165-07 reconciliation. ALL LATE-PRIMARY -> PROVISIONAL (culls: RI 2026-09-09, DE 2026-09-15, VT 2026-08-11, WY 2026-08-18; all verified 2026-07-07). DE safe_start_seq=48 (26 legacy records at seqs 1-47). VT safe_start_seq=6. WY OPEN (Hageman -> Senate, NO-ROW); WY field = 14 per authoritative WY SoS roster (plan said 18 — authoring slip); Chuck Gray reuses the v2.18 WY-SoS pid.
+state,full_name,party_from_field,decision,pid_or_external_id,is_incumbent
+RI,"Gabe Amo",Democratic,REUSE-INCUMBENT,-44001,true
+RI,"Kellie Keenan",Republican,NEW,-440101,false
+RI,"Pedro DeSouza",Independent,NEW,-440102,false
+RI,"Seth Magaziner",Democratic,REUSE-INCUMBENT,-44002,true
+RI,"Victor Mellor",Republican,NEW,-440201,false
+RI,"Stephen Skoly",Republican,NEW,-440202,false
+DE,"Sarah McBride",Democratic,REUSE-INCUMBENT,-10000,true
+DE,"Earl Cooper",Republican,NEW (safe_start_seq=48),-100048,false
+VT,"Becca Balint",Democratic,REUSE-INCUMBENT,-50000,true
+VT,"Mark Coester",Republican,NEW,-500006,false
+VT,"Gerald Malloy",Republican,NEW,-500007,false
+VT,"Adam Ortiz",Independent,NEW (official VT SoS XLSX),-500008,false
+WY,"Harriet M. Hageman",Republican,RETIRED-NO-ROW (US Senate run),1e08c7c7-68c1-4498-90b2-20850bac1c80,false
+WY,"Chuck Gray",Republican,REUSE-STATE-LEADER-PID (v2.18 WY SoS),b503b679-773a-4eee-9c16-e73bff1a723f,false
+WY,"Jillian Balow",Republican,NEW,-560001,false
+WY,"Bo Biteman",Republican,NEW,-560002,false
+WY,"Frank Chapman",Republican,NEW,-560003,false
+WY,"Kevin Christensen",Republican,NEW,-560004,false
+WY,"Richard Dodson",Republican,NEW,-560005,false
+WY,"Steve Friess",Republican,NEW,-560006,false
+WY,"David Giralt",Republican,NEW,-560007,false
+WY,"Reid Rasner",Republican,NEW,-560008,false
+WY,"Keith B. Goodenough",Republican,NEW,-560009,false
+WY,"Lisa Kinney",Democratic,NEW,-560010,false
+WY,"Elena Del Real",Democratic,NEW,-560011,false
+WY,"Shawn Johnson",Libertarian,NEW,-560012,false
+WY,"Daniel Workman",Independent,NEW,-560013,false
