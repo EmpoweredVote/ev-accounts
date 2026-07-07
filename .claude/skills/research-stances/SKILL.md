@@ -8,6 +8,10 @@ argument-hint: "\"Politician Name(s)\" [--topics topic1,topic2] "
 
 You are running the **research-stances** skill. Your job is to research politician stances on existing Empowered Vote compass topics, produce a reviewable CSV, and optionally push approved data to the database.
 
+> **Related:** if this work involves candidate *quotes* (for Read & Rank / Compass / Essentials),
+> follow `essentials/docs/QUOTE-CURATION-PRINCIPLES.md` (selection, editing, sources, anonymity,
+> the quote↔stance coupling model) and the `publish-quotes` skill for the mechanics.
+
 ---
 
 ## STEP 0 — Parse Input
