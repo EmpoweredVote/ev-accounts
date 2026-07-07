@@ -2,15 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage (Wave 3)
-status: executing
-last_updated: "2026-07-06T22:15:40.820Z"
-last_activity: 2026-07-05
+status: ready_to_plan
+last_updated: 2026-07-07T03:39:52.459Z
+last_activity: 2026-07-06 -- Phase 164 execution started
 progress:
   total_phases: 9
   completed_phases: 4
-  total_plans: 40
-  completed_plans: 40
+  total_plans: 53
+  completed_plans: 85
   percent: 44
+stopped_at: Phase 164 complete (13/13) — ready to discuss Phase 164.1
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
@@ -24,15 +25,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 163 — wi-co-al-sc-la-candidate-seeding-create-elections-races-then
+**Current focus:** Phase 164.1 — cross state district polygon refresh dual map design tn mo a
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 163 (wi-co-al-sc-la-candidate-seeding-create-elections-races-then) — EXECUTING
-Plan: 4 of 11
-Status: Ready to execute
-Last activity: 2026-07-05
+Phase: 164.1
+Plan: Not started
+Status: Ready to plan
+Last activity: 2026-07-07
 
 ## v2.22 Phase Dependencies
 
