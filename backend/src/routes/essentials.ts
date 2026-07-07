@@ -49,6 +49,36 @@ function electionGeoPairsFromSlots(slots: {
     .map(([geoId, mtfcc]) => ({ geo_id: geoId as string, mtfcc }));
 }
 
+// D-11 (Phase 164.1): states whose 2026 congressional geometry is dual-mapped
+// (G5200V26 rows) while cached congressional_geo_id still reflects the old map.
+// TN=47, MO=29, AL=01, LA=22, UT=49.
+const REFRESHED_2026_FIPS = new Set(['47', '29', '01', '22', '49']);
+
+/**
+ * D-11 read-only fallback: when a Connected user's congressional_geo_id sits in
+ * a 2026-refresh state and coords are on file, re-resolve the congressional
+ * district LIVE against the G5200V26 vintage via connect.resolve_congressional_2026
+ * (SECURITY DEFINER, decrypts server-side, no cache mutation). Returns the NEW
+ * district geo_id, or null to keep the cached value (not a refreshed state, no
+ * coverage, no coords, or RPC error). Retired by the Jan-2027 promotion phase.
+ */
+async function resolveCongressional2026(
+  userId: string,
+  cachedGeoId: string | null | undefined,
+  hasCoords: boolean
+): Promise<string | null> {
+  if (!hasCoords || !cachedGeoId || !REFRESHED_2026_FIPS.has(cachedGeoId.slice(0, 2))) {
+    return null;
+  }
+  try {
+    const { data, error } = await adminRpc('resolve_congressional_2026', { p_user_id: userId }, 'connect');
+    if (error || typeof data !== 'string' || !data) return null;
+    return data;
+  } catch {
+    return null;
+  }
+}
+
 /**
  * Essentials router — address-search and other top-level essentials routes.
  *
@@ -778,8 +808,14 @@ router.get('/elections/me', requireAuth, requireConnected, async (req: Request, 
   // Path 1: stored geo_ids present — direct district match
   if (j && (j.congressional_geo_id || j.state_senate_geo_id || j.county_geo_id)) {
     try {
+      // D-11: substitute the live G5200V26-resolved congressional geo_id when the
+      // cached one is in a 2026-refresh state (read-only; cache stays untouched).
+      // The pair keeps mtfcc 'G5200' — races key on geo_id + NATIONAL_LOWER guard.
+      const corrected2026 = await resolveCongressional2026(userId, j.congressional_geo_id, j.has_coords);
       const elections = await getElectionsByGeoIds(
-        electionGeoPairsFromSlots(j),
+        electionGeoPairsFromSlots(
+          corrected2026 ? { ...j, congressional_geo_id: corrected2026 } : j
+        ),
         j.jurisdiction_state
       );
       res.setHeader('X-Formatted-Address', [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
@@ -825,9 +861,13 @@ router.get('/elections/me', requireAuth, requireConnected, async (req: Request, 
         ).catch((e: Error) => console.error('[elections/me] Path 1.5 write-back error:', e.message));
 
         if (jd.congressional || jd.state_senate || jd.county) {
+          // D-11: resolve_user_jurisdiction is hardcoded to G5200, so its
+          // congressional result is also pre-2026 — apply the same live
+          // substitution (coords exist by definition on this path).
+          const corrected2026 = await resolveCongressional2026(userId, jd.congressional, true);
           const elections = await getElectionsByGeoIds(
             electionGeoPairsFromSlots({
-              congressional_geo_id: jd.congressional,
+              congressional_geo_id: corrected2026 ?? jd.congressional,
               state_senate_geo_id: jd.state_senate,
               state_house_geo_id: jd.state_house,
               county_geo_id: jd.county,
