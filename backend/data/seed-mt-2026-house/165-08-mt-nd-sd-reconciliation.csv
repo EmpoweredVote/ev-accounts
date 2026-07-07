@@ -1,0 +1,19 @@
+# MT+ND+SD 165-08 reconciliation. ALL DECIDED, NOT PROVISIONAL. MT-1 OPEN (Zinke retired), SD OPEN (Johnson -> Governor). EXCLUDED -> Phase 167: MT Persico + Eisenhauer (cert to 2026-08-20), ND Neville + Tuttle (window to 2026-08-31). EXCLUDED PERMANENTLY: SD Jack Pittman (absent from SD SoS certified list; Apr-28 deadline passed, SD field FINAL). Jackley reuses the v2.18 SD-AG pid.
+state,geo_id,full_name,party_from_field,decision,pid_or_external_id,is_incumbent
+MT,3001,"Ryan K. Zinke",Republican,RETIRED-NO-ROW,eb9fac1d-e596-4a78-8c14-314af94e307f,false
+MT,3001,"Aaron Flint",Republican,NEW,-300101,false
+MT,3001,"Sam Forstag",Democratic,NEW,-300102,false
+MT,3001,"Nick Sheedy",Libertarian,NEW,-300103,false
+MT,3002,"Troy Downing",Republican,REUSE-INCUMBENT,-30002,true
+MT,3002,"Brian Miller",Democratic,NEW (safe_start_seq=85),-300285,false
+MT,3002,"Patrick McCracken",Libertarian,NEW,-300286,false
+MT,3001,"Kimberly Persico",Independent,EXCLUDE-PENDING-CERT (167; 2026-08-20),,false
+MT,3002,"Michael Eisenhauer",Independent,EXCLUDE-PENDING-CERT (167; 2026-08-20),,false
+ND,3800,"Julie Fedorchak",Republican,REUSE-INCUMBENT,-38000,true
+ND,3800,"Trygve Hammer",Democratic-NPL,NEW,-380001,false
+ND,3800,"Helene Neville",Independent,EXCLUDE-PENDING-PETITION (167; 2026-08-31),,false
+ND,3800,"Charles Tuttle",Independent,EXCLUDE-PENDING-PETITION (167; 2026-08-31),,false
+SD,4600,"Dusty Johnson",Republican,RETIRED-NO-ROW (Governor run),4ec42691-0ce1-4f29-a6ba-0835fe35a963,false
+SD,4600,"Marty Jackley",Republican,REUSE-STATE-LEADER-PID (v2.18 SD AG),2537050a-cd40-460e-9751-1d982dd73c25,false
+SD,4600,"Nikki Gronli",Democratic,NEW,-460001,false
+SD,4600,"Jack Pittman",Independent,EXCLUDE-PERMANENT (not SoS-certified; deadline passed),,false
