@@ -268,13 +268,19 @@ Plans:
 
 ### Phase 164.1: Cross-State District Polygon Refresh + Dual-Map Design (TN/MO/AL/LA/UT) (INSERTED)
 
-**Goal:** [Urgent work - to be planned]
-**Requirements**: TBD
+**Goal:** The enacted 2026 congressional polygons for TN/AL/LA/UT (MO date-gated) coexist with current boundaries as a parallel G5200V26 vintage; `/elections` resolves 2026 boundaries while the reps feed stays on current boundaries until Jan 2027; the 13 seeded-but-hidden severe races un-withhold once each state passes the D-10 3-layer verify bar; and UT polygons + a written wiring contract unblock Phase 165.
+**Requirements**: D-01..D-10 (CONTEXT.md is the goal statement of record; no formal REQ-IDs — this inserted phase sits outside the USHC3 traceability table)
 **Depends on:** Phase 164
-**Plans:** 0 plans
+**Plans:** 7 plans
 
 Plans:
-- [ ] TBD (run /gsd-plan-phase 164.1 to break down)
+- [ ] 164.1-01-PLAN.md — Dual-map opt-in code (G5200V26 discriminator + elections opt-in JOIN + catch-all exclusions) + Render deploy [Wave 1]
+- [ ] 164.1-02-PLAN.md — D-10 verify-bar harness (1641-verify.sql topology/anchor/NOTOUCH + 1641-coordinate-smoke.ts differential) [Wave 1]
+- [ ] 164.1-03-PLAN.md — UT 2026 polygon import + UT wiring contract (Phase-165 unblocker) [Wave 2]
+- [ ] 164.1-04-PLAN.md — TN import + D-10 bar + un-withhold 5 severe races + flip Phase-161 gate [Wave 2]
+- [ ] 164.1-05-PLAN.md — AL+LA import + BVAP checkpoint + D-10 bar + un-withhold AL-2/LA-2/LA-6 + Edmonds re-verify + flip Phase-163 gate [Wave 2]
+- [ ] 164.1-06-PLAN.md — Consolidated verify bar + Jan-2027 promotion-phase spec + connected_profiles gap doc + STATE.md re-entry dates [Wave 3]
+- [ ] 164.1-07-PLAN.md — MO date-gated (>= 2026-08-04): import+un-withhold OR revert-branch divert to Phase 167 [Wave 4]
 
 #### Phase 165: Small-Delegation States Candidate Seeding (17 states, create elections + races, then candidates)
 
