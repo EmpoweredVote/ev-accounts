@@ -415,7 +415,11 @@ export async function getPoliticiansFlatList(
   if (options?.q) {
     params.push(`%${options.q}%`);
     const idx = params.length;
-    searchFilter = `AND (p.full_name ILIKE $${idx} OR p.preferred_name ILIKE $${idx} OR p.first_name ILIKE $${idx} OR p.last_name ILIKE $${idx} OR CONCAT(p.first_name, ' ', p.last_name) ILIKE $${idx})`;
+    // Fold accents on BOTH sides via public.f_unaccent so typing the ASCII form
+    // finds accented names (e.g. "Munoz" matches "Muñoz", "Jose" matches "José").
+    // ILIKE keeps it case-insensitive; f_unaccent is IMMUTABLE (same helper the
+    // campaign-finance name search uses).
+    searchFilter = `AND (public.f_unaccent(p.full_name) ILIKE public.f_unaccent($${idx}) OR public.f_unaccent(p.preferred_name) ILIKE public.f_unaccent($${idx}) OR public.f_unaccent(p.first_name) ILIKE public.f_unaccent($${idx}) OR public.f_unaccent(p.last_name) ILIKE public.f_unaccent($${idx}) OR public.f_unaccent(CONCAT(p.first_name, ' ', p.last_name)) ILIKE public.f_unaccent($${idx}))`;
   }
 
   if (options?.state) {

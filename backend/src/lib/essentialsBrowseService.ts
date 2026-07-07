@@ -20,6 +20,18 @@ import { MTFCC_DISTRICT_TYPE_GUARD, type GeoPair } from './geoIdGuard.js';
 // within the hour without a manual cache bust.
 const OVERLAP_CACHE_TTL_SECONDS = 3600;
 
+// Minimum interior-overlap fraction for a Branch-3 district (county / school /
+// legislative) to count as overlapping a browsed area. TIGER polygon boundaries
+// are imprecise, so neighboring districts often clip a browsed city by a fraction
+// of a percent — real edge slivers that read as broken data (e.g. West Covina
+// intersected 7 school districts; 3 are ~20-51% of the city, 4 were <1.2% slivers).
+// Measured against the SMALLER of the two polygons so it works whether the seed is
+// a small city (district covers X% of the city) or a large county (small district
+// sits Y% inside the county). 3% cleanly separates real splits (always >>10% here)
+// from boundary-imprecision slivers. Only affects AREA browse, not address lookups
+// (those are point-in-polygon via ST_Covers, unaffected).
+const MIN_OVERLAP_FRACTION = 0.03;
+
 // FIPS → state abbreviation mapping
 const FIPS_TO_ABBREV: Record<string, string> = {
   '01': 'AL', '02': 'AK', '04': 'AZ', '05': 'AR', '06': 'CA',
@@ -142,7 +154,7 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
   const seedMtfccs = seeds.map((s) => s.mtfcc);
 
   // Cache keyed by the canonical (order-independent) seed set.
-  const cacheKey = `overlap:v1:${seeds
+  const cacheKey = `overlap:v2:${seeds
     .map((s) => `${s.geo_id}::${s.mtfcc}`)
     .sort()
     .join(',')}`;
@@ -204,6 +216,10 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
       WHERE gb2.mtfcc IN ('G5200', 'G5210', 'G5220', 'G4020', 'G5400', 'G5410', 'G5420')
         AND public.ST_Intersects(gb1.geometry, gb2.geometry)
         AND NOT public.ST_Touches(gb1.geometry, gb2.geometry)
+        -- Drop boundary-imprecision slivers: require a real interior overlap of at
+        -- least MIN_OVERLAP_FRACTION of the smaller polygon (see const above).
+        AND public.ST_Area(public.ST_Intersection(gb1.geometry, gb2.geometry))
+            >= ${MIN_OVERLAP_FRACTION} * LEAST(public.ST_Area(gb1.geometry), public.ST_Area(gb2.geometry))
     ) t
   `;
 
