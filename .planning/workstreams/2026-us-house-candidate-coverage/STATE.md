@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage (Wave 3)
-status: Roadmap approved; ready for `/gsd-plan-phase 160`
-last_updated: "2026-07-03T02:59:54.931Z"
-last_activity: 2026-07-03 — v2.22 roadmap created (Phases 160–167)
+status: executing
+last_updated: "2026-07-05T21:13:40.375Z"
+last_activity: 2026-07-05
 progress:
-  total_phases: 8
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  total_phases: 9
+  completed_phases: 3
+  total_plans: 40
+  completed_plans: 32
+  percent: 33
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
@@ -24,15 +24,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.22 Wave 3 — 38 remaining states / 178 districts. Roadmap created 2026-07-03: Phase 160 (diagnostic) → Phases 161–165 (seeding) → Phase 166 (gate) → Phase 167 (date-gated post-primary reconciliation). Next: `/gsd-plan-phase 160`. v2.21 tail (159-05/06 MI+VA cull+gate) preserved, date-gated ≥ 2026-08-05.
+**Current focus:** Phase 163 — wi-co-al-sc-la-candidate-seeding-create-elections-races-then
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 160 (Field Resolution + Stance-Gap Diagnostic) — Not started
-Plan: —
-Status: Roadmap approved; ready for `/gsd-plan-phase 160`
-Last activity: 2026-07-03 — v2.22 roadmap created (Phases 160–167)
+Phase: 163 (wi-co-al-sc-la-candidate-seeding-create-elections-races-then) — EXECUTING
+Plan: 4 of 11
+Status: Ready to execute
+Last activity: 2026-07-05
 
 ## v2.22 Phase Dependencies
 
@@ -133,6 +133,7 @@ Re-acknowledged at v2.20 close (2026-06-30).
 - Phase 159 REFRAMED (2026-07-01): "wait until Aug 4, seed decided nominees" -> "seed full pre-primary qualified field NOW (all parties, records+headshots+full federal-24 stances) + post-primary cull >= Aug 5". Applies FL's provisional-field pattern (Phase 151 seed -> 153 cull) to MI+VA. Rationale: serve primary voters at the Aug-4 civic moment; FL already does this (181-cand provisional field live) — MI/VA were the un-principled dark exception. DB-confirmed: FL 181 active cands, VA 0 (races scaffolded), MI 0 (fully dark). VA primary date verified Aug-4 (moved from June). Operator chose FULL coverage (accepts loser stance work discarded at cull).
 - Phase 159 Waves 1-2 COMPLETE (2026-07-01/02): 159-01 MI seed (migs 1146/1147: 1 election + 13 races, 56 new pols + 67 active rc) + 159-03 VA seed (mig 1148: 46 new pols + 58 active rc onto 11 existing races) + mig 1149 VA-5/6/9 office-rotation fix; 159-02 MI stances (46/56, 344 rows, 0 unsourced, 10 pinned skips; headshots 4) + 159-04 VA stances (37 stanced, 288 rows, 0 unsourced, 9 genuine skips after spot-audit found 13/22 pins FALSE; headshots 6). Exact skip pins in 159-02/159-04 SUMMARY.md. Key lessons in memory (project_phase159_wave1): header-only CSV without a search trail ≠ honest-skip (21/25 false); Bouchard father/son wrong-person revert — trust the auto-guard's first-name-mismatch rejection.
 - **v2.22 roadmap created (2026-07-03):** Phases 160–167 derived from USHC3-01..07. Generalizes the v2.21 Phase-159 "seed full provisional field now, cull later" principle to ALL late-primary states in Wave 3 (not a special case) — every seeding phase (161–165) may contain a mix of decided and late-primary states, resolved per-district by Phase 160. Grouping: largest-delegation-first, load-balanced 33-38 districts/phase (37/33/36/38/34), same methodology as v2.20/v2.21 (5 phases total kept the granularity comparable despite 178 vs 113/144 districts, per "standard" granularity guidance).
+- Phase 164.1 inserted after Phase 164: Cross-State District Polygon Refresh + Dual-Map Design (TN/MO/AL/LA/UT) — D-01c from Phase 161 discussion: redistricted-state polygons must refresh before Phase 165 (UT full re-key) and well before Nov-3; un-gates TN districts withheld under 161 D-01b; likely needs backend query changes (dual-map: reps feed on current-representation boundaries until Jan 2027, elections on 2026 boundaries) (URGENT)
 
 ### Key Decisions
 
@@ -182,12 +183,20 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 | 021 | Add candidate support to compass compare | 2026-05-14 | 5eb3852 | [021-add-candidate-support-to-compass-compar](./quick/021-add-candidate-support-to-compass-compar/) |
 | 022 | Fix Malik inversion bug, run 24 stance ingest scripts (255 rows), extend compassService dual-path fallback | 2026-05-15 | 01b3bfe | [022-run-pending-stance-ingest-and-extend-ca](./quick/022-run-pending-stance-ingest-and-extend-ca/) |
 | 023 | Deep candidate coverage — CA Gov (Hilton/Becerra) +11 sourced stances + 2 headshots; LA Mayor (Bass/Raman) reasoning enriched; ALL 4 candidates + pre-existing stances primary-source fact-checked (4 honest-skips deleted, value/quote/source corrections); both Govs at 22 symmetric state-tier | 2026-06-23 | c96d749f | [023-deep-candidate-coverage-gov-la-mayor](./quick/023-deep-candidate-coverage-gov-la-mayor/) |
+| Phase 160 P01 | 10min | 3 tasks | 6 files |
+| Phase 160 P07 | 25min | 3 tasks | 4 files |
+| Phase 161 P03 | 210min | 3 tasks | 18 files |
+| Phase 161 P05 | 165min | 0 tasks | 9 files |
+| Phase 161 P11 | 90m | 2 tasks | 3 files |
+| Phase 163 P01 | 55min | 2 tasks | 3 files |
+| Phase 163 P02 | 35min | 3 tasks | 5 files |
+| Phase 163 P03 | 20 | 3 tasks | 5 files |
 
 ## Session Continuity
 
-Last session: 2026-07-03T02:59:54.922Z
-Stopped at: Phase 160 context gathered
-Resume file: .planning/phases/160-field-resolution-stance-gap-diagnostic/160-CONTEXT.md
+Last session: 2026-07-05T21:04:10.261Z
+Stopped at: Completed 163-02-PLAN.md (WI 2026 House seed + headshots)
+Resume file: None
 
 ## Operator Next Steps
 
@@ -214,3 +223,17 @@ Resume file: .planning/phases/160-field-resolution-stance-gap-diagnostic/160-CON
 - [v2.18 roadmap]: SEXS-02 assigned to Phase 143 (completing phase) — spans both Wave 1 (Gov+AG) and Wave 2 (SoS+Treasurer+LtGov); Phase 142 carries it partially; 143 closes it
 - [v2.18 roadmap]: Feed surfacing (SEXR-05) is a smoke test in Phase 144, not a build phase — STATE_EXEC already enumerated in essentialsService.ts lines 669-716 and 1585-1598
 - [v2.18 roadmap]: external_id scheme for new states = `-(state_fips * 10000 + office_seq)` — safest non-overlapping range; must verify 0 collisions against live DB before authoring
+- [Phase 160-01]: diag-160-external-id-collision.ts hardcodes KY-CD1 and OK-CD1 to safe_start_seq=200 per Critical Finding 6, not just a saturation-threshold heuristic
+- [Phase 160-01]: diag-160-race-preexistence-audit.ts uses LEFT JOIN race_candidates so 0-candidate pre-scaffolded races (MD/OR) still emit a full-column audit row with existing_race_id populated
+- [Phase 160-07]: 160-verify.sql A2 rewritten (not copied) from the 154 template to assert the DISCOVERED 29-race baseline (ME2/MD8/MA9/NV4/OR6) + race_candidates counts (NV=9/MA=2/ME=2/MD=0/OR=0), never a blanket 0-races/0-candidates claim.
+- [161-03]: No Task/Agent tool available this session; researched all 24 AZ candidates directly via Playwright-driven fetches of Ballotpedia/campaign sites instead of dispatching politician-stance-researcher sub-agents, applying identical chairs-not-polarity/honest-skip standards
+- [161-03]: Discovered 5 of the 24 target AZ candidates (Ajluni, Descheenie, Davison, Bracht, Bah) withdrew or were disqualified from the 2026 ballot after the 161-02 snapshot; pinned as ballot-ineligibility whole-record skips for the 161-11 gate rather than researching stances for non-ballot candidates
+- [Phase ?]: 161-05: No Task/Agent tool available (matches 161-03) — researched all 23 remaining WA challengers directly via curl/wayback/Wikipedia; 9 sourced (46/60 total), 14 pinned whole-record honest-skips incl. a John Roco cross-state-homonym identity-risk flag for the 161-11 gate.
+- [Phase ?]: [161-11]: AZ roster reconciliation applied via migration 1204 (candidate_status='withdrawn' for 5 ballot-ineligible candidates), excluding them from the gate's active-scoped in-scope set
+- [Phase ?]: [161-11]: 161-verify.sql + 161-coordinate-smoke.ts both green against prod -- all 37 WA/AZ/TN/MA districts satisfy USHC3-02/03/04/05, TN severe-district withholding proven end-to-end
+- [Phase 163]: 163-01: AL severe geo_id set = {0102} only (1/7); AL-1/6/7 needed special primaries procedurally but score below the severity rubric on evidence
+- [Phase 163]: 163-01: LA severe geo_id set = {2202, 2206} (2/6), sourced from an enrolled-statute (SB8-2024 vs SB121-2026) parish-by-parish diff; LA-4 flagged borderline for downstream spot-check
+- [Phase 163-02]: WI-7 Tiffany (retired to run for Governor) is REUSE-NO-ROW open seat, no active House row; WI-2 legitimately 2-candidate all-D race (Pocan+Alexander), no Republican filed, verified not an error
+- [Phase 163-02]: seed-wi-house-headshots.py hardened with a _FOREIGN_NATIONALITY guard after Douglas Alexander (WI-2) resolved to a British Labour MP homonym; bad upload deleted from prod before commit
+- [Phase 163]: 163-03: DeGette CO-1 lost-primary treated as REUSE-NO-ROW (new incumbent-transition pattern, third variant); her existing record/office/19 stances untouched, not wired into CO-1 race_candidates
+- [Phase 163]: 163-03: CO decided-field race description follows the IN 'Confirmed nominees' convention, not PROVISIONAL

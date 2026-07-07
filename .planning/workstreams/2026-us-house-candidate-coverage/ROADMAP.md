@@ -80,7 +80,35 @@
   3. A collision-free negative `external_id` band (`-(state_fips*10000 + cd*100 + seq)`) is verified with 0 collisions against live negative IDs for each of the 38 states before any insert.
   4. The set of genuinely-new candidates needing records (challengers, open-seat, special-seated) is enumerated per state and per district, distinct from incumbents/previously-seeded figures that reuse existing records — a per-state new-record count is produced as the authoritative input for all five seeding phases.
 
-**Plans:** TBD
+**Plans:** 7/7 plans complete
+Plans:
+**Wave 1**
+
+- [x] 160-01-PLAN.md — DB diagnostics: 178-row incumbent+stance-gap map, negative external_id collision audit, pre-existing race/candidate audit
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [x] 160-02-PLAN.md — Field resolution: Phase-161 group (WA/AZ/TN/MA, 37 late-primary) + validated 19-col template
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
+- [x] 160-03-PLAN.md — Field resolution: Phase-162 group (IN/MD/MN/MO, 33) + IN-9 bug + zero-tier flags
+
+**Wave 4** *(blocked on Wave 3 completion)*
+
+- [x] 160-04-PLAN.md — Field resolution: Phase-163 group (WI/CO/AL/SC/LA, 36) + AL district-split + LA jungle-primary
+
+**Wave 5** *(blocked on Wave 4 completion)*
+
+- [x] 160-05-PLAN.md — Field resolution: Phase-164 group (KY/OR/CT/OK/AR/IA/KS/MS, 38) + OR races + KY/OK collision notes
+
+**Wave 6** *(blocked on Wave 5 completion)*
+
+- [x] 160-06-PLAN.md — Field resolution: Phase-165 group (17 small states, 34) + AK/ME RCV over-indulgence + NV/UT/ME reconciliation
+
+**Wave 7** *(blocked on Wave 6 completion)*
+
+- [x] 160-07-PLAN.md — Merge master field-table.csv (178/88-decided-90-late) + validator + write-free 160-verify.sql gate + Phase-167 clusters
 
 ---
 
@@ -101,7 +129,37 @@
   3. Every newly-seeded WA/AZ/TN/MA candidate has a headshot (Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`; free-license, wrong-person-guarded; documented honest-skips where none found); no candidate card surfaces party.
   4. Every WA/AZ/TN/MA candidate lacking federal-24 stances has sourced chairs-not-polarity stances — each answer paired to an `inform.politician_context` row with a real fetched source URL, 0 unsourced, primary-source-verified before push, honest-skip (per-topic or whole-record, gate-pinned with a written search trail) where evidence is thin; already-stanced incumbents skipped via the Phase 160 diagnostic.
 
-**Plans:** TBD
+**Plans:** 11/11 plans complete
+
+Plans:
+**Wave 1**
+
+- [x] 161-01-PLAN.md — TN old-vs-new map correspondence audit (D-01a); enumerates severe geo_ids to seed-but-withhold
+- [x] 161-02-PLAN.md — AZ seed end-to-end first (elections + 9 races + 32 records + race_candidates + headshots); live before Jul-21 primary
+
+**Wave 2**
+
+- [x] 161-03-PLAN.md — AZ federal-24 stances (0-unsourced), pushed as AZ slice before Jul-21
+- [x] 161-04-PLAN.md — WA seed (elections + 10 races + ~60 records + race_candidates + headshots)
+
+**Wave 3**
+
+- [x] 161-05-PLAN.md — WA federal-24 stances (0-unsourced)
+- [x] 161-06-PLAN.md — TN seed (2 elections + 9 severity-routed races + 73 records + headshots); severe districts withheld via election_id
+
+**Wave 4**
+
+- [x] 161-07-PLAN.md — TN stances part 1 (TN-1..5, ~36); sets up shared tn-2026-house dir
+- [x] 161-08-PLAN.md — MA candidates-only seed onto 9 existing races (18 records + headshots); Clark/Pressley un-duplicated
+
+**Wave 5**
+
+- [x] 161-09-PLAN.md — TN stances part 2 (TN-6..9, ~37)
+- [x] 161-10-PLAN.md — MA federal-24 stances (0-unsourced)
+
+**Wave 6**
+
+- [x] 161-11-PLAN.md — 37-district mini-gate: 161-verify.sql + 161-coordinate-smoke.ts (incl. severe-TN zero-race negative sample)
 
 ---
 
@@ -119,7 +177,20 @@
   2. Every newly-seeded IN/MD/MN/MO candidate has a headshot; incumbent-nominees reuse existing records (zero duplicate `full_name` per state); no party on candidate cards.
   3. Every IN/MD/MN/MO candidate lacking federal-24 stances has sourced chairs-not-polarity stances — 0 unsourced, primary-source-verified before push, honest-skip where evidence is thin; already-stanced incumbents skipped via the diagnostic.
 
-**Plans:** TBD
+**Plans:** 11 plans (10 waves)
+
+Plans:
+- [ ] 162-01-PLAN.md — MO old-vs-new map correspondence audit (D-01a; severe geo_id list)
+- [ ] 162-02-PLAN.md — MO seed end-to-end: 2 elections (general + withheld Polygon Pending), 8 severity-routed races, 58 new records, headshots
+- [ ] 162-03-PLAN.md — MO stances batch A (incumbents-skipped + evidenced majors incl. Bush) + scaffold + push
+- [ ] 162-04-PLAN.md — MO stances batch B (remaining filers) + push (MO stance-complete)
+- [ ] 162-05-PLAN.md — MN seed end-to-end: 1 election, 8 races, 35 new records, headshots (vanilla)
+- [ ] 162-06-PLAN.md — MN stances (35 targets) + scaffold + push
+- [ ] 162-07-PLAN.md — IN-9 flag fix (D-02, first) + IN seed: 1 election, 9 races, 12 new records, headshots
+- [ ] 162-08-PLAN.md — MD candidates-only onto 8 existing races: 13 new + 7 incumbent rows, headshots (D-04 reuse)
+- [ ] 162-09-PLAN.md — IN stances (12 new + 3 zero-tier incumbents) + scaffold + push
+- [ ] 162-10-PLAN.md — MD stances (13 new + 8 zero-tier incumbents) + scaffold + push
+- [ ] 162-11-PLAN.md — 33-district mini-gate: 162-verify.sql (+ MO-SEVERE + IN9-FLAG) + 162-coordinate-smoke.ts
 
 ---
 
@@ -137,7 +208,20 @@
   2. Every newly-seeded WI/CO/AL/SC/LA candidate has a headshot; incumbent-nominees reuse existing records (zero duplicate `full_name` per state); no party on candidate cards.
   3. Every WI/CO/AL/SC/LA candidate lacking federal-24 stances has sourced chairs-not-polarity stances — 0 unsourced, primary-source-verified before push, honest-skip where evidence is thin; already-stanced incumbents skipped via the diagnostic.
 
-**Plans:** TBD
+**Plans:** 11 plans
+
+Plans:
+- [x] 163-01-PLAN.md — AL + LA old-vs-new correspondence audits (severe geo_id lists; gates AL/LA seeding)
+- [x] 163-02-PLAN.md — WI seed (8 districts, 28 new, vanilla PROVISIONAL) + headshots
+- [x] 163-03-PLAN.md — CO seed (8 districts, 9 new, decided; DeGette lost-primary excluded from CO-1) + headshots
+- [x] 163-04-PLAN.md — AL seed (7 districts, 21 new, severity-routed withholding + late-primary split) + headshots
+- [x] 163-05-PLAN.md — SC seed (7 districts, 16 new, decided; Jul-15 independent window re-check) + headshots
+- [x] 163-06-PLAN.md — LA seed (6 districts, 27 new, jungle-primary primary_party=NULL + severity-routed withholding) + headshots
+- [ ] 163-07-PLAN.md — WI stances (28 new candidates, federal-24, 0-unsourced)
+- [ ] 163-08-PLAN.md — AL stances (21 new candidates incl. severe-district, federal-24, 0-unsourced)
+- [ ] 163-09-PLAN.md — LA stances (27 new candidates incl. LA-5 open seat + severe-district, federal-24, 0-unsourced)
+- [ ] 163-10-PLAN.md — CO + SC stances (25 new candidates, consolidated, federal-24, 0-unsourced) [PARTIAL: CO half done on PROD 2026-07-05 — 9/9, 50 sourced rows, 0 unsourced; SC half (16) pending → SUMMARY + close when SC done]
+- [ ] 163-11-PLAN.md — Consolidated 36-district verify.sql + coordinate-smoke (AL-SEVERE + LA-SEVERE + CO1-DEGETTE blocks)
 
 ---
 
@@ -158,6 +242,16 @@
 **Plans:** TBD
 
 ---
+
+### Phase 164.1: Cross-State District Polygon Refresh + Dual-Map Design (TN/MO/AL/LA/UT) (INSERTED)
+
+**Goal:** [Urgent work - to be planned]
+**Requirements**: TBD
+**Depends on:** Phase 164
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd-plan-phase 164.1 to break down)
 
 #### Phase 165: Small-Delegation States Candidate Seeding (17 states, create elections + races, then candidates)
 
@@ -220,10 +314,10 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 160. Field Resolution + Stance-Gap Diagnostic | 0/? | Not started | - |
-| 161. WA + AZ + TN + MA Candidate Seeding | 0/? | Not started | - |
+| 160. Field Resolution + Stance-Gap Diagnostic | 7/7 | Complete    | 2026-07-03 |
+| 161. WA + AZ + TN + MA Candidate Seeding | 11/11 | Complete    | 2026-07-04 |
 | 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
-| 163. WI + CO + AL + SC + LA Candidate Seeding | 0/? | Not started | - |
+| 163. WI + CO + AL + SC + LA Candidate Seeding | 6/11 | In Progress|  |
 | 164. KY + OR + CT + OK + AR + IA + KS + MS Candidate Seeding | 0/? | Not started | - |
 | 165. Small-Delegation States Candidate Seeding (17 states) | 0/? | Not started | - |
 | 166. Consolidated Verification Gate | 0/? | Not started | - |
@@ -337,13 +431,16 @@ Plans:
 
 Plans:
 **Wave 1**
+
 - [x] 149-01-PLAN.md — record reconciliation + race_candidates seed (38 new politicians + 104 rows) + Raul Ruiz CA-25 dedup
 - [x] 149-02-PLAN.md — author 149-verify.sql gate (House-scoped, write-free, USHC-02/03/04/05 + D-04 assertions)
 
 **Wave 2** *(blocked on 149-01)*
+
 - [x] 149-03-PLAN.md — headshots for the 38 new CA candidates (find-headshots conventions)
 
 **Wave 3** *(blocked on 149-01; stance batches, ≤3-concurrent research)*
+
 - [x] 149-04-PLAN.md — stances CA-1..9
 - [x] 149-05-PLAN.md — stances CA-10..18
 - [x] 149-06-PLAN.md — stances CA-19..26 (incl. Ruiz canonical record)
@@ -353,6 +450,7 @@ Plans:
 - [x] 149-10-PLAN.md — stances CA-49..52
 
 **Wave 4** *(blocked on all)*
+
 - [x] 149-11-PLAN.md — run 149-verify.sql green + coordinate-surfacing smoke (≥3 in-district CA House races)
 
 ---
@@ -375,14 +473,17 @@ Plans:
 
 Plans:
 **Wave 1** *(scaffold + gate authoring; parallel)*
+
 - [x] 150-01-PLAN.md — author 2 elections + 64 races (38 TX + 26 NY) on existing House offices (the create-races step CA did not need)
 - [x] 150-02-PLAN.md — author 150-verify.sql gate (per-state TX/NY-scoped; USHC-02/03/04/05 + D-01/D-02/D-03/D-05; NY-partial exclusion)
 
 **Wave 2** *(record reconciliation + race_candidates wiring; TX/NY parallel; blocked on 150-01)*
+
 - [x] 150-03-PLAN.md — TX records + race_candidates (live D-03 dedup: Casar→TX-37 reuse, Allred new, Toth reuse; lost incumbents absent)
 - [x] 150-04-PLAN.md — NY records + race_candidates (lost-primary winners Lander/Avila Chevalier; seed-all minor lines Cohen/Smullen; 24 incumbents reused)
 
 **Wave 3** *(headshots + stances; <=3-concurrent research; blocked on Wave 2)*
+
 - [x] 150-05-PLAN.md — headshots for new TX candidates (shared seed-tx-ny-house-headshots.py)
 - [x] 150-06-PLAN.md — headshots for new NY candidates (reuse shared script)
 - [x] 150-07-PLAN.md — TX-1..10 federal-24 stances (zero incumbents + new challengers)
@@ -392,6 +493,7 @@ Plans:
 - [x] 150-11-PLAN.md — NEW NY candidates federal-24 stances (NY partials left as-is per D-01)
 
 **Wave 4** *(consolidated gate; blocked on all)*
+
 - [x] 150-12-PLAN.md — run 150-verify.sql green + 150-coordinate-smoke.ts (>=3 TX + >=3 NY in-district races surface with challenger)
 
 ---
@@ -411,6 +513,7 @@ Plans:
   3. The FL field is recorded as `provisional` (multiple same-party candidates per district may be present pre-primary by design); the seed does NOT guess or pre-prune the general winner — Aug 18 reconciliation is deferred to Phase 153.
 
 **Plans:** 6 plans, 4 waves — **COMPLETE 2026-06-29** (gate 13/13 PASS + smoke 4/4; gsd-verifier 8/8). 28 races/181 candidates/158 new records; 17 independents = 6 stanced (36 answers, 0 unsourced) + 11 honest-skip, 17 headshot-skip. 138 partisan + 27 incumbents records-only → Phase 153.
+
 - [x] 151-01-PLAN.md — W1: author FL 2026 Statewide General election + create FL-20 office + 28 provisional races (description sentinel) — mig 1115
 - [x] 151-02-PLAN.md — W1: author 151-verify.sql gate (single-state FL '12', provisional-aware, 17-independents-only stance scope, no per-party cap)
 - [x] 151-03-PLAN.md — W2: live dedup reconciliation + insert 158 new records + wire all race_candidates (181 full provisional field, 3 reuse + Cherfilus-NEW) — mig 1116

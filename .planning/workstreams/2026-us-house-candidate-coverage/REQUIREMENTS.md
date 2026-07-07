@@ -12,23 +12,23 @@
 
 ### Field Resolution
 
-- [ ] **USHC3-01**: The verified 2026 ballot field is resolved for all 178 districts across the 38 remaining states — every state classified by primary date (decided vs late-primary); decided states get the confirmed Nov-3 general-ballot field (major-party nominees + ballot-qualified independents/third-party) with every incumbent-not-nominee race explicitly flagged; late-primary states get the full qualified pre-primary field from official filing lists; incumbent map + stance-gap baseline built and collision-free negative `external_id` bands verified per state before any insert.
+- [x] **USHC3-01**: The verified 2026 ballot field is resolved for all 178 districts across the 38 remaining states — every state classified by primary date (decided vs late-primary); decided states get the confirmed Nov-3 general-ballot field (major-party nominees + ballot-qualified independents/third-party) with every incumbent-not-nominee race explicitly flagged; late-primary states get the full qualified pre-primary field from official filing lists; incumbent map + stance-gap baseline built and collision-free negative `external_id` bands verified per state before any insert.
 
 ### Candidate Records
 
-- [ ] **USHC3-02**: Every Wave-3 candidate has exactly one `essentials.politicians` record — incumbents and previously-seeded figures reuse their existing record (0 duplicate politician rows), only genuinely new candidates get new records; party normalized (Democratic, not Democrat); external_ids follow the verified collision-free per-state scheme.
+- [x] **USHC3-02**: Every Wave-3 candidate has exactly one `essentials.politicians` record — incumbents and previously-seeded figures reuse their existing record (0 duplicate politician rows), only genuinely new candidates get new records; party normalized (Democratic, not Democrat); external_ids follow the verified collision-free per-state scheme.
 
 ### Race Wiring (Elections surfacing)
 
-- [ ] **USHC3-03**: Every Wave-3 US House race surfaces on `/elections` for an in-district address via `essentials.races` + `essentials.race_candidates` — `elections` + `races` rows authored first per state (none of the 38 states have pre-seeded 2026 House races), then `race_candidates` with non-null `politician_id`, `candidate_status=active`, incumbents flagged `is_incumbent=true`, never `office_id IS NULL`, party never on the candidate card.
+- [x] **USHC3-03**: Every Wave-3 US House race surfaces on `/elections` for an in-district address via `essentials.races` + `essentials.race_candidates` — `elections` + `races` rows authored first per state (none of the 38 states have pre-seeded 2026 House races), then `race_candidates` with non-null `politician_id`, `candidate_status=active`, incumbents flagged `is_incumbent=true`, never `office_id IS NULL`, party never on the candidate card.
 
 ### Headshots
 
-- [ ] **USHC3-04**: Every newly-seeded Wave-3 candidate has a headshot (find-headshots conventions: Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`; free-license, wrong-person-guarded, documented honest-skips where none found).
+- [x] **USHC3-04**: Every newly-seeded Wave-3 candidate has a headshot (find-headshots conventions: Storage-mirrored 600×750 + `politician_images` row + `photo_origin_url`; free-license, wrong-person-guarded, documented honest-skips where none found).
 
 ### Stances
 
-- [ ] **USHC3-05**: Every newly-seeded Wave-3 candidate has sourced compass stances across the federal 24-topic set — chairs-not-polarity, every answer paired to an `inform.politician_context` row with a real fetched source URL, **0 unsourced**, honest-skip (per-topic or whole-record, gate-pinned with a written search trail) where no documentable evidence, and a mandatory primary-source verification pass before push. Already-stanced incumbents skipped via the stance-gap diagnostic.
+- [x] **USHC3-05**: Every newly-seeded Wave-3 candidate has sourced compass stances across the federal 24-topic set — chairs-not-polarity, every answer paired to an `inform.politician_context` row with a real fetched source URL, **0 unsourced**, honest-skip (per-topic or whole-record, gate-pinned with a written search trail) where no documentable evidence, and a mandatory primary-source verification pass before push. Already-stanced incumbents skipped via the stance-gap diagnostic.
 
 ### Verification
 
@@ -59,11 +59,11 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| USHC3-01 Field Resolution | Phase 160 | Pending |
-| USHC3-02 Candidate Records | Phases 161 (anchor), 162, 163, 164, 165 | Pending |
-| USHC3-03 Race Wiring | Phases 161 (anchor), 162, 163, 164, 165 | Pending |
-| USHC3-04 Headshots | Phases 161 (anchor), 162, 163, 164, 165 | Pending |
-| USHC3-05 Stances | Phases 161 (anchor), 162, 163, 164, 165 | Pending |
+| USHC3-01 Field Resolution | Phase 160 | Complete (2026-07-03) |
+| USHC3-02 Candidate Records | Phases 161 (anchor), 162, 163, 164, 165 | In progress — 161 anchor complete (2026-07-04): AZ/WA/TN/MA, 183 new records |
+| USHC3-03 Race Wiring | Phases 161 (anchor), 162, 163, 164, 165 | In progress — 161 anchor complete (2026-07-04): 37 districts surface (5 severe-TN withheld by design) |
+| USHC3-04 Headshots | Phases 161 (anchor), 162, 163, 164, 165 | In progress — 161 anchor complete (2026-07-04): 167 documented honest-skips |
+| USHC3-05 Stances | Phases 161 (anchor), 162, 163, 164, 165 | In progress — 161 anchor complete (2026-07-04): 0 unsourced, 59 pinned whole-record skips |
 | USHC3-06 Verification Gate | Phase 166 | Pending |
 | USHC3-07 Post-Primary Reconciliation | Phase 167 (date-gated, Aug–Sep 2026) | Pending |
 
