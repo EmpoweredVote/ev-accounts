@@ -1,0 +1,11 @@
+cd,geo_id,full_name,party_from_field,role,decision,assign_external_id,is_incumbent,source
+1,0501,"Eric A. "Rick" Crawford",Republican,R,REUSE,-5001,true,"AR 2026 US House field (AR SoS candidate filings + en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Arkansas); decided general field"
+1,0501,"Terri Yarbrough Green",Democratic,D,NEW,-50101,false,"AR 2026 US House field (AR SoS candidate filings + en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Arkansas); decided general field"
+1,0501,"Steve Parsons",Libertarian,LIB,NEW,-50102,false,"AR 2026 US House field (minor-party/independent filing; AR SoS + Wikipedia); decided general field"
+2,0502,"J. French Hill",Republican,R,REUSE,-5002,true,"AR 2026 US House field (AR SoS candidate filings + en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Arkansas); decided general field"
+2,0502,"Chris Jones",Democratic,D,NEW,-50201,false,"AR 2026 US House field (AR SoS candidate filings + en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Arkansas); decided general field"
+3,0503,"Steve Womack",Republican,R,REUSE,-5003,true,"AR 2026 US House field (AR SoS candidate filings + en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Arkansas); decided general field"
+3,0503,"Robb Ryerse",Democratic,D,NEW,-50301,false,"AR 2026 US House field (AR SoS candidate filings + en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Arkansas); decided general field"
+3,0503,"Bobby Wilson",Libertarian,LIB,NEW,-50302,false,"AR 2026 US House field (minor-party/independent filing; AR SoS + Wikipedia); decided general field"
+4,0504,"Bruce Westerman",Republican,R,REUSE,-5004,true,"AR 2026 US House field (AR SoS candidate filings + en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Arkansas); decided general field"
+4,0504,"James Russell",Democratic,D,NEW,-50401,false,"AR 2026 US House field (AR SoS candidate filings + en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Arkansas); decided general field"

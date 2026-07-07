@@ -1,0 +1,13 @@
+cd,geo_id,full_name,party_from_field,role,decision,assign_external_id,is_incumbent,source
+1,2801,"Trent Kelly",Republican,R,REUSE,-28001,true,"MS 2026 US House field (Clarion-Ledger + MS SoS candidate filings); decided general field"
+1,2801,"Cliff Johnson",Democratic,D,NEW,-280101,false,"MS 2026 US House field (Clarion-Ledger + MS SoS candidate filings); decided general field"
+1,2801,"Johnny Baucom",Libertarian,LIB,NEW,-280102,false,"MS 2026 US House field (minor-party/independent filing; Clarion-Ledger + MS SoS); decided general field"
+2,2802,"Bennie G. Thompson",Democratic,D,REUSE,-28002,true,"MS 2026 US House field (Clarion-Ledger + MS SoS candidate filings); decided general field"
+2,2802,"Ron Eller",Republican,R,NEW,-280201,false,"MS 2026 US House field (Clarion-Ledger + MS SoS candidate filings); decided general field"
+2,2802,"Bennie Foster",Independent,IND,NEW,-280202,false,"MS 2026 US House field (minor-party/independent filing; Clarion-Ledger + MS SoS); decided general field"
+3,2803,"Michael Guest",Republican,R,REUSE,-28003,true,"MS 2026 US House field (Clarion-Ledger + MS SoS candidate filings); decided general field"
+3,2803,"Michael Chiaradio",Democratic,D,NEW,-280301,false,"MS 2026 US House field (Clarion-Ledger + MS SoS candidate filings); decided general field"
+3,2803,"Erik Kiehle",Libertarian,LIB,NEW,-280302,false,"MS 2026 US House field (minor-party/independent filing; Clarion-Ledger + MS SoS); decided general field"
+4,2804,"Mike Ezell",Republican,R,REUSE,-28004,true,"MS 2026 US House field (Clarion-Ledger + MS SoS candidate filings); decided general field"
+4,2804,"Jeffrey Hulum III",Democratic,D,NEW,-280401,false,"MS 2026 US House field (Clarion-Ledger + MS SoS candidate filings); decided general field"
+4,2804,"Carl Boyanton",Independent,IND,NEW,-280402,false,"MS 2026 US House field (minor-party/independent filing; Clarion-Ledger + MS SoS); decided general field"
