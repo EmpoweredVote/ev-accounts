@@ -11,6 +11,8 @@ Compacted (grouped) index — one line per entry group; full detail lives in eac
 
 **IN-8 2026:** Allen-D([file](stance_mary_allen_in08.md))-7/24. Messmer-R-incumbent([file](stance_mark_messmer_in08.md))-10/24-**caught vote-direction error on reverify**(always re-verify outlier votes on multi-amendment bills).
 
+**ID-1 2026:** Peterson-D-3rd-run-vs-Fulcher([file](stance_kaylee_peterson_id01.md))-12/24-kayleeforcongress.com/platform=goldmine(needs Playwright not WebFetch-summarizes-anyway), Ballotpedia needs Playwright too, isidewith-trap reconfirmed(per-issue subpages reveal "ChatGPT Party Research"/no-response behind a misleadingly rich-looking summary grid).
+
 **MN-5 2026 (vs Omar unless noted):** Nagel-R([file](stance_john_nagel_mn05.md))-2/24, Schluter-DFL([file](stance_nate_schluter_mn05.md))-2/24, AlAqidi-R([file](stance_dalia_al_aqidi_mn05.md))-6/24-**isidewith-trap**, McKenzie-DFL-SKIP([file](stance_abena_mckenzie_mn05.md)), Le-DFL([file](stance_julie_trang_le_mn05.md))-4/24, Jackson-I-SKIP([file](stance_develle_jackson_mn05.md))-isidewith-wrong-person, Windhauser-R([file](stance_angie_windhauser_mn05.md))-2/24, Reeves-DFL([file](stance_latonya_reeves_mn05.md))-11/24, Zieska-R-SKIP([file](stance_abbey_zieska_mn05.md)).
 
 **MI-13 (vs Thanedar):** Nykoriak-R([file](stance_tp_nykoriak_mi13.md))-2/24, McKinney-D([file](stance_donavan_mckinney_mi13.md))-12/24, Waters-D([file](stance_mary_waters_mi13.md))-4/24.
@@ -60,3 +62,5 @@ Compacted (grouped) index — one line per entry group; full detail lives in eac
 **AL-2 2026 special GOP primary (Aug 11, 2026; 163-08):** [6 candidates](stance_al2_2026_special_gop_primary.md) — Marques-R-StateRep-Trump-endorsed(6/24), McKee-R-vet(6/24), Harris-R(3/24), Richardson-R-vet(3/24), Matthews-R(2/24), Horn-R(1/24-thinnest). Ballotpedia fully dead; FEC DEMO_KEY exhausted; algop.org = good roster source.
 
 **CO 2026 US House new candidates (163-10):** [9-candidates-50-rows](stance_co_2026_house_163_10.md) — Rutinel/Kiros/Peterson/Dennison/Romero/Laubacher/Killin/Clark/Bennett, 0-unsourced. **Schema flag**: real schema is politician_context(politician_id,topic_id,sources[]), NOT pc.answer_id/pc.source_url. BallotReady Timothy Bennett wrong-person trap (AL city-council homonym).
+
+**MT-02 2026 (vs incumbent Downing):** Miller-D([file](stance_brian_miller_mt02.md))-6/24-thin-but-real-quotes, miller4congress.com root IS the issues page (no /issues subpage), dailymontanan.com Jan-2026 profile = richest single source.
