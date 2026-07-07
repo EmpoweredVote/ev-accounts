@@ -1,0 +1,19 @@
+# WV + ID 165-05 reconciliation. DECIDED fields, NOT PROVISIONAL. WV independent window to 2026-08-03 -> Phase 167. ID multi-party challengers.
+state,cd,geo_id,full_name,party_from_field,decision,external_id,is_incumbent
+WV,1,5401,"Carol D. Miller",Republican,REUSE-INCUMBENT,-54001,true
+WV,1,5401,"Vince George",Democratic,NEW,-540101,false
+WV,1,5401,"Isaiah Rucker",Independent,NEW,-540102,false
+WV,2,5402,"Riley M. Moore",Republican,REUSE-INCUMBENT,-54002,true
+WV,2,5402,"Ace Parsi",Democratic,NEW,-540201,false
+WV,2,5402,"Pat Carney",Independent,NEW,-540202,false
+WV,2,5402,"Chris Whitcomb",Independent,NEW,-540203,false
+ID,1,1601,"Russ Fulcher",Republican,REUSE-INCUMBENT,-16001,true
+ID,1,1601,"Kaylee Peterson",Democratic,NEW,-160101,false
+ID,1,1601,"Brendan Gomez",Constitution,NEW,-160102,false
+ID,1,1601,"Sarah Zabel",Independent,NEW,-160103,false
+ID,2,1602,"Michael K. Simpson",Republican,REUSE-INCUMBENT,-16002,true
+ID,2,1602,"Elinor Gilbreath",Democratic,NEW,-160201,false
+ID,2,1602,"Will Johanson",Libertarian,NEW,-160202,false
+ID,2,1602,"Carta Sierra",Constitution,NEW,-160203,false
+ID,2,1602,"Emre Houser",Independent,NEW,-160204,false
+ID,2,1602,"Tripp Hutchinson",Independent,NEW,-160205,false
