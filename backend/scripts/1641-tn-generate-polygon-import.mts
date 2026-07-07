@@ -126,11 +126,14 @@ async function main() {
     }
 
     const geomJson = JSON.stringify(feature.geometry);
+    // ST_MakeValid + ST_CollectionExtract(…,3): the TNMap feed's district 3 has a
+    // ring self-intersection (caught by 1641-verify.sql L2-ANCHOR on first import);
+    // repair to valid polygonal geometry at insert time, keeping polygons only.
     const result = await pool.query(
       `INSERT INTO essentials.geofence_boundaries
          (geo_id, ocd_id, name, state, mtfcc, geometry, source, imported_at)
        VALUES ($1, NULL, $2, $3, $4,
-         ST_SetSRID(ST_Force2D(ST_GeomFromGeoJSON($5)), 4326),
+         ST_CollectionExtract(ST_MakeValid(ST_SetSRID(ST_Force2D(ST_GeomFromGeoJSON($5)), 4326)), 3),
          $6, now())
        ON CONFLICT (geo_id, mtfcc) DO NOTHING`,
       [geoId, name, STATE_FIPS, MTFCC, geomJson, SOURCE],
