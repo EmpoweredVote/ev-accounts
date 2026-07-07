@@ -21,15 +21,20 @@ const ELECTIONS = stripComments(read('./electionService.ts'));
 
 describe('overlap resolution captures county + school, not just legislative', () => {
   it('resolveOverlappingGeoPairs full-intersect branch includes county (G4020) and school (G54xx)', () => {
-    // The ST_Intersects/NOT ST_Touches branch must cover county + school MTFCCs,
-    // so an area straddling two counties / school districts surfaces ALL of them
-    // (not just the one whose center it contains).
-    const m = BROWSE.match(/ST_Intersects[\s\S]*?ST_Touches[\s\S]*?mtfcc\s+IN\s*\(([^)]*)\)/);
+    // The genuine-interior-overlap branch must cover county + school MTFCCs, so an
+    // area straddling two counties / school districts surfaces ALL of them (not
+    // just the one whose center it contains). Guard is order-independent: the WHERE
+    // conjuncts (mtfcc IN / ST_Intersects / NOT ST_Touches) may be written in any
+    // order — the branch is anchored by G5200, which is unique to this MTFCC list.
+    const m = BROWSE.match(/mtfcc\s+IN\s*\(([^)]*\bG5200\b[^)]*)\)/);
     expect(m).not.toBeNull();
     const list = m![1];
     for (const code of ['G5200', 'G5210', 'G5220', 'G4020', 'G5400', 'G5410', 'G5420']) {
       expect(list).toContain(code);
     }
+    // ...and that branch resolves by real interior overlap, not a boundary touch.
+    expect(BROWSE).toMatch(/public\.ST_Intersects/);
+    expect(BROWSE).toMatch(/AND\s+NOT\s+public\.ST_Touches/);
   });
 
   it('exposes a multi-seed resolver and a government-geofence resolver', () => {
