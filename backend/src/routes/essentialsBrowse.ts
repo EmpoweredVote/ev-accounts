@@ -29,6 +29,7 @@ import {
   getPoliticiansByArea,
   getPoliticiansByGovernmentList,
   getStatewideOfficials,
+  getFederalOfficials,
   getOverlappingGeoIdsForArea,
 } from '../lib/essentialsBrowseService.js';
 import { getElectionsByGeoIds, getElectionsByGovernmentGeoIds } from '../lib/electionService.js';
@@ -209,6 +210,25 @@ router.get('/states/:state/officials', optionalAuth, async (req: Request, res: R
     res.status(200).json(politicians);
   } catch (err) {
     console.error('[GET /essentials/browse/states/:state/officials] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/browse/federal/officials
+// "Browse the United States" — ALL federal-tier officials nationally (US Senate,
+// US House, federal executive incl. President/VP/Cabinet/agencies, federal
+// judiciary). No state/address required. Reciprocal target for Treasury Tracker's
+// federal entity (phase-125 coverage contract).
+// ---------------------------------------------------------------------------
+
+router.get('/federal/officials', optionalAuth, async (_req: Request, res: Response): Promise<void> => {
+  try {
+    const politicians = await getFederalOfficials();
+    res.setHeader('Cache-Control', 'public, max-age=300');
+    res.status(200).json(politicians);
+  } catch (err) {
+    console.error('[GET /essentials/browse/federal/officials] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
