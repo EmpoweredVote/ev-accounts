@@ -146,10 +146,10 @@ async function main() {
     );
     const expectedCounts: Record<string, number> = {
       G4020: 15,  // 15 AZ counties (NO independent cities, unlike VA/NV)
-      G4110: 0,   // SENTINEL — Task 3 dry-run reveals actual count (~91 AZ G4110 municipalities); must match EXPECTED_AZ_MTFCC.place
+      G4110: 91,  // confirmed via read-only shapefile count 2026-07-08 — 91 AZ G4110 municipalities; matches EXPECTED_AZ_MTFCC.place
       G5200: 9,   // 9 AZ congressional districts
       G5210: 30,  // 30 AZ legislative districts (single senator each)
-      G5220: 0,   // SENTINEL — Task 3 dry-run confirms 30 (D-04: 30 legislative-district polygons, NOT 60)
+      G5220: 30,  // confirmed 30 (D-04: 30 legislative-district polygons, NOT 60); matches EXPECTED_AZ_MTFCC.sldl
     };
     const actualCounts: Record<string, number> = {};
     for (const row of countRes.rows) {

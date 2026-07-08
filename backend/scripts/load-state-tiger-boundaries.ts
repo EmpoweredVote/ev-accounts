@@ -1034,8 +1034,8 @@ async function processLayer(
     const EXPECTED_AZ_MTFCC: Record<string, number> = {
       cd119: 9,   // 9 AZ congressional districts
       sldu:  30,  // 30 AZ legislative districts (single senator each)
-      sldl: 0,    // SENTINEL — Task 3 dry-run reveals actual count; per D-04 expect EXACTLY 30 (one polygon per district, shared by 2 house seats — NOT 60)
-      place: 0,   // SENTINEL — Task 3 dry-run reveals actual count; expect ~91 AZ G4110 incorporated municipalities per D-02
+      sldl: 30,   // confirmed via read-only shapefile count 2026-07-08 — 30 AZ G5220 legislative-district polygons (2 house seats per district, one polygon; D-04)
+      place: 91,  // confirmed via read-only shapefile count 2026-07-08 — 91 AZ G4110 incorporated municipalities
       county: 15, // 15 AZ counties; NO independent cities (unlike VA/NV)
     };
     if (layer in EXPECTED_AZ_MTFCC) {
