@@ -42,6 +42,7 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   MD: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   VA: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   NV: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
+  AZ: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   DC: new Set(['sldl']),
 };
 
@@ -95,6 +96,7 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
   MD: ['Baltimore city'],
   VA: ['Alexandria city'],
   NV: ['Las Vegas city', 'Henderson city', 'North Las Vegas city', 'Boulder City city'],
+  AZ: ['Tucson city', 'Oro Valley town', 'Marana town', 'Sahuarita town', 'South Tucson city'],
 };
 
 // STATE_RUN_MAKEVALID: per-state ST_MakeValid layer set (Phase 131 D-07..D-09)
@@ -110,6 +112,7 @@ const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
   MD: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   VA: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   NV: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
+  AZ: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   DC: new Set(['sldl']),
 };
 
@@ -1014,6 +1017,55 @@ async function processLayer(
         throw err;
       }
       console.log(`  [${layer}] NV MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
+  // ── AZ MTFCC pre-flight assertion (Phase 190) ───────────────────────────────
+  // For AZ (state='04'), count records satisfying the same filters as the upsert
+  // pass BEFORE any DB write. Assertion failure is named and fatal.
+  // sldl and place values start at 0 so dry-run MtfccAssertionError reveals actual count.
+  // Plan 01 Task 3 updates these values with the confirmed dry-run counts.
+  //
+  // sldl and sldu TIGER shapefiles are state-scoped (FIPS 04 in filename);
+  // filterByStatefp is false for these layers — no STATEFP filter in pre-flight count.
+  // D-04: AZ has 30 legislative districts, each electing 1 senator + 2 house reps;
+  // TIGER SLDL therefore has 30 polygons (one per district, shared by 2 house seats), NOT 60.
+  if (fipsArg === '04') {
+    const EXPECTED_AZ_MTFCC: Record<string, number> = {
+      cd119: 9,   // 9 AZ congressional districts
+      sldu:  30,  // 30 AZ legislative districts (single senator each)
+      sldl: 0,    // SENTINEL — Task 3 dry-run reveals actual count; per D-04 expect EXACTLY 30 (one polygon per district, shared by 2 house seats — NOT 60)
+      place: 0,   // SENTINEL — Task 3 dry-run reveals actual count; expect ~91 AZ G4110 incorporated municipalities per D-02
+      county: 15, // 15 AZ counties; NO independent cities (unlike VA/NV)
+    };
+    if (layer in EXPECTED_AZ_MTFCC) {
+      const expected = EXPECTED_AZ_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layer === 'place') {
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[AZ MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 04 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] AZ MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
     }
   }
 
