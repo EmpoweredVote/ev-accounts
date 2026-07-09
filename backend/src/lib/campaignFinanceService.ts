@@ -503,7 +503,6 @@ export async function getSummary(
   cycle?: string,
   confidence?: string | null
 ): Promise<{ summary: SummaryResponse; updatedAt: string | null }> {
-  const effectiveCycle = cycle ?? defaultCompletedCycle();
   const confidenceFilter = confidence ?? null;
 
   // Query available cycles
@@ -518,6 +517,11 @@ export async function getSummary(
   );
 
   const availableCycles: string[] = availCycleResult.rows.map((r) => r.election_cycle);
+
+  // Default to the most-recent cycle that actually has data (available_cycles is DESC).
+  // Using the last *completed* even year (defaultCompletedCycle) returns $0 for a
+  // current-term filer whose only data is the in-progress cycle. An explicit ?cycle= wins.
+  const effectiveCycle = cycle ?? availableCycles[0] ?? defaultCompletedCycle();
 
   // Return zero-state when no data found — not 404
   if (availableCycles.length === 0) {
@@ -708,6 +712,24 @@ export async function getSummary(
   return { summary, updatedAt: lastSyncAt };
 }
 
+/**
+ * mostRecentCycleWithData returns the newest election cycle that has confirmed
+ * contributions for a politician, or null if none. Used to default endpoints to a
+ * cycle that actually has data rather than the last completed even year.
+ */
+async function mostRecentCycleWithData(politicianId: string): Promise<string | null> {
+  const r = await pool.query<CycleRow>(
+    `SELECT c.election_cycle
+     FROM transparent_motivations.contributions c
+     JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
+     WHERE ps.essentials_politician_id = $1 AND ps.research_status = 'confirmed'
+     ORDER BY c.election_cycle DESC
+     LIMIT 1`,
+    [politicianId]
+  );
+  return r.rows[0]?.election_cycle ?? null;
+}
+
 // ---------------------------------------------------------------------------
 // getContributions — ported from ContributionsHandler in public_handlers.go
 // ---------------------------------------------------------------------------
@@ -727,7 +749,7 @@ export async function getContributions(
     confidence?: string | null;
   } = {}
 ): Promise<{ response: ContributionsResponse; updatedAt: string | null }> {
-  const effectiveCycle = options.cycle ?? defaultCompletedCycle();
+  const effectiveCycle = options.cycle ?? (await mostRecentCycleWithData(politicianId)) ?? defaultCompletedCycle();
   const confidenceFilter = options.confidence ?? null;
 
   // Clamp limit: default 50, max 100
