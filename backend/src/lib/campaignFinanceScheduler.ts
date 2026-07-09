@@ -146,6 +146,30 @@ export async function releaseLock(key: string): Promise<void> {
   inProcessLocks.delete(key);
 }
 
+/**
+ * renewLock extends the TTL on a lock this process already holds. Used by
+ * long-running jobs (e.g. the historical backfill) that outlive LOCK_TTL_SECONDS
+ * and must keep other FEC consumers (the 6h cron) locked out for their duration.
+ *
+ * Uses SET EX WITHOUT nx — deliberately re-asserts the key. Only call from the
+ * lock holder; a heartbeat every ~TTL/2 keeps the lock alive.
+ */
+export async function renewLock(key: string, ttlSeconds = LOCK_TTL_SECONDS): Promise<void> {
+  const redis = getRedisClient();
+  if (redis !== null) {
+    try {
+      await redis.set(key, '1', { ex: ttlSeconds });
+      return;
+    } catch (err) {
+      console.warn(`[campaignFinanceScheduler] Redis renewLock failed:`, err);
+    }
+  }
+  // In-process fallback: refresh the auto-expiry timer.
+  if (inProcessLocks.get(key)) {
+    inProcessLocks.set(key, true);
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Healthcheck ping — fire-and-forget
 // ---------------------------------------------------------------------------
@@ -548,7 +572,7 @@ export async function runAdapterForSources(sourceIds: string[]): Promise<void> {
 // FEC Scheduled Job — acquires Redis lock, runs FEC, releases lock
 // ---------------------------------------------------------------------------
 
-const FEC_LOCK_KEY = 'campaign-finance:fec-ingest';
+export const FEC_LOCK_KEY = 'campaign-finance:fec-ingest';
 
 /**
  * runFecScheduledJob acquires the Redis lock, runs FEC ingestion for all

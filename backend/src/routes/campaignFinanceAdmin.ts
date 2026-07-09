@@ -57,6 +57,7 @@ import { createFecAdapter } from '../lib/adapters/fecAdapter.js';
 import { normalizeRow } from '../lib/adapters/indianaAdapter.js';
 import { runAdapterForAll } from '../lib/campaignFinanceScheduler.js';
 import { runFecAutoMatch } from '../lib/fecResearch.js';
+import { runFecHistoricalBackfill } from '../lib/fecBackfill.js';
 
 const router = Router();
 
@@ -384,81 +385,47 @@ router.post(
 
 // ---------------------------------------------------------------------------
 // FEC historical backfill route — requireAuth + requireAdmin
-// Iterates cycles from current back to 2010, runs FEC per source per cycle.
-// Non-aborting: per-politician errors logged, continues to next.
-// Idempotent via ON CONFLICT upsert in fecAdapter.
+//
+// Triggers a resumable, cache-driven backfill across every confirmed FEC source's
+// active cycles back to `floor` (default 1980). Runs DETACHED in the background —
+// the job takes hours/days and would blow Render's ~30s HTTP timeout — and holds
+// FEC_LOCK_KEY (with heartbeat) so it never contends with the 6h cron for the
+// shared FEC API key. Resumable via completed ingestion_runs, so a re-trigger
+// after a deploy/restart continues where it stopped.
 // ---------------------------------------------------------------------------
 
-// POST /api/campaign-finance/admin/backfill/fec
+// POST /api/campaign-finance/admin/backfill/fec   body: { floor?: number }
+const backfillFecSchema = z.object({
+  floor: z.number().int().min(1980).max(2100).optional(),
+});
+
 router.post(
   '/admin/backfill/fec',
   requireAuth,
   requireAdmin,
-  async (_req: Request, res: Response): Promise<void> => {
-    try {
-      const sources = await getConfirmedFecSources();
-
-      if (sources.length === 0) {
-        res.status(200).json({
-          status: 'completed_with_warning',
-          message: 'No confirmed FEC sources found',
-          results: [],
-        });
-        return;
-      }
-
-      // Determine current FEC cycle: round up to next even year
-      const now = new Date();
-      const currentYear = now.getFullYear();
-      const currentCycle = currentYear % 2 !== 0 ? currentYear + 1 : currentYear;
-
-      // Iterate from current cycle back to 2010 (inclusive)
-      const cycles: string[] = [];
-      for (let year = currentCycle; year >= 2010; year -= 2) {
-        cycles.push(String(year));
-      }
-
-      type BackfillResult = {
-        politician_source_id: string;
-        cycle: string;
-        status: string;
-        error?: string;
-      };
-
-      const results: BackfillResult[] = [];
-
-      for (const ps of sources) {
-        for (const cycle of cycles) {
-          try {
-            const adapter = createFecAdapter(cycle);
-            await runIngestion(adapter, ps, cycle);
-            results.push({ politician_source_id: ps.id, cycle, status: 'completed' });
-          } catch (err) {
-            // Non-aborting: log error, continue to next source/cycle
-            const errMsg = err instanceof Error ? err.message : String(err);
-            console.error(
-              `[FEC backfill] source=${ps.id} cycle=${cycle} error: ${errMsg}`
-            );
-            results.push({
-              politician_source_id: ps.id,
-              cycle,
-              status: 'failed',
-              error: errMsg,
-            });
-          }
-        }
-      }
-
-      const failedCount = results.filter((r) => r.status === 'failed').length;
-      res.status(200).json({
-        status: failedCount > 0 ? 'completed_with_errors' : 'ok',
-        message: `FEC backfill complete: ${results.length} runs, ${failedCount} errors`,
-        results,
-      });
-    } catch (err) {
-      console.error('[POST /campaign-finance/admin/backfill/fec] error:', err);
-      res.status(500).json({ error: err instanceof Error ? err.message : String(err) });
+  async (req: Request, res: Response): Promise<void> => {
+    const parsed = backfillFecSchema.safeParse(req.body ?? {});
+    if (!parsed.success) {
+      res.status(422).json({ error: parsed.error.message });
+      return;
     }
+    const floor = parsed.data.floor ?? 1980;
+
+    // Fire-and-forget: respond immediately, run to completion in the background.
+    // Errors are logged server-side; the lock guarantees single-consumer execution.
+    void runFecHistoricalBackfill(floor)
+      .then((r) =>
+        console.log(`[FEC backfill] finished: status=${r.status} ok=${r.ok} failed=${r.failed}`)
+      )
+      .catch((err) =>
+        console.error('[FEC backfill] background error:', err instanceof Error ? err.message : String(err))
+      );
+
+    res.status(200).json({
+      status: 'accepted',
+      message: `FEC historical backfill started in background (floor ${floor}). It holds the FEC lock so the cron pauses until it finishes; safe to re-trigger to resume.`,
+      floor,
+    });
   }
 );
 

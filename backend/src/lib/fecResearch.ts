@@ -117,13 +117,22 @@ export function parseFecName(fecName: string): { first: string; last: string } {
   return { first, last };
 }
 
+/** Generational suffixes that must not be mistaken for a last name. */
+const NAME_SUFFIXES = new Set(['jr', 'sr', 'ii', 'iii', 'iv', 'v']);
+
 /**
  * Parse our DB full_name "First [Middle] Last" into { first, last }.
- * Handles suffixes (Jr, Sr, II, III) and compound last names naively
- * by taking first token as first name and last token as last name.
+ * Strips trailing generational suffixes (Jr, Sr, II–V) BEFORE picking the last
+ * token — otherwise "Nicholas J. Begich III" yields last name "iii" and fails to
+ * match the FEC record "BEGICH, NICHOLAS III". Compound last names are handled
+ * naively by taking the first token as first name and last token as last name.
  */
-function parseDbName(fullName: string): { first: string; last: string } {
+export function parseDbName(fullName: string): { first: string; last: string } {
   const tokens = normalize(fullName).split(/\s+/).filter(Boolean);
+  // Strip trailing suffix tokens (keep at least one token as the name).
+  while (tokens.length > 1 && NAME_SUFFIXES.has(tokens[tokens.length - 1]!)) {
+    tokens.pop();
+  }
   if (tokens.length === 0) return { first: '', last: '' };
   if (tokens.length === 1) return { first: '', last: tokens[0]! };
   return { first: tokens[0]!, last: tokens[tokens.length - 1]! };
@@ -133,7 +142,7 @@ function parseDbName(fullName: string): { first: string; last: string } {
 // Match scoring
 // ---------------------------------------------------------------------------
 
-function scoreMatch(politician: UnmatchedPolitician, candidate: FecCandidate): number {
+export function scoreMatch(politician: UnmatchedPolitician, candidate: FecCandidate): number {
   // bioguide is a reliable identifier when both sides have it
   if (
     politician.bioguide_id &&
@@ -269,13 +278,18 @@ async function getUnmatchedFederalPoliticians(): Promise<UnmatchedPolitician[]> 
 
 const sleep = (ms: number): Promise<void> => new Promise(r => setTimeout(r, ms));
 
-export async function runFecAutoMatch(): Promise<AutoMatchSummary> {
+export async function runFecAutoMatch(opts?: { limit?: number }): Promise<AutoMatchSummary> {
   const apiKey = process.env.FEC_API_KEY;
   if (!apiKey) {
     throw new Error('FEC_API_KEY is not set — cannot run auto-match');
   }
 
-  const politicians = await getUnmatchedFederalPoliticians();
+  const allUnmatched = await getUnmatchedFederalPoliticians();
+  // Optional batching: process at most `limit` politicians this call. Because
+  // getUnmatchedFederalPoliticians only returns politicians WITHOUT an fec source,
+  // repeated calls drain the queue — safe to run in successive batches to stay
+  // under the FEC 1,000 req/hr key ceiling.
+  const politicians = opts?.limit != null ? allUnmatched.slice(0, opts.limit) : allUnmatched;
   const results: MatchResult[] = [];
   let autoConfirmed = 0;
   let needsReview = 0;
