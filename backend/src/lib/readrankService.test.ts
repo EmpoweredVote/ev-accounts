@@ -1,10 +1,12 @@
 // src/lib/readrankService.test.ts
 import { vi, describe, it, expect, beforeEach } from 'vitest';
 
-const { mockQuery, mockGetBoundaryBatch, mockGetCountyUnionFrames } = vi.hoisted(() => ({
+const { mockQuery, mockGetBoundaryBatch, mockGetCountyUnionFrames, mockGetStateCountyGeoIds, mockGetCountyNames } = vi.hoisted(() => ({
   mockQuery: vi.fn(),
   mockGetBoundaryBatch: vi.fn(),
   mockGetCountyUnionFrames: vi.fn(),
+  mockGetStateCountyGeoIds: vi.fn(),
+  mockGetCountyNames: vi.fn(),
 }));
 vi.mock('./db.js', () => ({ pool: { query: mockQuery } }));
 vi.mock('./env.js', () => ({
@@ -19,17 +21,29 @@ vi.mock('./env.js', () => ({
 vi.mock('./informBoundaryService.js', () => ({
   getBoundaryBatch: mockGetBoundaryBatch,
   getCountyUnionFrames: mockGetCountyUnionFrames,
+  getStateCountyGeoIds: mockGetStateCountyGeoIds,
+  getCountyNames: mockGetCountyNames,
 }));
 
 import { getPlayableRaces, deriveTierScope, deriveOfficeSeat } from './readrankService.js';
+
+// getPlayableRaces now returns { races, counties }. Existing array-style assertions
+// migrate to this helper.
+async function getPlayableRacesResult(ids?: string[]) {
+  return getPlayableRaces(ids);
+}
 
 beforeEach(() => {
   mockQuery.mockReset();
   mockGetBoundaryBatch.mockReset();
   mockGetCountyUnionFrames.mockReset();
+  mockGetStateCountyGeoIds.mockReset();
+  mockGetCountyNames.mockReset();
   // Default: return an empty map (no geometry) so existing tests are unaffected.
   mockGetBoundaryBatch.mockResolvedValue(new Map());
   mockGetCountyUnionFrames.mockResolvedValue(new Map());
+  mockGetStateCountyGeoIds.mockResolvedValue(new Map());
+  mockGetCountyNames.mockResolvedValue({});
 });
 
 describe('deriveTierScope', () => {
@@ -66,7 +80,7 @@ describe('getPlayableRaces', () => {
       politician_ids: ['p1', 'p2', 'p3'],
     }] });
 
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race).toMatchObject({
       raceId: 'r1', office: 'Mayor', seat: null, state: 'CA',
       candidateCount: 3, topicCount: 5, quoteCount: 24, rankableTopicCount: 4,
@@ -84,7 +98,7 @@ describe('getPlayableRaces', () => {
       candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race).toMatchObject({ tier: 'state', scope: 'statewide' });
     expect(race.boundaryRef).toEqual({ layer: 'G4000', geoid: '18' }); // IN
   });
@@ -98,7 +112,7 @@ describe('getPlayableRaces', () => {
       candidate_count: '2', topic_count: '2', quote_count: '6', rankable_topic_count: '2',
       politician_ids: ['p1', 'p2'],
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.scope).toBe('district');
     expect(race.boundaryRef).toBeNull();
   });
@@ -113,7 +127,7 @@ describe('getPlayableRaces', () => {
       candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.tier).toBe('federal');
     expect(race.boundaryRef).toEqual({ layer: 'G4000', geoid: '18' }); // home state
     expect(race.frameRef).toEqual({ layer: 'G4000', geoid: 'US' });
@@ -128,7 +142,7 @@ describe('getPlayableRaces', () => {
       candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.boundaryRef).toEqual({ layer: 'G4000', geoid: '18' });
     expect(race.frameRef).toBeNull();
   });
@@ -142,7 +156,7 @@ describe('getPlayableRaces', () => {
       candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.boundaryRef).toEqual({ layer: 'G4020', geoid: '18105' });
     expect(race.frameRef).toEqual({ layer: 'G4000', geoid: '18' });
   });
@@ -157,7 +171,7 @@ describe('getPlayableRaces', () => {
       candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.boundaryRef).toEqual({ layer: 'G4110', geoid: '1805860' });
     expect(race.frameRef).toEqual({ layer: 'G4020', geoid: '18105' });
   });
@@ -172,7 +186,7 @@ describe('getPlayableRaces', () => {
       candidate_count: '2', topic_count: '2', quote_count: '6', rankable_topic_count: '2',
       politician_ids: ['p1', 'p2'],
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.frameRef).toEqual({ layer: 'G4110', geoid: '1805860' });
   });
 
@@ -189,7 +203,7 @@ describe('getPlayableRaces', () => {
       candidate_count: '2', topic_count: '1', quote_count: '6', rankable_topic_count: '1',
       politician_ids: ['p1', 'p2'],
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.boundaryRef).toEqual({ layer: 'X0001', geoid: 'ocd-division/country:us/state:ut/county:salt_lake/council_district:5' });
     expect(race.frameRef).toEqual({ layer: 'G4020', geoid: '49035' });
   });
@@ -209,7 +223,7 @@ describe('getPlayableRaces', () => {
     mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
       ['G5210:49013', { bbox: [-112.1, 40.4, -111.7, 40.9], geojson: unionGeom, countyGeoIds: [] }],
     ]));
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.boundaryRef).toMatchObject({ layer: 'G5210', geoid: '49013' });
     expect(race.frameRef).toEqual({
       layer: 'G4020U', geoid: '49013', bbox: [-112.1, 40.4, -111.7, 40.9], geojson: unionGeom,
@@ -227,7 +241,7 @@ describe('getPlayableRaces', () => {
       politician_ids: ['p1', 'p2'],
     }] });
     mockGetCountyUnionFrames.mockResolvedValueOnce(new Map()); // empty — no union
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.frameRef).toEqual({ layer: 'G4000', geoid: '49' }); // UT state outline
   });
 
@@ -241,7 +255,7 @@ describe('getPlayableRaces', () => {
     mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
       ['G5400:1800001', { bbox: [-86.6, 39.0, -86.3, 39.5], geojson: unionGeom, countyGeoIds: ['18105'] }],
     ]));
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.boundaryRef).toMatchObject({ layer: 'G5400', geoid: '1800001' });
     expect(race.frameRef).toEqual({
       layer: 'G4020U', geoid: '1800001', bbox: [-86.6, 39.0, -86.3, 39.5], geojson: unionGeom,
@@ -255,7 +269,7 @@ describe('getPlayableRaces', () => {
       boundary_layer: 'G4040', boundary_geoid: '1899999', frame_layer: null, frame_geoid: null,
     }] });
     mockGetCountyUnionFrames.mockResolvedValueOnce(new Map()); // empty — no union
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.frameRef).toEqual({ layer: 'G4000', geoid: '18' }); // IN state outline (BASE_ROW state)
   });
 
@@ -269,7 +283,7 @@ describe('getPlayableRaces', () => {
       candidate_count: '2', topic_count: '3', quote_count: '6', rankable_topic_count: '2',
       politician_ids: ['p1', 'p2'],
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.office).toBe('Monroe County Commissioner');
     expect(race.seat).toBe('District 1');
   });
@@ -284,7 +298,7 @@ describe('getPlayableRaces', () => {
       candidate_count: '2', topic_count: '3', quote_count: '6', rankable_topic_count: '2',
       politician_ids: ['p1', 'p2'],
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.office).toBe('State Representative');
     expect(race.seat).toBe('District 61');
   });
@@ -298,7 +312,7 @@ describe('getPlayableRaces', () => {
       candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.seat).toBeNull();
   });
 });
@@ -339,7 +353,7 @@ describe('getPlayableRaces — geometry attachment', () => {
       ['G4020:18105', { layer: 'G4020', geoid: '18105', name: 'Monroe County', bbox: [-87.0, 39.0, -86.3, 39.5], geojson: MONROE_GEOM, hasBoundary: true }],
     ]));
 
-    const races = await getPlayableRaces();
+    const { races } = await getPlayableRacesResult();
 
     expect(races).toHaveLength(1);
     expect(races[0].boundaryRef).toMatchObject({
@@ -360,7 +374,7 @@ describe('getPlayableRaces — geometry attachment', () => {
     mockQuery.mockResolvedValueOnce({ rows: [BASE_ROW] });
     mockGetBoundaryBatch.mockRejectedValueOnce(new Error('DB down'));
 
-    const races = await getPlayableRaces();
+    const { races } = await getPlayableRacesResult();
 
     expect(races).toHaveLength(1);
     expect(races[0].boundaryRef).toEqual({ layer: 'G4110', geoid: '1805860' });
@@ -371,7 +385,7 @@ describe('getPlayableRaces — geometry attachment', () => {
     mockQuery.mockResolvedValueOnce({ rows: [BASE_ROW] });
     mockGetBoundaryBatch.mockResolvedValueOnce(new Map()); // empty — nothing found
 
-    const races = await getPlayableRaces();
+    const { races } = await getPlayableRacesResult();
 
     expect(races[0].boundaryRef).toEqual({ layer: 'G4110', geoid: '1805860' });
     expect(races[0].frameRef).toEqual({ layer: 'G4020', geoid: '18105' });
@@ -379,9 +393,42 @@ describe('getPlayableRaces — geometry attachment', () => {
 });
 
 describe('getPlayableRaces — countyGeoIds', () => {
+  it('populates countyGeoIds for a congressional (G5200) district from the union frame', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'r-cd', position_name: 'U.S. House', district_label: 'District 3', district_type: 'NATIONAL_LOWER',
+      election_id: 'e1', election_name: 'General', election_date: null,
+      jurisdiction_level: 'federal', state: 'UT',
+      boundary_layer: 'G5200', boundary_geoid: '4903',
+      frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '3', quote_count: '9', rankable_topic_count: '3',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    mockGetCountyUnionFrames.mockResolvedValue(new Map([
+      ['G5200:4903', { bbox: [0, 0, 1, 1], geojson: { type: 'Polygon', coordinates: [] }, countyGeoIds: ['49035', '49049'] }],
+    ]));
+    const { races } = await getPlayableRacesResult();
+    expect(races[0].countyGeoIds).toEqual(['49035', '49049']);
+  });
+
+  it('leaves a federal race boundary/frame as state-in-US after adding G5200', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'r-cd2', position_name: 'U.S. House', district_label: 'District 1', district_type: 'NATIONAL_LOWER',
+      election_id: 'e1', election_name: 'General', election_date: null,
+      jurisdiction_level: 'federal', state: 'UT',
+      boundary_layer: 'G5200', boundary_geoid: '4901',
+      frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '1', quote_count: '3', rankable_topic_count: '1',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    mockGetCountyUnionFrames.mockResolvedValue(new Map());
+    const { races } = await getPlayableRacesResult();
+    expect(races[0].boundaryRef).toEqual({ layer: 'G4000', geoid: '49' });
+    expect(races[0].frameRef).toEqual({ layer: 'G4000', geoid: 'US' });
+  });
+
   it('uses the G4020 frame geoid for a city race', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [BASE_ROW] }); // G4110 framed to G4020 18105
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.countyGeoIds).toEqual(['18105']);
   });
 
@@ -393,7 +440,7 @@ describe('getPlayableRaces — countyGeoIds', () => {
       boundary_layer: 'G4020', boundary_geoid: '18105',
       frame_layer: null, frame_geoid: null,
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.countyGeoIds).toEqual(['18105']);
   });
 
@@ -408,7 +455,7 @@ describe('getPlayableRaces — countyGeoIds', () => {
     mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
       ['G5210:49021', { bbox: [0, 0, 1, 1], geojson: { type: 'MultiPolygon', coordinates: [] }, countyGeoIds: ['49035', '49045'] }],
     ]));
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.countyGeoIds).toEqual(['49035', '49045']);
   });
 
@@ -420,7 +467,7 @@ describe('getPlayableRaces — countyGeoIds', () => {
       boundary_layer: null, boundary_geoid: null,
       frame_layer: null, frame_geoid: null,
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.countyGeoIds).toEqual([]);
   });
 
@@ -435,7 +482,7 @@ describe('getPlayableRaces — countyGeoIds', () => {
     mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
       ['G5400:1800001', { bbox: [0, 0, 1, 1], geojson: { type: 'MultiPolygon', coordinates: [] }, countyGeoIds: ['18105'] }],
     ]));
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.countyGeoIds).toEqual(['18105']);
   });
 
@@ -450,7 +497,7 @@ describe('getPlayableRaces — countyGeoIds', () => {
     mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
       ['G4040:1899999', { bbox: [0, 0, 1, 1], geojson: { type: 'MultiPolygon', coordinates: [] }, countyGeoIds: ['18105', '18021'] }],
     ]));
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.countyGeoIds).toEqual(['18105', '18021']);
   });
 
@@ -462,7 +509,7 @@ describe('getPlayableRaces — countyGeoIds', () => {
       boundary_layer: 'G5400', boundary_geoid: '1800001',
       frame_layer: null, frame_geoid: null,
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.countyGeoIds).toEqual([]);
   });
 
@@ -473,8 +520,45 @@ describe('getPlayableRaces — countyGeoIds', () => {
       boundary_layer: 'X0001', boundary_geoid: 'WARD3',
       frame_layer: 'G4110', frame_geoid: '1805860',
     }] });
-    const [race] = await getPlayableRaces();
+    const { races: [race] } = await getPlayableRacesResult();
     expect(race.countyGeoIds).toEqual([]);
+  });
+
+  it('assigns every county in the state to a statewide race', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'r-gov', position_name: 'Governor', district_label: null, district_type: null,
+      election_id: 'e1', election_name: 'General', election_date: null,
+      jurisdiction_level: 'state', state: 'UT',
+      boundary_layer: 'G4000', boundary_geoid: '49',
+      frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '4', quote_count: '8', rankable_topic_count: '4',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    mockGetStateCountyGeoIds.mockResolvedValue(new Map([['UT', ['49035', '49049', '49011']]]));
+    const { races } = await getPlayableRacesResult();
+    expect(races[0].scope).toBe('statewide');
+    expect(races[0].countyGeoIds).toEqual(['49035', '49049', '49011']);
+    expect(mockGetStateCountyGeoIds).toHaveBeenCalledWith(['UT']);
+  });
+});
+
+describe('getPlayableRaces — counties name index', () => {
+  it('returns a counties name index covering every referenced GEOID', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'r-gov', position_name: 'Governor', district_label: null, district_type: null,
+      election_id: 'e1', election_name: 'General', election_date: null,
+      jurisdiction_level: 'state', state: 'UT',
+      boundary_layer: 'G4000', boundary_geoid: '49',
+      frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '4', quote_count: '8', rankable_topic_count: '4',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    mockGetStateCountyGeoIds.mockResolvedValue(new Map([['UT', ['49035']]]));
+    mockGetCountyNames.mockResolvedValue({ '49035': 'Salt Lake County' });
+    const { races, counties } = await getPlayableRacesResult();
+    expect(races[0].countyGeoIds).toEqual(['49035']);
+    expect(counties).toEqual({ '49035': 'Salt Lake County' });
+    expect(mockGetCountyNames).toHaveBeenCalledWith(['49035']);
   });
 });
 

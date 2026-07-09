@@ -20,8 +20,8 @@ router.get('/races', async (req: Request, res: Response): Promise<void> => {
     politicianIds = req.query.politician_ids.split(',').map((s) => s.trim()).filter((s) => UUID_RE.test(s));
   }
   try {
-    const races = await getPlayableRaces(politicianIds);
-    res.status(200).json({ races });
+    const { races, counties } = await getPlayableRaces(politicianIds);
+    res.status(200).json({ races, counties });
   } catch (err) {
     console.error('[GET /readrank/races] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });

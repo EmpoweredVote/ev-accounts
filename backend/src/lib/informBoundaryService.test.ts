@@ -3,7 +3,7 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 const { mockQuery } = vi.hoisted(() => ({ mockQuery: vi.fn() }));
 vi.mock('./db.js', () => ({ pool: { query: mockQuery } }));
 
-import { getBoundary, getBoundaryBatch, getCountyUnionFrames } from './informBoundaryService.js';
+import { getBoundary, getBoundaryBatch, getCountyUnionFrames, getStateCountyGeoIds, getCountyNames } from './informBoundaryService.js';
 
 beforeEach(() => mockQuery.mockReset());
 
@@ -132,5 +132,46 @@ describe('getCountyUnionFrames', () => {
     const out = await getCountyUnionFrames([{ layer: 'G5220', geoid: '49021' }]);
 
     expect(out.get('G5220:49021')?.countyGeoIds).toEqual([]);
+  });
+});
+
+describe('getStateCountyGeoIds', () => {
+  it('groups county GEOIDs by USPS state, deduping input states', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [
+      { state: 'CA', geo_id: '06037' },
+      { state: 'CA', geo_id: '06059' },
+      { state: 'UT', geo_id: '49035' },
+    ] });
+    const out = await getStateCountyGeoIds(['CA', 'UT', 'CA']);
+    expect(out.get('CA')).toEqual(['06037', '06059']);
+    expect(out.get('UT')).toEqual(['49035']);
+    const [sql, params] = mockQuery.mock.calls[0];
+    expect(sql).toMatch(/mtfcc = 'G4020'/);
+    expect(params).toEqual([['CA', 'UT']]);
+  });
+
+  it('returns an empty map and runs no query for no states', async () => {
+    const out = await getStateCountyGeoIds([]);
+    expect(out.size).toBe(0);
+    expect(mockQuery).not.toHaveBeenCalled();
+  });
+});
+
+describe('getCountyNames', () => {
+  it('maps county GEOIDs to names, deduping input', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [
+      { geo_id: '06037', name: 'Los Angeles County' },
+      { geo_id: '49035', name: 'Salt Lake County' },
+    ] });
+    const out = await getCountyNames(['06037', '49035', '06037']);
+    expect(out).toEqual({ '06037': 'Los Angeles County', '49035': 'Salt Lake County' });
+    const [sql, params] = mockQuery.mock.calls[0];
+    expect(sql).toMatch(/mtfcc = 'G4020'/);
+    expect(params).toEqual([['06037', '49035']]);
+  });
+
+  it('returns {} and runs no query for no ids', async () => {
+    expect(await getCountyNames([])).toEqual({});
+    expect(mockQuery).not.toHaveBeenCalled();
   });
 });

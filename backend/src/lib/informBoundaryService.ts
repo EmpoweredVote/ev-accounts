@@ -204,3 +204,39 @@ export async function getCountyUnionFrames(
   }
   return result;
 }
+
+/** County (G4020) GEOIDs for each USPS state, keyed by state code. Read-only.
+ *  Used to assign statewide races to every county so they surface in each county view. */
+export async function getStateCountyGeoIds(uspsStates: string[]): Promise<Map<string, string[]>> {
+  const states = [...new Set(uspsStates.filter(Boolean))];
+  if (states.length === 0) return new Map();
+  const { rows } = await pool.query<{ state: string; geo_id: string }>(
+    `SELECT state, geo_id
+       FROM essentials.geofence_boundaries
+      WHERE mtfcc = 'G4020' AND state = ANY($1)
+      ORDER BY geo_id`,
+    [states],
+  );
+  const map = new Map<string, string[]>();
+  for (const r of rows) {
+    const list = map.get(r.state) ?? [];
+    list.push(r.geo_id);
+    map.set(r.state, list);
+  }
+  return map;
+}
+
+/** Display names for county (G4020) GEOIDs. Read-only; labels the browse county picker. */
+export async function getCountyNames(geoIds: string[]): Promise<Record<string, string>> {
+  const ids = [...new Set(geoIds.filter(Boolean))];
+  if (ids.length === 0) return {};
+  const { rows } = await pool.query<{ geo_id: string; name: string }>(
+    `SELECT geo_id, name
+       FROM essentials.geofence_boundaries
+      WHERE mtfcc = 'G4020' AND geo_id = ANY($1)`,
+    [ids],
+  );
+  const out: Record<string, string> = {};
+  for (const r of rows) out[r.geo_id] = r.name;
+  return out;
+}

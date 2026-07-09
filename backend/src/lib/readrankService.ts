@@ -1,7 +1,7 @@
 import crypto from 'node:crypto';
 import { pool } from './db.js';
 import { env } from './env.js';
-import { getBoundaryBatch, getCountyUnionFrames } from './informBoundaryService.js';
+import { getBoundaryBatch, getCountyUnionFrames, getStateCountyGeoIds, getCountyNames } from './informBoundaryService.js';
 import type { BoundaryResult, UnionFrame } from './informBoundaryService.js';
 
 /**
@@ -126,7 +126,7 @@ const MTFCC_SCOPE: Record<string, Scope> = {
 /** Sub-state layers whose overlapping counties (ST_Intersects, via getCountyUnionFrames)
  *  drive BOTH the read-rank county relevance tier (countyGeoIds) and the county-union
  *  visual frame (G4020U): state-leg districts, school districts, townships. */
-const COUNTY_OVERLAP_LAYERS = new Set(['G5210', 'G5220', 'G5400', 'G5410', 'G5420', 'G4040']);
+const COUNTY_OVERLAP_LAYERS = new Set(['G5200', 'G5210', 'G5220', 'G5400', 'G5410', 'G5420', 'G4040']);
 
 /** USPS → 2-digit state FIPS, for the statewide state-outline boundary (mtfcc G4000). */
 const USPS_TO_FIPS: Record<string, string> = {
@@ -257,7 +257,9 @@ export function deriveTierScope(input: {
   return { tier, scope };
 }
 
-export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSummary[]> {
+export async function getPlayableRaces(
+  politicianIds?: string[],
+): Promise<{ races: RaceSummary[]; counties: Record<string, string> }> {
   const { rows } = await pool.query<{
     race_id: string; position_name: string; district_label: string | null; district_type: string | null;
     election_id: string; election_name: string;
@@ -345,12 +347,6 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     if (fips) addRef('G4000', fips);
     addRef('G4000', 'US');
   }
-  let boundaryMap = new Map<string, BoundaryResult>();
-  try {
-    boundaryMap = await getBoundaryBatch(refList);
-  } catch {
-    // graceful degradation — races returned without embedded geometry
-  }
 
   // State-legislative districts frame against the union of counties they overlap
   // (not the whole state), so a small district reads against nearby geography.
@@ -360,15 +356,28 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
       overlapRefs.push({ layer: r.boundary_layer, geoid: r.boundary_geoid });
     }
   }
-  let unionFrameMap = new Map<string, UnionFrame>();
-  try {
-    unionFrameMap = await getCountyUnionFrames(overlapRefs);
-  } catch {
-    // graceful degradation — these races fall back to the state frame below
-  }
+
+  // Statewide races cover the whole state → every county, so they surface in
+  // each county view (not just the state-outline browse level).
+  const statewideStates = [...new Set(
+    rows
+      .filter((r) => deriveTierScope({
+        jurisdiction_level: r.jurisdiction_level, position_name: r.position_name, mtfcc: r.boundary_layer,
+      }).scope === 'statewide' && r.state)
+      .map((r) => r.state as string),
+  )];
+
+  // These three lookups derive their inputs solely from `rows` and don't depend
+  // on one another, so run them concurrently. Each keeps its own graceful
+  // degradation to an empty default — a failure in one must not affect the others.
+  const [boundaryMap, unionFrameMap, stateCountyMap] = await Promise.all([
+    getBoundaryBatch(refList).catch(() => new Map<string, BoundaryResult>()), // races returned without embedded geometry
+    getCountyUnionFrames(overlapRefs).catch(() => new Map<string, UnionFrame>()), // these races fall back to the state frame below
+    getStateCountyGeoIds(statewideStates).catch(() => new Map<string, string[]>()), // statewide races fall back to []
+  ]);
 
   const localSet = new Set(politicianIds ?? []);
-  return rows.map((r) => {
+  const races = rows.map((r) => {
     const { office, seat } = deriveOfficeSeat({
       positionName: r.position_name,
       districtLabel: r.district_label,
@@ -436,6 +445,11 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
       countyGeoIds = uf?.countyGeoIds ?? [];
     }
 
+    // Statewide races cover the whole state → every county, so they surface in each county view.
+    if (scope === 'statewide' && r.state) {
+      countyGeoIds = stateCountyMap.get(r.state) ?? [];
+    }
+
     return {
       raceId: r.race_id,
       office,
@@ -456,6 +470,15 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
       isLocal: localSet.size > 0 && (r.politician_ids ?? []).some((id) => localSet.has(id)),
     };
   });
+
+  const allCountyGeoIds = [...new Set(races.flatMap((r) => r.countyGeoIds))];
+  let counties: Record<string, string> = {};
+  try {
+    counties = await getCountyNames(allCountyGeoIds);
+  } catch {
+    counties = {};
+  }
+  return { races, counties };
 }
 
 // ---------------------------------------------------------------------------
