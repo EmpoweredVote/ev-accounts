@@ -360,6 +360,10 @@ export async function getPoliticiansByArea(
       AND gvb.geo_id = d.geo_id
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
     WHERE p.is_active = true
+      -- Candidate placeholder offices (mig 196) sit on real statewide districts, which
+      -- overlap every area — without this exclusion they leak here even though Step 3
+      -- filters them (the 0fc58bb6 fix missed this query; Talarico/Paxton via Allen, TX).
+      AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
     ORDER BY p.id
   `;
 
@@ -572,6 +576,7 @@ async function fetchDistrictPoliticianRows(geoPairs: GeoPair[]): Promise<Record<
         AND gvb.geo_id = d.geo_id
         AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
       WHERE p.is_active = true
+        AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
       ORDER BY p.id
     `,
     [geoPairs.map((p) => p.geo_id), geoPairs.map((p) => p.mtfcc)]
@@ -638,6 +643,7 @@ export async function getPoliticiansByGovernmentList(
     WHERE g.geo_id = ANY($1)
       AND p.is_active = true
       AND p.is_vacant = false
+      AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
     ORDER BY p.id
   `, [governmentGeoIds]);
 
