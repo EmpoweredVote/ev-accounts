@@ -8,7 +8,7 @@ const { mockQuery, mockConnect, mockClientQuery, mockRelease } = vi.hoisted(() =
 }));
 vi.mock('./db.js', () => ({ pool: { query: mockQuery, connect: mockConnect } }));
 
-import { listReadrankQuotes, selectReadrankQuote, updateReadrankQuote, deleteReadrankQuote } from './readrankQuotesService.js';
+import { listReadrankQuotes, selectReadrankQuote, clearReadrankSelection, updateReadrankQuote, deleteReadrankQuote } from './readrankQuotesService.js';
 
 beforeEach(() => {
   mockQuery.mockReset();
@@ -69,6 +69,24 @@ describe('selectReadrankQuote', () => {
     const sql = mockClientQuery.mock.calls.map((c) => String(c[0]));
     expect(sql).toContain('ROLLBACK');
     expect(mockRelease).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('clearReadrankSelection', () => {
+  it('clears every selected quote in the candidate+topic group (case-insensitive topic)', async () => {
+    mockQuery.mockResolvedValueOnce({ rowCount: 1 });
+    await expect(clearReadrankSelection('pol-1', 'Healthcare')).resolves.toBeUndefined();
+    const call = mockQuery.mock.calls[0];
+    const sql = String(call[0]);
+    expect(sql).toMatch(/UPDATE\s+essentials\.quotes/i);
+    expect(sql).toMatch(/readrank_selected\s*=\s*false/i);
+    expect(sql).toMatch(/lower\(topic_key\)\s*=\s*lower\(\$2\)/i);
+    expect(call[1]).toEqual(['pol-1', 'Healthcare']);
+  });
+
+  it('is idempotent — resolves even when nothing was selected', async () => {
+    mockQuery.mockResolvedValueOnce({ rowCount: 0 });
+    await expect(clearReadrankSelection('pol-1', 'housing')).resolves.toBeUndefined();
   });
 });
 

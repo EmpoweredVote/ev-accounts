@@ -116,6 +116,17 @@ export async function deleteReadrankQuote(quoteId: string): Promise<void> {
   if (!rowCount) throw new Error('Quote not found');
 }
 
+/** Turn a candidate+topic off for Read & Rank by clearing every selected quote in
+ *  that stance group. Idempotent (a no-op when nothing was selected); the partial
+ *  unique index permits zero selected, so this is always schema-legal. */
+export async function clearReadrankSelection(politicianId: string, topicKey: string): Promise<void> {
+  await pool.query(
+    `UPDATE essentials.quotes SET readrank_selected = false
+      WHERE politician_id = $1 AND lower(topic_key) = lower($2)`,
+    [politicianId, topicKey],
+  );
+}
+
 export async function selectReadrankQuote(quoteId: string): Promise<void> {
   const { rows } = await pool.query<{ politician_id: string; topic_key: string; deidentified_text: string | null }>(
     `SELECT politician_id, topic_key, deidentified_text FROM essentials.quotes WHERE id = $1`,

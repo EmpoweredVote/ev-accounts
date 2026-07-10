@@ -16,15 +16,17 @@ vi.mock('../middleware/requireAdmin.js', () => ({
   requireAdmin: (_req: unknown, _res: unknown, next: () => void) => next(),
 }));
 
-const { mockUpdate, mockDelete, mockLogAdminAction } = vi.hoisted(() => ({
+const { mockUpdate, mockDelete, mockClear, mockLogAdminAction } = vi.hoisted(() => ({
   mockUpdate: vi.fn(),
   mockDelete: vi.fn(),
+  mockClear: vi.fn(),
   mockLogAdminAction: vi.fn(),
 }));
 vi.mock('../lib/readrankQuotesService.js', () => ({
   listReadrankPoliticians: vi.fn(),
   listReadrankQuotes: vi.fn(),
   selectReadrankQuote: vi.fn(),
+  clearReadrankSelection: mockClear,
   updateReadrankQuote: mockUpdate,
   deleteReadrankQuote: mockDelete,
 }));
@@ -41,8 +43,39 @@ const UUID = '11111111-1111-1111-1111-111111111111';
 beforeEach(() => {
   mockUpdate.mockReset();
   mockDelete.mockReset();
+  mockClear.mockReset();
   mockLogAdminAction.mockReset();
   mockLogAdminAction.mockResolvedValue(undefined);
+});
+
+describe('PUT /api/admin/readrank-quotes/deselect', () => {
+  it('422 when politician_id is not a uuid', async () => {
+    const res = await request(app).put('/api/admin/readrank-quotes/deselect').send({ politician_id: 'nope', topic_key: 'housing' });
+    expect(res.status).toBe(422);
+    expect(mockClear).not.toHaveBeenCalled();
+  });
+
+  it('422 when topic_key is empty', async () => {
+    const res = await request(app).put('/api/admin/readrank-quotes/deselect').send({ politician_id: UUID, topic_key: '' });
+    expect(res.status).toBe(422);
+    expect(mockClear).not.toHaveBeenCalled();
+  });
+
+  it('200 clears the selection and audit-logs politician_id + topic_key', async () => {
+    mockClear.mockResolvedValue(undefined);
+    const res = await request(app).put('/api/admin/readrank-quotes/deselect').send({ politician_id: UUID, topic_key: 'housing' });
+    expect(res.status).toBe(200);
+    expect(mockClear).toHaveBeenCalledWith(UUID, 'housing');
+    expect(mockLogAdminAction).toHaveBeenCalledWith(
+      'admin-1', 'readrank_quote.deselect', null, expect.objectContaining({ politician_id: UUID, topic_key: 'housing' }),
+    );
+  });
+
+  it('500 when the service throws', async () => {
+    mockClear.mockRejectedValue(new Error('boom'));
+    const res = await request(app).put('/api/admin/readrank-quotes/deselect').send({ politician_id: UUID, topic_key: 'housing' });
+    expect(res.status).toBe(500);
+  });
 });
 
 describe('PATCH /api/admin/readrank-quotes', () => {

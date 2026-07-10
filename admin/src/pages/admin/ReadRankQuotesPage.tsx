@@ -32,6 +32,7 @@ export function ReadRankQuotesPage() {
   const [loadingTopics, setLoadingTopics] = useState(false);
   const [topicsError, setTopicsError] = useState<string | null>(null);
   const [savingId, setSavingId] = useState<string | null>(null);
+  const [savingTopic, setSavingTopic] = useState<string | null>(null);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editForm, setEditForm] = useState({ quoteText: '', deidentifiedText: '', sourceUrl: '', sourceName: '', editorNote: '' });
 
@@ -90,6 +91,21 @@ export function ReadRankQuotesPage() {
     } catch (e) {
       setTopicsError(e instanceof Error ? e.message : 'Failed to select');
     } finally { setSavingId(null); }
+  }
+
+  // Turn a topic off entirely: deselect all quotes in the candidate+topic group.
+  async function clearSelection(topicKey: string) {
+    if (!expandedId) return;
+    setSavingTopic(topicKey); setTopicsError(null);
+    try {
+      await apiFetch('/admin/readrank-quotes/deselect', {
+        method: 'PUT',
+        body: JSON.stringify({ politician_id: expandedId, topic_key: topicKey }),
+      });
+      await refetchTopics(expandedId);
+    } catch (e) {
+      setTopicsError(e instanceof Error ? e.message : 'Failed to clear selection');
+    } finally { setSavingTopic(null); }
   }
 
   function startEdit(q: AdminQuote) {
@@ -218,7 +234,19 @@ export function ReadRankQuotesPage() {
                 )}
                 {topics?.map((t) => (
                   <section key={t.topicKey} className="mt-3 mb-4">
-                    <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-2">{t.topicKey}</h3>
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{t.topicKey}</h3>
+                      {t.quotes.some((q) => q.readrankSelected) && (
+                        <button
+                          className="text-xs text-gray-500 dark:text-gray-400 hover:text-ev-red hover:underline disabled:opacity-50"
+                          disabled={savingTopic === t.topicKey}
+                          onClick={() => clearSelection(t.topicKey)}
+                          title="Turn this topic off for Read &amp; Rank — deselect all quotes"
+                        >
+                          {savingTopic === t.topicKey ? 'Clearing…' : 'Clear selection'}
+                        </button>
+                      )}
+                    </div>
                     <ul className="space-y-2">
                       {t.quotes.map((q) => (
                         <li key={q.id} className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 flex gap-3 items-start bg-white dark:bg-gray-900">

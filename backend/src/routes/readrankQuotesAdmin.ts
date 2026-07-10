@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
 import { logAdminAction } from '../lib/adminService.js';
-import { listReadrankPoliticians, listReadrankQuotes, selectReadrankQuote, updateReadrankQuote, deleteReadrankQuote } from '../lib/readrankQuotesService.js';
+import { listReadrankPoliticians, listReadrankQuotes, selectReadrankQuote, clearReadrankSelection, updateReadrankQuote, deleteReadrankQuote } from '../lib/readrankQuotesService.js';
 
 const router = Router();
 router.use(requireAuth, requireAdmin);
@@ -61,6 +61,30 @@ router.put('/select', async (req: Request, res: Response): Promise<void> => {
     const code = /not found/i.test(msg) ? 404 : /de-identified/i.test(msg) ? 422 : 500;
     if (code === 500) console.error('[PUT /admin/readrank-quotes/select] error:', err);
     res.status(code).json({ error: msg });
+  }
+});
+
+const deselectBody = z.object({ politician_id: z.string().uuid(), topic_key: z.string().min(1) });
+
+// PUT /api/admin/readrank-quotes/deselect — turn a candidate+topic off (clear its selection)
+router.put('/deselect', async (req: Request, res: Response): Promise<void> => {
+  const parsed = deselectBody.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({ error: 'politician_id (uuid) and topic_key are required' });
+    return;
+  }
+  try {
+    await clearReadrankSelection(parsed.data.politician_id, parsed.data.topic_key);
+    await logAdminAction(
+      (req as AuthenticatedRequest).userId,
+      'readrank_quote.deselect',
+      null,
+      { politician_id: parsed.data.politician_id, topic_key: parsed.data.topic_key },
+    );
+    res.status(200).json({ ok: true });
+  } catch (err) {
+    console.error('[PUT /admin/readrank-quotes/deselect] error:', err);
+    res.status(500).json({ error: 'Failed to clear selection' });
   }
 });
 
