@@ -34,7 +34,13 @@ const PILOT_STATES = ['CA', 'IN'];
 const DEFAULT_FLOOR = 1980;
 const SLEEP_BETWEEN_PAIRS_MS = 3000;
 const CYCLE_FETCH_SLEEP_MS = 1500;
-const HEARTBEAT_MS = 5 * 60 * 1000; // renew lock every 5 min (TTL is 10 min)
+// Short lock TTL with a fast heartbeat. The heartbeat renews well within the TTL
+// during a live run (even a slow ~150s source run gets 3+ renewals), but if the
+// process dies the orphaned lock expires in ≤BACKFILL_LOCK_TTL_S instead of the
+// global 600s — so a crash-then-reboot resumes quickly instead of being blocked
+// by its own dead lock for up to 10 minutes.
+const BACKFILL_LOCK_TTL_S = 120;
+const HEARTBEAT_MS = 45_000;
 
 const sleep = (ms: number): Promise<void> => new Promise((r) => setTimeout(r, ms));
 
@@ -179,14 +185,14 @@ export async function runFecHistoricalBackfill(floorYear = DEFAULT_FLOOR): Promi
   ok: number;
   failed: number;
 }> {
-  const lock = await acquireLock(FEC_LOCK_KEY);
+  const lock = await acquireLock(FEC_LOCK_KEY, BACKFILL_LOCK_TTL_S);
   if (!lock) {
     console.log('[fecBackfill] FEC lock held (cron or another backfill running) — skipping');
     return { status: 'skipped_locked', ok: 0, failed: 0 };
   }
 
   const heartbeat = setInterval(() => {
-    renewLock(FEC_LOCK_KEY).catch((e) =>
+    renewLock(FEC_LOCK_KEY, BACKFILL_LOCK_TTL_S).catch((e) =>
       console.warn('[fecBackfill] lock heartbeat failed:', e instanceof Error ? e.message : String(e))
     );
   }, HEARTBEAT_MS);
@@ -258,29 +264,45 @@ export async function countPendingBackfillPairs(floorYear = DEFAULT_FLOOR): Prom
   return Number(r.rows[0]?.n ?? 0);
 }
 
+const AUTORESUME_RETRY_MS = 60_000;
+const AUTORESUME_MAX_ATTEMPTS = 120; // ~2h of retry budget for lock-contended cycles
+
 /**
  * maybeResumeBackfillOnBoot — called once at server startup. When
- * FEC_BACKFILL_AUTORESUME=1 and pending pairs remain, it launches the backfill
- * (detached) after a short delay so a dyno restart automatically re-kicks the job.
- * The FEC lock makes this safe if the cron or another instance is already running.
- * Turn the env flag off once the historical backfill is complete.
+ * FEC_BACKFILL_AUTORESUME=1 and pending pairs remain, it drives the backfill to
+ * completion across dyno restarts.
+ *
+ * CRITICAL: it RETRIES rather than firing once. On a crash-then-reboot the dead
+ * process's FEC lock can linger in Redis until its TTL expires; a single attempt
+ * would hit that stale lock, get skipped_locked, and give up. Retrying every
+ * AUTORESUME_RETRY_MS lets the next attempt acquire once the orphan expires (or
+ * once the cron releases). Also re-runs after a 'completed' that still left failed
+ * pairs pending (transient 429/timeout). Exits when no pending pairs remain.
  */
 export function maybeResumeBackfillOnBoot(floorYear = DEFAULT_FLOOR): void {
   if (process.env.FEC_BACKFILL_AUTORESUME !== '1') return;
-  setTimeout(() => {
-    void (async () => {
-      try {
-        const pending = await countPendingBackfillPairs(floorYear);
-        if (pending === 0) {
-          console.log('[fecBackfill] autoresume: no pending pairs — nothing to do');
-          return;
-        }
-        console.log(`[fecBackfill] autoresume: ${pending} pending pairs — starting backfill (floor ${floorYear})`);
-        const r = await runFecHistoricalBackfill(floorYear);
-        console.log(`[fecBackfill] autoresume finished: status=${r.status} ok=${r.ok} failed=${r.failed}`);
-      } catch (err) {
-        console.error('[fecBackfill] autoresume error:', err instanceof Error ? err.message : String(err));
+  setTimeout(() => { void autoResumeLoop(floorYear); }, AUTORESUME_DELAY_MS);
+}
+
+async function autoResumeLoop(floorYear: number): Promise<void> {
+  for (let attempt = 1; attempt <= AUTORESUME_MAX_ATTEMPTS; attempt++) {
+    try {
+      const pending = await countPendingBackfillPairs(floorYear);
+      if (pending === 0) {
+        console.log('[fecBackfill] autoresume: no pending pairs — backfill complete, stopping loop');
+        return;
       }
-    })();
-  }, AUTORESUME_DELAY_MS);
+      console.log(`[fecBackfill] autoresume attempt ${attempt}/${AUTORESUME_MAX_ATTEMPTS}: ${pending} pending (floor ${floorYear})`);
+      const r = await runFecHistoricalBackfill(floorYear);
+      if (r.status === 'skipped_locked') {
+        console.log(`[fecBackfill] autoresume: lock held — retry in ${AUTORESUME_RETRY_MS / 1000}s`);
+      } else {
+        console.log(`[fecBackfill] autoresume pass done: ok=${r.ok} failed=${r.failed}`);
+      }
+    } catch (err) {
+      console.error('[fecBackfill] autoresume error:', err instanceof Error ? err.message : String(err));
+    }
+    await sleep(AUTORESUME_RETRY_MS);
+  }
+  console.warn('[fecBackfill] autoresume: max attempts reached — stopping (re-deploy or manual trigger to continue)');
 }
