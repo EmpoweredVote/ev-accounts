@@ -26,11 +26,12 @@ vi.mock('./informBoundaryService.js', () => ({
 }));
 
 import { getPlayableRaces, deriveTierScope, deriveOfficeSeat } from './readrankService.js';
+import type { JurisdictionGeoIds } from './essentialsService.js';
 
 // getPlayableRaces now returns { races, counties }. Existing array-style assertions
 // migrate to this helper.
-async function getPlayableRacesResult(ids?: string[]) {
-  return getPlayableRaces(ids);
+async function getPlayableRacesResult(ids?: string[], jurisdiction?: JurisdictionGeoIds) {
+  return getPlayableRaces(ids, jurisdiction);
 }
 
 beforeEach(() => {
@@ -582,6 +583,76 @@ describe('getPlayableRaces — counties name index', () => {
     expect(races[0].countyGeoIds).toEqual(['49035']);
     expect(counties).toEqual({ '49035': 'Salt Lake County' });
     expect(mockGetCountyNames).toHaveBeenCalledWith(['49035']);
+  });
+});
+
+describe('getPlayableRaces — geographic isLocal', () => {
+  function congressionalRow(overrides: Partial<Record<string, unknown>> = {}) {
+    return {
+      race_id: 'r-cd', position_name: 'US Representative', district_label: 'District 9', district_type: 'NATIONAL_LOWER',
+      election_id: 'e1', election_name: 'IN 2026', election_date: null,
+      jurisdiction_level: 'federal', state: 'IN',
+      boundary_layer: 'G5200', boundary_geoid: '1809',
+      frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '3', quote_count: '6', rankable_topic_count: '3',
+      politician_ids: ['p1', 'p2'],
+      ...overrides,
+    };
+  }
+
+  it('is isLocal when the user jurisdiction congressional GEOID matches the race boundary_geoid, even with no roster overlap', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [congressionalRow()] });
+    const jurisdiction: JurisdictionGeoIds = {
+      congressional: '1809', state_senate: null, state_house: null, county: null, school_district: null,
+    };
+    const { races: [race] } = await getPlayableRacesResult([], jurisdiction);
+    expect(race.isLocal).toBe(true);
+  });
+
+  it('is NOT isLocal when the user jurisdiction congressional GEOID does not match the race boundary_geoid', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [congressionalRow()] });
+    const jurisdiction: JurisdictionGeoIds = {
+      congressional: '1801', state_senate: null, state_house: null, county: null, school_district: null,
+    };
+    const { races: [race] } = await getPlayableRacesResult([], jurisdiction);
+    expect(race.isLocal).toBe(false);
+  });
+
+  it('falls back to roster match when geography does not resolve (no jurisdiction)', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [congressionalRow()] });
+    const { races: [race] } = await getPlayableRacesResult(['p2']);
+    expect(race.isLocal).toBe(true);
+  });
+
+  it('a statewide race (no district boundary_geoid) is not geo-matched and relies on roster', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'r-gov', position_name: 'Governor', district_label: null, district_type: null,
+      election_id: 'e2', election_name: 'IN 2026', election_date: null,
+      jurisdiction_level: 'state', state: 'IN',
+      boundary_layer: null, boundary_geoid: null,
+      frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    const jurisdiction: JurisdictionGeoIds = {
+      congressional: '1809', state_senate: null, state_house: null, county: null, school_district: null,
+    };
+    // No roster overlap -> not local even though a jurisdiction is present (statewide has no district geoid to match).
+    const { races: [race] } = await getPlayableRacesResult([], jurisdiction);
+    expect(race.isLocal).toBe(false);
+
+    // Roster overlap -> local via fallback.
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'r-gov', position_name: 'Governor', district_label: null, district_type: null,
+      election_id: 'e2', election_name: 'IN 2026', election_date: null,
+      jurisdiction_level: 'state', state: 'IN',
+      boundary_layer: null, boundary_geoid: null,
+      frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    const { races: [race2] } = await getPlayableRacesResult(['p1'], jurisdiction);
+    expect(race2.isLocal).toBe(true);
   });
 });
 

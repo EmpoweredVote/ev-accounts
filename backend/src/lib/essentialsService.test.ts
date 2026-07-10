@@ -4,7 +4,7 @@ import { vi, describe, it, expect } from 'vitest';
 vi.mock('./db.js', () => ({ pool: { query: vi.fn() } }));
 vi.mock('./geocodingService.js', () => ({ geocodeAddress: vi.fn(), GeocodingError: class GeocodingError extends Error {} }));
 
-import { pickCountyFromDistrictRows } from './essentialsService.js';
+import { pickCountyFromDistrictRows, pickJurisdictionFromDistrictRows } from './essentialsService.js';
 
 describe('pickCountyFromDistrictRows', () => {
   it('returns geoid + name from the G4020 row', () => {
@@ -50,5 +50,47 @@ describe('pickCountyFromDistrictRows', () => {
       { mtfcc: 'G4020', district_type: 'COUNTY', geo_id: '49035', district_label: 'Salt Lake County' },
     ];
     expect(pickCountyFromDistrictRows(rows)).toEqual({ geoid: '49035', name: 'Salt Lake County' });
+  });
+});
+
+describe('pickJurisdictionFromDistrictRows', () => {
+  it('extracts each jurisdiction field from its matching district_type row', () => {
+    const rows = [
+      { district_type: 'NATIONAL_LOWER', geo_id: '1809' },
+      { district_type: 'STATE_UPPER', geo_id: '1840' },
+      { district_type: 'STATE_LOWER', geo_id: '1862' },
+      { district_type: 'COUNTY', geo_id: '18105' },
+      { district_type: 'SCHOOL', geo_id: '1802220' },
+    ];
+    expect(pickJurisdictionFromDistrictRows(rows)).toEqual({
+      congressional: '1809',
+      state_senate: '1840',
+      state_house: '1862',
+      county: '18105',
+      school_district: '1802220',
+    });
+  });
+
+  it('returns null for each field with no matching row', () => {
+    expect(pickJurisdictionFromDistrictRows([])).toEqual({
+      congressional: null,
+      state_senate: null,
+      state_house: null,
+      county: null,
+      school_district: null,
+    });
+  });
+
+  it('falls back to a JUDICIAL row for county when no COUNTY row is present', () => {
+    const rows = [{ district_type: 'JUDICIAL', geo_id: '18105' }];
+    expect(pickJurisdictionFromDistrictRows(rows).county).toBe('18105');
+  });
+
+  it('prefers a COUNTY row over a JUDICIAL row sharing the geoid', () => {
+    const rows = [
+      { district_type: 'JUDICIAL', geo_id: '18105' },
+      { district_type: 'COUNTY', geo_id: '18105' },
+    ];
+    expect(pickJurisdictionFromDistrictRows(rows).county).toBe('18105');
   });
 });

@@ -116,6 +116,7 @@ router.post('/search', optionalAuth, async (req: Request, res: Response): Promis
       politicians: result.politicians,
       tribal_land: result.tribal_land ?? { on_reservation: false },
       county: result.county ?? null,
+      jurisdiction: result.jurisdictionGeoIds,
     });
   } catch (err: unknown) {
     const code = (err as { code?: string }).code;

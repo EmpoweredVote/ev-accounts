@@ -3,6 +3,7 @@ import { pool } from './db.js';
 import { env } from './env.js';
 import { getBoundaryBatch, getCountyUnionFrames, getStateCountyGeoIds, getCountyNames } from './informBoundaryService.js';
 import type { BoundaryResult, UnionFrame } from './informBoundaryService.js';
+import type { JurisdictionGeoIds } from './essentialsService.js';
 
 /**
  * Read & Rank — blind candidate-match election tool.
@@ -173,6 +174,32 @@ const LEGISLATIVE_OFFICE: Record<string, string> = {
   NATIONAL_UPPER: 'US Senator',
 };
 
+/** Maps a race's district_type to the JurisdictionGeoIds field carrying the user's
+ *  resolved GEOID for that same district type. Statewide/federal-statewide types
+ *  (NATIONAL_UPPER, NATIONAL_EXEC, STATE_EXEC, etc.) intentionally have no entry —
+ *  those races have no district geoid to geo-match and rely on the roster fallback. */
+const DISTRICT_TYPE_TO_JURISDICTION_FIELD: Record<string, keyof JurisdictionGeoIds> = {
+  NATIONAL_LOWER: 'congressional',
+  STATE_UPPER: 'state_senate',
+  STATE_LOWER: 'state_house',
+  COUNTY: 'county',
+  JUDICIAL: 'county',
+  SCHOOL: 'school_district',
+};
+
+/** Resolve the user's jurisdiction GEOID for a race's district_type, or null when
+ *  the jurisdiction is unresolved, the district_type doesn't map to a jurisdiction
+ *  field, or the user's jurisdiction has no value for that field. */
+function userGeoIdForType(
+  jurisdiction: JurisdictionGeoIds | undefined,
+  districtType: string | null,
+): string | null {
+  if (!jurisdiction || !districtType) return null;
+  const field = DISTRICT_TYPE_TO_JURISDICTION_FIELD[districtType];
+  if (!field) return null;
+  return jurisdiction[field];
+}
+
 const WORD_TO_NUM: Record<string, number> = {
   first: 1, second: 2, third: 3, fourth: 4, fifth: 5, sixth: 6, seventh: 7, eighth: 8,
   ninth: 9, tenth: 10, eleventh: 11, twelfth: 12, thirteenth: 13, fourteenth: 14,
@@ -270,6 +297,7 @@ export function deriveTierScope(input: {
 
 export async function getPlayableRaces(
   politicianIds?: string[],
+  jurisdiction?: JurisdictionGeoIds,
 ): Promise<{ races: RaceSummary[]; counties: Record<string, string> }> {
   const { rows } = await pool.query<{
     race_id: string; position_name: string; district_label: string | null; district_type: string | null;
@@ -463,6 +491,14 @@ export async function getPlayableRaces(
       countyGeoIds = stateCountyMap.get(r.state) ?? [];
     }
 
+    // isLocal = geographic district match (primary) OR candidate-roster match (fallback).
+    // Geographic: the user's resolved jurisdiction GEOID for this race's district_type
+    // equals the race's own boundary_geoid. Statewide/federal-statewide races have no
+    // district geoid to match and rely entirely on the roster fallback.
+    const userGeoId = userGeoIdForType(jurisdiction, r.district_type);
+    const geoMatch = userGeoId != null && userGeoId === r.boundary_geoid;
+    const rosterMatch = localSet.size > 0 && (r.politician_ids ?? []).some((id) => localSet.has(id));
+
     return {
       raceId: r.race_id,
       office,
@@ -480,7 +516,7 @@ export async function getPlayableRaces(
       boundaryRef,
       frameRef,
       countyGeoIds,
-      isLocal: localSet.size > 0 && (r.politician_ids ?? []).some((id) => localSet.has(id)),
+      isLocal: geoMatch || rosterMatch,
     };
   });
 

@@ -2,6 +2,7 @@ import { Router } from 'express';
 import type { Request, Response } from 'express';
 import { z } from 'zod';
 import { getPlayableRaces, getRaceBlindQuotes, computeRaceMatch } from '../lib/readrankService.js';
+import type { JurisdictionGeoIds } from '../lib/essentialsService.js';
 
 /**
  * Read & Rank router — blind candidate-match election tool.
@@ -13,14 +14,34 @@ const router = Router();
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
-// GET /api/readrank/races[?politician_ids=uuid,uuid]
+// GET /api/readrank/races[?politician_ids=uuid,uuid][&cd=..&sldu=..&sldl=..&county=..&school=..]
 router.get('/races', async (req: Request, res: Response): Promise<void> => {
   let politicianIds: string[] | undefined;
   if (typeof req.query.politician_ids === 'string' && req.query.politician_ids.trim()) {
     politicianIds = req.query.politician_ids.split(',').map((s) => s.trim()).filter((s) => UUID_RE.test(s));
   }
+
+  // Optional jurisdiction GEOIDs (from the resolved address search) drive geographic
+  // isLocal matching. Absent entirely -> undefined -> behavior unchanged (roster-only).
+  const strParam = (v: unknown): string | null => (typeof v === 'string' && v.trim() ? v.trim() : null);
+  const cd = strParam(req.query.cd);
+  const sldu = strParam(req.query.sldu);
+  const sldl = strParam(req.query.sldl);
+  const county = strParam(req.query.county);
+  const school = strParam(req.query.school);
+  let jurisdiction: JurisdictionGeoIds | undefined;
+  if (cd || sldu || sldl || county || school) {
+    jurisdiction = {
+      congressional: cd,
+      state_senate: sldu,
+      state_house: sldl,
+      county,
+      school_district: school,
+    };
+  }
+
   try {
-    const { races, counties } = await getPlayableRaces(politicianIds);
+    const { races, counties } = await getPlayableRaces(politicianIds, jurisdiction);
     res.status(200).json({ races, counties });
   } catch (err) {
     console.error('[GET /readrank/races] error:', err);

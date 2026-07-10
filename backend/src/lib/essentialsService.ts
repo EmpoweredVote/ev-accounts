@@ -162,6 +162,19 @@ export interface AddressSearchResult {
   tribal_land: { on_reservation: boolean; name?: string };
   /** User's home county (5-digit FIPS GEOID + name), or null when unresolved. */
   county: { geoid: string; name: string } | null;
+  /**
+   * Resolved jurisdiction GEOIDs (congressional/state senate/state house/county/school),
+   * derived from the same covering-district rows `county` and the single-district
+   * `jurisdiction` field above are built from. Each field is null when that district
+   * type wasn't among the covering rows. Consumed by read-rank for geographic
+   * `isLocal` matching (see readrankService.getPlayableRaces).
+   *
+   * Named distinctly from `jurisdiction` above (an unrelated, pre-existing field of a
+   * different shape carrying a single district) to avoid a naming collision — routes
+   * are free to expose this under a `jurisdiction` JSON key of their own since JSON
+   * keys aren't constrained by this TS interface's field name.
+   */
+  jurisdictionGeoIds: JurisdictionGeoIds;
 }
 
 export interface PoliticianRecord {
@@ -585,6 +598,25 @@ export function pickCountyFromDistrictRows(
   return { geoid: row.geo_id, name: row.name ?? row.district_label ?? '' };
 }
 
+/** Pick the user's resolved jurisdiction GEOIDs from the geofence district rows
+ *  (the same rows pickCountyFromDistrictRows reads). Each field is the geo_id of
+ *  the row whose district_type maps to it, or null when no such row is present.
+ *  county prefers a COUNTY row, falling back to JUDICIAL (mirrors
+ *  pickCountyFromDistrictRows' COUNTY-first preference for county-level courts
+ *  sharing the same geo_id). */
+export function pickJurisdictionFromDistrictRows(
+  rows: Array<{ district_type?: string | null; geo_id?: string | null }>,
+): JurisdictionGeoIds {
+  const geoIdForType = (type: string): string | null => rows.find((r) => r.district_type === type)?.geo_id || null;
+  return {
+    congressional: geoIdForType('NATIONAL_LOWER'),
+    state_senate: geoIdForType('STATE_UPPER'),
+    state_house: geoIdForType('STATE_LOWER'),
+    county: geoIdForType('COUNTY') ?? geoIdForType('JUDICIAL'),
+    school_district: geoIdForType('SCHOOL'),
+  };
+}
+
 export async function getRepresentativesByAddress(
   address: string,
   { includeChallengers = false }: { includeChallengers?: boolean } = {}
@@ -763,6 +795,9 @@ export async function getRepresentativesByAddress(
       matchedAddress,
       tribal_land: tribal_land ?? { on_reservation: false },
       county: null,
+      jurisdictionGeoIds: {
+        congressional: null, state_senate: null, state_house: null, county: null, school_district: null,
+      },
     };
   }
 
@@ -830,7 +865,8 @@ export async function getRepresentativesByAddress(
   const county = pickCountyFromDistrictRows(
     districtResult.rows.map((r) => ({ ...r, name: r.geofence_name })),
   );
-  return { politicians, jurisdiction, matchedAddress, tribal_land, county };
+  const jurisdictionGeoIds = pickJurisdictionFromDistrictRows(districtResult.rows);
+  return { politicians, jurisdiction, matchedAddress, tribal_land, county, jurisdictionGeoIds };
 }
 
 // ---------------------------------------------------------------------------
