@@ -1,4 +1,5 @@
 import { pool } from './db.js';
+import { FIPS_TO_USPS, USPS_TO_FIPS } from './usStateCodes.js';
 
 export interface BoundaryResult {
   hasBoundary: true;
@@ -205,17 +206,6 @@ export async function getCountyUnionFrames(
   return result;
 }
 
-/** USPS → 2-digit state FIPS. essentials.geofence_boundaries.state stores FIPS, not USPS. */
-const USPS_TO_FIPS: Record<string, string> = {
-  AL: '01', AK: '02', AZ: '04', AR: '05', CA: '06', CO: '08', CT: '09', DE: '10',
-  DC: '11', FL: '12', GA: '13', HI: '15', ID: '16', IL: '17', IN: '18', IA: '19',
-  KS: '20', KY: '21', LA: '22', ME: '23', MD: '24', MA: '25', MI: '26', MN: '27',
-  MS: '28', MO: '29', MT: '30', NE: '31', NV: '32', NH: '33', NJ: '34', NM: '35',
-  NY: '36', NC: '37', ND: '38', OH: '39', OK: '40', OR: '41', PA: '42', RI: '44',
-  SC: '45', SD: '46', TN: '47', TX: '48', UT: '49', VT: '50', VA: '51', WA: '53',
-  WV: '54', WI: '55', WY: '56',
-};
-
 /** County (G4020) GEOIDs for each USPS state, keyed by state code. Read-only.
  *  Used to assign statewide races to every county so they surface in each county view.
  *  The `state` column in geofence_boundaries is 2-digit FIPS, so USPS input is mapped
@@ -224,12 +214,10 @@ export async function getStateCountyGeoIds(uspsStates: string[]): Promise<Map<st
   const states = [...new Set(uspsStates.filter(Boolean))];
   if (states.length === 0) return new Map();
 
-  const fipsToUsps = new Map<string, string>();
   const fipsCodes: string[] = [];
   for (const usps of states) {
     const fips = USPS_TO_FIPS[usps];
     if (!fips) continue; // unknown state code — skip rather than query garbage
-    fipsToUsps.set(fips, usps);
     fipsCodes.push(fips);
   }
   if (fipsCodes.length === 0) return new Map();
@@ -243,7 +231,7 @@ export async function getStateCountyGeoIds(uspsStates: string[]): Promise<Map<st
   );
   const map = new Map<string, string[]>();
   for (const r of rows) {
-    const usps = fipsToUsps.get(r.state);
+    const usps = FIPS_TO_USPS[r.state];
     if (!usps) continue;
     const list = map.get(usps) ?? [];
     list.push(r.geo_id);

@@ -51,6 +51,33 @@ describe('pickCountyFromDistrictRows', () => {
     ];
     expect(pickCountyFromDistrictRows(rows)).toEqual({ geoid: '49035', name: 'Salt Lake County' });
   });
+
+  // NOTE: characterization test, not a spec. X0001 is a synthetic mtfcc shared by
+  // both SLCo council districts and SLC ward boundaries (distinguished only by
+  // district_type — see boundary-motif-resolution notes). When a COUNTY-typed
+  // district row's matched geofence happens to be an X0001 council-district
+  // polygon, that geofence's `name` is a district-specific label (e.g. "...
+  // Council District 5"), not the plain county name. pickCountyFromDistrictRows
+  // has no mtfcc-based guard against this — it takes district_type === 'COUNTY'
+  // as sufficient and trusts `name` unconditionally. This test documents that
+  // CURRENT (arguably wrong) behavior: the resolved name is the council
+  // boundary's label, not "Salt Lake County". Flagging for a future fix rather
+  // than changing production behavior here.
+  it('NOTE: returns the X0001 council-district name, not the plain county name, when a COUNTY row resolves to a council-district geofence', () => {
+    const rows = [
+      {
+        mtfcc: 'X0001',
+        district_type: 'COUNTY',
+        geo_id: 'X0001',
+        district_label: 'Salt Lake County',
+        name: 'Salt Lake County Council District 5',
+      },
+    ];
+    expect(pickCountyFromDistrictRows(rows)).toEqual({
+      geoid: 'X0001',
+      name: 'Salt Lake County Council District 5',
+    });
+  });
 });
 
 describe('pickJurisdictionFromDistrictRows', () => {

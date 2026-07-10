@@ -4,6 +4,7 @@ import { env } from './env.js';
 import { getBoundaryBatch, getCountyUnionFrames, getStateCountyGeoIds, getCountyNames } from './informBoundaryService.js';
 import type { BoundaryResult, UnionFrame } from './informBoundaryService.js';
 import type { JurisdictionGeoIds } from './essentialsService.js';
+import { USPS_TO_FIPS } from './usStateCodes.js';
 
 /**
  * Read & Rank — blind candidate-match election tool.
@@ -139,17 +140,6 @@ const COUNTY_OVERLAP_LAYERS = new Set(['G5200', 'G5210', 'G5220', 'G5400', 'G541
  *  state outline instead (via the final `else` branch), while still using the
  *  county-union for countyGeoIds via COUNTY_OVERLAP_LAYERS above. */
 const UNION_FRAME_LAYERS = new Set(['G5210', 'G5220', 'G5400', 'G5410', 'G5420', 'G4040']);
-
-/** USPS → 2-digit state FIPS, for the statewide state-outline boundary (mtfcc G4000). */
-const USPS_TO_FIPS: Record<string, string> = {
-  AL: '01', AK: '02', AZ: '04', AR: '05', CA: '06', CO: '08', CT: '09', DE: '10',
-  DC: '11', FL: '12', GA: '13', HI: '15', ID: '16', IL: '17', IN: '18', IA: '19',
-  KS: '20', KY: '21', LA: '22', ME: '23', MD: '24', MA: '25', MI: '26', MN: '27',
-  MS: '28', MO: '29', MT: '30', NE: '31', NV: '32', NH: '33', NJ: '34', NM: '35',
-  NY: '36', NC: '37', ND: '38', OH: '39', OK: '40', OR: '41', PA: '42', RI: '44',
-  SC: '45', SD: '46', TN: '47', TX: '48', UT: '49', VT: '50', VA: '51', WA: '53',
-  WV: '54', WI: '55', WY: '56',
-};
 
 /** USPS → full state name, for stripping a redundant state prefix off statewide-exec offices. */
 const USPS_TO_NAME: Record<string, string> = {

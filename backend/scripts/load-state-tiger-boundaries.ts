@@ -520,7 +520,10 @@ interface LayerTotals {
  */
 function slugifyName(name: string): string {
   // Strip common trailing classification tokens (case-insensitive).
-  const stripTokens = /\s+(county|city|town|village|borough|township|cdp)\b\.?\s*$/i;
+  // `parish` = Louisiana's county-equivalent; `planning region`/`region` =
+  // Connecticut's 2022 TIGER re-classification of its former counties (both
+  // appear in nationwide county-layer NAMELSAD values — D-XX nationwide mode).
+  const stripTokens = /\s+(county|parish|planning region|region|city|town|village|borough|township|cdp)\b\.?\s*$/i;
   const stripped = name.replace(stripTokens, '').trim();
   return stripped
     .toLowerCase()
@@ -1279,6 +1282,215 @@ async function processLayer(
   return totals;
 }
 
+// ─── Nationwide county mode (county layer ONLY) ──────────────────────────────
+//
+// Counties are the one TIGER layer sourced from a single national file
+// (tl_${vintage}_us_county.zip); every other layer (cd/sldu/sldl/place/etc.)
+// is state-scoped and MUST keep going through processLayer's per-state
+// --fips filter — this mode is deliberately not offered for them. Nationwide
+// mode skips the `filterByStatefp` discard so all county records are
+// processed in one download+parse pass instead of once per state.
+//
+// Two safety properties beyond processLayer's per-state assertions:
+//  1. ST_MakeValid runs UNCONDITIONALLY (not gated by STATE_RUN_MAKEVALID) —
+//     coastal/AK polygons in the national file otherwise produce invalid
+//     geometry that breaks downstream ST_Intersects (getCountyUnionFrames).
+//  2. A pre-flight national row-count assertion runs BEFORE any DB write,
+//     using a bound (not an exact count, per PYTHON-AUDIT-style pre-flight
+//     discipline) because the raw file also carries Puerto Rico + island-area
+//     county-equivalents that FIPS_TO_STATE doesn't map (this loader only
+//     supports the 50 states + DC); those records are counted separately and
+//     skipped rather than inserted, not treated as an error.
+//
+// STRUCTURAL zero-write guarantee (not just a code trace): the download +
+// parse + pre-flight count/validate step below (`countAndValidateNationwideCounties`)
+// takes NO `Client` parameter — it is impossible for it to issue a DB write,
+// not merely unlikely. `main()` calls this helper directly for `--dry-run` and
+// NEVER constructs a `pg.Client` on that path at all. Only after this helper
+// resolves successfully (in live mode) does `main()` construct a `Client` and
+// hand it to `processNationwideCounty` for the write pass. `processNationwideCounty`
+// itself also re-runs the validation before touching `client.query`, so even a
+// direct call with `dryRun: true` and a real/fake client can never reach a write.
+const NATIONWIDE_COUNTY_COUNT_BOUNDS = { min: 3050, max: 3200 } as const; // ~3,143 for 50 states + DC
+
+interface NationwideCountyTotals extends LayerTotals {
+  /** Records parsed with a STATEFP this loader supports (50 states + DC). */
+  parsedCount: number;
+  /** Records whose STATEFP isn't in FIPS_TO_STATE (PR / island areas) — skipped, not an error. */
+  territoryCount: number;
+}
+
+interface NationwideCountyValidation {
+  parsedCount: number;
+  territoryCount: number;
+}
+
+/**
+ * Source of nationwide county records: streams every feature from the national
+ * TIGER county shapefile via `onRecord`. Injectable so tests can supply an
+ * in-memory fixture instead of hitting the network/filesystem — see
+ * `defaultNationwideCountySource` for the real (download + extract + stream)
+ * implementation used in production.
+ */
+type NationwideCountyRecordSource = (
+  layerDef: LayerDef,
+  vintage: string,
+  onRecord: (geom: unknown, props: Record<string, unknown>) => Promise<void>,
+) => Promise<void>;
+
+async function defaultNationwideCountySource(
+  layerDef: LayerDef,
+  vintage: string,
+  onRecord: (geom: unknown, props: Record<string, unknown>) => Promise<void>,
+): Promise<void> {
+  const url = layerDef.urlTemplate(vintage, 'us', '');
+  const tmpRoot = path.join(process.cwd(), `.tmp-tiger-${vintage}-us-county-nationwide`);
+  fs.mkdirSync(tmpRoot, { recursive: true });
+  const baseName = path.basename(url, '.zip'); // tl_${vintage}_us_county
+  const zipPath = path.join(tmpRoot, `${baseName}.zip`);
+  const destDir = path.join(tmpRoot, baseName);
+
+  console.log(`  [county:nationwide] downloading ${url}`);
+  await downloadWithRedirects(url, zipPath);
+  console.log(`  [county:nationwide] extracting ${path.basename(zipPath)}`);
+  extractZip(zipPath, destDir); // cleanup() intentionally not called — cached for re-runs, mirrors processLayer
+
+  const entries = fs.readdirSync(destDir);
+  const shpFile = entries.find((e) => e.toLowerCase().endsWith('.shp'));
+  const dbfFile = entries.find((e) => e.toLowerCase().endsWith('.dbf'));
+  if (!shpFile || !dbfFile) {
+    throw new Error(`[county:nationwide] could not locate .shp/.dbf in ${destDir} (entries: ${entries.join(', ')})`);
+  }
+  await streamShapefile(path.join(destDir, shpFile), path.join(destDir, dbfFile), onRecord);
+}
+
+/**
+ * Download + parse + pre-flight national row-count assertion for the
+ * nationwide county load. Takes NO `Client` — this is the structural half of
+ * the zero-write guarantee: this function is physically incapable of writing
+ * to the database, not merely trusted not to. Throws (named `MtfccAssertionError`)
+ * if the parsed count falls outside `NATIONWIDE_COUNTY_COUNT_BOUNDS`, BEFORE
+ * any caller has a chance to construct a `Client`.
+ */
+async function countAndValidateNationwideCounties(
+  layerDef: LayerDef,
+  vintage: string,
+  recordSource: NationwideCountyRecordSource = defaultNationwideCountySource,
+): Promise<NationwideCountyValidation> {
+  let parsedCount = 0;
+  let territoryCount = 0;
+
+  console.log(`  [county:nationwide] streaming for pre-flight count (vintage ${vintage})`);
+  await recordSource(layerDef, vintage, async (_geom, props) => {
+    const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+    const statefp = String(props[statefpKey] ?? '');
+    if (FIPS_TO_STATE[statefp]) parsedCount++;
+    else territoryCount++;
+  });
+  console.log(
+    `  [county:nationwide] parsed ${parsedCount} county-equivalent records for supported states ` +
+    `(${territoryCount} territory/unmapped-FIPS records excluded, e.g. Puerto Rico).`,
+  );
+
+  if (parsedCount < NATIONWIDE_COUNTY_COUNT_BOUNDS.min || parsedCount > NATIONWIDE_COUNTY_COUNT_BOUNDS.max) {
+    const err = new Error(
+      `[county:nationwide] national row-count assertion FAILED: parsed ${parsedCount} records, ` +
+      `expected between ${NATIONWIDE_COUNTY_COUNT_BOUNDS.min} and ${NATIONWIDE_COUNTY_COUNT_BOUNDS.max} ` +
+      `(~3,143 county-equivalents for the 50 states + DC). Vintage: ${vintage}. Aborting before any DB write — ` +
+      `verify the TIGER ${vintage} national county file is correct.`,
+    );
+    err.name = 'MtfccAssertionError';
+    throw err;
+  }
+  console.log(`  [county:nationwide] row-count assertion PASSED (bounds ${NATIONWIDE_COUNTY_COUNT_BOUNDS.min}-${NATIONWIDE_COUNTY_COUNT_BOUNDS.max}).`);
+
+  return { parsedCount, territoryCount };
+}
+
+async function processNationwideCounty(
+  client: Client,
+  layerDef: LayerDef,
+  vintage: string,
+  dryRun: boolean,
+  recordSource: NationwideCountyRecordSource = defaultNationwideCountySource,
+): Promise<NationwideCountyTotals> {
+  const totals: NationwideCountyTotals = {
+    inserted_boundary: 0,
+    inserted_district: 0,
+    already_exists: 0,
+    skipped: 0,
+    errors: 0,
+    parsedCount: 0,
+    territoryCount: 0,
+  };
+
+  // ── Count + validate FIRST, before any branch that could touch `client` ────
+  // This call cannot issue a DB write (see countAndValidateNationwideCounties
+  // doc comment) — so even if `dryRun` is wrong or `client` is garbage, nothing
+  // is written until this resolves successfully.
+  const validation = await countAndValidateNationwideCounties(layerDef, vintage, recordSource);
+  totals.parsedCount = validation.parsedCount;
+  totals.territoryCount = validation.territoryCount;
+
+  if (dryRun) {
+    console.log(
+      `  [dry-run] county:nationwide — would write rows for ${totals.parsedCount} records ` +
+      `(ST_MakeValid unconditional; ${totals.territoryCount} territory records would be skipped). No DB writes made.`,
+    );
+    return totals;
+  }
+
+  // ── Write pass (only reachable after a passing count/validate) ─────────────
+  await recordSource(layerDef, vintage, async (geom, props) => {
+    try {
+      const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+      const statefp = String(props[statefpKey] ?? '');
+      const abbrev = FIPS_TO_STATE[statefp];
+      if (!abbrev) {
+        totals.skipped++; // territory / unmapped FIPS — not one of the 50 states + DC this loader supports
+        return;
+      }
+      const abbrevUpper = abbrev.toUpperCase();
+
+      const geoidKey = resolveColumn(props, GEOID_CANDIDATES);
+      const geo_id = String(props[geoidKey] ?? '');
+      const namelsadKey = resolveColumn(props, NAMELSAD_CANDIDATES);
+      const name = String(props[namelsadKey] ?? '');
+      // ocdSuffix = lowercased NAME slug, mirroring processLayer's 'county' case.
+      const ocd_id = buildOcdId(abbrevUpper, layerDef.ocdKey, slugifyName(name));
+
+      const upsertResult = await upsertGeofence(client, {
+        geo_id,
+        ocd_id,
+        name,
+        state: statefp,
+        mtfcc: layerDef.mtfcc,
+        geometryGeoJson: geom,
+        runMakeValid: true, // unconditional in nationwide mode — see module doc above
+      });
+      if (upsertResult.inserted) totals.inserted_boundary++;
+      else totals.already_exists++;
+
+      if (layerDef.writeDistrictRow) {
+        const districtResult = await insertDistrictIfMissing(client, {
+          geo_id,
+          ocd_id,
+          name,
+          state: abbrev,
+          district_type: layerDef.district_type,
+          mtfcc: layerDef.mtfcc,
+        });
+        if (districtResult.inserted) totals.inserted_district++;
+      }
+    } catch (err) {
+      console.error(`  [county:nationwide] record error: ${(err as Error).message}`);
+      totals.errors++;
+    }
+  });
+
+  return totals;
+}
+
 // ─── CLI parsing (D-05, D-06) ────────────────────────────────────────────────
 
 interface CliArgs {
@@ -1288,6 +1500,8 @@ interface CliArgs {
   dryRun: boolean;
   vintage: string;
   congress: string;
+  /** county-layer-only nationwide load mode: `--nationwide` or `--fips ALL`. */
+  nationwide: boolean;
 }
 
 function parseArgs(argv: string[]): CliArgs {
@@ -1296,6 +1510,10 @@ function parseArgs(argv: string[]): CliArgs {
     const a = argv[i];
     if (a === '--dry-run') {
       args.dryRun = true;
+      continue;
+    }
+    if (a === '--nationwide') {
+      args.nationwide = true;
       continue;
     }
     if (a.startsWith('--')) {
@@ -1310,12 +1528,36 @@ function parseArgs(argv: string[]): CliArgs {
     }
   }
 
-  const state = typeof args.state === 'string' ? args.state.toUpperCase() : '';
-  const fips = typeof args.fips === 'string' ? args.fips : '';
+  const stateRaw = typeof args.state === 'string' ? args.state.toUpperCase() : '';
+  const fipsRaw = typeof args.fips === 'string' ? args.fips : '';
   const layersRaw = typeof args.layers === 'string' ? args.layers : '';
   const dryRun = args.dryRun === true;
   const vintage = typeof args.vintage === 'string' ? args.vintage : '2024';
   const congress = typeof args.congress === 'string' ? args.congress : '119';
+
+  // Nationwide county mode: `--nationwide` or `--fips ALL` (case-insensitive).
+  // County is the ONE layer sourced from a single national TIGER file; every
+  // other layer stays state-scoped and must go through the normal --state/--fips path.
+  const nationwide = args.nationwide === true || fipsRaw.toUpperCase() === 'ALL';
+
+  if (nationwide) {
+    if (!layersRaw) {
+      process.stderr.write('--layers required: nationwide mode only supports --layers county\n');
+      process.exit(1);
+    }
+    const nwLayers = layersRaw.split(',').map((s) => s.trim()).filter(Boolean);
+    if (nwLayers.length !== 1 || nwLayers[0] !== 'county') {
+      process.stderr.write(
+        `--nationwide (or --fips ALL) only supports the county layer (got '${layersRaw}'). ` +
+        `sldu/sldl/place/cd/etc. are state-scoped and require an explicit --state/--fips.\n`,
+      );
+      process.exit(1);
+    }
+    return { state: 'US', fips: 'ALL', layers: nwLayers, dryRun, vintage, congress, nationwide: true };
+  }
+
+  const state = stateRaw;
+  const fips = fipsRaw;
 
   if (!state) {
     process.stderr.write('--state required (e.g. CA, TX, UT, IN)\n');
@@ -1370,13 +1612,75 @@ function parseArgs(argv: string[]): CliArgs {
     }
   }
 
-  return { state, fips, layers, dryRun, vintage, congress };
+  return { state, fips, layers, dryRun, vintage, congress, nationwide: false };
 }
 
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2));
+
+  // ── Nationwide county mode: separate dispatch path (county layer only) ─────
+  if (args.nationwide) {
+    console.log(`[load-state-tiger] Mode: ${args.dryRun ? 'DRY-RUN (no DB writes)' : 'LIVE'} — NATIONWIDE county load`);
+    console.log(`[load-state-tiger] Vintage: ${args.vintage}`);
+
+    const layerDef = LAYER_DISPATCH.county;
+
+    // Structural zero-write guarantee: the dry-run branch calls ONLY the
+    // client-free count/validate helper. There is no `Client` construction
+    // anywhere in this branch — not "unused", genuinely absent — so a
+    // --dry-run invocation cannot open a DB connection, let alone write.
+    if (args.dryRun) {
+      const validation = await countAndValidateNationwideCounties(layerDef, args.vintage);
+      console.log('\n=== Nationwide County Dry-Run Summary ===');
+      console.log(`  Parsed (supported states + DC): ${validation.parsedCount}`);
+      console.log(`  Territory/unmapped FIPS (excluded): ${validation.territoryCount}`);
+      console.log(
+        `  [dry-run] county:nationwide — would write rows for ${validation.parsedCount} records ` +
+        `(ST_MakeValid unconditional; ${validation.territoryCount} territory records would be skipped). No DB writes made.`,
+      );
+      console.log('\nDRY-RUN complete — no database writes made.');
+      process.exit(0);
+    }
+
+    // Live mode: the count/validate assertion above only ran on the dry-run
+    // branch, which just returned. Here we haven't validated yet, so
+    // processNationwideCounty (called below with a freshly-constructed
+    // Client) re-runs count/validate itself BEFORE issuing any client.query —
+    // the Client only becomes reachable for writes after that passes.
+
+    if (!process.env.DATABASE_URL) {
+      process.stderr.write('ERROR: DATABASE_URL is not set\n');
+      process.exit(1);
+    }
+
+    const nwClient = new Client({
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+    });
+    await nwClient.connect();
+
+    let totals: NationwideCountyTotals;
+    try {
+      totals = await processNationwideCounty(nwClient, layerDef, args.vintage, false);
+    } finally {
+      await nwClient.end();
+    }
+
+    console.log('\n=== Nationwide County Summary ===');
+    console.log(`  Inserted (boundaries): ${totals.inserted_boundary}`);
+    console.log(`  Inserted (districts):  ${totals.inserted_district}`);
+    console.log(`  Already existed:       ${totals.already_exists}`);
+    console.log(`  Skipped (territory/unmapped FIPS): ${totals.skipped}`);
+    console.log(`  Errors:                ${totals.errors}`);
+    console.log('\nLoad complete.');
+    console.log('Verify with:');
+    console.log(
+      `  SELECT COUNT(*) FROM essentials.geofence_boundaries WHERE mtfcc = 'G4020';`,
+    );
+    return;
+  }
 
   // Sanity: confirm FIPS_TO_STATE round-trips. Catches typos like --state CA --fips 48.
   const expectedAbbrev = (FIPS_TO_STATE[args.fips] ?? '').toUpperCase();
@@ -1483,12 +1787,25 @@ async function main(): Promise<void> {
   );
 }
 
-main().catch((err) => {
-  console.error('[load-state-tiger] Fatal error:', err);
-  process.exit(1);
-});
+// Only auto-run when executed directly (`npx tsx scripts/load-state-tiger-boundaries.ts ...`).
+// Guards against side effects (main() calling process.exit) when this module is
+// imported for unit testing pure helpers like slugifyName.
+const isMainModule = (() => {
+  try {
+    return import.meta.url === `file://${process.argv[1]}`;
+  } catch {
+    return false;
+  }
+})();
+if (isMainModule) {
+  main().catch((err) => {
+    console.error('[load-state-tiger] Fatal error:', err);
+    process.exit(1);
+  });
+}
 
 // ─── Exports for testing (no-op at runtime) ──────────────────────────────────
+export type { NationwideCountyRecordSource, LayerDef };
 export {
   STATE_LAYER_ALLOWLIST,
   STATE_CITY_ASSERTIONS,
@@ -1503,6 +1820,9 @@ export {
   resolveColumn,
   slugifyName,
   processLayer,
+  processNationwideCounty,
+  countAndValidateNationwideCounties,
+  NATIONWIDE_COUNTY_COUNT_BOUNDS,
   downloadWithRedirects,
   extractZip,
   streamShapefile,
