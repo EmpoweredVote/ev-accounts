@@ -96,13 +96,103 @@ function fetchJson(url: string): Promise<unknown> {
   });
 }
 
-// ArcGIS JSON rings → GeoJSON Polygon string.
+// ArcGIS JSON rings → GeoJSON Polygon / MultiPolygon string.
+//
 // The Pima MapServer (f=json) returns feature.geometry.rings as number[][][]
-// (an array of rings, each ring an array of [lon, lat] pairs). A GeoJSON
-// Polygon's coordinates field has the identical shape, so the rings array
-// passes through directly. ST_Multi (in the INSERT) wraps multi-body cases.
+// (an array of rings, each ring an array of [lon, lat] pairs). ArcGIS and
+// GeoJSON rings are NOT interchangeable once a feature has more than one ring:
+//
+//   - ArcGIS packs ALL rings — multiple disjoint exterior rings (a
+//     multipolygon) AND holes — into one flat `rings` array, distinguishing
+//     them ONLY by winding order: an exterior ring is CLOCKWISE (negative
+//     signed area, math y-up convention) and a hole is COUNTER-CLOCKWISE
+//     (positive signed area).
+//   - A GeoJSON Polygon, by contrast, treats coordinates[0] as the single
+//     exterior ring and EVERY subsequent ring as a HOLE of that exterior.
+//
+// So blindly assigning the ArcGIS `rings` array to a GeoJSON Polygon's
+// `coordinates` silently mis-encodes any multi-body or holed district (a
+// detached parcel becomes a hole; a hole may be mis-oriented). ST_Multi in the
+// INSERT CANNOT repair this — it only promotes a geometry to a MULTI type, it
+// does not reinterpret extra polygon rings as separate polygons.
+//
+// This function therefore converts by orientation: it computes each ring's
+// signed area, starts a new GeoJSON polygon at every clockwise (exterior)
+// ring, and appends every counter-clockwise (hole) ring to the most recent
+// exterior polygon. It emits a Polygon when there is exactly one exterior ring
+// and a MultiPolygon when there is more than one. (Either feeds the existing
+// INSERT fine — ST_Multi still promotes Polygon→MultiPolygon.)
+//
+// The 5 current Pima districts are all single-ring (RESEARCH confirmed); the
+// single-ring fast path below preserves today's exact output byte-for-byte.
+// Function is pure and returns a JSON string.
+
+// Signed area of a ring via the shoelace formula. Positive => counter-clockwise
+// (a GeoJSON/ArcGIS hole); negative => clockwise (an ArcGIS exterior ring).
+// Magnitude near zero => degenerate (collinear / zero-area) ring.
+function ringSignedArea(ring: number[][]): number {
+  let sum = 0;
+  const n = ring.length;
+  for (let i = 0; i < n; i++) {
+    const [x1, y1] = ring[i];
+    const [x2, y2] = ring[(i + 1) % n];
+    sum += x1 * y2 - x2 * y1;
+  }
+  return sum / 2;
+}
+
 function arcgisRingsToGeoJson(rings: number[][][]): string {
-  return JSON.stringify({ type: 'Polygon', coordinates: rings });
+  // Single-ring fast path: the 5 current Pima districts are all single-ring.
+  // Emit exactly what today's code emits — no winding inspection, no reorder,
+  // no rewind — so output is byte-identical for the already-loaded rows.
+  if (rings.length === 1) {
+    return JSON.stringify({ type: 'Polygon', coordinates: [rings[0]] });
+  }
+
+  // Multi-ring: classify each ring by winding order and group into polygons.
+  const AREA_EPS = 1e-12; // below this magnitude a ring is treated as degenerate
+  // Each entry is one GeoJSON polygon: [exteriorRing, ...holeRings].
+  const polygons: number[][][][] = [];
+
+  for (const ring of rings) {
+    const area = ringSignedArea(ring);
+    if (Math.abs(area) <= AREA_EPS) {
+      // Ambiguous winding — cannot tell exterior from hole. Fail loudly rather
+      // than silently store wrong geometry.
+      throw new Error(
+        `arcgisRingsToGeoJson: degenerate ring with ~zero signed area (${area}); ` +
+          `ambiguous winding, cannot classify exterior vs hole. Aborting.`,
+      );
+    }
+    if (area < 0) {
+      // Clockwise → ArcGIS exterior ring → begins a new GeoJSON polygon.
+      polygons.push([ring]);
+    } else {
+      // Counter-clockwise → ArcGIS hole → belongs to the most recent exterior.
+      if (polygons.length === 0) {
+        // A hole with no preceding exterior means zero detected exterior rings
+        // so far — malformed/ambiguous input. Hard-fail (defensive guard).
+        throw new Error(
+          'arcgisRingsToGeoJson: encountered a hole ring before any exterior ring ' +
+            '(zero detected exterior rings); ArcGIS rings malformed or winding inverted. Aborting.',
+        );
+      }
+      polygons[polygons.length - 1].push(ring);
+    }
+  }
+
+  if (polygons.length === 0) {
+    // rings.length > 1 but nothing classified as exterior — e.g. all holes.
+    throw new Error(
+      `arcgisRingsToGeoJson: no exterior rings detected among ${rings.length} rings. Aborting.`,
+    );
+  }
+
+  // One exterior ring (+ optional holes) → Polygon; more than one → MultiPolygon.
+  if (polygons.length === 1) {
+    return JSON.stringify({ type: 'Polygon', coordinates: polygons[0] });
+  }
+  return JSON.stringify({ type: 'MultiPolygon', coordinates: polygons });
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
