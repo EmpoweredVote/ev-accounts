@@ -228,3 +228,59 @@ export async function runFecHistoricalBackfill(floorYear = DEFAULT_FLOOR): Promi
     );
   }
 }
+
+// ---------------------------------------------------------------------------
+// Boot-time auto-resume — makes the multi-day backfill survive dyno restarts
+// ---------------------------------------------------------------------------
+
+const AUTORESUME_DELAY_MS = 15_000; // let the server finish booting first
+
+/** Count (source, cycle) pairs in [floor, current] that have no completed run yet. */
+export async function countPendingBackfillPairs(floorYear = DEFAULT_FLOOR): Promise<number> {
+  const current = parseInt(currentFecCycle(), 10);
+  const r = await pool.query<{ n: string }>(
+    `WITH expanded AS (
+       SELECT ps.id, cyc AS cycle_int
+       FROM transparent_motivations.politician_sources ps
+       JOIN transparent_motivations.fec_candidate_cycles cc ON cc.external_id = ps.external_id
+       CROSS JOIN LATERAL unnest(cc.election_years) AS cyc
+       WHERE ps.source_system LIKE 'fec%' AND ps.research_status='confirmed' AND ps.external_id <> ''
+         AND cyc BETWEEN $1 AND $2 AND cyc % 2 = 0
+     )
+     SELECT COUNT(*)::int AS n FROM expanded e
+     WHERE NOT EXISTS (
+       SELECT 1 FROM transparent_motivations.ingestion_runs ir
+       WHERE ir.politician_source_id = e.id AND ir.adapter_name='fec'
+         AND ir.election_cycle = e.cycle_int::text
+         AND ir.status IN ('completed','completed_with_warning'))`,
+    [floorYear, current]
+  );
+  return Number(r.rows[0]?.n ?? 0);
+}
+
+/**
+ * maybeResumeBackfillOnBoot — called once at server startup. When
+ * FEC_BACKFILL_AUTORESUME=1 and pending pairs remain, it launches the backfill
+ * (detached) after a short delay so a dyno restart automatically re-kicks the job.
+ * The FEC lock makes this safe if the cron or another instance is already running.
+ * Turn the env flag off once the historical backfill is complete.
+ */
+export function maybeResumeBackfillOnBoot(floorYear = DEFAULT_FLOOR): void {
+  if (process.env.FEC_BACKFILL_AUTORESUME !== '1') return;
+  setTimeout(() => {
+    void (async () => {
+      try {
+        const pending = await countPendingBackfillPairs(floorYear);
+        if (pending === 0) {
+          console.log('[fecBackfill] autoresume: no pending pairs — nothing to do');
+          return;
+        }
+        console.log(`[fecBackfill] autoresume: ${pending} pending pairs — starting backfill (floor ${floorYear})`);
+        const r = await runFecHistoricalBackfill(floorYear);
+        console.log(`[fecBackfill] autoresume finished: status=${r.status} ok=${r.ok} failed=${r.failed}`);
+      } catch (err) {
+        console.error('[fecBackfill] autoresume error:', err instanceof Error ? err.message : String(err));
+      }
+    })();
+  }, AUTORESUME_DELAY_MS);
+}

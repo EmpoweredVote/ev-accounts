@@ -59,6 +59,7 @@ import { startDistrictStalenessCron } from './cron/districtStaleness.js';
 import { startDiscoverySweepCron } from './cron/discoverySweep.js';
 import { campaignFinanceInit } from './lib/campaignFinanceService.js';
 import { startSqsWorker } from './lib/campaignFinanceScheduler.js';
+import { maybeResumeBackfillOnBoot } from './lib/fecBackfill.js';
 
 const app = express();
 
@@ -195,6 +196,7 @@ if (env.NODE_ENV !== 'test' && !isLambda) {
     startDistrictStalenessCron();
     startDiscoverySweepCron();   // Phase 7 — weekly candidate discovery sweep
     startSqsWorker();
+    maybeResumeBackfillOnBoot();  // self-heals the FEC historical backfill across dyno restarts (gated by FEC_BACKFILL_AUTORESUME)
 
     // Graceful shutdown — Render sends SIGTERM before replacing instances.
     // Without this, the pg pool and cron job keep the event loop alive and
