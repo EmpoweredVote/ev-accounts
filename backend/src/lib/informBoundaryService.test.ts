@@ -136,18 +136,32 @@ describe('getCountyUnionFrames', () => {
 });
 
 describe('getStateCountyGeoIds', () => {
+  it('maps USPS input to FIPS for the query, but returns a Map keyed by USPS', async () => {
+    // essentials.geofence_boundaries.state holds 2-digit FIPS, not USPS — the query
+    // must be issued with FIPS codes even though callers pass/receive USPS.
+    mockQuery.mockResolvedValueOnce({ rows: [
+      { state: '06', geo_id: '06037' },
+      { state: '06', geo_id: '06059' },
+    ] });
+    const out = await getStateCountyGeoIds(['CA']);
+    expect(out.get('CA')).toEqual(['06037', '06059']);
+    const [sql, params] = mockQuery.mock.calls[0];
+    expect(sql).toMatch(/mtfcc = 'G4020'/);
+    expect(params).toEqual([['06']]); // FIPS, not USPS
+  });
+
   it('groups county GEOIDs by USPS state, deduping input states', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [
-      { state: 'CA', geo_id: '06037' },
-      { state: 'CA', geo_id: '06059' },
-      { state: 'UT', geo_id: '49035' },
+      { state: '06', geo_id: '06037' },
+      { state: '06', geo_id: '06059' },
+      { state: '49', geo_id: '49035' },
     ] });
     const out = await getStateCountyGeoIds(['CA', 'UT', 'CA']);
     expect(out.get('CA')).toEqual(['06037', '06059']);
     expect(out.get('UT')).toEqual(['49035']);
     const [sql, params] = mockQuery.mock.calls[0];
     expect(sql).toMatch(/mtfcc = 'G4020'/);
-    expect(params).toEqual([['CA', 'UT']]);
+    expect(params).toEqual([['06', '49']]);
   });
 
   it('returns an empty map and runs no query for no states', async () => {

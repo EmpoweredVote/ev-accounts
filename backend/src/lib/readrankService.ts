@@ -124,9 +124,20 @@ const MTFCC_SCOPE: Record<string, Scope> = {
 };
 
 /** Sub-state layers whose overlapping counties (ST_Intersects, via getCountyUnionFrames)
- *  drive BOTH the read-rank county relevance tier (countyGeoIds) and the county-union
- *  visual frame (G4020U): state-leg districts, school districts, townships. */
+ *  drive the read-rank county relevance tier (countyGeoIds): state-leg districts,
+ *  school districts, townships, AND congressional districts (G5200). Congressional
+ *  districts DO need their county set computed this way (so they surface in the
+ *  right county views), but — unlike the others — must NOT use the county-union as
+ *  their visual FRAME (see UNION_FRAME_LAYERS below): with sparse county geometry
+ *  the union can degenerate to a single county, which misrepresents a congressional
+ *  district that spans many counties. */
 const COUNTY_OVERLAP_LAYERS = new Set(['G5200', 'G5210', 'G5220', 'G5400', 'G5410', 'G5420', 'G4040']);
+
+/** Subset of COUNTY_OVERLAP_LAYERS whose visual FRAME is the county-union geometry
+ *  (G4020U). Deliberately excludes G5200 (congressional): those frame against the
+ *  state outline instead (via the final `else` branch), while still using the
+ *  county-union for countyGeoIds via COUNTY_OVERLAP_LAYERS above. */
+const UNION_FRAME_LAYERS = new Set(['G5210', 'G5220', 'G5400', 'G5410', 'G5420', 'G4040']);
 
 /** USPS → 2-digit state FIPS, for the statewide state-outline boundary (mtfcc G4000). */
 const USPS_TO_FIPS: Record<string, string> = {
@@ -410,10 +421,12 @@ export async function getPlayableRaces(
       frameRef = r.frame_layer && r.frame_geoid        // city→county / county-council→county / ward→city
         ? { layer: r.frame_layer, geoid: r.frame_geoid }
         : null;
-    } else if (COUNTY_OVERLAP_LAYERS.has(childLayer)) {
+    } else if (UNION_FRAME_LAYERS.has(childLayer)) {
       // Sub-state district (state-leg / school / township) → union of overlapping
       // counties (computed geometry, embedded inline). Falls back to the state
-      // outline if the union is empty.
+      // outline if the union is empty. Congressional (G5200) is deliberately NOT
+      // in UNION_FRAME_LAYERS — it falls through to the state-outline `else` below —
+      // even though it still uses the county-union for countyGeoIds (see below).
       const uf = r.boundary_geoid ? unionFrameMap.get(`${childLayer}:${r.boundary_geoid}`) : undefined;
       frameRef = uf
         ? { layer: 'G4020U', geoid: r.boundary_geoid as string, bbox: uf.bbox, geojson: uf.geojson }

@@ -426,6 +426,29 @@ describe('getPlayableRaces — countyGeoIds', () => {
     expect(races[0].frameRef).toEqual({ layer: 'G4000', geoid: 'US' });
   });
 
+  it('congressional (G5200) district with tier=state (not federal, per source data) frames to the state outline, not the county-union — but still gets union countyGeoIds', async () => {
+    // Regression for the bug where COUNTY_OVERLAP_LAYERS (which must include G5200 for
+    // countyGeoIds) was reused for the FRAME branch too, so a G5200 race that misses the
+    // `tier === 'federal'` check (some source rows carry jurisdiction_level:'state' for
+    // congressional districts) degenerated to a single-county G4020U frame instead of the
+    // state outline.
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'r-cd3', position_name: 'U.S. House', district_label: 'District 9', district_type: 'NATIONAL_LOWER',
+      election_id: 'e1', election_name: 'General', election_date: null,
+      jurisdiction_level: 'state', state: 'IN',
+      boundary_layer: 'G5200', boundary_geoid: '1809',
+      frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '1', quote_count: '3', rankable_topic_count: '1',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
+      ['G5200:1809', { bbox: [0, 0, 1, 1], geojson: { type: 'MultiPolygon', coordinates: [] }, countyGeoIds: ['18001', '18003'] }],
+    ]));
+    const { races } = await getPlayableRacesResult();
+    expect(races[0].frameRef).toEqual({ layer: 'G4000', geoid: '18' }); // IN state outline, NOT G4020U
+    expect(races[0].countyGeoIds).toEqual(['18001', '18003']); // union countyGeoIds still populated
+  });
+
   it('uses the G4020 frame geoid for a city race', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [BASE_ROW] }); // G4110 framed to G4020 18105
     const { races: [race] } = await getPlayableRacesResult();

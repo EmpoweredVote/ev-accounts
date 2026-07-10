@@ -37,4 +37,18 @@ describe('pickCountyFromDistrictRows', () => {
     ];
     expect(pickCountyFromDistrictRows(rows)).toEqual({ geoid: '49035', name: 'Salt Lake County' });
   });
+
+  it('prefers the geofence name over district_label, which is a seat label ("At-Large") not the county name', () => {
+    const rows = [
+      { mtfcc: 'G4020', district_type: 'COUNTY', geo_id: '18105', district_label: 'At-Large', name: 'Monroe County' },
+    ];
+    expect(pickCountyFromDistrictRows(rows)).toEqual({ geoid: '18105', name: 'Monroe County' });
+  });
+
+  it('falls back to district_label when the geofence name is absent', () => {
+    const rows = [
+      { mtfcc: 'G4020', district_type: 'COUNTY', geo_id: '49035', district_label: 'Salt Lake County' },
+    ];
+    expect(pickCountyFromDistrictRows(rows)).toEqual({ geoid: '49035', name: 'Salt Lake County' });
+  });
 });

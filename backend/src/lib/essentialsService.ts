@@ -569,9 +569,12 @@ export async function getPoliticiansFlatList(
  */
 
 /** Pick the user's county (GEOID + name) from the geofence district rows.
- *  A county is the row with mtfcc G4020 or district_type COUNTY. Null when absent. */
+ *  A county is the row with mtfcc G4020 or district_type COUNTY. Null when absent.
+ *  `name` (the geofence_boundaries.name, e.g. "Monroe County") is the real county
+ *  name; `district_label` is a seat label (e.g. "At-Large") and is only a fallback
+ *  for rows that don't carry the geofence name (e.g. tests, callers without the join). */
 export function pickCountyFromDistrictRows(
-  rows: Array<{ mtfcc?: string | null; district_type?: string | null; geo_id?: string | null; district_label?: string | null }>,
+  rows: Array<{ mtfcc?: string | null; district_type?: string | null; geo_id?: string | null; district_label?: string | null; name?: string | null }>,
 ): { geoid: string; name: string } | null {
   // Prefer the COUNTY row; fall back to any G4020 row only if no COUNTY row exists.
   // (County-level courts can also be G4020 with the same county geo_id but a court name.)
@@ -579,7 +582,7 @@ export function pickCountyFromDistrictRows(
     rows.find((r) => r.district_type === 'COUNTY') ??
     rows.find((r) => r.mtfcc === 'G4020');
   if (!row || !row.geo_id) return null;
-  return { geoid: row.geo_id, name: row.district_label ?? '' };
+  return { geoid: row.geo_id, name: row.name ?? row.district_label ?? '' };
 }
 
 export async function getRepresentativesByAddress(
@@ -628,6 +631,7 @@ export async function getRepresentativesByAddress(
            p.is_appointed, o.faces_retention_vote,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id,
            d.mtfcc,
+           gb.name AS geofence_name,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
            ch.policy_engagement_level,
@@ -823,7 +827,9 @@ export async function getRepresentativesByAddress(
     mtfcc: firstRow.mtfcc ?? '',
   };
 
-  const county = pickCountyFromDistrictRows(districtResult.rows);
+  const county = pickCountyFromDistrictRows(
+    districtResult.rows.map((r) => ({ ...r, name: r.geofence_name })),
+  );
   return { politicians, jurisdiction, matchedAddress, tribal_land, county };
 }
 
