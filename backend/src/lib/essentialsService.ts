@@ -404,7 +404,12 @@ export async function getPoliticiansFlatList(
   includeCandidates?: boolean,
   options?: { q?: string; limit?: number; offset?: number; state?: string }
 ): Promise<PoliticianFlatRecord[]> {
-  const incumbentFilter = includeCandidates ? '' : 'AND p.is_incumbent = true';
+  // Candidate placeholder offices ("Candidate for U.S. Senate — ...", mig 196) are excluded from
+  // the incumbents-only view: their holders can be incumbents of OTHER offices (Talarico TX House,
+  // Paxton AG), so is_incumbent alone cannot exclude them.
+  const incumbentFilter = includeCandidates
+    ? ''
+    : "AND p.is_incumbent = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'";
 
   const params: unknown[] = [];
   let searchFilter = '';
@@ -668,7 +673,7 @@ export async function getRepresentativesByAddress(
       public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
     )
     AND (p.is_active = true OR o.is_vacant = true)
-    ${includeChallengers ? '' : 'AND COALESCE(p.is_incumbent, true) = true'}
+    ${includeChallengers ? '' : "AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'"}
     ORDER BY COALESCE(p.id, o.id)
   `;
 
@@ -712,7 +717,7 @@ export async function getRepresentativesByAddress(
     WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
     AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
     AND (p.is_active = true OR o.is_vacant = true)
-    AND COALESCE(p.is_incumbent, true) = true
+    AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
     -- JUDICIAL: exclude county-level courts (circuit/superior) which have 5-digit
     -- county FIPS geo_ids. Those are matched via geofence intersection.
     -- State-level courts (Supreme, Appeals, Tax) have 2-digit or 7-digit geo_ids.
@@ -1573,7 +1578,7 @@ export async function getRepresentativesByJurisdiction(
     ${JOINS}
     WHERE (${conditions.join(' OR ')})
     AND (p.is_active = true OR o.is_vacant = true)
-    AND COALESCE(p.is_incumbent, true) = true
+    AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
     ORDER BY COALESCE(p.id, o.id)
   `;
 
@@ -1595,7 +1600,7 @@ export async function getRepresentativesByJurisdiction(
         WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
         AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
         AND (p.is_active = true OR o.is_vacant = true)
-        AND COALESCE(p.is_incumbent, true) = true
+        AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
         AND (d.district_type != 'JUDICIAL' OR LENGTH(d.geo_id) != 5)
         ORDER BY COALESCE(p.id, o.id)
       `;
@@ -1748,7 +1753,7 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     WHERE d.district_type IN ('LOCAL', 'LOCAL_EXEC')
       AND d.geo_id = ANY($1::text[])
       AND (p.is_active = true OR o.is_vacant = true)
-      AND COALESCE(p.is_incumbent, true) = true
+      AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
     ORDER BY COALESCE(p.id, o.id)
   `;
 

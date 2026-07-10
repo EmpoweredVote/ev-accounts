@@ -403,6 +403,10 @@ export async function getPoliticiansByArea(
       AND (d.state = $1 OR d.district_type = 'NATIONAL_EXEC')
       AND p.is_active = true
       AND p.is_incumbent = true
+      -- Candidate placeholder offices (mig 196 pattern, e.g. "Candidate for U.S. Senate — Texas")
+      -- exist for compass/stance reachability only; their holders can be incumbents of OTHER
+      -- offices (Talarico TX House, Paxton AG), so is_incumbent alone cannot exclude them.
+      AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
       ORDER BY p.id
     `;
     const result = await pool.query(statewideQuery, [stateAbbrev]);
@@ -674,6 +678,10 @@ export async function getPoliticiansByGovernmentList(
         AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
         AND p.is_active = true
         AND p.is_incumbent = true
+      -- Candidate placeholder offices (mig 196 pattern, e.g. "Candidate for U.S. Senate — Texas")
+      -- exist for compass/stance reachability only; their holders can be incumbents of OTHER
+      -- offices (Talarico TX House, Paxton AG), so is_incumbent alone cannot exclude them.
+      AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
       ORDER BY p.id
     `, [stateAbbrev]);
     statewideRows = swRows;
@@ -893,6 +901,10 @@ export async function getStatewideOfficials(stateAbbrev: string): Promise<Politi
       AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
       AND p.is_active = true
       AND p.is_incumbent = true
+      -- Candidate placeholder offices (mig 196 pattern, e.g. "Candidate for U.S. Senate — Texas")
+      -- exist for compass/stance reachability only; their holders can be incumbents of OTHER
+      -- offices (Talarico TX House, Paxton AG), so is_incumbent alone cannot exclude them.
+      AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
     ORDER BY p.id
   `, [abbrev]);
 
@@ -947,6 +959,10 @@ export async function getFederalOfficials(): Promise<PoliticianFlatRecord[]> {
     WHERE d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL', 'NATIONAL_UPPER', 'NATIONAL_LOWER')
       AND p.is_active = true
       AND p.is_incumbent = true
+      -- Candidate placeholder offices (mig 196 pattern, e.g. "Candidate for U.S. Senate — Texas")
+      -- exist for compass/stance reachability only; their holders can be incumbents of OTHER
+      -- offices (Talarico TX House, Paxton AG), so is_incumbent alone cannot exclude them.
+      AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
     ORDER BY p.id
   `);
 
