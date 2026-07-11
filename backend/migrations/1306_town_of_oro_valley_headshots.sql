@@ -11,9 +11,9 @@
 -- coverage) via the /find-headshots Playwright flow — NOT by spoofing headers against the WAF.
 --
 -- photo_license VARIES per image (Wikimedia/CC terms, campaign press_use, or operator_supplied)
--- — do NOT read the placeholder below as a uniform value. The per-image license placeholder
--- 'TODO_verify_at_task3' is finalized by the orchestrator to the actual sourced license after
--- the Playwright sourcing pass (Task 3).
+-- — do NOT read these as a uniform value. Each row's photo_license below has been finalized to
+-- the actual sourced license (campaign press_use / Tucson Local Media editorial / iloveov.com
+-- candidate-submitted) after the Task 3 sourcing pass.
 --
 -- AUDIT-ONLY: this migration intentionally does NOT write a ledger row (supabase_migrations).
 
