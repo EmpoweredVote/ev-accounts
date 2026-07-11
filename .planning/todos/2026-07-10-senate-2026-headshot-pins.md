@@ -5,6 +5,11 @@ Remaining 15 below searched exhaustively by agents (trails summarized; full trai
 agent outputs). Verify query: active/filed race_candidates on 2026 U.S. Senate races with
 politician_id set and no politician_images row — returns exactly these 15.
 
+2026-07-11 politician_context source-mine cross-check (post-stance-wave): re-ran the verify
+query — still exactly these 15. Mined inform.politician_context + politician_context_evidence
+URLs for all 15 pids; only Vail, Saucerman, Stevens had stance-wave sources, all chased and
+dead-ended (dated notes inline below). No pins lifted; calendar unchanged.
+
 ## Re-check calendar
 
 - **Alaska (5)** — re-check when the AK Division of Elections posts the 2026 primary
@@ -16,9 +21,12 @@ politician_id set and no politician_images row — returns exactly these 15.
   - Richard B. Mayers (photo EXISTS at static.votesmart.org/canphoto/33965.jpg but 403 on all
     fetch paths incl. Wayback; IL-based perennial/agitator — flag for content review before use)
   - Shirley A. Saucerman (nonpartisan, Anchorage MD; saucermanfordemocracy.com has landscape
-    photo only; FB login-walled)
+    photo only; FB login-walled) — 2026-07-11: confirmed site is single-page, sole image is
+    Alaska scenery (no person photo at all); no about/bio page exists
 - **New Hampshire (4)** — re-check ~Sept (primary Sep-8; Citizens Count sometimes adds photos):
-  - David Jarvis, John Vail (sendnomoney.org has only old India travel snapshots),
+  - David Jarvis, John Vail (sendnomoney.org has only old India travel snapshots;
+    2026-07-11: citizenscount.org/candidate/john-vail profile exists but shows the
+    "no photo provided" silhouette — keep on the Sept Citizens Count re-check),
     Richard McMenamon II, Sabrina Smith (X @6O3Sabrina active but avatar unfetchable;
     603sabrina.com parked). NOTE: BP NH race page "Kevin Smith" photo ≠ Sabrina Smith.
 - **Minnesota (3)** — primary Aug-11; low hope (blogger-confirmed zero-presence candidates):
@@ -26,6 +34,9 @@ politician_id set and no politician_images row — returns exactly these 15.
     domain dead — retry), Peter John Murgic
 - **Delaware (1)** — Travis Stevens: own site travisjackstevens.com uses a **Meta-AI-generated
   placeholder headshot** (watermarked) — rejected on principle; re-check for a real photo later.
+  2026-07-11: GoFundMe (gofundme.com/f/help-travis-jack-stevens-register-for-senate) hero +
+  organizer profile photos are ALSO AI-generated (mangled DE flag heraldry, waxy render) —
+  same synthetic set, rejected.
 - **Oklahoma (1)** — Sevier White (Lib, Norman, 77yo retired teacher; Vote-USA literal
   "No Photo"; OK Lib Party FB post unfetchable).
 - **Tennessee (1)** — Catherine Barcel "Barcy" Whitson (Ind, Chattanooga; TN SOS filing only;
