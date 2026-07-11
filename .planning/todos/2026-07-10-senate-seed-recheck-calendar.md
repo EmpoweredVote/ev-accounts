@@ -64,3 +64,27 @@ trails: scratchpad wsen/verify_group[123].json + group_*.json; master board arti
 - ME general currently = Collins + withdrawn Platner (D slot vacant) — correct until convention.
 - Dual-pid merge todo: `.planning/todos/2026-07-10-senate-dual-pid-merge.md` (AFTER this seed).
 - politicians.is_incumbent DEFAULTS TRUE — mig 1296 set false explicitly on all 114 new pols.
+
+## FLAG added 2026-07-10 (stance wave): Kevin Lee McCants TN — possible Senate withdrawal
+- Stance agent found Ballotpedia listing McCants as WITHDRAWN from the U.S. Senate D primary and declared for TN GOVERNOR (D primary, same Aug-6 date).
+- Wikipedia (fetched 2026-07-10) still lists him as DECLARED in BOTH races — conflicting.
+- ACTION: verify against TN SOS certified Aug-6 primary ballot (sos.tn.gov); if confirmed, remove McCants (pid 3870e67b-a38c-44e0-8800-ac0dab0e29ea) from the Senate race_candidates row. His stance data attaches to the politician and stays valid either way.
+
+## FLAGS added 2026-07-10 (stance wave): MA Senate primary withdrawals
+- **Alexander Rikleen (pid 243a8673-...) WITHDREW** from MA D primary, endorsed Markey; campaign site = "campaign concluded" page. Verify vs MA SoS certified Sep-1 ballot; remove from race_candidates if confirmed.
+- **William Gates (pid 590e8d87-...) WITHDREW** — likely missed MA D convention 15% delegate threshold; site shows "Thank You Democratic Delegates"; $0 raised per Ballotpedia. Same verification path.
+- Party backfilled on politicians (was NULL): Rikleen D, Gates D, Deaton R. Nathan Bech party still NULL — confirm when his batch runs (gen-mixed).
+
+## FLAG added 2026-07-10 (stance wave): Allen Waters RI — Senate candidacy likely dormant
+- FEC Senate committee (S6RI00262) has only a Nov-2024 Statement of Candidacy, no financial activity since; same treasurer runs an ACTIVE watersformayor.com campaign (Providence Mayor, "Independent"/"Providence First", launch video Feb-6-2026) conflicting with his Republican Senate registration.
+- Verify vs RI SoS certified Sep-9 primary ballot; if he doesn't appear, remove from Senate race_candidates (pid 0802106b-e080-4466-8cb2-811b9ef3c5c1).
+
+## FLAG added 2026-07-10 (stance wave): Christopher Beardsley DE — switched to STATE Senate run
+- Wikipedia + his own site (beardsleyfordelaware.com) now describe a Delaware STATE Senate candidacy, not U.S. Senate; FEC federal committee still shows filings through 05/2026 (lagging).
+- Verify vs DE certified Sep-15 primary ballot; if absent, remove from U.S. Senate race_candidates (pid 81ad76c3-18e1-4ba9-acab-81142f01cfbf). His 10 pushed stances are current personal positions — keep on politician record.
+- Also noted: Shulli's real site = shulli.org (shulliforsenate.com is an unrelated squatter domain); Katz = party-switcher (2020 D presidential → 2024 I → 2026 R), healthcare stance reversal documented in reasoning.
+
+## FLAG added 2026-07-11 (stance wave): Cindy Burbank NE — self-imposed Aug-3 withdrawal deadline
+- Burbank (D, pid cec56151-0501-4f3f-bcb3-3aabbb97b4d0) publicly prefers Dan Osborn as the stronger anti-Ricketts candidate and set Aug-3-2026 as her decide-by date. She was also briefly removed/reinstated from the ballot (NE Supreme Court).
+- RE-CHECK ≥ Aug-4: if she withdrew, update NE race_candidates.
+- Context also: Mike Marvin (LMN) accused of being an "Osborn plant"; Burbank paid his filing fee — field may shift together.
