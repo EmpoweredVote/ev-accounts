@@ -206,9 +206,14 @@ Q: How should government respond to jail overcrowding and criminal justice deman
 
 ---
 
-### City-Level Topics (local elections only)
+### City-Level Topics
 
-The following topics apply to city-level races (mayor, city council, etc.). Skip these for state and federal candidates unless specifically requested.
+The following topics are primarily city-level (mayor, city council, etc.). **Attempt every topic in
+scope regardless of office** — prioritize by level, don't hard-skip: for a **city** candidate lead
+with these city topics and citywide issues (homelessness, housing) but still check the state/federal
+topics; for a **state/federal** candidate lead with the statewide/national topics and check these
+city topics only where the candidate has a documented position. Skip a topic only when you genuinely
+find no evidence.
 
 ### 27. Transportation Priorities (topic_key: transportation-priorities)
 Q: Where should your city focus its transportation investment?
