@@ -37,8 +37,23 @@ function parseArgs(argv) {
     else if (k === '--out') a.out = argv[++i];
     else if (k === '--base') a.base = argv[++i];
     else if (k === '--candidates') a.candidates = argv[++i].split(',').map(s => s.trim()).filter(Boolean);
+    else if (k === '--names') a.names = argv[++i].split(',').map(s => s.trim()).filter(Boolean);
   }
   return a;
+}
+
+// Normalize a name to a token set for matching.
+function nameTokens(s) {
+  return new Set((s || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim().split(' ').filter(Boolean));
+}
+// A speaker matches a candidate name if the shorter token set is a subset of the longer —
+// so "Karen Bass" matches the transcript's "Karen Ruth Bass", and vice versa.
+function nameMatch(speaker, candidateName) {
+  const a = nameTokens(speaker), b = nameTokens(candidateName);
+  if (!a.size || !b.size) return false;
+  const [small, big] = a.size <= b.size ? [a, b] : [b, a];
+  for (const t of small) if (!big.has(t)) return false;
+  return true;
 }
 
 async function getJSON(url) {
@@ -116,27 +131,52 @@ async function main() {
   }
   console.log(`Found ${sources.length} OTR source(s). Fetching transcripts…`);
 
-  // candidateId -> { name, sources: [{ meeting, turns }] }
+  // Build match targets. Segments are attributed by politicianSlug (debates) OR speakerName only
+  // (interviews, where politicianSlug is null) — so we match on EITHER. Explicit --names/--candidates
+  // is the reliable path; with neither, auto-discover from whatever politicianSlugs are present.
+  const targets = [];  // { key, id, names: [displayName] }
+  if (args.names) for (const n of args.names) targets.push({ key: n, id: null, names: [n] });
+  if (args.candidates) for (const id of args.candidates) {
+    const nm = nameById.get(id);
+    const existing = nm && targets.find(t => t.names.some(x => nameMatch(x, nm)));
+    if (existing) existing.id = id;             // fold id into a name target already listed
+    else targets.push({ key: nm || id, id, names: nm ? [nm] : [] });
+  }
+  const autoDiscover = targets.length === 0;
+
+  function matchTarget(turn) {
+    for (const t of targets) {
+      if (turn.politicianSlug && t.id && turn.politicianSlug === t.id) return t;
+      if (turn.speakerName && t.names.some(n => nameMatch(turn.speakerName, n))) return t;
+    }
+    return null;
+  }
+
+  // candidateKey -> { name, sources: [{ meeting, turns }] }
   const byCandidate = new Map();
-  const restrict = args.candidates ? new Set(args.candidates) : null;
 
   for (const m of sources) {
     let segments;
     try { segments = await fetchAllSegments(args.base, m.id); }
     catch (e) { console.error(`  ! ${m.id} transcript fetch failed: ${e.message}`); continue; }
     const turns = toTurns(segments);
-    // group this source's turns by candidate id
-    const perCand = new Map();
+    const perCand = new Map();  // key -> { name, turns }
     for (const t of turns) {
-      const cid = t.politicianSlug;
-      if (!cid) continue;                       // only speaker-attributed (tracked politician) turns
-      if (restrict && !restrict.has(cid)) continue;
-      if (!perCand.has(cid)) perCand.set(cid, []);
-      perCand.get(cid).push(t);
+      let key, name;
+      if (autoDiscover) {
+        if (!t.politicianSlug) continue;        // discovery mode needs a slug to know it's a candidate
+        key = t.politicianSlug; name = nameById.get(t.politicianSlug) || t.speakerName || t.politicianSlug;
+      } else {
+        const tg = matchTarget(t);
+        if (!tg) continue;
+        key = tg.key; name = nameById.get(tg.id) || t.speakerName || tg.key;
+      }
+      if (!perCand.has(key)) perCand.set(key, { name, turns: [] });
+      perCand.get(key).turns.push(t);
     }
-    for (const [cid, cturns] of perCand) {
-      if (!byCandidate.has(cid)) byCandidate.set(cid, { name: nameById.get(cid) || cturns[0].speakerName || cid, sources: [] });
-      byCandidate.get(cid).sources.push({ meeting: m, turns: cturns });
+    for (const [key, { name, turns: cturns }] of perCand) {
+      if (!byCandidate.has(key)) byCandidate.set(key, { name, sources: [] });
+      byCandidate.get(key).sources.push({ meeting: m, turns: cturns });
     }
     console.log(`  ✓ ${m.title || m.id} — ${perCand.size} candidate(s), ${turns.length} turns`);
   }

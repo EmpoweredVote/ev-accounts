@@ -125,13 +125,20 @@ await pool.end();
 Then extract every candidate's speaker-attributed turns across the race's OTR sources:
 
 ```bash
-node ev-accounts/.claude/skills/research-stances/scripts/extract-otr.mjs --race <race_id>
+node ev-accounts/.claude/skills/research-stances/scripts/extract-otr.mjs \
+  --race <race_id> --names "Full Name 1,Full Name 2"
 # writes one markdown file per candidate to
 #   ev-accounts/backend/data/stance-research/otr-transcripts/<race_id>/<candidate>.md
 # each source section is headed with its YouTube URL + OTR page URL (use these as source_url_1)
 ```
 
-`extract-otr.mjs` uses the OTR public API only (no DB): `/api/people` (resolve candidate ids),
+**Always pass `--names` with the candidates' DB `full_name`s.** Debate transcripts tag turns with a
+`politicianSlug`, but news-interview transcripts attribute by `speakerName` only (slug is null) — and
+those are often the majority of a race's sources. `--names` matches on speaker name (token-subset, so
+"Karen Bass" matches the transcript's "Karen Ruth Bass"), which covers both. Without it the tool only
+finds debate turns and silently misses every interview.
+
+`extract-otr.mjs` uses the OTR public API only (no DB): `/api/people` (candidate names),
 `/api/meetings` (the race's sources via `raceIds`), and paginated
 `/api/meetings/{id}/transcript?page=N` (segments carry `speakerName` + `politicianSlug`). It prints
 `OTR_SOURCES=<n> OTR_CANDIDATES=<n>` at the end.
@@ -196,10 +203,17 @@ The topic_key in your CSV output MUST exactly match one of the topic_key values 
 Do NOT invent your own topic_key slugs.
 Do NOT include any topic_key not in the above list — the list is fetched fresh each run.
 
-City-level topics to SKIP for state/federal candidates (unless explicitly requested):
-transportation-priorities, economic-development, homelessness-response, residential-zoning,
-city-sanitation, local-immigration, rent-regulation, growth-and-development, local-environment,
-public-safety-approach, jail-capacity, judicial-*
+TOPIC PRIORITY BY OFFICE LEVEL (attempt ALL topics; prioritize by level; skip only on no evidence):
+Research every topic in scope — do NOT hard-skip a topic just because of the office level. But lead
+with the topics that match this office's level and spend proportionally more effort there:
+- City office (mayor, city council): lead with the city-level topics (transportation-priorities,
+  economic-development, homelessness-response, residential-zoning, city-sanitation, local-immigration,
+  rent-regulation, growth-and-development, local-environment, public-safety-approach, jail-capacity)
+  and citywide issues (homelessness, housing). Still check the state/federal topics — a mayor often
+  has a public record on climate, civil-rights, immigration, etc.
+- State/federal office: lead with the statewide/national topics; the city-level topics rarely apply,
+  but still check any where the candidate has a documented position.
+Skip a topic ONLY when you genuinely cannot find sufficient evidence — never skip by assumption.
 
 --output-file [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv
 
@@ -341,6 +355,15 @@ Show the user a diff table and split the rows into three buckets:
   reasoning and its supporting quote, and get explicit per-row sign-off. If the change was inferred
   from party rather than a documented quote, flag it as such.
 
+**The public summary MUST move with the value.** `politician_context.reasoning` is the "here's how we
+got to this value" blurb shown on the candidate's **Essentials profile** and the **Compass** — it is
+public-facing. Whenever you push a value (NEW or CHANGE), you MUST write/replace the reasoning so it
+justifies the value being stored, in plain language a voter can trust. Never change a value and leave
+a stale reasoning that describes the old position, and never leave the reasoning blank. After any
+value CHANGE, re-read the stored reasoning and confirm it (a) describes the new value's position and
+(b) doesn't still argue the old one — a value/summary mismatch is a trust defect, not a cosmetic one.
+(This mirrors the quote↔value coupling check: the summary is coupled to the value just as the quote is.)
+
 ### Quote Overview (Read & Rank)
 
 For every row with a non-blank `quote_text`, show:
@@ -441,8 +464,11 @@ If a politician name doesn't match any row in `essentials.politicians`, report i
 ### 4c. Upsert answers and context
 
 Push values only for the **NEW** and **explicitly-approved CHANGE** rows from the STEP 3
-value-change guard — never silently overwrite an already-curated value. For each such matched row,
-call the admin service functions via a script:
+value-change guard — never silently overwrite an already-curated value. The upsert below writes the
+answer (`value`) and the context (`reasoning` + `sources`) **together** — this is deliberate:
+`reasoning` is the public "here's why" summary on the Essentials profile and Compass, so it must
+never lag the value. Confirm every row you push has a non-blank reasoning that matches its value
+before running the script. For each matched row, call the admin service functions:
 
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
