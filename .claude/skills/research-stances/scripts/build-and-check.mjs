@@ -1,0 +1,152 @@
+#!/usr/bin/env node
+/**
+ * build-and-check.mjs — pre-push QA for a research CSV.
+ *
+ * Builds the audit-quotes context bundle (topics -> quotes with stance
+ * {question_text, value, chairs}, editor_note, de-id) from a research CSV, and runs
+ * the deterministic mechanical checks BEFORE anything is inserted, so the orchestrator
+ * can fix problems in the CSV instead of in the DB. Mirrors the mechanical pass of the
+ * audit-quotes skill (note-missing, note-too-long, note-section-ref, deid-missing,
+ * trailing-ellipsis, partisan-tell, source-tier-4).
+ *
+ *   cd ev-accounts/backend && node ../.claude/skills/research-stances/scripts/build-and-check.mjs \
+ *      --csv data/stance-research/2026-07-12-ca-gov-becerra-otr.csv
+ *   # writes <csv>.bundle.json and prints findings. --out overrides the bundle path.
+ *
+ * Reads DATABASE_URL from ev-accounts/backend/.env; resolves pg + csv-parse from
+ * backend/node_modules (so it runs no matter the cwd).
+ */
+import { readFileSync, writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, resolve, join } from 'node:path';
+import { createRequire } from 'node:module';
+
+const here = dirname(fileURLToPath(import.meta.url));            // .../research-stances/scripts
+const evRoot = resolve(here, '..', '..', '..', '..');           // .../ev-accounts
+const backend = join(evRoot, 'backend');
+const require = createRequire(join(backend, 'package.json'));
+const { Client } = require('pg');
+const { parse } = require('csv-parse/sync');
+
+function parseArgs(argv) {
+  const a = {};
+  for (let i = 0; i < argv.length; i++) {
+    if (argv[i] === '--csv') a.csv = argv[++i];
+    else if (argv[i] === '--out') a.out = argv[++i];
+  }
+  return a;
+}
+
+function databaseUrl() {
+  if (process.env.DATABASE_URL) return process.env.DATABASE_URL;
+  const env = readFileSync(join(backend, '.env'), 'utf8');
+  const m = env.match(/^\s*DATABASE_URL\s*=\s*"?([^"\n]+)"?/m);
+  if (!m) throw new Error('DATABASE_URL not found in env or backend/.env');
+  return m[1];
+}
+
+// ---- mechanical checks (ported from audit-quotes scripts/checks.py) ----
+const DEM = /\b(Democrat|Democrats|Democratic)\b/;
+const REP = /\b(Republican|Republicans|GOP)\b/;
+const PARTISAN = /\b(Democrat|Democrats|Democratic|Republican|Republicans|GOP|MAGA)\b/;
+const PARTY_PHRASE = /\b(?:my|our) party\b/i;
+const SENTENCE_END = /[.!?](\s|$)/g;
+const CAMPAIGN_SITE = /(for[a-z]+\d{2,4}|20\d\d|campaign)\.(com|org)|(vote|elect)[a-z]+\.(com|org)/i;
+
+function checkQuote(q) {
+  const out = [];
+  const base = { topic_key: q.topic_key, candidate: q.candidate, quote_id: q.id };
+  const note = (q.editor_note || '').trim();
+  if (!note) out.push({ ...base, check_id: 'note-missing', severity: 'high',
+    what: 'editor_note is empty (essentials.quotes requires one; the audit hard-fails without it).' });
+  else {
+    if (/§/.test(note) || /\btier-?\d\b/i.test(note)) out.push({ ...base, check_id: 'note-section-ref', severity: 'medium',
+      what: 'editor_note cites internal section numbers / jargon; rewrite human-readable.' });
+    if ((note.match(SENTENCE_END) || []).length > 2) out.push({ ...base, check_id: 'note-too-long', severity: 'low',
+      what: 'editor_note is longer than 2 sentences.' });
+  }
+  if (!(q.deidentified_text || '').trim()) out.push({ ...base, check_id: 'deid-missing', severity: 'high',
+    what: 'deidentified_text is blank; row is not admin-selectable and has no blind card.' });
+  const qt = (q.quote_text || '').replace(/\s+$/, '');
+  if (qt.endsWith('…') || qt.endsWith('...')) out.push({ ...base, check_id: 'trailing-ellipsis', severity: 'low',
+    what: 'quote_text ends with a trailing ellipsis (strip it).' });
+  const blind = q.deidentified_text || '';
+  if (!(DEM.test(blind) && REP.test(blind))) {           // symmetric mention of both parties reveals no side
+    const m = blind.match(PARTISAN) || blind.match(PARTY_PHRASE);
+    if (m) out.push({ ...base, check_id: 'partisan-tell', severity: 'high',
+      what: `blind text contains a partisan/side tell: '${m[0]}'.` });
+  }
+  const url = q.source_url || '';
+  if (!/youtube\.com|youtu\.be/.test(url) && CAMPAIGN_SITE.test(url)) out.push({ ...base, check_id: 'source-tier-4', severity: 'medium',
+    what: `source looks like a campaign/written page (tier 4): ${url}` });
+  return out;
+}
+
+async function main() {
+  const args = parseArgs(process.argv.slice(2));
+  if (!args.csv) { console.error('Usage: build-and-check.mjs --csv <path> [--out <bundle.json>]'); process.exit(2); }
+  const csvPath = resolve(args.csv);
+  const rows = parse(readFileSync(csvPath, 'utf8'), { columns: true, skip_empty_lines: true });
+
+  const client = new Client({ connectionString: databaseUrl(), ssl: { rejectUnauthorized: false } });
+  await client.connect();
+
+  const bundle = { source_csv: csvPath, topics: {} };
+  const quotes = [];
+  const stanceCache = new Map();
+
+  for (const r of rows) {
+    if (!(r.quote_text || '').trim()) continue;            // only rows with a quote become bundle quotes
+    const tk = (r.topic_key || '').toLowerCase();
+    const name = r.full_name;
+    // resolve politician_id (by full_name or alternate_names)
+    const pid = (await client.query(
+      `SELECT id::text FROM essentials.politicians
+       WHERE lower(full_name)=lower($1)
+          OR EXISTS (SELECT 1 FROM unnest(alternate_names) a WHERE lower(a)=lower($1)) LIMIT 1`, [name])).rows[0]?.id || null;
+    const key = pid + '|' + tk;
+    let stance = stanceCache.get(key);
+    if (stance === undefined) {
+      stance = null;
+      if (pid) {
+        const s = (await client.query(
+          `SELECT t.question_text,
+             (SELECT a.value FROM inform.politician_answers a WHERE a.topic_id=t.id AND a.politician_id=$1::uuid) AS value,
+             (SELECT json_agg(json_build_object('v', s.value, 'text', s.text) ORDER BY s.value)
+              FROM inform.compass_stances s WHERE s.topic_id=t.id) AS chairs
+           FROM inform.compass_topics t WHERE t.topic_key=$2`, [pid, tk])).rows[0];
+        if (s) stance = s;
+      }
+      stanceCache.set(key, stance);
+    }
+    const q = {
+      id: `CSV-${name}-${tk}`.replace(/\s+/g, '_'),
+      topic_key: tk, candidate: name, politician_id: pid,
+      quote_text: r.quote_text,
+      deidentified_text: (r.quote_deidentified || '').trim() || null,
+      editor_note: (r.editor_note || '').trim() || null,
+      source_url: r.source_url_1 || r.source_url_2 || r.source_url_3 || null,
+      stance,
+    };
+    quotes.push(q);
+    const t = bundle.topics[tk] || (bundle.topics[tk] = { topic_key: tk, quotes: [] });
+    t.quotes.push(q);
+  }
+  await client.end();
+
+  const findings = quotes.flatMap(checkQuote);
+  const outPath = args.out ? resolve(args.out) : csvPath.replace(/\.csv$/, '') + '.bundle.json';
+  writeFileSync(outPath, JSON.stringify(bundle, null, 2));
+
+  const bySev = { high: 0, medium: 0, low: 0 };
+  for (const f of findings) bySev[f.severity] = (bySev[f.severity] || 0) + 1;
+  console.log(`Bundle: ${quotes.length} quote(s) across ${Object.keys(bundle.topics).length} topic(s) -> ${outPath}`);
+  console.log(`MECHANICAL FINDINGS: ${findings.length} (high=${bySev.high} medium=${bySev.medium} low=${bySev.low})`);
+  for (const f of findings) console.log(`  ${f.check_id.padEnd(18)} ${f.severity.padEnd(6)} ${f.candidate} / ${f.topic_key}: ${f.what}`);
+  const missingPid = quotes.filter(q => !q.politician_id).map(q => q.candidate);
+  if (missingPid.length) console.log(`\nWARNING: no politician_id for: ${[...new Set(missingPid)].join(', ')} (won't resolve on push)`);
+  // non-zero exit if any high-severity finding, so the pipeline can gate on it
+  process.exit(bySev.high > 0 ? 1 : 0);
+}
+
+main().catch(e => { console.error('FATAL:', e.message); process.exit(2); });
