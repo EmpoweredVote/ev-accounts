@@ -386,31 +386,36 @@ The distinction matters: a **bill signing** (Governor) is a different evidentiar
 - **All quotes must be EXACT, VERBATIM quotes** — never paraphrase or approximate.
 - Enclose quotes in quotation marks and attribute them with date and context.
 - If you cannot find the exact wording, describe what the politician said without quote marks rather than fabricating a quote.
-- Prefer quotes from official transcripts, C-SPAN, congressional records, or direct interview footage.
+- Prefer quotes from official transcripts, C-SPAN, congressional records, or direct interview footage. When the orchestrator provides an On the Record transcript file, it is your **tier-1 source** — draw quotes from it first (they are already verified to the cited source).
 
-### De-identification (quote_deidentified)
+### Quote-selection gates (a quote_text must pass ALL THREE)
 
-Read & Rank shows quotes blind — readers must not be able to tell who said it.
-Produce `quote_deidentified` from `quote_text` with MINIMUM change — edit only the
-identity-revealing phrases.
+A quote is only worth recording if it would survive the downstream Read & Rank audit. If the best
+quote you have fails any of these, leave `quote_text` BLANK and record the stance from the record
+instead — a blank quote is better than a bad one.
 
-SCRUB:
-- the speaker's own name
-- explicit office claims ("as Senator", "since I came to Congress", "I'm a commissioner")
-- acts only one office can do ("I signed an executive order", "I met with President X")
-- party self-ID ("our Democratic Party", "Indiana Republicans")
-- naming the incumbent or opponent
-- narrowing a district/jurisdiction that identifies the seat
+- **FORWARD, not record.** The operative clause is the candidate reasoning about what SHOULD be done — not "I did X / I sued / I voted / we won." A little record as scaffolding is fine; a resume of past actions is not.
+- **ON-QUESTION.** It must answer the topic's framed question (engage that exact axis), not an adjacent one. "Trump's tariffs raised prices" is not a tariff-policy stance; "we already have a commission" is not a redistricting-authority stance.
+- **POSITION, not personal attack.** Critiquing a policy, law, or office is fine even when combative; attacking a *person* (character, family, fitness) is not — trim the attack or drop the quote.
 
-KEEP (not identifying):
-- bare state/demographic names ("Indiana", "Hoosier", "California")
-- generic "we"
-- bill names without an authorship claim (SAVE Act, USMCA, Prop 1, a state RFRA)
-- broad policy advocacy
+### De-identification (quote_deidentified) — honest marking, never silent paraphrase
 
-If a quote cannot be de-identified without destroying the stance, leave
-`quote_deidentified` BLANK (the quote is still recorded; it just won't be served by
-Read & Rank).
+Read & Rank shows quotes blind — readers must not be able to tell who said it. Produce
+`quote_deidentified` from `quote_text` by REMOVING identity leaks and MARKING every change: cut
+spans with `…`, and put every inserted or substituted word in `[brackets]`. Never reword to smooth
+it over — if you can't mark it honestly, you're paraphrasing (which the audit flags as dishonest).
+
+STRIP / NEUTRALIZE:
+- **Partisan / side tells** — "Democrat", "Republican", "GOP", "MAGA", "my party" (these reveal which side is speaking). Drop the word or bracket-substitute; never leave one in.
+- **Speaker self-identification** — the speaker's own name; office claims ("as Senator", "as governor", "since I came to Congress"); acts only one office can do ("I signed an executive order"); touting one's own record; biographical tells ("I'm a legal immigrant", "the only person here with experience of X").
+- **Named third parties in a policy critique** — "Newsom", "Trump" → `[the current administration]`.
+
+KEEP (not identifying): bare state/demographic names ("California", "Hoosier"), generic "we", bill
+names without an authorship claim (SAVE Act, USMCA, Prop 1), broad policy advocacy.
+
+No trailing `…` at the end of a quote. If a quote cannot be de-identified without destroying the
+stance, leave `quote_deidentified` BLANK (the quote is still recorded as a library quote; it just
+won't be served blind by Read & Rank).
 
 ### Stance Assessment
 - **Actions over words** — A vote or signed bill outweighs a campaign promise.
@@ -487,17 +492,17 @@ Flag any sources that:
 When asked to produce CSV output, use these exact columns:
 
 ```
-full_name,external_id,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3,quote_text,quote_deidentified
+full_name,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3,quote_text,quote_deidentified,editor_note
 ```
 
 - `full_name`: Politician's full name
-- `external_id`: Leave blank
 - `topic_key`: Exact key from the list above
 - `value`: Integer 1-5
 - `reasoning`: 1-3 sentences (wrap in double quotes if contains commas)
 - `source_url_1`, `source_url_2`, `source_url_3`: Real URLs only; leave blank if fewer sources
-- `quote_text`: ONE exact, verbatim quote (the politician's own words) that best documents this stance. Wrap in double quotes; escape embedded double quotes by doubling them (RFC 4180). Leave BLANK if the position is documented only by voting record/paraphrase with no quotable sentence.
+- `quote_text`: ONE exact, verbatim quote (the politician's own words) that best documents this stance. Wrap in double quotes; escape embedded double quotes by doubling them (RFC 4180). Leave BLANK if the position is documented only by voting record/paraphrase with no quotable sentence, OR if the best available quote fails a QUOTE-SELECTION GATE (below).
 - `quote_deidentified`: the SAME quote rewritten so the speaker is not identifiable (see DE-IDENTIFICATION below). Leave BLANK if `quote_text` is blank, or if it cannot be de-identified without destroying the stance.
+- `editor_note`: REQUIRED whenever `quote_text` is non-blank. 1-2 plain-language sentences a stranger can follow with no jargon and no section-refs — say WHY this quote and HOW it aligns with the candidate's stance on this topic, plus what you edited ("verbatim, no edits" if none). The database requires it and the downstream quote audit hard-fails without it. Leave blank only when `quote_text` is blank.
 
 Group all rows for a single politician together. No BOM character. Clean header row.
 
@@ -530,7 +535,9 @@ This summary helps the orchestrating skill track progress across parallel agent 
 5. **Verify all sources** — Remove any URL you're not confident is real
 6. **Compile output** in the requested format (CSV or structured report)
 7. **Self-audit** — Review for: fabricated URLs, paraphrased quotes presented as direct, unsupported stance assignments, party-affiliation-based inferences
-   - `quote_deidentified` contains NO speaker name, office claim, party self-ID, or named opponent
+   - every `quote_text` passes all three quote-selection gates (forward / on-question / position-not-attack)
+   - every non-blank `quote_text` has an `editor_note`
+   - `quote_deidentified` contains NO speaker name, office claim, party/side tell, self-ID, or named third party, and every edit is honestly marked (`…` for cuts, `[brackets]` for substitutions) — no silent paraphrase, no trailing `…`
 
 ## WHEN EVIDENCE IS INSUFFICIENT
 

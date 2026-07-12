@@ -9,8 +9,17 @@ argument-hint: "\"Politician Name(s)\" [--topics topic1,topic2] "
 You are running the **research-stances** skill. Your job is to research politician stances on existing Empowered Vote compass topics, produce a reviewable CSV, and optionally push approved data to the database.
 
 > **Related:** if this work involves candidate *quotes* (for Read & Rank / Compass / Essentials),
-> follow `essentials/docs/QUOTE-CURATION-PRINCIPLES.md` (selection, editing, sources, anonymity,
-> the quote↔stance coupling model) and the `publish-quotes` skill for the mechanics.
+> follow the curation principles in `../on-the-record/.claude/skills/audit-quotes/CHECKS.md` (the
+> checks + the §4 judgment rules — the working rulebook) and
+> `../on-the-record/.claude/skills/publish-quotes/EDITORIAL.md` (editing/de-id mechanics), and hand
+> quotes off to the `audit-quotes` skill before they go live (see STEP 4). The canonical
+> `essentials/docs/QUOTE-CURATION-PRINCIPLES.md` referenced by those skills is not in the tree — use
+> CHECKS.md §4 as the rulebook until it lands.
+
+> **Quotes are pushed as DRAFTS, then audited, then promoted.** This skill never sets a quote live
+> in the same step it inserts it. The flow is: research → pre-push QA → insert as drafts
+> (`readrank_selected=false`) → `audit-quotes --include-drafts` → promote the Read & Rank picks to
+> live only once the audit is clean (STEP 4).
 
 ---
 
@@ -86,6 +95,55 @@ Pass the **full output of this query** to each researcher agent prompt — inclu
 
 ---
 
+## STEP 0.5 — On the Record Source Discovery (tier-1 sources)
+
+**Do this BEFORE any web research.** On the Record (the sibling transcript platform) already holds
+speaker-attributed transcripts for many races — debates, forums, and news interviews. These are the
+**strongest** stance/quote source we have (verbatim, timestamped, attributed to the candidate) and
+they are what the `audit-quotes` source check verifies against. Skipping them was a real failure: a
+prior CA-Governor run used WebFetch/Ballotpedia only and missed **18 of 21** available OTR sources.
+
+If the politicians belong to a race, resolve the `race_id` and pull the transcripts first:
+
+```bash
+# Resolve the race_id from the candidate names (skip if the user already gave you a --race id)
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+import { pool } from './src/lib/db.js';
+const { rows } = await pool.query(\`
+  SELECT rc.race_id::text, r.position_name, count(*)::int AS n_candidates
+  FROM essentials.race_candidates rc
+  JOIN essentials.races r ON r.id = rc.race_id
+  JOIN essentials.politicians p ON p.id = rc.politician_id
+  WHERE lower(p.full_name) = ANY(SELECT lower(n) FROM unnest(\$1::text[]) AS n)
+  GROUP BY rc.race_id, r.position_name ORDER BY n_candidates DESC
+\`, [process.argv.slice(2)]);
+console.log(JSON.stringify(rows, null, 2));
+await pool.end();
+" -- "Name1" "Name2"
+```
+
+Then extract every candidate's speaker-attributed turns across the race's OTR sources:
+
+```bash
+node ev-accounts/.claude/skills/research-stances/scripts/extract-otr.mjs --race <race_id>
+# writes one markdown file per candidate to
+#   ev-accounts/backend/data/stance-research/otr-transcripts/<race_id>/<candidate>.md
+# each source section is headed with its YouTube URL + OTR page URL (use these as source_url_1)
+```
+
+`extract-otr.mjs` uses the OTR public API only (no DB): `/api/people` (resolve candidate ids),
+`/api/meetings` (the race's sources via `raceIds`), and paginated
+`/api/meetings/{id}/transcript?page=N` (segments carry `speakerName` + `politicianSlug`). It prints
+`OTR_SOURCES=<n> OTR_CANDIDATES=<n>` at the end.
+
+- If `OTR_SOURCES=0`, the race isn't on the platform yet — fall back to web research (STEP 1 tiers).
+- Pass each candidate's transcript file path into that candidate's research-agent prompt as the
+  **tier-1 source** (below). The agent should draw verbatim quotes from it first, and only use
+  WebFetch for topics the transcripts don't cover.
+- Not a race (e.g. a single official)? Skip this step and go straight to web research.
+
+---
+
 ## STEP 1 — Dispatch Research Agents
 
 For each politician, dispatch a `politician-stance-researcher` agent using the Agent tool.
@@ -145,14 +203,55 @@ public-safety-approach, jail-capacity, judicial-*
 
 --output-file [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv
 
-TOOL RULE — CRITICAL:
-- Use WebFetch ONLY. Never use WebSearch or Playwright — both share a rate-limited quota pool.
-- Fetch URLs directly using the URL patterns in your agent definition (Ballotpedia, ontheissues.org, official pages, Wikipedia, CalMatters, LA Times).
-- If a URL 404s, try the next pattern. Do not fall back to WebSearch.
+TIER-1 SOURCE — READ THIS FIRST:
+[If an OTR transcript file was produced in STEP 0.5, include:]
+Your PRIMARY source is this On the Record transcript file (verbatim, timestamped, attributed to
+this candidate across the race's debates/forums/interviews):
+  [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/otr-transcripts/<race_id>/<candidate>.md
+Read it with the Read tool and draw your quotes from it FIRST. Every quote you take from it is
+already verified to the source — cite that source's YouTube URL (shown in the file's section
+header) as source_url_1. Only use WebFetch for topics the transcript does not cover.
+
+TOOL RULE:
+- Prefer the OTR transcript file above (Read tool) — it is the strongest, pre-verified source.
+- For anything it doesn't cover, use WebFetch ONLY. Never use WebSearch or Playwright — both share a
+  rate-limited quota pool. Fetch URLs directly using the patterns in your agent definition
+  (Ballotpedia, ontheissues.org, official pages, Wikipedia, CalMatters, LA Times). If a URL 404s, try
+  the next pattern. Do not fall back to WebSearch.
+
+CSV OUTPUT — columns (RFC-4180; wrap any field with commas in double quotes, double embedded quotes):
+  full_name,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3,quote_text,quote_deidentified,editor_note
+- editor_note (REQUIRED for every row with a quote): 1–2 plain-language sentences a stranger can
+  follow with no jargon and no §-refs — say WHY this quote and HOW it aligns with the candidate's
+  Compass value on this topic, plus what you edited ("verbatim, no edits" if none). essentials.quotes
+  requires it and the audit hard-fails without it.
+
+QUOTE-SELECTION GATES — a quote_text must pass ALL THREE or leave quote_text blank (record the stance
+from the record instead). These mirror the audit's judgment checks:
+- FORWARD, not record: the operative clause is the candidate reasoning about what SHOULD be done —
+  not "I did X / I sued / I voted / we won." A little record as scaffolding is fine; a resume is not.
+- ON-QUESTION: it must answer the topic's framed question (engage that exact axis), not an adjacent
+  one. "Trump's tariffs raised prices" is not a tariff-policy stance; "we already have a commission"
+  is not a redistricting-authority stance. If it only touches the subject, leave quote_text blank.
+- POSITION, not personal attack: critiquing a policy/law/office is fine even when combative;
+  attacking a person (character, family, fitness) is not. Trim the attack or drop the quote.
+
+DE-IDENTIFICATION CONTRACT (quote_deidentified) — honest marking, never silent paraphrase:
+- Produce quote_deidentified from quote_text by REMOVING identity leaks and MARKING every change:
+  cut spans with "…", and put every inserted/substituted word in [brackets]. Never reword to smooth
+  it over — if you can't mark it honestly, you're paraphrasing.
+- Strip/neutralize: (a) partisan/side tells — "Democrat", "Republican", "GOP", "my party";
+  (b) speaker self-identification — "as governor", "as AG", "when I was Secretary", "I'm a legal
+  immigrant", "the only person here with experience of X", touting one's own record; (c) named third
+  parties in a policy critique — "Newsom"/"Trump" → "[the current administration]".
+- Keep bare state/demographic names, generic "we", bill names without an authorship claim.
+- No trailing "…" at the end of a quote. If de-identifying would change the POSITION itself, leave
+  quote_deidentified BLANK (the quote is still recorded as a library quote, just not blind-eligible).
 
 Other rules:
 - Skip any topic where you cannot find sufficient evidence
 - Every source URL must be real and verifiable — only include URLs you actually fetched successfully
+  (OTR YouTube URLs from the transcript file count as verified)
 - Use the full 1-5 range; match to stance text, not political alignment
 ```
 
@@ -178,7 +277,7 @@ After all agents complete:
 2. If multiple agents wrote to the same file, verify no duplicate headers
 3. If agents returned results in their response text instead of writing to file, manually compile into the CSV file using the Write tool
 4. Count total stances collected vs. expected (politicians x topics)
-5. The CSV now includes `quote_text` and `quote_deidentified` columns. Parse the CSV with a real RFC-4180 parser (`csv-parse/sync`), never by splitting on commas — quote columns contain commas and embedded quotes.
+5. The CSV includes `quote_text`, `quote_deidentified`, and `editor_note` columns. Parse the CSV with a real RFC-4180 parser (`csv-parse/sync`), never by splitting on commas — these columns contain commas and embedded quotes. Verify every row that has a `quote_text` also has a non-blank `editor_note` (the DB requires it and the audit hard-fails without it); if any are missing, draft them before STEP 4 or send the row back.
 
 ---
 
@@ -205,13 +304,57 @@ Show the user a formatted summary table:
 CSV saved to: `ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv`
 ```
 
+### Value-Change Guard (diff proposed vs. existing)
+
+**Before pushing any stance value, diff it against what's already in the DB.** Changing a value that
+was already curated is a bigger deal than filling in a blank one — a prior run pushed a
+party-inferred value change (Hilton redistricting 4→2) that should have been held for a human. Pull
+the current values and compare:
+
+```bash
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+import { pool } from './src/lib/db.js';
+const { rows } = await pool.query(\`
+  SELECT p.full_name, t.topic_key, a.value AS existing_value
+  FROM inform.politician_answers a
+  JOIN essentials.politicians p ON p.id = a.politician_id
+  JOIN inform.compass_topics t ON t.id = a.topic_id
+  WHERE lower(p.full_name) = ANY(SELECT lower(n) FROM unnest(\$1::text[]) AS n)
+  ORDER BY p.full_name, t.topic_key
+\`, [process.argv.slice(2)]);
+console.log(JSON.stringify(rows, null, 2));
+await pool.end();
+" -- "Name1" "Name2"
+```
+
+Show the user a diff table and split the rows into three buckets:
+
+| Politician | Topic | Existing | Proposed | Bucket |
+|---|---|---|---|---|
+| Name | topic | (none) | 3 | **NEW** — safe to push with approval |
+| Name | topic | 2 | 2 | unchanged — no-op |
+| Name | topic | 4 | 2 | **CHANGE — HOLD for explicit sign-off** |
+
+- **NEW** (no existing value): push with the normal approval.
+- **unchanged**: no-op, skip the write.
+- **CHANGE** (existing ≠ proposed): do **NOT** push automatically. List each one with the CSV
+  reasoning and its supporting quote, and get explicit per-row sign-off. If the change was inferred
+  from party rather than a documented quote, flag it as such.
+
 ### Quote Overview (Read & Rank)
 
 For every row with a non-blank `quote_text`, show:
 
-| Politician | Topic | Quote (de-identified) | De-id OK? |
-|-----------|-------|----------------------|-----------|
-| Name 1 | healthcare | "..." | yes / NEEDS MANUAL DE-ID (blank) |
+| Politician | Topic | Quote (de-identified) | Gates | De-id OK? |
+|-----------|-------|----------------------|-------|-----------|
+| Name 1 | healthcare | "..." | fwd ✓ / on-q ✓ / not-attack ✓ | yes / NEEDS MANUAL DE-ID (blank) |
+
+**Gates** = the three quote-selection gates from STEP 1 (forward-not-record, on-question,
+position-not-personal-attack). Any quote that fails a gate should be dropped as a quote (the stance
+value can still push from the record); flag it rather than pushing it. **De-id OK?** = passed the
+de-identification contract (no surname / partisan tell / self-ID leak, honest `…`/`[bracket]`
+marking). Run `scripts/build-and-check.mjs` (STEP 4a) to catch the mechanical de-id/note failures
+before you get here.
 
 For each (politician, topic) that ALREADY has quote(s) in `essentials.quotes`, show the
 existing de-identified quote vs the new one and ask which should be the Read & Rank pick
@@ -221,8 +364,9 @@ Rows where `quote_text` is present but `quote_deidentified` is blank are recorde
 library quotes but are NOT eligible to be the Read & Rank pick.
 
 Then ask:
-> "Review the stances above. You can:
-> 1. **Approve all** — push stances AND quotes to the database
+> "Review the stances above. Note: approved quotes are pushed as **drafts** and only promoted to
+> live after the quote audit is clean (STEP 4). You can:
+> 1. **Approve all** — run the pre-push QA, then push stances + quotes as drafts, audit, and promote picks
 > 2. **Reject specific rows** — tell me which politician/topic pairs to remove
 > 3. **Edit values** — tell me which rows to change (e.g., 'change Sherman/healthcare to 3')
 > 4. **Skip DB push** — keep the CSV only, don't write to database
@@ -231,11 +375,40 @@ Then ask:
 
 ---
 
-## STEP 4 — Push to Database
+## STEP 4 — QA → Push as Drafts → Audit → Promote
 
-For each approved row, push to the database in two steps:
+Quotes go through a pipeline, never a single write. The order is: **(4a)** pre-push QA over the CSV,
+**(4b–4d)** push approved stances + quotes as **drafts**, **(4e)** hand off to the `audit-quotes`
+skill, **(4f)** promote the Read & Rank picks to live only once the audit is clean.
 
-### 4a. Resolve IDs
+### 4a. Pre-push QA (before any write)
+
+**(i) Mechanical + bundle.** Run the checker over the CSV — it builds the audit context bundle
+(topics → quotes with stance + editor_note + de-id) and runs the deterministic checks
+(note-missing, note-too-long, deid-missing, trailing-ellipsis, partisan-tell, source-tier-4):
+
+```bash
+cd ev-accounts/backend && node ../.claude/skills/research-stances/scripts/build-and-check.mjs \
+  --csv data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv
+# prints "MECHANICAL FINDINGS: N (high=.. medium=.. low=..)" and writes <csv>.bundle.json
+# exits non-zero if any high-severity finding remains.
+```
+
+Fix every **high** finding in the CSV (write the missing `editor_note`, de-identify honestly, strip
+the trailing ellipsis, neutralize the partisan tell) and re-run until it's clean. Do not push a CSV
+with high-severity mechanical findings.
+
+**(ii) Judgment sub-agent.** Dispatch one `Agent`-tool sub-agent per candidate (or per race) using
+the **audit-quotes CHECKS.md §4 judgment prompt** (`../on-the-record/.claude/skills/audit-quotes/CHECKS.md`),
+passing the `<csv>.bundle.json` produced above. It returns a JSON array of judgment findings
+(`not-forward`, `is-attack`, `off-question`, `deid-dishonest`, `note-not-self-contained`,
+`source-summary`, `coupling-in-tension`). Resolve them:
+- `not-forward` / `off-question` / `is-attack` → drop the quote (keep the stance value from the
+  record); a `coupling-in-tension` → surface to the user with the value-change guard.
+- `deid-dishonest` / `note-not-self-contained` → fix the CSV field, re-run 4a(i), and continue.
+Only quotes that clear both passes proceed to the push.
+
+### 4b. Resolve IDs
 
 Look up `politician_id` and `topic_id`:
 
@@ -265,9 +438,11 @@ await pool.end();
 If a politician name doesn't match any row in `essentials.politicians`, report it:
 > "Could not find '[NAME]' in the politicians table. Their CSV data is preserved but won't be pushed to DB. You may need to create this politician first via the admin panel."
 
-### 4b. Upsert answers and context
+### 4c. Upsert answers and context
 
-For each matched row, call the admin service functions via a script:
+Push values only for the **NEW** and **explicitly-approved CHANGE** rows from the STEP 3
+value-change guard — never silently overwrite an already-curated value. For each such matched row,
+call the admin service functions via a script:
 
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
@@ -306,17 +481,19 @@ await pool.end();
 " '[JSON_ARRAY_OF_RESOLVED_STANCES]'
 ```
 
-### 4d. Push quotes to essentials.quotes (Read & Rank)
+### 4d. Push quotes to essentials.quotes — as DRAFTS
 
-For each approved, name-resolved row, build a quote object:
+Every quote is inserted with `readrank_selected=false` and its `editor_note`. **Nothing is promoted
+to live here** — promotion happens in 4f, after the audit. For each approved, name-resolved,
+gate-passing row build a quote object:
 
 ```
 {
   politician_id, topic_key,            // topic_key lowercased
-  quote_text, quote_deidentified,      // from the CSV; may be blank
+  quote_text, quote_deidentified,      // from the CSV; deid may be blank (library-only quote)
+  editor_note,                         // REQUIRED — from the CSV; QA at 4a guarantees it's present
   source_url,                          // first non-blank source_url_1..3, else null
-  full_name,                           // carried through for the leak-check
-  make_selected                        // boolean decided at STEP 3 (true for the chosen RR pick)
+  full_name                            // carried through for the pre-select leak-check at 4f
 }
 ```
 
@@ -326,60 +503,96 @@ Only include objects whose `quote_text` is non-blank. Then run:
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const quotes = JSON.parse(process.argv[2]);
-let inserted = 0, dupes = 0, selected = 0; const leaks = [];
+let inserted = 0, dupes = 0; const missingNote = [];
 await pool.query('BEGIN');
 try {
   for (const x of quotes) {
     const tk = x.topic_key.toLowerCase();
+    if (!x.editor_note || !x.editor_note.trim()) { missingNote.push(x.full_name + '/' + tk); continue; }
     const { rows: dup } = await pool.query(
       'SELECT id FROM essentials.quotes WHERE politician_id=\$1 AND lower(topic_key)=\$2 AND quote_text=\$3',
       [x.politician_id, tk, x.quote_text]
     );
-    let quoteId;
-    if (dup.length) { quoteId = dup[0].id; dupes++; }
-    else {
-      const sourceName = x.source_url ? (()=>{ try { return new URL(x.source_url).hostname; } catch { return null; } })() : null;
-      const { rows: ins } = await pool.query(
-        'INSERT INTO essentials.quotes (politician_id, topic_key, quote_text, deidentified_text, source_url, source_name) VALUES (\$1,\$2,\$3,\$4,\$5,\$6) RETURNING id',
-        [x.politician_id, tk, x.quote_text, x.quote_deidentified || null, x.source_url || null, sourceName]
-      );
-      quoteId = ins[0].id; inserted++;
-    }
-    if (x.make_selected) {
-      if (!x.quote_deidentified) { leaks.push(x.politician_id + '/' + tk + ': no de-id text, cannot select'); continue; }
-      const surname = (x.full_name || '').trim().split(/\s+/).pop();
-      if (surname && new RegExp('\\\\b' + surname.replace(/[.*+?^\${}()|[\\]\\\\]/g,'\\\\\$&') + '\\\\b','i').test(x.quote_deidentified)) {
-        leaks.push(x.politician_id + '/' + tk + ': surname leak, not selected'); continue;
-      }
-      await pool.query('UPDATE essentials.quotes SET readrank_selected=false WHERE politician_id=\$1 AND lower(topic_key)=\$2', [x.politician_id, tk]);
-      await pool.query('UPDATE essentials.quotes SET readrank_selected=true WHERE id=\$1', [quoteId]);
-      selected++;
-    }
+    if (dup.length) { dupes++; continue; }
+    const sourceName = x.source_url ? (()=>{ try { return new URL(x.source_url).hostname; } catch { return null; } })() : null;
+    await pool.query(
+      'INSERT INTO essentials.quotes (politician_id, topic_key, quote_text, deidentified_text, source_url, source_name, editor_note, readrank_selected) VALUES (\$1,\$2,\$3,\$4,\$5,\$6,\$7,false)',
+      [x.politician_id, tk, x.quote_text, x.quote_deidentified || null, x.source_url || null, sourceName, x.editor_note]
+    );
+    inserted++;
   }
   await pool.query('COMMIT');
-  console.log(JSON.stringify({ inserted, dupes, selected, leaks }, null, 2));
+  console.log(JSON.stringify({ inserted, dupes, missingNote }, null, 2));
 } catch (e) { await pool.query('ROLLBACK'); console.error('Rolled back:', e.message); process.exit(1); }
 await pool.end();
 " '[JSON_ARRAY_OF_QUOTE_OBJECTS]'
 ```
 
-The `full_name` field is required on each object for the surname leak-check; carry it
-through from the resolved row.
+If `missingNote` is non-empty, those rows were skipped — write their editor_note and re-run.
 
-### 4c. Report results
+### 4e. Hand off to the audit-quotes skill
 
-After DB push:
-> "Pushed [N] stances to the database for [politician names].
-> - [N] politician_answers upserted
+With the drafts in place, run the real quote audit (it adds YouTube source-verification against the
+ingested OTR transcripts — the check the mechanical pass can't do):
+
+```bash
+cd ../on-the-record/.claude/skills/audit-quotes && \
+  ../../../.venv/bin/python -m scripts.audit --race <race_id> --include-drafts
+```
+
+Then run the judgment fan-out and portfolio pass per the `audit-quotes` SKILL.md, and resolve
+residual findings with `scripts/apply_fixes.py fixes.json` (dry-run first, show the diff, `--commit`
+only after the user OKs). Never auto-apply `decision-required` findings — list them for the user.
+A `source-unverified` finding usually means the quote is **mis-sourced** (wrong `source_url`); hunt
+the true OTR source and re-cite it rather than dropping a genuine quote.
+
+### 4f. Promote the Read & Rank picks to live (only after the audit is clean)
+
+For each topic where a candidate should have a live pick, promote exactly one quote — but only once
+4e is clean. Each promotion must pass a final leak-check on `deidentified_text` (no surname, no
+partisan tell, no self-ID) and replaces any currently-selected quote on that topic:
+
+```bash
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+import { pool } from './src/lib/db.js';
+const picks = JSON.parse(process.argv[2]);  // [{ id, full_name }]
+let selected = 0; const leaks = [];
+const PARTISAN = /\\\\b(Democrat|Democrats|Democratic|Republican|Republicans|GOP|MAGA)\\\\b/;
+const SELFID = /\\\\b(as governor|as attorney general|as senator|when I was|my administration|I'm a legal|only person here)\\\\b/i;
+await pool.query('BEGIN');
+try {
+  for (const p of picks) {
+    const { rows } = await pool.query('SELECT politician_id::text, lower(topic_key) tk, deidentified_text d FROM essentials.quotes WHERE id=\$1', [p.id]);
+    if (!rows.length) { leaks.push(p.id + ': not found'); continue; }
+    const { politician_id, tk, d } = rows[0];
+    if (!d) { leaks.push(p.id + ': no de-id text'); continue; }
+    const surname = (p.full_name || '').trim().split(/\\\\s+/).pop();
+    const surnameHit = surname && new RegExp('\\\\\\\\b' + surname.replace(/[.*+?^\${}()|[\\]\\\\]/g,'\\\\\\\\\$&') + '\\\\\\\\b','i').test(d);
+    if (surnameHit || PARTISAN.test(d) || SELFID.test(d)) { leaks.push(p.id + ': leak in de-id, not promoted'); continue; }
+    await pool.query('UPDATE essentials.quotes SET readrank_selected=false WHERE politician_id=\$1 AND lower(topic_key)=\$2', [politician_id, tk]);
+    await pool.query('UPDATE essentials.quotes SET readrank_selected=true WHERE id=\$1', [p.id]);
+    selected++;
+  }
+  await pool.query('COMMIT');
+  console.log(JSON.stringify({ selected, leaks }, null, 2));
+} catch (e) { await pool.query('ROLLBACK'); console.error('Rolled back:', e.message); process.exit(1); }
+await pool.end();
+" '[JSON_ARRAY_OF_PICKS]'
+```
+
+### 4g. Report results
+
+After the pipeline:
+> "Pushed [N] stances and [N] quote drafts for [politician names].
+> - [N] politician_answers upserted (NEW + approved changes only; [M] held for sign-off)
 > - [N] politician_context entries with reasoning and sources
+> - Quotes: [inserted] inserted as drafts, [dupes] already present
+> - Audit: [clean / residual findings resolved via apply_fixes]
+> - Promoted to live: [selected] Read & Rank pick(s); held back (de-id leak): [leaks list]
 > - CSV preserved at: [file path]
 >
-> Skipped: [list any unmatched politicians or rejected rows]
->
-> Quotes: [inserted] inserted, [dupes] already present, [selected] set as the Read & Rank pick.
-> Held back (no de-id / surname leak): [leaks list]
-> Reminder: a race becomes playable in Read & Rank only when ≥2 candidates in it each have
-> a readrank_selected de-identified quote on a live topic."
+> Reminder: a race becomes playable in Read & Rank only when ≥2 candidates in it each have a
+> readrank_selected de-identified quote on a live topic."
 
 ---
 
