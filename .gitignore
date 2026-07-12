@@ -77,6 +77,10 @@ backend/data/stance-research/**/_*
 backend/data/stance-research/agent_prompt_*.txt
 backend/data/stance-research/agent-prompt-*.txt
 backend/data/stance-research/wave*
+# Pipeline-generated working artifacts (regenerable): audit QA bundles + OTR transcript dumps
+backend/data/stance-research/*.bundle.json
+backend/data/stance-research/**/*.bundle.json
+backend/data/stance-research/otr-transcripts/
 
 # Per-rep stance-researcher agent memory (scratch; MEMORY.md stays tracked)
 backend/.claude/agent-memory/politician-stance-researcher/stance_*.md
