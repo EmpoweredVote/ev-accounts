@@ -22,29 +22,53 @@ Long LA-1 withdrawn — all already pinned/culled in their own todos) + 27 new p
 - Brian Lambert FL-14 judge-homonym pin RESOLVED: BP race page now carries a fresh
   candidate-submitted photo (s3 file `headshot-under-2MB_20260710_...`); imported in this wave.
 
+## 2026-07-12 politician_context source-mine cross-check (post-stance-wave)
+
+Verify query re-run: 55 → **53 remaining** after this pass. Mined inform.politician_context +
+politician_context_evidence URLs for all 55 pids; 13 had stance-wave sources, 10 leads chased:
+
+- **IMPORTED (2, Chris-approved)**: Jordan Mitchell KS-4 (cutout headshot recovered from
+  Wayback snapshot of his 404'd campaign site — Squarespace CDN still serves assets after
+  domain death, a reusable trick) + Shawn Johnson WY-AL (Cowboy State Daily 5/31/26
+  nomination-article solo color portrait, 4800×2700, face-centered 4:5 crop).
+- Dead ends (dated notes inline below): Eaton (smarter.vote profile has zero images),
+  Goetzman (site loads fine in Playwright — 403 was curl-only — but is an unfilled WP
+  template, ALL images Unsplash stock), Rucker (integrityindex.us profile = site logo only),
+  Catanese (see note), Curwick (site photo = the known B&W), Sheedy (BP personal page =
+  SubmitPhoto placeholder), Kincaid carryover (site is text-only, zero imgs), Burks carryover
+  (site re-checked: same sepia IMG_0514, no new photo).
+
 ## 27 new pinned skips (agent trails in session outputs)
 
-- **MN (6)**: Alex Eaton MN-1 (site is logo-only), Gregory Goetzman MN-1 (greggoetzman.com
-  403-walled — retry later), Christopher Mosel MN-2, Abbey Zieska MN-5, DeVelle Jackson MN-5,
+- **MN (6)**: Alex Eaton MN-1 (site is logo-only; 2026-07-12: smarter.vote profile also has
+  zero images), Gregory Goetzman MN-1 (2026-07-12: site loads in Playwright — 403 was
+  curl-only — but is an unfilled WP template, every image Unsplash stock; no real photo),
+  Christopher Mosel MN-2, Abbey Zieska MN-5, DeVelle Jackson MN-5,
   Chris Corey MN-6. Re-check after Aug-11 primary culls the field.
 - **AK (3)**: David Richey (Sitka indie; no photo in coverage), John B. Williams (see hazard
   above), Yaquelin Reynoso (Lawrence MA filer; unverifiable FB only). AK pamphlet re-check
   pre-Aug-18 alongside the Senate pins.
-- **WY (3)**: Daniel Workman, Elena Del Real (WyoFile explicitly non-participant.png),
-  Shawn Johnson (Libertarian atty; only group collage exists; lpwy.org bio 410-gone).
-- **KS (4)**: Curwick + Solomon (see flags), Jordan Mitchell KS-4 (site 404, FEC-confirmed),
-  Paul Catanese KS-4 (agent-reported campaign-site URL resolved to a sunset landscape —
-  re-check paulforkansas.com for a real headshot).
+- **WY (3→2)**: Daniel Workman, Elena Del Real (WyoFile explicitly non-participant.png).
+  ~~Shawn Johnson~~ — PIN LIFTED 2026-07-12: imported from Cowboy State Daily 5/31/26
+  nomination article (stance-wave source).
+- **KS (4→3)**: Curwick + Solomon (see flags; Curwick 2026-07-12: letsgobraeden.com's only
+  photo is the same B&W portrait — pin stands),
+  Paul Catanese KS-4 (2026-07-12: paulforkansas.com now has a June-2026 photo IMG_E5303 but
+  it's a full-body stage shot under magenta club lighting, face too small — still no headshot).
+  ~~Jordan Mitchell KS-4~~ — PIN LIFTED 2026-07-12: site is 404 but its Oct-2025 Wayback
+  snapshot exposes the Squarespace-CDN cutout headshot (still live); imported.
 - **CA/NV (2)**: Jeff Frese CA-10 (iVoterGuide 404 fallback confirmed no upload),
   William Johnson NV-4 (bare filing-only BP entry, name too common to attribute anything).
 - **CT (1)**: Luz Helena Bueno CT-4 — own site's only photo is AI-generated (literal
   "ChatGPT Image Apr 26 2026" filename in Wayback). Second AI-headshot case after
   Stevens DE. Re-check for a real photo later.
-- **WV (2)**: Isaiah Rucker WV-1 (Dallas motivational-speaker homonym trap documented),
+- **WV (2)**: Isaiah Rucker WV-1 (Dallas motivational-speaker homonym trap documented;
+  2026-07-12: integrityindex.us FEC-keyed profile checked — no candidate photo, logo only),
   Pat Carney WV-2 ("Friends of Cousin Pat"; FB avatar is default silhouette).
 - **OK (2)**: Rocco Bonacci OK-4 (FB page JS-walled — retry with browser), Austin Nieves OK-5
   (dancer/entertainer; linktree avatar is a logo).
 - **MT (1)**: Nick Sheedy MT-1 — MTFP guide portrait exists but is B&W/desaturated (hard rule).
+  2026-07-12: ballotpedia.org/Nick_Sheedy personal page checked — SubmitPhoto placeholder only.
 - **NC (1)**: Steven Swinton NC-13 (BP links socials: FB og:image is old text-logo,
   IG avatar is 2-person selfie).
 - **MS (1)**: Johnny Baucom MS-1 (BP infobox but no photo, $0 campaign, zero coverage).
