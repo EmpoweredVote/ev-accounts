@@ -44,7 +44,8 @@ politician_context_evidence URLs for all 55 pids; 13 had stance-wave sources, 10
   zero images), Gregory Goetzman MN-1 (2026-07-12: site loads in Playwright — 403 was
   curl-only — but is an unfilled WP template, every image Unsplash stock; no real photo),
   Christopher Mosel MN-2, Abbey Zieska MN-5, DeVelle Jackson MN-5,
-  Chris Corey MN-6. Re-check after Aug-11 primary culls the field.
+  Chris Corey MN-6 (2026-07-12: his only context source, a hometownsource letter-to-editor,
+  carries no author photo). Re-check after Aug-11 primary culls the field.
 - **AK (3)**: David Richey (Sitka indie; no photo in coverage), John B. Williams (see hazard
   above), Yaquelin Reynoso (Lawrence MA filer; unverifiable FB only). AK pamphlet re-check
   pre-Aug-18 alongside the Senate pins.
@@ -72,6 +73,8 @@ politician_context_evidence URLs for all 55 pids; 13 had stance-wave sources, 10
 - **NC (1)**: Steven Swinton NC-13 (BP links socials: FB og:image is old text-logo,
   IG avatar is 2-person selfie).
 - **MS (1)**: Johnny Baucom MS-1 (BP infobox but no photo, $0 campaign, zero coverage).
+  2026-07-12: BP race page re-checked for a fresh upload (Lambert-FL-14 pattern) — still
+  silhouette placeholder.
 - **KY (1)**: Mohammad Wael Ahmad KY-4 — only photo (LINK nky) is a side/back-profile shot at
   a monitor, face not identifiable; re-check as campaign develops.
 
