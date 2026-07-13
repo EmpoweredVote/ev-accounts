@@ -8,6 +8,7 @@ import {
   getCompassCompleteness,
   getCompassTopics,
   getCompassCategories,
+  getCompassLenses,
   getCompassPoliticians,
   getCandidates,
   getCandidateAnswers,
@@ -129,6 +130,23 @@ router.get('/categories', optionalAuth, async (req: Request, res: Response): Pro
     res.status(200).json(result);
   } catch (err) {
     console.error('[GET /compass/categories] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/compass/lenses
+// Auth: optional — works unauthenticated
+// Returns active lenses (Local/Federal/Judicial) with ordered topicIds and the
+// per-office auto-apply scope. Shared source of truth for Compass + Essentials.
+// ---------------------------------------------------------------------------
+
+router.get('/lenses', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const result = await getCompassLenses();
+    res.status(200).json(result);
+  } catch (err) {
+    console.error('[GET /compass/lenses] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });

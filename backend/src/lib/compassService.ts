@@ -182,6 +182,41 @@ export async function getCompassTopics() {
 }
 
 /**
+ * getCompassLenses
+ * Returns active compass lenses with their ordered topic IDs and per-office
+ * auto-apply scope (auto_district_types). Shared source of truth consumed by
+ * both the Compass and Essentials apps, replacing hardcoded lens constants.
+ */
+export async function getCompassLenses() {
+  // Raw SQL (pool.query) — compass_lenses/compass_lens_topics are not in the
+  // generated PostgREST types, matching how essentials-schema reads work here.
+  const { rows } = await pool.query(
+    `SELECT l.key, l.name, l.description, l.color, l.icon,
+            COALESCE(l.auto_district_types, ARRAY[]::text[]) AS auto_district_types,
+            COALESCE(
+              array_agg(lt.topic_id::text ORDER BY lt.sort_order)
+                FILTER (WHERE lt.topic_id IS NOT NULL),
+              ARRAY[]::text[]
+            ) AS topic_ids
+     FROM inform.compass_lenses l
+     LEFT JOIN inform.compass_lens_topics lt ON lt.lens_id = l.id
+     WHERE l.is_active = true
+     GROUP BY l.id, l.key, l.name, l.description, l.color, l.icon, l.auto_district_types
+     ORDER BY l.key`
+  );
+
+  return rows.map((r: any) => ({
+    key: r.key,
+    name: r.name,
+    description: r.description,
+    color: r.color,
+    icon: r.icon,
+    autoDistrictTypes: r.auto_district_types ?? [],
+    topicIds: r.topic_ids ?? [],
+  }));
+}
+
+/**
  * getCompassCategories
  * Returns all categories with nested live topics. Each nested topic carries
  * the same tier flag fields (applies_federal/state/local + office_scope) as
