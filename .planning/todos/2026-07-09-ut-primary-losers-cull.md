@@ -29,9 +29,19 @@ designation, kept over NE's 'Independent' label) + general race on the 2026 Utah
 (now 9 UT general races total — same Phase 166/UT-REKEY dedup note as mig 1325).
 BP-verified 7/12 ("no incumbents in this race").
 
-**STILL OPEN (needs its own pass):** Kaufusi former-mayor title check, BP-listed
-withdrawn/DQ verification (Sloan/Farrell/Bagwell/Brough/Dean/Jackson/Miller/Tautuaa).
-Details in the sections below.
+**FINAL TWO FLAGS CLOSED 2026-07-12 — THIS TODO IS FULLY RESOLVED:**
+- **BP withdrawn/DQ list: clean no-op.** None of the 8 (Sloan/Farrell/Bagwell/Brough/
+  Dean/Jackson/Miller/Tautuaa) was ever seeded into any UT race — the seed postdated
+  their withdrawals.
+- **Kaufusi title check → found a NEW LEAK VARIANT (fixed, mig 1327).** No "Mayor of
+  Provo" title anywhere. BUT all 6 UtahCo Commission 2026 candidates (incl. Kaufusi +
+  the 3 culled primary losers) held PLAIN-TITLED "Utah County Commissioner" office rows
+  (is_vacant=false) — officeholder titles, so the standing `NOT ILIKE 'Candidate for%'`
+  guard could NOT catch them; all 6 surfaced as sitting commissioners. Deleted (no race
+  referenced the office ids; politicians.office_id denorm cleared). Pattern was exactly
+  these 6 rows — no SLCo equivalent exists. COVERAGE GAP left open: the REAL Utah County
+  Commissioners (Gordon, Beltran, Powers Gardner) have no officials seeding at all —
+  future county-officials wave.
 
 Found 2026-07-09 during the UT headshot sweep (Ballotpedia district pages, primary results
 sections; vote totals "may change until results are certified" but margins are decisive).
