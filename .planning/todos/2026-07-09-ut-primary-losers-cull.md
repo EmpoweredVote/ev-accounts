@@ -4,10 +4,15 @@
 `backend/migrations/1323_ut_primary_losers_cull.sql` (verified 10/10 on prod).
 Dan McCay was already withdrawn when the migration ran — untouched.**
 
-**STILL OPEN (not part of the cull — needs its own pass):** SLCo Assessor/Surveyor
-wrong-cycle race rows, Setterberg party R→D fix, Kaufusi former-mayor title check,
-BP-listed withdrawn/DQ verification (Sloan/Farrell/Bagwell/Brough/Dean/Jackson/Miller/
-Tautuaa), and the UNSEEDED Utah Forward Party field incl. SD-11 INCUMBENT Emily Buss.
+**SLCo FIXES DONE 2026-07-12 (mig 1324):** Assessor (both party shells) + Surveyor races
+DELETED as 2024-cycle carryovers (candidate rows were the literal 2024 matchups with sitting
+officeholders Stavros/Park seeded as non-incumbent "candidates"). The Setterberg party flag
+was resolved BY the deletion — the wrong 'Republican' lived on the deleted Surveyor race's
+primary_party. All four politician rows kept.
+
+**STILL OPEN (needs its own pass):** Kaufusi former-mayor title check, BP-listed
+withdrawn/DQ verification (Sloan/Farrell/Bagwell/Brough/Dean/Jackson/Miller/Tautuaa),
+and the UNSEEDED Utah Forward Party field incl. SD-11 INCUMBENT Emily Buss.
 Details in the sections below.
 
 Found 2026-07-09 during the UT headshot sweep (Ballotpedia district pages, primary results
