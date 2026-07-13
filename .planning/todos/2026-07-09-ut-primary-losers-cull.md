@@ -23,9 +23,14 @@ NOTE for Phase 166 / UT-REKEY: these 8 districts NOW HAVE general races — a fu
 primary→general conversion of UT must dedup against them. New third-party candidates have
 zero stances/photos — they join the UT stance + pamphlet-headshot queues.
 
+**HD-38 GENERAL SEEDED 2026-07-12 (mig 1326):** McConnehey existed (active in R primary,
+copied to general); Sergio Sotelo CREATED (party='Unaffiliated' — Utah's official ballot
+designation, kept over NE's 'Independent' label) + general race on the 2026 Utah General
+(now 9 UT general races total — same Phase 166/UT-REKEY dedup note as mig 1325).
+BP-verified 7/12 ("no incumbents in this race").
+
 **STILL OPEN (needs its own pass):** Kaufusi former-mayor title check, BP-listed
-withdrawn/DQ verification (Sloan/Farrell/Bagwell/Brough/Dean/Jackson/Miller/Tautuaa),
-HD-38 general check (McConnehey/Sotelo seeding).
+withdrawn/DQ verification (Sloan/Farrell/Bagwell/Brough/Dean/Jackson/Miller/Tautuaa).
 Details in the sections below.
 
 Found 2026-07-09 during the UT headshot sweep (Ballotpedia district pages, primary results
