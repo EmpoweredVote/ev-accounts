@@ -360,6 +360,26 @@ describe('getPlayableRaces — embed geometry', () => {
     await getPlayableRaces();
     expect(mockGetBoundaryBatch).not.toHaveBeenCalled();
   });
+
+  it('embedLocal inlines geometry for the user\'s isLocal races only', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [
+      { ...BASE_ROW, race_id: 'mine', politician_ids: ['pol-1'] },  // isLocal via roster match
+      { ...BASE_ROW, race_id: 'other', politician_ids: ['pol-9'] }, // not the user's
+    ] });
+    mockGetBoundaryBatch.mockResolvedValueOnce(new Map([
+      ['G4110:1805860', { layer: 'G4110', geoid: '1805860', name: '', bbox: [0, 0, 1, 1], geojson: GEOM_A, hasBoundary: true }],
+      ['G4020:18105', { layer: 'G4020', geoid: '18105', name: '', bbox: [0, 0, 2, 2], geojson: GEOM_B, hasBoundary: true }],
+    ]));
+
+    const { races } = await getPlayableRaces(['pol-1'], undefined, undefined, true);
+    const mine = races.find((r) => r.raceId === 'mine')!;
+    const other = races.find((r) => r.raceId === 'other')!;
+
+    expect(mine.isLocal).toBe(true);
+    expect(mine.boundaryRef).toMatchObject({ layer: 'G4110', geoid: '1805860', geojson: GEOM_A });
+    expect(other.isLocal).toBe(false);
+    expect(other.boundaryRef).toEqual({ layer: 'G4110', geoid: '1805860' }); // not embedded
+  });
 });
 
 describe('getPlayableRaces — countyGeoIds', () => {

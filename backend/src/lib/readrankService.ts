@@ -278,6 +278,7 @@ export async function getPlayableRaces(
   politicianIds?: string[],
   jurisdiction?: JurisdictionGeoIds,
   embedRaceIds?: string[],
+  embedLocal?: boolean,
 ): Promise<{ races: RaceSummary[]; counties: Record<string, string> }> {
   const { rows } = await pool.query<{
     race_id: string; position_name: string; district_label: string | null; district_type: string | null;
@@ -473,9 +474,11 @@ export async function getPlayableRaces(
   });
 
   // Embed boundary geometry for specific races the caller will render immediately
-  // (e.g. the frontend's featured landing card) so their motif paints with no
-  // lazy-load flash. Everything else stays geometry-free and lazy-loads client-side.
+  // (e.g. the frontend's featured landing card, or the located ballot's own "Your
+  // races" via embedLocal) so their motif paints with no lazy-load flash. Everything
+  // else stays geometry-free and lazy-loads client-side.
   const embedSet = new Set(embedRaceIds ?? []);
+  if (embedLocal) for (const r of races) if (r.isLocal) embedSet.add(r.raceId);
   if (embedSet.size) {
     const refs = races
       .filter((r) => embedSet.has(r.raceId))
