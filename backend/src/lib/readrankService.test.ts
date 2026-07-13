@@ -1,8 +1,9 @@
 // src/lib/readrankService.test.ts
 import { vi, describe, it, expect, beforeEach } from 'vitest';
 
-const { mockQuery, mockGetDistrictCountyGeoIds, mockGetStateCountyGeoIds, mockGetCountyNames } = vi.hoisted(() => ({
+const { mockQuery, mockGetBoundaryBatch, mockGetDistrictCountyGeoIds, mockGetStateCountyGeoIds, mockGetCountyNames } = vi.hoisted(() => ({
   mockQuery: vi.fn(),
+  mockGetBoundaryBatch: vi.fn(),
   mockGetDistrictCountyGeoIds: vi.fn(),
   mockGetStateCountyGeoIds: vi.fn(),
   mockGetCountyNames: vi.fn(),
@@ -18,6 +19,7 @@ vi.mock('./env.js', () => ({
   },
 }));
 vi.mock('./informBoundaryService.js', () => ({
+  getBoundaryBatch: mockGetBoundaryBatch,
   getDistrictCountyGeoIds: mockGetDistrictCountyGeoIds,
   getStateCountyGeoIds: mockGetStateCountyGeoIds,
   getCountyNames: mockGetCountyNames,
@@ -34,10 +36,12 @@ async function getPlayableRacesResult(ids?: string[], jurisdiction?: Jurisdictio
 
 beforeEach(() => {
   mockQuery.mockReset();
+  mockGetBoundaryBatch.mockReset();
   mockGetDistrictCountyGeoIds.mockReset();
   mockGetStateCountyGeoIds.mockReset();
   mockGetCountyNames.mockReset();
-  // Default: empty maps (no county overlap) so existing tests are unaffected.
+  // Default: empty maps (no county overlap / no embedded geometry) so existing tests are unaffected.
+  mockGetBoundaryBatch.mockResolvedValue(new Map());
   mockGetDistrictCountyGeoIds.mockResolvedValue(new Map());
   mockGetStateCountyGeoIds.mockResolvedValue(new Map());
   mockGetCountyNames.mockResolvedValue({});
@@ -323,6 +327,58 @@ describe('getPlayableRaces — refs carry no geometry (lazy-loaded client-side)'
     // Exact-equality (not toMatchObject) proves no bbox/geojson keys leak into the list.
     expect(races[0].boundaryRef).toEqual({ layer: 'G4110', geoid: '1805860' });
     expect(races[0].frameRef).toEqual({ layer: 'G4020', geoid: '18105' });
+  });
+});
+
+describe('getPlayableRaces — embed geometry', () => {
+  const GEOM_A = { type: 'Polygon' as const, coordinates: [] };
+  const GEOM_B = { type: 'Polygon' as const, coordinates: [] };
+
+  it('embeds boundary + frame geometry only for the requested race ids', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [
+      { ...BASE_ROW, race_id: 'featured' },
+      { ...BASE_ROW, race_id: 'other' },
+    ] });
+    mockGetBoundaryBatch.mockResolvedValueOnce(new Map([
+      ['G4110:1805860', { layer: 'G4110', geoid: '1805860', name: '', bbox: [0, 0, 1, 1], geojson: GEOM_A, hasBoundary: true }],
+      ['G4020:18105', { layer: 'G4020', geoid: '18105', name: '', bbox: [0, 0, 2, 2], geojson: GEOM_B, hasBoundary: true }],
+    ]));
+
+    const { races } = await getPlayableRaces([], undefined, ['featured']);
+    const featured = races.find((r) => r.raceId === 'featured')!;
+    const other = races.find((r) => r.raceId === 'other')!;
+
+    expect(featured.boundaryRef).toMatchObject({ layer: 'G4110', geoid: '1805860', bbox: [0, 0, 1, 1], geojson: GEOM_A });
+    expect(featured.frameRef).toMatchObject({ layer: 'G4020', geoid: '18105', bbox: [0, 0, 2, 2], geojson: GEOM_B });
+    // Non-embedded race stays geometry-free (still lazy-loaded client-side).
+    expect(other.boundaryRef).toEqual({ layer: 'G4110', geoid: '1805860' });
+    expect(other.frameRef).toEqual({ layer: 'G4020', geoid: '18105' });
+  });
+
+  it('does not resolve geometry when no embed ids are given', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [BASE_ROW] });
+    await getPlayableRaces();
+    expect(mockGetBoundaryBatch).not.toHaveBeenCalled();
+  });
+
+  it('embedLocal inlines geometry for the user\'s isLocal races only', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [
+      { ...BASE_ROW, race_id: 'mine', politician_ids: ['pol-1'] },  // isLocal via roster match
+      { ...BASE_ROW, race_id: 'other', politician_ids: ['pol-9'] }, // not the user's
+    ] });
+    mockGetBoundaryBatch.mockResolvedValueOnce(new Map([
+      ['G4110:1805860', { layer: 'G4110', geoid: '1805860', name: '', bbox: [0, 0, 1, 1], geojson: GEOM_A, hasBoundary: true }],
+      ['G4020:18105', { layer: 'G4020', geoid: '18105', name: '', bbox: [0, 0, 2, 2], geojson: GEOM_B, hasBoundary: true }],
+    ]));
+
+    const { races } = await getPlayableRaces(['pol-1'], undefined, undefined, true);
+    const mine = races.find((r) => r.raceId === 'mine')!;
+    const other = races.find((r) => r.raceId === 'other')!;
+
+    expect(mine.isLocal).toBe(true);
+    expect(mine.boundaryRef).toMatchObject({ layer: 'G4110', geoid: '1805860', geojson: GEOM_A });
+    expect(other.isLocal).toBe(false);
+    expect(other.boundaryRef).toEqual({ layer: 'G4110', geoid: '1805860' }); // not embedded
   });
 });
 
