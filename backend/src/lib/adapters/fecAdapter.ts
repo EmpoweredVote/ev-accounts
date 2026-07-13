@@ -25,6 +25,12 @@ import { normalizeDonorName } from './normalizeDonorName.js';
 // Override via MAX_RECORDS_PER_POLITICIAN env var.
 const MAX_RECORDS_PER_POLITICIAN = parseInt(process.env.MAX_RECORDS_PER_POLITICIAN ?? '2500', 10);
 
+// Per-page delay between Schedule A pages. Raised + env-configurable so a long
+// backfill can stay well under the shared FEC 1,000 req/hr ceiling (the cron and
+// the backfill share one key; near the limit FEC hangs connections rather than
+// returning a clean 429, which surfaces as fetch timeouts).
+const PER_PAGE_SLEEP_MS = parseInt(process.env.FEC_PER_PAGE_SLEEP_MS ?? '5000', 10);
+
 // ---------------------------------------------------------------------------
 // FEC API response types
 // ---------------------------------------------------------------------------
@@ -135,7 +141,7 @@ async function fetchAllPagesForCommittee(
     lastIndex = page.pagination.last_indexes.last_index;
     lastContributionReceiptDate = page.pagination.last_indexes.last_contribution_receipt_date;
 
-    await sleep(4000);
+    await sleep(PER_PAGE_SLEEP_MS);
   }
 
   return totalExpected;
@@ -179,13 +185,27 @@ async function fetchAllPages(
  * fetchWithRetry wraps native fetch() with 429 exponential backoff.
  * Start delay: 1s, max delay: 60s, max retries: 3.
  */
-async function fetchWithRetry(url: string, maxRetries = 3): Promise<FecScheduleAResponse> {
-  let delayMs = 1000;
+async function fetchWithRetry(url: string, maxRetries = 5): Promise<FecScheduleAResponse> {
+  let delayMs = 2000;
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    const response = await fetch(url, {
-      signal: AbortSignal.timeout(60_000),
-    });
+    let response: Response;
+    try {
+      response = await fetch(url, { signal: AbortSignal.timeout(60_000) });
+    } catch (err) {
+      // A timeout/abort here is the throttle signature: near the shared 1,000 req/hr
+      // ceiling FEC hangs the connection instead of returning 429, so our 60s
+      // AbortSignal fires. Treat it like a 429 — back off and retry — rather than
+      // failing the whole (source, cycle) pair.
+      const isAbort = err instanceof Error && (err.name === 'AbortError' || err.name === 'TimeoutError' || /abort|timeout/i.test(err.message));
+      if (isAbort && attempt < maxRetries) {
+        console.warn(`[fecAdapter] request timed out (likely throttle) — backing off ${delayMs}ms (attempt ${attempt + 1}/${maxRetries})`);
+        await sleep(delayMs);
+        delayMs = Math.min(delayMs * 2, 120_000);
+        continue;
+      }
+      throw err;
+    }
 
     if (response.status === 429) {
       if (attempt === maxRetries) {
@@ -193,7 +213,7 @@ async function fetchWithRetry(url: string, maxRetries = 3): Promise<FecScheduleA
       }
       console.warn(`[fecAdapter] 429 rate limit — retrying in ${delayMs}ms (attempt ${attempt + 1}/${maxRetries})`);
       await sleep(delayMs);
-      delayMs = Math.min(delayMs * 2, 60_000);
+      delayMs = Math.min(delayMs * 2, 120_000);
       continue;
     }
 

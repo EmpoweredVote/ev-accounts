@@ -32,7 +32,7 @@ import type { PoliticianSource } from './campaignFinanceService.js';
 
 const PILOT_STATES = ['CA', 'IN'];
 const DEFAULT_FLOOR = 1980;
-const SLEEP_BETWEEN_PAIRS_MS = 3000;
+const SLEEP_BETWEEN_PAIRS_MS = parseInt(process.env.FEC_SLEEP_BETWEEN_PAIRS_MS ?? '6000', 10);
 const CYCLE_FETCH_SLEEP_MS = 1500;
 // Short lock TTL with a fast heartbeat. The heartbeat renews well within the TTL
 // during a live run (even a slow ~150s source run gets 3+ renewals), but if the
