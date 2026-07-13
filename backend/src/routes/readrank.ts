@@ -14,7 +14,7 @@ const router = Router();
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
-// GET /api/readrank/races[?politician_ids=uuid,uuid][&cd=..&sldu=..&sldl=..&county=..&school=..]
+// GET /api/readrank/races[?politician_ids=uuid,uuid][&cd=..&sldu=..&sldl=..&county=..&school=..][&embed=uuid,uuid]
 router.get('/races', async (req: Request, res: Response): Promise<void> => {
   let politicianIds: string[] | undefined;
   if (typeof req.query.politician_ids === 'string' && req.query.politician_ids.trim()) {
@@ -40,8 +40,15 @@ router.get('/races', async (req: Request, res: Response): Promise<void> => {
     };
   }
 
+  // Optional: embed boundary geometry for these race ids (the caller renders them
+  // immediately, e.g. a featured landing card, so their motif shouldn't lazy-load).
+  let embedRaceIds: string[] | undefined;
+  if (typeof req.query.embed === 'string' && req.query.embed.trim()) {
+    embedRaceIds = req.query.embed.split(',').map((s) => s.trim()).filter((s) => UUID_RE.test(s));
+  }
+
   try {
-    const { races, counties } = await getPlayableRaces(politicianIds, jurisdiction);
+    const { races, counties } = await getPlayableRaces(politicianIds, jurisdiction, embedRaceIds);
     res.status(200).json({ races, counties });
   } catch (err) {
     console.error('[GET /readrank/races] error:', err);

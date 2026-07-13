@@ -1,7 +1,7 @@
 import crypto from 'node:crypto';
 import { pool } from './db.js';
 import { env } from './env.js';
-import { getDistrictCountyGeoIds, getStateCountyGeoIds, getCountyNames } from './informBoundaryService.js';
+import { getBoundaryBatch, getDistrictCountyGeoIds, getStateCountyGeoIds, getCountyNames } from './informBoundaryService.js';
 import type { JurisdictionGeoIds } from './essentialsService.js';
 import { USPS_TO_FIPS } from './usStateCodes.js';
 
@@ -277,6 +277,7 @@ export function deriveTierScope(input: {
 export async function getPlayableRaces(
   politicianIds?: string[],
   jurisdiction?: JurisdictionGeoIds,
+  embedRaceIds?: string[],
 ): Promise<{ races: RaceSummary[]; counties: Record<string, string> }> {
   const { rows } = await pool.query<{
     race_id: string; position_name: string; district_label: string | null; district_type: string | null;
@@ -470,6 +471,27 @@ export async function getPlayableRaces(
       isLocal: geoMatch || rosterMatch,
     };
   });
+
+  // Embed boundary geometry for specific races the caller will render immediately
+  // (e.g. the frontend's featured landing card) so their motif paints with no
+  // lazy-load flash. Everything else stays geometry-free and lazy-loads client-side.
+  const embedSet = new Set(embedRaceIds ?? []);
+  if (embedSet.size) {
+    const refs = races
+      .filter((r) => embedSet.has(r.raceId))
+      .flatMap((r) => [r.boundaryRef, r.frameRef])
+      .filter((ref): ref is NonNullable<typeof ref> => ref != null);
+    if (refs.length) {
+      const geo = await getBoundaryBatch(refs).catch(() => new Map());
+      for (const r of races) {
+        if (!embedSet.has(r.raceId)) continue;
+        const cg = r.boundaryRef ? geo.get(`${r.boundaryRef.layer}:${r.boundaryRef.geoid}`) : undefined;
+        if (cg) r.boundaryRef = { ...r.boundaryRef!, bbox: cg.bbox, geojson: cg.geojson };
+        const fg = r.frameRef ? geo.get(`${r.frameRef.layer}:${r.frameRef.geoid}`) : undefined;
+        if (fg) r.frameRef = { ...r.frameRef!, bbox: fg.bbox, geojson: fg.geojson };
+      }
+    }
+  }
 
   const allCountyGeoIds = [...new Set(races.flatMap((r) => r.countyGeoIds))];
   let counties: Record<string, string> = {};
