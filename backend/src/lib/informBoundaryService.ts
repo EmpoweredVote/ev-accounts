@@ -206,6 +206,52 @@ export async function getCountyUnionFrames(
   return result;
 }
 
+/**
+ * The G4020 counties each sub-state district overlaps — keyed by "layer:geoid" of
+ * the district. This is the county set that drives read-rank's county relevance tier.
+ *
+ * Lean sibling of getCountyUnionFrames: the same areal-overlap join (ST_Intersects,
+ * GiST-indexed, then a positive ST_Area(ST_Intersection) so edge-only touches don't
+ * count) but WITHOUT the ST_Union + ST_AsGeoJSON of the frame geometry. The visual
+ * frame is now lazy-loaded on the client, so the races-list endpoint only needs the
+ * member county GEOIDs, not the (expensive) dissolved union polygon.
+ */
+export async function getDistrictCountyGeoIds(
+  refs: Array<{ layer: string; geoid: string }>,
+): Promise<Map<string, string[]>> {
+  const unique = new Map<string, { layer: string; geoid: string }>();
+  for (const ref of refs) unique.set(`${ref.layer}:${ref.geoid}`, ref);
+  if (unique.size === 0) return new Map();
+
+  const pairs = [...unique.values()];
+  // VALUES needs explicit types on the first row so the JOIN columns resolve to text.
+  const values = pairs
+    .map((_, i) => (i === 0 ? `($1::text, $2::text)` : `($${i * 2 + 1}, $${i * 2 + 2})`))
+    .join(', ');
+
+  const { rows } = await pool.query<{ layer: string; geoid: string; county_geoids: string[] | null }>(
+    `WITH dist AS (
+       SELECT v.layer, v.geoid, gb.geometry
+       FROM (VALUES ${values}) AS v(layer, geoid)
+       JOIN essentials.geofence_boundaries gb
+         ON gb.mtfcc = v.layer AND gb.geo_id = v.geoid
+     )
+     SELECT d.layer, d.geoid,
+            array_agg(DISTINCT c.geo_id ORDER BY c.geo_id) AS county_geoids
+     FROM dist d
+     JOIN essentials.geofence_boundaries c
+       ON c.mtfcc = 'G4020'
+      AND ST_Intersects(c.geometry, d.geometry)
+      AND ST_Area(ST_Intersection(c.geometry, d.geometry)) > 1e-9
+     GROUP BY d.layer, d.geoid`,
+    pairs.flatMap((r) => [r.layer, r.geoid]),
+  );
+
+  const result = new Map<string, string[]>();
+  for (const row of rows) result.set(`${row.layer}:${row.geoid}`, row.county_geoids ?? []);
+  return result;
+}
+
 /** County (G4020) GEOIDs for each USPS state, keyed by state code. Read-only.
  *  Used to assign statewide races to every county so they surface in each county view.
  *  The `state` column in geofence_boundaries is 2-digit FIPS, so USPS input is mapped

@@ -1,10 +1,9 @@
 // src/lib/readrankService.test.ts
 import { vi, describe, it, expect, beforeEach } from 'vitest';
 
-const { mockQuery, mockGetBoundaryBatch, mockGetCountyUnionFrames, mockGetStateCountyGeoIds, mockGetCountyNames } = vi.hoisted(() => ({
+const { mockQuery, mockGetDistrictCountyGeoIds, mockGetStateCountyGeoIds, mockGetCountyNames } = vi.hoisted(() => ({
   mockQuery: vi.fn(),
-  mockGetBoundaryBatch: vi.fn(),
-  mockGetCountyUnionFrames: vi.fn(),
+  mockGetDistrictCountyGeoIds: vi.fn(),
   mockGetStateCountyGeoIds: vi.fn(),
   mockGetCountyNames: vi.fn(),
 }));
@@ -19,8 +18,7 @@ vi.mock('./env.js', () => ({
   },
 }));
 vi.mock('./informBoundaryService.js', () => ({
-  getBoundaryBatch: mockGetBoundaryBatch,
-  getCountyUnionFrames: mockGetCountyUnionFrames,
+  getDistrictCountyGeoIds: mockGetDistrictCountyGeoIds,
   getStateCountyGeoIds: mockGetStateCountyGeoIds,
   getCountyNames: mockGetCountyNames,
 }));
@@ -36,13 +34,11 @@ async function getPlayableRacesResult(ids?: string[], jurisdiction?: Jurisdictio
 
 beforeEach(() => {
   mockQuery.mockReset();
-  mockGetBoundaryBatch.mockReset();
-  mockGetCountyUnionFrames.mockReset();
+  mockGetDistrictCountyGeoIds.mockReset();
   mockGetStateCountyGeoIds.mockReset();
   mockGetCountyNames.mockReset();
-  // Default: return an empty map (no geometry) so existing tests are unaffected.
-  mockGetBoundaryBatch.mockResolvedValue(new Map());
-  mockGetCountyUnionFrames.mockResolvedValue(new Map());
+  // Default: empty maps (no county overlap) so existing tests are unaffected.
+  mockGetDistrictCountyGeoIds.mockResolvedValue(new Map());
   mockGetStateCountyGeoIds.mockResolvedValue(new Map());
   mockGetCountyNames.mockResolvedValue({});
 });
@@ -209,9 +205,7 @@ describe('getPlayableRaces', () => {
     expect(race.frameRef).toEqual({ layer: 'G4020', geoid: '49035' });
   });
 
-  it('state-leg district: frame = the county-union (computed geometry, embedded inline)', async () => {
-    // #2: G5210/G5220 children frame against the union of overlapping counties.
-    const unionGeom = { type: 'MultiPolygon' as const, coordinates: [[[[-112.1, 40.4], [-111.7, 40.4], [-111.7, 40.9], [-112.1, 40.4]]]] };
+  it('state-leg district: frames against the state outline (frame geometry lazy-loaded)', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
       race_id: 'rsl', position_name: 'Utah State Senate District 13', district_label: 'District 13',
       district_type: 'STATE_UPPER',
@@ -221,55 +215,31 @@ describe('getPlayableRaces', () => {
       candidate_count: '3', topic_count: '3', quote_count: '12', rankable_topic_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
-    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
-      ['G5210:49013', { bbox: [-112.1, 40.4, -111.7, 40.9], geojson: unionGeom, countyGeoIds: [] }],
-    ]));
+    mockGetDistrictCountyGeoIds.mockResolvedValueOnce(new Map([['G5210:49013', ['49013']]]));
     const { races: [race] } = await getPlayableRacesResult();
-    expect(race.boundaryRef).toMatchObject({ layer: 'G5210', geoid: '49013' });
-    expect(race.frameRef).toEqual({
-      layer: 'G4020U', geoid: '49013', bbox: [-112.1, 40.4, -111.7, 40.9], geojson: unionGeom,
-    });
+    expect(race.boundaryRef).toEqual({ layer: 'G5210', geoid: '49013' }); // no embedded geometry
+    expect(race.frameRef).toEqual({ layer: 'G4000', geoid: '49' });       // UT state outline
+    expect(race.countyGeoIds).toEqual(['49013']);
   });
 
-  it('state-leg district: falls back to the state frame when no county union is found', async () => {
-    mockQuery.mockResolvedValueOnce({ rows: [{
-      race_id: 'rsl2', position_name: 'Utah State House District 21', district_label: 'District 21',
-      district_type: 'STATE_LOWER',
-      election_id: 'e', election_name: 'UT 2026', election_date: null,
-      jurisdiction_level: 'state', state: 'UT',
-      boundary_layer: 'G5220', boundary_geoid: '49021', frame_layer: null, frame_geoid: null,
-      candidate_count: '2', topic_count: '2', quote_count: '6', rankable_topic_count: '2',
-      politician_ids: ['p1', 'p2'],
-    }] });
-    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map()); // empty — no union
-    const { races: [race] } = await getPlayableRacesResult();
-    expect(race.frameRef).toEqual({ layer: 'G4000', geoid: '49' }); // UT state outline
-  });
-
-  it('school district: frame = the county-union (computed geometry, embedded inline)', async () => {
-    const unionGeom = { type: 'MultiPolygon' as const, coordinates: [[[[-86.6, 39.0], [-86.3, 39.0], [-86.3, 39.5], [-86.6, 39.0]]]] };
+  it('school district: frames against the state outline', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
       ...BASE_ROW,
       position_name: 'School Board', jurisdiction_level: 'local',
       boundary_layer: 'G5400', boundary_geoid: '1800001', frame_layer: null, frame_geoid: null,
     }] });
-    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
-      ['G5400:1800001', { bbox: [-86.6, 39.0, -86.3, 39.5], geojson: unionGeom, countyGeoIds: ['18105'] }],
-    ]));
+    mockGetDistrictCountyGeoIds.mockResolvedValueOnce(new Map([['G5400:1800001', ['18105']]]));
     const { races: [race] } = await getPlayableRacesResult();
-    expect(race.boundaryRef).toMatchObject({ layer: 'G5400', geoid: '1800001' });
-    expect(race.frameRef).toEqual({
-      layer: 'G4020U', geoid: '1800001', bbox: [-86.6, 39.0, -86.3, 39.5], geojson: unionGeom,
-    });
+    expect(race.boundaryRef).toEqual({ layer: 'G5400', geoid: '1800001' });
+    expect(race.frameRef).toEqual({ layer: 'G4000', geoid: '18' }); // IN state outline (BASE_ROW state)
   });
 
-  it('township: falls back to the state frame when no county union is found', async () => {
+  it('township: frames against the state outline', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
       ...BASE_ROW,
       position_name: 'Township Trustee', jurisdiction_level: 'local',
       boundary_layer: 'G4040', boundary_geoid: '1899999', frame_layer: null, frame_geoid: null,
     }] });
-    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map()); // empty — no union
     const { races: [race] } = await getPlayableRacesResult();
     expect(race.frameRef).toEqual({ layer: 'G4000', geoid: '18' }); // IN state outline (BASE_ROW state)
   });
@@ -343,58 +313,21 @@ const BASE_ROW = {
   politician_ids: ['pol-1', 'pol-2'],
 };
 
-const BLOOMINGTON_GEOM = { type: 'Polygon' as const, coordinates: [[[-86.6, 39.1], [-86.4, 39.1], [-86.4, 39.3], [-86.6, 39.1]]] };
-const MONROE_GEOM = { type: 'Polygon' as const, coordinates: [[[-87.0, 39.0], [-86.3, 39.0], [-86.3, 39.5], [-87.0, 39.0]]] };
-
-describe('getPlayableRaces — geometry attachment', () => {
-  it('attaches bbox and geojson to boundaryRef and frameRef when batch finds them', async () => {
+describe('getPlayableRaces — refs carry no geometry (lazy-loaded client-side)', () => {
+  it('returns boundaryRef/frameRef as {layer, geoid} only — no bbox or geojson', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [BASE_ROW] });
-    mockGetBoundaryBatch.mockResolvedValueOnce(new Map([
-      ['G4110:1805860', { layer: 'G4110', geoid: '1805860', name: 'Bloomington city', bbox: [-86.6, 39.1, -86.4, 39.3], geojson: BLOOMINGTON_GEOM, hasBoundary: true }],
-      ['G4020:18105', { layer: 'G4020', geoid: '18105', name: 'Monroe County', bbox: [-87.0, 39.0, -86.3, 39.5], geojson: MONROE_GEOM, hasBoundary: true }],
-    ]));
 
     const { races } = await getPlayableRacesResult();
 
     expect(races).toHaveLength(1);
-    expect(races[0].boundaryRef).toMatchObject({
-      layer: 'G4110',
-      geoid: '1805860',
-      bbox: [-86.6, 39.1, -86.4, 39.3],
-      geojson: BLOOMINGTON_GEOM,
-    });
-    expect(races[0].frameRef).toMatchObject({
-      layer: 'G4020',
-      geoid: '18105',
-      bbox: [-87.0, 39.0, -86.3, 39.5],
-      geojson: MONROE_GEOM,
-    });
-  });
-
-  it('returns races without geometry when getBoundaryBatch throws', async () => {
-    mockQuery.mockResolvedValueOnce({ rows: [BASE_ROW] });
-    mockGetBoundaryBatch.mockRejectedValueOnce(new Error('DB down'));
-
-    const { races } = await getPlayableRacesResult();
-
-    expect(races).toHaveLength(1);
-    expect(races[0].boundaryRef).toEqual({ layer: 'G4110', geoid: '1805860' });
-    expect(races[0].frameRef).toEqual({ layer: 'G4020', geoid: '18105' });
-  });
-
-  it('returns races without geometry when a ref is absent from the batch result', async () => {
-    mockQuery.mockResolvedValueOnce({ rows: [BASE_ROW] });
-    mockGetBoundaryBatch.mockResolvedValueOnce(new Map()); // empty — nothing found
-
-    const { races } = await getPlayableRacesResult();
-
+    // Exact-equality (not toMatchObject) proves no bbox/geojson keys leak into the list.
     expect(races[0].boundaryRef).toEqual({ layer: 'G4110', geoid: '1805860' });
     expect(races[0].frameRef).toEqual({ layer: 'G4020', geoid: '18105' });
   });
 });
 
 describe('getPlayableRaces — countyGeoIds', () => {
-  it('populates countyGeoIds for a congressional (G5200) district from the union frame', async () => {
+  it('populates countyGeoIds for a congressional (G5200) district from the overlapping-county set', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
       race_id: 'r-cd', position_name: 'U.S. House', district_label: 'District 3', district_type: 'NATIONAL_LOWER',
       election_id: 'e1', election_name: 'General', election_date: null,
@@ -404,9 +337,7 @@ describe('getPlayableRaces — countyGeoIds', () => {
       candidate_count: '2', topic_count: '3', quote_count: '9', rankable_topic_count: '3',
       politician_ids: ['p1', 'p2'],
     }] });
-    mockGetCountyUnionFrames.mockResolvedValue(new Map([
-      ['G5200:4903', { bbox: [0, 0, 1, 1], geojson: { type: 'Polygon', coordinates: [] }, countyGeoIds: ['49035', '49049'] }],
-    ]));
+    mockGetDistrictCountyGeoIds.mockResolvedValue(new Map([['G5200:4903', ['49035', '49049']]]));
     const { races } = await getPlayableRacesResult();
     expect(races[0].countyGeoIds).toEqual(['49035', '49049']);
   });
@@ -421,18 +352,16 @@ describe('getPlayableRaces — countyGeoIds', () => {
       candidate_count: '2', topic_count: '1', quote_count: '3', rankable_topic_count: '1',
       politician_ids: ['p1', 'p2'],
     }] });
-    mockGetCountyUnionFrames.mockResolvedValue(new Map());
+    mockGetDistrictCountyGeoIds.mockResolvedValue(new Map());
     const { races } = await getPlayableRacesResult();
     expect(races[0].boundaryRef).toEqual({ layer: 'G4000', geoid: '49' });
     expect(races[0].frameRef).toEqual({ layer: 'G4000', geoid: 'US' });
   });
 
-  it('congressional (G5200) district with tier=state (not federal, per source data) frames to the state outline, not the county-union — but still gets union countyGeoIds', async () => {
-    // Regression for the bug where COUNTY_OVERLAP_LAYERS (which must include G5200 for
-    // countyGeoIds) was reused for the FRAME branch too, so a G5200 race that misses the
-    // `tier === 'federal'` check (some source rows carry jurisdiction_level:'state' for
-    // congressional districts) degenerated to a single-county G4020U frame instead of the
-    // state outline.
+  it('congressional (G5200) district with tier=state (per source data) frames to the state outline but still gets its overlapping-county set', async () => {
+    // Some source rows carry jurisdiction_level:'state' for congressional districts, so
+    // they miss the tier==='federal' branch. They still frame against the state outline
+    // (all sub-state districts do) while their county set comes from the overlap lookup.
     mockQuery.mockResolvedValueOnce({ rows: [{
       race_id: 'r-cd3', position_name: 'U.S. House', district_label: 'District 9', district_type: 'NATIONAL_LOWER',
       election_id: 'e1', election_name: 'General', election_date: null,
@@ -442,12 +371,10 @@ describe('getPlayableRaces — countyGeoIds', () => {
       candidate_count: '2', topic_count: '1', quote_count: '3', rankable_topic_count: '1',
       politician_ids: ['p1', 'p2'],
     }] });
-    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
-      ['G5200:1809', { bbox: [0, 0, 1, 1], geojson: { type: 'MultiPolygon', coordinates: [] }, countyGeoIds: ['18001', '18003'] }],
-    ]));
+    mockGetDistrictCountyGeoIds.mockResolvedValueOnce(new Map([['G5200:1809', ['18001', '18003']]]));
     const { races } = await getPlayableRacesResult();
-    expect(races[0].frameRef).toEqual({ layer: 'G4000', geoid: '18' }); // IN state outline, NOT G4020U
-    expect(races[0].countyGeoIds).toEqual(['18001', '18003']); // union countyGeoIds still populated
+    expect(races[0].frameRef).toEqual({ layer: 'G4000', geoid: '18' }); // IN state outline
+    expect(races[0].countyGeoIds).toEqual(['18001', '18003']);
   });
 
   it('uses the G4020 frame geoid for a city race', async () => {
@@ -476,9 +403,7 @@ describe('getPlayableRaces — countyGeoIds', () => {
       boundary_layer: 'G5210', boundary_geoid: '49021',
       frame_layer: null, frame_geoid: null,
     }] });
-    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
-      ['G5210:49021', { bbox: [0, 0, 1, 1], geojson: { type: 'MultiPolygon', coordinates: [] }, countyGeoIds: ['49035', '49045'] }],
-    ]));
+    mockGetDistrictCountyGeoIds.mockResolvedValueOnce(new Map([['G5210:49021', ['49035', '49045']]]));
     const { races: [race] } = await getPlayableRacesResult();
     expect(race.countyGeoIds).toEqual(['49035', '49045']);
   });
@@ -503,9 +428,7 @@ describe('getPlayableRaces — countyGeoIds', () => {
       boundary_layer: 'G5400', boundary_geoid: '1800001',
       frame_layer: null, frame_geoid: null,
     }] });
-    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
-      ['G5400:1800001', { bbox: [0, 0, 1, 1], geojson: { type: 'MultiPolygon', coordinates: [] }, countyGeoIds: ['18105'] }],
-    ]));
+    mockGetDistrictCountyGeoIds.mockResolvedValueOnce(new Map([['G5400:1800001', ['18105']]]));
     const { races: [race] } = await getPlayableRacesResult();
     expect(race.countyGeoIds).toEqual(['18105']);
   });
@@ -518,9 +441,7 @@ describe('getPlayableRaces — countyGeoIds', () => {
       boundary_layer: 'G4040', boundary_geoid: '1899999',
       frame_layer: null, frame_geoid: null,
     }] });
-    mockGetCountyUnionFrames.mockResolvedValueOnce(new Map([
-      ['G4040:1899999', { bbox: [0, 0, 1, 1], geojson: { type: 'MultiPolygon', coordinates: [] }, countyGeoIds: ['18105', '18021'] }],
-    ]));
+    mockGetDistrictCountyGeoIds.mockResolvedValueOnce(new Map([['G4040:1899999', ['18105', '18021']]]));
     const { races: [race] } = await getPlayableRacesResult();
     expect(race.countyGeoIds).toEqual(['18105', '18021']);
   });

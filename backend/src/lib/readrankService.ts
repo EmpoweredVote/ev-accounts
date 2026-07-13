@@ -1,8 +1,7 @@
 import crypto from 'node:crypto';
 import { pool } from './db.js';
 import { env } from './env.js';
-import { getBoundaryBatch, getCountyUnionFrames, getStateCountyGeoIds, getCountyNames } from './informBoundaryService.js';
-import type { BoundaryResult, UnionFrame } from './informBoundaryService.js';
+import { getDistrictCountyGeoIds, getStateCountyGeoIds, getCountyNames } from './informBoundaryService.js';
 import type { JurisdictionGeoIds } from './essentialsService.js';
 import { USPS_TO_FIPS } from './usStateCodes.js';
 
@@ -125,21 +124,11 @@ const MTFCC_SCOPE: Record<string, Scope> = {
   G5420: 'district',  // unified school district
 };
 
-/** Sub-state layers whose overlapping counties (ST_Intersects, via getCountyUnionFrames)
- *  drive the read-rank county relevance tier (countyGeoIds): state-leg districts,
- *  school districts, townships, AND congressional districts (G5200). Congressional
- *  districts DO need their county set computed this way (so they surface in the
- *  right county views), but — unlike the others — must NOT use the county-union as
- *  their visual FRAME (see UNION_FRAME_LAYERS below): with sparse county geometry
- *  the union can degenerate to a single county, which misrepresents a congressional
- *  district that spans many counties. */
+/** Sub-state layers whose overlapping counties (ST_Intersects, via getDistrictCountyGeoIds)
+ *  drive the read-rank county relevance tier (countyGeoIds): state-leg districts, school
+ *  districts, townships, AND congressional districts (G5200). These districts all frame
+ *  visually against the state outline (the frame geometry is lazy-loaded client-side). */
 const COUNTY_OVERLAP_LAYERS = new Set(['G5200', 'G5210', 'G5220', 'G5400', 'G5410', 'G5420', 'G4040']);
-
-/** Subset of COUNTY_OVERLAP_LAYERS whose visual FRAME is the county-union geometry
- *  (G4020U). Deliberately excludes G5200 (congressional): those frame against the
- *  state outline instead (via the final `else` branch), while still using the
- *  county-union for countyGeoIds via COUNTY_OVERLAP_LAYERS above. */
-const UNION_FRAME_LAYERS = new Set(['G5210', 'G5220', 'G5400', 'G5410', 'G5420', 'G4040']);
 
 /** USPS → full state name, for stripping a redundant state prefix off statewide-exec offices. */
 const USPS_TO_NAME: Record<string, string> = {
@@ -361,24 +350,12 @@ export async function getPlayableRaces(
     ORDER BY e.election_date ASC NULLS LAST
   `);
 
-  // Collect unique boundary refs to resolve in one batch query.
-  const refSet = new Set<string>();
-  const refList: Array<{ layer: string; geoid: string }> = [];
-  function addRef(layer: string | null, geoid: string | null) {
-    if (!layer || !geoid) return;
-    const key = `${layer}:${geoid}`;
-    if (!refSet.has(key)) { refSet.add(key); refList.push({ layer, geoid }); }
-  }
-  for (const r of rows) {
-    addRef(r.boundary_layer, r.boundary_geoid);
-    addRef(r.frame_layer, r.frame_geoid);
-    const fips = r.state ? USPS_TO_FIPS[r.state] : null;
-    if (fips) addRef('G4000', fips);
-    addRef('G4000', 'US');
-  }
+  // Boundary geometry is NOT embedded here — the races list returns boundaryRef/frameRef
+  // as {layer, geoid} only, and the client lazy-loads each rendered card's geometry via
+  // /api/inform/boundary. This keeps the list payload small and off the query's hot path.
 
-  // State-legislative districts frame against the union of counties they overlap
-  // (not the whole state), so a small district reads against nearby geography.
+  // Sub-state districts (state-leg / school / township / congressional) still need the
+  // set of counties they overlap, which drives the county relevance tier (countyGeoIds).
   const overlapRefs: Array<{ layer: string; geoid: string }> = [];
   for (const r of rows) {
     if (r.boundary_layer && COUNTY_OVERLAP_LAYERS.has(r.boundary_layer) && r.boundary_geoid) {
@@ -396,13 +373,12 @@ export async function getPlayableRaces(
       .map((r) => r.state as string),
   )];
 
-  // These three lookups derive their inputs solely from `rows` and don't depend
-  // on one another, so run them concurrently. Each keeps its own graceful
-  // degradation to an empty default — a failure in one must not affect the others.
-  const [boundaryMap, unionFrameMap, stateCountyMap] = await Promise.all([
-    getBoundaryBatch(refList).catch(() => new Map<string, BoundaryResult>()), // races returned without embedded geometry
-    getCountyUnionFrames(overlapRefs).catch(() => new Map<string, UnionFrame>()), // these races fall back to the state frame below
-    getStateCountyGeoIds(statewideStates).catch(() => new Map<string, string[]>()), // statewide races fall back to []
+  // Both lookups derive their inputs solely from `rows` and are independent, so run
+  // them concurrently. Each degrades to an empty default so a failure in one can't
+  // affect the other (or the whole list) — the county tier just falls back to [].
+  const [districtCountyMap, stateCountyMap] = await Promise.all([
+    getDistrictCountyGeoIds(overlapRefs).catch(() => new Map<string, string[]>()),
+    getStateCountyGeoIds(statewideStates).catch(() => new Map<string, string[]>()),
   ]);
 
   const localSet = new Set(politicianIds ?? []);
@@ -428,7 +404,10 @@ export async function getPlayableRaces(
       ? { layer: r.boundary_layer, geoid: r.boundary_geoid }
       : (scope === 'statewide' ? stateRef : null);
 
-    // Frame (parent to nest the child inside).
+    // Frame (parent to nest the child inside). Geometry is lazy-loaded client-side,
+    // so a frame must be an individually addressable boundary (real layer + geoid) —
+    // the synthetic county-union (G4020U) isn't, so sub-state districts frame against
+    // the state outline instead. (Congressional districts already did.)
     let frameRef: BoundaryRef | null;
     if (tier === 'federal') {
       boundaryRef = stateRef;                          // model B: federal child = home state
@@ -439,30 +418,13 @@ export async function getPlayableRaces(
       frameRef = r.frame_layer && r.frame_geoid        // city→county / county-council→county / ward→city
         ? { layer: r.frame_layer, geoid: r.frame_geoid }
         : null;
-    } else if (UNION_FRAME_LAYERS.has(childLayer)) {
-      // Sub-state district (state-leg / school / township) → union of overlapping
-      // counties (computed geometry, embedded inline). Falls back to the state
-      // outline if the union is empty. Congressional (G5200) is deliberately NOT
-      // in UNION_FRAME_LAYERS — it falls through to the state-outline `else` below —
-      // even though it still uses the county-union for countyGeoIds (see below).
-      const uf = r.boundary_geoid ? unionFrameMap.get(`${childLayer}:${r.boundary_geoid}`) : undefined;
-      frameRef = uf
-        ? { layer: 'G4020U', geoid: r.boundary_geoid as string, bbox: uf.bbox, geojson: uf.geojson }
-        : stateRef;
     } else {
-      frameRef = stateRef;                             // county → state
+      frameRef = stateRef;                             // county / state-leg / school / township → state outline
     }
 
-    // Attach inline geometry from the batch result.
-    const childGeo = boundaryRef ? boundaryMap.get(`${boundaryRef.layer}:${boundaryRef.geoid}`) : undefined;
-    if (childGeo) boundaryRef = { ...boundaryRef, bbox: childGeo.bbox, geojson: childGeo.geojson } as BoundaryRef;
-
-    const frameGeo = frameRef ? boundaryMap.get(`${frameRef.layer}:${frameRef.geoid}`) : undefined;
-    if (frameGeo) frameRef = { ...frameRef, bbox: frameGeo.bbox, geojson: frameGeo.geojson } as BoundaryRef;
-
     // County set for the relevance tier. county/city/ward-council come from the
-    // single G4020 boundary or frame already computed; state-leg, school, and
-    // township districts use the overlapping-county set; everything else → [].
+    // single G4020 boundary or frame; state-leg, school, township, and congressional
+    // districts use the overlapping-county set; everything else → [].
     let countyGeoIds: string[] = [];
     if (scope === 'county' && childLayer === 'G4020' && r.boundary_geoid) {
       countyGeoIds = [r.boundary_geoid];
@@ -472,8 +434,7 @@ export async function getPlayableRaces(
     ) {
       countyGeoIds = [r.frame_geoid];
     } else if (COUNTY_OVERLAP_LAYERS.has(childLayer)) {
-      const uf = r.boundary_geoid ? unionFrameMap.get(`${childLayer}:${r.boundary_geoid}`) : undefined;
-      countyGeoIds = uf?.countyGeoIds ?? [];
+      countyGeoIds = (r.boundary_geoid ? districtCountyMap.get(`${childLayer}:${r.boundary_geoid}`) : undefined) ?? [];
     }
 
     // Statewide races cover the whole state → every county, so they surface in each county view.

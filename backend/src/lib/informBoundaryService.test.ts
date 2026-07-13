@@ -3,7 +3,7 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 const { mockQuery } = vi.hoisted(() => ({ mockQuery: vi.fn() }));
 vi.mock('./db.js', () => ({ pool: { query: mockQuery } }));
 
-import { getBoundary, getBoundaryBatch, getCountyUnionFrames, getStateCountyGeoIds, getCountyNames } from './informBoundaryService.js';
+import { getBoundary, getBoundaryBatch, getCountyUnionFrames, getDistrictCountyGeoIds, getStateCountyGeoIds, getCountyNames } from './informBoundaryService.js';
 
 beforeEach(() => mockQuery.mockReset());
 
@@ -132,6 +132,44 @@ describe('getCountyUnionFrames', () => {
     const out = await getCountyUnionFrames([{ layer: 'G5220', geoid: '49021' }]);
 
     expect(out.get('G5220:49021')?.countyGeoIds).toEqual([]);
+  });
+});
+
+describe('getDistrictCountyGeoIds', () => {
+  it('returns an empty map and fires no query when refs is empty', async () => {
+    const out = await getDistrictCountyGeoIds([]);
+    expect(out.size).toBe(0);
+    expect(mockQuery).not.toHaveBeenCalled();
+  });
+
+  it('returns the overlapping county geoids keyed by layer:geoid, with no geometry work in the query', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [
+      { layer: 'G5220', geoid: '49021', county_geoids: ['49035', '49045'] },
+    ] });
+
+    const out = await getDistrictCountyGeoIds([{ layer: 'G5220', geoid: '49021' }]);
+
+    expect(out.get('G5220:49021')).toEqual(['49035', '49045']);
+    // The lean query must not do union/serialization work.
+    const [sql] = mockQuery.mock.calls[0];
+    expect(String(sql)).not.toMatch(/ST_Union|ST_AsGeoJSON/i);
+    expect(String(sql)).toMatch(/ST_Intersects/i);
+  });
+
+  it('defaults to [] when the county_geoids column is null', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{ layer: 'G5220', geoid: '49021', county_geoids: null }] });
+    const out = await getDistrictCountyGeoIds([{ layer: 'G5220', geoid: '49021' }]);
+    expect(out.get('G5220:49021')).toEqual([]);
+  });
+
+  it('deduplicates repeated refs before querying', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getDistrictCountyGeoIds([
+      { layer: 'G5220', geoid: '49021' },
+      { layer: 'G5220', geoid: '49021' },
+    ]);
+    const [, params] = mockQuery.mock.calls[0];
+    expect(params).toEqual(['G5220', '49021']);
   });
 });
 
