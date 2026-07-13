@@ -10,9 +10,22 @@ officeholders Stavros/Park seeded as non-incumbent "candidates"). The Setterberg
 was resolved BY the deletion — the wrong 'Republican' lived on the deleted Surveyor race's
 primary_party. All four politician rows kept.
 
+**UFP FIELD SEEDED 2026-07-12 (mig 1325):** created "2026 Utah General" (11/3) + general
+races (primary_party='', NE/Osborn model but WITH district office_id for geofencing) for the
+8 UFP districts, full fields = primary winners + third-party: 8 UFP candidates (J. Lowry
+Snow SD-9 — NOT the Adam Snow homonym, Buss SD-11 INC, C. Smith SD-13, Woodfield SD-21,
+C. Nelson HD-23, Nematollahi HD-28, T. Bean HD-29, J. Boyd HD-53) + BONUS Jonathan Garrard
+(Constitution, HD-29). Emily Buss already EXISTED as politician -334574 w/ SD-11 office
+(todo's "missing" = race membership only); her party set to Utah Forward Party. 25 rc rows
+total. Source: BP office pages (2 snapshots, 7/09 + 7/12); SOS list is behind the
+address-keyed votesearch app — ~Sept-Oct voteinfo.utah.gov pamphlet re-check re-verifies.
+NOTE for Phase 166 / UT-REKEY: these 8 districts NOW HAVE general races — a future
+primary→general conversion of UT must dedup against them. New third-party candidates have
+zero stances/photos — they join the UT stance + pamphlet-headshot queues.
+
 **STILL OPEN (needs its own pass):** Kaufusi former-mayor title check, BP-listed
 withdrawn/DQ verification (Sloan/Farrell/Bagwell/Brough/Dean/Jackson/Miller/Tautuaa),
-and the UNSEEDED Utah Forward Party field incl. SD-11 INCUMBENT Emily Buss.
+HD-38 general check (McConnehey/Sotelo seeding).
 Details in the sections below.
 
 Found 2026-07-09 during the UT headshot sweep (Ballotpedia district pages, primary results
