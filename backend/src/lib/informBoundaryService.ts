@@ -210,11 +210,12 @@ export async function getCountyUnionFrames(
  * The G4020 counties each sub-state district overlaps — keyed by "layer:geoid" of
  * the district. This is the county set that drives read-rank's county relevance tier.
  *
- * Lean sibling of getCountyUnionFrames: the same areal-overlap join (ST_Intersects,
- * GiST-indexed, then a positive ST_Area(ST_Intersection) so edge-only touches don't
- * count) but WITHOUT the ST_Union + ST_AsGeoJSON of the frame geometry. The visual
- * frame is now lazy-loaded on the client, so the races-list endpoint only needs the
- * member county GEOIDs, not the (expensive) dissolved union polygon.
+ * Reads the precomputed `essentials.district_county_overlap` table (populated by
+ * scripts/backfill-district-county-overlap.ts) with an indexed lookup. The overlap is
+ * static geometry data; computing it live (ST_Intersects + ST_Area(ST_Intersection)
+ * over full-resolution polygons for ~300 districts) took ~30 s on every /readrank/races
+ * request — see migration 1315. A district absent from the table (e.g. new geography not
+ * yet backfilled) simply yields no counties, so the caller degrades to `countyGeoIds: []`.
  */
 export async function getDistrictCountyGeoIds(
   refs: Array<{ layer: string; geoid: string }>,
@@ -230,20 +231,12 @@ export async function getDistrictCountyGeoIds(
     .join(', ');
 
   const { rows } = await pool.query<{ layer: string; geoid: string; county_geoids: string[] | null }>(
-    `WITH dist AS (
-       SELECT v.layer, v.geoid, gb.geometry
-       FROM (VALUES ${values}) AS v(layer, geoid)
-       JOIN essentials.geofence_boundaries gb
-         ON gb.mtfcc = v.layer AND gb.geo_id = v.geoid
-     )
-     SELECT d.layer, d.geoid,
-            array_agg(DISTINCT c.geo_id ORDER BY c.geo_id) AS county_geoids
-     FROM dist d
-     JOIN essentials.geofence_boundaries c
-       ON c.mtfcc = 'G4020'
-      AND ST_Intersects(c.geometry, d.geometry)
-      AND ST_Area(ST_Intersection(c.geometry, d.geometry)) > 1e-9
-     GROUP BY d.layer, d.geoid`,
+    `SELECT o.district_layer AS layer, o.district_geoid AS geoid,
+            array_agg(o.county_geoid ORDER BY o.county_geoid) AS county_geoids
+       FROM essentials.district_county_overlap o
+       JOIN (VALUES ${values}) AS v(layer, geoid)
+         ON v.layer = o.district_layer AND v.geoid = o.district_geoid
+      GROUP BY o.district_layer, o.district_geoid`,
     pairs.flatMap((r) => [r.layer, r.geoid]),
   );
 
