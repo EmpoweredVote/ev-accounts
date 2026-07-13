@@ -20,8 +20,11 @@
 2. **Swalwell dual-pid**: `c98fd0a3` (ex-officeholder) + `b0cddcaa` (withdrawn gov
    candidate, no office) — add to the dual-pid merge queue
    (`.planning/todos/2026-07-10-senate-dual-pid-merge.md` pattern).
-3. Optional: replace Gallagher's campaign headshot with his official G000607 congressional
-   portrait now that he's sworn in.
+3. ~~Optional: replace Gallagher's campaign headshot with his official G000607 congressional
+   portrait now that he's sworn in.~~ DONE 2026-07-12: unitedstates.io CDN doesn't have
+   G000607 yet (new member lag) — **bioguide.congress.gov/photo/{id}.jpg and
+   clerk.house.gov/content/assets/img/members/{id}.jpg both serve freshly sworn members**;
+   used the bioguide one (600×750, exact 4:5), overwritten in place, public_domain.
 
 Surfaced by the bioguide photo audit (2026-07-12): both carry their own CORRECT bioguide IDs
 (L000578, S001193) but have **dropped out of legislators-current.json**, which tracks sitting
