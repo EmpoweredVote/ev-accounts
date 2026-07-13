@@ -39,9 +39,15 @@ BP-verified 7/12 ("no incumbents in this race").
   (is_vacant=false) — officeholder titles, so the standing `NOT ILIKE 'Candidate for%'`
   guard could NOT catch them; all 6 surfaced as sitting commissioners. Deleted (no race
   referenced the office ids; politicians.office_id denorm cleared). Pattern was exactly
-  these 6 rows — no SLCo equivalent exists. COVERAGE GAP left open: the REAL Utah County
-  Commissioners (Gordon, Beltran, Powers Gardner) have no officials seeding at all —
-  future county-officials wave.
+  these 6 rows — no SLCo equivalent exists.
+- **CORRECTION (same day): the "real commissioners unseeded" claim was WRONG** — a scope-query
+  artifact (filtered title ILIKE '%Utah County Commission%'; the real rows are titled plainly
+  "Commissioner"/"Commissioner (Chair)" etc.). Utah County 49049 COUNTY district has a FULL
+  officials roster: Powers Gardner + Gordon + Beltran (Chair) + Assessor/Auditor/Clerk/County
+  Attorney/Recorder/Sheriff/Surveyor/Treasurer, all is_incumbent=true with headshots; Seat A/B
+  races' office_id correctly reference the real commissioner offices. NO county-officials wave
+  needed for UtahCo. (Mig 1327's 6 deletions remain correct — they were DUPLICATE fabricated
+  rows for candidates alongside these real ones.)
 
 Found 2026-07-09 during the UT headshot sweep (Ballotpedia district pages, primary results
 sections; vote totals "may change until results are certified" but margins are decisive).
