@@ -1,4 +1,14 @@
-# UT June-23-2026 primary losers still `active` in race_candidates — cull needed
+# UT June-23-2026 primary losers — CULL EXECUTED 2026-07-12 (mig 1323); data flags below still OPEN
+
+**DONE 2026-07-12: all 10 losers below set candidate_status='withdrawn' via
+`backend/migrations/1323_ut_primary_losers_cull.sql` (verified 10/10 on prod).
+Dan McCay was already withdrawn when the migration ran — untouched.**
+
+**STILL OPEN (not part of the cull — needs its own pass):** SLCo Assessor/Surveyor
+wrong-cycle race rows, Setterberg party R→D fix, Kaufusi former-mayor title check,
+BP-listed withdrawn/DQ verification (Sloan/Farrell/Bagwell/Brough/Dean/Jackson/Miller/
+Tautuaa), and the UNSEEDED Utah Forward Party field incl. SD-11 INCUMBENT Emily Buss.
+Details in the sections below.
 
 Found 2026-07-09 during the UT headshot sweep (Ballotpedia district pages, primary results
 sections; vote totals "may change until results are certified" but margins are decisive).

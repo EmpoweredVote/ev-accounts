@@ -1,4 +1,15 @@
-# Dual-pid politicians: mig-196 Senate placeholder + separate officeholder record (11 pairs)
+# Dual-pid politicians — MERGED 2026-07-12 ✅ (all 11 pairs, zero failures)
+
+**DONE via `backend/scripts/_tmp-senate-dualpid-merge.py` (gitignored, per-pair transactions).
+All 11 placeholders deleted; officeholder pids now carry the Candidate-for-Senate office,
+the 2026 Senate race_candidates row, the stance research, and a headshot. Verified: answer
+counts exact-match expectations, 0 placeholders left, storage objects re-keyed and serving.**
+
+DELTA vs the plan below: the 7/11 Senate stance wave had added answers/context to BOTH pids
+(PK = politician_id+topic_id). Merge policy applied: **placeholder wins on topic collision**
+(freshest research, Senate-2026 wave); officeholder-only topics survived (union). 124 stale
+officeholder answer rows dropped across the 11. Stratton + Flanagan kept their officeholder
+official portraits; placeholder duplicate images deleted. Original plan kept for reference:
 
 Found 2026-07-10 during the Senate deep-seed dedup pass. Eleven 2026 Senate candidates exist as
 TWO `essentials.politicians` rows each: a mig-196 "Candidate for U.S. Senate — <State>" placeholder
