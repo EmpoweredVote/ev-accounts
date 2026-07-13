@@ -1,53 +1,49 @@
-# MA/MD/ME/OR/VA House backlog headshot wave — pins + remainder (2026-07-12)
+# MA/MD/ME/OR/VA House backlog headshot pins — post-BP-race-page-pass (2026-07-12)
 
-Wave complete: **42 imported, Chris-approved on the review board** (4 recrops per review:
-Beck OR-02, Beckwith VA-10, A. Murphy VA-09, Register VA-05). These states use position_name
-**'U.S. House XX-NN'** (pre-Wave-3 convention) — roster queries on 'U.S. Representative%' miss
-them entirely. Wave was driven by the politician_context source-mine (campaign sites) + BP
-api.php profile pulls + one Wikipedia (LePage) + one Blue Virginia news photo (Bhatti).
+Two waves complete same day. Wave 1 (context-mine + BP profiles + campaign sites): 42 imported.
+Wave 2 (**BP RACE-page pass**): **18 imported, Chris-approved** ("everyone is ok" + explicit
+Bruner include / Sabio keep-pinned) — 6 never-chased targets (M.Q. Jones MA-06, Collier MD-07,
+Kopp + Cywinski VA-01, Staten VA-02, Duffin VA-08) + 12 pin lifts (Samman, Swallow, D.Wallace,
+Riley, Mosolf, Rivera, Lucero, Tracinski, Harding, Bruner, Powers, Perry).
 
-Verify query: active/filed race_candidates on 2026 races with position_name LIKE
-'U.S. House %', politician_id set, no politician_images row → **33 remaining**
-(16 searched pins below + 17 never-chased, no context sources — future BP race-page wave).
+LESSON (memorialized in sweep-program memory): BP RACE pages carry candidate-submitted uploads
+that api.php PROFILE pulls + context-mine miss — 12 of 16 pins lifted this way. Always re-run
+race-page pass on pinned candidates.
 
-## 16 pinned skips (searched via context-mine 2026-07-12)
+Verify query (active/filed 2026 race_candidates, position_name LIKE 'U.S. House %', no
+politician_images row) returns **exactly the 15 below** (checked post-import 2026-07-12).
 
-- **Tony Sabio VA-08** — campaign poster face is **AI-GENERATED** (irregular flag star field,
-  painted skin, wobbly letterforms; AI case #3 after Stevens DE + Bueno CT). Site's real
-  photos are all event candids w/ sunglasses/groups/backlit. Re-check for a real photo.
-- Gary J. Grossi MA-03 — og:image is logo; garygrossi.org has no portrait.
-- Tarik Samman MA-05 — site photos: bookstore side-profile + rally sign shot; no clear frontal.
-- Craig Swallow MA-09 — site is logo-only (bird emblem).
-- Dave Wallace MD-02 — site: logo + one 3-person group photo.
-- Brian Jordan MD-05 — site: yard-sign photo + AI illustrations only.
-- Cheryl Riley MD-08 — only tiny oval photo inside endorsement graphics.
-- Nancy Wallace MD-08 — only a 240px full-body cutout; too small.
-- Patrick Mosolf VA-02 — site has childhood/travel photos only.
-- **Edwin Rivera VA-03** — site 403-walled to plain fetch — **retry with Playwright** next wave.
-- Melanie Lucero VA-05 — og is a 613px postcard graphic; about-page imgs under 180px.
-- Robert Tracinski VA-05 — Substack writer; only publication logos.
-- Philip Harding VA-07 — site uses hand-drawn/collage art, no photo.
-- Lorena Bruner VA-08 — low-res selfie only (held as fallback: bl2 selfie 768px).
-- Joy Powers VA-09 — og is full-body field shot w/ sign, face too small (held as fallback).
-- Julie Perry VA-10 — only source is an InsideNoVa article — not yet chased.
+## 4 standing pins (searched: context-mine + BP profile + BP race page)
 
-## 17 never-chased (zero politician_context sources; run BP race-page pass)
+- **Tony Sabio VA-08** — campaign poster face AI-GENERATED (case #3); his 2026 BP race-page
+  upload (Tony_Sabio_2026.JPG) is ALSO suspect-AI (waxy skin, painted fabric weave).
+  **Chris ruling 2026-07-12: keep pinned.** Re-check only if a verifiable real photo appears.
+- Gary J. Grossi MA-03 — site logo-only; no BP race-page photo.
+- Brian Jordan MD-05 — site yard-sign + AI illustrations; no BP race-page photo.
+- Nancy Wallace MD-08 — only a 240px full-body cutout anywhere (BP race page serves the same
+  file); too small.
 
-MA: Micah Quinney Jones MA-06 (Fox News + ussanews articles exist — chase those),
-R. Tyler MacAllister MA-09, Robert Gerald Burke — IMPORTED, ignore.
-Actual list = re-derive from verify query minus the 16 above; notables seen in roster:
-MacAllister MA-09, M.Q. Jones MA-06, Kersey VA-04, Staten VA-02, Gaines VA-02,
-Zeb Taylor VA-03, Suttles VA-10, B. Hall VA-09, Cook VA-09, M. Jackson VA-09,
-Headrick VA-11, Crockett — IMPORTED, ignore. Re-derive before batching (don't trust this list).
+## 11 zero-photo after BP race-page search (next: targeted agent wave, or wait for Aug-4 VA culls)
 
-## Method notes (this wave)
+- R. Tyler MacAllister MA-09
+- Jonathan Burruss MD-05
+- Loran Ayles OR-03
+- Makiba Gaines VA-02
+- James "Zeb" Taylor VA-03
+- Andre Kersey VA-04
+- Brandi Hall VA-09
+- Brandon Cook VA-09
+- Michael Jackson VA-09
+- Anthony Suttles VA-10
+- Nathan Headrick VA-11
+- (Micah Quinney Jones MA-06 RESOLVED via BP race page — the Fox News/ussanews chase noted
+  in the earlier version of this file is moot.)
 
-- **BP api.php profile pull is the richest bulk source** for these older states — 10 clean
-  candidate-submitted portraits in one pass.
-- **CDN transform-strip trick works on wsimg (GoDaddy) + base44**: drop `/:/rs=...` (wsimg)
-  or `/v1/fill/...` (base44) to get the original — rescued Smithers VA-07 (og was
-  head-cropped 1200×630 → original 3159×4748).
-- Squarespace og:image is usually a logo/share-card; the real portrait lives in page <img>s.
-- Wikimedia needs a descriptive UA (`EmpoweredVoteHeadshotBot/1.0 (chris@empowered.vote)`);
-  plain Mozilla UA gets 429.
-- VA primaries Aug-4: field culls after that will retire some of the 33 remaining.
+## Method notes (carried forward)
+
+- BP api.php profile pull = richest bulk source; BP RACE pages = second pass that catches
+  fresh candidate uploads (Rivera 7/10, Harding 7/01, Bruner 7/03 all post-dated the pins).
+- CDN transform-strip: drop wsimg `/:/rs=...` / base44 `/v1/fill/...` for originals.
+- Squarespace og:image is usually a logo; real portrait lives in page <img>s.
+- Wikimedia needs descriptive UA; plain Mozilla UA gets 429.
+- VA primaries Aug-4: re-run verify query after culls before batching any agent wave.
