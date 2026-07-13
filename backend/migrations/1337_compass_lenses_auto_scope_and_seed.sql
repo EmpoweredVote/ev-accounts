@@ -1,4 +1,4 @@
--- 1329: compass lenses — add per-office auto-apply mapping + seed Federal & Judicial lenses.
+-- 1337: compass lenses — add per-office auto-apply mapping + seed Federal & Judicial lenses.
 --
 -- The inform.compass_lenses / compass_lens_topics tables already existed in the
 -- database but were never tracked by a migration and only had the Local lens

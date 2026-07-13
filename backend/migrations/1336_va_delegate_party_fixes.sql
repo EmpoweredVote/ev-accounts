@@ -1,5 +1,5 @@
 -- ============================================================================
--- Migration 1329: Fix 4 wrong-party VA House of Delegates records
+-- Migration 1336: Fix 4 wrong-party VA House of Delegates records
 -- ============================================================================
 -- Purpose: The 2026-07-12 VA stance retry wave found 4 delegates whose
 --   politicians.party is wrong. Each verified against >=2 independent sources
