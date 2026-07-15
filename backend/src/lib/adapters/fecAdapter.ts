@@ -23,7 +23,19 @@ import { normalizeDonorName } from './normalizeDonorName.js';
 // Per-politician record cap — prevents timeout on high-volume candidates (e.g. CA House members).
 // At 100 records/page + 4s sleep, 2500 records ≈ 25 pages ≈ 100s — well under Redis lock TTL.
 // Override via MAX_RECORDS_PER_POLITICIAN env var.
-const MAX_RECORDS_PER_POLITICIAN = parseInt(process.env.MAX_RECORDS_PER_POLITICIAN ?? '2500', 10);
+// Per-politician record cap. Raised from the old 2500 (which silently truncated
+// big raisers and, because total_raised sums ingested rows, undercounted their
+// headline totals). With date-window chunking (below) large committees are now
+// fetchable, so we keep essentially all itemized records. Still env-overridable
+// as a runaway backstop.
+const MAX_RECORDS_PER_POLITICIAN = parseInt(process.env.MAX_RECORDS_PER_POLITICIAN ?? '50000', 10);
+
+// Sort order for Schedule A. Sorting by descending amount means that when a
+// mega-committee exceeds MAX_RECORDS_PER_POLITICIAN, the records we KEEP are the
+// largest donations — the ones a transparency tool most needs to surface — rather
+// than merely the most recent. Keyset pagination adapts automatically because we
+// forward whatever cursor keys FEC returns in last_indexes.
+const FEC_SORT = process.env.FEC_SORT ?? '-contribution_receipt_amount';
 
 // Per-page delay between Schedule A pages. Raised + env-configurable so a long
 // backfill can stay well under the shared FEC 1,000 req/hr ceiling (the cron and
@@ -35,10 +47,10 @@ const PER_PAGE_SLEEP_MS = parseInt(process.env.FEC_PER_PAGE_SLEEP_MS ?? '5000', 
 // FEC API response types
 // ---------------------------------------------------------------------------
 
-interface FecLastIndexes {
-  last_index: string;
-  last_contribution_receipt_date: string;
-}
+// FEC returns whichever cursor keys correspond to the active sort (e.g.
+// last_index + last_contribution_receipt_amount for amount sort). Keep it generic
+// and forward every key back as a query param on the next page.
+type FecLastIndexes = Record<string, string | number | null>;
 
 interface FecPagination {
   per_page: number;
@@ -87,21 +99,67 @@ async function resolveCommitteeIds(candidateId: string, apiKey: string): Promise
 }
 
 /**
- * fetchAllPagesForCommittee fetches all Schedule A pages for a single committee_id.
- * Uses keyset pagination — stops on null last_indexes, not page count (FEC overcount bug).
- * Stops early if allRecords reaches the cap (passed in to enforce cross-committee limit).
+ * FecQueryTooLargeError signals that a Schedule A query is too big for FEC to
+ * compute in time — FEC returns HTTP 504 (or persistently hangs) on whole-cycle
+ * queries for mega-committees. The caller responds by subdividing the query into
+ * smaller date windows rather than failing the whole (source, cycle) pair.
  */
-async function fetchAllPagesForCommittee(
+class FecQueryTooLargeError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'FecQueryTooLargeError';
+  }
+}
+
+function isTooLarge(err: unknown): boolean {
+  return err instanceof FecQueryTooLargeError;
+}
+
+// --- Date-window helpers (pure) --------------------------------------------
+
+/** [start, end] ISO dates (YYYY-MM-DD) for a FEC 2-year cycle, e.g. "2018" -> ["2017-01-01","2018-12-31"]. */
+function cycleDateRange(cycle: string): [string, string] {
+  const even = parseInt(cycle, 10);
+  return [`${even - 1}-01-01`, `${even}-12-31`];
+}
+
+/** Split an inclusive [minDate, maxDate] range into N roughly-equal windows as [start,end] ISO pairs. */
+function splitRange(minDate: string, maxDate: string, parts: number): Array<[string, string]> {
+  const startMs = Date.parse(`${minDate}T00:00:00Z`);
+  const endMs = Date.parse(`${maxDate}T00:00:00Z`);
+  const span = endMs - startMs;
+  const dayMs = 86_400_000;
+  const iso = (ms: number): string => new Date(ms).toISOString().slice(0, 10);
+  const out: Array<[string, string]> = [];
+  for (let i = 0; i < parts; i++) {
+    const ws = startMs + Math.round((span * i) / parts);
+    const weExclusive = startMs + Math.round((span * (i + 1)) / parts);
+    // window end is the day before the next window's start (inclusive, non-overlapping)
+    const we = i === parts - 1 ? endMs : weExclusive - dayMs;
+    if (we < ws) continue;
+    out.push([iso(ws), iso(we)]);
+  }
+  return out;
+}
+
+/**
+ * fetchPagesForWindow keyset-paginates one committee's Schedule A within an
+ * optional [minDate, maxDate] window (null,null = whole cycle). Records are pushed
+ * into allRecords. Returns pagination.count for the window (for completeness math).
+ * Throws FecQueryTooLargeError if FEC 504s / persistently times out on this window.
+ */
+async function fetchPagesForWindow(
   committeeId: string,
   cycle: string,
   apiKey: string,
-  allRecords: Record<string, unknown>[]
+  allRecords: Record<string, unknown>[],
+  minDate: string | null,
+  maxDate: string | null
 ): Promise<number> {
   const baseUrl = 'https://api.open.fec.gov/v1/schedules/schedule_a/';
   let totalExpected = 0;
   let firstPage = true;
-  let lastIndex = '';
-  let lastContributionReceiptDate = '';
+  let lastIndexes: FecLastIndexes | null = null;
 
   for (;;) {
     const params = new URLSearchParams({
@@ -109,12 +167,17 @@ async function fetchAllPagesForCommittee(
       committee_id: committeeId,
       two_year_transaction_period: cycle,
       per_page: '100',
-      sort: '-contribution_receipt_date',
+      sort: FEC_SORT,
     });
+    if (minDate) params.set('min_date', minDate);
+    if (maxDate) params.set('max_date', maxDate);
 
-    if (!firstPage) {
-      params.set('last_index', lastIndex);
-      params.set('last_contribution_receipt_date', lastContributionReceiptDate);
+    // Forward every cursor key FEC handed back (keys match the active sort), so
+    // pagination is correct regardless of FEC_SORT.
+    if (!firstPage && lastIndexes) {
+      for (const [k, v] of Object.entries(lastIndexes)) {
+        if (v != null) params.set(k, String(v));
+      }
     }
 
     const page = await fetchWithRetry(`${baseUrl}?${params.toString()}`);
@@ -138,12 +201,80 @@ async function fetchAllPagesForCommittee(
       break;
     }
 
-    lastIndex = page.pagination.last_indexes.last_index;
-    lastContributionReceiptDate = page.pagination.last_indexes.last_contribution_receipt_date;
+    lastIndexes = page.pagination.last_indexes;
 
     await sleep(PER_PAGE_SLEEP_MS);
   }
 
+  return totalExpected;
+}
+
+/** Max recursive subdivisions: quarter (depth 0) -> ~month (1) -> ~10-day (2). */
+const MAX_WINDOW_SUBDIVISION_DEPTH = 2;
+
+/**
+ * fetchWindowAdaptive fetches one date window; if FEC reports the window is still
+ * too large (504/timeout), it splits the window in half and recurses, down to
+ * MAX_WINDOW_SUBDIVISION_DEPTH. Only the failing window is subdivided.
+ */
+async function fetchWindowAdaptive(
+  committeeId: string,
+  cycle: string,
+  apiKey: string,
+  allRecords: Record<string, unknown>[],
+  minDate: string,
+  maxDate: string,
+  depth: number
+): Promise<number> {
+  try {
+    return await fetchPagesForWindow(committeeId, cycle, apiKey, allRecords, minDate, maxDate);
+  } catch (err) {
+    if (!isTooLarge(err) || depth >= MAX_WINDOW_SUBDIVISION_DEPTH || minDate === maxDate) {
+      throw err;
+    }
+    console.warn(
+      `[fecAdapter] window ${minDate}..${maxDate} still too large for ${committeeId} — subdividing (depth ${depth + 1})`
+    );
+    let total = 0;
+    for (const [ws, we] of splitRange(minDate, maxDate, 2)) {
+      if (allRecords.length >= MAX_RECORDS_PER_POLITICIAN) break;
+      total += await fetchWindowAdaptive(committeeId, cycle, apiKey, allRecords, ws, we, depth + 1);
+    }
+    return total;
+  }
+}
+
+/**
+ * fetchAllPagesForCommittee fetches all Schedule A pages for a single committee_id.
+ * Fast path: one whole-cycle keyset-paginated pull (unchanged for normal filers).
+ * Fallback: if FEC 504s / persistently times out (mega-committee too large to
+ * compute in one query), fall back to quarter date windows, subdividing to months
+ * on any window that is itself too large. Dedup via ON CONFLICT (sub_id) makes the
+ * (rare) window-boundary re-fetch harmless.
+ */
+async function fetchAllPagesForCommittee(
+  committeeId: string,
+  cycle: string,
+  apiKey: string,
+  allRecords: Record<string, unknown>[]
+): Promise<number> {
+  // Fast path — whole cycle in one query. Common case, unchanged behavior.
+  try {
+    return await fetchPagesForWindow(committeeId, cycle, apiKey, allRecords, null, null);
+  } catch (err) {
+    if (!isTooLarge(err)) throw err;
+    console.warn(
+      `[fecAdapter] whole-cycle query too large for ${committeeId} cycle ${cycle} — falling back to date windows`
+    );
+  }
+
+  // Windowed fallback — quarters across the cycle, adaptive subdivision on 504.
+  const [cycleStart, cycleEnd] = cycleDateRange(cycle);
+  let totalExpected = 0;
+  for (const [ws, we] of splitRange(cycleStart, cycleEnd, 8)) {
+    if (allRecords.length >= MAX_RECORDS_PER_POLITICIAN) break;
+    totalExpected += await fetchWindowAdaptive(committeeId, cycle, apiKey, allRecords, ws, we, 0);
+  }
   return totalExpected;
 }
 
@@ -215,6 +346,13 @@ async function fetchWithRetry(url: string, maxRetries = 5): Promise<FecScheduleA
       await sleep(delayMs);
       delayMs = Math.min(delayMs * 2, 120_000);
       continue;
+    }
+
+    // 504 (and other gateway timeouts) mean FEC could not compute this query in
+    // time — the query is too large. Signal the caller to subdivide by date rather
+    // than treating it as a hard failure.
+    if (response.status === 504 || response.status === 502 || response.status === 503) {
+      throw new FecQueryTooLargeError(`FEC gateway timeout (HTTP ${response.status}) — query too large`);
     }
 
     if (!response.ok) {
