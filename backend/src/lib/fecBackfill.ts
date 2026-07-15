@@ -291,6 +291,11 @@ export async function runFecHistoricalBackfill(floorYear = DEFAULT_FLOOR): Promi
     // Step 1: ensure the cycle cache is populated.
     await populateFecCandidateCycles();
 
+    // Step 1b: cache FEC authoritative per-cycle receipts (for correct total_raised).
+    await populateFecCandidateTotals().catch((e) =>
+      console.warn('[fecBackfill] totals cache populate failed (non-fatal):', e instanceof Error ? e.message : String(e))
+    );
+
     // Step 2: iterate pending pairs.
     const current = parseInt(currentFecCycle(), 10);
     const pairs = await getPendingPairs(floorYear, current);
