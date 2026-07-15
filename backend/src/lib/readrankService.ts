@@ -517,7 +517,8 @@ export async function getRaceBlindQuotes(raceId: string): Promise<RacePayload | 
   }>(`
     SELECT q.id AS quote_id, q.deidentified_text, lower(q.topic_key) AS topic_key,
            q.politician_id,
-           ct.short_title AS topic_title, ct.question_text AS topic_question,
+           ct.short_title AS topic_title,
+           COALESCE(rtq.question_text, ct.question_text) AS topic_question,
            r.position_name
     FROM essentials.races r
     JOIN essentials.race_candidates rc
@@ -530,6 +531,8 @@ export async function getRaceBlindQuotes(raceId: string): Promise<RacePayload | 
      AND q.readrank_selected = true
     JOIN inform.compass_topics ct
       ON ct.topic_key = lower(q.topic_key) AND ct.is_live = true
+    LEFT JOIN essentials.readrank_race_topic_questions rtq
+      ON rtq.race_id = r.id AND rtq.topic_key = lower(q.topic_key)
     WHERE r.id = $1
     ORDER BY ct.short_title
   `, [raceId]);

@@ -25,7 +25,7 @@ vi.mock('./informBoundaryService.js', () => ({
   getCountyNames: mockGetCountyNames,
 }));
 
-import { getPlayableRaces, deriveTierScope, deriveOfficeSeat } from './readrankService.js';
+import { getPlayableRaces, deriveTierScope, deriveOfficeSeat, getRaceBlindQuotes } from './readrankService.js';
 import type { JurisdictionGeoIds } from './essentialsService.js';
 
 // getPlayableRaces now returns { races, counties }. Existing array-style assertions
@@ -713,5 +713,27 @@ describe('deriveOfficeSeat', () => {
       positionName: 'Monroe County Commissioner – District 2', districtLabel: null,
       districtType: 'COUNTY', state: 'IN',
     })).toEqual({ office: 'Monroe County Commissioner', seat: 'District 2' });
+  });
+});
+
+describe('getRaceBlindQuotes — resolved ranking question (override ?? compass)', () => {
+  it('maps the resolved topic_question into the payload and LEFT JOINs the override table', async () => {
+    mockQuery.mockResolvedValueOnce({
+      rows: [
+        { quote_id: 'q1', deidentified_text: 'Answer one.', topic_key: 'fossil-fuels', politician_id: 'p1', topic_title: 'Fossil fuels', topic_question: 'RESOLVED QUESTION', position_name: 'Governor' },
+        { quote_id: 'q2', deidentified_text: 'Answer two.', topic_key: 'fossil-fuels', politician_id: 'p2', topic_title: 'Fossil fuels', topic_question: 'RESOLVED QUESTION', position_name: 'Governor' },
+      ],
+    });
+
+    const payload = await getRaceBlindQuotes('race-1');
+
+    expect(payload).not.toBeNull();
+    expect(payload!.topics).toHaveLength(1);
+    expect(payload!.topics[0].question).toBe('RESOLVED QUESTION');
+    expect(payload!.topics[0].quotes).toHaveLength(2);
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toContain('essentials.readrank_race_topic_questions');
+    expect(sql).toMatch(/COALESCE\(\s*rtq\.question_text\s*,\s*ct\.question_text\s*\)/);
   });
 });
