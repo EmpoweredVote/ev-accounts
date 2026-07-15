@@ -419,6 +419,31 @@ function normalizeRecords(
   return { contributions, skipped, totalParsed };
 }
 
+// Only these FEC Schedule A fields are ever read back (by campaignFinanceService
+// and essentialsProfileService for donor name/type/employer/occupation/city/state
+// and sector classification) or needed for audit/traceability. The full FEC record
+// has ~50 fields; storing just these cuts per-row JSONB size by ~75%. Add a field
+// here if a new query starts reading it. See audit in quick-029.
+const FEC_KEPT_FIELDS = [
+  // read by donor/sector/breakdown queries
+  'contributor_name', 'type', 'entity_type',
+  'contributor_occupation', 'contributor_employer',
+  'contributor_city', 'contributor_state',
+  // identity / audit / re-normalization inputs
+  'sub_id', 'committee_id',
+  'contribution_receipt_amount', 'contribution_receipt_date',
+  'two_year_transaction_period', 'memo_code', 'is_amended',
+] as const;
+
+/** Keep only the fields we read or need for audit — see FEC_KEPT_FIELDS. */
+function slimFecRecord(record: Record<string, unknown>): Record<string, unknown> {
+  const slim: Record<string, unknown> = {};
+  for (const k of FEC_KEPT_FIELDS) {
+    if (record[k] !== undefined) slim[k] = record[k];
+  }
+  return slim;
+}
+
 function normalizeRecord(
   record: Record<string, unknown>,
   ps: PoliticianSource
@@ -464,7 +489,7 @@ function normalizeRecord(
     confidence_level: 'HIGH',
     data_source: 'fec',
     source_transaction_id: sourceTransactionId,
-    raw_record: record,
+    raw_record: slimFecRecord(record),
     donor_name_normalized: normalizeDonorName(
       typeof record['contributor_name'] === 'string' ? record['contributor_name'] as string : null
     ),

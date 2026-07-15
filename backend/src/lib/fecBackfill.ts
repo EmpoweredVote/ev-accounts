@@ -118,6 +118,94 @@ export async function populateFecCandidateCycles(): Promise<{ fetched: number; f
 }
 
 // ---------------------------------------------------------------------------
+// Step 1b: authoritative candidate totals cache (for correct total_raised)
+// ---------------------------------------------------------------------------
+
+interface FecTotalsRow {
+  cycle: number;
+  receipts: number | null;
+}
+
+/** Fetch all-cycle authoritative totals for one candidate in a single call. */
+async function fetchCandidateTotals(candidateId: string, apiKey: string): Promise<FecTotalsRow[]> {
+  const url = `https://api.open.fec.gov/v1/candidate/${encodeURIComponent(candidateId)}/totals/?api_key=${apiKey}&per_page=100`;
+  let delay = 1000;
+  for (let attempt = 0; attempt <= 3; attempt++) {
+    const resp = await fetch(url, { signal: AbortSignal.timeout(30_000) });
+    if (resp.status === 429) {
+      if (attempt === 3) throw new Error('429 after retries');
+      await sleep(delay);
+      delay = Math.min(delay * 2, 60_000);
+      continue;
+    }
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = (await resp.json()) as { results?: Array<{ cycle?: number; receipts?: number }> };
+    return (data.results ?? [])
+      .filter((r) => typeof r.cycle === 'number')
+      .map((r) => ({ cycle: r.cycle as number, receipts: r.receipts ?? null }));
+  }
+  return [];
+}
+
+/**
+ * populateFecCandidateTotals caches FEC's authoritative per-cycle receipts for
+ * every confirmed FEC candidate. One API call per candidate (all cycles at once).
+ * Idempotent — upserts by (external_id, cycle). Creates the table if absent.
+ */
+export async function populateFecCandidateTotals(): Promise<{ candidates: number; rows: number; failed: number }> {
+  const apiKey = process.env.FEC_API_KEY;
+  if (!apiKey) throw new Error('FEC_API_KEY is not set — cannot populate totals cache');
+
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS transparent_motivations.fec_candidate_totals (
+      external_id text NOT NULL,
+      cycle       text NOT NULL,
+      receipts    numeric(16,2),
+      fetched_at  timestamptz NOT NULL DEFAULT now(),
+      PRIMARY KEY (external_id, cycle)
+    )
+  `);
+
+  // Resumable: skip candidates already cached, so a re-run only fills gaps.
+  const idsResult = await pool.query<{ external_id: string }>(
+    `SELECT DISTINCT ps.external_id
+       FROM transparent_motivations.politician_sources ps
+      WHERE ps.source_system LIKE 'fec%' AND ps.research_status='confirmed' AND ps.external_id <> ''
+        AND NOT EXISTS (
+          SELECT 1 FROM transparent_motivations.fec_candidate_totals t
+          WHERE t.external_id = ps.external_id
+        )`
+  );
+  const ids = idsResult.rows.map((r) => r.external_id);
+  console.log(`[fecBackfill] totals cache: ${ids.length} uncached confirmed FEC candidate(s)`);
+
+  let candidates = 0;
+  let rows = 0;
+  let failed = 0;
+  for (let i = 0; i < ids.length; i++) {
+    if (i > 0) await sleep(CYCLE_FETCH_SLEEP_MS);
+    try {
+      const totals = await fetchCandidateTotals(ids[i]!, apiKey);
+      for (const t of totals) {
+        await pool.query(
+          `INSERT INTO transparent_motivations.fec_candidate_totals (external_id, cycle, receipts, fetched_at)
+           VALUES ($1, $2, $3, now())
+           ON CONFLICT (external_id, cycle) DO UPDATE SET receipts=EXCLUDED.receipts, fetched_at=now()`,
+          [ids[i], String(t.cycle), t.receipts]
+        );
+        rows++;
+      }
+      candidates++;
+    } catch (err) {
+      failed++;
+      console.error(`[fecBackfill] totals cache ✗ ${ids[i]}: ${err instanceof Error ? err.message : String(err)}`);
+    }
+  }
+  console.log(`[fecBackfill] totals cache done: candidates=${candidates} rows=${rows} failed=${failed}`);
+  return { candidates, rows, failed };
+}
+
+// ---------------------------------------------------------------------------
 // Step 2: pending (source, cycle) pairs
 // ---------------------------------------------------------------------------
 

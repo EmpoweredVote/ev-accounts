@@ -184,7 +184,8 @@ interface CycleRow {
 }
 
 interface TotalsRow {
-  total_raised: string;       // numeric -> string
+  total_raised: string;       // numeric -> string (sum of ingested itemized rows)
+  non_fec_total: string;      // numeric -> string (sum of non-FEC ingested rows)
   contribution_count: string; // bigint -> string
   confidence_level_n: string; // int -> string
   individual_total: string;   // numeric -> string
@@ -494,6 +495,41 @@ async function detectCoverageStatus(politicianId: string): Promise<string> {
 // ---------------------------------------------------------------------------
 
 /**
+ * getAuthoritativeFecTotal returns FEC's authoritative total receipts for a
+ * politician's confirmed FEC source(s) in a cycle, summed from the cached
+ * transparent_motivations.fec_candidate_totals table (populated offline from FEC's
+ * candidate totals endpoint). Returns null when no cached total exists.
+ *
+ * WHY: total_raised summed from ingested Schedule A rows structurally undercounts —
+ * Schedule A holds only itemized contributions (unitemized small-dollar money is
+ * never in it), and big raisers may be capped. FEC's receipts figure is the
+ * authoritative headline. This read never calls FEC (cache only).
+ */
+async function getAuthoritativeFecTotal(
+  politicianId: string,
+  cycle: string
+): Promise<number | null> {
+  try {
+    const r = await pool.query<{ receipts: string | null }>(
+      `SELECT SUM(t.receipts) AS receipts
+       FROM transparent_motivations.fec_candidate_totals t
+       JOIN transparent_motivations.politician_sources ps
+         ON ps.external_id = t.external_id
+       WHERE ps.essentials_politician_id = $1
+         AND ps.source_system LIKE 'fec%'
+         AND ps.research_status = 'confirmed'
+         AND t.cycle = $2`,
+      [politicianId, cycle]
+    );
+    const v = r.rows[0]?.receipts;
+    return v == null ? null : Number(v);
+  } catch {
+    // Table may not exist yet (pre-migration) — fall back to itemized sum.
+    return null;
+  }
+}
+
+/**
  * getSummary returns the campaign finance summary for a politician.
  * Returns a zero-state object (not null/error) when politician has no contributions.
  * politician_source_id is never exposed in the returned object.
@@ -562,6 +598,7 @@ export async function getSummary(
   const totalsResult = await pool.query<TotalsRow>(
     `SELECT
        COALESCE(SUM(c.amount), 0) AS total_raised,
+       COALESCE(SUM(c.amount) FILTER (WHERE c.data_source != 'fec'), 0) AS non_fec_total,
        COUNT(*) AS contribution_count,
        COALESCE(MIN(CASE c.confidence_level
            WHEN 'HIGH'      THEN 1
@@ -589,6 +626,16 @@ export async function getSummary(
   const tRow = totalsResult.rows[0];
   const confidenceN = Number(tRow?.confidence_level_n ?? 0);
   const overallConfidence = confidenceLabel[confidenceN] ?? 'HIGH';
+
+  // Headline total_raised: prefer FEC's authoritative receipts (cached) over the
+  // itemized-row sum, which undercounts (unitemized + capped). When authoritative
+  // is available, use it for the FEC portion and keep any non-FEC (state/local)
+  // itemized sum on top. Otherwise fall back to the itemized sum as before.
+  const itemizedTotal = Number(tRow?.total_raised ?? 0);
+  const nonFecTotal = Number(tRow?.non_fec_total ?? 0);
+  const authoritativeFec = await getAuthoritativeFecTotal(politicianId, effectiveCycle);
+  const effectiveTotalRaised =
+    authoritativeFec != null ? authoritativeFec + nonFecTotal : itemizedTotal;
 
   // Query occupations for sector breakdown (TypeScript-side classification)
   const occResult = await pool.query<OccupationRow>(
@@ -696,7 +743,7 @@ export async function getSummary(
   const summary: SummaryResponse = {
     politician_id: politicianId,
     cycle: effectiveCycle,
-    total_raised: Number(tRow?.total_raised ?? 0),
+    total_raised: effectiveTotalRaised,
     contribution_count: Number(tRow?.contribution_count ?? 0),
     confidence_level: overallConfidence,
     data_source: primaryDataSource,
