@@ -18,10 +18,10 @@
 -- current officeholder, and is never sourced. Post (Mayor) and Murphy (Council) hold their
 -- seats by appointment, not election, but are the correct current officials to bind.
 --
--- photo_license VARIES per image (Wikimedia/CC terms, Ballotpedia/campaign press_use, or
--- operator_supplied) — do NOT read these as a uniform value. The placeholder value below
--- ('TBD_AT_TASK3') is finalized by the orchestrator to the actual sourced license after the
--- Task 3 Playwright sourcing pass.
+-- photo_license (finalized by the orchestrator at Task 3): all 7 portraits are the official
+-- Town of Marana council portraits, obtained via the SANCTIONED Playwright real-browser flow
+-- (the official host is Akamai-WAF-blocked to raw HTTP; header-spoofing is forbidden — the real
+-- browser context cleared the WAF). License = municipal government work / public-press use.
 --
 -- AUDIT-ONLY: this migration intentionally does NOT write a ledger row (supabase_migrations).
 
@@ -32,7 +32,7 @@ INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_li
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -4013001),
        'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/3b09d8a3-641f-43f9-b3cc-0ce695b54aef-headshot.jpg',
-       'default', 'TBD_AT_TASK3'
+       'default', 'Town of Marana official council portrait (municipal government work; public/press use)'
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.politician_images
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -4013001)
@@ -43,7 +43,7 @@ INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_li
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -4013002),
        'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/4a9bf58b-fd95-4010-81fa-481e1561633d-headshot.jpg',
-       'default', 'TBD_AT_TASK3'
+       'default', 'Town of Marana official council portrait (municipal government work; public/press use)'
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.politician_images
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -4013002)
@@ -54,7 +54,7 @@ INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_li
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -4013003),
        'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/cb526b61-89e2-4c0f-b60c-f359e7193192-headshot.jpg',
-       'default', 'TBD_AT_TASK3'
+       'default', 'Town of Marana official council portrait (municipal government work; public/press use)'
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.politician_images
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -4013003)
@@ -65,7 +65,7 @@ INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_li
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -4013004),
        'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/ad923125-6ce2-44ea-ac1d-a8eb701bff01-headshot.jpg',
-       'default', 'TBD_AT_TASK3'
+       'default', 'Town of Marana official council portrait (municipal government work; public/press use)'
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.politician_images
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -4013004)
@@ -76,7 +76,7 @@ INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_li
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -4013005),
        'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/84e71183-dc0c-46de-8b28-d99c41dc8579-headshot.jpg',
-       'default', 'TBD_AT_TASK3'
+       'default', 'Town of Marana official council portrait (municipal government work; public/press use)'
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.politician_images
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -4013005)
@@ -87,7 +87,7 @@ INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_li
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -4013006),
        'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/e974aae0-fd87-4bf7-91dc-6935533a80ba-headshot.jpg',
-       'default', 'TBD_AT_TASK3'
+       'default', 'Town of Marana official council portrait (municipal government work; public/press use)'
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.politician_images
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -4013006)
@@ -98,7 +98,7 @@ INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_li
 SELECT gen_random_uuid(),
        (SELECT id FROM essentials.politicians WHERE external_id = -4013007),
        'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/d2690186-3c41-455f-b2c4-a94cb8eb5ff5-headshot.jpg',
-       'default', 'TBD_AT_TASK3'
+       'default', 'Town of Marana official council portrait (municipal government work; public/press use)'
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.politician_images
   WHERE politician_id = (SELECT id FROM essentials.politicians WHERE external_id = -4013007)
