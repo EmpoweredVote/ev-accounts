@@ -569,6 +569,110 @@ export async function runAdapterForSources(sourceIds: string[]): Promise<void> {
 }
 
 // ---------------------------------------------------------------------------
+// FEC Forced Re-ingest — bypasses the "skip already-completed pair" guard
+// ---------------------------------------------------------------------------
+
+/** One (source, cycle) pair to force through the FEC pipeline. */
+export interface FecReingestPair {
+  sourceId: string;
+  cycle: string;
+}
+
+export interface FecForcedReingestOptions {
+  /** Delay between pairs (ms). Default 3000 — keeps the shared FEC key under its ceiling. */
+  sleepBetweenMs?: number;
+  /** Abort signal to stop the run cleanly between pairs. */
+  signal?: AbortSignal;
+  /** Per-pair progress callback. rows = contributions now stored for the pair. */
+  onProgress?: (info: {
+    index: number;
+    total: number;
+    pair: FecReingestPair;
+    fullName: string;
+    rows: number;
+    error?: string;
+  }) => void;
+}
+
+/**
+ * runFecForcedReingest re-runs a given list of FEC (source, cycle) pairs through the
+ * hardened adapter EVEN THOUGH each already has a prior completed ingestion_run.
+ *
+ * This is the forced path the completeness sweep (quick-030) needs: the normal
+ * backfill getPending() skips any pair with a completed/completed_with_warning run,
+ * so a truncated-but-"completed" mega-pair would never be re-fetched. runIngestion
+ * itself never consults prior runs — it always creates a fresh run and ingests — so
+ * "forcing" simply means selecting the truncated pairs directly and running them,
+ * bypassing the getPending skip filter. Old truncated rows stay (ON CONFLICT dedups);
+ * the raised cap lets the missing long-tail land.
+ *
+ * Non-aborting: per-pair errors are logged and reported; execution continues.
+ */
+export async function runFecForcedReingest(
+  pairs: FecReingestPair[],
+  opts: FecForcedReingestOptions = {}
+): Promise<{ ok: number; failed: number }> {
+  const sleepBetweenMs = opts.sleepBetweenMs ?? 3000;
+  if (pairs.length === 0) {
+    console.warn('[campaignFinanceScheduler] runFecForcedReingest: no pairs provided');
+    return { ok: 0, failed: 0 };
+  }
+
+  // Resolve source rows once (confirmed FEC sources only).
+  const ids = [...new Set(pairs.map((p) => p.sourceId))];
+  const placeholders = ids.map((_, i) => `$${i + 1}`).join(', ');
+  const rowsResult = await pool.query<PoliticianSourceRow & { full_name: string }>(
+    `SELECT ps.id, ps.essentials_politician_id, ps.source_system, ps.external_id,
+            ps.research_status, ps.notes, ps.created_at, ps.updated_at,
+            COALESCE(p.full_name, '') AS full_name
+     FROM transparent_motivations.politician_sources ps
+     LEFT JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
+     WHERE ps.id IN (${placeholders})
+       AND ps.source_system LIKE 'fec%'
+       AND ps.research_status = 'confirmed'`,
+    ids
+  );
+  const byId = new Map(rowsResult.rows.map((r) => [r.id, r]));
+
+  let ok = 0;
+  let failed = 0;
+
+  for (let i = 0; i < pairs.length; i++) {
+    if (opts.signal?.aborted) {
+      console.log(`[campaignFinanceScheduler] runFecForcedReingest: aborted after ${i}/${pairs.length} pairs`);
+      break;
+    }
+    const pair = pairs[i]!;
+    const ps = byId.get(pair.sourceId);
+    if (!ps) {
+      failed++;
+      opts.onProgress?.({ index: i, total: pairs.length, pair, fullName: '?', rows: 0, error: 'source not found or not a confirmed FEC source' });
+      continue;
+    }
+    if (i > 0) await sleep(sleepBetweenMs);
+
+    try {
+      await runIngestion(createFecAdapter(pair.cycle), ps, pair.cycle);
+      const c = await pool.query<{ n: string }>(
+        `SELECT COUNT(*) n FROM transparent_motivations.contributions
+         WHERE data_source = 'fec' AND politician_source_id = $1 AND election_cycle = $2`,
+        [pair.sourceId, pair.cycle]
+      );
+      const rows = Number(c.rows[0]?.n ?? 0);
+      ok++;
+      opts.onProgress?.({ index: i, total: pairs.length, pair, fullName: ps.full_name, rows });
+    } catch (err) {
+      failed++;
+      const msg = err instanceof Error ? err.message : String(err);
+      console.error(`[campaignFinanceScheduler] runFecForcedReingest: source=${pair.sourceId} cycle=${pair.cycle} error: ${msg}`);
+      opts.onProgress?.({ index: i, total: pairs.length, pair, fullName: ps.full_name, rows: 0, error: msg });
+    }
+  }
+
+  return { ok, failed };
+}
+
+// ---------------------------------------------------------------------------
 // FEC Scheduled Job — acquires Redis lock, runs FEC, releases lock
 // ---------------------------------------------------------------------------
 
