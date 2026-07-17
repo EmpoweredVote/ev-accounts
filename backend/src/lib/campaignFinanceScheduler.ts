@@ -652,7 +652,7 @@ export async function runFecForcedReingest(
     if (i > 0) await sleep(sleepBetweenMs);
 
     try {
-      await runIngestion(createFecAdapter(pair.cycle), ps, pair.cycle);
+      await runIngestion(createFecAdapter(pair.cycle), ps, pair.cycle, opts.signal);
       const c = await pool.query<{ n: string }>(
         `SELECT COUNT(*) n FROM transparent_motivations.contributions
          WHERE data_source = 'fec' AND politician_source_id = $1 AND election_cycle = $2`,

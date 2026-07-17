@@ -32,7 +32,8 @@ import { refreshSummaryAggForSource } from '../campaignFinanceService.js';
 export async function runIngestion(
   adapter: SourceAdapter,
   ps: PoliticianSource,
-  cycle = ''
+  cycle = '',
+  signal?: AbortSignal
 ): Promise<void> {
   const startedAt = new Date();
 
@@ -77,7 +78,7 @@ export async function runIngestion(
         upsertSkipped += up.skipped;
         upsertUnresolved += up.unresolved;
         upsertErrors += up.errors;
-      });
+      }, signal);
       totalFetched = fetchResult.totalFetched;
       totalExpected = fetchResult.totalExpected;
     } else {

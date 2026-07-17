@@ -225,7 +225,8 @@ async function streamPagesForWindow(
   counter: StreamCounter,
   minDate: string | null,
   maxDate: string | null,
-  progress: WindowProgress | null
+  progress: WindowProgress | null,
+  signal?: AbortSignal
 ): Promise<number> {
   // Resume fast-exit: this exact committee+window was already fully fetched before.
   if (minDate && maxDate && progress) {
@@ -242,6 +243,7 @@ async function streamPagesForWindow(
   let firstPage = true;
   let lastIndexes: FecLastIndexes | null = null;
   let cappedOut = false;
+  let aborted = false;
 
   for (;;) {
     const params = new URLSearchParams({
@@ -284,6 +286,16 @@ async function streamPagesForWindow(
       break;
     }
 
+    // Wall-clock budget / cancellation: stop fetching mid-window. Rows already streamed
+    // stay persisted (incremental commit); the window is NOT marked complete so a later
+    // run resumes it. This is what makes the sweep's maxMinutes a real bound even on a
+    // single multi-hour mega-pair.
+    if (signal?.aborted) {
+      console.log(`[fecAdapter] abort signal received — stopping fetch for committee ${committeeId} (${counter.fetched} records so far)`);
+      aborted = true;
+      break;
+    }
+
     if (page.results.length === 0 || page.pagination.last_indexes == null) {
       break;
     }
@@ -293,9 +305,10 @@ async function streamPagesForWindow(
     await sleep(PER_PAGE_SLEEP_MS);
   }
 
-  // Record completion only for real date windows that finished WITHOUT hitting the
-  // cap (a capped window is truncated, not complete — never mark it resumable-done).
-  if (minDate && maxDate && progress && !cappedOut) {
+  // Record completion only for real date windows that finished WITHOUT hitting the cap
+  // or being aborted mid-window (either case = truncated, not complete — never mark it
+  // resumable-done).
+  if (minDate && maxDate && progress && !cappedOut && !aborted) {
     await recordWindowComplete(progress.psId, cycle, committeeId, minDate, maxDate, totalExpected);
     progress.completed.set(wkey(minDate, maxDate), totalExpected);
   }
@@ -321,10 +334,11 @@ async function streamWindowAdaptive(
   minDate: string,
   maxDate: string,
   depth: number,
-  progress: WindowProgress | null
+  progress: WindowProgress | null,
+  signal?: AbortSignal
 ): Promise<number> {
   try {
-    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, minDate, maxDate, progress);
+    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, minDate, maxDate, progress, signal);
   } catch (err) {
     if (!isTooLarge(err) || depth >= MAX_WINDOW_SUBDIVISION_DEPTH || minDate === maxDate) {
       throw err;
@@ -334,8 +348,8 @@ async function streamWindowAdaptive(
     );
     let total = 0;
     for (const [ws, we] of splitRange(minDate, maxDate, 2)) {
-      if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN) break;
-      total += await streamWindowAdaptive(committeeId, cycle, apiKey, onBatch, counter, ws, we, depth + 1, progress);
+      if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN || signal?.aborted) break;
+      total += await streamWindowAdaptive(committeeId, cycle, apiKey, onBatch, counter, ws, we, depth + 1, progress, signal);
     }
     return total;
   }
@@ -355,12 +369,13 @@ async function streamAllPagesForCommittee(
   apiKey: string,
   onBatch: BatchSink,
   counter: StreamCounter,
-  progress: WindowProgress | null
+  progress: WindowProgress | null,
+  signal?: AbortSignal
 ): Promise<number> {
   // Fast path — whole cycle in one query. Common case; no window progress tracking
   // (a whole-cycle window that completes means the pair is done anyway).
   try {
-    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, null, null, null);
+    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, null, null, null, signal);
   } catch (err) {
     if (!isTooLarge(err)) throw err;
     console.warn(
@@ -372,8 +387,8 @@ async function streamAllPagesForCommittee(
   const [cycleStart, cycleEnd] = cycleDateRange(cycle);
   let totalExpected = 0;
   for (const [ws, we] of splitRange(cycleStart, cycleEnd, 8)) {
-    if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN) break;
-    totalExpected += await streamWindowAdaptive(committeeId, cycle, apiKey, onBatch, counter, ws, we, 0, progress);
+    if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN || signal?.aborted) break;
+    totalExpected += await streamWindowAdaptive(committeeId, cycle, apiKey, onBatch, counter, ws, we, 0, progress, signal);
   }
   return totalExpected;
 }
@@ -392,7 +407,8 @@ async function streamAllPages(
   candidateId: string,
   cycle: string,
   onBatch: BatchSink,
-  psId: string
+  psId: string,
+  signal?: AbortSignal
 ): Promise<{ totalExpected: number; totalFetched: number }> {
   const apiKey = process.env.FEC_API_KEY;
   if (!apiKey) {
@@ -408,11 +424,11 @@ async function streamAllPages(
   let totalExpected = 0;
 
   for (const committeeId of committeeIds) {
-    if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN) break;
+    if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN || signal?.aborted) break;
     console.log(`[fecAdapter] Fetching committee ${committeeId} for candidate ${candidateId} cycle ${cycle}`);
     // Load prior completed windows for this committee so a resumed run skips them.
     const progress: WindowProgress = { psId, completed: await getCompletedWindows(psId, cycle, committeeId) };
-    const count = await streamAllPagesForCommittee(committeeId, cycle, apiKey ?? '', onBatch, counter, progress);
+    const count = await streamAllPagesForCommittee(committeeId, cycle, apiKey ?? '', onBatch, counter, progress, signal);
     totalExpected += count;
   }
 
@@ -750,12 +766,13 @@ class FECAdapter implements SourceAdapter, StreamingAdapter {
     return { records, totalExpected, totalFetched };
   }
 
-  async fetchStream(ps: PoliticianSource, onBatch: BatchSink): Promise<FetchResult> {
+  async fetchStream(ps: PoliticianSource, onBatch: BatchSink, signal?: AbortSignal): Promise<FetchResult> {
     const { totalExpected, totalFetched } = await streamAllPages(
       ps.external_id,
       this.cycle,
       onBatch,
-      ps.id
+      ps.id,
+      signal
     );
     // Records were streamed to onBatch, not buffered — return an empty array with
     // accurate counters for runIngestion's completeness check.

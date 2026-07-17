@@ -134,7 +134,12 @@ export type BatchSink = (records: Record<string, unknown>[]) => Promise<void>;
  * totalExpected / totalFetched counters are accurate for the completeness check.
  */
 export interface StreamingAdapter {
-  fetchStream(ps: PoliticianSource, onBatch: BatchSink): Promise<FetchResult>;
+  /**
+   * fetchStream streams records to onBatch as they are fetched. An optional AbortSignal
+   * lets a caller (e.g. the sweep's wall-clock budget) stop the fetch mid-pair; already-
+   * streamed batches stay persisted and the pair resumes on a later run.
+   */
+  fetchStream(ps: PoliticianSource, onBatch: BatchSink, signal?: AbortSignal): Promise<FetchResult>;
 }
 
 // ---------------------------------------------------------------------------
