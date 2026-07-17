@@ -16,7 +16,7 @@
  */
 
 import { pool } from '../db.js';
-import type { SourceAdapter, FetchResult, NormalizeResult, UpsertResult, ContributionInsert } from './adapterInterface.js';
+import type { SourceAdapter, StreamingAdapter, BatchSink, FetchResult, NormalizeResult, UpsertResult, ContributionInsert } from './adapterInterface.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
 import { normalizeDonorName } from './normalizeDonorName.js';
 
@@ -142,24 +142,106 @@ function splitRange(minDate: string, maxDate: string, parts: number): Array<[str
   return out;
 }
 
+// --- Per-window resume progress (survives dyno restarts mid-mega-pair) ---------
+//
+// A mega-committee pull is subdivided into date windows. When a window is fully
+// fetched we record it in transparent_motivations.fec_ingest_window_progress. On a
+// later run (e.g. after a Render restart) we skip windows already recorded complete
+// rather than re-hitting the FEC API from page zero. Incremental commit (per page,
+// below) is what makes those windows' rows durable; this table is what makes the
+// *fetch* resumable. Both reads and writes degrade gracefully (log + continue) if
+// the table is missing, so the adapter still works before the migration is applied.
+
+/** Running fetched-record counter shared across a pair's committees/windows (cap math). */
+interface StreamCounter { fetched: number }
+
+/** Resume context for one committee: the source-row id + its already-complete windows. */
+interface WindowProgress { psId: string; completed: Map<string, number> }
+
+const wkey = (minDate: string, maxDate: string): string => `${minDate}|${maxDate}`;
+
+async function getCompletedWindows(
+  psId: string,
+  cycle: string,
+  committeeId: string
+): Promise<Map<string, number>> {
+  const m = new Map<string, number>();
+  try {
+    const r = await pool.query<{ window_start: string; window_end: string; records_fetched: number }>(
+      `SELECT to_char(window_start,'YYYY-MM-DD') AS window_start,
+              to_char(window_end,'YYYY-MM-DD')   AS window_end,
+              records_fetched
+       FROM transparent_motivations.fec_ingest_window_progress
+       WHERE politician_source_id = $1 AND election_cycle = $2 AND committee_id = $3`,
+      [psId, cycle, committeeId]
+    );
+    for (const row of r.rows) m.set(wkey(row.window_start, row.window_end), Number(row.records_fetched));
+  } catch (err) {
+    console.warn(`[fecAdapter] window-progress read skipped: ${err instanceof Error ? err.message : String(err)}`);
+  }
+  return m;
+}
+
+async function recordWindowComplete(
+  psId: string,
+  cycle: string,
+  committeeId: string,
+  minDate: string,
+  maxDate: string,
+  count: number
+): Promise<void> {
+  try {
+    await pool.query(
+      `INSERT INTO transparent_motivations.fec_ingest_window_progress
+         (politician_source_id, election_cycle, committee_id, window_start, window_end, records_fetched, completed_at)
+       VALUES ($1, $2, $3, $4::date, $5::date, $6, now())
+       ON CONFLICT (politician_source_id, election_cycle, committee_id, window_start, window_end)
+       DO UPDATE SET records_fetched = EXCLUDED.records_fetched, completed_at = now()`,
+      [psId, cycle, committeeId, minDate, maxDate, count]
+    );
+  } catch (err) {
+    console.warn(`[fecAdapter] window-progress write skipped: ${err instanceof Error ? err.message : String(err)}`);
+  }
+}
+
 /**
- * fetchPagesForWindow keyset-paginates one committee's Schedule A within an
- * optional [minDate, maxDate] window (null,null = whole cycle). Records are pushed
- * into allRecords. Returns pagination.count for the window (for completeness math).
+ * streamPagesForWindow keyset-paginates one committee's Schedule A within an optional
+ * [minDate, maxDate] window (null,null = whole cycle) and hands each page to onBatch
+ * as it arrives — so records are persisted incrementally, not buffered to end-of-pair.
+ * Returns pagination.count for the window (for completeness math).
+ *
+ * Resume: for real date windows (non-null) with a progress context, a window already
+ * recorded complete is skipped (its rows are already in the DB) and its recorded count
+ * is added to the shared counter so the completeness ratio stays correct. A window that
+ * finishes cleanly (not capped) is recorded complete for future resumes.
+ *
  * Throws FecQueryTooLargeError if FEC 504s / persistently times out on this window.
  */
-async function fetchPagesForWindow(
+async function streamPagesForWindow(
   committeeId: string,
   cycle: string,
   apiKey: string,
-  allRecords: Record<string, unknown>[],
+  onBatch: BatchSink,
+  counter: StreamCounter,
   minDate: string | null,
-  maxDate: string | null
+  maxDate: string | null,
+  progress: WindowProgress | null
 ): Promise<number> {
+  // Resume fast-exit: this exact committee+window was already fully fetched before.
+  if (minDate && maxDate && progress) {
+    const prior = progress.completed.get(wkey(minDate, maxDate));
+    if (prior !== undefined) {
+      counter.fetched += prior;
+      console.log(`[fecAdapter] resume: committee ${committeeId} window ${minDate}..${maxDate} already complete (${prior} rows) — skipping fetch`);
+      return prior;
+    }
+  }
+
   const baseUrl = 'https://api.open.fec.gov/v1/schedules/schedule_a/';
   let totalExpected = 0;
   let firstPage = true;
   let lastIndexes: FecLastIndexes | null = null;
+  let cappedOut = false;
 
   for (;;) {
     const params = new URLSearchParams({
@@ -187,13 +269,18 @@ async function fetchPagesForWindow(
       firstPage = false;
     }
 
-    allRecords.push(...page.results);
+    // Incremental commit: persist this page's records before fetching the next page.
+    if (page.results.length > 0) {
+      await onBatch(page.results);
+      counter.fetched += page.results.length;
+    }
 
-    if (allRecords.length >= MAX_RECORDS_PER_POLITICIAN) {
+    if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN) {
       console.warn(
-        `[fecAdapter] Record cap reached at committee ${committeeId}: ${allRecords.length} records. ` +
+        `[fecAdapter] Record cap reached at committee ${committeeId}: ${counter.fetched} records. ` +
         `Capping at ${MAX_RECORDS_PER_POLITICIAN}.`
       );
+      cappedOut = true;
       break;
     }
 
@@ -206,6 +293,13 @@ async function fetchPagesForWindow(
     await sleep(PER_PAGE_SLEEP_MS);
   }
 
+  // Record completion only for real date windows that finished WITHOUT hitting the
+  // cap (a capped window is truncated, not complete — never mark it resumable-done).
+  if (minDate && maxDate && progress && !cappedOut) {
+    await recordWindowComplete(progress.psId, cycle, committeeId, minDate, maxDate, totalExpected);
+    progress.completed.set(wkey(minDate, maxDate), totalExpected);
+  }
+
   return totalExpected;
 }
 
@@ -213,21 +307,24 @@ async function fetchPagesForWindow(
 const MAX_WINDOW_SUBDIVISION_DEPTH = 2;
 
 /**
- * fetchWindowAdaptive fetches one date window; if FEC reports the window is still
+ * streamWindowAdaptive fetches one date window; if FEC reports the window is still
  * too large (504/timeout), it splits the window in half and recurses, down to
- * MAX_WINDOW_SUBDIVISION_DEPTH. Only the failing window is subdivided.
+ * MAX_WINDOW_SUBDIVISION_DEPTH. Only the failing window is subdivided. Sub-windows
+ * record their own resume progress; the parent (which threw) is not recorded.
  */
-async function fetchWindowAdaptive(
+async function streamWindowAdaptive(
   committeeId: string,
   cycle: string,
   apiKey: string,
-  allRecords: Record<string, unknown>[],
+  onBatch: BatchSink,
+  counter: StreamCounter,
   minDate: string,
   maxDate: string,
-  depth: number
+  depth: number,
+  progress: WindowProgress | null
 ): Promise<number> {
   try {
-    return await fetchPagesForWindow(committeeId, cycle, apiKey, allRecords, minDate, maxDate);
+    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, minDate, maxDate, progress);
   } catch (err) {
     if (!isTooLarge(err) || depth >= MAX_WINDOW_SUBDIVISION_DEPTH || minDate === maxDate) {
       throw err;
@@ -237,30 +334,33 @@ async function fetchWindowAdaptive(
     );
     let total = 0;
     for (const [ws, we] of splitRange(minDate, maxDate, 2)) {
-      if (allRecords.length >= MAX_RECORDS_PER_POLITICIAN) break;
-      total += await fetchWindowAdaptive(committeeId, cycle, apiKey, allRecords, ws, we, depth + 1);
+      if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN) break;
+      total += await streamWindowAdaptive(committeeId, cycle, apiKey, onBatch, counter, ws, we, depth + 1, progress);
     }
     return total;
   }
 }
 
 /**
- * fetchAllPagesForCommittee fetches all Schedule A pages for a single committee_id.
- * Fast path: one whole-cycle keyset-paginated pull (unchanged for normal filers).
- * Fallback: if FEC 504s / persistently times out (mega-committee too large to
- * compute in one query), fall back to quarter date windows, subdividing to months
- * on any window that is itself too large. Dedup via ON CONFLICT (sub_id) makes the
- * (rare) window-boundary re-fetch harmless.
+ * streamAllPagesForCommittee streams all Schedule A pages for a single committee_id.
+ * Fast path: one whole-cycle keyset-paginated pull (unchanged for normal filers —
+ * a single window, streamed page-by-page). Fallback: if FEC 504s / persistently
+ * times out (mega-committee too large to compute in one query), fall back to quarter
+ * date windows, subdividing to months on any window that is itself too large. Dedup
+ * via ON CONFLICT (sub_id) makes the (rare) window-boundary re-fetch harmless.
  */
-async function fetchAllPagesForCommittee(
+async function streamAllPagesForCommittee(
   committeeId: string,
   cycle: string,
   apiKey: string,
-  allRecords: Record<string, unknown>[]
+  onBatch: BatchSink,
+  counter: StreamCounter,
+  progress: WindowProgress | null
 ): Promise<number> {
-  // Fast path — whole cycle in one query. Common case, unchanged behavior.
+  // Fast path — whole cycle in one query. Common case; no window progress tracking
+  // (a whole-cycle window that completes means the pair is done anyway).
   try {
-    return await fetchPagesForWindow(committeeId, cycle, apiKey, allRecords, null, null);
+    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, null, null, null);
   } catch (err) {
     if (!isTooLarge(err)) throw err;
     console.warn(
@@ -272,23 +372,28 @@ async function fetchAllPagesForCommittee(
   const [cycleStart, cycleEnd] = cycleDateRange(cycle);
   let totalExpected = 0;
   for (const [ws, we] of splitRange(cycleStart, cycleEnd, 8)) {
-    if (allRecords.length >= MAX_RECORDS_PER_POLITICIAN) break;
-    totalExpected += await fetchWindowAdaptive(committeeId, cycle, apiKey, allRecords, ws, we, 0);
+    if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN) break;
+    totalExpected += await streamWindowAdaptive(committeeId, cycle, apiKey, onBatch, counter, ws, we, 0, progress);
   }
   return totalExpected;
 }
 
 /**
- * fetchAllPages resolves a candidate ID to its principal committee IDs, then fetches
- * all Schedule A contributions across those committees for the given election cycle.
+ * streamAllPages resolves a candidate ID to its principal committee IDs, then streams
+ * all Schedule A contributions across those committees for the given election cycle,
+ * handing each page to onBatch as it arrives (incremental persistence). Returns the
+ * cumulative FEC expected count and the number of records actually fetched (which
+ * includes rows skipped-as-already-complete on a resume).
  *
  * FEC schedule_a does not filter by candidate_id — it requires committee_id.
  * This function does the two-step lookup transparently.
  */
-async function fetchAllPages(
+async function streamAllPages(
   candidateId: string,
-  cycle: string
-): Promise<{ records: Record<string, unknown>[]; totalExpected: number }> {
+  cycle: string,
+  onBatch: BatchSink,
+  psId: string
+): Promise<{ totalExpected: number; totalFetched: number }> {
   const apiKey = process.env.FEC_API_KEY;
   if (!apiKey) {
     console.warn('[fecAdapter] FEC_API_KEY environment variable is not set — fetches will fail');
@@ -296,20 +401,22 @@ async function fetchAllPages(
 
   const committeeIds = await resolveCommitteeIds(candidateId, apiKey ?? '');
   if (committeeIds.length === 0) {
-    return { records: [], totalExpected: 0 };
+    return { totalExpected: 0, totalFetched: 0 };
   }
 
-  const allRecords: Record<string, unknown>[] = [];
+  const counter: StreamCounter = { fetched: 0 };
   let totalExpected = 0;
 
   for (const committeeId of committeeIds) {
-    if (allRecords.length >= MAX_RECORDS_PER_POLITICIAN) break;
+    if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN) break;
     console.log(`[fecAdapter] Fetching committee ${committeeId} for candidate ${candidateId} cycle ${cycle}`);
-    const count = await fetchAllPagesForCommittee(committeeId, cycle, apiKey ?? '', allRecords);
+    // Load prior completed windows for this committee so a resumed run skips them.
+    const progress: WindowProgress = { psId, completed: await getCompletedWindows(psId, cycle, committeeId) };
+    const count = await streamAllPagesForCommittee(committeeId, cycle, apiKey ?? '', onBatch, counter, progress);
     totalExpected += count;
   }
 
-  return { records: allRecords, totalExpected };
+  return { totalExpected, totalFetched: counter.fetched };
 }
 
 /**
@@ -612,10 +719,14 @@ async function upsertBatch(
 // ---------------------------------------------------------------------------
 
 /**
- * FECAdapter implements SourceAdapter for the FEC Schedule A API.
+ * FECAdapter implements SourceAdapter + StreamingAdapter for the FEC Schedule A API.
  * Cycle must be set before calling fetch — use createFecAdapter(cycle) to construct.
+ *
+ * runIngestion drives the streaming path (fetchStream) so mega-committee pulls persist
+ * incrementally per page/window and survive mid-pair restarts. The buffered fetch() is
+ * retained for interface compliance / any legacy caller and delegates to the same core.
  */
-class FECAdapter implements SourceAdapter {
+class FECAdapter implements SourceAdapter, StreamingAdapter {
   private readonly cycle: string;
 
   constructor(cycle: string) {
@@ -627,12 +738,28 @@ class FECAdapter implements SourceAdapter {
   }
 
   async fetch(ps: PoliticianSource): Promise<FetchResult> {
-    const { records, totalExpected } = await fetchAllPages(ps.external_id, this.cycle);
-    return {
-      records,
-      totalExpected,
-      totalFetched: records.length,
-    };
+    // Buffered path: collect every streamed batch into one array. Not the hot path
+    // (runIngestion uses fetchStream) but keeps SourceAdapter.fetch() correct.
+    const records: Record<string, unknown>[] = [];
+    const { totalExpected, totalFetched } = await streamAllPages(
+      ps.external_id,
+      this.cycle,
+      async (batch) => { records.push(...batch); },
+      ps.id
+    );
+    return { records, totalExpected, totalFetched };
+  }
+
+  async fetchStream(ps: PoliticianSource, onBatch: BatchSink): Promise<FetchResult> {
+    const { totalExpected, totalFetched } = await streamAllPages(
+      ps.external_id,
+      this.cycle,
+      onBatch,
+      ps.id
+    );
+    // Records were streamed to onBatch, not buffered — return an empty array with
+    // accurate counters for runIngestion's completeness check.
+    return { records: [], totalExpected, totalFetched };
   }
 
   async normalize(raw: FetchResult, ps: PoliticianSource): Promise<NormalizeResult> {

@@ -10,7 +10,7 @@
  */
 
 import { pool } from '../db.js';
-import type { SourceAdapter, ETagProvider } from './adapterInterface.js';
+import type { SourceAdapter, ETagProvider, StreamingAdapter, NormalizeResult } from './adapterInterface.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
 
 // ---------------------------------------------------------------------------
@@ -48,21 +48,59 @@ export async function runIngestion(
   const runId = Number(insertResult.rows[0].id);
 
   try {
-    // Phase 1: Fetch
-    const fetchResult = await adapter.fetch(ps);
+    // Counters shared by both execution paths and fed into the completeness check.
+    let totalFetched = 0;
+    let totalExpected = 0;
+    let normalizeSkipped = 0;
+    let normalizeTotalParsed = 0;
+    let upsertInserted = 0;
+    let upsertSkipped = 0;
+    let upsertUnresolved = 0;
+    let upsertErrors = 0;
 
-    // Phase 2: Normalize
-    const normalizeResult = await adapter.normalize(fetchResult, ps);
-
-    // Phase 3: Upsert
-    const upsertResult = await adapter.upsert(normalizeResult);
+    if (isStreamingAdapter(adapter)) {
+      // Streaming path (FEC mega-committees): normalize + upsert each batch as it is
+      // fetched, so a mid-pair restart preserves already-persisted windows rather than
+      // losing the whole pull. Because upsert is idempotent (ON CONFLICT DO UPDATE),
+      // re-processing a batch is safe. Counters accumulate across all batches.
+      const fetchResult = await adapter.fetchStream(ps, async (records) => {
+        if (records.length === 0) return;
+        const norm: NormalizeResult = await adapter.normalize(
+          { records, totalExpected: 0, totalFetched: records.length },
+          ps
+        );
+        const up = await adapter.upsert(norm);
+        normalizeSkipped += norm.skipped;
+        normalizeTotalParsed += norm.totalParsed;
+        upsertInserted += up.inserted;
+        upsertSkipped += up.skipped;
+        upsertUnresolved += up.unresolved;
+        upsertErrors += up.errors;
+      });
+      totalFetched = fetchResult.totalFetched;
+      totalExpected = fetchResult.totalExpected;
+    } else {
+      // Buffered path (all other adapters): fetch everything, then normalize, then
+      // upsert once — unchanged behavior.
+      const fetchResult = await adapter.fetch(ps);
+      const normalizeResult = await adapter.normalize(fetchResult, ps);
+      const upsertResult = await adapter.upsert(normalizeResult);
+      totalFetched = fetchResult.totalFetched;
+      totalExpected = fetchResult.totalExpected;
+      normalizeSkipped = normalizeResult.skipped;
+      normalizeTotalParsed = normalizeResult.totalParsed;
+      upsertInserted = upsertResult.inserted;
+      upsertSkipped = upsertResult.skipped;
+      upsertUnresolved = upsertResult.unresolved;
+      upsertErrors = upsertResult.errors;
+    }
 
     // Compute duration
     const completedAt = new Date();
     const durationMs = completedAt.getTime() - startedAt.getTime();
 
     // RecordsSkipped is additive: normalizer skips + upsert duplicate skips
-    const recordsSkipped = normalizeResult.skipped + upsertResult.skipped;
+    const recordsSkipped = normalizeSkipped + upsertSkipped;
 
     // Determine initial status
     let status = 'completed';
@@ -70,20 +108,20 @@ export async function runIngestion(
 
     // Completeness check: warn if fetched < 95% of expected
     if (
-      fetchResult.totalExpected > 0 &&
-      fetchResult.totalFetched < fetchResult.totalExpected * 0.95
+      totalExpected > 0 &&
+      totalFetched < totalExpected * 0.95
     ) {
       status = 'completed_with_warning';
-      const pct = Math.round((fetchResult.totalFetched / fetchResult.totalExpected) * 100);
-      notes = `fetched ${fetchResult.totalFetched} of expected ${fetchResult.totalExpected} (${pct}%)`;
+      const pct = Math.round((totalFetched / totalExpected) * 100);
+      notes = `fetched ${totalFetched} of expected ${totalExpected} (${pct}%)`;
     }
 
     // Skip threshold: warn if >1% of examined rows were skipped (Cal-Access locked decision)
-    if (normalizeResult.totalParsed > 0 && normalizeResult.skipped > 0) {
-      const skipRate = normalizeResult.skipped / normalizeResult.totalParsed;
+    if (normalizeTotalParsed > 0 && normalizeSkipped > 0) {
+      const skipRate = normalizeSkipped / normalizeTotalParsed;
       if (skipRate > 0.01) {
         status = 'completed_with_warning';
-        const skipNote = `skip threshold exceeded: ${normalizeResult.skipped}/${normalizeResult.totalParsed} rows skipped (${(skipRate * 100).toFixed(1)}%)`;
+        const skipNote = `skip threshold exceeded: ${normalizeSkipped}/${normalizeTotalParsed} rows skipped (${(skipRate * 100).toFixed(1)}%)`;
         notes = notes ? `${notes}; ${skipNote}` : skipNote;
       }
     }
@@ -116,11 +154,11 @@ export async function runIngestion(
         completedAt.toISOString(),
         durationMs,
         status,
-        fetchResult.totalFetched,
-        upsertResult.inserted,
+        totalFetched,
+        upsertInserted,
         recordsSkipped,
-        upsertResult.unresolved,
-        upsertResult.errors,
+        upsertUnresolved,
+        upsertErrors,
         notes,
         sourceETag,
         zipDownloadedAt ? zipDownloadedAt.toISOString() : null,
@@ -157,5 +195,17 @@ function isETagProvider(adapter: unknown): adapter is ETagProvider {
     adapter !== null &&
     typeof (adapter as ETagProvider).getETag === 'function' &&
     typeof (adapter as ETagProvider).getZIPDownloadedAt === 'function'
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Duck-type guard for StreamingAdapter
+// ---------------------------------------------------------------------------
+
+function isStreamingAdapter(adapter: unknown): adapter is SourceAdapter & StreamingAdapter {
+  return (
+    typeof adapter === 'object' &&
+    adapter !== null &&
+    typeof (adapter as StreamingAdapter).fetchStream === 'function'
   );
 }

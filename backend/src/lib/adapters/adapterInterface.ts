@@ -109,6 +109,35 @@ export interface SourceAdapter {
 }
 
 // ---------------------------------------------------------------------------
+// StreamingAdapter — optional capability for incremental (per-window) persistence
+// ---------------------------------------------------------------------------
+
+/**
+ * BatchSink receives one batch of raw source records as they arrive during fetch,
+ * so the caller (runIngestion) can normalize + upsert incrementally rather than
+ * buffering an entire (source, cycle) pair in memory and committing once at the end.
+ */
+export type BatchSink = (records: Record<string, unknown>[]) => Promise<void>;
+
+/**
+ * StreamingAdapter is an optional capability an adapter may implement (duck-typed,
+ * same pattern as ETagProvider). When present, runIngestion drives the adapter via
+ * fetchStream — normalizing and upserting each batch as it is fetched — instead of
+ * the buffer-everything fetch → normalize → upsert path.
+ *
+ * This is what lets a 500k+ record mega-committee pull survive a mid-pair dyno
+ * restart: each date-window's records are persisted as the window completes, so a
+ * restart preserves already-fetched windows instead of losing the whole pull.
+ *
+ * fetchStream MUST call onBatch for every batch it fetches and return a FetchResult
+ * whose records array is EMPTY (records were streamed, not buffered) but whose
+ * totalExpected / totalFetched counters are accurate for the completeness check.
+ */
+export interface StreamingAdapter {
+  fetchStream(ps: PoliticianSource, onBatch: BatchSink): Promise<FetchResult>;
+}
+
+// ---------------------------------------------------------------------------
 // ETagProvider — duck-typed inline interface for Cal-Access ETag tracking
 // Ported from run.go etagProvider inline interface (Go duck typing).
 // ---------------------------------------------------------------------------
