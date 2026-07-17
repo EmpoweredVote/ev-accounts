@@ -529,6 +529,302 @@ async function getAuthoritativeFecTotal(
   }
 }
 
+// ---------------------------------------------------------------------------
+// Pre-aggregation layer (quick-030 Task 4)
+//
+// refreshSummaryAgg recomputes one (politician_source_id, election_cycle) row of
+// transparent_motivations.contribution_summary_agg from the contributions table, so
+// getSummary can read the tiny agg table instead of scanning the multi-GB contributions
+// table. Cost moves from every profile READ to each ingest WRITE. Called from
+// runIngestion after a pair's upsert and by the one-time backfill script.
+// ---------------------------------------------------------------------------
+
+/** Individual/PAC split — identical CASE logic to getSummary's live totals query. */
+const INDIVIDUAL_CASE_SQL = `CASE
+  WHEN c.raw_record->>'type' IN ('direct', 'in_kind')
+    OR c.raw_record->>'entity_type' LIKE 'IND%'
+  THEN c.amount ELSE 0 END`;
+const PAC_CASE_SQL = `CASE
+  WHEN c.raw_record->>'type' IN ('pac', 'corporate_direct')
+    OR (COALESCE(c.raw_record->>'entity_type', '') != ''
+        AND c.raw_record->>'entity_type' NOT LIKE 'IND%')
+  THEN c.amount ELSE 0 END`;
+const CONFIDENCE_RANK_SQL = `CASE c.confidence_level
+  WHEN 'HIGH' THEN 1 WHEN 'MEDIUM' THEN 2 WHEN 'ESTIMATED' THEN 3 ELSE 4 END`;
+/** Donor name coalesce — identical to getSummary's live top-donor grouping key. */
+const DONOR_NAME_SQL = `COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''), c.donor_name_normalized, '')`;
+
+/** How many donors to persist per source+cycle. > the 20 getSummary returns, so a merge
+ *  across a politician's sources still yields the correct global top 20 in the common case. */
+const AGG_TOP_DONORS = 40;
+
+const confidenceRank = (label: string): number =>
+  label === 'HIGH' ? 1 : label === 'MEDIUM' ? 2 : label === 'ESTIMATED' ? 3 : 4;
+
+/**
+ * refreshSummaryAgg recomputes the agg row for one (politician_source_id, election_cycle).
+ * Idempotent (upsert). Deletes the row when the pair has no contributions. Best-effort:
+ * throws are the caller's to swallow so an agg failure never fails an ingest.
+ */
+export async function refreshSummaryAgg(politicianSourceId: string, cycle: string): Promise<void> {
+  const totalsRes = await pool.query<{
+    contribution_count: string; total_amount: string; confidence_min: string;
+    individual_total: string; pac_total: string; data_source: string | null;
+  }>(
+    `SELECT COUNT(*) AS contribution_count,
+            COALESCE(SUM(c.amount), 0) AS total_amount,
+            COALESCE(MIN(${CONFIDENCE_RANK_SQL}), 1) AS confidence_min,
+            COALESCE(SUM(${INDIVIDUAL_CASE_SQL}), 0) AS individual_total,
+            COALESCE(SUM(${PAC_CASE_SQL}), 0) AS pac_total,
+            MAX(c.data_source) AS data_source
+     FROM transparent_motivations.contributions c
+     WHERE c.politician_source_id = $1 AND c.election_cycle = $2`,
+    [politicianSourceId, cycle]
+  );
+  const t = totalsRes.rows[0];
+  const count = Number(t?.contribution_count ?? 0);
+
+  if (count === 0) {
+    await pool.query(
+      `DELETE FROM transparent_motivations.contribution_summary_agg
+       WHERE politician_source_id = $1 AND election_cycle = $2`,
+      [politicianSourceId, cycle]
+    );
+    return;
+  }
+
+  // Sector rollup — group by occupation (few distinct values) then classify in TS,
+  // exactly as the live getSummary path does. Store ALL sectors (getSummary takes top 10).
+  const occRes = await pool.query<{ occupation: string; total: string; count: string }>(
+    `SELECT COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '') AS occupation,
+            SUM(c.amount) AS total, COUNT(*) AS count
+     FROM transparent_motivations.contributions c
+     WHERE c.politician_source_id = $1 AND c.election_cycle = $2
+     GROUP BY 1`,
+    [politicianSourceId, cycle]
+  );
+  const sectorAccum = new Map<string, { total: number; count: number }>();
+  for (const row of occRes.rows) {
+    const sector = classifySector(row.occupation);
+    const acc = sectorAccum.get(sector) ?? { total: 0, count: 0 };
+    acc.total += Number(row.total);
+    acc.count += Number(row.count);
+    sectorAccum.set(sector, acc);
+  }
+  const sectorBreakdown: SectorEntry[] = Array.from(sectorAccum.entries())
+    .map(([sector, acc]) => ({ sector, total: acc.total, count: acc.count }))
+    .sort((a, b) => b.total - a.total);
+
+  // Top donors for this source+cycle.
+  const donorRes = await pool.query<{
+    contributor_name: string; total_amount: string; contribution_count: string;
+    confidence_level_n: string; raw_record: object | string | null;
+  }>(
+    `SELECT ${DONOR_NAME_SQL} AS contributor_name,
+            SUM(c.amount) AS total_amount,
+            COUNT(*) AS contribution_count,
+            MIN(${CONFIDENCE_RANK_SQL}) AS confidence_level_n,
+            MIN(c.raw_record::text)::jsonb AS raw_record
+     FROM transparent_motivations.contributions c
+     WHERE c.politician_source_id = $1 AND c.election_cycle = $2
+     GROUP BY ${DONOR_NAME_SQL}
+     ORDER BY total_amount DESC
+     LIMIT ${AGG_TOP_DONORS}`,
+    [politicianSourceId, cycle]
+  );
+  const topDonors: TopDonorEntry[] = donorRes.rows.map((row) => {
+    const occ = extractOccupation(row.raw_record);
+    return {
+      name: row.contributor_name,
+      donor_type: extractDonorType(row.raw_record),
+      employer: extractEmployer(row.raw_record),
+      occupation: occ,
+      sector: classifySector(occ),
+      total_amount: Number(row.total_amount),
+      contribution_count: Number(row.contribution_count),
+      confidence_level: confidenceLabel[Number(row.confidence_level_n)] ?? '',
+    };
+  });
+
+  await pool.query(
+    `INSERT INTO transparent_motivations.contribution_summary_agg
+       (politician_source_id, election_cycle, data_source, contribution_count, total_amount,
+        individual_total, pac_total, confidence_min, sector_breakdown, top_donors, refreshed_at)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9::jsonb, $10::jsonb, now())
+     ON CONFLICT (politician_source_id, election_cycle) DO UPDATE SET
+       data_source        = EXCLUDED.data_source,
+       contribution_count = EXCLUDED.contribution_count,
+       total_amount       = EXCLUDED.total_amount,
+       individual_total   = EXCLUDED.individual_total,
+       pac_total          = EXCLUDED.pac_total,
+       confidence_min     = EXCLUDED.confidence_min,
+       sector_breakdown   = EXCLUDED.sector_breakdown,
+       top_donors         = EXCLUDED.top_donors,
+       refreshed_at       = now()`,
+    [
+      politicianSourceId, cycle, t?.data_source ?? '', count,
+      Number(t?.total_amount ?? 0), Number(t?.individual_total ?? 0), Number(t?.pac_total ?? 0),
+      Number(t?.confidence_min ?? 1), JSON.stringify(sectorBreakdown), JSON.stringify(topDonors),
+    ]
+  );
+}
+
+/**
+ * refreshSummaryAggForSource refreshes the agg for every election_cycle present for a
+ * politician_source (a single pair-ingest can touch multiple cycles for non-FEC sources).
+ * Called from runIngestion after a successful upsert.
+ */
+export async function refreshSummaryAggForSource(politicianSourceId: string): Promise<void> {
+  const cyclesRes = await pool.query<{ election_cycle: string }>(
+    `SELECT DISTINCT election_cycle FROM transparent_motivations.contributions
+     WHERE politician_source_id = $1`,
+    [politicianSourceId]
+  );
+  for (const r of cyclesRes.rows) {
+    await refreshSummaryAgg(politicianSourceId, r.election_cycle);
+  }
+}
+
+interface AggRow {
+  election_cycle: string;
+  data_source: string;
+  contribution_count: string;
+  total_amount: string;
+  individual_total: string;
+  pac_total: string;
+  confidence_min: number;
+  sector_breakdown: SectorEntry[];
+  top_donors: TopDonorEntry[];
+}
+
+/**
+ * getSummaryFromAgg builds the summary from the pre-aggregated table, merging across a
+ * politician's confirmed sources. Returns null when the agg cannot serve the request
+ * (politician not backfilled yet, or the requested cycle has no agg row) so getSummary
+ * transparently falls back to the live-scan path. Only used when no confidence filter is
+ * applied — the agg is precomputed unfiltered.
+ */
+async function getSummaryFromAgg(
+  politicianId: string,
+  cycle?: string
+): Promise<{ summary: SummaryResponse; updatedAt: string | null } | null> {
+  const cyclesRes = await pool.query<CycleRow>(
+    `SELECT DISTINCT a.election_cycle
+     FROM transparent_motivations.contribution_summary_agg a
+     JOIN transparent_motivations.politician_sources ps ON ps.id = a.politician_source_id
+     WHERE ps.essentials_politician_id = $1 AND ps.research_status = 'confirmed'
+     ORDER BY a.election_cycle DESC`,
+    [politicianId]
+  );
+  if (cyclesRes.rows.length === 0) return null; // not backfilled / no itemized data — fall back
+
+  const availableCycles = cyclesRes.rows.map((r) => r.election_cycle);
+  const effectiveCycle = cycle ?? availableCycles[0] ?? defaultCompletedCycle();
+
+  const rowsRes = await pool.query<AggRow>(
+    `SELECT a.election_cycle, a.data_source, a.contribution_count, a.total_amount,
+            a.individual_total, a.pac_total, a.confidence_min, a.sector_breakdown, a.top_donors
+     FROM transparent_motivations.contribution_summary_agg a
+     JOIN transparent_motivations.politician_sources ps ON ps.id = a.politician_source_id
+     WHERE ps.essentials_politician_id = $1 AND a.election_cycle = $2 AND ps.research_status = 'confirmed'`,
+    [politicianId, effectiveCycle]
+  );
+  // Politician has agg for other cycles but not this one — let the live path serve it.
+  if (rowsRes.rows.length === 0) return null;
+
+  let contributionCount = 0;
+  let individualTotal = 0;
+  let pacTotal = 0;
+  let itemizedTotal = 0;
+  let nonFecTotal = 0;
+  let confMin = 4;
+  const sectorAccum = new Map<string, { total: number; count: number }>();
+  const donorAccum = new Map<string, TopDonorEntry>();
+  const dataSourceCount = new Map<string, number>();
+
+  for (const row of rowsRes.rows) {
+    const cnt = Number(row.contribution_count);
+    contributionCount += cnt;
+    individualTotal += Number(row.individual_total);
+    pacTotal += Number(row.pac_total);
+    itemizedTotal += Number(row.total_amount);
+    if (row.data_source !== 'fec') nonFecTotal += Number(row.total_amount);
+    confMin = Math.min(confMin, Number(row.confidence_min));
+    dataSourceCount.set(row.data_source, (dataSourceCount.get(row.data_source) ?? 0) + cnt);
+
+    for (const s of row.sector_breakdown ?? []) {
+      const acc = sectorAccum.get(s.sector) ?? { total: 0, count: 0 };
+      acc.total += Number(s.total);
+      acc.count += Number(s.count);
+      sectorAccum.set(s.sector, acc);
+    }
+    for (const d of row.top_donors ?? []) {
+      const existing = donorAccum.get(d.name);
+      if (existing) {
+        existing.total_amount += Number(d.total_amount);
+        existing.contribution_count += Number(d.contribution_count);
+        if (confidenceRank(d.confidence_level) < confidenceRank(existing.confidence_level)) {
+          existing.confidence_level = d.confidence_level;
+        }
+      } else {
+        donorAccum.set(d.name, {
+          ...d,
+          total_amount: Number(d.total_amount),
+          contribution_count: Number(d.contribution_count),
+        });
+      }
+    }
+  }
+
+  const sectorBreakdown: SectorEntry[] = Array.from(sectorAccum.entries())
+    .map(([sector, acc]) => ({ sector, total: acc.total, count: acc.count }))
+    .sort((a, b) => b.total - a.total)
+    .slice(0, 10);
+
+  const topDonors: TopDonorEntry[] = Array.from(donorAccum.values())
+    .sort((a, b) => b.total_amount - a.total_amount)
+    .slice(0, 20);
+
+  const overallConfidence = confidenceLabel[confMin] ?? 'HIGH';
+  const primaryDataSource = Array.from(dataSourceCount.entries())
+    .sort((a, b) => b[1] - a[1])[0]?.[0] ?? 'fec';
+
+  // Headline stays authoritative FEC receipts + non-FEC itemized (unchanged from live path).
+  const authoritativeFec = await getAuthoritativeFecTotal(politicianId, effectiveCycle);
+  const effectiveTotalRaised =
+    authoritativeFec != null ? authoritativeFec + nonFecTotal : itemizedTotal;
+
+  const sourceSystemMap: Record<string, string> = {
+    fec: 'fec', indiana: 'indiana_zip_etag_2026', cal_access: 'cal_access', la_city: 'la_city',
+  };
+  const metaSourceSystem = sourceSystemMap[primaryDataSource] ?? primaryDataSource;
+  const metaResult = await pool.query<MetaRow>(
+    `SELECT last_sync_at FROM transparent_motivations.data_source_metadata
+     WHERE source_system = $1 LIMIT 1`,
+    [metaSourceSystem]
+  );
+  const lastSyncAt = metaResult.rows[0]?.last_sync_at ?? null;
+
+  const outsideSpending = await getOutsideSpendingForPolitician(politicianId);
+
+  const summary: SummaryResponse = {
+    politician_id: politicianId,
+    cycle: effectiveCycle,
+    total_raised: effectiveTotalRaised,
+    contribution_count: contributionCount,
+    confidence_level: overallConfidence,
+    data_source: primaryDataSource,
+    last_sync_at: lastSyncAt,
+    available_cycles: availableCycles,
+    individual_total: individualTotal,
+    pac_total: pacTotal,
+    sector_breakdown: sectorBreakdown,
+    top_donors: topDonors,
+    outside_spending: outsideSpending,
+  };
+  return { summary, updatedAt: lastSyncAt };
+}
+
 /**
  * getSummary returns the campaign finance summary for a politician.
  * Returns a zero-state object (not null/error) when politician has no contributions.
@@ -540,6 +836,18 @@ export async function getSummary(
   confidence?: string | null
 ): Promise<{ summary: SummaryResponse; updatedAt: string | null }> {
   const confidenceFilter = confidence ?? null;
+
+  // Fast path: serve from the pre-aggregated table when no confidence filter is applied
+  // (the agg is precomputed unfiltered). Falls through to the live-scan path below when
+  // the politician has no agg rows yet (pre-backfill) or the requested cycle has none.
+  if (confidenceFilter === null) {
+    try {
+      const fast = await getSummaryFromAgg(politicianId, cycle);
+      if (fast) return fast;
+    } catch (err) {
+      console.warn('[campaignFinanceService] agg fast-path failed, falling back to live scan:', err instanceof Error ? err.message : String(err));
+    }
+  }
 
   // Query available cycles
   const availCycleResult = await pool.query<CycleRow>(

@@ -12,6 +12,7 @@
 import { pool } from '../db.js';
 import type { SourceAdapter, ETagProvider, StreamingAdapter, NormalizeResult } from './adapterInterface.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
+import { refreshSummaryAggForSource } from '../campaignFinanceService.js';
 
 // ---------------------------------------------------------------------------
 // runIngestion — main orchestrator
@@ -165,6 +166,17 @@ export async function runIngestion(
         runId,
       ]
     );
+
+    // Refresh the pre-aggregated summary for this source so the public read path stays
+    // fast as the contributions table grows (quick-030 Task 4). Non-fatal: an agg refresh
+    // failure must never fail an otherwise-successful ingest.
+    try {
+      await refreshSummaryAggForSource(ps.id);
+    } catch (aggErr) {
+      console.warn(
+        `[runIngestion] summary agg refresh skipped for source=${ps.id}: ${aggErr instanceof Error ? aggErr.message : String(aggErr)}`
+      );
+    }
   } catch (err) {
     // On any error: mark run as failed, write error to notes, re-throw
     const completedAt = new Date();
