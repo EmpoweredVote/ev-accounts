@@ -234,7 +234,7 @@ export function buildCountiesUpsertSql(): string {
   return `INSERT INTO essentials.gazetteer_counties
        (geo_id, name, state, aland_sqmi, intptlat, intptlong)
      SELECT * FROM UNNEST(
-       $1::text[], $2::text[], $3::numeric[], $4::double precision[], $5::double precision[]
+       $1::text[], $2::text[], $3::text[], $4::numeric[], $5::double precision[], $6::double precision[]
      )
      ON CONFLICT (geo_id) DO UPDATE SET
        name = EXCLUDED.name,

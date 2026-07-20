@@ -173,7 +173,11 @@ describe('upsert SQL construction (idempotency guarantee)', () => {
     // Fixed 7/6 array-typed params regardless of how many rows are inside
     // each array — this is what makes the SQL shape batch-size-independent.
     expect(placesSql).toMatch(/UNNEST\(\s*\$1::text\[\], \$2::text\[\], \$3::text\[\], \$4::text\[\],/);
-    expect(countiesSql).toMatch(/UNNEST\(\s*\$1::text\[\], \$2::text\[\], \$3::numeric\[\],/);
+    // 6 array params (geo_id, name, state, aland_sqmi, intptlat, intptlong) — a prior
+    // authoring bug had only 5 UNNEST args against a 6-column INSERT target list,
+    // which failed live with "INSERT has more target columns than expressions"
+    // (Phase 212 Plan 03 live-execution fix: missing $3::text[] for `state`).
+    expect(countiesSql).toMatch(/UNNEST\(\s*\$1::text\[\], \$2::text\[\], \$3::text\[\], \$4::numeric\[\],/);
   });
 
   it('placeRecordToParams/countyRecordToParams produce positional params matching the SQL column order', () => {
