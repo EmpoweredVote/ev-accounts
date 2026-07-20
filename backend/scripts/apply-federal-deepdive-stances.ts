@@ -31,7 +31,10 @@ async function main() {
   const csvPath = path.isAbsolute(csvArg) ? csvArg : path.join(process.cwd(), csvArg);
   const csv = readFileSync(csvPath, 'utf8');
   // D-11 columns: politician_id,topic_id,topic_key,value,notes
-  const rows = parse(csv, { columns: true, skip_empty_lines: true }) as Array<Record<string, string>>;
+  // relax_quotes: notes fields carry verbatim excerpts that may contain literal double-quotes;
+  // the D-11 contract forbids commas in fields (semicolons only), so quote-wrapping is never
+  // needed and a mid-field " must be treated as a literal character, not a quote delimiter.
+  const rows = parse(csv, { columns: true, skip_empty_lines: true, relax_quotes: true }) as Array<Record<string, string>>;
 
   // SAFETY (T-211-01): every row must belong to the target official. Abort on any mismatch
   // BEFORE any write, so a stray row can never widen the write/delete scope to another official.
