@@ -633,7 +633,7 @@ function normalizeRecord(
  *   - Use numbered $N params. NEVER interpolate values into SQL.
  *   - Donors upsert: INSERT ... ON CONFLICT (normalized_name) DO UPDATE.
  */
-async function upsertContributions(
+export async function upsertContributions(
   normalized: NormalizeResult
 ): Promise<UpsertResult> {
   if (normalized.contributions.length === 0) {
