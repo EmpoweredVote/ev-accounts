@@ -12,6 +12,7 @@ export default defineConfig({
       '../tests/**/*.{test,spec}.{ts,js}',
       'src/**/*.{test,spec}.{ts,js}',
       'test/**/*.{test,spec}.{ts,js}',
+      'scripts/**/*.{test,spec}.{ts,js}',
     ],
     testTimeout: 30000,
     hookTimeout: 30000,
