@@ -44,6 +44,7 @@ import 'dotenv/config';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
+import { pathToFileURL } from 'url';
 import AdmZip from 'adm-zip';
 import { pool } from '../src/lib/db.js';
 
@@ -436,9 +437,16 @@ export async function main(): Promise<void> {
 // Only auto-run when executed directly (`npx tsx scripts/ingest-gazetteer-places-counties.ts ...`).
 // Guards against side effects (DB connect, process.exit) when this module is
 // imported for unit testing pure helpers (parsePlacesLine, parseCountiesLine, etc).
+//
+// NOTE (Phase 212 Plan 03 live-execution fix): a naive `file://${process.argv[1]}`
+// string comparison is Windows-broken — process.argv[1] is a backslash Windows
+// path (`C:\...\script.ts`) while import.meta.url is a forward-slash `file:///C:/...`
+// URL; the two can never string-match on win32, so main() silently never ran.
+// pathToFileURL() normalizes both sides to the same URL representation, which
+// works correctly cross-platform (win32 and POSIX).
 const isMainModule = (() => {
   try {
-    return import.meta.url === `file://${process.argv[1]}`;
+    return import.meta.url === pathToFileURL(process.argv[1]).href;
   } catch {
     return false;
   }
