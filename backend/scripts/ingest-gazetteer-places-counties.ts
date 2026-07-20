@@ -87,7 +87,7 @@ export interface GazetteerCountyRecord {
 // ─── Header-index resolver ─────────────────────────────────────────────────────
 
 /**
- * Resolve the column index for a logical field name from a pipe-delimited
+ * Resolve the column index for a logical field name from a tab-delimited
  * header row. Header field names are matched case-insensitively and with
  * surrounding whitespace trimmed (Gazetteer headers occasionally carry
  * trailing padding).
@@ -112,7 +112,7 @@ export function resolveHeaderIndex(headerFields: string[], candidates: string[])
 // ─── Pure line parsers (unit-testable, no DB/network) ──────────────────────────
 
 /**
- * Parse a single pipe-delimited Gazetteer Places data line into a record,
+ * Parse a single tab-delimited Gazetteer Places data line into a record,
  * given the header's own field order (never a hardcoded column index).
  * Returns null for a blank line.
  */
@@ -121,7 +121,7 @@ export function parsePlacesLine(
   headerFields: string[],
 ): GazetteerPlaceRecord | null {
   if (line.trim().length === 0) return null;
-  const fields = line.split('|').map((s) => s.trim());
+  const fields = line.split('\t').map((s) => s.trim());
 
   const uspsIdx = resolveHeaderIndex(headerFields, ['USPS']);
   const geoidIdx = resolveHeaderIndex(headerFields, ['GEOID']);
@@ -143,7 +143,7 @@ export function parsePlacesLine(
 }
 
 /**
- * Parse a single pipe-delimited Gazetteer Counties data line into a record.
+ * Parse a single tab-delimited Gazetteer Counties data line into a record.
  * Same shape as parsePlacesLine minus LSAD/FUNCSTAT (Counties file has no
  * LSAD column).
  */
@@ -152,7 +152,7 @@ export function parseCountiesLine(
   headerFields: string[],
 ): GazetteerCountyRecord | null {
   if (line.trim().length === 0) return null;
-  const fields = line.split('|').map((s) => s.trim());
+  const fields = line.split('\t').map((s) => s.trim());
 
   const uspsIdx = resolveHeaderIndex(headerFields, ['USPS']);
   const geoidIdx = resolveHeaderIndex(headerFields, ['GEOID']);
@@ -172,13 +172,13 @@ export function parseCountiesLine(
 }
 
 /**
- * Parse a full pipe-delimited Gazetteer Places file's text content into
+ * Parse a full tab-delimited Gazetteer Places file's text content into
  * records, skipping the header row and any blank lines.
  */
 export function parsePlacesFile(fileText: string): GazetteerPlaceRecord[] {
   const lines = fileText.split(/\r?\n/);
   if (lines.length === 0) return [];
-  const headerFields = lines[0].split('|');
+  const headerFields = lines[0].split('\t');
   const records: GazetteerPlaceRecord[] = [];
   for (let i = 1; i < lines.length; i++) {
     const record = parsePlacesLine(lines[i], headerFields);
@@ -188,13 +188,13 @@ export function parsePlacesFile(fileText: string): GazetteerPlaceRecord[] {
 }
 
 /**
- * Parse a full pipe-delimited Gazetteer Counties file's text content into
+ * Parse a full tab-delimited Gazetteer Counties file's text content into
  * records, skipping the header row and any blank lines.
  */
 export function parseCountiesFile(fileText: string): GazetteerCountyRecord[] {
   const lines = fileText.split(/\r?\n/);
   if (lines.length === 0) return [];
-  const headerFields = lines[0].split('|');
+  const headerFields = lines[0].split('\t');
   const records: GazetteerCountyRecord[] = [];
   for (let i = 1; i < lines.length; i++) {
     const record = parseCountiesLine(lines[i], headerFields);

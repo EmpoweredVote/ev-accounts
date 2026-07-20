@@ -20,35 +20,40 @@ import {
 
 // ─── Fixtures ───────────────────────────────────────────────────────────────
 
+// Census Gazetteer files are actually TAB-delimited (verified against the live
+// downloaded 2024_Gaz_place_national.txt / 2024_Gaz_counties_national.txt
+// header rows during Phase 212 Plan 03's live execution) — NOT pipe-delimited
+// as originally assumed by this plan's authoring pass. Fixtures use '\t' to
+// match the real file format the parser now expects.
 const PLACES_HEADER =
-  'USPS|GEOID|ANSICODE|NAME|LSAD|FUNCSTAT|ALAND|AWATER|ALAND_SQMI|AWATER_SQMI|INTPTLAT|INTPTLONG';
+  'USPS\tGEOID\tANSICODE\tNAME\tLSAD\tFUNCSTAT\tALAND\tAWATER\tALAND_SQMI\tAWATER_SQMI\tINTPTLAT\tINTPTLONG';
 
 const PLACES_FIXTURE = [
   PLACES_HEADER,
-  'IL|1770000|00428803|Chicago|25|A|589632533|18857038|227.658|7.281|+41.8375671|-87.6866143',
-  'AZ|0465000|00025513|Sun City|57|S|59586843|239164|23.007|0.092|+33.5967631|-112.2721749',
+  'IL\t1770000\t00428803\tChicago\t25\tA\t589632533\t18857038\t227.658\t7.281\t+41.8375671\t-87.6866143',
+  'AZ\t0465000\t00025513\tSun City\t57\tS\t59586843\t239164\t23.007\t0.092\t+33.5967631\t-112.2721749',
 ].join('\n');
 
-const COUNTIES_HEADER = 'USPS|GEOID|ANSICODE|NAME|ALAND|AWATER|ALAND_SQMI|AWATER_SQMI|INTPTLAT|INTPTLONG';
+const COUNTIES_HEADER = 'USPS\tGEOID\tANSICODE\tNAME\tALAND\tAWATER\tALAND_SQMI\tAWATER_SQMI\tINTPTLAT\tINTPTLONG';
 
 const COUNTIES_FIXTURE = [
   COUNTIES_HEADER,
-  'IL|17031|01784709|Cook County|2447749139|1785476792|945.106|689.383|+41.8401381|-87.8168707',
-  'MD|24510|01702381|Baltimore city|183686063|24473331|70.923|9.450|+39.3050803|-76.6151843',
+  'IL\t17031\t01784709\tCook County\t2447749139\t1785476792\t945.106\t689.383\t+41.8401381\t-87.8168707',
+  'MD\t24510\t01702381\tBaltimore city\t183686063\t24473331\t70.923\t9.450\t+39.3050803\t-76.6151843',
 ].join('\n');
 
 // ─── resolveHeaderIndex ─────────────────────────────────────────────────────
 
 describe('resolveHeaderIndex', () => {
   it('resolves a column index by verified header field, case-insensitively', () => {
-    const header = PLACES_HEADER.split('|');
+    const header = PLACES_HEADER.split('	');
     expect(resolveHeaderIndex(header, ['USPS'])).toBe(0);
     expect(resolveHeaderIndex(header, ['GEOID'])).toBe(1);
     expect(resolveHeaderIndex(header, ['NAME'])).toBe(3);
   });
 
   it('throws when none of the candidates are present (vintage/column-drift guard)', () => {
-    const header = PLACES_HEADER.split('|');
+    const header = PLACES_HEADER.split('	');
     expect(() => resolveHeaderIndex(header, ['NOT_A_REAL_COLUMN'])).toThrow(
       /Gazetteer header resolution failed/,
     );
@@ -59,9 +64,9 @@ describe('resolveHeaderIndex', () => {
 
 describe('parsePlacesLine', () => {
   it('parses a single Places data line into a record with trimmed fields', () => {
-    const header = PLACES_HEADER.split('|');
+    const header = PLACES_HEADER.split('	');
     const line =
-      'IL|1770000|00428803|Chicago|25|A|589632533|18857038|227.658|7.281|+41.8375671|-87.6866143';
+      'IL	1770000	00428803	Chicago	25	A	589632533	18857038	227.658	7.281	+41.8375671	-87.6866143';
     const record = parsePlacesLine(line, header);
     expect(record).not.toBeNull();
     expect(record!.geo_id).toBe('1770000');
@@ -73,15 +78,15 @@ describe('parsePlacesLine', () => {
   });
 
   it('returns null for a blank line', () => {
-    const header = PLACES_HEADER.split('|');
+    const header = PLACES_HEADER.split('	');
     expect(parsePlacesLine('', header)).toBeNull();
     expect(parsePlacesLine('   ', header)).toBeNull();
   });
 
   it('maps a USPS field of "IL" to state "IL" verbatim (never inferred from name)', () => {
-    const header = PLACES_HEADER.split('|');
+    const header = PLACES_HEADER.split('	');
     const line =
-      'IL|1770000|00428803|Chicago|25|A|589632533|18857038|227.658|7.281|+41.8375671|-87.6866143';
+      'IL	1770000	00428803	Chicago	25	A	589632533	18857038	227.658	7.281	+41.8375671	-87.6866143';
     const record = parsePlacesLine(line, header)!;
     expect(record.state).toBe('IL');
   });
@@ -128,8 +133,8 @@ describe('parsePlacesFile', () => {
 
 describe('parseCountiesLine', () => {
   it('parses a single Counties data line (no LSAD column)', () => {
-    const header = COUNTIES_HEADER.split('|');
-    const line = 'IL|17031|01784709|Cook County|2447749139|1785476792|945.106|689.383|+41.8401381|-87.8168707';
+    const header = COUNTIES_HEADER.split('	');
+    const line = 'IL	17031	01784709	Cook County	2447749139	1785476792	945.106	689.383	+41.8401381	-87.8168707';
     const record = parseCountiesLine(line, header);
     expect(record).not.toBeNull();
     expect(record!.geo_id).toBe('17031');
@@ -172,9 +177,9 @@ describe('upsert SQL construction (idempotency guarantee)', () => {
   });
 
   it('placeRecordToParams/countyRecordToParams produce positional params matching the SQL column order', () => {
-    const header = PLACES_HEADER.split('|');
+    const header = PLACES_HEADER.split('	');
     const line =
-      'IL|1770000|00428803|Chicago|25|A|589632533|18857038|227.658|7.281|+41.8375671|-87.6866143';
+      'IL	1770000	00428803	Chicago	25	A	589632533	18857038	227.658	7.281	+41.8375671	-87.6866143';
     const record = parsePlacesLine(line, header)!;
     const params = placeRecordToParams(record);
     expect(params).toHaveLength(7);
@@ -182,8 +187,8 @@ describe('upsert SQL construction (idempotency guarantee)', () => {
     expect(params[1]).toBe('Chicago');
     expect(params[2]).toBe('IL');
 
-    const cHeader = COUNTIES_HEADER.split('|');
-    const cLine = 'IL|17031|01784709|Cook County|2447749139|1785476792|945.106|689.383|+41.8401381|-87.8168707';
+    const cHeader = COUNTIES_HEADER.split('	');
+    const cLine = 'IL	17031	01784709	Cook County	2447749139	1785476792	945.106	689.383	+41.8401381	-87.8168707';
     const cRecord = parseCountiesLine(cLine, cHeader)!;
     const cParams = countyRecordToParams(cRecord);
     expect(cParams).toHaveLength(6);
