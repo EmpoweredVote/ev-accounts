@@ -134,6 +134,45 @@ export interface TopDonorEntry {
   confidence_level: string;
 }
 
+/**
+ * CompositionResponse — authoritative FEC breakdown of total receipts for the grassroots
+ * composition bar (quick-032). Grassroots (unitemized ≤$200) is computed from FEC's authoritative
+ * summary figures, NOT from ingested itemized rows, and its share is against the authoritative
+ * total. Present only for politicians with a cached FEC totals row and total>0. See
+ * .planning/decisions/DISCLOSURE-THRESHOLD-POLICY.md.
+ */
+export interface CompositionResponse {
+  source: 'fec';
+  total: number;              // authoritative FEC receipts
+  grassroots: number;         // individual_unitemized (≤$200, never named)
+  large_individual: number;   // individual_itemized (>$200, named in top donors)
+  pac_committee: number;      // PAC + party committee contributions
+  self_funding: number;       // candidate_contribution
+  other: number;              // max(0, total - the four buckets above)
+  grassroots_share: number;   // grassroots / total, 0..1
+}
+
+/**
+ * PacEntry / PacListResponse — the itemized "PACs & committees" list (quick-032). Built from
+ * contributions with entity_type IN ('PAC','PTY') — real political action committees + party
+ * committees, which match FEC's authoritative PAC figure almost exactly. This deliberately EXCLUDES
+ * self-funding (CAN), joint-fundraising/victory-fund transfers (COM), and candidate-committee
+ * transfers (CCM), which the entity-based individual/PAC split wrongly lumps into "PAC" (see
+ * memory project_pac_classification). Names support click-through: internal donor search + an
+ * FEC.gov committee search link.
+ */
+export interface PacEntry {
+  name: string;
+  entity_type: string;        // 'PAC' | 'PTY'
+  total_amount: number;
+  contribution_count: number;
+}
+export interface PacListResponse {
+  pacs: PacEntry[];           // top PACs/party committees by amount
+  total_amount: number;       // sum across ALL PAC/PTY rows (not just the top listed)
+  count: number;              // number of distinct PAC/party committees on file
+}
+
 export interface SummaryResponse {
   politician_id: string;
   cycle: string;
@@ -148,6 +187,8 @@ export interface SummaryResponse {
   sector_breakdown: SectorEntry[];
   top_donors: TopDonorEntry[];
   coverage_status?: string;
+  composition?: CompositionResponse;
+  pac_contributions?: PacListResponse;
   outside_spending: OutsideSpendingResponse;
 }
 
@@ -529,6 +570,121 @@ async function getAuthoritativeFecTotal(
   }
 }
 
+/**
+ * getFecComposition returns FEC's authoritative receipt composition for a politician's confirmed
+ * FEC source(s) in a cycle, summed from the cached fec_candidate_totals table (quick-032). Used to
+ * build the grassroots composition bar. Returns null when no cached composition exists (pre-
+ * migration, non-FEC politician, or totals row without a receipts figure) so the UI simply omits
+ * the bar. Grassroots (unitemized) is FEC-authoritative — never derived from ingested rows.
+ */
+async function getFecComposition(
+  politicianId: string,
+  cycle: string
+): Promise<CompositionResponse | null> {
+  try {
+    const r = await pool.query<{
+      total: string | null; grassroots: string | null; large_individual: string | null;
+      pac: string | null; party: string | null; self_contrib: string | null; self_loans: string | null;
+    }>(
+      `SELECT SUM(t.receipts)              AS total,
+              SUM(t.individual_unitemized) AS grassroots,
+              SUM(t.individual_itemized)   AS large_individual,
+              SUM(t.pac_contributions)     AS pac,
+              SUM(t.party_contributions)   AS party,
+              SUM(t.candidate_self)        AS self_contrib,
+              SUM(t.candidate_loans)       AS self_loans
+       FROM transparent_motivations.fec_candidate_totals t
+       JOIN transparent_motivations.politician_sources ps
+         ON ps.external_id = t.external_id
+       WHERE ps.essentials_politician_id = $1
+         AND ps.source_system LIKE 'fec%'
+         AND ps.research_status = 'confirmed'
+         AND t.cycle = $2`,
+      [politicianId, cycle]
+    );
+    const row = r.rows[0];
+    const total = Number(row?.total ?? 0);
+    // Need an authoritative total AND at least the grassroots figure to be meaningful.
+    if (!row || total <= 0 || row.grassroots == null) return null;
+
+    const grassroots = Number(row.grassroots ?? 0);
+    const large_individual = Number(row.large_individual ?? 0);
+    const pac_committee = Number(row.pac ?? 0) + Number(row.party ?? 0);
+    // Self-funders usually LOAN their campaign rather than contribute — count both.
+    const self_funding = Number(row.self_contrib ?? 0) + Number(row.self_loans ?? 0);
+    const other = Math.max(0, total - grassroots - large_individual - pac_committee - self_funding);
+    return {
+      source: 'fec',
+      total,
+      grassroots,
+      large_individual,
+      pac_committee,
+      self_funding,
+      other,
+      grassroots_share: grassroots / total,
+    };
+  } catch {
+    // Table/columns may not exist yet (pre-migration) — omit the bar.
+    return null;
+  }
+}
+
+const PAC_LIST_LIMIT = 25;
+
+/**
+ * getPacContributions returns the itemized "PACs & committees" list for a politician + cycle,
+ * from contributions with entity_type IN ('PAC','PTY'). Real PACs + party committees only —
+ * excludes self-funding, victory-fund/JFC transfers, and candidate-committee transfers that the
+ * entity-based split misclassifies as PAC (see project_pac_classification). Returns null when the
+ * politician has no PAC/party rows for the cycle. Scoped to the politician's confirmed sources so
+ * it only scans that politician's contributions (fast), never the whole table.
+ */
+async function getPacContributions(
+  politicianId: string,
+  cycle: string
+): Promise<PacListResponse | null> {
+  // Totals across ALL PAC/party rows (not just the top listed).
+  const totalsRes = await pool.query<{ total: string | null; count: string }>(
+    `SELECT COALESCE(SUM(c.amount), 0) AS total, COUNT(DISTINCT ${DONOR_NAME_SQL}) AS count
+     FROM transparent_motivations.contributions c
+     JOIN transparent_motivations.politician_sources ps ON ps.id = c.politician_source_id
+     WHERE ps.essentials_politician_id = $1 AND ps.research_status = 'confirmed'
+       AND c.election_cycle = $2
+       AND c.raw_record->>'entity_type' IN ('PAC', 'PTY')`,
+    [politicianId, cycle]
+  );
+  const total = Number(totalsRes.rows[0]?.total ?? 0);
+  const count = Number(totalsRes.rows[0]?.count ?? 0);
+  if (count === 0 || total <= 0) return null;
+
+  const listRes = await pool.query<{ name: string; entity_type: string; total: string; n: string }>(
+    `SELECT ${DONOR_NAME_SQL} AS name,
+            MAX(c.raw_record->>'entity_type') AS entity_type,
+            SUM(c.amount) AS total,
+            COUNT(*) AS n
+     FROM transparent_motivations.contributions c
+     JOIN transparent_motivations.politician_sources ps ON ps.id = c.politician_source_id
+     WHERE ps.essentials_politician_id = $1 AND ps.research_status = 'confirmed'
+       AND c.election_cycle = $2
+       AND c.raw_record->>'entity_type' IN ('PAC', 'PTY')
+     GROUP BY ${DONOR_NAME_SQL}
+     ORDER BY total DESC
+     LIMIT ${PAC_LIST_LIMIT}`,
+    [politicianId, cycle]
+  );
+
+  const pacs: PacEntry[] = listRes.rows
+    .filter((r) => r.name && r.name.trim() !== '')
+    .map((r) => ({
+      name: r.name,
+      entity_type: r.entity_type ?? 'PAC',
+      total_amount: Number(r.total),
+      contribution_count: Number(r.n),
+    }));
+
+  return { pacs, total_amount: total, count };
+}
+
 // ---------------------------------------------------------------------------
 // Pre-aggregation layer (quick-030 Task 4)
 //
@@ -806,6 +962,8 @@ async function getSummaryFromAgg(
   const lastSyncAt = metaResult.rows[0]?.last_sync_at ?? null;
 
   const outsideSpending = await getOutsideSpendingForPolitician(politicianId);
+  const composition = await getFecComposition(politicianId, effectiveCycle);
+  const pacContributions = await getPacContributions(politicianId, effectiveCycle);
 
   const summary: SummaryResponse = {
     politician_id: politicianId,
@@ -820,6 +978,8 @@ async function getSummaryFromAgg(
     pac_total: pacTotal,
     sector_breakdown: sectorBreakdown,
     top_donors: topDonors,
+    ...(composition ? { composition } : {}),
+    ...(pacContributions ? { pac_contributions: pacContributions } : {}),
     outside_spending: outsideSpending,
   };
   return { summary, updatedAt: lastSyncAt };
@@ -1047,6 +1207,8 @@ export async function getSummary(
 
   // Fetch outside spending in parallel with the final data source metadata query
   const outsideSpending = await getOutsideSpendingForPolitician(politicianId);
+  const composition = await getFecComposition(politicianId, effectiveCycle);
+  const pacContributions = await getPacContributions(politicianId, effectiveCycle);
 
   const summary: SummaryResponse = {
     politician_id: politicianId,
@@ -1061,6 +1223,8 @@ export async function getSummary(
     pac_total: Number(tRow?.pac_total ?? 0),
     sector_breakdown: sectorBreakdown,
     top_donors: topDonors,
+    ...(composition ? { composition } : {}),
+    ...(pacContributions ? { pac_contributions: pacContributions } : {}),
     outside_spending: outsideSpending,
   };
 
