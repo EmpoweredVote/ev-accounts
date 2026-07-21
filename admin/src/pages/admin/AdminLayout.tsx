@@ -18,6 +18,7 @@ const navItems = [
   { label: 'Coverage', to: '/admin/coverage', exact: true },
   { label: 'Review Queue', to: '/admin/review' },
   { label: 'Read & Rank Quotes', to: '/admin/readrank-quotes' },
+  { label: 'Read & Rank Coverage', to: '/admin/readrank-coverage' },
 ];
 
 export function AdminLayout() {
