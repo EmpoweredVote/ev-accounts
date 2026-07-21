@@ -36,6 +36,7 @@ import readrankRouter from './routes/readrank.js';
 import informRouter from './routes/inform.js';
 import readrankQuotesAdminRouter from './routes/readrankQuotesAdmin.js';
 import essentialsBrowseRouter from './routes/essentialsBrowse.js';
+import essentialsLocationSearchRouter from './routes/essentialsLocationSearch.js';
 import essentialsBodiesRouter from './routes/essentialsBodies.js';
 import essentialsIngestRouter from './routes/essentialsIngest.js';
 import treasuryRouter from './routes/treasury.js';
@@ -145,6 +146,11 @@ app.use('/api/candidates', candidatesRouter);
 app.use('/api/essentials/ingest', essentialsIngestRouter);
 app.use('/api/essentials/browse', essentialsBrowseRouter);
 app.use('/api/essentials/bodies', essentialsBodiesRouter);
+// Phase 212-05: place-name resolver + national-fallback floor. Must be
+// mounted BEFORE the '/api/essentials' catch-all (essentialsRouter, below)
+// so '/api/essentials/location-search' and its '/resolve' sub-route are not
+// swallowed by that router's own path matching.
+app.use('/api/essentials/location-search', essentialsLocationSearchRouter);
 app.use('/api/essentials/candidates', essentialsCandidatesRouter);
 // Dual-router pattern: PATCH (essentialsEditorRouter) before GET (essentialsPoliticiansRouter)
 app.use('/api/essentials/politicians', essentialsEditorRouter);
