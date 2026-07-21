@@ -375,12 +375,16 @@ function extractDonorType(rawRecord: string | object | null): string {
   const simpleType = (rec.type as string | undefined)?.toLowerCase();
   if (simpleType === 'pac' || simpleType === 'corporate_direct') return 'pac';
   if (simpleType === 'direct' || simpleType === 'in_kind') return 'individual';
-  // FEC / Socrata / Netfile use entity_type
+  // FEC / Socrata / Netfile use entity_type. Classify consistently with the individual/PAC split
+  // (see PAC_CASE_SQL): IND + CAN (candidate/self) are people; PAC + PTY are true PACs; other
+  // committees/orgs (COM/CCM/ORG) are 'committee' (building icon) but NOT labeled a PAC — this
+  // stops self-funding and victory-fund transfers from showing up as PACs.
   const entityType = (rec.entity_type ?? '').toUpperCase().trim();
-  if (entityType.startsWith('IND')) return 'individual';
-  if (entityType.startsWith('COM') || entityType.startsWith('PAC')) return 'pac';
-  if (rec.contributor_committee_id) return 'pac';
-  if (entityType !== '') return 'pac';
+  if (entityType.startsWith('IND') || entityType.startsWith('CAN')) return 'individual';
+  if (entityType.startsWith('PAC') || entityType.startsWith('PTY')) return 'pac';
+  if (entityType.startsWith('COM') || entityType.startsWith('CCM') || entityType.startsWith('ORG')) return 'committee';
+  if (rec.contributor_committee_id) return 'committee';
+  if (entityType !== '') return 'committee';
   return 'unknown';
 }
 
@@ -696,14 +700,22 @@ async function getPacContributions(
 // ---------------------------------------------------------------------------
 
 /** Individual/PAC split — identical CASE logic to getSummary's live totals query. */
+// Individual vs PAC/committee split. FEC entity types: IND (individual), CAN (candidate/self),
+// CCM (candidate committee transfer), COM (committee incl. joint-fundraising/victory funds),
+// ORG (organization), PAC (political action committee), PTY (party committee).
+// PAC = real PACs + party committees ONLY. The old logic counted "anything not IND" as PAC, which
+// grossly overstated PAC money by lumping in self-funding (CAN), victory-fund/JFC transfers
+// (COM/CCM), and orgs (ORG) — e.g. a self-funder's own loans or a candidate's victory fund showed
+// as "PAC." 'PAC'+'PTY' matches FEC's authoritative PAC figure (see project_pac_classification).
+// Self-funding, transfers, and orgs fall into NEITHER bucket (honestly not individual-donor money
+// nor PAC money); the difference from total_raised is those + unitemized.
 const INDIVIDUAL_CASE_SQL = `CASE
   WHEN c.raw_record->>'type' IN ('direct', 'in_kind')
     OR c.raw_record->>'entity_type' LIKE 'IND%'
   THEN c.amount ELSE 0 END`;
 const PAC_CASE_SQL = `CASE
   WHEN c.raw_record->>'type' IN ('pac', 'corporate_direct')
-    OR (COALESCE(c.raw_record->>'entity_type', '') != ''
-        AND c.raw_record->>'entity_type' NOT LIKE 'IND%')
+    OR c.raw_record->>'entity_type' IN ('PAC', 'PTY')
   THEN c.amount ELSE 0 END`;
 const CONFIDENCE_RANK_SQL = `CASE c.confidence_level
   WHEN 'HIGH' THEN 1 WHEN 'MEDIUM' THEN 2 WHEN 'ESTIMATED' THEN 3 ELSE 4 END`;
@@ -1077,10 +1089,11 @@ export async function getSummary(
            WHEN c.raw_record->>'type' IN ('direct', 'in_kind')
              OR c.raw_record->>'entity_type' LIKE 'IND%'
            THEN c.amount ELSE 0 END), 0) AS individual_total,
+       -- PAC = real PACs + party committees only (see INDIVIDUAL_CASE_SQL/PAC_CASE_SQL comment);
+       -- excludes self-funding (CAN), victory-fund/JFC + candidate transfers (COM/CCM), orgs (ORG).
        COALESCE(SUM(CASE
            WHEN c.raw_record->>'type' IN ('pac', 'corporate_direct')
-             OR (COALESCE(c.raw_record->>'entity_type', '') != ''
-                 AND c.raw_record->>'entity_type' NOT LIKE 'IND%')
+             OR c.raw_record->>'entity_type' IN ('PAC', 'PTY')
            THEN c.amount ELSE 0 END), 0) AS pac_total
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
