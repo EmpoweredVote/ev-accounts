@@ -167,6 +167,36 @@ describe('searchPlaceNames', () => {
     expect(results).toHaveLength(1);
   });
 
+  it('212-06 gap closure: a curated government with a NULL governments.geo_id resolves to its linked G4110 district geo_id — has_local_data:true, exactly ONE candidate (deduped with the gazetteer twin)', async () => {
+    // Simulates the SQL's COALESCE(g.geo_id, place_district.district_geo_id) already
+    // having resolved "City of Bloomington, Indiana, US" (governments.geo_id NULL) to
+    // its linked G4110 district geo_id 1805860 — the same geo_id the gazetteer/geofence
+    // twin ("Bloomington city, IN") carries, so the SQL-side DISTINCT ON (geo_id)
+    // ORDER BY geo_id, source_boost DESC collapses them into this single curated row.
+    vi.mocked(pool.query).mockResolvedValueOnce({
+      rows: [
+        row({
+          geo_id: '1805860',
+          name: 'City of Bloomington',
+          mtfcc: 'G4110',
+          gov_state: 'IN',
+          gov_type: 'City',
+          has_local_data: true,
+          sim: 0.95,
+          exact_match: true,
+        }),
+      ],
+    } as never);
+
+    const results = await searchPlaceNames('Bloomington', 10);
+
+    expect(results).toHaveLength(1);
+    expect(results[0].geo_id).toBe('1805860');
+    expect(results[0].geo_id).not.toBeNull();
+    expect(results[0].has_local_data).toBe(true);
+    expect(results[0].state).toBe('IN');
+  });
+
   it('passes only the effective query and limit as parameterized values', async () => {
     vi.mocked(pool.query).mockResolvedValueOnce({ rows: [] } as never);
     await searchPlaceNames('Tucson', 5);
@@ -227,5 +257,16 @@ describe('locationSearchService.ts source guards', () => {
 
   it('has_local_data is computed via a live EXISTS check on chambers, not a static list', () => {
     expect(SOURCE).toMatch(/EXISTS\s*\(\s*SELECT 1 FROM essentials\.chambers/);
+  });
+
+  it('212-06: curated CTE resolves a NULL governments.geo_id via a LATERAL chambers->offices->districts lookup filtered to G4110/G4020', () => {
+    expect(SOURCE).toMatch(/LEFT JOIN LATERAL/);
+    expect(SOURCE).toMatch(/d\.mtfcc IN \('G4110', 'G4020'\)/);
+    expect(SOURCE).toMatch(/COALESCE\(g\.geo_id, place_district\.district_geo_id\)/);
+    expect(SOURCE).toMatch(/COALESCE\(gb\.mtfcc, place_district\.district_mtfcc\)/);
+  });
+
+  it('212-06: the place_district LATERAL only fires when governments.geo_id IS NULL (never overrides an existing geo_id)', () => {
+    expect(SOURCE).toMatch(/\)\s*place_district\s*ON\s*g\.geo_id IS NULL/);
   });
 });

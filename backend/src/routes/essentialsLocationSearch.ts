@@ -32,8 +32,33 @@ import {
   getPoliticiansByGovernmentList,
 } from '../lib/essentialsBrowseService.js';
 import type { Request, Response } from 'express';
+import type { PoliticianFlatRecord } from '../lib/essentialsService.js';
 
 const router = Router();
+
+// ---------------------------------------------------------------------------
+// pickHouseRep — 212-06 gap-closure fix (D-01 defect).
+//
+// getPoliticiansByArea(cdGeoId, 'G5200') resolves EVERY district that
+// overlaps the CD's own geometry — city councils, state-leg seats, school
+// boards, AND the CD's own US House seat — so `houseReps[0]` (ordered only by
+// p.id) was an arbitrary local/state official, never guaranteed to be the
+// actual House member (observed live: MA CD 2501 -> a MA state house rep;
+// AZ CD 0406 -> a Marana city councilor instead of Rep. Juan Ciscomani).
+//
+// The real US House member is the one record whose district_type is
+// 'NATIONAL_LOWER' (the MTFCC_DISTRICT_TYPE_GUARD pairing for 'G5200', see
+// geoIdGuard.ts) AND whose geo_id matches the CD we asked about — extracted
+// as a pure function so the selection logic is unit-testable without a DB.
+// ---------------------------------------------------------------------------
+export function pickHouseRep(
+  records: PoliticianFlatRecord[],
+  cdGeoId: string
+): PoliticianFlatRecord | null {
+  return (
+    records.find((r) => r.district_type === 'NATIONAL_LOWER' && r.geo_id === cdGeoId) ?? null
+  );
+}
 
 // ---------------------------------------------------------------------------
 // Known MTFCC set the resolver's candidates emit (V5 Input Validation).
@@ -153,7 +178,7 @@ router.get('/resolve', optionalAuth, async (req: Request, res: Response): Promis
     let representative = null;
     if (!overlapNote.needsExactAddress && overlapNote.cdGeoIds.length === 1) {
       const houseReps = await getPoliticiansByArea(overlapNote.cdGeoIds[0], 'G5200');
-      representative = houseReps[0] ?? null;
+      representative = pickHouseRep(houseReps, overlapNote.cdGeoIds[0]);
     }
 
     res.status(200).json({

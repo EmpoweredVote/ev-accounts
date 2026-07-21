@@ -28,6 +28,12 @@
  *     this resolver never silently collapses to one "best guess" row.
  *   - RSLV-04: this file does NOT import the Census one-line address
  *     geocoder helper — that geocoder stays street-address-only.
+ *   - 212-06 gap closure: curated governments whose own geo_id is NULL
+ *     resolve their real place-level geo_id/mtfcc via a LATERAL lookup over
+ *     chambers -> offices -> districts (the single linked G4110/G4020
+ *     district), so they become resolvable and correctly dedupe against
+ *     their gazetteer/geofence twin instead of emitting an unresolvable
+ *     duplicate candidate.
  *
  * All response objects are built from explicit field whitelists (never
  * object spread); internal governments.id UUIDs are never exposed.
@@ -188,9 +194,22 @@ export async function searchPlaceNames(query: string, limit: number): Promise<Pl
       -- join to multiple geofence_boundaries rows for the same geo_id — this
       -- prevents a single logical place from fanning out into duplicate
       -- candidates (WARNING 5 / join fan-out guard).
+      --
+      -- 212-06 gap-closure fix (D-01/D-02 defect): 204 curated governments
+      -- carry governments.geo_id = NULL, which used to emit an unresolvable
+      -- geo_id:null / mtfcc:'' candidate that also duplicated its
+      -- gazetteer/geofence twin (e.g. "City of Bloomington, Indiana, US" vs.
+      -- the Gazetteer's "Bloomington city, IN"). place_district resolves the
+      -- REAL place-level geo_id for those governments via
+      -- chambers -> offices -> districts, picking the single G4110 (place)
+      -- or G4020 (county) district linked to that government (LIMIT 1 —
+      -- deterministic; every office on a government's own chamber shares the
+      -- same district geo_id, e.g. Mayor/Clerk/At-Large all carry 1805860 for
+      -- Bloomington). Only fires when governments.geo_id IS NULL — a
+      -- government that already has its own geo_id never needs this fallback.
       SELECT DISTINCT ON (g.id)
-        g.geo_id,
-        gb.mtfcc,
+        COALESCE(g.geo_id, place_district.district_geo_id) AS geo_id,
+        COALESCE(gb.mtfcc, place_district.district_mtfcc) AS mtfcc,
         g.name,
         g.state AS gov_state,
         gb.state AS geofence_state_fips,
@@ -202,7 +221,18 @@ export async function searchPlaceNames(query: string, limit: number): Promise<Pl
         extensions.word_similarity(public.f_unaccent(lower($1)), public.f_unaccent(lower(g.name))) AS sim,
         (lower(g.name) = lower($1)) AS exact_match
       FROM essentials.governments g
-      LEFT JOIN essentials.geofence_boundaries gb ON gb.geo_id = g.geo_id
+      LEFT JOIN LATERAL (
+        SELECT d.geo_id AS district_geo_id, d.mtfcc AS district_mtfcc
+        FROM essentials.chambers ch2
+        JOIN essentials.offices o2 ON o2.chamber_id = ch2.id
+        JOIN essentials.districts d ON d.id = o2.district_id
+        WHERE ch2.government_id = g.id
+          AND d.mtfcc IN ('G4110', 'G4020')
+        ORDER BY d.geo_id
+        LIMIT 1
+      ) place_district ON g.geo_id IS NULL
+      LEFT JOIN essentials.geofence_boundaries gb
+        ON gb.geo_id = COALESCE(g.geo_id, place_district.district_geo_id)
       WHERE public.f_unaccent(lower(g.name)) operator(extensions.%>) public.f_unaccent(lower($1))
         AND extensions.word_similarity(public.f_unaccent(lower($1)), public.f_unaccent(lower(g.name))) >= ${threshold}
       ORDER BY g.id, gb.mtfcc NULLS LAST
