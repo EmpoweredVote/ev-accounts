@@ -33,7 +33,10 @@ const OVERLAP_CACHE_TTL_SECONDS = 3600;
 const MIN_OVERLAP_FRACTION = 0.03;
 
 // FIPS → state abbreviation mapping
-const FIPS_TO_ABBREV: Record<string, string> = {
+// Exported for locationSearchService.ts (212-04) — the resolver needs to map a
+// geofence_boundaries.state FIPS code to a USPS abbrev when a matched
+// governments row has no state of its own.
+export const FIPS_TO_ABBREV: Record<string, string> = {
   '01': 'AL', '02': 'AK', '04': 'AZ', '05': 'AR', '06': 'CA',
   '08': 'CO', '09': 'CT', '10': 'DE', '11': 'DC', '12': 'FL',
   '13': 'GA', '15': 'HI', '16': 'ID', '17': 'IL', '18': 'IN',
@@ -253,6 +256,45 @@ export async function getOverlappingGeoIdsForArea(
   const stateAbbrev = stateFips ? FIPS_TO_ABBREV[stateFips] ?? null : null;
 
   return { geoIds, geoPairs, stateAbbrev };
+}
+
+/** RSLV-06 ambiguity-note shape returned by getCongressionalOverlapNote. */
+export interface CongressionalOverlapNote {
+  cdGeoIds: string[];
+  needsExactAddress: boolean;
+}
+
+/**
+ * Surfaces the RSLV-06 "we need an exact address" ambiguity signal for a
+ * resolved place-name candidate. Reuses getOverlappingGeoIdsForArea as-is — no
+ * new PostGIS/ST_Intersects query is written here (the overlap geometry is
+ * already GIST-index-driven; see project_geofence_overlap_perf).
+ *
+ * Filters geoPairs strictly to mtfcc === 'G5200' (current-officeholder
+ * congressional-district vintage). 'G5200V26' (the 2026-redistricting-vintage
+ * boundary set) is intentionally excluded — that vintage is reserved for the
+ * separate elections opt-in join in electionService.ts, never for "who
+ * represents you now" (see geoIdGuard.ts's own G5200V26 exclusion comment).
+ *
+ * - 0 overlapping CDs: honest omission (cdGeoIds: [], needsExactAddress:
+ *   false) — never fabricate a representative.
+ * - 1 overlapping CD: the area sits entirely inside a single district;
+ *   needsExactAddress is false and cdGeoIds carries that district's geo_id so
+ *   the /resolve route (Plan 05) can fetch its actual US House representative.
+ * - >1 overlapping CDs: the area straddles multiple districts — an exact
+ *   address is required to pick one. needsExactAddress is true and cdGeoIds
+ *   lists every overlapping district (no auto-pick, per RSLV-07's wrong-state/
+ *   silent-collapse guard).
+ */
+export async function getCongressionalOverlapNote(
+  geoId: string,
+  mtfcc: string
+): Promise<CongressionalOverlapNote> {
+  const { geoPairs } = await getOverlappingGeoIdsForArea(geoId, mtfcc);
+  const cdGeoIds = Array.from(
+    new Set(geoPairs.filter((p) => p.mtfcc === 'G5200').map((p) => p.geo_id))
+  );
+  return { cdGeoIds, needsExactAddress: cdGeoIds.length > 1 };
 }
 
 /**
