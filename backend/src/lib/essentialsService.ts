@@ -37,6 +37,12 @@
 
 import { pool } from './db.js';
 import { geocodeAddress, GeocodingError } from './geocodingService.js';
+// Phase 213 (RSLV-03): the coordinate-only entry point below reuses the
+// Phase 212 national-fallback floor + single-House-rep derivation. Safe
+// against circular-import breakage — essentialsBrowseService.ts only
+// imports PoliticianFlatRecord/FinanceSummary from this file via
+// `import type`, which is erased at compile time (no runtime cycle).
+import { FIPS_TO_ABBREV, getStatewideOfficials, getPoliticiansByArea } from './essentialsBrowseService.js';
 
 /**
  * LATERAL subquery that fetches the next upcoming primary and general election
@@ -563,23 +569,9 @@ export async function getPoliticiansFlatList(
 }
 
 // ---------------------------------------------------------------------------
-// getRepresentativesByAddress
+// getRepresentativesByAddress / getRepresentativesByCoordinate
+// (shared point-resolution core: resolveOfficialsAtPoint, further below)
 // ---------------------------------------------------------------------------
-
-/**
- * Geocode an address via Census Geocoder, then find all active politicians
- * whose geofence boundary covers that coordinate via PostGIS ST_Covers.
- *
- * IMPORTANT coordinate order:
- *   Census x = longitude, Census y = latitude
- *   ST_MakePoint($1, $2) = (longitude, latitude) = (Census x, Census y)
- *   $1 is ALWAYS longitude, $2 is ALWAYS latitude.
- *
- * GeocodingError is NOT caught here — callers (route handlers) catch it
- * and return the appropriate HTTP status code.
- *
- * Returns { politicians: [], jurisdiction: null } when no boundaries match.
- */
 
 /** Pick the user's county (GEOID + name) from the geofence district rows.
  *  A county is the row with mtfcc G4020 or district_type COUNTY. Null when absent.
@@ -617,32 +609,28 @@ export function pickJurisdictionFromDistrictRows(
   };
 }
 
-export async function getRepresentativesByAddress(
-  address: string,
+/**
+ * resolveOfficialsAtPoint — the shared coordinate->officials core, extracted
+ * from getRepresentativesByAddress (Phase 213, D-04) so a precise point can
+ * be resolved WITHOUT a Census geocode. Both getRepresentativesByAddress
+ * (which still geocodes first) and getRepresentativesByCoordinate (which
+ * never geocodes) call this same helper — kept private so it isn't a public
+ * API surface of its own.
+ *
+ * `stateAbbrev` may be '' when the caller could not determine a state (mirrors
+ * the pre-extraction behavior: the statewide query only runs when state is
+ * truthy). `matchedAddress` is echoed into the result verbatim — callers that
+ * have no reverse geocode (the coordinate path) MUST pass ''.
+ */
+async function resolveOfficialsAtPoint(
+  point: { lng: number; lat: number },
+  stateAbbrev: string,
+  matchedAddress: string,
   { includeChallengers = false }: { includeChallengers?: boolean } = {}
 ): Promise<AddressSearchResult> {
-  // Geocode via Census Geocoder. GeocodingError propagates to caller.
-  const { lat, lng, matchedAddress, state, city } = await geocodeAddress(address);
-
-  // Enclave-city alias override: some cities have streets stored under a
-  // surrounding city's USPS name in Census TIGER. If the address string
-  // names an enclave city but the geocoder returned its host city, substitute
-  // the enclave's G4110 centroid so PostGIS hits the correct boundary.
-  // Dual-condition: raw address must name the enclave AND geocoder must have
-  // returned the host city (checked via matchedAddress OR addressComponents.city).
-  let resolvedLat = lat;
-  let resolvedLng = lng;
-  const addrLower = address.toLowerCase();
-  for (const [enclaveName, alias] of Object.entries(ENCLAVE_CITY_ALIASES)) {
-    if (
-      addrLower.includes(enclaveName) &&
-      (matchedAddress.toLowerCase().includes(alias.hostCity) || city.toLowerCase() === alias.hostCity)
-    ) {
-      resolvedLat = alias.lat;
-      resolvedLng = alias.lng;
-      break;
-    }
-  }
+  const resolvedLng = point.lng;
+  const resolvedLat = point.lat;
+  const state = stateAbbrev;
 
   // CRITICAL: ST_MakePoint takes (longitude, latitude) = (Census x, Census y)
   // $1 = lng (Census coordinates.x), $2 = lat (Census coordinates.y)
@@ -867,6 +855,228 @@ export async function getRepresentativesByAddress(
   );
   const jurisdictionGeoIds = pickJurisdictionFromDistrictRows(districtResult.rows);
   return { politicians, jurisdiction, matchedAddress, tribal_land, county, jurisdictionGeoIds };
+}
+
+/**
+ * Geocode an address via Census Geocoder, then find all active politicians
+ * whose geofence boundary covers that coordinate via PostGIS ST_Covers.
+ *
+ * IMPORTANT coordinate order:
+ *   Census x = longitude, Census y = latitude
+ *   ST_MakePoint($1, $2) = (longitude, latitude) = (Census x, Census y)
+ *   $1 is ALWAYS longitude, $2 is ALWAYS latitude.
+ *
+ * GeocodingError is NOT caught here — callers (route handlers) catch it
+ * and return the appropriate HTTP status code.
+ *
+ * Returns { politicians: [], jurisdiction: null } when no boundaries match.
+ */
+export async function getRepresentativesByAddress(
+  address: string,
+  { includeChallengers = false }: { includeChallengers?: boolean } = {}
+): Promise<AddressSearchResult> {
+  // Geocode via Census Geocoder. GeocodingError propagates to caller.
+  const { lat, lng, matchedAddress, state, city } = await geocodeAddress(address);
+
+  // Enclave-city alias override: some cities have streets stored under a
+  // surrounding city's USPS name in Census TIGER. If the address string
+  // names an enclave city but the geocoder returned its host city, substitute
+  // the enclave's G4110 centroid so PostGIS hits the correct boundary.
+  // Dual-condition: raw address must name the enclave AND geocoder must have
+  // returned the host city (checked via matchedAddress OR addressComponents.city).
+  let resolvedLat = lat;
+  let resolvedLng = lng;
+  const addrLower = address.toLowerCase();
+  for (const [enclaveName, alias] of Object.entries(ENCLAVE_CITY_ALIASES)) {
+    if (
+      addrLower.includes(enclaveName) &&
+      (matchedAddress.toLowerCase().includes(alias.hostCity) || city.toLowerCase() === alias.hostCity)
+    ) {
+      resolvedLat = alias.lat;
+      resolvedLng = alias.lng;
+      break;
+    }
+  }
+
+  return resolveOfficialsAtPoint(
+    { lng: resolvedLng, lat: resolvedLat },
+    state,
+    matchedAddress,
+    { includeChallengers },
+  );
+}
+
+// ---------------------------------------------------------------------------
+// getRepresentativesByCoordinate (Phase 213, RSLV-03/RSLV-05, D-04/D-05/D-06)
+// ---------------------------------------------------------------------------
+
+/**
+ * Statewide-tier district types the shared core's statewideQueryText
+ * selects. Used only to detect the "zero state-scoped rows returned"
+ * fallback condition for the D-05 state floor below — mirrors that query's
+ * WHERE clause exactly so the fallback fires only on a genuine miss.
+ */
+const STATEWIDE_DISTRICT_TYPES = new Set([
+  'NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL',
+]);
+
+/**
+ * pickHouseRep — the exact single-House-rep selection precedent from
+ * routes/essentialsLocationSearch.ts, INLINED here rather than imported so
+ * lib/ never depends on routes/ (the dependency direction must stay
+ * one-way: routes/ -> lib/, never the reverse).
+ */
+function pickHouseRep(
+  records: PoliticianFlatRecord[],
+  cdGeoId: string,
+): PoliticianFlatRecord | null {
+  return records.find((r) => r.district_type === 'NATIONAL_LOWER' && r.geo_id === cdGeoId) ?? null;
+}
+
+/**
+ * Derive the 2-letter state abbreviation covering (lat, lng) WITHOUT a
+ * Census geocode (D-04). Prefers an already-seeded congressional/county
+ * district row; falls back to the raw G4000 state-boundary TIGER layer for
+ * a valid-in-bbox point in an otherwise-unseeded area, so a state can still
+ * usually be determined even where no local politicians exist yet.
+ */
+async function deriveStateAbbrevForPoint(lng: number, lat: number): Promise<string | null> {
+  // CRITICAL: ST_MakePoint($1, $2) = (longitude, latitude) — $1 is ALWAYS
+  // lng, $2 is ALWAYS lat. Same non-negotiable order as resolveOfficialsAtPoint.
+  const { rows } = await pool.query<{ district_type: string; geo_id: string }>(
+    `
+    SELECT DISTINCT d.district_type, d.geo_id
+    FROM essentials.geofence_boundaries gb
+    JOIN essentials.districts d ON d.geo_id = gb.geo_id
+      AND (
+        (gb.mtfcc = 'G5200' AND d.district_type = 'NATIONAL_LOWER')
+        OR (gb.mtfcc = 'G4020' AND d.district_type IN ('COUNTY', 'JUDICIAL'))
+      )
+    WHERE public.ST_Covers(
+      gb.geometry,
+      public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+    )
+    `,
+    [lng, lat],
+  );
+
+  const preferred =
+    rows.find((r) => r.district_type === 'NATIONAL_LOWER') ??
+    rows.find((r) => r.district_type === 'COUNTY') ??
+    rows[0];
+
+  if (preferred?.geo_id) {
+    const fips = preferred.geo_id.slice(0, 2);
+    if (FIPS_TO_ABBREV[fips]) return FIPS_TO_ABBREV[fips];
+  }
+
+  // Fallback: valid-in-bbox point with no seeded district row at all — try
+  // the raw state-boundary TIGER layer directly.
+  const { rows: stateRows } = await pool.query<{ geo_id: string }>(
+    `
+    SELECT geo_id
+    FROM essentials.geofence_boundaries
+    WHERE mtfcc = 'G4000'
+      AND public.ST_Covers(
+        geometry,
+        public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+      )
+    LIMIT 1
+    `,
+    [lng, lat],
+  );
+  const fips = stateRows[0]?.geo_id;
+  return fips ? FIPS_TO_ABBREV[fips] ?? null : null;
+}
+
+/**
+ * Find the congressional district (G5200) geo_id covering (lat, lng). Used
+ * ONLY as the single-House-rep fallback below, when the shared core's own
+ * district query returned zero NATIONAL_LOWER rows (a genuinely-unseeded
+ * congressional district) — never to fetch the whole area roster.
+ */
+async function findCoveringCdGeoId(lng: number, lat: number): Promise<string | null> {
+  // CRITICAL: ST_MakePoint($1, $2) = (longitude, latitude) — $1 is ALWAYS
+  // lng, $2 is ALWAYS lat. Same non-negotiable order as resolveOfficialsAtPoint.
+  const { rows } = await pool.query<{ geo_id: string }>(
+    `
+    SELECT geo_id
+    FROM essentials.geofence_boundaries
+    WHERE mtfcc = 'G5200'
+      AND public.ST_Covers(
+        geometry,
+        public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+      )
+    LIMIT 1
+    `,
+    [lng, lat],
+  );
+  return rows[0]?.geo_id ?? null;
+}
+
+/**
+ * getRepresentativesByCoordinate — coordinate-only entry point (RSLV-03).
+ *
+ * MUST NOT call geocodeAddress (D-04/RSLV-04) — the caller's point is
+ * already precise, so no Census round-trip is needed or wanted. Resolves
+ * the covering state via deriveStateAbbrevForPoint, then runs the SAME
+ * shared point-resolution core getRepresentativesByAddress uses
+ * (resolveOfficialsAtPoint), so the precise point resolves the exact single
+ * US House rep from its own ST_Covers coverage (RSLV-05) without ever
+ * merging the nationwide getFederalOfficials() roster into the result.
+ *
+ * D-05: resolveOfficialsAtPoint's statewideQueryText already returns the
+ * state-scoped Senators/Governor/state-exec floor for the normal seeded
+ * case. ONLY when it returns zero state-scoped rows (unseeded state) do we
+ * pay for the extra getStatewideOfficials(abbrev) round-trip, so a valid US
+ * point never comes back with an empty politicians array.
+ *
+ * D-06: matchedAddress is always '' — there is no reverse geocode for a raw
+ * coordinate, and the submitted lat/lng is never placed anywhere in the
+ * returned AddressSearchResult.
+ */
+export async function getRepresentativesByCoordinate(
+  lat: number,
+  lng: number,
+): Promise<AddressSearchResult> {
+  const stateAbbrev = await deriveStateAbbrevForPoint(lng, lat);
+
+  const result = await resolveOfficialsAtPoint({ lng, lat }, stateAbbrev ?? '', '');
+
+  const seenIds = new Set(result.politicians.map((p) => p.id));
+
+  // D-05 state-scoped floor — ONLY as a fallback when the shared core
+  // returned zero state-scoped rows. Never calls/merges getFederalOfficials().
+  if (stateAbbrev && !result.politicians.some((p) => STATEWIDE_DISTRICT_TYPES.has(p.district_type))) {
+    const floor = await getStatewideOfficials(stateAbbrev);
+    for (const p of floor) {
+      if (!seenIds.has(p.id)) {
+        result.politicians.push(p);
+        seenIds.add(p.id);
+      }
+    }
+  }
+
+  // Single-House-rep fallback — only when the shared core's own district
+  // query found no NATIONAL_LOWER row (genuinely-unseeded CD); adds at most
+  // that one representative, never the whole area roster.
+  if (!result.politicians.some((p) => p.district_type === 'NATIONAL_LOWER')) {
+    const cdGeoId = await findCoveringCdGeoId(lng, lat);
+    if (cdGeoId) {
+      const houseReps = await getPoliticiansByArea(cdGeoId, 'G5200');
+      const rep = pickHouseRep(houseReps, cdGeoId);
+      if (rep && !seenIds.has(rep.id)) {
+        result.politicians.push(rep);
+        seenIds.add(rep.id);
+      }
+    }
+  }
+
+  // D-06: no reverse geocode; never echo or derive a location label, and
+  // never carry the raw coordinate anywhere in the returned object.
+  result.matchedAddress = '';
+
+  return result;
 }
 
 // ---------------------------------------------------------------------------
