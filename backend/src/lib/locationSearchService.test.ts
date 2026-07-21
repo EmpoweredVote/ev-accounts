@@ -192,7 +192,15 @@ describe('locationSearchService.ts source guards', () => {
   });
 
   it('never orders or derives ranking from a population column (amended D-06, 2026-07-20)', () => {
-    expect(SOURCE.toLowerCase()).not.toMatch(/population|pop_/);
+    // Scope the check to the actual SQL text (between the `const sql = ` +
+    // template literal delimiters), not the surrounding explanatory comments
+    // — this file's own doc comments legitimately discuss *why* population
+    // is never used as a tiebreak, which would otherwise false-positive a
+    // whole-file substring check.
+    const sqlStart = SOURCE.indexOf('const sql = `');
+    const sqlEnd = SOURCE.indexOf('`;', sqlStart);
+    const sqlText = SOURCE.slice(sqlStart, sqlEnd).toLowerCase();
+    expect(sqlText).not.toMatch(/population|pop_/);
   });
 
   it('tertiary ORDER BY tiebreak is name ASC, not population', () => {
