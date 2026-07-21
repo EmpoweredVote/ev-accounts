@@ -286,6 +286,59 @@ export interface CongressionalOverlapNote {
  *   lists every overlapping district (no auto-pick, per RSLV-07's wrong-state/
  *   silent-collapse guard).
  */
+/**
+ * 212-07 gap-closure fallback (RSLV-05/06/SC4 blocker) — point-in-polygon
+ * lookup used ONLY when the geometry-based overlap above finds zero G5200
+ * districts. The ~32k essentials.gazetteer_places rows (and
+ * essentials.gazetteer_counties) ingested by migration 1378/D-08 carry NO
+ * polygon — only a centroid (intptlat/intptlong) — so
+ * getOverlappingGeoIdsForArea's spatial join against
+ * essentials.geofence_boundaries legitimately finds nothing for those
+ * geo_ids. That is indistinguishable from a genuine zero-overlap area
+ * (which never happens for a real US location), so instead of trusting an
+ * empty result at face value, look up the place's own Gazetteer centroid and
+ * find the congressional district whose polygon contains that point.
+ *
+ * Looks in gazetteer_places first, then gazetteer_counties (a geo_id is
+ * unique to one or the other, never both). Returns null — an honest
+ * "cannot determine," never fabricated — when no centroid exists for geoId
+ * (not a Gazetteer row at all, e.g. a curated place/county or a state) or
+ * the centroid falls inside no CD polygon (e.g. a territory with no voting
+ * House seat).
+ *
+ * The ST_Contains predicate is written directly against
+ * essentials.geofence_boundaries.geometry (not wrapped in any function) so
+ * the planner can drive it through the existing GIST index — see
+ * project_geofence_overlap_perf.
+ */
+async function findContainingCdFromGazetteerCentroid(geoId: string): Promise<string | null> {
+  const { rows: placeRows } = await pool.query<{ lon: number | null; lat: number | null }>(
+    `SELECT intptlong AS lon, intptlat AS lat FROM essentials.gazetteer_places WHERE geo_id = $1`,
+    [geoId]
+  );
+
+  let centroid = placeRows[0];
+  if (!centroid) {
+    const { rows: countyRows } = await pool.query<{ lon: number | null; lat: number | null }>(
+      `SELECT intptlong AS lon, intptlat AS lat FROM essentials.gazetteer_counties WHERE geo_id = $1`,
+      [geoId]
+    );
+    centroid = countyRows[0];
+  }
+
+  if (!centroid || centroid.lon == null || centroid.lat == null) return null;
+
+  const { rows: cdRows } = await pool.query<{ geo_id: string }>(
+    `SELECT geo_id FROM essentials.geofence_boundaries
+      WHERE mtfcc = 'G5200'
+        AND public.ST_Contains(geometry, public.ST_SetSRID(public.ST_Point($1::float8, $2::float8), 4326))
+      LIMIT 1`,
+    [centroid.lon, centroid.lat]
+  );
+
+  return cdRows.length > 0 ? cdRows[0].geo_id : null;
+}
+
 export async function getCongressionalOverlapNote(
   geoId: string,
   mtfcc: string
@@ -294,6 +347,17 @@ export async function getCongressionalOverlapNote(
   const cdGeoIds = Array.from(
     new Set(geoPairs.filter((p) => p.mtfcc === 'G5200').map((p) => p.geo_id))
   );
+
+  if (cdGeoIds.length === 0) {
+    // 212-07: only fires when the primary geometry overlap is empty — never
+    // overrides a real (possibly multi-CD) geometry result above.
+    const fallbackCd = await findContainingCdFromGazetteerCentroid(geoId);
+    if (fallbackCd) {
+      return { cdGeoIds: [fallbackCd], needsExactAddress: false };
+    }
+    return { cdGeoIds: [], needsExactAddress: false };
+  }
+
   return { cdGeoIds, needsExactAddress: cdGeoIds.length > 1 };
 }
 

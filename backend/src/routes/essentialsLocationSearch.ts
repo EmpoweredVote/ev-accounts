@@ -62,13 +62,22 @@ export function pickHouseRep(
 
 // ---------------------------------------------------------------------------
 // Known MTFCC set the resolver's candidates emit (V5 Input Validation).
-// '' is the state-tier sentinel: a State-type governments row has no paired
-// geofence_boundaries row, so locationSearchService.ts's mapRow() emits
-// `mtfcc: row.mtfcc ?? ''` for those candidates — an intentional, honest
-// sentinel, not a missing value.
+// '' is a defensive fallback sentinel (locationSearchService.ts's mapRow()
+// emits `mtfcc: row.mtfcc ?? ''` when a matched row genuinely has no paired
+// geofence_boundaries row) — kept for that edge case.
+//
+// 212-07 gap-closure fix (RSLV-05 blocker): every State-tier candidate
+// (bare state name/abbrev query, e.g. "Illinois", "IL") is actually paired
+// with a real `essentials.geofence_boundaries` row whose mtfcc is 'G4000'
+// (the state-boundary TIGER layer) — NOT the '' sentinel this comment used
+// to assume. Omitting 'G4000' here made GET /resolve reject every one of the
+// 50 states + DC with a 422, even though GET / had just emitted that exact
+// mtfcc value for the candidate. Verified live for IL (geo_id 17) and AZ
+// (geo_id 04) prior to this fix.
 // ---------------------------------------------------------------------------
 const KNOWN_MTFCCS = new Set<string>([
   '',
+  'G4000',          // State (212-07 gap-closure — see comment above)
   'G4110', 'G4120', // City / place
   'G4020',          // County
   'G4040',          // Local (town/CCD)

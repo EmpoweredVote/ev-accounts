@@ -56,10 +56,12 @@ describe('getCongressionalOverlapNote', () => {
     expect(result.cdGeoIds).toEqual(['0601']);
   });
 
-  it('returns needsExactAddress:false and an empty array when zero CDs overlap (honest omission, never fabricate a rep)', async () => {
+  it('returns needsExactAddress:false and an empty array when zero CDs overlap AND the Gazetteer centroid fallback also finds no centroid (honest omission, never fabricate a rep)', async () => {
     vi.mocked(pool.query)
-      .mockResolvedValueOnce({ rows: [] } as never)
-      .mockResolvedValueOnce({ rows: [] } as never);
+      .mockResolvedValueOnce({ rows: [] } as never) // resolveOverlappingGeoPairs
+      .mockResolvedValueOnce({ rows: [] } as never) // getOverlappingGeoIdsForArea's state lookup
+      .mockResolvedValueOnce({ rows: [] } as never) // 212-07 fallback: gazetteer_places centroid lookup
+      .mockResolvedValueOnce({ rows: [] } as never); // 212-07 fallback: gazetteer_counties centroid lookup
 
     const result = await getCongressionalOverlapNote('0666000', 'G4110');
 
@@ -83,15 +85,90 @@ describe('getCongressionalOverlapNote', () => {
     expect(result.cdGeoIds).toEqual(['0601']);
   });
 
-  it('does not call any new PostGIS/ST_Intersects query (reuses getOverlappingGeoIdsForArea only)', async () => {
+  it('does not call any new PostGIS/ST_Intersects query when the Gazetteer centroid fallback also finds nothing (reuses getOverlappingGeoIdsForArea + the honest fallback path only)', async () => {
     vi.mocked(pool.query)
-      .mockResolvedValueOnce({ rows: [] } as never)
-      .mockResolvedValueOnce({ rows: [] } as never);
+      .mockResolvedValueOnce({ rows: [] } as never) // resolveOverlappingGeoPairs
+      .mockResolvedValueOnce({ rows: [] } as never) // getOverlappingGeoIdsForArea's state lookup
+      .mockResolvedValueOnce({ rows: [] } as never) // gazetteer_places centroid lookup
+      .mockResolvedValueOnce({ rows: [] } as never); // gazetteer_counties centroid lookup
 
-    await getCongressionalOverlapNote('0666000', 'G4110');
+    const result = await getCongressionalOverlapNote('0666000', 'G4110');
 
-    // Exactly the 2 calls getOverlappingGeoIdsForArea itself makes — no 3rd
-    // call, i.e. no extra query authored by getCongressionalOverlapNote.
+    expect(result).toEqual({ cdGeoIds: [], needsExactAddress: false });
+    expect(vi.mocked(pool.query).mock.calls.length).toBe(4);
+  });
+});
+
+describe('getCongressionalOverlapNote — 212-07 Gazetteer centroid fallback (RSLV-05/06 blocker)', () => {
+  beforeEach(() => {
+    vi.mocked(pool.query).mockReset();
+  });
+
+  it('falls back to the containing CD found via the gazetteer_places centroid + ST_Contains when the primary geometry overlap is empty', async () => {
+    vi.mocked(pool.query)
+      .mockResolvedValueOnce({ rows: [] } as never) // resolveOverlappingGeoPairs: 0 G5200 pairs (no polygon for this Gazetteer-only place)
+      .mockResolvedValueOnce({ rows: [] } as never) // getOverlappingGeoIdsForArea's state lookup
+      .mockResolvedValueOnce({ rows: [{ lon: -121.6219, lat: 39.7596 }] } as never) // gazetteer_places centroid (Paradise CDP CA)
+      .mockResolvedValueOnce({ rows: [{ geo_id: '0603' }] } as never); // ST_Contains CD lookup (CD 3, Kevin Kiley)
+
+    const result = await getCongressionalOverlapNote('0655528', 'G4110');
+
+    expect(result).toEqual({ cdGeoIds: ['0603'], needsExactAddress: false });
+  });
+
+  it('falls back to essentials.gazetteer_counties when the geo_id has no gazetteer_places row', async () => {
+    vi.mocked(pool.query)
+      .mockResolvedValueOnce({ rows: [] } as never) // resolveOverlappingGeoPairs
+      .mockResolvedValueOnce({ rows: [] } as never) // state lookup
+      .mockResolvedValueOnce({ rows: [] } as never) // gazetteer_places: no row
+      .mockResolvedValueOnce({ rows: [{ lon: -120.0, lat: 38.6 }] } as never) // gazetteer_counties centroid
+      .mockResolvedValueOnce({ rows: [{ geo_id: '0603' }] } as never); // ST_Contains CD lookup
+
+    const result = await getCongressionalOverlapNote('06003', 'G4020');
+
+    expect(result).toEqual({ cdGeoIds: ['0603'], needsExactAddress: false });
+  });
+
+  it('returns cdGeoIds:[] with needsExactAddress:false (honest omission) when a centroid exists but falls inside no CD polygon', async () => {
+    vi.mocked(pool.query)
+      .mockResolvedValueOnce({ rows: [] } as never) // resolveOverlappingGeoPairs
+      .mockResolvedValueOnce({ rows: [] } as never) // state lookup
+      .mockResolvedValueOnce({ rows: [{ lon: -66.5901, lat: 18.2208 }] } as never) // centroid (e.g. a territory)
+      .mockResolvedValueOnce({ rows: [] } as never); // ST_Contains finds no CD
+
+    const result = await getCongressionalOverlapNote('7200000', 'G4110');
+
+    expect(result).toEqual({ cdGeoIds: [], needsExactAddress: false });
+  });
+
+  it('returns cdGeoIds:[] with needsExactAddress:false (never fabricated) when no centroid exists in either Gazetteer table', async () => {
+    vi.mocked(pool.query)
+      .mockResolvedValueOnce({ rows: [] } as never) // resolveOverlappingGeoPairs
+      .mockResolvedValueOnce({ rows: [] } as never) // state lookup
+      .mockResolvedValueOnce({ rows: [] } as never) // gazetteer_places: no row
+      .mockResolvedValueOnce({ rows: [] } as never); // gazetteer_counties: no row either
+
+    const result = await getCongressionalOverlapNote('17', 'G4000');
+
+    expect(result).toEqual({ cdGeoIds: [], needsExactAddress: false });
+  });
+
+  it('never fires the fallback when the primary geometry overlap already found CD(s) — does not override a real multi-CD result', async () => {
+    vi.mocked(pool.query)
+      .mockResolvedValueOnce({
+        rows: [
+          { geo_id: '0601', mtfcc: 'G5200' },
+          { geo_id: '0602', mtfcc: 'G5200' },
+        ],
+      } as never) // resolveOverlappingGeoPairs: 2 real CDs found via geometry
+      .mockResolvedValueOnce({ rows: [{ state: '06' }] } as never); // state lookup
+
+    const result = await getCongressionalOverlapNote('0666000', 'G4110');
+
+    expect(result.needsExactAddress).toBe(true);
+    expect([...result.cdGeoIds].sort()).toEqual(['0601', '0602']);
+    // Only the 2 calls getOverlappingGeoIdsForArea makes — the centroid
+    // fallback must never fire when cdGeoIds is already non-empty.
     expect(vi.mocked(pool.query).mock.calls.length).toBe(2);
   });
 });

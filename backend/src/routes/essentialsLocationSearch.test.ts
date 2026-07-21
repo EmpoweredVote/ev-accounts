@@ -183,6 +183,27 @@ describe('GET /api/essentials/location-search/resolve — validation', () => {
     );
     expect(res.status).toBe(422);
   });
+
+  // 212-07 gap-closure (RSLV-05 blocker): GET / emits mtfcc:"G4000" for every
+  // State-tier candidate (e.g. "Illinois", "IL") — before this fix, KNOWN_MTFCCS
+  // omitted 'G4000' so passing that exact candidate straight into /resolve
+  // (the documented round-trip) always 422'd. Verified live for IL/AZ pre-fix.
+  it('does NOT 422 for a State-tier candidate (mtfcc=G4000) — the documented GET / -> GET /resolve round-trip', async () => {
+    mockGetStatewideOfficials.mockResolvedValueOnce([]);
+    mockGetFederalOfficials.mockResolvedValueOnce([]);
+    mockGetCongressionalOverlapNote.mockResolvedValueOnce({
+      cdGeoIds: [],
+      needsExactAddress: false,
+    });
+    mockGetPoliticiansByGovernmentList.mockResolvedValueOnce([]);
+
+    const res = await request(app).get(
+      '/api/essentials/location-search/resolve?geo_id=17&mtfcc=G4000&state=IL'
+    );
+
+    expect(res.status).toBe(200);
+    expect(mockGetCongressionalOverlapNote).toHaveBeenCalledWith('17', 'G4000');
+  });
 });
 
 describe('GET /api/essentials/location-search/resolve — D-01 US House selection (212-06)', () => {
