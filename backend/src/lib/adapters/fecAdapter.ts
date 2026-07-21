@@ -649,14 +649,31 @@ export async function upsertContributions(
   for (let i = 0; i < normalized.contributions.length; i += batchSize) {
     const batch = normalized.contributions.slice(i, i + batchSize);
 
-    try {
-      const { batchInserted, batchSkipped } = await upsertBatch(batch);
-      inserted += batchInserted;
-      skipped += batchSkipped;
-    } catch (err) {
-      // Count batch as errors but continue with next batch
-      errors += batch.length;
-      console.error(`[fecAdapter] upsert batch error at offset ${i}:`, err);
+    // Retry on transient connection errors (Supabase pooler drops connections under
+    // sustained bulk-write load — quick-031). The pg pool hands out a fresh connection
+    // per attempt, so a retry recovers instead of silently dropping the batch.
+    let attempt = 0;
+    for (;;) {
+      try {
+        const { batchInserted, batchSkipped } = await upsertBatch(batch);
+        inserted += batchInserted;
+        skipped += batchSkipped;
+        break;
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        const transient = /connection terminated|connection timeout|ECONNRESET|terminated unexpectedly|Client has encountered a connection error|too many clients/i.test(msg);
+        if (transient && attempt < 5) {
+          attempt++;
+          const delay = Math.min(1000 * 2 ** (attempt - 1), 30_000);
+          console.warn(`[fecAdapter] upsert batch at offset ${i} transient error (attempt ${attempt}/5) — retrying in ${delay}ms: ${msg}`);
+          await sleep(delay);
+          continue;
+        }
+        // Non-transient, or retries exhausted: count as errors and move on.
+        errors += batch.length;
+        console.error(`[fecAdapter] upsert batch error at offset ${i} (after ${attempt} retr${attempt === 1 ? 'y' : 'ies'}):`, err);
+        break;
+      }
     }
   }
 
