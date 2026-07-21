@@ -44,32 +44,41 @@ const OPERATOR_FILL_SENTINEL = '<OPERATOR: fill from PowerSearch>';
 
 interface JudgeSeed {
   full_name: string;
-  court: 'ca_supreme' | 'ca_court_of_appeal';
+  court: 'ca_supreme' | 'ca_court_of_appeal' | 'ca_superior';
   cal_access_filer_ids: string[];
 }
 
 /**
- * Corrigan/Liu/Kruger shortlist (30-RESEARCH.md "Smoke-Test Judge Shortlist Q1",
- * Chris-confirmed per D-05). Filer IDs are intentionally left empty pending the
- * operator's manual PowerSearch lookup (Task 3 checkpoint) — see file header.
- * Fallbacks if all three come up empty on Cal-Access: Martin J. Jenkins (retired),
- * Patricia Guerrero (per 30-RESEARCH.md "Further candidates").
+ * PIVOT (2026-07-21, see 30-DATA-VIABILITY-MEMO.md): the original Corrigan/Liu/Kruger
+ * appellate shortlist was proven to have ZERO Cal-Access contribution data — CA
+ * appellate/Supreme justices face uncontested retention and never form contribution-
+ * receiving committees. A full scan of the Cal-Access bulk export confirmed 0 receipt
+ * rows for all three. CA judicial campaign money lives at the SUPERIOR (trial) COURT
+ * level, where judges run contested, funded races.
+ *
+ * These three LA County Superior Court judges are seeded to prove the ingest pipeline
+ * end-to-end against REAL donor data (SC#2). Filer IDs were extracted directly from the
+ * Cal-Access bulk FILERNAME_CD.TSV + verified to hold itemized receipts in RCPT_CD.TSV
+ * (NOT via the Cloudflare-blocked PowerSearch UI):
+ *   - Susan Jung Townsend — filer 1377866 — ~$468K, 77 rows (2016 cycle)
+ *   - Dayan Mathai        — filer 1359949 — ~$392K, 79 rows (2014 cycle)
+ *   - Sydne Michel        — filer 1401161 — ~$355K, 70 rows (2018 cycle)
  */
 const JUDGES: JudgeSeed[] = [
   {
-    full_name: 'Carol A. Corrigan',
-    court: 'ca_supreme',
-    cal_access_filer_ids: [],
+    full_name: 'Susan Jung Townsend',
+    court: 'ca_superior',
+    cal_access_filer_ids: ['1377866'],
   },
   {
-    full_name: 'Goodwin H. Liu',
-    court: 'ca_supreme',
-    cal_access_filer_ids: [],
+    full_name: 'Dayan Mathai',
+    court: 'ca_superior',
+    cal_access_filer_ids: ['1359949'],
   },
   {
-    full_name: 'Leondra R. Kruger',
-    court: 'ca_supreme',
-    cal_access_filer_ids: [],
+    full_name: 'Sydne Michel',
+    court: 'ca_superior',
+    cal_access_filer_ids: ['1401161'],
   },
 ];
 
