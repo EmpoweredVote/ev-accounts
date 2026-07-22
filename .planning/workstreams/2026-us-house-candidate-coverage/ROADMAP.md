@@ -282,6 +282,22 @@ Plans:
 - [ ] 164.1-06-PLAN.md — Consolidated verify bar + Jan-2027 promotion-phase spec + connected_profiles gap doc + STATE.md re-entry dates [Wave 3]
 - [ ] 164.1-07-PLAN.md — MO date-gated (>= 2026-08-04): import+un-withhold OR revert-branch divert to Phase 167 [Wave 4]
 
+### Phase 164.2: Enacted-2026 Polygon Backfill — FL/CA/NC/OH/TX (INSERTED)
+
+**Goal:** `/elections` resolves the enacted-2026 congressional map for FL, CA, NC, OH, and TX (both anonymous Path-B and Connected-tier), while the reps feed ("who represents you now") stays on current boundaries until the Jan-2027 promotion phase; each state passes the 164.1 D-10 verify bar. Closes a live geographic-accuracy bug: all five states enacted new maps (FL May-2026; CA Prop 50 Nov-2025; NC/OH Oct-2025; TX 2025) but `/elections` still resolves the OLD map — ~147 districts show the wrong US House race to voters in changed areas. Verified 2026-07-21 via ST_Contains point-in-polygon; candidate fields already NEW-map in all five (polygon-only fix, no re-seed).
+
+**Requirements:** extends the 164.1 D-series dual-map to the 5 non-164.1 redistricted states; goal statement of record = this section + memory topic `project_fl_2026_redistricting_polygon_gap.md`. No USHC REQ-IDs (sits outside the traceability table, like 164.1).
+
+**Depends on:** Phase 164.1 (reuses the deployed G5200V26 dual-map opt-in JOIN in electionService.ts — generic, auto-applies — and the 1641 D-10 verify harness). Independent of Phase 166 gate and 164.1-07 (MO).
+
+**Plans:** 4 plans
+
+Plans:
+- [ ] 164.2-01-PLAN.md — Connected-tier allowlist extend: add FIPS 12/06/37/39/48 to `REFRESHED_2026_FIPS` (src/routes/essentials.ts) + CREATE OR REPLACE `connect.resolve_congressional_2026` RPC (new mig, expand IN-list) + Render deploy + regression test asserting anon Path-B resolves V26 for all 5 states [Wave 2 — depends on 164.2-02: regression test asserts against landed V26 rows]
+- [ ] 164.2-02-PLAN.md — Per-state enacted-2026 shapefile import as `G5200V26` into essentials.geofence_boundaries (reproject EPSG:4326; idempotent NOT EXISTS on (geo_id,mtfcc)). Sources: TX PlanC2333 (already fetched to scratchpad), CA Statewide DB (Prop 50), NC NCGA (Oct-2025), OH Redistricting Commission (Oct-31-2025), FL Legislature (May-4-2026). FL first (Aug-18 primary), TX second (shapefile in hand) [Wave 1 — no deps; also authors 1642-verify.sql with pre-import NOTOUCH baselines]
+- [ ] 164.2-03-PLAN.md — D-10 verify per state: reuse 1641-verify.sql (ST_IsValid topology + full coverage + G5200 NOTOUCH) + coordinate-smoke differential using the 15 anchor coordinates sourced 2026-07-21 (each must resolve NEW district under V26; reps feed still returns current) [Wave 3 — depends on 164.2-01 (Connected D-11 RPC probe) + 164.2-02 (landed polygons)]
+- [ ] 164.2-04-PLAN.md — Candidate-field nits (NOT re-seeds; fields verified new-map): FL repairs (is_incumbent flags on Wasserman Schultz FL-20 / Frankel FL-23 / Moskowitz FL-25; rename "Kedner MaximeDe"→"Kedner Maxime", "Seth Haskins"→"Seth Haskin"; FL-11 Webster untangle; add D10 4 GOP + D6 Gist + D11 Wilnau/Harden Hall) + CA-1 remove incorrect Gallagher incumbent flag [Wave 1 — no deps; independent tables (race_candidates/politicians), FL-primary-critical]
+
 #### Phase 165: Small-Delegation States Candidate Seeding (17 states, create elections + races, then candidates)
 
 **Goal:** Every US House race in the 17 smallest remaining delegations surfaces its full ballot field on `/elections` — all 17 states need `elections`/`races` rows authored first, then candidates, race_candidates wiring, headshots, and federal-24 stances. NV (4) + UT (4) + NM (3) + NE (3) + WV (2) + ID (2) + HI (2) + ME (2) + NH (2) + RI (2) + MT (2) + AK (1) + DE (1) + ND (1) + SD (1) + VT (1) + WY (1) = 34 districts. This phase closes the milestone's seeding scope — the union of Phases 161–165 covers all 178 Wave-3 districts.
