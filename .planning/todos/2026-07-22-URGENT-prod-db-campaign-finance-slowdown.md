@@ -62,7 +62,7 @@ same session; builds take ~5–15 min on this heap and survive the client being 
 - **⚠️ Ingestion caveat:** backfill scripts also connect as `postgres`; `refreshSummaryAgg` on
   mega-raisers can exceed 8s. Before a manual backfill, `RESET` the role cap or have the script
   `SET statement_timeout=0`. (The new indexes also make those aggregations much faster.)
-- **Promote the indexes into a repo migration** so they're reproducible (currently applied live only).
+- ✅ **Promoted the indexes into a repo migration** — `backend/migrations/1385_contributions_src_cycle_indexes.sql` (CONCURRENTLY + IF NOT EXISTS, run outside a txn; idempotent no-op on prod).
 - **Root smell:** the API running as `postgres` superuser is *why* there was no timeout — move it to
   a scoped app role.
 - **Collation mismatch** (`WARNING: … collation version 153.120, but OS provides 153.121`, Supabase
