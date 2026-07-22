@@ -94,3 +94,50 @@ describe('buildLocality (Phase 216, LOC-01/02)', () => {
     expect(buildLocality(null, [], { name: 'X County' }).county_name).toBe('X County');
   });
 });
+
+describe('resolveOfficialsAtPoint locality wiring (static-source assertions, Phase 216 Task 2)', () => {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  const src = fs.readFileSync(
+    path.resolve(__dirname, '../src/lib/essentialsService.ts'),
+    'utf-8',
+  );
+
+  it('has a dedicated place probe filtered to mtfcc IN (G4110, G4120) using ST_Covers', () => {
+    expect(src).toMatch(/mtfcc IN \('G4110', 'G4120'\)/);
+    expect(src).toMatch(/public\.ST_Covers\s*\(/);
+  });
+
+  it('has a dedicated county-name probe filtered to mtfcc = G4020', () => {
+    expect(src).toMatch(/mtfcc = 'G4020'/);
+  });
+
+  it('both new probes use ST_MakePoint($1::float8, $2::float8) — same lng/lat order as tribalQueryText', () => {
+    // Pitfall 4: assert the exact SRID/ST_Covers expression appears for each probe block.
+    const placeBlockMatch = src.match(/placeQueryText = `([\s\S]*?)`;/);
+    const countyBlockMatch = src.match(/countyNameQueryText = `([\s\S]*?)`;/);
+    expect(placeBlockMatch).not.toBeNull();
+    expect(countyBlockMatch).not.toBeNull();
+    const placeBlock = placeBlockMatch![1];
+    const countyBlock = countyBlockMatch![1];
+    const expression = /public\.ST_SetSRID\(public\.ST_MakePoint\(\$1::float8, \$2::float8\), 4326\)/;
+    expect(placeBlock).toMatch(expression);
+    expect(countyBlock).toMatch(expression);
+  });
+
+  it('the Promise.all array wires all 5 probes (district, statewide, tribal, place, countyName)', () => {
+    expect(src).toMatch(
+      /const \[districtResult, statewideResult, tribalResult, placeResult, countyNameResult\] = await Promise\.all\(/,
+    );
+  });
+
+  it('locality is attached at both the early-return and normal-return objects', () => {
+    const earlyReturnMatch = src.match(/return \{\s*politicians: \[\],[\s\S]*?\};/);
+    expect(earlyReturnMatch).not.toBeNull();
+    expect(earlyReturnMatch![0]).toMatch(/locality/);
+
+    expect(src).toMatch(
+      /return \{ politicians, jurisdiction, matchedAddress, tribal_land, county, jurisdictionGeoIds, locality \};/,
+    );
+  });
+});

@@ -815,11 +815,41 @@ async function resolveOfficialsAtPoint(
     LIMIT 1
   `;
 
+  // Phase 216 (LOC-01): narrow incorporated-place lookup — mirrors tribalQueryText
+  // exactly except for the mtfcc filter. Zero rows = no incorporated place covers
+  // this point (place-loaded states only; see buildLocality/PLACE_LOADED_STATES).
+  const placeQueryText = `
+    SELECT geo_id, name
+    FROM essentials.geofence_boundaries
+    WHERE mtfcc IN ('G4110', 'G4120')
+      AND public.ST_Covers(
+        geometry,
+        public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+      )
+    LIMIT 1
+  `;
+
+  // Phase 216 (LOC-01/D-03): dedicated county-name probe. Counties are loaded
+  // nationwide, so this is always a safe, unconditional signal — unlike
+  // placeQueryText above, its result is never gated by PLACE_LOADED_STATES.
+  const countyNameQueryText = `
+    SELECT geo_id, name
+    FROM essentials.geofence_boundaries
+    WHERE mtfcc = 'G4020'
+      AND public.ST_Covers(
+        geometry,
+        public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+      )
+    LIMIT 1
+  `;
+
   // $1 = longitude (Census coordinates.x), $2 = latitude (Census coordinates.y)
-  const [districtResult, statewideResult, tribalResult] = await Promise.all([
+  const [districtResult, statewideResult, tribalResult, placeResult, countyNameResult] = await Promise.all([
     pool.query(districtQueryText, [resolvedLng, resolvedLat]),
     state ? pool.query(statewideQueryText, [state]) : Promise.resolve({ rows: [] as unknown[] }),
     pool.query(tribalQueryText, [resolvedLng, resolvedLat]),
+    pool.query(placeQueryText, [resolvedLng, resolvedLat]),
+    pool.query(countyNameQueryText, [resolvedLng, resolvedLat]),
   ]);
   const rows = [...districtResult.rows, ...(statewideResult.rows as typeof districtResult.rows)];
 
@@ -828,6 +858,8 @@ async function resolveOfficialsAtPoint(
   if (tribalResult.rows.length > 0) {
     tribal_land = { on_reservation: true, name: tribalResult.rows[0].name as string };
   }
+
+  const locality = buildLocality(state, placeResult.rows, countyNameResult.rows[0] ?? null);
 
   if (rows.length === 0) {
     // Early-return path: explicit tribal_land defaulting to on_reservation: false when no district match.
@@ -840,6 +872,7 @@ async function resolveOfficialsAtPoint(
       jurisdictionGeoIds: {
         congressional: null, state_senate: null, state_house: null, county: null, school_district: null,
       },
+      locality,
     };
   }
 
@@ -908,7 +941,7 @@ async function resolveOfficialsAtPoint(
     districtResult.rows.map((r) => ({ ...r, name: r.geofence_name })),
   );
   const jurisdictionGeoIds = pickJurisdictionFromDistrictRows(districtResult.rows);
-  return { politicians, jurisdiction, matchedAddress, tribal_land, county, jurisdictionGeoIds };
+  return { politicians, jurisdiction, matchedAddress, tribal_land, county, jurisdictionGeoIds, locality };
 }
 
 /**
