@@ -49,10 +49,10 @@ function electionGeoPairsFromSlots(slots: {
     .map(([geoId, mtfcc]) => ({ geo_id: geoId as string, mtfcc }));
 }
 
-// D-11 (Phase 164.1): states whose 2026 congressional geometry is dual-mapped
+// D-11 (Phase 164.1 + 164.2): states whose 2026 congressional geometry is dual-mapped
 // (G5200V26 rows) while cached congressional_geo_id still reflects the old map.
-// TN=47, MO=29, AL=01, LA=22, UT=49.
-const REFRESHED_2026_FIPS = new Set(['47', '29', '01', '22', '49']);
+// 164.1: TN=47, MO=29, AL=01, LA=22, UT=49.  164.2: FL=12, CA=06, NC=37, OH=39, TX=48.
+const REFRESHED_2026_FIPS = new Set(['47', '29', '01', '22', '49', '12', '06', '37', '39', '48']);
 
 /**
  * D-11 read-only fallback: when a Connected user's congressional_geo_id sits in
