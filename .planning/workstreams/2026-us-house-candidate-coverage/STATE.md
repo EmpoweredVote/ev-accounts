@@ -1,16 +1,20 @@
 ---
 gsd_state_version: 1.0
 milestone: v2.22
-milestone_name: 2026 US House Candidate Coverage (Wave 3)
-status: executing
-last_updated: "2026-07-07T16:26:13.933Z"
-last_activity: 2026-07-07 -- Phase 165 EXECUTED: 17/17 plans, gate GREEN (34 districts)
+milestone_name: 2026 US House Candidate Coverage
+current_phase: 164.2
+status: completed
+stopped_at: Phase 164.1 context gathered
+last_updated: "2026-07-22T16:10:51.739Z"
+last_activity: 2026-07-22
+last_activity_desc: Phase 164.2 marked complete
 progress:
-  total_phases: 9
-  completed_phases: 1
-  total_plans: 7
-  completed_plans: 7
-  percent: 11
+  total_phases: 10
+  completed_phases: 7
+  total_plans: 81
+  completed_plans: 80
+  percent: 70
+current_phase_name: enacted-2026-polygon-backfill-fl-ca-nc-oh-tx-inserted
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
@@ -24,15 +28,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 165 COMPLETE (17-state small-delegation seeding, 34 districts, gate GREEN 2026-07-07) — next: /gsd-verify-work 165, then Phase 166 consolidated gate; 164.1 MO wave still date-gated >= 2026-08-04
+**Current focus:** Phase 164.2 — enacted-2026-polygon-backfill-fl-ca-nc-oh-tx-inserted
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 165
-Plan: 17 of 17 complete
-Status: Executed — gate GREEN (165-verify.sql 15/15 + coordinate smoke 17/17)
-Last activity: 2026-07-07 -- Phase 165 executed end-to-end (migs 1250-1281; 465 stance answers, 0 unsourced)
+Phase: 164.2 — COMPLETE
+Plan: 1 of 4
+Status: Phase 164.2 complete
+Last activity: 2026-07-22 — Phase 164.2 marked complete
 
 ## v2.22 Phase Dependencies
 
