@@ -169,6 +169,15 @@ export interface AddressSearchResult {
   /** User's home county (5-digit FIPS GEOID + name), or null when unresolved. */
   county: { geoid: string; name: string } | null;
   /**
+   * Phase 216 (LOC-01/02): incorporated-place signal, distinct from the
+   * officials-joined `county` field above. `incorporated` is `null` (unknown)
+   * outside PLACE_LOADED_STATES so the frontend suppresses the "Unincorporated"
+   * label rather than false-positiving a real city in an un-loaded state.
+   * `county_name` is populated whenever a G4020 row covers the point,
+   * regardless of the place-loaded-state gate (D-03: county is always safe).
+   */
+  locality: { incorporated: boolean | null; place_name: string | null; county_name: string | null };
+  /**
    * Resolved jurisdiction GEOIDs (congressional/state senate/state house/county/school),
    * derived from the same covering-district rows `county` and the single-district
    * `jurisdiction` field above are built from. Each field is null when that district
@@ -607,6 +616,51 @@ export function pickJurisdictionFromDistrictRows(
     county: geoIdForType('COUNTY') ?? geoIdForType('JUDICIAL'),
     school_district: geoIdForType('SCHOOL'),
   };
+}
+
+/**
+ * States where the TIGER place layer (G4110/G4120 CDPs+incorporated places)
+ * is loaded with meaningful coverage. Derived from a live DB ground-truth
+ * query against essentials.geofence_boundaries (2026-07-22, see Phase 216
+ * CONTEXT.md): `SELECT LEFT(geo_id,2), COUNT(*) FROM ... WHERE mtfcc='G4110'
+ * GROUP BY 1`. Missouri (MO) is intentionally EXCLUDED despite having 1
+ * incidental G4110 row loaded — that single row is not meaningful coverage,
+ * and gating on it would false-positive real MO cities as "unincorporated".
+ * A static list (rather than a dynamic "any G4110 row for this state" gate)
+ * matches the TIGER loader's own "adding a state is a code change, on
+ * purpose" philosophy and avoids a per-request query + magic threshold.
+ */
+export const PLACE_LOADED_STATES = new Set([
+  'AZ', 'CA', 'IN', 'ME', 'MD', 'MA', 'NV', 'OR', 'TX', 'UT', 'VA',
+]);
+
+/**
+ * buildLocality — pure gate/shape helper for the Phase 216 `locality` field
+ * (LOC-01/02). Mirrors the `tribal_land` precedent's default-then-flip
+ * shape, but with a three-state `incorporated` (true/false/null) instead of
+ * a boolean, because "no place hit" is only meaningful signal inside a
+ * place-loaded state (LOC-02).
+ *
+ * `county_name` is computed UNCONDITIONALLY from `countyRow` regardless of
+ * the state gate (D-03: county boundaries are loaded nationwide and are
+ * always safe to surface).
+ */
+export function buildLocality(
+  state: string | null | undefined,
+  placeRows: Array<{ name?: string | null }>,
+  countyRow: { name?: string | null } | null | undefined,
+): { incorporated: boolean | null; place_name: string | null; county_name: string | null } {
+  const county_name = countyRow?.name ?? null;
+
+  if (!state || !PLACE_LOADED_STATES.has(state.toUpperCase())) {
+    return { incorporated: null, place_name: null, county_name };
+  }
+
+  if (placeRows.length > 0) {
+    return { incorporated: true, place_name: placeRows[0].name ?? null, county_name };
+  }
+
+  return { incorporated: false, place_name: null, county_name };
 }
 
 /**
