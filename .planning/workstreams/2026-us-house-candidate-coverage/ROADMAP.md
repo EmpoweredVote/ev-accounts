@@ -441,34 +441,21 @@ Plans:
 
 #### Phase 174: FEC 429 Rate-Limit Tail — Drive the 6-Hourly Ingest to Zero Hard-Failures
 
-**Goal:** A full 6-hour `fec-ingest` cron cycle completes with zero `status='failed'` HTTP-429 rows in `transparent_motivations.ingestion_runs`. The per-request exponential backoff shipped in `d505c9ad` recovers most 429s but does not pace the batch under the shared ~1,000 req/hr api.data.gov FEC key, so a ~1k-source run still overshoots the ceiling and a residual handful of requests exhaust all 5 retries and hard-fail. This phase eliminates that tail by (a) cutting request volume via committee-ID caching, (b) honoring the server's `Retry-After`/rate-limit headers on 429, and (c) gating all FEC requests through a shared rate limiter budgeted under the ceiling — plus a documented decision on whether to request a higher/dedicated FEC key or drop the cadence 6h→daily.
+**Goal:** A full 6-hour `fec-ingest` cron cycle completes with zero `status='failed'` HTTP-429 rows in `transparent_motivations.ingestion_runs`. The per-request exponential backoff shipped in `d505c9ad` recovers most 429s but does not pace the batch under the shared ~1,000 req/hr api.data.gov FEC key, so a ~1k-source run still overshoots the ceiling and a residual handful of requests exhaust all 5 retries and hard-fail. Note the free **bulk** path (`fecBulkLoader.ts`, `scripts/030-bulk-load-fec.ts`) already carries the 40M+ itemized-contribution volume with no rate limit; the 429s come only from the *separate* 6-hourly API refresh cron (`resolveCommitteeIds` + Schedule A). This phase eliminates the tail by (a) sourcing candidate→committee resolution from the free bulk `ccl` linkage instead of the per-source API call (root-cause removal of the dominant 429 source), (b) honoring the server's `X-RateLimit-Remaining`/`Retry-After` signal on 429, and (c) gating all remaining FEC API requests through a shared limiter budgeted under the ceiling — plus a documented decision on the limiter budget and whether the Schedule A refresh cadence can be reduced given bulk covers volume. **A higher/dedicated FEC key is NOT required** (code fix reaches zero-429 under the current key).
 
 **Depends on:** Nothing code-blocking (builds on the shipped `d505c9ad` backoff in `fecAdapter.ts`). Pure-backend change — no schema, no data. Uses Upstash Redis (already in the stack) for the shared limiter/cache, degrading to in-process when absent.
 
-**Requirements:** FEC-01, FEC-02, FEC-03, FEC-04
+**Requirements:** FEC-01, FEC-02, FEC-03, FEC-04, FEC-05
 
 **Success Criteria** (what must be TRUE):
 
-  1. The 6-hourly ingest no longer re-resolves candidate→committee IDs from the FEC API for every source every run — `resolveCommitteeIds` is cached with a bounded TTL and a correct cache-miss path, so a warm run issues roughly half the FEC requests it does today (FEC-01).
-  2. On a 429 (or the throttle-timeout signature), both FEC request paths (`resolveCommitteeIds` and `fetchWithRetry`) back off by the server-provided `Retry-After` / `X-RateLimit-Reset` interval when present, instead of a blind fixed exponential (FEC-02).
-  3. Every outbound FEC HTTP request acquires from one shared rate limiter (Redis token-bucket, in-process fallback) budgeted under the ~1,000 req/hr key ceiling with margin, so a full ingest cycle's aggregate request rate cannot exceed the ceiling regardless of source count (FEC-03).
-  4. After deploy, a full 6-hour `fec-ingest` cycle is verified (read-only query) to complete with zero `status='failed'` 429 rows; and the request-budget/cadence choice plus the FEC-key-upgrade decision are evaluated and documented (FEC-04).
+  1. Candidate→committee resolution is sourced from the free bulk `ccl{YY}.zip` linkage (`fecBulkLoader.ts` `cmteToSource`), with the API `resolveCommitteeIds` retained only as a stale/missing fallback — no per-source API candidate lookup on a normal run (FEC-01).
+  2. The Schedule A refresh fetches only transactions loaded since the last successful run via the live-confirmed `min_load_date` filter (persisted advancing cursor), replacing the whole-cycle-per-source re-pull; amendment-inclusive (amended filings re-load with a new `load_date`; API serves current-version rows) (FEC-02).
+  3. The cron cadence is **daily** (not 6-hourly), and every outbound FEC API request across all three sites acquires from one shared limiter (Redis token-bucket, in-process fallback) under the ~1,000 req/hr ceiling; 429s honor `Retry-After`/`X-RateLimit-Remaining` with exponential backoff as final fallback (FEC-03).
+  4. An incremental row with a populated `original_sub_id` retires the superseded row (no double-count); the dead `is_amended` skip check is removed; the `original_sub_id` linkage is confirmed by one targeted live query before the retirement logic is finalized (FEC-04).
+  5. After deploy, a full **daily** `fec-ingest` cycle is verified (read-only query) to complete with zero `status='failed'` 429 rows; the daily-cadence decision is documented and records that no FEC-key upgrade is required (FEC-05).
 
-**Plans:** 4 plans (3 waves)
-
-Plans:
-**Wave 1** *(no deps — standalone limiter module)*
-
-- [ ] 174-01-PLAN.md — NEW `fecRateLimiter.ts` `acquireFecSlot()` per-minute fixed-window limiter (Redis + in-process degrade) + `FEC_RATE_LIMIT_PER_MINUTE` env var + unit test (FEC-03 core)
-
-**Wave 2** *(parallel — disjoint files; both depend on 174-01 for the limiter import)*
-
-- [ ] 174-02-PLAN.md — `fecAdapter.ts`: committee-ID cache via `cache.ts` 30-day TTL (FEC-01) + `Retry-After`/`X-RateLimit-Remaining` clamped backoff (FEC-02) + `acquireFecSlot()` gate at both call sites (FEC-03) + first adapter unit test
-- [ ] 174-03-PLAN.md — `fecResearch.ts`: gate the third FEC call site (`searchFecCandidates`) on `acquireFecSlot()` + unit test (FEC-03)
-
-**Wave 3** *(depends on 174-02 + 174-03 — all code landed)*
-
-- [ ] 174-04-PLAN.md — full-suite gate + `tsc` + Render deploy + `174-FEC04-DECISION.md` (budget/cadence + FEC-key-upgrade + read-only zero-429 verification query) (FEC-04)
+**Plans:** to be re-planned by `/gsd-plan-phase` (scope revised 2026-07-23 after live-API amendment research — incremental `min_load_date` redesign + daily cadence + supersession correctness; supersedes the initial pacing-only plan set).
 
 ---
 

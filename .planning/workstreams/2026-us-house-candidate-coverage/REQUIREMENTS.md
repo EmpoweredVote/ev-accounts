@@ -60,23 +60,27 @@ Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followup
 
 ## v2.24 Requirements — Backend Reliability (FEC 429 Rate-Limit Tail, Phase 174)
 
-> Successor to the `d505c9ad` per-request backoff (verified working: daily FEC failures 3,410→101). That fix recovers most 429s but does not *pace the batch* — the ~1k-source 6-hourly `fec-ingest` run collectively exceeds the shared ~1,000 req/hr api.data.gov FEC key, so a residual ~15/12h still exhaust all 5 retries and hard-fail (`transparent_motivations.ingestion_runs`). Two FEC request sites: `resolveCommitteeIds` (`fecAdapter.ts:87`) and `fetchWithRetry` (`fecAdapter.ts:475`). Cron `campaignFinanceCron.ts:27` (`0 */6 * * *`).
+> Successor to the `d505c9ad` per-request backoff (verified working: daily FEC failures 3,410→101). Root-cause approach (per `174-RESEARCH.md` + `174-RESEARCH-amendments.md`, live-API verified): the free bulk path (`fecBulkLoader.ts`, `scripts/030-bulk-load-fec.ts`) already carries the 40M+ itemized-contribution volume with no rate limit; the 429s come only from the *separate* 6-hourly API refresh cron re-pulling every source's whole cycle. Cut the request volume at the root — resolve committees from bulk, fetch Schedule A **incrementally** via the live-confirmed `min_load_date` filter, and run **daily** — rather than pacing a wasteful whole-cycle re-pull. Limiter + server-signaled backoff remain as backstops. FEC request sites: `resolveCommitteeIds` (`fecAdapter.ts:87`), `fetchWithRetry` (`fecAdapter.ts:475`), `runFecAutoMatch` (`fecResearch.ts`). Cron `campaignFinanceCron.ts:27`.
 
-### Request-Volume Reduction
+### FEC-01 — Committee resolution from free bulk data (no per-source API lookup)
 
-- [ ] **FEC-01**: The 6-hourly FEC ingest no longer re-resolves candidate→committee IDs from the FEC API for every source on every run — `resolveCommitteeIds` results are cached (durable store, bounded TTL) so a warm run issues roughly half the FEC requests it does today, with a correctness path for cache miss/expiry.
+- [ ] **FEC-01**: Candidate→committee resolution no longer depends on a per-source FEC **API** call. It is sourced from FEC's free bulk `ccl{YY}.zip` candidate→committee linkage — the same file `fecBulkLoader.ts` already parses into its `cmteToSource` map, no key/rate limit — with the API `resolveCommitteeIds` lookup retained only as a fallback when the bulk linkage is stale or missing a candidate. Eliminates the dominant 429 source (`resolveCommitteeIds`) at the root.
 
-### Server-Signaled Backoff
+### FEC-02 — Incremental amendment-aware Schedule A fetch (the core volume cut)
 
-- [ ] **FEC-02**: On HTTP 429 (and the throttle-timeout signature) both FEC request paths honor the server's `Retry-After` / `X-RateLimit-Reset` header when present, backing off by the server-provided interval instead of a blind fixed exponential — so retries wait the right amount and stop colliding with the reset window.
+- [ ] **FEC-02**: The Schedule A refresh fetches only transactions loaded since the last successful run via the live-confirmed `min_load_date` filter on `/schedules/schedule_a/` (persisted per-run cursor that advances each run), replacing the whole-cycle-per-source re-pull. This is amendment-inclusive — an amended filing re-loads with a new `load_date`, and the API serves amendment-resolved (current-version) rows — cutting per-run API volume from tens of thousands to an estimated ~1,000–1,500/day.
 
-### Global Rate Pacing
+### FEC-03 — Daily cadence + shared limiter/backoff backstop
 
-- [ ] **FEC-03**: Every outbound FEC HTTP request acquires from a single shared rate limiter (Redis token-bucket, degrading to in-process when Redis is absent — matching the existing FEC lock pattern) budgeted under the ~1,000 req/hr key ceiling with margin, so a full ingest cycle's aggregate request rate cannot exceed the ceiling regardless of source count.
+- [ ] **FEC-03**: The `fec-ingest` cron cadence changes 6h→**daily** (`load_date` is date-granularity, so 6-hourly yields zero extra freshness). As a safety cap, every outbound FEC API request (all THREE sites: `resolveCommitteeIds` fallback, `fetchWithRetry`, `runFecAutoMatch`) acquires from a single shared rate limiter (Redis token-bucket, degrading to in-process — mirroring the existing FEC lock pattern) budgeted under the ~1,000 req/hr ceiling; on 429 the code honors `Retry-After`/`X-RateLimit-Remaining` when present, keeping exponential backoff as the final fallback.
 
-### Verified Outcome + Documented Lever
+### FEC-04 — Amendment supersession correctness (no double-count)
 
-- [ ] **FEC-04**: After deploy, a full 6-hour `fec-ingest` cycle completes with **zero** `status='failed'` 429 rows in `ingestion_runs` (verified by read-only query); and the request-budget/cadence choice plus the FEC-key-upgrade decision (request a higher/dedicated api.data.gov limit vs. code-only pacing, and whether to drop 6h→daily) are evaluated and documented.
+- [ ] **FEC-04**: When an incremental pull returns a Schedule A transaction with a populated `original_sub_id` (an amendment superseding a prior row), the superseded row is retired so itemized totals do not double-count — the current `ON CONFLICT (source_transaction_id)` dedup does NOT catch this (new `sub_id`), a pre-existing latent gap. The dead `is_amended === true` skip check (references a field absent from the live schema) is removed. A single targeted live query against a high-amendment committee confirms the `original_sub_id` linkage before the retirement logic is finalized.
+
+### FEC-05 — Verified outcome + documented decision
+
+- [ ] **FEC-05**: After deploy, a full **daily** `fec-ingest` cycle completes with **zero** `status='failed'` 429 rows in `ingestion_runs` (verified by read-only query: `status='failed' AND (notes ILIKE '%429%' OR notes ILIKE '%rate limit%')`); and a decision doc records the daily-cadence choice and states that a higher/dedicated api.data.gov FEC key is **NOT required** (the code reaches zero-429 under the current 1,000/hr registered key), so the option isn't silently reconsidered.
 
 ---
 

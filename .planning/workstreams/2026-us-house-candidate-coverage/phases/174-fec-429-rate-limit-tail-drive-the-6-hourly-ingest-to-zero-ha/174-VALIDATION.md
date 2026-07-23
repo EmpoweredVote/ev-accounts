@@ -39,12 +39,13 @@ created: 2026-07-23
 
 *Seeded — finalized by the planner/plan-checker once PLAN.md tasks exist. Anchors from RESEARCH Validation Architecture:*
 
-| Requirement | Secure/Correct Behavior | Test Type | Command (indicative) |
-|-------------|-------------------------|-----------|----------------------|
-| FEC-01 | committee-ID cache: miss → FEC fetch + store; hit within TTL → no FEC call; expiry → re-fetch | unit | `vitest run` (mock `@upstash/redis` + `fetch`) |
-| FEC-02 | 429 handling parses `Retry-After` when present; throttles proactively on `X-RateLimit-Remaining`; exponential backoff remains the fallback | unit | `vitest run` (mock 429 responses w/ + w/o headers) |
-| FEC-03 | all THREE FEC call sites (`resolveCommitteeIds`, `fetchWithRetry`, `runFecAutoMatch`) acquire from one shared limiter; limiter blocks past the per-window budget; degrades to in-process w/o Redis | unit | `vitest run` (mock Redis `.incr`/`.expire`; assert acquire gating) |
-| FEC-04 | after deploy, a full 6h cycle logs zero `status='failed'` 429 rows | manual / read-only prod query | `SELECT count(*) FROM transparent_motivations.ingestion_runs WHERE adapter_name='fec' AND status='failed' AND (notes ILIKE '%429%' OR notes ILIKE '%rate limit%') AND started_at > now()-interval '7 hours'` |
+| Requirement | Correct Behavior | Test Type | Command (indicative) |
+|-------------|------------------|-----------|----------------------|
+| FEC-01 | committee resolution reads bulk `ccl` linkage (`cmteToSource`); API `resolveCommitteeIds` only on stale/missing fallback | unit | `vitest run` (mock bulk ccl source + assert no API call on hit) |
+| FEC-02 | Schedule A pull sends `min_load_date` = persisted cursor; cursor advances after a successful run; whole-cycle re-pull no longer issued | unit | `vitest run` (mock fetch; assert `min_load_date` param + cursor persistence) |
+| FEC-03 | cron cadence is daily; all THREE FEC call sites acquire from one shared limiter (Redis + in-process degrade); 429 honors `Retry-After`/`X-RateLimit-Remaining` then exponential fallback | unit | `vitest run` (mock Redis `.incr`/`.expire` + 429 responses; assert acquire gating + backoff) |
+| FEC-04 | a returned row with populated `original_sub_id` retires the superseded row (no double-count); dead `is_amended` check removed | unit + 1 live confirm query | `vitest run` (mock incremental batch incl. `original_sub_id`; assert delete/retire) |
+| FEC-05 | after deploy, a full daily cycle logs zero `status='failed'` 429 rows | manual / read-only prod query | `SELECT count(*) FROM transparent_motivations.ingestion_runs WHERE adapter_name='fec' AND status='failed' AND (notes ILIKE '%429%' OR notes ILIKE '%rate limit%') AND started_at > now()-interval '25 hours'` |
 
 *Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
 
@@ -52,8 +53,8 @@ created: 2026-07-23
 
 ## Wave 0 Requirements
 
-- [ ] `backend/src/lib/fecRateLimiter.test.ts` — NEW; FEC-03 limiter acquire/degrade + FEC-01 cache hit/miss/expiry. Mock `@upstash/redis` client (`.incr`/`.expire`/`.get`/`.set`) + `fetch`.
-- [ ] `backend/src/lib/adapters/fecAdapter.test.ts` — NEW or extended; FEC-02 429 header parsing (Retry-After present/absent, X-RateLimit-Remaining throttle) + limiter integration at both cron call sites.
+- [ ] `backend/src/lib/fecRateLimiter.test.ts` — NEW; FEC-03 shared-limiter acquire/degrade + 429 `Retry-After`/`X-RateLimit-Remaining` backoff. Mock `@upstash/redis` (`.incr`/`.expire`) + `fetch`.
+- [ ] `backend/src/lib/adapters/fecAdapter.test.ts` — NEW or extended; FEC-01 bulk-ccl committee resolution (no API call on hit), FEC-02 `min_load_date` incremental cursor (param sent + cursor advance), FEC-04 `original_sub_id` supersession retirement + dead-`is_amended` removal.
 - [ ] Framework install: none — Vitest already installed + configured.
 
 ---
