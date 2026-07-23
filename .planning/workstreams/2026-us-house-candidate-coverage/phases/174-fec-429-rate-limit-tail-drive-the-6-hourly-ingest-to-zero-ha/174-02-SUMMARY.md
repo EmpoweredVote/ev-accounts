@@ -119,3 +119,7 @@ None — no external service configuration required. No migration, no schema cha
 *Phase: 174-fec-429-rate-limit-tail-drive-the-6-hourly-ingest-to-zero-ha*
 *Plan: 02*
 *Completed: 2026-07-23*
+
+## Self-Check: PASSED
+
+All created/modified files confirmed present (`fecBulkLoader.ts`, `fecAdapter.ts`, `fecAdapter.test.ts`, this SUMMARY.md); all three commit hashes (`ef23f6bf`, `d977192c`, `5391a862`) confirmed present in `git log`.
