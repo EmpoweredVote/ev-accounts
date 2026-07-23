@@ -84,18 +84,51 @@ interface FecCandidateSearchResponse {
  * The FEC schedule_a endpoint filters by committee_id, not candidate_id.
  * Returns an empty array (with a warning) if the candidate is not found.
  */
-async function resolveCommitteeIds(candidateId: string, apiKey: string): Promise<string[]> {
+async function resolveCommitteeIds(candidateId: string, apiKey: string, maxRetries = 5): Promise<string[]> {
   const url = `https://api.open.fec.gov/v1/candidates/search/?api_key=${apiKey}&candidate_id=${candidateId}`;
-  const response = await fetch(url, { signal: AbortSignal.timeout(60_000) });
-  if (!response.ok) {
-    throw new Error(`FEC candidate lookup failed: HTTP ${response.status} for ${candidateId}`);
+  // Same 429 / throttle-timeout exponential backoff as fetchWithRetry (the Schedule A path).
+  // Previously this did a bare fetch and threw on the first 429 — with the shared 1,000 req/hr
+  // FEC key, the 6-hourly cron looping ~1k sources blew past the limit and mass-failed here
+  // ("FEC candidate lookup failed: HTTP 429"). Backing off both recovers the run and throttles
+  // the request rate so we stay under the ceiling. See the 2026-07-23 cron audit.
+  let delayMs = 2000;
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    let response: Response;
+    try {
+      response = await fetch(url, { signal: AbortSignal.timeout(60_000) });
+    } catch (err) {
+      const isAbort = err instanceof Error && (err.name === 'AbortError' || err.name === 'TimeoutError' || /abort|timeout/i.test(err.message));
+      if (isAbort && attempt < maxRetries) {
+        console.warn(`[fecAdapter] candidate lookup timed out (likely throttle) — backing off ${delayMs}ms (attempt ${attempt + 1}/${maxRetries})`);
+        await sleep(delayMs);
+        delayMs = Math.min(delayMs * 2, 120_000);
+        continue;
+      }
+      throw err;
+    }
+
+    if (response.status === 429) {
+      if (attempt === maxRetries) {
+        throw new Error(`FEC candidate lookup rate limited (429) after ${maxRetries} retries for ${candidateId}`);
+      }
+      console.warn(`[fecAdapter] candidate lookup 429 — retrying in ${delayMs}ms (attempt ${attempt + 1}/${maxRetries})`);
+      await sleep(delayMs);
+      delayMs = Math.min(delayMs * 2, 120_000);
+      continue;
+    }
+
+    if (!response.ok) {
+      throw new Error(`FEC candidate lookup failed: HTTP ${response.status} for ${candidateId}`);
+    }
+
+    const data = await response.json() as FecCandidateSearchResponse;
+    const committees = data.results.flatMap((c) => c.principal_committees.map((p) => p.committee_id));
+    if (committees.length === 0) {
+      console.warn(`[fecAdapter] No principal committees found for candidate ${candidateId}`);
+    }
+    return committees;
   }
-  const data = await response.json() as FecCandidateSearchResponse;
-  const committees = data.results.flatMap((c) => c.principal_committees.map((p) => p.committee_id));
-  if (committees.length === 0) {
-    console.warn(`[fecAdapter] No principal committees found for candidate ${candidateId}`);
-  }
-  return committees;
+  throw new Error(`FEC candidate lookup: unexpected loop exit for ${candidateId}`);
 }
 
 /**
