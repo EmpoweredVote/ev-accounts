@@ -654,18 +654,27 @@ function sleep(ms: number): Promise<void> {
 /**
  * shouldSkipRecord returns true for records that must not be written to the contributions table:
  *   - memo_code="X": memo item, not incorporated into FEC totals per FEC documentation
- *   - is_amended=true: superseded filing, replaced by a later amendment
+ *
+ * FEC-04: a prior `is_amended === true` branch here was dead code — 174-RESEARCH-amendments.md
+ * confirmed `is_amended` is not a field on the live ScheduleA response schema (only
+ * `amendment_indicator`/`amendment_indicator_desc`/`original_sub_id` exist), so the check never
+ * fired. Real amendment-supersession handling is now `original_sub_id` retirement in
+ * normalizeRecords/upsertContributions below, not a skip at normalize time — the amended row
+ * itself must still be inserted; only the row it supersedes gets retired.
  */
 function shouldSkipRecord(record: Record<string, unknown>): boolean {
   if (record['memo_code'] === 'X') return true;
-  if (record['is_amended'] === true) return true;
   return false;
 }
 
 /**
  * normalizeRecords converts raw FEC Schedule A records into ContributionInsert structs.
- * Memo items and superseded amendments are counted in NormalizeResult.skipped
- * and excluded from the contributions slice.
+ * Memo items are counted in NormalizeResult.skipped and excluded from the contributions slice.
+ *
+ * FEC-04: every record's non-null `original_sub_id` is collected into
+ * NormalizeResult.supersededSubIds — the OLD sub_id an amended row replaces. The amended row
+ * itself is still normalized and inserted normally (its own, different, sub_id); the row it
+ * supersedes is retired separately in upsertContributions.
  *
  * ElectionCycle: stored as number in JSON — convert to 4-digit string.
  * Amount: FEC returns as number — passed through directly.
@@ -681,8 +690,18 @@ function normalizeRecords(
   const contributions: ContributionInsert[] = [];
   let skipped = 0;
   const totalParsed = records.length;
+  const supersededSubIds: string[] = [];
 
   for (const record of records) {
+    // Collect original_sub_id for every record in the batch regardless of skip status —
+    // a superseded row must be retired even if the amended row that supersedes it is
+    // itself a memo item (skipped from insert). The retirement DELETE is independently
+    // scoped/guarded (data_source='fec', source_transaction_id = original_sub_id) so this
+    // is safe to collect unconditionally.
+    if (typeof record['original_sub_id'] === 'string' && record['original_sub_id'] !== '') {
+      supersededSubIds.push(record['original_sub_id'] as string);
+    }
+
     if (shouldSkipRecord(record)) {
       skipped++;
       continue;
@@ -692,7 +711,12 @@ function normalizeRecords(
     contributions.push(contribution);
   }
 
-  return { contributions, skipped, totalParsed };
+  return {
+    contributions,
+    skipped,
+    totalParsed,
+    ...(supersededSubIds.length > 0 ? { supersededSubIds } : {}),
+  };
 }
 
 // Only these FEC Schedule A fields are ever read back (by campaignFinanceService
@@ -708,7 +732,10 @@ const FEC_KEPT_FIELDS = [
   // identity / audit / re-normalization inputs
   'sub_id', 'committee_id',
   'contribution_receipt_amount', 'contribution_receipt_date',
-  'two_year_transaction_period', 'memo_code', 'is_amended',
+  'two_year_transaction_period', 'memo_code',
+  // FEC-04: original_sub_id drives supersession-retirement (see normalizeRecords /
+  // upsertContributions) and is worth retaining on the amended row for audit/traceability.
+  'original_sub_id',
 ] as const;
 
 /** Keep only the fields we read or need for audit — see FEC_KEPT_FIELDS. */
@@ -789,7 +816,9 @@ function normalizeRecord(
 export async function upsertContributions(
   normalized: NormalizeResult
 ): Promise<UpsertResult> {
-  if (normalized.contributions.length === 0) {
+  const supersededSubIds = normalized.supersededSubIds ?? [];
+
+  if (normalized.contributions.length === 0 && supersededSubIds.length === 0) {
     return { inserted: 0, skipped: 0, unresolved: 0, errors: 0 };
   }
 
@@ -830,7 +859,50 @@ export async function upsertContributions(
     }
   }
 
+  // FEC-04: retire rows superseded by an amendment. Runs AFTER the inserts above so the
+  // freshly-inserted amended row (its own, different, sub_id) is already committed before
+  // its predecessor is retired — order doesn't affect correctness here (the DELETE can never
+  // match the new row, only the OLD sub_id it replaces), but inserting first means a crash
+  // between insert and retire leaves the old row present (safe, re-run catches it) rather
+  // than leaving a gap with neither row present.
+  if (supersededSubIds.length > 0) {
+    try {
+      await retireSupersededRows(supersededSubIds);
+    } catch (err) {
+      console.error(`[fecAdapter] supersession retirement failed for ${supersededSubIds.length} original_sub_id(s):`, err);
+      errors += supersededSubIds.length;
+    }
+  }
+
   return { inserted, skipped, unresolved: 0, errors };
+}
+
+/**
+ * retireSupersededRows deletes contributions rows that an incoming amended Schedule A row's
+ * original_sub_id points at — i.e. the OLD transaction the amendment replaces.
+ *
+ * FEC-04 (Task 1 checkpoint, 174-FEC04-LIVE-CONFIRM.md): the retirement is gated behind
+ * schema-level evidence (operator-authorized "proceed") since a live row with a populated
+ * original_sub_id was not caught in two sampling sessions; the delete's blast radius is bounded
+ * regardless — it can only ever match a row whose source_transaction_id literally equals a
+ * value an amended row carries as its OWN original_sub_id, scoped to data_source='fec'. It can
+ * never delete the newly-inserted amended row itself (that row's own sub_id differs from
+ * original_sub_id by construction — an amendment's new sub_id is never equal to the id it
+ * replaces) or touch any other data_source.
+ *
+ * No `deleted_at` column exists on transparent_motivations.contributions (confirmed via
+ * migrations grep) — hard DELETE matches the table's existing convention. If a soft-delete
+ * column is added to this table in the future, switch this to `SET deleted_at = NOW()`.
+ */
+async function retireSupersededRows(originalSubIds: string[]): Promise<void> {
+  // Only ever deletes rows where BOTH conditions hold: data_source='fec' AND
+  // source_transaction_id = ANY($1) — $1 is exactly the set of OLD sub_ids the incoming
+  // batch's amended rows carry as original_sub_id. Parameterized; never interpolated.
+  await pool.query(
+    `DELETE FROM transparent_motivations.contributions
+     WHERE data_source = 'fec' AND source_transaction_id = ANY($1::text[])`,
+    [originalSubIds]
+  );
 }
 
 /**

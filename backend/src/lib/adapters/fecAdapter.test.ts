@@ -298,3 +298,128 @@ describe('fecAdapter FEC-03 — shared limiter gate + Retry-After/X-RateLimit-Re
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 });
+
+describe('fecAdapter FEC-04 — amendment supersession (original_sub_id retirement) + dead skip removal', () => {
+  beforeEach(() => {
+    poolQueryMock.mockReset();
+  });
+
+  /** Minimal raw Schedule A record — only the fields normalize()/shouldSkipRecord() read. */
+  function scheduleARecord(overrides: Record<string, unknown> = {}): Record<string, unknown> {
+    return {
+      sub_id: 'SUB-NEW-1',
+      contributor_name: 'Jane Doe',
+      contribution_receipt_amount: 100,
+      contribution_receipt_date: '2026-06-01',
+      two_year_transaction_period: 2026,
+      memo_code: null,
+      original_sub_id: null,
+      ...overrides,
+    };
+  }
+
+  it('shouldSkipRecord (via normalize) still skips memo_code="X" but no longer skips a plain amended row lacking the absent is_amended flag', async () => {
+    const adapter = createFecAdapter('2026');
+    const memoRecord = scheduleARecord({ sub_id: 'SUB-MEMO-1', memo_code: 'X' });
+    // A plain amended row: no is_amended field at all (confirmed absent from the live
+    // schema), amendment_indicator="A", original_sub_id null (not yet caught populated
+    // live) — this must NOT be skipped; only memo_code='X' skips.
+    const amendedRecord = scheduleARecord({ sub_id: 'SUB-AMENDED-1', amendment_indicator: 'A' });
+
+    const result = await adapter.normalize(
+      { records: [memoRecord, amendedRecord], totalExpected: 2, totalFetched: 2 },
+      ps
+    );
+
+    expect(result.skipped).toBe(1);
+    expect(result.totalParsed).toBe(2);
+    expect(result.contributions).toHaveLength(1);
+    expect(result.contributions[0]!.source_transaction_id).toBe('SUB-AMENDED-1');
+  });
+
+  it('normalizeRecords collects non-null original_sub_id into NormalizeResult.supersededSubIds and still inserts the amended row itself', async () => {
+    const adapter = createFecAdapter('2026');
+    const amendedRecord = scheduleARecord({ sub_id: 'SUB-NEW-2', original_sub_id: 'SUB-OLD-2' });
+
+    const result = await adapter.normalize(
+      { records: [amendedRecord], totalExpected: 1, totalFetched: 1 },
+      ps
+    );
+
+    expect(result.supersededSubIds).toEqual(['SUB-OLD-2']);
+    expect(result.contributions).toHaveLength(1);
+    expect(result.contributions[0]!.source_transaction_id).toBe('SUB-NEW-2');
+    expect(result.contributions[0]!.raw_record['original_sub_id']).toBe('SUB-OLD-2');
+  });
+
+  it('normalizeRecords omits supersededSubIds entirely when no record carries a non-null original_sub_id', async () => {
+    const adapter = createFecAdapter('2026');
+    const plainRecord = scheduleARecord();
+
+    const result = await adapter.normalize(
+      { records: [plainRecord], totalExpected: 1, totalFetched: 1 },
+      ps
+    );
+
+    expect(result.supersededSubIds).toBeUndefined();
+  });
+
+  it('upsertContributions issues a retirement DELETE parameterized with data_source=\'fec\' and the original_sub_id values, after inserting the batch, and never targets the new amended row', async () => {
+    const insertCalls: unknown[][] = [];
+    const deleteCalls: unknown[][] = [];
+    poolQueryMock.mockImplementation((sql: string, params: unknown[]) => {
+      if (/^\s*INSERT INTO/i.test(sql)) {
+        insertCalls.push(params);
+        return Promise.resolve({ rows: [{ is_insert: true }] });
+      }
+      if (/^\s*DELETE FROM/i.test(sql)) {
+        deleteCalls.push(params);
+        expect(sql).toContain("data_source = 'fec'");
+        expect(sql).toContain('source_transaction_id = ANY($1');
+        return Promise.resolve({ rows: [] });
+      }
+      throw new Error(`unexpected query: ${sql}`);
+    });
+
+    const adapter = createFecAdapter('2026');
+    const amendedRecord = scheduleARecord({ sub_id: 'SUB-NEW-3', original_sub_id: 'SUB-OLD-3' });
+    const normalized = await adapter.normalize(
+      { records: [amendedRecord], totalExpected: 1, totalFetched: 1 },
+      ps
+    );
+
+    const result = await adapter.upsert(normalized);
+
+    expect(insertCalls).toHaveLength(1);
+    // The DELETE's parameter is exactly the OLD sub_id (original_sub_id), never the new
+    // row's own sub_id — the new row's own sub_id must never appear in the retirement params.
+    expect(deleteCalls).toHaveLength(1);
+    expect(deleteCalls[0]![0]).toEqual(['SUB-OLD-3']);
+    expect(deleteCalls[0]![0]).not.toContain('SUB-NEW-3');
+    // Retirement runs after the insert batch (insert call recorded before delete call).
+    const insertCallIdx = poolQueryMock.mock.calls.findIndex((c) => /^\s*INSERT INTO/i.test(c[0] as string));
+    const deleteCallIdx = poolQueryMock.mock.calls.findIndex((c) => /^\s*DELETE FROM/i.test(c[0] as string));
+    expect(insertCallIdx).toBeLessThan(deleteCallIdx);
+    expect(result.inserted).toBe(1);
+    expect(result.errors).toBe(0);
+  });
+
+  it('upsertContributions issues no DELETE when supersededSubIds is absent (the common case — most transactions are never amended)', async () => {
+    poolQueryMock.mockImplementation((sql: string) => {
+      if (/^\s*INSERT INTO/i.test(sql)) return Promise.resolve({ rows: [{ is_insert: true }] });
+      throw new Error(`unexpected query: ${sql}`);
+    });
+
+    const adapter = createFecAdapter('2026');
+    const plainRecord = scheduleARecord();
+    const normalized = await adapter.normalize(
+      { records: [plainRecord], totalExpected: 1, totalFetched: 1 },
+      ps
+    );
+
+    await adapter.upsert(normalized);
+
+    const deleteCallCount = poolQueryMock.mock.calls.filter((c) => /^\s*DELETE FROM/i.test(c[0] as string)).length;
+    expect(deleteCallCount).toBe(0);
+  });
+});

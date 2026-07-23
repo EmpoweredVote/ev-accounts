@@ -28,14 +28,19 @@ export interface FetchResult {
 
 /**
  * NormalizeResult is returned by the Normalize phase.
- * Skipped counts memo items (memo_code="X") and superseded amendments (is_amended=true).
+ * Skipped counts memo items (memo_code="X").
  * TotalParsed is the number of rows the parser examined for this politician (used by callers
  * to compute >1% skip threshold).
+ * SupersededSubIds (FEC-04, optional — only the FEC adapter populates it) lists the OLD
+ * source_transaction_id values that an amended row's original_sub_id points at; the Upsert
+ * phase retires those rows so amended transactions don't double-count. Additive field — other
+ * adapters (Cal-Access, Indiana, LA Socrata) never set it and are unaffected.
  */
 export interface NormalizeResult {
   contributions: ContributionInsert[];
   skipped: number;
   totalParsed: number;
+  supersededSubIds?: string[];
 }
 
 /**
