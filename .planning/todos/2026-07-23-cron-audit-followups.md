@@ -11,25 +11,30 @@ User reported cron jobs "breaking all the time and costing money." Audit found:
 - ⚠️ Remaining items below.
 
 ## Already done (do NOT redo)
-- FEC 429 backoff fix — `fecAdapter.ts`, commit `d505c9ad`, deployed to prod.
+- FEC 429 backoff fix — `fecAdapter.ts`, commit `d505c9ad`, deployed to prod. **VERIFIED WORKING 2026-07-23** (see item 0).
+- **Discovery-sweep / Anthropic cost control — Phase 173 EXECUTED + verified + deployed 2026-07-23** (was item 1). 4/4 plans, OPS-01..04 all green, Render deploy `dep-d9gsb1n41pts73de2f1g` live. Next real exercise = Sun 2026-07-26 02:00 UTC sweep.
 - DB cleanup of `transparent_motivations.ingestion_runs`.
 - Donor search matview + ev_api role + finance indexes (separate incident, all shipped).
 
 ## Next steps (prioritized)
 
-### 0. VERIFY FEC fix (near-term, no code) — DO FIRST
-After a 6-hour `fec-ingest` cron fire (00/06/12/18:00 UTC), query prod:
-`SELECT status, count(*) FROM transparent_motivations.ingestion_runs WHERE started_at > now()-interval '7 hours' GROUP BY 1;`
-Expect failed-rate to drop sharply from ~65%. (Prod = Supabase project `kxsdzaojfaibhuzmclfq`.)
+### 0. VERIFY FEC fix — ✅ DONE 2026-07-23
+Confirmed working in prod after the fix went live (shipped with the Phase 173 Render deploy).
+Evidence (`transparent_motivations.ingestion_runs`, `kxsdzaojfaibhuzmclfq`):
+- Daily FEC failures: Jul 22 (pre-fix daytime) **3,410** → Jul 23 (post-fix, partial) **101**.
+- Hourly post-deploy: `07-23 06 UTC` cycle **0 failed**; last 12h only **~15** total failures.
+- **Error signature changed** = proof the new path is active: old `FEC candidate lookup failed: HTTP 429` (immediate throw) → new `FEC candidate lookup rate limited (429) after 5 retries` (retries + mostly recovers).
+- Residual tail (~15/12h) is the FEC-key ceiling — see item 1 below.
 
-### 1. Discovery-sweep / Anthropic cost control — the real "costing money" (HIGH)
-> **PLANNED 2026-07-22 → Phase 173** (workstream `2026-us-house-candidate-coverage`, milestone v2.24). 4 plans / 3 waves, RESEARCH+VALIDATION+plan-checker all PASSED. Reqs OPS-01..04. Execute with `/gsd-execute-phase 173`. Phase dir: `.planning/workstreams/2026-us-house-candidate-coverage/phases/173-discovery-sweep-anthropic-cost-reliability-hardening/`.
-Weekly Sun 02:00 (`discoverySweep.ts:21`) → `discoveryCron.ts` → `discoveryAgentRunner.ts`. Uses PAID Anthropic API (claude-sonnet-4-6 + server-side `web_search_20250305`) + Resend email, once per jurisdiction in `SWEEP_HORIZON_DAYS=180`. Failures: 144× "Anthropic credit balance too low", 45× key-not-configured, 21× "Claude did not invoke report_candidates".
-- Add a pre-flight Anthropic credit/spend guard; skip + alert if unavailable (avoid the credit-exhaustion failures).
-- Reduce the `withRetry` 3× retry on 429/transient (`discoveryCron.ts:34,86-110`) — it multiplies spend on flaky jurisdictions.
-- Handle the "did not invoke report_candidates" (end_turn) case gracefully (don't count as hard failure / don't burn a retry).
-- Confirm the weekly cadence + 180-day horizon are intended (cost scales with # jurisdictions).
-- Needs code + deploy.
+### 1. FEC 429 residual TAIL — drive to zero (NEW, MEDIUM) — successor to the backoff fix
+The per-request exp backoff (`d505c9ad`) recovers most 429s but **does not pace the batch**: backoff is independent per request, so the ~1k-source 6-hourly run can still collectively exceed the **shared ~1,000 req/hr FEC key** ceiling and a few requests exhaust all 5 retries. Two request sites: `resolveCommitteeIds` (candidate→committee lookup, `fecAdapter.ts:87`) + `fetchWithRetry` (Schedule A pages, `fecAdapter.ts:475`). Cron: `campaignFinanceCron.ts:27` `0 */6 * * *`.
+Proposed approach (compose, cheapest-first):
+- **(a) Cut request VOLUME — cache committee-ID resolution.** `resolveCommitteeIds` re-hits FEC for every source every 6h though committee IDs rarely change. Cache in DB/Redis (e.g. 30-day TTL) → roughly halves FEC calls per run. Highest ROI, lowest risk.
+- **(b) Honor server rate-limit signal.** On 429 read `Retry-After` / `X-RateLimit-*` headers and back off by the server-provided amount instead of blind exponential (both retry loops). Cheap; makes backoff accurate.
+- **(c) Global token-bucket limiter (the real pacing fix).** Gate ALL FEC fetches through one shared limiter targeting ~900/hr (margin under 1,000). Redis-backed so it holds across instances AND reflects the key being shared org-wide. Every fetch acquires a token first → aggregate never exceeds ceiling → tail → 0.
+- **(d) Ops lever (no code):** request a higher FEC rate limit / dedicated key from api.data.gov, or (cheap stopgap) drop `fec-ingest` 6h→daily (item 3) to cut burst volume 4×.
+- Verify after deploy: a full 6h cycle with **0** `failed` FEC rows.
+- GSD entry: `/gsd-plan-phase` (new phase in workstream `2026-us-house-candidate-coverage`) — (a)+(b)+(c) are a tight, testable code change; (d) is a parallel operator decision.
 
 ### 2. AWS Lambda/SQS path decision (MEDIUM — duplicate-work / double-spend risk)
 `runFecScheduledJob()` and `runAdapterForAll()` are wired to BOTH in-process node-cron AND `backend/src/lambda/{cron-campaign-finance,sqs-worker,cron-calibration}.ts`. No IaC in repo.
@@ -48,4 +53,4 @@ Weekly Sun 02:00 (`discoverySweep.ts:21`) → `discoveryCron.ts` → `discoveryA
 - Deferred: donor-name btree/trgm collation `REINDEX` + `ALTER DATABASE postgres REFRESH COLLATION VERSION` (low priority — donor search already fast via matview).
 
 ## Suggested GSD entry point
-Item 1 (discovery/Anthropic cost) is the highest-value code change → `/gsd-plan-phase` (or `/gsd-quick` if scoped tight). Items 2–3 are partly operator/infra decisions — clarify before planning. Item 0 is a quick verification, not a phase.
+Item 0 ✅ and old item 1 (discovery/Anthropic → Phase 173) ✅ both done. Highest-value remaining code change = **item 1 (FEC 429 residual tail)** → `/gsd-plan-phase` in workstream `2026-us-house-candidate-coverage`. Items 2–3 are partly operator/infra decisions — clarify before planning.
