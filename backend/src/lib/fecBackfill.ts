@@ -29,6 +29,7 @@ import {
   FEC_LOCK_KEY,
 } from './campaignFinanceScheduler.js';
 import type { PoliticianSource } from './campaignFinanceService.js';
+import { acquireFecSlot } from './fecRateLimiter.js';
 
 const PILOT_STATES = ['CA', 'IN'];
 const DEFAULT_FLOOR = 1980;
@@ -55,6 +56,11 @@ async function fetchCandidateCycles(candidateId: string, apiKey: string): Promis
   const url = `https://api.open.fec.gov/v1/candidates/?api_key=${apiKey}&candidate_id=${encodeURIComponent(candidateId)}&per_page=1`;
   let delay = 1000;
   for (let attempt = 0; attempt <= 3; attempt++) {
+    // FEC-03 (deviation — grep api.open.fec.gov turned up this 4th call site, missed
+    // by 174-RESEARCH.md's "three call sites" framing): gate every attempt behind
+    // the shared limiter so this backfill step can never itself contribute to the
+    // aggregate 429 tail, same as fecAdapter.ts/fecResearch.ts.
+    await acquireFecSlot();
     const resp = await fetch(url, { signal: AbortSignal.timeout(30_000) });
     if (resp.status === 429) {
       if (attempt === 3) throw new Error('429 after retries');
@@ -152,6 +158,8 @@ async function fetchCandidateTotals(candidateId: string, apiKey: string): Promis
   const url = `https://api.open.fec.gov/v1/candidate/${encodeURIComponent(candidateId)}/totals/?api_key=${apiKey}&per_page=100`;
   let delay = 1000;
   for (let attempt = 0; attempt <= 3; attempt++) {
+    // FEC-03 (deviation — see fetchCandidateCycles above): same limiter gate.
+    await acquireFecSlot();
     const resp = await fetch(url, { signal: AbortSignal.timeout(30_000) });
     if (resp.status === 429) {
       if (attempt === 3) throw new Error('429 after retries');

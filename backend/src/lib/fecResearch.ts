@@ -19,6 +19,7 @@
 
 import { pool } from './db.js';
 import { createSource } from './campaignFinanceService.js';
+import { acquireFecSlot } from './fecRateLimiter.js';
 
 const FEC_CANDIDATES_URL = 'https://api.open.fec.gov/v1/candidates/';
 const SLEEP_BETWEEN_SEARCHES_MS = 1500; // stay well under 1000 req/hr
@@ -188,6 +189,12 @@ export async function searchFecCandidates(
     per_page: '20',
   });
 
+  // FEC-03: this admin-triggered auto-match path shares the FEC key with the
+  // daily cron but not its distributed lock — without the shared limiter it
+  // can collide with a concurrent cron run and reintroduce the 429 tail
+  // (174-RESEARCH.md Pitfall 2). Acquire before every call, including the
+  // last-name fallback search in runFecAutoMatch.
+  await acquireFecSlot();
   const response = await fetch(`${FEC_CANDIDATES_URL}?${params.toString()}`, {
     signal: AbortSignal.timeout(30_000),
   });
