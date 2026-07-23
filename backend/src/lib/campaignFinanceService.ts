@@ -2142,9 +2142,11 @@ function modeConfidence(contributions: Array<{ confidence_level: string }>): str
 /**
  * searchDonors — public donor name search, cycle-agnostic.
  *
- * Normalizes the raw query via normalizeDonorName() before any SQL, uses
- * pg_trgm word_similarity with a GIN index for fuzzy, word-order-insensitive
- * matching, and returns results grouped by politician.
+ * Normalizes the raw query via normalizeDonorName() before any SQL, fuzzy-matches
+ * names against the distinct-donor-names matview (donor_names_search) with pg_trgm
+ * word_similarity + GIN, then aggregates the matched names' contributions grouped
+ * by politician. (Matching the matview, not the 26.9M-row contributions table, is
+ * what keeps common surnames fast — see the donor_matches CTE note below.)
  *
  * politician_source_id is NEVER exposed in any response field.
  */
@@ -2164,12 +2166,18 @@ export async function searchDonors(rawQuery: string): Promise<DonorSearchRespons
 
   const sql = `
     WITH donor_matches AS (
-      SELECT DISTINCT c.donor_name_normalized
-      FROM transparent_motivations.contributions c
-      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
-      WHERE c.donor_name_normalized operator(extensions.%>) $1
-        AND extensions.word_similarity($1, c.donor_name_normalized) >= ${threshold}
-        AND ps.research_status = 'confirmed'
+      -- Fuzzy-match against the distinct-donor-names matview
+      -- (transparent_motivations.donor_names_search), NOT the 26.9M-row contributions table.
+      -- A common surname like 'smith' is trigram-similar to ~231K contribution rows, so matching
+      -- there forced a word_similarity recheck over ~1M heap rows (~58s). The matview holds each
+      -- confirmed donor name once, so the recheck runs over distinct names and returns in well
+      -- under a second. ORDER BY similarity so the LIMIT 50 keeps the best matches (the old
+      -- unordered LIMIT picked an arbitrary 50). Matview is refreshed nightly (migration 1387).
+      SELECT dn.donor_name_normalized
+      FROM transparent_motivations.donor_names_search dn
+      WHERE dn.donor_name_normalized operator(extensions.%>) $1
+        AND extensions.word_similarity($1, dn.donor_name_normalized) >= ${threshold}
+      ORDER BY extensions.word_similarity($1, dn.donor_name_normalized) DESC
       LIMIT 50
     ),
     grouped AS (
