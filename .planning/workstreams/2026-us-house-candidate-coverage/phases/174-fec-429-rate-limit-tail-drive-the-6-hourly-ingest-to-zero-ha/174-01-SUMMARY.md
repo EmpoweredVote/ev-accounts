@@ -137,3 +137,12 @@ None - `acquireFecSlot()` is fully implemented and tested; no placeholder/hardco
 ---
 *Phase: 174-fec-429-rate-limit-tail-drive-the-6-hourly-ingest-to-zero-ha*
 *Completed: 2026-07-23*
+
+## Self-Check: PASSED
+
+- FOUND: backend/src/lib/fecRateLimiter.ts
+- FOUND: backend/src/lib/fecRateLimiter.test.ts
+- FOUND: 174-01-SUMMARY.md
+- FOUND commit: ea6455b9 (test)
+- FOUND commit: b34cbde0 (feat)
+- FOUND commit: 1d6437d5 (docs)
