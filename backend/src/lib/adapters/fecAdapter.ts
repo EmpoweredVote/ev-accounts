@@ -19,6 +19,7 @@ import { pool } from '../db.js';
 import type { SourceAdapter, StreamingAdapter, BatchSink, FetchResult, NormalizeResult, UpsertResult, ContributionInsert } from './adapterInterface.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
 import { normalizeDonorName } from './normalizeDonorName.js';
+import { buildCandidateCommitteeMap } from './fecBulkLoader.js';
 
 // Per-politician record cap — prevents timeout on high-volume candidates (e.g. CA House members).
 // At 100 records/page + 4s sleep, 2500 records ≈ 25 pages ≈ 100s — well under Redis lock TTL.
@@ -82,9 +83,22 @@ interface FecCandidateSearchResponse {
 /**
  * resolveCommitteeIds looks up the principal committee IDs for a given FEC candidate ID.
  * The FEC schedule_a endpoint filters by committee_id, not candidate_id.
- * Returns an empty array (with a warning) if the candidate is not found.
+ *
+ * FEC-01: bulk-first. The free bulk ccl{YY}.zip candidate->committee linkage
+ * (buildCandidateCommitteeMap, cached 7 days) is consulted first and, on a hit, this
+ * function returns with ZERO FEC API requests. The rate-limited candidates-search API
+ * call below only runs as the fallback on a bulk-map miss (new/stale candidate not yet
+ * in the bulk file) — and its result is never cached as authoritative, so a miss is
+ * re-checked on every call rather than being suppressed (Pitfall 3).
  */
-async function resolveCommitteeIds(candidateId: string, apiKey: string, maxRetries = 5): Promise<string[]> {
+async function resolveCommitteeIds(candidateId: string, cycle: string, apiKey: string, maxRetries = 5): Promise<string[]> {
+  const bulkMap = await buildCandidateCommitteeMap(cycle);
+  const bulkCommittees = bulkMap.get(candidateId);
+  if (bulkCommittees && bulkCommittees.length > 0) {
+    return bulkCommittees;
+  }
+
+  // Bulk-map miss — fall back to the FEC candidates-search API (unchanged backoff below).
   const url = `https://api.open.fec.gov/v1/candidates/search/?api_key=${apiKey}&candidate_id=${candidateId}`;
   // Same 429 / throttle-timeout exponential backoff as fetchWithRetry (the Schedule A path).
   // Previously this did a bare fetch and threw on the first 429 — with the shared 1,000 req/hr
@@ -238,6 +252,39 @@ async function recordWindowComplete(
 }
 
 /**
+ * getFecLoadCursor (FEC-02) returns a date-only (YYYY-MM-DD) watermark derived from the
+ * max started_at of prior successful ('completed'/'completed_with_warning') fec
+ * ingestion_runs rows for this (politician_source_id, election_cycle) pair, minus a
+ * 2-day safety lookback (absorbs load_date day-boundary/timezone drift and FEC's nightly
+ * ~03:05 UTC batch-load timing — 174-RESEARCH-amendments.md A3). Returns null when no
+ * prior successful run exists, so the caller falls back to the existing whole-cycle
+ * (initial-backfill) path. Reuses the existing ingestion_runs table — no new schema.
+ *
+ * The row this same call is part of is inserted with status='running' by runIngestion.ts
+ * BEFORE fetchStream is invoked, so it is correctly excluded by the status filter here —
+ * only a PRIOR run's watermark is ever read.
+ */
+async function getFecLoadCursor(psId: string, cycle: string): Promise<string | null> {
+  const res = await pool.query<{ started_at: string | Date | null }>(
+    `SELECT max(started_at) AS started_at
+     FROM transparent_motivations.ingestion_runs
+     WHERE adapter_name = 'fec'
+       AND politician_source_id = $1
+       AND election_cycle = $2
+       AND status IN ('completed', 'completed_with_warning')`,
+    [psId, cycle]
+  );
+  const startedAt = res.rows[0]?.started_at;
+  if (!startedAt) return null;
+  const d = new Date(startedAt);
+  if (isNaN(d.getTime())) return null;
+  d.setUTCDate(d.getUTCDate() - 2);
+  // Date-only — min_load_date is date-only granularity; a timestamp is 422-rejected
+  // (174-RESEARCH-amendments.md point 1).
+  return d.toISOString().slice(0, 10);
+}
+
+/**
  * streamPagesForWindow keyset-paginates one committee's Schedule A within an optional
  * [minDate, maxDate] window (null,null = whole cycle) and hands each page to onBatch
  * as it arrives — so records are persisted incrementally, not buffered to end-of-pair.
@@ -247,6 +294,10 @@ async function recordWindowComplete(
  * recorded complete is skipped (its rows are already in the DB) and its recorded count
  * is added to the shared counter so the completeness ratio stays correct. A window that
  * finishes cleanly (not capped) is recorded complete for future resumes.
+ *
+ * minLoadDate (FEC-02): when non-null, sets min_load_date on the request so a normal
+ * run fetches only rows loaded (incl. amended/re-loaded) since the cursor, instead of
+ * re-pulling the whole cycle. Always date-only. null = unchanged whole-cycle behavior.
  *
  * Throws FecQueryTooLargeError if FEC 504s / persistently times out on this window.
  */
@@ -258,6 +309,7 @@ async function streamPagesForWindow(
   counter: StreamCounter,
   minDate: string | null,
   maxDate: string | null,
+  minLoadDate: string | null,
   progress: WindowProgress | null,
   signal?: AbortSignal
 ): Promise<number> {
@@ -288,6 +340,7 @@ async function streamPagesForWindow(
     });
     if (minDate) params.set('min_date', minDate);
     if (maxDate) params.set('max_date', maxDate);
+    if (minLoadDate) params.set('min_load_date', minLoadDate);
 
     // Forward every cursor key FEC handed back (keys match the active sort), so
     // pagination is correct regardless of FEC_SORT.
@@ -366,12 +419,13 @@ async function streamWindowAdaptive(
   counter: StreamCounter,
   minDate: string,
   maxDate: string,
+  minLoadDate: string | null,
   depth: number,
   progress: WindowProgress | null,
   signal?: AbortSignal
 ): Promise<number> {
   try {
-    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, minDate, maxDate, progress, signal);
+    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, minDate, maxDate, minLoadDate, progress, signal);
   } catch (err) {
     if (!isTooLarge(err) || depth >= MAX_WINDOW_SUBDIVISION_DEPTH || minDate === maxDate) {
       throw err;
@@ -382,7 +436,7 @@ async function streamWindowAdaptive(
     let total = 0;
     for (const [ws, we] of splitRange(minDate, maxDate, 2)) {
       if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN || signal?.aborted) break;
-      total += await streamWindowAdaptive(committeeId, cycle, apiKey, onBatch, counter, ws, we, depth + 1, progress, signal);
+      total += await streamWindowAdaptive(committeeId, cycle, apiKey, onBatch, counter, ws, we, minLoadDate, depth + 1, progress, signal);
     }
     return total;
   }
@@ -390,11 +444,14 @@ async function streamWindowAdaptive(
 
 /**
  * streamAllPagesForCommittee streams all Schedule A pages for a single committee_id.
- * Fast path: one whole-cycle keyset-paginated pull (unchanged for normal filers —
- * a single window, streamed page-by-page). Fallback: if FEC 504s / persistently
- * times out (mega-committee too large to compute in one query), fall back to quarter
- * date windows, subdividing to months on any window that is itself too large. Dedup
- * via ON CONFLICT (sub_id) makes the (rare) window-boundary re-fetch harmless.
+ * Fast path: one whole-cycle (or, when minLoadDate is set, incremental-since-cursor)
+ * keyset-paginated pull — a single window, streamed page-by-page. Fallback: if FEC
+ * 504s / persistently times out (mega-committee too large to compute in one query),
+ * fall back to quarter date windows, subdividing to months on any window that is
+ * itself too large. Dedup via ON CONFLICT (sub_id) makes the (rare) window-boundary
+ * re-fetch harmless. minLoadDate (FEC-02) threads through both the fast path and the
+ * windowed fallback so an incremental refresh never silently reverts to whole-cycle
+ * volume even on a mega-committee.
  */
 async function streamAllPagesForCommittee(
   committeeId: string,
@@ -402,13 +459,15 @@ async function streamAllPagesForCommittee(
   apiKey: string,
   onBatch: BatchSink,
   counter: StreamCounter,
+  minLoadDate: string | null,
   progress: WindowProgress | null,
   signal?: AbortSignal
 ): Promise<number> {
-  // Fast path — whole cycle in one query. Common case; no window progress tracking
-  // (a whole-cycle window that completes means the pair is done anyway).
+  // Fast path — whole cycle (or incremental-since-cursor) in one query. Common case;
+  // no window progress tracking (a whole-cycle window that completes means the pair
+  // is done anyway).
   try {
-    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, null, null, null, signal);
+    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, null, null, minLoadDate, null, signal);
   } catch (err) {
     if (!isTooLarge(err)) throw err;
     console.warn(
@@ -421,7 +480,7 @@ async function streamAllPagesForCommittee(
   let totalExpected = 0;
   for (const [ws, we] of splitRange(cycleStart, cycleEnd, 8)) {
     if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN || signal?.aborted) break;
-    totalExpected += await streamWindowAdaptive(committeeId, cycle, apiKey, onBatch, counter, ws, we, 0, progress, signal);
+    totalExpected += await streamWindowAdaptive(committeeId, cycle, apiKey, onBatch, counter, ws, we, minLoadDate, 0, progress, signal);
   }
   return totalExpected;
 }
@@ -448,9 +507,17 @@ async function streamAllPages(
     console.warn('[fecAdapter] FEC_API_KEY environment variable is not set — fetches will fail');
   }
 
-  const committeeIds = await resolveCommitteeIds(candidateId, apiKey ?? '');
+  const committeeIds = await resolveCommitteeIds(candidateId, cycle, apiKey ?? '');
   if (committeeIds.length === 0) {
     return { totalExpected: 0, totalFetched: 0 };
+  }
+
+  // FEC-02: compute the incremental cursor once per (candidate, cycle) — a single
+  // watermark shared across every committee in this pair, not re-derived per committee.
+  // null (no prior successful run) leaves the whole-cycle initial-backfill path unchanged.
+  const minLoadDate = await getFecLoadCursor(psId, cycle);
+  if (minLoadDate) {
+    console.log(`[fecAdapter] incremental refresh for candidate ${candidateId} cycle ${cycle}: min_load_date=${minLoadDate}`);
   }
 
   const counter: StreamCounter = { fetched: 0 };
@@ -461,7 +528,7 @@ async function streamAllPages(
     console.log(`[fecAdapter] Fetching committee ${committeeId} for candidate ${candidateId} cycle ${cycle}`);
     // Load prior completed windows for this committee so a resumed run skips them.
     const progress: WindowProgress = { psId, completed: await getCompletedWindows(psId, cycle, committeeId) };
-    const count = await streamAllPagesForCommittee(committeeId, cycle, apiKey ?? '', onBatch, counter, progress, signal);
+    const count = await streamAllPagesForCommittee(committeeId, cycle, apiKey ?? '', onBatch, counter, minLoadDate, progress, signal);
     totalExpected += count;
   }
 

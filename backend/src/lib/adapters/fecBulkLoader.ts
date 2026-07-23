@@ -26,6 +26,7 @@ import { pool } from '../db.js';
 import { upsertContributions } from './fecAdapter.js';
 import { normalizeDonorName } from './normalizeDonorName.js';
 import { refreshSummaryAggForSource, getConfirmedFecSources } from '../campaignFinanceService.js';
+import { cache } from '../cache.js';
 import type { ContributionInsert } from './adapterInterface.js';
 
 export interface BulkLoadOptions {
@@ -119,6 +120,45 @@ async function buildCommitteeMap(cycle: string, yy: string, opts: BulkLoadOption
   }
   console.log(`[bulk] ccl${yy}: ${cclRows.toLocaleString()} rows → ${cmteToSource.size} committees for ${new Set(cmteToSource.values()).size} of our sources (designation=${opts.designation ?? 'P'})`);
   return cmteToSource;
+}
+
+/** Cache TTL for the CAND_ID -> committee[] map — committee linkages are near-static
+ *  within a cycle, so a week-old map is still correct almost all of the time. */
+const CAND_CMTE_MAP_TTL_SECONDS = 60 * 60 * 24 * 7;
+
+/**
+ * buildCandidateCommitteeMap builds CAND_ID -> principal (DSGN='P') committee IDs from the
+ * free bulk ccl{YY}.zip linkage file (FEC-01) — resolving committees without a rate-limited
+ * FEC candidates-search API call. Cached via cache.ts for 7 days per cycle; a cache hit
+ * returns without re-streaming. An empty map is NEVER cached (Pitfall 3 — a newly-filing
+ * candidate absent from the bulk map must be re-checked next run, not suppressed for the TTL).
+ */
+export async function buildCandidateCommitteeMap(cycle: string): Promise<Map<string, string[]>> {
+  const cacheKey = `fec:ccl-cmte-map:${cycle}`;
+  const cached = await cache.get<[string, string[]][]>(cacheKey);
+  if (cached) {
+    return new Map(cached);
+  }
+
+  const yy = cycle.slice(-2);
+  const map = new Map<string, string[]>();
+  for await (const c of streamZipLines(`${BULK_BASE}/${cycle}/ccl${yy}.zip`)) {
+    const candId = c[C_CAND];
+    const cmteId = c[C_CMTE];
+    if (!candId || !cmteId) continue;
+    if (c[C_DSGN] !== 'P') continue;
+    const existing = map.get(candId);
+    if (existing) existing.push(cmteId);
+    else map.set(candId, [cmteId]);
+  }
+
+  // Never cache an empty map — a bulk-fetch/parse hiccup must not suppress every
+  // candidate's committee lookup for the full 7-day TTL (Pitfall 3).
+  if (map.size > 0) {
+    await cache.set(cacheKey, [...map.entries()], CAND_CMTE_MAP_TTL_SECONDS);
+  }
+
+  return map;
 }
 
 /** After a real load, record a `fec` ingestion_run per touched pair so the truncation
