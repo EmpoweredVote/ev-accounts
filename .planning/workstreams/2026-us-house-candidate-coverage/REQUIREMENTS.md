@@ -38,6 +38,28 @@
 
 ---
 
+## v2.24 Requirements — Backend Reliability (Discovery-Sweep Cost Hardening, Phase 173)
+
+Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followups.md` item 1). Pure-backend; no schema, no data.
+
+### Anthropic Preflight
+
+- [ ] **OPS-01**: Before the weekly discovery sweep spends any paid Anthropic call, it verifies the `ANTHROPIC_API_KEY` is configured AND the account has usable credit; if either is unavailable it aborts the sweep (does not iterate jurisdictions) and emits exactly one operator alert — eliminating the per-jurisdiction "Anthropic credit balance too low" (144×) and key-not-configured (45×) failure floods.
+
+### Retry-Spend Reduction
+
+- [ ] **OPS-02**: The discovery cron's `withRetry` no longer retries non-retryable Anthropic errors (credit-exhausted, insufficient-quota, auth/401/403); retries remain only for genuinely transient network faults — so one failing jurisdiction can no longer multiply the paid-call count 3×.
+
+### Graceful No-Report
+
+- [ ] **OPS-03**: A model turn that ends without invoking `report_candidates` is treated as a clean zero-candidate result for that jurisdiction (logged/counted as zero-found, not thrown as a hard failure, not retried) — eliminating the 21× "Claude did not invoke report_candidates" hard-error path for this benign case.
+
+### Cadence Confirmation
+
+- [ ] **OPS-04**: The weekly Sunday-02:00 UTC cadence and `SWEEP_HORIZON_DAYS=180` are confirmed intended (or adjusted per operator decision) and documented in code so cost-scaling-with-jurisdiction-count is a deliberate, visible choice.
+
+---
+
 ## Future Requirements (deferred)
 
 - [ ] Challenger FEC finance summaries (`finance_summary`) for newly-seeded candidates — reuse the existing FEC ingestion + name-match queue (→ v2.23+).

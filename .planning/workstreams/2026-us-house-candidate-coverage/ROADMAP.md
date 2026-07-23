@@ -35,6 +35,7 @@
 - ✅ **v2.20 2026 US House Candidate Coverage (Wave 1)** — Phases 148–152 (shipped 2026-06-30; CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active candidates, federal-24 stances [0 unsourced], 0 dup-incumbent; consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward — time-gated ≥ 2026-08-18)
 - 🔄 **v2.21 2026 US House Candidate Coverage (Wave 2)** — Phases 154–159 (Waves 1-2 complete 2026-07-02; PA 17 / IL 17 / OH 15 / GA 14 / NC 14 / NJ 12 = 89 decided districts [Phase 158 gate ✅] + MI 13 & VA 11 = 24 districts seeded + stanced [Waves 1-2 ✅] = 113 districts; USHC2-01..05 closed, USHC2-06 partial — 159-05/06 post-primary cull + gate date-gated ≥ 2026-08-05)
 - 🔄 **v2.22 2026 US House Candidate Coverage (Wave 3 — National Completion)** — Phases 160–167 (planning 2026-07-03; the final 38 states / 178 districts — WA 10 / AZ 9 / TN 9 / MA 9 / IN 9 / MD 8 / MN 8 / MO 8 / WI 8 / CO 8 / AL 7 / SC 7 / LA 6 / KY 6 / OR 6 / CT 5 / OK 5 / AR 4 / IA 4 / KS 4 / MS 4 / NV 4 / UT 4 / NM 3 / NE 3 / WV 2 / ID 2 / HI 2 / ME 2 / NH 2 / RI 2 / MT 2 / AK 1 / DE 1 / ND 1 / SD 1 / VT 1 / WY 1 — completes all 435 US House districts; USHC3-01..07)
+- 🔄 **v2.24 Backend Reliability — Discovery-Sweep Cost Hardening** — Phase 173 (planning 2026-07-23; cron-audit follow-up item 1 — Anthropic credit/key preflight, retry-spend reduction, graceful "no candidates reported" handling, and cadence confirmation on the weekly candidate-discovery sweep; OPS-01..04)
 
 ## Phases
 
@@ -394,6 +395,31 @@ Plans:
 | 165. Small-Delegation States Candidate Seeding (17 states) | 0/17 | Not started | - |
 | 166. Consolidated Verification Gate | 0/? | Not started | - |
 | 167. Post-Primary Reconciliation (date-gated, Aug–Sep 2026) | 0/? | Not started | - |
+
+---
+
+### v2.24 Backend Reliability — Discovery-Sweep Cost Hardening — Phase 173 🔄 ACTIVE
+
+**Milestone goal:** The weekly candidate-discovery sweep can no longer silently burn paid Anthropic credit or flood the logs with avoidable hard failures. It pre-flights that the Anthropic API is usable before spending, stops multiplying spend on non-retryable errors, treats a benign "no candidates reported" model turn as a clean zero-result, and makes its cadence/horizon a documented, deliberate cost choice.
+
+**Context:** Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followups.md` item 1). The sweep (`backend/src/cron/discoverySweep.ts` → `lib/discoveryCron.ts` → `discoveryService.ts` → `discoveryAgentRunner.ts`) fires Sunday 02:00 UTC, once per jurisdiction with an election within `SWEEP_HORIZON_DAYS=180`, using the PAID Anthropic API (`claude-sonnet-4-6` + server-side `web_search_20250305`) + Resend email. Observed failure floods: 144× "Anthropic credit balance too low", 45× key-not-configured, 21× "Claude did not invoke report_candidates". Pure-backend change — no schema, no data.
+
+#### Phase 173: Discovery-Sweep Anthropic Cost & Reliability Hardening
+
+**Goal:** A weekly discovery sweep run that hits an unusable Anthropic API (missing key or exhausted credit) skips cleanly with a single operator alert instead of attempting — and failing — one paid call per jurisdiction; non-retryable Anthropic errors (credit/quota/auth) no longer trigger the 3× `withRetry` spend multiplier; a model turn that ends without calling `report_candidates` is recorded as a zero-candidate result rather than a hard failure that burns retries; and the Sunday-02:00 / 180-day cost envelope is confirmed and documented.
+
+**Depends on:** Nothing (isolated backend change to the discovery cron path; no schema change, no data change).
+
+**Requirements:** OPS-01, OPS-02, OPS-03, OPS-04
+
+**Success Criteria** (what must be TRUE):
+
+  1. Before the sweep spends any paid Anthropic call, it verifies the API key is configured AND the account has usable credit; if either is unavailable it aborts the sweep (does not iterate jurisdictions) and sends exactly one operator alert — reproducing the failure state no longer produces per-jurisdiction "credit balance too low" / key-not-configured floods in `ingestion_runs`/logs.
+  2. A non-retryable Anthropic API error (credit-exhausted, insufficient-quota, auth/401/403) is NOT retried by the discovery cron's `withRetry` — retries (if any remain) are reserved for genuinely transient network faults — so one failing jurisdiction can no longer triple the paid-call count.
+  3. A model response that ends its turn without invoking `report_candidates` is treated as a clean zero-candidate outcome for that jurisdiction (logged/counted as zero-found, not thrown as a hard failure and not retried); the "Claude did not invoke report_candidates" hard-error path no longer fires for this benign case.
+  4. The weekly Sunday-02:00 UTC cadence and `SWEEP_HORIZON_DAYS=180` are confirmed intended (or adjusted per operator decision) and documented in code so the cost-scales-with-jurisdiction-count behavior is a deliberate, visible choice; change is deployed to the Render backend.
+
+**Plans:** TBD
 
 ---
 
