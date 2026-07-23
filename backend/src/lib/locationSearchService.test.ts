@@ -17,7 +17,7 @@ vi.mock('./essentialsBrowseService.js', () => ({
 }));
 
 import { pool } from './db.js';
-import { searchPlaceNames, LocationSearchQueryTooShortError } from './locationSearchService.js';
+import { searchPlaceNames, LocationSearchQueryTooShortError, cleanPlaceName } from './locationSearchService.js';
 
 const read = (rel: string) => fs.readFileSync(path.resolve(__dirname, rel), 'utf-8');
 const SOURCE = read('./locationSearchService.ts');
@@ -177,7 +177,9 @@ describe('searchPlaceNames', () => {
       rows: [
         row({
           geo_id: '1805860',
-          name: 'City of Bloomington',
+          // Real production governments.name shape — carries the redundant
+          // "City of …, Indiana, US" qualifiers that must NOT leak into the label.
+          name: 'City of Bloomington, Indiana, US',
           mtfcc: 'G4110',
           gov_state: 'IN',
           gov_type: 'City',
@@ -195,6 +197,8 @@ describe('searchPlaceNames', () => {
     expect(results[0].geo_id).not.toBeNull();
     expect(results[0].has_local_data).toBe(true);
     expect(results[0].state).toBe('IN');
+    // Label is the bare place string — no "City of", no ", Indiana, US".
+    expect(results[0].label).toBe('Bloomington, IN · City');
   });
 
   it('passes only the effective query and limit as parameterized values', async () => {
@@ -209,6 +213,54 @@ describe('searchPlaceNames', () => {
     await searchPlaceNames('IL', 10);
     const [, params] = vi.mocked(pool.query).mock.calls[0];
     expect(params![0]).toBe('Illinois');
+  });
+});
+
+describe('cleanPlaceName (D-05 bare-label normalization, 2026-07-23)', () => {
+  it('strips a leading "City of" and a trailing ", {state}, US" (curated government name)', () => {
+    expect(cleanPlaceName('City of Bloomington, Indiana, US')).toBe('Bloomington');
+    expect(cleanPlaceName('City of Falls Church, Virginia, US')).toBe('Falls Church');
+  });
+
+  it('keeps County / Township / Unified suffixes (only leading civic designators are dropped)', () => {
+    expect(cleanPlaceName('Morgan County, Indiana, US')).toBe('Morgan County');
+    expect(cleanPlaceName('Bloomington Township, Indiana, US')).toBe('Bloomington Township');
+    expect(cleanPlaceName('Pomona Unified, California, US')).toBe('Pomona Unified');
+  });
+
+  it('strips a trailing lowercase Census type token (gazetteer name)', () => {
+    expect(cleanPlaceName('Bloomington city')).toBe('Bloomington');
+    expect(cleanPlaceName('Baltimore city')).toBe('Baltimore');
+    expect(cleanPlaceName('Paradise Valley town')).toBe('Paradise Valley');
+    expect(cleanPlaceName('Bloomington CDP')).toBe('Bloomington');
+  });
+
+  it('never over-strips a mid-name capitalized "City" (Kansas City guard)', () => {
+    expect(cleanPlaceName('Kansas City city')).toBe('Kansas City');
+    expect(cleanPlaceName('Kansas City')).toBe('Kansas City');
+  });
+
+  it('leaves an already-bare name and a full state name untouched', () => {
+    expect(cleanPlaceName('Springfield')).toBe('Springfield');
+    expect(cleanPlaceName('Illinois')).toBe('Illinois');
+  });
+});
+
+describe('label uses the bare place string end-to-end', () => {
+  beforeEach(() => {
+    vi.mocked(pool.query).mockReset();
+  });
+
+  it('a verbose curated name and a Census gazetteer twin both resolve to a clean "Name, ST · Type" label', async () => {
+    vi.mocked(pool.query).mockResolvedValueOnce({
+      rows: [
+        row({ geo_id: '2404000', name: 'Baltimore city', mtfcc: 'G4110', gov_state: 'MD', gov_type: 'City', has_local_data: false, sim: 0.9 }),
+        row({ geo_id: '24005', name: 'Baltimore County, Maryland, US', mtfcc: 'G4020', gov_state: 'MD', gov_type: 'County', has_local_data: true, sim: 0.85 }),
+      ],
+    } as never);
+
+    const results = await searchPlaceNames('Baltimore', 10);
+    expect(results.map((r) => r.label)).toEqual(['Baltimore, MD · City', 'Baltimore County, MD · County']);
   });
 });
 

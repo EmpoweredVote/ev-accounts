@@ -13,7 +13,10 @@
  * canonical pattern this mirrors).
  *
  * Guarantees (see 212-CONTEXT.md D-05/D-06/D-07, 212-RESEARCH.md Pitfall 3):
- *   - D-05 label format: "Name, ST · <City|County|State>".
+ *   - D-05 label format: "Name, ST · <City|County|State>", where Name is the
+ *     bare place string (cleanPlaceName strips the source tables' redundant
+ *     "City of …", ", {state}, US", and Census " city"/" CDP" qualifiers so the
+ *     label reads "Bloomington, IN", not "City of Bloomington, Indiana, US, IN").
  *   - D-06 ranking: curated rows (source_boost=1) outrank Gazetteer-only rows
  *     (source_boost=0); ties broken by trigram similarity, then exact-match,
  *     then name A→Z (amended 2026-07-20 — no population column exists in any
@@ -129,10 +132,34 @@ function deriveAreaType(mtfcc: string | null, govType: string | null): string {
   return 'City';
 }
 
+/**
+ * Normalize a raw source name to the bare place string (D-05, amended
+ * 2026-07-23). Both source tables over-qualify the name with text that the
+ * label's own ", {ST}" and the combobox/header type pill already convey:
+ *   - curated governments.name: "City of Bloomington, Indiana, US"
+ *   - gazetteer name:           "Bloomington city" / "Baltimore city" / "Paradise Valley town"
+ * so the label used to read "City of Bloomington, Indiana, US, IN". Strip, in
+ * order: a trailing ", {state-full}, US"; a leading civic designator
+ * ("City of "/"Town of "/"Village of "/"Borough of "); and a single trailing
+ * lowercase Census type token (" city"/" town"/" village"/" borough"/
+ * " municipality"/" CDP"). County / Township / Unified suffixes and mid-name
+ * capitals (e.g. "Kansas City city" -> "Kansas City", never "Kansas") are
+ * preserved. Falls back to the trimmed original if a rule would empty it.
+ */
+export function cleanPlaceName(name: string): string {
+  if (!name) return name;
+  let base = name.trim();
+  base = base.replace(/,\s*[^,]+,\s*US\s*$/i, '');
+  base = base.replace(/^(?:City|Town|Village|Borough)\s+of\s+/i, '');
+  base = base.replace(/\s+(?:city|town|village|borough|municipality|CDP)$/, '');
+  return base.trim() || name.trim();
+}
+
 /** D-05 label format: "Name, ST · Type" — State rows omit the redundant ", ST" (e.g. "Illinois · State"). */
 function buildLabel(name: string, stateAbbrev: string, areaType: string): string {
-  if (areaType === 'State') return `${name} · State`;
-  return `${name}, ${stateAbbrev} · ${areaType}`;
+  const clean = cleanPlaceName(name);
+  if (areaType === 'State') return `${clean} · State`;
+  return `${clean}, ${stateAbbrev} · ${areaType}`;
 }
 
 function mapRow(row: LocationSearchRow): PlaceCandidate {
