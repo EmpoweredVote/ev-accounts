@@ -454,7 +454,21 @@ Plans:
   3. Every outbound FEC HTTP request acquires from one shared rate limiter (Redis token-bucket, in-process fallback) budgeted under the ~1,000 req/hr key ceiling with margin, so a full ingest cycle's aggregate request rate cannot exceed the ceiling regardless of source count (FEC-03).
   4. After deploy, a full 6-hour `fec-ingest` cycle is verified (read-only query) to complete with zero `status='failed'` 429 rows; and the request-budget/cadence choice plus the FEC-key-upgrade decision are evaluated and documented (FEC-04).
 
-**Plans:** TBD (populated by `/gsd-plan-phase 174`)
+**Plans:** 4 plans (3 waves)
+
+Plans:
+**Wave 1** *(no deps — standalone limiter module)*
+
+- [ ] 174-01-PLAN.md — NEW `fecRateLimiter.ts` `acquireFecSlot()` per-minute fixed-window limiter (Redis + in-process degrade) + `FEC_RATE_LIMIT_PER_MINUTE` env var + unit test (FEC-03 core)
+
+**Wave 2** *(parallel — disjoint files; both depend on 174-01 for the limiter import)*
+
+- [ ] 174-02-PLAN.md — `fecAdapter.ts`: committee-ID cache via `cache.ts` 30-day TTL (FEC-01) + `Retry-After`/`X-RateLimit-Remaining` clamped backoff (FEC-02) + `acquireFecSlot()` gate at both call sites (FEC-03) + first adapter unit test
+- [ ] 174-03-PLAN.md — `fecResearch.ts`: gate the third FEC call site (`searchFecCandidates`) on `acquireFecSlot()` + unit test (FEC-03)
+
+**Wave 3** *(depends on 174-02 + 174-03 — all code landed)*
+
+- [ ] 174-04-PLAN.md — full-suite gate + `tsc` + Render deploy + `174-FEC04-DECISION.md` (budget/cadence + FEC-key-upgrade + read-only zero-429 verification query) (FEC-04)
 
 ---
 
