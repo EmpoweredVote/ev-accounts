@@ -458,8 +458,8 @@ Plans:
 **Plans:** 5 plans, 4 waves (planned 2026-07-23 — incremental `min_load_date` redesign + daily cadence + supersession correctness; supersedes the initial pacing-only plan set).
 **Wave 1**
 
-- [ ] 174-01-PLAN.md — Shared FEC rate limiter module (acquireFecSlot, Redis fixed-window + in-process degrade) [FEC-03] (Wave 1)
-- [ ] 174-02-PLAN.md — Root volume cut: bulk `ccl` committee resolution + incremental `min_load_date` cursor [FEC-01, FEC-02] (Wave 1)
+- [x] 174-01-PLAN.md — Shared FEC rate limiter module (acquireFecSlot, Redis fixed-window + in-process degrade) [FEC-03] (Wave 1)
+- [x] 174-02-PLAN.md — Root volume cut: bulk `ccl` committee resolution + incremental `min_load_date` cursor [FEC-01, FEC-02] (Wave 1)
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
