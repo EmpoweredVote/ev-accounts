@@ -21,6 +21,7 @@
  *   - Sweep-summary email: sent ONCE at sweep end when at least one outcome list is non-empty
  */
 
+import Anthropic from '@anthropic-ai/sdk';
 import { pool } from './db.js';
 import { runDiscoveryForJurisdiction } from './discoveryService.js';
 import { sendEmail } from './emailService.js';
@@ -83,21 +84,37 @@ export function isRunLockHeld(): boolean {
 // Retry helpers
 // ---------------------------------------------------------------------------
 
-function isTransient(err: unknown): boolean {
+/**
+ * isRetryable — typed classification replacing the old message-regex isTransient().
+ *
+ * Anthropic.APIError instances are classified by their typed `.status`:
+ *   - 401 (auth), 402 (billing), 403 (permission) — NEVER retryable. Retrying spends
+ *     money on a call guaranteed to fail identically (OPS-02).
+ *   - 429 (rate limit) or >=500 (server error) — retryable (existing backoff).
+ *   - Any other 4xx (400/404/409/422/etc.) — not transient, a retry fails identically.
+ * Non-APIError errors (DB connection, fetchPageContent, etc.) fall back to the
+ * existing network-fault message regex — unchanged from the prior isTransient().
+ */
+export function isRetryable(err: unknown): boolean {
+  if (err instanceof Anthropic.APIError) {
+    if (err.status === 401 || err.status === 402 || err.status === 403) return false;
+    if (err.status === 429 || (typeof err.status === 'number' && err.status >= 500)) return true;
+    return false;
+  }
   const msg = err instanceof Error ? err.message : String(err);
-  return /\b429\b|\b5\d\d\b|ECONNRESET|ETIMEDOUT|ENOTFOUND|fetch failed|rate.?limit/i.test(msg);
+  return /ECONNRESET|ETIMEDOUT|ENOTFOUND|fetch failed/i.test(msg);
 }
 
 const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
-async function withRetry<T>(fn: () => Promise<T>, label: string): Promise<T> {
+export async function withRetry<T>(fn: () => Promise<T>, label: string): Promise<T> {
   let lastErr: unknown;
   for (let attempt = 0; attempt <= RETRY_DELAYS_MS.length; attempt++) {
     try {
       return await fn();
     } catch (err) {
       lastErr = err;
-      if (attempt < RETRY_DELAYS_MS.length && isTransient(err)) {
+      if (attempt < RETRY_DELAYS_MS.length && isRetryable(err)) {
         const delay = RETRY_DELAYS_MS[attempt];
         console.warn(`[discoveryCron] ${label}: transient error, retrying in ${delay}ms`, err);
         await sleep(delay);
