@@ -3,18 +3,18 @@ gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage
 current_phase: 174
-current_phase_name: fec-429-rate-limit-tail-drive-the-6-hourly-ingest-to-zero-ha
-status: executing
+status: completed
 stopped_at: Completed 174-05-PLAN.md — Phase 174 all 5 plans done (FEC-05 decision doc; deploy HELD pending operator go-ahead)
-last_updated: "2026-07-23T20:24:37.489Z"
+last_updated: "2026-07-23T20:27:00.852Z"
 last_activity: 2026-07-23
-last_activity_desc: 174-05 complete (full suite + tsc green; FEC-05 decision doc locks daily cadence + no-key-upgrade; deploy HELD)
+last_activity_desc: Phase 174 complete
 progress:
   total_phases: 10
   completed_phases: 7
   total_plans: 81
   completed_plans: 80
   percent: 70
+current_phase_name: fec-429-rate-limit-tail-drive-the-6-hourly-ingest-to-zero-ha
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
@@ -33,10 +33,10 @@ See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 ## Current Position
 
-Phase: 174 (fec-429-rate-limit-tail-drive-the-6-hourly-ingest-to-zero-ha) — ALL 5 PLANS COMPLETE (FEC-01..05 closed); Render deploy HELD pending operator go-ahead
-Plan: 5 of 5 complete (174-01/174-02 Wave 1, 174-03 Wave 2, 174-04 Wave 3, 174-05 Wave 4 — FEC-01/02/03/04/05 all closed)
-Status: Phase 174 code+decision work done. Awaiting operator: run the deploy command in 174-FEC05-DECISION.md §5, then the ~25h zero-429 verification query in §4.
-Last activity: 2026-07-23 — 174-05 complete (full suite + tsc green; FEC-05 decision doc locks daily cadence + no-key-upgrade; deploy HELD)
+Phase: 174
+Plan: Not started
+Status: All phases complete
+Last activity: 2026-07-23 — Phase 174 complete
 
 ## v2.22 Phase Dependencies
 
