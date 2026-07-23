@@ -455,7 +455,13 @@ Plans:
   4. An incremental row with a populated `original_sub_id` retires the superseded row (no double-count); the dead `is_amended` skip check is removed; the `original_sub_id` linkage is confirmed by one targeted live query before the retirement logic is finalized (FEC-04).
   5. After deploy, a full **daily** `fec-ingest` cycle is verified (read-only query) to complete with zero `status='failed'` 429 rows; the daily-cadence decision is documented and records that no FEC-key upgrade is required (FEC-05).
 
-**Plans:** to be re-planned by `/gsd-plan-phase` (scope revised 2026-07-23 after live-API amendment research — incremental `min_load_date` redesign + daily cadence + supersession correctness; supersedes the initial pacing-only plan set).
+**Plans:** 5 plans, 4 waves (planned 2026-07-23 — incremental `min_load_date` redesign + daily cadence + supersession correctness; supersedes the initial pacing-only plan set).
+
+- [ ] 174-01-PLAN.md — Shared FEC rate limiter module (acquireFecSlot, Redis fixed-window + in-process degrade) [FEC-03] (Wave 1)
+- [ ] 174-02-PLAN.md — Root volume cut: bulk `ccl` committee resolution + incremental `min_load_date` cursor [FEC-01, FEC-02] (Wave 1)
+- [ ] 174-03-PLAN.md — Backstop wiring: limiter + Retry-After backoff across all 3 sites + daily cron cadence [FEC-03] (Wave 2)
+- [ ] 174-04-PLAN.md — Amendment supersession correctness (original_sub_id retirement), gated by 1 live-confirm checkpoint [FEC-04] (Wave 3)
+- [ ] 174-05-PLAN.md — Terminal: full suite + tsc + Render deploy + FEC-05 decision doc [FEC-05] (Wave 4)
 
 ---
 
