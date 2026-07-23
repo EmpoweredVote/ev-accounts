@@ -419,7 +419,18 @@ Plans:
   3. A model response that ends its turn without invoking `report_candidates` is treated as a clean zero-candidate outcome for that jurisdiction (logged/counted as zero-found, not thrown as a hard failure and not retried); the "Claude did not invoke report_candidates" hard-error path no longer fires for this benign case.
   4. The weekly Sunday-02:00 UTC cadence and `SWEEP_HORIZON_DAYS=180` are confirmed intended (or adjusted per operator decision) and documented in code so the cost-scales-with-jurisdiction-count behavior is a deliberate, visible choice; change is deployed to the Render backend.
 
-**Plans:** TBD
+**Plans:** 4 plans (3 waves)
+
+Plans:
+**Wave 1** *(parallel — disjoint files)*
+- [ ] 173-01-PLAN.md — discoveryAgentRunner.ts: OPS-03 throw→zero-candidate return + OPS-01 `checkAnthropicAvailability()` canary helper (+ discoveryAgentRunner.test.ts)
+- [ ] 173-03-PLAN.md — OPS-03 caller-contract regression lock (discoveryService.test.ts, no source change) + OPS-04 cron-cadence comment (discoverySweep.ts)
+
+**Wave 2** *(depends on 173-01 for the canary helper import)*
+- [ ] 173-02-PLAN.md — discoveryCron.ts: OPS-01 preflight gate + single skip-alert, OPS-02 typed `isRetryable` (replaces message-regex `isTransient`), OPS-04 horizon comment (+ discoveryCron.test.ts)
+
+**Wave 3** *(depends on 173-01/02/03 — all code landed)*
+- [ ] 173-04-PLAN.md — full-suite gate + read-only horizon-count confirmation (OPS-04 decision note) + Render deploy
 
 ---
 
