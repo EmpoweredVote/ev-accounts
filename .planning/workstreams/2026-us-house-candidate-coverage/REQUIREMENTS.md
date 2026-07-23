@@ -72,7 +72,7 @@ Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followup
 
 ### FEC-03 — Daily cadence + shared limiter/backoff backstop
 
-- [ ] **FEC-03**: The `fec-ingest` cron cadence changes 6h→**daily** (`load_date` is date-granularity, so 6-hourly yields zero extra freshness). As a safety cap, every outbound FEC API request (all THREE sites: `resolveCommitteeIds` fallback, `fetchWithRetry`, `runFecAutoMatch`) acquires from a single shared rate limiter (Redis token-bucket, degrading to in-process — mirroring the existing FEC lock pattern) budgeted under the ~1,000 req/hr ceiling; on 429 the code honors `Retry-After`/`X-RateLimit-Remaining` when present, keeping exponential backoff as the final fallback.
+- [x] **FEC-03**: The `fec-ingest` cron cadence changes 6h→**daily** (`load_date` is date-granularity, so 6-hourly yields zero extra freshness). As a safety cap, every outbound FEC API request (all THREE sites: `resolveCommitteeIds` fallback, `fetchWithRetry`, `runFecAutoMatch`) acquires from a single shared rate limiter (Redis token-bucket, degrading to in-process — mirroring the existing FEC lock pattern) budgeted under the ~1,000 req/hr ceiling; on 429 the code honors `Retry-After`/`X-RateLimit-Remaining` when present, keeping exponential backoff as the final fallback.
 
 ### FEC-04 — Amendment supersession correctness (no double-count)
 

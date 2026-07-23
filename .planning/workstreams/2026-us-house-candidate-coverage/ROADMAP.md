@@ -463,7 +463,7 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 174-03-PLAN.md — Backstop wiring: limiter + Retry-After backoff across all 3 sites + daily cron cadence [FEC-03] (Wave 2)
+- [x] 174-03-PLAN.md — Backstop wiring: limiter + Retry-After backoff across all 3 sites + daily cron cadence [FEC-03] (Wave 2)
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
