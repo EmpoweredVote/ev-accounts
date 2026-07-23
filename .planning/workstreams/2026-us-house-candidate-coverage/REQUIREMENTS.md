@@ -56,7 +56,7 @@ Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followup
 
 ### Cadence Confirmation
 
-- [ ] **OPS-04**: The weekly Sunday-02:00 UTC cadence and `SWEEP_HORIZON_DAYS=180` are confirmed intended (or adjusted per operator decision) and documented in code so cost-scaling-with-jurisdiction-count is a deliberate, visible choice.
+- [x] **OPS-04**: The weekly Sunday-02:00 UTC cadence and `SWEEP_HORIZON_DAYS=180` are confirmed intended (or adjusted per operator decision) and documented in code so cost-scaling-with-jurisdiction-count is a deliberate, visible choice.
 
 ---
 

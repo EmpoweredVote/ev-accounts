@@ -429,7 +429,7 @@ Plans:
 **Wave 1** *(parallel — disjoint files)*
 
 - [x] 173-01-PLAN.md — discoveryAgentRunner.ts: OPS-03 throw→zero-candidate return + OPS-01 `checkAnthropicAvailability()` canary helper (+ discoveryAgentRunner.test.ts)
-- [ ] 173-03-PLAN.md — OPS-03 caller-contract regression lock (discoveryService.test.ts, no source change) + OPS-04 cron-cadence comment (discoverySweep.ts)
+- [x] 173-03-PLAN.md — OPS-03 caller-contract regression lock (discoveryService.test.ts, no source change) + OPS-04 cron-cadence comment (discoverySweep.ts)
 
 **Wave 2** *(depends on 173-01 for the canary helper import)*
 

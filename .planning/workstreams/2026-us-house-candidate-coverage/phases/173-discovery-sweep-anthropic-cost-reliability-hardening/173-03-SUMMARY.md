@@ -102,3 +102,6 @@ OPS-03 caller contract is now regression-locked (green test in `discoveryService
 ---
 *Phase: 173-discovery-sweep-anthropic-cost-reliability-hardening*
 *Completed: 2026-07-23*
+
+## Self-Check: PASSED
+All created/modified files verified present on disk; all task commits (5a472ea5, 25730b14) and the summary commit (b208eae9) verified present in git log.

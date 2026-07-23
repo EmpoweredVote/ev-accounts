@@ -5,8 +5,8 @@ milestone_name: 2026 US House Candidate Coverage
 current_phase: 173
 current_phase_name: discovery-sweep-anthropic-cost-reliability-hardening
 status: executing
-stopped_at: Completed 173-01-PLAN.md
-last_updated: "2026-07-23T07:22:18.651Z"
+stopped_at: Completed 173-03-PLAN.md
+last_updated: "2026-07-23T07:26:43.031Z"
 last_activity: 2026-07-23
 last_activity_desc: Phase 173 execution started
 progress:
@@ -34,7 +34,7 @@ See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 ## Current Position
 
 Phase: 173 (discovery-sweep-anthropic-cost-reliability-hardening) — EXECUTING
-Plan: 2 of 4
+Plan: 3 of 4
 Status: Ready to execute
 Last activity: 2026-07-23 — Phase 173 execution started
 
@@ -134,6 +134,7 @@ Re-acknowledged at v2.20 close (2026-06-30).
 | Plan | Duration | Tasks | Files |
 |------|----------|-------|-------|
 | Phase 173 P01 | 20min | 3 tasks | 2 files |
+| Phase 173 P03 | 2min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -206,8 +207,8 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 
 ## Session Continuity
 
-Last session: 2026-07-23T07:22:18.633Z
-Stopped at: Completed 173-01-PLAN.md
+Last session: 2026-07-23T07:26:43.013Z
+Stopped at: Completed 173-03-PLAN.md
 Resume file: None
 
 ## Operator Next Steps
@@ -255,3 +256,5 @@ Resume file: None
 - [Phase 163]: 163-03: CO decided-field race description follows the IN 'Confirmed nominees' convention, not PROVISIONAL
 - [Phase ?]: 173-01: checkAnthropicAvailability canary uses claude-haiku-4-5 (cheapest); only APIError status 401/402/403 classify as unusable, everything else re-thrown as inconclusive so 173-02's sweep can proceed
 - [Phase ?]: 173-01: runDiscoveryAgent's no-report exit paths return zero-candidate results (not throw); no changes needed to discoveryService.ts's existing zero-candidate completed path
+- [Phase ?]: OPS-03 zero-candidate caller contract regression-locked in discoveryService.test.ts; no source change needed (RESEARCH Pattern 3)
+- [Phase ?]: OPS-04 weekly cron cadence documented as deliberate bounded-cost choice; cadence/timezone unchanged
