@@ -181,6 +181,7 @@ Plans:
 **Plans:** 11 plans (10 waves)
 
 Plans:
+
 - [ ] 162-01-PLAN.md — MO old-vs-new map correspondence audit (D-01a; severe geo_id list)
 - [ ] 162-02-PLAN.md — MO seed end-to-end: 2 elections (general + withheld Polygon Pending), 8 severity-routed races, 58 new records, headshots
 - [ ] 162-03-PLAN.md — MO stances batch A (incumbents-skipped + evidenced majors incl. Bush) + scaffold + push
@@ -212,6 +213,7 @@ Plans:
 **Plans:** 11 plans
 
 Plans:
+
 - [x] 163-01-PLAN.md — AL + LA old-vs-new correspondence audits (severe geo_id lists; gates AL/LA seeding)
 - [x] 163-02-PLAN.md — WI seed (8 districts, 28 new, vanilla PROVISIONAL) + headshots
 - [x] 163-03-PLAN.md — CO seed (8 districts, 9 new, decided; DeGette lost-primary excluded from CO-1) + headshots
@@ -275,6 +277,7 @@ Plans:
 **Plans:** 7 plans
 
 Plans:
+
 - [ ] 164.1-01-PLAN.md — Dual-map opt-in code (G5200V26 discriminator + elections opt-in JOIN + catch-all exclusions) + Render deploy [Wave 1]
 - [ ] 164.1-02-PLAN.md — D-10 verify-bar harness (1641-verify.sql topology/anchor/NOTOUCH + 1641-coordinate-smoke.ts differential) [Wave 1]
 - [ ] 164.1-03-PLAN.md — UT 2026 polygon import + UT wiring contract (Phase-165 unblocker) [Wave 2]
@@ -294,6 +297,7 @@ Plans:
 **Plans:** 4 plans
 
 Plans:
+
 - [ ] 164.2-01-PLAN.md — Connected-tier allowlist extend: add FIPS 12/06/37/39/48 to `REFRESHED_2026_FIPS` (src/routes/essentials.ts) + CREATE OR REPLACE `connect.resolve_congressional_2026` RPC (new mig, expand IN-list) + Render deploy + regression test asserting anon Path-B resolves V26 for all 5 states [Wave 2 — depends on 164.2-02: regression test asserts against landed V26 rows]
 - [ ] 164.2-02-PLAN.md — Per-state enacted-2026 shapefile import as `G5200V26` into essentials.geofence_boundaries (reproject EPSG:4326; idempotent NOT EXISTS on (geo_id,mtfcc)). Sources: TX PlanC2333 (already fetched to scratchpad), CA Statewide DB (Prop 50), NC NCGA (Oct-2025), OH Redistricting Commission (Oct-31-2025), FL Legislature (May-4-2026). FL first (Aug-18 primary), TX second (shapefile in hand) [Wave 1 — no deps; also authors 1642-verify.sql with pre-import NOTOUCH baselines]
 - [ ] 164.2-03-PLAN.md — D-10 verify per state: reuse 1641-verify.sql (ST_IsValid topology + full coverage + G5200 NOTOUCH) + coordinate-smoke differential using the 15 anchor coordinates sourced 2026-07-21 (each must resolve NEW district under V26; reps feed still returns current) [Wave 3 — depends on 164.2-01 (Connected D-11 RPC probe) + 164.2-02 (landed polygons)]
@@ -423,13 +427,16 @@ Plans:
 
 Plans:
 **Wave 1** *(parallel — disjoint files)*
-- [ ] 173-01-PLAN.md — discoveryAgentRunner.ts: OPS-03 throw→zero-candidate return + OPS-01 `checkAnthropicAvailability()` canary helper (+ discoveryAgentRunner.test.ts)
+
+- [x] 173-01-PLAN.md — discoveryAgentRunner.ts: OPS-03 throw→zero-candidate return + OPS-01 `checkAnthropicAvailability()` canary helper (+ discoveryAgentRunner.test.ts)
 - [ ] 173-03-PLAN.md — OPS-03 caller-contract regression lock (discoveryService.test.ts, no source change) + OPS-04 cron-cadence comment (discoverySweep.ts)
 
 **Wave 2** *(depends on 173-01 for the canary helper import)*
+
 - [ ] 173-02-PLAN.md — discoveryCron.ts: OPS-01 preflight gate + single skip-alert, OPS-02 typed `isRetryable` (replaces message-regex `isTransient`), OPS-04 horizon comment (+ discoveryCron.test.ts)
 
 **Wave 3** *(depends on 173-01/02/03 — all code landed)*
+
 - [ ] 173-04-PLAN.md — full-suite gate + read-only horizon-count confirmation (OPS-04 decision note) + Render deploy
 
 ---

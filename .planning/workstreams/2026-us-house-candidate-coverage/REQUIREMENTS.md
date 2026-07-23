@@ -44,7 +44,7 @@ Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followup
 
 ### Anthropic Preflight
 
-- [ ] **OPS-01**: Before the weekly discovery sweep spends any paid Anthropic call, it verifies the `ANTHROPIC_API_KEY` is configured AND the account has usable credit; if either is unavailable it aborts the sweep (does not iterate jurisdictions) and emits exactly one operator alert — eliminating the per-jurisdiction "Anthropic credit balance too low" (144×) and key-not-configured (45×) failure floods.
+- [x] **OPS-01**: Before the weekly discovery sweep spends any paid Anthropic call, it verifies the `ANTHROPIC_API_KEY` is configured AND the account has usable credit; if either is unavailable it aborts the sweep (does not iterate jurisdictions) and emits exactly one operator alert — eliminating the per-jurisdiction "Anthropic credit balance too low" (144×) and key-not-configured (45×) failure floods.
 
 ### Retry-Spend Reduction
 
@@ -52,7 +52,7 @@ Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followup
 
 ### Graceful No-Report
 
-- [ ] **OPS-03**: A model turn that ends without invoking `report_candidates` is treated as a clean zero-candidate result for that jurisdiction (logged/counted as zero-found, not thrown as a hard failure, not retried) — eliminating the 21× "Claude did not invoke report_candidates" hard-error path for this benign case.
+- [x] **OPS-03**: A model turn that ends without invoking `report_candidates` is treated as a clean zero-candidate result for that jurisdiction (logged/counted as zero-found, not thrown as a hard failure, not retried) — eliminating the 21× "Claude did not invoke report_candidates" hard-error path for this benign case.
 
 ### Cadence Confirmation
 

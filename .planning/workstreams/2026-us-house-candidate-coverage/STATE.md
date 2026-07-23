@@ -2,19 +2,19 @@
 gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage
-current_phase: 164.2
-status: completed
-stopped_at: Phase 164.1 context gathered
-last_updated: "2026-07-22T16:10:51.739Z"
-last_activity: 2026-07-22
-last_activity_desc: Phase 164.2 marked complete
+current_phase: 173
+current_phase_name: discovery-sweep-anthropic-cost-reliability-hardening
+status: executing
+stopped_at: Completed 173-01-PLAN.md
+last_updated: "2026-07-23T07:22:18.651Z"
+last_activity: 2026-07-23
+last_activity_desc: Phase 173 execution started
 progress:
   total_phases: 10
   completed_phases: 7
   total_plans: 81
   completed_plans: 80
   percent: 70
-current_phase_name: enacted-2026-polygon-backfill-fl-ca-nc-oh-tx-inserted
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
@@ -28,15 +28,15 @@ current_phase_name: enacted-2026-polygon-backfill-fl-ca-nc-oh-tx-inserted
 See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 164.2 — enacted-2026-polygon-backfill-fl-ca-nc-oh-tx-inserted
+**Current focus:** Phase 173 — discovery-sweep-anthropic-cost-reliability-hardening
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 164.2 — COMPLETE
-Plan: 1 of 4
-Status: Phase 164.2 complete
-Last activity: 2026-07-22 — Phase 164.2 marked complete
+Phase: 173 (discovery-sweep-anthropic-cost-reliability-hardening) — EXECUTING
+Plan: 2 of 4
+Status: Ready to execute
+Last activity: 2026-07-23 — Phase 173 execution started
 
 ## v2.22 Phase Dependencies
 
@@ -129,6 +129,12 @@ Re-acknowledged at v2.20 close (2026-06-30).
 - Requirements: 0/7 closed (USHC3-01..07)
 - Target: 178 districts across the final 38 states (WA 10 down to AK/DE/ND/SD/VT/WY 1 each)
 
+**Per-Plan Metrics:**
+
+| Plan | Duration | Tasks | Files |
+|------|----------|-------|-------|
+| Phase 173 P01 | 20min | 3 tasks | 2 files |
+
 ## Accumulated Context
 
 ### Roadmap Evolution
@@ -200,9 +206,9 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 
 ## Session Continuity
 
-Last session: 2026-07-07T05:01:46.473Z
-Stopped at: Phase 164.1 context gathered
-Resume file: .planning/phases/164.1-cross-state-district-polygon-refresh-dual-map-design-tn-mo-a/164.1-CONTEXT.md
+Last session: 2026-07-23T07:22:18.633Z
+Stopped at: Completed 173-01-PLAN.md
+Resume file: None
 
 ## Operator Next Steps
 
@@ -247,3 +253,5 @@ Resume file: .planning/phases/164.1-cross-state-district-polygon-refresh-dual-ma
 - [Phase 163-02]: seed-wi-house-headshots.py hardened with a _FOREIGN_NATIONALITY guard after Douglas Alexander (WI-2) resolved to a British Labour MP homonym; bad upload deleted from prod before commit
 - [Phase 163]: 163-03: DeGette CO-1 lost-primary treated as REUSE-NO-ROW (new incumbent-transition pattern, third variant); her existing record/office/19 stances untouched, not wired into CO-1 race_candidates
 - [Phase 163]: 163-03: CO decided-field race description follows the IN 'Confirmed nominees' convention, not PROVISIONAL
+- [Phase ?]: 173-01: checkAnthropicAvailability canary uses claude-haiku-4-5 (cheapest); only APIError status 401/402/403 classify as unusable, everything else re-thrown as inconclusive so 173-02's sweep can proceed
+- [Phase ?]: 173-01: runDiscoveryAgent's no-report exit paths return zero-candidate results (not throw); no changes needed to discoveryService.ts's existing zero-candidate completed path
