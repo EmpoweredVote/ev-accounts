@@ -170,7 +170,11 @@ export async function writeJudicialDonations(
         JSON.stringify(row.raw_record),
       ]
     );
-    result.rows[0]?.is_insert ? inserted++ : skipped++;
+    if (result.rows[0]?.is_insert) {
+      inserted++;
+    } else {
+      skipped++;
+    }
   }
 
   return { inserted, skipped };
