@@ -4,9 +4,9 @@ milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage
 current_phase: 173
 current_phase_name: discovery-sweep-anthropic-cost-reliability-hardening
-status: executing
-stopped_at: Completed 173-02-PLAN.md
-last_updated: "2026-07-23T07:33:22.226Z"
+status: verifying
+stopped_at: Completed 173-04-PLAN.md
+last_updated: "2026-07-23T07:43:51.376Z"
 last_activity: 2026-07-23
 last_activity_desc: Phase 173 execution started
 progress:
@@ -35,7 +35,7 @@ See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 Phase: 173 (discovery-sweep-anthropic-cost-reliability-hardening) — EXECUTING
 Plan: 4 of 4
-Status: Ready to execute
+Status: Phase complete — ready for verification
 Last activity: 2026-07-23 — Phase 173 execution started
 
 ## v2.22 Phase Dependencies
@@ -136,6 +136,7 @@ Re-acknowledged at v2.20 close (2026-06-30).
 | Phase 173 P01 | 20min | 3 tasks | 2 files |
 | Phase 173 P03 | 2min | 2 tasks | 2 files |
 | Phase 173 P02 | 2min | 3 tasks | 2 files |
+| Phase 173 P04 | 8min | 3 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -208,8 +209,8 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 
 ## Session Continuity
 
-Last session: 2026-07-23T07:33:16.200Z
-Stopped at: Completed 173-02-PLAN.md
+Last session: 2026-07-23T07:43:43.079Z
+Stopped at: Completed 173-04-PLAN.md
 Resume file: None
 
 ## Operator Next Steps
@@ -261,3 +262,5 @@ Resume file: None
 - [Phase ?]: OPS-04 weekly cron cadence documented as deliberate bounded-cost choice; cadence/timezone unchanged
 - [Phase ?]: [Phase 173-02]: isRetryable classifies other 4xx (400/404/422) as non-retryable too, not just 401/402/403 — a retry on any 4xx fails identically
 - [Phase ?]: [Phase 173-02]: runDiscoverySweep preflight aborts only on a RETURNED {available:false} from checkAnthropicAvailability, never on a thrown (inconclusive) error — thrown errors are logged and the sweep proceeds
+- [Phase ?]: [Phase 173-04]: OPS-04 cadence KEPT — live prod count is 46 discovery_jurisdictions in the 180-day horizon; weekly Sunday-02:00-UTC cadence unchanged
+- [Phase ?]: [Phase 173-04]: Phase 173 code deployed live to Render (dep-d9gsb1n41pts73de2f1g); full backend suite has 21 pre-existing unrelated failures (no live DB/env vars in sandbox) documented in deferred-items.md, not fixed

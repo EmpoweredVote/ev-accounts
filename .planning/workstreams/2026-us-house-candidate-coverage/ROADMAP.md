@@ -437,7 +437,7 @@ Plans:
 
 **Wave 3** *(depends on 173-01/02/03 — all code landed)*
 
-- [ ] 173-04-PLAN.md — full-suite gate + read-only horizon-count confirmation (OPS-04 decision note) + Render deploy
+- [x] 173-04-PLAN.md — full-suite gate + read-only horizon-count confirmation (OPS-04 decision note) + Render deploy
 
 ---
 
