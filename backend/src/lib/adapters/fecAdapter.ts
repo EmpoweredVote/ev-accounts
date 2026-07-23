@@ -19,6 +19,7 @@ import { pool } from '../db.js';
 import type { SourceAdapter, StreamingAdapter, BatchSink, FetchResult, NormalizeResult, UpsertResult, ContributionInsert } from './adapterInterface.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
 import { normalizeDonorName } from './normalizeDonorName.js';
+import { buildCandidateCommitteeMap } from './fecBulkLoader.js';
 
 // Per-politician record cap — prevents timeout on high-volume candidates (e.g. CA House members).
 // At 100 records/page + 4s sleep, 2500 records ≈ 25 pages ≈ 100s — well under Redis lock TTL.
@@ -82,9 +83,22 @@ interface FecCandidateSearchResponse {
 /**
  * resolveCommitteeIds looks up the principal committee IDs for a given FEC candidate ID.
  * The FEC schedule_a endpoint filters by committee_id, not candidate_id.
- * Returns an empty array (with a warning) if the candidate is not found.
+ *
+ * FEC-01: bulk-first. The free bulk ccl{YY}.zip candidate->committee linkage
+ * (buildCandidateCommitteeMap, cached 7 days) is consulted first and, on a hit, this
+ * function returns with ZERO FEC API requests. The rate-limited candidates-search API
+ * call below only runs as the fallback on a bulk-map miss (new/stale candidate not yet
+ * in the bulk file) — and its result is never cached as authoritative, so a miss is
+ * re-checked on every call rather than being suppressed (Pitfall 3).
  */
-async function resolveCommitteeIds(candidateId: string, apiKey: string, maxRetries = 5): Promise<string[]> {
+async function resolveCommitteeIds(candidateId: string, cycle: string, apiKey: string, maxRetries = 5): Promise<string[]> {
+  const bulkMap = await buildCandidateCommitteeMap(cycle);
+  const bulkCommittees = bulkMap.get(candidateId);
+  if (bulkCommittees && bulkCommittees.length > 0) {
+    return bulkCommittees;
+  }
+
+  // Bulk-map miss — fall back to the FEC candidates-search API (unchanged backoff below).
   const url = `https://api.open.fec.gov/v1/candidates/search/?api_key=${apiKey}&candidate_id=${candidateId}`;
   // Same 429 / throttle-timeout exponential backoff as fetchWithRetry (the Schedule A path).
   // Previously this did a bare fetch and threw on the first 429 — with the shared 1,000 req/hr
@@ -448,7 +462,7 @@ async function streamAllPages(
     console.warn('[fecAdapter] FEC_API_KEY environment variable is not set — fetches will fail');
   }
 
-  const committeeIds = await resolveCommitteeIds(candidateId, apiKey ?? '');
+  const committeeIds = await resolveCommitteeIds(candidateId, cycle, apiKey ?? '');
   if (committeeIds.length === 0) {
     return { totalExpected: 0, totalFetched: 0 };
   }
