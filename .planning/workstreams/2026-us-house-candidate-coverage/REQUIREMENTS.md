@@ -58,6 +58,26 @@ Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followup
 
 - [x] **OPS-04**: The weekly Sunday-02:00 UTC cadence and `SWEEP_HORIZON_DAYS=180` are confirmed intended (or adjusted per operator decision) and documented in code so cost-scaling-with-jurisdiction-count is a deliberate, visible choice.
 
+## v2.24 Requirements — Backend Reliability (FEC 429 Rate-Limit Tail, Phase 174)
+
+> Successor to the `d505c9ad` per-request backoff (verified working: daily FEC failures 3,410→101). That fix recovers most 429s but does not *pace the batch* — the ~1k-source 6-hourly `fec-ingest` run collectively exceeds the shared ~1,000 req/hr api.data.gov FEC key, so a residual ~15/12h still exhaust all 5 retries and hard-fail (`transparent_motivations.ingestion_runs`). Two FEC request sites: `resolveCommitteeIds` (`fecAdapter.ts:87`) and `fetchWithRetry` (`fecAdapter.ts:475`). Cron `campaignFinanceCron.ts:27` (`0 */6 * * *`).
+
+### Request-Volume Reduction
+
+- [ ] **FEC-01**: The 6-hourly FEC ingest no longer re-resolves candidate→committee IDs from the FEC API for every source on every run — `resolveCommitteeIds` results are cached (durable store, bounded TTL) so a warm run issues roughly half the FEC requests it does today, with a correctness path for cache miss/expiry.
+
+### Server-Signaled Backoff
+
+- [ ] **FEC-02**: On HTTP 429 (and the throttle-timeout signature) both FEC request paths honor the server's `Retry-After` / `X-RateLimit-Reset` header when present, backing off by the server-provided interval instead of a blind fixed exponential — so retries wait the right amount and stop colliding with the reset window.
+
+### Global Rate Pacing
+
+- [ ] **FEC-03**: Every outbound FEC HTTP request acquires from a single shared rate limiter (Redis token-bucket, degrading to in-process when Redis is absent — matching the existing FEC lock pattern) budgeted under the ~1,000 req/hr key ceiling with margin, so a full ingest cycle's aggregate request rate cannot exceed the ceiling regardless of source count.
+
+### Verified Outcome + Documented Lever
+
+- [ ] **FEC-04**: After deploy, a full 6-hour `fec-ingest` cycle completes with **zero** `status='failed'` 429 rows in `ingestion_runs` (verified by read-only query); and the request-budget/cadence choice plus the FEC-key-upgrade decision (request a higher/dedicated api.data.gov limit vs. code-only pacing, and whether to drop 6h→daily) are evaluated and documented.
+
 ---
 
 ## Future Requirements (deferred)

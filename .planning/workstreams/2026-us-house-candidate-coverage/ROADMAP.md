@@ -35,7 +35,7 @@
 - ✅ **v2.20 2026 US House Candidate Coverage (Wave 1)** — Phases 148–152 (shipped 2026-06-30; CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active candidates, federal-24 stances [0 unsourced], 0 dup-incumbent; consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward — time-gated ≥ 2026-08-18)
 - 🔄 **v2.21 2026 US House Candidate Coverage (Wave 2)** — Phases 154–159 (Waves 1-2 complete 2026-07-02; PA 17 / IL 17 / OH 15 / GA 14 / NC 14 / NJ 12 = 89 decided districts [Phase 158 gate ✅] + MI 13 & VA 11 = 24 districts seeded + stanced [Waves 1-2 ✅] = 113 districts; USHC2-01..05 closed, USHC2-06 partial — 159-05/06 post-primary cull + gate date-gated ≥ 2026-08-05)
 - 🔄 **v2.22 2026 US House Candidate Coverage (Wave 3 — National Completion)** — Phases 160–167 (planning 2026-07-03; the final 38 states / 178 districts — WA 10 / AZ 9 / TN 9 / MA 9 / IN 9 / MD 8 / MN 8 / MO 8 / WI 8 / CO 8 / AL 7 / SC 7 / LA 6 / KY 6 / OR 6 / CT 5 / OK 5 / AR 4 / IA 4 / KS 4 / MS 4 / NV 4 / UT 4 / NM 3 / NE 3 / WV 2 / ID 2 / HI 2 / ME 2 / NH 2 / RI 2 / MT 2 / AK 1 / DE 1 / ND 1 / SD 1 / VT 1 / WY 1 — completes all 435 US House districts; USHC3-01..07)
-- 🔄 **v2.24 Backend Reliability — Discovery-Sweep Cost Hardening** — Phase 173 (planning 2026-07-23; cron-audit follow-up item 1 — Anthropic credit/key preflight, retry-spend reduction, graceful "no candidates reported" handling, and cadence confirmation on the weekly candidate-discovery sweep; OPS-01..04)
+- 🔄 **v2.24 Backend Reliability — Cron Cost & Rate-Limit Hardening** — Phase 173 ✅ (discovery-sweep Anthropic cost, OPS-01..04, shipped 2026-07-23) + Phase 174 (FEC 429 rate-limit tail on the 6-hourly campaign-finance ingest — committee-ID caching, Retry-After backoff, global request pacer; FEC-01..04)
 
 ## Phases
 
@@ -402,9 +402,9 @@ Plans:
 
 ---
 
-### v2.24 Backend Reliability — Discovery-Sweep Cost Hardening — Phase 173 🔄 ACTIVE
+### v2.24 Backend Reliability — Cron Cost & Rate-Limit Hardening — Phases 173–174 🔄 ACTIVE
 
-**Milestone goal:** The weekly candidate-discovery sweep can no longer silently burn paid Anthropic credit or flood the logs with avoidable hard failures. It pre-flights that the Anthropic API is usable before spending, stops multiplying spend on non-retryable errors, treats a benign "no candidates reported" model turn as a clean zero-result, and makes its cadence/horizon a documented, deliberate cost choice.
+**Milestone goal:** The scheduled backend jobs stop generating avoidable failure floods and cost. Phase 173 hardened the weekly Anthropic discovery sweep (credit/key preflight, no retry-spend multiplier, graceful no-report, documented cadence). Phase 174 closes the residual FEC 429 tail on the 6-hourly campaign-finance ingest: the per-request backoff (`d505c9ad`) recovers most rate-limits but does not pace the batch under the shared ~1,000 req/hr FEC key, so a full ingest cycle should complete with zero 429 hard-failures via volume reduction, server-signaled backoff, and a global request pacer.
 
 **Context:** Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followups.md` item 1). The sweep (`backend/src/cron/discoverySweep.ts` → `lib/discoveryCron.ts` → `discoveryService.ts` → `discoveryAgentRunner.ts`) fires Sunday 02:00 UTC, once per jurisdiction with an election within `SWEEP_HORIZON_DAYS=180`, using the PAID Anthropic API (`claude-sonnet-4-6` + server-side `web_search_20250305`) + Resend email. Observed failure floods: 144× "Anthropic credit balance too low", 45× key-not-configured, 21× "Claude did not invoke report_candidates". Pure-backend change — no schema, no data.
 
@@ -438,6 +438,23 @@ Plans:
 **Wave 3** *(depends on 173-01/02/03 — all code landed)*
 
 - [x] 173-04-PLAN.md — full-suite gate + read-only horizon-count confirmation (OPS-04 decision note) + Render deploy
+
+#### Phase 174: FEC 429 Rate-Limit Tail — Drive the 6-Hourly Ingest to Zero Hard-Failures
+
+**Goal:** A full 6-hour `fec-ingest` cron cycle completes with zero `status='failed'` HTTP-429 rows in `transparent_motivations.ingestion_runs`. The per-request exponential backoff shipped in `d505c9ad` recovers most 429s but does not pace the batch under the shared ~1,000 req/hr api.data.gov FEC key, so a ~1k-source run still overshoots the ceiling and a residual handful of requests exhaust all 5 retries and hard-fail. This phase eliminates that tail by (a) cutting request volume via committee-ID caching, (b) honoring the server's `Retry-After`/rate-limit headers on 429, and (c) gating all FEC requests through a shared rate limiter budgeted under the ceiling — plus a documented decision on whether to request a higher/dedicated FEC key or drop the cadence 6h→daily.
+
+**Depends on:** Nothing code-blocking (builds on the shipped `d505c9ad` backoff in `fecAdapter.ts`). Pure-backend change — no schema, no data. Uses Upstash Redis (already in the stack) for the shared limiter/cache, degrading to in-process when absent.
+
+**Requirements:** FEC-01, FEC-02, FEC-03, FEC-04
+
+**Success Criteria** (what must be TRUE):
+
+  1. The 6-hourly ingest no longer re-resolves candidate→committee IDs from the FEC API for every source every run — `resolveCommitteeIds` is cached with a bounded TTL and a correct cache-miss path, so a warm run issues roughly half the FEC requests it does today (FEC-01).
+  2. On a 429 (or the throttle-timeout signature), both FEC request paths (`resolveCommitteeIds` and `fetchWithRetry`) back off by the server-provided `Retry-After` / `X-RateLimit-Reset` interval when present, instead of a blind fixed exponential (FEC-02).
+  3. Every outbound FEC HTTP request acquires from one shared rate limiter (Redis token-bucket, in-process fallback) budgeted under the ~1,000 req/hr key ceiling with margin, so a full ingest cycle's aggregate request rate cannot exceed the ceiling regardless of source count (FEC-03).
+  4. After deploy, a full 6-hour `fec-ingest` cycle is verified (read-only query) to complete with zero `status='failed'` 429 rows; and the request-budget/cadence choice plus the FEC-key-upgrade decision are evaluated and documented (FEC-04).
+
+**Plans:** TBD (populated by `/gsd-plan-phase 174`)
 
 ---
 
