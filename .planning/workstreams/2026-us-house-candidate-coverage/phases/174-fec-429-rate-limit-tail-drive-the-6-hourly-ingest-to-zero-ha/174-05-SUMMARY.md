@@ -119,3 +119,8 @@ After the deploy runs and the first daily cron fire (out-of-process, `0 6 * * *`
 *Phase: 174-fec-429-rate-limit-tail-drive-the-6-hourly-ingest-to-zero-ha*
 *Plan: 05*
 *Completed: 2026-07-23*
+
+## Self-Check: PASSED
+
+Both artifacts confirmed present on disk (`174-FEC05-DECISION.md`, `174-05-SUMMARY.md`);
+Task 3 commit hash `40af89c8` confirmed present in `git log --oneline --all`.
