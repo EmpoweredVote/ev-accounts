@@ -19,7 +19,14 @@ import { runDiscoverySweep } from '../lib/discoveryCron.js';
 
 export function startDiscoverySweepCron(): void {
   cron.schedule(
-    '0 2 * * 0', // Sunday 02:00 UTC — one hour before districtStaleness ('0 3 * * 0')
+    // OPS-04: weekly (not daily) cadence is a deliberate cost choice. Each sweep
+    // spends paid Anthropic calls proportional to the number of
+    // discovery_jurisdictions whose election_date falls within
+    // SWEEP_HORIZON_DAYS (see discoveryCron.ts) — running weekly instead of
+    // daily bounds the recurring spend to ~1/7th while still catching upstream
+    // source changes well ahead of any election. Sunday 02:00 UTC — one hour
+    // before districtStaleness ('0 3 * * 0').
+    '0 2 * * 0',
     async () => {
       try {
         await runDiscoverySweep();
