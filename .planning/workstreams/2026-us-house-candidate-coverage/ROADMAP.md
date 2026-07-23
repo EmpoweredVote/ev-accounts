@@ -471,7 +471,7 @@ Plans:
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
-- [ ] 174-05-PLAN.md — Terminal: full suite + tsc + Render deploy + FEC-05 decision doc [FEC-05] (Wave 4)
+- [x] 174-05-PLAN.md — Terminal: full suite + tsc + Render deploy + FEC-05 decision doc [FEC-05] (Wave 4)
 
 ---
 

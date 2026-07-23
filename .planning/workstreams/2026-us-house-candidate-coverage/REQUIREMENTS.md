@@ -80,7 +80,7 @@ Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followup
 
 ### FEC-05 — Verified outcome + documented decision
 
-- [ ] **FEC-05**: After deploy, a full **daily** `fec-ingest` cycle completes with **zero** `status='failed'` 429 rows in `ingestion_runs` (verified by read-only query: `status='failed' AND (notes ILIKE '%429%' OR notes ILIKE '%rate limit%')`); and a decision doc records the daily-cadence choice and states that a higher/dedicated api.data.gov FEC key is **NOT required** (the code reaches zero-429 under the current 1,000/hr registered key), so the option isn't silently reconsidered.
+- [x] **FEC-05**: After deploy, a full **daily** `fec-ingest` cycle completes with **zero** `status='failed'` 429 rows in `ingestion_runs` (verified by read-only query: `status='failed' AND (notes ILIKE '%429%' OR notes ILIKE '%rate limit%')`); and a decision doc records the daily-cadence choice and states that a higher/dedicated api.data.gov FEC key is **NOT required** (the code reaches zero-429 under the current 1,000/hr registered key), so the option isn't silently reconsidered.
 
 ---
 
