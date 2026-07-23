@@ -66,9 +66,11 @@ WHERE adapter_name = 'fec'
 
 ---
 
-## 5. Deploy status — HELD pending operator go-ahead
+## 5. Deploy status — ✅ TRIGGERED 2026-07-23
 
-**The Render deploy that ships this phase's TypeScript changes (174-01 through 174-04) has NOT been triggered.** The operator is explicitly holding the production deploy pending their own go-ahead. This is not a code failure or an unavailable-hook situation — it is a deliberate operator hold, and it is recorded here (per this plan's own allowance for handing the deploy to the operator) rather than fired automatically.
+**The Render deploy that ships this phase's TypeScript changes (174-01 through 174-04) was triggered on operator go-ahead 2026-07-23.** Deploy id: `dep-d9h93icm0tmc738cs140` (HTTP 200 from the hook). The hook only *triggers* the build; it does not report completion — watch the Render dashboard for build/live status. Once live, the daily `0 6 * * *` cron replaces the old in-process 6-hourly cadence on its next fire; run the §4 zero-429 check over the ~25h window after that fire.
+
+_History: this deploy was initially HELD pending operator go-ahead, then fired when the operator said "you do the deploy". The exact command is retained below for future reference._
 
 **Exact deploy command for the operator to run when ready** (do not run automatically; hook URL value is a secret and is never printed here):
 
