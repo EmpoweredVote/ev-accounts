@@ -24,12 +24,23 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { pool } from './db.js';
 import { runDiscoveryForJurisdiction } from './discoveryService.js';
+import { checkAnthropicAvailability } from './discoveryAgentRunner.js';
 import { sendEmail } from './emailService.js';
 
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
 
+// OPS-04: SWEEP_HORIZON_DAYS + the weekly Sunday-02:00-UTC cadence (registered
+// in discoverySweep.ts's node-cron expression) are a DELIBERATE cost choice,
+// not an arbitrary default. Each sweep spends paid Anthropic calls (the OPS-01
+// canary + one runDiscoveryAgent call per in-horizon jurisdiction) proportional
+// to how many discovery_jurisdictions.election_date rows fall within this
+// window; the weekly cadence bounds total spend to once per horizon-refresh
+// rather than re-scanning the same jurisdictions more often than useful.
+// Widening the horizon or shortening the cadence directly increases weekly
+// Anthropic spend — treat either change as a deliberate cost decision, not a
+// routine tuning knob.
 const SWEEP_HORIZON_DAYS = 180;
 const LOCK_TTL_MS = 2 * 60 * 60 * 1000; // 2 hours
 const RETRY_DELAYS_MS = [1_000, 2_000, 4_000]; // 3 retry attempts, exponential backoff
@@ -204,6 +215,12 @@ function buildSweepSummaryEmail(args: {
  * the Anthropic API rate limit.
  *
  * Sends ONE sweep-summary email at the end — only when at least one outcome list is non-empty.
+ *
+ * OPS-01 pre-flight: before touching any jurisdiction, runs checkAnthropicAvailability()
+ * exactly once. A conclusive-unusable result (missing key, or a 401/402/403 canary
+ * failure) aborts the sweep with exactly one operator alert and zero jurisdiction
+ * queries. An inconclusive canary failure (thrown 529/network error) is logged and
+ * the sweep proceeds normally — only a returned {available:false} result aborts.
  */
 export async function runDiscoverySweep(): Promise<void> {
   if (!acquireRunLock()) {
@@ -212,6 +229,38 @@ export async function runDiscoverySweep(): Promise<void> {
   }
 
   try {
+    let availability: Awaited<ReturnType<typeof checkAnthropicAvailability>> | undefined;
+    try {
+      availability = await checkAnthropicAvailability();
+    } catch (err) {
+      // Inconclusive canary failure (529, network fault, non-APIError, etc.) —
+      // log and PROCEED. Only a returned conclusive-unusable result aborts the
+      // sweep (see checkAnthropicAvailability's own doc comment / RESEARCH Pitfall 3).
+      console.warn('[discoveryCron] Anthropic pre-flight canary was inconclusive; proceeding with sweep', err);
+    }
+
+    if (availability && !availability.available) {
+      // availability.detail is already key-free by construction (checkAnthropicAvailability
+      // only builds it from .status/.type/.message) — never log/email env.ANTHROPIC_API_KEY.
+      console.error('[discoveryCron] Aborting sweep — Anthropic unavailable:', availability.detail);
+      const adminEmail = process.env.ADMIN_EMAIL;
+      if (adminEmail) {
+        await sendEmail({
+          to: adminEmail,
+          subject: `Discovery sweep SKIPPED — Anthropic unavailable (${availability.reason})`,
+          html: `<div style="font-family: system-ui, sans-serif; max-width: 560px;">
+            <h2>Discovery sweep skipped</h2>
+            <p>The weekly discovery sweep did not run because Anthropic is currently unusable:</p>
+            <pre style="background:#f5f5f5;padding:10px;border-radius:4px;white-space:pre-wrap;">${escapeHtml(availability.detail)}</pre>
+            <p>No jurisdictions were processed — no paid calls were made.</p>
+          </div>`,
+        });
+      } else {
+        console.warn('[discoveryCron] ADMIN_EMAIL not set; skip-alert not sent (see error log above)');
+      }
+      return; // finally block below still releases the lock
+    }
+
     const horizon = new Date();
     horizon.setUTCDate(horizon.getUTCDate() + SWEEP_HORIZON_DAYS);
 
