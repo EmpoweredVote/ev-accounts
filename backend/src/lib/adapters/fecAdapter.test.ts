@@ -103,3 +103,60 @@ describe('fecAdapter committee resolution (FEC-01)', () => {
     expect(searchCalls.length).toBe(1);
   });
 });
+
+describe('fecAdapter incremental min_load_date cursor (FEC-02)', () => {
+  beforeEach(() => {
+    poolQueryMock.mockReset();
+    buildCandidateCommitteeMapMock.mockReset();
+    buildCandidateCommitteeMapMock.mockResolvedValue(new Map([[ps.external_id, ['C00333333']]]));
+    vi.stubGlobal('fetch', vi.fn());
+  });
+
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it('load_date: a prior successful run sets min_load_date to the watermark minus 2 days', async () => {
+    // getFecLoadCursor's query — max(started_at) of prior completed runs.
+    poolQueryMock.mockImplementation(async (sql: string) => {
+      if (String(sql).includes('max(started_at)')) {
+        return { rows: [{ started_at: '2026-07-20T03:05:00.000Z' }] };
+      }
+      return { rows: [] }; // getCompletedWindows / anything else
+    });
+    const fetchMock = fetch as unknown as ReturnType<typeof vi.fn>;
+    fetchMock.mockResolvedValue(emptyScheduleAResponse());
+
+    const adapter = asStreaming(createFecAdapter('2026'));
+    await adapter.fetchStream(ps, async () => {});
+
+    const scheduleACalls = fetchMock.mock.calls.filter((c: unknown[]) => String(c[0]).includes('schedule_a'));
+    expect(scheduleACalls.length).toBeGreaterThan(0);
+    for (const call of scheduleACalls) {
+      const url = String(call[0]);
+      // 2026-07-20 minus 2 days = 2026-07-18; date-only, never a timestamp.
+      expect(url).toContain('min_load_date=2026-07-18');
+      expect(url).not.toMatch(/min_load_date=[^&]*T/);
+    }
+  });
+
+  it('load_date: no prior successful run omits min_load_date (whole-cycle initial backfill)', async () => {
+    poolQueryMock.mockImplementation(async (sql: string) => {
+      if (String(sql).includes('max(started_at)')) {
+        return { rows: [{ started_at: null }] };
+      }
+      return { rows: [] };
+    });
+    const fetchMock = fetch as unknown as ReturnType<typeof vi.fn>;
+    fetchMock.mockResolvedValue(emptyScheduleAResponse());
+
+    const adapter = asStreaming(createFecAdapter('2026'));
+    await adapter.fetchStream(ps, async () => {});
+
+    const scheduleACalls = fetchMock.mock.calls.filter((c: unknown[]) => String(c[0]).includes('schedule_a'));
+    expect(scheduleACalls.length).toBeGreaterThan(0);
+    for (const call of scheduleACalls) {
+      expect(String(call[0])).not.toContain('min_load_date');
+    }
+  });
+});
