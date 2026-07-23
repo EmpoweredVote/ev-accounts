@@ -121,6 +121,11 @@ BEGIN
     EXECUTE format('GRANT USAGE, SELECT ON SEQUENCE %s TO ev_api', r.obj);
   END LOOP;
 
+  -- 6b. extensions schema: USAGE so in-band pg_trgm search (word_similarity / the %> operator,
+  --     used by donor + politician + location search) and other extension objects are reachable.
+  --     USAGE only (no DML) — it is a utility schema; EXECUTE on the functions is PUBLIC.
+  GRANT USAGE ON SCHEMA extensions TO ev_api;
+
   -- 7. EXECUTE on the in-band RPCs (all overloads of each schema.name).
   FOR r IN
     SELECT p.oid::regprocedure AS sig
