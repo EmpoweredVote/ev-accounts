@@ -2,8 +2,8 @@
 phase: 174
 slug: fec-429-rate-limit-tail-drive-the-6-hourly-ingest-to-zero-hard-failures
 # status lifecycle: draft (seeded by plan-phase) → validated (set by validate-phase §6)
-status: draft
-nyquist_compliant: false
+status: validated
+nyquist_compliant: true
 wave_0_complete: false
 created: 2026-07-23
 ---
@@ -63,18 +63,19 @@ created: 2026-07-23
 
 | Behavior | Requirement | Why Manual | Test Instructions |
 |----------|-------------|------------|-------------------|
-| A full 6-hour `fec-ingest` cycle completes with zero 429 hard-failures | FEC-04 | Requires the live 6-hourly cron to fire against the real FEC API post-deploy — out-of-process | After Render deploy, wait for the next `0 */6 * * *` fire (or a manual trigger), then run the read-only `ingestion_runs` query above; expect 0 rows |
-| FEC-key-upgrade / cadence decision recorded | FEC-04 | Operator/documentation decision (request higher api.data.gov limit vs. code-only pacing; 6h→daily?) | Confirm the decision note exists in the phase docs |
+| A full **daily** `fec-ingest` cycle completes with zero 429 hard-failures | FEC-05 | Requires the live daily cron to fire against the real FEC API post-deploy — out-of-process | After Render deploy, wait for the next `0 6 * * *` fire (or a manual trigger), then run the read-only `ingestion_runs` query above (~25h window); expect 0 rows |
+| Daily-cadence decision recorded; no FEC-key upgrade needed | FEC-05 | Operator/documentation decision | Confirm `174-FEC05-DECISION.md` records the daily cadence + that a higher api.data.gov key is not required |
+| `original_sub_id` supersession linkage confirmed before enabling the retirement DELETE | FEC-04 | Requires one live query against a high-amendment committee (RESEARCH-amendments A1) | 174-04 blocking checkpoint returns "confirmed" before the delete path is trusted |
 
 ---
 
 ## Validation Sign-Off
 
-- [ ] All tasks have `<automated>` verify or Wave 0 dependencies (FEC-04 outcome is manual-only by nature)
+- [ ] All tasks have `<automated>` verify or Wave 0 dependencies (FEC-05 zero-429 outcome is manual-only by nature; FEC-04 linkage confirm is a gated live check)
 - [ ] Sampling continuity: no 3 consecutive tasks without automated verify
 - [ ] Wave 0 covers all MISSING references (2 new/extended test files)
 - [ ] No watch-mode flags
 - [ ] Feedback latency < 15s
 - [ ] `nyquist_compliant: true` set in frontmatter
 
-**Approval:** pending
+**Approval:** approved 2026-07-23 (plan-checker VERIFICATION PASSED, re-scoped incremental design)
