@@ -467,7 +467,7 @@ Plans:
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 174-04-PLAN.md — Amendment supersession correctness (original_sub_id retirement), gated by 1 live-confirm checkpoint [FEC-04] (Wave 3)
+- [x] 174-04-PLAN.md — Amendment supersession correctness (original_sub_id retirement), gated by 1 live-confirm checkpoint [FEC-04] (Wave 3)
 
 **Wave 4** *(blocked on Wave 3 completion)*
 

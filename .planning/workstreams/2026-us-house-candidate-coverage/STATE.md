@@ -5,10 +5,10 @@ milestone_name: 2026 US House Candidate Coverage
 current_phase: 174
 current_phase_name: fec-429-rate-limit-tail-drive-the-6-hourly-ingest-to-zero-ha
 status: executing
-stopped_at: Completed 174-03-PLAN.md
-last_updated: "2026-07-23T19:22:25.673Z"
+stopped_at: Completed 174-04-PLAN.md
+last_updated: "2026-07-23T20:14:58.957Z"
 last_activity: 2026-07-23
-last_activity_desc: Phase 174 plan 03 complete (FEC-03 limiter wiring + daily cron)
+last_activity_desc: 174-03 complete (limiter wiring on all 5 real FEC call sites + daily cron cadence)
 progress:
   total_phases: 10
   completed_phases: 7
@@ -34,9 +34,9 @@ See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 ## Current Position
 
 Phase: 174 (fec-429-rate-limit-tail-drive-the-6-hourly-ingest-to-zero-ha) — EXECUTING
-Plan: 3 of 5 complete (174-01/174-02 Wave 1, 174-03 Wave 2 — FEC-01/02/03 all closed)
-Status: Executing Phase 174 — 174-04/174-05 remain
-Last activity: 2026-07-23 — 174-03 complete (limiter wiring on all 5 real FEC call sites + daily cron cadence)
+Plan: 4 of 5 complete (174-01/174-02 Wave 1, 174-03 Wave 2, 174-04 Wave 3 — FEC-01/02/03/04 all closed)
+Status: Executing Phase 174 — 174-05 remains
+Last activity: 2026-07-23 — 174-04 complete (amendment supersession retirement on original_sub_id + dead is_amended skip removed)
 
 ## v2.22 Phase Dependencies
 
@@ -138,6 +138,7 @@ Re-acknowledged at v2.20 close (2026-06-30).
 | Phase 173 P02 | 2min | 3 tasks | 2 files |
 | Phase 173 P04 | 8min | 3 tasks | 2 files |
 | Phase 174 P03 | 25min | 3 tasks | 7 files |
+| Phase 174 P04 | 20min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -210,8 +211,8 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 
 ## Session Continuity
 
-Last session: 2026-07-23T19:22:25.652Z
-Stopped at: Completed 174-03-PLAN.md
+Last session: 2026-07-23T20:14:58.938Z
+Stopped at: Completed 174-04-PLAN.md
 Resume file: None
 
 ## Operator Next Steps
@@ -266,3 +267,4 @@ Resume file: None
 - [Phase ?]: [Phase 173-04]: OPS-04 cadence KEPT — live prod count is 46 discovery_jurisdictions in the 180-day horizon; weekly Sunday-02:00-UTC cadence unchanged
 - [Phase ?]: [Phase 173-04]: Phase 173 code deployed live to Render (dep-d9gsb1n41pts73de2f1g); full backend suite has 21 pre-existing unrelated failures (no live DB/env vars in sandbox) documented in deferred-items.md, not fixed
 - [Phase ?]: [Phase 174-03]: grep api.open.fec.gov surfaced a 4th ungated FEC call-site file (fecBackfill.ts) missed by 174-RESEARCH.md's 3-site framing; gated it too (Rule 2) so the plan's own must-have holds against the real codebase
+- [Phase ?]: [Phase 174-04]: Task 1 checkpoint (live original_sub_id confirmation) resolved by operator 'proceed' decision on schema-level evidence, not a live-caught populated row — two sampling sessions (~1,640 rows) never caught one and hit FEC's own 429 on the shared key; retirement DELETE ships as a bounded, gated no-op today

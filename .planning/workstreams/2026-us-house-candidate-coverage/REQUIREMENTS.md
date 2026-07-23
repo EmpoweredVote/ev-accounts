@@ -76,7 +76,7 @@ Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followup
 
 ### FEC-04 — Amendment supersession correctness (no double-count)
 
-- [ ] **FEC-04**: When an incremental pull returns a Schedule A transaction with a populated `original_sub_id` (an amendment superseding a prior row), the superseded row is retired so itemized totals do not double-count — the current `ON CONFLICT (source_transaction_id)` dedup does NOT catch this (new `sub_id`), a pre-existing latent gap. The dead `is_amended === true` skip check (references a field absent from the live schema) is removed. A single targeted live query against a high-amendment committee confirms the `original_sub_id` linkage before the retirement logic is finalized.
+- [x] **FEC-04**: When an incremental pull returns a Schedule A transaction with a populated `original_sub_id` (an amendment superseding a prior row), the superseded row is retired so itemized totals do not double-count — the current `ON CONFLICT (source_transaction_id)` dedup does NOT catch this (new `sub_id`), a pre-existing latent gap. The dead `is_amended === true` skip check (references a field absent from the live schema) is removed. A single targeted live query against a high-amendment committee confirms the `original_sub_id` linkage before the retirement logic is finalized.
 
 ### FEC-05 — Verified outcome + documented decision
 
