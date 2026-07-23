@@ -20,6 +20,7 @@ import type { SourceAdapter, StreamingAdapter, BatchSink, FetchResult, Normalize
 import type { PoliticianSource } from '../campaignFinanceService.js';
 import { normalizeDonorName } from './normalizeDonorName.js';
 import { buildCandidateCommitteeMap } from './fecBulkLoader.js';
+import { acquireFecSlot } from '../fecRateLimiter.js';
 
 // Per-politician record cap — prevents timeout on high-volume candidates (e.g. CA House members).
 // At 100 records/page + 4s sleep, 2500 records ≈ 25 pages ≈ 100s — well under Redis lock TTL.
@@ -81,6 +82,36 @@ interface FecCandidateSearchResponse {
 // ---------------------------------------------------------------------------
 
 /**
+ * parseRetryAfterMs (FEC-03) defensively parses a `Retry-After` header — not
+ * documented for api.data.gov/FEC (174-RESEARCH.md Pitfall 1), but free to check
+ * since some API-Umbrella deployments do add it. Handles both the numeric-seconds
+ * and HTTP-date forms. Returns null when absent or unparseable so callers fall
+ * back to the existing exponential delay. The caller MUST clamp the returned
+ * value to the existing 120s ceiling before sleeping (V5/DoS) — this function
+ * itself does not clamp.
+ */
+function parseRetryAfterMs(response: Response): number | null {
+  const retryAfter = response.headers.get('retry-after');
+  if (!retryAfter) return null;
+  const asSeconds = Number(retryAfter);
+  if (!Number.isNaN(asSeconds)) return asSeconds * 1000;
+  const asDate = Date.parse(retryAfter);
+  return Number.isNaN(asDate) ? null : Math.max(0, asDate - Date.now());
+}
+
+/**
+ * readRemaining (FEC-03) defensively reads the documented `X-RateLimit-Remaining`
+ * header. Never reads `X-RateLimit-Reset` — that header does not exist for this
+ * API (174-RESEARCH.md Pitfall 1). Returns null when absent/unparseable.
+ */
+function readRemaining(response: Response): number | null {
+  const remaining = response.headers.get('x-ratelimit-remaining');
+  if (remaining === null) return null;
+  const n = Number(remaining);
+  return Number.isNaN(n) ? null : n;
+}
+
+/**
  * resolveCommitteeIds looks up the principal committee IDs for a given FEC candidate ID.
  * The FEC schedule_a endpoint filters by committee_id, not candidate_id.
  *
@@ -107,6 +138,7 @@ async function resolveCommitteeIds(candidateId: string, cycle: string, apiKey: s
   // the request rate so we stay under the ceiling. See the 2026-07-23 cron audit.
   let delayMs = 2000;
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    await acquireFecSlot(); // FEC-03 — shared limiter gate, before every attempt including retries
     let response: Response;
     try {
       response = await fetch(url, { signal: AbortSignal.timeout(60_000) });
@@ -121,12 +153,22 @@ async function resolveCommitteeIds(candidateId: string, cycle: string, apiKey: s
       throw err;
     }
 
+    const remaining = readRemaining(response);
+    if (remaining !== null && remaining <= 5) {
+      console.warn(`[fecAdapter] FEC X-RateLimit-Remaining low: ${remaining} (candidate lookup)`);
+    }
+
     if (response.status === 429) {
       if (attempt === maxRetries) {
         throw new Error(`FEC candidate lookup rate limited (429) after ${maxRetries} retries for ${candidateId}`);
       }
-      console.warn(`[fecAdapter] candidate lookup 429 — retrying in ${delayMs}ms (attempt ${attempt + 1}/${maxRetries})`);
-      await sleep(delayMs);
+      // FEC-03: prefer a server-supplied Retry-After (clamped to the existing 120s
+      // ceiling — never sleep on an unclamped header value, V5/DoS); fall back to
+      // the existing exponential delay when absent.
+      const serverDelay = parseRetryAfterMs(response);
+      const delay = Math.min(serverDelay ?? delayMs, 120_000);
+      console.warn(`[fecAdapter] candidate lookup 429 — retrying in ${delay}ms (attempt ${attempt + 1}/${maxRetries})${serverDelay != null ? ' [server Retry-After honored]' : ''}`);
+      await sleep(delay);
       delayMs = Math.min(delayMs * 2, 120_000);
       continue;
     }
@@ -543,6 +585,7 @@ async function fetchWithRetry(url: string, maxRetries = 5): Promise<FecScheduleA
   let delayMs = 2000;
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    await acquireFecSlot(); // FEC-03 — shared limiter gate, before every attempt including retries
     let response: Response;
     try {
       response = await fetch(url, { signal: AbortSignal.timeout(60_000) });
@@ -561,12 +604,22 @@ async function fetchWithRetry(url: string, maxRetries = 5): Promise<FecScheduleA
       throw err;
     }
 
+    const remaining = readRemaining(response);
+    if (remaining !== null && remaining <= 5) {
+      console.warn(`[fecAdapter] FEC X-RateLimit-Remaining low: ${remaining} (schedule_a)`);
+    }
+
     if (response.status === 429) {
       if (attempt === maxRetries) {
         throw new Error(`FEC API rate limited (429) after ${maxRetries} retries`);
       }
-      console.warn(`[fecAdapter] 429 rate limit — retrying in ${delayMs}ms (attempt ${attempt + 1}/${maxRetries})`);
-      await sleep(delayMs);
+      // FEC-03: prefer a server-supplied Retry-After (clamped to the existing 120s
+      // ceiling — never sleep on an unclamped header value, V5/DoS); fall back to
+      // the existing exponential delay when absent.
+      const serverDelay = parseRetryAfterMs(response);
+      const delay = Math.min(serverDelay ?? delayMs, 120_000);
+      console.warn(`[fecAdapter] 429 rate limit — retrying in ${delay}ms (attempt ${attempt + 1}/${maxRetries})${serverDelay != null ? ' [server Retry-After honored]' : ''}`);
+      await sleep(delay);
       delayMs = Math.min(delayMs * 2, 120_000);
       continue;
     }
