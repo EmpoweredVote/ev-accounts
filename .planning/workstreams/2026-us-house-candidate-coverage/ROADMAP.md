@@ -433,7 +433,7 @@ Plans:
 
 **Wave 2** *(depends on 173-01 for the canary helper import)*
 
-- [ ] 173-02-PLAN.md — discoveryCron.ts: OPS-01 preflight gate + single skip-alert, OPS-02 typed `isRetryable` (replaces message-regex `isTransient`), OPS-04 horizon comment (+ discoveryCron.test.ts)
+- [x] 173-02-PLAN.md — discoveryCron.ts: OPS-01 preflight gate + single skip-alert, OPS-02 typed `isRetryable` (replaces message-regex `isTransient`), OPS-04 horizon comment (+ discoveryCron.test.ts)
 
 **Wave 3** *(depends on 173-01/02/03 — all code landed)*
 

@@ -48,7 +48,7 @@ Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followup
 
 ### Retry-Spend Reduction
 
-- [ ] **OPS-02**: The discovery cron's `withRetry` no longer retries non-retryable Anthropic errors (credit-exhausted, insufficient-quota, auth/401/403); retries remain only for genuinely transient network faults — so one failing jurisdiction can no longer multiply the paid-call count 3×.
+- [x] **OPS-02**: The discovery cron's `withRetry` no longer retries non-retryable Anthropic errors (credit-exhausted, insufficient-quota, auth/401/403); retries remain only for genuinely transient network faults — so one failing jurisdiction can no longer multiply the paid-call count 3×.
 
 ### Graceful No-Report
 
