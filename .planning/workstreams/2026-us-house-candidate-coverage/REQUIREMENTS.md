@@ -64,11 +64,11 @@ Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followup
 
 ### FEC-01 — Committee resolution from free bulk data (no per-source API lookup)
 
-- [ ] **FEC-01**: Candidate→committee resolution no longer depends on a per-source FEC **API** call. It is sourced from FEC's free bulk `ccl{YY}.zip` candidate→committee linkage — the same file `fecBulkLoader.ts` already parses into its `cmteToSource` map, no key/rate limit — with the API `resolveCommitteeIds` lookup retained only as a fallback when the bulk linkage is stale or missing a candidate. Eliminates the dominant 429 source (`resolveCommitteeIds`) at the root.
+- [x] **FEC-01**: Candidate→committee resolution no longer depends on a per-source FEC **API** call. It is sourced from FEC's free bulk `ccl{YY}.zip` candidate→committee linkage — the same file `fecBulkLoader.ts` already parses into its `cmteToSource` map, no key/rate limit — with the API `resolveCommitteeIds` lookup retained only as a fallback when the bulk linkage is stale or missing a candidate. Eliminates the dominant 429 source (`resolveCommitteeIds`) at the root.
 
 ### FEC-02 — Incremental amendment-aware Schedule A fetch (the core volume cut)
 
-- [ ] **FEC-02**: The Schedule A refresh fetches only transactions loaded since the last successful run via the live-confirmed `min_load_date` filter on `/schedules/schedule_a/` (persisted per-run cursor that advances each run), replacing the whole-cycle-per-source re-pull. This is amendment-inclusive — an amended filing re-loads with a new `load_date`, and the API serves amendment-resolved (current-version) rows — cutting per-run API volume from tens of thousands to an estimated ~1,000–1,500/day.
+- [x] **FEC-02**: The Schedule A refresh fetches only transactions loaded since the last successful run via the live-confirmed `min_load_date` filter on `/schedules/schedule_a/` (persisted per-run cursor that advances each run), replacing the whole-cycle-per-source re-pull. This is amendment-inclusive — an amended filing re-loads with a new `load_date`, and the API serves amendment-resolved (current-version) rows — cutting per-run API volume from tens of thousands to an estimated ~1,000–1,500/day.
 
 ### FEC-03 — Daily cadence + shared limiter/backoff backstop
 
