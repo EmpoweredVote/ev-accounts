@@ -43,6 +43,14 @@ BEGIN
     ALTER ROLE ev_api LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE BYPASSRLS;
   END IF;
   ALTER ROLE ev_api SET statement_timeout = '30s';
+  -- force_custom_plan: parameterized pg_trgm search (%>/word_similarity) can get a catastrophic
+  -- GENERIC plan that abandons the GIN trigram index for a btree filter-scan (~27M cost). Forcing
+  -- custom plans re-plans with the actual value so the GIN index is chosen. Cheap for this workload
+  -- and prevents that whole class. NOTE: this does NOT fully fix donor search on very common
+  -- surnames (e.g. 'smith') — even the GIN plan takes ~58s there because the term matches ~230K
+  -- rows and the word_similarity recheck runs on ~1M heap rows. That needs a query/schema
+  -- optimization (search distinct donor names, not all 26.9M contributions) — tracked separately.
+  ALTER ROLE ev_api SET plan_cache_mode = 'force_custom_plan';
 
   -- Membership: postgres must be a member of ev_api to (a) reassign object ownership to it
   -- (postgres is not superuser) and (b) `SET ROLE ev_api` for validation. NOINHERIT on ev_api
