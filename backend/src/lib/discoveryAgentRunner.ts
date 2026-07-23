@@ -195,14 +195,38 @@ export async function runDiscoveryAgent(
       continue;
     }
 
-    // Any other stop reason (end_turn, max_tokens, etc.) without report_candidates = failure.
-    break;
+    // Any other stop reason (end_turn, max_tokens, etc.) without report_candidates
+    // is a BENIGN outcome (per OPS-03) — the model searched and found nothing
+    // reportable, or exhausted its turn budget. Log and return zero candidates
+    // rather than throwing; discoveryService.ts already treats zero candidates
+    // as a valid completed run.
+    console.warn(
+      '[discoveryAgentRunner] Model turn ended without invoking report_candidates; ' +
+        'treating as a zero-candidate result. stop_reason=' + String(lastStopReason)
+    );
+    return {
+      model: lastModel,
+      inputTokens: totalInputTokens,
+      outputTokens: totalOutputTokens,
+      candidates: [],
+      stopReason: lastStopReason,
+    };
   }
 
-  throw new Error(
-    '[discoveryAgentRunner] Claude did not invoke report_candidates. ' +
-      'Raw stop_reason: ' + String(lastStopReason)
+  // MAX_TURNS exhausted without report_candidates and without a final non-pause_turn
+  // response (shouldn't normally happen since every loop iteration either returns or
+  // continues, but kept as a defensive fallback matching the original function's contract).
+  console.warn(
+    '[discoveryAgentRunner] Exhausted MAX_TURNS without invoking report_candidates; ' +
+      'treating as a zero-candidate result. stop_reason=' + String(lastStopReason)
   );
+  return {
+    model: lastModel,
+    inputTokens: totalInputTokens,
+    outputTokens: totalOutputTokens,
+    candidates: [],
+    stopReason: lastStopReason,
+  };
 }
 
 // ---------------------------------------------------------------------------
