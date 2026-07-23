@@ -391,7 +391,9 @@ beforeEach(() => {
 
 **If confirmation is needed before locking design:** A2 is the one item worth a quick operator gut-check during discuss-phase or plan-check — it does not block implementation since the fallback path is unaffected, but it affects how confidently FEC-04's "documented lever" writeup can describe FEC's exact reset semantics.
 
-## Open Questions
+## Open Questions (RESOLVED — deferred to 174-04 decision doc)
+
+> Both items below are operator-facing decisions, not unresolved research blockers. Plan 174-04 Task 2 evaluates and records them in `174-FEC04-DECISION.md` (per FEC-04's "evaluated and documented" clause). Not blocking execution.
 
 1. **Should the rate-limit budget be configurable via env var, and what's the right default?**
    - What we know: FEC ceiling is 1,000/hr per key (confirmed: DEMO_KEY=40/hr, registered key=1,000/hr, upgraded key=7,200/hr via `APIinfo@fec.gov` request) `[CITED: api.data.gov developer manual + multiple corroborating FEC API guides]`.
