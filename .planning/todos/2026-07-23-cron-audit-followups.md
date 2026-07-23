@@ -23,6 +23,7 @@ After a 6-hour `fec-ingest` cron fire (00/06/12/18:00 UTC), query prod:
 Expect failed-rate to drop sharply from ~65%. (Prod = Supabase project `kxsdzaojfaibhuzmclfq`.)
 
 ### 1. Discovery-sweep / Anthropic cost control — the real "costing money" (HIGH)
+> **PLANNED 2026-07-22 → Phase 173** (workstream `2026-us-house-candidate-coverage`, milestone v2.24). 4 plans / 3 waves, RESEARCH+VALIDATION+plan-checker all PASSED. Reqs OPS-01..04. Execute with `/gsd-execute-phase 173`. Phase dir: `.planning/workstreams/2026-us-house-candidate-coverage/phases/173-discovery-sweep-anthropic-cost-reliability-hardening/`.
 Weekly Sun 02:00 (`discoverySweep.ts:21`) → `discoveryCron.ts` → `discoveryAgentRunner.ts`. Uses PAID Anthropic API (claude-sonnet-4-6 + server-side `web_search_20250305`) + Resend email, once per jurisdiction in `SWEEP_HORIZON_DAYS=180`. Failures: 144× "Anthropic credit balance too low", 45× key-not-configured, 21× "Claude did not invoke report_candidates".
 - Add a pre-flight Anthropic credit/spend guard; skip + alert if unavailable (avoid the credit-exhaustion failures).
 - Reduce the `withRetry` 3× retry on 429/transient (`discoveryCron.ts:34,86-110`) — it multiplies spend on flaky jurisdictions.
