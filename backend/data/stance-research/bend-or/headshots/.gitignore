@@ -1,0 +1,8 @@
+# Processed 600x750 headshots + fetched originals are build artifacts — regenerate with
+# `py data/stance-research/bend-or/_headshots.py`. Provenance (source page, image URL, license,
+# original dimensions) is tracked in _review.json, which IS committed.
+*.jpg
+*.png
+*.pdf
+raw/
+_contact_sheet.jpg
