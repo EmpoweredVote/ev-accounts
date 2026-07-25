@@ -88,7 +88,10 @@ Search trail already burned (do not repeat):
   after the Sept measure deadline) will add Curtis, McLaughlin and Tintle but will be grayscale
   too. Use only as a last resort.
 
-## 4. Stance queue — Bend CITY + county-pamphlet cohorts DONE; 13 people outstanding
+## 4. Stance queue — Bend city, county pamphlet AND both sitting commissioners DONE
+Outstanding: Bend-La Pine board (7), BPRD board (5), sheriff race (2), Sorrells (1), plus HD 53/54's
+3 state legislators (a state-leg wave, not this one). Clerk/Assessor/Treasurer and their candidates
+remain honest-skip-by-design as ministerial offices.
 
 **Totals now live: 76 stances / 65 quotes across 17 people, 0 unsourced.**
 
@@ -105,12 +108,17 @@ says "I strongly support mail voting", neither of which a party prior would have
 Bend-city cohort **complete** (waves 2-3, 2026-07-24, three `politician-stance-researcher` agents
 capped at 3 concurrent): Kebler 10, Perkins 6, Méndez 5, Cummiskey 5, Reinholtz 5, Franzosa 4,
 Riley 4, Platt 3, Norris 2, Boozell 2, **Sorrells 0**. County side after the wave-4 pamphlet pass:
-Schmidt 5, Connally 4, DeBone 4, Imhoff 4, Sabbadini 4, **Chang 0, Adair 0**. Payloads:
+Schmidt 5, Connally 4, DeBone 4, Imhoff 4, Sabbadini 4, and after wave 5 **Adair 5, Chang 4**. Payloads:
 `wave1-stances.json`, `wave2-stances.json`, `wave3-*.json`, `wave4-county-pamphlet.json`;
 push any of them with `_push.ts <file>`.
 
 ### Validation rejections — do NOT silently re-add these
-Each agent output was spot-checked against its sources. Five rows were rejected or amended:
+Every agent output was spot-checked against its sources. **14 rows across waves 2-5 were rejected or
+amended** (5 below, plus 9 in wave 5 documented in `_fix_wave5.py`). Recurring failure modes, in
+frequency order: reporter's INDIRECT speech passed off as a quote (twice, second time despite an
+explicit prompt warning); a value inferred from SILENCE; institutional action scored as a personal
+position; evidence measuring a DIFFERENT axis than the topic (Adair's abortion row); stale evidence
+where chairs can't be discriminated; and a source that is an opposition outlet describing reshares.
 1. **Platt homelessness-response** — quote was The Bulletin's INDIRECT speech ("said he would work
    to create more outdoor shelters"). Stance kept, quote demoted to reasoning.
 2. **Cummiskey economic-development=1** — DROPPED. Her issues page shows infrastructure-as-tool
