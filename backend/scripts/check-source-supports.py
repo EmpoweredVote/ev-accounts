@@ -112,6 +112,21 @@ def spa_source(url: str) -> bool:
     return bool(NON_TEXT_RE.match((url or "").strip()))
 
 
+# A dead source URL is a distinct, unambiguous defect and deserves its own
+# verdict rather than being lumped in with "page says nothing on this axis".
+# Note these arrive as HTTP 200 bodies via the r.jina.ai fallback, so a status
+# check alone does not catch them.
+NOTFOUND_RE = re.compile(
+    r"(?i)\b(page not found|404 not found|404 error|"
+    r"page you (?:are looking for|requested) (?:could not be found|does not exist)|"
+    r"this page (?:doesn'?t|does not) exist|"
+    r"we can'?t find (?:the|that) page|article not found)\b")
+
+
+def looks_dead(text: str) -> bool:
+    return bool(NOTFOUND_RE.search(text[:3000]))
+
+
 _TEXT_MEMO: dict = {}
 
 
@@ -180,6 +195,9 @@ def main() -> int:
     ap.add_argument("--json", help="write the full per-row report here")
     ap.add_argument("--queue", help="write the L3 model-adjudication queue here")
     ap.add_argument("--no-fetch", action="store_true", help="L1 only")
+    ap.add_argument("--resume", metavar="REPORT",
+                    help="skip rows already present in REPORT and merge into it; "
+                         "makes long runs incremental and idempotent")
     a = ap.parse_args()
 
     import psycopg2
@@ -246,11 +264,31 @@ def main() -> int:
         print(f"scoring {len(rows)} live rows")
     conn.close()
 
-    report, queue = [], []
-    tally = Counter()
+    prior, done = [], set()
+    if a.resume and os.path.exists(a.resume):
+        prior = json.load(open(a.resume, encoding="utf-8"))
+        done = {(str(r["external_id"]), r["topic_key"]) for r in prior}
+        rows = [r for r in rows
+                if (str(r["external_id"]), r["topic_key"]) not in done]
+        print(f"resume: {len(done)} rows already scored; {len(rows)} left this pass")
+
+    report, queue = list(prior), []
+    tally = Counter(r["verdict"] for r in prior)
+    for r in prior:
+        for f in r.get("flags", []):
+            tally[f"flag:{f}"] += 1
+    def flush():
+        # Persist as we go. A long run can be killed by a timeout, and a report
+        # written only at the end means every fetch is thrown away.
+        if a.json:
+            json.dump(report, open(a.json, "w", encoding="utf-8"), indent=2)
+        if a.queue:
+            json.dump(queue, open(a.queue, "w", encoding="utf-8"), indent=2)
+
     for i, r in enumerate(rows, 1):
         if i % 25 == 0 or i == len(rows):
-            print(f'  ...{i}/{len(rows)}', flush=True)
+            print(f'  ...{i}/{len(rows)} (report {len(report)})', flush=True)
+            flush()
         flags = structural_flags(r)
         terms = vocab.get(r["topic_key"], set())
         srcs = [s for s in (r["sources"] or []) if str(s).strip()]
@@ -260,16 +298,24 @@ def main() -> int:
         if len(textual) < len(srcs):
             flags.append("non-text-source")
 
+        dead_srcs = []
         if textual and not a.no_fetch:
             for s in textual:
                 text, how = readable_text(s)
                 if not text:
                     continue
+                if looks_dead(text):
+                    dead_srcs.append(s)
+                    continue
                 readable = True
                 found = {t for t in terms if t in text.lower()}
                 if len(found) > len(hits):
                     hits, best = found, f"{s} [{how}]"
-            if not readable:
+            if dead_srcs and not readable:
+                verdict = "SOURCE-DEAD"
+                best = f"{dead_srcs[0]} [404/not-found]"
+                flags.append("dead-link")
+            elif not readable:
                 verdict = "UNVERIFIABLE"
             elif not hits:
                 verdict = "UNSUPPORTED"
@@ -315,7 +361,7 @@ def main() -> int:
     print()
     for k, v in tally.most_common():
         print(f"  {k:<22} {v}")
-    ACTIONABLE = ("UNSUPPORTED", "UNSUPPORTED-STRUCTURAL", "NO-SOURCE")
+    ACTIONABLE = ("UNSUPPORTED", "UNSUPPORTED-STRUCTURAL", "NO-SOURCE", "SOURCE-DEAD")
     bad = [r for r in report if r["verdict"] in ACTIONABLE]
     print(f"\nACTIONABLE (retire or re-research): {len(bad)} rows "
           f"across {len({r['external_id'] for r in bad})} politicians")
@@ -329,8 +375,27 @@ def main() -> int:
         json.dump(report, open(a.json, "w", encoding="utf-8"), indent=2)
         print(f"\nwrote {a.json}")
     if a.queue:
-        json.dump(queue, open(a.queue, "w", encoding="utf-8"), indent=2)
-        print(f"wrote {a.queue} ({len(queue)} rows needing model adjudication)")
+        # Derive from the MERGED report, not from this pass's accumulator — with
+        # --resume the accumulator only holds rows scored in the current pass.
+        need = [r for r in report if r["verdict"] in ("TOPICAL", "SUSPECT")]
+        conn2 = psycopg2.connect(dsn)
+        cur2 = conn2.cursor(cursor_factory=RealDictCursor)
+        cur2.execute("""
+            SELECT p.external_id, t.topic_key, pc.reasoning
+              FROM inform.politician_context pc
+              JOIN inform.compass_topics t  ON t.id = pc.topic_id
+              JOIN essentials.politicians p ON p.id = pc.politician_id""")
+        reasons = {(str(x["external_id"]), x["topic_key"]): x["reasoning"]
+                   for x in cur2.fetchall()}
+        conn2.close()
+        q = [{**r,
+              "reasoning": reasons.get((str(r["external_id"]), r["topic_key"]), ""),
+              "question": "Does this source state a position on this topic's axis that "
+                          "supports the assigned chair? Answer supports / contradicts / "
+                          "silent, and quote the sentence."}
+             for r in need]
+        json.dump(q, open(a.queue, "w", encoding="utf-8"), indent=2)
+        print(f"wrote {a.queue} ({len(q)} rows needing model adjudication)")
     return 0
 
 
