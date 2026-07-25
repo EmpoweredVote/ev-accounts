@@ -1,4 +1,4 @@
--- 1381_seed_wi_2026_statewide_candidates.sql
+-- 1420_seed_wi_2026_statewide_candidates.sql
 -- 18 new WI politicians + 25 race_candidates onto the races created in 1380:
 --   23 on the 11 Aug-11 partisan-primary races, 2 on the Attorney General general race.
 --

@@ -1,4 +1,4 @@
--- 1380_seed_wi_2026_statewide_elections_races.sql
+-- 1419_seed_wi_2026_statewide_elections_races.sql
 -- WI 2026 statewide executive offices: the missing Aug-11 partisan primary election record
 -- plus primary races (office x party) and general-election race shells.
 --

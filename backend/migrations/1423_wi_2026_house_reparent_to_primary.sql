@@ -1,4 +1,4 @@
--- 1384_wi_2026_house_reparent_to_primary.sql
+-- 1423_wi_2026_house_reparent_to_primary.sql
 -- Fix the WI U.S. House pre-primary field: move the 31 party-affiliated candidates off the
 -- Nov-3 GENERAL races and onto proper Aug-11 PARTISAN PRIMARY races, split by ballot party.
 --

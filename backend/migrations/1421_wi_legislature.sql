@@ -1,4 +1,4 @@
--- 1382_wi_legislature.sql
+-- 1421_wi_legislature.sql
 -- Seed the full 132-member sitting Wisconsin Legislature: 33 Senate + 99 Assembly.
 -- STRUCTURAL migration. Idempotent. GENERATED from the Open States v3 roster --
 -- do not hand-edit; regenerate instead (see PROVENANCE below).

@@ -1,4 +1,4 @@
--- 1383_wi_2026_legislative_races.sql
+-- 1422_wi_2026_legislative_races.sql
 -- WI 2026 legislative races: 220 Aug-11 partisan-primary races + 116 Nov-3 general
 -- race shells, across all 17 Senate districts and 99 Assembly districts up this cycle.
 -- GENERATED -- do not hand-edit; regenerate (see PROVENANCE).
