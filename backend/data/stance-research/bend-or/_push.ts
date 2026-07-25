@@ -7,7 +7,8 @@
  * politician, (b) every topic_key is a LIVE compass topic, (c) every value is 1-5, and
  * (d) every stance carries at least one source URL. Aborts the whole transaction otherwise.
  *
- * Run: node --import tsx data/stance-research/bend-or/_push.ts
+ * Run: node --import tsx data/stance-research/bend-or/_push.ts [payload.json]
+ *      (payload defaults to wave1-stances.json; pass a filename for later waves)
  */
 import 'dotenv/config';
 import { readFileSync } from 'fs';
@@ -27,7 +28,9 @@ type Stance = {
 };
 
 (async () => {
-  const payload: Stance[] = JSON.parse(readFileSync(`${DIR}/wave1-stances.json`, 'utf8'));
+  const file = process.argv[2] || 'wave1-stances.json';
+  const payload: Stance[] = JSON.parse(readFileSync(`${DIR}/${file}`, 'utf8'));
+  console.log(`Payload: ${file}`);
 
   // ---- validate ----
   const bad = payload.filter(

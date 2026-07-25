@@ -88,30 +88,76 @@ Search trail already burned (do not repeat):
   after the Sept measure deadline) will add Curtis, McLaughlin and Tintle but will be grayscale
   too. Use only as a last resort.
 
-## 4. Stance queue (28 people outstanding)
+## 4. Stance queue — Bend CITY cohort is DONE; 17 people outstanding
 
-Wave 1 (2026-07-24) pushed **23 evidence-only stances + 23 verbatim quotes** across 7 people,
-0 unsourced: Kebler 3, Reinholtz 3, Cummiskey 3, Connally 4, Sabbadini 4, Imhoff 2, Schmidt 4.
-Payload + push script: `data/stance-research/bend-or/wave1-stances.json`, `_push.ts`.
+**Totals now live: 60 stances / 52 quotes across 14 people, 0 unsourced.**
 
-Still to research, in priority order:
+Bend-city cohort **complete** (waves 2-3, 2026-07-24, three `politician-stance-researcher` agents
+capped at 3 concurrent): Kebler 10, Perkins 6, Méndez 5, Cummiskey 5, Reinholtz 5, Franzosa 4,
+Riley 4, Platt 3, Norris 2, Boozell 2, **Sorrells 0**. Plus the county candidates from wave 1:
+Connally 4, Sabbadini 4, Schmidt 4, Imhoff 2. Payloads: `wave1-stances.json`,
+`wave2-stances.json`, `wave3-*.json`; push with `_push.ts <file>`.
 
-1. **On the Nov ballot, no stances yet (3):** Ariel Méndez (P5, has a substantial council voting
-   record — worth a deep pass), Dan Sorrells, Ron (Rondo) Boozell.
-2. **Sitting Bend councilors (4):** Megan Norris, Gina Franzosa, Megan Perkins, Steve Platt —
-   council votes on growth/housing/transportation are the evidence, not campaign copy.
-3. **Kebler deepening:** only 3 stances from her campaign page; as sitting mayor her council
-   record should support several more (homelessness response and public safety were honest-skipped
-   because the campaign-page wording was too vague to place on the scale).
-4. **Sitting commissioners (3):** Chang, DeBone, Adair — BOCC minutes and Bulletin/Source
-   coverage. Adair note: she is also the OR-05 Republican nominee, so her federal-topic record
-   may be researchable at the same time.
-5. **Sheriff race (2):** Rupert and McLaughlin — `public-safety-approach`, `jail-capacity`,
-   `local-immigration` are the applicable topics.
-6. **Bend-La Pine School Board (7)** — `school-vouchers` and school-adjacent topics only.
-7. **BPRD board (5)** — expect thin; `local-environment` / `growth-and-development` at most.
-8. **HD 53/54 (3):** Levy, Kropf, Summers — these are STATE legislators with zero stances today
-   (so is SD-27's Broadman); they belong to a state-leg wave rather than the Bend local wave.
+### Validation rejections — do NOT silently re-add these
+Each agent output was spot-checked against its sources. Five rows were rejected or amended:
+1. **Platt homelessness-response** — quote was The Bulletin's INDIRECT speech ("said he would work
+   to create more outdoor shelters"). Stance kept, quote demoted to reasoning.
+2. **Cummiskey economic-development=1** — DROPPED. Her issues page shows infrastructure-as-tool
+   plus small-business support but takes no position on corporate incentives; chairs 1 AND 2 both
+   hinge on an anti-subsidy stance she never states.
+3. **Boozell climate-change=2** — DROPPED. Quote is genuine (the Bulletin literally prints "Be a
+   net-zero -energy city. Create green jobs.") but it is a 2020 bullet with no timeline, and
+   chairs 2 vs 3 cannot be discriminated from it.
+4. **Riley local-environment=3** and **Kebler public-safety-approach=3** — DROPPED as institutional
+   attribution: a tree code that took effect during his term, and subcommittee minutes of the
+   POLICE CHIEF briefing council. Neither is the official's own stated position.
+5. **Kebler growth-and-development** — agent proposed an override 3→4 on her Dec-2024 vote to
+   fast-track the Caldera Ranch UGB expansion ("I don't think we can wait"). **Held at 3**: chair
+   4's defining content (reduce fees, recruit development to grow the tax base) is absent and her
+   motive is housing need. A case for 4 is defensible on the streamlining mechanism alone — flagged
+   in the row's reasoning if a reviewer wants to flip it.
+   Also **Riley homelessness 4→3**, because the same article has him pairing the enforcement vote
+   with "incredible progress" on shelter beds, and Kebler scores 3 on that identical vote.
+
+### HIGH-VALUE UNMINED SOURCE (found late, costs nothing to use)
+The **Deschutes County May 2026 voters' pamphlet** (`DocumentCenter/View/5835`, already downloaded
+to `data/stance-research/bend-or/headshots/dc-may2026-pamphlet.pdf`) carries candidates' own
+words, officially, for the current cycle. Extract with `pdftotext -layout -f <pg> -l <pg>`.
+Boozell's ICE quote came from p24. **Imhoff's statement on the same page contains material that
+would strengthen rows already published for him:**
+- `"Enforce a 6 mile no-camping zone around UGBs and move people from streets to stability with
+  clear expectations. Treatment must demand recovery and services must deliver results."`
+  → confirms his homelessness-response=4 far better than the campaign-site wording now cited.
+- `"A 50-year road plan, including a Hwy 97 bypass from Redmond to Sunriver."`
+  → a clear road-capacity position on `transportation-priorities`, currently BLANK for him.
+- `"need more homes and fewer lawsuits. Endless appeals delay housing and raise costs."`
+  → the housing mechanism whose absence caused housing to be skipped for him.
+Connally (p21), Sabbadini (p22) and Schmidt (p25) have statements on the same PDF — mine those
+before doing any new web research on the county candidates.
+
+### Still to research, in priority order
+1. **Dan Sorrells (Bend P6)** — 0 stances and the only empty compass on the Bend ballot. His sole
+   campaign presence is Instagram `@citycouncildan`; no site, no news profile, no questionnaire.
+   The **city-hosted candidate forum is mid-September 2026** — that is the unlock. Re-run then.
+2. **Sitting commissioners (3):** Chang, DeBone, Adair — BOCC minutes plus Bulletin/Source
+   coverage. Adair is also the OR-05 Republican nominee, so federal topics are researchable too.
+3. **Sheriff race (2):** Rupert and McLaughlin — `public-safety-approach`, `jail-capacity`,
+   `local-immigration`. The November county pamphlet (not yet published) will carry both.
+4. **County candidate deepening (4):** Connally, Sabbadini, Imhoff, Schmidt — start with the
+   pamphlet above.
+5. **Bend-La Pine School Board (7)** — `school-vouchers` and school-adjacent topics only.
+6. **BPRD board (5)** — expect thin; `local-environment` / `growth-and-development` at most.
+   Riley's KPOV "The Point" podcast episode on the tree code is an unmined source (audio).
+7. **HD 53/54 (3):** Levy, Kropf, Summers — STATE legislators with zero stances (so is SD-27's
+   Broadman); belongs to a state-leg wave, not the Bend local wave.
+
+### Agent-prompt intel that worked (reuse verbatim)
+Embed the exact 1-5 texts for all 14 local topics; state that INDIRECT speech is not a quote and
+that an empty `quote_text` with a real source is acceptable; tell agents `bendbulletin.com/?s=` is
+the best search, `r.jina.ai` proxies past the bendoregon.gov 403, Playwright reaches
+web.archive.org and citizenportal.ai, and `lite.duckduckgo.com/lite/` via r.jina.ai survives the
+DuckDuckGo CAPTCHA wall. ktvz.com's own `?s=` 404s; centraloregondaily.com rate-limits (429);
+vote411.org 403s.
 
 **Honest-skip by design (do not chase):** County Clerk, Assessor and Treasurer are ministerial
 offices — same treatment as the Falls Church constitutional officers. Only chase the Clerk

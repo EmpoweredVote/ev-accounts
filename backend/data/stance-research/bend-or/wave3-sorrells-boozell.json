@@ -1,0 +1,25 @@
+[
+  {
+    "external_id": -4105831,
+    "name": "Ron (Rondo) Boozell",
+    "topic_key": "local-immigration",
+    "value": 1,
+    "reasoning": "In his own May 2026 Deschutes County voters' pamphlet statement (filed while running for County Commissioner Position 5, the cycle immediately before he qualified for the Bend mayoral race), Boozell wrote in his own words that local government should refuse ICE access, require a warrant before any cooperation, and conduct no immigration-related investigations. This is his most current dated statement on the topic and matches the strictest non-cooperation position on the scale (refuse all detainers/proactive assistance).",
+    "sources": [
+      "https://www.deschutescounty.gov/DocumentCenter/View/5835"
+    ],
+    "quote_text": "WE NEED TO REFUSE ICE admission to our county. Make them show names on a warrant. Refuse them access to our community. No investigations in Deschutes County!"
+  },
+  {
+    "external_id": -4105831,
+    "name": "Ron (Rondo) Boozell",
+    "topic_key": "transportation-priorities",
+    "value": 1,
+    "reasoning": "Bend Bulletin reporting dated 2020-09-24 (his previous Bend council run) records that he opposed the city's $190M transportation bond and 'said he would allocate $20 million to put toward public transit, which is run by a separate organization called Cascades East Transit' - an explicit redirect of road money to transit, which is why this lands at chair 1 rather than 2 (no road-capacity investment is proposed). TWO CAVEATS recorded deliberately: (a) this is 2020 evidence and his current May-2026 voters'-pamphlet platform is silent on transportation, so it is his most recent documented position rather than a confirmed 2026 one; (b) the article attributes his bond opposition partly to an affordability/anti-tax rationale - he argued the tax increase 'will lead to mass rent increases and evictions' - so the transit redirect, not the bond opposition alone, is what supports the value. No verbatim transit-specific sentence exists, so quote_text is empty.",
+    "sources": [
+      "https://bendbulletin.com/2020/09/24/perkins-piper-and-boozell-face-off-for-position-no-3-on-bend-city-council/",
+      "https://bendbulletin.com/2020/08/25/ron-rondo-boozell-runs-for-the-bend-city-council-again/"
+    ],
+    "quote_text": ""
+  }
+]
