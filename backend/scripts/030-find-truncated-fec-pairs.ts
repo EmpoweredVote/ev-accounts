@@ -29,6 +29,16 @@ import { pool } from '../src/lib/db.js';
 /** Known per-politician record caps used over the project's history. */
 export const KNOWN_FEC_CAPS = [2500, 50000] as const;
 
+/**
+ * Plausibility ceiling for a pair's "expected" record count. Some old API runs recorded a
+ * bogus expected (e.g. 113,097,321 — a conduit committee's total) when a candidate resolved
+ * to a shared/conduit committee. No real single candidate committee's itemized individual
+ * count comes close (the largest legitimate value observed is ~2.35M). Any expected above
+ * this is treated as noise: the pair is NOT judged "truncated" on it (surfaced separately as
+ * a data anomaly). Sits well above the largest real value and far below the bogus ones.
+ */
+export const MAX_PLAUSIBLE_EXPECTED = 5_000_000;
+
 export interface TruncatedPair {
   sourceId: string;
   externalId: string;
@@ -86,10 +96,11 @@ export async function getTruncatedPairs(threshold = 0.95): Promise<TruncatedPair
      FROM parsed p
      JOIN transparent_motivations.politician_sources ps ON ps.id = p.politician_source_id
      JOIN essentials.politicians pol ON pol.id = ps.essentials_politician_id
-     WHERE (p.expected IS NOT NULL AND p.expected > 0 AND p.captured::numeric / p.expected < $1)
+     WHERE (p.expected IS NOT NULL AND p.expected > 0 AND p.expected <= $3
+            AND p.captured::numeric / p.expected < $1)
         OR (p.expected IS NULL AND p.records_fetched = ANY($2::int[]))
      ORDER BY COALESCE(p.expected, p.records_fetched) DESC, COALESCE(p.captured, p.records_fetched) DESC`,
-    [threshold, KNOWN_FEC_CAPS as unknown as number[]]
+    [threshold, KNOWN_FEC_CAPS as unknown as number[], MAX_PLAUSIBLE_EXPECTED]
   );
 
   return r.rows.map((row) => ({
@@ -102,6 +113,42 @@ export async function getTruncatedPairs(threshold = 0.95): Promise<TruncatedPair
     expected: row.expected != null ? Number(row.expected) : null,
     coveragePct: row.coverage_pct != null ? Number(row.coverage_pct) : null,
   }));
+}
+
+export interface ExpectedAnomaly {
+  fullName: string;
+  cycle: string;
+  captured: number;
+  expected: number;
+}
+
+/** Pairs whose latest run recorded an implausibly large expected (conduit/shared-committee
+ *  noise). Surfaced so the anomaly is visible rather than silently excluded from the audit. */
+export async function getExpectedAnomalies(): Promise<ExpectedAnomaly[]> {
+  const r = await pool.query<{ full_name: string; cycle: string; captured: string; expected: string }>(
+    `WITH latest AS (
+       SELECT DISTINCT ON (ir.politician_source_id, ir.election_cycle)
+              ir.politician_source_id, ir.election_cycle, ir.notes
+       FROM transparent_motivations.ingestion_runs ir
+       WHERE ir.adapter_name = 'fec' AND ir.status IN ('completed','completed_with_warning')
+         AND ir.notes ~ 'expected [0-9]+'
+       ORDER BY ir.politician_source_id, ir.election_cycle, ir.completed_at DESC
+     ),
+     parsed AS (
+       SELECT l.*,
+         (regexp_match(l.notes,'fetched ([0-9]+) of expected ([0-9]+)'))[1]::bigint AS captured,
+         (regexp_match(l.notes,'fetched ([0-9]+) of expected ([0-9]+)'))[2]::bigint AS expected
+       FROM latest l
+     )
+     SELECT pol.full_name, p.election_cycle AS cycle, p.captured::text, p.expected::text
+     FROM parsed p
+     JOIN transparent_motivations.politician_sources ps ON ps.id = p.politician_source_id
+     JOIN essentials.politicians pol ON pol.id = ps.essentials_politician_id
+     WHERE p.expected > $1
+     ORDER BY p.expected DESC`,
+    [MAX_PLAUSIBLE_EXPECTED]
+  );
+  return r.rows.map((x) => ({ fullName: x.full_name, cycle: x.cycle, captured: Number(x.captured), expected: Number(x.expected) }));
 }
 
 async function main(): Promise<void> {
@@ -130,6 +177,14 @@ async function main(): Promise<void> {
     const cov = p.coveragePct != null ? `${p.coveragePct}%` : 'cap';
     const exp = p.expected != null ? p.expected.toLocaleString() : `cap@${p.captured}`;
     console.log(`  [${p.cycle}] ${p.representingState.padEnd(2)} ${p.fullName.padEnd(28)} ${p.captured.toLocaleString().padStart(10)} / ${exp.padStart(11)}  (${cov})`);
+  }
+
+  const anomalies = await getExpectedAnomalies();
+  if (anomalies.length > 0) {
+    console.log(`\n--- Excluded ${anomalies.length} data anomaly pair(s) (implausible expected > ${MAX_PLAUSIBLE_EXPECTED.toLocaleString()}, treated as noise not truncation) ---`);
+    for (const a of anomalies) {
+      console.log(`  [${a.cycle}] ${a.fullName.padEnd(28)} captured ${a.captured.toLocaleString()} / bogus expected ${a.expected.toLocaleString()} — likely a source linked to a conduit/shared committee (investigate linkage)`);
+    }
   }
 
   fs.writeFileSync(jsonPath, JSON.stringify(pairs, null, 2));

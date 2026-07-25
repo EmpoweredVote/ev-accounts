@@ -1,0 +1,243 @@
+/**
+ * fecBulkLoader — load FEC itemized individual contributions from the free BULK data
+ * downloads instead of the rate-limited API. quick-031.
+ *
+ * The API (60/min key) is the wrong tool for a 40M+ record historical backfill; FEC
+ * publishes the entire itemized individual-contributions dataset as free per-cycle bulk
+ * files (no key, no rate limit, no ToS gray area). This streams a cycle's `indiv{YY}.zip`,
+ * keeps only rows for our confirmed candidates' committees, and upserts them through the
+ * SAME dedup path as the API (ON CONFLICT (data_source, source_transaction_id) on SUB_ID),
+ * so bulk + API rows never duplicate and the read path / agg are unchanged.
+ *
+ * Files (https://www.fec.gov/files/bulk-downloads/{CYCLE}/):
+ *   indiv{YY}.zip  — itemized individual contributions (pipe-delimited, no header, 21 cols)
+ *   ccl{YY}.zip    — candidate→committee linkage (map our candidates to their committees)
+ *
+ * CAVEAT (documented): the bulk file is not amendment-resolved the way the API is; an
+ * amended transaction has a different SUB_ID than its original, so both can load → slight
+ * itemized over-count on amended transactions. Headline total_raised is unaffected (it uses
+ * authoritative FEC receipts). v2 could add amendment resolution.
+ */
+
+import { Readable } from 'node:stream';
+import readline from 'node:readline';
+import unzipper from 'unzipper';
+import { pool } from '../db.js';
+import { upsertContributions } from './fecAdapter.js';
+import { normalizeDonorName } from './normalizeDonorName.js';
+import { refreshSummaryAggForSource, getConfirmedFecSources } from '../campaignFinanceService.js';
+import { cache } from '../cache.js';
+import type { ContributionInsert } from './adapterInterface.js';
+
+export interface BulkLoadOptions {
+  /** Parse + filter + count only; write nothing to the DB. */
+  dry?: boolean;
+  /** Restrict to these committee IDs (must still map to a confirmed candidate). For dry runs. */
+  committees?: string[];
+  /** Stop after this many matched rows. For bounded dry/test loads. */
+  limit?: number;
+  /** Print the first N raw lines of ccl + indiv (column-position verification), then continue. */
+  sample?: number;
+  /** 'P' = principal committees only (matches API coverage; default). 'all' = all authorized. */
+  designation?: 'P' | 'all';
+}
+
+const BULK_BASE = 'https://www.fec.gov/files/bulk-downloads';
+
+// indiv column indexes (0-based) per the FEC data dictionary.
+const I_CMTE = 0, I_ENTITY = 6, I_NAME = 7, I_CITY = 8, I_STATE = 9,
+      I_EMPLOYER = 11, I_OCC = 12, I_DATE = 13, I_AMT = 14, I_MEMO = 18, I_SUB = 20;
+// ccl column indexes: CAND_ID | CAND_ELECTION_YR | FEC_ELECTION_YR | CMTE_ID | CMTE_TP | CMTE_DSGN | LINKAGE_ID
+const C_CAND = 0, C_CMTE = 3, C_DSGN = 5;
+
+/** Stream a remote FEC bulk .zip and yield each line already split on '|'. Constant memory. */
+async function* streamZipLines(url: string): AsyncGenerator<string[]> {
+  const res = await fetch(url);
+  if (!res.ok || !res.body) throw new Error(`bulk download failed: HTTP ${res.status} for ${url}`);
+  const nodeStream = Readable.fromWeb(res.body as Parameters<typeof Readable.fromWeb>[0]);
+  const entry = nodeStream.pipe(unzipper.ParseOne());
+  const rl = readline.createInterface({ input: entry, crlfDelay: Infinity });
+  for await (const line of rl) {
+    if (line) yield line.split('|');
+  }
+}
+
+/** FEC bulk date is MMDDYYYY. */
+function parseFecBulkDate(s: string | undefined): Date | null {
+  if (!s || s.length !== 8) return null;
+  const d = new Date(`${s.slice(4, 8)}-${s.slice(0, 2)}-${s.slice(2, 4)}T00:00:00Z`);
+  return isNaN(d.getTime()) ? null : d;
+}
+
+/** Map one indiv bulk row into the same slim shape the API path stores. */
+function mapBulkRow(c: string[], sourceId: string, cycle: string): ContributionInsert {
+  const amount = parseFloat(c[I_AMT] ?? '') || 0;
+  const name = c[I_NAME] ?? '';
+  const date = parseFecBulkDate(c[I_DATE]);
+  return {
+    politician_source_id: sourceId,
+    donor_id: null,
+    committee_id: null,
+    amount,
+    contribution_date: date,
+    election_cycle: cycle,
+    confidence_level: 'HIGH',
+    data_source: 'fec', // MUST be 'fec' so SUB_ID dedups against API-ingested rows
+    source_transaction_id: c[I_SUB] ?? '',
+    raw_record: {
+      contributor_name: name,
+      entity_type: c[I_ENTITY] ?? '',
+      contributor_occupation: c[I_OCC] ?? '',
+      contributor_employer: c[I_EMPLOYER] ?? '',
+      contributor_city: c[I_CITY] ?? '',
+      contributor_state: c[I_STATE] ?? '',
+      sub_id: c[I_SUB] ?? '',
+      committee_id: c[I_CMTE] ?? '',
+      contribution_receipt_amount: amount,
+      contribution_receipt_date: date ? date.toISOString().slice(0, 10) : '',
+      two_year_transaction_period: Number(cycle),
+      memo_code: c[I_MEMO] ?? '',
+    },
+    donor_name_normalized: normalizeDonorName(name),
+  };
+}
+
+/** Build CMTE_ID -> politician_source_id from ccl, restricted to our confirmed candidates. */
+async function buildCommitteeMap(cycle: string, yy: string, opts: BulkLoadOptions): Promise<Map<string, string>> {
+  const sources = await getConfirmedFecSources();
+  const candToSource = new Map<string, string>();
+  for (const s of sources) if (s.external_id) candToSource.set(s.external_id, s.id);
+
+  const cmteToSource = new Map<string, string>();
+  let cclRows = 0, sampled = 0;
+  for await (const c of streamZipLines(`${BULK_BASE}/${cycle}/ccl${yy}.zip`)) {
+    cclRows++;
+    if (opts.sample && sampled < opts.sample) { console.log('[bulk][ccl sample]', c.join('|')); sampled++; }
+    const sourceId = candToSource.get(c[C_CAND] ?? '');
+    if (!sourceId) continue;
+    if (opts.designation !== 'all' && c[C_DSGN] !== 'P') continue;
+    if (c[C_CMTE]) cmteToSource.set(c[C_CMTE], sourceId);
+  }
+  console.log(`[bulk] ccl${yy}: ${cclRows.toLocaleString()} rows → ${cmteToSource.size} committees for ${new Set(cmteToSource.values()).size} of our sources (designation=${opts.designation ?? 'P'})`);
+  return cmteToSource;
+}
+
+/** Cache TTL for the CAND_ID -> committee[] map — committee linkages are near-static
+ *  within a cycle, so a week-old map is still correct almost all of the time. */
+const CAND_CMTE_MAP_TTL_SECONDS = 60 * 60 * 24 * 7;
+
+/**
+ * buildCandidateCommitteeMap builds CAND_ID -> principal (DSGN='P') committee IDs from the
+ * free bulk ccl{YY}.zip linkage file (FEC-01) — resolving committees without a rate-limited
+ * FEC candidates-search API call. Cached via cache.ts for 7 days per cycle; a cache hit
+ * returns without re-streaming. An empty map is NEVER cached (Pitfall 3 — a newly-filing
+ * candidate absent from the bulk map must be re-checked next run, not suppressed for the TTL).
+ */
+export async function buildCandidateCommitteeMap(cycle: string): Promise<Map<string, string[]>> {
+  const cacheKey = `fec:ccl-cmte-map:${cycle}`;
+  const cached = await cache.get<[string, string[]][]>(cacheKey);
+  if (cached) {
+    return new Map(cached);
+  }
+
+  const yy = cycle.slice(-2);
+  const map = new Map<string, string[]>();
+  for await (const c of streamZipLines(`${BULK_BASE}/${cycle}/ccl${yy}.zip`)) {
+    const candId = c[C_CAND];
+    const cmteId = c[C_CMTE];
+    if (!candId || !cmteId) continue;
+    if (c[C_DSGN] !== 'P') continue;
+    const existing = map.get(candId);
+    if (existing) existing.push(cmteId);
+    else map.set(candId, [cmteId]);
+  }
+
+  // Never cache an empty map — a bulk-fetch/parse hiccup must not suppress every
+  // candidate's committee lookup for the full 7-day TTL (Pitfall 3).
+  if (map.size > 0) {
+    await cache.set(cacheKey, [...map.entries()], CAND_CMTE_MAP_TTL_SECONDS);
+  }
+
+  return map;
+}
+
+/** After a real load, record a `fec` ingestion_run per touched pair so the truncation
+ *  audit (getTruncatedPairs) reflects the new coverage. Expected = largest expected ever
+ *  seen for the pair (from prior run notes); stored = current row count. */
+async function finalizePair(sourceId: string, cycle: string): Promise<void> {
+  const storedRes = await pool.query<{ n: string }>(
+    `SELECT count(*) n FROM transparent_motivations.contributions
+     WHERE data_source='fec' AND politician_source_id=$1 AND election_cycle=$2`,
+    [sourceId, cycle]
+  );
+  const stored = Number(storedRes.rows[0]?.n ?? 0);
+  const expRes = await pool.query<{ exp: string | null }>(
+    `SELECT max((regexp_match(notes,'expected ([0-9]+)'))[1]::bigint)::text AS exp
+     FROM transparent_motivations.ingestion_runs
+     WHERE adapter_name='fec' AND politician_source_id=$1 AND election_cycle=$2 AND notes ~ 'expected [0-9]+'`,
+    [sourceId, cycle]
+  );
+  const expected = expRes.rows[0]?.exp ? Number(expRes.rows[0].exp) : stored;
+  const pct = expected > 0 ? Math.round((stored / expected) * 100) : 100;
+  const status = stored >= expected * 0.95 ? 'completed' : 'completed_with_warning';
+  await pool.query(
+    `INSERT INTO transparent_motivations.ingestion_runs
+       (adapter_name, politician_source_id, election_cycle, started_at, completed_at, status, records_fetched, records_inserted, notes)
+     VALUES ('fec', $1, $2, now(), now(), $3, $4, $4, $5)`,
+    [sourceId, cycle, status, stored, `fetched ${stored} of expected ${expected} (${pct}%) [bulk indiv]`]
+  );
+}
+
+/** Load one cycle's itemized individual contributions from FEC bulk data. */
+export async function loadFecBulkCycle(cycle: string, opts: BulkLoadOptions = {}): Promise<void> {
+  const yy = cycle.slice(-2);
+  console.log(`[bulk] === FEC bulk load cycle ${cycle} (dry=${!!opts.dry}${opts.limit ? `, limit=${opts.limit}` : ''}${opts.committees ? `, committees=${opts.committees.join(',')}` : ''}) ===`);
+
+  const cmteMap = await buildCommitteeMap(cycle, yy, opts);
+  let allow = cmteMap;
+  if (opts.committees?.length) {
+    allow = new Map();
+    for (const cm of opts.committees) if (cmteMap.has(cm)) allow.set(cm, cmteMap.get(cm)!);
+    console.log(`[bulk] restricted to ${allow.size} committee(s): ${[...allow.keys()].join(',') || '(none matched — check they are principal committees of confirmed candidates)'}`);
+  }
+  if (allow.size === 0) { console.error('[bulk] no committees to load — aborting'); return; }
+
+  const touched = new Set<string>();
+  let scanned = 0, matched = 0, written = 0, skippedMemo = 0, sampled = 0;
+  let batch: ContributionInsert[] = [];
+  const flush = async () => {
+    if (!batch.length) return;
+    if (!opts.dry) {
+      const r = await upsertContributions({ contributions: batch, skipped: 0, totalParsed: batch.length });
+      written += r.inserted;
+    }
+    batch = [];
+  };
+
+  for await (const c of streamZipLines(`${BULK_BASE}/${cycle}/indiv${yy}.zip`)) {
+    scanned++;
+    if (opts.sample && sampled < opts.sample) { console.log('[bulk][indiv sample]', c.slice(0, 21).join('|')); sampled++; }
+    if (scanned % 2_000_000 === 0) console.log(`[bulk] scanned ${scanned.toLocaleString()}, matched ${matched.toLocaleString()}...`);
+
+    const sourceId = allow.get(c[I_CMTE] ?? '');
+    if (!sourceId) continue;
+    if (c[I_MEMO] === 'X') { skippedMemo++; continue; }
+    if (!c[I_SUB]) continue;
+    matched++;
+    touched.add(sourceId);
+    batch.push(mapBulkRow(c, sourceId, cycle));
+    if (batch.length >= 500) await flush();
+    if (opts.limit && matched >= opts.limit) { console.log(`[bulk] reached --limit ${opts.limit}`); break; }
+  }
+  await flush();
+
+  console.log(`[bulk] cycle ${cycle}: scanned=${scanned.toLocaleString()} matched=${matched.toLocaleString()} written=${written.toLocaleString()} memoSkipped=${skippedMemo} sources=${touched.size}`);
+
+  if (!opts.dry && touched.size > 0) {
+    for (const sid of touched) {
+      try { await refreshSummaryAggForSource(sid); await finalizePair(sid, cycle); }
+      catch (e) { console.warn(`[bulk] finalize failed for ${sid}: ${e instanceof Error ? e.message : String(e)}`); }
+    }
+    console.log(`[bulk] refreshed agg + wrote audit run rows for ${touched.size} source(s).`);
+  }
+}

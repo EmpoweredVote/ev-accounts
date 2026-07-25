@@ -56,6 +56,13 @@ export interface DiscoveryAgentResult {
   stopReason: string | null;
 }
 
+// AnthropicAvailability — result of checkAnthropicAvailability()'s one-shot
+// pre-flight canary. `detail` is built only from `.status`/`.type`/`.message`
+// — never from the raw ANTHROPIC_API_KEY value.
+export type AnthropicAvailability =
+  | { available: true }
+  | { available: false; reason: 'missing_key' | 'unusable'; detail: string };
+
 // ---------------------------------------------------------------------------
 // Tool definition
 // ---------------------------------------------------------------------------
@@ -195,14 +202,98 @@ export async function runDiscoveryAgent(
       continue;
     }
 
-    // Any other stop reason (end_turn, max_tokens, etc.) without report_candidates = failure.
-    break;
+    // Any other stop reason (end_turn, max_tokens, etc.) without report_candidates
+    // is a BENIGN outcome (per OPS-03) — the model searched and found nothing
+    // reportable, or exhausted its turn budget. Log and return zero candidates
+    // rather than throwing; discoveryService.ts already treats zero candidates
+    // as a valid completed run.
+    console.warn(
+      '[discoveryAgentRunner] Model turn ended without invoking report_candidates; ' +
+        'treating as a zero-candidate result. stop_reason=' + String(lastStopReason)
+    );
+    return {
+      model: lastModel,
+      inputTokens: totalInputTokens,
+      outputTokens: totalOutputTokens,
+      candidates: [],
+      stopReason: lastStopReason,
+    };
   }
 
-  throw new Error(
-    '[discoveryAgentRunner] Claude did not invoke report_candidates. ' +
-      'Raw stop_reason: ' + String(lastStopReason)
+  // MAX_TURNS exhausted without report_candidates and without a final non-pause_turn
+  // response (shouldn't normally happen since every loop iteration either returns or
+  // continues, but kept as a defensive fallback matching the original function's contract).
+  console.warn(
+    '[discoveryAgentRunner] Exhausted MAX_TURNS without invoking report_candidates; ' +
+      'treating as a zero-candidate result. stop_reason=' + String(lastStopReason)
   );
+  return {
+    model: lastModel,
+    inputTokens: totalInputTokens,
+    outputTokens: totalOutputTokens,
+    candidates: [],
+    stopReason: lastStopReason,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Pre-flight canary (OPS-01)
+// ---------------------------------------------------------------------------
+
+/**
+ * checkAnthropicAvailability — one-shot, cheap pre-flight check for callers
+ * (e.g. the weekly discovery-sweep orchestrator) that need to confirm
+ * Anthropic is usable BEFORE spending per-jurisdiction paid calls.
+ *
+ * There is no Anthropic API endpoint that reports remaining credit balance,
+ * so this makes one minimal, no-tools canary `messages.create` call to prove
+ * the key + credit are usable. Only a canary failure with a conclusive
+ * account-level status (401 unauthenticated / 402 billing / 403 permission)
+ * is reported as `unusable`; any other failure (429, 5xx, network fault) is
+ * inconclusive and is re-thrown so the caller can log it and proceed —
+ * treating an ambiguous canary failure as "unusable" would cause a
+ * false-positive whole-sweep skip (see 173-RESEARCH.md Pitfall 3).
+ *
+ * NOTE: if this Anthropic account ever rejects `claude-haiku-4-5` as an
+ * unrecognized/disabled model, switch the canary model below to the
+ * production model (`claude-sonnet-4-6`) — either satisfies OPS-01 since
+ * 401/402/403 are account-level, not model-level, signals.
+ */
+export async function checkAnthropicAvailability(): Promise<AnthropicAvailability> {
+  if (!env.ANTHROPIC_API_KEY) {
+    return {
+      available: false,
+      reason: 'missing_key',
+      detail: 'ANTHROPIC_API_KEY is not configured.',
+    };
+  }
+
+  const client = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
+
+  try {
+    await client.messages.create({
+      model: 'claude-haiku-4-5',
+      max_tokens: 1,
+      messages: [{ role: 'user', content: 'ping' }],
+    });
+    return { available: true };
+  } catch (err) {
+    if (
+      err instanceof Anthropic.APIError &&
+      typeof err.status === 'number' &&
+      [401, 402, 403].includes(err.status)
+    ) {
+      return {
+        available: false,
+        reason: 'unusable',
+        detail: `${err.status} ${err.type ?? ''}: ${err.message}`,
+      };
+    }
+    // Any other error (network blip, 5xx, timeout) is inconclusive — re-throw
+    // so the caller can log a warning and let the sweep proceed rather than
+    // treating an ambiguous canary failure as a conclusive "unusable" signal.
+    throw err;
+  }
 }
 
 // ---------------------------------------------------------------------------

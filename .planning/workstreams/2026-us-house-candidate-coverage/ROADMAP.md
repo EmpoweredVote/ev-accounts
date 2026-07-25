@@ -35,6 +35,7 @@
 - ✅ **v2.20 2026 US House Candidate Coverage (Wave 1)** — Phases 148–152 (shipped 2026-06-30; CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active candidates, federal-24 stances [0 unsourced], 0 dup-incumbent; consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward — time-gated ≥ 2026-08-18)
 - 🔄 **v2.21 2026 US House Candidate Coverage (Wave 2)** — Phases 154–159 (Waves 1-2 complete 2026-07-02; PA 17 / IL 17 / OH 15 / GA 14 / NC 14 / NJ 12 = 89 decided districts [Phase 158 gate ✅] + MI 13 & VA 11 = 24 districts seeded + stanced [Waves 1-2 ✅] = 113 districts; USHC2-01..05 closed, USHC2-06 partial — 159-05/06 post-primary cull + gate date-gated ≥ 2026-08-05)
 - 🔄 **v2.22 2026 US House Candidate Coverage (Wave 3 — National Completion)** — Phases 160–167 (planning 2026-07-03; the final 38 states / 178 districts — WA 10 / AZ 9 / TN 9 / MA 9 / IN 9 / MD 8 / MN 8 / MO 8 / WI 8 / CO 8 / AL 7 / SC 7 / LA 6 / KY 6 / OR 6 / CT 5 / OK 5 / AR 4 / IA 4 / KS 4 / MS 4 / NV 4 / UT 4 / NM 3 / NE 3 / WV 2 / ID 2 / HI 2 / ME 2 / NH 2 / RI 2 / MT 2 / AK 1 / DE 1 / ND 1 / SD 1 / VT 1 / WY 1 — completes all 435 US House districts; USHC3-01..07)
+- 🔄 **v2.24 Backend Reliability — Cron Cost & Rate-Limit Hardening** — Phase 173 ✅ (discovery-sweep Anthropic cost, OPS-01..04, shipped 2026-07-23) + Phase 174 (FEC 429 rate-limit tail on the 6-hourly campaign-finance ingest — committee-ID caching, Retry-After backoff, global request pacer; FEC-01..04)
 
 ## Phases
 
@@ -180,6 +181,7 @@ Plans:
 **Plans:** 11 plans (10 waves)
 
 Plans:
+
 - [ ] 162-01-PLAN.md — MO old-vs-new map correspondence audit (D-01a; severe geo_id list)
 - [ ] 162-02-PLAN.md — MO seed end-to-end: 2 elections (general + withheld Polygon Pending), 8 severity-routed races, 58 new records, headshots
 - [ ] 162-03-PLAN.md — MO stances batch A (incumbents-skipped + evidenced majors incl. Bush) + scaffold + push
@@ -211,6 +213,7 @@ Plans:
 **Plans:** 11 plans
 
 Plans:
+
 - [x] 163-01-PLAN.md — AL + LA old-vs-new correspondence audits (severe geo_id lists; gates AL/LA seeding)
 - [x] 163-02-PLAN.md — WI seed (8 districts, 28 new, vanilla PROVISIONAL) + headshots
 - [x] 163-03-PLAN.md — CO seed (8 districts, 9 new, decided; DeGette lost-primary excluded from CO-1) + headshots
@@ -274,6 +277,7 @@ Plans:
 **Plans:** 7 plans
 
 Plans:
+
 - [ ] 164.1-01-PLAN.md — Dual-map opt-in code (G5200V26 discriminator + elections opt-in JOIN + catch-all exclusions) + Render deploy [Wave 1]
 - [ ] 164.1-02-PLAN.md — D-10 verify-bar harness (1641-verify.sql topology/anchor/NOTOUCH + 1641-coordinate-smoke.ts differential) [Wave 1]
 - [ ] 164.1-03-PLAN.md — UT 2026 polygon import + UT wiring contract (Phase-165 unblocker) [Wave 2]
@@ -281,6 +285,23 @@ Plans:
 - [ ] 164.1-05-PLAN.md — AL+LA import + BVAP checkpoint + D-10 bar + un-withhold AL-2/LA-2/LA-6 + Edmonds re-verify + flip Phase-163 gate [Wave 2]
 - [ ] 164.1-06-PLAN.md — Consolidated verify bar + Jan-2027 promotion-phase spec + connected_profiles gap doc + STATE.md re-entry dates [Wave 3]
 - [ ] 164.1-07-PLAN.md — MO date-gated (>= 2026-08-04): import+un-withhold OR revert-branch divert to Phase 167 [Wave 4]
+
+### Phase 164.2: Enacted-2026 Polygon Backfill — FL/CA/NC/OH/TX (INSERTED)
+
+**Goal:** `/elections` resolves the enacted-2026 congressional map for FL, CA, NC, OH, and TX (both anonymous Path-B and Connected-tier), while the reps feed ("who represents you now") stays on current boundaries until the Jan-2027 promotion phase; each state passes the 164.1 D-10 verify bar. Closes a live geographic-accuracy bug: all five states enacted new maps (FL May-2026; CA Prop 50 Nov-2025; NC/OH Oct-2025; TX 2025) but `/elections` still resolves the OLD map — ~147 districts show the wrong US House race to voters in changed areas. Verified 2026-07-21 via ST_Contains point-in-polygon; candidate fields already NEW-map in all five (polygon-only fix, no re-seed).
+
+**Requirements:** extends the 164.1 D-series dual-map to the 5 non-164.1 redistricted states; goal statement of record = this section + memory topic `project_fl_2026_redistricting_polygon_gap.md`. No USHC REQ-IDs (sits outside the traceability table, like 164.1).
+
+**Depends on:** Phase 164.1 (reuses the deployed G5200V26 dual-map opt-in JOIN in electionService.ts — generic, auto-applies — and the 1641 D-10 verify harness). Independent of Phase 166 gate and 164.1-07 (MO).
+
+**Plans:** 4 plans
+
+Plans:
+
+- [ ] 164.2-01-PLAN.md — Connected-tier allowlist extend: add FIPS 12/06/37/39/48 to `REFRESHED_2026_FIPS` (src/routes/essentials.ts) + CREATE OR REPLACE `connect.resolve_congressional_2026` RPC (new mig, expand IN-list) + Render deploy + regression test asserting anon Path-B resolves V26 for all 5 states [Wave 2 — depends on 164.2-02: regression test asserts against landed V26 rows]
+- [ ] 164.2-02-PLAN.md — Per-state enacted-2026 shapefile import as `G5200V26` into essentials.geofence_boundaries (reproject EPSG:4326; idempotent NOT EXISTS on (geo_id,mtfcc)). Sources: TX PlanC2333 (already fetched to scratchpad), CA Statewide DB (Prop 50), NC NCGA (Oct-2025), OH Redistricting Commission (Oct-31-2025), FL Legislature (May-4-2026). FL first (Aug-18 primary), TX second (shapefile in hand) [Wave 1 — no deps; also authors 1642-verify.sql with pre-import NOTOUCH baselines]
+- [ ] 164.2-03-PLAN.md — D-10 verify per state: reuse 1641-verify.sql (ST_IsValid topology + full coverage + G5200 NOTOUCH) + coordinate-smoke differential using the 15 anchor coordinates sourced 2026-07-21 (each must resolve NEW district under V26; reps feed still returns current) [Wave 3 — depends on 164.2-01 (Connected D-11 RPC probe) + 164.2-02 (landed polygons)]
+- [ ] 164.2-04-PLAN.md — Candidate-field nits (NOT re-seeds; fields verified new-map): FL repairs (is_incumbent flags on Wasserman Schultz FL-20 / Frankel FL-23 / Moskowitz FL-25; rename "Kedner MaximeDe"→"Kedner Maxime", "Seth Haskins"→"Seth Haskin"; FL-11 Webster untangle; add D10 4 GOP + D6 Gist + D11 Wilnau/Harden Hall) + CA-1 remove incorrect Gallagher incumbent flag [Wave 1 — no deps; independent tables (race_candidates/politicians), FL-primary-critical]
 
 #### Phase 165: Small-Delegation States Candidate Seeding (17 states, create elections + races, then candidates)
 
@@ -378,6 +399,79 @@ Plans:
 | 165. Small-Delegation States Candidate Seeding (17 states) | 0/17 | Not started | - |
 | 166. Consolidated Verification Gate | 0/? | Not started | - |
 | 167. Post-Primary Reconciliation (date-gated, Aug–Sep 2026) | 0/? | Not started | - |
+
+---
+
+### v2.24 Backend Reliability — Cron Cost & Rate-Limit Hardening — Phases 173–174 🔄 ACTIVE
+
+**Milestone goal:** The scheduled backend jobs stop generating avoidable failure floods and cost. Phase 173 hardened the weekly Anthropic discovery sweep (credit/key preflight, no retry-spend multiplier, graceful no-report, documented cadence). Phase 174 closes the residual FEC 429 tail on the 6-hourly campaign-finance ingest: the per-request backoff (`d505c9ad`) recovers most rate-limits but does not pace the batch under the shared ~1,000 req/hr FEC key, so a full ingest cycle should complete with zero 429 hard-failures via volume reduction, server-signaled backoff, and a global request pacer.
+
+**Context:** Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followups.md` item 1). The sweep (`backend/src/cron/discoverySweep.ts` → `lib/discoveryCron.ts` → `discoveryService.ts` → `discoveryAgentRunner.ts`) fires Sunday 02:00 UTC, once per jurisdiction with an election within `SWEEP_HORIZON_DAYS=180`, using the PAID Anthropic API (`claude-sonnet-4-6` + server-side `web_search_20250305`) + Resend email. Observed failure floods: 144× "Anthropic credit balance too low", 45× key-not-configured, 21× "Claude did not invoke report_candidates". Pure-backend change — no schema, no data.
+
+#### Phase 173: Discovery-Sweep Anthropic Cost & Reliability Hardening
+
+**Goal:** A weekly discovery sweep run that hits an unusable Anthropic API (missing key or exhausted credit) skips cleanly with a single operator alert instead of attempting — and failing — one paid call per jurisdiction; non-retryable Anthropic errors (credit/quota/auth) no longer trigger the 3× `withRetry` spend multiplier; a model turn that ends without calling `report_candidates` is recorded as a zero-candidate result rather than a hard failure that burns retries; and the Sunday-02:00 / 180-day cost envelope is confirmed and documented.
+
+**Depends on:** Nothing (isolated backend change to the discovery cron path; no schema change, no data change).
+
+**Requirements:** OPS-01, OPS-02, OPS-03, OPS-04
+
+**Success Criteria** (what must be TRUE):
+
+  1. Before the sweep spends any paid Anthropic call, it verifies the API key is configured AND the account has usable credit; if either is unavailable it aborts the sweep (does not iterate jurisdictions) and sends exactly one operator alert — reproducing the failure state no longer produces per-jurisdiction "credit balance too low" / key-not-configured floods in `ingestion_runs`/logs.
+  2. A non-retryable Anthropic API error (credit-exhausted, insufficient-quota, auth/401/403) is NOT retried by the discovery cron's `withRetry` — retries (if any remain) are reserved for genuinely transient network faults — so one failing jurisdiction can no longer triple the paid-call count.
+  3. A model response that ends its turn without invoking `report_candidates` is treated as a clean zero-candidate outcome for that jurisdiction (logged/counted as zero-found, not thrown as a hard failure and not retried); the "Claude did not invoke report_candidates" hard-error path no longer fires for this benign case.
+  4. The weekly Sunday-02:00 UTC cadence and `SWEEP_HORIZON_DAYS=180` are confirmed intended (or adjusted per operator decision) and documented in code so the cost-scales-with-jurisdiction-count behavior is a deliberate, visible choice; change is deployed to the Render backend.
+
+**Plans:** 4 plans (3 waves)
+
+Plans:
+**Wave 1** *(parallel — disjoint files)*
+
+- [x] 173-01-PLAN.md — discoveryAgentRunner.ts: OPS-03 throw→zero-candidate return + OPS-01 `checkAnthropicAvailability()` canary helper (+ discoveryAgentRunner.test.ts)
+- [x] 173-03-PLAN.md — OPS-03 caller-contract regression lock (discoveryService.test.ts, no source change) + OPS-04 cron-cadence comment (discoverySweep.ts)
+
+**Wave 2** *(depends on 173-01 for the canary helper import)*
+
+- [x] 173-02-PLAN.md — discoveryCron.ts: OPS-01 preflight gate + single skip-alert, OPS-02 typed `isRetryable` (replaces message-regex `isTransient`), OPS-04 horizon comment (+ discoveryCron.test.ts)
+
+**Wave 3** *(depends on 173-01/02/03 — all code landed)*
+
+- [x] 173-04-PLAN.md — full-suite gate + read-only horizon-count confirmation (OPS-04 decision note) + Render deploy
+
+#### Phase 174: FEC 429 Rate-Limit Tail — Drive the 6-Hourly Ingest to Zero Hard-Failures
+
+**Goal:** A full 6-hour `fec-ingest` cron cycle completes with zero `status='failed'` HTTP-429 rows in `transparent_motivations.ingestion_runs`. The per-request exponential backoff shipped in `d505c9ad` recovers most 429s but does not pace the batch under the shared ~1,000 req/hr api.data.gov FEC key, so a ~1k-source run still overshoots the ceiling and a residual handful of requests exhaust all 5 retries and hard-fail. Note the free **bulk** path (`fecBulkLoader.ts`, `scripts/030-bulk-load-fec.ts`) already carries the 40M+ itemized-contribution volume with no rate limit; the 429s come only from the *separate* 6-hourly API refresh cron (`resolveCommitteeIds` + Schedule A). This phase eliminates the tail by (a) sourcing candidate→committee resolution from the free bulk `ccl` linkage instead of the per-source API call (root-cause removal of the dominant 429 source), (b) honoring the server's `X-RateLimit-Remaining`/`Retry-After` signal on 429, and (c) gating all remaining FEC API requests through a shared limiter budgeted under the ceiling — plus a documented decision on the limiter budget and whether the Schedule A refresh cadence can be reduced given bulk covers volume. **A higher/dedicated FEC key is NOT required** (code fix reaches zero-429 under the current key).
+
+**Depends on:** Nothing code-blocking (builds on the shipped `d505c9ad` backoff in `fecAdapter.ts`). Pure-backend change — no schema, no data. Uses Upstash Redis (already in the stack) for the shared limiter/cache, degrading to in-process when absent.
+
+**Requirements:** FEC-01, FEC-02, FEC-03, FEC-04, FEC-05
+
+**Success Criteria** (what must be TRUE):
+
+  1. Candidate→committee resolution is sourced from the free bulk `ccl{YY}.zip` linkage (`fecBulkLoader.ts` `cmteToSource`), with the API `resolveCommitteeIds` retained only as a stale/missing fallback — no per-source API candidate lookup on a normal run (FEC-01).
+  2. The Schedule A refresh fetches only transactions loaded since the last successful run via the live-confirmed `min_load_date` filter (persisted advancing cursor), replacing the whole-cycle-per-source re-pull; amendment-inclusive (amended filings re-load with a new `load_date`; API serves current-version rows) (FEC-02).
+  3. The cron cadence is **daily** (not 6-hourly), and every outbound FEC API request across all three sites acquires from one shared limiter (Redis token-bucket, in-process fallback) under the ~1,000 req/hr ceiling; 429s honor `Retry-After`/`X-RateLimit-Remaining` with exponential backoff as final fallback (FEC-03).
+  4. An incremental row with a populated `original_sub_id` retires the superseded row (no double-count); the dead `is_amended` skip check is removed; the `original_sub_id` linkage is confirmed by one targeted live query before the retirement logic is finalized (FEC-04).
+  5. After deploy, a full **daily** `fec-ingest` cycle is verified (read-only query) to complete with zero `status='failed'` 429 rows; the daily-cadence decision is documented and records that no FEC-key upgrade is required (FEC-05).
+
+**Plans:** 5 plans, 4 waves (planned 2026-07-23 — incremental `min_load_date` redesign + daily cadence + supersession correctness; supersedes the initial pacing-only plan set).
+**Wave 1**
+
+- [x] 174-01-PLAN.md — Shared FEC rate limiter module (acquireFecSlot, Redis fixed-window + in-process degrade) [FEC-03] (Wave 1)
+- [x] 174-02-PLAN.md — Root volume cut: bulk `ccl` committee resolution + incremental `min_load_date` cursor [FEC-01, FEC-02] (Wave 1)
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [x] 174-03-PLAN.md — Backstop wiring: limiter + Retry-After backoff across all 3 sites + daily cron cadence [FEC-03] (Wave 2)
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
+- [x] 174-04-PLAN.md — Amendment supersession correctness (original_sub_id retirement), gated by 1 live-confirm checkpoint [FEC-04] (Wave 3)
+
+**Wave 4** *(blocked on Wave 3 completion)*
+
+- [x] 174-05-PLAN.md — Terminal: full suite + tsc + Render deploy + FEC-05 decision doc [FEC-05] (Wave 4)
 
 ---
 

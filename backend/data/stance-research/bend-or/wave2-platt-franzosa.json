@@ -1,0 +1,84 @@
+[
+  {
+    "external_id": -4105805,
+    "name": "Steve Platt",
+    "topic_key": "housing",
+    "value": 3,
+    "reasoning": "Platt's 2024 campaign platform called for more housing supply targeted at Bend residents facing the greatest cost burdens, framing it as a fairness issue rather than proposing rent control, direct public housing construction, or broad deregulation. This matches targeted assistance for cost-burdened households (subsidies/incentives) rather than a rent-control or hands-off-market approach.",
+    "sources": [
+      "http://web.archive.org/web/20241203224526/https://www.plattforbendcitycouncil.com/",
+      "https://www.ballotready.org/people/steve-platt"
+    ],
+    "quote_text": "MORE HOUSING is needed in Bend, especially for those with the greatest household cost burdens or challenges to stable housing. I will work hard to make that happen. I firmly believe if you work in Bend, you should be able to live in Bend."
+  },
+  {
+    "external_id": -4105805,
+    "name": "Steve Platt",
+    "topic_key": "homelessness-response",
+    "value": 2,
+    "reasoning": "During his 2024 campaign, Platt said he would work to create more outdoor shelters and parking areas for unhoused residents, and his platform pledged to keep up momentum on both affordable housing and services for the unhoused. This favors expanding shelter and service capacity as the primary strategy, without endorsing camping bans or enforcement-first measures.",
+    "sources": [
+      "https://bendbulletin.com/2024/10/16/campbell-guards-long-held-bend-council-seat-in-three-way-race/",
+      "http://web.archive.org/web/20241203224526/https://www.plattforbendcitycouncil.com/"
+    ],
+    "quote_text": "I would work to create more outdoor shelters and parking areas, a few of which are already in the works"
+  },
+  {
+    "external_id": -4105805,
+    "name": "Steve Platt",
+    "topic_key": "climate-change",
+    "value": 2,
+    "reasoning": "Platt's 2024 platform pledged to reduce Bend's carbon footprint through aggressive policies/incentives and to locally produce renewable energy. As a sitting councilor he was described by the Bend Bulletin as 'one of the climate fee's strongest supporters on the council' and voted with the 4-1 majority in June 2026 to impose a fee on gas appliances in new homes to push electrification, an active rather than purely market-driven or gradual posture.",
+    "sources": [
+      "http://web.archive.org/web/20241203224526/https://www.plattforbendcitycouncil.com/",
+      "https://bendbulletin.com/2026/06/18/bend-approves-climate-pollution-fee-on-gas-appliances-in-new-homes/",
+      "https://bendbulletin.com/2026/02/24/in-fight-over-bends-climate-fee-neither-side-is-happy/"
+    ],
+    "quote_text": "REDUCE OUR CARBON FOOTPRINT through aggressive policies and incentives"
+  },
+  {
+    "external_id": -4105803,
+    "name": "Gina Franzosa",
+    "topic_key": "transportation-priorities",
+    "value": 2,
+    "reasoning": "Franzosa's 2024 campaign platform committed to making 'programs that lower road speeds' a top priority (traffic calming) alongside revising the development code to enable walkable and bikeable neighborhoods citywide. This reflects a strong multimodal/safety investment focus, but stops short of an explicit call to deprioritize road capacity or eliminate parking requirements entirely.",
+    "sources": [
+      "https://www.ballotready.org/people/gina-franzoza"
+    ],
+    "quote_text": "On City Council I'll work to make sure that programs that lower road speeds become a top priority."
+  },
+  {
+    "external_id": -4105803,
+    "name": "Gina Franzosa",
+    "topic_key": "residential-zoning",
+    "value": 3,
+    "reasoning": "Franzosa's 2024 campaign platform called for development code revisions to enable walkable, bikeable, small-business-friendly neighborhoods across Bend, emphasizing expansion of mixed-use/commercial-adjacent development rather than a broad citywide upzoning or elimination of single-family zoning. This matches allowing multifamily/mixed-use near corridors while leaving most residential zones intact.",
+    "sources": [
+      "https://www.ballotready.org/people/gina-franzoza"
+    ],
+    "quote_text": "It's time to think bigger. We need some simple revisions to Bend's Development Code to clear the way to walkable, bikeable, and small business-friendly neighborhoods all across the City."
+  },
+  {
+    "external_id": -4105803,
+    "name": "Gina Franzosa",
+    "topic_key": "homelessness-response",
+    "value": 3,
+    "reasoning": "In September 2025, Franzosa opposed extending the closure deadline for a sanctioned homeless camp, arguing the city had committed to the community and should honor that deadline, while separately acknowledging closure should not mean putting people back on the street without transition planning. This favors enforcing agreed public-space rules alongside continued shelter/outreach investment, rather than indefinite camping or a pure enforcement-first approach.",
+    "sources": [
+      "https://bendbulletin.com/2025/09/30/bend-deschutes-county-rethink-closure-of-sanctioned-homeless-camp/",
+      "https://bendbulletin.com/2026/01/21/bend-deschutes-county-push-back-closure-of-temporary-homeless-camp/"
+    ],
+    "quote_text": "That's the word that we gave to the community, and I think it's incumbent on us to stick to that word"
+  },
+  {
+    "external_id": -4105803,
+    "name": "Gina Franzosa",
+    "topic_key": "growth-and-development",
+    "value": 2,
+    "reasoning": "In June 2025, Franzosa voted against a tax rebate for the Emblem housing project, objecting that the subsidy tool was being used on relatively high-value land at the edge of the city rather than directed toward Bend's Core Area. This reflects a preference for channeling growth and public incentives to areas where infrastructure and urban form already support it, rather than subsidizing new edge-of-city expansion.",
+    "sources": [
+      "https://bendbulletin.com/2025/06/23/bend-tax-rebates-for-housing-near-100-million/"
+    ],
+    "quote_text": "I'm concerned it's being used on relatively high value land in areas that are under development as opposed to within the Core Area"
+  }
+]

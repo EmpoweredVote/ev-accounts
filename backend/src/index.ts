@@ -37,6 +37,8 @@ import informRouter from './routes/inform.js';
 import readrankQuotesAdminRouter from './routes/readrankQuotesAdmin.js';
 import readrankCoverageAdminRouter from './routes/readrankCoverageAdmin.js';
 import essentialsBrowseRouter from './routes/essentialsBrowse.js';
+import essentialsLocationSearchRouter from './routes/essentialsLocationSearch.js';
+import essentialsCoordinateLookupRouter from './routes/essentialsCoordinateLookup.js';
 import essentialsBodiesRouter from './routes/essentialsBodies.js';
 import essentialsIngestRouter from './routes/essentialsIngest.js';
 import treasuryRouter from './routes/treasury.js';
@@ -147,6 +149,15 @@ app.use('/api/candidates', candidatesRouter);
 app.use('/api/essentials/ingest', essentialsIngestRouter);
 app.use('/api/essentials/browse', essentialsBrowseRouter);
 app.use('/api/essentials/bodies', essentialsBodiesRouter);
+// Phase 212-05: place-name resolver + national-fallback floor. Must be
+// mounted BEFORE the '/api/essentials' catch-all (essentialsRouter, below)
+// so '/api/essentials/location-search' and its '/resolve' sub-route are not
+// swallowed by that router's own path matching.
+app.use('/api/essentials/location-search', essentialsLocationSearchRouter);
+// 213-02: anonymous coordinate-lookup — mounted BEFORE the '/api/essentials'
+// catch-all (essentialsRouter, below) for the same path-capture reason as
+// location-search above.
+app.use('/api/essentials/coordinate-lookup', essentialsCoordinateLookupRouter);
 app.use('/api/essentials/candidates', essentialsCandidatesRouter);
 // Dual-router pattern: PATCH (essentialsEditorRouter) before GET (essentialsPoliticiansRouter)
 app.use('/api/essentials/politicians', essentialsEditorRouter);

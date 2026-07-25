@@ -37,7 +37,7 @@ Use this document for cold-starts, migration deploys, and rollback reference.
 | `SUPABASE_URL` | Supabase Dashboard → Project Settings → API | `https://<ref>.supabase.co` |
 | `SUPABASE_ANON_KEY` | Supabase Dashboard → Project Settings → API | Public anon key |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase Dashboard → Project Settings → API | Service role key — keep secret |
-| `DATABASE_URL` | Supabase Dashboard → Project Settings → Database | Direct connection only. Format: `postgresql://postgres.<ref>:<pwd>@db.<ref>.supabase.co:5432/postgres`. Do NOT use the pooler URL (`pooler.supabase.com`, port 6543). Multi-statement migrations fail on the pooler. |
+| `DATABASE_URL` | Supabase (scoped role `ev_api`) | **Runtime uses the least-privilege `ev_api` role, NOT `postgres`** (see "Database role" below). Session pooler, port 5432. Format: `postgresql://ev_api.<ref>:<pwd>@<pooler-host>:5432/postgres`. Do NOT use the transaction pooler (port 6543) — multi-statement queries fail there. |
 | `REDIS_URL` | Upstash Console | `rediss://...` (TLS URL) |
 | `CORS_ORIGIN` | Set manually | Frontend origin, e.g. `https://empoweredvote.com` |
 | `QUEST_SERVICE_KEY` | Shared secret | Used by Validation Quests service to authenticate against accounts API |
@@ -45,6 +45,25 @@ Use this document for cold-starts, migration deploys, and rollback reference.
 | `ADMIN_SERVICE_KEY` | Shared secret | Used by admin UI to authenticate admin-only endpoints |
 | `GOOGLE_MAPS_API_KEY` | Google Cloud Console | Required for geocoding (Phase 20). Server exits on startup if missing. |
 | `GEMS_SERVICE_KEYS` | Shared secrets | Comma-separated `name:key` pairs for gem award service auth. Optional — absent means all `/award` requests get 401. |
+
+### Database role (`ev_api` vs `postgres`)
+
+The backend API runtime (`backend/src/lib/db.ts` pool) connects as **`ev_api`** — a least-privilege
+login role created by `backend/migrations/1386_ev_api_role.sql`. It is `BYPASSRLS` (trusted server
+tier, matches `ctc_app`/`trivia_service`) with `statement_timeout=30s`, and holds only USAGE + DML on
+the 11 schemas the API's `pool.query` surface uses (`essentials`, `transparent_motivations`, `connect`,
+`inform`, `treasury`, `meetings`, `staging`, `empower`, plus a bounded set in `public`, read-only
+`app_auth`, write-only `judicial`) + EXECUTE on ~10 in-band RPCs. It has **no** object ownership,
+DDL, role management, or access to `vault`/`auth`/other apps' schemas.
+
+- **Set the password out of band** (not in the repo): `ALTER ROLE ev_api PASSWORD '<strong>';`, then put
+  the matching URL in the Render `DATABASE_URL`.
+- **Migration & ingestion scripts still use `postgres`** (they need DDL / broad access). Pass a
+  `postgres` connection string on the command line, e.g.
+  `DATABASE_URL="postgresql://postgres.<ref>:<pwd>@db.<ref>.supabase.co:5432/postgres" npx tsx …`.
+  This is independent of the Render env var.
+- **Auth is unaffected** by the DB role — login/JWT/PostgREST go through the Supabase JS clients
+  (`SUPABASE_*` keys), never `DATABASE_URL`.
 
 ### Admin UI (Vite static build)
 

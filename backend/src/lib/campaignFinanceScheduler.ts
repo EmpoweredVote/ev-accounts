@@ -611,11 +611,11 @@ export interface FecForcedReingestOptions {
 export async function runFecForcedReingest(
   pairs: FecReingestPair[],
   opts: FecForcedReingestOptions = {}
-): Promise<{ ok: number; failed: number }> {
+): Promise<{ ok: number; failed: number; rateLimited: boolean }> {
   const sleepBetweenMs = opts.sleepBetweenMs ?? 3000;
   if (pairs.length === 0) {
     console.warn('[campaignFinanceScheduler] runFecForcedReingest: no pairs provided');
-    return { ok: 0, failed: 0 };
+    return { ok: 0, failed: 0, rateLimited: false };
   }
 
   // Resolve source rows once (confirmed FEC sources only).
@@ -636,6 +636,7 @@ export async function runFecForcedReingest(
 
   let ok = 0;
   let failed = 0;
+  let rateLimited = false;
 
   for (let i = 0; i < pairs.length; i++) {
     if (opts.signal?.aborted) {
@@ -666,10 +667,19 @@ export async function runFecForcedReingest(
       const msg = err instanceof Error ? err.message : String(err);
       console.error(`[campaignFinanceScheduler] runFecForcedReingest: source=${pair.sourceId} cycle=${pair.cycle} error: ${msg}`);
       opts.onProgress?.({ index: i, total: pairs.length, pair, fullName: ps.full_name, rows: 0, error: msg });
+
+      // Graceful rate-limit stop: if the FEC key is exhausted, every remaining pair will
+      // 429 too — stop the session cleanly instead of burning the whole budget failing
+      // pair after pair. Already-committed rows persist; re-run later to resume.
+      if (/rate limit|\b429\b|quota/i.test(msg)) {
+        rateLimited = true;
+        console.warn('[campaignFinanceScheduler] runFecForcedReingest: FEC rate limit hit — ending session early (resume later).');
+        break;
+      }
     }
   }
 
-  return { ok, failed };
+  return { ok, failed, rateLimited };
 }
 
 // ---------------------------------------------------------------------------

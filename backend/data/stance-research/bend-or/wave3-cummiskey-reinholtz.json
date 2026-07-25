@@ -1,0 +1,57 @@
+[
+  {
+    "external_id": -4105832,
+    "name": "Bobbi Cummiskey",
+    "topic_key": "climate-change",
+    "value": 3,
+    "reasoning": "Her campaign issues page pledges to support a 'Climate Impact Fee' that funds emissions-reduction infrastructure, reduce the city's carbon footprint through land-use/transportation/building policy, and prepare infrastructure for wildfire, drought, and heat risk. This is an active, ongoing investment-and-mitigation approach rather than a moratorium on carbon-emitting activity (1) or a hard renewables-by-2030 phase-out pledge (2), matching the 'invest in clean energy while gradually reducing reliance on fossil fuels' position.",
+    "sources": [
+      "https://bobbiforbend.com/issues"
+    ],
+    "quote_text": "Reducing the city's carbon footprint through smarter land use, transportation, and building policies"
+  },
+  {
+    "external_id": -4105832,
+    "name": "Bobbi Cummiskey",
+    "topic_key": "transportation-priorities",
+    "value": 1,
+    "reasoning": "OVERRIDE of existing value 2. Her campaign issues page (not previously mined) devotes an entire section, 'Getting Bend Moving — For Everyone,' to expanding transit routes/frequency, building multimodal infrastructure (sidewalks, bike lanes, safe crossings), and reducing car dependency, explicitly framing a car as something 'shouldn't be required' to live a full life in Bend -- with no mention anywhere of road capacity investment. This is stronger and more one-sided toward transit/bike/pedestrian modes than the previously recorded 'invest equally in roads and multimodal options' (2), better matching 'prioritize pedestrian infrastructure, cycling networks, and public transit' (1).",
+    "sources": [
+      "https://bobbiforbend.com/issues"
+    ],
+    "quote_text": "A car shouldn't be required to live a full life in Bend."
+  },
+  {
+    "external_id": -4105832,
+    "name": "Bobbi Cummiskey",
+    "topic_key": "residential-zoning",
+    "value": 4,
+    "reasoning": "Her issues page pledges 'zoning reforms that allow missing-middle housing - duplexes, triplexes, and apartments - in more neighborhoods', prioritises infill over urban-fringe growth, and argues affirmatively that 'density isn't a threat to Bend's character. It's how we preserve it.' That exceeds chair 3, which caps multifamily at commercial corridors 'while protecting most residential zones'. Calibration caveat: chair 4's specific mechanisms - by-right approval and reduced parking requirements - are NOT stated by her; 4 is selected because the breadth of upzoning she endorses across neighbourhoods rules out 3, not because she endorsed those mechanisms.",
+    "sources": [
+      "https://bobbiforbend.com/issues"
+    ],
+    "quote_text": "Supporting zoning reforms that allow missing-middle housing — duplexes, triplexes, and apartments — in more neighborhoods"
+  },
+  {
+    "external_id": -4105833,
+    "name": "Elana Reinholtz",
+    "topic_key": "climate-change",
+    "value": 3,
+    "reasoning": "Her campaign site states her climate approach won't involve 'half measures,' listing EV-ready infrastructure, net-zero buildings, fewer miles driven, and renewable-energy workforce development, but explicitly conditions the pace of the transition on affordability for working families. This active-but-bounded-by-affordability framing is a gradual investment approach rather than a hard 2030 fossil-fuel phase-out (2) or a market-driven/no-policy stance (4), matching 'invest in clean energy while gradually reducing reliance on fossil fuels.'",
+    "sources": [
+      "https://www.elanaforbend.com/"
+    ],
+    "quote_text": "a decarbonization transition that working families can afford"
+  },
+  {
+    "external_id": -4105833,
+    "name": "Elana Reinholtz",
+    "topic_key": "local-environment",
+    "value": 2,
+    "reasoning": "Her 'Vision for Bend' statement calls for growth 'planned ahead instead of cleaned up after,' with rivers, trails, and open spaces protected 'even as the city grows' -- framing environmental protection as a firm priority that must hold through development rather than a flexible, case-by-case standard, closer to 'protect existing parks and tree canopy strictly' (2) than a flexible-standards approach (3).",
+    "sources": [
+      "https://www.elanaforbend.com/about"
+    ],
+    "quote_text": "Growth that's planned ahead instead of cleaned up after, with the rivers, trails, and open spaces protected even as the city grows."
+  }
+]

@@ -37,6 +37,13 @@ process.env.MAX_RECORDS_PER_POLITICIAN = process.env.SWEEP_MAX_RECORDS ?? '10000
 process.env.FEC_PER_PAGE_SLEEP_MS = process.env.FEC_PER_PAGE_SLEEP_MS ?? '2000';
 process.env.FEC_SORT = process.env.FEC_SORT ?? '-contribution_receipt_amount';
 
+// Dedicated sweep key: if SWEEP_FEC_API_KEY is set, use it instead of the cron's key so
+// the sweep and the 6-hourly cron don't drain/429 the same shared key. The FEC adapter
+// reads process.env.FEC_API_KEY at request time, so overriding it here is sufficient.
+if (process.env.SWEEP_FEC_API_KEY) {
+  process.env.FEC_API_KEY = process.env.SWEEP_FEC_API_KEY;
+}
+
 const { pool } = await import('../src/lib/db.js');
 const { getTruncatedPairs } = await import('./030-find-truncated-fec-pairs.js');
 const {
@@ -90,15 +97,17 @@ async function main(): Promise<void> {
     controller.abort();
   }, MAX_MINUTES * 60 * 1000);
 
-  let ok = 0, failed = 0;
+  let ok = 0, failed = 0, rateLimited = false;
   const startGB = await dbSizeGB();
   const startCount = await contribCount();
+  const keyTail = (process.env.FEC_API_KEY ?? '').slice(-4);
 
   try {
     const pairs = await getTruncatedPairs(THRESHOLD);
     const todo = pairs.slice(0, LIMIT === Infinity ? pairs.length : LIMIT);
     console.log(`[030-sweep] truncated pairs remaining: ${pairs.length} | processing this session: ${todo.length}`);
     console.log(`[030-sweep] cap=${process.env.MAX_RECORDS_PER_POLITICIAN} pageSleep=${process.env.FEC_PER_PAGE_SLEEP_MS}ms betweenPairs=${SLEEP_BETWEEN_MS}ms budget=${MAX_MINUTES}m`);
+    console.log(`[030-sweep] FEC key: …${keyTail} ${process.env.SWEEP_FEC_API_KEY ? '(dedicated SWEEP_FEC_API_KEY)' : '(shared FEC_API_KEY — set SWEEP_FEC_API_KEY to avoid cron contention)'}`);
     console.log(`[030-sweep] DB now ${startGB.toFixed(2)} GB, ${startCount.toLocaleString()} FEC rows`);
 
     const t0 = Date.now();
@@ -119,7 +128,7 @@ async function main(): Promise<void> {
         },
       }
     );
-    ok = result.ok; failed = result.failed;
+    ok = result.ok; failed = result.failed; rateLimited = result.rateLimited;
   } finally {
     clearInterval(renewTimer);
     clearTimeout(budgetTimer);
@@ -140,10 +149,18 @@ async function main(): Promise<void> {
   console.log(`DB size:  ${startGB.toFixed(2)} GB → ${endGB.toFixed(2)} GB (+${addedGB.toFixed(2)} GB this session)`);
   console.log(`Est. Supabase storage cost @ current size: $${monthly.toFixed(2)}/mo (${billableGB.toFixed(1)} GB billable over the ${SUPABASE_FREE_GB}GB Pro allowance)`);
   console.log(`Truncated pairs still below ${(THRESHOLD * 100).toFixed(0)}%: ${remaining.length}`);
-  if (remaining.length > 0) console.log(`Re-run this script to continue (resumable — finished pairs are skipped).`);
+  if (rateLimited) {
+    console.log(`⚠ PAUSED EARLY: FEC rate limit hit — the key is throttled/exhausted. Rows fetched so far are saved.`);
+    console.log(`  If this keeps happening, run the sweep on a DEDICATED key: set SWEEP_FEC_API_KEY so it stops competing with the cron.`);
+    console.log(`  Wait for the key's quota window to reset, then re-run to resume.`);
+  } else if (remaining.length > 0) {
+    console.log(`Re-run this script to continue (resumable — finished pairs are skipped).`);
+  }
 
   await pool.end();
-  process.exit(0);
+  // Non-zero exit on rate-limit so a wrapper/automation can tell a throttled session
+  // apart from a clean one, without treating it as a hard failure.
+  process.exit(rateLimited ? 2 : 0);
 }
 
 main().catch((err) => { console.error('[030-sweep] Fatal:', err); process.exit(1); });

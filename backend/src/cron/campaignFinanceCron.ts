@@ -1,8 +1,15 @@
 /**
- * campaignFinanceCron — node-cron registration for the FEC 6-hour ingestion job.
+ * campaignFinanceCron — node-cron registration for the FEC daily ingestion job.
  *
- * Registers a job that fires every 6 hours (`0 *\/6 * * *` cron) UTC and calls
+ * Registers a job that fires once daily at 06:00 UTC (`0 6 * * *` cron) and calls
  * runFecScheduledJob() from campaignFinanceScheduler.
+ *
+ * FEC-03: changed from every-6-hours to once-daily. FEC's Schedule A
+ * `min_load_date`/`max_load_date` incremental filter (FEC-02) is date-only
+ * granularity, so running the refresh sub-daily re-scanned the same calendar
+ * day's window up to 4x with zero additional freshness — pure waste of the
+ * shared rate-limit budget. 06:00 UTC gives a safety margin after FEC's
+ * observed ~03:05 UTC nightly batch-load cluster (174-RESEARCH-amendments.md A3).
  *
  * Redis distributed lock inside runFecScheduledJob() prevents concurrent
  * execution across Render instances. Missing Redis degrades to in-process
@@ -20,12 +27,12 @@ import { runFecScheduledJob, runAdapterForAll } from '../lib/campaignFinanceSche
 
 /**
  * startCampaignFinanceCron registers the FEC ingestion cron job.
- * Fires every 6 hours UTC. Non-fatal — errors inside runFecScheduledJob
+ * Fires once daily at 06:00 UTC. Non-fatal — errors inside runFecScheduledJob
  * are caught and logged there; this wrapper catches any unhandled rejection.
  */
 export function startCampaignFinanceCron(): void {
   cron.schedule(
-    '0 */6 * * *',
+    '0 6 * * *',
     async () => {
       try {
         await runFecScheduledJob();
@@ -38,7 +45,7 @@ export function startCampaignFinanceCron(): void {
       name: 'fec-ingest',
     }
   );
-  console.log('[cron] Campaign finance FEC ingest job registered (every 6 hours UTC)');
+  console.log('[cron] Campaign finance FEC ingest job registered (daily at 06:00 UTC)');
 
   cron.schedule(
     '0 3 1 * *',

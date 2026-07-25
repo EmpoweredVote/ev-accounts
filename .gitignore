@@ -101,3 +101,9 @@ bug_analysis_report.html
 
 # GSD per-session active workstream pointer (local only)
 .planning/active-workstream
+
+# stance-quote validator fetch cache (regenerable)
+backend/data/stance-research/*/.qcache/
+
+# OLIS legislator roster cache (regenerable, 1.6MB)
+backend/data/stance-research/or-bend-stateleg/.olis-legislators.json

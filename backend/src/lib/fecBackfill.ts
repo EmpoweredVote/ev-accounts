@@ -29,6 +29,7 @@ import {
   FEC_LOCK_KEY,
 } from './campaignFinanceScheduler.js';
 import type { PoliticianSource } from './campaignFinanceService.js';
+import { acquireFecSlot } from './fecRateLimiter.js';
 
 const PILOT_STATES = ['CA', 'IN'];
 const DEFAULT_FLOOR = 1980;
@@ -55,6 +56,11 @@ async function fetchCandidateCycles(candidateId: string, apiKey: string): Promis
   const url = `https://api.open.fec.gov/v1/candidates/?api_key=${apiKey}&candidate_id=${encodeURIComponent(candidateId)}&per_page=1`;
   let delay = 1000;
   for (let attempt = 0; attempt <= 3; attempt++) {
+    // FEC-03 (deviation — grep api.open.fec.gov turned up this 4th call site, missed
+    // by 174-RESEARCH.md's "three call sites" framing): gate every attempt behind
+    // the shared limiter so this backfill step can never itself contribute to the
+    // aggregate 429 tail, same as fecAdapter.ts/fecResearch.ts.
+    await acquireFecSlot();
     const resp = await fetch(url, { signal: AbortSignal.timeout(30_000) });
     if (resp.status === 429) {
       if (attempt === 3) throw new Error('429 after retries');
@@ -124,13 +130,36 @@ export async function populateFecCandidateCycles(): Promise<{ fetched: number; f
 interface FecTotalsRow {
   cycle: number;
   receipts: number | null;
+  // Composition (quick-032) — for the grassroots/small-dollar breakdown bar. All authoritative
+  // FEC summary figures; null when the candidate totals row omits them.
+  individual_itemized: number | null;   // >$200 named individuals
+  individual_unitemized: number | null; // ≤$200 grassroots (never named — see disclosure policy)
+  pac_contributions: number | null;     // other_political_committee_contributions
+  party_contributions: number | null;   // political_party_committee_contributions
+  candidate_self: number | null;        // candidate_contribution (direct self-contribution)
+  candidate_loans: number | null;       // loans_made_by_candidate (self-funders usually LOAN)
 }
+
+interface FecTotalsApiResult {
+  cycle?: number;
+  receipts?: number;
+  individual_itemized_contributions?: number;
+  individual_unitemized_contributions?: number;
+  other_political_committee_contributions?: number;
+  political_party_committee_contributions?: number;
+  candidate_contribution?: number;
+  loans_made_by_candidate?: number;
+}
+
+const numOrNull = (v: number | undefined): number | null => (typeof v === 'number' ? v : null);
 
 /** Fetch all-cycle authoritative totals for one candidate in a single call. */
 async function fetchCandidateTotals(candidateId: string, apiKey: string): Promise<FecTotalsRow[]> {
   const url = `https://api.open.fec.gov/v1/candidate/${encodeURIComponent(candidateId)}/totals/?api_key=${apiKey}&per_page=100`;
   let delay = 1000;
   for (let attempt = 0; attempt <= 3; attempt++) {
+    // FEC-03 (deviation — see fetchCandidateCycles above): same limiter gate.
+    await acquireFecSlot();
     const resp = await fetch(url, { signal: AbortSignal.timeout(30_000) });
     if (resp.status === 429) {
       if (attempt === 3) throw new Error('429 after retries');
@@ -139,10 +168,19 @@ async function fetchCandidateTotals(candidateId: string, apiKey: string): Promis
       continue;
     }
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const data = (await resp.json()) as { results?: Array<{ cycle?: number; receipts?: number }> };
+    const data = (await resp.json()) as { results?: FecTotalsApiResult[] };
     return (data.results ?? [])
       .filter((r) => typeof r.cycle === 'number')
-      .map((r) => ({ cycle: r.cycle as number, receipts: r.receipts ?? null }));
+      .map((r) => ({
+        cycle: r.cycle as number,
+        receipts: r.receipts ?? null,
+        individual_itemized: numOrNull(r.individual_itemized_contributions),
+        individual_unitemized: numOrNull(r.individual_unitemized_contributions),
+        pac_contributions: numOrNull(r.other_political_committee_contributions),
+        party_contributions: numOrNull(r.political_party_committee_contributions),
+        candidate_self: numOrNull(r.candidate_contribution),
+        candidate_loans: numOrNull(r.loans_made_by_candidate),
+      }));
   }
   return [];
 }
@@ -165,8 +203,19 @@ export async function populateFecCandidateTotals(): Promise<{ candidates: number
       PRIMARY KEY (external_id, cycle)
     )
   `);
+  // Composition columns (quick-032) — additive, idempotent so re-running is safe on old rows.
+  await pool.query(`
+    ALTER TABLE transparent_motivations.fec_candidate_totals
+      ADD COLUMN IF NOT EXISTS individual_itemized   numeric(16,2),
+      ADD COLUMN IF NOT EXISTS individual_unitemized numeric(16,2),
+      ADD COLUMN IF NOT EXISTS pac_contributions     numeric(16,2),
+      ADD COLUMN IF NOT EXISTS party_contributions   numeric(16,2),
+      ADD COLUMN IF NOT EXISTS candidate_self        numeric(16,2),
+      ADD COLUMN IF NOT EXISTS candidate_loans       numeric(16,2)
+  `);
 
-  // Resumable: skip candidates already cached, so a re-run only fills gaps.
+  // Resumable: fetch candidates with NO cached rows, OR whose cached rows predate the newest
+  // composition column (candidate_loans IS NULL on every row) — so a re-run backfills new fields.
   const idsResult = await pool.query<{ external_id: string }>(
     `SELECT DISTINCT ps.external_id
        FROM transparent_motivations.politician_sources ps
@@ -174,6 +223,7 @@ export async function populateFecCandidateTotals(): Promise<{ candidates: number
         AND NOT EXISTS (
           SELECT 1 FROM transparent_motivations.fec_candidate_totals t
           WHERE t.external_id = ps.external_id
+            AND t.candidate_loans IS NOT NULL
         )`
   );
   const ids = idsResult.rows.map((r) => r.external_id);
@@ -188,10 +238,21 @@ export async function populateFecCandidateTotals(): Promise<{ candidates: number
       const totals = await fetchCandidateTotals(ids[i]!, apiKey);
       for (const t of totals) {
         await pool.query(
-          `INSERT INTO transparent_motivations.fec_candidate_totals (external_id, cycle, receipts, fetched_at)
-           VALUES ($1, $2, $3, now())
-           ON CONFLICT (external_id, cycle) DO UPDATE SET receipts=EXCLUDED.receipts, fetched_at=now()`,
-          [ids[i], String(t.cycle), t.receipts]
+          `INSERT INTO transparent_motivations.fec_candidate_totals
+             (external_id, cycle, receipts, individual_itemized, individual_unitemized,
+              pac_contributions, party_contributions, candidate_self, candidate_loans, fetched_at)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, now())
+           ON CONFLICT (external_id, cycle) DO UPDATE SET
+             receipts=EXCLUDED.receipts,
+             individual_itemized=EXCLUDED.individual_itemized,
+             individual_unitemized=EXCLUDED.individual_unitemized,
+             pac_contributions=EXCLUDED.pac_contributions,
+             party_contributions=EXCLUDED.party_contributions,
+             candidate_self=EXCLUDED.candidate_self,
+             candidate_loans=EXCLUDED.candidate_loans,
+             fetched_at=now()`,
+          [ids[i], String(t.cycle), t.receipts, t.individual_itemized, t.individual_unitemized,
+           t.pac_contributions, t.party_contributions, t.candidate_self, t.candidate_loans]
         );
         rows++;
       }

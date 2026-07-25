@@ -1,0 +1,84 @@
+[
+  {
+    "external_id": -4101701, "name": "Anthony (Tony) DeBone", "topic_key": "housing", "value": 3,
+    "reasoning": "In his own official May 2026 county voters'-pamphlet statement (p. 9-18) DeBone claims credit for 'targeted investments in affordable housing' delivered 'without overregulation' — public subsidy aimed at specific affordable projects, which is chair 3. The explicit rejection of regulation rules out chair 2 (rent caps/inclusionary mandates), and the fact that he funds housing at all rules out chairs 4 and 5.",
+    "sources": ["https://www.deschutescounty.gov/DocumentCenter/View/5835"],
+    "quote_text": "Made targeted investments in affordable housing to support working families and local businesses without overregulation."
+  },
+  {
+    "external_id": -4101701, "name": "Anthony (Tony) DeBone", "topic_key": "public-safety-approach", "value": 3,
+    "reasoning": "His pamphlet statement leads its 'Proven Results' section with a 24-hour mental-health and addiction stabilization centre framed as simultaneously cost-saving and public-safety-boosting. That is chair 3 almost verbatim — existing public safety funding kept while crisis-response capacity for mental health and addiction is added — rather than redirecting police budgets (1/2) or making police expansion the priority (4/5).",
+    "sources": ["https://www.deschutescounty.gov/DocumentCenter/View/5835"],
+    "quote_text": "Built a 24-hour stabilization center to provide real help for mental health and addiction— optimizing taxpayer costs and boosting public safety."
+  },
+  {
+    "external_id": -4101701, "name": "Anthony (Tony) DeBone", "topic_key": "taxes", "value": 3,
+    "reasoning": "He opposes a specific new levy (the state gas tax increase) and promises to 'keep county taxes low', but commits in the same breath to 'delivering high quality essential services' — which is precisely what chair 4 trades away ('cut taxes and scale back public services to match'). Holding the existing revenue structure while resisting increases is chair 3. Note his separate 'slash more red tape' line is deregulation, not tax policy, and was not used here.",
+    "sources": ["https://www.deschutescounty.gov/DocumentCenter/View/5835"],
+    "quote_text": "Government must live within its means, just like you do. I will continue to prioritize responsible spending while delivering high quality essential services. I stand firmly against the current state gas tax increase."
+  },
+  {
+    "external_id": -4101701, "name": "Anthony (Tony) DeBone", "topic_key": "homelessness-response", "value": 3,
+    "reasoning": "His statement contains both an enforcement imperative ('We must stop illegal camping') and a substantial services investment (the 24-hour stabilization centre), and describes his approach to homelessness as 'community-driven solutions... that emphasizes responsibility and results'. Services plus enforcement of public-space rules is chair 3; chair 4 was not chosen because a 24-hour stabilization centre exceeds its 'basic outreach programs' and enforcement is not presented as the primary tool.",
+    "sources": ["https://www.deschutescounty.gov/DocumentCenter/View/5835"],
+    "quote_text": "We must stop illegal camping."
+  },
+
+  {
+    "external_id": -4101721, "name": "Lauren Connally", "topic_key": "public-safety-approach", "value": 3,
+    "reasoning": "REVISED from 4 down to 3 on better evidence. The earlier value came from her campaign site ('ensuring our first responders have the training and resources they need' plus support for CORE3), which reads as capacity-building. Her own official May 2026 voters'-pamphlet statement (p. 9-21) is more explicit and pairs law enforcement with mental health: she calls for 'fully funded' — i.e. maintained, not increased — law enforcement while leading with early mental-health investment. That combination is chair 3.",
+    "sources": ["https://www.deschutescounty.gov/DocumentCenter/View/5835", "https://www.connally4deschutes.com/campaign-platform"],
+    "quote_text": "Investing in mental health early saves lives and taxpayer dollars, proactive wildfire mitigation will protect homes and public lands, and fully funded and accountable law enforcement keeps our communities safe for everyone."
+  },
+
+  {
+    "external_id": -4101722, "name": "Amy Sabbadini", "topic_key": "growth-and-development", "value": 2,
+    "reasoning": "Value unchanged; citation upgraded to the official source. Her May 2026 county voters'-pamphlet statement (p. 9-22, 'SENSIBLE PLANNING') carries the same objection her campaign site paraphrases: destination resorts and luxury developments consume water without solving affordability. Growth conditioned on resource capacity is chair 2; there is no call for growth limits or votes on annexation (chair 1).",
+    "sources": ["https://www.deschutescounty.gov/DocumentCenter/View/5835", "https://vote4sabbadini.com/"],
+    "quote_text": "More destination resorts and luxury developments demand water but don't solve housing affordability."
+  },
+  {
+    "external_id": -4101722, "name": "Amy Sabbadini", "topic_key": "housing", "value": 3,
+    "reasoning": "Value unchanged; citation upgraded to the official May 2026 county voters'-pamphlet statement (p. 9-22), where she redirects development toward workforce housing. No public construction or rent regulation is proposed (ruling out 1/2) and no deregulation (ruling out 4/5), leaving targeted help at chair 3.",
+    "sources": ["https://www.deschutescounty.gov/DocumentCenter/View/5835", "https://vote4sabbadini.com/"],
+    "quote_text": "Instead, let's build homes for working families serving our communities."
+  },
+  {
+    "external_id": -4101722, "name": "Amy Sabbadini", "topic_key": "local-environment", "value": 2,
+    "reasoning": "Value unchanged; citation upgraded to the official May 2026 county voters'-pamphlet statement (p. 9-22). She names water, agriculture and open space as things to protect and, in the same section, opposes resort development that draws down water — strict protection of existing resources (chair 2) rather than case-by-case flexibility (chair 3), though without chair 1's environmental-review-before-any-development standard.",
+    "sources": ["https://www.deschutescounty.gov/DocumentCenter/View/5835", "https://vote4sabbadini.com/"],
+    "quote_text": "Let's protect our water, agriculture, and open spaces."
+  },
+  {
+    "external_id": -4101722, "name": "Amy Sabbadini", "topic_key": "public-safety-approach", "value": 3,
+    "reasoning": "Value unchanged; citation upgraded to the official May 2026 county voters'-pamphlet statement (p. 9-22, 'SAFE & HEALTHY COMMUNITIES'), which advocates law-enforcement and mental-health staffing together and adds support for preventative public health and keeping county clinics open. Maintaining public safety capacity while adding mental-health capacity is chair 3.",
+    "sources": ["https://www.deschutescounty.gov/DocumentCenter/View/5835", "https://vote4sabbadini.com/"],
+    "quote_text": "I will fight for better law enforcement and mental health staffing and protect Healthy Schools."
+  },
+
+  {
+    "external_id": -4101723, "name": "Rob Imhoff", "topic_key": "homelessness-response", "value": 4,
+    "reasoning": "Value unchanged at 4 but re-evidenced from a far stronger source. The earlier basis was his campaign site's 'homeless tourism'/'hand up rather than handouts' framing; his own official May 2026 county voters'-pamphlet statement (p. 9-24) names the concrete mechanism — enforcing a six-mile no-camping zone around urban growth boundaries — with conditional services attached ('Treatment must demand recovery'). Enforcement as the primary tool alongside retained services is chair 4; chair 5 is ruled out because he keeps treatment in the mix.",
+    "sources": ["https://www.deschutescounty.gov/DocumentCenter/View/5835", "https://robimhoff.com/"],
+    "quote_text": "End the homelessness cycle: Enforce a 6 mile no-camping zone around UGBs and move people from streets to stability with clear expectations. Treatment must demand recovery and services must deliver results."
+  },
+  {
+    "external_id": -4101723, "name": "Rob Imhoff", "topic_key": "transportation-priorities", "value": 4,
+    "reasoning": "New stance from his official May 2026 county voters'-pamphlet statement (p. 9-24): his named transportation proposal is a 50-year road plan anchored by a Highway 97 bypass, with no transit, cycling or pedestrian element anywhere in the statement. Road capacity serving drivers is chair 4. Chair 5 was not chosen because he says nothing about parking policy, which is that chair's other half.",
+    "sources": ["https://www.deschutescounty.gov/DocumentCenter/View/5835"],
+    "quote_text": "A 50-year road plan, including a Hwy 97 bypass from Redmond to Sunriver."
+  },
+  {
+    "external_id": -4101723, "name": "Rob Imhoff", "topic_key": "housing", "value": 4,
+    "reasoning": "New stance; his official May 2026 county voters'-pamphlet statement (p. 9-24) finally supplies the mechanism that was missing when housing was skipped for him in wave 1. He locates the constraint in legal and procedural friction — appeals and lawsuits raising cost and delay — and proposes no subsidy, public construction or buyer assistance, which is what separates chair 4 from chair 3. Caveat recorded: he qualifies it with 'protects rural character while allowing housing where it makes sense', so this is procedural deregulation rather than blanket upzoning.",
+    "sources": ["https://www.deschutescounty.gov/DocumentCenter/View/5835"],
+    "quote_text": "We need more homes and fewer lawsuits. Endless appeals delay housing and raise costs. Responsible planning protects rural character while allowing housing where it makes sense."
+  },
+
+  {
+    "external_id": -4101724, "name": "Morgan Schmidt", "topic_key": "public-safety-approach", "value": 3,
+    "reasoning": "New stance from her official May 2026 county voters'-pamphlet statement (p. 9-25, 'PEACE OF MIND'), which bundles public safety programs together with mental health service availability rather than trading one against the other — the defining feature of chair 3. Caveat recorded: she does not state a funding level, so chair 3 rests on the pairing of the two service types rather than on an explicit commitment to hold the police budget.",
+    "sources": ["https://www.deschutescounty.gov/DocumentCenter/View/5835"],
+    "quote_text": "Everyone deserves to feel safe in our communities. Morgan will ensure public safety programs and mental health services are inclusive, equitable, and available."
+  }
+]

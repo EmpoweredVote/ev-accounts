@@ -1,0 +1,195 @@
+[
+  {
+    "external_id": -4120053,
+    "name": "Emerson Levy",
+    "topic_key": "abortion",
+    "value": 1,
+    "reasoning": "Levy voted Aye on final House passage of HB 2002, 2023R1 (Chapter 228) on June 21, 2023 (House concurred in Senate amendments and repassed the bill) - the Reproductive Health and Access to Care Act, which expanded access to and legal protection for reproductive health care under a statute with no gestational limit - and voted Nay on all seven motions to refer or postpone that bill on May 1, 2023. In 2026R1 she voted Aye on HB 4127 (Chapter 63), directing the Oregon Health Authority to pay nonprofit reproductive health care providers with state-only dollars for Medicaid patients when federal funds are unavailable, i.e. public funding for abortion providers. Her campaign site commits her to protecting a woman's freedom to make her own health care decisions; she has never proposed a gestational cutoff, which is the line between chair 1 and chair 2.",
+    "sources": [
+      "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2002",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2023R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%202002%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "https://emersonvotes.com/priorities/"
+    ],
+    "quote_text": "I will always protect a woman’s freedom to make her own healthcare decisions. Oregonians have made it clear time and time again that they overwhelmingly support a person’s right to make their own reproductive healthcare choices without government interference.",
+    "quote_deidentified": "I will always protect a woman’s freedom to make her own healthcare decisions. Oregonians have made it clear time and time again that they overwhelmingly support a person’s right to make their own reproductive healthcare choices without government interference."
+  },
+  {
+    "external_id": -4120053,
+    "name": "Emerson Levy",
+    "topic_key": "healthcare",
+    "value": 2,
+    "reasoning": "Levy was chief sponsor of HB 4113, 2024R1 (Chapter 35), requiring commercial insurers to count third-party copay assistance toward a patient's deductible, and she carried it on the House floor on Feb 20, 2024, voting Aye. She also voted Aye on HB 2010, 2025R1 (Chapter 4), which extends the health-plan premium, managed-care and hospital assessments plus the Oregon Reinsurance Program that together fund the Oregon Health Plan and subsidize the regulated private individual market. Her documented approach is making a mixed public / regulated-private system deliver affordable coverage, not replacing it with a public system (chair 1) and not narrowing help to only the poorest (chairs 3 and 4).",
+    "sources": [
+      "https://ktvz.com/news/government-politics/2024/02/10/not-a-political-issue-its-a-human-issue-rep-emerson-levy-introduces-bill-to-lower-prescription-drug-costs/",
+      "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/HB4113",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2025R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%202010%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json"
+    ],
+    "quote_text": "Oregonians that pay for their insurance should be able to use it, but because of co-pay limiter programs, each visit to the pharmacy counter can be a game of health care roulette.",
+    "quote_deidentified": "Oregonians that pay for their insurance should be able to use it, but because of co-pay limiter programs, each visit to the pharmacy counter can be a game of health care roulette."
+  },
+  {
+    "external_id": -4120053,
+    "name": "Emerson Levy",
+    "topic_key": "housing",
+    "value": 2,
+    "reasoning": "Levy voted Aye on third reading of SB 611, 2023R1 (Chapter 226), which tightened Oregon's statutory cap on annual residential rent increases, and Aye on HB 2001, 2023R1 (Chapter 13), the roughly $200 million Affordable Housing and Emergency Homelessness Response Package that publicly funds housing production and imposes binding state housing-production requirements on cities; she was a listed member sponsor of HB 2001. In her own guest column in The Bulletin (March 10, 2023) she described the package as making affordable housing the top priority for local governments and state agencies. Statutory rent caps combined with large-scale public funding of new housing is chair 2 rather than chair 3's targeted-subsidy-only approach.",
+    "sources": [
+      "http://web.archive.org/web/20230327134004/https://www.bendbulletin.com/opinion/guest-column-legislatures-affordable-housing-and-houseless-response-package-is-a-big-step-toward-stability/article_e143ddb6-bf6a-11ed-a031-8fa54e9637e6.html",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2023R1'%20and%20MeasurePrefix%20eq%20'SB'%20and%20MeasureNumber%20eq%20611%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2001"
+    ],
+    "quote_text": "After more than 50 years of deprioritizing housing production, we’re making structural changes that place affordable housing as the number-one priority for local governments, special districts and state agencies.",
+    "quote_deidentified": "After more than 50 years of deprioritizing housing production, we’re making structural changes that place affordable housing as the number-one priority for local governments, special districts and state agencies."
+  },
+  {
+    "external_id": -4120053,
+    "name": "Emerson Levy",
+    "topic_key": "rent-regulation",
+    "value": 2,
+    "reasoning": "Levy voted Aye on third reading of SB 611, 2023R1 (Chapter 226), which lowered the ceiling on annual rent increases under Oregon's existing statewide rent-stabilization law, and Aye on passage of HB 3054, 2025R1 (Chapter 387), which applied a tighter rent cap to tenancies for spaces in manufactured-home and floating-home facilities; she also voted Nay on the motion to refer HB 3054 to Rules, against derailing it. Tightening the cap and extending it to a previously separate class of tenancy is chair 2. She has not voted to remove the statutory exemptions, such as new construction, that chair 1 would require.",
+    "sources": [
+      "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/SB611",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2025R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%203054%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3054"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "external_id": -4120053,
+    "name": "Emerson Levy",
+    "topic_key": "residential-zoning",
+    "value": 4,
+    "reasoning": "Levy voted Aye on third reading (June 18, 2025) and on concurrence (June 26, 2025) for HB 2138, 2025R1 (Chapter 476), which expands allowable middle housing and single-room occupancies, extends middle-housing requirements to urban unincorporated land, retroactively voids private covenants restricting middle housing, ADUs or density, and reforms expedited land divisions so they are exempt from hearing requirements and opponent appeals. She also voted Aye on HB 3197, 2023R1 (Chapter 533), narrowing when housing development standards may be discretionary rather than clear and objective. Broad by-right upzoning plus streamlined approvals is chair 4; she has not voted for an any-housing-type-on-any-lot rule (chair 5).",
+    "sources": [
+      "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB2138",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2025R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%202138%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB3197"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "external_id": -4120053,
+    "name": "Emerson Levy",
+    "topic_key": "climate-change",
+    "value": 3,
+    "reasoning": "Levy was a member sponsor of, and voted Aye on, HB 3409, 2023R1 (Chapter 442), the climate package funding heat-pump adoption, commercial building energy performance standards, community green infrastructure and low-carbon fuel research, and was a member sponsor of and voted Aye on HB 4102, 2024R1 (Chapter 11), on natural climate solutions. In 2025R1 she was chief sponsor of HB 3087 (renewable energy), HB 3820 (Climate Protection Program), HB 3869 (energy procurement) and HB 3986 (county siting of renewable energy facilities on farmland). That record is clean-energy buildout with gradual decarbonization, chair 3; she has proposed no fossil-fuel phase-out deadline (chair 2) and no emissions ban (chair 1).",
+    "sources": [
+      "https://emersonvotes.com/priorities/",
+      "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB3409",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2023R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%203409%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json"
+    ],
+    "quote_text": "Oregonians deserve to enjoy the prosperity of the clean energy economy.",
+    "quote_deidentified": "Oregonians deserve to enjoy the prosperity of the clean energy economy."
+  },
+  {
+    "external_id": -4120053,
+    "name": "Emerson Levy",
+    "topic_key": "childcare",
+    "value": 3,
+    "reasoning": "Levy voted Aye on HB 3005, 2023R1 (Chapter 523), providing financial and technical assistance for early child care infrastructure, and Aye on HB 3235, 2023R1 (Chapter 538), the income-targeted child tax credit. She was a member sponsor of HB 2727, 2023R1 (Chapter 510), creating a work group on expanding child care facilities, and of HB 3560, 2025R1 (Chapter 157), easing the siting of child care facilities, voting Aye on both. Her campaign site describes securing funding for additional Head Start slots in Redmond, an income-threshold program. Income-targeted subsidies and credits plus provider facility and workforce support is chair 3; she has no record of proposing universal publicly funded childcare (chair 1) or of broad middle-income subsidy expansion as her own initiative (chair 2).",
+    "sources": [
+      "https://emersonvotes.com/priorities/",
+      "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB3005",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2025R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%203560%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "external_id": -4120053,
+    "name": "Emerson Levy",
+    "topic_key": "homelessness-response",
+    "value": 2,
+    "reasoning": "In her own guest column in The Bulletin (March 10, 2023) Levy described the strategy as expanding low-barrier shelter capacity, rehousing people living on the streets and preventing more homelessness, coupled with longer-term housing production. She voted Aye on HB 3644, 2025R1 (Chapter 510), creating a statewide shelter program administered through regional coordinators; was chief sponsor of and floor-carried HB 3970, 2025R1 (Chapter 516), on youth homelessness funding eligibility; and was chief sponsor of and floor-carried HB 4149, 2026R1 (Chapter 68), requiring immediate enrollment and services for homeless students. Shelter capacity and services as the primary strategy is chair 2; she has not framed permanent supportive housing with no preconditions as the strategy (chair 1), nor endorsed enforcement tools (chairs 4 and 5).",
+    "sources": [
+      "http://web.archive.org/web/20230327134004/https://www.bendbulletin.com/opinion/guest-column-legislatures-affordable-housing-and-houseless-response-package-is-a-big-step-toward-stability/article_e143ddb6-bf6a-11ed-a031-8fa54e9637e6.html",
+      "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3644",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2026R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%204149%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json"
+    ],
+    "quote_text": "Critical funding in this package gives the state the tools to effectively respond to our crisis, expanding the state’s low-barrier shelter capacity, rehousing people living on the streets, and preventing more homelessness.",
+    "quote_deidentified": "Critical funding in this package gives the state the tools to effectively respond to our crisis, expanding the state’s low-barrier shelter capacity, rehousing people living on the streets, and preventing more homelessness."
+  },
+  {
+    "external_id": -4120053,
+    "name": "Emerson Levy",
+    "topic_key": "data-centers",
+    "value": 2,
+    "reasoning": "Levy voted Aye on third reading (April 22, 2025) and on concurrence (June 5, 2025) for HB 3546, 2025R1 (Chapter 323), which directs the Public Utility Commission to create a separate class of electric service for large energy use facilities, requires any tariff for that class to allocate the cost of serving those facilities to the facilities themselves and to mitigate risk to other classes of retail electricity consumers, and requires service by contract. She also voted Aye on HB 3792, 2025R1 (Chapter 512), on utility ratepayer consumer protection. Barring utilities from shifting data-center costs onto residential customers is the operative mechanism of chair 2; she did not vote for a construction moratorium (chair 1) or for approval-stage community benefit conditions (chair 3).",
+    "sources": [
+      "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3546",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2025R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%203546%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "external_id": -4120053,
+    "name": "Emerson Levy",
+    "topic_key": "campaign-finance",
+    "value": 2,
+    "reasoning": "Levy voted Aye on HB 4024, 2024R1 (Chapter 9), which established Oregon's first statutory campaign contribution limits and also requires reporting of the original sources of funds behind independent expenditures and disclosure on political advertising. In 2026R1 she voted Nay on final passage of HB 4018 (March 5, 2026), which modified those campaign finance timelines and permits corporations and labor unions to establish separate segregated funds operating like political committees. Voting for hard contribution limits and against loosening them places her at chair 2, past chair 3's disclosure-only position.",
+    "sources": [
+      "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/HB4024",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2024R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%204024%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2026R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%204018%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "external_id": -4120053,
+    "name": "Emerson Levy",
+    "topic_key": "voting-rights",
+    "value": 1,
+    "reasoning": "Levy voted Aye on passage of HB 2107, 2023R1 (Chapter 492), which extends Oregon's automatic voter registration to Oregon Health Authority records and establishes a pilot issuing state ID and voter registration to adults released from Powder River Correctional Facility; she also voted Nay on the motion to re-refer that bill to Rules. Automatic registration of eligible citizens is the defining mechanism of chair 1. Chair 2's markers, no-excuse mail voting and expanded early voting, are already universal in Oregon and are not something she has acted to extend. Caveat: nothing in her record addresses online voting, the second clause of chair 1.",
+    "sources": [
+      "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2107",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2023R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%202107%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "external_id": -4120053,
+    "name": "Emerson Levy",
+    "topic_key": "local-immigration",
+    "value": 1,
+    "reasoning": "In 2026R1 Levy voted Aye on HB 4114 (Chapter 58), creating a civil cause of action against persons who under color of law enter protected property without a warrant, and Aye on rejecting the minority report on it; Aye on HB 4111 (Chapter 57), which makes immigration status inadmissible in civil proceedings and adds immigration status to the statutory definition of law-enforcement profiling; and Aye on HB 4079 (Chapter 48), requiring school districts and colleges to adopt policies for when federal immigration authorities enter school property. These votes push past Oregon's baseline non-cooperation law (chair 3) toward affirmatively walling local institutions off from federal immigration enforcement, chair 1. Caveat: no vote of hers addresses ICE detainers directly, so the detainer clause of chair 1 is read from the direction of these three votes rather than documented.",
+    "sources": [
+      "https://olis.oregonlegislature.gov/liz/2026R1/Measures/Overview/HB4114",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2026R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%204114%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2026R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%204111%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "external_id": -4120053,
+    "name": "Emerson Levy",
+    "topic_key": "growth-and-development",
+    "value": 3,
+    "reasoning": "Levy was chief sponsor of HB 3620, 2023R1, which would authorize cities with a demonstrated housing need to add a project area to their urban growth boundary on specified conditions and would amend the principles governing urban reserves, and chief sponsor of HB 3628, 2023R1, on rural residential land. Her campaign site says she is an avid supporter of increased funding for infrastructure projects, with the state as a partner to build sewers, roads and pipes so housing costs come down for working families. Public infrastructure investment as the enabler of, and condition for, expansion is chair 3; she has not sought growth limits or voter approval of annexations (chairs 1 and 2), and her stated mechanism is state infrastructure partnership rather than fee cuts and developer recruitment (chair 4).",
+    "sources": [
+      "https://emersonvotes.com/priorities/",
+      "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB3620"
+    ],
+    "quote_text": "",
+    "quote_deidentified": ""
+  },
+  {
+    "external_id": -4120053,
+    "name": "Emerson Levy",
+    "topic_key": "transportation-priorities",
+    "value": 3,
+    "reasoning": "Levy's campaign site frames transportation around traffic and pedestrian deaths and crumbling infrastructure and bridges, saying the upcoming transportation package must prioritize safety and fix aging infrastructure. Her own transportation legislation is safety regulation rather than mode shift: she was chief sponsor of HB 4103, 2024R1 (Chapter 12), which classified e-bikes and set rider rules after a fatal collision involving a Bend teenager, and she voted Aye on HB 4007, 2026R1 (Chapter 101), consolidating helmet and powered-micromobility rules. Maintaining and making existing roads safer while adding pedestrian improvements is chair 3; she has not called for bike lanes and sidewalks on all new road projects (chair 2) or for prioritizing road capacity for drivers (chair 4).",
+    "sources": [
+      "https://emersonvotes.com/priorities/",
+      "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/HB4103",
+      "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2026R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%204007%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json"
+    ],
+    "quote_text": "We are facing big challenges in our transportation system, including the epidemic of traffic deaths. We experienced more pedestrian deaths in Deschutes County this year than in the last 20 years. With the upcoming transportation package, we must prioritize transportation safety and address crumbling infrastructure and bridges.",
+    "quote_deidentified": "We are facing big challenges in our transportation system, including the epidemic of traffic deaths. We experienced more pedestrian deaths in Deschutes County this year than in the last 20 years. With the upcoming transportation package, we must prioritize transportation safety and address crumbling infrastructure and bridges."
+  }
+]

@@ -1,16 +1,20 @@
 ---
 gsd_state_version: 1.0
 milestone: v2.22
-milestone_name: 2026 US House Candidate Coverage (Wave 3)
-status: executing
-last_updated: "2026-07-07T16:26:13.933Z"
-last_activity: 2026-07-07 -- Phase 165 EXECUTED: 17/17 plans, gate GREEN (34 districts)
+milestone_name: 2026 US House Candidate Coverage
+current_phase: 174
+status: completed
+stopped_at: Completed 174-05-PLAN.md — Phase 174 all 5 plans done (FEC-05 decision doc; deploy HELD pending operator go-ahead)
+last_updated: "2026-07-23T20:27:00.852Z"
+last_activity: 2026-07-23
+last_activity_desc: Phase 174 complete
 progress:
-  total_phases: 9
-  completed_phases: 1
-  total_plans: 7
-  completed_plans: 7
-  percent: 11
+  total_phases: 10
+  completed_phases: 7
+  total_plans: 81
+  completed_plans: 80
+  percent: 70
+current_phase_name: fec-429-rate-limit-tail-drive-the-6-hourly-ingest-to-zero-ha
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
@@ -24,15 +28,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 165 COMPLETE (17-state small-delegation seeding, 34 districts, gate GREEN 2026-07-07) — next: /gsd-verify-work 165, then Phase 166 consolidated gate; 164.1 MO wave still date-gated >= 2026-08-04
+**Current focus:** Phase 174 — fec-429-rate-limit-tail-drive-the-6-hourly-ingest-to-zero-ha
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 165
-Plan: 17 of 17 complete
-Status: Executed — gate GREEN (165-verify.sql 15/15 + coordinate smoke 17/17)
-Last activity: 2026-07-07 -- Phase 165 executed end-to-end (migs 1250-1281; 465 stance answers, 0 unsourced)
+Phase: 174
+Plan: Not started
+Status: All phases complete
+Last activity: 2026-07-23 — Phase 174 complete
 
 ## v2.22 Phase Dependencies
 
@@ -125,6 +129,18 @@ Re-acknowledged at v2.20 close (2026-06-30).
 - Requirements: 0/7 closed (USHC3-01..07)
 - Target: 178 districts across the final 38 states (WA 10 down to AK/DE/ND/SD/VT/WY 1 each)
 
+**Per-Plan Metrics:**
+
+| Plan | Duration | Tasks | Files |
+|------|----------|-------|-------|
+| Phase 173 P01 | 20min | 3 tasks | 2 files |
+| Phase 173 P03 | 2min | 2 tasks | 2 files |
+| Phase 173 P02 | 2min | 3 tasks | 2 files |
+| Phase 173 P04 | 8min | 3 tasks | 2 files |
+| Phase 174 P03 | 25min | 3 tasks | 7 files |
+| Phase 174 P04 | 20min | 2 tasks | 4 files |
+| Phase 174 P05 | 15min | 3 tasks | 1 files |
+
 ## Accumulated Context
 
 ### Roadmap Evolution
@@ -196,12 +212,13 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 
 ## Session Continuity
 
-Last session: 2026-07-07T05:01:46.473Z
-Stopped at: Phase 164.1 context gathered
-Resume file: .planning/phases/164.1-cross-state-district-polygon-refresh-dual-map-design-tn-mo-a/164.1-CONTEXT.md
+Last session: 2026-07-23T20:22:39.144Z
+Stopped at: Completed 174-05-PLAN.md — Phase 174 all 5 plans done (FEC-05 decision doc; deploy HELD pending operator go-ahead)
+Resume file: None
 
 ## Operator Next Steps
 
+- **HIGH PRIORITY / awaiting operator go-ahead:** Phase 174 (FEC-01..05) is fully implemented and verified at the code level (401/401 unit tests, tsc clean, `174-FEC05-DECISION.md` written). The Render deploy is HELD — run the command in `174-FEC05-DECISION.md` §5 (`RENDER_DEPLOY_HOOK` curl, referencing `backend/.env`) when ready to ship the daily-cadence + rate-limit-tail fixes to production. After deploy + the first daily cron fire, run the §4 zero-429 verification query (~25h window, via Supabase MCP against prod `kxsdzaojfaibhuzmclfq`) — expect 0 rows. Until deployed, production stays on the pre-Phase-174 code (6-hourly cadence, no shared limiter) and the residual 429 tail persists unchanged.
 - **Anytime:** `/gsd-plan-phase 165` (UT dependency satisfied — 164.1 Wave 2 delivered UT G5200V26 polygons + `164.1-ut-wiring-contract.md`).
 - **≥ 2026-08-04:** `/gsd-execute-phase 164.1 --wave 4` — Plan 164.1-07, MO date-gated (SOS Hoskins certification decision): map-holds branch = MO G5200V26 import + un-withhold 2902-2906 + flip the 162 gate; referendum-qualifies branch = zero polygon work, MO stays withheld, divert to Phase 167's MO cluster.
 - **≥ 2027-01-03:** plan the Jan-2027 boundary-promotion phase per `164.1-jan2027-boundary-promotion-spec.md` — promote G5200V26→canonical, re-key `essentials.offices` (UT wiring contract + state correspondences), re-resolve `connect.user_districts`, refresh `connected_profiles.congressional_geo_id`, and RETIRE the D-11 `resolve_congressional_2026` read-path fallback.
@@ -243,3 +260,15 @@ Resume file: .planning/phases/164.1-cross-state-district-polygon-refresh-dual-ma
 - [Phase 163-02]: seed-wi-house-headshots.py hardened with a _FOREIGN_NATIONALITY guard after Douglas Alexander (WI-2) resolved to a British Labour MP homonym; bad upload deleted from prod before commit
 - [Phase 163]: 163-03: DeGette CO-1 lost-primary treated as REUSE-NO-ROW (new incumbent-transition pattern, third variant); her existing record/office/19 stances untouched, not wired into CO-1 race_candidates
 - [Phase 163]: 163-03: CO decided-field race description follows the IN 'Confirmed nominees' convention, not PROVISIONAL
+- [Phase ?]: 173-01: checkAnthropicAvailability canary uses claude-haiku-4-5 (cheapest); only APIError status 401/402/403 classify as unusable, everything else re-thrown as inconclusive so 173-02's sweep can proceed
+- [Phase ?]: 173-01: runDiscoveryAgent's no-report exit paths return zero-candidate results (not throw); no changes needed to discoveryService.ts's existing zero-candidate completed path
+- [Phase ?]: OPS-03 zero-candidate caller contract regression-locked in discoveryService.test.ts; no source change needed (RESEARCH Pattern 3)
+- [Phase ?]: OPS-04 weekly cron cadence documented as deliberate bounded-cost choice; cadence/timezone unchanged
+- [Phase ?]: [Phase 173-02]: isRetryable classifies other 4xx (400/404/422) as non-retryable too, not just 401/402/403 — a retry on any 4xx fails identically
+- [Phase ?]: [Phase 173-02]: runDiscoverySweep preflight aborts only on a RETURNED {available:false} from checkAnthropicAvailability, never on a thrown (inconclusive) error — thrown errors are logged and the sweep proceeds
+- [Phase ?]: [Phase 173-04]: OPS-04 cadence KEPT — live prod count is 46 discovery_jurisdictions in the 180-day horizon; weekly Sunday-02:00-UTC cadence unchanged
+- [Phase ?]: [Phase 173-04]: Phase 173 code deployed live to Render (dep-d9gsb1n41pts73de2f1g); full backend suite has 21 pre-existing unrelated failures (no live DB/env vars in sandbox) documented in deferred-items.md, not fixed
+- [Phase ?]: [Phase 174-03]: grep api.open.fec.gov surfaced a 4th ungated FEC call-site file (fecBackfill.ts) missed by 174-RESEARCH.md's 3-site framing; gated it too (Rule 2) so the plan's own must-have holds against the real codebase
+- [Phase ?]: [Phase 174-04]: Task 1 checkpoint (live original_sub_id confirmation) resolved by operator 'proceed' decision on schema-level evidence, not a live-caught populated row — two sampling sessions (~1,640 rows) never caught one and hit FEC's own 429 on the shared key; retirement DELETE ships as a bounded, gated no-op today
+- [Phase ?]: [174-05]: Cron cadence LOCKED at daily 06:00 UTC (min_load_date is date-granularity, sub-daily = zero extra freshness); FEC key upgrade EXPLICITLY DECLINED (code-side fixes bring steady-state volume comfortably under the 1,000/hr registered-key ceiling); limiter default FEC_RATE_LIMIT_PER_MINUTE=15 (~900/hr) confirmed as durable default.
+- [Phase ?]: [174-05]: Render deploy of Phase 174 held per explicit operator instruction, not auto-triggered; exact deploy command recorded in 174-FEC05-DECISION.md §5 for the operator, and the zero-429 verification query is framed as a ~25h post-deploy operator check, not a phase-blocking gate.
