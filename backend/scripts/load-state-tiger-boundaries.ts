@@ -43,15 +43,19 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   VA: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   NV: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   AZ: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
-  // WI: sldu/sldl ONLY, deliberately. The 2024-vintage TIGER SLDU/SLDL set was
-  // verified to be the 2023 Wisconsin Act 94 remap (enacted 2024-02-19) via
-  // identity-anchor probes against TIGERweb: Burlington -> AD 33 / SD 11,
-  // downtown Racine -> AD 62 / SD 21, Sturtevant -> AD 66 / SD 22, with the
-  // Assembly-into-Senate nesting internally consistent. place/cousub/unsd for WI
-  // are NOT vetted yet and are withheld on purpose (D-04) — note that WI also has
-  // G5410 union-high and G5400 elementary school districts that this loader has no
-  // layer support for at all, so 'unsd' alone would silently under-cover the state.
-  WI: new Set(['sldu', 'sldl']),
+  // WI. sldu/sldl: the 2024-vintage TIGER set was verified to be the 2023 Wisconsin Act 94
+  // remap (enacted 2024-02-19) via identity-anchor probes against TIGERweb: Burlington ->
+  // AD 33 / SD 11, downtown Racine -> AD 62 / SD 21, Sturtevant -> AD 66 / SD 22, with the
+  // Assembly-into-Senate nesting internally consistent.
+  // place/cousub: Wisconsin is a strong-MCD state — its 1,850 towns/villages/cities are ALL
+  // elected governments, so cousub carries real bodies here (unlike CA's statistical CCDs)
+  // and WI is added to COUSUB_FUNCSTAT_STATES below. Incorporated municipalities appear in
+  // BOTH layers (Racine is place 5566000 AND an MCD); towns appear ONLY in cousub.
+  // 'unsd' is still withheld: WI ALSO has G5410 union-high and G5400 elementary school
+  // districts that this loader has no layer support for, so 'unsd' alone would silently
+  // under-cover the state — rural Racine County sits in an elementary district AND a union
+  // high district, i.e. two separate elected boards.
+  WI: new Set(['sldu', 'sldl', 'place', 'cousub']),
   DC: new Set(['sldl']),
 };
 
@@ -106,6 +110,10 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
   VA: ['Alexandria city'],
   NV: ['Las Vegas city', 'Henderson city', 'North Las Vegas city', 'Boulder City city'],
   AZ: ['Tucson city', 'Oro Valley town', 'Marana town', 'Sahuarita town', 'South Tucson city'],
+  // Racine County's incorporated municipalities — verified present in TIGER 2024 FIPS 55
+  // place (all G4110, FUNCSTAT='A') before wiring this gate.
+  WI: ['Racine city', 'Burlington city', 'Mount Pleasant village', 'Caledonia village',
+       'Sturtevant village', 'Union Grove village'],
 };
 
 // STATE_RUN_MAKEVALID: per-state ST_MakeValid layer set (Phase 131 D-07..D-09)
@@ -122,7 +130,7 @@ const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
   VA: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   NV: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   AZ: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
-  WI: new Set(['sldu', 'sldl']),
+  WI: new Set(['sldu', 'sldl', 'place', 'cousub']),
   DC: new Set(['sldl']),
 };
 
@@ -1095,8 +1103,20 @@ async function processLayer(
   // removed here by layerDef.skipDistrictCodes.
   if (fipsArg === '55') {
     const EXPECTED_WI_MTFCC: Record<string, number> = {
-      sldu: 33,  // 33 WI Senate districts (Act 94 map; TIGERweb 34 minus 1 'ZZZ')
-      sldl: 99,  // 99 WI Assembly districts (Act 94 map; TIGERweb 100 minus 1 'ZZZ')
+      sldu:     33,  // 33 WI Senate districts (Act 94 map; TIGERweb 34 minus 1 'ZZZ')
+      sldl:     99,  // 99 WI Assembly districts (Act 94 map; TIGERweb 100 minus 1 'ZZZ')
+      place:   607,  // 607 WI G4110 incorporated cities/villages, all FUNCSTAT='A'. The 2024
+                     //   PLACE file bundles 607 G4110 + 201 G4210 CDPs = 808 records; the
+                     //   MTFCC filter drops the CDPs. TIGERweb's current vintage reports 608
+                     //   incorporated places, ONE more than 2024: Greenleaf (5531375) was a
+                     //   CDP in 2024 and has since incorporated as a village. Brown County,
+                     //   so it does not affect Racine; it will appear when the vintage moves.
+      cousub: 1243,  // 1243 ACTIVE WI MCDs (towns/villages/cities) out of 1925 records; the
+                     //   682 FUNCSTAT='F' placeholders are skipped by the FUNCSTAT='A' filter,
+                     //   which is why WI is in COUSUB_FUNCSTAT_STATES. TIGERweb's current
+                     //   vintage reports 1242 active, ONE fewer than 2024: Williamstown town
+                     //   (5502787225, Dodge County) was active in 2024 and no longer is.
+                     //   Dodge County, so it does not affect Racine.
     };
     if (layer in EXPECTED_WI_MTFCC) {
       const expected = EXPECTED_WI_MTFCC[layer];
@@ -1105,6 +1125,15 @@ async function processLayer(
         if (layerDef.filterByStatefp) {
           const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
           if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        // Mirror the upsert pass's filters exactly, or the count means nothing.
+        if (layer === 'place') {
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
+        }
+        if (layer === 'cousub') {
+          const funcstatVal = String(props['FUNCSTAT'] ?? props['funcstat'] ?? '');
+          if (funcstatVal !== 'A') return;
         }
         if (layerDef.districtNumField) {
           const fpKey = resolveColumn(props, layerDef.districtNumField);
@@ -1198,7 +1227,10 @@ async function processLayer(
       // CA county subdivisions are CCDs (Census County Divisions, statistical, FUNCSTAT='S').
       // Filtering CCDs to FUNCSTAT='A' would skip ALL CA records (see Phase 57 RESEARCH).
       // Add a state to this set ONLY if its TIGER COUSUB shapefile contains active MCDs.
-      const COUSUB_FUNCSTAT_STATES = new Set(['MA']);
+      // WI is an MCD state like MA: its county subdivisions are towns/villages/cities with
+      // real elected boards (FUNCSTAT='A'). Without this filter WI imports 1,925 records
+      // instead of 1,242 — 683 inactive placeholders that have no government at all.
+      const COUSUB_FUNCSTAT_STATES = new Set(['MA', 'WI']);
       if (layer === 'cousub' && COUSUB_FUNCSTAT_STATES.has(abbrevUpper)) {
         const funcstatVal = String(props['FUNCSTAT'] ?? props['funcstat'] ?? '');
         if (funcstatVal !== 'A') {
