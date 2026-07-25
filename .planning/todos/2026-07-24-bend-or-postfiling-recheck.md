@@ -189,7 +189,18 @@ before doing any new web research on the county candidates.
    The **city-hosted candidate forum is mid-September 2026** — that is the unlock. Re-run then.
 2. **Sheriff race (2):** Rupert and McLaughlin — `public-safety-approach`, `jail-capacity`,
    `local-immigration`. The November county pamphlet (not yet published) will carry both.
-3. **Bend-La Pine School Board (7)** — `school-vouchers` and school-adjacent topics only.
+3. **Bend-La Pine School Board (7)** — external_ids `-4101981`..`-4101987` (Lynch Z1, LeGrand Z2,
+   Fischer Z3/Vice Chair, Olson Z4, Tatom Z5/Chair, Tomlin Z6, Chadwick Z7). Applicable topics are
+   narrow: `school-vouchers`, `childcare`, `civil-rights`, `trans-athletes`, `taxes` (bond/levy
+   votes) — do NOT force the growth/housing/transport topics onto a school board.
+   **Sources to start from:** the board's minutes and agendas live in BoardBook, NOT on the district
+   site — `https://meetings.boardbook.org/Public/Organization/2413` (policies:
+   `.../Public/Book/2413`). Board meetings are also recorded on the YouTube channel
+   `@blsschoolboard6373`. Roster/zone page is `https://www.blschools.org/board-and-policy/school-board`
+   (the "Meet the Board Members" panel is an accordion — its content only exists in the DOM after
+   the link is clicked, so Playwright + click, or read `data-image-sizes` attributes).
+   Note three of them (Tatom, Olson, Lynch) publicly endorsed Amy Sabbadini for county commissioner
+   per the May 2026 pamphlet — that is affiliation, NOT stance evidence.
 4. **BPRD board (5)** — expect thin; `local-environment` / `growth-and-development` at most.
    Riley's KPOV "The Point" podcast episode on the tree code is an unmined source (audio).
 5. **HD 53/54 (3):** Levy, Kropf, Summers — STATE legislators with zero stances (so is SD-27's
