@@ -153,7 +153,70 @@ finish in one pass.
    "evidence date vs term_start". Any dated evidence — a vote, an ordinance, a council motion, a
    news article about an action in office — must postdate the person taking **that** office.
 
-## Mechanizable check #2 (not built): SOURCE-SUPPORTS-CLAIM
+## ✅ Mechanizable check #2 BUILT 2026-07-25: `backend/scripts/check-source-supports.py`
+
+Asks the question no other gate asks: **does the cited page actually carry a statement on this
+topic's axis at all?** Phase 149 checks only that a URL *exists*;
+`validate-stance-quotes.py` needs a quote to match and these rows have none. Read-only.
+
+```
+py scripts/check-source-supports.py --state OR [--title-like Representative] [--topic housing]
+py scripts/check-source-supports.py --external-ids -4120053,-4120054
+py scripts/check-source-supports.py --snapshot <retirement-snapshot.json>   # calibration mode
+   [--json report.json] [--queue adjudication.json] [--limit N] [--no-fetch]
+```
+
+### L1 structural (no network)
+`bio-only` (every source is a Ballotpedia/Wikipedia **biography** URL) · `party-prior` (reasoning
+uses party or geography as the evidence) · `no-artifact` (names no bill, date, vote or quote — there
+is no checkable claim) · `aggregator` (known AI-content-farm / uncited aggregator).
+
+### L2 topical (deterministic)
+**The topic vocabulary is derived from the compass itself** — each topic's title + `question_text` +
+all five `compass_stances` texts — then terms used by more than 3 topics are dropped as generic, so
+`government`/`should` fall out while `abortion`/`voucher`/`encampment` survive. Generalises to all 44
+topics with no hand-written keyword lists and stays correct if a scale is rewritten.
+`0` discriminating terms on a readable page → **UNSUPPORTED**; `1-2` → WEAK; `3+` → TOPICAL.
+A page that could not be read is **UNVERIFIABLE**, never UNSUPPORTED.
+
+### Composite verdict — the finding that made this usable
+Ballotpedia **biography** pages DO contain policy vocabulary incidentally (committee assignments,
+election history), so L2 alone scored them TOPICAL: in a 60-row sample, 26 rows were `bio-only` but
+only 2 came out UNSUPPORTED. So `bio-only` **AND** `no-artifact` → **UNSUPPORTED-STRUCTURAL**: a row
+citing only a biography page whose reasoning names no bill, date, vote or quote has nothing that could
+be checked against anything, whatever words the page happens to hold. `bio-only`/`aggregator`/
+`party-prior` combined with a passing text score → **SUSPECT** rather than clean.
+
+### NON-TEXT sources — do not score these as prose
+Two legitimate source types carry a **vote**, not prose, and scoring them for vocabulary manufactures
+accusations against the best-sourced rows:
+- `olis.oregonlegislature.gov/liz/<SESSION>/Measures/…` — a SPA shell; passes a length check but its
+  only real content is the `<title>`. Scored 1-2 junk terms (`else`, `plan`) and made **three
+  legitimate Levy rows read UNSUPPORTED** before this was added.
+- `api.oregonlegislature.gov/odata/…` — machine-readable roll calls, zero policy prose.
+Both are flagged `non-text-source` and, when a row has nothing else, get verdict `VOTE-CLAIM-ONLY` —
+routed to the OData vote check (`sweep-or-preseating.mjs`), which is the right tool for a vote claim.
+`clerk.house.gov/evs`, senate.gov roll calls and legiscan API URLs are treated the same way.
+
+### Calibration against labelled data (do this before trusting any tuning change)
+- **Known-good** = the 45 researched Levy/Kropf/Broadman/Summers rows → **0 actionable**.
+- **Known-bad** = the 102 retired pre-seating rows (`--snapshot`) → 33 caught by `party-prior`, and
+  once measure pages were correctly excluded **all 102 land in `VOTE-CLAIM-ONLY`**.
+  **That is an honest limitation, not a failure:** their cited bill pages are real and genuinely
+  on-topic, so no text-based test can refute them — only the pre-seating/OData check can. **The two
+  checks are complementary; neither alone clears a cohort.**
+
+### L3 adjudication queue
+`TOPICAL` and `SUSPECT` rows are where a deterministic test stops: the page discusses the axis, but
+whether it supports the **assigned chair** needs judgement. `--queue` writes them with the matched
+terms and best source already resolved, so a model/agent pass never re-fetches.
+
+### Performance note
+`validate-stance-quotes.py` deliberately fetches direct **and** r.jina.ai and searches both (a quote
+may survive in only one). This check only needs one readable rendition, so `readable_text()` stops at
+the first and memoises per process — without that the Oregon run exceeded a 600 s timeout.
+
+## Original notes on this check (superseded by the build above)
 The remaining gap. `validate-stance-quotes.py` verifies a quote appears in a source, but **890+ of
 the bad rows carry no quote at all**, so there is nothing to match and they pass. Options, cheapest
 first:
