@@ -35,7 +35,7 @@ const hasLiveDB = !!process.env.INTEGRATION_TEST_JWT;
 // POST /api/gems/award — auth and validation (no DB required)
 // ---------------------------------------------------------------------------
 describe('POST /api/gems/award', () => {
-  it('returns 401 without Authorization header', async () => {
+  it('returns 401 without X-Service-Key header', async () => {
     const res = await request(app)
       .post('/api/gems/award')
       .send({
@@ -50,7 +50,7 @@ describe('POST /api/gems/award', () => {
   it('returns 401 with invalid service key', async () => {
     const res = await request(app)
       .post('/api/gems/award')
-      .set('Authorization', 'Bearer invalid-key-xyz')
+      .set('X-Service-Key', 'invalid-key-xyz')
       .send({
         user_id: crypto.randomUUID(),
         gem_type: 'yellow',
@@ -63,7 +63,7 @@ describe('POST /api/gems/award', () => {
   it('returns 422 with missing required fields', async () => {
     const res = await request(app)
       .post('/api/gems/award')
-      .set('Authorization', `Bearer ${TEST_GEM_KEY}`)
+      .set('X-Service-Key', TEST_GEM_KEY)
       .send({});
     expect(res.status).toBe(422);
   });
@@ -71,7 +71,7 @@ describe('POST /api/gems/award', () => {
   it('returns 422 with missing idempotency_key', async () => {
     const res = await request(app)
       .post('/api/gems/award')
-      .set('Authorization', `Bearer ${TEST_GEM_KEY}`)
+      .set('X-Service-Key', TEST_GEM_KEY)
       .send({ user_id: crypto.randomUUID(), gem_type: 'yellow', amount: 1 });
     expect(res.status).toBe(422);
   });
@@ -91,7 +91,7 @@ describe.skipIf(!hasLiveDB)('POST /api/gems/award (live DB)', () => {
   it('awards yellow gems and GET /me shows incremented balance', async () => {
     const awardRes = await request(app)
       .post('/api/gems/award')
-      .set('Authorization', `Bearer ${TEST_GEM_KEY}`)
+      .set('X-Service-Key', TEST_GEM_KEY)
       .send({
         user_id: testUserId,
         gem_type: 'yellow',
@@ -119,7 +119,7 @@ describe.skipIf(!hasLiveDB)('POST /api/gems/award (live DB)', () => {
   it('duplicate idempotency_key returns is_duplicate: true with same balance', async () => {
     const dupeRes = await request(app)
       .post('/api/gems/award')
-      .set('Authorization', `Bearer ${TEST_GEM_KEY}`)
+      .set('X-Service-Key', TEST_GEM_KEY)
       .send({
         user_id: testUserId,
         gem_type: 'yellow',
@@ -135,7 +135,7 @@ describe.skipIf(!hasLiveDB)('POST /api/gems/award (live DB)', () => {
   it('FORBIDDEN_GEM_TYPE when key only permits yellow but awards blue', async () => {
     const forbiddenRes = await request(app)
       .post('/api/gems/award')
-      .set('Authorization', `Bearer ${TEST_YELLOW_ONLY_KEY}`)
+      .set('X-Service-Key', TEST_YELLOW_ONLY_KEY)
       .send({
         user_id: testUserId,
         gem_type: 'blue',

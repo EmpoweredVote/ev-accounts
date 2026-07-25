@@ -1,13 +1,20 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import request from 'supertest';
 import type { Express } from 'express';
+// Static import — evaluated before the assignments below, so it sees the real
+// DATABASE_URL rather than the placeholder this file installs for itself.
+import { hasLiveDb } from '../helpers/liveDb.js';
 
-// Set up test environment before any imports that read process.env
+// Set up test environment before any imports that read process.env.
+// Real values win where supplied, so `DATABASE_URL=... npm test` hits a live DB.
 process.env['NODE_ENV'] = 'test';
-process.env['SUPABASE_URL'] = 'https://test.supabase.co';
-process.env['SUPABASE_ANON_KEY'] = 'test-anon-key';
-process.env['SUPABASE_SERVICE_ROLE_KEY'] = 'test-service-role-key';
-process.env['DATABASE_URL'] = 'postgresql://postgres:password@localhost:5432/postgres';
+process.env['SUPABASE_URL'] = process.env['SUPABASE_URL'] || 'https://test.supabase.co';
+process.env['SUPABASE_ANON_KEY'] = process.env['SUPABASE_ANON_KEY'] || 'test-anon-key';
+process.env['SUPABASE_SERVICE_ROLE_KEY'] =
+  process.env['SUPABASE_SERVICE_ROLE_KEY'] || 'test-service-role-key';
+process.env['DATABASE_URL'] =
+  process.env['DATABASE_URL'] || 'postgresql://postgres:password@localhost:5432/postgres';
+process.env['ADMIN_INGEST_TOKEN'] = process.env['ADMIN_INGEST_TOKEN'] || 'test-ingest-token';
 
 let app: Express;
 
@@ -29,7 +36,9 @@ beforeAll(async () => {
 
 const REQUIRED_CITY_KEYS = ['id', 'name', 'state', 'available_datasets'] as const;
 
-describe('GET /api/treasury/cities — contract', () => {
+// Every assertion here reads real rows through the route, so the suite needs a
+// live database. Without one, skip rather than fail: see tests/helpers/liveDb.ts.
+describe.skipIf(!hasLiveDb)('GET /api/treasury/cities — contract', () => {
   it('returns 200 with an array', async () => {
     const res = await request(app).get('/api/treasury/cities');
     expect(res.status).toBe(200);

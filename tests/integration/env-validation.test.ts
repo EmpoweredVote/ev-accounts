@@ -11,6 +11,7 @@ describe('env validation', () => {
     vi.stubEnv('SUPABASE_ANON_KEY', 'test-anon-key');
     vi.stubEnv('SUPABASE_SERVICE_ROLE_KEY', 'test-service-role-key');
     vi.stubEnv('DATABASE_URL', 'postgresql://postgres:password@localhost:5432/postgres');
+    vi.stubEnv('ADMIN_INGEST_TOKEN', 'test-ingest-token');
 
     const { env } = await import('../../backend/src/lib/env.js');
     expect(env.SUPABASE_URL).toBe('https://test.supabase.co');
@@ -39,6 +40,7 @@ describe('env validation', () => {
     vi.stubEnv('SUPABASE_ANON_KEY', 'test-anon-key');
     vi.stubEnv('SUPABASE_SERVICE_ROLE_KEY', 'test-service-role-key');
     vi.stubEnv('DATABASE_URL', 'postgresql://postgres:password@localhost:5432/postgres');
+    vi.stubEnv('ADMIN_INGEST_TOKEN', 'test-ingest-token');
     // REDIS_URL intentionally not set
 
     const { env } = await import('../../backend/src/lib/env.js');

@@ -10,9 +10,12 @@ const router = Router();
 // GET /api/contributor/me
 // Auth: requireAuth
 //
-// Returns the authenticated user's active role grants as a bare array.
-// Used by CTC, Civic Spaces, and the Contributor Portal to determine
-// which features the caller is permitted to access.
+// Feed for the Contributor Portal dashboard. Returns the authenticated user's
+// active grants as a bare array, filtered to the three contributor roles below
+// (d9a4a55c) — it is NOT a general "which roles do I hold" endpoint.
+//
+// Consumers needing every grant (CTC's ctc_content_editor, Civic Spaces, etc.)
+// must use GET /api/roles/me, which returns all active grants unfiltered.
 //
 // Response: [{ role_slug, feature_scope, jurisdiction_geoid, resource_id, granted_at }]
 // ---------------------------------------------------------------------------

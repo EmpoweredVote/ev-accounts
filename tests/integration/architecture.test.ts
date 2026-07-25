@@ -1,91 +1,72 @@
 import { describe, it, expect } from 'vitest';
-import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { listSourceFiles, readCode } from '../helpers/sourceScan.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BACKEND_SRC = path.resolve(__dirname, '../../backend/src');
 const ROUTES_DIR = path.join(BACKEND_SRC, 'routes');
 
-function getAllTsFiles(dir: string): string[] {
-  const files: string[] = [];
-  if (!fs.existsSync(dir)) return files;
+// Files permitted to reference supabaseAdmin (the service-role client).
+// Paths are relative to backend/src.
+//
+// routes/auth.ts is the one route file on this list, and deliberately so:
+// Supabase auth-token operations (refreshSession, resetPasswordForEmail,
+// verifyOtp) are only available on the service-role client — there is no user
+// client to perform them with, since the caller has no valid session yet. These
+// calls exchange and mint tokens; they do not read user rows into the response
+// body, which is what the dual-client rule exists to prevent.
+const ALLOWED = [
+  'lib/supabase.ts',
+  'lib/authService.ts',
+  'lib/connectService.ts',
+  'lib/inviteService.ts',
+  'lib/enrollService.ts',
+  'lib/empowerService.ts',
+  'lib/gemService.ts',
+  'lib/roleService.ts',
+  'lib/socialService.ts',
+  'lib/adminService.ts',
+  'lib/candidateService.ts',
+  'lib/profileService.ts',
+  'lib/xpService.ts',
+  'lib/cronService.ts',
+  'middleware/auth.ts',
+  'middleware/tierGuards.ts',
+  'middleware/requireVerified.ts',
+  'middleware/requireAdmin.ts',
+  'routes/auth.ts',
+];
 
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const fullPath = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
-      files.push(...getAllTsFiles(fullPath));
-    } else if (entry.name.endsWith('.ts')) {
-      files.push(fullPath);
-    }
-  }
-  return files;
-}
+const rel = (file: string) => path.relative(BACKEND_SRC, file).split(path.sep).join('/');
 
 describe('Architecture enforcement: dual-client constraint', () => {
   it('no file in src/routes/ imports supabaseAdmin', () => {
-    const routeFiles = getAllTsFiles(ROUTES_DIR);
-    const violations: string[] = [];
+    const violations = listSourceFiles(ROUTES_DIR)
+      .filter((file) => readCode(file).includes('supabaseAdmin'))
+      .map(rel)
+      .filter((file) => !ALLOWED.includes(file));
 
-    for (const file of routeFiles) {
-      const content = fs.readFileSync(file, 'utf-8');
-      if (content.includes('supabaseAdmin')) {
-        violations.push(path.relative(BACKEND_SRC, file));
-      }
-    }
-
-    if (violations.length > 0) {
-      throw new Error(
-        `Architecture violation: the following route files reference supabaseAdmin.\n` +
-          `Route handlers must use createUserClient() for data that reaches the response body.\n` +
-          `supabaseAdmin is permitted only in src/middleware/.\n` +
-          `Violations:\n${violations.map((v) => `  - ${v}`).join('\n')}`
-      );
-    }
-
-    expect(violations).toHaveLength(0);
+    expect(
+      violations,
+      `Architecture violation: the following route files reference supabaseAdmin.\n` +
+        `Route handlers must use createUserClient() for data that reaches the response body.\n` +
+        `supabaseAdmin is permitted only in src/middleware/ and the files in ALLOWED.\n` +
+        `Violations:\n${violations.map((v) => `  - ${v}`).join('\n')}`
+    ).toHaveLength(0);
   });
 
   it('supabaseAdmin exists only in expected files', () => {
-    const allowedFiles = [
-      path.join(BACKEND_SRC, 'lib/supabase.ts'),
-      path.join(BACKEND_SRC, 'lib/authService.ts'),
-      path.join(BACKEND_SRC, 'lib/connectService.ts'),
-      path.join(BACKEND_SRC, 'lib/inviteService.ts'),
-      path.join(BACKEND_SRC, 'lib/enrollService.ts'),
-      path.join(BACKEND_SRC, 'lib/empowerService.ts'),
-      path.join(BACKEND_SRC, 'lib/gemService.ts'),
-      path.join(BACKEND_SRC, 'lib/roleService.ts'),
-      path.join(BACKEND_SRC, 'lib/socialService.ts'),
-      path.join(BACKEND_SRC, 'lib/adminService.ts'),
-      path.join(BACKEND_SRC, 'lib/candidateService.ts'),
-      path.join(BACKEND_SRC, 'lib/profileService.ts'),
-      path.join(BACKEND_SRC, 'lib/xpService.ts'),
-      path.join(BACKEND_SRC, 'lib/cronService.ts'),
-      path.join(BACKEND_SRC, 'middleware/auth.ts'),
-      path.join(BACKEND_SRC, 'middleware/tierGuards.ts'),
-      path.join(BACKEND_SRC, 'middleware/requireVerified.ts'),
-      path.join(BACKEND_SRC, 'middleware/requireAdmin.ts'),
-    ];
+    const violations = listSourceFiles(BACKEND_SRC)
+      .filter((file) => readCode(file).includes('supabaseAdmin'))
+      .map(rel)
+      .filter((file) => !ALLOWED.includes(file));
 
-    const allFiles = getAllTsFiles(BACKEND_SRC);
-    const violations: string[] = [];
-
-    for (const file of allFiles) {
-      const content = fs.readFileSync(file, 'utf-8');
-      if (content.includes('supabaseAdmin') && !allowedFiles.includes(file)) {
-        violations.push(path.relative(BACKEND_SRC, file));
-      }
-    }
-
-    if (violations.length > 0) {
-      throw new Error(
-        `Architecture violation: supabaseAdmin found in unexpected files.\n` +
-          `Only permitted in: lib/supabase.ts, lib/authService.ts, middleware/auth.ts, middleware/tierGuards.ts, middleware/requireVerified.ts\n` +
-          `Violations:\n${violations.map((v) => `  - ${v}`).join('\n')}`
-      );
-    }
-
-    expect(violations).toHaveLength(0);
+    expect(
+      violations,
+      `Architecture violation: supabaseAdmin found in unexpected files.\n` +
+        `Only permitted in:\n${ALLOWED.map((f) => `  - ${f}`).join('\n')}\n` +
+        `Violations:\n${violations.map((v) => `  - ${v}`).join('\n')}`
+    ).toHaveLength(0);
   });
 });

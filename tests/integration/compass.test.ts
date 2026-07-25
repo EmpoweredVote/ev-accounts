@@ -26,45 +26,64 @@ beforeAll(async () => {
 // ---------------------------------------------------------------------------
 // Auth enforcement (CI-safe)
 //
-// All requireAuth routes reject before any DB call when no Authorization
-// header is provided. These tests always pass — no database needed.
+// Two contracts live here, and the difference is deliberate:
+//
+//   - requireAuth routes reject anonymous callers with 401.
+//   - The five answer routes use optionalAuth (18-02: "convert five answer
+//     routes to optionalAuth with anonymous short-circuit guards"). Anonymous
+//     callers get 200 with an empty body — `[]` for the collection routes and
+//     `null` for the single-answer upsert. The guard short-circuits before any
+//     createUserClient call, so no other user's data can ever be reached.
+//
+// The property worth guarding on the optionalAuth routes is therefore not the
+// status code but the empty body: anonymous callers must never receive rows.
+// These tests reject before any DB call — no database needed.
 // ---------------------------------------------------------------------------
 
 describe('Compass routes — auth enforcement (CI-safe)', () => {
-  it('GET /api/compass/answers returns 401 without auth', async () => {
-    const res = await request(app).get('/api/compass/answers');
-    expect(res.status).toBe(401);
-  });
-
-  it('POST /api/compass/answers/batch returns 401 without auth', async () => {
-    const res = await request(app)
-      .post('/api/compass/answers/batch')
-      .send({ ids: [] });
-    expect(res.status).toBe(401);
-  });
-
-  it('GET /api/compass/selected-topics returns 401 without auth', async () => {
-    const res = await request(app).get('/api/compass/selected-topics');
-    expect(res.status).toBe(401);
-  });
-
-  it('GET /api/compass/progress returns 401 without auth', async () => {
+  it('GET /api/compass/progress returns 401 without auth (requireAuth)', async () => {
     const res = await request(app).get('/api/compass/progress');
     expect(res.status).toBe(401);
   });
+});
 
-  it('POST /api/compass/answers returns 401 without auth', async () => {
+describe('Compass routes — anonymous short-circuit (CI-safe)', () => {
+  it('GET /api/compass/answers returns 200 [] without auth', async () => {
+    const res = await request(app).get('/api/compass/answers');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([]);
+  });
+
+  it('POST /api/compass/answers/batch returns 200 [] without auth', async () => {
+    const res = await request(app)
+      .post('/api/compass/answers/batch')
+      .send({ ids: [] });
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([]);
+  });
+
+  it('GET /api/compass/selected-topics returns 200 [] without auth', async () => {
+    const res = await request(app).get('/api/compass/selected-topics');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([]);
+  });
+
+  // This one short-circuits to `null` rather than `[]` — it upserts a single
+  // answer, so there is no collection to return. Same guard, different shape.
+  it('POST /api/compass/answers returns 200 null without auth', async () => {
     const res = await request(app)
       .post('/api/compass/answers')
       .send({ topic_id: '00000000-0000-0000-0000-000000000001', value: 3 });
-    expect(res.status).toBe(401);
+    expect(res.status).toBe(200);
+    expect(res.body).toBeNull();
   });
 
-  it('PUT /api/compass/selected-topics returns 401 without auth', async () => {
+  it('PUT /api/compass/selected-topics returns 200 [] without auth', async () => {
     const res = await request(app)
       .put('/api/compass/selected-topics')
       .send({ topic_ids: [] });
-    expect(res.status).toBe(401);
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([]);
   });
 });
 

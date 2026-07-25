@@ -101,9 +101,17 @@ beforeEach(async () => {
 // returns a predictable response without a live DB connection.
 // ---------------------------------------------------------------------------
 
-describe('GET /api/contributor/me — CTC integration', () => {
-  it('ctc_content_editor grant with jurisdiction_geoid is returned', async () => {
-    await cache.set(CACHE_KEY, [grant('ctc_content_editor', '06037')], 10);
+describe('GET /api/contributor/me — contributor dashboard feed', () => {
+  // GET /api/contributor/me is the Contributor *dashboard* feed. d9a4a55c
+  // ("filter contributor dashboard to 3 role types only") narrowed it to
+  // compass_stance_editor / campaign_manager / essentials_data_editor, so it is
+  // not a general "which roles do I hold" endpoint. GET /api/roles/me is — it
+  // returns every active grant unfiltered, and that is where a consumer needing
+  // ctc_content_editor should read from.
+  //
+  // These two tests pin both halves of that filter so neither side drifts silently.
+  it('returns a contributor-dashboard grant with its jurisdiction_geoid', async () => {
+    await cache.set(CACHE_KEY, [grant('compass_stance_editor', '06037')], 10);
 
     const token = await signTestJwt();
     const res = await request(app)
@@ -115,11 +123,27 @@ describe('GET /api/contributor/me — CTC integration', () => {
     expect(res.body).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
-          role_slug: 'ctc_content_editor',
+          role_slug: 'compass_stance_editor',
           jurisdiction_geoid: '06037',
         }),
       ])
     );
+  });
+
+  it('filters out non-contributor grants such as ctc_content_editor', async () => {
+    await cache.set(
+      CACHE_KEY,
+      [grant('ctc_content_editor', '06037'), grant('campaign_manager', '06037')],
+      10
+    );
+
+    const token = await signTestJwt();
+    const res = await request(app)
+      .get('/api/contributor/me')
+      .set('Authorization', `Bearer ${token}`);
+
+    expect(res.status).toBe(200);
+    expect(res.body.map((g: { role_slug: string }) => g.role_slug)).toEqual(['campaign_manager']);
   });
 
   it('returns empty array when user has no grants', async () => {

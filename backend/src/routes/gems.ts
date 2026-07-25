@@ -27,7 +27,7 @@ const TransactionQuerySchema = z.object({
 
 // ---------------------------------------------------------------------------
 // POST /api/gems/award
-// Auth: requireGemServiceKey (Bearer token from GEMS_SERVICE_KEYS map)
+// Auth: requireGemServiceKey (X-Service-Key header from GEMS_SERVICE_KEYS map)
 //
 // Awards gems to a user on behalf of an external service (CTC, VQ, etc.).
 // Idempotent: duplicate idempotency_key returns 200 with is_duplicate: true.

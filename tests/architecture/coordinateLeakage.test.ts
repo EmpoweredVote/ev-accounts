@@ -11,15 +11,26 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
+import { listSourceFiles, readCode } from '../helpers/sourceScan.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Resolve from tests/architecture/ → project root → backend/src/routes/
 const ROUTES_DIR = path.resolve(__dirname, '../../backend/src/routes');
+
+/**
+ * Existence checks are the sanctioned way to expose "do we hold coordinates for
+ * this user?" without exposing the coordinates: the column appears only inside a
+ * NULL test whose projected value is a boolean. Used by connect.ts and
+ * essentials.ts as `(encrypted_lat IS NOT NULL) AS has_coords`.
+ *
+ * Neutralising the idiom before scanning keeps the guard meaningful — a bare
+ * `SELECT encrypted_lat` still fails.
+ */
+const SAFE_EXISTENCE_CHECK = /encrypted_(lat|lng)\s+IS\s+(NOT\s+)?NULL/gi;
 
 /**
  * Forbidden patterns and their descriptions.
@@ -58,10 +69,9 @@ const FORBIDDEN_PATTERNS = [
 ];
 
 describe('Architecture: coordinate leakage', () => {
-  const routeFiles = fs
-    .readdirSync(ROUTES_DIR)
-    .filter((f) => f.endsWith('.ts'))
-    .map((f) => path.join(ROUTES_DIR, f));
+  // Shipped route source only, comments stripped — test files carry request
+  // fixtures like `.send({ lat, lng })` that are inputs, not leaked responses.
+  const routeFiles = listSourceFiles(ROUTES_DIR, false);
 
   it('should have route files to scan', () => {
     expect(routeFiles.length).toBeGreaterThan(0);
@@ -69,7 +79,7 @@ describe('Architecture: coordinate leakage', () => {
 
   for (const filePath of routeFiles) {
     const fileName = path.basename(filePath);
-    const content = fs.readFileSync(filePath, 'utf-8');
+    const content = readCode(filePath).replace(SAFE_EXISTENCE_CHECK, 'has_coords_check');
 
     for (const { pattern, description } of FORBIDDEN_PATTERNS) {
       it(`${fileName}: must not contain "${description}"`, () => {

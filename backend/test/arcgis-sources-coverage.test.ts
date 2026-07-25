@@ -2,6 +2,7 @@ import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import pg from 'pg';
+import { hasLiveDb } from '../../tests/helpers/liveDb.js';
 
 const SOURCES_PATH = path.resolve(__dirname, '../data/arcgis_sources.json');
 
@@ -27,7 +28,9 @@ describe('arcgis_sources.json coverage (GEO-05)', () => {
     expect(fs.existsSync(SOURCES_PATH)).toBe(true);
   });
 
-  it('every UT G4110 place has a jurisdiction_id record (active|no_source|at_large|manual_geojson)', async () => {
+  // Cross-checks arcgis_sources.json against the live places table, so it needs
+  // a real database. Without one, skip rather than fail: see tests/helpers/liveDb.ts.
+  it.skipIf(!hasLiveDb)('every UT G4110 place has a jurisdiction_id record (active|no_source|at_large|manual_geojson)', async () => {
     const sources: Array<{
       jurisdiction_id: string;
       layer_class: string;
