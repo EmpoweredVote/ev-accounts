@@ -1,8 +1,8 @@
--- 1347_retire_ca_governor_economic_development_override.sql
+-- 1429_retire_ca_governor_economic_development_override.sql
 -- Retire the CA-Governor × economic-development race-local question override (seeded by
 -- migration 1345). That override existed ONLY to work around the city-scoped global Compass
 -- question ("How should your city attract businesses…"), which is now fixed globally by
--- migration 1346 to "How should government attract businesses and support economic
+-- migration 1428 to "How should government attract businesses and support economic
 -- development?" — correct for a statewide race.
 --
 -- Per QUOTE-CURATION-PRINCIPLES §7.1, a per-race override that merely re-scopes (city→state)

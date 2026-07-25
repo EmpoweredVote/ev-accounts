@@ -1,4 +1,4 @@
--- 1346_rescope_local_lens_compass_questions.sql
+-- 1428_rescope_local_lens_compass_questions.sql
 -- Rescope the "local lens" compass topics away from hard "your city" framing so the
 -- same 5-point scale reads correctly across levels of government. Surfaced by the
 -- CA-governor Read & Rank question re-audit (read-rank#70, ev-accounts#82/#83).
