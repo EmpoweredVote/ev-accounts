@@ -165,11 +165,78 @@ first:
 - Note the validator would have **passed all 907** of these rows this morning. Do not treat a clean
   validator run as evidence a cohort is sound until this check exists.
 
-## Suggested remediation order
-1. **Bend ballot four first** (the geography in flight): Levy, Kropf, Broadman + challenger
-   Michael Summers `-4129001` (0 stances, no office row — candidate). Re-research against
-   `olis.oregonlegislature.gov` roll calls and their own statements; overwrite the party-prior rows.
-   This also establishes the pattern for the rest.
+## 🔑 THE REMEDIATION TOOL: the OLIS OData API (found 2026-07-25)
+
+`https://api.oregonlegislature.gov/odata/ODataService.svc/` — **public, no auth, no rate limit,
+clean JSON.** This is what makes the 91-legislator Oregon sweep cheap. It returns **per-legislator
+roll calls**, so a vote attribution is machine-checkable instead of a judgement call.
+
+Entity sets that matter: `Legislators`, `MeasureVotes`, `MeasureSponsors`, `MeasureHistoryActions`,
+`CommitteeVotes`.
+
+```bash
+B=https://api.oregonlegislature.gov/odata/ODataService.svc
+# identity + every session a member served (this alone validates term_start)
+curl -sS "$B/Legislators?\$filter=LastName%20eq%20'Levy'&\$format=json"
+# every individual vote on a measure
+curl -sS "$B/MeasureVotes?\$filter=SessionKey%20eq%20'2025R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%202138&\$format=json"
+# everything a member ever sponsored
+curl -sS "$B/MeasureSponsors?\$filter=LegislatoreCode%20eq%20'Rep%20Kropf'&\$format=json"
+```
+
+**Field gotchas:**
+- The sponsor field is **`LegislatoreCode`** — their typo, not ours. `SponsorLevel` is `Chief` /
+  `Regular`. There is no `SponsorName`/`LastName`; querying those returns `None` for every row and
+  makes real sponsorships look absent (cost me a false "NOT a sponsor" on 12 claims).
+- Members are keyed by **`VoteName` / `LegislatoreCode` codes**, e.g. `Rep Levy E`, `Rep Levy B`,
+  `Rep Kropf`, `Sen Broadman`.
+- `MeasureVotes.ActionText` is usually null — join `MeasureHistoryId` →
+  **`MeasureHistoryActions`** (NOT `MeasureHistories`, which 404s) for the action text.
+
+**Two checks it enables that nothing else did:**
+1. **Session coverage = term validation.** `Legislators?$filter=LastName eq 'X'` lists every session
+   served. Levy's earliest is `2023R1`; Bobby Levy's is `2021R1`; Broadman's Senate record is
+   `2025R1/2025S1/2026R1` with **zero** rows before it, and Kropf's 2,927 votes contain **none**
+   before 2021. The fabricated attributions were structurally impossible, confirmed from the source.
+2. **Procedural-vs-content votes.** Critical, and it can invert a score. Oregon majority members
+   vote **Nay as a bloc on motions to withdraw/refer/rerefer** to defend committee process — that is
+   NOT a content stance. Verified examples: on HB 3054 (2025R1) and HB 2107 (2023R1), Levy and Kropf
+   each voted **Nay on "Motion to refer/rerefer to Rules failed"** and **Aye on "Passed."** the same
+   day. HB 2002 (2023R1) shows Levy at `{Nay: 7, Aye: 1}` — seven Nays on kill motions, one Aye on
+   repassage. **Score only third-reading/passage votes**; read `ActionText` before using any vote.
+   `ActionText` also exposes `Carried by <Name>` — a floor carry, the member's own act and stronger
+   evidence than sponsorship.
+
+**Wrong-person trap:** `Rep Levy E` (Emerson, D-53, Bend) vs `Rep Levy B` (Bobby, R-58). On HB 2138
+they voted opposite ways. `oregonlegislature.gov/levy` is **Bobby**. Always resolve the code first.
+
+## ✅ STEP 1 DONE — Bend ballot four remediated 2026-07-25
+Retired all **18** fabricated rows (snapshot: `backend/data/stance-research/or-bend-stateleg/retired-partyprior-snapshot.json`,
+via `backend/scripts/retire-bend-stateleg-partyprior.mjs`) and replaced them with **45 evidence-only
+stances / 16 quotes, 0 unsourced, 0 bio-page-only**:
+
+| Person | Was | Now | Quotes |
+|---|---|---|---|
+| Emerson Levy `-4120053` | 6 fabricated | **14** | 6 |
+| Jason Kropf `-4120054` | 6 fabricated | **14** | 4 |
+| Anthony Broadman `-4110027` | 6 fabricated | **14** | 4 |
+| Michael Summers `-4129001` | 0 | **3** | 2 |
+
+Every vote and sponsorship claim was re-verified against the OData API by the orchestrator, not just
+the agents. Two corrections applied: **Kropf's HB 2172 (2021R1) chief-sponsorship was struck** (the
+API records no named sponsor for that measure and no Kropf sponsorship of anything numbered 2172 in
+any session — the row survives on six verified floor carries and three verified Chief sponsorships),
+and **Summers `public-safety-approach`=4 was dropped** (its chair-4 content — "increase police
+staffing" — existed only in a 2024 voters' pamphlet hosted at
+`digitalcollections.library.oregon.gov/nodes/view/281745`, which serves a **2 KB viewer shell**; its
+`/nodes/download/` endpoint also returns HTML, so the quote is unverifiable, and the reachable
+source supports chair 3 at best. It was also the prior cycle and a different office).
+
+**Michael Summers identity note:** he is Broadman's own 2024 SD-27 opponent and chairs the Redmond
+School District 2J board; **`electsummers.com` is live** — the dead domains recorded in the Bend
+headshot trail (`summersfororegon.com`, `michaelsummersoregon.com`) were the wrong ones.
+
+## Remaining remediation order
 2. **Decide the disposition rule** for the other ~289 politicians / ~890 rows: re-research,
    or retire the row (delete the answer + context) pending real evidence. Retiring is defensible —
    an empty compass is honest, a confabulated one is not.

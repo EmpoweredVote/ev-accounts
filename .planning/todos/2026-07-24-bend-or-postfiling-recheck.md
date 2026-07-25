@@ -89,11 +89,16 @@ Search trail already burned (do not repeat):
   too. Use only as a last resort.
 
 ## 4. Stance queue — Bend city, county pamphlet, sitting commissioners AND both appointed boards DONE
-Outstanding: sheriff race (2), Sorrells (1), plus HD 53/54's 3 state legislators (a state-leg
-wave, not this one). Clerk/Assessor/Treasurer and their candidates remain honest-skip-by-design
-as ministerial offices.
+Outstanding: sheriff race (2), Sorrells (1). **HD 53/54 + SD 27 DONE 2026-07-25** — see
+`.planning/todos/2026-07-24-party-prior-stance-contamination-audit.md`: their 18 pre-existing rows
+were FABRICATED (party priors + votes predating their seating) and were retired and replaced with
+45 evidence-only stances / 16 quotes across Levy, Kropf, Broadman and challenger Michael Summers.
+Clerk/Assessor/Treasurer and their candidates remain honest-skip-by-design as ministerial offices.
 
-**Totals now live: 83 stances / 70 quotes across 23 people, 0 unsourced.**
+**Totals now live, Bend LOCAL cohort** (city + county + school + park, ext ranges `-41058xx` /
+`-410 17xx-19xx`): **83 stances / 70 quotes across 23 people, 0 unsourced.**
+**Plus the 4 state legislators** (ext `-4120053`, `-4120054`, `-4110027`, `-4129001`, counted
+separately because they sit outside those ranges): **45 stances / 16 quotes, 0 unsourced.**
 
 ### Wave 6 (2026-07-24): school board + park board — 7 rows kept of 10 researched
 Three `politician-stance-researcher` agents (3-concurrent cap held). Payloads

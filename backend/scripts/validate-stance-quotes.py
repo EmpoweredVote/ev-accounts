@@ -273,6 +273,15 @@ WALL_RE = re.compile(
 def looks_substantive(text: str) -> bool:
     """A page we can trust a negative result from."""
     t = text.strip()
+    # A machine-readable API response is fully substantive even when short —
+    # OLIS OData roll-call queries return a few hundred bytes of real JSON, and
+    # judging them by length flags the single best kind of source as a "shell".
+    if t[:1] in "[{" and ('"value"' in t[:400] or t.endswith(("}", "]"))):
+        try:
+            json.loads(t)
+            return True
+        except Exception:
+            pass
     if len(t) < 2500:
         return False
     if WALL_RE.search(t[:4000]) and len(t) < 8000:
@@ -389,17 +398,17 @@ def main(files: list[str]) -> int:
                     if not substantive:
                         fetch_notes.append(f"{s} [{how}: wall/shell {len(text)}b]")
                     if q in text:
-                        verdict, where = "EXACT", f"{s} [{how}]"
+                        verdict, where, run_info = "EXACT", f"{s} [{how}]", ""
                         break
                     if qn and qn in norm(text):
-                        verdict, where = "NORMALIZED", f"{s} [{how}]"
+                        verdict, where, run_info = "NORMALIZED", f"{s} [{how}]", ""
                         break
                     # Terminal punctuation only: sources routinely read
                     # `…time equals money,” Norris said` while the payload
                     # closes the quote with a period. Benign, not fabrication.
                     qcore = qn.strip(" .,;:!?\"'’”“-")
                     if len(qcore.split()) >= 6 and qcore in norm(text):
-                        verdict, where = "PUNCT", f"{s} [{how}]"
+                        verdict, where, run_info = "PUNCT", f"{s} [{how}]", ""
                         break
                     run = longest_run(qn, norm(text))
                     total = len(qn.split())
