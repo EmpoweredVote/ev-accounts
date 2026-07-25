@@ -101,3 +101,6 @@ bug_analysis_report.html
 
 # GSD per-session active workstream pointer (local only)
 .planning/active-workstream
+
+# stance-quote validator fetch cache (regenerable)
+backend/data/stance-research/*/.qcache/

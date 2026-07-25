@@ -1,0 +1,7 @@
+# Agent Memory — politician-stance-researcher (Bend, OR scope)
+
+- [Fetch tooling & source intel](reference_bend_or_source_intel.md) — **WebFetch paraphrases, so never build a quote from it** (curl + `grep -cF`); Wayback CDX recovers deleted campaign platform pages; Bulletin quotes vs COD indirect speech; Ballotpedia has no articles for these directors.
+- [BoardBook & PDF extraction](reference_boardbook_and_pdf_extraction.md) — DownloadPDF GUID pattern, URL-addressable name search (confirms skips, doesn't find stances), pdftotext WITHOUT -layout, pamphlet is on deschutescounty.gov not webapps.deschutes.org.
+- [School-board axis-drift traps](feedback_school_board_axis_drift_traps.md) — trans resolution != trans-athletes; charter renewal != vouchers; "Resolution to Impose Tax" != taxes; clerk's indirect speech is never a quote; the **Chair** scores fewest rows despite most coverage; which of the 5 board topics are structurally empty.
+- [Bend special-district minutes access](reference_bend_special_district_minutes_access.md) — `x-no-cache: true` defeats the bendoregon.gov 403 (and r.jina.ai's silent empty-body cache); BPRD + mccmeetings URL patterns; chase a member's second appointed seat.
+- [Park-board topic yield](feedback_park_board_topic_yield.md) — on a park district the only scoreable axis is usually the housing tax/SDC-exemption split vote; climate-adaptation plans and rec scholarships are not climate-change or childcare stances.

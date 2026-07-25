@@ -88,12 +88,109 @@ Search trail already burned (do not repeat):
   after the Sept measure deadline) will add Curtis, McLaughlin and Tintle but will be grayscale
   too. Use only as a last resort.
 
-## 4. Stance queue — Bend city, county pamphlet AND both sitting commissioners DONE
-Outstanding: Bend-La Pine board (7), BPRD board (5), sheriff race (2), Sorrells (1), plus HD 53/54's
-3 state legislators (a state-leg wave, not this one). Clerk/Assessor/Treasurer and their candidates
-remain honest-skip-by-design as ministerial offices.
+## 4. Stance queue — Bend city, county pamphlet, sitting commissioners AND both appointed boards DONE
+Outstanding: sheriff race (2), Sorrells (1), plus HD 53/54's 3 state legislators (a state-leg
+wave, not this one). Clerk/Assessor/Treasurer and their candidates remain honest-skip-by-design
+as ministerial offices.
 
-**Totals now live: 76 stances / 65 quotes across 17 people, 0 unsourced.**
+**Totals now live: 83 stances / 70 quotes across 23 people, 0 unsourced.**
+
+### Wave 6 (2026-07-24): school board + park board — 7 rows kept of 10 researched
+Three `politician-stance-researcher` agents (3-concurrent cap held). Payloads
+`wave6-school-z1-4.json`, `wave6-school-z5-7.json`, `wave6-park.json`; per-wave NOTES.md files
+carry the full source trail and every skip reason. **These boards are genuinely thin — 6 of 12
+members have exactly one stance and 6 have zero. That is the honest ceiling, not under-research.**
+
+- **Bend-La Pine (7 members → 3 stances/3 people):** LeGrand `civil-rights`=2, Tomlin
+  `civil-rights`=2, Chadwick `civil-rights`=2. Lynch, Fischer, Olson, Tatom = 0.
+- **BPRD (5 members → 4 stances/3 people):** Hovekamp `local-environment`=3 + `taxes`=3,
+  Schneider `growth-and-development`=3, Schoen `growth-and-development`=3. Owens, Schiffman = 0.
+- **Best find:** Hovekamp's real land-use record is on the **Deschutes County Planning
+  Commission**, not the park board — on 2025-05-08 he personally moved to recommend approval of
+  the clear-and-objective Goal 5 housing amendments, over Central Oregon LandWatch's request for
+  a fresh ESEE analysis. A career conservationist at chair 3, which no party prior predicts.
+- **Only scoreable BPRD axis** was the City of Bend affordable-housing property-tax exemptions
+  that cost BPRD revenue: 2025-09-23 both failed 2-2, Schoen (moved) + Schneider for,
+  Hovekamp + Owens against, Schiffman absent.
+
+### Wave-6 validation rejections — do NOT silently re-add (3 of 10 rows, 30%)
+Every quote re-fetched and string-matched; every secondary claim re-read at the primary source.
+**All agent facts were accurate** — all three drops are about what the evidence can support.
+1. **Fischer `civil-rights`=2** and **Olson `civil-rights`=2** — DROPPED. Both rested on
+   **Resolution 1985** (2025-02-11, **7-0**; Olson moved it, Fischer got "Sexual Identity" added
+   to the title — all verified). But the full resolution grounds itself in **existing** statute,
+   is 3-of-4 clauses "Reaffirms", and carries a **savings clause**: *"shall be interpreted as not
+   to violate any requirement of federal or state law."* A measure that disclaims exceeding
+   current law fits chair 3 as well as chair 2. And a unanimous vote would mint the same stance
+   for **all seven** directors off one symbolic institutional act.
+2. **Tatom `taxes`=1** — DROPPED. Her 2019 quote is exact but says *"**Although I would have
+   preferred a different mechanism for generating revenue**, I believe the positive aspects of
+   the Student Success Act outweigh its drawbacks"* — she distances herself from the one tax
+   position in it. Chair 1's "significantly raise taxes on wealthy people and large companies"
+   entered only via the Oregon DOR's description of the Corporate Activity Tax, i.e. a fact about
+   the bill, not her words. Also 2019-stale, and chairs 1 vs 2 are indistinguishable.
+   → Unlock: the **May 2023 Deschutes pamphlet** (her contested re-election, her own statement) —
+   not on DocumentCenter; untried paths in `wave6-school-z5-7-NOTES.md`.
+3. **Corrected, not dropped — Tomlin.** The agent's *reasoning* wrapped the reporter's indirect
+   speech in quote marks (*"He's looking forward to improving achievement gaps…"*). Rewritten as
+   explicit indirect speech. **`quote_text` was clean.** This failure mode has now appeared in
+   three consecutive waves and it keeps hiding in `reasoning`, which no string-matcher checks.
+
+### Structural findings that should shape future local waves
+- **Bend-La Pine BoardBook minutes cannot yield director stances.** They record attendance, a
+  one-line **institutional** discussion summary, the motion and the tally — never a director's
+  reasoning. Use them to **confirm a skip**, not to source a stance. (BoardBook PDF pattern:
+  `meetings.boardbook.org/Documents/DownloadPDF/<GUID>?org=2413`; search is URL-addressable at
+  `/Search/Index/2413?q=…`. The viewer page itself is an empty Apryse shell.)
+- **Deschutes County Planning Commission minutes carry a printed disclaimer** that they are
+  *"derived from an automated transcription service and have been summarized through an automated
+  process."* Formal motions are reliable; publish no verbatim quote from them.
+- **`X0024`-style special districts have almost no stance surface.** BPRD's entire 2026 record is
+  procedural or collectively attributed apart from the one tax-exemption fight. Expect ≤1 stance
+  per member for appointed/low-salience boards and budget the wave accordingly.
+- **Oregon has no voucher program**, so `school-vouchers` is structurally empty for every Oregon
+  school-board member — a permanent skip, not a research gap. Renewing a **public charter's**
+  charter (Bend International School, 7-0, 2026-01-13) is not voucher evidence.
+
+### Tooling: `backend/scripts/validate-stance-quotes.py` (new, reusable for any wave)
+`py scripts/validate-stance-quotes.py <payload.json> [...]` from `backend/`. Bare names resolve
+against `data/stance-research/bend-or/`. **It lives in `scripts/` deliberately:**
+`.gitignore:76` ignores `backend/data/stance-research/**/_*`, so every `_*` helper in a
+stance-research dir (`_push.ts`, `_headshots.py`, the `_TOPIC_SCALE_*.txt` files) is
+**local-only and never committed** — worth knowing before relying on one surviving a fresh
+clone. Its `ROSTER` / `ALLOWED_TOPICS` constants are per-wave guards; update them per cohort.
+Re-fetches every
+source and string-matches every quote; also checks roster/topic scope, value range, sources and
+reasoning. Handles HTML, **PDF** (default + `-layout`, searched as a union) and **.docx**; caches
+pages under `.qcache/`. Four hazards it exists to catch, all hit during this wave:
+- **A naive re-fetch produces false accusations.** `opb.org` returns ~2 KB of nav + headline on a
+  direct fetch with the body loaded by JS — three already-pushed, correct quotes looked
+  fabricated. It now searches the direct **and** `r.jina.ai` renditions and reports
+  `UNVERIFIABLE` (never `FAIL`) when every fetch returns a wall/shell.
+- **Empty-`quote_text` rows were getting ZERO source verification** — nothing fetched at all, so
+  an unfalsifiable claim passed silently. Now every source on every row is fetched and
+  reachability-checked regardless of quote presence.
+- **`r.jina.ai` needs `x-no-cache: true`** or it returns HTTP 200 with an **empty body** for
+  403-walled origins (`bendoregon.gov`) — a silent failure that reads as a successful fetch.
+- **Quote-terminal punctuation** gets its own `ok(punct)` tier: sources print
+  `…time equals money,” Norris said`; payloads close with `money.` Benign, same class as the
+  `net-zero -energy` source typo.
+**Two things the validator cannot do — always do them by hand:** (a) an exact match *anywhere* in
+a 40-page two-column pamphlet does **not** prove attribution — check the quote's position against
+the `(This information furnished by X.)` delimiters (LeGrand and Tomlin use the *identical*
+"With your vote, I will continue to" heading, so this is a live risk, not theoretical); and
+(b) it never inspects `reasoning`, which is where indirect-speech-as-quote now hides.
+
+### Agent-prompt lever that worked
+`_TOPIC_SCALE_BOARDS.txt` embeds the exact 1-5 texts **plus a per-topic anti-trap note** aimed at
+the previous wave's real failures (voucher chair 1 needs an anti-voucher position, not
+public-school enthusiasm; referring a bond to voters does not place anyone on the `taxes` scale;
+a district running preschool is institutional activity). Reuse that file's shape for the next
+local board wave.
+
+**Fetch-layer hazard for every future wave: WebFetch — including via `r.jina.ai` — refuses
+verbatim reproduction and returns a PARAPHRASE.** Building `quote_text` from it fabricates a
+quote that looks perfect. Use `curl` + `grep -F` (or this validator) for anything quoted.
 
 **Wave 5 (2026-07-24): Chang 4, Adair 5 — both sitting commissioners now covered.**
 Chang: growth 2, housing 3, local-environment 2 (his own guest column), homelessness 3 (his Oct
