@@ -61,18 +61,41 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
 
 ROSTER = {
-    # Bend-La Pine school board
+    # --- wave 6: Bend-La Pine school board ---
     -4101981: "Jenn Lynch", -4101982: "Marcus LeGrand", -4101983: "Cameron Fischer",
     -4101984: "Shirley Olson", -4101985: "Amy Tatom", -4101986: "Ross Tomlin",
     -4101987: "Kina Chadwick",
-    # Bend Metro Park & Recreation District board
+    # --- wave 6: Bend Metro Park & Recreation District board ---
     -4105821: "Cary Schneider", -4105822: "Deb Schoen", -4105823: "Nathan Hovekamp",
     -4105824: "Jodie Schiffman", -4105825: "Donna Owens",
+    # --- wave 7: Oregon state-leg, Bend ballot (party-prior remediation) ---
+    -4120053: "Emerson Levy", -4120054: "Jason Kropf", -4110027: "Anthony Broadman",
+    -4129001: "Michael Summers",
 }
 
+# Earliest session a member could possibly have voted in, from their verified
+# term_start. A row citing an earlier session is FABRICATED no matter how real
+# the URL is — this is how the party-prior seed slipped past every presence
+# check (7 of its 8 bill-cited rows attributed pre-seating votes).
+SEATED = {
+    -4120053: (2023, "Emerson Levy seated 2023-01-09"),
+    -4120054: (2021, "Jason Kropf seated 2021-01-11"),
+    -4110027: (2025, "Anthony Broadman seated in the SENATE 2025-01-13 "
+                     "(his Jan-2021 term was Bend City Council)"),
+}
+# Matches OLIS session codes in a URL or in prose: 2023R1, 2024R1, 2019S1 ...
+SESSION_RE = re.compile(r"\b(19|20)(\d{2})\s?([RS])(\d)\b")
+
 ALLOWED_TOPICS = {
+    # wave 6 (local boards)
     "school-vouchers", "childcare", "civil-rights", "trans-athletes", "taxes",
     "local-environment", "growth-and-development", "climate-change",
+    # wave 7 (state legislature)
+    "abortion", "healthcare", "housing", "rent-regulation", "residential-zoning",
+    "fossil-fuels", "homelessness", "homelessness-response",
+    "public-safety-approach", "jail-capacity", "local-immigration",
+    "transportation-priorities", "economic-development", "voting-rights",
+    "redistricting", "campaign-finance", "data-centers",
 }
 
 REQUIRED_KEYS = {"external_id", "name", "topic_key", "value", "reasoning",
@@ -306,6 +329,23 @@ def main(files: list[str]) -> int:
             srcs = [s for s in (r.get("sources") or []) if str(s).strip()]
             if not srcs:
                 problems.append(f"[SOURCE] {tag}: no source URL")
+
+            # ---- pass 1b: legislative-session plausibility ----
+            # A cited session predating the member's term_start means the vote
+            # cannot be theirs. Deterministic, and independent of any fetch.
+            seated = SEATED.get(r.get("external_id"))
+            if seated:
+                first_year, why = seated
+                blob = " ".join(srcs) + " " + str(r.get("reasoning", ""))
+                # dedupe: the same session usually appears in both the URL and
+                # the prose, and one row should raise one finding
+                bad_sessions = sorted({
+                    m.group(0) for m in SESSION_RE.finditer(blob)
+                    if int(m.group(1) + m.group(2)) < first_year})
+                for sess in bad_sessions:
+                    problems.append(
+                        f"[PRE-SEATING] {tag}: cites session {sess} but {why} "
+                        f"— a vote in that session cannot be theirs")
 
             # ---- pass 2: quote match ----
             q = str(r.get("quote_text", "") or "").strip()
