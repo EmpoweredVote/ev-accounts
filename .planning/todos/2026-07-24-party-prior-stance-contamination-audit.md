@@ -349,6 +349,70 @@ against a table with 306. **Use POSIX classes in embedded SQL** —
 keeps its backslashes. A sweep that finds nothing is a bug until proven otherwise: cross-check the
 count against a direct SQL query before believing a zero.
 
+## ✅ STEP 3 DONE — Oregon source-supports run + retirement 2026-07-25
+
+Scored **all 1,248 Oregon rows** (`source-supports-OR.json`), then retired **145** of them
+(`retire-by-verdict.mjs`, snapshot first, nobody left with an empty compass):
+
+| Verdict | Rows | Disposition |
+|---|---|---|
+| TOPICAL | 464 | → adjudication queue |
+| SUSPECT | 288 | → adjudication queue |
+| VOTE-CLAIM-ONLY | 230 | → OData vote check, not a text problem |
+| **UNSUPPORTED-STRUCTURAL** | **108** | **RETIRED** |
+| UNVERIFIABLE | 81 | fetch blocked — needs Playwright, not a verdict on the row |
+| **SOURCE-DEAD** | **37** | **RETIRED** |
+| WEAK | 32 | left in place |
+| UNSUPPORTED | 8 | **left in place** — not covered by this instruction |
+
+Retired snapshot: `retired-source-dead+unsupported-structural-snapshot.json` (145 rows, reversible).
+Adjudication queue: `adjudication-queue-OR.json` (**752** rows).
+
+**37 dead citations.** Found only because a spot-check of Bentz `social-security` led to
+`bentz.house.gov/issues/fiscal-responsibility` → **HTTP 404**. The trap: dead links come back as
+**200-status bodies** through the `r.jina.ai` fallback, so a status-code check misses them — the body
+must be inspected (`NOTFOUND_RE`). Most are a departed member's issue pages, plus 12 Kotek
+`oregon.gov` URLs (both spot-checked → confirmed 404).
+**Re-source opportunity:** dead ≠ false. Some of these claims may be recoverable from
+`web.archive.org`; the snapshot keeps every reasoning string, so a Wayback pass could restore the
+supportable ones rather than re-researching from scratch. Tina Kotek lost the most (19 of 31).
+
+**The check also catches wrong CHAIRS, not just bad sources.** `Rayfield housing=1` — chair 1 is
+"directly build and operate public housing" — cited only a Ballotpedia bio while its own reasoning
+described zoning reform and affordable-housing funding, i.e. chair 3/4 content.
+
+## 🔴 NEW, SEPARATE DEFECT FOUND 2026-07-25: 921 answers with NO context row at all
+
+`inform.politician_answers` rows with **no matching `inform.politician_context`** — a published
+stance with **no reasoning and no sources whatsoever**, which violates the Phase 149 "0-unsourced"
+floor outright.
+
+| State | Orphan rows | Politicians | Sample |
+|---|---|---|---|
+| **UT** | **869** | 149 | A. Cory Maloy |
+| MA | 45 | 18 | Brian Santaniello |
+| OR | 7 | 1 | Olivia Clark |
+
+**Not caused by the retirements.** All 265 rows retired so far (18 + 102 + 145) had context, and
+every delete removes the matching row from *both* tables in one transaction — verified against the
+three snapshots. This is pre-existing.
+
+Re-derive with:
+```sql
+SELECT p.external_id, p.full_name, o.representing_state, t.topic_key, pa.value
+  FROM inform.politician_answers pa
+  LEFT JOIN inform.politician_context pc
+    ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id
+  JOIN inform.compass_topics t  ON t.id = pa.topic_id
+  JOIN essentials.politicians p ON p.id = pa.politician_id
+  LEFT JOIN essentials.offices o ON o.politician_id = p.id
+ WHERE pc.politician_id IS NULL
+ ORDER BY o.representing_state, p.full_name;
+```
+These need a decision of their own: an answer with no context cannot be re-verified, only re-researched
+or retired. **Add an orphan check to the standing gate** — it is a one-line query and should never
+have been possible.
+
 ## Remaining remediation order
 2. **Decide the disposition rule** for the other ~289 politicians / ~890 rows: re-research,
    or retire the row (delete the answer + context) pending real evidence. Retiring is defensible —
