@@ -90,7 +90,17 @@ Search trail already burned (do not repeat):
 
 ## 4. Stance queue — Bend CITY + county-pamphlet cohorts DONE; 13 people outstanding
 
-**Totals now live: 67 stances / 61 quotes across 15 people, 0 unsourced.**
+**Totals now live: 76 stances / 65 quotes across 17 people, 0 unsourced.**
+
+**Wave 5 (2026-07-24): Chang 4, Adair 5 — both sitting commissioners now covered.**
+Chang: growth 2, housing 3, local-environment 2 (his own guest column), homelessness 3 (his Oct
+2024 BOCC vote for the Juniper Ridge safe-stay plan). Adair, labelled county vs congressional:
+growth 4 + public-safety 4 (county), taxes 4 + deportation 2 + voting-rights 3 (OR-05 campaign).
+**Adair's federal record is genuinely thin** — nothing usable found on tariffs, vouchers, Social
+Security structure, fossil fuels, or immigration-as-distinct-from-deportation. Two findings worth
+keeping: her voter-guide answers put her at chair 2 on deportation (violent criminals only) and she
+says "I strongly support mail voting", neither of which a party prior would have predicted.
+9 of 16 wave-5 rows were rejected in validation — see below.
 
 Bend-city cohort **complete** (waves 2-3, 2026-07-24, three `politician-stance-researcher` agents
 capped at 3 concurrent): Kebler 10, Perkins 6, Méndez 5, Cummiskey 5, Reinholtz 5, Franzosa 4,
@@ -160,8 +170,12 @@ Connally (p21), Sabbadini (p22) and Schmidt (p25) have statements on the same PD
 before doing any new web research on the county candidates.
 
 ### Still to research, in priority order
-0. **Chang and Adair (sitting commissioners)** — still zero stances; not in the May pamphlet.
-   BOCC minutes plus Bulletin/Source coverage. Adair is also the OR-05 Republican nominee.
+0. **Adair's federal topics** — she is on the Bend ballot for OR-05 but only 3 federal topics are
+   documented (taxes, deportation, voting-rights). Nothing found on tariffs, school-vouchers,
+   Social Security structure, fossil-fuels, or immigration. **Do NOT fill these from party priors.**
+   Her abortion position is genuinely undocumented federally — a 2022 county employee health-plan
+   coverage vote exists but measures a different axis and was rejected. Watch for a general-election
+   Oregon Capital Chronicle voter guide and any OR-05 debate.
 1. **Dan Sorrells (Bend P6)** — 0 stances and the only empty compass on the Bend ballot. His sole
    campaign presence is Instagram `@citycouncildan`; no site, no news profile, no questionnaire.
    The **city-hosted candidate forum is mid-September 2026** — that is the unlock. Re-run then.
