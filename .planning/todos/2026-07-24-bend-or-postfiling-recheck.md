@@ -88,15 +88,16 @@ Search trail already burned (do not repeat):
   after the Sept measure deadline) will add Curtis, McLaughlin and Tintle but will be grayscale
   too. Use only as a last resort.
 
-## 4. Stance queue — Bend CITY cohort is DONE; 17 people outstanding
+## 4. Stance queue — Bend CITY + county-pamphlet cohorts DONE; 13 people outstanding
 
-**Totals now live: 60 stances / 52 quotes across 14 people, 0 unsourced.**
+**Totals now live: 67 stances / 61 quotes across 15 people, 0 unsourced.**
 
 Bend-city cohort **complete** (waves 2-3, 2026-07-24, three `politician-stance-researcher` agents
 capped at 3 concurrent): Kebler 10, Perkins 6, Méndez 5, Cummiskey 5, Reinholtz 5, Franzosa 4,
-Riley 4, Platt 3, Norris 2, Boozell 2, **Sorrells 0**. Plus the county candidates from wave 1:
-Connally 4, Sabbadini 4, Schmidt 4, Imhoff 2. Payloads: `wave1-stances.json`,
-`wave2-stances.json`, `wave3-*.json`; push with `_push.ts <file>`.
+Riley 4, Platt 3, Norris 2, Boozell 2, **Sorrells 0**. County side after the wave-4 pamphlet pass:
+Schmidt 5, Connally 4, DeBone 4, Imhoff 4, Sabbadini 4, **Chang 0, Adair 0**. Payloads:
+`wave1-stances.json`, `wave2-stances.json`, `wave3-*.json`, `wave4-county-pamphlet.json`;
+push any of them with `_push.ts <file>`.
 
 ### Validation rejections — do NOT silently re-add these
 Each agent output was spot-checked against its sources. Five rows were rejected or amended:
@@ -119,7 +120,30 @@ Each agent output was spot-checked against its sources. Five rows were rejected 
    Also **Riley homelessness 4→3**, because the same article has him pairing the enforcement vote
    with "incredible progress" on shelter beds, and Kebler scores 3 on that identical vote.
 
-### HIGH-VALUE UNMINED SOURCE (found late, costs nothing to use)
+### ✅ MINED 2026-07-24 — county pamphlet wave (`wave4-county-pamphlet.json`, 13 rows)
+The pamphlet described below **has now been mined** for every commissioner-race candidate in it.
+Column-crop method (the two-column layout otherwise cross-attributes text between rival
+candidates — a real wrong-attribution risk): pages are **540×774pt**, so
+`pdftotext -layout -f <pg> -l <pg> -x 0 -W 270 -H 774` for the LEFT candidate and `-x 270 -W 270`
+for the RIGHT one. Page/column map: p18 Collins|**DeBone**, p21 **Connally**|Facey,
+p22 Page|**Sabbadini**, p24 Boozell|**Imhoff**, p25 Letz|**Schmidt**.
+
+Results: **DeBone 0→4** (a sitting commissioner who had no stances at all), Imhoff **2→4**
+(gained transportation=4 from his Hwy 97 bypass plan and housing=4 from "fewer lawsuits"),
+Schmidt 4→5, Connally **public-safety REVISED 4→3** (his pamphlet pairs "fully funded" law
+enforcement with early mental-health investment — chair 3 — where the campaign-site wording had
+read as capacity-building), Sabbadini 4 rows unchanged but re-cited to the official primary
+source. Deliberately skipped: Imhoff `economic-development` (his 75%-local-contracts and sports-
+complex ideas never address corporate incentives, so chairs 1 and 2 are indistinguishable — the
+same gate that dropped Cummiskey's) and Imhoff `growth-and-development` (his 50-year road plan
+argues for chair 3 while "fewer lawsuits" argues for chair 4).
+
+**Chang and Adair still have zero stances** and are NOT in this pamphlet — Chang was not on the
+2026 ballot and Adair ran for Congress instead. They need BOCC minutes / news coverage.
+The **November** county pamphlet (published after the September measure deadline) will be the
+equivalent primary source for the **Sheriff (Rupert, McLaughlin), Clerk and Treasurer** races.
+
+### ~~HIGH-VALUE UNMINED SOURCE~~ (now mined — kept for the method and the page map)
 The **Deschutes County May 2026 voters' pamphlet** (`DocumentCenter/View/5835`, already downloaded
 to `data/stance-research/bend-or/headshots/dc-may2026-pamphlet.pdf`) carries candidates' own
 words, officially, for the current cycle. Extract with `pdftotext -layout -f <pg> -l <pg>`.
@@ -136,19 +160,17 @@ Connally (p21), Sabbadini (p22) and Schmidt (p25) have statements on the same PD
 before doing any new web research on the county candidates.
 
 ### Still to research, in priority order
+0. **Chang and Adair (sitting commissioners)** — still zero stances; not in the May pamphlet.
+   BOCC minutes plus Bulletin/Source coverage. Adair is also the OR-05 Republican nominee.
 1. **Dan Sorrells (Bend P6)** — 0 stances and the only empty compass on the Bend ballot. His sole
    campaign presence is Instagram `@citycouncildan`; no site, no news profile, no questionnaire.
    The **city-hosted candidate forum is mid-September 2026** — that is the unlock. Re-run then.
-2. **Sitting commissioners (3):** Chang, DeBone, Adair — BOCC minutes plus Bulletin/Source
-   coverage. Adair is also the OR-05 Republican nominee, so federal topics are researchable too.
-3. **Sheriff race (2):** Rupert and McLaughlin — `public-safety-approach`, `jail-capacity`,
+2. **Sheriff race (2):** Rupert and McLaughlin — `public-safety-approach`, `jail-capacity`,
    `local-immigration`. The November county pamphlet (not yet published) will carry both.
-4. **County candidate deepening (4):** Connally, Sabbadini, Imhoff, Schmidt — start with the
-   pamphlet above.
-5. **Bend-La Pine School Board (7)** — `school-vouchers` and school-adjacent topics only.
-6. **BPRD board (5)** — expect thin; `local-environment` / `growth-and-development` at most.
+3. **Bend-La Pine School Board (7)** — `school-vouchers` and school-adjacent topics only.
+4. **BPRD board (5)** — expect thin; `local-environment` / `growth-and-development` at most.
    Riley's KPOV "The Point" podcast episode on the tree code is an unmined source (audio).
-7. **HD 53/54 (3):** Levy, Kropf, Summers — STATE legislators with zero stances (so is SD-27's
+5. **HD 53/54 (3):** Levy, Kropf, Summers — STATE legislators with zero stances (so is SD-27's
    Broadman); belongs to a state-leg wave, not the Bend local wave.
 
 ### Agent-prompt intel that worked (reuse verbatim)
