@@ -236,6 +236,56 @@ source supports chair 3 at best. It was also the prior cycle and a different off
 School District 2J board; **`electsummers.com` is live** — the dead domains recorded in the Bend
 headshot trail (`summersfororegon.com`, `michaelsummersoregon.com`) were the wrong ones.
 
+## ✅ STEP 2 DONE — Oregon pre-seating sweep executed 2026-07-25
+
+**102 rows across 39 Oregon legislators retired.** Sweep re-run afterwards reports **0 failures**;
+194 session-citing rows remain and every one cites a session the member actually served.
+
+- Sweep: `backend/scripts/sweep-or-preseating.mjs` (read-only; `--json <out>` for the report)
+- Retire: `backend/scripts/retire-or-preseating.mjs <report.json> [--apply]` (dry run by default,
+  snapshots to `retired-preseating-snapshot.json` first)
+- Report + snapshot committed under `backend/data/stance-research/or-bend-stateleg/`
+
+**No hand-collected `term_start` list was needed** — the OLIS OData `Legislators` table lists every
+session each member served, which is strictly better than a first-date cutoff: it also catches
+**service gaps**. Christine Drazan's `housing` row cited **2024R1**, which she genuinely did not
+serve (she left the House in 2021 to run for governor and returned in 2025) — a first-date rule would
+have passed it.
+
+**What was retired:** the same four-bill template as the Bend three —
+`HB 3427 (2019R1)` ×29, `HB 2001 (2019R1)` ×25, `HB 2020 (2019-20)` ×24, `HB 2002 (2023R1)` ×19,
+`SB 1537 (2024R1)` ×3 — landing on `taxes` 29, `housing` 28, `climate-change` 25, `abortion` 19,
+`transportation-priorities` 1. Reasoning strings are party priors ("Portland area Democrat with
+progressive environmental positions", "opposed abortion access expansion as Republican HD-04 rep").
+**Nobody was left with an empty compass** (every one of the 39 retained ≥2 rows).
+
+### Three false positives the sweep produced before it was hardened — keep these guards
+1. **Homonym across states.** A *Utah* rep, **Jason E. Thompson** (HD-3, `-308014`), was matched to
+   Oregon's **Jim Thompson** (HD-23, served 2009-2014) by a naive "only one legislator with this
+   surname" fallback — both district 23. It would have retired a legitimate row. Fixes: scope the SQL
+   to `representing_state='OR' AND title IN ('Representative','Senator')`, and require the **first
+   initial to agree** before accepting any surname-only match.
+2. **Middle initials.** `James I. Manning Jr.` (OR SD-7) vs OLIS's `James` + `Manning Jr.` — strip
+   bare middle initials, but **keep suffixes** (jr/sr/ii), which distinguish real people.
+3. **Diacritics.** `Nguyễn` / `Trần` — NFKD then **delete** the combining marks; replacing them with
+   spaces yields "nguye n" and a spurious unmatched row.
+
+### ⚠️ The sweep did NOT clean these politicians — it removed the provably-false subset
+Across all OR state legislators there are **692** context rows: **285 bio-page-only**, 69 with
+party-prior phrasing, and **650 belonging to people with zero quotes** (the only 42 rows with quotes
+are the newly researched Levy/Kropf/Broadman). The pre-seating check only fires when a row happens to
+**cite a session code**. A row that asserts a position with a bio-page URL and no bill number is
+equally fabricated and still live. **Do not treat a green sweep as a clean cohort** — that needs the
+unbuilt source-supports-claim check below.
+
+### Bash/JS escaping trap that made the first run silently return 0 rows
+The SQL sat in a **JS template literal**, where `'\y(19|20)\d{2}...'` collapses to
+`y(19|20)d{2}...` and matches nothing — the script cheerfully reported "0 rows cite a session code"
+against a table with 306. **Use POSIX classes in embedded SQL** —
+`'(19|20)[0-9]{2}[[:space:]]?[RSI][0-9]'` — and do precise extraction in JS, where a regex *literal*
+keeps its backslashes. A sweep that finds nothing is a bug until proven otherwise: cross-check the
+count against a direct SQL query before believing a zero.
+
 ## Remaining remediation order
 2. **Decide the disposition rule** for the other ~289 politicians / ~890 rows: re-research,
    or retire the row (delete the answer + context) pending real evidence. Retiring is defensible —
