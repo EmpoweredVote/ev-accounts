@@ -43,6 +43,15 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   VA: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   NV: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   AZ: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
+  // WI: sldu/sldl ONLY, deliberately. The 2024-vintage TIGER SLDU/SLDL set was
+  // verified to be the 2023 Wisconsin Act 94 remap (enacted 2024-02-19) via
+  // identity-anchor probes against TIGERweb: Burlington -> AD 33 / SD 11,
+  // downtown Racine -> AD 62 / SD 21, Sturtevant -> AD 66 / SD 22, with the
+  // Assembly-into-Senate nesting internally consistent. place/cousub/unsd for WI
+  // are NOT vetted yet and are withheld on purpose (D-04) — note that WI also has
+  // G5410 union-high and G5400 elementary school districts that this loader has no
+  // layer support for at all, so 'unsd' alone would silently under-cover the state.
+  WI: new Set(['sldu', 'sldl']),
   DC: new Set(['sldl']),
 };
 
@@ -113,6 +122,7 @@ const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
   VA: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   NV: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   AZ: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
+  WI: new Set(['sldu', 'sldl']),
   DC: new Set(['sldl']),
 };
 
@@ -1069,6 +1079,50 @@ async function processLayer(
         throw err;
       }
       console.log(`  [${layer}] AZ MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
+  // ── WI MTFCC pre-flight assertion ───────────────────────────────────────────
+  // Count records satisfying the same filters as the upsert pass BEFORE any DB
+  // write. Assertion failure is named and fatal.
+  //
+  // Unlike AZ (30 districts, 2 house seats sharing one SLDL polygon), Wisconsin
+  // has 33 Senate districts and 99 Assembly districts as DISTINCT polygons —
+  // each WI Senate district nests exactly 3 Assembly districts, so the counts
+  // are 33 and 99, NOT 33 and 33. Expected counts cross-checked against
+  // TIGERweb (STATE='55'), which reports 34 SLDU / 100 SLDL features: the extra
+  // row in each is TIGER's "not defined" pseudo-district (SLDUST/SLDLST='ZZZ'),
+  // removed here by layerDef.skipDistrictCodes.
+  if (fipsArg === '55') {
+    const EXPECTED_WI_MTFCC: Record<string, number> = {
+      sldu: 33,  // 33 WI Senate districts (Act 94 map; TIGERweb 34 minus 1 'ZZZ')
+      sldl: 99,  // 99 WI Assembly districts (Act 94 map; TIGERweb 100 minus 1 'ZZZ')
+    };
+    if (layer in EXPECTED_WI_MTFCC) {
+      const expected = EXPECTED_WI_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[WI MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify the TIGER 2024 FIPS 55 file ` +
+          `is the 2023 Act 94 map (33 Senate / 99 Assembly districts).`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] WI MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
     }
   }
 
