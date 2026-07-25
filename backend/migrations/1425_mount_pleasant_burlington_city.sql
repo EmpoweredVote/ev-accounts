@@ -1,5 +1,5 @@
--- 1387_mount_pleasant_burlington_city.sql
--- Municipalities 2 and 3 of 17 in Racine County, following the 1386 pattern:
+-- 1425_mount_pleasant_burlington_city.sql
+-- Municipalities 2 and 3 of 17 in Racine County, following the 1424 pattern:
 --   Village of Mount Pleasant (~28k) -- President + 6 trustees (seats 1-6)
 --   City of Burlington (~11k)        -- Mayor + 8 aldermen (TWO per district, 4 districts)
 -- STRUCTURAL. Idempotent.
@@ -19,7 +19,7 @@
 --    Seeding from search results would have published two wrong officials. Always read the
 --    municipality's own roster page, and prefer rows whose term string spans 2026-2028.
 --
--- BURLINGTON GUARD DIVERGENCE (important -- differs from 1386): Burlington elects TWO
+-- BURLINGTON GUARD DIVERGENCE (important -- differs from 1424): Burlington elects TWO
 --   aldermen per district, so "Alderman, District 1" is NOT unique and the
 --   (district_id, chamber_id, title) guard used for Racine city and Mount Pleasant would
 --   silently no-op the second alderman in every district. Burlington is guarded on
@@ -33,11 +33,11 @@
 --      - Renee Kelly           -- City of Racine Alderman D13 (-5511014) AND County Supervisor D2 (-5510102)
 --      - Tom Preusker          -- Burlington Alderman D4 (this migration) AND County Supervisor D20 (-5510120)
 --      - Gina Cefalu-Paulick   -- Mount Pleasant Trustee Seat 2 (this migration) AND the
---                                 AD-66 Republican candidate seeded by 1383 (-5507092).
+--                                 AD-66 Republican candidate seeded by 1422 (-5507092).
 --                                 Mount Pleasant sits inside AD 66, so this is very likely one person.
 --      - Thomas/Tom Weatherston -- County Supervisor D17 (-5510117) AND, per search, Caledonia
 --                                 Village President (Caledonia not yet seeded)
---    This migration creates SEPARATE politician rows, consistent with how 1386 already handled
+--    This migration creates SEPARATE politician rows, consistent with how 1424 already handled
 --    Renee Kelly in prod. Rationale: a matching name is not proof of a matching person, and
 --    conflating two real people is worse than a split profile. But the cost is real -- if they
 --    ARE the same person, their photo, stances and campaign finance are split across two rows.

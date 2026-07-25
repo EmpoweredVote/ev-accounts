@@ -1,4 +1,4 @@
--- 1386_city_of_racine_government.sql
+-- 1424_city_of_racine_government.sql
 -- City of Racine: government, 2 chambers, Mayor + 15 aldermen, 16 offices.
 -- FIRST municipality in Racine County -- establishes the pattern the other 16 will follow.
 -- STRUCTURAL. Idempotent.
