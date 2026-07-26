@@ -383,8 +383,47 @@ before doing any new web research on the county candidates.
 1. **Dan Sorrells (Bend P6)** — 0 stances and the only empty compass on the Bend ballot. His sole
    campaign presence is Instagram `@citycouncildan`; no site, no news profile, no questionnaire.
    The **city-hosted candidate forum is mid-September 2026** — that is the unlock. Re-run then.
-2. **Sheriff race (2):** Rupert and McLaughlin — `public-safety-approach`, `jail-capacity`,
-   `local-immigration`. The November county pamphlet (not yet published) will carry both.
+2. **Sheriff race (2): RESEARCHED 2026-07-26 → 0 rows. Honest skip, do not re-run the same sources.**
+   Both candidates' own words were found and read in full; the three topics still cannot be scored.
+   - **Sources mined (all read, all verbatim-checked):** OPB *Think Out Loud* write-up of the Rupert
+     interview (2025-08-11, quotes marked "edited for length and clarity"); Bend Source DCSEA
+     candidate forum (2025-07-08) covering both men; KTVZ 2026-01-26 carrying **Rupert's full
+     statement and McLaughlin's full press release**; **`votemacforsheriff.com`** (his real site —
+     mission, core values, platform); Bend Source 2026 budget piece on the $1M savings.
+   - **Rupert `public-safety-approach` — considered chair 4, REJECTED.** His Aug-2025 interview
+     supports it (*"First and foremost though, I have to get our staffing levels to a reasonable
+     standard, both for patrol and corrections"*, plus wanting to expand a traffic team). But his
+     2026 conduct and framing cut the other way: the Source reports his campaign *"centers on fiscal
+     mindedness"*, and **$700K of his $1M savings comes from deliberately NOT backfilling** an
+     undersheriff, a captain, a lieutenant, two admin roles **and a patrol deputy**, alongside
+     equipment cuts (no ALPR, no vehicle graphics). He did add four jail deputies — a reallocation,
+     not an increase. Chair 4's defining content (increase staffing/equipment/pay) is contradicted
+     by his headline actions; chair 3's (adding crisis-response teams for mental health/addiction)
+     is absent everywhere. **Two adjacent chairs, neither cleanly met → skip**, same gate that
+     dropped Cummiskey's economic-development and held Kebler at 3.
+   - **McLaughlin — nothing scoreable on any of the three.** His platform is cost discipline
+     (*"reducing costs"*, *"cost-saving opportunities"*, *"culture change doesn't require a large
+     financial investment"*), transparency, and partnerships. That rules out 4/5 without
+     establishing 3, whose crisis-team content he never mentions. His forum and release quotes are
+     about media contrition, trust and a *"1,000-day vision"* — leadership character, not a chair.
+   - **`local-immigration` is STRUCTURALLY EMPTY for every Oregon sheriff** — same class as
+     "Oregon has no voucher program" for OR school boards. ORS 181A.820 and HB 3265 forbid honoring
+     ICE detainers and sharing status information statewide, so a sheriff's compliance is **legally
+     compelled, not a chosen position**. Do not score it as chair 1/2 for any OR sheriff absent an
+     explicit statement going beyond the law. (Rupert dropping the ALPR contract is adjacent — that
+     database was queried ~300 times by federal immigration authorities at Bend PD — but he gave
+     **cost** as the reason, so it is not immigration evidence.)
+   - **`jail-capacity`:** neither has stated a position. A **144-bed jail addition is under
+     construction** (Steele Associates project) — county capital work, institutional, not either
+     man's stated view. Do not score it to whoever holds office, per the Riley tree-code rule.
+   - **UNMINED, and the best remaining source:** the **Indivisible Sisters Sheriff Candidate Forum**
+     — a recorded forum with both candidates, linked from `votemacforsheriff.com` ("Watch Mac at
+     the Indivisible Sisters Sheriff Candidate Forum"). It is video, so it needs a transcript or a
+     written recap. A forum is the one format that puts both men on the record on the same policy
+     questions. Check that before the November pamphlet.
+   - **NEW OBSTACLE: `bendbulletin.com` is now REGISTRATION-walled** ("Get access by creating an
+     account"), so the wave-1 note calling it "the best search" no longer holds for article bodies.
+     `redmondspokesman.com` mirrors much Bulletin content (same publisher) — try it first.
 3. **Bend-La Pine School Board (7)** — external_ids `-4101981`..`-4101987` (Lynch Z1, LeGrand Z2,
    Fischer Z3/Vice Chair, Olson Z4, Tatom Z5/Chair, Tomlin Z6, Chadwick Z7). Applicable topics are
    narrow: `school-vouchers`, `childcare`, `civil-rights`, `trans-athletes`, `taxes` (bond/levy
