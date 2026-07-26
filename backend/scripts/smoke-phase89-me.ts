@@ -13,7 +13,7 @@
  *   SC4 — Bangor coord (-68.7772, 44.8012) returns >= 7 members with geo_id='2302820';
  *          must include Tim Surrette (Chair, Wayback-confirmed May 2026)
  *   SC5 — South Portland coord (-70.2788, 43.6415) returns >= 6 members with geo_id='2312330';
- *          must include Rosemarie De Angelis (D3 Chair, HIGH confidence)
+ *          must include Rosemarie DeAngelis (D3 Chair, HIGH confidence)
  *   SC6 — Auburn coord (-70.2312, 44.0978) returns >= 7 members with geo_id='2302610';
  *          must include Korin McGuigan (Ward 1, official PDF confirmed)
  *   SC7 — Biddeford coord (-70.4520, 43.4909) returns >= 7 members with geo_id='2303150';
@@ -87,7 +87,8 @@ async function main() {
     const sc3Res = await client.query<{ full_name: string; geo_id: string }>(
       `SELECT p.full_name, d.geo_id
        FROM essentials.politicians p
-       JOIN essentials.offices o ON o.politician_id = p.id
+       JOIN essentials.office_current_holder och ON och.politician_id = p.id
+       JOIN essentials.offices o ON o.id = och.office_id
        JOIN essentials.districts d ON d.id = o.district_id
        JOIN essentials.geofence_boundaries gb ON gb.geo_id = d.geo_id
        WHERE gb.state = '23'
@@ -130,7 +131,8 @@ async function main() {
     const sc4Res = await client.query<{ full_name: string; geo_id: string }>(
       `SELECT p.full_name, d.geo_id
        FROM essentials.politicians p
-       JOIN essentials.offices o ON o.politician_id = p.id
+       JOIN essentials.office_current_holder och ON och.politician_id = p.id
+       JOIN essentials.offices o ON o.id = och.office_id
        JOIN essentials.districts d ON d.id = o.district_id
        JOIN essentials.geofence_boundaries gb ON gb.geo_id = d.geo_id
        WHERE gb.state = '23'
@@ -168,7 +170,7 @@ async function main() {
 
     // -------------------------------------------------------------------------
     // SC5: South Portland routing — coord (-70.2788, 43.6415) returns >= 6 members
-    //      geo_id must all be '2312330'; must include Rosemarie De Angelis (D3 Chair)
+    //      geo_id must all be '2312330'; must include Rosemarie DeAngelis (D3 Chair)
     //      (D5 may be vacant — hence >= 6 not >= 7)
     // -------------------------------------------------------------------------
     // NOTE: Original plan coordinate (-70.2788, 43.6415) was outside the polygon.
@@ -177,7 +179,8 @@ async function main() {
     const sc5Res = await client.query<{ full_name: string; geo_id: string }>(
       `SELECT p.full_name, d.geo_id
        FROM essentials.politicians p
-       JOIN essentials.offices o ON o.politician_id = p.id
+       JOIN essentials.office_current_holder och ON och.politician_id = p.id
+       JOIN essentials.offices o ON o.id = och.office_id
        JOIN essentials.districts d ON d.id = o.district_id
        JOIN essentials.geofence_boundaries gb ON gb.geo_id = d.geo_id
        WHERE gb.state = '23'
@@ -196,8 +199,8 @@ async function main() {
       console.log(msg);
       errors.push(msg);
       allPassed = false;
-    } else if (!sc5Names.has('Rosemarie De Angelis')) {
-      const msg = `SC5: FAIL — 'Rosemarie De Angelis' not in South Portland routing results (${sc5Count} rows returned): ${Array.from(sc5Names).join(', ')}`;
+    } else if (!sc5Names.has('Rosemarie DeAngelis')) {
+      const msg = `SC5: FAIL — 'Rosemarie DeAngelis' not in South Portland routing results (${sc5Count} rows returned): ${Array.from(sc5Names).join(', ')}`;
       console.log(msg);
       errors.push(msg);
       allPassed = false;
@@ -207,7 +210,7 @@ async function main() {
       errors.push(msg);
       allPassed = false;
     } else {
-      console.log(`SC5: PASS — South Portland routing returned ${sc5Count} members including Rosemarie De Angelis; geo_id=2312330`);
+      console.log(`SC5: PASS — South Portland routing returned ${sc5Count} members including Rosemarie DeAngelis; geo_id=2312330`);
       for (const row of sc5Res.rows) {
         console.log(`  ${row.full_name} (geo_id=${row.geo_id})`);
       }
@@ -220,7 +223,8 @@ async function main() {
     const sc6Res = await client.query<{ full_name: string; geo_id: string }>(
       `SELECT p.full_name, d.geo_id
        FROM essentials.politicians p
-       JOIN essentials.offices o ON o.politician_id = p.id
+       JOIN essentials.office_current_holder och ON och.politician_id = p.id
+       JOIN essentials.offices o ON o.id = och.office_id
        JOIN essentials.districts d ON d.id = o.district_id
        JOIN essentials.geofence_boundaries gb ON gb.geo_id = d.geo_id
        WHERE gb.state = '23'
@@ -263,7 +267,8 @@ async function main() {
     const sc7Res = await client.query<{ full_name: string; geo_id: string }>(
       `SELECT p.full_name, d.geo_id
        FROM essentials.politicians p
-       JOIN essentials.offices o ON o.politician_id = p.id
+       JOIN essentials.office_current_holder och ON och.politician_id = p.id
+       JOIN essentials.offices o ON o.id = och.office_id
        JOIN essentials.districts d ON d.id = o.district_id
        JOIN essentials.geofence_boundaries gb ON gb.geo_id = d.geo_id
        WHERE gb.state = '23'
