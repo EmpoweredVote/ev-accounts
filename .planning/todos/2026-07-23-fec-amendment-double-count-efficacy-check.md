@@ -185,3 +185,53 @@ Prefer running it outside the 06:00 UTC ingest window.
 The UNRESOLVABLE bucket (31% of this batch) exists only because pre-fix rows lack `file_number`.
 **Backfilling `file_number` onto existing rows would make the whole backlog resolvable locally**,
 with no API calls and no ambiguity — likely cheaper than grinding through per-group classification.
+
+---
+
+# NEXT SESSION: build the `file_number` backfill (recommended over more API batches)
+
+**Why this instead of grinding the per-group batches:** the UNRESOLVABLE bucket (31% of the resolved
+batch) exists *only* because pre-fix rows lack `file_number`. Backfill it and the whole backlog
+becomes resolvable with **plain SQL, no API calls, no rate-limit contention with the 06:00 UTC
+ingest, and no unresolvable bucket** — and the already-shipped FEC-04b fix can then maintain those
+rows going forward.
+
+## The insight that makes it cheap
+`sub_id` → `file_number` is a **many-to-one** mapping, and one FEC API page returns up to 100 rows
+each carrying both. So you do **not** need one request per contribution — you need one pass per
+`(committee_id, two_year_transaction_period)` to build a `sub_id → {file_number, report_year,
+report_type}` map, then a bulk local UPDATE. The number of requests scales with committee-periods,
+not with rows.
+
+## Sketch
+1. **Enumerate targets**: `SELECT DISTINCT raw_record->>'committee_id', election_cycle FROM contributions
+   WHERE data_source='fec' AND NOT (raw_record ? 'file_number')` — scope per `politician_source_id`
+   so it rides `idx_contrib_src_cycle` (never an unscoped JSONB scan; that is the 2026-07-22 P1 shape).
+2. **Fetch** `/v1/schedules/schedule_a/?committee_id=X&two_year_transaction_period=Y&per_page=100`,
+   paginating with `last_index` + `last_contribution_receipt_date` (the ONLY valid sort keys are
+   `contribution_receipt_date` and `contribution_receipt_amount` — `-load_date` returns 422).
+   Reuse `acquireFecSlot()` from `src/lib/fecRateLimiter.ts` so it shares the 15/min budget with the
+   cron instead of competing with it.
+3. **UPDATE** matched rows by `source_transaction_id = sub_id`, setting
+   `raw_record = raw_record || jsonb_build_object('file_number', …, 'report_year', …, 'report_type', …)`.
+   Idempotent — re-running is a no-op on rows that already have it.
+4. **Then** retire locally, no API: for each `(politician_source_id, committee, report_year,
+   report_type)`, delete rows below `max(file_number)`. This is exactly the shipped
+   `retireSupersededFilings` predicate, so reuse it rather than writing a second rule.
+5. Snapshot before deleting, as with every other retirement this session.
+
+## Caveats to carry over
+- Rows whose `sub_id` the API no longer returns stay un-backfilled → leave them alone (same
+  conservative stance as the `raw_record ? 'file_number'` guard). Report the count.
+- **Do NOT** delete cross-report matches — the same contribution legitimately appears in different
+  reports (`C00575209` $2,800 in Q1/2020 **and** Q3/2020). Step 4's predicate already excludes them
+  because it keys on `(report_year, report_type)`; do not "improve" it into a looser key.
+- Bulk `indiv{YY}.zip` (21 cols) does **not** carry `file_number` — the API is the only source.
+- Run outside the 06:00 UTC ingest window.
+
+## Repo state at handoff (2026-07-25)
+- `b6f8b6f7` FEC-04b fix — **pushed, live in prod** (deploy `2fcda047`).
+- `ba6be0e8` backlog tooling + 27 rows retired — **committed, NOT pushed**.
+- `data/fec-amendment-retire-state.json` holds 45 resolved group keys; the retirement script resumes
+  from it. `data/fec-amendment-retired-snapshot.json` holds the 27 deleted rows.
+- **Reminder: `autoDeploy: yes` on master — any push deploys the backend immediately.**
