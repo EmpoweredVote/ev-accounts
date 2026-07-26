@@ -1,0 +1,1461 @@
+{
+  "retired_at": "2026-07-25T23:07:06.422Z",
+  "verdicts": [
+    "SOURCE-DEAD",
+    "UNSUPPORTED-STRUCTURAL"
+  ],
+  "source_report": "data/stance-research/or-bend-stateleg/source-supports-OR.json",
+  "reason": "source-supports-claim: cited source is dead (404), or the only source is a biography page and the reasoning names no bill/date/vote/quote — nothing checkable",
+  "rows": [
+    {
+      "external_id": "-4120004",
+      "full_name": "Alek Skarlatos",
+      "topic_key": "public-safety-approach",
+      "value": "4.0",
+      "reasoning": "Advocated for law enforcement funding and public safety as priority during congressional campaigns; pro-police stance documented in CD-4 campaign materials. https://ballotpedia.org/Alek_Skarlatos",
+      "sources": [
+        "https://ballotpedia.org/Alek_Skarlatos"
+      ]
+    },
+    {
+      "external_id": "-4120004",
+      "full_name": "Alek Skarlatos",
+      "topic_key": "school-vouchers",
+      "value": "4.0",
+      "reasoning": "Expressed support for school choice and education flexibility during congressional campaign; favored parental rights in education policy. https://ballotpedia.org/Alek_Skarlatos",
+      "sources": [
+        "https://ballotpedia.org/Alek_Skarlatos"
+      ]
+    },
+    {
+      "external_id": "-4120004",
+      "full_name": "Alek Skarlatos",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Opposed tax increases during CD-4 campaigns; supported lower taxes and limited government spending as core policy position; anti-CAT tax as state rep. https://ballotpedia.org/Alek_Skarlatos",
+      "sources": [
+        "https://ballotpedia.org/Alek_Skarlatos"
+      ]
+    },
+    {
+      "external_id": "-4120047",
+      "full_name": "Andrea Valderrama",
+      "topic_key": "local-environment",
+      "value": "1.0",
+      "reasoning": "Environmental justice advocate; focused on how pollution and environmental hazards disproportionately affect communities of color in Portland area. https://ballotpedia.org/Andrea_Valderrama",
+      "sources": [
+        "https://ballotpedia.org/Andrea_Valderrama"
+      ]
+    },
+    {
+      "external_id": "-4120023",
+      "full_name": "Anna Scharf",
+      "topic_key": "public-safety-approach",
+      "value": "4.0",
+      "reasoning": "Supported law enforcement funding and public safety approaches consistent with conservative Marion/Polk County district priorities. https://ballotpedia.org/Anna_Scharf",
+      "sources": [
+        "https://ballotpedia.org/Anna_Scharf"
+      ]
+    },
+    {
+      "external_id": "-4120023",
+      "full_name": "Anna Scharf",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from rural Marion/Polk County; opposed business and income tax increases. https://ballotpedia.org/Anna_Scharf",
+      "sources": [
+        "https://ballotpedia.org/Anna_Scharf"
+      ]
+    },
+    {
+      "external_id": "-4120039",
+      "full_name": "April Dobson",
+      "topic_key": "homelessness",
+      "value": "2.0",
+      "reasoning": "Supported service-based homelessness response approaches; Portland district with active homelessness policy priorities. https://ballotpedia.org/April_Dobson",
+      "sources": [
+        "https://ballotpedia.org/April_Dobson"
+      ]
+    },
+    {
+      "external_id": "-4120058",
+      "full_name": "Bobby Levy",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from rural Eastern Oregon; opposed business and income tax increases. https://ballotpedia.org/Bobby_Levy",
+      "sources": [
+        "https://ballotpedia.org/Bobby_Levy"
+      ]
+    },
+    {
+      "external_id": "-4120009",
+      "full_name": "Boomer Wright",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from rural Lane County; opposed business and income tax increases. https://ballotpedia.org/Boomer_Wright",
+      "sources": [
+        "https://ballotpedia.org/Boomer_Wright"
+      ]
+    },
+    {
+      "external_id": "-4110025",
+      "full_name": "Chris Gorsek",
+      "topic_key": "economic-development",
+      "value": "2.0",
+      "reasoning": "Focused on sustainable economic development in East Portland and Columbia River Gorge; supports balancing business growth with environmental protection. https://ballotpedia.org/Chris_Gorsek",
+      "sources": [
+        "https://ballotpedia.org/Chris_Gorsek"
+      ]
+    },
+    {
+      "external_id": "-4110026",
+      "full_name": "Christine Drazan",
+      "topic_key": "fossil-fuels",
+      "value": "5.0",
+      "reasoning": "Opposed fossil fuel restrictions and cap-and-trade; as gubernatorial candidate, supported continued fossil fuel industry in Oregon; opposed clean energy mandates. https://ballotpedia.org/Christine_Drazan",
+      "sources": [
+        "https://ballotpedia.org/Christine_Drazan"
+      ]
+    },
+    {
+      "external_id": "-4110026",
+      "full_name": "Christine Drazan",
+      "topic_key": "voting-rights",
+      "value": "4.0",
+      "reasoning": "Opposed automatic voter registration and questioned some election procedures; supported voter ID requirements; conservative position on election security vs. access tradeoffs. https://ballotpedia.org/Christine_Drazan",
+      "sources": [
+        "https://ballotpedia.org/Christine_Drazan"
+      ]
+    },
+    {
+      "external_id": "-4102002",
+      "full_name": "Cliff Bentz",
+      "topic_key": "deportation",
+      "value": "5.0",
+      "reasoning": "Bentz supports stricter immigration enforcement including deportation; voted YES on measures to increase ICE funding and border security operations. https://bentz.house.gov/issues/immigration",
+      "sources": [
+        "https://bentz.house.gov/issues/immigration"
+      ]
+    },
+    {
+      "external_id": "-4102002",
+      "full_name": "Cliff Bentz",
+      "topic_key": "fossil-fuels",
+      "value": "5.0",
+      "reasoning": "Bentz is a strong supporter of fossil fuel production; serves on Natural Resources Committee and has advocated for expanded oil, gas, and coal leasing on federal lands in eastern Oregon. https://bentz.house.gov/issues/energy-and-environment",
+      "sources": [
+        "https://bentz.house.gov/issues/energy-and-environment"
+      ]
+    },
+    {
+      "external_id": "-4102002",
+      "full_name": "Cliff Bentz",
+      "topic_key": "medicare/aid",
+      "value": "4.0",
+      "reasoning": "Bentz has supported proposals to reform Medicare and Medicaid spending through block grants and means-testing; opposed Medicaid expansion provisions. https://bentz.house.gov/issues/fiscal-responsibility",
+      "sources": [
+        "https://bentz.house.gov/issues/fiscal-responsibility"
+      ]
+    },
+    {
+      "external_id": "-4102002",
+      "full_name": "Cliff Bentz",
+      "topic_key": "social-security",
+      "value": "4.0",
+      "reasoning": "Bentz has supported Social Security reform proposals including means-testing; backed budget frameworks that called for entitlement reform. https://bentz.house.gov/issues/fiscal-responsibility",
+      "sources": [
+        "https://bentz.house.gov/issues/fiscal-responsibility"
+      ]
+    },
+    {
+      "external_id": "-4102002",
+      "full_name": "Cliff Bentz",
+      "topic_key": "tariffs",
+      "value": "3.0",
+      "reasoning": "Bentz expressed mixed views on tariffs — supports targeted trade enforcement but has concerns about broad tariffs harming OR agricultural exports; publicly questioned impact of 2018 steel tariffs. https://bentz.house.gov/media/press-releases/bentz-agriculture-trade",
+      "sources": [
+        "https://bentz.house.gov/media/press-releases/bentz-agriculture-trade"
+      ]
+    },
+    {
+      "external_id": "-4120028",
+      "full_name": "Dacia Grayber",
+      "topic_key": "homelessness",
+      "value": "2.0",
+      "reasoning": "Supported service-based homelessness response approaches; Portland west side district with active homelessness policy engagement. https://ballotpedia.org/Dacia_Grayber",
+      "sources": [
+        "https://ballotpedia.org/Dacia_Grayber"
+      ]
+    },
+    {
+      "external_id": "-4100002",
+      "full_name": "Dan Rayfield",
+      "topic_key": "campaign-finance",
+      "value": "2.0",
+      "reasoning": "Rayfield backed campaign finance disclosure legislation; supported transparency requirements; as AG has enforced campaign finance laws against violators. https://ballotpedia.org/Dan_Rayfield",
+      "sources": [
+        "https://ballotpedia.org/Dan_Rayfield"
+      ]
+    },
+    {
+      "external_id": "-4100002",
+      "full_name": "Dan Rayfield",
+      "topic_key": "deportation",
+      "value": "2.0",
+      "reasoning": "Rayfield as AG has fought Trump administration deportation policies in court; filed amicus briefs supporting immigrant communities; signed onto multistate coalition challenging mass deportation orders. https://www.doj.state.or.us/media/news-releases/2025/ag-rayfield-joins-coalition-challenging-deportation-policy/",
+      "sources": [
+        "https://www.doj.state.or.us/media/news-releases/2025/ag-rayfield-joins-coalition-challenging-deportation-policy/"
+      ]
+    },
+    {
+      "external_id": "-4100002",
+      "full_name": "Dan Rayfield",
+      "topic_key": "economic-development",
+      "value": "2.0",
+      "reasoning": "As House Speaker, Rayfield advanced Oregon economic development legislation including workforce training investments and small business support bills. https://ballotpedia.org/Dan_Rayfield",
+      "sources": [
+        "https://ballotpedia.org/Dan_Rayfield"
+      ]
+    },
+    {
+      "external_id": "-4100002",
+      "full_name": "Dan Rayfield",
+      "topic_key": "housing",
+      "value": "1.0",
+      "reasoning": "Rayfield championed housing production legislation as House Speaker including zoning reform bills; backed affordable housing funding. https://ballotpedia.org/Dan_Rayfield",
+      "sources": [
+        "https://ballotpedia.org/Dan_Rayfield"
+      ]
+    },
+    {
+      "external_id": "-4100002",
+      "full_name": "Dan Rayfield",
+      "topic_key": "immigration",
+      "value": "2.0",
+      "reasoning": "As AG, Rayfield joined multi-state lawsuits challenging Trump immigration restrictions; supports DACA; backed Oregon sanctuary policies. https://www.doj.state.or.us/media/news-releases/2025/",
+      "sources": [
+        "https://www.doj.state.or.us/media/news-releases/2025/"
+      ]
+    },
+    {
+      "external_id": "-4100002",
+      "full_name": "Dan Rayfield",
+      "topic_key": "judicial-bail-pretrial",
+      "value": "2.0",
+      "reasoning": "Rayfield supported pretrial reform reducing cash bail for non-violent offenses; backed risk-based assessment tools as part of broader criminal justice reform. https://ballotpedia.org/Dan_Rayfield",
+      "sources": [
+        "https://ballotpedia.org/Dan_Rayfield"
+      ]
+    },
+    {
+      "external_id": "-4100002",
+      "full_name": "Dan Rayfield",
+      "topic_key": "judicial-prosecution-priorities",
+      "value": "2.0",
+      "reasoning": "As AG, Rayfield has focused prosecution resources on consumer protection, environmental enforcement, and corporate fraud; supports diversion programs for low-level offenders; opposed overly punitive approaches. https://www.doj.state.or.us/media/news-releases/2025/",
+      "sources": [
+        "https://www.doj.state.or.us/media/news-releases/2025/"
+      ]
+    },
+    {
+      "external_id": "-4100002",
+      "full_name": "Dan Rayfield",
+      "topic_key": "local-immigration",
+      "value": "2.0",
+      "reasoning": "Rayfield enforces Oregon's sanctuary state law as AG; has actively defended state sanctuary policies in court against federal challenges. https://www.doj.state.or.us/media/news-releases/2025/",
+      "sources": [
+        "https://www.doj.state.or.us/media/news-releases/2025/"
+      ]
+    },
+    {
+      "external_id": "-4100002",
+      "full_name": "Dan Rayfield",
+      "topic_key": "social-security",
+      "value": "1.0",
+      "reasoning": "Rayfield has opposed federal Social Security cuts and challenged federal actions that threaten retirement security; as AG filed to protect federal benefits for Oregonians. https://ballotpedia.org/Dan_Rayfield",
+      "sources": [
+        "https://ballotpedia.org/Dan_Rayfield"
+      ]
+    },
+    {
+      "external_id": "-4100002",
+      "full_name": "Dan Rayfield",
+      "topic_key": "voting-rights",
+      "value": "1.0",
+      "reasoning": "As AG, Rayfield joined multistate coalitions protecting voting rights; backed automatic voter registration as House Speaker; championed election integrity measures expanding access. https://www.doj.state.or.us/media/news-releases/2025/",
+      "sources": [
+        "https://www.doj.state.or.us/media/news-releases/2025/"
+      ]
+    },
+    {
+      "external_id": "-4120038",
+      "full_name": "Daniel Nguyễn",
+      "topic_key": "immigration",
+      "value": "2.0",
+      "reasoning": "Supported welcoming immigration policies and immigrant community protections; Portland/Beaverton area with significant Vietnamese and Asian immigrant communities. https://ballotpedia.org/Daniel_Nguyen",
+      "sources": [
+        "https://ballotpedia.org/Daniel_Nguyen"
+      ]
+    },
+    {
+      "external_id": "-4120031",
+      "full_name": "Darcey Edwards",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from rural Washington/Columbia County; opposed business and income tax increases. https://ballotpedia.org/Darcey_Edwards",
+      "sources": [
+        "https://ballotpedia.org/Darcey_Edwards"
+      ]
+    },
+    {
+      "external_id": "-4120010",
+      "full_name": "David Gomberg",
+      "topic_key": "local-environment",
+      "value": "1.0",
+      "reasoning": "Strong environmental advocate for Lincoln County coast; supported coastal protection, ocean health, and fishery management priorities. https://ballotpedia.org/David_Gomberg",
+      "sources": [
+        "https://ballotpedia.org/David_Gomberg"
+      ]
+    },
+    {
+      "external_id": "-4110010",
+      "full_name": "Deb Patterson",
+      "topic_key": "childcare",
+      "value": "1.0",
+      "reasoning": "Supported childcare access expansion legislation; views childcare as essential infrastructure for working families and public health. https://ballotpedia.org/Deb_Patterson",
+      "sources": [
+        "https://ballotpedia.org/Deb_Patterson"
+      ]
+    },
+    {
+      "external_id": "-4110010",
+      "full_name": "Deb Patterson",
+      "topic_key": "healthcare",
+      "value": "1.0",
+      "reasoning": "Healthcare professional (physician) who champions universal healthcare access; supported Oregon Health Plan expansion and Medicaid coverage; serves on Senate Health Care Committee. https://ballotpedia.org/Deb_Patterson",
+      "sources": [
+        "https://ballotpedia.org/Deb_Patterson"
+      ]
+    },
+    {
+      "external_id": "-4120003",
+      "full_name": "Dwayne Yunker",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from rural Klamath/Jackson County district; consistently opposed business and income tax increases in the Oregon House. https://ballotpedia.org/Dwayne_Yunker",
+      "sources": [
+        "https://ballotpedia.org/Dwayne_Yunker"
+      ]
+    },
+    {
+      "external_id": "-4120055",
+      "full_name": "E. Werner Reschke",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from Klamath Falls area; opposed business and income tax increases. https://ballotpedia.org/E._Werner_Reschke",
+      "sources": [
+        "https://ballotpedia.org/E._Werner_Reschke"
+      ]
+    },
+    {
+      "external_id": "-4120017",
+      "full_name": "Ed Diehl",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from rural Linn County; opposed business and income tax increases. https://ballotpedia.org/Ed_Diehl",
+      "sources": [
+        "https://ballotpedia.org/Ed_Diehl"
+      ]
+    },
+    {
+      "external_id": "-4120056",
+      "full_name": "Emily McIntire",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from rural Klamath/Lake County; opposed business and income tax increases. https://ballotpedia.org/Emily_McIntire",
+      "sources": [
+        "https://ballotpedia.org/Emily_McIntire"
+      ]
+    },
+    {
+      "external_id": "-4120035",
+      "full_name": "Farrah Chaichi",
+      "topic_key": "immigration",
+      "value": "2.0",
+      "reasoning": "Advocated for immigrant community rights and protections; Beaverton area has significant immigrant and refugee populations; supported immigrant-protective policies. https://ballotpedia.org/Farrah_Chaichi",
+      "sources": [
+        "https://ballotpedia.org/Farrah_Chaichi"
+      ]
+    },
+    {
+      "external_id": "-4110004",
+      "full_name": "Floyd Prozanski",
+      "topic_key": "civil-rights",
+      "value": "1.0",
+      "reasoning": "Long-serving Democrat who has championed civil rights legislation; supported anti-discrimination protections and LGBTQ+ equality bills throughout career. https://ballotpedia.org/Floyd_Prozanski",
+      "sources": [
+        "https://ballotpedia.org/Floyd_Prozanski"
+      ]
+    },
+    {
+      "external_id": "-4110004",
+      "full_name": "Floyd Prozanski",
+      "topic_key": "immigration",
+      "value": "1.0",
+      "reasoning": "Supported sanctuary policies and immigrant rights protections; opposed state-level immigration enforcement collaboration with ICE. https://ballotpedia.org/Floyd_Prozanski",
+      "sources": [
+        "https://ballotpedia.org/Floyd_Prozanski"
+      ]
+    },
+    {
+      "external_id": "-4120057",
+      "full_name": "Gregory Smith",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from rural Eastern Oregon; opposed business and income tax increases. https://ballotpedia.org/Gregory_Smith",
+      "sources": [
+        "https://ballotpedia.org/Gregory_Smith"
+      ]
+    },
+    {
+      "external_id": "-4120036",
+      "full_name": "Hai Pham",
+      "topic_key": "immigration",
+      "value": "2.0",
+      "reasoning": "Supported welcoming immigration policies and immigrant community protections; Portland/Beaverton area has significant Vietnamese and Asian immigrant communities. https://ballotpedia.org/Hai_Pham",
+      "sources": [
+        "https://ballotpedia.org/Hai_Pham"
+      ]
+    },
+    {
+      "external_id": "-4110007",
+      "full_name": "James I. Manning Jr.",
+      "topic_key": "immigration",
+      "value": "1.0",
+      "reasoning": "Supported immigrant protection policies; opposed state collaboration with federal immigration enforcement. https://ballotpedia.org/James_Manning",
+      "sources": [
+        "https://ballotpedia.org/James_Manning"
+      ]
+    },
+    {
+      "external_id": "-4120011",
+      "full_name": "Jami Cate",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from rural Linn/Benton County; opposed business and income tax increases including Corporate Activity Tax. https://ballotpedia.org/Jami_Cate",
+      "sources": [
+        "https://ballotpedia.org/Jami_Cate"
+      ]
+    },
+    {
+      "external_id": "-4102005",
+      "full_name": "Janelle Bynum",
+      "topic_key": "climate-change",
+      "value": "1.0",
+      "reasoning": "Bynum supported Oregon Cap-and-Trade climate policies as state rep; campaign platform includes clean energy investment and climate action. https://ballotpedia.org/Janelle_Bynum",
+      "sources": [
+        "https://ballotpedia.org/Janelle_Bynum"
+      ]
+    },
+    {
+      "external_id": "-4102005",
+      "full_name": "Janelle Bynum",
+      "topic_key": "healthcare",
+      "value": "1.0",
+      "reasoning": "Bynum as OR state rep supported Medicaid expansion access and health equity initiatives; campaign emphasized healthcare affordability. https://ballotpedia.org/Janelle_Bynum",
+      "sources": [
+        "https://ballotpedia.org/Janelle_Bynum"
+      ]
+    },
+    {
+      "external_id": "-4102005",
+      "full_name": "Janelle Bynum",
+      "topic_key": "homelessness",
+      "value": "2.0",
+      "reasoning": "Bynum backed Housing First and increased funding for homelessness services as OR state rep; focused on wraparound services alongside shelter. https://ballotpedia.org/Janelle_Bynum",
+      "sources": [
+        "https://ballotpedia.org/Janelle_Bynum"
+      ]
+    },
+    {
+      "external_id": "-4102005",
+      "full_name": "Janelle Bynum",
+      "topic_key": "voting-rights",
+      "value": "1.0",
+      "reasoning": "Bynum supported Oregon automatic voter registration and same-day registration as state rep; backed federal voting rights protections. https://ballotpedia.org/Janelle_Bynum",
+      "sources": [
+        "https://ballotpedia.org/Janelle_Bynum"
+      ]
+    },
+    {
+      "external_id": "-4110003",
+      "full_name": "Jeff Golden",
+      "topic_key": "immigration",
+      "value": "1.0",
+      "reasoning": "Supported sanctuary policies and immigrant protections; opposed immigration enforcement collaboration with federal ICE. https://ballotpedia.org/Jeff_Golden",
+      "sources": [
+        "https://ballotpedia.org/Jeff_Golden"
+      ]
+    },
+    {
+      "external_id": "-4120052",
+      "full_name": "Jeff Helfrich",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from Hood River/Columbia Gorge area; opposed business and income tax increases. https://ballotpedia.org/Jeff_Helfrich",
+      "sources": [
+        "https://ballotpedia.org/Jeff_Helfrich"
+      ]
+    },
+    {
+      "external_id": "-4120007",
+      "full_name": "John Lively",
+      "topic_key": "public-safety-approach",
+      "value": "2.0",
+      "reasoning": "Supported evidence-based public safety approaches including harm reduction and mental health resources; Springfield/Eugene area priorities. https://ballotpedia.org/John_Lively",
+      "sources": [
+        "https://ballotpedia.org/John_Lively"
+      ]
+    },
+    {
+      "external_id": "-4120014",
+      "full_name": "Julie Fahey",
+      "topic_key": "school-vouchers",
+      "value": "1.0",
+      "reasoning": "Strong public education advocate; opposed school voucher programs; focused on public school investment as Eugene-area Democrat and former House Majority Leader. https://ballotpedia.org/Julie_Fahey",
+      "sources": [
+        "https://ballotpedia.org/Julie_Fahey"
+      ]
+    },
+    {
+      "external_id": "-4110014",
+      "full_name": "Kate Lieber",
+      "topic_key": "childcare",
+      "value": "1.0",
+      "reasoning": "Supported childcare access and affordability legislation; backed expanded childcare subsidies for working families. https://ballotpedia.org/Kate_Lieber",
+      "sources": [
+        "https://ballotpedia.org/Kate_Lieber"
+      ]
+    },
+    {
+      "external_id": "-4110014",
+      "full_name": "Kate Lieber",
+      "topic_key": "voting-rights",
+      "value": "1.0",
+      "reasoning": "Supported voting rights expansion including automatic voter registration; opposed voter ID restrictions. https://ballotpedia.org/Kate_Lieber",
+      "sources": [
+        "https://ballotpedia.org/Kate_Lieber"
+      ]
+    },
+    {
+      "external_id": "-410100",
+      "full_name": "Kathryn Harrington",
+      "topic_key": "immigration",
+      "value": "2.0",
+      "reasoning": "The county keeps program access unconditioned on immigration status and she publicly condemned the federal removal of Temporary Protected Status as horrific - a posture keeping public services open to residents regardless of status.",
+      "sources": [
+        "https://www.opb.org/article/2025/11/05/washington-county-declares-emergency-over-increased-ice-activity/"
+      ]
+    },
+    {
+      "external_id": "-4110024",
+      "full_name": "Kayse Jama",
+      "topic_key": "civil-rights",
+      "value": "1.0",
+      "reasoning": "Consistent civil rights advocate; focuses on racial justice, LGBTQ+ rights, and protections for refugee communities. https://ballotpedia.org/Kayse_Jama",
+      "sources": [
+        "https://ballotpedia.org/Kayse_Jama"
+      ]
+    },
+    {
+      "external_id": "-4110024",
+      "full_name": "Kayse Jama",
+      "topic_key": "healthcare",
+      "value": "1.0",
+      "reasoning": "Supported Oregon Health Plan expansion; advocates for healthcare equity for refugee and immigrant communities. https://ballotpedia.org/Kayse_Jama",
+      "sources": [
+        "https://ballotpedia.org/Kayse_Jama"
+      ]
+    },
+    {
+      "external_id": "-4110024",
+      "full_name": "Kayse Jama",
+      "topic_key": "immigration",
+      "value": "1.0",
+      "reasoning": "Somali refugee and immigrant rights champion; co-founded Unite Oregon; led efforts to expand immigrant driver licenses and sanctuary protections. https://ballotpedia.org/Kayse_Jama",
+      "sources": [
+        "https://ballotpedia.org/Kayse_Jama"
+      ]
+    },
+    {
+      "external_id": "-4110024",
+      "full_name": "Kayse Jama",
+      "topic_key": "public-safety-approach",
+      "value": "1.0",
+      "reasoning": "Focused on community investment and addressing root causes of crime; supported police accountability reforms; opposed over-criminalization. https://ballotpedia.org/Kayse_Jama",
+      "sources": [
+        "https://ballotpedia.org/Kayse_Jama"
+      ]
+    },
+    {
+      "external_id": "-4110024",
+      "full_name": "Kayse Jama",
+      "topic_key": "voting-rights",
+      "value": "1.0",
+      "reasoning": "Supported multilingual voting access and automatic voter registration; advocates for voting rights for immigrant and refugee communities. https://ballotpedia.org/Kayse_Jama",
+      "sources": [
+        "https://ballotpedia.org/Kayse_Jama"
+      ]
+    },
+    {
+      "external_id": "-4120021",
+      "full_name": "Kevin Mannix",
+      "topic_key": "immigration",
+      "value": "5.0",
+      "reasoning": "Supported stricter immigration enforcement; consistent conservative position across multiple Oregon campaigns and legislative record. https://ballotpedia.org/Kevin_Mannix",
+      "sources": [
+        "https://ballotpedia.org/Kevin_Mannix"
+      ]
+    },
+    {
+      "external_id": "-4120021",
+      "full_name": "Kevin Mannix",
+      "topic_key": "school-vouchers",
+      "value": "4.0",
+      "reasoning": "Expressed support for school choice and parental rights in education; Salem-area Republican with documented positions on education policy from gubernatorial campaigns. https://ballotpedia.org/Kevin_Mannix",
+      "sources": [
+        "https://ballotpedia.org/Kevin_Mannix"
+      ]
+    },
+    {
+      "external_id": "-4120021",
+      "full_name": "Kevin Mannix",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax record across long political career; opposed corporate activity tax and income tax increases; fiscal conservative positions documented from gubernatorial campaigns. https://ballotpedia.org/Kevin_Mannix",
+      "sources": [
+        "https://ballotpedia.org/Kevin_Mannix"
+      ]
+    },
+    {
+      "external_id": "-4110023",
+      "full_name": "Khanh Pham",
+      "topic_key": "childcare",
+      "value": "1.0",
+      "reasoning": "Supported childcare access expansion; backed subsidies for immigrant and low-income families. https://ballotpedia.org/Khanh_Pham",
+      "sources": [
+        "https://ballotpedia.org/Khanh_Pham"
+      ]
+    },
+    {
+      "external_id": "-4110023",
+      "full_name": "Khanh Pham",
+      "topic_key": "civil-rights",
+      "value": "1.0",
+      "reasoning": "Vietnamese American immigrant rights champion; consistent advocate for LGBTQ+ equality and racial justice; focuses on equity for marginalized communities. https://ballotpedia.org/Khanh_Pham",
+      "sources": [
+        "https://ballotpedia.org/Khanh_Pham"
+      ]
+    },
+    {
+      "external_id": "-4110023",
+      "full_name": "Khanh Pham",
+      "topic_key": "healthcare",
+      "value": "1.0",
+      "reasoning": "Supported Oregon Health Plan expansion; advocates for healthcare equity for immigrant and low-income communities. https://ballotpedia.org/Khanh_Pham",
+      "sources": [
+        "https://ballotpedia.org/Khanh_Pham"
+      ]
+    },
+    {
+      "external_id": "-4110023",
+      "full_name": "Khanh Pham",
+      "topic_key": "immigration",
+      "value": "1.0",
+      "reasoning": "Immigration rights advocate; supported sanctuary policies and protections for immigrant communities; led efforts to expand immigrant access to driver licenses. https://ballotpedia.org/Khanh_Pham",
+      "sources": [
+        "https://ballotpedia.org/Khanh_Pham"
+      ]
+    },
+    {
+      "external_id": "-4110023",
+      "full_name": "Khanh Pham",
+      "topic_key": "taxes",
+      "value": "1.0",
+      "reasoning": "Supports progressive taxation for public investment in services for low-income and immigrant communities. https://ballotpedia.org/Khanh_Pham",
+      "sources": [
+        "https://ballotpedia.org/Khanh_Pham"
+      ]
+    },
+    {
+      "external_id": "-4120006",
+      "full_name": "Kim Wallan",
+      "topic_key": "public-safety-approach",
+      "value": "4.0",
+      "reasoning": "Supported increased law enforcement funding and tough-on-crime approaches; consistent with conservative Jackson County district priorities. https://ballotpedia.org/Kim_Wallan",
+      "sources": [
+        "https://ballotpedia.org/Kim_Wallan"
+      ]
+    },
+    {
+      "external_id": "-4120048",
+      "full_name": "Lamar Wise",
+      "topic_key": "homelessness",
+      "value": "2.0",
+      "reasoning": "Supported service-based homelessness response; Portland SE district with active homelessness policy focus. https://ballotpedia.org/Lamar_Wise",
+      "sources": [
+        "https://ballotpedia.org/Lamar_Wise"
+      ]
+    },
+    {
+      "external_id": "-4120022",
+      "full_name": "Lesly Muñoz",
+      "topic_key": "immigration",
+      "value": "2.0",
+      "reasoning": "Advocated for immigrant community resources and protections; Salem area has large Latino community; supported policies protecting immigrant families. https://ballotpedia.org/Lesly_Munoz",
+      "sources": [
+        "https://ballotpedia.org/Lesly_Munoz"
+      ]
+    },
+    {
+      "external_id": "-4110022",
+      "full_name": "Lew Frederick",
+      "topic_key": "childcare",
+      "value": "1.0",
+      "reasoning": "Supported childcare access expansion; backed subsidies for low-income families as part of equity agenda. https://ballotpedia.org/Lew_Frederick",
+      "sources": [
+        "https://ballotpedia.org/Lew_Frederick"
+      ]
+    },
+    {
+      "external_id": "-4110017",
+      "full_name": "Lisa Reynolds",
+      "topic_key": "childcare",
+      "value": "1.0",
+      "reasoning": "Supported childcare access expansion; backed subsidized childcare for low-income families as pediatrician and senator. https://ballotpedia.org/Lisa_Reynolds",
+      "sources": [
+        "https://ballotpedia.org/Lisa_Reynolds"
+      ]
+    },
+    {
+      "external_id": "-4110017",
+      "full_name": "Lisa Reynolds",
+      "topic_key": "healthcare",
+      "value": "1.0",
+      "reasoning": "Pediatrician background informs healthcare advocacy; supported Oregon Health Plan expansion and universal healthcare access bills. https://ballotpedia.org/Lisa_Reynolds",
+      "sources": [
+        "https://ballotpedia.org/Lisa_Reynolds"
+      ]
+    },
+    {
+      "external_id": "-4110017",
+      "full_name": "Lisa Reynolds",
+      "topic_key": "voting-rights",
+      "value": "1.0",
+      "reasoning": "Supported automatic voter registration and voting access expansion; opposed restrictions on ballot access. https://ballotpedia.org/Lisa_Reynolds",
+      "sources": [
+        "https://ballotpedia.org/Lisa_Reynolds"
+      ]
+    },
+    {
+      "external_id": "-690012",
+      "full_name": "Loretta Smith",
+      "topic_key": "economic-development",
+      "value": "2.0",
+      "reasoning": "Smith championed equity-focused economic development at Multnomah County; supported community benefit agreements and living wage requirements; multco.us commission records. https://www.multco.us/board-county-commissioners",
+      "sources": [
+        "https://www.multco.us/board-county-commissioners"
+      ]
+    },
+    {
+      "external_id": "-690012",
+      "full_name": "Loretta Smith",
+      "topic_key": "homelessness",
+      "value": "2.0",
+      "reasoning": "Loretta Smith as Multnomah County Commissioner consistently advocated for decriminalization of homelessness and housing-first approaches; opposed punitive camping enforcement; multco.us county commission records. https://www.multco.us/board-county-commissioners",
+      "sources": [
+        "https://www.multco.us/board-county-commissioners"
+      ]
+    },
+    {
+      "external_id": "-690012",
+      "full_name": "Loretta Smith",
+      "topic_key": "housing",
+      "value": "2.0",
+      "reasoning": "Smith supported affordable housing funding and anti-displacement policies throughout her Multnomah County tenure; voted for county housing levy measures; multco.us commission records. https://www.multco.us/board-county-commissioners",
+      "sources": [
+        "https://www.multco.us/board-county-commissioners"
+      ]
+    },
+    {
+      "external_id": "-690012",
+      "full_name": "Loretta Smith",
+      "topic_key": "local-environment",
+      "value": "2.0",
+      "reasoning": "Smith supported environmental justice and green infrastructure investments during her Multnomah County tenure; voted on county climate action measures; multco.us commission records. https://www.multco.us/board-county-commissioners",
+      "sources": [
+        "https://www.multco.us/board-county-commissioners"
+      ]
+    },
+    {
+      "external_id": "-4120024",
+      "full_name": "Lucetta Elmer",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from rural Yamhill County; opposed business and income tax increases. https://ballotpedia.org/Lucetta_Elmer",
+      "sources": [
+        "https://ballotpedia.org/Lucetta_Elmer"
+      ]
+    },
+    {
+      "external_id": "-4120041",
+      "full_name": "Mark Gamba",
+      "topic_key": "local-environment",
+      "value": "1.0",
+      "reasoning": "Former Milwaukie Mayor who championed urban sustainability, green infrastructure, and local environmental stewardship; environmental justice advocate. https://ballotpedia.org/Mark_Gamba",
+      "sources": [
+        "https://ballotpedia.org/Mark_Gamba"
+      ]
+    },
+    {
+      "external_id": "-4110020",
+      "full_name": "Mark Meek",
+      "topic_key": "economic-development",
+      "value": "2.0",
+      "reasoning": "Focus on balanced economic development supporting both business growth and worker protections in Clackamas County. https://ballotpedia.org/Mark_Meek",
+      "sources": [
+        "https://ballotpedia.org/Mark_Meek"
+      ]
+    },
+    {
+      "external_id": "-4120060",
+      "full_name": "Mark Owens",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from rural Eastern Oregon; opposed business and income tax increases. https://ballotpedia.org/Mark_Owens",
+      "sources": [
+        "https://ballotpedia.org/Mark_Owens"
+      ]
+    },
+    {
+      "external_id": "-4120051",
+      "full_name": "Matt Bunch",
+      "topic_key": "public-safety-approach",
+      "value": "4.0",
+      "reasoning": "Supported law enforcement funding and public safety approaches; Coos Bay Republican with documented public safety positions. https://ballotpedia.org/Matt_Bunch",
+      "sources": [
+        "https://ballotpedia.org/Matt_Bunch"
+      ]
+    },
+    {
+      "external_id": "-4120051",
+      "full_name": "Matt Bunch",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from Coos Bay area; opposed business and income tax increases. https://ballotpedia.org/Matt_Bunch",
+      "sources": [
+        "https://ballotpedia.org/Matt_Bunch"
+      ]
+    },
+    {
+      "external_id": "-4102003",
+      "full_name": "Maxine Dexter",
+      "topic_key": "healthcare",
+      "value": "1.0",
+      "reasoning": "Dexter is a pulmonologist; central campaign theme was expanding healthcare access; as OR state senator supported Medicaid expansion and universal healthcare proposals. https://ballotpedia.org/Maxine_Dexter",
+      "sources": [
+        "https://ballotpedia.org/Maxine_Dexter"
+      ]
+    },
+    {
+      "external_id": "-4120013",
+      "full_name": "Nancy Nathanson",
+      "topic_key": "school-vouchers",
+      "value": "1.0",
+      "reasoning": "Strong public education advocate; opposed school voucher programs and prioritized public school funding as Eugene area representative with education background. https://ballotpedia.org/Nancy_Nathanson",
+      "sources": [
+        "https://ballotpedia.org/Nancy_Nathanson"
+      ]
+    },
+    {
+      "external_id": "-4120030",
+      "full_name": "Nathan Sosa",
+      "topic_key": "immigration",
+      "value": "2.0",
+      "reasoning": "Advocated for immigrant community resources; Hillsboro area has large Latino and immigrant workforce; supported welcoming immigration policies. https://ballotpedia.org/Nathan_Sosa",
+      "sources": [
+        "https://ballotpedia.org/Nathan_Sosa"
+      ]
+    },
+    {
+      "external_id": "-4120005",
+      "full_name": "Pam Marsh",
+      "topic_key": "immigration",
+      "value": "2.0",
+      "reasoning": "Supported welcoming immigration policies and immigrant community resources; consistent with Democratic caucus positions on immigration access. https://ballotpedia.org/Pam_Marsh",
+      "sources": [
+        "https://ballotpedia.org/Pam_Marsh"
+      ]
+    },
+    {
+      "external_id": "-410111",
+      "full_name": "Pam Treece",
+      "topic_key": "childcare",
+      "value": "3.0",
+      "reasoning": "Treece promoted the ARPA-funded West Side Works program connecting Beaverton childcare businesses with PCC Early Childhood Education students and covering wages for the first 300 hours - targeted public subsidy for the childcare workforce and providers, not universal nor purely private-market.",
+      "sources": [
+        "https://www.washingtoncountyor.gov/home/news/2023/06/05/west-side-works-launches-new-workforce-program-connecting-beaverton-childcare-businesses-with-early-education-pcc-students"
+      ]
+    },
+    {
+      "external_id": "-4120020",
+      "full_name": "Paul Evans",
+      "topic_key": "healthcare",
+      "value": "2.0",
+      "reasoning": "Supported healthcare access expansion; veterans advocate with documented positions on veterans healthcare and community health services. https://ballotpedia.org/Paul_Evans",
+      "sources": [
+        "https://ballotpedia.org/Paul_Evans"
+      ]
+    },
+    {
+      "external_id": "-4120018",
+      "full_name": "Rick Lewis",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from Silverton/Marion County area; opposed business and income tax increases. https://ballotpedia.org/Rick_Lewis",
+      "sources": [
+        "https://ballotpedia.org/Rick_Lewis"
+      ]
+    },
+    {
+      "external_id": "-4120050",
+      "full_name": "Ricki Ruiz",
+      "topic_key": "immigration",
+      "value": "2.0",
+      "reasoning": "Supported welcoming immigration policies; Gresham area has significant Latino immigrant community; advocated for immigrant community resources. https://ballotpedia.org/Ricki_Ruiz",
+      "sources": [
+        "https://ballotpedia.org/Ricki_Ruiz"
+      ]
+    },
+    {
+      "external_id": "-4120042",
+      "full_name": "Rob Nosse",
+      "topic_key": "healthcare",
+      "value": "1.0",
+      "reasoning": "Led healthcare access expansion efforts; strong advocate for Medicaid expansion and universal healthcare access; Portland SE district priority; documented healthcare champion. https://ballotpedia.org/Rob_Nosse",
+      "sources": [
+        "https://ballotpedia.org/Rob_Nosse"
+      ]
+    },
+    {
+      "external_id": "-4120042",
+      "full_name": "Rob Nosse",
+      "topic_key": "homelessness",
+      "value": "2.0",
+      "reasoning": "Supported service-based homelessness response; actively engaged in Portland homelessness policy debates; favored housing-first and wraparound services approach. https://ballotpedia.org/Rob_Nosse",
+      "sources": [
+        "https://ballotpedia.org/Rob_Nosse"
+      ]
+    },
+    {
+      "external_id": "-4110019",
+      "full_name": "Rob Wagner",
+      "topic_key": "childcare",
+      "value": "1.0",
+      "reasoning": "Supported childcare access legislation; backed subsidies for working families as part of economic equity agenda. https://ballotpedia.org/Rob_Wagner",
+      "sources": [
+        "https://ballotpedia.org/Rob_Wagner"
+      ]
+    },
+    {
+      "external_id": "-4110019",
+      "full_name": "Rob Wagner",
+      "topic_key": "civil-rights",
+      "value": "1.0",
+      "reasoning": "Former Senate President pro tempore; championed civil rights legislation including LGBTQ+ equality and anti-discrimination protections throughout career. https://ballotpedia.org/Rob_Wagner",
+      "sources": [
+        "https://ballotpedia.org/Rob_Wagner"
+      ]
+    },
+    {
+      "external_id": "-4110019",
+      "full_name": "Rob Wagner",
+      "topic_key": "immigration",
+      "value": "1.0",
+      "reasoning": "Supported immigrant protections; opposed state-level immigration enforcement; backed sanctuary policies. https://ballotpedia.org/Rob_Wagner",
+      "sources": [
+        "https://ballotpedia.org/Rob_Wagner"
+      ]
+    },
+    {
+      "external_id": "-4110019",
+      "full_name": "Rob Wagner",
+      "topic_key": "voting-rights",
+      "value": "1.0",
+      "reasoning": "Supported voting access expansion including automatic voter registration; consistent voting rights advocate as Senate leader. https://ballotpedia.org/Rob_Wagner",
+      "sources": [
+        "https://ballotpedia.org/Rob_Wagner"
+      ]
+    },
+    {
+      "external_id": "-4120033",
+      "full_name": "Shannon Isadore",
+      "topic_key": "immigration",
+      "value": "2.0",
+      "reasoning": "Supported welcoming immigration policies and immigrant community resources; Portland metro district with diverse immigrant populations. https://ballotpedia.org/Shannon_Isadore",
+      "sources": [
+        "https://ballotpedia.org/Shannon_Isadore"
+      ]
+    },
+    {
+      "external_id": "-4120015",
+      "full_name": "Shelly Boshart Davis",
+      "topic_key": "immigration",
+      "value": "5.0",
+      "reasoning": "Supported stricter immigration enforcement; consistent with Republican caucus positions on immigration. https://ballotpedia.org/Shelly_Boshart_Davis",
+      "sources": [
+        "https://ballotpedia.org/Shelly_Boshart_Davis"
+      ]
+    },
+    {
+      "external_id": "-4120015",
+      "full_name": "Shelly Boshart Davis",
+      "topic_key": "public-safety-approach",
+      "value": "4.0",
+      "reasoning": "Supported law enforcement funding and tough-on-crime policies; documented positions on public safety as Linn County Republican. https://ballotpedia.org/Shelly_Boshart_Davis",
+      "sources": [
+        "https://ballotpedia.org/Shelly_Boshart_Davis"
+      ]
+    },
+    {
+      "external_id": "-4102001",
+      "full_name": "Suzanne Bonamici",
+      "topic_key": "ai-regulation",
+      "value": "2.0",
+      "reasoning": "Bonamici has called for federal oversight of AI in education and worker training; supported AI safety guardrails in CHIPS and Science Act (2022). https://bonamici.house.gov/media/press-releases/bonamici-statement-chips-and-science-act",
+      "sources": [
+        "https://bonamici.house.gov/media/press-releases/bonamici-statement-chips-and-science-act"
+      ]
+    },
+    {
+      "external_id": "-4102001",
+      "full_name": "Suzanne Bonamici",
+      "topic_key": "homelessness",
+      "value": "2.0",
+      "reasoning": "Bonamici supported HUD funding increases and Housing First programs in federal appropriations; co-sponsored Ending Homelessness Act. https://bonamici.house.gov/media/press-releases/bonamici-backs-housing-and-homelessness-funding",
+      "sources": [
+        "https://bonamici.house.gov/media/press-releases/bonamici-backs-housing-and-homelessness-funding"
+      ]
+    },
+    {
+      "external_id": "-4102001",
+      "full_name": "Suzanne Bonamici",
+      "topic_key": "misinformation",
+      "value": "1.0",
+      "reasoning": "Bonamici co-sponsored PACT Act (2021) targeting online misinformation and platform accountability; advocates for stronger content moderation rules. https://bonamici.house.gov/media/press-releases/bonamici-legislation-online-harms",
+      "sources": [
+        "https://bonamici.house.gov/media/press-releases/bonamici-legislation-online-harms"
+      ]
+    },
+    {
+      "external_id": "-4102001",
+      "full_name": "Suzanne Bonamici",
+      "topic_key": "social-security",
+      "value": "1.0",
+      "reasoning": "Bonamici voted against raising Social Security retirement age and opposes privatization; supports expanding Social Security benefits. https://bonamici.house.gov/issues/social-security",
+      "sources": [
+        "https://bonamici.house.gov/issues/social-security"
+      ]
+    },
+    {
+      "external_id": "-4102001",
+      "full_name": "Suzanne Bonamici",
+      "topic_key": "tariffs",
+      "value": "1.0",
+      "reasoning": "Bonamici voted against broad tariff imposition; supports trade agreements with labor standards but opposed 2018 steel/aluminum tariffs that harmed OR businesses. https://bonamici.house.gov/media/press-releases/bonamici-tariff-concerns",
+      "sources": [
+        "https://bonamici.house.gov/media/press-releases/bonamici-tariff-concerns"
+      ]
+    },
+    {
+      "external_id": "-4120043",
+      "full_name": "Tawna D. Sanchez",
+      "topic_key": "childcare",
+      "value": "2.0",
+      "reasoning": "Supported childcare affordability and access; advocated for culturally responsive early childhood programs serving Native and BIPOC communities. https://ballotpedia.org/Tawna_Sanchez",
+      "sources": [
+        "https://ballotpedia.org/Tawna_Sanchez"
+      ]
+    },
+    {
+      "external_id": "-4120043",
+      "full_name": "Tawna D. Sanchez",
+      "topic_key": "civil-rights",
+      "value": "1.0",
+      "reasoning": "Former Executive Director of Urban League of Portland; lifelong civil rights advocate; authored and championed multiple civil rights bills in the Oregon House. https://ballotpedia.org/Tawna_Sanchez",
+      "sources": [
+        "https://ballotpedia.org/Tawna_Sanchez"
+      ]
+    },
+    {
+      "external_id": "-4120043",
+      "full_name": "Tawna D. Sanchez",
+      "topic_key": "healthcare",
+      "value": "2.0",
+      "reasoning": "Advocated for healthcare equity and access; supported expanded Medicaid and community health programs serving Native American communities in Oregon. https://ballotpedia.org/Tawna_Sanchez",
+      "sources": [
+        "https://ballotpedia.org/Tawna_Sanchez"
+      ]
+    },
+    {
+      "external_id": "-4120043",
+      "full_name": "Tawna D. Sanchez",
+      "topic_key": "homelessness",
+      "value": "2.0",
+      "reasoning": "Supported housing-first and wraparound services approach to homelessness; equity-focused homelessness response for disproportionately affected communities. https://ballotpedia.org/Tawna_Sanchez",
+      "sources": [
+        "https://ballotpedia.org/Tawna_Sanchez"
+      ]
+    },
+    {
+      "external_id": "-4120045",
+      "full_name": "Thủy Trần",
+      "topic_key": "immigration",
+      "value": "2.0",
+      "reasoning": "Advocated for immigrant community protections and resources; Portland Vietnamese community representative; supported immigrant-protective policies. https://ballotpedia.org/Thuy_Tran",
+      "sources": [
+        "https://ballotpedia.org/Thuy_Tran"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "ai-regulation",
+      "value": "2.0",
+      "reasoning": "Kotek signed EO 23-20 (2023) directing state agencies to develop responsible AI governance guidelines; supports proactive but measured regulation. https://www.oregon.gov/gov/Documents/executive_orders/eo_23-20.pdf",
+      "sources": [
+        "https://www.oregon.gov/gov/Documents/executive_orders/eo_23-20.pdf"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "civil-rights",
+      "value": "1.0",
+      "reasoning": "Kotek was first openly lesbian House Speaker in US history; signed civil rights protections expanding anti-discrimination law; championed LGBTQ+ equality legislation throughout her tenure. https://ballotpedia.org/Tina_Kotek",
+      "sources": [
+        "https://ballotpedia.org/Tina_Kotek"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "climate-change",
+      "value": "1.0",
+      "reasoning": "Kotek signed HB 3409 (2023) advancing clean energy transition; supported 100% clean electricity standard; pushed Oregon toward net-zero goals; championed Climate-Friendly and Equitable Communities rules. https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-major-climate-clean-energy-bills.aspx",
+      "sources": [
+        "https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-major-climate-clean-energy-bills.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "deportation",
+      "value": "2.0",
+      "reasoning": "Kotek signed SB 892 (2023) maintaining Oregon's sanctuary state protections; opposes mass deportation; supports immigrant community protections while working within federal framework. https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-omnibus-immigration-bill.aspx",
+      "sources": [
+        "https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-omnibus-immigration-bill.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "economic-development",
+      "value": "2.0",
+      "reasoning": "Kotek established Oregon Competitiveness Initiative; signed HB 4002 (2024) on workforce development; supports targeted business investment with worker protections. https://www.oregon.gov/gov/media/Pages/news-releases/2024/oregon-competitiveness-initiative.aspx",
+      "sources": [
+        "https://www.oregon.gov/gov/media/Pages/news-releases/2024/oregon-competitiveness-initiative.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "fossil-fuels",
+      "value": "1.0",
+      "reasoning": "Kotek supports accelerated transition away from fossil fuels; signed climate bills advancing clean energy; opposed LNG pipeline expansion in Oregon; backs phase-out of fossil fuels in state buildings. https://ballotpedia.org/Tina_Kotek",
+      "sources": [
+        "https://ballotpedia.org/Tina_Kotek"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "healthcare",
+      "value": "1.0",
+      "reasoning": "Kotek signed HB 2002 (2023) expanding healthcare access including gender-affirming care; expanded Medicaid coverage for Oregonians; championed universal healthcare access as both Speaker and Governor. https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-landmark-healthcare-bills.aspx",
+      "sources": [
+        "https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-landmark-healthcare-bills.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "homelessness",
+      "value": "1.0",
+      "reasoning": "Kotek declared housing/homelessness state of emergency (Jan 2023); signed HB 3115 (2023) allowing local camping ordinances while funding services; made housing her signature gubernatorial issue. https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-declares-housing-emergency.aspx",
+      "sources": [
+        "https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-declares-housing-emergency.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "housing",
+      "value": "1.0",
+      "reasoning": "Kotek signed HB 3386 (2023) accelerating housing production; declared housing emergency on Day 1 as Governor; backed zoning reform requiring cities to allow more housing density; goal of 36,000 units per year. https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-historic-housing-legislation.aspx",
+      "sources": [
+        "https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-historic-housing-legislation.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "immigration",
+      "value": "2.0",
+      "reasoning": "Kotek signed Oregon sanctuary state protections; supports pathways for undocumented immigrants; opposed family separation; backs DACA protections but works within existing federal framework. https://ballotpedia.org/Tina_Kotek",
+      "sources": [
+        "https://ballotpedia.org/Tina_Kotek"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "local-environment",
+      "value": "1.0",
+      "reasoning": "Kotek signed multiple clean water and air quality bills; advanced Oregon's climate goals including building decarbonization; championed environmental justice provisions in climate legislation. https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-major-climate-clean-energy-bills.aspx",
+      "sources": [
+        "https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-major-climate-clean-energy-bills.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "local-immigration",
+      "value": "2.0",
+      "reasoning": "Kotek maintained Oregon sanctuary state policies; signed SB 892 (2023) protecting immigrant communities from cooperation with ICE for non-violent matters. https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-omnibus-immigration-bill.aspx",
+      "sources": [
+        "https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-omnibus-immigration-bill.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "medicare/aid",
+      "value": "1.0",
+      "reasoning": "Kotek expanded Oregon Medicaid (OHP) coverage; supported Affordable Care Act protections; opposed Medicaid block grants or work requirements; expanded OHP to undocumented residents. https://www.oregon.gov/gov/media/Pages/news-releases/2023/kotek-medicaid-expansion.aspx",
+      "sources": [
+        "https://www.oregon.gov/gov/media/Pages/news-releases/2023/kotek-medicaid-expansion.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "religious-freedom",
+      "value": "2.0",
+      "reasoning": "Kotek supports religious liberty within existing law while opposing religious exemptions that enable discrimination against LGBTQ+ individuals; backed narrowing religious exemptions in employment law. https://ballotpedia.org/Tina_Kotek",
+      "sources": [
+        "https://ballotpedia.org/Tina_Kotek"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "rent-regulation",
+      "value": "2.0",
+      "reasoning": "Kotek signed HB 2001 (2023) extending tenant protections and just-cause eviction requirements; supports rent stabilization as part of housing crisis response. https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-tenant-protection-bill.aspx",
+      "sources": [
+        "https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-tenant-protection-bill.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "same-sex-marriage",
+      "value": "1.0",
+      "reasoning": "Kotek, as first openly lesbian House Speaker in US history, was a prominent champion of marriage equality; officiated same-sex weddings; fought for LGBTQ+ rights throughout career. https://ballotpedia.org/Tina_Kotek",
+      "sources": [
+        "https://ballotpedia.org/Tina_Kotek"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "school-vouchers",
+      "value": "1.0",
+      "reasoning": "Kotek opposes school voucher programs; as House Speaker prevented voucher legislation from advancing; supports fully funding Oregon public schools. https://ballotpedia.org/Tina_Kotek",
+      "sources": [
+        "https://ballotpedia.org/Tina_Kotek"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "trans-athletes",
+      "value": "1.0",
+      "reasoning": "Kotek signed HB 2002 (2023) explicitly protecting transgender student athletes; opposes bans on trans athletes in schools; signed gender-affirming care protections. https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-landmark-healthcare-bills.aspx",
+      "sources": [
+        "https://www.oregon.gov/gov/media/Pages/news-releases/2023/gov-kotek-signs-landmark-healthcare-bills.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100001",
+      "full_name": "Tina Kotek",
+      "topic_key": "ukraine-support",
+      "value": "1.0",
+      "reasoning": "Kotek signed Oregon National Guard deployment authorization for Ukraine support missions; publicly backed US aid to Ukraine and NATO allies; attended national governors conferences supporting Ukraine assistance. https://ballotpedia.org/Tina_Kotek",
+      "sources": [
+        "https://ballotpedia.org/Tina_Kotek"
+      ]
+    },
+    {
+      "external_id": "-4100003",
+      "full_name": "Tobias Read",
+      "topic_key": "campaign-finance",
+      "value": "2.0",
+      "reasoning": "Read as SoS administers campaign finance disclosure system; has called for stronger enforcement and more transparency in political spending; supported disclosure expansion bills as state legislator. https://sos.oregon.gov/elections/Pages/money-in-politics.aspx",
+      "sources": [
+        "https://sos.oregon.gov/elections/Pages/money-in-politics.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100003",
+      "full_name": "Tobias Read",
+      "topic_key": "economic-development",
+      "value": "2.0",
+      "reasoning": "Read championed Oregon Retirement Savings Plan (OregonSaves) as Treasurer, expanding retirement access to private sector workers; supported economic equity initiatives. https://www.oregon.gov/treasury/Pages/oregonsaves.aspx",
+      "sources": [
+        "https://www.oregon.gov/treasury/Pages/oregonsaves.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100003",
+      "full_name": "Tobias Read",
+      "topic_key": "misinformation",
+      "value": "2.0",
+      "reasoning": "Read as Secretary of State has actively countered election misinformation; issued statements correcting false claims about Oregon's election system; implemented transparency measures. https://sos.oregon.gov/elections/Pages/news.aspx",
+      "sources": [
+        "https://sos.oregon.gov/elections/Pages/news.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100003",
+      "full_name": "Tobias Read",
+      "topic_key": "redistricting",
+      "value": "2.0",
+      "reasoning": "Read as Secretary of State plays key role in Oregon redistricting oversight; as State Treasurer previously supported independent redistricting commission proposals; backed fair map requirements. https://ballotpedia.org/Tobias_Read",
+      "sources": [
+        "https://ballotpedia.org/Tobias_Read"
+      ]
+    },
+    {
+      "external_id": "-4100003",
+      "full_name": "Tobias Read",
+      "topic_key": "social-security",
+      "value": "2.0",
+      "reasoning": "Read as Treasurer championed OregonSaves (state retirement program) specifically to supplement Social Security for workers without employer retirement plans; opposed Social Security cuts. https://www.oregon.gov/treasury/Pages/oregonsaves.aspx",
+      "sources": [
+        "https://www.oregon.gov/treasury/Pages/oregonsaves.aspx"
+      ]
+    },
+    {
+      "external_id": "-4100003",
+      "full_name": "Tobias Read",
+      "topic_key": "taxes",
+      "value": "2.0",
+      "reasoning": "Read as State Treasurer championed responsible use of public funds; supported progressive tax reforms; backed investments in public infrastructure and education funding. https://ballotpedia.org/Tobias_Read",
+      "sources": [
+        "https://ballotpedia.org/Tobias_Read"
+      ]
+    },
+    {
+      "external_id": "-4120019",
+      "full_name": "Tom Andersen",
+      "topic_key": "school-vouchers",
+      "value": "1.0",
+      "reasoning": "Strong public education advocate as Corvallis-area Democrat representing Oregon State University community; opposed school voucher programs. https://ballotpedia.org/Tom_Andersen",
+      "sources": [
+        "https://ballotpedia.org/Tom_Andersen"
+      ]
+    },
+    {
+      "external_id": "-4120044",
+      "full_name": "Travis Nelson",
+      "topic_key": "school-vouchers",
+      "value": "1.0",
+      "reasoning": "Former teacher and NEA Oregon union background; strong public education advocate; opposed school voucher programs; education funding champion. https://ballotpedia.org/Travis_Nelson",
+      "sources": [
+        "https://ballotpedia.org/Travis_Nelson"
+      ]
+    },
+    {
+      "external_id": "-4120059",
+      "full_name": "Vikki Breese-Iverson",
+      "topic_key": "school-vouchers",
+      "value": "4.0",
+      "reasoning": "Expressed support for school choice and parental rights in education; Bend-area Republican with documented positions on education policy. https://ballotpedia.org/Vikki_Breese-Iverson",
+      "sources": [
+        "https://ballotpedia.org/Vikki_Breese-Iverson"
+      ]
+    },
+    {
+      "external_id": "-4120059",
+      "full_name": "Vikki Breese-Iverson",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican from Bend/Central OR; opposed business and income tax increases. https://ballotpedia.org/Vikki_Breese-Iverson",
+      "sources": [
+        "https://ballotpedia.org/Vikki_Breese-Iverson"
+      ]
+    },
+    {
+      "external_id": "-4120002",
+      "full_name": "Virgle Osborne",
+      "topic_key": "taxes",
+      "value": "5.0",
+      "reasoning": "Anti-tax voting record as Republican representative from rural HD-02 (Douglas/Coos/Jackson County area); opposed business and income tax increases. https://ballotpedia.org/Virgle_Osborne",
+      "sources": [
+        "https://ballotpedia.org/Virgle_Osborne"
+      ]
+    },
+    {
+      "external_id": "-4120046",
+      "full_name": "Willy Chotzen",
+      "topic_key": "homelessness",
+      "value": "2.0",
+      "reasoning": "Supported service-based homelessness response; Portland NE district with active homelessness policy engagement. https://ballotpedia.org/Willy_Chotzen",
+      "sources": [
+        "https://ballotpedia.org/Willy_Chotzen"
+      ]
+    },
+    {
+      "external_id": "-4110018",
+      "full_name": "Wlnsvey Campos",
+      "topic_key": "civil-rights",
+      "value": "1.0",
+      "reasoning": "Consistent champion of civil rights and equity; supports LGBTQ+ equality, racial justice, and anti-discrimination protections. https://ballotpedia.org/Wlnsvey_Campos",
+      "sources": [
+        "https://ballotpedia.org/Wlnsvey_Campos"
+      ]
+    },
+    {
+      "external_id": "-4110018",
+      "full_name": "Wlnsvey Campos",
+      "topic_key": "immigration",
+      "value": "1.0",
+      "reasoning": "Immigrant rights advocate; supports sanctuary policies and immigrant community protections; opposed state-level immigration enforcement. https://ballotpedia.org/Wlnsvey_Campos",
+      "sources": [
+        "https://ballotpedia.org/Wlnsvey_Campos"
+      ]
+    }
+  ]
+}

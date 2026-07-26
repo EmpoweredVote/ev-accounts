@@ -423,3 +423,109 @@ describe('fecAdapter FEC-04 — amendment supersession (original_sub_id retireme
     expect(deleteCallCount).toBe(0);
   });
 });
+
+describe('fecAdapter FEC-04b — filing-level supersession (real prod double-count)', () => {
+  beforeEach(() => {
+    poolQueryMock.mockReset();
+  });
+
+  /**
+   * Modelled on the actual double-count reproduced in prod 2026-07-25: committee C00256925,
+   * report 12P/2020. The same $250 2020-05-07 contribution was stored twice — once from
+   * file 1409022 (loaded 2020-05-30) and again from file 1484476 (the December amendment).
+   * Note the two versions carry DIFFERENT transaction_ids, which is why transaction_id
+   * cannot be the dedup key.
+   */
+  function filingRecord(overrides: Record<string, unknown> = {}): Record<string, unknown> {
+    return {
+      sub_id: '4123020201986704254',
+      contributor_name: 'Denise Chamblee',
+      contribution_receipt_amount: 250,
+      contribution_receipt_date: '2020-05-07',
+      two_year_transaction_period: 2020,
+      memo_code: null,
+      original_sub_id: null,
+      committee_id: 'C00256925',
+      report_year: 2020,
+      report_type: '12P',
+      file_number: 1484476,
+      transaction_id: '2208859',
+      load_date: '2020-12-30T00:00:00',
+      ...overrides,
+    };
+  }
+
+  it('collects the HIGHEST file_number per (committee, report_year, report_type)', async () => {
+    const adapter = createFecAdapter('2020');
+    const result = await adapter.normalize(
+      {
+        records: [
+          filingRecord({ sub_id: 'A', file_number: 1409022, transaction_id: 'VSHCSM0N319' }),
+          filingRecord({ sub_id: 'B', file_number: 1484476 }),
+          // a DIFFERENT report of the same committee must be tracked separately
+          filingRecord({ sub_id: 'C', report_type: 'Q3', file_number: 1484480 }),
+        ],
+        totalExpected: 3,
+        totalFetched: 3,
+      },
+      ps
+    );
+
+    expect(result.supersededFilings).toHaveLength(2);
+    const p12 = result.supersededFilings!.find((f) => f.reportType === '12P')!;
+    expect(p12.maxFileNumber).toBe(1484476);
+    expect(p12.committeeId).toBe('C00256925');
+    expect(p12.reportYear).toBe(2020);
+    const q3 = result.supersededFilings!.find((f) => f.reportType === 'Q3')!;
+    expect(q3.maxFileNumber).toBe(1484480);
+  });
+
+  it('omits supersededFilings when the identifying fields are absent (pre-fix / bulk rows)', async () => {
+    const adapter = createFecAdapter('2020');
+    const result = await adapter.normalize(
+      {
+        records: [{
+          sub_id: 'NO-FILING-FIELDS',
+          contributor_name: 'Jane Doe',
+          contribution_receipt_amount: 10,
+          contribution_receipt_date: '2020-05-07',
+          two_year_transaction_period: 2020,
+          memo_code: null,
+        }],
+        totalExpected: 1,
+        totalFetched: 1,
+      },
+      ps
+    );
+    expect(result.supersededFilings).toBeUndefined();
+  });
+
+  it('retires EARLIER filings scoped by politician_source_id, guarded on file_number presence, and never deletes the just-inserted max', async () => {
+    const deleteCalls: { sql: string; params: unknown[] }[] = [];
+    poolQueryMock.mockImplementation((sql: string, params: unknown[]) => {
+      if (/^\s*DELETE/i.test(sql)) {
+        deleteCalls.push({ sql, params });
+        return Promise.resolve({ rows: [], rowCount: 3 });
+      }
+      return Promise.resolve({ rows: [], rowCount: 0 });
+    });
+
+    const adapter = createFecAdapter('2020');
+    const normalized = await adapter.normalize(
+      { records: [filingRecord()], totalExpected: 1, totalFetched: 1 },
+      ps
+    );
+    await adapter.upsert(normalized);
+
+    const filingDelete = deleteCalls.find((c) => /file_number/i.test(c.sql));
+    expect(filingDelete).toBeDefined();
+    // scoped by politician_source_id FIRST so the DELETE rides idx_contrib_src_cycle
+    expect(filingDelete!.sql).toMatch(/politician_source_id\s*=\s*\$1/);
+    expect(filingDelete!.sql).toMatch(/data_source\s*=\s*'fec'/);
+    // pre-fix rows (no file_number stored) must never be matched
+    expect(filingDelete!.sql).toMatch(/raw_record\s*\?\s*'file_number'/);
+    // strictly-less-than, so the rows just inserted (which ARE the max) are never deleted
+    expect(filingDelete!.sql).toMatch(/file_number'\)::bigint\s*<\s*\$5/);
+    expect(filingDelete!.params).toEqual([ps.id, 'C00256925', 2020, '12P', 1484476]);
+  });
+});

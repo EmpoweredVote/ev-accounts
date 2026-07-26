@@ -35,3 +35,24 @@ jobs:
       # and secrets; run those separately, not on every PR.
       - name: Unit tests
         run: npm run test:unit
+
+  migrations:
+    name: migration numbering
+    runs-on: ubuntu-latest
+    # Only meaningful on PRs — it compares files added on the branch against the base.
+    if: github.event_name == 'pull_request'
+    steps:
+      # fetch-depth: 0 so the base branch is available to diff against.
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # No npm install: the check is dependency-free, so it runs straight off node.
+      - name: Check for duplicate migration numbers
+        run: node backend/scripts/check-migration-numbers.mjs
+        env:
+          BASE_REF: origin/${{ github.base_ref }}
