@@ -107,10 +107,12 @@ export async function searchPoliticians(
         END                                                                    AS jurisdiction_tier
       FROM essentials.politicians p
       -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
-      -- is_vacant must constrain the MATCH, not a downstream join. 5 offices in prod carry a
-      -- current term while still flagged is_vacant (e.g. John B. Muns, Mayor + a Council seat
-      -- flagged vacant); filtering after the match would emit a spurious all-NULL office row for
-      -- their holder. Kept as one derived join so the semantics match the old single-join form.
+      -- is_vacant must constrain the MATCH, not a downstream join: for an office that carries a
+      -- current term while still flagged is_vacant, filtering after the match emits a spurious
+      -- all-NULL office row for its holder. Migration 1465 reconciled the 5 prod offices that were
+      -- in that state (John B. Muns's phantom Plano Place 6 seat among them), so the count is 0
+      -- today. The derived join stays: nothing in the schema PREVENTS the state recurring -- a
+      -- stale roster sync re-creates it -- and this form also matches the old single-join semantics.
       LEFT JOIN (
         SELECT och.politician_id AS holder_id, o.*
           FROM essentials.office_current_holder och

@@ -2207,9 +2207,12 @@ export async function searchDonors(rawQuery: string): Promise<DonorSearchRespons
     FROM grouped gr
     JOIN essentials.politicians p ON p.id = gr.essentials_politician_id
     -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
-    -- is_vacant constrains the MATCH, not a downstream join -- 5 offices hold a current term while
-    -- still flagged is_vacant, and filtering after the match would add a duplicate row with no
-    -- office label. This query has no DISTINCT ON to absorb that, so the shape matters.
+    -- is_vacant constrains the MATCH, not a downstream join: an office that holds a current term
+    -- while still flagged is_vacant would otherwise add a duplicate row with no office label, and
+    -- this query has no DISTINCT ON to absorb that. Migration 1465 reconciled the 5 offices that
+    -- were in that state, so the count is 0 today -- the shape stays because nothing PREVENTS the
+    -- state recurring (a stale roster sync is all it takes) and the derived join is correct either
+    -- way.
     LEFT JOIN (
       SELECT och.politician_id AS holder_id, o.*
         FROM essentials.office_current_holder och
