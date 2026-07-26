@@ -102,11 +102,16 @@ On certification: `py scripts/banners/upload_banner.py --file <final>.jpg --dest
 then add `bend: { state: 'OR', src: '…/cities/bend.jpg' }` to `CURATED_LOCAL` + the attribution
 comment block.
 
-## 3. Headshot pins — 6 of 13 CLEARED 2026-07-26 (migration 1477), 7 remain
+## 3. Headshot pins — 7 of 13 CLEARED 2026-07-26 (migrations 1477 + 1478), 6 remain
 
-31 of 38 now imported. Wave 2 (mig **1477**) cleared **Rupert, Connally, Sabbadini, Cummiskey,
-Reinholtz, Summers** — all 600×750, `press_use`, verified serving and reaching the live elections
-API. Review artifact: `claude.ai/code/artifact/d3dc02b2-de55-4696-98d5-3622d3676de9`.
+**32 of 38 now imported.** Wave 2 (mig **1477**) cleared **Rupert, Connally, Sabbadini, Cummiskey,
+Reinholtz, Summers**; mig **1478** added **McLaughlin**. All 600×750, `press_use`, verified serving
+and reaching the live elections API. Review artifact:
+`claude.ai/code/artifact/d3dc02b2-de55-4696-98d5-3622d3676de9`.
+
+**McLaughlin's came from the STANCE research, not the headshot sweep** — his KTVZ press release
+links **`votemacforsheriff.com`**, whose hero is a 7008×4672 professional portrait. That domain is
+in neither wave-1 list. Cheapest way to find a candidate's real site: read their own press release.
 
 **🔑 WHY THE "DEAD" SITES WERE NOT DEAD — reuse this before declaring any campaign site a loss.**
 The wave-1 trail below recorded most of these as placeholder/logo/theme-asset dead ends. That was a
@@ -140,19 +145,18 @@ The wave-1 trail below recorded most of these as placeholder/logo/theme-asset de
 - **`deschutes.org` now redirects to `deschutescounty.gov`** (CMS migration), so every wave-1
   `deschutes.org/...` path in this file is a redirect.
 
-### Still pinned (7)
+### Still pinned (6)
 | Person | Blocker | Unlock |
 |---|---|---|
 | **Bill Kuhn** `-4101713` Treasurer, *sitting* | No portrait on any county page; name appears only in the "Investment Portfolio May 2026" PDF signature line. `billkuhn4treasurer.com` dead. | Nov pamphlet |
 | **Robert Tintle** `-4101727` Treasurer cand., *sitting county CFO* | Only image anywhere is a portrait **inset inside a KTVZ graphic** (`ktvz.b-cdn.net/2022/09/Robert-Tintle-Deschutes-County-CFO.jpg`, 658×430) — a head crop needs ~3× upscale, worse than the pamphlet photos already rejected. | Nov pamphlet |
-| **James (Mac) McLaughlin** `-4101726` Sheriff cand. | Both domains gone (see correction above); not on the DCSO leadership roster; the one news image is a **video screenshot from a misconduct story** — fails the "flattering" bar. | Nov pamphlet |
 | **Jonathan Curtis** `-4101725` Clerk cand. | No campaign site; no coverage portrait. | Nov pamphlet |
 | **Ron (Rondo) Boozell** `-4105831` Mayor cand. | `rondo2026.org` is entirely activist graphics (BlackDogBandW, DIGNITYforALL, warCriminals…) — no portrait of him on it. | Nov pamphlet |
 | **Morgan Schmidt** `-4101724` Comm. P5 cand. | `morganlovesoregon.com` has only the logo, an Unsplash stock image, and one 2000×1125 landscape in which she is a small distant figure. No `/about` page. | news / site refresh |
 | **Dan Sorrells** `-4105834` Council P6 cand. | Instagram `@citycouncildan` only; social-media profile photos excluded on licensing grounds. | Sept city forum |
 
-Four of the seven converge on the **November county voters' pamphlet** — grayscale and ~219px, so
-below the normal bar, but for Kuhn/Tintle/Curtis/McLaughlin it may be the only image that will ever
+Four of the six converge on the **November county voters' pamphlet** — grayscale and ~219px, so
+below the normal bar, but for Kuhn/Tintle/Curtis/Boozell it may be the only image that will ever
 exist. Decide then whether the bar bends for a sitting official with no alternative.
 
 ### Wave-1 search trail (2026-07-24) — ⚠️ SUPERSEDED IN PART, read section 3 above first
@@ -174,7 +178,9 @@ outright wrong — see the corrections in section 3.
   1350×1800**, `rondo2026.org` (no og:image) **→ confirmed no portrait exists**,
   `macforsheriff.com` / `mclaughlinforsheriff.com` (og:image is a theme asset) **→ 🔴 WRONG:
   macforsheriff.com now serves a DIFFERENT PERSON (Wyatt McIntyre, Sebastian County AR) and the
-  other is a parked lander. Do not pull an image from either.**
+  other is a parked lander. Do not pull an image from either. His REAL site is
+  `votemacforsheriff.com` — found in his own press release, and the source of the mig-1478
+  headshot.**
 - **Rejected source:** the Deschutes County May 2026 voters' pamphlet
   (`DocumentCenter/View/5835`) does contain statement photos for Connally (p21), Sabbadini (p22),
   Boozell + Imhoff (p24) and Schmidt (p25), but they are **grayscale ~219×256** — below the
