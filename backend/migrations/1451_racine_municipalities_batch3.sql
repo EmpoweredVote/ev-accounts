@@ -1,5 +1,5 @@
 -- 1430_racine_municipalities_batch3.sql
--- 4 more Racine County municipalities (24 officials), following the 1424/1425/1426 pattern.
+-- 4 more Racine County municipalities (24 officials), following the 1447/1448/1449 pattern.
 -- Brings municipal coverage to 15 of 17. GENERATED -- regenerate, do not hand-edit.
 -- STRUCTURAL. Idempotent.
 --

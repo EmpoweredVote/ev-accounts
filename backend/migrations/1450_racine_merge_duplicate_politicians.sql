@@ -4,13 +4,13 @@
 --
 -- WHY: Racine County has a systemic pattern of one person holding a county seat AND a
 --   municipal seat (or being a sitting municipal official who is also a candidate). Migrations
---   1385/1422/1424/1425/1426 deliberately created SEPARATE politician rows and flagged them,
+--   1446/1444/1447/1448/1449 deliberately created SEPARATE politician rows and flagged them,
 --   because a matching name is not proof of a matching person. The cost of leaving them split
 --   is that one person's photo, stances, campaign finance and Compass answers scatter across
 --   two rows. This migration resolves all four in one pass, as intended.
 --
 -- KEEP RULE, applied uniformly: keep the record that already holds an office; when BOTH hold
---   offices, keep the COUNTY record (seeded first, in 1385). Re-point the loser's references,
+--   offices, keep the COUNTY record (seeded first, in 1446). Re-point the loser's references,
 --   then delete it.
 --
 --   person                keep (external_id)                     drop (external_id)
@@ -44,11 +44,11 @@
 --   politicians already hold more than one office — so one person holding two seats is an
 --   established shape, not a workaround.
 --
--- !! RE-RUN INTERACTION, important: migrations 1422/1424/1425/1426 guard their politician
+-- !! RE-RUN INTERACTION, important: migrations 1444/1447/1448/1449 guard their politician
 --   INSERTs on `external_id NOT EXISTS`, so re-running any of them AFTER this merge would
 --   RECREATE the dropped row. Three of the four then fail loudly and roll back, because their
---   own post-verify gates would break (1424 would see an orphan politician; 1425 would see a
---   3rd alderman in Burlington District 4; 1426 would see an 8th Waterford office). 1422 is
+--   own post-verify gates would break (1447 would see an orphan politician; 1448 would see a
+--   3rd alderman in Burlington District 4; 1449 would see an 8th Waterford office). 1444 is
 --   the exception: it would recreate Gina -5507092 as a harmless ORPHAN and still pass, since
 --   its race_candidates guard is keyed on (race_id, lower(full_name)) and that row already
 --   exists. Treat those four as superseded for these four external_ids: if any is re-run,
@@ -68,7 +68,7 @@
 --     first names, two different people. Confirmed, not a merge.
 --
 -- STILL OPEN, and genuinely not in the database yet: Steve Wicklund is both the AD-33 candidate
---   (seeded by 1422) and Union Grove's Village President. Union Grove is not seeded (its
+--   (seeded by 1444) and Union Grove's Village President. Union Grove is not seeded (its
 --   directory still shows expired terms), so there is no duplicate row to merge. Merge when
 --   Union Grove lands.
 BEGIN;
@@ -76,7 +76,7 @@ BEGIN;
 -- ── 1. Preserve the ballot spelling of the name we are about to drop ──
 INSERT INTO essentials.politician_name_aliases (politician_id, alias, source)
 SELECT p.id, 'Gina Cefalu Paulick',
-       'WEC Ballot Access Report 6.9.2026 ballot spelling; merged from politician external_id -5507092 by migration 1427'
+       'WEC Ballot Access Report 6.9.2026 ballot spelling; merged from politician external_id -5507092 by migration 1450'
 FROM essentials.politicians p
 WHERE p.external_id = -5512003
   AND NOT EXISTS (

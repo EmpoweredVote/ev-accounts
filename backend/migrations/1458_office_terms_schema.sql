@@ -6,10 +6,10 @@
 --   essentials.offices holds ONE politician_id, a point-in-time snapshot with no temporal
 --   dimension, so an election already decided but whose term starts later is unrepresentable.
 --   Chris Taylor (WI Supreme Court) and Anthony LoCoco (Court of Appeals District II, covering
---   Racine County) were certified 2026-04-07 and take office 2026-08-01; migration 1433 could
+--   Racine County) were certified 2026-04-07 and take office 2026-08-01; migration 1454 could
 --   only seed the circuit court and had to defer both. This makes occupancy a time series.
 --
--- Phase 2 (1438) backfills. Phase 3 moves read paths onto the view. Nothing reads this yet.
+-- Phase 2 (1459) backfills. Phase 3 moves read paths onto the view. Nothing reads this yet.
 --
 -- CONSTRAINT SEMANTICS — behaviour-tested against this database before writing, 7 cases:
 --   1. one open-ended term per office                    -> allowed
@@ -35,7 +35,7 @@
 --    Appeals District II, whose outgoing judge was never seeded), the INSERT alone is enough.
 --
 -- start_precision exists because sources routinely give only a year — Racine County's court page
---   says "2017 to Present". 1433 left date_seated NULL rather than invent 2017-01-01; here that
+--   says "2017 to Present". 1454 left date_seated NULL rather than invent 2017-01-01; here that
 --   can be recorded honestly as 2017-01-01 with precision='year'.
 --
 -- politician_id is NULLABLE on purpose: a vacancy is a fact about a span of time, not a missing

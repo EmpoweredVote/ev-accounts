@@ -58,7 +58,7 @@ ALTER TABLE essentials.race_candidates
 COMMENT ON COLUMN essentials.race_candidates.provisional_until IS
   'NULL = field is final as far as we know. A date = this row is a pre-resolution placeholder '
   'and must not be presented as a settled field on/after that date without re-verification. '
-  'Replaces expiry instructions that used to live as English prose inside source (migration 1435). '
+  'Replaces expiry instructions that used to live as English prose inside source (migration 1456). '
   'Stale when provisional_until <= CURRENT_DATE AND (last_verified_at IS NULL OR last_verified_at < provisional_until).';
 
 -- ── 2. Backfill: requires a provisional marker AND a parseable date AND NOT "decided" ──

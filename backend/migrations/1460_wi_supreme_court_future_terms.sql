@@ -1,9 +1,9 @@
 -- 1439_wi_supreme_court_future_terms.sql
 -- ADR 0002 phase 4: the Wisconsin Supreme Court, seeded WITH DATED TERMS — including the
--- Bradley -> Taylor hand-off that starts 2026-08-01. Idempotent. Requires 1437 + 1438.
+-- Bradley -> Taylor hand-off that starts 2026-08-01. Idempotent. Requires 1458 + 1459.
 --
 -- This is the case the whole ADR exists for. Chris Taylor was certified on 2026-04-07 but does
--- not take office until 2026-08-01. Before office_terms she was unrepresentable: migration 1433
+-- not take office until 2026-08-01. Before office_terms she was unrepresentable: migration 1454
 -- had to seed only the circuit court and defer this body entirely. Now she is simply a term with
 -- a future term_start, invisible until the date arrives, with nothing scheduled to make it happen.
 --
@@ -17,7 +17,7 @@
 -- TERM DATES ARE DERIVED, NOT INVENTED. Wisconsin Supreme Court terms are exactly 10 years and
 --   run August 1 -> July 31. Wikipedia/the court publish each seat's expiry year, so every
 --   term_start is (expiry - 10 years) on August 1. That is arithmetic on a published fact, which
---   is why start_precision is 'day' here rather than the 'year' fudge 1438 had to use.
+--   is why start_precision is 'day' here rather than the 'year' fudge 1459 had to use.
 --     Karofsky      2020-08-01 .. 2030-07-31   (Chief Justice)
 --     Ziegler       2017-08-01 .. 2027-07-31
 --     Bradley       2016-08-01 .. 2026-07-31   <- ends in 6 days
@@ -29,7 +29,7 @@
 --   Rebecca Bradley was appointed in Oct 2015 but her CURRENT term began by election in 2016, so
 --   how_started='elected' is correct for the term being recorded.
 --
--- CHIEF JUSTICE goes in judge_details.court_role, not the office title — consistent with 1433's
+-- CHIEF JUSTICE goes in judge_details.court_role, not the office title — consistent with 1454's
 --   treatment of the circuit court's chief judge. In Wisconsin the chief justice is chosen BY the
 --   justices for a 2-year term; it is a role layered on an ordinary seat, not a separate office.
 --   So all seven offices share the title 'Justice' and are guarded on politician_id (the
@@ -41,7 +41,7 @@
 --    offices.politician_id still says Bradley. Any read path still using the column will be
 --    WRONG from that date. Phase 3 (moving read paths onto current_office_holders) must therefore
 --    land before 2026-08-01 — six days. Until Aug 1 both agree, so applying this today is safe.
---    1438's zero-divergence assertion was a backfill check, not a standing invariant.
+--    1459's zero-divergence assertion was a backfill check, not a standing invariant.
 --
 -- Court of Appeals District II (Anthony LoCoco, also starting 2026-08-01, covering Racine) is
 --   deliberately NOT in this migration. It needs a 12-county union polygon under a custom
@@ -112,7 +112,7 @@ INSERT INTO essentials.office_terms
   (office_id, politician_id, term_start, term_end, start_precision, how_started, how_ended, source)
 SELECT o.id, p.id, v.term_start::date, v.term_end::date, 'day', 'elected',
        CASE WHEN v.term_end::date < '2036-01-01' THEN 'term_expired' ELSE NULL END,
-       'Wisconsin Supreme Court published seat expiry years; 10-year terms running Aug 1 - Jul 31 (ADR 0002 phase 4, migration 1439)'
+       'Wisconsin Supreme Court published seat expiry years; 10-year terms running Aug 1 - Jul 31 (ADR 0002 phase 4, migration 1460)'
 FROM (VALUES
     (-5530001::bigint, '2020-08-01'::text, '2030-07-31'::text),
     (-5530002,         '2017-08-01',       '2027-07-31'),

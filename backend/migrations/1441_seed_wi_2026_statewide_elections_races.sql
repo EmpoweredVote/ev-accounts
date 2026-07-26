@@ -30,7 +30,7 @@
 --   continue;`), so they are invisible until the nominees are attached after Aug 11 -- this
 --   deliberately avoids repeating the mixed-party pre-primary field currently sitting on the
 --   WI U.S. House general races. Attorney General is the exception: Kaul and Toney are each
---   unopposed in their primary, so the November field is already certain and IS seeded (1381).
+--   unopposed in their primary, so the November field is already certain and IS seeded (1442).
 --
 -- WI ticket nuance: Governor and Lieutenant Governor are nominated separately in the primary
 --   but run as a single ticket in November. They are modelled as separate races here, matching
@@ -80,7 +80,7 @@ WHERE el.name = 'WI 2026 Partisan Primary'
   );
 
 -- 3. 5 general-election races on the EXISTING 'WI 2026 Statewide General'.
---    primary_party NULL (antipartisan). Candidates attached in 1381 for AG only.
+--    primary_party NULL (antipartisan). Candidates attached in 1442 for AG only.
 INSERT INTO essentials.races (election_id, office_id, position_name, primary_party, seats, description)
 SELECT el.id, o.id, v.position_name, NULL, 1, v.note
 FROM essentials.elections el

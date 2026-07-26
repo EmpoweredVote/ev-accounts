@@ -5,7 +5,7 @@
 -- PRECONDITION: WI place geofences loaded. Caledonia is G4110 '5511950',
 --   Union Grove is G4110 '5581775'.
 --
--- Both were listed as unverifiable in 1426/1430. Both are resolved here by the April 7, 2026
+-- Both were listed as unverifiable in 1449/1451. Both are resolved here by the April 7, 2026
 -- spring-election results, which is the piece that was missing — the village directories alone
 -- were genuinely ambiguous.
 --
@@ -39,7 +39,7 @@
 --
 -- ═══ UNION GROVE — the directory's term labels were stale, the PEOPLE were right ═══
 -- The village directory shows trustees 2/4/6 with "(2024-2026)" terms, which expired in April
---   and is why 1426 skipped it. The April 7 2026 results resolve it: all three were RETURNED.
+--   and is why 1449 skipped it. The April 7 2026 results resolve it: all three were RETURNED.
 --     Seat #2 Kristy Boyle  — unopposed
 --     Seat #4 Adam Graf     — unopposed
 --     Seat #6 Eugene Bower  — won 706 to Shai Demers' 341
@@ -49,10 +49,10 @@
 --   before discarding a roster.
 --
 -- !! Steve Wicklund is REUSED, not duplicated. He is both Union Grove's Village President and
---    the AD-33 Republican candidate seeded by 1422 (external_id -5507044, which held a
+--    the AD-33 Republican candidate seeded by 1444 (external_id -5507044, which held a
 --    candidacy and no office). Union Grove sits inside Assembly District 33, and the names
 --    match exactly. Rather than create a second row and clean it up in a follow-up merge — the
---    mistake 1427 had to repair four times — his existing record simply gains this office.
+--    mistake 1450 had to repair four times — his existing record simply gains this office.
 --    He now holds 1 office + 1 candidacy.
 --
 -- Out of scope, consistent with the Town of Dover: Union Grove's Municipal Judge (Scott
@@ -61,7 +61,7 @@
 --
 -- Guards: both boards number their seats, so titles are unique and the
 --   (district_id, chamber_id, title) guard is correct here — unlike the unnumbered boards in
---   1426/1430, which needed the collegial politician_id guard.
+--   1449/1451, which needed the collegial politician_id guard.
 --
 -- ANTIPARTISAN: Wisconsin municipal offices are genuinely nonpartisan; party stays NULL. Note
 --   Wicklund's existing row also has party NULL even though he is a Republican Assembly
@@ -183,7 +183,7 @@ SELECT '5581775', 'Village of Union Grove', 'LOCAL', 'wi', 'G4110', 6
 WHERE EXISTS (SELECT 1 FROM essentials.geofence_boundaries WHERE geo_id='5581775' AND mtfcc='G4110')
   AND NOT EXISTS (SELECT 1 FROM essentials.districts WHERE geo_id='5581775' AND district_type='LOCAL' AND mtfcc='G4110');
 
--- 6 trustees are new; the President (Wicklund) already exists as -5507044 from 1422.
+-- 6 trustees are new; the President (Wicklund) already exists as -5507044 from 1444.
 INSERT INTO essentials.politicians
   (external_id, full_name, first_name, last_name, is_active, is_incumbent, is_appointed, is_vacant)
 SELECT v.external_id, v.full_name, v.first_name, v.last_name, true, true, false, false

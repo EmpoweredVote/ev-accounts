@@ -17,7 +17,7 @@ Wisconsin's April 2026 judicial elections were decided months ago and take offic
 2026**. Chris Taylor (Supreme Court) and Anthony LoCoco (Court of Appeals District II, which covers
 Racine County) are certified winners who do not yet hold office. Today there are only two options,
 both wrong: publish them early, or publish their predecessors and go stale on a known date. So
-migration 1433 seeded only the Racine County Circuit Court, whose ten judges are all currently
+migration 1454 seeded only the Racine County Circuit Court, whose ten judges are all currently
 sitting, and deferred the other two bodies entirely. That deferral is the cost of this gap, and it
 recurs every election cycle in every state.
 
@@ -47,7 +47,7 @@ detour:
 `politicians.valid_from` / `valid_to` are not the answer either. They are `text`, populated on
 ~0.8% of rows (701 of 85,018), never filtered on — only `SELECT`ed for display as
 `term_start`/`term_end` — and, decisively, they hang off the **person** rather than the tenure.
-**28 politicians already hold more than one office** (three of them created by the 1427 dedup
+**28 politicians already hold more than one office** (three of them created by the 1450 dedup
 merge), and a single `valid_from` on the person cannot describe two tenures with different
 windows. Add real date columns; leave those two alone and deprecate them.
 
@@ -95,7 +95,7 @@ CREATE INDEX office_terms_current_idx    ON essentials.office_terms (office_id)
 ```
 
 `start_precision` exists because sources routinely give a year and nothing more — Racine County's
-own court page says "2017 to Present". Migration 1433 left `date_seated` NULL rather than invent
+own court page says "2017 to Present". Migration 1454 left `date_seated` NULL rather than invent
 `2017-01-01`; with `start_precision` the year can be recorded honestly as `2017-01-01` +
 `precision='year'`.
 
@@ -128,7 +128,7 @@ $$;
 
 This mirrors two patterns already working in this codebase: `ELECTION_VISIBILITY_WINDOW` in
 `electionService.ts`, and `race_candidates.provisional_until` with
-`essentials.stale_provisional_candidates` from migration 1435. In all three, time is a fact about
+`essentials.stale_provisional_candidates` from migration 1456. In all three, time is a fact about
 the row and the read path evaluates it. Nothing has to remember to run.
 
 ## Migration path
@@ -149,7 +149,7 @@ Incremental, each phase independently shippable and reversible:
 5. **Drop** `offices.politician_id` once no read path uses it, and deprecate
    `politicians.valid_from`/`valid_to`.
 
-Prerequisite, already done: migration **1434** added the missing
+Prerequisite, already done: migration **1455** added the missing
 `offices.politician_id → politicians` foreign key and repaired two orphaned office rows. Building
 temporal logic on a column with no referential integrity would have inherited the problem.
 

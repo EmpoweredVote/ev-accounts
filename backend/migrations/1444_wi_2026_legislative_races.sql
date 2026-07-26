@@ -3,7 +3,7 @@
 -- race shells, across all 17 Senate districts and 99 Assembly districts up this cycle.
 -- GENERATED -- do not hand-edit; regenerate (see PROVENANCE).
 --
--- PRECONDITIONS: 1380 (creates the 'WI 2026 Partisan Primary' election) and 1382
+-- PRECONDITIONS: 1441 (creates the 'WI 2026 Partisan Primary' election) and 1443
 --   (creates the 132 legislative offices). Inserts ZERO rows without both.
 --
 -- Wisconsin elects ALL 99 Assembly seats every 2 years and HALF the Senate; 2026 is the
@@ -34,7 +34,7 @@
 --   Never written to race_candidates, and not written to the new politician rows.
 --
 -- INCUMBENTS: 97 of the 256 primary candidates are sitting members seeking
---   re-election. Those REUSE the politician rows seeded by 1382 (external_id -5505xxx /
+--   re-election. Those REUSE the politician rows seeded by 1443 (external_id -5505xxx /
 --   -5506xxx) so their photo and email carry onto the election card, rather than creating
 --   duplicates. race_candidates.full_name keeps the BALLOT name where it differs from the
 --   roster name -- e.g. Robert Wittke (AD 63) is "Bob Wittke" in the roster, Nate
@@ -61,7 +61,7 @@
 --     SEN D9: Christian Ellis (Independent)
 --     SEN D15: Christopher Dean (Serving People Not Politicians)
 --
--- General races are candidate-less on purpose (same rationale as 1380): the primary has
+-- General races are candidate-less on purpose (same rationale as 1441): the primary has
 --   not happened. ElectionsView hides candidate-less races, so they stay invisible until
 --   nominees are attached.
 BEGIN;
@@ -887,7 +887,7 @@ BEGIN
    WHERE e.name='WI 2026 Partisan Primary' AND d.state='wi'
      AND d.district_type IN ('STATE_UPPER','STATE_LOWER');
   IF n_prim <> 220 THEN
-    RAISE EXCEPTION 'primary legislative races: got %, want 220 (is 1382 applied?)', n_prim;
+    RAISE EXCEPTION 'primary legislative races: got %, want 220 (is 1443 applied?)', n_prim;
   END IF;
 
   SELECT count(*) INTO n_gen FROM essentials.races r

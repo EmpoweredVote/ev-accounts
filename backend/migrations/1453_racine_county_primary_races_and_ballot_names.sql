@@ -27,7 +27,7 @@
 --     Racine County Clerk of Circuit Ct  R: Amy Vanderhoef   (D: write-in only, no candidate)
 --
 --   Sheriff is an OPEN SEAT: incumbent Christopher Schmaling (-5510005) is not on the ballot and
---   is retiring at term end, so he gets no candidate row — the open-seat convention 1420 used
+--   is retiring at term end, so he gets no candidate row — the open-seat convention 1442 used
 --   for Tiffany. Amy Vanderhoef (-5510006) IS the sitting Clerk of Circuit Court seeking
 --   re-election, so her existing politician row is REUSED and flagged is_incumbent.
 --
@@ -68,7 +68,7 @@ UPDATE essentials.race_candidates rc
 
 -- keep the prior spellings searchable
 INSERT INTO essentials.politician_name_aliases (politician_id, alias, source)
-SELECT p.id, v.alias, 'prior stored spelling; ballot form adopted by migration 1432 per the 2026-08-11 sample ballot'
+SELECT p.id, v.alias, 'prior stored spelling; ballot form adopted by migration 1453 per the 2026-08-11 sample ballot'
 FROM (VALUES
     (-550104::bigint, 'Lorenzo Santos'::text),
     (-559041,         'Dylan Helmenstine')

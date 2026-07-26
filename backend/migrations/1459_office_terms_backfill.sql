@@ -2,7 +2,7 @@
 -- ADR 0002 phase 2: give every currently-occupied office one open-ended term, so that
 -- essentials.current_office_holders reproduces today's answers exactly. Idempotent.
 --
--- Requires 1437. Changes no existing behaviour: nothing reads office_terms until phase 3.
+-- Requires 1458. Changes no existing behaviour: nothing reads office_terms until phase 3.
 --
 -- SCOPE — occupied offices only. Of 83,186 office rows, 82,329 have a politician_id and 857 do
 --   not. Only the 82,329 get a term.
@@ -24,7 +24,7 @@
 --   per office, from real sources.
 --
 --   Consequence to expect in phase 4: because an open-ended term is an INFINITE range, seating a
---   successor in one of these offices requires closing the backfilled term first (see 1437's
+--   successor in one of these offices requires closing the backfilled term first (see 1458's
 --   header). That is the intended behaviour and the reason the exclusion constraint exists.
 --
 -- EQUIVALENCE IS THE POINT. The gate below asserts that current_office_holders and
@@ -35,7 +35,7 @@ BEGIN;
 INSERT INTO essentials.office_terms
   (office_id, politician_id, term_start, term_end, start_precision, how_started, source)
 SELECT o.id, o.politician_id, NULL, NULL, 'unknown', NULL,
-       'backfill from essentials.offices.politician_id (ADR 0002 phase 2, migration 1438)'
+       'backfill from essentials.offices.politician_id (ADR 0002 phase 2, migration 1459)'
 FROM essentials.offices o
 WHERE o.politician_id IS NOT NULL
   AND NOT EXISTS (

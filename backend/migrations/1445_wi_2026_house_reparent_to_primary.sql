@@ -6,7 +6,7 @@
 --   because no primary election record existed yet (source text: "provisional pre-primary
 --   field, cull >= 2026-08-12"). The result is a general-election card that lists Democrats
 --   and Republicans together as if they were all running against each other in November --
---   e.g. WI-1 showed Steil alongside all four Democrats. 1380 has since created the
+--   e.g. WI-1 showed Steil alongside all four Democrats. 1441 has since created the
 --   'WI 2026 Partisan Primary' election, so the field now has a correct home.
 --
 -- NOT A DELETE: the 31 rows are RE-PARENTED with UPDATE ... SET race_id, preserving row
@@ -21,7 +21,7 @@
 --   until the party nominees are attached after 2026-08-11, so those three cards are
 --   INCOMPLETE (though not wrong) in the interim. CD1/2/5/7/8 general races go empty and are
 --   hidden by ElectionsView. The alternative -- deleting verified ballot-qualified candidates
---   to force every general race empty for consistency with 1383 -- was rejected as the worse
+--   to force every general race empty for consistency with 1444 -- was rejected as the worse
 --   trade. Attach all November fields together after the primary.
 --
 -- ALSO FIXES TWO OMISSIONS found by re-parsing the WEC Ballot Access Report 6.9.2026 against
@@ -85,7 +85,7 @@ WHERE NOT EXISTS (SELECT 1 FROM essentials.politicians WHERE external_id = -5503
 --    Matches only rows still sitting on a general race, so this is idempotent.
 UPDATE essentials.race_candidates rc
    SET race_id = pr.id,
-       source  = 'WEC Ballot Access Report 6.9.2026; placed on the Aug-11 partisan primary by migration 1384 (was seeded onto the Nov-3 general by 1221)'
+       source  = 'WEC Ballot Access Report 6.9.2026; placed on the Aug-11 partisan primary by migration 1445 (was seeded onto the Nov-3 general by 1221)'
 FROM (VALUES
     ('5501'::text, 'Bryan Steil'::text,          'Republican'::text),
     ('5501', 'Lorenzo Santos',          'Democratic'),
@@ -136,7 +136,7 @@ WHERE rc.race_id = gr.id
 INSERT INTO essentials.race_candidates
   (race_id, politician_id, full_name, first_name, last_name, is_incumbent, candidate_status, source)
 SELECT r.id, p.id, 'Don Raihala', 'Don', 'Raihala', false, 'active',
-       'WEC Ballot Access Report 6.9.2026 (approved); omitted by 1221, added by 1384'
+       'WEC Ballot Access Report 6.9.2026 (approved); omitted by 1221, added by 1445'
 FROM essentials.elections el
 JOIN essentials.districts d ON d.geo_id = '5507' AND d.district_type = 'NATIONAL_LOWER'
 JOIN essentials.offices o ON o.district_id = d.id
@@ -153,7 +153,7 @@ WHERE el.name = 'WI 2026 Partisan Primary'
 INSERT INTO essentials.race_candidates
   (race_id, politician_id, full_name, first_name, last_name, is_incumbent, candidate_status, source)
 SELECT r.id, p.id, 'Alexander Valiensi Kent', 'Alexander', 'Kent', false, 'active',
-       'WEC Ballot Access Report 6.9.2026 (approved for CD3; separately DENIED for Governor); omitted by 1221, added by 1384'
+       'WEC Ballot Access Report 6.9.2026 (approved for CD3; separately DENIED for Governor); omitted by 1221, added by 1445'
 FROM essentials.elections el
 JOIN essentials.districts d ON d.geo_id = '5503' AND d.district_type = 'NATIONAL_LOWER'
 JOIN essentials.offices o ON o.district_id = d.id

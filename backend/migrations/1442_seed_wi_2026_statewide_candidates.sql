@@ -1,8 +1,8 @@
 -- 1420_seed_wi_2026_statewide_candidates.sql
--- 18 new WI politicians + 25 race_candidates onto the races created in 1380:
+-- 18 new WI politicians + 25 race_candidates onto the races created in 1441:
 --   23 on the 11 Aug-11 partisan-primary races, 2 on the Attorney General general race.
 --
--- FIELD SOURCE + exclusions: see the header of 1380. Only WEC-approved filers are seeded.
+-- FIELD SOURCE + exclusions: see the header of 1441. Only WEC-approved filers are seeded.
 --
 -- ANTIPARTISAN: party is NOT written to race_candidates and NOT written to the new
 --   politicians rows (matching 1221, the WI U.S. House precedent). Party lives only on

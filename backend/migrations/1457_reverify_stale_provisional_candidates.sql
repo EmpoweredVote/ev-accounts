@@ -1,5 +1,5 @@
 -- 1436_reverify_stale_provisional_candidates.sql
--- Re-verify the 17 candidate rows that migration 1435 exposed as past their provisional_until
+-- Re-verify the 17 candidate rows that migration 1456 exposed as past their provisional_until
 -- date, then resolve each. Idempotent.
 --
 -- These are AZ and MI U.S. House minor-party/independent rows whose provisional window has
@@ -7,7 +7,7 @@
 --   MI (8) — "provisional -- MI filing deadline 2026-07-16", 9 days past
 --   AZ (9) — "provisional -- pre-primary field, cull >= 2026-07-22", 3 days past (AZ's primary
 --            was 2026-07-21)
--- Until 1435 they were indistinguishable from settled candidates, because the only record of
+-- Until 1456 they were indistinguishable from settled candidates, because the only record of
 -- their expiry was English prose inside race_candidates.source.
 --
 -- VERIFICATION METHOD: each name checked against its own Ballotpedia district-race page, which
@@ -80,14 +80,14 @@ UPDATE essentials.race_candidates
    SET candidate_status  = 'withdrawn',
        provisional_until = NULL,
        last_verified_at  = now(),
-       source = source || ' | re-verified 2026-07-25: NOT on the certified general-election field (listed withdrawn/disqualified, or absent after the filing deadline); status set to withdrawn by migration 1436'
+       source = source || ' | re-verified 2026-07-25: NOT on the certified general-election field (listed withdrawn/disqualified, or absent after the filing deadline); status set to withdrawn by migration 1457'
  WHERE full_name IN (
          'Christopher Ajluni', 'David Redkey', 'John Fillmore', 'Tisha Benoit',
          'Iman Bah', 'Alexandra Prieditis', 'Thomas Latza'
        )
    -- NOT just `candidate_status <> 'withdrawn'`. Christopher Ajluni and Iman Bah were ALREADY
    -- withdrawn in the database before this migration, yet still carried the provisional_until
-   -- that 1435 backfilled from their prose — so a status-only guard skipped them and left them
+   -- that 1456 backfilled from their prose — so a status-only guard skipped them and left them
    -- stuck in stale_provisional_candidates forever. The guard must also fire on a lingering
    -- provisional_until. (Their pre-existing withdrawn status independently corroborates the
    -- Ballotpedia verdict for those two.) Still idempotent: after this runs both arms are false.

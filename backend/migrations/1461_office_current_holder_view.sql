@@ -1,6 +1,6 @@
 -- 1440_office_current_holder_view.sql
 -- ADR 0002 phase 3 support: one place that answers "who holds this office right now".
--- Idempotent. Requires 1437.
+-- Idempotent. Requires 1458.
 --
 -- WHY A SECOND VIEW. essentials.current_office_holders lists only offices that HAVE a current
 --   term. Read paths additionally need the dual-read fallback to offices.politician_id for the

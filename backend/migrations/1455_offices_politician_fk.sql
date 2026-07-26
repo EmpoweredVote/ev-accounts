@@ -10,7 +10,7 @@
 --   of failing, which is exactly the failure mode any temporal/term-history work would be
 --   built on top of. Fix the foundation first.
 --
--- THE 2 ORPHANS (found while auditing the 1427 dedup merge; both predate this branch):
+-- THE 2 ORPHANS (found while auditing the 1450 dedup merge; both predate this branch):
 --   IN  'Assessor'            Monroe County Assessor  -> dangling d3977ab4-22b8-4ac3-a14f-565bc2969f1a
 --   CA  'U.S. Representative' district_id IS NULL      -> dangling c2881f48-7972-4b8e-8547-a89617fb3069
 --   The CA row is doubly broken: with a NULL district_id it cannot match an address at all, so
@@ -25,7 +25,7 @@
 --   FKs). The alternative, ON DELETE SET NULL, would silently vacate a seat whenever a
 --   politician row was deleted — precisely the silent-corruption behaviour this fixes. Failing
 --   loudly forces the correct order of operations: re-point the offices, THEN delete the
---   politician. Migration 1427 already had to do exactly that four times; with this constraint
+--   politician. Migration 1450 already had to do exactly that four times; with this constraint
 --   in place, getting that order wrong becomes an error instead of a silent orphan.
 BEGIN;
 

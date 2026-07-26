@@ -3,7 +3,7 @@
 -- STRUCTURAL migration. Idempotent. GENERATED from the Open States v3 roster --
 -- do not hand-edit; regenerate instead (see PROVENANCE below).
 --
--- PRECONDITION -- the WI sldu/sldl TIGER load (NOT migration 1380/1381, which are the
+-- PRECONDITION -- the WI sldu/sldl TIGER load (NOT migration 1441/1442, which are the
 -- 2026 candidate seeds and are unrelated): the 33 STATE_UPPER +
 -- 99 STATE_LOWER essentials.districts rows (geo_id 55001..55033 / 55001..55099,
 -- mtfcc G5210/G5220, state='wi') are created by

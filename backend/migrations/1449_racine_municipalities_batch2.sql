@@ -1,5 +1,5 @@
 -- 1426_racine_municipalities_batch2.sql
--- 8 more Racine County municipalities (43 officials), following the 1424/1425 pattern.
+-- 8 more Racine County municipalities (43 officials), following the 1447/1448 pattern.
 -- Brings municipal coverage to 11 of 17. GENERATED -- regenerate, do not hand-edit.
 -- STRUCTURAL. Idempotent.
 --
@@ -37,7 +37,7 @@
 --      Waterford (town)  -- tn.waterford.wi.gov fails the TLS handshake and browser
 --                           navigation is denied
 --
--- LESSON, learned the hard way in 1425 and reconfirmed here: NEVER seed a municipal roster
+-- LESSON, learned the hard way in 1448 and reconfirmed here: NEVER seed a municipal roster
 --   from a web-search summary. Search was materially stale for Sturtevant (3 of 6 trustees
 --   wrong), Waterford village (listed a vacancy that no longer exists) and Burlington city.
 --   Always read the municipality's own page and prefer terms spanning 2026-2028.

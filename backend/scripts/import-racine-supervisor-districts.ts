@@ -11,7 +11,7 @@
  *    materially stale — 10 of 21 disagreed with the county's own roster page when checked on
  *    2026-07-25, and 4 of those were entirely different people (D3, D14, D17, D18). Its
  *    `Photos` field is mismatched too (D1 REPNAME=Coleman but photo 'nickdemske1.jpg').
- *    The roster lives in migration 1385, sourced from
+ *    The roster lives in migration 1446, sourced from
  *    racinecounty.gov/departments/county-board/county-board-of-supervisors-4659.
  *
  * Schema produced (mirrors import-mcc-district-polygons.ts, the Monroe County precedent):
@@ -73,7 +73,7 @@ async function fetchDistricts(): Promise<Feature[]> {
   if (features.length !== EXPECTED) {
     throw new Error(
       `expected ${EXPECTED} supervisor districts, got ${features.length}. ` +
-        `Racine County may have redistricted — reconcile the roster in 1385 before importing.`
+        `Racine County may have redistricted — reconcile the roster in 1446 before importing.`
     );
   }
   const ids = features

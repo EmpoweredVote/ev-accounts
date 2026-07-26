@@ -36,10 +36,10 @@
 -- CRITICAL (shared district+chamber guard): all 15 aldermen share the SAME district_id AND
 --   chamber_id, so the usual (district_id, chamber_id) guard would silently no-op aldermen 2
 --   through 15. They are guarded on (district_id, chamber_id, title) -- titles embed the
---   district number and so are unique. Same trap as the 7 countywide officers in 1385.
+--   district number and so are unique. Same trap as the 7 countywide officers in 1446.
 --
 -- !! POSSIBLE DUAL OFFICEHOLDER, deliberately NOT merged: Alderman District 13 is "Renee
---    Kelly", and County Board Supervisor District 2 (seeded in 1385 as -5510102) is also
+--    Kelly", and County Board Supervisor District 2 (seeded in 1446 as -5510102) is also
 --    "Renee Kelly". Holding a county supervisor seat and a city alder seat simultaneously is
 --    legal in Wisconsin and does happen, but name identity is NOT proof of person identity.
 --    A separate politician row (-5511014) is created here. If they are confirmed to be the
