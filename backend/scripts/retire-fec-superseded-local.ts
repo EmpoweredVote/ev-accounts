@@ -54,8 +54,20 @@ const snapshot: { retired_at: string | null; rows: unknown[] } = existsSync(SNAP
 
 // Per-source so every scan/delete rides idx_contrib_src_cycle. An unscoped JSONB self-join over
 // 26.7M rows is the shape of the 2026-07-22 P1 pool-saturation incident.
+// --from <detector.json>: sweep only the sources the detector flagged. Sources with no duplicate
+// signature have nothing for this rule to find, and scanning them means a full pass over their
+// rows anyway (there is no index for `raw_record ? 'file_number'`) — so this is the same coverage
+// for roughly a quarter of the work.
+const fromIdx = process.argv.indexOf('--from');
+const FROM: string[] | null = fromIdx > -1
+  ? (JSON.parse(readFileSync(process.argv[fromIdx + 1]!, 'utf8')) as
+      { findings: { politician_source_id: string }[] }).findings.map((f) => f.politician_source_id)
+  : null;
+
 const { rows: sources } = ONLY
   ? { rows: [{ id: ONLY }] }
+  : FROM
+  ? { rows: FROM.slice(0, MAX).map((id) => ({ id })) }
   : await pool.query<{ id: string }>(
       `SELECT id FROM transparent_motivations.politician_sources
         WHERE source_system IN ('fec','fec_house','fec_senate')

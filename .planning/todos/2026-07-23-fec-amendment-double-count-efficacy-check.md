@@ -359,3 +359,43 @@ uncommitted `discoveryCron` work. This work was moved off that branch onto
 `fix/fec-per-line-supersession` via a temporary worktree; their branch and working tree were
 restored untouched. The new scripts also sit untracked in the main worktree so the tooling stays
 runnable where `.env` and `data/` live.
+
+---
+
+# ✅ 2026-07-26 — PER-LINE FIX DEPLOYED, POST-FIX BACKLOG RETIRED
+
+## Deployed
+`origin/master` `1ab91d8e`, Render deploy `dep-d9iokquk1jcs73f520qg` **live 04:18 UTC**. The
+destructive whole-report rule is out of production. 890 tests / tsc clean against the real upstream
+tree before pushing.
+
+**Local `master` had DIVERGED from origin** (origin was 10+ commits ahead), so it could not be
+pushed. The coherent FEC series — `ba6be0e8` (backlog tooling, never pushed), `ceb9afc1` (design
+doc), the per-line fix, this doc — was stacked onto `origin/master` and pushed from there. The
+unrelated compass-data commits (`aac1f50c`, `975b2d10`) remain unpushed on local master.
+
+## Retired (post-fix rows only — NO backfill needed for these)
+
+| scanned | affected sources | rows deleted | money | errors |
+|---|---|---|---|---|
+| 173 flagged sources | 62 | **18,540** (+13 ground-truth = 18,553) | **$20,176,240.79** | 0 |
+
+Swept the 173 detector-flagged sources rather than all 677 (`--from data/fec-amendment-dupes-full.json`):
+same coverage — a source with no duplicate signature has nothing for this rule to find — for about a
+quarter of the work, since there is no index for `raw_record ? 'file_number'` and scanning a source
+means a full pass over its rows either way.
+
+### Verification
+- Ground-truth case first: report 12P/2020 went from two filings to file **1484476 alone, 17 rows /
+  $21,000**, exactly the FEC API's authoritative amendment. One duplicate line remains in that
+  report and SHOULD — it is FEC's legitimate repeated identical line inside a single filing.
+- **Invariant checked over all 18,553 retired rows**: every retired line still has a surviving row
+  in the same report carrying the survivor `file_number`. **Zero last-copy deletions.**
+- Full snapshot at `data/fec-superseded-local-snapshot.json` — every deletion is reversible.
+
+## Still open: the pre-fix backlog
+The detector's signature covers **80,296 excess rows**; the ~18.5k above are the ones that already
+carried `file_number`. The remainder sits on pre-fix rows and needs
+`backfill-fec-file-numbers.ts` first — **6,549 date windows, ~13k requests, ~14 h** at the shared
+15/min budget. Tooling is built, dry-run clean (373 fillable / 12 windows / 1 unresolvable), and now
+safe to apply because the per-line rule is deployed. Not yet run.
