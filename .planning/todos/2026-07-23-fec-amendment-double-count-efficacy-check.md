@@ -46,3 +46,90 @@ persists → itemized totals double-count.
 - `backend/src/lib/adapters/fecAdapter.ts` — `retireSupersededRows`, `normalizeRecords`, `FEC_KEPT_FIELDS`
 - `.planning/workstreams/2026-us-house-candidate-coverage/phases/174-*/174-FEC04-LIVE-CONFIRM.md` — full sampling evidence
 - `.planning/workstreams/2026-us-house-candidate-coverage/phases/174-*/174-RESEARCH-amendments.md` — original amendment research
+
+---
+
+# ✅ RESOLVED IN CODE 2026-07-25 — the double-count is REAL and now prevented (FEC-04b)
+
+## 1. The double-count was reproduced in prod
+
+Committee **C00256925**, report **12P / 2020**. The same **$250 contribution dated 2020-05-07**
+from Denise Chamblee is stored **twice**:
+
+| stored `sub_id` | FEC `file_number` | `load_date` | `transaction_id` |
+|---|---|---|---|
+| `4052920201773727964` | **1409022** | 2020-05-30 | `VSHCSM0N319` |
+| `4123020201986704254` | **1484476** | 2020-12-30 | `2208859` |
+
+The original filing and its December amendment, both ingested. Thirteen donors on that one report
+are duplicated the same way, including Bobby Vassar's $800 **and** $200 lines.
+
+## 2. `original_sub_id` is confirmed dead — and `transaction_id` is NOT a usable key either
+- `original_sub_id`: null on **all 700+** live Schedule A rows sampled in this session (third
+  independent confirmation). `retireSupersededRows` can never fire. Left in place, inert.
+- `transaction_id`: **populated 100%, but NOT STABLE across amendments** — the same contribution
+  above carries `VSHCSM0N319` in the original and `2208859` in the amendment (the filer changed
+  filing software). Deduping on it would silently fail to merge. **This kills the dedup key the
+  original todo proposed.**
+- `amendment_indicator` on Schedule A means the **line action**, not "this row is an amendment":
+  every row sampled reads `A` = `ADD` (`amendment_indicator_desc`). The FEC-04 design read this
+  field as an amendment marker; that was a misreading.
+- `image_number` is per-PAGE, and a filing's `beginning_image_number` does not match its Schedule A
+  rows — so `?image_number=<beginning>` returns 0 rows. The `(image_number, line)` key the original
+  todo suggested does not work either.
+
+## 3. The fix: retire by (committee, report_year, report_type) + `file_number`
+FEC amendments supersede a **whole report**, not individual lines. So the unit of supersession is
+the report and the discriminator is `file_number` — highest wins.
+
+`fecAdapter.retireSupersededFilings()`:
+```sql
+DELETE FROM transparent_motivations.contributions
+ WHERE politician_source_id = $1          -- FIRST: rides idx_contrib_src_cycle
+   AND data_source = 'fec'
+   AND raw_record ? 'file_number'         -- never touches pre-fix rows
+   AND raw_record->>'committee_id' = $2
+   AND (raw_record->>'report_year')::int = $3
+   AND raw_record->>'report_type' = $4
+   AND (raw_record->>'file_number')::bigint < $5
+```
+- `file_number`, `report_year`, `report_type`, `load_date`, `transaction_id` added to
+  `FEC_KEPT_FIELDS` (transaction_id for audit only — see above, it is not the key).
+- Scoped by `politician_source_id` first **deliberately**: an unscoped JSONB predicate would
+  seq-scan 26.9M rows, which is the exact shape of the 2026-07-22 P1 pool-saturation incident.
+- `< maxFileNumber` means the rows just inserted (which ARE the max) can never be deleted.
+- 4 new tests encode the real C00256925 case; full suite **889 passed**, tsc clean.
+
+## 4. ⚠️ The fix is FORWARD-ONLY — there is an existing backlog
+`raw_record ? 'file_number'` is a deliberate guard: rows ingested before this change carry no
+`file_number`, so we cannot tell which version they are and deleting on a guess could destroy the
+**current** version. Those need a separate, API-resolved cleanup.
+
+**Backlog sized with `backend/scripts/detect-fec-amendment-dupes.mjs`** (read-only):
+
+| scanned | rows | affected sources | dup groups | **excess rows** |
+|---|---|---|---|---|
+| 120 of 677 FEC sources | 5,026,930 | 29 | 6,905 | **9,941 (0.198%)** |
+
+Extrapolated over ~26.9M FEC rows that is on the order of **~50k over-counted rows**. The average
+is small but the distribution is skewed — two sampled sources had ~48% of their rows duplicated
+(41 excess of 85; 172 of 358), which materially distorts those candidates' totals.
+
+**Detector signature (needs no new fields):** `sub_id` embeds FEC's load date at chars 2-9
+(`4|05292020|1773727971`), so one filing's lines share a prefix. A group identical on
+(committee, donor, amount, contribution_date) spanning **>1 prefix** is a re-reported amendment.
+Requiring >1 prefix is what excludes FEC's legitimate repeated identical lines (five $1.00
+recurring donations on one day, consecutive sub_ids) — those must NOT be collapsed.
+
+**Note `source_system` for FEC is `fec_house` (522) + `fec_senate` (150) + `fec` (5) = 677.**
+Filtering on `'fec'` alone finds 5 sources and badly undercounts — the first run of the detector
+made exactly that mistake.
+
+## 5. Still to do
+1. **Retire the backlog**: for each detected group, resolve (committee, report_year, report_type)
+   against `/v1/filings/` and keep only the highest `file_number`. Snapshot before deleting, as with
+   the stance retirements. Do NOT infer the survivor from the sub_id prefix alone.
+2. **Backfill `file_number`** onto existing rows (re-fetch by committee+period) so the shipped fix
+   can maintain them going forward.
+3. Re-check whether FEC ever starts populating `original_sub_id` — if so, `retireSupersededRows`
+   begins working and becomes a belt-and-braces second path.

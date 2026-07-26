@@ -36,11 +36,37 @@ export interface FetchResult {
  * phase retires those rows so amended transactions don't double-count. Additive field — other
  * adapters (Cal-Access, Indiana, LA Socrata) never set it and are unaffected.
  */
+/**
+ * SupersededFiling identifies one FEC report whose EARLIER versions must be retired.
+ *
+ * FEC amendments supersede a whole report, not individual lines: an amended filing re-reports
+ * every Schedule A line for its coverage period under a NEW file_number and NEW sub_ids. So the
+ * unit of supersession is (committee, report_year, report_type) and the discriminator is
+ * file_number — the highest file_number for that triple is the current version.
+ *
+ * Verified live 2026-07-25 on committee C00256925, report 12P/2020, which was double-counted in
+ * prod: the same $250 2020-05-07 contribution appears under file 1409022 (load 2020-05-30) and
+ * again under file 1484476 (load 2020-12-30). Note `transaction_id` DIFFERS between the two
+ * versions (`VSHCSM0N319` vs `2208859`), so it cannot be used as a stable dedup key, and
+ * `original_sub_id` is null on both — which is why the (committee, year, type) + file_number
+ * rule is the one that works.
+ */
+export interface SupersededFiling {
+  politicianSourceId: string;
+  committeeId: string;
+  reportYear: number;
+  reportType: string;
+  /** Highest file_number seen for this report in the incoming batch. */
+  maxFileNumber: number;
+}
+
 export interface NormalizeResult {
   contributions: ContributionInsert[];
   skipped: number;
   totalParsed: number;
   supersededSubIds?: string[];
+  /** FEC-04b: reports whose earlier filings should be retired. See SupersededFiling. */
+  supersededFilings?: SupersededFiling[];
 }
 
 /**

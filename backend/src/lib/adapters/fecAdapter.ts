@@ -16,7 +16,7 @@
  */
 
 import { pool } from '../db.js';
-import type { SourceAdapter, StreamingAdapter, BatchSink, FetchResult, NormalizeResult, UpsertResult, ContributionInsert } from './adapterInterface.js';
+import type { SourceAdapter, StreamingAdapter, BatchSink, FetchResult, NormalizeResult, UpsertResult, ContributionInsert, SupersededFiling } from './adapterInterface.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
 import { normalizeDonorName } from './normalizeDonorName.js';
 import { buildCandidateCommitteeMap } from './fecBulkLoader.js';
@@ -691,8 +691,35 @@ function normalizeRecords(
   let skipped = 0;
   const totalParsed = records.length;
   const supersededSubIds: string[] = [];
+  // FEC-04b: highest file_number per (committee, report_year, report_type) in this batch.
+  const filingMax = new Map<string, SupersededFiling>();
 
   for (const record of records) {
+    // FEC-04b: track the newest filing per report, regardless of skip status — a superseded
+    // filing must be retired even if the row that revealed it is a memo item.
+    const cid = record['committee_id'];
+    const ry = record['report_year'];
+    const rt = record['report_type'];
+    const fn = record['file_number'];
+    if (
+      typeof cid === 'string' && cid !== '' &&
+      typeof ry === 'number' && Number.isFinite(ry) &&
+      typeof rt === 'string' && rt !== '' &&
+      typeof fn === 'number' && Number.isFinite(fn)
+    ) {
+      const key = `${cid}|${ry}|${rt}`;
+      const prev = filingMax.get(key);
+      if (!prev || fn > prev.maxFileNumber) {
+        filingMax.set(key, {
+          politicianSourceId: ps.id,
+          committeeId: cid,
+          reportYear: ry,
+          reportType: rt,
+          maxFileNumber: fn,
+        });
+      }
+    }
+
     // Collect original_sub_id for every record in the batch regardless of skip status —
     // a superseded row must be retired even if the amended row that supersedes it is
     // itself a memo item (skipped from insert). The retirement DELETE is independently
@@ -716,6 +743,7 @@ function normalizeRecords(
     skipped,
     totalParsed,
     ...(supersededSubIds.length > 0 ? { supersededSubIds } : {}),
+    ...(filingMax.size > 0 ? { supersededFilings: [...filingMax.values()] } : {}),
   };
 }
 
@@ -736,6 +764,12 @@ const FEC_KEPT_FIELDS = [
   // FEC-04: original_sub_id drives supersession-retirement (see normalizeRecords /
   // upsertContributions) and is worth retaining on the amended row for audit/traceability.
   'original_sub_id',
+  // FEC-04b: filing-level supersession. An amendment re-reports a whole report period under a
+  // new file_number, so (committee_id, report_year, report_type) + file_number is what lets us
+  // retire the superseded version. `load_date` and `transaction_id` are audit aids only —
+  // transaction_id is deliberately NOT used as a dedup key because it is not stable across
+  // amendments (verified: same contribution carried 'VSHCSM0N319' then '2208859').
+  'file_number', 'report_year', 'report_type', 'load_date', 'transaction_id',
 ] as const;
 
 /** Keep only the fields we read or need for audit — see FEC_KEPT_FIELDS. */
@@ -874,7 +908,75 @@ export async function upsertContributions(
     }
   }
 
+  // FEC-04b: retire EARLIER filings of any report present in this batch. This is the path that
+  // actually fires — original_sub_id is null on the live API, so retireSupersededRows above is
+  // inert in practice (kept in case FEC starts populating it). Runs after the inserts for the
+  // same reason: a crash between insert and retire leaves a duplicate (safe, next run fixes it)
+  // rather than a gap with neither version present.
+  const filings = normalized.supersededFilings ?? [];
+  if (filings.length > 0) {
+    try {
+      const retired = await retireSupersededFilings(filings);
+      if (retired > 0) {
+        console.log(`[fecAdapter] retired ${retired} row(s) from superseded filings across ${filings.length} report(s)`);
+      }
+    } catch (err) {
+      console.error(`[fecAdapter] filing-supersession retirement failed for ${filings.length} report(s):`, err);
+      errors += filings.length;
+    }
+  }
+
   return { inserted, skipped, unresolved: 0, errors };
+}
+
+/**
+ * retireSupersededFilings deletes contributions belonging to EARLIER versions of a report that
+ * the incoming batch has re-reported under a higher file_number.
+ *
+ * Why this exists (FEC-04b): FEC-04's `original_sub_id` retirement never fires — that field is
+ * null on every live Schedule A row observed across three sampling sessions. Meanwhile the
+ * double-count it was meant to prevent is REAL and was reproduced in prod: committee C00256925,
+ * report 12P/2020, the same $250 2020-05-07 contribution stored twice — once from file 1409022
+ * (loaded 2020-05-30) and again from file 1484476 (loaded 2020-12-30), because the amendment
+ * re-reported the period with fresh sub_ids and `ON CONFLICT (source_transaction_id)` saw new keys.
+ *
+ * Why (committee, report_year, report_type) + file_number and nothing else:
+ *   - `original_sub_id` — always null. Unusable.
+ *   - `transaction_id` — NOT stable across amendments (the same contribution above carried
+ *     'VSHCSM0N319' in the original and '2208859' in the amendment, because the filer changed
+ *     filing software). Deduping on it would silently fail to merge.
+ *   - (contributor, amount, date) alone — WRONG: FEC legitimately reports repeated identical
+ *     lines in one filing (e.g. five $1.00 recurring donations from one donor on one day,
+ *     carrying consecutive sub_ids). Collapsing those would destroy real data.
+ *
+ * Safety properties:
+ *   - Scoped to `politician_source_id` FIRST so the DELETE rides idx_contrib_src_cycle. An
+ *     unscoped predicate over JSONB paths would seq-scan 26.9M rows — the exact shape of the
+ *     2026-07-22 P1 pool-saturation incident.
+ *   - `data_source = 'fec'` — never touches another source.
+ *   - `file_number < maxFileNumber` — can never delete the rows just inserted (they ARE the max).
+ *   - `raw_record ? 'file_number'` — rows ingested BEFORE this fix have no file_number stored, so
+ *     they are never matched. That is deliberate: for those rows we cannot tell which version they
+ *     are, and deleting on a guess could destroy the current version. They need a separate
+ *     backfill (see .planning/todos/2026-07-23-fec-amendment-double-count-efficacy-check.md).
+ */
+async function retireSupersededFilings(filings: SupersededFiling[]): Promise<number> {
+  let deleted = 0;
+  for (const f of filings) {
+    const res = await pool.query(
+      `DELETE FROM transparent_motivations.contributions
+        WHERE politician_source_id = $1
+          AND data_source = 'fec'
+          AND raw_record ? 'file_number'
+          AND raw_record->>'committee_id' = $2
+          AND (raw_record->>'report_year')::int = $3
+          AND raw_record->>'report_type' = $4
+          AND (raw_record->>'file_number')::bigint < $5`,
+      [f.politicianSourceId, f.committeeId, f.reportYear, f.reportType, f.maxFileNumber]
+    );
+    deleted += res.rowCount ?? 0;
+  }
+  return deleted;
 }
 
 /**
