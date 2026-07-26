@@ -744,14 +744,13 @@ async function resolveOfficialsAtPoint(
             AND gb.mtfcc NOT LIKE 'X%')
       )
     JOIN essentials.offices o ON o.district_id = d.id
-    -- ADR 0002 phase 3: occupant resolved at QUERY TIME via essentials.office_current_holder
-    -- (office_terms, with a dual-read fallback to offices.politician_id for offices that have no
-    -- term row yet), so a term with a future term_start takes effect on its own date with nothing
-    -- scheduled. Exactly one row per office — office_terms' exclusion constraint makes two
-    -- concurrent occupants impossible — so this cannot fan the result set out.
-    -- The dual-read rule lives in that ONE view, so phase 5 (dropping offices.politician_id) is a
-    -- single view change rather than another sweep of every call site. That edit also closes the
-    -- gap where a term ending with no successor falls back to the expired holder.
+    -- ADR 0002: occupant resolved at QUERY TIME via essentials.office_current_holder, so a term
+    -- with a future term_start takes effect on its own date with nothing scheduled. Exactly one
+    -- row per office — office_terms' exclusion constraint makes two concurrent occupants
+    -- impossible — so this cannot fan the result set out.
+    -- Phase 5 dropped offices.politician_id, so office_terms is now the ONLY source of occupancy.
+    -- That also closed the old dual-read gap where a term ending with no successor kept reporting
+    -- the expired holder; such a seat now correctly reads as vacant.
     LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
     LEFT JOIN essentials.politicians p ON p.id = och.politician_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
@@ -799,14 +798,13 @@ async function resolveOfficialsAtPoint(
            upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.districts d
     JOIN essentials.offices o ON o.district_id = d.id
-    -- ADR 0002 phase 3: occupant resolved at QUERY TIME via essentials.office_current_holder
-    -- (office_terms, with a dual-read fallback to offices.politician_id for offices that have no
-    -- term row yet), so a term with a future term_start takes effect on its own date with nothing
-    -- scheduled. Exactly one row per office — office_terms' exclusion constraint makes two
-    -- concurrent occupants impossible — so this cannot fan the result set out.
-    -- The dual-read rule lives in that ONE view, so phase 5 (dropping offices.politician_id) is a
-    -- single view change rather than another sweep of every call site. That edit also closes the
-    -- gap where a term ending with no successor falls back to the expired holder.
+    -- ADR 0002: occupant resolved at QUERY TIME via essentials.office_current_holder, so a term
+    -- with a future term_start takes effect on its own date with nothing scheduled. Exactly one
+    -- row per office — office_terms' exclusion constraint makes two concurrent occupants
+    -- impossible — so this cannot fan the result set out.
+    -- Phase 5 dropped offices.politician_id, so office_terms is now the ONLY source of occupancy.
+    -- That also closed the old dual-read gap where a term ending with no successor kept reporting
+    -- the expired holder; such a seat now correctly reads as vacant.
     LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
     LEFT JOIN essentials.politicians p ON p.id = och.politician_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
@@ -1931,14 +1929,13 @@ export async function getRepresentativesByJurisdiction(
 
   const JOINS = `
     JOIN essentials.offices o ON o.district_id = d.id
-    -- ADR 0002 phase 3: occupant resolved at QUERY TIME via essentials.office_current_holder
-    -- (office_terms, with a dual-read fallback to offices.politician_id for offices that have no
-    -- term row yet), so a term with a future term_start takes effect on its own date with nothing
-    -- scheduled. Exactly one row per office — office_terms' exclusion constraint makes two
-    -- concurrent occupants impossible — so this cannot fan the result set out.
-    -- The dual-read rule lives in that ONE view, so phase 5 (dropping offices.politician_id) is a
-    -- single view change rather than another sweep of every call site. That edit also closes the
-    -- gap where a term ending with no successor falls back to the expired holder.
+    -- ADR 0002: occupant resolved at QUERY TIME via essentials.office_current_holder, so a term
+    -- with a future term_start takes effect on its own date with nothing scheduled. Exactly one
+    -- row per office — office_terms' exclusion constraint makes two concurrent occupants
+    -- impossible — so this cannot fan the result set out.
+    -- Phase 5 dropped offices.politician_id, so office_terms is now the ONLY source of occupancy.
+    -- That also closed the old dual-read gap where a term ending with no successor kept reporting
+    -- the expired holder; such a seat now correctly reads as vacant.
     LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
     LEFT JOIN essentials.politicians p ON p.id = och.politician_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
@@ -2114,14 +2111,13 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
 
   const JOINS = `
     JOIN essentials.offices o ON o.district_id = d.id
-    -- ADR 0002 phase 3: occupant resolved at QUERY TIME via essentials.office_current_holder
-    -- (office_terms, with a dual-read fallback to offices.politician_id for offices that have no
-    -- term row yet), so a term with a future term_start takes effect on its own date with nothing
-    -- scheduled. Exactly one row per office — office_terms' exclusion constraint makes two
-    -- concurrent occupants impossible — so this cannot fan the result set out.
-    -- The dual-read rule lives in that ONE view, so phase 5 (dropping offices.politician_id) is a
-    -- single view change rather than another sweep of every call site. That edit also closes the
-    -- gap where a term ending with no successor falls back to the expired holder.
+    -- ADR 0002: occupant resolved at QUERY TIME via essentials.office_current_holder, so a term
+    -- with a future term_start takes effect on its own date with nothing scheduled. Exactly one
+    -- row per office — office_terms' exclusion constraint makes two concurrent occupants
+    -- impossible — so this cannot fan the result set out.
+    -- Phase 5 dropped offices.politician_id, so office_terms is now the ONLY source of occupancy.
+    -- That also closed the old dual-read gap where a term ending with no successor kept reporting
+    -- the expired holder; such a seat now correctly reads as vacant.
     LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
     LEFT JOIN essentials.politicians p ON p.id = och.politician_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id

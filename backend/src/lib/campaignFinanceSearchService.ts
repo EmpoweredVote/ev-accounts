@@ -106,9 +106,17 @@ export async function searchPoliticians(
           ELSE 4
         END                                                                    AS jurisdiction_tier
       FROM essentials.politicians p
-      LEFT JOIN essentials.offices o
-        ON  o.politician_id = p.id
-        AND o.is_vacant = false
+      -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
+      -- is_vacant must constrain the MATCH, not a downstream join. 5 offices in prod carry a
+      -- current term while still flagged is_vacant (e.g. John B. Muns, Mayor + a Council seat
+      -- flagged vacant); filtering after the match would emit a spurious all-NULL office row for
+      -- their holder. Kept as one derived join so the semantics match the old single-join form.
+      LEFT JOIN (
+        SELECT och.politician_id AS holder_id, o.*
+          FROM essentials.office_current_holder och
+          JOIN essentials.offices o ON o.id = och.office_id
+         WHERE o.is_vacant = false
+      ) o ON o.holder_id = p.id
       LEFT JOIN essentials.districts d
         ON  d.id = o.district_id
       LEFT JOIN essentials.chambers ch

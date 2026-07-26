@@ -325,7 +325,9 @@ export async function getCompassPoliticians() {
              WHERE politician_id = p.id AND value != 0) AS answered_topic_ids
      FROM essentials.politicians p
      JOIN inform.politician_answers pa ON pa.politician_id = p.id
-     LEFT JOIN essentials.offices o ON o.politician_id = p.id
+     -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
+     LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id
+     LEFT JOIN essentials.offices o ON o.id = och.office_id
      LEFT JOIN essentials.districts d ON d.id = o.district_id
      LEFT JOIN LATERAL (
        SELECT url FROM essentials.politician_images
