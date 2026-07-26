@@ -35,7 +35,11 @@ vi.mock('@anthropic-ai/sdk', async (importOriginal) => {
 });
 
 import Anthropic from '@anthropic-ai/sdk';
-import { runDiscoveryAgent, checkAnthropicAvailability } from './discoveryAgentRunner.js';
+import {
+  runDiscoveryAgent,
+  checkAnthropicAvailability,
+  isAccountUnusableError,
+} from './discoveryAgentRunner.js';
 
 const BASE_INPUT = {
   jurisdictionName: 'Los Angeles',
@@ -166,5 +170,88 @@ describe('checkAnthropicAvailability — OPS-01 canary helper', () => {
       expect(result.detail).not.toContain(envMock.env.ANTHROPIC_API_KEY as string);
       expect(result.detail).not.toContain('test-anthropic-key');
     }
+  });
+});
+
+// ---------------------------------------------------------------------------
+// isAccountUnusableError — conclusive account-level classification
+//
+// Regression cover for the 2026-07-26 sweep: credit exhaustion arrives as a
+// generic `400 invalid_request_error`, NOT a 402, so a status-only allowlist of
+// [401,402,403] let the sweep drain the account and email per jurisdiction.
+// ---------------------------------------------------------------------------
+
+// APIError.makeMessage IGNORES its `message` argument whenever `error` is truthy —
+// it stringifies the body instead. So a realistic error must carry its text in the
+// BODY, exactly as the wire response does. Passing text as `message` alongside a
+// body silently drops it (which is what made the first draft of these tests pass
+// vacuously).
+function apiError(status: number, type: string, bodyMessage: string) {
+  const body = { type: 'error', error: { type, message: bodyMessage } };
+  return new Anthropic.APIError(status, body, undefined, undefined, type as any);
+}
+
+/** Status-only error with no body detail — for account-level statuses. */
+function bareApiError(status: number, type: string) {
+  return new Anthropic.APIError(status, { type }, undefined, undefined, type as any);
+}
+
+const CREDIT_TEXT =
+  'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.';
+
+describe('isAccountUnusableError', () => {
+  it('THE REGRESSION: a 400 invalid_request_error carrying the credit-balance text is conclusive', () => {
+    const err = apiError(400, 'invalid_request_error', CREDIT_TEXT);
+    // Guard the fixture itself: the credit text must actually reach err.message,
+    // mirroring the error_message rows stored in prod.
+    expect(err.message).toContain('credit balance is too low');
+    expect(isAccountUnusableError(err)).toBe(true);
+  });
+
+  it.each([401, 402, 403])('status %d is conclusive regardless of message', (status) => {
+    expect(isAccountUnusableError(bareApiError(status, 'billing_error'))).toBe(true);
+  });
+
+  it('an ordinary 400 that is NOT about credit stays inconclusive (jurisdiction-specific bug)', () => {
+    // Real prod example from the same sweep — must not trip the circuit breaker.
+    const webSearch = apiError(
+      400,
+      'invalid_request_error',
+      '`web_search` tool use is not supported by this model'
+    );
+    expect(isAccountUnusableError(webSearch)).toBe(false);
+  });
+
+  it.each([429, 500, 529])('transient status %d is not account-unusable', (status) => {
+    expect(isAccountUnusableError(bareApiError(status, 'overloaded_error'))).toBe(false);
+  });
+
+  it('non-APIError values are never account-unusable', () => {
+    expect(isAccountUnusableError(new Error('ECONNRESET'))).toBe(false);
+    expect(isAccountUnusableError(new Error(CREDIT_TEXT))).toBe(false);
+    expect(isAccountUnusableError(undefined)).toBe(false);
+    expect(isAccountUnusableError('credit balance is too low')).toBe(false);
+  });
+});
+
+describe('checkAnthropicAvailability — credit-exhaustion 400', () => {
+  it('returns {available:false, reason:"unusable"} instead of re-throwing as inconclusive', async () => {
+    createMock.mockRejectedValueOnce(apiError(400, 'invalid_request_error', CREDIT_TEXT));
+
+    const result = await checkAnthropicAvailability();
+
+    expect(result.available).toBe(false);
+    if (!result.available) {
+      expect(result.reason).toBe('unusable');
+      expect(result.detail).toContain('credit balance is too low');
+      expect(result.detail).not.toContain('test-anthropic-key');
+    }
+  });
+
+  it('still re-throws a non-credit 400 so the sweep is not falsely skipped', async () => {
+    const err = apiError(400, 'invalid_request_error', 'malformed tools array');
+    createMock.mockRejectedValueOnce(err);
+
+    await expect(checkAnthropicAvailability()).rejects.toBe(err);
   });
 });

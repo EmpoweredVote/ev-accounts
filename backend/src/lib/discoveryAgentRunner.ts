@@ -240,6 +240,46 @@ export async function runDiscoveryAgent(
 // Pre-flight canary (OPS-01)
 // ---------------------------------------------------------------------------
 
+// Credit exhaustion does NOT arrive as a 402. The Anthropic API returns it as a
+// generic `400 invalid_request_error` whose message carries the billing text, e.g.
+//   400 {"type":"error","error":{"type":"invalid_request_error",
+//        "message":"Your credit balance is too low to access the Anthropic API..."}}
+// Matching the message is therefore the only way to tell "account is out of money"
+// (conclusive, every later call fails identically) apart from an ordinary 400 request
+// bug (jurisdiction-specific — e.g. the `web_search` tool-version 400 seen in prod).
+const CREDIT_EXHAUSTION_PATTERN =
+  /credit balance is too low|insufficient credits?|purchase credits/i;
+
+/**
+ * isAccountUnusableError — true when an Anthropic error is a CONCLUSIVE
+ * account-level failure that every subsequent call will reproduce identically.
+ * Callers use this to stop spending rather than retrying or continuing.
+ *
+ * Three shapes qualify:
+ *   - 401 — unauthenticated (bad/revoked key).
+ *   - 403 — permission denied, including `billing_error`.
+ *   - 400 whose message matches CREDIT_EXHAUSTION_PATTERN — credit exhaustion.
+ *
+ * 402 is kept in the status list defensively only; the Anthropic error taxonomy
+ * does not use it, so it never fires in practice. Relying on it was the reason
+ * the 2026-07-26 sweep drained the account and sent 20 failure emails.
+ *
+ * Everything else — 429, 5xx, network faults, and non-credit 400s — is NOT
+ * account-unusable and must stay inconclusive.
+ */
+export function isAccountUnusableError(err: unknown): boolean {
+  if (!(err instanceof Anthropic.APIError) || typeof err.status !== 'number') return false;
+  if (err.status === 401 || err.status === 402 || err.status === 403) return true;
+  if (err.status !== 400) return false;
+
+  // Check the SDK's parsed body as well as the stringified message — the credit
+  // text lives in the nested `error.message` and the SDK inlines the raw body
+  // into `.message`, so either can carry it depending on SDK version.
+  const nested = (err as { error?: { error?: { message?: unknown } } }).error?.error?.message;
+  const haystack = `${err.message ?? ''} ${typeof nested === 'string' ? nested : ''}`;
+  return CREDIT_EXHAUSTION_PATTERN.test(haystack);
+}
+
 /**
  * checkAnthropicAvailability — one-shot, cheap pre-flight check for callers
  * (e.g. the weekly discovery-sweep orchestrator) that need to confirm
@@ -247,9 +287,9 @@ export async function runDiscoveryAgent(
  *
  * There is no Anthropic API endpoint that reports remaining credit balance,
  * so this makes one minimal, no-tools canary `messages.create` call to prove
- * the key + credit are usable. Only a canary failure with a conclusive
- * account-level status (401 unauthenticated / 402 billing / 403 permission)
- * is reported as `unusable`; any other failure (429, 5xx, network fault) is
+ * the key + credit are usable. Only a canary failure that `isAccountUnusableError`
+ * classifies as conclusive (401 / 403 / a credit-exhaustion 400) is reported as
+ * `unusable`; any other failure (429, 5xx, network fault, non-credit 400) is
  * inconclusive and is re-thrown so the caller can log it and proceed —
  * treating an ambiguous canary failure as "unusable" would cause a
  * false-positive whole-sweep skip (see 173-RESEARCH.md Pitfall 3).
@@ -257,7 +297,7 @@ export async function runDiscoveryAgent(
  * NOTE: if this Anthropic account ever rejects `claude-haiku-4-5` as an
  * unrecognized/disabled model, switch the canary model below to the
  * production model (`claude-sonnet-4-6`) — either satisfies OPS-01 since
- * 401/402/403 are account-level, not model-level, signals.
+ * auth/billing/permission are account-level, not model-level, signals.
  */
 export async function checkAnthropicAvailability(): Promise<AnthropicAvailability> {
   if (!env.ANTHROPIC_API_KEY) {
@@ -278,15 +318,12 @@ export async function checkAnthropicAvailability(): Promise<AnthropicAvailabilit
     });
     return { available: true };
   } catch (err) {
-    if (
-      err instanceof Anthropic.APIError &&
-      typeof err.status === 'number' &&
-      [401, 402, 403].includes(err.status)
-    ) {
+    if (isAccountUnusableError(err)) {
+      const apiErr = err as InstanceType<typeof Anthropic.APIError>;
       return {
         available: false,
         reason: 'unusable',
-        detail: `${err.status} ${err.type ?? ''}: ${err.message}`,
+        detail: `${apiErr.status} ${apiErr.type ?? ''}: ${apiErr.message}`,
       };
     }
     // Any other error (network blip, 5xx, timeout) is inconclusive — re-throw

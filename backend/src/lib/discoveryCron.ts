@@ -24,7 +24,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { pool } from './db.js';
 import { runDiscoveryForJurisdiction } from './discoveryService.js';
-import { checkAnthropicAvailability } from './discoveryAgentRunner.js';
+import { checkAnthropicAvailability, isAccountUnusableError } from './discoveryAgentRunner.js';
 import { sendEmail } from './emailService.js';
 
 // ---------------------------------------------------------------------------
@@ -155,8 +155,27 @@ function buildSweepSummaryEmail(args: {
   uncertainPending: Array<{ jurisdictionName: string; count: number }>;
   failedJurisdictions: Array<{ jurisdictionName: string; error: string }>;
   reviewUrl: string;
+  // OPS-05 circuit breaker: set when the sweep stopped early because the Anthropic
+  // account became unusable mid-run. `skipped` lists jurisdictions never attempted.
+  abortDetail?: string | null;
+  skipped?: string[];
 }): string {
   const sections: string[] = [];
+
+  if (args.abortDetail) {
+    const skipped = args.skipped ?? [];
+    const skippedList = skipped.length > 0
+      ? `<p><strong>${skipped.length} jurisdiction(s) not attempted:</strong> ${escapeHtml(skipped.join(', '))}</p>`
+      : '';
+    sections.push(`
+      <div style="border-left:4px solid #d1242f;padding:8px 12px;background:#fff5f5;">
+        <h2 style="margin: 0 0 8px 0;">Sweep ABORTED — Anthropic account unusable</h2>
+        <p>The sweep stopped early to avoid spending on calls guaranteed to fail. Resolve the account issue, then trigger a manual sweep.</p>
+        <pre style="background:#f5f5f5;padding:10px;border-radius:4px;white-space:pre-wrap;">${escapeHtml(args.abortDetail)}</pre>
+        ${skippedList}
+      </div>
+    `);
+  }
 
   if (args.autoUpserted.length > 0) {
     const items = args.autoUpserted.map((j) => {
@@ -217,10 +236,16 @@ function buildSweepSummaryEmail(args: {
  * Sends ONE sweep-summary email at the end — only when at least one outcome list is non-empty.
  *
  * OPS-01 pre-flight: before touching any jurisdiction, runs checkAnthropicAvailability()
- * exactly once. A conclusive-unusable result (missing key, or a 401/402/403 canary
- * failure) aborts the sweep with exactly one operator alert and zero jurisdiction
+ * exactly once. A conclusive-unusable result (missing key, or a canary failure that
+ * isAccountUnusableError classifies as conclusive — 401 / 403 / a credit-exhaustion
+ * 400) aborts the sweep with exactly one operator alert and zero jurisdiction
  * queries. An inconclusive canary failure (thrown 529/network error) is logged and
  * the sweep proceeds normally — only a returned {available:false} result aborts.
+ *
+ * OPS-05 circuit breaker: the pre-flight cannot catch credit running out MID-sweep,
+ * so the per-jurisdiction catch also checks isAccountUnusableError and breaks out of
+ * the loop, folding the skipped jurisdictions into the single summary email instead
+ * of emitting one failure email per remaining jurisdiction.
  */
 export async function runDiscoverySweep(): Promise<void> {
   if (!acquireRunLock()) {
@@ -289,7 +314,15 @@ export async function runDiscoverySweep(): Promise<void> {
     const uncertainPending: Array<{ jurisdictionName: string; count: number }> = [];
     const failedJurisdictions: Array<{ jurisdictionName: string; error: string }> = [];
 
-    for (const j of jurisdictions) {
+    // OPS-05 circuit breaker. The OPS-01 pre-flight only proves the account was usable
+    // BEFORE the sweep; credit can run out partway through (as on 2026-07-26, where 25
+    // jurisdictions completed and the remaining 21 each failed and each emailed). Once a
+    // conclusive account-level failure appears, every remaining jurisdiction is guaranteed
+    // to fail identically — stop, and report once.
+    let abortDetail: string | null = null;
+    let abortedAtIndex = -1;
+
+    for (const [index, j] of jurisdictions.entries()) {
       try {
         const summary = await withRetry(
           () => runDiscoveryForJurisdiction(j.id, {
@@ -332,8 +365,23 @@ export async function runDiscoverySweep(): Promise<void> {
           jurisdictionName: j.jurisdiction_name,
           error: msg.slice(0, 500),
         });
+
+        if (isAccountUnusableError(err)) {
+          abortDetail = msg.slice(0, 500);
+          abortedAtIndex = index;
+          console.error(
+            `[discoveryCron] Aborting sweep after "${j.jurisdiction_name}" — Anthropic account unusable; ` +
+              `${jurisdictions.length - index - 1} jurisdiction(s) skipped`
+          );
+          break;
+        }
       }
     }
+
+    const skipped =
+      abortedAtIndex >= 0
+        ? jurisdictions.slice(abortedAtIndex + 1).map((j) => j.jurisdiction_name)
+        : [];
 
     const adminEmail = process.env.ADMIN_EMAIL;
     const reviewUrl = process.env.ADMIN_REVIEW_URL ?? 'https://essentials.empowered.vote/admin/staging';
@@ -341,7 +389,8 @@ export async function runDiscoverySweep(): Promise<void> {
     const hasContent =
       autoUpsertedByJurisdiction.length > 0 ||
       uncertainPending.length > 0 ||
-      failedJurisdictions.length > 0;
+      failedJurisdictions.length > 0 ||
+      abortDetail !== null;
 
     if (adminEmail && hasContent) {
       const html = buildSweepSummaryEmail({
@@ -349,10 +398,14 @@ export async function runDiscoverySweep(): Promise<void> {
         uncertainPending,
         failedJurisdictions,
         reviewUrl,
+        abortDetail,
+        skipped,
       });
       const totalUpserted = autoUpsertedByJurisdiction.reduce((n, j) => n + j.candidates.length, 0);
       const totalUncertain = uncertainPending.reduce((n, j) => n + j.count, 0);
-      const subject = `Discovery sweep complete — ${totalUpserted} auto-upserted, ${totalUncertain} need review, ${failedJurisdictions.length} failed`;
+      const subject = abortDetail
+        ? `Discovery sweep ABORTED — Anthropic account unusable, ${skipped.length} jurisdiction(s) skipped`
+        : `Discovery sweep complete — ${totalUpserted} auto-upserted, ${totalUncertain} need review, ${failedJurisdictions.length} failed`;
       await sendEmail({ to: adminEmail, subject, html });
     } else if (!adminEmail) {
       console.info('[discoveryCron] ADMIN_EMAIL not set; skipping sweep-summary email');
@@ -360,11 +413,12 @@ export async function runDiscoverySweep(): Promise<void> {
       console.info('[discoveryCron] Sweep had no upserts, no uncertain items, no failures — no email sent');
     }
 
-    console.info('[discoveryCron] Sweep complete', {
+    console.info(abortDetail ? '[discoveryCron] Sweep ABORTED' : '[discoveryCron] Sweep complete', {
       jurisdictions: jurisdictions.length,
       autoUpserted: autoUpsertedByJurisdiction.reduce((n, j) => n + j.candidates.length, 0),
       uncertain: uncertainPending.reduce((n, j) => n + j.count, 0),
       failed: failedJurisdictions.length,
+      skipped: skipped.length,
     });
   } finally {
     releaseRunLock();
