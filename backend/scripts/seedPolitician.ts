@@ -157,7 +157,9 @@ async function findExistingPoliticians(
   const result = await pool.query<EssentialsPolitician>(
     `SELECT DISTINCT p.id, p.full_name, o.representing_state
      FROM essentials.politicians p
-     JOIN essentials.offices o ON o.politician_id = p.id
+     -- ADR 0002: occupancy via office_current_holder, not offices.politician_id.
+     JOIN essentials.office_current_holder och ON och.politician_id = p.id
+     JOIN essentials.offices o ON o.id = och.office_id
      WHERE public.f_unaccent(lower(p.full_name)) ILIKE public.f_unaccent(lower($1))
        AND ($3 = '' OR public.f_unaccent(lower(p.full_name)) ILIKE public.f_unaccent(lower($4)))
        AND o.representing_state = $2
@@ -226,12 +228,25 @@ async function createFederalPolitician(
   );
   const politicianId = polResult.rows[0]!.id;
 
-  // Insert office
-  await pool.query(
+  // Insert the SEAT. ADR 0002: essentials.offices carries no occupant (politician_id was dropped
+  // in phase 5) — occupancy is a dated row in essentials.office_terms.
+  const officeIns = await pool.query<{ id: string }>(
     `INSERT INTO essentials.offices
-       (politician_id, chamber_id, title, representing_state, is_vacant)
-     VALUES ($1, $2, $3, $4, false)`,
-    [politicianId, chamberIdForOffice, officeTitle, state]
+       (chamber_id, title, representing_state, is_vacant)
+     VALUES ($1, $2, $3, false)
+     RETURNING id`,
+    [chamberIdForOffice, officeTitle, state]
+  );
+
+  // Record occupancy. Without this the seat has no holder and the official is INVISIBLE
+  // everywhere — Essentials, stance research, coverage, campaign finance — with no error raised.
+  // No start date is available here, so the term is open-ended with precision 'unknown' (the same
+  // honest shape the phase-2 backfill used) rather than an invented date.
+  await pool.query(
+    `INSERT INTO essentials.office_terms
+       (office_id, politician_id, term_start, term_end, start_precision, source)
+     VALUES ($1, $2, NULL, NULL, 'unknown', $3)`,
+    [officeIns.rows[0].id, politicianId, 'scripts/seedPolitician.ts; start date unknown']
   );
 
   console.log(`CREATED: ${fullName} (${state}, ${officeTitle}) -> id: ${politicianId}`);
@@ -546,7 +561,14 @@ async function runIndianaConfirmMode(filter: string, dryRun: boolean): Promise<v
             o.title AS office_title
      FROM transparent_motivations.politician_sources ps
      JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
-     LEFT JOIN essentials.offices o ON o.politician_id = p.id AND o.is_vacant = false
+     -- ADR 0002: is_vacant stays on the MATCH via a derived join, so an office that holds a term
+     -- while still flagged vacant cannot yield a spurious all-NULL office row.
+     LEFT JOIN (
+       SELECT och.politician_id AS holder_id, o2.*
+         FROM essentials.office_current_holder och
+         JOIN essentials.offices o2 ON o2.id = och.office_id
+        WHERE o2.is_vacant = false
+     ) o ON o.holder_id = p.id
      WHERE ps.source_system = 'indiana'
        AND ps.research_status = 'needs_research'
      ORDER BY p.full_name`
@@ -621,7 +643,7 @@ async function runIndianaConfirmMode(filter: string, dryRun: boolean): Promise<v
     if (dryRun) {
       console.log('[dry-run] Would UPDATE politician_sources SET research_status = \'confirmed\' WHERE id =', row.source_id);
       if (newTitle && newTitle !== row.office_title) {
-        console.log('[dry-run] Would UPDATE essentials.offices SET title =', JSON.stringify(newTitle), 'WHERE politician_id =', row.politician_id, 'AND title = \'Indiana Elected Official\'');
+        console.log('[dry-run] Would UPDATE essentials.offices SET title =', JSON.stringify(newTitle), 'for the seat held by', row.politician_id, '(via office_current_holder) AND title = \'Indiana Elected Official\'');
       }
     } else {
       // Update research_status to confirmed
@@ -635,9 +657,13 @@ async function runIndianaConfirmMode(filter: string, dryRun: boolean): Promise<v
       // Update office title if provided and different
       if (newTitle && newTitle !== row.office_title) {
         await pool.query(
-          `UPDATE essentials.offices
-           SET title = $1
-           WHERE politician_id = $2 AND title = 'Indiana Elected Official'`,
+          // ADR 0002: reach the seat through office_current_holder, not offices.politician_id.
+          `UPDATE essentials.offices o
+              SET title = $1
+             FROM essentials.office_current_holder och
+            WHERE och.office_id = o.id
+              AND och.politician_id = $2
+              AND o.title = 'Indiana Elected Official'`,
           [newTitle, row.politician_id]
         );
         console.log(`Confirmed: ${row.full_name} (office title -> "${newTitle}")`);

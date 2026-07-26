@@ -56,3 +56,24 @@ jobs:
         run: node backend/scripts/check-migration-numbers.mjs
         env:
           BASE_REF: origin/${{ github.base_ref }}
+
+  occupancy:
+    name: office occupancy (ADR 0002)
+    runs-on: ubuntu-latest
+    # Same as above: compares files changed on the branch against the base.
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # essentials.offices.politician_id was dropped (ADR 0002 phase 5), so referencing it is a
+      # runtime 42703 undefined_column. Catch it here instead. Dependency-free, like the check above.
+      - name: Check nothing writes occupancy to essentials.offices
+        run: node backend/scripts/check-office-occupancy.mjs
+        env:
+          BASE_REF: origin/${{ github.base_ref }}

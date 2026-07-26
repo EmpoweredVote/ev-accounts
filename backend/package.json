@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
-    "check:migrations": "node scripts/check-migration-numbers.mjs"
+    "check:migrations": "node scripts/check-migration-numbers.mjs",
+    "check:occupancy": "node scripts/check-office-occupancy.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.91.0",

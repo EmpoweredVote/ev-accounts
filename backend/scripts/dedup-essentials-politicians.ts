@@ -69,7 +69,7 @@ async function scoreGroup(ids: string[]): Promise<PoliticianScore[]> {
     SELECT
       p.id,
       (ps.essentials_politician_id IS NOT NULL) AS has_source,
-      (o.politician_id IS NOT NULL) AS has_office,
+      (o.holder_id IS NOT NULL) AS has_office,
       (
         (p.full_name IS NOT NULL)::int +
         (p.first_name IS NOT NULL)::int +
@@ -95,10 +95,12 @@ async function scoreGroup(ids: string[]): Promise<PoliticianScore[]> {
       SELECT DISTINCT ON (essentials_politician_id) essentials_politician_id
       FROM transparent_motivations.politician_sources
     ) ps ON ps.essentials_politician_id = p.id
+    -- ADR 0002: "does this record hold a seat?" comes from office_terms, not offices.
     LEFT JOIN (
-      SELECT DISTINCT ON (politician_id) politician_id
-      FROM essentials.offices
-    ) o ON o.politician_id = p.id
+      SELECT DISTINCT ON (politician_id) politician_id AS holder_id
+      FROM essentials.office_current_holder
+      WHERE politician_id IS NOT NULL
+    ) o ON o.holder_id = p.id
     WHERE p.id = ANY($1::uuid[])
     ORDER BY p.id;
   `, [ids]);
@@ -166,7 +168,12 @@ async function updateOrDelete(
     return [res.rowCount ?? 0, 0];
   } catch (err: any) {
     await client.query(`ROLLBACK TO SAVEPOINT ${savepointName}`);
-    if (err.code === '23505') {
+    // 23505 = unique_violation. 23P01 = exclusion_violation, which is what
+    // essentials.office_terms raises (office_terms_no_overlap) when the canonical record already
+    // holds an overlapping term on the same office — i.e. both records occupy the same seat, which
+    // is precisely what a merge exists to collapse. Both mean "the target already has this
+    // relationship", so both fall through to dropping the spare's row.
+    if (err.code === '23505' || err.code === '23P01') {
       const delRes = await client.query(deleteSql, [params[1]]);
       return [0, delRes.rowCount ?? 0];
     }
@@ -196,11 +203,15 @@ async function rerouteFKsForSpare(
     idBridgeRerouted: 0,
   };
 
-  // offices — unique constraint on politician_id
+  // office_terms — ADR 0002: occupancy lives here, NOT on essentials.offices (politician_id was
+  // dropped in phase 5). Re-point the spare's tenures to the canonical record; the seat rows
+  // themselves are shared and need no change. Guarded by office_terms_no_overlap, so if the
+  // canonical record already holds an overlapping term on the same office the spare's duplicate
+  // term is dropped instead (see updateOrDelete).
   const [officesR] = await updateOrDelete(
-    client, 'sp_offices',
-    `UPDATE essentials.offices SET politician_id = $1 WHERE politician_id = $2`,
-    `DELETE FROM essentials.offices WHERE politician_id = $1`,
+    client, 'sp_office_terms',
+    `UPDATE essentials.office_terms SET politician_id = $1 WHERE politician_id = $2`,
+    `DELETE FROM essentials.office_terms WHERE politician_id = $1`,
     [canonicalId, spareId]
   );
   result.officesRerouted = officesR;
