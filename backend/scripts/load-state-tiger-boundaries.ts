@@ -51,11 +51,11 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // elected governments, so cousub carries real bodies here (unlike CA's statistical CCDs)
   // and WI is added to COUSUB_FUNCSTAT_STATES below. Incorporated municipalities appear in
   // BOTH layers (Racine is place 5566000 AND an MCD); towns appear ONLY in cousub.
-  // 'unsd' is still withheld: WI ALSO has G5410 union-high and G5400 elementary school
-  // districts that this loader has no layer support for, so 'unsd' alone would silently
-  // under-cover the state — rural Racine County sits in an elementary district AND a union
-  // high district, i.e. two separate elected boards.
-  WI: new Set(['sldu', 'sldl', 'place', 'cousub']),
+  // school: all THREE tiers are loaded together on purpose. WI is a union-high-school state,
+  // so unsd alone under-covers it — rural Racine County sits in an elementary district AND a
+  // union high district, i.e. two separate elected boards. elsd/scsd layer support was added
+  // for exactly this.
+  WI: new Set(['sldu', 'sldl', 'place', 'cousub', 'unsd', 'elsd', 'scsd']),
   DC: new Set(['sldl']),
 };
 
@@ -130,7 +130,7 @@ const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
   VA: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   NV: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   AZ: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
-  WI: new Set(['sldu', 'sldl', 'place', 'cousub']),
+  WI: new Set(['sldu', 'sldl', 'place', 'cousub', 'unsd', 'elsd', 'scsd']),
   DC: new Set(['sldl']),
 };
 
@@ -298,6 +298,34 @@ const LAYER_DISPATCH: Record<string, LayerDef> = {
     filterByStatefp: false,
     skipDistrictCodes: new Set<string>(),
     writeDistrictRow: false /* 130-01-PYTHON-AUDIT.md §"Open questions" #4 (Operational-parity recommendation, line "unsd: writeDistricts=false (Python sets the precedent; school-board ingestion creates SCHOOL districts rows separately)") */,
+  },
+  // elsd/scsd complete the school picture that 'unsd' alone cannot cover.
+  // States using the "union high school district" model — WI, CA, AZ, IL — split school
+  // governance across TWO overlapping elected boards: an ELEMENTARY district (K-8) and a
+  // SECONDARY / union-high district (9-12). A resident sits in BOTH, so loading only unsd
+  // silently drops one of a voter's two school boards. Concretely in Racine County, rural
+  // addresses fall in e.g. Waterford Joint No. 1 (elementary) AND Waterford Union High
+  // (secondary), and NEITHER appears in the unsd layer.
+  // Both mirror unsd exactly: same SCHOOL district_type, GEOID as geo_id, no district-number
+  // field, and writeDistrictRow=false because school-board ingestion creates the districts
+  // rows separately.
+  elsd: {
+    mtfcc: 'G5400', district_type: 'SCHOOL', ocdKey: 'school_district',
+    geoIdSource: 'GEOID',
+    urlTemplate: (v, f, _c) => `https://www2.census.gov/geo/tiger/TIGER${v}/ELSD/tl_${v}_${f}_elsd.zip`,
+    districtNumField: null,
+    filterByStatefp: false,
+    skipDistrictCodes: new Set<string>(),
+    writeDistrictRow: false,
+  },
+  scsd: {
+    mtfcc: 'G5410', district_type: 'SCHOOL', ocdKey: 'school_district',
+    geoIdSource: 'GEOID',
+    urlTemplate: (v, f, _c) => `https://www2.census.gov/geo/tiger/TIGER${v}/SCSD/tl_${v}_${f}_scsd.zip`,
+    districtNumField: null,
+    filterByStatefp: false,
+    skipDistrictCodes: new Set<string>(),
+    writeDistrictRow: false,
   },
   place: {
     mtfcc: 'G4110', district_type: 'LOCAL', ocdKey: 'place',
@@ -1117,6 +1145,11 @@ async function processLayer(
                      //   vintage reports 1242 active, ONE fewer than 2024: Williamstown town
                      //   (5502787225, Dodge County) was active in 2024 and no longer is.
                      //   Dodge County, so it does not affect Racine.
+      unsd:    369,  // 369 WI G5420 unified school districts
+      elsd:     43,  // 43 WI G5400 ELEMENTARY school districts (K-8)
+      scsd:     10,  // 10 WI G5410 SECONDARY / union-high districts (9-12). Small on purpose:
+                     //   only union-high states have these at all. Racine County's two are
+                     //   Union Grove UHS and Waterford UHS.
     };
     if (layer in EXPECTED_WI_MTFCC) {
       const expected = EXPECTED_WI_MTFCC[layer];
