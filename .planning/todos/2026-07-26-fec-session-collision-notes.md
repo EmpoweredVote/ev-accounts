@@ -206,7 +206,7 @@ Rev 2 carried this as an unchecked hypothesis: that phase-222 research tooling b
 `ANTHROPIC_API_KEY` Render uses, draining the balance that killed the discovery sweep at 02:00 UTC
 on 07-26. The Essentials session disproved it and I have **independently confirmed both halves**:
 
-- `C:/Users/Chris/.claude.json` → `customApiKeyResponses: {"approved":[],"rejected":["8_NEIEFj5_A-2vCYtAAA"]}`.
+- `C:/Users/Chris/.claude.json` → `customApiKeyResponses: {"approved":[],"rejected":["<redacted-key-tail>"]}`.
   That suffix matches the live key. Claude Code detected the custom key, prompted, and the operator
   **rejected** it — so these sessions authenticate against a subscription and never bill it. The
   ~2M+ subagent tokens spent overnight went to the subscription.
@@ -225,7 +225,7 @@ per-key usage view closes that last gap.
 ## 5b. 🔴 SECURITY — the production Anthropic key is in the global shell environment
 
 Raised by Essentials, **verified here independently**: `ANTHROPIC_API_KEY` (108 chars, suffix
-`2vCYtAAA`) is present in the **ambient shell environment** — readable with no `dotenv` load at all,
+`<redacted>`) is present in the **ambient shell environment** — readable with no `dotenv` load at all,
 from any directory. It is not coming from a Claude Code settings `env` block, so it is exported by
 the user/system environment or a profile script.
 
