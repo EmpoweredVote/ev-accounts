@@ -235,3 +235,127 @@ not with rows.
 - `data/fec-amendment-retire-state.json` holds 45 resolved group keys; the retirement script resumes
   from it. `data/fec-amendment-retired-snapshot.json` holds the 27 deleted rows.
 - **Reminder: `autoDeploy: yes` on master — any push deploys the backend immediately.**
+
+---
+
+# 2026-07-25 (later session) — THE BACKFILL PREMISE WAS WRONG, AND FEC-04b IS DESTRUCTIVE
+
+Building the backfill surfaced a data-loss bug in the **shipped** FEC-04b fix. The backfill itself
+is built and validated, but **it must not be applied until the adapter fix is deployed** — see
+Ordering below.
+
+## 1. FEC amendments are NOT full re-reports — they are often DELTA filings
+
+The whole of FEC-04b (and step 4 of the plan above) rests on "an amendment supersedes a whole
+REPORT", i.e. the surviving filing is a **superset** of the one it supersedes. That was never
+tested — the FEC-04b unit tests assert the SQL fires, not that the survivor still contains the
+retired filing's money.
+
+Tested now, by amount-multiset containment on (contributor_name, amount, date) per report, over
+live API data (`scripts/validate-fec-supersession-containment.ts`):
+
+| superseded filings sampled | ARE a subset of their survivor | are NOT |
+|---|---|---|
+| 24 | **0** | **24** |
+
+The starkest case — committee **C00574889**, report **Q1/2016**, contribution date **2016-03-11**:
+
+| file_number | amendment_indicator | rows on that date |
+|---|---|---|
+| 1066886 | N (original) | **114** |
+| 1081569 | A (amendment) | **2** |
+
+`/v1/filings/` confirms 1066886 is `most_recent=false` and 1081569 is `most_recent=true`, so this
+IS a genuine original-to-amendment pair. The amendment simply re-reports 2 lines, not all 114.
+
+**The shipped whole-report rule would delete 114 real contributions and keep 2.**
+
+## 2. Why it has not already destroyed prod data — and why that is luck, not safety
+
+Two things are holding it back:
+- `raw_record ? 'file_number'` excludes all ~26.7M pre-fix rows.
+- `filingMax` is computed per **100-row page**, so whether the rule fires at all depends on how a
+  report's filings happen to interleave across pages. Checked C00574889 in prod: its only post-fix
+  rows are reports with a single filing, so nothing was deleted. 95,782 post-fix rows exist across
+  the 12 most recent sources and the 06:00 UTC cycle ran 2026-07-25, so this was close.
+
+**The critical consequence: `raw_record ? 'file_number'` is the ONLY thing protecting the pre-fix
+backlog. Backfilling `file_number` REMOVES that protection.** Running the backfill under the old
+rule would have armed the bug across the entire backlog. This is the ordering requirement.
+
+## 3. The corrected rule: per contribution LINE
+
+A row is retired only when the **same line** (donor, amount, date) also exists in the **same**
+(committee_id, report_year, report_type) under a **higher file_number**. That is precisely what the
+double-count is, and it never touches a line only the earlier filing reports.
+
+- C00256925 12P/2020 still resolves (Chamblee $250 is in both 1409022 and 1484476).
+- C00574889 Q1/2016 now retires nothing.
+- FEC legitimately repeats identical lines within one filing; they share that filing's file_number,
+  so none is the "higher" version of another.
+- Cross-report duplicates (C00575209 $2,800 in Q1/2020 **and** Q3/2020) stay — matching is scoped
+  inside one (report_year, report_type). **Do not loosen this key.**
+
+Implemented as a **window MAX, not a self-join**: the self-join plans as a nested loop with the
+JSONB extraction in the join filter, so cost is quadratic in the source's row count — measured
+**>10 min for a single committee of a single source**, vs **2.7 s** for the whole source with the
+window form. Same rule now lives in `fecAdapter.retireSupersededFilings` and
+`scripts/retire-fec-superseded-local.ts` — **change both together**.
+
+### Validation
+- On source `79798f42` the new rule returns **exactly the 13 rows / $18,700** that `b6f8b6f7`
+  independently documented for report 12P/2020. Ground-truth match.
+- The **27 rows already retired** by `retire-fec-amendment-dupes.mjs` were re-checked against the
+  per-line rule (`scripts/_verify-retired-27.ts`): **27 of 27 hold up**. No restore needed — that
+  script required 2+ API matches on the same (amount, date), which was per-line evidence by luck.
+
+### Known conservatism (documented, not a bug)
+If the earlier filing has 3 copies of a line and the amendment reports 1, all 3 earlier copies are
+retired and 1 survives — the later filing is treated as authoritative for the lines it reports. For
+a delta amendment that corrected only one of several identical lines this can under-count by one.
+Strictly better than double-counting, and vastly better than the whole-report rule.
+
+## 4. The backfill: (committee, period, DATE) windows, not committee-periods
+
+The plan of record said requests scale with committee-periods. True, but the periods are huge:
+**C00742007/2024 is 102,312 rows = 1,024 pages, about 68 min** at the shared 15/min budget; 268
+implicated periods runs to days. The duplicate groups are extremely sparse in **date** (that
+committee has ONE group on ONE date), so `min_date=max_date=<date>` cuts it to **497 rows / 5
+pages — about 200x** — and still returns every filing's version of the lines on that date, which is
+all the per-line rule needs.
+
+Full detection now completes (the detector previously aborted the whole sweep on one source's
+`statement_timeout`; it now raises the timeout on its own connection and reports unscanned sources):
+
+| sources | rows | affected | groups | excess rows | date windows | committee-periods |
+|---|---|---|---|---|---|---|
+| 677 | 26,750,014 | 173 | 72,362 | **80,296 (0.300%)** | **6,549** | 268 |
+
+Dry run: **373 fillable rows over 12 windows, 1 unresolvable** — against the **31% UNRESOLVABLE**
+of the per-group API approach this replaces. Estimated cost for all 6,549 windows: ~13k requests,
+**about 14 h** at the shared 15/min. Windows are cached to `data/fec-period-cache/` so the API is
+paid once across the validator, backfill and any re-run.
+
+**Note `pool.query('SET statement_timeout=...')` does NOT work** — it lands on whichever pooled
+connection it is handed, so the next query can get a different one. Take a dedicated
+`pool.connect()` client. This is how the first retirement run silently failed.
+
+## 5. Ordering — MANDATORY
+
+1. **Deploy the per-line adapter fix first.** Branch `fix/fec-per-line-supersession`, off `master`.
+   Full suite **906 passed**, tsc clean. **NOT pushed** — `autoDeploy: yes` on master means any
+   push deploys immediately, and this is the operator's call.
+2. Then backfill: `tsx scripts/backfill-fec-file-numbers.ts data/fec-amendment-dupes-full.json --windows N --apply`
+3. Then retire locally, no API: `tsx scripts/retire-fec-superseded-local.ts --sources 677 --apply`
+   (snapshots every deleted row to `data/fec-superseded-local-snapshot.json`).
+
+A dry-run retirement sweep over already-post-fix rows found **10,031 superseded rows across the
+first 30 sources** before it was stopped — so there is material over-counting recoverable even
+before any backfill. Run outside the 06:00 UTC ingest window.
+
+## 6. Repo/branch note
+The parallel session had checked out `perf/discovery-jurisdiction-backoff` in `C:/EV-Accounts` with
+uncommitted `discoveryCron` work. This work was moved off that branch onto
+`fix/fec-per-line-supersession` via a temporary worktree; their branch and working tree were
+restored untouched. The new scripts also sit untracked in the main worktree so the tooling stays
+runnable where `.env` and `data/` live.
