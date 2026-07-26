@@ -72,38 +72,83 @@ export interface UpsertOfficeInput {
   description?: string | null;
   seats?: number;
   is_appointed_position?: boolean;
+  /**
+   * The date this person took the seat, if known. Supply it whenever the source gives one —
+   * it is what makes future hand-offs automatic (ADR 0002). Omit ONLY when genuinely unknown;
+   * the term is then recorded open-ended with start_precision 'unknown', exactly as the phase-2
+   * backfill did, rather than inventing a date.
+   */
+  term_start?: string | null;      // 'YYYY-MM-DD'
+  source?: string | null;          // provenance for the term row
 }
 
 /**
- * essentials.offices has UNIQUE (politician_id) — one current office per politician.
- * Re-runs DELETE-then-INSERT (RESEARCH Schemas note + objective bullet from CONTEXT).
+ * Create the seat and record who occupies it.
+ *
+ * ADR 0002: essentials.offices is a SEAT (district + chamber + title) and carries NO occupant —
+ * offices.politician_id was dropped in phase 5. Occupancy is a dated row in
+ * essentials.office_terms, resolved at read time via essentials.office_current_holder.
+ *
+ * !! An office with no office_terms row is INVISIBLE: it has no holder, so the official will not
+ *    appear in Essentials, stance research, coverage or campaign finance, and nothing errors.
+ *    That is why this function always writes a term, and why you should not INSERT into
+ *    essentials.offices directly from a seeder. Watch essentials.offices_missing_terms for drift.
+ *
+ * Keeps the previous re-run semantics (one current office per politician for this UT loader) by
+ * deleting whatever seat the politician currently holds before inserting the new one; office_terms
+ * rows go with it via ON DELETE CASCADE.
  */
 export async function upsertOffice(
   client: PoolClient,
   row: UpsertOfficeInput,
 ): Promise<string> {
+  // Drop the seat this politician currently holds, located through office_terms rather than a
+  // column on offices.
   await client.query(
-    `DELETE FROM essentials.offices WHERE politician_id = $1`,
+    `DELETE FROM essentials.offices o
+       USING essentials.office_current_holder och
+      WHERE och.office_id = o.id
+        AND och.politician_id = $1`,
     [row.politician_id],
   );
   const ins = await client.query<{ id: string }>(
     `INSERT INTO essentials.offices
-       (politician_id, district_id, title, representing_state, representing_city,
+       (district_id, title, representing_state, representing_city,
         description, seats, is_appointed_position)
-     VALUES ($1, $2, $3, 'UT', $4, $5, $6, $7)
+     VALUES ($1, $2, 'UT', $3, $4, $5, $6)
      RETURNING id`,
     [
-      row.politician_id, row.district_id, row.title,
+      row.district_id, row.title,
       row.representing_city ?? null, row.description ?? null,
       row.seats ?? 1, row.is_appointed_position ?? false,
     ],
   );
-  // Backlink politicians.office_id for legacy code paths that read it.
+  const officeId = ins.rows[0].id;
+  const source = row.source ?? 'UT loader (scripts/lib/politician-upsert.ts)';
+
+  if (row.term_start) {
+    // Dated: the sanctioned helper closes any predecessor the day before and is idempotent.
+    await client.query(
+      `SELECT essentials.seat_officeholder($1, $2, $3::date, $4, 'elected')`,
+      [officeId, row.politician_id, row.term_start, source],
+    );
+  } else {
+    // Undated: assert only "holds this seat now", the same shape the phase-2 backfill used.
+    await client.query(
+      `INSERT INTO essentials.office_terms
+         (office_id, politician_id, term_start, term_end, start_precision, source)
+       VALUES ($1, $2, NULL, NULL, 'unknown', $3)`,
+      [officeId, row.politician_id, `${source}; start date unknown`],
+    );
+  }
+
+  // Backlink politicians.office_id for legacy code paths that read it. DEPRECATED: this is another
+  // point-in-time snapshot with the same flaw as the dropped column — read office_current_holder.
   await client.query(
     `UPDATE essentials.politicians SET office_id = $1 WHERE id = $2`,
-    [ins.rows[0].id, row.politician_id],
+    [officeId, row.politician_id],
   );
-  return ins.rows[0].id;
+  return officeId;
 }
 
 export interface UpsertContactInput {
