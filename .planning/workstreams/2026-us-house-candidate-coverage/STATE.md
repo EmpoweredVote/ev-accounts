@@ -2,19 +2,22 @@
 gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage
-current_phase: 174
-status: completed
-stopped_at: Completed 174-05-PLAN.md — Phase 174 all 5 plans done (FEC-05 decision doc; deploy HELD pending operator go-ahead)
-last_updated: "2026-07-23T20:27:00.852Z"
-last_activity: 2026-07-23
-last_activity_desc: Phase 174 complete
+current_phase: 166
+status: in_progress
+stopped_at: v2.22 seeding phases 160-165 + 164.2 all shipped and prod-gate-green; Phase 166 (consolidated 178-district gate) not yet planned
+last_updated: "2026-07-26T00:00:00.000Z"
+last_activity: 2026-07-26
+last_activity_desc: ROADMAP progress table + STATE header reconciled against on-disk SUMMARYs
 progress:
   total_phases: 10
   completed_phases: 7
   total_plans: 81
   completed_plans: 80
   percent: 70
-current_phase_name: fec-429-rate-limit-tail-drive-the-6-hourly-ingest-to-zero-ha
+current_phase_name: consolidated-verification-gate
+# This workstream also carries the v2.24 backend-reliability milestone (Phases 173-174), which is
+# code-complete as of 2026-07-23 — 174's Render deploy is HELD pending operator go-ahead (see
+# Operator Next Steps). The header fields above track v2.22, the milestone named on line 3.
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
@@ -28,15 +31,28 @@ current_phase_name: fec-429-rate-limit-tail-drive-the-6-hourly-ingest-to-zero-ha
 See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 174 — fec-429-rate-limit-tail-drive-the-6-hourly-ingest-to-zero-ha
+**Current focus:** Phase 166 — consolidated 178-district verification gate (the v2.22 milestone-closing phase)
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 174
-Plan: Not started
-Status: All phases complete
-Last activity: 2026-07-23 — Phase 174 complete
+Phase: 166 — Consolidated Verification Gate
+Plan: Not started (needs `/gsd-plan-phase 166 --ws 2026-us-house-candidate-coverage`)
+Status: v2.22 seeding COMPLETE — 178 Wave-3 districts across 38 states seeded, each phase gate green
+        against prod. Two phases remain open: 166 (gate) and 167 (post-primary reconciliation,
+        date-gated Aug–Sep 2026). Plan 164.1-07 (MO) is separately date-gated ≥ 2026-08-04.
+Last activity: 2026-07-26 — ROADMAP progress table + this header reconciled against on-disk SUMMARYs
+
+**Corrected 2026-07-26.** This block previously read "Phase: 174 / Status: All phases complete", which
+conflated the v2.24 backend-reliability milestone (Phases 173–174, code-complete 2026-07-23, deploy held)
+with v2.22 — the milestone this file's frontmatter names. Both live in this workstream; v2.22 is NOT
+complete. The `progress:` counts in the frontmatter were already correct for v2.22 (7/10 phases, 80/81
+plans) and were left as-is.
+
+**Verification-artifact note:** Phases 162, 163, 164, 164.2 and 165 have no `NNN-VERIFICATION.md`, so
+`gsd-progress` reports `verification_status: missing` and suggests `/gsd-execute-phase`. Ignore that
+suggestion — each phase ran its own read-only gate green against prod (162-11, 163-11, 164-13, 165-17)
+and the work is live. Phase 166 is the consolidated gate that supersedes them.
 
 ## v2.22 Phase Dependencies
 
@@ -212,14 +228,15 @@ None at roadmap time. Run diagnostic queries at Phase 160 plan authoring:
 
 ## Session Continuity
 
-Last session: 2026-07-23T20:22:39.144Z
-Stopped at: Completed 174-05-PLAN.md — Phase 174 all 5 plans done (FEC-05 decision doc; deploy HELD pending operator go-ahead)
+Last session: 2026-07-26 — ROADMAP progress table + STATE header reconciled against on-disk SUMMARYs (docs only; no data or code touched)
+Prior session: 2026-07-23T20:22:39.144Z — completed 174-05-PLAN.md, Phase 174 all 5 plans done (FEC-05 decision doc; deploy HELD pending operator go-ahead)
 Resume file: None
 
 ## Operator Next Steps
 
 - **HIGH PRIORITY / awaiting operator go-ahead:** Phase 174 (FEC-01..05) is fully implemented and verified at the code level (401/401 unit tests, tsc clean, `174-FEC05-DECISION.md` written). The Render deploy is HELD — run the command in `174-FEC05-DECISION.md` §5 (`RENDER_DEPLOY_HOOK` curl, referencing `backend/.env`) when ready to ship the daily-cadence + rate-limit-tail fixes to production. After deploy + the first daily cron fire, run the §4 zero-429 verification query (~25h window, via Supabase MCP against prod `kxsdzaojfaibhuzmclfq`) — expect 0 rows. Until deployed, production stays on the pre-Phase-174 code (6-hourly cadence, no shared limiter) and the residual 429 tail persists unchanged.
-- **Anytime:** `/gsd-plan-phase 165` (UT dependency satisfied — 164.1 Wave 2 delivered UT G5200V26 polygons + `164.1-ut-wiring-contract.md`).
+- **NEXT / anytime:** `/gsd-plan-phase 166 --ws 2026-us-house-candidate-coverage` — the consolidated 178-district gate, the only unblocked forward step. Re-derive the inherited pin lists live (they were frozen at each phase's gate-authoring time in early July and are now weeks stale); see the "Phase 166 inheritance" bullet below for the severe-district assertions it must carry.
+- ~~`/gsd-plan-phase 165`~~ DONE 2026-07-07 — 17/17 plans, 34-district gate green (165-17). UT dependency had been satisfied by 164.1 Wave 2 (UT G5200V26 polygons + `164.1-ut-wiring-contract.md`).
 - **≥ 2026-08-04:** `/gsd-execute-phase 164.1 --wave 4` — Plan 164.1-07, MO date-gated (SOS Hoskins certification decision): map-holds branch = MO G5200V26 import + un-withhold 2902-2906 + flip the 162 gate; referendum-qualifies branch = zero polygon work, MO stays withheld, divert to Phase 167's MO cluster.
 - **≥ 2027-01-03:** plan the Jan-2027 boundary-promotion phase per `164.1-jan2027-boundary-promotion-spec.md` — promote G5200V26→canonical, re-key `essentials.offices` (UT wiring contract + state correspondences), re-resolve `connect.user_districts`, refresh `connected_profiles.congressional_geo_id`, and RETIRE the D-11 `resolve_congressional_2026` read-path fallback.
 - **D-11 SHIPPED in 164.1 (2026-07-07) — delivered, NOT an accepted limitation:** differential-zone Connected-tier users' `/elections` is corrected in-phase by a read-only live fallback (`connect.resolve_congressional_2026`, migration 1246 — decrypts server-side, ST_Covers vs G5200V26, FIPS 47/29/01/22/49 only, NO cache mutation) substituted in Paths 1/1.5 of `/api/elections/me`. Live-proven by the 1641 smoke's direct-RPC sentinel probe for TN/AL/LA/UT. The Jan-2027 promotion phase retires it once the cache is authoritative.

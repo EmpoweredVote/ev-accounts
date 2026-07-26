@@ -178,21 +178,21 @@ Plans:
   2. Every newly-seeded IN/MD/MN/MO candidate has a headshot; incumbent-nominees reuse existing records (zero duplicate `full_name` per state); no party on candidate cards.
   3. Every IN/MD/MN/MO candidate lacking federal-24 stances has sourced chairs-not-polarity stances — 0 unsourced, primary-source-verified before push, honest-skip where evidence is thin; already-stanced incumbents skipped via the diagnostic.
 
-**Plans:** 11 plans (10 waves)
+**Plans:** 11/11 plans complete
 
 Plans:
 
-- [ ] 162-01-PLAN.md — MO old-vs-new map correspondence audit (D-01a; severe geo_id list)
-- [ ] 162-02-PLAN.md — MO seed end-to-end: 2 elections (general + withheld Polygon Pending), 8 severity-routed races, 58 new records, headshots
-- [ ] 162-03-PLAN.md — MO stances batch A (incumbents-skipped + evidenced majors incl. Bush) + scaffold + push
-- [ ] 162-04-PLAN.md — MO stances batch B (remaining filers) + push (MO stance-complete)
-- [ ] 162-05-PLAN.md — MN seed end-to-end: 1 election, 8 races, 35 new records, headshots (vanilla)
-- [ ] 162-06-PLAN.md — MN stances (35 targets) + scaffold + push
-- [ ] 162-07-PLAN.md — IN-9 flag fix (D-02, first) + IN seed: 1 election, 9 races, 12 new records, headshots
-- [ ] 162-08-PLAN.md — MD candidates-only onto 8 existing races: 13 new + 7 incumbent rows, headshots (D-04 reuse)
-- [ ] 162-09-PLAN.md — IN stances (12 new + 3 zero-tier incumbents) + scaffold + push
-- [ ] 162-10-PLAN.md — MD stances (13 new + 8 zero-tier incumbents) + scaffold + push
-- [ ] 162-11-PLAN.md — 33-district mini-gate: 162-verify.sql (+ MO-SEVERE + IN9-FLAG) + 162-coordinate-smoke.ts
+- [x] 162-01-PLAN.md — MO old-vs-new map correspondence audit (D-01a; severe geo_id list)
+- [x] 162-02-PLAN.md — MO seed end-to-end: 2 elections (general + withheld Polygon Pending), 8 severity-routed races, 58 new records, headshots
+- [x] 162-03-PLAN.md — MO stances batch A (incumbents-skipped + evidenced majors incl. Bush) + scaffold + push
+- [x] 162-04-PLAN.md — MO stances batch B (remaining filers) + push (MO stance-complete)
+- [x] 162-05-PLAN.md — MN seed end-to-end: 1 election, 8 races, 35 new records, headshots (vanilla)
+- [x] 162-06-PLAN.md — MN stances (35 targets) + scaffold + push
+- [x] 162-07-PLAN.md — IN-9 flag fix (D-02, first) + IN seed: 1 election, 9 races, 12 new records, headshots
+- [x] 162-08-PLAN.md — MD candidates-only onto 8 existing races: 13 new + 7 incumbent rows, headshots (D-04 reuse)
+- [x] 162-09-PLAN.md — IN stances (12 new + 3 zero-tier incumbents) + scaffold + push
+- [x] 162-10-PLAN.md — MD stances (13 new + 8 zero-tier incumbents) + scaffold + push
+- [x] 162-11-PLAN.md — 33-district mini-gate: 162-verify.sql (+ MO-SEVERE + IN9-FLAG) + 162-coordinate-smoke.ts
 
 ---
 
@@ -210,7 +210,7 @@ Plans:
   2. Every newly-seeded WI/CO/AL/SC/LA candidate has a headshot; incumbent-nominees reuse existing records (zero duplicate `full_name` per state); no party on candidate cards.
   3. Every WI/CO/AL/SC/LA candidate lacking federal-24 stances has sourced chairs-not-polarity stances — 0 unsourced, primary-source-verified before push, honest-skip where evidence is thin; already-stanced incumbents skipped via the diagnostic.
 
-**Plans:** 11 plans
+**Plans:** 11/11 plans complete
 
 Plans:
 
@@ -220,11 +220,11 @@ Plans:
 - [x] 163-04-PLAN.md — AL seed (7 districts, 21 new, severity-routed withholding + late-primary split) + headshots
 - [x] 163-05-PLAN.md — SC seed (7 districts, 16 new, decided; Jul-15 independent window re-check) + headshots
 - [x] 163-06-PLAN.md — LA seed (6 districts, 27 new, jungle-primary primary_party=NULL + severity-routed withholding) + headshots
-- [ ] 163-07-PLAN.md — WI stances (28 new candidates, federal-24, 0-unsourced)
-- [ ] 163-08-PLAN.md — AL stances (21 new candidates incl. severe-district, federal-24, 0-unsourced)
-- [ ] 163-09-PLAN.md — LA stances (27 new candidates incl. LA-5 open seat + severe-district, federal-24, 0-unsourced)
-- [ ] 163-10-PLAN.md — CO + SC stances (25 new candidates, consolidated, federal-24, 0-unsourced) [PARTIAL: CO half done on PROD 2026-07-05 — 9/9, 50 sourced rows, 0 unsourced; SC half (16) pending → SUMMARY + close when SC done]
-- [ ] 163-11-PLAN.md — Consolidated 36-district verify.sql + coordinate-smoke (AL-SEVERE + LA-SEVERE + CO1-DEGETTE blocks)
+- [x] 163-07-PLAN.md — WI stances (28 new candidates, federal-24, 0-unsourced)
+- [x] 163-08-PLAN.md — AL stances (21 new candidates incl. severe-district, federal-24, 0-unsourced)
+- [x] 163-09-PLAN.md — LA stances (27 new candidates incl. LA-5 open seat + severe-district, federal-24, 0-unsourced)
+- [x] 163-10-PLAN.md — CO + SC stances (25 new candidates, consolidated, federal-24, 0-unsourced) [CO half on PROD 2026-07-05 — 9/9, 50 sourced rows, 0 unsourced; SC half on PROD 2026-07-06 — 13/16 sourced, 83 rows, 0 unsourced, 3 pinned whole-record skips (Ellis -450104 / Smith -450202 / Ethridge -450402)]
+- [x] 163-11-PLAN.md — Consolidated 36-district verify.sql + coordinate-smoke (AL-SEVERE + LA-SEVERE + CO1-DEGETTE blocks)
 
 ---
 
@@ -274,16 +274,16 @@ Plans:
 **Goal:** The enacted 2026 congressional polygons for TN/AL/LA/UT (MO date-gated) coexist with current boundaries as a parallel G5200V26 vintage; `/elections` resolves 2026 boundaries while the reps feed stays on current boundaries until Jan 2027; the 13 seeded-but-hidden severe races un-withhold once each state passes the D-10 3-layer verify bar; and UT polygons + a written wiring contract unblock Phase 165.
 **Requirements**: D-01..D-10 (CONTEXT.md is the goal statement of record; no formal REQ-IDs — this inserted phase sits outside the USHC3 traceability table)
 **Depends on:** Phase 164
-**Plans:** 7 plans
+**Plans:** 6/7 plans complete — 164.1-07 (MO) is date-gated ≥ 2026-08-04, not outstanding work
 
 Plans:
 
-- [ ] 164.1-01-PLAN.md — Dual-map opt-in code (G5200V26 discriminator + elections opt-in JOIN + catch-all exclusions) + Render deploy [Wave 1]
-- [ ] 164.1-02-PLAN.md — D-10 verify-bar harness (1641-verify.sql topology/anchor/NOTOUCH + 1641-coordinate-smoke.ts differential) [Wave 1]
-- [ ] 164.1-03-PLAN.md — UT 2026 polygon import + UT wiring contract (Phase-165 unblocker) [Wave 2]
-- [ ] 164.1-04-PLAN.md — TN import + D-10 bar + un-withhold 5 severe races + flip Phase-161 gate [Wave 2]
-- [ ] 164.1-05-PLAN.md — AL+LA import + BVAP checkpoint + D-10 bar + un-withhold AL-2/LA-2/LA-6 + Edmonds re-verify + flip Phase-163 gate [Wave 2]
-- [ ] 164.1-06-PLAN.md — Consolidated verify bar + Jan-2027 promotion-phase spec + connected_profiles gap doc + STATE.md re-entry dates [Wave 3]
+- [x] 164.1-01-PLAN.md — Dual-map opt-in code (G5200V26 discriminator + elections opt-in JOIN + catch-all exclusions) + Render deploy [Wave 1]
+- [x] 164.1-02-PLAN.md — D-10 verify-bar harness (1641-verify.sql topology/anchor/NOTOUCH + 1641-coordinate-smoke.ts differential) [Wave 1]
+- [x] 164.1-03-PLAN.md — UT 2026 polygon import + UT wiring contract (Phase-165 unblocker) [Wave 2]
+- [x] 164.1-04-PLAN.md — TN import + D-10 bar + un-withhold 5 severe races + flip Phase-161 gate [Wave 2]
+- [x] 164.1-05-PLAN.md — AL+LA import + BVAP checkpoint + D-10 bar + un-withhold AL-2/LA-2/LA-6 + Edmonds re-verify + flip Phase-163 gate [Wave 2]
+- [x] 164.1-06-PLAN.md — Consolidated verify bar + Jan-2027 promotion-phase spec + connected_profiles gap doc + STATE.md re-entry dates [Wave 3]
 - [ ] 164.1-07-PLAN.md — MO date-gated (>= 2026-08-04): import+un-withhold OR revert-branch divert to Phase 167 [Wave 4]
 
 ### Phase 164.2: Enacted-2026 Polygon Backfill — FL/CA/NC/OH/TX (INSERTED)
@@ -294,14 +294,14 @@ Plans:
 
 **Depends on:** Phase 164.1 (reuses the deployed G5200V26 dual-map opt-in JOIN in electionService.ts — generic, auto-applies — and the 1641 D-10 verify harness). Independent of Phase 166 gate and 164.1-07 (MO).
 
-**Plans:** 4 plans
+**Plans:** 4/4 plans complete
 
 Plans:
 
-- [ ] 164.2-01-PLAN.md — Connected-tier allowlist extend: add FIPS 12/06/37/39/48 to `REFRESHED_2026_FIPS` (src/routes/essentials.ts) + CREATE OR REPLACE `connect.resolve_congressional_2026` RPC (new mig, expand IN-list) + Render deploy + regression test asserting anon Path-B resolves V26 for all 5 states [Wave 2 — depends on 164.2-02: regression test asserts against landed V26 rows]
-- [ ] 164.2-02-PLAN.md — Per-state enacted-2026 shapefile import as `G5200V26` into essentials.geofence_boundaries (reproject EPSG:4326; idempotent NOT EXISTS on (geo_id,mtfcc)). Sources: TX PlanC2333 (already fetched to scratchpad), CA Statewide DB (Prop 50), NC NCGA (Oct-2025), OH Redistricting Commission (Oct-31-2025), FL Legislature (May-4-2026). FL first (Aug-18 primary), TX second (shapefile in hand) [Wave 1 — no deps; also authors 1642-verify.sql with pre-import NOTOUCH baselines]
-- [ ] 164.2-03-PLAN.md — D-10 verify per state: reuse 1641-verify.sql (ST_IsValid topology + full coverage + G5200 NOTOUCH) + coordinate-smoke differential using the 15 anchor coordinates sourced 2026-07-21 (each must resolve NEW district under V26; reps feed still returns current) [Wave 3 — depends on 164.2-01 (Connected D-11 RPC probe) + 164.2-02 (landed polygons)]
-- [ ] 164.2-04-PLAN.md — Candidate-field nits (NOT re-seeds; fields verified new-map): FL repairs (is_incumbent flags on Wasserman Schultz FL-20 / Frankel FL-23 / Moskowitz FL-25; rename "Kedner MaximeDe"→"Kedner Maxime", "Seth Haskins"→"Seth Haskin"; FL-11 Webster untangle; add D10 4 GOP + D6 Gist + D11 Wilnau/Harden Hall) + CA-1 remove incorrect Gallagher incumbent flag [Wave 1 — no deps; independent tables (race_candidates/politicians), FL-primary-critical]
+- [x] 164.2-01-PLAN.md — Connected-tier allowlist extend: add FIPS 12/06/37/39/48 to `REFRESHED_2026_FIPS` (src/routes/essentials.ts) + CREATE OR REPLACE `connect.resolve_congressional_2026` RPC (new mig, expand IN-list) + Render deploy + regression test asserting anon Path-B resolves V26 for all 5 states [Wave 2 — depends on 164.2-02: regression test asserts against landed V26 rows]
+- [x] 164.2-02-PLAN.md — Per-state enacted-2026 shapefile import as `G5200V26` into essentials.geofence_boundaries (reproject EPSG:4326; idempotent NOT EXISTS on (geo_id,mtfcc)). Sources: TX PlanC2333 (already fetched to scratchpad), CA Statewide DB (Prop 50), NC NCGA (Oct-2025), OH Redistricting Commission (Oct-31-2025), FL Legislature (May-4-2026). FL first (Aug-18 primary), TX second (shapefile in hand) [Wave 1 — no deps; also authors 1642-verify.sql with pre-import NOTOUCH baselines]
+- [x] 164.2-03-PLAN.md — D-10 verify per state: reuse 1641-verify.sql (ST_IsValid topology + full coverage + G5200 NOTOUCH) + coordinate-smoke differential using the 15 anchor coordinates sourced 2026-07-21 (each must resolve NEW district under V26; reps feed still returns current) [Wave 3 — depends on 164.2-01 (Connected D-11 RPC probe) + 164.2-02 (landed polygons)]
+- [x] 164.2-04-PLAN.md — Candidate-field nits (NOT re-seeds; fields verified new-map): FL repairs (is_incumbent flags on Wasserman Schultz FL-20 / Frankel FL-23 / Moskowitz FL-25; rename "Kedner MaximeDe"→"Kedner Maxime", "Seth Haskins"→"Seth Haskin"; FL-11 Webster untangle; add D10 4 GOP + D6 Gist + D11 Wilnau/Harden Hall) + CA-1 remove incorrect Gallagher incumbent flag [Wave 1 — no deps; independent tables (race_candidates/politicians), FL-primary-critical]
 
 #### Phase 165: Small-Delegation States Candidate Seeding (17 states, create elections + races, then candidates)
 
@@ -318,34 +318,34 @@ Plans:
   3. Every candidate across these 17 states lacking federal-24 stances has sourced chairs-not-polarity stances — 0 unsourced, primary-source-verified before push, honest-skip where evidence is thin; already-stanced incumbents skipped via the diagnostic.
   4. With Phases 161–165 complete, all 178 Wave-3 districts have at least one active `race_candidates` row with a NON-NULL `politician_id` — the full input set for the Phase 166 consolidated gate.
 
-**Plans:** 17 plans
+**Plans:** 17/17 plans complete
 
 Plans:
 **Wave 1** *(seed — 17 disjoint states, no migration/file overlap; run INLINE; execute the 3 special tracks first — 165-01 NV+ME cheapest, 165-02 UT contract-bound, 165-03 AK)*
 
-- [ ] 165-01-PLAN.md — Track 1: NV + ME candidates-only reconciliation (reuse 6 pre-existing races; 5 NV new + Chapman NULL-pid fix + 2 ME new; NO new elections/races) + headshots
-- [ ] 165-02-PLAN.md — Track 2: UT court-ordered re-key (new election + 4 races on existing offices 4901-4904; Moore->4902/Maloy->4903/Kennedy->4904 re-link; 4901 open; offices NOTOUCH per binding contract) + headshots
-- [ ] 165-03-PLAN.md — Track 3: AK nonpartisan top-four-RCV (1 election + 1 jungle race primary_party=NULL; 14 new + Begich; PROVISIONAL) + headshots
-- [ ] 165-04-PLAN.md — NM + NE seed (6 districts, decided; NE-2 open seat; safe_start_seq NM-1=26/NM-2=51/NM-3=82/NE-3=60; exclude Ahlman/Budke/Cohen) + headshots
-- [ ] 165-05-PLAN.md — WV + ID seed (4 districts, decided; ID multi-party; standard seq) + headshots
-- [ ] 165-06-PLAN.md — HI + NH seed (4 districts, late-primary PROVISIONAL; HI In-Primary filter; NH-1 14-candidate open; NH-1 seq>=33; exclude Belatti/Burd + Black/Mahrou/Sykes) + headshots
-- [ ] 165-07-PLAN.md — RI + DE + VT + WY seed (5 districts, late-primary PROVISIONAL; DE seq=48 MANDATORY; VT seq=6; WY 18-candidate open seat) + headshots
-- [ ] 165-08-PLAN.md — MT + ND + SD seed (4 districts, decided; MT-1 + SD open seats; MT-2 seq>=85; exclude Persico/Eisenhauer/Neville/Tuttle/Pittman) + headshots
+- [x] 165-01-PLAN.md — Track 1: NV + ME candidates-only reconciliation (reuse 6 pre-existing races; 5 NV new + Chapman NULL-pid fix + 2 ME new; NO new elections/races) + headshots
+- [x] 165-02-PLAN.md — Track 2: UT court-ordered re-key (new election + 4 races on existing offices 4901-4904; Moore->4902/Maloy->4903/Kennedy->4904 re-link; 4901 open; offices NOTOUCH per binding contract) + headshots
+- [x] 165-03-PLAN.md — Track 3: AK nonpartisan top-four-RCV (1 election + 1 jungle race primary_party=NULL; 14 new + Begich; PROVISIONAL) + headshots
+- [x] 165-04-PLAN.md — NM + NE seed (6 districts, decided; NE-2 open seat; safe_start_seq NM-1=26/NM-2=51/NM-3=82/NE-3=60; exclude Ahlman/Budke/Cohen) + headshots
+- [x] 165-05-PLAN.md — WV + ID seed (4 districts, decided; ID multi-party; standard seq) + headshots
+- [x] 165-06-PLAN.md — HI + NH seed (4 districts, late-primary PROVISIONAL; HI In-Primary filter; NH-1 14-candidate open; NH-1 seq>=33; exclude Belatti/Burd + Black/Mahrou/Sykes) + headshots
+- [x] 165-07-PLAN.md — RI + DE + VT + WY seed (5 districts, late-primary PROVISIONAL; DE seq=48 MANDATORY; VT seq=6; WY 18-candidate open seat) + headshots
+- [x] 165-08-PLAN.md — MT + ND + SD seed (4 districts, decided; MT-1 + SD open seats; MT-2 seq>=85; exclude Persico/Eisenhauer/Neville/Tuttle/Pittman) + headshots
 
 **Wave 2** *(stances — each depends on its seed plan; disjoint per-state dirs; 3-concurrency max)*
 
-- [ ] 165-09-PLAN.md — NV + ME stances (incl. zero-tier Pingree FULL research; RCV over-indulgence for ME)
-- [ ] 165-10-PLAN.md — UT stances (new challengers via _push.ts + UUID re-links McAdams/Crosby/Udell/Larsen via _push_uuid.ts)
-- [ ] 165-11-PLAN.md — AK stances (14 new; MAXIMAL RCV over-indulgence; Begich skipped)
-- [ ] 165-12-PLAN.md — NM + NE stances
-- [ ] 165-13-PLAN.md — WV + ID stances (ID third-party by evidence, never party inference)
-- [ ] 165-14-PLAN.md — HI + NH stances (crowded HI + NH-1 14-field; multi-wave)
-- [ ] 165-15-PLAN.md — RI + DE + VT + WY stances (WY 18-field = largest single load, own wave sequence)
-- [ ] 165-16-PLAN.md — MT + ND + SD stances
+- [x] 165-09-PLAN.md — NV + ME stances (incl. zero-tier Pingree FULL research; RCV over-indulgence for ME)
+- [x] 165-10-PLAN.md — UT stances (new challengers via _push.ts + UUID re-links McAdams/Crosby/Udell/Larsen via _push_uuid.ts)
+- [x] 165-11-PLAN.md — AK stances (14 new; MAXIMAL RCV over-indulgence; Begich skipped)
+- [x] 165-12-PLAN.md — NM + NE stances
+- [x] 165-13-PLAN.md — WV + ID stances (ID third-party by evidence, never party inference)
+- [x] 165-14-PLAN.md — HI + NH stances (crowded HI + NH-1 14-field; multi-wave)
+- [x] 165-15-PLAN.md — RI + DE + VT + WY stances (WY 18-field = largest single load, own wave sequence)
+- [x] 165-16-PLAN.md — MT + ND + SD stances
 
 **Wave 3** *(consolidated gate)*
 
-- [ ] 165-17-PLAN.md — Consolidated 34-district 165-verify.sql (NV-RECONCILE + ME-RECONCILE + UT-REKEY NOTOUCH + AK-FIELD + PROVISIONAL + COLLISION-BAND blocks) + 165-coordinate-smoke.ts (17 positive samples)
+- [x] 165-17-PLAN.md — Consolidated 34-district 165-verify.sql (NV-RECONCILE + ME-RECONCILE + UT-REKEY NOTOUCH + AK-FIELD + PROVISIONAL + COLLISION-BAND blocks) + 165-coordinate-smoke.ts (17 positive samples)
 
 ---
 
@@ -393,12 +393,31 @@ Plans:
 |-------|----------------|--------|-----------|
 | 160. Field Resolution + Stance-Gap Diagnostic | 7/7 | Complete    | 2026-07-03 |
 | 161. WA + AZ + TN + MA Candidate Seeding | 11/11 | Complete    | 2026-07-04 |
-| 162. IN + MD + MN + MO Candidate Seeding | 0/? | Not started | - |
-| 163. WI + CO + AL + SC + LA Candidate Seeding | 6/11 | In Progress|  |
+| 162. IN + MD + MN + MO Candidate Seeding | 11/11 | Complete    | 2026-07-05 |
+| 163. WI + CO + AL + SC + LA Candidate Seeding | 11/11 | Complete    | 2026-07-06 |
 | 164. KY + OR + CT + OK + AR + IA + KS + MS Candidate Seeding | 13/13 | Complete    | 2026-07-07 |
-| 165. Small-Delegation States Candidate Seeding (17 states) | 0/17 | Not started | - |
+| 164.1 Cross-State Polygon Refresh + Dual-Map (INSERTED) | 6/7 | Date-gated | 2026-07-07 (01–06) |
+| 164.2 Enacted-2026 Polygon Backfill FL/CA/NC/OH/TX (INSERTED) | 4/4 | Complete    | 2026-07-22 |
+| 165. Small-Delegation States Candidate Seeding (17 states) | 17/17 | Complete    | 2026-07-07 |
 | 166. Consolidated Verification Gate | 0/? | Not started | - |
 | 167. Post-Primary Reconciliation (date-gated, Aug–Sep 2026) | 0/? | Not started | - |
+
+**Table corrected 2026-07-26** — rows for 162/163/165 read "Not started"/"In Progress" while every plan had
+shipped and its phase gate had gone green against prod; 164.1/164.2 were missing entirely. Verified against
+the on-disk SUMMARY files, not re-run.
+
+**On "Complete" in this table:** it means every PLAN.md has a SUMMARY.md *and* the phase's own read-only gate
+passed against prod — 162-11 (11 assertions + 4 positive / 1 severe-MO negative smoke, 2026-07-05), 163-11
+(11 assertions + 5 positive / 2 severe negatives, 2026-07-06), 164-13 (12 assertions + 8/8 smoke, 2026-07-07),
+165-17 (34-district gate, 2026-07-07). It does **not** mean a GSD `NNN-VERIFICATION.md` artifact exists — 162,
+163, 164, 164.2 and 165 have none, which is why `gsd-progress` reports `verification_status: missing` and
+suggests re-running `/gsd-execute-phase`. **Do not re-execute these phases** — the work is on prod. Phase 166 is
+the consolidated 178-district gate that supersedes the per-phase ones.
+
+**164.1 is "Date-gated", not incomplete:** plans 01–06 shipped 2026-07-07. Plan 164.1-07 (MO) executes on or
+after **2026-08-04**, when the SOS Hoskins certification decision lands — map-holds branch imports MO G5200V26
+polygons and un-withholds 2902–2906; referendum-qualifies branch does zero polygon work and diverts to Phase
+167's MO cluster.
 
 ---
 
