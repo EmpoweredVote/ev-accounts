@@ -403,29 +403,39 @@ router.get('/session', async (req: Request, res: Response): Promise<void> => {
     return;
   }
 
-  const { data, error } = await supabaseAdmin.auth.refreshSession({
-    refresh_token: refreshToken,
-  });
+  try {
+    const { data, error } = await supabaseAdmin.auth.refreshSession({
+      refresh_token: refreshToken,
+    });
 
-  if (error || !data.session) {
-    // Cookie present but token invalid/expired/revoked -- clear the stale cookie
+    if (error || !data.session) {
+      // Cookie present but token invalid/expired/revoked -- clear the stale cookie
+      res.clearCookie('ev_session', evSessionCookieOptions());
+      res.status(401).end();
+      return;
+    }
+
+    // CRITICAL: Supabase rotates refresh tokens on each use. The old token
+    // is immediately invalidated. We MUST write the new refresh_token back
+    // into the cookie or the next /session call will 401.
+    res.cookie('ev_session', data.session.refresh_token, {
+      ...evSessionCookieOptions(),
+      maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days in ms
+    });
+
+    res.status(200).json({
+      access_token: data.session.access_token,
+      refresh_token: data.session.refresh_token,
+    });
+  } catch (err) {
+    // refreshSession can throw (transient Supabase Auth error, or a malformed
+    // cookie value) rather than returning { error }. Without this guard the
+    // request became an unhandled 500 on the auth path; treat it like an
+    // invalid session -- clear the stale cookie and return 401.
+    console.error('[auth/session] refreshSession threw:', err);
     res.clearCookie('ev_session', evSessionCookieOptions());
     res.status(401).end();
-    return;
   }
-
-  // CRITICAL: Supabase rotates refresh tokens on each use. The old token
-  // is immediately invalidated. We MUST write the new refresh_token back
-  // into the cookie or the next /session call will 401.
-  res.cookie('ev_session', data.session.refresh_token, {
-    ...evSessionCookieOptions(),
-    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days in ms
-  });
-
-  res.status(200).json({
-    access_token: data.session.access_token,
-    refresh_token: data.session.refresh_token,
-  });
 });
 
 /**
