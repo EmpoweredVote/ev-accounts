@@ -949,29 +949,76 @@ export async function upsertContributions(
  *     lines in one filing (e.g. five $1.00 recurring donations from one donor on one day,
  *     carrying consecutive sub_ids). Collapsing those would destroy real data.
  *
+ * ⚠ CORRECTED 2026-07-25 — retirement is PER LINE, not per whole report.
+ * ------------------------------------------------------------------------------------------
+ * The original FEC-04b rule ("delete every row of the report below the report's highest
+ * file_number") assumed an amendment RE-REPORTS THE WHOLE REPORT, so that the surviving filing
+ * is a superset of the one it supersedes. Measured against live data, that assumption is FALSE:
+ * across 24 superseded filings sampled, ZERO were supersets. Many FEC amendments are DELTA
+ * filings carrying only the changed lines. The starkest case — committee C00574889, report
+ * Q1/2016, contribution date 2016-03-11 — has 114 lines in the original filing 1066886 and just
+ * 2 in the amendment 1081569. The whole-report rule would have deleted all 114 and kept 2.
+ *
+ * So supersession is decided per CONTRIBUTION LINE: a row is retired only when the SAME line
+ * (donor, amount, date) is also present in that report under a HIGHER file_number. That is
+ * exactly what the double-count is — one line carried by two filings of one report — and it
+ * leaves untouched any line that only the earlier filing reports.
+ *
+ * Why this handles the cases the whole-report rule got wrong or right by luck:
+ *   - C00256925 12P/2020 (the real double-count): Chamblee's $250 2020-05-07 appears in BOTH
+ *     1409022 and 1484476 → the 1409022 copy is retired. Still fixed.
+ *   - C00574889 Q1/2016: PARKER's $50 appears ONLY in 1066886 → nothing retired. No longer
+ *     destroys 114 real contributions.
+ *   - FEC's legitimate repeated identical lines within ONE filing (five $1.00 recurring
+ *     donations on one day, consecutive sub_ids) all share that filing's file_number, so none is
+ *     ever the "higher" version of another → never collapsed.
+ *   - The same contribution legitimately reported in DIFFERENT reports (C00575209's $2,800 in
+ *     both Q1/2020 and Q3/2020) is never touched: the match is scoped within one
+ *     (report_year, report_type).
+ *
  * Safety properties:
  *   - Scoped to `politician_source_id` FIRST so the DELETE rides idx_contrib_src_cycle. An
  *     unscoped predicate over JSONB paths would seq-scan 26.9M rows — the exact shape of the
  *     2026-07-22 P1 pool-saturation incident.
  *   - `data_source = 'fec'` — never touches another source.
- *   - `file_number < maxFileNumber` — can never delete the rows just inserted (they ARE the max).
- *   - `raw_record ? 'file_number'` — rows ingested BEFORE this fix have no file_number stored, so
- *     they are never matched. That is deliberate: for those rows we cannot tell which version they
- *     are, and deleting on a guess could destroy the current version. They need a separate
- *     backfill (see .planning/todos/2026-07-23-fec-amendment-double-count-efficacy-check.md).
+ *   - Both sides require `raw_record ? 'file_number'`: rows ingested before FEC-04b have none, so
+ *     they are neither deleted nor used as evidence. Deliberate — for those we cannot tell which
+ *     version a row is. They need the separate backfill
+ *     (scripts/backfill-fec-file-numbers.ts; see the todo in .planning/todos/).
+ *   - A strictly-greater-than file_number must EXIST for a row to be deleted, so the newest
+ *     version of any line is always kept and the rows just inserted can never be removed.
  */
 async function retireSupersededFilings(filings: SupersededFiling[]): Promise<number> {
   let deleted = 0;
   for (const f of filings) {
+    // Per-line supersession via a window MAX, not a self-join. A self-join on these predicates
+    // plans as a nested loop with the JSONB extraction in the join filter — both sides index-scan
+    // politician_source_id and every pair is compared, so cost is quadratic in the source's row
+    // count and it does not complete (measured: >10 min on one committee of one source). The
+    // window form is a single pass plus a sort over the same rows.
     const res = await pool.query(
-      `DELETE FROM transparent_motivations.contributions
-        WHERE politician_source_id = $1
-          AND data_source = 'fec'
-          AND raw_record ? 'file_number'
-          AND raw_record->>'committee_id' = $2
-          AND (raw_record->>'report_year')::int = $3
-          AND raw_record->>'report_type' = $4
-          AND (raw_record->>'file_number')::bigint < $5`,
+      `WITH slice AS (
+         SELECT id, amount, contribution_date, donor_name_normalized,
+                (raw_record->>'file_number')::bigint AS fn
+           FROM transparent_motivations.contributions
+          WHERE politician_source_id = $1
+            AND data_source = 'fec'
+            AND raw_record ? 'file_number'
+            AND raw_record->>'committee_id' = $2
+            AND (raw_record->>'report_year')::int = $3
+            AND raw_record->>'report_type' = $4
+       ), ranked AS (
+         SELECT id, fn,
+                max(fn) OVER (
+                  PARTITION BY donor_name_normalized, amount, contribution_date
+                ) AS survivor_fn
+           FROM slice
+       )
+       DELETE FROM transparent_motivations.contributions t
+        USING ranked r
+        WHERE t.id = r.id
+          AND r.fn < r.survivor_fn
+          AND r.fn < $5`,
       [f.politicianSourceId, f.committeeId, f.reportYear, f.reportType, f.maxFileNumber]
     );
     deleted += res.rowCount ?? 0;

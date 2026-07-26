@@ -503,7 +503,9 @@ describe('fecAdapter FEC-04b — filing-level supersession (real prod double-cou
   it('retires EARLIER filings scoped by politician_source_id, guarded on file_number presence, and never deletes the just-inserted max', async () => {
     const deleteCalls: { sql: string; params: unknown[] }[] = [];
     poolQueryMock.mockImplementation((sql: string, params: unknown[]) => {
-      if (/^\s*DELETE/i.test(sql)) {
+      // NOT anchored: the per-line retirement is a WITH ... DELETE, so the statement does
+      // not begin with DELETE.
+      if (/\bDELETE FROM/i.test(sql)) {
         deleteCalls.push({ sql, params });
         return Promise.resolve({ rows: [], rowCount: 3 });
       }
@@ -524,8 +526,56 @@ describe('fecAdapter FEC-04b — filing-level supersession (real prod double-cou
     expect(filingDelete!.sql).toMatch(/data_source\s*=\s*'fec'/);
     // pre-fix rows (no file_number stored) must never be matched
     expect(filingDelete!.sql).toMatch(/raw_record\s*\?\s*'file_number'/);
-    // strictly-less-than, so the rows just inserted (which ARE the max) are never deleted
-    expect(filingDelete!.sql).toMatch(/file_number'\)::bigint\s*<\s*\$5/);
+    // strictly-less-than the batch max, so the rows just inserted (which ARE the max) survive
+    expect(filingDelete!.sql).toMatch(/r\.fn\s*<\s*\$5/);
     expect(filingDelete!.params).toEqual([ps.id, 'C00256925', 2020, '12P', 1484476]);
+  });
+
+  /**
+   * Regression guard for the DELTA-AMENDMENT data loss (found 2026-07-25).
+   *
+   * The original FEC-04b rule deleted every row of a report below the report's highest
+   * file_number, on the assumption that an amendment re-reports the whole report. Live data
+   * falsifies that: of 24 superseded filings sampled, ZERO were supersets of their successor.
+   * Committee C00574889 report Q1/2016 on 2016-03-11 has 114 lines in original file 1066886 and
+   * only 2 in amendment 1081569 — the old rule would have destroyed 112 real contributions.
+   *
+   * So the DELETE must require per-LINE evidence: a matching (donor, amount, date) row under a
+   * higher file_number in the same report. These assertions pin that self-join in place.
+   */
+  it('requires per-LINE evidence so a delta amendment cannot destroy the original filing', async () => {
+    const deleteCalls: { sql: string; params: unknown[] }[] = [];
+    poolQueryMock.mockImplementation((sql: string, params: unknown[]) => {
+      if (/\bDELETE FROM/i.test(sql)) {
+        deleteCalls.push({ sql, params });
+        return Promise.resolve({ rows: [], rowCount: 0 });
+      }
+      return Promise.resolve({ rows: [], rowCount: 0 });
+    });
+
+    const adapter = createFecAdapter('2020');
+    const normalized = await adapter.normalize(
+      { records: [filingRecord()], totalExpected: 1, totalFetched: 1 },
+      ps
+    );
+    await adapter.upsert(normalized);
+
+    const filingDelete = deleteCalls.find((c) => /file_number/i.test(c.sql))!;
+    // The surviving version of a LINE is a window MAX partitioned by the line's identity —
+    // so a row is only ever deleted when the SAME line exists under a higher file_number.
+    expect(filingDelete.sql).toMatch(
+      /max\(fn\)\s*OVER\s*\(\s*PARTITION BY donor_name_normalized,\s*amount,\s*contribution_date\s*\)/i
+    );
+    expect(filingDelete.sql).toMatch(/r\.fn\s*<\s*r\.survivor_fn/);
+    // NOT a self-join: that plans as a quadratic nested loop with JSONB extraction in the join
+    // filter and does not complete on real data.
+    expect(filingDelete.sql).not.toMatch(/USING\s+transparent_motivations\.contributions\s+newer/i);
+    // the partition stays inside ONE report of ONE committee, so a contribution legitimately
+    // reported in two different reports is never collapsed
+    expect(filingDelete.sql).toMatch(/raw_record->>'committee_id'\s*=\s*\$2/);
+    expect(filingDelete.sql).toMatch(/raw_record->>'report_year'\)::int\s*=\s*\$3/);
+    expect(filingDelete.sql).toMatch(/raw_record->>'report_type'\s*=\s*\$4/);
+    // and never below the batch max, so the rows just inserted survive
+    expect(filingDelete.sql).toMatch(/r\.fn\s*<\s*\$5/);
   });
 });

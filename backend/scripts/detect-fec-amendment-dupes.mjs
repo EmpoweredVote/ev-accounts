@@ -41,9 +41,17 @@ const { rows: sources } = await pool.query(
 console.log(`scanning ${sources.length} politician_source(s)\n`);
 
 const findings = [];
+const timedOut = [];
 let scanned = 0, rowsSeen = 0;
 for (const s of sources) {
-  const { rows } = await pool.query(
+  let rows;
+  try {
+    // The `postgres` role carries statement_timeout=8s (2026-07-22 P1 remediation), which the
+    // largest sources exceed — 934k-row slices legitimately need longer. Raised per-connection,
+    // not per-role, and only for this read-only analytical scan. Still index-scoped per source,
+    // so this is a long single-source read, never the unscoped seq-scan the 8s cap guards against.
+    await pool.query(`SET statement_timeout = '180s'`);
+    ({ rows } = await pool.query(
     `WITH slice AS (
        SELECT raw_record->>'committee_id' AS cmte,
               donor_name_normalized AS donor,
@@ -68,7 +76,14 @@ for (const s of sources) {
               'date', contribution_date, 'rows', n, 'load_dates', load_dates,
               'any_post_fix', any_post_fix
             )) FILTER (WHERE prefixes > 1), '[]'::jsonb) AS detail
-       FROM grp`, [s.id]);
+       FROM grp`, [s.id]));
+  } catch (e) {
+    // One slow/huge source must never abort a 677-source sweep (it did, 2026-07-25). Record it
+    // as unscanned so the coverage number stays honest rather than silently shrinking.
+    timedOut.push({ politician_source_id: s.id, error: e.message });
+    console.log(`  ! ${s.id}  SKIPPED (${e.message})`);
+    continue;
+  }
   const r = rows[0];
   scanned++;
   rowsSeen += Number(r.slice_rows);
@@ -82,6 +97,7 @@ for (const s of sources) {
 const totalGroups = findings.reduce((a, f) => a + f.dup_groups, 0);
 const totalExcess = findings.reduce((a, f) => a + f.excess_rows, 0);
 console.log(`\nscanned ${scanned} sources / ${rowsSeen.toLocaleString()} rows`);
+if (timedOut.length) console.log(`UNSCANNED (errored): ${timedOut.length} source(s) — coverage is NOT complete`);
 console.log(`affected sources: ${findings.length}`);
 console.log(`duplicate groups: ${totalGroups}`);
 console.log(`EXCESS ROWS (the over-count): ${totalExcess}` +
@@ -90,7 +106,7 @@ console.log('\nNothing deleted. To retire, resolve each (committee, report_year,
 console.log('the FEC API and keep only the highest file_number — do not guess from the prefix alone.');
 
 if (jsonIdx > -1 && process.argv[jsonIdx + 1]) {
-  writeFileSync(process.argv[jsonIdx + 1], JSON.stringify({ scanned, rowsSeen, findings }, null, 2));
+  writeFileSync(process.argv[jsonIdx + 1], JSON.stringify({ scanned, rowsSeen, findings, timedOut }, null, 2));
   console.log(`\nwrote ${process.argv[jsonIdx + 1]}`);
 }
 await pool.end();
