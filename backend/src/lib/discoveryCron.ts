@@ -41,7 +41,26 @@ import { sendEmail } from './emailService.js';
 // Widening the horizon or shortening the cadence directly increases weekly
 // Anthropic spend — treat either change as a deliberate cost decision, not a
 // routine tuning knob.
-const SWEEP_HORIZON_DAYS = 180;
+//
+// 180 is EVIDENCE-BACKED, not a guess: as of 2026-07, 77 completed runs found
+// candidates while >90 days out, and Frisco / Princeton / Nevada / Lowry Crossing
+// each first returned candidates at 170 days. Narrowing the horizon to 90 days
+// would silently discard all of that. Cost is instead controlled per-jurisdiction
+// by the OPS-06 backoff below, which suppresses only jurisdictions that have
+// actually proven empty. Override for experiments without a code change.
+const SWEEP_HORIZON_DAYS = Number(process.env.DISCOVERY_SWEEP_HORIZON_DAYS ?? 180);
+
+// OPS-06 per-jurisdiction backoff. 161 of 296 completed runs (2026-04..07) found
+// nothing, and the empties concentrate in specific jurisdictions (Richardson 8
+// runs / 0 found, Plano 7/0, Blue Ridge 6/0, Josephine 5/0) rather than in a
+// far-out date band. So back off by observed emptiness, never by date alone.
+//
+// A backed-off jurisdiction is NEVER silenced: it drops to a probe every
+// BACKOFF_PROBE_DAYS instead of weekly (~4x cheaper), and backoff is disabled
+// outright inside BACKOFF_MIN_DAYS_OUT so a filing window is never missed.
+const BACKOFF_EMPTY_STREAK = Number(process.env.DISCOVERY_BACKOFF_EMPTY_STREAK ?? 3);
+const BACKOFF_MIN_DAYS_OUT = Number(process.env.DISCOVERY_BACKOFF_MIN_DAYS_OUT ?? 90);
+const BACKOFF_PROBE_DAYS = Number(process.env.DISCOVERY_BACKOFF_PROBE_DAYS ?? 28);
 const LOCK_TTL_MS = 2 * 60 * 60 * 1000; // 2 hours
 const RETRY_DELAYS_MS = [1_000, 2_000, 4_000]; // 3 retry attempts, exponential backoff
 
@@ -116,6 +135,52 @@ export function isRetryable(err: unknown): boolean {
   return /ECONNRESET|ETIMEDOUT|ENOTFOUND|fetch failed/i.test(msg);
 }
 
+// ---------------------------------------------------------------------------
+// OPS-06 backoff decision
+// ---------------------------------------------------------------------------
+
+/**
+ * leadingEmptyStreak — how many of the most-recent completed runs found zero
+ * candidates, counting back from the latest. `foundSeries` must be ordered
+ * newest-first. A single non-zero run resets the streak, so one hit re-arms
+ * weekly scanning immediately.
+ */
+export function leadingEmptyStreak(foundSeries: number[] | null | undefined): number {
+  if (!foundSeries) return 0;
+  let streak = 0;
+  for (const found of foundSeries) {
+    if (found !== 0) break;
+    streak += 1;
+  }
+  return streak;
+}
+
+/**
+ * shouldSkipForBackoff — true when a jurisdiction has proven empty enough that
+ * scanning it this week is not worth a paid agent run.
+ *
+ * Deliberately conservative, in this order:
+ *   1. Inside BACKOFF_MIN_DAYS_OUT of the election, NEVER skip. This is the
+ *      filing window; missing a filing is far more costly than a wasted run.
+ *   2. Fewer than BACKOFF_EMPTY_STREAK consecutive empty runs — not enough
+ *      evidence, keep scanning. A brand-new jurisdiction is never skipped.
+ *   3. Otherwise skip, EXCEPT once every BACKOFF_PROBE_DAYS so a backed-off
+ *      jurisdiction still gets probed and can re-arm itself. Without this a
+ *      jurisdiction whose filing opens at, say, 150 days out could stay dark
+ *      from its third empty run until BACKOFF_MIN_DAYS_OUT.
+ */
+export function shouldSkipForBackoff(args: {
+  daysUntilElection: number;
+  emptyStreak: number;
+  daysSinceLastRun: number | null;
+}): boolean {
+  if (args.daysUntilElection <= BACKOFF_MIN_DAYS_OUT) return false;
+  if (args.emptyStreak < BACKOFF_EMPTY_STREAK) return false;
+  if (args.daysSinceLastRun === null) return false;
+  if (args.daysSinceLastRun >= BACKOFF_PROBE_DAYS) return false;
+  return true;
+}
+
 const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
 export async function withRetry<T>(fn: () => Promise<T>, label: string): Promise<T> {
@@ -159,6 +224,10 @@ function buildSweepSummaryEmail(args: {
   // account became unusable mid-run. `skipped` lists jurisdictions never attempted.
   abortDetail?: string | null;
   skipped?: string[];
+  // OPS-06: jurisdictions not scanned because they have proven empty. Reported for
+  // transparency but deliberately NOT part of the send decision — a week whose only
+  // news is "backoff working as designed" should stay quiet.
+  backedOff?: string[];
 }): string {
   const sections: string[] = [];
 
@@ -211,6 +280,15 @@ function buildSweepSummaryEmail(args: {
     `);
   }
 
+  const backedOff = args.backedOff ?? [];
+  if (backedOff.length > 0) {
+    sections.push(`
+      <h2 style="margin: 16px 0 8px 0;">Not scanned — backoff (${backedOff.length})</h2>
+      <p style="color:#57606a;font-size:13px;margin:0 0 4px 0;">Skipped to save cost: no candidates in their last ${BACKOFF_EMPTY_STREAK} runs and more than ${BACKOFF_MIN_DAYS_OUT} days to their election. Each is still probed every ${BACKOFF_PROBE_DAYS} days, and resumes weekly scanning inside ${BACKOFF_MIN_DAYS_OUT} days.</p>
+      <p style="color:#57606a;font-size:13px;margin:0;">${escapeHtml(backedOff.join(', '))}</p>
+    `);
+  }
+
   return `
     <div style="font-family: system-ui, sans-serif; max-width: 560px;">
       <h1 style="margin: 0 0 8px 0;">Discovery sweep complete</h1>
@@ -241,6 +319,11 @@ function buildSweepSummaryEmail(args: {
  * 400) aborts the sweep with exactly one operator alert and zero jurisdiction
  * queries. An inconclusive canary failure (thrown 529/network error) is logged and
  * the sweep proceeds normally — only a returned {available:false} result aborts.
+ *
+ * OPS-06 backoff: jurisdictions whose last BACKOFF_EMPTY_STREAK completed runs all
+ * found zero candidates are skipped while more than BACKOFF_MIN_DAYS_OUT days from
+ * their election, dropping to a probe every BACKOFF_PROBE_DAYS instead of weekly.
+ * Skips are always logged and reported in the summary email — never silent.
  *
  * OPS-05 circuit breaker: the pre-flight cannot catch credit running out MID-sweep,
  * so the per-jurisdiction catch also checks isAccountUnusableError and breaks out of
@@ -289,23 +372,78 @@ export async function runDiscoverySweep(): Promise<void> {
     const horizon = new Date();
     horizon.setUTCDate(horizon.getUTCDate() + SWEEP_HORIZON_DAYS);
 
-    const jurisdictionsResult = await pool.query<{ id: string; jurisdiction_name: string }>(
-      `SELECT id, jurisdiction_name
-         FROM essentials.discovery_jurisdictions
-        WHERE election_date > now()
-          AND election_date <= $1
-        ORDER BY election_date ASC`,
-      [horizon]
+    // The LATERAL pulls each jurisdiction's most-recent completed runs so OPS-06
+    // can decide backoff without a second query per jurisdiction. It rides
+    // idx_discovery_runs_jurisdiction_started (discovery_jurisdiction_id,
+    // started_at DESC) — hence ordering by started_at, not completed_at.
+    const jurisdictionsResult = await pool.query<{
+      id: string;
+      jurisdiction_name: string;
+      days_until_election: number;
+      found_series: number[] | null;
+      days_since_last_run: number | null;
+    }>(
+      `SELECT j.id,
+              j.jurisdiction_name,
+              (j.election_date - CURRENT_DATE)                       AS days_until_election,
+              recent.found_series,
+              CASE WHEN recent.last_started_at IS NULL THEN NULL
+                   ELSE (CURRENT_DATE - recent.last_started_at::date)
+              END                                                    AS days_since_last_run
+         FROM essentials.discovery_jurisdictions j
+         LEFT JOIN LATERAL (
+           SELECT array_agg(r.candidates_found ORDER BY r.started_at DESC) AS found_series,
+                  max(r.started_at)                                       AS last_started_at
+             FROM (
+               SELECT candidates_found, started_at
+                 FROM essentials.discovery_runs
+                WHERE discovery_jurisdiction_id = j.id
+                  AND status = 'completed'
+                ORDER BY started_at DESC
+                LIMIT $2
+             ) r
+         ) recent ON true
+        WHERE j.election_date > now()
+          AND j.election_date <= $1
+        ORDER BY j.election_date ASC`,
+      [horizon, BACKOFF_EMPTY_STREAK]
     );
 
-    const jurisdictions = jurisdictionsResult.rows;
+    // OPS-06: partition before spending anything. Skipped jurisdictions cost nothing.
+    const skippedForBackoff: string[] = [];
+    const jurisdictions = jurisdictionsResult.rows.filter((j) => {
+      const emptyStreak = leadingEmptyStreak(j.found_series);
+      const skip = shouldSkipForBackoff({
+        daysUntilElection: Number(j.days_until_election),
+        emptyStreak,
+        daysSinceLastRun: j.days_since_last_run === null ? null : Number(j.days_since_last_run),
+      });
+      if (skip) skippedForBackoff.push(j.jurisdiction_name);
+      return !skip;
+    });
+
+    if (skippedForBackoff.length > 0) {
+      // Never a silent cap — always log what was dropped and why.
+      console.info(
+        `[discoveryCron] OPS-06 backoff skipped ${skippedForBackoff.length} jurisdiction(s) ` +
+          `with >=${BACKOFF_EMPTY_STREAK} consecutive empty runs and >${BACKOFF_MIN_DAYS_OUT}d to election: ` +
+          skippedForBackoff.join(', ')
+      );
+    }
 
     if (jurisdictions.length === 0) {
-      console.info('[discoveryCron] No jurisdictions in sweep horizon; nothing to do');
+      console.info(
+        skippedForBackoff.length > 0
+          ? `[discoveryCron] No jurisdictions to scan; all ${skippedForBackoff.length} in horizon are backed off`
+          : '[discoveryCron] No jurisdictions in sweep horizon; nothing to do'
+      );
       return;
     }
 
-    console.info(`[discoveryCron] Sweep starting: ${jurisdictions.length} jurisdiction(s) in horizon`);
+    console.info(
+      `[discoveryCron] Sweep starting: ${jurisdictions.length} jurisdiction(s) to scan ` +
+        `(${skippedForBackoff.length} backed off)`
+    );
 
     const autoUpsertedByJurisdiction: Array<{
       jurisdictionName: string;
@@ -400,6 +538,7 @@ export async function runDiscoverySweep(): Promise<void> {
         reviewUrl,
         abortDetail,
         skipped,
+        backedOff: skippedForBackoff,
       });
       const totalUpserted = autoUpsertedByJurisdiction.reduce((n, j) => n + j.candidates.length, 0);
       const totalUncertain = uncertainPending.reduce((n, j) => n + j.count, 0);
@@ -419,6 +558,7 @@ export async function runDiscoverySweep(): Promise<void> {
       uncertain: uncertainPending.reduce((n, j) => n + j.count, 0),
       failed: failedJurisdictions.length,
       skipped: skipped.length,
+      backedOff: skippedForBackoff.length,
     });
   } finally {
     releaseRunLock();

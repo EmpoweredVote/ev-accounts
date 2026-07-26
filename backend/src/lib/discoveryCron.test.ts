@@ -40,7 +40,13 @@ const poolQueryMock = vi.hoisted(() => vi.fn());
 vi.mock('./db.js', () => ({ pool: { query: poolQueryMock } }));
 
 import Anthropic from '@anthropic-ai/sdk';
-import { isRetryable, withRetry, runDiscoverySweep } from './discoveryCron.js';
+import {
+  isRetryable,
+  withRetry,
+  runDiscoverySweep,
+  leadingEmptyStreak,
+  shouldSkipForBackoff,
+} from './discoveryCron.js';
 
 function makeAPIError(status: number, type: string, message: string): InstanceType<typeof Anthropic.APIError> {
   return new Anthropic.APIError(status, { type }, message, undefined, type as any);
@@ -182,7 +188,15 @@ function okSummary(runId: string) {
 /** Queue N jurisdictions on the horizon query. */
 function queueJurisdictions(n: number) {
   poolQueryMock.mockResolvedValueOnce({
-    rows: Array.from({ length: n }, (_, i) => ({ id: `j${i}`, jurisdiction_name: `Jurisdiction ${i}` })),
+    rows: Array.from({ length: n }, (_, i) => ({
+      id: `j${i}`,
+      jurisdiction_name: `Jurisdiction ${i}`,
+      // Well inside the filing window, so OPS-06 backoff never applies and these
+      // tests exercise the circuit breaker in isolation.
+      days_until_election: 30,
+      found_series: null,
+      days_since_last_run: null,
+    })),
   });
 }
 
@@ -263,5 +277,138 @@ describe('runDiscoverySweep — OPS-05 mid-sweep circuit breaker', () => {
 
     expect(sendEmailMock).toHaveBeenCalledTimes(1);
     expect(sendEmailMock.mock.calls[0][0].subject).toContain('complete');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// OPS-06 — per-jurisdiction backoff
+//
+// Sized from prod (2026-04..07): 161 of 296 completed runs found nothing, and the
+// empties concentrate in specific jurisdictions (Richardson 8 runs/0 found, Plano
+// 7/0, Blue Ridge 6/0) rather than in a far-out date band. Crucially, 77 completed
+// runs DID find candidates while >90 days out — Frisco/Princeton/Nevada first hit
+// at 170 days — so backoff must key on observed emptiness, never on date alone.
+// ---------------------------------------------------------------------------
+
+describe('leadingEmptyStreak', () => {
+  it('counts consecutive zeros from the newest run', () => {
+    expect(leadingEmptyStreak([0, 0, 0])).toBe(3);
+    expect(leadingEmptyStreak([0, 0])).toBe(2);
+  });
+
+  it('a single hit anywhere in the streak resets it — one candidate re-arms weekly scanning', () => {
+    expect(leadingEmptyStreak([3, 0, 0])).toBe(0);
+    expect(leadingEmptyStreak([0, 5, 0])).toBe(1);
+  });
+
+  it('treats a jurisdiction with no completed runs as zero streak (never skipped)', () => {
+    expect(leadingEmptyStreak(null)).toBe(0);
+    expect(leadingEmptyStreak(undefined)).toBe(0);
+    expect(leadingEmptyStreak([])).toBe(0);
+  });
+});
+
+describe('shouldSkipForBackoff', () => {
+  it('skips a proven-empty jurisdiction that is far out and recently probed', () => {
+    expect(
+      shouldSkipForBackoff({ daysUntilElection: 170, emptyStreak: 3, daysSinceLastRun: 7 })
+    ).toBe(true);
+  });
+
+  it('NEVER skips inside the filing window, however long the empty streak', () => {
+    expect(
+      shouldSkipForBackoff({ daysUntilElection: 90, emptyStreak: 99, daysSinceLastRun: 1 })
+    ).toBe(false);
+    expect(
+      shouldSkipForBackoff({ daysUntilElection: 14, emptyStreak: 99, daysSinceLastRun: 1 })
+    ).toBe(false);
+  });
+
+  it('THE COVERAGE GUARD: does not skip a far-out jurisdiction that is still finding candidates', () => {
+    // Frisco at 170 days out with hits — the case a horizon cut would have destroyed.
+    expect(
+      shouldSkipForBackoff({ daysUntilElection: 170, emptyStreak: 0, daysSinceLastRun: 7 })
+    ).toBe(false);
+  });
+
+  it('does not skip on partial evidence (streak below threshold)', () => {
+    expect(
+      shouldSkipForBackoff({ daysUntilElection: 170, emptyStreak: 2, daysSinceLastRun: 7 })
+    ).toBe(false);
+  });
+
+  it('never skips a brand-new jurisdiction that has never run', () => {
+    expect(
+      shouldSkipForBackoff({ daysUntilElection: 170, emptyStreak: 0, daysSinceLastRun: null })
+    ).toBe(false);
+  });
+
+  it('probes rather than staying dark once the probe interval elapses', () => {
+    expect(
+      shouldSkipForBackoff({ daysUntilElection: 170, emptyStreak: 3, daysSinceLastRun: 27 })
+    ).toBe(true);
+    expect(
+      shouldSkipForBackoff({ daysUntilElection: 170, emptyStreak: 3, daysSinceLastRun: 28 })
+    ).toBe(false);
+  });
+});
+
+describe('runDiscoverySweep — OPS-06 integration', () => {
+  beforeEach(() => {
+    checkAnthropicAvailabilityMock.mockResolvedValue({ available: true });
+  });
+
+  /** Mirrors the real prod mix: one dead jurisdiction, one far-out producer, one near-term. */
+  function queueMixedHorizon() {
+    poolQueryMock.mockResolvedValueOnce({
+      rows: [
+        // Richardson: 8 runs, 0 found, 170 days out, probed 7 days ago -> SKIP
+        { id: 'richardson', jurisdiction_name: 'Richardson', days_until_election: 170, found_series: [0, 0, 0], days_since_last_run: 7 },
+        // Frisco: far out but producing -> SCAN
+        { id: 'frisco', jurisdiction_name: 'Frisco', days_until_election: 170, found_series: [19, 0, 0], days_since_last_run: 7 },
+        // Blue Ridge: empty but inside the filing window -> SCAN
+        { id: 'blueridge', jurisdiction_name: 'Blue Ridge', days_until_election: 60, found_series: [0, 0, 0], days_since_last_run: 7 },
+        // Josephine: empty, far out, but overdue for a probe -> SCAN
+        { id: 'josephine', jurisdiction_name: 'Josephine', days_until_election: 170, found_series: [0, 0, 0], days_since_last_run: 30 },
+      ],
+    });
+  }
+
+  it('scans only the jurisdictions that warrant it and never calls the agent for backed-off ones', async () => {
+    queueMixedHorizon();
+    runDiscoveryForJurisdictionMock.mockImplementation(async (id: string) => okSummary(id));
+
+    await runDiscoverySweep();
+
+    const scanned = runDiscoveryForJurisdictionMock.mock.calls.map((c) => c[0]);
+    expect(scanned).toEqual(['frisco', 'blueridge', 'josephine']);
+  });
+
+  it('reports the backed-off jurisdiction in the summary email when the email is sent anyway', async () => {
+    queueMixedHorizon();
+    runDiscoveryForJurisdictionMock.mockImplementation(async (id: string) => ({
+      ...okSummary(id),
+      uncertainStaged: 1,
+    }));
+
+    await runDiscoverySweep();
+
+    expect(sendEmailMock).toHaveBeenCalledTimes(1);
+    const { html } = sendEmailMock.mock.calls[0][0];
+    expect(html).toContain('Not scanned — backoff (1)');
+    expect(html).toContain('Richardson');
+  });
+
+  it('backoff alone does NOT generate an email on an otherwise-quiet week', async () => {
+    poolQueryMock.mockResolvedValueOnce({
+      rows: [
+        { id: 'richardson', jurisdiction_name: 'Richardson', days_until_election: 170, found_series: [0, 0, 0], days_since_last_run: 7 },
+      ],
+    });
+
+    await runDiscoverySweep();
+
+    expect(runDiscoveryForJurisdictionMock).not.toHaveBeenCalled();
+    expect(sendEmailMock).not.toHaveBeenCalled();
   });
 });
