@@ -253,7 +253,9 @@ async function getUnmatchedFederalPoliticians(): Promise<UnmatchedPolitician[]> 
        c.name AS chamber_name,
        o.representing_state
      FROM essentials.politicians p
-     JOIN essentials.offices o ON o.politician_id = p.id
+     -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
+     JOIN essentials.office_current_holder och ON och.politician_id = p.id
+     JOIN essentials.offices o ON o.id = och.office_id
      JOIN essentials.chambers c ON c.id = o.chamber_id
      WHERE p.is_active = true
        AND p.is_vacant = false

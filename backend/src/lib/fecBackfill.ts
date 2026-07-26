@@ -284,7 +284,9 @@ async function getPendingPairs(floor: number, current: number): Promise<WorkItem
               p.full_name, o.representing_state, cc.election_years
        FROM transparent_motivations.politician_sources ps
        JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
-       JOIN essentials.offices o ON o.politician_id = p.id
+       -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
+       JOIN essentials.office_current_holder och ON och.politician_id = p.id
+       JOIN essentials.offices o ON o.id = och.office_id
        LEFT JOIN transparent_motivations.fec_candidate_cycles cc ON cc.external_id = ps.external_id
        WHERE ps.source_system LIKE 'fec%' AND ps.research_status='confirmed' AND ps.external_id <> ''
        GROUP BY ps.id, p.full_name, o.representing_state, cc.election_years

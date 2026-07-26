@@ -213,7 +213,9 @@ async function statsByJurisdiction(stateCode: string): Promise<Map<string, Juris
        COUNT(DISTINCT p.id) FILTER (WHERE ans.politician_id IS NOT NULL)            AS researched,
        COUNT(DISTINCT p.id) FILTER (WHERE don.politician_id IS NOT NULL)            AS with_donors
      FROM essentials.politicians p
-     JOIN essentials.offices   o ON o.politician_id = p.id
+     -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
+     JOIN essentials.office_current_holder och ON och.politician_id = p.id
+     JOIN essentials.offices   o ON o.id = och.office_id
      JOIN essentials.districts d ON d.id = o.district_id
      LEFT JOIN essentials.politician_images img ON img.politician_id = p.id
      LEFT JOIN (SELECT DISTINCT politician_id FROM inform.politician_answers) ans

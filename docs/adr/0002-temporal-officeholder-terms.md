@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 ---
 
 # Temporal officeholder terms (`essentials.office_terms`)
@@ -148,6 +148,32 @@ Incremental, each phase independently shippable and reversible:
    on their own.
 5. **Drop** `offices.politician_id` once no read path uses it, and deprecate
    `politicians.valid_from`/`valid_to`.
+
+**Status: phases 1–4 shipped (migrations 1458, 1459, 1460 and the phase-3 read-path sweep).**
+
+Phase 5 shipped in two parts, because the column drop is the one step that is *not* reversible and
+*not* safe to interleave with a deploy:
+
+- **1462 (applied)** — the last 13 read sites moved off the column (`stanceService` ×4,
+  `coverageService` ×2, `coverageMapService`, `fecBackfill`, `fecResearch`,
+  `campaignFinanceSearchService`, `campaignFinanceService` ×2, `compassService`), plus the
+  `public.admin_list_politicians` RPC; `office_current_holder` stopped falling back to the column;
+  `politicians.valid_from`/`valid_to` marked deprecated. Backward-compatible in both directions —
+  old code still had the column, new code only needs the view.
+- **1463 (written, gated on deploy)** — `ALTER TABLE essentials.offices DROP COLUMN politician_id`,
+  without `CASCADE` so any missed dependent fails loudly. Must not run until the backend above is
+  deployed, or those 13 queries return `42703 undefined_column`.
+
+Measured on prod before removing the fallback: the two join forms returned an **identical 82,336
+(politician, office) pair set — 0 lost, 0 gained**, and 0 rows were being answered by the fallback.
+That equivalence is what made phase 5 a mechanical change rather than a behavioural one.
+
+Two behaviours do change, both intended: a future-dated term now takes effect on its own date (the
+WI Supreme Court seat hands from Bradley to Taylor on 2026-08-01 with nothing scheduled), and a term
+that ends with no successor now reads as **vacant** instead of reporting the expired holder.
+
+`politicians.valid_from`/`valid_to` are deprecated by comment, not dropped: 701 and 699 rows hold
+un-migrated `text` history worth salvaging into `office_terms` as a separate data task.
 
 Prerequisite, already done: migration **1455** added the missing
 `offices.politician_id → politicians` foreign key and repaired two orphaned office rows. Building

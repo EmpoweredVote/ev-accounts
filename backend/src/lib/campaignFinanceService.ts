@@ -518,9 +518,11 @@ async function detectCoverageStatus(politicianId: string): Promise<string> {
   // No source rows — check the politician's office district_type
   const officeResult = await pool.query<{ district_type: string | null }>(
     `SELECT d.district_type
-     FROM essentials.offices o
+     -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
+     FROM essentials.office_current_holder och
+     JOIN essentials.offices o ON o.id = och.office_id
      LEFT JOIN essentials.districts d ON d.id = o.district_id
-     WHERE o.politician_id = $1 AND o.is_vacant = false
+     WHERE och.politician_id = $1 AND o.is_vacant = false
      LIMIT 1`,
     [politicianId]
   );
@@ -2204,7 +2206,16 @@ export async function searchDonors(rawQuery: string): Promise<DonorSearchRespons
       gr.total_donated, gr.contribution_count, gr.contributions
     FROM grouped gr
     JOIN essentials.politicians p ON p.id = gr.essentials_politician_id
-    LEFT JOIN essentials.offices o ON o.politician_id = p.id AND o.is_vacant = false
+    -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
+    -- is_vacant constrains the MATCH, not a downstream join -- 5 offices hold a current term while
+    -- still flagged is_vacant, and filtering after the match would add a duplicate row with no
+    -- office label. This query has no DISTINCT ON to absorb that, so the shape matters.
+    LEFT JOIN (
+      SELECT och.politician_id AS holder_id, o.*
+        FROM essentials.office_current_holder och
+        JOIN essentials.offices o ON o.id = och.office_id
+       WHERE o.is_vacant = false
+    ) o ON o.holder_id = p.id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id

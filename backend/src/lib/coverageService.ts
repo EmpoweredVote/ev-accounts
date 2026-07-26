@@ -240,7 +240,9 @@ export async function computeLocationStats(spec: LocationStatSpec): Promise<Loca
        COUNT(DISTINCT p.id) FILTER (WHERE ans.politician_id IS NOT NULL)       AS researched,
        to_char(MAX(p.last_stances_researched_at), 'YYYY-MM-DD')                AS last_researched
      FROM essentials.politicians p
-     JOIN essentials.offices   o ON o.politician_id = p.id
+     -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
+     JOIN essentials.office_current_holder och ON och.politician_id = p.id
+     JOIN essentials.offices   o ON o.id = och.office_id
      JOIN essentials.districts d ON d.id = o.district_id
      LEFT JOIN essentials.politician_images img ON img.politician_id = p.id
      LEFT JOIN (SELECT DISTINCT politician_id FROM inform.politician_answers) ans
@@ -290,7 +292,9 @@ async function populatedSlugs(stateCode: string, ocdKind: string): Promise<Set<s
     `SELECT DISTINCT regexp_replace(d.ocd_id, $1, $2) AS slug
        FROM essentials.districts d
        JOIN essentials.offices o ON o.district_id = d.id
-       JOIN essentials.politicians p ON p.id = o.politician_id AND p.is_active = true
+       -- ADR 0002 phase 5: occupancy resolves via office_current_holder.
+       JOIN essentials.office_current_holder och ON och.office_id = o.id
+       JOIN essentials.politicians p ON p.id = och.politician_id AND p.is_active = true
       WHERE d.ocd_id LIKE $3 AND d.ocd_id ~ $4`,
     [`^.*/${ocdKind}:([^/]+).*$`, '\\1', `ocd-division/country:us/state:${stateCode}/%`, `/${ocdKind}:`],
   );
