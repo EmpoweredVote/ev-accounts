@@ -133,3 +133,55 @@ made exactly that mistake.
    can maintain them going forward.
 3. Re-check whether FEC ever starts populating `original_sub_id` — if so, `retireSupersededRows`
    begins working and becomes a belt-and-braces second path.
+
+---
+
+# BACKLOG RETIREMENT STARTED 2026-07-25 — and the backlog is NOT what §4 assumed
+
+## The detector's signature catches TWO phenomena, not one
+
+Validated against the FEC API. Of 45 groups resolved:
+
+| classification | count | disposition |
+|---|---|---|
+| **TRUE AMENDMENT** — versions share (report_type, report_year), differ in file_number | **27** | **RETIRED** (keep highest file_number) |
+| **CROSS-REPORT** — versions sit in DIFFERENT reports (e.g. Q1/2020 *and* Q3/2020) | 4 | **KEPT** — not a supersession |
+| **UNRESOLVABLE** — the live API no longer returns 2 matches | 14 | **KEPT** — cannot decide |
+
+**So ~40% of the "backlog" must NOT be deleted.** Concrete examples of rows that a naive
+prefix-based delete would have destroyed:
+- `C00575209` SCOTT/YEE/HOFFMAN $2,800 2020-02-03 — appears in **Q1/2020 (file 1435580)** and
+  **Q3/2020 (file 1452737)**. Different reports; neither supersedes the other.
+- `C00742007` LEVY $6,600 2024-03-28 — **Q1/2024 (file 1775811)** and **Q2/2024 (file 1801674)**.
+
+**This invalidates the earlier ~50k extrapolation as a deletion target.** 9,941 excess rows is the
+size of the *signature*, not of the true duplicate set; the deletable subset is roughly 60% of it,
+and only where the API can still confirm the report identity.
+
+## The tool
+`backend/scripts/retire-fec-amendment-dupes.mjs <detector.json> [--groups N] [--apply]`
+- Classifies every group against the live API before touching anything; retires **only**
+  same-report groups, keeping the row whose `sub_id` maps to the highest `file_number`.
+- The survivor is a **resolved fact from the API**, never inferred from the sub_id prefix.
+- Snapshots every deleted row to `data/fec-amendment-retired-snapshot.json` (reversible).
+- Resumable: `data/fec-amendment-retire-state.json` records resolved group keys, so re-running
+  continues rather than restarting. Fetch failures are NOT marked done — they retry.
+- Self-throttled to 5 s/request because the FEC key is shared with the production daily ingest and
+  the 15/min limiter is per-process.
+
+## Progress + remaining cost
+**45 of 6,905 detected groups resolved; 27 rows retired.** The 5 s throttle means the sampled
+portion alone is ~9.5 hours of wall clock, and **557 of 677 FEC sources have not been scanned yet**
+(`detect-fec-amendment-dupes.mjs --limit 677`). Run it in batches:
+
+```bash
+cd backend
+node scripts/detect-fec-amendment-dupes.mjs --limit 677 --json data/fec-amendment-dupes.json
+node scripts/retire-fec-amendment-dupes.mjs data/fec-amendment-dupes.json --groups 200 --apply
+```
+Prefer running it outside the 06:00 UTC ingest window.
+
+## Worth fixing at the root instead
+The UNRESOLVABLE bucket (31% of this batch) exists only because pre-fix rows lack `file_number`.
+**Backfilling `file_number` onto existing rows would make the whole backlog resolvable locally**,
+with no API calls and no ambiguity — likely cheaper than grinding through per-group classification.

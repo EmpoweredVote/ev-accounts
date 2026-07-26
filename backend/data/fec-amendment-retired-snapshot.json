@@ -1,0 +1,302 @@
+{
+  "retired_at": "2026-07-26T01:54:05.748Z",
+  "rows": [
+    {
+      "id": "20a2b10e-9bdc-4e03-8fb0-0b39463b0464",
+      "source_transaction_id": "1070620160028216411",
+      "amount": "100.00",
+      "contribution_date": "2016-03-14T00:00:00.000Z",
+      "donor_name_normalized": "alice r macy",
+      "cmte": "C00574889",
+      "kept_sub_id": "2070720161306464213",
+      "kept_file_number": 1081569,
+      "report": "Q1|2016"
+    },
+    {
+      "id": "c2bb33bb-53a6-4dda-91c0-f3c29e1256a7",
+      "source_transaction_id": "1070620160028215825",
+      "amount": "1000.00",
+      "contribution_date": "2016-02-29T00:00:00.000Z",
+      "donor_name_normalized": "anne newman",
+      "cmte": "C00574889",
+      "kept_sub_id": "2070720161306464215",
+      "kept_file_number": 1081569,
+      "report": "Q1|2016"
+    },
+    {
+      "id": "24008c66-9e2a-499b-9733-e045080e2759",
+      "source_transaction_id": "1121520160032998671",
+      "amount": "50.00",
+      "contribution_date": "2016-08-18T00:00:00.000Z",
+      "donor_name_normalized": "carl t fritzsche",
+      "cmte": "C00574889",
+      "kept_sub_id": "2122120161357899316",
+      "kept_file_number": 1135502,
+      "report": "Q3|2016"
+    },
+    {
+      "id": "afe1fdf0-91ad-4389-93a1-9c1a9e77cad9",
+      "source_transaction_id": "1070620160028215824",
+      "amount": "250.00",
+      "contribution_date": "2016-03-31T00:00:00.000Z",
+      "donor_name_normalized": "charlotte newberger",
+      "cmte": "C00574889",
+      "kept_sub_id": "2070720161306464214",
+      "kept_file_number": 1081569,
+      "report": "Q1|2016"
+    },
+    {
+      "id": "afa64238-57f8-4646-ac83-d5ff13301e8e",
+      "source_transaction_id": "1070620160028215826",
+      "amount": "2700.00",
+      "contribution_date": "2016-02-29T00:00:00.000Z",
+      "donor_name_normalized": "craig newmark",
+      "cmte": "C00574889",
+      "kept_sub_id": "2070720161306464222",
+      "kept_file_number": 1081569,
+      "report": "Q1|2016"
+    },
+    {
+      "id": "98ad475f-3c2d-45bb-abad-492df044738c",
+      "source_transaction_id": "1121520160033009819",
+      "amount": "100.00",
+      "contribution_date": "2016-07-14T00:00:00.000Z",
+      "donor_name_normalized": "deborah bulger",
+      "cmte": "C00574889",
+      "kept_sub_id": "2122120161357899284",
+      "kept_file_number": 1135502,
+      "report": "Q3|2016"
+    },
+    {
+      "id": "bb98c7a3-cc64-42e7-a9b4-5efccee849d6",
+      "source_transaction_id": "1121520160032997809",
+      "amount": "15.00",
+      "contribution_date": "2016-07-31T00:00:00.000Z",
+      "donor_name_normalized": "dorothy k cinquemani",
+      "cmte": "C00574889",
+      "kept_sub_id": "2122120161357899306",
+      "kept_file_number": 1135502,
+      "report": "Q3|2016"
+    },
+    {
+      "id": "a8be1d45-90ae-432b-809f-8a9cde1d9224",
+      "source_transaction_id": "1121520160033000211",
+      "amount": "50.00",
+      "contribution_date": "2016-09-13T00:00:00.000Z",
+      "donor_name_normalized": "georgette valle",
+      "cmte": "C00574889",
+      "kept_sub_id": "2122120161357899380",
+      "kept_file_number": 1135502,
+      "report": "Q3|2016"
+    },
+    {
+      "id": "151cc080-efac-4d52-a0e5-9197cf577483",
+      "source_transaction_id": "1070620160028218085",
+      "amount": "300.00",
+      "contribution_date": "2016-03-12T00:00:00.000Z",
+      "donor_name_normalized": "henry d shaw",
+      "cmte": "C00574889",
+      "kept_sub_id": "2070720161306464227",
+      "kept_file_number": 1081569,
+      "report": "Q1|2016"
+    },
+    {
+      "id": "daff6902-82c1-4a33-b561-8c19c1a8796a",
+      "source_transaction_id": "1121520160033018346",
+      "amount": "35.00",
+      "contribution_date": "2016-10-07T00:00:00.000Z",
+      "donor_name_normalized": "jack h wires",
+      "cmte": "C00574889",
+      "kept_sub_id": "2121920161357711709",
+      "kept_file_number": 1135446,
+      "report": "12G|2016"
+    },
+    {
+      "id": "7aff58d6-c31d-4cfa-bebb-abd25318a1ce",
+      "source_transaction_id": "1121520160032992944",
+      "amount": "150.00",
+      "contribution_date": "2016-07-23T00:00:00.000Z",
+      "donor_name_normalized": "jack m bulmash",
+      "cmte": "C00574889",
+      "kept_sub_id": "2122120161357899300",
+      "kept_file_number": 1135502,
+      "report": "Q3|2016"
+    },
+    {
+      "id": "9093d9c1-d72f-4952-b11a-500b59049510",
+      "source_transaction_id": "1121520160033005868",
+      "amount": "200.00",
+      "contribution_date": "2016-09-30T00:00:00.000Z",
+      "donor_name_normalized": "joan b gold",
+      "cmte": "C00574889",
+      "kept_sub_id": "2122120161357899322",
+      "kept_file_number": 1135502,
+      "report": "Q3|2016"
+    },
+    {
+      "id": "47f31032-7a29-47a4-9e7d-eee089310d6c",
+      "source_transaction_id": "1121520160033004755",
+      "amount": "25.00",
+      "contribution_date": "2016-08-31T00:00:00.000Z",
+      "donor_name_normalized": "john golanty",
+      "cmte": "C00574889",
+      "kept_sub_id": "2122120161357899317",
+      "kept_file_number": 1135502,
+      "report": "Q3|2016"
+    },
+    {
+      "id": "c8a06df0-0ec9-41b4-9ba7-464f88ef657c",
+      "source_transaction_id": "1121520160033015698",
+      "amount": "50.00",
+      "contribution_date": "2016-08-16T00:00:00.000Z",
+      "donor_name_normalized": "john gomez",
+      "cmte": "C00574889",
+      "kept_sub_id": "2122120161357899325",
+      "kept_file_number": 1135502,
+      "report": "Q3|2016"
+    },
+    {
+      "id": "82a4ffd2-0ef2-4b1e-947f-9b217c6e02fb",
+      "source_transaction_id": "1121520160033010037",
+      "amount": "50.00",
+      "contribution_date": "2016-09-06T00:00:00.000Z",
+      "donor_name_normalized": "joseph s mamelak",
+      "cmte": "C00574889",
+      "kept_sub_id": "2122120161357899340",
+      "kept_file_number": 1135502,
+      "report": "Q3|2016"
+    },
+    {
+      "id": "74652ad8-ff2e-463e-bcb6-9e631f957071",
+      "source_transaction_id": "1121520160033019505",
+      "amount": "50.00",
+      "contribution_date": "2016-10-17T00:00:00.000Z",
+      "donor_name_normalized": "juanita castro",
+      "cmte": "C00574889",
+      "kept_sub_id": "2121920161357711702",
+      "kept_file_number": 1135446,
+      "report": "12G|2016"
+    },
+    {
+      "id": "c8a463b0-7d39-4b41-abfe-d5f2f7155162",
+      "source_transaction_id": "1121520160033012715",
+      "amount": "100.00",
+      "contribution_date": "2016-08-09T00:00:00.000Z",
+      "donor_name_normalized": "loris masterton",
+      "cmte": "C00574889",
+      "kept_sub_id": "2122120161357899344",
+      "kept_file_number": 1135502,
+      "report": "Q3|2016"
+    },
+    {
+      "id": "14035934-5917-45c1-93fa-3849ee1f84de",
+      "source_transaction_id": "1121520160032997807",
+      "amount": "200.00",
+      "contribution_date": "2016-09-30T00:00:00.000Z",
+      "donor_name_normalized": "paul ciccantell",
+      "cmte": "C00574889",
+      "kept_sub_id": "2122120161357899302",
+      "kept_file_number": 1135502,
+      "report": "Q3|2016"
+    },
+    {
+      "id": "1daa1b80-0610-4a4e-9eb2-1b68ba54e328",
+      "source_transaction_id": "1070620160028215750",
+      "amount": "200.00",
+      "contribution_date": "2016-03-11T00:00:00.000Z",
+      "donor_name_normalized": "peg shaw",
+      "cmte": "C00574889",
+      "kept_sub_id": "2070720161306464230",
+      "kept_file_number": 1081569,
+      "report": "Q1|2016"
+    },
+    {
+      "id": "d1bed14a-7b3c-4615-aef8-0b895dbd8628",
+      "source_transaction_id": "1121520160033009820",
+      "amount": "100.00",
+      "contribution_date": "2016-09-22T00:00:00.000Z",
+      "donor_name_normalized": "robert bullis",
+      "cmte": "C00574889",
+      "kept_sub_id": "2122120161357899285",
+      "kept_file_number": 1135502,
+      "report": "Q3|2016"
+    },
+    {
+      "id": "8f4e5da1-754a-43f5-9d73-9b16c5197ad5",
+      "source_transaction_id": "1121520160033012160",
+      "amount": "50.00",
+      "contribution_date": "2016-07-01T00:00:00.000Z",
+      "donor_name_normalized": "thomas johnston",
+      "cmte": "C00574889",
+      "kept_sub_id": "2122120161357899328",
+      "kept_file_number": 1135502,
+      "report": "Q3|2016"
+    },
+    {
+      "id": "8fcacc0e-f993-481a-942e-5d27a988f75a",
+      "source_transaction_id": "1070620160028215569",
+      "amount": "50.00",
+      "contribution_date": "2016-03-28T00:00:00.000Z",
+      "donor_name_normalized": "william wiedel",
+      "cmte": "C00574889",
+      "kept_sub_id": "2070720161306464232",
+      "kept_file_number": 1081569,
+      "report": "Q1|2016"
+    },
+    {
+      "id": "487f0835-dbc4-44c8-8357-53202e1dd125",
+      "source_transaction_id": "1070620160028215570",
+      "amount": "1000.00",
+      "contribution_date": "2016-03-31T00:00:00.000Z",
+      "donor_name_normalized": "wyeth wiedeman",
+      "cmte": "C00574889",
+      "kept_sub_id": "2070720161306464233",
+      "kept_file_number": 1081569,
+      "report": "Q1|2016"
+    },
+    {
+      "id": "5866954a-1ebb-4ab8-9441-33833468caa5",
+      "source_transaction_id": "4050820241922135184",
+      "amount": "5000.00",
+      "contribution_date": "2024-03-22T00:00:00.000Z",
+      "donor_name_normalized": "american academy of dermatology assn pac skinpac",
+      "cmte": "C00445023",
+      "kept_sub_id": "4021220251172375321",
+      "kept_file_number": 1870006,
+      "report": "Q1|2024"
+    },
+    {
+      "id": "446f4207-9546-4612-8dde-a92cf8d18ccd",
+      "source_transaction_id": "4050820241922135180",
+      "amount": "1000.00",
+      "contribution_date": "2024-03-22T00:00:00.000Z",
+      "donor_name_normalized": "american academy of family physicians fammedpac",
+      "cmte": "C00445023",
+      "kept_sub_id": "4021220251172375322",
+      "kept_file_number": 1870006,
+      "report": "Q1|2024"
+    },
+    {
+      "id": "210a2595-7efa-4d3e-a255-a4afa5b894f6",
+      "source_transaction_id": "4050820241922135214",
+      "amount": "3000.00",
+      "contribution_date": "2024-03-27T00:00:00.000Z",
+      "donor_name_normalized": "american dental pac adpac",
+      "cmte": "C00445023",
+      "kept_sub_id": "4021220251172375352",
+      "kept_file_number": 1870006,
+      "report": "Q1|2024"
+    },
+    {
+      "id": "47b60ce6-41b2-4df2-8332-1f7cb04f651f",
+      "source_transaction_id": "4050820241922135125",
+      "amount": "5000.00",
+      "contribution_date": "2024-02-16T00:00:00.000Z",
+      "donor_name_normalized": "american physical therapy association ptpac",
+      "cmte": "C00445023",
+      "kept_sub_id": "4021220251172375268",
+      "kept_file_number": 1870006,
+      "report": "Q1|2024"
+    }
+  ]
+}
