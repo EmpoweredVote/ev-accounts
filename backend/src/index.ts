@@ -85,7 +85,12 @@ app.use(
       if (env.NODE_ENV === 'development') return callback(null, true);
       // Prod: exact-match against CORS_ORIGIN list
       if (allowedOrigins.includes(origin)) return callback(null, true);
-      callback(new Error(`CORS: origin ${origin} not allowed`));
+      // Disallowed origin: respond WITHOUT CORS headers so the browser blocks
+      // it client-side. Passing an Error here surfaced as a 500 (including on
+      // OPTIONS preflights, e.g. an app loaded via its onrender.com URL); a
+      // clean rejection blocks cross-origin access without the 500 noise.
+      console.warn('[cors] blocked origin:', origin);
+      callback(null, false);
     },
     credentials: true,
     exposedHeaders: ['X-Data-Updated-At', 'X-Data-Status', 'X-Formatted-Address'],
