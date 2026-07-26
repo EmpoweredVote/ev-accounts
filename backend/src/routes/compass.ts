@@ -423,7 +423,7 @@ router.post('/verdicts', requireAuth, async (req: Request, res: Response): Promi
     try {
       const { error } = await adminRpc('upsert_compass_verdicts', {
         p_user_id: authReq.userId,
-        p_verdicts: JSON.stringify(newParsed.data.verdicts),
+        p_verdicts: newParsed.data.verdicts,
       });
       if (error) throw new Error(error.message);
       res.status(200).json({ upserted: newParsed.data.verdicts.length });
@@ -449,7 +449,7 @@ router.post('/verdicts', requireAuth, async (req: Request, res: Response): Promi
     try {
       const { error } = await adminRpc('upsert_compass_verdicts', {
         p_user_id: authReq.userId,
-        p_verdicts: JSON.stringify(verdicts),
+        p_verdicts: verdicts,
       });
       if (error) throw new Error(error.message);
       res.status(200).json({ upserted: verdicts.length });
