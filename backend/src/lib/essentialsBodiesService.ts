@@ -57,7 +57,8 @@ export async function searchBodies(
       )::int                                     AS member_count
     FROM essentials.chambers ch
     LEFT JOIN essentials.offices o     ON o.chamber_id = ch.id
-    LEFT JOIN essentials.politicians p ON p.id = o.politician_id
+    LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
+    LEFT JOIN essentials.politicians p ON p.id = och.politician_id
     WHERE ch.name_formal ILIKE '%' || $1 || '%'
       AND ch.slug IS NOT NULL
       AND ch.slug <> ''
@@ -116,7 +117,8 @@ export async function getRosterBySlug(
       )                                         AS photo_url
     FROM essentials.chambers ch
     JOIN essentials.offices o     ON o.chamber_id = ch.id
-    JOIN essentials.politicians p ON p.id = o.politician_id
+    JOIN essentials.office_current_holder och ON och.office_id = o.id
+    JOIN essentials.politicians p ON p.id = och.politician_id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     WHERE ch.slug = $1
       AND p.is_active = true

@@ -139,10 +139,13 @@ const PERSON_SELECT = `
   LEFT JOIN LATERAL (
     SELECT o.title AS office_title, d.label AS district, g.name AS jurisdiction
     FROM essentials.offices o
+    -- ADR 0002 phase 3: resolve via essentials.office_current_holder so a future-dated term
+    -- takes effect on its own date.
+    JOIN essentials.office_current_holder och ON och.office_id = o.id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
-    WHERE o.politician_id = p.id AND o.is_vacant = false
+    WHERE och.politician_id = p.id AND o.is_vacant = false
     ORDER BY o.id
     LIMIT 1
   ) off ON true

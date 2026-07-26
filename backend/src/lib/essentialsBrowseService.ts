@@ -75,7 +75,8 @@ export async function getStatesWithData(): Promise<BrowseState[]> {
   const { rows } = await pool.query(`
     SELECT DISTINCT o.representing_state AS state, COUNT(DISTINCT p.id) AS cnt
     FROM essentials.offices o
-    JOIN essentials.politicians p ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.office_id = o.id
+    JOIN essentials.politicians p ON p.id = och.politician_id
     WHERE p.is_active = true
     AND o.representing_state IS NOT NULL
     AND o.representing_state != ''
@@ -458,7 +459,8 @@ export async function getPoliticiansByArea(
     JOIN unnest($1::text[], $2::text[]) AS gp(geo_id, mtfcc)
       ON gp.geo_id = d.geo_id AND ${MTFCC_DISTRICT_TYPE_GUARD}
     JOIN essentials.offices o ON o.district_id = d.id
-    JOIN essentials.politicians p ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.office_id = o.id
+    JOIN essentials.politicians p ON p.id = och.politician_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     LEFT JOIN essentials.government_bodies gvb
@@ -502,7 +504,8 @@ export async function getPoliticiansByArea(
              COALESCE(ch.website_url, '') AS chamber_url
       FROM essentials.districts d
       JOIN essentials.offices o ON o.district_id = d.id
-      JOIN essentials.politicians p ON o.politician_id = p.id
+      JOIN essentials.office_current_holder och ON och.office_id = o.id
+    JOIN essentials.politicians p ON p.id = och.politician_id
       LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
       LEFT JOIN essentials.governments g ON g.id = ch.government_id
       LEFT JOIN essentials.government_bodies gvb
@@ -674,7 +677,8 @@ async function fetchDistrictPoliticianRows(geoPairs: GeoPair[]): Promise<Record<
       JOIN unnest($1::text[], $2::text[]) AS gp(geo_id, mtfcc)
         ON gp.geo_id = d.geo_id AND ${MTFCC_DISTRICT_TYPE_GUARD}
       JOIN essentials.offices o ON o.district_id = d.id
-      JOIN essentials.politicians p ON o.politician_id = p.id
+      JOIN essentials.office_current_holder och ON och.office_id = o.id
+    JOIN essentials.politicians p ON p.id = och.politician_id
       LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
       LEFT JOIN essentials.governments g ON g.id = ch.government_id
       LEFT JOIN essentials.government_bodies gvb
@@ -744,7 +748,8 @@ export async function getPoliticiansByGovernmentList(
     FROM essentials.governments g
     JOIN essentials.chambers ch ON ch.government_id = g.id
     JOIN essentials.offices o ON o.chamber_id = ch.id
-    JOIN essentials.politicians p ON p.id = o.politician_id
+    JOIN essentials.office_current_holder och ON och.office_id = o.id
+    JOIN essentials.politicians p ON p.id = och.politician_id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     WHERE g.geo_id = ANY($1)
       AND p.is_active = true
@@ -779,7 +784,8 @@ export async function getPoliticiansByGovernmentList(
              COALESCE(ch.website_url, '') AS chamber_url
       FROM essentials.districts d
       JOIN essentials.offices o ON o.district_id = d.id
-      JOIN essentials.politicians p ON o.politician_id = p.id
+      JOIN essentials.office_current_holder och ON och.office_id = o.id
+    JOIN essentials.politicians p ON p.id = och.politician_id
       LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
       LEFT JOIN essentials.governments g ON g.id = ch.government_id
       LEFT JOIN essentials.government_bodies gvb
@@ -1002,7 +1008,8 @@ export async function getStatewideOfficials(stateAbbrev: string): Promise<Politi
            COALESCE(ch.website_url, '') AS chamber_url
     FROM essentials.districts d
     JOIN essentials.offices o ON o.district_id = d.id
-    JOIN essentials.politicians p ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.office_id = o.id
+    JOIN essentials.politicians p ON p.id = och.politician_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     LEFT JOIN essentials.government_bodies gvb
@@ -1061,7 +1068,8 @@ export async function getFederalOfficials(): Promise<PoliticianFlatRecord[]> {
            COALESCE(ch.website_url, '') AS chamber_url
     FROM essentials.districts d
     JOIN essentials.offices o ON o.district_id = d.id
-    JOIN essentials.politicians p ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.office_id = o.id
+    JOIN essentials.politicians p ON p.id = och.politician_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     LEFT JOIN essentials.government_bodies gvb
