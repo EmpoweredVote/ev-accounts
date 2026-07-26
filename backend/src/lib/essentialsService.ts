@@ -496,7 +496,11 @@ export async function getPoliticiansFlatList(
            COALESCE(ch.website_url, '') AS chamber_url,
            upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.politicians p
-    LEFT JOIN essentials.offices o ON o.politician_id = p.id
+    -- ADR 0002 phase 3: which office this person holds NOW, via
+    -- essentials.office_current_holder (office_terms + dual-read fallback), so a future-dated
+    -- term takes effect on its own date. One row per office, so this cannot fan out.
+    LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    LEFT JOIN essentials.offices o ON o.id = och.office_id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
@@ -730,7 +734,9 @@ async function resolveOfficialsAtPoint(
         OR (gb.mtfcc = 'X0002' AND d.district_type = 'SCHOOL')
         OR (gb.mtfcc = 'X0003' AND d.district_type = 'STATE_BOARD')
         -- X0004 (tribal) does NOT join to districts in v1; surfaced via tribal_land response field
-        OR (gb.mtfcc LIKE 'X%' AND gb.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL', 'COUNTY'))
+        -- JUDICIAL added for appellate districts whose geometry is a union of counties and so
+        -- has no TIGER layer of its own (e.g. WI Court of Appeals District II, 12 counties).
+        OR (gb.mtfcc LIKE 'X%' AND gb.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL', 'COUNTY', 'JUDICIAL'))
         -- Fallback: if MTFCC not in known set, match any district type for this geo_id
         -- G5200V26 (2026-vintage congressional boundaries) intentionally excluded: reps feed
         -- stays on G5200; only the elections opt-in join (electionService.ts) may reach V26.
@@ -738,7 +744,16 @@ async function resolveOfficialsAtPoint(
             AND gb.mtfcc NOT LIKE 'X%')
       )
     JOIN essentials.offices o ON o.district_id = d.id
-    LEFT JOIN essentials.politicians p ON o.politician_id = p.id
+    -- ADR 0002 phase 3: occupant resolved at QUERY TIME via essentials.office_current_holder
+    -- (office_terms, with a dual-read fallback to offices.politician_id for offices that have no
+    -- term row yet), so a term with a future term_start takes effect on its own date with nothing
+    -- scheduled. Exactly one row per office — office_terms' exclusion constraint makes two
+    -- concurrent occupants impossible — so this cannot fan the result set out.
+    -- The dual-read rule lives in that ONE view, so phase 5 (dropping offices.politician_id) is a
+    -- single view change rather than another sweep of every call site. That edit also closes the
+    -- gap where a term ending with no successor falls back to the expired holder.
+    LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
+    LEFT JOIN essentials.politicians p ON p.id = och.politician_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     LEFT JOIN essentials.government_bodies gvb
@@ -784,7 +799,16 @@ async function resolveOfficialsAtPoint(
            upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.districts d
     JOIN essentials.offices o ON o.district_id = d.id
-    LEFT JOIN essentials.politicians p ON o.politician_id = p.id
+    -- ADR 0002 phase 3: occupant resolved at QUERY TIME via essentials.office_current_holder
+    -- (office_terms, with a dual-read fallback to offices.politician_id for offices that have no
+    -- term row yet), so a term with a future term_start takes effect on its own date with nothing
+    -- scheduled. Exactly one row per office — office_terms' exclusion constraint makes two
+    -- concurrent occupants impossible — so this cannot fan the result set out.
+    -- The dual-read rule lives in that ONE view, so phase 5 (dropping offices.politician_id) is a
+    -- single view change rather than another sweep of every call site. That edit also closes the
+    -- gap where a term ending with no successor falls back to the expired holder.
+    LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
+    LEFT JOIN essentials.politicians p ON p.id = och.politician_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     LEFT JOIN essentials.government_bodies gvb
@@ -1364,7 +1388,11 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            COALESCE(ch.website_url, '') AS chamber_url,
            upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.politicians p
-    LEFT JOIN essentials.offices o ON o.politician_id = p.id
+    -- ADR 0002 phase 3: which office this person holds NOW, via
+    -- essentials.office_current_holder (office_terms + dual-read fallback), so a future-dated
+    -- term takes effect on its own date. One row per office, so this cannot fan out.
+    LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    LEFT JOIN essentials.offices o ON o.id = och.office_id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
@@ -1787,7 +1815,9 @@ export async function getDistrictById(id: string): Promise<DistrictDetail | null
   const politiciansResult = await pool.query(
     `SELECT p.id, p.full_name, p.party, p.is_incumbent, p.photo_origin_url
      FROM essentials.offices o
-     JOIN essentials.politicians p ON o.politician_id = p.id
+     -- ADR 0002 phase 3: occupant via essentials.office_current_holder, not the snapshot column.
+     JOIN essentials.office_current_holder och ON och.office_id = o.id
+     JOIN essentials.politicians p ON p.id = och.politician_id
      WHERE o.district_id = $1
        AND p.is_active = true
      ORDER BY p.is_incumbent DESC, p.full_name`,
@@ -1901,7 +1931,16 @@ export async function getRepresentativesByJurisdiction(
 
   const JOINS = `
     JOIN essentials.offices o ON o.district_id = d.id
-    LEFT JOIN essentials.politicians p ON o.politician_id = p.id
+    -- ADR 0002 phase 3: occupant resolved at QUERY TIME via essentials.office_current_holder
+    -- (office_terms, with a dual-read fallback to offices.politician_id for offices that have no
+    -- term row yet), so a term with a future term_start takes effect on its own date with nothing
+    -- scheduled. Exactly one row per office — office_terms' exclusion constraint makes two
+    -- concurrent occupants impossible — so this cannot fan the result set out.
+    -- The dual-read rule lives in that ONE view, so phase 5 (dropping offices.politician_id) is a
+    -- single view change rather than another sweep of every call site. That edit also closes the
+    -- gap where a term ending with no successor falls back to the expired holder.
+    LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
+    LEFT JOIN essentials.politicians p ON p.id = och.politician_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     LEFT JOIN essentials.government_bodies gvb
@@ -2075,7 +2114,16 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
 
   const JOINS = `
     JOIN essentials.offices o ON o.district_id = d.id
-    LEFT JOIN essentials.politicians p ON o.politician_id = p.id
+    -- ADR 0002 phase 3: occupant resolved at QUERY TIME via essentials.office_current_holder
+    -- (office_terms, with a dual-read fallback to offices.politician_id for offices that have no
+    -- term row yet), so a term with a future term_start takes effect on its own date with nothing
+    -- scheduled. Exactly one row per office — office_terms' exclusion constraint makes two
+    -- concurrent occupants impossible — so this cannot fan the result set out.
+    -- The dual-read rule lives in that ONE view, so phase 5 (dropping offices.politician_id) is a
+    -- single view change rather than another sweep of every call site. That edit also closes the
+    -- gap where a term ending with no successor falls back to the expired holder.
+    LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
+    LEFT JOIN essentials.politicians p ON p.id = och.politician_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     LEFT JOIN essentials.government_bodies gvb

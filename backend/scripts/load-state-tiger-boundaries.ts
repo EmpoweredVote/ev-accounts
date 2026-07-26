@@ -43,6 +43,19 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   VA: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   NV: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   AZ: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
+  // WI. sldu/sldl: the 2024-vintage TIGER set was verified to be the 2023 Wisconsin Act 94
+  // remap (enacted 2024-02-19) via identity-anchor probes against TIGERweb: Burlington ->
+  // AD 33 / SD 11, downtown Racine -> AD 62 / SD 21, Sturtevant -> AD 66 / SD 22, with the
+  // Assembly-into-Senate nesting internally consistent.
+  // place/cousub: Wisconsin is a strong-MCD state — its 1,850 towns/villages/cities are ALL
+  // elected governments, so cousub carries real bodies here (unlike CA's statistical CCDs)
+  // and WI is added to COUSUB_FUNCSTAT_STATES below. Incorporated municipalities appear in
+  // BOTH layers (Racine is place 5566000 AND an MCD); towns appear ONLY in cousub.
+  // school: all THREE tiers are loaded together on purpose. WI is a union-high-school state,
+  // so unsd alone under-covers it — rural Racine County sits in an elementary district AND a
+  // union high district, i.e. two separate elected boards. elsd/scsd layer support was added
+  // for exactly this.
+  WI: new Set(['sldu', 'sldl', 'place', 'cousub', 'unsd', 'elsd', 'scsd']),
   DC: new Set(['sldl']),
 };
 
@@ -97,6 +110,10 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
   VA: ['Alexandria city'],
   NV: ['Las Vegas city', 'Henderson city', 'North Las Vegas city', 'Boulder City city'],
   AZ: ['Tucson city', 'Oro Valley town', 'Marana town', 'Sahuarita town', 'South Tucson city'],
+  // Racine County's incorporated municipalities — verified present in TIGER 2024 FIPS 55
+  // place (all G4110, FUNCSTAT='A') before wiring this gate.
+  WI: ['Racine city', 'Burlington city', 'Mount Pleasant village', 'Caledonia village',
+       'Sturtevant village', 'Union Grove village'],
 };
 
 // STATE_RUN_MAKEVALID: per-state ST_MakeValid layer set (Phase 131 D-07..D-09)
@@ -113,6 +130,7 @@ const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
   VA: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   NV: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   AZ: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
+  WI: new Set(['sldu', 'sldl', 'place', 'cousub', 'unsd', 'elsd', 'scsd']),
   DC: new Set(['sldl']),
 };
 
@@ -280,6 +298,34 @@ const LAYER_DISPATCH: Record<string, LayerDef> = {
     filterByStatefp: false,
     skipDistrictCodes: new Set<string>(),
     writeDistrictRow: false /* 130-01-PYTHON-AUDIT.md §"Open questions" #4 (Operational-parity recommendation, line "unsd: writeDistricts=false (Python sets the precedent; school-board ingestion creates SCHOOL districts rows separately)") */,
+  },
+  // elsd/scsd complete the school picture that 'unsd' alone cannot cover.
+  // States using the "union high school district" model — WI, CA, AZ, IL — split school
+  // governance across TWO overlapping elected boards: an ELEMENTARY district (K-8) and a
+  // SECONDARY / union-high district (9-12). A resident sits in BOTH, so loading only unsd
+  // silently drops one of a voter's two school boards. Concretely in Racine County, rural
+  // addresses fall in e.g. Waterford Joint No. 1 (elementary) AND Waterford Union High
+  // (secondary), and NEITHER appears in the unsd layer.
+  // Both mirror unsd exactly: same SCHOOL district_type, GEOID as geo_id, no district-number
+  // field, and writeDistrictRow=false because school-board ingestion creates the districts
+  // rows separately.
+  elsd: {
+    mtfcc: 'G5400', district_type: 'SCHOOL', ocdKey: 'school_district',
+    geoIdSource: 'GEOID',
+    urlTemplate: (v, f, _c) => `https://www2.census.gov/geo/tiger/TIGER${v}/ELSD/tl_${v}_${f}_elsd.zip`,
+    districtNumField: null,
+    filterByStatefp: false,
+    skipDistrictCodes: new Set<string>(),
+    writeDistrictRow: false,
+  },
+  scsd: {
+    mtfcc: 'G5410', district_type: 'SCHOOL', ocdKey: 'school_district',
+    geoIdSource: 'GEOID',
+    urlTemplate: (v, f, _c) => `https://www2.census.gov/geo/tiger/TIGER${v}/SCSD/tl_${v}_${f}_scsd.zip`,
+    districtNumField: null,
+    filterByStatefp: false,
+    skipDistrictCodes: new Set<string>(),
+    writeDistrictRow: false,
   },
   place: {
     mtfcc: 'G4110', district_type: 'LOCAL', ocdKey: 'place',
@@ -1072,6 +1118,76 @@ async function processLayer(
     }
   }
 
+  // ── WI MTFCC pre-flight assertion ───────────────────────────────────────────
+  // Count records satisfying the same filters as the upsert pass BEFORE any DB
+  // write. Assertion failure is named and fatal.
+  //
+  // Unlike AZ (30 districts, 2 house seats sharing one SLDL polygon), Wisconsin
+  // has 33 Senate districts and 99 Assembly districts as DISTINCT polygons —
+  // each WI Senate district nests exactly 3 Assembly districts, so the counts
+  // are 33 and 99, NOT 33 and 33. Expected counts cross-checked against
+  // TIGERweb (STATE='55'), which reports 34 SLDU / 100 SLDL features: the extra
+  // row in each is TIGER's "not defined" pseudo-district (SLDUST/SLDLST='ZZZ'),
+  // removed here by layerDef.skipDistrictCodes.
+  if (fipsArg === '55') {
+    const EXPECTED_WI_MTFCC: Record<string, number> = {
+      sldu:     33,  // 33 WI Senate districts (Act 94 map; TIGERweb 34 minus 1 'ZZZ')
+      sldl:     99,  // 99 WI Assembly districts (Act 94 map; TIGERweb 100 minus 1 'ZZZ')
+      place:   607,  // 607 WI G4110 incorporated cities/villages, all FUNCSTAT='A'. The 2024
+                     //   PLACE file bundles 607 G4110 + 201 G4210 CDPs = 808 records; the
+                     //   MTFCC filter drops the CDPs. TIGERweb's current vintage reports 608
+                     //   incorporated places, ONE more than 2024: Greenleaf (5531375) was a
+                     //   CDP in 2024 and has since incorporated as a village. Brown County,
+                     //   so it does not affect Racine; it will appear when the vintage moves.
+      cousub: 1243,  // 1243 ACTIVE WI MCDs (towns/villages/cities) out of 1925 records; the
+                     //   682 FUNCSTAT='F' placeholders are skipped by the FUNCSTAT='A' filter,
+                     //   which is why WI is in COUSUB_FUNCSTAT_STATES. TIGERweb's current
+                     //   vintage reports 1242 active, ONE fewer than 2024: Williamstown town
+                     //   (5502787225, Dodge County) was active in 2024 and no longer is.
+                     //   Dodge County, so it does not affect Racine.
+      unsd:    369,  // 369 WI G5420 unified school districts
+      elsd:     43,  // 43 WI G5400 ELEMENTARY school districts (K-8)
+      scsd:     10,  // 10 WI G5410 SECONDARY / union-high districts (9-12). Small on purpose:
+                     //   only union-high states have these at all. Racine County's two are
+                     //   Union Grove UHS and Waterford UHS.
+    };
+    if (layer in EXPECTED_WI_MTFCC) {
+      const expected = EXPECTED_WI_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        // Mirror the upsert pass's filters exactly, or the count means nothing.
+        if (layer === 'place') {
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
+        }
+        if (layer === 'cousub') {
+          const funcstatVal = String(props['FUNCSTAT'] ?? props['funcstat'] ?? '');
+          if (funcstatVal !== 'A') return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[WI MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify the TIGER 2024 FIPS 55 file ` +
+          `is the 2023 Act 94 map (33 Senate / 99 Assembly districts).`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] WI MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
   // For DC (FIPS '11'): 8 ward polygons in the sldl layer (TIGER 2024).
   if (fipsArg === '11') {
     const EXPECTED_DC_MTFCC: Record<string, number> = {
@@ -1144,7 +1260,10 @@ async function processLayer(
       // CA county subdivisions are CCDs (Census County Divisions, statistical, FUNCSTAT='S').
       // Filtering CCDs to FUNCSTAT='A' would skip ALL CA records (see Phase 57 RESEARCH).
       // Add a state to this set ONLY if its TIGER COUSUB shapefile contains active MCDs.
-      const COUSUB_FUNCSTAT_STATES = new Set(['MA']);
+      // WI is an MCD state like MA: its county subdivisions are towns/villages/cities with
+      // real elected boards (FUNCSTAT='A'). Without this filter WI imports 1,925 records
+      // instead of 1,242 — 683 inactive placeholders that have no government at all.
+      const COUSUB_FUNCSTAT_STATES = new Set(['MA', 'WI']);
       if (layer === 'cousub' && COUSUB_FUNCSTAT_STATES.has(abbrevUpper)) {
         const funcstatVal = String(props['FUNCSTAT'] ?? props['funcstat'] ?? '');
         if (funcstatVal !== 'A') {
