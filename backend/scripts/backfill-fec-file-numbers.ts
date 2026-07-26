@@ -74,15 +74,20 @@ const det = JSON.parse(readFileSync(reportPath, 'utf8')) as {
   findings: { politician_source_id: string; detail: Detail[] }[];
 };
 
-// One window per (committee, period, date); a window can serve several politician_sources.
-const windows = new Map<string, { cmte: string; period: number; date: string; sources: Set<string> }>();
+// One target per (committee, date); a target can serve several politician_sources.
+//
+// The two_year_transaction_period is NOT derived from the contribution date. It looked safe
+// (2020-12-31 -> 2020) and is wrong: FEC assigns some contributions to the FOLLOWING cycle, so
+// committee C00718866 on 2020-12-31 has 154 rows in cycle 2020 and **9,150 in cycle 2022**.
+// Deriving the period from the date fetched only the 2020 window and reported all 9,150 as
+// "the API no longer returns this sub_id" — they were simply never asked for. So the periods to
+// fetch come from the rows' own stored `election_cycle`, and a date can need more than one.
+const windows = new Map<string, { cmte: string; date: string; sources: Set<string> }>();
 for (const f of det.findings) {
   for (const g of f.detail) {
     const date = String(g.date).slice(0, 10);
-    const y = parseInt(date.slice(0, 4), 10);
-    const period = y % 2 === 0 ? y : y + 1;
-    const k = `${g.cmte}|${period}|${date}`;
-    if (!windows.has(k)) windows.set(k, { cmte: g.cmte, period, date, sources: new Set() });
+    const k = `${g.cmte}|${date}`;
+    if (!windows.has(k)) windows.set(k, { cmte: g.cmte, date, sources: new Set() });
     windows.get(k)!.sources.add(f.politician_source_id);
   }
 }
@@ -97,9 +102,29 @@ for (const [k, w] of pending) {
   if (processed >= MAX) break;
   processed++;
 
-  let rows;
+  // Which two-year periods do OUR un-backfilled rows for this (committee, date) actually claim?
+  const { rows: cycles } = await pool.query<{ election_cycle: string }>(
+    `SELECT DISTINCT election_cycle
+       FROM transparent_motivations.contributions
+      WHERE politician_source_id = ANY($1::uuid[])
+        AND data_source = 'fec'
+        AND NOT (raw_record ? 'file_number')
+        AND raw_record->>'committee_id' = $2
+        AND contribution_date = $3::date
+        AND election_cycle ~ '^[0-9]{4}$'`,
+    [[...w.sources], w.cmte, w.date]
+  );
+  if (cycles.length === 0) {
+    console.log(`  - ${k}: nothing left to fill`);
+    done.add(k);
+    continue;
+  }
+
+  let rows: Awaited<ReturnType<typeof fetchWindow>> = [];
   try {
-    rows = await fetchWindow(w.cmte, w.period, w.date);
+    for (const c of cycles) {
+      rows.push(...await fetchWindow(w.cmte, parseInt(c.election_cycle, 10), w.date));
+    }
   } catch (e) {
     // Not marked done — a fetch failure must retry, never silently skip a window.
     failed++;
