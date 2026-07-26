@@ -388,7 +388,11 @@ before doing any new web research on the county candidates.
    Oregon Capital Chronicle voter guide and any OR-05 debate.
 1. **Dan Sorrells (Bend P6)** — 0 stances and the only empty compass on the Bend ballot. His sole
    campaign presence is Instagram `@citycouncildan`; no site, no news profile, no questionnaire.
-   The **city-hosted candidate forum is mid-September 2026** — that is the unlock. Re-run then.
+   **⚠️ CORRECTION 2026-07-26: "the city-hosted candidate forum is mid-September 2026" was
+   extrapolated from a prior cycle, NOT a confirmed event.** The Bend Chamber's Sept-19 forum page
+   now redirects to a candidate-forum category showing "No events to display" for 2026. Watch for
+   one to be scheduled — venues, expected timing and the transcript problem are in
+   `.planning/todos/2026-09-bend-candidate-forums-stance-unlock.md`.
 2. **Sheriff race (2): RESEARCHED 2026-07-26 → 0 rows. Honest skip, do not re-run the same sources.**
    Both candidates' own words were found and read in full; the three topics still cannot be scored.
    - **Sources mined (all read, all verbatim-checked):** OPB *Think Out Loud* write-up of the Rupert
