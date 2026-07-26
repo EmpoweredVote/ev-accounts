@@ -107,3 +107,10 @@ backend/data/stance-research/*/.qcache/
 
 # OLIS legislator roster cache (regenerable, 1.6MB)
 backend/data/stance-research/or-bend-stateleg/.olis-legislators.json
+
+# Editor/tooling backups. The `.env` rule above is an EXACT match and does not
+# cover `.env.bak`, which sat untracked in the working tree holding live
+# credentials (found 2026-07-26). With several sessions committing in this repo,
+# a single `git add -A` would have published them. Never committed — verified
+# across all refs — so this rule is prevention, not remediation.
+*.bak
