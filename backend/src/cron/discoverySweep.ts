@@ -17,7 +17,35 @@
 import cron from 'node-cron';
 import { runDiscoverySweep } from '../lib/discoveryCron.js';
 
+/**
+ * OPERATOR POLICY (2026-07-26): scheduled jobs must not spend API credits unattended.
+ *
+ * This is the only cron in the service that spends money — one paid Anthropic agent run per
+ * in-horizon jurisdiction, every Sunday. On 2026-07-26 it drained the Anthropic balance
+ * mid-sweep: 25 jurisdictions completed, the remaining 21 failed, and each sent its own
+ * failure email. Spend is now opt-in and OFF unless someone deliberately turns it on.
+ *
+ * This gates the SCHEDULE only. The on-demand admin routes (essentialsDiscovery,
+ * discoveryDashboard) still work, because a human triggering a run is an attended,
+ * intentional spend — which is precisely the distinction the policy draws.
+ *
+ * To re-enable: set DISCOVERY_SWEEP_ENABLED=true in the Render environment. Any other value,
+ * or unset, leaves it off. Default-off is deliberate: forgetting this variable must fail
+ * toward not spending money, never toward spending it.
+ */
+export function isDiscoverySweepCronEnabled(): boolean {
+  return process.env.DISCOVERY_SWEEP_ENABLED === 'true';
+}
+
 export function startDiscoverySweepCron(): void {
+  if (!isDiscoverySweepCronEnabled()) {
+    console.log(
+      '[cron] Discovery sweep NOT registered — scheduled Anthropic spend is disabled by policy. ' +
+        'Set DISCOVERY_SWEEP_ENABLED=true to re-enable. On-demand runs are unaffected.'
+    );
+    return;
+  }
+
   cron.schedule(
     // OPS-04: weekly (not daily) cadence is a deliberate cost choice. Each sweep
     // spends paid Anthropic calls proportional to the number of
