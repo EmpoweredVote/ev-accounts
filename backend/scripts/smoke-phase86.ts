@@ -53,7 +53,8 @@ async function querySchoolOfficials(
   const res = await client.query<{ full_name: string; geo_id: string; district_type: string }>(
     `SELECT p.full_name, d.geo_id, d.district_type
      FROM essentials.politicians p
-     JOIN essentials.offices o ON o.politician_id = p.id
+     JOIN essentials.office_current_holder och ON och.politician_id = p.id
+     JOIN essentials.offices o ON o.id = och.office_id
      JOIN essentials.districts d ON d.id = o.district_id
      JOIN essentials.geofence_boundaries gb ON gb.geo_id = d.geo_id
      WHERE gb.state = '41'

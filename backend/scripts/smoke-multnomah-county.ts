@@ -82,9 +82,17 @@ async function queryCountyOfficials(
   const res = await client.query<{ full_name: string; district_type: string }>(
     `SELECT p.full_name, d.district_type
      FROM essentials.politicians p
-     JOIN essentials.offices o ON o.politician_id = p.id
+     JOIN essentials.office_current_holder och ON och.politician_id = p.id
+     JOIN essentials.offices o ON o.id = och.office_id
      JOIN essentials.districts d ON d.id = o.district_id
+     -- mtfcc MUST be constrained: geo_id namespaces COLLIDE across boundary types. '41017' is both
+     -- Deschutes County (G4020) and Oregon legislative districts 17 (G5210/G5220), so an
+     -- unconstrained join pairs a COUNTY district row with an unrelated legislative polygon and the
+     -- point-in-polygon test then matches the wrong county. That returned 12 officials at Portland
+     -- City Hall (Multnomah's 5 + 7 from Deschutes) instead of 5. The sibling smoke scripts all pin
+     -- mtfcc for the same reason ('G4110' cities, 'G5420' school districts).
      JOIN essentials.geofence_boundaries gb ON gb.geo_id = d.geo_id
+                                          AND gb.mtfcc = 'G4020'
      WHERE gb.state = '41'
        AND d.district_type = 'COUNTY'
        AND ST_Covers(gb.geometry, ST_SetSRID(ST_MakePoint($1, $2), 4326))
