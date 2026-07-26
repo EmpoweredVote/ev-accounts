@@ -102,33 +102,79 @@ On certification: `py scripts/banners/upload_banner.py --file <final>.jpg --dest
 then add `bend: { state: 'OR', src: '…/cities/bend.jpg' }` to `CURATED_LOCAL` + the attribution
 comment block.
 
-## 3. Headshot pins (13 outstanding)
+## 3. Headshot pins — 6 of 13 CLEARED 2026-07-26 (migration 1477), 7 remain
 
-25 of 38 imported on 2026-07-24 (`data/stance-research/bend-or/_review.json`,
-contact sheet at `data/stance-research/bend-or/headshots/_contact_sheet.jpg`). Outstanding:
+31 of 38 now imported. Wave 2 (mig **1477**) cleared **Rupert, Connally, Sabbadini, Cummiskey,
+Reinholtz, Summers** — all 600×750, `press_use`, verified serving and reaching the live elections
+API. Review artifact: `claude.ai/code/artifact/d3dc02b2-de55-4696-98d5-3622d3676de9`.
 
-**Sitting officials (2)**
-- **Bill Kuhn**, County Treasurer (`-4101713`) — no portrait on any county page; Treasury page
-  names no one (his name appears only in the "Investment Portfolio May 2026" PDF signature line).
-  2022 campaign domain `billkuhn4treasurer.com` no longer resolves.
-- **Ty Rupert**, County Sheriff (`-4101714`) — sheriff.deschutes.org has no portrait; the image
-  next to his name on `/administration/` is a photo of the **Sheriff's Office building** (checked
-  visually and rejected). Try press photos from his 2025-07-29 appointment coverage (OPB, KLCC,
-  KTVZ, Central Oregon Daily) — `press_use`, same basis as the Springfield MO council photos.
+**🔑 WHY THE "DEAD" SITES WERE NOT DEAD — reuse this before declaring any campaign site a loss.**
+The wave-1 trail below recorded most of these as placeholder/logo/theme-asset dead ends. That was a
+*rendering* artifact:
+1. **Scroll the page** (`window.scrollTo` in steps + a short wait) — lazy-loaded `<img>` elements do
+   not exist in the DOM until then, so a bare fetch or a single snapshot sees nothing.
+2. **Strip the CDN render directive to get the full-resolution original:**
+   | Platform | URL shape | Original |
+   |---|---|---|
+   | Wix | `static.wixstatic.com/media/<id>~mv2.<ext>/v1/fill\|crop/…` | cut at `/v1/` |
+   | GoDaddy | `img1.wsimg.com/isteam/ip/<id>/<file>/:/rs=…` | cut at `/:/` |
+   | Squarespace | `…/<file>?format=750w` | `?format=2500w` |
+   | Next.js | `/_next/image?url=%2Fimages%2F…&w=640` | fetch `/images/…` raw |
+   Yields: Connally's "blank Wix placeholder" = a 512² studio headshot; Reinholtz 464px → 1350×1800;
+   Summers → 2705×3500.
+3. **A transparent PNG flattens to BLACK** if you `convert('RGB')` it — composite onto a neutral
+   ground first (Summers, and the county's own 428px Rupert file).
 
-**2026 candidates (11)** — Boozell, Cummiskey, Reinholtz, Sorrells, Connally, Sabbadini,
-Schmidt, Curtis, McLaughlin, Tintle, Summers.
+**🔴 CORRECTIONS to the wave-1 trail — it is wrong in two places:**
+- **`macforsheriff.com` is NOT McLaughlin's site any more.** It redirects to `/wyatt-mcintrye` and
+  serves **"Wyatt McIntyre for Sebastian County Sheriff" (Arkansas)**. The old note ("og:image is a
+  theme asset") reads as though it were still his — importing from it would have attached a photo of
+  a different person in a different state. `mclaughlinforsheriff.com` is a parked lander.
+- **Summers' real domain is `electsummers.com`** (bio at `/meet-michael`). Both previously-recorded
+  domains were never his.
+- **Rupert's portrait exists after all**, at `sheriff.deschutes.org/about/leadership/` — a different
+  path from the `/administration/` page that showed the building. Better still, the Oregon State
+  Sheriffs' Association (`oregonsheriffs.org/sheriff/deschutes/`) hosts the *same* official portrait
+  at **2466²** vs the county's 428², and its `-circle-` filename is misleading: the alpha is fully
+  opaque, the circle is CSS.
+- **`deschutes.org` now redirects to `deschutescounty.gov`** (CMS migration), so every wave-1
+  `deschutes.org/...` path in this file is a redirect.
 
-Search trail already burned (do not repeat):
+### Still pinned (7)
+| Person | Blocker | Unlock |
+|---|---|---|
+| **Bill Kuhn** `-4101713` Treasurer, *sitting* | No portrait on any county page; name appears only in the "Investment Portfolio May 2026" PDF signature line. `billkuhn4treasurer.com` dead. | Nov pamphlet |
+| **Robert Tintle** `-4101727` Treasurer cand., *sitting county CFO* | Only image anywhere is a portrait **inset inside a KTVZ graphic** (`ktvz.b-cdn.net/2022/09/Robert-Tintle-Deschutes-County-CFO.jpg`, 658×430) — a head crop needs ~3× upscale, worse than the pamphlet photos already rejected. | Nov pamphlet |
+| **James (Mac) McLaughlin** `-4101726` Sheriff cand. | Both domains gone (see correction above); not on the DCSO leadership roster; the one news image is a **video screenshot from a misconduct story** — fails the "flattering" bar. | Nov pamphlet |
+| **Jonathan Curtis** `-4101725` Clerk cand. | No campaign site; no coverage portrait. | Nov pamphlet |
+| **Ron (Rondo) Boozell** `-4105831` Mayor cand. | `rondo2026.org` is entirely activist graphics (BlackDogBandW, DIGNITYforALL, warCriminals…) — no portrait of him on it. | Nov pamphlet |
+| **Morgan Schmidt** `-4101724` Comm. P5 cand. | `morganlovesoregon.com` has only the logo, an Unsplash stock image, and one 2000×1125 landscape in which she is a small distant figure. No `/about` page. | news / site refresh |
+| **Dan Sorrells** `-4105834` Council P6 cand. | Instagram `@citycouncildan` only; social-media profile photos excluded on licensing grounds. | Sept city forum |
+
+Four of the seven converge on the **November county voters' pamphlet** — grayscale and ~219px, so
+below the normal bar, but for Kuhn/Tintle/Curtis/McLaughlin it may be the only image that will ever
+exist. Decide then whether the bar bends for a sitting official with no alternative.
+
+### Wave-1 search trail (2026-07-24) — ⚠️ SUPERSEDED IN PART, read section 3 above first
+Kept for the dead-domain list and the pamphlet assessment. Its "needs a JS-rendering pass" verdicts
+were resolved on 2026-07-26 (5 of those 7 sites yielded a usable headshot), and two entries were
+outright wrong — see the corrections in section 3.
+
 - No site resolves for: `dansorrells.com`, `sorrellsforbend.com`, `danforbend.com`,
   `jonathancurtis.org`, `curtisforclerk.com`, `tintlefortreasurer.com`, `summersfororegon.com`,
-  `michaelsummersoregon.com`, `billkuhn4treasurer.com`.
+  `michaelsummersoregon.com`, `billkuhn4treasurer.com`. *(Still true — but Summers was found at
+  `electsummers.com`, a domain not on this list. A dead-domain list is not proof of no site.)*
 - Sites that DO resolve but whose images need a JS-rendering pass (Wix/Squarespace/GoDaddy lazy
-  loaders defeat curl): `connally4deschutes.com` (og:image is a blank Wix placeholder),
-  `vote4sabbadini.com`, `morganlovesoregon.com` (og:image is a logo), `bobbiforbend.com`
-  (**trap:** the only real photo on the page is an endorser — **Jamie Collins** — not
-  Cummiskey), `elanaforbend.com` (og-image.png is a social card), `rondo2026.org` (no og:image),
-  `macforsheriff.com` / `mclaughlinforsheriff.com` (og:image is a theme asset).
+  loaders defeat curl): `connally4deschutes.com` (og:image is a blank Wix placeholder) **→ RESOLVED,
+  512² studio headshot**, `vote4sabbadini.com` **→ RESOLVED**, `morganlovesoregon.com` (og:image is
+  a logo) **→ still no usable photo**, `bobbiforbend.com` (**trap:** the only real photo on the page
+  is an endorser — **Jamie Collins** — not Cummiskey) **→ RESOLVED; note the endorser file is now
+  `Ariel.webp` (Ariel Méndez), so this site has had at least two endorser-photo traps — always check
+  the filename**, `elanaforbend.com` (og-image.png is a social card) **→ RESOLVED, raw asset is
+  1350×1800**, `rondo2026.org` (no og:image) **→ confirmed no portrait exists**,
+  `macforsheriff.com` / `mclaughlinforsheriff.com` (og:image is a theme asset) **→ 🔴 WRONG:
+  macforsheriff.com now serves a DIFFERENT PERSON (Wyatt McIntyre, Sebastian County AR) and the
+  other is a parked lander. Do not pull an image from either.**
 - **Rejected source:** the Deschutes County May 2026 voters' pamphlet
   (`DocumentCenter/View/5835`) does contain statement photos for Connally (p21), Sabbadini (p22),
   Boozell + Imhoff (p24) and Schmidt (p25), but they are **grayscale ~219×256** — below the
