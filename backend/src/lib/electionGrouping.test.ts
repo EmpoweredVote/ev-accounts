@@ -12,6 +12,7 @@ const row = (over: Partial<ElectionRow> = {}): ElectionRow => ({
   primary_party: null,
   seats: 1,
   district_type: null,
+  provisional_until: null,
   candidate_id: 'c1',
   full_name: 'Jane Doe',
   first_name: 'Jane',
@@ -40,6 +41,15 @@ describe('groupElectionRows', () => {
       row({ race_id: 'r1', candidate_id: 'c1' }),
     ]);
     expect(out[0].races[0].candidates).toHaveLength(1);
+  });
+
+  it('carries provisional_until onto the race, defaulting to null', () => {
+    const out = groupElectionRows([
+      row({ race_id: 'r1', candidate_id: 'c1', provisional_until: '2026-08-28' }),
+      row({ race_id: 'r2', candidate_id: 'c2', position_name: 'Mayor' }),
+    ]);
+    const byId = Object.fromEntries(out[0].races.map((r) => [r.race_id, r.provisional_until]));
+    expect(byId).toEqual({ r1: '2026-08-28', r2: null });
   });
 
   it('keeps a race with no candidates (LEFT JOIN null candidate_id)', () => {

@@ -26,6 +26,36 @@ const ELECTION_VISIBILITY_WINDOW = `(
   OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
 )`;
 
+/**
+ * Race-level "candidate field is not final yet" date, or NULL.
+ *
+ * Reads the convention migration 1456 established for
+ * essentials.race_candidates.provisional_until: a non-null value means the row is a
+ * PRE-RESOLUTION placeholder, and the date is the first day it can be RE-VERIFIED (1456
+ * pairs it with the "cull >= <date>" wording in source). ~300 rows across a dozen states
+ * carry one; migration 1469 added the Bend/Deschutes cohort.
+ *
+ * The predicate is 1456's staleness pair with its date clause dropped. 1456's
+ * stale_provisional_candidates VIEW answers an ops question — "which rows are OVERDUE for
+ * re-verification" — so it requires provisional_until <= CURRENT_DATE. This answers a
+ * reader-facing one — "is this field settled" — which is true from the moment the row is
+ * seeded, well before the deadline. Same last_verified_at comparison ('<', matching 1456
+ * exactly) so both clear on the same event: a re-derive that stamps last_verified_at past
+ * provisional_until, or an operator NULLing the flag (what 1457 does). Never on the
+ * calendar alone — otherwise a re-check that never happens silently becomes a claim that
+ * the field is final.
+ *
+ * MAX() because a race is provisional until its LAST outstanding row is resolved. Cast to
+ * text so node-postgres returns 'YYYY-MM-DD' instead of a local-midnight Date.
+ */
+const PROVISIONAL_UNTIL = `(
+  SELECT MAX(rc2.provisional_until)::text
+  FROM essentials.race_candidates rc2
+  WHERE rc2.race_id = r.id
+    AND rc2.provisional_until IS NOT NULL
+    AND (rc2.last_verified_at IS NULL OR rc2.last_verified_at < rc2.provisional_until)
+)`;
+
 const RACE_SELECT = `
   e.id           AS election_id,
   e.name         AS election_name,
@@ -36,6 +66,7 @@ const RACE_SELECT = `
   r.position_name,
   r.primary_party,
   r.seats,
+  ${PROVISIONAL_UNTIL} AS provisional_until,
   rc.id          AS candidate_id,
   rc.full_name,
   rc.first_name,

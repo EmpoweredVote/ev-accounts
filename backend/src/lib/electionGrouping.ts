@@ -24,6 +24,15 @@ export interface ElectionRace {
   primary_party: string | null;
   seats: number;
   district_type: string | null;
+  /**
+   * Set when this race's candidate field is not yet final: the first date it can be
+   * re-verified (ISO 'YYYY-MM-DD'), per the race_candidates.provisional_until
+   * convention from migration 1456. Non-null only while the field is ALSO still
+   * unverified (see PROVISIONAL_UNTIL in electionService), so it clears on
+   * re-verification rather than on the calendar. Clients render an advisory note;
+   * null means "field presented as final".
+   */
+  provisional_until: string | null;
   candidates: ElectionCandidate[];
 }
 
@@ -48,6 +57,8 @@ export interface ElectionRow {
   primary_party: string | null;
   seats: number;
   district_type: string | null;
+  /** ISO date string ('YYYY-MM-DD') or null — cast to text in SQL so pg does not hand back a Date. */
+  provisional_until: string | null;
   candidate_id: string | null;
   full_name: string | null;
   first_name: string | null;
@@ -170,6 +181,7 @@ export function groupElectionRows(rows: ElectionRow[]): ElectionResult[] {
         primary_party: row.primary_party,
         seats: row.seats,
         district_type: row.district_type,
+        provisional_until: row.provisional_until ?? null,
         candidates: [],
       };
       racesMap.set(row.race_id, race);

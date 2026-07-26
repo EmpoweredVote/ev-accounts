@@ -6,6 +6,33 @@ deadline is 2026-08-28; filing closed 2026-08-25 for non-incumbents, 2026-08-18 
 incumbents). The stance/headshot sections are not date-gated.
 **Priority:** high for the ballot section (candidate cards go stale/wrong otherwise)
 
+## 0. STATUS 2026-07-26 — the provisional field is now DISCLOSED on the site
+
+Migration **1469** brought these rows into the `provisional_until` convention that migration
+**1456** established (read 1456's header before touching this): `provisional_until` is the first
+date the row can be **RE-VERIFIED**, paired with a `cull >= <date>` marker in `source`. So the
+15 candidate rows across the 8 LOCAL races below carry **`2026-08-29`** — the day after the
+withdrawal deadline — **not** 2026-08-28, because the field is still mutable through Aug 28.
+
+The elections API now surfaces it per race and `ElectionsView.jsx` renders a "Candidate field not
+final" note, so the site no longer presents this field as settled. 1456 had already dated ~293
+rows across a dozen states and **nothing on the read path looked at any of them** — that is fixed
+for all of them at once, not just Bend.
+
+**🔴 READ THIS BEFORE DOING §1:** the note does **not** clear when 2026-08-29 passes. The read
+path uses 1456's comparison — `last_verified_at IS NULL OR last_verified_at < provisional_until`
+— deliberately, so a re-check that never happens cannot silently turn into a claim that the field
+is final. Past its date the note switches to "past its re-verification date and may be out of
+date" and the row appears in `essentials.stale_provisional_candidates`. When you finish §1:
+  - bump `last_verified_at` past 2026-08-29 on every row you re-verify, **or**
+  - set `provisional_until = NULL` on rows confirmed final (what migration 1457 did for its 9).
+Doing neither leaves the note up; clearing the flag without re-deriving the ballot is the exact
+failure this was built to prevent.
+
+HD 53/54 were deliberately **not** flagged — all 60 Oregon House districts are equally
+provisional in this window, so flagging only Bend's two would show the note to HD-53 residents
+and nothing to HD-12 residents. That wants a separate Oregon-wide pass.
+
 ## 1. Ballot re-check (≥ 2026-08-29) — REQUIRED
 
 The Nov 3 2026 candidate field was seeded on 2026-07-24, **before filing closed**. Re-derive
@@ -53,6 +80,27 @@ Commissioner Positions 4 and 5. At swearing-in:
 - **Assessor** → winner of Zachary J Hastings vs Tana West; retire Scot Langton (`-4101712`),
   who is retiring at the end of his term.
 - Board chamber `official_count` is already 5; re-check `is_vacant` flags after seating.
+
+## 2b. Bend has NO city banner (found 2026-07-26)
+
+`buildingImages.js` `CURATED_LOCAL` carries **139 curated city banners**; Bend is not one, so its
+civic space renders the tier-gradient fallback. Four operator-review candidates are cropped to the
+1700×540 house spec and staged (NOT uploaded, NOT certified) in the session scratchpad
+`bend_banner/`, with licence + author + Commons page in `bend_banner/_meta.json`:
+
+| Key | Subject | Licence | Author |
+|-----|---------|---------|--------|
+| A | Mirror Pond + Three Sisters (recommended) | CC BY-SA 3.0 | Spencer Dahl |
+| B | Downtown street at golden hour, Pilot Butte on axis | CC0 | UpdateNerd |
+| C | Downtown from Pilot Butte, autumn | CC0 | Roc0ast3r |
+| D | City + Cascade horizon | CC0 | Roc0ast3r |
+
+Rejected on inspection: Old Mill District (mostly sky, smokestacks not visible), Drake Park 2014
+(flat grey water), `Bend, OR (DSC 0153)` (a "Wall Street Storage" sign at night), Hayden Homes
+Amphitheater (too dark), `North Middle Sisters Mirror Pond` (bare-winter, peaks crop out).
+On certification: `py scripts/banners/upload_banner.py --file <final>.jpg --dest cities/bend.jpg`
+then add `bend: { state: 'OR', src: '…/cities/bend.jpg' }` to `CURATED_LOCAL` + the attribution
+comment block.
 
 ## 3. Headshot pins (13 outstanding)
 
