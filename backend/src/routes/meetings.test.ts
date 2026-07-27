@@ -9,21 +9,25 @@ const RACE_ID = '22222222-2222-4222-8222-222222222222';
 const {
   mockCreateMeeting,
   mockDeleteMeeting,
+  mockGetAgendaItemsByMeetingId,
   mockGetMeetingById,
   mockGetMeetingEntityState,
   mockGetMeetings,
   mockGetSummaryByMeetingId,
   mockGetTranscriptByMeetingId,
+  mockGetUpcomingMeetings,
   mockGetVotesByMeetingId,
   mockUpdateMeeting,
 } = vi.hoisted(() => ({
   mockCreateMeeting: vi.fn(),
   mockDeleteMeeting: vi.fn(),
+  mockGetAgendaItemsByMeetingId: vi.fn(),
   mockGetMeetingById: vi.fn(),
   mockGetMeetingEntityState: vi.fn(),
   mockGetMeetings: vi.fn(),
   mockGetSummaryByMeetingId: vi.fn(),
   mockGetTranscriptByMeetingId: vi.fn(),
+  mockGetUpcomingMeetings: vi.fn(),
   mockGetVotesByMeetingId: vi.fn(),
   mockUpdateMeeting: vi.fn(),
 }));
@@ -36,8 +40,13 @@ vi.mock('../lib/meetingsService.js', () => ({
   getMeetings: mockGetMeetings,
   getSummaryByMeetingId: mockGetSummaryByMeetingId,
   getTranscriptByMeetingId: mockGetTranscriptByMeetingId,
+  getUpcomingMeetings: mockGetUpcomingMeetings,
   getVotesByMeetingId: mockGetVotesByMeetingId,
   updateMeeting: mockUpdateMeeting,
+}));
+
+vi.mock('../lib/agendaItemsService.js', () => ({
+  getAgendaItemsByMeetingId: mockGetAgendaItemsByMeetingId,
 }));
 
 vi.mock('../middleware/auth.js', () => ({
@@ -58,11 +67,13 @@ app.use('/api/meetings', meetingsRouter);
 beforeEach(() => {
   mockCreateMeeting.mockReset();
   mockDeleteMeeting.mockReset();
+  mockGetAgendaItemsByMeetingId.mockReset();
   mockGetMeetingById.mockReset();
   mockGetMeetingEntityState.mockReset();
   mockGetMeetings.mockReset();
   mockGetSummaryByMeetingId.mockReset();
   mockGetTranscriptByMeetingId.mockReset();
+  mockGetUpcomingMeetings.mockReset();
   mockGetVotesByMeetingId.mockReset();
   mockUpdateMeeting.mockReset();
 });
@@ -75,6 +86,38 @@ describe('GET /api/meetings', () => {
     expect(mockGetMeetings).toHaveBeenCalledWith(
       expect.objectContaining({ raceId: RACE_ID })
     );
+  });
+});
+
+describe('GET /api/meetings/upcoming', () => {
+  it('returns scheduled meetings and is NOT swallowed by /:id', async () => {
+    mockGetUpcomingMeetings.mockResolvedValueOnce([{ id: MEETING_ID }]);
+    const res = await request(app).get('/api/meetings/upcoming');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([{ id: MEETING_ID }]);
+    expect(mockGetUpcomingMeetings).toHaveBeenCalledTimes(1);
+  });
+
+  it('500s with INTERNAL_ERROR on service failure', async () => {
+    mockGetUpcomingMeetings.mockRejectedValueOnce(new Error('boom'));
+    const res = await request(app).get('/api/meetings/upcoming');
+    expect(res.status).toBe(500);
+    expect(res.body.code).toBe('INTERNAL_ERROR');
+  });
+});
+
+describe('GET /api/meetings/:id/agenda-items', () => {
+  it('422s on a non-UUID id', async () => {
+    const res = await request(app).get('/api/meetings/not-a-uuid/agenda-items');
+    expect(res.status).toBe(422);
+    expect(res.body.code).toBe('INVALID_ID');
+  });
+
+  it('returns the items list', async () => {
+    mockGetAgendaItemsByMeetingId.mockResolvedValueOnce([{ itemNumber: '6A' }]);
+    const res = await request(app).get(`/api/meetings/${MEETING_ID}/agenda-items`);
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([{ itemNumber: '6A' }]);
   });
 });
 

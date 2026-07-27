@@ -11,6 +11,7 @@ import {
   getMeetingById,
   getMeetingEntityState,
   getMeetings,
+  getUpcomingMeetings,
   updateMeeting,
 } from './meetingsService.js';
 
@@ -50,6 +51,8 @@ const baseRow = {
   summary: fullSummary,
   processing_metadata: null,
   thumbnail_url: 'https://x.supabase.co/storage/v1/object/public/meeting-thumbnails/m1.jpg',
+  starts_at: null,
+  timezone: null,
 };
 
 beforeEach(() => mockQuery.mockReset());
@@ -167,6 +170,61 @@ describe('getMeetingById (detail payload)', () => {
     expect('bodySlug' in meeting!).toBe(false);
     expect(meeting!.summary).toEqual(fullSummary);
     expect(meeting!.summaryPreview).not.toBeNull();
+    // starts_at/timezone (migration 1481) map through as nulls from baseRow
+    expect(meeting!.startsAt).toBeNull();
+    expect(meeting!.timezone).toBeNull();
+  });
+});
+
+describe('getMeetings status default', () => {
+  it('filters to published when no status filter is passed', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getMeetings();
+    const [sql] = mockQuery.mock.calls[0];
+    expect(sql).toContain(`status = 'published'`);
+  });
+
+  it('uses the explicit status filter when passed', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getMeetings({ status: 'scheduled' });
+    const [sql, params] = mockQuery.mock.calls[0];
+    expect(sql).not.toContain(`status = 'published'`);
+    expect(params).toContain('scheduled');
+  });
+
+  it('combines the default published literal with a parameterized raceId filter', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getMeetings({ raceId: '22222222-2222-4222-8222-222222222222' });
+    const [sql, params] = mockQuery.mock.calls[0];
+    // The status default is a literal, not a parameter — raceId must still be $1.
+    expect(sql).toContain(`status = 'published'`);
+    expect(sql).toContain('er.race_id = $1::uuid');
+    expect(params).toEqual(['22222222-2222-4222-8222-222222222222']);
+  });
+});
+
+describe('getUpcomingMeetings', () => {
+  it('selects scheduled meetings from today forward, soonest first', async () => {
+    mockQuery.mockResolvedValueOnce({
+      rows: [{ ...baseRow, status: 'scheduled', starts_at: '2026-07-29T18:30:00-04:00', timezone: 'America/Indiana/Indianapolis' }],
+    });
+    const meetings = await getUpcomingMeetings();
+    const [sql] = mockQuery.mock.calls[0];
+    expect(sql).toContain(`status = 'scheduled'`);
+    expect(sql).toContain('date >= CURRENT_DATE');
+    expect(sql).toContain('ORDER BY date ASC');
+    expect(meetings[0].startsAt).toBe('2026-07-29T18:30:00-04:00');
+    expect(meetings[0].timezone).toBe('America/Indiana/Indianapolis');
+  });
+
+  it('normalizes a Date starts_at (pg timestamptz) to an ISO-8601 UTC string', async () => {
+    // pg returns timestamptz columns as JS Date objects — no type parsers are
+    // registered in db.ts. The mapper must hand back a string.
+    mockQuery.mockResolvedValueOnce({
+      rows: [{ ...baseRow, status: 'scheduled', starts_at: new Date('2026-07-29T22:30:00Z') }],
+    });
+    const meetings = await getUpcomingMeetings();
+    expect(meetings[0].startsAt).toBe('2026-07-29T22:30:00.000Z');
   });
 });
 
