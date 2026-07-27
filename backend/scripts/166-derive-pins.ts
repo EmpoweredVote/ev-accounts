@@ -18,6 +18,8 @@
  *   cd /c/EV-Accounts/backend && set -a && source .env && set +a && \
  *     node --import tsx scripts/166-derive-pins.ts
  */
+import { writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { pool } from '../src/lib/db.js';
 
 const DERIVED_AT = '2026-07-26';
@@ -672,6 +674,234 @@ async function derivePins(scope: Scope): Promise<Pins> {
   return { imgSkip, stanceSurviving, stanceQueue167 };
 }
 
+// ---------------------------------------------------------------------------
+// Task 3 — the PROVISIONAL and withheld censuses, then the consumable artifact.
+// ---------------------------------------------------------------------------
+interface Censuses {
+  provMarked: { st: string; races: number }[];
+  provUnmarked: { st: string; races: number }[];
+  totalRaces: number;
+  withheld: { st: string; races: number; geoIds: string[] }[];
+}
+
+function deriveCensuses(house: HouseRow[], markers: Map<string, string>): Censuses {
+  // --- PROVISIONAL census -------------------------------------------------
+  // Phases 161, 162 and 163 authored NO PROVISIONAL assertion at all, so this is a
+  // genuinely new derivation and the only authority for what 166-verify.sql may assert.
+  // Phase 167 clears these flags per primary-date cluster, so the gate asserts TODAY's
+  // state and 167 will move states between the two lists.
+  const raceMarked = new Map<string, { st: string; marked: boolean }>();
+  for (const row of house) {
+    if (raceMarked.has(row.race_id)) continue;
+    raceMarked.set(row.race_id, { st: row.st, marked: (row.description ?? '').includes('PROVISIONAL:') });
+  }
+  const perState = new Map<string, { marked: number; unmarked: number }>();
+  for (const s of STATES) perState.set(s.st, { marked: 0, unmarked: 0 });
+  for (const { st, marked } of raceMarked.values()) {
+    const b = perState.get(st)!;
+    if (marked) b.marked++;
+    else b.unmarked++;
+  }
+
+  const provMarked: { st: string; races: number }[] = [];
+  const provUnmarked: { st: string; races: number }[] = [];
+  const provMixed: string[] = [];
+  for (const s of STATES) {
+    const b = perState.get(s.st)!;
+    if (b.marked > 0) provMarked.push({ st: s.st, races: b.marked });
+    if (b.unmarked > 0) provUnmarked.push({ st: s.st, races: b.unmarked });
+    if (b.marked > 0 && b.unmarked > 0) provMixed.push(`${s.st} (${b.marked} marked / ${b.unmarked} unmarked)`);
+  }
+  const totalRaces = raceMarked.size;
+  const accounted = provMarked.reduce((n, x) => n + x.races, 0) + provUnmarked.reduce((n, x) => n + x.races, 0);
+
+  console.log(
+    `\nPROVISIONAL CENSUS: marked=${provMarked.map((x) => `${x.st}:${x.races}`).join(' ')} | ` +
+      `unmarked=${provUnmarked.map((x) => `${x.st}:${x.races}`).join(' ')}`
+  );
+  console.log(
+    `PROVISIONAL TOTALS: ${provMarked.reduce((n, x) => n + x.races, 0)} marked + ` +
+      `${provUnmarked.reduce((n, x) => n + x.races, 0)} unmarked = ${accounted} of ${totalRaces} in-scope races ` +
+      `(0 unaccounted). Those ${totalRaces} races span the ${EXPECTED_TOTAL_DISTRICTS} in-scope districts — ` +
+      `WI alone contributes 24 races over 8 districts (general + two party primaries).`
+  );
+  if (accounted !== totalRaces) {
+    throw new Error(`CENSUS MISMATCH: PROVISIONAL accounted ${accounted} of ${totalRaces} races`);
+  }
+  if (provMixed.length) {
+    console.log(
+      `PROVISIONAL SPLIT STATES (cannot be asserted whole-state; 166-verify.sql must assert these per-race): ${provMixed.join(', ')}`
+    );
+  }
+
+  // --- Withheld census ----------------------------------------------------
+  // Expected after migrations 1247 (TN), 1248 (AL) and 1249 (LA): those three marker
+  // elections hold 0 races, and only MO's still holds any — exactly 2902..2906.
+  const markerById = new Map([...markers.entries()].map(([st, id]) => [id, st]));
+  const withheldMap = new Map<string, Set<string>>();
+  for (const m of MARKER_ELECTIONS) withheldMap.set(m.st, new Set());
+  const withheldRaces = new Map<string, Set<string>>();
+  for (const m of MARKER_ELECTIONS) withheldRaces.set(m.st, new Set());
+  for (const row of house) {
+    const st = markerById.get(row.election_id);
+    if (!st) continue;
+    withheldMap.get(st)!.add(row.geo_id);
+    withheldRaces.get(st)!.add(row.race_id);
+  }
+
+  const withheld = MARKER_ELECTIONS.map((m) => ({
+    st: m.st,
+    races: withheldRaces.get(m.st)!.size,
+    geoIds: [...withheldMap.get(m.st)!].sort(),
+  }));
+
+  // Reported in TN / AL / LA / MO order — the three emptied markers first, then the one
+  // that legitimately still holds races.
+  const REPORT_ORDER = ['TN', 'AL', 'LA', 'MO'];
+  const summary = REPORT_ORDER.map((st) => `${st} ${withheld.find((w) => w.st === st)!.races}`).join(' / ');
+  console.log(`\nWITHHELD CENSUS: ${summary}`);
+  for (const w of withheld) {
+    if (w.geoIds.length) console.log(`  ${w.st} geo_ids: ${w.geoIds.join(', ')}`);
+  }
+
+  const mo = withheld.find((w) => w.st === 'MO')!;
+  const expectedMo = ['2902', '2903', '2904', '2905', '2906'];
+  const emptyOnes = withheld.filter((w) => w.st !== 'MO');
+  const badEmpty = emptyOnes.filter((w) => w.races !== 0);
+  const moOk = mo.geoIds.length === expectedMo.length && mo.geoIds.every((g, i) => g === expectedMo[i]);
+  if (badEmpty.length || !moOk) {
+    console.error(
+      `CENSUS MISMATCH: expected TN 0 / AL 0 / LA 0 / MO 5 with geo_ids ${expectedMo.join(', ')}; ` +
+        `got ${summary} with MO geo_ids ${mo.geoIds.join(', ') || '(none)'}`
+    );
+    throw new Error('CENSUS MISMATCH — refusing to emit a fragment that encodes a wrong world');
+  }
+
+  return { provMarked, provUnmarked, totalRaces, withheld };
+}
+
+/** Single-quote escaping for a SQL string literal. */
+const sq = (s: string) => `'${s.replace(/'/g, "''")}'`;
+
+function emitFragment(scope: Scope, pins: Pins, censuses: Censuses, house: HouseRow[]): string {
+  const L: string[] = [];
+  const frozenImg = new Set(Object.values(FROZEN_IMG_SKIP).flat());
+  const liveImg = new Set(pins.imgSkip.map((r) => r.ext));
+  const dropped = [...frozenImg].filter((e) => !liveImg.has(e));
+  const added = [...liveImg].filter((e) => !frozenImg.has(e));
+  const retired = FROZEN_STANCE_SKIP.length - pins.stanceSurviving.length;
+
+  L.push('-- === 166 CENSUS HEADER ===');
+  L.push(`-- Generated by backend/scripts/166-derive-pins.ts against production on ${DERIVED_AT}.`);
+  L.push('-- Read-only derivation. Pasted verbatim into 166-verify.sql (166-03) and consumed by');
+  L.push('-- 166-verify-invariants.sql (166-04). Contains only comments and INSERTs into the three');
+  L.push('-- temp tables the gate declares; no DDL of its own, and nothing that writes essentials/inform.');
+  L.push('--');
+  L.push('-- SCOPE: 43 elections — 38 state generals, 4 Polygon Pending markers, and');
+  L.push("--   'WI 2026 Partisan Primary'. That last one is a LIVE CORRECTION to the 42 the plan");
+  L.push('--   listed from the 163 snapshot: the WI primary election row was created 2026-07-25 and');
+  L.push("--   now holds WI's field (32 active, 7 incumbents) while the WI general holds 5 with 4 of");
+  L.push('--   8 races empty. IN and UT also have House primaries, but theirs are past (2026-05-05,');
+  L.push('--   2026-06-23) and hold only concluded contests, so they stay out.');
+  L.push('--');
+  L.push('-- 1. PER-STATE DISTRICT CENSUS (districts / races / active / banded-new)');
+  const byState = new Map<string, { d: Set<string>; r: Set<string>; a: number; b: Set<string> }>();
+  for (const s of STATES) byState.set(s.st, { d: new Set(), r: new Set(), a: 0, b: new Set() });
+  for (const row of house) {
+    const x = byState.get(row.st)!;
+    x.d.add(row.geo_id);
+    x.r.add(row.race_id);
+    if (row.candidate_status === 'active') x.a++;
+    if (row.politician_id && scope.bandedActive.has(row.politician_id)) x.b.add(row.politician_id);
+  }
+  for (const s of STATES) {
+    const x = byState.get(s.st)!;
+    L.push(`--   ${s.st} ${s.fips}: ${x.d.size} districts / ${x.r.size} races / ${x.a} active / ${x.b.size} banded-new`);
+  }
+  L.push(`--   TOTAL DISTRICTS: ${[...byState.values()].reduce((n, x) => n + x.d.size, 0)} (across ${censuses.totalRaces} races)`);
+  L.push('--');
+  L.push('-- 2. BAND FILTER DELTA');
+  L.push(
+    `--   active=${scope.bandedActive.size} vs active+is_incumbent=false=${scope.bandedActiveChallengers.size}; ` +
+      `difference=${scope.bandedActive.size - scope.bandedActiveChallengers.size}, all active incumbents.`
+  );
+  L.push('--   The gate uses the SUPERSET (active) form 161-164 used, not 165\'s stricter form:');
+  L.push('--   a superset demands an image-or-pin from strictly more candidates. 12 of the difference');
+  L.push('--   are cross-state band collisions (4 KS incumbents inside AK\'s band, 8 MA inside KS\'s);');
+  L.push('--   all entered via the race_candidates join, so all are legitimately in scope.');
+  L.push('--');
+  L.push('-- 3. HEADSHOT DELTA');
+  L.push(`--   live=${pins.imgSkip.length} vs frozen ${frozenImg.size} (161:167 + 162:110 + 163:95 + 164:85 + 165:109)`);
+  L.push(`--   dropped=${dropped.length} (acquired an image, or no longer active/in-band); added=${added.length}`);
+  L.push('--');
+  L.push('-- 4. STANCE PIN PARTITION');
+  L.push(`--   surviving=${pins.stanceSurviving.length} of frozen ${FROZEN_STANCE_SKIP.length} (reasons carried VERBATIM from the source gates)`);
+  L.push(`--   retired=${retired}; queue_167=${pins.stanceQueue167.length}`);
+  L.push('--   queue_167 candidates are 0-stance TODAY but carry no documented search trail. They are');
+  L.push('--   deliberately NOT merged into _stance_skip — nobody made that research judgment.');
+  L.push('--');
+  L.push('-- 5. PROVISIONAL CENSUS (asserts TODAY; Phase 167 clears flags per primary-date cluster,');
+  L.push('--    so states will move between these two lists)');
+  L.push(`--   marked:   ${censuses.provMarked.map((x) => `${x.st}:${x.races}`).join(' ') || '(none)'}`);
+  L.push(`--   unmarked: ${censuses.provUnmarked.map((x) => `${x.st}:${x.races}`).join(' ') || '(none)'}`);
+  L.push('--');
+  L.push('-- 6. WITHHELD CENSUS (Polygon Pending markers; migrations 1247/1248/1249 emptied TN/AL/LA)');
+  for (const w of censuses.withheld) {
+    L.push(`--   ${w.st}: ${w.races} race(s)${w.geoIds.length ? ` — geo_ids ${w.geoIds.join(', ')}` : ''}`);
+  }
+  L.push('-- === END 166 CENSUS HEADER ===');
+  L.push('');
+
+  // --- _img_skip ----------------------------------------------------------
+  L.push(`-- Headshot honest-skips: ${pins.imgSkip.length} banded active candidates with no`);
+  L.push('-- essentials.politician_images row, regenerated live (pure derivation, not judgment).');
+  L.push('-- Grouped by state in Wave-3 order; within a group ordered by external_id DESCENDING,');
+  L.push('-- which reads as ascending district then seq. Ten ids per line.');
+  L.push('INSERT INTO _img_skip (external_id) VALUES');
+  const imgByState = groupByState(pins.imgSkip);
+  const groups = STATES.filter((s) => (imgByState.get(s.st)?.length ?? 0) > 0);
+  groups.forEach((s, gi) => {
+    const ids = imgByState.get(s.st)!;
+    L.push(`  -- ${s.st} (${ids.length})`);
+    for (let i = 0; i < ids.length; i += 10) {
+      const chunk = ids.slice(i, i + 10).map((e) => `(${e})`).join(',');
+      const isLastLine = gi === groups.length - 1 && i + 10 >= ids.length;
+      L.push(`  ${chunk}${isLastLine ? '' : ','}`);
+    }
+  });
+  L.push(';');
+  L.push('');
+
+  // --- _stance_skip -------------------------------------------------------
+  L.push(`-- Whole-record stance honest-skips: ${pins.stanceSurviving.length} of the 124 frozen across`);
+  L.push('-- 161-165 that are STILL 0-stance and still in the banded in-scope universe. Each reason is');
+  L.push('-- carried verbatim from its source gate file — a documented search trail cannot be');
+  L.push('-- regenerated by a query, so these are intersected, never recomputed.');
+  L.push('INSERT INTO _stance_skip (external_id, reason) VALUES');
+  pins.stanceSurviving.forEach((s, i) => {
+    L.push(`  (${s.ext}, ${sq(s.reason)})${i === pins.stanceSurviving.length - 1 ? '' : ','}  -- [${s.gate}] ${s.st}`);
+  });
+  L.push(';');
+  L.push('');
+
+  // --- _stance_queue_167 --------------------------------------------------
+  L.push(`-- Phase-167 queue: ${pins.stanceQueue167.length} banded active candidate(s) that are 0-stance today but`);
+  L.push('-- carry NO documented search trail. Kept separate from _stance_skip on purpose: recording a');
+  L.push('-- dated state of the world is honest, asserting a research judgment nobody made is not.');
+  if (!pins.stanceQueue167.length) {
+    L.push('-- (empty)');
+  } else {
+    L.push('INSERT INTO _stance_queue_167 (external_id, reason) VALUES');
+    pins.stanceQueue167.forEach((q, i) => {
+      L.push(`  (${q.ext}, ${sq(QUEUE_167_REASON)})${i === pins.stanceQueue167.length - 1 ? '' : ','}  -- ${q.st}`);
+    });
+    L.push(';');
+  }
+  L.push('');
+
+  return L.join('\n');
+}
+
 async function main() {
   const { generals, markers, extras } = await resolveElections();
   const allElectionIds = [...generals.values(), ...markers.values(), ...extras.values()];
@@ -687,7 +917,12 @@ async function main() {
 
   const house = await loadHouse(allElectionIds);
   const scope = deriveScope(house);
-  await derivePins(scope);
+  const pins = await derivePins(scope);
+  const censuses = deriveCensuses(house, markers);
+
+  const outPath = new URL('166-pins.generated.sql', import.meta.url);
+  writeFileSync(outPath, emitFragment(scope, pins, censuses, house), 'utf8');
+  console.log(`\nWROTE ${fileURLToPath(outPath)}`);
 
   await pool.end();
 }
