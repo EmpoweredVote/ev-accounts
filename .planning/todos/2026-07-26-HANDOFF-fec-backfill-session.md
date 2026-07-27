@@ -107,7 +107,41 @@ State moved 2,809 → 2,863 windows, 81,881 → 98,476 rows, `unresolvable` 0 �
 design premise is that duplicate groups are "extremely sparse in DATE" (~497 rows per period). This
 window carried **16,618 → 39,258 API rows ≈ 393 pages ≈ 33 min at 12 req/min**, i.e. **33× the
 assumption**, and it alone took ~25–30 min. Re-derive the ETA from observed throughput before
-promising a finish time; do not reuse the 20–24h figure.
+promising a finish time; do not reuse the 20–24h figure. Observed on the relaunched run: **~2.4
+windows/min**, which put ~25h on the *remaining* 3,637 — so the whole job costs well over the
+original estimate.
+
+### 1b. 🔴 THE UNRESOLVABLE RATE IS ~2.6%, NOT 0.2% — re-plan §2 against this
+
+`§1`'s "145 unresolvable (0.2%)" was produced by the overwrite bug and is **not a real
+measurement**. First trustworthy figures, from the relaunched run (measured 2026-07-27 at 61% done):
+
+| | |
+|---|---|
+| rows filled | 182,855 |
+| **rows the API no longer returns** | **3,985 across 374 windows ≈ 2.6%** |
+| windows done | 4,023 / 6,549 |
+| failures | 2 (both transient, see below) · timeouts **0** |
+
+Reconciled independently before trusting it: summing the per-window
+`N row(s) the API no longer returns` lines in `_backfill-run.log` gives exactly the counter value
+(3,947 = 3,947 at the time of the check), so the `+=` fix is not double-counting.
+
+**This is not a defect and not a data-loss risk.** Those rows stay un-backfilled, and because the
+per-line retirement guards on `raw_record ? 'file_number'`, it skips them rather than guessing. The
+consequence is purely that **§2 will retire less than the 0.2% figure implied** — roughly an order of
+magnitude more rows stay outside its reach. Do not "fix" this by loosening the guard; the whole
+reason `file_number` gates retirement is that a row without one cannot be placed in a filing.
+
+**Both failure modes seen so far are transient, and both were previously fatal:**
+
+- `Connection terminated unexpectedly` on a ~32s scan of a 1.3M-row source (`C00696526`) — 7 of that
+  committee's 8 windows succeeded either side of it, so it is a socket drop, not a new wall.
+- `The operation was aborted due to timeout` on an FEC fetch (`C00492785`).
+
+2 failures in ~874 windows (0.2%). Each is counted, left un-done, and picked up by the wrapper on
+the next pass via the new non-zero exit — the path that previously only worked because the script
+crashed.
 
 ---
 
@@ -126,10 +160,40 @@ npx tsx scripts/retire-fec-superseded-local.ts --from data/fec-amendment-dupes-f
 - **Verify afterwards** with the invariant that was run today: every retired line must still have a
   surviving row in the same report at the survivor `file_number`. Zero last-copy deletions is the
   pass condition. (The ad-hoc script for this wasn't kept — re-derive from §6 of the collision notes.)
+- ⚠ **Expect materially lower coverage than §1 implied — see §1b.** ~2.6% of rows in the scanned
+  windows have no `file_number` and never will, so retirement cannot reach them. Budget for that in
+  the efficacy check rather than reading it as the retirement under-performing.
+- **Do not start this until the backfill is actually finished.** "Finished" means the wrapper exited
+  **0**, not that the log went quiet — a non-zero exit now means windows remain (by design). Running
+  retirement against partial `file_number` coverage computes the per-line window MAX over an
+  incomplete set, which is exactly how FEC-04b destroyed rows the first time.
 
 ---
 
 ## 3. Time-gated check — 06:00 UTC 2026-07-27
+
+> **RUN 2026-07-27 — the answer was not the one this section anticipated, and it is NOT yet settled.**
+>
+> There were **no failures because there were no runs**. `max(started_at)` was
+> **2026-07-26 08:08:55Z**, i.e. a **~22-hour gap** in which the 07-26 12:00, 07-26 18:00 and
+> 07-27 00:00 ingests were all missed entirely. The cron then fired at **2026-07-27 06:05:48Z**,
+> so the scheduler is alive again.
+>
+> Most likely cause: all scheduling is in-process `node-cron` on one Render dyno, the scheduler had
+> been wedged since 07-26 08:08, and one of this session's deploys (`02:53`, `04:19`, `05:41`Z)
+> re-armed it. **Untested hypothesis.**
+>
+> 🔴 **THE REAL TEST IS THE NEXT SCHEDULED RUN.** If 12:00Z fires on time, a restart fixed it. If the
+> gap reappears, the scheduler has a genuine defect that a deploy only masks — and note that a
+> silently-stalled scheduler produced *zero* failure rows, so **"0 failures" is indistinguishable
+> from "not running" on this query**. Always check `max(started_at)` too, not just the status
+> breakdown below.
+>
+> ```sql
+> SELECT max(started_at) AS last_run, now() - max(started_at) AS since_last,
+>        count(*) FILTER (WHERE started_at > now() - interval '24 hours') AS runs_24h
+>   FROM transparent_motivations.ingestion_runs;
+> ```
 
 **Confirm FEC ingest failures are back to 0.**
 
@@ -154,7 +218,15 @@ is still untested in production.
 ## 4. Gotchas that cost real time today
 
 1. **`pool.query('SET statement_timeout=…')` is a no-op** on a pooled connection — it lands on
-   whichever connection it gets. Use a dedicated `pool.connect()` client.
+   whichever connection it gets. Use a dedicated `pool.connect()` client — **or, better for a long
+   run, a `connect`-event handler** (what §1a actually shipped):
+   ```ts
+   pool.on('connect', (c) => { c.query("SET statement_timeout = '300s'").catch(…) });
+   ```
+   It re-applies on every reconnect, which a one-shot dedicated client does not, and keeps the
+   pool's resilience over a 24h job. Verified: pg queues per-client, so the SET lands before the
+   first query on a fresh connection, on every backend PID. **`ev_api` may raise its OWN session
+   value — no grant and no privileged connection string needed.**
 2. **Never self-join `contributions` on JSONB paths** — nested loop with the extraction in the join
    filter: **>10 min for one committee**, vs **2.7s** for a whole source via
    `max(fn) OVER (PARTITION BY …)`.
