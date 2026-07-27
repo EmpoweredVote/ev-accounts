@@ -144,6 +144,27 @@ describe('getAgendaItemById', () => {
     });
   });
 
+  it('normalizes a Date m_starts_at (pg timestamptz) to an ISO-8601 UTC string', async () => {
+    // pg returns timestamptz columns as JS Date objects — no type parsers are
+    // registered in db.ts. The mapper must hand back a string.
+    mockQuery.mockResolvedValueOnce({
+      rows: [
+        {
+          ...baseItemRow,
+          m_id: MEETING_ID,
+          m_title: 'Common Council Regular Session',
+          m_date: '2026-07-29',
+          m_city: 'Bloomington',
+          m_status: 'scheduled',
+          m_starts_at: new Date('2026-07-29T22:30:00Z'),
+          m_timezone: 'America/Indiana/Indianapolis',
+        },
+      ],
+    });
+    const detail = await getAgendaItemById(ITEM_ID);
+    expect(detail?.meeting.startsAt).toBe('2026-07-29T22:30:00.000Z');
+  });
+
   it('returns null when not found', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [] });
     expect(await getAgendaItemById(ITEM_ID)).toBeNull();

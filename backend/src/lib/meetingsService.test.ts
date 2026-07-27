@@ -191,6 +191,16 @@ describe('getMeetings status default', () => {
     expect(sql).not.toContain(`status = 'published'`);
     expect(params).toContain('scheduled');
   });
+
+  it('combines the default published literal with a parameterized raceId filter', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getMeetings({ raceId: '22222222-2222-4222-8222-222222222222' });
+    const [sql, params] = mockQuery.mock.calls[0];
+    // The status default is a literal, not a parameter — raceId must still be $1.
+    expect(sql).toContain(`status = 'published'`);
+    expect(sql).toContain('er.race_id = $1::uuid');
+    expect(params).toEqual(['22222222-2222-4222-8222-222222222222']);
+  });
 });
 
 describe('getUpcomingMeetings', () => {
@@ -205,6 +215,16 @@ describe('getUpcomingMeetings', () => {
     expect(sql).toContain('ORDER BY date ASC');
     expect(meetings[0].startsAt).toBe('2026-07-29T18:30:00-04:00');
     expect(meetings[0].timezone).toBe('America/Indiana/Indianapolis');
+  });
+
+  it('normalizes a Date starts_at (pg timestamptz) to an ISO-8601 UTC string', async () => {
+    // pg returns timestamptz columns as JS Date objects — no type parsers are
+    // registered in db.ts. The mapper must hand back a string.
+    mockQuery.mockResolvedValueOnce({
+      rows: [{ ...baseRow, status: 'scheduled', starts_at: new Date('2026-07-29T22:30:00Z') }],
+    });
+    const meetings = await getUpcomingMeetings();
+    expect(meetings[0].startsAt).toBe('2026-07-29T22:30:00.000Z');
   });
 });
 

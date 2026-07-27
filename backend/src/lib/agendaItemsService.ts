@@ -6,6 +6,7 @@
 // - DTOs are explicit whitelists (never spread rows); camelCase out.
 // - Number() every numeric — pg returns them as strings.
 import { pool } from './db.js';
+import { toIsoStringOrNull } from './pgIso.js';
 
 export interface AgendaItem {
   id: string;
@@ -67,7 +68,7 @@ interface AgendaItemDetailRow extends AgendaItemRow {
   m_date: string;
   m_city: string | null;
   m_status: string;
-  m_starts_at: string | null;
+  m_starts_at: string | Date | null; // pg returns timestamptz as Date
   m_timezone: string | null;
 }
 
@@ -143,10 +144,9 @@ export async function getAgendaItemById(
       date: row.m_date,
       city: row.m_city ?? null,
       status: row.m_status,
-      // timestamptz passthrough — same convention as meetingsService's
-      // created_at/updated_at: pg hands back what JSON.stringify serializes
-      // to an ISO instant on the route.
-      startsAt: row.m_starts_at ?? null,
+      // pg returns timestamptz as a JS Date — normalize to an ISO-8601 UTC
+      // string at the mapper boundary (same as meetingsService.mapMeeting).
+      startsAt: toIsoStringOrNull(row.m_starts_at),
       // IANA zone (e.g. 'America/Indiana/Indianapolis'): timestamptz loses the
       // original offset, so the UI needs this to render starts_at meeting-local.
       timezone: row.m_timezone ?? null,

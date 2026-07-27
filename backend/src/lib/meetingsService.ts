@@ -17,6 +17,7 @@
  */
 
 import { pool } from './db.js';
+import { toIsoStringOrNull } from './pgIso.js';
 import type { EventKind } from './eventKinds.js';
 import type { EventEntityState } from './eventEntityRules.js';
 
@@ -164,7 +165,7 @@ interface MeetingRow {
   summary: unknown | null;
   processing_metadata: unknown | null;
   thumbnail_url: string | null;
-  starts_at: string | null;
+  starts_at: string | Date | null; // pg returns timestamptz as Date
   timezone: string | null;
 }
 
@@ -263,7 +264,7 @@ function mapMeeting(row: MeetingRow): Meeting {
       (row.summary as { executive_summary?: string } | null)?.executive_summary,
     ),
     thumbnailUrl: row.thumbnail_url ?? null,
-    startsAt: row.starts_at ?? null,
+    startsAt: toIsoStringOrNull(row.starts_at),
     timezone: row.timezone ?? null,
   };
 }
@@ -394,6 +395,9 @@ export async function getMeetings(
 }
 
 /** Scheduled (agenda-published) meetings from today forward, soonest first. */
+// `date >= CURRENT_DATE` evaluates in the DB session zone (UTC) — an acceptable
+// soft edge for an upcoming list: rows linger slightly past meeting-local
+// midnight for US zones (they flip to published after processing anyway).
 export async function getUpcomingMeetings(): Promise<MeetingListItem[]> {
   const { rows } = await pool.query<MeetingRow>(
     `SELECT ${MEETING_COLS}
