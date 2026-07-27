@@ -44,21 +44,40 @@ creates auth users (Supabase Auth does, out of band) — it only ever READS
 `resolve_congressional_2026(user_id)` for an existing user. A test needing powers its subject lacks
 usually means the fixture is at the wrong layer, not that the subject is under-privileged.
 
-**Options for item 1, best first:**
-- **(a) A permanent seeded test user.** Create one inert account deliberately; the probe reuses it,
-  updating its location via `connect.upsert_user_location` (which the app role CAN call) and then
-  calling the RPC. Needs ZERO auth access at test time and still exercises the real
-  decrypt → ST_Covers → FIPS-filter path, which is D-11's whole value. Cost: a real prod
-  `auth.users` row that must be provably unable to log in.
-- **(b) Drop the auth insert; seed only `public.users` + `connect.connected_profiles`.** The smoke's
-  own comment says a trigger on `auth.users` auto-creates `public.users`, hinting the dependency may
-  be trigger-based rather than a hard FK. **UNVERIFIED — one query settles it** (`does public.users
-  have an enforced FK to auth.users?`). If not, this may be a one-line fix.
-- **(c) A separate `ADMIN_DATABASE_URL`.** Works, but adds a high-privilege credential to the same
+**INVESTIGATED 2026-07-26 — three findings that kill most of the option list:**
+
+1. **The FK is ENFORCED, not trigger-based:**
+   `users_id_fkey FOREIGN KEY (id) REFERENCES auth.users(id) ON DELETE CASCADE`. You cannot seed
+   `public.users` without an `auth.users` row.
+2. **`ev_api` cannot EXECUTE either function.** Both `connect.upsert_user_location` and
+   `connect.resolve_congressional_2026` are `SECURITY DEFINER` owned by `postgres` with no grant to
+   `ev_api`. A direct call returns `ERROR: permission denied for function
+   resolve_congressional_2026`. So the probe is blocked at every layer as this role, not just at
+   the auth insert.
+3. **This is NOT a production bug — verify the call site before assuming it is.** Prod's
+   `DATABASE_URL` is also `ev_api`, which looks alarming, but the production path is
+   `src/routes/essentials.ts:74` → `adminRpc(...)` → `supabaseAdmin` → **`SUPABASE_SERVICE_ROLE_KEY`
+   via PostgREST**, never the `ev_api` pg pool. **D-11 works in production.**
+
+Finding 3 reframes the problem: production invokes this through PostgREST as `service_role`, while
+the probe invokes it through raw Postgres as the `.env` role. The smoke's "actual RPC code path"
+claim was only half-true — same SQL function, different invocation. The privilege mismatch is a
+symptom of the probe having drifted from how production actually calls this.
+
+**Options, corrected:**
+- **(a) BEST — invoke it the way production does.** `supabaseAdmin.auth.admin.createUser()` mints
+  the sentinel (exactly what service_role is for), `adminRpc('resolve_congressional_2026', …)`
+  exercises it on the real production path, `auth.admin.deleteUser()` cleans up with the
+  `ON DELETE CASCADE` FKs. **No new grant, no new connection string, no `ev_api` change**, and
+  MORE faithful to prod than the current probe. Trade-off: loses `BEGIN … ROLLBACK` safety for an
+  explicit delete, so a crash mid-probe could strand a sentinel row — a real regression in cleanup
+  guarantees, but far smaller than provisioning a privileged credential.
+- **(b) A separate `ADMIN_DATABASE_URL`.** Works, but adds a high-privilege credential to the same
   `.env` that was already exposed once — solves the mechanics, worsens the posture.
-- **(d) Move the probe to CI** with elevated creds, if a privileged connection string already exists
-  there. Sidesteps the question entirely.
-- **(e) Grant narrowly.** REJECTED — the escalation is minting users, not the schema access.
+- **(c) Move the probe to CI** with elevated creds, if a privileged string already exists there.
+- ~~Permanent seeded test user~~ — DEAD, finding 2 (can't call either function as `ev_api`).
+- ~~Seed only `public.users` + `connected_profiles`~~ — DEAD, finding 1 (enforced FK).
+- ~~Grant `ev_api` narrowly~~ — REJECTED; the escalation is minting users, not the schema access.
 
 **Why it changed (hypothesis, untested):** memory records role-level `statement_timeout=8s` set on
 `ev_api` during the P1 finance incident (~2026-07-22) — right between 164.2 working (07-22) and now.
