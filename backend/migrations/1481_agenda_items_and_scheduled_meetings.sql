@@ -16,6 +16,9 @@
 --   scheduled meetings need time-of-day. timestamptz; the writer (on-the-record
 --   pipeline) resolves the body's IANA zone. date stays NOT NULL — writers derive
 --   it from starts_at in the body's local zone.
+-- * timezone: timestamptz normalizes to UTC at storage, so the original offset is
+--   lost — the body's IANA zone must ride along for the UI to render starts_at in
+--   meeting-local time.
 -- * kind/status/outcome are CHECK-constrained (closed vocabularies from the spec).
 -- * continued_from_item_id is the matter-tracking seed (spec: one lifecycle edge,
 --   no matter entity). ON DELETE SET NULL: losing a lineage edge must not block
@@ -38,6 +41,10 @@ BEGIN;
 ALTER TABLE meetings.meetings ADD COLUMN IF NOT EXISTS starts_at timestamptz;
 COMMENT ON COLUMN meetings.meetings.starts_at IS
   'Scheduled start time (with zone). Set for status=scheduled rows published from agendas; null for legacy video-only rows.';
+
+ALTER TABLE meetings.meetings ADD COLUMN IF NOT EXISTS timezone text;
+COMMENT ON COLUMN meetings.meetings.timezone IS
+  'IANA zone of the meeting''s body (e.g. America/Indiana/Indianapolis). Needed because timestamptz normalizes to UTC; the UI renders starts_at in this zone.';
 
 CREATE INDEX IF NOT EXISTS idx_meetings_status_date
   ON meetings.meetings (status, date);
@@ -124,6 +131,12 @@ BEGIN
     WHERE table_schema = 'meetings' AND table_name = 'meetings'
       AND column_name = 'starts_at') THEN
     RAISE EXCEPTION 'meetings.starts_at missing';
+  END IF;
+
+  IF NOT EXISTS (SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'meetings' AND table_name = 'meetings'
+      AND column_name = 'timezone') THEN
+    RAISE EXCEPTION 'meetings.timezone missing';
   END IF;
 END $$;
 
