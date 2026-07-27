@@ -19,8 +19,24 @@
  * seeders that legitimately wrote the column when it existed; rewriting them would be dishonest
  * about what actually ran against prod.
  *
+ * WHY AN --all MODE EXISTS. Branch-scoping is right for the gate, but it means a pre-existing
+ * backlog is invisible: on 2026-07-26 a sweep found 93 files still reading the dropped column,
+ * four of them RE-RUNNABLE evidence artifacts that had been silently broken since migration 1463
+ * — including the two dual-map smokes that back the 164.1/164.2 proofs. Nothing surfaced that,
+ * because none of them were ever touched on a branch again.
+ *
+ * `--all` scans every tracked file and splits the result in two, because the two halves deserve
+ * different treatment:
+ *   * ACTIONABLE  — re-runnable evidence artifacts (*-verify.sql, *-smoke*.ts). These are supposed
+ *                   to run green on demand, so a hit here is a live defect. Exits non-zero.
+ *   * INVENTORY   — one-off seeders and diagnostics that already ran against prod when the column
+ *                   existed. Rewriting them would be dishonest about what actually ran, so these
+ *                   are listed and NOT failed. Making them red by default would only train people
+ *                   to ignore the guard.
+ *
  * Usage:
- *   node scripts/check-office-occupancy.mjs
+ *   node scripts/check-office-occupancy.mjs              # branch-scoped gate (CI)
+ *   node scripts/check-office-occupancy.mjs --all        # full-repo inventory + actionable gate
  *   BASE_REF=origin/main node scripts/check-office-occupancy.mjs
  */
 import { execFileSync } from "node:child_process";
@@ -107,8 +123,30 @@ const PATTERNS = [
   },
 ];
 
-const base = resolveBase();
-const files = changedFiles(base);
+const SCAN_ALL = process.argv.includes("--all");
+
+/**
+ * Gate-shaped files: verification gates and coordinate smokes. Two naming conventions exist —
+ * the modern `NNN-verify.sql` / `NNN-coordinate-smoke.ts` and the older `verify-phase-NNN.sql` /
+ * `verify-*.ts`. Both count; matching only the modern one under-reports badly (it scored 0
+ * actionable on a repo holding a dozen broken `verify-phase-*.sql` gates).
+ */
+const isGateShaped = (rel) => {
+  const f = path.basename(rel);
+  return /^verify[-_]/.test(f) || /-verify\.(sql|ts)$/.test(f) || /smoke/.test(f);
+};
+
+function allTrackedFiles() {
+  const out = tryGit(["ls-files", "--", ...SCANNED_DIRS]) || "";
+  return out
+    .split("\n")
+    .filter(Boolean)
+    .filter((f) => SCANNED_EXT.has(path.extname(f)))
+    .filter((f) => f !== SELF);
+}
+
+const base = SCAN_ALL ? null : resolveBase();
+const files = SCAN_ALL ? allTrackedFiles() : changedFiles(base);
 const violations = [];
 
 for (const rel of files) {
@@ -128,6 +166,41 @@ for (const rel of files) {
       break; // one finding per file is enough to act on
     }
   }
+}
+
+// --all is an INVENTORY plus a narrow gate, not the branch gate. Report both halves, then fail
+// only on the re-runnable evidence artifacts.
+if (SCAN_ALL) {
+  const isMigration = (rel) => rel.startsWith("backend/migrations/");
+  const migrations = violations.filter((v) => isMigration(v.rel));
+  const rest = violations.filter((v) => !isMigration(v.rel));
+  const gates = rest.filter((v) => isGateShaped(v.rel));
+  const oneOffs = rest.filter((v) => !isGateShaped(v.rel));
+
+  console.log(`Full-repo occupancy inventory — ${files.length} tracked file(s) scanned, ${violations.length} still read the dropped column.\n`);
+
+  // Migrations are the append-only record of what actually ran against prod back when the column
+  // existed. They are EXPECTED here and are never a defect; listing all 200+ would bury the signal.
+  console.log(`MIGRATIONS (${migrations.length}) — expected and correct. Each is the record of a`);
+  console.log("  write that really happened while the column existed; they are applied once, ad hoc,");
+  console.log("  and never replayed, so a dropped column cannot break them. Not listed individually.");
+
+  console.log(`\nONE-OFF SEEDERS / DIAGNOSTICS (${oneOffs.length}) — ran once against prod while the`);
+  console.log("  column existed. Leave them: rewriting history would misrepresent what actually ran.");
+  for (const v of oneOffs) console.log(`    ${v.rel}:${v.line}`);
+
+  console.log(`\nGATE-SHAPED (${gates.length}) — verification gates and coordinate smokes. These are`);
+  console.log("  the ones that MIGHT still be cited as live evidence. Most belong to long-closed");
+  console.log("  milestones and are fine to leave; port one the moment a phase needs to re-run it.");
+  for (const v of gates) console.log(`    ${v.rel}:${v.line}`);
+
+  console.log("\nTo port:  JOIN essentials.office_current_holder och ON och.office_id = o.id");
+  console.log("          (one row per office, so it cannot fan out; COUNT() skips a vacancy's NULL)");
+  // Deliberately exit 0. This is an INVENTORY, not a gate — the branch-scoped default is the gate.
+  // A permanently-red command is a command people learn to ignore, and every hit below is a
+  // legitimately-unfixed historical artifact until someone actually needs to re-run it.
+  console.log("\n(Inventory only — exits 0. The branch-scoped default run is the enforcing gate.)");
+  process.exit(0);
 }
 
 if (violations.length > 0) {

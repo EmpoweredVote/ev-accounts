@@ -13,7 +13,8 @@
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
     "check:migrations": "node scripts/check-migration-numbers.mjs",
-    "check:occupancy": "node scripts/check-office-occupancy.mjs"
+    "check:occupancy": "node scripts/check-office-occupancy.mjs",
+    "check:occupancy:all": "node scripts/check-office-occupancy.mjs --all"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.91.0",
