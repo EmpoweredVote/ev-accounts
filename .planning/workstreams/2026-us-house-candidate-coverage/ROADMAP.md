@@ -364,7 +364,26 @@ Plans:
   3. Every `race_candidates` row across the 178 districts has a NON-NULL `politician_id` and every district's race has a NON-NULL `office_id` (so headshots + stances resolve and no House race is ever geographically orphaned); no candidate card surfaces party (party reads from `races.primary_party` only).
   4. With this gate plus the completed v2.20/v2.21 gates, the milestone declares all 435 US House districts nationally covered — the multi-wave House program's terminal state.
 
-**Plans:** TBD
+> **Criterion-4 arithmetic, corrected at 166 planning (2026-07-26):** the 435 decomposes as **178** Wave-3 (this gate) + **144** v2.20 (`backend/scripts/152-verify.sql`) + **89** v2.21 decided-state (`backend/scripts/158-verify.sql`) + **24** v2.21 MI/VA — seeded, but **gate-pending plan 159-06**, date-gated ≥ 2026-08-05. So **411 gate-proven + 24 gate-pending = 435**. v2.21's 113 is not one gate: 158-verify.sql's own header states it must not reference MI or VA. Phase 166 cites 152/158 rather than re-deriving their pin lists (D-166-01), and the gate footer names them.
+>
+> **Of the 178, 173 assert SURFACING and 5 assert WITHHELD** — MO 2902/2903/2904/2905/2906 stay behind `MO 2026 Congressional Redistricting - Polygon Pending` until plan 164.1-07 executes ≥ 2026-08-04 (D-166-02). TN/AL/LA's 13 previously-withheld districts were flipped POSITIVE by 164.1 (migs 1247/1248/1249) and are asserted surfacing.
+
+**Plans:** 5 plans
+
+Plans:
+**Wave 1** *(live re-derivation + coordinate proof — disjoint files, run in parallel)*
+
+- [ ] 166-01-PLAN.md — Live pin/census re-derivation vs prod (`166-derive-pins.ts` + `166-pins.generated.sql`); drops the stale early-July pins [Wave 1]
+- [ ] 166-02-PLAN.md — `166-coordinate-smoke.ts`: 38 positive samples (Pitfall-5 challenger guard) + severe-MO negative [Wave 1]
+
+**Wave 2** *(the two gate halves — disjoint files, run in parallel)*
+
+- [ ] 166-03-PLAN.md — `166-verify.sql`: 178-district structural gate (SCOPE/ACTIVE/NULLOFFICE/NULLPID/DUPNAME/DUPINCUMBENT/RC-UNIQUE/PARTY/PROVISIONAL/HEADSHOT/UNSOURCED/COVERAGE) + NATIONAL-TOTAL footer [Wave 2]
+- [ ] 166-04-PLAN.md — `166-verify-invariants.sql`: the 15 inherited invariants from 161–165, incl. the delimited MO POST-2026-08-04 FLIP REGION [Wave 2]
+
+**Wave 3** *(closeout)*
+
+- [ ] 166-05-PLAN.md — `166-mo-flip-runbook.md` + CI guards + combined three-artifact green run + ROADMAP/STATE closure [Wave 3]
 
 ---
 
@@ -399,7 +418,7 @@ Plans:
 | 164.1 Cross-State Polygon Refresh + Dual-Map (INSERTED) | 6/7 | Date-gated | 2026-07-07 (01–06) |
 | 164.2 Enacted-2026 Polygon Backfill FL/CA/NC/OH/TX (INSERTED) | 4/4 | Complete    | 2026-07-22 |
 | 165. Small-Delegation States Candidate Seeding (17 states) | 17/17 | Complete    | 2026-07-07 |
-| 166. Consolidated Verification Gate | 0/? | Not started | - |
+| 166. Consolidated Verification Gate | 0/5 | Planned | - |
 | 167. Post-Primary Reconciliation (date-gated, Aug–Sep 2026) | 0/? | Not started | - |
 
 **Table corrected 2026-07-26** — rows for 162/163/165 read "Not started"/"In Progress" while every plan had
