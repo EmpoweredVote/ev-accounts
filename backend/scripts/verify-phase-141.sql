@@ -118,7 +118,8 @@ BEGIN
   SELECT COUNT(*), string_agg(p.external_id::text || ' ' || p.full_name, ', ')
   INTO v_missing, v_list
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.district_type='STATE_EXEC'
     AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')

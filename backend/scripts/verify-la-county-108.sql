@@ -115,12 +115,14 @@ ORDER BY d.geo_id;
 SELECT
   (SELECT COUNT(DISTINCT p.id)
    FROM essentials.politicians p
-   JOIN essentials.offices o ON o.politician_id = p.id
+   JOIN essentials.office_current_holder och ON och.politician_id = p.id
+   JOIN essentials.offices o ON o.id = och.office_id
    JOIN essentials.districts d ON o.district_id = d.id
    WHERE d.geo_id = '0606308') AS bh_count,
   (SELECT COUNT(DISTINCT p.id)
    FROM essentials.politicians p
-   JOIN essentials.offices o ON o.politician_id = p.id
+   JOIN essentials.office_current_holder och ON och.politician_id = p.id
+   JOIN essentials.offices o ON o.id = och.office_id
    JOIN essentials.districts d ON o.district_id = d.id
    WHERE d.geo_id = '0670000') AS sm_count;
 
@@ -132,13 +134,16 @@ SELECT
 \echo '--- ASSERTION 5: LAOF-02 — LA City Controller seated, Attorney vacant, Clerk appointed ---'
 \echo 'Expected: all 3 booleans = true'
 
+-- "Seated" / "vacant" now come from essentials.office_current_holder rather than the dropped
+-- essentials.offices.politician_id (ADR 0002 phase 5 / migration 1463). An office with no term row
+-- produces no holder, so EXISTS/NOT EXISTS reproduces the original IS NOT NULL / IS NULL exactly.
 SELECT
-  (SELECT politician_id IS NOT NULL
-   FROM essentials.offices
-   WHERE id = 'e5435b0e-c7a7-4c93-9b4f-cc647db0b9f6') AS controller_seated,
-  (SELECT politician_id IS NULL
-   FROM essentials.offices
-   WHERE id = '5a873c59-72ac-488f-8b2c-44dfd04d065c') AS attorney_vacant,
+  EXISTS (SELECT 1 FROM essentials.office_current_holder och
+           WHERE och.office_id = 'e5435b0e-c7a7-4c93-9b4f-cc647db0b9f6'
+             AND och.politician_id IS NOT NULL) AS controller_seated,
+  NOT EXISTS (SELECT 1 FROM essentials.office_current_holder och
+               WHERE och.office_id = '5a873c59-72ac-488f-8b2c-44dfd04d065c'
+                 AND och.politician_id IS NOT NULL) AS attorney_vacant,
   EXISTS (
     SELECT 1 FROM essentials.politicians
     WHERE external_id = -700002
@@ -193,8 +198,9 @@ FROM essentials.governments g
 JOIN essentials.chambers ch ON ch.government_id = g.id
 JOIN essentials.offices o ON o.chamber_id = ch.id
 JOIN essentials.districts d ON d.id = o.district_id
+LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
 LEFT JOIN essentials.politicians p
-  ON p.id = o.politician_id
+  ON p.id = och.politician_id
   AND p.external_id BETWEEN -700699 AND -700200
 WHERE g.name IN (
   'City of Alhambra',

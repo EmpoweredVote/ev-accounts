@@ -95,7 +95,8 @@ DECLARE v_missing INT;
 BEGIN
   SELECT count(DISTINCT p.id) INTO v_missing
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.district_type='STATE_EXEC'
     AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
@@ -142,7 +143,8 @@ BEGIN
     count(DISTINCT p.id) FILTER (WHERE o.role_canonical='lt_governor')
   INTO v_gov, v_ag, v_sos, v_treas, v_lt
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.district_type='STATE_EXEC'
     AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
@@ -165,7 +167,8 @@ BEGIN
   SELECT string_agg(p.external_id::text || ' ' || p.full_name || ' (' || d.state || '/' || o.role_canonical || ')', '; ' ORDER BY o.role_canonical, p.external_id)
   INTO v_uncovered
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.district_type='STATE_EXEC'
     AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
@@ -183,7 +186,8 @@ BEGIN
   SELECT count(*) INTO v_un
   FROM inform.politician_answers pa
   JOIN essentials.politicians p ON p.id = pa.politician_id
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   LEFT JOIN inform.politician_context c ON c.politician_id = pa.politician_id AND c.topic_id = pa.topic_id
   WHERE d.district_type='STATE_EXEC'
@@ -210,7 +214,8 @@ BEGIN
   INTO v_n, v_gov
   FROM essentials.districts d
   JOIN essentials.offices o ON o.district_id = d.id
-  JOIN essentials.politicians p ON p.id = o.politician_id
+  JOIN essentials.office_current_holder och ON och.office_id = o.id
+  JOIN essentials.politicians p ON p.id = och.politician_id
   WHERE d.district_type='STATE_EXEC' AND d.state='NC'
     AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
     AND (p.is_active=true OR o.is_vacant=true) AND COALESCE(p.is_incumbent,true)=true;
@@ -229,7 +234,8 @@ BEGIN
   INTO v_n, v_gov
   FROM essentials.districts d
   JOIN essentials.offices o ON o.district_id = d.id
-  JOIN essentials.politicians p ON p.id = o.politician_id
+  JOIN essentials.office_current_holder och ON och.office_id = o.id
+  JOIN essentials.politicians p ON p.id = och.politician_id
   WHERE d.district_type='STATE_EXEC' AND d.state='WA'
     AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
     AND (p.is_active=true OR o.is_vacant=true) AND COALESCE(p.is_incumbent,true)=true;
@@ -248,7 +254,8 @@ BEGIN
   INTO v_n, v_gov
   FROM essentials.districts d
   JOIN essentials.offices o ON o.district_id = d.id
-  JOIN essentials.politicians p ON p.id = o.politician_id
+  JOIN essentials.office_current_holder och ON och.office_id = o.id
+  JOIN essentials.politicians p ON p.id = och.politician_id
   WHERE d.district_type='STATE_EXEC' AND d.state='CO'
     AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
     AND (p.is_active=true OR o.is_vacant=true) AND COALESCE(p.is_incumbent,true)=true;

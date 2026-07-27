@@ -66,7 +66,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM essentials.offices o
   JOIN essentials.districts d ON d.id = o.district_id
-  JOIN essentials.politicians p ON p.id = o.politician_id
+  JOIN essentials.office_current_holder och ON och.office_id = o.id
+  JOIN essentials.politicians p ON p.id = och.politician_id
   WHERE p.external_id BETWEEN -258200011 AND -258200007
     AND d.geo_id = '2582000'
     AND d.district_type = 'LOCAL';
@@ -104,7 +105,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM essentials.offices o
   JOIN essentials.districts d ON d.id = o.district_id
-  JOIN essentials.politicians p ON p.id = o.politician_id
+  JOIN essentials.office_current_holder och ON och.office_id = o.id
+  JOIN essentials.politicians p ON p.id = och.politician_id
   WHERE p.external_id BETWEEN -256700009 AND -256700002
     AND d.geo_id = '2567000'
     AND d.district_type = 'LOCAL';
@@ -122,7 +124,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM essentials.offices o
   JOIN essentials.districts d ON d.id = o.district_id
-  JOIN essentials.politicians p ON p.id = o.politician_id
+  JOIN essentials.office_current_holder och ON och.office_id = o.id
+  JOIN essentials.politicians p ON p.id = och.politician_id
   WHERE p.external_id BETWEEN -253700012 AND -253700005
     AND d.geo_id = '2537000'
     AND d.district_type = 'LOCAL';
@@ -140,7 +143,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM essentials.offices o
   JOIN essentials.districts d ON d.id = o.district_id
-  JOIN essentials.politicians p ON p.id = o.politician_id
+  JOIN essentials.office_current_holder och ON och.office_id = o.id
+  JOIN essentials.politicians p ON p.id = och.politician_id
   WHERE p.external_id BETWEEN -250900008 AND -250900002
     AND d.geo_id = '2509000'
     AND d.district_type = 'LOCAL';
@@ -159,7 +163,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM essentials.offices o
   JOIN essentials.districts d ON d.id = o.district_id
-  JOIN essentials.politicians p ON p.id = o.politician_id
+  JOIN essentials.office_current_holder och ON och.office_id = o.id
+  JOIN essentials.politicians p ON p.id = och.politician_id
   WHERE p.external_id BETWEEN -255574507 AND -255574502
     AND d.geo_id = '2555745'
     AND d.district_type = 'LOCAL';
@@ -192,7 +197,8 @@ SELECT d.geo_id, d.label, p.full_name
 FROM essentials.districts d
 JOIN essentials.geofence_boundaries gb ON d.tiger_geoid = gb.geo_id AND gb.mtfcc = d.mtfcc
 JOIN essentials.offices o ON o.district_id = d.id
-JOIN essentials.politicians p ON p.id = o.politician_id
+JOIN essentials.office_current_holder och ON och.office_id = o.id
+JOIN essentials.politicians p ON p.id = och.politician_id
 WHERE public.ST_Contains(gb.geometry, public.ST_SetSRID(public.ST_Point(-71.056, 42.360), 4326))
   AND d.state = 'ma'
   AND d.district_type = 'LOCAL'
@@ -204,7 +210,8 @@ SELECT d.geo_id, d.label, p.full_name
 FROM essentials.districts d
 JOIN essentials.geofence_boundaries gb ON d.tiger_geoid = gb.geo_id AND gb.mtfcc = d.mtfcc
 JOIN essentials.offices o ON o.district_id = d.id
-JOIN essentials.politicians p ON p.id = o.politician_id
+JOIN essentials.office_current_holder och ON och.office_id = o.id
+JOIN essentials.politicians p ON p.id = och.politician_id
 WHERE public.ST_Contains(gb.geometry, public.ST_SetSRID(public.ST_Point(-71.803, 42.262), 4326))
   AND d.state = 'ma'
   AND d.district_type = 'LOCAL'
@@ -216,7 +223,8 @@ SELECT d.geo_id, d.label, p.full_name
 FROM essentials.districts d
 JOIN essentials.geofence_boundaries gb ON d.tiger_geoid = gb.geo_id AND gb.mtfcc = d.mtfcc
 JOIN essentials.offices o ON o.district_id = d.id
-JOIN essentials.politicians p ON p.id = o.politician_id
+JOIN essentials.office_current_holder och ON och.office_id = o.id
+JOIN essentials.politicians p ON p.id = och.politician_id
 WHERE public.ST_Contains(gb.geometry, public.ST_SetSRID(public.ST_Point(-72.589, 42.102), 4326))
   AND d.state = 'ma'
   AND d.district_type = 'LOCAL'
@@ -228,7 +236,8 @@ SELECT d.geo_id, d.label, p.full_name
 FROM essentials.districts d
 JOIN essentials.geofence_boundaries gb ON d.tiger_geoid = gb.geo_id AND gb.mtfcc = d.mtfcc
 JOIN essentials.offices o ON o.district_id = d.id
-JOIN essentials.politicians p ON p.id = o.politician_id
+JOIN essentials.office_current_holder och ON och.office_id = o.id
+JOIN essentials.politicians p ON p.id = och.politician_id
 WHERE public.ST_Contains(gb.geometry, public.ST_SetSRID(public.ST_Point(-71.310, 42.634), 4326))
   AND d.state = 'ma'
   AND d.district_type = 'LOCAL'
@@ -240,7 +249,8 @@ SELECT d.geo_id, d.label, p.full_name
 FROM essentials.districts d
 JOIN essentials.geofence_boundaries gb ON d.tiger_geoid = gb.geo_id AND gb.mtfcc = d.mtfcc
 JOIN essentials.offices o ON o.district_id = d.id
-JOIN essentials.politicians p ON p.id = o.politician_id
+JOIN essentials.office_current_holder och ON och.office_id = o.id
+JOIN essentials.politicians p ON p.id = och.politician_id
 WHERE public.ST_Contains(gb.geometry, public.ST_SetSRID(public.ST_Point(-71.018, 42.082), 4326))
   AND d.state = 'ma'
   AND d.district_type = 'LOCAL'
@@ -252,7 +262,8 @@ SELECT d.geo_id, d.label, p.full_name
 FROM essentials.districts d
 JOIN essentials.geofence_boundaries gb ON d.tiger_geoid = gb.geo_id AND gb.mtfcc = d.mtfcc
 JOIN essentials.offices o ON o.district_id = d.id
-JOIN essentials.politicians p ON p.id = o.politician_id
+JOIN essentials.office_current_holder och ON och.office_id = o.id
+JOIN essentials.politicians p ON p.id = och.politician_id
 WHERE public.ST_Contains(gb.geometry, public.ST_SetSRID(public.ST_Point(-71.003, 42.251), 4326))
   AND d.state = 'ma'
   AND d.district_type = 'LOCAL'

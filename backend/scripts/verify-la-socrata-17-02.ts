@@ -41,7 +41,8 @@ async function main() {
              COUNT(c.id) AS contribution_count
       FROM transparent_motivations.politician_sources ps
       JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
-      LEFT JOIN essentials.offices o ON o.politician_id = p.id AND o.is_vacant = false
+      LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id
+      LEFT JOIN essentials.offices o ON o.id = och.office_id AND o.is_vacant = false
       LEFT JOIN transparent_motivations.contributions c ON c.politician_source_id = ps.id
       WHERE ps.source_system = 'la_socrata'
         AND ps.research_status = 'confirmed'

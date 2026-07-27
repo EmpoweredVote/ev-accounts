@@ -15,10 +15,16 @@
 -- ============================================================
 -- ASSERTION 1 — MAOF-01 (Newton politician count: 25; includes per-ward districts after Phase 123 re-link)
 -- ============================================================
+-- ⚠ PARTIALLY BLOCKED (noted 2026-07-26). Assertions 1-8 (MAOF) pass; the file then stops at
+-- supabase_migrations.schema_migrations, which the app role ev_api cannot read. Infra, not a code
+-- defect - re-run with a privileged DATABASE_URL for full coverage.
+-- Occupancy ported to essentials.office_current_holder 2026-07-26 (ADR 0002 / mig 1463).
+
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE (d.geo_id = '2545560' OR d.geo_id LIKE 'newton-ma-council-ward-%') AND d.state = 'ma';
   IF v_count <> 25 THEN
@@ -33,7 +39,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE (d.geo_id = '2562535' OR d.geo_id LIKE 'somerville-ma-council-ward-%') AND d.state = 'ma';
   IF v_count <> 12 THEN
@@ -48,7 +55,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE (d.geo_id = '2537490' OR d.geo_id LIKE 'lynn-ma-council-ward-%') AND d.state = 'ma';
   IF v_count <> 12 THEN
@@ -63,7 +71,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE (d.geo_id = '2523000' OR d.geo_id LIKE 'fall-river-ma-council-ward-%') AND d.state = 'ma';
   IF v_count <> 10 THEN
@@ -78,7 +87,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE (d.geo_id = '2572600' OR d.geo_id LIKE 'waltham-ma-council-ward-%') AND d.state = 'ma';
   IF v_count <> 16 THEN
@@ -93,7 +103,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE (d.geo_id = '2539835' OR d.geo_id LIKE 'medford-ma-council-ward-%') AND d.state = 'ma';
   IF v_count <> 8 THEN
@@ -108,7 +119,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE (d.geo_id = '2545000' OR d.geo_id LIKE 'new-bedford-ma-council-ward-%') AND d.state = 'ma';
   IF v_count <> 12 THEN
@@ -124,7 +136,8 @@ DO $$ DECLARE v_null_office INTEGER; v_orphans INTEGER; BEGIN
   -- Check 8a: politicians linked via offices whose office_id is NULL
   SELECT COUNT(*) INTO v_null_office
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id IN ('2545560','2562535','2537490','2523000','2572600','2539835','2545000')
     AND d.state = 'ma'
@@ -133,12 +146,13 @@ DO $$ DECLARE v_null_office INTEGER; v_orphans INTEGER; BEGIN
   -- Check 8b: politicians in these districts with NO offices row at all (FK orphans)
   SELECT COUNT(DISTINCT p.id) INTO v_orphans
   FROM essentials.politicians p
-  JOIN essentials.offices o2 ON o2.politician_id = p.id
+  JOIN essentials.office_current_holder och2 ON och2.politician_id = p.id
+  JOIN essentials.offices o2 ON o2.id = och2.office_id
   JOIN essentials.districts d2 ON d2.id = o2.district_id
   WHERE d2.geo_id IN ('2545560','2562535','2537490','2523000','2572600','2539835','2545000')
     AND d2.state = 'ma'
     AND NOT EXISTS (
-      SELECT 1 FROM essentials.offices ox WHERE ox.politician_id = p.id
+      SELECT 1 FROM essentials.office_current_holder och3 WHERE och3.politician_id = p.id
     );
 
   IF v_null_office <> 0 THEN
@@ -179,7 +193,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   FROM (
     SELECT p.id
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE d.geo_id = '2545560'
     AND NOT EXISTS (
@@ -198,7 +213,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_answers pa
-  JOIN essentials.offices o ON o.politician_id = pa.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2545560'
   AND NOT EXISTS (
@@ -218,7 +234,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_context pc
-  JOIN essentials.offices o ON o.politician_id = pc.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pc.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2545560'
   AND (pc.sources IS NULL OR array_length(pc.sources, 1) IS NULL OR array_length(pc.sources, 1) = 0);
@@ -236,7 +253,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   FROM (
     SELECT p.id
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE d.geo_id = '2562535'
     AND NOT EXISTS (
@@ -255,7 +273,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_answers pa
-  JOIN essentials.offices o ON o.politician_id = pa.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2562535'
   AND NOT EXISTS (
@@ -275,7 +294,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_context pc
-  JOIN essentials.offices o ON o.politician_id = pc.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pc.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2562535'
   AND (pc.sources IS NULL OR array_length(pc.sources, 1) IS NULL OR array_length(pc.sources, 1) = 0);
@@ -293,7 +313,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   FROM (
     SELECT p.id
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE d.geo_id = '2539835'
     AND NOT EXISTS (
@@ -312,7 +333,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_answers pa
-  JOIN essentials.offices o ON o.politician_id = pa.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2539835'
   AND NOT EXISTS (
@@ -332,7 +354,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_context pc
-  JOIN essentials.offices o ON o.politician_id = pc.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pc.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2539835'
   AND (pc.sources IS NULL OR array_length(pc.sources, 1) IS NULL OR array_length(pc.sources, 1) = 0);
@@ -355,7 +378,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   FROM (
     SELECT p.id
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE d.geo_id = '2537490'
     AND NOT EXISTS (
@@ -374,7 +398,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_answers pa
-  JOIN essentials.offices o ON o.politician_id = pa.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2537490'
   AND NOT EXISTS (
@@ -394,7 +419,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_context pc
-  JOIN essentials.offices o ON o.politician_id = pc.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pc.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2537490'
   AND (pc.sources IS NULL OR array_length(pc.sources, 1) IS NULL OR array_length(pc.sources, 1) = 0);
@@ -414,7 +440,8 @@ DO $$ DECLARE v_zero_count INTEGER; v_mig_exists INTEGER; BEGIN
   FROM (
     SELECT p.id
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE d.geo_id = '2523000'
     AND NOT EXISTS (
@@ -441,7 +468,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_answers pa
-  JOIN essentials.offices o ON o.politician_id = pa.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2523000'
   AND NOT EXISTS (
@@ -461,7 +489,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_context pc
-  JOIN essentials.offices o ON o.politician_id = pc.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pc.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2523000'
   AND (pc.sources IS NULL OR array_length(pc.sources, 1) IS NULL OR array_length(pc.sources, 1) = 0);
@@ -480,7 +509,8 @@ DO $$ DECLARE v_zero_count INTEGER; v_mig688 INTEGER; v_mig689 INTEGER; BEGIN
   FROM (
     SELECT p.id
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE d.geo_id = '2572600'
     AND NOT EXISTS (
@@ -509,7 +539,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_answers pa
-  JOIN essentials.offices o ON o.politician_id = pa.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2572600'
   AND NOT EXISTS (
@@ -529,7 +560,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_context pc
-  JOIN essentials.offices o ON o.politician_id = pc.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pc.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2572600'
   AND (pc.sources IS NULL OR array_length(pc.sources, 1) IS NULL OR array_length(pc.sources, 1) = 0);
@@ -548,7 +580,8 @@ DO $$ DECLARE v_zero_count INTEGER; v_mig_exists INTEGER; BEGIN
   FROM (
     SELECT p.id
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE d.geo_id = '2545000'
     AND NOT EXISTS (
@@ -575,7 +608,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_answers pa
-  JOIN essentials.offices o ON o.politician_id = pa.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2545000'
   AND NOT EXISTS (
@@ -595,7 +629,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_context pc
-  JOIN essentials.offices o ON o.politician_id = pc.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pc.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2545000'
   AND (pc.sources IS NULL OR array_length(pc.sources, 1) IS NULL OR array_length(pc.sources, 1) = 0);
@@ -632,7 +667,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM essentials.offices o
   JOIN essentials.districts d ON d.id = o.district_id
-  JOIN essentials.politicians p ON p.id = o.politician_id
+  JOIN essentials.office_current_holder och ON och.office_id = o.id
+  JOIN essentials.politicians p ON p.id = och.politician_id
   WHERE p.external_id BETWEEN -2545560025 AND -2545560018
     AND d.geo_id = '2545560'
     AND d.district_type = 'LOCAL';
@@ -664,7 +700,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM essentials.offices o
   JOIN essentials.districts d ON d.id = o.district_id
-  JOIN essentials.politicians p ON p.id = o.politician_id
+  JOIN essentials.office_current_holder och ON och.office_id = o.id
+  JOIN essentials.politicians p ON p.id = och.politician_id
   WHERE p.external_id BETWEEN -2562535012 AND -2562535006
     AND d.geo_id = '2562535'
     AND d.district_type = 'LOCAL';
@@ -696,7 +733,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM essentials.offices o
   JOIN essentials.districts d ON d.id = o.district_id
-  JOIN essentials.politicians p ON p.id = o.politician_id
+  JOIN essentials.office_current_holder och ON och.office_id = o.id
+  JOIN essentials.politicians p ON p.id = och.politician_id
   WHERE p.external_id BETWEEN -2537490012 AND -2537490006
     AND d.geo_id = '2537490'
     AND d.district_type = 'LOCAL';
@@ -758,7 +796,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM essentials.offices o
   JOIN essentials.districts d ON d.id = o.district_id
-  JOIN essentials.politicians p ON p.id = o.politician_id
+  JOIN essentials.office_current_holder och ON och.office_id = o.id
+  JOIN essentials.politicians p ON p.id = och.politician_id
   WHERE p.external_id BETWEEN -2572600016 AND -2572600008
     AND d.geo_id = '2572600'
     AND d.district_type = 'LOCAL';
@@ -821,7 +860,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM essentials.offices o
   JOIN essentials.districts d ON d.id = o.district_id
-  JOIN essentials.politicians p ON p.id = o.politician_id
+  JOIN essentials.office_current_holder och ON och.office_id = o.id
+  JOIN essentials.politicians p ON p.id = och.politician_id
   WHERE p.external_id BETWEEN -2545000012 AND -2545000007
     AND d.geo_id = '2545000'
     AND d.district_type = 'LOCAL';
@@ -855,7 +895,8 @@ SELECT d.geo_id, d.label, p.full_name
 FROM essentials.districts d
 JOIN essentials.geofence_boundaries gb ON d.tiger_geoid = gb.geo_id AND gb.mtfcc = d.mtfcc
 JOIN essentials.offices o ON o.district_id = d.id
-JOIN essentials.politicians p ON p.id = o.politician_id
+JOIN essentials.office_current_holder och ON och.office_id = o.id
+JOIN essentials.politicians p ON p.id = och.politician_id
 WHERE public.ST_Contains(gb.geometry, public.ST_SetSRID(public.ST_Point(-71.209, 42.337), 4326))
   AND d.state = 'ma'
   AND d.district_type = 'LOCAL'
@@ -868,7 +909,8 @@ SELECT d.geo_id, d.label, p.full_name
 FROM essentials.districts d
 JOIN essentials.geofence_boundaries gb ON d.tiger_geoid = gb.geo_id AND gb.mtfcc = d.mtfcc
 JOIN essentials.offices o ON o.district_id = d.id
-JOIN essentials.politicians p ON p.id = o.politician_id
+JOIN essentials.office_current_holder och ON och.office_id = o.id
+JOIN essentials.politicians p ON p.id = och.politician_id
 WHERE public.ST_Contains(gb.geometry, public.ST_SetSRID(public.ST_Point(-71.100, 42.387), 4326))
   AND d.state = 'ma'
   AND d.district_type = 'LOCAL'
@@ -881,7 +923,8 @@ SELECT d.geo_id, d.label, p.full_name
 FROM essentials.districts d
 JOIN essentials.geofence_boundaries gb ON d.tiger_geoid = gb.geo_id AND gb.mtfcc = d.mtfcc
 JOIN essentials.offices o ON o.district_id = d.id
-JOIN essentials.politicians p ON p.id = o.politician_id
+JOIN essentials.office_current_holder och ON och.office_id = o.id
+JOIN essentials.politicians p ON p.id = och.politician_id
 WHERE public.ST_Contains(gb.geometry, public.ST_SetSRID(public.ST_Point(-70.947, 42.467), 4326))
   AND d.state = 'ma'
   AND d.district_type = 'LOCAL'
@@ -902,7 +945,8 @@ JOIN essentials.districts d ON d.geo_id = gb.geo_id
     OR (gb.mtfcc LIKE 'X%' AND gb.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL', 'COUNTY'))
   )
 JOIN essentials.offices o ON o.district_id = d.id
-JOIN essentials.politicians p ON p.id = o.politician_id
+JOIN essentials.office_current_holder och ON och.office_id = o.id
+JOIN essentials.politicians p ON p.id = och.politician_id
 WHERE public.ST_Contains(gb.geometry, public.ST_SetSRID(public.ST_Point(-71.157, 41.701), 4326))
   AND d.state = 'ma'
   AND d.district_type = 'LOCAL'
@@ -915,7 +959,8 @@ SELECT d.geo_id, d.label, p.full_name
 FROM essentials.districts d
 JOIN essentials.geofence_boundaries gb ON d.tiger_geoid = gb.geo_id AND gb.mtfcc = d.mtfcc
 JOIN essentials.offices o ON o.district_id = d.id
-JOIN essentials.politicians p ON p.id = o.politician_id
+JOIN essentials.office_current_holder och ON och.office_id = o.id
+JOIN essentials.politicians p ON p.id = och.politician_id
 WHERE public.ST_Contains(gb.geometry, public.ST_SetSRID(public.ST_Point(-71.236, 42.376), 4326))
   AND d.state = 'ma'
   AND d.district_type = 'LOCAL'
@@ -934,7 +979,8 @@ JOIN essentials.districts d ON d.geo_id = gb.geo_id
     OR (gb.mtfcc LIKE 'X%' AND gb.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL', 'COUNTY'))
   )
 JOIN essentials.offices o ON o.district_id = d.id
-JOIN essentials.politicians p ON p.id = o.politician_id
+JOIN essentials.office_current_holder och ON och.office_id = o.id
+JOIN essentials.politicians p ON p.id = och.politician_id
 WHERE public.ST_Contains(gb.geometry, public.ST_SetSRID(public.ST_Point(-71.107, 42.418), 4326))
   AND d.state = 'ma'
   AND d.district_type = 'LOCAL'
@@ -948,7 +994,8 @@ SELECT d.geo_id, d.label, p.full_name
 FROM essentials.districts d
 JOIN essentials.geofence_boundaries gb ON d.tiger_geoid = gb.geo_id AND gb.mtfcc = d.mtfcc
 JOIN essentials.offices o ON o.district_id = d.id
-JOIN essentials.politicians p ON p.id = o.politician_id
+JOIN essentials.office_current_holder och ON och.office_id = o.id
+JOIN essentials.politicians p ON p.id = och.politician_id
 WHERE public.ST_Contains(gb.geometry, public.ST_SetSRID(public.ST_Point(-70.924, 41.635), 4326))
   AND d.state = 'ma'
   AND d.district_type = 'LOCAL'

@@ -28,10 +28,18 @@
 -- ============================================================
 -- ASSERTION 1 — MAOF-01 (Newton politician count: 25)
 -- ============================================================
+-- ⚠ SUPERSEDED by verify-phase-120-124.sql (noted 2026-07-26). Its ASSERTION 1 scopes Newton to
+-- d.geo_id = '2545560' alone and reads 17, not 25, because Phase 123 re-linked 8 Newton councillors
+-- onto per-ward districts. The consolidated gate accounts for that with
+-- "OR d.geo_id LIKE 'newton-ma-council-ward-%'" and PASSES. Run the consolidated gate instead; do
+-- not lower this 25 to 17, which would just encode the pre-re-link blind spot.
+-- Occupancy ported to essentials.office_current_holder 2026-07-26 (ADR 0002 / mig 1463).
+
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2545560' AND d.state = 'ma';
   IF v_count <> 25 THEN
@@ -46,7 +54,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2562535' AND d.state = 'ma';
   IF v_count <> 12 THEN
@@ -61,7 +70,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2537490' AND d.state = 'ma';
   IF v_count <> 12 THEN
@@ -76,7 +86,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2523000' AND d.state = 'ma';
   IF v_count <> 10 THEN
@@ -91,7 +102,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2572600' AND d.state = 'ma';
   IF v_count <> 16 THEN
@@ -106,7 +118,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2539835' AND d.state = 'ma';
   IF v_count <> 8 THEN
@@ -121,7 +134,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_count
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2545000' AND d.state = 'ma';
   IF v_count <> 12 THEN
@@ -137,7 +151,8 @@ DO $$ DECLARE v_null_office INTEGER; v_orphans INTEGER; BEGIN
   -- Check 8a: politicians linked via offices whose office_id is NULL
   SELECT COUNT(*) INTO v_null_office
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id IN ('2545560','2562535','2537490','2523000','2572600','2539835','2545000')
     AND d.state = 'ma'
@@ -146,12 +161,13 @@ DO $$ DECLARE v_null_office INTEGER; v_orphans INTEGER; BEGIN
   -- Check 8b: politicians in these districts with NO offices row at all (FK orphans)
   SELECT COUNT(DISTINCT p.id) INTO v_orphans
   FROM essentials.politicians p
-  JOIN essentials.offices o2 ON o2.politician_id = p.id
+  JOIN essentials.office_current_holder och2 ON och2.politician_id = p.id
+  JOIN essentials.offices o2 ON o2.id = och2.office_id
   JOIN essentials.districts d2 ON d2.id = o2.district_id
   WHERE d2.geo_id IN ('2545560','2562535','2537490','2523000','2572600','2539835','2545000')
     AND d2.state = 'ma'
     AND NOT EXISTS (
-      SELECT 1 FROM essentials.offices ox WHERE ox.politician_id = p.id
+      SELECT 1 FROM essentials.office_current_holder och3 WHERE och3.politician_id = p.id
     );
 
   IF v_null_office <> 0 THEN

@@ -97,10 +97,16 @@ function stripComments(src) {
 // parameter of the seat_officeholder helper. Proximity cannot distinguish those, so it is gone.
 const PATTERNS = [
   {
-    // The offices alias convention in this repo is `o` (occasionally `off`/`offices`).
-    // `och.`/`coh.`/`t.`/`ot.` are the view and office_terms and are correct, so they must not match:
+    // The offices alias convention in this repo is `o`, and NUMBERED variants (`o2`, `o3`) and
+    // suffixed ones (`ox`) are common in multi-join gates — the 2026-07-26 sweep hit `o2` and `ox`
+    // in verify-phase-120/120-124 that the original `o|off|offices` pattern walked straight past,
+    // leaving those files still broken after a "complete" port. Hence `o[0-9a-z]*`.
+    // `och.`/`coh.`/`t.`/`ot.` are the view and office_terms and are correct, so they must not
+    // match: `och` and its numbered variants are excluded by the negative lookahead below. Note
+    // `(?!och\b)` is NOT enough — \b does not stop at a digit, so `och2.politician_id` slipped
+    // through as a false positive; the lookahead must be `och[0-9]*\b`.
     // \b would fire mid-identifier on `och.politician_id`, hence the explicit preceding-char guard.
-    re: /(^|[^\w.])(?:o|off|offices)\.politician_id\b/gi,
+    re: /(^|[^\w.])(?!och[0-9]*\b)(?:o[0-9a-z]*|off|offices)\.politician_id\b/gi,
     why: "reads <offices alias>.politician_id — the column no longer exists",
   },
   {

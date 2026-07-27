@@ -36,7 +36,8 @@ DECLARE v_cov INT;
 BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_cov
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.district_type='STATE_EXEC' AND o.role_canonical='secretary_of_state'
     AND EXISTS (SELECT 1 FROM inform.politician_answers pa WHERE pa.politician_id = p.id);
@@ -53,7 +54,8 @@ DECLARE v_cov INT;
 BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_cov
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.district_type='STATE_EXEC' AND o.role_canonical='treasurer'
     AND EXISTS (SELECT 1 FROM inform.politician_answers pa WHERE pa.politician_id = p.id);
@@ -70,7 +72,8 @@ DECLARE v_cov INT;
 BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_cov
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.district_type='STATE_EXEC' AND o.role_canonical='lt_governor'
     AND EXISTS (SELECT 1 FROM inform.politician_answers pa WHERE pa.politician_id = p.id);
@@ -90,7 +93,8 @@ BEGIN
   SELECT string_agg(p.external_id::text || ' ' || p.full_name || ' (' || d.state || '/' || o.role_canonical || ')', '; ' ORDER BY o.role_canonical, p.external_id)
   INTO v_uncovered
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.district_type='STATE_EXEC' AND o.role_canonical IN ('secretary_of_state','treasurer','lt_governor')
     AND NOT EXISTS (SELECT 1 FROM inform.politician_answers pa WHERE pa.politician_id = p.id);
@@ -108,7 +112,8 @@ BEGIN
   INTO v_un, v_list
   FROM inform.politician_answers pa
   JOIN essentials.politicians p ON p.id = pa.politician_id
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   JOIN inform.compass_topics t ON t.id = pa.topic_id
   LEFT JOIN inform.politician_context c ON c.politician_id = pa.politician_id AND c.topic_id = pa.topic_id
@@ -127,7 +132,8 @@ DECLARE v_bad INT;
 BEGIN
   SELECT COUNT(DISTINCT p.id) INTO v_bad
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.office_current_holder och ON och.politician_id = p.id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.district_type='STATE_EXEC'
     AND EXISTS (SELECT 1 FROM inform.politician_answers pa WHERE pa.politician_id = p.id)

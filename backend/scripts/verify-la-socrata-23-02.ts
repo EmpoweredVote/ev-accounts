@@ -71,7 +71,8 @@ async function main() {
         COUNT(c.id) AS contribution_count,
         COALESCE(SUM(c.amount), 0) AS total_raised
       FROM essentials.politicians p
-      LEFT JOIN essentials.offices o ON o.politician_id = p.id AND o.is_vacant = false
+      LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id
+      LEFT JOIN essentials.offices o ON o.id = och.office_id AND o.is_vacant = false
       LEFT JOIN transparent_motivations.politician_sources ps
         ON ps.essentials_politician_id = p.id AND ps.source_system = 'la_socrata'
       LEFT JOIN transparent_motivations.contributions c ON c.politician_source_id = ps.id
@@ -116,7 +117,8 @@ async function main() {
       SELECT p.full_name, o.title AS office, ps.external_id AS cmt_id
       FROM transparent_motivations.politician_sources ps
       JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
-      LEFT JOIN essentials.offices o ON o.politician_id = p.id AND o.is_vacant = false
+      LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id
+      LEFT JOIN essentials.offices o ON o.id = och.office_id AND o.is_vacant = false
       LEFT JOIN transparent_motivations.contributions c ON c.politician_source_id = ps.id
       WHERE ps.source_system = 'la_socrata'
         AND ps.research_status = 'confirmed'

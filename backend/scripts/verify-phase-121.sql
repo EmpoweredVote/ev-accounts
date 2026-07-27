@@ -24,7 +24,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   FROM (
     SELECT p.id
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE d.geo_id = '2545560'
     AND NOT EXISTS (
@@ -43,7 +44,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_answers pa
-  JOIN essentials.offices o ON o.politician_id = pa.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2545560'
   AND NOT EXISTS (
@@ -63,7 +65,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_context pc
-  JOIN essentials.offices o ON o.politician_id = pc.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pc.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2545560'
   AND (pc.sources IS NULL OR array_length(pc.sources, 1) IS NULL OR array_length(pc.sources, 1) = 0);
@@ -81,7 +84,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   FROM (
     SELECT p.id
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE d.geo_id = '2562535'
     AND NOT EXISTS (
@@ -100,7 +104,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_answers pa
-  JOIN essentials.offices o ON o.politician_id = pa.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2562535'
   AND NOT EXISTS (
@@ -120,7 +125,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_context pc
-  JOIN essentials.offices o ON o.politician_id = pc.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pc.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2562535'
   AND (pc.sources IS NULL OR array_length(pc.sources, 1) IS NULL OR array_length(pc.sources, 1) = 0);
@@ -138,7 +144,8 @@ DO $$ DECLARE v_count INTEGER; BEGIN
   FROM (
     SELECT p.id
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE d.geo_id = '2539835'
     AND NOT EXISTS (
@@ -157,7 +164,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_answers pa
-  JOIN essentials.offices o ON o.politician_id = pa.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2539835'
   AND NOT EXISTS (
@@ -177,7 +185,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_context pc
-  JOIN essentials.offices o ON o.politician_id = pc.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pc.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2539835'
   AND (pc.sources IS NULL OR array_length(pc.sources, 1) IS NULL OR array_length(pc.sources, 1) = 0);

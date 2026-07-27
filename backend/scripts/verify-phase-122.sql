@@ -21,12 +21,19 @@
 -- ============================================================
 -- ASSERTION 1 — MAST-03 (Lynn: zero officials with 0 stances)
 -- ============================================================
+-- ⚠ NEEDS A PRIVILEGED ROLE (noted 2026-07-26). Reads supabase_migrations.schema_migrations, which
+-- the least-privileged app role (ev_api) cannot access - "permission denied for schema
+-- supabase_migrations". Not a code defect and NOT something to fix by granting ev_api that access.
+-- Every other assertion in the file is portable; re-run with a privileged DATABASE_URL to see them.
+-- Occupancy ported to essentials.office_current_holder 2026-07-26 (ADR 0002 / mig 1463).
+
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM (
     SELECT p.id
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE d.geo_id = '2537490'
     AND NOT EXISTS (
@@ -45,7 +52,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_answers pa
-  JOIN essentials.offices o ON o.politician_id = pa.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2537490'
   AND NOT EXISTS (
@@ -65,7 +73,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_context pc
-  JOIN essentials.offices o ON o.politician_id = pc.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pc.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2537490'
   AND (pc.sources IS NULL OR array_length(pc.sources, 1) IS NULL OR array_length(pc.sources, 1) = 0);
@@ -85,7 +94,8 @@ DO $$ DECLARE v_zero_count INTEGER; v_mig_exists INTEGER; BEGIN
   FROM (
     SELECT p.id
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE d.geo_id = '2523000'
     AND NOT EXISTS (
@@ -112,7 +122,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_answers pa
-  JOIN essentials.offices o ON o.politician_id = pa.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2523000'
   AND NOT EXISTS (
@@ -132,7 +143,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_context pc
-  JOIN essentials.offices o ON o.politician_id = pc.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pc.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2523000'
   AND (pc.sources IS NULL OR array_length(pc.sources, 1) IS NULL OR array_length(pc.sources, 1) = 0);
@@ -151,7 +163,8 @@ DO $$ DECLARE v_zero_count INTEGER; v_mig688 INTEGER; v_mig689 INTEGER; BEGIN
   FROM (
     SELECT p.id
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE d.geo_id = '2572600'
     AND NOT EXISTS (
@@ -180,7 +193,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_answers pa
-  JOIN essentials.offices o ON o.politician_id = pa.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2572600'
   AND NOT EXISTS (
@@ -200,7 +214,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_context pc
-  JOIN essentials.offices o ON o.politician_id = pc.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pc.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2572600'
   AND (pc.sources IS NULL OR array_length(pc.sources, 1) IS NULL OR array_length(pc.sources, 1) = 0);
@@ -219,7 +234,8 @@ DO $$ DECLARE v_zero_count INTEGER; v_mig_exists INTEGER; BEGIN
   FROM (
     SELECT p.id
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE d.geo_id = '2545000'
     AND NOT EXISTS (
@@ -246,7 +262,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_answers pa
-  JOIN essentials.offices o ON o.politician_id = pa.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2545000'
   AND NOT EXISTS (
@@ -266,7 +283,8 @@ END $$;
 DO $$ DECLARE v_count INTEGER; BEGIN
   SELECT COUNT(*) INTO v_count
   FROM inform.politician_context pc
-  JOIN essentials.offices o ON o.politician_id = pc.politician_id
+  JOIN essentials.office_current_holder och ON och.politician_id = pc.politician_id
+  JOIN essentials.offices o ON o.id = och.office_id
   JOIN essentials.districts d ON d.id = o.district_id
   WHERE d.geo_id = '2545000'
   AND (pc.sources IS NULL OR array_length(pc.sources, 1) IS NULL OR array_length(pc.sources, 1) = 0);
