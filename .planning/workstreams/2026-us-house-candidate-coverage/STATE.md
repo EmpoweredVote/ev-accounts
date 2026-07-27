@@ -3,21 +3,18 @@ gsd_state_version: 1.0
 milestone: v2.22
 milestone_name: 2026 US House Candidate Coverage
 current_phase: 166
-status: in_progress
-stopped_at: v2.22 seeding phases 160-165 + 164.2 all shipped and prod-gate-green; Phase 166 (consolidated 178-district gate) not yet planned
-last_updated: "2026-07-26T00:00:00.000Z"
+current_phase_name: consolidated-verification-gate
+status: complete
+last_updated: "2026-07-27T00:21:18.371Z"
 last_activity: 2026-07-26
-last_activity_desc: ROADMAP progress table + STATE header reconciled against on-disk SUMMARYs
+last_activity_desc: Phase 166 complete — USHC3-06 closed, all three artifacts green together
 progress:
   total_phases: 10
-  completed_phases: 7
-  total_plans: 81
-  completed_plans: 80
-  percent: 70
-current_phase_name: consolidated-verification-gate
-# This workstream also carries the v2.24 backend-reliability milestone (Phases 173-174), which is
-# code-complete as of 2026-07-23 — 174's Render deploy is HELD pending operator go-ahead (see
-# Operator Next Steps). The header fields above track v2.22, the milestone named on line 3.
+  completed_phases: 8
+  total_plans: 86
+  completed_plans: 85
+  percent: 80
+stopped_at: Phase 166 complete (5/5, USHC3-06 closed, 2026-07-26). No unblocked v2.22 step remains — Phase 167 and plan 164.1-07 are both date-gated (≥ 2026-08-04 / Aug–Sep 2026)
 ---
 
 <!-- RESOLVED 2026-07-01 (mig 1149): VA-5/6/9 incumbent office->district rotation FIXED via guarded
@@ -31,17 +28,20 @@ current_phase_name: consolidated-verification-gate
 See: .planning/PROJECT.md (updated 2026-07-02 after v2.22 milestone started)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 166 — consolidated 178-district verification gate (the v2.22 milestone-closing phase)
+**Current focus:** Phase 166 COMPLETE (2026-07-26) — USHC3-06 closed. All remaining v2.22 work is date-gated.
 **Last shipped:** v2.20 2026 US House Candidate Coverage (Wave 1) — Phases 148–152, shipped 2026-06-30. CA 52 / TX 38 / FL 28 / NY 26 = 144 districts, 415 active race_candidates, federal-24 stances (0 unsourced), consolidated gate 8/8 + coordinate smoke 4/4; USHC-01..06 closed. USHC-07/Phase 153 carried forward (time-gated ≥ 2026-08-18).
 
 ## Current Position
 
-Phase: 166 — Consolidated Verification Gate
-Plan: Not started (needs `/gsd-plan-phase 166 --ws 2026-us-house-candidate-coverage`)
-Status: v2.22 seeding COMPLETE — 178 Wave-3 districts across 38 states seeded, each phase gate green
-        against prod. Two phases remain open: 166 (gate) and 167 (post-primary reconciliation,
-        date-gated Aug–Sep 2026). Plan 164.1-07 (MO) is separately date-gated ≥ 2026-08-04.
-Last activity: 2026-07-26 — ROADMAP progress table + this header reconciled against on-disk SUMMARYs
+Phase: 166 (consolidated-verification-gate) — COMPLETE 2026-07-26
+Plan: 5 of 5
+Status: Phase 166 COMPLETE — USHC3-06 closed. All three artifacts ran green together against one
+        prod snapshot: `166-verify.sql` (12 PASS), `166-verify-invariants.sql` (15 PASS) and
+        `166-coordinate-smoke.ts` (38 PASS + the severe-MO negative). Both repo guards pass; no
+        migration authored; no deploy needed (everything in the phase is read-only).
+        The remaining v2.22 work is date-gated and NOT startable now: Phase 167 (post-primary
+        reconciliation, Aug–Sep 2026) and plan 164.1-07 (MO, ≥ 2026-08-04).
+Last activity: 2026-07-26 — Phase 166 complete, USHC3-06 closed
 
 **Corrected 2026-07-26.** This block previously read "Phase: 174 / Status: All phases complete", which
 conflated the v2.24 backend-reliability milestone (Phases 173–174, code-complete 2026-07-23, deploy held)
@@ -235,9 +235,11 @@ Resume file: None
 ## Operator Next Steps
 
 - **HIGH PRIORITY / awaiting operator go-ahead:** Phase 174 (FEC-01..05) is fully implemented and verified at the code level (401/401 unit tests, tsc clean, `174-FEC05-DECISION.md` written). The Render deploy is HELD — run the command in `174-FEC05-DECISION.md` §5 (`RENDER_DEPLOY_HOOK` curl, referencing `backend/.env`) when ready to ship the daily-cadence + rate-limit-tail fixes to production. After deploy + the first daily cron fire, run the §4 zero-429 verification query (~25h window, via Supabase MCP against prod `kxsdzaojfaibhuzmclfq`) — expect 0 rows. Until deployed, production stays on the pre-Phase-174 code (6-hourly cadence, no shared limiter) and the residual 429 tail persists unchanged.
-- **NEXT / anytime:** `/gsd-plan-phase 166 --ws 2026-us-house-candidate-coverage` — the consolidated 178-district gate, the only unblocked forward step. Re-derive the inherited pin lists live (they were frozen at each phase's gate-authoring time in early July and are now weeks stale); see the "Phase 166 inheritance" bullet below for the severe-district assertions it must carry.
+- ~~`/gsd-plan-phase 166`~~ **DONE 2026-07-26 — 5/5 plans, USHC3-06 CLOSED.** Three read-only artifacts green together against one prod snapshot: `166-verify.sql` 12 PASS, `166-verify-invariants.sql` 15 PASS, `166-coordinate-smoke.ts` 38 PASS + severe-MO negative. Re-deriving the inherited pins live was the right call — the 566 frozen headshot pins had drifted to 51 (517 dropped), and the live derivation surfaced a **scope defect**: `WI 2026 Partisan Primary` (created 2026-07-25) now holds WI's field, so the gate scope is 43 elections, not the 42 planned. See `166-01-SUMMARY.md`.
+- **NEXT / no unblocked v2.22 forward step remains.** Every open item below is date-gated. The nearest are ≥ 2026-08-04 (164.1-07 MO) and ≥ 2026-08-05 (159 Waves 3-4). Phase 167 cannot be planned until Phase 160 resolves exact primary-date clusters and those primaries pass.
+- **Phase 167 queue handoff (from 166-01):** the `_stance_queue_167` set is **non-empty — 2 candidates**, both WI: `-550304` (Alexander Valiensi Kent, WI-3) and `-550708`. Both are 0-stance as of 2026-07-26 with **no documented search trail**, so they were deliberately NOT folded into the researched honest-skip set. The ids are enumerated in `166-01-SUMMARY.md`; Phase 167 consumes that list. Both are also new headshot pins.
 - ~~`/gsd-plan-phase 165`~~ DONE 2026-07-07 — 17/17 plans, 34-district gate green (165-17). UT dependency had been satisfied by 164.1 Wave 2 (UT G5200V26 polygons + `164.1-ut-wiring-contract.md`).
-- **≥ 2026-08-04:** `/gsd-execute-phase 164.1 --wave 4` — Plan 164.1-07, MO date-gated (SOS Hoskins certification decision): map-holds branch = MO G5200V26 import + un-withhold 2902-2906 + flip the 162 gate; referendum-qualifies branch = zero polygon work, MO stays withheld, divert to Phase 167's MO cluster.
+- **≥ 2026-08-04:** `/gsd-execute-phase 164.1 --wave 4` — Plan 164.1-07, MO date-gated (SOS Hoskins certification decision). **READ `phases/166-consolidated-verification-gate/166-mo-flip-runbook.md` FIRST — it is the branch-by-branch edit list.** Map-holds branch = MO G5200V26 import + un-withhold 2902-2906, then flip **BOTH** the Phase-162 gate (`162-verify.sql` + `162-coordinate-smoke.ts`) **AND the Phase-166 gate pair** (`166-verify-invariants.sql` MO-SEVERE block inside its delimited flip region, `166-coordinate-smoke.ts` severe negative sample, plus `166-derive-pins.ts`, whose CENSUS MISMATCH guard will fire by design on the first post-flip run). Flipping 162 without 166 leaves two gates in the repo asserting opposite things about the same five districts. Referendum-qualifies branch = zero polygon work, MO stays withheld, divert to Phase 167's MO cluster — **neither gate needs any edit**, and the runbook says so explicitly so nobody defensively edits a correct gate.
 - **≥ 2027-01-03:** plan the Jan-2027 boundary-promotion phase per `164.1-jan2027-boundary-promotion-spec.md` — promote G5200V26→canonical, re-key `essentials.offices` (UT wiring contract + state correspondences), re-resolve `connect.user_districts`, refresh `connected_profiles.congressional_geo_id`, and RETIRE the D-11 `resolve_congressional_2026` read-path fallback.
 - **D-11 SHIPPED in 164.1 (2026-07-07) — delivered, NOT an accepted limitation:** differential-zone Connected-tier users' `/elections` is corrected in-phase by a read-only live fallback (`connect.resolve_congressional_2026`, migration 1246 — decrypts server-side, ST_Covers vs G5200V26, FIPS 47/29/01/22/49 only, NO cache mutation) substituted in Paths 1/1.5 of `/api/elections/me`. Live-proven by the 1641 smoke's direct-RPC sentinel probe for TN/AL/LA/UT. The Jan-2027 promotion phase retires it once the cache is authoritative.
 - **Phase 166 inheritance:** the consolidated gate inherits the FLIPPED (now positive) TN/AL/LA severe assertions — 161-verify asserts all 9 TN surfacing, 163-verify asserts all 7 AL + 6 LA surfacing — and the 13 un-withheld districts (TN 4704/4705/4706/4708/4709 + AL 0102 + LA 2202/2206 + their non-severe peers already surfacing) join the 178-district assertion set; MO's 5 severe (2902-2906) stay asserted-withheld until Plan 164.1-07 clears.

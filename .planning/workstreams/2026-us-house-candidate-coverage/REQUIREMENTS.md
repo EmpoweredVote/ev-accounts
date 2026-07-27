@@ -32,7 +32,7 @@
 
 ### Verification
 
-- [ ] **USHC3-06**: A consolidated read-only gate proves the milestone — coordinate smoke resolves a test address to its district and House race with the expected candidate field on `/elections` for a representative sample of the 38 states; asserts 0 unsourced stance rows, 0 duplicate-incumbent records, and 0 NULL `politician_id`/`office_id` across all 178 districts.
+- [x] **USHC3-06**: A consolidated read-only gate proves the milestone — coordinate smoke resolves a test address to its district and House race with the expected candidate field on `/elections` for a representative sample of the 38 states; asserts 0 unsourced stance rows, 0 duplicate-incumbent records, and 0 NULL `politician_id`/`office_id` across all 178 districts.
 
 - [ ] **USHC3-07**: Every late-primary state is reconciled against official results after its primary — primary losers pruned (two-path: race_candidates deactivated + orphan check), advancing nominees confirmed, `PROVISIONAL:` flags cleared — date-gated per state primary date; Sep-primary states may carry forward past the main build (FL-153 pattern).
 
@@ -110,7 +110,7 @@ Cron-audit follow-up 2026-07-23 (`.planning/todos/2026-07-23-cron-audit-followup
 | USHC3-03 Race Wiring | Phases 161 (anchor), 162, 163, 164, 165 | In progress — 161 anchor complete (2026-07-04): 37 districts surface (5 severe-TN withheld by design) |
 | USHC3-04 Headshots | Phases 161 (anchor), 162, 163, 164, 165 | In progress — 161 anchor complete (2026-07-04): 167 documented honest-skips |
 | USHC3-05 Stances | Phases 161 (anchor), 162, 163, 164, 165 | In progress — 161 anchor complete (2026-07-04): 0 unsourced, 59 pinned whole-record skips |
-| USHC3-06 Verification Gate | Phase 166 | Pending |
+| USHC3-06 Verification Gate | Phase 166 | Complete (2026-07-26) |
 | USHC3-07 Post-Primary Reconciliation | Phase 167 (date-gated, Aug–Sep 2026) | Pending |
 
 100% coverage: all 7 USHC3 requirements mapped to phases 160–167, no orphans.
