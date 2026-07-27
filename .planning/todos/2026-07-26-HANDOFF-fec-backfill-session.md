@@ -172,6 +172,43 @@ npx tsx scripts/retire-fec-superseded-local.ts --from data/fec-amendment-dupes-f
 
 ## 3. Time-gated check — 06:00 UTC 2026-07-27
 
+> ## ✅ SETTLED 2026-07-27 22:15Z — BOTH questions closed. Read this instead of the block below.
+>
+> **(a) There is no wedged scheduler. The "~22-hour gap" was the normal cadence.** The block below
+> reasons about missed "12:00, 18:00 and 00:00" ingests — **that schedule no longer exists.** Phase
+> 174 (FEC-03) changed the FEC cron **6h → daily** and it has been `'0 6 * * *'` in
+> `src/cron/campaignFinanceCron.ts:35` ever since. One burst per day is correct behaviour, so a ~22h
+> gap between bursts is expected, not a defect. The daily burst spans several hours as it walks the
+> sources — 07-25 was 06:00Z only, 07-26 ran 06:00→08:00Z, 07-27 ran 06:00→10:36Z.
+>
+> **Do not re-open this as a scheduler bug.** The §3 hypothesis ("the scheduler had been wedged
+> since 07-26 08:08 and a deploy re-armed it") was an artefact of checking a daily job against a
+> 6-hourly expectation. The standing lesson in the block below still holds and is still worth
+> keeping: a silently-stalled scheduler yields *zero* failure rows, so always check `max(started_at)`
+> alongside the status breakdown — just compare it against **24h**, not 6h.
+>
+> **(b) 🎉 THE CACHE FIX IS VERIFIED IN PRODUCTION — this was its first real exercise.** The 07-27
+> burst ran **665 runs, 0 failures** (639 `completed` + 26 `completed_with_warning`). Compare the
+> 07-26 outage burst: 102 failures at 06:00Z + 32 at 07:00Z = **134**. `17e3ac18` no longer counts as
+> "never exercised in prod" — it is exercised and clean.
+>
+> | hour (UTC) | completed | warning | failed |
+> |---|---|---|---|
+> | 07-27 06:00 | 239 | 3 | **0** |
+> | 07-27 07:00 | 112 | 3 | **0** |
+> | 07-27 08:00 | 70 | 6 | **0** |
+> | 07-27 09:00 | 144 | 17 | **0** |
+> | 07-27 10:00 | 64 | 5 | **0** |
+> | *07-26 06:00* | *136* | *4* | ***102*** |
+> | *07-26 07:00* | *65* | *1* | ***32*** |
+>
+> The next thing worth watching is simply whether the **2026-07-28 06:00Z** burst is also clean.
+>
+> ---
+>
+> <details><summary>Superseded 2026-07-27 reasoning (kept for the audit trail — its premise was a
+> schedule that no longer exists)</summary>
+>
 > **RUN 2026-07-27 — the answer was not the one this section anticipated, and it is NOT yet settled.**
 >
 > There were **no failures because there were no runs**. `max(started_at)` was
@@ -194,8 +231,10 @@ npx tsx scripts/retire-fec-superseded-local.ts --from data/fec-amendment-dupes-f
 >        count(*) FILTER (WHERE started_at > now() - interval '24 hours') AS runs_24h
 >   FROM transparent_motivations.ingestion_runs;
 > ```
+>
+> </details>
 
-**Confirm FEC ingest failures are back to 0.**
+**Confirm FEC ingest failures are back to 0.** — ✅ **DONE, they are 0.** See the settled block above.
 
 ```sql
 SELECT date_trunc('hour', started_at) hr, status, count(*)
@@ -204,9 +243,10 @@ SELECT date_trunc('hour', started_at) hr, status, count(*)
 ```
 Baseline: 07-24 and 07-25 were 0 failures; 07-26 06:00 was **102 failures / 136 completions**.
 
-**This is the first real exercise of the cache fix.** The clean 08:00 hour on 07-26 was Upstash
-being fixed, not the fix working — the last ingest (08:08) predated the deploy (08:31). So the fix
-is still untested in production.
+**This was the first real exercise of the cache fix — and it PASSED.** ✅ The clean 08:00 hour on
+07-26 was Upstash being fixed, not the fix working (the last ingest, 08:08, predated the deploy at
+08:31). The 07-27 06:00Z burst is the genuine test: **665 runs, 0 failures.** `17e3ac18` is no
+longer untested in production.
 
 - **Good:** a single `[cache] Redis get failed — serving from in-memory fallback` in Render logs,
   with runs completing.
