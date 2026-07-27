@@ -22,7 +22,7 @@ Phase-166 artifacts (all read-only, all green together against one prod snapshot
 
 ---
 
-## The three open items — ONE mechanical cause, TWO very different decisions
+## Open items — 1 of 3 RESOLVED; the 2 remaining are a trivial grant
 
 All three trace to `backend/.env`'s `DATABASE_URL` being the least-privileged app role `ev_api`,
 which has no access to schemas `auth` or `supabase_migrations`. **But do not treat them as one
@@ -83,10 +83,14 @@ symptom of the probe having drifted from how production actually calls this.
 `ev_api` during the P1 finance incident (~2026-07-22) — right between 164.2 working (07-22) and now.
 Plausible that `ev_api` was created or tightened then and `.env` switched to it.
 
-1. **D-11 sentinel probe** in `1641-coordinate-smoke.ts` / `1642-coordinate-smoke.ts`. Mints a
-   throwaway `auth.users` row to exercise `connect.resolve_congressional_2026`. Currently SKIPS
-   LOUDLY — both smokes exit 0 and print `⚠ D-11 RPC probe NOT PROVEN for: …`. Four of five layers
-   are citeable; D-11 is not.
+1. ~~**D-11 sentinel probe**~~ — ✅ **RESOLVED 2026-07-26 (`344456e2`), option (a).** New shared
+   helper `backend/scripts/d11-probe.ts` mints the sentinel with
+   `supabaseAdmin.auth.admin.createUser()` and drives both RPCs through `adminRpc` — production's
+   exact path — then deletes it. **No grant, no new credential, no `ev_api` change.** Both smokes
+   now prove D-11: 9/9 states, no skips, no PARTIAL summary (TN 4707, AL 0107, LA 2205, UT 4903,
+   FL 1209, CA 0602, NC 3701, OH 3909, TX 4815 — matching what 164.2-03-SUMMARY.md recorded).
+   0 stranded sentinels verified after full runs. Trade-off accepted and documented in the helper:
+   no `BEGIN/ROLLBACK`, so cleanup is an explicit delete plus a `reapSentinel()` on each run.
 2. **`verify-phase-122.sql`** — reads `supabase_migrations.schema_migrations`.
 3. **`verify-phase-120-124.sql`** — same; its assertions 1-8 (MAOF) all pass before it hits this.
 
