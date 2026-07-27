@@ -1,5 +1,17 @@
 -- 160-verify.sql — Phase 160 read-only PRE-SEEDING baseline gate (USHC3-01).
 --
+-- ⚠ HISTORICALLY OBSOLETE AS A WHOLE-FILE RUN (noted 2026-07-26). A2 asserts the pre-seeding race
+--   baseline — including "the other 33 states have 0 pre-seeded 2026-11-03 races" — which was true
+--   when this gate was authored and is PERMANENTLY FALSE now that Wave-3 seeding (161-165) shipped;
+--   a live run stops at `FAIL A2b ... got 144`. That is the gate doing its job on a premise that has
+--   since expired, NOT a defect. Do not "fix" A2 by relaxing it; the post-seeding gate for these
+--   178 districts is backend/scripts/166-verify.sql. A1 and A3 remain live-meaningful standalone.
+--
+-- OCCUPANCY PORT (2026-07-26): A3 previously read essentials.offices.politician_id, dropped by
+--   ADR 0002 phase 5 / migration 1463, so it was broken at runtime. It now resolves occupancy
+--   through essentials.office_current_holder. Verified standalone against prod on 2026-07-26:
+--   the Wave-3-scoped A3 returns empty, matching its expectation of no non-1-holder district.
+--
 -- SELECT-only. This is a DIAGNOSTIC pre-seeding gate (RESEARCH §Pattern 3), NOT a
 -- post-seeding candidate gate like 149/152-verify.sql. It asserts the read-only DB
 -- baseline that the Wave-3 seeding phases (161/162/163/164/165) build on:
@@ -168,14 +180,20 @@ BEGIN
   -- vacancy this session (unlike Wave-2's GA-13) — the expected-vacant set is
   -- EMPTY, so this assertion fails on ANY district without exactly 1 holder.
   -- ==========================================================================
+  -- Occupancy is resolved at read time through essentials.office_current_holder (ADR 0002).
+  -- This block previously counted essentials.offices.politician_id, dropped by ADR 0002 phase 5 /
+  -- migration 1463, which left this gate broken at runtime. The view is exactly one row per
+  -- office (guaranteed by office_terms' exclusion constraint), so it cannot fan the group out,
+  -- and COUNT() skips the NULL politician_id a vacancy span carries.
   CREATE TEMP TABLE _actual_nonone ON COMMIT DROP AS
   SELECT d.geo_id
   FROM essentials.districts d
   LEFT JOIN essentials.offices o ON o.district_id = d.id
+  LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
   WHERE d.district_type = 'NATIONAL_LOWER'
     AND substr(d.geo_id,1,2) IN (SELECT fips FROM _expected_counts)
   GROUP BY d.geo_id
-  HAVING COUNT(o.politician_id) <> 1;
+  HAVING COUNT(och.politician_id) <> 1;
 
   SELECT string_agg(geo_id, ', ' ORDER BY geo_id) INTO v_diff FROM _actual_nonone;
   IF v_diff IS NOT NULL THEN

@@ -1,5 +1,17 @@
 -- 154-verify.sql — Phase 154 read-only PRE-SEEDING baseline gate (USHC2-01).
 --
+-- ⚠ HISTORICALLY OBSOLETE AS A WHOLE-FILE RUN (noted 2026-07-26). A2 asserts "0 race_candidates
+--   seeded on any Wave-2 House race", which was true when this gate was authored and is
+--   PERMANENTLY FALSE now that Wave-2 seeding (155/156/157/159) shipped — a live run stops at
+--   `FAIL A2a ... got 326`. That is the gate doing its job on a premise that has since expired,
+--   NOT a defect. Do not "fix" A2 by relaxing it; the post-seeding gates are 156-verify.sql and
+--   the milestone gates. A1 and A3 remain live-meaningful and can be run standalone.
+--
+-- OCCUPANCY PORT (2026-07-26): A3 previously read essentials.offices.politician_id, dropped by
+--   ADR 0002 phase 5 / migration 1463, so it was broken at runtime. It now resolves occupancy
+--   through essentials.office_current_holder. Verified standalone against prod on 2026-07-26:
+--   the Wave-2-scoped A3 returns exactly {1313}, matching its expected-vacant set.
+--
 -- SELECT-only. This is a DIAGNOSTIC pre-seeding gate (RESEARCH §Pattern 3), NOT a
 -- post-seeding candidate gate like 149-verify.sql. It asserts the read-only DB
 -- baseline that the Wave-2 seeding phases (155/156/157/159) build on:
@@ -124,14 +136,20 @@ BEGIN
   CREATE TEMP TABLE _expected_vacant (geo_id text) ON COMMIT DROP;
   INSERT INTO _expected_vacant (geo_id) VALUES ('1313');  -- GA-13 (David Scott deceased Apr 2026)
 
+  -- Occupancy is resolved at read time through essentials.office_current_holder (ADR 0002).
+  -- This block previously counted essentials.offices.politician_id, dropped by ADR 0002 phase 5 /
+  -- migration 1463, which left this gate broken at runtime. The view is exactly one row per
+  -- office (guaranteed by office_terms' exclusion constraint), so it cannot fan the group out,
+  -- and COUNT() skips the NULL politician_id a vacancy span carries.
   CREATE TEMP TABLE _actual_nonone ON COMMIT DROP AS
   SELECT d.geo_id
   FROM essentials.districts d
   LEFT JOIN essentials.offices o ON o.district_id = d.id
+  LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
   WHERE d.district_type = 'NATIONAL_LOWER'
     AND substr(d.geo_id,1,2) IN (SELECT fips FROM _expected_counts)
   GROUP BY d.geo_id
-  HAVING COUNT(o.politician_id) <> 1;
+  HAVING COUNT(och.politician_id) <> 1;
 
   -- Symmetric difference: any actual-not-expected (surprise vacancy/anomaly) OR
   -- any expected-not-actual (special seat unexpectedly filled) fails the invariant.

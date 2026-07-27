@@ -172,6 +172,8 @@ async function surfacingRacesAt(lng: number, lat: number, fips: string): Promise
 
 async function main() {
   const failures: string[] = [];
+  /** States whose D-11 RPC probe could not run for lack of `auth` privilege. NOT proven. */
+  const d11Skipped: string[] = [];
   let processed = 0;
   let skipped = 0;
 
@@ -238,11 +240,16 @@ async function main() {
 
       // (b) Reps feed stays OLD vintage: G5200 covering district = OLD B, with a seated rep.
       const reps = await pool.query(
-        `SELECT d.geo_id, count(o.id) FILTER (WHERE o.politician_id IS NOT NULL) AS reps
+        // Occupancy resolves through essentials.office_current_holder (ADR 0002). This query
+        // previously counted essentials.offices.politician_id, dropped by ADR 0002 phase 5 /
+        // migration 1463, which left this smoke broken at runtime. The view is exactly one row
+        // per office, so it cannot fan the group out.
+        `SELECT d.geo_id, count(och.politician_id) AS reps
          FROM essentials.geofence_boundaries gb
          JOIN essentials.districts d
            ON d.geo_id = gb.geo_id AND d.district_type = 'NATIONAL_LOWER'
          LEFT JOIN essentials.offices o ON o.district_id = d.id
+         LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
          WHERE gb.mtfcc = 'G5200' AND length(gb.geo_id) = 4 AND substr(gb.geo_id, 1, 2) = $3
            AND public.ST_Covers(gb.geometry, public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326))
          GROUP BY d.geo_id`,
@@ -287,6 +294,14 @@ async function main() {
       }
 
       // (d) D-11 RPC direct invocation — sentinel row, always ROLLBACK.
+      //
+      // REQUIRES A PRIVILEGED ROLE. The probe mints a throwaway auth.users row so
+      // connect.upsert_user_location can encrypt a location for it. The least-privileged
+      // application role (ev_api) has no USAGE on schema `auth` — correctly so; an app role that
+      // could mint auth users would be a security regression. When the connection cannot reach
+      // `auth` the probe SKIPS LOUDLY (below) instead of aborting the whole smoke, so the other
+      // four layers stay citeable. It does NOT count as proven: see the summary line, which
+      // refuses to say "fully asserted" when any D-11 probe was skipped.
       const client = await pool.connect();
       try {
         await client.query('BEGIN');
@@ -304,6 +319,18 @@ async function main() {
           failures.push(`${cfg.abbr} L3 D-11 RPC probe: resolve_congressional_2026 returned ${got === null ? 'NULL' : got} (expected ${newGeoId}) — decrypt/ST_Covers/FIPS-filter/search_path bug`);
         } else {
           console.log(`PASS ${cfg.abbr} L3 D-11 RPC probe: resolve_congressional_2026(sentinel) = ${got} (actual RPC code path, rolled back)`);
+        }
+      } catch (e) {
+        // 42501 = insufficient_privilege. Only this is survivable; anything else is a real defect.
+        if ((e as { code?: string })?.code === '42501') {
+          d11Skipped.push(cfg.abbr);
+          console.log(
+            `⚠ SKIP ${cfg.abbr} L3 D-11 RPC probe: connection role lacks privilege on schema 'auth' ` +
+              `(cannot mint the sentinel auth.users row). D-11 IS NOT PROVEN for ${cfg.abbr} by this run. ` +
+              `Re-run with a privileged DATABASE_URL to restore it.`
+          );
+        } else {
+          throw e;
         }
       } finally {
         try { await client.query('ROLLBACK'); } catch { /* connection-level failure only */ }
@@ -361,7 +388,18 @@ async function main() {
     console.error('FAIL 1641 coordinate smoke:\n  ' + failures.join('\n  '));
     process.exit(1);
   }
-  console.log(`\n1641 COORDINATE SMOKE GREEN: ${processed} state(s) fully asserted, ${skipped} skipped (no G5200V26 rows yet).`);
+  if (d11Skipped.length) {
+    // Deliberately NOT the word "fully" — a skipped D-11 must never read as a proven D-11.
+    console.log(
+      `\n1641 COORDINATE SMOKE GREEN (PARTIAL): ${processed} state(s) asserted on the boundary, ` +
+        `reps-feed, elections and Connected geo-id layers, ${skipped} skipped (no G5200V26 rows yet).` +
+        `\n⚠ D-11 RPC probe NOT PROVEN for: ${d11Skipped.join(', ')} — the connection role lacks ` +
+        `privilege on schema 'auth', so resolve_congressional_2026's real code path was never ` +
+        `exercised. Four of five layers are citeable from this run; D-11 is not.`
+    );
+  } else {
+    console.log(`\n1641 COORDINATE SMOKE GREEN: ${processed} state(s) fully asserted, ${skipped} skipped (no G5200V26 rows yet).`);
+  }
   await pool.end();
 }
 
