@@ -12,7 +12,8 @@
  *   - Meetings schema is NOT PostgREST-exposed; direct pool.query() only
  *   - Explicit UUID validation before any DB lookup
  *   - Zod validation on all write request bodies
- *   - Subpath routes (/:id/transcript, /:id/summary, /:id/votes) defined BEFORE /:id
+ *   - Subpath routes (/upcoming, /:id/transcript, /:id/summary, /:id/votes,
+ *     /:id/agenda-items) defined BEFORE /:id
  */
 
 import { Router } from 'express';
@@ -26,11 +27,13 @@ import {
   getMeetingEntityState,
   getTranscriptByMeetingId,
   getSummaryByMeetingId,
+  getUpcomingMeetings,
   getVotesByMeetingId,
   createMeeting,
   updateMeeting,
   deleteMeeting,
 } from '../lib/meetingsService.js';
+import { getAgendaItemsByMeetingId } from '../lib/agendaItemsService.js';
 import { EVENT_KINDS } from '../lib/eventKinds.js';
 import { validateEventEntities } from '../lib/eventEntityRules.js';
 
@@ -57,6 +60,17 @@ router.get('/', optionalAuth, async (req: Request, res: Response): Promise<void>
     res.status(200).json(meetings);
   } catch (err) {
     console.error('[GET /meetings] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// GET /api/meetings/upcoming — MUST be registered before ANY /:id... route so
+// Express doesn't capture "upcoming" as an id.
+router.get('/upcoming', optionalAuth, async (_req: Request, res: Response): Promise<void> => {
+  try {
+    res.status(200).json(await getUpcomingMeetings());
+  } catch (err) {
+    console.error('[GET /meetings/upcoming] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
@@ -135,6 +149,27 @@ router.get(
       res.status(200).json(votes);
     } catch (err) {
       console.error('[GET /meetings/:id/votes] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
+
+// GET /api/meetings/:id/agenda-items — MUST be before /:id
+router.get(
+  '/:id/agenda-items',
+  optionalAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    const id = req.params.id as string;
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'INVALID_ID', message: 'Invalid UUID format' });
+      return;
+    }
+
+    try {
+      const items = await getAgendaItemsByMeetingId(id);
+      res.status(200).json(items);
+    } catch (err) {
+      console.error('[GET /meetings/:id/agenda-items] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
     }
   }
