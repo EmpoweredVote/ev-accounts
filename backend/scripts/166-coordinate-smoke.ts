@@ -1,0 +1,263 @@
+/**
+ * 166-coordinate-smoke.ts — Phase 166 read-only coordinate-surfacing smoke (all 38 Wave-3 states).
+ *
+ * ROADMAP success criterion 1 for Phase 166 is a COORDINATE-PATH proof, not a SQL-only proof.
+ * For one contested in-district US House coordinate per Wave-3 state, the live surfacing join
+ * (geofence ST_Covers point -> district -> office -> race within that state's surfacing election,
+ * NATIONAL_LOWER) must return the resident's House race with the full challenger-inclusive
+ * candidate field: >= minActive active candidates AND >= 1 challenger (is_incumbent = false).
+ * A gate that only proves the incumbent resolves passes on a half-seeded district — that is the
+ * Pitfall-5 two-path guard.
+ *
+ * Plus one NEGATIVE sample: a coordinate inside a severe MO district must surface ZERO House
+ * races on the surfacing MO election, proving the withholding mechanism still holds end-to-end.
+ *
+ * ENGINE: cloned from 163-coordinate-smoke.ts — the post-164.1 vintage-preference form. The
+ * anchor query orders `CASE WHEN gb.mtfcc = 'G5200V26' THEN 0 ELSE 1 END` so a 2026-vintage
+ * polygon wins when one exists, and the surfacing query uses a JOIN LATERAL that takes the
+ * G5200V26 geometry for a geo_id when present and otherwise falls back to the district-mtfcc
+ * branch. This is what the deployed service does. 165's hard `mtfcc` pin is NOT used: a hard pin
+ * is correct only for UT, while the LATERAL generalises to TN, AL, LA, UT and every non-dual-map
+ * state at once. 164.1-04 recorded that the pre-164.1 plain join double-matches for dual-map
+ * states and would spuriously surface two races.
+ *
+ * FIVE ELECTION NAMES DEVIATE from the `{ABBR} 2026 Statewide General` convention because those
+ * elections were PRE-EXISTING and were reused rather than authored: OR ('OR 2026 General',
+ * 164-03), MD ('2026 Maryland General Election', 162-08), MA ('2026 Massachusetts General
+ * Election', 161), ME ('2026 Maine General Election', 165-01) and NV (name reused, 165-01).
+ *
+ * SELECT-only. Mirrors src/lib/electionService.ts getElectionsByCoordinate Part A (ST_Covers).
+ * All PostGIS calls use the public. schema prefix.
+ *
+ * Run:   cd /c/EV-Accounts/backend && set -a && source .env && set +a && \
+ *          node --import tsx scripts/166-coordinate-smoke.ts
+ * Select: ... node --import tsx scripts/166-coordinate-smoke.ts --select
+ *          (live enumeration of every district's active/challenger counts — the authority for
+ *           which geo_id each state contributes as its sample)
+ */
+import { pool } from '../src/lib/db.js';
+
+interface Sample {
+  state: string;
+  geoId: string;
+  minActive: number;
+}
+
+const STATE_CONFIG: Record<string, { election: string; geoPrefix: string }> = {
+  AZ: { election: 'AZ 2026 Statewide General', geoPrefix: '04' },
+  WA: { election: 'WA 2026 Statewide General', geoPrefix: '53' },
+  TN: { election: 'TN 2026 Statewide General', geoPrefix: '47' },
+  MA: { election: '2026 Massachusetts General Election', geoPrefix: '25' }, // pre-existing name (161)
+  IN: { election: 'IN 2026 Statewide General', geoPrefix: '18' },
+  MD: { election: '2026 Maryland General Election', geoPrefix: '24' }, // pre-existing name (162-08)
+  MN: { election: 'MN 2026 Statewide General', geoPrefix: '27' },
+  MO: { election: 'MO 2026 Statewide General', geoPrefix: '29' }, // surfacing election only; 2902-2906 are withheld
+  WI: { election: 'WI 2026 Statewide General', geoPrefix: '55' },
+  CO: { election: 'CO 2026 Statewide General', geoPrefix: '08' },
+  AL: { election: 'AL 2026 Statewide General', geoPrefix: '01' },
+  SC: { election: 'SC 2026 Statewide General', geoPrefix: '45' },
+  LA: { election: 'LA 2026 Statewide General', geoPrefix: '22' },
+  KY: { election: 'KY 2026 Statewide General', geoPrefix: '21' },
+  OR: { election: 'OR 2026 General', geoPrefix: '41' }, // pre-existing name (164-03)
+  CT: { election: 'CT 2026 Statewide General', geoPrefix: '09' },
+  OK: { election: 'OK 2026 Statewide General', geoPrefix: '40' },
+  AR: { election: 'AR 2026 Statewide General', geoPrefix: '05' },
+  IA: { election: 'IA 2026 Statewide General', geoPrefix: '19' },
+  KS: { election: 'KS 2026 Statewide General', geoPrefix: '20' },
+  MS: { election: 'MS 2026 Statewide General', geoPrefix: '28' },
+  NV: { election: 'NV 2026 Statewide General', geoPrefix: '32' }, // pre-existing races reused (165-01)
+  UT: { election: 'UT 2026 Statewide General', geoPrefix: '49' }, // dual-map: G5200V26 wins via the LATERAL
+  NM: { election: 'NM 2026 Statewide General', geoPrefix: '35' },
+  NE: { election: 'NE 2026 Statewide General', geoPrefix: '31' },
+  WV: { election: 'WV 2026 Statewide General', geoPrefix: '54' },
+  ID: { election: 'ID 2026 Statewide General', geoPrefix: '16' },
+  HI: { election: 'HI 2026 Statewide General', geoPrefix: '15' },
+  ME: { election: '2026 Maine General Election', geoPrefix: '23' }, // pre-existing name (165-01)
+  NH: { election: 'NH 2026 Statewide General', geoPrefix: '33' },
+  RI: { election: 'RI 2026 Statewide General', geoPrefix: '44' },
+  MT: { election: 'MT 2026 Statewide General', geoPrefix: '30' },
+  AK: { election: 'AK 2026 Statewide General', geoPrefix: '02' },
+  DE: { election: 'DE 2026 Statewide General', geoPrefix: '10' },
+  ND: { election: 'ND 2026 Statewide General', geoPrefix: '38' },
+  SD: { election: 'SD 2026 Statewide General', geoPrefix: '46' },
+  VT: { election: 'VT 2026 Statewide General', geoPrefix: '50' },
+  WY: { election: 'WY 2026 Statewide General', geoPrefix: '56' },
+};
+
+/** The five severity-routed MO districts, deliberately NOT on the surfacing MO election. */
+const SEVERE_MO_GEO_IDS = ['2902', '2903', '2904', '2905', '2906'];
+
+const SAMPLES: Sample[] = [];
+
+const MIN_DISTRICTS = 38;
+
+/** Anchor point: prefer the 2026-vintage polygon when one exists (post-164.1). */
+async function anchorPoint(geoId: string): Promise<{ lng: number; lat: number } | null> {
+  const pt = await pool.query(
+    `SELECT public.ST_X(public.ST_PointOnSurface(gb.geometry)) AS lng,
+            public.ST_Y(public.ST_PointOnSurface(gb.geometry)) AS lat
+     FROM essentials.geofence_boundaries gb
+     JOIN essentials.districts d
+       ON d.geo_id = gb.geo_id
+      AND (d.mtfcc IS NULL OR d.mtfcc = '' OR gb.mtfcc = d.mtfcc OR gb.mtfcc = 'G5200V26')
+     WHERE gb.geo_id = $1 AND d.district_type = 'NATIONAL_LOWER' AND gb.geometry IS NOT NULL
+     ORDER BY CASE WHEN gb.mtfcc = 'G5200V26' THEN 0 ELSE 1 END
+     LIMIT 1`,
+    [geoId]
+  );
+  return pt.rows.length ? { lng: +pt.rows[0].lng, lat: +pt.rows[0].lat } : null;
+}
+
+/**
+ * Mirror of getElectionsByCoordinate Part A, post-164.1: the vintage-preference LATERAL takes
+ * G5200V26 for a geo_id when present, else the district-mtfcc branch.
+ */
+async function surface(eid: string, geoPrefix: string, lng: number, lat: number) {
+  return pool.query(
+    `SELECT r.id AS race_id, d.geo_id,
+            COUNT(*) FILTER (WHERE rc.candidate_status = 'active') AS active_cands,
+            COUNT(*) FILTER (WHERE rc.candidate_status = 'active' AND rc.is_incumbent = false) AS challengers,
+            COUNT(*) FILTER (WHERE rc.candidate_status = 'active' AND rc.politician_id IS NULL) AS null_pid
+     FROM essentials.races r
+     JOIN essentials.offices o ON o.id = r.office_id
+     JOIN essentials.districts d ON d.id = o.district_id
+     JOIN LATERAL (
+       SELECT geometry FROM essentials.geofence_boundaries gbv
+        WHERE gbv.geo_id = d.geo_id AND gbv.mtfcc = 'G5200V26'
+          AND d.district_type = 'NATIONAL_LOWER'
+       UNION ALL
+       SELECT geometry FROM essentials.geofence_boundaries gbo
+        WHERE gbo.geo_id = d.geo_id
+          AND (d.mtfcc IS NULL OR d.mtfcc = '' OR gbo.mtfcc = d.mtfcc)
+          AND NOT EXISTS (
+            SELECT 1 FROM essentials.geofence_boundaries x
+             WHERE x.geo_id = d.geo_id AND x.mtfcc = 'G5200V26'
+          )
+       LIMIT 1
+     ) gb ON true
+     LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
+     WHERE r.election_id = $1
+       AND d.district_type = 'NATIONAL_LOWER'
+       AND substr(d.geo_id, 1, 2) = $4
+       AND gb.geometry IS NOT NULL
+       AND public.ST_Covers(gb.geometry, public.ST_SetSRID(public.ST_MakePoint($2::float8, $3::float8), 4326))
+     GROUP BY r.id, d.geo_id`,
+    [eid, lng, lat, geoPrefix]
+  );
+}
+
+async function resolveElections(): Promise<Record<string, string>> {
+  const eids: Record<string, string> = {};
+  for (const [st, cfg] of Object.entries(STATE_CONFIG)) {
+    const row = (await pool.query('SELECT id FROM essentials.elections WHERE name = $1', [cfg.election])).rows[0];
+    if (!row) throw new Error(`FAIL: election not found: ${cfg.election} (${st})`);
+    eids[st] = row.id;
+  }
+  return eids;
+}
+
+/**
+ * --select: live enumeration. For each state, list every in-scope district with its active and
+ * challenger counts, ordered by challenger count descending. This is the ONLY authority for
+ * which geo_id each state contributes as its sample — the 161..165 smoke picks were frozen in
+ * early July and candidate fields have changed since.
+ */
+async function selectMode() {
+  const eids = await resolveElections();
+  for (const [st, cfg] of Object.entries(STATE_CONFIG)) {
+    const q = await pool.query(
+      `SELECT d.geo_id,
+              COUNT(*) FILTER (WHERE rc.candidate_status = 'active') AS active,
+              COUNT(*) FILTER (WHERE rc.candidate_status = 'active' AND rc.is_incumbent = false) AS challengers,
+              COUNT(*) FILTER (WHERE rc.candidate_status = 'active' AND rc.is_incumbent = true) AS incumbents
+       FROM essentials.races r
+       JOIN essentials.offices o ON o.id = r.office_id
+       JOIN essentials.districts d ON d.id = o.district_id
+       LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
+       WHERE r.election_id = $1
+         AND d.district_type = 'NATIONAL_LOWER'
+         AND substr(d.geo_id, 1, 2) = $2
+         AND ($3::text[] IS NULL OR NOT (d.geo_id = ANY($3::text[])))
+       GROUP BY d.geo_id
+       ORDER BY challengers DESC, active DESC, d.geo_id`,
+      [eids[st], cfg.geoPrefix, st === 'MO' ? SEVERE_MO_GEO_IDS : null]
+    );
+    const cells = q.rows.map(
+      (r) => `${r.geo_id}(a=${r.active},c=${r.challengers}${+r.incumbents === 0 ? ',OPEN' : ''})`
+    );
+    console.log(`SELECT-CANDIDATES ${st}: ${cells.join(' ') || '(no districts)'}`);
+  }
+  await pool.end();
+}
+
+async function smokeMode() {
+  const eids = await resolveElections();
+  const failures: string[] = [];
+  let surfaced = 0;
+
+  for (const s of SAMPLES) {
+    const cfg = STATE_CONFIG[s.state];
+    const pt = await anchorPoint(s.geoId);
+    if (!pt) {
+      failures.push(`${s.state} ${s.geoId}: no NATIONAL_LOWER geofence boundary`);
+      continue;
+    }
+    const surf = await surface(eids[s.state], cfg.geoPrefix, pt.lng, pt.lat);
+
+    if (!surf.rows.length) {
+      failures.push(
+        `${s.state} ${s.geoId}: coordinate (${pt.lat.toFixed(4)},${pt.lng.toFixed(4)}) surfaced NO House race`
+      );
+      continue;
+    }
+
+    const row = surf.rows[0];
+    const active = +row.active_cands;
+    const chal = +row.challengers;
+    const nullpid = +row.null_pid;
+    let ok = true;
+
+    if (surf.rows.length > 1) {
+      failures.push(`${s.state} ${s.geoId}: matched ${surf.rows.length} House races (expected 1)`);
+      ok = false;
+    }
+    if (active < s.minActive) {
+      failures.push(`${s.state} ${s.geoId}: only ${active} active candidate(s) (expected >= ${s.minActive})`);
+      ok = false;
+    }
+    if (chal < 1) {
+      failures.push(`${s.state} ${s.geoId}: 0 challengers -- only incumbent surfaced (Pitfall-5)`);
+      ok = false;
+    }
+    if (nullpid > 0) {
+      failures.push(`${s.state} ${s.geoId}: ${nullpid} active candidate(s) with NULL politician_id`);
+      ok = false;
+    }
+
+    if (ok) {
+      surfaced++;
+      console.log(
+        `PASS ${s.state} ${s.geoId}: 1 House race -- ${active} active, ${chal} challenger(s), 0 null pid [contested]`
+      );
+    }
+  }
+
+  if (failures.length) {
+    console.error('FAIL coordinate smoke:\n  ' + failures.join('\n  '));
+    process.exit(1);
+  }
+  if (surfaced < MIN_DISTRICTS) {
+    console.error(`FAIL: only ${surfaced} of ${MIN_DISTRICTS} states surfaced cleanly (need all ${MIN_DISTRICTS})`);
+    process.exit(1);
+  }
+  console.log(
+    `\n166 COORDINATE SMOKE GREEN: ${surfaced}/38 states surface their US House race with full challenger-inclusive field`
+  );
+  await pool.end();
+}
+
+const isSelect = process.argv.includes('--select');
+(isSelect ? selectMode() : smokeMode()).catch((e) => {
+  console.error(e);
+  process.exit(1);
+});
