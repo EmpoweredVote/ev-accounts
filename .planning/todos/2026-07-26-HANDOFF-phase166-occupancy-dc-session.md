@@ -22,10 +22,47 @@ Phase-166 artifacts (all read-only, all green together against one prod snapshot
 
 ---
 
-## The three open items (all blocked on ONE decision)
+## The three open items — ONE mechanical cause, TWO very different decisions
 
-**All three are the same root cause: `backend/.env`'s `DATABASE_URL` is the least-privileged app
-role `ev_api`, which has no access to schemas `auth` or `supabase_migrations`.**
+All three trace to `backend/.env`'s `DATABASE_URL` being the least-privileged app role `ev_api`,
+which has no access to schemas `auth` or `supabase_migrations`. **But do not treat them as one
+decision — that framing invites solving both with the same GRANT:**
+
+- **Items 2 and 3 need `SELECT` on `supabase_migrations.schema_migrations`** — a metadata table of
+  applied migration versions. No secrets, no write, no escalation path. A nearly free grant.
+- **Item 1 needs `INSERT INTO auth.users`** — the ability to MINT AUTHENTICATED IDENTITIES.
+  Categorically different, and the reason the blanket "just grant ev_api access" answer is wrong.
+
+**Why the current state is probably correct, not a regression.** An app role that can insert into
+`auth.users` can create arbitrary logged-in users; combine that with any SQL injection or a leaked
+`DATABASE_URL` and you have full impersonation. That is not hypothetical here — `backend/.env` was
+one of the 12 files caught in the 2026-07-26 ANTHROPIC_API_KEY plaintext exposure, and it holds
+`DATABASE_URL` too. Whoever narrowed `ev_api` did the right thing.
+
+**The deeper signal:** the D-11 probe needs MORE privilege than the app it tests. The app never
+creates auth users (Supabase Auth does, out of band) — it only ever READS
+`resolve_congressional_2026(user_id)` for an existing user. A test needing powers its subject lacks
+usually means the fixture is at the wrong layer, not that the subject is under-privileged.
+
+**Options for item 1, best first:**
+- **(a) A permanent seeded test user.** Create one inert account deliberately; the probe reuses it,
+  updating its location via `connect.upsert_user_location` (which the app role CAN call) and then
+  calling the RPC. Needs ZERO auth access at test time and still exercises the real
+  decrypt → ST_Covers → FIPS-filter path, which is D-11's whole value. Cost: a real prod
+  `auth.users` row that must be provably unable to log in.
+- **(b) Drop the auth insert; seed only `public.users` + `connect.connected_profiles`.** The smoke's
+  own comment says a trigger on `auth.users` auto-creates `public.users`, hinting the dependency may
+  be trigger-based rather than a hard FK. **UNVERIFIED — one query settles it** (`does public.users
+  have an enforced FK to auth.users?`). If not, this may be a one-line fix.
+- **(c) A separate `ADMIN_DATABASE_URL`.** Works, but adds a high-privilege credential to the same
+  `.env` that was already exposed once — solves the mechanics, worsens the posture.
+- **(d) Move the probe to CI** with elevated creds, if a privileged connection string already exists
+  there. Sidesteps the question entirely.
+- **(e) Grant narrowly.** REJECTED — the escalation is minting users, not the schema access.
+
+**Why it changed (hypothesis, untested):** memory records role-level `statement_timeout=8s` set on
+`ev_api` during the P1 finance incident (~2026-07-22) — right between 164.2 working (07-22) and now.
+Plausible that `ev_api` was created or tightened then and `.env` switched to it.
 
 1. **D-11 sentinel probe** in `1641-coordinate-smoke.ts` / `1642-coordinate-smoke.ts`. Mints a
    throwaway `auth.users` row to exercise `connect.resolve_congressional_2026`. Currently SKIPS
