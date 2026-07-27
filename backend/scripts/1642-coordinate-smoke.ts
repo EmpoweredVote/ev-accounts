@@ -4,8 +4,8 @@
  * Clone of 1641-coordinate-smoke.ts retargeted to the five enacted-2026 backfill states
  * (all with EMPTY severe sets — there is no seed-and-withhold this phase, so every state's
  * guaranteed differential covers it and the severe branch never runs). The data-driven
- * engine (VINTAGE_LATERAL, discoverDifferential, surfacingRacesAt, the SENTINEL_UUID D-11
- * RPC probe, MIN_DIFF_AREA, VISIBILITY_WINDOW) is reused verbatim.
+ * engine (VINTAGE_LATERAL, discoverDifferential, surfacingRacesAt, the D-11 RPC probe
+ * (d11-probe.ts), MIN_DIFF_AREA, VISIBILITY_WINDOW) is reused verbatim.
  *
  * Per state (all have a live '{ABBR} 2026 Statewide General' with the full district count):
  *   - Layer-2: every V26 district anchor (public.ST_PointOnSurface) self-resolves under
@@ -13,18 +13,20 @@
  *   - Layer-3 GUARANTEED differential: an auto-discovered point in NEW A / OLD B (A!=B)
  *     surfaces NEW A's race on /elections (V26-preferring LATERAL) while the reps-feed live
  *     G5200 ST_Covers still returns OLD B's seated rep (D-02 dual-map holds).
- *   - Layer-3 CONNECTED-TIER geo-id path (D-11) + the always-ROLLBACK sentinel RPC probe
+ *   - Layer-3 CONNECTED-TIER geo-id path (D-11) + the service-role sentinel RPC probe
  *     asserting connect.resolve_congressional_2026 returns NEW A (proves Plan 01's IN-list
  *     extension covers these FIPS).
  *   - EXPLICIT 12-anchor block (CA/NC/OH/TX; FL relies on the auto-discovered differential):
  *     each verified anchor must cover NEW under G5200V26, OLD under G5200, OLD!=NEW, and
  *     (where the general race exists) surface exactly the NEW district's race.
  *
- * SELECT-only apart from the always-rolled-back sentinel probe. All PostGIS via public.
+ * SELECT-only apart from the D-11 sentinel probe, which creates and then deletes one throwaway
+ * auth user via the service-role key (see d11-probe.ts). All PostGIS via public.
  * All inputs parameterized. Run: cd /c/EV-Accounts/backend && set -a && source .env && \
  *   set +a && node --import tsx scripts/1642-coordinate-smoke.ts
  */
 import { pool } from '../src/lib/db.js';
+import { probeD11 } from './d11-probe.js';
 
 interface StateCfg {
   fips: string;
@@ -58,9 +60,6 @@ const ANCHORS: Anchor[] = [
   { abbr: 'TX', fips: '48', name: 'Rockwall',         lng: -96.4591,  lat: 32.9297, oldGeoId: '4804', newGeoId: '4832' },
   { abbr: 'TX', fips: '48', name: 'Mission',          lng: -98.3200,  lat: 26.2073, oldGeoId: '4815', newGeoId: '4828' },
 ];
-
-// Fixed sentinel UUID for the D-11 RPC probe (never committed; rollback-only).
-const SENTINEL_UUID = 'ffffffff-ffff-4fff-8fff-ffffffffffff';
 
 // Non-trivial overlap threshold for differential-zone discovery (deg^2; ~1 km^2).
 const MIN_DIFF_AREA = 1e-4;
@@ -281,44 +280,17 @@ async function main() {
         console.log(`INFO ${cfg.abbr} L3: no '${cfg.abbr} 2026 Statewide General' election — race-level asserts deferred`);
       }
 
-      // D-11 RPC direct invocation — sentinel row, always ROLLBACK.
-      //
-      // REQUIRES A PRIVILEGED ROLE. The probe mints a throwaway auth.users row so
-      // connect.upsert_user_location can encrypt a location for it. The least-privileged
-      // application role (ev_api) has no USAGE on schema `auth` — correctly so; an app role that
-      // could mint auth users would be a security regression. When the connection cannot reach
-      // `auth` the probe SKIPS LOUDLY instead of aborting the whole smoke, so the other layers
-      // stay citeable. It does NOT count as proven: the summary line refuses to say
-      // "fully asserted" when any D-11 probe was skipped.
-      const client = await pool.connect();
-      try {
-        await client.query('BEGIN');
-        await client.query(`INSERT INTO auth.users (id) VALUES ($1)`, [SENTINEL_UUID]);
-        await client.query(`INSERT INTO public.users (id) VALUES ($1) ON CONFLICT (id) DO NOTHING`, [SENTINEL_UUID]);
-        await client.query(`INSERT INTO connect.connected_profiles (user_id) VALUES ($1) ON CONFLICT (user_id) DO NOTHING`, [SENTINEL_UUID]);
-        await client.query(`SELECT connect.upsert_user_location($1, $2::float8, $3::float8)`, [SENTINEL_UUID, lat, lng]);
-        const rpc = await client.query(`SELECT connect.resolve_congressional_2026($1) AS geo`, [SENTINEL_UUID]);
-        const got = rpc.rows[0]?.geo ?? null;
-        if (got !== newGeoId) {
-          failures.push(`${cfg.abbr} L3 D-11 RPC probe: resolve_congressional_2026 returned ${got === null ? 'NULL' : got} (expected ${newGeoId}) — Plan 01 IN-list/deploy or decrypt/ST_Covers/search_path bug`);
-        } else {
-          console.log(`PASS ${cfg.abbr} L3 D-11 RPC probe: resolve_congressional_2026(sentinel) = ${got} (actual RPC code path, rolled back)`);
-        }
-      } catch (e) {
-        // 42501 = insufficient_privilege. Only this is survivable; anything else is a real defect.
-        if ((e as { code?: string })?.code === '42501') {
-          d11Skipped.push(cfg.abbr);
-          console.log(
-            `⚠ SKIP ${cfg.abbr} L3 D-11 RPC probe: connection role lacks privilege on schema 'auth' ` +
-              `(cannot mint the sentinel auth.users row). D-11 IS NOT PROVEN for ${cfg.abbr} by this run. ` +
-              `Re-run with a privileged DATABASE_URL to restore it.`
-          );
-        } else {
-          throw e;
-        }
-      } finally {
-        try { await client.query('ROLLBACK'); } catch { /* connection-level failure only */ }
-        client.release();
+      // D-11 RPC probe — mints a sentinel via the service-role key, exercises both RPCs over
+      // PostgREST exactly as production does (src/routes/essentials.ts:74), then deletes it.
+      // Rationale, credentials and the ROLLBACK trade-off are documented in d11-probe.ts.
+      const d11 = await probeD11(cfg.abbr, lat, lng, newGeoId);
+      if (d11.status === 'pass') {
+        console.log(`PASS ${cfg.abbr} L3 D-11 RPC probe: ${d11.message}`);
+      } else if (d11.status === 'fail') {
+        failures.push(`${cfg.abbr} L3 D-11 RPC probe: ${d11.message}`);
+      } else {
+        d11Skipped.push(cfg.abbr);
+        console.log(`⚠ SKIP ${cfg.abbr} L3 D-11 RPC probe: ${d11.message}`);
       }
     }
   }
