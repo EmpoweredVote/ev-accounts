@@ -87,7 +87,63 @@ const STATE_CONFIG: Record<string, { election: string; geoPrefix: string }> = {
 /** The five severity-routed MO districts, deliberately NOT on the surfacing MO election. */
 const SEVERE_MO_GEO_IDS = ['2902', '2903', '2904', '2905', '2906'];
 
-const SAMPLES: Sample[] = [];
+/**
+ * One sample per state, chosen from the `--select` run of 2026-07-26: the district with the
+ * highest challenger count, preferring an open seat on ties. NOT copied from the 161..165
+ * smoke files — those picks were frozen in early July and the fields have changed since.
+ * Counts in the comments are as of selection.
+ */
+const SAMPLES: Sample[] = [
+  { state: 'AZ', geoId: '0401', minActive: 2 }, // AZ-1 open, 8 active / 8 challengers — deepest AZ field
+  { state: 'WA', geoId: '5304', minActive: 2 }, // WA-4 open, 11/11 — tied with 5305 on challengers, open seat wins
+  { state: 'TN', geoId: '4706', minActive: 2 }, // TN-6 open, 11/11 — deepest TN field
+  { state: 'MA', geoId: '2506', minActive: 2 }, // MA-6 open, 7/7 — only MA open seat
+  { state: 'IN', geoId: '1802', minActive: 2 }, // IN-2, 3/2 — tied with 1807/1809, none open
+  { state: 'MD', geoId: '2405', minActive: 2 }, // MD-5 open, 4/4 — Hoyer seat
+  { state: 'MN', geoId: '2705', minActive: 2 }, // MN-5, 10/9 — deepest MN field
+  { state: 'MO', geoId: '2901', minActive: 2 }, // MO-1, 8/7 — NON-SEVERE (2902-2906 are withheld)
+  { state: 'WI', geoId: '5503', minActive: 2 }, // WI-3 open, 2/2 — see WI NOTE below; the general is nearly empty
+  { state: 'CO', geoId: '0801', minActive: 2 }, // CO-1 open, 2/2 — only CO open seat
+  { state: 'AL', geoId: '0102', minActive: 2 }, // AL-2, 7/6 — un-withheld by 164.1-05 (mig 1248)
+  { state: 'SC', geoId: '4501', minActive: 2 }, // SC-1 open, 4/4
+  { state: 'LA', geoId: '2205', minActive: 2 }, // LA-5 open jungle, 12/12 — deepest field in the phase
+  { state: 'KY', geoId: '2104', minActive: 2 }, // KY-4 open, 4/4 — tied with 2106, both open, first wins
+  { state: 'OR', geoId: '4104', minActive: 2 }, // OR-4, 3/2 — deepest OR field
+  { state: 'CT', geoId: '0904', minActive: 2 }, // CT-4, 6/5
+  { state: 'OK', geoId: '4005', minActive: 2 }, // OK-5, 4/3
+  { state: 'AR', geoId: '0501', minActive: 2 }, // AR-1, 3/2 — tied with 0503, none open
+  { state: 'IA', geoId: '1902', minActive: 2 }, // IA-2 open, 4/4
+  { state: 'KS', geoId: '2004', minActive: 2 }, // KS-4, 11/10 — deepest KS field
+  { state: 'MS', geoId: '2801', minActive: 2 }, // MS-1, 3/2 — four-way tie, none open
+  { state: 'NV', geoId: '3202', minActive: 2 }, // NV-2 open, 3/3 — tied on challengers, open seat wins (Amodei retired)
+  { state: 'UT', geoId: '4903', minActive: 2 }, // UT-3, 6/5 — dual-map state, resolves via G5200V26
+  { state: 'NM', geoId: '3501', minActive: 2 }, // NM-1, 2/1 — three-way tie, none open
+  { state: 'NE', geoId: '3102', minActive: 2 }, // NE-2 open, 3/3 — Bacon retired
+  { state: 'WV', geoId: '5402', minActive: 2 }, // WV-2, 4/3
+  { state: 'ID', geoId: '1602', minActive: 2 }, // ID-2, 6/5
+  { state: 'HI', geoId: '1501', minActive: 2 }, // HI-1, 8/7
+  { state: 'ME', geoId: '2302', minActive: 2 }, // ME-2 open, 2/2
+  { state: 'NH', geoId: '3301', minActive: 2 }, // NH-1 open, 14/14
+  { state: 'RI', geoId: '4401', minActive: 2 }, // RI-1, 3/2 — tied with 4402, none open
+  { state: 'MT', geoId: '3001', minActive: 2 }, // MT-1 open, 3/3 — Zinke retired
+  { state: 'AK', geoId: '0200', minActive: 2 }, // AK at-large jungle, 15/14
+  { state: 'DE', geoId: '1000', minActive: 2 }, // DE at-large, 2/1
+  { state: 'ND', geoId: '3800', minActive: 2 }, // ND at-large, 2/1
+  { state: 'SD', geoId: '4600', minActive: 2 }, // SD at-large open, 2/2
+  { state: 'VT', geoId: '5000', minActive: 2 }, // VT at-large, 4/3
+  { state: 'WY', geoId: '5600', minActive: 2 }, // WY at-large open, 14/14
+];
+
+/**
+ * WI NOTE (recorded 2026-07-26, see 166-01-SUMMARY.md). WI's sample is thinner than every other
+ * state's, and that is a real fact about the data rather than a seeding gap: on 2026-07-25 a
+ * party-split 'WI 2026 Partisan Primary' (2026-08-11) was created and WI's field moved onto it.
+ * The 'WI 2026 Statewide General' this smoke scopes to now holds 5 active candidates with 4 of
+ * its 8 races EMPTY. 5503 and 5506 are the only general races meeting the >= 2 active / >= 1
+ * challenger bar. The smoke deliberately still scopes WI to the GENERAL, because that is the
+ * election whose surfacing behaviour the other 37 states are being compared against; the
+ * primary-election field is covered by 166-verify.sql, whose scope includes it.
+ */
 
 const MIN_DISTRICTS = 38;
 
