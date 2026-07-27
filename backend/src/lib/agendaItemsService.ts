@@ -36,6 +36,7 @@ export interface AgendaItemDetail extends AgendaItem {
     city: string | null;
     status: string;
     startsAt: string | null;
+    timezone: string | null;
   };
 }
 
@@ -67,6 +68,7 @@ interface AgendaItemDetailRow extends AgendaItemRow {
   m_city: string | null;
   m_status: string;
   m_starts_at: string | null;
+  m_timezone: string | null;
 }
 
 const ITEM_COLS = `id, meeting_id, position, item_number, title_raw, kind,
@@ -122,7 +124,8 @@ export async function getAgendaItemById(
             ai.outcome, ai.segment_start_seconds, ai.segment_end_seconds,
             ai.continued_from_item_id, ai.source_url,
             m.id AS m_id, m.title AS m_title, m.date::text AS m_date,
-            m.city AS m_city, m.status AS m_status, m.starts_at AS m_starts_at
+            m.city AS m_city, m.status AS m_status, m.starts_at AS m_starts_at,
+            m.timezone AS m_timezone
      FROM meetings.agenda_items ai
      JOIN meetings.meetings m ON m.id = ai.meeting_id
      WHERE ai.id = $1`,
@@ -142,6 +145,9 @@ export async function getAgendaItemById(
       // created_at/updated_at: pg hands back what JSON.stringify serializes
       // to an ISO instant on the route.
       startsAt: row.m_starts_at ?? null,
+      // IANA zone (e.g. 'America/Indiana/Indianapolis'): timestamptz loses the
+      // original offset, so the UI needs this to render starts_at meeting-local.
+      timezone: row.m_timezone ?? null,
     },
   };
 }

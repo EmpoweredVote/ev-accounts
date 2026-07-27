@@ -107,6 +107,7 @@ describe('getAgendaItemById', () => {
           m_city: 'Bloomington',
           m_status: 'scheduled',
           m_starts_at: '2026-07-29T18:30:00-04:00',
+          m_timezone: 'America/Indiana/Indianapolis',
         },
       ],
     });
@@ -119,6 +120,7 @@ describe('getAgendaItemById', () => {
       city: 'Bloomington',
       status: 'scheduled',
       startsAt: '2026-07-29T18:30:00-04:00',
+      timezone: 'America/Indiana/Indianapolis',
     });
   });
 
