@@ -20,16 +20,31 @@ DELETE 0`, gate still passes), so it is idempotent. Occupancy was untouched thro
 `office_terms` is keyed on `office_id`, not `district_id`, and the post-verify gate asserts all
 three holders survive by name.
 
-Follow-on: `backend/scripts/verify-phase-125-126.sql` updated — its DC assertion now keys on
-`geo_id = '1198'`, its four occupancy references were ported to `office_current_holder`, and its
-known-unlinked set changed from `{1198, 1220, 1313, 4823}` to `{0614, 1220, 1313, 4823}` (1198 is
-now linked; CA-14 went vacant 2026-04-14, after v2.15). USHR-01a and the USHR-05 DC block both
-verified passing. That file's USHR-01b remains deliberately failing — see "Known remaining" below.
+Follow-on: `backend/scripts/verify-phase-125-126.sql` is now **fully repaired and green end to end**
+(`ALL USHR-01..05 ASSERTIONS PASSED`, exit 0), including `USHR-05 Path 0 OK: DC delegate -> Norton`.
+Four separate defects had accumulated in it, only the first of which was DC's:
 
-**Known remaining (unrelated to DC):** `verify-phase-125-126.sql` USHR-01b asserts the raw
-external_id band `-56999..-1000` holds 299 reps; it now holds 372, all seeded 2026-06-16..07-07 by
-later phases — the documented band-pollution trap. Left failing on purpose rather than bumped to
-372, which would just be re-stating whatever prod says today.
+1. **DC** — the delegate assertion keyed on the deleted `tiger_geoid = 'dc-national-lower'`; now
+   keys on `geo_id = '1198'`. Its known-unlinked set went `{1198,1220,1313,4823}` →
+   `{0614,1220,1313,4823}`: 1198 is linked now, and CA-14 went vacant 2026-04-14, after v2.15.
+2. **Occupancy** — four references to the dropped `essentials.offices.politician_id` (broken at
+   runtime since migration 1463, independently of DC). USHR-02a additionally moved off the
+   deprecated `politicians.office_id` snapshot onto `office_current_holder`.
+3. **Band pollution** — USHR-01b/02a/03/04 all scoped on the raw external_id band
+   `-56999..-1000`, which had grown 299 → 372 as later phases seeded into it, silently broadening
+   every one of them. The batch is now materialised once into a `_v215_batch` temp table filtered
+   on `created_at < 2026-07-01`; a 17-day gap sits between the batch (2026-06-16, exactly 299) and
+   the next seeding (2026-07-03), so the cutoff is unambiguous. `source`/`data_source` are empty
+   for all 372, so `created_at` was the only available discriminator.
+4. **Two stale expectations**, each corrected only after confirming the *database* was right:
+   - `CA=53 → 52`. California has had 52 seats since the 2020 reapportionment. Confirmed against
+     national totals: exactly 435 state districts + 1 DC = 436, top four CA 52 / TX 38 / FL 28 /
+     NY 26.
+   - The `≥290 canonical photo URL` floor was **removed**. It read 246/299 — not because coverage
+     regressed but because the headshot sweep is replacing congress.gov defaults with better
+     portraits, so the floor penalised the sweep for working. The assertions that matter both
+     hold: 299/299 carry a photo, and all 53 non-canonical reps have a `politician_images` row.
+     The split is now reported as an observation, not gated.
 
 No gate regressed: only `154-verify.sql` and `160-verify.sql` carry `<>1` holder assertions, both
 are FIPS-scoped, and neither includes FIPS 11 — so `1198` now holding 3 offices cannot trip them.

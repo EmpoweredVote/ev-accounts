@@ -3,7 +3,10 @@
 -- Labeled assertions for USHR-01..05. Read-only; RAISE EXCEPTION on failure, RAISE NOTICE on pass.
 -- Run: psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f backend/scripts/verify-phase-125-126.sql
 --
--- Batch = the Phase 125 seeded House reps: external_id BETWEEN -56999 AND -1000.
+-- Batch = the Phase 125 seeded House reps: external_id BETWEEN -56999 AND -1000 AND created_at
+-- before 2026-07-01. The created_at half was added 2026-07-26 — the raw band alone had grown from
+-- 299 to 372 as later phases seeded into it, silently broadening USHR-01b/02a/03/04. The batch is
+-- now materialised ONCE into the _v215_batch temp table; see the BATCH DEFINITION block below.
 --
 -- Known unlinked NATIONAL_LOWER districts (all four are genuine vacancies, each flagged
 -- offices.is_vacant = true): 0614 (CA-14, vacant since 2026-04-14), 1220 (FL-20), 1313 (GA-13),
@@ -49,42 +52,75 @@ BEGIN
   ) q
   WHERE q.tiger_geoid NOT IN ('0614','1220','1313','4823');
   IF v_unexpected <> 0 THEN
-    RAISE EXCEPTION 'USHR-01a FAILED: % unlinked district(s) outside the known set (1198/1220/1313/4823)', v_unexpected;
+    RAISE EXCEPTION 'USHR-01a FAILED: % unlinked district(s) outside the known vacancy set (0614/1220/1313/4823)', v_unexpected;
   END IF;
   RAISE NOTICE 'USHR-01a PASS: exactly the 4 known districts unlinked, all genuine vacancies (CA-14/FL-20/GA-13/TX-23)';
 END $$;
 
+-- ===== BATCH DEFINITION — the v2.15 Phase 125 seeding run =====
+--
+-- The raw external_id band -56999..-1000 is NO LONGER the batch. It held exactly the 299 v2.15
+-- reps when this gate was written; it now holds 372, because later phases seeded into the same
+-- range. That is the band-pollution trap CLAUDE.md warns about ("new external_id bands can be
+-- POLLUTED -> scope via race_candidates joins, not raw band"), and it silently broadened every
+-- band-scoped assertion below — USHR-01b, 02a, 03 and 04 were all measuring 372 rows, not 299.
+--
+-- created_at separates them cleanly. Distribution across the band:
+--     2026-06-16 → 299   ← the Phase 125 run, this batch
+--     2026-07-03 →  32
+--     2026-07-05 →  21
+--     2026-07-07 →  20
+-- A 17-day gap sits between the batch and the next seeding, so the cutoff below is nowhere near a
+-- boundary and cannot be shifted by session timezone. It is written as a timestamptz comparison
+-- rather than created_at::date = '2026-06-16' for exactly that reason.
+--
+-- created_at is the ONLY discriminator available: `source` and `data_source` are NULL/empty for
+-- all 372 rows, so there is no provenance column to key on.
+--
+-- Defining the batch once, here, is deliberate. Repeating the predicate at each of the seven call
+-- sites is how the drift went unnoticed in the first place.
+--
+-- Plain TEMP (no ON COMMIT DROP): these are separate top-level statements, so in autocommit each
+-- one is its own transaction and ON COMMIT DROP would destroy the table before the next block.
+-- Session-scoped is correct; the DROP IF EXISTS makes a re-run in one psql session safe.
+DROP TABLE IF EXISTS _v215_batch;
+CREATE TEMP TABLE _v215_batch AS
+SELECT id, external_id, party, photo_origin_url, office_id, created_at
+FROM essentials.politicians
+WHERE external_id BETWEEN -56999 AND -1000
+  AND created_at < TIMESTAMPTZ '2026-07-01';
+
 -- ===== USHR-01 (b): batch size = 299 =====
--- ⚠ STRUCTURALLY OBSOLETE (noted 2026-07-26) — this is where a whole-file run currently stops.
--- It counts the RAW external_id band -56999..-1000, which held exactly the 299 v2.15 reps when
--- written. The band now holds 372, every one of them created 2026-06-16..2026-07-07 by LATER
--- phases seeding into the same range. That is the documented band-pollution trap (CLAUDE.md: "new
--- external_id bands can be POLLUTED -> scope via race_candidates joins, not raw band").
--- Do NOT "fix" this by bumping 299 to 372: the expectation would be whatever prod happened to say
--- on the day, and it would drift again on the next seeding phase. The v2.15 batch is no longer
--- recoverable from the band alone; recovering it needs a created_at or provenance filter that this
--- gate never captured. Left failing deliberately, so the obsolescence stays visible.
--- USHR-01a and USHR-05 (including the DC delegate assertion) were verified standalone on
--- 2026-07-26 and both pass.
 DO $$
-DECLARE v INT;
+DECLARE v INT; v_band INT;
 BEGIN
-  SELECT COUNT(*) INTO v FROM essentials.politicians WHERE external_id BETWEEN -56999 AND -1000;
-  IF v <> 299 THEN RAISE EXCEPTION 'USHR-01b FAILED: expected 299 batch reps, found %', v; END IF;
-  RAISE NOTICE 'USHR-01b PASS: 299 batch House reps seeded';
+  SELECT COUNT(*) INTO v FROM _v215_batch;
+  SELECT COUNT(*) INTO v_band FROM essentials.politicians WHERE external_id BETWEEN -56999 AND -1000;
+  IF v <> 299 THEN RAISE EXCEPTION 'USHR-01b FAILED: expected 299 batch reps, found % (raw band holds %)', v, v_band; END IF;
+  RAISE NOTICE 'USHR-01b PASS: 299 batch House reps seeded (raw band now holds % — % seeded by later phases, correctly excluded)', v_band, v_band - v;
 END $$;
 
 -- ===== USHR-02 (a): no orphan politicians (every batch rep has an office) =====
 DO $$
 DECLARE v INT;
 BEGIN
-  SELECT COUNT(*) INTO v FROM essentials.politicians
-   WHERE external_id BETWEEN -56999 AND -1000 AND office_id IS NULL;
-  IF v <> 0 THEN RAISE EXCEPTION 'USHR-02a FAILED: % orphan batch politicians (office_id NULL)', v; END IF;
-  RAISE NOTICE 'USHR-02a PASS: 0 orphan batch politicians';
+  -- "Has an office" now means "is the current holder of one" (ADR 0002). The legacy
+  -- politicians.office_id snapshot still exists but CLAUDE.md says not to read it in new code —
+  -- it is point-in-time and carries the same flaw the dropped offices.politician_id did.
+  SELECT COUNT(*) INTO v FROM _v215_batch b
+   WHERE NOT EXISTS (SELECT 1 FROM essentials.office_current_holder och WHERE och.politician_id = b.id);
+  IF v <> 0 THEN RAISE EXCEPTION 'USHR-02a FAILED: % orphan batch politicians (hold no office)', v; END IF;
+  RAISE NOTICE 'USHR-02a PASS: 0 orphan batch politicians — all 299 are current officeholders';
 END $$;
 
--- ===== USHR-02 (b): pre-existing states untouched (CA=53, VA=11, MA=9) =====
+-- ===== USHR-02 (b): pre-existing states untouched (CA=52, VA=11, MA=9) =====
+-- CA corrected 53 -> 52 on 2026-07-26. California has had 52 House seats since the 2020 census
+-- reapportionment (effective 2022); 53 was its pre-2022 count. Verified this is the database being
+-- right rather than the expectation being loosened: nationally there are exactly 435 state
+-- NATIONAL_LOWER districts + 1 DC = 436, and the four largest delegations are CA 52 / TX 38 /
+-- FL 28 / NY 26 — the 2020 apportionment exactly. Every CA district has exactly 1 office.
+-- Counting offices (not holders) keeps this stable across vacancies: CA-14 is currently vacant,
+-- so CA has 52 offices but only 51 current holders.
 DO $$
 DECLARE v_ca INT; v_va INT; v_ma INT;
 BEGIN
@@ -94,22 +130,20 @@ BEGIN
    WHERE d.district_type='NATIONAL_LOWER' AND LEFT(d.tiger_geoid,2)='51';
   SELECT COUNT(*) INTO v_ma FROM essentials.districts d JOIN essentials.offices o ON o.district_id=d.id
    WHERE d.district_type='NATIONAL_LOWER' AND LEFT(d.tiger_geoid,2)='25';
-  IF v_ca <> 53 OR v_va <> 11 OR v_ma <> 9 THEN
-    RAISE EXCEPTION 'USHR-02b FAILED: CA=% (exp 53), VA=% (exp 11), MA=% (exp 9)', v_ca, v_va, v_ma;
+  IF v_ca <> 52 OR v_va <> 11 OR v_ma <> 9 THEN
+    RAISE EXCEPTION 'USHR-02b FAILED: CA=% (exp 52), VA=% (exp 11), MA=% (exp 9)', v_ca, v_va, v_ma;
   END IF;
-  RAISE NOTICE 'USHR-02b PASS: CA=53, VA=11, MA=9 (pre-existing untouched)';
+  RAISE NOTICE 'USHR-02b PASS: CA=52, VA=11, MA=9 (pre-existing untouched)';
 END $$;
 
 -- ===== USHR-03: party normalization =====
 DO $$
 DECLARE v_dem INT; v_bad INT;
 BEGIN
-  SELECT COUNT(*) INTO v_dem FROM essentials.politicians
-   WHERE external_id BETWEEN -56999 AND -1000 AND party='Democrat';
+  SELECT COUNT(*) INTO v_dem FROM _v215_batch WHERE party='Democrat';
   IF v_dem <> 0 THEN RAISE EXCEPTION 'USHR-03 FAILED: % batch reps with party=''Democrat''', v_dem; END IF;
-  SELECT COUNT(*) INTO v_bad FROM essentials.politicians
-   WHERE external_id BETWEEN -56999 AND -1000
-     AND party NOT IN ('Democratic','Republican','Independent');
+  SELECT COUNT(*) INTO v_bad FROM _v215_batch
+   WHERE party NOT IN ('Democratic','Republican','Independent');
   IF v_bad <> 0 THEN RAISE EXCEPTION 'USHR-03 FAILED: % batch reps with unexpected party value', v_bad; END IF;
   RAISE NOTICE 'USHR-03 PASS: 0 ''Democrat'' rows; all batch parties in (Democratic,Republican,Independent)';
 END $$;
@@ -118,20 +152,25 @@ END $$;
 DO $$
 DECLARE v_photo INT; v_canon INT; v_noncanon_no_img INT;
 BEGIN
-  SELECT COUNT(*) INTO v_photo FROM essentials.politicians
-   WHERE external_id BETWEEN -56999 AND -1000 AND photo_origin_url IS NOT NULL AND photo_origin_url<>'';
+  SELECT COUNT(*) INTO v_photo FROM _v215_batch
+   WHERE photo_origin_url IS NOT NULL AND photo_origin_url<>'';
   IF v_photo <> 299 THEN RAISE EXCEPTION 'USHR-04 FAILED: % of 299 batch reps have a photo', v_photo; END IF;
 
-  SELECT COUNT(*) INTO v_canon FROM essentials.politicians
-   WHERE external_id BETWEEN -56999 AND -1000
-     AND photo_origin_url LIKE 'https://unitedstates.github.io/images/congress/225x275/%';
-  IF v_canon < 290 THEN RAISE EXCEPTION 'USHR-04 FAILED: only % batch reps use canonical congress photo URL', v_canon; END IF;
+  -- The "v_canon >= 290" floor that used to sit here was REMOVED on 2026-07-26. It asserted that
+  -- most batch reps still carry the unitedstates.github.io congress default, and it now reads 246
+  -- of 299 — not because coverage regressed, but because the headshot sweep has been REPLACING
+  -- those defaults with better portraits. The floor penalised the sweep for doing its job, and
+  -- would have kept dropping. What actually matters is that every rep has a working image, which
+  -- the two surviving assertions cover: all 299 carry a photo_origin_url, and every rep who has
+  -- moved off the canonical URL has a politician_images row backing it. The canonical/mirrored
+  -- split is still reported below, as an observation rather than a gate.
+  SELECT COUNT(*) INTO v_canon FROM _v215_batch
+   WHERE photo_origin_url LIKE 'https://unitedstates.github.io/images/congress/225x275/%';
 
   -- Any batch rep not on the canonical URL must have a politician_images row (storage-mirrored fallback)
   SELECT COUNT(*) INTO v_noncanon_no_img
-  FROM essentials.politicians p
-  WHERE p.external_id BETWEEN -56999 AND -1000
-    AND p.photo_origin_url NOT LIKE 'https://unitedstates.github.io/images/congress/225x275/%'
+  FROM _v215_batch p
+  WHERE p.photo_origin_url NOT LIKE 'https://unitedstates.github.io/images/congress/225x275/%'
     AND NOT EXISTS (SELECT 1 FROM essentials.politician_images pi WHERE pi.politician_id = p.id);
   IF v_noncanon_no_img <> 0 THEN
     RAISE EXCEPTION 'USHR-04 FAILED: % non-canonical-photo batch reps lack a politician_images row', v_noncanon_no_img;
