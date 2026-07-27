@@ -87,6 +87,32 @@ const STATE_CONFIG: Record<string, { election: string; geoPrefix: string }> = {
 /** The five severity-routed MO districts, deliberately NOT on the surfacing MO election. */
 const SEVERE_MO_GEO_IDS = ['2902', '2903', '2904', '2905', '2906'];
 
+// -- === MO POST-2026-08-04 FLIP REGION (see 166-mo-flip-runbook.md) ===
+// (The `--` above keeps this delimiter greppable by the same pattern the SQL gates use; this is
+//  a .ts file, so the surrounding `//` is what actually makes it a comment.)
+//
+// MO-5 (2905, the dismantled Cleaver seat) is one of the five severity-routed districts listed
+// in 162-mo-correspondence-audit.md. Its races live on the withheld
+// 'MO 2026 Congressional Redistricting - Polygon Pending' election, which
+// electionService.ts's ELECTION_VISIBILITY_WINDOW never returns — so a resident of a severe MO
+// district correctly sees NO House race at all. This block proves that end-to-end.
+//
+// Plan 164.1-07 resolves the withholding on or after 2026-08-04, and has TWO branches:
+//
+//   MAP-HOLDS branch — the 2026 map survives. The five severe MO races move onto
+//     'MO 2026 Statewide General'. THIS BLOCK MUST THEN CHANGE: the negative sample becomes
+//     FIVE POSITIVE samples (2902, 2903, 2904, 2905, 2906) appended to SAMPLES, SEVERE_MO_GEO_IDS
+//     empties, MIN_DISTRICTS rises from 38 to 43, and the --select MO exclusion is dropped.
+//
+//   REFERENDUM-QUALIFIES branch — the referendum makes the ballot and MO stays withheld for this
+//     cycle. THIS BLOCK NEEDS NO EDIT. It is already asserting the correct world.
+//
+// Until 164.1-07 runs, the negative sample below is the correct assertion in both branches.
+// ============================================================================================
+
+/** MO-5, the dismantled Cleaver seat — the negative sample. */
+const SEVERE_MO_GEO_ID = '2905';
+
 /**
  * One sample per state, chosen from the `--select` run of 2026-07-26: the district with the
  * highest challenger count, preferring an open seat on ties. NOT copied from the 161..165
@@ -298,6 +324,30 @@ async function smokeMode() {
     }
   }
 
+  // ==========================================================================
+  // NEGATIVE sample — see the MO POST-2026-08-04 FLIP REGION comment above.
+  // A coordinate inside severe MO-5 must surface ZERO races on the surfacing election.
+  // ==========================================================================
+  const moPt = await anchorPoint(SEVERE_MO_GEO_ID);
+  if (!moPt) {
+    failures.push(`MO ${SEVERE_MO_GEO_ID}: no NATIONAL_LOWER geofence boundary for the severe negative sample`);
+  } else {
+    const moSurf = await surface(eids.MO, STATE_CONFIG.MO.geoPrefix, moPt.lng, moPt.lat);
+    if (moSurf.rows.length) {
+      failures.push(
+        `MO ${SEVERE_MO_GEO_ID}: severe district surfaced ${moSurf.rows.length} House race(s) on ` +
+          `'${STATE_CONFIG.MO.election}' (expected 0) — withholding has BROKEN: ` +
+          moSurf.rows.map((r) => r.geo_id).join(', ')
+      );
+    } else {
+      console.log(
+        `PASS MO ${SEVERE_MO_GEO_ID} (severe negative sample): coordinate ` +
+          `(${moPt.lat.toFixed(4)},${moPt.lng.toFixed(4)}) surfaced ZERO House races on ` +
+          `${STATE_CONFIG.MO.election} — withholding confirmed end-to-end`
+      );
+    }
+  }
+
   if (failures.length) {
     console.error('FAIL coordinate smoke:\n  ' + failures.join('\n  '));
     process.exit(1);
@@ -309,6 +359,21 @@ async function smokeMode() {
   console.log(
     `\n166 COORDINATE SMOKE GREEN: ${surfaced}/38 states surface their US House race with full challenger-inclusive field`
   );
+
+  // National coverage arithmetic, stated so the milestone claim is checkable rather than
+  // asserted, and naming which gate owns each segment.
+  console.log(`
+NATIONAL COVERAGE — 178 + 144 + 89 + 24 = 435 US House districts
+  178  Wave-3 (v2.22), proven here and by backend/scripts/166-verify.sql
+  144  v2.20 CA/TX/FL/NY, owned by backend/scripts/152-verify.sql
+   89  v2.21 decided states, owned by backend/scripts/158-verify.sql
+  ---
+  411  GATE-PROVEN
+   24  v2.21 MI and VA — SEEDED BUT GATE-PENDING, owned by plan 159-06,
+       date-gated on or after 2026-08-05. These are NOT gate-proven: 158-verify.sql's
+       own header states it must not reference MI or VA.
+  ---
+  435  total US House districts covered`);
   await pool.end();
 }
 
