@@ -2,8 +2,41 @@
 
 **Found:** 2026-07-26, while diagnosing the `essentials.office_current_holder` port (a `1198`
 zero-office district turned up in the ported holder-invariant sweep).
-**Status:** diagnosed, NOT fixed — the fix is a judgment call, see Options.
-**Severity:** user-facing gap for every DC resident. Read-only diagnosis; no writes made.
+**Status:** ✅ **RESOLVED 2026-07-26 — migration 1479, option A (merge onto `1198`), applied to prod.**
+**Severity (was):** user-facing gap for every DC resident.
+
+## Resolution
+
+`backend/migrations/1479_merge_dc_national_lower_into_1198.sql` — dry-run against prod first
+(`BEGIN … ROLLBACK`, revert confirmed), then applied inside an explicit transaction:
+
+- moved the 3 offices (Delegate + both Shadow Senators) from `dc-national-lower` onto `1198`
+- gave `1198` the `District of Columbia` government FK it never had
+- deleted the now-orphaned `dc-national-lower` row, guarded on nothing still referencing it
+
+Verified after apply: a DC coordinate resolves to `1198` with **3 holders** — Eleanor Holmes Norton,
+Ankit Jain, Paul Strauss. Re-running the migration is a clean no-op (`UPDATE 0 / UPDATE 0 /
+DELETE 0`, gate still passes), so it is idempotent. Occupancy was untouched throughout —
+`office_terms` is keyed on `office_id`, not `district_id`, and the post-verify gate asserts all
+three holders survive by name.
+
+Follow-on: `backend/scripts/verify-phase-125-126.sql` updated — its DC assertion now keys on
+`geo_id = '1198'`, its four occupancy references were ported to `office_current_holder`, and its
+known-unlinked set changed from `{1198, 1220, 1313, 4823}` to `{0614, 1220, 1313, 4823}` (1198 is
+now linked; CA-14 went vacant 2026-04-14, after v2.15). USHR-01a and the USHR-05 DC block both
+verified passing. That file's USHR-01b remains deliberately failing — see "Known remaining" below.
+
+**Known remaining (unrelated to DC):** `verify-phase-125-126.sql` USHR-01b asserts the raw
+external_id band `-56999..-1000` holds 299 reps; it now holds 372, all seeded 2026-06-16..07-07 by
+later phases — the documented band-pollution trap. Left failing on purpose rather than bumped to
+372, which would just be re-stating whatever prod says today.
+
+No gate regressed: only `154-verify.sql` and `160-verify.sql` carry `<>1` holder assertions, both
+are FIPS-scoped, and neither includes FIPS 11 — so `1198` now holding 3 offices cannot trip them.
+
+---
+
+*Original diagnosis retained below for the record.*
 
 ## What's wrong
 
