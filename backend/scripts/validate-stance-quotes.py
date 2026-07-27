@@ -84,7 +84,11 @@ SEATED = {
                      "(his Jan-2021 term was Bend City Council)"),
 }
 # Matches OLIS session codes in a URL or in prose: 2023R1, 2024R1, 2019S1 ...
-SESSION_RE = re.compile(r"\b(19|20)(\d{2})\s?([RS])(\d)\b")
+# INVARIANT: group 1 is the full 4-digit year. Sidecar `session_patterns` must
+# honour the same contract (see load_wave_guards) -- the year is read from
+# group 1 alone, so a pattern that splits the century across two groups will
+# silently mis-parse.
+SESSION_RE = re.compile(r"\b((?:19|20)\d{2})\s?[RS]\d\b")
 
 ALLOWED_TOPICS = {
     # wave 6 (local boards)
@@ -100,6 +104,78 @@ ALLOWED_TOPICS = {
 
 REQUIRED_KEYS = {"external_id", "name", "topic_key", "value", "reasoning",
                  "sources", "quote_text"}
+
+# ---------------------------------------------------------------------------
+# Per-wave guards, loaded from a sidecar so a new cohort does not require
+# editing this file. Drop a `_WAVE_GUARDS.json` next to the payload:
+#
+#   {"roster": {"-5506046": "Joan Fitzgerald", ...},
+#    "seated": {"-5506046": [2025, "seated 2025-01-06"], ...},
+#    "allowed_topics": ["abortion", "housing", ...],
+#    "session_patterns": ["/(20\\d{2})/proposals/", "\\b(20\\d{2})\\s+(?:Assembly|Senate)\\s+(?:Bill|Joint Resolution)\\b"]}
+#
+# Absent a sidecar the hard-coded Bend-OR values above still apply, so existing
+# invocations are unchanged. The guards are the whole point of this script --
+# without a roster/topic scope every row trivially "passes".
+# ---------------------------------------------------------------------------
+GUARDS_FILENAME = "_WAVE_GUARDS.json"
+
+
+def load_wave_guards(payload_path: str) -> str | None:
+    """Override ROSTER/SEATED/ALLOWED_TOPICS/SESSION_RE from a sidecar, if present."""
+    global ROSTER, SEATED, ALLOWED_TOPICS, SESSION_RE
+    path = os.path.join(os.path.dirname(os.path.abspath(payload_path)), GUARDS_FILENAME)
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        g = json.load(f)
+    # JSON object keys are strings; external_id is an int everywhere else.
+    ROSTER = {int(k): v for k, v in g["roster"].items()}
+    SEATED = {int(k): (v[0], v[1]) for k, v in (g.get("seated") or {}).items()}
+    ALLOWED_TOPICS = set(g["allowed_topics"])
+    pats = g.get("session_patterns")
+    if pats:
+        # Group 1 of each pattern must be the 4-digit year.
+        SESSION_RE = re.compile("|".join(f"(?:{p})" for p in pats))
+    return path
+
+
+def rows_from_csv(fpath: str) -> list[dict]:
+    """Adapt the agent CSV format to the payload dict shape.
+
+    Agents emit one CSV per batch with source_url_1..3 as separate columns and
+    `full_name` rather than external_id; map the name back through ROSTER so a
+    misspelled name fails the roster check loudly instead of silently.
+    """
+    import csv as _csv
+    name_to_id = {v: k for k, v in ROSTER.items()}
+    out = []
+    with open(fpath, encoding="utf-8-sig", newline="") as f:
+        for r in _csv.DictReader(f):
+            if not (r.get("full_name") or "").strip():
+                continue  # trailing blank line
+            name = r["full_name"].strip()
+            raw_val = (r.get("value") or "").strip()
+            out.append({
+                "external_id": name_to_id.get(name),
+                "name": name,
+                "topic_key": (r.get("topic_key") or "").strip(),
+                "value": int(raw_val) if raw_val.lstrip("-").isdigit() else raw_val,
+                "reasoning": r.get("reasoning") or "",
+                "sources": [(r.get(f"source_url_{i}") or "").strip()
+                            for i in (1, 2, 3)],
+                "quote_text": r.get("quote_text") or "",
+                "quote_deidentified": r.get("quote_deidentified") or "",
+                "editor_note": r.get("editor_note") or "",
+            })
+    return out
+
+
+def load_rows(fpath: str) -> list[dict]:
+    if fpath.lower().endswith(".csv"):
+        return rows_from_csv(fpath)
+    with open(fpath, encoding="utf-8") as f:
+        return json.load(f)
 
 
 def norm(s: str) -> str:
@@ -312,8 +388,13 @@ def main(files: list[str]) -> int:
     for fname in files:
         fpath = resolve_payload(fname)
         print(f"\n{'='*78}\nPAYLOAD  {os.path.basename(fpath)}\n{'='*78}")
-        with open(fpath, encoding="utf-8") as f:
-            rows = json.load(f)
+        guards = load_wave_guards(fpath)
+        # Say which guards are in force. A wave validated against ANOTHER wave's
+        # roster would fail every row on [ROSTER]; silence here is how you would
+        # mistake "wrong guards loaded" for "bad payload".
+        print(f"GUARDS   {guards if guards else 'built-in Bend-OR defaults (no sidecar found)'}"
+              f"  | roster={len(ROSTER)} topics={len(ALLOWED_TOPICS)} seated={len(SEATED)}")
+        rows = load_rows(fpath)
 
         by_person: dict[str, int] = {}
         for i, r in enumerate(rows):
@@ -348,9 +429,21 @@ def main(files: list[str]) -> int:
                 blob = " ".join(srcs) + " " + str(r.get("reasoning", ""))
                 # dedupe: the same session usually appears in both the URL and
                 # the prose, and one row should raise one finding
+                # Group 1 is the 4-digit year by contract; with alternation in a
+                # sidecar pattern, only the matching branch's group is non-None.
+                def _year(m: re.Match) -> int | None:
+                    for g in m.groups():
+                        if g and re.fullmatch(r"(?:19|20)\d{2}", g):
+                            return int(g)
+                    return None
+
+                # Dedupe on the YEAR, not the matched text: the same session
+                # normally appears in both the URL and the prose (and, with
+                # alternation, matches as two different strings), but one row
+                # should still raise exactly one finding.
                 bad_sessions = sorted({
-                    m.group(0) for m in SESSION_RE.finditer(blob)
-                    if int(m.group(1) + m.group(2)) < first_year})
+                    str(_y) for m in SESSION_RE.finditer(blob)
+                    if (_y := _year(m)) is not None and _y < first_year})
                 for sess in bad_sessions:
                     problems.append(
                         f"[PRE-SEATING] {tag}: cites session {sess} but {why} "
