@@ -76,6 +76,12 @@ const ITEM_COLS = `id, meeting_id, position, item_number, title_raw, kind,
   public_comment, public_comment_note, status, outcome,
   segment_start_seconds, segment_end_seconds, continued_from_item_id, source_url`;
 
+// Same columns, ai.-qualified for the detail JOIN (trim strips ITEM_COLS'
+// newlines/indentation).
+const ITEM_COLS_QUALIFIED = ITEM_COLS.split(',')
+  .map((c) => `ai.${c.trim()}`)
+  .join(', ');
+
 function mapAgendaItem(row: AgendaItemRow): AgendaItem {
   return {
     id: row.id,
@@ -118,11 +124,7 @@ export async function getAgendaItemById(
   id: string
 ): Promise<AgendaItemDetail | null> {
   const { rows } = await pool.query<AgendaItemDetailRow>(
-    `SELECT ai.id, ai.meeting_id, ai.position, ai.item_number, ai.title_raw,
-            ai.kind, ai.legislation_ref, ai.summary_plain, ai.decision_plain,
-            ai.stage, ai.public_comment, ai.public_comment_note, ai.status,
-            ai.outcome, ai.segment_start_seconds, ai.segment_end_seconds,
-            ai.continued_from_item_id, ai.source_url,
+    `SELECT ${ITEM_COLS_QUALIFIED},
             m.id AS m_id, m.title AS m_title, m.date::text AS m_date,
             m.city AS m_city, m.status AS m_status, m.starts_at AS m_starts_at,
             m.timezone AS m_timezone

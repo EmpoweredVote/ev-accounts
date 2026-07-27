@@ -89,6 +89,22 @@ describe('getAgendaItemsByMeetingId', () => {
     expect(items[0].outcome).toBe('passed');
   });
 
+  it('coerces a zero segment bound to 0, not null', async () => {
+    mockQuery.mockResolvedValueOnce({
+      rows: [
+        {
+          ...baseItemRow,
+          status: 'happened',
+          segment_start_seconds: '0',
+          segment_end_seconds: '95',
+        },
+      ],
+    });
+    const items = await getAgendaItemsByMeetingId(MEETING_ID);
+    expect(items[0].segmentStartSeconds).toBe(0);
+    expect(items[0].segmentEndSeconds).toBe(95);
+  });
+
   it('returns [] when there are no items', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [] });
     expect(await getAgendaItemsByMeetingId(MEETING_ID)).toEqual([]);
@@ -112,6 +128,10 @@ describe('getAgendaItemById', () => {
       ],
     });
     const detail = await getAgendaItemById(ITEM_ID);
+    const [sql, params] = mockQuery.mock.calls[0];
+    expect(sql).toContain('FROM meetings.agenda_items');
+    expect(sql).toContain('JOIN meetings.meetings');
+    expect(params).toEqual([ITEM_ID]);
     expect(detail?.itemNumber).toBe('6A');
     expect(detail?.meeting).toEqual({
       id: MEETING_ID,
