@@ -6,7 +6,7 @@
 
 state: IN
 state_name: Indiana
-synced_at: 2026-05-30
+synced_at: 2026-07-28
 
 universe:
   state_fips: "18"
@@ -31,7 +31,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 4 }
+    stances: { researched: 9, total: 9 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:in
@@ -47,7 +47,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 2 }
+    stances: { researched: 2, total: 2 }
     last_researched: null
 
   # ── State government (3) ──
@@ -64,7 +64,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 6 }
+    stances: { researched: 1, total: 6 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:in
@@ -80,7 +80,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 12 }
+    stances: { researched: 1, total: 12 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:in
@@ -96,7 +96,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 30 }
+    stances: { researched: 5, total: 28 }
     last_researched: null
 
   # ── Counties (9) ──
@@ -195,7 +195,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 56 }
+    stances: { researched: 2, total: 56 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:in/county:morgan
@@ -420,7 +420,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 11 }
+    stances: { researched: 10, total: 11 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:in/place:ellettsville
@@ -517,9 +517,9 @@ locations:
     donors: none
     candidates: none
     treasury: none
-    populated: true
-    headshots: full
-    stances: { researched: 0, total: 6 }
+    populated: false
+    headshots: none
+    stances: { researched: 0, total: 0 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:in/school_district:martinsville_schools_metropolitan
@@ -545,9 +545,9 @@ locations:
     donors: none
     candidates: none
     treasury: none
-    populated: true
-    headshots: full
-    stances: { researched: 0, total: 6 }
+    populated: false
+    headshots: none
+    stances: { researched: 0, total: 0 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:in/school_district:rbbcsc

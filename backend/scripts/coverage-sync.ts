@@ -97,27 +97,37 @@ async function main(): Promise<void> {
   const lines = fs.readFileSync(file, 'utf8').split('\n');
   let blockIdx = -1;
   let syncedStamped = false;
-  const out = lines.map((line) => {
-    const top = line.match(/^synced_at:\s*.*$/);
-    if (top && !syncedStamped) {
+  const out = lines.map((raw) => {
+    // These files are checked out CRLF on Windows, so every line arrives with a trailing "\r".
+    // Match against the stripped text and re-append the original ending. Two bugs came from not
+    // doing this: the `$`-anchored synced_at regex NEVER matched (JS `.` does not match `\r`, so
+    // `.*$` cannot reach end-of-string), leaving the stamp permanently stale even though the script
+    // reported writing it; and the auto-field replacements below silently dropped the "\r",
+    // leaving the file with mixed line endings.
+    const eol = raw.endsWith('\r') ? '\r' : '';
+    const line = eol ? raw.slice(0, -1) : raw;
+    const keep = () => raw;
+    const put = (s: string) => s + eol;
+
+    if (/^synced_at:/.test(line) && !syncedStamped) {
       syncedStamped = true;
-      return `synced_at: ${today()}`;
+      return put(`synced_at: ${today()}`);
     }
     const ocd = line.match(/^\s*-\s*ocd_id:\s*\S+\s*$/);
     if (ocd) {
       blockIdx += 1;
-      return line;
+      return keep();
     }
-    if (blockIdx < 0) return line;
+    if (blockIdx < 0) return keep();
     const s = stats[blockIdx];
-    if (!s) return line;
+    if (!s) return keep();
     const indent = line.match(/^(\s+)\w/)?.[1] ?? '    ';
-    if (/^\s+populated:/.test(line)) return `${indent}populated: ${s.populated}`;
-    if (/^\s+headshots:/.test(line)) return `${indent}headshots: ${s.headshots}`;
-    if (/^\s+treasury:/.test(line)) return `${indent}treasury: ${treasuryByIndex[blockIdx]}`;
-    if (/^\s+stances:/.test(line)) return `${indent}stances: ${fmtStances(s.stances)}`;
-    if (/^\s+last_researched:/.test(line)) return `${indent}last_researched: ${fmtLast(s.last_researched)}`;
-    return line;
+    if (/^\s+populated:/.test(line)) return put(`${indent}populated: ${s.populated}`);
+    if (/^\s+headshots:/.test(line)) return put(`${indent}headshots: ${s.headshots}`);
+    if (/^\s+treasury:/.test(line)) return put(`${indent}treasury: ${treasuryByIndex[blockIdx]}`);
+    if (/^\s+stances:/.test(line)) return put(`${indent}stances: ${fmtStances(s.stances)}`);
+    if (/^\s+last_researched:/.test(line)) return put(`${indent}last_researched: ${fmtLast(s.last_researched)}`);
+    return keep();
   });
 
   fs.writeFileSync(file, out.join('\n'), 'utf8');

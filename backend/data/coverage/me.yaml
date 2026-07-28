@@ -6,7 +6,7 @@
 
 state: ME
 state_name: Maine
-synced_at: 2026-05-30
+synced_at: 2026-07-28
 
 universe:
   state_fips: "23"
@@ -31,7 +31,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 2 }
+    stances: { researched: 1, total: 2 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:me
@@ -47,7 +47,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 2 }
+    stances: { researched: 2, total: 2 }
     last_researched: null
 
   # ── State government (3) ──
@@ -64,7 +64,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 35 }
+    stances: { researched: 35, total: 35 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:me
@@ -80,7 +80,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 150 }
+    stances: { researched: 150, total: 150 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:me
@@ -96,7 +96,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 7 }
+    stances: { researched: 2, total: 5 }
     last_researched: null
 
   # ── Cities & municipalities (6) ──

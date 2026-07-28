@@ -16,7 +16,7 @@
 
 state: UT
 state_name: Utah
-synced_at: 2026-05-30
+synced_at: 2026-07-28
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Universe — the FULL set of jurisdictions in the state, used to show progress
@@ -83,8 +83,8 @@ locations:
     treasury: none
     populated: true
     headshots: partial
-    stances: { researched: 0, total: 4 }
-    last_researched: null
+    stances: { researched: 4, total: 4 }
+    last_researched: 2026-06-05
 
   - ocd_id: ocd-division/country:us/state:ut
     match: title
@@ -97,9 +97,9 @@ locations:
     donors: none
     candidates: none
     treasury: none
-    populated: false
-    headshots: none
-    stances: { researched: 0, total: 0 }
+    populated: true
+    headshots: full
+    stances: { researched: 2, total: 2 }
     last_researched: null
 
   # ── State government (3) ──
@@ -115,9 +115,9 @@ locations:
     candidates: none
     treasury: none
     populated: true
-    headshots: partial
-    stances: { researched: 0, total: 29 }
-    last_researched: null
+    headshots: full
+    stances: { researched: 29, total: 29 }
+    last_researched: 2026-06-03
 
   - ocd_id: ocd-division/country:us/state:ut
     ocd_kind: sldl
@@ -131,9 +131,9 @@ locations:
     candidates: none
     treasury: none
     populated: true
-    headshots: partial
-    stances: { researched: 0, total: 75 }
-    last_researched: null
+    headshots: full
+    stances: { researched: 75, total: 75 }
+    last_researched: 2026-06-01
 
   - ocd_id: ocd-division/country:us/state:ut
     match: exact
@@ -147,8 +147,8 @@ locations:
     candidates: partial      # 2026 primary candidates seeded for select counties
     treasury: none
     populated: true
-    headshots: partial
-    stances: { researched: 0, total: 7 }
+    headshots: full
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   # ── Counties (10 active) ──────────────────────────────────────────────────
@@ -188,7 +188,7 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: none
     stances: { researched: 0, total: 11 }
@@ -216,11 +216,11 @@ locations:
     geofenced: true
     donors: none
     candidates: partial
-    treasury: none
+    treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 18 }
-    last_researched: null
+    stances: { researched: 6, total: 18 }
+    last_researched: 2026-06-05
 
   - ocd_id: ocd-division/country:us/state:ut/county:summit
     name: Summit County
@@ -258,7 +258,7 @@ locations:
     geofenced: true
     donors: none
     candidates: partial
-    treasury: none
+    treasury: full
     populated: true
     headshots: full
     stances: { researched: 6, total: 11 }
@@ -272,7 +272,7 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: none
     stances: { researched: 0, total: 9 }
@@ -286,7 +286,7 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: none
     stances: { researched: 0, total: 9 }
@@ -301,10 +301,10 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 6 }
+    stances: { researched: 3, total: 6 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ut/place:lehi
@@ -315,10 +315,10 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 6 }
+    stances: { researched: 6, total: 6 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ut/place:ogden
@@ -329,10 +329,10 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 8 }
+    stances: { researched: 4, total: 4 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ut/place:orem
@@ -343,11 +343,11 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: full
     stances: { researched: 7, total: 7 }
-    last_researched: 2026-05-30
+    last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ut/place:provo
     name: Provo
@@ -357,10 +357,10 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 6 }
+    stances: { researched: 3, total: 3 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ut/place:salt_lake_city
@@ -371,11 +371,11 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: partial
-    stances: { researched: 0, total: 7 }
-    last_researched: null
+    stances: { researched: 2, total: 3 }
+    last_researched: 2026-05-31
 
   - ocd_id: ocd-division/country:us/state:ut/place:sandy
     name: Sandy
@@ -385,10 +385,10 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
-    headshots: none
-    stances: { researched: 0, total: 8 }
+    headshots: full
+    stances: { researched: 4, total: 4 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ut/place:st_george
@@ -399,10 +399,10 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 6 }
+    stances: { researched: 5, total: 6 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ut/place:west_jordan
@@ -413,10 +413,10 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
-    headshots: partial
-    stances: { researched: 0, total: 8 }
+    headshots: full
+    stances: { researched: 4, total: 4 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ut/place:west_valley_city
@@ -427,10 +427,10 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 7 }
+    stances: { researched: 3, total: 3 }
     last_researched: null
 
   # ── School districts (17 active) ──────────────────────────────────────────
@@ -515,7 +515,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 7 }
+    stances: { researched: 1, total: 7 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ut/school_district:iron

@@ -6,7 +6,7 @@
 
 state: TX
 state_name: Texas
-synced_at: 2026-05-30
+synced_at: 2026-07-28
 
 universe:
   state_fips: "48"
@@ -31,7 +31,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 37 }
+    stances: { researched: 26, total: 37 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:tx
@@ -47,7 +47,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 2 }
+    stances: { researched: 2, total: 2 }
     last_researched: null
 
   # ── State government (3) ──
@@ -64,7 +64,7 @@ locations:
     treasury: none
     populated: true
     headshots: partial
-    stances: { researched: 0, total: 30 }
+    stances: { researched: 30, total: 31 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:tx
@@ -80,7 +80,7 @@ locations:
     treasury: none
     populated: true
     headshots: partial
-    stances: { researched: 0, total: 150 }
+    stances: { researched: 150, total: 150 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:tx
@@ -96,6 +96,6 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 8 }
+    stances: { researched: 5, total: 7 }
     last_researched: null
 

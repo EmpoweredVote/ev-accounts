@@ -6,7 +6,7 @@
 
 state: CA
 state_name: California
-synced_at: 2026-05-30
+synced_at: 2026-07-28
 
 universe:
   state_fips: "06"
@@ -31,7 +31,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 52 }
+    stances: { researched: 48, total: 50 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca
@@ -47,7 +47,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 2 }
+    stances: { researched: 2, total: 2 }
     last_researched: null
 
   # ── State government (3) ──
@@ -64,7 +64,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 40 }
+    stances: { researched: 40, total: 40 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca
@@ -80,7 +80,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 80 }
+    stances: { researched: 80, total: 80 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca
@@ -96,7 +96,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 20 }
+    stances: { researched: 10, total: 18 }
     last_researched: null
 
   # ── Counties (2) ──
@@ -111,7 +111,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 8 }
+    stances: { researched: 8, total: 8 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/county:orange
@@ -122,7 +122,7 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: full
     stances: { researched: 0, total: 2 }
@@ -152,9 +152,9 @@ locations:
     donors: none
     candidates: none
     treasury: full
-    populated: true
-    headshots: full
-    stances: { researched: 0, total: 3 }
+    populated: false
+    headshots: none
+    stances: { researched: 0, total: 0 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:arcadia
@@ -266,7 +266,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 4 }
+    stances: { researched: 2, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:berkeley
@@ -280,7 +280,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 10 }
+    stances: { researched: 10, total: 10 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:beverly_hills
@@ -294,7 +294,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 4 }
+    stances: { researched: 5, total: 6 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:bradbury
@@ -322,7 +322,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 5 }
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:calabasas
@@ -350,7 +350,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 1 }
+    stances: { researched: 1, total: 3 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:cerritos
@@ -406,7 +406,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 2 }
+    stances: { researched: 1, total: 1 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:covina
@@ -447,8 +447,8 @@ locations:
     candidates: none
     treasury: full
     populated: true
-    headshots: partial
-    stances: { researched: 0, total: 3 }
+    headshots: full
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:diamond_bar
@@ -475,8 +475,8 @@ locations:
     candidates: none
     treasury: full
     populated: true
-    headshots: partial
-    stances: { researched: 0, total: 4 }
+    headshots: full
+    stances: { researched: 3, total: 3 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:duarte
@@ -504,7 +504,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 6 }
+    stances: { researched: 2, total: 4 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:el_segundo
@@ -518,7 +518,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 4 }
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:fremont
@@ -532,7 +532,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 7 }
+    stances: { researched: 7, total: 7 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:gardena
@@ -546,7 +546,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 4 }
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:glendale
@@ -560,7 +560,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 4 }
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:glendora
@@ -601,8 +601,8 @@ locations:
     candidates: none
     treasury: full
     populated: true
-    headshots: partial
-    stances: { researched: 0, total: 4 }
+    headshots: full
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:hermosa_beach
@@ -641,7 +641,7 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: full
     stances: { researched: 0, total: 7 }
@@ -671,8 +671,8 @@ locations:
     candidates: none
     treasury: full
     populated: true
-    headshots: partial
-    stances: { researched: 0, total: 6 }
+    headshots: full
+    stances: { researched: 3, total: 4 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:irwindale
@@ -739,7 +739,7 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: full
     stances: { researched: 0, total: 4 }
@@ -797,8 +797,8 @@ locations:
     candidates: none
     treasury: full
     populated: true
-    headshots: partial
-    stances: { researched: 0, total: 5 }
+    headshots: full
+    stances: { researched: 4, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:lawndale
@@ -840,7 +840,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 9 }
+    stances: { researched: 12, total: 13 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:los_alamitos
@@ -851,7 +851,7 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: full
     stances: { researched: 0, total: 4 }
@@ -868,7 +868,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 18 }
+    stances: { researched: 18, total: 18 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:lynwood
@@ -980,7 +980,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 5 }
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:palmdale
@@ -994,7 +994,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 4 }
+    stances: { researched: 3, total: 4 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:palos_verdes_estates
@@ -1036,7 +1036,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 7 }
+    stances: { researched: 7, total: 7 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:pico_rivera
@@ -1063,8 +1063,8 @@ locations:
     candidates: none
     treasury: full
     populated: true
-    headshots: partial
-    stances: { researched: 0, total: 6 }
+    headshots: full
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:rancho_palos_verdes
@@ -1148,7 +1148,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 9 }
+    stances: { researched: 9, total: 9 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:san_diego
@@ -1162,7 +1162,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 11 }
+    stances: { researched: 11, total: 11 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:san_dimas
@@ -1204,7 +1204,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 20 }
+    stances: { researched: 19, total: 20 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:san_gabriel
@@ -1229,10 +1229,10 @@ locations:
     geofenced: true
     donors: none
     candidates: none
-    treasury: none
+    treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 11 }
+    stances: { researched: 11, total: 11 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:san_marino
@@ -1260,7 +1260,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 5 }
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:santa_fe_springs
@@ -1287,8 +1287,8 @@ locations:
     candidates: none
     treasury: full
     populated: true
-    headshots: partial
-    stances: { researched: 0, total: 6 }
+    headshots: full
+    stances: { researched: 7, total: 7 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:sierra_madre
@@ -1344,7 +1344,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 4 }
+    stances: { researched: 4, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:south_pasadena
@@ -1386,7 +1386,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 8 }
+    stances: { researched: 6, total: 6 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:vernon
@@ -1428,7 +1428,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 5 }
+    stances: { researched: 4, total: 4 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:west_hollywood
@@ -1441,8 +1441,8 @@ locations:
     candidates: none
     treasury: full
     populated: true
-    headshots: partial
-    stances: { researched: 0, total: 4 }
+    headshots: full
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:westlake_village
@@ -1469,8 +1469,8 @@ locations:
     candidates: none
     treasury: full
     populated: true
-    headshots: none
-    stances: { researched: 0, total: 4 }
+    headshots: full
+    stances: { researched: 1, total: 1 }
     last_researched: null
 
   # ── School districts (79) ──
@@ -1512,8 +1512,8 @@ locations:
     candidates: none
     treasury: none
     populated: true
-    headshots: partial
-    stances: { researched: 0, total: 5 }
+    headshots: none
+    stances: { researched: 0, total: 4 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/school_district:antelope_valley

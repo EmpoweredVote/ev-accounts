@@ -6,7 +6,7 @@
 
 state: MA
 state_name: Massachusetts
-synced_at: 2026-05-30
+synced_at: 2026-07-28
 
 universe:
   state_fips: "25"
@@ -31,7 +31,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 9 }
+    stances: { researched: 9, total: 9 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ma
@@ -47,7 +47,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 2 }
+    stances: { researched: 2, total: 2 }
     last_researched: null
 
   # ── State government (3) ──
@@ -64,7 +64,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 40 }
+    stances: { researched: 40, total: 40 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ma
@@ -80,7 +80,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 158 }
+    stances: { researched: 157, total: 158 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ma
@@ -96,7 +96,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 0, total: 9 }
+    stances: { researched: 7, total: 7 }
     last_researched: null
 
   # ── Cities & municipalities (1) ──
@@ -111,6 +111,6 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 0, total: 16 }
+    stances: { researched: 10, total: 10 }
     last_researched: null
 
