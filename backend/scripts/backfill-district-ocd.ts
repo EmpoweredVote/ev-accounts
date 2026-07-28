@@ -241,6 +241,22 @@ async function main(): Promise<void> {
       }
       const ward = resolveWard(geoId, xNameByGeo.get(geoId), abbr);
       if (!ward) { p.skipped.push({ d, reason: `no G4110 place + unparseable ward layer for geo_id=${geoId}` }); continue; }
+      // A COUNTY board typed as LOCAL is not a place. resolveWard matches "council|supervisor",
+      // and "supervisor" is county-board terminology, so "Pima County Supervisor District 1"
+      // (geo_id pima-az-supervisor-district-1) resolved to place:pima — but Pima is a county.
+      // Emit the county form instead, matching the county precedent already in the data
+      // (county:los_angeles/council_district:1, county:salt_lake/council_district:2).
+      // Keyed on the LABEL naming a county, which correctly excludes San Francisco: its board of
+      // supervisors IS the city council of a consolidated city-county, its labels are bare
+      // ("District 1"), and place:san_francisco is right for it.
+      const countyName = (d.label ?? '').match(/^(.+?)\s+County\b/i)?.[1];
+      if (countyName) {
+        p.resolved.push({
+          d,
+          ocd: `ocd-division/country:us/state:${abbr}/county:${plainSlug(countyName)}/council_district:${ward.ward}`,
+        });
+        continue;
+      }
       p.resolved.push({ d, ocd: `ocd-division/country:us/state:${abbr}/place:${ward.place}/ward:${ward.ward}` });
       continue;
     }
