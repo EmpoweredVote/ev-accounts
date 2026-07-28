@@ -25,7 +25,7 @@ vi.mock('./informBoundaryService.js', () => ({
   getCountyNames: mockGetCountyNames,
 }));
 
-import { getPlayableRaces, deriveTierScope, deriveOfficeSeat, getRaceBlindQuotes } from './readrankService.js';
+import { getPlayableRaces, deriveTierScope, deriveOfficeSeat, getRaceBlindQuotes, computeRaceMatch } from './readrankService.js';
 import type { JurisdictionGeoIds } from './essentialsService.js';
 
 // getPlayableRaces now returns { races, counties }. Existing array-style assertions
@@ -713,6 +713,32 @@ describe('deriveOfficeSeat', () => {
       positionName: 'Monroe County Commissioner – District 2', districtLabel: null,
       districtType: 'COUNTY', state: 'IN',
     })).toEqual({ office: 'Monroe County Commissioner', seat: 'District 2' });
+  });
+});
+
+describe('computeRaceMatch — office title via current_office_holders (migration 1463)', () => {
+  it('resolves the office title through the current_office_holders view, not the dropped offices.politician_id column', async () => {
+    mockQuery.mockResolvedValueOnce({
+      rows: [{
+        quote_id: 'q1', politician_id: 'p1', topic_key: 'housing', deidentified_text: 'Build more homes.',
+        source_name: null, source_url: null, full_name: 'Alex Doe', photo: null,
+        office_title: 'State Senator', topic_title: 'Housing', position_name: 'Governor',
+      }],
+    });
+
+    const result = await computeRaceMatch('race-1', [{ quote_id: 'q1', supported: true, rank: 1 }]);
+
+    expect(result).not.toBeNull();
+    expect(result!.positionName).toBe('Governor');
+    expect(result!.ballot[0]).toMatchObject({ candidateId: 'p1', name: 'Alex Doe', office: 'State Senator' });
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    // 1463 dropped essentials.offices.politician_id — occupancy must resolve through the view.
+    expect(sql).toContain('essentials.current_office_holders');
+    expect(sql).toMatch(/coh\.politician_id\s*=\s*p\.id/);
+    // The pre-1463 shape: an unqualified politician_id filter directly on essentials.offices
+    // (42702 ambiguous / 42703 undefined against the live schema).
+    expect(sql).not.toMatch(/essentials\.offices\s+WHERE\s+politician_id/i);
   });
 });
 

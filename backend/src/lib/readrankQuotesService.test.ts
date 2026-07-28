@@ -8,7 +8,7 @@ const { mockQuery, mockConnect, mockClientQuery, mockRelease } = vi.hoisted(() =
 }));
 vi.mock('./db.js', () => ({ pool: { query: mockQuery, connect: mockConnect } }));
 
-import { listReadrankQuotes, selectReadrankQuote, clearReadrankSelection, updateReadrankQuote, deleteReadrankQuote } from './readrankQuotesService.js';
+import { listReadrankPoliticians, listReadrankQuotes, selectReadrankQuote, clearReadrankSelection, updateReadrankQuote, deleteReadrankQuote } from './readrankQuotesService.js';
 
 beforeEach(() => {
   mockQuery.mockReset();
@@ -16,6 +16,25 @@ beforeEach(() => {
   mockRelease.mockReset();
   mockConnect.mockReset();
   mockConnect.mockResolvedValue({ query: mockClientQuery, release: mockRelease });
+});
+
+describe('listReadrankPoliticians', () => {
+  it('maps rows and resolves the office title via current_office_holders (migration 1463)', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [
+      { id: 'p1', name: 'Alex Doe', office_title: 'Mayor', state: 'IN', quote_count: '4', selected_count: '2' },
+    ] });
+    const out = await listReadrankPoliticians();
+    expect(out).toEqual([
+      { id: 'p1', name: 'Alex Doe', officeTitle: 'Mayor', state: 'IN', quoteCount: 4, selectedCount: 2 },
+    ]);
+
+    const sql = String(mockQuery.mock.calls[0][0]);
+    // 1463 dropped essentials.offices.politician_id — occupancy must resolve through the view.
+    expect(sql).toContain('essentials.current_office_holders');
+    expect(sql).toMatch(/coh\.politician_id\s*=\s*p\.id/);
+    // The pre-1463 shape: an unqualified politician_id filter directly on essentials.offices.
+    expect(sql).not.toMatch(/essentials\.offices\s+WHERE\s+politician_id/i);
+  });
 });
 
 describe('listReadrankQuotes', () => {
