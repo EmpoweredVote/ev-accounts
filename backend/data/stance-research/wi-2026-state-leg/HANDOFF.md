@@ -53,15 +53,57 @@ uncommitted work, no stance rows added beyond the 22 pre-existing Madison-delega
 candidates) is the only time-boxed piece; after Aug 11 the field shrinks to the general and the
 pre-primary window is simply gone. Everything else here is not date-gated.
 
+## CALIBRATION BATCH DONE — 2026-07-28
+
+8 more bills adjudicated to measure whether the incumbent roll-call route is worth a full pass
+before committing to it. **3 of 12 roll calls usable — a 25% survival rate** — but the yield per
+bill is high, because one chair-shaped bill pins a chair for **every Yes voter at once**:
+
+| bill | roll calls | topic | verdict |
+|---|---|---|---|
+| AJR 102 | av0137, sv0140 | civil-rights | **Yes → chair 5** |
+| AB 840 | av0182 | data-centers | **Yes → chair 2** |
+
+Those alone yield **125 stance rows across 74 of 132 legislators**, ~12.5 rows per bill read.
+
+**The predictive rule.** A bill is chair-shaped when its ENTIRE PURPOSE is to set a posture on the
+topic — constitutional amendments and comprehensive regulatory frameworks. Both survivors are that
+shape. All nine failures are narrow provisions, sentencing enhancements, definitional carve-outs, or
+administrative omnibuses, even when squarely on-topic.
+
+**Three systematic dead ends** (full reasoning in `wi-rollcall-adjudications.json`):
+
+1. **Narrow tax bills cannot pin the `taxes` chair.** That scale measures overall tax-and-spend
+   posture; a cash-tips exemption fails chair 4's "for everyone AND scale back services" and fails
+   chair 3's "close unfair loopholes". Likely disqualifies most of the 16-row taxes bucket, the
+   largest topic in the pool.
+2. **State bills on immigration are structurally unwinnable.** `immigration` chairs 4/5 and
+   `deportation` chair 4 all lead with a legal-immigration-levels clause no state legislature can
+   act on, so two adjacent chairs always fit equally on the surviving clause.
+3. **Keyword triage finds topical WORDS, not AXES.** 3 of 8 were on the wrong axis entirely — a
+   gender-transition medical ban on the trans-athletes SPORTS scale, a drug-sentencing enhancement
+   on the homelessness PUBLIC-CAMPING scale. **Re-decide the topic at adjudication, never inherit
+   it.**
+
+Also added 4 procedural patterns the classifier missed (`REFER TO COMMITTEE`, `LAY ON TABLE`,
+`SUSPENSION OF A RULE`, `SERGEANT AT ARMS`), correctly removing 7 rows. **Pool is now 41, with 29
+left to adjudicate.**
+
 ## Open questions on resume
 
-1. Wave 1 scope: "all 60 candidates, thin" or "the 6 contested incumbent races, deep"?
-   44 of the 60 are challengers with no voting record.
-2. Who does the **45 remaining bill adjudications** (3 of 48 done) — that is the gate before any
-   agent work starts. `ADJUDICATION_LOG.md` is the worked template; both examples so far came out
-   unusable, so keep the yield estimate conservative.
-3. Optional quality follow-up: 76 of the 132 headshots came from a 150×200 source and are visibly
+1. **Push the 125 rows from the 2 usable bills?** Nothing is written yet. This is the cheapest real
+   stance coverage available: 74 of 132 legislators get a first chair, sourced to a named
+   chair-shaped bill and their own recorded vote. Would go as a tracked `push_*.sql` in this dir.
+2. **Continue adjudicating the remaining 29?** Skip the taxes bucket first given dead end #1 — that
+   is most of what remains, so realistic additional yield is low. Prioritise constitutional
+   amendments and comprehensive frameworks, which is where both survivors came from.
+3. Wave 1 scope: "all 60 candidates, thin" or "the 6 contested incumbent races, deep"? 44 of the 60
+   are challengers with no voting record. **Note the Aug 11 primary has likely passed by the time
+   this is read — re-check before planning around it.**
+4. Optional quality follow-up: 76 of the 132 headshots came from a 150×200 source and are visibly
    softer. Sharpening them means a per-member portrait hunt with the same visual review loop.
+   Pipeline is now tracked: `scripts/seed-wi-legislature-headshots.py` +
+   `scripts/verify-wi-headshot-person-match.mjs`.
 
 ## Files
 
