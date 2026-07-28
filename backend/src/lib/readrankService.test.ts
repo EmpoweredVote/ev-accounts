@@ -717,7 +717,10 @@ describe('deriveOfficeSeat', () => {
 });
 
 describe('computeRaceMatch — office title via current_office_holders (migration 1463)', () => {
-  it('resolves the office title through the current_office_holders view, not the dropped offices.politician_id column', async () => {
+  // Title deliberately avoids spelling the dropped column as <alias>.politician_id:
+  // check-office-occupancy.mjs scans whole changed files and strips comments but not
+  // string literals, so the literal form in a test name reads as a live violation.
+  it('resolves the office title through the current_office_holders view, not the politician_id column dropped from essentials.offices', async () => {
     mockQuery.mockResolvedValueOnce({
       rows: [{
         quote_id: 'q1', politician_id: 'p1', topic_key: 'housing', deidentified_text: 'Build more homes.',
@@ -761,5 +764,93 @@ describe('getRaceBlindQuotes — resolved ranking question (override ?? compass)
     const sql = mockQuery.mock.calls[0][0] as string;
     expect(sql).toContain('essentials.readrank_race_topic_questions');
     expect(sql).toMatch(/COALESCE\(\s*rtq\.question_text\s*,\s*ct\.question_text\s*\)/);
+  });
+});
+
+describe('computeRaceMatch — candidates you judged but never agreed with', () => {
+  // Two candidates on one topic. The SQL only returns quotes whose ids were
+  // submitted, so which of these the user judged is controlled by the verdicts.
+  const rows = [
+    {
+      quote_id: 'q1', politician_id: 'p1', topic_key: 'housing', deidentified_text: 'Build more homes.',
+      source_name: 'Debate', source_url: 'https://example.com/debate', full_name: 'Alex Doe', photo: null,
+      office_title: 'State Senator', topic_title: 'Housing', position_name: 'Governor',
+    },
+    {
+      quote_id: 'q2', politician_id: 'p2', topic_key: 'housing', deidentified_text: 'Build fewer homes.',
+      source_name: 'Townhall', source_url: 'https://example.com/townhall', full_name: 'Blair Roe', photo: null,
+      office_title: 'Council Member', topic_title: 'Housing', position_name: 'Governor',
+    },
+  ];
+
+  it('puts a candidate you only disagreed with on the ballot, unranked, after the ranked ones', async () => {
+    mockQuery.mockResolvedValueOnce({ rows });
+
+    const result = await computeRaceMatch('race-1', [
+      { quote_id: 'q1', supported: true, rank: 1 },
+      { quote_id: 'q2', supported: false, rank: null },
+    ]);
+
+    expect(result!.ballot).toHaveLength(2);
+    expect(result!.ballot[0]).toMatchObject({ candidateId: 'p1', rank: 1 });
+    expect(result!.ballot[1]).toMatchObject({ candidateId: 'p2', rank: null });
+    expect(result!.ballot[1].evidence).toEqual({
+      agreementCount: 0, firstPlaceCount: 0, topicsWithAgreement: 0,
+    });
+  });
+
+  it('still carries the unranked candidate\'s quotes and provenance', async () => {
+    mockQuery.mockResolvedValueOnce({ rows });
+
+    const result = await computeRaceMatch('race-1', [
+      { quote_id: 'q1', supported: true, rank: 1 },
+      { quote_id: 'q2', supported: false, rank: null },
+    ]);
+
+    const unranked = result!.ballot.find((e) => e.rank === null)!;
+    expect(unranked.perTopic).toHaveLength(1);
+    expect(unranked.perTopic[0].quotes).toEqual([
+      expect.objectContaining({
+        quoteId: 'q2', supported: false, rank: null,
+        sourceName: 'Townhall', sourceUrl: 'https://example.com/townhall',
+      }),
+    ]);
+    // Nobody won a topic the user agreed with nothing on for this candidate.
+    expect(unranked.perTopic[0].userTopWinner).toBe(false);
+  });
+
+  it('returns every judged candidate unranked when nothing was agreed', async () => {
+    mockQuery.mockResolvedValueOnce({ rows });
+
+    const result = await computeRaceMatch('race-1', [
+      { quote_id: 'q1', supported: false, rank: null },
+      { quote_id: 'q2', supported: false, rank: null },
+    ]);
+
+    expect(result!.ballot).toHaveLength(2);
+    expect(result!.ballot.every((e) => e.rank === null)).toBe(true);
+    expect(result!.ballot.every((e) => e.evidence.agreementCount === 0)).toBe(true);
+  });
+
+  it('leaves out candidates the user never judged', async () => {
+    mockQuery.mockResolvedValueOnce({ rows });
+
+    const result = await computeRaceMatch('race-1', [{ quote_id: 'q1', supported: true, rank: 1 }]);
+
+    expect(result!.ballot).toHaveLength(1);
+    expect(result!.ballot[0].candidateId).toBe('p1');
+  });
+
+  it('orders the unranked tail deterministically, not by row order', async () => {
+    // The reveal SQL has no ORDER BY, so row order is not guaranteed stable
+    // across identical requests. Reversing it must not reshuffle the ballot.
+    mockQuery.mockResolvedValueOnce({ rows: [...rows].reverse() });
+
+    const result = await computeRaceMatch('race-1', [
+      { quote_id: 'q1', supported: false, rank: null },
+      { quote_id: 'q2', supported: false, rank: null },
+    ]);
+
+    expect(result!.ballot.map((e) => e.name)).toEqual(['Alex Doe', 'Blair Roe']);
   });
 });

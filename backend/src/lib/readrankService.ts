@@ -81,7 +81,10 @@ export interface VerdictInput {
 }
 
 export interface BallotEntry {
-  rank: number;
+  /** 1-based rank, or null when the user judged this candidate but never agreed
+   *  with any of their quotes. Ranking is something a candidate has, not the
+   *  price of appearing on the reveal. */
+  rank: number | null;
   candidateId: string;
   party: string;
   name: string;
@@ -649,15 +652,24 @@ export async function computeRaceMatch(
     }
   }
 
-  // Only candidates the user agreed with at least once appear on the ballot.
-  const ranked = [...aggs.values()]
+  // Every candidate the user judged appears, whether or not they ranked them.
+  // Agreements still decide rank and order; a candidate you only disagreed with
+  // comes back unranked rather than vanishing from the reveal entirely.
+  const all = [...aggs.values()];
+  const ranked = all
     .filter((a) => a.agreementCount > 0)
     .sort((x, y) => y.score - x.score || y.agreementCount - x.agreementCount || y.firstPlaceCount - x.firstPlaceCount || x.name.localeCompare(y.name));
+  // Sorted by name rather than left in query order: the SELECT above has no
+  // ORDER BY, so insertion order isn't stable across identical requests, and an
+  // unstable tail would reshuffle the reveal cascade on a retry.
+  const unranked = all
+    .filter((a) => a.agreementCount === 0)
+    .sort((x, y) => x.name.localeCompare(y.name));
 
-  const ballot: BallotEntry[] = ranked.map((a, i) => {
+  const toEntry = (a: Agg, rank: number | null): BallotEntry => {
     for (const pt of a.perTopic.values()) pt.userTopWinner = topicBest[pt.topicKey]?.pid === a.politicianId;
     const entry: BallotEntry = {
-      rank: i + 1,
+      rank,
       candidateId: a.politicianId,
       party: '', // antipartisan — party intentionally not transmitted
       name: a.name,
@@ -673,7 +685,12 @@ export async function computeRaceMatch(
     };
     if (exposeScore) entry.score = a.score;
     return entry;
-  });
+  };
+
+  const ballot: BallotEntry[] = [
+    ...ranked.map((a, i) => toEntry(a, i + 1)),
+    ...unranked.map((a) => toEntry(a, null)),
+  ];
 
   return { raceId, positionName, ballot };
 }
