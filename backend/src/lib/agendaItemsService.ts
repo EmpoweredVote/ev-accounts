@@ -29,6 +29,30 @@ export interface AgendaItem {
   sourceUrl: string;
 }
 
+export interface AgendaItemVoteRecord {
+  position: string;
+  name: string | null;
+  politicianId: string | null;
+}
+
+export interface AgendaItemVote {
+  id: string;
+  resolution: string | null;
+  description: string | null;
+  result: string;
+  voteType: string | null;
+  timestamp: number | null;
+  records: AgendaItemVoteRecord[];
+}
+
+export interface AgendaItemSpeaker {
+  name: string;
+  politicianId: string | null;
+  role: string | null;
+  firstSpokeSeconds: number;
+  segmentCount: number;
+}
+
 export interface AgendaItemDetail extends AgendaItem {
   meeting: {
     id: string;
@@ -39,6 +63,19 @@ export interface AgendaItemDetail extends AgendaItem {
     startsAt: string | null;
     timezone: string | null;
   };
+  // Roll-call votes hung off this item (votes.agenda_item_id — written by the
+  // clerk-memo reconciler). Empty until reconciliation runs for the meeting.
+  votes: AgendaItemVote[];
+  // People who spoke within the item's segment span. Empty until the video
+  // pass binds segment bounds (and for items the alignment abstained on).
+  speakers: AgendaItemSpeaker[];
+  // Minimal pointer to the prior appearance of the same matter
+  // (continued_from_item_id — the matter-tracking seed).
+  continuedFrom: {
+    id: string;
+    itemNumber: string;
+    meetingDate: string;
+  } | null;
 }
 
 interface AgendaItemRow {
@@ -70,6 +107,33 @@ interface AgendaItemDetailRow extends AgendaItemRow {
   m_status: string;
   m_starts_at: string | Date | null; // pg returns timestamptz as Date
   m_timezone: string | null;
+  cf_id: string | null;
+  cf_item_number: string | null;
+  cf_meeting_date: string | null;
+}
+
+interface ItemVoteRow {
+  id: string;
+  resolution: string | null;
+  description: string | null;
+  result: string;
+  vote_type: string | null;
+  timestamp: string | number | null;
+}
+
+interface ItemVoteRecordRow {
+  vote_id: string;
+  position: string;
+  name: string | null;
+  politician_id: string | null;
+}
+
+interface ItemSpeakerRow {
+  name: string;
+  politician_id: string | null;
+  role: string | null;
+  first_spoke_seconds: string | number;
+  segment_count: string | number;
 }
 
 const ITEM_COLS = `id, meeting_id, position, item_number, title_raw, kind,
@@ -121,6 +185,89 @@ export async function getAgendaItemsByMeetingId(
   return rows.map(mapAgendaItem);
 }
 
+// Roll-call votes attached to the item, each with its per-member records.
+// Member names resolve through the meeting's speaker rows (display_name, or
+// the local_people roster name); politician_id links members to /people pages.
+async function getVotesByAgendaItemId(itemId: string): Promise<AgendaItemVote[]> {
+  const { rows: voteRows } = await pool.query<ItemVoteRow>(
+    `SELECT id, resolution, description, result, vote_type, timestamp
+     FROM meetings.votes
+     WHERE agenda_item_id = $1
+     ORDER BY timestamp ASC NULLS LAST, created_at ASC`,
+    [itemId]
+  );
+  if (voteRows.length === 0) return [];
+
+  const { rows: recordRows } = await pool.query<ItemVoteRecordRow>(
+    `SELECT vr.vote_id, vr.position,
+            COALESCE(sp.display_name, lp.name) AS name,
+            sp.politician_id
+     FROM meetings.vote_records vr
+     JOIN meetings.speakers sp ON sp.id = vr.speaker_id
+     LEFT JOIN meetings.local_people lp ON lp.slug = sp.local_slug
+     WHERE vr.vote_id = ANY($1)
+     ORDER BY name ASC NULLS LAST`,
+    [voteRows.map((v) => v.id)]
+  );
+
+  const recordsByVoteId = new Map<string, AgendaItemVoteRecord[]>();
+  for (const r of recordRows) {
+    const mapped: AgendaItemVoteRecord = {
+      position: r.position,
+      name: r.name ?? null,
+      politicianId: r.politician_id ?? null,
+    };
+    const existing = recordsByVoteId.get(r.vote_id);
+    if (existing) existing.push(mapped);
+    else recordsByVoteId.set(r.vote_id, [mapped]);
+  }
+
+  return voteRows.map((v) => ({
+    id: v.id,
+    resolution: v.resolution ?? null,
+    description: v.description ?? null,
+    result: v.result,
+    voteType: v.vote_type ?? null,
+    timestamp: v.timestamp == null ? null : Number(v.timestamp),
+    records: recordsByVoteId.get(v.id) ?? [],
+  }));
+}
+
+// Named people who spoke within [startSeconds, endSeconds) of the item's
+// meeting, first-appearance order. Unnamed diarized speakers (no display_name
+// and no roster name) are omitted — labels like SPEAKER_07 are pipeline
+// internals, not a citizen-facing record.
+async function getSpeakersInSpan(
+  meetingId: string,
+  startSeconds: number,
+  endSeconds: number
+): Promise<AgendaItemSpeaker[]> {
+  const { rows } = await pool.query<ItemSpeakerRow>(
+    `SELECT COALESCE(sp.display_name, lp.name) AS name,
+            sp.politician_id,
+            lp.role AS role,
+            MIN(s.start_time) AS first_spoke_seconds,
+            COUNT(*) AS segment_count
+     FROM meetings.segments s
+     JOIN meetings.speakers sp ON sp.id = s.speaker_id
+     LEFT JOIN meetings.local_people lp ON lp.slug = sp.local_slug
+     WHERE s.meeting_id = $1
+       AND s.start_time >= $2
+       AND s.start_time < $3
+       AND COALESCE(sp.display_name, lp.name) IS NOT NULL
+     GROUP BY sp.id, sp.display_name, lp.name, lp.role, sp.politician_id
+     ORDER BY first_spoke_seconds ASC`,
+    [meetingId, startSeconds, endSeconds]
+  );
+  return rows.map((r) => ({
+    name: r.name,
+    politicianId: r.politician_id ?? null,
+    role: r.role ?? null,
+    firstSpokeSeconds: Number(r.first_spoke_seconds),
+    segmentCount: Number(r.segment_count),
+  }));
+}
+
 export async function getAgendaItemById(
   id: string
 ): Promise<AgendaItemDetail | null> {
@@ -128,16 +275,34 @@ export async function getAgendaItemById(
     `SELECT ${ITEM_COLS_QUALIFIED},
             m.id AS m_id, m.title AS m_title, m.date::text AS m_date,
             m.city AS m_city, m.status AS m_status, m.starts_at AS m_starts_at,
-            m.timezone AS m_timezone
+            m.timezone AS m_timezone,
+            cf.id AS cf_id, cf.item_number AS cf_item_number,
+            cfm.date::text AS cf_meeting_date
      FROM meetings.agenda_items ai
      JOIN meetings.meetings m ON m.id = ai.meeting_id
+     LEFT JOIN meetings.agenda_items cf ON cf.id = ai.continued_from_item_id
+     LEFT JOIN meetings.meetings cfm ON cfm.id = cf.meeting_id
      WHERE ai.id = $1`,
     [id]
   );
   if (rows.length === 0) return null;
   const row = rows[0];
+  const item = mapAgendaItem(row);
+
+  // Sequential on purpose: the speaker query needs the item's segment bounds,
+  // and a permalink page tolerates two short extra round-trips.
+  const votes = await getVotesByAgendaItemId(id);
+  const speakers =
+    item.segmentStartSeconds != null && item.segmentEndSeconds != null
+      ? await getSpeakersInSpan(
+          item.meetingId,
+          item.segmentStartSeconds,
+          item.segmentEndSeconds
+        )
+      : [];
+
   return {
-    ...mapAgendaItem(row),
+    ...item,
     meeting: {
       id: row.m_id,
       title: row.m_title ?? null,
@@ -151,5 +316,15 @@ export async function getAgendaItemById(
       // original offset, so the UI needs this to render starts_at meeting-local.
       timezone: row.m_timezone ?? null,
     },
+    votes,
+    speakers,
+    continuedFrom:
+      row.cf_id != null && row.cf_item_number != null && row.cf_meeting_date != null
+        ? {
+            id: row.cf_id,
+            itemNumber: row.cf_item_number,
+            meetingDate: row.cf_meeting_date,
+          }
+        : null,
   };
 }
