@@ -177,8 +177,9 @@ flagged "universe size unknown" instead of showing a wrong fraction.
 
 ## State of the tracker — 2026-07-28
 
-**12 states, 394 locations, all synced 2026-07-28.** Previously 7 states / 290, last synced
-2026-05-30. New files this pass: `wi`, `az`, `nv`, `md`, `va`.
+**12 states, 393 locations, all synced 2026-07-28.** Previously 7 states / 290, last synced
+2026-05-30. New files this pass: `wi`, `az`, `nv`, `md`, `va`. (394 → 393 when `in.yaml` was
+re-initialised later the same day — see the IN SCHOOL note below; it is a fold, not a loss.)
 
 ### Four things in this toolchain were broken and are now fixed
 
@@ -229,26 +230,72 @@ were caught this way, and one false alarm avoided:
 - **166 LOCAL/LOCAL_EXEC districts unmapped.** All are `--type LOCAL` skips: no G4110 place geofence
   and an unparseable ward layer. Needs geofence work, not this script. Includes 4 WI towns
   (Burlington, Dover, Norway, Waterford) which are MCDs with 10-digit geo_ids.
-- **SCHOOL tier untouched: 31 resolvable / 204 officials, 7 skipped.** Not yet reviewed for slug
-  sanity — do that first, per above.
-- **IN lost 2 rows and it is not a data loss.** `in.yaml` regenerates to 35 vs its committed 38.
-  One is the `U.S. Senate` row folding into the combined statewide row. The other two are
-  Indianapolis Public Schools and MCCSC, whose **per-seat sub-districts were consolidated into one
-  parent district per school corporation** — the 14 officials are all still seated, but the parents
-  have `ocd_id = NULL` so `coverage-init` cannot discover them.
-  Fix: `backfill-district-ocd.ts --type SCHOOL --state in` (2 resolvable, 0 skipped, 14 politicians).
-  Note the slug becomes `monroe_county_community_school_corporation` where the old file had the
-  `SCHOOL_ALIAS` abbreviation `mccsc`.
-- **`in.yaml` was left synced-only, never re-initialised**, so it still carries the old 38 rows.
+- **SCHOOL tier: IN done, ~29 resolvable / ~190 officials left in other states.** Still not reviewed
+  for slug sanity outside IN — do that first, per above.
+
+#### IN SCHOOL + `in.yaml` re-init — DONE 2026-07-28
+
+`backfill-district-ocd.ts --type SCHOOL --state in --write` resolved 2 districts / 14 politicians
+(0 skipped), then `coverage-init --state in --write` + `coverage-sync --state in`. IN is **38 rows**,
+and its school tier reads **24 officials across 5 rows, all complete** (IPS 7/7, MCCSC 7/7) —
+verified through `getCoverage('in')`, not just SQL. Revert log:
+`.planning/coverage/backfill-log-school-in-2026-07-28.json`.
+
+The school changes:
+
+- `school_district:mccsc` (6 seats) → `school_district:monroe_county_community_school_corporation`
+  (7 seats); IPS `expected_seats` 6 → 7. **Both seat bumps are corrections**, not drift — the old
+  6s were baselines seeded from the 6 stale sub-districts, while the rosters show MCCSC districts
+  1–7 and IPS districts 1–5 + 2 at-large, no gaps.
+
+**🔴 The re-init silently destroyed hand-authored `match: title` config, and the check below did not
+catch it.** The earlier claim that "`U.S. Senate` folds into the combined statewide row" was wrong.
+IN deliberately split them: a `match: title` + `office_title_like: "U.S. Senate%"` row, paired with
+`exclude_title_like: "U.S. Senate%"` on the `match: exact` statewide row so the two do not
+double-count. **`coverage-init` does not generate any of those three keys**, so re-init dropped the
+Senate row and the exclude, merging Senate into statewide (5/28 + 2/2 → one 7/30 row) — which looks
+like a clean fold in a row-count diff and is actually a loss of a deliberate distinction. Restored
+by hand, and both rows now carry a `HAND-AUTHORED` comment saying re-init will drop them.
+
+**`me.yaml` and `ut.yaml` have the same pattern (2 occurrences each) — do not re-init either without
+restoring it afterward.** Grep before regenerating anything:
+
+```bash
+grep -l "match: title\|office_title_like\|exclude_title_like" data/coverage/*.yaml
+```
+
+**Why the MCCSC slug change was safe, and the check to repeat.** A new slug that differs from an
+existing one is exactly the "split Boston into two rows" defect. It was safe here only because the
+6 old `school_district:mccsc` sub-districts were **drained to 0 active politicians** by the
+consolidation, so `coverage-init` no longer emits a competing row. **Verify that subtree is empty
+before accepting a slug rename** — it is one query, and it is the difference between a correction
+and a duplicate row. The descriptive slug is also the right house style (cf.
+`eminence_community_school_corporation`, `SCHOOL_ALIAS`'s `los_angeles_unified`); `mccsc` rendered
+on the dashboard as "Mccsc School District".
+
+Two loose ends, both harmless:
+
+- The 6 drained MCCSC sub-districts still carry `school_district:mccsc`, now orphaned outside the
+  parent's subtree. OCD-correct would be `…monroe_county_community_school_corporation/board_district:N`.
+  They hold 0 officials and `ocd_id` never affects address search, so this buys nothing today and
+  would need a migration.
+- 1 IN SCHOOL district (`geo_id 180063000007`, "District 7") still has `ocd_id = ''`. It has **0
+  politicians**, so the script's politician join excludes it by design.
 
 ### Before regenerating any file
 
-`coverage-init` **rewrites manual columns and `rules`**. Check first:
+`coverage-init` **rewrites manual columns and `rules`, and drops any row shape it cannot generate.**
+The check below used to cover only `rules` + `candidates`, which is how IN's `match: title` Senate
+row was destroyed without anyone noticing (see above). It now also counts the title-match keys and
+the other manual columns:
 
 ```bash
-node -e "const y=require('js-yaml'),f=require('fs');for(const n of f.readdirSync('data/coverage').filter(x=>x.endsWith('.yaml'))){const d=y.load(f.readFileSync('data/coverage/'+n,'utf8'));console.log(n,'notes',(d.rules.notes||[]).length,'skip',(d.rules.skip_topics||[]).length,'non-default candidates',d.locations.filter(l=>l.candidates&&l.candidates!=='none').length)}"
+node -e "const y=require('js-yaml'),f=require('fs');for(const n of f.readdirSync('data/coverage').filter(x=>x.endsWith('.yaml'))){const d=y.load(f.readFileSync('data/coverage/'+n,'utf8')),L=d.locations||[];const t=L.filter(l=>l.match==='title'||l.office_title_like||l.exclude_title_like).length,m=L.filter(l=>['candidates','donors'].some(k=>l[k]&&l[k]!=='none')||l.geofenced===false||(l.status&&l.status!=='active')).length;if(t||m||(d.rules.notes||[]).length||(d.rules.skip_topics||[]).length)console.log(n.padEnd(9),'title-match rows',t,'| non-default manual',m,'| notes',(d.rules.notes||[]).length,'| skip_topics',(d.rules.skip_topics||[]).length)}"
 ```
 
-As of this pass only **`ut`** (3 hand-set `candidates`, 1 note, 1 skip_topic) and **`wi`** (5 notes)
-have content to lose. Both were synced, never re-initialised. `coverage-sync` is always safe — it
-does surgical line edits.
+Any nonzero **`title-match rows`** means re-init will silently drop a deliberate row split —
+re-add it afterward. The count is **2 per split** (the `match: title` row plus the `match: exact`
+row carrying its paired `exclude_title_like`); both halves must come back or the two rows
+double-count. As of 2026-07-28: **`in` 2** (destroyed by this pass's re-init, restored), **`me` 2**,
+**`ut` 2** — plus `ut`'s 3 hand-set `candidates` / 1 note / 1 skip_topic and `wi`'s 5 notes.
+`coverage-sync` is always safe — it does surgical line edits.

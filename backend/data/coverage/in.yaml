@@ -34,6 +34,8 @@ locations:
     stances: { researched: 9, total: 9 }
     last_researched: null
 
+  # HAND-AUTHORED — `coverage-init` does not generate `match: title` rows and will DROP this,
+  # merging U.S. Senate into the statewide row below. Restore it after any re-init.
   - ocd_id: ocd-division/country:us/state:in
     match: title
     office_title_like: "U.S. Senate%"
@@ -83,6 +85,8 @@ locations:
     stances: { researched: 1, total: 12 }
     last_researched: null
 
+  # HAND-AUTHORED `exclude_title_like` — pairs with the U.S. Senate title row above so the two
+  # do not double-count. `coverage-init` drops it; restore it after any re-init.
   - ocd_id: ocd-division/country:us/state:in
     match: exact
     exclude_title_like: "U.S. Senate%"
@@ -512,14 +516,14 @@ locations:
     name: Indianapolis Public Schools School District
     level: school
     status: active
-    expected_seats: 6
+    expected_seats: 7
     geofenced: true
     donors: none
     candidates: none
     treasury: none
-    populated: false
-    headshots: none
-    stances: { researched: 0, total: 0 }
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 7 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:in/school_district:martinsville_schools_metropolitan
@@ -536,18 +540,18 @@ locations:
     stances: { researched: 0, total: 5 }
     last_researched: null
 
-  - ocd_id: ocd-division/country:us/state:in/school_district:mccsc
-    name: Mccsc School District
+  - ocd_id: ocd-division/country:us/state:in/school_district:monroe_county_community_school_corporation
+    name: Monroe County Community School Corporation School District
     level: school
     status: active
-    expected_seats: 6
+    expected_seats: 7
     geofenced: true
     donors: none
     candidates: none
     treasury: none
-    populated: false
-    headshots: none
-    stances: { researched: 0, total: 0 }
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:in/school_district:rbbcsc
