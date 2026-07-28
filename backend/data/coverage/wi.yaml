@@ -15,17 +15,22 @@ universe:
 rules:
   skip_topics: []   # add jurisdiction rules, e.g. topics barred by state law
   notes:
-    - "NO MUNICIPALITIES ARE TRACKABLE YET. Every WI district with district_type LOCAL /
-       LOCAL_EXEC has ocd_id = NULL, and every coverage match mode keys on districts.ocd_id
-       (geo_id is used only for the treasury join). So coverage-init cannot discover them and a
-       hand-written row would match zero districts and report 0/0 — worse than being absent.
-       Affected, with seated officials: City of Madison (20 offices, geo_id 5548000, and the only
-       WI city with stance coverage — 22 rows via migration 1480), City of Racine (15),
-       City of Burlington (8), and ~12 villages/towns in Racine County (6 each).
-       FIX: backfill districts.ocd_id for these (e.g. ocd-division/country:us/state:wi/place:madison),
-       then re-run coverage-init. Deliberately NOT done as a side effect of creating this file —
-       it is a prod write on geography identifiers and the OCD slug convention for WI villages and
-       towns (MCDs) is not obviously `place:`, so it deserves its own decision."
+    - "4 TOWNS ARE STILL UNMAPPED and so absent from this file: Town of Burlington, Town of Dover,
+       Town of Norway, Town of Waterford (8 districts, 12 seated officials). They are MCDs with
+       10-digit geo_ids and NO G4110 place geofence, so backfill-district-ocd.ts has no name to
+       derive a slug from and skips them. Not fixable by that script; they need a G4040/MCD
+       geofence or a hand-mapped ocd_id."
+    - "SLUG COLLISION RISK if those towns are ever mapped. We strip TIGER's trailing descriptor
+       (city/town/village/borough/CDP) so slugs match the ~296 already-populated rows, which are
+       clean (place:holladay, place:san_diego). But WI reuses names across municipality types:
+       City of Burlington vs Town of Burlington, and Village of Waterford vs Town of Waterford
+       would both collapse to place:burlington / place:waterford. The descriptor is exactly what
+       disambiguates them, and we discard it. No collision exists today — only cities and villages
+       are mapped and those 14 slugs are distinct — but do not map the towns without resolving it."
+    - "MADISON CITY HAS ZERO STANCE COVERAGE (0/21), which is easy to misread. Wisconsin's 22
+       existing stance rows belong to the Madison/Dane state-legislative DELEGATION — state
+       senators and representatives — and are counted under State Senate (2/33) and State House
+       (9/99), NOT here. Migration 1480 seeded Madison's city offices and headshots, not stances."
     - "The 26-topic state-office scope is NOT a WI rule and must not be added to skip_topics — it
        comes from inform.compass_topic_roles (role_scope='state') and applies to every state.
        skip_topics is for jurisdiction-specific exclusions, e.g. a topic barred by state law."
@@ -125,5 +130,202 @@ locations:
     populated: true
     headshots: partial
     stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  # ── Cities & municipalities (14) ──
+  - ocd_id: ocd-division/country:us/state:wi/place:burlington
+    name: Burlington
+    level: local
+    status: active
+    expected_seats: 9
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 9 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/place:caledonia
+    name: Caledonia
+    level: local
+    status: active
+    expected_seats: 6
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 6 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/place:elmwood_park
+    name: Elmwood Park
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/place:madison
+    name: Madison
+    level: local
+    status: active
+    expected_seats: 21
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 21 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/place:mount_pleasant
+    name: Mount Pleasant
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/place:north_bay
+    name: North Bay
+    level: local
+    status: active
+    expected_seats: 4
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 4 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/place:racine
+    name: Racine
+    level: local
+    status: active
+    expected_seats: 16
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 16 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/place:raymond
+    name: Raymond
+    level: local
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/place:rochester
+    name: Rochester
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/place:sturtevant
+    name: Sturtevant
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/place:union_grove
+    name: Union Grove
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/place:waterford
+    name: Waterford
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/place:wind_point
+    name: Wind Point
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/place:yorkville
+    name: Yorkville
+    level: local
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 5 }
     last_researched: null
 

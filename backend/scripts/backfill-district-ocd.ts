@@ -6,6 +6,7 @@
  *
  *   npx tsx scripts/backfill-district-ocd.ts                 # dry run — ALL types
  *   npx tsx scripts/backfill-district-ocd.ts --type national_upper
+ *   npx tsx scripts/backfill-district-ocd.ts --type local --state wi        # scope to one state
  *   npx tsx scripts/backfill-district-ocd.ts --type national_upper --write   # apply
  *
  * SAFE: address search joins geofence_boundaries.geo_id = districts.geo_id (+ mtfcc)
@@ -33,13 +34,20 @@
  *     (G4020 geofence first, then IN_COUNTY_FIPS table); seats roll up to the county.
  */
 import 'dotenv/config';
-import { writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { pool } from '../src/lib/db.js';
 
 const WRITE = process.argv.includes('--write');
 const TYPE_FILTER = (() => {
   const i = process.argv.indexOf('--type');
   return i >= 0 ? (process.argv[i + 1] ?? '').toUpperCase() : null;
+})();
+// --state scopes the run to one state. Without it, `--type LOCAL --write` would touch every
+// state at once (142 districts), which is rarely what a caller scoping to one wave wants.
+// districts.state is MIXED CASE, so always compare lowered.
+const STATE_FILTER = (() => {
+  const i = process.argv.indexOf('--state');
+  return i >= 0 ? (process.argv[i + 1] ?? '').toLowerCase() : null;
 })();
 
 const FIPS_TO_ABBR: Record<string, string> = {
@@ -160,7 +168,9 @@ async function main(): Promise<void> {
        JOIN essentials.politicians p ON p.id = och.politician_id AND p.is_active = true
       WHERE (d.ocd_id IS NULL OR d.ocd_id NOT LIKE 'ocd-division/%')
         AND d.geo_id IS NOT NULL AND d.geo_id <> ''
+        AND ($1::text IS NULL OR lower(d.state) = $1::text)
       GROUP BY d.id, d.district_type, d.state, d.geo_id, d.label, d.ocd_id`,
+    [STATE_FILTER],
   );
 
   // Geofence rows for every involved geo_id, plus the FIPS-5 county prefixes (county
@@ -211,7 +221,12 @@ async function main(): Promise<void> {
     if (d.district_type === 'LOCAL' || d.district_type === 'LOCAL_EXEC') {
       const placeName = nameByKey.get(`${geoId}|G4110`);
       if (placeName) {
-        const slug = slugify(placeName, / (city|town)$/i);
+        // Strip TIGER's trailing legal/statistical descriptor. `village` was missing, which is
+      // invisible in states whose TIGER place names omit it but wrong in Wisconsin, where the
+      // G4110 names read "Madison city" / "Elmwood Park village" / "Yorkville village". Without
+      // it the 11 WI villages would have become place:elmwood_park_village — inconsistent with
+      // all ~296 already-populated rows, which are clean (place:holladay, place:san_diego).
+      const slug = slugify(placeName, / (city|town|village|borough|CDP)$/i);
         if (!slug) { p.skipped.push({ d, reason: `empty slug from "${placeName}"` }); continue; }
         p.resolved.push({ d, ocd: `ocd-division/country:us/state:${abbr}/place:${slug}` });
         continue;
@@ -277,12 +292,29 @@ async function main(): Promise<void> {
       new_ocd_id: r.ocd,
     })),
   );
-  const suffix = TYPE_FILTER ? `-${TYPE_FILTER.toLowerCase()}` : '-deferred-tiers';
-  const logPath = `../../.planning/coverage/backfill-log${suffix}-2026-05-30.json`;
+  const suffix = [TYPE_FILTER ? TYPE_FILTER.toLowerCase() : 'deferred-tiers', STATE_FILTER]
+    .filter(Boolean)
+    .join('-');
+  // The date is the ACTUAL run date. It used to be hardcoded '2026-05-30' in both the filename
+  // and the payload, so any later run produced a revert log that lied about when it was captured —
+  // the worst possible property for the file you reach for when reverting.
+  const runDate = new Date().toISOString().slice(0, 10);
+  // Path was '../../.planning/...', one level too many: from backend/ that resolves OUTSIDE the
+  // repo (C:\.planning). Combined with the directory not existing, --write would throw ENOENT
+  // here — before any UPDATE, so it failed safe, but it never actually worked.
+  const logDir = '../.planning/coverage';
+  mkdirSync(logDir, { recursive: true });
+  const logPath = `${logDir}/backfill-log-${suffix}-${runDate}.json`;
   writeFileSync(
     logPath,
     JSON.stringify(
-      { captured: '2026-05-30', tier: TYPE_FILTER ?? 'deferred (LOCAL/SCHOOL/COUNTY)', count: snapshot.length, districts: snapshot },
+      {
+        captured: runDate,
+        tier: TYPE_FILTER ?? 'deferred (LOCAL/SCHOOL/COUNTY)',
+        state: STATE_FILTER ?? 'all',
+        count: snapshot.length,
+        districts: snapshot,
+      },
       null,
       2,
     ),
