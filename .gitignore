@@ -114,3 +114,8 @@ backend/data/stance-research/or-bend-stateleg/.olis-legislators.json
 # a single `git add -A` would have published them. Never committed — verified
 # across all refs — so this rule is prevention, not remediation.
 *.bak
+
+# Headshot pipeline working images (regenerable; the canonical copies live in the
+# politician_photos Storage bucket). Contact sheets are review aids, not artifacts.
+backend/data/stance-research/**/processed/
+backend/data/stance-research/**/contact_sheets/

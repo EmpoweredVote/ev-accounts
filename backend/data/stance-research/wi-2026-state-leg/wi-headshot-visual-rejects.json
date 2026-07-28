@@ -1,0 +1,41 @@
+{
+  "_what": "Member-site portrait candidates REJECTED by visual inspection for the WI legislature headshot import (migration 1482). Consumed by backend/scripts/discover-wi-legis-portraits.mjs — this file is the single source of truth, not a copy.",
+  "_why_this_exists": "Portrait discovery on legis.wisconsin.gov member sites matches Umbraco media filenames against the member's name. That heuristic had a 29% defect rate: 23 of 79 filename hits were not headshots. A signature graphic and an official portrait are both '<surname>.png', so NO filename rule, aspect check, or file-size check distinguishes them. Only looking at the images does. Rejected members fall back to the official docs.legis roster portrait, which is 150x200 but is always a genuine tight headshot of the right person.",
+  "_method": "All 79 filename-matched candidates were processed to the final 600x750 crop, tiled into contact sheets of 20, and inspected. Each rejection below was confirmed against the source filename.",
+  "_rule_of_thumb": "An official low-resolution portrait beats a high-resolution wrong image. Do not trade correctness for sharpness.",
+  "_reviewed_on": "2026-07-28",
+  "_key_format": "\"<Chamber>-<district>\" where Chamber is Assembly|Senate, matching essentials.office_current_holder keyed on (chamber, district) — never on name.",
+  "_reject_categories": [
+    "signature graphic — a scanned/vector signature, often near-black or transparent",
+    "text wordmark / district header — branding with the member's name set as type",
+    "group or family photo — more than one person in frame",
+    "podium / press-conference shot — subject small, microphones, other people",
+    "event photo — commemorative or constituent-event imagery",
+    "website icon — a monogram or logo, not a photograph"
+  ],
+  "rejects": {
+    "Assembly-8":  { "reason": "maiden speech at microphone", "category": "podium / press-conference shot", "file": "111121-rep-ortiz-velez-maiden-speech-3.jpg" },
+    "Assembly-13": { "reason": "e-signature graphic",        "category": "signature graphic",            "file": "2026-vining-esignature.png" },
+    "Assembly-15": { "reason": "speaking at podium in chambers", "category": "podium / press-conference shot", "file": "neylon_meet_pic_hptop.jpg" },
+    "Assembly-19": { "reason": "press-conference mic shot",   "category": "podium / press-conference shot", "file": "img-8307_-_ryan_clancy-1.jpg" },
+    "Assembly-24": { "reason": "district header graphic",     "category": "text wordmark / district header", "file": "knodl-ad24-header.png" },
+    "Assembly-25": { "reason": "memorial day event photo",    "category": "event photo",                  "file": "memorial-day-tittl-copy.png" },
+    "Assembly-28": { "reason": "website icon / RK monogram",  "category": "website icon",                 "file": "kreibich-website-icon.jpg" },
+    "Assembly-43": { "reason": "text wordmark",               "category": "text wordmark / district header", "file": "20250204-brown-lh-rgb-transparent-brown-text.png" },
+    "Assembly-44": { "reason": "two people",                  "category": "group or family photo",        "file": "roe-with-angie-bolson-ymca-ceo-rock-county.jpg" },
+    "Assembly-57": { "reason": "district header graphic",     "category": "text wordmark / district header", "file": "2025-petersen-header.jpg" },
+    "Assembly-60": { "reason": "press conference, multiple people", "category": "podium / press-conference shot", "file": "oconnor-003.jpg" },
+    "Assembly-61": { "reason": "two people",                  "category": "group or family photo",        "file": "bob-and-kathy-donovan.jpg" },
+    "Assembly-63": { "reason": "two people at an event",       "category": "group or family photo",        "file": "032626-ce-ralph-malicki-and-rep-wittke-meals.jpg" },
+    "Assembly-75": { "reason": "casual outdoor/barn wide shot", "category": "event photo",                "file": "duketucker-duke-ster.jpg" },
+    "Assembly-81": { "reason": "family holiday card",         "category": "group or family photo",        "file": "tinywow_joers-family-holiday-card-3.jpg" },
+    "Assembly-84": { "reason": "family photo",                "category": "group or family photo",        "file": "wichgers-family-photo-resize.png" },
+    "Senate-1":    { "reason": "signature graphic",            "category": "signature graphic",            "file": "jacque_sig.jpg" },
+    "Senate-5":    { "reason": "text logo",                    "category": "text wordmark / district header", "file": "hutton-cambria-sc-white.png" },
+    "Senate-10":   { "reason": "signature graphic",            "category": "signature graphic",            "file": "stafsholtsig.png" },
+    "Senate-12":   { "reason": "text logo",                    "category": "text wordmark / district header", "file": "felzkowski_fff6ea.png" },
+    "Senate-18":   { "reason": "signature graphic",            "category": "signature graphic",            "file": "dassler-alfheim-signature.png" },
+    "Senate-20":   { "reason": "video thumbnail with district sign", "category": "event photo",           "file": "feyen-2023-intro-video-thumbnail-3-2.jpeg" },
+    "Senate-29":   { "reason": "signature graphic",            "category": "signature graphic",            "file": "cory-tomczyk-signature-002.jpg" }
+  }
+}
