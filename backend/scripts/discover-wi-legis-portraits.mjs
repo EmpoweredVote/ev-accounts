@@ -1,6 +1,6 @@
 // Discover the high-resolution official portrait for each sitting WI legislator.
 //
-// Usage: node scripts/_tmp-wi-discover-portraits.mjs [--limit N]
+// Usage: node scripts/discover-wi-legis-portraits.mjs [--limit N]
 //
 // WHY: the docs.legis roster thumbnail is only 150x200 — upscaling that to the 600x750 production
 // target is a 4x enlargement and looks visibly soft. Each member's own site (legis.wisconsin.gov)

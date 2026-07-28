@@ -11,8 +11,10 @@
 -- Why the split: filename-based portrait discovery on member sites had a 29% defect rate (23 of 79
 -- hits were signature graphics, district wordmarks, family photos, or press-conference shots). Those
 -- 23 were rejected by visual inspection of contact sheets and fall back to the roster portrait, which
--- is always a genuine tight headshot of the right person. The reject list is recorded in
--- scripts/_tmp-wi-discover-portraits.mjs.
+-- is always a genuine tight headshot of the right person. The reject list, with a reason and the
+-- offending source filename per seat, is tracked at
+-- data/stance-research/wi-2026-state-leg/wi-headshot-visual-rejects.json and is read by
+-- scripts/discover-wi-legis-portraits.mjs.
 --
 -- Correct-person guard: every seat was matched on (chamber, district) via office_current_holder and
 -- confirmed on FIRST AND LAST name against the official roster — 132/132.
