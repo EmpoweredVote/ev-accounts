@@ -73,7 +73,13 @@ async function geofenceNames(mtfcc: string, strip: RegExp): Promise<Map<string, 
   );
   const map = new Map<string, string>();
   for (const r of rows) {
+    // name is nullable and IS null in practice — MA has 5 G5420 rows with no name, IN has 159
+    // across G5220/G5210/G5200, VA 1. Unguarded, r.name.replace() threw
+    // "Cannot read properties of null (reading 'replace')" and took the whole run down, which is
+    // why `--state ma` produced no output at all while ca/or/tx succeeded.
+    if (!r.name || !r.name.trim()) continue;
     const slug = r.name.replace(strip, '').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+    if (!slug) continue;
     map.set(slug, r.name.replace(strip, '').trim());
   }
   return map;

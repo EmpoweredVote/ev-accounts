@@ -17,7 +17,7 @@ rules:
   notes: []
 
 locations:
-  # ── Federal delegation (2) ──
+  # ── Federal delegation (1) ──
   - ocd_id: ocd-division/country:us/state:ca
     ocd_kind: cd
     match: kind
@@ -32,22 +32,6 @@ locations:
     populated: true
     headshots: full
     stances: { researched: 48, total: 50 }
-    last_researched: null
-
-  - ocd_id: ocd-division/country:us/state:ca
-    match: title
-    office_title_like: "U.S. Senate%"
-    name: U.S. Senate
-    level: federal
-    status: active
-    expected_seats: 2
-    geofenced: true
-    donors: none
-    candidates: none
-    treasury: none
-    populated: true
-    headshots: full
-    stances: { researched: 2, total: 2 }
     last_researched: null
 
   # ── State government (3) ──
@@ -85,8 +69,7 @@ locations:
 
   - ocd_id: ocd-division/country:us/state:ca
     match: exact
-    exclude_title_like: "U.S. Senate%"
-    name: Statewide offices (Gov, officers)
+    name: Statewide offices (Gov, U.S. Senate, officers)
     level: state
     status: active
     expected_seats: null
@@ -96,7 +79,7 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 10, total: 18 }
+    stances: { researched: 12, total: 20 }
     last_researched: null
 
   # ── Counties (2) ──
@@ -128,7 +111,7 @@ locations:
     stances: { researched: 0, total: 2 }
     last_researched: null
 
-  # ── Cities & municipalities (96) ──
+  # ── Cities & municipalities (99) ──
   - ocd_id: ocd-division/country:us/state:ca/place:agoura_hills
     name: Agoura Hills
     level: local
@@ -147,14 +130,14 @@ locations:
     name: Alhambra
     level: local
     status: active
-    expected_seats: 3
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
     treasury: full
-    populated: false
-    headshots: none
-    stances: { researched: 0, total: 0 }
+    populated: true
+    headshots: full
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:arcadia
@@ -259,7 +242,7 @@ locations:
     name: Bellflower
     level: local
     status: active
-    expected_seats: 4
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
@@ -287,7 +270,7 @@ locations:
     name: Beverly Hills
     level: local
     status: active
-    expected_seats: 4
+    expected_seats: 6
     geofenced: true
     donors: none
     candidates: none
@@ -343,14 +326,14 @@ locations:
     name: Carson
     level: local
     status: active
-    expected_seats: 1
+    expected_seats: 7
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 1, total: 3 }
+    stances: { researched: 5, total: 7 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:cerritos
@@ -399,14 +382,14 @@ locations:
     name: Compton
     level: local
     status: active
-    expected_seats: 2
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 1, total: 1 }
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:covina
@@ -441,7 +424,7 @@ locations:
     name: Culver City
     level: local
     status: active
-    expected_seats: 3
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
@@ -469,14 +452,14 @@ locations:
     name: Downey
     level: local
     status: active
-    expected_seats: 4
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 3, total: 3 }
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:duarte
@@ -497,21 +480,21 @@ locations:
     name: El Monte
     level: local
     status: active
-    expected_seats: 6
+    expected_seats: 7
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 2, total: 4 }
+    stances: { researched: 5, total: 7 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:el_segundo
     name: El Segundo
     level: local
     status: active
-    expected_seats: 4
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
@@ -539,7 +522,7 @@ locations:
     name: Gardena
     level: local
     status: active
-    expected_seats: 4
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
@@ -553,7 +536,7 @@ locations:
     name: Glendale
     level: local
     status: active
-    expected_seats: 4
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
@@ -595,7 +578,7 @@ locations:
     name: Hawthorne
     level: local
     status: active
-    expected_seats: 4
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
@@ -647,6 +630,20 @@ locations:
     stances: { researched: 0, total: 7 }
     last_researched: null
 
+  - ocd_id: ocd-division/country:us/state:ca/place:indio
+    name: Indio
+    level: local
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 5, total: 5 }
+    last_researched: null
+
   - ocd_id: ocd-division/country:us/state:ca/place:industry
     name: Industry
     level: local
@@ -665,14 +662,14 @@ locations:
     name: Inglewood
     level: local
     status: active
-    expected_seats: 6
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 3, total: 4 }
+    stances: { researched: 4, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:irwindale
@@ -833,7 +830,7 @@ locations:
     name: Long Beach
     level: local
     status: active
-    expected_seats: 9
+    expected_seats: 13
     geofenced: true
     donors: none
     candidates: none
@@ -983,18 +980,32 @@ locations:
     stances: { researched: 5, total: 5 }
     last_researched: null
 
-  - ocd_id: ocd-division/country:us/state:ca/place:palmdale
-    name: Palmdale
+  - ocd_id: ocd-division/country:us/state:ca/place:palm_springs
+    name: Palm Springs
     level: local
     status: active
-    expected_seats: 4
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 3, total: 4 }
+    stances: { researched: 4, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ca/place:palmdale
+    name: Palmdale
+    level: local
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 4, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:palos_verdes_estates
@@ -1029,14 +1040,14 @@ locations:
     name: Pasadena
     level: local
     status: active
-    expected_seats: 7
+    expected_seats: 8
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 7, total: 7 }
+    stances: { researched: 8, total: 8 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:pico_rivera
@@ -1057,14 +1068,14 @@ locations:
     name: Pomona
     level: local
     status: active
-    expected_seats: 6
+    expected_seats: 7
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 5, total: 5 }
+    stances: { researched: 7, total: 7 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:rancho_palos_verdes
@@ -1093,6 +1104,20 @@ locations:
     populated: true
     headshots: full
     stances: { researched: 0, total: 6 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ca/place:riverside
+    name: Riverside
+    level: local
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:rolling_hills
@@ -1281,7 +1306,7 @@ locations:
     name: Santa Monica
     level: local
     status: active
-    expected_seats: 6
+    expected_seats: 7
     geofenced: true
     donors: none
     candidates: none
@@ -1337,7 +1362,7 @@ locations:
     name: South Gate
     level: local
     status: active
-    expected_seats: 4
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
@@ -1379,14 +1404,14 @@ locations:
     name: Torrance
     level: local
     status: active
-    expected_seats: 8
+    expected_seats: 7
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 6, total: 6 }
+    stances: { researched: 7, total: 7 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:vernon
@@ -1428,14 +1453,14 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 4, total: 4 }
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ca/place:west_hollywood
     name: West Hollywood
     level: local
     status: active
-    expected_seats: 4
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
@@ -1463,14 +1488,14 @@ locations:
     name: Whittier
     level: local
     status: active
-    expected_seats: 4
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 1, total: 1 }
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   # ── School districts (79) ──
@@ -1506,7 +1531,7 @@ locations:
     name: Alhambra Unified School District
     level: school
     status: active
-    expected_seats: 5
+    expected_seats: 4
     geofenced: true
     donors: none
     candidates: none

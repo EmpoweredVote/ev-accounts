@@ -17,7 +17,7 @@ rules:
   notes: []
 
 locations:
-  # ── Federal delegation (2) ──
+  # ── Federal delegation (1) ──
   - ocd_id: ocd-division/country:us/state:or
     ocd_kind: cd
     match: kind
@@ -32,22 +32,6 @@ locations:
     populated: true
     headshots: full
     stances: { researched: 6, total: 6 }
-    last_researched: null
-
-  - ocd_id: ocd-division/country:us/state:or
-    match: title
-    office_title_like: "U.S. Senate%"
-    name: U.S. Senate
-    level: federal
-    status: active
-    expected_seats: 2
-    geofenced: true
-    donors: none
-    candidates: none
-    treasury: none
-    populated: true
-    headshots: full
-    stances: { researched: 2, total: 2 }
     last_researched: null
 
   # ── State government (3) ──
@@ -85,8 +69,7 @@ locations:
 
   - ocd_id: ocd-division/country:us/state:or
     match: exact
-    exclude_title_like: "U.S. Senate%"
-    name: Statewide offices (Gov, officers)
+    name: Statewide offices (Gov, U.S. Senate, officers)
     level: state
     status: active
     expected_seats: null
@@ -96,10 +79,165 @@ locations:
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 5, total: 5 }
+    stances: { researched: 7, total: 7 }
     last_researched: null
 
-  # ── Cities & municipalities (1) ──
+  # ── Counties (3) ──
+  - ocd_id: ocd-division/country:us/state:or/county:deschutes
+    name: Deschutes County
+    level: county
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 3, total: 7 }
+    last_researched: 2026-07-25
+
+  - ocd_id: ocd-division/country:us/state:or/county:multnomah
+    name: Multnomah County
+    level: county
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/county:washington
+    name: Washington County
+    level: county
+    status: active
+    expected_seats: 1
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 1, total: 1 }
+    last_researched: null
+
+  # ── Cities & municipalities (14) ──
+  - ocd_id: ocd-division/country:us/state:or/place:beaverton
+    name: Beaverton
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 7, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/place:bend
+    name: Bend
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 7, total: 7 }
+    last_researched: 2026-07-25
+
+  - ocd_id: ocd-division/country:us/state:or/place:cornelius
+    name: Cornelius
+    level: local
+    status: active
+    expected_seats: 4
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 3, total: 4 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/place:fairview
+    name: Fairview
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/place:forest_grove
+    name: Forest Grove
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 7, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/place:gresham
+    name: Gresham
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/place:hillsboro
+    name: Hillsboro
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 7, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/place:maywood_park
+    name: Maywood Park
+    level: local
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
   - ocd_id: ocd-division/country:us/state:or/place:portland
     name: Portland
     level: local
@@ -112,5 +250,75 @@ locations:
     populated: true
     headshots: partial
     stances: { researched: 13, total: 16 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/place:sherwood
+    name: Sherwood
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 7, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/place:tigard
+    name: Tigard
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 7, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/place:troutdale
+    name: Troutdale
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/place:tualatin
+    name: Tualatin
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 7, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/place:wood_village
+    name: Wood Village
+    level: local
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 5 }
     last_researched: null
 

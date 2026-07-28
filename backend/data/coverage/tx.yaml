@@ -17,7 +17,7 @@ rules:
   notes: []
 
 locations:
-  # ── Federal delegation (2) ──
+  # ── Federal delegation (1) ──
   - ocd_id: ocd-division/country:us/state:tx
     ocd_kind: cd
     match: kind
@@ -32,22 +32,6 @@ locations:
     populated: true
     headshots: full
     stances: { researched: 26, total: 37 }
-    last_researched: null
-
-  - ocd_id: ocd-division/country:us/state:tx
-    match: title
-    office_title_like: "U.S. Senate%"
-    name: U.S. Senate
-    level: federal
-    status: active
-    expected_seats: 2
-    geofenced: true
-    donors: none
-    candidates: none
-    treasury: none
-    populated: true
-    headshots: full
-    stances: { researched: 2, total: 2 }
     last_researched: null
 
   # ── State government (3) ──
@@ -85,8 +69,7 @@ locations:
 
   - ocd_id: ocd-division/country:us/state:tx
     match: exact
-    exclude_title_like: "U.S. Senate%"
-    name: Statewide offices (Gov, officers)
+    name: Statewide offices (Gov, U.S. Senate, officers)
     level: state
     status: active
     expected_seats: null
@@ -96,6 +79,343 @@ locations:
     treasury: none
     populated: true
     headshots: full
+    stances: { researched: 7, total: 9 }
+    last_researched: null
+
+  # ── Cities & municipalities (24) ──
+  - ocd_id: ocd-division/country:us/state:tx/place:allen
+    name: Allen
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 7, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:anna
+    name: Anna
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: partial
+    populated: true
+    headshots: partial
+    stances: { researched: 1, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:blue_ridge
+    name: Blue Ridge
+    level: local
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: partial
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:celina
+    name: Celina
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: partial
+    stances: { researched: 6, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:fairview
+    name: Fairview
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: partial
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:farmersville
+    name: Farmersville
+    level: local
+    status: active
+    expected_seats: 6
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: partial
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 6 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:frisco
+    name: Frisco
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 7, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:josephine
+    name: Josephine
+    level: local
+    status: active
+    expected_seats: 6
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: partial
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 6 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:lavon
+    name: Lavon
+    level: local
+    status: active
+    expected_seats: 6
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: partial
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 6 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:longview
+    name: Longview
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 4, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:lowry_crossing
+    name: Lowry Crossing
+    level: local
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: partial
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:lucas
+    name: Lucas
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: partial
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:mckinney
+    name: McKinney
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 7, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:melissa
+    name: Melissa
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: partial
+    populated: true
+    headshots: full
+    stances: { researched: 1, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:murphy
+    name: Murphy
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: partial
     stances: { researched: 5, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:nevada
+    name: Nevada
+    level: local
+    status: active
+    expected_seats: 6
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: partial
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 6 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:parker
+    name: Parker
+    level: local
+    status: active
+    expected_seats: 6
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: partial
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 6 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:plano
+    name: Plano
+    level: local
+    status: active
+    expected_seats: 8
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 8, total: 8 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:princeton
+    name: Princeton
+    level: local
+    status: active
+    expected_seats: 8
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: partial
+    stances: { researched: 5, total: 8 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:prosper
+    name: Prosper
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 6, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:richardson
+    name: Richardson
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 7, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:st_paul
+    name: St. Paul
+    level: local
+    status: active
+    expected_seats: 6
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: partial
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 6 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:van_alstyne
+    name: Van Alstyne
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/place:weston
+    name: Weston
+    level: local
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: partial
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 5 }
     last_researched: null
 

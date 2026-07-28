@@ -97,10 +97,16 @@ function plainSlug(name: string): string {
 
 // LOCAL council/supervisor ward layer → { place, ward }.
 // Place from the geo_id slug prefix (sf/sd/sj aliased) or the X-layer geofence name.
-function resolveWard(geoId: string, xName: string | undefined): { place: string; ward: string } | null {
+function resolveWard(geoId: string, xName: string | undefined, abbr?: string | null): { place: string; ward: string } | null {
   const m = geoId.match(/^([a-z][a-z0-9-]*?)-(?:council|supervisor)-district-(\d+)$/i);
   if (m) {
-    const token = m[1].toLowerCase();
+    let token = m[1].toLowerCase();
+    // Some geo_id slugs disambiguate with a trailing state code ("boston-ma-council-district-5"),
+    // which would produce place:boston_ma — not how any of the ~296 already-populated rows look,
+    // and not a real OCD place slug. CITY_ALIAS already special-cased 'portland-or' for exactly
+    // this; strip it generally instead. Guarded on an exact match with THIS district's state, so
+    // it can only ever remove a real state code, never a meaningful final word.
+    if (abbr && token.endsWith(`-${abbr}`)) token = token.slice(0, -(abbr.length + 1));
     return { place: CITY_ALIAS[token] ?? token.replace(/-/g, '_'), ward: m[2] };
   }
   if (xName) {
@@ -222,16 +228,18 @@ async function main(): Promise<void> {
       const placeName = nameByKey.get(`${geoId}|G4110`);
       if (placeName) {
         // Strip TIGER's trailing legal/statistical descriptor. `village` was missing, which is
-      // invisible in states whose TIGER place names omit it but wrong in Wisconsin, where the
-      // G4110 names read "Madison city" / "Elmwood Park village" / "Yorkville village". Without
-      // it the 11 WI villages would have become place:elmwood_park_village — inconsistent with
-      // all ~296 already-populated rows, which are clean (place:holladay, place:san_diego).
-      const slug = slugify(placeName, / (city|town|village|borough|CDP)$/i);
+        // invisible in states whose TIGER place names omit it but wrong in Wisconsin, where the
+        // G4110 names read "Madison city" / "Elmwood Park village" / "Yorkville village". Without
+        // it the 11 WI villages would have become place:elmwood_park_village — inconsistent with
+        // all ~296 already-populated rows, which are clean (place:holladay, place:san_diego).
+        // Only the TRAILING descriptor goes: "Boulder City city" -> boulder_city and
+        // "Wood Village city" -> wood_village are correct, because those really are the names.
+        const slug = slugify(placeName, / (city|town|village|borough|CDP)$/i);
         if (!slug) { p.skipped.push({ d, reason: `empty slug from "${placeName}"` }); continue; }
         p.resolved.push({ d, ocd: `ocd-division/country:us/state:${abbr}/place:${slug}` });
         continue;
       }
-      const ward = resolveWard(geoId, xNameByGeo.get(geoId));
+      const ward = resolveWard(geoId, xNameByGeo.get(geoId), abbr);
       if (!ward) { p.skipped.push({ d, reason: `no G4110 place + unparseable ward layer for geo_id=${geoId}` }); continue; }
       p.resolved.push({ d, ocd: `ocd-division/country:us/state:${abbr}/place:${ward.place}/ward:${ward.ward}` });
       continue;
