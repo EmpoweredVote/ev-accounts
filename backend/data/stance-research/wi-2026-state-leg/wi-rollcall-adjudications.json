@@ -1,0 +1,43 @@
+{
+  "_what": "Human adjudications of WI roll calls: for each reviewed roll call, whether the BILL is chair-shaped for a compass topic and which chair a Yes / No vote actually supports. Read by backend/scripts/triage-wi-rollcalls-to-topics.mjs, which merges these into wi_rollcall_topic_triage.csv.",
+  "_why_this_file_exists": "The triage CSV is regenerable and gitignored, so adjudication decisions recorded only in its cells are lost the moment anyone re-runs the triage script. This file is the durable record; the CSV is a working view of it.",
+  "_the_bar": "A vote pins a chair ONLY when the bill is itself chair-shaped. An oppositional No vote rules out the far end and nothing more. Compound chairs need EVERY clause evidenced. If two adjacent chairs both fit, skip. A keyword hit is not evidence.",
+  "_process": "Read the bill text at https://docs.legis.wisconsin.gov/document/proposaltext/2025/REG/<BILL> — that endpoint serves HTML, so the operative language is directly readable. The /2025/proposals/<bill> page carries only title and history; a WebFetch of it returns a paraphrase and must not be used as the source.",
+  "_also_re_decide_the_topic": "The triage script's candidate_topics come from keyword matching and are NOT authoritative. AB 24 was shortlisted under `immigration` when its actual axis is `deportation`. Re-decide the topic at this step rather than inheriting it.",
+  "_reasoning_lives_in": "ADJUDICATION_LOG.md — this file is the machine-readable verdict; the log carries the argument.",
+  "_progress": "3 of 48 shortlisted roll calls adjudicated (2 distinct bills).",
+  "_schema": {
+    "key": "roll-call vote_id (av#### Assembly, sv#### Senate) — the canonical roll-call id. Bill number is NOT a key: both chambers vote the same bill.",
+    "chair_shaped": "yes | no — is the BILL chair-shaped for topic_final",
+    "topic_final": "the re-decided compass topic key, or the axis it was wrongly triaged onto",
+    "chair_if_yes": "chair number a Yes vote supports, or empty when the bill pins none",
+    "chair_if_no": "chair number a No vote supports, or empty",
+    "reviewer_note": "why"
+  },
+  "adjudications": {
+    "av0004": {
+      "bill": "SJR 2",
+      "chair_shaped": "no",
+      "topic_final": "voting-rights",
+      "chair_if_yes": "",
+      "chair_if_no": "",
+      "reviewer_note": "Constitutionalises a photo-ID requirement to vote. But 'require photo ID' is a clause SHARED by chairs 3, 4 and 5, and the amendment is silent on the clauses that would separate them: it says nothing about free IDs (chair 3), nothing about voter-roll maintenance (chair 4), and nothing about eliminating mail-in voting (chair 5). A No vote rules out the restrictive end but still leaves {1,2,3}. Pins no chair either way. Skip."
+    },
+    "sv0003": {
+      "bill": "SJR 2",
+      "chair_shaped": "no",
+      "topic_final": "voting-rights",
+      "chair_if_yes": "",
+      "chair_if_no": "",
+      "reviewer_note": "Senate vote on the same measure as av0004 — same verdict. Recorded separately because the roll-call id, not the bill, is the key."
+    },
+    "av0026": {
+      "bill": "AB 24",
+      "chair_shaped": "no",
+      "topic_final": "deportation",
+      "chair_if_yes": "",
+      "chair_if_no": "",
+      "reviewer_note": "MIS-TRIAGED onto `immigration` by the keyword IMMIGRA* firing on 'federal immigration functions'; the immigration scale's axis is legal-immigration levels and public-service access, neither of which the bill touches. Re-adjudicated on `deportation`: requires sheriffs to request proof of lawful presence from felony detainees and honour DHS detainers, with a 15% shared-revenue penalty. Chair 2 ('only deport people convicted of serious violent crimes') fails — the bill reaches felony CHARGES, not convictions, and is not limited to violent offences. Chair 4's 'starting with those who have criminal records' mechanism matches, but its 'deport everyone without legal status' scope clause is nowhere in the bill. Both partly fit, neither fully evidenced. Skip. (Vetoed 2026-04-03; override failed 2026-05-13.)"
+    }
+  }
+}

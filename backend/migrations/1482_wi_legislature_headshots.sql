@@ -1,7 +1,7 @@
 -- Migration 1482: Wisconsin State Legislature headshots (AUDIT-ONLY)
 --
 -- AUDIT-ONLY, matching the 1054 (NV legislature) precedent: applied via the SQL exec path AFTER the
--- gitignored pipeline (_tmp-wi-legislature-headshots.py) downloads each official portrait, crops to
+-- pipeline (scripts/seed-wi-legislature-headshots.py) downloads each official portrait, crops to
 -- 4:5, resizes to 600x750 Lanczos q90, and uploads to the politician_photos Storage bucket.
 --
 -- 132 sitting WI legislators (99 Assembly + 33 Senate). All 132 files uploaded to Storage.

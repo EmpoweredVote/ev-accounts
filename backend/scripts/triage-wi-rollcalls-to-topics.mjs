@@ -113,6 +113,22 @@ function toCsv(rows) {
 
 const rollcalls = parseCsv(readFileSync(join(DIR, 'wi_rollcalls.csv'), 'utf8'));
 
+// Human adjudications are merged in from a TRACKED sidecar. This CSV is regenerable and gitignored,
+// so decisions recorded only in its cells vanish the moment anyone re-runs this script — which would
+// silently reset reviewed roll calls to "not yet adjudicated" and invite them to be re-reviewed.
+const ADJ_FILE = join(DIR, 'wi-rollcall-adjudications.json');
+let ADJUDICATIONS = {};
+try {
+  ADJUDICATIONS = JSON.parse(readFileSync(ADJ_FILE, 'utf8')).adjudications || {};
+} catch (e) {
+  // Absent is legitimate (nothing adjudicated yet); malformed is not.
+  if (e.code !== 'ENOENT') {
+    console.error(`FATAL: ${ADJ_FILE} exists but could not be parsed: ${e.message}`);
+    console.error('Refusing to run — continuing would silently discard completed adjudications.');
+    process.exit(1);
+  }
+}
+
 // A near-unanimous vote cannot separate legislators from one another, so it cannot pin a chair
 // for an individual. Keep the threshold explicit and reported rather than silently filtering.
 const MIN_MINORITY = 10;
@@ -154,11 +170,12 @@ for (const rc of divided) {
     matched_keywords: hits.map((h) => `${h.topic}:${h.matched.join('/')}`).join(' | '),
     n_candidate_topics: hits.length,
     // --- filled in by a human, from reading the bill. Blank = not yet adjudicated. ---
-    chair_shaped: '',
-    topic_final: '',
-    chair_if_yes: '',
-    chair_if_no: '',
-    reviewer_note: '',
+    // Populated from the tracked adjudication sidecar when a verdict exists for this roll call.
+    chair_shaped: ADJUDICATIONS[rc.vote_id]?.chair_shaped ?? '',
+    topic_final: ADJUDICATIONS[rc.vote_id]?.topic_final ?? '',
+    chair_if_yes: ADJUDICATIONS[rc.vote_id]?.chair_if_yes ?? '',
+    chair_if_no: ADJUDICATIONS[rc.vote_id]?.chair_if_no ?? '',
+    reviewer_note: ADJUDICATIONS[rc.vote_id]?.reviewer_note ?? '',
     bill_url: rc.bill ? `https://docs.legis.wisconsin.gov/2025/proposals/${rc.bill.replace(/\s+/g, '').toLowerCase()}` : '',
   });
 }
@@ -184,4 +201,8 @@ for (const t of STATE_SCOPE_TOPICS) {
   const n = perTopic[t] || 0;
   console.log(`  ${t.padEnd(28)} ${String(n).padStart(3)}${n === 0 ? '   <- no roll-call route; needs candidate-stated sources' : ''}`);
 }
-console.log(`\nwrote wi_rollcall_topic_triage.csv — chair_shaped/topic_final/chair_if_* are BLANK by design`);
+const adjudicated = out.filter((r) => r.chair_shaped).length;
+const adjInPool = usable.filter((r) => r.chair_shaped).length;
+console.log(`\nadjudications merged from wi-rollcall-adjudications.json: ${adjudicated} (${adjInPool} of the ${usable.length}-row usable pool)`);
+console.log(`  still to adjudicate in the usable pool: ${usable.length - adjInPool}`);
+console.log(`wrote wi_rollcall_topic_triage.csv — unadjudicated rows have BLANK chair_shaped/topic_final/chair_if_* by design`);

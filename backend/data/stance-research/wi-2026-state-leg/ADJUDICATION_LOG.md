@@ -84,6 +84,6 @@ evidenced, so the bill pins neither.
 **2 of 2 adjudicated so far are not usable.** n=2 is far too small to extrapolate a rate from, and
 these two were picked *because* they looked like the strongest candidates — which biases toward
 prominent, contested, and therefore broadly-worded measures. Narrower bills may well fare better.
-But it does say the conservative yield estimate in `_WAVE_PLAN.md` §4 is the right one to plan
+But it does say the conservative yield estimate in `WAVE_PLAN.md` §4 is the right one to plan
 against, and that no wave should be sized on the assumption that a divided on-topic vote produces a
 stance.
