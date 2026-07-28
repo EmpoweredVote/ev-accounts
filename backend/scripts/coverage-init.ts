@@ -41,9 +41,20 @@ const STATE_FIPS: Record<string, string> = {
   sd: '46', tn: '47', tx: '48', ut: '49', vt: '50', va: '51', wa: '53', wv: '54',
   wi: '55', wy: '56',
 };
+// Complete map. It previously held only the states that already had a coverage file, so
+// `--state wi` would have emitted `state_name: undefined` into the YAML — silently, since
+// nothing validates it. STATE_FIPS above is already complete; these two should stay in step.
 const STATE_NAME: Record<string, string> = {
-  ca: 'California', in: 'Indiana', tx: 'Texas', ma: 'Massachusetts', me: 'Maine',
-  or: 'Oregon', ut: 'Utah',
+  al: 'Alabama', ak: 'Alaska', az: 'Arizona', ar: 'Arkansas', ca: 'California',
+  co: 'Colorado', ct: 'Connecticut', de: 'Delaware', fl: 'Florida', ga: 'Georgia',
+  hi: 'Hawaii', id: 'Idaho', il: 'Illinois', in: 'Indiana', ia: 'Iowa',
+  ks: 'Kansas', ky: 'Kentucky', la: 'Louisiana', me: 'Maine', md: 'Maryland',
+  ma: 'Massachusetts', mi: 'Michigan', mn: 'Minnesota', ms: 'Mississippi', mo: 'Missouri',
+  mt: 'Montana', ne: 'Nebraska', nv: 'Nevada', nh: 'New Hampshire', nj: 'New Jersey',
+  nm: 'New Mexico', ny: 'New York', nc: 'North Carolina', nd: 'North Dakota', oh: 'Ohio',
+  ok: 'Oklahoma', or: 'Oregon', pa: 'Pennsylvania', ri: 'Rhode Island', sc: 'South Carolina',
+  sd: 'South Dakota', tn: 'Tennessee', tx: 'Texas', ut: 'Utah', vt: 'Vermont',
+  va: 'Virginia', wa: 'Washington', wv: 'West Virginia', wi: 'Wisconsin', wy: 'Wyoming',
 };
 
 const FIPS = STATE_FIPS[STATE];
@@ -83,7 +94,13 @@ async function localJurisdictions(kind: string): Promise<string[]> {
     `SELECT DISTINCT regexp_replace(d.ocd_id, $1, $2) AS ocd
        FROM essentials.districts d
        JOIN essentials.offices o ON o.district_id = d.id
-       JOIN essentials.politicians p ON p.id = o.politician_id AND p.is_active = true
+       -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id
+       -- (dropped in migration 1463). This join is exactly one row per office, so it cannot fan out.
+       -- coverageService.ts and coverageMapService.ts were ported at the time; this script was
+       -- missed, which left it dead against the live schema — every run failed with
+       -- "column o.politician_id does not exist", which is why no coverage file has been added since.
+       JOIN essentials.office_current_holder och ON och.office_id = o.id
+       JOIN essentials.politicians p ON p.id = och.politician_id AND p.is_active = true
       WHERE d.ocd_id LIKE $3 AND d.ocd_id ~ $4
       ORDER BY ocd`,
     [`^(${STATE_PREFIX}/${kind}:[^/]+).*$`, '\\1', `${STATE_PREFIX}/%`, `/${kind}:`],
