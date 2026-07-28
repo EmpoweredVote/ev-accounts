@@ -111,22 +111,39 @@ describe('getAgendaItemsByMeetingId', () => {
   });
 });
 
+// getAgendaItemById now issues several queries (item, votes, records,
+// speakers). Dispatch on SQL text so tests don't depend on call order.
+function dispatchQueries(handlers: {
+  item?: unknown[];
+  votes?: unknown[];
+  records?: unknown[];
+  speakers?: unknown[];
+}) {
+  mockQuery.mockImplementation(async (sql: string) => {
+    if (sql.includes('FROM meetings.votes')) return { rows: handlers.votes ?? [] };
+    if (sql.includes('FROM meetings.vote_records')) return { rows: handlers.records ?? [] };
+    if (sql.includes('FROM meetings.segments')) return { rows: handlers.speakers ?? [] };
+    return { rows: handlers.item ?? [] };
+  });
+}
+
+const baseDetailRow = {
+  ...baseItemRow,
+  m_id: MEETING_ID,
+  m_title: 'Common Council Regular Session',
+  m_date: '2026-07-29',
+  m_city: 'Bloomington',
+  m_status: 'scheduled',
+  m_starts_at: '2026-07-29T18:30:00-04:00',
+  m_timezone: 'America/Indiana/Indianapolis',
+  cf_id: null,
+  cf_item_number: null,
+  cf_meeting_date: null,
+};
+
 describe('getAgendaItemById', () => {
   it('returns the item with embedded meeting context', async () => {
-    mockQuery.mockResolvedValueOnce({
-      rows: [
-        {
-          ...baseItemRow,
-          m_id: MEETING_ID,
-          m_title: 'Common Council Regular Session',
-          m_date: '2026-07-29',
-          m_city: 'Bloomington',
-          m_status: 'scheduled',
-          m_starts_at: '2026-07-29T18:30:00-04:00',
-          m_timezone: 'America/Indiana/Indianapolis',
-        },
-      ],
-    });
+    dispatchQueries({ item: [baseDetailRow] });
     const detail = await getAgendaItemById(ITEM_ID);
     const [sql, params] = mockQuery.mock.calls[0];
     expect(sql).toContain('FROM meetings.agenda_items');
@@ -147,19 +164,8 @@ describe('getAgendaItemById', () => {
   it('normalizes a Date m_starts_at (pg timestamptz) to an ISO-8601 UTC string', async () => {
     // pg returns timestamptz columns as JS Date objects — no type parsers are
     // registered in db.ts. The mapper must hand back a string.
-    mockQuery.mockResolvedValueOnce({
-      rows: [
-        {
-          ...baseItemRow,
-          m_id: MEETING_ID,
-          m_title: 'Common Council Regular Session',
-          m_date: '2026-07-29',
-          m_city: 'Bloomington',
-          m_status: 'scheduled',
-          m_starts_at: new Date('2026-07-29T22:30:00Z'),
-          m_timezone: 'America/Indiana/Indianapolis',
-        },
-      ],
+    dispatchQueries({
+      item: [{ ...baseDetailRow, m_starts_at: new Date('2026-07-29T22:30:00Z') }],
     });
     const detail = await getAgendaItemById(ITEM_ID);
     expect(detail?.meeting.startsAt).toBe('2026-07-29T22:30:00.000Z');
@@ -168,5 +174,137 @@ describe('getAgendaItemById', () => {
   it('returns null when not found', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [] });
     expect(await getAgendaItemById(ITEM_ID)).toBeNull();
+    expect(mockQuery).toHaveBeenCalledTimes(1); // no follow-up queries
+  });
+
+  it('defaults votes/speakers to [] and continuedFrom to null', async () => {
+    dispatchQueries({ item: [baseDetailRow] });
+    const detail = await getAgendaItemById(ITEM_ID);
+    expect(detail?.votes).toEqual([]);
+    expect(detail?.speakers).toEqual([]);
+    expect(detail?.continuedFrom).toBeNull();
+    // No segment bounds on the item -> the segments query is never issued.
+    const sqls = mockQuery.mock.calls.map((c) => c[0] as string);
+    expect(sqls.some((s) => s.includes('FROM meetings.segments'))).toBe(false);
+  });
+
+  it('attaches votes with named per-member records', async () => {
+    const VOTE_ID = '44444444-4444-4444-8444-444444444444';
+    dispatchQueries({
+      item: [baseDetailRow],
+      votes: [
+        {
+          id: VOTE_ID,
+          resolution: 'Ordinance 2026-16',
+          description: 'Adoption',
+          result: 'Passed · 7–0',
+          vote_type: 'roll-call',
+          timestamp: '5321.5', // pg numeric -> string
+        },
+      ],
+      records: [
+        {
+          vote_id: VOTE_ID,
+          position: 'aye',
+          name: 'Isak Nti Asare',
+          politician_id: 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',
+        },
+        { vote_id: VOTE_ID, position: 'nay', name: 'Dave Rollo', politician_id: null },
+      ],
+    });
+    const detail = await getAgendaItemById(ITEM_ID);
+    expect(detail?.votes).toEqual([
+      {
+        id: VOTE_ID,
+        resolution: 'Ordinance 2026-16',
+        description: 'Adoption',
+        result: 'Passed · 7–0',
+        voteType: 'roll-call',
+        timestamp: 5321.5,
+        records: [
+          {
+            position: 'aye',
+            name: 'Isak Nti Asare',
+            politicianId: 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',
+          },
+          { position: 'nay', name: 'Dave Rollo', politicianId: null },
+        ],
+      },
+    ]);
+    const votesSql = mockQuery.mock.calls
+      .map((c) => c[0] as string)
+      .find((s) => s.includes('FROM meetings.votes'));
+    expect(votesSql).toContain('agenda_item_id = $1');
+  });
+
+  it('queries speakers within the segment span when bounds are present', async () => {
+    dispatchQueries({
+      item: [
+        {
+          ...baseDetailRow,
+          status: 'happened',
+          segment_start_seconds: '1200',
+          segment_end_seconds: '2400',
+        },
+      ],
+      speakers: [
+        {
+          name: 'Kate Rosenbarger',
+          politician_id: 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb',
+          role: null,
+          first_spoke_seconds: '1210.2',
+          segment_count: '7',
+        },
+        {
+          name: 'Buff Brown',
+          politician_id: null,
+          role: null,
+          first_spoke_seconds: '1900',
+          segment_count: '1',
+        },
+      ],
+    });
+    const detail = await getAgendaItemById(ITEM_ID);
+    expect(detail?.speakers).toEqual([
+      {
+        name: 'Kate Rosenbarger',
+        politicianId: 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb',
+        role: null,
+        firstSpokeSeconds: 1210.2,
+        segmentCount: 7,
+      },
+      {
+        name: 'Buff Brown',
+        politicianId: null,
+        role: null,
+        firstSpokeSeconds: 1900,
+        segmentCount: 1,
+      },
+    ]);
+    const call = mockQuery.mock.calls.find((c) =>
+      (c[0] as string).includes('FROM meetings.segments')
+    );
+    expect(call?.[1]).toEqual([MEETING_ID, 1200, 2400]);
+  });
+
+  it('maps continued_from into a minimal prior-appearance pointer', async () => {
+    const PRIOR_ID = '55555555-5555-4555-8555-555555555555';
+    dispatchQueries({
+      item: [
+        {
+          ...baseDetailRow,
+          continued_from_item_id: PRIOR_ID,
+          cf_id: PRIOR_ID,
+          cf_item_number: '7A',
+          cf_meeting_date: '2026-07-22',
+        },
+      ],
+    });
+    const detail = await getAgendaItemById(ITEM_ID);
+    expect(detail?.continuedFrom).toEqual({
+      id: PRIOR_ID,
+      itemNumber: '7A',
+      meetingDate: '2026-07-22',
+    });
   });
 });
