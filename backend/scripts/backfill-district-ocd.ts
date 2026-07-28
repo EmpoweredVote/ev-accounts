@@ -151,7 +151,13 @@ async function main(): Promise<void> {
             COUNT(DISTINCT p.id)::int AS pols
        FROM essentials.districts d
        JOIN essentials.offices o ON o.district_id = d.id
-       JOIN essentials.politicians p ON p.id = o.politician_id AND p.is_active = true
+       -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id
+       -- (dropped in migration 1463). Exactly one row per office, so it cannot fan the count out.
+       -- This script was missed by the port, same as coverage-init.ts — which is why the whole
+       -- coverage-visibility toolchain has been unusable and the ~353 NULL-ocd_id local districts
+       -- it was written to fix were never fixed.
+       JOIN essentials.office_current_holder och ON och.office_id = o.id
+       JOIN essentials.politicians p ON p.id = och.politician_id AND p.is_active = true
       WHERE (d.ocd_id IS NULL OR d.ocd_id NOT LIKE 'ocd-division/%')
         AND d.geo_id IS NOT NULL AND d.geo_id <> ''
       GROUP BY d.id, d.district_type, d.state, d.geo_id, d.label, d.ocd_id`,
