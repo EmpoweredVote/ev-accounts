@@ -320,9 +320,12 @@ router.get('/quotes', async (req: Request, res: Response): Promise<void> => {
       FROM essentials.quotes q
       JOIN essentials.politicians p ON p.id = q.politician_id AND ${whereSQL}
       LEFT JOIN LATERAL (
-        SELECT title FROM essentials.offices
-        WHERE politician_id = p.id
-        ORDER BY id DESC
+        -- ADR 0002 phase 5: offices.politician_id is gone; occupancy resolves via current_office_holders.
+        SELECT o.title
+        FROM essentials.current_office_holders coh
+        JOIN essentials.offices o ON o.id = coh.office_id
+        WHERE coh.politician_id = p.id
+        ORDER BY o.id DESC
         LIMIT 1
       ) o ON true
       LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key) AND ct.is_live = true

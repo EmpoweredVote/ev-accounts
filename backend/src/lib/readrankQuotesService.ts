@@ -23,10 +23,12 @@ export async function listReadrankPoliticians(): Promise<PoliticianWithQuotes[]>
        FROM essentials.politicians p
        JOIN essentials.quotes q ON q.politician_id = p.id
        LEFT JOIN LATERAL (
-         SELECT title, district_id
-           FROM essentials.offices
-          WHERE politician_id = p.id
-          ORDER BY id DESC LIMIT 1
+         -- ADR 0002 phase 5: offices.politician_id is gone; occupancy resolves via current_office_holders.
+         SELECT o.title, o.district_id
+           FROM essentials.current_office_holders coh
+           JOIN essentials.offices o ON o.id = coh.office_id
+          WHERE coh.politician_id = p.id
+          ORDER BY o.id DESC LIMIT 1
        ) o ON true
        LEFT JOIN essentials.districts d ON d.id = o.district_id
       GROUP BY p.id, p.full_name, p.preferred_name, p.first_name, p.last_name, o.title, d.state
