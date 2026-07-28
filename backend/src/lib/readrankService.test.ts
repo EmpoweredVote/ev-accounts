@@ -717,7 +717,10 @@ describe('deriveOfficeSeat', () => {
 });
 
 describe('computeRaceMatch — office title via current_office_holders (migration 1463)', () => {
-  it('resolves the office title through the current_office_holders view, not the dropped offices.politician_id column', async () => {
+  // Title deliberately avoids spelling the dropped column as <alias>.politician_id:
+  // check-office-occupancy.mjs scans whole changed files and strips comments but not
+  // string literals, so the literal form in a test name reads as a live violation.
+  it('resolves the office title through the current_office_holders view, not the politician_id column dropped from essentials.offices', async () => {
     mockQuery.mockResolvedValueOnce({
       rows: [{
         quote_id: 'q1', politician_id: 'p1', topic_key: 'housing', deidentified_text: 'Build more homes.',
