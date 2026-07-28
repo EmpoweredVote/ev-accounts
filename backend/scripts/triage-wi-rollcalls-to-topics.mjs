@@ -143,6 +143,14 @@ const PROCEDURAL = [
   'SUSPEND RULES', 'TABLE EN MASSE', 'REFUSAL TO CONCUR', 'MESSAGE FROM',
   'ASSEMBLY OFFICERS AND ORGANIZATION', 'COMMITTEE STRUCTURE', 'SESSION SCHEDULE',
   'SENATE OFFICERS AND ORGANIZATION', 'APPEAL', 'ADJOURN',
+  // Added 2026-07-28 after the calibration batch: these all reached the "usable pool" and are
+  // just as procedural as tabling an amendment.
+  //   REFER TO COMMITTEE  — sends a bill away; not a position on its subject (AB 840 av0178)
+  //   LAY ON TABLE        — same family as TABLE AMENDMENT, different wording (AB 472 av0189)
+  //   SUSPENSION OF A RULE— a rules motion (AB 13/14/15 av0013-15)
+  //   SERGEANT AT ARMS    — electing an internal chamber officer, matched only because the word
+  //                         "ELECTION" fires the voting-rights keyword (SR 5 sv0030/sv0031)
+  'REFER TO COMMITTEE', 'LAY ON TABLE', 'SUSPENSION OF A RULE', 'SERGEANT AT ARMS',
 ];
 const motionClass = (heading) =>
   PROCEDURAL.some((p) => (heading || '').toUpperCase().includes(p)) ? 'procedural' : 'substantive';

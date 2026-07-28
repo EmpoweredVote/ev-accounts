@@ -3,25 +3,108 @@
   "_why_this_file_exists": "The triage CSV is regenerable and gitignored, so adjudication decisions recorded only in its cells are lost the moment anyone re-runs the triage script. This file is the durable record; the CSV is a working view of it.",
   "_the_bar": "A vote pins a chair ONLY when the bill is itself chair-shaped. An oppositional No vote rules out the far end and nothing more. Compound chairs need EVERY clause evidenced. If two adjacent chairs both fit, skip. A keyword hit is not evidence.",
   "_process": "Read the bill text at https://docs.legis.wisconsin.gov/document/proposaltext/2025/REG/<BILL> — that endpoint serves HTML, so the operative language is directly readable. The /2025/proposals/<bill> page carries only title and history; a WebFetch of it returns a paraphrase and must not be used as the source.",
-  "_also_re_decide_the_topic": "The triage script's candidate_topics come from keyword matching and are NOT authoritative. AB 24 was shortlisted under `immigration` when its actual axis is `deportation`. Re-decide the topic at this step rather than inheriting it.",
+  "_also_re_decide_the_topic": "The triage script's candidate_topics come from keyword matching and are NOT authoritative. 3 of the 8 in the calibration batch were on the wrong AXIS entirely. Re-decide the topic at this step rather than inheriting it.",
   "_reasoning_lives_in": "ADJUDICATION_LOG.md — this file is the machine-readable verdict; the log carries the argument.",
-  "_progress": "3 of 48 shortlisted roll calls adjudicated (2 distinct bills).",
+
+  "_predictive_rule_learned": "A bill is chair-shaped when its ENTIRE PURPOSE is to set a posture on the topic — constitutional amendments and comprehensive regulatory frameworks. It is NOT chair-shaped when it is a narrow provision, a sentencing enhancement, a definitional carve-out, or an administrative package, even when squarely on-topic. Both survivors below are of the first kind; all nine failures are of the second.",
+  "_three_systematic_dead_ends": {
+    "narrow_tax_bills": "The `taxes` scale measures overall tax-and-spend POSTURE (raise on wealthy / keep as-is / cut and shrink). A single-provision exemption (cash tips, overtime, broadband, nuclear credit) cannot evidence any of those chairs: chair 4 requires 'for everyone' AND 'scale back public services to match', and chair 3 requires the adjustment to CLOSE a loophole rather than open one. This likely disqualifies most of the 16-row taxes bucket, the largest single topic in the pool.",
+    "state_bills_on_immigration": "Both `immigration` chair 4 and chair 5, and `deportation` chair 4, lead with a clause about LEGAL IMMIGRATION LEVELS ('make it harder to immigrate legally' / 'stop most legal immigration') that no state legislature can act on. A state bill can only ever evidence the trailing public-services or enforcement clause, so it always leaves two adjacent chairs equally fitting. Structurally unwinnable at this level.",
+    "keyword_axis_mismatch": "Keyword matching finds topical WORDS, not topical AXES. 'GENDER TRANSITION' put a medical-care ban on the trans-athletes SPORTS-ELIGIBILITY scale; 'SHELTER' put a drug-sentencing enhancement on the homelessness PUBLIC-CAMPING scale; 'IMMIGRA*' put an enforcement bill on the immigration LEGAL-LEVELS scale."
+  },
+  "_progress": "11 of 41 shortlisted roll calls adjudicated (10 distinct bills). 2 usable — both from the calibration batch.",
+
   "_schema": {
     "key": "roll-call vote_id (av#### Assembly, sv#### Senate) — the canonical roll-call id. Bill number is NOT a key: both chambers vote the same bill.",
     "chair_shaped": "yes | no — is the BILL chair-shaped for topic_final",
-    "topic_final": "the re-decided compass topic key, or the axis it was wrongly triaged onto",
+    "topic_final": "the re-decided compass topic key, or empty when no state-scope topic has the right axis",
     "chair_if_yes": "chair number a Yes vote supports, or empty when the bill pins none",
     "chair_if_no": "chair number a No vote supports, or empty",
     "reviewer_note": "why"
   },
+
   "adjudications": {
+    "av0137": {
+      "bill": "AJR 102",
+      "chair_shaped": "yes",
+      "topic_final": "civil-rights",
+      "chair_if_yes": "5",
+      "chair_if_no": "",
+      "reviewer_note": "USABLE. Constitutional amendment creating Art. I s.27: a governmental entity 'may not discriminate against, or grant preferential treatment to, any individual or group on the basis of race, sex, color, ethnicity, or national origin in public employment, public education, public contracting, or public administration.' 'Governmental entity' is defined exhaustively (state, subdivisions, UW System, technical colleges, all public schools, legislature, courts). That is chair 5 — 'eliminate affirmative action and all race-based government programs' — and BOTH clauses are evidenced: affirmative action is the paradigm case and race-based programs across those four domains are covered. Chair 3 ('maintain current civil rights laws') cannot fit an amendment that CHANGES the constitution; chair 4 is about federal enforcement and is not what a state amendment does. Yes pins 5. A No vote only rules out 5, leaving {1,2,3}, so it pins nothing. Note the Senate renders the same measure under a different heading ('AFFIRMATIVE ACTION PROGRAMS', sv0140) — same bill, same verdict."
+    },
+    "sv0140": {
+      "bill": "AJR 102",
+      "chair_shaped": "yes",
+      "topic_final": "civil-rights",
+      "chair_if_yes": "5",
+      "chair_if_no": "",
+      "reviewer_note": "USABLE. Senate concurrence on the same constitutional amendment as av0137 — same verdict, Yes pins chair 5. Recorded separately because the roll-call id, not the bill, is the key. The Senate heading reads 'AFFIRMATIVE ACTION PROGRAMS' where the Assembly heading reads 'PROHIBITING GOVERNMENTAL DISCRIMINATION'; same text, and a reminder that the heading is a label rather than the bill."
+    },
+    "av0182": {
+      "bill": "AB 840",
+      "chair_shaped": "yes",
+      "topic_final": "data-centers",
+      "chair_if_yes": "2",
+      "chair_if_no": "",
+      "reviewer_note": "USABLE. Comprehensive data-center framework. Chair 2 is compound — 'requiring data centers to fund their own dedicated power generation AND barring utilities from passing data center infrastructure costs to residential customers' — and both clauses are evidenced. The bill directs the PSC to ensure 'no costs associated with the construction or extension of electric infrastructure that primarily serves the load of a data center are allocated to or recovered from any other customer' (the barring clause, verbatim in effect), and requires that 'any renewable energy facility that primarily serves the load of a data center must be located at the site of the data center' (on-site generation). Closed-loop cooling, DNR water reporting and a reclamation bond point the same restrictive direction. Chair 1's moratorium is absent; chair 3 speaks of 'energy cost-sharing agreements', which is the opposite of a hard cost-allocation bar. Yes pins 2; No rules out the restrictive end without pinning one chair."
+    },
+
+    "sv0113": {
+      "bill": "SB 553",
+      "chair_shaped": "no",
+      "topic_final": "abortion",
+      "chair_if_yes": "",
+      "chair_if_no": "",
+      "reviewer_note": "Definitional carve-out, not an access posture. Excludes from the statutory definition of 'abortion' a physician's procedure intended to prevent the death of a pregnant woman — emergency induction or caesarean, removal of a dead embryo or fetus, ectopic, anembryonic or molar pregnancy. It changes what COUNTS as abortion for consent, funding, and the 20-week provisions; it does not move elective access along the 1-5 permissiveness axis. No chair is about definitional scope. Skip."
+    },
+    "av0033": {
+      "bill": "AB 104",
+      "chair_shaped": "no",
+      "topic_final": "",
+      "chair_if_yes": "",
+      "chair_if_no": "",
+      "reviewer_note": "MIS-TRIAGED, wrong axis. Prohibits gender-transition medical intervention for under-18s and requires licence revocation. The `trans-athletes` scale is entirely about SPORTS eligibility ('compete on teams matching their gender identity'); this bill is about medical care and says nothing about athletics — the keyword 'GENDER TRANSITION' fired. No state-scope topic has this axis: `healthcare` measures the government's role in coverage and access, not whether a treatment is banned. Skip with no topic."
+    },
+    "av0156": {
+      "bill": "AB 38",
+      "chair_shaped": "no",
+      "topic_final": "taxes",
+      "chair_if_yes": "",
+      "chair_if_no": "",
+      "reviewer_note": "Narrow single-provision exemption: excludes cash tips from taxable income. The `taxes` chairs describe overall tax-and-spend posture. Chair 4 is compound — 'cut taxes for everyone AND scale back public services to match' — and fails on both clauses: the exemption reaches tipped workers only, and the bill is silent on services. Chair 3 wants small adjustments 'to close unfair loopholes'; this opens a preference rather than closing one. Neither fits. Skip. This reasoning generalises to most of the taxes bucket."
+    },
+    "av0126": {
+      "bill": "AB 617",
+      "chair_shaped": "no",
+      "topic_final": "voting-rights",
+      "chair_if_yes": "",
+      "chair_if_no": "",
+      "reviewer_note": "Administrative omnibus that cuts BOTH ways, and not on the scale's axis. Expands access in places (the clerk MUST return a defective-certificate ballot for the voter to cure; automatic text confirmation of application and ballot receipt) and narrows it in others (alternate absentee sites must be a fixed building; the mail application deadline moves from the 5th to the 7th day before the election). The voting-rights chairs turn on photo ID, automatic registration and mail-in availability — none of which this bill touches. Skip."
+    },
+    "av0091": {
+      "bill": "AB 308",
+      "chair_shaped": "no",
+      "topic_final": "immigration",
+      "chair_if_yes": "",
+      "chair_if_no": "",
+      "reviewer_note": "Bars state, local and pass-through federal funds from compensating health services for individuals not lawfully present, except where federal law requires it. Hits the trailing clause of `immigration` chair 4 ('limit public services to people with legal status') and chair 5 ('block public services for anyone without legal status') — but BOTH chairs lead with a legal-immigration-levels clause ('make it harder to immigrate legally' / 'stop most legal immigration') that a state legislature cannot act on and this bill does not touch. Two adjacent chairs fit equally on the surviving clause, and nothing distinguishes 'limit' from 'block' when one service category is defunded. Also not a `healthcare` fit: that scale is about the government's role in coverage generally, not about excluding a population. Skip."
+    },
+    "av0221": {
+      "bill": "SB 610",
+      "chair_shaped": "no",
+      "topic_final": "",
+      "chair_if_yes": "",
+      "chair_if_no": "",
+      "reviewer_note": "MIS-TRIAGED, wrong axis. Adds homeless shelters to the list of places (parks, schools, jails, public housing, pools) where the maximum term for delivering controlled substances rises by five years. The `homelessness` scale is about enforcement against people SLEEPING OR CAMPING in public; this is a drug-dealing sentencing enhancement that arguably protects shelter residents and does not criminalise homelessness at all. The keyword 'SHELTER' fired. Skip with no topic."
+    },
+
     "av0004": {
       "bill": "SJR 2",
       "chair_shaped": "no",
       "topic_final": "voting-rights",
       "chair_if_yes": "",
       "chair_if_no": "",
-      "reviewer_note": "Constitutionalises a photo-ID requirement to vote. But 'require photo ID' is a clause SHARED by chairs 3, 4 and 5, and the amendment is silent on the clauses that would separate them: it says nothing about free IDs (chair 3), nothing about voter-roll maintenance (chair 4), and nothing about eliminating mail-in voting (chair 5). A No vote rules out the restrictive end but still leaves {1,2,3}. Pins no chair either way. Skip."
+      "reviewer_note": "Constitutionalises a photo-ID requirement to vote. But 'require photo ID' is a clause SHARED by chairs 3, 4 and 5, and the amendment is silent on the clauses that would separate them: nothing about free IDs (chair 3), nothing about voter-roll maintenance (chair 4), nothing about eliminating mail-in voting (chair 5). A No vote rules out the restrictive end but still leaves {1,2,3}. Pins no chair either way. Skip. Worth noting this is the most obviously on-topic divided vote in the entire corpus and it still pins nothing."
     },
     "sv0003": {
       "bill": "SJR 2",
