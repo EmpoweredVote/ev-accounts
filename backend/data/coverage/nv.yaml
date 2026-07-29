@@ -6,7 +6,7 @@
 
 state: NV
 state_name: Nevada
-synced_at: 2026-07-28
+synced_at: 2026-07-29
 
 universe:
   state_fips: "32"
@@ -152,5 +152,20 @@ locations:
     populated: true
     headshots: full
     stances: { researched: 1, total: 1 }
+    last_researched: null
+
+  # ── School districts (1) ──
+  - ocd_id: ocd-division/country:us/state:nv/school_district:clark_county
+    name: Clark County School District
+    level: school
+    status: active
+    expected_seats: 11
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 11 }
     last_researched: null
 

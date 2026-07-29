@@ -6,7 +6,7 @@
 
 state: VA
 state_name: Virginia
-synced_at: 2026-07-28
+synced_at: 2026-07-29
 
 universe:
   state_fips: "51"
@@ -124,5 +124,20 @@ locations:
     populated: true
     headshots: full
     stances: { researched: 7, total: 7 }
+    last_researched: null
+
+  # ── School districts (1) ──
+  - ocd_id: ocd-division/country:us/state:va/school_district:alexandria_city_public_schools
+    name: Alexandria City Public Schools School District
+    level: school
+    status: active
+    expected_seats: 9
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 8, total: 9 }
     last_researched: null
 

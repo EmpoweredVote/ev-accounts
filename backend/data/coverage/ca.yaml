@@ -6,7 +6,7 @@
 
 state: CA
 state_name: California
-synced_at: 2026-07-28
+synced_at: 2026-07-29
 
 universe:
   state_fips: "06"
@@ -82,7 +82,7 @@ locations:
     stances: { researched: 12, total: 20 }
     last_researched: null
 
-  # ── Counties (2) ──
+  # ── Counties (3) ──
   - ocd_id: ocd-division/country:us/state:ca/county:los_angeles
     name: Los Angeles County
     level: county
@@ -111,7 +111,21 @@ locations:
     stances: { researched: 0, total: 2 }
     last_researched: null
 
-  # ── Cities & municipalities (99) ──
+  - ocd_id: ocd-division/country:us/state:ca/county:riverside
+    name: Riverside County
+    level: county
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 5, total: 5 }
+    last_researched: null
+
+  # ── Cities & municipalities (98) ──
   - ocd_id: ocd-division/country:us/state:ca/place:agoura_hills
     name: Agoura Hills
     level: local
@@ -1106,20 +1120,6 @@ locations:
     stances: { researched: 0, total: 6 }
     last_researched: null
 
-  - ocd_id: ocd-division/country:us/state:ca/place:riverside
-    name: Riverside
-    level: local
-    status: active
-    expected_seats: 5
-    geofenced: true
-    donors: none
-    candidates: none
-    treasury: full
-    populated: true
-    headshots: full
-    stances: { researched: 5, total: 5 }
-    last_researched: null
-
   - ocd_id: ocd-division/country:us/state:ca/place:rolling_hills
     name: Rolling Hills
     level: local
@@ -1498,7 +1498,7 @@ locations:
     stances: { researched: 5, total: 5 }
     last_researched: null
 
-  # ── School districts (79) ──
+  # ── School districts (85) ──
   - ocd_id: ocd-division/country:us/state:ca/school_district:abc_unified
     name: ABC Unified School District
     level: school
@@ -1622,6 +1622,20 @@ locations:
     treasury: none
     populated: true
     headshots: partial
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ca/school_district:berkeley_unified
+    name: Berkeley Unified School District
+    level: school
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
     stances: { researched: 0, total: 5 }
     last_researched: null
 
@@ -1874,6 +1888,20 @@ locations:
     treasury: none
     populated: true
     headshots: partial
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ca/school_district:fremont_unified
+    name: Fremont Unified School District
+    level: school
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
     stances: { researched: 0, total: 5 }
     last_researched: null
 
@@ -2353,8 +2381,64 @@ locations:
     stances: { researched: 0, total: 5 }
     last_researched: null
 
+  - ocd_id: ocd-division/country:us/state:ca/school_district:sacramento_city_unified
+    name: Sacramento City Unified School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ca/school_district:san_diego_city_unified
+    name: San Diego City Unified School District
+    level: school
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ca/school_district:san_francisco_unified
+    name: San Francisco Unified School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
   - ocd_id: ocd-division/country:us/state:ca/school_district:san_gabriel_unified
     name: San Gabriel Unified School District
+    level: school
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ca/school_district:san_jose_unified
+    name: San Jose Unified School District
     level: school
     status: active
     expected_seats: 5

@@ -273,12 +273,22 @@ const UNIVERSE_LAYERS: {
   ocdKind: string;
   strip: RegExp;
 }[] = [
+  // These strips MUST mirror scripts/backfill-district-ocd.ts, which synthesizes the ocd_id slugs
+  // this matches against. Where they diverged, the universe card contradicted itself: Oregon showed
+  // "12 of 12 started" while listing 11 as remaining, because the backfill strips a trailing
+  // state-assigned district number ("Beaverton School District 48J" -> beaverton) and this did not.
+  // Change the two together.
   { level: 'county', label: 'Counties', mtfcc: 'G4020', ocdKind: 'county', strip: / county$/i },
-  { level: 'local', label: 'Cities & Towns', mtfcc: 'G4110', ocdKind: 'place', strip: / (city|town)$/i },
-  { level: 'school', label: 'School Districts', mtfcc: 'G5420', ocdKind: 'school_district', strip: / school district$/i },
+  // `village|borough|CDP` for the same reason: the backfill strips them (WI place names read
+  // "Elmwood Park village"), so without them a WI village never matches its own populated slug.
+  { level: 'local', label: 'Cities & Towns', mtfcc: 'G4110', ocdKind: 'place', strip: / (city|town|village|borough|CDP)$/i },
+  { level: 'school', label: 'School Districts', mtfcc: 'G5420', ocdKind: 'school_district', strip: / school district( \d+[a-z]?)?$| \d+[a-z]?$/i },
 ];
 
-function toSlug(name: string, strip: RegExp): string {
+// `name` is typed nullable because geofence_boundaries.name IS nullable and IS null in practice.
+// Callers filter nulls out before matching; this guard only keeps a future caller from crashing.
+function toSlug(name: string | null, strip: RegExp): string {
+  if (!name) return '';
   return name
     .replace(strip, '')
     .toLowerCase()
@@ -316,26 +326,37 @@ export async function computeUniverse(
 
   if (fips) {
     for (const layer of UNIVERSE_LAYERS) {
-      const { rows } = await pool.query<{ name: string }>(
+      const { rows: allRows } = await pool.query<{ name: string | null }>(
         `SELECT name FROM essentials.geofence_boundaries WHERE state = $1 AND mtfcc = $2 ORDER BY name`,
         [fips, layer.mtfcc],
       );
-      if (rows.length === 0) continue; // no geofence denominator for this category in this state
+      if (allRows.length === 0) continue; // no geofence denominator for this category in this state
+      // geofence_boundaries.name is NULLABLE and null in practice (MA 5 school districts, VA 1).
+      // toSlug(null) threw here, and one null 500'd getCoverage for the WHOLE state — the admin
+      // coverage page has been dead for MA and VA. This is the same nullable-name defect that was
+      // fixed in coverage-init.ts and missed here; see data/coverage/README.md.
+      const rows = allRows.filter((r) => r.name !== null);
+      const nameless = allRows.length - rows.length;
       // started/complete come from the tracked rows (kept internally consistent: complete ⊆ started);
       // geofences provide only the total denominator and the "remaining" name list.
       const levelLocs = resolved.filter((l) => l.level === layer.level);
       const started = levelLocs.filter((l) => l.roster_actual > 0).length;
       const complete = levelLocs.filter((l) => l.roster_complete).length;
       const pop = await populatedSlugs(stateCode, layer.ocdKind);
-      const remaining = rows.filter((r) => !pop.has(toSlug(r.name, layer.strip))).map((r) => r.name);
+      // Matching is by name, so a nameless geofence can never match a populated slug. It still
+      // COUNTS toward `total` (the jurisdiction is real), but it cannot be listed in `remaining`
+      // without asserting it is unstarted — which for MA's school districts would be false, since
+      // Boston/Lynn/Medford/Newton/Somerville are covered. So flag the card unreliable instead:
+      // the same "universe size unknown" escape the started > total case already uses.
+      const remaining = rows.filter((r) => !pop.has(toSlug(r.name, layer.strip))).map((r) => r.name!);
       out.push({
         level: layer.level,
         label: layer.label,
-        total: rows.length,
+        total: allRows.length,
         complete,
         started,
         remaining,
-        reliable: rows.length >= started,
+        reliable: allRows.length >= started && nameless === 0,
       });
     }
   }

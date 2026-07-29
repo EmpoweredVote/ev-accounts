@@ -6,7 +6,7 @@
 
 state: OR
 state_name: Oregon
-synced_at: 2026-07-28
+synced_at: 2026-07-29
 
 universe:
   state_fips: "41"
@@ -311,6 +311,175 @@ locations:
   - ocd_id: ocd-division/country:us/state:or/place:wood_village
     name: Wood Village
     level: local
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  # ── School districts (12) ──
+  - ocd_id: ocd-division/country:us/state:or/school_district:beaverton
+    name: Beaverton School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/school_district:bend_la_pine_administrative
+    name: Bend La Pine Administrative School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 3, total: 7 }
+    last_researched: 2026-07-25
+
+  - ocd_id: ocd-division/country:us/state:or/school_district:centennial
+    name: Centennial School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/school_district:david_douglas
+    name: David Douglas School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/school_district:forest_grove
+    name: Forest Grove School District
+    level: school
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/school_district:hillsboro
+    name: Hillsboro School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/school_district:parkrose
+    name: Parkrose School District
+    level: school
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/school_district:portland_public_schools
+    name: Portland Public Schools School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/school_district:reynolds
+    name: Reynolds School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/school_district:riverdale
+    name: Riverdale School District
+    level: school
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/school_district:sherwood
+    name: Sherwood School District
+    level: school
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:or/school_district:tigard_tualatin
+    name: Tigard Tualatin School District
+    level: school
     status: active
     expected_seats: 5
     geofenced: true

@@ -6,7 +6,7 @@
 
 state: MA
 state_name: Massachusetts
-synced_at: 2026-07-28
+synced_at: 2026-07-29
 
 universe:
   state_fips: "25"
@@ -277,5 +277,90 @@ locations:
     populated: true
     headshots: full
     stances: { researched: 11, total: 11 }
+    last_researched: null
+
+  # ── School districts (6) ──
+  - ocd_id: ocd-division/country:us/state:ma/school_district:boston_public_schools
+    name: Boston Public Schools School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ma/school_district:cambridge
+    name: Cambridge School District
+    level: school
+    status: active
+    expected_seats: 6
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: full
+    populated: true
+    headshots: full
+    stances: { researched: 5, total: 6 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ma/school_district:lynn_public_schools
+    name: Lynn Public Schools School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 1, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ma/school_district:medford_public_schools
+    name: Medford Public Schools School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 1, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ma/school_district:newton_public_schools
+    name: Newton Public Schools School District
+    level: school
+    status: active
+    expected_seats: 9
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 1, total: 9 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ma/school_district:somerville_public_schools
+    name: Somerville Public Schools School District
+    level: school
+    status: active
+    expected_seats: 9
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 2, total: 9 }
     last_researched: null
 

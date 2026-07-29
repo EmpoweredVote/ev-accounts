@@ -230,8 +230,69 @@ were caught this way, and one false alarm avoided:
 - **166 LOCAL/LOCAL_EXEC districts unmapped.** All are `--type LOCAL` skips: no G4110 place geofence
   and an unparseable ward layer. Needs geofence work, not this script. Includes 4 WI towns
   (Burlington, Dover, Norway, Waterford) which are MCDs with 10-digit geo_ids.
-- **SCHOOL tier: IN done, ~29 resolvable / ~190 officials left in other states.** Still not reviewed
-  for slug sanity outside IN — do that first, per above.
+- **SCHOOL tier: COMPLETE.** See below.
+
+#### SCHOOL tier finished — 2026-07-28 (36 districts / 244 officials, 0 skipped)
+
+`backfill-district-ocd.ts --type SCHOOL --write` across all states. Revert log:
+`.planning/coverage/backfill-log-school-2026-07-29.json` (the log stamps **UTC**, so an
+afternoon-Pacific run dates tomorrow — the two logs from this one working day read 07-28 and 07-29).
+Then `coverage-init --write` + `coverage-sync` for `ca ma me nv or tx va`. Verified through
+`getCoverage()` per state: school tier is **120 rows / 657 officials, every row complete** —
+CA 85/423, OR 12/74, MA 6/45, ME 5/36, TX 5/35, IN 5/24, NV 1/11, VA 1/9.
+
+Slug review found **two defects, both the `village` class** — a descriptor that only fails to strip
+in one state's naming style, invisible everywhere else. Both were caught by reading generated output
+against the 125 slugs already in prod, in which **not one contains `school_district_` or a district
+number**:
+
+- **Oregon's district numbers carry a joint-district letter** ("Hillsboro School District 1J",
+  "Beaverton ... 48J"). `\s+\d+$` could not match `1J`, which left the name ending in the number so
+  the ` school district` strip could not match either — 6 of 12 OR slugs would have been
+  `hillsboro_school_district_1j`, while OR's own numberless siblings (`reynolds`, `parkrose`,
+  `david_douglas`) resolved clean. Now `\s+\d+[A-Za-z]?$`.
+- **The 7 "unresolvable" skips were the nullable-name defect, not missing geography.** MA and VA city
+  school departments are keyed to the **city place GEOID**, and their G5420 row exists with a **NULL
+  `name`** (MA 5, VA 1 — Cambridge has no G5420 at all). TIGER offers no district name, so the script
+  now falls back to `districts.label`, guarded by `BARE_SEAT_LABEL` so a per-seat label ("District 4",
+  "At-Large" — what IN's consolidated sub-districts carry) can never become
+  `school_district:district_4`.
+
+Slugs deliberately kept as generated: `plano_independent` etc. are exactly analogous to the existing
+`burbank_unified` (the qualifier stays, the words "School District" go); `san_diego_city_unified` and
+`sacramento_city_unified` use TIGER's legal name over the label; `clark_county` is the real LEA name
+and cannot collide with `county:clark` (different OCD kind). Pre-write checks, all clean: 0 exact
+collisions, 0 internal duplicates (two districts → one slug would silently merge rows), 0 slugs
+containing a district number, and CA/IN/UT are the only states with pre-existing school slugs — so
+MA/ME/NV/OR/TX/VA had **no split risk at all**.
+
+`ca.yaml` also picked up an unrelated stale-file correction: `place:riverside` → `county:riverside`
+(+5 supervisors). Not a loss — `place:riverside` has 0 districts / 0 officials; migration 1484
+re-keyed that county board and the file predated it.
+
+#### 🔴 Two live bugs found in `coverageService.ts` while verifying this (both now fixed)
+
+Neither was caused by the backfill; verifying the result is what exposed them.
+
+- **`getCoverage()` 500'd for MA and VA.** `computeUniverse` → `toSlug(r.name)` had no null guard, so
+  **a single NULL geofence name took down the whole coverage endpoint for that state** — the same
+  nullable-name defect fixed in `coverage-init.ts` and missed here. The admin coverage page was dead
+  for both states. `toSlug` is now null-safe and nameless geofences are excluded from name matching;
+  they still count toward `total`, but the card is flagged `reliable: false` rather than listing them
+  as "remaining", which for MA's school districts would falsely claim Boston/Lynn/Medford/Newton/
+  Somerville are unstarted.
+- **`UNIVERSE_LAYERS` strips had drifted from the backfill's**, so the universe card contradicted
+  itself: OR read **"12 of 12 started" while listing 11 as remaining**, because the backfill strips a
+  trailing district number and this did not. The `local` strip was also missing
+  `village|borough|CDP`, the WI-village divergence. Measured A/B over all 12 states: named geofences
+  matching a populated slug went **328 → 350**, with **no layer losing a match** (or school 1→12,
+  wi local 3→14). **These strips and the backfill's must change together** — there is now a comment
+  on both saying so.
+
+**Still self-contradicting, pre-existing and NOT fixed by the strips** (populated slugs that no
+TIGER name can match, mostly LA County rows slugged from labels like "ABC Unified Board" rather than
+the TIGER name): `ca` school 34 unmatched, `in` local 12, `ca` local 1, `va` county 1. Each needs
+individual judgement, not a regex.
 
 #### IN SCHOOL + `in.yaml` re-init — DONE 2026-07-28
 

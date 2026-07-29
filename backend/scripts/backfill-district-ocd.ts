@@ -120,20 +120,49 @@ function resolveWard(geoId: string, xName: string | undefined, abbr?: string | n
 // SCHOOL → parent LEA slug. Board-subdistricts roll up to the parent district, never a
 // per-seat division: generic "Board District N" names use SCHOOL_ALIAS; "MCCSC N" drops
 // the seat number; sub-geos with no own geofence look up the 7-digit parent geo_id.
-function resolveSchoolSlug(geoId: string, nameByKey: Map<string, string>): string | null {
+// A trailing state-assigned district number, which is NOT part of the district's name.
+// `\d+[A-Za-z]?` not `\d+`: Oregon's numbers carry a joint-district suffix ("Hillsboro School
+// District 1J", "Beaverton ... 48J", "Tigard-Tualatin ... 23J"). With digits only, the letter
+// blocked BOTH strips — the number failed to match, which left the name ending in "1J" so the
+// " school district" strip could not match either, yielding school_district:hillsboro_school_
+// district_1j. Of the 125 school slugs already in prod, NOT ONE contains "school_district_" or a
+// district number, and Oregon's own numberless siblings resolve clean (reynolds, parkrose,
+// david_douglas) — so this was the `village` defect again: a descriptor that only fails to strip
+// in one state's naming style, invisible everywhere else.
+const TRAILING_DISTRICT_NO = /\s+\d+[A-Za-z]?$/;
+// Bare seat descriptors. A SCHOOL district whose geofence name is missing falls back to its label,
+// and IN's consolidated sub-districts show what that must never produce: labels like "District 4"
+// and "At-Large" would slug to school_district:district_4. Reject them and skip instead.
+const BARE_SEAT_LABEL = /^(?:board\s+)?(?:district|zone|seat|area|position|ward)\s*\d*[A-Za-z]?$|^at[-\s]?large$/i;
+
+function stripSchoolName(name: string): string | null {
+  const parent = name.replace(TRAILING_DISTRICT_NO, '').replace(/\s+school district$/i, '');
+  return plainSlug(parent) || null;
+}
+
+function resolveSchoolSlug(
+  geoId: string,
+  nameByKey: Map<string, string>,
+  label?: string | null,
+): string | null {
   const ownName = nameByKey.get(`${geoId}|G5420`);
   if (ownName) {
     if (/^board district\s+\d+$/i.test(ownName.trim())) {
       const am = geoId.match(/^([a-z]+)-board-district/i);
       return (am ? SCHOOL_ALIAS[am[1].toLowerCase()] : undefined) ?? null;
     }
-    const parent = ownName.replace(/\s+\d+$/, '').replace(/\s+school district$/i, '');
-    return plainSlug(parent) || null;
+    return stripSchoolName(ownName);
   }
   if (/^\d{12}$/.test(geoId)) {
     const baseName = nameByKey.get(`${geoId.slice(0, 7)}|G5420`);
     if (baseName) return plainSlug(baseName.replace(/\s+school district$/i, '')) || null;
   }
+  // Last resort: the district's own label. MA and VA city school departments are keyed to the
+  // CITY place GEOID, and their G5420 row exists with a NULL `name` (the same nullable-name defect
+  // that killed coverage-init: MA 5, VA 1) — or, for Cambridge, there is no G5420 at all. TIGER
+  // therefore offers no district name, and the label ("Boston Public Schools", "Cambridge School
+  // District") is the only source. Guarded on the label being a real district name, never a seat.
+  if (label && !BARE_SEAT_LABEL.test(label.trim())) return stripSchoolName(label);
   return null;
 }
 
@@ -263,7 +292,7 @@ async function main(): Promise<void> {
 
     // SCHOOL: parent LEA slug (board-subdistricts roll up).
     if (d.district_type === 'SCHOOL') {
-      const slug = resolveSchoolSlug(geoId, nameByKey);
+      const slug = resolveSchoolSlug(geoId, nameByKey, d.label);
       if (!slug) { p.skipped.push({ d, reason: `no parent school district for geo_id=${geoId}` }); continue; }
       p.resolved.push({ d, ocd: `ocd-division/country:us/state:${abbr}/school_district:${slug}` });
       continue;

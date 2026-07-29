@@ -6,7 +6,7 @@
 
 state: TX
 state_name: Texas
-synced_at: 2026-07-28
+synced_at: 2026-07-29
 
 universe:
   state_fips: "48"
@@ -417,5 +417,76 @@ locations:
     populated: true
     headshots: full
     stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  # ── School districts (5) ──
+  - ocd_id: ocd-division/country:us/state:tx/school_district:allen_independent
+    name: Allen Independent School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/school_district:frisco_independent
+    name: Frisco Independent School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/school_district:mckinney_independent
+    name: McKinney Independent School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/school_district:plano_independent
+    name: Plano Independent School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:tx/school_district:richardson_independent
+    name: Richardson Independent School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
     last_researched: null
 
