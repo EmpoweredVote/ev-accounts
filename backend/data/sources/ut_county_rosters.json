@@ -4,11 +4,11 @@
     "fips": "49001",
     "geo_id_county": "ocd-division/country:us/state:ut/county:beaver",
     "government_shape": "commission",
-    "roster_url": "https://www.beaver.utah.gov/Directory.aspx?did=4",
+    "roster_url": "https://electionresults.utah.gov/results/public/api/elections/beaver-county-ut/general11052024/data",
     "council_district_template": null,
     "status": "deferred",
     "expected_at_large_officers": 6,
-    "notes": "VERIFIED 2026-07-29 (medium confidence): CORRECTED 10 -> 9. Clerk/Auditor consolidated; no Surveyor. NOTE: the county staff directory implies the Assessor is appointed -- that is wrong as a matter of law (17-66-102(2) makes the assessor elected), so it is counted here. Staff directories are unreliable for elected-vs-appointed.",
+    "notes": "RECONFIRMED 2026-07-29 against official election contests -- total UNCHANGED at 9. 2024 ballot contests: COUNTY COMMISSIONER C, COUNTY ASSESSOR, COUNTY RECORDER, COUNTY TREASURER -- Recorder and Treasurer are SEPARATE contests, ruling out the Recorder/Treasurer consolidation that made Wayne and Daggett wrong. It also proves the ASSESSOR is elected, which the county staff directory wrongly implied was appointed. County site shows \"Clerk / Auditor\" combined and no Surveyor office. 3 + 6 = 9.",
     "expected_commissioners": 3,
     "expected_council_seats": null,
     "verified_officers": [
@@ -21,7 +21,7 @@
     ],
     "verified_at": "2026-07-29",
     "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
-    "roster_confidence": "medium",
+    "roster_confidence": "high",
     "expected_seat_total": 9
   },
   {
@@ -208,11 +208,11 @@
     "fips": "49017",
     "geo_id_county": "ocd-division/country:us/state:ut/county:garfield",
     "government_shape": "commission",
-    "roster_url": "https://www.garfield.utah.gov/departments",
+    "roster_url": "https://electionresults.utah.gov/results/public/api/elections/garfield-county-ut/general11052024/data",
     "council_district_template": null,
     "status": "deferred",
     "expected_at_large_officers": 7,
-    "notes": "VERIFIED 2026-07-29 (medium confidence): Clerk/Auditor consolidated; elects a Surveyor.",
+    "notes": "RECONFIRMED 2026-07-29 against official election contests -- total UNCHANGED at 10. County departments list Recorder and Surveyor as DISTINCT offices (/Departments/Recorder and /Departments/Surveyor) plus \"Auditor / Clerk\" combined. 2024 ballot: Assessor, Recorder, Treasurer (separate). 3 + 7 = 10.",
     "expected_commissioners": 3,
     "expected_council_seats": null,
     "verified_officers": [
@@ -226,7 +226,7 @@
     ],
     "verified_at": "2026-07-29",
     "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
-    "roster_confidence": "medium",
+    "roster_confidence": "high",
     "expected_seat_total": 10
   },
   {
@@ -286,11 +286,11 @@
     "fips": "49023",
     "geo_id_county": "ocd-division/country:us/state:ut/county:juab",
     "government_shape": "commission",
-    "roster_url": "https://juabcounty.gov/",
+    "roster_url": "https://electionresults.utah.gov/results/public/api/elections/juab-county-ut/general11052024/data",
     "council_district_template": null,
     "status": "deferred",
     "expected_at_large_officers": 6,
-    "notes": "VERIFIED 2026-07-29 (medium confidence): CORRECTED 10 -> 9. Juab runs BOTH permitted consolidations -- Clerk/Auditor and Recorder/Surveyor -- so 8 statutory officers collapse to 6.",
+    "notes": "RECONFIRMED 2026-07-29 against official election contests -- total UNCHANGED at 9. 2026 Notice of Election: County Commission Seat A and B, County Attorney, County Clerk / Auditor, County Sheriff. 2024 ballot: County Assessor, County Recorder/Surveyor, County Treasurer. Union = 3 + 6 = 9, with Surveyor folded into Recorder/Surveyor and no separate Surveyor office.",
     "expected_commissioners": 3,
     "expected_council_seats": null,
     "verified_officers": [
@@ -303,7 +303,7 @@
     ],
     "verified_at": "2026-07-29",
     "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
-    "roster_confidence": "medium",
+    "roster_confidence": "high",
     "expected_seat_total": 9
   },
   {
@@ -387,11 +387,11 @@
     "fips": "49031",
     "geo_id_county": "ocd-division/country:us/state:ut/county:piute",
     "government_shape": "commission",
-    "roster_url": "https://piute.gov/your-government/elected-officials/",
+    "roster_url": "https://electionresults.utah.gov/results/public/api/elections/piute-county-ut/general11052024/data",
     "council_district_template": null,
     "status": "deferred",
     "expected_at_large_officers": 5,
-    "notes": "VERIFIED 2026-07-29 (medium confidence): CORRECTED 10 -> 8 -- the smallest roster in the state. Piute consolidates Clerk/Auditor AND Recorder/Treasurer (both offices share one phone line), and elects no Surveyor, leaving 5 officers. Recorder+Treasurer is an unusual pairing but not among the combinations 17-66-104(2) forbids.",
+    "notes": "RECONFIRMED 2026-07-29 against official election contests -- total UNCHANGED at 8. 2024 ballot contests name the consolidated office outright: Assessor, County Commissioner, RECORDER/TREASURER. Confirms the state's smallest roster -- 3 + 5 = 8.",
     "expected_commissioners": 3,
     "expected_council_seats": null,
     "verified_officers": [
@@ -403,7 +403,7 @@
     ],
     "verified_at": "2026-07-29",
     "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
-    "roster_confidence": "medium",
+    "roster_confidence": "high",
     "expected_seat_total": 8
   },
   {
@@ -411,11 +411,11 @@
     "fips": "49033",
     "geo_id_county": "ocd-division/country:us/state:ut/county:rich",
     "government_shape": "commission",
-    "roster_url": "https://www.richcounty.gov/officers/",
+    "roster_url": "https://electionresults.utah.gov/results/public/api/elections/rich-county-ut/general11052024/data",
     "council_district_template": null,
     "status": "deferred",
     "expected_at_large_officers": 6,
-    "notes": "VERIFIED 2026-07-29 (medium confidence): CORRECTED 10 -> 9. Both consolidations present: Auditor/Clerk and Recorder & Surveyor.",
+    "notes": "RECONFIRMED 2026-07-29 against official election contests -- total UNCHANGED at 9. 2024 ballot: Assessor, County Commissioner C, Recorder, Treasurer -- Recorder and Treasurer SEPARATE, so no Recorder/Treasurer consolidation. County roster shows \"Auditor/Clerk\" and \"Recorder & Surveyor\" both combined. 3 + 6 = 9.",
     "expected_commissioners": 3,
     "expected_council_seats": null,
     "verified_officers": [
@@ -428,7 +428,7 @@
     ],
     "verified_at": "2026-07-29",
     "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
-    "roster_confidence": "medium",
+    "roster_confidence": "high",
     "expected_seat_total": 9
   },
   {
@@ -463,11 +463,11 @@
     "fips": "49037",
     "geo_id_county": "ocd-division/country:us/state:ut/county:san_juan",
     "government_shape": "commission",
-    "roster_url": "https://sanjuancountyut.gov/directory",
+    "roster_url": "https://electionresults.utah.gov/results/public/api/elections/san-juan-county-ut/general11052024/data",
     "council_district_template": null,
     "status": "deferred",
     "expected_at_large_officers": 7,
-    "notes": "VERIFIED 2026-07-29 (medium confidence): Clerk/Auditor consolidated; elects a Surveyor.",
+    "notes": "RECONFIRMED 2026-07-29 against official election contests -- total UNCHANGED at 10. 2024 ballot: County Assessor, County Recorder, County SURVEYOR, County Treasurer -- all four separate, so San Juan genuinely elects a Surveyor. 2026 primary: County Commissioner District 3, County Sheriff. 3 + 7 = 10.",
     "expected_commissioners": 3,
     "expected_council_seats": null,
     "verified_officers": [
@@ -481,7 +481,7 @@
     ],
     "verified_at": "2026-07-29",
     "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
-    "roster_confidence": "medium",
+    "roster_confidence": "high",
     "expected_seat_total": 10
   },
   {
@@ -489,11 +489,11 @@
     "fips": "49039",
     "geo_id_county": "ocd-division/country:us/state:ut/county:sanpete",
     "government_shape": "commission",
-    "roster_url": "https://www.sanpetecountyutah.gov/",
+    "roster_url": "https://electionresults.utah.gov/results/public/api/elections/sanpete-county-ut/general11052024/data",
     "council_district_template": null,
     "status": "deferred",
     "expected_at_large_officers": 7,
-    "notes": "VERIFIED 2026-07-29 (medium confidence): Clerk and Auditor SEPARATE; no elected Surveyor found.",
+    "notes": "RECONFIRMED 2026-07-29 against official election contests -- total UNCHANGED at 10. County site lists Clerk (Linda Christiansen) and Auditor (Stacey Lyon) as SEPARATE offices. 2024 ballot: County Assessor, County Commissioner Seat C, County Recorder, County Treasurer (Recorder and Treasurer separate). No Surveyor office. 3 + 7 = 10.",
     "expected_commissioners": 3,
     "expected_council_seats": null,
     "verified_officers": [
@@ -507,7 +507,7 @@
     ],
     "verified_at": "2026-07-29",
     "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
-    "roster_confidence": "medium",
+    "roster_confidence": "high",
     "expected_seat_total": 10
   },
   {
@@ -515,11 +515,11 @@
     "fips": "49041",
     "geo_id_county": "ocd-division/country:us/state:ut/county:sevier",
     "government_shape": "commission",
-    "roster_url": "https://sevierutah.net/county-officials/",
+    "roster_url": "https://electionresults.utah.gov/results/public/api/elections/sevier-county-ut/general11052024/data",
     "council_district_template": null,
     "status": "deferred",
     "expected_at_large_officers": 6,
-    "notes": "VERIFIED 2026-07-29 (medium confidence): CORRECTED 10 -> 9. Clerk/Auditor consolidated; no elected Surveyor.",
+    "notes": "RECONFIRMED 2026-07-29 against official election contests -- total UNCHANGED at 9. County site nests elections under county_officials/clerk___auditor -- Clerk/Auditor combined -- and lists no Surveyor. 2024 ballot: County Assessor, County Commissioner, County Recorder, County Treasurer (separate). 3 + 6 = 9.",
     "expected_commissioners": 3,
     "expected_council_seats": null,
     "verified_officers": [
@@ -532,7 +532,7 @@
     ],
     "verified_at": "2026-07-29",
     "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
-    "roster_confidence": "medium",
+    "roster_confidence": "high",
     "expected_seat_total": 9
   },
   {
@@ -592,11 +592,11 @@
     "fips": "49047",
     "geo_id_county": "ocd-division/country:us/state:ut/county:uintah",
     "government_shape": "commission",
-    "roster_url": "https://www.uintah.gov/departments/",
+    "roster_url": "https://electionresults.utah.gov/results/public/api/elections/uintah-county-ut/general11052024/data",
     "council_district_template": null,
     "status": "deferred",
     "expected_at_large_officers": 7,
-    "notes": "VERIFIED 2026-07-29 (medium confidence): Clerk/Auditor consolidated; elects a Surveyor.",
+    "notes": "RECONFIRMED 2026-07-29 against official election contests -- total UNCHANGED at 10. 2024 ballot: Uintah County Assessor, Commissioner, Recorder, SURVEYOR, Treasurer -- Uintah elects a Surveyor. 2026 primary: REP Uintah County Clerk-Auditor (combined). 3 + 7 = 10.",
     "expected_commissioners": 3,
     "expected_council_seats": null,
     "verified_officers": [
@@ -610,7 +610,7 @@
     ],
     "verified_at": "2026-07-29",
     "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
-    "roster_confidence": "medium",
+    "roster_confidence": "high",
     "expected_seat_total": 10
   },
   {
@@ -644,11 +644,11 @@
     "fips": "49051",
     "geo_id_county": "ocd-division/country:us/state:ut/county:wasatch",
     "government_shape": "council",
-    "roster_url": "https://www.wasatchcounty.gov/189/County-Council-Office",
+    "roster_url": "https://electionresults.utah.gov/results/public/api/elections/wasatch-county-ut/general11052024/data",
     "council_district_template": "ocd-division/country:us/state:ut/county:wasatch/council_district:{N}",
     "status": "deferred",
     "expected_at_large_officers": 7,
-    "notes": "VERIFIED 2026-07-29 (medium confidence): CORRECTED 12 -> 14. SEVEN-member council (Seats A-G, two at-large), not 5, plus an APPOINTED manager (the council appoints the county manager, so there is no elected executive). 7 + 7 officers = 14.",
+    "notes": "RECONFIRMED 2026-07-29 against official election contests -- total UNCHANGED at 14. 2024 ballot: County Council Seats B, D, E and G plus County Assessor, Recorder, SURVEYOR, Treasurer. 2026 primary: County Clerk/Auditor, County Council Seat A - At Large, County Sheriff. Seats A-G confirm a SEVEN-member council, and the Surveyor is genuinely elected. 7 + 7 = 14.",
     "expected_council_seats": 7,
     "expected_commissioners": null,
     "verified_officers": [
@@ -662,7 +662,7 @@
     ],
     "verified_at": "2026-07-29",
     "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
-    "roster_confidence": "medium",
+    "roster_confidence": "high",
     "expected_seat_total": 14
   },
   {

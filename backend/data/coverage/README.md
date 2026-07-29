@@ -173,40 +173,57 @@ template could only ever produce 10, 12 or 16:
 | 15 | Cache |
 | 18 | Salt Lake |
 
-`roster_confidence` grades the source, and **`high` is not the same claim as `medium`**:
+**All 29 counties are now `roster_confidence: high`** — every seat total is backed by the county's own
+elected-officials roster, its Notice of Election, or its official election contest list. There are no
+`medium` rows left.
 
-- **`high` (19)** — read off the county's own elected-officials roster or its candidate-filing list.
-- **`medium` (10)** — assembled from official-domain content via search, or from a source that
-  doesn't distinguish elected from appointed. Reconfirm against the county roster before seeding.
+#### The reconfirmation pass, and the one source that settles this cleanly
 
-#### 🔴 Both `medium` counties that were reconfirmed turned out WRONG
+Every county graded `medium` in the first pass was reconfirmed on 2026-07-29. **Wayne and Daggett were
+wrong; the other ten were all correct:**
 
-Wayne and Daggett were reconfirmed against their own rosters on 2026-07-29. **Both were wrong, and
-both in the same direction** — an undetected consolidation:
-
-| | audit said | actually | what was missed |
+| | first pass | reconfirmed | what had been missed |
 |---|---|---|---|
 | Wayne | 10 | **8** | Clerk/Auditor **and** Recorder/Treasurer, no Surveyor |
 | Daggett | 10 | **9** | Recorder/Treasurer |
+| Beaver, Garfield, Juab, Piute, Rich, San Juan, Sanpete, Sevier, Uintah, Wasatch | — | **unchanged** | nothing |
 
-That is 2 for 2. **Treat the remaining 10 `medium` counties as probably wrong, not merely
-unconfirmed** — Beaver, Garfield, Juab, Piute, Rich, San Juan, Sanpete, Sevier, Uintah, Wasatch. The
-failure mode is systematic: aggregators and directories reproduce the **generic statutory list** from
-Title 17 and silently miss whatever that county actually consolidated. A source that lists exactly
-`Assessor, Attorney, Clerk/Auditor, Recorder, Sheriff, Surveyor, Treasurer` is reciting the statute,
-not reporting the county.
+Both failures were the *same* miss — an undetected **Recorder/Treasurer** consolidation — because
+aggregators and staff directories reproduce the **generic Title 17 statutory list** and silently drop
+whatever a county actually consolidated. A source listing exactly `Assessor, Attorney, Clerk/Auditor,
+Recorder, Sheriff, Surveyor, Treasurer` is reciting the statute, not reporting the county.
 
-Two techniques that did work, for whoever finishes these:
+**The fix is to enumerate actual ballot contests, and there is a uniform API for it:**
 
-- **Pair the two Notices of Election.** County officers sit on 4-year staggered terms, so one cycle
-  shows about half the offices — but the **union of two consecutive cycles enumerates every elected
-  office exhaustively**. Daggett's 2024 notice (Assessor, Attorney, Clerk, Commissioner "C",
-  **Recorder/Treasurer**) plus its 2026 notice (Commissioner A, Commissioner B, Auditor, Sheriff)
-  settled it outright — and made the absence of a Surveyor a *finding* rather than a silence. These
-  live on `utah.gov/pmn` and in county DocumentCenters.
+```
+https://electionresults.utah.gov/results/public/api/elections/<county>-county-ut/<election>/data
+# election slugs: general11052024, primary06232026  (2022 and earlier return 204 — not in the system)
+# county slug is lowercase with hyphens: san-juan-county-ut
+# contest titles live in ballotItems[].name[] (localized array, take languageId == "en")
+```
+
+`parentJurisdictionName` is always `"Utah"`, so filter county contests by title, not jurisdiction. The
+web UI is a JS SPA that WebFetch cannot read — hit the API directly instead.
+
+This is what makes the check decisive: a **general** election lists every office up that cycle whether
+contested or not, so `County Recorder` and `County Treasurer` appearing as *separate contests*
+positively rules out the consolidation that broke Wayne and Daggett — and Piute's ballot names
+`Recorder/Treasurer` outright, confirming it where it does exist. A **primary** only shows contested
+races, so absence there proves nothing.
+
+Two supporting techniques:
+
+- **Pair the two cycles.** County officers sit on 4-year staggered terms, so one cycle shows about half
+  the offices — the **union of two consecutive cycles is exhaustive**, which turns "no Surveyor" into a
+  finding rather than a silence. Notices of Election live on `utah.gov/pmn` and in county
+  DocumentCenters; several county sites 403 WebFetch and need a real browser.
 - **A shared phone number between two offices is a reliable tell for consolidation.** It flagged
   Piute's Recorder/Treasurer, then predicted Daggett's before the notice confirmed it. Daggett's own
   directory listed Recorder and Treasurer as separate departments — on one phone line.
+
+⚠️ **Search-result summaries cross-contaminate on documents like these.** Asking for Sevier's and
+Garfield's 2026 notices returned an office list identical to Daggett's, because the engine was
+paraphrasing the Daggett PDF already in play. Read the document, or use the API.
 
 Two traps this audit walked into, worth not repeating:
 
@@ -217,7 +234,8 @@ Two traps this audit walked into, worth not repeating:
 - **"The search didn't mention a Surveyor" is absence of evidence, not absence of the office.** Every
   no-Surveyor finding here was confirmed against the county's own office list, not inferred.
 
-Don't trust a UT county seat count without `verified_at`, and don't treat `medium` as settled.
+Don't trust a UT county seat count without `verified_at`. If a future county is added or re-derived,
+grade it `medium` until its ballot contests are enumerated — the API above makes that cheap.
 
 ### "Calibrated" definition
 
