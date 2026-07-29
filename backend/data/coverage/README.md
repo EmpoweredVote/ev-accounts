@@ -127,23 +127,115 @@ directions:
 | County's consolidations | Real officers | Counties | Template `7` |
 |---|---|---|---|
 | none | 8 | Utah, Davis, Salt Lake | **under** by 1 |
-| Recorder/Surveyor only | 7 | Tooele, Summit | right by luck |
-| separate Clerk + Auditor, no elected Surveyor | 7 | Cache | right by luck |
-| Clerk/Auditor **and** Recorder/Surveyor | 6 | Washington, Weber | **over** by 1 |
+| separate Clerk+Auditor, no elected Surveyor | 7 | Box Elder, Millard, Sanpete, Cache | right by luck |
+| Recorder/Surveyor only | 7 | Tooele, Summit, Iron | right by luck |
+| Clerk/Auditor only | 7 | Duchesne, Garfield, San Juan, Uintah, Grand, Wasatch | right by luck |
+| Clerk/Auditor, no elected Surveyor | 6 | Beaver, Emery, Kane, Sevier, Morgan, Carbon\* | **over** by 1 |
+| Clerk/Auditor **and** Recorder/Surveyor | 6 | Washington, Weber, Juab, Rich | **over** by 1 |
+| separate Clerk+Auditor, **Recorder/Treasurer** | 6 | Daggett | **over** by 1 |
+| Clerk/Auditor **and** Recorder/**Treasurer** | 5 | Piute, Wayne | **over** by 2 |
+
+\* Carbon's Surveyor office is held **concurrently by a sitting commissioner** ("Commissioner/
+Surveyor"), so it elects 9 *people* across 10 *offices*. `expected_seats` is compared against
+`COUNT(DISTINCT p.id)`, so **people is the correct unit** — count a consolidated office once.
+
+That last row is where the tracker's long-standing "Washington & Weber are missing an officer" note
+came from. It was never a missing officer — both counties elect exactly the 6 officers their
+ordinances leave unconsolidated, so 3 + 6 = 9 and their 9 loaded officials are a **complete** roster.
+Corrected to 9 on 2026-07-29.
 
 Two further errors compounded it, both on the legislative side:
 
 - **The elected executive was omitted entirely.** 17-66-102(1)(b) enumerates the county executive
   under executive-council/council-manager forms. Cache's County Executive and Salt Lake's Mayor were
   simply missing from the totals.
-- **Form and body size drift.** Tooele is no longer a 3-commissioner county (council-manager, 5
-  seats); Cache's council is 7 seats, not 5. A council-**manager** county's manager is appointed, so
-  it adds no seat — a council-**executive** county's executive does.
+- **Form and body size drift.** The `3 commissioners` default was wrong for four counties: **Grand
+  has a SEVEN-member commission** (5 districts + 2 at-large), **Wasatch a SEVEN-member council**
+  (Seats A–G), **Morgan a FIVE-member commission** (mislabelled `council`), and Tooele is no longer a
+  commission at all (council-manager, 5 seats). Cache's council is 7 seats, not 5. A
+  council-**manager** county's manager is appointed, so it adds **no** seat — a council-**executive**
+  county's executive does. Only Cache and Salt Lake elect an executive.
 
-**Verified 2026-07-29** against each county's own roster: Cache 15, Davis 11, Salt Lake 18, Tooele
-12, Utah 11 — every one matching the loaded roster exactly. The remaining **24 counties still carry
-the unaudited template**; `verified_at` + `verified_officers` + `seat_authority` in the JSON mark
-which have been checked. Don't trust a UT county seat count without `verified_at`.
+### All 29 counties audited — 2026-07-29
+
+Every county now carries `verified_at`, `verified_officers`, `seat_authority`, `expected_seat_total`
+and `roster_confidence`. **20 of 29 seat totals were wrong.** Totals now range **8 → 18**, where the
+template could only ever produce 10, 12 or 16:
+
+| Total | Counties |
+|---|---|
+| 8 | Piute, Wayne |
+| 9 | Beaver, Carbon, Daggett, Emery, Juab, Kane, Rich, Sevier, Washington, Weber |
+| 10 | Box Elder, Duchesne, Garfield, Iron, Millard, San Juan, Sanpete, Uintah |
+| 11 | Davis, Morgan, Utah |
+| 12 | Summit, Tooele |
+| 14 | Grand, Wasatch |
+| 15 | Cache |
+| 18 | Salt Lake |
+
+**All 29 counties are now `roster_confidence: high`** — every seat total is backed by the county's own
+elected-officials roster, its Notice of Election, or its official election contest list. There are no
+`medium` rows left.
+
+#### The reconfirmation pass, and the one source that settles this cleanly
+
+Every county graded `medium` in the first pass was reconfirmed on 2026-07-29. **Wayne and Daggett were
+wrong; the other ten were all correct:**
+
+| | first pass | reconfirmed | what had been missed |
+|---|---|---|---|
+| Wayne | 10 | **8** | Clerk/Auditor **and** Recorder/Treasurer, no Surveyor |
+| Daggett | 10 | **9** | Recorder/Treasurer |
+| Beaver, Garfield, Juab, Piute, Rich, San Juan, Sanpete, Sevier, Uintah, Wasatch | — | **unchanged** | nothing |
+
+Both failures were the *same* miss — an undetected **Recorder/Treasurer** consolidation — because
+aggregators and staff directories reproduce the **generic Title 17 statutory list** and silently drop
+whatever a county actually consolidated. A source listing exactly `Assessor, Attorney, Clerk/Auditor,
+Recorder, Sheriff, Surveyor, Treasurer` is reciting the statute, not reporting the county.
+
+**The fix is to enumerate actual ballot contests, and there is a uniform API for it:**
+
+```
+https://electionresults.utah.gov/results/public/api/elections/<county>-county-ut/<election>/data
+# election slugs: general11052024, primary06232026  (2022 and earlier return 204 — not in the system)
+# county slug is lowercase with hyphens: san-juan-county-ut
+# contest titles live in ballotItems[].name[] (localized array, take languageId == "en")
+```
+
+`parentJurisdictionName` is always `"Utah"`, so filter county contests by title, not jurisdiction. The
+web UI is a JS SPA that WebFetch cannot read — hit the API directly instead.
+
+This is what makes the check decisive: a **general** election lists every office up that cycle whether
+contested or not, so `County Recorder` and `County Treasurer` appearing as *separate contests*
+positively rules out the consolidation that broke Wayne and Daggett — and Piute's ballot names
+`Recorder/Treasurer` outright, confirming it where it does exist. A **primary** only shows contested
+races, so absence there proves nothing.
+
+Two supporting techniques:
+
+- **Pair the two cycles.** County officers sit on 4-year staggered terms, so one cycle shows about half
+  the offices — the **union of two consecutive cycles is exhaustive**, which turns "no Surveyor" into a
+  finding rather than a silence. Notices of Election live on `utah.gov/pmn` and in county
+  DocumentCenters; several county sites 403 WebFetch and need a real browser.
+- **A shared phone number between two offices is a reliable tell for consolidation.** It flagged
+  Piute's Recorder/Treasurer, then predicted Daggett's before the notice confirmed it. Daggett's own
+  directory listed Recorder and Treasurer as separate departments — on one phone line.
+
+⚠️ **Search-result summaries cross-contaminate on documents like these.** Asking for Sevier's and
+Garfield's 2026 notices returned an office list identical to Daggett's, because the engine was
+paraphrasing the Daggett PDF already in play. Read the document, or use the API.
+
+Two traps this audit walked into, worth not repeating:
+
+- **Staff directories are unreliable for elected-vs-appointed.** Beaver's implies its Assessor is
+  appointed, which 17-66-102(2) forbids. **Candidate-filing lists are the authoritative enumerator**
+  of what is actually on a ballot (Emery's and Morgan's settled both counties outright) — but note
+  county officers sit on 4-year staggered terms, so **one cycle shows only about half the offices**.
+- **"The search didn't mention a Surveyor" is absence of evidence, not absence of the office.** Every
+  no-Surveyor finding here was confirmed against the county's own office list, not inferred.
+
+Don't trust a UT county seat count without `verified_at`. If a future county is added or re-derived,
+grade it `medium` until its ballot contests are enumerated — the API above makes that cheap.
 
 ### "Calibrated" definition
 
@@ -463,7 +555,8 @@ Two things deliberately NOT changed:
   shapes it can't generate. **RESOLVED 2026-07-29:** the 5 counties reading over-roster (Cache
   15/12, Salt Lake 18/16, Tooele 12/10, Davis 11/10, Utah 11/10) were **a stale roster file, not
   duplicates** — a nationwide check found zero duplicate politician or office rows, and all five
-  loaded rosters were correct. See "The 7-officer template" below.
+  loaded rosters were correct. Washington and Weber were corrected the other way (10 → 9). All 10
+  UT county rows now read complete. See "The 7-officer template" below.
 - **Chamber rows in multi-member states** read roster > seats because `expected_seats` is the TIGER
   *district* count while the roster counts *members*: `az State House 60/30` (2 per district),
   `md State House 140/71`, `va State Senate 47/40`. Pre-existing units mismatch, not this tier.

@@ -65,9 +65,11 @@ rules:
 #            executive where the form has one + county-wide officers). Officer counts
 #            are PER-COUNTY: Utah Code 17-66-102 enumerates 8 county-wide officers,
 #            and 17-66-104 lets each county consolidate them by ordinance, so the real
-#            number is 6, 7 or 8 — never a fixed constant. Cache/Davis/Salt Lake/
-#            Tooele/Utah verified against county rosters 2026-07-29; the other 24
-#            counties still carry the unaudited uniform 7-officer template.
+#            number is 5-8 — never a fixed constant. ALL 29 counties audited 2026-07-29
+#            (18 totals were wrong; range is now 8-18). Each JSON row carries verified_at,
+#            verified_officers and roster_confidence (all 29 now 'high', each backed by
+#            official ballot contests). See data/coverage/README.md -> "The 7-officer
+#            template" for the electionresults.utah.gov API that enumerates them.
 #            Cities & schools: seeded at the current loaded roster (baseline) —
 #            VERIFY against official sizes.
 # donors/candidates/treasury: none | partial | full
@@ -288,13 +290,11 @@ locations:
     name: Washington County
     level: county
     status: active
-    # LEFT AT 10 BY OPERATOR DECISION — the 9/10 records a suspected missing officer.
-    # OPEN QUESTION (2026-07-29 audit): Washington consolidates BOTH Clerk/Auditor and
-    # Recorder/Surveyor, so its 8 statutory officers collapse to 6 → 3 + 6 = 9, which would
-    # make the 9 loaded officials a COMPLETE roster and the gap an artifact of the old
-    # uniform 7-officer template. Not changed pending your call.
-    # https://www.washco.utah.gov/departments/
-    expected_seats: 10
+    # 10 -> 9 (verified 2026-07-29): Washington consolidates BOTH Clerk/Auditor and
+    # Recorder/Surveyor, so its 8 statutory officers collapse to 6 → 3 + 6 = 9. The old 10
+    # came from the uniform 7-officer template; the "missing officer" it implied never
+    # existed — these 9 are a COMPLETE roster. https://www.washco.utah.gov/departments/
+    expected_seats: 9
     geofenced: true
     donors: none
     candidates: none
@@ -308,12 +308,11 @@ locations:
     name: Weber County
     level: county
     status: active
-    # LEFT AT 10 BY OPERATOR DECISION — same open question as Washington: Weber also
-    # consolidates Clerk/Auditor AND Recorder/Surveyor → 3 + 6 = 9, so its 9 loaded
-    # officials may already be complete. Not changed pending your call.
-    # Separately: external rosters name Assessor John E. Ulibarri II and Recorder/Surveyor
-    # Leann Kilts; we hold Jared Preisler and Bahy Rahimzadegan — verify which is current.
-    expected_seats: 10
+    # 10 -> 9 (verified 2026-07-29): same double consolidation as Washington
+    # (Clerk/Auditor + Recorder/Surveyor) → 3 + 6 = 9, a COMPLETE roster.
+    # OPEN (name accuracy, not seat count): external rosters name Assessor John E. Ulibarri II
+    # and Recorder/Surveyor Leann Kilts; we hold Jared Preisler and Bahy Rahimzadegan.
+    expected_seats: 9
     geofenced: true
     donors: none
     candidates: none
@@ -387,8 +386,8 @@ locations:
     # (5 district + 2 at-large). Do NOT re-init this file to pick up such changes — it would
     # overwrite the COUNTY expected_seats, which are hand-verified in ut_county_rosters.json
     # (and it drops row shapes it cannot generate, incl. the hand-authored match:title
-    # U.S. Senate row). Washington and Weber read 9/10 to record a suspected missing officer —
-    # a re-init erases that signal, and see their rows for why 9 may already be complete.
+    # U.S. Senate row). All 10 UT county rows now read complete; the 22 unaudited counties
+    # in the roster JSON are the remaining risk, not these.
     status: active
     expected_seats: 8
     geofenced: true
