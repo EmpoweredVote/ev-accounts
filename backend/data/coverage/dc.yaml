@@ -24,12 +24,25 @@ rules:
     - "DC's OCD form here is state:dc, NOT the OCD standard's district:dc. That is what the rows
        already in prod use (state:dc/cd:98, state:dc/county:district_of_columbia), and matching the
        data beats matching the spec — a second convention would fragment DC across two subtrees."
-    - "THE 8 COUNCIL WARDS ARE INVISIBLE TO ADDRESS SEARCH, and this file cannot show that. Their
-       districts carry geo_id 'dc-ward-1'..'dc-ward-8', but the real ward geofences are G5220 rows
-       with geo_id 11001..11008. Address search joins geofence_boundaries.geo_id (+ mtfcc) and never
-       reads ocd_id, so mapping the ocd_id restored DASHBOARD visibility only. Fixing the geo_id is
-       separate work, and note 11001 is ALSO the G4020 county geo_id — so the link must be
-       mtfcc-aware, it cannot key on geo_id alone."
+    - "WARD SEATS ARE NOW ADDRESS-SEARCHABLE (migration 1485). The 8 Council wards and 8 SBOE wards
+       carried geo_id 'dc-ward-N' / 'dc-sboe-ward-N', which exist in no geofence layer; they now
+       point at the real ward polygons (mtfcc G5220, geo_id 11001..11008). Verified end-to-end
+       through getRepresentativesByCoordinate at 5 DC points — White House and Georgetown -> Ward 2,
+       Capitol -> 6, Anacostia -> 8, Petworth -> 4 — each returning exactly one Council and one SBOE
+       seat with no cross-ward leakage. It also needed a CODE change: the mtfcc guard mapped G5220
+       to STATE_LOWER only, so a DC-scoped clause was added for CITY_COUNCIL/SCHOOL_BOARD in BOTH
+       copies of the guard (geoIdGuard.ts and the inline one in getRepresentativesByAddress).
+       11001 is ALSO the G4020 county geo_id, which is safe precisely BECAUSE every consumer pairs
+       geo_id with mtfcc: G4020 only matches COUNTY/JUDICIAL, so a ward seat can never pick up the
+       whole-city polygon."
+    - "STILL NOT ADDRESS-SEARCHABLE: the 8 citywide seats — Mayor, Attorney General, Council
+       Chairman, the 4 at-large Council members (all on geo_id 'dc-council-at-large') and the
+       at-large SBOE member ('dc-sboe-at-large'). They have no geofence, and the statewide query in
+       resolveOfficialsAtPoint only admits district_type IN
+       (NATIONAL_UPPER, NATIONAL_EXEC, STATE_EXEC, NATIONAL_JUDICIAL, JUDICIAL) — CITY_COUNCIL and
+       SCHOOL_BOARD are not in it. Fixing it means widening that list, which is a PUBLIC-CORRECTNESS
+       change for every state (unscoped, Boston's at-large councillors would surface for every MA
+       address), so it needs a DC scope and its own decision. Not attempted here."
     - "Council seats total 13: 8 by ward + 4 at-large + the Chairman. The at-large four, the
        Chairman, the Mayor and the Attorney General all sit on the bare state:dc division because
        they are elected citywide, which is the same treatment STATEWIDE_TYPES get in every state."

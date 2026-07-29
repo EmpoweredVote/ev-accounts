@@ -15,6 +15,13 @@
 export const MTFCC_DISTRICT_TYPE_GUARD = `(
     (gp.mtfcc = 'G5210' AND d.district_type = 'STATE_UPPER')
     OR (gp.mtfcc = 'G5220' AND d.district_type = 'STATE_LOWER')
+    -- DC ONLY: TIGER files DC's 8 wards as the SLDL layer (G5220, geo_id 11001..11008) because the
+    -- DC Council IS DC's legislature. Its ward seats are typed CITY_COUNCIL, and the SBOE's ward
+    -- seats SCHOOL_BOARD, so without this clause all 16 stay unreachable by address (migration 1485).
+    -- SCOPED TO DC deliberately: unscoped, any state's state-house geofence could match a
+    -- same-geo_id council district and surface the wrong officials. G5220 geo_ids are
+    -- state-FIPS-prefixed, so 1100N belongs to DC alone.
+    OR (gp.mtfcc = 'G5220' AND lower(d.state) = 'dc' AND d.district_type IN ('CITY_COUNCIL','SCHOOL_BOARD'))
     OR (gp.mtfcc = 'G5200' AND d.district_type = 'NATIONAL_LOWER')
     OR (gp.mtfcc = 'G4020' AND d.district_type IN ('COUNTY','JUDICIAL'))
     OR (gp.mtfcc = 'G4040' AND d.district_type IN ('LOCAL','LOCAL_EXEC'))

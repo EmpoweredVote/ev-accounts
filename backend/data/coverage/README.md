@@ -309,11 +309,35 @@ so `--state dc` wrote `state_fips: ""` and silently disabled the **entire univer
 does have G4020/G5220 geofences. And `STATE_NAME` was missing it too, yielding `state_name: DC`. The
 comment claiming "STATE_FIPS above is already complete" was wrong; both maps now carry DC.
 
-⚠️ **DC's 8 council wards remain invisible to ADDRESS SEARCH.** Their districts carry
-`geo_id = dc-ward-N` while the real ward geofences are G5220 rows at `geo_id 11001..11008`. Address
-search joins `geofence_boundaries.geo_id` (+ mtfcc) and never reads `ocd_id`, so this pass restored
-dashboard visibility only. Note **`11001` is also the G4020 county geo_id**, so any fix must be
-mtfcc-aware — it cannot key on `geo_id` alone.
+**DC ward seats are now address-searchable — migration 1485.** The 16 ward districts (8 Council,
+8 SBOE) carried `geo_id = dc-ward-N` / `dc-sboe-ward-N`, values present in no geofence layer, so a DC
+address returned only the Delegate district: **3 of DC's 27 officials**. They now point at the real
+ward polygons (mtfcc **G5220**, `geo_id 11001..11008`), which were already loaded and correct —
+point-in-polygon put the White House in Ward 2, the Capitol in 6, Anacostia in 8 before anything was
+written. TIGER files DC's wards as the **SLDL layer** because the DC Council *is* DC's legislature.
+
+**The data fix alone was not sufficient**, which is the part worth remembering: the mtfcc guard maps
+`G5220` to `STATE_LOWER` *exclusively*, so the rewritten rows still would not have joined. A
+**DC-scoped** clause admits `CITY_COUNCIL`/`SCHOOL_BOARD` on G5220 — scoped deliberately, because
+unscoped it would let any state's state-house geofence match a same-`geo_id` council district and
+surface the wrong officials. **The guard is duplicated** — `MTFCC_DISTRICT_TYPE_GUARD` in
+`src/lib/geoIdGuard.ts` and an inline copy in `getRepresentativesByAddress` — and both must change
+together. Needs an API deploy.
+
+`11001` is also the G4020 county `geo_id`. That is safe *because* every consumer pairs `geo_id` with
+mtfcc: G4020 only matches COUNTY/JUDICIAL, so a ward seat can never pick up the whole-city polygon.
+Every other join site was checked — `deriveStateAbbrevForPoint` is guarded, `electionService`'s
+unguarded join reads only `DISTINCT d.state` (all DC either way), and `government_bodies` has no rows
+at `1100N`. One benign behavior change: `getContributorPoliticians('11001')` now also returns Ward 1's
+two seats. Verified end-to-end through `getRepresentativesByCoordinate` at 5 DC points, each returning
+exactly one Council and one SBOE seat for the right ward, no cross-ward leakage.
+
+⚠️ **DC's 8 citywide seats are still not address-searchable** — Mayor, Attorney General, Council
+Chairman, the 4 at-large Council members, and the at-large SBOE member. They have no geofence, and the
+statewide query in `resolveOfficialsAtPoint` admits only
+`district_type IN (NATIONAL_UPPER, NATIONAL_EXEC, STATE_EXEC, NATIONAL_JUDICIAL, JUDICIAL)`. Widening
+it is a public-correctness change for **every** state — unscoped, Boston's at-large councillors would
+surface for every MA address — so it needs a DC scope and a deliberate decision. Not attempted.
 
 #### LOCAL tier finished — 2026-07-28 (116 districts / 131 officials, 1 left)
 

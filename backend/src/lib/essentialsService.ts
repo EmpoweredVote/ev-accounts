@@ -725,6 +725,13 @@ async function resolveOfficialsAtPoint(
         -- MTFCC-to-district_type mapping prevents cross-matching (e.g., SLDU vs SLDL)
         (gb.mtfcc = 'G5210' AND d.district_type = 'STATE_UPPER')
         OR (gb.mtfcc = 'G5220' AND d.district_type = 'STATE_LOWER')
+        -- DC ONLY: TIGER files DC's 8 wards as the SLDL layer (G5220, geo_id 11001..11008) because
+        -- the DC Council IS DC's legislature. Its ward seats are typed CITY_COUNCIL and the SBOE's
+        -- SCHOOL_BOARD, so without this all 16 stay unreachable by address (migration 1485).
+        -- SCOPED TO DC deliberately — unscoped, another state's state-house geofence could match a
+        -- same-geo_id council district and surface the wrong officials.
+        -- Keep in step with MTFCC_DISTRICT_TYPE_GUARD in src/lib/geoIdGuard.ts.
+        OR (gb.mtfcc = 'G5220' AND lower(d.state) = 'dc' AND d.district_type IN ('CITY_COUNCIL','SCHOOL_BOARD'))
         OR (gb.mtfcc = 'G5200' AND d.district_type = 'NATIONAL_LOWER')
         OR (gb.mtfcc = 'G4020' AND d.district_type IN ('COUNTY', 'JUDICIAL'))
         OR (gb.mtfcc = 'G4040' AND d.district_type IN ('LOCAL', 'LOCAL_EXEC'))
