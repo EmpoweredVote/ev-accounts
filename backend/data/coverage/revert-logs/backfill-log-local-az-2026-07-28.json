@@ -1,0 +1,80 @@
+{
+  "captured": "2026-07-28",
+  "tier": "LOCAL",
+  "state": "az",
+  "count": 9,
+  "districts": [
+    {
+      "id": "4207262c-b039-4f07-b5da-3e52fc4ed1fd",
+      "district_type": "LOCAL",
+      "state": "az",
+      "geo_id": "pima-az-supervisor-district-4",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:az/place:pima/ward:4"
+    },
+    {
+      "id": "42e2b9ea-50fe-4edf-b93a-4fcedbbff395",
+      "district_type": "LOCAL",
+      "state": "az",
+      "geo_id": "pima-az-supervisor-district-3",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:az/place:pima/ward:3"
+    },
+    {
+      "id": "c4f8426d-ea35-48a8-b368-cb31b4a3414d",
+      "district_type": "LOCAL",
+      "state": "az",
+      "geo_id": "pima-az-supervisor-district-5",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:az/place:pima/ward:5"
+    },
+    {
+      "id": "c502a7f5-a209-4b27-bcb7-1c721541209e",
+      "district_type": "LOCAL",
+      "state": "az",
+      "geo_id": "pima-az-supervisor-district-2",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:az/place:pima/ward:2"
+    },
+    {
+      "id": "c846ce46-c864-4247-bd98-8061c2102f70",
+      "district_type": "LOCAL",
+      "state": "az",
+      "geo_id": "0451600",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:az/place:oro_valley"
+    },
+    {
+      "id": "e7facab9-1ee2-4a29-b065-10a669145826",
+      "district_type": "LOCAL",
+      "state": "az",
+      "geo_id": "0468850",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:az/place:south_tucson"
+    },
+    {
+      "id": "f34b2697-d704-4c33-bc56-02cb0db65849",
+      "district_type": "LOCAL",
+      "state": "az",
+      "geo_id": "pima-az-supervisor-district-1",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:az/place:pima/ward:1"
+    },
+    {
+      "id": "f5aa5c00-8022-4562-a0b9-f83591008fb6",
+      "district_type": "LOCAL",
+      "state": "az",
+      "geo_id": "0444270",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:az/place:marana"
+    },
+    {
+      "id": "ff0ee3ae-fce1-405a-a351-78418cce9890",
+      "district_type": "LOCAL",
+      "state": "az",
+      "geo_id": "0462140",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:az/place:sahuarita"
+    }
+  ]
+}

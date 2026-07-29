@@ -225,6 +225,17 @@ were caught this way, and one false alarm avoided:
   `sf-supervisor-district-N` rows — its Board of Supervisors *is* the city council of a consolidated
   city-county. The county rule is keyed on the **label** naming a county, which is what excludes SF.
 
+### Revert logs — the script writes them somewhere gitignored
+
+`backfill-district-ocd.ts --write` snapshots every row it is about to touch into
+**`.planning/coverage/`**, which **`.gitignore` swallows** via the broad `coverage/` test-output rule
+(`backend/data/coverage/` escapes it only through an explicit `!` negation a few lines below; the
+`.planning/` one does not). So those snapshots live on one machine and nowhere else.
+
+Tracked copies of all 26 are in **[`revert-logs/`](./revert-logs/)**, with the revert SQL and the
+`old_ocd_id`-is-always-NULL reasoning in its README. **Copy any new log in there after a backfill** —
+the script still writes to the ignored path.
+
 ### What is left
 
 - **LOCAL/LOCAL_EXEC tier: COMPLETE** except 1 district. See below.

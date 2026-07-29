@@ -1,0 +1,104 @@
+{
+  "captured": "2026-07-28",
+  "tier": "LOCAL_EXEC",
+  "state": "ma",
+  "count": 12,
+  "districts": [
+    {
+      "id": "09317a2b-14cb-4ace-becd-057279150771",
+      "district_type": "LOCAL_EXEC",
+      "state": "ma",
+      "geo_id": "2545000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/place:new_bedford"
+    },
+    {
+      "id": "18043a33-6161-4595-8a61-3cbe24548dbe",
+      "district_type": "LOCAL_EXEC",
+      "state": "ma",
+      "geo_id": "2537490",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/place:lynn"
+    },
+    {
+      "id": "29aceb1d-9e43-4825-9466-cd5eec2d2ec7",
+      "district_type": "LOCAL_EXEC",
+      "state": "ma",
+      "geo_id": "2509000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/place:brockton"
+    },
+    {
+      "id": "2a09cbb0-641a-40c2-b0d1-4b4430f12d05",
+      "district_type": "LOCAL_EXEC",
+      "state": "ma",
+      "geo_id": "2562535",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/place:somerville"
+    },
+    {
+      "id": "3bd3e63f-8602-46ee-8d65-78dbc5906b0a",
+      "district_type": "LOCAL_EXEC",
+      "state": "ma",
+      "geo_id": "2555745",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/place:quincy"
+    },
+    {
+      "id": "3fa23795-569b-4609-b8fc-119012f65412",
+      "district_type": "LOCAL_EXEC",
+      "state": "ma",
+      "geo_id": "2523000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/place:fall_river"
+    },
+    {
+      "id": "4332d4ec-757f-4482-81c0-8135a2ea57b4",
+      "district_type": "LOCAL_EXEC",
+      "state": "ma",
+      "geo_id": "2567000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/place:springfield"
+    },
+    {
+      "id": "5bddd46b-acfc-4988-a8e4-340318885185",
+      "district_type": "LOCAL_EXEC",
+      "state": "ma",
+      "geo_id": "2507000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/place:boston"
+    },
+    {
+      "id": "a777bdee-b2d7-48d7-93df-9610805e2dfc",
+      "district_type": "LOCAL_EXEC",
+      "state": "ma",
+      "geo_id": "2582000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/place:worcester"
+    },
+    {
+      "id": "cc02d1b1-4479-4da7-8ed2-ff23b7940893",
+      "district_type": "LOCAL_EXEC",
+      "state": "ma",
+      "geo_id": "2572600",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/place:waltham"
+    },
+    {
+      "id": "e1a9e9ac-341d-4991-890f-076d191826ad",
+      "district_type": "LOCAL_EXEC",
+      "state": "ma",
+      "geo_id": "2545560",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/place:newton"
+    },
+    {
+      "id": "fd76286c-e96b-4a1a-943e-02dc5cb88a93",
+      "district_type": "LOCAL_EXEC",
+      "state": "ma",
+      "geo_id": "2539835",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/place:medford"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "captured": "2026-07-28",
+  "tier": "LOCAL_EXEC",
+  "state": "az",
+  "count": 3,
+  "districts": [
+    {
+      "id": "2e860afa-23aa-4b73-b6dc-a099d9b8bb7b",
+      "district_type": "LOCAL_EXEC",
+      "state": "az",
+      "geo_id": "0444270",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:az/place:marana"
+    },
+    {
+      "id": "302da135-4b65-4546-99ff-da3310f6979f",
+      "district_type": "LOCAL_EXEC",
+      "state": "az",
+      "geo_id": "0451600",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:az/place:oro_valley"
+    },
+    {
+      "id": "3ab86069-41b6-422c-b9d1-4b4bd48b527b",
+      "district_type": "LOCAL_EXEC",
+      "state": "az",
+      "geo_id": "0477000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:az/place:tucson"
+    }
+  ]
+}

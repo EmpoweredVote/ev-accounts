@@ -1,0 +1,112 @@
+{
+  "captured": "2026-07-28",
+  "tier": "LOCAL_EXEC",
+  "state": "or",
+  "count": 13,
+  "districts": [
+    {
+      "id": "04f14c63-acd7-43cd-bb45-cfca53d7cda5",
+      "district_type": "LOCAL_EXEC",
+      "state": "or",
+      "geo_id": "4174950",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:tualatin"
+    },
+    {
+      "id": "3b2210b5-342f-4392-8444-9996de106f9c",
+      "district_type": "LOCAL_EXEC",
+      "state": "or",
+      "geo_id": "4105800",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:bend"
+    },
+    {
+      "id": "3ff92a44-81b2-43de-bae6-7c8e0f22294c",
+      "district_type": "LOCAL_EXEC",
+      "state": "or",
+      "geo_id": "4173650",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:tigard"
+    },
+    {
+      "id": "44962b16-72e9-4708-a740-c3358be0d966",
+      "district_type": "LOCAL_EXEC",
+      "state": "or",
+      "geo_id": "4115550",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:cornelius"
+    },
+    {
+      "id": "476816bd-4567-4efe-9ee5-73bdef942ae2",
+      "district_type": "LOCAL_EXEC",
+      "state": "or",
+      "geo_id": "4126200",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:forest_grove"
+    },
+    {
+      "id": "74cc6acb-511f-4808-a318-066dd8b620bd",
+      "district_type": "LOCAL_EXEC",
+      "state": "or",
+      "geo_id": "4183950",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:wood_village"
+    },
+    {
+      "id": "9ef2cda5-1f23-46ad-a169-cf49afb44ed5",
+      "district_type": "LOCAL_EXEC",
+      "state": "or",
+      "geo_id": "4167100",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:sherwood"
+    },
+    {
+      "id": "a77b7126-de9b-400c-b848-4be7b03c0865",
+      "district_type": "LOCAL_EXEC",
+      "state": "or",
+      "geo_id": "4124250",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:fairview"
+    },
+    {
+      "id": "acc4eda0-5b3f-424d-afdc-7af7582a79e9",
+      "district_type": "LOCAL_EXEC",
+      "state": "or",
+      "geo_id": "4131250",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:gresham"
+    },
+    {
+      "id": "bc39f358-ac58-497d-9ba4-8a2113bb8a2c",
+      "district_type": "LOCAL_EXEC",
+      "state": "or",
+      "geo_id": "4146730",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:maywood_park"
+    },
+    {
+      "id": "c75c0436-8997-4d14-8997-c1d70fafc24b",
+      "district_type": "LOCAL_EXEC",
+      "state": "or",
+      "geo_id": "4174850",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:troutdale"
+    },
+    {
+      "id": "c86db955-b6ff-45d8-8fc1-359c09fc6211",
+      "district_type": "LOCAL_EXEC",
+      "state": "or",
+      "geo_id": "4105350",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:beaverton"
+    },
+    {
+      "id": "c8ca9acc-99c6-482c-a792-6ab691aee939",
+      "district_type": "LOCAL_EXEC",
+      "state": "or",
+      "geo_id": "4134100",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:hillsboro"
+    }
+  ]
+}

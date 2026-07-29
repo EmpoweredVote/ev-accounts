@@ -1,0 +1,296 @@
+{
+  "captured": "2026-07-29",
+  "tier": "SCHOOL",
+  "state": "all",
+  "count": 36,
+  "districts": [
+    {
+      "id": "1b60d03e-73ce-4fdc-ab41-daa6ee16f7e7",
+      "district_type": "SCHOOL",
+      "state": "ma",
+      "geo_id": "2502790",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/school_district:boston_public_schools"
+    },
+    {
+      "id": "1eeaeec7-fea9-4f79-832b-529f9862f6f5",
+      "district_type": "SCHOOL",
+      "state": "or",
+      "geo_id": "4112240",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/school_district:tigard_tualatin"
+    },
+    {
+      "id": "1fc71642-a851-472d-8b36-c69d37a22678",
+      "district_type": "SCHOOL",
+      "state": "or",
+      "geo_id": "4110520",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/school_district:reynolds"
+    },
+    {
+      "id": "24394619-2d32-487e-a71a-8907360db9ee",
+      "district_type": "SCHOOL",
+      "state": "me",
+      "geo_id": "2303150",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:me/school_district:biddeford_public_schools"
+    },
+    {
+      "id": "25a71963-3dbd-49b2-ad8e-c33283df3d97",
+      "district_type": "SCHOOL",
+      "state": "or",
+      "geo_id": "4110040",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/school_district:portland_public_schools"
+    },
+    {
+      "id": "31e389fb-4811-4bdb-b5a9-d63911e7deed",
+      "district_type": "SCHOOL",
+      "state": "tx",
+      "geo_id": "4829850",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:tx/school_district:mckinney_independent"
+    },
+    {
+      "id": "3deada34-af9a-4770-bf1c-a82d0039fcbf",
+      "district_type": "SCHOOL",
+      "state": "ma",
+      "geo_id": "2507110",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/school_district:lynn_public_schools"
+    },
+    {
+      "id": "513e8e8d-d5d7-4559-ad19-980181463c56",
+      "district_type": "SCHOOL",
+      "state": "tx",
+      "geo_id": "4807890",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:tx/school_district:allen_independent"
+    },
+    {
+      "id": "544a9603-5b1c-42cc-be0c-3c3f836e4cd2",
+      "district_type": "SCHOOL",
+      "state": "nv",
+      "geo_id": "3200060",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:nv/school_district:clark_county"
+    },
+    {
+      "id": "5859a5f9-5ae8-49f8-9a66-ce592444d38b",
+      "district_type": "SCHOOL",
+      "state": "or",
+      "geo_id": "4101980",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/school_district:bend_la_pine_administrative"
+    },
+    {
+      "id": "5e270c13-0661-40c6-96fb-6f4e8e8f35c8",
+      "district_type": "SCHOOL",
+      "state": "ma",
+      "geo_id": "2506600",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/school_district:medford_public_schools"
+    },
+    {
+      "id": "7a459708-1634-4d3b-b35a-ed4ca46de41a",
+      "district_type": "SCHOOL",
+      "state": "ca",
+      "geo_id": "0614400",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/school_district:fremont_unified"
+    },
+    {
+      "id": "7ff6f0de-affc-4998-9f41-deaa241a6af3",
+      "district_type": "SCHOOL",
+      "state": "or",
+      "geo_id": "4100023",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/school_district:hillsboro"
+    },
+    {
+      "id": "819018ba-a67e-4e96-8003-2dd97ee71ce5",
+      "district_type": "SCHOOL",
+      "state": "or",
+      "geo_id": "4101920",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/school_district:beaverton"
+    },
+    {
+      "id": "8a0d9e5d-65dd-4e4e-a11d-233298f50837",
+      "district_type": "SCHOOL",
+      "state": "ca",
+      "geo_id": "0634590",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/school_district:san_jose_unified"
+    },
+    {
+      "id": "90aaf287-27a8-439b-8a85-80101c5ebe3c",
+      "district_type": "SCHOOL",
+      "state": "me",
+      "geo_id": "2302820",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:me/school_district:bangor_school_department"
+    },
+    {
+      "id": "9831c828-6db5-4b10-971b-ee5f64b6774c",
+      "district_type": "SCHOOL",
+      "state": "or",
+      "geo_id": "4111290",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/school_district:sherwood"
+    },
+    {
+      "id": "a2e8fcea-ad13-4a75-a198-f1f68935996e",
+      "district_type": "SCHOOL",
+      "state": "ma",
+      "geo_id": "2508610",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/school_district:newton_public_schools"
+    },
+    {
+      "id": "b1484130-2cc1-4850-9af0-8923cb9e2476",
+      "district_type": "SCHOOL",
+      "state": "or",
+      "geo_id": "4102800",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/school_district:centennial"
+    },
+    {
+      "id": "b5b739ed-cb68-4797-9a9b-057926ca41d3",
+      "district_type": "SCHOOL",
+      "state": "tx",
+      "geo_id": "4835100",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:tx/school_district:plano_independent"
+    },
+    {
+      "id": "bcb784a5-a83a-4b66-b8f4-e16930bb4721",
+      "district_type": "SCHOOL",
+      "state": "or",
+      "geo_id": "4105160",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/school_district:forest_grove"
+    },
+    {
+      "id": "bde9b757-4266-4fd7-a4eb-a9a06338514a",
+      "district_type": "SCHOOL",
+      "state": "MA",
+      "geo_id": "2511000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/school_district:cambridge"
+    },
+    {
+      "id": "be90aebf-a974-46d8-bc9d-5522c0fd1ca7",
+      "district_type": "SCHOOL",
+      "state": "or",
+      "geo_id": "4109480",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/school_district:parkrose"
+    },
+    {
+      "id": "c6b7551f-d6b6-4a72-a916-9a16e6dec1be",
+      "district_type": "SCHOOL",
+      "state": "me",
+      "geo_id": "2312330",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:me/school_district:south_portland_public_schools"
+    },
+    {
+      "id": "cb50c90a-205e-4c31-9eed-9061f2d43085",
+      "district_type": "SCHOOL",
+      "state": "tx",
+      "geo_id": "4820010",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:tx/school_district:frisco_independent"
+    },
+    {
+      "id": "cbd238c8-b6e6-44b2-b08f-33474289ec26",
+      "district_type": "SCHOOL",
+      "state": "ca",
+      "geo_id": "0633840",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/school_district:sacramento_city_unified"
+    },
+    {
+      "id": "d2abb957-bf6e-4207-b937-ed61addcb1ba",
+      "district_type": "SCHOOL",
+      "state": "ma",
+      "geo_id": "2510890",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/school_district:somerville_public_schools"
+    },
+    {
+      "id": "d4e1e9ac-1a61-41c9-a524-5764a29ff1a4",
+      "district_type": "SCHOOL",
+      "state": "ca",
+      "geo_id": "0634320",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/school_district:san_diego_city_unified"
+    },
+    {
+      "id": "d670f9ea-1ec0-415c-ad29-fe87d2a626ef",
+      "district_type": "SCHOOL",
+      "state": "or",
+      "geo_id": "4103940",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/school_district:david_douglas"
+    },
+    {
+      "id": "dcec599d-ed18-40d9-bff5-e0b59a2de487",
+      "district_type": "SCHOOL",
+      "state": "va",
+      "geo_id": "5100090",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:va/school_district:alexandria_city_public_schools"
+    },
+    {
+      "id": "dee260f9-6ae5-443c-a0e7-6029bcaadfbb",
+      "district_type": "SCHOOL",
+      "state": "me",
+      "geo_id": "2302610",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:me/school_district:auburn_public_schools"
+    },
+    {
+      "id": "e875878c-3997-4b14-af64-2c5aabf48a3c",
+      "district_type": "SCHOOL",
+      "state": "ca",
+      "geo_id": "0604740",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/school_district:berkeley_unified"
+    },
+    {
+      "id": "eb583223-6ddc-4c0e-97e9-795ba88d4aa0",
+      "district_type": "SCHOOL",
+      "state": "me",
+      "geo_id": "2307320",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:me/school_district:lewiston_public_schools"
+    },
+    {
+      "id": "ee5a2789-3b15-43ce-867d-b830c751648c",
+      "district_type": "SCHOOL",
+      "state": "tx",
+      "geo_id": "4837020",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:tx/school_district:richardson_independent"
+    },
+    {
+      "id": "f8e551be-f068-4b33-91a4-c7ba36f4c4d3",
+      "district_type": "SCHOOL",
+      "state": "ca",
+      "geo_id": "0634410",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/school_district:san_francisco_unified"
+    },
+    {
+      "id": "f91bfe43-4b78-40bf-81a6-87888f6d8de5",
+      "district_type": "SCHOOL",
+      "state": "or",
+      "geo_id": "4110560",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/school_district:riverdale"
+    }
+  ]
+}
