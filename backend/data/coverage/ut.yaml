@@ -65,9 +65,10 @@ rules:
 #            executive where the form has one + county-wide officers). Officer counts
 #            are PER-COUNTY: Utah Code 17-66-102 enumerates 8 county-wide officers,
 #            and 17-66-104 lets each county consolidate them by ordinance, so the real
-#            number is 6, 7 or 8 — never a fixed constant. Cache/Davis/Salt Lake/Tooele/
-#            Utah/Washington/Weber verified against county rosters 2026-07-29; the other
-#            22 counties still carry the unaudited uniform 7-officer template.
+#            number is 5-8 — never a fixed constant. ALL 29 counties audited 2026-07-29
+#            (18 totals were wrong; range is now 8-18). Each JSON row carries verified_at,
+#            verified_officers and roster_confidence — 'medium' means reconfirm before
+#            seeding. See data/coverage/README.md -> "The 7-officer template".
 #            Cities & schools: seeded at the current loaded roster (baseline) —
 #            VERIFY against official sizes.
 # donors/candidates/treasury: none | partial | full

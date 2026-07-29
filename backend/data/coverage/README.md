@@ -127,9 +127,16 @@ directions:
 | County's consolidations | Real officers | Counties | Template `7` |
 |---|---|---|---|
 | none | 8 | Utah, Davis, Salt Lake | **under** by 1 |
-| Recorder/Surveyor only | 7 | Tooele, Summit | right by luck |
-| separate Clerk + Auditor, no elected Surveyor | 7 | Cache | right by luck |
-| Clerk/Auditor **and** Recorder/Surveyor | 6 | Washington, Weber | **over** by 1 |
+| separate Clerk+Auditor, no elected Surveyor | 7 | Box Elder, Millard, Sanpete, Daggett, Cache | right by luck |
+| Recorder/Surveyor only | 7 | Tooele, Summit, Iron | right by luck |
+| Clerk/Auditor only | 7 | Duchesne, Garfield, San Juan, Uintah, Wayne, Grand, Wasatch | right by luck |
+| Clerk/Auditor, no elected Surveyor | 6 | Beaver, Emery, Kane, Sevier, Morgan, Carbon\* | **over** by 1 |
+| Clerk/Auditor **and** Recorder/Surveyor | 6 | Washington, Weber, Juab, Rich | **over** by 1 |
+| Clerk/Auditor **and** Recorder/**Treasurer** | 5 | Piute | **over** by 2 |
+
+\* Carbon's Surveyor office is held **concurrently by a sitting commissioner** ("Commissioner/
+Surveyor"), so it elects 9 *people* across 10 *offices*. `expected_seats` is compared against
+`COUNT(DISTINCT p.id)`, so **people is the correct unit** — count a consolidated office once.
 
 That last row is where the tracker's long-standing "Washington & Weber are missing an officer" note
 came from. It was never a missing officer — both counties elect exactly the 6 officers their
@@ -141,15 +148,46 @@ Two further errors compounded it, both on the legislative side:
 - **The elected executive was omitted entirely.** 17-66-102(1)(b) enumerates the county executive
   under executive-council/council-manager forms. Cache's County Executive and Salt Lake's Mayor were
   simply missing from the totals.
-- **Form and body size drift.** Tooele is no longer a 3-commissioner county (council-manager, 5
-  seats); Cache's council is 7 seats, not 5. A council-**manager** county's manager is appointed, so
-  it adds no seat — a council-**executive** county's executive does.
+- **Form and body size drift.** The `3 commissioners` default was wrong for four counties: **Grand
+  has a SEVEN-member commission** (5 districts + 2 at-large), **Wasatch a SEVEN-member council**
+  (Seats A–G), **Morgan a FIVE-member commission** (mislabelled `council`), and Tooele is no longer a
+  commission at all (council-manager, 5 seats). Cache's council is 7 seats, not 5. A
+  council-**manager** county's manager is appointed, so it adds **no** seat — a council-**executive**
+  county's executive does. Only Cache and Salt Lake elect an executive.
 
-**Verified 2026-07-29** against each county's own roster: Cache 15, Davis 11, Salt Lake 18, Tooele
-12, Utah 11, Washington 9, Weber 9 — every one matching the loaded roster exactly, so **all 10 UT
-county rows now read complete**. The remaining **22 counties still carry the unaudited template**;
-`verified_at` + `verified_officers` + `seat_authority` in the JSON mark which have been checked.
-Don't trust a UT county seat count without `verified_at`.
+### All 29 counties audited — 2026-07-29
+
+Every county now carries `verified_at`, `verified_officers`, `seat_authority`, `expected_seat_total`
+and `roster_confidence`. **18 of 29 seat totals were wrong.** Totals now range **8 → 18**, where the
+template could only ever produce 10, 12 or 16:
+
+| Total | Counties |
+|---|---|
+| 8 | Piute |
+| 9 | Beaver, Carbon, Emery, Juab, Kane, Rich, Sevier, Washington, Weber |
+| 10 | Box Elder, Daggett, Duchesne, Garfield, Iron, Millard, San Juan, Sanpete, Uintah, Wayne |
+| 11 | Davis, Morgan, Utah |
+| 12 | Summit, Tooele |
+| 14 | Grand, Wasatch |
+| 15 | Cache |
+| 18 | Salt Lake |
+
+`roster_confidence` grades the source, and **`high` is not the same claim as `medium`**:
+
+- **`high` (17)** — read off the county's own elected-officials roster or its candidate-filing list.
+- **`medium` (12)** — assembled from official-domain content via search, or from a source that
+  doesn't distinguish elected from appointed. Reconfirm against the county roster before seeding.
+
+Two traps this audit walked into, worth not repeating:
+
+- **Staff directories are unreliable for elected-vs-appointed.** Beaver's implies its Assessor is
+  appointed, which 17-66-102(2) forbids. **Candidate-filing lists are the authoritative enumerator**
+  of what is actually on a ballot (Emery's and Morgan's settled both counties outright) — but note
+  county officers sit on 4-year staggered terms, so **one cycle shows only about half the offices**.
+- **"The search didn't mention a Surveyor" is absence of evidence, not absence of the office.** Every
+  no-Surveyor finding here was confirmed against the county's own office list, not inferred.
+
+Don't trust a UT county seat count without `verified_at`, and don't treat `medium` as settled.
 
 ### "Calibrated" definition
 
