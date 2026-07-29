@@ -66,7 +66,7 @@ rules:
 #            are PER-COUNTY: Utah Code 17-66-102 enumerates 8 county-wide officers,
 #            and 17-66-104 lets each county consolidate them by ordinance, so the real
 #            number is 5-8 — never a fixed constant. ALL 29 counties audited 2026-07-29
-#            (18 totals were wrong; range is now 8-18). Each JSON row carries verified_at,
+#            (20 totals were wrong; range is now 8-18). Each JSON row carries verified_at,
 #            verified_officers and roster_confidence (all 29 now 'high', each backed by
 #            official ballot contests). See data/coverage/README.md -> "The 7-officer
 #            template" for the electionresults.utah.gov API that enumerates them.
