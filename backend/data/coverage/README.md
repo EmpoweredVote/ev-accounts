@@ -227,10 +227,74 @@ were caught this way, and one false alarm avoided:
 
 ### What is left
 
-- **166 LOCAL/LOCAL_EXEC districts unmapped.** All are `--type LOCAL` skips: no G4110 place geofence
-  and an unparseable ward layer. Needs geofence work, not this script. Includes 4 WI towns
-  (Burlington, Dover, Norway, Waterford) which are MCDs with 10-digit geo_ids.
+- **LOCAL/LOCAL_EXEC tier: COMPLETE** except 1 district. See below.
 - **SCHOOL tier: COMPLETE.** See below.
+- **Four district_types have no branch in the script at all** — 46 districts / 79 officials:
+  `COUNTY` 21/21 (these DO enter the COUNTY branch but fail county-name resolution),
+  `CITY_COUNCIL` 9/15 and `SCHOOL_BOARD` 9/9 (**unhandled `district_type` — the SCHOOL branch tests
+  `= 'SCHOOL'` and never matches `SCHOOL_BOARD`**, so these fall through), plus `JUDICIAL` 4/19,
+  `NATIONAL_JUDICIAL` 1/9 and `NATIONAL_LOWER` 1/1 which are `SKIP_TYPES` by design. The
+  CITY_COUNCIL/SCHOOL_BOARD 18 are probably the cheapest remaining win.
+
+#### LOCAL tier finished — 2026-07-28 (116 districts / 131 officials, 1 left)
+
+`--type LOCAL --write` (112) + `--type LOCAL_EXEC --write` (4). Revert logs:
+`.planning/coverage/backfill-log-{local,local_exec}-2026-07-29.json`.
+
+**"Needs geofence work, not this script" was wrong.** Of the 166, exactly **one** genuinely cannot be
+mapped: Bend Metro Park & Recreation District (5 officials), a special district with no OCD division
+kind. The rest were the script not looking:
+
+- **79 MA/NV council seats number by WARD, not district** (`brockton-ma-council-ward-1`), 6 Tucson
+  seats have no body word at all (`tucson-az-ward-1`), and 4 Washington County OR seats say
+  `commissioner`. `WARD_SLUG` now accepts `(?:council|supervisor|commissioner)?-(?:district|ward)-N`.
+  Their X-layer geofence names could never have rescued them: Tucson's and Washington County's hold
+  **the councilmember's name** ("Lane Santa Cruz", "Nafisa Fai"), not a place.
+- **19 IN townships / WI towns are MCDs with a G4040 County Subdivision geofence** — the script only
+  ever queried G4110 (Place). `resolveMcd()` reads G4040 and takes the county from the 10-digit
+  geo_id's FIPS-5 prefix, emitting `county:<county>/place:<mcd>` (the form IN's already-loaded rows
+  use). **`wi.yaml`'s note claiming they needed a G4040 geofence was wrong — they already had one.**
+- **26 UT council seats have an OCD ID sitting in the `geo_id` column**
+  (`geo_id = "ocd-division/country:us/state:ut/place:ogden/council_district:1"`), a load-time column
+  mix-up and the only signal those rows carry, so it is copied across (guarded on the embedded state
+  matching). ⚠️ **Their `geo_id` is still not a TIGER GEOID, so these 26 seats remain invisible to
+  ADDRESS SEARCH**, which joins `geofence_boundaries.geo_id`. That part really is geofence work.
+
+Not in scope, and not a gap: **21 districts with 0 active officeholders** (plus 17 Fall River and
+Medford MA wards, all vacant). The script requires an officeholder, and a division with nobody in it
+hides nobody.
+
+**The WI town/city collision the old note warned about is real, and the county prefix is what
+resolves it.** `place:burlington` is the **City** of Burlington (geo 5511200, 9 officials);
+`county:racine/place:burlington` is the **Town** (geo 5510111225, 5). Same for Village vs Town of
+Waterford. A bare `place:` slug would merge two real governments into one coverage row. The four town
+rows also carry a **hand-set `name`** ("Town of Burlington") because `coverage-init` derives
+"Burlington" from the slug, which is indistinguishable from the city row on the dashboard —
+`coverage-sync` never touches `name`, but a re-init flattens it.
+
+**Mapping wards changes what the parent city row counts, so `expected_seats` went stale on contact.**
+The wards are subtrees of an existing `place:` row, so no new coverage rows were needed for MA/NV/AZ/
+UT/OR — but the parent rosters jumped and the old baselines (seeded when only the mayor was mapped)
+left rows reading **"12/5"** and **"7/1"**. Re-seeded for 8 MA cities, 3 NV, Tucson, Washington County
+OR, and by hand for Provo and Salt Lake City. Afterwards **no row anywhere reads roster > expected**
+except 8 pre-existing ones unrelated to this tier (see below). These are loaded-roster baselines, per
+this file's convention — still unverified against official council sizes.
+
+Two things deliberately NOT changed:
+
+- **UT county `expected_seats` are authoritative** (`ut_county_rosters.json`), which is why Washington
+  and Weber read 9/10 — a *missing officer*. A re-init would overwrite them with the loaded-roster
+  count and erase that signal, so `ut.yaml` was hand-edited, not regenerated. Note 5 UT counties now
+  have MORE officials loaded than the authoritative roster allows (Cache 15/12, Salt Lake 18/16,
+  Tooele 12/10, Davis 11/10, Utah 11/10) — either duplicate officials or a stale roster file. Worth a
+  look; pre-existing and untouched here.
+- **Chamber rows in multi-member states** read roster > seats because `expected_seats` is the TIGER
+  *district* count while the roster counts *members*: `az State House 60/30` (2 per district),
+  `md State House 140/71`, `va State Senate 47/40`. Pre-existing units mismatch, not this tier.
+
+**A county row rolls up its nested MCDs.** `wi/county:racine` went 7 → **25**: the county board (7)
+plus the four town boards (18), because the towns are inside its OCD subtree. IN's `county:monroe`
+already reads 56 the same way. Do not read such a number as the size of the county board.
 
 #### SCHOOL tier finished — 2026-07-28 (36 districts / 244 officials, 0 skipped)
 

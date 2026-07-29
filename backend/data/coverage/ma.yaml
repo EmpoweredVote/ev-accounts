@@ -101,14 +101,14 @@ locations:
     name: Brockton
     level: local
     status: active
-    expected_seats: 5
+    expected_seats: 12
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
-    headshots: full
-    stances: { researched: 5, total: 5 }
+    headshots: partial
+    stances: { researched: 12, total: 12 }
     last_researched: 2026-07-06
 
   - ocd_id: ocd-division/country:us/state:ma/place:cambridge
@@ -157,14 +157,14 @@ locations:
     name: Lynn
     level: local
     status: active
-    expected_seats: 5
+    expected_seats: 12
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 5, total: 5 }
+    stances: { researched: 12, total: 12 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ma/place:medford
@@ -185,84 +185,84 @@ locations:
     name: New Bedford
     level: local
     status: active
-    expected_seats: 6
+    expected_seats: 12
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: partial
-    stances: { researched: 6, total: 6 }
+    stances: { researched: 11, total: 12 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ma/place:newton
     name: Newton
     level: local
     status: active
-    expected_seats: 17
+    expected_seats: 25
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: none
-    stances: { researched: 17, total: 17 }
+    stances: { researched: 25, total: 25 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ma/place:quincy
     name: Quincy
     level: local
     status: active
-    expected_seats: 4
+    expected_seats: 10
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: none
-    stances: { researched: 3, total: 4 }
+    stances: { researched: 9, total: 10 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ma/place:somerville
     name: Somerville
     level: local
     status: active
-    expected_seats: 5
+    expected_seats: 12
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: partial
-    stances: { researched: 5, total: 5 }
+    stances: { researched: 12, total: 12 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ma/place:springfield
     name: Springfield
     level: local
     status: active
-    expected_seats: 6
+    expected_seats: 14
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 6, total: 6 }
+    stances: { researched: 14, total: 14 }
     last_researched: 2026-07-06
 
   - ocd_id: ocd-division/country:us/state:ma/place:waltham
     name: Waltham
     level: local
     status: active
-    expected_seats: 7
+    expected_seats: 16
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: none
-    stances: { researched: 5, total: 7 }
+    stances: { researched: 14, total: 16 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ma/place:worcester

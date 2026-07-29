@@ -16,7 +16,7 @@
 
 state: UT
 state_name: Utah
-synced_at: 2026-07-28
+synced_at: 2026-07-29
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Universe — the FULL set of jurisdictions in the state, used to show progress
@@ -332,7 +332,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 4, total: 4 }
+    stances: { researched: 5, total: 8 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ut/place:orem
@@ -352,29 +352,33 @@ locations:
   - ocd_id: ocd-division/country:us/state:ut/place:provo
     name: Provo
     level: local
+    # 6 -> 8 when the council districts were mapped and began rolling up: mayor + 7 council
+    # (5 district + 2 at-large). Do NOT re-init this file to pick up such changes — it would
+    # overwrite the COUNTY expected_seats, which are authoritative from ut_county_rosters.json
+    # (Washington and Weber read 9/10 to record a missing officer; a re-init erases that signal).
     status: active
-    expected_seats: 6
+    expected_seats: 8
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 3, total: 3 }
+    stances: { researched: 6, total: 8 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ut/place:salt_lake_city
     name: Salt Lake City
     level: local
     status: active
-    expected_seats: 7
+    expected_seats: 8   # 7 -> 8: mayor + 7 council, once the council districts rolled up
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: partial
-    stances: { researched: 2, total: 3 }
+    stances: { researched: 7, total: 8 }
     last_researched: 2026-05-31
 
   - ocd_id: ocd-division/country:us/state:ut/place:sandy
@@ -388,7 +392,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 4, total: 4 }
+    stances: { researched: 8, total: 8 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ut/place:st_george
@@ -416,7 +420,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 4, total: 4 }
+    stances: { researched: 8, total: 8 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:ut/place:west_valley_city
@@ -430,7 +434,7 @@ locations:
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 3, total: 3 }
+    stances: { researched: 7, total: 7 }
     last_researched: null
 
   # ── School districts (17 active) ──────────────────────────────────────────

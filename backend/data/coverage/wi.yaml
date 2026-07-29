@@ -6,7 +6,7 @@
 
 state: WI
 state_name: Wisconsin
-synced_at: 2026-07-28
+synced_at: 2026-07-29
 
 universe:
   state_fips: "55"
@@ -15,18 +15,20 @@ universe:
 rules:
   skip_topics: []   # add jurisdiction rules, e.g. topics barred by state law
   notes:
-    - "4 TOWNS ARE STILL UNMAPPED and so absent from this file: Town of Burlington, Town of Dover,
-       Town of Norway, Town of Waterford (8 districts, 12 seated officials). They are MCDs with
-       10-digit geo_ids and NO G4110 place geofence, so backfill-district-ocd.ts has no name to
-       derive a slug from and skips them. Not fixable by that script; they need a G4040/MCD
-       geofence or a hand-mapped ocd_id."
-    - "SLUG COLLISION RISK if those towns are ever mapped. We strip TIGER's trailing descriptor
-       (city/town/village/borough/CDP) so slugs match the ~296 already-populated rows, which are
-       clean (place:holladay, place:san_diego). But WI reuses names across municipality types:
-       City of Burlington vs Town of Burlington, and Village of Waterford vs Town of Waterford
-       would both collapse to place:burlington / place:waterford. The descriptor is exactly what
-       disambiguates them, and we discard it. No collision exists today — only cities and villages
-       are mapped and those 14 slugs are distinct — but do not map the towns without resolving it."
+    - "THE 4 TOWNS ARE NOW MAPPED (2026-07-28): Burlington, Dover, Norway, Waterford, 8 districts /
+       14 seated officials, as county:racine/place:<town>. The previous note said they needed a
+       G4040/MCD geofence — they ALREADY HAD ONE. backfill-district-ocd.ts only ever queried G4110
+       (Place) and so never saw the G4040 County Subdivision name sitting right there. The diagnosis
+       was wrong, not the data; resolveMcd() reads G4040 and derives the county from the 10-digit
+       geo_id's FIPS-5 prefix."
+    - "SLUG COLLISION RESOLVED, and the resolution is load-bearing. WI reuses names across
+       municipality types: City of Burlington (place:burlington, geo 5511200) vs Town of Burlington
+       (county:racine/place:burlington, geo 5510111225), and Village of Waterford (place:waterford)
+       vs Town of Waterford. Stripping the trailing descriptor would collapse each pair into one
+       slug and MERGE TWO REAL GOVERNMENTS into a single coverage row. The county: prefix is what
+       keeps them apart — it is the same form the IN townships use (county:monroe/place:bean_blossom).
+       Do NOT 'simplify' a town to a bare place: slug. Their `name` fields are hand-set to
+       'Town of X' for the same reason at the dashboard level."
     - "MADISON CITY HAS ZERO STANCE COVERAGE (0/21), which is easy to misread. Wisconsin's 22
        existing stance rows belong to the Madison/Dane state-legislative DELEGATION — state
        senators and representatives — and are counted under State Senate (2/33) and State House
@@ -122,14 +124,19 @@ locations:
     name: Racine County
     level: county
     status: active
-    expected_seats: 7
+    # 25, NOT a 25-seat county board. A county row matches its whole OCD subtree, and the four
+    # Racine towns are county:racine/place:<town>, so this rolls up the county board (7) plus the
+    # four town boards (18). Same as IN's county:monroe reading 56 with its townships nested. The
+    # county-nested form is deliberate — a bare place: slug would collide with City of Burlington
+    # and Village of Waterford (see the notes above).
+    expected_seats: 25
     geofenced: true
     donors: none
     candidates: none
     treasury: none
     populated: true
     headshots: partial
-    stances: { researched: 0, total: 7 }
+    stances: { researched: 0, total: 25 }
     last_researched: null
 
   # ── Cities & municipalities (14) ──
@@ -317,6 +324,67 @@ locations:
 
   - ocd_id: ocd-division/country:us/state:wi/place:yorkville
     name: Yorkville
+    level: local
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  # ── Towns (4) ── the Racine County MCDs the notes above flagged as unmapped.
+  # HAND-SET `name`: coverage-init derives "Burlington" / "Waterford" from the slug, which is
+  # indistinguishable from the CITY of Burlington and the VILLAGE of Waterford rows above. The
+  # county:racine/ prefix is what keeps the divisions apart; these names keep the DASHBOARD apart.
+  # Re-init will flatten them back — restore after any re-init. `coverage-sync` never touches `name`.
+  - ocd_id: ocd-division/country:us/state:wi/county:racine/place:burlington
+    name: Town of Burlington
+    level: local
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/county:racine/place:dover
+    name: Town of Dover
+    level: local
+    status: active
+    expected_seats: 3
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 3 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/county:racine/place:norway
+    name: Town of Norway
+    level: local
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:wi/county:racine/place:waterford
+    name: Town of Waterford
     level: local
     status: active
     expected_seats: 5

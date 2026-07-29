@@ -6,7 +6,7 @@
 
 state: AZ
 state_name: Arizona
-synced_at: 2026-07-28
+synced_at: 2026-07-29
 
 universe:
   state_fips: "04"
@@ -158,13 +158,13 @@ locations:
     name: Tucson
     level: local
     status: active
-    expected_seats: 1
+    expected_seats: 7
     geofenced: true
     donors: none
     candidates: none
     treasury: full
     populated: true
     headshots: full
-    stances: { researched: 1, total: 1 }
+    stances: { researched: 7, total: 7 }
     last_researched: null
 

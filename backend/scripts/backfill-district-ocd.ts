@@ -95,10 +95,23 @@ function plainSlug(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
 }
 
+// The seat layer inside a geo_id slug: an optional body word then "district"/"ward" then a number.
+//
+// `ward` and `commissioner` were both missing, which is why 99 of the 100 slug-shaped LOCAL geo_ids
+// resolved to nothing and the tier was written off as "needs geofence work". It does not: only Bend's
+// park district actually lacks a mapping. The three shapes that were unreachable:
+//   brockton-ma-council-ward-1          MA + NV councils number by WARD, not district (79 rows)
+//   tucson-az-ward-1                    no body word at all (6 rows)
+//   washco-or-commissioner-district-1   county boards say "commissioner" (4 rows)
+// Their X-layer geofence names could never have rescued them either — Tucson's and Washington
+// County's hold the COUNCILMEMBER'S NAME ("Lane Santa Cruz", "Nafisa Fai"), not a place.
+// Verified against the 122 already-mapped ward geo_ids: this matches every one the old pattern did.
+const WARD_SLUG = /^([a-z][a-z0-9-]*?)-(?:(?:council|supervisor|commissioner)-)?(?:district|ward)-(\d+)$/i;
+
 // LOCAL council/supervisor ward layer → { place, ward }.
 // Place from the geo_id slug prefix (sf/sd/sj aliased) or the X-layer geofence name.
 function resolveWard(geoId: string, xName: string | undefined, abbr?: string | null): { place: string; ward: string } | null {
-  const m = geoId.match(/^([a-z][a-z0-9-]*?)-(?:council|supervisor)-district-(\d+)$/i);
+  const m = geoId.match(WARD_SLUG);
   if (m) {
     let token = m[1].toLowerCase();
     // Some geo_id slugs disambiguate with a trailing state code ("boston-ma-council-district-5"),
@@ -166,6 +179,23 @@ function resolveSchoolSlug(
   return null;
 }
 
+// A township / town (MCD) → { county, place }. IN townships and WI towns carry a 10-digit
+// state2+county3+mcd5 geo_id whose geofence is a G4040 County Subdivision, not a G4110 Place, so the
+// place lookup missed them entirely. The county form is what the already-loaded IN rows use
+// (county:monroe/place:bean_blossom, county:morgan/place:ashland), and it also keeps the TOWN of
+// Burlington distinct from the CITY of Burlington — both exist in Racine County, WI.
+function resolveMcd(
+  geoId: string,
+  nameByKey: Map<string, string>,
+): { county: string; place: string } | null {
+  if (!/^\d{10}$/.test(geoId)) return null;
+  const mcdName = nameByKey.get(`${geoId}|G4040`);
+  const countySlug = resolveCountySlug(geoId, nameByKey);
+  if (!mcdName || !countySlug) return null;
+  const place = plainSlug(mcdName.replace(/ (township|town|village|city|borough)$/i, ''));
+  return place ? { county: countySlug, place } : null;
+}
+
 // COUNTY → county slug. 10-digit geo_id is state2+county3+seq5; resolve the FIPS-5 county
 // name from a G4020 geofence first, then the COUNTY_FIPS_NAME table. Seats roll up to the county.
 function resolveCountySlug(geoId: string, nameByKey: Map<string, string>): string | null {
@@ -211,10 +241,12 @@ async function main(): Promise<void> {
   // Geofence rows for every involved geo_id, plus the FIPS-5 county prefixes (county
   // districts carry a 10-digit geo_id whose G4020 lives under the 5-digit prefix).
   const geoIds = [...new Set(districts.map((d) => d.geo_id).filter(Boolean))] as string[];
+  // Any 10-digit geo_id needs its FIPS-5 prefix, not just COUNTY's: LOCAL townships/towns are MCDs
+  // with the same state2+county3+mcd5 shape and resolve to county:<county>/place:<mcd>.
   const countyFips = [
     ...new Set(
       districts
-        .filter((d) => d.district_type === 'COUNTY' && d.geo_id && /^\d{10}$/.test(d.geo_id))
+        .filter((d) => d.geo_id && /^\d{10}$/.test(d.geo_id))
         .map((d) => d.geo_id!.slice(0, 5)),
     ),
   ];
@@ -252,6 +284,22 @@ async function main(): Promise<void> {
     }
     const geoId = d.geo_id ?? '';
 
+    // 26 UT council seats have an OCD ID sitting IN THE GEO_ID COLUMN
+    // ("ocd-division/country:us/state:ut/place:ogden/council_district:1"), with no geofence at all.
+    // That is a load-time column mix-up, and it is also the only signal these rows carry — so copy
+    // it across rather than synthesize a second opinion. Guarded on the embedded state matching the
+    // district's own, so a stray value can never be adopted for the wrong state. NOTE the geo_id
+    // itself is still wrong (it is not a TIGER GEOID), so these seats remain invisible to ADDRESS
+    // SEARCH, which joins geofence_boundaries.geo_id — fixing that is geofence work, not this.
+    if (geoId.startsWith('ocd-division/')) {
+      if (geoId.startsWith(`ocd-division/country:us/state:${abbr}/`)) {
+        p.resolved.push({ d, ocd: geoId });
+      } else {
+        p.skipped.push({ d, reason: `geo_id holds an OCD id for a different state than ${abbr}` });
+      }
+      continue;
+    }
+
     // LOCAL / LOCAL_EXEC: G4110 place geofence → bare place; else council/supervisor ward layer.
     if (d.district_type === 'LOCAL' || d.district_type === 'LOCAL_EXEC') {
       const placeName = nameByKey.get(`${geoId}|G4110`);
@@ -268,8 +316,14 @@ async function main(): Promise<void> {
         p.resolved.push({ d, ocd: `ocd-division/country:us/state:${abbr}/place:${slug}` });
         continue;
       }
+      // A township / town is an MCD (G4040), not a place (G4110) — 19 IN townships and WI towns.
+      const mcd = resolveMcd(geoId, nameByKey);
+      if (mcd) {
+        p.resolved.push({ d, ocd: `ocd-division/country:us/state:${abbr}/county:${mcd.county}/place:${mcd.place}` });
+        continue;
+      }
       const ward = resolveWard(geoId, xNameByGeo.get(geoId), abbr);
-      if (!ward) { p.skipped.push({ d, reason: `no G4110 place + unparseable ward layer for geo_id=${geoId}` }); continue; }
+      if (!ward) { p.skipped.push({ d, reason: `no G4110 place, no G4040 MCD, unparseable ward layer for geo_id=${geoId}` }); continue; }
       // A COUNTY board typed as LOCAL is not a place. resolveWard matches "council|supervisor",
       // and "supervisor" is county-board terminology, so "Pima County Supervisor District 1"
       // (geo_id pima-az-supervisor-district-1) resolved to place:pima — but Pima is a county.

@@ -116,42 +116,42 @@ locations:
     name: Henderson
     level: local
     status: active
-    expected_seats: 1
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 1, total: 1 }
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:nv/place:las_vegas
     name: Las Vegas
     level: local
     status: active
-    expected_seats: 1
+    expected_seats: 7
     geofenced: true
     donors: none
     candidates: none
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 1, total: 1 }
+    stances: { researched: 6, total: 7 }
     last_researched: null
 
   - ocd_id: ocd-division/country:us/state:nv/place:north_las_vegas
     name: North Las Vegas
     level: local
     status: active
-    expected_seats: 1
+    expected_seats: 5
     geofenced: true
     donors: none
     candidates: none
     treasury: none
     populated: true
     headshots: full
-    stances: { researched: 1, total: 1 }
+    stances: { researched: 5, total: 5 }
     last_researched: null
 
   # ── School districts (1) ──
