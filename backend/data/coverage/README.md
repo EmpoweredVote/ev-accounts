@@ -225,16 +225,25 @@ were caught this way, and one false alarm avoided:
   `sf-supervisor-district-N` rows — its Board of Supervisors *is* the city council of a consolidated
   city-county. The county rule is keyed on the **label** naming a county, which is what excludes SF.
 
-### Revert logs — the script writes them somewhere gitignored
+### Revert logs
 
 `backfill-district-ocd.ts --write` snapshots every row it is about to touch into
-**`.planning/coverage/`**, which **`.gitignore` swallows** via the broad `coverage/` test-output rule
-(`backend/data/coverage/` escapes it only through an explicit `!` negation a few lines below; the
-`.planning/` one does not). So those snapshots live on one machine and nowhere else.
+**[`revert-logs/`](./revert-logs/)** — **tracked**, so the rollback record for a prod write is not
+confined to the machine that made it. The revert SQL and the `old_ocd_id`-is-always-NULL reasoning are
+in that directory's README. Commit a new log alongside the change it reverts; nothing to copy by hand.
 
-Tracked copies of all 26 are in **[`revert-logs/`](./revert-logs/)**, with the revert SQL and the
-`old_ocd_id`-is-always-NULL reasoning in its README. **Copy any new log in there after a backfill** —
-the script still writes to the ignored path.
+It used to write to `.planning/coverage/`, which **`.gitignore` silently swallows** via its broad
+`coverage/` test-output rule — `backend/data/coverage/` escapes that rule only through an explicit `!`
+negation. 26 logs covering 572 district writes existed on one disk and nowhere else before this moved.
+
+Two guards came out of moving it, both from a real near-miss on the first run against the new path:
+
+- **A run that resolves 0 rows writes no log at all.** The filename is `(tier, state, date)`, so a
+  same-day re-run finding nothing left would otherwise *overwrite* the log from the run that did the
+  work — a 0-district file replaced a 36-district SCHOOL record exactly once, and **only `git` caught
+  it**, which it could not have done under the old ignored path.
+- **An existing log is never overwritten** — the next free `-2`, `-3` suffix is used. Two runs of the
+  same tier+state on one day are legitimate (widen a resolver, re-run) and both records matter.
 
 ### What is left
 

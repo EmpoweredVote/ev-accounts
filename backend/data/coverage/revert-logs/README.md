@@ -4,16 +4,25 @@ Snapshots written by `scripts/backfill-district-ocd.ts --write` **before** it up
 file per (tier, state) run, capturing every district it was about to touch and the value it held.
 This is the rollback path for the `essentials.districts.ocd_id` backfills.
 
-## Why these are copied here
+## Why this directory exists
 
-The script writes them to **`.planning/coverage/`, which is gitignored** — `.gitignore` has a broad
-`coverage/` rule for test output that matches any directory of that name. (`backend/data/coverage/` is
-exempted by an explicit `!` negation a few lines below it; `.planning/coverage/` is not.) So the
-originals exist only on the machine that ran the backfill. These are byte-identical copies, tracked so
-the rollback path survives that machine.
+The script **writes here directly now**, so there is nothing to copy by hand — just commit the new log
+alongside the change it reverts.
 
-**If you run another backfill, copy its new log in here too** — the script still writes to
-`.planning/coverage/`.
+It used to write to **`.planning/coverage/`, which is gitignored**: `.gitignore` has a broad
+`coverage/` rule for test output that matches any directory of that name, and while
+`backend/data/coverage/` is exempted by an explicit `!` negation a few lines below it,
+`.planning/coverage/` is not. The rollback record for 572 prod writes therefore existed on exactly one
+disk. The 26 logs below were copied across when that was noticed; everything after is written here.
+
+Two guards, both earned on the first run against this path:
+
+- **0 rows resolved → no log written.** The filename is `(tier, state, date)`, so a same-day re-run
+  that finds nothing left would otherwise overwrite the log from the run that did the work. A
+  0-district file replaced a 36-district SCHOOL record exactly once, and **only `git` caught it** —
+  which it could not have done while these lived in the ignored path. That near-miss is the argument
+  for tracking them, in miniature.
+- **Existing logs are never overwritten** — the next free `-2`/`-3` suffix is used instead.
 
 ## Shape
 

@@ -34,7 +34,9 @@
  *     (G4020 geofence first, then IN_COUNTY_FIPS table); seats roll up to the county.
  */
 import 'dotenv/config';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { pool } from '../src/lib/db.js';
 
 const WRITE = process.argv.includes('--write');
@@ -460,27 +462,55 @@ async function main(): Promise<void> {
   // and the payload, so any later run produced a revert log that lied about when it was captured —
   // the worst possible property for the file you reach for when reverting.
   const runDate = new Date().toISOString().slice(0, 10);
-  // Path was '../../.planning/...', one level too many: from backend/ that resolves OUTSIDE the
-  // repo (C:\.planning). Combined with the directory not existing, --write would throw ENOENT
-  // here — before any UPDATE, so it failed safe, but it never actually worked.
-  const logDir = '../.planning/coverage';
-  mkdirSync(logDir, { recursive: true });
-  const logPath = `${logDir}/backfill-log-${suffix}-${runDate}.json`;
-  writeFileSync(
-    logPath,
-    JSON.stringify(
-      {
-        captured: runDate,
-        tier: TYPE_FILTER ?? 'deferred (LOCAL/SCHOOL/COUNTY)',
-        state: STATE_FILTER ?? 'all',
-        count: snapshot.length,
-        districts: snapshot,
-      },
-      null,
-      2,
-    ),
-  );
-  console.log(`[backfill] Revert log → ${logPath} (${snapshot.length} districts)`);
+  // Revert logs land in the TRACKED tree, so the rollback record for a PROD write is not confined
+  // to the machine that made it.
+  //
+  // They used to go to ../.planning/coverage, which `.gitignore` silently swallows via its broad
+  // `coverage/` test-output rule — 26 logs covering 572 district writes existed on one disk and
+  // nowhere else. data/coverage/ escapes that rule through an explicit `!backend/data/coverage/`
+  // negation, so anything written here is committable. (Before that, the path was
+  // '../../.planning/...' — one level too many, resolving outside the repo entirely, so `--write`
+  // threw ENOENT before any UPDATE: it failed safe, but never actually worked.)
+  //
+  // Resolved from THIS FILE rather than the cwd. Not because the cwd can vary in practice — it
+  // cannot: `dotenv/config` loads .env relative to the cwd, so running this from anywhere but
+  // backend/ dies on missing env vars before it reaches the database. It is so that the one place
+  // this script WRITES A FILE does not silently depend on that, and so the log location stays put if
+  // the invocation ever changes.
+  const logDir = resolve(dirname(fileURLToPath(import.meta.url)), '../data/coverage/revert-logs');
+
+  // Nothing resolved => nothing to revert => no log. An empty log is not merely noise: the filename
+  // is (tier, state, date), so a same-day re-run that finds 0 rows left would otherwise overwrite
+  // the real log from the run that did the work. That is exactly what happened the first time this
+  // path was exercised — a 0-district file replaced a 36-district SCHOOL record, and only git caught
+  // it, which it could not have done while these lived in the gitignored .planning/ path.
+  if (snapshot.length === 0) {
+    console.log('[backfill] 0 districts resolved — no revert log written (nothing to revert).');
+  } else {
+    mkdirSync(logDir, { recursive: true });
+    // Never overwrite an existing log, for the same reason. Two runs of the same tier+state on the
+    // same day are legitimate (e.g. widening a resolver and re-running), and BOTH records matter.
+    let logPath = `${logDir}/backfill-log-${suffix}-${runDate}.json`;
+    for (let n = 2; existsSync(logPath); n++) {
+      logPath = `${logDir}/backfill-log-${suffix}-${runDate}-${n}.json`;
+    }
+    writeFileSync(
+      logPath,
+      JSON.stringify(
+        {
+          captured: runDate,
+          tier: TYPE_FILTER ?? 'deferred (LOCAL/SCHOOL/COUNTY)',
+          state: STATE_FILTER ?? 'all',
+          count: snapshot.length,
+          districts: snapshot,
+        },
+        null,
+        2,
+      ),
+    );
+    console.log(`[backfill] Revert log → ${logPath} (${snapshot.length} districts)`);
+    console.log('[backfill] It is TRACKED — commit it alongside the change it reverts.');
+  }
 
   // Apply: only update rows still NULL/'' (defensive), one statement per district.
   let updated = 0;
