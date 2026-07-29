@@ -728,10 +728,10 @@ export async function getPoliticiansByGovernmentList(
            p.is_appointed, o.faces_retention_vote,
            CASE
              WHEN d.district_type = 'SCHOOL' THEN 'SCHOOL'
-             WHEN g.type IN ('LOCAL', 'City', 'Town', 'Township')
-                  AND LOWER(o.title) ~ '(mayor|city manager|city administrator|city secretary)'
+             WHEN g.type IN ('LOCAL', 'City', 'Town', 'Township', 'Village')
+                  AND LOWER(o.title) ~ '(mayor|city manager|city administrator|city secretary|village president|town chairperson)'
                THEN 'LOCAL_EXEC'
-             WHEN g.type IN ('LOCAL', 'City', 'Town', 'Township') THEN 'LOCAL'
+             WHEN g.type IN ('LOCAL', 'City', 'Town', 'Township', 'Village') THEN 'LOCAL'
              WHEN g.type = 'County' THEN 'COUNTY'
              WHEN g.type = 'School District' THEN 'SCHOOL'
              ELSE ''
