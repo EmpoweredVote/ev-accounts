@@ -34,6 +34,10 @@ if (!STATE) {
 
 const STATE_FIPS: Record<string, string> = {
   al: '01', ak: '02', az: '04', ar: '05', ca: '06', co: '08', ct: '09', de: '10',
+  dc: '11', // was MISSING — `--state dc` wrote state_fips: "" and silently killed the whole
+  //           universe block ("universe categories: none") even though DC has G4020 + G5220
+  //           geofences. DC is the one FIPS between de:10 and fl:12, which is exactly how it
+  //           gets skipped when someone types the list out state by state.
   fl: '12', ga: '13', hi: '15', id: '16', il: '17', in: '18', ia: '19', ks: '20',
   ky: '21', la: '22', me: '23', md: '24', ma: '25', mi: '26', mn: '27', ms: '28',
   mo: '29', mt: '30', ne: '31', nv: '32', nh: '33', nj: '34', nm: '35', ny: '36',
@@ -43,10 +47,13 @@ const STATE_FIPS: Record<string, string> = {
 };
 // Complete map. It previously held only the states that already had a coverage file, so
 // `--state wi` would have emitted `state_name: undefined` into the YAML — silently, since
-// nothing validates it. STATE_FIPS above is already complete; these two should stay in step.
+// nothing validates it. These two maps must stay in step — STATE_FIPS was ALSO missing dc,
+// which the old wording here wrongly called complete, and `--state dc` wrote `state_name: DC`
+// (the uppercase fallback) alongside an empty state_fips. Both are fixed.
 const STATE_NAME: Record<string, string> = {
   al: 'Alabama', ak: 'Alaska', az: 'Arizona', ar: 'Arkansas', ca: 'California',
-  co: 'Colorado', ct: 'Connecticut', de: 'Delaware', fl: 'Florida', ga: 'Georgia',
+  co: 'Colorado', ct: 'Connecticut', dc: 'District of Columbia', de: 'Delaware',
+  fl: 'Florida', ga: 'Georgia',
   hi: 'Hawaii', id: 'Idaho', il: 'Illinois', in: 'Indiana', ia: 'Iowa',
   ks: 'Kansas', ky: 'Kentucky', la: 'Louisiana', me: 'Maine', md: 'Maryland',
   ma: 'Massachusetts', mi: 'Michigan', mn: 'Minnesota', ms: 'Mississippi', mo: 'Missouri',

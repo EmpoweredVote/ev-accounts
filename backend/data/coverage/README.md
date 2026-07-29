@@ -229,12 +229,61 @@ were caught this way, and one false alarm avoided:
 
 - **LOCAL/LOCAL_EXEC tier: COMPLETE** except 1 district. See below.
 - **SCHOOL tier: COMPLETE.** See below.
-- **Four district_types have no branch in the script at all** — 46 districts / 79 officials:
-  `COUNTY` 21/21 (these DO enter the COUNTY branch but fail county-name resolution),
-  `CITY_COUNCIL` 9/15 and `SCHOOL_BOARD` 9/9 (**unhandled `district_type` — the SCHOOL branch tests
-  `= 'SCHOOL'` and never matches `SCHOOL_BOARD`**, so these fall through), plus `JUDICIAL` 4/19,
-  `NATIONAL_JUDICIAL` 1/9 and `NATIONAL_LOWER` 1/1 which are `SKIP_TYPES` by design. The
-  CITY_COUNCIL/SCHOOL_BOARD 18 are probably the cheapest remaining win.
+- **CITY_COUNCIL + SCHOOL_BOARD tier: COMPLETE** (all of it was DC). See below.
+- **21 WI COUNTY districts / 21 officials** still unmapped — they reach the COUNTY branch but fail
+  county-name resolution. Every remaining unmapped COUNTY row is Wisconsin's, so one fix likely
+  clears the whole type. This is now the cheapest remaining win.
+- Everything else left is 6 districts / 34 officials and mostly deliberate: `JUDICIAL` 4/19,
+  `NATIONAL_JUDICIAL` 1/9, `NATIONAL_LOWER` 1/1 are `SKIP_TYPES` (no OCD geography), plus Bend's
+  park district.
+
+#### CITY_COUNCIL + SCHOOL_BOARD finished — 2026-07-28 (18 districts / 24 officials, all DC)
+
+Both types existed **only** for Washington DC, and neither had a branch anywhere in the script — the
+SCHOOL branch tests `district_type = 'SCHOOL'` and never matches `SCHOOL_BOARD` — so all 18 fell
+through to "unhandled district_type" and 24 officials stayed invisible. Revert logs:
+`.planning/coverage/backfill-log-{city_council,school_board}-2026-07-29.json`.
+
+DC gets an **explicit branch** rather than being pushed through the LOCAL path, because it is
+simultaneously state, county and city: it has no G4110 place, and the generic ward parser would read
+`dc-ward-1` as prefix "dc" and emit `place:dc`, a place that does not exist.
+
+- 8 council wards → `state:dc/ward:N`
+- the at-large council district → bare **`state:dc`** — it holds the Mayor, Attorney General, Council
+  Chairman and 4 at-large members, all elected citywide, which is exactly how `STATEWIDE_TYPES`
+  resolve everywhere else. Council seats total 13: 8 + 4 + Chairman.
+- all 9 SBOE seats (8 by ward + 1 at-large) → one `state:dc/school_district:district_of_columbia`,
+  the same parent-LEA roll-up as IPS / MCCSC / LAUSD.
+
+**The form is `state:dc`, not the OCD standard's `district:dc`**, because that is what the two DC rows
+already in prod use (`state:dc/cd:98`, `state:dc/county:district_of_columbia`). Matching the data beat
+matching the spec — a second convention would fragment DC across two subtrees. 0 collisions.
+
+**`dc.yaml` is new, and heavily hand-edited — do not re-init it.** Three things the generator cannot
+get right for DC:
+
+- **It cannot produce the Council ward row at all.** `coverage-init` enumerates `county:`, `place:` and
+  `school_district:`; DC's seats are `state:dc/ward:N`, a ward directly under the state. Without a
+  hand-authored row the 8 councilmembers are mapped but counted **nowhere**, since the `match: exact`
+  row matches only the bare id. It uses the same `match: kind` mechanism as the chamber aggregates,
+  with `ocd_kind: ward` — that matcher is fully generic, not hardcoded to cd/sldu/sldl.
+- **Its generic labels are factually wrong here:** it emitted "Statewide offices (Gov, U.S. Senate,
+  officers)" for a jurisdiction with no Governor and no Senators, and title-cased the school slug into
+  "District Of Columbia School District" for what is really the elected State Board of Education.
+- **Seat counts:** the federal row is **3** (Delegate Norton + **two U.S. Shadow Senators**), not the 1
+  TIGER G5200 district the generator counted, which had it reading 3/1.
+
+Two `coverage-init` bugs fixed on the way, both DC-shaped: **`STATE_FIPS` was missing `dc`** (DC is the
+one FIPS between `de:10` and `fl:12`, exactly how it gets skipped when the list is typed out by hand),
+so `--state dc` wrote `state_fips: ""` and silently disabled the **entire universe block** — while DC
+does have G4020/G5220 geofences. And `STATE_NAME` was missing it too, yielding `state_name: DC`. The
+comment claiming "STATE_FIPS above is already complete" was wrong; both maps now carry DC.
+
+⚠️ **DC's 8 council wards remain invisible to ADDRESS SEARCH.** Their districts carry
+`geo_id = dc-ward-N` while the real ward geofences are G5220 rows at `geo_id 11001..11008`. Address
+search joins `geofence_boundaries.geo_id` (+ mtfcc) and never reads `ocd_id`, so this pass restored
+dashboard visibility only. Note **`11001` is also the G4020 county geo_id**, so any fix must be
+mtfcc-aware — it cannot key on `geo_id` alone.
 
 #### LOCAL tier finished — 2026-07-28 (116 districts / 131 officials, 1 left)
 

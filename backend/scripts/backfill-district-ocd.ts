@@ -300,6 +300,39 @@ async function main(): Promise<void> {
       continue;
     }
 
+    // ── Washington DC ────────────────────────────────────────────────────────────────────────
+    // DC is the whole reason CITY_COUNCIL and SCHOOL_BOARD exist as district_types: all 18 rows of
+    // those two types are DC's, and neither type has a branch anywhere below, so they fell through
+    // to "unhandled district_type" and 24 officials stayed invisible.
+    //
+    // It gets an explicit branch rather than being pushed through the LOCAL path, because DC is
+    // simultaneously state, county and city — it has no G4110 place, and the generic ward parser
+    // would read `dc-ward-1` as prefix "dc" and emit place:dc, a place that does not exist.
+    //
+    // The form is state:dc, NOT the OCD standard's district:dc, because that is what the two DC rows
+    // already in prod use (state:dc/cd:98, state:dc/county:district_of_columbia). Matching the data
+    // beats matching the spec here — a second convention would fragment DC across two subtrees.
+    if (abbr === 'dc' && /^dc-/.test(geoId)) {
+      // The SBOE is one citywide body whose 9 members are elected 8-by-ward + 1 at-large, so its
+      // seats roll up to a single division exactly as every other school board's do (IPS, MCCSC,
+      // LAUSD). Slug matches the county:district_of_columbia already in prod.
+      if (d.district_type === 'SCHOOL_BOARD') {
+        p.resolved.push({ d, ocd: `ocd-division/country:us/state:dc/school_district:district_of_columbia` });
+        continue;
+      }
+      const w = geoId.match(/^dc-ward-(\d+)$/);
+      if (w) { p.resolved.push({ d, ocd: `ocd-division/country:us/state:dc/ward:${w[1]}` }); continue; }
+      // The at-large council district is where the Mayor, Attorney General, Council Chairman and
+      // at-large members sit — all elected citywide, so the bare division is right, the same way
+      // STATEWIDE_TYPES resolve to a bare state:<abbr>.
+      if (/^dc-council-at-large$/.test(geoId)) {
+        p.resolved.push({ d, ocd: `ocd-division/country:us/state:dc` });
+        continue;
+      }
+      p.skipped.push({ d, reason: `unrecognized DC geo_id shape ${geoId}` });
+      continue;
+    }
+
     // LOCAL / LOCAL_EXEC: G4110 place geofence → bare place; else council/supervisor ward layer.
     if (d.district_type === 'LOCAL' || d.district_type === 'LOCAL_EXEC') {
       const placeName = nameByKey.get(`${geoId}|G4110`);
