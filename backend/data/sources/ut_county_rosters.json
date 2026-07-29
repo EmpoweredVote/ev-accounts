@@ -28,12 +28,25 @@
     "fips": "49005",
     "geo_id_county": "ocd-division/country:us/state:ut/county:cache",
     "government_shape": "council",
-    "roster_url": null,
+    "roster_url": "https://www.cachecounty.gov/officials/",
     "council_district_template": "ocd-division/country:us/state:ut/county:cache/council_district:{N}",
     "status": "deferred",
     "expected_at_large_officers": 7,
-    "notes": "Council polygons subject to D-01 gap-fill (plan 133-02). If no polygon found, members attach to G4020 (LOW confidence).; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups",
-    "expected_council_seats": 5
+    "notes": "VERIFIED 2026-07-29: county executive-council form. 7-seat County Council (Logan Seats 1-3 + North, Northeast, South, Southeast districts) + 1 elected County Executive + 7 county-wide officers = 15. Cache elects Clerk and Auditor SEPARATELY and lists NO elected Surveyor. Council seats are named districts, not council_district:N, and attach to whole-county G4020 (no public polygon source). Council roster: https://www.cachecounty.gov/countycouncil/",
+    "expected_council_seats": 7,
+    "expected_executive": 1,
+    "verified_officers": [
+      "Assessor",
+      "Auditor",
+      "Clerk",
+      "County Attorney",
+      "Recorder",
+      "Sheriff",
+      "Treasurer"
+    ],
+    "verified_at": "2026-07-29",
+    "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
+    "expected_seat_total": 15
   },
   {
     "county_name": "Carbon",
@@ -64,12 +77,25 @@
     "fips": "49011",
     "geo_id_county": "ocd-division/country:us/state:ut/county:davis",
     "government_shape": "commission",
-    "roster_url": null,
+    "roster_url": "https://www.daviscountyutah.gov/county-info/learnaboutus",
     "council_district_template": null,
     "status": "manual_csv",
-    "expected_at_large_officers": 7,
-    "notes": "3 commissioners + 7 at-large electeds attach to G4020 whole-county. roster_url TBD via W2 source-audit.",
-    "expected_commissioners": 3
+    "expected_at_large_officers": 8,
+    "notes": "VERIFIED 2026-07-29: 3 commissioners (Seats A/B/C) + 8 county-wide officers = 11. Davis SEPARATED the formerly consolidated Clerk/Auditor: the 2023 elected-official salary ordinance (https://www.utah.gov/pmn/files/925381.pdf) shows Clerk/Auditor going to N/A with distinct Auditor and Clerk line items. Davis styles that auditor office publicly as \"Controller\" -- it IS elected, and offices.title = \"Controller\" matches the county's own naming. The county-info page still says \"seven other elected officials\", which is stale text predating the split.",
+    "expected_commissioners": 3,
+    "verified_officers": [
+      "Assessor",
+      "Attorney",
+      "Auditor",
+      "Clerk",
+      "Recorder",
+      "Sheriff",
+      "Surveyor",
+      "Treasurer"
+    ],
+    "verified_at": "2026-07-29",
+    "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
+    "expected_seat_total": 11
   },
   {
     "county_name": "Duchesne",
@@ -208,12 +234,26 @@
     "fips": "49035",
     "geo_id_county": "ocd-division/country:us/state:ut/county:salt_lake",
     "government_shape": "council",
-    "roster_url": "https://www.saltlakecounty.gov/council/contact/",
+    "roster_url": "https://www.saltlakecounty.gov/elected-officials/",
     "council_district_template": "ocd-division/country:us/state:ut/county:salt_lake/council_district:{N}",
     "status": "active",
-    "expected_at_large_officers": 7,
-    "notes": "9 = 6 districts + 3 at-large per CONTEXT specifics. Scrape contact page; FeatureServer Rep field is pre-2022 stale.",
-    "expected_council_seats": 9
+    "expected_at_large_officers": 8,
+    "notes": "VERIFIED 2026-07-29: 9 Council members (6 by district + 3 at-large) + 1 elected Mayor + 8 county-wide officers = 18. The county states \"nine part-time Council members\" and \"eight other elected officials with independent authority defined by statute: Assessor, Auditor, Clerk, District Attorney, Recorder, Sheriff, Surveyor, Treasurer\". District Attorney (not County Attorney) because SL is a prosecution district. The old total of 16 omitted the Mayor entirely.",
+    "expected_council_seats": 9,
+    "expected_executive": 1,
+    "verified_officers": [
+      "Assessor",
+      "Auditor",
+      "Clerk",
+      "District Attorney",
+      "Recorder",
+      "Sheriff",
+      "Surveyor",
+      "Treasurer"
+    ],
+    "verified_at": "2026-07-29",
+    "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
+    "expected_seat_total": 18
   },
   {
     "county_name": "San Juan",
@@ -267,13 +307,26 @@
     "county_name": "Tooele",
     "fips": "49045",
     "geo_id_county": "ocd-division/country:us/state:ut/county:tooele",
-    "government_shape": "commission",
-    "roster_url": null,
-    "council_district_template": null,
+    "government_shape": "council",
+    "roster_url": "https://tooeleco.gov/council/index.php",
+    "council_district_template": "ocd-division/country:us/state:ut/county:tooele/council_district:{N}",
     "status": "deferred",
     "expected_at_large_officers": 7,
-    "notes": "3 commissioners + 7 at-large electeds attach to G4020 whole-county. roster_url TBD via W2 source-audit.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups",
-    "expected_commissioners": 3
+    "notes": "VERIFIED 2026-07-29: Tooele is NO LONGER a 3-commissioner county. It runs a council-manager form with a 5-member County Council (Districts 1-5; the manager is appointed, so not an elected seat) + 7 county-wide officers = 12. Recorder and Surveyor are consolidated. NOTE: the 5 loaded council rows carry bare \"County Council\" titles with no district number -- worth relabelling to Districts 1-5 (Wardle D1, Thomas D2, Hoffmann D3, Hamner D4, Stromberg D5).",
+    "expected_commissioners": null,
+    "expected_council_seats": 5,
+    "verified_officers": [
+      "Assessor",
+      "Auditor",
+      "Clerk",
+      "County Attorney",
+      "Recorder/Surveyor",
+      "Sheriff",
+      "Treasurer"
+    ],
+    "verified_at": "2026-07-29",
+    "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
+    "expected_seat_total": 12
   },
   {
     "county_name": "Uintah",
@@ -292,12 +345,25 @@
     "fips": "49049",
     "geo_id_county": "ocd-division/country:us/state:ut/county:utah",
     "government_shape": "commission",
-    "roster_url": null,
+    "roster_url": "https://www.utahcounty.gov/elected-officials",
     "council_district_template": null,
     "status": "manual_csv",
-    "expected_at_large_officers": 7,
-    "notes": "3 commissioners + 7 at-large electeds attach to G4020 whole-county. roster_url TBD via W2 source-audit.",
-    "expected_commissioners": 3
+    "expected_at_large_officers": 8,
+    "notes": "VERIFIED 2026-07-29: 3 commissioners + 8 county-wide officers = 11. Utah County elects Clerk and Auditor SEPARATELY (not consolidated) and does elect a Surveyor.",
+    "expected_commissioners": 3,
+    "verified_officers": [
+      "Assessor",
+      "Attorney",
+      "Auditor",
+      "Clerk",
+      "Recorder",
+      "Sheriff",
+      "Surveyor",
+      "Treasurer"
+    ],
+    "verified_at": "2026-07-29",
+    "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
+    "expected_seat_total": 11
   },
   {
     "county_name": "Wasatch",
@@ -316,12 +382,24 @@
     "fips": "49053",
     "geo_id_county": "ocd-division/country:us/state:ut/county:washington",
     "government_shape": "commission",
-    "roster_url": null,
+    "roster_url": "https://www.washco.utah.gov/departments/",
     "council_district_template": null,
     "status": "manual_csv",
     "expected_at_large_officers": 7,
     "notes": "3 commissioners + 7 at-large electeds attach to G4020 whole-county. roster_url TBD via W2 source-audit.",
-    "expected_commissioners": 3
+    "expected_commissioners": 3,
+    "verified_officers": [
+      "Assessor",
+      "Clerk/Auditor",
+      "County Attorney",
+      "Recorder/Surveyor",
+      "Sheriff",
+      "Treasurer"
+    ],
+    "verified_seat_total": 9,
+    "verified_note": "CONTRADICTS expected_at_large_officers=7. Washington consolidates BOTH Clerk/Auditor AND Recorder/Surveyor, so 8 statutory officers collapse to 6: 3 commissioners + 6 = 9. The 9 officials loaded therefore look like a COMPLETE roster, and the 9/10 \"missing officer\" reading is most likely an artifact of the uniform 7-officer template. Counts left unchanged pending operator decision.",
+    "verified_at": "2026-07-29",
+    "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)"
   },
   {
     "county_name": "Wayne",
@@ -340,11 +418,23 @@
     "fips": "49057",
     "geo_id_county": "ocd-division/country:us/state:ut/county:weber",
     "government_shape": "commission",
-    "roster_url": null,
+    "roster_url": "https://www.webercountyutah.gov/County_Commission/",
     "council_district_template": null,
     "status": "manual_csv",
     "expected_at_large_officers": 7,
     "notes": "3 commissioners + 7 at-large electeds attach to G4020 whole-county. roster_url TBD via W2 source-audit.",
-    "expected_commissioners": 3
+    "expected_commissioners": 3,
+    "verified_officers": [
+      "Assessor",
+      "Clerk/Auditor",
+      "County Attorney",
+      "Recorder/Surveyor",
+      "Sheriff",
+      "Treasurer"
+    ],
+    "verified_seat_total": 9,
+    "verified_note": "CONTRADICTS expected_at_large_officers=7. Same double consolidation as Washington (Clerk/Auditor + Recorder/Surveyor): 3 commissioners + 6 = 9, so the 9 loaded officials look COMPLETE. Counts left unchanged pending operator decision. Separately, external rosters name Assessor John E. Ulibarri II and Recorder/Surveyor Leann Kilts, while we hold Jared Preisler and Bahy Rahimzadegan -- verify which is current before trusting either.",
+    "verified_at": "2026-07-29",
+    "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)"
   }
 ]

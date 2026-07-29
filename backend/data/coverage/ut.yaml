@@ -61,9 +61,15 @@ rules:
 # status:    active | in_progress | deferred
 # expected_seats: full-roster target. A jurisdiction is "complete" when active
 #            politicians ≥ expected_seats. null = unknown (can't confirm complete).
-#            Counties: from ut_county_rosters.json (commissioners/council + officers)
-#            — this is why Washington & Weber show 9/10. Cities & schools: seeded at
-#            the current loaded roster (baseline) — VERIFY against official sizes.
+#            Counties: from ut_county_rosters.json (legislative body + elected
+#            executive where the form has one + county-wide officers). Officer counts
+#            are PER-COUNTY: Utah Code 17-66-102 enumerates 8 county-wide officers,
+#            and 17-66-104 lets each county consolidate them by ordinance, so the real
+#            number is 6, 7 or 8 — never a fixed constant. Cache/Davis/Salt Lake/
+#            Tooele/Utah verified against county rosters 2026-07-29; the other 24
+#            counties still carry the unaudited uniform 7-officer template.
+#            Cities & schools: seeded at the current loaded roster (baseline) —
+#            VERIFY against official sizes.
 # donors/candidates/treasury: none | partial | full
 # headshots: none | partial | full   (auto, from photos/total)
 # stances:   { researched, total }   (auto; researched = last_stances_researched_at IS NOT NULL)
@@ -170,7 +176,10 @@ locations:
     name: Cache County
     level: county
     status: active
-    expected_seats: 12
+    # 12 -> 15 (verified 2026-07-29): 7-seat council (not 5) + elected County Executive
+    # (omitted before) + 7 officers. Cache elects Clerk and Auditor separately and has
+    # no elected Surveyor. Roster: https://www.cachecounty.gov/officials/
+    expected_seats: 15
     geofenced: true
     donors: none
     candidates: none
@@ -184,7 +193,10 @@ locations:
     name: Davis County
     level: county
     status: active
-    expected_seats: 10
+    # 10 -> 11 (verified 2026-07-29): Davis split the old consolidated Clerk/Auditor into
+    # separate Clerk + Auditor (2023 salary ordinance), so 3 commissioners + 8 officers.
+    # The elected auditor office is styled "Controller" on the county's own site.
+    expected_seats: 11
     geofenced: true
     donors: none
     candidates: none
@@ -212,7 +224,10 @@ locations:
     name: Salt Lake County
     level: county
     status: active
-    expected_seats: 16
+    # 16 -> 18 (verified 2026-07-29): 9 council (6 district + 3 at-large) + elected Mayor
+    # (omitted before) + 8 officers, per the county's own "nine part-time Council members"
+    # and "eight other elected officials". https://www.saltlakecounty.gov/elected-officials/
+    expected_seats: 18
     geofenced: true
     donors: none
     candidates: partial
@@ -240,7 +255,10 @@ locations:
     name: Tooele County
     level: county
     status: active
-    expected_seats: 10
+    # 10 -> 12 (verified 2026-07-29): Tooele is no longer a 3-commissioner county — it runs
+    # council-manager with a 5-member council (Districts 1-5; manager is appointed) + 7
+    # officers (Recorder/Surveyor consolidated). https://tooeleco.gov/council/index.php
+    expected_seats: 12
     geofenced: true
     donors: none
     candidates: none
@@ -254,7 +272,9 @@ locations:
     name: Utah County
     level: county
     status: active
-    expected_seats: 10
+    # 10 -> 11 (verified 2026-07-29): 3 commissioners + 8 officers — Utah County elects
+    # Clerk and Auditor separately. https://www.utahcounty.gov/elected-officials
+    expected_seats: 11
     geofenced: true
     donors: none
     candidates: partial
@@ -268,6 +288,12 @@ locations:
     name: Washington County
     level: county
     status: active
+    # LEFT AT 10 BY OPERATOR DECISION — the 9/10 records a suspected missing officer.
+    # OPEN QUESTION (2026-07-29 audit): Washington consolidates BOTH Clerk/Auditor and
+    # Recorder/Surveyor, so its 8 statutory officers collapse to 6 → 3 + 6 = 9, which would
+    # make the 9 loaded officials a COMPLETE roster and the gap an artifact of the old
+    # uniform 7-officer template. Not changed pending your call.
+    # https://www.washco.utah.gov/departments/
     expected_seats: 10
     geofenced: true
     donors: none
@@ -282,6 +308,11 @@ locations:
     name: Weber County
     level: county
     status: active
+    # LEFT AT 10 BY OPERATOR DECISION — same open question as Washington: Weber also
+    # consolidates Clerk/Auditor AND Recorder/Surveyor → 3 + 6 = 9, so its 9 loaded
+    # officials may already be complete. Not changed pending your call.
+    # Separately: external rosters name Assessor John E. Ulibarri II and Recorder/Surveyor
+    # Leann Kilts; we hold Jared Preisler and Bahy Rahimzadegan — verify which is current.
     expected_seats: 10
     geofenced: true
     donors: none
@@ -354,8 +385,10 @@ locations:
     level: local
     # 6 -> 8 when the council districts were mapped and began rolling up: mayor + 7 council
     # (5 district + 2 at-large). Do NOT re-init this file to pick up such changes — it would
-    # overwrite the COUNTY expected_seats, which are authoritative from ut_county_rosters.json
-    # (Washington and Weber read 9/10 to record a missing officer; a re-init erases that signal).
+    # overwrite the COUNTY expected_seats, which are hand-verified in ut_county_rosters.json
+    # (and it drops row shapes it cannot generate, incl. the hand-authored match:title
+    # U.S. Senate row). Washington and Weber read 9/10 to record a suspected missing officer —
+    # a re-init erases that signal, and see their rows for why 9 may already be complete.
     status: active
     expected_seats: 8
     geofenced: true

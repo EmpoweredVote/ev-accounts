@@ -102,10 +102,48 @@ touched by `coverage-sync.ts` — the universe is always computed live.
 A jurisdiction is **complete** when its active politician count ≥ `expected_seats`. The statewide
 progress bars count *complete* jurisdictions (green) vs *in progress* (started but under-rostered,
 amber) vs *not started* (no politicians). `expected_seats` is manual:
-- **Counties** — authoritative, from `ut_county_rosters.json` (commissioners/council seats +
-  at-large officers). This is why Washington & Weber show 9/10 (a missing officer).
+- **Counties** — from `ut_county_rosters.json` (legislative body + elected executive where the form
+  has one + county-wide officers). **Verified per county, not derivable from a constant** — see
+  "The 7-officer template" below before trusting any UT county number.
 - **Cities & school districts** — seeded at the currently-loaded roster size as a baseline; verify
   against official council/board sizes and adjust. `null` means "unknown" → never counted complete.
+
+#### The 7-officer template (why 5 UT counties read over-roster)
+
+`ut_county_rosters.json` was scaffolded with **`expected_at_large_officers: 7` for all 29 counties**
+and `roster_url` set on **1 of 29** ("roster_url TBD via W2 source-audit"). It was never source-
+audited, so "authoritative" was never true for these numbers. `data/rosters/manual/_audit_notes.md`
+states the assumption outright: "All 29 counties have the same 7 at-large officer rows regardless of
+government shape" — Sheriff, County Attorney, **Clerk/Auditor**, Recorder, Assessor, Treasurer,
+Surveyor.
+
+That constant bakes in **exactly one** consolidation (Clerk+Auditor) and no others. Utah Code
+**17-66-102** enumerates **8** county-wide officers (assessor, attorney, auditor, clerk, recorder,
+sheriff, surveyor, treasurer), and **17-66-104** lets each county consolidate offices by ordinance
+(**17-66-201(3)**: "only one individual shall be elected to fill the consolidated offices"). So the
+real count is **6, 7 or 8 depending on that county's ordinance** — and the template is wrong in both
+directions:
+
+| County's consolidations | Real officers | Counties | Template `7` |
+|---|---|---|---|
+| none | 8 | Utah, Davis, Salt Lake | **under** by 1 |
+| Recorder/Surveyor only | 7 | Tooele, Summit | right by luck |
+| separate Clerk + Auditor, no elected Surveyor | 7 | Cache | right by luck |
+| Clerk/Auditor **and** Recorder/Surveyor | 6 | Washington, Weber | **over** by 1 |
+
+Two further errors compounded it, both on the legislative side:
+
+- **The elected executive was omitted entirely.** 17-66-102(1)(b) enumerates the county executive
+  under executive-council/council-manager forms. Cache's County Executive and Salt Lake's Mayor were
+  simply missing from the totals.
+- **Form and body size drift.** Tooele is no longer a 3-commissioner county (council-manager, 5
+  seats); Cache's council is 7 seats, not 5. A council-**manager** county's manager is appointed, so
+  it adds no seat — a council-**executive** county's executive does.
+
+**Verified 2026-07-29** against each county's own roster: Cache 15, Davis 11, Salt Lake 18, Tooele
+12, Utah 11 — every one matching the loaded roster exactly. The remaining **24 counties still carry
+the unaudited template**; `verified_at` + `verified_officers` + `seat_authority` in the JSON mark
+which have been checked. Don't trust a UT county seat count without `verified_at`.
 
 ### "Calibrated" definition
 
@@ -420,12 +458,12 @@ this file's convention — still unverified against official council sizes.
 
 Two things deliberately NOT changed:
 
-- **UT county `expected_seats` are authoritative** (`ut_county_rosters.json`), which is why Washington
-  and Weber read 9/10 — a *missing officer*. A re-init would overwrite them with the loaded-roster
-  count and erase that signal, so `ut.yaml` was hand-edited, not regenerated. Note 5 UT counties now
-  have MORE officials loaded than the authoritative roster allows (Cache 15/12, Salt Lake 18/16,
-  Tooele 12/10, Davis 11/10, Utah 11/10) — either duplicate officials or a stale roster file. Worth a
-  look; pre-existing and untouched here.
+- **UT county `expected_seats` come from `ut_county_rosters.json`**, hand-edited into `ut.yaml`
+  rather than regenerated — a re-init overwrites them with loaded-roster counts and drops row
+  shapes it can't generate. **RESOLVED 2026-07-29:** the 5 counties reading over-roster (Cache
+  15/12, Salt Lake 18/16, Tooele 12/10, Davis 11/10, Utah 11/10) were **a stale roster file, not
+  duplicates** — a nationwide check found zero duplicate politician or office rows, and all five
+  loaded rosters were correct. See "The 7-officer template" below.
 - **Chamber rows in multi-member states** read roster > seats because `expected_seats` is the TIGER
   *district* count while the roster counts *members*: `az State House 60/30` (2 per district),
   `md State House 140/71`, `va State Senate 47/40`. Pre-existing units mismatch, not this tier.

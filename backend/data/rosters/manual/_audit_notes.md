@@ -34,6 +34,15 @@ Counties: Beaver, Box Elder, Carbon, Daggett, Davis, Duchesne, Emery, Garfield, 
 
 ## At-Large Officer Convention
 
+> **⚠️ CORRECTED 2026-07-29 — do not use the uniform 7 as a seat count.** The convention below is a
+> *scaffold* convention (stable role hashes), and it was mistakenly consumed as an authoritative
+> roster size, which made 5 counties read over-roster on the coverage tracker. Utah Code 17-66-102
+> enumerates **8** county-wide officers; 17-66-104 lets each county consolidate them by ordinance, so
+> the true count is **6, 7 or 8 per county**. The uniform 7 assumes Clerk+Auditor consolidated
+> everywhere and nothing else consolidated anywhere — it under-counts Utah/Davis/Salt Lake by 1 and
+> over-counts Washington/Weber by 1. It also omits the elected county executive (Cache) / mayor
+> (Salt Lake) entirely. See `data/coverage/README.md` → "The 7-officer template".
+
 All 29 counties have the same 7 at-large officer rows regardless of government shape. Some counties consolidate offices in practice (e.g., Clerk-Auditor combined, Clerk-Recorder combined, Surveyor sometimes absent). The TSV `role` column should be edited verbatim to match the county's actual title; the loader passes the role string through to `offices.title` and uses `slugify(role)` only for the external_id hash, so spelling changes after first load do NOT shift external_ids.
 
 ## Floor Coverage (manual_partial threshold)
