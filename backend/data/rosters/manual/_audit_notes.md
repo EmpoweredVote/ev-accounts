@@ -41,7 +41,7 @@ Counties: Beaver, Box Elder, Carbon, Daggett, Davis, Duchesne, Emery, Garfield, 
 > the true count is **5 to 8 per county**. The uniform 7 assumes Clerk+Auditor consolidated
 > everywhere and nothing else consolidated anywhere. It also omits the elected county executive
 > (Cache) / mayor (Salt Lake), and its `3 commissioners` default is wrong for Grand (7), Wasatch (7),
-> Morgan (5) and Tooele (5). **All 29 counties were audited 2026-07-29 and 18 seat totals were
+> Morgan (5) and Tooele (5). **All 29 counties were audited 2026-07-29 and 20 seat totals were
 > wrong** — the real range is 8–18, not the 10/12/16 this scaffold could produce. The TSV row counts
 > below are therefore scaffold artifacts, NOT roster sizes; take seat counts from
 > `ut_county_rosters.json` (`expected_seat_total`, with `roster_confidence`).

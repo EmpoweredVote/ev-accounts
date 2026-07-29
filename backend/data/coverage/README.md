@@ -127,12 +127,13 @@ directions:
 | County's consolidations | Real officers | Counties | Template `7` |
 |---|---|---|---|
 | none | 8 | Utah, Davis, Salt Lake | **under** by 1 |
-| separate Clerk+Auditor, no elected Surveyor | 7 | Box Elder, Millard, Sanpete, Daggett, Cache | right by luck |
+| separate Clerk+Auditor, no elected Surveyor | 7 | Box Elder, Millard, Sanpete, Cache | right by luck |
 | Recorder/Surveyor only | 7 | Tooele, Summit, Iron | right by luck |
-| Clerk/Auditor only | 7 | Duchesne, Garfield, San Juan, Uintah, Wayne, Grand, Wasatch | right by luck |
+| Clerk/Auditor only | 7 | Duchesne, Garfield, San Juan, Uintah, Grand, Wasatch | right by luck |
 | Clerk/Auditor, no elected Surveyor | 6 | Beaver, Emery, Kane, Sevier, Morgan, Carbon\* | **over** by 1 |
 | Clerk/Auditor **and** Recorder/Surveyor | 6 | Washington, Weber, Juab, Rich | **over** by 1 |
-| Clerk/Auditor **and** Recorder/**Treasurer** | 5 | Piute | **over** by 2 |
+| separate Clerk+Auditor, **Recorder/Treasurer** | 6 | Daggett | **over** by 1 |
+| Clerk/Auditor **and** Recorder/**Treasurer** | 5 | Piute, Wayne | **over** by 2 |
 
 \* Carbon's Surveyor office is held **concurrently by a sitting commissioner** ("Commissioner/
 Surveyor"), so it elects 9 *people* across 10 *offices*. `expected_seats` is compared against
@@ -158,14 +159,14 @@ Two further errors compounded it, both on the legislative side:
 ### All 29 counties audited — 2026-07-29
 
 Every county now carries `verified_at`, `verified_officers`, `seat_authority`, `expected_seat_total`
-and `roster_confidence`. **18 of 29 seat totals were wrong.** Totals now range **8 → 18**, where the
+and `roster_confidence`. **20 of 29 seat totals were wrong.** Totals now range **8 → 18**, where the
 template could only ever produce 10, 12 or 16:
 
 | Total | Counties |
 |---|---|
-| 8 | Piute |
-| 9 | Beaver, Carbon, Emery, Juab, Kane, Rich, Sevier, Washington, Weber |
-| 10 | Box Elder, Daggett, Duchesne, Garfield, Iron, Millard, San Juan, Sanpete, Uintah, Wayne |
+| 8 | Piute, Wayne |
+| 9 | Beaver, Carbon, Daggett, Emery, Juab, Kane, Rich, Sevier, Washington, Weber |
+| 10 | Box Elder, Duchesne, Garfield, Iron, Millard, San Juan, Sanpete, Uintah |
 | 11 | Davis, Morgan, Utah |
 | 12 | Summit, Tooele |
 | 14 | Grand, Wasatch |
@@ -174,9 +175,38 @@ template could only ever produce 10, 12 or 16:
 
 `roster_confidence` grades the source, and **`high` is not the same claim as `medium`**:
 
-- **`high` (17)** — read off the county's own elected-officials roster or its candidate-filing list.
-- **`medium` (12)** — assembled from official-domain content via search, or from a source that
+- **`high` (19)** — read off the county's own elected-officials roster or its candidate-filing list.
+- **`medium` (10)** — assembled from official-domain content via search, or from a source that
   doesn't distinguish elected from appointed. Reconfirm against the county roster before seeding.
+
+#### 🔴 Both `medium` counties that were reconfirmed turned out WRONG
+
+Wayne and Daggett were reconfirmed against their own rosters on 2026-07-29. **Both were wrong, and
+both in the same direction** — an undetected consolidation:
+
+| | audit said | actually | what was missed |
+|---|---|---|---|
+| Wayne | 10 | **8** | Clerk/Auditor **and** Recorder/Treasurer, no Surveyor |
+| Daggett | 10 | **9** | Recorder/Treasurer |
+
+That is 2 for 2. **Treat the remaining 10 `medium` counties as probably wrong, not merely
+unconfirmed** — Beaver, Garfield, Juab, Piute, Rich, San Juan, Sanpete, Sevier, Uintah, Wasatch. The
+failure mode is systematic: aggregators and directories reproduce the **generic statutory list** from
+Title 17 and silently miss whatever that county actually consolidated. A source that lists exactly
+`Assessor, Attorney, Clerk/Auditor, Recorder, Sheriff, Surveyor, Treasurer` is reciting the statute,
+not reporting the county.
+
+Two techniques that did work, for whoever finishes these:
+
+- **Pair the two Notices of Election.** County officers sit on 4-year staggered terms, so one cycle
+  shows about half the offices — but the **union of two consecutive cycles enumerates every elected
+  office exhaustively**. Daggett's 2024 notice (Assessor, Attorney, Clerk, Commissioner "C",
+  **Recorder/Treasurer**) plus its 2026 notice (Commissioner A, Commissioner B, Auditor, Sheriff)
+  settled it outright — and made the absence of a Surveyor a *finding* rather than a silence. These
+  live on `utah.gov/pmn` and in county DocumentCenters.
+- **A shared phone number between two offices is a reliable tell for consolidation.** It flagged
+  Piute's Recorder/Treasurer, then predicted Daggett's before the notice confirmed it. Daggett's own
+  directory listed Recorder and Treasurer as separate departments — on one phone line.
 
 Two traps this audit walked into, worth not repeating:
 

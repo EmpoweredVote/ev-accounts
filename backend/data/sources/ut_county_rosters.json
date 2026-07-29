@@ -106,11 +106,11 @@
     "fips": "49009",
     "geo_id_county": "ocd-division/country:us/state:ut/county:daggett",
     "government_shape": "commission",
-    "roster_url": "https://www.daggettcounty.gov/directory.aspx",
+    "roster_url": "https://www.daggettcounty.gov/DocumentCenter/View/11480/2024-Daggett-Co-Notice-of-Election",
     "council_district_template": null,
     "status": "deferred",
-    "expected_at_large_officers": 7,
-    "notes": "VERIFIED 2026-07-29 (medium confidence): Clerk and Auditor listed as SEPARATE offices (distinct phone lines); no Surveyor. Source is a staff directory that does not mark elected vs appointed - reconfirm before seeding.",
+    "expected_at_large_officers": 6,
+    "notes": "RECONFIRMED 2026-07-29 against BOTH election cycles: CORRECTED 10 -> 9. The 2024 Notice of Election lists Assessor, Attorney, Clerk, Commissioner \"C\", and RECORDER/TREASURER; the 2026 notice lists Commissioner (A), Commissioner (B), Auditor, Sheriff. Union = 3 commissioners + 6 officers = 9. Clerk and Auditor ARE separate here (Larinda Isaacson / Keri Pallesen), but Recorder/Treasurer is ONE office (Brianne Carter). No Surveyor appears in EITHER cycle, so its absence is established by exhaustive enumeration, not by silence.",
     "expected_commissioners": 3,
     "expected_council_seats": null,
     "verified_officers": [
@@ -118,14 +118,13 @@
       "County Attorney",
       "Auditor",
       "Clerk",
-      "Recorder",
-      "Sheriff",
-      "Treasurer"
+      "Recorder/Treasurer",
+      "Sheriff"
     ],
     "verified_at": "2026-07-29",
     "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
-    "roster_confidence": "medium",
-    "expected_seat_total": 10
+    "roster_confidence": "high",
+    "expected_seat_total": 9
   },
   {
     "county_name": "Davis",
@@ -698,23 +697,21 @@
     "roster_url": "https://waynecountyutah.gov/pages/county-offices",
     "council_district_template": null,
     "status": "deferred",
-    "expected_at_large_officers": 7,
-    "notes": "VERIFIED 2026-07-29 (medium confidence): Clerk/Auditor consolidated; elects a Surveyor. Officer set from a secondary aggregator - reconfirm against the county roster before seeding.",
+    "expected_at_large_officers": 5,
+    "notes": "RECONFIRMED 2026-07-29 against the county roster: CORRECTED 10 -> 8. Wayne runs TWO consolidations -- Clerk/Auditor (Felicia Snow) AND Recorder/Treasurer (Colleen Allen, with a Deputy Recorder/Treasurer) -- and elects NO Surveyor (its GIS department is staff, not an elected office). 3 commissioners + 5 officers = 8. Corroborated by Wayne's own 2026 Notice of Election (Attorney, Clerk/Auditor, two Commissioners, Sheriff). The earlier value of 10 came from an aggregator reproducing the generic statutory list.",
     "expected_commissioners": 3,
     "expected_council_seats": null,
     "verified_officers": [
       "Assessor",
       "County Attorney",
       "Clerk/Auditor",
-      "Recorder",
-      "Sheriff",
-      "Surveyor",
-      "Treasurer"
+      "Recorder/Treasurer",
+      "Sheriff"
     ],
     "verified_at": "2026-07-29",
     "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
-    "roster_confidence": "medium",
-    "expected_seat_total": 10
+    "roster_confidence": "high",
+    "expected_seat_total": 8
   },
   {
     "county_name": "Weber",
