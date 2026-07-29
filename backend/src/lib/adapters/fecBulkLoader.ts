@@ -16,7 +16,13 @@
  * CAVEAT (documented): the bulk file is not amendment-resolved the way the API is; an
  * amended transaction has a different SUB_ID than its original, so both can load → slight
  * itemized over-count on amended transactions. Headline total_raised is unaffected (it uses
- * authoritative FEC receipts). v2 could add amendment resolution.
+ * authoritative FEC receipts).
+ *
+ * quick-260729-0jn: the amendment columns (file_number/report_type/amendment_indicator/
+ * transaction_id) and election_type are now retained in raw_record (see mapBulkRow) — the
+ * precondition for Phase A1 amendment reconciliation. This change is FORWARD-LOOKING ONLY:
+ * rows already in production predate it and still need `scripts/backfill-fec-file-numbers.ts`
+ * or an A1 re-ingest to gain these fields. No re-ingest is triggered by this change.
  */
 
 import { Readable } from 'node:stream';
@@ -47,6 +53,8 @@ const BULK_BASE = 'https://www.fec.gov/files/bulk-downloads';
 // indiv column indexes (0-based) per the FEC data dictionary.
 const I_CMTE = 0, I_ENTITY = 6, I_NAME = 7, I_CITY = 8, I_STATE = 9,
       I_EMPLOYER = 11, I_OCC = 12, I_DATE = 13, I_AMT = 14, I_MEMO = 18, I_SUB = 20;
+// quick-260729-0jn (EXPL-A1/EXPL-A3): amendment + election-designation columns.
+const I_AMNDT = 1, I_RPT_TP = 2, I_PGI = 3, I_TRAN_ID = 16, I_FILE_NUM = 17;
 // ccl column indexes: CAND_ID | CAND_ELECTION_YR | FEC_ELECTION_YR | CMTE_ID | CMTE_TP | CMTE_DSGN | LINKAGE_ID
 const C_CAND = 0, C_CMTE = 3, C_DSGN = 5;
 
@@ -70,7 +78,7 @@ function parseFecBulkDate(s: string | undefined): Date | null {
 }
 
 /** Map one indiv bulk row into the same slim shape the API path stores. */
-function mapBulkRow(c: string[], sourceId: string, cycle: string): ContributionInsert {
+export function mapBulkRow(c: string[], sourceId: string, cycle: string): ContributionInsert {
   const amount = parseFloat(c[I_AMT] ?? '') || 0;
   const name = c[I_NAME] ?? '';
   const date = parseFecBulkDate(c[I_DATE]);
@@ -97,6 +105,26 @@ function mapBulkRow(c: string[], sourceId: string, cycle: string): ContributionI
       contribution_receipt_date: date ? date.toISOString().slice(0, 10) : '',
       two_year_transaction_period: Number(cycle),
       memo_code: c[I_MEMO] ?? '',
+      // quick-260729-0jn (EXPL-A1): retained so amendment reconciliation doesn't have to
+      // re-derive these from scratch. Deliberately NO report_year key here — see below.
+      file_number: c[I_FILE_NUM] ?? '',
+      report_type: c[I_RPT_TP] ?? '',
+      amendment_indicator: c[I_AMNDT] ?? '',
+      transaction_id: c[I_TRAN_ID] ?? '',
+      // quick-260729-0jn (EXPL-A3): raw TRANSACTION_PGI value (e.g. "P2022" — combined
+      // designation+year form). The API's `election_type` field may use a different
+      // form; nothing reads this key yet — Task 3 of quick-260729-0jn records both
+      // observed formats so a later per-election limit engine (A3) normalizes rather
+      // than assumes they match.
+      election_type: c[I_PGI] ?? '',
+      // Deliberately absent: report_year. The bulk `indiv` file has no report-year
+      // column, so it is not synthesized here. `retireSupersededFilings` in
+      // fecAdapter.ts slices on (committee_id, report_year, report_type) + file_number;
+      // a guessed report_year would let bulk rows be matched — and therefore DELETED —
+      // by that per-line supersession rule on a fabricated key. Leaving it absent keeps
+      // bulk rows inert with respect to per-line retirement, exactly as today. A1 must
+      // source the real value from the filing header (FEC `/filings/?file_number=`),
+      // never invent it. See fecBulkLoader.test.ts for the regression guard.
     },
     donor_name_normalized: normalizeDonorName(name),
   };

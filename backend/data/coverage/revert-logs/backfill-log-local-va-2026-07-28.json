@@ -1,0 +1,16 @@
+{
+  "captured": "2026-07-28",
+  "tier": "LOCAL",
+  "state": "va",
+  "count": 1,
+  "districts": [
+    {
+      "id": "b7c0a61f-c6ca-44a3-ba0e-32459fdf1c32",
+      "district_type": "LOCAL",
+      "state": "va",
+      "geo_id": "5101000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:va/place:alexandria"
+    }
+  ]
+}

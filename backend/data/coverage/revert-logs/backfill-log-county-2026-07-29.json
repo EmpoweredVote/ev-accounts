@@ -1,0 +1,176 @@
+{
+  "captured": "2026-07-29",
+  "tier": "COUNTY",
+  "state": "all",
+  "count": 21,
+  "districts": [
+    {
+      "id": "00a34833-8964-401d-a215-e9774a8305ec",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d16",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:16"
+    },
+    {
+      "id": "02c1ca85-77f0-45bb-94ec-51ac755da413",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d12",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:12"
+    },
+    {
+      "id": "0b0dc9c6-bd59-48d9-a67f-11f46868ef5d",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d4",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:4"
+    },
+    {
+      "id": "10201ba7-04c6-42b4-b0f8-56887e139fa2",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d6",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:6"
+    },
+    {
+      "id": "18ff104f-056b-4d4e-b6ea-7e5d8dde980e",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d13",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:13"
+    },
+    {
+      "id": "203e4155-85fe-47a5-ad3a-454ffa0563ea",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d21",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:21"
+    },
+    {
+      "id": "3b031074-bae2-4a31-a66e-95ba8d63cae2",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d9",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:9"
+    },
+    {
+      "id": "46232daf-bf34-4a6e-8dc7-2a30157e4893",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d7",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:7"
+    },
+    {
+      "id": "683b5c39-0298-45fa-aa0a-0a0675f36c78",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d5",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:5"
+    },
+    {
+      "id": "6cb8c474-a27e-4ea2-8384-d4ed615a8df2",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d2",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:2"
+    },
+    {
+      "id": "752cdd1d-c3e6-4f6c-9d4d-6d9a2fdd1e2c",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d1",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:1"
+    },
+    {
+      "id": "766cc02e-c94b-4303-a600-7f3cd069eff2",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d18",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:18"
+    },
+    {
+      "id": "8fc64ff3-5965-4f79-955a-33419bbdb4ed",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d14",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:14"
+    },
+    {
+      "id": "95e90354-d424-49da-ad87-866ef16b9eb1",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d3",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:3"
+    },
+    {
+      "id": "a3e43e84-6e4d-42f2-acfe-424bed7f5064",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d11",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:11"
+    },
+    {
+      "id": "ac7dc43f-741a-47cc-bc12-0ba2682a26c5",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d10",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:10"
+    },
+    {
+      "id": "ae87af82-0b42-41db-bdc9-0264b6a4c7e3",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d8",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:8"
+    },
+    {
+      "id": "b64027bb-d92c-4349-aa72-d28c497a2459",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d20",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:20"
+    },
+    {
+      "id": "c7c2475c-ed10-4b1f-8478-ad250cfc2be2",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d15",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:15"
+    },
+    {
+      "id": "dbb11cbc-4318-44e6-8164-0b73e07d6ee7",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d17",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:17"
+    },
+    {
+      "id": "f26bebd8-fd59-4202-ae69-fb35aaced5c6",
+      "district_type": "COUNTY",
+      "state": "wi",
+      "geo_id": "55101-sup-d19",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/county:racine/council_district:19"
+    }
+  ]
+}

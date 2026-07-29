@@ -770,6 +770,10 @@ const FEC_KEPT_FIELDS = [
   // transaction_id is deliberately NOT used as a dedup key because it is not stable across
   // amendments (verified: same contribution carried 'VSHCSM0N319' then '2208859').
   'file_number', 'report_year', 'report_type', 'load_date', 'transaction_id',
+  // quick-260729-0jn (EXPL-A1/EXPL-A3): kept so API-ingested rows carry the same
+  // amendment/election fields the bulk path (fecBulkLoader.ts mapBulkRow) now retains.
+  // Forward-only — no re-ingest, no backfill, no behavioural change to any existing query.
+  'amendment_indicator', 'election_type',
 ] as const;
 
 /** Keep only the fields we read or need for audit — see FEC_KEPT_FIELDS. */

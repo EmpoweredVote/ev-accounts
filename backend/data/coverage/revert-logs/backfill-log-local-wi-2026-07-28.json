@@ -1,0 +1,120 @@
+{
+  "captured": "2026-07-28",
+  "tier": "LOCAL",
+  "state": "wi",
+  "count": 14,
+  "districts": [
+    {
+      "id": "09525c02-ef82-46a1-ad36-caa2364a9ece",
+      "district_type": "LOCAL",
+      "state": "wi",
+      "geo_id": "5568550",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/place:rochester"
+    },
+    {
+      "id": "1b01e19d-3300-4d2a-8497-0ba8cfe0c4d0",
+      "district_type": "LOCAL",
+      "state": "wi",
+      "geo_id": "5587700",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/place:wind_point"
+    },
+    {
+      "id": "30e9579e-52e3-42ab-9918-0805576fb00c",
+      "district_type": "LOCAL",
+      "state": "wi",
+      "geo_id": "5511950",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/place:caledonia"
+    },
+    {
+      "id": "398842c4-46c6-4465-a660-135adddbf6c3",
+      "district_type": "LOCAL",
+      "state": "wi",
+      "geo_id": "5511200",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/place:burlington"
+    },
+    {
+      "id": "4bb90bbd-0af2-4c9c-8a19-d78ff8a70dd4",
+      "district_type": "LOCAL",
+      "state": "wi",
+      "geo_id": "5557700",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/place:north_bay"
+    },
+    {
+      "id": "5d5e4ad9-ea6f-489c-a979-998af0490a2d",
+      "district_type": "LOCAL",
+      "state": "wi",
+      "geo_id": "5583825",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/place:waterford"
+    },
+    {
+      "id": "5e028010-de50-4db1-9c23-4a3a16cca3ca",
+      "district_type": "LOCAL",
+      "state": "wi",
+      "geo_id": "5566000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/place:racine"
+    },
+    {
+      "id": "80bdce8f-c474-43e0-9881-19484138d883",
+      "district_type": "LOCAL",
+      "state": "wi",
+      "geo_id": "5566350",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/place:raymond"
+    },
+    {
+      "id": "a41a8b8b-a01e-4df1-ae67-cce185d9e3f4",
+      "district_type": "LOCAL",
+      "state": "wi",
+      "geo_id": "5523725",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/place:elmwood_park"
+    },
+    {
+      "id": "baf0d7ef-c440-418f-9f42-7bb5e6992514",
+      "district_type": "LOCAL",
+      "state": "wi",
+      "geo_id": "5554875",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/place:mount_pleasant"
+    },
+    {
+      "id": "c3b1a916-3609-487f-8f64-b4719d1b6c35",
+      "district_type": "LOCAL",
+      "state": "wi",
+      "geo_id": "5577925",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/place:sturtevant"
+    },
+    {
+      "id": "ddf0a78c-c78e-4da9-bf84-fb5eea03237a",
+      "district_type": "LOCAL",
+      "state": "wi",
+      "geo_id": "5589550",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/place:yorkville"
+    },
+    {
+      "id": "e1da376a-e507-46f6-be2d-998e9d84b99c",
+      "district_type": "LOCAL",
+      "state": "wi",
+      "geo_id": "5581775",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/place:union_grove"
+    },
+    {
+      "id": "f2454bf8-062e-4332-8caf-b9acdc3699e8",
+      "district_type": "LOCAL",
+      "state": "wi",
+      "geo_id": "5548000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:wi/place:madison"
+    }
+  ]
+}
