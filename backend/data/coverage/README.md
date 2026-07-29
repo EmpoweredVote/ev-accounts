@@ -230,12 +230,42 @@ were caught this way, and one false alarm avoided:
 - **LOCAL/LOCAL_EXEC tier: COMPLETE** except 1 district. See below.
 - **SCHOOL tier: COMPLETE.** See below.
 - **CITY_COUNCIL + SCHOOL_BOARD tier: COMPLETE** (all of it was DC). See below.
-- **21 WI COUNTY districts / 21 officials** still unmapped — they reach the COUNTY branch but fail
-  county-name resolution. Every remaining unmapped COUNTY row is Wisconsin's, so one fix likely
-  clears the whole type. This is now the cheapest remaining win.
-- Everything else left is 6 districts / 34 officials and mostly deliberate: `JUDICIAL` 4/19,
-  `NATIONAL_JUDICIAL` 1/9, `NATIONAL_LOWER` 1/1 are `SKIP_TYPES` (no OCD geography), plus Bend's
-  park district.
+- **COUNTY tier: COMPLETE.** See below.
+- **Nothing backfillable is left.** All 7 remaining unmapped districts / 34 officials are either
+  `SKIP_TYPES` by design — `JUDICIAL` 4/19, `NATIONAL_JUDICIAL` 1/9, `NATIONAL_LOWER` 1/1, none of
+  which have an OCD geography — or Bend Metro Park & Recreation District 1/5, a special district with
+  no OCD division kind. Any further progress needs new OCD semantics or geofence work, not this script.
+
+#### COUNTY tier finished — 2026-07-28 (21 districts / 21 officials, 0 skipped)
+
+All 21 were **Racine County WI's Board of Supervisors**. Their geo_ids are
+`55101-sup-d1`..`-d21` — the county's FIPS-5 sitting in the first five characters of a hyphenated
+slug, while `resolveCountySlug` accepted only *pure* 5- or 10-digit ids. So every one failed as
+"cannot resolve county name" with the answer in plain sight. Now it also reads a `^(\d{5})-` prefix.
+
+**They are seats, so they take the per-seat form** `county:racine/council_district:N`, not the bare
+`county:racine` the COUNTY branch used to emit for everything. The bare form would have been actively
+wrong: `county:racine` is **already taken by the county itself** (geo 55101, "Racine County", the 7
+county-wide constitutional officers), so 21 supervisor districts collapsing onto it would have merged
+22 distinct districts into one id and lost every seat. Precedent for per-seat exists under both types —
+`ut/county:salt_lake/council_district:N` is `district_type = COUNTY`, and mig 1484's Pima/Riverside
+boards are LOCAL. All 21 seats resolved, districts 1–21 with no gaps and no duplicates, 0 collisions.
+
+**Racine County's row went 25 → 46, and that number is three bodies, not one board:**
+
+| | |
+|---|---|
+| 7 | county-wide constitutional officers on the bare `county:racine` division — County Executive, Sheriff, DA, County Clerk, Treasurer, Register of Deeds, Clerk of Circuit Court |
+| 21 | `county:racine/council_district:1..21` — the actual County Board of Supervisors |
+| 18 | `county:racine/place:<town>` — the four Racine towns |
+
+An earlier version of that comment called the 7 "the county board", which was wrong — they are
+constitutional officers, and the board is the 21. Fixed in place. Same subtree roll-up shape as IN's
+`county:monroe` reading 56 with its townships nested.
+
+Also still unmapped but **out of scope and hiding nobody**: 4 Monroe County IN council districts
+(`18105-mcc-d1..d4`) with **0 active officeholders**. They now resolve cleanly if anyone is ever
+seated in them.
 
 #### CITY_COUNCIL + SCHOOL_BOARD finished — 2026-07-28 (18 districts / 24 officials, all DC)
 

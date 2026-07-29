@@ -199,7 +199,16 @@ function resolveMcd(
 // COUNTY → county slug. 10-digit geo_id is state2+county3+seq5; resolve the FIPS-5 county
 // name from a G4020 geofence first, then the COUNTY_FIPS_NAME table. Seats roll up to the county.
 function resolveCountySlug(geoId: string, nameByKey: Map<string, string>): string | null {
-  const fips5 = /^\d{10}$/.test(geoId) ? geoId.slice(0, 5) : /^\d{5}$/.test(geoId) ? geoId : null;
+  const fips5 = /^\d{10}$/.test(geoId)
+    ? geoId.slice(0, 5)
+    : /^\d{5}$/.test(geoId)
+      ? geoId
+      // A county-board SEAT carries the FIPS-5 as a prefix on a hyphenated slug:
+      // "55101-sup-d21" (Racine County WI supervisor district 21), "18105-mcc-d1" (Monroe County IN
+      // council district 1). Only pure 5- and 10-digit ids were accepted, so all 25 of these fell
+      // out of the COUNTY branch as "cannot resolve county name" — with the county's FIPS sitting
+      // in the first five characters.
+      : (geoId.match(/^(\d{5})-/)?.[1] ?? null);
   if (!fips5) return null;
   const name = nameByKey.get(`${fips5}|G4020`) ?? COUNTY_FIPS_NAME[fips5] ?? null;
   return name ? plainSlug(name.replace(/\s+county$/i, '')) || null : null;
@@ -385,10 +394,22 @@ async function main(): Promise<void> {
       continue;
     }
 
-    // COUNTY: FIPS-5 → county slug (seats roll up to the county).
+    // COUNTY: FIPS-5 → county slug. A row that is the COUNTY ITSELF gets the bare division; a row
+    // that is one numbered SEAT on the county board gets county:<slug>/council_district:N.
     if (d.district_type === 'COUNTY') {
       const slug = resolveCountySlug(geoId, nameByKey);
       if (!slug) { p.skipped.push({ d, reason: `cannot resolve county name for geo_id=${geoId}` }); continue; }
+      // The bare form would be WRONG for a seat: `county:racine` is already taken by the county
+      // itself (geo 55101, "Racine County", 7 county-wide officers), so mapping 21 supervisor
+      // districts onto it would merge 22 distinct districts into one id and lose every seat.
+      // The per-seat form has precedent under BOTH types — ut/county:salt_lake/council_district:N
+      // is district_type COUNTY, and mig 1484's Pima/Riverside boards are LOCAL. Seats still roll
+      // up to the county for coverage, because the county row matches its whole subtree.
+      const seat = (d.label ?? '').match(/\bdistrict\s+(\d+)\s*$/i)?.[1] ?? geoId.match(/-d(\d+)$/)?.[1];
+      if (seat) {
+        p.resolved.push({ d, ocd: `ocd-division/country:us/state:${abbr}/county:${slug}/council_district:${seat}` });
+        continue;
+      }
       p.resolved.push({ d, ocd: `ocd-division/country:us/state:${abbr}/county:${slug}` });
       continue;
     }

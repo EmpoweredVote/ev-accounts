@@ -124,19 +124,25 @@ locations:
     name: Racine County
     level: county
     status: active
-    # 25, NOT a 25-seat county board. A county row matches its whole OCD subtree, and the four
-    # Racine towns are county:racine/place:<town>, so this rolls up the county board (7) plus the
-    # four town boards (18). Same as IN's county:monroe reading 56 with its townships nested. The
-    # county-nested form is deliberate — a bare place: slug would collide with City of Burlington
-    # and Village of Waterford (see the notes above).
-    expected_seats: 25
+    # 46, NOT a 46-seat county board. A county row matches its whole OCD subtree, so this rolls up
+    # three different bodies:
+    #    7  county-wide constitutional officers on the bare county:racine division
+    #       (County Executive, Sheriff, DA, County Clerk, Treasurer, Register of Deeds,
+    #        Clerk of Circuit Court) — these are NOT the county board, which an earlier
+    #        version of this comment got wrong
+    #   21  county:racine/council_district:1..21 — the actual County Board of Supervisors
+    #   18  county:racine/place:<town> — the four Racine towns (see notes)
+    # Same shape as IN's county:monroe reading 56 with its townships nested. The county-nested town
+    # form is deliberate — a bare place: slug would collide with City of Burlington and Village of
+    # Waterford (see the notes above).
+    expected_seats: 46
     geofenced: true
     donors: none
     candidates: none
     treasury: none
     populated: true
     headshots: partial
-    stances: { researched: 0, total: 25 }
+    stances: { researched: 0, total: 46 }
     last_researched: null
 
   # ── Cities & municipalities (14) ──
