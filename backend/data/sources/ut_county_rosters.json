@@ -385,8 +385,8 @@
     "roster_url": "https://www.washco.utah.gov/departments/",
     "council_district_template": null,
     "status": "manual_csv",
-    "expected_at_large_officers": 7,
-    "notes": "3 commissioners + 7 at-large electeds attach to G4020 whole-county. roster_url TBD via W2 source-audit.",
+    "expected_at_large_officers": 6,
+    "notes": "VERIFIED 2026-07-29: 3 commissioners + 6 county-wide officers = 9. Washington consolidates BOTH Clerk/Auditor AND Recorder/Surveyor, so the 8 officers enumerated by UT Code 17-66-102 collapse to 6 (17-66-104 consolidation; 17-66-201(3) elects one individual per consolidated office). Corrected 10 -> 9: the old 10 came from the uniform 7-officer template, and the \"missing officer\" it implied never existed — the 9 loaded officials are a COMPLETE roster.",
     "expected_commissioners": 3,
     "verified_officers": [
       "Assessor",
@@ -396,10 +396,9 @@
       "Sheriff",
       "Treasurer"
     ],
-    "verified_seat_total": 9,
-    "verified_note": "CONTRADICTS expected_at_large_officers=7. Washington consolidates BOTH Clerk/Auditor AND Recorder/Surveyor, so 8 statutory officers collapse to 6: 3 commissioners + 6 = 9. The 9 officials loaded therefore look like a COMPLETE roster, and the 9/10 \"missing officer\" reading is most likely an artifact of the uniform 7-officer template. Counts left unchanged pending operator decision.",
     "verified_at": "2026-07-29",
-    "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)"
+    "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
+    "expected_seat_total": 9
   },
   {
     "county_name": "Wayne",
@@ -421,8 +420,8 @@
     "roster_url": "https://www.webercountyutah.gov/County_Commission/",
     "council_district_template": null,
     "status": "manual_csv",
-    "expected_at_large_officers": 7,
-    "notes": "3 commissioners + 7 at-large electeds attach to G4020 whole-county. roster_url TBD via W2 source-audit.",
+    "expected_at_large_officers": 6,
+    "notes": "VERIFIED 2026-07-29: 3 commissioners + 6 county-wide officers = 9. Same double consolidation as Washington (Clerk/Auditor + Recorder/Surveyor). Corrected 10 -> 9: the old 10 came from the uniform 7-officer template; the 9 loaded officials are a COMPLETE roster. OPEN (name accuracy, not seat count): external rosters name Assessor John E. Ulibarri II and Recorder/Surveyor Leann Kilts, while we hold Jared Preisler and Bahy Rahimzadegan — verify which is current.",
     "expected_commissioners": 3,
     "verified_officers": [
       "Assessor",
@@ -432,9 +431,8 @@
       "Sheriff",
       "Treasurer"
     ],
-    "verified_seat_total": 9,
-    "verified_note": "CONTRADICTS expected_at_large_officers=7. Same double consolidation as Washington (Clerk/Auditor + Recorder/Surveyor): 3 commissioners + 6 = 9, so the 9 loaded officials look COMPLETE. Counts left unchanged pending operator decision. Separately, external rosters name Assessor John E. Ulibarri II and Recorder/Surveyor Leann Kilts, while we hold Jared Preisler and Bahy Rahimzadegan -- verify which is current before trusting either.",
     "verified_at": "2026-07-29",
-    "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)"
+    "seat_authority": "Utah Code 17-66-102 (officers enumerated) + 17-66-104 (consolidation by ordinance)",
+    "expected_seat_total": 9
   }
 ]

@@ -131,6 +131,11 @@ directions:
 | separate Clerk + Auditor, no elected Surveyor | 7 | Cache | right by luck |
 | Clerk/Auditor **and** Recorder/Surveyor | 6 | Washington, Weber | **over** by 1 |
 
+That last row is where the tracker's long-standing "Washington & Weber are missing an officer" note
+came from. It was never a missing officer — both counties elect exactly the 6 officers their
+ordinances leave unconsolidated, so 3 + 6 = 9 and their 9 loaded officials are a **complete** roster.
+Corrected to 9 on 2026-07-29.
+
 Two further errors compounded it, both on the legislative side:
 
 - **The elected executive was omitted entirely.** 17-66-102(1)(b) enumerates the county executive
@@ -141,9 +146,10 @@ Two further errors compounded it, both on the legislative side:
   it adds no seat — a council-**executive** county's executive does.
 
 **Verified 2026-07-29** against each county's own roster: Cache 15, Davis 11, Salt Lake 18, Tooele
-12, Utah 11 — every one matching the loaded roster exactly. The remaining **24 counties still carry
-the unaudited template**; `verified_at` + `verified_officers` + `seat_authority` in the JSON mark
-which have been checked. Don't trust a UT county seat count without `verified_at`.
+12, Utah 11, Washington 9, Weber 9 — every one matching the loaded roster exactly, so **all 10 UT
+county rows now read complete**. The remaining **22 counties still carry the unaudited template**;
+`verified_at` + `verified_officers` + `seat_authority` in the JSON mark which have been checked.
+Don't trust a UT county seat count without `verified_at`.
 
 ### "Calibrated" definition
 
@@ -463,7 +469,8 @@ Two things deliberately NOT changed:
   shapes it can't generate. **RESOLVED 2026-07-29:** the 5 counties reading over-roster (Cache
   15/12, Salt Lake 18/16, Tooele 12/10, Davis 11/10, Utah 11/10) were **a stale roster file, not
   duplicates** — a nationwide check found zero duplicate politician or office rows, and all five
-  loaded rosters were correct. See "The 7-officer template" below.
+  loaded rosters were correct. Washington and Weber were corrected the other way (10 → 9). All 10
+  UT county rows now read complete. See "The 7-officer template" below.
 - **Chamber rows in multi-member states** read roster > seats because `expected_seats` is the TIGER
   *district* count while the roster counts *members*: `az State House 60/30` (2 per district),
   `md State House 140/71`, `va State Senate 47/40`. Pre-existing units mismatch, not this tier.
