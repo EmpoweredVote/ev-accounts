@@ -821,7 +821,21 @@ async function resolveOfficialsAtPoint(
       AND gvb.geo_id = d.geo_id
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
     ${UPCOMING_ELECTIONS_LATERAL}
-    WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
+    WHERE (
+      d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
+      -- DC's CITYWIDE seats: Mayor, Attorney General, Council Chairman, the 4 at-large Council
+      -- members (all on geo_id 'dc-council-at-large') and the at-large SBOE member. They are
+      -- elected by the whole city, exactly like a Governor or state AG, but DC has no STATE_EXEC
+      -- district so nothing here admitted them and they were unreachable by address.
+      --
+      -- KEYED ON THE AT-LARGE geo_ids, NOT on district_type, and that is load-bearing: DC's 8 WARD
+      -- seats are also district_type CITY_COUNCIL, so admitting the type would return all eight
+      -- ward councilmembers for EVERY DC address — the ward seats already resolve correctly and
+      -- individually through the geofence join (migration 1485).
+      -- Nor can this key on ocd_id: the at-large SBOE member shares
+      -- state:dc/school_district:district_of_columbia with the 8 SBOE ward seats.
+      OR (lower(d.state) = 'dc' AND d.geo_id IN ('dc-council-at-large', 'dc-sboe-at-large'))
+    )
     AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
     AND (p.is_active = true OR o.is_vacant = true)
     AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'

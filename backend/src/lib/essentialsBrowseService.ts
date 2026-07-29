@@ -1016,7 +1016,16 @@ export async function getStatewideOfficials(stateAbbrev: string): Promise<Politi
       ON gvb.state = d.state
       AND gvb.geo_id = d.geo_id
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
-    WHERE d.district_type IN ('NATIONAL_UPPER', 'STATE_EXEC', 'NATIONAL_EXEC', 'NATIONAL_JUDICIAL')
+    WHERE (
+        d.district_type IN ('NATIONAL_UPPER', 'STATE_EXEC', 'NATIONAL_EXEC', 'NATIONAL_JUDICIAL')
+        -- DC's citywide seats — see the matching clause in resolveOfficialsAtPoint
+        -- (src/lib/essentialsService.ts), which this must stay in step with. Keyed on the at-large
+        -- geo_ids rather than district_type because DC's 8 ward seats are CITY_COUNCIL too, and
+        -- admitting the type would put all eight wards in the statewide bucket.
+        -- This function backs BOTH the D-05 state-scoped fallback in getRepresentativesByCoordinate
+        -- and the browse-by-state officials route, so DC's browse view needs it as well.
+        OR (lower(d.state) = 'dc' AND d.geo_id IN ('dc-council-at-large', 'dc-sboe-at-large'))
+      )
       AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
       AND p.is_active = true
       AND p.is_incumbent = true

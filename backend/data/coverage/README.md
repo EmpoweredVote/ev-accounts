@@ -332,12 +332,27 @@ at `1100N`. One benign behavior change: `getContributorPoliticians('11001')` now
 two seats. Verified end-to-end through `getRepresentativesByCoordinate` at 5 DC points, each returning
 exactly one Council and one SBOE seat for the right ward, no cross-ward leakage.
 
-⚠️ **DC's 8 citywide seats are still not address-searchable** — Mayor, Attorney General, Council
-Chairman, the 4 at-large Council members, and the at-large SBOE member. They have no geofence, and the
-statewide query in `resolveOfficialsAtPoint` admits only
-`district_type IN (NATIONAL_UPPER, NATIONAL_EXEC, STATE_EXEC, NATIONAL_JUDICIAL, JUDICIAL)`. Widening
-it is a public-correctness change for **every** state — unscoped, Boston's at-large councillors would
-surface for every MA address — so it needs a DC scope and a deliberate decision. Not attempted.
+**DC's 8 citywide seats are now address-searchable too** — Mayor, Attorney General, Council Chairman,
+the 4 at-large Council members and the at-large SBOE member. This was **not** a `geo_id` fix: those
+seats have no geofence at all. They are admitted by the **statewide query** in
+`resolveOfficialsAtPoint`, which previously allowed only
+`district_type IN (NATIONAL_UPPER, NATIONAL_EXEC, STATE_EXEC, NATIONAL_JUDICIAL, JUDICIAL)` — and DC
+has no STATE_EXEC district, so nothing admitted them. The same clause went into
+`getStatewideOfficials()`, which backs both the D-05 fallback and the browse-by-state route.
+
+🔴 **The clause keys on the at-large `geo_id`s, not on `district_type`, and that is load-bearing.**
+DC's 8 **ward** seats are also `CITY_COUNCIL`, so admitting the type would return **all eight ward
+councilmembers for every DC address**. It cannot key on `ocd_id` either — the at-large SBOE member
+shares `state:dc/school_district:district_of_columbia` with the 8 SBOE ward seats. This is the same
+shape as the G5220 guard clause: scope narrowly, or a citywide rule silently becomes a per-ward leak.
+
+Verified: 4 DC points each return exactly 2 ward seats (correct ward) **and** exactly 8 citywide;
+`getStatewideOfficials('DC')` returns the 8 with **zero ward leakage**; and **MA is unchanged** at 42
+officials / 0 CITY_COUNCIL, so no other state is affected.
+
+**DC address search, end state:** one address returns **13** DC officials (3 federal + 2 ward + 8
+citywide), up from 3. All **27 of 27** are reachable by some address, up from 3. 13 is the correct
+maximum for a single address — the other 14 are the other seven wards' seats, which must not appear.
 
 #### LOCAL tier finished — 2026-07-28 (116 districts / 131 officials, 1 left)
 
