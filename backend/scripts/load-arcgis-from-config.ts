@@ -33,7 +33,26 @@ interface SourceRecord {
   jurisdiction_id: string;
   layer_class: 'county_council' | 'city_ward' | 'sboe' | 'school_subdistrict';
   source_url: string | null;
-  field_map: { district_num: string; name: string; district_num_transform?: 'extract_int' } | null;
+  /**
+   * `name` reads the boundary's display name from a source attribute. `name_template` synthesizes it
+   * from the district number instead ('District {N}'), and takes precedence when both are set.
+   *
+   * name_template exists because several source layers have NO usable district-label field at all --
+   * Taylorsville's `NAME` is a census-block description, Holladay's only label reads "Proposed
+   * District 1 - 6,174", West Jordan has no label attribute, and Cottonwood Heights' GIS host refuses
+   * connections so its fields cannot be inspected. Before it existed, those configs pointed `name` at
+   * a COUNCILMEMBER field, which is how 31 boundaries ended up named after people -- and two of Salt
+   * Lake City's after people who had already left office (migration 1500). A boundary must not be
+   * named after its occupant: the person changes, the district does not.
+   */
+  field_map:
+    | {
+        district_num: string;
+        name?: string;
+        name_template?: string;
+        district_num_transform?: 'extract_int';
+      }
+    | null;
   mtfcc: string;
   geo_id_template: string | null;
   status: 'active' | 'no_source' | 'at_large' | 'manual_geojson';
@@ -89,6 +108,12 @@ async function loadOne(client: pg.PoolClient, rec: SourceRecord, counters: Count
       `Record ${rec.jurisdiction_id} status=${rec.status} requires source_url, field_map, geo_id_template`,
     );
   }
+  if (!rec.field_map.name && !rec.field_map.name_template) {
+    throw new Error(
+      `Record ${rec.jurisdiction_id} needs field_map.name or field_map.name_template — ` +
+        'refusing to fall back to a layer_class placeholder for a boundary name',
+    );
+  }
 
   console.error(`[132-arcgis] LOAD ${rec.jurisdiction_id} (${rec.layer_class}, mtfcc=${rec.mtfcc})`);
 
@@ -110,7 +135,6 @@ async function loadOne(client: pg.PoolClient, rec: SourceRecord, counters: Count
     counters.features_processed++;
     const props = feature.properties ?? {};
     const districtNum = resolveProp(props, rec.field_map.district_num);
-    const name = resolveProp(props, rec.field_map.name);
 
     if (districtNum === undefined || districtNum === null) {
       console.error(
@@ -126,10 +150,20 @@ async function loadOne(client: pg.PoolClient, rec: SourceRecord, counters: Count
       : rawNum;
     const geoId = rec.geo_id_template.replace('{N}', resolvedNum);
     const ocdId = geoId; // OCD-ID equals geo_id for these layers (D-09)
-    const nameStr = String(name ?? `${rec.layer_class} ${districtNum}`);
+    // name_template wins when set: it is used precisely for the sources that have no usable label
+    // attribute, so there is nothing to read. Otherwise read the mapped attribute. The old
+    // `layer_class N` fallback is gone — the validation above makes an unnamed record a hard error
+    // rather than silently writing "city_ward 3" as a boundary name.
+    const nameStr = rec.field_map.name_template
+      ? rec.field_map.name_template.replace('{N}', resolvedNum)
+      : String(resolveProp(props, rec.field_map.name as string) ?? `District ${resolvedNum}`);
 
     if (DRY_RUN) {
-      console.error(`[132-arcgis] DRY_RUN would insert geo_id=${geoId} mtfcc=${rec.mtfcc}`);
+      // name is echoed because it is the field most likely to be misconfigured: pointing it at a
+      // councilmember attribute is what named 38 boundaries after people (migrations 1500, 1501).
+      console.error(
+        `[132-arcgis] DRY_RUN would insert geo_id=${geoId} mtfcc=${rec.mtfcc} name="${nameStr}"`,
+      );
       continue;
     }
 
