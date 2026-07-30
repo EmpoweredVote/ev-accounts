@@ -2080,12 +2080,12 @@
     "source_url": "https://services.arcgis.com/mMBpeYj0vPFotzbe/arcgis/rest/services/Salt_Lake_City_Council_Districts/FeatureServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
     "field_map": {
       "district_num": "CITYCOUNCIL_ID",
-      "name": "CITYCOUNCIL_MEMBER"
+      "name": "LABEL"
     },
     "mtfcc": "X0001",
     "geo_id_template": "ocd-division/country:us/state:ut/place:salt_lake_city/ward:{N}",
     "status": "active",
-    "notes": "VERIFIED via gis-slcgov.opendata.arcgis.com hub search (2026-05-09); 7 features, fields CITYCOUNCIL_ID/CITYCOUNCIL_MEMBER/LABEL. Was reactively flipped to no_source in 132-04; corrected here."
+    "notes": "VERIFIED via gis-slcgov.opendata.arcgis.com hub search (2026-05-09); 7 features, fields CITYCOUNCIL_ID/CITYCOUNCIL_MEMBER/LABEL. Was reactively flipped to no_source in 132-04; corrected here. 2026-07-30: field_map.name moved CITYCOUNCIL_MEMBER -> LABEL (migration 1500). A boundary must not be named after its occupant: the person changes, the district does not, and the upstream layer is itself stale (it still lists Eva Lopez for district 4 and Darin Mano for district 5, both replaced in Jan 2026). LABEL carries 'Council District 1'..'7'. Matches the convention of its peers (west_valley_city uses LABEL, ogden uses NAME). Note the loader is ON CONFLICT (geo_id, mtfcc) DO NOTHING, so changing this field does NOT rewrite rows already imported — 1500 does that."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:sandy",
