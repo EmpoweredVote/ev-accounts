@@ -136,8 +136,8 @@ Non-negotiables for any importer:
 1. **API rate limits / terms.** No rate-limit headers on public endpoints, no published quota. `/summary`,
    `/change_logs` and `/pipeline_runs/issues` require auth we do not have. If we want their **change
    feed** — the genuinely useful thing for incremental sync — we need to ask for a key and terms.
-2. **How much of the seat-identified 2,700 overlaps cities we already hold?** Determines whether item 2
-   is new coverage or duplicate risk. Needs a proper join, not the LA spot-check.
+2. ~~How much overlaps cities we already hold?~~ **ANSWERED 2026-07-30 — see the scoped work order
+   below.**
 3. **What do they want in return?** They offered access; there is no stated expectation. Worth clarifying
    before we depend on anything, especially as we would be taking CC0 data and giving nothing back.
 
@@ -153,3 +153,60 @@ call from our surfacing.
 
 Evidence trail: `project_civicpatch_open_data_assessment` in agent memory has the full measurement
 detail, including the LA parity table and the Plano/Frisco freshness test.
+
+---
+
+# APPROVED SCOPE — contacts + images only (operator, 2026-07-30)
+
+Approved: enrich politicians **we already hold** with their contacts and images. Explicitly **NOT**
+approved: creating politicians, creating offices, or importing the place-level 86%.
+
+## Measured overlap — the actual job
+
+Our municipal footprint in their 13 states is **CA, MA, TX only** (their tiers vs our coverage states).
+Keyed on `districts.ocd_id` we hold **~145 places** across those three — note an earlier figure of
+"LA plus two counties" was wrong, it came from the sparse `districts.city` column.
+
+**44 cities intersect. 319 of their records: 276 with email, 223 with phone, 264 with image.**
+
+| cluster | cities | their recs | notes |
+|---|---|---|---|
+| TX (Collin County belt: Plano, Frisco, McKinney, Allen, Princeton, Prosper, Celina, Anna, Lucas, Melissa, Murphy, Richardson, Fairview, Van Alstyne, Longview, Parker, Nevada, Josephine, Farmersville, Lavon, Weston, Blue Ridge, Lowry Crossing) | 23 | ~155 | **FRESH — scraped 2026-03/04** |
+| CA (LA basin + SF/SJ/SD/Sac/Berkeley/Fremont/Long Beach/Pasadena …) | 20 | ~150 | 🔴 **STALE — every CA row scraped 2025-07-17/18, ~12 months old** |
+| MA Springfield | 1 | 14 | **FRESH — 2026-07-11**, 13 email / 14 phone / 14 image |
+
+🔴 **The CA half is a year old, and that is the whole risk.** Contacts are mostly office-attached
+(a council email survives a member change) but a 12-month-old roster will name departed members —
+exactly the SLC failure in migration 1500, where the upstream layer still listed two people who left
+in January. **Do not import a CA contact/image without confirming the person still holds the seat.**
+TX and MA Springfield are recent enough to import on the row's own `updated_at`.
+
+## Execution rules for the importer
+
+1. **Enrichment only.** Match their record to an EXISTING `essentials.politicians` row; if no match,
+   skip and log. Never insert a politician or an office. A no-match is a finding, not a prompt to seed.
+2. **Match on (place `ocd_id`, normalised name).** Their `jurisdiction_ocdid` / `office.division_ocdid`
+   are byte-identical to our `ocd_id` where they overlap — verified on LA (16/16 names, 15/15 districts).
+   🔴 But **normalised-name matching failed twice today on real people** ("Ben"/"Benjamin" Nadolski,
+   "Erin"/"Erin J." Mendenhall), so a name miss must **skip and report**, never guess.
+3. **Additive only, never overwrite.** Insert a `politician_contacts` row only where we have none of
+   that `contact_type`; insert a `politician_images` row only where the politician has no image.
+   Their data is unreviewed scraper output (~470 of 19,737 records human-checked) — it is a
+   backfill for gaps, not a source of truth that displaces ours.
+4. **Images: copy, don't hotlink.** Their CDN (`cdn.civicpatch.org`) is live and fetchable, but a
+   third-party URL in `politician_images.url` is an availability dependency. Pull into our Storage
+   bucket like every other headshot. Their licence field reads `press_use`; dataset is CC0.
+   The correct-person guard still applies — it rejects first-name mismatches, and it should.
+5. **Gate either side with `npm run check:reachability`** (from `backend/`, needs `DATABASE_URL`). The
+   baseline is per `state|district_type`, so any accidental office/district churn shows immediately.
+6. **Batch per city, not one big transaction**, so a bad city is contained and re-runnable.
+
+## Realistic yield
+
+Ceiling is 319 records, but after (a) dropping stale CA rows that fail a still-in-office check,
+(b) skipping name misses, and (c) additive-only filtering where we already have a contact or image,
+expect materially less. **TX + MA Springfield (~169 records) is the clean first batch** — fresh, and
+the TX belt is where our own contact coverage is thinnest. Do CA second, behind an incumbency check.
+
+Not started: sizing was the last open question and this answers it. The importer itself is the next
+session's work.
