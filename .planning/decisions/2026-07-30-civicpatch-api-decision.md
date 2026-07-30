@@ -138,8 +138,21 @@ Non-negotiables for any importer:
    feed** — the genuinely useful thing for incremental sync — we need to ask for a key and terms.
 2. ~~How much overlaps cities we already hold?~~ **ANSWERED 2026-07-30 — see the scoped work order
    below.**
-3. **What do they want in return?** They offered access; there is no stated expectation. Worth clarifying
-   before we depend on anything, especially as we would be taking CC0 data and giving nothing back.
+3. ~~What do they want in return?~~ **ANSWERED via correspondence 2026-07-30: they said both GitHub
+   repos will be free "for as long as they could keep them up."** No fee, no expectation stated.
+
+   🔴 **That phrasing is a requirement, not just reassurance.** "As long as we can keep them up" is an
+   explicit statement that continuity is not guaranteed — a small project on Ko-fi funding. It cuts both
+   ways and both ways point the same direction:
+   - It **strengthens** "take the data, don't take a dependency." CC0 means anything we have already
+     imported is ours permanently and cannot be rescinded. That is the durable half.
+   - It means we must **VENDOR the dataset, not fetch it on demand.** Snapshot the clone into our own
+     storage with the commit SHA recorded, and have the importer read the snapshot. Any pipeline that
+     resolves `github.com/CivicPatch/open-data` or `cdn.civicpatch.org` at run time inherits their
+     uptime. That applies especially to images: rule 4 below (copy into our Storage, never hotlink) is
+     now non-negotiable rather than merely preferable.
+   - It also means **grab a full snapshot sooner rather than later**, even ahead of importing, since the
+     cost of doing so is a shallow clone and the cost of not having one is the whole dataset.
 
 ---
 
