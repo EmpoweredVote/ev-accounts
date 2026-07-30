@@ -1,0 +1,27 @@
+{
+  "_comment": "Baseline for check-address-reachability.mjs, keyed check -> \"state|district_type\" -> count. The gate fires on GROWTH in a bucket or on ANY new bucket. Shrink these numbers as the backlog is worked off; never raise one without saying why in the commit message.",
+  "_updated": "2026-07-30",
+  "counts": {
+    "BAD_GEOMETRY": {
+      "ca|LOCAL": 1,
+      "ma|SCHOOL": 4
+    },
+    "DEAD_GEOGRAPHY": {
+      "fl|NATIONAL_LOWER": 1,
+      "in|COUNTY": 4,
+      "in|JUDICIAL": 2,
+      "in|LOCAL": 12,
+      "in|LOCAL_EXEC": 1,
+      "ut|LOCAL": 8
+    },
+    "UNREACHABLE": {
+      "ca|LOCAL": 19,
+      "dc|CITY_COUNCIL": 1,
+      "dc|SCHOOL_BOARD": 1,
+      "in|COUNTY": 15,
+      "in|JUDICIAL": 2,
+      "in|SCHOOL": 1,
+      "ma|SCHOOL": 1
+    }
+  }
+}

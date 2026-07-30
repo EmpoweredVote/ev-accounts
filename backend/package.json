@@ -1,7 +1,7 @@
 {
   "name": "empowered-accounts-backend",
   "version": "0.1.0",
-  "description": "Empowered Accounts backend API — foundational three-tier account infrastructure",
+  "description": "Empowered Accounts backend API \u2014 foundational three-tier account infrastructure",
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
@@ -14,7 +14,9 @@
     "typecheck": "tsc --noEmit",
     "check:migrations": "node scripts/check-migration-numbers.mjs",
     "check:occupancy": "node scripts/check-office-occupancy.mjs",
-    "check:occupancy:all": "node scripts/check-office-occupancy.mjs --all"
+    "check:occupancy:all": "node scripts/check-office-occupancy.mjs --all",
+    "check:reachability": "node scripts/check-address-reachability.mjs",
+    "check:reachability:verbose": "node scripts/check-address-reachability.mjs --verbose"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.91.0",

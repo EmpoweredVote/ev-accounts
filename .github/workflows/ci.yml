@@ -5,11 +5,20 @@ on:
     branches: [master]
   push:
     branches: [master]
+  # Address reachability needs a live DB, so it also runs on a schedule: the data drifts on its own
+  # as terms start and end, with no commit to trigger anything. 13:00 UTC = ~06:00 US/Pacific, after
+  # the 06:00 UTC FEC ingest window.
+  schedule:
+    - cron: '0 13 * * *'
+  workflow_dispatch:
 
 jobs:
   backend:
     name: backend lint · typecheck · test
     runs-on: ubuntu-latest
+    # Skipped on the nightly schedule: no commit means no new code to lint, and the only thing the
+    # scheduled run exists for is the reachability job below.
+    if: github.event_name != 'schedule'
     defaults:
       run:
         working-directory: backend
@@ -77,3 +86,39 @@ jobs:
         run: node backend/scripts/check-office-occupancy.mjs
         env:
           BASE_REF: origin/${{ github.base_ref }}
+
+  reachability:
+    name: address-search reachability
+    runs-on: ubuntu-latest
+    # NOT on pull_request. Unlike the two guards above, this one queries the live database rather
+    # than the diff — and migrations here are applied ad hoc, never replayed by a deploy (CLAUDE.md),
+    # so a PR's SQL has not touched prod yet and there is nothing new for it to see. What it actually
+    # guards is PROD DRIFT: terms start and end on their own dates, so a seat can become unreachable
+    # with no commit involved. Hence master pushes + the daily schedule.
+    if: github.event_name != 'pull_request'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Catches the class of defect that shipped three times in migrations 1495/1496/1498 and that
+      # essentials.offices_missing_terms cannot see: a seeded officeholder no resident can surface by
+      # typing their address. Baselined per state|district_type, so it fires on growth or a new
+      # jurisdiction, not on the known backlog.
+      #
+      # Skips itself (exit 0) when DATABASE_URL is absent — forks get no secrets, and a green skip is
+      # better than a red build nobody can fix.
+      - name: Check every seeded officeholder is reachable by address
+        run: npm run check:reachability
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
