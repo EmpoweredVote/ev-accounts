@@ -94,9 +94,28 @@ do not show as UNREACHABLE.
 I expected these to be deletable scaffolding. They are three different things:
 
 - **Monroe County Council districts 1–4** (`18105-mcc-d1..d4`): polygons + offices, **zero holders**.
-  These are a REAL body we simply never seeded — the mirror image of Group 1 (Monroe has the polygons
-  and no roster; the other five counties have the roster and no polygons). **Do not delete** — seed the
-  roster and 4 seats become reachable immediately, since the geography is already correct.
+  🔴 **CORRECTION (checked 2026-07-30, after this doc first claimed "pure roster research"): SEEDING IS
+  BLOCKED. Monroe has a CARTESIAN OFFICE-DUPLICATION BUG.** "Monroe County Council District N" exists
+  **14 times each — 56 offices across 17 districts** — because the four council offices were created
+  against *every* Monroe County district row (Assessor, Auditor, Coroner, Sheriff, Surveyor, Treasurer,
+  Recorder, Prosecuting Attorney, Circuit Court Clerk, At-Large, District 1/2/3 …). All 56 are termless.
+  Same bug hits **"Monroe County Commissioner District N" — 13 offices across 13 districts**, also
+  termless. **69 duplicate offices total.**
+
+  Split: **52** Council dupes sit on `geo_id 18105` (the county polygon); the **4 keepers** are the ones
+  on `18105-mcc-d1..d4` with the real district polygons.
+
+  **Seeding first would be actively harmful** — you would pick 4 of 56 identically-titled offices and
+  leave 52 ambiguous duplicates, recreating exactly the condition migrations 1495/1496/1498 existed to
+  clean up. Correct order:
+    1. delete the 52 termless Council dupes on `geo_id 18105`, keeping the 4 on the mcc polygons;
+    2. decide the Commissioner set separately — Monroe has **3** commissioners and there is **no**
+       commissioner-district polygon, so unlike Council there is no obvious keeper;
+    3. THEN seed the 4 council members (roster research: Monroe County's official site; do NOT trust the
+       GIS layer's `Rep` attribute — the SLC lesson in migration 1500 was that those go stale).
+  ⚠️ **4 races are attached** to Monroe Council/Commissioner district offices. `races.office_id` is
+  ON DELETE **NO ACTION**, so those will BLOCK the delete until repointed — same trap as migration 1495's
+  `candidate_staging`. Check which offices they hang off before writing the delete.
 - **11 Monroe townships + Ellettsville**: here the empty rows *do* have occupied twins on the same
   geo_id — e.g. `1810503808` carries both an empty "Bean Blossom Township" and an occupied "Monroe
   County: Bean Blossom Township Board" with 3 active members. The empty ones look like scaffolding and
