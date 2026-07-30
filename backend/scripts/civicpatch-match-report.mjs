@@ -39,11 +39,19 @@ const SNAPSHOT_DIR = path.join(HERE, '..', 'data', 'civicpatch');
 const ARCHIVE = path.join(SNAPSHOT_DIR, 'civicpatch-open-data-928579c0.tar.gz');
 
 /**
- * The approved batch: TX (fresh, scraped 2026-03/04) + MA Springfield (fresh, 2026-07-11).
- * CA is deliberately EXCLUDED — every CA row is ~12 months old and a stale roster names departed
- * members, which is exactly the migration-1500 failure. CA needs an incumbency check first.
+ * Which states to classify. Defaults to the first approved batch (TX + MA Springfield);
+ * override with --states ca.
+ *
+ * The decision doc held CA back pending an "incumbency check", on the grounds that its rows are
+ * ~12 months old and a stale roster names departed members (the migration-1500 failure). Running
+ * the TX batch showed that check already exists implicitly: candidates are drawn ONLY from
+ * essentials.office_current_holder, so a record naming someone who has left office matches nobody
+ * and is dropped. Staleness costs us MISSes, not bad writes.
  */
-const BATCH_STATES = ['tx', 'ma'];
+const statesIdx = process.argv.indexOf('--states');
+const BATCH_STATES = statesIdx !== -1 && process.argv[statesIdx + 1]
+  ? process.argv[statesIdx + 1].split(',').map((s) => s.trim().toLowerCase())
+  : ['tx', 'ma'];
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 
@@ -216,29 +224,32 @@ const q = (v) => (v === null || v === undefined ? 'NULL' : `'${String(v).replace
  * numbers embedded in data already written to prod drift when branches renumber; the upstream commit
  * is the stable identifier and is also the thing you would need to reproduce this.
  */
-function emitMigration(records) {
+function emitMigration(records, outPath) {
   const rows = records.filter((r) => r.verdict === 'EXACT' && r.would_insert_contact);
   const SRC = 'civicpatch:928579c0';
   const lines = [];
-  lines.push(`-- 1503_civicpatch_tx_ma_contacts.sql`);
+  lines.push(`-- ${path.basename(outPath)}`);
   lines.push(`--`);
   lines.push(`-- Backfill office contacts for ${rows.length} municipal officials we ALREADY HOLD, from the`);
   lines.push(`-- vendored CC0 CivicPatch snapshot 928579c0 (backend/data/civicpatch/).`);
   lines.push(`-- Approved scope: .planning/decisions/2026-07-30-civicpatch-api-decision.md`);
   lines.push(`--`);
   lines.push(`-- ENRICHMENT ONLY. Creates no politician and no office. Every row below is an EXACT 1:1`);
-  lines.push(`-- normalised-name match against a CURRENT officeholder in the same place; 4 near-matches`);
+  lines.push(`-- normalised-name match against a CURRENT officeholder in the same place. Near-matches`);
   lines.push(`-- (the "Ben"/"Benjamin" shape) were held back for human review and are NOT here.`);
   lines.push(`--`);
   lines.push(`-- ADDITIVE ONLY. Each insert is guarded on the politician having no contact_type='office'`);
   lines.push(`-- row at all, so nothing we already hold is overwritten. Re-running is a no-op.`);
   lines.push(`--`);
-  lines.push(`-- WHY THEIR STALENESS DOES NOT LEAK IN. Their TX rows were scraped 2026-03/04, which`);
-  lines.push(`-- predates the May 2026 Texas uniform election (and Frisco's June runoff — Mark Hill was`);
-  lines.push(`-- sworn in 2026-07-07, while their file still names Jeff Cheney). 20 of their 169 records`);
-  lines.push(`-- name officials who have since left office. Those records match nobody in our current`);
-  lines.push(`-- roster and are therefore absent from this migration by construction: matching against`);
-  lines.push(`-- current holders IS the incumbency check. Do not "fix" the matcher to catch them.`);
+  const misses = records.filter((r) => r.verdict === 'MISS').length;
+  const reviews = records.filter((r) => r.verdict === 'REVIEW').length;
+  lines.push(`-- WHY THEIR STALENESS DOES NOT LEAK IN. Candidates are drawn ONLY from`);
+  lines.push(`-- essentials.office_current_holder, so a record naming someone who has left office matches`);
+  lines.push(`-- nobody and is absent here by construction. ${misses} of their ${records.length} records for this batch`);
+  lines.push(`-- did exactly that. Matching against current holders IS the incumbency check the decision`);
+  lines.push(`-- doc asked for — staleness costs MISSes, never bad writes. Do not "fix" the matcher to`);
+  lines.push(`-- rescue them: a MISS is usually someone who left office. ${reviews} near-matches were also`);
+  lines.push(`-- held back for human adjudication and are not included.`);
   lines.push(``);
   lines.push(`BEGIN;`);
   lines.push(``);
@@ -356,7 +367,7 @@ async function main() {
   const migIdx = process.argv.indexOf('--emit-migration');
   if (migIdx !== -1 && process.argv[migIdx + 1]) {
     const out = process.argv[migIdx + 1];
-    writeFileSync(out, emitMigration(all));
+    writeFileSync(out, emitMigration(all, out));
     console.log(`wrote ${out}`);
   }
   await pool.end();
