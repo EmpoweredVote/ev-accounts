@@ -223,3 +223,27 @@ the TX belt is where our own contact coverage is thinnest. Do CA second, behind 
 
 Not started: sizing was the last open question and this answers it. The importer itself is the next
 session's work.
+
+---
+
+## Snapshot: FULL, decided by operator 2026-07-30
+
+"We should take a full snapshot when we take it." Agreed — snapshot everything, not just the 44
+overlapping cities, since the marginal cost is small and the downside is losing a dataset that is
+explicitly only guaranteed "as long as they could keep them up."
+
+**Two halves with very different cost, and they should be handled differently:**
+
+| half | size | where | when |
+|---|---|---|---|
+| **YAML + commit SHA** | 3,258 files, ~6,222 objects, small enough to clone in seconds | version it, or a tarball in object storage — record the source commit SHA either way | **now**, ahead of any import |
+| **Images** | ~9,094 records carry one (46% of 19,737); LA sample was 26.6 KB, so on the order of **200–250 MB** | Supabase Storage bucket, **not git** | with the import batches; full mirror optional |
+
+🟢 **The YAML half is the irreplaceable part, and it is the cheap one.** Their records carry BOTH
+`image` (the original municipal URL, e.g. `lacity.gov/...`) and `cdn_image` (their CDN copy). So a
+YAML-only snapshot preserves the ability to re-fetch headshots from the source municipality even if
+`cdn.civicpatch.org` disappears. Take it first; it is minutes of work and removes most of the risk.
+
+Do not put ~250 MB of images in the repo. For the approved batches we only need the 264 images across
+the 44 overlapping cities, which is trivial; a bulk mirror of the remaining ~8,800 is insurance that
+can wait and does not block anything.
