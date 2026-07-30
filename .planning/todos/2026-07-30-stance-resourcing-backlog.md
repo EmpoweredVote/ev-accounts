@@ -1,5 +1,25 @@
 # Stance re-sourcing backlog — opened 2026-07-30
 
+## ⏸️ NEXT ACTION — sort the cohorts with the operator (paused 2026-07-30)
+
+Retirement is **done and pushed** (migration 1494, commit `16f0a1e5`). Nothing here is date-gated, so
+this is picked up on demand — the operator asked to return to it after an unrelated task.
+
+**What's waiting on a decision, not on research:**
+1. **Confirm or re-rank the cohort order** in workstreams A and B below. The listed order is my
+   recommendation only.
+2. **One open disagreement to settle:** cohort **A6** is the largest single block by row count (442
+   answers, 138 politicians) but none of those politicians hold a current office, so Essentials never
+   displays them. I ranked it **last** despite the size, on the grounds that verifying claims nobody
+   can see is the weakest use of an hour. If the goal is clearing volume, A6 is the cohort to promote —
+   I'd argue against it. Operator's call.
+3. Decide whether workstream B splits **UT local** and **UT state-leg** into separate waves (they use
+   different research methods).
+
+No verification work has started. 783 rows remain live and unverified.
+
+---
+
 **Purpose:** a sortable worklist for putting real evidence behind the compass rows that never had it.
 Review this together and re-rank; the proposed order below is a recommendation, not a decision.
 
