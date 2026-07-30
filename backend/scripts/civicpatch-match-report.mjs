@@ -224,8 +224,12 @@ const q = (v) => (v === null || v === undefined ? 'NULL' : `'${String(v).replace
  * numbers embedded in data already written to prod drift when branches renumber; the upstream commit
  * is the stable identifier and is also the thing you would need to reproduce this.
  */
-function emitMigration(records, outPath) {
-  const rows = records.filter((r) => r.verdict === 'EXACT' && r.would_insert_contact);
+function emitMigration(records, outPath, { onlyReview = false } = {}) {
+  // --only-review emits the near-matches a HUMAN has since adjudicated. They are never auto-included;
+  // this path exists so an operator decision can be executed with the same guards as the main batch.
+  const rows = onlyReview
+    ? records.filter((r) => r.verdict === 'REVIEW' && r.our_politician_id && r.would_insert_contact)
+    : records.filter((r) => r.verdict === 'EXACT' && r.would_insert_contact);
   const SRC = 'civicpatch:928579c0';
   const lines = [];
   lines.push(`-- ${path.basename(outPath)}`);
@@ -234,15 +238,25 @@ function emitMigration(records, outPath) {
   lines.push(`-- vendored CC0 CivicPatch snapshot 928579c0 (backend/data/civicpatch/).`);
   lines.push(`-- Approved scope: .planning/decisions/2026-07-30-civicpatch-api-decision.md`);
   lines.push(`--`);
-  lines.push(`-- ENRICHMENT ONLY. Creates no politician and no office. Every row below is an EXACT 1:1`);
-  lines.push(`-- normalised-name match against a CURRENT officeholder in the same place. Near-matches`);
-  lines.push(`-- (the "Ben"/"Benjamin" shape) were held back for human review and are NOT here.`);
+  if (onlyReview) {
+    lines.push(`-- OPERATOR-ADJUDICATED NEAR-MATCHES. Every row here was REFUSED by the automatic matcher`);
+    lines.push(`-- because the normalised names differ — the "Ben"/"Benjamin" shape that has produced real`);
+    lines.push(`-- errors before. Each was then confirmed by hand and approved by the operator on`);
+    lines.push(`-- 2026-07-30. Each is 1:1 within its city (exactly one surname+initial candidate on each`);
+    lines.push(`-- side) and each carries a corroborating office title, so name and seat agree`);
+    lines.push(`-- independently. THE MATCHER WAS NOT LOOSENED — it still refuses these, by design.`);
+  } else {
+    lines.push(`-- ENRICHMENT ONLY. Creates no politician and no office. Every row below is an EXACT 1:1`);
+    lines.push(`-- normalised-name match against a CURRENT officeholder in the same place. Near-matches`);
+    lines.push(`-- (the "Ben"/"Benjamin" shape) were held back for human review and are NOT here.`);
+  }
   lines.push(`--`);
   lines.push(`-- ADDITIVE ONLY. Each insert is guarded on the politician having no contact_type='office'`);
   lines.push(`-- row at all, so nothing we already hold is overwritten. Re-running is a no-op.`);
   lines.push(`--`);
   const misses = records.filter((r) => r.verdict === 'MISS').length;
   const reviews = records.filter((r) => r.verdict === 'REVIEW').length;
+  if (!onlyReview) {
   lines.push(`-- WHY THEIR STALENESS DOES NOT LEAK IN. Candidates are drawn ONLY from`);
   lines.push(`-- essentials.office_current_holder, so a record naming someone who has left office matches`);
   lines.push(`-- nobody and is absent here by construction. ${misses} of their ${records.length} records for this batch`);
@@ -250,11 +264,15 @@ function emitMigration(records, outPath) {
   lines.push(`-- doc asked for — staleness costs MISSes, never bad writes. Do not "fix" the matcher to`);
   lines.push(`-- rescue them: a MISS is usually someone who left office. ${reviews} near-matches were also`);
   lines.push(`-- held back for human adjudication and are not included.`);
+  }
   lines.push(``);
   lines.push(`BEGIN;`);
   lines.push(``);
   for (const r of rows) {
-    lines.push(`-- ${r.place.replace('ocd-division/country:us/state:', '')} · ${r.our_full_name} · ${r.their_office ?? ''}`);
+    const who = onlyReview
+      ? `theirs "${r.their_name}"  ->  ours "${r.our_full_name}" (${r.our_title})`
+      : `${r.our_full_name} · ${r.their_office ?? ''}`;
+    lines.push(`-- ${r.place.replace('ocd-division/country:us/state:', '')} · ${who}`);
     lines.push(`INSERT INTO essentials.politician_contacts`);
     lines.push(`  (politician_id, source, email, phone, website_url, contact_type, contact_synced_at)`);
     lines.push(`SELECT ${q(r.our_politician_id)}::uuid, ${q(SRC)}, ${q(r.offers.email)}, ${q(r.offers.phone)}, ${q(r.offers.url)}, 'office', ${q(r.updated_at)}::timestamptz`);
@@ -367,7 +385,7 @@ async function main() {
   const migIdx = process.argv.indexOf('--emit-migration');
   if (migIdx !== -1 && process.argv[migIdx + 1]) {
     const out = process.argv[migIdx + 1];
-    writeFileSync(out, emitMigration(all, out));
+    writeFileSync(out, emitMigration(all, out, { onlyReview: process.argv.includes('--only-review') }));
     console.log(`wrote ${out}`);
   }
   await pool.end();
