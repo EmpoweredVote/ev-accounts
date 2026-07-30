@@ -1,0 +1,61 @@
+{
+  "source": {
+    "repo": "https://github.com/CivicPatch/open-data",
+    "commit_sha": "928579c01eff5f6ae2b877f84d1db140730f48db",
+    "commit_date": "2026-07-29T17:49:40-07:00",
+    "license": "CC0-1.0",
+    "clone": "git clone --depth 1"
+  },
+  "snapshot": {
+    "taken_at": "2026-07-30",
+    "archive": "civicpatch-open-data-928579c0.tar.gz",
+    "archive_bytes": 1755461,
+    "archive_sha256": "a48fa6858d157980d4e076b33a54174e7d38dbbd6bf5a020005f9b22a39145c2",
+    "includes": [
+      "data/",
+      "README.md",
+      "LICENSE",
+      "schemas.py",
+      "updated_jurisdiction_ocdids.txt",
+      "progress.json"
+    ],
+    "excludes": [
+      "data_source/",
+      "scripts/",
+      "tests/",
+      ".github/",
+      ".claude/"
+    ]
+  },
+  "contents": {
+    "yml_files": 3258,
+    "official_records": 18534,
+    "uncompressed_bytes": 23290000,
+    "states": 13,
+    "per_state": {
+      "ca": { "files": 73, "officials": 471 },
+      "co": { "files": 120, "officials": 827 },
+      "id": { "files": 95, "officials": 529 },
+      "ma": { "files": 1, "officials": 14 },
+      "mi": { "files": 878, "officials": 5211 },
+      "nc": { "files": 6, "officials": 37 },
+      "nd": { "files": 37, "officials": 230 },
+      "nh": { "files": 187, "officials": 816 },
+      "nj": { "files": 496, "officials": 3032 },
+      "sc": { "files": 92, "officials": 583 },
+      "tn": { "files": 113, "officials": 698 },
+      "tx": { "files": 964, "officials": 4684 },
+      "wa": { "files": 196, "officials": 1402 }
+    }
+  },
+  "discrepancies": [
+    {
+      "field": "official_records",
+      "repo_snapshot": 18534,
+      "decision_doc_via_api": 19737,
+      "delta": -1203,
+      "note": "The 19737 figure in .planning/decisions/2026-07-30-civicpatch-api-decision.md came from live civicpatch.org/api/v1 calls. This snapshot counts top-level '- name:' records in the git repo and finds 1203 fewer. Unresolved: the API may serve records not committed to the repo, or count differently. Import sizing should be taken from this snapshot, which is what the importer actually reads."
+    }
+  ],
+  "why_data_source_excluded": "data_source/<state>/local/place_*/workflow_context.json is 2781 files / 188 MB - 89% of the clone by size. It holds the scraper's LLM pipeline internals (page content, per-LLM merge steps, review steps), not row provenance. Provenance we rely on (source_urls, updated_at) is carried in the data/ YAML itself, so excluding it loses nothing the importer or an audit needs."
+}
