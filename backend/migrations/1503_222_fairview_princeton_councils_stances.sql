@@ -63,8 +63,51 @@
 --                            low-density plank deliberately NOT carried across to housing
 --                            or growth topics)
 --
--- Princeton block appended below after the Task 2 research pass (or this comment is
--- replaced by the all-blank note if Princeton sources nothing).
+-- PRINCETON SEEDED (2 rows / 2 answer+context pairs):
+--   Cristina Todd (Place 2)
+--     growth-and-development    = 2  (Princeton Herald, June 23, 2025: absent from the
+--                                     meeting but "sent a message that she supported the
+--                                     second extension" of Princeton's citywide residential
+--                                     development moratorium — suspend approvals until
+--                                     infrastructure/services catch up = the
+--                                     infrastructure-gated chair)
+--     Operator flag: the Herald records the fact of her support, not her personal
+--     reasoning — if a relayed absentee support-message is ruled insufficient, strike the
+--     row; the register preserves the evidence either way. Overwrites NO prior note (her
+--     2026-05-12 found-nothing rows cover the 8 Local Lens topics; growth-and-development
+--     is not among them — verified live 2026-07-30).
+--   Bryan Washington (Place 3, Mayor Pro Tem)
+--     public-safety-approach    = 4  (his 2023 re-election site wash4council.com: first
+--                                     term saw him "a strong proponent of starting salary
+--                                     increases for our police and fire" — explicit
+--                                     advocacy of increased public-safety pay = chair 4;
+--                                     not chair 5, no top-priority claim)
+--     LAVINE-PRECEDENT UPGRADE, replacing his 2026-05-12 found-nothing note on this topic.
+--     Verified legitimate 2026-07-30: that note says it "checked wash4council.com", but
+--     the site is a Square Online SPA serving an EMPTY SHELL to curl/WebFetch — the prior
+--     pass could not have read the content. Recovered this pass via headless render +
+--     the embedded JSON in the raw HTML (both methods, sentence confirmed verbatim).
+--     Operator flags: third-person campaign voice; police bundled with fire. The bundled
+--     EDC-expansion clause in the same sentence was NOT used (adjacency).
+--
+-- PRINCETON DELIBERATELY BLANK (31 person/topic pairs — see 222-CONFIRMED-BLANK.md):
+--   Cristina Todd (Place 2):      10 settled; all 8 Local Lens blanks independently
+--                                 corroborate her 2026-05-12 found-nothing notes. Refused:
+--                                 budget dissent (fiscal-capacity lament, reporter's
+--                                 bracket), TIRZ/PID critique (no incentive mechanism),
+--                                 P&Z liaison (adjacency), drainage (maintenance). Her
+--                                 explained FY26 budget/rate Nay is preserved in the
+--                                 register for any future municipal taxes rewrite.
+--   Bryan Washington (Place 3):   10 settled, corroborating 7 of his 8 prior notes (the
+--                                 8th is the upgrade above). His June 23, 2025 moratorium
+--                                 Aye (6-0) is unexplained — refused; "strategic growth
+--                                 planning" = generic; EDC structure = adjacency.
+--   Jaisen Rutledge (Place 4):    11 settled (seated mid-June 2026 after the runoff; no
+--                                 prior notes). Refused: LWV forum "understaffed" +
+--                                 "look at our budgeting" (compatible with chairs 3, 4,
+--                                 and reallocation alike; forum video named as retry
+--                                 path); "commercial growth, not just residential" = the
+--                                 refused commercial-tax-base class.
 -- =====================================================================================
 
 BEGIN;
@@ -90,6 +133,54 @@ VALUES ('9e80fff4-8b89-4c38-b33e-a1a0fff7e080',
         $stz$On her 2026 campaign website (reproduced verbatim by Ballotpedia as of April 13, 2026), Works states she believes in "protecting the Town's low-density, residential character" and supports "strengthening ordinances and ensuring they are applied consistently so that growth never comes at the expense of quality of life," citing five years of "vetting development on the Planning and Zoning Commission" as the technical expertise "to strictly enforce ordinances that protect our neighborhoods." This is an explicit commitment to strict preservation of existing low-density neighborhood character through zoning ordinances.$stz$,
         ARRAY['https://worksforfairview.com/',
               'https://ballotpedia.org/Lakia_Works_(Fairview_Town_Council_Seat_6,_Texas,_candidate_2026)']::text[])
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
+
+-- =====================================================================================
+-- Cristina Todd — Council Member Place 2, City of Princeton, TX
+-- politician_id: 3c8d7283-2387-47ff-8a29-1ef7a1e2a554
+-- Elected November 5, 2024; sworn in November 18, 2024. The June 23, 2025 moratorium
+-- extension falls inside her tenure.
+-- =====================================================================================
+
+-- ----- Cristina Todd / growth-and-development (value 2) -----
+INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+VALUES ('3c8d7283-2387-47ff-8a29-1ef7a1e2a554',
+        'fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4',
+        2)
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET value = EXCLUDED.value;
+
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+VALUES ('3c8d7283-2387-47ff-8a29-1ef7a1e2a554',
+        'fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4',
+        $stz$Though absent from the June 23, 2025 council meeting, Todd sent a message — reported by the Princeton Herald — that she supported the second extension of Princeton's residential development moratorium, which suspended acceptance, permits and approvals for residential development citywide and in the ETJ so the fast-growing city's infrastructure and public services could catch up (the city cited "reasonable, yet insufficient" progress preventing a shortage of essential public services). Supporting continued suspension of residential approvals until capacity catches up aligns with allowing growth only where existing infrastructure can support it.$stz$,
+        ARRAY['https://princetonherald.com/2025/06/23/housing-moratorium-extended/',
+              'https://www.princetontx.gov/AgendaCenter/ViewFile/Minutes/_06232025-1370']::text[])
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
+
+-- =====================================================================================
+-- Bryan Washington — Council Member Place 3 (Mayor Pro Tem), City of Princeton, TX
+-- politician_id: e40be594-2239-4c28-a8ac-d4f86c6d4180
+-- Elected November 2020; re-elected November 7, 2023. The cited first-term record
+-- (2020–2023) falls inside his tenure. This row REPLACES his 2026-05-12 found-nothing
+-- context note on this topic (Lavine-precedent upgrade — see file header).
+-- =====================================================================================
+
+-- ----- Bryan Washington / public-safety-approach (value 4) -----
+INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+VALUES ('e40be594-2239-4c28-a8ac-d4f86c6d4180',
+        'e9ebefcd-c496-45e8-b816-a79f8442ba85',
+        4)
+ON CONFLICT (politician_id, topic_id)
+DO UPDATE SET value = EXCLUDED.value;
+
+INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+VALUES ('e40be594-2239-4c28-a8ac-d4f86c6d4180',
+        'e9ebefcd-c496-45e8-b816-a79f8442ba85',
+        $stz$His 2023 re-election campaign website states that during his first term (2020–2023) he was "a strong proponent of starting salary increases for our police and fire," an explicit first-party advocacy of increasing public-safety compensation, consistent with increasing police pay as a city budget priority. No statement of his supports redirecting public-safety funding or holding it level.$stz$,
+        ARRAY['https://www.wash4council.com/']::text[])
 ON CONFLICT (politician_id, topic_id)
 DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources;
 
