@@ -1,0 +1,73 @@
+{
+  "_comment": "Playwright re-check of the 9 A1 rows that migration 1508 held back as PAGE_UNREADABLE. The pages were never unreadable: all five cited URLs are DISAMBIGUATION STUBS listing unrelated people. The correctly-titled page was then fetched IN FULL for all five to establish that re-pointing the citation would not rescue the rows. Method: navigate with Playwright (Ballotpedia renders there; it is curl-walled), read #mw-content-text innerText, test the row's own distinctive claim terms. Identity terms are discarded -- a page naming its subject's city proves nothing about a policy claim.",
+  "checked": "2026-07-31",
+  "guard": "A page under ~400 chars is not evidence of a failed fetch. Test for 'may refer to' / 'disambiguation' before concluding extraction broke -- these five would otherwise have been re-held indefinitely as possible false negatives.",
+  "rows": 9,
+  "politicians": 5,
+  "verdict": "ALL 9 RETIRED — migration 1511. Two independent grounds per row: the cited page is about other people, AND the correct page does not carry the claim.",
+  "pages": [
+    {
+      "cited_url": "https://ballotpedia.org/Rob_Wagner",
+      "resolved_to": "https://ballotpedia.org/Robert_Wagner",
+      "cited_chars": 399,
+      "cited_is_disambiguation": true,
+      "cited_lists": ["Bob Wagner (Illinois)", "Bob Wagner (Wisconsin)", "Robert L. Wagner Jr. (Pennsylvania)", "Robert Wagner (Maryland)", "Robert Wagner (Montana)"],
+      "correct_url": "https://ballotpedia.org/Rob_Wagner_(Oregon)",
+      "correct_chars": 27628,
+      "correct_page_survey_not_completed": true,
+      "terms_absent_on_correct_page": ["campaign finance transparency", "disclosure requirement", "political spending", "clean energy transition", "fossil fuel", "Oregon Health Plan", "universal healthcare", "mental health parity", "Medicaid"],
+      "terms_present_on_correct_page": [],
+      "rows": ["Campaign Finance Reform", "Fossil Fuel Policy", "Healthcare Access"]
+    },
+    {
+      "cited_url": "https://ballotpedia.org/James_Manning",
+      "cited_chars": 249,
+      "cited_is_disambiguation": true,
+      "cited_lists": ["James Manning (New Hampshire)", "James Manning (New Hampshire school board member)", "James Manning (New York)", "James Manning (Oregon)", "James Manning (South Carolina)"],
+      "correct_url": "https://ballotpedia.org/James_Manning_(Oregon)",
+      "correct_chars": 27529,
+      "correct_page_survey_not_completed": true,
+      "terms_absent_on_correct_page": ["Oregon Health Plan", "Medicaid", "anti-discrimination", "civil rights", "healthcare"],
+      "terms_present_on_correct_page": [],
+      "rows": ["Civil Rights and Social Justice", "Healthcare Access"]
+    },
+    {
+      "cited_url": "https://ballotpedia.org/Travis_Nelson",
+      "cited_chars": 138,
+      "cited_is_disambiguation": true,
+      "cited_lists": ["Travis Nelson (Colorado)", "Travis Nelson (Oregon)"],
+      "correct_url": "https://ballotpedia.org/Travis_Nelson_(Oregon)",
+      "correct_chars": 20175,
+      "correct_page_survey_not_completed": true,
+      "terms_absent_on_correct_page": ["anti-discrimination", "civil rights", "healthcare access", "Portland"],
+      "terms_present_on_correct_page": ["Medicaid"],
+      "medicaid_context_read": "Both hits are entries in the SPONSORED LEGISLATION list: 'OR HB4127 - Relating to Medicaid payments to reproductive health care providers', chaptered 2026. The row claims he 'voted for Medicaid expansion and health programs'. Sponsoring is not voting, and Medicaid payments to reproductive health providers is not Medicaid expansion. A term's PRESENCE is not support.",
+      "rows": ["Civil Rights and Social Justice", "Healthcare Access"]
+    },
+    {
+      "cited_url": "https://ballotpedia.org/Nathan_Sosa",
+      "cited_chars": 131,
+      "cited_is_disambiguation": true,
+      "cited_lists": ["Nathan Sosa (Nevada)", "Nathan Sosa (Oregon)"],
+      "correct_url": "https://ballotpedia.org/Nathan_Sosa_(Oregon)",
+      "correct_chars": 20633,
+      "correct_page_survey_not_completed": true,
+      "terms_absent_on_correct_page": ["anti-discrimination", "civil rights", "progressive"],
+      "terms_present_on_correct_page": ["Hillsboro"],
+      "note": "Hillsboro is an IDENTITY term and is discarded: the page names his city because it is his page. Without that filter this row would have scored as supported on nothing.",
+      "rows": ["Civil Rights and Social Justice"]
+    },
+    {
+      "cited_url": "https://ballotpedia.org/Paul_Evans",
+      "cited_chars": 148,
+      "cited_is_disambiguation": true,
+      "cited_lists": ["Paul Evans (Illinois)", "Paul Evans (Oregon)", "Paul Evans (Texas)"],
+      "correct_url": "https://ballotpedia.org/Paul_Evans_(Oregon)",
+      "correct_chars": 32843,
+      "correct_page_survey_not_completed": true,
+      "terms_absent_on_correct_page": ["anti-discrimination", "civil rights", "discrimination"],
+      "terms_present_on_correct_page": [],
+      "rows": ["Civil Rights and Social Justice"]
+    }
+  ]
+}
