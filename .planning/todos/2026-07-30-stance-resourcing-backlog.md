@@ -31,10 +31,24 @@ never actually read, and the false-negative looks exactly like evidence. The fir
 wrong for this reason. **Fetch serially with ~1.3s delay, and treat `status!==200 || chars<3000` as
 UNKNOWN, never as a miss.**
 
-### Decision needed
+### ✅ RETIRED — migration 1507, applied and pushed 2026-07-30
 
-Retire the 139 clear failures (136 absent-bill + 3 dead-URL) as a migration, following the mig-1494
-precedent? The remaining 91 rows (27 partial + 64 no-bill) need the second test before any call.
+**86 rows across 53 politicians deleted** (83 bill-absent + 3 dead-URL). Answers held by those 53
+went 265 → 179; context rows 179, no orphans. `last_stances_researched_at` untouched — all 53 were
+already NULL, verified against the CSV rather than inferred from the post-state.
+
+🔴 **It was 86, not the 139 first reported.** That earlier figure applied a POLITICIAN-level verdict
+to every one of that politician's rows. At row level only 83 actually name an absent bill. **A
+politician-level verdict is not a row-level verdict — most of these people have a mix.**
+
+### Still open in A1 — 144 of 230 rows, UNTESTED
+
+| rows | class | what it needs |
+|---|---|---|
+| 140 | name no bill at all | claim-level review against the page — no mechanical test applies |
+| 4 | cited measure IS on the page (Dexter, Kotek, Gelser Blouin/Thatcher/Prozanski, Osborne) | the "does it support THIS chair" test; note Dexter cited 7 bills and only Measure 110 appears |
+
+Then A2 (VA, 50) → A3 (TX, 34) → A4 (CA, 20) → A5 (7) → A6 (442, unseated, last).
 
 ## ⏸️ Cohort ordering — remaining decisions
 
