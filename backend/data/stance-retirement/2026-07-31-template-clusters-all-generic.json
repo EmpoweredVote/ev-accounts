@@ -1,0 +1,4733 @@
+{
+  "_comment": "CORPUS-WIDE run, trimmed to GENERIC/MIXED clusters only. 451 ANCHORED clusters (a shared roll call or scorecard explains the repeated prose) were dropped to keep this file reviewable; re-run the script with --all to regenerate them in full.",
+  "generated_scope": "ALL live answers with context",
+  "near_threshold": 0.85,
+  "min_reasoning_length": 25,
+  "rows_examined": 33889,
+  "tiers": {
+    "IDENTICAL": [
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 4,
+        "rows": 4,
+        "politicians": 4,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Fossil Fuels"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-sponsored 100% Renewable Energy by 2045, which requires a mandatory transition away from fossil fuels — consistent with opposing new fossil fuel permits.",
+        "members": [
+          {
+            "politician_id": "1d78debb-efd5-45e8-9204-06aab3076b2a",
+            "name": "Steven Owens",
+            "topic": "Fossil Fuels",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 29th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored 100% Renewable Energy by 2045, which requires a mandatory transition away from fossil fuels — consistent with opposing new fossil fuel permits.",
+            "sources": [
+              "https://actonmass.org/legislators/steve-owens"
+            ]
+          },
+          {
+            "politician_id": "0748d787-7e5d-4852-b461-3459312fae45",
+            "name": "Michelle Ciccolo",
+            "topic": "Fossil Fuels",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 15th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored 100% Renewable Energy by 2045, which requires a mandatory transition away from fossil fuels — consistent with opposing new fossil fuel permits.",
+            "sources": [
+              "https://actonmass.org/legislators/michelle-ciccolo"
+            ]
+          },
+          {
+            "politician_id": "ffb8e526-7ad7-4911-92c5-d69528a0f280",
+            "name": "David Rogers",
+            "topic": "Fossil Fuels",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 24th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored 100% Renewable Energy by 2045, which requires a mandatory transition away from fossil fuels — consistent with opposing new fossil fuel permits.",
+            "sources": [
+              "https://actonmass.org/legislators/dave-rogers"
+            ]
+          },
+          {
+            "politician_id": "04a9edee-5d51-49f3-a2c9-585e2231bd08",
+            "name": "Jack Lewis",
+            "topic": "Fossil Fuels",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 7th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored 100% Renewable Energy by 2045, which requires a mandatory transition away from fossil fuels — consistent with opposing new fossil fuel permits.",
+            "sources": [
+              "https://actonmass.org/legislators/jack-lewis"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Medicare/aid"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-sponsored Medicare for All (H.1239/S.744), establishing a universal single-payer program for all MA residents regardless of age.",
+        "members": [
+          {
+            "politician_id": "a40f234e-1790-4b52-8670-090b6379eb03",
+            "name": "Jason Lewis",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Senator, Fifth Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All (H.1239/S.744), establishing a universal single-payer program for all MA residents regardless of age.",
+            "sources": [
+              "https://actonmass.org/legislators/jason-lewis",
+              "https://actonmass.org/bills/medicare-for-all/"
+            ]
+          },
+          {
+            "politician_id": "961506eb-3f00-4358-a9a3-1730e7004474",
+            "name": "Joanne Comerford",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Senator, Hampshire-Franklin-Worcester District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All (H.1239/S.744), establishing a universal single-payer program for all MA residents regardless of age.",
+            "sources": [
+              "https://actonmass.org/legislators/joanne-comerford",
+              "https://actonmass.org/bills/medicare-for-all/"
+            ]
+          },
+          {
+            "politician_id": "78ae3786-e71e-4dc4-8b84-0ab28b555632",
+            "name": "Adam Gómez",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Senator, Hampden District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All (H.1239/S.744), establishing a universal single-payer program for all MA residents regardless of age.",
+            "sources": [
+              "https://actonmass.org/legislators/adam-gomez",
+              "https://actonmass.org/bills/medicare-for-all/"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Fossil Fuels"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Did not co-sponsor 100% Renewable Energy by 2045 on Act on Mass. Consistent with maintaining current production levels with existing environmental regulations.",
+        "members": [
+          {
+            "politician_id": "ef888471-24a9-4a9f-9115-e530c16986ae",
+            "name": "John Cronin",
+            "topic": "Fossil Fuels",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Senator, Worcester and Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 on Act on Mass. Consistent with maintaining current production levels with existing environmental regulations.",
+            "sources": [
+              "https://actonmass.org/legislators/john-cronin"
+            ]
+          },
+          {
+            "politician_id": "6f66ea3f-d5a3-4a51-96be-58aa0097bfc0",
+            "name": "Mark Montigny",
+            "topic": "Fossil Fuels",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Senator, Second Bristol and Plymouth District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 on Act on Mass. Consistent with maintaining current production levels with existing environmental regulations.",
+            "sources": [
+              "https://actonmass.org/legislators/mark-montigny"
+            ]
+          },
+          {
+            "politician_id": "67ea7814-b7aa-42de-aba8-2230c181d15a",
+            "name": "Michael Brady",
+            "topic": "Fossil Fuels",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Senator, Second Plymouth and Norfolk District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 on Act on Mass. Consistent with maintaining current production levels with existing environmental regulations.",
+            "sources": [
+              "https://actonmass.org/legislators/michael-brady"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Healthcare"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-sponsored Medicare for All (H.1239), which establishes a single-payer healthcare system covering all Massachusetts residents with no premiums, co-pays, or deductibles.",
+        "members": [
+          {
+            "politician_id": "7072bd94-b465-414e-bcf5-6e3feb7ec8dd",
+            "name": "Sean Garballey",
+            "topic": "Healthcare",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 23rd Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All (H.1239), which establishes a single-payer healthcare system covering all Massachusetts residents with no premiums, co-pays, or deductibles.",
+            "sources": [
+              "https://actonmass.org/legislators/sean-garballey",
+              "https://actonmass.org/bills/medicare-for-all"
+            ]
+          },
+          {
+            "politician_id": "0748d787-7e5d-4852-b461-3459312fae45",
+            "name": "Michelle Ciccolo",
+            "topic": "Healthcare",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 15th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All (H.1239), which establishes a single-payer healthcare system covering all Massachusetts residents with no premiums, co-pays, or deductibles.",
+            "sources": [
+              "https://actonmass.org/legislators/michelle-ciccolo",
+              "https://actonmass.org/bills/medicare-for-all"
+            ]
+          },
+          {
+            "politician_id": "04a9edee-5d51-49f3-a2c9-585e2231bd08",
+            "name": "Jack Lewis",
+            "topic": "Healthcare",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 7th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All (H.1239), which establishes a single-payer healthcare system covering all Massachusetts residents with no premiums, co-pays, or deductibles.",
+            "sources": [
+              "https://actonmass.org/legislators/jack-lewis",
+              "https://actonmass.org/bills/medicare-for-all"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Homelessness"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-sponsored Overdose Prevention Centers (H.1981), which establishes harm reduction facilities connecting drug users to social services — a signal of decriminalization and service-based approach over enforcement.",
+        "members": [
+          {
+            "politician_id": "0748d787-7e5d-4852-b461-3459312fae45",
+            "name": "Michelle Ciccolo",
+            "topic": "Homelessness",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 15th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Overdose Prevention Centers (H.1981), which establishes harm reduction facilities connecting drug users to social services — a signal of decriminalization and service-based approach over enforcement.",
+            "sources": [
+              "https://actonmass.org/legislators/michelle-ciccolo"
+            ]
+          },
+          {
+            "politician_id": "ffb8e526-7ad7-4911-92c5-d69528a0f280",
+            "name": "David Rogers",
+            "topic": "Homelessness",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 24th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Overdose Prevention Centers (H.1981), which establishes harm reduction facilities connecting drug users to social services — a signal of decriminalization and service-based approach over enforcement.",
+            "sources": [
+              "https://actonmass.org/legislators/dave-rogers"
+            ]
+          },
+          {
+            "politician_id": "04a9edee-5d51-49f3-a2c9-585e2231bd08",
+            "name": "Jack Lewis",
+            "topic": "Homelessness",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 7th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Overdose Prevention Centers (H.1981), which establishes harm reduction facilities connecting drug users to social services — a signal of decriminalization and service-based approach over enforcement.",
+            "sources": [
+              "https://actonmass.org/legislators/jack-lewis"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Immigration"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Supported immigrant services and language access legislation; backed community support programs for immigrant families.",
+        "members": [
+          {
+            "politician_id": "d5999df9-83b8-4870-a170-4d13f40473e2",
+            "name": "Denise Roberts",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Supported immigrant services and language access legislation; backed community support programs for immigrant families.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberts03?tab=2025RS-legislation"
+            ]
+          },
+          {
+            "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+            "name": "Kym Taylor",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Supported immigrant services and language access legislation; backed community support programs for immigrant families.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taylor05?tab=2025RS-legislation"
+            ]
+          },
+          {
+            "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+            "name": "Karen Toles",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Supported immigrant services and language access legislation; backed community support programs for immigrant families.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/toles01?tab=2025RS-legislation"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "me"
+        ],
+        "topic_names": [
+          "Immigration"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-signed a January 29, 2024 joint statement with Maine House and Senate Republicans supporting Texas's authority to defend its own border and criticizing federal immigration policy for allowing large numbers of people to enter the country illegally. This reflects support for more restrictive immigration enforcement and border security.",
+        "members": [
+          {
+            "politician_id": "ee2ff8c8-d9b6-46a3-a13e-d97b9fdc8cab",
+            "name": "Amanda Collamore",
+            "topic": "Immigration",
+            "value": "4.0",
+            "state": "me",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-signed a January 29, 2024 joint statement with Maine House and Senate Republicans supporting Texas's authority to defend its own border and criticizing federal immigration policy for allowing large numbers of people to enter the country illegally. This reflects support for more restrictive immigration enforcement and border security.",
+            "sources": [
+              "https://mainehousegop.org/newsroom/maine-senate-house-republican-legislators-issue-joint-statement-supporting-texas-constitutional-right-to-defend-its-borders/"
+            ]
+          },
+          {
+            "politician_id": "fe465340-16b2-43c4-8d0a-d748b201f3d5",
+            "name": "Dean Cray",
+            "topic": "Immigration",
+            "value": "4.0",
+            "state": "me",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-signed a January 29, 2024 joint statement with Maine House and Senate Republicans supporting Texas's authority to defend its own border and criticizing federal immigration policy for allowing large numbers of people to enter the country illegally. This reflects support for more restrictive immigration enforcement and border security.",
+            "sources": [
+              "https://mainehousegop.org/newsroom/maine-senate-house-republican-legislators-issue-joint-statement-supporting-texas-constitutional-right-to-defend-its-borders/"
+            ]
+          },
+          {
+            "politician_id": "78c675a3-137e-4d9c-bf85-38bdf7f45c51",
+            "name": "Michael Soboleski",
+            "topic": "Immigration",
+            "value": "4.0",
+            "state": "me",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-signed a January 29, 2024 joint statement with Maine House and Senate Republicans supporting Texas's authority to defend its own border and criticizing federal immigration policy for allowing large numbers of people to enter the country illegally. This reflects support for more restrictive immigration enforcement and border security.",
+            "sources": [
+              "https://mainehousegop.org/newsroom/maine-senate-house-republican-legislators-issue-joint-statement-supporting-texas-constitutional-right-to-defend-its-borders/"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "me"
+        ],
+        "topic_names": [
+          "Immigration"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-signed the January 29, 2024 joint statement of Maine Republican legislators backing Texas's authority to defend its own border and criticizing federal immigration enforcement.",
+        "members": [
+          {
+            "politician_id": "65ce1f05-e156-4f5a-9e21-4241cc958c19",
+            "name": "Ann Fredericks",
+            "topic": "Immigration",
+            "value": "4.0",
+            "state": "me",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-signed the January 29, 2024 joint statement of Maine Republican legislators backing Texas's authority to defend its own border and criticizing federal immigration enforcement.",
+            "sources": [
+              "https://mainehousegop.org/newsroom/maine-senate-house-republican-legislators-issue-joint-statement-supporting-texas-constitutional-right-to-defend-its-borders/"
+            ]
+          },
+          {
+            "politician_id": "7d67c63d-e895-4f2e-96f9-67939e065f01",
+            "name": "Jeffrey Adams",
+            "topic": "Immigration",
+            "value": "4.0",
+            "state": "me",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-signed the January 29, 2024 joint statement of Maine Republican legislators backing Texas's authority to defend its own border and criticizing federal immigration enforcement.",
+            "sources": [
+              "https://mainehousegop.org/newsroom/maine-senate-house-republican-legislators-issue-joint-statement-supporting-texas-constitutional-right-to-defend-its-borders/"
+            ]
+          },
+          {
+            "politician_id": "2b061c70-8654-4725-98cd-373a13badf86",
+            "name": "Lucas Lanigan",
+            "topic": "Immigration",
+            "value": "4.0",
+            "state": "me",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-signed the January 29, 2024 joint statement of Maine Republican legislators backing Texas's authority to defend its own border and criticizing federal immigration enforcement.",
+            "sources": [
+              "https://mainehousegop.org/newsroom/maine-senate-house-republican-legislators-issue-joint-statement-supporting-texas-constitutional-right-to-defend-its-borders/"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Medicare/aid"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-sponsored Medicare for All on Act on Mass, which would expand Medicare to cover everyone regardless of age.",
+        "members": [
+          {
+            "politician_id": "ccb7cc4c-2c8f-4590-a3a2-f8e4bfbd64d5",
+            "name": "Jacob Oliveira",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Senator, Hampden-Hampshire-Worcester District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All on Act on Mass, which would expand Medicare to cover everyone regardless of age.",
+            "sources": [
+              "https://actonmass.org/legislators/jacob-oliveira"
+            ]
+          },
+          {
+            "politician_id": "67ea7814-b7aa-42de-aba8-2230c181d15a",
+            "name": "Michael Brady",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Senator, Second Plymouth and Norfolk District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All on Act on Mass, which would expand Medicare to cover everyone regardless of age.",
+            "sources": [
+              "https://actonmass.org/legislators/michael-brady"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Redistricting"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "No evidence of co-sponsorship on redistricting reform or transparency bills. Did not sign transparency pledge.",
+        "members": [
+          {
+            "politician_id": "ef888471-24a9-4a9f-9115-e530c16986ae",
+            "name": "John Cronin",
+            "topic": "Redistricting",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Senator, Worcester and Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "No evidence of co-sponsorship on redistricting reform or transparency bills. Did not sign transparency pledge.",
+            "sources": [
+              "https://actonmass.org/legislators/john-cronin"
+            ]
+          },
+          {
+            "politician_id": "67ea7814-b7aa-42de-aba8-2230c181d15a",
+            "name": "Michael Brady",
+            "topic": "Redistricting",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Senator, Second Plymouth and Norfolk District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "No evidence of co-sponsorship on redistricting reform or transparency bills. Did not sign transparency pledge.",
+            "sources": [
+              "https://actonmass.org/legislators/michael-brady"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Fossil Fuels"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-sponsored the 100% Renewable Energy by 2045 bill, which requires stopping new fossil fuel expansion and transitioning to renewables — aligns with stopping new permits.",
+        "members": [
+          {
+            "politician_id": "19b7c45b-57a7-468c-9762-82b926080646",
+            "name": "Andres Vargas",
+            "topic": "Fossil Fuels",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 3rd Essex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill, which requires stopping new fossil fuel expansion and transitioning to renewables — aligns with stopping new permits.",
+            "sources": [
+              "https://actonmass.org/legislators/andres-vargas"
+            ]
+          },
+          {
+            "politician_id": "28a703f8-8316-4d3c-bfc0-3dcd77eab96c",
+            "name": "Samantha Montaño",
+            "topic": "Fossil Fuels",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 15th Suffolk District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill, which requires stopping new fossil fuel expansion and transitioning to renewables — aligns with stopping new permits.",
+            "sources": [
+              "https://actonmass.org/legislators/sam-montano"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Homelessness"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Did not co-sponsor Overdose Prevention Centers; no homelessness-specific bill co-sponsorships — consistent with allowing enforcement when shelter is available.",
+        "members": [
+          {
+            "politician_id": "bca54df2-f059-44ce-81c3-f208f1e20752",
+            "name": "Christopher Worrell",
+            "topic": "Homelessness",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Representative, 5th Suffolk District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor Overdose Prevention Centers; no homelessness-specific bill co-sponsorships — consistent with allowing enforcement when shelter is available.",
+            "sources": [
+              "https://actonmass.org/legislators/christopher-worrell"
+            ]
+          },
+          {
+            "politician_id": "e96b35eb-dad1-4a29-b416-d9b10838840f",
+            "name": "Russell Holmes",
+            "topic": "Homelessness",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Representative, 6th Suffolk District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor Overdose Prevention Centers; no homelessness-specific bill co-sponsorships — consistent with allowing enforcement when shelter is available.",
+            "sources": [
+              "https://actonmass.org/legislators/russell-holmes"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Medicare/aid"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-sponsored Medicare for All (H.1239), which would expand Medicare to cover everyone regardless of age.",
+        "members": [
+          {
+            "politician_id": "c4c3ed02-2592-4505-a26c-0195d0b5314e",
+            "name": "Judith Garcia",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 11th Suffolk District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All (H.1239), which would expand Medicare to cover everyone regardless of age.",
+            "sources": [
+              "https://actonmass.org/legislators/judith-garcia"
+            ]
+          },
+          {
+            "politician_id": "e96b35eb-dad1-4a29-b416-d9b10838840f",
+            "name": "Russell Holmes",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 6th Suffolk District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All (H.1239), which would expand Medicare to cover everyone regardless of age.",
+            "sources": [
+              "https://actonmass.org/legislators/russell-holmes"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Jail Capacity"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-sponsored the Prison Moratorium (H.1795), which establishes a 5-year pause on building new prisons or jails and redirects resources toward release pathways, diversion programs, and community investment.",
+        "members": [
+          {
+            "politician_id": "7072bd94-b465-414e-bcf5-6e3feb7ec8dd",
+            "name": "Sean Garballey",
+            "topic": "Jail Capacity",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 23rd Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored the Prison Moratorium (H.1795), which establishes a 5-year pause on building new prisons or jails and redirects resources toward release pathways, diversion programs, and community investment.",
+            "sources": [
+              "https://actonmass.org/legislators/sean-garballey",
+              "https://actonmass.org/bills/prison-moratorium"
+            ]
+          },
+          {
+            "politician_id": "04a9edee-5d51-49f3-a2c9-585e2231bd08",
+            "name": "Jack Lewis",
+            "topic": "Jail Capacity",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 7th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored the Prison Moratorium (H.1795), which establishes a 5-year pause on building new prisons or jails and redirects resources toward release pathways, diversion programs, and community investment.",
+            "sources": [
+              "https://actonmass.org/legislators/jack-lewis",
+              "https://actonmass.org/bills/prison-moratorium"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Medicare/aid"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-sponsored Medicare for All (H.1239), which expands a single-payer system to all residents regardless of age — going beyond lowering the Medicare age to universal coverage.",
+        "members": [
+          {
+            "politician_id": "7072bd94-b465-414e-bcf5-6e3feb7ec8dd",
+            "name": "Sean Garballey",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 23rd Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All (H.1239), which expands a single-payer system to all residents regardless of age — going beyond lowering the Medicare age to universal coverage.",
+            "sources": [
+              "https://actonmass.org/legislators/sean-garballey",
+              "https://actonmass.org/bills/medicare-for-all"
+            ]
+          },
+          {
+            "politician_id": "1d78debb-efd5-45e8-9204-06aab3076b2a",
+            "name": "Steven Owens",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 29th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All (H.1239), which expands a single-payer system to all residents regardless of age — going beyond lowering the Medicare age to universal coverage.",
+            "sources": [
+              "https://actonmass.org/legislators/steve-owens",
+              "https://actonmass.org/bills/medicare-for-all"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Medicare/aid"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Did not co-sponsor Medicare for All (H.1239). No evidence of support for major Medicare/Medicaid expansion or privatization. Scores at maintaining and improving current programs.",
+        "members": [
+          {
+            "politician_id": "918296a2-5def-4ddf-8986-860d542900e7",
+            "name": "Simon Cataldo",
+            "topic": "Medicare/aid",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Representative, 14th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor Medicare for All (H.1239). No evidence of support for major Medicare/Medicaid expansion or privatization. Scores at maintaining and improving current programs.",
+            "sources": [
+              "https://actonmass.org/legislators/simon-cataldo"
+            ]
+          },
+          {
+            "politician_id": "ffb8e526-7ad7-4911-92c5-d69528a0f280",
+            "name": "David Rogers",
+            "topic": "Medicare/aid",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Representative, 24th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor Medicare for All (H.1239). No evidence of support for major Medicare/Medicaid expansion or privatization. Scores at maintaining and improving current programs.",
+            "sources": [
+              "https://actonmass.org/legislators/dave-rogers"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Taxes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Did not co-sponsor Stop Corporate Offshoring (H.2708). Absence on the primary progressive tax bill places him at maintaining current rates while closing loopholes.",
+        "members": [
+          {
+            "politician_id": "918296a2-5def-4ddf-8986-860d542900e7",
+            "name": "Simon Cataldo",
+            "topic": "Taxes",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Representative, 14th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor Stop Corporate Offshoring (H.2708). Absence on the primary progressive tax bill places him at maintaining current rates while closing loopholes.",
+            "sources": [
+              "https://actonmass.org/legislators/simon-cataldo"
+            ]
+          },
+          {
+            "politician_id": "ffb8e526-7ad7-4911-92c5-d69528a0f280",
+            "name": "David Rogers",
+            "topic": "Taxes",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Representative, 24th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor Stop Corporate Offshoring (H.2708). Absence on the primary progressive tax bill places him at maintaining current rates while closing loopholes.",
+            "sources": [
+              "https://actonmass.org/legislators/dave-rogers"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Medicare/aid"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-sponsored Medicare for All (H.1239), which expands a single-payer system to all residents regardless of age.",
+        "members": [
+          {
+            "politician_id": "0748d787-7e5d-4852-b461-3459312fae45",
+            "name": "Michelle Ciccolo",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 15th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All (H.1239), which expands a single-payer system to all residents regardless of age.",
+            "sources": [
+              "https://actonmass.org/legislators/michelle-ciccolo",
+              "https://actonmass.org/bills/medicare-for-all"
+            ]
+          },
+          {
+            "politician_id": "04a9edee-5d51-49f3-a2c9-585e2231bd08",
+            "name": "Jack Lewis",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 7th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All (H.1239), which expands a single-payer system to all residents regardless of age.",
+            "sources": [
+              "https://actonmass.org/legislators/jack-lewis",
+              "https://actonmass.org/bills/medicare-for-all"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Taxes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Did not co-sponsor Stop Corporate Offshoring (H.2708). Absence on the primary progressive tax bill places her at maintaining current rates while closing loopholes.",
+        "members": [
+          {
+            "politician_id": "0748d787-7e5d-4852-b461-3459312fae45",
+            "name": "Michelle Ciccolo",
+            "topic": "Taxes",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Representative, 15th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor Stop Corporate Offshoring (H.2708). Absence on the primary progressive tax bill places her at maintaining current rates while closing loopholes.",
+            "sources": [
+              "https://actonmass.org/legislators/michelle-ciccolo"
+            ]
+          },
+          {
+            "politician_id": "3d9354a8-e7ee-4381-b91a-a40d0a2e8d3a",
+            "name": "Danielle Gregoire",
+            "topic": "Taxes",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Representative, 4th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor Stop Corporate Offshoring (H.2708). Absence on the primary progressive tax bill places her at maintaining current rates while closing loopholes.",
+            "sources": [
+              "https://actonmass.org/legislators/danielle-gregoire"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Taxes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Did not co-sponsor Stop Corporate Offshoring (red X on AOM). No progressive revenue bills sponsored.",
+        "members": [
+          {
+            "politician_id": "ee861f58-dabf-429f-97ee-32591bdd3650",
+            "name": "Adrianne Ramos",
+            "topic": "Taxes",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Representative, 14th Essex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor Stop Corporate Offshoring (red X on AOM). No progressive revenue bills sponsored.",
+            "sources": [
+              "https://actonmass.org/legislators/adrianne-ramos/"
+            ]
+          },
+          {
+            "politician_id": "a646d95b-7341-4181-a25b-87b5abcf0a6c",
+            "name": "Alan Silvia",
+            "topic": "Taxes",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Representative, 7th Bristol District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor Stop Corporate Offshoring (red X on AOM). No progressive revenue bills sponsored.",
+            "sources": [
+              "https://actonmass.org/legislators/alan-silvia/"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Jail Capacity"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 per Act on Mass. No criminal justice reform legislation found in sponsored bills.",
+        "members": [
+          {
+            "politician_id": "f8ae17d7-bc53-4b74-a92e-efa122cd5f04",
+            "name": "David Robertson",
+            "topic": "Jail Capacity",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Representative, 19th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 per Act on Mass. No criminal justice reform legislation found in sponsored bills.",
+            "sources": [
+              "https://actonmass.org/legislators/david-robertson/"
+            ]
+          },
+          {
+            "politician_id": "8ee72aa5-b7a0-422f-817d-a330f29dd2b1",
+            "name": "Dawne Shand",
+            "topic": "Jail Capacity",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Representative, 1st Essex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 per Act on Mass. No criminal justice reform legislation found in sponsored bills.",
+            "sources": [
+              "https://actonmass.org/legislators/dawne-shand/"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Civil Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Backed civil rights and anti-discrimination legislation; supported racial equity bills and LGBTQ+ protections in the Maryland House.",
+        "members": [
+          {
+            "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+            "name": "Kent Roberson",
+            "topic": "Civil Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Backed civil rights and anti-discrimination legislation; supported racial equity bills and LGBTQ+ protections in the Maryland House.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01?tab=2026RS-legislation"
+            ]
+          },
+          {
+            "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+            "name": "Kym Taylor",
+            "topic": "Civil Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Backed civil rights and anti-discrimination legislation; supported racial equity bills and LGBTQ+ protections in the Maryland House.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taylor05?tab=2026RS-legislation"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "School Vouchers"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Voted against school voucher legislation; backed public education funding through Blueprint for Maryland's Future.",
+        "members": [
+          {
+            "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+            "name": "Kent Roberson",
+            "topic": "School Vouchers",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Voted against school voucher legislation; backed public education funding through Blueprint for Maryland's Future.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01?tab=2026RS-legislation"
+            ]
+          },
+          {
+            "politician_id": "2e809682-2d95-480c-885e-d2174b811cfe",
+            "name": "Tiffany Alston",
+            "topic": "School Vouchers",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Voted against school voucher legislation; backed public education funding through Blueprint for Maryland's Future.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/alston01?tab=2026RS-legislation"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Housing"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Supported affordable housing programs and rental assistance legislation; backed housing access initiatives in Prince George's County.",
+        "members": [
+          {
+            "politician_id": "d5999df9-83b8-4870-a170-4d13f40473e2",
+            "name": "Denise Roberts",
+            "topic": "Housing",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Supported affordable housing programs and rental assistance legislation; backed housing access initiatives in Prince George's County.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberts03?tab=2025RS-legislation"
+            ]
+          },
+          {
+            "politician_id": "d61a670a-7626-4464-93dc-c1e21d7b26da",
+            "name": "Andrea Harrison",
+            "topic": "Housing",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Supported affordable housing programs and rental assistance legislation; backed housing access initiatives in Prince George's County.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harrison01?tab=2025RS-legislation"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Civil Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Backed civil rights and anti-discrimination legislation; supported racial equity and LGBTQ+ protection bills in the Maryland General Assembly.",
+        "members": [
+          {
+            "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+            "name": "Karen Toles",
+            "topic": "Civil Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Backed civil rights and anti-discrimination legislation; supported racial equity and LGBTQ+ protection bills in the Maryland General Assembly.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/toles01?tab=2026RS-legislation"
+            ]
+          },
+          {
+            "politician_id": "2e809682-2d95-480c-885e-d2174b811cfe",
+            "name": "Tiffany Alston",
+            "topic": "Civil Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Backed civil rights and anti-discrimination legislation; supported racial equity and LGBTQ+ protection bills in the Maryland General Assembly.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/alston01?tab=2026RS-legislation"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Immigration"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Supported immigrant services and language access legislation; backed community support programs for immigrant families in Prince George's County.",
+        "members": [
+          {
+            "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+            "name": "Derrick Coley",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Supported immigrant services and language access legislation; backed community support programs for immigrant families in Prince George's County.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2025RS-legislation"
+            ]
+          },
+          {
+            "politician_id": "b8e331fa-d58e-479f-b076-8fda0b0604c5",
+            "name": "Marvin Holmes, Jr.",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Supported immigrant services and language access legislation; backed community support programs for immigrant families in Prince George's County.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holmes01?tab=2025RS-legislation"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [],
+        "topic_names": [
+          "Healthcare"
+        ],
+        "visibility": [
+          "candidate-card"
+        ],
+        "sample": "Progressive Massachusetts 2026 questionnaire: YES to 'the creation of a single payer Medicare for All health insurance system in the country that would guarantee health care as a right,' matching the fully public, free-for-everyone chair.",
+        "members": [
+          {
+            "politician_id": "81d4edf8-07a5-4316-8fe3-c6020365c53c",
+            "name": "Bethany Andres-Beck",
+            "topic": "Healthcare",
+            "value": "1.0",
+            "state": "",
+            "office": "",
+            "visibility": "candidate-card",
+            "names_instrument": false,
+            "reasoning": "Progressive Massachusetts 2026 questionnaire: YES to 'the creation of a single payer Medicare for All health insurance system in the country that would guarantee health care as a right,' matching the fully public, free-for-everyone chair.",
+            "sources": [
+              "https://www.progressivemass.com/wp-content/uploads/2026/03/Beth-Andres-Beck-2026-Congress.pdf",
+              "https://bethfordemocracy.com/"
+            ]
+          },
+          {
+            "politician_id": "f388770f-727c-43f5-ae2d-4e9e83500d51",
+            "name": "Mariah Lancaster",
+            "topic": "Healthcare",
+            "value": "1.0",
+            "state": "",
+            "office": "",
+            "visibility": "candidate-card",
+            "names_instrument": false,
+            "reasoning": "Progressive Massachusetts 2026 questionnaire: YES to 'the creation of a single payer Medicare for All health insurance system in the country that would guarantee health care as a right,' matching the fully public, free-for-everyone chair.",
+            "sources": [
+              "https://www.progressivemass.com/wp-content/uploads/2026/03/Mariah-Lancaster-2026-Congress.pdf",
+              "https://www.mariahlancaster.com/priorities"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [],
+        "topic_names": [
+          "Trans Athletes"
+        ],
+        "visibility": [
+          "candidate-card"
+        ],
+        "sample": "Answered Yes on the Nebraska Family Alliance voter guide to 'Do you support legislation prohibiting men from playing in girls' sports and using women's restrooms and locker rooms?' — matching stance 4's requirement that transgender athletes compete on teams matching their biological sex.",
+        "members": [
+          {
+            "politician_id": "2f063464-29d8-42a4-bba3-d521ceb53555",
+            "name": "Brinker Harding",
+            "topic": "Trans Athletes",
+            "value": "4.0",
+            "state": "",
+            "office": "",
+            "visibility": "candidate-card",
+            "names_instrument": false,
+            "reasoning": "Answered Yes on the Nebraska Family Alliance voter guide to 'Do you support legislation prohibiting men from playing in girls' sports and using women's restrooms and locker rooms?' — matching stance 4's requirement that transgender athletes compete on teams matching their biological sex.",
+            "sources": [
+              "https://nebraskavoterguide.com/candidates/brinker-harding"
+            ]
+          },
+          {
+            "politician_id": "53869a47-b093-4e82-a82e-a979766ebe68",
+            "name": "Nik Sandman",
+            "topic": "Trans Athletes",
+            "value": "4.0",
+            "state": "",
+            "office": "",
+            "visibility": "candidate-card",
+            "names_instrument": false,
+            "reasoning": "Answered Yes on the Nebraska Family Alliance voter guide to 'Do you support legislation prohibiting men from playing in girls' sports and using women's restrooms and locker rooms?' — matching stance 4's requirement that transgender athletes compete on teams matching their biological sex.",
+            "sources": [
+              "https://nebraskavoterguide.com/candidates/nik-sandman"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [],
+        "topic_names": [
+          "Religious Freedom"
+        ],
+        "visibility": [
+          "candidate-card"
+        ],
+        "sample": "Answered Yes on the Nebraska Family Alliance voter guide to 'Do you support protecting sincerely held religious beliefs and practices about marriage, family, and sexuality from government discrimination?' — matching stance 4's protection of faith-based exemptions from conflicting laws.",
+        "members": [
+          {
+            "politician_id": "2f063464-29d8-42a4-bba3-d521ceb53555",
+            "name": "Brinker Harding",
+            "topic": "Religious Freedom",
+            "value": "4.0",
+            "state": "",
+            "office": "",
+            "visibility": "candidate-card",
+            "names_instrument": false,
+            "reasoning": "Answered Yes on the Nebraska Family Alliance voter guide to 'Do you support protecting sincerely held religious beliefs and practices about marriage, family, and sexuality from government discrimination?' — matching stance 4's protection of faith-based exemptions from conflicting laws.",
+            "sources": [
+              "https://nebraskavoterguide.com/candidates/brinker-harding"
+            ]
+          },
+          {
+            "politician_id": "53869a47-b093-4e82-a82e-a979766ebe68",
+            "name": "Nik Sandman",
+            "topic": "Religious Freedom",
+            "value": "4.0",
+            "state": "",
+            "office": "",
+            "visibility": "candidate-card",
+            "names_instrument": false,
+            "reasoning": "Answered Yes on the Nebraska Family Alliance voter guide to 'Do you support protecting sincerely held religious beliefs and practices about marriage, family, and sexuality from government discrimination?' — matching stance 4's protection of faith-based exemptions from conflicting laws.",
+            "sources": [
+              "https://nebraskavoterguide.com/candidates/nik-sandman"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "me"
+        ],
+        "topic_names": [
+          "Civil Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-signed the January 29, 2025 legislators' letter urging the Maine Department of Education to discontinue \"harmful Diversity, Equity, and Inclusion (DEI) and gender ideology initiatives\" in school guidance.",
+        "members": [
+          {
+            "politician_id": "65ce1f05-e156-4f5a-9e21-4241cc958c19",
+            "name": "Ann Fredericks",
+            "topic": "Civil Rights",
+            "value": "5.0",
+            "state": "me",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-signed the January 29, 2025 legislators' letter urging the Maine Department of Education to discontinue \"harmful Diversity, Equity, and Inclusion (DEI) and gender ideology initiatives\" in school guidance.",
+            "sources": [
+              "https://mainehousegop.org/member_news_item/legislators-urge-education-department-to-comply-with-new-federal-guidelines/"
+            ]
+          },
+          {
+            "politician_id": "4025a524-5e29-4c04-9026-009ba23878e5",
+            "name": "Robert Foley",
+            "topic": "Civil Rights",
+            "value": "5.0",
+            "state": "me",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-signed the January 29, 2025 legislators' letter urging the Maine Department of Education to discontinue \"harmful Diversity, Equity, and Inclusion (DEI) and gender ideology initiatives\" in school guidance.",
+            "sources": [
+              "https://mainehousegop.org/member_news_item/legislators-urge-education-department-to-comply-with-new-federal-guidelines/"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "me"
+        ],
+        "topic_names": [
+          "Immigration"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-signed the January 29, 2024 joint statement by Maine House and Senate Republicans supporting Texas's constitutional right to defend its border and criticizing the Biden administration's border enforcement record.",
+        "members": [
+          {
+            "politician_id": "b43d9033-090f-4fea-9000-7f7360dbd0e6",
+            "name": "Richard Mason",
+            "topic": "Immigration",
+            "value": "4.0",
+            "state": "me",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-signed the January 29, 2024 joint statement by Maine House and Senate Republicans supporting Texas's constitutional right to defend its border and criticizing the Biden administration's border enforcement record.",
+            "sources": [
+              "https://mainehousegop.org/newsroom/maine-senate-house-republican-legislators-issue-joint-statement-supporting-texas-constitutional-right-to-defend-its-borders/"
+            ]
+          },
+          {
+            "politician_id": "2640d53c-bcdc-4335-a4a8-04442babe033",
+            "name": "Stephen Wood",
+            "topic": "Immigration",
+            "value": "4.0",
+            "state": "me",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-signed the January 29, 2024 joint statement by Maine House and Senate Republicans supporting Texas's constitutional right to defend its border and criticizing the Biden administration's border enforcement record.",
+            "sources": [
+              "https://mainehousegop.org/newsroom/maine-senate-house-republican-legislators-issue-joint-statement-supporting-texas-constitutional-right-to-defend-its-borders/"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "wi"
+        ],
+        "topic_names": [
+          "Public Safety Approach"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Voted for 2026 budget Sub 1 keeping all sheriff positions while restoring human services funding",
+        "members": [
+          {
+            "politician_id": "379fca24-7658-4683-a1b2-06371177d9d7",
+            "name": "Jeffrey Kroning",
+            "topic": "Public Safety Approach",
+            "value": "3.0",
+            "state": "wi",
+            "office": "County Board Supervisor",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Voted for 2026 budget Sub 1 keeping all sheriff positions while restoring human services funding",
+            "sources": [
+              "https://webapi.legistar.com/v1/dane/eventitems/343775/votes",
+              "https://www.danecounty.gov/PressDetail/11739"
+            ]
+          },
+          {
+            "politician_id": "3b74fd16-420b-4a13-9252-393fef2fdf22",
+            "name": "Chuck Erickson",
+            "topic": "Public Safety Approach",
+            "value": "3.0",
+            "state": "wi",
+            "office": "County Board Supervisor",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Voted for 2026 budget Sub 1 keeping all sheriff positions while restoring human services funding",
+            "sources": [
+              "https://webapi.legistar.com/v1/dane/eventitems/343775/votes",
+              "https://www.danecounty.gov/PressDetail/11739"
+            ]
+          }
+        ]
+      }
+    ],
+    "SKELETON": [
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 7,
+        "rows": 7,
+        "politicians": 7,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Deportation"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Fennell sponsored Public Safety - Immigration Enforcement Agreements - Prohibition — directly prohibiting local law enforcement from ICE cooperation — strong sanctuary stance.",
+        "members": [
+          {
+            "politician_id": "192e8ffb-e576-41f1-915a-dbc0c30d4769",
+            "name": "Diana Fennell",
+            "topic": "Deportation",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Fennell sponsored Public Safety - Immigration Enforcement Agreements - Prohibition — directly prohibiting local law enforcement from ICE cooperation — strong sanctuary stance.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fennell01"
+            ]
+          },
+          {
+            "politician_id": "69bf6043-4546-4804-ae04-311cff54a986",
+            "name": "Julian Ivey",
+            "topic": "Deportation",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Ivey sponsored Public Safety - Immigration Enforcement Agreements - Prohibition — directly prohibiting local law enforcement from ICE cooperation — strong sanctuary stance.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ivey01"
+            ]
+          },
+          {
+            "politician_id": "9285f590-79b5-48de-a1c0-a022629e6ebb",
+            "name": "Robbyn Lewis",
+            "topic": "Deportation",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Lewis sponsored Public Safety - Immigration Enforcement Agreements - Prohibition — directly prohibiting local law enforcement from ICE cooperation — strong sanctuary stance.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lewis01"
+            ]
+          },
+          {
+            "politician_id": "fcfa1844-032e-4dba-9ae0-c52b82447fa8",
+            "name": "Aletheia McCaskill",
+            "topic": "Deportation",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "McCaskill sponsored Public Safety - Immigration Enforcement Agreements - Prohibition — directly prohibiting local law enforcement from ICE cooperation — strong sanctuary stance.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccaskill01"
+            ]
+          },
+          {
+            "politician_id": "848ac881-004b-436a-9a17-dfacbd33de5a",
+            "name": "Stephanie Smith",
+            "topic": "Deportation",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Smith sponsored Public Safety - Immigration Enforcement Agreements - Prohibition — directly prohibiting local law enforcement from ICE cooperation — strong sanctuary stance.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith03"
+            ]
+          },
+          {
+            "politician_id": "a92085b6-642a-4cf6-a73e-c985a6fd09fa",
+            "name": "Deni Taveras",
+            "topic": "Deportation",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Taveras sponsored Public Safety - Immigration Enforcement Agreements - Prohibition — directly prohibiting local law enforcement from ICE cooperation — strong sanctuary stance.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taveras01"
+            ]
+          },
+          {
+            "politician_id": "92075c9b-6c7e-4763-981f-5a42a8afddf5",
+            "name": "Caylin Young",
+            "topic": "Deportation",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Young sponsored Public Safety - Immigration Enforcement Agreements - Prohibition — directly prohibiting local law enforcement from ICE cooperation — strong sanctuary stance.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/young05"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 6,
+        "rows": 6,
+        "politicians": 6,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Immigration"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Boyce co-sponsored immigration enforcement prohibition legislation — consistent with expansive immigration rights and sanctuary policies for her Baltimore City district.",
+        "members": [
+          {
+            "politician_id": "027a2610-1160-4525-a5c1-469fe85d46e1",
+            "name": "Regina Boyce",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Boyce co-sponsored immigration enforcement prohibition legislation — consistent with expansive immigration rights and sanctuary policies for her Baltimore City district.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/boyce01"
+            ]
+          },
+          {
+            "politician_id": "192e8ffb-e576-41f1-915a-dbc0c30d4769",
+            "name": "Diana Fennell",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Fennell co-sponsored immigration enforcement prohibition legislation — consistent with expansive immigration rights and sanctuary policies for her PG County district.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fennell01"
+            ]
+          },
+          {
+            "politician_id": "9285f590-79b5-48de-a1c0-a022629e6ebb",
+            "name": "Robbyn Lewis",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Lewis co-sponsored immigration enforcement prohibition legislation — consistent with expansive immigration rights and sanctuary policies for her Baltimore City district.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lewis01"
+            ]
+          },
+          {
+            "politician_id": "01aaf4ba-c8ec-4a50-bd56-8d181d35e903",
+            "name": "Jackie Addison",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Addison co-sponsored immigration enforcement prohibition legislation — consistent with expansive immigration rights and sanctuary policies for her Baltimore City district.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/addison01"
+            ]
+          },
+          {
+            "politician_id": "fcfa1844-032e-4dba-9ae0-c52b82447fa8",
+            "name": "Aletheia McCaskill",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "McCaskill co-sponsored immigration enforcement prohibition legislation — consistent with expansive immigration rights and sanctuary policies for her Baltimore County district.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccaskill01"
+            ]
+          },
+          {
+            "politician_id": "848ac881-004b-436a-9a17-dfacbd33de5a",
+            "name": "Stephanie Smith",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Smith co-sponsored immigration enforcement prohibition legislation — consistent with expansive immigration rights and sanctuary policies for her Baltimore City district.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith03"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 4,
+        "rows": 4,
+        "politicians": 4,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "School Vouchers"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Ziegler supported the Blueprint for Maryland's Future — advocates for public school investment over private school voucher programs.",
+        "members": [
+          {
+            "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+            "name": "Natalie Ziegler",
+            "topic": "School Vouchers",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Ziegler supported the Blueprint for Maryland's Future — advocates for public school investment over private school voucher programs.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ziegler02",
+              "https://ballotpedia.org/Natalie_Ziegler"
+            ]
+          },
+          {
+            "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+            "name": "N. Scott Phillips",
+            "topic": "School Vouchers",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Phillips supported the Blueprint for Maryland's Future — advocates for public school investment over private school voucher programs.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/phillips04",
+              "https://ballotpedia.org/N._Scott_Phillips"
+            ]
+          },
+          {
+            "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+            "name": "Gary Simmons",
+            "topic": "School Vouchers",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Simmons supported the Blueprint for Maryland's Future — advocates for public school investment over private school voucher programs.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+              "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+            ]
+          },
+          {
+            "politician_id": "e94337e1-4776-4058-87b4-32dfeb7732a0",
+            "name": "Dana Stein",
+            "topic": "School Vouchers",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Stein supported the Blueprint for Maryland's Future — advocates for public school investment over private school voucher programs.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stein01",
+              "https://ballotpedia.org/Dana_Stein"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 4,
+        "rows": 4,
+        "politicians": 4,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Voting Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Moreno supported expanded voting access legislation including automatic registration and early voting expansion.",
+        "members": [
+          {
+            "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+            "name": "Gabriel Moreno",
+            "topic": "Voting Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Moreno supported expanded voting access legislation including automatic registration and early voting expansion.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moreno01",
+              "https://ballotpedia.org/Gabriel_Moreno_(Maryland)"
+            ]
+          },
+          {
+            "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+            "name": "Cheryl Pasteur",
+            "topic": "Voting Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Pasteur supported expanded voting access legislation including automatic registration and early voting expansion.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pasteur01",
+              "https://ballotpedia.org/Cheryl_Pasteur"
+            ]
+          },
+          {
+            "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+            "name": "N. Scott Phillips",
+            "topic": "Voting Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Phillips supported expanded voting access legislation including automatic registration and early voting expansion.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/phillips04",
+              "https://ballotpedia.org/N._Scott_Phillips"
+            ]
+          },
+          {
+            "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+            "name": "Gary Simmons",
+            "topic": "Voting Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Simmons supported expanded voting access legislation including automatic registration and early voting expansion.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+              "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 4,
+        "rows": 4,
+        "politicians": 4,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Same-Sex Marriage"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Augustine has supported LGBTQ+ rights and same-sex marriage recognition, consistent with his progressive Prince George County Democratic record.",
+        "members": [
+          {
+            "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e",
+            "name": "Malcolm Augustine",
+            "topic": "Same-Sex Marriage",
+            "value": "1.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Augustine has supported LGBTQ+ rights and same-sex marriage recognition, consistent with his progressive Prince George County Democratic record.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/augustine01",
+              "https://ballotpedia.org/Malcolm_Augustine"
+            ]
+          },
+          {
+            "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+            "name": "Antonio Hayes",
+            "topic": "Same-Sex Marriage",
+            "value": "1.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Hayes has supported LGBTQ+ rights and same-sex marriage recognition, consistent with his progressive Baltimore City Democratic record.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes01",
+              "https://ballotpedia.org/Antonio_Hayes"
+            ]
+          },
+          {
+            "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+            "name": "Charles Sydnor",
+            "topic": "Same-Sex Marriage",
+            "value": "1.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Sydnor has supported LGBTQ+ rights and same-sex marriage recognition, consistent with his progressive Baltimore County Democratic record.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+              "https://ballotpedia.org/Charles_Sydnor"
+            ]
+          },
+          {
+            "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+            "name": "Cory McCray",
+            "topic": "Same-Sex Marriage",
+            "value": "1.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "McCray has supported LGBTQ+ rights and same-sex marriage recognition, consistent with his progressive Baltimore City Democratic record.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+              "https://ballotpedia.org/Cory_McCray"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 4,
+        "rows": 4,
+        "politicians": 4,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Abortion"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Bouchat is a Republican from Carroll County who votes with the House Republican caucus on anti-abortion legislation.",
+        "members": [
+          {
+            "politician_id": "c12bb600-318a-4541-bcdd-8260f1ba172e",
+            "name": "Christopher Bouchat",
+            "topic": "Abortion",
+            "value": "5.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Bouchat is a Republican from Carroll County who votes with the House Republican caucus on anti-abortion legislation.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bouchat01",
+              "https://ballotpedia.org/Maryland_House_of_Delegates"
+            ]
+          },
+          {
+            "politician_id": "eadb65c9-74b6-40c3-b9e7-159c5734c59f",
+            "name": "Robert Long",
+            "topic": "Abortion",
+            "value": "5.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Long is a Republican from Baltimore County (District 6) who votes with the House Republican caucus on anti-abortion legislation.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/long01",
+              "https://ballotpedia.org/Maryland_House_of_Delegates"
+            ]
+          },
+          {
+            "politician_id": "5967c703-2583-466f-a438-c3ac182111d5",
+            "name": "April Rose",
+            "topic": "Abortion",
+            "value": "5.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Rose is a Republican from Carroll County who votes with the House Republican caucus on anti-abortion legislation.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rose01",
+              "https://ballotpedia.org/Maryland_House_of_Delegates"
+            ]
+          },
+          {
+            "politician_id": "6e5ac4b7-73fd-497d-a4e9-7d5124c3d904",
+            "name": "Chris Tomlinson",
+            "topic": "Abortion",
+            "value": "5.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Tomlinson is a Republican from Carroll County who votes with the House Republican caucus on anti-abortion legislation.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/tomlinson01",
+              "https://ballotpedia.org/Maryland_House_of_Delegates"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Civil Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "White Holland co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights in Baltimore County.",
+        "members": [
+          {
+            "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c",
+            "name": "Jennifer White Holland",
+            "topic": "Civil Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "White Holland co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights in Baltimore County.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03",
+              "https://ballotpedia.org/Jennifer_White_Holland"
+            ]
+          },
+          {
+            "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+            "name": "Gary Simmons",
+            "topic": "Civil Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Simmons co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights in Howard County.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+              "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+            ]
+          },
+          {
+            "politician_id": "e94337e1-4776-4058-87b4-32dfeb7732a0",
+            "name": "Dana Stein",
+            "topic": "Civil Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Stein co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights in Baltimore County.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stein01",
+              "https://ballotpedia.org/Dana_Stein"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "School Vouchers"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "White Holland supported Blueprint for Maryland's Future — favors public school investment over private school voucher programs.",
+        "members": [
+          {
+            "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c",
+            "name": "Jennifer White Holland",
+            "topic": "School Vouchers",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "White Holland supported Blueprint for Maryland's Future — favors public school investment over private school voucher programs.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03",
+              "https://ballotpedia.org/Jennifer_White_Holland"
+            ]
+          },
+          {
+            "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+            "name": "Gabriel Moreno",
+            "topic": "School Vouchers",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Moreno supported Blueprint for Maryland's Future — favors public school investment over private school voucher programs.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moreno01",
+              "https://ballotpedia.org/Gabriel_Moreno_(Maryland)"
+            ]
+          },
+          {
+            "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+            "name": "Pam Guzzone",
+            "topic": "School Vouchers",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Lanman Guzzone supported Blueprint for Maryland's Future — favors public school investment over private school voucher programs.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone03",
+              "https://ballotpedia.org/Pam_Guzzone"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Taxes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Moreno supported progressive tax reform to fund public services and Blueprint for Maryland's Future education investment.",
+        "members": [
+          {
+            "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+            "name": "Gabriel Moreno",
+            "topic": "Taxes",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Moreno supported progressive tax reform to fund public services and Blueprint for Maryland's Future education investment.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moreno01",
+              "https://ballotpedia.org/Gabriel_Moreno_(Maryland)"
+            ]
+          },
+          {
+            "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+            "name": "Jen Terrasa",
+            "topic": "Taxes",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Terrasa supported progressive tax reform to fund public services and Blueprint for Maryland's Future education investment.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/terrasa01",
+              "https://ballotpedia.org/Jen_Terrasa"
+            ]
+          },
+          {
+            "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+            "name": "Pam Guzzone",
+            "topic": "Taxes",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Lanman Guzzone supported progressive tax reform to fund public services and Blueprint for Maryland's Future education investment.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone03",
+              "https://ballotpedia.org/Pam_Guzzone"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Same-Sex Marriage"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Charles supports same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation.",
+        "members": [
+          {
+            "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+            "name": "Nick Charles",
+            "topic": "Same-Sex Marriage",
+            "value": "5.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Charles supports same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+              "https://ballotpedia.org/Nick_Charles"
+            ]
+          },
+          {
+            "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+            "name": "Arthur Ellis",
+            "topic": "Same-Sex Marriage",
+            "value": "5.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Ellis supports same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01",
+              "https://ballotpedia.org/Arthur_Ellis_(Maryland)"
+            ]
+          },
+          {
+            "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+            "name": "Kevin Harris",
+            "topic": "Same-Sex Marriage",
+            "value": "5.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Harris supports same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+              "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Voting Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Terrasa supported expanded voting access legislation including automatic registration and early voting — strong supporter of voting rights.",
+        "members": [
+          {
+            "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+            "name": "Jen Terrasa",
+            "topic": "Voting Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Terrasa supported expanded voting access legislation including automatic registration and early voting — strong supporter of voting rights.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/terrasa01",
+              "https://ballotpedia.org/Jen_Terrasa"
+            ]
+          },
+          {
+            "politician_id": "631dac5c-fb86-41f5-a82d-5963164a9142",
+            "name": "Jon Cardin",
+            "topic": "Voting Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Cardin supported expanded voting access legislation including automatic registration and early voting — strong supporter of voting rights.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/cardin01",
+              "https://ballotpedia.org/Jon_Cardin"
+            ]
+          },
+          {
+            "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+            "name": "Jessica Feldmark",
+            "topic": "Voting Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Feldmark supported expanded voting access legislation including automatic registration and early voting — strong supporter of voting rights.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldmark01",
+              "https://ballotpedia.org/Jessica_Feldmark"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Housing"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Watson has been active on Howard County housing policy — supports affordable housing mandates and mixed-income development with community input.",
+        "members": [
+          {
+            "politician_id": "a4b61b58-9006-4e58-952d-abeb2521cda0",
+            "name": "Courtney Watson",
+            "topic": "Housing",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Watson has been active on Howard County housing policy — supports affordable housing mandates and mixed-income development with community input.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+              "https://ballotpedia.org/Courtney_Watson"
+            ]
+          },
+          {
+            "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+            "name": "Jessica Feldmark",
+            "topic": "Housing",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Feldmark has been active on Howard County housing policy — supports affordable housing mandates and mixed-income development with community input.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldmark01",
+              "https://ballotpedia.org/Jessica_Feldmark"
+            ]
+          },
+          {
+            "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+            "name": "Pam Guzzone",
+            "topic": "Housing",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Lanman Guzzone has been active on Howard County housing policy — supports affordable housing mandates and mixed-income development with community input.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone03",
+              "https://ballotpedia.org/Pam_Guzzone"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Immigration"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Acevero co-sponsored the Public Safety - Immigration Enforcement Agreements - Prohibition bill banning local police cooperation with ICE — a sanctuary-aligned immigration stance.",
+        "members": [
+          {
+            "politician_id": "e1b53b61-d4f7-4d10-bdb3-2a8dcfb12820",
+            "name": "Gabriel Acevero",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Acevero co-sponsored the Public Safety - Immigration Enforcement Agreements - Prohibition bill banning local police cooperation with ICE — a sanctuary-aligned immigration stance.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/acevero01"
+            ]
+          },
+          {
+            "politician_id": "62bed8b6-beb2-4c41-b234-dc6427bfc9c0",
+            "name": "Marlon Amprey",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Amprey co-sponsored the Public Safety - Immigration Enforcement Agreements - Prohibition bill banning local police cooperation with ICE — a sanctuary-aligned immigration stance.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/amprey01",
+              "https://ballotpedia.org/Marlon_Amprey"
+            ]
+          },
+          {
+            "politician_id": "7217c1b4-6fae-447d-9566-f2513319fa94",
+            "name": "Melissa Wells",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Wells co-sponsored the Public Safety - Immigration Enforcement Agreements - Prohibition bill banning local police cooperation with ICE — a sanctuary-aligned immigration stance.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wells02",
+              "https://ballotpedia.org/Melissa_Wells_(Maryland)"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Redistricting"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Fennell sponsored Election Districts - General Assembly and Representatives in Congress — directly working on redistricting as a PG County Democrat supporting fair maps.",
+        "members": [
+          {
+            "politician_id": "192e8ffb-e576-41f1-915a-dbc0c30d4769",
+            "name": "Diana Fennell",
+            "topic": "Redistricting",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Fennell sponsored Election Districts - General Assembly and Representatives in Congress — directly working on redistricting as a PG County Democrat supporting fair maps.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fennell01"
+            ]
+          },
+          {
+            "politician_id": "848ac881-004b-436a-9a17-dfacbd33de5a",
+            "name": "Stephanie Smith",
+            "topic": "Redistricting",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Smith sponsored Election Districts - General Assembly and Representatives in Congress — directly working on redistricting as a Baltimore City Democrat supporting fair maps.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith03"
+            ]
+          },
+          {
+            "politician_id": "69bf6043-4546-4804-ae04-311cff54a986",
+            "name": "Julian Ivey",
+            "topic": "Redistricting",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Ivey sponsored Election Districts - General Assembly and Representatives in Congress — directly working on redistricting as a PG County Democrat supporting fair maps.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ivey01"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Voting Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Stanley co-sponsored same-day voter registration legislation, which would allow eligible voters to register and vote on Election Day. This co-sponsorship reflects support for expanding ballot access and voting rights in Massachusetts.",
+        "members": [
+          {
+            "politician_id": "c70bd1f2-6ba2-446e-a40c-d07f446db214",
+            "name": "Thomas Stanley",
+            "topic": "Voting Rights",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 9th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Stanley co-sponsored same-day voter registration legislation, which would allow eligible voters to register and vote on Election Day. This co-sponsorship reflects support for expanding ballot access and voting rights in Massachusetts.",
+            "sources": [
+              "https://actonmass.org/legislators/thomas-stanley/",
+              "https://malegislature.gov/Legislators/Profile/TMS1"
+            ]
+          },
+          {
+            "politician_id": "baddd174-93ea-47b6-9cbd-c48fc3acf2f6",
+            "name": "John Lawn",
+            "topic": "Voting Rights",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 10th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Lawn co-sponsored same-day voter registration legislation, which would allow eligible voters to register and vote on Election Day. This co-sponsorship reflects support for expanding ballot access and voting rights in Massachusetts.",
+            "sources": [
+              "https://actonmass.org/legislators/john-lawn/",
+              "https://malegislature.gov/Legislators/Profile/JJL2"
+            ]
+          },
+          {
+            "politician_id": "a9ea7006-d595-45aa-a301-9c71d5a3af4d",
+            "name": "Carmine Gentile",
+            "topic": "Voting Rights",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 13th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Gentile co-sponsored same-day voter registration legislation, which would allow eligible voters to register and vote on Election Day. This co-sponsorship reflects support for expanding ballot access and voting rights in Massachusetts.",
+            "sources": [
+              "https://actonmass.org/legislators/carmine-gentile/",
+              "https://malegislature.gov/Legislators/Profile/CLG1"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 3,
+        "rows": 3,
+        "politicians": 3,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "az"
+        ],
+        "topic_names": [
+          "Taxes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "As Mayor, Murphy was part of the Town Council that on June 10, 2024 unanimously approved a $66 million General Obligation bond resolution for the November ballot — funding a $48M multigenerational recreation center, a $7.5M police-department building expansion, a $7M town-hall remodel, a $2.97M sports-court complex, and public-works and parks/trails improvements, at an estimated cost to taxpayers of \"$17.12 per month, or $205.44 per year.\" Voting to authorize a new secondary-property-tax-backed bond of that size to build out and expand public facilities and services — rather than keeping the town's revenue structure as-is (chair 3) or cutting taxes and scaling back services (chairs 4-5) — matches raising public revenue to fund and expand community services and infrastructure (chair 2).",
+        "members": [
+          {
+            "politician_id": "f32cba1e-d672-440a-9a18-41a312119f40",
+            "name": "Tom Murphy",
+            "topic": "Taxes",
+            "value": "2.0",
+            "state": "az",
+            "office": "Mayor",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "As Mayor, Murphy was part of the Town Council that on June 10, 2024 unanimously approved a $66 million General Obligation bond resolution for the November ballot — funding a $48M multigenerational recreation center, a $7.5M police-department building expansion, a $7M town-hall remodel, a $2.97M sports-court complex, and public-works and parks/trails improvements, at an estimated cost to taxpayers of \"$17.12 per month, or $205.44 per year.\" Voting to authorize a new secondary-property-tax-backed bond of that size to build out and expand public facilities and services — rather than keeping the town's revenue structure as-is (chair 3) or cutting taxes and scaling back services (chairs 4-5) — matches raising public revenue to fund and expand community services and infrastructure (chair 2).",
+            "sources": [
+              "https://www.kgun9.com/news/community-inspired-journalism/sahuarita/sahuarita-town-council-approves-66-million-bond-resolution-for-november-ballot"
+            ]
+          },
+          {
+            "politician_id": "071e2a28-2fef-489a-97e3-15fb5caaee51",
+            "name": "Kara Egbert",
+            "topic": "Taxes",
+            "value": "2.0",
+            "state": "az",
+            "office": "Vice Mayor",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "As Vice Mayor, Egbert was part of the Town Council that on June 10, 2024 unanimously approved a $66 million General Obligation bond resolution for the November ballot — funding a $48M multigenerational recreation center, a $7.5M police-department building expansion, a $7M town-hall remodel, a $2.97M sports-court complex, and public-works and parks/trails improvements, at an estimated cost to taxpayers of \"$17.12 per month, or $205.44 per year.\" Voting to authorize a new secondary-property-tax-backed bond of that size to build out and expand public facilities and services — rather than keeping the town's revenue structure as-is (chair 3) or cutting taxes and scaling back services (chairs 4-5) — matches raising public revenue to fund and expand community services and infrastructure (chair 2).",
+            "sources": [
+              "https://www.kgun9.com/news/community-inspired-journalism/sahuarita/sahuarita-town-council-approves-66-million-bond-resolution-for-november-ballot"
+            ]
+          },
+          {
+            "politician_id": "c2553fba-f62f-4d58-8a9e-c183f9e8f15d",
+            "name": "Deborah Morales",
+            "topic": "Taxes",
+            "value": "2.0",
+            "state": "az",
+            "office": "Council Member",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Morales was part of the Town Council that on June 10, 2024 unanimously approved a $66 million General Obligation bond resolution for the November ballot — funding a $48M multigenerational recreation center, a $7.5M police-department building expansion, a $7M town-hall remodel, a $2.97M sports-court complex, and public-works and parks/trails improvements, at an estimated cost to taxpayers of \"$17.12 per month, or $205.44 per year.\" Voting to authorize a new secondary-property-tax-backed bond of that size to build out and expand public facilities and services — rather than keeping the town's revenue structure as-is (chair 3) or cutting taxes and scaling back services (chairs 4-5) — matches raising public revenue to fund and expand community services and infrastructure (chair 2).",
+            "sources": [
+              "https://www.kgun9.com/news/community-inspired-journalism/sahuarita/sahuarita-town-council-approves-66-million-bond-resolution-for-november-ballot"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Healthcare"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "White Holland supported Medicaid expansion and healthcare access legislation — favors significant public coverage expansion with mixed system.",
+        "members": [
+          {
+            "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c",
+            "name": "Jennifer White Holland",
+            "topic": "Healthcare",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "White Holland supported Medicaid expansion and healthcare access legislation — favors significant public coverage expansion with mixed system.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03",
+              "https://ballotpedia.org/Jennifer_White_Holland"
+            ]
+          },
+          {
+            "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+            "name": "Jen Terrasa",
+            "topic": "Healthcare",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Terrasa supported Medicaid expansion and healthcare access legislation — favors significant public coverage expansion with mixed system.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/terrasa01",
+              "https://ballotpedia.org/Jen_Terrasa"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Healthcare"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Ziegler supported Medicaid expansion and healthcare access legislation — favors significant expansion of public health coverage.",
+        "members": [
+          {
+            "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+            "name": "Natalie Ziegler",
+            "topic": "Healthcare",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Ziegler supported Medicaid expansion and healthcare access legislation — favors significant expansion of public health coverage.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ziegler02",
+              "https://ballotpedia.org/Natalie_Ziegler"
+            ]
+          },
+          {
+            "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+            "name": "Jessica Feldmark",
+            "topic": "Healthcare",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Feldmark supported Medicaid expansion and healthcare access legislation — favors significant expansion of public health coverage.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldmark01",
+              "https://ballotpedia.org/Jessica_Feldmark"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Housing"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Ziegler supported affordable housing mandates and tenant protections in Montgomery County — favors mixed-income development with affordability requirements.",
+        "members": [
+          {
+            "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+            "name": "Natalie Ziegler",
+            "topic": "Housing",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Ziegler supported affordable housing mandates and tenant protections in Montgomery County — favors mixed-income development with affordability requirements.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ziegler02",
+              "https://ballotpedia.org/Natalie_Ziegler"
+            ]
+          },
+          {
+            "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+            "name": "N. Scott Phillips",
+            "topic": "Housing",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Phillips supported affordable housing mandates and tenant protections in Baltimore County — favors mixed-income development with affordability requirements.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/phillips04",
+              "https://ballotpedia.org/N._Scott_Phillips"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Taxes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Ziegler supported progressive tax reform including higher taxes on high earners to fund Blueprint for Maryland's Future education funding.",
+        "members": [
+          {
+            "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+            "name": "Natalie Ziegler",
+            "topic": "Taxes",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Ziegler supported progressive tax reform including higher taxes on high earners to fund Blueprint for Maryland's Future education funding.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ziegler02",
+              "https://ballotpedia.org/Natalie_Ziegler"
+            ]
+          },
+          {
+            "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+            "name": "Gary Simmons",
+            "topic": "Taxes",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Simmons supported progressive tax reform including higher taxes on high earners to fund Blueprint for Maryland's Future education funding.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+              "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Voting Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Ziegler supported expanded voting access legislation — favors automatic registration and early voting expansion.",
+        "members": [
+          {
+            "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+            "name": "Natalie Ziegler",
+            "topic": "Voting Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Ziegler supported expanded voting access legislation — favors automatic registration and early voting expansion.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ziegler02",
+              "https://ballotpedia.org/Natalie_Ziegler"
+            ]
+          },
+          {
+            "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+            "name": "Pam Guzzone",
+            "topic": "Voting Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Lanman Guzzone supported expanded voting access legislation — favors automatic registration and early voting expansion.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone03",
+              "https://ballotpedia.org/Pam_Guzzone"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Medicare/aid"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Uyterhoeven co-sponsored Medicare for All (H.1239), which would expand Medicare to everyone regardless of age — aligning with stance value 1.",
+        "members": [
+          {
+            "politician_id": "98291d86-d42d-49d0-a5b2-d689a8154b15",
+            "name": "Erika Uyterhoeven",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 27th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Uyterhoeven co-sponsored Medicare for All (H.1239), which would expand Medicare to everyone regardless of age — aligning with stance value 1.",
+            "sources": [
+              "https://actonmass.org/legislators/erika-uyterhoeven"
+            ]
+          },
+          {
+            "politician_id": "ecafa801-15b3-4777-9c38-95f5ded5cbe6",
+            "name": "Mindy Domb",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 3rd Hampshire District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Domb co-sponsored Medicare for All (H.1239), which would expand Medicare to everyone regardless of age — aligning with stance value 1.",
+            "sources": [
+              "https://actonmass.org/legislators/mindy-domb"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Jail Capacity"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 (both red X on AOM). No prison expansion advocacy either. Status-quo.",
+        "members": [
+          {
+            "politician_id": "c0852fa6-8184-4f2d-b1cf-fde8cbf3c4b2",
+            "name": "Adam Scanlon",
+            "topic": "Jail Capacity",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Representative, 14th Bristol District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 (both red X on AOM). No prison expansion advocacy either. Status-quo.",
+            "sources": [
+              "https://actonmass.org/legislators/adam-scanlon/"
+            ]
+          },
+          {
+            "politician_id": "ee861f58-dabf-429f-97ee-32591bdd3650",
+            "name": "Adrianne Ramos",
+            "topic": "Jail Capacity",
+            "value": "3.0",
+            "state": "ma",
+            "office": "Representative, 14th Essex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 (both red X on AOM). No prison expansion advocacy either.",
+            "sources": [
+              "https://actonmass.org/legislators/adrianne-ramos/"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Medicare/aid"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Co-sponsored Medicare for All (H.1239), which would expand Medicare to cover all Massachusetts residents regardless of age.",
+        "members": [
+          {
+            "politician_id": "a9ea7006-d595-45aa-a301-9c71d5a3af4d",
+            "name": "Carmine Gentile",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 13th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All (H.1239), which would expand Medicare to cover all Massachusetts residents regardless of age.",
+            "sources": [
+              "https://actonmass.org/legislators/carmine-gentile/",
+              "https://actonmass.org/bills/medicare-for-all/"
+            ]
+          },
+          {
+            "politician_id": "f8986c05-2e32-4184-bfb2-9d4c244ffd3a",
+            "name": "Danillo Sena",
+            "topic": "Medicare/aid",
+            "value": "1.0",
+            "state": "ma",
+            "office": "Representative, 37th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Co-sponsored Medicare for All (H.1239) which would expand Medicare to cover all residents regardless of age.",
+            "sources": [
+              "https://malegislature.gov/Bills/193/H1239/Cosponsor"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Housing"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Jones supported affordable housing legislation and tenant protections — favors significant affordable mandates with mixed-income development.",
+        "members": [
+          {
+            "politician_id": "760cd4a7-235c-472f-a0ba-fb07098dfd57",
+            "name": "Adrienne Jones",
+            "topic": "Housing",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Jones supported affordable housing legislation and tenant protections — favors significant affordable mandates with mixed-income development.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jones01",
+              "https://ballotpedia.org/Adrienne_A._Jones",
+              "https://msa.maryland.gov/msa/mdmanual/06hse/html/msa02932.html"
+            ]
+          },
+          {
+            "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+            "name": "Cheryl Pasteur",
+            "topic": "Housing",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Pasteur supported affordable housing legislation and tenant protections — favors significant affordable mandates with mixed-income development.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pasteur01",
+              "https://ballotpedia.org/Cheryl_Pasteur"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Same-Sex Marriage"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Ziegler supports same-sex marriage and LGBTQ+ protections including trans youth healthcare access.",
+        "members": [
+          {
+            "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+            "name": "Natalie Ziegler",
+            "topic": "Same-Sex Marriage",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Ziegler supports same-sex marriage and LGBTQ+ protections including trans youth healthcare access.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ziegler02",
+              "https://ballotpedia.org/Natalie_Ziegler"
+            ]
+          },
+          {
+            "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+            "name": "Gabriel Moreno",
+            "topic": "Same-Sex Marriage",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Moreno supports same-sex marriage and LGBTQ+ protections including trans youth healthcare access.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moreno01",
+              "https://ballotpedia.org/Gabriel_Moreno_(Maryland)"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Healthcare"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Moreno supported Medicaid expansion and healthcare access legislation — favors significant public health coverage expansion.",
+        "members": [
+          {
+            "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+            "name": "Gabriel Moreno",
+            "topic": "Healthcare",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Moreno supported Medicaid expansion and healthcare access legislation — favors significant public health coverage expansion.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moreno01",
+              "https://ballotpedia.org/Gabriel_Moreno_(Maryland)"
+            ]
+          },
+          {
+            "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+            "name": "Pam Guzzone",
+            "topic": "Healthcare",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Lanman Guzzone supported Medicaid expansion and healthcare access legislation — favors significant public health coverage expansion.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone03",
+              "https://ballotpedia.org/Pam_Guzzone"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Housing"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Moreno supported affordable housing legislation and tenant protections in Howard County — favors mixed-income development with affordability requirements.",
+        "members": [
+          {
+            "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+            "name": "Gabriel Moreno",
+            "topic": "Housing",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Moreno supported affordable housing legislation and tenant protections in Howard County — favors mixed-income development with affordability requirements.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moreno01",
+              "https://ballotpedia.org/Gabriel_Moreno_(Maryland)"
+            ]
+          },
+          {
+            "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+            "name": "Gary Simmons",
+            "topic": "Housing",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Simmons supported affordable housing legislation and tenant protections in Howard County — favors mixed-income development with affordability requirements.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+              "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Taxes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Pasteur supported progressive tax reform funding Blueprint for Maryland's Future through higher taxes on high earners.",
+        "members": [
+          {
+            "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+            "name": "Cheryl Pasteur",
+            "topic": "Taxes",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Pasteur supported progressive tax reform funding Blueprint for Maryland's Future through higher taxes on high earners.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pasteur01",
+              "https://ballotpedia.org/Cheryl_Pasteur"
+            ]
+          },
+          {
+            "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+            "name": "Jessica Feldmark",
+            "topic": "Taxes",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Feldmark supported progressive tax reform funding Blueprint for Maryland's Future through higher taxes on high earners.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldmark01",
+              "https://ballotpedia.org/Jessica_Feldmark"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Taxes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Charles supports progressive taxation to fund public services and education. He backed the Blueprint for Maryland's Future funding structure.",
+        "members": [
+          {
+            "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+            "name": "Nick Charles",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Charles supports progressive taxation to fund public services and education. He backed the Blueprint for Maryland's Future funding structure.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+              "https://ballotpedia.org/Nick_Charles"
+            ]
+          },
+          {
+            "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+            "name": "Shaneka Henson",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Henson supports progressive taxation to fund public services and education. She backed the Blueprint for Maryland's Future funding structure.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+              "https://ballotpedia.org/Shaneka_Henson"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "School Vouchers"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Ellis opposes school vouchers. He backs strong public education investment through the Blueprint for Maryland's Future.",
+        "members": [
+          {
+            "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+            "name": "Arthur Ellis",
+            "topic": "School Vouchers",
+            "value": "2.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Ellis opposes school vouchers. He backs strong public education investment through the Blueprint for Maryland's Future.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01",
+              "https://ballotpedia.org/Arthur_Ellis_(Maryland)"
+            ]
+          },
+          {
+            "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+            "name": "Shaneka Henson",
+            "topic": "School Vouchers",
+            "value": "2.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Henson opposes school vouchers. She backs strong public education investment through the Blueprint for Maryland's Future.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+              "https://ballotpedia.org/Shaneka_Henson"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Immigration"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Harris represents a district with significant immigrant communities. He supports immigrant protections and comprehensive immigration reform.",
+        "members": [
+          {
+            "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+            "name": "Kevin Harris",
+            "topic": "Immigration",
+            "value": "4.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Harris represents a district with significant immigrant communities. He supports immigrant protections and comprehensive immigration reform.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+              "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+            ]
+          },
+          {
+            "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+            "name": "Ron Watson",
+            "topic": "Immigration",
+            "value": "4.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Watson represents a district with significant immigrant communities. He supports immigrant protections and comprehensive immigration reform.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+              "https://ballotpedia.org/Ron_Watson_(Maryland)"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Immigration"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Attar has supported immigrant-friendly policies and sanctuary protections, backing legislation that provides services to undocumented Baltimore City residents.",
+        "members": [
+          {
+            "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+            "name": "Dalya Attar",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Attar has supported immigrant-friendly policies and sanctuary protections, backing legislation that provides services to undocumented Baltimore City residents.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar01",
+              "https://ballotpedia.org/Dalya_Attar"
+            ]
+          },
+          {
+            "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+            "name": "Cory McCray",
+            "topic": "Immigration",
+            "value": "1.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "McCray has supported immigrant-friendly policies and sanctuary protections, backing legislation that provides services to undocumented Baltimore City residents.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+              "https://ballotpedia.org/Cory_McCray"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "or"
+        ],
+        "topic_names": [
+          "Trans Athletes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Voted in favor of measures restricting transgender athletes in school sports; consistent conservative social position. https://ballotpedia.org/Kim_Thatcher",
+        "members": [
+          {
+            "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515",
+            "name": "Kim Thatcher",
+            "topic": "Trans Athletes",
+            "value": "5.0",
+            "state": "or",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Voted in favor of measures restricting transgender athletes in school sports; consistent conservative social position. https://ballotpedia.org/Kim_Thatcher",
+            "sources": [
+              "https://ballotpedia.org/Kim_Thatcher"
+            ]
+          },
+          {
+            "politician_id": "252a2adf-68a5-4b5a-9024-d5635e2fbd88",
+            "name": "Mike McLane",
+            "topic": "Trans Athletes",
+            "value": "5.0",
+            "state": "or",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Voted in favor of measures restricting transgender athletes in school sports; consistent conservative social position. https://ballotpedia.org/Mike_McLane",
+            "sources": [
+              "https://ballotpedia.org/Mike_McLane"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Voting Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Carozza has supported voter ID requirements and opposed automatic voter registration measures, consistent with Republican caucus positions in the Maryland Senate.",
+        "members": [
+          {
+            "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+            "name": "Mary Beth Carozza",
+            "topic": "Voting Rights",
+            "value": "4.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Carozza has supported voter ID requirements and opposed automatic voter registration measures, consistent with Republican caucus positions in the Maryland Senate.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza01",
+              "https://ballotpedia.org/Mary_Beth_Carozza"
+            ]
+          },
+          {
+            "politician_id": "e2ca1bfd-255d-417b-a9d7-424e6c10749d",
+            "name": "Jason Gallion",
+            "topic": "Voting Rights",
+            "value": "4.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Gallion has supported voter ID requirements and opposed automatic voter registration measures, consistent with Republican caucus positions in the Maryland Senate.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/gallion01",
+              "https://ballotpedia.org/Jason_Gallion"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Healthcare"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Sydnor has supported expanding healthcare access and Medicaid coverage, backing measures to reduce health disparities in Baltimore County communities.",
+        "members": [
+          {
+            "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+            "name": "Charles Sydnor",
+            "topic": "Healthcare",
+            "value": "2.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Sydnor has supported expanding healthcare access and Medicaid coverage, backing measures to reduce health disparities in Baltimore County communities.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+              "https://ballotpedia.org/Charles_Sydnor"
+            ]
+          },
+          {
+            "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+            "name": "Cory McCray",
+            "topic": "Healthcare",
+            "value": "2.0",
+            "state": "md",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "McCray has supported expanding healthcare access and Medicaid coverage, backing measures to reduce health disparities in East Baltimore communities.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+              "https://ballotpedia.org/Cory_McCray"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Homelessness"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Kerr co-sponsored homeless individuals fee and examination exemptions — supporting service-oriented approaches to homelessness.",
+        "members": [
+          {
+            "politician_id": "c0abb4fa-be8d-4fbe-9b6d-6319a8ecd255",
+            "name": "Kenneth Kerr",
+            "topic": "Homelessness",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Kerr co-sponsored homeless individuals fee and examination exemptions — supporting service-oriented approaches to homelessness.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kerr01"
+            ]
+          },
+          {
+            "politician_id": "5946ad0c-ddf5-4674-840e-6968105042cd",
+            "name": "Karen Simpson",
+            "topic": "Homelessness",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Simpson co-sponsored homeless individuals fee and examination exemptions — supporting service-oriented approaches to homelessness.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simpson01"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "School Vouchers"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Valentine co-sponsored the Education Savings Account Program and the scholarship granting organizations certification bill — supporting private school choice.",
+        "members": [
+          {
+            "politician_id": "cdf746c1-8311-416b-9ad3-2684a83b6992",
+            "name": "William Valentine",
+            "topic": "School Vouchers",
+            "value": "5.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Valentine co-sponsored the Education Savings Account Program and the scholarship granting organizations certification bill — supporting private school choice.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valentine01"
+            ]
+          },
+          {
+            "politician_id": "df6fe96f-7795-4934-9acc-2b9f8f0aa8f7",
+            "name": "William Wivell",
+            "topic": "School Vouchers",
+            "value": "5.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Wivell co-sponsored the Education Savings Account Program and the scholarship granting organizations certification bill — supporting private school choice.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wivell01"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Criminal Justice"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Valentine co-sponsored prohibition on diminution credits for first-degree murder and criminal procedure restrictions on postconviction release for crimes resulting in death of young victims.",
+        "members": [
+          {
+            "politician_id": "cdf746c1-8311-416b-9ad3-2684a83b6992",
+            "name": "William Valentine",
+            "topic": "Criminal Justice",
+            "value": "5.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Valentine co-sponsored prohibition on diminution credits for first-degree murder and criminal procedure restrictions on postconviction release for crimes resulting in death of young victims.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valentine01"
+            ]
+          },
+          {
+            "politician_id": "df6fe96f-7795-4934-9acc-2b9f8f0aa8f7",
+            "name": "William Wivell",
+            "topic": "Criminal Justice",
+            "value": "5.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Wivell co-sponsored prohibition on diminution credits for first-degree murder and criminal procedure restrictions on postconviction release for crimes resulting in death of young victims.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wivell01"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Voting Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Stein supported expanded voting access legislation including automatic registration and early voting expansion — strong supporter of voting rights.",
+        "members": [
+          {
+            "politician_id": "e94337e1-4776-4058-87b4-32dfeb7732a0",
+            "name": "Dana Stein",
+            "topic": "Voting Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Stein supported expanded voting access legislation including automatic registration and early voting expansion — strong supporter of voting rights.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stein01",
+              "https://ballotpedia.org/Dana_Stein"
+            ]
+          },
+          {
+            "politician_id": "f6a237a0-34ff-4a93-b05a-335ec38b6da3",
+            "name": "Terri Hill",
+            "topic": "Voting Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Hill supported expanded voting access legislation including automatic registration and early voting expansion — strong supporter of voting rights.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hill04",
+              "https://ballotpedia.org/Terri_Hill"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Civil Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Terrasa co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion in Howard County.",
+        "members": [
+          {
+            "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+            "name": "Jen Terrasa",
+            "topic": "Civil Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Terrasa co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion in Howard County.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/terrasa01",
+              "https://ballotpedia.org/Jen_Terrasa"
+            ]
+          },
+          {
+            "politician_id": "631dac5c-fb86-41f5-a82d-5963164a9142",
+            "name": "Jon Cardin",
+            "topic": "Civil Rights",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Cardin co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion in Baltimore County.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/cardin01",
+              "https://ballotpedia.org/Jon_Cardin"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Same-Sex Marriage"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Terrasa strongly supports same-sex marriage and LGBTQ+ protections including trans youth healthcare access.",
+        "members": [
+          {
+            "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+            "name": "Jen Terrasa",
+            "topic": "Same-Sex Marriage",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Terrasa strongly supports same-sex marriage and LGBTQ+ protections including trans youth healthcare access.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/terrasa01",
+              "https://ballotpedia.org/Jen_Terrasa"
+            ]
+          },
+          {
+            "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+            "name": "Pam Guzzone",
+            "topic": "Same-Sex Marriage",
+            "value": "1.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Lanman Guzzone strongly supports same-sex marriage and LGBTQ+ protections including trans youth healthcare access.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone03",
+              "https://ballotpedia.org/Pam_Guzzone"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "or"
+        ],
+        "topic_names": [
+          "Civil Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Hillsboro district. https://ballotpedia.org/Nathan_Sosa",
+        "members": [
+          {
+            "politician_id": "f2bc3bbf-0d29-4ad9-b675-9c53cf081969",
+            "name": "Nathan Sosa",
+            "topic": "Civil Rights",
+            "value": "1.0",
+            "state": "or",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Hillsboro district. https://ballotpedia.org/Nathan_Sosa",
+            "sources": [
+              "https://ballotpedia.org/Nathan_Sosa"
+            ]
+          },
+          {
+            "politician_id": "0f7439ad-5832-42e9-a1c5-75f1720e14d3",
+            "name": "Travis Nelson",
+            "topic": "Civil Rights",
+            "value": "1.0",
+            "state": "or",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Portland district. https://ballotpedia.org/Travis_Nelson",
+            "sources": [
+              "https://ballotpedia.org/Travis_Nelson"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Economic Development Incentives"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Watson has championed public-private partnerships for economic development in Howard County while supporting worker protections and targeted public investment.",
+        "members": [
+          {
+            "politician_id": "a4b61b58-9006-4e58-952d-abeb2521cda0",
+            "name": "Courtney Watson",
+            "topic": "Economic Development Incentives",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Watson has championed public-private partnerships for economic development in Howard County while supporting worker protections and targeted public investment.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+              "https://ballotpedia.org/Courtney_Watson"
+            ]
+          },
+          {
+            "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+            "name": "Jessica Feldmark",
+            "topic": "Economic Development Incentives",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Feldmark has championed public-private partnerships for economic development in Howard County while supporting worker protections and targeted public investment.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldmark01",
+              "https://ballotpedia.org/Jessica_Feldmark"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Immigration"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Schmidt has supported stricter immigration enforcement measures and opposed sanctuary policies in Maryland consistent with Republican district values.",
+        "members": [
+          {
+            "politician_id": "55d9d0b6-78a3-460b-97b9-87913ffc8e85",
+            "name": "Stuart Schmidt, Jr.",
+            "topic": "Immigration",
+            "value": "4.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Schmidt has supported stricter immigration enforcement measures and opposed sanctuary policies in Maryland consistent with Republican district values.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/schmidt01?tab=2026RS-legislation",
+              "https://ballotpedia.org/Stuart_Schmidt"
+            ]
+          },
+          {
+            "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856",
+            "name": "Matthew Morgan",
+            "topic": "Immigration",
+            "value": "4.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Morgan has supported stricter immigration enforcement measures and opposed sanctuary policies in Maryland consistent with Southern Maryland Republican district values.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/morgan03?tab=2026RS-legislation",
+              "https://ballotpedia.org/Matthew_Morgan_(Maryland)"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Redistricting"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Amprey co-sponsored the Election Districts - General Assembly and Representatives in Congress bill — participating in Democratic-led redistricting supporting the majority's map.",
+        "members": [
+          {
+            "politician_id": "62bed8b6-beb2-4c41-b234-dc6427bfc9c0",
+            "name": "Marlon Amprey",
+            "topic": "Redistricting",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Amprey co-sponsored the Election Districts - General Assembly and Representatives in Congress bill — participating in Democratic-led redistricting supporting the majority's map.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/amprey01"
+            ]
+          },
+          {
+            "politician_id": "7217c1b4-6fae-447d-9566-f2513319fa94",
+            "name": "Melissa Wells",
+            "topic": "Redistricting",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Wells co-sponsored the Election Districts - General Assembly and Representatives in Congress bill — participating in Democratic-led redistricting supporting the majority's map.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wells02"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Economic Development Incentives"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Edelson sponsored Catalytic Revitalization Project Tax Credit and Maryland Stadium Authority - Carroll Park Soccer Stadium — supports targeted public investment in Baltimore City economic development.",
+        "members": [
+          {
+            "politician_id": "bec4b395-bb4b-4740-ac1c-8e89f12608a2",
+            "name": "Mark Edelson",
+            "topic": "Economic Development Incentives",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Edelson sponsored Catalytic Revitalization Project Tax Credit and Maryland Stadium Authority - Carroll Park Soccer Stadium — supports targeted public investment in Baltimore City economic development.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/edelson01"
+            ]
+          },
+          {
+            "politician_id": "9285f590-79b5-48de-a1c0-a022629e6ebb",
+            "name": "Robbyn Lewis",
+            "topic": "Economic Development Incentives",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Lewis sponsored Economic Development - Transformational Project Financing Program and Catalytic Revitalization Tax Credit — supports targeted public investment in Baltimore City economic development.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lewis01"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "md"
+        ],
+        "topic_names": [
+          "Fossil Fuels"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Forbes sponsored Investor-Owned Electric Gas and Gas and Electric Companies - Cost Recovery - Limitations — restricting fossil fuel utility cost recovery signals support for energy transition.",
+        "members": [
+          {
+            "politician_id": "c017b328-4469-45c4-aa8a-7b9035c77e22",
+            "name": "Catherine Forbes",
+            "topic": "Fossil Fuels",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Forbes sponsored Investor-Owned Electric Gas and Gas and Electric Companies - Cost Recovery - Limitations — restricting fossil fuel utility cost recovery signals support for energy transition.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/forbes01"
+            ]
+          },
+          {
+            "politician_id": "9285f590-79b5-48de-a1c0-a022629e6ebb",
+            "name": "Robbyn Lewis",
+            "topic": "Fossil Fuels",
+            "value": "2.0",
+            "state": "md",
+            "office": "Delegate",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Lewis sponsored Investor-Owned Electric Gas and Gas and Electric Companies - Cost Recovery - Limitations — restricting fossil fuel utility cost recovery signals support for energy transition.",
+            "sources": [
+              "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lewis01"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Environmental Protection vs. Development"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Stanley co-sponsored the Environmental Justice bill (H.1677 / S.953), which established environmental justice protections for overburdened communities in Massachusetts. This co-sponsorship reflects support for local environmental protections.",
+        "members": [
+          {
+            "politician_id": "c70bd1f2-6ba2-446e-a40c-d07f446db214",
+            "name": "Thomas Stanley",
+            "topic": "Environmental Protection vs. Development",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 9th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Stanley co-sponsored the Environmental Justice bill (H.1677 / S.953), which established environmental justice protections for overburdened communities in Massachusetts. This co-sponsorship reflects support for local environmental protections.",
+            "sources": [
+              "https://actonmass.org/bills/environmental-justice/",
+              "https://malegislature.gov/Bills/194/H1677"
+            ]
+          },
+          {
+            "politician_id": "baddd174-93ea-47b6-9cbd-c48fc3acf2f6",
+            "name": "John Lawn",
+            "topic": "Environmental Protection vs. Development",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 10th Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Lawn co-sponsored the Environmental Justice bill (H.1677 / S.953), which established environmental justice protections for overburdened communities in Massachusetts. This co-sponsorship reflects support for local environmental protections.",
+            "sources": [
+              "https://actonmass.org/bills/environmental-justice/",
+              "https://malegislature.gov/Bills/194/H1677"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ma"
+        ],
+        "topic_names": [
+          "Voting Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Gordon co-sponsored same-day voter registration legislation, which would allow eligible voters to register and vote on Election Day in Massachusetts. This co-sponsorship reflects support for expanding ballot access and democratic participation.",
+        "members": [
+          {
+            "politician_id": "afb64fe5-b2a7-4c47-b113-5200ed26182a",
+            "name": "Kenneth Gordon",
+            "topic": "Voting Rights",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 21st Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Gordon co-sponsored same-day voter registration legislation, which would allow eligible voters to register and vote on Election Day in Massachusetts. This co-sponsorship reflects support for expanding ballot access and democratic participation.",
+            "sources": [
+              "https://actonmass.org/legislators/kenneth-gordon/",
+              "https://malegislature.gov/Legislators/Profile/KIG1"
+            ]
+          },
+          {
+            "politician_id": "7072bd94-b465-414e-bcf5-6e3feb7ec8dd",
+            "name": "Sean Garballey",
+            "topic": "Voting Rights",
+            "value": "2.0",
+            "state": "ma",
+            "office": "Representative, 23rd Middlesex District",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Garballey co-sponsored same-day voter registration legislation, which would allow eligible voters to register and vote on Election Day in Massachusetts. This co-sponsorship reflects support for expanding ballot access and democratic participation.",
+            "sources": [
+              "https://actonmass.org/legislators/sean-garballey/",
+              "https://malegislature.gov/Legislators/Profile/S_G1"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "ca"
+        ],
+        "topic_names": [
+          "Civil Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Lewis was part of the 4-vote majority that passed the May 7, 2024 council resolution issuing a Pride Month proclamation recognizing Torrance's LGBTQ+ residents (4-3) — an affirmative civil-rights / social-justice action. Her individual council record is otherwise thinly documented, so other topics are left as honest blanks rather than inferred.",
+        "members": [
+          {
+            "politician_id": "9e24181e-f5e5-477f-a6e0-94a007b6b3a0",
+            "name": "Bridgett Lewis",
+            "topic": "Civil Rights",
+            "value": "2.0",
+            "state": "ca",
+            "office": "Council Member",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Lewis was part of the 4-vote majority that passed the May 7, 2024 council resolution issuing a Pride Month proclamation recognizing Torrance's LGBTQ+ residents (4-3) — an affirmative civil-rights / social-justice action. Her individual council record is otherwise thinly documented, so other topics are left as honest blanks rather than inferred.",
+            "sources": [
+              "https://www.torrancewatch.org/races/2026/mayor"
+            ]
+          },
+          {
+            "politician_id": "d8767eea-759a-4298-9e3b-089659d15732",
+            "name": "Jeremy Gerson",
+            "topic": "Civil Rights",
+            "value": "2.0",
+            "state": "ca",
+            "office": "Council Member",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Gerson was part of the 4-vote majority that passed the May 7, 2024 council resolution issuing a Pride Month proclamation recognizing Torrance's LGBTQ+ residents (4-3) — an affirmative civil-rights / social-justice action. His individual council record is otherwise thinly documented, so other topics are left as honest blanks rather than inferred.",
+            "sources": [
+              "https://www.torrancewatch.org/races/2026/mayor"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "me"
+        ],
+        "topic_names": [
+          "Immigration"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Morris co-signed a January 29, 2024 joint statement of 90 Maine Senate/House Republicans supporting Texas's constitutional authority to defend its border and criticizing federal non-enforcement of the southern border. Supporting aggressive state/federal border-enforcement authority matches stance 4; the release's quoted language is attributable to the group collectively, so no quote_text is drawn from it.",
+        "members": [
+          {
+            "politician_id": "98ea2b14-dfe7-4a4c-a755-a124a77a24eb",
+            "name": "Joshua Morris",
+            "topic": "Immigration",
+            "value": "4.0",
+            "state": "me",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Morris co-signed a January 29, 2024 joint statement of 90 Maine Senate/House Republicans supporting Texas's constitutional authority to defend its border and criticizing federal non-enforcement of the southern border. Supporting aggressive state/federal border-enforcement authority matches stance 4; the release's quoted language is attributable to the group collectively, so no quote_text is drawn from it.",
+            "sources": [
+              "https://mainehousegop.org/newsroom/maine-senate-house-republican-legislators-issue-joint-statement-supporting-texas-constitutional-right-to-defend-its-borders/"
+            ]
+          },
+          {
+            "politician_id": "c1b625df-6943-49e8-a0a7-c603c4718ac1",
+            "name": "Laurel Libby",
+            "topic": "Immigration",
+            "value": "4.0",
+            "state": "me",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Libby co-signed a January 29, 2024 joint statement of 90 Maine Senate/House Republicans supporting Texas's constitutional authority to defend its border and criticizing federal non-enforcement of the southern border. Supporting aggressive state/federal border-enforcement authority matches stance 4; the release's quoted language is attributable to the group collectively, so no quote_text is drawn from it.",
+            "sources": [
+              "https://mainehousegop.org/newsroom/maine-senate-house-republican-legislators-issue-joint-statement-supporting-texas-constitutional-right-to-defend-its-borders/"
+            ]
+          }
+        ]
+      }
+    ],
+    "NEAR": []
+  },
+  "actionable_generic_rows": 204,
+  "clustered_rows": 1976
+}

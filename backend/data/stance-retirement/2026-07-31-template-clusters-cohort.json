@@ -1,0 +1,633 @@
+{
+  "_comment": "Template clusters in compass stance reasoning. A cluster is evidence about how a row was PRODUCED, not proof its citation fails — it ranks rows for the article-body test and never justifies deletion on its own.",
+  "generated_scope": "Ballotpedia-only cohort",
+  "near_threshold": 0.85,
+  "min_reasoning_length": 25,
+  "rows_examined": 596,
+  "tiers": {
+    "IDENTICAL": [
+      {
+        "anchor_class": "ANCHORED",
+        "generic_rows": 0,
+        "rows": 9,
+        "politicians": 9,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "tx"
+        ],
+        "topic_names": [
+          "Taxes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14) extending the 2017 tax cuts and reducing spending.",
+        "members": [
+          {
+            "politician_id": "846501ab-5b92-4270-97ed-21a43842c726",
+            "name": "Craig Goldman",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14) extending the 2017 tax cuts and reducing spending.",
+            "sources": [
+              "https://ballotpedia.org/Craig_Goldman"
+            ]
+          },
+          {
+            "politician_id": "184670b8-6647-4f84-a5fb-f2a9cfae3f5a",
+            "name": "Ronny Jackson",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14) extending the 2017 tax cuts and reducing spending.",
+            "sources": [
+              "https://ballotpedia.org/Ronny_Jackson"
+            ]
+          },
+          {
+            "politician_id": "d5b43e69-b0df-44d5-83ba-a4baca56dd3b",
+            "name": "Randy Weber",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14) extending the 2017 tax cuts and reducing spending.",
+            "sources": [
+              "https://ballotpedia.org/Randy_Weber"
+            ]
+          },
+          {
+            "politician_id": "c3cb5289-17af-4952-9894-dbddfcd50484",
+            "name": "Monica De La Cruz",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14) extending the 2017 tax cuts and reducing spending.",
+            "sources": [
+              "https://ballotpedia.org/Monica_De_La_Cruz"
+            ]
+          },
+          {
+            "politician_id": "e3cfee5b-29ab-427b-adc9-acd97e4b0f9a",
+            "name": "Pete Sessions",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14) extending the 2017 tax cuts and reducing spending.",
+            "sources": [
+              "https://ballotpedia.org/Pete_Sessions"
+            ]
+          },
+          {
+            "politician_id": "510f7802-7b58-4e4a-9824-37e169e65680",
+            "name": "Beth Van Duyne",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14) extending the 2017 tax cuts and reducing spending.",
+            "sources": [
+              "https://ballotpedia.org/Beth_Van_Duyne"
+            ]
+          },
+          {
+            "politician_id": "42e2edff-6da4-49c2-ba60-fd4acbb326f7",
+            "name": "Roger Williams",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14) extending the 2017 tax cuts and reducing spending.",
+            "sources": [
+              "https://ballotpedia.org/Roger_Williams_(Texas)"
+            ]
+          },
+          {
+            "politician_id": "4b7c5474-9a09-4e12-8f74-17d5748909b3",
+            "name": "Brandon Gill",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14) extending the 2017 tax cuts and reducing spending.",
+            "sources": [
+              "https://ballotpedia.org/Brandon_Gill"
+            ]
+          },
+          {
+            "politician_id": "4e29212d-3ff9-42fc-bcd8-817ad6fd90d7",
+            "name": "Michael Cloud",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14) extending the 2017 tax cuts and reducing spending.",
+            "sources": [
+              "https://ballotpedia.org/Michael_Cloud_(Texas)"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "ANCHORED",
+        "generic_rows": 0,
+        "rows": 4,
+        "politicians": 4,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "tx"
+        ],
+        "topic_names": [
+          "Taxes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14, passed 218-214) extending the 2017 tax cuts and reducing spending.",
+        "members": [
+          {
+            "politician_id": "65013b5e-faf5-458a-abc7-24cd61e32bdb",
+            "name": "Keith Self",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14, passed 218-214) extending the 2017 tax cuts and reducing spending.",
+            "sources": [
+              "https://ballotpedia.org/Keith_Self"
+            ]
+          },
+          {
+            "politician_id": "c6187c67-fa60-4fa2-917f-543cd7fc441f",
+            "name": "Pat Fallon",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14, passed 218-214) extending the 2017 tax cuts and reducing spending.",
+            "sources": [
+              "https://ballotpedia.org/Pat_Fallon"
+            ]
+          },
+          {
+            "politician_id": "d141e4b7-f9a7-4ab0-927a-ba08348eab13",
+            "name": "Lance Gooden",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14, passed 218-214) extending the 2017 tax cuts and reducing spending.",
+            "sources": [
+              "https://ballotpedia.org/Lance_Gooden"
+            ]
+          },
+          {
+            "politician_id": "bb7b3620-83cb-4b88-a823-95a8e09f6e46",
+            "name": "Jake Ellzey",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14, passed 218-214) extending the 2017 tax cuts and reducing spending.",
+            "sources": [
+              "https://ballotpedia.org/Jake_Ellzey"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "ANCHORED",
+        "generic_rows": 0,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "tx"
+        ],
+        "topic_names": [
+          "Taxes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14) extending the 2017 tax cuts while reducing federal spending -- cut-taxes-and-scale-back-services.",
+        "members": [
+          {
+            "politician_id": "4b04c042-bae9-456a-8ebc-e84e11397b23",
+            "name": "August Pfluger",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14) extending the 2017 tax cuts while reducing federal spending -- cut-taxes-and-scale-back-services.",
+            "sources": [
+              "https://ballotpedia.org/August_Pfluger"
+            ]
+          },
+          {
+            "politician_id": "a0bc977b-71c6-4973-9082-3cc009445a02",
+            "name": "Troy Nehls",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Voted Yea on the 2025 budget reconciliation act (H. Con. Res. 14) extending the 2017 tax cuts while reducing federal spending -- cut-taxes-and-scale-back-services.",
+            "sources": [
+              "https://ballotpedia.org/Troy_Nehls"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "ANCHORED",
+        "generic_rows": 0,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "tx"
+        ],
+        "topic_names": [
+          "Deportation"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Ballotpedia Key votes (119th Congress): voted Yea on the Laken Riley Act, which mandates detention/removal of undocumented immigrants charged with certain crimes -- prioritizing deportation of those with criminal records.",
+        "members": [
+          {
+            "politician_id": "c4ad307f-b38a-409c-8190-8dedad609d88",
+            "name": "Brian Babin",
+            "topic": "Deportation",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Ballotpedia Key votes (119th Congress): voted Yea on the Laken Riley Act, which mandates detention/removal of undocumented immigrants charged with certain crimes -- prioritizing deportation of those with criminal records.",
+            "sources": [
+              "https://ballotpedia.org/Brian_Babin"
+            ]
+          },
+          {
+            "politician_id": "2aa44302-0cd5-4ad1-9c43-557bb99bb88b",
+            "name": "John Carter",
+            "topic": "Deportation",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Ballotpedia Key votes (119th Congress): voted Yea on the Laken Riley Act, which mandates detention/removal of undocumented immigrants charged with certain crimes -- prioritizing deportation of those with criminal records.",
+            "sources": [
+              "https://ballotpedia.org/John_Carter_(Texas)"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "ANCHORED",
+        "generic_rows": 0,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "tx"
+        ],
+        "topic_names": [
+          "Voting Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Ballotpedia Key votes (119th Congress): voted Yea on the SAVE Act, which requires documentary proof of citizenship to register to vote -- a strict voter-eligibility/ID requirement.",
+        "members": [
+          {
+            "politician_id": "c4ad307f-b38a-409c-8190-8dedad609d88",
+            "name": "Brian Babin",
+            "topic": "Voting Rights",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Ballotpedia Key votes (119th Congress): voted Yea on the SAVE Act, which requires documentary proof of citizenship to register to vote -- a strict voter-eligibility/ID requirement.",
+            "sources": [
+              "https://ballotpedia.org/Brian_Babin"
+            ]
+          },
+          {
+            "politician_id": "2aa44302-0cd5-4ad1-9c43-557bb99bb88b",
+            "name": "John Carter",
+            "topic": "Voting Rights",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Ballotpedia Key votes (119th Congress): voted Yea on the SAVE Act, which requires documentary proof of citizenship to register to vote -- a strict voter-eligibility/ID requirement.",
+            "sources": [
+              "https://ballotpedia.org/John_Carter_(Texas)"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "ANCHORED",
+        "generic_rows": 0,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "tx"
+        ],
+        "topic_names": [
+          "Trans Athletes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Ballotpedia Key votes (119th Congress): voted Yea on the Protection of Women and Girls in Sports Act of 2025, requiring athletes to compete on teams matching biological sex assigned at birth.",
+        "members": [
+          {
+            "politician_id": "c4ad307f-b38a-409c-8190-8dedad609d88",
+            "name": "Brian Babin",
+            "topic": "Trans Athletes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Ballotpedia Key votes (119th Congress): voted Yea on the Protection of Women and Girls in Sports Act of 2025, requiring athletes to compete on teams matching biological sex assigned at birth.",
+            "sources": [
+              "https://ballotpedia.org/Brian_Babin"
+            ]
+          },
+          {
+            "politician_id": "2aa44302-0cd5-4ad1-9c43-557bb99bb88b",
+            "name": "John Carter",
+            "topic": "Trans Athletes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Ballotpedia Key votes (119th Congress): voted Yea on the Protection of Women and Girls in Sports Act of 2025, requiring athletes to compete on teams matching biological sex assigned at birth.",
+            "sources": [
+              "https://ballotpedia.org/John_Carter_(Texas)"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "ANCHORED",
+        "generic_rows": 0,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "tx"
+        ],
+        "topic_names": [
+          "Taxes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Ballotpedia Key votes (119th Congress): voted Yea on the 2025 budget reconciliation act (H.R.1, Title II), which cuts taxes -- favoring lower taxes with reduced public spending.",
+        "members": [
+          {
+            "politician_id": "c4ad307f-b38a-409c-8190-8dedad609d88",
+            "name": "Brian Babin",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Ballotpedia Key votes (119th Congress): voted Yea on the 2025 budget reconciliation act (H.R.1, Title II), which cuts taxes -- favoring lower taxes with reduced public spending.",
+            "sources": [
+              "https://ballotpedia.org/Brian_Babin"
+            ]
+          },
+          {
+            "politician_id": "2aa44302-0cd5-4ad1-9c43-557bb99bb88b",
+            "name": "John Carter",
+            "topic": "Taxes",
+            "value": "4.0",
+            "state": "tx",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": true,
+            "reasoning": "Ballotpedia Key votes (119th Congress): voted Yea on the 2025 budget reconciliation act (H.R.1, Title II), which cuts taxes -- favoring lower taxes with reduced public spending.",
+            "sources": [
+              "https://ballotpedia.org/John_Carter_(Texas)"
+            ]
+          }
+        ]
+      }
+    ],
+    "SKELETON": [
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "or"
+        ],
+        "topic_names": [
+          "Trans Athletes"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Voted in favor of measures restricting transgender athletes in school sports; consistent conservative social position. https://ballotpedia.org/Kim_Thatcher",
+        "members": [
+          {
+            "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515",
+            "name": "Kim Thatcher",
+            "topic": "Trans Athletes",
+            "value": "5.0",
+            "state": "or",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Voted in favor of measures restricting transgender athletes in school sports; consistent conservative social position. https://ballotpedia.org/Kim_Thatcher",
+            "sources": [
+              "https://ballotpedia.org/Kim_Thatcher"
+            ]
+          },
+          {
+            "politician_id": "252a2adf-68a5-4b5a-9024-d5635e2fbd88",
+            "name": "Mike McLane",
+            "topic": "Trans Athletes",
+            "value": "5.0",
+            "state": "or",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Voted in favor of measures restricting transgender athletes in school sports; consistent conservative social position. https://ballotpedia.org/Mike_McLane",
+            "sources": [
+              "https://ballotpedia.org/Mike_McLane"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "or"
+        ],
+        "topic_names": [
+          "Civil Rights"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Hillsboro district. https://ballotpedia.org/Nathan_Sosa",
+        "members": [
+          {
+            "politician_id": "f2bc3bbf-0d29-4ad9-b675-9c53cf081969",
+            "name": "Nathan Sosa",
+            "topic": "Civil Rights",
+            "value": "1.0",
+            "state": "or",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Hillsboro district. https://ballotpedia.org/Nathan_Sosa",
+            "sources": [
+              "https://ballotpedia.org/Nathan_Sosa"
+            ]
+          },
+          {
+            "politician_id": "0f7439ad-5832-42e9-a1c5-75f1720e14d3",
+            "name": "Travis Nelson",
+            "topic": "Civil Rights",
+            "value": "1.0",
+            "state": "or",
+            "office": "Representative",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Portland district. https://ballotpedia.org/Travis_Nelson",
+            "sources": [
+              "https://ballotpedia.org/Travis_Nelson"
+            ]
+          }
+        ]
+      }
+    ],
+    "NEAR": [
+      {
+        "anchor_class": "GENERIC",
+        "generic_rows": 2,
+        "rows": 2,
+        "politicians": 2,
+        "topics": 1,
+        "cross_topic": false,
+        "cross_state": false,
+        "states": [
+          "or"
+        ],
+        "topic_names": [
+          "Campaign Finance"
+        ],
+        "visibility": [
+          "seated"
+        ],
+        "sample": "Supported campaign finance transparency; backed measures expanding donor disclosure requirements as part of Democratic caucus agenda. https://ballotpedia.org/Floyd_Prozanski",
+        "members": [
+          {
+            "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378",
+            "name": "Floyd Prozanski",
+            "topic": "Campaign Finance",
+            "value": "1.0",
+            "state": "or",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Supported campaign finance transparency; backed measures expanding donor disclosure requirements as part of Democratic caucus agenda. https://ballotpedia.org/Floyd_Prozanski",
+            "sources": [
+              "https://ballotpedia.org/Floyd_Prozanski"
+            ]
+          },
+          {
+            "politician_id": "1ca1abf1-9523-499c-b644-0b32c61257c6",
+            "name": "Sara Gelser Blouin",
+            "topic": "Campaign Finance",
+            "value": "1.0",
+            "state": "or",
+            "office": "Senator",
+            "visibility": "seated",
+            "names_instrument": false,
+            "reasoning": "Supported campaign finance transparency measures; backed donor disclosure requirements as part of Democratic caucus agenda. https://ballotpedia.org/Sara_Gelser_Blouin",
+            "sources": [
+              "https://ballotpedia.org/Sara_Gelser_Blouin"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "actionable_generic_rows": 6,
+  "clustered_rows": 29
+}
