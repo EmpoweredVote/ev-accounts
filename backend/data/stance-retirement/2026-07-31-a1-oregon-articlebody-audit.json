@@ -1,0 +1,2273 @@
+{
+ "audited": "2026-07-31",
+ "cohort": "A1 Oregon — the 144 rows left after migration 1507",
+ "method": "Fetched each cited Ballotpedia page and read ONLY the article body (#mw-content-text, script/style removed). Extracted DISTINCTIVE terms per row (multi-word capitalised phrases, hyphenated compounds, rare policy nouns), discarded any term appearing on >25% of the 68-page corpus, and discarded IDENTITY terms (county, town, chamber title, alma mater) which appear because it is that person's page and prove nothing about the claim. A row FAILS when none of its distinctive claim terms appear.",
+ "guards": [
+  "Chrome is ~10% of article-body text; stripping RAW HTML instead pulls in the whole mega-menu and was the bug that invalidated the first attempt.",
+  "Article bodies under 3000 chars mean EXTRACTION failed, not that terms are absent. 5 pages hit this and are excluded from both the corpus and the verdicts (9 rows).",
+  "Ballotpedia rate-limits silently: parallel fetches return HTTP 202 with an empty body and r.ok is TRUE. All fetches here were serial at 1.2-1.4s and every page verified at status 200 with a substantial body."
+ ],
+ "consistency_check": "The same templated \"May 2023 Senate Republican walkout\" sentence was applied to six people. \"walkout\" is present on exactly the three seated before 2023 (Thatcher, Hayden, Weber) and absent on the three seated in 2025 (Starr, Linthicum, Drazan). The test separates true from false instances of an identical claim.",
+ "tallies": {
+  "CITATION_FAILS": 102,
+  "UNTESTABLE": 27,
+  "PAGE_UNREADABLE": 9,
+  "PARTIAL_SUPPORT": 6
+ },
+ "unreadable_pages": [
+  "/Rob_Wagner",
+  "/James_Manning",
+  "/Travis_Nelson",
+  "/Nathan_Sosa",
+  "/Paul_Evans"
+ ],
+ "distinctive_terms": [
+  "cap-and-trade",
+  "job-killing",
+  "walkout",
+  "government-run",
+  "market-based",
+  "medicaid",
+  "sanctuary",
+  "Corporate Activity Tax",
+  "anti-tax",
+  "Voted YES",
+  "anti-discrimination",
+  "quorum",
+  "equity-focused",
+  "Respect for Marriage Act",
+  "voucher",
+  "redistricting",
+  "middle-class",
+  "parity",
+  "medicare",
+  "Housing First",
+  "same-day",
+  "community-centered",
+  "same-sex",
+  "codification",
+  "democratic-controlled",
+  "high-income",
+  "surtax",
+  "Oregon Health Plan",
+  "profiling",
+  "childcare",
+  "subsidies",
+  "services-first",
+  "criminalization",
+  "decriminalization",
+  "state-level",
+  "For the People Act",
+  "Health Protection Act",
+  "Opposed Oregon Health Plan",
+  "divesting",
+  "Supported Oregon Health Plan",
+  "government-mandated",
+  "immigrant-protective",
+  "low-income",
+  "Supported Medicaid",
+  "immigrant-supportive"
+ ],
+ "rows": [
+  {
+   "pid": "402a00be-71c3-4584-b29f-bf493365bffb",
+   "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Christine Drazan",
+   "topic": "Climate Change and Environmental Protection",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Christine_Drazan",
+   "verdict": "PARTIAL_SUPPORT",
+   "distinctiveTerms": [
+    "cap-and-trade",
+    "job-killing",
+    "walkout"
+   ],
+   "found": [
+    "cap-and-trade"
+   ],
+   "droppedAsCommon": [
+    "Senate Republican"
+   ],
+   "reasoning": "Participated in May 2023 Senate Republican walkout opposing climate legislation; as 2022 gubernatorial candidate, opposed cap-and-trade and clean energy mandates as job-killing regulations. https://ballotpedia.org/Christ"
+  },
+  {
+   "pid": "402a00be-71c3-4584-b29f-bf493365bffb",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Christine Drazan",
+   "topic": "Healthcare Access",
+   "value": "4.0",
+   "url": "https://ballotpedia.org/Christine_Drazan",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "government-run",
+    "market-based",
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Opposed government-run healthcare mandates as gubernatorial candidate; advocated for market-based healthcare reform; voted against Medicaid expansion requirements. https://ballotpedia.org/Christine_Drazan"
+  },
+  {
+   "pid": "402a00be-71c3-4584-b29f-bf493365bffb",
+   "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Christine Drazan",
+   "topic": "Immigration and Treatment of Immigrants",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Christine_Drazan",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "sanctuary"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Opposed sanctuary policies as 2022 gubernatorial candidate; supported stricter immigration enforcement; advocated for border security measures. https://ballotpedia.org/Christine_Drazan"
+  },
+  {
+   "pid": "0c228d44-a876-4371-bdfd-13fdfd8ea9b6",
+   "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Bruce Starr",
+   "topic": "Climate Change and Environmental Protection",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Bruce_Starr",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "walkout"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "Senate Republican",
+    "Washington County"
+   ],
+   "reasoning": "Participated in May 2023 Senate Republican walkout opposing climate legislation; opposed clean energy mandates affecting Washington County businesses. https://ballotpedia.org/Bruce_Starr"
+  },
+  {
+   "pid": "35d2729c-b754-4fad-b124-10ee437a116f",
+   "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Alek Skarlatos",
+   "topic": "Immigration and Treatment of Immigrants",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Alek_Skarlatos",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported enhanced border security and stricter immigration enforcement during 2020 and 2022 CD-4 Congressional campaigns; aligned with conservative immigration policy positions. https://ballotpedia.org/Alek_Skarlatos"
+  },
+  {
+   "pid": "f3fb09eb-adb0-4543-b6a2-32f90003569b",
+   "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Darin Harbick",
+   "topic": "Taxation and Public Spending",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Darin_Harbick",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Corporate Activity Tax",
+    "anti-tax"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "Lane County"
+   ],
+   "reasoning": "Anti-tax voting record as Republican from rural Lane County; opposed business tax measures including Corporate Activity Tax. https://ballotpedia.org/Darin_Harbick"
+  },
+  {
+   "pid": "50eab431-7b51-4a56-acaa-61af3509c298",
+   "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Diane Linthicum",
+   "topic": "Climate Change and Environmental Protection",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Diane_Linthicum",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "walkout"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "Senate Republican",
+    "Klamath Falls"
+   ],
+   "reasoning": "Participated in May 2023 Senate Republican walkout opposing climate legislation; represents agricultural and timber Klamath Falls region dependent on water rights and resource use. https://ballotpedia.org/Diane_Linthicum"
+  },
+  {
+   "pid": "763d9c0d-e1a4-4ddd-b919-b1a70d1f99ac",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Lisa Fragala",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Lisa_Fragala",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Voted YES",
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Voted YES on anti-discrimination and civil rights measures; consistent progressive voting record in the Oregon House from Eugene district. https://ballotpedia.org/Lisa_Fragala"
+  },
+  {
+   "pid": "763d9c0d-e1a4-4ddd-b919-b1a70d1f99ac",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Lisa Fragala",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Lisa_Fragala",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Voted for healthcare access expansion measures including Medicaid coverage expansion bills. https://ballotpedia.org/Lisa_Fragala"
+  },
+  {
+   "pid": "bcc608a3-abf0-4a30-9c4b-0721dcf04be5",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Mari Watanabe",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Mari_Watanabe",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Portland/Multnomah district. https://ballotpedia.org/Mari_Watanabe"
+  },
+  {
+   "pid": "bcc608a3-abf0-4a30-9c4b-0721dcf04be5",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mari Watanabe",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Mari_Watanabe",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported healthcare access expansion; voted for Medicaid expansion measures. https://ballotpedia.org/Mari_Watanabe"
+  },
+  {
+   "pid": "13ce589f-756e-4968-881f-c8cc95dae404",
+   "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Noah Robinson",
+   "topic": "Climate Change and Environmental Protection",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Noah_Robinson_(Oregon)",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "cap-and-trade",
+    "walkout",
+    "quorum"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "Senate Republican"
+   ],
+   "reasoning": "Participated in May 2023 Senate Republican walkout blocking quorum to prevent passage of climate and gun legislation; opposed cap-and-trade style climate bills. https://ballotpedia.org/Noah_Robinson_(Oregon)"
+  },
+  {
+   "pid": "13ce589f-756e-4968-881f-c8cc95dae404",
+   "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Noah Robinson",
+   "topic": "Taxation and Public Spending",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Noah_Robinson_(Oregon)",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-tax"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Voted NO on tax increase measures; consistent conservative anti-tax voting record as Republican senator from rural southern Oregon. https://ballotpedia.org/Noah_Robinson_(Oregon)"
+  },
+  {
+   "pid": "2b9da845-9fab-406f-97c3-1afe895c254b",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Shannon Isadore",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Shannon_Isadore",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination",
+    "equity-focused"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; Portland metro Democrat with documented equity-focused voting record. https://ballotpedia.org/Shannon_Isadore"
+  },
+  {
+   "pid": "2b9da845-9fab-406f-97c3-1afe895c254b",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Shannon Isadore",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Shannon_Isadore",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported healthcare access expansion; voted for Medicaid expansion and healthcare measures. https://ballotpedia.org/Shannon_Isadore"
+  },
+  {
+   "pid": "86d23630-36ff-48a7-b2ac-6071a0cabd64",
+   "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Todd Nash",
+   "topic": "Climate Change and Environmental Protection",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Todd_Nash",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "walkout"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "Eastern Oregon"
+   ],
+   "reasoning": "Rancher and livestock industry representative; participated in 2023 Republican walkout opposing climate legislation; strongly opposes regulations affecting agriculture and Eastern Oregon water rights. https://ballotpedia"
+  },
+  {
+   "pid": "0bffa985-c83b-41c3-8901-19b7dac86cd7",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "April Dobson",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/April_Dobson",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Portland district. https://ballotpedia.org/April_Dobson"
+  },
+  {
+   "pid": "e0b21a1d-8c55-4aa9-a58a-d6b69db9f716",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Lamar Wise",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Lamar_Wise",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination",
+    "equity-focused"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; Portland SE district with equity-focused progressive voting record. https://ballotpedia.org/Lamar_Wise"
+  },
+  {
+   "pid": "7360da53-a6df-42d9-89b4-fff76af23de6",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Lesly Muñoz",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Lesly_Munoz",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record in the Oregon House from Salem district. https://ballotpedia.org/Lesly_Munoz"
+  },
+  {
+   "pid": "0d5a4aeb-121f-461c-b379-a8a00c3b1ba1",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Sue Rieke Smith",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Sue_Rieke_Smith",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported healthcare access expansion measures; voted for Medicaid expansion in the Oregon House. https://ballotpedia.org/Sue_Rieke_Smith"
+  },
+  {
+   "pid": "d3371858-924e-4f76-b756-f2d7bb3c9b8d",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Willy Chotzen",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Willy_Chotzen",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Portland NE district. https://ballotpedia.org/Willy_Chotzen"
+  },
+  {
+   "pid": "15dbbf1b-da3d-4fb9-8fc5-67b734e7979e",
+   "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Dan Rayfield",
+   "topic": "Medicare / Medicaid",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Dan_Rayfield",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Rayfield consistently voted against Medicaid cuts; supported ACA protections; backed Medicaid expansion in Oregon throughout his legislative career. https://ballotpedia.org/Dan_Rayfield"
+  },
+  {
+   "pid": "15dbbf1b-da3d-4fb9-8fc5-67b734e7979e",
+   "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Dan Rayfield",
+   "topic": "Same-Sex Marriage",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Dan_Rayfield",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Respect for Marriage Act"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Rayfield voted for and championed LGBTQ+ rights legislation including marriage equality protections; backed Respect for Marriage Act equivalent provisions in Oregon. https://ballotpedia.org/Dan_Rayfield"
+  },
+  {
+   "pid": "15dbbf1b-da3d-4fb9-8fc5-67b734e7979e",
+   "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+   "name": "Dan Rayfield",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Dan_Rayfield",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "voucher"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "House Speaker"
+   ],
+   "reasoning": "Rayfield as House Speaker blocked school voucher legislation; strongly supports public school funding; voted against charter school expansion that would drain public funds. https://ballotpedia.org/Dan_Rayfield"
+  },
+  {
+   "pid": "15dbbf1b-da3d-4fb9-8fc5-67b734e7979e",
+   "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+   "name": "Dan Rayfield",
+   "topic": "State Redistricting and Gerrymandering",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Dan_Rayfield",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "redistricting"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "House Speaker"
+   ],
+   "reasoning": "As House Speaker, Rayfield oversaw 2021 Oregon redistricting under Democratic majority; backed fair maps principles; supported independent commission in future cycles. https://ballotpedia.org/Dan_Rayfield"
+  },
+  {
+   "pid": "15dbbf1b-da3d-4fb9-8fc5-67b734e7979e",
+   "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Dan Rayfield",
+   "topic": "Taxation and Public Spending",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Dan_Rayfield",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "middle-class"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "House Speaker"
+   ],
+   "reasoning": "Rayfield supported corporate minimum tax increase and progressive tax reforms as House Speaker; backed revenue measures to fund services without middle-class tax hikes. https://ballotpedia.org/Dan_Rayfield"
+  },
+  {
+   "pid": "c712d9cb-6a42-4fc6-b025-67cd5064605f",
+   "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Elizabeth Steiner",
+   "topic": "Affordable Housing",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Elizabeth_Steiner",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Steiner voted for housing production and affordability bills as state senator; supported increased housing funding; backed zoning reform measures during legislative career. https://ballotpedia.org/Elizabeth_Steiner"
+  },
+  {
+   "pid": "c712d9cb-6a42-4fc6-b025-67cd5064605f",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Elizabeth Steiner",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Elizabeth_Steiner",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Steiner voted for LGBTQ+ rights legislation including anti-discrimination protections throughout her Senate career; championed gender equity measures; backed civil rights expansions. https://ballotpedia.org/Elizabeth_Ste"
+  },
+  {
+   "pid": "c712d9cb-6a42-4fc6-b025-67cd5064605f",
+   "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Elizabeth Steiner",
+   "topic": "Climate Change and Environmental Protection",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Elizabeth_Steiner",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Steiner voted for multiple climate bills as state senator including clean electricity standards; as Treasurer implements ESG investment policies for Oregon state funds; supported climate legislation throughout Senate car"
+  },
+  {
+   "pid": "c712d9cb-6a42-4fc6-b025-67cd5064605f",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Elizabeth Steiner",
+   "topic": "Healthcare Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Elizabeth_Steiner",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid",
+    "parity"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Steiner as a physician and state senator was a leading champion of healthcare access legislation; voted for Medicaid expansion, mental health parity, and ACA protections; championed healthcare for undocumented Oregonians"
+  },
+  {
+   "pid": "c712d9cb-6a42-4fc6-b025-67cd5064605f",
+   "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Elizabeth Steiner",
+   "topic": "Immigration and Treatment of Immigrants",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Elizabeth_Steiner",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "sanctuary"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Steiner voted for Oregon sanctuary state protections and immigrant healthcare access bills during her Senate tenure; backed DACA protections. https://ballotpedia.org/Elizabeth_Steiner"
+  },
+  {
+   "pid": "c712d9cb-6a42-4fc6-b025-67cd5064605f",
+   "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Elizabeth Steiner",
+   "topic": "Medicare / Medicaid",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Elizabeth_Steiner",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid",
+    "medicare"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "physician-legislator"
+   ],
+   "reasoning": "Steiner as physician-legislator championed Medicaid expansion and Medicare protections; among Oregon's leading voices against Medicaid cuts; backed universal coverage approaches. https://ballotpedia.org/Elizabeth_Steiner"
+  },
+  {
+   "pid": "c712d9cb-6a42-4fc6-b025-67cd5064605f",
+   "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+   "name": "Elizabeth Steiner",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Elizabeth_Steiner",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "voucher"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Steiner voted against school voucher programs during her state Senate tenure; strongly supports fully funding Oregon public education system. https://ballotpedia.org/Elizabeth_Steiner"
+  },
+  {
+   "pid": "c712d9cb-6a42-4fc6-b025-67cd5064605f",
+   "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Elizabeth Steiner",
+   "topic": "Taxation and Public Spending",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Elizabeth_Steiner",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Steiner as state senator voted for corporate tax increases and progressive revenue measures; as Treasurer manages Oregon's debt and investment portfolio with responsible fiscal approach; supports fair tax system. https:/"
+  },
+  {
+   "pid": "13dcf1a8-c0bf-4e2f-92aa-46637182b42a",
+   "tid": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "name": "Maxine Dexter",
+   "topic": "Criminalization of Homelessness",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Maxine_Dexter",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Housing First"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Dexter supported Housing First approach as OR senator; backed OR HB 2007 (2023) allowing camping when no shelter is available; opposed Measure 110 repeal. https://ballotpedia.org/Maxine_Dexter"
+  },
+  {
+   "pid": "13dcf1a8-c0bf-4e2f-92aa-46637182b42a",
+   "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "name": "Maxine Dexter",
+   "topic": "Voting Rights and Electoral Integrity",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Maxine_Dexter",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "same-day"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Dexter backed Oregon automatic voter registration expansion and same-day registration as state senator; voted YES on voting rights bills. https://ballotpedia.org/Maxine_Dexter"
+  },
+  {
+   "pid": "8548989d-ff40-4b25-bb42-e1a7cbb03c88",
+   "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Christina Stephenson",
+   "topic": "Affordable Housing",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Christina_Stephenson",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Stephenson as state representative voted for affordable housing bills and zoning reform; supported housing investments as part of addressing worker housing needs. https://ballotpedia.org/Christina_Stephenson"
+  },
+  {
+   "pid": "8548989d-ff40-4b25-bb42-e1a7cbb03c88",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Christina Stephenson",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Christina_Stephenson",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Stephenson as state representative voted for healthcare access bills including Medicaid expansion; backed reproductive healthcare access; supported mental health funding increases. https://ballotpedia.org/Christina_Steph"
+  },
+  {
+   "pid": "8548989d-ff40-4b25-bb42-e1a7cbb03c88",
+   "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "name": "Christina Stephenson",
+   "topic": "Public Safety Approach",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Christina_Stephenson",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "community-centered"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Stephenson as civil rights attorney supported police accountability reforms; backed community-centered public safety approach; voted for accountability legislation as state representative. https://ballotpedia.org/Christi"
+  },
+  {
+   "pid": "8548989d-ff40-4b25-bb42-e1a7cbb03c88",
+   "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Christina Stephenson",
+   "topic": "Same-Sex Marriage",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Christina_Stephenson",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Stephenson has supported marriage equality and LGBTQ+ rights throughout her career as civil rights attorney and state representative; voted for anti-discrimination legislation. https://ballotpedia.org/Christina_Stephenso"
+  },
+  {
+   "pid": "8548989d-ff40-4b25-bb42-e1a7cbb03c88",
+   "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Christina Stephenson",
+   "topic": "Taxation and Public Spending",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Christina_Stephenson",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Stephenson as state representative supported progressive tax policies including corporate tax reform; backed revenue measures to fund worker protections and public services. https://ballotpedia.org/Christina_Stephenson"
+  },
+  {
+   "pid": "7aad2a83-2f05-4570-aa7a-eb7a8c602ebd",
+   "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Janelle Bynum",
+   "topic": "Same-Sex Marriage",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Janelle_Bynum",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Respect for Marriage Act",
+    "same-sex",
+    "codification"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Bynum as OR state rep voted to protect same-sex marriage rights; supports Respect for Marriage Act codification at federal level. https://ballotpedia.org/Janelle_Bynum"
+  },
+  {
+   "pid": "7aad2a83-2f05-4570-aa7a-eb7a8c602ebd",
+   "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Janelle Bynum",
+   "topic": "Taxation and Public Spending",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Janelle_Bynum",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Bynum as OR state rep voted for progressive tax measures targeting higher incomes; supported corporate minimum tax proposals. https://ballotpedia.org/Janelle_Bynum"
+  },
+  {
+   "pid": "66c3bd97-94d1-4287-b1b8-86605a38cb97",
+   "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+   "name": "Tina Kotek",
+   "topic": "State Redistricting and Gerrymandering",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Tina_Kotek",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "democratic-controlled",
+    "redistricting"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "House Speaker"
+   ],
+   "reasoning": "As House Speaker, Kotek oversaw 2021 redistricting process; supported independent commission approach but worked within Democratic-controlled legislature; backed fair maps. https://ballotpedia.org/Tina_Kotek"
+  },
+  {
+   "pid": "66c3bd97-94d1-4287-b1b8-86605a38cb97",
+   "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Tina Kotek",
+   "topic": "Taxation and Public Spending",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Tina_Kotek",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "high-income",
+    "surtax"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Kotek signed HB 2433 (2023) increasing corporate minimum tax and high-income surtax; supports progressive taxation; backed Measure 118 concept of revenue sharing but acknowledged implementation concerns. https://ballotpe"
+  },
+  {
+   "pid": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd",
+   "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "name": "Lew Frederick",
+   "topic": "Campaign Finance Reform",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Lew_Frederick",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported campaign finance reform and disclosure requirements; backed measures reducing dark money influence in Oregon elections. https://ballotpedia.org/Lew_Frederick"
+  },
+  {
+   "pid": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Lew Frederick",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Lew_Frederick",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "NAACP Oregon",
+    "long-serving"
+   ],
+   "reasoning": "Long-serving civil rights champion; has authored and championed civil rights legislation including racial equity and anti-discrimination measures throughout career; NAACP Oregon chapter president before entering politics"
+  },
+  {
+   "pid": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Lew Frederick",
+   "topic": "Healthcare Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Lew_Frederick",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Oregon Health Plan"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported universal healthcare access; voted YES on Oregon Health Plan expansion and healthcare equity bills addressing disparities in Black communities. https://ballotpedia.org/Lew_Frederick"
+  },
+  {
+   "pid": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd",
+   "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Lew Frederick",
+   "topic": "Immigration and Treatment of Immigrants",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Lew_Frederick",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "sanctuary",
+    "profiling"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported immigrant rights and sanctuary protections; backed measures preventing racial profiling in immigration enforcement. https://ballotpedia.org/Lew_Frederick"
+  },
+  {
+   "pid": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd",
+   "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "name": "Lew Frederick",
+   "topic": "Voting Rights and Electoral Integrity",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Lew_Frederick",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Champion of voting rights; supported automatic voter registration, vote-by-mail expansion, and opposed voter suppression measures. https://ballotpedia.org/Lew_Frederick"
+  },
+  {
+   "pid": "1ca1abf1-9523-499c-b644-0b32c61257c6",
+   "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "name": "Sara Gelser Blouin",
+   "topic": "Campaign Finance Reform",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Sara_Gelser_Blouin",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported campaign finance transparency measures; backed donor disclosure requirements as part of Democratic caucus agenda. https://ballotpedia.org/Sara_Gelser_Blouin"
+  },
+  {
+   "pid": "1ca1abf1-9523-499c-b644-0b32c61257c6",
+   "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Sara Gelser Blouin",
+   "topic": "Childcare Affordability & Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Sara_Gelser_Blouin",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "childcare",
+    "subsidies"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Sponsored legislation expanding childcare access and subsidies for working families; consistent advocate for early childhood investment. https://ballotpedia.org/Sara_Gelser_Blouin"
+  },
+  {
+   "pid": "1ca1abf1-9523-499c-b644-0b32c61257c6",
+   "tid": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "name": "Sara Gelser Blouin",
+   "topic": "Criminalization of Homelessness",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Sara_Gelser_Blouin",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "services-first",
+    "criminalization",
+    "decriminalization"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Opposed criminalization of homelessness; authored legislation expanding services-first approach to homelessness; opposed Measure 110 (drug decriminalization) reversal. https://ballotpedia.org/Sara_Gelser_Blouin"
+  },
+  {
+   "pid": "1ca1abf1-9523-499c-b644-0b32c61257c6",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Sara Gelser Blouin",
+   "topic": "Healthcare Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Sara_Gelser_Blouin",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Oregon Health Plan"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Champion of mental health services funding and Oregon Health Plan expansion; led efforts to reform Oregon's foster care and developmental disability services systems. https://ballotpedia.org/Sara_Gelser_Blouin"
+  },
+  {
+   "pid": "1ca1abf1-9523-499c-b644-0b32c61257c6",
+   "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Sara Gelser Blouin",
+   "topic": "Immigration and Treatment of Immigrants",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Sara_Gelser_Blouin",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "state-level"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported immigrant protections; voted YES on measures protecting immigrant communities from state-level enforcement collaboration. https://ballotpedia.org/Sara_Gelser_Blouin"
+  },
+  {
+   "pid": "5f6c498b-87dd-48fe-b744-62c8dced2ac3",
+   "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "name": "Andrea Salinas",
+   "topic": "Campaign Finance Reform",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Andrea_Salinas",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "For the People Act"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Salinas voted YES on For the People Act (H.R. 1, 2021) equivalent state bills; supports campaign finance disclosure and public financing. https://ballotpedia.org/Andrea_Salinas"
+  },
+  {
+   "pid": "5f6c498b-87dd-48fe-b744-62c8dced2ac3",
+   "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "name": "Andrea Salinas",
+   "topic": "Reproductive Rights and Abortion Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Andrea_Salinas",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Health Protection Act"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Salinas supported abortion access protections as OR state rep and ran on reproductive rights in 2022 campaign; voted YES on Women's Health Protection Act equivalent. https://ballotpedia.org/Andrea_Salinas"
+  },
+  {
+   "pid": "24398310-8e0c-487e-a11c-253e3060f77c",
+   "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Julie Fahey",
+   "topic": "Childcare Affordability & Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Julie_Fahey",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "childcare"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "House Majority Leader"
+   ],
+   "reasoning": "Supported childcare affordability measures; voted for early childhood education funding and childcare subsidy expansion as House Majority Leader. https://ballotpedia.org/Julie_Fahey"
+  },
+  {
+   "pid": "24398310-8e0c-487e-a11c-253e3060f77c",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Julie Fahey",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Julie_Fahey",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "House Majority Leader"
+   ],
+   "reasoning": "Championed civil rights and equity legislation as House Majority Leader; voted for anti-discrimination measures and police reform bills. https://ballotpedia.org/Julie_Fahey"
+  },
+  {
+   "pid": "24398310-8e0c-487e-a11c-253e3060f77c",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Julie Fahey",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Julie_Fahey",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "House Majority Leader",
+    "long-tenure"
+   ],
+   "reasoning": "Championed healthcare access expansion measures; voted for Medicaid expansion and community health programs as House Majority Leader and long-tenure Eugene rep. https://ballotpedia.org/Julie_Fahey"
+  },
+  {
+   "pid": "b548a0f7-5086-4124-a510-49ef8f60f515",
+   "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Kim Thatcher",
+   "topic": "Climate Change and Environmental Protection",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Kim_Thatcher",
+   "verdict": "PARTIAL_SUPPORT",
+   "distinctiveTerms": [
+    "cap-and-trade",
+    "walkout"
+   ],
+   "found": [
+    "walkout"
+   ],
+   "droppedAsCommon": [
+    "Senate Republican"
+   ],
+   "reasoning": "Participated in May 2023 Senate Republican walkout blocking climate legislation; opposed clean energy mandates and cap-and-trade. https://ballotpedia.org/Kim_Thatcher"
+  },
+  {
+   "pid": "b548a0f7-5086-4124-a510-49ef8f60f515",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Kim Thatcher",
+   "topic": "Healthcare Access",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Kim_Thatcher",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Opposed Oregon Health Plan",
+    "government-run"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Opposed Oregon Health Plan mandates and government-run healthcare; voted against healthcare coverage expansion bills. https://ballotpedia.org/Kim_Thatcher"
+  },
+  {
+   "pid": "b548a0f7-5086-4124-a510-49ef8f60f515",
+   "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "name": "Kim Thatcher",
+   "topic": "Public Safety Approach",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Kim_Thatcher",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "decriminalization"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported law enforcement funding and opposed Measure 110 drug decriminalization; advocated for tougher sentencing and public safety measures. https://ballotpedia.org/Kim_Thatcher"
+  },
+  {
+   "pid": "b548a0f7-5086-4124-a510-49ef8f60f515",
+   "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "name": "Kim Thatcher",
+   "topic": "Transgender Athletes",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Kim_Thatcher",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Voted in favor of measures restricting transgender athletes in school sports; consistent conservative social position. https://ballotpedia.org/Kim_Thatcher"
+  },
+  {
+   "pid": "b548a0f7-5086-4124-a510-49ef8f60f515",
+   "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "name": "Kim Thatcher",
+   "topic": "Voting Rights and Electoral Integrity",
+   "value": "4.0",
+   "url": "https://ballotpedia.org/Kim_Thatcher",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Opposed automatic voter registration; supported voter ID measures and questioned election integrity; conservative position on voting access vs. election security. https://ballotpedia.org/Kim_Thatcher"
+  },
+  {
+   "pid": "94105ea6-e6f7-4629-b30c-a8fe713e1cad",
+   "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Tobias Read",
+   "topic": "Affordable Housing",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Tobias_Read",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Read as Treasurer championed Oregon's affordable housing bond program; supported financing mechanisms for affordable housing development; backed housing production legislation as state legislator. https://ballotpedia.org"
+  },
+  {
+   "pid": "94105ea6-e6f7-4629-b30c-a8fe713e1cad",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Tobias Read",
+   "topic": "Civil Rights and Social Justice",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Tobias_Read",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Read as state legislator voted for civil rights expansions including LGBTQ+ protections; as Treasurer implemented equity requirements in state investments; backed anti-discrimination policies. https://ballotpedia.org/Tob"
+  },
+  {
+   "pid": "94105ea6-e6f7-4629-b30c-a8fe713e1cad",
+   "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Tobias Read",
+   "topic": "Climate Change and Environmental Protection",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Tobias_Read",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "divesting"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Read as Treasurer implemented Oregon's responsible investment policy for state funds including ESG criteria; supported divesting from coal; backed clean energy investment. https://ballotpedia.org/Tobias_Read"
+  },
+  {
+   "pid": "94105ea6-e6f7-4629-b30c-a8fe713e1cad",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Tobias Read",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Tobias_Read",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Read as state legislator voted for Medicaid expansion and healthcare access bills; as Treasurer championed retirement security including healthcare portability; backed ACA protections. https://ballotpedia.org/Tobias_Read"
+  },
+  {
+   "pid": "6b107b84-afbe-4141-8951-bafb65543dda",
+   "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Fred Girod",
+   "topic": "Climate Change and Environmental Protection",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Fred_Girod",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "walkout"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "Senate Republican",
+    "Senate Minority Leader"
+   ],
+   "reasoning": "Participated in May 2023 Senate Republican walkout opposing climate legislation; former Senate Minority Leader leading Republican opposition to clean energy mandates. https://ballotpedia.org/Fred_Girod"
+  },
+  {
+   "pid": "529ea93b-c234-4df5-ae22-6ba32d0ae9a4",
+   "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "name": "Kate Lieber",
+   "topic": "Campaign Finance Reform",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Kate_Lieber",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported campaign finance reform including disclosure requirements; backed measures reducing dark money in Oregon politics. https://ballotpedia.org/Kate_Lieber"
+  },
+  {
+   "pid": "529ea93b-c234-4df5-ae22-6ba32d0ae9a4",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Kate Lieber",
+   "topic": "Healthcare Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Kate_Lieber",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Supported Oregon Health Plan"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported Oregon Health Plan expansion and healthcare access; voted YES on healthcare coverage expansion bills. https://ballotpedia.org/Kate_Lieber"
+  },
+  {
+   "pid": "529ea93b-c234-4df5-ae22-6ba32d0ae9a4",
+   "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Kate Lieber",
+   "topic": "Immigration and Treatment of Immigrants",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Kate_Lieber",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported immigrant protection policies; opposed state collaboration with federal ICE enforcement; voted against immigration restriction measures. https://ballotpedia.org/Kate_Lieber"
+  },
+  {
+   "pid": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Kathleen Taylor",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Kathleen_Taylor_(Oregon)",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supports civil rights and racial equity; voted YES on anti-discrimination protections and LGBTQ+ equality measures. https://ballotpedia.org/Kathleen_Taylor_(Oregon)"
+  },
+  {
+   "pid": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Kathleen Taylor",
+   "topic": "Healthcare Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Kathleen_Taylor_(Oregon)",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Voted YES",
+    "Oregon Health Plan"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Voted YES on Oregon Health Plan expansion; supports healthcare access as a right for all Oregonians. https://ballotpedia.org/Kathleen_Taylor_(Oregon)"
+  },
+  {
+   "pid": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac",
+   "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Kathleen Taylor",
+   "topic": "Immigration and Treatment of Immigrants",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Kathleen_Taylor_(Oregon)",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "sanctuary"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported immigrant protections and sanctuary policies; backed measures protecting immigrant communities from enforcement. https://ballotpedia.org/Kathleen_Taylor_(Oregon)"
+  },
+  {
+   "pid": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac",
+   "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Kathleen Taylor",
+   "topic": "Taxation and Public Spending",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Kathleen_Taylor_(Oregon)",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Voted YES"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Voted YES on tax measures supporting public investment; backed progressive taxation for education and social services. https://ballotpedia.org/Kathleen_Taylor_(Oregon)"
+  },
+  {
+   "pid": "252a2adf-68a5-4b5a-9024-d5635e2fbd88",
+   "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Mike McLane",
+   "topic": "Climate Change and Environmental Protection",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Mike_McLane",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "cap-and-trade",
+    "walkout"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "Senate Republican",
+    "House Minority Leader"
+   ],
+   "reasoning": "Participated in May 2023 Senate Republican walkout blocking climate legislation; as former House Minority Leader, led opposition to cap-and-trade and clean energy mandates. https://ballotpedia.org/Mike_McLane"
+  },
+  {
+   "pid": "252a2adf-68a5-4b5a-9024-d5635e2fbd88",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mike McLane",
+   "topic": "Healthcare Access",
+   "value": "4.0",
+   "url": "https://ballotpedia.org/Mike_McLane",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "government-run",
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "House Minority Leader"
+   ],
+   "reasoning": "Opposed government-run healthcare mandates; voted against Medicaid expansion requirements as House Minority Leader. https://ballotpedia.org/Mike_McLane"
+  },
+  {
+   "pid": "252a2adf-68a5-4b5a-9024-d5635e2fbd88",
+   "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "name": "Mike McLane",
+   "topic": "Transgender Athletes",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Mike_McLane",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Voted in favor of measures restricting transgender athletes in school sports; consistent conservative social position. https://ballotpedia.org/Mike_McLane"
+  },
+  {
+   "pid": "d3dedaa7-bda5-4e3d-af18-6214719d6e1e",
+   "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Cedric Hayden",
+   "topic": "Climate Change and Environmental Protection",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Cedric_Hayden",
+   "verdict": "PARTIAL_SUPPORT",
+   "distinctiveTerms": [
+    "walkout"
+   ],
+   "found": [
+    "walkout"
+   ],
+   "droppedAsCommon": [
+    "Senate Republican"
+   ],
+   "reasoning": "Participated in May 2023 Senate Republican walkout to block climate legislation; opposes environmental regulations that impact rural communities and resource industries. https://ballotpedia.org/Cedric_Hayden"
+  },
+  {
+   "pid": "d3dedaa7-bda5-4e3d-af18-6214719d6e1e",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Cedric Hayden",
+   "topic": "Healthcare Access",
+   "value": "4.0",
+   "url": "https://ballotpedia.org/Cedric_Hayden",
+   "verdict": "PARTIAL_SUPPORT",
+   "distinctiveTerms": [
+    "Oregon Health Plan",
+    "government-mandated",
+    "market-based"
+   ],
+   "found": [
+    "market-based"
+   ],
+   "droppedAsCommon": [],
+   "reasoning": "Opposes government-mandated healthcare expansion; as a dentist, emphasizes market-based healthcare approaches; voted against Oregon Health Plan expansion mandates. https://ballotpedia.org/Cedric_Hayden"
+  },
+  {
+   "pid": "dcdc002c-8fd6-415a-a30a-8fc70c83d9ff",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Courtney Neron Misslin",
+   "topic": "Healthcare Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Courtney_Neron",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Voted YES",
+    "Oregon Health Plan",
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Voted YES on healthcare access expansion bills; supported Medicaid coverage and Oregon Health Plan expansion. https://ballotpedia.org/Courtney_Neron"
+  },
+  {
+   "pid": "dcdc002c-8fd6-415a-a30a-8fc70c83d9ff",
+   "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Courtney Neron Misslin",
+   "topic": "Taxation and Public Spending",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Courtney_Neron",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Voted YES"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Voted YES on tax measures supporting public services; supported revenue measures for education and social services. https://ballotpedia.org/Courtney_Neron"
+  },
+  {
+   "pid": "b6f5cd9e-a9d2-44ff-9027-0d931765f378",
+   "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "name": "Floyd Prozanski",
+   "topic": "Campaign Finance Reform",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Floyd_Prozanski",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported campaign finance transparency; backed measures expanding donor disclosure requirements as part of Democratic caucus agenda. https://ballotpedia.org/Floyd_Prozanski"
+  },
+  {
+   "pid": "b6f5cd9e-a9d2-44ff-9027-0d931765f378",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Floyd Prozanski",
+   "topic": "Healthcare Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Floyd_Prozanski",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Voted YES",
+    "Oregon Health Plan",
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Voted YES on healthcare access expansion bills; supported Medicaid expansion and Oregon Health Plan coverage. https://ballotpedia.org/Floyd_Prozanski"
+  },
+  {
+   "pid": "fa9d50e7-7e9b-4eed-b105-bf8277b51f95",
+   "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Janeen Sollman",
+   "topic": "Childcare Affordability & Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Janeen_Sollman",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "childcare"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Champion of childcare policy; sponsored legislation expanding access to affordable childcare for working families; member of childcare advocacy coalition. https://ballotpedia.org/Janeen_Sollman"
+  },
+  {
+   "pid": "fa9d50e7-7e9b-4eed-b105-bf8277b51f95",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Janeen Sollman",
+   "topic": "Healthcare Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Janeen_Sollman",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Supported Oregon Health Plan"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported Oregon Health Plan expansion and healthcare access; voted YES on healthcare coverage expansion bills. https://ballotpedia.org/Janeen_Sollman"
+  },
+  {
+   "pid": "36db8c55-4b20-408c-bd99-b8488d0ef344",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Mark Gamba",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Mark_Gamba",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Milwaukie. https://ballotpedia.org/Mark_Gamba"
+  },
+  {
+   "pid": "36db8c55-4b20-408c-bd99-b8488d0ef344",
+   "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Mark Gamba",
+   "topic": "Immigration and Treatment of Immigrants",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Mark_Gamba",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "immigrant-protective"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported welcoming immigration policies; voted for immigrant-protective measures. https://ballotpedia.org/Mark_Gamba"
+  },
+  {
+   "pid": "ca404c61-11af-43d9-9563-07dde3f7b8e7",
+   "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Nancy Nathanson",
+   "topic": "Childcare Affordability & Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Nancy_Nathanson",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "childcare"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported childcare affordability and access measures; voted for early childhood education funding in the Oregon House. https://ballotpedia.org/Nancy_Nathanson"
+  },
+  {
+   "pid": "ca404c61-11af-43d9-9563-07dde3f7b8e7",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Nancy Nathanson",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Nancy_Nathanson",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "Eugene Democratic"
+   ],
+   "reasoning": "Supported civil rights and anti-discrimination measures throughout long tenure in Eugene Democratic caucus. https://ballotpedia.org/Nancy_Nathanson"
+  },
+  {
+   "pid": "ca404c61-11af-43d9-9563-07dde3f7b8e7",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Nancy Nathanson",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Nancy_Nathanson",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "Former University of Oregon"
+   ],
+   "reasoning": "Former University of Oregon professor; consistently supported healthcare access expansion and Medicaid measures in the Oregon House. https://ballotpedia.org/Nancy_Nathanson"
+  },
+  {
+   "pid": "c5c49832-aa2d-477e-b44e-d6059a98d426",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Rob Nosse",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Rob_Nosse",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "LGBTQ+ rights champion; consistent civil rights voting record; one of Portland's most outspoken legislators on civil liberties and LGBTQ+ protections. https://ballotpedia.org/Rob_Nosse"
+  },
+  {
+   "pid": "c5c49832-aa2d-477e-b44e-d6059a98d426",
+   "tid": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "name": "Rob Nosse",
+   "topic": "Rent Regulation",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Rob_Nosse",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported tenant protections and rent stabilization measures; Portland SE district with diverse renter population. https://ballotpedia.org/Rob_Nosse"
+  },
+  {
+   "pid": "c5c49832-aa2d-477e-b44e-d6059a98d426",
+   "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "name": "Rob Nosse",
+   "topic": "Transgender Athletes",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Rob_Nosse",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Strong transgender rights advocate; voted for protections for transgender youth and athletes in Oregon schools. https://ballotpedia.org/Rob_Nosse"
+  },
+  {
+   "pid": "14faa864-de9f-497f-a78a-db41f42ee5e0",
+   "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "name": "Rob Wagner",
+   "topic": "Campaign Finance Reform",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Rob_Wagner",
+   "verdict": "PAGE_UNREADABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported campaign finance transparency measures; backed disclosure requirements and limits on political spending. https://ballotpedia.org/Rob_Wagner"
+  },
+  {
+   "pid": "14faa864-de9f-497f-a78a-db41f42ee5e0",
+   "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "name": "Rob Wagner",
+   "topic": "Fossil Fuel Policy",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Rob_Wagner",
+   "verdict": "PAGE_UNREADABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported clean energy transition; voted for fossil fuel reduction legislation as part of climate action agenda. https://ballotpedia.org/Rob_Wagner"
+  },
+  {
+   "pid": "14faa864-de9f-497f-a78a-db41f42ee5e0",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Rob Wagner",
+   "topic": "Healthcare Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Rob_Wagner",
+   "verdict": "PAGE_UNREADABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Voted YES on Oregon Health Plan expansion; supported universal healthcare access; backed mental health parity legislation. https://ballotpedia.org/Rob_Wagner"
+  },
+  {
+   "pid": "95300e6e-ea4e-47f9-8a24-5f6f762d5c73",
+   "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Wlnsvey Campos",
+   "topic": "Climate Change and Environmental Protection",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Wlnsvey_Campos",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported clean energy legislation; voted YES on climate bills protecting frontline communities disproportionately impacted by pollution. https://ballotpedia.org/Wlnsvey_Campos"
+  },
+  {
+   "pid": "95300e6e-ea4e-47f9-8a24-5f6f762d5c73",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Wlnsvey Campos",
+   "topic": "Healthcare Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Wlnsvey_Campos",
+   "verdict": "PARTIAL_SUPPORT",
+   "distinctiveTerms": [
+    "Voted YES",
+    "Oregon Health Plan"
+   ],
+   "found": [
+    "Oregon Health Plan"
+   ],
+   "droppedAsCommon": [],
+   "reasoning": "Voted YES on healthcare access expansion; supports Oregon Health Plan and universal healthcare access. https://ballotpedia.org/Wlnsvey_Campos"
+  },
+  {
+   "pid": "95300e6e-ea4e-47f9-8a24-5f6f762d5c73",
+   "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Wlnsvey Campos",
+   "topic": "Taxation and Public Spending",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Wlnsvey_Campos",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supports progressive taxation and public investment in education and social services; backed revenue measures for community programs. https://ballotpedia.org/Wlnsvey_Campos"
+  },
+  {
+   "pid": "a5a3918c-3e24-44fa-9573-440436a05b04",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Andrea Valderrama",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Andrea_Valderrama",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and racial equity measures; environmental justice framework connects environmental and civil rights advocacy. https://ballotpedia.org/Andrea_Valderrama"
+  },
+  {
+   "pid": "a5a3918c-3e24-44fa-9573-440436a05b04",
+   "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Andrea Valderrama",
+   "topic": "Immigration and Treatment of Immigrants",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Andrea_Valderrama",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "immigrant-protective"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported immigrant community protections; Portland area with significant Latino immigrant community; voted for immigrant-protective measures. https://ballotpedia.org/Andrea_Valderrama"
+  },
+  {
+   "pid": "14896652-e36b-4823-afb0-e92e3338929c",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Annessa Hartman",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Annessa_Hartman",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Portland district. https://ballotpedia.org/Annessa_Hartman"
+  },
+  {
+   "pid": "14896652-e36b-4823-afb0-e92e3338929c",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Annessa Hartman",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Annessa_Hartman",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported healthcare access expansion; voted for Medicaid expansion and community health measures. https://ballotpedia.org/Annessa_Hartman"
+  },
+  {
+   "pid": "5e29b685-1f2e-4963-83a8-a7bde5b5250e",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Ben Bowman",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Ben_Bowman",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures in the Oregon House; progressive voting record from Tigard district. https://ballotpedia.org/Ben_Bowman"
+  },
+  {
+   "pid": "5e29b685-1f2e-4963-83a8-a7bde5b5250e",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ben Bowman",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Ben_Bowman",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported healthcare access expansion; voted for Medicaid expansion and community health measures. https://ballotpedia.org/Ben_Bowman"
+  },
+  {
+   "pid": "22a1e980-4f15-435d-a0c4-1a08202d6bb5",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Chris Gorsek",
+   "topic": "Healthcare Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Chris_Gorsek",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Voted YES",
+    "Oregon Health Plan"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Voted YES on Oregon Health Plan expansion and healthcare access bills. https://ballotpedia.org/Chris_Gorsek"
+  },
+  {
+   "pid": "0e3b9216-cfb9-411f-b80e-684ccaae593f",
+   "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Court Boice",
+   "topic": "Taxation and Public Spending",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Court_Boice",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Corporate Activity Tax",
+    "anti-tax"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "Josephine County"
+   ],
+   "reasoning": "Consistent anti-tax voting record as Republican representative from rural Curry/Josephine County district; opposed business tax increases including Corporate Activity Tax measures. https://ballotpedia.org/Court_Boice"
+  },
+  {
+   "pid": "631cc414-8793-42ec-b883-594ed7f0b249",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Deb Patterson",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Deb_Patterson",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Consistent civil rights supporter; voted YES on anti-discrimination protections and LGBTQ+ equality measures in Oregon legislature. https://ballotpedia.org/Deb_Patterson"
+  },
+  {
+   "pid": "631cc414-8793-42ec-b883-594ed7f0b249",
+   "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Deb Patterson",
+   "topic": "Immigration and Treatment of Immigrants",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Deb_Patterson",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported immigrant health access; backed measures ensuring immigrant communities can access healthcare without fear of enforcement. https://ballotpedia.org/Deb_Patterson"
+  },
+  {
+   "pid": "d9803822-6bf8-437d-aa4b-d7e6b4a67b7c",
+   "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Dick Anderson",
+   "topic": "Climate Change and Environmental Protection",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Dick_Anderson_(Oregon)",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "walkout",
+    "quorum"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "Senate Republican"
+   ],
+   "reasoning": "Participated in May 2023 Senate Republican walkout blocking quorum to prevent climate legislation; opposed clean energy mandates. https://ballotpedia.org/Dick_Anderson_(Oregon)"
+  },
+  {
+   "pid": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "James I. Manning Jr.",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/James_Manning",
+   "verdict": "PAGE_UNREADABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Long-serving Democratic senator; consistent supporter of civil rights protections and anti-discrimination measures in Oregon legislature. https://ballotpedia.org/James_Manning"
+  },
+  {
+   "pid": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "James I. Manning Jr.",
+   "topic": "Healthcare Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/James_Manning",
+   "verdict": "PAGE_UNREADABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Voted YES on healthcare access expansion bills; supports Oregon Health Plan expansion and Medicaid coverage for low-income Oregonians. https://ballotpedia.org/James_Manning"
+  },
+  {
+   "pid": "40ecc3a4-ca59-48c4-8b17-634cc385bc9a",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Ken Helm",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Ken_Helm",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures in the Oregon House; consistent progressive voting record from Beaverton. https://ballotpedia.org/Ken_Helm"
+  },
+  {
+   "pid": "40ecc3a4-ca59-48c4-8b17-634cc385bc9a",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ken Helm",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Ken_Helm",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported healthcare access expansion; voted for Medicaid expansion and health programs. https://ballotpedia.org/Ken_Helm"
+  },
+  {
+   "pid": "3778353d-cbc9-43cf-866a-a7c01397503a",
+   "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Kim Wallan",
+   "topic": "Taxation and Public Spending",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Kim_Wallan",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Corporate Activity Tax"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Opposed tax increases as Republican representative from Medford area; voted against business tax measures including Corporate Activity Tax. https://ballotpedia.org/Kim_Wallan"
+  },
+  {
+   "pid": "d910cf6e-7d70-4b0c-b883-2fe2dcb185b6",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Lisa Reynolds",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Lisa_Reynolds",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Consistent supporter of civil rights protections; voted YES on LGBTQ+ equality and anti-discrimination measures. https://ballotpedia.org/Lisa_Reynolds"
+  },
+  {
+   "pid": "d910cf6e-7d70-4b0c-b883-2fe2dcb185b6",
+   "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Lisa Reynolds",
+   "topic": "Immigration and Treatment of Immigrants",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Lisa_Reynolds",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "state-level"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported immigrant protection policies; opposed state-level immigration enforcement collaboration; backed measures ensuring immigrant healthcare access. https://ballotpedia.org/Lisa_Reynolds"
+  },
+  {
+   "pid": "be46ed6d-363e-46f4-89d4-c95d9af67db1",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mark Meek",
+   "topic": "Healthcare Access",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Mark_Meek",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Voted YES",
+    "Oregon Health Plan",
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Voted YES on Oregon Health Plan expansion and healthcare access bills; supported Medicaid coverage for working families. https://ballotpedia.org/Mark_Meek"
+  },
+  {
+   "pid": "03af5908-a069-4ab7-91db-2f388a885bf9",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Pam Marsh",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Pam_Marsh",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported healthcare access expansion measures including Medicaid expansion and community health programs for rural southern Oregon. https://ballotpedia.org/Pam_Marsh"
+  },
+  {
+   "pid": "d34df5c8-9534-4472-814d-971adff16f50",
+   "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Suzanne Weber",
+   "topic": "Climate Change and Environmental Protection",
+   "value": "5.0",
+   "url": "https://ballotpedia.org/Suzanne_Weber",
+   "verdict": "PARTIAL_SUPPORT",
+   "distinctiveTerms": [
+    "walkout"
+   ],
+   "found": [
+    "walkout"
+   ],
+   "droppedAsCommon": [
+    "Senate Republican"
+   ],
+   "reasoning": "Participated in May 2023 Senate Republican walkout opposing climate legislation; opposes environmental regulations affecting coastal businesses and agriculture. https://ballotpedia.org/Suzanne_Weber"
+  },
+  {
+   "pid": "0f7439ad-5832-42e9-a1c5-75f1720e14d3",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Travis Nelson",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Travis_Nelson",
+   "verdict": "PAGE_UNREADABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Portland district. https://ballotpedia.org/Travis_Nelson"
+  },
+  {
+   "pid": "0f7439ad-5832-42e9-a1c5-75f1720e14d3",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Travis Nelson",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Travis_Nelson",
+   "verdict": "PAGE_UNREADABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported healthcare access expansion; voted for Medicaid expansion and health programs. https://ballotpedia.org/Travis_Nelson"
+  },
+  {
+   "pid": "37247ac1-5444-4fdd-b58e-123b5db4d0fe",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Zach Hudson",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Zach_Hudson",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "East Metro"
+   ],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Troutdale/East Metro. https://ballotpedia.org/Zach_Hudson"
+  },
+  {
+   "pid": "37247ac1-5444-4fdd-b58e-123b5db4d0fe",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Zach Hudson",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Zach_Hudson",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported healthcare access expansion; voted for Medicaid expansion measures. https://ballotpedia.org/Zach_Hudson"
+  },
+  {
+   "pid": "cd8e1e6b-bd17-44e0-a8a3-deffc2f5982e",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Cyrus Javadi",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Cyrus_Javadi",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported healthcare access expansion measures; voted for Medicaid expansion in the Oregon House. https://ballotpedia.org/Cyrus_Javadi"
+  },
+  {
+   "pid": "c5640f05-239a-47fd-97f3-e284859c1cc9",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Dacia Grayber",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Dacia_Grayber",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Portland west side district. https://ballotpedia.org/Dacia_Grayber"
+  },
+  {
+   "pid": "73519742-09c3-4204-871b-076ff1397a14",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Daniel Nguyễn",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Daniel_Nguyen",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Portland/Beaverton district. https://ballotpedia.org/Daniel_Nguyen"
+  },
+  {
+   "pid": "00ddecfd-648a-4118-82e6-a60327068b32",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "David Gomberg",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/David_Gomberg",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported healthcare access expansion for rural coastal communities; voted for Medicaid expansion measures in the Oregon House. https://ballotpedia.org/David_Gomberg"
+  },
+  {
+   "pid": "62decede-7149-40a1-a68a-16e2d3eb62a6",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Farrah Chaichi",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Farrah_Chaichi",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Beaverton district. https://ballotpedia.org/Farrah_Chaichi"
+  },
+  {
+   "pid": "2e668344-f025-489a-b870-1803269c11fc",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Hai Pham",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Hai_Pham",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Portland/Beaverton district. https://ballotpedia.org/Hai_Pham"
+  },
+  {
+   "pid": "f2b4e1d0-9603-42fd-b2b7-fefd7905ec3d",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "John Lively",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/John_Lively",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "Supported Medicaid",
+    "medicaid"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported Medicaid expansion and healthcare access measures; voted for healthcare coverage expansion bills in the Oregon House. https://ballotpedia.org/John_Lively"
+  },
+  {
+   "pid": "b5d3a442-3229-412a-8da4-e8eb8b9fdb3a",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Jules Walters",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Jules_Walters",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Portland west district. https://ballotpedia.org/Jules_Walters"
+  },
+  {
+   "pid": "a703adb5-1086-471b-ba8b-2dbeddd8102b",
+   "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Kayse Jama",
+   "topic": "Taxation and Public Spending",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Kayse_Jama",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "low-income"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supports progressive taxation and public investment; backed revenue measures supporting immigrant and low-income communities. https://ballotpedia.org/Kayse_Jama"
+  },
+  {
+   "pid": "80ed3ab4-f7f6-4738-a9b7-49e6f52ad61e",
+   "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "name": "Khanh Pham",
+   "topic": "Voting Rights and Electoral Integrity",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Khanh_Pham",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported automatic voter registration and multilingual ballot access; voted for voting rights expansion measures. https://ballotpedia.org/Khanh_Pham"
+  },
+  {
+   "pid": "f2bc3bbf-0d29-4ad9-b675-9c53cf081969",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Nathan Sosa",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Nathan_Sosa",
+   "verdict": "PAGE_UNREADABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Hillsboro district. https://ballotpedia.org/Nathan_Sosa"
+  },
+  {
+   "pid": "e5c0549e-4454-4cea-b7dc-67eb17d28b49",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Paul Evans",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Paul_Evans",
+   "verdict": "PAGE_UNREADABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights measures and anti-discrimination legislation; consistent progressive voting record in the Oregon House. https://ballotpedia.org/Paul_Evans"
+  },
+  {
+   "pid": "5e5e267a-808e-4a57-9f80-7c3e47fcb5f6",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Ricki Ruiz",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Ricki_Ruiz",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Gresham district. https://ballotpedia.org/Ricki_Ruiz"
+  },
+  {
+   "pid": "3fbaa80c-be2d-411f-a3ab-95add9ae6c84",
+   "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Susan McLain",
+   "topic": "Immigration and Treatment of Immigrants",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Susan_McLain",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "immigrant-supportive"
+   ],
+   "found": [],
+   "droppedAsCommon": [
+    "Forest Grove"
+   ],
+   "reasoning": "Supported welcoming immigration policies; Forest Grove area has significant immigrant farm worker communities; voted for immigrant-supportive measures. https://ballotpedia.org/Susan_McLain"
+  },
+  {
+   "pid": "051b4e9a-6966-45b3-9b65-e23ad4672364",
+   "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Tawna D. Sanchez",
+   "topic": "Immigration and Treatment of Immigrants",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Tawna_Sanchez",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported immigration policies benefiting tribal and Indigenous communities; supported DACA protections and immigrant community measures. https://ballotpedia.org/Tawna_Sanchez"
+  },
+  {
+   "pid": "9ada0539-e66c-444f-b220-86a8138b5277",
+   "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Thủy Trần",
+   "topic": "Civil Rights and Social Justice",
+   "value": "1.0",
+   "url": "https://ballotpedia.org/Thuy_Tran",
+   "verdict": "CITATION_FAILS",
+   "distinctiveTerms": [
+    "anti-discrimination"
+   ],
+   "found": [],
+   "droppedAsCommon": [],
+   "reasoning": "Supported civil rights and anti-discrimination measures; consistent progressive voting record from Portland district. https://ballotpedia.org/Thuy_Tran"
+  },
+  {
+   "pid": "5b81e68c-3ec3-4c81-9f1b-010db86da9c0",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Tom Andersen",
+   "topic": "Healthcare Access",
+   "value": "2.0",
+   "url": "https://ballotpedia.org/Tom_Andersen",
+   "verdict": "UNTESTABLE",
+   "distinctiveTerms": [],
+   "found": [],
+   "droppedAsCommon": [
+    "Oregon State University"
+   ],
+   "reasoning": "Supported healthcare access expansion measures; Corvallis area with Oregon State University community health priorities. https://ballotpedia.org/Tom_Andersen"
+  }
+ ]
+}
