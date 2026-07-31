@@ -41,12 +41,36 @@ already NULL, verified against the CSV rather than inferred from the post-state.
 to every one of that politician's rows. At row level only 83 actually name an absent bill. **A
 politician-level verdict is not a row-level verdict — most of these people have a mix.**
 
-### Still open in A1 — 144 of 230 rows, UNTESTED
+### Still open in A1 — 144 rows. ATTEMPTED 2026-07-30, NOT RESOLVED. Nothing deleted.
 
-| rows | class | what it needs |
-|---|---|---|
-| 140 | name no bill at all | claim-level review against the page — no mechanical test applies |
-| 4 | cited measure IS on the page (Dexter, Kotek, Gelser Blouin/Thatcher/Prozanski, Osborne) | the "does it support THIS chair" test; note Dexter cited 7 bills and only Measure 110 appears |
+| rows | class |
+|---|---|
+| 140 | name no bill at all |
+| 4 | cited measure IS on the page (Dexter, Kotek, Gelser Blouin, Thatcher/Prozanski, Osborne) |
+
+🔴 **THE BILL TEST DOES NOT GENERALISE — do not retry it as-is.** It worked for the 83 because a bill
+number is a RARE token: absent from the page ⇒ real evidence of absence. General claims have no such
+token, and **Ballotpedia's site-wide nav names every policy area on every page** ("Education policy",
+"Immigration policy", "Redistricting"…). A keyword probe over full page text therefore matched
+**50–180 of 345 terms on every single page**, including pages with no substantive content. It is
+not a weak signal, it is *no* signal. Verified: all 37 pages in batch A fetched cleanly at 200 and
+still matched most terms.
+
+**The fix, un-validated:** restrict the search to the ARTICLE BODY (`#mw-content-text`) and test only
+multi-word capitalised phrases, never bare common words. I hit rate limiting before confirming this
+works — it is the first thing to try next, on 3–4 known cases (Drazan/"walkout",
+Harbick/"Corporate Activity Tax") before scaling.
+
+**What IS established without any fetch:**
+- **0 of 144 match migration 1494's party-prior predicate.** A broader variant I wrote catches 22, but
+  that is **not an approved standard** and nothing was deleted on it.
+- **22 rows (15%) share a reasoning SKELETON with another row** — normalise away proper nouns and
+  numbers and they collapse. Seven different people carry a byte-identical *"Supported civil rights
+  and anti-discrimination measures; consistent progressive voting record from Portland district."*
+  Also x3 the same for Portland/Multnomah, x2 Healthcare Access, x2 Transgender Athletes.
+  🔴 **Template clustering is a strong, FETCH-FREE fabrication detector — run it FIRST on A2-A6.**
+  It is evidence about how a row was produced, not proof its citation fails, so it justifies
+  scrutiny, not deletion on its own.
 
 Then A2 (VA, 50) → A3 (TX, 34) → A4 (CA, 20) → A5 (7) → A6 (442, unseated, last).
 
