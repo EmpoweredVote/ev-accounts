@@ -7,8 +7,8 @@
 --   * AUDIT-ONLY: no migration runner exists; this file records SQL applied by hand via
 --     mcp__supabase-local__execute_sql. It touches only inform.politician_answers and
 --     inform.politician_context.
---   * Number 1507 claimed live 2026-07-30 (origin/master max 1505 + branch 1506). This
---     phase's earlier file was renumbered 1503 -> 1506 after a concurrent session shipped
+--   * Number 1507 claimed live 2026-07-30 (then max 1505); renumbered 1517 after origin/master shipped its own 1507. Phase 222 now claims the 1516-1525 band with headroom against the racing counter. This
+--     phase's earlier file was renumbered 1503 -> 1506 -> 1516 after concurrent sessions shipped
 --     its own 1503 — always re-check the live max before claiming.
 --   * The single chair seeded here rests on a RECORDED LEGISLATIVE PATTERN in
 --     Farmersville's official council minutes — motions Henry personally made, with
