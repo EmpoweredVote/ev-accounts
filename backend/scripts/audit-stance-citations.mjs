@@ -71,7 +71,8 @@
  * simply incomplete until they are re-read, and they must never be counted as failures.
  */
 import 'dotenv/config';
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, readFileSync, statSync, mkdirSync } from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { Pool } from 'pg';
 import { parse } from 'node-html-parser';
@@ -277,7 +278,24 @@ const POLICY_TOKENS = new Set(('walkout quorum filibuster gerrymander gerrymande
  * separately. A quote counts as verified when every fragment long enough to be distinctive is present.
  */
 function extractQuotes(reasoning) {
-  const marks = /["“”]/g;
+  // 🔴 A SINGLE QUOTE IS SOMETIMES A DELIMITER AND SOMETIMES A POSSESSIVE, AND GETTING THIS BINARY
+  // WRONG BREAKS ROWS IN BOTH DIRECTIONS. Treating ' as a mark produced "s tariff authority" out of
+  // Congress's; NOT treating it as a mark meant every row quoting with 'single quotes' skipped the quote
+  // test entirely and fell through to terms -- which is what put Keith Arnold's three well-quoted rows,
+  // Conroy, Gordon and Hildebrand on a retirement list. So it is position-sensitive: an opening mark is
+  // preceded by start/space/( and followed by a word character; a closing mark is preceded by a word
+  // character and followed by space/punctuation/end. Congress's fails both (letter on each side).
+  // Closing single quote may sit after punctuation that belongs INSIDE the quotation
+  // ("...renewable energy sources,'"), so the lookbehind must allow it -- but the lookahead still
+  // requires whitespace/close-paren/end, which is what keeps Congress's (letter on both sides) out.
+  // PREFER DOUBLE QUOTES WHENEVER THE ROW USES THEM, and only fall back to single. Mixing the two
+  // delimiter sets mis-pairs the marks: a TRAILING possessive ("Sales' survey emphasizes \"...\"",
+  // "Congress' authority") satisfies the closing-single-quote rule, so mark 1 lands on the possessive,
+  // pairs with the real quote's opening ", and the actual quotation is lost -- which is what produced
+  // Joshua Warren Sales's CITATION_FAILS on a row that quotes its source correctly.
+  const dq = /["“”]/g;
+  const hasDouble = (reasoning.match(dq) ?? []).length >= 2;
+  const marks = hasDouble ? dq : /(?<=^|[\s(])'(?=\w)|(?<=[\w.,;:!?])'(?=[\s)]|$)/g;
   const positions = [];
   for (const m of reasoning.matchAll(marks)) positions.push(m.index);
   const out = [];
@@ -296,11 +314,27 @@ function quoteFragments(q) {
   return q.split(/\s*(?:\.\.\.|…)\s*/).map((f) => f.trim()).filter((f) => norm(f).length >= 20);
 }
 
-/** A quote is present when every distinctive fragment of it is present. */
+/**
+ * 🔴 MATCH A SHINGLE, NOT THE WHOLE FRAGMENT. Requiring the full contiguous fragment made long quotes
+ * fail on a single differing word, and it produced FALSE ABSENCES on quotes that were plainly there:
+ * Suetterlein's "David is pro-life ... taxpayer funding of abortion", Simonds's "We do not need a
+ * voucher system", Pillion's "opposed to expanding Obamacare", Warner's tax-cut pledge. All four were
+ * confirmed present by hand using shorter sub-phrases. A run of 6 consecutive words reproduced verbatim
+ * is already overwhelming evidence the row is quoting this page, and it tolerates one edit elsewhere.
+ */
+const SHINGLE = 6;
 function quotePresent(body, q) {
   const frags = quoteFragments(q);
   if (!frags.length) return null;                     // nothing testable in it
-  return frags.every((f) => looseIncludes(body, f));
+  const hay = norm(body);
+  return frags.every((f) => {
+    const w = norm(f).split(' ').filter(Boolean);
+    if (w.length < SHINGLE) return hay.includes(norm(f));
+    for (let i = 0; i + SHINGLE <= w.length; i++) {
+      if (hay.includes(w.slice(i, i + SHINGLE).join(' '))) return true;
+    }
+    return false;
+  });
 }
 
 /** Normalise for comparison: fold case, curly quotes, bracketed edits and all punctuation/space runs. */
@@ -308,6 +342,10 @@ function norm(s) {
   return s.toLowerCase()
     .replace(/[‘’“”]/g, "'")
     .replace(/\[[^\]]*\]/g, '')            // "advocate[s]" -> "advocate"
+    // Drop possessives on BOTH sides before punctuation stripping. Otherwise the page's "Jackson
+    // Women's Health" normalises to "jackson women s health" while the term-builder has already
+    // removed the 's, giving "jackson women health" -- a guaranteed miss on a real, present phrase.
+    .replace(/['’]s\b/g, '')
     .replace(/[^a-z0-9]+/g, ' ')
     .trim();
 }
@@ -341,7 +379,16 @@ function candidateTerms(reasoning) {
 
   for (const re of [BILLREF, MEASUREREF, CAP_PHRASE, HYPHEN]) {
     re.lastIndex = 0;
-    for (const m of text.matchAll(re)) add(m[0]);
+    for (const m of text.matchAll(re)) {
+      // 🔴 DROP COMPASS-CHAIR LABELS. The row author writes the chair they picked as a hyphenated
+      // string -- "gradual-transition-while-investing-in-clean-energy", "public-program-plus-regulated-
+      // private-insurance", "stop-issuing-new-drilling-permits". No web page contains those, so they are
+      // guaranteed "missing" and they manufactured 15 CITATION_FAILS across TN/WA on rows that quote
+      // their source correctly. Real-world hyphenated terms stay: cap-and-trade, market-based, anti-tax
+      // and job-killing are all <=3 parts and were load-bearing in Oregon.
+      if (m[0].split('-').length > 3) continue;
+      add(m[0]);
+    }
   }
   for (const p of POLICY_PHRASES) if (lower.includes(p)) add(p);
 
@@ -381,7 +428,38 @@ function identityTerms(row) {
 
 // ---------------------------------------------------------------------------- fetching
 
+/**
+ * On-disk page cache in the OS temp dir, keyed by URL, default 12h. Iterating on the verdict logic used
+ * to mean re-fetching every page -- this cohort was swept four times while the extractor was being
+ * calibrated, which is both slow and impolite to the source, and each repeat run risks tripping the
+ * limiter and turning good rows into UNKNOWN. Deliberately NOT in the repo. --no-cache to bypass.
+ */
+const CACHE_DIR = path.join(os.tmpdir(), 'ballotpedia-article-cache');
+const NO_CACHE = argv.includes('--no-cache');
+const CACHE_TTL_MS = parseInt(flag('--cache-ttl-hours', '12'), 10) * 3600 * 1000;
+const cachePath = (url) => path.join(CACHE_DIR, `${Buffer.from(url).toString('base64url').slice(0, 180)}.json`);
+
+function cacheGet(url) {
+  if (NO_CACHE) return null;
+  try {
+    const s = statSync(cachePath(url));
+    if (Date.now() - s.mtimeMs > CACHE_TTL_MS) return null;
+    return JSON.parse(readFileSync(cachePath(url), 'utf8'));
+  } catch { return null; }
+}
+function cachePut(url, page) {
+  if (NO_CACHE) return;
+  try {
+    mkdirSync(CACHE_DIR, { recursive: true });
+    // Only cache a GOOD read. Caching a 202 or an empty body would freeze the silent rate limit in
+    // place and make every later run report the same phantom UNKNOWN.
+    if (page.status === 200 && page.body.length > 0) writeFileSync(cachePath(url), JSON.stringify(page));
+  } catch { /* cache is best-effort */ }
+}
+
 async function fetchBody(url, tries = 2) {
+  const hit = cacheGet(url);
+  if (hit) return { ...hit, cached: true };
   for (let i = 0; i < tries; i++) {
     if (i) await sleep(DELAY * 2);
     let res;
@@ -400,7 +478,9 @@ async function fetchBody(url, tries = 2) {
     el.querySelectorAll('script,style').forEach((n) => n.remove());
     const body = el.textContent.replace(/\s+/g, ' ').trim();
     const links = el.querySelectorAll('a').map((a) => ({ text: a.textContent.trim(), href: a.getAttribute('href') || '' }));
-    return { status: 200, body, links, finalUrl: res.url || url, html: html.length };
+    const page = { status: 200, body, links, finalUrl: res.url || url, html: html.length };
+    cachePut(url, page);
+    return page;
   }
   return { status: 0, body: '', finalUrl: url };
 }
@@ -473,8 +553,8 @@ const pageFlags = (body) => ({
     const tag = page.status !== 200 ? `HTTP ${page.status}`
       : isDisambig(page.body) ? `DISAMBIG -> ${resolved ? `${resolved.status} ${resolved.body.length}ch` : 'unresolved'}`
         : `${page.body.length}ch`;
-    console.log(`  [${String(n).padStart(3)}/${byUrl.size}] ${url.replace('https://ballotpedia.org', '')}  ${tag}`);
-    await sleep(DELAY);
+    console.log(`  [${String(n).padStart(3)}/${byUrl.size}] ${url.replace('https://ballotpedia.org', '')}  ${tag}${page.cached ? ' (cached)' : ''}`);
+    if (!page.cached) await sleep(DELAY);
   }
 
   // Corpus frequency over the pages actually read, computed AFTER all fetches.

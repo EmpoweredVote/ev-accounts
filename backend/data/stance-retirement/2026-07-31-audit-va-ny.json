@@ -1,0 +1,4652 @@
+{
+  "_comment": "Article-body citation audit. Judges the CITATION, not the claim: a row can fail here and still be true. PARTIAL_SUPPORT/SUPPORTED are NEVER auto-retired -- a term's presence is not support. UNKNOWN_PAGE_UNREAD must be re-run, never scored as a miss.",
+  "generated": {
+    "state": "va,ny",
+    "rows": 102,
+    "pages": 30,
+    "corpus_pages": 30,
+    "corpus_max": 0.75,
+    "min_body": 1500
+  },
+  "tally": {
+    "QUOTE_VERIFIED": 70,
+    "PARTIAL_SUPPORT": 10,
+    "CITATION_FAILS": 8,
+    "SUPPORTED": 12,
+    "UNTESTABLE": 2
+  },
+  "rows": [
+    {
+      "pid": "731049dd-0a5b-44fb-a778-b637dded0a5b",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Lashrecse D. Aird",
+      "topic": "Abortion",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 13",
+      "cited_url": "https://ballotpedia.org/Lashrecse_Aird",
+      "cited_status": 200,
+      "cited_chars": 27219,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 27219,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Aird will actively pursue the cause of making sure that woman get equal pay for equal work. As a mother and wife, she will be an advocate for women's reproductive access and work to ensure that they have the right to choose. She believes that the decision of family planning should remain at the discretion of a woman."
+      ],
+      "quotes_found": [
+        "Aird will actively pursue the cause of making sure that woman get equal pay for equal work. As a mother and wife, she will be an advocate for women's reproductive access and work to ensure that they have the right to choose. She believes that the decision of family planning should remain at the discretion of a woman."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Women Rights",
+        "Planned Parenthood Advocates of Virginia",
+        "abortion"
+      ],
+      "found": [
+        "Women Rights",
+        "Planned Parenthood Advocates of Virginia"
+      ],
+      "missing": [
+        "abortion"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Aird's 2017 campaign website stated under Women's Rights: 'Aird will actively pursue the cause of making sure that woman get equal pay for equal work. As a mother and wife, she will be an advocate for women's reproductive access and work to ensure that they have the right to choose. She believes that the decision of family planning should remain at the discretion of a woman.' Additionally, she received the endorsement of Planned Parenthood Advocates of Virginia in 2023. Value 2 (keep abortion legal and accessible through the second trimester) aligns with this documented advocacy for reproductive choice."
+    },
+    {
+      "pid": "731049dd-0a5b-44fb-a778-b637dded0a5b",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Lashrecse D. Aird",
+      "topic": "Civil Rights",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 13",
+      "cited_url": "https://ballotpedia.org/Lashrecse_Aird",
+      "cited_status": 200,
+      "cited_chars": 27219,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 27219,
+      "verdict": "PARTIAL_SUPPORT",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "American Way",
+        "Health and Human Services Committee and Education",
+        "Women Rights",
+        "equity-focused"
+      ],
+      "found": [
+        "American Way",
+        "Women Rights"
+      ],
+      "missing": [
+        "Health and Human Services Committee and Education",
+        "equity-focused"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Aird received the endorsement of People for the American Way in 2023, an organization focused on advancing civil rights and equal protection. As a member of the Health and Human Services Committee and Education committees, she has championed equity-focused legislation. Her 2017 platform included Women's Rights and senior care, indicating a pattern of strengthening civil rights enforcement and addressing systemic discrimination, consistent with value 2 (strengthen civil rights enforcement and address systemic discrimination)."
+    },
+    {
+      "pid": "731049dd-0a5b-44fb-a778-b637dded0a5b",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Lashrecse D. Aird",
+      "topic": "Voting Rights",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 13",
+      "cited_url": "https://ballotpedia.org/Lashrecse_Aird",
+      "cited_status": 200,
+      "cited_chars": 27219,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 27219,
+      "verdict": "PARTIAL_SUPPORT",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "American Way",
+        "Petersburg Democratic Committee",
+        "Senate Privileges and Elections Committee",
+        "mail-in"
+      ],
+      "found": [
+        "American Way",
+        "Petersburg Democratic Committee"
+      ],
+      "missing": [
+        "Senate Privileges and Elections Committee",
+        "mail-in"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Aird received the endorsement of People for the American Way in 2023, whose core mission includes protecting voting rights and democratic participation. As a former chair of the Petersburg Democratic Committee and current member of the Senate Privileges and Elections Committee, she is deeply engaged with election integrity and voter access issues. Her alignment with People for the American Way indicates support for expanding early voting and mail-in access, consistent with value 2 (expand early voting and make mail-in voting available without requiring an excuse)."
+    },
+    {
+      "pid": "04000e04-4103-4334-ac0e-6aefb23af1cf",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Joel Anabilah-Azumah",
+      "topic": "AI Oversight",
+      "value": "4.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Joel_Anabilah-Azumah",
+      "cited_status": 200,
+      "cited_chars": 22701,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 22701,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "I will fight all attempts to outsource government functions to artificial intelligence. Humans must be in charge of governing other humans at all times"
+      ],
+      "quotes_found": [
+        "I will fight all attempts to outsource government functions to artificial intelligence. Humans must be in charge of governing other humans at all times"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "high-risk"
+      ],
+      "found": [],
+      "missing": [
+        "high-risk"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His Ballotpedia Candidate Connection survey pledges \"I will fight all attempts to outsource government functions to artificial intelligence. Humans must be in charge of governing other humans at all times\" -- banning high-risk AI uses in governance."
+    },
+    {
+      "pid": "04000e04-4103-4334-ac0e-6aefb23af1cf",
+      "tid": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "name": "Joel Anabilah-Azumah",
+      "topic": "Misinformation",
+      "value": "4.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Joel_Anabilah-Azumah",
+      "cited_status": 200,
+      "cited_chars": 22701,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 22701,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "ensure that citizens of the United States have the ability to speak freely, even when their statements are unpopular"
+      ],
+      "quotes_found": [
+        "ensure that citizens of the United States have the ability to speak freely, even when their statements are unpopular"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "United States"
+      ],
+      "found": [
+        "United States"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His Ballotpedia Candidate Connection survey pledges to \"ensure that citizens of the United States have the ability to speak freely, even when their statements are unpopular\" -- protecting free speech and preventing government censorship."
+    },
+    {
+      "pid": "04000e04-4103-4334-ac0e-6aefb23af1cf",
+      "tid": "24e9212c-b011-422a-865c-093e35050901",
+      "name": "Joel Anabilah-Azumah",
+      "topic": "Ukraine Support",
+      "value": "4.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Joel_Anabilah-Azumah",
+      "cited_status": 200,
+      "cited_chars": 22701,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 22701,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "I will resist all attempts to drag the United States into unnecessary and unwinnable military conflicts"
+      ],
+      "quotes_found": [
+        "I will resist all attempts to drag the United States into unnecessary and unwinnable military conflicts"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "United States"
+      ],
+      "found": [
+        "United States"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His Ballotpedia Candidate Connection survey pledges \"I will resist all attempts to drag the United States into unnecessary and unwinnable military conflicts\" -- reducing foreign military involvement."
+    },
+    {
+      "pid": "fe47cdc4-c16b-446c-b674-82fdc074370d",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Bonita G. Anthony",
+      "topic": "Abortion",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 92",
+      "cited_url": "https://ballotpedia.org/Bonita_Anthony",
+      "cited_status": 200,
+      "cited_chars": 14928,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 14928,
+      "verdict": "CITATION_FAILS",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Jackson Women Health Organization",
+        "abortion"
+      ],
+      "found": [],
+      "missing": [
+        "Jackson Women Health Organization",
+        "abortion"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Cited the leaked Dobbs v. Jackson Women's Health Organization ruling as inspiring her to run specifically to protect abortion access in Virginia."
+    },
+    {
+      "pid": "fe47cdc4-c16b-446c-b674-82fdc074370d",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Bonita G. Anthony",
+      "topic": "Healthcare",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 92",
+      "cited_url": "https://ballotpedia.org/Bonita_Anthony",
+      "cited_status": 200,
+      "cited_chars": 14928,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 14928,
+      "verdict": "CITATION_FAILS",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "low-income",
+        "Medicaid"
+      ],
+      "found": [],
+      "missing": [
+        "low-income",
+        "Medicaid"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Sponsored legislation integrating community health workers into Medicaid managed care — expands affordable health coverage access for low-income Virginians."
+    },
+    {
+      "pid": "fe47cdc4-c16b-446c-b674-82fdc074370d",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Bonita G. Anthony",
+      "topic": "Housing",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 92",
+      "cited_url": "https://ballotpedia.org/Bonita_Anthony",
+      "cited_status": 200,
+      "cited_chars": 14928,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 14928,
+      "verdict": "CITATION_FAILS",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Virginia Residential Landlord and Tenant Act"
+      ],
+      "found": [],
+      "missing": [
+        "Virginia Residential Landlord and Tenant Act"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Sponsored bills reforming the Virginia Residential Landlord and Tenant Act to protect tenant records and restrict algorithmic pricing devices used by landlords — tenant protection focus."
+    },
+    {
+      "pid": "9e843c9d-bd2e-431f-969f-63372d0274ca",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Alex Q. Askew",
+      "topic": "Housing",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 95",
+      "cited_url": "https://ballotpedia.org/Alex_Askew",
+      "cited_status": 200,
+      "cited_chars": 25816,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 25816,
+      "verdict": "SUPPORTED",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "affordable housing"
+      ],
+      "found": [
+        "affordable housing"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Voted to establish frameworks to preserve local affordable housing; housing access as a legislative priority."
+    },
+    {
+      "pid": "3049ed75-9743-42f4-8c9e-037a41f9bdc3",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Terry L. Austin",
+      "topic": "Abortion",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 37",
+      "cited_url": "https://ballotpedia.org/Terry_Austin",
+      "cited_status": 200,
+      "cited_chars": 53298,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 53298,
+      "verdict": "SUPPORTED",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "pro-life"
+      ],
+      "found": [
+        "pro-life"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia survey: describes himself as proudly pro-life and states he will support additional efforts to protect the unborn — restrict to serious threats to the mother's life."
+    },
+    {
+      "pid": "3049ed75-9743-42f4-8c9e-037a41f9bdc3",
+      "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "name": "Terry L. Austin",
+      "topic": "Religious Freedom",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 37",
+      "cited_url": "https://ballotpedia.org/Terry_Austin",
+      "cited_status": 200,
+      "cited_chars": 53298,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 53298,
+      "verdict": "SUPPORTED",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "faith-based"
+      ],
+      "found": [
+        "faith-based"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia survey: states he supports laws that protect every Virginian's right to openly proclaim and practice their faith — protect religious freedom and allow faith-based exemptions."
+    },
+    {
+      "pid": "3049ed75-9743-42f4-8c9e-037a41f9bdc3",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Terry L. Austin",
+      "topic": "Taxes",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 37",
+      "cited_url": "https://ballotpedia.org/Terry_Austin",
+      "cited_status": 200,
+      "cited_chars": 53298,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 53298,
+      "verdict": "SUPPORTED",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Keeping Taxes Low"
+      ],
+      "found": [
+        "Keeping Taxes Low"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia survey: campaign theme explicitly listed as Keeping Taxes Low with commitment to reduce taxes and spending — cut taxes for everyone."
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Childcare",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Darializa_Avila_Chevalier",
+      "cited_status": 200,
+      "cited_chars": 18452,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 18452,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Child Care for Every Community Act to create universal child care nationwide"
+      ],
+      "quotes_found": [
+        "Child Care for Every Community Act to create universal child care nationwide"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Child Care for Every Community Act"
+      ],
+      "found": [
+        "Child Care for Every Community Act"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign \"Day 1 Agenda\" (quoted on Ballotpedia) backs the \"Child Care for Every Community Act to create universal child care nationwide\" -- publicly funded universal childcare."
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Climate Change",
+      "value": "2.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Darializa_Avila_Chevalier",
+      "cited_status": 200,
+      "cited_chars": 18452,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 18452,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Green New Deal to transition to a 100% clean energy economy"
+      ],
+      "quotes_found": [
+        "Green New Deal to transition to a 100% clean energy economy"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Green New Deal",
+        "clean energy"
+      ],
+      "found": [
+        "Green New Deal",
+        "clean energy"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign \"Day 1 Agenda\" (quoted on Ballotpedia) pledges the \"Green New Deal to transition to a 100% clean energy economy\" -- rapidly transitioning to renewable energy."
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Deportation",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Darializa_Avila_Chevalier",
+      "cited_status": 200,
+      "cited_chars": 18452,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 18452,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Abolish ICE and the deportation machine"
+      ],
+      "quotes_found": [
+        "Abolish ICE and the deportation machine"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Abolish ICE",
+        "deportation"
+      ],
+      "found": [
+        "Abolish ICE",
+        "deportation"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign agenda (quoted on Ballotpedia) pledges to \"Abolish ICE and the deportation machine\" -- ending deportations and protecting undocumented residents from removal."
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Fossil Fuels",
+      "value": "2.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Darializa_Avila_Chevalier",
+      "cited_status": 200,
+      "cited_chars": 18452,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 18452,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "a 100% clean energy economy"
+      ],
+      "quotes_found": [
+        "a 100% clean energy economy"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Green New Deal",
+        "clean energy",
+        "fossil fuel"
+      ],
+      "found": [
+        "Green New Deal",
+        "clean energy"
+      ],
+      "missing": [
+        "fossil fuel"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign \"Day 1 Agenda\" (quoted on Ballotpedia) backs a Green New Deal for \"a 100% clean energy economy\" -- phasing out fossil fuels."
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Healthcare",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Darializa_Avila_Chevalier",
+      "cited_status": 200,
+      "cited_chars": 18452,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 18452,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Medicare for All Act so everyone has health insurance"
+      ],
+      "quotes_found": [
+        "Medicare for All Act so everyone has health insurance"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Medicare for All Act"
+      ],
+      "found": [
+        "Medicare for All Act"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign \"Day 1 Agenda\" (quoted on Ballotpedia) backs the \"Medicare for All Act so everyone has health insurance\" -- a public universal system."
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Housing",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Darializa_Avila_Chevalier",
+      "cited_status": 200,
+      "cited_chars": 18452,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 18452,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Homes Act to build deeply affordable public housing, cooperatives, and community land trusts with rent caps"
+      ],
+      "quotes_found": [
+        "Homes Act to build deeply affordable public housing, cooperatives, and community land trusts with rent caps"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Homes Act"
+      ],
+      "found": [
+        "Homes Act"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign \"Day 1 Agenda\" (quoted on Ballotpedia) pledges to sign the \"Homes Act to build deeply affordable public housing, cooperatives, and community land trusts with rent caps\" -- directly building and operating public housing."
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Immigration",
+      "value": "2.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Darializa_Avila_Chevalier",
+      "cited_status": 200,
+      "cited_chars": 18452,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 18452,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Expand pathways to citizenship, including for DREAMers and undocumented immigrants"
+      ],
+      "quotes_found": [
+        "Expand pathways to citizenship, including for DREAMers and undocumented immigrants"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "American Dream",
+        "Promise Act",
+        "immigration"
+      ],
+      "found": [
+        "American Dream",
+        "Promise Act",
+        "immigration"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign \"Day 1 Agenda\" (quoted on Ballotpedia) backs the American Dream & Promise Act and pledges to \"Expand pathways to citizenship, including for DREAMers and undocumented immigrants\" -- keeping immigration open and legalizing undocumented residents."
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Medicare/aid",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Darializa_Avila_Chevalier",
+      "cited_status": 200,
+      "cited_chars": 18452,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 18452,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Medicare for All Act so everyone has health insurance including dental, vision, and hearing aids"
+      ],
+      "quotes_found": [
+        "Medicare for All Act so everyone has health insurance including dental, vision, and hearing aids"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Medicare for All Act"
+      ],
+      "found": [
+        "Medicare for All Act"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign \"Day 1 Agenda\" (quoted on Ballotpedia) backs the \"Medicare for All Act so everyone has health insurance including dental, vision, and hearing aids\" -- expanding Medicare to cover everyone."
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Social Security",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Darializa_Avila_Chevalier",
+      "cited_status": 200,
+      "cited_chars": 18452,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 18452,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Social Security Expansion Act to increase benefits"
+      ],
+      "quotes_found": [
+        "Social Security Expansion Act to increase benefits"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Social Security Expansion Act"
+      ],
+      "found": [
+        "Social Security Expansion Act"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign \"Day 1 Agenda\" (quoted on Ballotpedia) backs the \"Social Security Expansion Act to increase benefits\" -- significantly expanding Social Security."
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Taxes",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Darializa_Avila_Chevalier",
+      "cited_status": 200,
+      "cited_chars": 18452,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 18452,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Ultra-Millionaire Tax Act and Equal Tax Act so millionaires and billionaires pay their fair share"
+      ],
+      "quotes_found": [
+        "Ultra-Millionaire Tax Act and Equal Tax Act so millionaires and billionaires pay their fair share"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Millionaire Tax Act and Equal Tax Act",
+        "Ultra-Millionaire"
+      ],
+      "found": [
+        "Millionaire Tax Act and Equal Tax Act",
+        "Ultra-Millionaire"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign \"Day 1 Agenda\" (quoted on Ballotpedia) backs the \"Ultra-Millionaire Tax Act and Equal Tax Act so millionaires and billionaires pay their fair share\" -- significantly raising taxes on the wealthy."
+    },
+    {
+      "pid": "13a9c6b7-d781-415b-b44f-3f8ca06aa763",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Katrina E. Callsen",
+      "topic": "Abortion",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 54",
+      "cited_url": "https://ballotpedia.org/Katrina_Callsen",
+      "cited_status": 200,
+      "cited_chars": 36216,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 36216,
+      "verdict": "SUPPORTED",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "abortion"
+      ],
+      "found": [
+        "abortion"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia 2023 survey: explicit priorities include codifying reproductive rights in the state Constitution and increasing access to reproductive health care — keep abortion legal and accessible through second trimester."
+    },
+    {
+      "pid": "13a9c6b7-d781-415b-b44f-3f8ca06aa763",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Katrina E. Callsen",
+      "topic": "School Vouchers",
+      "value": "1.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 54",
+      "cited_url": "https://ballotpedia.org/Katrina_Callsen",
+      "cited_status": 200,
+      "cited_chars": 36216,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 36216,
+      "verdict": "PARTIAL_SUPPORT",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Fund Our Public Schools",
+        "vouchers"
+      ],
+      "found": [
+        "Fund Our Public Schools"
+      ],
+      "missing": [
+        "vouchers"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia 2023 survey: explicitly lists Fund Our Public Schools as top campaign priority and calls for fully funding public schools — eliminating vouchers that divert taxpayer money."
+    },
+    {
+      "pid": "e2542ec1-213a-403b-bcda-e956a9384dcb",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Joshua G. Cole",
+      "topic": "Taxes",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 65",
+      "cited_url": "https://ballotpedia.org/Joshua_Cole_(Virginia)",
+      "cited_status": 200,
+      "cited_chars": 46649,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 46649,
+      "verdict": "PARTIAL_SUPPORT",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "tax-specific",
+        "tax-the-wealthy",
+        "corporate tax"
+      ],
+      "found": [
+        "corporate tax"
+      ],
+      "missing": [
+        "tax-specific",
+        "tax-the-wealthy"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "A 2017 campaign statement (archived via Ballotpedia) criticized corporate tax breaks and called to reform the tax code so working families are prioritized over corporate interests; no more recent tax-specific statement was located, so this is dated but uncontradicted evidence of a modest tax-the-wealthy lean."
+    },
+    {
+      "pid": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Cait Conley",
+      "topic": "Abortion",
+      "value": "2.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Cait_Conley",
+      "cited_status": 200,
+      "cited_chars": 40183,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 40183,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "codify Roe v. Wade into law"
+      ],
+      "quotes_found": [
+        "codify Roe v. Wade into law"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Planned Parenthood",
+        "abortion",
+        "contraception"
+      ],
+      "found": [
+        "Planned Parenthood",
+        "abortion",
+        "contraception"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) pledges to \"codify Roe v. Wade into law\" to restore abortion, contraception, and IVF access and fund Planned Parenthood -- keeping abortion legal and accessible."
+    },
+    {
+      "pid": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Cait Conley",
+      "topic": "Climate Change",
+      "value": "3.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Cait_Conley",
+      "cited_status": 200,
+      "cited_chars": 40183,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 40183,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "a national security crisis",
+        "alternative energy projects"
+      ],
+      "quotes_found": [
+        "a national security crisis",
+        "alternative energy projects"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "geo-thermal",
+        "clean energy",
+        "solar"
+      ],
+      "found": [
+        "geo-thermal",
+        "clean energy",
+        "solar"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) calls climate change \"a national security crisis\" and pledges to cut red tape to move \"alternative energy projects\" and invest federal funds in wind, solar, hydro, and geo-thermal -- investing in clean energy while pragmatically transitioning."
+    },
+    {
+      "pid": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Cait Conley",
+      "topic": "Healthcare",
+      "value": "2.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Cait_Conley",
+      "cited_status": 200,
+      "cited_chars": 40183,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 40183,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Every American should have the right to access affordable healthcare",
+        "Defending the Affordable Care Act & Medicaid"
+      ],
+      "quotes_found": [
+        "Every American should have the right to access affordable healthcare",
+        "Defending the Affordable Care Act & Medicaid"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Every American",
+        "Defending the Affordable Care Act",
+        "Medicaid"
+      ],
+      "found": [
+        "Every American",
+        "Defending the Affordable Care Act",
+        "Medicaid"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) says \"Every American should have the right to access affordable healthcare\" and pledges \"Defending the Affordable Care Act & Medicaid\" -- ensuring everyone has affordable coverage through public programs and regulated insurance."
+    },
+    {
+      "pid": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Cait Conley",
+      "topic": "Housing",
+      "value": "3.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Cait_Conley",
+      "cited_status": 200,
+      "cited_chars": 40183,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 40183,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "cutting outdated red tape and zoning rules,"
+      ],
+      "quotes_found": [
+        "cutting outdated red tape and zoning rules,"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "affordable housing",
+        "block grant",
+        "zoning",
+        "subsidies"
+      ],
+      "found": [
+        "affordable housing",
+        "block grant",
+        "zoning",
+        "subsidies"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) pledges to make it easier to build affordable housing by \"cutting outdated red tape and zoning rules,\" expand community block grants and builder tax credits, and crack down on corporate landlords -- targeted subsidies and easier permitting."
+    },
+    {
+      "pid": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Cait Conley",
+      "topic": "Medicare/aid",
+      "value": "3.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Cait_Conley",
+      "cited_status": 200,
+      "cited_chars": 40183,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 40183,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "to include vision, dental, and hearing,"
+      ],
+      "quotes_found": [
+        "to include vision, dental, and hearing,"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Medicaid",
+        "Medicare"
+      ],
+      "found": [
+        "Medicaid",
+        "Medicare"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) pledges to defend Medicaid, expand Medicare \"to include vision, dental, and hearing,\" cap insulin at $35, and let Medicare negotiate drug prices -- improving current programs while controlling costs."
+    },
+    {
+      "pid": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Cait Conley",
+      "topic": "School Vouchers",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Cait_Conley",
+      "cited_status": 200,
+      "cited_chars": 40183,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 40183,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "oppose voucher programs that are stripping money out of our public education system"
+      ],
+      "quotes_found": [
+        "oppose voucher programs that are stripping money out of our public education system"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "vouchers"
+      ],
+      "found": [
+        "vouchers"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) pledges to \"oppose voucher programs that are stripping money out of our public education system\" and put public education first -- fully funding public schools and eliminating vouchers."
+    },
+    {
+      "pid": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Cait Conley",
+      "topic": "Tariffs",
+      "value": "2.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Cait_Conley",
+      "cited_status": 200,
+      "cited_chars": 40183,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 40183,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "jacking up the price of materials",
+        "undo the reckless tariffs that have driven up construction costs"
+      ],
+      "quotes_found": [
+        "jacking up the price of materials",
+        "undo the reckless tariffs that have driven up construction costs"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "tariffs"
+      ],
+      "found": [
+        "tariffs"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) calls Trump's tariffs \"reckless\" for \"jacking up the price of materials\" and pledges to \"undo the reckless tariffs that have driven up construction costs\" -- reducing tariffs."
+    },
+    {
+      "pid": "9e9c0393-0df6-4c19-af92-522b6f1afd14",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Anthony Constantino",
+      "topic": "Healthcare",
+      "value": "4.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Anthony_Constantino",
+      "cited_status": 200,
+      "cited_chars": 9488,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 9488,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "stop the endless debate about making [healthcare] free to focus on innovation and delivering better outcomes"
+      ],
+      "quotes_found": [
+        "stop the endless debate about making [healthcare] free to focus on innovation and delivering better outcomes"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "market-oriented",
+        "limited-government"
+      ],
+      "found": [],
+      "missing": [
+        "market-oriented",
+        "limited-government"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His Ballotpedia Candidate Connection survey says he wants to \"stop the endless debate about making [healthcare] free to focus on innovation and delivering better outcomes\" -- a market-oriented, limited-government approach."
+    },
+    {
+      "pid": "9e9c0393-0df6-4c19-af92-522b6f1afd14",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Anthony Constantino",
+      "topic": "Immigration",
+      "value": "4.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Anthony_Constantino",
+      "cited_status": 200,
+      "cited_chars": 9488,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 9488,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "how much pain and suffering open borders caused the United States"
+      ],
+      "quotes_found": [
+        "how much pain and suffering open borders caused the United States"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "United States",
+        "immigration"
+      ],
+      "found": [
+        "United States",
+        "immigration"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His Ballotpedia Candidate Connection survey lists illegal immigration as a passion, citing \"how much pain and suffering open borders caused the United States\" -- making immigration harder and tightening the border."
+    },
+    {
+      "pid": "9e9c0393-0df6-4c19-af92-522b6f1afd14",
+      "tid": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "name": "Anthony Constantino",
+      "topic": "Misinformation",
+      "value": "4.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Anthony_Constantino",
+      "cited_status": 200,
+      "cited_chars": 9488,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 9488,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "a free speech social network when Democrats tried to take away free speech by censoring the Internet"
+      ],
+      "quotes_found": [
+        "a free speech social network when Democrats tried to take away free speech by censoring the Internet"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [],
+      "found": [],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His Ballotpedia Candidate Connection survey touts building \"a free speech social network when Democrats tried to take away free speech by censoring the Internet\" -- protecting free speech online and preventing government censorship."
+    },
+    {
+      "pid": "d658e8ad-efe9-4875-aeaa-f8a122c601fb",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Alissa Ellman",
+      "topic": "Campaign Finance",
+      "value": "2.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Alissa_Ellman",
+      "cited_status": 200,
+      "cited_chars": 10984,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 10984,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "caps on contributions, overturning Citizens United to claw back power from the superPACs, and introducing matching funds"
+      ],
+      "quotes_found": [
+        "caps on contributions, overturning Citizens United to claw back power from the superPACs, and introducing matching funds"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Citizens United",
+        "dark money"
+      ],
+      "found": [
+        "Citizens United"
+      ],
+      "missing": [
+        "dark money"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her Ballotpedia Candidate Connection survey calls for \"caps on contributions, overturning Citizens United to claw back power from the superPACs, and introducing matching funds\" -- strictly limiting corporate and dark money."
+    },
+    {
+      "pid": "d658e8ad-efe9-4875-aeaa-f8a122c601fb",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Alissa Ellman",
+      "topic": "Healthcare",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Alissa_Ellman",
+      "cited_status": 200,
+      "cited_chars": 10984,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 10984,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "I support Medicare for All",
+        "nobody is ever denied life saving [care] so that a billion dollar corporation can save money"
+      ],
+      "quotes_found": [
+        "I support Medicare for All",
+        "nobody is ever denied life saving [care] so that a billion dollar corporation can save money"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Medicare for All"
+      ],
+      "found": [
+        "Medicare for All"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her Ballotpedia Candidate Connection survey states \"I support Medicare for All\" so \"nobody is ever denied life saving [care] so that a billion dollar corporation can save money\" -- a public universal system."
+    },
+    {
+      "pid": "d658e8ad-efe9-4875-aeaa-f8a122c601fb",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Alissa Ellman",
+      "topic": "Medicare/aid",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Alissa_Ellman",
+      "cited_status": 200,
+      "cited_chars": 10984,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 10984,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "I support Medicare for All"
+      ],
+      "quotes_found": [
+        "I support Medicare for All"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Medicare for All"
+      ],
+      "found": [
+        "Medicare for All"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her Ballotpedia Candidate Connection survey states \"I support Medicare for All\" -- expanding Medicare to cover everyone."
+    },
+    {
+      "pid": "d658e8ad-efe9-4875-aeaa-f8a122c601fb",
+      "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "name": "Alissa Ellman",
+      "topic": "Redistricting",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Alissa_Ellman",
+      "cited_status": 200,
+      "cited_chars": 10984,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 10984,
+      "verdict": "PARTIAL_SUPPORT",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "non-partisan",
+        "gerrymandering"
+      ],
+      "found": [
+        "gerrymandering"
+      ],
+      "missing": [
+        "non-partisan"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her Ballotpedia Candidate Connection survey pledges to \"end gerrymandering\" -- independent, non-partisan drawing of district lines."
+    },
+    {
+      "pid": "69b5322a-cc38-4e55-838c-b08bb80fbcd1",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Kim Farington",
+      "topic": "Abortion",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Candidate for U.S. Senate — Virginia",
+      "district": "Virginia",
+      "cited_url": "https://ballotpedia.org/Kim_Farington",
+      "cited_status": 200,
+      "cited_chars": 15592,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 15592,
+      "verdict": "SUPPORTED",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "pro-life",
+        "abortion"
+      ],
+      "found": [
+        "pro-life",
+        "abortion"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Farington says abortion policy belongs at the state level and that she will be a 'pro-life vote' in the Senate, and she opposed a Virginia constitutional amendment protecting abortion rights; absent any call for a total ban with criminal penalties, this most closely matches the chair restricting abortion to cases of rape, incest, or serious threat to the mother's life."
+    },
+    {
+      "pid": "69b5322a-cc38-4e55-838c-b08bb80fbcd1",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Kim Farington",
+      "topic": "Climate Change",
+      "value": "5.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Candidate for U.S. Senate — Virginia",
+      "district": "Virginia",
+      "cited_url": "https://ballotpedia.org/Kim_Farington",
+      "cited_status": 200,
+      "cited_chars": 15592,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 15592,
+      "verdict": "PARTIAL_SUPPORT",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "climate-change",
+        "nuclear",
+        "emissions"
+      ],
+      "found": [
+        "nuclear"
+      ],
+      "missing": [
+        "climate-change",
+        "emissions"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "She opposes aggressive federal climate mandates and prioritizes expanding oil, gas, coal, and nuclear production over emissions policy, matching the chair that rejects climate-change policy in favor of economic growth."
+    },
+    {
+      "pid": "f3e749b6-24f5-47b4-8f31-94bc23421b86",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Blake Gendebien",
+      "topic": "Healthcare",
+      "value": "3.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Blake_Gendebien",
+      "cited_status": 200,
+      "cited_chars": 12871,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 12871,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "expand access by growing tele-health services and investing in transportation options"
+      ],
+      "quotes_found": [
+        "expand access by growing tele-health services and investing in transportation options"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "tele-health"
+      ],
+      "found": [
+        "tele-health"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His Ballotpedia Candidate Connection survey pledges to \"expand access by growing tele-health services and investing in transportation options\" and lower prescription drug costs for rural families and seniors -- targeted help to expand access while keeping private insurance."
+    },
+    {
+      "pid": "f3e749b6-24f5-47b4-8f31-94bc23421b86",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Blake Gendebien",
+      "topic": "Medicare/aid",
+      "value": "3.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Blake_Gendebien",
+      "cited_status": 200,
+      "cited_chars": 12871,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 12871,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "I will never vote to cut Social Security, Medicare, or Medicaid"
+      ],
+      "quotes_found": [
+        "I will never vote to cut Social Security, Medicare, or Medicaid"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Social Security",
+        "Medicare",
+        "Medicaid"
+      ],
+      "found": [
+        "Social Security",
+        "Medicare",
+        "Medicaid"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His Ballotpedia Candidate Connection survey states \"I will never vote to cut Social Security, Medicare, or Medicaid\" and pledges to lower prescription drug costs -- protecting and improving current programs while controlling costs."
+    },
+    {
+      "pid": "8d005222-15de-45ea-a61c-e7fd37321e9c",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Dennis Hannon",
+      "topic": "Fossil Fuels",
+      "value": "4.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Dennis_Hannon",
+      "cited_status": 200,
+      "cited_chars": 7890,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 7890,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "expand domestic energy production to help reduce costs"
+      ],
+      "quotes_found": [
+        "expand domestic energy production to help reduce costs"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "fossil-fuel"
+      ],
+      "found": [],
+      "missing": [
+        "fossil-fuel"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His Ballotpedia Candidate Connection survey pledges to \"expand domestic energy production to help reduce costs\" -- expanding fossil-fuel production."
+    },
+    {
+      "pid": "8d005222-15de-45ea-a61c-e7fd37321e9c",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Dennis Hannon",
+      "topic": "Immigration",
+      "value": "4.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Dennis_Hannon",
+      "cited_status": 200,
+      "cited_chars": 7890,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 7890,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "enforce immigration and worksite laws",
+        "strengthen cooperation between local and federal agencies"
+      ],
+      "quotes_found": [
+        "enforce immigration and worksite laws",
+        "strengthen cooperation between local and federal agencies"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "immigration enforcement"
+      ],
+      "found": [],
+      "missing": [
+        "immigration enforcement"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His Ballotpedia Candidate Connection survey pledges to \"enforce immigration and worksite laws\" and \"strengthen cooperation between local and federal agencies\" -- tightening immigration enforcement."
+    },
+    {
+      "pid": "8d005222-15de-45ea-a61c-e7fd37321e9c",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Dennis Hannon",
+      "topic": "Medicare/aid",
+      "value": "3.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Dennis_Hannon",
+      "cited_status": 200,
+      "cited_chars": 7890,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 7890,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "lower prescription drug and health care costs, especially for seniors,",
+        "reform pharmacy benefit managers"
+      ],
+      "quotes_found": [
+        "lower prescription drug and health care costs, especially for seniors,",
+        "reform pharmacy benefit managers"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [],
+      "found": [],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His Ballotpedia Candidate Connection survey pledges to \"lower prescription drug and health care costs, especially for seniors,\" and \"reform pharmacy benefit managers\" -- improving current programs while controlling costs."
+    },
+    {
+      "pid": "8d005222-15de-45ea-a61c-e7fd37321e9c",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Dennis Hannon",
+      "topic": "Taxes",
+      "value": "4.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Dennis_Hannon",
+      "cited_status": 200,
+      "cited_chars": 7890,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 7890,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "back tax relief for working-class families"
+      ],
+      "quotes_found": [
+        "back tax relief for working-class families"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "working-class"
+      ],
+      "found": [
+        "working-class"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His Ballotpedia Candidate Connection survey pledges to \"back tax relief for working-class families\" -- cutting taxes."
+    },
+    {
+      "pid": "95cdc29b-18d1-45e1-84c3-ba601f5bec40",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "M. Keith Hodges",
+      "topic": "Healthcare",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 68",
+      "cited_url": "https://ballotpedia.org/Keith_Hodges",
+      "cited_status": 200,
+      "cited_chars": 36916,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 36916,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "big government healthcare mandates"
+      ],
+      "quotes_found": [
+        "big government healthcare mandates"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "doctor-patient"
+      ],
+      "found": [
+        "doctor-patient"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "His archived 2017 platform opposes \"big government healthcare mandates\" and emphasizes preserving doctor-patient choice and private insurance, consistent with limiting government's role to helping only those who cannot afford care."
+    },
+    {
+      "pid": "eb317545-fcb2-4034-865a-d8eb81803de6",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Brad Lander",
+      "topic": "Deportation",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Brad_Lander",
+      "cited_status": 200,
+      "cited_chars": 65665,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 65665,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "When Donald Trump's ICE tried to kidnap our neighbors, Brad put his body on the line to stop them"
+      ],
+      "quotes_found": [
+        "When Donald Trump's ICE tried to kidnap our neighbors, Brad put his body on the line to stop them"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "When Donald Trump ICE"
+      ],
+      "found": [
+        "When Donald Trump ICE"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His campaign website (quoted on Ballotpedia) recounts that \"When Donald Trump's ICE tried to kidnap our neighbors, Brad put his body on the line to stop them\" -- opposing deportations and protecting undocumented residents from removal."
+    },
+    {
+      "pid": "eb317545-fcb2-4034-865a-d8eb81803de6",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Brad Lander",
+      "topic": "Healthcare",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Brad_Lander",
+      "cited_status": 200,
+      "cited_chars": 65665,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 65665,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "win Medicare for All"
+      ],
+      "quotes_found": [
+        "win Medicare for All"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Medicare for All"
+      ],
+      "found": [
+        "Medicare for All"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His campaign website (quoted on Ballotpedia) says Brad will \"win Medicare for All\" -- a public system covering everyone."
+    },
+    {
+      "pid": "eb317545-fcb2-4034-865a-d8eb81803de6",
+      "tid": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "name": "Brad Lander",
+      "topic": "Homelessness",
+      "value": "2.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Brad_Lander",
+      "cited_status": 200,
+      "cited_chars": 65665,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 65665,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "end street homelessness"
+      ],
+      "quotes_found": [
+        "end street homelessness"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "homelessness"
+      ],
+      "found": [
+        "homelessness"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His campaign website (quoted on Ballotpedia) pledges to help cities \"end street homelessness\" through fixing public housing and building affordable homes -- investing in housing and services rather than criminalization."
+    },
+    {
+      "pid": "eb317545-fcb2-4034-865a-d8eb81803de6",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Brad Lander",
+      "topic": "Housing",
+      "value": "2.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Brad_Lander",
+      "cited_status": 200,
+      "cited_chars": 65665,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 65665,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "building affordable housing",
+        "fix our public housing, protect tenants, and especially to build more affordable homes"
+      ],
+      "quotes_found": [
+        "building affordable housing",
+        "fix our public housing, protect tenants, and especially to build more affordable homes"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "affordable housing"
+      ],
+      "found": [
+        "affordable housing"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His campaign website (quoted on Ballotpedia) touts a career \"building affordable housing\" and pledges to help cities \"fix our public housing, protect tenants, and especially to build more affordable homes\" -- publicly funding housing, protecting tenants, and requiring affordable units."
+    },
+    {
+      "pid": "eb317545-fcb2-4034-865a-d8eb81803de6",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Brad Lander",
+      "topic": "Immigration",
+      "value": "2.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Brad_Lander",
+      "cited_status": 200,
+      "cited_chars": 65665,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 65665,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "everyone can live with dignity -- ... immigrants and those who have been here for generations"
+      ],
+      "quotes_found": [
+        "everyone can live with dignity -- ... immigrants and those who have been here for generations"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "immigration"
+      ],
+      "found": [
+        "immigration"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His campaign website (quoted on Ballotpedia) says NYC should be a place \"everyone can live with dignity -- ... immigrants and those who have been here for generations\" and recounts blocking ICE raids -- keeping immigration open and protecting residents regardless of status."
+    },
+    {
+      "pid": "eb317545-fcb2-4034-865a-d8eb81803de6",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Brad Lander",
+      "topic": "Medicare/aid",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Brad_Lander",
+      "cited_status": 200,
+      "cited_chars": 65665,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 65665,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "onto privatized Medicare Advantage",
+        "win Medicare for All"
+      ],
+      "quotes_found": [
+        "onto privatized Medicare Advantage",
+        "win Medicare for All"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Medicare Advantage",
+        "Medicare for All",
+        "privatization"
+      ],
+      "found": [
+        "Medicare Advantage",
+        "Medicare for All"
+      ],
+      "missing": [
+        "privatization"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "His campaign website (quoted on Ballotpedia) touts stopping a push of city retirees \"onto privatized Medicare Advantage\" and a pledge to \"win Medicare for All\" -- expanding Medicare to cover everyone and opposing privatization."
+    },
+    {
+      "pid": "80b9fe48-9f8c-4585-91ab-4d0ed1bc2229",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Amy J. Laufer",
+      "topic": "Abortion",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 55",
+      "cited_url": "https://ballotpedia.org/Amy_Laufer",
+      "cited_status": 200,
+      "cited_chars": 25233,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 25233,
+      "verdict": "CITATION_FAILS",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "abortion"
+      ],
+      "found": [],
+      "missing": [
+        "abortion"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia 2019 survey: states she is deeply concerned about preserving women's reproductive rights in Virginia — keep abortion legal and accessible."
+    },
+    {
+      "pid": "80b9fe48-9f8c-4585-91ab-4d0ed1bc2229",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Amy J. Laufer",
+      "topic": "Climate Change",
+      "value": "3.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 55",
+      "cited_url": "https://ballotpedia.org/Amy_Laufer",
+      "cited_status": 200,
+      "cited_chars": 25233,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 25233,
+      "verdict": "CITATION_FAILS",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "clean energy",
+        "fossil fuel"
+      ],
+      "found": [],
+      "missing": [
+        "clean energy",
+        "fossil fuel"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia 2019 survey: advocates for investing in renewable energy infrastructure to protect the environment and stimulate economic growth by creating new jobs — invest in clean energy while gradually reducing fossil fuel reliance, not declaring emergency."
+    },
+    {
+      "pid": "80b9fe48-9f8c-4585-91ab-4d0ed1bc2229",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Amy J. Laufer",
+      "topic": "Healthcare",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 55",
+      "cited_url": "https://ballotpedia.org/Amy_Laufer",
+      "cited_status": 200,
+      "cited_chars": 25233,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 25233,
+      "verdict": "SUPPORTED",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "pre-existing"
+      ],
+      "found": [
+        "pre-existing"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia 2019 survey: states everyone needs access to affordable healthcare and is invested in ensuring protections for people with pre-existing conditions — make sure everyone has affordable coverage through public programs and regulated private insurance."
+    },
+    {
+      "pid": "486ec568-8c68-41e4-a289-2116c66e4cf1",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Virginia McIntyre",
+      "topic": "Taxes",
+      "value": "4.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Virginia_McIntyre",
+      "cited_status": 200,
+      "cited_chars": 10790,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 10790,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "fighting for tax relief for working families and seniors",
+        "fiscal responsibility, and putting taxpayers first"
+      ],
+      "quotes_found": [
+        "fighting for tax relief for working families and seniors",
+        "fiscal responsibility, and putting taxpayers first"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [],
+      "found": [],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Her Ballotpedia Candidate Connection survey pledges \"fighting for tax relief for working families and seniors\" with a focus on \"fiscal responsibility, and putting taxpayers first\" -- cutting taxes and restraining spending."
+    },
+    {
+      "pid": "191ee4e1-1514-4567-8fd4-8308e3b88bb0",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "May Nivar",
+      "topic": "Abortion",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 57",
+      "cited_url": "https://ballotpedia.org/May_Nivar",
+      "cited_status": 200,
+      "cited_chars": 13909,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 13909,
+      "verdict": "SUPPORTED",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "contraception"
+      ],
+      "found": [
+        "contraception"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "2025 Candidate Connection survey: I strongly support access to safe and legal abortions, contraception, and IVF — I believe we must defend a woman's right to make personal healthcare decisions for herself. Newly elected November 2025 Democrat."
+    },
+    {
+      "pid": "191ee4e1-1514-4567-8fd4-8308e3b88bb0",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "May Nivar",
+      "topic": "Healthcare",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 57",
+      "cited_url": "https://ballotpedia.org/May_Nivar",
+      "cited_status": 200,
+      "cited_chars": 13909,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 13909,
+      "verdict": "UNTESTABLE",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [],
+      "found": [],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "2025 Candidate Connection survey: Healthcare should be a right, not a privilege. I'm committed to lowering healthcare costs, improving quality, and ensuring accessibility for everyone."
+    },
+    {
+      "pid": "191ee4e1-1514-4567-8fd4-8308e3b88bb0",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "May Nivar",
+      "topic": "Medicare/aid",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 57",
+      "cited_url": "https://ballotpedia.org/May_Nivar",
+      "cited_status": 200,
+      "cited_chars": 13909,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 13909,
+      "verdict": "SUPPORTED",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "medicaid expansion"
+      ],
+      "found": [
+        "medicaid expansion"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "2025 Candidate Connection survey: Explicitly supports Medicaid expansion — Over 600,000 Virginians have gained coverage through Medicaid expansion. Supports expanding and protecting Medicaid."
+    },
+    {
+      "pid": "191ee4e1-1514-4567-8fd4-8308e3b88bb0",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "May Nivar",
+      "topic": "School Vouchers",
+      "value": "1.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 57",
+      "cited_url": "https://ballotpedia.org/May_Nivar",
+      "cited_status": 200,
+      "cited_chars": 13909,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 13909,
+      "verdict": "CITATION_FAILS",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "vouchers"
+      ],
+      "found": [],
+      "missing": [
+        "vouchers"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": false,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "2025 Candidate Connection survey: I am committed to strengthening our public education system and fully funding our public schools — prioritizing public school funding and eliminating vouchers that divert taxpayer money."
+    },
+    {
+      "pid": "b7e9d159-b766-445c-b95f-9797b57247d9",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Mark D. Obenshain",
+      "topic": "Fossil Fuels",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 2",
+      "cited_url": "https://ballotpedia.org/Mark_Obenshain",
+      "cited_status": 200,
+      "cited_chars": 50393,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 50393,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Promoting Energy Independence",
+        "I stand in strong support of Virginia''s efforts to tap the significant oil deposits along Virginia''s outer continental shelf in an environmentally sensitive manner."
+      ],
+      "quotes_found": [
+        "Promoting Energy Independence",
+        "I stand in strong support of Virginia''s efforts to tap the significant oil deposits along Virginia''s outer continental shelf in an environmentally sensitive manner."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Promoting Energy Independence'",
+        "fossil fuel"
+      ],
+      "found": [
+        "Promoting Energy Independence'"
+      ],
+      "missing": [
+        "fossil fuel"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Obenshain's 2011 campaign website under 'Promoting Energy Independence' states: 'I stand in strong support of Virginia''s efforts to tap the significant oil deposits along Virginia''s outer continental shelf in an environmentally sensitive manner.' Support for expanding offshore oil drilling aligns with value 4 (expand fossil fuel drilling permits)."
+    },
+    {
+      "pid": "b7e9d159-b766-445c-b95f-9797b57247d9",
+      "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "name": "Mark D. Obenshain",
+      "topic": "Religious Freedom",
+      "value": "5.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 2",
+      "cited_url": "https://ballotpedia.org/Mark_Obenshain",
+      "cited_status": 200,
+      "cited_chars": 50393,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 50393,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Protecting Valley Values of Faith and Family",
+        "will stand strong to protect the rights of Virginians from those who would drive all references to God and faith from the public square."
+      ],
+      "quotes_found": [
+        "Protecting Valley Values of Faith and Family",
+        "will stand strong to protect the rights of Virginians from those who would drive all references to God and faith from the public square."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Protecting Valley Values of Faith and Family'"
+      ],
+      "found": [
+        "Protecting Valley Values of Faith and Family'"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Obenshain's 2011 campaign website under 'Protecting Valley Values of Faith and Family' states he 'will stand strong to protect the rights of Virginians from those who would drive all references to God and faith from the public square.' This strong defense of religion in the public square — going beyond individual practice to defending religious presence in public institutions — aligns with value 5 (strongly protect religious freedom and allow religious organizations complete autonomy)."
+    },
+    {
+      "pid": "b7e9d159-b766-445c-b95f-9797b57247d9",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Mark D. Obenshain",
+      "topic": "Taxes",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 2",
+      "cited_url": "https://ballotpedia.org/Mark_Obenshain",
+      "cited_status": 200,
+      "cited_chars": 50393,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 50393,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Holding the Line on Taxes",
+        "Our families already pay too much in taxes – on average, more than they spend on food, clothing, and shelter combined. In these economically trying times, higher taxes and fees would be particularly devastating."
+      ],
+      "quotes_found": [
+        "Holding the Line on Taxes",
+        "Our families already pay too much in taxes – on average, more than they spend on food, clothing, and shelter combined. In these economically trying times, higher taxes and fees would be particularly devastating."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Holding the Line",
+        "anti-tax"
+      ],
+      "found": [
+        "Holding the Line"
+      ],
+      "missing": [
+        "anti-tax"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Obenshain's 2011 campaign website under 'Holding the Line on Taxes' explicitly states: 'Our families already pay too much in taxes – on average, more than they spend on food, clothing, and shelter combined. In these economically trying times, higher taxes and fees would be particularly devastating.' This documented anti-tax position and support for cutting spending aligns with value 4."
+    },
+    {
+      "pid": "ed60a0c7-252c-443f-98ff-5926bf9a58a3",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Mark J. Peake",
+      "topic": "Abortion",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 8",
+      "cited_url": "https://ballotpedia.org/Mark_Peake",
+      "cited_status": 200,
+      "cited_chars": 22624,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 22624,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Protecting the Sanctity of Marriage and the Unborn"
+      ],
+      "quotes_found": [
+        "Protecting the Sanctity of Marriage and the Unborn"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Protecting the Sanctity of Marriage",
+        "pro-life",
+        "abortion"
+      ],
+      "found": [
+        "Protecting the Sanctity of Marriage"
+      ],
+      "missing": [
+        "pro-life",
+        "abortion"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Peake's campaign website under 'Protecting the Sanctity of Marriage and the Unborn' documents his commitment to protecting the unborn. Value 4 (restrict abortion to only cases involving rape, incest, or serious threats to the mother's life) aligns with his documented pro-life position and mainstream Republican pro-life legislative stance."
+    },
+    {
+      "pid": "ed60a0c7-252c-443f-98ff-5926bf9a58a3",
+      "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "name": "Mark J. Peake",
+      "topic": "Same-Sex Marriage",
+      "value": "5.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 8",
+      "cited_url": "https://ballotpedia.org/Mark_Peake",
+      "cited_status": 200,
+      "cited_chars": 22624,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 22624,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Protecting the Sanctity of Marriage and the Unborn",
+        "Mark is committed to our conservative principles that value the true definition of marriage as between one man and one woman."
+      ],
+      "quotes_found": [
+        "Protecting the Sanctity of Marriage and the Unborn",
+        "Mark is committed to our conservative principles that value the true definition of marriage as between one man and one woman."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Protecting the Sanctity of Marriage",
+        "same-sex"
+      ],
+      "found": [
+        "Protecting the Sanctity of Marriage"
+      ],
+      "missing": [
+        "same-sex"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Peake's campaign website under 'Protecting the Sanctity of Marriage and the Unborn' states: 'Mark is committed to our conservative principles that value the true definition of marriage as between one man and one woman.' This explicit opposition to same-sex marriage and support for defining marriage as only between a man and woman aligns with value 5 (make same-sex marriage illegal and define marriage as only between one man and one woman)."
+    },
+    {
+      "pid": "ed60a0c7-252c-443f-98ff-5926bf9a58a3",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Mark J. Peake",
+      "topic": "Taxes",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 8",
+      "cited_url": "https://ballotpedia.org/Mark_Peake",
+      "cited_status": 200,
+      "cited_chars": 22624,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 22624,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "In these difficult economic times, businesses can only prosper when taxes are low.",
+        "cut back wasteful government expenditures and help balance the budget by limiting the scope of government."
+      ],
+      "quotes_found": [
+        "In these difficult economic times, businesses can only prosper when taxes are low.",
+        "cut back wasteful government expenditures and help balance the budget by limiting the scope of government."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Keeping Taxes Low'",
+        "pro-tax-cut"
+      ],
+      "found": [
+        "Keeping Taxes Low'"
+      ],
+      "missing": [
+        "pro-tax-cut"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Peake's campaign website under 'Keeping Taxes Low' states: 'In these difficult economic times, businesses can only prosper when taxes are low.' His site also states he will 'cut back wasteful government expenditures and help balance the budget by limiting the scope of government.' This pro-tax-cut position aligns with value 4 (cut taxes for everyone and scale back public services to match)."
+    },
+    {
+      "pid": "eb7293ae-8a9d-4ae4-8deb-a32aa43e2c99",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Todd E. Pillion",
+      "topic": "Fossil Fuels",
+      "value": "5.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 6",
+      "cited_url": "https://ballotpedia.org/Todd_Pillion",
+      "cited_status": 200,
+      "cited_chars": 31243,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 31243,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Coal: I will fight to stop job-killing regulations and taxes. I believe that coal is not only critical to our economy, but is also an important part of our culture and way of life. I plan to fight for our coal industry by working at the state level to stand up to the EPA and the Obama Administration."
+      ],
+      "quotes_found": [
+        "Coal: I will fight to stop job-killing regulations and taxes. I believe that coal is not only critical to our economy, but is also an important part of our culture and way of life. I plan to fight for our coal industry by working at the state level to stand up to the EPA and the Obama Administration."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Obama Administration",
+        "job-killing",
+        "fossil fuel"
+      ],
+      "found": [
+        "Obama Administration",
+        "job-killing"
+      ],
+      "missing": [
+        "fossil fuel"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Pillion's 2017 campaign website stated: 'Coal: I will fight to stop job-killing regulations and taxes. I believe that coal is not only critical to our economy, but is also an important part of our culture and way of life. I plan to fight for our coal industry by working at the state level to stand up to the EPA and the Obama Administration.' This explicit commitment to fighting EPA regulations on coal to maximize extraction aligns with value 5 (remove environmental restrictions and maximize fossil fuel extraction)."
+    },
+    {
+      "pid": "eb7293ae-8a9d-4ae4-8deb-a32aa43e2c99",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Todd E. Pillion",
+      "topic": "Healthcare",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 6",
+      "cited_url": "https://ballotpedia.org/Todd_Pillion",
+      "cited_status": 200,
+      "cited_chars": 31243,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 31243,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Healthcare: I am opposed to expanding Obamacare in Virginia. Obamacare has been a disaster since day 1, and more of it just doesn''t make sense. As a healthcare professional, I see the negative effects of this new program each and every day. I will support legislation that allows the private sector to grow in order to drive the price of premiums down."
+      ],
+      "quotes_found": [
+        "Healthcare: I am opposed to expanding Obamacare in Virginia. Obamacare has been a disaster since day 1, and more of it just doesn''t make sense. As a healthcare professional, I see the negative effects of this new program each and every day. I will support legislation that allows the private sector to grow in order to drive the price of premiums down."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Obamacare"
+      ],
+      "found": [
+        "Obamacare"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Pillion's 2017 campaign website stated: 'Healthcare: I am opposed to expanding Obamacare in Virginia. Obamacare has been a disaster since day 1, and more of it just doesn''t make sense. As a healthcare professional, I see the negative effects of this new program each and every day. I will support legislation that allows the private sector to grow in order to drive the price of premiums down.' Opposition to ACA expansion with focus on private sector solutions aligns with value 4."
+    },
+    {
+      "pid": "eb7293ae-8a9d-4ae4-8deb-a32aa43e2c99",
+      "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "name": "Todd E. Pillion",
+      "topic": "Religious Freedom",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 6",
+      "cited_url": "https://ballotpedia.org/Todd_Pillion",
+      "cited_status": 200,
+      "cited_chars": 31243,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 31243,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Life and Traditional Values':"
+      ],
+      "quotes_found": [
+        "Life and Traditional Values':"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Life and Traditional Values'",
+        "faith-based"
+      ],
+      "found": [
+        "Life and Traditional Values'"
+      ],
+      "missing": [
+        "faith-based"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Pillion's 2017 campaign website stated under 'Life and Traditional Values': 'I will stand up for our traditional values in Richmond. I will work to protect life, preserve marriage, and protect our children''s right to pray when they are in school.' Protection of prayer in schools and preservation of marriage aligns with value 4 (protect religious freedom and allow faith-based exemptions from laws that conflict with sincere religious beliefs)."
+    },
+    {
+      "pid": "eb7293ae-8a9d-4ae4-8deb-a32aa43e2c99",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Todd E. Pillion",
+      "topic": "Taxes",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 6",
+      "cited_url": "https://ballotpedia.org/Todd_Pillion",
+      "cited_status": 200,
+      "cited_chars": 31243,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 31243,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Jobs and the Economy: As a small business owner, I understand how over-regulation is suffocating businesses across Southwest Virginia and the Commonwealth. Virginia has one of the highest corporate tax rates in the country. As Delegate, I will fight to oppose such taxes and regulations."
+      ],
+      "quotes_found": [
+        "Jobs and the Economy: As a small business owner, I understand how over-regulation is suffocating businesses across Southwest Virginia and the Commonwealth. Virginia has one of the highest corporate tax rates in the country. As Delegate, I will fight to oppose such taxes and regulations."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Southwest Virginia",
+        "As Delegate",
+        "over-regulation",
+        "anti-tax",
+        "corporate tax"
+      ],
+      "found": [
+        "Southwest Virginia",
+        "As Delegate",
+        "over-regulation",
+        "corporate tax"
+      ],
+      "missing": [
+        "anti-tax"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Pillion's 2017 campaign website stated: 'Jobs and the Economy: As a small business owner, I understand how over-regulation is suffocating businesses across Southwest Virginia and the Commonwealth. Virginia has one of the highest corporate tax rates in the country. As Delegate, I will fight to oppose such taxes and regulations.' This anti-tax position aligns with value 4 (cut taxes for everyone and scale back public services to match)."
+    },
+    {
+      "pid": "307597bd-3a05-41ad-a991-a7325ece5b5f",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Sam Rasoul",
+      "topic": "Abortion",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 38",
+      "cited_url": "https://ballotpedia.org/Sam_Rasoul",
+      "cited_status": 200,
+      "cited_chars": 48765,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 48765,
+      "verdict": "PARTIAL_SUPPORT",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Planned Parenthood Advocates of Virginia",
+        "abortion"
+      ],
+      "found": [
+        "Planned Parenthood Advocates of Virginia"
+      ],
+      "missing": [
+        "abortion"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia: endorsed by Planned Parenthood Advocates of Virginia in 2023; 2021 campaign described fighting for a woman's right to choose — keep abortion legal and accessible."
+    },
+    {
+      "pid": "307597bd-3a05-41ad-a991-a7325ece5b5f",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Sam Rasoul",
+      "topic": "Civil Rights",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 38",
+      "cited_url": "https://ballotpedia.org/Sam_Rasoul",
+      "cited_status": 200,
+      "cited_chars": 48765,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 48765,
+      "verdict": "UNTESTABLE",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [],
+      "found": [],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia 2021 campaign: states too many people still face discrimination and that Virginia must take every opportunity to stand up and fight for equality — strengthen civil rights enforcement and address systemic discrimination."
+    },
+    {
+      "pid": "307597bd-3a05-41ad-a991-a7325ece5b5f",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Sam Rasoul",
+      "topic": "Climate Change",
+      "value": "1.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 38",
+      "cited_url": "https://ballotpedia.org/Sam_Rasoul",
+      "cited_status": 200,
+      "cited_chars": 48765,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 48765,
+      "verdict": "PARTIAL_SUPPORT",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Green New Deal",
+        "clean energy",
+        "emissions"
+      ],
+      "found": [
+        "Green New Deal",
+        "clean energy"
+      ],
+      "missing": [
+        "emissions"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia 2021 LG campaign website: explicitly calls to declare a climate crisis in Virginia and enact a Green New Deal to get Virginia to 100% clean energy by 2036 — declare climate emergency and ban activities increasing carbon emissions."
+    },
+    {
+      "pid": "307597bd-3a05-41ad-a991-a7325ece5b5f",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Sam Rasoul",
+      "topic": "Fossil Fuels",
+      "value": "1.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 38",
+      "cited_url": "https://ballotpedia.org/Sam_Rasoul",
+      "cited_status": 200,
+      "cited_chars": 48765,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 48765,
+      "verdict": "SUPPORTED",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "fossil fuel",
+        "moratorium"
+      ],
+      "found": [
+        "fossil fuel",
+        "moratorium"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia 2021 LG campaign website: explicitly calls to establish a moratorium on new fossil fuel projects — immediately ban all new fossil fuel drilling and extraction."
+    },
+    {
+      "pid": "307597bd-3a05-41ad-a991-a7325ece5b5f",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Sam Rasoul",
+      "topic": "Healthcare",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 38",
+      "cited_url": "https://ballotpedia.org/Sam_Rasoul",
+      "cited_status": 200,
+      "cited_chars": 48765,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 48765,
+      "verdict": "SUPPORTED",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "high-quality"
+      ],
+      "found": [
+        "high-quality"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia 2021 LG campaign website: calls for high-quality affordable healthcare for every Virginian as a basic right and lowering prescription drug costs through public programs and regulated insurance — make sure everyone has affordable coverage through mix of public programs and regulated private insurance."
+    },
+    {
+      "pid": "307597bd-3a05-41ad-a991-a7325ece5b5f",
+      "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "name": "Sam Rasoul",
+      "topic": "Same-Sex Marriage",
+      "value": "1.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 38",
+      "cited_url": "https://ballotpedia.org/Sam_Rasoul",
+      "cited_status": 200,
+      "cited_chars": 48765,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 48765,
+      "verdict": "SUPPORTED",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "same-sex"
+      ],
+      "found": [
+        "same-sex"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia 2021 campaign: supported removing the constitutional amendment that banned same-sex marriage in Virginia — require all states to recognize same-sex marriages with full protections."
+    },
+    {
+      "pid": "307597bd-3a05-41ad-a991-a7325ece5b5f",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Sam Rasoul",
+      "topic": "Voting Rights",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 38",
+      "cited_url": "https://ballotpedia.org/Sam_Rasoul",
+      "cited_status": 200,
+      "cited_chars": 48765,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 48765,
+      "verdict": "CITATION_FAILS",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "mail-in"
+      ],
+      "found": [],
+      "missing": [
+        "mail-in"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia 2021 campaign: explicitly called for going farther than restoring felon voting rights upon release to ensure the ability to vote is never taken away plus ideas to make voting more accessible — expand early voting and mail-in access."
+    },
+    {
+      "pid": "f56ed171-b3d4-4c5a-b887-5bca5f1c3108",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Amy Roma",
+      "topic": "Climate Change",
+      "value": "3.0",
+      "state": "va",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Amy_Roma",
+      "cited_status": 200,
+      "cited_chars": 12201,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 12201,
+      "verdict": "PARTIAL_SUPPORT",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "clean energy",
+        "fossil fuel",
+        "nuclear"
+      ],
+      "found": [
+        "clean energy",
+        "nuclear"
+      ],
+      "missing": [
+        "fossil fuel"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [
+        "Ballotpedia Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Roma's campaign platform (Ballotpedia Candidate Connection survey) lists clean energy as a top priority, specifically modernizing the electric grid and accelerating deployment of nuclear and renewable energy with union labor -- consistent with investing in clean energy while gradually transitioning away from fossil fuels, rather than declaring an emergency/ban or leaving the transition to market forces alone."
+    },
+    {
+      "pid": "f56ed171-b3d4-4c5a-b887-5bca5f1c3108",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Amy Roma",
+      "topic": "Housing",
+      "value": "3.0",
+      "state": "va",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Amy_Roma",
+      "cited_status": 200,
+      "cited_chars": 12201,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 12201,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "smarter investment and zoning reform,"
+      ],
+      "quotes_found": [
+        "smarter investment and zoning reform,"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "large-scale",
+        "zoning reform"
+      ],
+      "found": [
+        "zoning reform"
+      ],
+      "missing": [
+        "large-scale"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "In her Ballotpedia campaign survey, Roma states she wants to bring down housing costs through 'smarter investment and zoning reform,' combining targeted public investment with permitting/zoning changes rather than either large-scale public housing construction or pure market deregulation."
+    },
+    {
+      "pid": "f56ed171-b3d4-4c5a-b887-5bca5f1c3108",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Amy Roma",
+      "topic": "Medicare/aid",
+      "value": "2.0",
+      "state": "va",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Amy_Roma",
+      "cited_status": 200,
+      "cited_chars": 12201,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 12201,
+      "verdict": "PARTIAL_SUPPORT",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Roma Ballotpedia Candidate Connection",
+        "community-based",
+        "Medicaid-funded",
+        "cost-control",
+        "Medicare"
+      ],
+      "found": [
+        "community-based",
+        "Medicare"
+      ],
+      "missing": [
+        "Roma Ballotpedia Candidate Connection",
+        "Medicaid-funded",
+        "cost-control"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Roma's Ballotpedia Candidate Connection survey lists protecting and expanding Medicare, Medicaid, and home- and community-based services (HCBS) as a core campaign priority, motivated by her sister's disability. This emphasis on defending and growing HCBS access (a Medicaid-funded program for people with disabilities) aligns most closely with significantly expanding Medicaid coverage rather than mere cost-control maintenance of current programs."
+    },
+    {
+      "pid": "c25726d9-566e-4283-b35c-c608b921599f",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Shelly A. Simonds",
+      "topic": "Abortion",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 70",
+      "cited_url": "https://ballotpedia.org/Shelly_Simonds",
+      "cited_status": 200,
+      "cited_chars": 43982,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 43982,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Access to healthcare and maternal reproductive rights"
+      ],
+      "quotes_found": [
+        "Access to healthcare and maternal reproductive rights"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Newport News",
+        "abortion"
+      ],
+      "found": [
+        "Newport News"
+      ],
+      "missing": [
+        "abortion"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia records Simonds listing \"Access to healthcare and maternal reproductive rights\" as a key campaign priority. Her positioning as a progressive Democrat in Newport News with explicit mention of maternal reproductive rights indicates support for keeping abortion legal and accessible. Value 2: keep abortion legal and accessible through the second trimester with rare exceptions."
+    },
+    {
+      "pid": "c25726d9-566e-4283-b35c-c608b921599f",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Shelly A. Simonds",
+      "topic": "School Vouchers",
+      "value": "1.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 70",
+      "cited_url": "https://ballotpedia.org/Shelly_Simonds",
+      "cited_status": 200,
+      "cited_chars": 43982,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 43982,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "We do not need a voucher system in Virginia for two reasons: we already have the flexibility to have specialty magnet programs in our schools and Virginia DOES NOT ADEQUATELY fund public education to begin with so there is no room for taking funding away from our schools."
+      ],
+      "quotes_found": [
+        "We do not need a voucher system in Virginia for two reasons: we already have the flexibility to have specialty magnet programs in our schools and Virginia DOES NOT ADEQUATELY fund public education to begin with so there is no room for taking funding away from our schools."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Virginia DOES NOT ADEQUATELY",
+        "voucher"
+      ],
+      "found": [
+        "Virginia DOES NOT ADEQUATELY",
+        "voucher"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Ballotpedia records Simonds explicitly opposing Virginia's voucher system: \"We do not need a voucher system in Virginia for two reasons: we already have the flexibility to have specialty magnet programs in our schools and Virginia DOES NOT ADEQUATELY fund public education to begin with so there is no room for taking funding away from our schools.\" Value 1: fully funding public schools and eliminating voucher programs."
+    },
+    {
+      "pid": "c25726d9-566e-4283-b35c-c608b921599f",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Shelly A. Simonds",
+      "topic": "Voting Rights",
+      "value": "2.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Delegate",
+      "district": "State House District 70",
+      "cited_url": "https://ballotpedia.org/Shelly_Simonds",
+      "cited_status": 200,
+      "cited_chars": 43982,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 43982,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "has been dedicated to fair elections and voting rights while serving on the Privileges and Elections Committee in the House."
+      ],
+      "quotes_found": [
+        "has been dedicated to fair elections and voting rights while serving on the Privileges and Elections Committee in the House."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "From Ballotpedia",
+        "Privileges and Elections Committee",
+        "mail-in"
+      ],
+      "found": [
+        "From Ballotpedia",
+        "Privileges and Elections Committee"
+      ],
+      "missing": [
+        "mail-in"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "From Ballotpedia: Simonds \"has been dedicated to fair elections and voting rights while serving on the Privileges and Elections Committee in the House.\" This explicit dedication to voting rights expansion aligns with value 2: expand early voting periods and make mail-in voting available to all voters without requiring an excuse."
+    },
+    {
+      "pid": "1722c95b-7aed-430e-81a3-488cdf610afc",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "William M. Stanley",
+      "topic": "Abortion",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 7",
+      "cited_url": "https://ballotpedia.org/William_Stanley",
+      "cited_status": 200,
+      "cited_chars": 34408,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 34408,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "I will always fight to protect human life as sacred."
+      ],
+      "quotes_found": [
+        "I will always fight to protect human life as sacred."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "pro-life",
+        "abortion"
+      ],
+      "found": [],
+      "missing": [
+        "pro-life",
+        "abortion"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Stanley's 2011 campaign themes include: 'I will always fight to protect human life as sacred.' This commitment to protecting human life as sacred aligns with a pro-life position. Value 4 (restrict abortion to only cases involving rape, incest, or serious threats to the mother's life) matches the mainstream Republican pro-life legislative position he has consistently held."
+    },
+    {
+      "pid": "1722c95b-7aed-430e-81a3-488cdf610afc",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "William M. Stanley",
+      "topic": "Immigration",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 7",
+      "cited_url": "https://ballotpedia.org/William_Stanley",
+      "cited_status": 200,
+      "cited_chars": 34408,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 34408,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "I will fight to strengthen our immigration policy – I will ensure that our commonwealth will enforce the state law if the federal government will not."
+      ],
+      "quotes_found": [
+        "I will fight to strengthen our immigration policy – I will ensure that our commonwealth will enforce the state law if the federal government will not."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "immigration"
+      ],
+      "found": [
+        "immigration"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Stanley's 2011 campaign themes explicitly state: 'I will fight to strengthen our immigration policy – I will ensure that our commonwealth will enforce the state law if the federal government will not.' This commitment to enforcing restrictive immigration laws and limiting public services for those without legal status aligns with value 4 (make it harder to immigrate legally and limit public services to people with legal status)."
+    },
+    {
+      "pid": "1722c95b-7aed-430e-81a3-488cdf610afc",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "William M. Stanley",
+      "topic": "Taxes",
+      "value": "5.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 7",
+      "cited_url": "https://ballotpedia.org/William_Stanley",
+      "cited_status": 200,
+      "cited_chars": 34408,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 34408,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "I will never vote to raise your taxes or user fees at any time.",
+        "I will fight to reduce state spending and the size of state government."
+      ],
+      "quotes_found": [
+        "I will never vote to raise your taxes or user fees at any time.",
+        "I will fight to reduce state spending and the size of state government."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [],
+      "found": [],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Stanley's 2011 campaign themes explicitly state: 'I will never vote to raise your taxes or user fees at any time.' and 'I will fight to reduce state spending and the size of state government.' The absolute commitment to never raising taxes combined with reducing the size of government aligns with value 5 (drastically cut taxes and shrink government so people and businesses keep more of their money)."
+    },
+    {
+      "pid": "405de162-8de9-4aef-af9a-c323c04da698",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Glen H. Sturtevant",
+      "topic": "Healthcare",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 12",
+      "cited_url": "https://ballotpedia.org/Glen_Sturtevant",
+      "cited_status": 200,
+      "cited_chars": 24586,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 24586,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "I oppose the expansion of Medicaid and Obamacare in Virginia. The federal tax increases and healthcare mandates imposed by Obamacare are killing jobs and our economy. Medicaid is already growing at an unsustainable rate, and expanding it will hurt our ability to fund important priorities like public safety and education."
+      ],
+      "quotes_found": [
+        "I oppose the expansion of Medicaid and Obamacare in Virginia. The federal tax increases and healthcare mandates imposed by Obamacare are killing jobs and our economy. Medicaid is already growing at an unsustainable rate, and expanding it will hurt our ability to fund important priorities like public safety and education."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Medicaid and Obamacare",
+        "market-based",
+        "medicaid expansion"
+      ],
+      "found": [
+        "Medicaid and Obamacare"
+      ],
+      "missing": [
+        "market-based",
+        "medicaid expansion"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Sturtevant's 2015 campaign website explicitly stated: 'I oppose the expansion of Medicaid and Obamacare in Virginia. The federal tax increases and healthcare mandates imposed by Obamacare are killing jobs and our economy. Medicaid is already growing at an unsustainable rate, and expanding it will hurt our ability to fund important priorities like public safety and education.' Opposition to Medicaid expansion with market-based approach aligns with value 4 (only help the poorest people afford healthcare and leave everyone else to employers and private insurance)."
+    },
+    {
+      "pid": "405de162-8de9-4aef-af9a-c323c04da698",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Glen H. Sturtevant",
+      "topic": "Taxes",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 12",
+      "cited_url": "https://ballotpedia.org/Glen_Sturtevant",
+      "cited_status": 200,
+      "cited_chars": 24586,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 24586,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "Families must live within their means; government should too. We can grow our economy and create more jobs if government learns to live with less and we keep more of what we earn. I'll be a vote for lower taxes and free market, pro-growth economic policies. We have to get government off the back of regular people so that our economy can grow."
+      ],
+      "quotes_found": [
+        "Families must live within their means; government should too. We can grow our economy and create more jobs if government learns to live with less and we keep more of what we earn. I'll be a vote for lower taxes and free market, pro-growth economic policies. We have to get government off the back of regular people so that our economy can grow."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "pro-growth",
+        "anti-tax",
+        "pro-market"
+      ],
+      "found": [
+        "pro-growth"
+      ],
+      "missing": [
+        "anti-tax",
+        "pro-market"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Sturtevant's 2015 campaign website stated: 'Families must live within their means; government should too. We can grow our economy and create more jobs if government learns to live with less and we keep more of what we earn. I'll be a vote for lower taxes and free market, pro-growth economic policies. We have to get government off the back of regular people so that our economy can grow.' This anti-tax, pro-market position aligns with value 4 (cut taxes for everyone and scale back public services to match)."
+    },
+    {
+      "pid": "8ed24df0-2a89-45d2-a236-1fe339b2a11c",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "David R. Suetterlein",
+      "topic": "Abortion",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 4",
+      "cited_url": "https://ballotpedia.org/David_Suetterlein",
+      "cited_status": 200,
+      "cited_chars": 27715,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 27715,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "David is pro-life. As Senator, he will strongly oppose taxpayer funding of abortion and support the Virginia Pain-Capable Unborn Child Protection Act. David is endorsed by the Virginia Society for Human Life."
+      ],
+      "quotes_found": [
+        "David is pro-life. As Senator, he will strongly oppose taxpayer funding of abortion and support the Virginia Pain-Capable Unborn Child Protection Act. David is endorsed by the Virginia Society for Human Life."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "As Senator",
+        "Virginia Pain",
+        "Capable Unborn Child Protection Act",
+        "Virginia Society for Human Life",
+        "pro-life",
+        "Pain-Capable",
+        "abortion"
+      ],
+      "found": [
+        "As Senator",
+        "Virginia Pain",
+        "Capable Unborn Child Protection Act",
+        "Virginia Society for Human Life",
+        "pro-life",
+        "Pain-Capable",
+        "abortion"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Suetterlein's 2019 campaign website states: 'David is pro-life. As Senator, he will strongly oppose taxpayer funding of abortion and support the Virginia Pain-Capable Unborn Child Protection Act. David is endorsed by the Virginia Society for Human Life.' This position — opposing taxpayer funding while supporting the Pain-Capable Unborn Child Protection Act — aligns with value 4 (restrict abortion to only cases involving rape, incest, or serious threats to the mother's life)."
+    },
+    {
+      "pid": "8ed24df0-2a89-45d2-a236-1fe339b2a11c",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "David R. Suetterlein",
+      "topic": "Healthcare",
+      "value": "4.0",
+      "state": "va",
+      "seated": true,
+      "on_ballot": false,
+      "office": "Senator",
+      "district": "State Senate District 4",
+      "cited_url": "https://ballotpedia.org/David_Suetterlein",
+      "cited_status": 200,
+      "cited_chars": 27715,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 27715,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "opposes proposals to expand Obamacare in Virginia and recognizes the unsustainable financial burden it would place on Virginia taxpayers.",
+        "supports healthcare reforms that would introduce market-based competition and reduce costs."
+      ],
+      "quotes_found": [
+        "opposes proposals to expand Obamacare in Virginia and recognizes the unsustainable financial burden it would place on Virginia taxpayers.",
+        "supports healthcare reforms that would introduce market-based competition and reduce costs."
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "market-based",
+        "medicaid expansion",
+        "Obamacare"
+      ],
+      "found": [
+        "market-based",
+        "Obamacare"
+      ],
+      "missing": [
+        "medicaid expansion"
+      ],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Suetterlein's 2019 campaign website states he 'opposes proposals to expand Obamacare in Virginia and recognizes the unsustainable financial burden it would place on Virginia taxpayers.' He 'supports healthcare reforms that would introduce market-based competition and reduce costs.' Opposition to Medicaid expansion while supporting private market competition aligns with value 4 (only help the poorest people afford healthcare and leave everyone else to employers and private insurance)."
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Claire Valdez",
+      "topic": "Climate Change",
+      "value": "2.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Claire_Valdez",
+      "cited_status": 200,
+      "cited_chars": 28345,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 28345,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "cut pollution and lower costs by winning a Green New Deal that puts working people in charge of our energy system"
+      ],
+      "quotes_found": [
+        "cut pollution and lower costs by winning a Green New Deal that puts working people in charge of our energy system"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Green New Deal"
+      ],
+      "found": [
+        "Green New Deal"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) pledges to \"cut pollution and lower costs by winning a Green New Deal that puts working people in charge of our energy system\" -- rapidly transitioning to renewable energy."
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Claire Valdez",
+      "topic": "Deportation",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Claire_Valdez",
+      "cited_status": 200,
+      "cited_chars": 28345,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 28345,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "fight to dismantle and abolish ICE"
+      ],
+      "quotes_found": [
+        "fight to dismantle and abolish ICE"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "deportation"
+      ],
+      "found": [
+        "deportation"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) pledges to \"fight to dismantle and abolish ICE\" -- ending the deportation enforcement regime and protecting residents from removal."
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Claire Valdez",
+      "topic": "Fossil Fuels",
+      "value": "2.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Claire_Valdez",
+      "cited_status": 200,
+      "cited_chars": 28345,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 28345,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "fossil fuel pollution"
+      ],
+      "quotes_found": [
+        "fossil fuel pollution"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Green New Deal",
+        "fossil-fuel",
+        "fossil fuel"
+      ],
+      "found": [
+        "Green New Deal",
+        "fossil-fuel",
+        "fossil fuel"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) decries generations of \"fossil fuel pollution\" in NY-7 and vows to \"make polluters pay\" while winning a Green New Deal -- phasing out fossil-fuel reliance."
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Claire Valdez",
+      "topic": "Healthcare",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Claire_Valdez",
+      "cited_status": 200,
+      "cited_chars": 28345,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 28345,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "sponsor Medicare for All on Day One",
+        "Health care is a human right"
+      ],
+      "quotes_found": [
+        "sponsor Medicare for All on Day One",
+        "Health care is a human right"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Medicare for All",
+        "Day One"
+      ],
+      "found": [
+        "Medicare for All",
+        "Day One"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) pledges to \"sponsor Medicare for All on Day One\" because \"Health care is a human right\" -- a public universal system."
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Claire Valdez",
+      "topic": "Housing",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Claire_Valdez",
+      "cited_status": 200,
+      "cited_chars": 28345,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 28345,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "to create a public option for housing,",
+        "fully fund the New York City Housing Authority and repeal the Faircloth Amendment so we can build beautiful public housing again"
+      ],
+      "quotes_found": [
+        "to create a public option for housing,",
+        "fully fund the New York City Housing Authority and repeal the Faircloth Amendment so we can build beautiful public housing again"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Homes Act",
+        "New York City Housing Authority",
+        "Faircloth Amendment",
+        "public option"
+      ],
+      "found": [
+        "Homes Act",
+        "New York City Housing Authority",
+        "Faircloth Amendment",
+        "public option"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) pledges to pass the Homes Act \"to create a public option for housing,\" \"fully fund the New York City Housing Authority and repeal the Faircloth Amendment so we can build beautiful public housing again\" -- directly building and operating public housing."
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Claire Valdez",
+      "topic": "Immigration",
+      "value": "2.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Claire_Valdez",
+      "cited_status": 200,
+      "cited_chars": 28345,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 28345,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "push for real immigration reform that legalizes the status of millions of immigrant Americans",
+        "all working people, no matter where they were born"
+      ],
+      "quotes_found": [
+        "push for real immigration reform that legalizes the status of millions of immigrant Americans",
+        "all working people, no matter where they were born"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "immigration"
+      ],
+      "found": [
+        "immigration"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) pledges to \"push for real immigration reform that legalizes the status of millions of immigrant Americans\" and protect \"all working people, no matter where they were born\" -- keeping immigration open and legalizing undocumented residents."
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Claire Valdez",
+      "topic": "Medicare/aid",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Claire_Valdez",
+      "cited_status": 200,
+      "cited_chars": 28345,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 28345,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "deliver universal health care for every New Yorker"
+      ],
+      "quotes_found": [
+        "deliver universal health care for every New Yorker"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Medicare for All",
+        "New Yorker"
+      ],
+      "found": [
+        "Medicare for All",
+        "New Yorker"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) pledges to pass Medicare for All to \"deliver universal health care for every New Yorker\" -- expanding Medicare to cover everyone."
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Claire Valdez",
+      "topic": "Taxes",
+      "value": "1.0",
+      "state": "ny",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Claire_Valdez",
+      "cited_status": 200,
+      "cited_chars": 28345,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 28345,
+      "verdict": "QUOTE_VERIFIED",
+      "quotes_tested": [
+        "paid for by taxing billionaires and corporations that have rigged the system"
+      ],
+      "quotes_found": [
+        "paid for by taxing billionaires and corporations that have rigged the system"
+      ],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "Medicare for All"
+      ],
+      "found": [
+        "Medicare for All"
+      ],
+      "missing": [],
+      "dropped_identity": [],
+      "dropped_corpus_common": [],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": true,
+        "sponsored_legislation": true
+      },
+      "reasoning": "Her campaign website (quoted on Ballotpedia) says Medicare for All would be \"paid for by taxing billionaires and corporations that have rigged the system\" -- significantly raising taxes on the wealthy and corporations."
+    },
+    {
+      "pid": "4f67e1b7-3f4d-4aef-b806-904555a7aee4",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Michael Van Meter",
+      "topic": "Taxes",
+      "value": "4.0",
+      "state": "va",
+      "seated": false,
+      "on_ballot": true,
+      "office": "",
+      "district": "",
+      "cited_url": "https://ballotpedia.org/Michael_Van_Meter",
+      "cited_status": 200,
+      "cited_chars": 16647,
+      "cited_disambiguation": false,
+      "correct_url": null,
+      "correct_chars": null,
+      "tested_chars": 16647,
+      "verdict": "CITATION_FAILS",
+      "quotes_tested": [],
+      "quotes_found": [],
+      "quotes_missing": [],
+      "quotes_untestable": [],
+      "terms_tested": [
+        "tax-cut",
+        "small-government"
+      ],
+      "found": [],
+      "missing": [
+        "tax-cut",
+        "small-government"
+      ],
+      "dropped_identity": [
+        "Van Meter"
+      ],
+      "dropped_corpus_common": [
+        "Candidate Connection"
+      ],
+      "page": {
+        "campaign_themes": true,
+        "survey_not_completed": true,
+        "scorecards": false,
+        "sponsored_legislation": false
+      },
+      "reasoning": "Van Meter's 2024 VA-11 campaign platform (per Ballotpedia's summary of his campaign website and Candidate Connection survey) listed \"Improve the economy\" as a top priority, achieved through reducing taxes and limiting government interference in business recovery -- a general tax-cut/small-government position without specifics on eliminating public services or a flat tax, so it maps to stance 4 rather than 5. Note: Ballotpedia confirms Van Meter withdrew from the 2026 VA-11 Republican primary before the Aug. 4 vote and did not complete a 2026 Candidate Connection survey, so this 2024 platform is his most recent documented position on record."
+    }
+  ]
+}

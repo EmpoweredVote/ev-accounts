@@ -72,6 +72,21 @@ const QUERY = `
       CASE
         WHEN pc.politician_id IS NULL                              THEN 'ANSWER_WITHOUT_CONTEXT'
         WHEN coalesce(cardinality(pc.sources), 0) = 0              THEN 'EMPTY_SOURCES'
+        -- A bare domain cannot support any claim: there is no page in it. Found 2026-07-31 while
+        -- auditing citations -- one row's entire source was "https://ballotpedia.org". 602 answers
+        -- across 223 politicians cite nothing else, a defect class nobody had looked for because the
+        -- Ballotpedia-only predicate happens to pass them.
+        WHEN NOT EXISTS (
+          SELECT 1 FROM unnest(pc.sources) s
+           WHERE btrim(s, '/') !~* '^https?://(www\.)?[a-z0-9.-]+$'
+        )                                                          THEN 'BARE_DOMAIN_ONLY'
+        -- A scraping proxy is a tool artifact, not a citation: r.jina.ai/https://... is the fetch
+        -- wrapper the research step used, and it 403s now. The real source is the wrapped URL.
+        WHEN EXISTS (
+          SELECT 1 FROM unnest(pc.sources) s
+           WHERE s ILIKE '%r.jina.ai%' OR s ILIKE '%webcache.googleusercontent%'
+              OR s ILIKE '%translate.goog%' OR s ILIKE '%12ft.io%'
+        )                                                          THEN 'PROXY_URL_AS_SOURCE'
         WHEN NOT EXISTS (
           SELECT 1 FROM unnest(pc.sources) s WHERE s NOT ILIKE '%ballotpedia%'
         )                                                          THEN 'BALLOTPEDIA_ONLY'
