@@ -1,5 +1,51 @@
 # Stance re-sourcing backlog — opened 2026-07-30
 
+## ▶️ START HERE NEXT SESSION — the Oregon REPLACEMENT wave
+
+A1 retirement is **complete**: 188 of 230 rows gone (mig **1507** = 86 absent-bill, **1508** = 102
+absent-claim-term). **84 officeholders** now have gaps and a nulled `last_stances_researched_at`.
+
+**Scope decided: OLIS session `2025R1` only.** Extractor is built and verified:
+`node scripts/olis-fetch-votes.mjs --session 2025R1 --votes <out.json>` (from `backend/`).
+Full source notes, gotchas and the session-vs-current trap: agent memory
+`project_olis_oregon_vote_source`.
+
+### Who this can and cannot serve
+
+| n | office | OLIS 2025R1 |
+|---|---|---|
+| 52 | STATE_LOWER | ✅ covered |
+| 24 | STATE_UPPER | ✅ covered |
+| 5 | STATE_EXEC — Kotek, Rayfield, Steiner, Stephenson, Read | ❌ **no roll calls in current office** |
+| 3 | NATIONAL_LOWER — Salinas, Bynum, Dexter | ❌ **US House; needs a congressional source** |
+
+**76 of 84 covered.** 2025R1 is not a compromise for most of them — the majority were seated in 2025,
+so it is their entire voting record. Add `2023R1` later **only** for identified long-serving members
+(Prozanski, Frederick, Nathanson). 🔴 **Do NOT push the 8 non-legislators through OLIS** — that is how
+a Governor ends up credited with legislative votes. Separate work.
+
+### Recipe
+
+1. `--votes` to pull 2025R1 (72,752 rows; ~73 paged requests, retry is built in). The output is large —
+   **decide storage before writing it into the repo**; do not commit a 10 MB raw dump.
+2. 🔴 **Resolve the 3 changed seats by `ActionDate` before attributing anything** — OLIS has Drazan in
+   H51 and Bonham in S26; we have Bunch in H51 and Drazan in S26 (she was appointed to S26 on
+   2025-10-24). H48 likewise (OLIS Hoa Nguyen, ours Lamar Wise). A vote belongs to whoever held the
+   seat when it was cast.
+3. **State scale is 26 topics** — `inform.compass_topic_roles` where `role_scope='state'` (confirmed
+   against prod 2026-07-31, matches the standing note). **Re-verify topic UUIDs before reuse.**
+4. 🔴 **A `No Vote`/absent value is NOT a position.** Never read it as opposition.
+5. 🔴 **Where no roll call supports a chair, the answer is NO STANCE** — not a weaker one. Partial
+   coverage is the expected, honest outcome.
+6. **Validate every produced row.** Standing failure rate for agent stance rows is 25–38%.
+7. Push via office/district join, never bare `full_name`; OR state districts are `state` LOWERCASE.
+
+### Then
+
+A1's remaining 42 live rows (27 no testable term, 9 unreadable pages, 6 real claim-term matches
+including Drazan's climate row), then cohorts A2 VA 50 → A3 TX 34 → A4 CA 20 → A5 7 → A6 442 (unseated,
+last). **Run template clustering first on each — it is fetch-free.**
+
 ## A1 OREGON — CITATION AUDIT DONE 2026-07-30, awaiting a retire/keep decision
 
 Operator picked **A1 first** (harm-first ordering confirmed). All 94 cited Ballotpedia pages were
