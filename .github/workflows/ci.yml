@@ -122,3 +122,18 @@ jobs:
         run: npm run check:reachability
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      # Migrations 1494, 1507 and 1508 retired 1,157 stance answers whose only citation was a
+      # Ballotpedia bio that does not contain the claim. Nothing in the repo prevented writing them, so
+      # without this gate the backlog regenerates on the next research wave. Baselined per state at 596
+      # (the known Workstream A backlog) so it fires on growth or a new state, not on the debt.
+      #
+      # It reads the SHAPE of `sources`, never the cited page — a green run means "no row cites
+      # Ballotpedia and nothing else", not "stances are sourced". Content needs a fetch and is the
+      # article-body test's job.
+      #
+      # Same prod-drift reasoning as the check above, and it likewise skips itself without DATABASE_URL.
+      - name: Check no stance cites Ballotpedia as its only source
+        run: npm run check:stance-sources
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}

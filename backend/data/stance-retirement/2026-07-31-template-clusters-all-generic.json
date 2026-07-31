@@ -1,9 +1,9 @@
 {
-  "_comment": "CORPUS-WIDE run, trimmed to GENERIC/MIXED clusters only. 451 ANCHORED clusters (a shared roll call or scorecard explains the repeated prose) were dropped to keep this file reviewable; re-run the script with --all to regenerate them in full.",
+  "_comment": "CORPUS-WIDE run, trimmed to GENERIC/MIXED clusters only. 451 ANCHORED clusters (a shared roll call or scorecard explains the repeated prose) were dropped to keep this file reviewable; re-run with --all to regenerate them.",
   "generated_scope": "ALL live answers with context",
   "near_threshold": 0.85,
   "min_reasoning_length": 25,
-  "rows_examined": 33889,
+  "rows_examined": 33528,
   "tiers": {
     "IDENTICAL": [
       {

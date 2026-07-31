@@ -85,9 +85,9 @@ const QUERY = `
     pc.sources,
     p.first_name || ' ' || p.last_name      AS name,
     coalesce(t.short_title, t.title)        AS topic,
-    lower(coalesce(d.state, o.representing_state, '')) AS st,
-    coalesce(o.title, '')                   AS office_title,
-    (och.politician_id IS NOT NULL)         AS seated,
+    lower(coalesce(seat.state, seat.representing_state, '')) AS st,
+    coalesce(seat.title, '')                AS office_title,
+    (seat.office_id IS NOT NULL)            AS seated,
     EXISTS (
       SELECT 1 FROM essentials.race_candidates rc
       JOIN essentials.races r  ON r.id = rc.race_id
@@ -102,9 +102,20 @@ const QUERY = `
     ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id
   JOIN essentials.politicians p ON p.id = pa.politician_id
   LEFT JOIN inform.compass_topics t ON t.id = pa.topic_id
-  LEFT JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
-  LEFT JOIN essentials.offices o   ON o.id = och.office_id
-  LEFT JOIN essentials.districts d ON d.id = o.district_id
+  -- 🔴 ONE ROW PER ANSWER. office_current_holder is one row per OFFICE, and people hold two offices,
+  -- so LEFT JOINing it on politician_id fans the result set out — it silently added 355 rows (33,889
+  -- for 33,534 answers) on the first run and inflated every cluster containing a dual-office holder.
+  -- LIMIT 1 in a lateral keeps the seated flag and the office label without the fan-out. Same family
+  -- as the is_vacant trap in CLAUDE.md: the join must not be able to multiply the match.
+  LEFT JOIN LATERAL (
+    SELECT och.office_id, o.title, o.representing_state, d.state
+    FROM essentials.office_current_holder och
+    JOIN essentials.offices o        ON o.id = och.office_id
+    LEFT JOIN essentials.districts d ON d.id = o.district_id
+    WHERE och.politician_id = pa.politician_id
+    ORDER BY o.title
+    LIMIT 1
+  ) seat ON true
   WHERE pa.value <> 0
     AND pc.reasoning IS NOT NULL
     AND length(trim(pc.reasoning)) >= $1

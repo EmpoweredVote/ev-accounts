@@ -1,0 +1,220 @@
+#!/usr/bin/env node
+/**
+ * CI gate: a published compass stance must cite something better than a Ballotpedia bio.
+ *
+ * WHY THIS EXISTS. Migrations 1494, 1507 and 1508 retired 1,157 stance answers between them. Every
+ * one of those rows was written by a process that treated "a URL exists" as a source check, and
+ * nothing in the repo stopped it — `validate-stance-quotes.py` is per-payload and voluntary, so it
+ * only runs when someone remembers. Without a gate this backlog regenerates on the next wave, and the
+ * work of retiring it was spent for nothing. That is the single reason this file exists: it is not
+ * here to find the remaining bad rows (the audit scripts do that), it is here so the count cannot grow.
+ *
+ * THE PREDICATE IS THE OPERATOR'S, NOT MINE: **Ballotpedia cannot be the only source.** It is
+ * deliberately mechanical. Ballotpedia is a fine pointer and a poor citation — its bios routinely do
+ * not contain the claim a row credits to them, which is precisely what the A1 Oregon audit measured
+ * page by page. A row that also cites the legislature, a roll call, a scorecard or a news report is
+ * untouched by this check no matter how much Ballotpedia it additionally cites.
+ *
+ * WHAT THIS CANNOT DO. It reads the shape of `sources`, never the content of the cited page. A row
+ * citing olis.oregonlegislature.gov for a vote the member never cast passes here and is still false.
+ * Content is the article-body test's job and needs a fetch. Do not read a green run as "stances are
+ * sourced" — read it as "no row cites Ballotpedia and nothing else".
+ *
+ * WHY BASELINED AND NOT ZERO. 596 live rows violate the Ballotpedia-only rule today (the backlog's
+ * Workstream A). Failing red on day one trains people to ignore the gate — the same reasoning as
+ * check-address-reachability, and the same per-bucket shape so growth in one state still fires while
+ * the global number is worked down.
+ *
+ * Buckets are per STATE, deliberately not per visibility. Whether a politician is seated or on a
+ * candidate card changes as elections pass, so a visibility bucket would churn on the calendar and
+ * report drift where nothing changed. State is stable.
+ *
+ * TWO CHECKS ARE ZERO-TOLERANCE because prod is genuinely at zero and there is no honest reason to
+ * regress: an answer with no context row at all, and a context row with an empty `sources` array.
+ * Those were 963 of migration 1494's 969 deletions. Verified 0/0 against prod 2026-07-31 before
+ * being written as zero-tolerance rather than assumed.
+ *
+ * Needs a live DB, so like check:reachability this runs on master pushes and on a schedule, not on
+ * every PR, and skips itself when DATABASE_URL is absent.
+ *
+ * Usage (from backend/):
+ *   node scripts/check-stance-sources.mjs
+ *   node scripts/check-stance-sources.mjs --verbose            # list offending rows
+ *   node scripts/check-stance-sources.mjs --update-baseline
+ */
+import 'dotenv/config';
+import { readFileSync, writeFileSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { Pool } from 'pg';
+
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const BASELINE = path.join(HERE, '..', 'data', 'stance-source-baseline.json');
+
+const argv = process.argv.slice(2);
+const VERBOSE = argv.includes('--verbose');
+const UPDATE = argv.includes('--update-baseline');
+
+const ZERO_TOLERANCE = new Set(['ANSWER_WITHOUT_CONTEXT', 'EMPTY_SOURCES']);
+
+const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+
+/**
+ * One row per violation. `seat` is a LIMIT-1 lateral, not a join: office_current_holder is one row per
+ * OFFICE and people hold two, so joining it on politician_id fans the result set out and would
+ * double-count a dual-office holder into two violations. Same trap as CLAUDE.md's is_vacant note.
+ */
+const QUERY = `
+  WITH v AS (
+    SELECT
+      pa.politician_id,
+      pa.topic_id,
+      CASE
+        WHEN pc.politician_id IS NULL                              THEN 'ANSWER_WITHOUT_CONTEXT'
+        WHEN coalesce(cardinality(pc.sources), 0) = 0              THEN 'EMPTY_SOURCES'
+        WHEN NOT EXISTS (
+          SELECT 1 FROM unnest(pc.sources) s WHERE s NOT ILIKE '%ballotpedia%'
+        )                                                          THEN 'BALLOTPEDIA_ONLY'
+        ELSE NULL
+      END AS chk,
+      pc.sources
+    FROM inform.politician_answers pa
+    LEFT JOIN inform.politician_context pc
+      ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id
+    WHERE pa.value <> 0
+  )
+  SELECT
+    v.chk,
+    v.politician_id,
+    v.sources,
+    p.first_name || ' ' || p.last_name       AS name,
+    coalesce(t.short_title, t.title, v.topic_id::text) AS topic,
+    lower(coalesce(seat.state, seat.representing_state, cand.state, '')) AS st
+  FROM v
+  JOIN essentials.politicians p ON p.id = v.politician_id
+  LEFT JOIN inform.compass_topics t ON t.id = v.topic_id
+  LEFT JOIN LATERAL (
+    SELECT o.representing_state, d.state
+    FROM essentials.office_current_holder och
+    JOIN essentials.offices o        ON o.id = och.office_id
+    LEFT JOIN essentials.districts d ON d.id = o.district_id
+    WHERE och.politician_id = v.politician_id
+    ORDER BY o.title
+    LIMIT 1
+  ) seat ON true
+  -- Fallback for politicians holding no seat. Without it 443 of the 596 baseline rows collapse into a
+  -- single stateless bucket, which is the largest group and therefore the one where a per-state gate
+  -- matters most: growth in any one of them would be hidden by the size of the others. These rows are
+  -- NOT invisible — compassService surfaces non-incumbent active candidates in upcoming races — so
+  -- their election's state is the right bucket.
+  LEFT JOIN LATERAL (
+    SELECT lower(e.state::text) AS state
+    FROM essentials.race_candidates rc
+    JOIN essentials.races r     ON r.id = rc.race_id
+    JOIN essentials.elections e ON e.id = r.election_id
+    WHERE rc.politician_id = v.politician_id
+      AND rc.candidate_status = 'active'
+    ORDER BY e.election_date DESC
+    LIMIT 1
+  ) cand ON true
+  WHERE v.chk IS NOT NULL`;
+
+(async () => {
+  if (!process.env.DATABASE_URL) {
+    console.log('SKIP: DATABASE_URL not set — this check needs a live database.');
+    process.exit(0);
+  }
+
+  const { rows } = await pool.query(QUERY);
+
+  const observed = {};
+  for (const r of rows) {
+    const bucket = r.st || '-';
+    observed[r.chk] ??= {};
+    observed[r.chk][bucket] = (observed[r.chk][bucket] ?? 0) + 1;
+  }
+
+  if (UPDATE) {
+    const payload = {
+      _comment:
+        'Baseline for check-stance-sources.mjs, keyed check -> state -> count. The gate fires on ' +
+        'GROWTH in a state or on ANY new state. BALLOTPEDIA_ONLY is the Workstream A backlog and these ' +
+        'numbers should only ever go DOWN — never raise one without saying why in the commit message. ' +
+        'ANSWER_WITHOUT_CONTEXT and EMPTY_SOURCES are zero-tolerance and ignore this file.',
+      _updated: new Date().toISOString().slice(0, 10),
+      counts: observed,
+    };
+    writeFileSync(BASELINE, `${JSON.stringify(payload, null, 2)}\n`);
+    console.log(`baseline written to ${path.relative(process.cwd(), BASELINE)}`);
+    for (const [chk, buckets] of Object.entries(observed)) {
+      const total = Object.values(buckets).reduce((a, b) => a + b, 0);
+      console.log(`  ${chk.padEnd(24)} ${String(total).padStart(4)}  ${JSON.stringify(buckets)}`);
+    }
+    await pool.end();
+    process.exit(0);
+  }
+
+  let baseline = { counts: {} };
+  try {
+    baseline = JSON.parse(readFileSync(BASELINE, 'utf8'));
+  } catch {
+    console.error(
+      `FAIL: no baseline at ${path.relative(process.cwd(), BASELINE)}.\n` +
+      'Run with --update-baseline once, review the numbers, and commit the file.',
+    );
+    await pool.end();
+    process.exit(2);
+  }
+
+  const violations = [];
+  const checks = new Set([...Object.keys(observed), ...Object.keys(baseline.counts ?? {})]);
+  for (const chk of checks) {
+    const obs = observed[chk] ?? {};
+    const base = ZERO_TOLERANCE.has(chk) ? {} : (baseline.counts?.[chk] ?? {});
+    for (const [bucket, n] of Object.entries(obs)) {
+      const allowed = base[bucket] ?? 0;
+      if (n > allowed) violations.push({ chk, bucket, n, allowed, isNew: !(bucket in base) });
+    }
+  }
+
+  console.log(`stance sources — ${rows.length} offending row(s) across ${checks.size} check(s)`);
+  for (const chk of [...checks].sort()) {
+    const total = Object.values(observed[chk] ?? {}).reduce((a, b) => a + b, 0);
+    const baseTotal = Object.values(baseline.counts?.[chk] ?? {}).reduce((a, b) => a + b, 0);
+    const tag = ZERO_TOLERANCE.has(chk) ? 'must be 0' : `baseline ${baseTotal}`;
+    console.log(`  ${chk.padEnd(24)} observed ${String(total).padStart(4)}   (${tag})`);
+  }
+
+  if (VERBOSE) {
+    console.log('\nper-row detail:');
+    for (const r of rows) {
+      console.log(`  ${r.chk.padEnd(24)} ${(r.st || '-').padEnd(3)} ${r.name} — ${r.topic}  [${(r.sources ?? []).join(' ')}]`);
+    }
+  }
+
+  if (violations.length === 0) {
+    console.log('\nOK — no stance row cites Ballotpedia and nothing else beyond the recorded backlog.');
+    await pool.end();
+    process.exit(0);
+  }
+
+  console.error('\nFAIL — stance sourcing regressed:\n');
+  for (const v of violations) {
+    const why = ZERO_TOLERANCE.has(v.chk)
+      ? 'zero-tolerance check'
+      : v.isNew ? 'NEW state — this state was clean before' : `grew from ${v.allowed}`;
+    console.error(`  ${v.chk}  ${v.bucket}  observed ${v.n} (${why})`);
+  }
+  console.error(
+    '\nA stance whose only citation is a Ballotpedia bio is how 1,157 retired rows were written.\n' +
+    'Cite the roll call, scorecard, filing or report the claim actually rests on. Re-run with\n' +
+    '--verbose to see the rows. If growth is intentional and understood, update the baseline in the\n' +
+    'SAME commit and explain it in the message.',
+  );
+  await pool.end();
+  process.exit(1);
+})().catch(async (err) => {
+  console.error('FAIL: check-stance-sources errored:', err.message);
+  try { await pool.end(); } catch { /* already closed */ }
+  process.exit(2);
+});

@@ -16,7 +16,9 @@
     "check:occupancy": "node scripts/check-office-occupancy.mjs",
     "check:occupancy:all": "node scripts/check-office-occupancy.mjs --all",
     "check:reachability": "node scripts/check-address-reachability.mjs",
-    "check:reachability:verbose": "node scripts/check-address-reachability.mjs --verbose"
+    "check:reachability:verbose": "node scripts/check-address-reachability.mjs --verbose",
+    "check:stance-sources": "node scripts/check-stance-sources.mjs",
+    "check:stance-sources:verbose": "node scripts/check-stance-sources.mjs --verbose"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.91.0",
