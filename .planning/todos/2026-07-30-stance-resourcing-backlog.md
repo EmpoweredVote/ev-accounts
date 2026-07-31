@@ -1,6 +1,42 @@
 # Stance re-sourcing backlog — opened 2026-07-30
 
-## ⏸️ NEXT ACTION — sort the cohorts with the operator (paused 2026-07-30)
+## A1 OREGON — CITATION AUDIT DONE 2026-07-30, awaiting a retire/keep decision
+
+Operator picked **A1 first** (harm-first ordering confirmed). All 94 cited Ballotpedia pages were
+fetched and tested. Full per-politician results:
+[`backend/data/stance-retirement/2026-07-30-a1-oregon-citation-audit.json`](../../backend/data/stance-retirement/2026-07-30-a1-oregon-citation-audit.json)
+
+**Test applied** — the strictest and most mechanical half of "definition of done": do the bills named
+in the row's own `reasoning` appear ANYWHERE in the page cited as its source? This judges the
+citation, not the claim. A row can fail here and still be true — it just isn't sourced.
+
+| verdict | politicians | rows | meaning |
+|---|---|---|---|
+| **ALL_CITED_BILLS_ABSENT** | 48 | **136** | named specific bills; **none appear on the cited page** |
+| **DEAD_URL_404** | 2 | **3** | cited page does not exist (Sarah Finger McDonald, Jeff Helfrich) |
+| PARTIAL_PRESENT | 4 | 27 | ≥1 cited measure appears — still needs the "does it support the chair" test |
+| NO_BILL_CITED | 40 | 64 | general claims, no bill to test — **needs a different test, not yet done** |
+
+**139 of 230 rows (60%) fail outright.** Worked example: Dan Rayfield, 13 rows citing HB 2002,
+SB 1547, HB 3115, HB 2929 — the page (44,835 rendered chars) contains **none** of them, no "Medicaid",
+no "voucher", no "transgender", and states he did not complete Ballotpedia's candidate survey.
+
+Even PARTIAL_PRESENT is weak: Dexter cited 7 bills and only Measure 110 appears; Kotek cited 7 and
+only Measure 118. A ballot-measure name on a Ballotpedia bio is usually an elections-section artifact,
+not a position statement — these 4 need reading in context before any of their 27 rows are kept.
+
+🔴 **METHOD WARNING — Ballotpedia rate-limits and it is SILENT.** Parallel fetches return **HTTP 202
+with an empty body**. `r.ok` is TRUE for 202, so a naive probe records "no bill found" for a page it
+never actually read, and the false-negative looks exactly like evidence. The first sweep here was
+wrong for this reason. **Fetch serially with ~1.3s delay, and treat `status!==200 || chars<3000` as
+UNKNOWN, never as a miss.**
+
+### Decision needed
+
+Retire the 139 clear failures (136 absent-bill + 3 dead-URL) as a migration, following the mig-1494
+precedent? The remaining 91 rows (27 partial + 64 no-bill) need the second test before any call.
+
+## ⏸️ Cohort ordering — remaining decisions
 
 Retirement is **done and pushed** (migration 1494, commit `16f0a1e5`). Nothing here is date-gated, so
 this is picked up on demand — the operator asked to return to it after an unrelated task.
