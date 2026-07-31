@@ -56,10 +56,37 @@ token, and **Ballotpedia's site-wide nav names every policy area on every page**
 not a weak signal, it is *no* signal. Verified: all 37 pages in batch A fetched cleanly at 200 and
 still matched most terms.
 
-**The fix, un-validated:** restrict the search to the ARTICLE BODY (`#mw-content-text`) and test only
-multi-word capitalised phrases, never bare common words. I hit rate limiting before confirming this
-works — it is the first thing to try next, on 3–4 known cases (Drazan/"walkout",
-Harbick/"Corporate Activity Tax") before scaling.
+### ✅ ARTICLE-BODY TEST VALIDATED 2026-07-30 — use this
+
+Read `#mw-content-text` and take **`innerText` on a navigated page, or `textContent` on a
+DOMParser-parsed fetch after removing `script`/`style`.** Both were checked against each other and
+agree exactly. **Chrome falls to 9–11% of the text**, versus dominating it. My earlier failure came
+from stripping RAW HTML, which drags in the whole mega-menu — the pages and terms were fine, the
+extraction was not.
+
+Both pilot rows resolve cleanly:
+- **Harbick / Taxation** — `Corporate Activity Tax`, `Lane County`, `anti-tax` all ABSENT. Seated
+  2025-01-13 (predecessor Charlie Conrad); the CAT passed 2019, so no voting record on it is possible.
+- **Drazan / Climate** — `walkout` ABSENT (`cap-and-trade` present, but a compound claim needs every
+  clause). Senate seat began **2025-10-24**; she held no seat in May 2023. *Healthcare*: `Medicaid`,
+  `market-based` absent. *Immigration*: `sanctuary`, `immigration enforcement`, `border security` absent.
+
+**Rule: test only multi-word capitalised phrases and rare tokens. Never bare common words.**
+
+### 🔴 THE TENURE TEST DOES NOT WORK — do not build on it
+
+Tempting idea: flag any row whose claimed event predates the person's tenure. **Ballotpedia's infobox
+gives only the CURRENT office's tenure**, and prior service could not be extracted (a `Political
+career`/`Previous offices` scrape came back empty on every page tried). Measured floors: Drazan 2025,
+**Steiner 2025, Starr 2025** — yet Steiner served in the Senate for years before becoming Treasurer
+and Starr was a senator in the 2000s. The screen would mark every **returning legislator** as making
+an impossible claim. 19 politicians were fetched before this surfaced; nothing was deleted.
+
+It also would not catch **gap** cases even if the floor were right: Drazan's earliest service (2019)
+precedes the May-2023 claim, so only reading her full history reveals she was out of office then.
+
+**Temporal impossibility remains the dominant failure mode** (memory: 7 of 8 bill-citing rows cited
+pre-seating votes) — it just cannot be screened from the infobox. It needs the full office history.
 
 **What IS established without any fetch:**
 - **0 of 144 match migration 1494's party-prior predicate.** A broader variant I wrote catches 22, but
