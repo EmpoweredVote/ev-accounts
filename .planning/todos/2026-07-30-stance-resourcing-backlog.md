@@ -1,7 +1,33 @@
-# Stance re-sourcing backlog — opened 2026-07-30, current as of 2026-07-31
+# Stance re-sourcing backlog — opened 2026-07-30, current as of 2026-07-31 (end of day)
 
-**560 answers are live and cite nothing but a Ballotpedia bio.** That is the whole of the remaining
-problem. Everything below is how they are ranked, what has been tried, and what does not work.
+## ⚠️ READ THIS FIRST — the ranking below is superseded
+
+All 560 rows were swept with `npm run audit:stance-citations` after the sections below were written.
+Two findings change the plan:
+
+1. **🔴 TX came back CLEAN — 0 failures in 181 rows. Oregon's ~82% is NOT a base rate.** Across all 560,
+   **436 are positively verified** (quote verbatim on the cited page, or every distinctive term present).
+   The ranking below orders cohorts by ROW COUNT on the assumption that volume tracks risk. **It does
+   not.** Re-rank by measured failure rate. Most remaining rows need **RE-POINTING at the primary source
+   behind Ballotpedia, not retiring** — they quote campaign sites and candidate surveys as reproduced
+   there. Only 35 rows are candidate failures, and 6 of 6 hand-checked "failures" were artifacts of the
+   tool, not the data. → agent memory `project_stance_citation_audit_tool`
+2. **🔴 A BIGGER DEFECT CLASS EXISTS AND IT IS CHEAPER TO FIND: 602 answers / 223 politicians whose
+   ENTIRE source is a bare domain** (`https://ballotpedia.org`, no path). Plus 55 citing the
+   `r.jina.ai` scraping proxy and ~41 citing an election page instead of a person. **Invisible for
+   months because it PASSES the Ballotpedia-only predicate.** All now gated. Total gated debt is
+   **1,214 rows, not 560.** → agent memory `project_stance_source_ci_gate`
+
+**Standing lesson: exhaust cheap SQL predicates over `sources` BEFORE spending hours reading pages.**
+602 rows cost one query; 224 Oregon retirements cost four sessions.
+
+**Next: decide the 602 bare-domain class → hand-sample the 22 failing tail rows → bulk re-source the 436
+verified.**
+
+---
+
+**560 answers cite nothing but a Ballotpedia bio** (557 after reclassification). Everything below is how
+they were ranked, what has been tried, and what does not work.
 
 Measured against prod 2026-07-31, not carried forward. Regenerate any number here with:
 
