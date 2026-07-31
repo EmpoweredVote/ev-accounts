@@ -18,7 +18,8 @@
     "check:reachability": "node scripts/check-address-reachability.mjs",
     "check:reachability:verbose": "node scripts/check-address-reachability.mjs --verbose",
     "check:stance-sources": "node scripts/check-stance-sources.mjs",
-    "check:stance-sources:verbose": "node scripts/check-stance-sources.mjs --verbose"
+    "check:stance-sources:verbose": "node scripts/check-stance-sources.mjs --verbose",
+    "audit:stance-citations": "node scripts/audit-stance-citations.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.91.0",
