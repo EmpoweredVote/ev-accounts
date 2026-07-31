@@ -156,17 +156,29 @@ a real regression or a wrong assertion, and both need diagnosis rather than rela
 
 ---
 
-## Caveat carried forward from 166-05
+## Caveat carried forward from 166-05 — ⚠️ SUPERSEDED, re-tested 2026-07-30
 
-Four pre-existing scripts reference `essentials.offices.politician_id`, the occupancy column dropped
-by ADR 0002 phase 5 / migration 1463, and are therefore **broken at runtime today**:
+**The caveat below is no longer accurate. Do not act on it.** It said four scripts were broken at
+runtime because they reference `essentials.offices.politician_id`, dropped by ADR 0002 phase 5 /
+migration 1463, and that **1641 must be repaired before Branch A**. All four were in fact ported on
+2026-07-26 (each now carries an `OCCUPANCY PORT (2026-07-26)` note); none still reads the column.
+Re-run against prod on 2026-07-30:
 
-- `backend/scripts/154-verify.sql` (line 134)
-- `backend/scripts/160-verify.sql` (line 178)
-- `backend/scripts/1641-coordinate-smoke.ts` (line 241)
-- `backend/scripts/1642-coordinate-smoke.ts` (line 232)
+| script | result |
+|---|---|
+| `1641-coordinate-smoke.ts` | ✅ **GREEN** — `1641 COORDINATE SMOKE GREEN: 4 state(s) asserted, 1 skipped (no G5200V26 rows yet)` |
+| `1642-coordinate-smoke.ts` | ✅ **GREEN** — 5 states, 0 skipped |
+| `154-verify.sql` | ❌ fails `A2a: expected 0 race_candidates on 2026-11-03 Wave-2 House races (none seeded yet), got 326` |
+| `160-verify.sql` | ❌ fails `A2b: expected 0 pre-seeded 2026-11-03 races for the other 33 Wave-3 states, got 144` |
 
-They are out of Phase 166's scope and were deliberately left unmodified. The consequence that matters
-here: `1641-coordinate-smoke.ts` and `1642-coordinate-smoke.ts` are the **D-02 reps-feed halves of
-the 164.1 and 164.2 dual-map proofs**, so they cannot currently be re-run as evidence. If Branch A
-needs the 1641 differential as part of its D-10 bar, repair that script first.
+🟢 **Branch A is NOT blocked.** Both D-02 reps-feed halves of the 164.1 / 164.2 dual-map proofs are
+runnable as evidence right now. The 1641 skip is MO itself — no `G5200V26` rows yet — which is
+exactly what Branch A step 1 imports, so that skip should turn into a pass once polygons land.
+
+🔴 **The two SQL gates fail for an unrelated reason: stale PRECONDITIONS, not the dropped column.**
+Both are historical per-phase gates asserting "nothing seeded yet" for waves that have since shipped.
+That is expected obsolescence. **Do not 'fix' them by relaxing the assertion** — they are pinned to
+the world as it stood at their phase, and neither is on the Branch A or Branch B verification list.
+
+Lesson worth keeping: this caveat named a blocker that had already been cleared, and would have cost
+a repair cycle on the day of the flip. **Re-test a carried-forward caveat before planning around it.**
