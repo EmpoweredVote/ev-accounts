@@ -1,12 +1,12 @@
 # Stance re-sourcing backlog — opened 2026-07-30, current as of 2026-07-31
 
-**596 answers are live and cite nothing but a Ballotpedia bio.** That is the whole of the remaining
+**569 answers are live and cite nothing but a Ballotpedia bio.** That is the whole of the remaining
 problem. Everything below is how they are ranked, what has been tried, and what does not work.
 
 Measured against prod 2026-07-31, not carried forward. Regenerate any number here with:
 
 ```bash
-npm run check:stance-sources:verbose --prefix backend    # the 596, per state
+npm run check:stance-sources:verbose --prefix backend    # the 569, per state
 node scripts/cluster-stance-reasoning.mjs                # the cheap pre-filter (from backend/)
 ```
 
@@ -33,7 +33,7 @@ published**. Two things follow, and the second is the stronger argument:
 
 | # | cohort | rows | politicians | seated | on ballot | why here |
 |---|---|---|---|---|---|---|
-| **1** | **A1 residue — OR** | **42** | 27 | 42 | — | already audited page-by-page; needs a decision, not research |
+| **1** | **A1 residue — OR** | **15** | ~13 | 15 | — | 9 unreadable pages (Playwright retry), 6 real claim-term matches |
 | **2** | **TX** | **181** | 55 | 34 | 147 | largest single block; both halves visible |
 | **3** | **TN** | **76** | 27 | 0 | 76 | all challengers, all on the general |
 | **4** | **WA** | **68** | 23 | 0 | 68 | all challengers |
@@ -56,7 +56,7 @@ replace `sources` with the primary source the page draws on, or retire the row.
 ## ✅ The gate — this is what stops the backlog regenerating
 
 `npm run check:stance-sources` — **Ballotpedia cannot be the only source** (operator's predicate,
-2026-07-31). Baselined per state at the known 596; fires on growth in a state or on any new state.
+2026-07-31). Baselined per state at the known 569; fires on growth in a state or on any new state.
 `ANSWER_WITHOUT_CONTEXT` and `EMPTY_SOURCES` are zero-tolerance (prod verified at 0 before being
 written as such). Runs on master pushes and the daily cron, not PRs — sourcing debt changes with data,
 not with commits. Verified to FAIL, not just to pass.
@@ -65,8 +65,9 @@ not with commits. Verified to FAIL, not just to pass.
 sourced.** It reads the shape of `sources`, never the cited page. A row citing the legislature for a
 vote the member never cast passes it and is still false.
 
-**The 596 baseline should only ever go down.** Lowering it is how progress on this backlog gets
-recorded; raising it needs a reason in the commit message.
+**The 569 baseline should only ever go down.** Lowering it is how progress on this backlog gets
+recorded; raising it needs a reason in the commit message. Already done once: `or` 44 → 17 recorded the
+1509/1510 retirement, total 596 → 569.
 
 ## ⚠️ Oregon REPLACEMENT wave — built, deliberately NOT started
 
@@ -109,21 +110,28 @@ non-legislators through OLIS** — that is how a Governor ends up credited with 
 7. **Validate every produced row.** Standing failure rate for agent stance rows is 25-38%.
 8. Push via office/district join, never bare `full_name`; OR state districts are `state` LOWERCASE.
 
-## Decision needed — A1's remaining 42 rows
+## A1's remaining rows — 27 retired 2026-07-31, 15 left
 
-All 94 cited pages were fetched and tested; these are what survived. **They will not be resolved by
-more of the same testing:**
-
-| rows | class | what testing can still do |
+| rows | class | status |
 |---|---|---|
-| 27 | no testable term in the reasoning | **nothing** — the article-body test structurally cannot reach them |
-| 9 | cited page unreadable | retry with Playwright (Ballotpedia renders there), then same question |
+| ~~27~~ | no testable term in the reasoning | ✅ **RETIRED — migrations 1509 (20 sitting legislators) + 1510 (7 non-legislators)** |
+| 9 | cited page unreadable | **next** — retry with Playwright (Ballotpedia renders there), then the same question |
 | 6 | a cited claim-term IS on the page | read in context; keep, re-source or retire individually |
 
-**My read: retry the 9, then retire the 27 as a class.** The bar is "a source that SUPPORTS the claim."
-A citation nobody can test does not meet it, and leaving them live makes them a permanent exception to
-the standard everything else is held to. Retiring is honest — the row becomes merely absent. Operator's
-call; nothing has been deleted on this reasoning.
+**Why the 27 went as two acts.** 1509's 20 rows belong to sitting OR legislators whose record is already
+reachable via `olis-fetch-votes.mjs` — so retiring is delete-and-re-derive, not delete-and-lose. 1510's 7
+belong to Steiner, Stephenson, Read and Bynum, and every one describes service in a **previous** office
+while citing the **current** office's bio page. 🔴 **Those four must not be pushed through OLIS 2025R1** —
+they hold no seat in it, and that is how a statewide executive gets credited with legislative votes. They
+need earlier sessions matched to the years served (Steiner/Stephenson/Read) or a congressional source
+(Bynum). Separate, unscheduled work.
+
+**Occupancy was checked and the doubt was misplaced.** McLane (SD-30) and Skarlatos (HD-4) both carry
+`term_start NULL` / `start_precision 'unknown'` from the migration-1459 backfill, so their seats looked
+unverified — but the **authoritative OLIS 2025R1 roster confirms both**. Tawna Sanchez is stored as
+`Tawna Sanchez`, not `Tawna D. Sanchez`: a name form, not a missing person. 🔴 **An unknown-precision
+backfilled term is not evidence the occupancy is WRONG — check the authoritative roster before acting on
+that suspicion.**
 
 Per-row detail: [`backend/data/stance-retirement/2026-07-31-a1-oregon-articlebody-audit.json`](../../backend/data/stance-retirement/2026-07-31-a1-oregon-articlebody-audit.json)
 
@@ -193,7 +201,7 @@ vocabulary (`RES-142` WI municipal, `HJ 9` VA, "Act on Mass tracker" MA, hyphena
 keyword probe.**
 
 Where it **does** earn its keep is the narrow cohort it was calibrated on: **596 rows → 29 clustered →
-6 actionable**, in seconds, with no fetch. Those 6 are the genuine article (Thatcher/McLane,
+6 actionable** (measured before 1509/1510), in seconds, with no fetch. Those 6 are the genuine article (Thatcher/McLane,
 Sosa/Nelson, Prozanski/Gelser Blouin). **Use it as a cheap pre-filter on the Ballotpedia-only cohort,
 not as a corpus sweep, and not as a reason to reorder the queue.**
 
@@ -267,6 +275,10 @@ Numbers in this section are **historical**. Do not plan against them; the live f
   went 265 → 179. `last_stances_researched_at` untouched; all 53 were already NULL, **verified against
   the CSV rather than inferred from the post-state**.
 - **Migration 1508** — 102 rows whose cited page lacks the claim term, found by the article-body test.
+- **Migrations 1509 + 1510** — the 27 untestable rows, split by replacement path: 20 held by sitting OR
+  legislators (OLIS-derivable) and 7 by statewide/congressional officeholders (not). Dry-run against prod
+  with the rollback confirmed, then applied; answers 33,534 → 33,507, no new orphaned context.
 - **The old A1-A6 cohort table and its A1→A6 ordering** are retired: A6 was ranked last for being
   invisible, and 422 of its 443 rows are published on candidate cards. The lettering is not reused.
-- **The 783-live and 144-open figures** that appeared here are superseded by 596 and 42.
+- **The 783-live, 144-open, 596-live and 42-residue figures** that appeared here are superseded by 569
+  live and 15 A1 residue (migrations 1509 + 1510).
