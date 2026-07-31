@@ -79,10 +79,51 @@ Fetch the cited page and establish that (a) the quote or bill actually appears t
 supports the specific chair recorded, and (c) it is temporally possible for that person. Then either
 replace `sources` with the primary source the page draws on, or retire the row.
 
+## 🔴 The 602 "bare domain" rows are NOT a retirement class — 601 of them are a MISSING PATH
+
+Measured against prod 2026-07-31, after the class was first written up as "the entire source is
+`https://ballotpedia.org` … indefensible on their face, retire as a class". **That description is true
+of exactly one row.**
+
+| what the bare domain actually is | rows | politicians |
+|---|---|---|
+| the candidate's **own campaign site** (`silviacatten.com`, `bakerforcongress2026.com`…) | **596** | 218 |
+| an officeholder's **own .gov office site** (`treasurer.ks.gov`, `ltgov.ri.gov`…) | 5 | 4 |
+| a **multi-subject reference root** (`ballotpedia.org`) | **1** | 1 |
+
+Not one row has empty reasoning; the mean is 282 chars and most carry a verbatim quote. Six cited
+homepages were fetched and grepped for the exact claim credited to them — **6 of 6 contained it**
+(kshamasawant.org "military aid", lorenabrunerforcongress.com "Medicare for All", cheryl4maryland.com
+"sealed borders", wileyfor21.com "ZIP code", fairlyfortexas.com "gender", charlie4va.com "property
+tax"). These sites put their issues content on the front page, so the citation is *imprecise, not
+absent*. **367 of the 602 are live on candidate cards.** Retiring the class would have deleted ~596
+true, sourced rows — the failure this doc already warns about under "deleting those destroys true,
+sourced work".
+
+**Remedy is to add the path, never to swap the source and never to retire.** Now gated separately as
+`PRIMARY_SITE_NO_PATH` (601, baselined) vs `BARE_AGGREGATOR_DOMAIN` (1).
+
+🔴 **A PREDICATE READS THE SHAPE OF A VALUE, NEVER WHAT THE VALUE IS.** `BARE_DOMAIN_ONLY` was a true
+statement about 602 rows and a false description of 601 of them, because it never asked *whose* domain
+it was. One `GROUP BY` on the domain settled it — the same five minutes the class itself cost to find.
+This is the Phase 149 error one level up: first we checked a URL existed, then we checked the shape of
+the citation, and neither step looked at what was there. **Before adding a check, group what it catches
+and read a sample.**
+
 ## ✅ The gate — this is what stops the backlog regenerating
 
 `npm run check:stance-sources` — **Ballotpedia cannot be the only source** (operator's predicate,
-2026-07-31). Baselined per state at the known 560; fires on growth in a state or on any new state.
+2026-07-31). Baselined per state; fires on growth in a state or on any new state.
+
+⚠️ **Candidate Connection carve-out (2026-07-31).** A Ballotpedia URL deep-linked to `#Campaign_themes`
+(or a `Candidate_Connection` path) **counts as a valid sole citation**. Those are the candidate's own
+survey answers, published nowhere else — Ballotpedia is the primary source, not a conduit, and there is
+nothing upstream to re-point to. **231 of the 557 rows in this bucket rest on exactly that.** Without
+the carve-out the gate pressures whoever works the backlog into deleting a well-sourced row or bolting
+on a second citation that is not really the source. The anchor is REQUIRED — a bare `/Name` page is
+still just a bio. Verified against live pages: the anchor is `#Campaign_themes`, there is no
+`#Candidate_Connection` section id. Applying it took BALLOTPEDIA_ONLY 557 → **552** (5 UT rows already
+had the anchor).
 `ANSWER_WITHOUT_CONTEXT` and `EMPTY_SOURCES` are zero-tolerance (prod verified at 0 before being
 written as such). Runs on master pushes and the daily cron, not PRs — sourcing debt changes with data,
 not with commits. Verified to FAIL, not just to pass.

@@ -15,6 +15,13 @@
  * page by page. A row that also cites the legislature, a roll call, a scorecard or a news report is
  * untouched by this check no matter how much Ballotpedia it additionally cites.
  *
+ * A PREDICATE READS THE SHAPE OF A VALUE, NEVER WHAT THE VALUE IS. The first version of this file
+ * learned that the hard way: `BARE_DOMAIN_ONLY` was a true statement about 602 rows and a false
+ * description of 601 of them, because it never asked whose domain it was. One GROUP BY on the domain
+ * settled it. The class is now split by whether the bare root belongs to the SUBJECT (repairable --
+ * add the path) or to a reference site covering everybody (unsupportable). Same shape, opposite
+ * remedy. Before adding a check here, group the rows it would catch and read a sample of them.
+ *
  * WHAT THIS CANNOT DO. It reads the shape of `sources`, never the content of the cited page. A row
  * citing olis.oregonlegislature.gov for a vote the member never cast passes here and is still false.
  * Content is the article-body test's job and needs a fetch. Do not read a green run as "stances are
@@ -72,14 +79,31 @@ const QUERY = `
       CASE
         WHEN pc.politician_id IS NULL                              THEN 'ANSWER_WITHOUT_CONTEXT'
         WHEN coalesce(cardinality(pc.sources), 0) = 0              THEN 'EMPTY_SOURCES'
-        -- A bare domain cannot support any claim: there is no page in it. Found 2026-07-31 while
-        -- auditing citations -- one row's entire source was "https://ballotpedia.org". 602 answers
-        -- across 223 politicians cite nothing else, a defect class nobody had looked for because the
-        -- Ballotpedia-only predicate happens to pass them.
+        -- Every source is a bare domain with no path. Whether that is fatal depends ENTIRELY on
+        -- WHOSE domain it is, and the first version of this check did not ask. Measured 2026-07-31:
+        -- of the 602 rows here, 596 cite the candidate's OWN campaign site, 5 an officeholder's own
+        -- .gov office site, and exactly 1 a multi-subject reference root. Six of six sampled campaign
+        -- homepages contained the claim the row credits to them -- these sites put their issues
+        -- content on the front page, so the citation is imprecise, not absent. Retiring them as a
+        -- class (the original recommendation) would have deleted ~596 true, sourced rows, 367 of
+        -- them live on candidate cards.
+        --
+        -- So: a bare root belonging to the SUBJECT can support a claim about the subject and needs a
+        -- path for precision. A bare root belonging to a reference site that covers everybody cannot,
+        -- and never will.
         WHEN NOT EXISTS (
           SELECT 1 FROM unnest(pc.sources) s
            WHERE btrim(s, '/') !~* '^https?://(www\.)?[a-z0-9.-]+$'
-        )                                                          THEN 'BARE_DOMAIN_ONLY'
+        ) THEN CASE
+          WHEN NOT EXISTS (
+            SELECT 1 FROM unnest(pc.sources) s
+             WHERE lower(regexp_replace(btrim(s, '/'), '^https?://(www\.)?', '')) NOT IN (
+               'ballotpedia.org', 'wikipedia.org', 'en.wikipedia.org', 'vote411.org', 'votesmart.org',
+               'ontheissues.org', 'opensecrets.org', 'followthemoney.org', 'govtrack.us',
+               'legiscan.com', 'congress.gov', 'senate.gov', 'house.gov', 'ourcampaigns.com')
+          )                                                        THEN 'BARE_AGGREGATOR_DOMAIN'
+          ELSE                                                          'PRIMARY_SITE_NO_PATH'
+        END
         -- A scraping proxy is a tool artifact, not a citation: r.jina.ai/https://... is the fetch
         -- wrapper the research step used, and it 403s now. The real source is the wrapped URL.
         WHEN EXISTS (
@@ -87,8 +111,19 @@ const QUERY = `
            WHERE s ILIKE '%r.jina.ai%' OR s ILIKE '%webcache.googleusercontent%'
               OR s ILIKE '%translate.goog%' OR s ILIKE '%12ft.io%'
         )                                                          THEN 'PROXY_URL_AS_SOURCE'
+        -- ...unless the Ballotpedia citation is a deep link into the candidate's own words. A
+        -- Candidate Connection survey response is WRITTEN BY THE CANDIDATE and published nowhere
+        -- else -- Ballotpedia is the primary source, not a conduit, and there is nothing upstream to
+        -- re-point to. Measured 2026-07-31: 231 of the 557 rows in this bucket rest on exactly that.
+        -- Without this carve-out the gate pressures whoever works the backlog into either deleting a
+        -- well-sourced survey row or bolting on a second citation that is not really the source.
+        -- The anchor is required: a bare /Name page is still just a bio. #Campaign_themes is where
+        -- Ballotpedia renders survey responses (verified against live pages, not assumed).
         WHEN NOT EXISTS (
-          SELECT 1 FROM unnest(pc.sources) s WHERE s NOT ILIKE '%ballotpedia%'
+          SELECT 1 FROM unnest(pc.sources) s
+           WHERE s NOT ILIKE '%ballotpedia%'
+              OR s ~* 'ballotpedia\.org/[^#]+#Campaign_themes'
+              OR s ILIKE '%Candidate_Connection%'
         )                                                          THEN 'BALLOTPEDIA_ONLY'
         ELSE NULL
       END AS chk,
@@ -220,11 +255,27 @@ const QUERY = `
       : v.isNew ? 'NEW state — this state was clean before' : `grew from ${v.allowed}`;
     console.error(`  ${v.chk}  ${v.bucket}  observed ${v.n} (${why})`);
   }
+  // Remediation differs by check and getting it wrong is expensive: telling someone to "cite the roll
+  // call" for a PRIMARY_SITE_NO_PATH row invites them to replace a good citation instead of finishing
+  // it, which is how ~596 true rows nearly got retired as a class on 2026-07-31.
+  const FIX = {
+    ANSWER_WITHOUT_CONTEXT: 'Write the reasoning and sources row, or retire the answer.',
+    EMPTY_SOURCES:          'Cite what the chair actually rests on, or retire the answer.',
+    BALLOTPEDIA_ONLY:       'Cite the roll call, scorecard, filing or report the bio draws on. If the ' +
+                            'claim rests on the candidate\'s own Candidate Connection answers, deep-link ' +
+                            '#Campaign_themes -- that counts.',
+    BARE_AGGREGATOR_DOMAIN: 'A reference site\'s front page says nothing about one person. Cite the page.',
+    PRIMARY_SITE_NO_PATH:   'The site is right, the path is missing -- link the issues page that carries ' +
+                            'the claim. Do NOT swap in a different source, and do not retire the row.',
+    PROXY_URL_AS_SOURCE:    'Store the wrapped URL, not the r.jina.ai fetch wrapper.',
+  };
+  console.error('');
+  for (const chk of [...new Set(violations.map((v) => v.chk))]) {
+    console.error(`  ${chk}: ${FIX[chk] ?? 'Cite what the chair actually rests on.'}`);
+  }
   console.error(
-    '\nA stance whose only citation is a Ballotpedia bio is how 1,157 retired rows were written.\n' +
-    'Cite the roll call, scorecard, filing or report the claim actually rests on. Re-run with\n' +
-    '--verbose to see the rows. If growth is intentional and understood, update the baseline in the\n' +
-    'SAME commit and explain it in the message.',
+    '\nRe-run with --verbose to see the rows. If growth is intentional and understood, update the\n' +
+    'baseline in the SAME commit and explain it in the message.',
   );
   await pool.end();
   process.exit(1);
