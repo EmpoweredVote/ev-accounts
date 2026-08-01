@@ -1,0 +1,41 @@
+{
+  "_comment": "Rollback record for migration 1513. before = exact sources array prior to the re-point.",
+  "rows": [
+    {
+      "pid": "a0dfdf20-b736-4a1c-84c1-194a6625358e",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Jessica L. Anderson",
+      "topic": "School Vouchers",
+      "cited": "https://jessicaandersonforva.com",
+      "proposed": "https://jess4va.com/issues",
+      "note": "cited host redirects to proposed host; needs a human to confirm they are the same campaign",
+      "before": [
+        "https://jessicaandersonforva.com"
+      ]
+    },
+    {
+      "pid": "a0dfdf20-b736-4a1c-84c1-194a6625358e",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Jessica L. Anderson",
+      "topic": "Abortion",
+      "cited": "https://jessicaandersonforva.com",
+      "proposed": "https://jess4va.com/issues",
+      "note": "cited host redirects to proposed host; needs a human to confirm they are the same campaign",
+      "before": [
+        "https://jessicaandersonforva.com"
+      ]
+    },
+    {
+      "pid": "a0dfdf20-b736-4a1c-84c1-194a6625358e",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Jessica L. Anderson",
+      "topic": "Healthcare",
+      "cited": "https://jessicaandersonforva.com",
+      "proposed": "https://jess4va.com/issues",
+      "note": "cited host redirects to proposed host; needs a human to confirm they are the same campaign",
+      "before": [
+        "https://jessicaandersonforva.com"
+      ]
+    }
+  ]
+}

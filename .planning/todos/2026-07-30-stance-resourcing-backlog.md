@@ -119,7 +119,7 @@ mostly not repairable, because it is mostly *not broken*.
 | `UNTESTABLE` | 23 | no quote and no distinctive term survived extraction |
 | `DEAD_SITE` | 16 | campaign site 404s. **Wayback is the likely remedy, not deletion** |
 | `DEEP_PAGE_WEAK` | 9 | one term, no quote. Probably right; not the bar for a prod write |
-| held | 3 | `jessicaandersonforva.com` 301s to `jess4va.com` — a **host change needs a human**, not a script |
+| held | 3 | `jessicaandersonforva.com` 301s to `jess4va.com` — ✅ **applied as 1513** after human verification |
 
 Rollback: `data/stance-retirement/2026-07-31-primary-site-paths-rollback.json` carries the exact prior
 `sources` array for all 43. Dry-run via `node scripts/dry-run-migration.mjs <file>` — that script
@@ -132,6 +132,41 @@ I will not take money from AIPAC"* while the row quotes *"No AIPAC Money. No For
 Money"* — substance plainly present, wording compressed, **fix the quote and keep the row**. But
 shannontaylorva.com contains no occurrence of *tariff* at all across 4 pages read. Same verdict,
 opposite remedy.
+
+### ✅ Host change — migration 1513, 558 → 555
+
+`jessicaandersonforva.com` 301s to `jess4va.com`, whose title is *"Jessica Anderson for Virginia House
+of Delegates, 71st District"* and whose socials are `facebook.com/jessicaanderson4VAHouseOfDelegates`.
+A rename, not a sale. All three claims were **re-verified verbatim at the destination**
+(`jess4va.com/issues`, 6,847 chars) rather than carried over on the strength of the redirect.
+
+🔴 **A 301 ALONE IS NOT EVIDENCE OF A RENAME — a parked or sold domain redirects identically.** What
+separates the two is the title, the campaign's own social handle and the quotes still being present.
+If a future host change cannot clear all three, hold it for a human again. `emit-repoint-migration.mjs`
+refuses off-host proposals by design; that refusal is the feature, and 1513 is the human override
+written down.
+
+## ⏸️ DEAD_SITE — 16 rows, 2 politicians, both currently INVISIBLE. Do not spend a session here.
+
+Both are past-election candidates: 0 seats, 0 upcoming active races (Malik last ran 2026-06-02, Jemison
+2026-06-23), so under the compassService rule nothing here is published. Ranked below everything live.
+
+| | Erin Jemison (UT) | Faizah Malik (CA) |
+|---|---|---|
+| rows | 10 | 6 |
+| live site | 404; `erinforutah.com` 301s to `www.` then 404. **No successor domain** | 404 |
+| Wayback | **1 snapshot, homepage only, 1,760 chars** | **20 URLs**; `/climate` 16.9k, `/community-safety` 23k, `/economy-for-all` 21.3k, `/homelessness` 22.9k, `/fire-recovery` 20.5k |
+| claims verified in archive | **0 of 10** (one weak term-only hit on a splash page) | 3 of 6, term-only |
+| recommendation | **RETIRE** — same class as 1507's `DEAD_URL_404` | **RE-SOURCE to Wayback** after a human read; do NOT retire |
+
+⚠️ **Malik's invisibility may be a data gap, not a fact.** General-election races in this project are
+routinely not seeded until after certification. If she advanced to a November general, her 6 rows go
+live the moment that race is seeded — so do her re-source **before** the next LA election seed, not
+after.
+
+🔴 **Term-only matches in the archive are NOT verification.** The 3 Malik "rescues" are the same
+strength as `DEEP_PAGE_WEAK`, which is explicitly held out of prod writes. The archived pages are rich
+enough to settle these properly; read them.
 
 🔴 **THREE ROUNDS OF BLOCK-LISTING ANCHOR IDS FAILED BEFORE ALLOW-LISTING WORKED.** `#comp-jtv6vr22`
 → blocked; then `#page`/`#PAGES_CONTAINER` → blocked; then `#zi245S`, `#ui-id-6`, `#container02`,
