@@ -1,0 +1,161 @@
+{
+  "_comment": "Rollback record for migrations 1516 (corrections) and 1517 (retirements). `before` is the exact prod state at generation time. 1517 deletes rows outright, so this file is the only copy of their reasoning and sources.",
+  "corrections": [
+    {
+      "pid": "0d2998fc-a952-4337-9c12-61d11d0a2506",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Civil Miller-Watkins",
+      "topic": "Voting Rights",
+      "why": "quote compressed two separate sentences into one quotation",
+      "before": {
+        "pid": "0d2998fc-a952-4337-9c12-61d11d0a2506",
+        "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "reasoning": "Platform commits to 'protect voting rights and election integrity' and explicitly names support for the John Lewis Voting Rights Act, an expansive federal ballot-access and anti-discrimination measure, aligning her with the more access-expanding end of the voting-rights spectrum absent an explicit automatic-registration/online-voting pledge.",
+        "sources": [
+          "https://ballotpedia.org/Civil_Miller-Watkins"
+        ]
+      },
+      "after_reasoning": "Platform commits to 'protect voting rights, increase civic participation, strengthen faith in our elections and ensure government remains accountable to the people,' and she describes herself as 'a strong supporter of the John Lewis Voting Rights Act,' an expansive federal ballot-access and anti-discrimination measure. That places her at the more access-expanding end of the spectrum, absent an explicit automatic-registration or online-voting pledge.",
+      "after_sources": null
+    },
+    {
+      "pid": "a8895322-9cf9-44ad-af0b-2be7e76c0c5d",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Johnny Baucom",
+      "topic": "Taxes",
+      "why": "reasoning claimed the survey could not be retrieved; it is on the cited page verbatim",
+      "before": {
+        "pid": "a8895322-9cf9-44ad-af0b-2be7e76c0c5d",
+        "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "reasoning": "Ballotpedia's summary of Baucom's Candidate Connection survey describes his campaign priorities as centered on deregulation and 'constitutional concerns about taxation,' consistent with a platform to drastically cut taxes and shrink government's footprint in the economy; his own survey page could not be directly retrieved (repeated access block), so no verbatim quote is available and this is based on Ballotpedia's editorial summary of his stated priorities.",
+        "sources": [
+          "https://ballotpedia.org/Mississippi's_1st_Congressional_District_election,_2026"
+        ]
+      },
+      "after_reasoning": "In his Ballotpedia Candidate Connection survey Baucom writes that 'income and property taxes are unconstitutional and reprehensible' and that 'the full abolition of the IRS is the only proper step forward in American liberation.' He lists taxation and deregulation among the policy areas he is most passionate about. That is a drastically-cut-taxes and shrink-government position.",
+      "after_sources": null
+    },
+    {
+      "pid": "5cdd28b7-f8be-4968-bc1a-0e7928786980",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Isaac Bryan",
+      "topic": "Housing",
+      "why": "removes an unsourced quotation; adds the bill the claim actually rests on",
+      "before": {
+        "pid": "5cdd28b7-f8be-4968-bc1a-0e7928786980",
+        "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "reasoning": "Bryan introduced legislation expanding homelessness mandates to large California jurisdictions, authored AB 1685 relieving parking ticket debt for unhoused people living in vehicles, and stated 'The solution to homelessness is housing.' His record reflects large-scale public investment in housing and rental assistance programs — consistent with new stance 2, which calls for publicly funded housing and requirements that new developments include affordable units. He has not advocated for government directly building and operating public housing in the manner of new stance 1.",
+        "sources": [
+          "https://ballotpedia.org/Isaac_Bryan"
+        ]
+      },
+      "after_reasoning": "Bryan authored AB 1685 (2021-22), which relieves parking-ticket debt for unhoused people living in their vehicles, and has introduced legislation extending homelessness mandates to large California jurisdictions. That record reflects public investment in housing and rental assistance, consistent with stance 2 — publicly funded housing plus requirements that new developments include affordable units. He has not advocated government directly building and operating public housing as in stance 1.",
+      "after_sources": [
+        "https://ballotpedia.org/Isaac_Bryan",
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202120220AB1685"
+      ]
+    },
+    {
+      "pid": "b769f53e-c9e5-4259-9e00-c20bfa945d15",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Carine Werner",
+      "topic": "Housing",
+      "why": "adds the bill the claim rests on; SB1729 confirmed as hers at azleg",
+      "before": {
+        "pid": "b769f53e-c9e5-4259-9e00-c20bfa945d15",
+        "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "reasoning": "In the 2025 session Werner sponsored SB1729, which would have created a first-time homebuyer assistance program funded through the state (held in Senate Finance committee). This is a targeted-assistance approach rather than large-scale public housing or deregulation, matching the chair for subsidies/first-time buyer assistance.",
+        "sources": [
+          "https://ballotpedia.org/Carine_Werner"
+        ]
+      },
+      "after_reasoning": null,
+      "after_sources": [
+        "https://ballotpedia.org/Carine_Werner",
+        "https://www.azleg.gov/legtext/57leg/1R/bills/sb1729p.htm"
+      ]
+    }
+  ],
+  "retirements": [
+    {
+      "pid": "5cdd28b7-f8be-4968-bc1a-0e7928786980",
+      "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "name": "Isaac Bryan",
+      "topic": "Religious Freedom",
+      "value": "3.0",
+      "why": "reasoning states no legislation or on-record statement was found",
+      "before": {
+        "pid": "5cdd28b7-f8be-4968-bc1a-0e7928786980",
+        "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+        "reasoning": "No direct legislation or on-record statements from Bryan specifically addressing religious freedom exemptions from anti-discrimination laws were found. His consistent LGBTQ+ rights advocacy suggests he would favor protecting civil rights over religious exemptions, but without direct evidence, a centrist score reflecting balance between religious practice and anti-discrimination law is most defensible.",
+        "sources": [
+          "https://ballotpedia.org/Isaac_Bryan"
+        ]
+      }
+    },
+    {
+      "pid": "fc5fda5f-f5bb-49bd-b7b3-b56eeaa6bb50",
+      "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "name": "Holly J. Mitchell",
+      "topic": "Religious Freedom",
+      "value": "3.0",
+      "why": "reasoning states no specific legislation was identified",
+      "before": {
+        "pid": "fc5fda5f-f5bb-49bd-b7b3-b56eeaa6bb50",
+        "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+        "reasoning": "No specific legislation authored by Mitchell on religious freedom exemptions was identified. Her civil rights record (CROWN Act, anti-discrimination bills) suggests she would prioritize anti-discrimination protections over religious exemptions, but she has not made this a focal issue. Her record aligns with mainstream Democratic balance: protecting religious practice while maintaining equal treatment.",
+        "sources": [
+          "https://ballotpedia.org/Holly_Mitchell"
+        ]
+      }
+    },
+    {
+      "pid": "fc5fda5f-f5bb-49bd-b7b3-b56eeaa6bb50",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Holly J. Mitchell",
+      "topic": "Campaign Finance",
+      "value": "2.0",
+      "why": "reasoning states no specific bill was identified; inference from caucus alignment",
+      "before": {
+        "pid": "fc5fda5f-f5bb-49bd-b7b3-b56eeaa6bb50",
+        "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+        "reasoning": "Mitchell is a progressive Democrat who has consistently supported campaign finance reform and limits on dark money. As CA Senate Budget chair she was part of the legislative caucus backing stricter disclosure requirements and limits on corporate political spending. No specific campaign finance reform bill she authored was identified, but her voting record aligned consistently with Democratic campaign finance reform positions.",
+        "sources": [
+          "https://ballotpedia.org/Holly_Mitchell"
+        ]
+      }
+    },
+    {
+      "pid": "fc5fda5f-f5bb-49bd-b7b3-b56eeaa6bb50",
+      "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "name": "Holly J. Mitchell",
+      "topic": "Redistricting",
+      "value": "2.0",
+      "why": "cited page mentions redistricting only as the reason her district changed in 2012 — not a position",
+      "before": {
+        "pid": "fc5fda5f-f5bb-49bd-b7b3-b56eeaa6bb50",
+        "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+        "reasoning": "Mitchell has supported independent redistricting reforms consistent with California's Citizens Redistricting Commission model, which features commissioners from both parties and no elected officials. As a progressive Democrat in California, she backed the state's independent commission approach established by Prop 11 (2008) and Prop 20 (2010).",
+        "sources": [
+          "https://ballotpedia.org/Holly_Mitchell"
+        ]
+      }
+    },
+    {
+      "pid": "2f063464-29d8-42a4-bba3-d521ceb53555",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Brinker Harding",
+      "topic": "Taxes",
+      "value": "4.0",
+      "why": "cited page contains no tax-cut pledge at all; \"cut taxes\" was inserted into a pledge about wasteful spending",
+      "before": {
+        "pid": "2f063464-29d8-42a4-bba3-d521ceb53555",
+        "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "reasoning": "His campaign website, quoted verbatim on his Ballotpedia profile, pledges to fight to cut taxes as part of a platform to grow the economy and eliminate wasteful spending — a broad tax-cut position without an explicit flat-tax or shrink-government-services pledge, matching stance 4.",
+        "sources": [
+          "https://ballotpedia.org/Brinker_Harding"
+        ]
+      }
+    }
+  ]
+}

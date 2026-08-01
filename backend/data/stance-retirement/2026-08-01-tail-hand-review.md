@@ -1,5 +1,35 @@
 # Tail cohort hand-review — 19 retire candidates, 2026-08-01
 
+> **OUTCOME (migrations 1516 + 1517 applied).** Reading each row individually shrank the actionable set
+> again — from the 17 this document first proposed to **9**. Group A was over-counted: 6 of its 10 needed
+> no change at all, because **the detector cannot tell a chair name in quotation marks from a source
+> quotation**. Cottam's three rows each say *"matching the `'partially privatize Medicare'` chair"* —
+> correctly attributed by the researcher, unparseable by the tool. Cliff Johnson, Zabel and Milleron
+> were simply accurate (Milleron's page does say *"I will fight to make health care accessible to all"*).
+>
+> | applied | rows | |
+> |---|---|---|
+> | **1516** corrections | 4 | Miller-Watkins + Baucom (quote fixes), Bryan/Housing (unsourced quote removed, AB 1685 added), Werner (SB1729 added) |
+> | **1517** retirements | 5 | 3 self-declared inference rows + Mitchell/Redistricting + Harding/Taxes |
+> | no change needed | 8 | Cottam ×3, Cliff Johnson, Zabel, Milleron, Lavigne, Keohokalole (deferred) |
+>
+> Two findings that reversed this document's own conclusions:
+>
+> - **Lavigne is supported, not a re-point.** His survey reads *"Lower taxes, lower energy costs, No boys
+>   in Girls sports or locker rooms or restrooms."* Identical position to the row's; the audit missed it
+>   because the row's terms were *transgender* / *athletes* / *LD 1134* and the page uses none of them.
+> - **Harding is a retirement, not a keep.** His page contains no tax-cut pledge — *cut taxes*, *lower
+>   taxes*, *tax relief*, *reduce taxes*, *tax cut* are ALL absent. "Cut taxes" was inserted into a
+>   pledge about eliminating wasteful spending, and stance 4 rested entirely on the inserted words.
+>
+> 🔴 **Keohokalole deferred, deliberately.** HI HB489 (2015) is real and its mechanism matches exactly,
+> but his name appears **nowhere** in the measure's 53,000-character status page and the bill's
+> INTRODUCED BY line is a blank signature placeholder. Citing it would lend the row false authority.
+>
+> The removed Bryan quotation turned out to be **real and correctly sourced elsewhere** — his
+> *Homelessness* row cites a LinkedIn post whose URL slug is `the-solution-to-homelessness-is-housing`.
+> It was unsourced only on the Housing row, which is why it came off that row and not out of the DB.
+
 Every row below was read against its live cited page, not against the tool's verdict. **None of the 19
 is a plain retirement.** They are four different problems wearing one label, and three of them are not
 citation failures at all.
