@@ -146,6 +146,35 @@ If a future host change cannot clear all three, hold it for a human again. `emit
 refuses off-host proposals by design; that refusal is the feature, and 1513 is the human override
 written down.
 
+## ✅ Proxy URLs unwrapped — migration 1515, PROXY_URL_AS_SOURCE 55 → **0** (class eliminated)
+
+All 34 distinct proxy URLs were the standard `r.jina.ai/<url>` form; the generator refuses any other
+shape rather than guessing. 55 rows rewritten to the URL that was already inside the stored string.
+Total gate rows **720 → 669**.
+
+⚠️ **Unwrapping RECLASSIFIES, so two buckets grew and the gate correctly failed.** A row wrapping a
+Ballotpedia URL becomes `BALLOTPEDIA_ONLY`; one wrapping a bare campaign root becomes
+`PRIMARY_SITE_NO_PATH`. +2 and +2, baselined in the same commit per the gate's own rule. The other 51
+rows now cite a pathed non-Ballotpedia source and leave the gate entirely.
+
+🔴 **THIS MIGRATION SHORTENS THE ARRAY AND THE PREVIOUS THREE FORBADE THAT.** 4 rows already cited the
+unwrapped URL *alongside* its wrapped twin, so unwrapping produces an exact duplicate that must
+collapse. 1512/1513/1514 each assert "substitutes, never drops" — **that assertion is wrong here.**
+What it was actually protecting is that no row loses a *distinct* source, which is what 1515 asserts.
+
+🔴 **A 403 FROM A NEWS SITE IS A BOT BLOCK, NOT A DEAD PAGE.** 9 unwrapped targets 403 to a script —
+Iowa Capital Dispatch, Kansas Reflector, Virginia Mercury, Radio Iowa, Our Quad Cities. Verified in a
+browser: the Iowa Capital Dispatch article renders with its headline intact. **This is almost certainly
+why the research step reached for r.jina.ai at all** — the proxy was a bot-block workaround, not
+laziness. Storing the workaround as the citation is still wrong: a reader should get the article, not
+the scraper's refusal.
+
+🔴 **AND A 202 IS THROTTLING, NOT A DEAD LINK.** 5 vpap.org targets answered 200 on one pass and 202 on
+the next. The first draft of the generator filed them under "genuinely unreachable" — the identical
+mislabel that produced a wrong Ballotpedia sweep and 214 phantom UNKNOWNs in 1514's first run. **Third
+time this exact trap has been hit on this project.** Any non-200 needs classifying before it is read as
+evidence: 403 = blocked, 202/429/503 = throttled, 404/0 = actually gone.
+
 ## ✅ Tail cohort detector fixed + hand-reviewed — 22 → 19 → **0 plain retirements**
 
 Full review: [`backend/data/stance-retirement/2026-08-01-tail-hand-review.md`](../../backend/data/stance-retirement/2026-08-01-tail-hand-review.md).

@@ -1,0 +1,978 @@
+{
+  "_comment": "Rollback record for migration 1515. `before` is the exact sources array prior to unwrapping.",
+  "rows": [
+    {
+      "pid": "08284136-be31-4d86-bf77-73c900026ade",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Debra D. Gardner",
+      "topic": "Abortion",
+      "before": [
+        "https://r.jina.ai/https://www.vpap.org/legislators/328311-debra-gardner/list-votes/close-votes/?session=39"
+      ],
+      "after": [
+        "https://www.vpap.org/legislators/328311-debra-gardner/list-votes/close-votes/?session=39"
+      ],
+      "target_status": [
+        202
+      ]
+    },
+    {
+      "pid": "0c308ff9-07e5-4ec3-a082-0324b2433da9",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Gerald Malloy",
+      "topic": "School Vouchers",
+      "before": [
+        "https://www.deploymalloy.com/landing/positions/",
+        "https://r.jina.ai/https://ballotpedia.org/Gerald_Malloy_(Vermont)"
+      ],
+      "after": [
+        "https://www.deploymalloy.com/landing/positions/",
+        "https://ballotpedia.org/Gerald_Malloy_(Vermont)"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "0c308ff9-07e5-4ec3-a082-0324b2433da9",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Gerald Malloy",
+      "topic": "Civil Rights",
+      "before": [
+        "https://www.ontheissues.org/Domestic/Gerald_Malloy_Civil_Rights.htm",
+        "https://r.jina.ai/https://ballotpedia.org/Gerald_Malloy_(Vermont)"
+      ],
+      "after": [
+        "https://www.ontheissues.org/Domestic/Gerald_Malloy_Civil_Rights.htm",
+        "https://ballotpedia.org/Gerald_Malloy_(Vermont)"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "0c308ff9-07e5-4ec3-a082-0324b2433da9",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Gerald Malloy",
+      "topic": "Immigration",
+      "before": [
+        "https://r.jina.ai/https://ballotpedia.org/Gerald_Malloy_(Vermont)",
+        "https://www.predictionedge.com/elections/profile/gerald-malloy/",
+        "https://www.wcax.com/2024/10/25/sen-sanders-gerald-malloy-talk-immigration-abortion-taxes-more-wcax-us-senate-debate/"
+      ],
+      "after": [
+        "https://ballotpedia.org/Gerald_Malloy_(Vermont)",
+        "https://www.predictionedge.com/elections/profile/gerald-malloy/",
+        "https://www.wcax.com/2024/10/25/sen-sanders-gerald-malloy-talk-immigration-abortion-taxes-more-wcax-us-senate-debate/"
+      ],
+      "target_status": [
+        200,
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "0c308ff9-07e5-4ec3-a082-0324b2433da9",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Gerald Malloy",
+      "topic": "Social Security",
+      "before": [
+        "https://vtdigger.org/profile/gerald-malloy/",
+        "https://r.jina.ai/https://ballotpedia.org/Gerald_Malloy_(Vermont)"
+      ],
+      "after": [
+        "https://vtdigger.org/profile/gerald-malloy/",
+        "https://ballotpedia.org/Gerald_Malloy_(Vermont)"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "0c308ff9-07e5-4ec3-a082-0324b2433da9",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Gerald Malloy",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://r.jina.ai/https://ballotpedia.org/Gerald_Malloy_(Vermont)",
+        "https://www.predictionedge.com/elections/profile/gerald-malloy/"
+      ],
+      "after": [
+        "https://ballotpedia.org/Gerald_Malloy_(Vermont)",
+        "https://www.predictionedge.com/elections/profile/gerald-malloy/"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "149ec01f-2344-446e-801a-74b397cfe17d",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Chris Beck",
+      "topic": "Housing",
+      "before": [
+        "https://chrisbeckforcongress.com/issues",
+        "https://r.jina.ai/https://ballotpedia.org/Chris_Beck"
+      ],
+      "after": [
+        "https://chrisbeckforcongress.com/issues",
+        "https://ballotpedia.org/Chris_Beck"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "149ec01f-2344-446e-801a-74b397cfe17d",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Chris Beck",
+      "topic": "Tariffs",
+      "before": [
+        "https://chrisbeckforcongress.com/issues",
+        "https://r.jina.ai/https://ballotpedia.org/Chris_Beck"
+      ],
+      "after": [
+        "https://chrisbeckforcongress.com/issues",
+        "https://ballotpedia.org/Chris_Beck"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "2ba471d6-9680-4584-8b10-e2baf6b493fd",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Maria Brewer",
+      "topic": "Healthcare",
+      "before": [
+        "https://mariabrewerforsenate.com/issues",
+        "https://r.jina.ai/https://ballotpedia.org/Maria_Brewer_(Tennessee)"
+      ],
+      "after": [
+        "https://mariabrewerforsenate.com/issues",
+        "https://ballotpedia.org/Maria_Brewer_(Tennessee)"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "2ba471d6-9680-4584-8b10-e2baf6b493fd",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Maria Brewer",
+      "topic": "Taxes",
+      "before": [
+        "https://mariabrewerforsenate.com/issues",
+        "https://r.jina.ai/https://ballotpedia.org/Maria_Brewer_(Tennessee)"
+      ],
+      "after": [
+        "https://mariabrewerforsenate.com/issues",
+        "https://ballotpedia.org/Maria_Brewer_(Tennessee)"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "2ba624be-57df-4660-aafd-67f2a116f0dc",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Jillian Balow",
+      "topic": "Civil Rights",
+      "before": [
+        "https://r.jina.ai/https://www.the74million.org/article/youngkin-administration-ends-equity-initiatives-at-the-virginia-department-of-education/",
+        "https://virginiamercury.com/2023/03/01/jillian-balow-resigns-as-virginias-superintendent-of-public-instruction/"
+      ],
+      "after": [
+        "https://www.the74million.org/article/youngkin-administration-ends-equity-initiatives-at-the-virginia-department-of-education/",
+        "https://virginiamercury.com/2023/03/01/jillian-balow-resigns-as-virginias-superintendent-of-public-instruction/"
+      ],
+      "target_status": [
+        200,
+        403
+      ]
+    },
+    {
+      "pid": "2ba624be-57df-4660-aafd-67f2a116f0dc",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Jillian Balow",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://r.jina.ai/https://oilcity.news/community/elections/2026/06/08/election-qa-jillian-balow-for-us-house-of-representatives/",
+        "https://cowboystatedaily.com/2026/01/13/former-wyoming-schools-superintendent-running-for-u-s-house/"
+      ],
+      "after": [
+        "https://oilcity.news/community/elections/2026/06/08/election-qa-jillian-balow-for-us-house-of-representatives/",
+        "https://cowboystatedaily.com/2026/01/13/former-wyoming-schools-superintendent-running-for-u-s-house/"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "2ba624be-57df-4660-aafd-67f2a116f0dc",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Jillian Balow",
+      "topic": "Healthcare",
+      "before": [
+        "https://r.jina.ai/https://oilcity.news/community/elections/2026/06/08/election-qa-jillian-balow-for-us-house-of-representatives/"
+      ],
+      "after": [
+        "https://oilcity.news/community/elections/2026/06/08/election-qa-jillian-balow-for-us-house-of-representatives/"
+      ],
+      "target_status": [
+        200
+      ]
+    },
+    {
+      "pid": "2ba624be-57df-4660-aafd-67f2a116f0dc",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Jillian Balow",
+      "topic": "Taxes",
+      "before": [
+        "https://r.jina.ai/https://oilcity.news/community/elections/2026/06/08/election-qa-jillian-balow-for-us-house-of-representatives/",
+        "https://wyofile.com/jillian-balow-former-wyoming-education-leader-will-run-for-u-s-house/"
+      ],
+      "after": [
+        "https://oilcity.news/community/elections/2026/06/08/election-qa-jillian-balow-for-us-house-of-representatives/",
+        "https://wyofile.com/jillian-balow-former-wyoming-education-leader-will-run-for-u-s-house/"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "2c684458-b752-4dbc-82bf-39c9475d23c0",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Ryan Cushman",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://www.ryancushmanforcongress.com",
+        "https://r.jina.ai/https://smarter.vote/races/mi-house-03-2026/ryan-cushman/"
+      ],
+      "after": [
+        "https://www.ryancushmanforcongress.com",
+        "https://smarter.vote/races/mi-house-03-2026/ryan-cushman/"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "2c684458-b752-4dbc-82bf-39c9475d23c0",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Ryan Cushman",
+      "topic": "Climate Change",
+      "before": [
+        "https://www.ryancushmanforcongress.com",
+        "https://r.jina.ai/https://smarter.vote/races/mi-house-03-2026/ryan-cushman/"
+      ],
+      "after": [
+        "https://www.ryancushmanforcongress.com",
+        "https://smarter.vote/races/mi-house-03-2026/ryan-cushman/"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "48192f8e-a15b-4df1-bfe3-8121d3ec6efc",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Gregory A. Goetzman",
+      "topic": "Climate Change",
+      "before": [
+        "https://greggoetzman.com",
+        "https://r.jina.ai/https://greggoetzman.com"
+      ],
+      "after": [
+        "https://greggoetzman.com"
+      ],
+      "target_status": [
+        403
+      ]
+    },
+    {
+      "pid": "48192f8e-a15b-4df1-bfe3-8121d3ec6efc",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Gregory A. Goetzman",
+      "topic": "Taxes",
+      "before": [
+        "https://greggoetzman.com",
+        "https://r.jina.ai/https://greggoetzman.com"
+      ],
+      "after": [
+        "https://greggoetzman.com"
+      ],
+      "target_status": [
+        403
+      ]
+    },
+    {
+      "pid": "51ebeccc-9f0f-4075-963a-af01acd66c23",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Hugh McTavish",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://r.jina.ai/https://ballotpedia.org/Hugh_McTavish",
+        "https://hughmctavish.com/top-priorities/"
+      ],
+      "after": [
+        "https://ballotpedia.org/Hugh_McTavish",
+        "https://hughmctavish.com/top-priorities/"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "51ebeccc-9f0f-4075-963a-af01acd66c23",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Hugh McTavish",
+      "topic": "Climate Change",
+      "before": [
+        "https://hughmctavish.com/top-priorities/",
+        "https://r.jina.ai/https://ballotpedia.org/Hugh_McTavish"
+      ],
+      "after": [
+        "https://hughmctavish.com/top-priorities/",
+        "https://ballotpedia.org/Hugh_McTavish"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "54a52891-2aab-4984-a2e7-1dfa5b39a38b",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Frank Barnitz",
+      "topic": "Social Security",
+      "before": [
+        "https://frankbarnitz.com",
+        "https://r.jina.ai/https://labortribune.com/missouri-afl-cio-endorses-former-state-senator-frank-barnitzs-congressional-bid/"
+      ],
+      "after": [
+        "https://frankbarnitz.com",
+        "https://labortribune.com/missouri-afl-cio-endorses-former-state-senator-frank-barnitzs-congressional-bid/"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "54a52891-2aab-4984-a2e7-1dfa5b39a38b",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Frank Barnitz",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://r.jina.ai/https://labortribune.com/missouri-afl-cio-endorses-former-state-senator-frank-barnitzs-congressional-bid/",
+        "https://frankbarnitz.com"
+      ],
+      "after": [
+        "https://labortribune.com/missouri-afl-cio-endorses-former-state-senator-frank-barnitzs-congressional-bid/",
+        "https://frankbarnitz.com"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "5e86fb53-a6eb-4b35-82de-79706a66dc1a",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Matthew D. Klein",
+      "topic": "Abortion",
+      "before": [
+        "https://kleinforcongress.com",
+        "https://r.jina.ai/https://ballotpedia.org/Matt_Klein"
+      ],
+      "after": [
+        "https://kleinforcongress.com",
+        "https://ballotpedia.org/Matt_Klein"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "5e86fb53-a6eb-4b35-82de-79706a66dc1a",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Matthew D. Klein",
+      "topic": "Healthcare",
+      "before": [
+        "https://kleinforcongress.com",
+        "https://r.jina.ai/https://ballotpedia.org/Matt_Klein"
+      ],
+      "after": [
+        "https://kleinforcongress.com",
+        "https://ballotpedia.org/Matt_Klein"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "5e86fb53-a6eb-4b35-82de-79706a66dc1a",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Matthew D. Klein",
+      "topic": "Climate Change",
+      "before": [
+        "https://r.jina.ai/https://ballotpedia.org/Matt_Klein"
+      ],
+      "after": [
+        "https://ballotpedia.org/Matt_Klein"
+      ],
+      "target_status": [
+        200
+      ]
+    },
+    {
+      "pid": "7b11e4bb-330b-4fb6-999e-b72974f3549c",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Will P. Davis",
+      "topic": "Abortion",
+      "before": [
+        "https://www.davisfordelegate.com/issues",
+        "https://r.jina.ai/https://www.vpap.org/legislators/385091-will-davis/list-votes/close-votes/?session=39"
+      ],
+      "after": [
+        "https://www.davisfordelegate.com/issues",
+        "https://www.vpap.org/legislators/385091-will-davis/list-votes/close-votes/?session=39"
+      ],
+      "target_status": [
+        200,
+        202
+      ]
+    },
+    {
+      "pid": "8b493601-de91-44f8-8ce9-0b73ddf532f0",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Moshe Landman",
+      "topic": "Civil Rights",
+      "before": [
+        "http://www.moshelandman.us/the-issues",
+        "http://www.moshelandman.us/",
+        "https://r.jina.ai/https://ballotpedia.org/Moshe_Landman"
+      ],
+      "after": [
+        "http://www.moshelandman.us/the-issues",
+        "http://www.moshelandman.us/",
+        "https://ballotpedia.org/Moshe_Landman"
+      ],
+      "target_status": [
+        200,
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "8b493601-de91-44f8-8ce9-0b73ddf532f0",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Moshe Landman",
+      "topic": "Healthcare",
+      "before": [
+        "http://www.moshelandman.us/the-issues",
+        "http://www.moshelandman.us/",
+        "https://r.jina.ai/https://ballotpedia.org/Moshe_Landman"
+      ],
+      "after": [
+        "http://www.moshelandman.us/the-issues",
+        "http://www.moshelandman.us/",
+        "https://ballotpedia.org/Moshe_Landman"
+      ],
+      "target_status": [
+        200,
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "8b493601-de91-44f8-8ce9-0b73ddf532f0",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Moshe Landman",
+      "topic": "Taxes",
+      "before": [
+        "http://www.moshelandman.us/the-issues",
+        "http://www.moshelandman.us/",
+        "https://r.jina.ai/https://ballotpedia.org/Moshe_Landman"
+      ],
+      "after": [
+        "http://www.moshelandman.us/the-issues",
+        "http://www.moshelandman.us/",
+        "https://ballotpedia.org/Moshe_Landman"
+      ],
+      "target_status": [
+        200,
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "8d6faa29-2b9a-4d63-aff4-b738677a9c18",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Bo Biteman",
+      "topic": "Voting Rights",
+      "before": [
+        "https://r.jina.ai/https://ballotpedia.org/Bo_Biteman"
+      ],
+      "after": [
+        "https://ballotpedia.org/Bo_Biteman"
+      ],
+      "target_status": [
+        200
+      ]
+    },
+    {
+      "pid": "9691abd4-42fe-44f9-9d26-e587a9063b46",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Mitchell Jacob",
+      "topic": "Taxes",
+      "before": [
+        "https://mitchelljacob.com/",
+        "https://r.jina.ai/https://ballotpedia.org/Mitchell_Jacob"
+      ],
+      "after": [
+        "https://mitchelljacob.com/",
+        "https://ballotpedia.org/Mitchell_Jacob"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "b0b2e166-b1ca-4d5e-9c16-aa5b5a06b724",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Nathan Bech",
+      "topic": "Immigration",
+      "before": [
+        "https://r.jina.ai/https://www.sentinelandenterprise.com/2008/10/23/bech-olver-debate-earmarks-economy/",
+        "https://r.jina.ai/https://archives.thereminder.com/localnews/holyoke/iraqiveteranviesfo/"
+      ],
+      "after": [
+        "https://www.sentinelandenterprise.com/2008/10/23/bech-olver-debate-earmarks-economy/",
+        "https://archives.thereminder.com/localnews/holyoke/iraqiveteranviesfo/"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "b0b2e166-b1ca-4d5e-9c16-aa5b5a06b724",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Nathan Bech",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://www.nathanbech.com/principles",
+        "https://r.jina.ai/https://archives.thereminder.com/localnews/holyoke/iraqiveteranviesfo/"
+      ],
+      "after": [
+        "https://www.nathanbech.com/principles",
+        "https://archives.thereminder.com/localnews/holyoke/iraqiveteranviesfo/"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "b0b2e166-b1ca-4d5e-9c16-aa5b5a06b724",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Nathan Bech",
+      "topic": "Healthcare",
+      "before": [
+        "https://r.jina.ai/https://archives.thereminder.com/localnews/holyoke/iraqiveteranviesfo/"
+      ],
+      "after": [
+        "https://archives.thereminder.com/localnews/holyoke/iraqiveteranviesfo/"
+      ],
+      "target_status": [
+        200
+      ]
+    },
+    {
+      "pid": "b21b5e5e-3359-4692-a60d-47d459bbb198",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Patrick Schmidt",
+      "topic": "Abortion",
+      "before": [
+        "https://kansasreflector.com/2025/03/13/kansas-senate-democrat-breaks-from-party-to-add-tax-credit-to-fetal-child-support-bill/",
+        "https://r.jina.ai/https://kansasreflector.com/tag/sen-patrick-schmidt/"
+      ],
+      "after": [
+        "https://kansasreflector.com/2025/03/13/kansas-senate-democrat-breaks-from-party-to-add-tax-credit-to-fetal-child-support-bill/",
+        "https://kansasreflector.com/tag/sen-patrick-schmidt/"
+      ],
+      "target_status": [
+        403,
+        403
+      ]
+    },
+    {
+      "pid": "b503b679-773a-4eee-9c16-e73bff1a723f",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Chuck Gray",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://r.jina.ai/https://chuckforwyoming.com",
+        "https://kgab.com/wyoming-house-race-chuck-gray/"
+      ],
+      "after": [
+        "https://chuckforwyoming.com",
+        "https://kgab.com/wyoming-house-race-chuck-gray/"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "b503b679-773a-4eee-9c16-e73bff1a723f",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Chuck Gray",
+      "topic": "Voting Rights",
+      "before": [
+        "https://sos.wyo.gov/Media/2025/SoS_Release_2025-01-30.pdf",
+        "https://sos.wyo.gov/Media/2025/SoS_Release_2025-03-21.pdf",
+        "https://r.jina.ai/https://chuckforwyoming.com"
+      ],
+      "after": [
+        "https://sos.wyo.gov/Media/2025/SoS_Release_2025-01-30.pdf",
+        "https://sos.wyo.gov/Media/2025/SoS_Release_2025-03-21.pdf",
+        "https://chuckforwyoming.com"
+      ],
+      "target_status": [
+        200,
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "b503b679-773a-4eee-9c16-e73bff1a723f",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Chuck Gray",
+      "topic": "Climate Change",
+      "before": [
+        "https://kgab.com/wyoming-house-race-chuck-gray/",
+        "https://r.jina.ai/https://chuckforwyoming.com"
+      ],
+      "after": [
+        "https://kgab.com/wyoming-house-race-chuck-gray/",
+        "https://chuckforwyoming.com"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "c0811d78-fd93-48d6-a759-f4f0f012e502",
+      "tid": "24e9212c-b011-422a-865c-093e35050901",
+      "name": "Christina Bohannan",
+      "topic": "Ukraine Support",
+      "before": [
+        "https://r.jina.ai/https://www.ourquadcities.com/news/4-the-record/web-extra-bohannan-miller-meeks-on-ukraine-and-israel-policy/"
+      ],
+      "after": [
+        "https://www.ourquadcities.com/news/4-the-record/web-extra-bohannan-miller-meeks-on-ukraine-and-israel-policy/"
+      ],
+      "target_status": [
+        403
+      ]
+    },
+    {
+      "pid": "c0811d78-fd93-48d6-a759-f4f0f012e502",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Christina Bohannan",
+      "topic": "Immigration",
+      "before": [
+        "https://r.jina.ai/https://cbs2iowa.com/news/beyond-the-podium/beyond-the-podium-1st-congressional-district-candidate-christina-bohannan",
+        "https://radioiowa.com/2024/08/12/bohannan-says-miller-meeks-playing-politics-on-immigration-issue/"
+      ],
+      "after": [
+        "https://cbs2iowa.com/news/beyond-the-podium/beyond-the-podium-1st-congressional-district-candidate-christina-bohannan",
+        "https://radioiowa.com/2024/08/12/bohannan-says-miller-meeks-playing-politics-on-immigration-issue/"
+      ],
+      "target_status": [
+        200,
+        403
+      ]
+    },
+    {
+      "pid": "c0811d78-fd93-48d6-a759-f4f0f012e502",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Christina Bohannan",
+      "topic": "Tariffs",
+      "before": [
+        "https://bohannanforcongress.com/priorities/",
+        "https://r.jina.ai/https://cbs2iowa.com/news/beyond-the-podium/beyond-the-podium-1st-congressional-district-candidate-christina-bohannan"
+      ],
+      "after": [
+        "https://bohannanforcongress.com/priorities/",
+        "https://cbs2iowa.com/news/beyond-the-podium/beyond-the-podium-1st-congressional-district-candidate-christina-bohannan"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "c0811d78-fd93-48d6-a759-f4f0f012e502",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Christina Bohannan",
+      "topic": "Abortion",
+      "before": [
+        "https://bohannanforcongress.com/priorities/",
+        "https://r.jina.ai/https://iowacapitaldispatch.com/2024/10/21/miller-meeks-bohannan-face-off-on-abortion-immigration-at-1st-district-debate/",
+        "https://r.jina.ai/https://iowacapitaldispatch.com/2024/08/10/democrat-christina-bohannan-vows-to-defend-abortion-in-iowa-state-fair-speech/"
+      ],
+      "after": [
+        "https://bohannanforcongress.com/priorities/",
+        "https://iowacapitaldispatch.com/2024/10/21/miller-meeks-bohannan-face-off-on-abortion-immigration-at-1st-district-debate/",
+        "https://iowacapitaldispatch.com/2024/08/10/democrat-christina-bohannan-vows-to-defend-abortion-in-iowa-state-fair-speech/"
+      ],
+      "target_status": [
+        200,
+        403,
+        403
+      ]
+    },
+    {
+      "pid": "c0811d78-fd93-48d6-a759-f4f0f012e502",
+      "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "name": "Christina Bohannan",
+      "topic": "Trans Athletes",
+      "before": [
+        "https://r.jina.ai/https://iowagop.org/blog/as-supreme-court-upholds-girls-sports-law-iowa-democrats-stay-silent/"
+      ],
+      "after": [
+        "https://iowagop.org/blog/as-supreme-court-upholds-girls-sports-law-iowa-democrats-stay-silent/"
+      ],
+      "target_status": [
+        403
+      ]
+    },
+    {
+      "pid": "c7f94731-2162-4fb7-803a-a2ff7443a9a1",
+      "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "name": "Mike A. Cherry",
+      "topic": "Redistricting",
+      "before": [
+        "https://mikecherryforva.com/special-session-update-oct2025/",
+        "https://r.jina.ai/https://www.vpap.org/legislators/369687-mike-cherry/list-votes/close-votes/?session=39"
+      ],
+      "after": [
+        "https://mikecherryforva.com/special-session-update-oct2025/",
+        "https://www.vpap.org/legislators/369687-mike-cherry/list-votes/close-votes/?session=39"
+      ],
+      "target_status": [
+        200,
+        202
+      ]
+    },
+    {
+      "pid": "c7f94731-2162-4fb7-803a-a2ff7443a9a1",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Mike A. Cherry",
+      "topic": "Abortion",
+      "before": [
+        "https://r.jina.ai/https://www.vpap.org/legislators/369687-mike-cherry/list-votes/close-votes/?session=39",
+        "https://repro-files.com/candidates/mikecherry/reproductiverights"
+      ],
+      "after": [
+        "https://www.vpap.org/legislators/369687-mike-cherry/list-votes/close-votes/?session=39",
+        "https://repro-files.com/candidates/mikecherry/reproductiverights"
+      ],
+      "target_status": [
+        202,
+        200
+      ]
+    },
+    {
+      "pid": "cd10014f-2a57-4d68-b7ae-ad5233747c5a",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Jeff Wadlin",
+      "topic": "Tariffs",
+      "before": [
+        "https://jeffwadlin.com/issues",
+        "https://r.jina.ai/https://jeffwadlin.com/in-the-news/rgt4p58qm0ttaqu839of3w801ix7t8",
+        "https://r.jina.ai/https://arktimes.com/arkansas-blog/2026/05/19/libertarian-u-s-senate-candidate-announces-campaign-kickoff"
+      ],
+      "after": [
+        "https://jeffwadlin.com/issues",
+        "https://jeffwadlin.com/in-the-news/rgt4p58qm0ttaqu839of3w801ix7t8",
+        "https://arktimes.com/arkansas-blog/2026/05/19/libertarian-u-s-senate-candidate-announces-campaign-kickoff"
+      ],
+      "target_status": [
+        200,
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "cd10014f-2a57-4d68-b7ae-ad5233747c5a",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Jeff Wadlin",
+      "topic": "Abortion",
+      "before": [
+        "https://r.jina.ai/https://smarter.vote/races/ar-senate-2026/jeff-wadlin/"
+      ],
+      "after": [
+        "https://smarter.vote/races/ar-senate-2026/jeff-wadlin/"
+      ],
+      "target_status": [
+        200
+      ]
+    },
+    {
+      "pid": "cd10014f-2a57-4d68-b7ae-ad5233747c5a",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Jeff Wadlin",
+      "topic": "Healthcare",
+      "before": [
+        "https://jeffwadlin.com/issues",
+        "https://r.jina.ai/https://jeffwadlin.com/in-the-news/rgt4p58qm0ttaqu839of3w801ix7t8"
+      ],
+      "after": [
+        "https://jeffwadlin.com/issues",
+        "https://jeffwadlin.com/in-the-news/rgt4p58qm0ttaqu839of3w801ix7t8"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    },
+    {
+      "pid": "e345c9d6-4e28-4416-86de-24ab84c803f9",
+      "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "name": "Justin L. Pence",
+      "topic": "Redistricting",
+      "before": [
+        "https://virginiabusiness.com/virginia-officials-oppose-april-21-congressional-redistricting/",
+        "https://r.jina.ai/https://www.vpap.org/legislators/83461-justin-l-pence/list-votes/close-votes/?session=39"
+      ],
+      "after": [
+        "https://virginiabusiness.com/virginia-officials-oppose-april-21-congressional-redistricting/",
+        "https://www.vpap.org/legislators/83461-justin-l-pence/list-votes/close-votes/?session=39"
+      ],
+      "target_status": [
+        200,
+        202
+      ]
+    },
+    {
+      "pid": "e71141e4-e52b-45e1-9cf4-9e01ea5a5a38",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Ahmad Hassan",
+      "topic": "Healthcare",
+      "before": [
+        "https://r.jina.ai/https://drahmadhassan.com/issues",
+        "https://drahmadhassan.com/issues"
+      ],
+      "after": [
+        "https://drahmadhassan.com/issues"
+      ],
+      "target_status": [
+        200
+      ]
+    },
+    {
+      "pid": "e71141e4-e52b-45e1-9cf4-9e01ea5a5a38",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Ahmad Hassan",
+      "topic": "Climate Change",
+      "before": [
+        "https://r.jina.ai/https://drahmadhassan.com/issues",
+        "https://drahmadhassan.com/issues"
+      ],
+      "after": [
+        "https://drahmadhassan.com/issues"
+      ],
+      "target_status": [
+        200
+      ]
+    },
+    {
+      "pid": "f4257ee4-57c8-47dd-81ed-4abfa71a2e24",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Lily V. Franklin",
+      "topic": "Abortion",
+      "before": [
+        "https://lilyfordelegate.com/priorities",
+        "https://r.jina.ai/https://www.vpap.org/legislators/449164-lily-franklin/list-votes/close-votes/?session=39"
+      ],
+      "after": [
+        "https://lilyfordelegate.com/priorities",
+        "https://www.vpap.org/legislators/449164-lily-franklin/list-votes/close-votes/?session=39"
+      ],
+      "target_status": [
+        200,
+        202
+      ]
+    },
+    {
+      "pid": "ff596d3f-3056-43e2-a80a-8c4b8fd9abde",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Andy Harris",
+      "topic": "School Vouchers",
+      "before": [
+        "https://r.jina.ai/https://harris.house.gov/issues/education"
+      ],
+      "after": [
+        "https://harris.house.gov/issues/education"
+      ],
+      "target_status": [
+        200
+      ]
+    },
+    {
+      "pid": "ff596d3f-3056-43e2-a80a-8c4b8fd9abde",
+      "tid": "24e9212c-b011-422a-865c-093e35050901",
+      "name": "Andy Harris",
+      "topic": "Ukraine Support",
+      "before": [
+        "https://r.jina.ai/https://clerk.house.gov/Votes/2024151"
+      ],
+      "after": [
+        "https://clerk.house.gov/Votes/2024151"
+      ],
+      "target_status": [
+        200
+      ]
+    },
+    {
+      "pid": "ff596d3f-3056-43e2-a80a-8c4b8fd9abde",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Andy Harris",
+      "topic": "Voting Rights",
+      "before": [
+        "https://r.jina.ai/https://clerk.house.gov/Votes/2025102",
+        "https://en.wikipedia.org/wiki/Andy_Harris_(politician)"
+      ],
+      "after": [
+        "https://clerk.house.gov/Votes/2025102",
+        "https://en.wikipedia.org/wiki/Andy_Harris_(politician)"
+      ],
+      "target_status": [
+        200,
+        200
+      ]
+    }
+  ]
+}
