@@ -146,6 +146,53 @@ If a future host change cannot clear all three, hold it for a human again. `emit
 refuses off-host proposals by design; that refusal is the feature, and 1513 is the human override
 written down.
 
+## ✅ Tail cohort detector fixed + hand-reviewed — 22 → 19 → **0 plain retirements**
+
+Full review: [`backend/data/stance-retirement/2026-08-01-tail-hand-review.md`](../../backend/data/stance-retirement/2026-08-01-tail-hand-review.md).
+Run: `2026-08-01-audit-tail-refixed.json`.
+
+Three detector bugs fixed in `scripts/lib/claim-match.mjs`, each reproduced on a real row first:
+
+1. 🔴 **A CLOSING QUOTE CAN BE FOLLOWED BY PUNCTUATION, and refusing to see it breaks PARITY for the
+   whole row.** In `states under 'Reproductive Rights': 'For Jonathan, …'` the mark before the colon
+   was skipped, marks paired up shifted by one, and the next "quote" ran from the close of one real
+   quotation to the open of the next — capturing the row's own analytical prose. **That is bug #3
+   returning through a different door**: it was fixed by pairing marks in order, and an unrecognised
+   mark defeats ordered pairing entirely. Nez went QUOTE_ABSENT → QUOTE_VERIFIED.
+2. 🔴 **NEGATION, NOT CHAIR LABELS, CAUSED THE "CHAIR LABEL" FAILURES — the original diagnosis was
+   wrong.** All four measured cases negate the term: *"**without** an explicit flat-tax…"*, *"**absent**
+   an explicit automatic-registration…"*, *"propose **no** single-payer or public-option…"*. The
+   >3-hyphen-part rule was credited with fixing these and **cannot have** — `single-payer` and
+   `public-option` are two parts and are in POLICY_PHRASES. Nothing about their shape is wrong; testing
+   a page for a term the row says is absent is what is wrong.
+   ⚠️ First cut of this over-dropped: scope ran past a contrastive conjunction and swallowed
+   *"No authored bill … **but** … co-author abortion access legislation"*, pushing McKinnor from
+   PARTIAL_SUPPORT to CITATION_FAILS — **the fix manufacturing the failure it was written to remove.**
+   `but|yet|however|although|though|whereas|while|instead|still` now end the scope.
+3. 🔴 **INFLECTION DEFEATED THE EXACT SHINGLE.** Valencia's row quotes "enhance … and increase support";
+   her page says "enhanc**ing** … and increas**ing** support". `looseIncludes` had stemmed for terms all
+   along; quotes never got the same treatment. Exact match is tried first and unchanged; the stemmed
+   pass only adds recall.
+
+### The hand-review verdict: not one of the 19 is a plain retirement
+
+| class | rows | remedy |
+|---|---|---|
+| **Substance IS on the page** — quote compressed, paraphrased or invented | **10** | keep the row, fix the quote |
+| **Unevidenced inference** — reasoning itself says no evidence found | 3 | retire as **NO STANCE**, not as a citation failure |
+| **Genuine failure but RE-POINTABLE** — names a real instrument absent from the page | 4 | cite AB 1685 / HI HB489 / LD 1134+233 / SB1729 at source |
+| **Needs a person** | 2 | Guzzone, Weber |
+
+🔴 **SEVEN CONSECUTIVE TIMES this detector's findings have shrunk when the detector or the reviewer was
+corrected** — TX 32→11→3→0, TN/WA 18→8→5, tail 22→19, then 19→0 plain retirements on reading the pages.
+**It has never once been right that a row should be deleted.** Treat its output as a reading queue, never
+as a delete list.
+
+⚠️ **My own hand-check was wrong once too, in the same shape.** I reported the extractor was losing
+homepage content because I grepped `"public housing"` when the row's quote is *"public housing with the
+price based on income"*. The short fragment is on the page; the full quote is not. **Grep the whole
+quoted string, never a fragment of it.**
+
 ## ✅ Candidate Connection deep-links — migration 1514, BALLOTPEDIA_ONLY 552 → 109
 
 `node scripts/deep-link-candidate-connection.mjs` read all 195 cited pages and tested each row against

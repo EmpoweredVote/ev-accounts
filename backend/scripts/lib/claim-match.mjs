@@ -162,7 +162,16 @@ function extractQuotes(reasoning) {
   // Joshua Warren Sales's CITATION_FAILS on a row that quotes its source correctly.
   const dq = /["“”]/g;
   const hasDouble = (reasoning.match(dq) ?? []).length >= 2;
-  const marks = hasDouble ? dq : /(?<=^|[\s(])'(?=\w)|(?<=[\w.,;:!?])'(?=[\s)]|$)/g;
+  // 🔴 A CLOSING QUOTE CAN BE FOLLOWED BY PUNCTUATION THAT SITS OUTSIDE THE QUOTATION, and refusing
+  // to recognise it does not merely lose that quote -- it BREAKS PARITY for the whole row. In
+  // "states under 'Reproductive Rights': 'For Jonathan, ...'" the mark after Rights is followed by a
+  // colon, so the old lookahead [\s)] skipped it; the marks then paired up shifted by one and the
+  // NEXT "quote" ran from the close of one real quotation to the open of the next, capturing the
+  // row's own analytical prose ("This general pro-choice framing without an explicit ... matches
+  // stance 2 ..."). That is bug #3 from the post-mortem coming back through a different door: it was
+  // fixed by pairing marks in order, and an unrecognised mark defeats ordered pairing entirely.
+  // Trailing , . ; : ! ? are therefore all valid after a closing mark.
+  const marks = hasDouble ? dq : /(?<=^|[\s(])'(?=\w)|(?<=[\w.,;:!?])'(?=[\s).,;:!?]|$)/g;
   const positions = [];
   for (const m of reasoning.matchAll(marks)) positions.push(m.index);
   const out = [];
@@ -190,15 +199,41 @@ function quoteFragments(q) {
  * is already overwhelming evidence the row is quoting this page, and it tolerates one edit elsewhere.
  */
 const SHINGLE = 6;
+
+/**
+ * Light inflectional stem. Deliberately crude and only applied to words of 5+ characters, so "has"
+ * and "ties" are left alone while "increasing" and "increase" both land on "increas".
+ */
+function stemWord(w) {
+  if (w.length < 5) return w;
+  return w.replace(/(?:ings?|ing|edly|ed|es|s)$/, '').replace(/e$/, '');
+}
+const stemLine = (s) => s.split(' ').map(stemWord).join(' ');
+
+/**
+ * 🔴 INFLECTION DEFEATED THE EXACT SHINGLE, AND IT IS THE SINGLE BIGGEST SOURCE OF FALSE FAILURES
+ * LEFT IN THIS TOOL. Ana Valencia's row quotes "enhance community policing and increase support for
+ * emergency services"; her page says "enhancING community policing and increasING support for
+ * emergency services". Identical substance, and every 6-word window differs by a suffix, so the exact
+ * test reported the quote absent and the row landed on a retirement list. `looseIncludes` has stemmed
+ * for terms all along -- quotes simply never got the same treatment.
+ *
+ * Exact matching is tried FIRST and is unchanged; the stemmed pass only adds recall, and a run of six
+ * consecutive words agreeing on their stems is still overwhelming evidence the row is quoting this
+ * page. Recorded as a match, not as a lesser one, because "increase" vs "increasing" is not a defect
+ * in the citation -- and per the post-mortem's own rule, inexact quotation is not fabrication.
+ */
 function quotePresent(body, q) {
   const frags = quoteFragments(q);
   if (!frags.length) return null;                     // nothing testable in it
   const hay = norm(body);
+  const hayStem = stemLine(hay);
   return frags.every((f) => {
     const w = norm(f).split(' ').filter(Boolean);
-    if (w.length < SHINGLE) return hay.includes(norm(f));
+    if (w.length < SHINGLE) return hay.includes(norm(f)) || hayStem.includes(stemLine(norm(f)));
     for (let i = 0; i + SHINGLE <= w.length; i++) {
-      if (hay.includes(w.slice(i, i + SHINGLE).join(' '))) return true;
+      const run = w.slice(i, i + SHINGLE).join(' ');
+      if (hay.includes(run) || hayStem.includes(stemLine(run))) return true;
     }
     return false;
   });
@@ -228,11 +263,57 @@ function looseIncludes(haystack, needle) {
   return nStem.length > 3 && h.split(' ').map(stem).join(' ').includes(nStem);
 }
 
+/**
+ * Cues that mean the row is asserting a term is ABSENT from the source.
+ *
+ * 🔴 A NEGATED TERM MUST NEVER BE TESTED FOR PRESENCE -- THE ROW ALREADY SAID IT IS NOT THERE. This is
+ * the real root of the "chair label" false alarms, and it is worth stating precisely because the first
+ * diagnosis was wrong. Those failures were blamed on hyphenated chair names leaking into the term list,
+ * and a >3-hyphen-part rule was added to catch them. But every one of the four measured cases is a
+ * NEGATION, not a naming convention:
+ *
+ *   "without an explicit flat-tax or shrink-government-services pledge"          Harding
+ *   "absent an explicit automatic-registration/online-voting pledge"             Miller-Watkins
+ *   "propose no single-payer or public-option mechanism and no market-only ..."  Milleron
+ *   "without an explicit all-stages public-funding statement"                    Nez
+ *
+ * The hyphen rule could never have fixed these: single-payer and public-option are two parts each and
+ * are real policy terms -- they are in POLICY_PHRASES. Nothing about their SHAPE is wrong. What is
+ * wrong is testing the page for a term the row explicitly says the candidate did not offer, and then
+ * recording its absence as a citation failure. Scope is the rest of the clause, since a negation does
+ * not carry across a sentence or a dash.
+ */
+const NEGATION_CUE = /\b(?:no|not|without|absent|lacks?|lacking|never|neither|nor|rather than|instead of|does not|do not|doesn't|don't|didn't|failed to|declined to|stops? short of|falls? short of|makes? no|offers? no|proposes? no)\b/gi;
+/**
+ * 🔴 A CONTRASTIVE CONJUNCTION ENDS THE NEGATION, and leaving it out over-drops. Measured on Tina
+ * McKinnor's abortion row: "No authored bill directly on abortion found, BUT California Democratic
+ * caucus members ... consistently vote for and co-author abortion access legislation." Running the
+ * scope to the full stop swallowed the assertion after the "but", dropped abortion / co-author /
+ * California Democratic, and pushed a PARTIAL_SUPPORT row down to CITATION_FAILS -- the negation fix
+ * manufacturing exactly the kind of false failure it was written to remove.
+ */
+const CLAUSE_BREAK = /[.;]|--|—|\b(?:but|yet|however|although|though|whereas|while|instead|still)\b/;
+
+/** Character ranges of `text` that sit under a negation, from the cue to the end of its clause. */
+function negatedRanges(text) {
+  const ranges = [];
+  NEGATION_CUE.lastIndex = 0;
+  for (const m of text.matchAll(NEGATION_CUE)) {
+    const rest = text.slice(m.index);
+    const brk = rest.search(CLAUSE_BREAK);
+    ranges.push([m.index, m.index + (brk === -1 ? rest.length : brk)]);
+  }
+  return ranges;
+}
+
 function candidateTerms(reasoning) {
   const text = reasoning.replace(/https?:\/\/\S+/g, ' ');
   const lower = text.toLowerCase();
+  const negated = negatedRanges(text);
+  const isNegated = (i) => negated.some(([a, b]) => i >= a && i < b);
   const seen = new Map();                       // lowercased -> original casing
-  const add = (s) => {
+  const add = (s, at) => {
+    if (at != null && isNegated(at)) return;
     // Strip a leading pronoun/determiner the capitalised-phrase regex swept up from the row's own prose
     // ("His Candidate Connection"), and drop possessives that can never match the page ("Paul Ryan's").
     const v = s.trim().replace(/\s+/g, ' ').replace(/[.,;:]$/, '')
@@ -247,22 +328,29 @@ function candidateTerms(reasoning) {
   for (const re of [BILLREF, MEASUREREF, CAP_PHRASE, HYPHEN]) {
     re.lastIndex = 0;
     for (const m of text.matchAll(re)) {
-      // 🔴 DROP COMPASS-CHAIR LABELS. The row author writes the chair they picked as a hyphenated
-      // string -- "gradual-transition-while-investing-in-clean-energy", "public-program-plus-regulated-
-      // private-insurance", "stop-issuing-new-drilling-permits". No web page contains those, so they are
-      // guaranteed "missing" and they manufactured 15 CITATION_FAILS across TN/WA on rows that quote
-      // their source correctly. Real-world hyphenated terms stay: cap-and-trade, market-based, anti-tax
+      // 🔴 DROP SPELLED-OUT COMPASS-CHAIR LABELS. The row author sometimes writes the chair they picked
+      // as one hyphenated string -- "gradual-transition-while-investing-in-clean-energy",
+      // "help-people-who-cant-afford-care-while-keeping-private-insurance-for-everyone-else". No web
+      // page contains those. Real-world hyphenated terms stay: cap-and-trade, market-based, anti-tax
       // and job-killing are all <=3 parts and were load-bearing in Oregon.
+      //
+      // This rule is NARROWER than it was once believed to be, and the belief cost a wrong diagnosis.
+      // It was credited with fixing the TN/WA chair-label failures; it cannot have, because those
+      // terms (single-payer, public-option, flat-tax) are two parts each and pass this test. What
+      // actually produced them is negation, handled in `add` above.
       if (m[0].split('-').length > 3) continue;
-      add(m[0]);
+      add(m[0], m.index);
     }
   }
-  for (const p of POLICY_PHRASES) if (lower.includes(p)) add(p);
+  for (const p of POLICY_PHRASES) {
+    const at = lower.indexOf(p);
+    if (at > -1) add(p, at);
+  }
 
   // Single tokens from the curated policy lexicon only.
   for (const m of text.matchAll(/\b[a-zA-Z][a-zA-Z']{3,}\b/g)) {
     const k = m[0].toLowerCase();
-    if (POLICY_TOKENS.has(k)) add(m[0]);
+    if (POLICY_TOKENS.has(k)) add(m[0], m.index);
   }
 
   // Drop any term wholly contained in a longer kept term ("oregon health" under "Oregon Health Plan",
