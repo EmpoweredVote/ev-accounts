@@ -1,0 +1,437 @@
+#!/usr/bin/env node
+/**
+ * Repair the PRIMARY_SITE_NO_PATH cohort: find the page on the subject's own site that carries the
+ * claim, so the citation points at it instead of at the front door.
+ *
+ * WHY THIS IS A REPAIR AND NOT A RETIREMENT. These 601 rows cite a bare root with no path. The first
+ * write-up called the class "indefensible on their face" and proposed retiring it wholesale. Measured
+ * 2026-07-31, that description fits exactly ONE row: 596 cite the candidate's own campaign site, 5 an
+ * officeholder's own .gov office site, 1 a multi-subject reference root. Six sampled homepages were
+ * fetched and grepped for the exact claim credited to them and 6 of 6 contained it -- these sites put
+ * their issues content on the front page. The citation is imprecise, not absent, and 367 of the rows
+ * are live on candidate cards. Retiring them would have deleted ~596 true, sourced rows.
+ *
+ * 🔴 THIS SCRIPT MAY NEVER SWAP IN A DIFFERENT SOURCE. The site is already right. The only edit it
+ * proposes is a MORE SPECIFIC URL ON THE SAME HOST, and only when the claim verifies there. Anything
+ * else -- claim not found, site unreadable, JS-only shell -- is reported, never guessed at.
+ *
+ * VERDICTS
+ *   DEEP_PAGE         the claim verifies on an interior page; propose that URL          (apply)
+ *   HOMEPAGE_ANCHOR   claim verifies on the homepage inside a section with an id        (apply)
+ *   HOMEPAGE_ONLY     claim verifies, but only on the homepage and with no anchor       (leave; correct as-is)
+ *   NOT_FOUND         site read fine, claim is on none of its pages                     (human read)
+ *   UNREADABLE        non-200, empty, or a JS shell -- NEVER counted as NOT_FOUND       (re-run)
+ *   UNTESTABLE        no quote and no distinctive term survived extraction              (human read)
+ *
+ * 🔴 A THIN BODY IS NOT AN ABSENT CLAIM. A React/Vue campaign site serves an empty shell to a plain
+ * fetch. Scoring that as "claim not on the site" is the same false negative as Ballotpedia's silent
+ * HTTP 202, which already produced one wrong sweep. Under MIN_BODY chars => UNREADABLE, full stop.
+ *
+ * Matchers come from ./lib/claim-match.mjs -- the same calibrated quote/term logic the citation audit
+ * uses, including the chair-label and apostrophe fixes. Do not re-implement them here.
+ *
+ * Usage (from backend/):
+ *   node scripts/repair-primary-site-paths.mjs --limit 20 --out data/stance-retirement/repair-sample.json
+ *   node scripts/repair-primary-site-paths.mjs --out data/stance-retirement/2026-07-31-primary-site-paths.json
+ */
+import 'dotenv/config';
+import { writeFileSync, readFileSync, statSync, mkdirSync } from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { Pool } from 'pg';
+import { parse } from 'node-html-parser';
+import {
+  extractQuotes, quotePresent, looseIncludes, candidateTerms, identityTerms,
+} from './lib/claim-match.mjs';
+
+const argv = process.argv.slice(2);
+const flag = (n, d = null) => { const i = argv.indexOf(n); return i > -1 ? argv[i + 1] : d; };
+const LIMIT = parseInt(flag('--limit', '0'), 10);
+const OUT = flag('--out');
+const HOST_DELAY = parseInt(flag('--host-delay', '900'), 10);   // between requests to ONE host
+const CONCURRENCY = parseInt(flag('--concurrency', '6'), 10);   // distinct hosts in flight
+const MAX_PAGES = parseInt(flag('--max-pages', '8'), 10);       // interior pages per site
+const MIN_BODY = parseInt(flag('--min-body', '600'), 10);
+const NO_CACHE = argv.includes('--no-cache');
+
+const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36';
+const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/** Mirrors check-stance-sources.mjs PRIMARY_SITE_NO_PATH. Keep the two predicates in step. */
+const QUERY = `
+  SELECT pa.politician_id::text AS pid, pa.topic_id::text AS tid, pa.value,
+         pc.reasoning, pc.sources,
+         p.first_name, p.last_name,
+         coalesce(t.short_title, t.title, pa.topic_id::text) AS topic,
+         lower(coalesce(seat.state, seat.representing_state, cand.state, '')) AS st,
+         coalesce(seat.title, '') AS office_title,
+         coalesce(seat.label, '') AS district_label,
+         coalesce(seat.city, '')  AS office_city
+  FROM inform.politician_answers pa
+  JOIN inform.politician_context pc
+    ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id
+  JOIN essentials.politicians p ON p.id = pa.politician_id
+  LEFT JOIN inform.compass_topics t ON t.id = pa.topic_id
+  LEFT JOIN LATERAL (
+    SELECT o.representing_state, o.title, d.state, d.label, d.city
+    FROM essentials.office_current_holder och
+    JOIN essentials.offices o        ON o.id = och.office_id
+    LEFT JOIN essentials.districts d ON d.id = o.district_id
+    WHERE och.politician_id = pa.politician_id ORDER BY o.title LIMIT 1
+  ) seat ON true
+  LEFT JOIN LATERAL (
+    SELECT lower(e.state::text) AS state
+    FROM essentials.race_candidates rc
+    JOIN essentials.races r     ON r.id = rc.race_id
+    JOIN essentials.elections e ON e.id = r.election_id
+    WHERE rc.politician_id = pa.politician_id AND rc.candidate_status = 'active'
+    ORDER BY e.election_date DESC LIMIT 1
+  ) cand ON true
+  WHERE pa.value <> 0
+    AND cardinality(pc.sources) > 0
+    AND NOT EXISTS (
+      SELECT 1 FROM unnest(pc.sources) s WHERE btrim(s, '/') !~* '^https?://(www\\.)?[a-z0-9.-]+$')
+    AND EXISTS (
+      SELECT 1 FROM unnest(pc.sources) s
+       WHERE lower(regexp_replace(btrim(s, '/'), '^https?://(www\\.)?', '')) NOT IN (
+         'ballotpedia.org', 'wikipedia.org', 'en.wikipedia.org', 'vote411.org', 'votesmart.org',
+         'ontheissues.org', 'opensecrets.org', 'followthemoney.org', 'govtrack.us',
+         'legiscan.com', 'congress.gov', 'senate.gov', 'house.gov', 'ourcampaigns.com'))
+  ORDER BY pa.politician_id, pa.topic_id`;
+
+// ---------------------------------------------------------------------------- fetching
+
+const CACHE_DIR = path.join(os.tmpdir(), 'primary-site-cache');
+const CACHE_TTL_MS = parseInt(flag('--cache-ttl-hours', '24'), 10) * 3600 * 1000;
+const cachePath = (u) => path.join(CACHE_DIR, `${Buffer.from(u).toString('base64url').slice(0, 180)}.json`);
+
+function cacheGet(u) {
+  if (NO_CACHE) return null;
+  try {
+    if (Date.now() - statSync(cachePath(u)).mtimeMs > CACHE_TTL_MS) return null;
+    return JSON.parse(readFileSync(cachePath(u), 'utf8'));
+  } catch { return null; }
+}
+function cachePut(u, page) {
+  if (NO_CACHE) return;
+  // Only cache a GOOD read, for the same reason the citation audit does: caching a failure freezes it.
+  try {
+    mkdirSync(CACHE_DIR, { recursive: true });
+    if (page.status === 200 && page.body.length >= MIN_BODY) writeFileSync(cachePath(u), JSON.stringify(page));
+  } catch { /* best effort */ }
+}
+
+/** Strip the furniture, keep the prose. Campaign sites repeat their nav on every page. */
+function pageText(html) {
+  const root = parse(html);
+  root.querySelectorAll('script,style,noscript,svg,nav,header,footer,form').forEach((n) => n.remove());
+  const body = root.querySelector('main') ?? root.querySelector('body') ?? root;
+  return body.textContent.replace(/\s+/g, ' ').trim();
+}
+
+async function fetchPage(url) {
+  const hit = cacheGet(url);
+  if (hit) return { ...hit, cached: true };
+  let res;
+  try {
+    res = await fetch(url, {
+      headers: { 'User-Agent': UA, Accept: 'text/html' },
+      redirect: 'follow', signal: AbortSignal.timeout(30000),
+    });
+  } catch (e) { return { status: 0, error: e.message, body: '', html: '', finalUrl: url }; }
+  if (res.status !== 200) return { status: res.status, body: '', html: '', finalUrl: res.url || url };
+  const ct = res.headers.get('content-type') ?? '';
+  if (!/html/i.test(ct)) return { status: 200, body: '', html: '', finalUrl: res.url || url, notHtml: ct };
+  // 🔴 THE BODY READ THROWS TOO, AND IT IS NOT COVERED BY THE TRY AROUND fetch(). A server that
+  // closes the connection mid-response ("SocketError: other side closed") rejects here, not at
+  // fetch(). Leaving it uncaught killed a 223-site run at site 180 and discarded every result.
+  let html;
+  try { html = await res.text(); }
+  catch (e) { return { status: 0, error: `body read failed: ${e.message}`, body: '', html: '', finalUrl: res.url || url }; }
+  let page;
+  try { page = { status: 200, body: pageText(html), html, finalUrl: res.url || url }; }
+  catch (e) { return { status: 0, error: `parse failed: ${e.message}`, body: '', html: '', finalUrl: res.url || url }; }
+  cachePut(url, page);
+  return page;
+}
+
+const ISSUEISH = /issue|platform|priorit|policy|policies|position|stand|vision|plan|agenda|values|about|meet|why|solution/i;
+const SKIP = /^(mailto:|tel:|javascript:|#)|\.(pdf|jpe?g|png|gif|svg|zip|mp4|docx?)$|\/(donate|contribute|volunteer|shop|store|privacy|terms|login|events?|press|news|media|contact)(\/|$)/i;
+
+/** Same-host interior links that look like they hold positions, best-looking first. */
+function discoverLinks(html, baseUrl) {
+  const root = parse(html);
+  const base = new URL(baseUrl);
+  const scored = new Map();
+  for (const a of root.querySelectorAll('a')) {
+    const href = a.getAttribute('href');
+    if (!href || SKIP.test(href.trim())) continue;
+    let u;
+    try { u = new URL(href, base); } catch { continue; }
+    if (u.hostname.replace(/^www\./, '') !== base.hostname.replace(/^www\./, '')) continue;
+    if (u.protocol !== 'https:' && u.protocol !== 'http:') continue;
+    u.hash = ''; u.search = '';
+    const clean = u.toString().replace(/\/$/, '');
+    if (clean === baseUrl.replace(/\/$/, '')) continue;
+    if (SKIP.test(u.pathname)) continue;
+    if (isHomeAlias(clean, baseUrl)) continue;
+    const text = (a.textContent ?? '').trim().slice(0, 80);
+    const score = (ISSUEISH.test(u.pathname) ? 2 : 0) + (ISSUEISH.test(text) ? 1 : 0);
+    if (score === 0) continue;
+    if (!scored.has(clean) || scored.get(clean).score < score) scored.set(clean, { url: clean, text, score });
+  }
+  return [...scored.values()].sort((a, b) => b.score - a.score).slice(0, MAX_PAGES);
+}
+
+/**
+ * 🔴 A SITE-BUILDER ID IS NOT AN ANCHOR. Wix, Squarespace and Elementor emit generated ids --
+ * #comp-jtv6vr22, #block-41cf7465e2e27be0ae35, #dropdown-41cf...-2 -- that change whenever the owner
+ * edits the page. Citing one produces a URL that silently stops resolving to the quoted passage, which
+ * is WORSE than citing the homepage: a dead anchor reads as a dead citation. Measured on the 12-site
+ * smoke run, 11 of 11 proposed anchors were of this kind. Only human-authored ids qualify.
+ */
+/**
+ * 🔴 ALLOW-LIST THE ANCHOR, DO NOT BLOCK-LIST IT. Two rounds of blocking generated ids just moved the
+ * junk: first #comp-jtv6vr22 and #block-41cf..., then #page and #PAGES_CONTAINER, then #zi245S,
+ * #ui-id-6, #container02, #accordion-1-content-1, #modal-1. Every round the filter got longer and the
+ * next builder invented a new shape -- the same losing pattern as the keyword probe and the template
+ * clusterer, where each refinement reclassifies rows and the residue still is not signal.
+ *
+ * The property that actually matters is not "was this hand-written" but "does the name tell a reader
+ * what it points at". A topical anchor (#issues, #priorities, #platform) survives page edits because
+ * it describes content; a structural one (#container02) is a position and moves. So the id must
+ * CONTAIN a topical word, and anything else falls back to HOMEPAGE_ONLY -- which is a correct,
+ * honest citation, not a failure.
+ */
+const TOPICAL_ID = /issue|priorit|platform|policy|policies|position|promise|about|bio|stand|vision|plan|agenda|value|why|solution|topic|belief|mission/i;
+const MEANINGFUL_ID = /^[a-z][a-z0-9]*(?:[-_][a-z0-9]+){0,3}$/i;
+
+/**
+ * The id of the nearest ancestor section that contains `needle`, so a single-page site can still be
+ * cited precisely. Returns null when nothing matches -- an anchor is a bonus, never a requirement.
+ */
+/**
+ * 🔴 AN ANCHOR THAT WRAPS THE WHOLE PAGE IS NOT AN ANCHOR. After the generated-id filter the next
+ * batch of proposals was #page, #PAGES_CONTAINER, #mid and #content -- ids that pass any
+ * human-readability test and enclose the entire document, so the "deep link" lands exactly where the
+ * bare homepage already landed. An anchor earns its place only by NARROWING: the section it names has
+ * to be a fraction of the page, or there is no anchor worth citing and HOMEPAGE_ONLY is the honest
+ * answer. Single-page campaign sites frequently have none, and that is a fine outcome.
+ */
+const WRAPPER_ID = /^(page|pages?_?container|main|content|wrapper|root|app|body|site|top|mid|middle|inner|outer|container|layout|canvas)$/i;
+const ANCHOR_MAX_SHARE = 0.4;
+
+function anchorFor(html, needle, pageLen) {
+  if (!needle) return null;
+  const root = parse(html);
+  const want = needle.toLowerCase().slice(0, 60);
+  const candidates = root.querySelectorAll('section[id],div[id],article[id],main[id]');
+  let best = null;
+  for (const el of candidates) {
+    const id = el.getAttribute('id');
+    if (!id || !MEANINGFUL_ID.test(id) || id.length > 32) continue;
+    if (WRAPPER_ID.test(id) || !TOPICAL_ID.test(id)) continue;
+    const txt = (el.textContent ?? '').replace(/\s+/g, ' ').toLowerCase();
+    if (!txt.includes(want)) continue;
+    // Prefer the SMALLEST enclosing section -- the outermost wrapper contains the whole page.
+    if (!best || txt.length < best.len) best = { id, len: txt.length };
+  }
+  if (!best) return null;
+  return best.len <= Math.max(400, pageLen * ANCHOR_MAX_SHARE) ? best.id : null;
+}
+
+/**
+ * 🔴 /home IS THE HOMEPAGE. Squarespace and Wix serve the front page at both / and /home, so
+ * proposing site.com/home in place of site.com adds a path and no precision whatsoever -- it looks
+ * like a repair in the tally and is not one.
+ */
+const HOME_ALIAS = /^\/(home|index|main|home-1|homepage)(\.html?|\.php)?$/i;
+function isHomeAlias(url, rootUrl) {
+  try {
+    const u = new URL(url); const r = new URL(rootUrl);
+    if (u.hostname.replace(/^www\./, '') !== r.hostname.replace(/^www\./, '')) return false;
+    return HOME_ALIAS.test(u.pathname.replace(/\/$/, '') || '/') || (u.pathname.replace(/\/$/, '') === '');
+  } catch { return false; }
+}
+
+// ---------------------------------------------------------------------------- per-row judgement
+
+function judgeRow(row, pages) {
+  const ident = identityTerms(row);
+  const quotes = extractQuotes(row.reasoning);
+  const terms = candidateTerms(row.reasoning)
+    .filter((t) => !ident.has(t.toLowerCase()))
+    .filter((t) => ![...ident].some((i) => i.length > 3 && t.toLowerCase().includes(i)));
+
+  const testableQuotes = quotes.filter((q) => pages.some((p) => quotePresent(p.body, q) !== null));
+  if (!testableQuotes.length && !terms.length) {
+    return { verdict: 'UNTESTABLE', quotes: quotes.length, terms: 0 };
+  }
+
+  const scored = pages.map((p) => {
+    const qf = testableQuotes.filter((q) => quotePresent(p.body, q) === true);
+    const tf = terms.filter((t) => looseIncludes(p.body, t));
+    return { page: p, qFound: qf, tFound: tf };
+  });
+
+  // A quote governs whenever the row has one -- it is long, verbatim and unambiguous. Terms only
+  // decide when there is no quote to test, and then a lone term is not enough to move a citation.
+  //
+  // 🔴 ONE VERIFIED QUOTE IS ENOUGH TO LOCATE THE PAGE; DO NOT REQUIRE ALL OF THEM. Requiring every
+  // quote scored Stu Baker's housing row NOT_FOUND when "one new city in each state" was plainly on
+  // the page and only the second quote was missing. A row legitimately draws on more than one page,
+  // and this tool's job is to find WHERE the claim lives, not to adjudicate the whole row -- that is
+  // the citation audit's job. Partial matches are reported, never silently promoted.
+  const useQuotes = testableQuotes.length > 0;
+  const hits = useQuotes
+    ? scored.filter((s) => s.qFound.length > 0)
+    : scored.filter((s) => s.tFound.length >= Math.min(2, terms.length) && s.tFound.length > 0);
+
+  if (!hits.length) {
+    // 🔴 A CLIENT-RENDERED SHELL IS AN UNREAD PAGE, NOT AN ABSENT CLAIM. Wix/Squarespace/React sites
+    // serve a megabyte of HTML that yields a few thousand characters of text to a plain fetch --
+    // richardsonforcongress.net is 1,027k of HTML and 7k of text, 0.7%. The body clears MIN_BODY, so
+    // the thin-body guard never fires, and the row lands in NOT_FOUND looking exactly like evidence.
+    // Same false negative as the silent HTTP 202 that produced one wrong sweep already. A positive
+    // find on such a page is still a find; only the NEGATIVE is downgraded to unknown.
+    const shell = pages.every((p) => p.html.length > 150_000 && p.body.length / p.html.length < 0.03);
+    return {
+      verdict: shell ? 'UNREADABLE' : 'NOT_FOUND',
+      why: shell ? 'client-rendered shell: text is <3% of html on every page read' : undefined,
+      quotes: testableQuotes.length, terms: terms.length,
+    };
+  }
+
+  // Prefer an interior page over the front door; among interior pages prefer the strongest evidence.
+  hits.sort((a, b) => (a.page.isHome - b.page.isHome)
+    || (b.qFound.length - a.qFound.length)
+    || (b.tFound.length - a.tFound.length)
+    || a.page.url.length - b.page.url.length);
+  const win = hits[0];
+  const evidence = useQuotes ? win.qFound[0] : win.tFound[0];
+
+  if (!win.page.isHome) {
+    // A single matched term with no quote is thin evidence for moving a citation. It is usually right
+    // -- the page is on the host we already cite -- but it is not verification, so it is held out of
+    // the auto-apply set and reported separately rather than quietly counted as a repair.
+    const weak = !useQuotes && win.tFound.length < 2;
+    return {
+      verdict: weak ? 'DEEP_PAGE_WEAK' : 'DEEP_PAGE', url: win.page.url, evidence,
+      quotes: testableQuotes.length, terms: terms.length,
+      matched_quotes: win.qFound.length, matched_terms: win.tFound.length,
+      partial: useQuotes && win.qFound.length < testableQuotes.length,
+    };
+  }
+  const anchor = anchorFor(win.page.html, evidence, win.page.body.length);
+  return {
+    verdict: anchor ? 'HOMEPAGE_ANCHOR' : 'HOMEPAGE_ONLY',
+    url: anchor ? `${win.page.url}#${anchor}` : win.page.url, evidence,
+    quotes: testableQuotes.length, terms: terms.length,
+    matched_quotes: win.qFound.length, matched_terms: win.tFound.length,
+    partial: useQuotes && win.qFound.length < testableQuotes.length,
+  };
+}
+
+// ---------------------------------------------------------------------------- run
+
+async function crawlSite(rootUrl) {
+  const home = await fetchPage(rootUrl);
+  if (home.status !== 200 || home.body.length < MIN_BODY) {
+    // A 404/410 on the root, or a hostname that no longer resolves, is a DEAD SITE -- a different
+    // problem from a page we merely failed to read, and the only one of the two a human can act on.
+    const dead = home.status === 404 || home.status === 410
+      || (home.status === 0 && /ENOTFOUND|EAI_AGAIN|ERR_NAME|certificate|ECONNREFUSED/i.test(home.error ?? ''));
+    return {
+      ok: false,
+      dead,
+      reason: home.status !== 200 ? `status ${home.status}${home.error ? ` (${home.error})` : ''}` : `thin body ${home.body.length}c`,
+      pages: [],
+    };
+  }
+  const pages = [{ url: home.finalUrl.replace(/\/$/, ''), body: home.body, html: home.html, isHome: 1 }];
+  for (const link of discoverLinks(home.html, home.finalUrl)) {
+    if (!home.cached) await sleep(HOST_DELAY);
+    const p = await fetchPage(link.url);
+    if (p.status === 200 && p.body.length >= MIN_BODY) {
+      pages.push({ url: link.url, body: p.body, html: p.html, isHome: 0 });
+    }
+  }
+  return { ok: true, pages };
+}
+
+/** Run `worker` over `items` with at most `n` in flight. */
+async function pooled(items, n, worker) {
+  const out = new Array(items.length);
+  let next = 0;
+  await Promise.all(Array.from({ length: Math.min(n, items.length) }, async () => {
+    while (next < items.length) {
+      const i = next++;
+      out[i] = await worker(items[i], i);
+    }
+  }));
+  return out;
+}
+
+(async () => {
+  if (!process.env.DATABASE_URL) { console.error('DATABASE_URL not set'); process.exit(2); }
+  const { rows } = await pool.query(QUERY);
+  await pool.end();
+
+  // One site per politician: their bare root is the same across all their rows.
+  const sites = new Map();
+  for (const r of rows) {
+    const root = r.sources.find((s) => /^https?:\/\//i.test(s.trim()))?.trim().replace(/\/$/, '');
+    if (!root) continue;
+    if (!sites.has(root)) sites.set(root, []);
+    sites.get(root).push(r);
+  }
+  let list = [...sites.entries()];
+  if (LIMIT) list = list.slice(0, LIMIT);
+  console.log(`${rows.length} rows across ${sites.size} sites; crawling ${list.length} (concurrency ${CONCURRENCY})`);
+
+  let done = 0;
+  const results = [];
+  await pooled(list, CONCURRENCY, async ([root, siteRows]) => {
+    // 🔴 ONE BAD SITE MUST NOT COST THE OTHER 222. Whatever a stranger's web server does -- half-closed
+    // socket, malformed markup, redirect loop -- it is a fact about that site, recorded against that
+    // site, and never a reason to lose the whole crawl.
+    let site;
+    try { site = await crawlSite(root); }
+    catch (e) { site = { ok: false, dead: false, reason: `crawl threw: ${e.message}`, pages: [] }; }
+    for (const r of siteRows) {
+      const base = {
+        pid: r.pid, tid: r.tid, name: `${r.first_name} ${r.last_name}`, st: r.st, topic: r.topic,
+        value: r.value, cited: root, pages_read: site.pages.length, reasoning: r.reasoning,
+      };
+      results.push(site.ok
+        ? { ...base, ...judgeRow(r, site.pages) }
+        : { ...base, verdict: site.dead ? 'DEAD_SITE' : 'UNREADABLE', why: site.reason });
+    }
+    done += 1;
+    if (done % 20 === 0) console.log(`  ${done}/${list.length} sites`);
+  });
+
+  const tally = {};
+  for (const r of results) tally[r.verdict] = (tally[r.verdict] ?? 0) + 1;
+  console.log('\nverdicts');
+  for (const [k, v] of Object.entries(tally).sort((a, b) => b[1] - a[1])) {
+    console.log(`  ${k.padEnd(18)} ${String(v).padStart(4)}`);
+  }
+  const applyable = results.filter((r) => r.verdict === 'DEEP_PAGE' || r.verdict === 'HOMEPAGE_ANCHOR');
+  console.log(`\napplyable (a more specific URL on the SAME host, claim verified there): ${applyable.length}`);
+  console.log('HOMEPAGE_ONLY rows are already correct -- the claim is on the front page and there is no anchor.');
+  console.log('NOT_FOUND / UNTESTABLE need a human read. UNREADABLE needs a re-run, never a retirement.');
+
+  if (OUT) {
+    writeFileSync(OUT, `${JSON.stringify({
+      _comment: 'PRIMARY_SITE_NO_PATH repair proposal. Only DEEP_PAGE and HOMEPAGE_ANCHOR are applyable, '
+        + 'and each proposes a MORE SPECIFIC URL ON THE SAME HOST where the claim was verified present. '
+        + 'This tool never swaps in a different source and never retires a row. UNREADABLE is a fetch '
+        + 'failure or a JS-only shell, NOT evidence the claim is absent.',
+      generated: { rows: results.length, sites: list.length, tally },
+      rows: results,
+    }, null, 2)}\n`);
+    console.log(`\nwritten to ${OUT}`);
+  }
+})().catch(async (e) => { console.error('FAIL:', e); try { await pool.end(); } catch {} process.exit(2); });

@@ -1,0 +1,552 @@
+{
+  "_comment": "Rollback record for migration 1512. `before` is the exact sources array as it stood in prod immediately before the migration was generated; restoring it undoes the re-pointing.",
+  "generated_from": "data/stance-retirement/2026-07-31-primary-site-paths.json",
+  "held_host_change": [
+    {
+      "pid": "a0dfdf20-b736-4a1c-84c1-194a6625358e",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Jessica L. Anderson",
+      "topic": "School Vouchers",
+      "cited": "https://jessicaandersonforva.com",
+      "proposed": "https://jess4va.com/issues",
+      "note": "cited host redirects to proposed host; needs a human to confirm they are the same campaign"
+    },
+    {
+      "pid": "a0dfdf20-b736-4a1c-84c1-194a6625358e",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Jessica L. Anderson",
+      "topic": "Abortion",
+      "cited": "https://jessicaandersonforva.com",
+      "proposed": "https://jess4va.com/issues",
+      "note": "cited host redirects to proposed host; needs a human to confirm they are the same campaign"
+    },
+    {
+      "pid": "a0dfdf20-b736-4a1c-84c1-194a6625358e",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Jessica L. Anderson",
+      "topic": "Healthcare",
+      "cited": "https://jessicaandersonforva.com",
+      "proposed": "https://jess4va.com/issues",
+      "note": "cited host redirects to proposed host; needs a human to confirm they are the same campaign"
+    }
+  ],
+  "rows": [
+    {
+      "pid": "04ff9d00-cf63-4d3b-875a-48c027a46a37",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "John Braun",
+      "topic": "Taxes",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.votebraun.com/"
+      ],
+      "after": "https://www.votebraun.com/about",
+      "evidence": "you don't waste a dollar"
+    },
+    {
+      "pid": "00425ef8-553e-4b65-8aef-17390bcde3d1",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Justin Murphy",
+      "topic": "Immigration",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://jerseyjustin4senate.org"
+      ],
+      "after": "https://jerseyjustin4senate.org/issue-immigration",
+      "evidence": "immigration"
+    },
+    {
+      "pid": "0b5c3611-d1f3-4f23-b8c8-3ac33e299cd4",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Brandon Wilkinson",
+      "topic": "Taxes",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://www.brandon4missouri.com/"
+      ],
+      "after": "https://www.brandon4missouri.com#PROMISES",
+      "evidence": "never vote to raise taxes"
+    },
+    {
+      "pid": "169596c9-1ece-4a8a-b601-ce87af369a33",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Brian Knudsen",
+      "topic": "Housing",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://www.electbrianknudsen.com/"
+      ],
+      "after": "https://www.electbrianknudsen.com#brians-priorities",
+      "evidence": "promoting neighborhood density and affordable housing solutions that will allow all residents to afford a place to live."
+    },
+    {
+      "pid": "172350d1-31b0-4253-a692-1c15e8db13e5",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Clayton Harbison",
+      "topic": "Campaign Finance",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://www.cch8th.com"
+      ],
+      "after": "https://www.cch8th.com#priorities",
+      "evidence": "getting big money out of politics"
+    },
+    {
+      "pid": "26fd4e32-1fea-4c04-9607-0e33255f133c",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Dave Dawson",
+      "topic": "Campaign Finance",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://davedawsonforiowa.com/"
+      ],
+      "after": "https://davedawsonforiowa.com#bio",
+      "evidence": "Citizens United"
+    },
+    {
+      "pid": "3137fb1b-21bd-4711-88ce-f84401608b03",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Nila Devanath",
+      "topic": "Abortion",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.niladevanath.com/"
+      ],
+      "after": "https://niladevanath.com/issues.html",
+      "evidence": "My body. My choice. Protect and expand reproductive rights and access to abortion care."
+    },
+    {
+      "pid": "3137fb1b-21bd-4711-88ce-f84401608b03",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "Nila Devanath",
+      "topic": "Childcare",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.niladevanath.com/"
+      ],
+      "after": "https://niladevanath.com/issues.html",
+      "evidence": "high-quality childcare affordable and accessible for every family."
+    },
+    {
+      "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Ericka Kopp",
+      "topic": "Fossil Fuels",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://www.erickakopp.com"
+      ],
+      "after": "https://erickakopp.com#priorities-section",
+      "evidence": "Green New Deal"
+    },
+    {
+      "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Ericka Kopp",
+      "topic": "Healthcare",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://www.erickakopp.com"
+      ],
+      "after": "https://erickakopp.com#about-section",
+      "evidence": "universal healthcare"
+    },
+    {
+      "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Ericka Kopp",
+      "topic": "Climate Change",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://www.erickakopp.com"
+      ],
+      "after": "https://erickakopp.com#priorities-section",
+      "evidence": "Green New Deal"
+    },
+    {
+      "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Ericka Kopp",
+      "topic": "Taxes",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://www.erickakopp.com"
+      ],
+      "after": "https://erickakopp.com#about-section",
+      "evidence": "universal healthcare"
+    },
+    {
+      "pid": "4051eba2-cbdc-4764-9089-76fcd20a2083",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Macy Jones",
+      "topic": "Immigration",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.macyjonesforcongress.com/"
+      ],
+      "after": "https://www.macyjonesforcongress.com/platform",
+      "evidence": "Abolish ICE"
+    },
+    {
+      "pid": "4051eba2-cbdc-4764-9089-76fcd20a2083",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Macy Jones",
+      "topic": "Healthcare",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.macyjonesforcongress.com/"
+      ],
+      "after": "https://www.macyjonesforcongress.com/platform",
+      "evidence": "Universal health care."
+    },
+    {
+      "pid": "44d86767-7041-4ce9-9d03-ce23dd663c95",
+      "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "name": "Tom Craddick",
+      "topic": "Same-Sex Marriage",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://www.tomcraddick.com"
+      ],
+      "after": "https://tomcraddick.com#about",
+      "evidence": "faith, family, freedom"
+    },
+    {
+      "pid": "46a247f2-fa5c-49fc-8fa5-af215e728672",
+      "tid": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "name": "James Becerra",
+      "topic": "Growth and Development Pace",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.jamesbecerra.com/"
+      ],
+      "after": "https://www.jamesbecerra.com/about",
+      "evidence": "growth that strengthens neighborhoods instead of erasing them"
+    },
+    {
+      "pid": "4f896b69-d922-4838-b54d-51a00a452e08",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Stephanie Pitcher",
+      "topic": "Immigration",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.electstephanie.com/"
+      ],
+      "after": "https://www.electstephanie.com/priorities",
+      "evidence": "keeping families together, ensuring due process, focusing on public safety rather than federal immigration enforcement, and opposing an ICE detention facility in Utah."
+    },
+    {
+      "pid": "580f3720-7990-4a2b-a417-78d90012db93",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Jamie Joyce",
+      "topic": "AI Oversight",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://jamiejoyce.com",
+        "https://themadact.com"
+      ],
+      "after": "https://www.jamiejoyce.com/about-jamie",
+      "evidence": "immediate red-line regulations,"
+    },
+    {
+      "pid": "786ac925-59d3-40e3-a9ce-b63a54f4caf4",
+      "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "name": "Marc LaHood",
+      "topic": "Same-Sex Marriage",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://marclahood.com"
+      ],
+      "after": "https://marclahood.com#ABOUT",
+      "evidence": "San Antonio"
+    },
+    {
+      "pid": "80e30a8b-f5a7-47c9-a044-454e1416f290",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Deva Simmons",
+      "topic": "School Vouchers",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.devasimmons.com"
+      ],
+      "after": "https://www.devasimmons.com/en/issues",
+      "evidence": "Protecting public schools from defunding"
+    },
+    {
+      "pid": "80e30a8b-f5a7-47c9-a044-454e1416f290",
+      "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "name": "Deva Simmons",
+      "topic": "Redistricting",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.devasimmons.com"
+      ],
+      "after": "https://www.devasimmons.com/en/issues",
+      "evidence": "Fighting against gerrymandering"
+    },
+    {
+      "pid": "96eff205-63aa-4999-890c-c83bcad391dd",
+      "tid": "24e9212c-b011-422a-865c-093e35050901",
+      "name": "Adonis Hooslyn",
+      "topic": "Ukraine Support",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://hooslynforhouse.com"
+      ],
+      "after": "https://hooslynforhouse.com#policies",
+      "evidence": "end use of taxpayer funds for foreign wars"
+    },
+    {
+      "pid": "96eff205-63aa-4999-890c-c83bcad391dd",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Adonis Hooslyn",
+      "topic": "AI Oversight",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://hooslynforhouse.com"
+      ],
+      "after": "https://hooslynforhouse.com#policies",
+      "evidence": "protect and create jobs while regulating AI development"
+    },
+    {
+      "pid": "96eff205-63aa-4999-890c-c83bcad391dd",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Adonis Hooslyn",
+      "topic": "Housing",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://hooslynforhouse.com"
+      ],
+      "after": "https://hooslynforhouse.com#policies",
+      "evidence": "lower the costs of housing, groceries, and utilities"
+    },
+    {
+      "pid": "9a171371-be83-456e-acd5-ece936ee84ae",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Brooks Benson",
+      "topic": "School Vouchers",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://brooksbenson4utah.com/"
+      ],
+      "after": "https://brooksbenson4utah.com#issues",
+      "evidence": "parental rights, school choice, and education that serves families"
+    },
+    {
+      "pid": "9a171371-be83-456e-acd5-ece936ee84ae",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Brooks Benson",
+      "topic": "Fossil Fuels",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://brooksbenson4utah.com/"
+      ],
+      "after": "https://brooksbenson4utah.com#issues",
+      "evidence": "lower energy costs through Utah's natural resources and innovation"
+    },
+    {
+      "pid": "9c0e81fa-4b5c-4365-b0cd-892bdaff10a6",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Eric Jenkins",
+      "topic": "Fossil Fuels",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://ericjenkinsforkansas.com"
+      ],
+      "after": "https://ericjenkinsforkansas.com#page-issues",
+      "evidence": "American energy independence"
+    },
+    {
+      "pid": "ab51e336-3cde-4b76-b096-c14879af8426",
+      "tid": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "name": "Morgan Schmidt",
+      "topic": "Homelessness Response",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.morganlovesoregon.com/"
+      ],
+      "after": "https://www.morganlovesoregon.com/priorities-issues",
+      "evidence": "data-driven"
+    },
+    {
+      "pid": "bb0cad08-e4da-4e44-b624-b7470dbb591e",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Cedric White",
+      "topic": "Housing",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://whiteforlancasterca.net/"
+      ],
+      "after": "https://whiteforlancasterca.net#platform",
+      "evidence": "working-class"
+    },
+    {
+      "pid": "c85b90a2-e81b-41a8-a74a-90d03018a443",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "JJ Singh",
+      "topic": "Abortion",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://jjsingh.com"
+      ],
+      "after": "https://www.jjsingh.com/about",
+      "evidence": "fight to protect access to reproductive freedom so that [his daughters] don't grow up with less rights than their mother"
+    },
+    {
+      "pid": "c85b90a2-e81b-41a8-a74a-90d03018a443",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "JJ Singh",
+      "topic": "Childcare",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://jjsingh.com"
+      ],
+      "after": "https://www.jjsingh.com/about",
+      "evidence": "fight to make childcare more affordable"
+    },
+    {
+      "pid": "cc812498-af24-4ec2-8028-4e245d088fd8",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "John Duresky",
+      "topic": "Healthcare",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://johnduresky4congress.com/"
+      ],
+      "after": "https://www.johnduresky4congress.com/issues",
+      "evidence": "Healthcare Access"
+    },
+    {
+      "pid": "d6cb7df2-1297-4c4e-8a9d-ac97f13fe32f",
+      "tid": "24e9212c-b011-422a-865c-093e35050901",
+      "name": "Kshama Sawant",
+      "topic": "Ukraine Support",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.kshamasawant.org/"
+      ],
+      "after": "https://www.kshamasawant.org/why-im-running",
+      "evidence": "bloody inter-imperialist proxy war in Ukraine,"
+    },
+    {
+      "pid": "d6cb7df2-1297-4c4e-8a9d-ac97f13fe32f",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Kshama Sawant",
+      "topic": "Housing",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.kshamasawant.org/"
+      ],
+      "after": "https://www.kshamasawant.org/why-im-running",
+      "evidence": "NATIONAL RENT CONTROL"
+    },
+    {
+      "pid": "d6cb7df2-1297-4c4e-8a9d-ac97f13fe32f",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Kshama Sawant",
+      "topic": "Taxes",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.kshamasawant.org/"
+      ],
+      "after": "https://www.kshamasawant.org/why-im-running",
+      "evidence": "TAX THE RICH"
+    },
+    {
+      "pid": "df2b0dba-63d7-4f18-b713-7cc0594ec61d",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Janie Lopez",
+      "topic": "Healthcare",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://janielopez.com"
+      ],
+      "after": "https://www.janielopez.com/issues",
+      "evidence": "expand access to healthcare, lower premiums, provide raises for healthcare providers, and cap prescription drug costs for those in need."
+    },
+    {
+      "pid": "e3f5ae9f-a5e7-4eb1-bd6a-3c55b7ae8782",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Brad Smith",
+      "topic": "Climate Change",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.bradsmithforcongress.com"
+      ],
+      "after": "https://www.bradsmithforcongress.com/priorities-and-positions",
+      "evidence": "clean energy"
+    },
+    {
+      "pid": "b266c38d-9763-48d4-bcba-7b44adf79ab9",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Andy Hopper",
+      "topic": "Taxes",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://hopper4texas.com/"
+      ],
+      "after": "https://hopper4texas.com/platform",
+      "evidence": "income tax"
+    },
+    {
+      "pid": "e752a957-c776-4942-9aae-63ebf23174ac",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Scott Schwab",
+      "topic": "Immigration",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://www.scottschwab.com"
+      ],
+      "after": "https://scottschwab.com#priorities",
+      "evidence": "immigration"
+    },
+    {
+      "pid": "e752a957-c776-4942-9aae-63ebf23174ac",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Scott Schwab",
+      "topic": "Housing",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://www.scottschwab.com"
+      ],
+      "after": "https://scottschwab.com/schwab-outlines-vision-for-better-affordable-living-by-decreasing-property-taxes",
+      "evidence": "Better Affordable Living"
+    },
+    {
+      "pid": "fc23f648-2ec4-4c6c-a9f5-0722b809e6b1",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Fred Allen",
+      "topic": "Taxes",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://allenforutahcounty.com"
+      ],
+      "after": "https://allenforutahcounty.com#whyus",
+      "evidence": "focus tax policies on outcomes support affordability by maintaining tax rates that don't over-burden families"
+    },
+    {
+      "pid": "fee24b69-dd56-4b07-a890-a08e898dc031",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Aaron Wiley",
+      "topic": "Healthcare",
+      "verdict": "HOMEPAGE_ANCHOR",
+      "before": [
+        "https://wileyfor21.com/"
+      ],
+      "after": "https://wileyfor21.com#priorities",
+      "evidence": "Healthcare shouldn't depend on your ZIP code"
+    },
+    {
+      "pid": "b8856cc7-d711-436d-96b3-f0cbd352350a",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Atoosa R. Reaser",
+      "topic": "Civil Rights",
+      "verdict": "DEEP_PAGE",
+      "before": [
+        "https://atoosareaser.com"
+      ],
+      "after": "https://atoosareaser.com/bio",
+      "evidence": "decided to run for the House of Delegates to make sure every Virginian has the same freedom and opportunity"
+    }
+  ]
+}

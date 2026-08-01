@@ -101,7 +101,45 @@ true, sourced rows — the failure this doc already warns about under "deleting 
 sourced work".
 
 **Remedy is to add the path, never to swap the source and never to retire.** Now gated separately as
-`PRIMARY_SITE_NO_PATH` (601, baselined) vs `BARE_AGGREGATOR_DOMAIN` (1).
+`PRIMARY_SITE_NO_PATH` vs `BARE_AGGREGATOR_DOMAIN` (1).
+
+### ✅ Repair pass applied — migration 1512, 601 → 558
+
+`node scripts/repair-primary-site-paths.mjs` crawled all 223 sites and re-tested every row's quote
+page by page. **Only 43 rows had a better page to point at.** That is the headline: this class is
+mostly not repairable, because it is mostly *not broken*.
+
+| verdict | rows | what it means |
+|---|---|---|
+| `HOMEPAGE_ONLY` | **265** | claim IS on the homepage, site has nothing more specific. **Already as precise as the source permits** — not debt |
+| `NOT_FOUND` | 130 | verbatim quote not on the site as fetched — **human read, never a retirement** |
+| `UNREADABLE` | 112 | client-rendered shell (1,027k html → 7k text). An unread page is not an absent claim |
+| `DEEP_PAGE` | 23 | ✅ applied — `/issues`, `/platform`, `/priorities` |
+| `HOMEPAGE_ANCHOR` | 20 | ✅ applied — single-page site, topical section id |
+| `UNTESTABLE` | 23 | no quote and no distinctive term survived extraction |
+| `DEAD_SITE` | 16 | campaign site 404s. **Wayback is the likely remedy, not deletion** |
+| `DEEP_PAGE_WEAK` | 9 | one term, no quote. Probably right; not the bar for a prod write |
+| held | 3 | `jessicaandersonforva.com` 301s to `jess4va.com` — a **host change needs a human**, not a script |
+
+Rollback: `data/stance-retirement/2026-07-31-primary-site-paths-rollback.json` carries the exact prior
+`sources` array for all 43. Dry-run via `node scripts/dry-run-migration.mjs <file>` — that script
+cannot commit, and its failure path is verified, so the "dry-run before applying" habit is mechanical
+now instead of remembered.
+
+🔴 **`NOT_FOUND` IS NOT A RETIREMENT LIST — hand-checked, it is at least two different things.**
+Rendered with Playwright: voteforpedrori.com says *"Dissolve AIPAC. No Foreign-Interest Lobby Money …
+I will not take money from AIPAC"* while the row quotes *"No AIPAC Money. No Foreign-Interest Lobby
+Money"* — substance plainly present, wording compressed, **fix the quote and keep the row**. But
+shannontaylorva.com contains no occurrence of *tariff* at all across 4 pages read. Same verdict,
+opposite remedy.
+
+🔴 **THREE ROUNDS OF BLOCK-LISTING ANCHOR IDS FAILED BEFORE ALLOW-LISTING WORKED.** `#comp-jtv6vr22`
+→ blocked; then `#page`/`#PAGES_CONTAINER` → blocked; then `#zi245S`, `#ui-id-6`, `#container02`,
+`#accordion-1-content-1`. Every round the filter grew and the next site builder invented a new shape —
+the same losing pattern as the keyword probe and the template clusterer. The property that matters is
+not "was this hand-written" but **"does the name say what it points at"**, so the id must now contain
+a topical word and enclose <40% of the page. Anything else falls back to `HOMEPAGE_ONLY`, which is a
+correct citation rather than a failure.
 
 🔴 **A PREDICATE READS THE SHAPE OF A VALUE, NEVER WHAT THE VALUE IS.** `BARE_DOMAIN_ONLY` was a true
 statement about 602 rows and a false description of 601 of them, because it never asked *whose* domain
