@@ -1,4 +1,47 @@
-# Stance re-sourcing backlog — opened 2026-07-30, current as of 2026-07-31 (end of day)
+# Stance re-sourcing backlog — opened 2026-07-30, current as of 2026-08-01
+
+## 🟢 STATE AS OF 2026-08-01 — READ THIS FIRST, THE SECTIONS BELOW IT ARE OLDER
+
+Gate: `npm run check:stance-sources --prefix backend` — **green**, 662 rows recorded as backlog.
+
+| check | rows | what it means |
+|---|---|---|
+| `PRIMARY_SITE_NO_PATH` | 557 | **mostly NOT defects.** 275 verified: the claim is on the candidate's own homepage and the site has nothing more specific to link |
+| `BALLOTPEDIA_ONLY` | 104 | the residue after deep-linking; 21 of them sit outside the survey section and may be re-pointable off-site |
+| `BARE_AGGREGATOR_DOMAIN` | 1 | the one genuinely indefensible citation |
+| ~~`PROXY_URL_AS_SOURCE`~~ | **0** | class eliminated by 1515 |
+
+Applied this pass: **1512** 43 path repairs · **1513** Anderson host change · **1514** 443 Candidate
+Connection deep-links · **1515** 55 proxy unwraps · **1516** 4 reasoning corrections · **1517** 5
+retirements. All dry-run via `scripts/dry-run-migration.mjs` (which cannot commit) with rollback
+records in `data/stance-retirement/`.
+
+### Next actions, in order
+
+1. **114 `NOT_FOUND`** (`data/stance-retirement/2026-08-01-primary-site-paths.json`) — sampled at 15
+   rows: **~two-thirds are inexact quotes over substance that IS on the page.** Bulk editorial work on
+   voter-facing text. **NOT a retirement queue.**
+2. **104 `BALLOTPEDIA_ONLY`**, starting with the 21 `ELSEWHERE_ON_PAGE` rows in
+   `2026-07-31-cc-deeplinks.json` — the only ones with a plausible off-site primary.
+3. Small + bounded: Keohokalole's HB489 sponsorship (unverified, row untouched); the 16 invisible
+   DEAD_SITE rows; align `audit-stance-citations.mjs`'s cohort query with the gate split (it currently
+   audits 3 rows belonging to other buckets).
+4. **Oregon OLIS replacement wave** — built and verified, still held. Its stated reason ("422 published
+   unsourced rows sit on candidate cards") has largely expired. **Needs an explicit decision.**
+5. Workstream B re-research (969 rows, 877 Utah) — coverage, not correctness.
+
+### 🔴 The two rules that outrank everything else in this document
+
+**1. THE DETECTORS ARE A READING QUEUE, NEVER A DELETE LIST.** Findings have shrunk on *every* occasion
+the detector or the reviewer was corrected: TX 32→11→3→0, TN/WA 18→8→5, tail 22→19→**0 plain
+retirements**, NOT_FOUND 193→130→114, and my own hand-review 17→9. Across all of it the tooling has
+**never once** been right that a row should be deleted. Everything retired so far went for a reason a
+human read and confirmed.
+
+**2. CLASSIFY EVERY NON-200 BEFORE READING IT AS EVIDENCE.** `403` = bot block (news sites, Ballotpedia
+— renders fine in a browser). `202/429/503` = throttled, unknown, re-check. `404`/`0` = actually gone.
+This trap has been hit **three separate times** here, most expensively when 214 HTTP-202s nearly
+recorded 168 correctly-sourced rows as unsupported. (end of day)
 
 ## ⚠️ READ THIS FIRST — the ranking below is superseded
 
