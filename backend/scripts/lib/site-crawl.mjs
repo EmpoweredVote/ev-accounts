@@ -38,7 +38,7 @@ const DEFAULTS = {
  * i.e. silently back to the bug the field was added to fix, for a full cache TTL. A stale cache that
  * looks like a successful read is the same failure mode as the HTTP 202 with an empty body.
  */
-const CACHE_VERSION = 3;
+const CACHE_VERSION = 4;
 const CACHE_DIR = path.join(os.tmpdir(), `primary-site-cache-v${CACHE_VERSION}`);
 const cachePath = (u) => path.join(CACHE_DIR, `${Buffer.from(u).toString('base64url').slice(0, 180)}.json`);
 
@@ -58,11 +58,27 @@ function cachePut(u, page, o) {
   } catch { /* best effort */ }
 }
 
-/** Strip the furniture, keep the prose. Campaign sites repeat their nav on every page. */
+/**
+ * Strip the furniture, keep the prose. Campaign sites repeat their nav on every page.
+ *
+ * 🔴 DO NOT SCOPE TO <main>. It was an optimisation to cut nav noise, and the nav/header/footer strip
+ * above already does that job -- but scoping THREW AWAY EVERY SECTION A SITE BUILDER PUT OUTSIDE
+ * <main>, which on Webflow/Wix single-page campaign sites is routinely the entire issues section.
+ *
+ * Measured on the Wayback capture of neighbors4faye.com 2026-08-01: 2,667 chars kept out of 4,797.
+ * The 2,667 was a biography and a donate box; the discarded 2,130 was "important Issues" —
+ * homelessness, Public Safety, housing, infrastructure — including the exact string one of her rows
+ * quotes, "Treatment First, Housing Second." Four rows were about to be retired as unsourced on the
+ * strength of that omission, and the archive proved them right all along.
+ *
+ * Same root cause as the campaign-finance disclaimer being invisible (see chromeText). An extractor
+ * that silently keeps 55% of a page and reports nothing is the most dangerous shape of bug in this
+ * whole workstream: the loss looks exactly like an absent claim.
+ */
 function pageText(html) {
   const root = parse(html);
   root.querySelectorAll('script,style,noscript,svg,nav,header,footer,form').forEach((n) => n.remove());
-  const body = root.querySelector('main') ?? root.querySelector('body') ?? root;
+  const body = root.querySelector('body') ?? root;
   return body.textContent.replace(/\s+/g, ' ').trim();
 }
 
@@ -81,23 +97,15 @@ function pageText(html) {
  * this evidence has to ask for it and say so in its output.
  */
 /**
- * 🔴 IT IS NOT ENOUGH TO COLLECT <footer>/<nav>/<header> -- MOST OF WHAT pageText DROPS IS DROPPED BY
- * SCOPING, NOT BY THE SELECTOR. `pageText` returns `main`'s text when a <main> exists, so EVERYTHING
- * outside <main> disappears whether or not it is in a semantic element. Sawant's disclaimer is a plain
- * <p> in a GenerateBlocks <div> after </main>: the first version of this function selected
- * footer,nav,header, found nothing, and reported the quote absent a second time -- the fix reproducing
- * the bug it was written to fix. Chrome is therefore defined as the COMPLEMENT of what pageText keeps.
+ * 🔴 THIS MUST STAY THE EXACT COMPLEMENT OF pageText, OR IT DOUBLE-COUNTS. An earlier version removed
+ * <main> and returned the rest, which was right only while pageText scoped TO <main>. Now that
+ * pageText keeps the whole body minus nav/header/footer/form, those four ARE the complement -- and the
+ * old form would have returned most of the body a second time, so the proposer would have found body
+ * text and labelled it "[footer/nav]". Whenever pageText's selector changes, change this with it.
  */
 function chromeText(html) {
   const root = parse(html);
   root.querySelectorAll('script,style,noscript,svg').forEach((n) => n.remove());
-  const main = root.querySelector('main');
-  if (main) {
-    main.remove();                       // what is left is exactly what pageText scoped away
-    const body = root.querySelector('body') ?? root;
-    return body.textContent.replace(/\s+/g, ' ').trim();
-  }
-  // No <main>: pageText kept the whole body minus these, so these ARE the complement.
   return root.querySelectorAll('nav,header,footer,form')
     .map((n) => n.textContent).join(' ').replace(/\s+/g, ' ').trim();
 }

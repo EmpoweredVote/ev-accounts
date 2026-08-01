@@ -1,0 +1,57 @@
+{
+  "_comment": "Rollback for migration 1519. The prior sources array cited https://www.neighbors4faye.com/, a domain that is now PARKED (http:// redirects to a ww19.* parking host; one fetch returned a software-download page). 1519 re-points to a Wayback capture where all four claims were verified present. Nothing was retired.",
+  "generated": "2026-08-01",
+  "politician": "Faye Johnson (Mayor Pro Tem, Hawthorne CA)",
+  "archive_url": "https://web.archive.org/web/20260520011443/https://www.neighbors4faye.com/",
+  "archive_capture": "2026-05-20",
+  "rows": [
+    {
+      "pid": "e44eb637-79e2-43a2-a867-5d3a06bca338",
+      "tid": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic": "Growth and Development Pace",
+      "before_sources": [
+        "https://www.neighbors4faye.com/"
+      ],
+      "after_sources": [
+        "https://web.archive.org/web/20260520011443/https://www.neighbors4faye.com/"
+      ],
+      "reasoning": "Johnson argues Hawthorne must upgrade and modernize roads, utilities, and public spaces to keep pace with and accommodate a growing city, a pro-growth, infrastructure-forward stance."
+    },
+    {
+      "pid": "e44eb637-79e2-43a2-a867-5d3a06bca338",
+      "tid": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "topic": "Homelessness Response",
+      "before_sources": [
+        "https://www.neighbors4faye.com/"
+      ],
+      "after_sources": [
+        "https://web.archive.org/web/20260520011443/https://www.neighbors4faye.com/"
+      ],
+      "reasoning": "Johnson's homelessness approach is \"Treatment First, Housing Second,\" prioritizing compassionate medical care before stable housing — a treatment-led variant that differs from a pure Housing First model."
+    },
+    {
+      "pid": "e44eb637-79e2-43a2-a867-5d3a06bca338",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Housing",
+      "before_sources": [
+        "https://www.neighbors4faye.com/"
+      ],
+      "after_sources": [
+        "https://web.archive.org/web/20260520011443/https://www.neighbors4faye.com/"
+      ],
+      "reasoning": "Johnson is committed to ensuring every family has the opportunity to own a home and to collaborating with landlords and residents to keep rents manageable, a pro-housing-access position."
+    },
+    {
+      "pid": "e44eb637-79e2-43a2-a867-5d3a06bca338",
+      "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "before_sources": [
+        "https://www.neighbors4faye.com/"
+      ],
+      "after_sources": [
+        "https://web.archive.org/web/20260520011443/https://www.neighbors4faye.com/"
+      ],
+      "reasoning": "Council Member Johnson names public safety as her top priority, an enforcement-supportive emphasis on protecting the community."
+    }
+  ]
+}

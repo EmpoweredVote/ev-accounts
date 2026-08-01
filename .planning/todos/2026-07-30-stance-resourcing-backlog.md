@@ -43,6 +43,37 @@ span on the cited page for every quoted string.
 **EIGHTH consecutive shrink on correction**: QUOTE_ABSENT 22 → 11, and 2 of the 11 survivors were then
 found correctly sourced by hand.
 
+### ✅ 1519 — the parked-domain near-miss, and the FOURTH extractor bug it exposed
+
+Faye Johnson (**seated** Mayor Pro Tem, Hawthorne CA) had 4 published rows citing
+`neighbors4faye.com`, which is now **parked** — `http://` redirects to a `ww19.*` parking host and one
+fetch returned a "PrivacyKeeper" software-download page. A voter checking the evidence got an ad
+prompt. The instruction was to retire if no valid source existed. **Two tooling faults nearly made
+that the answer, and both were wrong:**
+
+1. 🔴 **`collapse=urlkey` ON THE WAYBACK CDX API REPORTED 2 SNAPSHOTS WHERE THERE ARE 46.** The first
+   query looked like "essentially no archive". Query CDX **unfiltered** before concluding a site was
+   never captured.
+2. 🔴 **`pageText` SCOPED TO `<main>`, DISCARDING THE ENTIRE ISSUES SECTION.** On the archived Webflow
+   page it kept **2,667 chars of 4,797** — the 2,667 being a biography and a donate box, the discarded
+   2,130 being *"important Issues"*: homelessness, Public Safety, housing, infrastructure. Including
+   the exact string one row quotes, **"Treatment First, Housing Second."**
+
+All four claims re-verified verbatim against the capture, so 1519 re-points the citation to
+`web.archive.org/web/20260520011443/...` and **retires nothing**. ⚠ The Ballotpedia page for this name
+is a **different person** (Staley Town Council, North Carolina) and was deliberately not used — *a 200
+is not identity confirmation.*
+
+**Corpus effect of the `<main>` fix, measured over all 557 rows: `NOT_FOUND` 113 → 87.** 14 rows →
+HOMEPAGE_ONLY, 6 → DEEP_PAGE, 2 → HOMEPAGE_ANCHOR. Independent check that 1518 was right anyway: all
+16 rows it corrected now verify (9 HOMEPAGE_ONLY, 5 DEEP_PAGE, 2 HOMEPAGE_ANCHOR), none still
+NOT_FOUND.
+
+🔴 **THE STANDING LESSON, NOW FOUR TIMES OVER: BEFORE CONCLUDING A PAGE LACKS SOMETHING, CHECK WHAT
+YOUR EXTRACTOR KEPT — NOT WHAT YOU FETCHED.** Print the length of the text actually searched. An
+extractor that silently keeps 55% of a page is the most dangerous bug shape here, because the loss is
+indistinguishable from an absent claim.
+
 ### Next actions, in order
 
 1. **5 rows that need an explicit decision** (in the hand review, not retired): Welford/Abortion and
@@ -50,12 +81,14 @@ found correctly sourced by hand.
    appears on none of her 4 pages and the quote splices a tariffs claim into a real sentence;
    Schwab/Religious Freedom — thin, not absent; Bowen/Taxes — quote fixed, but the site states no tax
    position at all. **The first three are NO STANCE retirements if you agree.**
-2. 🅿️ **Faye Johnson ×4 — `neighbors4faye.com` IS NOW A PARKED DOMAIN** (`http://` → `ww19.` parking
-   host; one fetch returned a software-download page). A live profile is linking voters to an ad/malware
-   page. Wayback re-source, **not** retirement. More urgent than anything else here.
-   ⚠ It also proves **crawl status is not stable**: this site read as live at 19:49 and parked hours
-   later. Re-check DEAD/parked classifications in any cohort file older than a day.
-3. **85 `NO_QUOTE` rows** — characterisation rows, majority-correct on a 6-row sample (Heslop, Dueñas,
+2. ~~Faye Johnson ×4 — parked domain~~ ✅ **RESOLVED — 1519 re-sourced to Wayback, nothing retired.**
+   See the section below; it is the most instructive near-miss of the whole workstream.
+3. **`NOT_FOUND` is now 87, not 113** — the `<main>` fix moved 26 rows out (14 verify on the homepage,
+   8 gained a deep page/anchor). **12 rows are now applyable** as more-specific citations, the same
+   shape as 1512. Re-read the cohort from
+   `2026-08-01-primary-site-paths-mainfix.json` before doing any more hand-review — the older files
+   overstate the failures.
+4. **`NO_QUOTE` characterisation rows** — majority-correct on a 6-row sample (Heslop, Dueñas,
    Guithues ×2, Fairly/Religious Freedom all supported verbatim; Fairly/Deportation the one miss).
    Work as an editorial pass. **NOT a queue of suspects.**
 4. **104 `BALLOTPEDIA_ONLY`**, starting with the 21 `ELSEWHERE_ON_PAGE` rows in
