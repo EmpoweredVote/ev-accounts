@@ -35,14 +35,15 @@
  *   node scripts/repair-primary-site-paths.mjs --out data/stance-retirement/2026-07-31-primary-site-paths.json
  */
 import 'dotenv/config';
-import { writeFileSync, readFileSync, statSync, mkdirSync } from 'node:fs';
-import os from 'node:os';
-import path from 'node:path';
+import { writeFileSync } from 'node:fs';
 import { Pool } from 'pg';
 import { parse } from 'node-html-parser';
 import {
   extractQuotes, quotePresent, looseIncludes, candidateTerms, identityTerms,
 } from './lib/claim-match.mjs';
+// Fetching, text extraction and link discovery MOVED VERBATIM to lib/site-crawl.mjs on 2026-08-01 so
+// propose-quote-corrections.mjs reads the exact same page text this pass scored. Do not re-implement.
+import { crawlSite, pooled } from './lib/site-crawl.mjs';
 
 const argv = process.argv.slice(2);
 const flag = (n, d = null) => { const i = argv.indexOf(n); return i > -1 ? argv[i + 1] : d; };
@@ -54,9 +55,13 @@ const MAX_PAGES = parseInt(flag('--max-pages', '8'), 10);       // interior page
 const MIN_BODY = parseInt(flag('--min-body', '600'), 10);
 const NO_CACHE = argv.includes('--no-cache');
 
-const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36';
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/** Crawl tuning passed through to lib/site-crawl.mjs. Defaults are the values the 223-site run used. */
+const CRAWL = {
+  hostDelay: HOST_DELAY, maxPages: MAX_PAGES, minBody: MIN_BODY, noCache: NO_CACHE,
+  cacheTtlHours: parseInt(flag('--cache-ttl-hours', '24'), 10),
+};
 
 /** Mirrors check-stance-sources.mjs PRIMARY_SITE_NO_PATH. Keep the two predicates in step. */
 const QUERY = `
@@ -99,90 +104,6 @@ const QUERY = `
          'ontheissues.org', 'opensecrets.org', 'followthemoney.org', 'govtrack.us',
          'legiscan.com', 'congress.gov', 'senate.gov', 'house.gov', 'ourcampaigns.com'))
   ORDER BY pa.politician_id, pa.topic_id`;
-
-// ---------------------------------------------------------------------------- fetching
-
-const CACHE_DIR = path.join(os.tmpdir(), 'primary-site-cache');
-const CACHE_TTL_MS = parseInt(flag('--cache-ttl-hours', '24'), 10) * 3600 * 1000;
-const cachePath = (u) => path.join(CACHE_DIR, `${Buffer.from(u).toString('base64url').slice(0, 180)}.json`);
-
-function cacheGet(u) {
-  if (NO_CACHE) return null;
-  try {
-    if (Date.now() - statSync(cachePath(u)).mtimeMs > CACHE_TTL_MS) return null;
-    return JSON.parse(readFileSync(cachePath(u), 'utf8'));
-  } catch { return null; }
-}
-function cachePut(u, page) {
-  if (NO_CACHE) return;
-  // Only cache a GOOD read, for the same reason the citation audit does: caching a failure freezes it.
-  try {
-    mkdirSync(CACHE_DIR, { recursive: true });
-    if (page.status === 200 && page.body.length >= MIN_BODY) writeFileSync(cachePath(u), JSON.stringify(page));
-  } catch { /* best effort */ }
-}
-
-/** Strip the furniture, keep the prose. Campaign sites repeat their nav on every page. */
-function pageText(html) {
-  const root = parse(html);
-  root.querySelectorAll('script,style,noscript,svg,nav,header,footer,form').forEach((n) => n.remove());
-  const body = root.querySelector('main') ?? root.querySelector('body') ?? root;
-  return body.textContent.replace(/\s+/g, ' ').trim();
-}
-
-async function fetchPage(url) {
-  const hit = cacheGet(url);
-  if (hit) return { ...hit, cached: true };
-  let res;
-  try {
-    res = await fetch(url, {
-      headers: { 'User-Agent': UA, Accept: 'text/html' },
-      redirect: 'follow', signal: AbortSignal.timeout(30000),
-    });
-  } catch (e) { return { status: 0, error: e.message, body: '', html: '', finalUrl: url }; }
-  if (res.status !== 200) return { status: res.status, body: '', html: '', finalUrl: res.url || url };
-  const ct = res.headers.get('content-type') ?? '';
-  if (!/html/i.test(ct)) return { status: 200, body: '', html: '', finalUrl: res.url || url, notHtml: ct };
-  // 🔴 THE BODY READ THROWS TOO, AND IT IS NOT COVERED BY THE TRY AROUND fetch(). A server that
-  // closes the connection mid-response ("SocketError: other side closed") rejects here, not at
-  // fetch(). Leaving it uncaught killed a 223-site run at site 180 and discarded every result.
-  let html;
-  try { html = await res.text(); }
-  catch (e) { return { status: 0, error: `body read failed: ${e.message}`, body: '', html: '', finalUrl: res.url || url }; }
-  let page;
-  try { page = { status: 200, body: pageText(html), html, finalUrl: res.url || url }; }
-  catch (e) { return { status: 0, error: `parse failed: ${e.message}`, body: '', html: '', finalUrl: res.url || url }; }
-  cachePut(url, page);
-  return page;
-}
-
-const ISSUEISH = /issue|platform|priorit|policy|policies|position|stand|vision|plan|agenda|values|about|meet|why|solution/i;
-const SKIP = /^(mailto:|tel:|javascript:|#)|\.(pdf|jpe?g|png|gif|svg|zip|mp4|docx?)$|\/(donate|contribute|volunteer|shop|store|privacy|terms|login|events?|press|news|media|contact)(\/|$)/i;
-
-/** Same-host interior links that look like they hold positions, best-looking first. */
-function discoverLinks(html, baseUrl) {
-  const root = parse(html);
-  const base = new URL(baseUrl);
-  const scored = new Map();
-  for (const a of root.querySelectorAll('a')) {
-    const href = a.getAttribute('href');
-    if (!href || SKIP.test(href.trim())) continue;
-    let u;
-    try { u = new URL(href, base); } catch { continue; }
-    if (u.hostname.replace(/^www\./, '') !== base.hostname.replace(/^www\./, '')) continue;
-    if (u.protocol !== 'https:' && u.protocol !== 'http:') continue;
-    u.hash = ''; u.search = '';
-    const clean = u.toString().replace(/\/$/, '');
-    if (clean === baseUrl.replace(/\/$/, '')) continue;
-    if (SKIP.test(u.pathname)) continue;
-    if (isHomeAlias(clean, baseUrl)) continue;
-    const text = (a.textContent ?? '').trim().slice(0, 80);
-    const score = (ISSUEISH.test(u.pathname) ? 2 : 0) + (ISSUEISH.test(text) ? 1 : 0);
-    if (score === 0) continue;
-    if (!scored.has(clean) || scored.get(clean).score < score) scored.set(clean, { url: clean, text, score });
-  }
-  return [...scored.values()].sort((a, b) => b.score - a.score).slice(0, MAX_PAGES);
-}
 
 /**
  * 🔴 A SITE-BUILDER ID IS NOT AN ANCHOR. Wix, Squarespace and Elementor emit generated ids --
@@ -239,20 +160,6 @@ function anchorFor(html, needle, pageLen) {
   }
   if (!best) return null;
   return best.len <= Math.max(400, pageLen * ANCHOR_MAX_SHARE) ? best.id : null;
-}
-
-/**
- * 🔴 /home IS THE HOMEPAGE. Squarespace and Wix serve the front page at both / and /home, so
- * proposing site.com/home in place of site.com adds a path and no precision whatsoever -- it looks
- * like a repair in the tally and is not one.
- */
-const HOME_ALIAS = /^\/(home|index|main|home-1|homepage)(\.html?|\.php)?$/i;
-function isHomeAlias(url, rootUrl) {
-  try {
-    const u = new URL(url); const r = new URL(rootUrl);
-    if (u.hostname.replace(/^www\./, '') !== r.hostname.replace(/^www\./, '')) return false;
-    return HOME_ALIAS.test(u.pathname.replace(/\/$/, '') || '/') || (u.pathname.replace(/\/$/, '') === '');
-  } catch { return false; }
 }
 
 // ---------------------------------------------------------------------------- per-row judgement
@@ -335,44 +242,6 @@ function judgeRow(row, pages) {
 
 // ---------------------------------------------------------------------------- run
 
-async function crawlSite(rootUrl) {
-  const home = await fetchPage(rootUrl);
-  if (home.status !== 200 || home.body.length < MIN_BODY) {
-    // A 404/410 on the root, or a hostname that no longer resolves, is a DEAD SITE -- a different
-    // problem from a page we merely failed to read, and the only one of the two a human can act on.
-    const dead = home.status === 404 || home.status === 410
-      || (home.status === 0 && /ENOTFOUND|EAI_AGAIN|ERR_NAME|certificate|ECONNREFUSED/i.test(home.error ?? ''));
-    return {
-      ok: false,
-      dead,
-      reason: home.status !== 200 ? `status ${home.status}${home.error ? ` (${home.error})` : ''}` : `thin body ${home.body.length}c`,
-      pages: [],
-    };
-  }
-  const pages = [{ url: home.finalUrl.replace(/\/$/, ''), body: home.body, html: home.html, isHome: 1 }];
-  for (const link of discoverLinks(home.html, home.finalUrl)) {
-    if (!home.cached) await sleep(HOST_DELAY);
-    const p = await fetchPage(link.url);
-    if (p.status === 200 && p.body.length >= MIN_BODY) {
-      pages.push({ url: link.url, body: p.body, html: p.html, isHome: 0 });
-    }
-  }
-  return { ok: true, pages };
-}
-
-/** Run `worker` over `items` with at most `n` in flight. */
-async function pooled(items, n, worker) {
-  const out = new Array(items.length);
-  let next = 0;
-  await Promise.all(Array.from({ length: Math.min(n, items.length) }, async () => {
-    while (next < items.length) {
-      const i = next++;
-      out[i] = await worker(items[i], i);
-    }
-  }));
-  return out;
-}
-
 (async () => {
   if (!process.env.DATABASE_URL) { console.error('DATABASE_URL not set'); process.exit(2); }
   const { rows } = await pool.query(QUERY);
@@ -397,7 +266,7 @@ async function pooled(items, n, worker) {
     // socket, malformed markup, redirect loop -- it is a fact about that site, recorded against that
     // site, and never a reason to lose the whole crawl.
     let site;
-    try { site = await crawlSite(root); }
+    try { site = await crawlSite(root, CRAWL); }
     catch (e) { site = { ok: false, dead: false, reason: `crawl threw: ${e.message}`, pages: [] }; }
     for (const r of siteRows) {
       const base = {

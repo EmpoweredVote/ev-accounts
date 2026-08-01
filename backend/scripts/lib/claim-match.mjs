@@ -247,10 +247,24 @@ function quotePresent(body, q) {
 }
 
 /** Normalise for comparison: fold case, curly quotes, bracketed edits and all punctuation/space runs. */
+/**
+ * 🔴 THE BRACKETED-EDIT STRIP MUST BE LENGTH-BOUNDED, OR ONE STRAY `[` DELETES THE REST OF THE PAGE.
+ * `norm` is applied to the HAYSTACK as well as the needle, and the unbounded form -- /\[[^\]]*\]/g --
+ * happily spans thousands of characters looking for a closing bracket. Measured on
+ * sendnomoney.org 2026-08-01: a `[` at offset 5,517 paired with a `]` at 52,511 and the strip removed
+ * 47,177 of 56,732 characters, 83% OF THE PAGE. John Vail's row was then scored NOT_FOUND on two
+ * quotes -- "Target luxury of all sorts." and "a percentage wad of the whole taken every year." --
+ * that are on that page VERBATIM, and a hand-check recorded it in the backlog as a genuine failure.
+ *
+ * This is the same shape as the doubled-apostrophe bug and the silent HTTP 202: nothing in the output
+ * says text was discarded, so the false negative looks exactly like evidence. A real editorial
+ * insertion is a word or two ("advocate[s]", "[sic]"), so the span is capped -- anything longer is
+ * page furniture and is left in place, where at worst it fails to match.
+ */
 function norm(s) {
   return s.toLowerCase()
     .replace(/[‘’“”]/g, "'")
-    .replace(/\[[^\]]*\]/g, '')            // "advocate[s]" -> "advocate"
+    .replace(/\[[^\][]{0,24}\]/g, '')      // "advocate[s]" -> "advocate"; bounded, see above
     // Drop possessives on BOTH sides before punctuation stripping. Otherwise the page's "Jackson
     // Women's Health" normalises to "jackson women s health" while the term-builder has already
     // removed the 's, giving "jackson women health" -- a guaranteed miss on a real, present phrase.
@@ -392,4 +406,8 @@ export {
   STATE_NAMES, STOP, CAP_PHRASE, HYPHEN, SINGLE_CAP, BILLREF, MEASUREREF,
   POLICY_PHRASES, COMMON_TOKEN, POLICY_TOKENS, SHINGLE,
   extractQuotes, quoteFragments, quotePresent, norm, looseIncludes, candidateTerms, identityTerms,
+  // Exported 2026-08-01 for propose-quote-corrections.mjs, which scores how CLOSE a quote is to the
+  // page rather than whether it is present. It has to fold inflection the same way `quotePresent`
+  // does, or a row this module already treats as a match would score as a near-miss in the proposal.
+  stemWord, stemLine,
 };
