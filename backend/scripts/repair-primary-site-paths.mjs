@@ -39,7 +39,7 @@ import { writeFileSync } from 'node:fs';
 import { Pool } from 'pg';
 import { parse } from 'node-html-parser';
 import {
-  extractQuotes, quotePresent, looseIncludes, candidateTerms, identityTerms,
+  extractQuotes, quotePresent, looseIncludes, candidateTerms, identityTerms, isChairLabel,
 } from './lib/claim-match.mjs';
 // Fetching, text extraction and link discovery MOVED VERBATIM to lib/site-crawl.mjs on 2026-08-01 so
 // propose-quote-corrections.mjs reads the exact same page text this pass scored. Do not re-implement.
@@ -164,9 +164,11 @@ function anchorFor(html, needle, pageLen) {
 
 // ---------------------------------------------------------------------------- per-row judgement
 
-function judgeRow(row, pages) {
+function judgeRow(row, pages, chairs = new Map()) {
   const ident = identityTerms(row);
-  const quotes = extractQuotes(row.reasoning);
+  // A quoted chair label is our own answer text, not the source's words -- see isChairLabel.
+  const quotes = extractQuotes(row.reasoning)
+    .filter((q) => !isChairLabel(q, chairs.get(row.tid) ?? []));
   const terms = candidateTerms(row.reasoning)
     .filter((t) => !ident.has(t.toLowerCase()))
     .filter((t) => ![...ident].some((i) => i.length > 3 && t.toLowerCase().includes(i)));
@@ -245,7 +247,14 @@ function judgeRow(row, pages) {
 (async () => {
   if (!process.env.DATABASE_URL) { console.error('DATABASE_URL not set'); process.exit(2); }
   const { rows } = await pool.query(QUERY);
+  // Chair labels per topic, so a row that quotes the answer WE assigned is not tested against the page.
+  const chairRows = await pool.query('SELECT topic_id::text AS tid, text FROM inform.compass_stances');
   await pool.end();
+  const chairs = new Map();
+  for (const c of chairRows.rows) {
+    if (!chairs.has(c.tid)) chairs.set(c.tid, []);
+    chairs.get(c.tid).push(c.text);
+  }
 
   // One site per politician: their bare root is the same across all their rows.
   const sites = new Map();
@@ -274,7 +283,7 @@ function judgeRow(row, pages) {
         value: r.value, cited: root, pages_read: site.pages.length, reasoning: r.reasoning,
       };
       results.push(site.ok
-        ? { ...base, ...judgeRow(r, site.pages) }
+        ? { ...base, ...judgeRow(r, site.pages, chairs) }
         : { ...base, verdict: site.dead ? 'DEAD_SITE' : 'UNREADABLE', why: site.reason });
     }
     done += 1;

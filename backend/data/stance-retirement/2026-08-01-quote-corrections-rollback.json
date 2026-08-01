@@ -1,0 +1,166 @@
+{
+  "_comment": "Rollback record for the quote-correction migration: the EXACT prior reasoning for every row it rewrites. Restore by UPDATE ... SET reasoning = <before> for each key.",
+  "generated": "2026-08-01",
+  "rows": [
+    {
+      "pid": "e66de256-31e6-45a3-b3a8-a01ade5b79ec",
+      "tid": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+      "name": "Troy Slaten",
+      "topic": "Court Access",
+      "cited": "https://troyslatenforjudge.com",
+      "before": "Slaten's campaign states \"money should not be a barrier to justice,\" a direct position against wealth-based access disparities in the court system.",
+      "after": "Slaten's campaign site quotes him saying \"Money should never be a barrier to justice. Empathy is essential in an adversary system, where each side is given an opportunity to present its best arguments.\" That is a direct position against wealth-based access disparities in the court system.",
+      "why": "quoted 'money should not be a barrier to justice' — the page says 'never', not 'not'"
+    },
+    {
+      "pid": "580f3720-7990-4a2b-a417-78d90012db93",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Jamie Joyce",
+      "topic": "Deportation",
+      "cited": "https://jamiejoyce.com",
+      "before": "Joyce's MAD Act Title VIII is explicitly titled \"Get ICE off the Streets,\" indicating opposition to broad immigration enforcement sweeps in communities. This positions her against mass deportation and toward protecting long-term residents, consistent with value 2 (deport only serious violent criminals).",
+      "after": "Joyce's MAD Act platform lists \"Get ICE off our streets\" among its titles, indicating opposition to broad immigration enforcement sweeps in communities. This positions her against mass deportation and toward protecting long-term residents, consistent with value 2 (deport only serious violent criminals).",
+      "why": "quoted 'Get ICE off the Streets' — the page says 'off our streets'"
+    },
+    {
+      "pid": "580f3720-7990-4a2b-a417-78d90012db93",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Jamie Joyce",
+      "topic": "Immigration",
+      "cited": "https://jamiejoyce.com",
+      "before": "Joyce's MAD Act Title VIII calls to \"Get ICE off the Streets\" — opposing community-level immigration enforcement. Her position supports keeping residents regardless of status, consistent with value 2 (keep legal immigration open, most residents use services regardless of status).",
+      "after": "Joyce's MAD Act platform calls to \"Get ICE off our streets\" — opposing community-level immigration enforcement. Her position supports keeping residents regardless of status, consistent with value 2 (keep legal immigration open, most residents use services regardless of status).",
+      "why": "quoted 'Get ICE off the Streets' — the page says 'off our streets'"
+    },
+    {
+      "pid": "4b3850c4-debb-4b92-a796-3cf15cf31e80",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Shannon Taylor",
+      "topic": "Medicare/aid",
+      "cited": "https://shannontaylorva.com",
+      "before": "Taylor's campaign site says she will \"protect Social Security and Medicare for seniors\" and \"expand Medicare's ability to negotiate drug prices directly with pharmaceutical companies.\" The framing is protecting and improving current programs rather than expanding eligibility age or extending Medicare to all. This aligns with improving current programs while controlling costs.",
+      "after": "Taylor's campaign site pledges to \"Fight to protect Medicare and Social Security for seniors\" and to \"Lower the cost of prescription drugs.\" The framing is protecting and improving current programs rather than expanding eligibility age or extending Medicare to all. This aligns with improving current programs while controlling costs.",
+      "why": "quoted 'protect Social Security and Medicare for seniors' (order reversed on the page) and a second quote about Medicare negotiating drug prices that is NOT on the site at all"
+    },
+    {
+      "pid": "4932ca8c-39b5-45a9-8376-cbdbb275d86a",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Derek Merrin",
+      "topic": "School Vouchers",
+      "cited": "https://www.derekmerrin.com",
+      "before": "Merrin's homepage platform explicitly includes 'Expand school choice options' as a legislative priority, consistent with broad eligibility for school choice while not advocating universal vouchers for all students regardless of circumstance.",
+      "after": "Merrin's campaign site states that he \"successfully led efforts to cut the state's income tax, reduce regulations, and expand school choice.\" That is a record of broadening school-choice eligibility, consistent with broad eligibility for school choice while not advocating universal vouchers for all students regardless of circumstance.",
+      "why": "quoted 'Expand school choice options' as a listed platform priority; the page states it as a past accomplishment in different words"
+    },
+    {
+      "pid": "19f0df53-1b79-4375-825b-d9350ab92fba",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Pedro DeSouza",
+      "topic": "Campaign Finance",
+      "cited": "https://www.voteforpedrori.com",
+      "before": "His platform includes a standalone plank, \"No AIPAC Money. No Foreign-Interest Lobby Money,\" pledging grassroots-only fundraising and explicit rejection of PAC/lobby money, signaling support for tightly restricting corporate and dark-money influence, matching stance 2 (strictly limit corporate donations and dark money groups).",
+      "after": "His platform includes a standalone plank, \"Dissolve AIPAC. No Foreign-Interest Lobby Money,\" under which he pledges \"I will not take money from AIPAC, foreign-agent PACs, or lobbying groups that put another country's interests ahead of the American people.\" That explicit rejection of PAC and lobby money signals support for tightly restricting corporate and dark-money influence, matching stance 2 (strictly limit corporate donations and dark money groups).",
+      "why": "quoted 'No AIPAC Money. No Foreign-Interest Lobby Money,' — only the second sentence is on the page; the first is the row's own compression of 'Dissolve AIPAC'"
+    },
+    {
+      "pid": "6e357a07-71c7-4654-826a-1e638925777e",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Ken Vaz",
+      "topic": "Immigration",
+      "cited": "https://kenvazforwa.com",
+      "before": "Platform's 'Immigration and Worker Fairness' plank calls to 'secure the border and end incentives for illegal immigration' and 'restrict taxpayer-funded benefits to U.S. citizens and lawful residents only.'",
+      "after": "Vaz's platform plank \"Border Security, Immigration Reform, and American Workers\" calls to \"Secure the border, enforce immigration law, protect American workers, preserve lawful family unity, and require immigration agencies to operate constitutionally and accountably.\" He also proposes limiting comprehensive federal benefits to eligible U.S. citizens and qualified lawful residents. That is an enforcement-first posture paired with explicit constitutional limits.",
+      "why": "named the plank 'Immigration and Worker Fairness' and quoted two lines that are paraphrases; the plank has a different title and different wording"
+    },
+    {
+      "pid": "6e357a07-71c7-4654-826a-1e638925777e",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Ken Vaz",
+      "topic": "Abortion",
+      "cited": "https://kenvazforwa.com",
+      "before": "Detailed campaign platform states support for 'abortion exceptions in cases of rape, incest, fatal fetal abnormalities, and when the life of the mother is at risk,' matching a restrict-with-exceptions position.",
+      "after": "Vaz's platform plank \"Abortion and Federalism\" would \"Establish federal legal protections for abortion access in cases of rape, incest, a life-threatening medical emergency involving the mother, and fatal fetal anomalies,\" while leaving policy outside those exceptions to the states. Guaranteeing access only in enumerated cases and leaving the remainder to state restriction matches a restrict-with-exceptions position.",
+      "why": "quoted 'abortion exceptions in cases of rape, incest, fatal fetal abnormalities, and when the life of the mother is at risk' — the page says 'anomalies' and frames the list as protections FOR access"
+    },
+    {
+      "pid": "6e357a07-71c7-4654-826a-1e638925777e",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Ken Vaz",
+      "topic": "Taxes",
+      "cited": "https://kenvazforwa.com",
+      "before": "Platform calls to lower taxes for working- and middle-class Americans while closing 'the carried interest loophole that lets Wall Street executives pay lower tax rates,' combining targeted relief with loophole-closing rather than a broad cut for all income levels.",
+      "after": "Vaz's platform calls to \"Lower taxes on working- and middle-class Americans\" and to \"End preferential carried-interest treatment that allows some investment managers to pay capital-gains rates on compensation tied to investment profits.\" That combines targeted relief with closing a preferential rate rather than a broad cut for all income levels.",
+      "why": "quoted 'the carried interest loophole that lets Wall Street executives pay lower tax rates' — a paraphrase; the page names investment managers, not Wall Street executives"
+    },
+    {
+      "pid": "6e357a07-71c7-4654-826a-1e638925777e",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Ken Vaz",
+      "topic": "Healthcare",
+      "cited": "https://kenvazforwa.com",
+      "before": "Healthcare plank emphasizes expanding access via 'transparency and competition in healthcare markets' rather than a new government program, framed around market-based reform plus preventing coverage gaps between jobs.",
+      "after": "Vaz's \"Affordable and Accessible Health Care\" plank would \"Require meaningful price transparency for hospitals, prescription drugs, and medical equipment\" and \"Create affordable bridge coverage and faster eligibility reassessments for workers who lose employer-sponsored insurance and cannot reasonably afford COBRA.\" That is market-based reform plus closing coverage gaps between jobs, rather than a new government program.",
+      "why": "quoted 'transparency and competition in healthcare markets' — a paraphrase of two separate lines in the plank"
+    },
+    {
+      "pid": "970665b9-a3c1-41b0-9c14-bc954a9a667b",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Jamie Davis",
+      "topic": "Taxes",
+      "cited": "https://jamieforlouisiana.com",
+      "before": "Davis's campaign site calls to \"Roll back the 2025 tax law\" and bring cost-of-living relief to working Louisiana. Reversing the 2025 upper-income tax cut to fund relief for working families maps to value 2 (moderately raise taxes on wealthy people and large companies to fund existing services), not value 1 (significantly raise taxes across the board).",
+      "after": "Davis's campaign site calls to \"Roll back portions of the 2025 tax law that added as much as $4 trillion to the debt to cut taxes for the billionaires.\" Reversing an upper-income tax cut to fund relief for working families maps to value 2 (moderately raise taxes on wealthy people and large companies to fund existing services), not value 1 (significantly raise taxes across the board).",
+      "why": "quoted 'Roll back the 2025 tax law' — the page says 'Roll back portions of' and names what it funds"
+    },
+    {
+      "pid": "cd65d355-e307-4ac7-a8b1-5b1638752c89",
+      "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "name": "Rusty MacLachlan",
+      "topic": "Public Safety Approach",
+      "cited": "https://rustymac.com",
+      "before": "MacLachlan's 2020 campaign website explicitly stated he opposes 'defunding police initiatives' and is 'committed to supporting officers' capabilities to arrest criminals.' He also emphasized faith, family, and work as foundations for youth over government solutions, and listed law enforcement support as a central priority. This aligns with value 4 (increase police staffing, equipment, and pay to improve response times and deter crime).",
+      "after": "Under a \"Supporting Our Police\" heading, MacLachlan's campaign site states \"I will never support initiatives to defund the police or limit their capabilities to arrest criminals.\" That places him with increasing police staffing, equipment and pay to improve response times and deter crime.",
+      "why": "quoted 'defunding police initiatives' and 'committed to supporting officers' — neither phrase is on the page, which states the position in one sentence"
+    },
+    {
+      "pid": "bc3cfeaa-42b0-4feb-8bd3-5957280917bf",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Missi Hesketh",
+      "topic": "Healthcare",
+      "cited": "https://www.missiformo.com",
+      "before": "Hesketh's campaign site lists 'Healthcare For All who Want It' as a top priority, phrasing that suggests expanding access to public coverage options alongside private insurance rather than mandating a single-payer system.",
+      "after": "Hesketh's campaign site lists \"Medicare for all who want it\" under her \"Make Healthcare Work\" priority, alongside veterans' healthcare access, rural hospital stabilization and Medicare drug-price negotiation. Opt-in Medicare is a public option expanding access alongside private insurance rather than mandating a single-payer system.",
+      "why": "quoted 'Healthcare For All who Want It' — the page says 'Medicare for all who want it', which is the public-option phrasing the reasoning actually relies on"
+    },
+    {
+      "pid": "e752a957-c776-4942-9aae-63ebf23174ac",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Scott Schwab",
+      "topic": "Deportation",
+      "cited": "https://www.scottschwab.com",
+      "before": "Schwab's 2026 gubernatorial campaign platform states he will 'enforce immigration laws in cooperation with federal administration,' indicating support for deporting those without legal status prioritized by criminal history — consistent with a value-4 posture of deporting all without legal status starting with those with criminal records.",
+      "after": "Schwab's gubernatorial campaign site states that as governor he will \"work with the Trump administration on enforcing our immigration laws,\" alongside fully funding public safety. That is an enforcement-first posture aligned with deporting those without legal status; the site does not set out how enforcement would be prioritised.",
+      "why": "quoted 'enforce immigration laws in cooperation with federal administration' — a paraphrase; also asserted a criminal-history priority the page does not state"
+    },
+    {
+      "pid": "4b3850c4-debb-4b92-a796-3cf15cf31e80",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Shannon Taylor",
+      "topic": "Social Security",
+      "cited": "https://shannontaylorva.com",
+      "before": "Taylor's campaign site states she will \"fight to protect Social Security and Medicare for seniors who have paid into them their entire adult life.\" The framing is protective rather than expansionary — no mention of raising the income cap, expanding benefits, or increasing payroll taxes. This aligns with making small adjustments to keep Social Security stable.",
+      "after": "Taylor's campaign site pledges to \"Fight to protect Medicare and Social Security for seniors.\" The framing is protective rather than expansionary — the site does not mention raising the income cap, expanding benefits, or increasing payroll taxes. This aligns with making small adjustments to keep Social Security stable.",
+      "why": "quoted 'fight to protect Social Security and Medicare for seniors who have paid into them their entire adult life' — the trailing clause appears nowhere on the site"
+    },
+    {
+      "pid": "6eccd92f-958a-4ee5-8eb6-f9ca48e41af2",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Carlton E. Bowen",
+      "topic": "Taxes",
+      "cited": "https://bowenforcongress.com",
+      "before": "Bowen's campaign site frames the national debt as the central issue, pledging to 'end wasteful spending habits' and 'restore policies that reward productive work and saving' -- a fiscal-conservative, spending-discipline message paired with tax-friendly language for earners and savers, closest to the 'cut taxes...scale back public services' chair. Caveat: he does not state an explicit tax-rate number or plan.",
+      "after": "Bowen's campaign site makes the national debt its central issue: \"Washington keeps spending money it does not have, then tells American families to absorb the higher costs caused by irresponsible government,\" and he pledges to \"fight for fiscal responsibility, honest budgeting, and a Congress that remembers it is not authorized to spend without limit.\" That is a spending-discipline message. ⚠ The site states no tax-rate position of any kind, so the chair here rests on inference from fiscal conservatism rather than on a stated tax plan.",
+      "why": "quoted 'end wasteful spending habits' and 'restore policies that reward productive work and saving' — neither phrase is on the site"
+    }
+  ]
+}

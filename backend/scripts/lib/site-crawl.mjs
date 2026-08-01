@@ -32,7 +32,14 @@ const DEFAULTS = {
 
 // ---------------------------------------------------------------------------- fetching
 
-const CACHE_DIR = path.join(os.tmpdir(), 'primary-site-cache');
+/**
+ * 🔴 BUMP CACHE_VERSION WHENEVER THE CACHED PAGE SHAPE CHANGES. Adding `chrome` to the page record
+ * left every existing cache entry without it, and `chrome ?? ''` turns that into an empty footer --
+ * i.e. silently back to the bug the field was added to fix, for a full cache TTL. A stale cache that
+ * looks like a successful read is the same failure mode as the HTTP 202 with an empty body.
+ */
+const CACHE_VERSION = 3;
+const CACHE_DIR = path.join(os.tmpdir(), `primary-site-cache-v${CACHE_VERSION}`);
 const cachePath = (u) => path.join(CACHE_DIR, `${Buffer.from(u).toString('base64url').slice(0, 180)}.json`);
 
 function cacheGet(u, o) {
@@ -59,6 +66,42 @@ function pageText(html) {
   return body.textContent.replace(/\s+/g, ' ').trim();
 }
 
+/**
+ * The chrome `pageText` throws away, returned SEPARATELY rather than merged into the body.
+ *
+ * 🔴 THE CAMPAIGN-FINANCE DISCLAIMER LIVES IN THE FOOTER, AND CAMPAIGN-FINANCE ROWS CITE IT. Kshama
+ * Sawant's row quotes "Paid for by Kshama For Congress, not corporate cash." That string is on her
+ * homepage VERBATIM -- inside <footer>, which pageText removes, so the row scored as quoting something
+ * absent. Of all the topics in the compass, Campaign Finance is the one whose best evidence is
+ * routinely a disclaimer rather than a plank.
+ *
+ * It is kept separate, not folded into the body, because footers and navs repeat every issue keyword
+ * on the site ("Issues", "Priorities", "Healthcare") on EVERY page -- merging them would hand the term
+ * test the same no-signal haystack that made the full-page keyword probe useless. A caller that wants
+ * this evidence has to ask for it and say so in its output.
+ */
+/**
+ * 🔴 IT IS NOT ENOUGH TO COLLECT <footer>/<nav>/<header> -- MOST OF WHAT pageText DROPS IS DROPPED BY
+ * SCOPING, NOT BY THE SELECTOR. `pageText` returns `main`'s text when a <main> exists, so EVERYTHING
+ * outside <main> disappears whether or not it is in a semantic element. Sawant's disclaimer is a plain
+ * <p> in a GenerateBlocks <div> after </main>: the first version of this function selected
+ * footer,nav,header, found nothing, and reported the quote absent a second time -- the fix reproducing
+ * the bug it was written to fix. Chrome is therefore defined as the COMPLEMENT of what pageText keeps.
+ */
+function chromeText(html) {
+  const root = parse(html);
+  root.querySelectorAll('script,style,noscript,svg').forEach((n) => n.remove());
+  const main = root.querySelector('main');
+  if (main) {
+    main.remove();                       // what is left is exactly what pageText scoped away
+    const body = root.querySelector('body') ?? root;
+    return body.textContent.replace(/\s+/g, ' ').trim();
+  }
+  // No <main>: pageText kept the whole body minus these, so these ARE the complement.
+  return root.querySelectorAll('nav,header,footer,form')
+    .map((n) => n.textContent).join(' ').replace(/\s+/g, ' ').trim();
+}
+
 async function fetchPage(url, opts = {}) {
   const o = { ...DEFAULTS, ...opts };
   const hit = cacheGet(url, o);
@@ -80,7 +123,7 @@ async function fetchPage(url, opts = {}) {
   try { html = await res.text(); }
   catch (e) { return { status: 0, error: `body read failed: ${e.message}`, body: '', html: '', finalUrl: res.url || url }; }
   let page;
-  try { page = { status: 200, body: pageText(html), html, finalUrl: res.url || url }; }
+  try { page = { status: 200, body: pageText(html), chrome: chromeText(html), html, finalUrl: res.url || url }; }
   catch (e) { return { status: 0, error: `parse failed: ${e.message}`, body: '', html: '', finalUrl: res.url || url }; }
   cachePut(url, page, o);
   return page;
@@ -145,12 +188,12 @@ async function crawlSite(rootUrl, opts = {}) {
       pages: [],
     };
   }
-  const pages = [{ url: home.finalUrl.replace(/\/$/, ''), body: home.body, html: home.html, isHome: 1 }];
+  const pages = [{ url: home.finalUrl.replace(/\/$/, ''), body: home.body, chrome: home.chrome ?? '', html: home.html, isHome: 1 }];
   for (const link of discoverLinks(home.html, home.finalUrl, o)) {
     if (!home.cached) await sleep(o.hostDelay);
     const p = await fetchPage(link.url, o);
     if (p.status === 200 && p.body.length >= o.minBody) {
-      pages.push({ url: link.url, body: p.body, html: p.html, isHome: 0 });
+      pages.push({ url: link.url, body: p.body, chrome: p.chrome ?? '', html: p.html, isHome: 0 });
     }
   }
   return { ok: true, pages };
@@ -169,4 +212,7 @@ async function pooled(items, n, worker) {
   return out;
 }
 
-export { UA, sleep, pageText, fetchPage, discoverLinks, isHomeAlias, crawlSite, pooled, ISSUEISH, SKIP };
+export {
+  UA, sleep, pageText, chromeText, fetchPage, discoverLinks, isHomeAlias, crawlSite, pooled,
+  ISSUEISH, SKIP,
+};

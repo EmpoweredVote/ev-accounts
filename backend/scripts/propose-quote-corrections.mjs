@@ -45,7 +45,7 @@ import { writeFileSync, readFileSync } from 'node:fs';
 import { Pool } from 'pg';
 import {
   extractQuotes, quoteFragments, quotePresent, norm, looseIncludes,
-  candidateTerms, identityTerms, stemLine,
+  candidateTerms, identityTerms, stemLine, isChairLabel,
 } from './lib/claim-match.mjs';
 import { crawlSite, pooled } from './lib/site-crawl.mjs';
 
@@ -166,20 +166,31 @@ function verbatimSpan(body, pageToks, win) {
   return body.slice(snapBack(Math.max(0, a - 40)), snapFwd(Math.min(body.length, b + 60))).trim();
 }
 
-/** For every fragment of every quote, the closest thing on any page read. */
+/**
+ * For every fragment of every quote, the closest thing on any page read.
+ *
+ * Page CHROME (footer/nav/header) is searched too and labelled `in_chrome`, because the
+ * campaign-finance disclaimer -- "Paid for by X, not corporate cash" -- lives in the footer and is the
+ * real source for Campaign Finance rows. It is labelled rather than merged so a reader can see that
+ * the evidence is boilerplate, which for most topics would be no evidence at all.
+ */
 function locateQuotes(quotes, pages) {
   const idf = idfOver(pages);
-  const toks = pages.map((p) => ({ page: p, toks: tokenize(p.body) }));
+  const toks = [
+    ...pages.map((p) => ({ page: p, toks: tokenize(p.body), chrome: false })),
+    ...pages.filter((p) => p.chrome).map((p) => ({ page: p, toks: tokenize(p.chrome), chrome: true })),
+  ];
   return quotes.map((q) => {
     const frags = quoteFragments(q);
     const found = pages.some((p) => quotePresent(p.body, q) === true);
     const parts = (frags.length ? frags : [q]).map((f) => {
       const ft = tokenize(f);
       let best = null;
-      for (const { page, toks: pt } of toks) {
+      for (const { page, toks: pt, chrome } of toks) {
         const w = bestWindow(pt, ft, idf);
         if (w && (!best || w.score > best.score)) {
-          best = { score: w.score, url: page.url, text: verbatimSpan(page.body, pt, w) };
+          const src = chrome ? page.chrome : page.body;
+          best = { score: w.score, url: page.url, in_chrome: chrome, text: verbatimSpan(src, pt, w) };
         }
       }
       return { fragment: f, best };
@@ -261,6 +272,13 @@ const BY_KEY = `
   console.log(`${want.length} ${VERDICT} rows in ${IN}`);
 
   const { rows } = await pool.query(BY_KEY, [want.map((r) => r.pid), want.map((r) => r.tid)]);
+  // Chair labels per topic, so a row that quotes the answer WE assigned is not tested against the page.
+  const chairRows = await pool.query('SELECT topic_id::text AS tid, text FROM inform.compass_stances');
+  const chairs = new Map();
+  for (const c of chairRows.rows) {
+    if (!chairs.has(c.tid)) chairs.set(c.tid, []);
+    chairs.get(c.tid).push(c.text);
+  }
   await pool.end();
 
   // 🔴 A ROW THAT VANISHED BETWEEN THE TWO RUNS IS NOT A ROW THAT WAS FIXED. Report the shortfall
@@ -302,20 +320,22 @@ const BY_KEY = `
         continue;
       }
       const ident = identityTerms(r);
-      const quotes = extractQuotes(r.reasoning);
+      const allQuotes = extractQuotes(r.reasoning);
+      const quotes = allQuotes.filter((q) => !isChairLabel(q, chairs.get(r.tid) ?? []));
+      const chairQuoted = allQuotes.length - quotes.length;
       const terms = candidateTerms(r.reasoning)
         .filter((t) => !ident.has(t.toLowerCase()))
         .filter((t) => ![...ident].some((i) => i.length > 3 && t.toLowerCase().includes(i)));
 
       if (!quotes.length) {
-        results.push({ ...base, verdict: 'NO_QUOTE', terms: locateTerms(r, terms, site.pages),
-          pages: site.pages.map((p) => p.url) });
+        results.push({ ...base, verdict: 'NO_QUOTE', chair_quoted: chairQuoted,
+          terms: locateTerms(r, terms, site.pages), pages: site.pages.map((p) => p.url) });
         continue;
       }
       const located = locateQuotes(quotes, site.pages);
       const score = Math.max(...located.map((q) => q.score));
       const verdict = score >= NEAR ? 'QUOTE_NEAR' : score >= PARTIAL ? 'QUOTE_PARTIAL' : 'QUOTE_ABSENT';
-      results.push({ ...base, verdict, score, quotes: located,
+      results.push({ ...base, verdict, score, quotes: located, chair_quoted: chairQuoted,
         terms: locateTerms(r, terms, site.pages), pages: site.pages.map((p) => p.url) });
     }
     done += 1;
@@ -378,7 +398,7 @@ function renderMd(results, tally) {
       for (const q of r.quotes ?? []) {
         L.push(`- **quoted:** "${q.quote}" — score ${q.score}${q.already_present ? ' (present!)' : ''}`);
         for (const p of q.parts) {
-          L.push(`  - closest on page (${p.best?.score?.toFixed(2) ?? 'n/a'}): ${p.best ? `"${p.best.text}"` : '—'}`);
+          L.push(`  - closest on page (${p.best?.score?.toFixed(2) ?? 'n/a'})${p.best?.in_chrome ? ' **[footer/nav]**' : ''}: ${p.best ? `"${p.best.text}"` : '—'}`);
           if (p.best) L.push(`    - ${p.best.url}`);
         }
       }

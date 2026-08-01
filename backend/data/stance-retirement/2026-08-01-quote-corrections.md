@@ -5,13 +5,14 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 
 | verdict | rows | meaning |
 |---|---|---|
-| `QUOTE_NEAR` | 5 | substance is on the page, wording differs — **fix the quote** |
+| `QUOTE_NEAR` | 6 | substance is on the page, wording differs — **fix the quote** |
 | `QUOTE_PARTIAL` | 7 | partly there — splice, paraphrase, or wrong page |
-| `QUOTE_ABSENT` | 22 | nothing close on any page read |
-| `NO_QUOTE` | 79 | row characterises rather than quotes — term evidence only |
+| `QUOTE_ABSENT` | 11 | nothing close on any page read |
+| `NO_QUOTE` | 85 | row characterises rather than quotes — term evidence only |
+| `RECHECK` | 4 | ⚠ site unreadable **today** — says nothing about the row |
 
 
-## QUOTE_NEAR — 5
+## QUOTE_NEAR — 6
 
 ### Shannon Taylor — Medicare/aid (va, chair 3.0)
 `https://shannontaylorva.com` · 4 page(s) read · score 1
@@ -27,6 +28,17 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **terms absent:** `Social Security and Medicare`
 - **closest passage (0.093):** "does not directly identify you. Links to Other Websites The Site may contain links to other websites. For example, we may link to third-party sites to facilitate donations or purchases or to assist you with voter registration. Any personal information you provide on such linked pages is provided directly to that third party and is subject to that third party’s privacy policy, and not this privacy policy. We encourage you to learn about their privacy and security practices and policies before providing them with personal information."
   - https://shannontaylorva.com/privacy-policy
+
+### Kshama Sawant — Campaign Finance (wa, chair 1.0)
+`https://www.kshamasawant.org` · 3 page(s) read · score 1
+
+> **row says:** Campaign states it is 'Paid for by Kshama For Congress, not corporate cash,' consistent with her documented decade-long Council practice of accepting only the average worker's wage and rejecting corporate money entirely.
+
+- **quoted:** "Paid for by Kshama For Congress, not corporate cash," — score 1
+  - closest on page (1.00) **[footer/nav]**: "Take the Get Out the Vote Pledge Endorse Kshama for Congress Build the campaign in your city Socialists for Kshama Volunteer Donate Demands Statements Endorsements Why I’m Running Paid for by Kshama For Congress, not corporate cash."
+    - https://www.kshamasawant.org
+- **closest passage (0.245):** "fighting to end all military aid to both the Israeli state and the bloody inter-imperialist proxy war in Ukraine. Current Congressional District 9 Representative Adam Smith is bought-and-paid for by big business and the weapons industry. As she did during her decade in office, Kshama will accept only the average worker’s wage, and donate the rest of her congressional salary to workers’"
+  - https://www.kshamasawant.org
 
 ### Jamie Joyce — Deportation (ca, chair 2.0)
 `https://jamiejoyce.com` · 3 page(s) read · score 0.943
@@ -174,7 +186,7 @@ Every row below is a row a human has to read; the tool only supplies the page's 
   - https://scottschwab.com
 
 
-## QUOTE_ABSENT — 22
+## QUOTE_ABSENT — 11
 
 ### Carlton E. Bowen — Taxes (ut, chair 4.0)
 `https://bowenforcongress.com` · 4 page(s) read · score 0.375
@@ -193,17 +205,6 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **terms absent:** `fiscal-conservative`, `spending-discipline`, `tax-friendly`
 - **closest passage (0.082):** "ballot. Why he is running. Washington keeps spending money it does not have. Both major parties blame each other, but the debt keeps growing no matter which party is in power. The national debt is not a Democrat problem or a Republican problem. It is an American problem, and nothing exposes the failure of the two-party system more clearly than the national debt. Carlton is running because fiscal responsibility, constitutional government, liberty, and national unity cannot be restored by sending the same kind of politics back to Washington again and again. Northern Utah deserves real representation."
   - https://bowenforcongress.com/about
-
-### Kshama Sawant — Campaign Finance (wa, chair 1.0)
-`https://www.kshamasawant.org` · 3 page(s) read · score 0.343
-
-> **row says:** Campaign states it is 'Paid for by Kshama For Congress, not corporate cash,' consistent with her documented decade-long Council practice of accepting only the average worker's wage and rejecting corporate money entirely.
-
-- **quoted:** "Paid for by Kshama For Congress, not corporate cash," — score 0.343
-  - closest on page (0.34): "Workers Strike Back, has just launched a national campaign called Free Healthcare Now, with the model of bypassing both political parties and fighting for free public healthcare, paid for by taxing the rich, through local ballot initiatives."
-    - https://www.kshamasawant.org/why-im-running
-- **closest passage (0.245):** "fighting to end all military aid to both the Israeli state and the bloody inter-imperialist proxy war in Ukraine. Current Congressional District 9 Representative Adam Smith is bought-and-paid for by big business and the weapons industry. As she did during her decade in office, Kshama will accept only the average worker’s wage, and donate the rest of her congressional salary to workers’"
-  - https://www.kshamasawant.org
 
 ### Ken Vaz — Healthcare (wa, chair 4.0)
 `https://kenvazforwa.com` · 2 page(s) read · score 0.33
@@ -267,29 +268,6 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.137):** "the Trump administration on enforcing our immigration laws, and we will protect our Second Amendment rights. Values As a Christian, my faith has guided me at home and in my work as Secretary of State. As Governor, I will bring those values to the job everyday. I will protect women’s sports, strengthen Kansas families, and uphold the values that have made our state great. Join our email list Learn how you"
   - https://scottschwab.com
 
-### Greg Guithues — Healthcare (hi, chair 1.0)
-`https://gregforhawaii.us` · 2 page(s) read · score 0.19
-
-> **row says:** Campaign website states unambiguous support for a single-payer system covering all Americans for both medical and dental care with no insurance-network barriers or prior authorizations, directly matching value 1 ("Make healthcare free and available to everyone, paid for and run by the public sector").
-
-- **quoted:** "Make healthcare free and available to everyone, paid for and run by the public sector" — score 0.19
-  - closest on page (0.19): "We’ve just been spending it on the wrong things.Universal Healthcare — I support single payer medical and dental for allI support single payer medical and dental for all Americans."
-    - https://gregforhawaii.us
-- **terms present:** `single-payer`
-- **closest passage (0.234):** "We’ve just been spending it on the wrong things.Universal Healthcare — I support single payer medical and dental for allI support single payer medical and dental for all Americans. The wealthiest nation in the history of the world has the resources to provide every citizen with medical and dental care. This is not a radical idea. It’s basic decency. I Know the System I’m a veteran."
-  - https://gregforhawaii.us
-
-### Greg Guithues — Taxes (hi, chair 1.0)
-`https://gregforhawaii.us` · 2 page(s) read · score 0.186
-
-> **row says:** Advocates sharply raising taxes on the wealthy and large corporations, explicitly endorsing a 100% tax on individual income above $1 billion annually and citing 1950s-60s top marginal rates exceeding 90% as a model, matching value 1 ("Significantly raise taxes on wealthy people and large companies to fund more public services").
-
-- **quoted:** "Significantly raise taxes on wealthy people and large companies to fund more public services" — score 0.186
-  - closest on page (0.19): "The question is whether government works for everyone or only for those who already have everything. I will fight for a tax code that funds education, healthcare, social services and infrastructure by asking those who have benefited most from this country to pay their fair share."
-    - https://gregforhawaii.us
-- **closest passage (0.133):** "existed. The question is whether government works for everyone or only for those who already have everything. I will fight for a tax code that funds education, healthcare, social services and infrastructure by asking those who have benefited most from this country to pay their fair share. Enough of the rich getting richer. Eat the rich, and we’ll all be fat. Senator Bernie Sanders has suggested a 100%TAX ON INCOME ABOVE ONE BILLION PER YEAR. That’s a step in the right direction.Education Funding"
-  - https://gregforhawaii.us
-
 ### Ken Vaz — Taxes (wa, chair 3.0)
 `https://kenvazforwa.com` · 2 page(s) read · score 0.168
 
@@ -302,19 +280,6 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **terms present:** `middle-class`
 - **closest passage (0.26):** "stronger contractor oversight, and enforceable progress toward a clean Pentagon audit. Core platform Practical policies for a stronger, freer Washington. 01 Economy and Affordability Reduce deficits, federal borrowing, and interest costs through disciplined budgeting and targeted spending reform. Lower taxes on working- and middle-class Americans. End preferential carried-interest treatment that allows some investment managers to pay capital-gains rates on compensation tied to investment profits. No special treatment."
   - https://kenvazforwa.com
-
-### Greg Guithues — Climate Change (hi, chair 3.0)
-`https://gregforhawaii.us` · 2 page(s) read · score 0.157
-
-> **row says:** Platform calls for strong federal environmental protections and investment in clean energy while opposing legislation that trades long-term environmental health for short-term profit, but does not commit to an emergency emissions ban or a specific fossil-fuel phase-out date, most closely matching value 3 ("invest in clean energy while gradually reducing reliance on fossil fuels").
-
-- **quoted:** "invest in clean energy while gradually reducing reliance on fossil fuels" — score 0.157
-  - closest on page (0.16): "Identify and cut weapons systems that exist to employ contractors, not to defend America Fully fund the VA — take care of the people we’ve already sent to war before we send more Diplomatic investment — increase State Department funding, reduce reliance on military solutions End Operation Southern Spear immediately I support existing no-first-use legislation already introduced in Congress."
-    - https://gregforhawaii.us
-- **terms absent:** `long-term`, `fossil fuel`
-- **terms present:** `short-term`, `clean energy`
-- **closest passage (0.179):** "surrounds these islands connects us to every other coast on the planet. Federal policy must protect what we all share. Clean air. Clean water. A stable climate. Protected ecosystems. These aren’t luxuries. They’re the foundation of everything else. You can’t have a healthy economy on a dead planet. You can’t raise healthy children breathing poisoned air. What I’ll Fight For Strong federal environmental protections. Investment in clean energy. Opposition to any legislation that trades our children’s future for short-term profit. One planet. That’s all we get. I intend to fight for it like"
-  - https://gregforhawaii.us
 
 ### Clyde Welford — Climate Change (mi, chair 3.0)
 `https://www.clydewelford.com` · 2 page(s) read · score 0.155
@@ -330,29 +295,6 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **terms absent:** `pro-environment`
 - **closest passage (0.063):** "Security, lower prescription drug costs, and expand access to quality health care. Strong Public Education As a lifelong educator, I know education changes lives. Every child deserves safe schools, excellent teachers, and the opportunity to succeed regardless of where they live. Growing Michigan’s Economy We need to support small businesses, strengthen manufacturing, invest in infrastructure, expand broadband, and create good-paying jobs"
   - https://www.clydewelford.com
-
-### Greg Guithues — AI Oversight (hi, chair 4.0)
-`https://gregforhawaii.us` · 2 page(s) read · score 0.141
-
-> **row says:** States there must be legal limits on what AI can be used for and that no important decisions should be left to a machine, calling for mandatory safety assessments before deployment plus clear liability when AI systems cause harm, matching value 4 ("Require safety testing and ban high-risk AI uses in areas like hiring, healthcare, and policing").
-
-- **quoted:** "Require safety testing and ban high-risk AI uses in areas like hiring, healthcare, and policing" — score 0.141
-  - closest on page (0.14): "Major technology companies are racing to deploy AI systems without adequate safety assessments. They’re making decisions that affect millions of people — hiring, lending, medical diagnoses, criminal sentencing — and handing those decisions to algorithms that have no conscience, no accountability, and no understanding of what it means to be human."
-    - https://gregforhawaii.us
-- **closest passage (0.365):** "at the budget, and counted the dead. Rein In AI — One needs a soul to soul-search.One needs a soul to soul-search… The Problem There must be legal limits on what AI can be used for. No important decisions should be left to a machine. If an AI kills or maims someone, who is responsible? Right now, the answer is unclear. That’s unacceptable. Major technology companies are racing to deploy AI systems without adequate safety assessments. They’re making decisions that affect millions of people — hiring, lending, medical diagnoses, criminal sentencing — and handing"
-  - https://gregforhawaii.us
-
-### Amir Hassan — Trans Athletes (mi, chair 5.0)
-`https://hassanformi.com` · 2 page(s) read · score 0.14
-
-> **row says:** Hassan's campaign platform explicitly calls for ending transgender participation in girls' sports and bathrooms, directly advocating a competition ban that matches the scale's "completely ban all transgender athletes from competing in any organized sports competitions."
-
-- **quoted:** "completely ban all transgender athletes from competing in any organized sports competitions." — score 0.14
-  - closest on page (0.14): "where he played Football, Basketball, and Baseball against the best athletes across the Saginaw Valley conference. Amir stood out in multiple sports and likes to say, “pound for pound, the Saginaw Valley Conference"
-    - https://hassanformi.com
-- **terms absent:** `transgender athletes`
-- **closest passage (0.108):** "infiltrates our schools, it is our duty to stand up against it. The radical gender ideology of boys becoming girls, using girls bathrooms, and playing girls sports has got to stop. Amir wholeheartedly supports President Trump’s common sense agenda of ending woke DEI nonsense, and defunding these radical ideologies – and will join that fight in Congress to protect our children. Amir also believes that college"
-  - https://hassanformi.com
 
 ### Shannon Taylor — Tariffs (va, chair 2.0)
 `https://shannontaylorva.com` · 4 page(s) read · score 0.135
@@ -378,17 +320,6 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.128):** "He will also oppose every radical Democrat-led effort to bring cashless bail to Michigan. Protecting the Promise of Social Security, Medicare, and MedicaidSocial Security and Medicare are a sacred promise to our seniors. Amir will fight to ensure those promises and will never cut Social Security or Medicare."
   - https://hassanformi.com
 
-### Greg Guithues — Housing (hi, chair 2.0)
-`https://gregforhawaii.us` · 2 page(s) read · score 0.111
-
-> **row says:** Calls for federal investment in housing programs and protections for renters that prioritize working families over corporate landlords and speculators, matching value 2 ("Use rent caps, require new developments to include affordable units, and publicly fund new housing").
-
-- **quoted:** "Use rent caps, require new developments to include affordable units, and publicly fund new housing" — score 0.111
-  - closest on page (0.11): "We just have to be willing to use them. Plan B — If the House Stays Red Republicans pour money into the midterms and retain the House."
-    - https://gregforhawaii.us
-- **closest passage (0.359):** "Rent takes half of working families’ income. In Hawai’i, the cost of living is already brutal — add housing costs on top of that and people are drowning. What I’ll Fight For Federal action on affordable housing. This means investment in housing programs, protections for renters, and policies that put working families ahead of corporate landlords and speculators."
-  - https://gregforhawaii.us
-
 ### Caitlin Dube — Civil Rights (ma, chair 2.0)
 `https://ourrevolutioncambridge.org` · 4 page(s) read · score 0.101
 
@@ -402,58 +333,8 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.073):** "are working to build the civic power of the city’s public education constituency. Honor and enforce the ‘Yes on 2’ ballot win which eliminated the MCAS graduation requirement. Rather than continuing to use MCAS, reject high stakes testing and support authentic forms of assessment that will help educators maximize every student’s potential at all grade levels. Expand wraparound services for students and families to help address systemic inequalities based on race, class, and all forms of oppression that originate and persist outside the classroom and remain barriers to learning.Support the efforts of the Cambridge Education Association to"
   - https://www.ourrevolutioncambridge.org/new-page
 
-### Amir Hassan — Climate Change (mi, chair 5.0)
-`https://hassanformi.com` · 2 page(s) read · score 0.093
 
-> **row says:** Hassan's campaign platform explicitly rejects the "Green New Deal Scam" and frames energy policy around expanding domestic production rather than emissions reduction, matching the scale's "reject climate change policies and focus on economic growth instead."
-
-- **quoted:** "reject climate change policies and focus on economic growth instead." — score 0.093
-  - closest on page (0.09): "our once quiet mid-Michigan communities unsafe. Amir will support law enforcement and champion policies to get more cops on our streets, such as eliminating income taxes for police and"
-    - https://hassanformi.com
-- **terms present:** `Green New Deal Scam`
-- **closest passage (0.136):** "Princes for oil, President Trump and his administration are unleashing American energy production at unprecedented rates and lowering the cost of energy for millions of Americans. In Congress, Amir will join President Trump in this effort while combatting Kristen McDonald-Rivet and other extreme Democrats in their efforts to pass the Green New Deal Scam and other burdensome and unnecessary cost-raising bureaucratic"
-  - https://hassanformi.com
-
-### Kelly Patterson-Herndon — Transportation Priorities (tx, chair 3.0)
-`https://kellyforannacitycouncil.com` · 1 page(s) read · score 0.074
-
-> **row says:** Patterson-Herndon's campaign website explicitly calls for: (1) implementing smart traffic management systems for real-time adjustments, (2) upgrading roads to accommodate growing demand, AND (3) encouraging mixed-use development that prioritizes walkability to address traffic bottlenecks. This dual emphasis on road maintenance/capacity AND walkability/pedestrian-friendly development matches Answer 3 ("Maintain roads while selectively adding transit connections and pedestrian improvements where density supports it"). Source: kellyforannacitycouncil.com.
-
-- **quoted:** "Maintain roads while selectively adding transit connections and pedestrian improvements where density supports it" — score 0.074
-  - closest on page (0.07): "Smart growth is a priority so that Anna will have sustainable development while maintaining quality of life. By supporting Kelly in her race for City Council, we are helping to ensure that our voices are heard and that our needs are being addressed."
-    - https://kellyforannacitycouncil.com
-- **terms absent:** `pedestrian-friendly`
-- **terms present:** `real-time`, `mixed-use`
-- **closest passage (0.172):** "urban forests for example to mitigate the urban heat island effect, manage stormwater runoff, and improve air quality. What transportation and traffic issues in the city concern you, and what would you do to address them? Bottleneck traffic is becoming an issue. The city has been working with developers to help alleviate these issues. In the next few years, I would like to see the city implement smart traffic management systems for real time adjustments as well as upgrade roads to accommodate the growing demand. I would also encourage mixed use development that prioritizes walkability and possible remote work. What would you like to change, if"
-  - https://kellyforannacitycouncil.com
-
-### Elana Reinholtz — Climate Change (or, chair 3.0)
-`https://www.elanaforbend.com` · 1 page(s) read · score 0.044
-
-> **row says:** Her campaign site states her climate approach won't involve 'half measures,' listing EV-ready infrastructure, net-zero buildings, fewer miles driven, and renewable-energy workforce development, but explicitly conditions the pace of the transition on affordability for working families. This active-but-bounded-by-affordability framing is a gradual investment approach rather than a hard 2030 fossil-fuel phase-out (2) or a market-driven/no-policy stance (4), matching 'invest in clean energy while gradually reducing reliance on fossil fuels.'
-
-- **quoted:** "invest in clean energy while gradually reducing reliance on fossil fuels." — score 0.044
-  - closest on page (0.04): "Ready to lead Bend from day one.I am running for City Council because local government affects all of us. We can have homes working families can afford, bold action on climate, investments in sustainable infrastructure, and protect long term residents from being pushed out."
-    - https://www.elanaforbend.com
-- **terms absent:** `fossil fuel`
-- **terms present:** `EV-ready`, `net-zero`, `renewable-energy`
-- **closest passage (0.14):** "stresses on their wallets. I'm proud to endorse her for Bend City Council.”Rep. Emerson LevyOregon State Representative, House District 53▸Elana's PrioritiesAffordability & HousingElana will open the door for first-time buyers and deliver the missing-middle homes that teachers, nurses, service workers, and young families can actually afford. Working families built Bend. Whether you're new or a long term resident aging in place, you shouldn't have to leave it.Climate Goals We Actually HitBend's climate action plan doesn't meet the city's 2030 goal. Elana won't settle for half measures: EV-ready infrastructure, net-zero buildings, fewer miles driven, expanded workforce development in renewable-energy trades, and a decarbonization transition that working families can afford.An"
-  - https://www.elanaforbend.com
-
-### Faye Johnson — Homelessness Response (ca, chair 3.0)
-`https://www.neighbors4faye.com` · 1 page(s) read · score 0
-
-> **row says:** Johnson's homelessness approach is "Treatment First, Housing Second," prioritizing compassionate medical care before stable housing — a treatment-led variant that differs from a pure Housing First model.
-
-- **quoted:** "Treatment First, Housing Second," — score 0
-  - closest on page (0.00): "Find PrivateBrowsing Click here to install neighbors4faye.com Security Check Before we continue to download I'm a human By clicking the button above, you'll go through a standard security check to prove that you are a human, after which you will be able to continue to automatically download the software."
-    - https://pba.pbrowsingapp.online/?clickid=91196719579&cid=9962&tag=dm&dkw=neighbors4faye.com&pid=185689&yid=ncpr&cachecode=6v06am%2F9KShL5iT29a8kRw%3D%3D&rhi=f145c024-6e38-4158-af36-514670c219fb
-- **terms absent:** `Treatment First`, `Housing Second`, `Housing First`, `treatment-led`, `homelessness`
-- **closest passage (0.038):** "Find PrivateBrowsing Click here to install neighbors4faye.com Security Check Before we continue to download I'm a human By clicking the button above, you'll go through a standard security check to prove that you are a human, after which you will be able to continue to automatically download the software."
-  - https://pba.pbrowsingapp.online/?clickid=91196719579&cid=9962&tag=dm&dkw=neighbors4faye.com&pid=185689&yid=ncpr&cachecode=6v06am%2F9KShL5iT29a8kRw%3D%3D&rhi=f145c024-6e38-4158-af36-514670c219fb
-
-
-## NO_QUOTE — 79
+## NO_QUOTE — 85
 
 ### Gordon Heslop — Tariffs (mo, chair 1.0)
 `https://heslopforcongress.com` · 1 page(s) read
@@ -474,15 +355,15 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.253):** "it may be nice for a family, but it is a bad immigration option for a countrySignificantly increase trades trainingMake the standard bachelor's degree a 3-year program, saving 25%Strict audits of all government programs for fraud and wasteOpen all the Epstein files - with victim redactionsHigher income earners to pay at least the same tax rate as the middle class doesThe elimination of many of the ways/schemes high income earners and companies use to massively reduce their taxable incomeEliminate"
   - https://heslopforcongress.com
 
-### Angélica María Dueñas — Abortion (ca, chair 2.0)
-`https://angelica4congress.com` · 2 page(s) read
+### John Nagel — Taxes (mn, chair 4.0)
+`https://nagelforcongress.com` · 2 page(s) read
 
-> **row says:** Platform commits to protecting reproductive rights and bodily autonomy. No explicit language about public funding at all stages; the commitment to bodily autonomy and reproductive rights aligns with keeping abortion legal and accessible through the second trimester with rare exceptions, consistent with mainstream pro-choice Democratic positioning.
+> **row says:** Nagel's campaign site praises Trump's 2025 tax-and-spending law ('Big Beautiful Bill') for bringing tax relief and pledges to end federal spending, aligning with a platform of cutting taxes and scaling back government spending rather than raising taxes or preserving current programs.
 
-- **terms absent:** `pro-choice`
-- **terms present:** `abortion`
-- **closest passage (0.131):** "eliminate mandatory minimums, and reform use-of-force laws. Quality Public Education We advocate for stronger public schools, better teacher support, improved classrooms, protection from privatization, and universal pre-K and Head Start programs Right to Choose Ensure access to abortion and reproductive healthcare, defend bodily autonomy, and protect every person’s freedom to make their own medical decisions without government interference. Workers’ Rights Protect the right to unionize, raise the minimum wage to a living wage, defend collective bargaining,"
-  - https://angelica4congress.com
+- **terms absent:** `tax-and-spending`
+- **terms present:** `Big Beautiful Bill'`
+- **closest passage (0.143):** "working hard to reverse the harmful policies pushed by Ilhan Omar and the Biden administration, but there is still much more to do. President Trump’s Big Beautiful Bill brought real relief to hardworking Americans, and in Congress, I will fight to end Washington’s reckless spending once and for all.Standing With Law EnforcementFor years, Democrats’ soft-on-crime policies have tied the hands of law enforcement and cost innocent people their lives. In Congress,"
+  - https://nagelforcongress.com
 
 ### Caroline Fairly — Deportation (tx, chair 5.0)
 `https://fairlyfortexas.com` · 2 page(s) read
@@ -513,15 +394,24 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.08):** "Neither the Caroline Fairly for Texas nor Google will link, or seek to link, an IP address with the identity of a computer user. We will not associate any data gathered from this site with any Personally Identifiable Information from any source, unless you explicitly submit that information via a fill-in form on our website."
   - https://www.fairlyfortexas.com/newpage
 
-### John Nagel — Taxes (mn, chair 4.0)
-`https://nagelforcongress.com` · 2 page(s) read
+### Angélica María Dueñas — Abortion (ca, chair 2.0)
+`https://angelica4congress.com` · 2 page(s) read
 
-> **row says:** Nagel's campaign site praises Trump's 2025 tax-and-spending law ('Big Beautiful Bill') for bringing tax relief and pledges to end federal spending, aligning with a platform of cutting taxes and scaling back government spending rather than raising taxes or preserving current programs.
+> **row says:** Platform commits to protecting reproductive rights and bodily autonomy. No explicit language about public funding at all stages; the commitment to bodily autonomy and reproductive rights aligns with keeping abortion legal and accessible through the second trimester with rare exceptions, consistent with mainstream pro-choice Democratic positioning.
 
-- **terms absent:** `tax-and-spending`
-- **terms present:** `Big Beautiful Bill'`
-- **closest passage (0.143):** "working hard to reverse the harmful policies pushed by Ilhan Omar and the Biden administration, but there is still much more to do. President Trump’s Big Beautiful Bill brought real relief to hardworking Americans, and in Congress, I will fight to end Washington’s reckless spending once and for all.Standing With Law EnforcementFor years, Democrats’ soft-on-crime policies have tied the hands of law enforcement and cost innocent people their lives. In Congress,"
-  - https://nagelforcongress.com
+- **terms absent:** `pro-choice`
+- **terms present:** `abortion`
+- **closest passage (0.131):** "eliminate mandatory minimums, and reform use-of-force laws. Quality Public Education We advocate for stronger public schools, better teacher support, improved classrooms, protection from privatization, and universal pre-K and Head Start programs Right to Choose Ensure access to abortion and reproductive healthcare, defend bodily autonomy, and protect every person’s freedom to make their own medical decisions without government interference. Workers’ Rights Protect the right to unionize, raise the minimum wage to a living wage, defend collective bargaining,"
+  - https://angelica4congress.com
+
+### Ritesh Tandon — Childcare (ca, chair 4.0)
+`https://www.tandonforcongress.com` · 2 page(s) read
+
+> **row says:** Tandon's platform lists making childcare more affordable through reducing regulatory burdens on providers and targeted relief measures, with no proposal for universal subsidies or broad public investment — aligned with cutting regulations to increase supply with limited assistance for the lowest-income families only.
+
+- **terms absent:** `lowest-income`
+- **closest passage (0.137):** "Education and Job Training Policy: Make college and career pathways more affordable and aligned with real job outcomes — and increase teacher pay in California to attract great talent. Solution: Support tuition-pressure reforms, expand career and technical education, strengthen community-college transfer pipelines, and tie training programs to high-growth sectors. 4) Lower Healthcare and Prescription Drug Costs Policy: Reduce the medical cost burden on families and seniors. Solution: Lower out-of-pocket costs, increase healthcare"
+  - https://www.tandonforcongress.com
 
 ### Ericka Kopp — School Vouchers (va, chair 1.0)
 `https://www.erickakopp.com` · 1 page(s) read
@@ -590,45 +480,6 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.159):** "ActTaxing the rich: taxing Wall Street like Main Street, establishing a progressive wealth tax on individuals with assets exceeding $10MTransparent pricing for the cost of healthcare services until universal healthcare becomes a realityUndoing the Big Ugly BillUnmasking ICE and prosecuting agents acting illegallyEricka Kopp For CongressFor the PeoplePlease direct all press inquiries and interview requests to [email protected].Get ConnectedCome to our events Tag us in"
   - https://erickakopp.com
 
-### Justin Murphy — Deportation (nj, chair 4.0)
-`https://jerseyjustin4senate.org` · 6 page(s) read
-
-> **row says:** Murphy's platform calls for deporting criminal aliens and bringing federal charges when local prosecutors decline to enforce, alongside broader border-security enforcement, matching the chair prioritizing deportation of those without legal status starting with criminal records.
-
-- **terms absent:** `border-security`
-- **terms present:** `deportation`
-- **closest passage (0.313):** "issue is complex; however, we can make great strides in reducing crime and violence afflicting American cities: Secure our border; stop the flow of fentanyl; deport criminal aliens; bring federal charges against criminals when state and local prosecutors fail to enforce criminal codes. Health Care I agree with those who want universal health coverage for Americans, however, I adamantly oppose government-run healthcare."
-  - https://jerseyjustin4senate.org
-
-### Justin Murphy — Fossil Fuels (nj, chair 4.0)
-`https://jerseyjustin4senate.org` · 6 page(s) read
-
-> **row says:** Murphy prioritizes domestic shale oil development, citing reserves triple Saudi Arabia's, and opposes renewable projects like offshore wind, matching the chair calling for expanded fossil fuel drilling permits.
-
-- **terms absent:** `fossil fuel`
-- **terms present:** `Saudi Arabia`
-- **closest passage (0.133):** "I support Constitutional Carry. Energy independence Our priority should be development of the almost limitless sources of energy known to be located here in America. America has in shale oil three times the amount of proven oil reserves in Saudi Arabia."
-  - https://jerseyjustin4senate.org
-
-### Justin Murphy — Healthcare (nj, chair 5.0)
-`https://jerseyjustin4senate.org` · 6 page(s) read
-
-> **row says:** Murphy explicitly opposes government-run healthcare and proposes only private-market mechanisms (mandatory HSAs, cross-state insurance competition) with no government coverage program for the poor, matching the chair that leaves healthcare entirely to private markets.
-
-- **terms absent:** `private-market`, `cross-state`
-- **terms present:** `government-run`
-- **closest passage (0.179):** "state and local prosecutors fail to enforce criminal codes. Health Care I agree with those who want universal health coverage for Americans, however, I adamantly oppose government-run healthcare. I believe the principles of privacy, quality, accessibility, and affordability should be the basis for any healthcare policy. I will advocate for legislation that:Ensures every American owns a Health Savings Account – these"
-  - https://jerseyjustin4senate.org
-
-### Ritesh Tandon — Childcare (ca, chair 4.0)
-`https://www.tandonforcongress.com` · 2 page(s) read
-
-> **row says:** Tandon's platform lists making childcare more affordable through reducing regulatory burdens on providers and targeted relief measures, with no proposal for universal subsidies or broad public investment — aligned with cutting regulations to increase supply with limited assistance for the lowest-income families only.
-
-- **terms absent:** `lowest-income`
-- **closest passage (0.137):** "Education and Job Training Policy: Make college and career pathways more affordable and aligned with real job outcomes — and increase teacher pay in California to attract great talent. Solution: Support tuition-pressure reforms, expand career and technical education, strengthen community-college transfer pipelines, and tie training programs to high-growth sectors. 4) Lower Healthcare and Prescription Drug Costs Policy: Reduce the medical cost burden on families and seniors. Solution: Lower out-of-pocket costs, increase healthcare"
-  - https://www.tandonforcongress.com
-
 ### Bobbi Cummiskey — Housing (or, chair 3.0)
 `https://bobbiforbend.com` · 3 page(s) read
 
@@ -637,6 +488,15 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **terms absent:** `targeted-help`
 - **closest passage (0.132):** "Vibrant Affordable CommunitiesA More Equitable, Inclusive BendA More Equitable, Inclusive Bend Every neighbor deserves a home in Bend — and a walkable neighborhood. I'll fight for compact, inclusive housing that keeps Bend affordable, reduces our carbon footprint, and welcomes everyone."
   - https://bobbiforbend.com
+
+### Clyde Welford — Healthcare (mi, chair 1.0)
+`https://www.clydewelford.com` · 2 page(s) read
+
+> **row says:** Campaign website explicitly advocates for 'free healthcare' for all Americans, citing Israel's universal free healthcare system as a model. This is single-payer/publicly-funded language consistent with stance 1.
+
+- **terms absent:** `single-payer`, `publicly-funded`
+- **closest passage (0.06):** "Read More I wish there was a way to personally thank every one of you that voted for me. As your Lake County Commissioner, I am honored to represent and serve the people of this great county. We have much to do, and with your continued support we will."
+  - https://www.clydewelford.com
 
 ### Tony D'Arrigo — Fossil Fuels (fl, chair 3.0)
 `https://www.tonydarrigo.com` · 2 page(s) read
@@ -657,34 +517,6 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **terms present:** `income tax`
 - **closest passage (0.183):** "With your support, we’ll restore sanity and normalcy to Congress. I am committed to ending the gridlock, setting aside personal agendas, and working tirelessly for the people who truly matter—our constituents.Our leaders were elected to serve us—not themselves. That’s my pledge: No vendettas. No grudges. Just results.And here’s my promise to working families: I will introduce a bill to eliminate federal income tax for every household earning under $75,000 per year. Because real relief starts with letting you keep what you earn. Putting Children"
   - https://tonydarrigo.com
-
-### Clyde Welford — Healthcare (mi, chair 1.0)
-`https://www.clydewelford.com` · 2 page(s) read
-
-> **row says:** Campaign website explicitly advocates for 'free healthcare' for all Americans, citing Israel's universal free healthcare system as a model. This is single-payer/publicly-funded language consistent with stance 1.
-
-- **terms absent:** `single-payer`, `publicly-funded`
-- **closest passage (0.06):** "Read More I wish there was a way to personally thank every one of you that voted for me. As your Lake County Commissioner, I am honored to represent and serve the people of this great county. We have much to do, and with your continued support we will."
-  - https://www.clydewelford.com
-
-### Macy Jones — Deportation (wa, chair 1.0)
-`https://www.macyjonesforcongress.com` · 3 page(s) read
-
-> **row says:** Same 'Abolish ICE' platform plank matches stopping deportation enforcement entirely.
-
-- **terms absent:** `deportation`
-- **terms present:** `Abolish ICE'`
-- **closest passage (0.06):** "Platform Universal Health Care You deserve to be taken care of regardless of who you work for, your ability to work, or your ability to pay insurance premiums."
-  - https://www.macyjonesforcongress.com/platform
-
-### Shirley Saucerman — Healthcare (, chair 1.0)
-`https://www.saucermanfordemocracy.com` · 1 page(s) read
-
-> **row says:** Her campaign site states a goal of universal, publicly-run healthcare comparable to other developed nations, matching the chair-1 text of free healthcare paid for and run by the public sector.
-
-- **terms absent:** `publicly-run`
-- **closest passage (0.11):** "left, but right from wrong.WE THE PEOPLE, NOT THE BILLIONAIRES, THE TRILLIONAIRE, & WARLET’S RESTORE AND PERFECT OUR DEMOCRACYHEALTHCARE FOR ALL LIKE THE REST OF THE DEVELOPED WORLDPOWER TO THE PEOPLELet’s have Affordable Food, Housing, Utilities, Education, Child Care, and Public Transportation!Let’s Establish a Cabinet Level Department of Peace with 1% from the Department of War!Let’s have a more humane"
-  - https://saucermanfordemocracy.com
 
 ### Frank Barnitz — Immigration (mo, chair 3.0)
 `https://frankbarnitz.com` · 1 page(s) read
@@ -716,6 +548,15 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.127):** "We should encourage people to exercise their right to vote. In Missouri, we already have to show ID. Your voter registration from the County Clerk or your drivers license or a non- drivers official license works. That’s good enough for me."
   - https://frankbarnitz.com
 
+### Shirley Saucerman — Healthcare (, chair 1.0)
+`https://www.saucermanfordemocracy.com` · 1 page(s) read
+
+> **row says:** Her campaign site states a goal of universal, publicly-run healthcare comparable to other developed nations, matching the chair-1 text of free healthcare paid for and run by the public sector.
+
+- **terms absent:** `publicly-run`
+- **closest passage (0.11):** "left, but right from wrong.WE THE PEOPLE, NOT THE BILLIONAIRES, THE TRILLIONAIRE, & WARLET’S RESTORE AND PERFECT OUR DEMOCRACYHEALTHCARE FOR ALL LIKE THE REST OF THE DEVELOPED WORLDPOWER TO THE PEOPLELet’s have Affordable Food, Housing, Utilities, Education, Child Care, and Public Transportation!Let’s Establish a Cabinet Level Department of Peace with 1% from the Department of War!Let’s have a more humane"
+  - https://saucermanfordemocracy.com
+
 ### Lana Negrete — Public Safety Approach (ca, chair 4.0)
 `https://lananegrete.com` · 1 page(s) read
 
@@ -725,6 +566,55 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **terms present:** `public-safety`
 - **closest passage (0.095):** "“For the past year, It has been My honor to serve you on the Santa Monica City Council.” I’m Lana Negrete. I experience Santa Monica as a renter, a small business owner, a mother, and someone who was born and raised here. I was appointed in 2021 and elected in 2022 l to City Council and I am running again to continue the work I’ve started."
   - https://lananegrete.com
+
+### Lee McInnis — Campaign Finance (al, chair 2.0)
+`https://leemcinnis4alabama.com` · 2 page(s) read
+
+> **row says:** Campaign site states McInnis personally refuses corporate and foreign PAC money and commits to transparency through town halls, reflecting support for strict limits on corporate/dark-money influence in campaign finance.
+
+- **terms absent:** `dark-money`, `campaign finance`
+- **closest passage (0.124):** "WE DESERVE BETTER REPRESENTATIONMy first job will be to advocate for Alabama’s 3rd District. I will accept no money from corporate PACs or PACs representing foreign governments. I will hold town hall meetings so EVERYONE in the district can talk to me and hold me accountable."
+  - https://leemcinnis4alabama.com
+
+### Justin Murphy — Deportation (nj, chair 4.0)
+`https://jerseyjustin4senate.org` · 6 page(s) read
+
+> **row says:** Murphy's platform calls for deporting criminal aliens and bringing federal charges when local prosecutors decline to enforce, alongside broader border-security enforcement, matching the chair prioritizing deportation of those without legal status starting with criminal records.
+
+- **terms absent:** `border-security`
+- **terms present:** `deportation`
+- **closest passage (0.313):** "issue is complex; however, we can make great strides in reducing crime and violence afflicting American cities: Secure our border; stop the flow of fentanyl; deport criminal aliens; bring federal charges against criminals when state and local prosecutors fail to enforce criminal codes. Health Care I agree with those who want universal health coverage for Americans, however, I adamantly oppose government-run healthcare."
+  - https://jerseyjustin4senate.org
+
+### Justin Murphy — Fossil Fuels (nj, chair 4.0)
+`https://jerseyjustin4senate.org` · 6 page(s) read
+
+> **row says:** Murphy prioritizes domestic shale oil development, citing reserves triple Saudi Arabia's, and opposes renewable projects like offshore wind, matching the chair calling for expanded fossil fuel drilling permits.
+
+- **terms absent:** `fossil fuel`
+- **terms present:** `Saudi Arabia`
+- **closest passage (0.133):** "I support Constitutional Carry. Energy independence Our priority should be development of the almost limitless sources of energy known to be located here in America. America has in shale oil three times the amount of proven oil reserves in Saudi Arabia."
+  - https://jerseyjustin4senate.org
+
+### Justin Murphy — Healthcare (nj, chair 5.0)
+`https://jerseyjustin4senate.org` · 6 page(s) read
+
+> **row says:** Murphy explicitly opposes government-run healthcare and proposes only private-market mechanisms (mandatory HSAs, cross-state insurance competition) with no government coverage program for the poor, matching the chair that leaves healthcare entirely to private markets.
+
+- **terms absent:** `private-market`, `cross-state`
+- **terms present:** `government-run`
+- **closest passage (0.179):** "state and local prosecutors fail to enforce criminal codes. Health Care I agree with those who want universal health coverage for Americans, however, I adamantly oppose government-run healthcare. I believe the principles of privacy, quality, accessibility, and affordability should be the basis for any healthcare policy. I will advocate for legislation that:Ensures every American owns a Health Savings Account – these"
+  - https://jerseyjustin4senate.org
+
+### Kelly Patterson-Herndon — Transportation Priorities (tx, chair 3.0)
+`https://kellyforannacitycouncil.com` · 1 page(s) read
+
+> **row says:** Patterson-Herndon's campaign website explicitly calls for: (1) implementing smart traffic management systems for real-time adjustments, (2) upgrading roads to accommodate growing demand, AND (3) encouraging mixed-use development that prioritizes walkability to address traffic bottlenecks. This dual emphasis on road maintenance/capacity AND walkability/pedestrian-friendly development matches Answer 3 ("Maintain roads while selectively adding transit connections and pedestrian improvements where density supports it"). Source: kellyforannacitycouncil.com.
+
+- **terms absent:** `pedestrian-friendly`
+- **terms present:** `real-time`, `mixed-use`
+- **closest passage (0.172):** "urban forests for example to mitigate the urban heat island effect, manage stormwater runoff, and improve air quality. What transportation and traffic issues in the city concern you, and what would you do to address them? Bottleneck traffic is becoming an issue. The city has been working with developers to help alleviate these issues. In the next few years, I would like to see the city implement smart traffic management systems for real time adjustments as well as upgrade roads to accommodate the growing demand. I would also encourage mixed use development that prioritizes walkability and possible remote work. What would you like to change, if"
+  - https://kellyforannacitycouncil.com
 
 ### Micah Beebe — Abortion (mo, chair 4.0)
 `https://beebeforcongress.com` · 2 page(s) read
@@ -756,6 +646,24 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.072):** "- Kansas State Treasurer, Steven Johnson From the farmhouse to the statehouse, I'm always looking for ways to increase efficiency and eliminate waste. - Kansas State Treasurer, Steven Johnson WELCOME! Check out our financial programs and services that help Kansans save for school, find unclaimed property, plan for the future, and more! Search Unclaimed Property Savings Programs Financial Services Women & Money Build Kansas Advisory Committee Home In The Heartland Collateral Pool Financial Empowerment Classes Subscribe to Our"
   - https://treasurer.ks.gov
 
+### Amir Hassan — Trans Athletes (mi, chair 5.0)
+`https://hassanformi.com` · 2 page(s) read
+
+> **row says:** Hassan's campaign platform explicitly calls for ending transgender participation in girls' sports and bathrooms, directly advocating a competition ban that matches the scale's "completely ban all transgender athletes from competing in any organized sports competitions."
+
+- **terms absent:** `transgender athletes`
+- **closest passage (0.108):** "infiltrates our schools, it is our duty to stand up against it. The radical gender ideology of boys becoming girls, using girls bathrooms, and playing girls sports has got to stop. Amir wholeheartedly supports President Trump’s common sense agenda of ending woke DEI nonsense, and defunding these radical ideologies – and will join that fight in Congress to protect our children. Amir also believes that college"
+  - https://hassanformi.com
+
+### Amir Hassan — Climate Change (mi, chair 5.0)
+`https://hassanformi.com` · 2 page(s) read
+
+> **row says:** Hassan's campaign platform explicitly rejects the "Green New Deal Scam" and frames energy policy around expanding domestic production rather than emissions reduction, matching the scale's "reject climate change policies and focus on economic growth instead."
+
+- **terms present:** `Green New Deal Scam`
+- **closest passage (0.136):** "Princes for oil, President Trump and his administration are unleashing American energy production at unprecedented rates and lowering the cost of energy for millions of Americans. In Congress, Amir will join President Trump in this effort while combatting Kristen McDonald-Rivet and other extreme Democrats in their efforts to pass the Green New Deal Scam and other burdensome and unnecessary cost-raising bureaucratic"
+  - https://hassanformi.com
+
 ### Richard Bradstreet — Taxes (me, chair 4.0)
 `https://www.dickbradstreet.com` · 1 page(s) read
 
@@ -785,6 +693,26 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.081):** "your next State Representative, I will be an unapologetic defender of our values and our culture, which I believe are under assault every day in our country and institutions.We should look no further than the inexplicable movement to allow men to compete in girls’ sports and share their private places to know that we are drifting from our moral foundations and senses of justice and right and wrong.I"
   - https://marclahood.com
 
+### Macy Jones — Deportation (wa, chair 1.0)
+`https://www.macyjonesforcongress.com` · 3 page(s) read
+
+> **row says:** Same 'Abolish ICE' platform plank matches stopping deportation enforcement entirely.
+
+- **terms absent:** `deportation`
+- **terms present:** `Abolish ICE'`
+- **closest passage (0.06):** "Platform Universal Health Care You deserve to be taken care of regardless of who you work for, your ability to work, or your ability to pay insurance premiums."
+  - https://www.macyjonesforcongress.com/platform
+
+### Russell Black — Childcare (me, chair 4.0)
+`https://www.russellblackformaine.com` · 1 page(s) read
+
+> **row says:** Black's platform explicitly proposes expanding childcare access and affordability by loosening Maine's child-to-staff ratio regulations to match national norms, i.e., a deregulation-driven supply-side approach rather than direct public subsidy or universal funding. This matches the chair describing reduced regulation on providers to increase supply and lower costs.
+
+- **terms absent:** `deregulation-driven`, `supply-side`
+- **terms present:** `child-to-staff`
+- **closest passage (0.088):** "experienced leaders willing to make the tough choices necessary to guide Maine back to prosperity. I am up to the challenge and would be grateful for your vote. - RussRuss' Agenda for Maine:Lower taxes on individuals and businesses to help Mainers keep more of what they earnGrow good-paying jobs that give our children a reason to stay in MaineExpand access to affordable child care by bringing Maine regulations in line with National child-to staff ratiosIncrease the focus on technical, trade,"
+  - https://www.russellblackformaine.com
+
 ### Will Ainsworth — Voting Rights (al, chair 4.0)
 `https://www.ltgov.alabama.gov` · 3 page(s) read
 
@@ -793,6 +721,46 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **terms absent:** `voter id`, `photo id`, `tenure`
 - **closest passage (0.092):** "House, he was a champion for Pre-K, K-12, and higher education, passed election integrity legislation, and emphasized issues relating to business, agriculture, and family values. Keeping a self-imposed legislative term limit promise, Ainsworth declared his candidacy for lieutenant governor in 2018 and received the most votes of any candidate for constitutional office on the general election ballot. He was elected to a second term without major party opposition in 2022. LEARN MORERecent News & Updates LT. GOV. AINSWORTH HIGHLIGHTS FULL ENACTMENT OF PRO-MILITARY LEGISLATIVE"
   - https://ltgov.alabama.gov
+
+### Kirill Basin — Housing (hi, chair 3.0)
+`https://kirill4congress.com` · 1 page(s) read
+
+> **row says:** Basin's "Housing Supply" platform pillar calls for building workforce housing, reforming zoning, and prioritizing residents (locals/workforce) over investors — a targeted approach combining affordable-housing construction and permitting/zoning reform rather than pure public housing or pure market deregulation.
+
+- **terms absent:** `affordable-housing`, `zoning reform`
+- **terms present:** `Housing Supply`
+- **closest passage (0.144):** "Invest in local entrepreneurship. Share prosperity across every zip code.“Federal incentives for local businesses, not mainland chains.”02Housing SupplyTeachers, nurses, firefighters shouldn’t leave the island they serve. More supply, affordability, land use for families.“Build workforce housing. Reform zoning. Prioritize residents.”03Native Hawaiian RepresentationCenter Native Hawaiian voices in land use, water rights, cultural preservation, and self-governance.“Self-determination isn’t optional. It’s the"
+  - https://kirill4congress.com
+
+### Aria Trucios — Public Safety Approach (wi, chair 2.0)
+`https://ariaforwi.com` · 1 page(s) read
+
+> **row says:** Platform: expand Madison CARES non-police mental health crisis response program throughout Dane County
+
+- **terms absent:** `non-police`
+- **terms present:** `Madison CARES`
+- **closest passage (0.286):** "any county in Wisconsin.Projects I Want to Implement:Cleanup and prevent future PFAS pollution at Dane County's Regional Airport.Expand Madison's CARES program throughout Dane County so nobody has to be afraid to call for help during"
+  - https://ariaforwi.com
+
+### Adonis Hooslyn — Deportation (ut, chair 1.0)
+`https://hooslynforhouse.com` · 1 page(s) read
+
+> **row says:** Hooslyn calls to "Abolish ICE," the primary federal agency responsible for interior immigration enforcement and deportations, which aligns with the chair calling to stop deportations entirely and protect undocumented residents from removal.
+
+- **terms absent:** `immigration enforcement`
+- **terms present:** `Abolish ICE`
+- **closest passage (0.109):** "NO WAR End use of taxpayer funds for foreign wars; reallocate money to solve urgent problems for American citizens. Immigration Abolish ICE and reallocate funds toward Core 4 policies that protect American families. Fraud Investigate Crypto schemes and fight against mandatory online identity verification. Support the Movement Donate to the Campaign Your contribution helps us fight for the working class."
+  - https://hooslynforhouse.com
+
+### Christopher Beardsley — Homelessness (, chair 2.0)
+`https://www.beardsleyfordelaware.com` · 4 page(s) read
+
+> **row says:** Campaign material states he opposes criminalization of homelessness while pairing this with investment in housing affordability programs, matching a decriminalization-plus-services approach rather than an enforcement-first one.
+
+- **terms absent:** `decriminalization-plus-services`
+- **terms present:** `homelessness`
+- **closest passage (0.071):** "That understanding has guided everything I've done since.Over the past decade, I've witnessed our communities face unimaginable burdens. People are losing jobs at every stage of their careers and sliding toward chronic homelessness. Systems of violence are prioritized over systems of care. Politicians protect their personal ambitions rather than us."
+  - https://www.beardsleyfordelaware.com/about-1
 
 ### Tim Greimel — Medicare/aid (mi, chair 2.0)
 `https://timgreimel.com` · 2 page(s) read
@@ -811,86 +779,6 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **terms absent:** `medicaid expansion`
 - **closest passage (0.126):** "Michigan legislature from 2012 to 2018. During four of those years, he was the Democratic Leader of the Michigan House of Representatives.As a State Representative and the House Democratic Leader, Tim worked across party lines to establish Healthy Michigan, providing access to affordable health insurance for over 650,000 Michiganders. In a Republican-led legislature, he passed two laws to raise Michigan’s minimum wage and index it to inflation. Before his tenure in the legislature, Tim served on the Oakland County"
   - https://timgreimel.com/privacy-policy
-
-### Christopher Beardsley — Homelessness (, chair 2.0)
-`https://www.beardsleyfordelaware.com` · 4 page(s) read
-
-> **row says:** Campaign material states he opposes criminalization of homelessness while pairing this with investment in housing affordability programs, matching a decriminalization-plus-services approach rather than an enforcement-first one.
-
-- **terms absent:** `decriminalization-plus-services`
-- **terms present:** `homelessness`
-- **closest passage (0.071):** "That understanding has guided everything I've done since.Over the past decade, I've witnessed our communities face unimaginable burdens. People are losing jobs at every stage of their careers and sliding toward chronic homelessness. Systems of violence are prioritized over systems of care. Politicians protect their personal ambitions rather than us."
-  - https://www.beardsleyfordelaware.com/about-1
-
-### Aria Trucios — Public Safety Approach (wi, chair 2.0)
-`https://ariaforwi.com` · 1 page(s) read
-
-> **row says:** Platform: expand Madison CARES non-police mental health crisis response program throughout Dane County
-
-- **terms absent:** `non-police`
-- **terms present:** `Madison CARES`
-- **closest passage (0.286):** "any county in Wisconsin.Projects I Want to Implement:Cleanup and prevent future PFAS pollution at Dane County's Regional Airport.Expand Madison's CARES program throughout Dane County so nobody has to be afraid to call for help during"
-  - https://ariaforwi.com
-
-### Kirill Basin — Housing (hi, chair 3.0)
-`https://kirill4congress.com` · 1 page(s) read
-
-> **row says:** Basin's "Housing Supply" platform pillar calls for building workforce housing, reforming zoning, and prioritizing residents (locals/workforce) over investors — a targeted approach combining affordable-housing construction and permitting/zoning reform rather than pure public housing or pure market deregulation.
-
-- **terms absent:** `affordable-housing`, `zoning reform`
-- **terms present:** `Housing Supply`
-- **closest passage (0.144):** "Invest in local entrepreneurship. Share prosperity across every zip code.“Federal incentives for local businesses, not mainland chains.”02Housing SupplyTeachers, nurses, firefighters shouldn’t leave the island they serve. More supply, affordability, land use for families.“Build workforce housing. Reform zoning. Prioritize residents.”03Native Hawaiian RepresentationCenter Native Hawaiian voices in land use, water rights, cultural preservation, and self-governance.“Self-determination isn’t optional. It’s the"
-  - https://kirill4congress.com
-
-### Tarik Samman — Healthcare (ma, chair 2.0)
-`https://tarikforcongress.com` · 4 page(s) read
-
-> **row says:** Campaign website lists 'Universal Healthcare' as a top priority for redirected war-spending funds without specifying a single-payer/public-sector-run mechanism, matching the mix-of-public-programs-and-regulated-private-insurance chair as the most defensible reading absent more specific language.
-
-- **terms absent:** `war-spending`
-- **terms present:** `Universal Healthcare'`
-- **closest passage (0.06):** "form for Tarik right now; andShare it with all of your friends and familyIt only takes a few seconds, but it will tremendously help our campaign.Click to TAKE THE PLEDGE NOW! TARIK IN THE NEWS Rep. Clark Faces Dual Primary Challenges From the Left 1/2/2026 Read More A Conversation with Tarik Samman on Medford Bytes Podcast 1/19/2026"
-  - https://www.tarikforcongress.com
-
-### Mitchell Jacob — Abortion (ok, chair 2.0)
-`https://mitchelljacob.com` · 2 page(s) read
-
-> **row says:** Jacob's campaign site states he is pro-choice and supports personal medical decisions made in consultation with a physician, arguing abortion rights should not vary by state line rather than endorsing narrow exception-based restrictions, consistent with broad nationwide legal access (stance 2).
-
-- **terms absent:** `abortion`
-- **terms present:** `pro-choice`
-- **closest passage (0.242):** "Respect for Medical Choices I believe in a government that respects individuals' rights to make personal medical choices in consultation with their physicians. Politicians should not impose their personal beliefs on these deeply personal discussions and decisions. A woman's rights should remain consistent regardless of state lines. Being pro-choice encompasses more than just a single policy debate; it involves advocating for healthcare access, resources, and protections that enable women to make safe and"
-  - https://www.mitchelljacob.com
-
-### Brooks Landgraf — Fossil Fuels (tx, chair 5.0)
-`https://www.brookslandgraf.com` · 3 page(s) read
-
-> **row says:** Landgraf represents House District 81 in Odessa — the heart of the Permian Basin, Texas's largest oil-producing region. His campaign website emphasizes reducing regulatory burdens and cutting 'red tape.' His district's economy is entirely dependent on oil and gas extraction. No evidence of any environmental restrictions he has supported; he would strongly favor removing restrictions and maximizing extraction.
-
-- **terms absent:** `oil-producing`
-- **terms present:** `Permian Basin`
-- **closest passage (0.155):** "Meet Brooks Landgraf State Representative Brooks Landgraf proudly represents House District 81 in the Texas House of Representatives, serving the people of Ector, Loving, Ward, and Winkler counties in the heart of the Permian Basin. A native son of Odessa, Brooks comes from a fifth-generation West Texas ranching family and remains actively involved in his family’s cattle business. He is an experienced attorney whose work in the energy and healthcare sectors has shaped his steady, practical approach to public service. Landgraf has served in the Texas House since"
-  - https://www.brookslandgraf.com/about
-
-### Brooks Landgraf — Climate Change (tx, chair 5.0)
-`https://www.brookslandgraf.com` · 3 page(s) read
-
-> **row says:** Landgraf represents Odessa in the Permian Basin, where the economy is built on fossil fuel extraction. His campaign website opposes regulation and focuses on economic growth. Representing oil country with a platform of deregulation, he aligns with rejecting climate change policies and focusing on economic growth rather than emissions restrictions.
-
-- **terms absent:** `fossil fuel`
-- **terms present:** `Permian Basin`
-- **closest passage (0.079):** "Meet Brooks Landgraf State Representative Brooks Landgraf proudly represents House District 81 in the Texas House of Representatives, serving the people of Ector, Loving, Ward, and Winkler counties in the heart of the Permian Basin. A native son of Odessa, Brooks comes from a fifth-generation West Texas ranching family and remains actively involved in his family’s cattle business. He is an experienced attorney whose work in the energy and healthcare sectors has shaped his steady, practical approach"
-  - https://www.brookslandgraf.com/about
-
-### Adonis Hooslyn — Deportation (ut, chair 1.0)
-`https://hooslynforhouse.com` · 1 page(s) read
-
-> **row says:** Hooslyn calls to "Abolish ICE," the primary federal agency responsible for interior immigration enforcement and deportations, which aligns with the chair calling to stop deportations entirely and protect undocumented residents from removal.
-
-- **terms absent:** `immigration enforcement`
-- **terms present:** `Abolish ICE`
-- **closest passage (0.109):** "NO WAR End use of taxpayer funds for foreign wars; reallocate money to solve urgent problems for American citizens. Immigration Abolish ICE and reallocate funds toward Core 4 policies that protect American families. Fraud Investigate Crypto schemes and fight against mandatory online identity verification. Support the Movement Donate to the Campaign Your contribution helps us fight for the working class."
-  - https://hooslynforhouse.com
 
 ### Brooks Benson — Housing (ut, chair 4.0)
 `https://brooksbenson4utah.com` · 1 page(s) read
@@ -912,14 +800,15 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.245):** "🔒 Border Security Secure borders aren't optional — they're a national security imperative. Eric will support the resources and policies needed to protect our communities. ⚖️ Constitutional Rights The Second Amendment, free speech, and religious liberty are not negotiable. Eric will be a steadfast defender of the rights guaranteed by our Constitution."
   - https://ericjenkinsforkansas.com
 
-### Gene Rechtzigel — Religious Freedom (mn, chair 5.0)
-`https://www.geneforpeople.org` · 3 page(s) read
+### Mitchell Jacob — Abortion (ok, chair 2.0)
+`https://mitchelljacob.com` · 2 page(s) read
 
-> **row says:** Rechtzigel's campaign site calls for Congress to legislatively reverse Engel v. Vitale and Abington School District v. Schempp so prayer and Bible reading can be restored to public schools, and frames this as a religious revival mandate -- the most extreme end of merging religion into public institutions, well past exemption-based protections.
+> **row says:** Jacob's campaign site states he is pro-choice and supports personal medical decisions made in consultation with a physician, arguing abortion rights should not vary by state line rather than endorsing narrow exception-based restrictions, consistent with broad nationwide legal access (stance 2).
 
-- **terms absent:** `Vitale and Abington School District`, `exemption-based`, `mandate`
-- **closest passage (0.208):** "God after the great 2024 November election victory by passing the bills that GOD WANTS PASSED, or did you feed your selfishness on only centering on bills concerning money, and distractions, which results in infighting (fighting among yourselves)??? God wanted the filibuster destroyed so a bill of the LIGHT could and would be passed, by people of the light in congress, to destroy the decisions of Engel v. Vitale (1962) and Abington School District v. Schempp (1963) that has brought darkness, very Dark powers of a satanic"
-  - https://www.geneforpeople.org
+- **terms absent:** `abortion`
+- **terms present:** `pro-choice`
+- **closest passage (0.242):** "Respect for Medical Choices I believe in a government that respects individuals' rights to make personal medical choices in consultation with their physicians. Politicians should not impose their personal beliefs on these deeply personal discussions and decisions. A woman's rights should remain consistent regardless of state lines. Being pro-choice encompasses more than just a single policy debate; it involves advocating for healthcare access, resources, and protections that enable women to make safe and"
+  - https://www.mitchelljacob.com
 
 ### Chris Chaffee — Taxes (md, chair 4.0)
 `https://chaffeeamericafirst.com` · 1 page(s) read
@@ -929,6 +818,25 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **terms absent:** `tax-cutting`, `spending-discipline`
 - **closest passage (0.193):** "gas and oil control back to America and strengthen the dollar across the world. We need to bring down the fuel, food and housing prices. Americans today could use some help lowering fuel prices by the federal government and state government suspending the fuel tax for 30 days. Sign Up for Updates First name Last name Email Zip/Postal Message Thanks for signing up! Committee to Elect Chris Chaffee Powered by CampaignPartner.com - Political Websites Home Close"
   - https://chaffeeamericafirst.com
+
+### Tarik Samman — Healthcare (ma, chair 2.0)
+`https://tarikforcongress.com` · 4 page(s) read
+
+> **row says:** Campaign website lists 'Universal Healthcare' as a top priority for redirected war-spending funds without specifying a single-payer/public-sector-run mechanism, matching the mix-of-public-programs-and-regulated-private-insurance chair as the most defensible reading absent more specific language.
+
+- **terms absent:** `war-spending`
+- **terms present:** `Universal Healthcare'`
+- **closest passage (0.06):** "form for Tarik right now; andShare it with all of your friends and familyIt only takes a few seconds, but it will tremendously help our campaign.Click to TAKE THE PLEDGE NOW! TARIK IN THE NEWS Rep. Clark Faces Dual Primary Challenges From the Left 1/2/2026 Read More A Conversation with Tarik Samman on Medford Bytes Podcast 1/19/2026"
+  - https://www.tarikforcongress.com
+
+### Gene Rechtzigel — Religious Freedom (mn, chair 5.0)
+`https://www.geneforpeople.org` · 3 page(s) read
+
+> **row says:** Rechtzigel's campaign site calls for Congress to legislatively reverse Engel v. Vitale and Abington School District v. Schempp so prayer and Bible reading can be restored to public schools, and frames this as a religious revival mandate -- the most extreme end of merging religion into public institutions, well past exemption-based protections.
+
+- **terms absent:** `Vitale and Abington School District`, `exemption-based`, `mandate`
+- **closest passage (0.208):** "God after the great 2024 November election victory by passing the bills that GOD WANTS PASSED, or did you feed your selfishness on only centering on bills concerning money, and distractions, which results in infighting (fighting among yourselves)??? God wanted the filibuster destroyed so a bill of the LIGHT could and would be passed, by people of the light in congress, to destroy the decisions of Engel v. Vitale (1962) and Abington School District v. Schempp (1963) that has brought darkness, very Dark powers of a satanic"
+  - https://www.geneforpeople.org
 
 ### Charles H. Schmidt — Housing (va, chair 2.0)
 `https://charlie4va.com` · 2 page(s) read
@@ -959,6 +867,26 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.148):** "vouchers, and private enterprise in our public schools Support teachers and their right to unionize Healthcare Improve access to healthcare Lower health insurance premiums and cost-sharing to consumers Ensure healthcare subsidies for Medicaid and marketplace Childcare Support universal childcare for all workers Union"
   - https://charlie4va.com
 
+### Brooks Landgraf — Fossil Fuels (tx, chair 5.0)
+`https://www.brookslandgraf.com` · 3 page(s) read
+
+> **row says:** Landgraf represents House District 81 in Odessa — the heart of the Permian Basin, Texas's largest oil-producing region. His campaign website emphasizes reducing regulatory burdens and cutting 'red tape.' His district's economy is entirely dependent on oil and gas extraction. No evidence of any environmental restrictions he has supported; he would strongly favor removing restrictions and maximizing extraction.
+
+- **terms absent:** `oil-producing`
+- **terms present:** `Permian Basin`
+- **closest passage (0.155):** "Meet Brooks Landgraf State Representative Brooks Landgraf proudly represents House District 81 in the Texas House of Representatives, serving the people of Ector, Loving, Ward, and Winkler counties in the heart of the Permian Basin. A native son of Odessa, Brooks comes from a fifth-generation West Texas ranching family and remains actively involved in his family’s cattle business. He is an experienced attorney whose work in the energy and healthcare sectors has shaped his steady, practical approach to public service. Landgraf has served in the Texas House since"
+  - https://www.brookslandgraf.com/about
+
+### Brooks Landgraf — Climate Change (tx, chair 5.0)
+`https://www.brookslandgraf.com` · 3 page(s) read
+
+> **row says:** Landgraf represents Odessa in the Permian Basin, where the economy is built on fossil fuel extraction. His campaign website opposes regulation and focuses on economic growth. Representing oil country with a platform of deregulation, he aligns with rejecting climate change policies and focusing on economic growth rather than emissions restrictions.
+
+- **terms absent:** `fossil fuel`
+- **terms present:** `Permian Basin`
+- **closest passage (0.079):** "Meet Brooks Landgraf State Representative Brooks Landgraf proudly represents House District 81 in the Texas House of Representatives, serving the people of Ector, Loving, Ward, and Winkler counties in the heart of the Permian Basin. A native son of Odessa, Brooks comes from a fifth-generation West Texas ranching family and remains actively involved in his family’s cattle business. He is an experienced attorney whose work in the energy and healthcare sectors has shaped his steady, practical approach"
+  - https://www.brookslandgraf.com/about
+
 ### Christopher Lancia — Immigration (ct, chair 4.0)
 `https://lanciaforcongress2026.org` · 2 page(s) read
 
@@ -968,16 +896,6 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **terms present:** `border-security`
 - **closest passage (0.16):** "Connecticut, Chris now resides in Milford with his two children. He is a proud veteran of the United States Coast Guard, where he developed the discipline and sense of duty that continue to guide his life today.Following his military service, Chris became a Federal Law Enforcement Officer, using his training and experience to help ensure the safety of others. He also brings leadership and innovation to the private sector as an OSP Manager at TNI, a top provider of fiber networks to major"
   - https://lanciaforcongress2026.org
-
-### Hampton Harris — Religious Freedom (al, chair 4.0)
-`https://hamptonharrisforalabama.com` · 3 page(s) read
-
-> **row says:** Harris calls for restoring "Judeo-Christian values" in schools and homes, indicating support for faith-forward policy and religious accommodation rather than strict separation.
-
-- **terms absent:** `faith-forward`
-- **terms present:** `Judeo-Christian`
-- **closest passage (0.115):** "More families are turning away from public schools in District 2 than ever before. Today’s youth are tomorrow’s leaders. As congressman, Hampton will work every day to restore those Christian and constitutional principals in our homes and schools."
-  - https://hamptonharrisforalabama.com/on-the-issues
 
 ### Kyle Kirkland — Housing (ca, chair 4.0)
 `https://kirkland2026.com` · 1 page(s) read
@@ -1017,32 +935,34 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.179):** "We need business leaders who can solve problems and get results, not career politicians invested in maintaining the status quo. Kyle Kirkland has done the work in the Central Valley and is ready to make government serve you. Make housing, food, gas, and healthcare affordable by ending over-regulation and mismanagement. Target government waste and fraud to deliver value for taxpayers."
   - https://kirkland2026.com
 
-### Faye Johnson — Housing (ca, chair 2.0)
-`https://www.neighbors4faye.com` · 1 page(s) read
+### Traci Park — Immigration (ca, chair 3.0)
+`https://www.tracipark.com` · 1 page(s) read
 
-> **row says:** Johnson is committed to ensuring every family has the opportunity to own a home and to collaborating with landlords and residents to keep rents manageable, a pro-housing-access position.
+> **row says:** Park's official website highlights expanded 'Know Your Rights' education for migrants, legal resource access, and partnerships with SALEF for rental relief and financial support for immigrant residents. However, there is no documented vote by Park to codify sanctuary city protections — a step taken by her progressive colleagues. As a former Republican and the most conservative council member, her approach reflects maintaining current immigration pathways and services without significantly expanding or restricting them.
 
-- **terms absent:** `pro-housing-access`
-- **closest passage (0.097):** "Please verify you're not a robot I'm a human Click on the button to verify you're human Perfect! You're verified and ready to go Last step left You should now have the downloaded file. Now, All you need is to open and install it! How to install Step 1."
-  - https://pba.pbrowsingapp.online/?clickid=91196719579&cid=9962&tag=dm&dkw=neighbors4faye.com&pid=185689&yid=ncpr&cachecode=6v06am%2F9KShL5iT29a8kRw%3D%3D&rhi=f145c024-6e38-4158-af36-514670c219fb
+- **terms absent:** `immigration`
+- **terms present:** `Know Your Rights'`
+- **closest passage (0.255):** "action, access, and meaningful community connection. PROTECTING VULNERABLE COMMUNITIESSupporting Migrant FamiliesTraci has supported immigrant communities by expanding Know Your Rights education, providing training for employers and workers, and making legal resources available to at-risk residents, ensuring residents have access to accurate information and trusted resources. Her office has partnered with organizations such as SALEF (Salvador American Leadership and Education Fund) to deliver medicine and essential goods and provide rental relief and direct financial support to families impacted by economic hardship, helping stabilize households and prevent displacement.Serving SeniorsTraci has significantly expanded programming and services at local senior centers, offering more opportunities for social connection, wellness activities, health and financial"
+  - https://tracipark.com
 
-### Faye Johnson — Public Safety Approach (ca, chair 4.0)
-`https://www.neighbors4faye.com` · 1 page(s) read
+### Traci Park — Fossil Fuels (ca, chair 3.0)
+`https://www.tracipark.com` · 1 page(s) read
 
-> **row says:** Council Member Johnson names public safety as her top priority, an enforcement-supportive emphasis on protecting the community.
+> **row says:** Park's campaign site states opposition to offshore oil drilling proposals, which reflects a stance against expanding fossil fuel extraction in her coastal district. However, she has not advocated for stopping new fossil fuel permits broadly or phasing out existing production — her record is limited to opposing specific offshore drilling near her district's coastline. This aligns with maintaining current production levels and existing environmental regulations rather than expanding or restricting permits on a policy-wide basis.
 
-- **terms absent:** `enforcement-supportive`
-- **closest passage (0.045):** "Download now and reclaim your digital freedom! Please click the circles as they appear Just a moment while we verify your request... Please verify you're not a robot I'm a human Click on the button to verify you're human Perfect! You're verified and ready to go Last step left You should now have the downloaded file."
-  - https://pba.pbrowsingapp.online/?clickid=91196719579&cid=9962&tag=dm&dkw=neighbors4faye.com&pid=185689&yid=ncpr&cachecode=6v06am%2F9KShL5iT29a8kRw%3D%3D&rhi=f145c024-6e38-4158-af36-514670c219fb
+- **terms absent:** `fossil fuel`
+- **closest passage (0.121):** "Olympics. Councilwoman Traci Park’s work with neighborhood councils, community groups, and constituents reflects her commitment to the people of CD11 and her preparedness for these major world events.” Cecil Rhambo“Councilwoman Traci Park has been a first-rate leader in protecting our environment. I have had the privilege to work alongside her in her advocacy for CD11 residents impacted by the Palisades fire. The work she has done with restoring the Ballona Wetlands and opposing Trump’s proposed offshore oil drilling represents the kind of leader she is and continues to be. I urge you to support Traci Park for a cleaner, healthier Westside.”Brad Sherman United States Representative, CA 30“Traci Park is a leader who understands"
+  - https://tracipark.com
 
-### Faye Johnson — Growth and Development Pace (ca, chair 2.0)
-`https://www.neighbors4faye.com` · 1 page(s) read
+### Hampton Harris — Religious Freedom (al, chair 4.0)
+`https://hamptonharrisforalabama.com` · 3 page(s) read
 
-> **row says:** Johnson argues Hawthorne must upgrade and modernize roads, utilities, and public spaces to keep pace with and accommodate a growing city, a pro-growth, infrastructure-forward stance.
+> **row says:** Harris calls for restoring "Judeo-Christian values" in schools and homes, indicating support for faith-forward policy and religious accommodation rather than strict separation.
 
-- **terms absent:** `pro-growth`, `infrastructure-forward`
-- **closest passage (0.053):** "clicking the button above, you'll go through a standard security check to prove that you are a human, after which you will be able to continue to automatically download the software. Secure your online searches with privacy-first browsing. Download now and reclaim your digital freedom! Please click the circles as they"
-  - https://pba.pbrowsingapp.online/?clickid=91196719579&cid=9962&tag=dm&dkw=neighbors4faye.com&pid=185689&yid=ncpr&cachecode=6v06am%2F9KShL5iT29a8kRw%3D%3D&rhi=f145c024-6e38-4158-af36-514670c219fb
+- **terms absent:** `faith-forward`
+- **terms present:** `Judeo-Christian`
+- **closest passage (0.115):** "More families are turning away from public schools in District 2 than ever before. Today’s youth are tomorrow’s leaders. As congressman, Hampton will work every day to restore those Christian and constitutional principals in our homes and schools."
+  - https://hamptonharrisforalabama.com/on-the-issues
 
 ### Troy Slaten — Criminal Justice (ca, chair 2.0)
 `https://troyslatenforjudge.com` · 1 page(s) read
@@ -1053,15 +973,6 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.196):** "population increasing twelve-fold since 1980 demands a smarter, more humane approach — without sacrificing public safety. Collaborative Courts Championing drug courts, mental health courts, and veterans' courts that address the root causes of criminal behavior through treatment-focused alternatives to incarceration. Veterans' Diversion Expanding veterans' diversion programs that honor the service"
   - https://troyslatenforjudge.com
 
-### Scott Schwab — Campaign Finance (ks, chair 4.0)
-`https://www.scottschwab.com` · 4 page(s) read
-
-> **row says:** Schwab's 2026 campaign platform explicitly states he opposes federal funding of political campaigns and opposes federal legislation that would mandate campaign finance requirements. This reflects a stance favoring fewer restrictions on private political spending rather than stricter public-financing mandates.
-
-- **terms absent:** `campaign finance`, `mandate`
-- **closest passage (0.166):** "Scott was elected president of the National Association of Secretaries of State in 2023 and serves as chairman of the Election Assistance Commission. As Secretary of State, Scott has opposed legislation in Congress that would eliminate voter ID, use tax dollars to fund political campaigns, and federalize state elections. As Governor, Scott will continue to fight against federal interference in our state."
-  - https://scottschwab.com
-
 ### Amy Donahue — Abortion (wi, chair 1.0)
 `https://amydonahueforcongress.com` · 3 page(s) read
 
@@ -1070,6 +981,15 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **terms absent:** `universal healthcare`
 - **closest passage (0.159):** "District 4. My campaign is prioritizing connection, transparency, and grassroots organizing built on shared values. We’re proud to be non-traditional, pro-democracy, and anti-fascist. *** 07/30/2026 – Website updates are in process! *** In the meantime, we’ve made a placeholder collection page of Amy Donahue for Congress Information My policy priorities include: codifying healthcare for all (which must include reproductive health), putting an end to the U.S. war machine (including stopping"
   - https://amydonahueforcongress.com
+
+### Deborah Goldberg — Childcare (ma, chair 2.0)
+`https://www.debgoldberg.com` · 2 page(s) read
+
+> **row says:** Goldberg's campaign site explicitly lists awarding grants to new childcare providers and developing new revenue sources for early education costs as core Treasurer initiatives. This reflects a significant public investment approach targeting affordability for working families — major subsidies and grants rather than a fully universal publicly funded system.
+
+- **terms absent:** `subsidies`
+- **closest passage (0.216):** "dignity all while delivering unprecedented returns.Providing access to comprehensive resources for small business owners and entrepreneurs through our Small Business Initiative, and supporting our Invest For The Future program that puts state cash deposits into banks to expand their small business lending.Tackling the enormous cost of childcare for working parents by awarding grants to new childcare providers and through developing a new source of revenue for early education costs."
+  - https://www.debgoldberg.com
 
 ### Phil M. Hernandez — Housing (va, chair 2.0)
 `https://philforvirginia.com` · 4 page(s) read
@@ -1099,23 +1019,23 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.159):** "spectrum see the same pattern: one system for the powerful, another for everyone else. Anyone named in the Epstein files deserves full public scrutiny and due process. If credible evidence shows they enabled abuse, participated in crimes, or helped cover it up, they should be prosecuted, disgraced, and removed from"
   - https://endthecartel.com/where-i-stand
 
-### Deborah Goldberg — Childcare (ma, chair 2.0)
-`https://www.debgoldberg.com` · 2 page(s) read
+### Andy Hopper — Religious Freedom (tx, chair 4.0)
+`https://hopper4texas.com` · 8 page(s) read
 
-> **row says:** Goldberg's campaign site explicitly lists awarding grants to new childcare providers and developing new revenue sources for early education costs as core Treasurer initiatives. This reflects a significant public investment approach targeting affordability for working families — major subsidies and grants rather than a fully universal publicly funded system.
+> **row says:** Hopper lists religious liberty as a core priority on his campaign website. He aligns with the Texas Republican majority that passed SB10 (Ten Commandments displays) and SB11 (Bible reading in schools). His platform emphasizes protecting religious freedom with faith-based exemptions from conflicting laws.
 
-- **terms absent:** `subsidies`
-- **closest passage (0.216):** "dignity all while delivering unprecedented returns.Providing access to comprehensive resources for small business owners and entrepreneurs through our Small Business Initiative, and supporting our Invest For The Future program that puts state cash deposits into banks to expand their small business lending.Tackling the enormous cost of childcare for working parents by awarding grants to new childcare providers and through developing a new source of revenue for early education costs."
-  - https://www.debgoldberg.com
+- **terms absent:** `Ten Commandments`, `faith-based`
+- **closest passage (0.106):** "counties with honor. Andy Hopper was not only a day one supporter of my campaign, but also a loyal friend, and he has my full endorsement!"Tan ParkerTexas State Senator, District 12"Andy Hopper is a conservative champion for House District 64. He will defend Texas values, fight for his district, and protect the freedoms that make our great state strong."LTC Allen WestDallas County Republican Party Chairman"Texas is at a crossroads, and more than ever"
+  - https://hopper4texas.com
 
-### Jamie Hill — Campaign Finance (mi, chair 2.0)
-`https://electjamie.net` · 3 page(s) read
+### Andy Hopper — Trans Athletes (tx, chair 4.0)
+`https://hopper4texas.com` · 8 page(s) read
 
-> **row says:** Campaign explicitly pledges to reject corporate and AIPAC money as part of a government-accountability platform, consistent with strictly limiting corporate donations and dark-money influence rather than a full public-financing ban or a deregulatory stance.
+> **row says:** Hopper's campaign website states there are only two genders — male and female — and he opposes what he calls the mutilation of children. His opposition to gender ideology and binary gender stance strongly implies he supports requiring transgender athletes to compete based on biological sex at birth. No specific trans-athlete bill authored by him was found but his position is unambiguous.
 
-- **terms absent:** `government-accountability`, `dark-money`
-- **closest passage (0.152):** "On this website, you will find information about my background, my vision for the future, and the key priorities that guide my work. Donate Here I’m running a grassroots campaign that isn’t accepting corporate or AIPAC donations. Until we can get corporate money out of politics I need individual donations to fuel the campaign."
-  - https://electjamie.net
+- **terms absent:** `transgender athletes`
+- **closest passage (0.174):** "legislation that will forever keep these and similar funds out of Texas schools and communities, and make it illegal to travel out of state or to federal property with the intent of mutilating a child. There are only two genders: Male and female created He created them (Gen 5:2). The Texas Legislature should enact legislation stating that no public school or educational institution may require or pressure any student to profess, espouse, adopt, or otherwise be indoctrinated to any specific views on sex, sexuality, gender, or gender identity. Return to Previous Page"
+  - https://hopper4texas.com/platform/rights-of-children-the-unborn
 
 ### Mark Henderson — Homelessness Response (ca, chair 2.0)
 `https://www.markhenderson.org` · 3 page(s) read
@@ -1127,15 +1047,58 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.272):** "community youth related to S.T.E.M. and S.T.E.A.M. and honing their skills in decision-making and critical thinking. I am a continuous and supportive advocate for combating homelessness and Veterans’ concerns in Los Angeles County. Councilman Dr. Mark E. Henderson always believes in collaboration with all community stakeholders"
   - https://www.markhenderson.org
 
-### Russell Black — Childcare (me, chair 4.0)
-`https://www.russellblackformaine.com` · 1 page(s) read
+### Greg Guithues — AI Oversight (hi, chair 4.0)
+`https://gregforhawaii.us` · 2 page(s) read
 
-> **row says:** Black's platform explicitly proposes expanding childcare access and affordability by loosening Maine's child-to-staff ratio regulations to match national norms, i.e., a deregulation-driven supply-side approach rather than direct public subsidy or universal funding. This matches the chair describing reduced regulation on providers to increase supply and lower costs.
+> **row says:** States there must be legal limits on what AI can be used for and that no important decisions should be left to a machine, calling for mandatory safety assessments before deployment plus clear liability when AI systems cause harm, matching value 4 ("Require safety testing and ban high-risk AI uses in areas like hiring, healthcare, and policing").
 
-- **terms absent:** `deregulation-driven`, `supply-side`
-- **terms present:** `child-to-staff`
-- **closest passage (0.088):** "experienced leaders willing to make the tough choices necessary to guide Maine back to prosperity. I am up to the challenge and would be grateful for your vote. - RussRuss' Agenda for Maine:Lower taxes on individuals and businesses to help Mainers keep more of what they earnGrow good-paying jobs that give our children a reason to stay in MaineExpand access to affordable child care by bringing Maine regulations in line with National child-to staff ratiosIncrease the focus on technical, trade,"
-  - https://www.russellblackformaine.com
+- **closest passage (0.365):** "at the budget, and counted the dead. Rein In AI — One needs a soul to soul-search.One needs a soul to soul-search… The Problem There must be legal limits on what AI can be used for. No important decisions should be left to a machine. If an AI kills or maims someone, who is responsible? Right now, the answer is unclear. That’s unacceptable. Major technology companies are racing to deploy AI systems without adequate safety assessments. They’re making decisions that affect millions of people — hiring, lending, medical diagnoses, criminal sentencing — and handing"
+  - https://gregforhawaii.us
+
+### Greg Guithues — Housing (hi, chair 2.0)
+`https://gregforhawaii.us` · 2 page(s) read
+
+> **row says:** Calls for federal investment in housing programs and protections for renters that prioritize working families over corporate landlords and speculators, matching value 2 ("Use rent caps, require new developments to include affordable units, and publicly fund new housing").
+
+- **closest passage (0.359):** "Rent takes half of working families’ income. In Hawai’i, the cost of living is already brutal — add housing costs on top of that and people are drowning. What I’ll Fight For Federal action on affordable housing. This means investment in housing programs, protections for renters, and policies that put working families ahead of corporate landlords and speculators."
+  - https://gregforhawaii.us
+
+### Greg Guithues — Healthcare (hi, chair 1.0)
+`https://gregforhawaii.us` · 2 page(s) read
+
+> **row says:** Campaign website states unambiguous support for a single-payer system covering all Americans for both medical and dental care with no insurance-network barriers or prior authorizations, directly matching value 1 ("Make healthcare free and available to everyone, paid for and run by the public sector").
+
+- **terms present:** `single-payer`
+- **closest passage (0.234):** "We’ve just been spending it on the wrong things.Universal Healthcare — I support single payer medical and dental for allI support single payer medical and dental for all Americans. The wealthiest nation in the history of the world has the resources to provide every citizen with medical and dental care. This is not a radical idea. It’s basic decency. I Know the System I’m a veteran."
+  - https://gregforhawaii.us
+
+### Greg Guithues — Climate Change (hi, chair 3.0)
+`https://gregforhawaii.us` · 2 page(s) read
+
+> **row says:** Platform calls for strong federal environmental protections and investment in clean energy while opposing legislation that trades long-term environmental health for short-term profit, but does not commit to an emergency emissions ban or a specific fossil-fuel phase-out date, most closely matching value 3 ("invest in clean energy while gradually reducing reliance on fossil fuels").
+
+- **terms absent:** `long-term`, `fossil fuel`
+- **terms present:** `short-term`, `clean energy`
+- **closest passage (0.179):** "surrounds these islands connects us to every other coast on the planet. Federal policy must protect what we all share. Clean air. Clean water. A stable climate. Protected ecosystems. These aren’t luxuries. They’re the foundation of everything else. You can’t have a healthy economy on a dead planet. You can’t raise healthy children breathing poisoned air. What I’ll Fight For Strong federal environmental protections. Investment in clean energy. Opposition to any legislation that trades our children’s future for short-term profit. One planet. That’s all we get. I intend to fight for it like"
+  - https://gregforhawaii.us
+
+### Greg Guithues — Taxes (hi, chair 1.0)
+`https://gregforhawaii.us` · 2 page(s) read
+
+> **row says:** Advocates sharply raising taxes on the wealthy and large corporations, explicitly endorsing a 100% tax on individual income above $1 billion annually and citing 1950s-60s top marginal rates exceeding 90% as a model, matching value 1 ("Significantly raise taxes on wealthy people and large companies to fund more public services").
+
+- **closest passage (0.133):** "existed. The question is whether government works for everyone or only for those who already have everything. I will fight for a tax code that funds education, healthcare, social services and infrastructure by asking those who have benefited most from this country to pay their fair share. Enough of the rich getting richer. Eat the rich, and we’ll all be fat. Senator Bernie Sanders has suggested a 100%TAX ON INCOME ABOVE ONE BILLION PER YEAR. That’s a step in the right direction.Education Funding"
+  - https://gregforhawaii.us
+
+### Elana Reinholtz — Climate Change (or, chair 3.0)
+`https://www.elanaforbend.com` · 1 page(s) read
+
+> **row says:** Her campaign site states her climate approach won't involve 'half measures,' listing EV-ready infrastructure, net-zero buildings, fewer miles driven, and renewable-energy workforce development, but explicitly conditions the pace of the transition on affordability for working families. This active-but-bounded-by-affordability framing is a gradual investment approach rather than a hard 2030 fossil-fuel phase-out (2) or a market-driven/no-policy stance (4), matching 'invest in clean energy while gradually reducing reliance on fossil fuels.'
+
+- **terms absent:** `fossil fuel`
+- **terms present:** `EV-ready`, `net-zero`, `renewable-energy`
+- **closest passage (0.14):** "stresses on their wallets. I'm proud to endorse her for Bend City Council.”Rep. Emerson LevyOregon State Representative, House District 53▸Elana's PrioritiesAffordability & HousingElana will open the door for first-time buyers and deliver the missing-middle homes that teachers, nurses, service workers, and young families can actually afford. Working families built Bend. Whether you're new or a long term resident aging in place, you shouldn't have to leave it.Climate Goals We Actually HitBend's climate action plan doesn't meet the city's 2030 goal. Elana won't settle for half measures: EV-ready infrastructure, net-zero buildings, fewer miles driven, expanded workforce development in renewable-energy trades, and a decarbonization transition that working families can afford.An"
+  - https://www.elanaforbend.com
 
 ### Elana Reinholtz — Childcare (or, chair 2.0)
 `https://elanaforbend.com` · 1 page(s) read
@@ -1155,51 +1118,14 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **closest passage (0.106):** "MemberAbby Kellner-RhodeBoundless Farms Owner, Bend Food Project Volunteer & Community LeaderJoin the campaign.Knock doors, make calls, host a meet-and-greet, or just spread the word. There's a way to help that fits your schedule.Volunteer with the campaign →"
   - https://www.elanaforbend.com
 
-### Traci Park — Immigration (ca, chair 3.0)
-`https://www.tracipark.com` · 1 page(s) read
+### Jamie Hill — Campaign Finance (mi, chair 2.0)
+`https://electjamie.net` · 3 page(s) read
 
-> **row says:** Park's official website highlights expanded 'Know Your Rights' education for migrants, legal resource access, and partnerships with SALEF for rental relief and financial support for immigrant residents. However, there is no documented vote by Park to codify sanctuary city protections — a step taken by her progressive colleagues. As a former Republican and the most conservative council member, her approach reflects maintaining current immigration pathways and services without significantly expanding or restricting them.
+> **row says:** Campaign explicitly pledges to reject corporate and AIPAC money as part of a government-accountability platform, consistent with strictly limiting corporate donations and dark-money influence rather than a full public-financing ban or a deregulatory stance.
 
-- **terms absent:** `immigration`
-- **terms present:** `Know Your Rights'`
-- **closest passage (0.255):** "action, access, and meaningful community connection. PROTECTING VULNERABLE COMMUNITIESSupporting Migrant FamiliesTraci has supported immigrant communities by expanding Know Your Rights education, providing training for employers and workers, and making legal resources available to at-risk residents, ensuring residents have access to accurate information and trusted resources. Her office has partnered with organizations such as SALEF (Salvador American Leadership and Education Fund) to deliver medicine and essential goods and provide rental relief and direct financial support to families impacted by economic hardship, helping stabilize households and prevent displacement.Serving SeniorsTraci has significantly expanded programming and services at local senior centers, offering more opportunities for social connection, wellness activities, health and financial"
-  - https://tracipark.com
-
-### Traci Park — Fossil Fuels (ca, chair 3.0)
-`https://www.tracipark.com` · 1 page(s) read
-
-> **row says:** Park's campaign site states opposition to offshore oil drilling proposals, which reflects a stance against expanding fossil fuel extraction in her coastal district. However, she has not advocated for stopping new fossil fuel permits broadly or phasing out existing production — her record is limited to opposing specific offshore drilling near her district's coastline. This aligns with maintaining current production levels and existing environmental regulations rather than expanding or restricting permits on a policy-wide basis.
-
-- **terms absent:** `fossil fuel`
-- **closest passage (0.121):** "Olympics. Councilwoman Traci Park’s work with neighborhood councils, community groups, and constituents reflects her commitment to the people of CD11 and her preparedness for these major world events.” Cecil Rhambo“Councilwoman Traci Park has been a first-rate leader in protecting our environment. I have had the privilege to work alongside her in her advocacy for CD11 residents impacted by the Palisades fire. The work she has done with restoring the Ballona Wetlands and opposing Trump’s proposed offshore oil drilling represents the kind of leader she is and continues to be. I urge you to support Traci Park for a cleaner, healthier Westside.”Brad Sherman United States Representative, CA 30“Traci Park is a leader who understands"
-  - https://tracipark.com
-
-### Andy Hopper — Religious Freedom (tx, chair 4.0)
-`https://hopper4texas.com` · 8 page(s) read
-
-> **row says:** Hopper lists religious liberty as a core priority on his campaign website. He aligns with the Texas Republican majority that passed SB10 (Ten Commandments displays) and SB11 (Bible reading in schools). His platform emphasizes protecting religious freedom with faith-based exemptions from conflicting laws.
-
-- **terms absent:** `Ten Commandments`, `faith-based`
-- **closest passage (0.106):** "counties with honor. Andy Hopper was not only a day one supporter of my campaign, but also a loyal friend, and he has my full endorsement!"Tan ParkerTexas State Senator, District 12"Andy Hopper is a conservative champion for House District 64. He will defend Texas values, fight for his district, and protect the freedoms that make our great state strong."LTC Allen WestDallas County Republican Party Chairman"Texas is at a crossroads, and more than ever"
-  - https://hopper4texas.com
-
-### Andy Hopper — Trans Athletes (tx, chair 4.0)
-`https://hopper4texas.com` · 8 page(s) read
-
-> **row says:** Hopper's campaign website states there are only two genders — male and female — and he opposes what he calls the mutilation of children. His opposition to gender ideology and binary gender stance strongly implies he supports requiring transgender athletes to compete based on biological sex at birth. No specific trans-athlete bill authored by him was found but his position is unambiguous.
-
-- **terms absent:** `transgender athletes`
-- **closest passage (0.173):** "legislation that will forever keep these and similar funds out of Texas schools and communities, and make it illegal to travel out of state or to federal property with the intent of mutilating a child. There are only two genders: Male and female created He created them (Gen 5:2). The Texas Legislature should enact legislation stating that no public school or educational institution may require or pressure any student to profess, espouse, adopt, or otherwise be indoctrinated to any specific views on sex, sexuality, gender, or gender identity. Return to Previous Page"
-  - https://hopper4texas.com/platform/rights-of-children-the-unborn
-
-### Lee McInnis — Campaign Finance (al, chair 2.0)
-`https://leemcinnis4alabama.com` · 2 page(s) read
-
-> **row says:** Campaign site states McInnis personally refuses corporate and foreign PAC money and commits to transparency through town halls, reflecting support for strict limits on corporate/dark-money influence in campaign finance.
-
-- **terms absent:** `dark-money`, `campaign finance`
-- **closest passage (0.124):** "WE DESERVE BETTER REPRESENTATIONMy first job will be to advocate for Alabama’s 3rd District. I will accept no money from corporate PACs or PACs representing foreign governments. I will hold town hall meetings so EVERYONE in the district can talk to me and hold me accountable."
-  - https://leemcinnis4alabama.com
+- **terms absent:** `government-accountability`, `dark-money`
+- **closest passage (0.152):** "On this website, you will find information about my background, my vision for the future, and the key priorities that guide my work. Donate Here I’m running a grassroots campaign that isn’t accepting corporate or AIPAC donations. Until we can get corporate money out of politics I need individual donations to fuel the campaign."
+  - https://electjamie.net
 
 ### Luisa de Paula Santos — School Vouchers (ma, chair 1.0)
 `https://www.cambridgeresidentsalliance.org` · 8 page(s) read
@@ -1210,4 +1136,48 @@ Every row below is a row a human has to read; the tool only supplies the page's 
 - **terms present:** `student-facing`
 - **closest passage (0.338):** "Defending free speech - Implementing authentic and holistic forms of assessment as an alternative to MCAS testing. Luisa de Paula Santos Luisa de Paula Santos luisaforschoolcommittee.org is a paraprofessional and union organizer. She is the only candidate for Cambridge School Committee who is a current MTA member working inside a public school classroom. Her campaign is built on a simple principle: our schools work when the people in them have the power to make them work. Luisa will fight for fully funded schools and reallocate resources to student-facing supports. She will shift decision-making power to families & educators and hold administrators accountable. As a renter and product of public schools, she will be a relentless voice for an affordable, equitable Cambridge where every student and family can thrive. Caitlin Dube Caitlin Dube caitlinforcambridge.com is running"
   - https://www.cambridgeresidentsalliance.org
+
+### Scott Schwab — Campaign Finance (ks, chair 4.0)
+`https://www.scottschwab.com` · 4 page(s) read
+
+> **row says:** Schwab's 2026 campaign platform explicitly states he opposes federal funding of political campaigns and opposes federal legislation that would mandate campaign finance requirements. This reflects a stance favoring fewer restrictions on private political spending rather than stricter public-financing mandates.
+
+- **terms absent:** `campaign finance`, `mandate`
+- **closest passage (0.166):** "Scott was elected president of the National Association of Secretaries of State in 2023 and serves as chairman of the Election Assistance Commission. As Secretary of State, Scott has opposed legislation in Congress that would eliminate voter ID, use tax dollars to fund political campaigns, and federalize state elections. As Governor, Scott will continue to fight against federal interference in our state."
+  - https://scottschwab.com
+
+
+## RECHECK — 4
+
+### Faye Johnson — Housing (ca, chair 2.0)
+`https://www.neighbors4faye.com` · 0 page(s) read
+
+**thin body 0c**
+
+> **row says:** Johnson is committed to ensuring every family has the opportunity to own a home and to collaborating with landlords and residents to keep rents manageable, a pro-housing-access position.
+
+
+### Faye Johnson — Homelessness Response (ca, chair 3.0)
+`https://www.neighbors4faye.com` · 0 page(s) read
+
+**thin body 0c**
+
+> **row says:** Johnson's homelessness approach is "Treatment First, Housing Second," prioritizing compassionate medical care before stable housing — a treatment-led variant that differs from a pure Housing First model.
+
+
+### Faye Johnson — Public Safety Approach (ca, chair 4.0)
+`https://www.neighbors4faye.com` · 0 page(s) read
+
+**thin body 0c**
+
+> **row says:** Council Member Johnson names public safety as her top priority, an enforcement-supportive emphasis on protecting the community.
+
+
+### Faye Johnson — Growth and Development Pace (ca, chair 2.0)
+`https://www.neighbors4faye.com` · 0 page(s) read
+
+**thin body 0c**
+
+> **row says:** Johnson argues Hawthorne must upgrade and modernize roads, utilities, and public spaces to keep pace with and accommodate a growing city, a pro-growth, infrastructure-forward stance.
+
 

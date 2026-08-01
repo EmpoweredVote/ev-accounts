@@ -192,6 +192,30 @@ function extractQuotes(reasoning) {
   return out;
 }
 
+/**
+ * 🔴 A QUOTED COMPASS CHAIR LABEL IS NOT A QUOTATION FROM THE SOURCE, AND TESTING THE PAGE FOR IT
+ * MANUFACTURES FAILURES. Rows routinely name the chair they picked in quotation marks -- Greg
+ * Guithues's healthcare row ends `matching value 1 ("Make healthcare free and available to everyone,
+ * paid for and run by the public sector")`. That string is OUR answer text. No campaign site contains
+ * it, so `quotePresent` returns false, the row is scored as having an unverifiable quote, and it lands
+ * in NOT_FOUND -- while the page in fact says "I support single payer medical and dental for all
+ * Americans", which supports the row completely.
+ *
+ * Measured on the 113-row NOT_FOUND cohort 2026-08-01: 9 rows, ALL of them in QUOTE_ABSENT, which was
+ * 41% of that bucket. This is the same error as the >3-hyphen chair-label rule in `candidateTerms`,
+ * one level up: that rule drops chair labels from TERMS and nothing ever dropped them from QUOTES.
+ *
+ * Matching is containment either way round, because rows quote chairs both verbatim and trimmed.
+ */
+function isChairLabel(quote, chairTexts) {
+  const nq = norm(quote);
+  if (nq.length < 20) return false;
+  return chairTexts.some((t) => {
+    const ns = norm(t);
+    return ns.length >= 20 && (ns.includes(nq) || nq.includes(ns));
+  });
+}
+
 /** Fragments of a quote that are long enough to be distinctive, split on elided spans. */
 function quoteFragments(q) {
   return q.split(/\s*(?:\.\.\.|…)\s*/).map((f) => f.trim()).filter((f) => norm(f).length >= 20);
@@ -406,6 +430,7 @@ export {
   STATE_NAMES, STOP, CAP_PHRASE, HYPHEN, SINGLE_CAP, BILLREF, MEASUREREF,
   POLICY_PHRASES, COMMON_TOKEN, POLICY_TOKENS, SHINGLE,
   extractQuotes, quoteFragments, quotePresent, norm, looseIncludes, candidateTerms, identityTerms,
+  isChairLabel,
   // Exported 2026-08-01 for propose-quote-corrections.mjs, which scores how CLOSE a quote is to the
   // page rather than whether it is present. It has to fold inflection the same way `quotePresent`
   // does, or a row this module already treats as a match would score as a near-miss in the proposal.
