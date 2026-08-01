@@ -1,0 +1,396 @@
+{
+  "generated_for": "1522/1523/1524",
+  "rows": [
+    {
+      "politician_id": "d0977350-df68-4cfe-822e-816ba13f9213",
+      "full_name": "Traci Park",
+      "last_stances_researched_at": null,
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic": "Immigration",
+      "value": "3.0",
+      "reasoning": "Park's official website highlights expanded 'Know Your Rights' education for migrants, legal resource access, and partnerships with SALEF for rental relief and financial support for immigrant residents. However, there is no documented vote by Park to codify sanctuary city protections — a step taken by her progressive colleagues. As a former Republican and the most conservative council member, her approach reflects maintaining current immigration pathways and services without significantly expanding or restricting them.",
+      "sources": [
+        "https://www.tracipark.com"
+      ],
+      "remedy": "reasoning"
+    },
+    {
+      "politician_id": "c63201eb-c3e1-4bcd-b24a-995e9d367fc3",
+      "full_name": "Christopher Lancia",
+      "last_stances_researched_at": null,
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic": "Immigration",
+      "value": "4.0",
+      "reasoning": "Lancia frames immigration through a border-security/enforcement lens, calling for an end to what he calls border \"chaos\" that he says brings crime and drugs, consistent with the restrictionist end of the scale (harder immigration, limits tied to legal status) rather than any expansion of legal immigration or services.",
+      "sources": [
+        "https://lanciaforcongress2026.org"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "b266c38d-9763-48d4-bcba-7b44adf79ab9",
+      "full_name": "Andy Hopper",
+      "last_stances_researched_at": null,
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic": "Trans Athletes",
+      "value": "4.0",
+      "reasoning": "Hopper's campaign website states there are only two genders — male and female — and he opposes what he calls the mutilation of children. His opposition to gender ideology and binary gender stance strongly implies he supports requiring transgender athletes to compete based on biological sex at birth. No specific trans-athlete bill authored by him was found but his position is unambiguous.",
+      "sources": [
+        "https://hopper4texas.com/"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "b266c38d-9763-48d4-bcba-7b44adf79ab9",
+      "full_name": "Andy Hopper",
+      "last_stances_researched_at": null,
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "topic": "Religious Freedom",
+      "value": "4.0",
+      "reasoning": "Hopper lists religious liberty as a core priority on his campaign website. He aligns with the Texas Republican majority that passed SB10 (Ten Commandments displays) and SB11 (Bible reading in schools). His platform emphasizes protecting religious freedom with faith-based exemptions from conflicting laws.",
+      "sources": [
+        "https://hopper4texas.com/"
+      ],
+      "remedy": "reasoning"
+    },
+    {
+      "politician_id": "90d94c32-12a1-433a-8ab4-418cd2f05c01",
+      "full_name": "Brooks Landgraf",
+      "last_stances_researched_at": null,
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic": "Fossil Fuels",
+      "value": "5.0",
+      "reasoning": "Landgraf represents House District 81 in Odessa — the heart of the Permian Basin, Texas's largest oil-producing region. His campaign website emphasizes reducing regulatory burdens and cutting 'red tape.' His district's economy is entirely dependent on oil and gas extraction. No evidence of any environmental restrictions he has supported; he would strongly favor removing restrictions and maximizing extraction.",
+      "sources": [
+        "https://www.brookslandgraf.com/"
+      ],
+      "remedy": "chair"
+    },
+    {
+      "politician_id": "90d94c32-12a1-433a-8ab4-418cd2f05c01",
+      "full_name": "Brooks Landgraf",
+      "last_stances_researched_at": null,
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic": "Climate Change",
+      "value": "5.0",
+      "reasoning": "Landgraf represents Odessa in the Permian Basin, where the economy is built on fossil fuel extraction. His campaign website opposes regulation and focuses on economic growth. Representing oil country with a platform of deregulation, he aligns with rejecting climate change policies and focusing on economic growth rather than emissions restrictions.",
+      "sources": [
+        "https://www.brookslandgraf.com/"
+      ],
+      "remedy": "reasoning"
+    },
+    {
+      "politician_id": "0dc7e2da-505d-42b6-af05-a2105ce81379",
+      "full_name": "Caroline Fairly",
+      "last_stances_researched_at": null,
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "topic": "Religious Freedom",
+      "value": "5.0",
+      "reasoning": "Campaign website states freedom is non-negotiable specifically when it comes to the right to practice religion. She explicitly prioritized religious freedom protection and was part of the Select Committee on Civil Discourse and Freedom of Speech in Higher Education.",
+      "sources": [
+        "https://fairlyfortexas.com"
+      ],
+      "remedy": "reasoning"
+    },
+    {
+      "politician_id": "0dc7e2da-505d-42b6-af05-a2105ce81379",
+      "full_name": "Caroline Fairly",
+      "last_stances_researched_at": null,
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic": "Trans Athletes",
+      "value": "5.0",
+      "reasoning": "Campaign website explicitly opposes radical gender ideology and supports traditional biological sex categories in athletic competition. Endorsed by conservative groups aligned with prohibiting transgender women from competing in women's sports.",
+      "sources": [
+        "https://fairlyfortexas.com"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "0dc7e2da-505d-42b6-af05-a2105ce81379",
+      "full_name": "Caroline Fairly",
+      "last_stances_researched_at": null,
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic": "Deportation",
+      "value": "5.0",
+      "reasoning": "Campaign materials emphasize strict border enforcement including deportation of cartel members and human traffickers. Previously worked for Ronny Jackson (R-TX) who holds hardline immigration enforcement positions. Panhandle district is strongly pro-enforcement.",
+      "sources": [
+        "https://fairlyfortexas.com"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "786ac925-59d3-40e3-a9ce-b63a54f4caf4",
+      "full_name": "Marc LaHood",
+      "last_stances_researched_at": null,
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic": "Immigration",
+      "value": "4.0",
+      "reasoning": "Campaign website prioritizes 'state-led operations' to secure the Texas border, frames the crisis as affecting every community through crime, drug trafficking, and human trafficking. Transportation committee role; no evidence of open-border or path-to-citizenship support. Consistent with reducing legal immigration and prioritizing high-skilled workers.",
+      "sources": [
+        "https://marclahood.com"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "786ac925-59d3-40e3-a9ce-b63a54f4caf4",
+      "full_name": "Marc LaHood",
+      "last_stances_researched_at": null,
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "topic": "Religious Freedom",
+      "value": "4.0",
+      "reasoning": "Campaign website references defending 'cultural values' and opposing gender-ideology policies. No evidence of supporting strict separation of religion from public institutions. Consistent with protecting religious freedom and allowing faith-based exemptions from laws that conflict with sincere religious beliefs.",
+      "sources": [
+        "https://marclahood.com"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "44d86767-7041-4ce9-9d03-ce23dd663c95",
+      "full_name": "Tom Craddick",
+      "last_stances_researched_at": null,
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic": "Deportation",
+      "value": "4.0",
+      "reasoning": "Craddick supports border security and rule of law per website but no authored mass deportation bill found. His border-security-focused conservatism without explicit immediate mass deportation call aligns with stance 4 (deport all without legal status, process in order of criminal history).",
+      "sources": [
+        "https://www.tomcraddick.com"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "9a171371-be83-456e-acd5-ece936ee84ae",
+      "full_name": "Brooks Benson",
+      "last_stances_researched_at": "2026-06-01T19:03:41.022Z",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Housing",
+      "value": "4.0",
+      "reasoning": "Advocates infrastructure-first development and opposes housing approvals without adequate roads, schools, and utilities in place — a growth-management approach that prioritizes limiting development pace over affordability.",
+      "sources": [
+        "https://brooksbenson4utah.com/"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "e9cd8a4e-9e2b-4962-be21-7a2f68a650ba",
+      "full_name": "Phil M. Hernandez",
+      "last_stances_researched_at": null,
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "topic": "Childcare",
+      "value": "3.0",
+      "reasoning": "Supports a Child Tax Credit to help families afford childcare; targeted tax incentive approach to reducing childcare costs for working families.",
+      "sources": [
+        "https://philforvirginia.com/"
+      ],
+      "remedy": "reasoning"
+    },
+    {
+      "politician_id": "e9cd8a4e-9e2b-4962-be21-7a2f68a650ba",
+      "full_name": "Phil M. Hernandez",
+      "last_stances_researched_at": null,
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Housing",
+      "value": "2.0",
+      "reasoning": "Supports new investments in affordable housing as part of tackling cost-of-living challenges for Virginia families.",
+      "sources": [
+        "https://philforvirginia.com/"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "ca2ff1d9-8ebe-4cf2-a804-27d73c58340b",
+      "full_name": "Luisa de Paula Santos",
+      "last_stances_researched_at": null,
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic": "School Vouchers",
+      "value": "1.0",
+      "reasoning": "De Paula Santos ran as the only MTA (teachers union) member working inside a public school classroom. Her campaign explicitly called for fully funded schools and reallocation of resources to student-facing supports. Endorsed by the Cambridge Education Association and Our Revolution Cambridge — both of which oppose school vouchers. Her platform statement calls for making every neighborhood school a thriving well-resourced community hub with no mention of voucher or charter options. This aligns with value 1: fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions.",
+      "sources": [
+        "https://www.cambridgeresidentsalliance.org/"
+      ],
+      "remedy": "reasoning"
+    },
+    {
+      "politician_id": "5604c5ae-d10d-4ca3-920d-dd3592278777",
+      "full_name": "Lana Negrete",
+      "last_stances_researched_at": null,
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "value": "4.0",
+      "reasoning": "Council Member Negrete is a vocal public-safety advocate who led the task force addressing illegal vending and crime on the Santa Monica Pier that became the DART team mitigating crime along the beach, an enforcement-supportive posture.",
+      "sources": [
+        "https://lananegrete.com/"
+      ],
+      "remedy": "reasoning"
+    },
+    {
+      "politician_id": "31e72d49-a541-4855-9262-4f5c4abf7b18",
+      "full_name": "Ritesh Tandon",
+      "last_stances_researched_at": null,
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "topic": "Childcare",
+      "value": "4.0",
+      "reasoning": "Tandon's platform lists making childcare more affordable through reducing regulatory burdens on providers and targeted relief measures, with no proposal for universal subsidies or broad public investment — aligned with cutting regulations to increase supply with limited assistance for the lowest-income families only.",
+      "sources": [
+        "https://www.tandonforcongress.com/"
+      ],
+      "remedy": "chair"
+    },
+    {
+      "politician_id": "d2ff9bbf-4434-4b81-a869-e3241e954e3c",
+      "full_name": "Kyle Kirkland",
+      "last_stances_researched_at": null,
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Housing",
+      "value": "4.0",
+      "reasoning": "Kirkland's campaign platform calls for ending over-regulation as the cause of high housing costs and eliminating regulatory barriers, placing him in the deregulation/private-developer chair rather than direct government intervention. No support for rent caps or public housing programs is stated.",
+      "sources": [
+        "https://kirkland2026.com/"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "d2ff9bbf-4434-4b81-a869-e3241e954e3c",
+      "full_name": "Kyle Kirkland",
+      "last_stances_researched_at": null,
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic": "Fossil Fuels",
+      "value": "4.0",
+      "reasoning": "Kirkland's platform explicitly calls for restarting domestic production to combat inflation, supporting expanded energy extraction. The framing is pro-production but does not call for removing all environmental restrictions, placing him at chair 4.",
+      "sources": [
+        "https://kirkland2026.com/"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "d2ff9bbf-4434-4b81-a869-e3241e954e3c",
+      "full_name": "Kyle Kirkland",
+      "last_stances_researched_at": null,
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic": "Healthcare",
+      "value": "4.0",
+      "reasoning": "Kirkland attributes high healthcare costs entirely to government over-regulation, with no stated support for public coverage expansion or government-run programs. This deregulation/private-market approach aligns with chair 4 — government help only for the poorest, others to employers or private coverage.",
+      "sources": [
+        "https://kirkland2026.com/"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "d2ff9bbf-4434-4b81-a869-e3241e954e3c",
+      "full_name": "Kyle Kirkland",
+      "last_stances_researched_at": null,
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic": "Taxes",
+      "value": "4.0",
+      "reasoning": "Kirkland's platform targets government waste and fraud, demands audits for taxpayer value, and calls for ending government mismanagement — a fiscal-conservatism posture consistent with cutting spending and scaling back government's role. No explicit flat-tax or drastic-cut language.",
+      "sources": [
+        "https://kirkland2026.com/"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+      "full_name": "Ericka Kopp",
+      "last_stances_researched_at": null,
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic": "School Vouchers",
+      "value": "1.0",
+      "reasoning": "Campaign site calls for establishing universal public education from pre-K through post-secondary including community college and trade education. This public-schools-first framework aligns with fully funding public schools and eliminating voucher programs that divert taxpayer money (value 1).",
+      "sources": [
+        "https://www.erickakopp.com"
+      ],
+      "remedy": "reasoning"
+    },
+    {
+      "politician_id": "4782f3f1-c940-47ad-a3ab-a753b8cd719a",
+      "full_name": "Clyde Welford",
+      "last_stances_researched_at": null,
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic": "Healthcare",
+      "value": "1.0",
+      "reasoning": "Campaign website explicitly advocates for 'free healthcare' for all Americans, citing Israel's universal free healthcare system as a model. This is single-payer/publicly-funded language consistent with stance 1.",
+      "sources": [
+        "https://www.clydewelford.com"
+      ],
+      "remedy": "chair"
+    },
+    {
+      "politician_id": "2f570d90-c1e2-45bd-811c-243e92884235",
+      "full_name": "John Nagel",
+      "last_stances_researched_at": null,
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic": "Taxes",
+      "value": "4.0",
+      "reasoning": "Nagel's campaign site praises Trump's 2025 tax-and-spending law ('Big Beautiful Bill') for bringing tax relief and pledges to end federal spending, aligning with a platform of cutting taxes and scaling back government spending rather than raising taxes or preserving current programs.",
+      "sources": [
+        "https://nagelforcongress.com"
+      ],
+      "remedy": "reasoning"
+    }
+  ],
+  "impact": [
+    {
+      "politician_id": "d2ff9bbf-4434-4b81-a869-e3241e954e3c",
+      "full_name": "Kyle Kirkland",
+      "research_ts_set": false,
+      "answers_now": 5,
+      "retiring": 4,
+      "answers_after": 1
+    },
+    {
+      "politician_id": "9a171371-be83-456e-acd5-ece936ee84ae",
+      "full_name": "Brooks Benson",
+      "research_ts_set": true,
+      "answers_now": 4,
+      "retiring": 1,
+      "answers_after": 3
+    },
+    {
+      "politician_id": "c63201eb-c3e1-4bcd-b24a-995e9d367fc3",
+      "full_name": "Christopher Lancia",
+      "research_ts_set": false,
+      "answers_now": 5,
+      "retiring": 1,
+      "answers_after": 4
+    },
+    {
+      "politician_id": "e9cd8a4e-9e2b-4962-be21-7a2f68a650ba",
+      "full_name": "Phil M. Hernandez",
+      "research_ts_set": false,
+      "answers_now": 6,
+      "retiring": 1,
+      "answers_after": 5
+    },
+    {
+      "politician_id": "b266c38d-9763-48d4-bcba-7b44adf79ab9",
+      "full_name": "Andy Hopper",
+      "research_ts_set": false,
+      "answers_now": 8,
+      "retiring": 1,
+      "answers_after": 7
+    },
+    {
+      "politician_id": "0dc7e2da-505d-42b6-af05-a2105ce81379",
+      "full_name": "Caroline Fairly",
+      "research_ts_set": false,
+      "answers_now": 10,
+      "retiring": 2,
+      "answers_after": 8
+    },
+    {
+      "politician_id": "786ac925-59d3-40e3-a9ce-b63a54f4caf4",
+      "full_name": "Marc LaHood",
+      "research_ts_set": false,
+      "answers_now": 12,
+      "retiring": 2,
+      "answers_after": 10
+    },
+    {
+      "politician_id": "44d86767-7041-4ce9-9d03-ce23dd663c95",
+      "full_name": "Tom Craddick",
+      "research_ts_set": false,
+      "answers_now": 14,
+      "retiring": 1,
+      "answers_after": 13
+    }
+  ]
+}

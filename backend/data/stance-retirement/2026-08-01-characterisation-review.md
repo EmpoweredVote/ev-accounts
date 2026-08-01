@@ -5,7 +5,16 @@ Evidence: [`2026-08-01-topic-evidence.md`](2026-08-01-topic-evidence.md), produc
 `probe-topic-evidence.mjs`, which searches each page with a lexicon built from the **compass topic**
 rather than from the row's own wording.
 
-**Read: 78 of 78.** Nothing applied; nothing proposed as a migration yet.
+**Read: 78 of 78.** ✅ **APPLIED 2026-08-01 as migrations 1522 / 1523 / 1524** on operator decision.
+Gate **653 → 640**; `PRIMARY_SITE_NO_PATH` baseline ratcheted **548 → 535** (exactly −13, the
+retirements). Rollback: `2026-08-01-characterisation-remedies-rollback.json` — generated from the
+database by `emit-characterisation-rollback.mjs`, which refuses to write a short record.
+
+⚠ **One row was reclassified during application: Marc LaHood / Immigration moved from reasoning-fix to
+retirement.** "immigra" is absent from his whole site, which is the identical test Craddick and Lancia
+failed, and the same test must give the same answer. Final: **13 retire · 3 chair · 9 reasoning.**
+**Brooks Benson / Housing** likewise moved from chair-correction to retirement — see 1522 for why his
+position is not representable on the Housing axis at all.
 
 ---
 
@@ -203,17 +212,40 @@ standing. The risk-ranked head of a queue is not a failure rate.
 
 ---
 
+## 🔴 Found while applying: a SECOND party-prior row, outside this cohort
+
+`1524`'s own assertion failed on first run and caught **Traci Park / Taxes** — a row this review never
+looked at, because it is not in the `NO_QUOTE` cohort:
+
+> *"Park is the most conservative member of the LA City Council, endorsed by the Chamber of Commerce
+> and multiple business federations whose platforms strongly favor lower taxes… **As a former
+> Republican operating in a pro-business coalition**, her economic orientation aligns with cutting
+> taxes… **No direct city-level income tax vote exists**, but her coalition and record consistently
+> reflect new stance 4."*
+
+Party prior, plus inference from **endorsers' platforms**, plus an explicit admission that no vote
+supports it. Deliberately **not** fixed by 1524 — it is outside what was reviewed and approved. Logged
+for [`2026-07-24-party-prior-stance-contamination-audit.md`](../../../.planning/todos/2026-07-24-party-prior-stance-contamination-audit.md).
+
+The lesson generalises: a same-person check is a cheap way to find contaminated rows, because whoever
+wrote one party-prior row for a politician tended to write more. Worth running as a query —
+`reasoning ILIKE '%former Republican%'`, `'%former Democrat%'`, `'%his/her party%'`, `'%no direct%vote%'`.
+
 ## Next actions
 
-1. **Operator decision on the 11 retirements.** Each is verified absent against raw HTML with the
-   haystack size printed — but retirement is the one irreversible step, so re-verify with
-   `read-site.mjs` immediately before any migration; crawl status is not stable.
-2. **The 4 chair corrections need an explicit ruling** — this workstream has not applied a chair change
-   before (1512 paths, 1516/1518 reasoning, 1517/1520/1521 retirements). Welford/Healthcare is the
-   urgent one: it is a fabricated quotation in voter-facing text.
-3. **A 10-row reasoning-correction migration in the 1518 shape**, generated through
-   `emit-quote-correction-migration.mjs` so it refuses to emit unsupported replacement text.
-4. **Two leads worth their own pass**: Trans Athletes rows corpus-wide (2 of 2 here failed the same
-   way), and characterisation rows whose only source is a bare campaign homepage.
+1. ~~Operator decision on the retirements~~ ✅ **APPLIED — 1522.** All 13 re-verified with
+   `read-site.mjs --no-cache` *after* the review was written, because crawl status is not stable.
+   Every apparent survivor was opened and read; all four were substrings (Kirkland "rent" =
+   Current/parents, Fairly "removal" = privacy boilerplate, Hopper "team" = a Cyber Team, LaHood
+   "exemption" = **property tax** exemptions).
+2. ~~The chair corrections need a ruling~~ ✅ **APPLIED — 1523**, a new remedy class for this
+   workstream. Welford's fabricated quotation is off the live card.
+3. ~~Reasoning-correction migration~~ ✅ **APPLIED — 1524.**
+4. **Three leads worth their own pass**, in rough order of value:
+   - **The bare-homepage signal** — a characterisation row whose only source is a bare campaign
+     homepage. Best predictor found so far, and there are now **78 labelled rows** to calibrate it
+     against before trusting it. If it holds it risk-ranks all 535 `PRIMARY_SITE_NO_PATH` rows.
+   - **Party-prior rows corpus-wide** — see the Traci Park / Taxes find above.
+   - **Trans Athletes corpus-wide** — 2 of 2 in this cohort failed identically.
 5. `neighbors4faye`-style note: **`/melt-ice.html` was missed by the crawler** because the URL doesn't
    match `ISSUEISH`. Issue pages with campaign-slogan URLs are invisible to every tool here.

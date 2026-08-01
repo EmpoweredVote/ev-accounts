@@ -2,7 +2,9 @@
 
 ## 🟢 STATE AS OF 2026-08-01 — READ THIS FIRST, THE SECTIONS BELOW IT ARE OLDER
 
-Gate: `npm run check:stance-sources --prefix backend` — **green**, 662 rows recorded as backlog.
+Gate: `npm run check:stance-sources --prefix backend` — **green, 640 rows** after 1522–1524
+(`PRIMARY_SITE_NO_PATH` baseline ratcheted 548 → **535**, exactly the 13 retirements). The table
+immediately below predates that; trust these numbers.
 
 | check | rows | what it means |
 |---|---|---|
@@ -120,12 +122,17 @@ indistinguishable from an absent claim.
    → New tool **`scripts/read-site.mjs`**: imports `lib/site-crawl.mjs` (no duplicated crawler), greps
    **raw HTML** not extracted body, and prints `raw=`/`body=`/`chrome=` char counts per page so
    extractor loss cannot masquerade as absence. Proposes nothing, writes nothing.
-   **Needs an operator decision on two things:** the 11 retirements (all verified absent against raw
-   HTML; nobody is emptied — worst case Kirkland 5→1), and the 4 **chair corrections**, a remedy this
-   workstream has never applied. ⚠ Welford/Healthcare is the urgent one — a **fabricated quotation**
-   ('free healthcare', "citing Israel's universal free healthcare system as a model") in voter-facing
-   `reasoning`; the site says only "affordable health care… expand access", and Israel appears solely
-   in a foreign-policy plank.
+   ✅ **ALL APPLIED 2026-08-01 on operator decision — 1522 (13 retirements) · 1523 (3 chair
+   corrections, a NEW remedy class here) · 1524 (9 reasoning corrections).** Rollback:
+   `2026-08-01-characterisation-remedies-rollback.json`. Welford's **fabricated quotation** ('free
+   healthcare', "citing Israel's universal free healthcare system as a model") is off the live card;
+   his site says only "affordable health care… expand access", and Israel appears solely in a
+   foreign-policy plank. Two rows were reclassified while applying — LaHood/Immigration and
+   Benson/Housing both moved to retirement, the first for consistency with Craddick and Lancia, the
+   second because his growth-management position is not representable on the Housing axis at all.
+   🔴 **1524's own assertion caught a SECOND party-prior row outside the cohort — Traci Park / Taxes**
+   ("As a former Republican operating in a pro-business coalition… No direct city-level income tax
+   vote exists"). Deliberately NOT fixed, since it was never reviewed. → the party-prior audit.
    🔴 **Best new signal found:** within a person, rows citing a **named instrument** (bill lookup, news
    guide, real issue page) hold up; rows citing a **bare campaign homepage** are where reasoning drifts.
    True for Landgraf, Santos, Welford and Kirkland independently. Worth testing corpus-wide.
