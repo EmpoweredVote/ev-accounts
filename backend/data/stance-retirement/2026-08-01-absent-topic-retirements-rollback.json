@@ -1,0 +1,39 @@
+{
+  "_comment": "ROLLBACK RECORD FOR MIGRATION 1520 — THE ONLY SURVIVING COPY of these rows' value, reasoning and sources. Retired as NO STANCE because the cited site does not discuss the topic at all, verified against RAW HTML across every page of each site after the <main> extractor bug was fixed. Restore by re-inserting into inform.politician_answers and inform.politician_context.",
+  "generated": "2026-08-01",
+  "rows": [
+    {
+      "pid": "4782f3f1-c940-47ad-a3ab-a753b8cd719a",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Clyde Welford",
+      "topic": "Abortion",
+      "value": "2.0",
+      "reasoning": "Campaign website states Welford supports 'a woman's right to choose' and lists 'Women's reproductive rights' as a platform plank. Pro-choice position with no documented language about public funding at all stages, aligning with stance 2.",
+      "sources": [
+        "https://www.clydewelford.com"
+      ]
+    },
+    {
+      "pid": "4782f3f1-c940-47ad-a3ab-a753b8cd719a",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Clyde Welford",
+      "topic": "Climate Change",
+      "value": "3.0",
+      "reasoning": "Campaign website lists 'support combating climate change' and advocates 'investing in affordable renewable energy for homeowners' as platform planks. General pro-environment position without evidence of emergency declaration or immediate fossil fuel phase-out, consistent with stance 3.",
+      "sources": [
+        "https://www.clydewelford.com"
+      ]
+    },
+    {
+      "pid": "4b3850c4-debb-4b92-a796-3cf15cf31e80",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Shannon Taylor",
+      "topic": "Tariffs",
+      "value": "2.0",
+      "reasoning": "Taylor's economic platform explicitly calls for reining in \"the reckless tariffs and endless wars that are driving up the price of groceries, gas, and everyday goods.\" This is a direct critique of broad tariff policy as harmful to consumers, indicating a preference for reducing most tariffs. This aligns more with reducing tariffs than using them selectively.",
+      "sources": [
+        "https://shannontaylorva.com/"
+      ]
+    }
+  ]
+}

@@ -98,16 +98,32 @@ North Carolina) — a 200 response is not identity confirmation.
 > sourced. It reads the *shape* of the `sources` array and never opens the cited page.
 
 1518 corrected 16 rows of voter-facing text and **the gate number did not move, and never would have.**
-Don't use it as a progress measure for correctness work.
+Don't use it as a progress measure for correctness work. (It has since gone 662 → 655, but only because
+1519 and 1520 happened to change the *shape* of seven rows' sources.)
 
 ## Where things stand
 
-- **NOT_FOUND cohort (114 rows): worked.** 16 corrected, 12 were never defects, 5 open questions, 85
-  characterisation rows still to read (sampled majority-correct). **Zero retirements out of 113.**
-- **Open for a decision:** 3 rows where a full site read found the topic genuinely absent (candidates
-  for NO STANCE, not citation failures), plus 2 that need a person.
-- **Next:** the parked-domain re-source; then 104 Ballotpedia-only rows; then the held Oregon
-  legislative-vote wave.
+The `NOT_FOUND` cohort is worked. Of 114 rows:
+
+| outcome | rows | |
+|---|---|---|
+| **quote corrected** — substance was on the page, wording wrong | 16 | 1518 |
+| **extractor loss** — never defects, resolved by the `<main>` fix | 26 | — |
+| **re-sourced to an archive** — live domain had been parked | 4 | 1519 |
+| **retired as NO STANCE** — cited site does not discuss the topic at all | 3 | 1520 |
+| never defects for other reasons (chair-label quotes, footer disclaimer, bracket bug) | ~12 | — |
+| characterisation rows still to read (sampled majority-correct) | 85 | — |
+
+**Three retirements out of 114**, and each one was re-verified against **raw HTML** *after* the
+extractor bug was fixed — because the original reads predated it, and retiring is the one step you
+cannot walk back. They are retired **until re-sourced**, and both topics are logged as owed.
+
+Two rows still need a person rather than a rule: one where the site is genuinely religious but does not
+support the specific inference drawn, and one where a candidate's site states **no tax position at all**
+while carrying a tax stance.
+
+**Next:** 104 Ballotpedia-only rows; the 12 newly-applyable deep-link citations; then the held Oregon
+legislative-vote wave.
 
 Full detail: `backend/data/stance-retirement/2026-08-01-not-found-hand-review.md` and the backlog at
 `.planning/todos/2026-07-30-stance-resourcing-backlog.md` (its dated STATE block is authoritative).

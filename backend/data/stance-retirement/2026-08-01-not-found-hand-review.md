@@ -82,15 +82,33 @@ Each was read in full by a human. They are not quote fixes: the cited site does 
 
 | row | finding | suggested remedy |
 |---|---|---|
-| **Clyde Welford / Abortion** (mi) | Whole site read (5.4k homepage + 6 linked pages). His "MY PRIORITIES" list is Health Care, Education, Economy, Veterans, Israel, Data Centers. **No abortion plank exists**; the words *choice*, *reproductive* and *abortion* appear nowhere. The row asserts he "lists 'Women's reproductive rights' as a platform plank." | **retire as NO STANCE** |
-| **Clyde Welford / Climate Change** (mi) | Same site. *climate* and *renewable* appear nowhere. Nearest is "Economic growth and environmental stewardship can—and should—go hand in hand" inside the data-centre plank. | **retire as NO STANCE** |
-| **Shannon Taylor / Tariffs** (va) | *tariff* appears **nowhere across all 4 pages**. The row quotes "the reckless **tariffs and endless wars** that are driving up the price of groceries, gas, and everyday goods" — her page says "Fight against inflationary policies that are driving up the cost of groceries, gas, and utilities." The quote is her real sentence **with a tariffs claim spliced into it**. | **retire**, or re-source if a tariffs statement exists elsewhere |
+| **Clyde Welford / Abortion** (mi) | Whole site read. His "MY PRIORITIES" list is Health Care, Education, Economy, Veterans, Israel, Data Centers. **No abortion plank exists**; the words *choice*, *reproductive* and *abortion* appear nowhere. The row asserts he "lists 'Women's reproductive rights' as a platform plank." | ✅ **RETIRED — 1520** |
+| **Clyde Welford / Climate Change** (mi) | Same site. *climate* and *renewable* appear nowhere. Nearest is "Economic growth and environmental stewardship can—and should—go hand in hand" inside the data-centre plank. | ✅ **RETIRED — 1520** |
+| **Shannon Taylor / Tariffs** (va) | *tariff* appears **nowhere across all 4 pages**. The row quotes "the reckless **tariffs and endless wars** that are driving up the price of groceries, gas, and everyday goods" — her page says "Fight against inflationary policies that are driving up the cost of groceries, gas, and utilities." The quote is her real sentence **with a tariffs claim spliced into it**. | ✅ **RETIRED — 1520** |
 | **Scott Schwab / Religious Freedom** (ks) | The quote 'uphold traditional Christian values in governance' is not on the site. What is there: "As a Christian, my faith has guided me at home and in my work as Secretary of State" and "uphold the values that have made our state great." Genuinely religious, but it does **not** support the row's inference to faith-based exemptions from laws. | needs a person — thin, not absent |
 | **Carlton E. Bowen / Taxes** (ut) | ✅ quote fixed in 1518, **but the value question stands**: the site states **no tax position of any kind**. The chair rests on inference from spending-discipline language, and the row's own text admits "he does not state an explicit tax-rate number or plan." | candidate for NO STANCE |
 
 🔴 **These are the shape the tail review called "unevidenced inference" — retire as NO STANCE, not as a
 citation failure.** Left for explicit sign-off because retirement is the irreversible direction and
 rule #1 of this workstream exists precisely to slow it down.
+
+### ✅ Operator decision 2026-08-01: an absent topic is no stance — 3 retired as 1520
+
+🔴 **AND ALL THREE WERE RE-VERIFIED FIRST, BECAUSE THE READS ABOVE PREDATE THE `<main>` FIX.** The
+rows in this table were read with the extractor that silently discarded everything outside `<main>` —
+the exact fault that nearly retired four correctly-sourced rows for Faye Johnson the same day. Retiring
+on that evidence would have repeated the mistake at the one point where it is irreversible. Re-checked
+against **raw HTML**, not extracted text:
+
+- **Welford** — all **11** pages of the site fetched and grepped for `abortion`, `reproduct`,
+  `right to choose`, `pro-choice`, `climate`, `renewable`, `solar`: **zero occurrences anywhere.**
+- **Taylor** — `tariff` occurs **zero** times across 4 pages. The site's only `trade` hits are Rob
+  Wittman trading **stocks**; its only `import` hits are the word *important*.
+
+Neither politician was emptied (Welford 5 → 3 answers, Taylor 8 → 7). **Both topics are owed
+re-research against a real source** — retired *until* re-sourced, not written off. Rollback (the only
+surviving copy of the value, reasoning and sources):
+[`2026-08-01-absent-topic-retirements-rollback.json`](2026-08-01-absent-topic-retirements-rollback.json).
 
 ## 🅿️ Faye Johnson (ca) — 4 rows cite a domain that is now PARKED
 

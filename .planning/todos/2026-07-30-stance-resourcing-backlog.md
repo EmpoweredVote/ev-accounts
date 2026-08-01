@@ -17,8 +17,12 @@ Gate: `npm run check:stance-sources --prefix backend` — **green**, 662 rows re
 
 Applied: **1512** 43 path repairs · **1513** Anderson host change · **1514** 443 Candidate Connection
 deep-links · **1515** 55 proxy unwraps · **1516** 4 reasoning corrections · **1517** 5 retirements ·
-**1518** 16 quote corrections. All dry-run via `scripts/dry-run-migration.mjs` (which cannot commit)
-with rollback records in `data/stance-retirement/`.
+**1518** 16 quote corrections · **1519** 4 parked-domain re-sources · **1520** 3 absent-topic
+retirements. All dry-run via `scripts/dry-run-migration.mjs` (which cannot commit) with rollback
+records in `data/stance-retirement/`.
+
+**Net for the NOT_FOUND cohort: 16 corrected · 4 re-sourced · 3 retired · 26 were extractor loss.**
+Baseline lowered 557 → 550 across 1519 + 1520.
 
 ### ✅ NOT_FOUND is worked — 114 → 16 corrected, 5 open, 85 unread
 
@@ -76,11 +80,14 @@ indistinguishable from an absent claim.
 
 ### Next actions, in order
 
-1. **5 rows that need an explicit decision** (in the hand review, not retired): Welford/Abortion and
-   Welford/Climate — whole site read, **no such plank exists**; Shannon Taylor/Tariffs — *tariff*
-   appears on none of her 4 pages and the quote splices a tariffs claim into a real sentence;
-   Schwab/Religious Freedom — thin, not absent; Bowen/Taxes — quote fixed, but the site states no tax
-   position at all. **The first three are NO STANCE retirements if you agree.**
+1. ~~5 rows needing a decision~~ ✅ **3 RETIRED as NO STANCE — 1520** (operator decision 2026-08-01:
+   an absent topic is no stance, retired until it can be re-sourced). Welford/Abortion,
+   Welford/Climate, Taylor/Tariffs. **Re-verified after the `<main>` fix and against RAW HTML** — all
+   11 Welford pages grepped, zero occurrences of either topic; "tariff" absent from all 4 Taylor pages.
+   Neither person emptied (Welford 5→3, Taylor 8→7). **Both topics are OWED RE-RESEARCH.**
+   Still open, both needing a person rather than a rule: **Schwab/Religious Freedom** (thin, not
+   absent — the site is genuinely religious but does not support the faith-based-exemption inference)
+   and **Bowen/Taxes** (quote fixed in 1518, but the site states no tax position at all).
 2. ~~Faye Johnson ×4 — parked domain~~ ✅ **RESOLVED — 1519 re-sourced to Wayback, nothing retired.**
    See the section below; it is the most instructive near-miss of the whole workstream.
 3. **`NOT_FOUND` is now 87, not 113** — the `<main>` fix moved 26 rows out (14 verify on the homepage,
