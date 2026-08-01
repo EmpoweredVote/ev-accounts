@@ -1,70 +1,219 @@
-# Characterisation rows (`NO_QUOTE`) — hand review, in progress
+# Characterisation rows (`NO_QUOTE`) — hand review, COMPLETE
 
-Cohort regenerated after 1521: **78 characterisation rows across 52 sites** (not the "85" quoted
-earlier — that predated the `<main>` extractor fix and the 1520/1521 retirements). All 52 sites are
-readable. Evidence: [`2026-08-01-topic-evidence.md`](2026-08-01-topic-evidence.md), produced by
+Cohort regenerated after 1521: **78 characterisation rows across 52 sites.** All 52 sites readable.
+Evidence: [`2026-08-01-topic-evidence.md`](2026-08-01-topic-evidence.md), produced by
 `probe-topic-evidence.mjs`, which searches each page with a lexicon built from the **compass topic**
 rather than from the row's own wording.
 
-**Read so far: 13 of 78. Retirement candidates: 1.**
+**Read: 78 of 78.** Nothing applied; nothing proposed as a migration yet.
 
-## How these rows are being triaged
+---
 
-Two cheap signals pick out the rows worth reading first, and neither is a verdict:
+## 🔴 The single most important result: the topic probe could not see the evidence
 
-1. **No topic passage on the site at all** — 5 rows.
-2. **The row asserts a NAMED thing (committee, court case, bill, place) that is absent from the page**
-   — 11 rows. A named instrument is a rare token, so its absence is real evidence about *that
-   sentence*, exactly as the bill-number test was for Oregon.
+`probe-topic-evidence.mjs` prints the **top-3 passages scored on topic-lexicon hits**. That design is
+right — it keeps the evidence independent of the claim — but it means the sentence a row actually
+rests on is routinely **not in its output**, because that sentence scores 0–1 topic terms.
 
-Everything else is a bulk editorial read, and the sampling so far says it is majority-correct.
+Reading "the passages didn't mention it" as "the site doesn't say it" would have destroyed correct
+rows. Concretely, every one of these is **verbatim on the cited page and absent from the probe's
+output for that row**:
 
-## ✅ Group 1 — the 5 rows with no topic passage found
+| row | the sentence the probe never showed |
+|---|---|
+| Barnitz / Abortion | *"Missourians spoke clearly by passing **Amendment 3** in 2024. This historic vote restored reproductive freedom"* |
+| Barnitz / Voting Rights | *"In Missouri, we already have to show ID… **That's good enough for me.**"* |
+| Hooslyn / Deportation | *"**Abolish ICE** and reallocate funds toward Core 4 policies"* |
+| Kopp / Deportation | *"**Abolishing ICE**"* — first item of her A–Z priorities |
+| Beebe / Abortion | *"I am unequivocally pro-life — I believe **life begins at conception**… I support the **Dobbs** decision"* |
+| Mills / Voting Rights | *"Require **proof of U.S. citizenship** for voting… Support **paper ballots** and fully auditable election systems"* |
+| Jacob / Abortion | *"Being **pro-choice** encompasses more than just a single policy debate"* |
+| Arndt / Healthcare | *"**Medicare for All**"* — a red line, and a section heading |
+| Schwab / Campaign Finance | *"Scott has opposed legislation in Congress that would… **use tax dollars to fund political campaigns**"* |
+| D'Arrigo / Taxes | *"eliminate federal income tax for every household earning **under $75,000** per year"* |
 
-| row | finding | verdict |
-|---|---|---|
-| **Tim Greimel / Medicare-aid** (mi) | Page: *"worked across party lines to establish Healthy Michigan, providing access to affordable health insurance for over 650,000 Michiganders."* Healthy Michigan **is** Michigan's Medicaid expansion; the row supplies that link from outside knowledge, and it is correct. | **KEEP** — chair 2 also bundles "lower Medicare age to 55", which is unevidenced; that is a chair-granularity issue, not a citation failure |
-| **Chris Chaffee / Taxes** (md) | Page: *"suspending the fuel tax for 30 days"* and *"No legislators should be paid if the budget isn't balanced"*. Row describes both accurately. | **KEEP** — though chair 4 ("cut taxes for everyone and scale back public services") is strong for a 30-day fuel-tax holiday |
-| **Amy Donahue / Abortion** (—) | Page: *"codifying healthcare for all (which must include reproductive health)"* — quoted accurately. Chair 1 (legal, accessible, **publicly funded at all stages**) is inferred; the row's own text concedes it states no gestational limits. ⚠ The site describes itself as *"a placeholder collection page"*. | **KEEP, value questionable** |
-| **John Nagel / Taxes** (mn) | Page: *"President Trump's Big Beautiful Bill brought real relief to hardworking Americans, and in Congress, I will fight to end Washington's reckless spending"*. The row renders this as *"tax relief"* — **the word "tax" does not appear on the site**. The BBB is genuinely a tax law, so the position is real. | **REASONING FIX** — say "real relief", not "tax relief" |
-| **Kyle Kirkland / Fossil Fuels** (—) | Page's only related line: *"Kyle will end over-regulation, restart domestic production, and attack the cost-of-living crisis head-on"*, under a cost-of-living heading. **No occurrence of energy, drilling, oil, permits or fossil fuel anywhere.** Chair 4 is "expand fossil fuel drilling permits". | 🔴 **RETIREMENT CANDIDATE** — a generic deregulation line is not a drilling-permits position |
+**So the tooling was corrected a ninth time**, and again in the direction of fewer findings. A new
+script does the reading the probe cannot: **`scripts/read-site.mjs`** — it imports `lib/site-crawl.mjs`
+(no duplicated crawler), greps **raw HTML** rather than extracted body, and **prints `raw=` / `body=` /
+`chrome=` char counts for every page** so extractor loss can never masquerade as an absent claim. It
+proposes nothing and writes nothing.
 
-## ✅ Group 2 — the 8 rows asserting a named thing absent from the page
+    node scripts/read-site.mjs --site https://frankbarnitz.com --find "amendment 3|voter id|good enough"
+    node scripts/read-site.mjs --site https://kirkland2026.com --full
 
-**Four were fine; four assert one unsourced specific on top of a well-supported claim.** None is a
-retirement — in every case the *topic* is genuinely on the page and only the ornament is invented.
+Every verdict below was taken against raw HTML with those counts printed.
 
-| row | the named thing | verdict |
-|---|---|---|
-| **Ericka Kopp / Campaign Finance** | `#WeThePeopleAmendment` **is on the page** (under Pledges); "Citizens United" is absent, but the row attributes that to the amendment, not the site — and accurately. Page also has *"not with lobbyists or corporate donors"*. | **KEEP** |
-| **Gene Rechtzigel / Religious Freedom** | *"Engel v. Vitale (1962) and Abington School District v. Schempp (1963)"* — **verbatim on the page**, in a passage calling to "destroy the decisions". | **KEEP** |
-| **Charles H. Schmidt / Healthcare** | "ACA" absent but *"Ensure healthcare subsidies for Medicaid and marketplace"* is present — the marketplace **is** the ACA. | **KEEP** |
-| **Mark Henderson / Homelessness** | Both present: *"a continuous and supportive advocate for combating homelessness and Veterans' concerns in Los Angeles County"*, on a Gardena council site. | **KEEP** |
-| **Caroline Fairly / Religious Freedom** | "Select Committee on Civil Discourse and Freedom of Speech in Higher Education" — **absent**. Religious-freedom content is strong: *"Freedom is non-negotiable, specifically when it comes to our right to practice our religion"*. | **REASONING FIX** — drop the committee claim |
-| **Andy Hopper / Religious Freedom** | "Ten Commandments" — **absent**. Content is strong: *"Preserve Faith and Freedom. God—not government—is sovereign. Texans must always be free to pray, speak, and live according to their faith without government interference."* | **REASONING FIX** |
-| **Phil M. Hernandez / Childcare** | "Child Tax Credit" — **absent**. Present instead: *"improve access to the Child Care Subsidy Program"* and lowering costs "in the areas of housing… and childcare". | **REASONING FIX** |
-| **Lana Negrete / Public Safety** | "Santa Monica Pier" — **absent**. Present: *"the safe and clean task force (Santa Monica Police, Public Works, Fire, and Code Departments)"*. ⚠ Her page is only 2,911 chars on one page — check for a JS shell before acting. | **REASONING FIX** |
+---
 
-## Running tally
+## Tally — all 78 rows
 
 | verdict | rows |
 |---|---|
-| keep — correctly sourced | 8 |
-| reasoning fix — drop one unsourced specific, keep the row | 5 |
-| retirement candidate | **1** (Kirkland / Fossil Fuels) |
-| **read so far** | **13 / 78** |
+| **keep** — correctly sourced | **53** |
+| **reasoning fix** — drop an unsourced specific, keep row and chair | **10** |
+| **chair wrong** — topic is on the page, but the page supports a different chair | **4** |
+| **retirement candidate** — the topic itself is absent from the cited site | **11** |
 
-🔴 **Same shape as every other batch on this workstream.** The rows selected *because they looked
-worst* came back 8 keep / 5 trim / 1 retire. Do not extrapolate a failure rate from the risk-ranked
-head of a queue — the 65 unread rows were not flagged by either signal and should be expected to be
-cleaner still, not dirtier.
+*(Corrects an off-by-one in the interim tally: the first 13 rows were 7 keep / 5 fix / 1 retire, not 8/5/1.)*
 
-## What is left, and how to work it
+**No politician is emptied by any retirement below.** Worst case Kirkland 5 → 1; Lancia 5 → 4;
+Hernandez 6 → 5; Benson and Welford lose nothing (chair corrections). The 1494 rule is not in play —
+but re-run this check against live counts before applying anything.
 
-- **65 rows unread.** No named-instrument claim and at least one topic passage on the page.
-- Work them **site by site** from `2026-08-01-topic-evidence.md` — 15 sites carry 2+ rows (Kopp alone
-  has 7, and 5 of her 7 verify directly against her policy list: Social Security income cap, ending
-  Dobbs, Obergefell, universal healthcare, LGBTQ+ protections).
-- The likely output is a **reasoning-correction migration** in the 1518 shape, not retirements.
-- ⚠ Check `lananegrete.com` and any other single-page site under ~3k chars for a client-rendered shell
-  before drawing conclusions — a thin body is not an absent claim.
+---
+
+## 🔴 Retirement candidates — 11
+
+The test is the one 1517/1520/1521 established: **the topic vocabulary is absent from the raw HTML of
+the whole site.** Not "the row is thin", not "I am unsure" — *verified absent*. Each line gives the
+haystack size actually searched.
+
+| row | what is absent from raw HTML | what the row leaned on instead |
+|---|---|---|
+| **Kirkland / Fossil Fuels** (ca) | *energy, oil, drilling, permit* — 13,883c, one page | "restart domestic production" (4 words) |
+| **Kirkland / Housing** | *zoning, affordab* | same clause; chair 4 needs zoning + private developers |
+| **Kirkland / Healthcare** | no coverage / insurer / employer / poor content at all | same clause |
+| **Kirkland / Taxes** | no tax-cut language; only "waste and fraud", "demand audits" | row itself concedes "no explicit flat-tax or drastic-cut language" |
+| **Fairly / Deportation** (tx) | *deport, traffick* — 36,530c over 2 pages | **worked for Ronny Jackson**, and "Panhandle district is strongly pro-enforcement" |
+| **Fairly / Trans Athletes** | *sports, athlet, biological* | "radical gender ideology" — verbatim, but about **classroom materials and libraries** |
+| **Hopper / Trans Athletes** (tx) | *sports, athlet, biological* — 8 pages, 38k+c | row says it outright: "No specific trans-athlete bill… **strongly implies**" |
+| **Craddick / Deportation** (tx) | *deport, immigra* — 26,886c | $3bn border security + "no authored mass deportation bill found" |
+| **Lancia / Immigration** (ct) | *immigra, visa, public services* — 6,452c | one border-security sentence about drugs and crime |
+| **LaHood / Religious Freedom** (tx) | *religio, exemption* — 17,699c | biography only: "brought him back to the Church", "his family, and his faith" |
+| **Hernandez / Housing** (va) | *affordable housing, zoning, rent* | the word "housing" once, inside a cost-of-living list |
+
+Three of these repeat precedents already settled on this workstream:
+
+- **LaHood / Religious Freedom is the Schwab case from 1521 exactly.** Personal faith is biography;
+  the topic asks about **exemptions from generally applicable laws**. 🔴 Presence is not support.
+- **Kirkland is a whole-person pattern, not four rows.** All four come from one sentence —
+  *"Kyle will end over-regulation, restart domestic production, and attack the cost-of-living crisis"* —
+  plus a four-item list naming housing, food, gas and healthcare as expensive. His **fifth** row is the
+  only one not in this cohort, and it quotes something real (*"stop fentanyl, human trafficking, and
+  cartel violence while respecting legal immigration"*) and **holds**. One thin single-page site
+  produced four specific policy chairs.
+- **Both Trans Athletes rows fail the same way** (Fairly, Hopper — both TX): real, verbatim
+  gender-ideology content about schools and medical care, stretched to a total sports ban. Worth a
+  topic-level look at Trans Athletes rows beyond this cohort.
+
+---
+
+## 🔴 Chair wrong — 4 (the topic IS on the page; the page supports a different chair)
+
+These are heavier than a reasoning trim and lighter than a retirement. Retiring them would erase a
+real, sourced position; leaving them shows a voter the wrong one.
+
+**Welford / Healthcare (mi) — chair 1, fabricated quotation.**
+Row: *"explicitly advocates for **'free healthcare'** for all Americans, **citing Israel's universal
+free healthcare system as a model**."* Raw HTML, whole site (5,357c + 1,618c): *free healthcare*,
+*free health care*, *universal*, *single payer*, *Medicare for All* — **all MISS**. "Israel" appears
+once, in a **foreign-policy plank** about Israel's right to exist and a two-state peace. The actual
+healthcare text is *"Affordable Health Care… I will fight to protect Medicare and Social Security,
+lower prescription drug costs, and expand access to quality health care"* — chair 2, not chair 1.
+⚠ The quotation marks are the problem: `politician_context.reasoning` is **voter-facing** (Citations.jsx,
+"Why this position?"), so this is a live fabricated quote. **Suggested: chair 1 → 2 + reasoning rewrite.**
+His other two rows are fine — they cite `/melt-ice.html`, a real 3,543c page my crawl missed because
+the URL doesn't match `ISSUEISH`, and it fully supports both.
+
+**Landgraf / Fossil Fuels (tx) — chair 5, refuted by his own cited page.**
+The decisive sentence is *"**No evidence of any environmental restrictions he has supported**; he
+would strongly favor removing restrictions."* His own site's front page carries **HB 3866**, which
+bans chemical-container storage within **2,000 feet of homes** with TCEQ registration and periodic
+inspections, and his bio says he **chairs the House Environmental Regulation Committee**, "a leading
+voice for… standards that protect public health". The pro-extraction half is solid and verbatim
+(*"co-authored a bill that repealed burdensome anti-fracking regulations"*, *"keep energy markets open
+and unimpeded for oil and gas producers"*). **Suggested: chair 5 → 4 + reasoning rewrite.**
+
+**Tandon / Childcare (ca) — chair 4, page points the other way.**
+Row: childcare affordability *"through **reducing regulatory burdens on providers**… **no proposal for
+universal subsidies or broad public investment**"*. Raw: *regulatory burden* MISS, *daycare* MISS. The
+page says *"**Expand affordable childcare access**, strengthen elder-care support systems, and provide
+**flexible federal support** that helps families stay in the workforce."* That is subsidy expansion
+filed under the deregulation chair. **Suggested: chair 4 → 3 + reasoning rewrite.**
+
+**Benson / Housing (ut) — chair 4, and the row refutes itself.**
+You do not need the page: the row's own text says *"opposes housing approvals without adequate roads,
+schools, and utilities in place — a **growth-management** approach that prioritises **limiting
+development pace** over affordability"*, and then files it under *"Cut regulations and zoning rules so
+**private developers** can build more housing."* The page confirms the row and not the chair —
+*zoning*, *regulation*, *permit*, *affordab* all **MISS** in 4,530c; what is there is
+*"Infrastructure-first development that serves families, **not developers**"* and unmanaged growth
+listed as the problem. **Suggested: chair 4 → 2 or 3, operator's call.**
+
+---
+
+## Reasoning fixes — 10
+
+Five carried over from the first pass (Nagel/Taxes "tax relief"→"real relief"; Fairly/Religious
+Freedom drop the Select Committee; Hopper/Religious Freedom drop Ten Commandments;
+Hernandez/Childcare drop Child Tax Credit; Negrete/Public Safety drop Santa Monica Pier). Five new:
+
+- **Landgraf / Climate Change** — chair 5 is **defensible and unmentioned by the row**: *"blocked
+  radical **Green New Deal**–style proposals that would threaten Permian Basin jobs and raise costs"*
+  is climate-policy rejection framed on economic growth, verbatim on the site. The row instead reasons
+  from **district geography** ("represents Odessa… economy built on fossil fuel extraction") and claims
+  "his campaign website opposes regulation" — from the chairman of the Environmental Regulation
+  Committee. Keep the chair, replace the reasoning with the sentence that actually earns it.
+  *(`climate` and `emissions` are MISS site-wide — the chair survives on substance, not vocabulary.)*
+- **Park / Immigration (ca)** — 🔴 **party prior in voter-facing text.** All three factual claims verify
+  verbatim (*"expanding Know Your Rights education"*, *"making legal resources available"*, *"partnered
+  with… **SALEF**… rental relief and direct financial support"*). But the chair rests on *"As a **former
+  Republican and the most conservative council member**"* plus an argument from a missing sanctuary vote
+  (*sanctuary* is MISS on a page that would not record votes anyway). Strike both clauses. Feeds
+  [`2026-07-24-party-prior-stance-contamination-audit.md`](2026-07-24-party-prior-stance-contamination-audit.md).
+- **Santos / School Vouchers (ma)** — two invented specifics. *"thriving well-resourced community hub"*
+  is presented as her platform statement: **MISS**. *"Endorsed by the Cambridge Education Association"*:
+  CEA appears once on the page, as **another endorsee's résumé line** (Betsy Preval) — wrong-person
+  attribution. Verified verbatim: *"Luisa will fight for **fully funded schools** and reallocate
+  resources to **student-facing supports**"* and the MTA-member claim. All five *voucher* hits on the
+  page are **housing** vouchers, and the page's education commitments include *"improving the **school
+  choice** system"* — so the "eliminating voucher programs" half is unevidenced. ⚠ Also a **citation**
+  problem: the row cites a third-party endorser site which itself names her own,
+  `luisaforschoolcommittee.org` — a re-source candidate in the 1512/1519 shape.
+- **Kopp / School Vouchers (va)** — *voucher*, *private school* both MISS in 14,647c. The public-education
+  half is verbatim (*"Establishing universal public education from pre-K through post-secondary"*); the
+  "eliminating voucher programs" half is absence-read-as-opposition. Same bundled-chair shape as
+  Greimel/Medicare-aid: keep the row, stop claiming the second half.
+- **LaHood / Immigration (tx)** — *"state-led operations"* is verbatim (*"SECURING OUR BORDER THROUGH
+  STATE-LED OPERATIONS"*), but *immigra* is **MISS** in 17,699c, and chair 4 is about making **legal**
+  immigration harder. Border enforcement ≠ restricting legal immigration. Trim the inference; the chair
+  is arguable and worth a second look.
+
+---
+
+## What this cohort actually shows
+
+🔴 **Within a person, the rows that hold up are the ones citing a named instrument; the rows that drift
+are the ones citing only a campaign homepage.** This is visible in the non-cohort rows of the same people:
+
+- **Landgraf**'s other three rows cite **capitol.texas.gov bill lookups** (SB8, HB3, HB30) — sound.
+  His two homepage-only rows are the two that fell back on district geography.
+- **Santos**'s other row cites a **Cambridge Day election guide** — sound. Her CRA-endorsement row drifted.
+- **Welford**'s other two rows cite **`/melt-ice.html`**, a real issue page — sound. His homepage row is
+  the fabrication.
+- **Kirkland**'s one non-cohort row quotes a real sentence — sound. His four homepage rows are the four
+  retirement candidates.
+
+That is a better predictor of a bad row than any detector built so far, and it is worth testing as a
+cheap corpus-wide signal: **a characterisation row whose only source is a bare campaign homepage.**
+
+**And the headline number is unchanged in direction.** 78 rows selected *because they looked worst*
+came back **53 keep**. Of the 25 non-keeps, 11 are retirements and 14 are corrections that leave the row
+standing. The risk-ranked head of a queue is not a failure rate.
+
+---
+
+## Next actions
+
+1. **Operator decision on the 11 retirements.** Each is verified absent against raw HTML with the
+   haystack size printed — but retirement is the one irreversible step, so re-verify with
+   `read-site.mjs` immediately before any migration; crawl status is not stable.
+2. **The 4 chair corrections need an explicit ruling** — this workstream has not applied a chair change
+   before (1512 paths, 1516/1518 reasoning, 1517/1520/1521 retirements). Welford/Healthcare is the
+   urgent one: it is a fabricated quotation in voter-facing text.
+3. **A 10-row reasoning-correction migration in the 1518 shape**, generated through
+   `emit-quote-correction-migration.mjs` so it refuses to emit unsupported replacement text.
+4. **Two leads worth their own pass**: Trans Athletes rows corpus-wide (2 of 2 here failed the same
+   way), and characterisation rows whose only source is a bare campaign homepage.
+5. `neighbors4faye`-style note: **`/melt-ice.html` was missed by the crawler** because the URL doesn't
+   match `ISSUEISH`. Issue pages with campaign-slogan URLs are invisible to every tool here.

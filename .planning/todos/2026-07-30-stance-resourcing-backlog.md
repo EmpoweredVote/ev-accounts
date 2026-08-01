@@ -106,9 +106,31 @@ indistinguishable from an absent claim.
    shape as 1512. Re-read the cohort from
    `2026-08-01-primary-site-paths-mainfix.json` before doing any more hand-review — the older files
    overstate the failures.
-4. **`NO_QUOTE` characterisation rows** — majority-correct on a 6-row sample (Heslop, Dueñas,
-   Guithues ×2, Fairly/Religious Freedom all supported verbatim; Fairly/Deportation the one miss).
-   Work as an editorial pass. **NOT a queue of suspects.**
+4. ~~**`NO_QUOTE` characterisation rows**~~ ✅ **ALL 78 READ 2026-08-01** — full review in
+   [`backend/data/stance-retirement/2026-08-01-characterisation-review.md`](../../backend/data/stance-retirement/2026-08-01-characterisation-review.md).
+   **53 keep · 10 reasoning fix · 4 chair wrong · 11 retirement candidates.** Nothing applied.
+   🔴 **NINTH tooling correction: `probe-topic-evidence.mjs` could not see the evidence.** It prints
+   the top-3 passages scored on TOPIC-lexicon hits, so the sentence a row rests on scores 0–1 and is
+   routinely absent from its own output. Ten rows verify **verbatim** on sentences the probe never
+   showed — Barnitz's "Amendment 3"/"That's good enough for me", "Abolish ICE" (Hooslyn *and* Kopp),
+   Beebe's "life begins at conception… I support the Dobbs decision", Mills's "proof of U.S.
+   citizenship"/"paper ballots", Arndt's "Medicare for All", Schwab's "use tax dollars to fund
+   political campaigns", D'Arrigo's "under $75,000". Reading an empty probe result as an absent claim
+   would have destroyed them.
+   → New tool **`scripts/read-site.mjs`**: imports `lib/site-crawl.mjs` (no duplicated crawler), greps
+   **raw HTML** not extracted body, and prints `raw=`/`body=`/`chrome=` char counts per page so
+   extractor loss cannot masquerade as absence. Proposes nothing, writes nothing.
+   **Needs an operator decision on two things:** the 11 retirements (all verified absent against raw
+   HTML; nobody is emptied — worst case Kirkland 5→1), and the 4 **chair corrections**, a remedy this
+   workstream has never applied. ⚠ Welford/Healthcare is the urgent one — a **fabricated quotation**
+   ('free healthcare', "citing Israel's universal free healthcare system as a model") in voter-facing
+   `reasoning`; the site says only "affordable health care… expand access", and Israel appears solely
+   in a foreign-policy plank.
+   🔴 **Best new signal found:** within a person, rows citing a **named instrument** (bill lookup, news
+   guide, real issue page) hold up; rows citing a **bare campaign homepage** are where reasoning drifts.
+   True for Landgraf, Santos, Welford and Kirkland independently. Worth testing corpus-wide.
+   ⚠ `/melt-ice.html` (Welford's real issues page, 3,543c) is **invisible to every tool here** because
+   the URL doesn't match `ISSUEISH` in `site-crawl.mjs`.
 4. **104 `BALLOTPEDIA_ONLY`**, starting with the 21 `ELSEWHERE_ON_PAGE` rows in
    `2026-07-31-cc-deeplinks.json` — the only ones with a plausible off-site primary.
 5. Small + bounded: Keohokalole's HB489 sponsorship (unverified, row untouched); the 16 invisible
