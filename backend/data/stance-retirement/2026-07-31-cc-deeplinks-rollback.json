@@ -1,0 +1,4879 @@
+{
+  "_comment": "Rollback record for migration 1514. `before` is the exact sources array as it stood in prod immediately before the migration was generated; restoring it removes the anchors.",
+  "generated_from": "data/stance-retirement/2026-07-31-cc-deeplinks.json",
+  "rows": [
+    {
+      "pid": "00b1ee2d-c4e1-47f8-aae8-83974a625ef3",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Brent Taylor",
+      "topic": "Civil Rights",
+      "before": [
+        "https://ballotpedia.org/Brent_Taylor_(Tennessee)"
+      ],
+      "after": "https://ballotpedia.org/Brent_Taylor_(Tennessee)#Campaign_themes",
+      "evidence": "eliminating DEI mandates"
+    },
+    {
+      "pid": "00b1ee2d-c4e1-47f8-aae8-83974a625ef3",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Brent Taylor",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Brent_Taylor_(Tennessee)"
+      ],
+      "after": "https://ballotpedia.org/Brent_Taylor_(Tennessee)#Campaign_themes",
+      "evidence": "fight to finish the border wall, restore strong enforcement, deport criminal illegal immigrants, end sanctuary policies,"
+    },
+    {
+      "pid": "00b1ee2d-c4e1-47f8-aae8-83974a625ef3",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Brent Taylor",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Brent_Taylor_(Tennessee)"
+      ],
+      "after": "https://ballotpedia.org/Brent_Taylor_(Tennessee)#Campaign_themes",
+      "evidence": "promote American energy production...by expanding domestic oil, natural gas, and nuclear power,"
+    },
+    {
+      "pid": "00b1ee2d-c4e1-47f8-aae8-83974a625ef3",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Brent Taylor",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Brent_Taylor_(Tennessee)"
+      ],
+      "after": "https://ballotpedia.org/Brent_Taylor_(Tennessee)#Campaign_themes",
+      "evidence": "reckless federal spending,"
+    },
+    {
+      "pid": "02007d93-f874-4fd4-8c2e-acc2c8217586",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Chris Gober",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Chris_Gober"
+      ],
+      "after": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+      "evidence": "secure our border and crush the cartels on Day One by fully enforcing immigration laws"
+    },
+    {
+      "pid": "02007d93-f874-4fd4-8c2e-acc2c8217586",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Chris Gober",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Chris_Gober"
+      ],
+      "after": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+      "evidence": "Defend election integrity by stopping Democrats' unconstitutional attempts to rig our elections"
+    },
+    {
+      "pid": "02007d93-f874-4fd4-8c2e-acc2c8217586",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Chris Gober",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Chris_Gober"
+      ],
+      "after": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+      "evidence": "ending reckless spending"
+    },
+    {
+      "pid": "024e4604-88da-40da-ac4a-65a5989998a2",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Michael Chiaradio",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Michael_Chiaradio"
+      ],
+      "after": "https://ballotpedia.org/Michael_Chiaradio#Campaign_themes",
+      "evidence": "robust border security"
+    },
+    {
+      "pid": "024e4604-88da-40da-ac4a-65a5989998a2",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Michael Chiaradio",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Michael_Chiaradio"
+      ],
+      "after": "https://ballotpedia.org/Michael_Chiaradio#Campaign_themes",
+      "evidence": "expanding USDA homebuilding programs"
+    },
+    {
+      "pid": "024e4604-88da-40da-ac4a-65a5989998a2",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Michael Chiaradio",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Michael_Chiaradio"
+      ],
+      "after": "https://ballotpedia.org/Michael_Chiaradio#Campaign_themes",
+      "evidence": "protect critical industries from unfair competition"
+    },
+    {
+      "pid": "024e4604-88da-40da-ac4a-65a5989998a2",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Michael Chiaradio",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Michael_Chiaradio"
+      ],
+      "after": "https://ballotpedia.org/Michael_Chiaradio#Campaign_themes",
+      "evidence": "Expand low-cost access to healthcare"
+    },
+    {
+      "pid": "024e4604-88da-40da-ac4a-65a5989998a2",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Michael Chiaradio",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Michael_Chiaradio"
+      ],
+      "after": "https://ballotpedia.org/Michael_Chiaradio#Campaign_themes",
+      "evidence": "maintain globally competitive tax rates,"
+    },
+    {
+      "pid": "037ad139-73da-4ab5-9998-cc360c06fd64",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Tanya Lloyd",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Tanya_Lloyd"
+      ],
+      "after": "https://ballotpedia.org/Tanya_Lloyd#Campaign_themes",
+      "evidence": "fully fund public schools, defend the U.S. Department of Education, oppose voucher programs that divert public dollars to private interests"
+    },
+    {
+      "pid": "037ad139-73da-4ab5-9998-cc360c06fd64",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Tanya Lloyd",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Tanya_Lloyd"
+      ],
+      "after": "https://ballotpedia.org/Tanya_Lloyd#Campaign_themes",
+      "evidence": "protecting reproductive freedom,"
+    },
+    {
+      "pid": "037ad139-73da-4ab5-9998-cc360c06fd64",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "Tanya Lloyd",
+      "topic": "Childcare",
+      "before": [
+        "https://ballotpedia.org/Tanya_Lloyd"
+      ],
+      "after": "https://ballotpedia.org/Tanya_Lloyd#Campaign_themes",
+      "evidence": "expanding access to childcare"
+    },
+    {
+      "pid": "037ad139-73da-4ab5-9998-cc360c06fd64",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Tanya Lloyd",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Tanya_Lloyd"
+      ],
+      "after": "https://ballotpedia.org/Tanya_Lloyd#Campaign_themes",
+      "evidence": "affordable healthcare, reducing prescription drug prices"
+    },
+    {
+      "pid": "03ed0d1f-e210-464b-8bf4-8f7dffae90d0",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Jerrad Christian",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Jerrad_Christian"
+      ],
+      "after": "https://ballotpedia.org/Jerrad_Christian#Campaign_themes",
+      "evidence": "End the housing crisis"
+    },
+    {
+      "pid": "03ed0d1f-e210-464b-8bf4-8f7dffae90d0",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Jerrad Christian",
+      "topic": "Social Security",
+      "before": [
+        "https://ballotpedia.org/Jerrad_Christian"
+      ],
+      "after": "https://ballotpedia.org/Jerrad_Christian#Campaign_themes",
+      "evidence": "Defend & Restore Social Security"
+    },
+    {
+      "pid": "04000e04-4103-4334-ac0e-6aefb23af1cf",
+      "tid": "24e9212c-b011-422a-865c-093e35050901",
+      "name": "Joel Anabilah-Azumah",
+      "topic": "Ukraine Support",
+      "before": [
+        "https://ballotpedia.org/Joel_Anabilah-Azumah"
+      ],
+      "after": "https://ballotpedia.org/Joel_Anabilah-Azumah#Campaign_themes",
+      "evidence": "I will resist all attempts to drag the United States into unnecessary and unwinnable military conflicts"
+    },
+    {
+      "pid": "04000e04-4103-4334-ac0e-6aefb23af1cf",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Joel Anabilah-Azumah",
+      "topic": "AI Oversight",
+      "before": [
+        "https://ballotpedia.org/Joel_Anabilah-Azumah"
+      ],
+      "after": "https://ballotpedia.org/Joel_Anabilah-Azumah#Campaign_themes",
+      "evidence": "I will fight all attempts to outsource government functions to artificial intelligence. Humans must be in charge of governing other humans at all times"
+    },
+    {
+      "pid": "04000e04-4103-4334-ac0e-6aefb23af1cf",
+      "tid": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "name": "Joel Anabilah-Azumah",
+      "topic": "Misinformation",
+      "before": [
+        "https://ballotpedia.org/Joel_Anabilah-Azumah"
+      ],
+      "after": "https://ballotpedia.org/Joel_Anabilah-Azumah#Campaign_themes",
+      "evidence": "ensure that citizens of the United States have the ability to speak freely, even when their statements are unpopular"
+    },
+    {
+      "pid": "0649630c-bd6d-40fe-8f66-e026e6f6c83e",
+      "tid": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "name": "Catherine Stefani",
+      "topic": "Homelessness",
+      "before": [
+        "https://ballotpedia.org/Catherine_Stefani"
+      ],
+      "after": "https://ballotpedia.org/Catherine_Stefani#Campaign_themes",
+      "evidence": "homelessness"
+    },
+    {
+      "pid": "0649630c-bd6d-40fe-8f66-e026e6f6c83e",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Catherine Stefani",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Catherine_Stefani"
+      ],
+      "after": "https://ballotpedia.org/Catherine_Stefani#Campaign_themes",
+      "evidence": "homelessness"
+    },
+    {
+      "pid": "0649630c-bd6d-40fe-8f66-e026e6f6c83e",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Catherine Stefani",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Catherine_Stefani"
+      ],
+      "after": "https://ballotpedia.org/Catherine_Stefani#Campaign_themes",
+      "evidence": "sanctuary"
+    },
+    {
+      "pid": "0ccfe038-c44a-4384-a3c3-68f3a031f094",
+      "tid": "24e9212c-b011-422a-865c-093e35050901",
+      "name": "Bajun R. Mavalwalla",
+      "topic": "Ukraine Support",
+      "before": [
+        "https://ballotpedia.org/Bajun_Mavalwalla"
+      ],
+      "after": "https://ballotpedia.org/Bajun_Mavalwalla#Campaign_themes",
+      "evidence": "fine with handing over 20% of Ukraine to Putin"
+    },
+    {
+      "pid": "0d2998fc-a952-4337-9c12-61d11d0a2506",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Civil Miller-Watkins",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Civil_Miller-Watkins"
+      ],
+      "after": "https://ballotpedia.org/Civil_Miller-Watkins#Campaign_themes",
+      "evidence": "Public Schools a First-Best-Choice"
+    },
+    {
+      "pid": "0d2998fc-a952-4337-9c12-61d11d0a2506",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Civil Miller-Watkins",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Civil_Miller-Watkins"
+      ],
+      "after": "https://ballotpedia.org/Civil_Miller-Watkins#Campaign_themes",
+      "evidence": "Border Protection with Humanity"
+    },
+    {
+      "pid": "0d2998fc-a952-4337-9c12-61d11d0a2506",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Civil Miller-Watkins",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Civil_Miller-Watkins"
+      ],
+      "after": "https://ballotpedia.org/Civil_Miller-Watkins#Campaign_themes",
+      "evidence": "A Woman's Right to Choose"
+    },
+    {
+      "pid": "0d2998fc-a952-4337-9c12-61d11d0a2506",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Civil Miller-Watkins",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Civil_Miller-Watkins"
+      ],
+      "after": "https://ballotpedia.org/Civil_Miller-Watkins#Campaign_themes",
+      "evidence": "Medicaid"
+    },
+    {
+      "pid": "0ee1ff7a-fa69-423b-938f-1bd7931ae17e",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Nicholas Kiswanto",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Nicholas_Kiswanto"
+      ],
+      "after": "https://ballotpedia.org/Nicholas_Kiswanto#Campaign_themes",
+      "evidence": "money in politics works against the interests of everyday people"
+    },
+    {
+      "pid": "0ee1ff7a-fa69-423b-938f-1bd7931ae17e",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Nicholas Kiswanto",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Nicholas_Kiswanto"
+      ],
+      "after": "https://ballotpedia.org/Nicholas_Kiswanto#Campaign_themes",
+      "evidence": "the voter suppression measure that is the SAVE Act,"
+    },
+    {
+      "pid": "0f92207f-fbdd-4b2c-9ecb-de1d9b2803f6",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Christopher B. Monday",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Christopher_B._Monday"
+      ],
+      "after": "https://ballotpedia.org/Christopher_B._Monday#Campaign_themes",
+      "evidence": "would encourage immigrants to come here legally,"
+    },
+    {
+      "pid": "0f92207f-fbdd-4b2c-9ecb-de1d9b2803f6",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Christopher B. Monday",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Christopher_B._Monday"
+      ],
+      "after": "https://ballotpedia.org/Christopher_B._Monday#Campaign_themes",
+      "evidence": "I want to see a free-market healthcare system, government should keep out of it,"
+    },
+    {
+      "pid": "12840c5b-e90b-4a4c-96e1-80c7b0168529",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Leticia Gutierrez",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Leticia_Gutierrez"
+      ],
+      "after": "https://ballotpedia.org/Leticia_Gutierrez#Campaign_themes",
+      "evidence": "came to this country very young,"
+    },
+    {
+      "pid": "13a9c6b7-d781-415b-b44f-3f8ca06aa763",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Katrina E. Callsen",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Katrina_Callsen"
+      ],
+      "after": "https://ballotpedia.org/Katrina_Callsen#Campaign_themes",
+      "evidence": "abortion"
+    },
+    {
+      "pid": "1722c95b-7aed-430e-81a3-488cdf610afc",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "William M. Stanley",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/William_Stanley"
+      ],
+      "after": "https://ballotpedia.org/William_Stanley#Campaign_themes",
+      "evidence": "I will fight to strengthen our immigration policy – I will ensure that our commonwealth will enforce the state law if the federal government will not."
+    },
+    {
+      "pid": "1722c95b-7aed-430e-81a3-488cdf610afc",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "William M. Stanley",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/William_Stanley"
+      ],
+      "after": "https://ballotpedia.org/William_Stanley#Campaign_themes",
+      "evidence": "I will always fight to protect human life as sacred."
+    },
+    {
+      "pid": "1722c95b-7aed-430e-81a3-488cdf610afc",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "William M. Stanley",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/William_Stanley"
+      ],
+      "after": "https://ballotpedia.org/William_Stanley#Campaign_themes",
+      "evidence": "I will never vote to raise your taxes or user fees at any time."
+    },
+    {
+      "pid": "18b11787-c861-4996-aba5-3b863ea33b1d",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Daniel Sayre",
+      "topic": "Civil Rights",
+      "before": [
+        "https://ballotpedia.org/Daniel_Sayre"
+      ],
+      "after": "https://ballotpedia.org/Daniel_Sayre#Campaign_themes",
+      "evidence": "are not infringed based on a person's racial, ethnic, religious, gender or sexual identity"
+    },
+    {
+      "pid": "18b11787-c861-4996-aba5-3b863ea33b1d",
+      "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "name": "Daniel Sayre",
+      "topic": "Redistricting",
+      "before": [
+        "https://ballotpedia.org/Daniel_Sayre"
+      ],
+      "after": "https://ballotpedia.org/Daniel_Sayre#Campaign_themes",
+      "evidence": "the right way to do it,"
+    },
+    {
+      "pid": "191ee4e1-1514-4567-8fd4-8308e3b88bb0",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "May Nivar",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/May_Nivar"
+      ],
+      "after": "https://ballotpedia.org/May_Nivar#Campaign_themes",
+      "evidence": "Candidate Connection"
+    },
+    {
+      "pid": "191ee4e1-1514-4567-8fd4-8308e3b88bb0",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "May Nivar",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/May_Nivar"
+      ],
+      "after": "https://ballotpedia.org/May_Nivar#Campaign_themes",
+      "evidence": "Candidate Connection"
+    },
+    {
+      "pid": "191ee4e1-1514-4567-8fd4-8308e3b88bb0",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "May Nivar",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/May_Nivar"
+      ],
+      "after": "https://ballotpedia.org/May_Nivar#Campaign_themes",
+      "evidence": "Candidate Connection"
+    },
+    {
+      "pid": "19c9a56d-a2f6-47a1-9b9f-47c425516569",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Tomas Scheel",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Tomas_Scheel"
+      ],
+      "after": "https://ballotpedia.org/Tomas_Scheel#Campaign_themes",
+      "evidence": "short-term"
+    },
+    {
+      "pid": "19c9a56d-a2f6-47a1-9b9f-47c425516569",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Tomas Scheel",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Tomas_Scheel"
+      ],
+      "after": "https://ballotpedia.org/Tomas_Scheel#Campaign_themes",
+      "evidence": "break the hold of billionaire corporate donors on this seat"
+    },
+    {
+      "pid": "19c9a56d-a2f6-47a1-9b9f-47c425516569",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Tomas Scheel",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Tomas_Scheel"
+      ],
+      "after": "https://ballotpedia.org/Tomas_Scheel#Campaign_themes",
+      "evidence": "Ballotpedia Candidate Connection"
+    },
+    {
+      "pid": "1af0730f-0e36-49f8-a454-768f9eb48f03",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Danny Minton",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Danny_Minton"
+      ],
+      "after": "https://ballotpedia.org/Danny_Minton#Campaign_themes",
+      "evidence": "school vouchers made illegal nationwide"
+    },
+    {
+      "pid": "1af0730f-0e36-49f8-a454-768f9eb48f03",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Danny Minton",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Danny_Minton"
+      ],
+      "after": "https://ballotpedia.org/Danny_Minton#Campaign_themes",
+      "evidence": "an end to family separation and mass detention camps"
+    },
+    {
+      "pid": "1af0730f-0e36-49f8-a454-768f9eb48f03",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Danny Minton",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Danny_Minton"
+      ],
+      "after": "https://ballotpedia.org/Danny_Minton#Campaign_themes",
+      "evidence": "A STRONG BORDER AND COMPASSIONATE IMMIGRATION"
+    },
+    {
+      "pid": "1af0730f-0e36-49f8-a454-768f9eb48f03",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Danny Minton",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Danny_Minton"
+      ],
+      "after": "https://ballotpedia.org/Danny_Minton#Campaign_themes",
+      "evidence": "easy access to the ballot,"
+    },
+    {
+      "pid": "1af0730f-0e36-49f8-a454-768f9eb48f03",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Danny Minton",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Danny_Minton"
+      ],
+      "after": "https://ballotpedia.org/Danny_Minton#Campaign_themes",
+      "evidence": "Healthcare is a right, not a luxury"
+    },
+    {
+      "pid": "1af0730f-0e36-49f8-a454-768f9eb48f03",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Danny Minton",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Danny_Minton"
+      ],
+      "after": "https://ballotpedia.org/Danny_Minton#Campaign_themes",
+      "evidence": "Billionaire tax cheats"
+    },
+    {
+      "pid": "1bffcbea-c636-4b34-9b6b-c9faa80ad5e4",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Jace Yarbrough",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Jace_Yarbrough"
+      ],
+      "after": "https://ballotpedia.org/Jace_Yarbrough#Campaign_themes",
+      "evidence": "applauds and supports President Trump's bold mass deportation efforts and will oppose all amnesty efforts"
+    },
+    {
+      "pid": "1bffcbea-c636-4b34-9b6b-c9faa80ad5e4",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Jace Yarbrough",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Jace_Yarbrough"
+      ],
+      "after": "https://ballotpedia.org/Jace_Yarbrough#Campaign_themes",
+      "evidence": "Keeping the Border Closed"
+    },
+    {
+      "pid": "1bffcbea-c636-4b34-9b6b-c9faa80ad5e4",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Jace Yarbrough",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Jace_Yarbrough"
+      ],
+      "after": "https://ballotpedia.org/Jace_Yarbrough#Campaign_themes",
+      "evidence": "support President Trump's expansion of American energy production"
+    },
+    {
+      "pid": "1bffcbea-c636-4b34-9b6b-c9faa80ad5e4",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Jace Yarbrough",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Jace_Yarbrough"
+      ],
+      "after": "https://ballotpedia.org/Jace_Yarbrough#Campaign_themes",
+      "evidence": "any effort to expand abortion"
+    },
+    {
+      "pid": "1bffcbea-c636-4b34-9b6b-c9faa80ad5e4",
+      "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "name": "Jace Yarbrough",
+      "topic": "Trans Athletes",
+      "before": [
+        "https://ballotpedia.org/Jace_Yarbrough"
+      ],
+      "after": "https://ballotpedia.org/Jace_Yarbrough#Campaign_themes",
+      "evidence": "there are only two genders and men don't belong in girls' locker rooms"
+    },
+    {
+      "pid": "1bffcbea-c636-4b34-9b6b-c9faa80ad5e4",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Jace Yarbrough",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Jace_Yarbrough"
+      ],
+      "after": "https://ballotpedia.org/Jace_Yarbrough#Campaign_themes",
+      "evidence": "support voter ID to root out fraud"
+    },
+    {
+      "pid": "1bffcbea-c636-4b34-9b6b-c9faa80ad5e4",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Jace Yarbrough",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Jace_Yarbrough"
+      ],
+      "after": "https://ballotpedia.org/Jace_Yarbrough#Campaign_themes",
+      "evidence": "the radical left over implementation of their job-crushing Green New Deal policies"
+    },
+    {
+      "pid": "1d2d647a-16e0-4d17-af5b-acd83762c359",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Carleigh Beriont",
+      "topic": "Civil Rights",
+      "before": [
+        "https://ballotpedia.org/Carleigh_Beriont"
+      ],
+      "after": "https://ballotpedia.org/Carleigh_Beriont#Campaign_themes",
+      "evidence": "no middle of the road"
+    },
+    {
+      "pid": "1d2d647a-16e0-4d17-af5b-acd83762c359",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Carleigh Beriont",
+      "topic": "AI Oversight",
+      "before": [
+        "https://ballotpedia.org/Carleigh_Beriont"
+      ],
+      "after": "https://ballotpedia.org/Carleigh_Beriont#Campaign_themes",
+      "evidence": "pass real AI regulation and privacy protections"
+    },
+    {
+      "pid": "1d67c8ad-ef38-47d6-8dae-691d0bc7bf9e",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Casey Shepard",
+      "topic": "Civil Rights",
+      "before": [
+        "https://ballotpedia.org/Casey_Shepard"
+      ],
+      "after": "https://ballotpedia.org/Casey_Shepard#Campaign_themes",
+      "evidence": "racial justice and DEI"
+    },
+    {
+      "pid": "1d67c8ad-ef38-47d6-8dae-691d0bc7bf9e",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Casey Shepard",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Casey_Shepard"
+      ],
+      "after": "https://ballotpedia.org/Casey_Shepard#Campaign_themes",
+      "evidence": "compassionate immigration reform"
+    },
+    {
+      "pid": "1d67c8ad-ef38-47d6-8dae-691d0bc7bf9e",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Casey Shepard",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Casey_Shepard"
+      ],
+      "after": "https://ballotpedia.org/Casey_Shepard#Campaign_themes",
+      "evidence": "restoring Section 8, rental assistance, public housing, government-backed mortgage aid, and HUD programs for low-income housing"
+    },
+    {
+      "pid": "1d67c8ad-ef38-47d6-8dae-691d0bc7bf9e",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Casey Shepard",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Casey_Shepard"
+      ],
+      "after": "https://ballotpedia.org/Casey_Shepard#Campaign_themes",
+      "evidence": "mutually beneficial trade policy"
+    },
+    {
+      "pid": "1d67c8ad-ef38-47d6-8dae-691d0bc7bf9e",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Casey Shepard",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Casey_Shepard"
+      ],
+      "after": "https://ballotpedia.org/Casey_Shepard#Campaign_themes",
+      "evidence": "Restore support for Medicaid and Medicare to ensure seniors, families, and people with disabilities receive the care they need"
+    },
+    {
+      "pid": "1d67c8ad-ef38-47d6-8dae-691d0bc7bf9e",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Casey Shepard",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Casey_Shepard"
+      ],
+      "after": "https://ballotpedia.org/Casey_Shepard#Campaign_themes",
+      "evidence": "expanded voter access"
+    },
+    {
+      "pid": "1d67c8ad-ef38-47d6-8dae-691d0bc7bf9e",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Casey Shepard",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Casey_Shepard"
+      ],
+      "after": "https://ballotpedia.org/Casey_Shepard#Campaign_themes",
+      "evidence": "ACA premium subsidies, Medicaid, CHIP"
+    },
+    {
+      "pid": "1d67c8ad-ef38-47d6-8dae-691d0bc7bf9e",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Casey Shepard",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Casey_Shepard"
+      ],
+      "after": "https://ballotpedia.org/Casey_Shepard#Campaign_themes",
+      "evidence": "a renewable-energy economy"
+    },
+    {
+      "pid": "1e29ce86-9e02-4079-b50d-bb0d039613a2",
+      "tid": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "name": "Sharon Quirk-Silva",
+      "topic": "Homelessness",
+      "before": [
+        "https://ballotpedia.org/Sharon_Quirk-Silva"
+      ],
+      "after": "https://ballotpedia.org/Sharon_Quirk-Silva#Campaign_themes",
+      "evidence": "Orange County"
+    },
+    {
+      "pid": "1fe6548e-ea7c-4101-ad7a-f5947c0761b1",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Melissa Chaudhry",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Melissa_Chaudhry"
+      ],
+      "after": "https://ballotpedia.org/Melissa_Chaudhry#Campaign_themes",
+      "evidence": "not beholden to high-stake donors."
+    },
+    {
+      "pid": "1fe6548e-ea7c-4101-ad7a-f5947c0761b1",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Melissa Chaudhry",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Melissa_Chaudhry"
+      ],
+      "after": "https://ballotpedia.org/Melissa_Chaudhry#Campaign_themes",
+      "evidence": "environment and climate change"
+    },
+    {
+      "pid": "21abfb53-adcd-4aaa-8f5b-37ef03af9d13",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Adam D. Austill",
+      "topic": "AI Oversight",
+      "before": [
+        "https://ballotpedia.org/Adam_Austill"
+      ],
+      "after": "https://ballotpedia.org/Adam_Austill#Campaign_themes",
+      "evidence": "firm boundaries and restrictions on every aspect of artificial intelligence,"
+    },
+    {
+      "pid": "21abfb53-adcd-4aaa-8f5b-37ef03af9d13",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Adam D. Austill",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Adam_Austill"
+      ],
+      "after": "https://ballotpedia.org/Adam_Austill#Campaign_themes",
+      "evidence": "funding elections with public money"
+    },
+    {
+      "pid": "279202a2-12c6-48b0-a19b-45470145cbce",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Adam Bauman",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Adam_Bauman"
+      ],
+      "after": "https://ballotpedia.org/Adam_Bauman#Campaign_themes",
+      "evidence": "support the Customs and Border Protection mission to protect our border"
+    },
+    {
+      "pid": "27dd6086-ac80-4860-9d36-1067c1f558db",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Keith Arnold",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Keith_Arnold"
+      ],
+      "after": "https://ballotpedia.org/Keith_Arnold#Campaign_themes",
+      "evidence": "Immigration laws should be enforced focusing on those who hire (and exploit) persons here illegally,"
+    },
+    {
+      "pid": "27dd6086-ac80-4860-9d36-1067c1f558db",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Keith Arnold",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Keith_Arnold"
+      ],
+      "after": "https://ballotpedia.org/Keith_Arnold#Campaign_themes",
+      "evidence": "I support global free trade but it must be Fair Global Free Trade,"
+    },
+    {
+      "pid": "27dd6086-ac80-4860-9d36-1067c1f558db",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Keith Arnold",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Keith_Arnold"
+      ],
+      "after": "https://ballotpedia.org/Keith_Arnold#Campaign_themes",
+      "evidence": "should be allowed only in cases of rape, incest, or a significant health risk"
+    },
+    {
+      "pid": "27dd6086-ac80-4860-9d36-1067c1f558db",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Keith Arnold",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Keith_Arnold"
+      ],
+      "after": "https://ballotpedia.org/Keith_Arnold#Campaign_themes",
+      "evidence": "We need universal health care, we must provide care to everyone from infants to seniors,"
+    },
+    {
+      "pid": "27dd6086-ac80-4860-9d36-1067c1f558db",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Keith Arnold",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Keith_Arnold"
+      ],
+      "after": "https://ballotpedia.org/Keith_Arnold#Campaign_themes",
+      "evidence": "We must develop clean alternative sources of energy, especially renewable energy sources,"
+    },
+    {
+      "pid": "27dd6086-ac80-4860-9d36-1067c1f558db",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Keith Arnold",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Keith_Arnold"
+      ],
+      "after": "https://ballotpedia.org/Keith_Arnold#Campaign_themes",
+      "evidence": "A fair tax system which should be progressive for higher incomes. This will slowly eliminate the deficit and payoff the debt,"
+    },
+    {
+      "pid": "2af6a270-3e02-4484-863f-06e5c655df4f",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "John Saulie-Rohman",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/John_Saulie-Rohman"
+      ],
+      "after": "https://ballotpedia.org/John_Saulie-Rohman#Campaign_themes",
+      "evidence": "to only accept individual contributions, ensuring my independence from special interests,"
+    },
+    {
+      "pid": "2af6a270-3e02-4484-863f-06e5c655df4f",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "John Saulie-Rohman",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/John_Saulie-Rohman"
+      ],
+      "after": "https://ballotpedia.org/John_Saulie-Rohman#Campaign_themes",
+      "evidence": "I support a woman's right to choose,"
+    },
+    {
+      "pid": "2af6a270-3e02-4484-863f-06e5c655df4f",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "John Saulie-Rohman",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/John_Saulie-Rohman"
+      ],
+      "after": "https://ballotpedia.org/John_Saulie-Rohman#Campaign_themes",
+      "evidence": "starved of vital funding through unsustainable tax cuts and loopholes enjoyed by large corporations,"
+    },
+    {
+      "pid": "2dc05537-1ba1-4f16-9bc1-fd5564c18be5",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Kevin Fagan",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Kevin_Fagan"
+      ],
+      "after": "https://ballotpedia.org/Kevin_Fagan#Campaign_themes",
+      "evidence": "a Medicare for All healthcare system because we can no longer tinker around the edges of a broken healthcare system."
+    },
+    {
+      "pid": "2f063464-29d8-42a4-bba3-d521ceb53555",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Brinker Harding",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Brinker_Harding"
+      ],
+      "after": "https://ballotpedia.org/Brinker_Harding#Campaign_themes",
+      "evidence": "deport criminal illegal immigrants"
+    },
+    {
+      "pid": "3049ed75-9743-42f4-8c9e-037a41f9bdc3",
+      "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "name": "Terry L. Austin",
+      "topic": "Religious Freedom",
+      "before": [
+        "https://ballotpedia.org/Terry_Austin"
+      ],
+      "after": "https://ballotpedia.org/Terry_Austin#Campaign_themes",
+      "evidence": "faith-based"
+    },
+    {
+      "pid": "3049ed75-9743-42f4-8c9e-037a41f9bdc3",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Terry L. Austin",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Terry_Austin"
+      ],
+      "after": "https://ballotpedia.org/Terry_Austin#Campaign_themes",
+      "evidence": "pro-life"
+    },
+    {
+      "pid": "3049ed75-9743-42f4-8c9e-037a41f9bdc3",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Terry L. Austin",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Terry_Austin"
+      ],
+      "after": "https://ballotpedia.org/Terry_Austin#Campaign_themes",
+      "evidence": "Keeping Taxes Low"
+    },
+    {
+      "pid": "305d2ded-2833-4cad-a7e7-e001972d9947",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Dewey Gordon Bryan",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Dewey_Gordon_Bryan"
+      ],
+      "after": "https://ballotpedia.org/Dewey_Gordon_Bryan#Campaign_themes",
+      "evidence": "idiotic and mathematically flawed tariff policies raised prices for EVERY American on EVERYTHING"
+    },
+    {
+      "pid": "307597bd-3a05-41ad-a991-a7325ece5b5f",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Sam Rasoul",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Sam_Rasoul"
+      ],
+      "after": "https://ballotpedia.org/Sam_Rasoul#Campaign_themes",
+      "evidence": "fossil fuel"
+    },
+    {
+      "pid": "307597bd-3a05-41ad-a991-a7325ece5b5f",
+      "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "name": "Sam Rasoul",
+      "topic": "Same-Sex Marriage",
+      "before": [
+        "https://ballotpedia.org/Sam_Rasoul"
+      ],
+      "after": "https://ballotpedia.org/Sam_Rasoul#Campaign_themes",
+      "evidence": "same-sex"
+    },
+    {
+      "pid": "307597bd-3a05-41ad-a991-a7325ece5b5f",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Sam Rasoul",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Sam_Rasoul"
+      ],
+      "after": "https://ballotpedia.org/Sam_Rasoul#Campaign_themes",
+      "evidence": "high-quality"
+    },
+    {
+      "pid": "307597bd-3a05-41ad-a991-a7325ece5b5f",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Sam Rasoul",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Sam_Rasoul"
+      ],
+      "after": "https://ballotpedia.org/Sam_Rasoul#Campaign_themes",
+      "evidence": "Green New Deal"
+    },
+    {
+      "pid": "348622c5-c7e7-4ef6-a2ea-e5a49881bd42",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Jonathan Nez",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Jonathan_Nez"
+      ],
+      "after": "https://ballotpedia.org/Jonathan_Nez#Campaign_themes",
+      "evidence": "Democracy and Voting Rights':"
+    },
+    {
+      "pid": "34a456f0-bf29-4652-a3d7-6036d22ecd17",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Richard Freudenberg",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Richard_Freudenberg"
+      ],
+      "after": "https://ballotpedia.org/Richard_Freudenberg#Campaign_themes",
+      "evidence": "Medicare"
+    },
+    {
+      "pid": "34a456f0-bf29-4652-a3d7-6036d22ecd17",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Richard Freudenberg",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Richard_Freudenberg"
+      ],
+      "after": "https://ballotpedia.org/Richard_Freudenberg#Campaign_themes",
+      "evidence": "No one should die because they do not have health insurance."
+    },
+    {
+      "pid": "34b20106-85cc-402b-a9f3-b6c7d6af8863",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Michael McGarr",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Michael_McGarr"
+      ],
+      "after": "https://ballotpedia.org/Michael_McGarr#Campaign_themes",
+      "evidence": "moving away from fossil fuels"
+    },
+    {
+      "pid": "34b20106-85cc-402b-a9f3-b6c7d6af8863",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Michael McGarr",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Michael_McGarr"
+      ],
+      "after": "https://ballotpedia.org/Michael_McGarr#Campaign_themes",
+      "evidence": "Ballotpedia Candidate Connection"
+    },
+    {
+      "pid": "34b20106-85cc-402b-a9f3-b6c7d6af8863",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Michael McGarr",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Michael_McGarr"
+      ],
+      "after": "https://ballotpedia.org/Michael_McGarr#Campaign_themes",
+      "evidence": "fossil fuel"
+    },
+    {
+      "pid": "353f5a81-a800-41d1-a8ac-f4a739b4c43f",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "James D. Hooper",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/James_Hooper"
+      ],
+      "after": "https://ballotpedia.org/James_Hooper#Campaign_themes",
+      "evidence": "American Energy Independence"
+    },
+    {
+      "pid": "36c84f28-6c7f-43bf-af5c-56fda3fe3840",
+      "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "name": "Rachel Hurley",
+      "topic": "Redistricting",
+      "before": [
+        "https://ballotpedia.org/Rachel_Hurley"
+      ],
+      "after": "https://ballotpedia.org/Rachel_Hurley#Campaign_themes",
+      "evidence": "split Memphis and stretched the seat across 17 counties"
+    },
+    {
+      "pid": "36c84f28-6c7f-43bf-af5c-56fda3fe3840",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Rachel Hurley",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Rachel_Hurley"
+      ],
+      "after": "https://ballotpedia.org/Rachel_Hurley#Campaign_themes",
+      "evidence": "take[s] no corporate PAC money"
+    },
+    {
+      "pid": "3a9d306a-c295-4eea-8d35-9e1820368e8f",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Jacob Kristopher Anders",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Jacob_Anders"
+      ],
+      "after": "https://ballotpedia.org/Jacob_Anders#Campaign_themes",
+      "evidence": "universal healthcare that doesn't bankrupt anyone,"
+    },
+    {
+      "pid": "3af51468-a3eb-41be-9d8b-5686d31cb1fe",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Lauren Peña",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Lauren_Pe%C3%B1a"
+      ],
+      "after": "https://ballotpedia.org/Lauren_Pe%C3%B1a#Campaign_themes",
+      "evidence": "supports strong borders, responsible immigration, and lawful surveillance"
+    },
+    {
+      "pid": "3ba8b305-a52d-4d01-b007-53054c0c06b2",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Shaun Finnie",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Shaun_Finnie"
+      ],
+      "after": "https://ballotpedia.org/Shaun_Finnie#Campaign_themes",
+      "evidence": "Remove the Republicans' consumption tax (i.e. - Tariffs)"
+    },
+    {
+      "pid": "3ba8b305-a52d-4d01-b007-53054c0c06b2",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Shaun Finnie",
+      "topic": "Social Security",
+      "before": [
+        "https://ballotpedia.org/Shaun_Finnie"
+      ],
+      "after": "https://ballotpedia.org/Shaun_Finnie#Campaign_themes",
+      "evidence": "Protect the Social Security, Medicare, and Medicaid benefits of middle-class Americans from any potential cuts"
+    },
+    {
+      "pid": "3ba8b305-a52d-4d01-b007-53054c0c06b2",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Shaun Finnie",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Shaun_Finnie"
+      ],
+      "after": "https://ballotpedia.org/Shaun_Finnie#Campaign_themes",
+      "evidence": "Ensure that women have the right to make their own healthcare decisions"
+    },
+    {
+      "pid": "3ba8b305-a52d-4d01-b007-53054c0c06b2",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Shaun Finnie",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Shaun_Finnie"
+      ],
+      "after": "https://ballotpedia.org/Shaun_Finnie#Campaign_themes",
+      "evidence": "Protect the Social Security, Medicare, and Medicaid benefits of middle-class Americans from any potential cuts"
+    },
+    {
+      "pid": "3c724790-5982-466a-b9ab-659bd99c279e",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "David Womack",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/David_Womack"
+      ],
+      "after": "https://ballotpedia.org/David_Womack#Campaign_themes",
+      "evidence": "effective border control with humane enforcement"
+    },
+    {
+      "pid": "3c724790-5982-466a-b9ab-659bd99c279e",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "David Womack",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/David_Womack"
+      ],
+      "after": "https://ballotpedia.org/David_Womack#Campaign_themes",
+      "evidence": "a rational, national health policy that provides coverage for all"
+    },
+    {
+      "pid": "3ca720cb-e2bc-43e0-88c1-e1d7f387df3a",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "David S. Kerr, Jr.",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/David_Kerr_Jr._(Tennessee)"
+      ],
+      "after": "https://ballotpedia.org/David_Kerr_Jr._(Tennessee)#Campaign_themes",
+      "evidence": "Candidate Connection"
+    },
+    {
+      "pid": "3ca720cb-e2bc-43e0-88c1-e1d7f387df3a",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "David S. Kerr, Jr.",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/David_Kerr_Jr._(Tennessee)"
+      ],
+      "after": "https://ballotpedia.org/David_Kerr_Jr._(Tennessee)#Campaign_themes",
+      "evidence": "codifying women's rights into law"
+    },
+    {
+      "pid": "3f7784dd-2d55-4edf-bc81-41f1d9c571cc",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Jason Poulos",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Jason_Poulos"
+      ],
+      "after": "https://ballotpedia.org/Jason_Poulos#Campaign_themes",
+      "evidence": "I believe in human rights — here and abroad. That means abolishing ICE,"
+    },
+    {
+      "pid": "3f7784dd-2d55-4edf-bc81-41f1d9c571cc",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Jason Poulos",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Jason_Poulos"
+      ],
+      "after": "https://ballotpedia.org/Jason_Poulos#Campaign_themes",
+      "evidence": "I support a constitutional amendment to overturn Citizens United and restore democracy"
+    },
+    {
+      "pid": "3f7784dd-2d55-4edf-bc81-41f1d9c571cc",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Jason Poulos",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Jason_Poulos"
+      ],
+      "after": "https://ballotpedia.org/Jason_Poulos#Campaign_themes",
+      "evidence": "Medicare-for-All so healthcare isn't tied to employment"
+    },
+    {
+      "pid": "3f7784dd-2d55-4edf-bc81-41f1d9c571cc",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Jason Poulos",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Jason_Poulos"
+      ],
+      "after": "https://ballotpedia.org/Jason_Poulos#Campaign_themes",
+      "evidence": "Healthcare is a human right... I support Medicare-for-All because no one should have to choose between paying rent and seeing a doctor,"
+    },
+    {
+      "pid": "3f7784dd-2d55-4edf-bc81-41f1d9c571cc",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Jason Poulos",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Jason_Poulos"
+      ],
+      "after": "https://ballotpedia.org/Jason_Poulos#Campaign_themes",
+      "evidence": "corporate taxes on automation to ensure companies pay their fair share when they replace workers with machines,"
+    },
+    {
+      "pid": "3f7ce0c5-7674-4b3b-87aa-61e0190b402c",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "John \"Drew\" Williams",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Drew_Williams"
+      ],
+      "after": "https://ballotpedia.org/Drew_Williams#Campaign_themes",
+      "evidence": "a healthy respect for both our current needs and productions of fossil fuels while understanding the direction and needs of greener and renewable energy... goin"
+    },
+    {
+      "pid": "3f7ce0c5-7674-4b3b-87aa-61e0190b402c",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "John \"Drew\" Williams",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Drew_Williams"
+      ],
+      "after": "https://ballotpedia.org/Drew_Williams#Campaign_themes",
+      "evidence": "current needs and productions of fossil fuels"
+    },
+    {
+      "pid": "405de162-8de9-4aef-af9a-c323c04da698",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Glen H. Sturtevant",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Glen_Sturtevant"
+      ],
+      "after": "https://ballotpedia.org/Glen_Sturtevant#Campaign_themes",
+      "evidence": "I oppose the expansion of Medicaid and Obamacare in Virginia. The federal tax increases and healthcare mandates imposed by Obamacare are killing jobs and our ec"
+    },
+    {
+      "pid": "405de162-8de9-4aef-af9a-c323c04da698",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Glen H. Sturtevant",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Glen_Sturtevant"
+      ],
+      "after": "https://ballotpedia.org/Glen_Sturtevant#Campaign_themes",
+      "evidence": "Families must live within their means; government should too. We can grow our economy and create more jobs if government learns to live with less and we keep mo"
+    },
+    {
+      "pid": "43d8dd56-6b83-4fb3-91c8-a6018de164ff",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Justin Early",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Justin_Early"
+      ],
+      "after": "https://ballotpedia.org/Justin_Early#Campaign_themes",
+      "evidence": "Resist any attempts to impose a national school voucher scheme"
+    },
+    {
+      "pid": "43d8dd56-6b83-4fb3-91c8-a6018de164ff",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Justin Early",
+      "topic": "Civil Rights",
+      "before": [
+        "https://ballotpedia.org/Justin_Early"
+      ],
+      "after": "https://ballotpedia.org/Justin_Early#Campaign_themes",
+      "evidence": "standing up for civil rights"
+    },
+    {
+      "pid": "43d8dd56-6b83-4fb3-91c8-a6018de164ff",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Justin Early",
+      "topic": "AI Oversight",
+      "before": [
+        "https://ballotpedia.org/Justin_Early"
+      ],
+      "after": "https://ballotpedia.org/Justin_Early#Campaign_themes",
+      "evidence": "AI Without Guardrails Is a Risk"
+    },
+    {
+      "pid": "43d8dd56-6b83-4fb3-91c8-a6018de164ff",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Justin Early",
+      "topic": "Social Security",
+      "before": [
+        "https://ballotpedia.org/Justin_Early"
+      ],
+      "after": "https://ballotpedia.org/Justin_Early#Campaign_themes",
+      "evidence": "remove the income cap so billionaires pay into the program like everyone else,"
+    },
+    {
+      "pid": "43d8dd56-6b83-4fb3-91c8-a6018de164ff",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Justin Early",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Justin_Early"
+      ],
+      "after": "https://ballotpedia.org/Justin_Early#Campaign_themes",
+      "evidence": "Make healthcare affordable so no one has to quit their job to pay medical bills"
+    },
+    {
+      "pid": "43d8dd56-6b83-4fb3-91c8-a6018de164ff",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Justin Early",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Justin_Early"
+      ],
+      "after": "https://ballotpedia.org/Justin_Early#Campaign_themes",
+      "evidence": "shift the tax burden off working families and onto those who can afford it"
+    },
+    {
+      "pid": "459c4ee8-d027-4215-ab8c-d28476cd9010",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Suzie Byrd",
+      "topic": "AI Oversight",
+      "before": [
+        "https://ballotpedia.org/Suzie_Byrd"
+      ],
+      "after": "https://ballotpedia.org/Suzie_Byrd#Campaign_themes",
+      "evidence": "work for the common good"
+    },
+    {
+      "pid": "459c4ee8-d027-4215-ab8c-d28476cd9010",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Suzie Byrd",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Suzie_Byrd"
+      ],
+      "after": "https://ballotpedia.org/Suzie_Byrd#Campaign_themes",
+      "evidence": "healthcare for profit has ruined our healthcare"
+    },
+    {
+      "pid": "459c4ee8-d027-4215-ab8c-d28476cd9010",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Suzie Byrd",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Suzie_Byrd"
+      ],
+      "after": "https://ballotpedia.org/Suzie_Byrd#Campaign_themes",
+      "evidence": "supply side economics and tax cuts for the rich"
+    },
+    {
+      "pid": "486ec568-8c68-41e4-a289-2116c66e4cf1",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Virginia McIntyre",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Virginia_McIntyre"
+      ],
+      "after": "https://ballotpedia.org/Virginia_McIntyre#Campaign_themes",
+      "evidence": "fighting for tax relief for working families and seniors"
+    },
+    {
+      "pid": "48b16473-9fcb-4957-a836-8de0b8609946",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Brent Hennrich",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Brent_Hennrich"
+      ],
+      "after": "https://ballotpedia.org/Brent_Hennrich#Campaign_themes",
+      "evidence": "we need to do all we can to combat climate change and change its trajectory."
+    },
+    {
+      "pid": "48c56d02-f302-4ecf-86fa-912850d37fc7",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Antony Barran",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Antony_Barran"
+      ],
+      "after": "https://ballotpedia.org/Antony_Barran#Campaign_themes",
+      "evidence": "Support school choice and local control"
+    },
+    {
+      "pid": "48c56d02-f302-4ecf-86fa-912850d37fc7",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Antony Barran",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Antony_Barran"
+      ],
+      "after": "https://ballotpedia.org/Antony_Barran#Campaign_themes",
+      "evidence": "Secure the border with effective enforcement and modern technology. End loopholes that encourage illegal immigration. Create a rational, legal immigration proce"
+    },
+    {
+      "pid": "48c56d02-f302-4ecf-86fa-912850d37fc7",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Antony Barran",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Antony_Barran"
+      ],
+      "after": "https://ballotpedia.org/Antony_Barran#Campaign_themes",
+      "evidence": "Incentivize duplex and triplex construction in Opportunity Zones,"
+    },
+    {
+      "pid": "48c56d02-f302-4ecf-86fa-912850d37fc7",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Antony Barran",
+      "topic": "Social Security",
+      "before": [
+        "https://ballotpedia.org/Antony_Barran"
+      ],
+      "after": "https://ballotpedia.org/Antony_Barran#Campaign_themes",
+      "evidence": "Protect Medicare and Social Security from cuts while reforming inefficiencies"
+    },
+    {
+      "pid": "48c56d02-f302-4ecf-86fa-912850d37fc7",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Antony Barran",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Antony_Barran"
+      ],
+      "after": "https://ballotpedia.org/Antony_Barran#Campaign_themes",
+      "evidence": "Protect Medicare and Social Security from cuts while reforming inefficiencies,"
+    },
+    {
+      "pid": "48c56d02-f302-4ecf-86fa-912850d37fc7",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Antony Barran",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Antony_Barran"
+      ],
+      "after": "https://ballotpedia.org/Antony_Barran#Campaign_themes",
+      "evidence": "Balance the budget by cutting waste, fraud, and duplicative programs"
+    },
+    {
+      "pid": "4a5f99cc-6909-4986-a3a5-a3fb17ba36d9",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Tom Weiler",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Tom_Weiler"
+      ],
+      "after": "https://ballotpedia.org/Tom_Weiler#Campaign_themes",
+      "evidence": "domestic energy production... to combat inflation"
+    },
+    {
+      "pid": "4b7fb0a4-5d8c-49a1-8266-74a73421bf6e",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Jeromie Whalen",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Jeromie_Whalen"
+      ],
+      "after": "https://ballotpedia.org/Jeromie_Whalen#Campaign_themes",
+      "evidence": "Fully fund public schools instead of diverting money to private institutions,"
+    },
+    {
+      "pid": "4b7fb0a4-5d8c-49a1-8266-74a73421bf6e",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Jeromie Whalen",
+      "topic": "AI Oversight",
+      "before": [
+        "https://ballotpedia.org/Jeromie_Whalen"
+      ],
+      "after": "https://ballotpedia.org/Jeromie_Whalen#Campaign_themes",
+      "evidence": "regulate artificial intelligence and become far more informed about how technology actually works"
+    },
+    {
+      "pid": "4b7fb0a4-5d8c-49a1-8266-74a73421bf6e",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Jeromie Whalen",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Jeromie_Whalen"
+      ],
+      "after": "https://ballotpedia.org/Jeromie_Whalen#Campaign_themes",
+      "evidence": "get corporate money out of politics"
+    },
+    {
+      "pid": "4b7fb0a4-5d8c-49a1-8266-74a73421bf6e",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "Jeromie Whalen",
+      "topic": "Childcare",
+      "before": [
+        "https://ballotpedia.org/Jeromie_Whalen"
+      ],
+      "after": "https://ballotpedia.org/Jeromie_Whalen#Campaign_themes",
+      "evidence": "Guarantee universal, high quality Pre-K so every child gets an equal start and working families have reliable early education options,"
+    },
+    {
+      "pid": "4b7fb0a4-5d8c-49a1-8266-74a73421bf6e",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Jeromie Whalen",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Jeromie_Whalen"
+      ],
+      "after": "https://ballotpedia.org/Jeromie_Whalen#Campaign_themes",
+      "evidence": "implement Medicare for All"
+    },
+    {
+      "pid": "4b7fb0a4-5d8c-49a1-8266-74a73421bf6e",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Jeromie Whalen",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Jeromie_Whalen"
+      ],
+      "after": "https://ballotpedia.org/Jeromie_Whalen#Campaign_themes",
+      "evidence": "Implement Medicare for All to guarantee healthcare for every American through a single payer system with full coverage,"
+    },
+    {
+      "pid": "4b7fb0a4-5d8c-49a1-8266-74a73421bf6e",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Jeromie Whalen",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Jeromie_Whalen"
+      ],
+      "after": "https://ballotpedia.org/Jeromie_Whalen#Campaign_themes",
+      "evidence": "Ballotpedia Candidate Connection"
+    },
+    {
+      "pid": "4bb7dc78-9908-4c45-9e38-e992d6edcfc5",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Leon Lawson",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Leon_Lawson"
+      ],
+      "after": "https://ballotpedia.org/Leon_Lawson#Campaign_themes",
+      "evidence": "Senior Healthcare Act"
+    },
+    {
+      "pid": "4d066cfe-26fd-42ec-aaf3-e2c4b72a23a6",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Evan Hunt",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Evan_Hunt_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Evan_Hunt_(Texas)#Campaign_themes",
+      "evidence": "Public Schools must be adequately funded"
+    },
+    {
+      "pid": "4d066cfe-26fd-42ec-aaf3-e2c4b72a23a6",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Evan Hunt",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Evan_Hunt_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Evan_Hunt_(Texas)#Campaign_themes",
+      "evidence": "if we want to catch the worst, first, then we need to let cops (not masked federal agents) catch criminals"
+    },
+    {
+      "pid": "4d066cfe-26fd-42ec-aaf3-e2c4b72a23a6",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Evan Hunt",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Evan_Hunt_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Evan_Hunt_(Texas)#Campaign_themes",
+      "evidence": "We need strong borders but we also need to get back to treating all people with due process, dignity and respect"
+    },
+    {
+      "pid": "4d066cfe-26fd-42ec-aaf3-e2c4b72a23a6",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Evan Hunt",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Evan_Hunt_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Evan_Hunt_(Texas)#Campaign_themes",
+      "evidence": "the construction of affordable housing"
+    },
+    {
+      "pid": "4d066cfe-26fd-42ec-aaf3-e2c4b72a23a6",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Evan Hunt",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Evan_Hunt_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Evan_Hunt_(Texas)#Campaign_themes",
+      "evidence": "getting big money out of our politics ... working to repeal Citizens United"
+    },
+    {
+      "pid": "4d066cfe-26fd-42ec-aaf3-e2c4b72a23a6",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "Evan Hunt",
+      "topic": "Childcare",
+      "before": [
+        "https://ballotpedia.org/Evan_Hunt_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Evan_Hunt_(Texas)#Campaign_themes",
+      "evidence": "expanding access to affordable childcare"
+    },
+    {
+      "pid": "4d066cfe-26fd-42ec-aaf3-e2c4b72a23a6",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Evan Hunt",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Evan_Hunt_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Evan_Hunt_(Texas)#Campaign_themes",
+      "evidence": "no serious or responsible plan to replace them"
+    },
+    {
+      "pid": "52cbb916-a7d5-4fcc-a8c8-a396841b2bb8",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Rhonda Hart",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Rhonda_Hart"
+      ],
+      "after": "https://ballotpedia.org/Rhonda_Hart#Campaign_themes",
+      "evidence": "defend a woman's right to choose and work to pass federal laws to codify Roe v. Wade"
+    },
+    {
+      "pid": "53869a47-b093-4e82-a82e-a979766ebe68",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Nik Sandman",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Nik_Sandman"
+      ],
+      "after": "https://ballotpedia.org/Nik_Sandman#Campaign_themes",
+      "evidence": "Ballotpedia Candidate Connection"
+    },
+    {
+      "pid": "53869a47-b093-4e82-a82e-a979766ebe68",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Nik Sandman",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Nik_Sandman"
+      ],
+      "after": "https://ballotpedia.org/Nik_Sandman#Campaign_themes",
+      "evidence": "Ballotpedia Candidate Connection"
+    },
+    {
+      "pid": "53e0fcdb-7721-468f-a4b3-30289f6bb972",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Jordan D. Hinders",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Jordan_Hinders"
+      ],
+      "after": "https://ballotpedia.org/Jordan_Hinders#Campaign_themes",
+      "evidence": "lowering of taxes for middle class citizens, tax break restrictions so everyone pays their fair share, and accountability policies for corporations."
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Darializa_Avila_Chevalier"
+      ],
+      "after": "https://ballotpedia.org/Darializa_Avila_Chevalier#Campaign_themes",
+      "evidence": "Abolish ICE and the deportation machine"
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Darializa_Avila_Chevalier"
+      ],
+      "after": "https://ballotpedia.org/Darializa_Avila_Chevalier#Campaign_themes",
+      "evidence": "Expand pathways to citizenship, including for DREAMers and undocumented immigrants"
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Darializa_Avila_Chevalier"
+      ],
+      "after": "https://ballotpedia.org/Darializa_Avila_Chevalier#Campaign_themes",
+      "evidence": "Homes Act to build deeply affordable public housing, cooperatives, and community land trusts with rent caps"
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Social Security",
+      "before": [
+        "https://ballotpedia.org/Darializa_Avila_Chevalier"
+      ],
+      "after": "https://ballotpedia.org/Darializa_Avila_Chevalier#Campaign_themes",
+      "evidence": "Social Security Expansion Act to increase benefits"
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Darializa_Avila_Chevalier"
+      ],
+      "after": "https://ballotpedia.org/Darializa_Avila_Chevalier#Campaign_themes",
+      "evidence": "a 100% clean energy economy"
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Childcare",
+      "before": [
+        "https://ballotpedia.org/Darializa_Avila_Chevalier"
+      ],
+      "after": "https://ballotpedia.org/Darializa_Avila_Chevalier#Campaign_themes",
+      "evidence": "Child Care for Every Community Act to create universal child care nationwide"
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Darializa_Avila_Chevalier"
+      ],
+      "after": "https://ballotpedia.org/Darializa_Avila_Chevalier#Campaign_themes",
+      "evidence": "Medicare for All Act so everyone has health insurance including dental, vision, and hearing aids"
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Darializa_Avila_Chevalier"
+      ],
+      "after": "https://ballotpedia.org/Darializa_Avila_Chevalier#Campaign_themes",
+      "evidence": "Medicare for All Act so everyone has health insurance"
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Darializa_Avila_Chevalier"
+      ],
+      "after": "https://ballotpedia.org/Darializa_Avila_Chevalier#Campaign_themes",
+      "evidence": "Green New Deal to transition to a 100% clean energy economy"
+    },
+    {
+      "pid": "54bbf257-ea07-4809-b093-89b181e19fb4",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Darializa Avila Chevalier",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Darializa_Avila_Chevalier"
+      ],
+      "after": "https://ballotpedia.org/Darializa_Avila_Chevalier#Campaign_themes",
+      "evidence": "Ultra-Millionaire Tax Act and Equal Tax Act so millionaires and billionaires pay their fair share"
+    },
+    {
+      "pid": "574974b3-b91a-4ea5-b5b0-560663e56ef9",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Kristi Burke",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Kristi_Burke"
+      ],
+      "after": "https://ballotpedia.org/Kristi_Burke#Campaign_themes",
+      "evidence": "replacing agencies like ICE with a system prioritizing human rights,"
+    },
+    {
+      "pid": "604922aa-dcfe-4065-bcbe-4c238222bb03",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Dustin Darden",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Dustin_Darden"
+      ],
+      "after": "https://ballotpedia.org/Dustin_Darden#Campaign_themes",
+      "evidence": "Life starts at conception,"
+    },
+    {
+      "pid": "60870f17-4e23-4f5a-9cf4-8d37870206f8",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Johnny Garrett",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Johnny_Garrett"
+      ],
+      "after": "https://ballotpedia.org/Johnny_Garrett#Campaign_themes",
+      "evidence": "took action in the Tennessee House to implement a State Border Czar who will work hand in glove with ICE to deport all illegal aliens"
+    },
+    {
+      "pid": "60870f17-4e23-4f5a-9cf4-8d37870206f8",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Johnny Garrett",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Johnny_Garrett"
+      ],
+      "after": "https://ballotpedia.org/Johnny_Garrett#Campaign_themes",
+      "evidence": "believes that life begins at conception,"
+    },
+    {
+      "pid": "60870f17-4e23-4f5a-9cf4-8d37870206f8",
+      "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "name": "Johnny Garrett",
+      "topic": "Trans Athletes",
+      "before": [
+        "https://ballotpedia.org/Johnny_Garrett"
+      ],
+      "after": "https://ballotpedia.org/Johnny_Garrett#Campaign_themes",
+      "evidence": "passed legislation banning men from competing in women's sports"
+    },
+    {
+      "pid": "60870f17-4e23-4f5a-9cf4-8d37870206f8",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Johnny Garrett",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Johnny_Garrett"
+      ],
+      "after": "https://ballotpedia.org/Johnny_Garrett#Campaign_themes",
+      "evidence": "always fight to lower taxes and ensure that President Trump's 2017 tax cuts are not only permanent, but also expand them further."
+    },
+    {
+      "pid": "6708ceaa-ae51-4eee-93a3-d4a3be16254d",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Jonny Larsen",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Jonny_Larsen"
+      ],
+      "after": "https://ballotpedia.org/Jonny_Larsen#Campaign_themes",
+      "evidence": "private voucher programs with zero accountability"
+    },
+    {
+      "pid": "6708ceaa-ae51-4eee-93a3-d4a3be16254d",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Jonny Larsen",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Jonny_Larsen"
+      ],
+      "after": "https://ballotpedia.org/Jonny_Larsen#Campaign_themes",
+      "evidence": "masked agents terrorizing communities"
+    },
+    {
+      "pid": "6708ceaa-ae51-4eee-93a3-d4a3be16254d",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Jonny Larsen",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Jonny_Larsen"
+      ],
+      "after": "https://ballotpedia.org/Jonny_Larsen#Campaign_themes",
+      "evidence": "banning congressional stock trading and overturning Citizens United"
+    },
+    {
+      "pid": "6708ceaa-ae51-4eee-93a3-d4a3be16254d",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Jonny Larsen",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Jonny_Larsen"
+      ],
+      "after": "https://ballotpedia.org/Jonny_Larsen#Campaign_themes",
+      "evidence": "between a woman and her doctor. Not a politician and a lobbyist,"
+    },
+    {
+      "pid": "6708ceaa-ae51-4eee-93a3-d4a3be16254d",
+      "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "name": "Jonny Larsen",
+      "topic": "Same-Sex Marriage",
+      "before": [
+        "https://ballotpedia.org/Jonny_Larsen"
+      ],
+      "after": "https://ballotpedia.org/Jonny_Larsen#Campaign_themes",
+      "evidence": "deserve the same protections everyone else has,"
+    },
+    {
+      "pid": "69b5322a-cc38-4e55-838c-b08bb80fbcd1",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Kim Farington",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Kim_Farington"
+      ],
+      "after": "https://ballotpedia.org/Kim_Farington#Campaign_themes",
+      "evidence": "pro-life"
+    },
+    {
+      "pid": "6a2d6591-432c-48cc-920a-085a51a01d74",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Mark Nair",
+      "topic": "AI Oversight",
+      "before": [
+        "https://ballotpedia.org/Mark_Nair"
+      ],
+      "after": "https://ballotpedia.org/Mark_Nair#Campaign_themes",
+      "evidence": "We need serious oversight and regulation on AI before it is too late"
+    },
+    {
+      "pid": "6a2d6591-432c-48cc-920a-085a51a01d74",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Mark Nair",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Mark_Nair"
+      ],
+      "after": "https://ballotpedia.org/Mark_Nair#Campaign_themes",
+      "evidence": "haphazard tariffs ... the largest tax increase Americans have ever seen"
+    },
+    {
+      "pid": "6a2d6591-432c-48cc-920a-085a51a01d74",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Mark Nair",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Mark_Nair"
+      ],
+      "after": "https://ballotpedia.org/Mark_Nair#Campaign_themes",
+      "evidence": "remove the disastrous effects of corporate and dark money from our elections"
+    },
+    {
+      "pid": "6a2d6591-432c-48cc-920a-085a51a01d74",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Mark Nair",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Mark_Nair"
+      ],
+      "after": "https://ballotpedia.org/Mark_Nair#Campaign_themes",
+      "evidence": "secure PEOPLE's healthcare as a right, and not a privilege"
+    },
+    {
+      "pid": "6b50637f-ed23-4155-9d69-42578bce95a3",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Van Hilleary",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Van_Hilleary"
+      ],
+      "after": "https://ballotpedia.org/Van_Hilleary#Campaign_themes",
+      "evidence": "champion parents' rights and support President Trump's education freedom agenda at every turn."
+    },
+    {
+      "pid": "6b50637f-ed23-4155-9d69-42578bce95a3",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Van Hilleary",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Van_Hilleary"
+      ],
+      "after": "https://ballotpedia.org/Van_Hilleary#Campaign_themes",
+      "evidence": "reverse every Biden-era energy restriction that killed jobs and drove up prices"
+    },
+    {
+      "pid": "6b50637f-ed23-4155-9d69-42578bce95a3",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Van Hilleary",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Van_Hilleary"
+      ],
+      "after": "https://ballotpedia.org/Van_Hilleary#Campaign_themes",
+      "evidence": "oppose any tax hikes"
+    },
+    {
+      "pid": "6ed34f30-ea73-4863-88b5-256da098bbb4",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Will Martin",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Will_Martin_(Wisconsin)"
+      ],
+      "after": "https://ballotpedia.org/Will_Martin_(Wisconsin)#Campaign_themes",
+      "evidence": "establish universal school choice, granting every parent the freedom to determine the best educational option for each child"
+    },
+    {
+      "pid": "72868317-3f4e-426d-a515-cd02a619fdc1",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Claire Reynolds",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Claire_Reynolds"
+      ],
+      "after": "https://ballotpedia.org/Claire_Reynolds#Campaign_themes",
+      "evidence": "treating immigrants with dignity"
+    },
+    {
+      "pid": "72868317-3f4e-426d-a515-cd02a619fdc1",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Claire Reynolds",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Claire_Reynolds"
+      ],
+      "after": "https://ballotpedia.org/Claire_Reynolds#Campaign_themes",
+      "evidence": "abortion"
+    },
+    {
+      "pid": "72868317-3f4e-426d-a515-cd02a619fdc1",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Claire Reynolds",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Claire_Reynolds"
+      ],
+      "after": "https://ballotpedia.org/Claire_Reynolds#Campaign_themes",
+      "evidence": "a single-payer healthcare system, such as Medicare for All"
+    },
+    {
+      "pid": "72868317-3f4e-426d-a515-cd02a619fdc1",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Claire Reynolds",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Claire_Reynolds"
+      ],
+      "after": "https://ballotpedia.org/Claire_Reynolds#Campaign_themes",
+      "evidence": "focus on transitioning us to a single-payer healthcare system, such as Medicare for All,"
+    },
+    {
+      "pid": "731049dd-0a5b-44fb-a778-b637dded0a5b",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Lashrecse D. Aird",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Lashrecse_Aird"
+      ],
+      "after": "https://ballotpedia.org/Lashrecse_Aird#Campaign_themes",
+      "evidence": "Aird will actively pursue the cause of making sure that woman get equal pay for equal work. As a mother and wife, she will be an advocate for women's reproducti"
+    },
+    {
+      "pid": "7370c0f1-5362-4c7a-b665-452a98f9af84",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Curtis Goodwin",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Curtis_Goodwin"
+      ],
+      "after": "https://ballotpedia.org/Curtis_Goodwin#Campaign_themes",
+      "evidence": "Limited Government, Strong Communities,"
+    },
+    {
+      "pid": "76cfc903-921f-4c45-b10a-cbfa8bb1859f",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Christian Menefee",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Christian_Menefee"
+      ],
+      "after": "https://ballotpedia.org/Christian_Menefee#Campaign_themes",
+      "evidence": "Make it easier to build homes that the average person can afford"
+    },
+    {
+      "pid": "76cfc903-921f-4c45-b10a-cbfa8bb1859f",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Christian Menefee",
+      "topic": "Social Security",
+      "before": [
+        "https://ballotpedia.org/Christian_Menefee"
+      ],
+      "after": "https://ballotpedia.org/Christian_Menefee#Campaign_themes",
+      "evidence": "that would have weakened Social Security"
+    },
+    {
+      "pid": "76cfc903-921f-4c45-b10a-cbfa8bb1859f",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Christian Menefee",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Christian_Menefee"
+      ],
+      "after": "https://ballotpedia.org/Christian_Menefee#Campaign_themes",
+      "evidence": "Decisions about birth control, abortion, and IVF should be made by families -- not politicians,"
+    },
+    {
+      "pid": "76cfc903-921f-4c45-b10a-cbfa8bb1859f",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "Christian Menefee",
+      "topic": "Childcare",
+      "before": [
+        "https://ballotpedia.org/Christian_Menefee"
+      ],
+      "after": "https://ballotpedia.org/Christian_Menefee#Campaign_themes",
+      "evidence": "Expand tax credits for parents and caregivers"
+    },
+    {
+      "pid": "76cfc903-921f-4c45-b10a-cbfa8bb1859f",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Christian Menefee",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Christian_Menefee"
+      ],
+      "after": "https://ballotpedia.org/Christian_Menefee#Campaign_themes",
+      "evidence": "pass Medicare for All"
+    },
+    {
+      "pid": "76cfc903-921f-4c45-b10a-cbfa8bb1859f",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Christian Menefee",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Christian_Menefee"
+      ],
+      "after": "https://ballotpedia.org/Christian_Menefee#Campaign_themes",
+      "evidence": "Protecting Our Democracy"
+    },
+    {
+      "pid": "76cfc903-921f-4c45-b10a-cbfa8bb1859f",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Christian Menefee",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Christian_Menefee"
+      ],
+      "after": "https://ballotpedia.org/Christian_Menefee#Campaign_themes",
+      "evidence": "pass Medicare for All so everyone can see a doctor when they need one,"
+    },
+    {
+      "pid": "76cfc903-921f-4c45-b10a-cbfa8bb1859f",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Christian Menefee",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Christian_Menefee"
+      ],
+      "after": "https://ballotpedia.org/Christian_Menefee#Campaign_themes",
+      "evidence": "fix the tax code so that billionaires and large corporations pay their fair share"
+    },
+    {
+      "pid": "78f1d851-4856-456e-b23d-5e15b5516ef2",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Marquette Greene-Scott",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Marquette_Greene-Scott"
+      ],
+      "after": "https://ballotpedia.org/Marquette_Greene-Scott#Campaign_themes",
+      "evidence": "masked men picking people up off the streets, at their jobs, at school"
+    },
+    {
+      "pid": "78f1d851-4856-456e-b23d-5e15b5516ef2",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Marquette Greene-Scott",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Marquette_Greene-Scott"
+      ],
+      "after": "https://ballotpedia.org/Marquette_Greene-Scott#Campaign_themes",
+      "evidence": "Healthcare is a human right and not a privilege"
+    },
+    {
+      "pid": "792ad281-ed7c-418d-b0c5-9fcdd9e1b097",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Hunter Gordon",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Hunter_Gordon"
+      ],
+      "after": "https://ballotpedia.org/Hunter_Gordon#Campaign_themes",
+      "evidence": "deserve not to be terrorized and ripped apart,"
+    },
+    {
+      "pid": "792ad281-ed7c-418d-b0c5-9fcdd9e1b097",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Hunter Gordon",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Hunter_Gordon"
+      ],
+      "after": "https://ballotpedia.org/Hunter_Gordon#Campaign_themes",
+      "evidence": "an immigration system that prioritizes humanity and opportunity over cruelty and deportation"
+    },
+    {
+      "pid": "792ad281-ed7c-418d-b0c5-9fcdd9e1b097",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Hunter Gordon",
+      "topic": "AI Oversight",
+      "before": [
+        "https://ballotpedia.org/Hunter_Gordon"
+      ],
+      "after": "https://ballotpedia.org/Hunter_Gordon#Campaign_themes",
+      "evidence": "implement strict regulations on generative AI"
+    },
+    {
+      "pid": "792ad281-ed7c-418d-b0c5-9fcdd9e1b097",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Hunter Gordon",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Hunter_Gordon"
+      ],
+      "after": "https://ballotpedia.org/Hunter_Gordon#Campaign_themes",
+      "evidence": "national rent control"
+    },
+    {
+      "pid": "792ad281-ed7c-418d-b0c5-9fcdd9e1b097",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Hunter Gordon",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Hunter_Gordon"
+      ],
+      "after": "https://ballotpedia.org/Hunter_Gordon#Campaign_themes",
+      "evidence": "not AIPAC, big tech or billionaire donors,"
+    },
+    {
+      "pid": "792ad281-ed7c-418d-b0c5-9fcdd9e1b097",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Hunter Gordon",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Hunter_Gordon"
+      ],
+      "after": "https://ballotpedia.org/Hunter_Gordon#Campaign_themes",
+      "evidence": "Ballotpedia Candidate Connection"
+    },
+    {
+      "pid": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Cait Conley",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Cait_Conley"
+      ],
+      "after": "https://ballotpedia.org/Cait_Conley#Campaign_themes",
+      "evidence": "oppose voucher programs that are stripping money out of our public education system"
+    },
+    {
+      "pid": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Cait Conley",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Cait_Conley"
+      ],
+      "after": "https://ballotpedia.org/Cait_Conley#Campaign_themes",
+      "evidence": "cutting outdated red tape and zoning rules,"
+    },
+    {
+      "pid": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Cait Conley",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Cait_Conley"
+      ],
+      "after": "https://ballotpedia.org/Cait_Conley#Campaign_themes",
+      "evidence": "jacking up the price of materials"
+    },
+    {
+      "pid": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Cait Conley",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Cait_Conley"
+      ],
+      "after": "https://ballotpedia.org/Cait_Conley#Campaign_themes",
+      "evidence": "codify Roe v. Wade into law"
+    },
+    {
+      "pid": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Cait Conley",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Cait_Conley"
+      ],
+      "after": "https://ballotpedia.org/Cait_Conley#Campaign_themes",
+      "evidence": "to include vision, dental, and hearing,"
+    },
+    {
+      "pid": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Cait Conley",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Cait_Conley"
+      ],
+      "after": "https://ballotpedia.org/Cait_Conley#Campaign_themes",
+      "evidence": "Every American should have the right to access affordable healthcare"
+    },
+    {
+      "pid": "7aecb8c6-affa-41e2-a742-5fd2dc17c247",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Cait Conley",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Cait_Conley"
+      ],
+      "after": "https://ballotpedia.org/Cait_Conley#Campaign_themes",
+      "evidence": "a national security crisis"
+    },
+    {
+      "pid": "7cfae23b-b360-4372-8998-bc109c90e391",
+      "tid": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "name": "Doug Basler",
+      "topic": "Homelessness",
+      "before": [
+        "https://ballotpedia.org/Doug_Basler"
+      ],
+      "after": "https://ballotpedia.org/Doug_Basler#Campaign_themes",
+      "evidence": "crime and homelessness can be greatly reduced by restoring responsible police power,"
+    },
+    {
+      "pid": "7cfae23b-b360-4372-8998-bc109c90e391",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Doug Basler",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Doug_Basler"
+      ],
+      "after": "https://ballotpedia.org/Doug_Basler#Campaign_themes",
+      "evidence": "America has vast energy reserves"
+    },
+    {
+      "pid": "7d0fd17d-2ef8-4ed1-89fa-b55f0dfef147",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Troy Rasband",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Troy_Rasband"
+      ],
+      "after": "https://ballotpedia.org/Troy_Rasband#Campaign_themes",
+      "evidence": "must answer to the people they serve – not wealthy donors or special interests"
+    },
+    {
+      "pid": "7d0fd17d-2ef8-4ed1-89fa-b55f0dfef147",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Troy Rasband",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Troy_Rasband"
+      ],
+      "after": "https://ballotpedia.org/Troy_Rasband#Campaign_themes",
+      "evidence": "Ballotpedia Candidate Connection"
+    },
+    {
+      "pid": "7de9ed60-46c1-41a3-a0d4-24deb368e17f",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Charlotte Bergmann",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Charlotte_Bergmann"
+      ],
+      "after": "https://ballotpedia.org/Charlotte_Bergmann#Campaign_themes",
+      "evidence": "Parents have the absolute right to choose their child's education whether public, private, charter, or homeschool"
+    },
+    {
+      "pid": "7de9ed60-46c1-41a3-a0d4-24deb368e17f",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Charlotte Bergmann",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Charlotte_Bergmann"
+      ],
+      "after": "https://ballotpedia.org/Charlotte_Bergmann#Campaign_themes",
+      "evidence": "mass deportations of those here illegally,"
+    },
+    {
+      "pid": "7de9ed60-46c1-41a3-a0d4-24deb368e17f",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Charlotte Bergmann",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Charlotte_Bergmann"
+      ],
+      "after": "https://ballotpedia.org/Charlotte_Bergmann#Campaign_themes",
+      "evidence": "legal immigration only, through the front door only,"
+    },
+    {
+      "pid": "7de9ed60-46c1-41a3-a0d4-24deb368e17f",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Charlotte Bergmann",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Charlotte_Bergmann"
+      ],
+      "after": "https://ballotpedia.org/Charlotte_Bergmann#Campaign_themes",
+      "evidence": "manufacturing jobs back from China with crushing tariffs."
+    },
+    {
+      "pid": "7de9ed60-46c1-41a3-a0d4-24deb368e17f",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Charlotte Bergmann",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Charlotte_Bergmann"
+      ],
+      "after": "https://ballotpedia.org/Charlotte_Bergmann#Campaign_themes",
+      "evidence": "unleash American energy production so that 'drill baby drill' becomes reality again."
+    },
+    {
+      "pid": "7de9ed60-46c1-41a3-a0d4-24deb368e17f",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Charlotte Bergmann",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Charlotte_Bergmann"
+      ],
+      "after": "https://ballotpedia.org/Charlotte_Bergmann#Campaign_themes",
+      "evidence": "requires proof of citizenship to vote, mandates voter ID, and cleans up our voter rolls,"
+    },
+    {
+      "pid": "7de9ed60-46c1-41a3-a0d4-24deb368e17f",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Charlotte Bergmann",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Charlotte_Bergmann"
+      ],
+      "after": "https://ballotpedia.org/Charlotte_Bergmann#Campaign_themes",
+      "evidence": "cut trillions in wasteful spending, eliminate job-killing regulations, and dramatically lower taxes on American workers."
+    },
+    {
+      "pid": "7f51d769-116d-458c-9c60-76aed2c135cc",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Nadia Milleron",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Nadia_Milleron"
+      ],
+      "after": "https://ballotpedia.org/Nadia_Milleron#Campaign_themes",
+      "evidence": "shipped manufacturing jobs overseas"
+    },
+    {
+      "pid": "7f51d769-116d-458c-9c60-76aed2c135cc",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Nadia Milleron",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Nadia_Milleron"
+      ],
+      "after": "https://ballotpedia.org/Nadia_Milleron#Campaign_themes",
+      "evidence": "taken the most money from big corporations and special interests of any member of the House"
+    },
+    {
+      "pid": "8014ac34-62dd-48d8-ad9c-14485da42e51",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Devin Hermanson",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Devin_Hermanson"
+      ],
+      "after": "https://ballotpedia.org/Devin_Hermanson#Campaign_themes",
+      "evidence": "get money out of politics"
+    },
+    {
+      "pid": "8014ac34-62dd-48d8-ad9c-14485da42e51",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Devin Hermanson",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Devin_Hermanson"
+      ],
+      "after": "https://ballotpedia.org/Devin_Hermanson#Campaign_themes",
+      "evidence": "abortion"
+    },
+    {
+      "pid": "8014ac34-62dd-48d8-ad9c-14485da42e51",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Devin Hermanson",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Devin_Hermanson"
+      ],
+      "after": "https://ballotpedia.org/Devin_Hermanson#Campaign_themes",
+      "evidence": "Ballotpedia Candidate Connection"
+    },
+    {
+      "pid": "8014ac34-62dd-48d8-ad9c-14485da42e51",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Devin Hermanson",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Devin_Hermanson"
+      ],
+      "after": "https://ballotpedia.org/Devin_Hermanson#Campaign_themes",
+      "evidence": "Green New Deal"
+    },
+    {
+      "pid": "8014ac34-62dd-48d8-ad9c-14485da42e51",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Devin Hermanson",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Devin_Hermanson"
+      ],
+      "after": "https://ballotpedia.org/Devin_Hermanson#Campaign_themes",
+      "evidence": "rolling back decades of tax cuts for the wealthy and corporations."
+    },
+    {
+      "pid": "80b9fe48-9f8c-4585-91ab-4d0ed1bc2229",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Amy J. Laufer",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Amy_Laufer"
+      ],
+      "after": "https://ballotpedia.org/Amy_Laufer#Campaign_themes",
+      "evidence": "pre-existing"
+    },
+    {
+      "pid": "8244b842-cb91-4279-8ff8-3a1347328823",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Alexander Hale",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Alexander_Hale"
+      ],
+      "after": "https://ballotpedia.org/Alexander_Hale#Campaign_themes",
+      "evidence": "School choice and innovative approaches are key to improving student outcomes"
+    },
+    {
+      "pid": "8244b842-cb91-4279-8ff8-3a1347328823",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Alexander Hale",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Alexander_Hale"
+      ],
+      "after": "https://ballotpedia.org/Alexander_Hale#Campaign_themes",
+      "evidence": "suffer[s] when illegal immigration is left unchecked"
+    },
+    {
+      "pid": "8244b842-cb91-4279-8ff8-3a1347328823",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Alexander Hale",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Alexander_Hale"
+      ],
+      "after": "https://ballotpedia.org/Alexander_Hale#Campaign_themes",
+      "evidence": "champion Houston's energy industry"
+    },
+    {
+      "pid": "8244b842-cb91-4279-8ff8-3a1347328823",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Alexander Hale",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Alexander_Hale"
+      ],
+      "after": "https://ballotpedia.org/Alexander_Hale#Campaign_themes",
+      "evidence": "Fiscal Responsibility"
+    },
+    {
+      "pid": "830d155a-394e-463c-999d-bcf154460225",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Vincent Dixie",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Vincent_Dixie"
+      ],
+      "after": "https://ballotpedia.org/Vincent_Dixie#Campaign_themes",
+      "evidence": "stop corporate landlords from driving up rents, expand access to affordable housing, and make sure every family has a fair shot at owning a home,"
+    },
+    {
+      "pid": "830d155a-394e-463c-999d-bcf154460225",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "Vincent Dixie",
+      "topic": "Childcare",
+      "before": [
+        "https://ballotpedia.org/Vincent_Dixie"
+      ],
+      "after": "https://ballotpedia.org/Vincent_Dixie#Campaign_themes",
+      "evidence": "push for policies that lower childcare costs, support childcare providers, and make sure every parent can go to work knowing their kids are safe and cared for."
+    },
+    {
+      "pid": "830d155a-394e-463c-999d-bcf154460225",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Vincent Dixie",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Vincent_Dixie"
+      ],
+      "after": "https://ballotpedia.org/Vincent_Dixie#Campaign_themes",
+      "evidence": "fight cuts to Medicare and Medicaid"
+    },
+    {
+      "pid": "830d155a-394e-463c-999d-bcf154460225",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Vincent Dixie",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Vincent_Dixie"
+      ],
+      "after": "https://ballotpedia.org/Vincent_Dixie#Campaign_themes",
+      "evidence": "expand coverage so nobody goes bankrupt just because they get sick,"
+    },
+    {
+      "pid": "84f38306-e031-4671-8c2e-97f49a43509f",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Carrie Ann Iacomini",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Carrie_Iacomini"
+      ],
+      "after": "https://ballotpedia.org/Carrie_Iacomini#Campaign_themes",
+      "evidence": "Reform is not enough; we deserve universal healthcare,"
+    },
+    {
+      "pid": "84f38306-e031-4671-8c2e-97f49a43509f",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Carrie Ann Iacomini",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Carrie_Iacomini"
+      ],
+      "after": "https://ballotpedia.org/Carrie_Iacomini#Campaign_themes",
+      "evidence": "cutting taxes for billionaires who spend extravagant amounts of money on vanity projects"
+    },
+    {
+      "pid": "85fdd516-d5cc-48d8-8fec-e425d90f03db",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Denise Powell",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Denise_Powell"
+      ],
+      "after": "https://ballotpedia.org/Denise_Powell#Campaign_themes",
+      "evidence": "massive expansion of immigration raids and arrests without scrutiny"
+    },
+    {
+      "pid": "85fdd516-d5cc-48d8-8fec-e425d90f03db",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Denise Powell",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Denise_Powell"
+      ],
+      "after": "https://ballotpedia.org/Denise_Powell#Campaign_themes",
+      "evidence": "long-term"
+    },
+    {
+      "pid": "88344dd3-3458-4237-866a-3e6a538b248d",
+      "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "name": "Kurtis Engle",
+      "topic": "Redistricting",
+      "before": [
+        "https://ballotpedia.org/Kurtis_Engle"
+      ],
+      "after": "https://ballotpedia.org/Kurtis_Engle#Campaign_themes",
+      "evidence": "Scrupulously non-partisan. The way no one does it, now,"
+    },
+    {
+      "pid": "89ffd927-f862-4590-bea5-7a56614d0b14",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Jon Henry",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Jon_Henry"
+      ],
+      "after": "https://ballotpedia.org/Jon_Henry#Campaign_themes",
+      "evidence": "re-shore vital industries in America"
+    },
+    {
+      "pid": "8d005222-15de-45ea-a61c-e7fd37321e9c",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Dennis Hannon",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Dennis_Hannon"
+      ],
+      "after": "https://ballotpedia.org/Dennis_Hannon#Campaign_themes",
+      "evidence": "enforce immigration and worksite laws"
+    },
+    {
+      "pid": "8d005222-15de-45ea-a61c-e7fd37321e9c",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Dennis Hannon",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Dennis_Hannon"
+      ],
+      "after": "https://ballotpedia.org/Dennis_Hannon#Campaign_themes",
+      "evidence": "expand domestic energy production to help reduce costs"
+    },
+    {
+      "pid": "8d005222-15de-45ea-a61c-e7fd37321e9c",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Dennis Hannon",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Dennis_Hannon"
+      ],
+      "after": "https://ballotpedia.org/Dennis_Hannon#Campaign_themes",
+      "evidence": "lower prescription drug and health care costs, especially for seniors,"
+    },
+    {
+      "pid": "8d005222-15de-45ea-a61c-e7fd37321e9c",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Dennis Hannon",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Dennis_Hannon"
+      ],
+      "after": "https://ballotpedia.org/Dennis_Hannon#Campaign_themes",
+      "evidence": "back tax relief for working-class families"
+    },
+    {
+      "pid": "8ed24df0-2a89-45d2-a236-1fe339b2a11c",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "David R. Suetterlein",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/David_Suetterlein"
+      ],
+      "after": "https://ballotpedia.org/David_Suetterlein#Campaign_themes",
+      "evidence": "David is pro-life. As Senator, he will strongly oppose taxpayer funding of abortion and support the Virginia Pain-Capable Unborn Child Protection Act. David is "
+    },
+    {
+      "pid": "8ed24df0-2a89-45d2-a236-1fe339b2a11c",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "David R. Suetterlein",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/David_Suetterlein"
+      ],
+      "after": "https://ballotpedia.org/David_Suetterlein#Campaign_themes",
+      "evidence": "opposes proposals to expand Obamacare in Virginia and recognizes the unsustainable financial burden it would place on Virginia taxpayers."
+    },
+    {
+      "pid": "9051e772-a0cc-409f-be4c-613424d17a10",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Carlos De La Cruz",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Carlos_De_La_Cruz"
+      ],
+      "after": "https://ballotpedia.org/Carlos_De_La_Cruz#Campaign_themes",
+      "evidence": "we welcome legal immigration, but we cannot allow criminals and cartels to take advantage of our country"
+    },
+    {
+      "pid": "9051e772-a0cc-409f-be4c-613424d17a10",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Carlos De La Cruz",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Carlos_De_La_Cruz"
+      ],
+      "after": "https://ballotpedia.org/Carlos_De_La_Cruz#Campaign_themes",
+      "evidence": "manufacturing back home"
+    },
+    {
+      "pid": "91308f54-a402-49da-b77d-fc5521ff3333",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Adam Arafat",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Adam_Arafat"
+      ],
+      "after": "https://ballotpedia.org/Adam_Arafat#Campaign_themes",
+      "evidence": "special interest control of politics"
+    },
+    {
+      "pid": "91308f54-a402-49da-b77d-fc5521ff3333",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Adam Arafat",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Adam_Arafat"
+      ],
+      "after": "https://ballotpedia.org/Adam_Arafat#Campaign_themes",
+      "evidence": "defend reproductive freedom"
+    },
+    {
+      "pid": "91308f54-a402-49da-b77d-fc5521ff3333",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Adam Arafat",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Adam_Arafat"
+      ],
+      "after": "https://ballotpedia.org/Adam_Arafat#Campaign_themes",
+      "evidence": "healthcare should be a right"
+    },
+    {
+      "pid": "91308f54-a402-49da-b77d-fc5521ff3333",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Adam Arafat",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Adam_Arafat"
+      ],
+      "after": "https://ballotpedia.org/Adam_Arafat#Campaign_themes",
+      "evidence": "clean energy"
+    },
+    {
+      "pid": "91308f54-a402-49da-b77d-fc5521ff3333",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Adam Arafat",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Adam_Arafat"
+      ],
+      "after": "https://ballotpedia.org/Adam_Arafat#Campaign_themes",
+      "evidence": "fair taxation that ensures corporations fulfill their financial obligations"
+    },
+    {
+      "pid": "91737658-7a36-428e-823c-64d4a30d5879",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "Laura Jones",
+      "topic": "Childcare",
+      "before": [
+        "https://ballotpedia.org/Laura_Jones_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Laura_Jones_(Texas)#Campaign_themes",
+      "evidence": "rising childcare costs are pushing women out of the workforce"
+    },
+    {
+      "pid": "91737658-7a36-428e-823c-64d4a30d5879",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Laura Jones",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Laura_Jones_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Laura_Jones_(Texas)#Campaign_themes",
+      "evidence": "Access to healthcare is a basic human right"
+    },
+    {
+      "pid": "927cddfd-cda3-4f2f-a04b-c995bcd9c932",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Jim Torino",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Jim_Torino"
+      ],
+      "after": "https://ballotpedia.org/Jim_Torino#Campaign_themes",
+      "evidence": "corporate investors who are buying up homes, squeezing renters, and pricing families out of their own communities,"
+    },
+    {
+      "pid": "927cddfd-cda3-4f2f-a04b-c995bcd9c932",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Jim Torino",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Jim_Torino"
+      ],
+      "after": "https://ballotpedia.org/Jim_Torino#Campaign_themes",
+      "evidence": "fight for greater transparency, real campaign finance reform, responsible spending, and an end to the dysfunction that blocks meaningful progress"
+    },
+    {
+      "pid": "927cddfd-cda3-4f2f-a04b-c995bcd9c932",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "Jim Torino",
+      "topic": "Childcare",
+      "before": [
+        "https://ballotpedia.org/Jim_Torino"
+      ],
+      "after": "https://ballotpedia.org/Jim_Torino#Campaign_themes",
+      "evidence": "legislation to provide universal childcare for kids 5 years old and under"
+    },
+    {
+      "pid": "927cddfd-cda3-4f2f-a04b-c995bcd9c932",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Jim Torino",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Jim_Torino"
+      ],
+      "after": "https://ballotpedia.org/Jim_Torino#Campaign_themes",
+      "evidence": "pharmaceutical price gouging,"
+    },
+    {
+      "pid": "93daacfe-4791-490a-8465-123eeb7f4e6e",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Anna Golladay",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Anna_Golladay"
+      ],
+      "after": "https://ballotpedia.org/Anna_Golladay#Campaign_themes",
+      "evidence": "one of only ten states that has refused to expand Medicaid, leaving over 300,000 Tennesseans without insurance"
+    },
+    {
+      "pid": "93daacfe-4791-490a-8465-123eeb7f4e6e",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Anna Golladay",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Anna_Golladay"
+      ],
+      "after": "https://ballotpedia.org/Anna_Golladay#Campaign_themes",
+      "evidence": "expand Medicaid, protect the ACA, and secure federal stabilization funding for at-risk rural hospitals,"
+    },
+    {
+      "pid": "93daacfe-4791-490a-8465-123eeb7f4e6e",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Anna Golladay",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Anna_Golladay"
+      ],
+      "after": "https://ballotpedia.org/Anna_Golladay#Campaign_themes",
+      "evidence": "continued investment in responsible research and workforce development that helps our region lead in clean technology and environmental science"
+    },
+    {
+      "pid": "93daacfe-4791-490a-8465-123eeb7f4e6e",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Anna Golladay",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Anna_Golladay"
+      ],
+      "after": "https://ballotpedia.org/Anna_Golladay#Campaign_themes",
+      "evidence": "taxation lays on the wealthiest rather than the most vulnerable"
+    },
+    {
+      "pid": "95cdc29b-18d1-45e1-84c3-ba601f5bec40",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "M. Keith Hodges",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Keith_Hodges"
+      ],
+      "after": "https://ballotpedia.org/Keith_Hodges#Campaign_themes",
+      "evidence": "big government healthcare mandates"
+    },
+    {
+      "pid": "95f120d3-6067-4eec-837c-9d9d08fe21c1",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Dione Sims",
+      "topic": "Civil Rights",
+      "before": [
+        "https://ballotpedia.org/Dione_Sims"
+      ],
+      "after": "https://ballotpedia.org/Dione_Sims#Campaign_themes",
+      "evidence": "defend fundamental civil rights for everyone,"
+    },
+    {
+      "pid": "95f120d3-6067-4eec-837c-9d9d08fe21c1",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Dione Sims",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Dione_Sims"
+      ],
+      "after": "https://ballotpedia.org/Dione_Sims#Campaign_themes",
+      "evidence": "a roadmap to citizenship for long-time immigrants, including Dreamers and Temporary Protected Status (TPS) holders,"
+    },
+    {
+      "pid": "95f120d3-6067-4eec-837c-9d9d08fe21c1",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Dione Sims",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Dione_Sims"
+      ],
+      "after": "https://ballotpedia.org/Dione_Sims#Campaign_themes",
+      "evidence": "protect voting rights"
+    },
+    {
+      "pid": "95f120d3-6067-4eec-837c-9d9d08fe21c1",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Dione Sims",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Dione_Sims"
+      ],
+      "after": "https://ballotpedia.org/Dione_Sims#Campaign_themes",
+      "evidence": "expanding access to affordable health care"
+    },
+    {
+      "pid": "9e843c9d-bd2e-431f-969f-63372d0274ca",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Alex Q. Askew",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Alex_Askew"
+      ],
+      "after": "https://ballotpedia.org/Alex_Askew#Campaign_themes",
+      "evidence": "affordable housing"
+    },
+    {
+      "pid": "9e9c0393-0df6-4c19-af92-522b6f1afd14",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Anthony Constantino",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Anthony_Constantino"
+      ],
+      "after": "https://ballotpedia.org/Anthony_Constantino#Campaign_themes",
+      "evidence": "how much pain and suffering open borders caused the United States"
+    },
+    {
+      "pid": "9e9c0393-0df6-4c19-af92-522b6f1afd14",
+      "tid": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "name": "Anthony Constantino",
+      "topic": "Misinformation",
+      "before": [
+        "https://ballotpedia.org/Anthony_Constantino"
+      ],
+      "after": "https://ballotpedia.org/Anthony_Constantino#Campaign_themes",
+      "evidence": "a free speech social network when Democrats tried to take away free speech by censoring the Internet"
+    },
+    {
+      "pid": "9e9c0393-0df6-4c19-af92-522b6f1afd14",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Anthony Constantino",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Anthony_Constantino"
+      ],
+      "after": "https://ballotpedia.org/Anthony_Constantino#Campaign_themes",
+      "evidence": "stop the endless debate about making [healthcare] free to focus on innovation and delivering better outcomes"
+    },
+    {
+      "pid": "9fa72bdc-7bf2-4afe-8b9a-14b379eafbc4",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Alex Mealer",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Alex_Mealer"
+      ],
+      "after": "https://ballotpedia.org/Alex_Mealer#Campaign_themes",
+      "evidence": "keeping the border secure"
+    },
+    {
+      "pid": "9fa72bdc-7bf2-4afe-8b9a-14b379eafbc4",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Alex Mealer",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Alex_Mealer"
+      ],
+      "after": "https://ballotpedia.org/Alex_Mealer#Campaign_themes",
+      "evidence": "the fiercest advocate"
+    },
+    {
+      "pid": "9fa72bdc-7bf2-4afe-8b9a-14b379eafbc4",
+      "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "name": "Alex Mealer",
+      "topic": "Trans Athletes",
+      "before": [
+        "https://ballotpedia.org/Alex_Mealer"
+      ],
+      "after": "https://ballotpedia.org/Alex_Mealer#Campaign_themes",
+      "evidence": "keeping men out of women's sports"
+    },
+    {
+      "pid": "9fa72bdc-7bf2-4afe-8b9a-14b379eafbc4",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Alex Mealer",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Alex_Mealer"
+      ],
+      "after": "https://ballotpedia.org/Alex_Mealer#Campaign_themes",
+      "evidence": "unleashing the private sector ... by reducing government spending, taxes, and regulations"
+    },
+    {
+      "pid": "a43e7500-33dd-49aa-8b56-ad4c30aef249",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Kevin Burge",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Kevin_Burge_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Kevin_Burge_(Texas)#Campaign_themes",
+      "evidence": "Cracking down on ICE abuses, Funding Immigration Judges, Revamping Work Visas"
+    },
+    {
+      "pid": "a43e7500-33dd-49aa-8b56-ad4c30aef249",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Kevin Burge",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Kevin_Burge_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Kevin_Burge_(Texas)#Campaign_themes",
+      "evidence": "roll back Trump's Tariffs and their inflationary effects"
+    },
+    {
+      "pid": "a43e7500-33dd-49aa-8b56-ad4c30aef249",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "Kevin Burge",
+      "topic": "Childcare",
+      "before": [
+        "https://ballotpedia.org/Kevin_Burge_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Kevin_Burge_(Texas)#Campaign_themes",
+      "evidence": "fund programs such as Universal Pre-K"
+    },
+    {
+      "pid": "a43e7500-33dd-49aa-8b56-ad4c30aef249",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Kevin Burge",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Kevin_Burge_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Kevin_Burge_(Texas)#Campaign_themes",
+      "evidence": "Universal Healthcare"
+    },
+    {
+      "pid": "a74e04c6-46c8-4fdf-b08c-8930c1bb1ffa",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Jimmy Skovgard",
+      "topic": "AI Oversight",
+      "before": [
+        "https://ballotpedia.org/Jimmy_Skovgard"
+      ],
+      "after": "https://ballotpedia.org/Jimmy_Skovgard#Campaign_themes",
+      "evidence": "Once truth becomes flexible, democracy is at risk"
+    },
+    {
+      "pid": "a883bc74-3890-4e28-9545-7ce59630d873",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Lore Bergman",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Lore_Bergman"
+      ],
+      "after": "https://ballotpedia.org/Lore_Bergman#Campaign_themes",
+      "evidence": "the insanity of ICE and the huge amounts of money it is wasting and misusing daily"
+    },
+    {
+      "pid": "a883bc74-3890-4e28-9545-7ce59630d873",
+      "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "name": "Lore Bergman",
+      "topic": "Redistricting",
+      "before": [
+        "https://ballotpedia.org/Lore_Bergman"
+      ],
+      "after": "https://ballotpedia.org/Lore_Bergman#Campaign_themes",
+      "evidence": "a nonpartisan federal computerized program designed for calculating districts and county boundaries to stop gerrymandering,"
+    },
+    {
+      "pid": "a883bc74-3890-4e28-9545-7ce59630d873",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Lore Bergman",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Lore_Bergman"
+      ],
+      "after": "https://ballotpedia.org/Lore_Bergman#Campaign_themes",
+      "evidence": "affordable-housing"
+    },
+    {
+      "pid": "a883bc74-3890-4e28-9545-7ce59630d873",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Lore Bergman",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Lore_Bergman"
+      ],
+      "after": "https://ballotpedia.org/Lore_Bergman#Campaign_themes",
+      "evidence": "will vote to stop the insanity of these stupid and unneeded tariffs that are ruining small businesses, farms, industries and taking away people's jobs."
+    },
+    {
+      "pid": "a883bc74-3890-4e28-9545-7ce59630d873",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Lore Bergman",
+      "topic": "Social Security",
+      "before": [
+        "https://ballotpedia.org/Lore_Bergman"
+      ],
+      "after": "https://ballotpedia.org/Lore_Bergman#Campaign_themes",
+      "evidence": "Social Security, Disability, SNAP, HUD and affordable housing...will be protected and expanded"
+    },
+    {
+      "pid": "a883bc74-3890-4e28-9545-7ce59630d873",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Lore Bergman",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Lore_Bergman"
+      ],
+      "after": "https://ballotpedia.org/Lore_Bergman#Campaign_themes",
+      "evidence": "Corporate money, dark money and Citizens United needs to be removed and be illegal in campaigning and in any part of our federal government."
+    },
+    {
+      "pid": "a883bc74-3890-4e28-9545-7ce59630d873",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Lore Bergman",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Lore_Bergman"
+      ],
+      "after": "https://ballotpedia.org/Lore_Bergman#Campaign_themes",
+      "evidence": "no matter what you believe about abortion or IVF, it is your decision, not someone else's decision for you."
+    },
+    {
+      "pid": "a883bc74-3890-4e28-9545-7ce59630d873",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Lore Bergman",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Lore_Bergman"
+      ],
+      "after": "https://ballotpedia.org/Lore_Bergman#Campaign_themes",
+      "evidence": "sure all people have free healthcare"
+    },
+    {
+      "pid": "b21b5e5e-3359-4692-a60d-47d459bbb198",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Patrick Schmidt",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Patrick_Schmidt"
+      ],
+      "after": "https://ballotpedia.org/Patrick_Schmidt#Campaign_themes",
+      "evidence": "Medicaid"
+    },
+    {
+      "pid": "b50ac669-318e-4b48-9d4f-efecde6cef65",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Chaney Mosley",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Chaney_Mosley"
+      ],
+      "after": "https://ballotpedia.org/Chaney_Mosley#Campaign_themes",
+      "evidence": "meaningful congressional reform...including reducing the influence of money in politics, strengthening ethics standards, and ensuring elected officials are focu"
+    },
+    {
+      "pid": "b6de02b5-f811-45c8-8935-339f721c517c",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Kristin Hook",
+      "topic": "Civil Rights",
+      "before": [
+        "https://ballotpedia.org/Kristin_Hook"
+      ],
+      "after": "https://ballotpedia.org/Kristin_Hook#Campaign_themes",
+      "evidence": "protect civil and reproductive rights"
+    },
+    {
+      "pid": "b6de02b5-f811-45c8-8935-339f721c517c",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Kristin Hook",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Kristin_Hook"
+      ],
+      "after": "https://ballotpedia.org/Kristin_Hook#Campaign_themes",
+      "evidence": "housing more affordable, such as by capping rent increases"
+    },
+    {
+      "pid": "b6de02b5-f811-45c8-8935-339f721c517c",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Kristin Hook",
+      "topic": "Social Security",
+      "before": [
+        "https://ballotpedia.org/Kristin_Hook"
+      ],
+      "after": "https://ballotpedia.org/Kristin_Hook#Campaign_themes",
+      "evidence": "Expands Social Security and Medicare so that everyone can retire in dignity"
+    },
+    {
+      "pid": "b6de02b5-f811-45c8-8935-339f721c517c",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Kristin Hook",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Kristin_Hook"
+      ],
+      "after": "https://ballotpedia.org/Kristin_Hook#Campaign_themes",
+      "evidence": "protect civil and reproductive rights"
+    },
+    {
+      "pid": "b6de02b5-f811-45c8-8935-339f721c517c",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "Kristin Hook",
+      "topic": "Childcare",
+      "before": [
+        "https://ballotpedia.org/Kristin_Hook"
+      ],
+      "after": "https://ballotpedia.org/Kristin_Hook#Campaign_themes",
+      "evidence": "Provides access to affordable childcare and paid family and sick leave"
+    },
+    {
+      "pid": "b6de02b5-f811-45c8-8935-339f721c517c",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Kristin Hook",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Kristin_Hook"
+      ],
+      "after": "https://ballotpedia.org/Kristin_Hook#Campaign_themes",
+      "evidence": "expand programs like Medicare, Medicaid"
+    },
+    {
+      "pid": "b6de02b5-f811-45c8-8935-339f721c517c",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Kristin Hook",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Kristin_Hook"
+      ],
+      "after": "https://ballotpedia.org/Kristin_Hook#Campaign_themes",
+      "evidence": "protect the ACA and expand programs like Medicare, Medicaid"
+    },
+    {
+      "pid": "b6de02b5-f811-45c8-8935-339f721c517c",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Kristin Hook",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Kristin_Hook"
+      ],
+      "after": "https://ballotpedia.org/Kristin_Hook#Campaign_themes",
+      "evidence": "demand fair taxes for the wealthy"
+    },
+    {
+      "pid": "b71a700c-8091-4760-87c8-118402408fb5",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Melissa McDonough",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Melissa_McDonough"
+      ],
+      "after": "https://ballotpedia.org/Melissa_McDonough#Campaign_themes",
+      "evidence": "Governor Abbott's relentless push for vouchers"
+    },
+    {
+      "pid": "b71a700c-8091-4760-87c8-118402408fb5",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Melissa McDonough",
+      "topic": "Civil Rights",
+      "before": [
+        "https://ballotpedia.org/Melissa_McDonough"
+      ],
+      "after": "https://ballotpedia.org/Melissa_McDonough#Campaign_themes",
+      "evidence": "racism still exists in America"
+    },
+    {
+      "pid": "b71a700c-8091-4760-87c8-118402408fb5",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Melissa McDonough",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Melissa_McDonough"
+      ],
+      "after": "https://ballotpedia.org/Melissa_McDonough#Campaign_themes",
+      "evidence": "trade war with China"
+    },
+    {
+      "pid": "b71a700c-8091-4760-87c8-118402408fb5",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Melissa McDonough",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Melissa_McDonough"
+      ],
+      "after": "https://ballotpedia.org/Melissa_McDonough#Campaign_themes",
+      "evidence": "The petroleum industry will always be an integral part of the Texas economy"
+    },
+    {
+      "pid": "b71a700c-8091-4760-87c8-118402408fb5",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Melissa McDonough",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Melissa_McDonough"
+      ],
+      "after": "https://ballotpedia.org/Melissa_McDonough#Campaign_themes",
+      "evidence": "We need to make mail-in voting easier, continue to allow county-wide voting, have more accessible polling locations"
+    },
+    {
+      "pid": "b71a700c-8091-4760-87c8-118402408fb5",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Melissa McDonough",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Melissa_McDonough"
+      ],
+      "after": "https://ballotpedia.org/Melissa_McDonough#Campaign_themes",
+      "evidence": "leads the nation in uninsured"
+    },
+    {
+      "pid": "b71a700c-8091-4760-87c8-118402408fb5",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Melissa McDonough",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Melissa_McDonough"
+      ],
+      "after": "https://ballotpedia.org/Melissa_McDonough#Campaign_themes",
+      "evidence": "embrace renewable energy innovation"
+    },
+    {
+      "pid": "b7e9d159-b766-445c-b95f-9797b57247d9",
+      "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "name": "Mark D. Obenshain",
+      "topic": "Religious Freedom",
+      "before": [
+        "https://ballotpedia.org/Mark_Obenshain"
+      ],
+      "after": "https://ballotpedia.org/Mark_Obenshain#Campaign_themes",
+      "evidence": "Protecting Valley Values of Faith and Family"
+    },
+    {
+      "pid": "b7e9d159-b766-445c-b95f-9797b57247d9",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Mark D. Obenshain",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Mark_Obenshain"
+      ],
+      "after": "https://ballotpedia.org/Mark_Obenshain#Campaign_themes",
+      "evidence": "Promoting Energy Independence"
+    },
+    {
+      "pid": "b7e9d159-b766-445c-b95f-9797b57247d9",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Mark D. Obenshain",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Mark_Obenshain"
+      ],
+      "after": "https://ballotpedia.org/Mark_Obenshain#Campaign_themes",
+      "evidence": "Holding the Line on Taxes"
+    },
+    {
+      "pid": "b8175280-a47e-45f4-8ee4-594330e348cd",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Todd Warner",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Todd_Warner"
+      ],
+      "after": "https://ballotpedia.org/Todd_Warner#Campaign_themes",
+      "evidence": "abolish the federal Department of Education, redirect those dollars to the states and to parents, and back universal school choice so every Tennessee family...c"
+    },
+    {
+      "pid": "b8175280-a47e-45f4-8ee4-594330e348cd",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Todd Warner",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Todd_Warner"
+      ],
+      "after": "https://ballotpedia.org/Todd_Warner#Campaign_themes",
+      "evidence": "deport criminal illegal aliens,"
+    },
+    {
+      "pid": "b8175280-a47e-45f4-8ee4-594330e348cd",
+      "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "name": "Todd Warner",
+      "topic": "Religious Freedom",
+      "before": [
+        "https://ballotpedia.org/Todd_Warner"
+      ],
+      "after": "https://ballotpedia.org/Todd_Warner#Campaign_themes",
+      "evidence": "defend religious liberty against every government attempt to silence Christians"
+    },
+    {
+      "pid": "b8175280-a47e-45f4-8ee4-594330e348cd",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Todd Warner",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Todd_Warner"
+      ],
+      "after": "https://ballotpedia.org/Todd_Warner#Campaign_themes",
+      "evidence": "ban late-term abortion"
+    },
+    {
+      "pid": "bd4dc076-4bdd-4e10-be2c-80d998b17c50",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Patrick J. Ahrens",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Patrick_Ahrens"
+      ],
+      "after": "https://ballotpedia.org/Patrick_Ahrens#Campaign_themes",
+      "evidence": "Silicon Valley"
+    },
+    {
+      "pid": "bde578b4-fbb6-4d80-a55a-d5c3a24656ff",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Ernie Rivera",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Ernie_Rivera"
+      ],
+      "after": "https://ballotpedia.org/Ernie_Rivera#Campaign_themes",
+      "evidence": "unleash American energy"
+    },
+    {
+      "pid": "c028b916-7842-4823-8e4c-02e60e7d3959",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Dennis Clark",
+      "topic": "Civil Rights",
+      "before": [
+        "https://ballotpedia.org/Dennis_Jeffrey_Clark_(Tennessee_congressional_candidate)"
+      ],
+      "after": "https://ballotpedia.org/Dennis_Jeffrey_Clark_(Tennessee_congressional_candidate)#Campaign_themes",
+      "evidence": "Our country must provide reparations to the descendants of the people who helped build this company and were unable to equally partake in the benefits."
+    },
+    {
+      "pid": "c129d889-ab93-4f54-a2f9-9a63036223c9",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Cliff Huffman",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Cliff_Huffman"
+      ],
+      "after": "https://ballotpedia.org/Cliff_Huffman#Campaign_themes",
+      "evidence": "Medicare"
+    },
+    {
+      "pid": "c129d889-ab93-4f54-a2f9-9a63036223c9",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Cliff Huffman",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Cliff_Huffman"
+      ],
+      "after": "https://ballotpedia.org/Cliff_Huffman#Campaign_themes",
+      "evidence": "Candidate Connection"
+    },
+    {
+      "pid": "c129d889-ab93-4f54-a2f9-9a63036223c9",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Cliff Huffman",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Cliff_Huffman"
+      ],
+      "after": "https://ballotpedia.org/Cliff_Huffman#Campaign_themes",
+      "evidence": "rather than pander to the obscenely wealthy, we need to collect their fair share of taxes,"
+    },
+    {
+      "pid": "c25726d9-566e-4283-b35c-c608b921599f",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Shelly A. Simonds",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Shelly_Simonds"
+      ],
+      "after": "https://ballotpedia.org/Shelly_Simonds#Campaign_themes",
+      "evidence": "We do not need a voucher system in Virginia for two reasons: we already have the flexibility to have specialty magnet programs in our schools and Virginia DOES "
+    },
+    {
+      "pid": "c25726d9-566e-4283-b35c-c608b921599f",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Shelly A. Simonds",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Shelly_Simonds"
+      ],
+      "after": "https://ballotpedia.org/Shelly_Simonds#Campaign_themes",
+      "evidence": "Access to healthcare and maternal reproductive rights"
+    },
+    {
+      "pid": "c25726d9-566e-4283-b35c-c608b921599f",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Shelly A. Simonds",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Shelly_Simonds"
+      ],
+      "after": "https://ballotpedia.org/Shelly_Simonds#Campaign_themes",
+      "evidence": "has been dedicated to fair elections and voting rights while serving on the Privileges and Elections Committee in the House."
+    },
+    {
+      "pid": "c4695cd1-c251-4c00-ab4e-b84a898b9661",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Bobby Pulido",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Bobby_Pulido"
+      ],
+      "after": "https://ballotpedia.org/Bobby_Pulido#Campaign_themes",
+      "evidence": "Secure the Border. Fix Immigration with Common Sense"
+    },
+    {
+      "pid": "c4695cd1-c251-4c00-ab4e-b84a898b9661",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Bobby Pulido",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Bobby_Pulido"
+      ],
+      "after": "https://ballotpedia.org/Bobby_Pulido#Campaign_themes",
+      "evidence": "Tariffs and trade wars are driving up costs and closing off opportunities"
+    },
+    {
+      "pid": "c4695cd1-c251-4c00-ab4e-b84a898b9661",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Bobby Pulido",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Bobby_Pulido"
+      ],
+      "after": "https://ballotpedia.org/Bobby_Pulido#Campaign_themes",
+      "evidence": "healthcare should be affordable and accessible"
+    },
+    {
+      "pid": "c6a12d55-3dd8-47a6-a193-557162eb3d4e",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Joshua Warren Sales",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Joshua_Warren_Sales"
+      ],
+      "after": "https://ballotpedia.org/Joshua_Warren_Sales#Campaign_themes",
+      "evidence": "opening opportunities for all of our children, not just the ones that can afford private school,"
+    },
+    {
+      "pid": "c6a12d55-3dd8-47a6-a193-557162eb3d4e",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Joshua Warren Sales",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Joshua_Warren_Sales"
+      ],
+      "after": "https://ballotpedia.org/Joshua_Warren_Sales#Campaign_themes",
+      "evidence": "we need tax cuts for the workers, not for the big businesses...for families, not for billionaires,"
+    },
+    {
+      "pid": "c70f5297-a176-43b0-b9dd-19c053dfd458",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Jordan Conley",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Jordan_Conley"
+      ],
+      "after": "https://ballotpedia.org/Jordan_Conley#Campaign_themes",
+      "evidence": "fight for national universal health care"
+    },
+    {
+      "pid": "c7699355-885b-475d-834a-1a945618e711",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Mark Teixeira",
+      "topic": "Civil Rights",
+      "before": [
+        "https://ballotpedia.org/Mark_Teixeira"
+      ],
+      "after": "https://ballotpedia.org/Mark_Teixeira#Campaign_themes",
+      "evidence": "End radical woke indoctrination"
+    },
+    {
+      "pid": "c7699355-885b-475d-834a-1a945618e711",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Mark Teixeira",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Mark_Teixeira"
+      ],
+      "after": "https://ballotpedia.org/Mark_Teixeira#Campaign_themes",
+      "evidence": "deport illegal aliens"
+    },
+    {
+      "pid": "c7699355-885b-475d-834a-1a945618e711",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Mark Teixeira",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Mark_Teixeira"
+      ],
+      "after": "https://ballotpedia.org/Mark_Teixeira#Campaign_themes",
+      "evidence": "Fully secure the southern border ... and crush the cartels to keep Texans safe"
+    },
+    {
+      "pid": "c7699355-885b-475d-834a-1a945618e711",
+      "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "name": "Mark Teixeira",
+      "topic": "Religious Freedom",
+      "before": [
+        "https://ballotpedia.org/Mark_Teixeira"
+      ],
+      "after": "https://ballotpedia.org/Mark_Teixeira#Campaign_themes",
+      "evidence": "safeguard religious liberty"
+    },
+    {
+      "pid": "c7699355-885b-475d-834a-1a945618e711",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Mark Teixeira",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Mark_Teixeira"
+      ],
+      "after": "https://ballotpedia.org/Mark_Teixeira#Campaign_themes",
+      "evidence": "Unleash Texas oil, gas, and nuclear to restore U.S. energy dominance"
+    },
+    {
+      "pid": "c7699355-885b-475d-834a-1a945618e711",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Mark Teixeira",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Mark_Teixeira"
+      ],
+      "after": "https://ballotpedia.org/Mark_Teixeira#Campaign_themes",
+      "evidence": "Election Integrity & Ballot Security"
+    },
+    {
+      "pid": "c7699355-885b-475d-834a-1a945618e711",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Mark Teixeira",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Mark_Teixeira"
+      ],
+      "after": "https://ballotpedia.org/Mark_Teixeira#Campaign_themes",
+      "evidence": "Expand DOGE to cut insane wasteful spending, rein in the Deep State"
+    },
+    {
+      "pid": "c831bb88-7c5e-4d4b-961e-0d43792d44a6",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Jessica Steinmann",
+      "topic": "Civil Rights",
+      "before": [
+        "https://ballotpedia.org/Jessica_Steinmann"
+      ],
+      "after": "https://ballotpedia.org/Jessica_Steinmann#Campaign_themes",
+      "evidence": "investigations into higher education's DEI practices"
+    },
+    {
+      "pid": "c831bb88-7c5e-4d4b-961e-0d43792d44a6",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Jessica Steinmann",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Jessica_Steinmann"
+      ],
+      "after": "https://ballotpedia.org/Jessica_Steinmann#Campaign_themes",
+      "evidence": "the America First movement to secure our borders"
+    },
+    {
+      "pid": "c831bb88-7c5e-4d4b-961e-0d43792d44a6",
+      "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "name": "Jessica Steinmann",
+      "topic": "Religious Freedom",
+      "before": [
+        "https://ballotpedia.org/Jessica_Steinmann"
+      ],
+      "after": "https://ballotpedia.org/Jessica_Steinmann#Campaign_themes",
+      "evidence": "the religious-liberty rights of our military,"
+    },
+    {
+      "pid": "c831bb88-7c5e-4d4b-961e-0d43792d44a6",
+      "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "name": "Jessica Steinmann",
+      "topic": "Trans Athletes",
+      "before": [
+        "https://ballotpedia.org/Jessica_Steinmann"
+      ],
+      "after": "https://ballotpedia.org/Jessica_Steinmann#Campaign_themes",
+      "evidence": "STAND UP FOR GIRLS IN SPORTS,"
+    },
+    {
+      "pid": "c924abea-3bdf-49af-98cc-7d117cb54ad1",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Luke Bronin",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Luke_Bronin"
+      ],
+      "after": "https://ballotpedia.org/Luke_Bronin#Campaign_themes",
+      "evidence": "buy-in"
+    },
+    {
+      "pid": "cb77d554-e526-4282-a1bc-63cc58265cf1",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Brandon Herrera",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Brandon_Herrera"
+      ],
+      "after": "https://ballotpedia.org/Brandon_Herrera#Campaign_themes",
+      "evidence": "Solving the Border Crisis"
+    },
+    {
+      "pid": "cb77d554-e526-4282-a1bc-63cc58265cf1",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Brandon Herrera",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Brandon_Herrera"
+      ],
+      "after": "https://ballotpedia.org/Brandon_Herrera#Campaign_themes",
+      "evidence": "taken the 'No New Taxes' pledge"
+    },
+    {
+      "pid": "ce37e715-b364-4d5e-bdda-e8dd324381ec",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Angie Windhauser",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Angela_Marie_Walls-Windhauser"
+      ],
+      "after": "https://ballotpedia.org/Angela_Marie_Walls-Windhauser#Campaign_themes",
+      "evidence": "Unborn and born Life"
+    },
+    {
+      "pid": "cec00ebb-8cc0-4859-a2fd-b18a4d857598",
+      "tid": "24e9212c-b011-422a-865c-093e35050901",
+      "name": "Jon Bonck",
+      "topic": "Ukraine Support",
+      "before": [
+        "https://ballotpedia.org/Jon_Bonck"
+      ],
+      "after": "https://ballotpedia.org/Jon_Bonck#Campaign_themes",
+      "evidence": "No more blank checks for foreign wars. Put America first."
+    },
+    {
+      "pid": "cec00ebb-8cc0-4859-a2fd-b18a4d857598",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Jon Bonck",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Jon_Bonck"
+      ],
+      "after": "https://ballotpedia.org/Jon_Bonck#Campaign_themes",
+      "evidence": "Finish the wall. End the invasion. Put Texas first."
+    },
+    {
+      "pid": "cec00ebb-8cc0-4859-a2fd-b18a4d857598",
+      "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "name": "Jon Bonck",
+      "topic": "Religious Freedom",
+      "before": [
+        "https://ballotpedia.org/Jon_Bonck"
+      ],
+      "after": "https://ballotpedia.org/Jon_Bonck#Campaign_themes",
+      "evidence": "Defend Religious Liberty"
+    },
+    {
+      "pid": "cec00ebb-8cc0-4859-a2fd-b18a4d857598",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Jon Bonck",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Jon_Bonck"
+      ],
+      "after": "https://ballotpedia.org/Jon_Bonck#Campaign_themes",
+      "evidence": "Life begins at conception. No compromise."
+    },
+    {
+      "pid": "d2b0af22-bdc9-4ebf-ae71-3160b4592954",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Bryce Nickel",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Bryce_Nickel"
+      ],
+      "after": "https://ballotpedia.org/Bryce_Nickel#Campaign_themes",
+      "evidence": "Ballotpedia Candidate Connection"
+    },
+    {
+      "pid": "d2b0af22-bdc9-4ebf-ae71-3160b4592954",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Bryce Nickel",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Bryce_Nickel"
+      ],
+      "after": "https://ballotpedia.org/Bryce_Nickel#Campaign_themes",
+      "evidence": "tuition-free"
+    },
+    {
+      "pid": "d5c87947-6b2d-43e3-898f-a111b6f19f4e",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Edgardo Baez",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Edgardo_Baez"
+      ],
+      "after": "https://ballotpedia.org/Edgardo_Baez#Campaign_themes",
+      "evidence": "advocate[s] for a smaller, less intrusive government,"
+    },
+    {
+      "pid": "d658e8ad-efe9-4875-aeaa-f8a122c601fb",
+      "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "name": "Alissa Ellman",
+      "topic": "Redistricting",
+      "before": [
+        "https://ballotpedia.org/Alissa_Ellman"
+      ],
+      "after": "https://ballotpedia.org/Alissa_Ellman#Campaign_themes",
+      "evidence": "Ballotpedia Candidate Connection"
+    },
+    {
+      "pid": "d658e8ad-efe9-4875-aeaa-f8a122c601fb",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Alissa Ellman",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Alissa_Ellman"
+      ],
+      "after": "https://ballotpedia.org/Alissa_Ellman#Campaign_themes",
+      "evidence": "caps on contributions, overturning Citizens United to claw back power from the superPACs, and introducing matching funds"
+    },
+    {
+      "pid": "d658e8ad-efe9-4875-aeaa-f8a122c601fb",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Alissa Ellman",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Alissa_Ellman"
+      ],
+      "after": "https://ballotpedia.org/Alissa_Ellman#Campaign_themes",
+      "evidence": "I support Medicare for All"
+    },
+    {
+      "pid": "d658e8ad-efe9-4875-aeaa-f8a122c601fb",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Alissa Ellman",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Alissa_Ellman"
+      ],
+      "after": "https://ballotpedia.org/Alissa_Ellman#Campaign_themes",
+      "evidence": "I support Medicare for All"
+    },
+    {
+      "pid": "d97423db-8664-4ed3-aa40-6e1706651b1f",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Catherine Hildebrand",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Catherine_Hildebrand"
+      ],
+      "after": "https://ballotpedia.org/Catherine_Hildebrand#Campaign_themes",
+      "evidence": "closing down national parks and auctioning off public lands to the highest bidder"
+    },
+    {
+      "pid": "d97423db-8664-4ed3-aa40-6e1706651b1f",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Catherine Hildebrand",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Catherine_Hildebrand"
+      ],
+      "after": "https://ballotpedia.org/Catherine_Hildebrand#Campaign_themes",
+      "evidence": "We need progressive taxes on wealthy individuals and large corporations, with fewer exemptions, to fund social programs like healthcare, education, transportati"
+    },
+    {
+      "pid": "dec5ed02-4f30-437d-a45e-b6fcbd241cbd",
+      "tid": "24e9212c-b011-422a-865c-093e35050901",
+      "name": "Carmela Conroy",
+      "topic": "Ukraine Support",
+      "before": [
+        "https://ballotpedia.org/Carmela_Conroy"
+      ],
+      "after": "https://ballotpedia.org/Carmela_Conroy#Campaign_themes",
+      "evidence": "our partners in Israel and Ukraine lack[ing] the means to defend themselves,"
+    },
+    {
+      "pid": "dec5ed02-4f30-437d-a45e-b6fcbd241cbd",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Carmela Conroy",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Carmela_Conroy"
+      ],
+      "after": "https://ballotpedia.org/Carmela_Conroy#Campaign_themes",
+      "evidence": "fight to codify our basic human rights"
+    },
+    {
+      "pid": "dec5ed02-4f30-437d-a45e-b6fcbd241cbd",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Carmela Conroy",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Carmela_Conroy"
+      ],
+      "after": "https://ballotpedia.org/Carmela_Conroy#Campaign_themes",
+      "evidence": "universal access to health care"
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Claire Valdez",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Claire_Valdez"
+      ],
+      "after": "https://ballotpedia.org/Claire_Valdez#Campaign_themes",
+      "evidence": "fight to dismantle and abolish ICE"
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Claire Valdez",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Claire_Valdez"
+      ],
+      "after": "https://ballotpedia.org/Claire_Valdez#Campaign_themes",
+      "evidence": "push for real immigration reform that legalizes the status of millions of immigrant Americans"
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Claire Valdez",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Claire_Valdez"
+      ],
+      "after": "https://ballotpedia.org/Claire_Valdez#Campaign_themes",
+      "evidence": "to create a public option for housing,"
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Claire Valdez",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Claire_Valdez"
+      ],
+      "after": "https://ballotpedia.org/Claire_Valdez#Campaign_themes",
+      "evidence": "fossil fuel pollution"
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Claire Valdez",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Claire_Valdez"
+      ],
+      "after": "https://ballotpedia.org/Claire_Valdez#Campaign_themes",
+      "evidence": "deliver universal health care for every New Yorker"
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Claire Valdez",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Claire_Valdez"
+      ],
+      "after": "https://ballotpedia.org/Claire_Valdez#Campaign_themes",
+      "evidence": "sponsor Medicare for All on Day One"
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Claire Valdez",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Claire_Valdez"
+      ],
+      "after": "https://ballotpedia.org/Claire_Valdez#Campaign_themes",
+      "evidence": "cut pollution and lower costs by winning a Green New Deal that puts working people in charge of our energy system"
+    },
+    {
+      "pid": "df63051a-aef0-4c43-a17b-85b899642d72",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Claire Valdez",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Claire_Valdez"
+      ],
+      "after": "https://ballotpedia.org/Claire_Valdez#Campaign_themes",
+      "evidence": "paid for by taxing billionaires and corporations that have rigged the system"
+    },
+    {
+      "pid": "df786fca-5c25-4954-8909-06b491ac0565",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Steven Shook",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Steven_Shook"
+      ],
+      "after": "https://ballotpedia.org/Steven_Shook#Campaign_themes",
+      "evidence": "keeping rural hospitals open"
+    },
+    {
+      "pid": "e3638aff-68fb-4e2b-a6cc-1bcc7b383857",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Tim Lanier",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Tim_Lanier"
+      ],
+      "after": "https://ballotpedia.org/Tim_Lanier#Campaign_themes",
+      "evidence": "eliminate school vouchers,"
+    },
+    {
+      "pid": "e3638aff-68fb-4e2b-a6cc-1bcc7b383857",
+      "tid": "24e9212c-b011-422a-865c-093e35050901",
+      "name": "Tim Lanier",
+      "topic": "Ukraine Support",
+      "before": [
+        "https://ballotpedia.org/Tim_Lanier"
+      ],
+      "after": "https://ballotpedia.org/Tim_Lanier#Campaign_themes",
+      "evidence": "must stand up to Russia and Putin specifically or communism will continue to spread and our allies are wondering if they'll be next,"
+    },
+    {
+      "pid": "e3638aff-68fb-4e2b-a6cc-1bcc7b383857",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Tim Lanier",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Tim_Lanier"
+      ],
+      "after": "https://ballotpedia.org/Tim_Lanier#Campaign_themes",
+      "evidence": "reducing the ICE budget and using that money for police, EMS personnel, and education,"
+    },
+    {
+      "pid": "e3638aff-68fb-4e2b-a6cc-1bcc7b383857",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Tim Lanier",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Tim_Lanier"
+      ],
+      "after": "https://ballotpedia.org/Tim_Lanier#Campaign_themes",
+      "evidence": "Candidate Connection"
+    },
+    {
+      "pid": "e3638aff-68fb-4e2b-a6cc-1bcc7b383857",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Tim Lanier",
+      "topic": "Social Security",
+      "before": [
+        "https://ballotpedia.org/Tim_Lanier"
+      ],
+      "after": "https://ballotpedia.org/Tim_Lanier#Campaign_themes",
+      "evidence": "removing the Social Security cap,"
+    },
+    {
+      "pid": "e48fb7a8-d274-4ead-9835-364b640f7984",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Nirav Sheth",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Nirav_Sheth"
+      ],
+      "after": "https://ballotpedia.org/Nirav_Sheth#Campaign_themes",
+      "evidence": "has been and will continue to be the only way for successful integration"
+    },
+    {
+      "pid": "e63791e7-3d09-4da1-a28c-b3e221491c15",
+      "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+      "name": "Chelsey Hockett",
+      "topic": "School Vouchers",
+      "before": [
+        "https://ballotpedia.org/Chelsey_Hockett"
+      ],
+      "after": "https://ballotpedia.org/Chelsey_Hockett#Campaign_themes",
+      "evidence": "fully funded public schools"
+    },
+    {
+      "pid": "e63791e7-3d09-4da1-a28c-b3e221491c15",
+      "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Chelsey Hockett",
+      "topic": "Civil Rights",
+      "before": [
+        "https://ballotpedia.org/Chelsey_Hockett"
+      ],
+      "after": "https://ballotpedia.org/Chelsey_Hockett#Campaign_themes",
+      "evidence": "protecting civil rights"
+    },
+    {
+      "pid": "e63791e7-3d09-4da1-a28c-b3e221491c15",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Chelsey Hockett",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Chelsey_Hockett"
+      ],
+      "after": "https://ballotpedia.org/Chelsey_Hockett#Campaign_themes",
+      "evidence": "a humane and functional immigration system"
+    },
+    {
+      "pid": "e63791e7-3d09-4da1-a28c-b3e221491c15",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Chelsey Hockett",
+      "topic": "AI Oversight",
+      "before": [
+        "https://ballotpedia.org/Chelsey_Hockett"
+      ],
+      "after": "https://ballotpedia.org/Chelsey_Hockett#Campaign_themes",
+      "evidence": "should set clear rules, enforce environmental and safety standards, prevent misuse"
+    },
+    {
+      "pid": "e63791e7-3d09-4da1-a28c-b3e221491c15",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Chelsey Hockett",
+      "topic": "Social Security",
+      "before": [
+        "https://ballotpedia.org/Chelsey_Hockett"
+      ],
+      "after": "https://ballotpedia.org/Chelsey_Hockett#Campaign_themes",
+      "evidence": "increase Social Security benefits to protect our senior citizens"
+    },
+    {
+      "pid": "e63791e7-3d09-4da1-a28c-b3e221491c15",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Chelsey Hockett",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Chelsey_Hockett"
+      ],
+      "after": "https://ballotpedia.org/Chelsey_Hockett#Campaign_themes",
+      "evidence": "I will not trade away reproductive freedom"
+    },
+    {
+      "pid": "e63791e7-3d09-4da1-a28c-b3e221491c15",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Chelsey Hockett",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Chelsey_Hockett"
+      ],
+      "after": "https://ballotpedia.org/Chelsey_Hockett#Campaign_themes",
+      "evidence": "expand access to the ballot while keeping the system secure,"
+    },
+    {
+      "pid": "e63791e7-3d09-4da1-a28c-b3e221491c15",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Chelsey Hockett",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Chelsey_Hockett"
+      ],
+      "after": "https://ballotpedia.org/Chelsey_Hockett#Campaign_themes",
+      "evidence": "I believe healthcare is a human right"
+    },
+    {
+      "pid": "e6788516-795b-4963-8762-4d1cd617ac35",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Caitlin Rourk",
+      "topic": "AI Oversight",
+      "before": [
+        "https://ballotpedia.org/Caitlin_Rourk"
+      ],
+      "after": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+      "evidence": "regulating AI responsibly"
+    },
+    {
+      "pid": "e6788516-795b-4963-8762-4d1cd617ac35",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Caitlin Rourk",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Caitlin_Rourk"
+      ],
+      "after": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+      "evidence": "overreach[ing] into ... our personal choices, or our health and reproductive rights"
+    },
+    {
+      "pid": "e6788516-795b-4963-8762-4d1cd617ac35",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "Caitlin Rourk",
+      "topic": "Childcare",
+      "before": [
+        "https://ballotpedia.org/Caitlin_Rourk"
+      ],
+      "after": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+      "evidence": "affordable child care"
+    },
+    {
+      "pid": "e6788516-795b-4963-8762-4d1cd617ac35",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Caitlin Rourk",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Caitlin_Rourk"
+      ],
+      "after": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+      "evidence": "lower drug costs, protect coverage for pre-existing conditions, expand mental health ... end surprise billing ... by strengthening the ACA and advocating for Me"
+    },
+    {
+      "pid": "e6788516-795b-4963-8762-4d1cd617ac35",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Caitlin Rourk",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Caitlin_Rourk"
+      ],
+      "after": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+      "evidence": "economic policy favors the wealthy and well-connected; in Congress, I'll hold corporations accountable and ensure they pay their fair share"
+    },
+    {
+      "pid": "e987cfff-23ae-4b24-a64d-4cde8582f520",
+      "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "name": "Jason Pearce",
+      "topic": "AI Oversight",
+      "before": [
+        "https://ballotpedia.org/Jason_Pearce"
+      ],
+      "after": "https://ballotpedia.org/Jason_Pearce#Campaign_themes",
+      "evidence": "should require a mandate for ALL use of AI to be clearly and visibly displayed as AI at all times"
+    },
+    {
+      "pid": "e987cfff-23ae-4b24-a64d-4cde8582f520",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Jason Pearce",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Jason_Pearce"
+      ],
+      "after": "https://ballotpedia.org/Jason_Pearce#Campaign_themes",
+      "evidence": "stop corporate abuse of the housing market"
+    },
+    {
+      "pid": "e987cfff-23ae-4b24-a64d-4cde8582f520",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Jason Pearce",
+      "topic": "Social Security",
+      "before": [
+        "https://ballotpedia.org/Jason_Pearce"
+      ],
+      "after": "https://ballotpedia.org/Jason_Pearce#Campaign_themes",
+      "evidence": "their social security can't pay bills"
+    },
+    {
+      "pid": "e987cfff-23ae-4b24-a64d-4cde8582f520",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Jason Pearce",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Jason_Pearce"
+      ],
+      "after": "https://ballotpedia.org/Jason_Pearce#Campaign_themes",
+      "evidence": "Banning Lobbying and overturning Citizens United"
+    },
+    {
+      "pid": "e987cfff-23ae-4b24-a64d-4cde8582f520",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Jason Pearce",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Jason_Pearce"
+      ],
+      "after": "https://ballotpedia.org/Jason_Pearce#Campaign_themes",
+      "evidence": "Affordable Healthcare for All"
+    },
+    {
+      "pid": "e987cfff-23ae-4b24-a64d-4cde8582f520",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Jason Pearce",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Jason_Pearce"
+      ],
+      "after": "https://ballotpedia.org/Jason_Pearce#Campaign_themes",
+      "evidence": "Election Day"
+    },
+    {
+      "pid": "e987cfff-23ae-4b24-a64d-4cde8582f520",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Jason Pearce",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Jason_Pearce"
+      ],
+      "after": "https://ballotpedia.org/Jason_Pearce#Campaign_themes",
+      "evidence": "Affordable Healthcare for All"
+    },
+    {
+      "pid": "e987cfff-23ae-4b24-a64d-4cde8582f520",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Jason Pearce",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Jason_Pearce"
+      ],
+      "after": "https://ballotpedia.org/Jason_Pearce#Campaign_themes",
+      "evidence": "if you do business in America, you pay taxes in America"
+    },
+    {
+      "pid": "eacb22b6-3eee-4b3a-bc80-69abfbfcb832",
+      "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "name": "Andres Valleza",
+      "topic": "Trans Athletes",
+      "before": [
+        "https://ballotpedia.org/Andres_Valleza"
+      ],
+      "after": "https://ballotpedia.org/Andres_Valleza#Campaign_themes",
+      "evidence": "Ensuring a fair playing field and safe locker rooms for women and girls"
+    },
+    {
+      "pid": "eacb22b6-3eee-4b3a-bc80-69abfbfcb832",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Andres Valleza",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Andres_Valleza"
+      ],
+      "after": "https://ballotpedia.org/Andres_Valleza#Campaign_themes",
+      "evidence": "a shift back to in-person voting,"
+    },
+    {
+      "pid": "eb317545-fcb2-4034-865a-d8eb81803de6",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Brad Lander",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Brad_Lander"
+      ],
+      "after": "https://ballotpedia.org/Brad_Lander#Campaign_themes",
+      "evidence": "When Donald Trump's ICE tried to kidnap our neighbors, Brad put his body on the line to stop them"
+    },
+    {
+      "pid": "eb317545-fcb2-4034-865a-d8eb81803de6",
+      "tid": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "name": "Brad Lander",
+      "topic": "Homelessness",
+      "before": [
+        "https://ballotpedia.org/Brad_Lander"
+      ],
+      "after": "https://ballotpedia.org/Brad_Lander#Campaign_themes",
+      "evidence": "end street homelessness"
+    },
+    {
+      "pid": "eb317545-fcb2-4034-865a-d8eb81803de6",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Brad Lander",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Brad_Lander"
+      ],
+      "after": "https://ballotpedia.org/Brad_Lander#Campaign_themes",
+      "evidence": "everyone can live with dignity -- ... immigrants and those who have been here for generations"
+    },
+    {
+      "pid": "eb317545-fcb2-4034-865a-d8eb81803de6",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Brad Lander",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Brad_Lander"
+      ],
+      "after": "https://ballotpedia.org/Brad_Lander#Campaign_themes",
+      "evidence": "building affordable housing"
+    },
+    {
+      "pid": "eb317545-fcb2-4034-865a-d8eb81803de6",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Brad Lander",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Brad_Lander"
+      ],
+      "after": "https://ballotpedia.org/Brad_Lander#Campaign_themes",
+      "evidence": "onto privatized Medicare Advantage"
+    },
+    {
+      "pid": "eb317545-fcb2-4034-865a-d8eb81803de6",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Brad Lander",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Brad_Lander"
+      ],
+      "after": "https://ballotpedia.org/Brad_Lander#Campaign_themes",
+      "evidence": "win Medicare for All"
+    },
+    {
+      "pid": "eb7293ae-8a9d-4ae4-8deb-a32aa43e2c99",
+      "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "name": "Todd E. Pillion",
+      "topic": "Religious Freedom",
+      "before": [
+        "https://ballotpedia.org/Todd_Pillion"
+      ],
+      "after": "https://ballotpedia.org/Todd_Pillion#Campaign_themes",
+      "evidence": "Life and Traditional Values':"
+    },
+    {
+      "pid": "eb7293ae-8a9d-4ae4-8deb-a32aa43e2c99",
+      "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Todd E. Pillion",
+      "topic": "Fossil Fuels",
+      "before": [
+        "https://ballotpedia.org/Todd_Pillion"
+      ],
+      "after": "https://ballotpedia.org/Todd_Pillion#Campaign_themes",
+      "evidence": "Coal: I will fight to stop job-killing regulations and taxes. I believe that coal is not only critical to our economy, but is also an important part of our cult"
+    },
+    {
+      "pid": "eb7293ae-8a9d-4ae4-8deb-a32aa43e2c99",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Todd E. Pillion",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Todd_Pillion"
+      ],
+      "after": "https://ballotpedia.org/Todd_Pillion#Campaign_themes",
+      "evidence": "Healthcare: I am opposed to expanding Obamacare in Virginia. Obamacare has been a disaster since day 1, and more of it just doesn''t make sense. As a healthcare"
+    },
+    {
+      "pid": "eb7293ae-8a9d-4ae4-8deb-a32aa43e2c99",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Todd E. Pillion",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Todd_Pillion"
+      ],
+      "after": "https://ballotpedia.org/Todd_Pillion#Campaign_themes",
+      "evidence": "Jobs and the Economy: As a small business owner, I understand how over-regulation is suffocating businesses across Southwest Virginia and the Commonwealth. Virg"
+    },
+    {
+      "pid": "ec72b7c5-635a-4590-a730-7e1bd62ce2f7",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "John Hancock",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/John_Hancock_(Ohio)"
+      ],
+      "after": "https://ballotpedia.org/John_Hancock_(Ohio)#Campaign_themes",
+      "evidence": "Liberty, Not Lobbyists"
+    },
+    {
+      "pid": "ec72b7c5-635a-4590-a730-7e1bd62ce2f7",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "John Hancock",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/John_Hancock_(Ohio)"
+      ],
+      "after": "https://ballotpedia.org/John_Hancock_(Ohio)#Campaign_themes",
+      "evidence": "Ballotpedia Candidate Connection"
+    },
+    {
+      "pid": "ed60a0c7-252c-443f-98ff-5926bf9a58a3",
+      "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "name": "Mark J. Peake",
+      "topic": "Abortion",
+      "before": [
+        "https://ballotpedia.org/Mark_Peake"
+      ],
+      "after": "https://ballotpedia.org/Mark_Peake#Campaign_themes",
+      "evidence": "Protecting the Sanctity of Marriage and the Unborn"
+    },
+    {
+      "pid": "ed60a0c7-252c-443f-98ff-5926bf9a58a3",
+      "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "name": "Mark J. Peake",
+      "topic": "Same-Sex Marriage",
+      "before": [
+        "https://ballotpedia.org/Mark_Peake"
+      ],
+      "after": "https://ballotpedia.org/Mark_Peake#Campaign_themes",
+      "evidence": "Protecting the Sanctity of Marriage and the Unborn"
+    },
+    {
+      "pid": "ed60a0c7-252c-443f-98ff-5926bf9a58a3",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Mark J. Peake",
+      "topic": "Taxes",
+      "before": [
+        "https://ballotpedia.org/Mark_Peake"
+      ],
+      "after": "https://ballotpedia.org/Mark_Peake#Campaign_themes",
+      "evidence": "In these difficult economic times, businesses can only prosper when taxes are low."
+    },
+    {
+      "pid": "edde4071-d93c-4190-b139-671599e6fed4",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Steve Parsons",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Steve_Parsons"
+      ],
+      "after": "https://ballotpedia.org/Steve_Parsons#Campaign_themes",
+      "evidence": "Latin American"
+    },
+    {
+      "pid": "edde4071-d93c-4190-b139-671599e6fed4",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Steve Parsons",
+      "topic": "Social Security",
+      "before": [
+        "https://ballotpedia.org/Steve_Parsons"
+      ],
+      "after": "https://ballotpedia.org/Steve_Parsons#Campaign_themes",
+      "evidence": "a failed pyramid scheme,"
+    },
+    {
+      "pid": "f2fd28ea-d6ad-4299-8002-a5a2938aecd5",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Patrick Gillespie",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Patrick_Gillespie_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Patrick_Gillespie_(Texas)#Campaign_themes",
+      "evidence": "We must have immigrants vetted and not allow an invasion of tens of thousands crossing our border illegally daily"
+    },
+    {
+      "pid": "f2fd28ea-d6ad-4299-8002-a5a2938aecd5",
+      "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Patrick Gillespie",
+      "topic": "Voting Rights",
+      "before": [
+        "https://ballotpedia.org/Patrick_Gillespie_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Patrick_Gillespie_(Texas)#Campaign_themes",
+      "evidence": "We have the correct laws in place: photo ID"
+    },
+    {
+      "pid": "f2fd28ea-d6ad-4299-8002-a5a2938aecd5",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Patrick Gillespie",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Patrick_Gillespie_(Texas)"
+      ],
+      "after": "https://ballotpedia.org/Patrick_Gillespie_(Texas)#Campaign_themes",
+      "evidence": "get out of the Paris Climate Accords and demand our money back,"
+    },
+    {
+      "pid": "f3e749b6-24f5-47b4-8f31-94bc23421b86",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Blake Gendebien",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Blake_Gendebien"
+      ],
+      "after": "https://ballotpedia.org/Blake_Gendebien#Campaign_themes",
+      "evidence": "I will never vote to cut Social Security, Medicare, or Medicaid"
+    },
+    {
+      "pid": "f3e749b6-24f5-47b4-8f31-94bc23421b86",
+      "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Blake Gendebien",
+      "topic": "Healthcare",
+      "before": [
+        "https://ballotpedia.org/Blake_Gendebien"
+      ],
+      "after": "https://ballotpedia.org/Blake_Gendebien#Campaign_themes",
+      "evidence": "expand access by growing tele-health services and investing in transportation options"
+    },
+    {
+      "pid": "f56ed171-b3d4-4c5a-b887-5bca5f1c3108",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Amy Roma",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Amy_Roma"
+      ],
+      "after": "https://ballotpedia.org/Amy_Roma#Campaign_themes",
+      "evidence": "smarter investment and zoning reform,"
+    },
+    {
+      "pid": "f56ed171-b3d4-4c5a-b887-5bca5f1c3108",
+      "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Amy Roma",
+      "topic": "Medicare/aid",
+      "before": [
+        "https://ballotpedia.org/Amy_Roma"
+      ],
+      "after": "https://ballotpedia.org/Amy_Roma#Campaign_themes",
+      "evidence": "community-based"
+    },
+    {
+      "pid": "f56ed171-b3d4-4c5a-b887-5bca5f1c3108",
+      "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Amy Roma",
+      "topic": "Climate Change",
+      "before": [
+        "https://ballotpedia.org/Amy_Roma"
+      ],
+      "after": "https://ballotpedia.org/Amy_Roma#Campaign_themes",
+      "evidence": "Ballotpedia Candidate Connection"
+    },
+    {
+      "pid": "f59e2048-9058-4896-9fa0-ada1b7a0c401",
+      "tid": "24e9212c-b011-422a-865c-093e35050901",
+      "name": "Jonathan Paz",
+      "topic": "Ukraine Support",
+      "before": [
+        "https://ballotpedia.org/Jonathan_Paz_(Massachusetts)"
+      ],
+      "after": "https://ballotpedia.org/Jonathan_Paz_(Massachusetts)#Campaign_themes",
+      "evidence": "facilitate ceasefires in all current conflicts and push for long-term diplomatic solutions"
+    },
+    {
+      "pid": "f59e2048-9058-4896-9fa0-ada1b7a0c401",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Jonathan Paz",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/Jonathan_Paz_(Massachusetts)"
+      ],
+      "after": "https://ballotpedia.org/Jonathan_Paz_(Massachusetts)#Campaign_themes",
+      "evidence": "When I say Abolish ICE, I mean... Abolishing ICE as a federal agency... Redirecting ICE's $170 billion budget back to schools, healthcare, and housing,"
+    },
+    {
+      "pid": "f59e2048-9058-4896-9fa0-ada1b7a0c401",
+      "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "name": "Jonathan Paz",
+      "topic": "Immigration",
+      "before": [
+        "https://ballotpedia.org/Jonathan_Paz_(Massachusetts)"
+      ],
+      "after": "https://ballotpedia.org/Jonathan_Paz_(Massachusetts)#Campaign_themes",
+      "evidence": "passing a 21st century immigration system, creating a humane pathway to citizenship for our immigrant neighbors,"
+    },
+    {
+      "pid": "f59e2048-9058-4896-9fa0-ada1b7a0c401",
+      "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "name": "Jonathan Paz",
+      "topic": "Campaign Finance",
+      "before": [
+        "https://ballotpedia.org/Jonathan_Paz_(Massachusetts)"
+      ],
+      "after": "https://ballotpedia.org/Jonathan_Paz_(Massachusetts)#Campaign_themes",
+      "evidence": "leaders in Congress who reject money from corporations and foreign lobbies"
+    },
+    {
+      "pid": "f9e23754-bec5-4c57-8002-622d2354f78f",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "Joyce E. Neal",
+      "topic": "Social Security",
+      "before": [
+        "https://ballotpedia.org/Joyce_Neal"
+      ],
+      "after": "https://ballotpedia.org/Joyce_Neal#Campaign_themes",
+      "evidence": "Continuation of Social Security for retirees"
+    },
+    {
+      "pid": "fab6fd01-01d0-4b18-8c21-f0d03d62beca",
+      "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Kyle Rable",
+      "topic": "Housing",
+      "before": [
+        "https://ballotpedia.org/Kyle_Rable"
+      ],
+      "after": "https://ballotpedia.org/Kyle_Rable#Campaign_themes",
+      "evidence": "enact legislation limiting large corporations' ability to purchase homes"
+    },
+    {
+      "pid": "fab6fd01-01d0-4b18-8c21-f0d03d62beca",
+      "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+      "name": "Kyle Rable",
+      "topic": "Tariffs",
+      "before": [
+        "https://ballotpedia.org/Kyle_Rable"
+      ],
+      "after": "https://ballotpedia.org/Kyle_Rable#Campaign_themes",
+      "evidence": "Americans should not bear the brunt of Trump's trade war"
+    },
+    {
+      "pid": "fab6fd01-01d0-4b18-8c21-f0d03d62beca",
+      "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "name": "Kyle Rable",
+      "topic": "Childcare",
+      "before": [
+        "https://ballotpedia.org/Kyle_Rable"
+      ],
+      "after": "https://ballotpedia.org/Kyle_Rable#Campaign_themes",
+      "evidence": "can't afford to pay for childcare"
+    },
+    {
+      "pid": "fca8c613-c2a5-4ef5-a667-04c19bd6f9db",
+      "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "David Russ",
+      "topic": "Deportation",
+      "before": [
+        "https://ballotpedia.org/David_Russ_(Oregon)"
+      ],
+      "after": "https://ballotpedia.org/David_Russ_(Oregon)#Campaign_themes",
+      "evidence": "ending Entitlements for Persons guilty of illegally entering the country and removal of undocumented aliens,"
+    },
+    {
+      "pid": "fca8c613-c2a5-4ef5-a667-04c19bd6f9db",
+      "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "name": "David Russ",
+      "topic": "Social Security",
+      "before": [
+        "https://ballotpedia.org/David_Russ_(Oregon)"
+      ],
+      "after": "https://ballotpedia.org/David_Russ_(Oregon)#Campaign_themes",
+      "evidence": "should be a State issue"
+    }
+  ]
+}

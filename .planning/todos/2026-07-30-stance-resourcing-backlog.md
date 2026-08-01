@@ -146,6 +146,47 @@ If a future host change cannot clear all three, hold it for a human again. `emit
 refuses off-host proposals by design; that refusal is the feature, and 1513 is the human override
 written down.
 
+## ✅ Candidate Connection deep-links — migration 1514, BALLOTPEDIA_ONLY 552 → 109
+
+`node scripts/deep-link-candidate-connection.mjs` read all 195 cited pages and tested each row against
+the **`#Campaign_themes` section text specifically**, extracted heading-to-heading.
+
+| verdict | rows | |
+|---|---|---|
+| `CC_VERIFIED` | **443** | ✅ anchored — claim found INSIDE the survey section |
+| `NOT_ON_PAGE` | 79 | claim nowhere in the article body — the citation audit's problem, not this tool's |
+| `ELSEWHERE_ON_PAGE` | 21 | on the page but **outside** the survey. **Not anchored** — the anchor would point away from the row's own evidence. **These are the rows that genuinely might be re-pointable off-site** |
+| `UNKNOWN` | 8 | 404s (below) |
+| `NO_CC_SECTION` | 1 | |
+
+Section is a real subset — mean **47%** of body text, only 2 rows above 90%. Anchors resolve: two were
+opened in a browser and land on a *Campaign themes* heading with the quoted passage beneath (Bergmann's
+sits 13,195px down the page).
+
+🔴 **THE FIRST RUN REPORTED 215 UNKNOWN AND THAT WAS THE LIMITER, NOT THE DATA.** 214 were HTTP 202
+with an empty body across 76 pages. Re-running at `--delay 3500` took CC_VERIFIED from 275 to 443 —
+**had those 202s been scored as absence, 168 correctly-sourced rows would have been recorded as
+unsupported.** Never read a tally containing UNKNOWN; re-run it first. The estimate this work was
+planned against (231 survey-backed rows, derived from reasoning text mentioning "Candidate Connection")
+was also **too low by ~90** — reasoning wording is not a reliable proxy for what the page holds, which
+is why the tool ignores it and tests the section.
+
+🔴 **THE ANCHOR IS `#Campaign_themes`. There is NO `#Candidate_Connection` id** despite that being the
+survey's name — assuming otherwise yields 200-with-no-anchor on every row.
+
+### ⚠️ 9 rows cite an ELECTION page, not the candidate's own page
+
+A race page never supported a claim about one candidate. All three URLs are dead or sectionless:
+
+| page | rows | who | |
+|---|---|---|---|
+| `Los_Angeles_City_Council_elections,_2026` | 7 | Andrej Selivra | 404 |
+| `Monica_Garcia_(LAUSD_Board_District_2)` | 1 | Mónica García | 404 |
+| `Mississippi's_1st_Congressional_District_election,_2026` | 1 | Johnny Baucom | no section |
+
+Same shape as 1511's disambiguation stubs: HTTP-200-or-404 on a page that was never about the person.
+Needs a human read; Baucom already appeared as `QUOTE_ABSENT` in the tail audit on this same URL.
+
 ## ⏸️ DEAD_SITE — 16 rows, 2 politicians, both currently INVISIBLE. Do not spend a session here.
 
 Both are past-election candidates: 0 seats, 0 upcoming active races (Malik last ran 2026-06-02, Jemison
