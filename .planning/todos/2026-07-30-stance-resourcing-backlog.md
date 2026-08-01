@@ -146,6 +146,34 @@ If a future host change cannot clear all three, hold it for a human again. `emit
 refuses off-host proposals by design; that refusal is the feature, and 1513 is the human override
 written down.
 
+## 📋 NOT_FOUND sampled — it is a reading queue, not a delete list (115 → 114 rows)
+
+Re-ran `repair-primary-site-paths.mjs` after the negation/stemming/delimiter fixes: **NOT_FOUND 130 →
+114**, HOMEPAGE_ONLY 265 → 275, UNTESTABLE 23 → 33 (the safe direction — a dropped term makes a row
+untestable, never failing). Cohort totals 557; `DEEP_PAGE`/`HOMEPAGE_ANCHOR` collapsed because 1512
+already repaired them.
+
+**15-row sample across 69 distinct sites: 10 of 15 had the row's distinctive content on the homepage
+alone.** Four were then verified in full context:
+
+| row | finding |
+|---|---|
+| Troy Slaten | page says *"money should **never** be a barrier to justice"*; row quotes *"...should **not** be..."* — **one word**. False alarm |
+| Billy Nord | page says *"ending the health insurance industry"* **verbatim**. The quote was never even tested — see the delimiter bug below |
+| Ken Vaz | *"secure the border, enforce immigration law… prioritize the removal of violent criminals"* — supported, quote slightly off |
+| John Vail | *"target luxury of all sorts"* and *"percentage wad of the whole taken every year"* both absent from a 10k page — **looks genuine** |
+
+**Read: NOT_FOUND is majority recoverable, and the dominant remedy is fixing the quote, not deleting
+the row.** Do not commission a retirement wave off this number.
+
+🔴 **A DOUBLED APOSTROPHE IS A CLOSING DOUBLE QUOTE — not folding it DISCARDS THE QUOTE SILENTLY.**
+Nord's row reads `lists "ending the health insurance industry'' as a core platform goal`: one real `"`
+plus a `''` pair, so `hasDouble` was false, extraction fell back to single-quote mode, mis-paired on
+the `''`, and produced nothing testable. The row then fell through to the term test and scored
+NOT_FOUND against a page that contains the quote **verbatim**. That is a *silent false negative* — worse
+than a wrong answer, because nothing in the output says a quote existed. **28 rows corpus-wide carry
+`''`, 15 of them mixed with a real `"`.** Fixed in `claim-match.mjs`.
+
 ## ✅ Proxy URLs unwrapped — migration 1515, PROXY_URL_AS_SOURCE 55 → **0** (class eliminated)
 
 All 34 distinct proxy URLs were the standard `r.jina.ai/<url>` form; the generator refuses any other

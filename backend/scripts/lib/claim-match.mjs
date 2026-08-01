@@ -160,6 +160,13 @@ function extractQuotes(reasoning) {
   // "Congress' authority") satisfies the closing-single-quote rule, so mark 1 lands on the possessive,
   // pairs with the real quote's opening ", and the actual quotation is lost -- which is what produced
   // Joshua Warren Sales's CITATION_FAILS on a row that quotes its source correctly.
+  // 🔴 A DOUBLED APOSTROPHE IS A CLOSING DOUBLE QUOTE, AND NOT FOLDING IT DISCARDS THE QUOTE ENTIRELY.
+  // Billy Nord's row reads: lists "ending the health insurance industry'' as a core platform goal.
+  // One real double-quote mark plus a '' pair, so hasDouble was FALSE, extraction fell back to
+  // single-quote mode, mis-paired on the '' and produced nothing testable -- the row then fell through
+  // to the term test and was scored NOT_FOUND. His page says "ending the health insurance industry"
+  // verbatim. The quote was never tested, which is a silent false negative rather than a wrong answer.
+  reasoning = reasoning.replace(/''/g, '"');
   const dq = /["“”]/g;
   const hasDouble = (reasoning.match(dq) ?? []).length >= 2;
   // 🔴 A CLOSING QUOTE CAN BE FOLLOWED BY PUNCTUATION THAT SITS OUTSIDE THE QUOTATION, and refusing
