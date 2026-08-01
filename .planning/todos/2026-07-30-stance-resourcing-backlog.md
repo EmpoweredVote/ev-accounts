@@ -18,11 +18,13 @@ Gate: `npm run check:stance-sources --prefix backend` — **green**, 662 rows re
 Applied: **1512** 43 path repairs · **1513** Anderson host change · **1514** 443 Candidate Connection
 deep-links · **1515** 55 proxy unwraps · **1516** 4 reasoning corrections · **1517** 5 retirements ·
 **1518** 16 quote corrections · **1519** 4 parked-domain re-sources · **1520** 3 absent-topic
-retirements. All dry-run via `scripts/dry-run-migration.mjs` (which cannot commit) with rollback
-records in `data/stance-retirement/`.
+retirements · **1521** 2 inferred-stance retirements. All dry-run via `scripts/dry-run-migration.mjs`
+(which cannot commit) with rollback records in `data/stance-retirement/`.
 
-**Net for the NOT_FOUND cohort: 16 corrected · 4 re-sourced · 3 retired · 26 were extractor loss.**
-Baseline lowered 557 → 550 across 1519 + 1520.
+**Net for the NOT_FOUND cohort: 15 corrected · 4 re-sourced · 5 retired · 26 were extractor loss.**
+Baseline lowered 557 → 548 across 1519–1521. (15, not 16: Bowen's row was quote-corrected by 1518 and
+then retired by 1521 — the quote fix was true either way, but it could not rescue a chair the source
+never supported.)
 
 ### ✅ NOT_FOUND is worked — 114 → 16 corrected, 5 open, 85 unread
 
@@ -85,9 +87,18 @@ indistinguishable from an absent claim.
    Welford/Climate, Taylor/Tariffs. **Re-verified after the `<main>` fix and against RAW HTML** — all
    11 Welford pages grepped, zero occurrences of either topic; "tariff" absent from all 4 Taylor pages.
    Neither person emptied (Welford 5→3, Taylor 8→7). **Both topics are OWED RE-RESEARCH.**
-   Still open, both needing a person rather than a rule: **Schwab/Religious Freedom** (thin, not
-   absent — the site is genuinely religious but does not support the faith-based-exemption inference)
-   and **Bowen/Taxes** (quote fixed in 1518, but the site states no tax position at all).
+   ✅ **The other 2 also retired — 1521.** Held back from 1520 as "thin rather than empty"; measuring
+   settled it. **Bowen/Taxes**: the word *taxes* occurs **zero** times across 4 pages in raw HTML, as
+   do *cut taxes / lower taxes / tax relief / tax cut / income tax / tax rate* — the site is about the
+   national debt. Same shape as 1517's Brinker Harding. **Schwab/Religious Freedom**: no *religion,
+   church, conscience, exemption, liberty, worship, prayer* anywhere; the only faith content is one
+   biographical line, and 🔴 **presence is not support** — personal faith is biography, the topic asks
+   about exemptions from generally applicable laws.
+   ⚠ **Bowen drops to ZERO answers** — that was his only stance. Correct outcome: a profile with no
+   compass is honest, one with a fabricated chair is not. His `last_stances_researched_at` is NULL, so
+   he reads as **unresearched** and resurfaces in the queue. 🔴 **NULL timestamp + zero answers = "nobody
+   looked yet"; a SET timestamp + zero answers = "we looked and found nothing" and must never be
+   erased** (the 1494 rule).
 2. ~~Faye Johnson ×4 — parked domain~~ ✅ **RESOLVED — 1519 re-sourced to Wayback, nothing retired.**
    See the section below; it is the most instructive near-miss of the whole workstream.
 3. **`NOT_FOUND` is now 87, not 113** — the `<main>` fix moved 26 rows out (14 verify on the homepage,

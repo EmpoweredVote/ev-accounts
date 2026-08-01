@@ -1,0 +1,28 @@
+{
+  "_comment": "ROLLBACK RECORD FOR MIGRATION 1521 — THE ONLY SURVIVING COPY of these rows' value, reasoning and sources. Retired as NO STANCE: the cited site carries no content on the topic, so the chair rested entirely on inference. Verified against RAW HTML across every page of each site. Restore by re-inserting into inform.politician_answers and inform.politician_context.",
+  "generated": "2026-08-01",
+  "rows": [
+    {
+      "pid": "e752a957-c776-4942-9aae-63ebf23174ac",
+      "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "name": "Scott Schwab",
+      "topic": "Religious Freedom",
+      "value": "4.0",
+      "reasoning": "Schwab's 2026 campaign platform states he will 'uphold traditional Christian values in governance,' signaling support for protecting religious expression in the public sphere and allowing faith-based exemptions from laws that conflict with sincere religious beliefs — consistent with value 4.",
+      "sources": [
+        "https://www.scottschwab.com"
+      ]
+    },
+    {
+      "pid": "6eccd92f-958a-4ee5-8eb6-f9ca48e41af2",
+      "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "name": "Carlton E. Bowen",
+      "topic": "Taxes",
+      "value": "4.0",
+      "reasoning": "Bowen's campaign site makes the national debt its central issue: \"Washington keeps spending money it does not have, then tells American families to absorb the higher costs caused by irresponsible government,\" and he pledges to \"fight for fiscal responsibility, honest budgeting, and a Congress that remembers it is not authorized to spend without limit.\" That is a spending-discipline message. ⚠ The site states no tax-rate position of any kind, so the chair here rests on inference from fiscal conservatism rather than on a stated tax plan.",
+      "sources": [
+        "https://bowenforcongress.com/"
+      ]
+    }
+  ]
+}

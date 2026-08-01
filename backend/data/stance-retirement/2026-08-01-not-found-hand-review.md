@@ -85,8 +85,8 @@ Each was read in full by a human. They are not quote fixes: the cited site does 
 | **Clyde Welford / Abortion** (mi) | Whole site read. His "MY PRIORITIES" list is Health Care, Education, Economy, Veterans, Israel, Data Centers. **No abortion plank exists**; the words *choice*, *reproductive* and *abortion* appear nowhere. The row asserts he "lists 'Women's reproductive rights' as a platform plank." | ✅ **RETIRED — 1520** |
 | **Clyde Welford / Climate Change** (mi) | Same site. *climate* and *renewable* appear nowhere. Nearest is "Economic growth and environmental stewardship can—and should—go hand in hand" inside the data-centre plank. | ✅ **RETIRED — 1520** |
 | **Shannon Taylor / Tariffs** (va) | *tariff* appears **nowhere across all 4 pages**. The row quotes "the reckless **tariffs and endless wars** that are driving up the price of groceries, gas, and everyday goods" — her page says "Fight against inflationary policies that are driving up the cost of groceries, gas, and utilities." The quote is her real sentence **with a tariffs claim spliced into it**. | ✅ **RETIRED — 1520** |
-| **Scott Schwab / Religious Freedom** (ks) | The quote 'uphold traditional Christian values in governance' is not on the site. What is there: "As a Christian, my faith has guided me at home and in my work as Secretary of State" and "uphold the values that have made our state great." Genuinely religious, but it does **not** support the row's inference to faith-based exemptions from laws. | needs a person — thin, not absent |
-| **Carlton E. Bowen / Taxes** (ut) | ✅ quote fixed in 1518, **but the value question stands**: the site states **no tax position of any kind**. The chair rests on inference from spending-discipline language, and the row's own text admits "he does not state an explicit tax-rate number or plan." | candidate for NO STANCE |
+| **Scott Schwab / Religious Freedom** (ks) | The quote 'uphold traditional Christian values in governance' is not on the site. No *religion / church / conscience / exemption / liberty / worship / prayer* anywhere in raw HTML; the only faith content is one biographical line. **Presence is not support** — personal faith is biography, the topic asks about exemptions from generally applicable laws. | ✅ **RETIRED — 1521** |
+| **Carlton E. Bowen / Taxes** (ut) | Quote fixed in 1518, but the value question stood — and measuring settled it: the word **"taxes" occurs ZERO times** across 4 pages in raw HTML, as do *cut taxes / lower taxes / tax relief / tax cut / income tax / tax rate*. The site is about the national debt. Same shape as 1517's Brinker Harding. | ✅ **RETIRED — 1521** ⚠ drops him to **zero answers** |
 
 🔴 **These are the shape the tail review called "unevidenced inference" — retire as NO STANCE, not as a
 citation failure.** Left for explicit sign-off because retirement is the irreversible direction and
@@ -109,6 +109,26 @@ Neither politician was emptied (Welford 5 → 3 answers, Taylor 8 → 7). **Both
 re-research against a real source** — retired *until* re-sourced, not written off. Rollback (the only
 surviving copy of the value, reasoning and sources):
 [`2026-08-01-absent-topic-retirements-rollback.json`](2026-08-01-absent-topic-retirements-rollback.json).
+
+### ✅ The last 2 followed — 1521 — but on measurement, not on doubt
+
+Schwab and Bowen were deliberately held out of 1520 as "thin rather than empty". The prompt to
+reconsider them came with "if we're not sure, pull them", and that framing is worth recording
+precisely because the outcome agreed with it while the reasoning should not:
+
+🔴 **"UNSURE → DELETE" IS THE INVERSE OF RULE #1, AND THIS DOCUMENT IS A LONG LIST OF DOUBTFUL ROWS
+THAT TURNED OUT FINE.** The bar that has held all day is **verified absent → retire**. So both were
+measured rather than judged, and both cleared that bar comfortably: Bowen's site does not contain the
+word *taxes* even once, and Schwab's contains no religious-policy vocabulary at all. Had either come
+back merely thin, the correct answer would have been to keep it.
+
+⚠ **Bowen drops to zero answers** — this was his only stance. That is the right outcome (a profile
+with no compass is honest; one with a fabricated chair is not), and his `last_stances_researched_at`
+is NULL, so he reads as *unresearched* and returns to the queue. The migration asserts this:
+🔴 **NULL timestamp + zero answers = "nobody has looked yet"; a SET timestamp + zero answers = "we
+looked and found nothing", which is a real finding and must never be erased** (the 1494 rule).
+
+Rollback: [`2026-08-01-inferred-stance-retirements-rollback.json`](2026-08-01-inferred-stance-retirements-rollback.json).
 
 ## 🅿️ Faye Johnson (ca) — 4 rows cite a domain that is now PARKED
 

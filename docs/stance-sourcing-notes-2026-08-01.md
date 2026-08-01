@@ -107,20 +107,29 @@ The `NOT_FOUND` cohort is worked. Of 114 rows:
 
 | outcome | rows | |
 |---|---|---|
-| **quote corrected** — substance was on the page, wording wrong | 16 | 1518 |
+| **quote corrected** — substance was on the page, wording wrong | 15 | 1518 |
 | **extractor loss** — never defects, resolved by the `<main>` fix | 26 | — |
 | **re-sourced to an archive** — live domain had been parked | 4 | 1519 |
-| **retired as NO STANCE** — cited site does not discuss the topic at all | 3 | 1520 |
+| **retired as NO STANCE** — cited site does not discuss the topic at all | 5 | 1520, 1521 |
 | never defects for other reasons (chair-label quotes, footer disclaimer, bracket bug) | ~12 | — |
 | characterisation rows still to read (sampled majority-correct) | 85 | — |
 
-**Three retirements out of 114**, and each one was re-verified against **raw HTML** *after* the
-extractor bug was fixed — because the original reads predated it, and retiring is the one step you
-cannot walk back. They are retired **until re-sourced**, and both topics are logged as owed.
+**Five retirements out of 114**, and every one was verified against **raw HTML** *after* the extractor
+bug was fixed — because the earlier reads predated it, and retiring is the one step you cannot walk
+back. They are retired **until re-sourced**, and each topic is logged as owed.
 
-Two rows still need a person rather than a rule: one where the site is genuinely religious but does not
-support the specific inference drawn, and one where a candidate's site states **no tax position at all**
-while carrying a tax stance.
+The clearest cases were not close: one candidate's site does not contain the word *"taxes"* even once
+while carrying a "cut taxes for everyone" stance; another's contains no *religion / church / conscience
+/ exemption / worship* vocabulary at all while carrying a religious-freedom stance built from a single
+biographical line about the candidate's own faith. **Presence is not support, and neither is absence of
+contradiction.**
+
+⚠ One of those retirements takes a candidate to **zero stances**. That is the right outcome — a profile
+with no compass is honest, a profile with a fabricated chair is not — and because his
+`last_stances_researched_at` is NULL he reads as *unresearched* and returns to the research queue. Note
+the distinction, it matters: **NULL timestamp + zero answers means "nobody has looked yet"; a SET
+timestamp + zero answers means "we looked and found nothing", which is a real finding and must never be
+erased.**
 
 **Next:** 104 Ballotpedia-only rows; the 12 newly-applyable deep-link citations; then the held Oregon
 legislative-vote wave.
