@@ -25,12 +25,21 @@
  *   node scripts/sweep-deep-url-reachability.mjs --out data/stance-retirement/2026-08-02-deep-url-reachability.json
  */
 import 'dotenv/config';
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, appendFileSync, readFileSync, existsSync } from 'node:fs';
 import { Pool } from 'pg';
 
 const argv = process.argv.slice(2);
 const flag = (n, d = null) => { const i = argv.indexOf(n); return i > -1 ? argv[i + 1] : d; };
 const OUT = flag('--out', 'data/stance-retirement/2026-08-02-deep-url-reachability.json');
+/**
+ * 🔴 CHECKPOINT EVERY RESULT AS IT ARRIVES, AND RESUME FROM IT.
+ * The first version of this script wrote its JSON only at the end. It was killed at 11,500 of 17,888
+ * URLs -- roughly an hour of probing -- and every result was lost, which also means re-running hits
+ * 11,500 third-party servers a second time for nothing. An interruptible job measured in hours must
+ * be restartable, and re-probing someone else's site because WE lost the answer is not acceptable.
+ * Results are appended here one JSON object per line; a restart skips whatever is already recorded.
+ */
+const JSONL = flag('--jsonl', 'data/stance-retirement/2026-08-02-deep-url-reachability.jsonl');
 const HOST_CONCURRENCY = parseInt(flag('--hosts', '8'), 10);
 const HOST_DELAY = parseInt(flag('--delay', '700'), 10);
 const LIMIT = parseInt(flag('--limit', '0'), 10);
@@ -81,7 +90,20 @@ const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejec
      GROUP BY 1 ORDER BY 1`);
   await pool.end();
 
-  const all = LIMIT ? rows.slice(0, LIMIT) : rows;
+  const allRows = LIMIT ? rows.slice(0, LIMIT) : rows;
+
+  // Resume: anything already recorded in the checkpoint is not probed again.
+  const results = [];
+  const done = new Set();
+  if (existsSync(JSONL)) {
+    for (const line of readFileSync(JSONL, 'utf8').split('\n')) {
+      if (!line.trim()) continue;
+      try { const r = JSON.parse(line); if (!done.has(r.url)) { done.add(r.url); results.push(r); } } catch { /* skip a torn final line */ }
+    }
+    console.log(`resuming — ${done.size} URL(s) already probed, skipping them`);
+  }
+  const all = allRows.filter((r) => !done.has(r.url));
+
   const byHost = new Map();
   for (const r of all) {
     let h; try { h = new URL(r.url).hostname; } catch { h = 'UNPARSEABLE'; }
@@ -93,8 +115,7 @@ const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejec
   console.log(`biggest: ${hosts.slice(0, 5).map(([h, u]) => `${h}(${u.length})`).join(' ')}`);
   console.log('probing — HEAD first, per-host serialised…\n');
 
-  const results = [];
-  let done = 0; let started = 0;
+  let n = 0; let started = 0;
   const t0 = Date.now();
   const worker = async () => {
     while (started < hosts.length) {
@@ -102,12 +123,14 @@ const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejec
       for (const u of urls) {
         const p = await probe(u.url);
         const cls = classify(p.status, p.error);
-        results.push({ url: u.url, host, n_rows: u.n_rows, status: p.status, cls, error: p.error ?? null });
-        done += 1;
-        if (done % 250 === 0) {
-          const rate = done / ((Date.now() - t0) / 1000);
-          const eta = Math.round((all.length - done) / rate / 60);
-          console.log(`  ${done}/${all.length}  (${rate.toFixed(1)}/s, ~${eta}m left)`);
+        const rec = { url: u.url, host, n_rows: u.n_rows, status: p.status, cls, error: p.error ?? null };
+        results.push(rec);
+        appendFileSync(JSONL, `${JSON.stringify(rec)}\n`);   // checkpoint before anything else can go wrong
+        n += 1;
+        if (n % 250 === 0) {
+          const rate = n / ((Date.now() - t0) / 1000);
+          const eta = Math.round((all.length - n) / rate / 60);
+          console.log(`  ${n}/${all.length}  (${rate.toFixed(1)}/s, ~${eta}m left)`);
         }
         if (urls.length > 1) await sleep(HOST_DELAY);
       }
