@@ -4,7 +4,7 @@
   "counts": {
     "BALLOTPEDIA_ONLY": {
       "ca": 10,
-      "-": 11,
+      "-": 13,
       "md": 5,
       "tx": 30,
       "va": 15,
@@ -24,15 +24,8 @@
       "ky": 6
     },
     "NON_URL_SOURCE": {
-      "md": 8,
-      "ca": 4,
-      "-": 2,
-      "mt": 1,
-      "la": 3,
-      "al": 1,
-      "ky": 1,
-      "nv": 1,
-      "nd": 1
+      "md": 6,
+      "la": 3
     },
     "PRIMARY_SITE_NO_PATH": {
       "va": 58,
