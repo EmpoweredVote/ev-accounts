@@ -32,7 +32,11 @@ const flag = (n, d = null) => { const i = argv.indexOf(n); return i > -1 ? argv[
 const OUT = flag('--out');
 
 const HEDGE = /\b(implies?|suggests?|strongly implies|would (?:strongly )?favou?r|presumably|likely|appears? to)\b/i;
-const FROM_ABSENCE = /\b(no evidence|no documented|not found|no specific|without (?:any )?explicit|does not (?:explicitly )?(?:state|call|mention)|rather than any)\b/i;
+// "no mention" added after a control row exposed it as a miss: Anderson/Transportation reasons "No
+// mention of transit, bike lanes, or pedestrian infrastructure in her platform" and went UNFLAGGED
+// into the control sample, where it read as a defect. A false negative in the control silently
+// inflates the control's defect rate and makes the signal look worse than it is.
+const FROM_ABSENCE = /\b(no mention|no evidence|no documented|not found|no specific|without (?:any )?explicit|does not (?:explicitly )?(?:state|call|mention)|rather than any)\b/i;
 const PRIOR = /\b(former Republican|former Democrat|his party|her party|their party|party'?s? (?:platform|majority|position)|Republican majority|Democratic majority|pro-business coalition|endorsed by|worked for|previously worked|aligned with conservative groups?)\b/i;
 // ⚠ ANCHOR "strongly pro-" TO A PLACE NOUN. Unanchored it matched "a strongly pro-economic-development
 // position" -- a description of the CANDIDATE, which is the row doing its job, not a district prior.
