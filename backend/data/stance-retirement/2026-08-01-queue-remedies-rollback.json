@@ -1,0 +1,143 @@
+{
+  "generated_for": "1522/1523/1524",
+  "rows": [
+    {
+      "politician_id": "13eea214-867a-4a66-ae1a-c0f9916ac833",
+      "full_name": "Maria Lou Calanche",
+      "last_stances_researched_at": null,
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "topic": "Transportation Priorities",
+      "value": "2.0",
+      "reasoning": "Supports accessible transportation for District 1 residents, consistent with her equity-focused platform. Detailed transportation positions were not publicly available, but her focus on working families and community development suggests transit-supportive values.",
+      "sources": [
+        "louforcd1.com"
+      ],
+      "remedy": "reasoning"
+    },
+    {
+      "politician_id": "09d9691d-0352-45c0-9efd-31c38b69c302",
+      "full_name": "Kathleen Anderson",
+      "last_stances_researched_at": "2026-06-05T13:03:35.393Z",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "value": "4.0",
+      "reasoning": "Anderson's campaign centers on parks being 'less safe' and public spaces 'too often affected by drugs, crime, trash, vandalism and disorder,' framing public safety as failing under current leadership and calling for restored standards. Her accountability-first messaging implies adding police staffing and equipment to deter crime rather than shifting to co-responder models. — best matches stance 4 (increase police staffing, equipment, and pay to improve response times and deter crime).",
+      "sources": [
+        "https://www.kathleen4council.com/"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "09d9691d-0352-45c0-9efd-31c38b69c302",
+      "full_name": "Kathleen Anderson",
+      "last_stances_researched_at": "2026-06-05T13:03:35.393Z",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "topic": "City Sanitation and Cleanliness",
+      "value": "4.0",
+      "reasoning": "Anderson highlights 'dirty streets,' 'trash,' and 'roads stay torn up too long' as failures of county management, framing clean streets as a matter of accountability and enforcement rather than expanded services. Her 'common sense, accountability, and taxpayer respect' framing points to holding residents and businesses responsible rather than expanding sanitation crews. — best matches stance 4 (rely primarily on enforcement of anti-littering and property maintenance laws; hold residents and businesses responsible).",
+      "sources": [
+        "https://www.kathleen4council.com/"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "09d9691d-0352-45c0-9efd-31c38b69c302",
+      "full_name": "Kathleen Anderson",
+      "last_stances_researched_at": "2026-06-05T13:03:35.393Z",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "topic": "Transportation Priorities",
+      "value": "4.0",
+      "reasoning": "Anderson's repeated emphasis on 'roads stay torn up too long' and road maintenance as a central complaint against county government reflects a roads-first transportation priority. No mention of transit, bike lanes, or pedestrian infrastructure in her platform. — best matches stance 4 (focus on road capacity and traffic flow; transportation investment should serve the majority who drive).",
+      "sources": [
+        "https://www.kathleen4council.com/"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "f1f3e6ca-5532-4f33-8ec2-64791b08f59b",
+      "full_name": "Hilda L. Solis",
+      "last_stances_researched_at": null,
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "value": "2.0",
+      "reasoning": "Solis supports increased housing density near transit corridors alongside community input and environmental review. She has funded thousands of affordable units while also prioritizing community benefit agreements, reflecting support for managed density increases rather than deregulation-first zoning reform.",
+      "sources": [
+        "https://hildalsolis.org/"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "63d60b50-2395-4cde-8999-97a9166d3563",
+      "full_name": "Silvia Catten",
+      "last_stances_researched_at": "2026-06-01T16:44:20.273Z",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic": "Taxes",
+      "value": "2.0",
+      "reasoning": "Catten supports \"working class policies that ensure our economy works for the people who power it and not just those at the top\" and policy to \"strengthen wages.\" This redistributive framing — ensuring the economy works for workers, not just the wealthy — implies modestly raising taxes on high earners to fund public services, aligning with value=2.",
+      "sources": [
+        "https://www.silviacatten.com"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "fee24b69-dd56-4b07-a890-a08e898dc031",
+      "full_name": "Aaron Wiley",
+      "last_stances_researched_at": null,
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic": "Healthcare",
+      "value": "2.0",
+      "reasoning": "Campaign site states 'Healthcare shouldn't depend on your ZIP code' and commits to bringing ER and InstaCare facilities to the Westside — framing access as a universal equity issue, not limited to the poorest residents. This aligns with value=2: 'Make sure everyone has affordable coverage through a mix of public programs and regulated private insurance.' The geographic equity framing implies coverage should be universal, not just safety-net-level.",
+      "sources": [
+        "https://wileyfor21.com#priorities"
+      ],
+      "remedy": "retire"
+    },
+    {
+      "politician_id": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+      "full_name": "Ericka Kopp",
+      "last_stances_researched_at": null,
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic": "Fossil Fuels",
+      "value": "2.0",
+      "reasoning": "Green New Deal endorsement implies stopping new fossil fuel permits as part of transitioning off fossil fuels. No language expanding drilling; the platform is oriented toward clean energy transition (value 2: stop issuing new permits for fossil fuel drilling).",
+      "sources": [
+        "https://erickakopp.com#priorities-section"
+      ],
+      "remedy": "reasoning"
+    }
+  ],
+  "impact": [
+    {
+      "politician_id": "09d9691d-0352-45c0-9efd-31c38b69c302",
+      "full_name": "Kathleen Anderson",
+      "research_ts_set": true,
+      "answers_now": 3,
+      "retiring": 3,
+      "answers_after": 0
+    },
+    {
+      "politician_id": "fee24b69-dd56-4b07-a890-a08e898dc031",
+      "full_name": "Aaron Wiley",
+      "research_ts_set": false,
+      "answers_now": 4,
+      "retiring": 1,
+      "answers_after": 3
+    },
+    {
+      "politician_id": "63d60b50-2395-4cde-8999-97a9166d3563",
+      "full_name": "Silvia Catten",
+      "research_ts_set": true,
+      "answers_now": 16,
+      "retiring": 1,
+      "answers_after": 15
+    },
+    {
+      "politician_id": "f1f3e6ca-5532-4f33-8ec2-64791b08f59b",
+      "full_name": "Hilda L. Solis",
+      "research_ts_set": false,
+      "answers_now": 32,
+      "retiring": 1,
+      "answers_after": 31
+    }
+  ]
+}

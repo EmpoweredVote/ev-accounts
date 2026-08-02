@@ -1,0 +1,5942 @@
+{
+  "generated": {
+    "rows": 587,
+    "hosts": 241
+  },
+  "byCls": {
+    "THIN_SHELL": {
+      "hosts": 20,
+      "rows": 55
+    },
+    "OK": {
+      "hosts": 203,
+      "rows": 488
+    },
+    "GONE": {
+      "hosts": 3,
+      "rows": 18
+    },
+    "FETCH_FAILED": {
+      "hosts": 13,
+      "rows": 20
+    },
+    "BOT_BLOCKED": {
+      "hosts": 2,
+      "rows": 6
+    }
+  },
+  "sites": [
+    {
+      "host": "moforla.com",
+      "url": "https://moforla.com",
+      "rows": [
+        {
+          "pid": "c22ed715-4d29-4e03-8885-543bf32b525e",
+          "tid": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+          "name": "Morgan Oyler",
+          "topic": "Local Immigration Enforcement"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 180,
+      "note": null,
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "louforcd1.com",
+      "url": "https://louforcd1.com",
+      "rows": [
+        {
+          "pid": "13eea214-867a-4a66-ae1a-c0f9916ac833",
+          "tid": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+          "name": "Maria Lou Calanche",
+          "topic": "Local Immigration Enforcement"
+        },
+        {
+          "pid": "13eea214-867a-4a66-ae1a-c0f9916ac833",
+          "tid": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+          "name": "Maria Lou Calanche",
+          "topic": "Transportation Priorities"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 696
+    },
+    {
+      "host": "colterforla.com",
+      "url": "https://colterforla.com",
+      "rows": [
+        {
+          "pid": "1d731710-7e7e-4685-ade7-f34bce70c088",
+          "tid": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+          "name": "Colter Carlisle",
+          "topic": "Local Immigration Enforcement"
+        },
+        {
+          "pid": "1d731710-7e7e-4685-ade7-f34bce70c088",
+          "tid": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+          "name": "Colter Carlisle",
+          "topic": "Transportation Priorities"
+        }
+      ],
+      "cls": "GONE",
+      "status": 404,
+      "wayback": {
+        "snapshots": 9,
+        "usable": 7,
+        "latest": "20260511052507"
+      }
+    },
+    {
+      "host": "timgaspar.com",
+      "url": "https://timgaspar.com",
+      "rows": [
+        {
+          "pid": "4632aaf1-6667-4e41-9763-c8b56ca7e702",
+          "tid": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+          "name": "Timothy Gaspar",
+          "topic": "Local Immigration Enforcement"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7072
+    },
+    {
+      "host": "lindseyhorvath.lacounty.gov",
+      "url": "https://lindseyhorvath.lacounty.gov",
+      "rows": [
+        {
+          "pid": "81dfcf88-c739-4461-9d16-931f8d51a8c5",
+          "tid": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+          "name": "Lindsey P. Horvath",
+          "topic": "Economic Development Incentives"
+        },
+        {
+          "pid": "81dfcf88-c739-4461-9d16-931f8d51a8c5",
+          "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+          "name": "Lindsey P. Horvath",
+          "topic": "AI Oversight"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7991
+    },
+    {
+      "host": "www.kathleen4council.com",
+      "url": "https://www.kathleen4council.com/",
+      "rows": [
+        {
+          "pid": "09d9691d-0352-45c0-9efd-31c38b69c302",
+          "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+          "name": "Kathleen Anderson",
+          "topic": "Public Safety Approach"
+        },
+        {
+          "pid": "09d9691d-0352-45c0-9efd-31c38b69c302",
+          "tid": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+          "name": "Kathleen Anderson",
+          "topic": "City Sanitation and Cleanliness"
+        },
+        {
+          "pid": "09d9691d-0352-45c0-9efd-31c38b69c302",
+          "tid": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+          "name": "Kathleen Anderson",
+          "topic": "Transportation Priorities"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1631
+    },
+    {
+      "host": "www.tracipark.com",
+      "url": "https://www.tracipark.com",
+      "rows": [
+        {
+          "pid": "d0977350-df68-4cfe-822e-816ba13f9213",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Traci Park",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "d0977350-df68-4cfe-822e-816ba13f9213",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Traci Park",
+          "topic": "Immigration"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 32592
+    },
+    {
+      "host": "lanciaforcongress2026.org",
+      "url": "https://lanciaforcongress2026.org",
+      "rows": [
+        {
+          "pid": "c63201eb-c3e1-4bcd-b24a-995e9d367fc3",
+          "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+          "name": "Christopher Lancia",
+          "topic": "Trans Athletes"
+        },
+        {
+          "pid": "c63201eb-c3e1-4bcd-b24a-995e9d367fc3",
+          "tid": "24e9212c-b011-422a-865c-093e35050901",
+          "name": "Christopher Lancia",
+          "topic": "Ukraine Support"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 6303
+    },
+    {
+      "host": "votegeorgeforcongress.com",
+      "url": "https://votegeorgeforcongress.com/",
+      "rows": [
+        {
+          "pid": "e091da26-dbcf-4d12-87c3-4e2e023d00a1",
+          "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+          "name": "George Austin",
+          "topic": "Social Security"
+        },
+        {
+          "pid": "e091da26-dbcf-4d12-87c3-4e2e023d00a1",
+          "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+          "name": "George Austin",
+          "topic": "AI Oversight"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4945
+    },
+    {
+      "host": "dylanfordistrict13.com",
+      "url": "https://dylanfordistrict13.com",
+      "rows": [
+        {
+          "pid": "5d7f84b4-e987-4be2-b3c5-64933e559bed",
+          "tid": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+          "name": "Dylan Kendall",
+          "topic": "Rent Regulation"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 9899
+    },
+    {
+      "host": "votemiller.com",
+      "url": "https://votemiller.com",
+      "rows": [
+        {
+          "pid": "b8c151f1-b1e6-49b8-984e-ef87c3e19c10",
+          "tid": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+          "name": "Adam Miller",
+          "topic": "Transportation Priorities"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2795
+    },
+    {
+      "host": "www.mike4allen.com",
+      "url": "https://www.mike4allen.com/",
+      "rows": [
+        {
+          "pid": "c7a0ecf6-b416-474b-9647-a25e404f4bc4",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Michael Schaeffer",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 8425
+    },
+    {
+      "host": "henrymantelforla.com",
+      "url": "https://henrymantelforla.com",
+      "rows": [
+        {
+          "pid": "615e9ced-2773-4092-ad3b-610e90ed237c",
+          "tid": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+          "name": "Henry Mantel",
+          "topic": "Local Immigration Enforcement"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1572
+    },
+    {
+      "host": "acostaforla.com",
+      "url": "https://acostaforla.com",
+      "rows": [
+        {
+          "pid": "ac0d1a12-af8e-4464-9cb7-4ed2b549cbbe",
+          "tid": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+          "name": "Bryant Acosta",
+          "topic": "Residential Zoning"
+        },
+        {
+          "pid": "ac0d1a12-af8e-4464-9cb7-4ed2b549cbbe",
+          "tid": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+          "name": "Bryant Acosta",
+          "topic": "Rent Regulation"
+        },
+        {
+          "pid": "ac0d1a12-af8e-4464-9cb7-4ed2b549cbbe",
+          "tid": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+          "name": "Bryant Acosta",
+          "topic": "Growth and Development Pace"
+        },
+        {
+          "pid": "ac0d1a12-af8e-4464-9cb7-4ed2b549cbbe",
+          "tid": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+          "name": "Bryant Acosta",
+          "topic": "Environmental Protection vs. Development"
+        },
+        {
+          "pid": "ac0d1a12-af8e-4464-9cb7-4ed2b549cbbe",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Bryant Acosta",
+          "topic": "Housing"
+        },
+        {
+          "pid": "ac0d1a12-af8e-4464-9cb7-4ed2b549cbbe",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Bryant Acosta",
+          "topic": "Climate Change"
+        }
+      ],
+      "cls": "FETCH_FAILED",
+      "status": 0,
+      "error": "fetch failed",
+      "retried": true,
+      "retryCls": "FETCH_FAILED",
+      "wayback": {
+        "snapshots": 11,
+        "usable": 9,
+        "latest": "20260609024933"
+      }
+    },
+    {
+      "host": "logsdonforla.com",
+      "url": "https://logsdonforla.com",
+      "rows": [
+        {
+          "pid": "2db4b15a-6d44-43ec-8b6e-d669351e1e29",
+          "tid": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+          "name": "John Logsdon",
+          "topic": "Economic Development Incentives"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 13522
+    },
+    {
+      "host": "mayorpratt.com",
+      "url": "https://mayorpratt.com",
+      "rows": [
+        {
+          "pid": "bf832733-fa9f-4bab-80d0-32488d3d053e",
+          "tid": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+          "name": "Spencer Pratt",
+          "topic": "Transportation Priorities"
+        },
+        {
+          "pid": "bf832733-fa9f-4bab-80d0-32488d3d053e",
+          "tid": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+          "name": "Spencer Pratt",
+          "topic": "Environmental Protection vs. Development"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 10303
+    },
+    {
+      "host": "hyman4mayor.com",
+      "url": "https://hyman4mayor.com",
+      "rows": [
+        {
+          "pid": "0fa047d2-ffd4-4a87-b59a-ebf5946ac9af",
+          "tid": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+          "name": "Tish Hyman",
+          "topic": "Local Immigration Enforcement"
+        },
+        {
+          "pid": "0fa047d2-ffd4-4a87-b59a-ebf5946ac9af",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Tish Hyman",
+          "topic": "Immigration"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 0,
+      "note": null,
+      "wayback": {
+        "snapshots": 14,
+        "usable": 13,
+        "latest": "20260619041252"
+      }
+    },
+    {
+      "host": "hildalsolis.org",
+      "url": "https://hildalsolis.org/",
+      "rows": [
+        {
+          "pid": "f1f3e6ca-5532-4f33-8ec2-64791b08f59b",
+          "tid": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+          "name": "Hilda L. Solis",
+          "topic": "Residential Zoning"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4347
+    },
+    {
+      "host": "smithformurphy.com",
+      "url": "https://smithformurphy.com/",
+      "rows": [
+        {
+          "pid": "bcd556db-a139-4b87-8887-a1bad73726ea",
+          "tid": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+          "name": "Scott Smith",
+          "topic": "Economic Development Incentives"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3863
+    },
+    {
+      "host": "www.faizahforla.com",
+      "url": "https://www.faizahforla.com/",
+      "rows": [
+        {
+          "pid": "a9882d8b-b20d-4b0c-b509-c2883b4352e0",
+          "tid": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+          "name": "Faizah Malik",
+          "topic": "Local Immigration Enforcement"
+        },
+        {
+          "pid": "a9882d8b-b20d-4b0c-b509-c2883b4352e0",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Faizah Malik",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "a9882d8b-b20d-4b0c-b509-c2883b4352e0",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Faizah Malik",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "a9882d8b-b20d-4b0c-b509-c2883b4352e0",
+          "tid": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+          "name": "Faizah Malik",
+          "topic": "Environmental Protection vs. Development"
+        },
+        {
+          "pid": "a9882d8b-b20d-4b0c-b509-c2883b4352e0",
+          "tid": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+          "name": "Faizah Malik",
+          "topic": "Transportation Priorities"
+        },
+        {
+          "pid": "a9882d8b-b20d-4b0c-b509-c2883b4352e0",
+          "tid": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+          "name": "Faizah Malik",
+          "topic": "City Sanitation and Cleanliness"
+        }
+      ],
+      "cls": "GONE",
+      "status": 404,
+      "wayback": {
+        "snapshots": 13,
+        "usable": 11,
+        "latest": "20260609024810"
+      }
+    },
+    {
+      "host": "kellyforannacitycouncil.com",
+      "url": "https://kellyforannacitycouncil.com/",
+      "rows": [
+        {
+          "pid": "6a08be1a-2535-487c-a17c-f2f38263d504",
+          "tid": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+          "name": "Kelly Patterson-Herndon",
+          "topic": "Transportation Priorities"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 10301
+    },
+    {
+      "host": "radicallawcenter.com",
+      "url": "https://radicallawcenter.com/",
+      "rows": [
+        {
+          "pid": "51d9e940-a84e-4ce2-a370-7440225bac9b",
+          "tid": "448b1c9a-b6f3-42b8-8f39-d3bbb5bfa9ee",
+          "name": "Dan Kapelovitz",
+          "topic": "Interpretation"
+        },
+        {
+          "pid": "51d9e940-a84e-4ce2-a370-7440225bac9b",
+          "tid": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+          "name": "Dan Kapelovitz",
+          "topic": "Court Access"
+        },
+        {
+          "pid": "51d9e940-a84e-4ce2-a370-7440225bac9b",
+          "tid": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+          "name": "Dan Kapelovitz",
+          "topic": "Criminal Justice"
+        },
+        {
+          "pid": "51d9e940-a84e-4ce2-a370-7440225bac9b",
+          "tid": "e5e48f0e-8f3a-40e1-8080-889fea389603",
+          "name": "Dan Kapelovitz",
+          "topic": "Government Deference"
+        }
+      ],
+      "cls": "BOT_BLOCKED",
+      "status": 403
+    },
+    {
+      "host": "troyslatenforjudge.com",
+      "url": "https://troyslatenforjudge.com/",
+      "rows": [
+        {
+          "pid": "e66de256-31e6-45a3-b3a8-a01ade5b79ec",
+          "tid": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+          "name": "Troy Slaten",
+          "topic": "Court Access"
+        },
+        {
+          "pid": "e66de256-31e6-45a3-b3a8-a01ade5b79ec",
+          "tid": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+          "name": "Troy Slaten",
+          "topic": "Criminal Justice"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7628
+    },
+    {
+      "host": "www.debgoldberg.com",
+      "url": "https://www.debgoldberg.com/",
+      "rows": [
+        {
+          "pid": "eb88bdd6-d1c7-4e08-aff8-bb7517ad24b5",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Deborah Goldberg",
+          "topic": "Childcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1618
+    },
+    {
+      "host": "cambridgema.iqm2.com",
+      "url": "https://cambridgema.iqm2.com/",
+      "rows": [
+        {
+          "pid": "00565708-5520-418d-afec-58a295d0d8ec",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "E. Denise Simmons",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "00565708-5520-418d-afec-58a295d0d8ec",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "E. Denise Simmons",
+          "topic": "Deportation"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 0,
+      "note": null,
+      "wayback": {
+        "snapshots": 106,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "https://prioritizes balanced budgets",
+      "url": "https://prioritizes balanced budgets",
+      "rows": [
+        {
+          "pid": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7",
+          "tid": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+          "name": "Guy Guzzone",
+          "topic": "Economic Development Incentives"
+        }
+      ],
+      "cls": "FETCH_FAILED",
+      "status": 0,
+      "error": "Failed to parse URL from https://prioritizes balanced budgets",
+      "retried": true,
+      "retryCls": "FETCH_FAILED",
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "guyguzzone.com",
+      "url": "https://guyguzzone.com/",
+      "rows": [
+        {
+          "pid": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7",
+          "tid": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+          "name": "Guy Guzzone",
+          "topic": "Growth and Development Pace"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4519
+    },
+    {
+      "host": "https://combined with criminal justice reform support",
+      "url": "https://combined with criminal justice reform support",
+      "rows": [
+        {
+          "pid": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7",
+          "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+          "name": "Guy Guzzone",
+          "topic": "Public Safety Approach"
+        }
+      ],
+      "cls": "FETCH_FAILED",
+      "status": 0,
+      "error": "Failed to parse URL from https://combined with criminal justice reform support",
+      "retried": true,
+      "retryCls": "FETCH_FAILED",
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "https://consistent with progressive childcare investment priorities.",
+      "url": "https://consistent with progressive childcare investment priorities.",
+      "rows": [
+        {
+          "pid": "6da20195-1b0c-43f2-b1b3-7a3954326fe6",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Katie Fry Hester",
+          "topic": "Childcare"
+        }
+      ],
+      "cls": "FETCH_FAILED",
+      "status": 0,
+      "error": "Failed to parse URL from https://consistent with progressive childcare investment priorities.",
+      "retried": true,
+      "retryCls": "FETCH_FAILED",
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "https://expanded Medicaid for pregnant people and undocumented immigrants",
+      "url": "https://expanded Medicaid for pregnant people and undocumented immigrants",
+      "rows": [
+        {
+          "pid": "fc23b939-0dfd-4968-ab19-fc1e7745e997",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Clarence Lam",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "FETCH_FAILED",
+      "status": 0,
+      "error": "Failed to parse URL from https://expanded Medicaid for pregnant people and undocumented immigrants",
+      "retried": true,
+      "retryCls": "FETCH_FAILED",
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "https://SB0438 pharmacy benefits",
+      "url": "https://SB0438 pharmacy benefits",
+      "rows": [
+        {
+          "pid": "fc23b939-0dfd-4968-ab19-fc1e7745e997",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Clarence Lam",
+          "topic": "Medicare/aid"
+        }
+      ],
+      "cls": "FETCH_FAILED",
+      "status": 0,
+      "error": "Failed to parse URL from https://SB0438 pharmacy benefits",
+      "retried": true,
+      "retryCls": "FETCH_FAILED",
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "hopper4texas.com",
+      "url": "https://hopper4texas.com/",
+      "rows": [
+        {
+          "pid": "b266c38d-9763-48d4-bcba-7b44adf79ab9",
+          "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+          "name": "Andy Hopper",
+          "topic": "Religious Freedom"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 15347
+    },
+    {
+      "host": "www.brookslandgraf.com",
+      "url": "https://www.brookslandgraf.com/",
+      "rows": [
+        {
+          "pid": "90d94c32-12a1-433a-8ab4-418cd2f05c01",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Brooks Landgraf",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "90d94c32-12a1-433a-8ab4-418cd2f05c01",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Brooks Landgraf",
+          "topic": "Fossil Fuels"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 17870
+    },
+    {
+      "host": "votejeffbarry.com",
+      "url": "https://votejeffbarry.com",
+      "rows": [
+        {
+          "pid": "f6e50487-d839-479d-8efd-9937a09f9ab4",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Jeffrey Barry",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2061
+    },
+    {
+      "host": "fairlyfortexas.com",
+      "url": "https://fairlyfortexas.com",
+      "rows": [
+        {
+          "pid": "0dc7e2da-505d-42b6-af05-a2105ce81379",
+          "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+          "name": "Caroline Fairly",
+          "topic": "Religious Freedom"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4334
+    },
+    {
+      "host": "marclahood.com",
+      "url": "https://marclahood.com",
+      "rows": [
+        {
+          "pid": "786ac925-59d3-40e3-a9ce-b63a54f4caf4",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Marc LaHood",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "786ac925-59d3-40e3-a9ce-b63a54f4caf4",
+          "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+          "name": "Marc LaHood",
+          "topic": "Same-Sex Marriage"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 16317
+    },
+    {
+      "host": "www.tomcraddick.com",
+      "url": "https://www.tomcraddick.com",
+      "rows": [
+        {
+          "pid": "44d86767-7041-4ce9-9d03-ce23dd663c95",
+          "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+          "name": "Tom Craddick",
+          "topic": "Religious Freedom"
+        },
+        {
+          "pid": "44d86767-7041-4ce9-9d03-ce23dd663c95",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "Tom Craddick",
+          "topic": "Voting Rights"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 25646
+    },
+    {
+      "host": "tomcraddick.com",
+      "url": "https://tomcraddick.com#about",
+      "rows": [
+        {
+          "pid": "44d86767-7041-4ce9-9d03-ce23dd663c95",
+          "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+          "name": "Tom Craddick",
+          "topic": "Same-Sex Marriage"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 25646
+    },
+    {
+      "host": "single-payer",
+      "url": "https://single-payer",
+      "rows": [
+        {
+          "pid": "8be7e981-77a6-4ef7-b8d7-891fd9cc26d8",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "John Fleming",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "FETCH_FAILED",
+      "status": 0,
+      "error": "fetch failed",
+      "retried": true,
+      "retryCls": "FETCH_FAILED",
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "https://co-sponsored the Birthright Citizenship Act multiple times (2009-2013) to eliminate birthright citizenship for children of undocumented immigrants",
+      "url": "https://co-sponsored the Birthright Citizenship Act multiple times (2009-2013) to eliminate birthright citizenship for children of undocumented immigrants",
+      "rows": [
+        {
+          "pid": "8be7e981-77a6-4ef7-b8d7-891fd9cc26d8",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "John Fleming",
+          "topic": "Immigration"
+        }
+      ],
+      "cls": "FETCH_FAILED",
+      "status": 0,
+      "error": "Failed to parse URL from https://co-sponsored the Birthright Citizenship Act multiple times (2009-2013) to eliminate birthright citizenship for children of undocumented immigrants",
+      "retried": true,
+      "retryCls": "FETCH_FAILED",
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "https://school prayer",
+      "url": "https://school prayer",
+      "rows": [
+        {
+          "pid": "8be7e981-77a6-4ef7-b8d7-891fd9cc26d8",
+          "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+          "name": "John Fleming",
+          "topic": "Religious Freedom"
+        }
+      ],
+      "cls": "FETCH_FAILED",
+      "status": 0,
+      "error": "Failed to parse URL from https://school prayer",
+      "retried": true,
+      "retryCls": "FETCH_FAILED",
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "https://voted to repeal capital punishment (2013)",
+      "url": "https://voted to repeal capital punishment (2013)",
+      "rows": [
+        {
+          "pid": "82145bc2-770a-421e-a2a1-0e79aae5b643",
+          "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+          "name": "Craig Zucker",
+          "topic": "Civil Rights"
+        }
+      ],
+      "cls": "FETCH_FAILED",
+      "status": 0,
+      "error": "Failed to parse URL from https://voted to repeal capital punishment (2013)",
+      "retried": true,
+      "retryCls": "FETCH_FAILED",
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "goldstein-for-congress-ru4gws5.gamma.site",
+      "url": "https://goldstein-for-congress-ru4gws5.gamma.site/",
+      "rows": [
+        {
+          "pid": "099d8783-86f8-4f75-8488-8949611aeed0",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Michael Goldstein",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "099d8783-86f8-4f75-8488-8949611aeed0",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Michael Goldstein",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "099d8783-86f8-4f75-8488-8949611aeed0",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Michael Goldstein",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "099d8783-86f8-4f75-8488-8949611aeed0",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Michael Goldstein",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "099d8783-86f8-4f75-8488-8949611aeed0",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Michael Goldstein",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "099d8783-86f8-4f75-8488-8949611aeed0",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Michael Goldstein",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 13979
+    },
+    {
+      "host": "https://in-person voting proof of identity",
+      "url": "https://in-person voting proof of identity",
+      "rows": [
+        {
+          "pid": "cdf746c1-8311-416b-9ad3-2684a83b6992",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "William Valentine",
+          "topic": "Voting Rights"
+        }
+      ],
+      "cls": "FETCH_FAILED",
+      "status": 0,
+      "error": "Failed to parse URL from https://in-person voting proof of identity",
+      "retried": true,
+      "retryCls": "FETCH_FAILED",
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "allenforutahcounty.com",
+      "url": "https://allenforutahcounty.com",
+      "rows": [
+        {
+          "pid": "fc23f648-2ec4-4c6c-a9f5-0722b809e6b1",
+          "tid": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+          "name": "Fred Allen",
+          "topic": "Local Immigration Enforcement"
+        },
+        {
+          "pid": "fc23f648-2ec4-4c6c-a9f5-0722b809e6b1",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Fred Allen",
+          "topic": "Housing"
+        },
+        {
+          "pid": "fc23f648-2ec4-4c6c-a9f5-0722b809e6b1",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Fred Allen",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2563
+    },
+    {
+      "host": "www.electstephanie.com",
+      "url": "https://www.electstephanie.com/",
+      "rows": [
+        {
+          "pid": "4f896b69-d922-4838-b54d-51a00a452e08",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Stephanie Pitcher",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2217
+    },
+    {
+      "host": "brooksbenson4utah.com",
+      "url": "https://brooksbenson4utah.com#issues",
+      "rows": [
+        {
+          "pid": "9a171371-be83-456e-acd5-ece936ee84ae",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Brooks Benson",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "9a171371-be83-456e-acd5-ece936ee84ae",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Brooks Benson",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "9a171371-be83-456e-acd5-ece936ee84ae",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Brooks Benson",
+          "topic": "Fossil Fuels"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3808
+    },
+    {
+      "host": "www.jenplumb.com",
+      "url": "https://www.jenplumb.com/",
+      "rows": [
+        {
+          "pid": "21786f7a-a6e5-4011-ac87-cecc01a10f9e",
+          "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+          "name": "Jen Plumb",
+          "topic": "Same-Sex Marriage"
+        },
+        {
+          "pid": "21786f7a-a6e5-4011-ac87-cecc01a10f9e",
+          "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+          "name": "Jen Plumb",
+          "topic": "Religious Freedom"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7069
+    },
+    {
+      "host": "www.monteiro4council2022.com",
+      "url": "https://www.monteiro4council2022.com/",
+      "rows": [
+        {
+          "pid": "3b4186ff-c161-4f7f-832e-b0faae340ed5",
+          "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+          "name": "Alex Monteiro",
+          "topic": "Public Safety Approach"
+        },
+        {
+          "pid": "3b4186ff-c161-4f7f-832e-b0faae340ed5",
+          "tid": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+          "name": "Alex Monteiro",
+          "topic": "Economic Development Incentives"
+        }
+      ],
+      "cls": "FETCH_FAILED",
+      "status": 0,
+      "error": "fetch failed",
+      "retried": true,
+      "retryCls": "FETCH_FAILED",
+      "wayback": {
+        "snapshots": 6,
+        "usable": 2,
+        "latest": "20230315145436"
+      }
+    },
+    {
+      "host": "www.angie4hawthorne.com",
+      "url": "https://www.angie4hawthorne.com/",
+      "rows": [
+        {
+          "pid": "be3ca929-4fe1-4797-acf2-570ba8fcebbf",
+          "tid": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+          "name": "Angie Reyes English",
+          "topic": "Homelessness Response"
+        },
+        {
+          "pid": "be3ca929-4fe1-4797-acf2-570ba8fcebbf",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Angie Reyes English",
+          "topic": "Housing"
+        },
+        {
+          "pid": "be3ca929-4fe1-4797-acf2-570ba8fcebbf",
+          "tid": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+          "name": "Angie Reyes English",
+          "topic": "Economic Development Incentives"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3497
+    },
+    {
+      "host": "www.hang4weho.com",
+      "url": "https://www.hang4weho.com/",
+      "rows": [
+        {
+          "pid": "4279801f-275d-4e0b-8094-35a806b33480",
+          "tid": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+          "name": "Danny Hang",
+          "topic": "Rent Regulation"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2347
+    },
+    {
+      "host": "www.rodwillett.com",
+      "url": "https://www.rodwillett.com/",
+      "rows": [
+        {
+          "pid": "e39d94c7-99d5-4c1d-b8d9-11736637b1eb",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Rodney T. Willett",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3761
+    },
+    {
+      "host": "staceycarrollforva.com",
+      "url": "https://staceycarrollforva.com",
+      "rows": [
+        {
+          "pid": "ac78bc55-8fe9-4efb-a0ea-179842b6c44e",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Stacey A. Carroll",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "ac78bc55-8fe9-4efb-a0ea-179842b6c44e",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Stacey A. Carroll",
+          "topic": "Medicare/aid"
+        },
+        {
+          "pid": "ac78bc55-8fe9-4efb-a0ea-179842b6c44e",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Stacey A. Carroll",
+          "topic": "Abortion"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2788
+    },
+    {
+      "host": "raecousins.com",
+      "url": "https://raecousins.com",
+      "rows": [
+        {
+          "pid": "f9d4ebeb-9dc9-40d4-8318-da7042c42f48",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Rae C. Cousins",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "f9d4ebeb-9dc9-40d4-8318-da7042c42f48",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Rae C. Cousins",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "f9d4ebeb-9dc9-40d4-8318-da7042c42f48",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Rae C. Cousins",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "f9d4ebeb-9dc9-40d4-8318-da7042c42f48",
+          "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+          "name": "Rae C. Cousins",
+          "topic": "Civil Rights"
+        },
+        {
+          "pid": "f9d4ebeb-9dc9-40d4-8318-da7042c42f48",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Rae C. Cousins",
+          "topic": "Climate Change"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 6104
+    },
+    {
+      "host": "www.deloresmcquinn.net",
+      "url": "https://www.deloresmcquinn.net/",
+      "rows": [
+        {
+          "pid": "980c9e90-4249-4a48-a777-5f37dd4d52b1",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Delores L. McQuinn",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "980c9e90-4249-4a48-a777-5f37dd4d52b1",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Delores L. McQuinn",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "980c9e90-4249-4a48-a777-5f37dd4d52b1",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "Delores L. McQuinn",
+          "topic": "Voting Rights"
+        },
+        {
+          "pid": "980c9e90-4249-4a48-a777-5f37dd4d52b1",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Delores L. McQuinn",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "980c9e90-4249-4a48-a777-5f37dd4d52b1",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Delores L. McQuinn",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1754
+    },
+    {
+      "host": "www.jeionward.com",
+      "url": "https://www.jeionward.com",
+      "rows": [
+        {
+          "pid": "c1e6a404-33c1-4a0d-9ff8-6e01890024c8",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Jeion A. Ward",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "c1e6a404-33c1-4a0d-9ff8-6e01890024c8",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Jeion A. Ward",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 0,
+      "note": null,
+      "wayback": {
+        "snapshots": 200,
+        "usable": 120,
+        "latest": "20160926211725"
+      }
+    },
+    {
+      "host": "philforvirginia.com",
+      "url": "https://philforvirginia.com/",
+      "rows": [
+        {
+          "pid": "e9cd8a4e-9e2b-4962-be21-7a2f68a650ba",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Phil M. Hernandez",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "e9cd8a4e-9e2b-4962-be21-7a2f68a650ba",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Phil M. Hernandez",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "e9cd8a4e-9e2b-4962-be21-7a2f68a650ba",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Phil M. Hernandez",
+          "topic": "Childcare"
+        },
+        {
+          "pid": "e9cd8a4e-9e2b-4962-be21-7a2f68a650ba",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Phil M. Hernandez",
+          "topic": "Climate Change"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4434
+    },
+    {
+      "host": "www.delegatefowler.com",
+      "url": "https://www.delegatefowler.com/",
+      "rows": [
+        {
+          "pid": "e65fba41-a46c-407c-86b3-810f1c8ecf38",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Kelly K. Convirs-Fowler",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2334
+    },
+    {
+      "host": "michaelfeggans.com",
+      "url": "https://michaelfeggans.com/",
+      "rows": [
+        {
+          "pid": "c0117cd0-b340-4652-996c-5f7e5ba3d3c0",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Michael Feggans",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "c0117cd0-b340-4652-996c-5f7e5ba3d3c0",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Michael Feggans",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2965
+    },
+    {
+      "host": "jjsingh.com",
+      "url": "https://jjsingh.com",
+      "rows": [
+        {
+          "pid": "c85b90a2-e81b-41a8-a74a-90d03018a443",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "JJ Singh",
+          "topic": "Housing"
+        },
+        {
+          "pid": "c85b90a2-e81b-41a8-a74a-90d03018a443",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "JJ Singh",
+          "topic": "Climate Change"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1667
+    },
+    {
+      "host": "johnmcauliff.com",
+      "url": "https://johnmcauliff.com",
+      "rows": [
+        {
+          "pid": "9ec8ec01-2b15-42ae-8a52-cc77930be151",
+          "tid": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+          "name": "John C McAuliff",
+          "topic": "Data Centers"
+        },
+        {
+          "pid": "9ec8ec01-2b15-42ae-8a52-cc77930be151",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "John C McAuliff",
+          "topic": "Housing"
+        },
+        {
+          "pid": "9ec8ec01-2b15-42ae-8a52-cc77930be151",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "John C McAuliff",
+          "topic": "Climate Change"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3216
+    },
+    {
+      "host": "www.markhenderson.org",
+      "url": "https://www.markhenderson.org/",
+      "rows": [
+        {
+          "pid": "f584e436-2e32-43c2-b553-3121e0d89fc2",
+          "tid": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+          "name": "Mark Henderson",
+          "topic": "Homelessness Response"
+        },
+        {
+          "pid": "f584e436-2e32-43c2-b553-3121e0d89fc2",
+          "tid": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+          "name": "Mark Henderson",
+          "topic": "Economic Development Incentives"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5020
+    },
+    {
+      "host": "www.cambridgeresidentsalliance.org",
+      "url": "https://www.cambridgeresidentsalliance.org/",
+      "rows": [
+        {
+          "pid": "ca2ff1d9-8ebe-4cf2-a804-27d73c58340b",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Luisa de Paula Santos",
+          "topic": "School Vouchers"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 144018
+    },
+    {
+      "host": "ourrevolutioncambridge.org",
+      "url": "https://ourrevolutioncambridge.org/",
+      "rows": [
+        {
+          "pid": "c2a5bfd4-a756-4da5-8902-11ee3846cb3a",
+          "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+          "name": "Caitlin Dube",
+          "topic": "Civil Rights"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3593
+    },
+    {
+      "host": "www.ourrevolutioncambridge.org",
+      "url": "https://www.ourrevolutioncambridge.org",
+      "rows": [
+        {
+          "pid": "7dafe688-b8ef-4b49-b6ab-fce66e443fa0",
+          "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+          "name": "David Weinstein",
+          "topic": "Civil Rights"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3593
+    },
+    {
+      "host": "rodneytanakaforcitycouncil.com",
+      "url": "https://rodneytanakaforcitycouncil.com/",
+      "rows": [
+        {
+          "pid": "21d23e8d-fedc-4485-beca-b7ef5e5a23b7",
+          "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+          "name": "Rodney Tanaka",
+          "topic": "Public Safety Approach"
+        },
+        {
+          "pid": "21d23e8d-fedc-4485-beca-b7ef5e5a23b7",
+          "tid": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+          "name": "Rodney Tanaka",
+          "topic": "Residential Zoning"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3667
+    },
+    {
+      "host": "lananegrete.com",
+      "url": "https://lananegrete.com/",
+      "rows": [
+        {
+          "pid": "5604c5ae-d10d-4ca3-920d-dd3592278777",
+          "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+          "name": "Lana Negrete",
+          "topic": "Public Safety Approach"
+        },
+        {
+          "pid": "5604c5ae-d10d-4ca3-920d-dd3592278777",
+          "tid": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+          "name": "Lana Negrete",
+          "topic": "Economic Development Incentives"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2674
+    },
+    {
+      "host": "octavioforwhittier.com",
+      "url": "https://octavioforwhittier.com/",
+      "rows": [
+        {
+          "pid": "77fc9ed7-79ca-4f83-862c-fc35cf18203f",
+          "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+          "name": "Octavio Martinez",
+          "topic": "Public Safety Approach"
+        },
+        {
+          "pid": "77fc9ed7-79ca-4f83-862c-fc35cf18203f",
+          "tid": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+          "name": "Octavio Martinez",
+          "topic": "Economic Development Incentives"
+        }
+      ],
+      "cls": "FETCH_FAILED",
+      "status": 0,
+      "error": "fetch failed",
+      "retried": true,
+      "retryCls": "FETCH_FAILED",
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "aida4whittier.com",
+      "url": "https://aida4whittier.com/",
+      "rows": [
+        {
+          "pid": "06f7fe4a-b57c-4de3-824e-077498605e82",
+          "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+          "name": "Aida Macedo",
+          "topic": "Public Safety Approach"
+        },
+        {
+          "pid": "06f7fe4a-b57c-4de3-824e-077498605e82",
+          "tid": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+          "name": "Aida Macedo",
+          "topic": "Growth and Development Pace"
+        },
+        {
+          "pid": "06f7fe4a-b57c-4de3-824e-077498605e82",
+          "tid": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+          "name": "Aida Macedo",
+          "topic": "Economic Development Incentives"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3600
+    },
+    {
+      "host": "nicklangworthy.com",
+      "url": "https://nicklangworthy.com",
+      "rows": [
+        {
+          "pid": "556dded4-bd76-4e22-863f-60fa5e1d4d56",
+          "tid": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+          "name": "Nicholas Langworthy",
+          "topic": "Misinformation"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7962
+    },
+    {
+      "host": "summerforpa.com",
+      "url": "https://summerforpa.com",
+      "rows": [
+        {
+          "pid": "117883ff-7a9a-42cb-b42b-82223f1d618d",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Summer Lee",
+          "topic": "Housing"
+        },
+        {
+          "pid": "117883ff-7a9a-42cb-b42b-82223f1d618d",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Summer Lee",
+          "topic": "Medicare/aid"
+        },
+        {
+          "pid": "117883ff-7a9a-42cb-b42b-82223f1d618d",
+          "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+          "name": "Summer Lee",
+          "topic": "Social Security"
+        },
+        {
+          "pid": "117883ff-7a9a-42cb-b42b-82223f1d618d",
+          "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+          "name": "Summer Lee",
+          "topic": "Redistricting"
+        },
+        {
+          "pid": "117883ff-7a9a-42cb-b42b-82223f1d618d",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Summer Lee",
+          "topic": "School Vouchers"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 323,
+      "note": null,
+      "wayback": {
+        "snapshots": 200,
+        "usable": 139,
+        "latest": "20221107164009"
+      }
+    },
+    {
+      "host": "www.shawnforda.com",
+      "url": "https://www.shawnforda.com/",
+      "rows": [
+        {
+          "pid": "068393be-9502-44e6-a36f-2fa99cb9a3e8",
+          "tid": "6674d87e-999d-433a-aab7-3f626f59fd5f",
+          "name": "Shawn Robinson",
+          "topic": "Legal Transparency"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2630
+    },
+    {
+      "host": "www.clayfullerforgeorgia.com",
+      "url": "https://www.clayfullerforgeorgia.com",
+      "rows": [
+        {
+          "pid": "8c4ce29b-84ae-445b-9531-9fdaceb5d420",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Clay Fuller",
+          "topic": "Deportation"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 8738
+    },
+    {
+      "host": "www.evandone.com",
+      "url": "https://www.evandone.com",
+      "rows": [
+        {
+          "pid": "77dc9a42-5f37-4608-89a1-10e60f86a3a1",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Evan Done",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "77dc9a42-5f37-4608-89a1-10e60f86a3a1",
+          "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+          "name": "Evan Done",
+          "topic": "Civil Rights"
+        },
+        {
+          "pid": "77dc9a42-5f37-4608-89a1-10e60f86a3a1",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Evan Done",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "77dc9a42-5f37-4608-89a1-10e60f86a3a1",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Evan Done",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "77dc9a42-5f37-4608-89a1-10e60f86a3a1",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Evan Done",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "77dc9a42-5f37-4608-89a1-10e60f86a3a1",
+          "tid": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+          "name": "Evan Done",
+          "topic": "Homelessness Response"
+        },
+        {
+          "pid": "77dc9a42-5f37-4608-89a1-10e60f86a3a1",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Evan Done",
+          "topic": "Housing"
+        },
+        {
+          "pid": "77dc9a42-5f37-4608-89a1-10e60f86a3a1",
+          "tid": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+          "name": "Evan Done",
+          "topic": "Jail Capacity"
+        },
+        {
+          "pid": "77dc9a42-5f37-4608-89a1-10e60f86a3a1",
+          "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+          "name": "Evan Done",
+          "topic": "Same-Sex Marriage"
+        },
+        {
+          "pid": "77dc9a42-5f37-4608-89a1-10e60f86a3a1",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Evan Done",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 93,
+      "note": null,
+      "wayback": {
+        "snapshots": 11,
+        "usable": 9,
+        "latest": "20251015205910"
+      }
+    },
+    {
+      "host": "www.silviacatten.com",
+      "url": "https://www.silviacatten.com",
+      "rows": [
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Silvia Catten",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Silvia Catten",
+          "topic": "Childcare"
+        },
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Silvia Catten",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Silvia Catten",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Silvia Catten",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "4938766b-b45a-46e3-93bd-b8b30651271a",
+          "name": "Silvia Catten",
+          "topic": "Homelessness"
+        },
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+          "name": "Silvia Catten",
+          "topic": "Homelessness Response"
+        },
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Silvia Catten",
+          "topic": "Housing"
+        },
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Silvia Catten",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+          "name": "Silvia Catten",
+          "topic": "Environmental Protection vs. Development"
+        },
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+          "name": "Silvia Catten",
+          "topic": "Local Immigration Enforcement"
+        },
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+          "name": "Silvia Catten",
+          "topic": "Same-Sex Marriage"
+        },
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Silvia Catten",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Silvia Catten",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "63d60b50-2395-4cde-8999-97a9166d3563",
+          "tid": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+          "name": "Silvia Catten",
+          "topic": "Transportation Priorities"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5856
+    },
+    {
+      "host": "wileyfor21.com",
+      "url": "https://wileyfor21.com/",
+      "rows": [
+        {
+          "pid": "fee24b69-dd56-4b07-a890-a08e898dc031",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Aaron Wiley",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "fee24b69-dd56-4b07-a890-a08e898dc031",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Aaron Wiley",
+          "topic": "Housing"
+        },
+        {
+          "pid": "fee24b69-dd56-4b07-a890-a08e898dc031",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Aaron Wiley",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 11431
+    },
+    {
+      "host": "www.erinforutah.com",
+      "url": "https://www.erinforutah.com/",
+      "rows": [
+        {
+          "pid": "0695eddd-6fb4-40f7-8daa-f5d6d10d6db4",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Erin Jemison",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "0695eddd-6fb4-40f7-8daa-f5d6d10d6db4",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Erin Jemison",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "0695eddd-6fb4-40f7-8daa-f5d6d10d6db4",
+          "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+          "name": "Erin Jemison",
+          "topic": "Redistricting"
+        },
+        {
+          "pid": "0695eddd-6fb4-40f7-8daa-f5d6d10d6db4",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "Erin Jemison",
+          "topic": "Voting Rights"
+        },
+        {
+          "pid": "0695eddd-6fb4-40f7-8daa-f5d6d10d6db4",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Erin Jemison",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "0695eddd-6fb4-40f7-8daa-f5d6d10d6db4",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Erin Jemison",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "0695eddd-6fb4-40f7-8daa-f5d6d10d6db4",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Erin Jemison",
+          "topic": "Childcare"
+        },
+        {
+          "pid": "0695eddd-6fb4-40f7-8daa-f5d6d10d6db4",
+          "tid": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+          "name": "Erin Jemison",
+          "topic": "Jail Capacity"
+        },
+        {
+          "pid": "0695eddd-6fb4-40f7-8daa-f5d6d10d6db4",
+          "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+          "name": "Erin Jemison",
+          "topic": "Public Safety Approach"
+        },
+        {
+          "pid": "0695eddd-6fb4-40f7-8daa-f5d6d10d6db4",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Erin Jemison",
+          "topic": "Immigration"
+        }
+      ],
+      "cls": "GONE",
+      "status": 404,
+      "wayback": {
+        "snapshots": 1,
+        "usable": 1,
+        "latest": "20260216010533"
+      }
+    },
+    {
+      "host": "gloria4utah.com",
+      "url": "https://gloria4utah.com/",
+      "rows": [
+        {
+          "pid": "1ff4157d-be90-46d0-9ad8-121255277473",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Gloria Vindas",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "1ff4157d-be90-46d0-9ad8-121255277473",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Gloria Vindas",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 0,
+      "note": null,
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "whiteforlancasterca.net",
+      "url": "https://whiteforlancasterca.net#platform",
+      "rows": [
+        {
+          "pid": "bb0cad08-e4da-4e44-b624-b7470dbb591e",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Cedric White",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5552
+    },
+    {
+      "host": "chrisbeckforcongress.com",
+      "url": "https://chrisbeckforcongress.com",
+      "rows": [
+        {
+          "pid": "149ec01f-2344-446e-801a-74b397cfe17d",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "Chris Beck",
+          "topic": "Voting Rights"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3506
+    },
+    {
+      "host": "www.justin4congress.com",
+      "url": "https://www.justin4congress.com/",
+      "rows": [
+        {
+          "pid": "7e4ebd10-b9e3-4c07-958f-5ebef8da5409",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Justin Filip",
+          "topic": "Climate Change"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 10862
+    },
+    {
+      "host": "ltgov.nc.gov",
+      "url": "https://ltgov.nc.gov/",
+      "rows": [
+        {
+          "pid": "f46a2bfc-628f-4991-9522-e8b75889cc6f",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Rachel Hunt",
+          "topic": "Childcare"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 422,
+      "note": null,
+      "wayback": {
+        "snapshots": 200,
+        "usable": 150,
+        "latest": "20171224004915"
+      }
+    },
+    {
+      "host": "wuforwestcovina.com",
+      "url": "https://wuforwestcovina.com/",
+      "rows": [
+        {
+          "pid": "1bb5c062-9b9d-44de-820b-c3efe0d08222",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Tony Wu",
+          "topic": "Housing"
+        },
+        {
+          "pid": "1bb5c062-9b9d-44de-820b-c3efe0d08222",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Tony Wu",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3742
+    },
+    {
+      "host": "www.ltgov.alabama.gov",
+      "url": "https://www.ltgov.alabama.gov",
+      "rows": [
+        {
+          "pid": "6f1ae594-1041-42aa-8378-94fd5fde04c2",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "Will Ainsworth",
+          "topic": "Voting Rights"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4201
+    },
+    {
+      "host": "treasurer.ks.gov",
+      "url": "https://treasurer.ks.gov/",
+      "rows": [
+        {
+          "pid": "6dada0fd-8e21-4899-819d-26ba69a75b37",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Steven Johnson",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "6dada0fd-8e21-4899-819d-26ba69a75b37",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Steven Johnson",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1126
+    },
+    {
+      "host": "www.scottschwab.com",
+      "url": "https://www.scottschwab.com",
+      "rows": [
+        {
+          "pid": "e752a957-c776-4942-9aae-63ebf23174ac",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Scott Schwab",
+          "topic": "Campaign Finance"
+        },
+        {
+          "pid": "e752a957-c776-4942-9aae-63ebf23174ac",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Scott Schwab",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "e752a957-c776-4942-9aae-63ebf23174ac",
+          "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+          "name": "Scott Schwab",
+          "topic": "Trans Athletes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4321
+    },
+    {
+      "host": "scottschwab.com",
+      "url": "https://scottschwab.com#priorities",
+      "rows": [
+        {
+          "pid": "e752a957-c776-4942-9aae-63ebf23174ac",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Scott Schwab",
+          "topic": "Immigration"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4321
+    },
+    {
+      "host": "www.sabinamatos.com",
+      "url": "https://www.sabinamatos.com",
+      "rows": [
+        {
+          "pid": "8dfb13d5-f590-4afb-a00d-58c477f39b94",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Sabina Matos",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3216
+    },
+    {
+      "host": "www.konstantineanthony.com",
+      "url": "https://www.konstantineanthony.com/",
+      "rows": [
+        {
+          "pid": "6c4c7919-3e7f-41fa-8b1b-1c8b421fe4a7",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Konstantine Anthony",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 698
+    },
+    {
+      "host": "rustymac.com",
+      "url": "https://rustymac.com/",
+      "rows": [
+        {
+          "pid": "cd65d355-e307-4ac7-a8b1-5b1638752c89",
+          "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+          "name": "Rusty MacLachlan",
+          "topic": "Public Safety Approach"
+        },
+        {
+          "pid": "cd65d355-e307-4ac7-a8b1-5b1638752c89",
+          "tid": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+          "name": "Rusty MacLachlan",
+          "topic": "Economic Development Incentives"
+        },
+        {
+          "pid": "cd65d355-e307-4ac7-a8b1-5b1638752c89",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Rusty MacLachlan",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4366
+    },
+    {
+      "host": "www.edgallrein.com",
+      "url": "https://www.edgallrein.com",
+      "rows": [
+        {
+          "pid": "1055386a-3937-462b-ae33-78aca41f24c8",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Ed Gallrein",
+          "topic": "Abortion"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3057
+    },
+    {
+      "host": "www.edstractortruths.com",
+      "url": "https://www.edstractortruths.com",
+      "rows": [
+        {
+          "pid": "1055386a-3937-462b-ae33-78aca41f24c8",
+          "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+          "name": "Ed Gallrein",
+          "topic": "Civil Rights"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3532
+    },
+    {
+      "host": "www.davidwilliamsforva.com",
+      "url": "https://www.davidwilliamsforva.com/",
+      "rows": [
+        {
+          "pid": "7c6be1d8-f01a-49b3-bf42-b161fdcebbfe",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "David Williams",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "7c6be1d8-f01a-49b3-bf42-b161fdcebbfe",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "David Williams",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3532
+    },
+    {
+      "host": "jamieforlouisiana.com",
+      "url": "https://jamieforlouisiana.com/",
+      "rows": [
+        {
+          "pid": "970665b9-a3c1-41b0-9c14-bc954a9a667b",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Jamie Davis",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5021
+    },
+    {
+      "host": "www.electbrianknudsen.com",
+      "url": "https://www.electbrianknudsen.com#brians-priorities",
+      "rows": [
+        {
+          "pid": "169596c9-1ece-4a8a-b601-ce87af369a33",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Brian Knudsen",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3647
+    },
+    {
+      "host": "richardcherchio4nlv.com",
+      "url": "https://richardcherchio4nlv.com/",
+      "rows": [
+        {
+          "pid": "806dbfb2-3e81-4d76-bd04-085bc523b76a",
+          "tid": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+          "name": "Richard Cherchio",
+          "topic": "Economic Development Incentives"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 6718
+    },
+    {
+      "host": "jamiejoyce.com",
+      "url": "https://jamiejoyce.com",
+      "rows": [
+        {
+          "pid": "580f3720-7990-4a2b-a417-78d90012db93",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Jamie Joyce",
+          "topic": "Campaign Finance"
+        },
+        {
+          "pid": "580f3720-7990-4a2b-a417-78d90012db93",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Jamie Joyce",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "580f3720-7990-4a2b-a417-78d90012db93",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Jamie Joyce",
+          "topic": "Immigration"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 10245
+    },
+    {
+      "host": "kirkland2026.com",
+      "url": "https://kirkland2026.com/",
+      "rows": [
+        {
+          "pid": "d2ff9bbf-4434-4b81-a869-e3241e954e3c",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Kyle Kirkland",
+          "topic": "Immigration"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 12186
+    },
+    {
+      "host": "angelica4congress.com",
+      "url": "https://angelica4congress.com",
+      "rows": [
+        {
+          "pid": "07e97df5-c8d6-4e9c-9ea5-564b37c72b37",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Angélica María Dueñas",
+          "topic": "Abortion"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 6865
+    },
+    {
+      "host": "www.burley4congress.com",
+      "url": "https://www.burley4congress.com/",
+      "rows": [
+        {
+          "pid": "00f01100-f964-4489-86da-6379a8ca1c5e",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Brian Burley",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "00f01100-f964-4489-86da-6379a8ca1c5e",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Brian Burley",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "00f01100-f964-4489-86da-6379a8ca1c5e",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Brian Burley",
+          "topic": "Deportation"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1733
+    },
+    {
+      "host": "casasforcongress.com",
+      "url": "https://casasforcongress.com",
+      "rows": [
+        {
+          "pid": "93d3b4e6-bc0e-43e0-bd74-67ee749a0484",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Pedro Antonio Casas",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4393
+    },
+    {
+      "host": "www.supervisorjimdesmond.com",
+      "url": "https://www.supervisorjimdesmond.com",
+      "rows": [
+        {
+          "pid": "16b7ad30-e660-46f6-b751-309fd2549659",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "Jim Desmond",
+          "topic": "Voting Rights"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 544,
+      "note": null,
+      "wayback": {
+        "snapshots": 200,
+        "usable": 44,
+        "latest": "20210309020123"
+      }
+    },
+    {
+      "host": "kaileebuller.com",
+      "url": "https://kaileebuller.com/",
+      "rows": [
+        {
+          "pid": "33a08246-513a-48d1-8d6b-c19df21d4ec8",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Kailee Buller",
+          "topic": "Childcare"
+        },
+        {
+          "pid": "33a08246-513a-48d1-8d6b-c19df21d4ec8",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Kailee Buller",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "33a08246-513a-48d1-8d6b-c19df21d4ec8",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Kailee Buller",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "33a08246-513a-48d1-8d6b-c19df21d4ec8",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Kailee Buller",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 14911
+    },
+    {
+      "host": "driscoll4congress.com",
+      "url": "https://driscoll4congress.com/",
+      "rows": [
+        {
+          "pid": "1e0f83cf-e664-4302-aa12-8e4847ac01b3",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Jeanine Driscoll",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "1e0f83cf-e664-4302-aa12-8e4847ac01b3",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Jeanine Driscoll",
+          "topic": "Immigration"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1414
+    },
+    {
+      "host": "www.halpinforcongress.com",
+      "url": "https://www.halpinforcongress.com/",
+      "rows": [
+        {
+          "pid": "fa275317-80ed-46c0-8014-2004d9c5b782",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Patrick Halpin",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1897
+    },
+    {
+      "host": "www.mikelipetriforcongress.com",
+      "url": "https://www.mikelipetriforcongress.com/",
+      "rows": [
+        {
+          "pid": "8899df58-6846-48c7-b9ca-5366b21bc103",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Mike LiPetri",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "8899df58-6846-48c7-b9ca-5366b21bc103",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Mike LiPetri",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "8899df58-6846-48c7-b9ca-5366b21bc103",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Mike LiPetri",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "8899df58-6846-48c7-b9ca-5366b21bc103",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Mike LiPetri",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "8899df58-6846-48c7-b9ca-5366b21bc103",
+          "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+          "name": "Mike LiPetri",
+          "topic": "Trans Athletes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 8103
+    },
+    {
+      "host": "www.tonydarrigo.com",
+      "url": "https://www.tonydarrigo.com",
+      "rows": [
+        {
+          "pid": "38b8d020-e96a-44d2-bb00-ea4e32981db7",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Tony D'Arrigo",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "38b8d020-e96a-44d2-bb00-ea4e32981db7",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Tony D'Arrigo",
+          "topic": "Campaign Finance"
+        },
+        {
+          "pid": "38b8d020-e96a-44d2-bb00-ea4e32981db7",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Tony D'Arrigo",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "38b8d020-e96a-44d2-bb00-ea4e32981db7",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Tony D'Arrigo",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "38b8d020-e96a-44d2-bb00-ea4e32981db7",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Tony D'Arrigo",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 12116
+    },
+    {
+      "host": "www.devasimmons.com",
+      "url": "https://www.devasimmons.com",
+      "rows": [
+        {
+          "pid": "80e30a8b-f5a7-47c9-a044-454e1416f290",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Deva Simmons",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4912
+    },
+    {
+      "host": "libertyangel.us",
+      "url": "http://libertyangel.us/",
+      "rows": [
+        {
+          "pid": "c4b7fad5-a25f-4323-afbc-0a986547ae96",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Angel Oakley",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4771
+    },
+    {
+      "host": "castillolupe.com",
+      "url": "http://castillolupe.com/",
+      "rows": [
+        {
+          "pid": "dfeb3cd3-adaa-4cb8-b4bc-5c02788eb890",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "Lupe Castillo",
+          "topic": "Voting Rights"
+        },
+        {
+          "pid": "dfeb3cd3-adaa-4cb8-b4bc-5c02788eb890",
+          "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+          "name": "Lupe Castillo",
+          "topic": "Trans Athletes"
+        },
+        {
+          "pid": "dfeb3cd3-adaa-4cb8-b4bc-5c02788eb890",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Lupe Castillo",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "dfeb3cd3-adaa-4cb8-b4bc-5c02788eb890",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Lupe Castillo",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "dfeb3cd3-adaa-4cb8-b4bc-5c02788eb890",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Lupe Castillo",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2892
+    },
+    {
+      "host": "tedbrown.org",
+      "url": "https://tedbrown.org",
+      "rows": [
+        {
+          "pid": "f800d669-e56a-4ef2-9ca5-463a10a11973",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Ted Brown",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "f800d669-e56a-4ef2-9ca5-463a10a11973",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Ted Brown",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "f800d669-e56a-4ef2-9ca5-463a10a11973",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Ted Brown",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "f800d669-e56a-4ef2-9ca5-463a10a11973",
+          "tid": "24e9212c-b011-422a-865c-093e35050901",
+          "name": "Ted Brown",
+          "topic": "Ukraine Support"
+        },
+        {
+          "pid": "f800d669-e56a-4ef2-9ca5-463a10a11973",
+          "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+          "name": "Ted Brown",
+          "topic": "Tariffs"
+        },
+        {
+          "pid": "f800d669-e56a-4ef2-9ca5-463a10a11973",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Ted Brown",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "f800d669-e56a-4ef2-9ca5-463a10a11973",
+          "tid": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+          "name": "Ted Brown",
+          "topic": "Misinformation"
+        },
+        {
+          "pid": "f800d669-e56a-4ef2-9ca5-463a10a11973",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Ted Brown",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 38,
+      "note": null,
+      "wayback": {
+        "snapshots": 200,
+        "usable": 169,
+        "latest": "20240226093220"
+      }
+    },
+    {
+      "host": "www.vancilforcongress.com",
+      "url": "https://www.vancilforcongress.com/",
+      "rows": [
+        {
+          "pid": "22e1b295-c771-4d8a-8c85-bbefe7355444",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Dillan Vancil",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1983
+    },
+    {
+      "host": "mattalthausforcongress.com",
+      "url": "https://mattalthausforcongress.com",
+      "rows": [
+        {
+          "pid": "658035ad-d4ed-4ca2-b6b7-de0aea966f34",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Matthew Althaus",
+          "topic": "Fossil Fuels"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1436
+    },
+    {
+      "host": "www.derekmerrin.com",
+      "url": "https://www.derekmerrin.com",
+      "rows": [
+        {
+          "pid": "4932ca8c-39b5-45a9-8376-cbdbb275d86a",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Derek Merrin",
+          "topic": "School Vouchers"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5745
+    },
+    {
+      "host": "erickakopp.com",
+      "url": "https://erickakopp.com#about-section",
+      "rows": [
+        {
+          "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Ericka Kopp",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Ericka Kopp",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Ericka Kopp",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Ericka Kopp",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 14097
+    },
+    {
+      "host": "www.erickakopp.com",
+      "url": "https://www.erickakopp.com",
+      "rows": [
+        {
+          "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Ericka Kopp",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Ericka Kopp",
+          "topic": "Campaign Finance"
+        },
+        {
+          "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Ericka Kopp",
+          "topic": "Childcare"
+        },
+        {
+          "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+          "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+          "name": "Ericka Kopp",
+          "topic": "Civil Rights"
+        },
+        {
+          "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Ericka Kopp",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Ericka Kopp",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Ericka Kopp",
+          "topic": "Medicare/aid"
+        },
+        {
+          "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+          "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+          "name": "Ericka Kopp",
+          "topic": "Same-Sex Marriage"
+        },
+        {
+          "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Ericka Kopp",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+          "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+          "name": "Ericka Kopp",
+          "topic": "Social Security"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 14097
+    },
+    {
+      "host": "www.tedfordforcongress.com",
+      "url": "https://www.tedfordforcongress.com/",
+      "rows": [
+        {
+          "pid": "8078ab81-0f7b-4ea1-80d4-127a6e4c6013",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Mark Tedford",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "8078ab81-0f7b-4ea1-80d4-127a6e4c6013",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Mark Tedford",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "8078ab81-0f7b-4ea1-80d4-127a6e4c6013",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Mark Tedford",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "8078ab81-0f7b-4ea1-80d4-127a6e4c6013",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Mark Tedford",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "8078ab81-0f7b-4ea1-80d4-127a6e4c6013",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Mark Tedford",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "8078ab81-0f7b-4ea1-80d4-127a6e4c6013",
+          "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+          "name": "Mark Tedford",
+          "topic": "Religious Freedom"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7763
+    },
+    {
+      "host": "www.lorenabrunerforcongress.com",
+      "url": "https://www.lorenabrunerforcongress.com/",
+      "rows": [
+        {
+          "pid": "8caa3798-33c8-4229-aeaf-d20fed73fb78",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Lorena Bruner",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "8caa3798-33c8-4229-aeaf-d20fed73fb78",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Lorena Bruner",
+          "topic": "Medicare/aid"
+        },
+        {
+          "pid": "8caa3798-33c8-4229-aeaf-d20fed73fb78",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Lorena Bruner",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "8caa3798-33c8-4229-aeaf-d20fed73fb78",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "Lorena Bruner",
+          "topic": "Voting Rights"
+        },
+        {
+          "pid": "8caa3798-33c8-4229-aeaf-d20fed73fb78",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Lorena Bruner",
+          "topic": "Campaign Finance"
+        },
+        {
+          "pid": "8caa3798-33c8-4229-aeaf-d20fed73fb78",
+          "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+          "name": "Lorena Bruner",
+          "topic": "Redistricting"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4793
+    },
+    {
+      "host": "shannontaylorva.com",
+      "url": "https://shannontaylorva.com/",
+      "rows": [
+        {
+          "pid": "4b3850c4-debb-4b92-a796-3cf15cf31e80",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Shannon Taylor",
+          "topic": "Medicare/aid"
+        },
+        {
+          "pid": "4b3850c4-debb-4b92-a796-3cf15cf31e80",
+          "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+          "name": "Shannon Taylor",
+          "topic": "Social Security"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3970
+    },
+    {
+      "host": "www.kipperlynsinclair.com",
+      "url": "https://www.kipperlynsinclair.com/",
+      "rows": [
+        {
+          "pid": "92ad1ef9-117d-4042-a19e-438c0ec7dea6",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Kipperlyn Sinclair",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4083
+    },
+    {
+      "host": "www.alexpforcongress.com",
+      "url": "https://www.alexpforcongress.com",
+      "rows": [
+        {
+          "pid": "8ed556af-965d-45ab-9f07-396bc2de1bb2",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Alexandra Prieditis",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "8ed556af-965d-45ab-9f07-396bc2de1bb2",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Alexandra Prieditis",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "8ed556af-965d-45ab-9f07-396bc2de1bb2",
+          "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+          "name": "Alexandra Prieditis",
+          "topic": "Civil Rights"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 8542
+    },
+    {
+      "host": "hassanformi.com",
+      "url": "https://hassanformi.com",
+      "rows": [
+        {
+          "pid": "665434de-4809-4a7c-b1e2-81c29d11540a",
+          "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+          "name": "Amir Hassan",
+          "topic": "Social Security"
+        },
+        {
+          "pid": "665434de-4809-4a7c-b1e2-81c29d11540a",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Amir Hassan",
+          "topic": "Medicare/aid"
+        },
+        {
+          "pid": "665434de-4809-4a7c-b1e2-81c29d11540a",
+          "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+          "name": "Amir Hassan",
+          "topic": "Trans Athletes"
+        },
+        {
+          "pid": "665434de-4809-4a7c-b1e2-81c29d11540a",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Amir Hassan",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "665434de-4809-4a7c-b1e2-81c29d11540a",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Amir Hassan",
+          "topic": "Climate Change"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 17168
+    },
+    {
+      "host": "www.christinahinesforcongress.com",
+      "url": "https://www.christinahinesforcongress.com",
+      "rows": [
+        {
+          "pid": "ea85c891-d6c0-4d45-a92c-f565794b1729",
+          "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+          "name": "Christina Bertrand Hines",
+          "topic": "Tariffs"
+        },
+        {
+          "pid": "ea85c891-d6c0-4d45-a92c-f565794b1729",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Christina Bertrand Hines",
+          "topic": "Medicare/aid"
+        },
+        {
+          "pid": "ea85c891-d6c0-4d45-a92c-f565794b1729",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Christina Bertrand Hines",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "ea85c891-d6c0-4d45-a92c-f565794b1729",
+          "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+          "name": "Christina Bertrand Hines",
+          "topic": "Social Security"
+        },
+        {
+          "pid": "ea85c891-d6c0-4d45-a92c-f565794b1729",
+          "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+          "name": "Christina Bertrand Hines",
+          "topic": "AI Oversight"
+        },
+        {
+          "pid": "ea85c891-d6c0-4d45-a92c-f565794b1729",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Christina Bertrand Hines",
+          "topic": "Campaign Finance"
+        },
+        {
+          "pid": "ea85c891-d6c0-4d45-a92c-f565794b1729",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Christina Bertrand Hines",
+          "topic": "Childcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 10377
+    },
+    {
+      "host": "www.bronkeforcongress.org",
+      "url": "https://www.bronkeforcongress.org/",
+      "rows": [
+        {
+          "pid": "29808444-0324-4c47-b2a8-43cf7091b755",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "James Bronke",
+          "topic": "Deportation"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 9925
+    },
+    {
+      "host": "www.clydewelford.com",
+      "url": "https://www.clydewelford.com",
+      "rows": [
+        {
+          "pid": "4782f3f1-c940-47ad-a3ab-a753b8cd719a",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Clyde Welford",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5357
+    },
+    {
+      "host": "electjamie.net",
+      "url": "https://electjamie.net",
+      "rows": [
+        {
+          "pid": "f2efbccb-baf3-4b50-9e84-5b79f1d49412",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Jamie Hill",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4010
+    },
+    {
+      "host": "www.ryancushmanforcongress.com",
+      "url": "https://www.ryancushmanforcongress.com",
+      "rows": [
+        {
+          "pid": "2c684458-b752-4dbc-82bf-39c9475d23c0",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Ryan Cushman",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4674
+    },
+    {
+      "host": "shanellejackson.com",
+      "url": "https://shanellejackson.com/",
+      "rows": [
+        {
+          "pid": "d9d6a435-d09b-480f-9adb-226b1dd30160",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Shanelle Jackson",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "d9d6a435-d09b-480f-9adb-226b1dd30160",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Shanelle Jackson",
+          "topic": "Deportation"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 8426
+    },
+    {
+      "host": "www.bakerforcongress2026.com",
+      "url": "https://www.bakerforcongress2026.com",
+      "rows": [
+        {
+          "pid": "053c472e-8d92-43f2-a054-305547e18eb7",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Stu Baker",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "053c472e-8d92-43f2-a054-305547e18eb7",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Stu Baker",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "053c472e-8d92-43f2-a054-305547e18eb7",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Stu Baker",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "053c472e-8d92-43f2-a054-305547e18eb7",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Stu Baker",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "053c472e-8d92-43f2-a054-305547e18eb7",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Stu Baker",
+          "topic": "Housing"
+        },
+        {
+          "pid": "053c472e-8d92-43f2-a054-305547e18eb7",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Stu Baker",
+          "topic": "Childcare"
+        },
+        {
+          "pid": "053c472e-8d92-43f2-a054-305547e18eb7",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Stu Baker",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "053c472e-8d92-43f2-a054-305547e18eb7",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Stu Baker",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "053c472e-8d92-43f2-a054-305547e18eb7",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Stu Baker",
+          "topic": "Medicare/aid"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 8951
+    },
+    {
+      "host": "timgreimel.com",
+      "url": "https://timgreimel.com",
+      "rows": [
+        {
+          "pid": "82ebf50d-786b-445d-9c39-f898e154c6a8",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Tim Greimel",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "82ebf50d-786b-445d-9c39-f898e154c6a8",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Tim Greimel",
+          "topic": "Medicare/aid"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4061
+    },
+    {
+      "host": "mitchelljacob.com",
+      "url": "https://mitchelljacob.com/",
+      "rows": [
+        {
+          "pid": "9691abd4-42fe-44f9-9d26-e587a9063b46",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Mitchell Jacob",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "9691abd4-42fe-44f9-9d26-e587a9063b46",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Mitchell Jacob",
+          "topic": "Campaign Finance"
+        },
+        {
+          "pid": "9691abd4-42fe-44f9-9d26-e587a9063b46",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Mitchell Jacob",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "9691abd4-42fe-44f9-9d26-e587a9063b46",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Mitchell Jacob",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "9691abd4-42fe-44f9-9d26-e587a9063b46",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Mitchell Jacob",
+          "topic": "Immigration"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 18242
+    },
+    {
+      "host": "www.christydavisforkansas.com",
+      "url": "https://www.christydavisforkansas.com/",
+      "rows": [
+        {
+          "pid": "c48039f0-e9de-4a3e-a4a6-4e1614308864",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Christy Davis",
+          "topic": "Medicare/aid"
+        },
+        {
+          "pid": "c48039f0-e9de-4a3e-a4a6-4e1614308864",
+          "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+          "name": "Christy Davis",
+          "topic": "Social Security"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1546
+    },
+    {
+      "host": "davedawsonforiowa.com",
+      "url": "https://davedawsonforiowa.com/",
+      "rows": [
+        {
+          "pid": "26fd4e32-1fea-4c04-9607-0e33255f133c",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Dave Dawson",
+          "topic": "Medicare/aid"
+        },
+        {
+          "pid": "26fd4e32-1fea-4c04-9607-0e33255f133c",
+          "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+          "name": "Dave Dawson",
+          "topic": "Social Security"
+        },
+        {
+          "pid": "26fd4e32-1fea-4c04-9607-0e33255f133c",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Dave Dawson",
+          "topic": "Campaign Finance"
+        },
+        {
+          "pid": "26fd4e32-1fea-4c04-9607-0e33255f133c",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "Dave Dawson",
+          "topic": "Voting Rights"
+        },
+        {
+          "pid": "26fd4e32-1fea-4c04-9607-0e33255f133c",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Dave Dawson",
+          "topic": "Childcare"
+        },
+        {
+          "pid": "26fd4e32-1fea-4c04-9607-0e33255f133c",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Dave Dawson",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 13784
+    },
+    {
+      "host": "terrigreenforarkansas.com",
+      "url": "https://terrigreenforarkansas.com",
+      "rows": [
+        {
+          "pid": "254a8898-8061-472c-ba47-aeabef445693",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Terri Yarbrough Green",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3676
+    },
+    {
+      "host": "cliffjohnsonforcongress.com",
+      "url": "https://cliffjohnsonforcongress.com",
+      "rows": [
+        {
+          "pid": "244d3210-4ebc-4c42-a267-4587e4f795de",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Cliff Johnson",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5431
+    },
+    {
+      "host": "monicaalponteaz.com",
+      "url": "https://monicaalponteaz.com/",
+      "rows": [
+        {
+          "pid": "674b7255-81fa-4586-9566-05dec201c809",
+          "tid": "24e9212c-b011-422a-865c-093e35050901",
+          "name": "Monica Alponte",
+          "topic": "Ukraine Support"
+        },
+        {
+          "pid": "674b7255-81fa-4586-9566-05dec201c809",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Monica Alponte",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "674b7255-81fa-4586-9566-05dec201c809",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Monica Alponte",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 10270
+    },
+    {
+      "host": "tishabenoit.com",
+      "url": "https://tishabenoit.com/",
+      "rows": [
+        {
+          "pid": "128f3c3f-cce3-4541-9d92-0b15d2958e74",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Tisha Benoit",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "128f3c3f-cce3-4541-9d92-0b15d2958e74",
+          "tid": "4938766b-b45a-46e3-93bd-b8b30651271a",
+          "name": "Tisha Benoit",
+          "topic": "Homelessness"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7782
+    },
+    {
+      "host": "www.mckinneyforwashington.com",
+      "url": "https://www.mckinneyforwashington.com/",
+      "rows": [
+        {
+          "pid": "d274078a-415b-4ce9-a8b8-efab01cf455e",
+          "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+          "name": "Amanda McKinney",
+          "topic": "Trans Athletes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 8506
+    },
+    {
+      "host": "fellerforcongress.com",
+      "url": "https://fellerforcongress.com/",
+      "rows": [
+        {
+          "pid": "5d1a1cad-512b-4e93-9191-67e8ff621f99",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Edwin H. Feller",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "5d1a1cad-512b-4e93-9191-67e8ff621f99",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Edwin H. Feller",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "5d1a1cad-512b-4e93-9191-67e8ff621f99",
+          "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+          "name": "Edwin H. Feller",
+          "topic": "Trans Athletes"
+        },
+        {
+          "pid": "5d1a1cad-512b-4e93-9191-67e8ff621f99",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Edwin H. Feller",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 0,
+      "note": null,
+      "wayback": {
+        "snapshots": 6,
+        "usable": 5,
+        "latest": "20260703225258"
+      }
+    },
+    {
+      "host": "johnduresky4congress.com",
+      "url": "https://johnduresky4congress.com/",
+      "rows": [
+        {
+          "pid": "cc812498-af24-4ec2-8028-4e245d088fd8",
+          "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+          "name": "John Duresky",
+          "topic": "Tariffs"
+        },
+        {
+          "pid": "cc812498-af24-4ec2-8028-4e245d088fd8",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "John Duresky",
+          "topic": "Campaign Finance"
+        },
+        {
+          "pid": "cc812498-af24-4ec2-8028-4e245d088fd8",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "John Duresky",
+          "topic": "Medicare/aid"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2564
+    },
+    {
+      "host": "kenvazforwa.com",
+      "url": "https://kenvazforwa.com/",
+      "rows": [
+        {
+          "pid": "6e357a07-71c7-4654-826a-1e638925777e",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Ken Vaz",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "6e357a07-71c7-4654-826a-1e638925777e",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Ken Vaz",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "6e357a07-71c7-4654-826a-1e638925777e",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Ken Vaz",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "6e357a07-71c7-4654-826a-1e638925777e",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Ken Vaz",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 29126
+    },
+    {
+      "host": "www.scheelforwa.net",
+      "url": "https://www.scheelforwa.net/",
+      "rows": [
+        {
+          "pid": "2e92ad4c-1252-4b99-9498-7ca640966f8d",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Alex Scheel",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "2e92ad4c-1252-4b99-9498-7ca640966f8d",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Alex Scheel",
+          "topic": "Campaign Finance"
+        },
+        {
+          "pid": "2e92ad4c-1252-4b99-9498-7ca640966f8d",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Alex Scheel",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "2e92ad4c-1252-4b99-9498-7ca640966f8d",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Alex Scheel",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "2e92ad4c-1252-4b99-9498-7ca640966f8d",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Alex Scheel",
+          "topic": "Climate Change"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4481
+    },
+    {
+      "host": "www.jonkamerath.org",
+      "url": "https://www.jonkamerath.org/",
+      "rows": [
+        {
+          "pid": "86a5ff83-f6b8-434d-99be-c200d9bfc9b5",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Jon Kamerath",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "86a5ff83-f6b8-434d-99be-c200d9bfc9b5",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Jon Kamerath",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "86a5ff83-f6b8-434d-99be-c200d9bfc9b5",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Jon Kamerath",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "86a5ff83-f6b8-434d-99be-c200d9bfc9b5",
+          "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+          "name": "Jon Kamerath",
+          "topic": "Same-Sex Marriage"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1683
+    },
+    {
+      "host": "www.bartlesonforcongress.com",
+      "url": "https://www.bartlesonforcongress.com/",
+      "rows": [
+        {
+          "pid": "d359230b-d406-4be2-b2ae-01829bb11cdb",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Andrew Bartleson",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5051
+    },
+    {
+      "host": "vote4annmarie.com",
+      "url": "https://vote4annmarie.com",
+      "rows": [
+        {
+          "pid": "f9f55575-6e41-49d4-87d6-0f27183be229",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Ann Marie Danimus",
+          "topic": "Campaign Finance"
+        },
+        {
+          "pid": "f9f55575-6e41-49d4-87d6-0f27183be229",
+          "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+          "name": "Ann Marie Danimus",
+          "topic": "Social Security"
+        },
+        {
+          "pid": "f9f55575-6e41-49d4-87d6-0f27183be229",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Ann Marie Danimus",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "f9f55575-6e41-49d4-87d6-0f27183be229",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Ann Marie Danimus",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "f9f55575-6e41-49d4-87d6-0f27183be229",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Ann Marie Danimus",
+          "topic": "Childcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3728
+    },
+    {
+      "host": "letselectbob.com",
+      "url": "https://letselectbob.com",
+      "rows": [
+        {
+          "pid": "5039cc86-0413-4b1b-831d-25d13ec636d2",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Bob Hagglund",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "5039cc86-0413-4b1b-831d-25d13ec636d2",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Bob Hagglund",
+          "topic": "Immigration"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3106
+    },
+    {
+      "host": "devin4wa.com",
+      "url": "https://devin4wa.com/",
+      "rows": [
+        {
+          "pid": "5605e940-7bc0-40a3-bf57-3ddb8a195175",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Devin Poore",
+          "topic": "Campaign Finance"
+        },
+        {
+          "pid": "5605e940-7bc0-40a3-bf57-3ddb8a195175",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Devin Poore",
+          "topic": "Medicare/aid"
+        },
+        {
+          "pid": "5605e940-7bc0-40a3-bf57-3ddb8a195175",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Devin Poore",
+          "topic": "Climate Change"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 0,
+      "note": null,
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "www.kshamasawant.org",
+      "url": "https://www.kshamasawant.org/",
+      "rows": [
+        {
+          "pid": "d6cb7df2-1297-4c4e-8a9d-ac97f13fe32f",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Kshama Sawant",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "d6cb7df2-1297-4c4e-8a9d-ac97f13fe32f",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Kshama Sawant",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "d6cb7df2-1297-4c4e-8a9d-ac97f13fe32f",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Kshama Sawant",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7512
+    },
+    {
+      "host": "kelloggforcongress.com",
+      "url": "https://kelloggforcongress.com/",
+      "rows": [
+        {
+          "pid": "86ee7065-4941-49c8-9fb4-e4c0ff1f9f98",
+          "tid": "24e9212c-b011-422a-865c-093e35050901",
+          "name": "Lawrence Kellogg",
+          "topic": "Ukraine Support"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 10212
+    },
+    {
+      "host": "www.macyjonesforcongress.com",
+      "url": "https://www.macyjonesforcongress.com/",
+      "rows": [
+        {
+          "pid": "4051eba2-cbdc-4764-9089-76fcd20a2083",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Macy Jones",
+          "topic": "Deportation"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2333
+    },
+    {
+      "host": "www.brian4wa6.com",
+      "url": "https://www.brian4wa6.com/",
+      "rows": [
+        {
+          "pid": "72337e52-8606-452d-988c-f7f39879715f",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Brian P. O'Gorman",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2649
+    },
+    {
+      "host": "foxforwa.com",
+      "url": "https://foxforwa.com/",
+      "rows": [
+        {
+          "pid": "20d45ab3-bc29-47eb-be55-72dc72340537",
+          "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+          "name": "Teresa Fox",
+          "topic": "Trans Athletes"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 0,
+      "note": null,
+      "wayback": {
+        "snapshots": 1,
+        "usable": 1,
+        "latest": "20260717135229"
+      }
+    },
+    {
+      "host": "www.zacrossi.com",
+      "url": "https://www.zacrossi.com/",
+      "rows": [
+        {
+          "pid": "1ea90675-8747-4179-bc48-bf24bedc76c1",
+          "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+          "name": "Zac Rossi",
+          "topic": "Social Security"
+        },
+        {
+          "pid": "1ea90675-8747-4179-bc48-bf24bedc76c1",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Zac Rossi",
+          "topic": "Medicare/aid"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 660
+    },
+    {
+      "host": "hooslynforhouse.com",
+      "url": "https://hooslynforhouse.com",
+      "rows": [
+        {
+          "pid": "96eff205-63aa-4999-890c-c83bcad391dd",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Adonis Hooslyn",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "96eff205-63aa-4999-890c-c83bcad391dd",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Adonis Hooslyn",
+          "topic": "Housing"
+        },
+        {
+          "pid": "96eff205-63aa-4999-890c-c83bcad391dd",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Adonis Hooslyn",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "96eff205-63aa-4999-890c-c83bcad391dd",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Adonis Hooslyn",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "96eff205-63aa-4999-890c-c83bcad391dd",
+          "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+          "name": "Adonis Hooslyn",
+          "topic": "AI Oversight"
+        },
+        {
+          "pid": "96eff205-63aa-4999-890c-c83bcad391dd",
+          "tid": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+          "name": "Adonis Hooslyn",
+          "topic": "Misinformation"
+        },
+        {
+          "pid": "96eff205-63aa-4999-890c-c83bcad391dd",
+          "tid": "24e9212c-b011-422a-865c-093e35050901",
+          "name": "Adonis Hooslyn",
+          "topic": "Ukraine Support"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5674
+    },
+    {
+      "host": "www.eliasmontgomery.com",
+      "url": "https://www.eliasmontgomery.com/",
+      "rows": [
+        {
+          "pid": "48f9e64c-ff9a-4a2e-8d01-e3d85b7fc00e",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Elias Henry Montgomery",
+          "topic": "Housing"
+        },
+        {
+          "pid": "48f9e64c-ff9a-4a2e-8d01-e3d85b7fc00e",
+          "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+          "name": "Elias Henry Montgomery",
+          "topic": "Redistricting"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 37304
+    },
+    {
+      "host": "libertarianutah.org",
+      "url": "https://libertarianutah.org",
+      "rows": [
+        {
+          "pid": "c3d777fa-e1c9-4802-9635-82aabfbb4efc",
+          "tid": "24e9212c-b011-422a-865c-093e35050901",
+          "name": "Jesse West",
+          "topic": "Ukraine Support"
+        },
+        {
+          "pid": "fbd12fa6-c3af-4f3b-ae2c-4aac8e68f1f0",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Taylor Wright",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "fbd12fa6-c3af-4f3b-ae2c-4aac8e68f1f0",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Taylor Wright",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 6564
+    },
+    {
+      "host": "joshuajames4tn.com",
+      "url": "https://joshuajames4tn.com/",
+      "rows": [
+        {
+          "pid": "c305edd7-d5b4-4d0e-b7f8-ab2109f8594f",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Joshua James",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "c305edd7-d5b4-4d0e-b7f8-ab2109f8594f",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Joshua James",
+          "topic": "Deportation"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 0,
+      "note": null,
+      "wayback": {
+        "snapshots": 10,
+        "usable": 1,
+        "latest": "20260601225905"
+      }
+    },
+    {
+      "host": "tarikforcongress.com",
+      "url": "https://tarikforcongress.com/",
+      "rows": [
+        {
+          "pid": "89d7be32-b5db-4a61-b41f-a0f6a981a8b4",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Tarik Samman",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "89d7be32-b5db-4a61-b41f-a0f6a981a8b4",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Tarik Samman",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "89d7be32-b5db-4a61-b41f-a0f6a981a8b4",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Tarik Samman",
+          "topic": "Campaign Finance"
+        },
+        {
+          "pid": "89d7be32-b5db-4a61-b41f-a0f6a981a8b4",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Tarik Samman",
+          "topic": "Childcare"
+        },
+        {
+          "pid": "89d7be32-b5db-4a61-b41f-a0f6a981a8b4",
+          "tid": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+          "name": "Tarik Samman",
+          "topic": "Misinformation"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7054
+    },
+    {
+      "host": "www.didiforcongress.com",
+      "url": "https://www.didiforcongress.com",
+      "rows": [
+        {
+          "pid": "35d20106-789b-4a09-91b2-a4df864a12d0",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Didi Okpareke",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "35d20106-789b-4a09-91b2-a4df864a12d0",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Didi Okpareke",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3172
+    },
+    {
+      "host": "stigallforcongress.com",
+      "url": "https://stigallforcongress.com",
+      "rows": [
+        {
+          "pid": "2e52b1f0-e65b-43a5-9f37-c5b79703e76b",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Chris Stigall",
+          "topic": "School Vouchers"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3070
+    },
+    {
+      "host": "frankbarnitz.com",
+      "url": "https://frankbarnitz.com",
+      "rows": [
+        {
+          "pid": "54a52891-2aab-4984-a2e7-1dfa5b39a38b",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Frank Barnitz",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "54a52891-2aab-4984-a2e7-1dfa5b39a38b",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Frank Barnitz",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "54a52891-2aab-4984-a2e7-1dfa5b39a38b",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Frank Barnitz",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "54a52891-2aab-4984-a2e7-1dfa5b39a38b",
+          "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+          "name": "Frank Barnitz",
+          "topic": "Tariffs"
+        },
+        {
+          "pid": "54a52891-2aab-4984-a2e7-1dfa5b39a38b",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Frank Barnitz",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "54a52891-2aab-4984-a2e7-1dfa5b39a38b",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Frank Barnitz",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "54a52891-2aab-4984-a2e7-1dfa5b39a38b",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "Frank Barnitz",
+          "topic": "Voting Rights"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 11718
+    },
+    {
+      "host": "pfeiferforcongress.com",
+      "url": "https://pfeiferforcongress.com/",
+      "rows": [
+        {
+          "pid": "ae0a5ca8-f0f4-4570-8f45-4cdc5735c675",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Peter Pfeifer",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "ae0a5ca8-f0f4-4570-8f45-4cdc5735c675",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Peter Pfeifer",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "ae0a5ca8-f0f4-4570-8f45-4cdc5735c675",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "Peter Pfeifer",
+          "topic": "Voting Rights"
+        },
+        {
+          "pid": "ae0a5ca8-f0f4-4570-8f45-4cdc5735c675",
+          "tid": "24e9212c-b011-422a-865c-093e35050901",
+          "name": "Peter Pfeifer",
+          "topic": "Ukraine Support"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3411
+    },
+    {
+      "host": "www.sendnomoney.org",
+      "url": "https://www.sendnomoney.org",
+      "rows": [
+        {
+          "pid": "3a358f91-e2b5-4f9b-b2f8-e556874de4d8",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "John Vail",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 56734
+    },
+    {
+      "host": "tyroneforsenate.us",
+      "url": "https://tyroneforsenate.us/",
+      "rows": [
+        {
+          "pid": "a3c1f8de-6b5e-4838-860f-20ca14d4c60d",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Tyrone Muhammad",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2999
+    },
+    {
+      "host": "www.brandon4missouri.com",
+      "url": "https://www.brandon4missouri.com/",
+      "rows": [
+        {
+          "pid": "0b5c3611-d1f3-4f23-b8c8-3ac33e299cd4",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Brandon Wilkinson",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "0b5c3611-d1f3-4f23-b8c8-3ac33e299cd4",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Brandon Wilkinson",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "0b5c3611-d1f3-4f23-b8c8-3ac33e299cd4",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Brandon Wilkinson",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "0b5c3611-d1f3-4f23-b8c8-3ac33e299cd4",
+          "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+          "name": "Brandon Wilkinson",
+          "topic": "Social Security"
+        },
+        {
+          "pid": "0b5c3611-d1f3-4f23-b8c8-3ac33e299cd4",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "Brandon Wilkinson",
+          "topic": "Voting Rights"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 44071
+    },
+    {
+      "host": "www.chucksummers.org",
+      "url": "https://www.chucksummers.org/",
+      "rows": [
+        {
+          "pid": "933b5fe9-a4e0-4cd9-97fc-1b6c1d194366",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Chuck Summers",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "933b5fe9-a4e0-4cd9-97fc-1b6c1d194366",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Chuck Summers",
+          "topic": "Medicare/aid"
+        },
+        {
+          "pid": "933b5fe9-a4e0-4cd9-97fc-1b6c1d194366",
+          "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+          "name": "Chuck Summers",
+          "topic": "Social Security"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2911
+    },
+    {
+      "host": "www.randymillercongress.com",
+      "url": "https://www.randymillercongress.com",
+      "rows": [
+        {
+          "pid": "430f73bb-7628-4a30-a084-d43d8ba55437",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Randy Miller",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "430f73bb-7628-4a30-a084-d43d8ba55437",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Randy Miller",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1842
+    },
+    {
+      "host": "beebeforcongress.com",
+      "url": "https://beebeforcongress.com/",
+      "rows": [
+        {
+          "pid": "5de86a92-e21c-4afb-8c4e-931c80e47f1c",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Micah Beebe",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "5de86a92-e21c-4afb-8c4e-931c80e47f1c",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Micah Beebe",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "5de86a92-e21c-4afb-8c4e-931c80e47f1c",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Micah Beebe",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "5de86a92-e21c-4afb-8c4e-931c80e47f1c",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Micah Beebe",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "5de86a92-e21c-4afb-8c4e-931c80e47f1c",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Micah Beebe",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "5de86a92-e21c-4afb-8c4e-931c80e47f1c",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Micah Beebe",
+          "topic": "Medicare/aid"
+        },
+        {
+          "pid": "5de86a92-e21c-4afb-8c4e-931c80e47f1c",
+          "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+          "name": "Micah Beebe",
+          "topic": "Religious Freedom"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 12585
+    },
+    {
+      "host": "bradpatty.com",
+      "url": "https://bradpatty.com/",
+      "rows": [
+        {
+          "pid": "28c368c4-23c3-4492-98c9-d9be04e836ad",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Brad Patty",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "28c368c4-23c3-4492-98c9-d9be04e836ad",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Brad Patty",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "28c368c4-23c3-4492-98c9-d9be04e836ad",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Brad Patty",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "28c368c4-23c3-4492-98c9-d9be04e836ad",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Brad Patty",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "28c368c4-23c3-4492-98c9-d9be04e836ad",
+          "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+          "name": "Brad Patty",
+          "topic": "Religious Freedom"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3850
+    },
+    {
+      "host": "www.nathanaelschultz.com",
+      "url": "https://www.nathanaelschultz.com",
+      "rows": [
+        {
+          "pid": "726f0d6d-6d74-45d2-bed9-180e507051ff",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Nathanael Schultz",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "726f0d6d-6d74-45d2-bed9-180e507051ff",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Nathanael Schultz",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "726f0d6d-6d74-45d2-bed9-180e507051ff",
+          "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+          "name": "Nathanael Schultz",
+          "topic": "Religious Freedom"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 568,
+      "note": null,
+      "wayback": {
+        "snapshots": 20,
+        "usable": 6,
+        "latest": "20260708100928"
+      }
+    },
+    {
+      "host": "www.missiformo.com",
+      "url": "https://www.missiformo.com/",
+      "rows": [
+        {
+          "pid": "bc3cfeaa-42b0-4feb-8bd3-5957280917bf",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Missi Hesketh",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 737
+    },
+    {
+      "host": "heslopforcongress.com",
+      "url": "https://heslopforcongress.com",
+      "rows": [
+        {
+          "pid": "12091a62-38d5-40a8-bb05-55e9128ffbd1",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Gordon Heslop",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "12091a62-38d5-40a8-bb05-55e9128ffbd1",
+          "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+          "name": "Gordon Heslop",
+          "topic": "Tariffs"
+        },
+        {
+          "pid": "12091a62-38d5-40a8-bb05-55e9128ffbd1",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Gordon Heslop",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "12091a62-38d5-40a8-bb05-55e9128ffbd1",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Gordon Heslop",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "12091a62-38d5-40a8-bb05-55e9128ffbd1",
+          "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+          "name": "Gordon Heslop",
+          "topic": "Trans Athletes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 22685
+    },
+    {
+      "host": "www.cch8th.com",
+      "url": "https://www.cch8th.com#priorities",
+      "rows": [
+        {
+          "pid": "172350d1-31b0-4253-a692-1c15e8db13e5",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Clayton Harbison",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3326
+    },
+    {
+      "host": "reichardforrep.com",
+      "url": "https://reichardforrep.com",
+      "rows": [
+        {
+          "pid": "00a59200-c28a-4b1f-9dd7-5f03c9f2bc92",
+          "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+          "name": "Christopher Reichard",
+          "topic": "Civil Rights"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2731
+    },
+    {
+      "host": "gregforhawaii.us",
+      "url": "https://gregforhawaii.us",
+      "rows": [
+        {
+          "pid": "f933b966-d517-43cb-9ba2-c6c5de358dec",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Greg Guithues",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "f933b966-d517-43cb-9ba2-c6c5de358dec",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Greg Guithues",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "f933b966-d517-43cb-9ba2-c6c5de358dec",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Greg Guithues",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "f933b966-d517-43cb-9ba2-c6c5de358dec",
+          "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+          "name": "Greg Guithues",
+          "topic": "AI Oversight"
+        },
+        {
+          "pid": "f933b966-d517-43cb-9ba2-c6c5de358dec",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Greg Guithues",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 33393
+    },
+    {
+      "host": "kirill4congress.com",
+      "url": "https://kirill4congress.com/",
+      "rows": [
+        {
+          "pid": "906187df-62a2-4832-8448-114c4798ce76",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Kirill Basin",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7735
+    },
+    {
+      "host": "www.schwarzeforsenate.com",
+      "url": "http://www.schwarzeforsenate.com/",
+      "rows": [
+        {
+          "pid": "bd735667-4e9d-495f-a13a-bc6483af15f7",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Adam Schwarze",
+          "topic": "Fossil Fuels"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2985
+    },
+    {
+      "host": "billynordforminnesota.carrd.co",
+      "url": "https://billynordforminnesota.carrd.co",
+      "rows": [
+        {
+          "pid": "1fd1a9dc-8904-4d31-953d-724dfe741424",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Billy Nord",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "1fd1a9dc-8904-4d31-953d-724dfe741424",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Billy Nord",
+          "topic": "Housing"
+        },
+        {
+          "pid": "1fd1a9dc-8904-4d31-953d-724dfe741424",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Billy Nord",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1219
+    },
+    {
+      "host": "whit4ilsenate.com",
+      "url": "https://whit4ilsenate.com/",
+      "rows": [
+        {
+          "pid": "2031b1e7-c07c-4401-8fd5-0212a08303a5",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Whitfield Harrington",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "2031b1e7-c07c-4401-8fd5-0212a08303a5",
+          "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+          "name": "Whitfield Harrington",
+          "topic": "Tariffs"
+        },
+        {
+          "pid": "2031b1e7-c07c-4401-8fd5-0212a08303a5",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Whitfield Harrington",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 0,
+      "note": null,
+      "wayback": {
+        "snapshots": 0,
+        "usable": 0,
+        "latest": null
+      }
+    },
+    {
+      "host": "windhauserforcongress.com",
+      "url": "https://windhauserforcongress.com",
+      "rows": [
+        {
+          "pid": "ce37e715-b364-4d5e-bdda-e8dd324381ec",
+          "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+          "name": "Angie Windhauser",
+          "topic": "Religious Freedom"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2128
+    },
+    {
+      "host": "www.geneforpeople.org",
+      "url": "https://www.geneforpeople.org",
+      "rows": [
+        {
+          "pid": "b8fec797-e30a-4661-838c-f3548e99c27b",
+          "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+          "name": "Gene Rechtzigel",
+          "topic": "Religious Freedom"
+        },
+        {
+          "pid": "b8fec797-e30a-4661-838c-f3548e99c27b",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Gene Rechtzigel",
+          "topic": "Deportation"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 62678
+    },
+    {
+      "host": "greggoetzman.com",
+      "url": "https://greggoetzman.com",
+      "rows": [
+        {
+          "pid": "48192f8e-a15b-4df1-bfe3-8121d3ec6efc",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Gregory A. Goetzman",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "48192f8e-a15b-4df1-bfe3-8121d3ec6efc",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Gregory A. Goetzman",
+          "topic": "Climate Change"
+        }
+      ],
+      "cls": "BOT_BLOCKED",
+      "status": 403
+    },
+    {
+      "host": "nagelforcongress.com",
+      "url": "https://nagelforcongress.com",
+      "rows": [
+        {
+          "pid": "2f570d90-c1e2-45bd-811c-243e92884235",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "John Nagel",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "2f570d90-c1e2-45bd-811c-243e92884235",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "John Nagel",
+          "topic": "Fossil Fuels"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 6575
+    },
+    {
+      "host": "julietle4congress.com",
+      "url": "https://julietle4congress.com",
+      "rows": [
+        {
+          "pid": "7fe0a335-65f5-44b9-a4a8-6b2403447e78",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Julie Trang Le",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 0,
+      "note": null,
+      "wayback": {
+        "snapshots": 4,
+        "usable": 4,
+        "latest": "20260604170609"
+      }
+    },
+    {
+      "host": "wittrockforcongress.com",
+      "url": "https://wittrockforcongress.com",
+      "rows": [
+        {
+          "pid": "258fe60e-1d8b-4d8d-8ac9-0f9226fdab1b",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Quentin Wittrock",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "258fe60e-1d8b-4d8d-8ac9-0f9226fdab1b",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Quentin Wittrock",
+          "topic": "Fossil Fuels"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 6013
+    },
+    {
+      "host": "www.beardsleyfordelaware.com",
+      "url": "https://www.beardsleyfordelaware.com",
+      "rows": [
+        {
+          "pid": "81ad76c3-18e1-4ba9-acab-81142f01cfbf",
+          "tid": "4938766b-b45a-46e3-93bd-b8b30651271a",
+          "name": "Christopher Beardsley",
+          "topic": "Homelessness"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4955
+    },
+    {
+      "host": "www.marisasimonetti.com",
+      "url": "https://www.marisasimonetti.com",
+      "rows": [
+        {
+          "pid": "7e0ee6bc-6d96-40f4-9f2c-bfe3e6857c54",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Marisa Simonetti",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "7e0ee6bc-6d96-40f4-9f2c-bfe3e6857c54",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Marisa Simonetti",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "7e0ee6bc-6d96-40f4-9f2c-bfe3e6857c54",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Marisa Simonetti",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 9870
+    },
+    {
+      "host": "www.voteforpedrori.com",
+      "url": "https://www.voteforpedrori.com/",
+      "rows": [
+        {
+          "pid": "19f0df53-1b79-4375-825b-d9350ab92fba",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Pedro DeSouza",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "19f0df53-1b79-4375-825b-d9350ab92fba",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Pedro DeSouza",
+          "topic": "Housing"
+        },
+        {
+          "pid": "19f0df53-1b79-4375-825b-d9350ab92fba",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Pedro DeSouza",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3365
+    },
+    {
+      "host": "earlcooperforcongress.com",
+      "url": "https://earlcooperforcongress.com",
+      "rows": [
+        {
+          "pid": "9d290a40-3e0b-408a-bca5-d64a7052d340",
+          "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+          "name": "Earl Cooper",
+          "topic": "Trans Athletes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2528
+    },
+    {
+      "host": "melaniebarrett.org",
+      "url": "https://melaniebarrett.org/",
+      "rows": [
+        {
+          "pid": "c33b6be0-1192-4483-9343-28084a0f947d",
+          "tid": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+          "name": "Melanie Barrett",
+          "topic": "Environmental Protection vs. Development"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7794
+    },
+    {
+      "host": "whiting4senate.us",
+      "url": "https://whiting4senate.us",
+      "rows": [
+        {
+          "pid": "8462b7d0-2c87-4627-8c60-e8629173e441",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Rebecca Whiting",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "8462b7d0-2c87-4627-8c60-e8629173e441",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Rebecca Whiting",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 6907
+    },
+    {
+      "host": "wilsonwv.com",
+      "url": "https://wilsonwv.com",
+      "rows": [
+        {
+          "pid": "e2ae0a1f-d736-40ab-925e-faabd38687de",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "S. Marshall Wilson",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "e2ae0a1f-d736-40ab-925e-faabd38687de",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "S. Marshall Wilson",
+          "topic": "Climate Change"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 8628
+    },
+    {
+      "host": "www.cheryl4maryland.com",
+      "url": "https://www.cheryl4maryland.com/",
+      "rows": [
+        {
+          "pid": "76c62060-9fb7-4ccb-816e-9fdba129dff8",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Cheryl Riley",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "76c62060-9fb7-4ccb-816e-9fdba129dff8",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Cheryl Riley",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "76c62060-9fb7-4ccb-816e-9fdba129dff8",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Cheryl Riley",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "76c62060-9fb7-4ccb-816e-9fdba129dff8",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Cheryl Riley",
+          "topic": "Fossil Fuels"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3906
+    },
+    {
+      "host": "chaffeeamericafirst.com",
+      "url": "https://chaffeeamericafirst.com",
+      "rows": [
+        {
+          "pid": "bd4d2cbe-8463-40e2-bdc1-ca4960c6e1bb",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Chris Chaffee",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "bd4d2cbe-8463-40e2-bdc1-ca4960c6e1bb",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Chris Chaffee",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "bd4d2cbe-8463-40e2-bdc1-ca4960c6e1bb",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Chris Chaffee",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "bd4d2cbe-8463-40e2-bdc1-ca4960c6e1bb",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Chris Chaffee",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5082
+    },
+    {
+      "host": "www.kirosforco.com",
+      "url": "https://www.kirosforco.com/",
+      "rows": [
+        {
+          "pid": "4431d14b-4cd4-4b8e-99a2-749cfd017892",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Melat Kiros",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "4431d14b-4cd4-4b8e-99a2-749cfd017892",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Melat Kiros",
+          "topic": "Immigration"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 889
+    },
+    {
+      "host": "www.miller4congress.com",
+      "url": "https://www.miller4congress.com",
+      "rows": [
+        {
+          "pid": "bc9d5130-0a29-4803-a185-bc4067087f79",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Brian Miller",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "bc9d5130-0a29-4803-a185-bc4067087f79",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Brian Miller",
+          "topic": "Deportation"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1033
+    },
+    {
+      "host": "www.lessawfulguy.com",
+      "url": "https://www.lessawfulguy.com/",
+      "rows": [
+        {
+          "pid": "2373e0f7-d147-4588-bdcd-4c7d27d2d52d",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Reece Roberts",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2460
+    },
+    {
+      "host": "www.saucermanfordemocracy.com",
+      "url": "https://www.saucermanfordemocracy.com",
+      "rows": [
+        {
+          "pid": "4d9fac36-53e2-45f8-b09f-a99d8cac3d4c",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Shirley Saucerman",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1903
+    },
+    {
+      "host": "baisleyforsenate.com",
+      "url": "https://baisleyforsenate.com/",
+      "rows": [
+        {
+          "pid": "a9e23e62-7572-4d78-860c-c8950df6e141",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Mark Baisley",
+          "topic": "Fossil Fuels"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2334
+    },
+    {
+      "host": "jerseyjustin4senate.org",
+      "url": "https://jerseyjustin4senate.org",
+      "rows": [
+        {
+          "pid": "00425ef8-553e-4b65-8aef-17390bcde3d1",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Justin Murphy",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "00425ef8-553e-4b65-8aef-17390bcde3d1",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Justin Murphy",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "00425ef8-553e-4b65-8aef-17390bcde3d1",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Justin Murphy",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "00425ef8-553e-4b65-8aef-17390bcde3d1",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Justin Murphy",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "00425ef8-553e-4b65-8aef-17390bcde3d1",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Justin Murphy",
+          "topic": "Fossil Fuels"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 14358
+    },
+    {
+      "host": "amydonahueforcongress.com",
+      "url": "https://amydonahueforcongress.com",
+      "rows": [
+        {
+          "pid": "e77946de-230b-49d5-9aa5-aaaecb9a64f5",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Amy Donahue",
+          "topic": "Abortion"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1994
+    },
+    {
+      "host": "www.bradsmithforcongress.com",
+      "url": "https://www.bradsmithforcongress.com",
+      "rows": [
+        {
+          "pid": "e3f5ae9f-a5e7-4eb1-bd6a-3c55b7ae8782",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Brad Smith",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "e3f5ae9f-a5e7-4eb1-bd6a-3c55b7ae8782",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Brad Smith",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "e3f5ae9f-a5e7-4eb1-bd6a-3c55b7ae8782",
+          "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+          "name": "Brad Smith",
+          "topic": "Same-Sex Marriage"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2828
+    },
+    {
+      "host": "www.clarkforwi.com",
+      "url": "https://www.clarkforwi.com",
+      "rows": [
+        {
+          "pid": "0f782c0a-9133-46d7-90aa-76ac8b7e556c",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Fred Clark",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2195
+    },
+    {
+      "host": "devilleforcongress.com",
+      "url": "https://devilleforcongress.com/",
+      "rows": [
+        {
+          "pid": "db289bc8-9869-4dfd-81b8-29951b06bd7e",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Katrina deVille",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "db289bc8-9869-4dfd-81b8-29951b06bd7e",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Katrina deVille",
+          "topic": "Medicare/aid"
+        },
+        {
+          "pid": "db289bc8-9869-4dfd-81b8-29951b06bd7e",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Katrina deVille",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "db289bc8-9869-4dfd-81b8-29951b06bd7e",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Katrina deVille",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 13109
+    },
+    {
+      "host": "kevinhermening.com",
+      "url": "https://kevinhermening.com/",
+      "rows": [
+        {
+          "pid": "7baacd7a-92c0-4cc0-8193-99fb8c472a8b",
+          "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+          "name": "Kevin Hermening",
+          "topic": "Tariffs"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2860
+    },
+    {
+      "host": "www.endthecartel.com",
+      "url": "https://www.endthecartel.com",
+      "rows": [
+        {
+          "pid": "e9ed38b1-5e71-482f-96b8-331c63a3f083",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Matthew Arndt",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "e9ed38b1-5e71-482f-96b8-331c63a3f083",
+          "tid": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+          "name": "Matthew Arndt",
+          "topic": "Medicare/aid"
+        },
+        {
+          "pid": "e9ed38b1-5e71-482f-96b8-331c63a3f083",
+          "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+          "name": "Matthew Arndt",
+          "topic": "AI Oversight"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5422
+    },
+    {
+      "host": "www.bermanforcongress.com",
+      "url": "https://www.bermanforcongress.com",
+      "rows": [
+        {
+          "pid": "125d89b1-3764-465f-8eb8-807c965dd278",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Mitchell Berman",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5623
+    },
+    {
+      "host": "ernie4senate.com",
+      "url": "https://ernie4senate.com/",
+      "rows": [
+        {
+          "pid": "bde578b4-fbb6-4d80-a55a-d5c3a24656ff",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Ernie Rivera",
+          "topic": "Deportation"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 0,
+      "note": null,
+      "wayback": {
+        "snapshots": 6,
+        "usable": 5,
+        "latest": "20260729185826"
+      }
+    },
+    {
+      "host": "hamptonharrisforalabama.com",
+      "url": "https://hamptonharrisforalabama.com/",
+      "rows": [
+        {
+          "pid": "c7920478-b086-4da3-ac02-18390edb80b3",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Hampton Harris",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "c7920478-b086-4da3-ac02-18390edb80b3",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Hampton Harris",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "c7920478-b086-4da3-ac02-18390edb80b3",
+          "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+          "name": "Hampton Harris",
+          "topic": "Religious Freedom"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5524
+    },
+    {
+      "host": "www.richardsonforcongress.net",
+      "url": "https://www.richardsonforcongress.net",
+      "rows": [
+        {
+          "pid": "05fc4585-da36-44f4-b08c-b9aa60c4d20e",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "James Richardson",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "05fc4585-da36-44f4-b08c-b9aa60c4d20e",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "James Richardson",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "05fc4585-da36-44f4-b08c-b9aa60c4d20e",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "James Richardson",
+          "topic": "Fossil Fuels"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7082
+    },
+    {
+      "host": "johnmillsforcongress.com",
+      "url": "https://johnmillsforcongress.com",
+      "rows": [
+        {
+          "pid": "6e6f2f55-63c8-4bc4-9204-66d051210f6f",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "John Mills",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "6e6f2f55-63c8-4bc4-9204-66d051210f6f",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "John Mills",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "6e6f2f55-63c8-4bc4-9204-66d051210f6f",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "John Mills",
+          "topic": "Voting Rights"
+        },
+        {
+          "pid": "6e6f2f55-63c8-4bc4-9204-66d051210f6f",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "John Mills",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "6e6f2f55-63c8-4bc4-9204-66d051210f6f",
+          "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+          "name": "John Mills",
+          "topic": "Religious Freedom"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 9618
+    },
+    {
+      "host": "leemcinnis4alabama.com",
+      "url": "https://leemcinnis4alabama.com/",
+      "rows": [
+        {
+          "pid": "32d3123c-cf3a-4cde-8c63-8d0ea97315cb",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Lee McInnis",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "32d3123c-cf3a-4cde-8c63-8d0ea97315cb",
+          "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+          "name": "Lee McInnis",
+          "topic": "Campaign Finance"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3293
+    },
+    {
+      "host": "johndayforcongress.com",
+      "url": "https://johndayforcongress.com/",
+      "rows": [
+        {
+          "pid": "3f450cf1-af36-4a14-9063-0057203d89b7",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "John Day",
+          "topic": "Housing"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3509
+    },
+    {
+      "host": "mikenicholsforcongress.com",
+      "url": "https://mikenicholsforcongress.com",
+      "rows": [
+        {
+          "pid": "3b04b88f-74ce-4fd2-a720-a215e455a3b5",
+          "tid": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+          "name": "Mike Nichols",
+          "topic": "Immigration"
+        },
+        {
+          "pid": "3b04b88f-74ce-4fd2-a720-a215e455a3b5",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Mike Nichols",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 563,
+      "note": null,
+      "wayback": {
+        "snapshots": 57,
+        "usable": 26,
+        "latest": "20260517050611"
+      }
+    },
+    {
+      "host": "www.sammywyatt.com",
+      "url": "https://www.sammywyatt.com/",
+      "rows": [
+        {
+          "pid": "8c654c27-cded-4d81-b222-d54272bbe46c",
+          "tid": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+          "name": "Sammy Wyatt",
+          "topic": "Deportation"
+        },
+        {
+          "pid": "8c654c27-cded-4d81-b222-d54272bbe46c",
+          "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+          "name": "Sammy Wyatt",
+          "topic": "Trans Athletes"
+        },
+        {
+          "pid": "8c654c27-cded-4d81-b222-d54272bbe46c",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Sammy Wyatt",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "8c654c27-cded-4d81-b222-d54272bbe46c",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Sammy Wyatt",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "8c654c27-cded-4d81-b222-d54272bbe46c",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Sammy Wyatt",
+          "topic": "Healthcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 12791
+    },
+    {
+      "host": "www.letsgobraeden.com",
+      "url": "https://www.letsgobraeden.com",
+      "rows": [
+        {
+          "pid": "a6d9db8e-b113-4638-b455-1a589ba2b920",
+          "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+          "name": "Braeden Curwick",
+          "topic": "AI Oversight"
+        },
+        {
+          "pid": "a6d9db8e-b113-4638-b455-1a589ba2b920",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Braeden Curwick",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "a6d9db8e-b113-4638-b455-1a589ba2b920",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Braeden Curwick",
+          "topic": "Childcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1739
+    },
+    {
+      "host": "www.chriscarmichael.org",
+      "url": "https://www.chriscarmichael.org",
+      "rows": [
+        {
+          "pid": "3ca6d558-645d-4fc0-b8b5-6dc538149586",
+          "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "name": "Chris Carmichael",
+          "topic": "Abortion"
+        },
+        {
+          "pid": "3ca6d558-645d-4fc0-b8b5-6dc538149586",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Chris Carmichael",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "3ca6d558-645d-4fc0-b8b5-6dc538149586",
+          "tid": "87d20824-a6e9-407b-983c-65440084a0ab",
+          "name": "Chris Carmichael",
+          "topic": "Social Security"
+        },
+        {
+          "pid": "3ca6d558-645d-4fc0-b8b5-6dc538149586",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Chris Carmichael",
+          "topic": "School Vouchers"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 16901
+    },
+    {
+      "host": "drew4kansas.com",
+      "url": "https://drew4kansas.com/",
+      "rows": [
+        {
+          "pid": "3ef85f20-cd79-4af5-9924-163ba15d805e",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Drew Cranmer",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "3ef85f20-cd79-4af5-9924-163ba15d805e",
+          "tid": "24e9212c-b011-422a-865c-093e35050901",
+          "name": "Drew Cranmer",
+          "topic": "Ukraine Support"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 9683
+    },
+    {
+      "host": "ericjenkinsforkansas.com",
+      "url": "https://ericjenkinsforkansas.com",
+      "rows": [
+        {
+          "pid": "9c0e81fa-4b5c-4365-b0cd-892bdaff10a6",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Eric Jenkins",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "9c0e81fa-4b5c-4365-b0cd-892bdaff10a6",
+          "tid": "a22215c3-6693-4bc2-b248-01aebba14570",
+          "name": "Eric Jenkins",
+          "topic": "Fossil Fuels"
+        },
+        {
+          "pid": "9c0e81fa-4b5c-4365-b0cd-892bdaff10a6",
+          "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+          "name": "Eric Jenkins",
+          "topic": "Religious Freedom"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 9994
+    },
+    {
+      "host": "www.ericphillipsforva.com",
+      "url": "https://www.ericphillipsforva.com/",
+      "rows": [
+        {
+          "pid": "7da511ee-1e98-4620-8852-a0f32dd45078",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "Eric J. Phillips",
+          "topic": "Voting Rights"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7300
+    },
+    {
+      "host": "margaretforva.com",
+      "url": "https://margaretforva.com",
+      "rows": [
+        {
+          "pid": "eaf0ce8c-b937-469f-b3a6-f9b1599610b4",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Margaret Angela Franklin",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "eaf0ce8c-b937-469f-b3a6-f9b1599610b4",
+          "tid": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+          "name": "Margaret Angela Franklin",
+          "topic": "Civil Rights"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2877
+    },
+    {
+      "host": "charlie4va.com",
+      "url": "https://charlie4va.com/",
+      "rows": [
+        {
+          "pid": "bf2a6480-5ac9-421c-b14d-710b86fc89c1",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Charles H. Schmidt",
+          "topic": "Taxes"
+        },
+        {
+          "pid": "bf2a6480-5ac9-421c-b14d-710b86fc89c1",
+          "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+          "name": "Charles H. Schmidt",
+          "topic": "Healthcare"
+        },
+        {
+          "pid": "bf2a6480-5ac9-421c-b14d-710b86fc89c1",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Charles H. Schmidt",
+          "topic": "School Vouchers"
+        },
+        {
+          "pid": "bf2a6480-5ac9-421c-b14d-710b86fc89c1",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Charles H. Schmidt",
+          "topic": "Housing"
+        },
+        {
+          "pid": "bf2a6480-5ac9-421c-b14d-710b86fc89c1",
+          "tid": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+          "name": "Charles H. Schmidt",
+          "topic": "Local Immigration Enforcement"
+        },
+        {
+          "pid": "bf2a6480-5ac9-421c-b14d-710b86fc89c1",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Charles H. Schmidt",
+          "topic": "Climate Change"
+        },
+        {
+          "pid": "bf2a6480-5ac9-421c-b14d-710b86fc89c1",
+          "tid": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+          "name": "Charles H. Schmidt",
+          "topic": "Data Centers"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3918
+    },
+    {
+      "host": "wernerforaz.com",
+      "url": "https://wernerforaz.com/",
+      "rows": [
+        {
+          "pid": "b769f53e-c9e5-4259-9e00-c20bfa945d15",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Carine Werner",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7848
+    },
+    {
+      "host": "bradfarrin.com",
+      "url": "https://bradfarrin.com",
+      "rows": [
+        {
+          "pid": "a49f9cab-2681-4003-a4a7-398c569cbaf5",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Bradlee Farrin",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1797
+    },
+    {
+      "host": "www.dickbradstreet.com",
+      "url": "https://www.dickbradstreet.com",
+      "rows": [
+        {
+          "pid": "7a6b6395-3308-4477-88f9-b5cb85722ee1",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Richard Bradstreet",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1903
+    },
+    {
+      "host": "www.russellblackformaine.com",
+      "url": "https://www.russellblackformaine.com/",
+      "rows": [
+        {
+          "pid": "81db75c5-8c48-40f3-8cb1-7220def31e72",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Russell Black",
+          "topic": "Childcare"
+        },
+        {
+          "pid": "81db75c5-8c48-40f3-8cb1-7220def31e72",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Russell Black",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2139
+    },
+    {
+      "host": "herbkai.com",
+      "url": "https://herbkai.com/",
+      "rows": [
+        {
+          "pid": "84e71183-dc0c-46de-8b28-d99c41dc8579",
+          "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+          "name": "Herb Kai",
+          "topic": "Public Safety Approach"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3659
+    },
+    {
+      "host": "teamwillie.com",
+      "url": "https://teamwillie.com/",
+      "rows": [
+        {
+          "pid": "ade63655-928d-422d-a807-c5aeaef5d111",
+          "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+          "name": "Willie Montague",
+          "topic": "School Vouchers"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3545
+    },
+    {
+      "host": "melaniekebler.com",
+      "url": "https://melaniekebler.com/",
+      "rows": [
+        {
+          "pid": "29cfc867-174a-460f-b40c-7cefe07471f5",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Melanie Kebler",
+          "topic": "Housing"
+        },
+        {
+          "pid": "29cfc867-174a-460f-b40c-7cefe07471f5",
+          "tid": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+          "name": "Melanie Kebler",
+          "topic": "Transportation Priorities"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5458
+    },
+    {
+      "host": "elanaforbend.com",
+      "url": "https://elanaforbend.com/",
+      "rows": [
+        {
+          "pid": "f9416fcf-cb43-42fc-909d-fdfa744cf6a2",
+          "tid": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+          "name": "Elana Reinholtz",
+          "topic": "Growth and Development Pace"
+        },
+        {
+          "pid": "f9416fcf-cb43-42fc-909d-fdfa744cf6a2",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Elana Reinholtz",
+          "topic": "Housing"
+        },
+        {
+          "pid": "f9416fcf-cb43-42fc-909d-fdfa744cf6a2",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Elana Reinholtz",
+          "topic": "Childcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3883
+    },
+    {
+      "host": "bobbiforbend.com",
+      "url": "https://bobbiforbend.com/",
+      "rows": [
+        {
+          "pid": "3168649a-56ce-4d5b-afe9-e2cf1b14997a",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Bobbi Cummiskey",
+          "topic": "Housing"
+        },
+        {
+          "pid": "3168649a-56ce-4d5b-afe9-e2cf1b14997a",
+          "tid": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+          "name": "Bobbi Cummiskey",
+          "topic": "Environmental Protection vs. Development"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3025
+    },
+    {
+      "host": "robimhoff.com",
+      "url": "https://robimhoff.com/",
+      "rows": [
+        {
+          "pid": "d1971f61-cc25-44eb-8ff3-cf99640e5c82",
+          "tid": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+          "name": "Rob Imhoff",
+          "topic": "Environmental Protection vs. Development"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 7131
+    },
+    {
+      "host": "www.morganlovesoregon.com",
+      "url": "https://www.morganlovesoregon.com/",
+      "rows": [
+        {
+          "pid": "ab51e336-3cde-4b76-b096-c14879af8426",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Morgan Schmidt",
+          "topic": "Housing"
+        },
+        {
+          "pid": "ab51e336-3cde-4b76-b096-c14879af8426",
+          "tid": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+          "name": "Morgan Schmidt",
+          "topic": "Environmental Protection vs. Development"
+        },
+        {
+          "pid": "ab51e336-3cde-4b76-b096-c14879af8426",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Morgan Schmidt",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 4046
+    },
+    {
+      "host": "www.meganforbend.com",
+      "url": "https://www.meganforbend.com/",
+      "rows": [
+        {
+          "pid": "03341ab9-3ab5-4380-ba62-bf2129c59356",
+          "tid": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+          "name": "Megan Perkins",
+          "topic": "Growth and Development Pace"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 6508
+    },
+    {
+      "host": "www.elanaforbend.com",
+      "url": "https://www.elanaforbend.com/",
+      "rows": [
+        {
+          "pid": "f9416fcf-cb43-42fc-909d-fdfa744cf6a2",
+          "tid": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "name": "Elana Reinholtz",
+          "topic": "Climate Change"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3883
+    },
+    {
+      "host": "voteokazaki.com",
+      "url": "https://voteokazaki.com/",
+      "rows": [
+        {
+          "pid": "1b6b526e-ffe6-45b6-9c74-8f929a6aa4e1",
+          "tid": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+          "name": "Jeff Okazaki",
+          "topic": "Court Access"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 1761
+    },
+    {
+      "host": "www.henryfries.com",
+      "url": "https://www.henryfries.com/",
+      "rows": [
+        {
+          "pid": "538155a9-784c-43e7-ac8d-fc012fb98654",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Henry Fries",
+          "topic": "Housing"
+        },
+        {
+          "pid": "538155a9-784c-43e7-ac8d-fc012fb98654",
+          "tid": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+          "name": "Henry Fries",
+          "topic": "Environmental Protection vs. Development"
+        },
+        {
+          "pid": "538155a9-784c-43e7-ac8d-fc012fb98654",
+          "tid": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+          "name": "Henry Fries",
+          "topic": "Voting Rights"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 2519
+    },
+    {
+      "host": "ariaforwi.com",
+      "url": "https://ariaforwi.com/",
+      "rows": [
+        {
+          "pid": "8c393cfe-0b4b-4512-8bc4-b95f266c30a0",
+          "tid": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+          "name": "Aria Trucios",
+          "topic": "Environmental Protection vs. Development"
+        },
+        {
+          "pid": "8c393cfe-0b4b-4512-8bc4-b95f266c30a0",
+          "tid": "669cac97-66a6-4087-b036-936fbe62efb3",
+          "name": "Aria Trucios",
+          "topic": "Housing"
+        },
+        {
+          "pid": "8c393cfe-0b4b-4512-8bc4-b95f266c30a0",
+          "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+          "name": "Aria Trucios",
+          "topic": "Public Safety Approach"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 5531
+    },
+    {
+      "host": "www.marrenfordane.com",
+      "url": "https://www.marrenfordane.com/",
+      "rows": [
+        {
+          "pid": "5587e9e4-0bfe-40d7-97a0-5a736fd7b5b7",
+          "tid": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+          "name": "Kerry Marren",
+          "topic": "Environmental Protection vs. Development"
+        },
+        {
+          "pid": "5587e9e4-0bfe-40d7-97a0-5a736fd7b5b7",
+          "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+          "name": "Kerry Marren",
+          "topic": "Taxes"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 3682
+    },
+    {
+      "host": "www.wash4council.com",
+      "url": "https://www.wash4council.com/",
+      "rows": [
+        {
+          "pid": "e40be594-2239-4c28-a8ac-d4f86c6d4180",
+          "tid": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+          "name": "Bryan Washington",
+          "topic": "Public Safety Approach"
+        }
+      ],
+      "cls": "THIN_SHELL",
+      "status": 200,
+      "body": 0,
+      "note": null,
+      "wayback": {
+        "snapshots": 29,
+        "usable": 14,
+        "latest": "20250227133611"
+      }
+    },
+    {
+      "host": "www.tandonforcongress.com",
+      "url": "https://www.tandonforcongress.com/",
+      "rows": [
+        {
+          "pid": "31e72d49-a541-4855-9262-4f5c4abf7b18",
+          "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+          "name": "Ritesh Tandon",
+          "topic": "Childcare"
+        }
+      ],
+      "cls": "OK",
+      "status": 200,
+      "body": 12696
+    }
+  ]
+}

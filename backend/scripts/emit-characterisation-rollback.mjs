@@ -17,8 +17,24 @@ const argv = process.argv.slice(2);
 const flag = (n, d = null) => { const i = argv.indexOf(n); return i > -1 ? argv[i + 1] : d; };
 const OUT = flag('--out', 'data/stance-retirement/2026-08-01-characterisation-remedies-rollback.json');
 
+// Second set: the 8 rows resolved by working the calibrated reading queue (1525/1526).
+// Kept in the SAME tool rather than a copy, so the "refuse to write a short record" guard and the
+// answers-before/after impact report cannot drift between the two passes.
+const QUEUE_ROWS = [
+  // ---- RETIRE (6)
+  ['09d9691d-0352-45c0-9efd-31c38b69c302', 'e9ebefcd-c496-45e8-b816-a79f8442ba85', 'retire'], // Anderson / Public Safety
+  ['09d9691d-0352-45c0-9efd-31c38b69c302', 'ba59337e-30e2-4aba-a39a-426b3366eb27', 'retire'], // Anderson / Transportation
+  ['09d9691d-0352-45c0-9efd-31c38b69c302', '7687de4f-4d0b-462a-b803-bdfb23b16b42', 'retire'], // Anderson / Sanitation
+  ['63d60b50-2395-4cde-8999-97a9166d3563', 'f7e5678d-dadd-4556-a2fc-446e24642ceb', 'retire'], // Catten / Taxes
+  ['fee24b69-dd56-4b07-a890-a08e898dc031', 'e8dad4a8-eb93-4931-91f5-d8fb5d7dd529', 'retire'], // Wiley / Healthcare
+  ['f1f3e6ca-5532-4f33-8ec2-64791b08f59b', 'd4f18138-a2e0-4110-b925-7387d9d0d16d', 'retire'], // Solis / Residential Zoning
+  // ---- REASONING (2)
+  ['13eea214-867a-4a66-ae1a-c0f9916ac833', 'ba59337e-30e2-4aba-a39a-426b3366eb27', 'reasoning'], // Calanche / Transportation
+  ['372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a', 'a22215c3-6693-4bc2-b248-01aebba14570', 'reasoning'], // Kopp / Fossil Fuels
+];
+
 // (politician_id, topic_id, remedy) — the 25 rows the review resolved as non-keep.
-const ROWS = [
+const CHARACTERISATION_ROWS = [
   // ---- RETIRE (12): the topic itself is absent from the cited site, verified against raw HTML
   ['d2ff9bbf-4434-4b81-a869-e3241e954e3c', 'a22215c3-6693-4bc2-b248-01aebba14570', 'retire'], // Kirkland / Fossil Fuels
   ['d2ff9bbf-4434-4b81-a869-e3241e954e3c', '669cac97-66a6-4087-b036-936fbe62efb3', 'retire'], // Kirkland / Housing
@@ -48,6 +64,9 @@ const ROWS = [
   ['ca2ff1d9-8ebe-4cf2-a804-27d73c58340b', '00b95a6a-75db-4521-b523-3326bba938de', 'reasoning'], // Santos / School Vouchers
   ['372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a', '00b95a6a-75db-4521-b523-3326bba938de', 'reasoning'], // Kopp / School Vouchers
 ];
+
+const SET = flag('--set', 'characterisation');
+const ROWS = SET === 'queue' ? QUEUE_ROWS : CHARACTERISATION_ROWS;
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 

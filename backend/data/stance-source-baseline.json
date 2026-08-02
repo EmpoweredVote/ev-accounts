@@ -1,6 +1,6 @@
 {
   "_comment": "Baseline for check-stance-sources.mjs, keyed check -> state -> count. The gate fires on GROWTH in a state or on ANY new state. BALLOTPEDIA_ONLY is the Workstream A backlog and these numbers should only ever go DOWN — never raise one without saying why in the commit message. ANSWER_WITHOUT_CONTEXT and EMPTY_SOURCES are zero-tolerance and ignore this file.",
-  "_updated": "2026-08-01",
+  "_updated": "2026-08-02",
   "counts": {
     "BALLOTPEDIA_ONLY": {
       "ca": 10,
@@ -25,13 +25,13 @@
     "PRIMARY_SITE_NO_PATH": {
       "va": 58,
       "md": 9,
-      "ca": 44,
+      "ca": 43,
       "tx": 20,
       "fl": 7,
       "ma": 11,
       "-": 35,
       "nc": 1,
-      "ut": 46,
+      "ut": 42,
       "wa": 37,
       "ga": 1,
       "ny": 13,
