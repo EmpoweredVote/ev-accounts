@@ -16,6 +16,44 @@ New check **`NON_URL_SOURCE`** — now **0 and ZERO-TOLERANCE** (1527–1530 clo
 
 ---
 
+## 🟢 HANDOFF 2026-08-02 (third) — Act on Mass is FINISHED, both halves
+
+**1533 + 1534 applied.** The `/bills/` half: 284 row-citations re-pointed across 38 URLs (243 rows).
+Gate green, **643 rows / 3 checks**. **Next number: 1535.**
+Review: [`2026-08-02-actonmass-bills-repoint.md`](../../backend/data/stance-retirement/2026-08-02-actonmass-bills-repoint.md).
+
+🔴 **"26 renamed URLs" was one third right.** Probing all 42 cited `/bills/` URLs found three defects,
+not one — and the 16 this backlog had passed as `200/OK` were worth fixing too:
+| A | 9 URLs / 95 rows | 404, bill still on the site under a new path | → live page |
+| B | 13 URLs / 86 rows | 404, bill dropped from the agenda entirely | → Wayback |
+| C | 16 URLs / 103 rows | still resolve, via the site's own 301 | → cite the destination |
+| HOLD | 4 URLs / 15 rows | cited slug names a bill Act on Mass never tracked | left dead |
+
+**The site was REBUILT, not reorganised** — actonmass.org is now WordPress; every Wayback capture is of
+the old Gatsby site. Mappings were derived, never guessed: group C from the site's own 301s, group A by
+joining bill NAME (archived scorecard `href`s → name; live `<h1>` → name, exact matches only), group B
+from the archived page's own `<title>`.
+
+🔴 **1534 exists because a citation was republishing a supporter's mail-list contact IDs.** The newest
+capture of one bill page was of an EveryAction blast URL carrying `emci`/`emdi`/`ceid`. **Cause:
+capture selection grouped CDX rows by URL PATH, merging clean and tracked captures, then took the
+newest.** Wayback treats the query string as part of the URL; grouping must too. 1534's second
+assertion is corpus-wide — no citation may carry `emci|emdi|ceid`. Post-sweep: 0.
+
+🔴 **Four dry runs failed before one passed, each on a real modelling error** — worth reading before the
+next multi-URL migration: `array_replace` substitutes ONE value, and 35 rows cite two or three mapped
+URLs; per-target counts must be DISTINCT ROWS, not summed source counts, when two sources share a
+target; 284 row-citations are 243 rows; and the post-state total resisted arithmetic (293 by
+derivation, 294 in fact) until it was **simulated read-only** instead.
+
+**⚠ Known limitation, measured not assumed:** the live WordPress bill pages gate their
+`HOUSE/SENATE COSPONSORS` names behind JS (and Playwright gets a *"Checking your browser…"* 403), so a
+group-A/C link alone cannot verify a co-sponsorship. Of the 196 rows on dead URLs, 111 also cite a
+legislator scorecard (1532, which does carry the checkmark), 51 cite malegislature.gov, and only 10 are
+sole-sourced.
+
+---
+
 ## 🟢 HANDOFF 2026-08-02 (second) — the Act on Mass Wayback pass is DONE
 
 **1532 applied.** 1,106 row-citations re-pointed from removed `actonmass.org/legislators/` pages to

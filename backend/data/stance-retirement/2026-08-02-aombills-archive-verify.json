@@ -1,0 +1,288 @@
+{
+  "/bills/100-renewable-energy-by-2045": {
+    "expect": "100% Renewable Energy by 2045",
+    "n_captures": 14,
+    "chosen": {
+      "ts": "20260412020611",
+      "orig": "https://actonmass.org/bills/100-renewable-energy-by-2045/",
+      "http": 200,
+      "title": "100% Renewable Energy by 2045 | Act On Mass",
+      "text_len": 88005,
+      "title_confirms": true,
+      "has_history": true,
+      "snippet": "About UsInitiativesTransparency on TourGood Government AgendaSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeTransparency Ballot Question 2020 & 2022ResourcesBillsSaturday Scoop"
+    },
+    "tried": [
+      {
+        "ts": "20260412020611",
+        "orig": "https://actonmass.org/bills/100-renewable-energy-by-2045/",
+        "http": 200,
+        "title": "100% Renewable Energy by 2045 | Act On Mass",
+        "text_len": 88005,
+        "title_confirms": true,
+        "has_history": true,
+        "snippet": "About UsInitiativesTransparency on TourGood Government AgendaSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeTransparency Ballot Question 2020 & 2022ResourcesBillsSaturday Scoop"
+      }
+    ]
+  },
+  "/bills/cherish-act-fully-funded-public-higher-ed": {
+    "expect": "Cherish Act",
+    "n_captures": 16,
+    "chosen": {
+      "ts": "20260310191126",
+      "orig": "https://actonmass.org/bills/cherish-act-fully-funded-public-higher-ed/",
+      "http": 200,
+      "title": "The Cherish Act: Fully Funded Public Higher Ed | Act On Mass",
+      "text_len": 87283,
+      "title_confirms": true,
+      "has_history": true,
+      "snippet": "About UsInitiativesTransparency on TourGood Government AgendaSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeTransparency Ballot Question 2020 & 2022ResourcesBillsSaturday Scoop"
+    },
+    "tried": [
+      {
+        "ts": "20260310191126",
+        "orig": "https://actonmass.org/bills/cherish-act-fully-funded-public-higher-ed/",
+        "http": 200,
+        "title": "The Cherish Act: Fully Funded Public Higher Ed | Act On Mass",
+        "text_len": 87283,
+        "title_confirms": true,
+        "has_history": true,
+        "snippet": "About UsInitiativesTransparency on TourGood Government AgendaSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeTransparency Ballot Question 2020 & 2022ResourcesBillsSaturday Scoop"
+      }
+    ]
+  },
+  "/bills/campaign-childcare": {
+    "expect": "Campaign Childcare",
+    "n_captures": 15,
+    "chosen": {
+      "ts": "20260510031025",
+      "orig": "https://actonmass.org/bills/campaign-childcare/",
+      "http": 200,
+      "title": "Campaign Childcare | Act On Mass",
+      "text_len": 89613,
+      "title_confirms": true,
+      "has_history": true,
+      "snippet": "About UsInitiativesTransparency on TourGood Government AgendaSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeTransparency Ballot Question 2020 & 2022ResourcesBillsSaturday Scoop"
+    },
+    "tried": [
+      {
+        "ts": "20260510031025",
+        "orig": "https://actonmass.org/bills/campaign-childcare/",
+        "http": 200,
+        "title": "Campaign Childcare | Act On Mass",
+        "text_len": 89613,
+        "title_confirms": true,
+        "has_history": true,
+        "snippet": "About UsInitiativesTransparency on TourGood Government AgendaSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeTransparency Ballot Question 2020 & 2022ResourcesBillsSaturday Scoop"
+      }
+    ]
+  },
+  "/bills/environmental-justice": {
+    "expect": "Environmental Justice",
+    "n_captures": 16,
+    "chosen": {
+      "ts": "20260310182638",
+      "orig": "https://actonmass.org/bills/environmental-justice/",
+      "http": 200,
+      "title": "Environmental Justice | Act On Mass",
+      "text_len": 86418,
+      "title_confirms": true,
+      "has_history": true,
+      "snippet": "About UsInitiativesTransparency on TourGood Government AgendaSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeTransparency Ballot Question 2020 & 2022ResourcesBillsSaturday Scoop"
+    },
+    "tried": [
+      {
+        "ts": "20260310182638",
+        "orig": "https://actonmass.org/bills/environmental-justice/",
+        "http": 200,
+        "title": "Environmental Justice | Act On Mass",
+        "text_len": 86418,
+        "title_confirms": true,
+        "has_history": true,
+        "snippet": "About UsInitiativesTransparency on TourGood Government AgendaSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeTransparency Ballot Question 2020 & 2022ResourcesBillsSaturday Scoop"
+      }
+    ]
+  },
+  "/bills/moratorium-on-high-stakes-testing": {
+    "expect": "THRIVE",
+    "n_captures": 20,
+    "chosen": {
+      "ts": "20260119054547",
+      "orig": "https://actonmass.org/bills/moratorium-on-high-stakes-testing/",
+      "http": 200,
+      "title": "The THRIVE Act | Act On Mass",
+      "text_len": 84834,
+      "title_confirms": true,
+      "has_history": true,
+      "snippet": "About UsInitiativesTransparency on TourGood Government AgendaSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeResourcesBillsIssuesLegislator SearchSaturday ScoopSaturday Scoop Ar"
+    },
+    "tried": [
+      {
+        "ts": "20260119054547",
+        "orig": "https://actonmass.org/bills/moratorium-on-high-stakes-testing/",
+        "http": 200,
+        "title": "The THRIVE Act | Act On Mass",
+        "text_len": 84834,
+        "title_confirms": true,
+        "has_history": true,
+        "snippet": "About UsInitiativesTransparency on TourGood Government AgendaSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeResourcesBillsIssuesLegislator SearchSaturday ScoopSaturday Scoop Ar"
+      }
+    ]
+  },
+  "/bills/driver-license-regardless-immigration-status": {
+    "expect": "Work & Family Mobility",
+    "n_captures": 16,
+    "chosen": {
+      "ts": "20241031040959",
+      "orig": "https://actonmass.org/bills/driver-license-regardless-immigration-status/?utm_medium=&emci=62e031af-0fef-ec11-b47a-281878b83d8a&emdi=f18f9377-2cef-ec11-b47a-281878b83d8a&ceid=21506428",
+      "http": 200,
+      "title": "Work & Family Mobility Act | Act On Mass",
+      "text_len": 63034,
+      "title_confirms": true,
+      "has_history": true,
+      "snippet": "About UsInitiativesSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeResourcesBillsIssuesLegislator SearchSaturday ScoopSaturday Scoop Archive & BlogNews & MediaWriting a Letter t"
+    },
+    "tried": [
+      {
+        "ts": "20241031040959",
+        "orig": "https://actonmass.org/bills/driver-license-regardless-immigration-status/?utm_medium=&emci=62e031af-0fef-ec11-b47a-281878b83d8a&emdi=f18f9377-2cef-ec11-b47a-281878b83d8a&ceid=21506428",
+        "http": 200,
+        "title": "Work & Family Mobility Act | Act On Mass",
+        "text_len": 63034,
+        "title_confirms": true,
+        "has_history": true,
+        "snippet": "About UsInitiativesSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeResourcesBillsIssuesLegislator SearchSaturday ScoopSaturday Scoop Archive & BlogNews & MediaWriting a Letter t"
+      }
+    ]
+  },
+  "/bills/fair-scheduling": {
+    "expect": "Fair Scheduling",
+    "n_captures": 6,
+    "chosen": {
+      "ts": "20230204184444",
+      "orig": "https://actonmass.org/bills/fair-scheduling/",
+      "http": 200,
+      "title": "Fair Scheduling | Act On Mass",
+      "text_len": 4026,
+      "title_confirms": true,
+      "has_history": true,
+      "snippet": "About UsInitiativesThe People's House CampaignRight to StrikeVoters Deserve To Know PledgeLearn MoreBillsIssuesLegislator SearchEndorsementsBlogNews & MediadonatedonateCheck Out Question 6 Election Re"
+    },
+    "tried": [
+      {
+        "ts": "20230204184444",
+        "orig": "https://actonmass.org/bills/fair-scheduling/",
+        "http": 200,
+        "title": "Fair Scheduling | Act On Mass",
+        "text_len": 4026,
+        "title_confirms": true,
+        "has_history": true,
+        "snippet": "About UsInitiativesThe People's House CampaignRight to StrikeVoters Deserve To Know PledgeLearn MoreBillsIssuesLegislator SearchEndorsementsBlogNews & MediadonatedonateCheck Out Question 6 Election Re"
+      }
+    ]
+  },
+  "/bills/fair-share-amendment": {
+    "expect": "Fair Share",
+    "n_captures": 8,
+    "chosen": {
+      "ts": "20241031035849",
+      "orig": "https://actonmass.org/bills/fair-share-amendment/",
+      "http": 200,
+      "title": "Fair Share Amendment | Act On Mass",
+      "text_len": 62730,
+      "title_confirms": true,
+      "has_history": true,
+      "snippet": "About UsInitiativesSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeResourcesBillsIssuesLegislator SearchSaturday ScoopSaturday Scoop Archive & BlogNews & MediaWriting a Letter t"
+    },
+    "tried": [
+      {
+        "ts": "20241031035849",
+        "orig": "https://actonmass.org/bills/fair-share-amendment/",
+        "http": 200,
+        "title": "Fair Share Amendment | Act On Mass",
+        "text_len": 62730,
+        "title_confirms": true,
+        "has_history": true,
+        "snippet": "About UsInitiativesSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeResourcesBillsIssuesLegislator SearchSaturday ScoopSaturday Scoop Archive & BlogNews & MediaWriting a Letter t"
+      }
+    ]
+  },
+  "/bills/lower-voting-age-to-16": {
+    "expect": "Voting Age",
+    "n_captures": 9,
+    "chosen": {
+      "ts": "20241031035741",
+      "orig": "https://actonmass.org/bills/lower-voting-age-to-16/",
+      "http": 200,
+      "title": "Lower Voting Age to 16 | Act On Mass",
+      "text_len": 62398,
+      "title_confirms": true,
+      "has_history": false,
+      "snippet": "About UsInitiativesSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeResourcesBillsIssuesLegislator SearchSaturday ScoopSaturday Scoop Archive & BlogNews & MediaWriting a Letter t"
+    },
+    "tried": [
+      {
+        "ts": "20241031035741",
+        "orig": "https://actonmass.org/bills/lower-voting-age-to-16/",
+        "http": 200,
+        "title": "Lower Voting Age to 16 | Act On Mass",
+        "text_len": 62398,
+        "title_confirms": true,
+        "has_history": false,
+        "snippet": "About UsInitiativesSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeResourcesBillsIssuesLegislator SearchSaturday ScoopSaturday Scoop Archive & BlogNews & MediaWriting a Letter t"
+      }
+    ]
+  },
+  "/bills/ranked-choice-voting": {
+    "expect": "Ranked Choice Voting",
+    "n_captures": 7,
+    "chosen": {
+      "ts": "20230528153936",
+      "orig": "https://actonmass.org/bills/ranked-choice-voting/",
+      "http": 200,
+      "title": "Ranked Choice Voting | Act On Mass",
+      "text_len": 3441,
+      "title_confirms": true,
+      "has_history": false,
+      "snippet": "About UsInitiativesThe People's House CampaignRight to StrikeVoters Deserve To Know PledgeLearn MoreBillsIssuesLegislator SearchEndorsementsSaturday ScoopBlogNews & MediadonatedonateEmail your legisla"
+    },
+    "tried": [
+      {
+        "ts": "20230528153936",
+        "orig": "https://actonmass.org/bills/ranked-choice-voting/",
+        "http": 200,
+        "title": "Ranked Choice Voting | Act On Mass",
+        "text_len": 3441,
+        "title_confirms": true,
+        "has_history": false,
+        "snippet": "About UsInitiativesThe People's House CampaignRight to StrikeVoters Deserve To Know PledgeLearn MoreBillsIssuesLegislator SearchEndorsementsSaturday ScoopBlogNews & MediadonatedonateEmail your legisla"
+      }
+    ]
+  },
+  "/bills/right-to-unionize-for-ride-share-drivers": {
+    "expect": "Ride Share",
+    "n_captures": 8,
+    "chosen": {
+      "ts": "20260212211836",
+      "orig": "https://actonmass.org/bills/right-to-unionize-for-ride-share-drivers/",
+      "http": 200,
+      "title": "Right to Unionize for Ride Share Drivers | Act On Mass",
+      "text_len": 86860,
+      "title_confirms": true,
+      "has_history": true,
+      "snippet": "About UsInitiativesTransparency on TourGood Government AgendaSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeResourcesBillsIssuesLegislator SearchSaturday ScoopSaturday Scoop Ar"
+    },
+    "tried": [
+      {
+        "ts": "20260212211836",
+        "orig": "https://actonmass.org/bills/right-to-unionize-for-ride-share-drivers/",
+        "http": 200,
+        "title": "Right to Unionize for Ride Share Drivers | Act On Mass",
+        "text_len": 86860,
+        "title_confirms": true,
+        "has_history": true,
+        "snippet": "About UsInitiativesTransparency on TourGood Government AgendaSunlight AgendaThe People's House CampaignVoters Deserve To Know PledgeResourcesBillsIssuesLegislator SearchSaturday ScoopSaturday Scoop Ar"
+      }
+    ]
+  }
+}
