@@ -16,10 +16,51 @@ New check **`NON_URL_SOURCE`** — now **0 and ZERO-TOLERANCE** (1527–1530 clo
 
 ---
 
-## 🔴 HANDOFF 2026-08-02 — read this before anything else
+## 🟢 HANDOFF 2026-08-02 (second) — the Act on Mass Wayback pass is DONE
+
+**1532 applied.** 1,106 row-citations re-pointed from removed `actonmass.org/legislators/` pages to
+Wayback, across 123 URLs. 0 retired, 0 stance values changed. Gate **green, 643 rows / 3 checks**
+(`PRIMARY_SITE_NO_PATH` 533 → 527); `NON_URL_SOURCE` still **0**.
+Review: [`2026-08-02-actonmass-wayback-resourcing.md`](../../backend/data/stance-retirement/2026-08-02-actonmass-wayback-resourcing.md).
+**Next number: 1533.**
+
+**212 rows deliberately NOT re-pointed and now owed re-research** — 22 URLs Wayback never captured
+(196 rows, 113 sole-sourced) plus Peisch (11) and Livingstone (5), whose only captures are a *different
+legislative session's* board. Full per-politician table in the review.
+
+**Four things that pass learned, each of which will bite the next host too:**
+
+1. 🔴 **The evidence can live in an attribute, not in the text.** An Act on Mass co-sponsorship is
+   carried only by `img.green_check` vs `img.red_x`; the bill name renders identically either way, so
+   a tags-stripped grep reads the same for "she co-sponsored it" and "she didn't". DOM-parse before
+   judging. (And parse — a non-greedy `<div class="item_1">…</div>` regex kept 15 of Decker's 27 bills.)
+2. 🔴 **A page has generations, and the newest capture may be the wrong one.** Act on Mass rebuilt the
+   board 7× in 2021–2026 (30→26→24→23→19→27 bills). Cite by generation, not by date. **CDX `digest` will
+   not detect this** — all 3 of Decker's captures differ in digest and are identical in scorecard,
+   because the page carries a dated newsletter blurb.
+3. 🔴 **Three "dead" URLs were never valid** — `dave-rogers`, `steven-owens`, `danillo-sena` are
+   misspellings of real pages for the same politician (`david-rogers`, `steve-owens`, `dan-sena`),
+   confirmed by shared `politician_id` AND by the archived page naming them. A 404 is not proof of
+   removal. ⚠ But `john-rogers` is a *different* legislator — a last-name match is not an identity.
+4. 🔴 **A mention is not a claim, and a claim is not a contradiction.** The polarity detector read
+   55 → 36 → 15 → 11 contradictions across four cuts, each checked by hand against the page. Killers:
+   `opposed`/`voted against` in the negation list; generic aliases (`tenant protections`, `mascot`);
+   sentence- instead of clause-scope; and no handling of `"Zero co-sponsorships including X"`, which
+   alone faked 20.
+
+**⚠ 11 rows now cite an archive that CONTRADICTS them, on purpose** — re-pointing makes the defect
+visible instead of hiding it behind a 404, but it is a defect and it is listed for correction in the
+review. Three of them name the source's own marking and get it backwards (*"per the Act on Mass
+tracker"*, *"(Act on Mass green checkmark)"*), and Peisch's held rows are the same failure inverted
+(*"red X on AOM"* against a green check). **Worth asking how far that pattern runs beyond this host.**
+Plus 19 `MIXED` rows, listed in `2026-08-02-actonmass-decisions.json` under `rows[].bad`.
+
+---
+
+## 🔴 HANDOFF 2026-08-02 (first) — still current below the Act on Mass line
 
 **Applied since:** 1528 (13 held rows) · 1529 (a dead-but-well-formed García URL) · 1530 (the last 9
-re-sourced, `NON_URL_SOURCE` → 0) · 1531 (Malik's 19 rows → Wayback).
+re-sourced, `NON_URL_SOURCE` → 0) · 1531 (Malik's 19 rows → Wayback) · **1532 (Act on Mass, above)**.
 Reviews: `2026-08-02-held-rows-resolution.md`, `-dead-site-resourcing.md`, `-js-shell-resolution.md`.
 
 **A citation can fail in FOUR ways, and each is invisible to a different check:**
