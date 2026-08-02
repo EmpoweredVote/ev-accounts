@@ -45,9 +45,29 @@ These rows are **unverified**, not defective — and now they are readable.
 | `mikenicholsforcongress.com` | 563c → 579c | 2 | small but real |
 | `evandone.com` | 93c → 93c | 10 | genuinely a 93-character page carrying **10 rows** |
 
-🔴 **`evandone.com` is the one to look at**: ten published stance rows cite a page with ninety-three
-characters. That is not a rendering problem — the page really is that empty. Same shape as the Kirkland
-and Anderson findings, and a strong candidate for the next reading pass.
+## 🔴 `evandone.com` — a FOURTH failure mode: the site was reset for a different campaign
+
+**11 rows** (not 10 — one pairs it with a second source) cite a page whose entire rendered content is:
+
+> *"Coming in 2028 · A VOICE FOR PROGRESS. A CHAMPION FOR ALL. · MAKE A DONATION · SIGN UP TO VOLUNTEER"*
+
+The rows quote very specific 2026 platform language — *"saving the Great Salt Lake"*, *"improving air
+quality through renewable energy"*, *"protecting public lands from exploitation"*, *"criminal justice
+reform emphasizing compassion, recovery, and inclusion"*, and a dated January 2026 statement about the
+Utah homeless campus. **None of it is there.** The site has been rebuilt for a 2028 run.
+
+⚠ **Nothing we check can see this.** Status **200**, well-formed URL, live host, correct candidate,
+and a page that is not empty, not a shell and not malformed — it simply no longer says what it said.
+It is not GONE, not THIN_SHELL, not NON_URL_SOURCE, and it will sail through the deep-URL sweep as OK.
+**A citation can rot without breaking**, and that is a class none of the tooling addresses.
+
+Not resolved: the last full-page Wayback capture (`20251015205910`) is itself only 342c, so the 2026
+platform may not be archived at the root. 2026 captures exist for `/author/…` and a paginated URL and
+have not been checked. **Owed: find whether the cited content is archived anywhere; if not, these 11
+rows are unsourceable and need re-research.**
+
+*(The original note here — "ten rows citing a 93-character page, same shape as Kirkland" — was wrong
+about the cause. The page is not thin; it is different.)*
 
 ## The tool
 
