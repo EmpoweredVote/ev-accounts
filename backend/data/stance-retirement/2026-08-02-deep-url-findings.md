@@ -24,9 +24,29 @@ This one host is **93% of every dead citation found so far**, and it is the sing
 defect this workstream has turned up — bigger than the 279 malformed arrays. Massachusetts stance rows
 lean on it heavily.
 
-⚠ Not yet done: whether the same bills live at new actonmass.org paths (a rename → re-point, cheap and
-mechanical) or are gone entirely (→ Wayback, or re-research). **Check before treating any of it as a
-retirement.** Given this workstream's record, a rename is the likelier explanation.
+### ✅ Rename check done — and it splits in two
+
+| section | urls | row-citations | verdict |
+|---|---|---|---|
+| `/bills/…` | 26 | **196** | ✅ **RENAMED — cheaply recoverable** |
+| `/legislators/…` | 147 | **1,318** | 🔴 **section removed — not a rename** |
+
+**Bills moved from `/bills/<slug>/` to a shorter top-level slug.** Confirmed:
+`/bills/safe-communities-act/` (404, 37+19 rows) → **`https://actonmass.org/safe-communities/` → 200,
+titled "Safe Communities Act"**. The sitemap carries the same shape for others — `/medicare-for-all/`,
+`/healthy-youth/`, `/clean-energy-equity/`, `/voting-rights-restoration/`. 16 `/bills/` URLs still
+resolve, so the old prefix was retired only partially. **Mechanical re-point once each slug is mapped;
+map it from `sitemap-1.xml`, do not guess.**
+
+**Legislator pages are gone, not moved.** No `/legislators/` in `sitemap-1.xml` (153 URLs, of which 103
+are dated blog posts), no legislator directory anywhere in the site nav — only `/transparency/` and
+`/transparency-on-tour/` — and the one sitemap hit matching "legislator" is a July 2026 blog post.
+Act on Mass appears to have withdrawn its per-legislator pages entirely.
+
+🔴 **So the big number is NOT a rename.** 1,318 of the 1,514 row-citations need Wayback or re-research,
+not a find-and-replace. These were almost certainly per-legislator voting-record/scorecard pages — high
+value evidence for Massachusetts rows, and worth an archive pass before anything is retired.
+Act on Mass is a prominent org, so Wayback coverage is likely good. **Not yet attempted.**
 
 ## ✅ The `HTTP_202` bucket is Ballotpedia, and it is NOT dead
 
