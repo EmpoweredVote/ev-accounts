@@ -79,6 +79,25 @@ const QUERY = `
       CASE
         WHEN pc.politician_id IS NULL                              THEN 'ANSWER_WITHOUT_CONTEXT'
         WHEN coalesce(cardinality(pc.sources), 0) = 0              THEN 'EMPTY_SOURCES'
+        -- A "source" that is not a URL at all cannot be opened, checked or believed.
+        --
+        -- 🔴 THIS CLASS WAS INVISIBLE TO THIS GATE UNTIL 2026-08-01, AND THE REASON IS STRUCTURAL:
+        -- every other branch below classifies by the SHAPE OF THE HOST PART, so a value with no host
+        -- falls through all of them and lands in the ELSE NULL. It surfaced only because a
+        -- reachability sweep tried to FETCH each cited host and hit "hosts" like
+        -- "prioritizes balanced budgets" and "SB0438 pharmacy benefits".
+        --
+        -- Cause: an ingestion step split a value on commas into the array. 316 entries across 279
+        -- rows, in three shapes needing opposite repairs -- a reasoning string split (which ALSO left
+        -- the voter-facing reasoning truncated mid-sentence), stray carriage returns, and 11 cases
+        -- where a URL containing a comma was torn in half so the surviving fragment 404s WHILE STILL
+        -- PARSING AS A URL. 1527 repaired 257; the remainder are baselined so they cannot grow.
+        -- (NB: this is a JS template literal -- every backslash here must be doubled or Postgres
+        -- receives a control character. A literal CR in this comment broke the query once already.)
+        WHEN EXISTS (
+          SELECT 1 FROM unnest(pc.sources) s
+           WHERE s !~* '^https?://' AND s !~ '^[a-z0-9.-]+\\.[a-z]{2,}(/|\$)'
+        )                                                          THEN 'NON_URL_SOURCE'
         -- Every source is a bare domain with no path. Whether that is fatal depends ENTIRELY on
         -- WHOSE domain it is, and the first version of this check did not ask. Measured 2026-07-31:
         -- of the 602 rows here, 596 cite the candidate's OWN campaign site, 5 an officeholder's own

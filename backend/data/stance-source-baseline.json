@@ -5,7 +5,7 @@
     "BALLOTPEDIA_ONLY": {
       "ca": 10,
       "-": 11,
-      "md": 2,
+      "md": 5,
       "tx": 30,
       "va": 15,
       "or": 6,
@@ -20,11 +20,23 @@
       "ne": 1,
       "id": 1,
       "hi": 3,
-      "wy": 2
+      "wy": 2,
+      "ky": 6
+    },
+    "NON_URL_SOURCE": {
+      "md": 8,
+      "ca": 4,
+      "-": 2,
+      "mt": 1,
+      "la": 3,
+      "al": 1,
+      "ky": 1,
+      "nv": 1,
+      "nd": 1
     },
     "PRIMARY_SITE_NO_PATH": {
       "va": 58,
-      "md": 9,
+      "md": 12,
       "ca": 43,
       "tx": 20,
       "fl": 7,

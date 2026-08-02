@@ -2,9 +2,17 @@
 
 ## 🟢 STATE AS OF 2026-08-01 — READ THIS FIRST, THE SECTIONS BELOW IT ARE OLDER
 
-Gate: `npm run check:stance-sources --prefix backend` — **green, 640 rows** after 1522–1524
-(`PRIMARY_SITE_NO_PATH` baseline ratcheted 548 → **535**, exactly the 13 retirements). The table
-immediately below predates that; trust these numbers.
+Gate: `npm run check:stance-sources --prefix backend` — **green, 669 rows across FOUR checks** after
+1522–1527. The table immediately below predates all of it; trust these numbers.
+
+⚠ **The total went UP (635 → 669) and that is an improvement, not a regression.** 1527 repaired 257
+damaged `sources` arrays, and rows whose arrays contained prose had been falling through **every**
+branch of the gate into `ELSE NULL` — invisible. Repairing them made them classifiable for the first
+time: `BALLOTPEDIA_ONLY` +9 (mostly Mikel Wein's KY rows), `PRIMARY_SITE_NO_PATH` md +3 (Guy Guzzone,
+now correctly `["https://guyguzzone.com/"]`). Same lesson as 1518: **the gate count is not a measure
+of this workstream.**
+
+New check **`NON_URL_SOURCE`, baselined 22** — see below.
 
 | check | rows | what it means |
 |---|---|---|
@@ -81,6 +89,36 @@ NOT_FOUND.
 YOUR EXTRACTOR KEPT — NOT WHAT YOU FETCHED.** Print the length of the text actually searched. An
 extractor that silently keeps 55% of a page is the most dangerous bug shape here, because the loss is
 indistinguishable from an absent claim.
+
+### ✅ 1527 — prose in `sources`: one symptom, three bugs, opposite repairs
+
+Found by the reachability sweep, which tried to FETCH each cited host and hit "hosts" like
+`prioritizes balanced budgets` and `SB0438 pharmacy benefits`. An ingestion step split values on
+commas into the array. **316 entries across 279 rows / 46 politicians. 257 repaired.**
+
+🔴 **They needed OPPOSITE repairs, and treating them as one class would have been vandalism:**
+
+1. **SPLIT_URL — 11 rows, the worst.** A URL *containing a comma* was torn in half, so the surviving
+   half **still parses as a URL and 404s** — a broken link a voter clicks today, invisible to a gate
+   that classifies by host shape. Rejoined with `,` and **proven by fetching both halves** (rejoined
+   200, truncated not). Structure alone cannot do it: `ballotpedia.org/California_Proposition_21` is a
+   perfectly plausible page on its own. A control test mattered too — `…interview,46873` returns 200
+   while `…interview,99999` and a nonsense slug both 404, proving the site is not a soft-404 catch-all.
+2. **REASONING_SPLIT — 83 rows.** The *reasoning string* was split: the first fragment stayed in
+   `reasoning` (leaving voter-facing text **truncated mid-sentence**) and the tail rendered as
+   citations. Rejoined with `, `.
+3. **WHITESPACE — 163 rows.** A stray carriage return. Dropped; reasoning untouched.
+   ⚠ The first version of this tool would have **appended `"\r"` to 186 rows of voter-facing text**.
+   Only a guard requiring the reasoning to *look truncated* stopped it.
+
+**22 rows held for hand review, deliberately:** 8 with quotes/names in sources on rows whose reasoning
+is complete (a different fault); 9 where no URL survives (repairing would empty `sources`, and
+`EMPTY_SOURCES` is zero-tolerance — they need re-sourcing or retirement); 5 split-URL candidates the
+network could not prove, **including 2 where BOTH halves return 200**, so rejoining would be wrong.
+
+**Gate gap closed:** new `NON_URL_SOURCE` check, baselined at the remaining 22. It was invisible
+before because every other branch classifies by the shape of the *host part*, so a value with no host
+fell through all of them.
 
 ### Next actions, in order
 
