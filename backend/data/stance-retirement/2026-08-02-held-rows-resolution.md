@@ -46,7 +46,46 @@ think García is special.
 
 ---
 
-## ⏳ The 9 rows still held — an operator decision
+## ✅ The last 9 — re-sourced, not retired (1530). `NON_URL_SOURCE` is now **0** and zero-tolerance.
+
+Operator decision 2026-08-02: re-source. These were sound research whose citation our pipeline
+destroyed; retiring them would have deleted good work to pay for an ingestion bug.
+
+🔴 **The obvious move was wrong, and checking is what caught it.** "Give each Maryland senator their
+mgaleg member page" fails, because **mgaleg shows ONE SESSION**: Zucker's 2011/2013/2018/2021 bills and
+Feldman's 2018-2021 record are simply absent from their 2025 pages. Assigning them would have produced
+nine authoritative-looking citations that support nothing — the precise failure this workstream exists
+to stop. Each row went to the page that actually holds its claims:
+
+| row | source | verified to contain |
+|---|---|---|
+| Lam / Medicare-aid, Criminal Justice | mgaleg `lam02?ys=2025RS` | SB0111, SB0438, SB0448, SB0974, SB0741 — all present, titles matching, Primary sponsorship |
+| Lam / Healthcare | `clarencelam.com/meet-clarence` | *"capping the cost of insulin at no more than $1 per day"*, *"the only physician in the Maryland State Senate"*, *"healthcare is a human right"* — mgaleg does **not** carry the insulin claim (2022 session) |
+| Feldman / Healthcare | Wikipedia | Protect Maryland Health Care Act, individual mandate, medical debt, Prescription Drug Affordability Board |
+| Zucker / Civil Rights | Wikipedia | Civil Marriage, death penalty, harassment, Raskin |
+| Valentine / Voting Rights | mgaleg `valentine01` | HB0454 *(SAVE Our Elections Act of 2026)*, HB0964 *Secure the Vote Act of 2026*, both Co-Sponsor |
+| Fleming / Healthcare | OnTheIssues Health Care | single-payer, socialized medicine, repeal, takeover, health savings |
+| Fleming / Immigration | OnTheIssues Immigration | Birthright Citizenship, ALIPAC, welfare, *"All illegal immigrants should be deported"* |
+| Fleming / Religious Freedom | OnTheIssues Civil Rights + Principles&Values | *"Fleming co-sponsored Marriage and Religious Freedom Act"*; verbatim *"a Government interest of the highest order"*; Ten Commandments, prayer, Christian principles |
+
+**Unmatched quotation marks were repaired too** — the split ate opening quotes, leaving `received an A"
+rating`. A dangling *closing* quote proves its opening was lost in the same split, so it was restored,
+never invented.
+
+⚠ **One claim was deliberately not chased:** Fleming's *"complete autonomy for religious organizations
+in how they operate"* appears on no source page **because it is our own chair-5 text**. It is the
+researcher's alignment statement, not a quotation — the documented "quoted compass chair label" trap.
+
+### And the migration's own assertion found one more
+
+Scoped to the politician rather than the row (the same over-broad mistake 1524 made), it swept in
+**John Fleming / Taxes**: `Abolish the Income Tax.""` — a CSV double-quote *escape* that leaked
+through with its opening quote lost. Repaired in 1530. Corpus-wide there is exactly one such row.
+Both times an over-broad assertion has fired here it found something real, so the rule is: **narrow the
+check *and* fix what it found** — never narrow it and walk away. (12 rows still carry a single
+unmatched quote; several were fixed above, the rest are a small follow-up, deliberately not swept blind.)
+
+## ~~The 9 rows still held — an operator decision~~ (resolved above; kept for the reasoning)
 
 All nine are the same shape: **reasoning truncated mid-sentence, and no URL survives anywhere in the
 array.** Repairing the reasoning is unambiguously right, but it would leave `sources` empty — and

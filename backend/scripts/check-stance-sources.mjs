@@ -62,7 +62,10 @@ const argv = process.argv.slice(2);
 const VERBOSE = argv.includes('--verbose');
 const UPDATE = argv.includes('--update-baseline');
 
-const ZERO_TOLERANCE = new Set(['ANSWER_WITHOUT_CONTEXT', 'EMPTY_SOURCES']);
+// NON_URL_SOURCE joined the zero-tolerance set on 2026-08-02, once 1527-1530 had driven it to 0.
+// It was baselined at 279 -> 22 -> 9 only while the backlog was being worked; no legitimate row has
+// ever had prose in `sources`, so any future occurrence is a regression, not a backlog item.
+const ZERO_TOLERANCE = new Set(['ANSWER_WITHOUT_CONTEXT', 'EMPTY_SOURCES', 'NON_URL_SOURCE']);
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 
