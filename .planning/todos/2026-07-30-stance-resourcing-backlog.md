@@ -12,7 +12,48 @@ time: `BALLOTPEDIA_ONLY` +9 (mostly Mikel Wein's KY rows), `PRIMARY_SITE_NO_PATH
 now correctly `["https://guyguzzone.com/"]`). Same lesson as 1518: **the gate count is not a measure
 of this workstream.**
 
-New check **`NON_URL_SOURCE`, baselined 22** — see below.
+New check **`NON_URL_SOURCE`** — now **0 and ZERO-TOLERANCE** (1527–1530 closed the class).
+
+---
+
+## 🔴 HANDOFF 2026-08-02 — read this before anything else
+
+**Applied since:** 1528 (13 held rows) · 1529 (a dead-but-well-formed García URL) · 1530 (the last 9
+re-sourced, `NON_URL_SOURCE` → 0) · 1531 (Malik's 19 rows → Wayback).
+Reviews: `2026-08-02-held-rows-resolution.md`, `-dead-site-resourcing.md`, `-js-shell-resolution.md`.
+
+**A citation can fail in FOUR ways, and each is invisible to a different check:**
+
+| mode | example | who can see it |
+|---|---|---|
+| malformed (prose in `sources`) | `"SB0438 pharmacy benefits"` | ✅ `NON_URL_SOURCE`, now zero-tolerance |
+| host dead | `faizahforla.com` 404 | ✅ host reachability sweep |
+| **parses but 404** | the Eastsider interview; García's Ballotpedia page | ⏳ **deep-URL sweep — RUNNING** |
+| **🔴 rots without breaking** | `evandone.com` — rebuilt for 2028, returns **200** | ❌ **nothing. Not built.** |
+
+**Two tools exist now, and neither is optional:**
+- `read-site.mjs` — greps **raw HTML**, prints `raw=/body=/chrome=` counts.
+- `read-site-js.mjs` — **Playwright**; prints **plain vs rendered**. 🔴 Every other tool here reads with
+  plain fetch and is BLIND to JS shells (`tedbrown.org` = 38c plain / 25,849c rendered). **32 of the 55
+  shell rows sit on sites full of content — any plain-fetch verdict on them is VOID, not negative.**
+
+**⚠ The 08-01 host sweep undercounts dead citations ~2×** — it required *every* source on a row to be a
+bare host, so rows pairing a dead host with a pathed source were invisible (Malik 19 not 6; Colter 9 not 2).
+
+**Open, roughly by value:**
+1. **Deep-URL sweep results** — 17,888 URLs, checkpointed to `…-deep-url-reachability.jsonl`; re-run the
+   same command to resume. ⚠ It will pass `evandone.com` as OK — it cannot see rotted content.
+2. **`evandone.com` × 11 rows** — quotes 2026 platform language that no longer exists. Is it archived?
+   The last full capture is only 342c. If not, unsourceable → re-research.
+3. **32 shell rows** — never actually checked; read them with `read-site-js.mjs`.
+4. **Brooks × 2 swallowed rows** — ⏳ **operator decision.** Sources verify; **chairs do not fit their
+   axes** (his local-environment content isn't on the Environmental-vs-Development axis at all;
+   economic-development is a targeted incentive = chair 3, not the recovered 2). Inserting at the
+   recovered value publishes a mis-charted row; inserting at a judged value is authoring one.
+5. **Colter × 9** — both sources 404. **Jemison × 10** — unverifiable, thin capture predating the death.
+6. Then the older queue: 42-row calibrated reading queue, 115 `BALLOTPEDIA_ONLY`, 533 `PRIMARY_SITE_NO_PATH`.
+
+---
 
 | check | rows | what it means |
 |---|---|---|
