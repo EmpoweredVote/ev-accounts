@@ -1,4 +1,31 @@
-# Deep-URL reachability — partial results (6,205 of 17,888 probed)
+# Deep-URL reachability — ✅ COMPLETE (17,888 URLs)
+
+## Final
+
+| class | urls | row-citations | |
+|---|---|---|---|
+| OK | 15,405 | 51,168 | |
+| **GONE** | **796** | **3,108** | 🔴 dead |
+| HTTP_202 | 570 | 2,534 | ✅ Ballotpedia bot mitigation — **not** dead |
+| BOT_BLOCKED (401/403) | 732 | 1,630 | ✅ fine for a voter |
+| FETCH_FAILED | 308 | 781 | needs a retry pass |
+| THROTTLED_OR_ERROR | 45 | 169 | says nothing |
+| HTTP_406/400/204/526 | 32 | 54 | odd; read individually |
+
+🔴 **3,108 row-citations point at a page that is gone** — the largest defect class this workstream has
+found. **1,514 are actonmass.org** (below); the other **1,594 are spread across ~790 URLs and many
+hosts**, so there is no second easy win — it is a long tail.
+
+⚠ **4,333 row-citations sit in 202/403 — do NOT count them as broken.** Together they are larger than
+the genuine dead set, and folding them in would have inflated the finding from 3,108 to ~7,400.
+
+**Next dead hosts after actonmass** (row-citations): `ontheissues.org` 118+39 · `newtonma.gov` 102 ·
+`wbur.org` 66 · `mass.gov` 63 · `somervillema.gov` 51 · `lynnjournal.com` 50 · `bhcourier.com` 46 ·
+`auchincloss.house.gov` 43. Government and news hosts reorganising — likely archivable.
+
+---
+
+# (partial-run notes below, kept for the reasoning)
 
 Run is resumable: `scripts/sweep-deep-url-reachability.mjs` checkpoints to
 `2026-08-02-deep-url-reachability.jsonl`; re-running the same command skips what is done.
