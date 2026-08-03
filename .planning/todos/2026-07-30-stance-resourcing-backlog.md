@@ -16,6 +16,253 @@ New check **`NON_URL_SOURCE`** — now **0 and ZERO-TOLERANCE** (1527–1530 clo
 
 ---
 
+## 🔴 HANDOFF 2026-08-02 (eleventh) — FETCH_FAILED swept: 5 invented outlets, 1 invented congressional host
+
+**No migration.** Review: [`2026-08-02-invented-domain-sweep.md`](../../backend/data/stance-retirement/2026-08-02-invented-domain-sweep.md).
+Scope: the whole `FETCH_FAILED` bucket — **308 URLs / 71 hosts**. 62 hosts are fine.
+
+🔴 **THE FIRST PASS WAS VOID AND ITS OWN CONTROLS CAUGHT IT. New failure mode, worse than the 429 trap:
+both archive endpoints returned HTTP 200 WITH AN EMPTY RESULT** for `clark.house.gov`, while three other
+`house.gov` subdomains resolved correctly in the same run. An empty 200 is indistinguishable from real
+absence **and does not look like an error**, so retry-on-non-200 — the whole defence against throttling —
+cannot see it. **Absence must REPRODUCE: 3 rounds × 3 query forms, ≥2 methods succeeding, every
+successful probe empty.** Anything less is UNKNOWN, never absence.
+
+🔴 **5 invented news outlets** (reproducible, 8–9 of 9 probes, all 3 methods): `medfordmirror.com` 36
+citations · `newtonvillearea.com` 13 · **`alhambraource.com` 7** · `walthamtribunenews.com` 4 ·
+**`walthamatch.com` 2**. **62 citations.** ⏳ Operator decision.
+**The matched pairs are the strongest evidence this workstream has produced** — `alhambraource.com` and
+`walthamatch.com` have ZERO captures while `alhambrasource.com` and `walthampatch.com`, the real hosts
+they corrupt by one letter, are richly archived in the same run under identical conditions.
+⚠ **`alhambraource.com` is NOT a typo repair** — the real site's root IS archived (2025-01-25, control
+passed) and **none of the 3 cited paths exist there**. Host and path both fabricated.
+⚠ **3 campaign hosts absent but NOT called invented** (`octavioforwhittier.com` 2 rows both
+**sole-sourced**, `kennethforla.com` 2, `fairshareforma.com` 1) — Wayback misses single-cycle campaign
+sites routinely, so absence is weak evidence. Same restraint as the four thin hosts. Hand pass.
+
+🔴 **THE CONTROL FAILURE WAS MY ERROR, AND IT IS THE BEST FIND.** I set `clark.house.gov` as "expected
+ARCHIVED" **from assumption, never verified**. It never existed (no DNS, CDX empty over 9 probes). Katherine
+Clark's real site is **`katherineclark.house.gov`, live and archived since 2014, and the cited path
+`/issues` returns 200 there.** So a composed HOSTNAME points at a page that genuinely exists elsewhere —
+carrying **43 citations, every stance she has.** ✅ **REPAIRABLE, not retirable**, and all 43 already carry
+a real second source, so nothing is sole-sourced.
+⚠ **A control is only a control if it was verified, not assumed** — this nearly buried a real finding as a
+tooling bug, the mirror image of the `Hoyle (OR)` parser bug nearly burying the pre-tenure finding.
+
+✅ **So the whole congressional surface was audited: 177 hosts / 1,655 citations. EXACTLY ONE invented
+hostname exists and it is that one.** 168 LIVE, 8 RETIRED_BUT_REAL (35 citations — Schiff and Curtis to
+the Senate, Cardenas retired, Rubio to State, Vance to VP, Bass to LA Mayor, Braun to Governor).
+⚠ **Re-point those 8 to Wayback captures; do not retire them** — the pages were real and are archived.
+A reassuring bound, and worth having measured. (Bare `senate.gov` 359 citations and `web.archive.org` 59
+are outside this audit.)
+
+**Disposition:** ✅ 43 + 35 re-pointed by **1539 (APPLIED)** · ⏳ **62 retire-or-re-research** (the only
+substantive item left — no real page exists, so re-pointing is not available) · 5 hand pass.
+
+### ✅ 1539 APPLIED — re-points, 78 of 78 citations, nothing held. Gate green 678/3. Next number: 1540.
+31 of 31 URLs resolved · 69 rows · `clark.house.gov/issues` → **`katherineclark.house.gov/issues`** (live,
+verified to name her) + 30 retired-subdomain URLs → Wayback captures each verified to name the member.
+Post-state: 0 citations remain on any of the 9 hosts; no row left sourceless.
+🔴 **THE FIRST PASS HELD 10 URLS AND WOULD HAVE BEEN WRONG TO — 7 were `availability-unresolved`, i.e.
+THROTTLED, NOT ABSENT. On retry with 6 tries and growing backoff, 9 resolved through the same API.**
+Abandoning 15 citations to a 429 is a wrong result dressed as a conservative one.
+🔴 **The one SOLE-SOURCED casualty was saved only by the second method:** Karen Bass's only citation had
+availability reporting **"no capture"**, and **CDX found a 2022-12-09 capture naming her**. Availability said
+absent and was wrong. **Absence needs two independent methods even for a single URL, not just for a host.**
+⚠ Captures fetched with the **`id_`** modifier — raw bytes, no Wayback banner. The banner echoes the
+archived URL and `schiff.house.gov` contains "schiff", so the surname test would otherwise pass on the
+toolbar and confirm itself.
+⚠ Noticed while verifying, NOT a defect: 404 context rows have an empty `sources` array and **all 404 have
+no answer row** — correct blank-spoke notes. Always join to `politician_answers` first.
+✅ **BOT_BLOCKED + HTTP_202 NOW SWEPT — 130 hosts / 1,302 URLs, ALL 130 LIVE, zero invented. THE
+INVENTED-HOST QUESTION IS CLOSED ACROSS ALL 17,888 URLs, not sampled.**
+🔴 **And it was predictable from the data, which is the better finding. Checking class → status instead of
+reasoning from class NAMES:** `BOT_BLOCKED` is 731×403 + 1×401, `HTTP_202` is 570×202,
+`THROTTLED_OR_ERROR` is 429/500/503/502 — **all real responses. A 403 or 202 requires DNS to resolve AND a
+server to answer, so those hosts are real by construction.** `FETCH_FAILED` (308 × status=0, error set) is
+the ONLY class where nothing answered.
+✅ **Converse confirmed empirically: all 9 invented/no-trace hosts sit EXCLUSIVELY in `FETCH_FAILED`** —
+nowhere else. So that one bucket is the whole surface, and it is done.
+⚠ **I asserted both "sweep BOT_BLOCKED/HTTP_202" and "THROTTLED_OR_ERROR is a no-response class" before
+checking; both were wrong.** Reasoning from bucket names invented a high-value check with no yield
+available to it. Read the status codes.
+⚠ **NXDOMAIN-hijack caveat TESTED, not waved at:** this machine's resolver answers `192.168.1.1` for every
+nonexistent host, which could have hidden invented domains inside `OK` as 200s. It does not — the router
+serves no HTTPS for arbitrary hosts, so those probes fail at connect, which is precisely why all 9 landed
+in `FETCH_FAILED`.
+⚠ **REFINEMENT TO OUR OWN RULE: "a failed control voids the run" is too blunt.** `walthamatch.com` came
+back UNKNOWN here (2 rounds × 2 forms, archive.org throttled) instead of its verified NEVER_EXISTED. But
+**all 130 bucket verdicts came from a live HTTP response and none queried Wayback**, so the failing control
+exercises a path no result depends on — and it abstained rather than flipping to ARCHIVED, the safe
+direction. **Void the verdicts that depend on the failing path, not all verdicts.**
+
+---
+
+## 🔴 HANDOFF 2026-08-02 (tenth) — THREE PUBLICATIONS THAT NEVER EXISTED
+
+**No migration.** Review: [`2026-08-02-undecidable-fetch.md`](../../backend/data/stance-retirement/2026-08-02-undecidable-fetch.md).
+The fetch pass 1538 said was owed on its 187 undecided rows is done. 103 citations, browser UA, serial.
+
+**183 of 187 rows are STILL_UNREACHABLE** — 60 connection failures, 24 × 403, 15 × 404, **4 readable**.
+So the undecidable set is almost entirely, and now measurably, unsupported.
+
+🔴 **But grouping the 60 failures by host found the real thing. Three cited publications have no trace
+of ever existing:** `medfordmirror.com` (5 citations), `newtonvillearea.com` (2), `walthamatch.com` (1).
+Verified two ways each — availability API returns `{}` **and** a CDX wildcard `url=<host>*` returns `[]`.
+Control passed: `somervillejournal.com` returns captures back to **2001** through the same tooling (and
+drew the documented 429 on the availability call while CDX answered, which is why both were run).
+🔴 **`walthamatch.com` is `walthampatch.com` with the "p" missing** — Patch's real Waltham site is
+archived from 2011. A one-character corruption of a real outlet's name, cited as a source.
+⚠ The invented URLs are *richly* specific — `medfordmirror.com/2022/10/bears-question-1-fair-share/`,
+`.../2020/07/medford-council-police-reform-scarpelli-dissent/` — right politicians, right issues,
+plausible dates, house-style slugs. Nothing looks wrong until you fetch one.
+
+**Scope: 32 URLs · 51 row-citations · 14 politicians · 0 sole-sourced.** ⏳ **Operator decision.**
+🔴 **A NEW COHORT, not part of the 209 retired by 1538** — the composed set was built from URLs already
+classed `GONE`; these were `FETCH_FAILED`, so they never entered it. **The whole `FETCH_FAILED` bucket
+(308 URLs) has never been checked for invented domains, and domain-level Wayback absence is a cheap
+test. Highest-value next check.**
+⚠ **`somervillejournal.com` ×34 is the opposite case** — a real paper whose domain lapsed. Re-point
+those to Wayback captures; do not retire them with the rest.
+⚠ 24 remaining 403s are mostly **congress.gov ×14**, a real bot wall — not evidence of a defect.
+⚠ Sweep classes wrong in BOTH directions again: all 15 hard 404s were stored as `GONE`(12)/`BOT_BLOCKED`(3),
+while 3 of 103 "blocked/failed" read fine under a browser UA.
+
+---
+
+## ✅ HANDOFF 2026-08-02 (ninth) — APPLIED: 1536, 1537, 1538. Queue was 39 rows not 26; composed split 209 not 61
+
+**All three applied on operator approval 2026-08-02. Gate green: 678 rows / 3 checks. Next number: 1539.**
+
+| mig | what |
+|---|---|
+| **1536** | 529 of 705 federal `office_terms.term_start` values from congress-legislators. `term_start` 69 → **598**. |
+| **1537** | Retired **36** fabricated pre-tenure rows; corrected **3**. Nobody emptied (Hoyle 20→8, Salinas 13→7, Van Epps 8→3). |
+| **1538** | Retired **209** rows with no checkable citation; **stripped** the composed URL from **505** rows that keep a working one; left 187 undecided. |
+
+⚠ **1538 emptied 28 politicians** and cleared their `last_stances_researched_at` per the 1494/1525 rule.
+Concentrated: Waltham 9 (of 14 stanced), Fall River 5 (of 9), New Bedford 4 (of 11), **Beverly Hills 5 of
+5**. Operator confirmed after being shown the concentration.
+🔴 **Beverly Hills dropped to zero coverage, so `src/lib/coverage.js` `hasContext` was flipped to false**
+(essentials repo). It is the ONLY chip this work broke — proven, not assumed: none of the 215 politicians
+1537/1538 touched is linked to any other affected city.
+🔴 **The gate "regressed" 115 → 159 on `BALLOTPEDIA_ONLY` and that is an IMPROVEMENT, exactly as in 1527.**
+Attributed precisely: **44 rows became Ballotpedia-bio-only because the strip removed the fake URL beside
+the bio**, and the gate grew by exactly 44. They were hiding behind a citation to a page that never
+existed. Baseline updated; `PRIMARY_SITE_NO_PATH` ratcheted **down** 533 → 518.
+⚠ **Coverage-chip audits must join occupancy through `essentials.office_terms`, NOT
+`politicians.office_id`** — ADR 0002 phase 5 dropped `offices.politician_id`, and `politicians.office_id`
+is unpopulated for later seeds (Dane County, Racine County and Madison all read as **zero politicians**
+through it despite being fully seeded). The wrong join reports **27** false zeros instead of 9.
+🔴 **Incidental find, pre-existing and NOT caused by this work: 8 Utah cities render a "stances seeded"
+chip with zero stanced officials** — Layton, Lehi, Ogden, Provo, Sandy, St. George, West Jordan, West
+Valley City. Contradicts the recorded "10 UT cities done". Written up:
+[`2026-08-02-utah-coverage-chips-claim-absent-stances.md`](2026-08-02-utah-coverage-chips-claim-absent-stances.md).
+
+
+Reviews: [`2026-08-02-landmark-act-tenure.md`](../../backend/data/stance-retirement/2026-08-02-landmark-act-tenure.md)
+· [`2026-08-02-composed-secondsource.md`](../../backend/data/stance-retirement/2026-08-02-composed-secondsource.md)
+· [`2026-08-02-term-start-population.md`](../../backend/data/stance-retirement/2026-08-02-term-start-population.md)
+
+### 1. The TCJA cluster was a topic, not a prompt — and generalising it found 13 more rows
+
+🔴 **141 of 144 TCJA mentions sit on ONE topic**, "Taxation and Public Spending". The pass reached for
+that topic's one landmark vote every time and was **right 68 of 75 times**. No source signature to find:
+the 7 defective rows draw on the same hosts in the same proportions as the 68 correct ones. **The
+sourcing did not fail; the reading did.** Two of the seven cite `clerk.house.gov/evs/2017/roll699.xml`
+— the *genuine* TCJA roll call, which lists the whole chamber and therefore **contains the proof they
+were not in it**.
+
+Generalising to 18 landmark acts with their **real floor-vote dates** (no year needed in the text)
+found new people no earlier pass could see: **Matt Van Epps ×5** (seated **2025-12-04**, credited with
+the May-2025 One Big Beautiful Bill), **Mike Collins ×2**, **Ayanna Pressley** (First Step Act),
+**Greg Landsman**, **Robert Menendez NJ-8**, **Anthony G. Brown**.
+
+🔴 **UNION OF ALL THREE PASSES = 39 distinct rows** (roll-call 20 ∪ term-start 12 ∪ landmark 32+1):
+**36 FABRICATED · 1 PARTLY_FABRICATED · 1 MISLABELLED · 1 IMPRECISE.** Hoyle 12 of her 20 stances,
+Salinas 6 of 13, Van Epps 5. Nobody is zeroed out by retirement. ⏳ **Operator decision.**
+
+⚠ **Two rows must NOT be retired.** **Barry Moore** is a MISLABEL: his cited OTI page reads *"One Big
+Beautiful Bill delivers largest tax cut in history. (Jul 2025)"* with **zero** occurrences of "TCJA" or
+"2017" — he cast that 2025 vote and the act name was supplied by the research pass. **Suzanne Bonamici**
+is IMPRECISE, not false: *"voted YES on ACA **protections**"* plausibly describes her real
+defence-of-ACA votes. ⚠ **Mike Collins is the highest-harm row in this workstream** — a conservative
+Republican credited with a *pro*-same-sex-marriage vote he could not have cast, editorialised as
+"breaking with most conservative Republicans", carrying a load-bearing 3.0 chair.
+
+### 2. The composed-citation decision rests on 209 rows, not 61
+
+The second-source check that `NEXT-composed-citations.md` names as option 3's precondition is done.
+**61 is exactly reproducible** (validating the method) **but it counts only rows whose SINGLE source is
+composed.** Of 903 rows citing a composed URL: **506** have a resolving other source · **188** have only
+bot-walled/unreachable others (**undecidable without a fetch pass**) · **138 cite two or three composed
+URLs and nothing else** · 61 sole-sourced · 10 whose others are hard 404s.
+🔴 **209 rows have no citation a reader can check.** 3.4× the figure option 3 was built on.
+⚠ Hold the four thin hosts out **by HOST, not path** — the write-up's directory prefixes catch only 6
+of the 24 URLs; the rest are under `/news/`, `/departments/`, `/government/mayor`.
+
+### 3. `term_start`: the denominator was misleading, and populating it does not unlock the non-federal rows
+
+🔴 **"69 of 82,351" is the wrong fraction. 77,034 of those rows have no government link at all** —
+they are FEC committee records (`CORREA FOR ATTORNEY GENERAL 2026; LOU`) that ADR 0002 phase 2 gave an
+`office_terms` row. Only **28** belong to a politician with stances. The real target is **~2,900 rows**.
+
+🔴 **`politicians.valid_from` is not the salvage source ADR 0002 hoped for**: `2023-01-01` ×151,
+`2025-01-01` ×126, `2024-05-01` ×79, `2026-05-01` ×27 — Jan-1/May-1 clusters at that density are
+conventions, not observed dates. Migrating them as day precision would manufacture dates never
+published anywhere. Needs `'year'`/`'month'` precision and a per-cohort hand pass.
+
+**1536 (APPLIED 2026-08-02; term_start 69 → 598)** populates **529 of 705** federal rows from
+congress-legislators, day precision, chamber taken from *our* office row — which is what makes Capito
+resolve to **2015** (Senate) not 2001 (House) and separates the two Robert Menendezes. Verified: all 705
+are currently NULL, 0 already set, 0 seats carry >1 term row, so the exclusion constraint cannot fire.
+🔴 **A candidate seat is not a tenure** — `office_terms` holds `Candidate for U.S. Senate — Alabama`
+rows beside real seats and a sitting senator seeking re-election has **both**; now excluded explicitly
+(52 rows) rather than by luck.
+
+🔴 **But 1536 adds no detection power** — the federal slice was already measurable from
+congress-legislators. **Nothing unlocks the 11,312 non-federal rows**, because no term-start authority
+for state and local officeholders exists in our data or in any single public dataset.
+
+**So the shortcut was built instead**, and it reports a useful negative: flagging non-federal
+politicians credited with federal-measure votes needs no calendar. **69 → 2, and both survivors are
+false positives.** ⚠ *"Police Reform Act (H.4011/S.2820)"* — **Massachusetts numbers bills `H.nnnn`/
+`S.nnnn`, format-identical to federal**; and a challenger's profile discussing *"**Hoyle's** vote"*.
+**The impossible-vote defect appears confined to federal legislators' own profiles.** ⚠ Bounded by a
+generous abstain: **6,645 of 14,191** non-federal rows skipped on a surname match against ~12,700
+current-or-historical members, so "zero" means zero among the 7,546 it could judge.
+
+### 🔴 Ninth and tenth consecutive first cut to over-fire — the two new failure shapes
+
+The landmark pass went **76 → 32**; the non-federal pass **69 → 2**. Worth reading before the next one:
+
+| bug | what it produced |
+|---|---|
+| **one vote date per act** | biggest false block yet: **29 For the People Act hits.** H.R. 1 passed the House in **2019 AND 2021**; members elected in 2020 were judged against 2019. Same for the George Floyd Act and John Lewis VRAA. `votes` must be a **list**; pre-tenure = absent for **all** of them. |
+| **verb not bound to the measure** | 12 of 18 TCJA hits were real **2025 OBBBA** votes in sentences mentioning TCJA only because OBBBA extends it, or the separate **TCJA Permanency Act** |
+| **subject assumed to be ours** | *"**Unlike Murkowski and Sullivan who voted for**…"*; *"caucus, **whose members** voted"*; *"**Hoyle's** vote"* on a challenger's page |
+| **conditionals read as claims** | Lawler *"would have voted for"* — a careful row, punished |
+| **acting *on* an act ≠ voting *for* it** | Fedorchak *"introduced legislation to **eliminate** IRA tax credits"* (2025 bill, 2022 law) |
+| **vehicle named *after* the act** | Moulton *"voted for the ACA's protections … **via the American Rescue Plan**"* — looking only leftwards missed it |
+| **our own office links are NULL** | 46 sitting members of Congress (Cardenas, Barragán, Sánchez, Cisneros, Maloy) have `gov_type`/`chamber`/`office_title` **all NULL** — no government gate can see they are federal |
+| **ex-members hold non-federal office** | Mike Braun: Indiana Governor now, **US Senator 2019–2025**, so his IRA vote is real. +13 more governors/lieutenant governors |
+
+Matching fixes worth keeping: compound surnames need every trailing token tried (**Moore Capito** is
+filed under *Capito*); members are stored under familiar names the dataset holds only as a nickname or
+inside `official_full` (**Lou** Correa is *J. Luis Correa*). Both had abstained as unmatched; both were
+**correct rows**.
+
+⚠ **Latent trap: a duplicate government row exists.** `United States Federal Government` appears with
+`type='NATIONAL'` (535 politicians) **and** `type='federal'` (9). Every detector here gates on
+`'NATIONAL'`. Harmless today — the 9 have **zero** stances — but the gate should be
+`IN ('NATIONAL','federal')` or the rows merged.
+
+⚠ **`inform.politician_context` and `politician_answers` have NO timestamp columns**, so there is no
+`created_at` forensics available for clustering research passes. Template detection has to work from
+text shape and topic scope.
+
+---
+
 ## 🔴 HANDOFF 2026-08-02 (eighth) — term-start detector built: 12 more votes that never happened
 
 **No migration.** Review: [`2026-08-02-term-start-detector.md`](../../backend/data/stance-retirement/2026-08-02-term-start-detector.md).
