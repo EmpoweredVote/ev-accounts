@@ -1,0 +1,857 @@
+{
+ "migration": 1540,
+ "captured": "pre-apply",
+ "n": 61,
+ "emptied": [
+  {
+   "id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+   "name": "Brian Golden",
+   "had": 3
+  },
+  {
+   "id": "583a5fab-16d5-40c5-8c6c-25b9ea4b97ae",
+   "name": "Cyrus Dahmubed",
+   "had": 1
+  },
+  {
+   "id": "5b590765-e701-41cf-b0c3-e7efdeea16d3",
+   "name": "Lisa Gordon",
+   "had": 1
+  },
+  {
+   "id": "773aa577-9e09-4721-80ee-6219edb151e7",
+   "name": "Susan Albright",
+   "had": 3
+  },
+  {
+   "id": "81a83387-4166-4d97-9983-2f9f6473f9d1",
+   "name": "Matt Leming",
+   "had": 2
+  },
+  {
+   "id": "9abe66cb-eea8-4f6c-afa1-9ee7297473e5",
+   "name": "Emily Lazzaro",
+   "had": 4
+  },
+  {
+   "id": "a3244566-232e-461a-842a-36149374b2e2",
+   "name": "George Scarpelli",
+   "had": 3
+  },
+  {
+   "id": "aeb29c2c-69f6-4447-8522-1404b614fd62",
+   "name": "Justin Tseng",
+   "had": 2
+  },
+  {
+   "id": "cab6c573-7335-4c8f-8100-5063908dba32",
+   "name": "Anna Callahan",
+   "had": 5
+  },
+  {
+   "id": "dee11bee-c034-49b1-ba4c-30f94622ddd3",
+   "name": "Brittany Hume Charm",
+   "had": 1
+  },
+  {
+   "id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "name": "Isaac Bears",
+   "had": 9
+  }
+ ],
+ "rows": [
+  {
+   "politician_id": "f22187bb-dc57-4088-bb19-8bc39bcb95c9",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "full_name": "Katherine Lee",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "reasoning": "Council Member Lee has consistently supported commercial and mixed-use redevelopment along the Valley Boulevard and Main Street corridors during her multi-term tenure. She voted in favor of the Alhambra Downtown Specific Plan update in 2021, which encouraged high-density mixed-use development on underutilized commercial parcels. Lee has stated that economic growth and housing development are compatible goals for Alhambra's long-term fiscal health and has supported streamlined permitting for qualified projects. Her voting record shows support for new development alongside environmental review requirements.",
+   "sources": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+    "https://alhambraource.com/2021/06/downtown-specific-plan-alhambra/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "f22187bb-dc57-4088-bb19-8bc39bcb95c9",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "full_name": "Katherine Lee",
+   "topic": "Environmental Protection vs. Development",
+   "chair": "2.0",
+   "reasoning": "Council Member Lee voted to approve Alhambra's participation in the San Gabriel Valley Air Quality consortium and supported the city's Urban Greening Plan, which expanded tree canopy along residential streets and near the 10 Freeway corridor to reduce particulate matter exposure. She voted in favor of the Alhambra Wash habitat restoration project in 2018 and supported the city's adoption of electric vehicle charging infrastructure requirements for new commercial developments in 2022. Her record reflects consistent support for local environmental quality improvements.",
+   "sources": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+    "https://alhambraource.com/2022/08/alhambra-ev-charging-ordinance/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "27441d13-d90b-48e8-bb35-3b7da5d24c6e",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "full_name": "Ross J. Maza",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "reasoning": "Council Member Maza supported commercial and mixed-use development projects in District 2, including approvals for mixed-use developments along Fremont Avenue during 2021–2022. He has publicly stated support for projects that bring retail and residential density to underutilized parcels, and voted with the council majority to approve the Downtown Specific Plan amendments that encouraged higher-density development. Maza has framed economic development as essential to Alhambra's long-term tax base and services funding.",
+   "sources": [
+    "https://alhambraource.com/2022/03/alhambra-mixed-use-development-fremont/",
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "e4df4fce-9289-43db-8568-e316a73ae931",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "full_name": "Jeff Maloney",
+   "topic": "Public Safety Approach",
+   "chair": "3.0",
+   "reasoning": "Council Member Maloney has voted to maintain full funding for the Alhambra Police Department across multiple budget cycles and opposed any reductions in sworn officer positions. He has also supported the addition of mental health co-responder positions in Alhambra's public safety budget, reflecting a view that specialized response should supplement rather than replace traditional policing. Maloney has not made public statements supporting major police reform legislation, but has supported procedural reforms such as body camera policies and community policing outreach programs funded through the APD budget.",
+   "sources": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+    "https://alhambraource.com/2022/06/alhambra-public-safety-budget/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "abad7f66-e2d3-4edf-a35f-2170c2bd4cbb",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "full_name": "Noya Wang",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "reasoning": "Council Member Wang has supported commercial and mixed-use redevelopment along Alhambra's Valley Boulevard and Main Street corridors. She voted to adopt the Alhambra Downtown Specific Plan update in 2021, which incentivized high-density mixed-use development on underutilized commercial parcels and reduced permitting timelines for qualified projects. As Alhambra Council Member Wang (rotational Mayor 2025-26), she has presided over approvals of several development projects along the Valley Boulevard corridor, including mixed-use residential-commercial buildings. Her consistent vote record favors managed growth over strict preservation.",
+   "sources": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+    "https://alhambraource.com/2021/06/downtown-specific-plan-alhambra/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "abad7f66-e2d3-4edf-a35f-2170c2bd4cbb",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "full_name": "Noya Wang",
+   "topic": "Environmental Protection vs. Development",
+   "chair": "2.0",
+   "reasoning": "Council Member Wang voted to approve Alhambra's Urban Greening Plan, which expanded the city's tree canopy along residential streets and near the 10 Freeway corridor to reduce particulate matter exposure for residents in air-quality-impacted areas. She supported the city's 2022 electric vehicle charging infrastructure ordinance requiring EV-ready conduit in new commercial construction. As Alhambra Council Member Wang (rotational Mayor 2025-26), she has publicly highlighted Alhambra's participation in the San Gabriel Valley Air Quality Collaborative and signed a proclamation recognizing Earth Day 2025, reflecting consistent support for local environmental quality efforts.",
+   "sources": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+    "https://alhambraource.com/2022/08/alhambra-ev-charging-ordinance/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "f6d52199-b1d1-48d3-9972-66b8d229acdc",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "full_name": "Adele Andrade-Stadler",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "reasoning": "Council Member Andrade-Stadler voted to adopt the Alhambra Downtown Specific Plan update in 2021, which incentivized high-density mixed-use development on underutilized commercial parcels along Valley Boulevard and streamlined permitting for qualifying projects. Her multi-term record on the Alhambra City Council reflects consistent support for commercial and residential development projects that expand the city's tax base while complying with state environmental review requirements. SGV Tribune covered her participation in discussions on commercial redevelopment in the Alhambra Marketplace area within District 5.",
+   "sources": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+    "https://alhambraource.com/2021/06/downtown-specific-plan-alhambra/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "5b590765-e701-41cf-b0c3-e7efdeea16d3",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "full_name": "Lisa Gordon",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "reasoning": "Gordon voted for Newton's MBTA Communities compliance plan, enabling multi-family development near transit nodes by-right. She has supported zoning reforms to allow more diverse housing types in Newton and has backed measures reducing barriers to residential development in transit-accessible areas.",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "9c64b145-cce4-4b31-a4e0-c041a12af62b",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "full_name": "Marc C. Laredo",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "reasoning": "Laredo made housing affordability a central campaign issue in his 2025 mayoral race. He strongly supported Newton's compliance with the MBTA Communities Act, which requires zoning for multi-family housing near transit stops, and advocated for increased housing production throughout his time as a City Councillor. He has stated publicly that Newton must grow its housing stock to remain accessible to working and middle-class families.",
+   "sources": [
+    "https://newtonma.gov/government/mayor",
+    "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "9c64b145-cce4-4b31-a4e0-c041a12af62b",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "full_name": "Marc C. Laredo",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "reasoning": "As a City Councillor, Laredo voted in support of Newton's MBTA Communities zoning compliance plan, which upzones areas near transit to allow multi-family housing by-right. He publicly supported removing barriers to higher-density residential development in transit-accessible areas, positioning himself on the progressive end of the zoning debate against more restrictive neighbourhood preservation advocates.",
+   "sources": [
+    "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html",
+    "https://newtonma.gov/government/city-council/city-council-meetings"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "9c64b145-cce4-4b31-a4e0-c041a12af62b",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "full_name": "Marc C. Laredo",
+   "topic": "Transportation Priorities",
+   "chair": "2.0",
+   "reasoning": "Laredo has advocated for improved public transit and pedestrian safety in Newton, including support for better MBTA Green Line connectivity and safer bike infrastructure. His support for the MBTA Communities Act reflects a transit-oriented development philosophy. He has not articulated an aggressive car-restriction agenda but consistently favors transit and active transportation investment.",
+   "sources": [
+    "https://newtonma.gov/government/mayor",
+    "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "9c64b145-cce4-4b31-a4e0-c041a12af62b",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "full_name": "Marc C. Laredo",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "reasoning": "Laredo supports managed economic and residential growth in Newton, backing the MBTA Communities compliance plan and transit-oriented development. He has expressed support for commercial development that generates tax revenue while prioritizing affordable housing inclusion. His approach is pro-growth but with equity and sustainability guardrails, typical of progressive suburban mayors.",
+   "sources": [
+    "https://newtonma.gov/government/mayor",
+    "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "full_name": "Susan Albright",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "reasoning": "Albright voted in support of Newton's MBTA Communities zoning plan, which allows higher-density residential development by-right near transit nodes. She has long supported zoning reforms that allow more diverse housing types, opposing restrictive single-family-only zoning as an impediment to equity and affordability. Her voting record shows consistent support for upzoning measures across multiple City Council sessions.",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "full_name": "Susan Albright",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "reasoning": "Albright has supported tenant protection measures at the Newton City Council level, including discussions around just-cause eviction protections and anti-displacement policies. Massachusetts state law limits local rent control authority but Albright has backed tenant-friendly local ordinances and anti-speculation measures, consistent with her progressive housing stance.",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "full_name": "Susan Albright",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "reasoning": "Albright supports smart growth in Newton — favoring transit-oriented residential development while being attentive to community character and environmental impact. She has voted for the MBTA Communities compliance plan and supported commercial development that includes community benefit agreements. Her approach balances pro-development housing goals with environmental and equity guardrails.",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "dee11bee-c034-49b1-ba4c-30f94622ddd3",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "full_name": "Brittany Hume Charm",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "reasoning": "Hume Charm voted in support of Newton's MBTA Communities zoning compliance plan, which allows multi-family housing near transit stations by-right. She has publicly aligned with the pro-housing wing of the Newton City Council, supporting increased housing production as essential to affordability and equity in the city.",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "583a5fab-16d5-40c5-8c6c-25b9ea4b97ae",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "full_name": "Cyrus Dahmubed",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "reasoning": "Dahmubed's vote for Newton's MBTA Communities zoning compliance reflects support for allowing higher-density residential development by-right near transit nodes. His campaign materials expressed support for zoning reform to allow more housing types, consistent with the progressive majority on the Newton City Council.",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "full_name": "Brian Golden",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "reasoning": "Golden has been an outspoken advocate for increasing housing production in Newton. He voted in support of the MBTA Communities zoning compliance plan and has publicly stated that Newton's restrictive zoning has contributed to the regional affordability crisis. He has called for Newton to lead by example in building more diverse and affordable housing types.",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "full_name": "Brian Golden",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "reasoning": "Golden has supported tenant protection measures in Newton including discussions around anti-displacement policies and just-cause eviction protections. He has backed legislative efforts to restore local rent stabilization authority in Massachusetts and has spoken in favor of protecting long-term Newton residents from displacement due to rising rents.",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "full_name": "Brian Golden",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "reasoning": "Golden supports balanced growth in Newton — backing housing development and transit-oriented commercial development while advocating for community benefit agreements and equity guardrails. He has been a consistent voice for ensuring that growth in Newton benefits existing and future residents broadly, not just developers and high-income newcomers.",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "full_name": "Breanna Lungo-Koehn",
+   "topic": "Environmental Protection vs. Development",
+   "chair": "1.0",
+   "reasoning": "Lungo-Koehn launched Medford's Climate Action and Adaptation Plan and committed the city to net-zero carbon emissions by 2050. She created a Climate Action Team within city government and pursued federal ARPA funds for environmental infrastructure. She has specifically highlighted Medford's environmental justice communities near the Malden River and I-93 corridor, advocating for pollution remediation and green space expansion in those neighborhoods.",
+   "sources": [
+    "https://www.medfordma.org/departments/sustainability/climate-action/",
+    "https://medfordmirror.com/2022/09/lungo-koehn-climate-action-plan-medford/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "full_name": "Breanna Lungo-Koehn",
+   "topic": "Economic Development Incentives",
+   "chair": "2.0",
+   "reasoning": "Lungo-Koehn created the Medford Office of Economic and Community Development (formerly Community Development) and prioritized small business grants and Mystic Avenue corridor revitalization. She used ARPA funding to provide direct relief to small businesses during COVID recovery and pushed for inclusive economic growth tied to the GLX transit corridor. Her approach emphasizes community benefit agreements and local hiring over tax incentive giveaways to large corporations.",
+   "sources": [
+    "https://www.medfordma.org/departments/economic-community-development/",
+    "https://medfordmirror.com/2021/10/arpa-small-business-grants-medford/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "full_name": "Breanna Lungo-Koehn",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "reasoning": "Lungo-Koehn has expanded Medford's co-responder program, pairing mental health clinicians with police for crisis calls, reducing reliance on armed officers for non-violent situations. She funded a CAHOOTS-style alternative response unit using ARPA dollars and publicly stated after the George Floyd protests that Medford would pursue police reform while maintaining public safety. She did not advocate defunding the police but shifted resources toward social services and community intervention programs.",
+   "sources": [
+    "https://medfordmirror.com/2020/06/lungo-koehn-police-reform-medford/",
+    "https://www.medfordma.org/medford-co-responder-program/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "full_name": "Breanna Lungo-Koehn",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "reasoning": "Lungo-Koehn has declared Medford a welcoming city for immigrants and has directed the Medford Police Department not to cooperate with ICE enforcement actions absent a judicial warrant. She joined the Massachusetts Mayors' Coalition on Immigration in 2025 and signed a statement affirming that local police resources would not be redirected to federal immigration enforcement. She has cited Medford's significant immigrant community (including Haitian, Brazilian, and Central American populations) as a reason for the city's welcoming stance.",
+   "sources": [
+    "https://medfordmirror.com/2025/02/medford-mayor-immigration-welcoming-city/",
+    "https://www.bostonglobe.com/2025/01/28/metro/mass-mayors-immigration-enforcement/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "full_name": "Breanna Lungo-Koehn",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "reasoning": "Lungo-Koehn has supported transit-oriented development around GLX stations and pushed for a Master Plan update to guide growth. She has publicly backed increased density near transit while also stating she wants growth to benefit existing residents, not displace them. Her approach favors managed growth with affordable housing requirements and infrastructure investment rather than unrestricted development or blanket opposition to new construction.",
+   "sources": [
+    "https://www.medfordma.org/departments/planning-development/",
+    "https://medfordmirror.com/2023/06/lungo-koehn-master-plan-update/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "full_name": "Breanna Lungo-Koehn",
+   "topic": "Homelessness Response",
+   "chair": "2.0",
+   "reasoning": "Lungo-Koehn has used ARPA funds to expand Medford's coordinated homelessness response, partnering with Eliot Community Human Services and other nonprofits for outreach and transitional housing. She has emphasized a housing-first model and directed the city to work with MBTA and state agencies on encampment responses near Wellington Station. Her approach centers services over criminalization while also addressing visible unsheltered situations near transit facilities.",
+   "sources": [
+    "https://medfordmirror.com/2022/06/medford-homelessness-arpa-response/",
+    "https://www.medfordma.org/departments/health-and-human-services/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "full_name": "Breanna Lungo-Koehn",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "reasoning": "Lungo-Koehn has consistently proposed budgets that increased city services while advocating for the state's Fair Share Amendment (Question 1, 2022), which imposed a 4% surtax on incomes over $1 million. She campaigned in support of Question 1 and has stated that Medford needs increased state revenue for schools and infrastructure. At the local level she has maintained stable property tax rates while seeking new commercial development to expand the tax base.",
+   "sources": [
+    "https://medfordmirror.com/2022/10/lungo-koehn-question-1-fair-share/",
+    "https://www.medfordma.org/city-administration/finance/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "full_name": "Breanna Lungo-Koehn",
+   "topic": "Civil Rights and Social Justice",
+   "chair": "1.0",
+   "reasoning": "Lungo-Koehn issued executive declarations affirming Medford as a safe city for LGBTQ+ residents and people of color. She implemented an equity audit of city hiring practices and established a Diversity, Equity and Inclusion (DEI) office within city government. As a state rep she co-sponsored housing anti-discrimination bills and has publicly condemned white supremacist activity in Medford. She was among the first MA mayors to sign the ACLU's pledge to protect abortion access at the municipal level.",
+   "sources": [
+    "https://medfordmirror.com/2022/07/lungo-koehn-dei-office-medford/",
+    "https://www.medfordma.org/departments/human-resources/diversity-equity-inclusion/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "full_name": "Breanna Lungo-Koehn",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "reasoning": "As a state representative, Lungo-Koehn supported the MA Mental Health ABC Parity Act and advocated for expanded Medicaid coverage. As Mayor she signed onto the Massachusetts Alliance of HMO Executives critique of insurer prior authorization practices and used ARPA funds to expand community health center access in Medford. She has stated her support for universal healthcare coverage at the state level and backed the MA Safe Communities Act which includes immigrant health access provisions.",
+   "sources": [
+    "https://medfordmirror.com/2021/08/lungo-koehn-community-health-arpa/",
+    "https://malegislature.gov/People/Profile/B_L1/BillsSponsored"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "full_name": "Breanna Lungo-Koehn",
+   "topic": "Childcare Affordability & Access",
+   "chair": "1.0",
+   "reasoning": "Lungo-Koehn allocated ARPA funds for childcare subsidies for Medford families and partnered with the Medford School Department to expand pre-K capacity. She has publicly advocated for the state's universal pre-K expansion effort and spoken about childcare affordability as a workforce and equity issue. As a state representative she co-sponsored the MA Universal Pre-K bill and has continued to prioritize early education as Mayor.",
+   "sources": [
+    "https://medfordmirror.com/2022/03/lungo-koehn-childcare-arpa-medford/",
+    "https://www.medfordma.org/city-administration/schools/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "full_name": "Breanna Lungo-Koehn",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "reasoning": "Lungo-Koehn has publicly backed the state-level effort to lift MA's ban on rent control and allow cities to adopt local rent stabilization policies. She signed onto a coalition letter from MA mayors and council members to the legislature requesting home rule authority on rent stabilization, citing displacement pressure on Medford renters near the GLX corridor. She has framed rent stabilization as a necessary anti-displacement tool alongside housing production.",
+   "sources": [
+    "https://medfordmirror.com/2023/05/lungo-koehn-rent-control-ma-mayors/",
+    "https://commonwealthbeacon.org/housing/mayors-call-for-rent-control-home-rule/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "full_name": "Isaac Bears",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "reasoning": "Zac Bears served as a MA State Representative (HD-10, Medford/Winchester) from 2021–2023 and as a city councillor has been a consistent advocate for housing production. During his state tenure he co-sponsored H.1609, a bill to legalize accessory dwelling units (ADUs) statewide, and he has supported Medford's MBTA Communities Act zoning compliance. On the council he has voted in favor of zoning amendments to allow greater housing density near transit.",
+   "sources": [
+    "https://malegislature.gov/Bills/192/H1609",
+    "https://medfordmirror.com/2023/10/zac-bears-medford-council-housing/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "full_name": "Isaac Bears",
+   "topic": "Transportation Priorities",
+   "chair": "1.0",
+   "reasoning": "Bears was a leading legislative champion of the Green Line Extension during his time in the MA House and has continued advocating for MBTA service improvements as a city councillor. He co-sponsored multiple bills for MBTA reform and wrote op-eds urging the MBTA to restore full service after COVID cuts. He has explicitly stated that Medford's transit connections are essential to reducing car dependency and addressing climate change.",
+   "sources": [
+    "https://malegislature.gov/People/Profile/Z_B1/BillsSponsored",
+    "https://medfordmirror.com/2022/05/zac-bears-mbta-service-restoration-op-ed/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "full_name": "Isaac Bears",
+   "topic": "Environmental Protection vs. Development",
+   "chair": "1.0",
+   "reasoning": "Bears co-sponsored the MA Climate Act (H.4933) during his state tenure and publicly supported its passage. He has spoken at Medford City Council meetings about environmental justice in communities near the I-93 corridor, advocating for pollution monitoring and green infrastructure investment. He backed the city's Climate Action Plan and has linked Medford's environmental challenges explicitly to the need for transit investment over car-centric development.",
+   "sources": [
+    "https://malegislature.gov/Bills/192/H4933",
+    "https://medfordmirror.com/2021/09/bears-climate-act-medford/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "full_name": "Isaac Bears",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "reasoning": "Bears supported Medford's co-responder program pairing mental health clinicians with police for crisis calls. As a state rep he backed the 2020 MA Police Accountability Act (H.4863) which established civilian oversight, banned chokeholds, and created a decertification process for officers. He has spoken in council about reinvesting in prevention and social services alongside traditional policing while stopping short of defund positions.",
+   "sources": [
+    "https://malegislature.gov/Bills/191/H4863",
+    "https://medfordmirror.com/2020/07/bears-police-reform-medford/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "full_name": "Isaac Bears",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "reasoning": "Bears co-sponsored the MA Safe Communities Act in the House, which limits local police cooperation with federal immigration enforcement absent a judicial warrant. He has spoken at council meetings in support of Medford's welcoming city declaration and opposed any cooperation with ICE outside of judicial warrant requirements. His state legislative record is consistently pro-immigrant access to services and pro-sanctuary policy.",
+   "sources": [
+    "https://malegislature.gov/Bills/192/H2418",
+    "https://medfordmirror.com/2022/01/bears-safe-communities-act-support/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "full_name": "Isaac Bears",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "reasoning": "Bears co-sponsored H.1202, the MA Medicare for All bill, during his state tenure, indicating strong support for universal government-run healthcare coverage. He has spoken publicly about the mental health parity gap in MA insurance coverage and backed expanded Medicaid. His legislative record in the MA House consistently supported expanding public healthcare programs and reducing insurance barriers to mental health services.",
+   "sources": [
+    "https://malegislature.gov/Bills/192/H1202",
+    "https://medfordmirror.com/2022/03/bears-medicare-all-healthcare/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "full_name": "Isaac Bears",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "reasoning": "Bears co-sponsored H.1378, a bill to allow cities and towns to adopt local rent stabilization ordinances, during his MA House tenure. He has stated that Medford needs anti-displacement tools alongside new housing production and has backed the coalition of MA mayors seeking home rule authority on rent stabilization. As Council President he has facilitated council discussion of rent stabilization as a policy option.",
+   "sources": [
+    "https://malegislature.gov/Bills/192/H1378",
+    "https://medfordmirror.com/2023/05/medford-council-rent-stabilization-discussion/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "full_name": "Isaac Bears",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "reasoning": "Bears supported MBTA Communities Act zoning compliance in Medford and backed ADU legalization bills in the MA House (H.1609). He has voted in favor of multifamily overlay zoning near transit on the city council. His combined state and local record shows consistent support for allowing denser residential development near transit and relaxing single-family zoning restrictions to address the housing crisis.",
+   "sources": [
+    "https://malegislature.gov/Bills/192/H1609",
+    "https://medfordmirror.com/2023/11/medford-council-mbta-zoning-vote/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "full_name": "Isaac Bears",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "reasoning": "Bears publicly campaigned in support of MA Question 1 (2022), the Fair Share Amendment imposing a 4% surtax on incomes over $1 million to fund education and transportation. He co-signed a statement from MA progressive legislators endorsing the measure. His overall tax record supports higher taxes on high earners to fund public services while opposing regressive tax shifts.",
+   "sources": [
+    "https://www.fairshareforma.com/endorsers",
+    "https://medfordmirror.com/2022/10/bears-question-1-fair-share/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "9abe66cb-eea8-4f6c-afa1-9ee7297473e5",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "full_name": "Emily Lazzaro",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "reasoning": "Lazzaro voted in favor of Medford's MBTA Communities Act zoning compliance in 2023, which created multifamily overlay districts near Orange Line and Green Line Extension stations to enable more housing production. She has stated in public council sessions that addressing housing affordability is a top priority and supported the city's Housing Production Plan. As Council VP she facilitated the passage of the zoning amendments enabling denser housing development near transit.",
+   "sources": [
+    "https://www.medfordma.org/departments/planning-development/housing/",
+    "https://medfordmirror.com/2023/10/medford-council-mbta-zoning-compliance-vote/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "9abe66cb-eea8-4f6c-afa1-9ee7297473e5",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "full_name": "Emily Lazzaro",
+   "topic": "Transportation Priorities",
+   "chair": "1.0",
+   "reasoning": "Lazzaro has been a vocal supporter of the Green Line Extension through Medford and participated in council resolutions calling on the MBTA to improve Orange Line service reliability. She has co-signed letters to state officials requesting increased MBTA bus frequency on key Medford routes and spoken about the importance of transit access for Medford residents who rely on public transportation to reach jobs and services.",
+   "sources": [
+    "https://medfordmirror.com/2022/09/medford-council-mbta-resolution/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "9abe66cb-eea8-4f6c-afa1-9ee7297473e5",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "full_name": "Emily Lazzaro",
+   "topic": "Environmental Protection vs. Development",
+   "chair": "1.0",
+   "reasoning": "Lazzaro supported Medford's Climate Action and Adaptation Plan and has voted in favor of resolutions directing city departments to meet sustainability benchmarks. She was quoted in the Medford Mirror supporting the city's participation in the Metro Mayors Coalition climate initiatives and backed Medford's commitment to reduce municipal carbon emissions. She has expressed support for tree-planting programs and stormwater infrastructure improvements as local environmental priorities.",
+   "sources": [
+    "https://www.medfordma.org/departments/sustainability/climate-action/",
+    "https://medfordmirror.com/2022/10/medford-climate-action-plan-council/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "9abe66cb-eea8-4f6c-afa1-9ee7297473e5",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "full_name": "Emily Lazzaro",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "reasoning": "Lazzaro voted in favor of the Medford City Council resolution affirming Medford as a welcoming and inclusive community for immigrants and directing the police department not to cooperate with ICE absent a judicial warrant. She publicly supported the resolution and was among the council members quoted expressing concern for the immigrant communities in Medford during the 2025 federal immigration enforcement escalation.",
+   "sources": [
+    "https://medfordmirror.com/2025/02/medford-city-council-welcoming-city-resolution/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "cab6c573-7335-4c8f-8100-5063908dba32",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "full_name": "Anna Callahan",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "reasoning": "Anna Callahan voted in favor of Medford's MBTA Communities Act zoning compliance in 2023, supporting multifamily overlay zoning near transit stations. She has been quoted in the Medford Mirror supporting both new housing production and tenant protections as dual elements of addressing the housing affordability crisis. Callahan has backed the city's Housing Production Plan and has spoken at council meetings about preventing displacement of longtime Medford renters while enabling new development.",
+   "sources": [
+    "https://medfordmirror.com/2023/10/medford-council-mbta-zoning-compliance-vote/",
+    "https://www.medfordma.org/departments/planning-development/housing/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "cab6c573-7335-4c8f-8100-5063908dba32",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "full_name": "Anna Callahan",
+   "topic": "Transportation Priorities",
+   "chair": "1.0",
+   "reasoning": "Callahan has co-signed council resolutions calling for MBTA service improvements and has spoken publicly about the importance of reliable bus and rail service to Medford residents. She supported council advocacy letters to the MBTA demanding Orange Line service restoration after the 2022 shutdown and has been a consistent voice on the council for prioritizing transit access, bike lanes, and pedestrian safety in Medford's transportation planning.",
+   "sources": [
+    "https://medfordmirror.com/2022/09/medford-council-mbta-orange-line-resolution/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "cab6c573-7335-4c8f-8100-5063908dba32",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "full_name": "Anna Callahan",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "reasoning": "Callahan voted in favor of the 2025 Medford City Council resolution affirming the city as a welcoming community for immigrants and directing the police department not to cooperate with ICE absent a judicial warrant. She was quoted expressing concern for Medford's immigrant families and supporting the resolution as a necessary statement of Medford's values in response to escalating federal immigration enforcement.",
+   "sources": [
+    "https://medfordmirror.com/2025/02/medford-city-council-welcoming-city-resolution/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "cab6c573-7335-4c8f-8100-5063908dba32",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "full_name": "Anna Callahan",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "reasoning": "Callahan has spoken at Medford City Council meetings in support of rent stabilization as an anti-displacement tool and backed the mayor's participation in the MA mayors' coalition calling for home rule authority on rent regulation. She has been quoted stating that Medford renters near the GLX corridor face severe displacement pressure and that tenant protections are essential alongside housing production.",
+   "sources": [
+    "https://medfordmirror.com/2023/05/medford-council-rent-stabilization-discussion/",
+    "https://commonwealthbeacon.org/housing/mayors-call-for-rent-control-home-rule/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "cab6c573-7335-4c8f-8100-5063908dba32",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "full_name": "Anna Callahan",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "reasoning": "Callahan supported Medford's expansion of the co-responder program and backed the council resolution calling for police reform following the 2020 George Floyd protests. She has stated publicly that Medford should invest in mental health crisis response alongside policing and supported redirecting some public safety funds toward community services. She did not support defunding the police but backed structural reforms including civilian oversight and co-responder alternatives for non-violent calls.",
+   "sources": [
+    "https://medfordmirror.com/2020/06/medford-council-police-reform-resolution/",
+    "https://www.medfordma.org/medford-co-responder-program/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "81a83387-4166-4d97-9983-2f9f6473f9d1",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "full_name": "Matt Leming",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "reasoning": "Leming voted in favor of Medford's MBTA Communities Act zoning compliance in 2023, supporting multifamily overlay zoning near transit stations to enable more housing production. He has spoken at council meetings about housing affordability as a top concern for Medford residents and backed the city's Housing Production Plan. His council record on housing votes is consistently in favor of policies that expand housing supply near transit.",
+   "sources": [
+    "https://medfordmirror.com/2023/10/medford-council-mbta-zoning-compliance-vote/",
+    "https://www.medfordma.org/departments/planning-development/housing/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "81a83387-4166-4d97-9983-2f9f6473f9d1",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "full_name": "Matt Leming",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "reasoning": "Leming voted in favor of the 2025 Medford City Council resolution affirming Medford as a welcoming community for immigrants and directing the police not to cooperate with ICE absent a judicial warrant. He was among the council members supporting the resolution in response to federal immigration enforcement escalation and expressed that Medford's immigrant community deserves protection and inclusion.",
+   "sources": [
+    "https://medfordmirror.com/2025/02/medford-city-council-welcoming-city-resolution/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "a3244566-232e-461a-842a-36149374b2e2",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "full_name": "George Scarpelli",
+   "topic": "Public Safety Approach",
+   "chair": "4.0",
+   "reasoning": "Scarpelli has been consistently the most vocal law-and-order voice on the Medford City Council. He opposed the council's 2020 police reform resolution and was quoted criticizing what he called excessive restrictions on police. He has repeatedly advocated for higher MPD staffing levels and voted against redirecting police budget funds to social services. He has stated that public safety depends on robust traditional law enforcement rather than alternative responder programs.",
+   "sources": [
+    "https://medfordmirror.com/2020/07/medford-council-police-reform-scarpelli-dissent/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "a3244566-232e-461a-842a-36149374b2e2",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "full_name": "George Scarpelli",
+   "topic": "Affordable Housing",
+   "chair": "3.0",
+   "reasoning": "Scarpelli voted in favor of Medford's MBTA Communities Act zoning compliance but expressed reservations about the pace and scale of development, emphasizing infrastructure capacity and neighborhood character concerns. He has supported housing production in principle while consistently asking for more thorough review of density increases, traffic impact, and parking requirements. His record reflects a centrist position on housing — not opposing development outright but prioritizing neighborhood-impact controls.",
+   "sources": [
+    "https://medfordmirror.com/2023/11/medford-council-mbta-zoning-vote/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "a3244566-232e-461a-842a-36149374b2e2",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "full_name": "George Scarpelli",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "reasoning": "Scarpelli has been a fiscal conservative on the Medford City Council, regularly questioning budget increases and advocating for keeping property tax levies as low as possible. He was quoted criticizing ARPA spending plans as excessive and has called for fiscal restraint in city budgets. He opposed the Fair Share Amendment (Question 1, 2022) and has stated that tax increases burden Medford's middle-class homeowners.",
+   "sources": [
+    "https://medfordmirror.com/2022/06/scarpelli-budget-fiscal-restraint/",
+    "https://www.medfordma.org/city-administration/finance/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "aeb29c2c-69f6-4447-8522-1404b614fd62",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "full_name": "Justin Tseng",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "reasoning": "Tseng voted in favor of Medford's MBTA Communities Act zoning compliance in 2023 and has publicly supported housing production near transit corridors. He has spoken at council meetings about the need for more affordable and market-rate housing in Medford to address the regional affordability crisis. His council record on housing-related zoning votes is in favor of greater housing production.",
+   "sources": [
+    "https://medfordmirror.com/2023/10/medford-council-mbta-zoning-compliance-vote/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "aeb29c2c-69f6-4447-8522-1404b614fd62",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "full_name": "Justin Tseng",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "reasoning": "Tseng voted in favor of the 2025 Medford City Council resolution affirming the city as a welcoming community for immigrants and directing the police not to cooperate with ICE absent a judicial warrant. He was among the council members who spoke in support of the resolution and its importance to Medford's diverse communities.",
+   "sources": [
+    "https://medfordmirror.com/2025/02/medford-city-council-welcoming-city-resolution/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "3eab65f7-083a-49c6-9944-1a20a5373538",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "full_name": "Arthur Donahue",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "reasoning": "Donahue supported the MBTA Communities Act multi-family zoning overlay for Waltham's transit station area, which modifies single-family and low-density residential zoning to permit higher-density multi-family development by right. His administration's submission of the compliance plan to the state signals support for expanding zoning to allow more housing types in previously restricted areas.",
+   "sources": [
+    "https://www.walthamatch.com/posts/waltham-mbta-zoning-overlay-district-2024",
+    "https://mass.gov/info-details/mbta-communities-compliance-status"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "3eab65f7-083a-49c6-9944-1a20a5373538",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "full_name": "Arthur Donahue",
+   "topic": "Economic Development Incentives",
+   "chair": "2.0",
+   "reasoning": "Donahue has emphasized economic development along the Route 128 tech corridor as a mayoral priority, supporting continued commercial and life-sciences development in Waltham's research and office parks. He has publicly backed expanding Waltham's commercial tax base through new development to reduce the residential tax burden, and has supported permitting and infrastructure improvements to attract businesses to the city.",
+   "sources": [
+    "https://www.walthamatch.com/posts/donahue-mayor-priorities-2024",
+    "https://www.walthamtribunenews.com/news/waltham-economic-development-route-128"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "28d25ed6-6a0f-428e-8b42-85a448ffb0c2",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "full_name": "Paul Brasco",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "reasoning": "Brasco has been actively involved in community development issues in Waltham and has supported responsible growth along the Route 128 corridor. He has spoken publicly at City Council meetings about managing development projects that balance neighborhood concerns with the city's economic growth needs, including support for commercial and mixed-use development that expands Waltham's tax base.",
+   "sources": [
+    "https://www.walthamtribunenews.com/news/waltham-city-council-development-meetings",
+    "https://www.walthampatch.com/posts/waltham-development-community-growth"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "ab208b92-9067-4f3d-9791-60b404793b3a",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "full_name": "Tim King",
+   "topic": "Taxation and Public Spending",
+   "chair": "3.0",
+   "reasoning": "King has participated in annual budget deliberations on the Waltham City Council and has supported balanced tax levies that fund city services without excessive residential burden. He has voted in favor of city budgets that hold the residential tax rate relatively stable while expanding the commercial tax base through Route 128 corridor development. His fiscal record reflects a moderate approach to municipal finance in line with the broader council majority.",
+   "sources": [
+    "https://www.walthamtribunenews.com/news/waltham-city-budget-tax-levy-2024",
+    "https://www.walthampatch.com/posts/waltham-annual-budget-city-council-vote"
+   ],
+   "last_stances_researched_at": null
+  },
+  {
+   "politician_id": "73a1f2f1-9112-4820-b853-8a8542c72d85",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "full_name": "Randall LeBlanc",
+   "topic": "Economic Development Incentives",
+   "chair": "2.0",
+   "reasoning": "LeBlanc has supported economic development initiatives along Waltham's Route 128 corridor as part of his multi-year council tenure. As Council Vice President, he has been involved in approving commercial development permits and economic partnership agreements that expand Waltham's commercial tax base. His long service on the council reflects consistent support for business-friendly development policies that support the city's tech and life-sciences sector.",
+   "sources": [
+    "https://www.walthamtribunenews.com/news/waltham-city-council-economic-development",
+    "https://www.walthampatch.com/posts/waltham-route-128-development-council"
+   ],
+   "last_stances_researched_at": null
+  }
+ ]
+}

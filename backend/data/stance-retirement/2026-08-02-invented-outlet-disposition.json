@@ -1,0 +1,1662 @@
+{
+ "rows": 61,
+ "strip": 3,
+ "retire": 58,
+ "fetches": [
+  {
+   "url": "https://newtonma.gov/government/city-council",
+   "http": 404,
+   "title": "| City of Newton, MA",
+   "body_len": 9012,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+   "http": 404,
+   "title": "Custom404 • Alhambra, CA • CivicEngage",
+   "body_len": 1188,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.medfordma.org/departments/sustainability/climate-action/",
+   "http": 404,
+   "title": "404 - Page Not Found - City of Medford",
+   "body_len": 8595,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.medfordma.org/departments/economic-community-development/",
+   "http": 404,
+   "title": "404 - Page Not Found - City of Medford",
+   "body_len": 8595,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.medfordma.org/medford-co-responder-program/",
+   "http": 404,
+   "title": "404 - Page Not Found - City of Medford",
+   "body_len": 8595,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.bostonglobe.com/2025/01/28/metro/mass-mayors-immigration-enforcement/",
+   "http": 404,
+   "title": "The Boston Globe | New England news, weather and sports",
+   "body_len": 695,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.medfordma.org/departments/planning-development/",
+   "http": 404,
+   "title": "404 - Page Not Found - City of Medford",
+   "body_len": 8595,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.medfordma.org/departments/health-and-human-services/",
+   "http": 404,
+   "title": "404 - Page Not Found - City of Medford",
+   "body_len": 8595,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.medfordma.org/city-administration/finance/",
+   "http": 404,
+   "title": "404 - Page Not Found - City of Medford",
+   "body_len": 8595,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.medfordma.org/departments/human-resources/diversity-equity-inclusion/",
+   "http": 404,
+   "title": "404 - Page Not Found - City of Medford",
+   "body_len": 8595,
+   "soft_404": true
+  },
+  {
+   "url": "https://malegislature.gov/People/Profile/B_L1/BillsSponsored",
+   "http": 404,
+   "title": "404 - Page Not Found",
+   "body_len": 4394,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.medfordma.org/city-administration/schools/",
+   "http": 404,
+   "title": "404 - Page Not Found - City of Medford",
+   "body_len": 8595,
+   "soft_404": true
+  },
+  {
+   "url": "https://commonwealthbeacon.org/housing/mayors-call-for-rent-control-home-rule/",
+   "http": 404,
+   "title": "Page not found - CommonWealth Beacon",
+   "body_len": 1743,
+   "soft_404": true
+  },
+  {
+   "url": "https://malegislature.gov/Bills/192/H1609",
+   "http": 200,
+   "title": "Bill H.1609",
+   "body_len": 6060,
+   "soft_404": false
+  },
+  {
+   "url": "https://malegislature.gov/People/Profile/Z_B1/BillsSponsored",
+   "http": 404,
+   "title": "404 - Page Not Found",
+   "body_len": 4394,
+   "soft_404": true
+  },
+  {
+   "url": "https://malegislature.gov/Bills/192/H4933",
+   "http": 200,
+   "title": "Order H.4933",
+   "body_len": 6308,
+   "soft_404": false
+  },
+  {
+   "url": "https://malegislature.gov/Bills/191/H4863",
+   "http": 200,
+   "title": "Bill H.4863",
+   "body_len": 7076,
+   "soft_404": false
+  },
+  {
+   "url": "https://malegislature.gov/Bills/192/H2418",
+   "http": 200,
+   "title": "Bill H.2418",
+   "body_len": 6689,
+   "soft_404": false
+  },
+  {
+   "url": "https://malegislature.gov/Bills/192/H1202",
+   "http": 200,
+   "title": "Bill H.1202",
+   "body_len": 6208,
+   "soft_404": false
+  },
+  {
+   "url": "https://malegislature.gov/Bills/192/H1378",
+   "http": 200,
+   "title": "Bill H.1378",
+   "body_len": 6421,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.fairshareforma.com/endorsers",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.medfordma.org/departments/planning-development/housing/",
+   "http": 404,
+   "title": "404 - Page Not Found - City of Medford",
+   "body_len": 8595,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.medfordma.org/city-council/agendas-minutes/",
+   "http": 404,
+   "title": "404 - Page Not Found - City of Medford",
+   "body_len": 8595,
+   "soft_404": true
+  },
+  {
+   "url": "https://mass.gov/info-details/mbta-communities-compliance-status",
+   "http": 404,
+   "title": "Not found | Mass.gov",
+   "body_len": 289,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.walthampatch.com/posts/waltham-development-community-growth",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.walthampatch.com/posts/waltham-annual-budget-city-council-vote",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.walthampatch.com/posts/waltham-route-128-development-council",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://newtonma.gov/government/mayor",
+   "http": 200,
+   "title": "Mayor Laredo | City of Newton, MA",
+   "body_len": 14098,
+   "soft_404": false
+  },
+  {
+   "url": "https://newtonma.gov/government/city-council/city-council-meetings",
+   "http": 404,
+   "title": "| City of Newton, MA",
+   "body_len": 9034,
+   "soft_404": false
+  }
+ ],
+ "dispositions": [
+  {
+   "politician_id": "dee11bee-c034-49b1-ba4c-30f94622ddd3",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Brittany Hume Charm",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "invented": [
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "keep": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonma.gov/government/city-council",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "583a5fab-16d5-40c5-8c6c-25b9ea4b97ae",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Cyrus Dahmubed",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "invented": [
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "keep": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonma.gov/government/city-council",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Brian Golden",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "invented": [
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "keep": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonma.gov/government/city-council",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "politician": "Brian Golden",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "invented": [
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "keep": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonma.gov/government/city-council",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Brian Golden",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "invented": [
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "keep": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonma.gov/government/city-council",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "5b590765-e701-41cf-b0c3-e7efdeea16d3",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Lisa Gordon",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "invented": [
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "keep": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonma.gov/government/city-council",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "f22187bb-dc57-4088-bb19-8bc39bcb95c9",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Katherine Lee",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "sources": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+    "https://alhambraource.com/2021/06/downtown-specific-plan-alhambra/"
+   ],
+   "invented": [
+    "https://alhambraource.com/2021/06/downtown-specific-plan-alhambra/"
+   ],
+   "keep": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "f22187bb-dc57-4088-bb19-8bc39bcb95c9",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "politician": "Katherine Lee",
+   "topic": "Environmental Protection vs. Development",
+   "chair": "2.0",
+   "sources": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+    "https://alhambraource.com/2022/08/alhambra-ev-charging-ordinance/"
+   ],
+   "invented": [
+    "https://alhambraource.com/2022/08/alhambra-ev-charging-ordinance/"
+   ],
+   "keep": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "27441d13-d90b-48e8-bb35-3b7da5d24c6e",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Ross J. Maza",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "sources": [
+    "https://alhambraource.com/2022/03/alhambra-mixed-use-development-fremont/",
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+   ],
+   "invented": [
+    "https://alhambraource.com/2022/03/alhambra-mixed-use-development-fremont/"
+   ],
+   "keep": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Environmental Protection vs. Development",
+   "chair": "1.0",
+   "sources": [
+    "https://www.medfordma.org/departments/sustainability/climate-action/",
+    "https://medfordmirror.com/2022/09/lungo-koehn-climate-action-plan-medford/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2022/09/lungo-koehn-climate-action-plan-medford/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/departments/sustainability/climate-action/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/departments/sustainability/climate-action/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Economic Development Incentives",
+   "chair": "2.0",
+   "sources": [
+    "https://www.medfordma.org/departments/economic-community-development/",
+    "https://medfordmirror.com/2021/10/arpa-small-business-grants-medford/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2021/10/arpa-small-business-grants-medford/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/departments/economic-community-development/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/departments/economic-community-development/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "sources": [
+    "https://medfordmirror.com/2020/06/lungo-koehn-police-reform-medford/",
+    "https://www.medfordma.org/medford-co-responder-program/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2020/06/lungo-koehn-police-reform-medford/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/medford-co-responder-program/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/medford-co-responder-program/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "sources": [
+    "https://medfordmirror.com/2025/02/medford-mayor-immigration-welcoming-city/",
+    "https://www.bostonglobe.com/2025/01/28/metro/mass-mayors-immigration-enforcement/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2025/02/medford-mayor-immigration-welcoming-city/"
+   ],
+   "keep": [
+    "https://www.bostonglobe.com/2025/01/28/metro/mass-mayors-immigration-enforcement/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.bostonglobe.com/2025/01/28/metro/mass-mayors-immigration-enforcement/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "sources": [
+    "https://www.medfordma.org/departments/planning-development/",
+    "https://medfordmirror.com/2023/06/lungo-koehn-master-plan-update/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2023/06/lungo-koehn-master-plan-update/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/departments/planning-development/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/departments/planning-development/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Homelessness Response",
+   "chair": "2.0",
+   "sources": [
+    "https://medfordmirror.com/2022/06/medford-homelessness-arpa-response/",
+    "https://www.medfordma.org/departments/health-and-human-services/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2022/06/medford-homelessness-arpa-response/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/departments/health-and-human-services/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/departments/health-and-human-services/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "sources": [
+    "https://medfordmirror.com/2022/10/lungo-koehn-question-1-fair-share/",
+    "https://www.medfordma.org/city-administration/finance/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2022/10/lungo-koehn-question-1-fair-share/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/city-administration/finance/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/city-administration/finance/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Civil Rights and Social Justice",
+   "chair": "1.0",
+   "sources": [
+    "https://medfordmirror.com/2022/07/lungo-koehn-dei-office-medford/",
+    "https://www.medfordma.org/departments/human-resources/diversity-equity-inclusion/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2022/07/lungo-koehn-dei-office-medford/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/departments/human-resources/diversity-equity-inclusion/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/departments/human-resources/diversity-equity-inclusion/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "sources": [
+    "https://medfordmirror.com/2021/08/lungo-koehn-community-health-arpa/",
+    "https://malegislature.gov/People/Profile/B_L1/BillsSponsored"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2021/08/lungo-koehn-community-health-arpa/"
+   ],
+   "keep": [
+    "https://malegislature.gov/People/Profile/B_L1/BillsSponsored"
+   ],
+   "per_source": [
+    {
+     "url": "https://malegislature.gov/People/Profile/B_L1/BillsSponsored",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Childcare Affordability & Access",
+   "chair": "1.0",
+   "sources": [
+    "https://medfordmirror.com/2022/03/lungo-koehn-childcare-arpa-medford/",
+    "https://www.medfordma.org/city-administration/schools/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2022/03/lungo-koehn-childcare-arpa-medford/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/city-administration/schools/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/city-administration/schools/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "sources": [
+    "https://medfordmirror.com/2023/05/lungo-koehn-rent-control-ma-mayors/",
+    "https://commonwealthbeacon.org/housing/mayors-call-for-rent-control-home-rule/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2023/05/lungo-koehn-rent-control-ma-mayors/"
+   ],
+   "keep": [
+    "https://commonwealthbeacon.org/housing/mayors-call-for-rent-control-home-rule/"
+   ],
+   "per_source": [
+    {
+     "url": "https://commonwealthbeacon.org/housing/mayors-call-for-rent-control-home-rule/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Isaac Bears",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "sources": [
+    "https://malegislature.gov/Bills/192/H1609",
+    "https://medfordmirror.com/2023/10/zac-bears-medford-council-housing/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2023/10/zac-bears-medford-council-housing/"
+   ],
+   "keep": [
+    "https://malegislature.gov/Bills/192/H1609"
+   ],
+   "per_source": [
+    {
+     "url": "https://malegislature.gov/Bills/192/H1609",
+     "verdict": "READABLE_BUT_SILENT"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Isaac Bears",
+   "topic": "Transportation Priorities",
+   "chair": "1.0",
+   "sources": [
+    "https://malegislature.gov/People/Profile/Z_B1/BillsSponsored",
+    "https://medfordmirror.com/2022/05/zac-bears-mbta-service-restoration-op-ed/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2022/05/zac-bears-mbta-service-restoration-op-ed/"
+   ],
+   "keep": [
+    "https://malegislature.gov/People/Profile/Z_B1/BillsSponsored"
+   ],
+   "per_source": [
+    {
+     "url": "https://malegislature.gov/People/Profile/Z_B1/BillsSponsored",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "politician": "Isaac Bears",
+   "topic": "Environmental Protection vs. Development",
+   "chair": "1.0",
+   "sources": [
+    "https://malegislature.gov/Bills/192/H4933",
+    "https://medfordmirror.com/2021/09/bears-climate-act-medford/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2021/09/bears-climate-act-medford/"
+   ],
+   "keep": [
+    "https://malegislature.gov/Bills/192/H4933"
+   ],
+   "per_source": [
+    {
+     "url": "https://malegislature.gov/Bills/192/H4933",
+     "verdict": "READABLE_BUT_SILENT"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Isaac Bears",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "sources": [
+    "https://malegislature.gov/Bills/191/H4863",
+    "https://medfordmirror.com/2020/07/bears-police-reform-medford/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2020/07/bears-police-reform-medford/"
+   ],
+   "keep": [
+    "https://malegislature.gov/Bills/191/H4863"
+   ],
+   "per_source": [
+    {
+     "url": "https://malegislature.gov/Bills/191/H4863",
+     "verdict": "READABLE_BUT_SILENT"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Isaac Bears",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "sources": [
+    "https://malegislature.gov/Bills/192/H2418",
+    "https://medfordmirror.com/2022/01/bears-safe-communities-act-support/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2022/01/bears-safe-communities-act-support/"
+   ],
+   "keep": [
+    "https://malegislature.gov/Bills/192/H2418"
+   ],
+   "per_source": [
+    {
+     "url": "https://malegislature.gov/Bills/192/H2418",
+     "verdict": "READABLE_BUT_SILENT"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "politician": "Isaac Bears",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "sources": [
+    "https://malegislature.gov/Bills/192/H1202",
+    "https://medfordmirror.com/2022/03/bears-medicare-all-healthcare/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2022/03/bears-medicare-all-healthcare/"
+   ],
+   "keep": [
+    "https://malegislature.gov/Bills/192/H1202"
+   ],
+   "per_source": [
+    {
+     "url": "https://malegislature.gov/Bills/192/H1202",
+     "verdict": "READABLE_BUT_SILENT"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "politician": "Isaac Bears",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "sources": [
+    "https://malegislature.gov/Bills/192/H1378",
+    "https://medfordmirror.com/2023/05/medford-council-rent-stabilization-discussion/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2023/05/medford-council-rent-stabilization-discussion/"
+   ],
+   "keep": [
+    "https://malegislature.gov/Bills/192/H1378"
+   ],
+   "per_source": [
+    {
+     "url": "https://malegislature.gov/Bills/192/H1378",
+     "verdict": "READABLE_BUT_SILENT"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Isaac Bears",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "sources": [
+    "https://malegislature.gov/Bills/192/H1609",
+    "https://medfordmirror.com/2023/11/medford-council-mbta-zoning-vote/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2023/11/medford-council-mbta-zoning-vote/"
+   ],
+   "keep": [
+    "https://malegislature.gov/Bills/192/H1609"
+   ],
+   "per_source": [
+    {
+     "url": "https://malegislature.gov/Bills/192/H1609",
+     "verdict": "READABLE_BUT_SILENT"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Isaac Bears",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "sources": [
+    "https://www.fairshareforma.com/endorsers",
+    "https://medfordmirror.com/2022/10/bears-question-1-fair-share/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2022/10/bears-question-1-fair-share/"
+   ],
+   "keep": [
+    "https://www.fairshareforma.com/endorsers"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.fairshareforma.com/endorsers",
+     "verdict": "UNREACHABLE"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "9abe66cb-eea8-4f6c-afa1-9ee7297473e5",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Emily Lazzaro",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "sources": [
+    "https://www.medfordma.org/departments/planning-development/housing/",
+    "https://medfordmirror.com/2023/10/medford-council-mbta-zoning-compliance-vote/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2023/10/medford-council-mbta-zoning-compliance-vote/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/departments/planning-development/housing/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/departments/planning-development/housing/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "9abe66cb-eea8-4f6c-afa1-9ee7297473e5",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Emily Lazzaro",
+   "topic": "Transportation Priorities",
+   "chair": "1.0",
+   "sources": [
+    "https://medfordmirror.com/2022/09/medford-council-mbta-resolution/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2022/09/medford-council-mbta-resolution/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/city-council/agendas-minutes/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "9abe66cb-eea8-4f6c-afa1-9ee7297473e5",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "politician": "Emily Lazzaro",
+   "topic": "Environmental Protection vs. Development",
+   "chair": "1.0",
+   "sources": [
+    "https://www.medfordma.org/departments/sustainability/climate-action/",
+    "https://medfordmirror.com/2022/10/medford-climate-action-plan-council/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2022/10/medford-climate-action-plan-council/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/departments/sustainability/climate-action/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/departments/sustainability/climate-action/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "9abe66cb-eea8-4f6c-afa1-9ee7297473e5",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Emily Lazzaro",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "sources": [
+    "https://medfordmirror.com/2025/02/medford-city-council-welcoming-city-resolution/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2025/02/medford-city-council-welcoming-city-resolution/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/city-council/agendas-minutes/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "cab6c573-7335-4c8f-8100-5063908dba32",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Anna Callahan",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "sources": [
+    "https://medfordmirror.com/2023/10/medford-council-mbta-zoning-compliance-vote/",
+    "https://www.medfordma.org/departments/planning-development/housing/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2023/10/medford-council-mbta-zoning-compliance-vote/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/departments/planning-development/housing/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/departments/planning-development/housing/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "cab6c573-7335-4c8f-8100-5063908dba32",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Anna Callahan",
+   "topic": "Transportation Priorities",
+   "chair": "1.0",
+   "sources": [
+    "https://medfordmirror.com/2022/09/medford-council-mbta-orange-line-resolution/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2022/09/medford-council-mbta-orange-line-resolution/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/city-council/agendas-minutes/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "cab6c573-7335-4c8f-8100-5063908dba32",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Anna Callahan",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "sources": [
+    "https://medfordmirror.com/2025/02/medford-city-council-welcoming-city-resolution/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2025/02/medford-city-council-welcoming-city-resolution/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/city-council/agendas-minutes/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "cab6c573-7335-4c8f-8100-5063908dba32",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "politician": "Anna Callahan",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "sources": [
+    "https://medfordmirror.com/2023/05/medford-council-rent-stabilization-discussion/",
+    "https://commonwealthbeacon.org/housing/mayors-call-for-rent-control-home-rule/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2023/05/medford-council-rent-stabilization-discussion/"
+   ],
+   "keep": [
+    "https://commonwealthbeacon.org/housing/mayors-call-for-rent-control-home-rule/"
+   ],
+   "per_source": [
+    {
+     "url": "https://commonwealthbeacon.org/housing/mayors-call-for-rent-control-home-rule/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "cab6c573-7335-4c8f-8100-5063908dba32",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Anna Callahan",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "sources": [
+    "https://medfordmirror.com/2020/06/medford-council-police-reform-resolution/",
+    "https://www.medfordma.org/medford-co-responder-program/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2020/06/medford-council-police-reform-resolution/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/medford-co-responder-program/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/medford-co-responder-program/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "81a83387-4166-4d97-9983-2f9f6473f9d1",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Matt Leming",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "sources": [
+    "https://medfordmirror.com/2023/10/medford-council-mbta-zoning-compliance-vote/",
+    "https://www.medfordma.org/departments/planning-development/housing/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2023/10/medford-council-mbta-zoning-compliance-vote/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/departments/planning-development/housing/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/departments/planning-development/housing/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "81a83387-4166-4d97-9983-2f9f6473f9d1",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Matt Leming",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "sources": [
+    "https://medfordmirror.com/2025/02/medford-city-council-welcoming-city-resolution/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2025/02/medford-city-council-welcoming-city-resolution/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/city-council/agendas-minutes/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "e4df4fce-9289-43db-8568-e316a73ae931",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Jeff Maloney",
+   "topic": "Public Safety Approach",
+   "chair": "3.0",
+   "sources": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+    "https://alhambraource.com/2022/06/alhambra-public-safety-budget/"
+   ],
+   "invented": [
+    "https://alhambraource.com/2022/06/alhambra-public-safety-budget/"
+   ],
+   "keep": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "a3244566-232e-461a-842a-36149374b2e2",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "George Scarpelli",
+   "topic": "Public Safety Approach",
+   "chair": "4.0",
+   "sources": [
+    "https://medfordmirror.com/2020/07/medford-council-police-reform-scarpelli-dissent/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2020/07/medford-council-police-reform-scarpelli-dissent/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/city-council/agendas-minutes/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "a3244566-232e-461a-842a-36149374b2e2",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "George Scarpelli",
+   "topic": "Affordable Housing",
+   "chair": "3.0",
+   "sources": [
+    "https://medfordmirror.com/2023/11/medford-council-mbta-zoning-vote/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2023/11/medford-council-mbta-zoning-vote/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/city-council/agendas-minutes/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "a3244566-232e-461a-842a-36149374b2e2",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "George Scarpelli",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://medfordmirror.com/2022/06/scarpelli-budget-fiscal-restraint/",
+    "https://www.medfordma.org/city-administration/finance/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2022/06/scarpelli-budget-fiscal-restraint/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/city-administration/finance/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/city-administration/finance/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "abad7f66-e2d3-4edf-a35f-2170c2bd4cbb",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Noya Wang",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "sources": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+    "https://alhambraource.com/2021/06/downtown-specific-plan-alhambra/"
+   ],
+   "invented": [
+    "https://alhambraource.com/2021/06/downtown-specific-plan-alhambra/"
+   ],
+   "keep": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "abad7f66-e2d3-4edf-a35f-2170c2bd4cbb",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "politician": "Noya Wang",
+   "topic": "Environmental Protection vs. Development",
+   "chair": "2.0",
+   "sources": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+    "https://alhambraource.com/2022/08/alhambra-ev-charging-ordinance/"
+   ],
+   "invented": [
+    "https://alhambraource.com/2022/08/alhambra-ev-charging-ordinance/"
+   ],
+   "keep": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "aeb29c2c-69f6-4447-8522-1404b614fd62",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Justin Tseng",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "sources": [
+    "https://medfordmirror.com/2023/10/medford-council-mbta-zoning-compliance-vote/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2023/10/medford-council-mbta-zoning-compliance-vote/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/city-council/agendas-minutes/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "aeb29c2c-69f6-4447-8522-1404b614fd62",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Justin Tseng",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "sources": [
+    "https://medfordmirror.com/2025/02/medford-city-council-welcoming-city-resolution/",
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "invented": [
+    "https://medfordmirror.com/2025/02/medford-city-council-welcoming-city-resolution/"
+   ],
+   "keep": [
+    "https://www.medfordma.org/city-council/agendas-minutes/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/city-council/agendas-minutes/",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "f6d52199-b1d1-48d3-9972-66b8d229acdc",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Adele Andrade-Stadler",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "sources": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+    "https://alhambraource.com/2021/06/downtown-specific-plan-alhambra/"
+   ],
+   "invented": [
+    "https://alhambraource.com/2021/06/downtown-specific-plan-alhambra/"
+   ],
+   "keep": [
+    "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "3eab65f7-083a-49c6-9944-1a20a5373538",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Arthur Donahue",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "sources": [
+    "https://www.walthamatch.com/posts/waltham-mbta-zoning-overlay-district-2024",
+    "https://mass.gov/info-details/mbta-communities-compliance-status"
+   ],
+   "invented": [
+    "https://www.walthamatch.com/posts/waltham-mbta-zoning-overlay-district-2024"
+   ],
+   "keep": [
+    "https://mass.gov/info-details/mbta-communities-compliance-status"
+   ],
+   "per_source": [
+    {
+     "url": "https://mass.gov/info-details/mbta-communities-compliance-status",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "3eab65f7-083a-49c6-9944-1a20a5373538",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "politician": "Arthur Donahue",
+   "topic": "Economic Development Incentives",
+   "chair": "2.0",
+   "sources": [
+    "https://www.walthamatch.com/posts/donahue-mayor-priorities-2024",
+    "https://www.walthamtribunenews.com/news/waltham-economic-development-route-128"
+   ],
+   "invented": [
+    "https://www.walthamatch.com/posts/donahue-mayor-priorities-2024",
+    "https://www.walthamtribunenews.com/news/waltham-economic-development-route-128"
+   ],
+   "keep": [],
+   "per_source": [],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "28d25ed6-6a0f-428e-8b42-85a448ffb0c2",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Paul Brasco",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "sources": [
+    "https://www.walthamtribunenews.com/news/waltham-city-council-development-meetings",
+    "https://www.walthampatch.com/posts/waltham-development-community-growth"
+   ],
+   "invented": [
+    "https://www.walthamtribunenews.com/news/waltham-city-council-development-meetings"
+   ],
+   "keep": [
+    "https://www.walthampatch.com/posts/waltham-development-community-growth"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.walthampatch.com/posts/waltham-development-community-growth",
+     "verdict": "UNREACHABLE"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "ab208b92-9067-4f3d-9791-60b404793b3a",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Tim King",
+   "topic": "Taxation and Public Spending",
+   "chair": "3.0",
+   "sources": [
+    "https://www.walthamtribunenews.com/news/waltham-city-budget-tax-levy-2024",
+    "https://www.walthampatch.com/posts/waltham-annual-budget-city-council-vote"
+   ],
+   "invented": [
+    "https://www.walthamtribunenews.com/news/waltham-city-budget-tax-levy-2024"
+   ],
+   "keep": [
+    "https://www.walthampatch.com/posts/waltham-annual-budget-city-council-vote"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.walthampatch.com/posts/waltham-annual-budget-city-council-vote",
+     "verdict": "UNREACHABLE"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "73a1f2f1-9112-4820-b853-8a8542c72d85",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "politician": "Randall LeBlanc",
+   "topic": "Economic Development Incentives",
+   "chair": "2.0",
+   "sources": [
+    "https://www.walthamtribunenews.com/news/waltham-city-council-economic-development",
+    "https://www.walthampatch.com/posts/waltham-route-128-development-council"
+   ],
+   "invented": [
+    "https://www.walthamtribunenews.com/news/waltham-city-council-economic-development"
+   ],
+   "keep": [
+    "https://www.walthampatch.com/posts/waltham-route-128-development-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.walthampatch.com/posts/waltham-route-128-development-council",
+     "verdict": "UNREACHABLE"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "9c64b145-cce4-4b31-a4e0-c041a12af62b",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Marc C. Laredo",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "sources": [
+    "https://newtonma.gov/government/mayor",
+    "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html"
+   ],
+   "invented": [
+    "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html"
+   ],
+   "keep": [
+    "https://newtonma.gov/government/mayor"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonma.gov/government/mayor",
+     "verdict": "SUPPORTS"
+    }
+   ],
+   "disposition": "STRIP"
+  },
+  {
+   "politician_id": "9c64b145-cce4-4b31-a4e0-c041a12af62b",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Marc C. Laredo",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "sources": [
+    "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html",
+    "https://newtonma.gov/government/city-council/city-council-meetings"
+   ],
+   "invented": [
+    "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html"
+   ],
+   "keep": [
+    "https://newtonma.gov/government/city-council/city-council-meetings"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonma.gov/government/city-council/city-council-meetings",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "9c64b145-cce4-4b31-a4e0-c041a12af62b",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Marc C. Laredo",
+   "topic": "Transportation Priorities",
+   "chair": "2.0",
+   "sources": [
+    "https://newtonma.gov/government/mayor",
+    "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html"
+   ],
+   "invented": [
+    "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html"
+   ],
+   "keep": [
+    "https://newtonma.gov/government/mayor"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonma.gov/government/mayor",
+     "verdict": "SUPPORTS"
+    }
+   ],
+   "disposition": "STRIP"
+  },
+  {
+   "politician_id": "9c64b145-cce4-4b31-a4e0-c041a12af62b",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Marc C. Laredo",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "sources": [
+    "https://newtonma.gov/government/mayor",
+    "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html"
+   ],
+   "invented": [
+    "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html"
+   ],
+   "keep": [
+    "https://newtonma.gov/government/mayor"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonma.gov/government/mayor",
+     "verdict": "SUPPORTS"
+    }
+   ],
+   "disposition": "STRIP"
+  },
+  {
+   "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Susan Albright",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "invented": [
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "keep": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonma.gov/government/city-council",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "politician": "Susan Albright",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "invented": [
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "keep": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonma.gov/government/city-council",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  },
+  {
+   "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Susan Albright",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "sources": [
+    "https://newtonma.gov/government/city-council",
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "invented": [
+    "https://www.newtonvillearea.com/category/city-council"
+   ],
+   "keep": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonma.gov/government/city-council",
+     "verdict": "HTTP_404"
+    }
+   ],
+   "disposition": "RETIRE"
+  }
+ ]
+}
