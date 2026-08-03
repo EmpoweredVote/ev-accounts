@@ -102,29 +102,49 @@ while leaving the completeness denominator alone.
 
 ### What remains, and why I did not extend it further
 
-1543 fixed the **federal** side of these two topics only, because that is what was decided. **3,054
-out-of-tier answers remain**, and the composition has shifted — the problem is now overwhelmingly a *state*
-one:
+### ✅ Also resolved: `Affordable Housing` at STATE tier — migration 1544, applied
 
-| holder tier | answers out of tier | largest single bucket |
-|---|---|---|
-| **state** | **1,975** | **Affordable Housing, 712** — still has no `state` row |
-| local | 733 | Taxation and Public Spending, 135 |
-| federal | 346 | Judicial Interpretation, 61 (judicial-only) |
+Same decision, same shape. `Affordable Housing` had only `local` before 1543 and `federal+local` after it,
+leaving **712 state-legislator housing stances invisible — the single largest out-of-tier bucket in the
+corpus**, bigger than everything 1543 fixed. States run the LIHTC allocating agencies, set landlord-tenant
+and rent-control law, and preempt or enable local zoning, so the row was missing rather than the stances
+wrong. 1544 adds it. No stance data changed (33,175 / 33,721 asserted).
 
-⚠ **`Affordable Housing` still carries no `state` row**, so 712 state-legislator housing stances remain
-invisible — a bigger bucket than everything 1543 fixed. It is the obvious next candidate for the same
-treatment, and it was left alone only because the decision covered federal.
+`Affordable Housing` is now `federal + state + local` and deliberately **not** `judicial`. Verified live:
+`applies_federal/state/local = true`, `applies_judicial = false`. State required topics **26 → 27**.
 
-The remaining 3,054 still split along the same (A)/(B) line, and the split is now clearer:
-- **(B) under-scoped, add the row:** topics a tier plainly legislates — `Affordable Housing` for state,
-  `Taxation and Public Spending` for local (many cities set property tax rates).
-- **(A) genuinely inapplicable, retire the rows:** municipal-only questions answered by the wrong tier —
-  `City Sanitation and Cleanliness`, `Residential Zoning` for federal officials, and the judicial-only
-  topics held by non-judges.
+⚠ With all three tiers present, DISPLAY behaviour is identical to a topic having no rows at all (none
+defaults to all-true) — but the rows are not redundant, because they are what puts the topic in each tier's
+**required** set for compass completeness.
 
-**Recommended next step:** decide per topic, not globally, then add a gate in the shape of
-`check-stance-sources.mjs` keyed on out-of-tier count so the number cannot regrow once settled. Note the
-gate must classify tiers with **`upper(governments.type)`** — the values are `NATIONAL`/`STATE`/`LOCAL` plus
+## Running total and what is left
+
+| | out-of-tier answers |
+|---|---|
+| before 1543 | 3,325 |
+| after 1543 (federal housing + criminal justice, 271) | 3,054 |
+| **after 1544 (state housing, 712)** | **2,342** |
+
+The remaining 2,342, largest buckets first:
+
+| holder tier | topic | topic's scope | answers | likely call |
+|---|---|---|---|---|
+| state | Local Immigration Enforcement | local | 263 | arguable — states pass sanctuary preemption |
+| state | Public Safety Approach | local | 249 | arguable |
+| state | United States Tariff Policy | fed | 141 | **(A) retire** — states set no tariffs |
+| **state** | **Criminal Justice Approach** | **fed** (+judicial) | **140** | **(B) add `state`** |
+| local | Taxation and Public Spending | fed+state | 135 | arguable — many cities set property tax |
+| state | Residential Zoning | local | 107 | arguable — states increasingly preempt zoning |
+| state | Social Security | fed | 104 | **(A) retire** — not a state programme |
+| federal | Judicial Interpretation | judicial-only | 61 | arguable |
+
+🔴 **The clearest next one is `Criminal Justice Approach` at state tier.** 1543 gave it a `federal` row but
+not a `state` one, and 140 state legislators hold stances on it — states run the sentencing codes, prisons
+and parole systems. It is the exact analogue of what 1544 just did for housing, and by the same reasoning it
+is under-scoped rather than wrongly answered.
+
+**Recommended next step:** decide the arguable rows per topic, not globally, then add a gate in the shape of
+`check-stance-sources.mjs` keyed on out-of-tier count so the number cannot regrow once settled. The gate must
+classify tiers with **`upper(governments.type)`** — values are `NATIONAL`/`STATE`/`LOCAL` plus
 `City`/`County`/`School District`/`Township`/`Village`/`Town` and one stray lowercase `federal`, and a
 case-sensitive comparison silently buckets every official as local.
