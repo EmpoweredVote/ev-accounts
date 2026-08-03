@@ -1,0 +1,1095 @@
+{
+  "generated": "2026-08-02",
+  "stats": {
+    "rows": 15849,
+    "matched": 4481,
+    "no_match": 0,
+    "ambiguous": 11,
+    "no_fed_claim": 4451,
+    "checked": 30,
+    "flagged": 30,
+    "not-a-federal-legislator": 11312,
+    "no-surname-match": 31,
+    "no-firstname-match": 14
+  },
+  "by_politician": {
+    "Sydney Kamlager-Dove": 2,
+    "Ayanna Pressley": 1,
+    "Joni Ernst": 1,
+    "Cindy Hyde-Smith": 1,
+    "Maggie Hassan": 1,
+    "Sheldon Whitehouse": 1,
+    "Alan Armstrong": 1,
+    "Cliff Bentz": 1,
+    "Val Hoyle": 3,
+    "Andrea Salinas": 2,
+    "Kathy Castor": 1,
+    "Guy Reschenthaler": 1,
+    "Mary E. Miller": 1,
+    "Tim Walberg": 1,
+    "Thomas H. Kean, Jr.": 1,
+    "Andy Biggs": 1,
+    "Diana Harshbarger": 1,
+    "Steve Cohen": 1,
+    "Joe Neguse": 2,
+    "Scott Fitzgerald": 1,
+    "Ami Bera": 1,
+    "Salud Carbajal": 1,
+    "Raul Ruiz": 2,
+    "Juan Vargas": 1
+  },
+  "findings": [
+    {
+      "politician_id": "a2c6adc7-7689-49b9-964f-8f2aeb243a83",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "politician": "Sydney Kamlager-Dove",
+      "topic": "Childcare Affordability & Access",
+      "chair": "2.0",
+      "office": null,
+      "state": null,
+      "legislator": {
+        "bioguide": "K000400",
+        "official": "Sydney Kamlager-Dove",
+        "states": [
+          "CA"
+        ],
+        "federal_service": "2023-01-03 .. 2027-01-03"
+      },
+      "match_how": "bioguide",
+      "hits": [
+        {
+          "clause": "She voted for the Build Back Better Act (November 2021), which included $400 billion for universal pre-K and childcare cost caps — supporting heavily subsidized childcare with sliding-scale fees rather than a fully nationalized system.",
+          "measures": [
+            "Build Back Better"
+          ],
+          "years": [
+            2021
+          ],
+          "before": [
+            2021
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONFIRMED"
+    },
+    {
+      "politician_id": "a2c6adc7-7689-49b9-964f-8f2aeb243a83",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "politician": "Sydney Kamlager-Dove",
+      "topic": "Economic Development Incentives",
+      "chair": "1.0",
+      "office": null,
+      "state": null,
+      "legislator": {
+        "bioguide": "K000400",
+        "official": "Sydney Kamlager-Dove",
+        "states": [
+          "CA"
+        ],
+        "federal_service": "2023-01-03 .. 2027-01-03"
+      },
+      "match_how": "bioguide",
+      "hits": [
+        {
+          "clause": "Kamlager-Dove voted for the Inflation Reduction Act (August 2022), deploying $370 billion in clean energy and industrial investment, and authored SB-679 (2021) creating the Los Angeles County Affordable Housing Solutions Agency funded through public bonds and taxes.",
+          "measures": [
+            "Inflation Reduction Act"
+          ],
+          "years": [
+            2022
+          ],
+          "before": [
+            2022
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONFIRMED"
+    },
+    {
+      "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Ayanna Pressley",
+      "topic": "Taxation and Public Spending",
+      "chair": "1.0",
+      "office": "Representative",
+      "state": "MA",
+      "legislator": {
+        "bioguide": "P000617",
+        "official": "Ayanna Pressley",
+        "states": [
+          "MA"
+        ],
+        "federal_service": "2019-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Pressley voted against the 2017 Tax Cuts and Jobs Act and has consistently supported taxing the wealthy and corporations to fund social programs.",
+          "measures": [
+            "Tax Cuts and Jobs Act"
+          ],
+          "years": [
+            2017
+          ],
+          "before": [
+            2017
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONFIRMED"
+    },
+    {
+      "politician_id": "130591ca-bfd1-4691-916b-3570341b04fb",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Joni Ernst",
+      "topic": "Taxation and Public Spending",
+      "chair": "4.0",
+      "office": "Senator",
+      "state": "IA",
+      "legislator": {
+        "bioguide": "E000295",
+        "official": "Joni Ernst",
+        "states": [
+          "IA"
+        ],
+        "federal_service": "2015-01-06 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Ernst signed Grover Norquist's no-tax-increase pledge (Jul 2014), voted for the Tax Cuts and Jobs Act (2017) reducing corporate rates from 35% to 21%, proposed eliminating the IRS, and supports a 'fairer, flatter, and simpler' federal tax code.",
+          "measures": [
+            "Tax Cuts and Jobs Act"
+          ],
+          "years": [
+            2014,
+            2017
+          ],
+          "before": [
+            2014
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on a 2014 Norquist pledge; her 2017 TCJA vote is legitimate (sworn 2015)"
+    },
+    {
+      "politician_id": "4d83f985-9248-4905-a9b6-5742e2df77a8",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Cindy Hyde-Smith",
+      "topic": "Taxation and Public Spending",
+      "chair": "4.0",
+      "office": "Senator",
+      "state": "MS",
+      "legislator": {
+        "bioguide": "H001079",
+        "official": "Cindy Hyde-Smith",
+        "states": [
+          "MS"
+        ],
+        "federal_service": "2018-04-09 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Hyde-Smith voted for the Tax Cuts and Jobs Act of 2017 and supports legislation to 'responsibly reduce the federal tax burden on small businesses, families, and individuals.' She backs the 'Working Families Tax Cut Act for Mississippi.' She has introduced a balanced budget constitutional amendment.",
+          "measures": [
+            "Tax Cuts and Jobs Act"
+          ],
+          "years": [
+            2017
+          ],
+          "before": [
+            2017
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONFIRMED"
+    },
+    {
+      "politician_id": "ec0aeea4-afb2-46b1-be2c-c226188cfbaa",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "politician": "Maggie Hassan",
+      "topic": "Same-Sex Marriage",
+      "chair": "1.0",
+      "office": "Senator",
+      "state": "NH",
+      "legislator": {
+        "bioguide": "H001076",
+        "official": "Margaret Wood Hassan",
+        "states": [
+          "NH"
+        ],
+        "federal_service": "2017-01-03 .. 2029-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Hassan was instrumental in legalizing same-sex marriage in New Hampshire as State Senate Majority Leader (Nov 2012) and voted YES on the Respect for Marriage Act (H.R.",
+          "measures": [
+            "Respect for Marriage Act"
+          ],
+          "years": [
+            2012
+          ],
+          "before": [
+            2012
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on 2012 NH State Senate service, which the clause states plainly"
+    },
+    {
+      "politician_id": "c19c488e-ae48-4ed2-ba7c-3092b847c192",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "politician": "Sheldon Whitehouse",
+      "topic": "Same-Sex Marriage",
+      "chair": "1.0",
+      "office": "Senator",
+      "state": "RI",
+      "legislator": {
+        "bioguide": "W000802",
+        "official": "Sheldon Whitehouse",
+        "states": [
+          "RI"
+        ],
+        "federal_service": "2007-01-04 .. 2031-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Whitehouse stated he supports gay marriage as early as 2006 and voted YEA on the Respect for Marriage Act (vote 362, Dec 2022) which federally protects same-sex marriages.",
+          "measures": [
+            "Respect for Marriage Act"
+          ],
+          "years": [
+            2006,
+            2022
+          ],
+          "before": [
+            2006
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on a 2006 statement; his 2022 RFMA vote is legitimate"
+    },
+    {
+      "politician_id": "abbe5ec0-94fb-4230-bc7c-4b890e4e6387",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Alan Armstrong",
+      "topic": "Taxation and Public Spending",
+      "chair": "4.0",
+      "office": "Senator",
+      "state": "OK",
+      "legislator": {
+        "bioguide": "A000383",
+        "official": "Alan Armstrong",
+        "states": [
+          "OK"
+        ],
+        "federal_service": "2026-03-24 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Armstrong voted YEA on S.Con.Res.33, the FY2026 budget concurrent resolution (v105, April 23 2026), which serves as the budget framework for the reconciliation bill extending and expanding the 2017 Tax Cuts and Jobs Act and implementing further tax reductions.",
+          "measures": [
+            "S.Con.Res.33",
+            "Tax Cuts and Jobs Act"
+          ],
+          "years": [
+            2017
+          ],
+          "before": [
+            2017
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on a 2017 reference inside a 2026 budget-resolution sentence"
+    },
+    {
+      "politician_id": "fb00c887-11f5-46f2-b822-f9848368bbd2",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Cliff Bentz",
+      "topic": "Taxation and Public Spending",
+      "chair": "5.0",
+      "office": "Representative",
+      "state": "OR",
+      "legislator": {
+        "bioguide": "B000668",
+        "official": "Cliff Bentz",
+        "states": [
+          "OR"
+        ],
+        "federal_service": "2021-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Bentz voted YES on Tax Cuts and Jobs Act (2017);",
+          "measures": [
+            "Tax Cuts and Jobs Act"
+          ],
+          "years": [
+            2017
+          ],
+          "before": [
+            2017
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONFIRMED"
+    },
+    {
+      "politician_id": "f6202cef-4e46-4db5-a9c0-c69ac9a8eccd",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Val Hoyle",
+      "topic": "Climate Change and Environmental Protection",
+      "chair": "1.0",
+      "office": "Representative",
+      "state": "OR",
+      "legislator": {
+        "bioguide": "H001094",
+        "official": "Val T. Hoyle",
+        "states": [
+          "OR"
+        ],
+        "federal_service": "2023-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Hoyle voted YES on Inflation Reduction Act (2022) with $369B in climate investments;",
+          "measures": [
+            "Inflation Reduction Act"
+          ],
+          "years": [
+            2022
+          ],
+          "before": [
+            2022
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONFIRMED"
+    },
+    {
+      "politician_id": "f6202cef-4e46-4db5-a9c0-c69ac9a8eccd",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Val Hoyle",
+      "topic": "Taxation and Public Spending",
+      "chair": "1.0",
+      "office": "Representative",
+      "state": "OR",
+      "legislator": {
+        "bioguide": "H001094",
+        "official": "Val T. Hoyle",
+        "states": [
+          "OR"
+        ],
+        "federal_service": "2023-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Hoyle voted NO on 2017 Tax Cuts and Jobs Act;",
+          "measures": [
+            "Tax Cuts and Jobs Act"
+          ],
+          "years": [
+            2017
+          ],
+          "before": [
+            2017
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONFIRMED"
+    },
+    {
+      "politician_id": "f6202cef-4e46-4db5-a9c0-c69ac9a8eccd",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "politician": "Val Hoyle",
+      "topic": "Transportation Priorities",
+      "chair": "1.0",
+      "office": "Representative",
+      "state": "OR",
+      "legislator": {
+        "bioguide": "H001094",
+        "official": "Val T. Hoyle",
+        "states": [
+          "OR"
+        ],
+        "federal_service": "2023-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Hoyle voted YES on Infrastructure Investment and Jobs Act (2021);",
+          "measures": [
+            "Infrastructure Investment and Jobs Act"
+          ],
+          "years": [
+            2021
+          ],
+          "before": [
+            2021
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONFIRMED"
+    },
+    {
+      "politician_id": "5f6c498b-87dd-48fe-b744-62c8dced2ac3",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Andrea Salinas",
+      "topic": "Climate Change and Environmental Protection",
+      "chair": "1.0",
+      "office": "Representative",
+      "state": "OR",
+      "legislator": {
+        "bioguide": "S001226",
+        "official": "Andrea Salinas",
+        "states": [
+          "OR"
+        ],
+        "federal_service": "2023-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Salinas voted YES on Inflation Reduction Act (2022) climate provisions;",
+          "measures": [
+            "Inflation Reduction Act"
+          ],
+          "years": [
+            2022
+          ],
+          "before": [
+            2022
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONFIRMED"
+    },
+    {
+      "politician_id": "5f6c498b-87dd-48fe-b744-62c8dced2ac3",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "politician": "Andrea Salinas",
+      "topic": "Transportation Priorities",
+      "chair": "1.0",
+      "office": "Representative",
+      "state": "OR",
+      "legislator": {
+        "bioguide": "S001226",
+        "official": "Andrea Salinas",
+        "states": [
+          "OR"
+        ],
+        "federal_service": "2023-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Salinas voted YES on Infrastructure Investment and Jobs Act (2021);",
+          "measures": [
+            "Infrastructure Investment and Jobs Act"
+          ],
+          "years": [
+            2021
+          ],
+          "before": [
+            2021
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONFIRMED"
+    },
+    {
+      "politician_id": "12623f00-b182-4511-a5a1-c715113b96cc",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Kathy Castor",
+      "topic": "Climate Change and Environmental Protection",
+      "chair": "2.0",
+      "office": "U.S. Representative",
+      "state": "FL",
+      "legislator": {
+        "bioguide": "C001066",
+        "official": "Kathy Castor",
+        "states": [
+          "FL"
+        ],
+        "federal_service": "2007-01-04 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "She supported a 50% clean electricity target by 2030, backed the Inflation Reduction Act's clean energy provisions, voted YES on enforcing CO2 pollution limits (2009), and opposed offshore drilling.",
+          "measures": [
+            "Inflation Reduction Act"
+          ],
+          "years": [
+            2030
+          ],
+          "after": [
+            2030
+          ],
+          "kind": "POST_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "POST_TENURE on \"2030\", a clean-electricity target date"
+    },
+    {
+      "politician_id": "6840c7e6-2169-43a4-8490-1e73c8704cbd",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Guy Reschenthaler",
+      "topic": "Taxation and Public Spending",
+      "chair": "4.0",
+      "office": "U.S. Representative",
+      "state": "PA",
+      "legislator": {
+        "bioguide": "R000610",
+        "official": "Guy Reschenthaler",
+        "states": [
+          "PA"
+        ],
+        "federal_service": "2019-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Reschenthaler voted for the 2017 Tax Cuts and Jobs Act, advocates making those cuts permanent, stating they are \"creating jobs and putting money directly in the pockets of American workers,\" and opposes raising income taxes to balance the budget.",
+          "measures": [
+            "Tax Cuts and Jobs Act"
+          ],
+          "years": [
+            2017
+          ],
+          "before": [
+            2017
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONFIRMED"
+    },
+    {
+      "politician_id": "73816ba4-4235-400c-a0a1-00c67b762687",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "politician": "Mary E. Miller",
+      "topic": "Same-Sex Marriage",
+      "chair": "5.0",
+      "office": "U.S. Representative",
+      "state": "IL",
+      "legislator": {
+        "bioguide": "M001211",
+        "official": "Mary E. Miller",
+        "states": [
+          "IL"
+        ],
+        "federal_service": "2021-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Miller voted NAY on the Respect for Marriage Act and in the AFA survey (Sep 2020) she supports that \"marriage is only a union of one man and one woman.\" This aligns with stance 5: make same-sex marriage illegal and define marriage as only between one man and one woman.",
+          "measures": [
+            "Respect for Marriage Act"
+          ],
+          "years": [
+            2020
+          ],
+          "before": [
+            2020
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on a Sep 2020 AFA survey; her RFMA vote is legitimate"
+    },
+    {
+      "politician_id": "30c32663-db0f-4ada-b85f-eaeed3766511",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "politician": "Tim Walberg",
+      "topic": "Same-Sex Marriage",
+      "chair": "5.0",
+      "office": "U.S. Representative",
+      "state": "MI",
+      "legislator": {
+        "bioguide": "W000798",
+        "official": "Tim Walberg",
+        "states": [
+          "MI"
+        ],
+        "federal_service": "2007-01-04 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Walberg co-sponsored the Federal Marriage Amendment to define marriage as between one man and one woman (2006–2015), voted against the Respect for Marriage Act when it passed (Wikipedia confirms), and delivered the keynote address at a Uganda prayer breakfast supporting that nation's Anti-Homosexual",
+          "measures": [
+            "Respect for Marriage Act"
+          ],
+          "years": [
+            2006,
+            2015
+          ],
+          "before": [
+            2006
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on a 2006 co-sponsorship, before his 2007 swearing-in by weeks"
+    },
+    {
+      "politician_id": "1bc949f5-0696-481c-979b-64cfd494983a",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "politician": "Thomas H. Kean, Jr.",
+      "topic": "Reproductive Rights and Abortion Access",
+      "chair": "3.0",
+      "office": "U.S. Representative",
+      "state": "NJ",
+      "legislator": {
+        "bioguide": "K000398",
+        "official": "Thomas H. Kean, Jr.",
+        "states": [
+          "NJ"
+        ],
+        "federal_service": "2023-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Kean self-describes as pro-choice and promised to \"support abortion rights\" during his 2022 campaign, but voted against the Women's Health Protection Act (which would have codified Roe nationally) and for the Born-Alive Abortion Survivors Protection Act.",
+          "measures": [
+            "Women's Health Protection Act"
+          ],
+          "years": [
+            2022
+          ],
+          "before": [
+            2022
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on a 2022 campaign promise, not a vote"
+    },
+    {
+      "politician_id": "8118811a-aadd-4eb9-9208-de0f5d3b29ad",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Andy Biggs",
+      "topic": "Taxation and Public Spending",
+      "chair": "5.0",
+      "office": "U.S. Representative",
+      "state": "AZ",
+      "legislator": {
+        "bioguide": "B001302",
+        "official": "Andy Biggs",
+        "states": [
+          "AZ"
+        ],
+        "federal_service": "2017-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Biggs opposed tax increases even for budget balance (Nov 2016), voted for the Tax Cuts and Jobs Act of 2017 saying it would \"provide much-needed economic relief,\" and has consistently voted against COVID relief spending as too costly.",
+          "measures": [
+            "Tax Cuts and Jobs Act"
+          ],
+          "years": [
+            2016,
+            2017
+          ],
+          "before": [
+            2016
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on a Nov 2016 statement; his Dec 2017 TCJA vote is legitimate"
+    },
+    {
+      "politician_id": "cf705451-177f-4ab1-8870-cc9ff54b35d4",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "politician": "Diana Harshbarger",
+      "topic": "Healthcare Access",
+      "chair": "4.0",
+      "office": "U.S. Representative",
+      "state": "TN",
+      "legislator": {
+        "bioguide": "H001086",
+        "official": "Diana Harshbarger",
+        "states": [
+          "TN"
+        ],
+        "federal_service": "2021-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Harshbarger supports repealing the Affordable Care Act (2020 Project Vote Smart survey) and voted against the $1.9 trillion American Rescue Plan which included Medicaid expansion and healthcare funding.",
+          "measures": [
+            "Affordable Care Act"
+          ],
+          "years": [
+            2020
+          ],
+          "before": [
+            2020
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on a 2020 Project Vote Smart survey"
+    },
+    {
+      "politician_id": "7b2966fb-0b21-4db1-a3ad-f7f2cc69a4bb",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "politician": "Steve Cohen",
+      "topic": "Same-Sex Marriage",
+      "chair": "2.0",
+      "office": "U.S. Representative",
+      "state": "TN",
+      "legislator": {
+        "bioguide": "C001068",
+        "official": "Steve Cohen",
+        "states": [
+          "TN"
+        ],
+        "federal_service": "2007-01-04 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Cohen voted against Tennessee's Marriage Protection Amendment in 2005 and co-sponsored the Respect for Marriage Act allowing states to recognize same-sex marriage.",
+          "measures": [
+            "Respect for Marriage Act"
+          ],
+          "years": [
+            2005
+          ],
+          "before": [
+            2005
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on a 2005 Tennessee state amendment vote"
+    },
+    {
+      "politician_id": "2c71d91b-7ad8-4984-b9a6-81587c41ea0d",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician": "Joe Neguse",
+      "topic": "Campaign Finance Reform",
+      "chair": "2.0",
+      "office": "U.S. Representative",
+      "state": "CO",
+      "legislator": {
+        "bioguide": "N000191",
+        "official": "Joe Neguse",
+        "states": [
+          "CO"
+        ],
+        "federal_service": "2019-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Neguse endorsed regulating indirect campaign contributions from corporations and unions (PVS survey, Aug 2018) and co-sponsored the For the People Act, which imposes strict limits on dark money groups and corporate donations.",
+          "measures": [
+            "For the People Act"
+          ],
+          "years": [
+            2018
+          ],
+          "before": [
+            2018
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "year belongs to another statement in the clause"
+    },
+    {
+      "politician_id": "2c71d91b-7ad8-4984-b9a6-81587c41ea0d",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Joe Neguse",
+      "topic": "Taxation and Public Spending",
+      "chair": "1.0",
+      "office": "U.S. Representative",
+      "state": "CO",
+      "legislator": {
+        "bioguide": "N000191",
+        "official": "Joe Neguse",
+        "states": [
+          "CO"
+        ],
+        "federal_service": "2019-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Neguse voted against the 2017 Tax Cuts and Jobs Act, which significantly cut taxes for corporations and high earners.",
+          "measures": [
+            "Tax Cuts and Jobs Act"
+          ],
+          "years": [
+            2017
+          ],
+          "before": [
+            2017
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONFIRMED"
+    },
+    {
+      "politician_id": "7e2ff82b-e665-422f-a6b9-ee65682b1f6d",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "politician": "Scott Fitzgerald",
+      "topic": "Healthcare Access",
+      "chair": "4.0",
+      "office": "U.S. Representative",
+      "state": "WI",
+      "legislator": {
+        "bioguide": "F000471",
+        "official": "Scott Fitzgerald",
+        "states": [
+          "WI"
+        ],
+        "federal_service": "2021-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Fitzgerald supported Medicaid work requirements for recipients under 50 (2018) and voted against the $1.9 trillion American Rescue Plan Act (2021) which included expanded healthcare subsidies.",
+          "measures": [
+            "American Rescue Plan"
+          ],
+          "years": [
+            2018,
+            2021
+          ],
+          "before": [
+            2018
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on a 2018 state-level position"
+    },
+    {
+      "politician_id": "0d635e23-f206-44fc-bac1-e309b932a081",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Ami Bera",
+      "topic": "Taxation and Public Spending",
+      "chair": "2.0",
+      "office": "U.S. Representative",
+      "state": "CA",
+      "legislator": {
+        "bioguide": "B001287",
+        "official": "Ami Bera",
+        "states": [
+          "CA"
+        ],
+        "federal_service": "2013-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Bera supports increasing federal income tax rates (Christian Coalition Voter Guide 2012), opposed the 2017 Tax Cuts and Jobs Act, opposes eliminating the estate/inheritance tax, and voted against the Death Tax Repeal Act (2015).",
+          "measures": [
+            "Tax Cuts and Jobs Act"
+          ],
+          "years": [
+            2012,
+            2017
+          ],
+          "before": [
+            2012
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on a 2012 voter guide"
+    },
+    {
+      "politician_id": "565438e0-04f1-4d2d-87cf-44df42ac1173",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Salud Carbajal",
+      "topic": "Taxation and Public Spending",
+      "chair": "2.0",
+      "office": "U.S. Representative",
+      "state": "CA",
+      "legislator": {
+        "bioguide": "C001112",
+        "official": "Salud O. Carbajal",
+        "states": [
+          "CA"
+        ],
+        "federal_service": "2017-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Carbajal supports increasing income tax rates (Nov 2016) and voted YES on the $1.9 trillion American Rescue Plan (Mar 2021) funded through higher taxes on corporations and wealthy individuals, indicating a position of moderately raising taxes on high earners to fund existing public services.",
+          "measures": [
+            "American Rescue Plan"
+          ],
+          "years": [
+            2016,
+            2021
+          ],
+          "before": [
+            2016
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on a Nov 2016 statement"
+    },
+    {
+      "politician_id": "5238b298-6004-4bcc-94c2-ee43a9c2999e",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "politician": "Raul Ruiz",
+      "topic": "Deportation Priorities",
+      "chair": "2.0",
+      "office": "U.S. Representative",
+      "state": "CA",
+      "legislator": {
+        "bioguide": "R000599",
+        "official": "Raul Ruiz",
+        "states": [
+          "CA"
+        ],
+        "federal_service": "2013-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Ruiz has been a consistent DREAM Act champion — 'Pass the DREAM Act immediately' (Nov 2012) — and voted to legalize DREAMer immigrants via military service (Jun 2016).",
+          "measures": [
+            "DREAM Act"
+          ],
+          "years": [
+            2012
+          ],
+          "before": [
+            2012
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on a Nov 2012 campaign statement about the DREAM Act, not a vote"
+    },
+    {
+      "politician_id": "5238b298-6004-4bcc-94c2-ee43a9c2999e",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "politician": "Raul Ruiz",
+      "topic": "Immigration and Treatment of Immigrants",
+      "chair": "2.0",
+      "office": "U.S. Representative",
+      "state": "CA",
+      "legislator": {
+        "bioguide": "R000599",
+        "official": "Raul Ruiz",
+        "states": [
+          "CA"
+        ],
+        "federal_service": "2013-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Ruiz called for passing the DREAM Act immediately (Nov 2012) and voted to legalize DREAMer immigrants via military service (Jun 2016).",
+          "measures": [
+            "DREAM Act"
+          ],
+          "years": [
+            2012
+          ],
+          "before": [
+            2012
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on a Nov 2012 campaign statement about the DREAM Act, not a vote"
+    },
+    {
+      "politician_id": "afa3cab9-4caf-4df3-a9ce-f739cc12b89d",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "politician": "Juan Vargas",
+      "topic": "Civil Rights and Social Justice",
+      "chair": "2.0",
+      "office": "U.S. Representative",
+      "state": "CA",
+      "legislator": {
+        "bioguide": "V000130",
+        "official": "Juan Vargas",
+        "states": [
+          "CA"
+        ],
+        "federal_service": "2013-01-03 .. 2027-01-03"
+      },
+      "match_how": "name+state",
+      "hits": [
+        {
+          "clause": "Vargas has consistently supported expanding civil rights enforcement: he voted YES on reauthorizing the Violence Against Women Act (Feb 2013), recognized the 1961 Freedom Riders against segregated buses (Jul 2014), and supports anti-gay discrimination enforcement in public schools (Apr 2013).",
+          "measures": [
+            "Violence Against Women Act"
+          ],
+          "years": [
+            2013,
+            1961
+          ],
+          "before": [
+            1961
+          ],
+          "kind": "PRE_TENURE"
+        }
+      ],
+      "review": "CONTEXT_YEAR",
+      "review_note": "flagged on \"1961\", a year inside the Civil Rights-era context of the sentence"
+    }
+  ],
+  "review": {
+    "confirmed": 12,
+    "context_year": 18,
+    "precision": "12/30"
+  }
+}

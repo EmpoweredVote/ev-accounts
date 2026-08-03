@@ -16,6 +16,41 @@ New check **`NON_URL_SOURCE`** — now **0 and ZERO-TOLERANCE** (1527–1530 clo
 
 ---
 
+## 🔴 HANDOFF 2026-08-02 (eighth) — term-start detector built: 12 more votes that never happened
+
+**No migration.** Review: [`2026-08-02-term-start-detector.md`](../../backend/data/stance-retirement/2026-08-02-term-start-detector.md).
+**30 candidates · 12 confirmed by hand · 6 of them NEW.** Precision 12/30 — a reading queue with a
+validated core, not a clean list.
+
+🔴 **Confirmed pre-tenure vote assertions:** Val Hoyle ×3, Andrea Salinas ×2, Cliff Bentz ×1 (already
+known from the roll-call pass, and the detector rediscovered them **by a different route** — that is
+its validation), **plus 6 new**: Sydney Kamlager-Dove ×2 (Build Back Better Nov 2021, IRA Aug 2022;
+sworn 2023), Ayanna Pressley (TCJA 2017; sworn 2019), Cindy Hyde-Smith (TCJA 2017; sworn Apr 2018),
+Guy Reschenthaler (TCJA 2017; sworn 2019), Joe Neguse (TCJA 2017; sworn 2019).
+⏳ Operator decision. Combined with the roll-call pass: **26 distinct rows**.
+
+⚠ **6 of the 12 are the same December-2017 TCJA vote** attributed to members sworn in 2018/2019/2021.
+That looks like one systematic error, not eight — worth finding the prompt or template behind it.
+
+🔴 **WE CANNOT DATE ANYONE'S TENURE. `essentials.office_terms` = 82,351 rows, 69 `term_start` values**
+(60 of 3,826 stance politicians); `bioguide_id` covers 120. So the detector never asks "was X in office
+in year Y" — it fires only when a **federal legislator** (gated on `governments.type='NATIONAL'`, NOT
+job title: 42 US Reps carry the bare title "Representative", same as Maine's and Texas's 150 state reps
+each) is credited with an action on a measure **no other body can vote on**, in a year adjacent to it.
+**11,312 of 15,849 year-bearing rows are non-federal and cannot be judged at all** — fixing that means
+populating `office_terms.term_start` upstream.
+
+🔴 **Sixth/seventh detector to over-fire on its first cut; six distinct bugs, all fixed in code:**
+surname matching with an "any candidate" fall-back bound **LA city councilmembers** to former members
+of Congress (26 of the first 59 hits); a title gate missed Hoyle/Salinas/Bentz; requiring a bill NUMBER
+missed *"voted YES on Inflation Reduction Act (2022)"*; taking every year in a clause flagged
+Klobuchar/Whitehouse/Baldwin/Hassan for **correct** rows; `S\.?\s?\d{1,4}` matched *"Ballotpedia's
+2022"* and read `S.1975` as the **year 1975**; and `'Equality Act'` in the federal-act list matched New
+York's **Marriage Equality Act** (state law) — five false accusations at once. Counterfactuals are now
+skipped too ("did not vote … she was not yet a senator" is a row getting it RIGHT).
+
+---
+
 ## 🔴 HANDOFF 2026-08-02 (seventh) — roll-call pass: 594 votes CONFIRMED, and 20 that never happened
 
 **No migration.** 1,706 roll-call citations / 233 records / 4 formats (US House XML, US Senate XML,
