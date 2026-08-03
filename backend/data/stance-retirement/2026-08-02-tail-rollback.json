@@ -1,0 +1,2304 @@
+{
+  "migration": "1535_repoint_dead_url_tail.sql",
+  "generated": "2026-08-02",
+  "note": "Pre-image of every row migration 1535 rewrites. To undo: restore `sources` verbatim per (politician_id, topic_id).",
+  "n_rows": 249,
+  "rows": [
+    {
+      "politician_id": "822966a7-5f09-4151-ba43-630afbd676c2",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "sources": [
+        "https://scorecard.lcv.org/moc/pete-aguilar",
+        "https://archive.ontheissues.org/CA/Pete_Aguilar_Energy_+_Oil.htm",
+        "https://aguilar.house.gov/issues/"
+      ],
+      "old_url": "https://archive.ontheissues.org/CA/Pete_Aguilar_Energy_+_Oil.htm"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "sources": [
+        "https://ballotpedia.org/Jake_Auchincloss",
+        "https://auchincloss.house.gov/issues"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "6674d87e-999d-433a-aab7-3f626f59fd5f",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "sources": [
+        "https://ballotpedia.org/Jake_Auchincloss",
+        "https://auchincloss.house.gov/issues"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "sources": [
+        "https://www.lcv.org/congressional-scorecard/",
+        "https://auchincloss.house.gov/issues"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "sources": [
+        "https://ballotpedia.org/Jake_Auchincloss",
+        "https://auchincloss.house.gov/issues"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "sources": [
+        "https://www.lcv.org/congressional-scorecard/",
+        "https://auchincloss.house.gov/issues"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "sources": [
+        "https://ballotpedia.org/Jake_Auchincloss",
+        "https://auchincloss.house.gov/issues"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "sources": [
+        "https://www.lcv.org/congressional-scorecard/",
+        "https://auchincloss.house.gov/issues"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "448b1c9a-b6f3-42b8-8f39-d3bbb5bfa9ee",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "e5e48f0e-8f3a-40e1-8080-889fea389603",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://ballotpedia.org/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "sources": [
+        "https://auchincloss.house.gov/issues",
+        "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+      ],
+      "old_url": "https://auchincloss.house.gov/issues"
+    },
+    {
+      "politician_id": "d7756d33-4c53-4c68-9c36-cf2f9817a17b",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "sources": [
+        "https://beavertonvalleytimes.com/news/beaverton-explores-neighborhood-scenarios-for-cooper-mountain/article_1d26e072-529f-550b-a530-69d816d8a053.html",
+        "https://beavertonvalleytimes.com/2022/04/28/qa-get-to-know-beaverton-city-council-candidates/"
+      ],
+      "old_url": "https://beavertonvalleytimes.com/news/beaverton-explores-neighborhood-scenarios-for-cooper-mountain/article_1d26e072-529f-550b-a530-69d816d8a053.html"
+    },
+    {
+      "politician_id": "d7756d33-4c53-4c68-9c36-cf2f9817a17b",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "sources": [
+        "https://beavertonvalleytimes.com/news/beaverton-explores-neighborhood-scenarios-for-cooper-mountain/article_1d26e072-529f-550b-a530-69d816d8a053.html",
+        "https://beavertonvalleytimes.com/2022/04/28/qa-get-to-know-beaverton-city-council-candidates/"
+      ],
+      "old_url": "https://beavertonvalleytimes.com/news/beaverton-explores-neighborhood-scenarios-for-cooper-mountain/article_1d26e072-529f-550b-a530-69d816d8a053.html"
+    },
+    {
+      "politician_id": "d7756d33-4c53-4c68-9c36-cf2f9817a17b",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "sources": [
+        "https://www.oregonmetro.gov/projects/tualatin-valley-highway-transit-and-safety-project",
+        "https://www.trimet.org/tvhighway/",
+        "https://beavertonvalleytimes.com/news/beaverton-explores-neighborhood-scenarios-for-cooper-mountain/article_1d26e072-529f-550b-a530-69d816d8a053.html",
+        "https://beavertonvalleytimes.com/2022/04/28/qa-get-to-know-beaverton-city-council-candidates/"
+      ],
+      "old_url": "https://beavertonvalleytimes.com/news/beaverton-explores-neighborhood-scenarios-for-cooper-mountain/article_1d26e072-529f-550b-a530-69d816d8a053.html"
+    },
+    {
+      "politician_id": "d7756d33-4c53-4c68-9c36-cf2f9817a17b",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "sources": [
+        "https://beavertonvalleytimes.com/news/beaverton-explores-neighborhood-scenarios-for-cooper-mountain/article_1d26e072-529f-550b-a530-69d816d8a053.html",
+        "https://washcodems.org/2026/04/26/ashley-hartmeier-prigg-race-for-hd-27-seat-candidate-interview/"
+      ],
+      "old_url": "https://beavertonvalleytimes.com/news/beaverton-explores-neighborhood-scenarios-for-cooper-mountain/article_1d26e072-529f-550b-a530-69d816d8a053.html"
+    },
+    {
+      "politician_id": "eb88bdd6-d1c7-4e08-aff8-bb7517ad24b5",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Deb_Goldberg",
+        "https://emilyslist.org/news/entry/emilys-list-endorses-deb-goldberg-for-massachusetts-treasurer/"
+      ],
+      "old_url": "https://emilyslist.org/news/entry/emilys-list-endorses-deb-goldberg-for-massachusetts-treasurer/"
+    },
+    {
+      "politician_id": "eb88bdd6-d1c7-4e08-aff8-bb7517ad24b5",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Deb_Goldberg",
+        "https://emilyslist.org/news/entry/emilys-list-endorses-deb-goldberg-for-massachusetts-treasurer/"
+      ],
+      "old_url": "https://emilyslist.org/news/entry/emilys-list-endorses-deb-goldberg-for-massachusetts-treasurer/"
+    },
+    {
+      "politician_id": "41ef8aaa-b604-4725-b46d-dab1656cc198",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "sources": [
+        "https://gspp.berkeley.edu/research-and-impact/news/recent-news/treasurer-fiona-ma-climate-scientists-engineers-and-other-experts-seek-to-establish-california-as-worlds-green-bond-leader",
+        "https://fionama.com/news/to-address-climate-threat-california-must-lead-the-way-on-green-bonds",
+        "https://climatesafepensions.org/ca-treasurer-supports-sb-252/"
+      ],
+      "old_url": "https://fionama.com/news/to-address-climate-threat-california-must-lead-the-way-on-green-bonds"
+    },
+    {
+      "politician_id": "e2542ec1-213a-403b-bcda-e956a9384dcb",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "sources": [
+        "https://jgcole.org/priorities/"
+      ],
+      "old_url": "https://jgcole.org/priorities/"
+    },
+    {
+      "politician_id": "e2542ec1-213a-403b-bcda-e956a9384dcb",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "sources": [
+        "https://www.vpap.org/legislators/285632-joshua-cole/list-votes/close-votes/?session=39",
+        "https://jgcole.org/priorities/"
+      ],
+      "old_url": "https://jgcole.org/priorities/"
+    },
+    {
+      "politician_id": "e2542ec1-213a-403b-bcda-e956a9384dcb",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "sources": [
+        "https://jgcole.org/priorities/"
+      ],
+      "old_url": "https://jgcole.org/priorities/"
+    },
+    {
+      "politician_id": "f72689da-fe02-4bdd-977f-bb7760a42fb2",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "sources": [
+        "https://governor.utah.gov/press/gov-cox-and-lt-gov-henderson-present-major-tax-cuts-teacher-pay-raises-family-supports-and-quality-of-life-projects-in-their-proposed-fy-24-budget/",
+        "https://ltgovernor.utah.gov/2021/11/16/utahs-2021-fiscal-year-ends-strong/"
+      ],
+      "old_url": "https://ltgovernor.utah.gov/2021/11/16/utahs-2021-fiscal-year-ends-strong/"
+    },
+    {
+      "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "sources": [
+        "https://lynch.house.gov/issues",
+        "https://votesmart.org/candidate/evaluations/7740/stephen-lynch",
+        "https://www.ontheissues.org/MA/Stephen_Lynch.htm"
+      ],
+      "old_url": "https://lynch.house.gov/issues"
+    },
+    {
+      "politician_id": "2537050a-cd40-460e-9751-1d982dd73c25",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "sources": [
+        "https://atg.sd.gov/OurOffice/Media/pressreleasesdetail.aspx?id=3074",
+        "https://atg.sd.gov/OurOffice/Media/pressreleasesdetail.aspx?id=3010",
+        "https://martyjackley.com/the-conservative-choice/"
+      ],
+      "old_url": "https://martyjackley.com/the-conservative-choice/"
+    },
+    {
+      "politician_id": "2537050a-cd40-460e-9751-1d982dd73c25",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "sources": [
+        "https://www.argusleader.com/story/news/politics/2025/09/19/jackley-calls-for-improved-legal-immigration-policy-while-launching-his-campaign-for-congress/86238889007/",
+        "https://martyjackley.com/the-conservative-choice/"
+      ],
+      "old_url": "https://martyjackley.com/the-conservative-choice/"
+    },
+    {
+      "politician_id": "2537050a-cd40-460e-9751-1d982dd73c25",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "sources": [
+        "https://martyjackley.com/the-conservative-choice/"
+      ],
+      "old_url": "https://martyjackley.com/the-conservative-choice/"
+    },
+    {
+      "politician_id": "abf34eb9-8b81-4c9f-8db6-25ba036419c9",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "sources": [
+        "https://www.heraldextra.com/news/local/2023/jan/20/provo-mayor-shares-citys-sustainability-projects/",
+        "https://www.ksl.com/article/51309726/provo-orem-leaders-hope-new-uta-service-will-fill-gaps-in-fast-growing-county/",
+        "https://michelle4mayor.com/record/"
+      ],
+      "old_url": "https://michelle4mayor.com/record/"
+    },
+    {
+      "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "sources": [
+        "https://moulton.house.gov/issues/education",
+        "https://votesmart.org/candidate/evaluations/134114/seth-moulton",
+        "https://www.govtrack.us/congress/bills/116/hconres14"
+      ],
+      "old_url": "https://moulton.house.gov/issues/education"
+    },
+    {
+      "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "sources": [
+        "https://scorecard.lcv.org/moc/seth-moulton",
+        "https://moulton.house.gov/issues/energy-and-environment",
+        "https://www.govtrack.us/congress/votes/115-2017/h652"
+      ],
+      "old_url": "https://moulton.house.gov/issues/energy-and-environment"
+    },
+    {
+      "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "sources": [
+        "https://moulton.house.gov/issues/energy-and-environment",
+        "https://www.govtrack.us/congress/votes/117-2022/h373",
+        "https://scorecard.lcv.org/moc/seth-moulton"
+      ],
+      "old_url": "https://moulton.house.gov/issues/energy-and-environment"
+    },
+    {
+      "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "sources": [
+        "https://moulton.house.gov/issues/health-care",
+        "https://www.govtrack.us/congress/votes/117-2022/h373",
+        "https://votesmart.org/candidate/evaluations/134114/seth-moulton"
+      ],
+      "old_url": "https://moulton.house.gov/issues/health-care"
+    },
+    {
+      "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "sources": [
+        "https://moulton.house.gov/issues/health-care",
+        "https://www.govtrack.us/congress/votes/117-2021/h72",
+        "https://votesmart.org/candidate/evaluations/134114/seth-moulton"
+      ],
+      "old_url": "https://moulton.house.gov/issues/health-care"
+    },
+    {
+      "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "sources": [
+        "https://moulton.house.gov/issues/housing",
+        "https://www.govtrack.us/congress/votes/117-2021/h369",
+        "https://congress.gov/member/seth-moulton/M001196"
+      ],
+      "old_url": "https://moulton.house.gov/issues/housing"
+    },
+    {
+      "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "sources": [
+        "https://moulton.house.gov/issues/seniors",
+        "https://votesmart.org/candidate/evaluations/134114/seth-moulton",
+        "https://congress.gov/bill/117th-congress/house-bill/4583"
+      ],
+      "old_url": "https://moulton.house.gov/issues/seniors"
+    },
+    {
+      "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "sources": [
+        "https://moulton.house.gov/issues/transportation",
+        "https://www.govtrack.us/congress/votes/117-2021/h369",
+        "https://congress.gov/bill/117th-congress/house-bill/3684"
+      ],
+      "old_url": "https://moulton.house.gov/issues/transportation"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "sources": [
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm",
+        "https://www.mass.gov/executive-orders/no-627-reaffirming-the-commonwealths-commitment-to-civil-rights"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "sources": [
+        "https://www.mass.gov/news/governor-healey-signs-legislation-to-expand-reproductive-healthcare-access",
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "sources": [
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm",
+        "https://www.mass.gov/orgs/office-of-the-attorney-general"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "sources": [
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm",
+        "https://www.mass.gov/executive-orders/no-627-reaffirming-the-commonwealths-commitment-to-civil-rights"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "sources": [
+        "https://www.mass.gov/info-details/massachusetts-clean-energy-and-climate-plan",
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm",
+        "https://www.mass.gov/news/governor-healey-launches-offshore-wind-initiative"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "sources": [
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm",
+        "https://www.mass.gov/news/governor-healey-issues-executive-order-protecting-immigrants"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "sources": [
+        "https://www.mass.gov/info-details/massachusetts-clean-energy-and-climate-plan",
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "sources": [
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm",
+        "https://www.mass.gov/news/governor-healey-expands-masshealth-coverage"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "sources": [
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm",
+        "https://www.mass.gov/news/governor-healey-issues-executive-order-protecting-immigrants"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "sources": [
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm",
+        "https://www.mass.gov/news/governor-healey-expands-masshealth-coverage"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "sources": [
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "sources": [
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "sources": [
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "sources": [
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm",
+        "https://www.mass.gov/executive-orders/no-627-reaffirming-the-commonwealths-commitment-to-civil-rights"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "sources": [
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "sources": [
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "sources": [
+        "https://ballotpedia.org/Maura_Healey",
+        "https://ontheissues.org/Governor/Maura_Healey.htm",
+        "https://www.mass.gov/news/governor-healey-signs-voting-rights-legislation"
+      ],
+      "old_url": "https://ontheissues.org/Governor/Maura_Healey.htm"
+    },
+    {
+      "politician_id": "99198363-2ac9-4b56-9d80-7abfe7b2a01a",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "sources": [
+        "https://le.utah.gov/~2023/bills/static/HB0467.html",
+        "https://progressreport.betterutah.org/bills/2023/hb-467/",
+        "https://www.sltrib.com/news/politics/2023/02/17/abortion-about-get-harder-utah-gop/"
+      ],
+      "old_url": "https://progressreport.betterutah.org/bills/2023/hb-467/"
+    },
+    {
+      "politician_id": "070c1c1c-ac9d-42e0-bff2-3f4467504cba",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "sources": [
+        "https://le.utah.gov/~2023/bills/static/HB0467.html",
+        "https://progressreport.betterutah.org/bills/2023/hb-467/",
+        "https://www.ksl.com/article/50582216/house-passes-pair-of-bills-to-further-restrict-abortion-access-in-utah"
+      ],
+      "old_url": "https://progressreport.betterutah.org/bills/2023/hb-467/"
+    },
+    {
+      "politician_id": "00abc782-e86b-40f2-be0d-f07fad802688",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ron_Johnson_(politician)",
+        "https://www.ontheissues.org/Senate/Ron_Johnson.htm",
+        "https://ronjohnson.senate.gov/press-releases"
+      ],
+      "old_url": "https://ronjohnson.senate.gov/press-releases"
+    },
+    {
+      "politician_id": "3265b939-5585-4edc-a524-2841c7fe6f3d",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "sources": [
+        "https://thedgt.org/activist-kevin-dahl-on-protecting-our-national-parks-and-environment/",
+        "https://www.tucsonspotlight.org/tucson-ward-3-council-race/"
+      ],
+      "old_url": "https://thedgt.org/activist-kevin-dahl-on-protecting-our-national-parks-and-environment/"
+    },
+    {
+      "politician_id": "56cecf7c-6de0-440f-b8e2-34945ec52333",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "sources": [
+        "https://victorforpomona.com/about-victor/"
+      ],
+      "old_url": "https://victorforpomona.com/about-victor/"
+    },
+    {
+      "politician_id": "56cecf7c-6de0-440f-b8e2-34945ec52333",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "sources": [
+        "https://victorforpomona.com/about-victor/"
+      ],
+      "old_url": "https://victorforpomona.com/about-victor/"
+    },
+    {
+      "politician_id": "56cecf7c-6de0-440f-b8e2-34945ec52333",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "sources": [
+        "https://victorforpomona.com/about-victor/",
+        "https://thepolypost.com/news/2026/04/14/pomona-adopts-ice-resolution/"
+      ],
+      "old_url": "https://victorforpomona.com/about-victor/"
+    },
+    {
+      "politician_id": "56cecf7c-6de0-440f-b8e2-34945ec52333",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "sources": [
+        "https://victorforpomona.com/about-victor/"
+      ],
+      "old_url": "https://victorforpomona.com/about-victor/"
+    },
+    {
+      "politician_id": "56cecf7c-6de0-440f-b8e2-34945ec52333",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "sources": [
+        "https://victorforpomona.com/priorities",
+        "https://victorforpomona.com/about-victor/"
+      ],
+      "old_url": "https://victorforpomona.com/about-victor/"
+    },
+    {
+      "politician_id": "d53cbad2-d166-4f8d-87a2-f7e5ddc7a237",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "sources": [
+        "https://wicker.senate.gov/press-releases",
+        "https://en.wikipedia.org/wiki/Roger_Wicker"
+      ],
+      "old_url": "https://wicker.senate.gov/press-releases"
+    },
+    {
+      "politician_id": "d53cbad2-d166-4f8d-87a2-f7e5ddc7a237",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Roger_Wicker",
+        "https://wicker.senate.gov/press-releases"
+      ],
+      "old_url": "https://wicker.senate.gov/press-releases"
+    },
+    {
+      "politician_id": "d53cbad2-d166-4f8d-87a2-f7e5ddc7a237",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "sources": [
+        "https://wicker.senate.gov/press-releases",
+        "https://en.wikipedia.org/wiki/Roger_Wicker"
+      ],
+      "old_url": "https://wicker.senate.gov/press-releases"
+    },
+    {
+      "politician_id": "d53cbad2-d166-4f8d-87a2-f7e5ddc7a237",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Roger_Wicker",
+        "https://wicker.senate.gov/press-releases"
+      ],
+      "old_url": "https://wicker.senate.gov/press-releases"
+    },
+    {
+      "politician_id": "d53cbad2-d166-4f8d-87a2-f7e5ddc7a237",
+      "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Roger_Wicker",
+        "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00295.xml",
+        "https://wicker.senate.gov/press-releases"
+      ],
+      "old_url": "https://wicker.senate.gov/press-releases"
+    },
+    {
+      "politician_id": "d53cbad2-d166-4f8d-87a2-f7e5ddc7a237",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Roger_Wicker",
+        "https://wicker.senate.gov/press-releases"
+      ],
+      "old_url": "https://wicker.senate.gov/press-releases"
+    },
+    {
+      "politician_id": "de037c5c-9c00-40c5-ade2-3d322b4a0349",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "sources": [
+        "https://communityimpact.com/dallas-fort-worth/plano-north/election/2025/03/10/qa-meet-the-candidates-for-plano-city-council-place-2/",
+        "https://www.bob4plano.org/"
+      ],
+      "old_url": "https://www.bob4plano.org/"
+    },
+    {
+      "politician_id": "de037c5c-9c00-40c5-ade2-3d322b4a0349",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "sources": [
+        "https://communityimpact.com/dallas-fort-worth/plano-north/election/2025/03/10/qa-meet-the-candidates-for-plano-city-council-place-2/",
+        "https://www.bob4plano.org/"
+      ],
+      "old_url": "https://www.bob4plano.org/"
+    },
+    {
+      "politician_id": "de037c5c-9c00-40c5-ade2-3d322b4a0349",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "sources": [
+        "https://communityimpact.com/dallas-fort-worth/plano-north/election/2025/03/10/qa-meet-the-candidates-for-plano-city-council-place-2/",
+        "https://www.bob4plano.org/"
+      ],
+      "old_url": "https://www.bob4plano.org/"
+    },
+    {
+      "politician_id": "2cc11bf7-a495-4cef-829c-019158bc5d35",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "sources": [
+        "https://admin.campaignpartner.com/images/148230/Bill%20of%20American%20Renewal%20Drafts/Bill_of_American_Renewal_-_Live_Draft_v3.pdf",
+        "https://www.chris4virginia.org/promise-tracker"
+      ],
+      "old_url": "https://www.chris4virginia.org/promise-tracker"
+    },
+    {
+      "politician_id": "475b846d-bce8-43e0-bac8-bd65d58d9c46",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "sources": [
+        "https://www.cityofpalmdaleca.gov/m/newsflash/home/detail/1670",
+        "https://www.cityofpalmdaleca.gov/306/Councilmember-Austin-Bishop"
+      ],
+      "old_url": "https://www.cityofpalmdaleca.gov/m/newsflash/home/detail/1670"
+    },
+    {
+      "politician_id": "929346a2-8037-4b14-af33-4820eb365323",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "sources": [
+        "https://indianacitizen.org/compassion-without-lawlessness-lt-gov-beckwith-draws-cheers-pushback-with-immigration-stance-at-packed-merrillville-event/",
+        "https://indems.org/press-release/braun-backs-beckwiths-call-to-deport-legal-immigrants/",
+        "https://www.fortwaynepolitics.com/p/audio-micah-beckwith-says-local-leaders"
+      ],
+      "old_url": "https://www.fortwaynepolitics.com/p/audio-micah-beckwith-says-local-leaders"
+    },
+    {
+      "politician_id": "822966a7-5f09-4151-ba43-630afbd676c2",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "sources": [
+        "https://www.healthreformvotes.org/congress/412615",
+        "https://aguilar.house.gov/issues/",
+        "https://democrats.house.gov/newsroom/press-releases/chairman-aguilar-on-meet-the-press-now-the-republican-party-has-never-put-forward-a-health-care-plan-for-our-country-democrats-have-a-plan"
+      ],
+      "old_url": "https://www.healthreformvotes.org/congress/412615"
+    },
+    {
+      "politician_id": "e4d5cd69-0a54-48d6-9d8c-11da8f091cb6",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "sources": [
+        "https://torres.house.gov/norma-torres-delivers-for-the-inland-empire",
+        "https://torres.house.gov/media-center/press-releases/new-dem-housing-chair-norma-torres-supports-new-dems-affordability-agenda-to-lower-costs-for-working-families",
+        "https://www.healthreformvotes.org/congress/412617"
+      ],
+      "old_url": "https://www.healthreformvotes.org/congress/412617"
+    },
+    {
+      "politician_id": "4c9d7584-4e07-46f7-8f8c-770afc8dce94",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "sources": [
+        "https://www.longbeach.gov/press-releases/city-council-unanimously-approves-racial-equity-and-reconciliation-initiative--initial-report/",
+        "https://lbpost.com/news/city-council-approves-framework-for-reconciliation-plan-to-address-racial-inequity/"
+      ],
+      "old_url": "https://www.longbeach.gov/press-releases/city-council-unanimously-approves-racial-equity-and-reconciliation-initiative--initial-report/"
+    },
+    {
+      "politician_id": "3a578edc-56ad-43cf-ac8f-68d05fd5d7a8",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "sources": [
+        "https://www.lorraine4d6.com/",
+        "https://ballotpedia.org/Lorraine_Canales_(Pomona_City_Council_District_6,_California,_candidate_2024)"
+      ],
+      "old_url": "https://www.lorraine4d6.com/"
+    },
+    {
+      "politician_id": "d6d297f5-5319-4be1-b938-6bcce63368e7",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "sources": [
+        "https://www.ontheissues.org/Andy_Barr.htm",
+        "https://www.ontheissues.org/House/Andy_Barr_Social_Security.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Andy_Barr.htm"
+    },
+    {
+      "politician_id": "d6d297f5-5319-4be1-b938-6bcce63368e7",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Andy_Barr_(politician)",
+        "https://www.ontheissues.org/Andy_Barr.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Andy_Barr.htm"
+    },
+    {
+      "politician_id": "d6d297f5-5319-4be1-b938-6bcce63368e7",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "sources": [
+        "https://www.ontheissues.org/Andy_Barr.htm",
+        "https://en.wikipedia.org/wiki/Andy_Barr_(politician)"
+      ],
+      "old_url": "https://www.ontheissues.org/Andy_Barr.htm"
+    },
+    {
+      "politician_id": "d6d297f5-5319-4be1-b938-6bcce63368e7",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "sources": [
+        "https://www.ontheissues.org/House/Andy_Barr_Civil_Rights.htm",
+        "https://www.ontheissues.org/Andy_Barr.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Andy_Barr.htm"
+    },
+    {
+      "politician_id": "d6d297f5-5319-4be1-b938-6bcce63368e7",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "sources": [
+        "https://www.ontheissues.org/House/Andy_Barr_Government_Reform.htm",
+        "https://www.ontheissues.org/Andy_Barr.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Andy_Barr.htm"
+    },
+    {
+      "politician_id": "d6d297f5-5319-4be1-b938-6bcce63368e7",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "sources": [
+        "https://www.ontheissues.org/Andy_Barr.htm",
+        "https://www.ontheissues.org/House/Andy_Barr_Budget_+_Economy.htm",
+        "https://en.wikipedia.org/wiki/Andy_Barr_(politician)"
+      ],
+      "old_url": "https://www.ontheissues.org/Andy_Barr.htm"
+    },
+    {
+      "politician_id": "d6d297f5-5319-4be1-b938-6bcce63368e7",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "sources": [
+        "https://www.ontheissues.org/House/Andy_Barr_Free_Trade.htm",
+        "https://www.ontheissues.org/Andy_Barr.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Andy_Barr.htm"
+    },
+    {
+      "politician_id": "faf86b5b-5add-4afb-a8e2-96b3e8be4b78",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "sources": [
+        "https://www.ontheissues.org/Senate/Ed_Markey.htm",
+        "https://en.wikipedia.org/wiki/Ed_Markey",
+        "https://www.ontheissues.org/Economic/Ed_Markey_Free_Trade.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Economic/Ed_Markey_Free_Trade.htm"
+    },
+    {
+      "politician_id": "e08ec276-3194-41d4-833b-953f27454857",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "sources": [
+        "https://www.ontheissues.org/Frank_Mrvan.htm",
+        "https://en.wikipedia.org/wiki/Frank_J._Mrvan"
+      ],
+      "old_url": "https://www.ontheissues.org/Frank_Mrvan.htm"
+    },
+    {
+      "politician_id": "e08ec276-3194-41d4-833b-953f27454857",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "sources": [
+        "https://www.ontheissues.org/Frank_Mrvan.htm",
+        "https://en.wikipedia.org/wiki/Frank_J._Mrvan"
+      ],
+      "old_url": "https://www.ontheissues.org/Frank_Mrvan.htm"
+    },
+    {
+      "politician_id": "e08ec276-3194-41d4-833b-953f27454857",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "sources": [
+        "https://www.ontheissues.org/Frank_Mrvan.htm",
+        "https://en.wikipedia.org/wiki/Frank_J._Mrvan"
+      ],
+      "old_url": "https://www.ontheissues.org/Frank_Mrvan.htm"
+    },
+    {
+      "politician_id": "e08ec276-3194-41d4-833b-953f27454857",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "sources": [
+        "https://www.ontheissues.org/Frank_Mrvan.htm",
+        "https://en.wikipedia.org/wiki/Frank_J._Mrvan"
+      ],
+      "old_url": "https://www.ontheissues.org/Frank_Mrvan.htm"
+    },
+    {
+      "politician_id": "e08ec276-3194-41d4-833b-953f27454857",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Frank_J._Mrvan",
+        "https://www.ontheissues.org/Frank_Mrvan.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Frank_Mrvan.htm"
+    },
+    {
+      "politician_id": "e08ec276-3194-41d4-833b-953f27454857",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "sources": [
+        "https://www.ontheissues.org/Frank_Mrvan.htm",
+        "https://en.wikipedia.org/wiki/Frank_J._Mrvan"
+      ],
+      "old_url": "https://www.ontheissues.org/Frank_Mrvan.htm"
+    },
+    {
+      "politician_id": "e08ec276-3194-41d4-833b-953f27454857",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Frank_J._Mrvan",
+        "https://www.ontheissues.org/Frank_Mrvan.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Frank_Mrvan.htm"
+    },
+    {
+      "politician_id": "3de9e882-a816-42fc-ae70-aa93098c5d02",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "sources": [
+        "https://www.ontheissues.org/GA/Rick_Allen.htm",
+        "https://www.ontheissues.org/GA/Rick_Allen_Principles.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/GA/Rick_Allen_Principles.htm"
+    },
+    {
+      "politician_id": "33a51039-958f-40c2-974f-e04ea064b419",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "sources": [
+        "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm",
+        "https://en.wikipedia.org/wiki/Mike_Dunleavy_(politician)",
+        "https://gov.alaska.gov/newsroom/"
+      ],
+      "old_url": "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm"
+    },
+    {
+      "politician_id": "33a51039-958f-40c2-974f-e04ea064b419",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "sources": [
+        "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm",
+        "https://www.ontheissues.org/Governor/Mike_Dunleavy_Education.htm",
+        "https://en.wikipedia.org/wiki/Mike_Dunleavy_(politician)"
+      ],
+      "old_url": "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm"
+    },
+    {
+      "politician_id": "33a51039-958f-40c2-974f-e04ea064b419",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "sources": [
+        "https://www.ontheissues.org/Governor/Mike_Dunleavy_Immigration.htm",
+        "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm",
+        "https://en.wikipedia.org/wiki/Mike_Dunleavy_(politician)"
+      ],
+      "old_url": "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm"
+    },
+    {
+      "politician_id": "33a51039-958f-40c2-974f-e04ea064b419",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "sources": [
+        "https://www.ontheissues.org/Governor/Mike_Dunleavy_Immigration.htm",
+        "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm",
+        "https://en.wikipedia.org/wiki/Mike_Dunleavy_(politician)"
+      ],
+      "old_url": "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm"
+    },
+    {
+      "politician_id": "33a51039-958f-40c2-974f-e04ea064b419",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "sources": [
+        "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm",
+        "https://en.wikipedia.org/wiki/Mike_Dunleavy_(politician)"
+      ],
+      "old_url": "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm"
+    },
+    {
+      "politician_id": "33a51039-958f-40c2-974f-e04ea064b419",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "sources": [
+        "https://www.ontheissues.org/Governor/Mike_Dunleavy_Health_Care.htm",
+        "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm"
+    },
+    {
+      "politician_id": "33a51039-958f-40c2-974f-e04ea064b419",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "sources": [
+        "https://www.ontheissues.org/Governor/Mike_Dunleavy_Health_Care.htm",
+        "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm"
+    },
+    {
+      "politician_id": "33a51039-958f-40c2-974f-e04ea064b419",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "sources": [
+        "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm",
+        "https://en.wikipedia.org/wiki/Mike_Dunleavy_(politician)",
+        "https://www.ontheissues.org/Governor/Mike_Dunleavy_Abortion.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm"
+    },
+    {
+      "politician_id": "164fb70e-b8c1-48cd-a6ef-12d80165c67d",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "sources": [
+        "https://www.ontheissues.org/House/Andy_Barr.htm",
+        "https://www.ontheissues.org/House/Andy_Barr_Energy.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Andy_Barr_Energy.htm"
+    },
+    {
+      "politician_id": "efba0750-f472-47b3-acf7-054bd57817fc",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "sources": [
+        "https://www.ontheissues.org/House/Jahana_Hayes_Families_%26_Children.htm",
+        "https://www.ontheissues.org/House/Jahana_Hayes.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jahana_Hayes_Families_%26_Children.htm"
+    },
+    {
+      "politician_id": "efba0750-f472-47b3-acf7-054bd57817fc",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "sources": [
+        "https://www.ctmirror.org/tag/jahana-hayes/",
+        "https://www.ontheissues.org/House/Jahana_Hayes_Welfare_%26_Poverty.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jahana_Hayes_Welfare_%26_Poverty.htm"
+    },
+    {
+      "politician_id": "efba0750-f472-47b3-acf7-054bd57817fc",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "sources": [
+        "https://jahanahayes.com/issues/",
+        "https://www.ctmirror.org/tag/jahana-hayes/",
+        "https://www.ontheissues.org/House/Jahana_Hayes_Welfare_%26_Poverty.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jahana_Hayes_Welfare_%26_Poverty.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://ballotpedia.org/Jim_McGovern"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "sources": [
+        "https://mcgovern.house.gov/issues",
+        "https://www.ontheissues.org/House/Jim_McGovern.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "sources": [
+        "https://mcgovern.house.gov/issues",
+        "https://www.ontheissues.org/House/Jim_McGovern.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "sources": [
+        "https://mcgovern.house.gov/issues",
+        "https://www.ontheissues.org/House/Jim_McGovern.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://ballotpedia.org/Jim_McGovern"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://mcgovern.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://mcgovern.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "sources": [
+        "https://mcgovern.house.gov/issues",
+        "https://www.ontheissues.org/House/Jim_McGovern.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+      "sources": [
+        "https://mcgovern.house.gov/issues",
+        "https://www.ontheissues.org/House/Jim_McGovern.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://mcgovern.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://mcgovern.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "sources": [
+        "https://mcgovern.house.gov/issues",
+        "https://www.ontheissues.org/House/Jim_McGovern.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "sources": [
+        "https://mcgovern.house.gov/issues",
+        "https://www.ontheissues.org/House/Jim_McGovern.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "sources": [
+        "https://mcgovern.house.gov/issues",
+        "https://www.ontheissues.org/House/Jim_McGovern.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://mcgovern.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://mcgovern.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "sources": [
+        "https://mcgovern.house.gov/issues",
+        "https://www.ontheissues.org/House/Jim_McGovern.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jim_McGovern_(politician)",
+        "https://www.ontheissues.org/House/Jim_McGovern.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://mcgovern.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://ballotpedia.org/Jim_McGovern"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "sources": [
+        "https://mcgovern.house.gov/issues",
+        "https://www.ontheissues.org/House/Jim_McGovern.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://mcgovern.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "sources": [
+        "https://mcgovern.house.gov/issues",
+        "https://www.ontheissues.org/House/Jim_McGovern.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://mcgovern.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://mcgovern.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://mcgovern.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "6674d87e-999d-433a-aab7-3f626f59fd5f",
+      "sources": [
+        "https://mcgovern.house.gov/issues",
+        "https://www.ontheissues.org/House/Jim_McGovern.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://mcgovern.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://en.wikipedia.org/wiki/Jim_McGovern_(politician)"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://mcgovern.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "ee4081d5-fc3e-4a8c-b39e-481ae20135d5",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "sources": [
+        "https://www.ontheissues.org/House/Jim_McGovern.htm",
+        "https://mcgovern.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Jim_McGovern.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "sources": [
+        "https://www.ontheissues.org/House/Katherine_Clark.htm",
+        "https://clark.house.gov/issues"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+      "topic_id": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+      "sources": [
+        "https://clark.house.gov/issues",
+        "https://www.ontheissues.org/House/Katherine_Clark.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Katherine_Clark.htm"
+    },
+    {
+      "politician_id": "b96758c6-2ea0-4698-8886-d574d34e366d",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "sources": [
+        "https://trahan.house.gov/issues",
+        "https://www.ontheissues.org/House/Lori_Trahan.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Lori_Trahan.htm"
+    },
+    {
+      "politician_id": "b96758c6-2ea0-4698-8886-d574d34e366d",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "sources": [
+        "https://trahan.house.gov/issues",
+        "https://www.ontheissues.org/House/Lori_Trahan.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Lori_Trahan.htm"
+    },
+    {
+      "politician_id": "b96758c6-2ea0-4698-8886-d574d34e366d",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "sources": [
+        "https://trahan.house.gov/issues",
+        "https://www.ontheissues.org/House/Lori_Trahan.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Lori_Trahan.htm"
+    },
+    {
+      "politician_id": "b96758c6-2ea0-4698-8886-d574d34e366d",
+      "topic_id": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+      "sources": [
+        "https://trahan.house.gov/issues",
+        "https://www.ontheissues.org/House/Lori_Trahan.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Lori_Trahan.htm"
+    },
+    {
+      "politician_id": "b96758c6-2ea0-4698-8886-d574d34e366d",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "sources": [
+        "https://trahan.house.gov/issues",
+        "https://www.ontheissues.org/House/Lori_Trahan.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/House/Lori_Trahan.htm"
+    },
+    {
+      "politician_id": "2bc2ecee-9c21-47cd-ae0f-d712b1fa8b3e",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "sources": [
+        "https://www.ontheissues.org/IL/Chuy_Garcia_Free_Trade.htm",
+        "https://www.ontheissues.org/illinois/Chuy_Garcia.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/illinois/Chuy_Garcia.htm"
+    },
+    {
+      "politician_id": "2bc2ecee-9c21-47cd-ae0f-d712b1fa8b3e",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "sources": [
+        "https://www.ontheissues.org/IL/Chuy_Garcia_Government_Reform.htm",
+        "https://www.ontheissues.org/illinois/Chuy_Garcia.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/illinois/Chuy_Garcia.htm"
+    },
+    {
+      "politician_id": "2bc2ecee-9c21-47cd-ae0f-d712b1fa8b3e",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "sources": [
+        "https://www.ontheissues.org/IL/Chuy_Garcia_Civil_Rights.htm",
+        "https://www.ontheissues.org/illinois/Chuy_Garcia.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/illinois/Chuy_Garcia.htm"
+    },
+    {
+      "politician_id": "2bc2ecee-9c21-47cd-ae0f-d712b1fa8b3e",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "sources": [
+        "https://www.ontheissues.org/IL/Chuy_Garcia_Government_Reform.htm",
+        "https://www.ontheissues.org/illinois/Chuy_Garcia.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/illinois/Chuy_Garcia.htm"
+    },
+    {
+      "politician_id": "2bc2ecee-9c21-47cd-ae0f-d712b1fa8b3e",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "sources": [
+        "https://www.ontheissues.org/IL/Chuy_Garcia_Education.htm",
+        "https://www.ontheissues.org/illinois/Chuy_Garcia.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/illinois/Chuy_Garcia.htm"
+    },
+    {
+      "politician_id": "2bc2ecee-9c21-47cd-ae0f-d712b1fa8b3e",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "sources": [
+        "https://www.ontheissues.org/IL/Chuy_Garcia_Social_Security.htm",
+        "https://www.ontheissues.org/illinois/Chuy_Garcia.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/illinois/Chuy_Garcia.htm"
+    },
+    {
+      "politician_id": "761aa2ac-d877-4654-97c7-60bf40980f63",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "sources": [
+        "https://www.ontheissues.org/Jill_Tokuda.htm",
+        "https://en.wikipedia.org/wiki/Jill_Tokuda"
+      ],
+      "old_url": "https://www.ontheissues.org/Jill_Tokuda.htm"
+    },
+    {
+      "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "sources": [
+        "https://lynch.house.gov/issues/education",
+        "https://votesmart.org/candidate/evaluations/7740/stephen-lynch",
+        "https://www.ontheissues.org/MA/Stephen_Lynch.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/MA/Stephen_Lynch.htm"
+    },
+    {
+      "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "sources": [
+        "https://lynch.house.gov/issues",
+        "https://votesmart.org/candidate/evaluations/7740/stephen-lynch",
+        "https://www.ontheissues.org/MA/Stephen_Lynch.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/MA/Stephen_Lynch.htm"
+    },
+    {
+      "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "sources": [
+        "https://www.naral.org/scorecards/",
+        "https://votesmart.org/candidate/evaluations/7740/stephen-lynch",
+        "https://www.ontheissues.org/MA/Stephen_Lynch.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/MA/Stephen_Lynch.htm"
+    },
+    {
+      "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "sources": [
+        "https://www.govtrack.us/congress/votes/117-2022/h460",
+        "https://www.ontheissues.org/MA/Stephen_Lynch.htm",
+        "https://votesmart.org/candidate/evaluations/7740/stephen-lynch"
+      ],
+      "old_url": "https://www.ontheissues.org/MA/Stephen_Lynch.htm"
+    },
+    {
+      "politician_id": "24ffc01e-b6f8-48c7-b3a9-eefc5b03c7bb",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "sources": [
+        "https://www.ontheissues.org/house/Mark_Alford_Government_Reform.htm",
+        "https://www.ontheissues.org/Mark_Alford.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Mark_Alford.htm"
+    },
+    {
+      "politician_id": "24ffc01e-b6f8-48c7-b3a9-eefc5b03c7bb",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "sources": [
+        "https://www.ontheissues.org/house/Mark_Alford_Principles_+_Values.htm",
+        "https://www.ontheissues.org/Mark_Alford.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Mark_Alford.htm"
+    },
+    {
+      "politician_id": "ace0b96d-8ef8-4aca-8928-6848ae430da6",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "sources": [
+        "https://www.ontheissues.org/MI/Mike_Rogers.htm",
+        "https://www.ontheissues.org/MI/Mike_Rogers_Tax_and_Fiscal_Policy.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/MI/Mike_Rogers_Tax_and_Fiscal_Policy.htm"
+    },
+    {
+      "politician_id": "3fe892d9-3086-4088-a6d8-af7b3a8b80c1",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "sources": [
+        "https://www.ontheissues.org/Michael_Rulli.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Michael_Rulli.htm"
+    },
+    {
+      "politician_id": "3fe892d9-3086-4088-a6d8-af7b3a8b80c1",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Michael_Rulli",
+        "https://www.ontheissues.org/Michael_Rulli.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Michael_Rulli.htm"
+    },
+    {
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+        "https://www.ontheissues.org/Robert_Garcia.htm",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus"
+      ],
+      "old_url": "https://www.ontheissues.org/Robert_Garcia.htm"
+    },
+    {
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+        "https://www.ontheissues.org/Robert_Garcia.htm",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus"
+      ],
+      "old_url": "https://www.ontheissues.org/Robert_Garcia.htm"
+    },
+    {
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "sources": [
+        "https://www.ontheissues.org/Robert_Garcia.htm",
+        "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus"
+      ],
+      "old_url": "https://www.ontheissues.org/Robert_Garcia.htm"
+    },
+    {
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+        "https://www.ontheissues.org/Robert_Garcia.htm",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus"
+      ],
+      "old_url": "https://www.ontheissues.org/Robert_Garcia.htm"
+    },
+    {
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Congressional_YIMBY_Caucus",
+        "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+        "https://www.ontheissues.org/Robert_Garcia.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Robert_Garcia.htm"
+    },
+    {
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus",
+        "https://www.ontheissues.org/Robert_Garcia.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Robert_Garcia.htm"
+    },
+    {
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus",
+        "https://www.ontheissues.org/Robert_Garcia.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Robert_Garcia.htm"
+    },
+    {
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+        "https://www.longbeach.gov/homelessness/",
+        "https://www.ontheissues.org/Robert_Garcia.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Robert_Garcia.htm"
+    },
+    {
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus",
+        "https://www.ontheissues.org/Robert_Garcia.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Robert_Garcia.htm"
+    },
+    {
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+        "https://www.ontheissues.org/Robert_Garcia.htm",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus"
+      ],
+      "old_url": "https://www.ontheissues.org/Robert_Garcia.htm"
+    },
+    {
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus",
+        "https://www.ontheissues.org/Robert_Garcia.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Robert_Garcia.htm"
+    },
+    {
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus",
+        "https://www.ontheissues.org/Robert_Garcia.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Robert_Garcia.htm"
+    },
+    {
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+        "https://www.ontheissues.org/Robert_Garcia.htm",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus"
+      ],
+      "old_url": "https://www.ontheissues.org/Robert_Garcia.htm"
+    },
+    {
+      "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Congressional_Freethought_Caucus",
+        "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+        "https://www.ontheissues.org/Robert_Garcia.htm"
+      ],
+      "old_url": "https://www.ontheissues.org/Robert_Garcia.htm"
+    },
+    {
+      "politician_id": "6e5d3005-07e5-4c57-a3e0-033a2b17bbdc",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "sources": [
+        "https://www.richardloa.com/issues-policy",
+        "https://www.richardloa.com/"
+      ],
+      "old_url": "https://www.richardloa.com/issues-policy"
+    },
+    {
+      "politician_id": "6e5d3005-07e5-4c57-a3e0-033a2b17bbdc",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "sources": [
+        "https://www.richardloa.com/issues-policy"
+      ],
+      "old_url": "https://www.richardloa.com/issues-policy"
+    },
+    {
+      "politician_id": "6e5d3005-07e5-4c57-a3e0-033a2b17bbdc",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "sources": [
+        "https://www.richardloa.com/issues-policy"
+      ],
+      "old_url": "https://www.richardloa.com/issues-policy"
+    },
+    {
+      "politician_id": "dd90ac18-7613-4a2f-bfc1-2eddfebb4daf",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "sources": [
+        "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/",
+        "https://www.fox13now.com/news/politics/salt-lake-county-council-passes-sales-tax-increase-for-transportation-public-safety",
+        "https://kslnewsradio.com/housing-homelessness/507-million-public-safety-bond-heads-to-november-ballot/2125988/"
+      ],
+      "old_url": "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+    },
+    {
+      "politician_id": "f414070c-662c-4cf9-a7d2-28a642a3fd03",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "sources": [
+        "https://www.fox13now.com/news/politics/salt-lake-county-voters-asked-to-decide-507-million-bond-for-homeless-public-safety-needs",
+        "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+      ],
+      "old_url": "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+    },
+    {
+      "politician_id": "13752a3e-8159-4569-ac16-3736c16c96be",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "sources": [
+        "https://www.ksl.com/article/51073815/salt-lake-county-unveils-game-changing-criminal-justice-homelessness-reform-plan",
+        "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/",
+        "https://www.fox13now.com/news/politics/salt-lake-county-council-passes-sales-tax-increase-for-transportation-public-safety"
+      ],
+      "old_url": "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+    },
+    {
+      "politician_id": "dd90ac18-7613-4a2f-bfc1-2eddfebb4daf",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "sources": [
+        "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/",
+        "https://www.fox13now.com/news/politics/salt-lake-county-council-passes-sales-tax-increase-for-transportation-public-safety"
+      ],
+      "old_url": "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+    },
+    {
+      "politician_id": "261b4428-3b92-4d3f-a013-00c4b10a7925",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "sources": [
+        "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/",
+        "https://utahpolicy.com/news-release/76094-salt-lake-county-council-democratic-caucus-statement-on-passage-of-2026-budget"
+      ],
+      "old_url": "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+    },
+    {
+      "politician_id": "f414070c-662c-4cf9-a7d2-28a642a3fd03",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "sources": [
+        "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/",
+        "https://www.votesuz.com/issues"
+      ],
+      "old_url": "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+    },
+    {
+      "politician_id": "f414070c-662c-4cf9-a7d2-28a642a3fd03",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "sources": [
+        "https://www.fox13now.com/news/politics/salt-lake-county-voters-asked-to-decide-507-million-bond-for-homeless-public-safety-needs",
+        "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+      ],
+      "old_url": "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+    },
+    {
+      "politician_id": "bc7cdf2d-2ee7-404f-b6be-286bf4252dc5",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "sources": [
+        "https://sheldon4u.com/about-sheldon/my-principles/",
+        "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+      ],
+      "old_url": "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+    },
+    {
+      "politician_id": "bc7cdf2d-2ee7-404f-b6be-286bf4252dc5",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "sources": [
+        "https://www.fox13now.com/news/politics/salt-lake-county-voters-asked-to-decide-507-million-bond-for-homeless-public-safety-needs",
+        "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+      ],
+      "old_url": "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+    },
+    {
+      "politician_id": "2ec55690-4c8a-4e9e-934b-f0f945947721",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "sources": [
+        "https://www.fox13now.com/news/politics/salt-lake-county-voters-asked-to-decide-507-million-bond-for-homeless-public-safety-needs",
+        "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+      ],
+      "old_url": "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+    },
+    {
+      "politician_id": "2ec55690-4c8a-4e9e-934b-f0f945947721",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "sources": [
+        "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/",
+        "https://www.fox13now.com/news/politics/salt-lake-county-council-passes-sales-tax-increase-for-transportation-public-safety"
+      ],
+      "old_url": "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+    },
+    {
+      "politician_id": "2ec55690-4c8a-4e9e-934b-f0f945947721",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "sources": [
+        "https://www.fox13now.com/news/politics/salt-lake-county-voters-asked-to-decide-507-million-bond-for-homeless-public-safety-needs",
+        "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+      ],
+      "old_url": "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+    },
+    {
+      "politician_id": "d077198d-0013-420d-9603-81cf6f2e7316",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "sources": [
+        "https://utahnewsdispatch.com/2025/02/19/salt-lake-county-council-votes-to-raise-taxes-for-more-jail-beds/",
+        "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+      ],
+      "old_url": "https://www.saltlakecounty.gov/newsroom/salt-lake-county-council-acts-to-address-jail-overcrowding-and-countywide-transportation-needs/"
+    },
+    {
+      "politician_id": "1e25123b-7f6c-47c3-b597-bbd626c185ae",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "sources": [
+        "https://www.saltlakecounty.gov/newsroom/secc-salt-palace-land-sale-release/",
+        "https://www.utahbusiness.com/press-releases/2025/05/02/salt-lake-county-sale-downtown-property-economic-growth-revitalize-urban-core-capital-city-smith-entertainment-group/",
+        "https://www.saltlakecounty.gov/newsroom/2025-state-of-the-county-address"
+      ],
+      "old_url": "https://www.saltlakecounty.gov/newsroom/secc-salt-palace-land-sale-release/"
+    },
+    {
+      "politician_id": "c2a6383a-56e9-4ead-9f22-9a6d3e88f68c",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "sources": [
+        "https://www.sherwoodoregon.gov/cm/page/sherwood-mayor-mays-joins-regional-mayors-statement",
+        "https://www.sherwoodoregon.gov/news/sherwood-councilor-keith-mays-receives-prestigious-leage-of-oregon-cities-award/"
+      ],
+      "old_url": "https://www.sherwoodoregon.gov/cm/page/sherwood-mayor-mays-joins-regional-mayors-statement"
+    },
+    {
+      "politician_id": "0ed76bd2-273d-4057-9c4e-4259d6cb9ebc",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "sources": [
+        "https://www.sos.la.gov/ElectionsAndVoting/Vote/Pages/default.aspx",
+        "https://www.sos.la.gov/OurOffice/LearnAboutNancyLandry/Pages/default.aspx"
+      ],
+      "old_url": "https://www.sos.la.gov/ElectionsAndVoting/Vote/Pages/default.aspx"
+    },
+    {
+      "politician_id": "eb88bdd6-d1c7-4e08-aff8-bb7517ad24b5",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Deb_Goldberg",
+        "https://www.southcoasttoday.com/news/20181031/goldberg-touts-old-fashioned-business-ethic-in-treasurers-race"
+      ],
+      "old_url": "https://www.southcoasttoday.com/news/20181031/goldberg-touts-old-fashioned-business-ethic-in-treasurers-race"
+    },
+    {
+      "politician_id": "eb88bdd6-d1c7-4e08-aff8-bb7517ad24b5",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Deb_Goldberg",
+        "https://www.southcoasttoday.com/news/20181031/goldberg-touts-old-fashioned-business-ethic-in-treasurers-race"
+      ],
+      "old_url": "https://www.southcoasttoday.com/news/20181031/goldberg-touts-old-fashioned-business-ethic-in-treasurers-race"
+    }
+  ]
+}

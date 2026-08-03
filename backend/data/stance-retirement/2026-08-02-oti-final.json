@@ -1,0 +1,1083 @@
+[
+  {
+    "cited": "https://www.ontheissues.org/House/Jim_McGovern.htm",
+    "n_rows": 31,
+    "n_sole": 0,
+    "politician": "Jim McGovern",
+    "state": "MA",
+    "office": "Representative",
+    "resolved": {
+      "url": "https://www.ontheissues.org/MA/Jim_McGovern.htm",
+      "title": "Jim McGovern on the Issues",
+      "len": 65909
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/MA/Jim_McGovern.htm",
+        "http": 200,
+        "len": 65909,
+        "title": "Jim McGovern on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/MA/Jim_McGovern.htm",
+      "title": "Jim McGovern on the Issues",
+      "len": 65909
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/MA/Jim_McGovern.htm",
+        "http": 200,
+        "len": 65909,
+        "title": "Jim McGovern on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/House/Katherine_Clark.htm",
+    "n_rows": 24,
+    "n_sole": 0,
+    "politician": "Katherine Clark",
+    "state": "MA",
+    "office": "Representative",
+    "resolved": {
+      "url": "https://www.ontheissues.org/MA/Katherine_Clark.htm",
+      "title": "Katherine Clark on the Issues",
+      "len": 20149
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/MA/Katherine_Clark.htm",
+        "http": 200,
+        "len": 20149,
+        "title": "Katherine Clark on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/MA/Katherine_Clark.htm",
+      "title": "Katherine Clark on the Issues",
+      "len": 20149
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/MA/Katherine_Clark.htm",
+        "http": 200,
+        "len": 20149,
+        "title": "Katherine Clark on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://ontheissues.org/VA/Ghazala_Hashmi.htm",
+    "n_rows": 22,
+    "n_sole": 0,
+    "politician": "Ghazala Hashmi",
+    "state": "VA",
+    "office": "Lieutenant Governor",
+    "resolved": null,
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/VA/Ghazala_Hashmi.htm",
+        "http": 404,
+        "len": 1147,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/House/Ghazala_Hashmi.htm",
+        "http": 404,
+        "len": 1153,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Senate/Ghazala_Hashmi.htm",
+        "http": 404,
+        "len": 1155,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Ghazala_Hashmi.htm",
+        "http": 404,
+        "len": 1141,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      }
+    ],
+    "final": null,
+    "note": "no page on the site in any form"
+  },
+  {
+    "cited": "https://ontheissues.org/Governor/Maura_Healey.htm",
+    "n_rows": 17,
+    "n_sole": 0,
+    "politician": "Maura Healey",
+    "state": "MA",
+    "office": "Governor",
+    "resolved": {
+      "url": "https://www.ontheissues.org/Maura_Healey.htm",
+      "title": "Maura Healey on the Issues",
+      "len": 22802
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/MA/Maura_Healey.htm",
+        "http": 404,
+        "len": 1143,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/House/Maura_Healey.htm",
+        "http": 404,
+        "len": 1149,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Senate/Maura_Healey.htm",
+        "http": 404,
+        "len": 1151,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Maura_Healey.htm",
+        "http": 200,
+        "len": 22802,
+        "title": "Maura Healey on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/Maura_Healey.htm",
+      "title": "Maura Healey on the Issues",
+      "len": 22802
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/Maura_Healey.htm",
+        "http": 200,
+        "len": 22802,
+        "title": "Maura Healey on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/Robert_Garcia.htm",
+    "n_rows": 14,
+    "n_sole": 0,
+    "politician": "Robert Garcia",
+    "state": "",
+    "office": null,
+    "resolved": null,
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/CA/Robert_Garcia.htm",
+        "http": 200,
+        "len": 12754,
+        "title": "Robert Garcia on the Issues",
+        "titleOk": true,
+        "corrob": null
+      },
+      {
+        "url": "https://www.ontheissues.org/IL/Chuy_Garcia.htm",
+        "http": 200,
+        "len": 18159,
+        "title": "Chuy Garcia on the Issues",
+        "titleOk": true,
+        "corrob": null
+      },
+      {
+        "url": "https://www.ontheissues.org/TX/Sylvia_Garcia.htm",
+        "http": 200,
+        "len": 19740,
+        "title": "Sylvia Garcia on the Issues",
+        "titleOk": true,
+        "corrob": null
+      },
+      {
+        "url": "https://www.ontheissues.org/House/Robert_Garcia.htm",
+        "http": 404,
+        "len": 1151,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Senate/Robert_Garcia.htm",
+        "http": 404,
+        "len": 1153,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Robert_Garcia.htm",
+        "http": 404,
+        "len": 1139,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/House/Bob_Garcia.htm",
+        "http": 404,
+        "len": 1145,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Senate/Bob_Garcia.htm",
+        "http": 404,
+        "len": 1147,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Bob_Garcia.htm",
+        "http": 404,
+        "len": 1133,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/CA/Robert_Garcia.htm",
+      "title": "Robert Garcia on the Issues",
+      "len": 12754
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/CA/Robert_Garcia.htm",
+        "http": 200,
+        "len": 12754,
+        "title": "Robert Garcia on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/Governor/Mike_Dunleavy.htm",
+    "n_rows": 8,
+    "n_sole": 0,
+    "politician": "Mike Dunleavy",
+    "state": "AK",
+    "office": "Governor",
+    "resolved": {
+      "url": "https://www.ontheissues.org/Mike_Dunleavy.htm",
+      "title": "Mike Dunleavy on the Issues",
+      "len": 24239
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/AK/Mike_Dunleavy.htm",
+        "http": 404,
+        "len": 1145,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/House/Mike_Dunleavy.htm",
+        "http": 404,
+        "len": 1151,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Senate/Mike_Dunleavy.htm",
+        "http": 404,
+        "len": 1153,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Mike_Dunleavy.htm",
+        "http": 200,
+        "len": 24239,
+        "title": "Mike Dunleavy on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/Mike_Dunleavy.htm",
+      "title": "Mike Dunleavy on the Issues",
+      "len": 24239
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/Mike_Dunleavy.htm",
+        "http": 200,
+        "len": 24239,
+        "title": "Mike Dunleavy on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/Andy_Barr.htm",
+    "n_rows": 7,
+    "n_sole": 0,
+    "politician": "Andy Barr",
+    "state": "",
+    "office": null,
+    "resolved": null,
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/House/Andy_Barr.htm",
+        "http": 200,
+        "len": 20441,
+        "title": "Andy Barr on the Issues",
+        "titleOk": true,
+        "corrob": null
+      },
+      {
+        "url": "https://www.ontheissues.org/Senate/Andy_Barr.htm",
+        "http": 200,
+        "len": 24909,
+        "title": "Andy Barr on the Issues",
+        "titleOk": true,
+        "corrob": null
+      },
+      {
+        "url": "https://www.ontheissues.org/Andy_Barr.htm",
+        "http": 404,
+        "len": 1131,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/House/Andy_Barr.htm",
+      "title": "Andy Barr on the Issues",
+      "len": 20441
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/House/Andy_Barr.htm",
+        "http": 200,
+        "len": 20441,
+        "title": "Andy Barr on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/Frank_Mrvan.htm",
+    "n_rows": 7,
+    "n_sole": 0,
+    "politician": "Frank J. Mrvan",
+    "state": "IN",
+    "office": "U.S. Representative",
+    "resolved": {
+      "url": "https://www.ontheissues.org/IN/Frank_Mrvan.htm",
+      "title": "Frank Mrvan on the Issues",
+      "len": 14082
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/IN/Frank_Mrvan.htm",
+        "http": 200,
+        "len": 14082,
+        "title": "Frank Mrvan on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/IN/Frank_Mrvan.htm",
+      "title": "Frank Mrvan on the Issues",
+      "len": 14082
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/IN/Frank_Mrvan.htm",
+        "http": 200,
+        "len": 14082,
+        "title": "Frank Mrvan on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/illinois/Chuy_Garcia.htm",
+    "n_rows": 6,
+    "n_sole": 0,
+    "politician": "Jesús G. \"Chuy\" García",
+    "state": "IL",
+    "office": "U.S. Representative",
+    "resolved": null,
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/IL/Jesús_García.htm",
+        "http": 404,
+        "len": 1143,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/House/Jesús_García.htm",
+        "http": 404,
+        "len": 1149,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Senate/Jesús_García.htm",
+        "http": 404,
+        "len": 1151,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Jesús_García.htm",
+        "http": 404,
+        "len": 1137,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/IL/Chuy_García.htm",
+        "http": 404,
+        "len": 1141,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/House/Chuy_García.htm",
+        "http": 404,
+        "len": 1147,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Senate/Chuy_García.htm",
+        "http": 404,
+        "len": 1149,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Chuy_García.htm",
+        "http": 404,
+        "len": 1135,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/IL/Jesús_Chuy_García.htm",
+        "http": 404,
+        "len": 1153,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/House/Jesús_Chuy_García.htm",
+        "http": 404,
+        "len": 1159,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Senate/Jesús_Chuy_García.htm",
+        "http": 404,
+        "len": 1161,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Jesús_Chuy_García.htm",
+        "http": 404,
+        "len": 1147,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/IL/Chuy_Garcia.htm",
+      "title": "Chuy Garcia on the Issues",
+      "len": 18161
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/IL/Chuy_Garcia.htm",
+        "http": 200,
+        "len": 18159,
+        "title": "Chuy Garcia on the Issues",
+        "ok": false
+      }
+    ],
+    "note": "Hand-added: the automated title test compared the accented surname García against the page title \"Chuy Garcia\" and failed on the diacritic alone. Page verified directly -- 200, 18,161c, corroborated by Illinois and Chicago."
+  },
+  {
+    "cited": "https://www.ontheissues.org/House/Lori_Trahan.htm",
+    "n_rows": 5,
+    "n_sole": 0,
+    "politician": "Lori Trahan",
+    "state": "MA",
+    "office": "Representative",
+    "resolved": {
+      "url": "https://www.ontheissues.org/MA/Lori_Trahan.htm",
+      "title": "Lori Trahan on the Issues",
+      "len": 20243
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/MA/Lori_Trahan.htm",
+        "http": 200,
+        "len": 20243,
+        "title": "Lori Trahan on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/MA/Lori_Trahan.htm",
+      "title": "Lori Trahan on the Issues",
+      "len": 20243
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/MA/Lori_Trahan.htm",
+        "http": 200,
+        "len": 20243,
+        "title": "Lori Trahan on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/MA/Stephen_Lynch.htm",
+    "n_rows": 4,
+    "n_sole": 0,
+    "politician": "Stephen Lynch",
+    "state": "MA",
+    "office": "Representative",
+    "resolved": {
+      "url": "https://www.ontheissues.org/MA/Steve_Lynch.htm",
+      "title": "Steve Lynch on the Issues",
+      "len": 49095
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/MA/Steve_Lynch.htm",
+        "http": 200,
+        "len": 49095,
+        "title": "Steve Lynch on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/MA/Steve_Lynch.htm",
+      "title": "Steve Lynch on the Issues",
+      "len": 49095
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/MA/Steve_Lynch.htm",
+        "http": 200,
+        "len": 49095,
+        "title": "Steve Lynch on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/House/Jahana_Hayes_Welfare_%26_Poverty.htm",
+    "n_rows": 2,
+    "n_sole": 0,
+    "politician": "Jahana Hayes",
+    "state": "CT",
+    "office": "U.S. Representative",
+    "resolved": {
+      "url": "https://www.ontheissues.org/House/Jahana_Hayes.htm",
+      "title": "Jahana Hayes on the Issues",
+      "len": 16650
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/House/Jahana_Hayes.htm",
+        "http": 200,
+        "len": 16650,
+        "title": "Jahana Hayes on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/House/Jahana_Hayes_Welfare_+_Poverty.htm",
+      "title": "Jahana Hayes on Welfare & Poverty",
+      "len": 5706
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/House/Jahana_Hayes_Welfare_+_Poverty.htm",
+        "http": 200,
+        "len": 5706,
+        "title": "Jahana Hayes on Welfare & Poverty",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/Mark_Alford.htm",
+    "n_rows": 2,
+    "n_sole": 0,
+    "politician": "Mark Alford",
+    "state": "MO",
+    "office": "U.S. Representative",
+    "resolved": {
+      "url": "https://www.ontheissues.org/House/Mark_Alford.htm",
+      "title": "Mark Alford on the Issues",
+      "len": 12858
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/House/Mark_Alford.htm",
+        "http": 200,
+        "len": 12858,
+        "title": "Mark Alford on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/House/Mark_Alford.htm",
+      "title": "Mark Alford on the Issues",
+      "len": 12858
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/House/Mark_Alford.htm",
+        "http": 200,
+        "len": 12858,
+        "title": "Mark Alford on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/Michael_Rulli.htm",
+    "n_rows": 2,
+    "n_sole": 1,
+    "politician": "Michael A. Rulli",
+    "state": "OH",
+    "office": "U.S. Representative",
+    "resolved": {
+      "url": "https://www.ontheissues.org/OH/Michael_Rulli.htm",
+      "title": "Michael Rulli on the Issues",
+      "len": 12980
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/OH/Michael_Rulli.htm",
+        "http": 200,
+        "len": 12980,
+        "title": "Michael Rulli on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/OH/Michael_Rulli.htm",
+      "title": "Michael Rulli on the Issues",
+      "len": 12980
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/OH/Michael_Rulli.htm",
+        "http": 200,
+        "len": 12980,
+        "title": "Michael Rulli on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://archive.ontheissues.org/CA/Pete_Aguilar_Energy_+_Oil.htm",
+    "n_rows": 1,
+    "n_sole": 0,
+    "politician": "Pete Aguilar",
+    "state": "",
+    "office": null,
+    "resolved": null,
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/CA/Pete_Aguilar.htm",
+        "http": 200,
+        "len": 19522,
+        "title": "Pete Aguilar on the Issues",
+        "titleOk": true,
+        "corrob": null
+      },
+      {
+        "url": "https://www.ontheissues.org/House/Pete_Aguilar.htm",
+        "http": 404,
+        "len": 1149,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Senate/Pete_Aguilar.htm",
+        "http": 404,
+        "len": 1151,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Pete_Aguilar.htm",
+        "http": 404,
+        "len": 1137,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/CA/Pete_Aguilar_Energy_+_Oil.htm",
+      "title": "Pete Aguilar on Energy & Oil",
+      "len": 10161
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/CA/Pete_Aguilar_Energy_+_Oil_Energy_+_Oil.htm",
+        "http": 404,
+        "len": 1195,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "ok": false
+      },
+      {
+        "url": "https://www.ontheissues.org/CA/Pete_Aguilar_Energy_+_Oil.htm",
+        "http": 200,
+        "len": 10161,
+        "title": "Pete Aguilar on Energy & Oil",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/Economic/Ed_Markey_Free_Trade.htm",
+    "n_rows": 1,
+    "n_sole": 0,
+    "politician": "Edward J. Markey",
+    "state": "MA",
+    "office": "U.S. Senate - Massachusetts",
+    "resolved": {
+      "url": "https://www.ontheissues.org/Senate/Ed_Markey.htm",
+      "title": "Ed Markey on the Issues",
+      "len": 40765
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/Senate/Ed_Markey.htm",
+        "http": 200,
+        "len": 40765,
+        "title": "Ed Markey on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/Senate/Ed_Markey.htm",
+      "title": "Ed Markey on the Issues",
+      "len": 40765
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/Senate/Ed_Markey_Free_Trade.htm",
+        "http": 404,
+        "len": 1167,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "ok": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Senate/Ed_Markey.htm",
+        "http": 200,
+        "len": 40765,
+        "title": "Ed Markey on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/GA/Rick_Allen_Principles.htm",
+    "n_rows": 1,
+    "n_sole": 0,
+    "politician": "Rick W. Allen",
+    "state": "GA",
+    "office": "U.S. Representative",
+    "resolved": {
+      "url": "https://www.ontheissues.org/GA/Rick_Allen.htm",
+      "title": "Rick Allen on the Issues",
+      "len": 19534
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/GA/Rick_Allen.htm",
+        "http": 200,
+        "len": 19534,
+        "title": "Rick Allen on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/GA/Rick_Allen.htm",
+      "title": "Rick Allen on the Issues",
+      "len": 19534
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/GA/Rick_Allen_Principles.htm",
+        "http": 404,
+        "len": 1161,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "ok": false
+      },
+      {
+        "url": "https://www.ontheissues.org/GA/Rick_Allen.htm",
+        "http": 200,
+        "len": 19534,
+        "title": "Rick Allen on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/House/Andy_Barr_Energy.htm",
+    "n_rows": 1,
+    "n_sole": 0,
+    "politician": "Andy Barr",
+    "state": "KY",
+    "office": "U.S. Representative",
+    "resolved": {
+      "url": "https://www.ontheissues.org/House/Andy_Barr.htm",
+      "title": "Andy Barr on the Issues",
+      "len": 20441
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/House/Andy_Barr.htm",
+        "http": 200,
+        "len": 20441,
+        "title": "Andy Barr on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/House/Andy_Barr.htm",
+      "title": "Andy Barr on the Issues",
+      "len": 20441
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/House/Andy_Barr_Energy.htm",
+        "http": 404,
+        "len": 1157,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "ok": false
+      },
+      {
+        "url": "https://www.ontheissues.org/House/Andy_Barr.htm",
+        "http": 200,
+        "len": 20441,
+        "title": "Andy Barr on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/House/Jahana_Hayes_Families_%26_Children.htm",
+    "n_rows": 1,
+    "n_sole": 0,
+    "politician": "Jahana Hayes",
+    "state": "CT",
+    "office": "U.S. Representative",
+    "resolved": {
+      "url": "https://www.ontheissues.org/House/Jahana_Hayes.htm",
+      "title": "Jahana Hayes on the Issues",
+      "len": 16650
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/House/Jahana_Hayes.htm",
+        "http": 200,
+        "len": 16650,
+        "title": "Jahana Hayes on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/House/Jahana_Hayes_Families_+_Children.htm",
+      "title": "Jahana Hayes on Families & Children",
+      "len": 7339
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/House/Jahana_Hayes_Families_+_Children.htm",
+        "http": 200,
+        "len": 7339,
+        "title": "Jahana Hayes on Families & Children",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/Jill_Tokuda.htm",
+    "n_rows": 1,
+    "n_sole": 0,
+    "politician": "Jill N. Tokuda",
+    "state": "HI",
+    "office": "U.S. Representative",
+    "resolved": {
+      "url": "https://www.ontheissues.org/House/Jill_Tokuda.htm",
+      "title": "Jill Tokuda on the Issues",
+      "len": 12801
+    },
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/House/Jill_Tokuda.htm",
+        "http": 200,
+        "len": 12801,
+        "title": "Jill Tokuda on the Issues",
+        "titleOk": true,
+        "corrob": true
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/House/Jill_Tokuda.htm",
+      "title": "Jill Tokuda on the Issues",
+      "len": 12801
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/House/Jill_Tokuda.htm",
+        "http": 200,
+        "len": 12801,
+        "title": "Jill Tokuda on the Issues",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "cited": "https://www.ontheissues.org/MI/Mike_Rogers_Tax_and_Fiscal_Policy.htm",
+    "n_rows": 1,
+    "n_sole": 0,
+    "politician": "Mike Rogers",
+    "state": "",
+    "office": null,
+    "resolved": null,
+    "tried": [
+      {
+        "url": "https://www.ontheissues.org/Senate/John_Rogers.htm",
+        "http": 200,
+        "len": 13380,
+        "title": "John Rogers on the Issues",
+        "titleOk": true,
+        "corrob": null
+      },
+      {
+        "url": "https://www.ontheissues.org/House/Michael_Rogers.htm",
+        "http": 200,
+        "len": 43401,
+        "title": "Michael Rogers on the Issues",
+        "titleOk": true,
+        "corrob": null
+      },
+      {
+        "url": "https://www.ontheissues.org/House/Hal_Rogers.htm",
+        "http": 200,
+        "len": 55803,
+        "title": "Hal Rogers on the Issues",
+        "titleOk": true,
+        "corrob": null
+      },
+      {
+        "url": "https://www.ontheissues.org/House/Mike_Rogers.htm",
+        "http": 404,
+        "len": 1147,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Senate/Mike_Rogers.htm",
+        "http": 200,
+        "len": 26157,
+        "title": "Mike Rogers on the Issues",
+        "titleOk": true,
+        "corrob": null
+      },
+      {
+        "url": "https://www.ontheissues.org/Mike_Rogers.htm",
+        "http": 404,
+        "len": 1135,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "titleOk": false,
+        "corrob": false
+      }
+    ],
+    "final": {
+      "url": "https://www.ontheissues.org/Senate/Mike_Rogers.htm",
+      "title": "Mike Rogers on the Issues",
+      "len": 26157
+    },
+    "tried_final": [
+      {
+        "url": "https://www.ontheissues.org/Senate/Mike_Rogers_Tax_and_Fiscal_Policy.htm",
+        "http": 404,
+        "len": 1193,
+        "title": "IIS 10.0 Detailed Error - 404.0 - Not Found",
+        "ok": false
+      },
+      {
+        "url": "https://www.ontheissues.org/Senate/Mike_Rogers.htm",
+        "http": 200,
+        "len": 26157,
+        "title": "Mike Rogers on the Issues",
+        "ok": true
+      }
+    ]
+  }
+]

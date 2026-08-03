@@ -1,0 +1,114 @@
+[
+  {
+    "host": "www.ontheissues.org",
+    "rows": 118,
+    "our_urls": 18,
+    "sibling_query": "www.ontheissues.org/House/*",
+    "archived_siblings": 3000
+  },
+  {
+    "host": "www.newtonma.gov",
+    "rows": 98,
+    "our_urls": 3,
+    "sibling_query": "www.newtonma.gov/government/*",
+    "archived_siblings": 3000
+  },
+  {
+    "host": "www.wbur.org",
+    "rows": 66,
+    "our_urls": 23,
+    "sibling_query": "www.wbur.org/news/*",
+    "archived_siblings": 3000
+  },
+  {
+    "host": "www.mass.gov",
+    "rows": 63,
+    "our_urls": 23,
+    "sibling_query": "www.mass.gov/info-details/*",
+    "archived_siblings": 3000
+  },
+  {
+    "host": "www.somervillema.gov",
+    "rows": 51,
+    "our_urls": 16,
+    "sibling_query": "www.somervillema.gov/departments/*",
+    "archived_siblings": 3000
+  },
+  {
+    "host": "www.lynnjournal.com",
+    "rows": 50,
+    "our_urls": 28,
+    "sibling_query": "www.lynnjournal.com/2025/*",
+    "archived_siblings": 1231
+  },
+  {
+    "host": "www.bhcourier.com",
+    "rows": 46,
+    "our_urls": 45,
+    "sibling_query": "www.bhcourier.com/article/*",
+    "archived_siblings": 3000
+  },
+  {
+    "host": "ontheissues.org",
+    "rows": 39,
+    "our_urls": 2,
+    "sibling_query": "ontheissues.org/VA/*",
+    "archived_siblings": 3000
+  },
+  {
+    "host": "newtonma.gov",
+    "rows": 33,
+    "our_urls": 2,
+    "sibling_query": "newtonma.gov/government/*",
+    "archived_siblings": 3000
+  },
+  {
+    "host": "carsonca.gov",
+    "rows": 32,
+    "our_urls": 2,
+    "sibling_query": "carsonca.gov/government/*",
+    "archived_siblings": 67
+  },
+  {
+    "host": "www.lynnma.gov",
+    "rows": 30,
+    "our_urls": 9,
+    "sibling_query": "www.lynnma.gov/city-council/*",
+    "archived_siblings": 0
+  },
+  {
+    "host": "pressley.house.gov",
+    "rows": 29,
+    "our_urls": 12,
+    "sibling_query": "pressley.house.gov/issues/*",
+    "archived_siblings": 3000
+  },
+  {
+    "host": "www.medfordma.org",
+    "rows": 27,
+    "our_urls": 12,
+    "sibling_query": "www.medfordma.org/city-council/*",
+    "archived_siblings": 78
+  },
+  {
+    "host": "www.alhambraca.gov",
+    "rows": 26,
+    "our_urls": 1,
+    "sibling_query": "www.alhambraca.gov/government/*",
+    "archived_siblings": 7
+  },
+  {
+    "host": "votesmart.org",
+    "rows": 26,
+    "our_urls": 3,
+    "sibling_query": "votesmart.org/candidate/*",
+    "archived_siblings": 3000
+  },
+  {
+    "host": "www.isidewith.com",
+    "rows": 25,
+    "our_urls": 9,
+    "sibling_query": "www.isidewith.com/candidates/*",
+    "archived_siblings": 3000
+  }
+]

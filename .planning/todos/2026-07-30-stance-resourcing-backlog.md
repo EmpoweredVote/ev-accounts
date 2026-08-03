@@ -16,6 +16,50 @@ New check **`NON_URL_SOURCE`** — now **0 and ZERO-TOLERANCE** (1527–1530 clo
 
 ---
 
+## 🔴 HANDOFF 2026-08-02 (fourth) — the dead tail is mostly NOT link rot
+
+**1535 applied.** 234 row-citations fixed. Gate green, **643 rows / 3 checks**. **Next number: 1536.**
+Review: [`2026-08-02-dead-url-tail.md`](../../backend/data/stance-retirement/2026-08-02-dead-url-tail.md).
+
+🔴 **THE FINDING, AND IT IS BIGGER THAN THE FIX. 497 URLs / 1,166 row-citations point at pages that
+never existed.** Of 559 URLs still dead on re-probe, Wayback has **never captured 518** — while holding
+**3,000+ distinct URLs in the very same directory** on wbur.org/news/, mass.gov/info-details/,
+newtonma.gov/government/, somervillema.gov/departments/, bhcourier.com/article/,
+pressley.house.gov/issues/ and ontheissues.org/House/. A URL a continuously-crawled host never served,
+the archive never saw once, and that 404s today was composed, not visited. **Re-pointing cannot fix
+it** — these rows need re-research or retirement, and that is an operator call, not a migration's.
+
+⚠ **Four hosts are the honest exception** — Wayback's coverage of them really is thin, so a crawl gap
+is plausible: lynnma.gov/city-council/ (0 siblings), alhambraca.gov/government/ (7),
+carsonca.gov/government/ (67), medfordma.org/city-council/ (78). 30 URLs / 115 rows.
+
+**What WAS fixed:** OnTheIssues 20 URLs / 136 rows re-pointed to the page the site actually has —
+and it proves the mechanism. OTI files members under **four** shapes (`/MA/Jim_McGovern.htm`,
+`/House/Jahana_Hayes.htm`, `/Senate/Ed_Markey.htm`, bare `/Maura_Healey.htm`) under the *familiar*
+name; the citations used one invented shape. Targets came from the site's own /house.htm index, and
+identity was checked by name **and** corroboration (OTI has several Robert Garcias and Mike Rogerses).
+Plus 98 rows re-pointed to a Wayback capture verified to name the politician and carry any quoted span.
+
+**Owed from this pass:** 1,166 rows on never-archived URLs · 22 rows held on archived URLs the capture
+does not support (Salt Lake County release names 3 of 13 officials citing it) · Ghazala Hashmi ×22 (no
+OTI page in any shape).
+
+🔴 **Three method traps, all new:**
+1. **A throttled availability response is indistinguishable from a real absence.** 4-way concurrency on
+   `archive.org/wayback/available` drew 429 on 129 of 559, and the endpoint returns
+   `{"archived_snapshots":{}}` for a genuine miss too. Discarded and re-run **serially**.
+2. **CDX is too slow to be the primary lookup.** Same page, three query forms: 4s, 36s, and a 60s
+   **504**. Use the availability API for yes/no; spend CDX on sibling-coverage queries per host.
+3. **Encoding and diacritics faked five misses.** OnTheIssues serves windows-1252 (UTF-8 decode →
+   mojibake), and `García` failed a title test against the page's `Garcia`.
+
+⚠ **The sweep's classes were wrong on 64 URLs.** 43 now resolve fine; 11 `THIN` are HTTP 200 with a
+correct `<title>` (freedomindex.us SPA shells and two PDFs — my extractor got no body text, which is
+not the page being gone); 10 `BOT_BLOCKED` return an identical 4,215-byte block page so the 403 says
+nothing. Always re-probe before believing a stored class.
+
+---
+
 ## 🟢 HANDOFF 2026-08-02 (third) — Act on Mass is FINISHED, both halves
 
 **1533 + 1534 applied.** The `/bills/` half: 284 row-citations re-pointed across 38 URLs (243 rows).
