@@ -110,6 +110,14 @@ The audit's standing worry is over-claiming; here the original research under-cl
 
 ### 🔴 Four pairs are unanswerable by construction, not for want of evidence
 
+> **⚠ SUPERSEDED IN PART — see `SCOPE-DECISION.md`.** This section was written before I checked
+> `inform.compass_topic_roles`, the platform's live tier model. It settles three of these four with no new
+> policy: Transportation Priorities and Economic Development Incentives carry no `federal` role row, so
+> `applies_federal=false` and both are *already* filtered off a member of Congress's compass — those three
+> pairs are closed permanently. But **Hoyle / State Redistricting has a `federal` role row and is NOT a
+> scope problem**; it is an ordinary evidence blank, and calling it a scope failure below was wrong. The
+> same check also found two chairs migration 1541 applied are inert for the same reason.
+
 Two topics are **city-scoped questions attached to members of Congress**:
 
 - *Transportation Priorities* — *"Where should **your city** focus its transportation investment?"*, with

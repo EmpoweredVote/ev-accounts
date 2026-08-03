@@ -7974,9 +7974,9 @@
    "chair_shaped": "",
    "chair_if_cosponsored": "",
    "adjudication_note": "",
-   "pair_verdict": "BLANK_SCOPE",
+   "pair_verdict": "BLANK_SKIP",
    "pair_chair": null,
-   "pair_basis": "🔴 SCOPE MISMATCH. The topic asks about STATE redistricting. Her 3 candidates are the Freedom to Vote Act (federal CONGRESSIONAL redistricting criteria) and DC statehood x2, which is not redistricting at all. Nothing addresses who draws STATE legislative maps, and the omnibus cannot distinguish chair 1 (\"no elected officials at any level\") from chair 2 (\"equal representation from both major parties\"). ⚠ Re-opened from tranche 1 and still blank, now for a documented reason rather than absence of candidates."
+   "pair_basis": "🔴 CORRECTED from BLANK_SCOPE. This is NOT a scope mismatch: the topic carries a `federal` role row in inform.compass_topic_roles, so the platform deliberately asks it of federal officials and it displays on her profile. The title says \"State\" but the scope model says federal applies. It is an ordinary evidence blank: her only evidence is the Freedom to Vote Act omnibus plus DC statehood, and chair 1 (\"no elected officials at any level\") and chair 2 (\"equal representation from both major parties\") are indistinguishable on it."
   },
   {
    "politician": "Val Hoyle",
@@ -8863,9 +8863,9 @@
    "chair_shaped": "",
    "chair_if_cosponsored": "",
    "adjudication_note": "",
-   "pair_verdict": "BLANK_SCOPE",
+   "pair_verdict": "BLANK_OUT_OF_SCOPE",
    "pair_chair": null,
-   "pair_basis": "🔴 Same structural scope mismatch as Hoyle: a city-scoped question against a federal record of FAA reauthorization, a rail worker safety bill (orig-co) and a highway NAMING designation."
+   "pair_basis": "DECIDED (SCOPE-DECISION.md): the topic carries no `federal` row in inform.compass_topic_roles, so applies_federal=false and the frontend already filters it off a member of Congress's compass (deriveScopedTopics, district_type NATIONAL_*). The city-scoped question text matches the tier model. CLOSED PERMANENTLY — the row 1537 retired should never have existed and no further research is warranted."
   },
   {
    "politician": "Val Hoyle",
@@ -8891,9 +8891,9 @@
    "chair_shaped": "",
    "chair_if_cosponsored": "",
    "adjudication_note": "",
-   "pair_verdict": "BLANK_SCOPE",
+   "pair_verdict": "BLANK_OUT_OF_SCOPE",
    "pair_chair": null,
-   "pair_basis": "🔴 STRUCTURAL SCOPE MISMATCH — the topic asks \"Where should YOUR CITY focus its transportation investment?\" and all five chairs are about municipal investment (parking requirements, bike lanes, road capacity). Her evidence is FAA reauthorization, an Airport and Airway extension, a rail worker safety bill, and a bill DESIGNATING US Route 20 as the National Medal of Honor Highway. None of it speaks to city transportation priorities. Not an evidence gap — the question is not answerable from a federal record."
+   "pair_basis": "DECIDED (SCOPE-DECISION.md): the topic carries no `federal` row in inform.compass_topic_roles, so applies_federal=false and the frontend already filters it off a member of Congress's compass (deriveScopedTopics, district_type NATIONAL_*). The city-scoped question text matches the tier model. CLOSED PERMANENTLY — the row 1537 retired should never have existed and no further research is warranted."
   },
   {
    "politician": "Val Hoyle",
@@ -9726,9 +9726,9 @@
    "chair_shaped": "",
    "chair_if_cosponsored": "",
    "adjudication_note": "",
-   "pair_verdict": "BLANK_SCOPE",
+   "pair_verdict": "BLANK_SKIP",
    "pair_chair": null,
-   "pair_basis": "🔴 SCOPE MISMATCH. The topic asks about STATE redistricting. Her 3 candidates are the Freedom to Vote Act (federal CONGRESSIONAL redistricting criteria) and DC statehood x2, which is not redistricting at all. Nothing addresses who draws STATE legislative maps, and the omnibus cannot distinguish chair 1 (\"no elected officials at any level\") from chair 2 (\"equal representation from both major parties\"). ⚠ Re-opened from tranche 1 and still blank, now for a documented reason rather than absence of candidates."
+   "pair_basis": "🔴 CORRECTED from BLANK_SCOPE. This is NOT a scope mismatch: the topic carries a `federal` role row in inform.compass_topic_roles, so the platform deliberately asks it of federal officials and it displays on her profile. The title says \"State\" but the scope model says federal applies. It is an ordinary evidence blank: her only evidence is the Freedom to Vote Act omnibus plus DC statehood, and chair 1 (\"no elected officials at any level\") and chair 2 (\"equal representation from both major parties\") are indistinguishable on it."
   },
   {
    "politician": "Val Hoyle",
@@ -9980,9 +9980,9 @@
    "chair_shaped": "",
    "chair_if_cosponsored": "",
    "adjudication_note": "",
-   "pair_verdict": "BLANK_SCOPE",
+   "pair_verdict": "BLANK_OUT_OF_SCOPE",
    "pair_chair": null,
-   "pair_basis": "🔴 STRUCTURAL SCOPE MISMATCH — the topic asks \"Where should YOUR CITY focus its transportation investment?\" and all five chairs are about municipal investment (parking requirements, bike lanes, road capacity). Her evidence is FAA reauthorization, an Airport and Airway extension, a rail worker safety bill, and a bill DESIGNATING US Route 20 as the National Medal of Honor Highway. None of it speaks to city transportation priorities. Not an evidence gap — the question is not answerable from a federal record."
+   "pair_basis": "DECIDED (SCOPE-DECISION.md): the topic carries no `federal` row in inform.compass_topic_roles, so applies_federal=false and the frontend already filters it off a member of Congress's compass (deriveScopedTopics, district_type NATIONAL_*). The city-scoped question text matches the tier model. CLOSED PERMANENTLY — the row 1537 retired should never have existed and no further research is warranted."
   },
   {
    "politician": "Joe Neguse",
@@ -10065,9 +10065,9 @@
    "chair_shaped": "",
    "chair_if_cosponsored": "",
    "adjudication_note": "",
-   "pair_verdict": "BLANK_SCOPE",
+   "pair_verdict": "BLANK_OUT_OF_SCOPE",
    "pair_chair": null,
-   "pair_basis": "🔴 Same structural scope mismatch as Hoyle: a city-scoped question against a federal record of FAA reauthorization, a rail worker safety bill (orig-co) and a highway NAMING designation."
+   "pair_basis": "DECIDED (SCOPE-DECISION.md): the topic carries no `federal` row in inform.compass_topic_roles, so applies_federal=false and the frontend already filters it off a member of Congress's compass (deriveScopedTopics, district_type NATIONAL_*). The city-scoped question text matches the tier model. CLOSED PERMANENTLY — the row 1537 retired should never have existed and no further research is warranted."
   },
   {
    "politician": "Val Hoyle",
@@ -10094,9 +10094,9 @@
    "chair_shaped": "",
    "chair_if_cosponsored": "",
    "adjudication_note": "",
-   "pair_verdict": "BLANK_SCOPE",
+   "pair_verdict": "BLANK_OUT_OF_SCOPE",
    "pair_chair": null,
-   "pair_basis": "🔴 STRUCTURAL SCOPE MISMATCH — the topic asks \"Where should YOUR CITY focus its transportation investment?\" and all five chairs are about municipal investment (parking requirements, bike lanes, road capacity). Her evidence is FAA reauthorization, an Airport and Airway extension, a rail worker safety bill, and a bill DESIGNATING US Route 20 as the National Medal of Honor Highway. None of it speaks to city transportation priorities. Not an evidence gap — the question is not answerable from a federal record."
+   "pair_basis": "DECIDED (SCOPE-DECISION.md): the topic carries no `federal` row in inform.compass_topic_roles, so applies_federal=false and the frontend already filters it off a member of Congress's compass (deriveScopedTopics, district_type NATIONAL_*). The city-scoped question text matches the tier model. CLOSED PERMANENTLY — the row 1537 retired should never have existed and no further research is warranted."
   },
   {
    "politician": "Val Hoyle",
@@ -11847,9 +11847,9 @@
    "chair_shaped": "",
    "chair_if_cosponsored": "",
    "adjudication_note": "",
-   "pair_verdict": "BLANK_SCOPE",
+   "pair_verdict": "BLANK_SKIP",
    "pair_chair": null,
-   "pair_basis": "🔴 SCOPE MISMATCH. The topic asks about STATE redistricting. Her 3 candidates are the Freedom to Vote Act (federal CONGRESSIONAL redistricting criteria) and DC statehood x2, which is not redistricting at all. Nothing addresses who draws STATE legislative maps, and the omnibus cannot distinguish chair 1 (\"no elected officials at any level\") from chair 2 (\"equal representation from both major parties\"). ⚠ Re-opened from tranche 1 and still blank, now for a documented reason rather than absence of candidates."
+   "pair_basis": "🔴 CORRECTED from BLANK_SCOPE. This is NOT a scope mismatch: the topic carries a `federal` role row in inform.compass_topic_roles, so the platform deliberately asks it of federal officials and it displays on her profile. The title says \"State\" but the scope model says federal applies. It is an ordinary evidence blank: her only evidence is the Freedom to Vote Act omnibus plus DC statehood, and chair 1 (\"no elected officials at any level\") and chair 2 (\"equal representation from both major parties\") are indistinguishable on it."
   },
   {
    "politician": "Val Hoyle",
@@ -12595,10 +12595,10 @@
    {
     "politician": "Val Hoyle",
     "topic": "State Redistricting and Gerrymandering",
-    "verdict": "BLANK_SCOPE",
+    "verdict": "BLANK_SKIP",
     "chair": null,
     "retired_chair": "1.0",
-    "basis": "🔴 SCOPE MISMATCH. The topic asks about STATE redistricting. Her 3 candidates are the Freedom to Vote Act (federal CONGRESSIONAL redistricting criteria) and DC statehood x2, which is not redistricting at all. Nothing addresses who draws STATE legislative maps, and the omnibus cannot distinguish chair 1 (\"no elected officials at any level\") from chair 2 (\"equal representation from both major parties\"). ⚠ Re-opened from tranche 1 and still blank, now for a documented reason rather than absence of candidates."
+    "basis": "🔴 CORRECTED from BLANK_SCOPE. This is NOT a scope mismatch: the topic carries a `federal` role row in inform.compass_topic_roles, so the platform deliberately asks it of federal officials and it displays on her profile. The title says \"State\" but the scope model says federal applies. It is an ordinary evidence blank: her only evidence is the Freedom to Vote Act omnibus plus DC statehood, and chair 1 (\"no elected officials at any level\") and chair 2 (\"equal representation from both major parties\") are indistinguishable on it."
    },
    {
     "politician": "Val Hoyle",
@@ -12611,18 +12611,18 @@
    {
     "politician": "Val Hoyle",
     "topic": "Transportation Priorities",
-    "verdict": "BLANK_SCOPE",
+    "verdict": "BLANK_OUT_OF_SCOPE",
     "chair": null,
     "retired_chair": "1.0",
-    "basis": "🔴 STRUCTURAL SCOPE MISMATCH — the topic asks \"Where should YOUR CITY focus its transportation investment?\" and all five chairs are about municipal investment (parking requirements, bike lanes, road capacity). Her evidence is FAA reauthorization, an Airport and Airway extension, a rail worker safety bill, and a bill DESIGNATING US Route 20 as the National Medal of Honor Highway. None of it speaks to city transportation priorities. Not an evidence gap — the question is not answerable from a federal record."
+    "basis": "DECIDED (SCOPE-DECISION.md): the topic carries no `federal` row in inform.compass_topic_roles, so applies_federal=false and the frontend already filters it off a member of Congress's compass (deriveScopedTopics, district_type NATIONAL_*). The city-scoped question text matches the tier model. CLOSED PERMANENTLY — the row 1537 retired should never have existed and no further research is warranted."
    },
    {
     "politician": "Andrea Salinas",
     "topic": "Transportation Priorities",
-    "verdict": "BLANK_SCOPE",
+    "verdict": "BLANK_OUT_OF_SCOPE",
     "chair": null,
     "retired_chair": "1.0",
-    "basis": "🔴 Same structural scope mismatch as Hoyle: a city-scoped question against a federal record of FAA reauthorization, a rail worker safety bill (orig-co) and a highway NAMING designation."
+    "basis": "DECIDED (SCOPE-DECISION.md): the topic carries no `federal` row in inform.compass_topic_roles, so applies_federal=false and the frontend already filters it off a member of Congress's compass (deriveScopedTopics, district_type NATIONAL_*). The city-scoped question text matches the tier model. CLOSED PERMANENTLY — the row 1537 retired should never have existed and no further research is warranted."
    },
    {
     "politician": "Cliff Bentz",
@@ -12651,10 +12651,10 @@
    {
     "politician": "Sydney Kamlager-Dove",
     "topic": "Economic Development Incentives",
-    "verdict": "BLANK_SCOPE",
+    "verdict": "BLANK_OUT_OF_SCOPE",
     "chair": null,
     "retired_chair": "1.0",
-    "basis": "🔴 ZERO candidates from any source, and structurally so: the topic asks \"How should YOUR CITY attract businesses?\" with chairs about municipal tax abatements and community benefit agreements. A member of Congress has no record that answers it. This is a scale-scope mismatch, not a research gap."
+    "basis": "DECIDED (SCOPE-DECISION.md): the topic carries no `federal` row in inform.compass_topic_roles, so applies_federal=false and the frontend already filters it off a member of Congress's compass (deriveScopedTopics, district_type NATIONAL_*). The city-scoped question text matches the tier model. CLOSED PERMANENTLY — the row 1537 retired should never have existed and no further research is warranted. Her zero candidates were never an evidence gap."
    },
    {
     "politician": "Matt Van Epps",
@@ -12696,6 +12696,19 @@
     "retired_chair": "4.0",
     "basis": "ZERO cosponsorships. His single data point is a Yea on H.R. 498, the Do No Harm in Medicaid Act, which CRS confirms prohibits federal Medicaid payment for gender transition procedures for minors — a coverage-exclusion bill, entirely off the axis this topic asks about (\"how should Medicare and Medicaid be FUNDED AND STRUCTURED\", chairs running from expand-to-everyone to phase-out). No usable evidence exists."
    }
-  ]
+  ],
+  "scope_decision": {
+   "generated": "2026-08-03",
+   "document": "SCOPE-DECISION.md",
+   "mechanism": "inform.compass_topic_roles — applies_<tier> is derived from role_scope rows; a topic with NO rows defaults to all tiers true. Frontend filters by office tier in deriveScopedTopics (Results.jsx, ElectionsView.jsx).",
+   "dead_end": "compass_topics.office_scope is NULL on all 44 live topics and is never read by the frontend — do not build on it.",
+   "resolved": [
+    "Hoyle / Transportation Priorities — out of scope (no federal role row)",
+    "Salinas / Transportation Priorities — out of scope (no federal role row)",
+    "Kamlager-Dove / Economic Development Incentives — out of scope (no federal role row)",
+    "Hoyle / State Redistricting — NOT a scope problem; federal role row exists; ordinary evidence blank"
+   ],
+   "open_finding": "Two chairs applied by migration 1541 are INERT because applies_federal=false excludes their topic for a Representative: Hoyle / Affordable Housing (local-only topic) and Pressley / Criminal Justice Approach (judicial-only topic). Not wrong, but invisible, and they inflate the untiered answer_count in getCandidates. This is pre-existing and corpus-wide: ~3,300 answers sit on topics excluded for the holder's tier (state ~1,975, local ~696, federal ~640; Affordable Housing alone is 712 state + 194 federal). 193 of the 194 federal Affordable Housing rows and 76 of the 77 federal Criminal Justice rows predate 1541. NOT ACTED ON — the two readings call for opposite actions (retire the rows vs. add federal role rows to under-scoped topics), which is a product decision."
+  }
  }
 }
