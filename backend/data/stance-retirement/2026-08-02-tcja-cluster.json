@@ -1,0 +1,1818 @@
+{
+ "generated": null,
+ "tcja_vote_date": "2017-12-20",
+ "stats": {
+  "rows_mentioning": 144,
+  "action_matched": 75,
+  "pre_tenure": 7,
+  "seated": 68,
+  "commentary": 72,
+  "unmatched": 1
+ },
+ "pre_tenure": [
+  {
+   "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Ayanna Pressley",
+   "topic": "Taxation and Public Spending",
+   "chair": "1.0",
+   "sources": [
+    "https://pressley.house.gov/issues/taxes",
+    "https://www.govtrack.us/congress/votes/115-2017/h637",
+    "https://congress.gov/member/ayanna-pressley/P000617"
+   ],
+   "match_how": "name+state",
+   "bioguide": "P000617",
+   "federal_service": "2019-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": false,
+   "verdict": "PRE_TENURE",
+   "clause": "Pressley voted against the 2017 Tax Cuts and Jobs Act and has consistently supported taxing the wealthy and corporations to fund social programs.",
+   "reasoning": "Pressley voted against the 2017 Tax Cuts and Jobs Act and has consistently supported taxing the wealthy and corporations to fund social programs. She has backed Elizabeth Warren's wealth tax proposal and has called for closing corporate tax loopholes. She supports a financial transaction tax and has backed progressive tax reforms including raising the top marginal rate and strengthening estate taxes. She has framed progressive taxation as a racial justice issue."
+  },
+  {
+   "politician_id": "ea4cb6d8-76aa-47f4-a064-babaac0bc436",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Barry Moore",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/Senate/Barry_Moore.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "M001212",
+   "federal_service": "2021-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": false,
+   "verdict": "PRE_TENURE",
+   "clause": "Voted for the largest tax cut in history (TCJA);",
+   "reasoning": "Voted for the largest tax cut in history (TCJA); supports making tax cuts permanent; opposes tax increases on businesses and individuals."
+  },
+  {
+   "politician_id": "4d83f985-9248-4905-a9b6-5742e2df77a8",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Cindy Hyde-Smith",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.hydesmith.senate.gov/budget",
+    "https://en.wikipedia.org/wiki/Cindy_Hyde-Smith"
+   ],
+   "match_how": "name+state",
+   "bioguide": "H001079",
+   "federal_service": "2018-04-09 .. 2027-01-03",
+   "seated_on_tcja_vote": false,
+   "verdict": "PRE_TENURE",
+   "clause": "Hyde-Smith voted for the Tax Cuts and Jobs Act of 2017 and supports legislation to 'responsibly reduce the federal tax burden on small businesses, families, and individuals.' She backs the 'Working Families Tax Cut Act for Mississippi.' She has introduced a balanced budget constitutional amendment.",
+   "reasoning": "Hyde-Smith voted for the Tax Cuts and Jobs Act of 2017 and supports legislation to 'responsibly reduce the federal tax burden on small businesses, families, and individuals.' She backs the 'Working Families Tax Cut Act for Mississippi.' She has introduced a balanced budget constitutional amendment. Supports across-the-board rate reductions but has not called for a flat tax."
+  },
+  {
+   "politician_id": "fb00c887-11f5-46f2-b822-f9848368bbd2",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Cliff Bentz",
+   "topic": "Taxation and Public Spending",
+   "chair": "5.0",
+   "sources": [
+    "https://clerk.house.gov/evs/2017/roll699.xml"
+   ],
+   "match_how": "name+state",
+   "bioguide": "B000668",
+   "federal_service": "2021-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": false,
+   "verdict": "PRE_TENURE",
+   "clause": "Bentz voted YES on Tax Cuts and Jobs Act (2017);",
+   "reasoning": "Bentz voted YES on Tax Cuts and Jobs Act (2017); supports lower taxes and reducing corporate tax rates as economic stimulus. https://clerk.house.gov/evs/2017/roll699.xml"
+  },
+  {
+   "politician_id": "6840c7e6-2169-43a4-8490-1e73c8704cbd",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Guy Reschenthaler",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/PA/Guy_Reschenthaler_Tax_Reform.htm",
+    "https://www.ontheissues.org/PA/Guy_Reschenthaler.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "R000610",
+   "federal_service": "2019-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": false,
+   "verdict": "PRE_TENURE",
+   "clause": "Reschenthaler voted for the 2017 Tax Cuts and Jobs Act, advocates making those cuts permanent, stating they are \"creating jobs and putting money directly in the pockets of American workers,\" and opposes raising income taxes to balance the budget.",
+   "reasoning": "Reschenthaler voted for the 2017 Tax Cuts and Jobs Act, advocates making those cuts permanent, stating they are \"creating jobs and putting money directly in the pockets of American workers,\" and opposes raising income taxes to balance the budget. This consistent support for broad tax cuts aligns with stance 4 (cut taxes for everyone and scale back public services to match) rather than a flat-tax or more drastic restructuring proposal."
+  },
+  {
+   "politician_id": "2c71d91b-7ad8-4984-b9a6-81587c41ea0d",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Joe Neguse",
+   "topic": "Taxation and Public Spending",
+   "chair": "1.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Joe_Neguse",
+    "https://www.ontheissues.org/House/Joe_Neguse.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "N000191",
+   "federal_service": "2019-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": false,
+   "verdict": "PRE_TENURE",
+   "clause": "Neguse voted against the 2017 Tax Cuts and Jobs Act, which significantly cut taxes for corporations and high earners.",
+   "reasoning": "Neguse voted against the 2017 Tax Cuts and Jobs Act, which significantly cut taxes for corporations and high earners. As a progressive House Democrat in leadership, he consistently backs raising taxes on the wealthy and corporations to fund public services, matching the significantly raise taxes chair."
+  },
+  {
+   "politician_id": "f6202cef-4e46-4db5-a9c0-c69ac9a8eccd",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Val Hoyle",
+   "topic": "Taxation and Public Spending",
+   "chair": "1.0",
+   "sources": [
+    "https://clerk.house.gov/evs/2017/roll699.xml"
+   ],
+   "match_how": "name+state",
+   "bioguide": "H001094",
+   "federal_service": "2023-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": false,
+   "verdict": "PRE_TENURE",
+   "clause": "Hoyle voted NO on 2017 Tax Cuts and Jobs Act;",
+   "reasoning": "Hoyle voted NO on 2017 Tax Cuts and Jobs Act; supports Inflation Reduction Act corporate minimum tax; advocates for progressive taxation. https://clerk.house.gov/evs/2017/roll699.xml"
+  }
+ ],
+ "seated_ok": [
+  {
+   "politician_id": "3a39c313-b994-447b-b3fd-592e4994769b",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Ted W. Lieu",
+   "topic": "Taxation and Public Spending",
+   "chair": "1.0",
+   "sources": [
+    "https://clerk.house.gov/evs/2017/roll699.xml"
+   ],
+   "match_how": "bioguide",
+   "bioguide": "L000582",
+   "federal_service": "2015-01-06 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Lieu voted against the 2017 Tax Cuts and Jobs Act, which cut corporate and top marginal income tax rates, and has opposed subsequent Republican tax cut efforts.",
+   "reasoning": "Lieu voted against the 2017 Tax Cuts and Jobs Act, which cut corporate and top marginal income tax rates, and has opposed subsequent Republican tax cut efforts. As a Congressional Progressive Caucus member he supports using higher taxes on corporations and wealthy individuals to fund expanded public services, aligning with the new scale's stance 1."
+  },
+  {
+   "politician_id": "99d93781-7c5f-492c-b959-ee502ca05c29",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Jimmy Gomez",
+   "topic": "Taxation and Public Spending",
+   "chair": "1.0",
+   "sources": [
+    "https://www.sanders.senate.gov/press-releases/sanders-and-colleagues-introduce-legislation-to-end-rigged-tax-code-as-inequality-increases/",
+    "https://gomez.house.gov/uploadedfiles/995_act_summary.pdf",
+    "https://gomez.house.gov/news/documentsingle.aspx?DocumentID=4433"
+   ],
+   "match_how": "bioguide",
+   "bioguide": "G000585",
+   "federal_service": "2017-07-11 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Sanders to significantly strengthen the estate tax on ultra-wealthy families, voted against the 2017 Tax Cuts and Jobs Act, and in 2025 proposed an amendment in the Ways and Means Committee to tax billionaires — all of which reflect a stance of significantly raising taxes on wealthy people and large corporations to fund more public services.",
+   "reasoning": "Gomez sponsored the For the 99.5% Act and For the 99.8% Act with Sen. Sanders to significantly strengthen the estate tax on ultra-wealthy families, voted against the 2017 Tax Cuts and Jobs Act, and in 2025 proposed an amendment in the Ways and Means Committee to tax billionaires — all of which reflect a stance of significantly raising taxes on wealthy people and large corporations to fund more public services. His framing that \"ultra-rich families have used the tax code to acquire mass wealth while working Americans fall further behind\" signals support for using tax increases to expand services and reduce inequality, not merely maintain the status quo. This places him squarely at a 1 on the new scale."
+  },
+  {
+   "politician_id": "66dd6633-ef79-46d1-87b6-5b52203de64c",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Neal P. Dunn",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Neal_Dunn",
+    "https://www.ontheissues.org/FL/Neal_Dunn.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "D000628",
+   "federal_service": "2017-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Dunn voted for the Tax Cuts and Jobs Act of 2017, describing it as 'good medicine for America.' He 'opposes tax increases even to balance the budget' and supports 'lowering taxes to promote economic growth' and reducing corporate tax rates from 35% to 21%.",
+   "reasoning": "Dunn voted for the Tax Cuts and Jobs Act of 2017, describing it as 'good medicine for America.' He 'opposes tax increases even to balance the budget' and supports 'lowering taxes to promote economic growth' and reducing corporate tax rates from 35% to 21%. His record consistently supports across-the-board tax cuts and scaling back government spending."
+  },
+  {
+   "politician_id": "8561df96-52fd-42de-b6ad-e15dfc748c52",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "John H. Rutherford",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/FL/John_Rutherford.htm",
+    "https://en.wikipedia.org/wiki/John_Rutherford_(Florida_politician)",
+    "https://ballotpedia.org/John_Rutherford_(Florida)"
+   ],
+   "match_how": "name+state",
+   "bioguide": "R000609",
+   "federal_service": "2017-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Voted for the Tax Cuts and Jobs Act of 2017, cutting corporate tax rates from 35% to 21%.",
+   "reasoning": "Voted for the Tax Cuts and Jobs Act of 2017, cutting corporate tax rates from 35% to 21%. States 'Keep the government off our backs & out of our wallets' and opposes raising income taxes even to balance the budget. Advocates lower taxes to stimulate economic growth. Aligns with cutting taxes for everyone and scaling back public services."
+  },
+  {
+   "politician_id": "f0b782ce-1d2a-4c62-9773-c6a36b5ef291",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Darren Soto",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "sources": [
+    "https://www.ontheissues.org/FL/Darren_Soto_Corporations.htm",
+    "https://www.ontheissues.org/FL/Darren_Soto_Budget_+_Economy.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "S001200",
+   "federal_service": "2017-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Soto voted against the Tax Cuts and Jobs Act (2017), opposing the reduction of the corporate tax rate from 35% to 21% and warning it would 'balloon the federal deficit by over $1.5 trillion' while causing 'painful cuts to core domestic programs.' He supported the American Rescue Plan ($1.9T) and COVID-19 relief bills.",
+   "reasoning": "Soto voted against the Tax Cuts and Jobs Act (2017), opposing the reduction of the corporate tax rate from 35% to 21% and warning it would 'balloon the federal deficit by over $1.5 trillion' while causing 'painful cuts to core domestic programs.' He supported the American Rescue Plan ($1.9T) and COVID-19 relief bills. His record reflects moderate tax increases on wealthy people and large companies to fund public services."
+  },
+  {
+   "politician_id": "7119c7db-6909-4d05-8613-95d5dc9818de",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Daniel Webster",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Daniel_Webster_(Florida_politician)",
+    "https://api.congress.gov/v3/member/W000806/cosponsored-legislation?api_key=DEMO_KEY&limit=50&sort=updateDate+desc&offset=200"
+   ],
+   "match_how": "name+state",
+   "bioguide": "W000806",
+   "federal_service": "2011-01-05 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Webster voted for the Tax Cuts and Jobs Act of 2017 and co-sponsored the Death Tax Repeal Act (HR 1301, 2025) and the American Innovation Act (HR 1778, 2025).",
+   "reasoning": "Webster voted for the Tax Cuts and Jobs Act of 2017 and co-sponsored the Death Tax Repeal Act (HR 1301, 2025) and the American Innovation Act (HR 1778, 2025). Wikipedia quotes him saying the TCJA allows Americans to keep more money in their pockets. His record reflects support for broad tax cuts across income levels scaled back from current rates."
+  },
+  {
+   "politician_id": "cc873a93-cb47-405a-93b0-bb2848fdd57e",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Lisa Murkowski",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/Senate/Lisa_Murkowski.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "M001153",
+   "federal_service": "2003-01-07 .. 2029-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "She voted for the 2017 Tax Cuts and Jobs Act reducing corporate rates from 35% to 21%.",
+   "reasoning": "Murkowski signed the Taxpayer Protection Pledge ('no new taxes' in 2010), voted YES on the 2003 Bush tax cuts ($350 billion over 11 years), and voted YES on permanently repealing the estate tax (2006). She voted for the 2017 Tax Cuts and Jobs Act reducing corporate rates from 35% to 21%. She is rated 0% by Citizens for Tax Justice. Her record is solidly pro-tax-cut across all income levels."
+  },
+  {
+   "politician_id": "a97678bc-8844-4560-87b1-5ef4f8013d96",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Dan Sullivan",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/Senate/Dan_Sullivan.htm",
+    "https://en.wikipedia.org/wiki/Dan_Sullivan_(U.S._senator)"
+   ],
+   "match_how": "name+state",
+   "bioguide": "S001198",
+   "federal_service": "2015-01-06 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "He voted for the 2017 Tax Cuts and Jobs Act and opposes higher taxes on wealthy individuals.",
+   "reasoning": "Sullivan strongly favors tax cuts and reduced corporate rates. OnTheIssues records him calling to 'reduce corporate tax rates from 35% to 21% to create jobs' (Dec 2017) and he supports eliminating the estate tax. He voted for the 2017 Tax Cuts and Jobs Act and opposes higher taxes on wealthy individuals. His record is solidly pro-tax-cut across income levels."
+  },
+  {
+   "politician_id": "130591ca-bfd1-4691-916b-3570341b04fb",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Joni Ernst",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/Senate/Joni_Ernst.htm",
+    "https://en.wikipedia.org/wiki/Joni_Ernst"
+   ],
+   "match_how": "name+state",
+   "bioguide": "E000295",
+   "federal_service": "2015-01-06 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Ernst signed Grover Norquist's no-tax-increase pledge (Jul 2014), voted for the Tax Cuts and Jobs Act (2017) reducing corporate rates from 35% to 21%, proposed eliminating the IRS, and supports a 'fairer, flatter, and simpler' federal tax code.",
+   "reasoning": "Ernst signed Grover Norquist's no-tax-increase pledge (Jul 2014), voted for the Tax Cuts and Jobs Act (2017) reducing corporate rates from 35% to 21%, proposed eliminating the IRS, and supports a 'fairer, flatter, and simpler' federal tax code. She favors reducing tax rates across all income levels."
+  },
+  {
+   "politician_id": "023c6644-356e-4afb-925b-e20f9c32209b",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Jim Banks",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jim_Banks",
+    "https://www.ontheissues.org/Senate/Jim_Banks.htm"
+   ],
+   "match_how": "bioguide",
+   "bioguide": "B001299",
+   "federal_service": "2017-01-03 .. 2031-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Banks voted for the Tax Cuts and Jobs Act of 2017, calling it 'a good day for the future of the American dream,' reducing corporate rates from 35% to 21%.",
+   "reasoning": "Banks voted for the Tax Cuts and Jobs Act of 2017, calling it 'a good day for the future of the American dream,' reducing corporate rates from 35% to 21%. OnTheIssues confirms he supports the FairTax system replacing the income tax with a flat consumption tax and opposes tax increases on wealthy individuals or corporations."
+  },
+  {
+   "politician_id": "9df12eb2-bc9a-4083-8004-1af4167342ea",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Roger Marshall",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Roger_Marshall",
+    "https://www.ontheissues.org/Senate/Roger_Marshall.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "M001198",
+   "federal_service": "2017-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Marshall voted for the Tax Cuts and Jobs Act of 2017 and consistently opposes tax increases even to balance the budget.",
+   "reasoning": "Marshall voted for the Tax Cuts and Jobs Act of 2017 and consistently opposes tax increases even to balance the budget. He supports corporate and individual tax rate reductions. He has stated \"lower taxes and decreased regulation for American greatness\" and voted to block Democratic spending legislation that included tax increases on high earners."
+  },
+  {
+   "politician_id": "b87583fe-2348-4bf3-aba5-12f5f88d3606",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "John Curtis",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/House/John_Curtis.htm",
+    "https://www.ontheissues.org/Senate/John_Curtis.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "C001114",
+   "federal_service": "2017-11-13 .. 2031-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "simplify system (2017) and voted for the 2017 Tax Cuts and Jobs Act reducing corporate rates from 35% to 21%.",
+   "reasoning": "Curtis stated Cut taxes; simplify system (2017) and voted for the 2017 Tax Cuts and Jobs Act reducing corporate rates from 35% to 21%. He opposes higher taxes on wealthy individuals and supported extending tax cuts. Club for Growth scored him 84%. He supported energy tax credits in 2025 for innovation. Overall aligns with stance 4 (reduce tax rates across income levels)."
+  },
+  {
+   "politician_id": "20aa1064-bbe7-484c-b779-28d99e92e608",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Lindsey Graham",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/Senate/Lindsey_Graham.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "G000359",
+   "federal_service": "1995-01-04 .. 2026-07-11",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Graham signed the Taxpayer Protection Pledge is a member of the Congressional Flat Tax Caucus supports phasing out the estate tax and voted for the 2017 Tax Cuts and Jobs Act.",
+   "reasoning": "Graham signed the Taxpayer Protection Pledge is a member of the Congressional Flat Tax Caucus supports phasing out the estate tax and voted for the 2017 Tax Cuts and Jobs Act. He is rated 81% by the National Taxpayers Union as a Taxpayers Friend. His record consistently favors reducing tax rates across income levels."
+  },
+  {
+   "politician_id": "6b817122-f196-4b72-b0b4-2d9763c4be47",
+   "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "politician": "Susan M. Collins",
+   "topic": "Fossil Fuel Policy",
+   "chair": "3.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Susan_Collins",
+    "https://collins.senate.gov/issues/energy-and-environment"
+   ],
+   "match_how": "name+state",
+   "bioguide": "C001035",
+   "federal_service": "1997-01-07 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Collins voted for ANWR oil drilling inclusion in the 2017 TCJA after failing to remove it and joined a bipartisan group supporting offshore drilling alongside renewable energy funding.",
+   "reasoning": "Collins voted for ANWR oil drilling inclusion in the 2017 TCJA after failing to remove it and joined a bipartisan group supporting offshore drilling alongside renewable energy funding. Her 60% LCV score reflects a maintain-current-production stance that neither expands nor restricts fossil fuel extraction."
+  },
+  {
+   "politician_id": "6b817122-f196-4b72-b0b4-2d9763c4be47",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Susan M. Collins",
+   "topic": "Taxation and Public Spending",
+   "chair": "3.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Susan_Collins",
+    "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00062.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "C001035",
+   "federal_service": "1997-01-07 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Collins voted for the 2017 TCJA but expressed deficit concerns and in 2025 voted Yea on a motion to prevent unwarranted tax cuts for the ultra-wealthy.",
+   "reasoning": "Collins voted for the 2017 TCJA but expressed deficit concerns and in 2025 voted Yea on a motion to prevent unwarranted tax cuts for the ultra-wealthy. She has consistently opposed extending high-earner cuts without offsets reflecting a close-loopholes and maintain-current-rates moderate position rather than broad increases or cuts."
+  },
+  {
+   "politician_id": "675778b0-7e6f-45ef-96b2-7bcb5d7e0af7",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Tim Scott",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/Senate/Tim_Scott.htm",
+    "https://scott.senate.gov/issues/fighting-big-government"
+   ],
+   "match_how": "name+state",
+   "bioguide": "S001184",
+   "federal_service": "2011-01-05 .. 2029-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Scott signed the Taxpayer Protection Pledge with no new taxes supports eliminating the estate/death tax favors a single-rate flat tax system and voted for the 2017 Tax Cuts and Jobs Act reducing corporate rates from 35% to 21%;",
+   "reasoning": "Scott signed the Taxpayer Protection Pledge with no new taxes supports eliminating the estate/death tax favors a single-rate flat tax system and voted for the 2017 Tax Cuts and Jobs Act reducing corporate rates from 35% to 21%; his record consistently favors reducing tax rates across all income levels."
+  },
+  {
+   "politician_id": "52bbba11-e099-457b-a05b-aa8f4f5a5b13",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Paul Tonko",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "sources": [
+    "https://www.ontheissues.org/NY/Paul_Tonko_Corporations.htm",
+    "https://www.ontheissues.org/NY/Paul_Tonko.htm",
+    "https://ballotpedia.org/Paul_Tonko"
+   ],
+   "match_how": "name+state",
+   "bioguide": "T000469",
+   "federal_service": "2009-01-06 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Voted NO on the 2017 Tax Cuts and Jobs Act (opposed corporate rate cut from 35% to 21% and deficit impact);",
+   "reasoning": "Voted NO on the 2017 Tax Cuts and Jobs Act (opposed corporate rate cut from 35% to 21% and deficit impact); co-sponsored Stop Tax Haven Abuse Act; supports raising estate taxes to 1990s levels; opposes offshore corporate tax havens; strong pro-labor record opposing wage cuts. Consistent record of supporting tax increases on wealthy individuals and corporations to fund public services."
+  },
+  {
+   "politician_id": "6ffb9093-7489-4197-aebc-67065c239fc3",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Suzanne Bonamici",
+   "topic": "Taxation and Public Spending",
+   "chair": "1.0",
+   "sources": [
+    "https://clerk.house.gov/evs/2017/roll699.xml"
+   ],
+   "match_how": "name+state",
+   "bioguide": "B001278",
+   "federal_service": "2012-02-07 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Bonamici voted NO on 2017 Tax Cuts and Jobs Act;",
+   "reasoning": "Bonamici voted NO on 2017 Tax Cuts and Jobs Act; supports higher taxes on wealthy and corporations, voted YES on Inflation Reduction Act corporate minimum tax provisions. https://clerk.house.gov/evs/2017/roll699.xml"
+  },
+  {
+   "politician_id": "8ee77a4f-4653-45d4-ab9c-15061ff4ecbb",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Vern Buchanan",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/FL/Vern_Buchanan_Tax_Reform.htm",
+    "https://en.wikipedia.org/wiki/Vern_Buchanan"
+   ],
+   "match_how": "name+state",
+   "bioguide": "B001260",
+   "federal_service": "2007-01-04 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Buchanan signed Americans for Tax Reform's Taxpayer Protection Pledge (binding opposition to all tax increases), voted YES on the Tax Cuts and Jobs Act (2017) cutting corporate rates from 35% to 21%, supports complete repeal of the estate tax, voted YES on the Death Tax Repeal Act (2015), and introduces balanced budget amendments.",
+   "reasoning": "Buchanan signed Americans for Tax Reform's Taxpayer Protection Pledge (binding opposition to all tax increases), voted YES on the Tax Cuts and Jobs Act (2017) cutting corporate rates from 35% to 21%, supports complete repeal of the estate tax, voted YES on the Death Tax Repeal Act (2015), and introduces balanced budget amendments. He consistently opposes tax increases and supports cuts across income levels, fitting value 4 (cut taxes for everyone and scale back public services)."
+  },
+  {
+   "politician_id": "1b776971-4c34-4453-ba38-6772f6783b1c",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Brian J. Mast",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/FL/Brian_Mast_Tax_Reform.htm",
+    "https://en.wikipedia.org/wiki/Brian_Mast"
+   ],
+   "match_how": "name+state",
+   "bioguide": "M001199",
+   "federal_service": "2017-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Mast opposes higher income taxes, supports permanently eliminating the estate tax, voted for the 2017 Tax Cuts and Jobs Act, and opposes tax increases even to balance the budget.",
+   "reasoning": "Mast opposes higher income taxes, supports permanently eliminating the estate tax, voted for the 2017 Tax Cuts and Jobs Act, and opposes tax increases even to balance the budget. He supports cutting taxes to stimulate economic growth across income levels."
+  },
+  {
+   "politician_id": "3fc35d7d-a121-4b5e-b243-b150daf6e628",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Frederica S. Wilson",
+   "topic": "Taxation and Public Spending",
+   "chair": "1.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Inflation_Reduction_Act_of_2022",
+    "https://en.wikipedia.org/wiki/Tax_Cuts_and_Jobs_Act_of_2017",
+    "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus"
+   ],
+   "match_how": "name+state",
+   "bioguide": "W000808",
+   "federal_service": "2011-01-05 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "She voted against the Tax Cuts and Jobs Act (2017, absent/not voting but did not support it).",
+   "reasoning": "Wilson voted for the Inflation Reduction Act (2022, all Democrats) which raised corporate minimum taxes and increased IRS enforcement. She voted against the Tax Cuts and Jobs Act (2017, absent/not voting but did not support it). As a member of the Progressive Caucus which supports 'increased corporate regulation and taxes' and proposed budgets raising taxes significantly on wealthy Americans, she is strongly aligned with significantly raising taxes on wealthy individuals and large corporations."
+  },
+  {
+   "politician_id": "f529c1d6-7a48-4607-b3aa-a96bea7f0d26",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Mario Diaz-Balart",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/FL/Mario_Diaz-Balart_Tax_Reform.htm",
+    "https://www.ontheissues.org/FL/Mario_Diaz-Balart.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "D000600",
+   "federal_service": "2003-01-07 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "voted for the 2017 Tax Cuts and Jobs Act reducing corporate rates from 35% to 21%;",
+   "reasoning": "Signed the Taxpayer Protection Pledge opposing any new taxes; voted for the 2017 Tax Cuts and Jobs Act reducing corporate rates from 35% to 21%; voted for estate tax repeal (2013, 2015). Rated 0% by Citizens for Tax Justice. His record consistently favors across-the-board tax cuts but stops short of a drastic flat-tax restructuring."
+  },
+  {
+   "politician_id": "85d27350-e1b6-45b8-aee3-509ca88c5af4",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Mark Warner",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "sources": [
+    "https://www.govtrack.us/congress/votes/115-2017/s303",
+    "https://www.govtrack.us/congress/votes/115-2017/s323",
+    "https://ontheissues.org/Senate/Mark_Warner.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "W000805",
+   "federal_service": "2009-01-06 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Warner voted NO on the Tax Cuts and Jobs Act (Senate Votes #303 and #323, Dec 2017), which cut top corporate and individual rates.",
+   "reasoning": "Warner voted NO on the Tax Cuts and Jobs Act (Senate Votes #303 and #323, Dec 2017), which cut top corporate and individual rates. OnTheIssues documents his support for 'rolling back top-tier tax breaks' and 'undo tax cuts' (CC survey Sep 2020). He voted for the IRA (2022) which included a 15% corporate minimum tax and IRS funding restoration. As Virginia Governor he pushed a $1.4B tax increase to close a $6B budget shortfall. His record is clearly pro-progressive taxation, though he has not advocated for a wealth tax."
+  },
+  {
+   "politician_id": "12eef223-444e-4bed-8081-f1fd26c43e42",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Morgan Griffith",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Morgan_Griffith",
+    "https://www.ontheissues.org/VA/Morgan_Griffith.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "G000568",
+   "federal_service": "2011-01-05 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Griffith opposes higher taxes, signed the Taxpayer Protection Pledge, and voted for the Tax Cuts and Jobs Act of 2017 reducing the corporate rate from 35% to 21%.",
+   "reasoning": "Griffith opposes higher taxes, signed the Taxpayer Protection Pledge, and voted for the Tax Cuts and Jobs Act of 2017 reducing the corporate rate from 35% to 21%. He consistently opposes tax increases and supports cutting taxes."
+  },
+  {
+   "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Seth Moulton",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "sources": [
+    "https://moulton.house.gov/issues/taxes",
+    "https://www.govtrack.us/congress/votes/115-2017/h637",
+    "https://votesmart.org/candidate/evaluations/134114/seth-moulton"
+   ],
+   "match_how": "name+state",
+   "bioguide": "M001196",
+   "federal_service": "2015-01-06 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Moulton voted against the 2017 Tax Cuts and Jobs Act, calling its corporate tax cuts fiscally irresponsible.",
+   "reasoning": "Moulton voted against the 2017 Tax Cuts and Jobs Act, calling its corporate tax cuts fiscally irresponsible. He supported the Inflation Reduction Act's corporate minimum tax and supported rolling back parts of the 2017 cuts for high earners. He has advocated for closing carried interest loopholes and supported raising the top marginal rate on the wealthiest Americans. He is a moderate on taxes — not calling for wealth taxes but supporting progressive reform."
+  },
+  {
+   "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Stephen Lynch",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "sources": [
+    "https://lynch.house.gov/issues/taxes",
+    "https://www.govtrack.us/congress/votes/115-2017/h637",
+    "https://votesmart.org/candidate/evaluations/7740/stephen-lynch"
+   ],
+   "match_how": "name+state",
+   "bioguide": "L000562",
+   "federal_service": "2001-10-23 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Lynch voted against the 2017 Tax Cuts and Jobs Act and has supported progressive taxation.",
+   "reasoning": "Lynch voted against the 2017 Tax Cuts and Jobs Act and has supported progressive taxation. He backed the Inflation Reduction Act's corporate minimum tax provisions. He has supported raising rates on high earners and closing corporate loopholes, though he is less focused on extreme progressive measures like wealth taxes. His tax position reflects his working-class constituency — support raising taxes on the wealthy to fund programs for workers."
+  },
+  {
+   "politician_id": "26636234-c292-4a02-8205-6b84f6864f82",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Adriano Espaillat",
+   "topic": "Taxation and Public Spending",
+   "chair": "1.0",
+   "sources": [
+    "https://www.ontheissues.org/NY/Adriano_Espaillat_Corporations.htm",
+    "https://www.ontheissues.org/NY/Adriano_Espaillat_Budget_+_Economy.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "E000297",
+   "federal_service": "2017-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Voted NAY on the Tax Cuts and Jobs Act (2017), opposing corporate tax reductions from 35% to 21% and citing $1.5 trillion deficit increase and future cuts to domestic programs.",
+   "reasoning": "Voted NAY on the Tax Cuts and Jobs Act (2017), opposing corporate tax reductions from 35% to 21% and citing $1.5 trillion deficit increase and future cuts to domestic programs. Voted YES on the $1.9 trillion American Rescue Plan. Consistent record supporting higher taxes on wealthy individuals and corporations to fund public services."
+  },
+  {
+   "politician_id": "963af970-08b4-4880-abf2-eab8afe78e67",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Elise M. Stefanik",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/Elise_Stefanik.htm",
+    "https://en.wikipedia.org/wiki/Elise_Stefanik"
+   ],
+   "match_how": "name+state",
+   "bioguide": "S001196",
+   "federal_service": "2015-01-06 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "While she voted against the 2017 Tax Cuts and Jobs Act citing SALT concerns for her district, her general stance is to cut taxes across income levels and reduce government spending.",
+   "reasoning": "'Make tax code flatter and fairer for everyone' (Nov 2014). Consistently opposes tax increases (PVS Sep 2014). Opposes the estate tax ('Death Tax is a pernicious double tax,' Apr 2015). While she voted against the 2017 Tax Cuts and Jobs Act citing SALT concerns for her district, her general stance is to cut taxes across income levels and reduce government spending."
+  },
+  {
+   "politician_id": "a5d68f92-d5e2-4fa1-a191-a64e8ebb2ada",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Brian K. Fitzpatrick",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Brian_Fitzpatrick_(American_politician)",
+    "https://www.ontheissues.org/PA/Brian_Fitzpatrick.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "F000466",
+   "federal_service": "2017-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Voted for the Tax Cuts and Jobs Act (2017), which cut individual and corporate tax rates across income levels.",
+   "reasoning": "Voted for the Tax Cuts and Jobs Act (2017), which cut individual and corporate tax rates across income levels. OnTheIssues records him as 'strongly opposes higher taxes on wealthy' and supporting flattening the tax code and lowering the corporate rate from 35% to 21%. Aligns with value 4 (cut taxes for everyone and scale back public services to match)."
+  },
+  {
+   "politician_id": "4c34d7a5-ceea-493f-a6a4-cb5d14763593",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Mike Kelly",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/PA/Mike_Kelly.htm",
+    "https://www.ontheissues.org/PA/Mike_Kelly_Tax_Reform.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "K000376",
+   "federal_service": "2011-01-05 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Kelly signed Americans for Tax Reform's Taxpayer Protection Pledge (opposing any marginal rate increases), voted YES on the Tax Cuts and Jobs Act (2017) reducing corporate rates from 35% to 21%, and voted YES on the Death Tax Repeal Act.",
+   "reasoning": "Kelly signed Americans for Tax Reform's Taxpayer Protection Pledge (opposing any marginal rate increases), voted YES on the Tax Cuts and Jobs Act (2017) reducing corporate rates from 35% to 21%, and voted YES on the Death Tax Repeal Act. He pledges to 'fight hard to lower taxes for our working families and job creators.' His record aligns with cutting taxes and scaling back public services."
+  },
+  {
+   "politician_id": "a4f800f0-6634-47c6-a340-ca494544d9b5",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Lloyd Smucker",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/PA/Lloyd_Smucker_Tax_Reform.htm",
+    "https://en.wikipedia.org/wiki/Lloyd_Smucker",
+    "https://www.ontheissues.org/PA/Lloyd_Smucker_Budget_+_Economy.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "S001199",
+   "federal_service": "2017-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Smucker voted for the 2017 Tax Cuts and Jobs Act reducing corporate rates from 35% to 21%, opposes income tax increases under any bracket, and supports balanced budgets through spending cuts rather than tax increases.",
+   "reasoning": "Smucker voted for the 2017 Tax Cuts and Jobs Act reducing corporate rates from 35% to 21%, opposes income tax increases under any bracket, and supports balanced budgets through spending cuts rather than tax increases. He opposes federal spending-based economic stimulus and backed broad tax cuts, matching the stance of cutting taxes for everyone and scaling back public services."
+  },
+  {
+   "politician_id": "01c4093a-db5a-4f92-9caa-b54c1e44c63a",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Mike Bost",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/IL/Mike_Bost.htm",
+    "https://www.bostforcongress.com/issues/"
+   ],
+   "match_how": "name+state",
+   "bioguide": "B001295",
+   "federal_service": "2015-01-06 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Bost voted for the Tax Cuts and Jobs Act (2017) and consistently opposes tax increases.",
+   "reasoning": "Bost voted for the Tax Cuts and Jobs Act (2017) and consistently opposes tax increases. He supports a flat tax structure, has opposed the estate tax as a \"pernicious double tax,\" and opposes what he calls the \"Biden-Pelosi socialist tax and spending plan.\" This aligns with stance 4: cut taxes for everyone and scale back public services to match."
+  },
+  {
+   "politician_id": "f0d27c86-02f3-4014-9162-e4e940f2afdd",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Darin LaHood",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Darin_LaHood",
+    "https://www.ontheissues.org/IL/Darin_LaHood_Budget_+_Economy.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "L000585",
+   "federal_service": "2015-09-17 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "LaHood voted for the Tax Cuts and Jobs Act of 2017 and supported the One Big Beautiful Bill Act in 2025 (projected to increase deficits by $3.4 trillion).",
+   "reasoning": "LaHood voted for the Tax Cuts and Jobs Act of 2017 and supported the One Big Beautiful Bill Act in 2025 (projected to increase deficits by $3.4 trillion). He advocates removing 'tax & regulatory barriers to job creation' and simplifying the tax code, consistent with cutting taxes for everyone and scaling back public services to match."
+  },
+  {
+   "politician_id": "ecdb6fda-81cd-48bd-9403-a03a82f3ebad",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Bradley Scott Schneider",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "sources": [
+    "https://www.ontheissues.org/IL/Brad_Schneider_Tax_Reform.htm",
+    "https://en.wikipedia.org/wiki/Brad_Schneider",
+    "https://www.ontheissues.org/IL/Brad_Schneider_Corporations.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "S001190",
+   "federal_service": "2013-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Schneider voted against the 2017 Tax Cuts and Jobs Act (which reduced the corporate rate from 35% to 21%), supports increasing income tax rates, and has favored raising taxes on high earners while opposing deficit expansion from tax cuts.",
+   "reasoning": "Schneider voted against the 2017 Tax Cuts and Jobs Act (which reduced the corporate rate from 35% to 21%), supports increasing income tax rates, and has favored raising taxes on high earners while opposing deficit expansion from tax cuts. Wikipedia notes he supports 'higher taxes on high-income earners.' This aligns with stance 2: moderately raise taxes on wealthy people and large companies to fund existing services."
+  },
+  {
+   "politician_id": "d7f3b400-2d9f-4d23-bd02-9edea5274e92",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Warren Davidson",
+   "topic": "Taxation and Public Spending",
+   "chair": "5.0",
+   "sources": [
+    "https://www.ontheissues.org/OH/Warren_Davidson_Tax_Reform.htm",
+    "https://www.washingtonexaminer.com/tag/warren-davidson"
+   ],
+   "match_how": "name+state",
+   "bioguide": "D000626",
+   "federal_service": "2016-06-09 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "25 (FairTax Act) to replace the entire federal income tax system with a 23% national sales tax and defund the IRS, introduced a bill to repeal the 16th Amendment (April 2024), and voted for the 2017 Tax Cuts and Jobs Act.",
+   "reasoning": "Davidson co-sponsored H.R. 25 (FairTax Act) to replace the entire federal income tax system with a 23% national sales tax and defund the IRS, introduced a bill to repeal the 16th Amendment (April 2024), and voted for the 2017 Tax Cuts and Jobs Act. He stated he will \"work aggressively for a simpler, flatter tax code\" and believes \"there is no way to tax the economy into good health.\""
+  },
+  {
+   "politician_id": "811f725f-1eaa-4e67-9dbc-389698615e00",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "David P. Joyce",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tax_Cuts_and_Jobs_Act_of_2017",
+    "https://en.wikipedia.org/wiki/David_P._Joyce"
+   ],
+   "match_how": "name+state",
+   "bioguide": "J000295",
+   "federal_service": "2013-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Voted for the Tax Cuts and Jobs Act of 2017, which cut individual and corporate tax rates across income levels and reduced the top corporate rate from 35% to 21%;",
+   "reasoning": "Voted for the Tax Cuts and Jobs Act of 2017, which cut individual and corporate tax rates across income levels and reduced the top corporate rate from 35% to 21%; he was not among the 13 House Republicans who voted against the bill."
+  },
+  {
+   "politician_id": "a172a95a-b866-4ece-a7e2-47487c5ec471",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Sanford D. Bishop, Jr.",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "sources": [
+    "https://www.ontheissues.org/GA/Sanford_Bishop_Corporations.htm",
+    "https://www.ontheissues.org/GA/Sanford_Bishop.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "B000490",
+   "federal_service": "1993-01-05 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Bishop voted against the Tax Cuts and Jobs Act (2017), which reduced corporate taxes from 35% to 21%, citing concerns it would balloon the deficit by $1.5 trillion.",
+   "reasoning": "Bishop voted against the Tax Cuts and Jobs Act (2017), which reduced corporate taxes from 35% to 21%, citing concerns it would balloon the deficit by $1.5 trillion. He opposed making Bush tax cuts permanent and retaining capital gains reductions for the wealthy. He supported closing offshore business tax loopholes. His NTU score of 22% reflects consistent opposition to tax cuts for upper-income earners and corporations."
+  },
+  {
+   "politician_id": "4bf58192-5208-4c5f-93f1-ac0a7e6b162d",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Earl L. \"Buddy\" Carter",
+   "topic": "Taxation and Public Spending",
+   "chair": "5.0",
+   "sources": [
+    "https://www.ontheissues.org/GA/Buddy_Carter.htm",
+    "https://en.wikipedia.org/wiki/Buddy_Carter"
+   ],
+   "match_how": "name+state",
+   "bioguide": "C001103",
+   "federal_service": "2015-01-06 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "He also voted for the Tax Cuts and Jobs Act of 2017 and opposes the estate tax as a 'pernicious double tax,' placing him at the most aggressive tax-cutting end of the scale.",
+   "reasoning": "Carter is a leading sponsor of the FairTax Act, which would abolish the federal income tax and replace it with a 23% national sales tax, eliminating the IRS. He also voted for the Tax Cuts and Jobs Act of 2017 and opposes the estate tax as a 'pernicious double tax,' placing him at the most aggressive tax-cutting end of the scale."
+  },
+  {
+   "politician_id": "3de9e882-a816-42fc-ae70-aa93098c5d02",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Rick W. Allen",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/GA/Rick_Allen.htm",
+    "https://en.wikipedia.org/wiki/Rick_Allen_(politician)"
+   ],
+   "match_how": "name+state",
+   "bioguide": "A000372",
+   "federal_service": "2015-01-06 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Allen voted for the 2017 Tax Cuts and Jobs Act cutting taxes across income levels, consistently opposes increasing federal income taxes, supports a balanced budget amendment, and calls for reduced government spending.",
+   "reasoning": "Allen voted for the 2017 Tax Cuts and Jobs Act cutting taxes across income levels, consistently opposes increasing federal income taxes, supports a balanced budget amendment, and calls for reduced government spending. He supports the 'One Big Beautiful Bill Act' (2025) continuing tax cut extensions."
+  },
+  {
+   "politician_id": "7f0bb866-57f4-45de-88ae-5c9977f086bd",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Barry Loudermilk",
+   "topic": "Taxation and Public Spending",
+   "chair": "5.0",
+   "sources": [
+    "https://www.ontheissues.org/GA/Barry_Loudermilk.htm",
+    "https://en.wikipedia.org/wiki/Barry_Loudermilk"
+   ],
+   "match_how": "name+state",
+   "bioguide": "L000583",
+   "federal_service": "2015-01-06 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Loudermilk advocates abolishing the IRS and replacing income and estate taxes with a 23% national sales tax (FairTax), calling the estate tax 'a pernicious double tax.' He voted for the Tax Cuts and Jobs Act of 2017 and was named a 'defender of economic freedom' by Club for Growth in 2016.",
+   "reasoning": "Loudermilk advocates abolishing the IRS and replacing income and estate taxes with a 23% national sales tax (FairTax), calling the estate tax 'a pernicious double tax.' He voted for the Tax Cuts and Jobs Act of 2017 and was named a 'defender of economic freedom' by Club for Growth in 2016. He opposes stimulus spending and any tax increases on wealthy individuals, aligning with drastically cutting taxes and shrinking government."
+  },
+  {
+   "politician_id": "7f190fe5-c3d3-43a4-bda4-5873123cd07d",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Bill Huizenga",
+   "topic": "Taxation and Public Spending",
+   "chair": "5.0",
+   "sources": [
+    "https://www.ontheissues.org/MI/Bill_Huizenga_Tax_Reform.htm",
+    "https://www.ontheissues.org/MI/Bill_Huizenga.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "H001058",
+   "federal_service": "2011-01-05 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Huizenga signed Americans for Tax Reform's Taxpayer Protection Pledge (opposing all tax rate increases), supports replacing the current system with a flat tax, co-sponsored the Death Tax Repeal Act for permanent estate tax elimination, and voted YES on the Tax Cuts and Jobs Act (2017) reducing corporate rates from 35% to 21%.",
+   "reasoning": "Huizenga signed Americans for Tax Reform's Taxpayer Protection Pledge (opposing all tax rate increases), supports replacing the current system with a flat tax, co-sponsored the Death Tax Repeal Act for permanent estate tax elimination, and voted YES on the Tax Cuts and Jobs Act (2017) reducing corporate rates from 35% to 21%. He advocates drastically cutting taxes and shrinking government."
+  },
+  {
+   "politician_id": "99022a78-79ea-417c-8a7c-0bc5f773e329",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Christopher H. Smith",
+   "topic": "Taxation and Public Spending",
+   "chair": "3.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Christopher_H._Smith",
+    "https://www.ontheissues.org/NJ/Christopher_Smith.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "S000522",
+   "federal_service": "1981-01-05 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Smith voted AGAINST the 2017 Tax Cuts and Jobs Act, citing that it was 'unfair to New Jersey taxpayers' due to the $10,000 cap on the SALT deduction — a significant deviation from most Republicans.",
+   "reasoning": "Smith voted AGAINST the 2017 Tax Cuts and Jobs Act, citing that it was 'unfair to New Jersey taxpayers' due to the $10,000 cap on the SALT deduction — a significant deviation from most Republicans. He has historically supported some tax cuts (Bush-era cuts, estate tax elimination) but his TCJA opposition and AFL-CIO 61% rating suggest he prioritizes protecting working- and middle-class deductions over ideological tax reduction, placing him at value 3."
+  },
+  {
+   "politician_id": "85e712ff-8b13-4a29-8c94-cb4394650d73",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Dan Newhouse",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tax_Cuts_and_Jobs_Act_of_2017",
+    "https://en.wikipedia.org/wiki/Dan_Newhouse"
+   ],
+   "match_how": "name+state",
+   "bioguide": "N000189",
+   "federal_service": "2015-01-06 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Voted YES on the Tax Cuts and Jobs Act of 2017 (TCJA), which cut individual and corporate tax rates across all income levels and reduced the top rate from 39.6% to 37%.",
+   "reasoning": "Voted YES on the Tax Cuts and Jobs Act of 2017 (TCJA), which cut individual and corporate tax rates across all income levels and reduced the top rate from 39.6% to 37%. Newhouse was not among the 13 Republicans who voted against it. As a moderate Republican he supports lower taxes across income levels but without the most extreme flat-tax proposals, placing him at value 4."
+  },
+  {
+   "politician_id": "ea144a3d-3a8c-4b88-b46a-171baacf0baa",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Pramila Jayapal",
+   "topic": "Taxation and Public Spending",
+   "chair": "1.0",
+   "sources": [
+    "https://www.ontheissues.org/House/Pramila_Jayapal_Corporations.htm",
+    "https://www.ontheissues.org/House/Pramila_Jayapal.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "J000298",
+   "federal_service": "2017-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Jayapal voted against the 2017 Tax Cuts and Jobs Act, arguing it would balloon the deficit and cut domestic programs while giving corporations a windfall rate reduction from 35% to 21%;",
+   "reasoning": "Jayapal voted against the 2017 Tax Cuts and Jobs Act, arguing it would balloon the deficit and cut domestic programs while giving corporations a windfall rate reduction from 35% to 21%; she supports making the wealthy pay their fair share and has consistently called for higher taxes on high earners and large corporations."
+  },
+  {
+   "politician_id": "74b2a9c6-a4ca-4fe7-b3a4-347f54bc62c2",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Adam Smith",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "sources": [
+    "https://reproductivefreedomforall.org/politician/adam-smith/",
+    "https://en.wikipedia.org/wiki/Adam_Smith_%28Washington_politician%29"
+   ],
+   "match_how": "name+state",
+   "bioguide": "S000510",
+   "federal_service": "1997-01-07 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Smith voted NAY on the Tax Cuts and Jobs Act (H.R.1, 2017) and NAY on the One Big Beautiful Bill Act (H.R.1, 2025) which included major tax cuts for the wealthy;",
+   "reasoning": "Smith voted NAY on the Tax Cuts and Jobs Act (H.R.1, 2017) and NAY on the One Big Beautiful Bill Act (H.R.1, 2025) which included major tax cuts for the wealthy; he voted for the Inflation Reduction Act (2022) which raised taxes on corporations to fund climate and healthcare programs. His record is consistent with modestly raising taxes on high earners to fund existing public services."
+  },
+  {
+   "politician_id": "8118811a-aadd-4eb9-9208-de0f5d3b29ad",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Andy Biggs",
+   "topic": "Taxation and Public Spending",
+   "chair": "5.0",
+   "sources": [
+    "https://www.ontheissues.org/House/Andy_Biggs.htm",
+    "https://en.wikipedia.org/wiki/Andy_Biggs"
+   ],
+   "match_how": "name+state",
+   "bioguide": "B001302",
+   "federal_service": "2017-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Biggs opposed tax increases even for budget balance (Nov 2016), voted for the Tax Cuts and Jobs Act of 2017 saying it would \"provide much-needed economic relief,\" and has consistently voted against COVID relief spending as too costly.",
+   "reasoning": "Biggs opposed tax increases even for budget balance (Nov 2016), voted for the Tax Cuts and Jobs Act of 2017 saying it would \"provide much-needed economic relief,\" and has consistently voted against COVID relief spending as too costly. He voted against the Fiscal Responsibility Act (2023) arguing spending cuts were insufficient, indicating a drastic-cut posture."
+  },
+  {
+   "politician_id": "17e59190-17e2-4a90-8353-b5ea8d083480",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "David Schweikert",
+   "topic": "Taxation and Public Spending",
+   "chair": "5.0",
+   "sources": [
+    "https://www.ontheissues.org/David_Schweikert.htm",
+    "https://en.wikipedia.org/wiki/David_Schweikert",
+    "https://ballotpedia.org/David_Schweikert"
+   ],
+   "match_how": "name+state",
+   "bioguide": "S001183",
+   "federal_service": "2011-01-05 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Schweikert voted for the 2017 Tax Cuts and Jobs Act, supports a flat-rate federal tax system, opposes all capital gains and estate tax increases, and has signed the Taxpayer Protection Pledge.",
+   "reasoning": "Schweikert voted for the 2017 Tax Cuts and Jobs Act, supports a flat-rate federal tax system, opposes all capital gains and estate tax increases, and has signed the Taxpayer Protection Pledge. He has explicitly stated reducing the tax burden and cutting taxes is fundamental. This aligns with stance 5 (drastically cut taxes and shrink government)."
+  },
+  {
+   "politician_id": "7b2966fb-0b21-4db1-a3ad-f7f2cc69a4bb",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Steve Cohen",
+   "topic": "Taxation and Public Spending",
+   "chair": "1.0",
+   "sources": [
+    "https://www.ontheissues.org/House/Steve_Cohen_Corporations.htm",
+    "https://www.ontheissues.org/House/Steve_Cohen.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "C001068",
+   "federal_service": "2007-01-04 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Cohen voted NO on the 2017 Tax Cuts and Jobs Act, co-sponsored the Stop Tax Haven Abuse Act to restrict offshore corporate tax avoidance, and favors higher taxes on wealthy individuals.",
+   "reasoning": "Cohen voted NO on the 2017 Tax Cuts and Jobs Act, co-sponsored the Stop Tax Haven Abuse Act to restrict offshore corporate tax avoidance, and favors higher taxes on wealthy individuals. OnTheIssues rates him as a progressive taxation advocate who opposes deficit-expanding corporate tax cuts and supports closing corporate loopholes to fund public services."
+  },
+  {
+   "politician_id": "7b36e7d8-f8da-4c97-b268-04d59e9b69cc",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Robert B. Aderholt",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/house/Robert_Aderholt.htm",
+    "https://en.wikipedia.org/wiki/Robert_Aderholt"
+   ],
+   "match_how": "name+state",
+   "bioguide": "A000055",
+   "federal_service": "1997-01-07 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Aderholt signed Americans for Tax Reform's Taxpayer Protection Pledge, voted for the Tax Cuts and Jobs Act of 2017, earned a 0% rating from Citizens for Tax Justice, and supports eliminating the death tax and cutting capital gains taxes.",
+   "reasoning": "Aderholt signed Americans for Tax Reform's Taxpayer Protection Pledge, voted for the Tax Cuts and Jobs Act of 2017, earned a 0% rating from Citizens for Tax Justice, and supports eliminating the death tax and cutting capital gains taxes. His record fits cutting taxes for everyone and scaling back public services."
+  },
+  {
+   "politician_id": "dafa64fd-de0a-4b33-817c-813d3c799b99",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Mike Rogers",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mike_Rogers_(Alabama_politician)"
+   ],
+   "match_how": "name+state",
+   "bioguide": "R000575",
+   "federal_service": "2003-01-07 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Rogers signed Americans for Tax Reform's Taxpayer Protection Pledge and voted for the Tax Cuts and Jobs Act of 2017, a major across-the-board tax cut.",
+   "reasoning": "Rogers signed Americans for Tax Reform's Taxpayer Protection Pledge and voted for the Tax Cuts and Jobs Act of 2017, a major across-the-board tax cut. He supported the Fiscal Responsibility Act of 2023 but his overall record reflects a consistent preference for lower taxes and reduced government spending."
+  },
+  {
+   "politician_id": "3f7e3a08-6ef9-4203-8dd1-1b54ad2209cd",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Joe Wilson",
+   "topic": "Taxation and Public Spending",
+   "chair": "5.0",
+   "sources": [
+    "https://www.ontheissues.org/House/Joe_Wilson.htm",
+    "https://www.ontheissues.org/House/Joe_Wilson_Corporations.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "W000795",
+   "federal_service": "2001-12-18 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Wilson stated 'Abolish IRS — replace income tax with national sales tax' (Jul 2003), signed the Taxpayer Protection Pledge, voted YES on the Tax Cuts and Jobs Act (2017) reducing corporate rates to 21%, and backed the Cut-Cap-and-Balance Pledge.",
+   "reasoning": "Wilson stated 'Abolish IRS — replace income tax with national sales tax' (Jul 2003), signed the Taxpayer Protection Pledge, voted YES on the Tax Cuts and Jobs Act (2017) reducing corporate rates to 21%, and backed the Cut-Cap-and-Balance Pledge. His record consistently supports drastically cutting taxes and shrinking government."
+  },
+  {
+   "politician_id": "4fbc85b6-5d8b-4ee6-8328-adb433897b2e",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "James Comer",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/James_Comer.htm",
+    "https://en.wikipedia.org/wiki/James_Comer_(politician)"
+   ],
+   "match_how": "name+state",
+   "bioguide": "C001108",
+   "federal_service": "2016-11-14 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Comer voted for the Tax Cuts and Jobs Act of 2017, stating he was proud to support President Trump's pro-growth agenda.",
+   "reasoning": "Comer voted for the Tax Cuts and Jobs Act of 2017, stating he was proud to support President Trump's pro-growth agenda. He opposes tax increases even to balance the budget and consistently supports lowering taxes to promote economic growth, aligning with cutting taxes for everyone and scaling back public services."
+  },
+  {
+   "politician_id": "056b7a21-bdf1-4d7d-a992-be0f5db74fb0",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Brett Guthrie",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/House/Brett_Guthrie_Tax_Reform.htm",
+    "https://en.wikipedia.org/wiki/Brett_Guthrie"
+   ],
+   "match_how": "name+state",
+   "bioguide": "G000558",
+   "federal_service": "2009-01-06 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Guthrie signed the Americans for Tax Reform Taxpayer Protection Pledge (no new taxes), voted for the Tax Cuts and Jobs Act (corporate rate 35%→21%), and voted to repeal the estate tax.",
+   "reasoning": "Guthrie signed the Americans for Tax Reform Taxpayer Protection Pledge (no new taxes), voted for the Tax Cuts and Jobs Act (corporate rate 35%→21%), and voted to repeal the estate tax. He strongly favors cutting taxes across income levels and reducing government fiscal burden."
+  },
+  {
+   "politician_id": "a8a724eb-d7ff-4bd2-8397-560024f478de",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Clay Higgins",
+   "topic": "Taxation and Public Spending",
+   "chair": "5.0",
+   "sources": [
+    "https://www.ontheissues.org/house/Clay_Higgins.htm",
+    "https://www.ontheissues.org/house/Clay_Higgins_Corporations.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "H001077",
+   "federal_service": "2017-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Higgins proposes eliminating the IRS and replacing the income tax with a 15% federal sales tax (FairTax approach), voted for the 2017 Tax Cuts and Jobs Act cutting the corporate rate from 35% to 21%, and opposes higher taxes on wealthy individuals.",
+   "reasoning": "Higgins proposes eliminating the IRS and replacing the income tax with a 15% federal sales tax (FairTax approach), voted for the 2017 Tax Cuts and Jobs Act cutting the corporate rate from 35% to 21%, and opposes higher taxes on wealthy individuals. This reflects a position to drastically cut taxes and shrink government."
+  },
+  {
+   "politician_id": "787b2a74-de35-4dbe-b58a-c9bd345120a0",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Mike Johnson",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/House/Mike_Johnson.htm",
+    "https://en.wikipedia.org/wiki/Mike_Johnson_(Louisiana_politician)"
+   ],
+   "match_how": "name+state",
+   "bioguide": "J000299",
+   "federal_service": "2017-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Johnson voted for the 2017 Tax Cuts and Jobs Act (cutting corporate rates from 35% to 21%), calls for a \"simpler, flatter and fairer tax code,\" and supports immediately repealing the estate tax — consistent with broad tax cuts across income levels paired with reduced government spending.",
+   "reasoning": "Johnson voted for the 2017 Tax Cuts and Jobs Act (cutting corporate rates from 35% to 21%), calls for a \"simpler, flatter and fairer tax code,\" and supports immediately repealing the estate tax — consistent with broad tax cuts across income levels paired with reduced government spending."
+  },
+  {
+   "politician_id": "c4c7733e-dec4-43ef-a7ac-c9547bd91a1a",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Joe Courtney",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "sources": [
+    "https://www.ontheissues.org/House/Joe_Courtney.htm",
+    "https://www.ontheissues.org/House/Joe_Courtney_Corporations.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "C001069",
+   "federal_service": "2007-01-04 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Courtney voted NO on the 2017 Tax Cuts and Jobs Act (corporate rate cut 35%→21%), supports a minimum 30% tax rate on earners over $1 million, opposes extending tax cuts that balloon deficits, and opposes offshore corporate tax loopholes.",
+   "reasoning": "Courtney voted NO on the 2017 Tax Cuts and Jobs Act (corporate rate cut 35%→21%), supports a minimum 30% tax rate on earners over $1 million, opposes extending tax cuts that balloon deficits, and opposes offshore corporate tax loopholes. His record reflects modestly raising taxes on high earners, matching stance 2."
+  },
+  {
+   "politician_id": "85ec278d-c143-4128-a058-e468899ded8f",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "J. French Hill",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/House/French_Hill.htm",
+    "https://en.wikipedia.org/wiki/French_Hill_(politician)"
+   ],
+   "match_how": "name+state",
+   "bioguide": "H001072",
+   "federal_service": "2015-01-06 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Hill voted for the Tax Cuts and Jobs Act of 2017 and supports immediate repeal of the estate tax.",
+   "reasoning": "Hill voted for the Tax Cuts and Jobs Act of 2017 and supports immediate repeal of the estate tax. He advocates for a simple fair tax code with lower rates across income levels, consistent with cutting taxes for everyone and scaling back public services."
+  },
+  {
+   "politician_id": "2392d04a-fdb9-45be-8a02-3bb60a1517aa",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Steve Womack",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/House/Steve_Womack.htm",
+    "https://en.wikipedia.org/wiki/Steve_Womack"
+   ],
+   "match_how": "name+state",
+   "bioguide": "W000809",
+   "federal_service": "2011-01-05 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Womack signed the Taxpayer Protection Pledge, voted for the 2017 Tax Cuts and Jobs Act, and consistently supports cutting taxes across income levels and reducing the estate tax.",
+   "reasoning": "Womack signed the Taxpayer Protection Pledge, voted for the 2017 Tax Cuts and Jobs Act, and consistently supports cutting taxes across income levels and reducing the estate tax. He opposes tax increases and advocates shrinking federal spending."
+  },
+  {
+   "politician_id": "c59d862c-c8bc-462f-8386-cc176aa9c973",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Ron Estes",
+   "topic": "Taxation and Public Spending",
+   "chair": "5.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ron_Estes",
+    "https://www.ontheissues.org/House/Ron_Estes.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "E000298",
+   "federal_service": "2017-04-25 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Estes voted for the 2017 Tax Cuts and Jobs Act and advocates for a simplified and flatter tax code.",
+   "reasoning": "Estes voted for the 2017 Tax Cuts and Jobs Act and advocates for a simplified and flatter tax code. He opposes wealth-based tax increases and supports reducing both corporate rates (from 35% to 21%) and personal income tax rates, reflecting a position of drastically cutting taxes and shrinking government."
+  },
+  {
+   "politician_id": "0cc444a0-2ae6-48c3-ac8c-a99f45f1e14c",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Don Bacon",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/House/Don_Bacon.htm",
+    "https://en.wikipedia.org/wiki/Don_Bacon"
+   ],
+   "match_how": "name+state",
+   "bioguide": "B001298",
+   "federal_service": "2017-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Bacon voted for the 2017 Tax Cuts and Jobs Act and has stated support for \"a simpler, flatter tax code\" and reducing domestic spending.",
+   "reasoning": "Bacon voted for the 2017 Tax Cuts and Jobs Act and has stated support for \"a simpler, flatter tax code\" and reducing domestic spending. He describes himself as a fiscal conservative who wants to \"reduce our domestic spending, and reform our entitlements,\" aligning with cutting taxes for everyone and scaling back public services."
+  },
+  {
+   "politician_id": "ac732037-2172-4899-95c9-ca42ea69c4a0",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Todd Rokita",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Todd_Rokita"
+   ],
+   "match_how": "name+state",
+   "bioguide": "R000592",
+   "federal_service": "2011-01-05 .. 2019-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Rokita voted in favor of the Tax Cuts and Jobs Act of 2017, which reduced tax rates across income levels.",
+   "reasoning": "Rokita voted in favor of the Tax Cuts and Jobs Act of 2017, which reduced tax rates across income levels. His congressional record reflects consistent support for broad tax cuts, aligning with cutting taxes for everyone and scaling back public services, though he has not documented advocacy for a flat tax or the most extreme cuts."
+  },
+  {
+   "politician_id": "e0bab0e6-dc32-4d68-a479-0f59a79c0cf4",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Raul Labrador",
+   "topic": "Taxation and Public Spending",
+   "chair": "5.0",
+   "sources": [
+    "https://www.ontheissues.org/Raul_Labrador.htm",
+    "https://en.wikipedia.org/wiki/Ra%C3%BAl_Labrador"
+   ],
+   "match_how": "name+state",
+   "bioguide": "L000573",
+   "federal_service": "2011-01-05 .. 2019-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Labrador signed the Taxpayer Protection Pledge, supports a flat/single-rate tax system, opposes capital gains and estate tax increases, and voted for the Tax Cuts and Jobs Act (2017).",
+   "reasoning": "Labrador signed the Taxpayer Protection Pledge, supports a flat/single-rate tax system, opposes capital gains and estate tax increases, and voted for the Tax Cuts and Jobs Act (2017). A flat tax and pledge to never raise taxes aligns with the most conservative end of the scale."
+  },
+  {
+   "politician_id": "28eeeb86-5ec1-48dd-86a7-9cf6d7771949",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "John Garamendi",
+   "topic": "Taxation and Public Spending",
+   "chair": "1.0",
+   "sources": [
+    "https://www.ontheissues.org/CA/John_Garamendi_Corporations.htm",
+    "https://www.ontheissues.org/CA/John_Garamendi_Tax_Reform.htm",
+    "https://en.wikipedia.org/wiki/John_Garamendi"
+   ],
+   "match_how": "name+state",
+   "bioguide": "G000559",
+   "federal_service": "2009-11-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Garamendi voted NO on the 2017 Tax Cuts and Jobs Act, characterizing it as a \"tax scam\" that benefited the wealthy while ballooning the deficit by $1.5 trillion.",
+   "reasoning": "Garamendi voted NO on the 2017 Tax Cuts and Jobs Act, characterizing it as a \"tax scam\" that benefited the wealthy while ballooning the deficit by $1.5 trillion. He cosponsored the Stop Tax Haven Abuse Act, supported raising the estate tax to 1990s levels to generate ~$448 billion, and voted against the Death Tax Repeal Act (2015). He consistently supports significantly raising taxes on wealthy individuals and large corporations."
+  },
+  {
+   "politician_id": "5be0c642-33b3-4ea4-8bb1-2eb25df2b4ef",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Doris Matsui",
+   "topic": "Taxation and Public Spending",
+   "chair": "1.0",
+   "sources": [
+    "https://www.ontheissues.org/CA/Doris_Matsui_Tax_Reform.htm",
+    "https://www.ontheissues.org/CA/Doris_Matsui.htm"
+   ],
+   "match_how": "name+state",
+   "bioguide": "M001163",
+   "federal_service": "2005-03-10 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Matsui holds a 100% rating from Citizens for Tax Justice (2005-2006), voted NO on capital gains and dividends tax cuts (2005), voted NO on repealing the estate tax (2015), voted NO on the Tax Cuts and Jobs Act (2017) opposing corporate rate reductions, and supported AMT relief funded by closing offshore business loopholes.",
+   "reasoning": "Matsui holds a 100% rating from Citizens for Tax Justice (2005-2006), voted NO on capital gains and dividends tax cuts (2005), voted NO on repealing the estate tax (2015), voted NO on the Tax Cuts and Jobs Act (2017) opposing corporate rate reductions, and supported AMT relief funded by closing offshore business loopholes. Her record consistently supports significantly raising taxes on wealthy individuals."
+  },
+  {
+   "politician_id": "42bff283-c977-43f1-9d54-a06131dc5eac",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "David Valadao",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/CA/David_Valadao.htm",
+    "https://en.wikipedia.org/wiki/David_Valadao"
+   ],
+   "match_how": "name+state",
+   "bioguide": "V000129",
+   "federal_service": "2013-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Valadao voted for the Tax Cuts and Jobs Act in December 2017, reducing corporate tax rates from 35% to 21% and cutting individual rates.",
+   "reasoning": "Valadao voted for the Tax Cuts and Jobs Act in December 2017, reducing corporate tax rates from 35% to 21% and cutting individual rates. He also stated 'Super-majority to raise taxes' and called for reducing corporate taxes (Nov 2017). He aligns with stance 4: cut taxes for everyone and scale back public services."
+  },
+  {
+   "politician_id": "7c8e4442-e13e-485a-8993-b05ca110410d",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Marco Rubio",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.cnbc.com/2017/11/15/senate-gop-raises-child-tax-credit-to-win-over-marco-rubio-mike-lee.html"
+   ],
+   "match_how": "name",
+   "bioguide": "R000595",
+   "federal_service": "2011-01-05 .. 2025-01-20",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Voted for 2017 TCJA broad tax cuts;",
+   "reasoning": "Voted for 2017 TCJA broad tax cuts; doubled Child Tax Credit https://www.cnbc.com/2017/11/15/senate-gop-raises-child-tax-credit-to-win-over-marco-rubio-mike-lee.html"
+  },
+  {
+   "politician_id": "d6d297f5-5319-4be1-b938-6bcce63368e7",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Andy Barr",
+   "topic": "Taxation and Public Spending",
+   "chair": "4.0",
+   "sources": [
+    "https://www.ontheissues.org/House/Andy_Barr.htm",
+    "https://www.ontheissues.org/House/Andy_Barr_Budget_+_Economy.htm",
+    "https://en.wikipedia.org/wiki/Andy_Barr_(politician)"
+   ],
+   "match_how": "name",
+   "bioguide": "B001282",
+   "federal_service": "2013-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Barr voted for the 2017 Tax Cuts and Jobs Act and strongly opposes higher taxes on wealthy individuals.",
+   "reasoning": "Barr voted for the 2017 Tax Cuts and Jobs Act and strongly opposes higher taxes on wealthy individuals. He supports a single-rate (flat) tax system, capital gains reductions, and complete repeal of the death tax 'with no expiration.' He signed the Contract from America backing constitutional limits on tax increases requiring a two-thirds majority."
+  },
+  {
+   "politician_id": "164fb70e-b8c1-48cd-a6ef-12d80165c67d",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Andy Barr",
+   "topic": "Taxation and Public Spending",
+   "chair": "5.0",
+   "sources": [
+    "https://www.ontheissues.org/House/Andy_Barr.htm",
+    "https://en.wikipedia.org/wiki/Andy_Barr_(politician)"
+   ],
+   "match_how": "name+state",
+   "bioguide": "B001282",
+   "federal_service": "2013-01-03 .. 2027-01-03",
+   "seated_on_tcja_vote": true,
+   "verdict": "OK_IN_OFFICE",
+   "clause": "Barr signed the Taxpayer Protection Pledge, advocates a 'single-rate tax system,' supports eliminating the inheritance tax with 'no expiration,' and voted for the 2017 Tax Cuts and Jobs Act.",
+   "reasoning": "Barr signed the Taxpayer Protection Pledge, advocates a 'single-rate tax system,' supports eliminating the inheritance tax with 'no expiration,' and voted for the 2017 Tax Cuts and Jobs Act. His stated goal is dramatically reducing tax rates across all income levels and shrinking the size of government."
+  }
+ ],
+ "commentary": [
+  {
+   "politician": "Linda T. Sanchez",
+   "topic": "Taxation and Public Spending",
+   "clause": "She has repeatedly condemned the 2017 Tax Cuts and Jobs Act as a \"tax scam\" benefiting billionaires, and her direct quote — \"Don't buy the bullshit that tax cuts for the rich create more jobs\" — reflects a strong stance that aligns with new scale stance 1: significantly raising taxes on the wealthy to fund more public services.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Jay Obernolte",
+   "topic": "Taxation and Public Spending",
+   "clause": "Obernolte voted for the One Big Beautiful Bill Act, which permanently extended the 2017 TCJA individual rate cuts and added new deductions, and for the Limit Save Grow Act (H.R.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Julia Brownley",
+   "topic": "Taxation and Public Spending",
+   "clause": "Brownley voted for the Build Back Better Act (2021), a bill that explicitly expanded public services — including universal pre-K, childcare subsidies, and climate investments — and was \"fully paid for by making big corporations and the wealthiest pay their fair share.\" She also opposed the 2017 Tax Cuts and Jobs Act as a \"windfall for the wealthy and corporations.\" Supporting a major expansion of public services funded by taxing wealthy individuals and corporations places her at stance 1.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Karen Ruth Bass",
+   "topic": "Taxation and Public Spending",
+   "clause": "Bass opposed the 2017 Tax Cuts and Jobs Act as giving \"massive tax breaks to major corporations and the wealthiest Americans\" and holds a 14% rating from the National Taxpayers Union — indicating strong support for higher taxes.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Maxine Waters",
+   "topic": "Taxation and Public Spending",
+   "clause": "She has repeatedly denounced the 2017 Tax Cuts and Jobs Act as giving \"massive giveaways to the nation's largest banks\" and \"sweeping cuts for millionaires, billionaires, and corporations at the expense of working families.\" Her support for both significantly raising taxes on the wealthy and expanding public services places her at stance 1 on the new scale.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Mike Haridopolos",
+   "topic": "Taxation and Public Spending",
+   "clause": "In 2017 he stated his priority was 'focus on keeping taxes low and reducing the regulatory burden.' His February 2025 budget resolution vote prioritized making the 2017 Tax Cuts and Jobs Act permanent 'to prevent tax increases on Floridians' while preserving the child tax credit and standard deduction — consistent with cutting taxes across all income levels.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Daniel Webster",
+   "topic": "Taxation and Public Spending",
+   "clause": "Wikipedia quotes him saying the TCJA allows Americans to keep more money in their pockets.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Bill Hagerty",
+   "topic": "Taxation and Public Spending",
+   "clause": "He backed the TCJA and continuing tax cuts in reconciliation, aligning with value 4 — reduce tax rates across all income levels.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Don Tracy",
+   "topic": "Taxation and Public Spending",
+   "clause": "in line with TCJA and conservative fiscal policy.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Mike Crapo",
+   "topic": "Taxation and Public Spending",
+   "clause": "Crapo signed the Taxpayer Protection Pledge (Americans for Prosperity) and was a key architect of the 2017 Tax Cuts and Jobs Act voting YES on its final passage (December 20 2017 Roll Call Vote 323).",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "James Risch",
+   "topic": "Taxation and Public Spending",
+   "clause": "Risch explicitly supports the Tax Cuts and Jobs Act and the Working Families Tax Cuts bill, stating 'The best way to strengthen families, expand businesses, and boost our economy is to let taxpayers keep more of their money.' He opposes deficit spending but supports reducing tax rates across income levels rather than advocating a flat tax.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Mitch McConnell",
+   "topic": "Social Security",
+   "clause": "McConnell in 2018 called for entitlement cuts to address the deficit, blaming spending rather than the $1 trillion Tax Cuts and Jobs Act.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Mitch McConnell",
+   "topic": "Taxation and Public Spending",
+   "clause": "McConnell led passage of the Tax Cuts and Jobs Act (2017), cutting corporate rates from 35% to 21%.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Cindy Hyde-Smith",
+   "topic": "Medicare / Medicaid",
+   "clause": "Her support for the Tax Cuts and Jobs Act and balanced budget amendment legislation signals fiscal conservatism.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Roger Wicker",
+   "topic": "Taxation and Public Spending",
+   "clause": "1 (Big Beautiful Bill, Jul 2025) a reconciliation bill that extends the 2017 Tax Cuts and Jobs Act and includes further rate reductions.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Dave McCormick",
+   "topic": "Taxation and Public Spending",
+   "clause": "McCormick explicitly supports extending the 2017 Tax Cuts and Jobs Act individual and corporate tax cuts (which expire end of 2025), eliminating taxes on tips, and generally opposes tax increases.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "John Barrasso",
+   "topic": "Taxation and Public Spending",
+   "clause": "Barrasso 'strongly opposes higher taxes on wealthy,' supports making federal income tax cuts permanent, and backed reducing the corporate rate from 35% to 21% in the 2017 Tax Cuts and Jobs Act.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "John Thune",
+   "topic": "Taxation and Public Spending",
+   "clause": "He supported the 2017 Tax Cuts and Jobs Act and advocates for reducing capital gains taxes and eliminating the death tax.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Marsha Blackburn",
+   "topic": "Taxation and Public Spending",
+   "clause": "Blackburn signed the Taxpayer Protection Pledge, supported the Trump tax cuts (TCJA), advocates death tax repeal, and is rated 0% by Citizens for Tax Justice for consistent opposition to progressive taxation.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Shelley Moore Capito",
+   "topic": "Taxation and Public Spending",
+   "clause": "Capito signed the Taxpayer Protection Pledge, voted for the Bush tax cuts (2001) and the Trump Tax Cuts and Jobs Act (2017), and supports full inheritance tax repeal.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Ted Budd",
+   "topic": "Taxation and Public Spending",
+   "clause": "Budd strongly supported the Tax Cuts and Jobs Act, opposes tax increases even to balance the budget, sponsored bills to stop IRS expansion, and his 2025 budget resolution support explicitly aims to lower taxes for American families;",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Thom Tillis",
+   "topic": "Taxation and Public Spending",
+   "clause": "Tillis called the 2017 Tax Cuts and Jobs Act historic tax reform and supports extending the Trump tax cuts (June 2025);",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Janak Joshi",
+   "topic": "Taxation and Public Spending",
+   "clause": "backed TCJA;",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Angela Alsobrooks",
+   "topic": "Taxation and Public Spending",
+   "clause": "Alsobrooks opposes the Tax Cuts and Jobs Act, supports raising corporate tax rates, and criticized the Republican reconciliation package as giving tax cuts to billionaires while cutting Medicaid and SNAP — aligning with modestly increasing taxes on high earners while maintaining current rates for middle-class families.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Ben Ray Luján",
+   "topic": "Taxation and Public Spending",
+   "clause": "he backs keeping the inheritance tax and reversing TCJA cuts while protecting working-class and middle-class families.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Richard Blumenthal",
+   "topic": "Taxation and Public Spending",
+   "clause": "He consistently voted against extending tax cuts for the top 2% and supported reversing the 2017 TCJA cuts for corporations and high earners.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Ron Wyden",
+   "topic": "Taxation and Public Spending",
+   "clause": "he opposed Bush tax cuts in 2001 and 2003, backs higher taxes on wealthy individuals, and as Finance Committee Ranking Member opposes TCJA extension.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Ruben Gallego",
+   "topic": "Taxation and Public Spending",
+   "clause": "1 July 2025) which extended TCJA tax cuts and voted YEA on a middle class tax relief amendment consistent with modestly increasing taxes on high earners while maintaining current rates for middle-class families.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Tammy Baldwin",
+   "topic": "Taxation and Public Spending",
+   "clause": "She supports a 30% minimum tax for earnings over $1 million (Apr 2012), opposed the 2017 Tax Cuts and Jobs Act as overwhelmingly benefiting the wealthy, and wants to close loopholes on outsourcing and capital gains.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Kathy Castor",
+   "topic": "Taxation and Public Spending",
+   "clause": "Castor co-sponsored the Paying a Fair Share Act (2012) imposing a minimum 30% tax rate on individuals earning over $1 million, voted YES on the $1.9 trillion American Rescue Plan (2021), voted NO on TCJA corporate tax cuts (2017), and supported closing offshore business tax loopholes.",
+   "why": "another-named-measure-precedes"
+  },
+  {
+   "politician": "Tammy Duckworth",
+   "topic": "Taxation and Public Spending",
+   "clause": "She opposes the 2017 Tax Cuts and Jobs Act that primarily benefited corporations and high earners.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Alan Armstrong",
+   "topic": "Taxation and Public Spending",
+   "clause": "Armstrong voted YEA on S.Con.Res.33, the FY2026 budget concurrent resolution (v105, April 23 2026), which serves as the budget framework for the reconciliation bill extending and expanding the 2017 Tax Cuts and Jobs Act and implementing further tax reductions.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Steve Marshall",
+   "topic": "Taxation and Public Spending",
+   "clause": "Supports making TCJA permanent;",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Sherrod Brown",
+   "topic": "Taxation and Public Spending",
+   "clause": "Brown stated 'Billionaires need to start paying their fair share' (Aug 2024), opposed the 2017 Tax Cuts and Jobs Act as benefiting the wealthy, and championed expanding the child tax credit.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Blake Moore",
+   "topic": "Taxation and Public Spending",
+   "clause": "Moore celebrated the One Big Beautiful Bill Act making TCJA cuts permanent, stating the criticism that it is 'just tax breaks for the billionaires on the backs of the working class...is fundamentally false.' The U.S.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Celeste Maloy",
+   "topic": "Taxation and Public Spending",
+   "clause": "Maloy enthusiastically supported the One Big Beautiful Bill Act (voted yes), stating: 'The Trump Tax Cuts are about empowering hardworking families and putting more money back in their pockets.' She co-sponsored the Main Street Tax Certainty Act for permanent business deductions and supported making TCJA permanent.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Mike Kennedy",
+   "topic": "Taxation and Public Spending",
+   "clause": "Chamber to advocate extending the TCJA, stating: 'By implementing President Trump's tax cuts — such as eliminating taxes on tips, exempting Social Security income from taxation, and renewing small businesses tax cuts, we are empowering Americans to regain control over their hard-earned money.' Voted YEA on OBBB permanently extending TCJA rates.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Burgess Owens",
+   "topic": "Taxation and Public Spending",
+   "clause": "Owens co-sponsored the TCJA Permanency Act, stating 'The Tax Cuts and Jobs Act provided sweeping tax cuts for low and middle-income Americans and helped our nation achieve historic economic growth.",
+   "why": "other-measure-name"
+  },
+  {
+   "politician": "Burgess Owens",
+   "topic": "Taxation and Public Spending",
+   "clause": "The TCJA Permanency Act will deliver much-needed relief by permanently lowering tax rates for individuals and families and allowing Americans to keep more of their hard-earned money.' He voted YES on the One Big Beautiful Bill which extended TCJA and was named a 'leader on tax reform' by the U.S.",
+   "why": "other-measure-name"
+  },
+  {
+   "politician": "Abigail Spanberger",
+   "topic": "Taxation and Public Spending",
+   "clause": "She opposed the 2017 Tax Cuts and Jobs Act, which she argued favored the wealthy and corporations over middle-class families.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Elizabeth Warren",
+   "topic": "Taxation and Public Spending",
+   "clause": "She has stated 'the wealthy have rigged the tax code' and called the 2017 Tax Cuts and Jobs Act 'immoral.' Her Ultra-Millionaire Tax and corporate minimum tax are among the most ambitious progressive tax proposals in Congress.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Claudia Tenney",
+   "topic": "Taxation and Public Spending",
+   "clause": "Tenney supported the Tax Cuts and Jobs Act of 2017 reducing top rates and corporate taxes, has consistently voted against tax increases, and describes her approach as an \"uncompromising pursuit every day to lower taxes.\" She supports cuts across income levels to promote economic growth rather than targeted relief.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Dwight Evans",
+   "topic": "Taxation and Public Spending",
+   "clause": "Evans opposed the Tax Cuts and Jobs Act (TCJA), arguing it would balloon the deficit by $1.5 trillion while benefiting the wealthy at the expense of core domestic programs.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Mary Gay Scanlon",
+   "topic": "Taxation and Public Spending",
+   "clause": "Wikipedia notes Scanlon advocates rolling back the Tax Cuts and Jobs Act to reduce the deficit, targeting tax cuts for the wealthy.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Mary Gay Scanlon",
+   "topic": "Taxation and Public Spending",
+   "clause": "Rolling back the TCJA and her overall fiscal stance aligns with significantly raising taxes on wealthy individuals and large corporations (stance 1).",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Sean Casten",
+   "topic": "Taxation and Public Spending",
+   "clause": "Casten opposes lowering corporate taxes, favors reversing the federal income tax cuts from the 2017 TCJA, and supports increasing taxes to balance the budget.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "David J. Taylor",
+   "topic": "Taxation and Public Spending",
+   "clause": "1, passed 215-214 on May 22 2025 and 218-214 on July 3 2025), which permanently extends the 2017 TCJA individual and corporate tax cuts, adds new deductions for tips and overtime, and finances these cuts partly through $1.2T in spending reductions.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Tim Moore",
+   "topic": "Taxation and Public Spending",
+   "clause": "The One Big Beautiful Bill Act (2025), which Moore voted for, permanently extends the 2017 Tax Cuts and Jobs Act and cuts taxes across income levels.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Christopher H. Smith",
+   "topic": "Taxation and Public Spending",
+   "clause": "He has historically supported some tax cuts (Bush-era cuts, estate tax elimination) but his TCJA opposition and AFL-CIO 61% rating suggest he prioritizes protecting working- and middle-class deductions over ideological tax reduction, placing him at value 3.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Juan Ciscomani",
+   "topic": "Taxation and Public Spending",
+   "clause": "Ciscomani voted for the One Big Beautiful Bill (May 2025), which permanently extends the 2017 Tax Cuts and Jobs Act, raises the SALT deduction cap to $40,000, and creates new deductions for tips and overtime pay — a broad tax-cutting agenda that reduces federal revenues.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Paul A. Gosar",
+   "topic": "Taxation and Public Spending",
+   "clause": "Gosar signed the Taxpayer Protection Pledge committing to oppose any income tax rate increases, co-sponsored the Death Tax Repeal Act to permanently eliminate estate taxes, supported the Tax Cuts and Jobs Act reducing corporate rates from 35% to 21%, and opposed all COVID relief spending as debt-increasing.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Charles J. \"Chuck\" Fleischmann",
+   "topic": "Taxation and Public Spending",
+   "clause": "Fleischmann called taxation \"the ultimate form of invasion of privacy,\" signed the Balanced Budget Amendment (requiring supermajority to exceed revenues), supported the Death Tax Repeal Act (2015), backed corporate rate cuts from 35% to 21% in the Tax Cuts and Jobs Act, and advocates for completely overhauling the tax code.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Matt Van Epps",
+   "topic": "Taxation and Public Spending",
+   "clause": "Van Epps voted for the One Big Beautiful Bill Act (May 2025), which permanently extends the 2017 Tax Cuts and Jobs Act individual tax rates and adds new deductions for tips, overtime, and auto loans.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Jeff Hurd",
+   "topic": "Taxation and Public Spending",
+   "clause": "Hurd's campaign explicitly lists \"extend the Tax Cuts and Jobs Act\" as a top priority, and he voted for the One Big Beautiful Bill Act in May 2025, which included significant tax cuts.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Tom Emmer",
+   "topic": "Taxation and Public Spending",
+   "clause": "Emmer advocates replacing the income and estate tax system with a 23% national sales tax (FairTax), stated 'Keep taxes low to move toward prosperity' (Oct 2014), called the estate tax a 'pernicious double tax' (Apr 2015), and as House Majority Whip managed passage of the One Big Beautiful Bill Act making 2017 TCJA rates permanent.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Jason Smith",
+   "topic": "Taxation and Public Spending",
+   "clause": "Smith supported the Tax Cuts and Jobs Act of 2017 as a Ways and Means Committee member and has since championed further cuts as Committee Chair, calling for 'tax relief and economic benefits to the American people' via the 'big, beautiful bill.' He opposes the estate tax and advocates cutting red tape, matching stance 4 (cut taxes for everyone and scale back public services).",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Harold Rogers",
+   "topic": "Taxation and Public Spending",
+   "clause": "Voted YES on the $958B income tax cut package (2001), the Tax Cuts and Jobs Act (2017), capital gains tax reductions (2005), and estate tax repeal.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Bruce Westerman",
+   "topic": "Taxation and Public Spending",
+   "clause": "Westerman supported the Tax Cuts and Jobs Act of 2017 and consistently opposes higher taxes on wealthy individuals or corporations.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Steve Scalise",
+   "topic": "Taxation and Public Spending",
+   "clause": "Scalise signed Americans for Tax Reform's Taxpayer Protection Pledge — the first congressional candidate to do so — committing to oppose \"any and all tax increases.\" He has voted for estate tax repeal (Death Tax Repeal Act, 2015), corporate rate cuts in the Tax Cuts and Jobs Act (2017), and stated \"Never voted for a tax increase and never will.\" His record reflects a consistent position of drastically cutting taxes and shrinking government.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Eric A. \"Rick\" Crawford",
+   "topic": "Taxation and Public Spending",
+   "clause": "Crawford signed the Taxpayer Protection Pledge, supported the 2017 Tax Cuts and Jobs Act, and has consistently advocated for reducing corporate and individual tax rates — aligning with cutting taxes for everyone and scaling back public services to match.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Michael K. Simpson",
+   "topic": "Taxation and Public Spending",
+   "clause": "Simpson signed the Taxpayer Protection Pledge opposing all tax increases, received a 0% rating from Citizens for Tax Justice, voted YES on all major Bush tax cuts (2001-2004) and the Tax Cuts and Jobs Act (2017), and co-sponsored the Death Tax Elimination Act.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Carol D. Miller",
+   "topic": "Taxation and Public Spending",
+   "clause": "Miller supports making the GOP Tax Cuts and Jobs Act permanent, opposes raising income taxes to balance the budget, and supports lower corporate taxes as a means of promoting economic growth.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Mike Collins",
+   "topic": "Taxation and Public Spending",
+   "clause": "Supports TCJA and tax cuts;",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Julia Letlow",
+   "topic": "Taxation and Public Spending",
+   "clause": "She signed onto the Republican Study Committee budget framework supporting extension of the 2017 Tax Cuts and Jobs Act and reducing the tax burden.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Ami Bera",
+   "topic": "Taxation and Public Spending",
+   "clause": "Bera supports increasing federal income tax rates (Christian Coalition Voter Guide 2012), opposed the 2017 Tax Cuts and Jobs Act, opposes eliminating the estate/inheritance tax, and voted against the Death Tax Repeal Act (2015).",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Tom McClintock",
+   "topic": "Taxation and Public Spending",
+   "clause": "McClintock signed the Taxpayer Protection Pledge (no new taxes), advocates replacing the income tax with the FairTax (a flat consumption tax), supports making Bush tax cuts permanent, and voted for the Tax Cuts and Jobs Act of 2017.",
+   "why": "another-named-measure-precedes"
+  },
+  {
+   "politician": "Sara Jacobs",
+   "topic": "Taxation and Public Spending",
+   "clause": "Explicitly wants to repeal the Tax Cuts and Jobs Act wealthy tax cuts, increase top marginal tax rates, match capital gains rates to income rates, and close tax code loopholes to ensure corporations pay their fair share.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Mike Levin",
+   "topic": "Taxation and Public Spending",
+   "clause": "Levin stated he would 'reverse federal income tax cuts' (CC survey, Jul 2018), 'increase taxes to balance budget' (PVS, Aug 2018), and consistently opposes the 2017 TCJA tax cuts which primarily benefited wealthy individuals and large corporations.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "John McGuire",
+   "topic": "Taxation and Public Spending",
+   "clause": "McGuire's campaign website pledges to 'fight to lower taxes for hard-working Virginians to ensure they are taking more of their paycheck home' and to 'remove the tax burden on our veterans.' He voted for the One Big Beautiful Bill Act in May 2025 (passed 217-215 along party lines), which permanently extends the 2017 TCJA individual tax cuts and adds no-tax-on-tips and no-tax-on-overtime provisions, cutting taxes across income levels.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Ben McAdams",
+   "topic": "Taxation and Public Spending",
+   "clause": "He opposed the 2017 Tax Cuts and Jobs Act, criticizing its \"$1.5 trillion increase of the national debt,\" and co-sponsored a 2019 Balanced Budget Amendment aimed at deficit reduction.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Victor Orlando",
+   "topic": "Taxation and Public Spending",
+   "clause": "Campaign platform prioritizes cutting federal spending/waste before any tax relief, supports making the 2017 Tax Cuts and Jobs Act permanent, eliminating the SALT cap, and opposes raising taxes to close the deficit -- a cut-taxes-and-shrink-spending profile.",
+   "why": "no-action-verb-bound-to-measure"
+  },
+  {
+   "politician": "Gerald Malloy",
+   "topic": "Taxation and Public Spending",
+   "clause": "Malloy's platform centers on opposing tax increases, extending the 2017 Tax Cuts and Jobs Act, and cutting government spending/size rather than raising revenue;",
+   "why": "no-action-verb-bound-to-measure"
+  }
+ ],
+ "unmatched": [
+  {
+   "politician_id": "c06165d2-008c-4fe3-93cd-e31fbd6e377f",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Lou Correa",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "gov_type": "NATIONAL",
+   "gov_name": "United States Federal Government",
+   "office": "U.S. Representative",
+   "federal_in_our_data": true,
+   "why": "no-firstname-match",
+   "clause": "Correa voted NO on the Tax Cuts and Jobs Act (2017), which cut corporate tax rates from 35% to 21% and was financed by adding $1.5 trillion to the deficit;"
+  }
+ ]
+}
