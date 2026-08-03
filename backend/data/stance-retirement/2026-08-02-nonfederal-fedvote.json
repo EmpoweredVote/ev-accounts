@@ -1,0 +1,43 @@
+{
+ "stats": {
+  "rows": 33469,
+  "non_federal_rows": 7546,
+  "clauses": 2
+ },
+ "findings": [
+  {
+   "politician_id": "869ba820-3138-473c-b70d-383e67f5797d",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Jonathan D. Zlotnik",
+   "office": null,
+   "gov_type": null,
+   "gov_name": null,
+   "chamber": null,
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "measure": "S.2820",
+   "clause": "Zlotnik voted for the Police Reform Act (H.4011/S.2820, 2020) which created a statewide certification system for police officers, banned chokeholds, and limited qualified immunity in Massachusetts.",
+   "sources": [
+    "https://malegislature.gov/Bills/191/H4011",
+    "https://malegislature.gov/Legislators/Profile/JDZ1"
+   ]
+  },
+  {
+   "politician_id": "7e4ebd10-b9e3-4c07-958f-5ebef8da5409",
+   "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "politician": "Justin Filip",
+   "office": null,
+   "gov_type": null,
+   "gov_name": null,
+   "chamber": null,
+   "topic": "Fossil Fuel Policy",
+   "chair": "2.0",
+   "measure": "HR 2925",
+   "clause": "Hoyle's vote for HR 2925 (opening public lands to mining corporations) and her past support for the Jordan Cove LNG pipeline, framing continued fossil-fuel/mining expansion as incompatible with protecting federal lands and clean water — closer to halting new permits than to maintaining or expanding current production.",
+   "sources": [
+    "https://www.justin4congress.com/",
+    "https://www.congress.gov/bill/118th-congress/house-bill/2925"
+   ]
+  }
+ ]
+}
