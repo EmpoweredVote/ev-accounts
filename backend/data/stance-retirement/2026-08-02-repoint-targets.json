@@ -1,0 +1,511 @@
+{
+ "resolved": 31,
+ "held": 0,
+ "results": [
+  {
+   "url": "https://clark.house.gov/issues",
+   "citations": 43,
+   "sole_sourced": 0,
+   "who": "Katherine Clark",
+   "surnames": [
+    "Clark"
+   ],
+   "repair": "HOSTNAME",
+   "target": "https://katherineclark.house.gov/issues",
+   "target_http": 200,
+   "body_len": 2072,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://democracyreform-sarbanes.house.gov/newsroom/press-releases/221-house-democrats-co-sponsor-hr-1-the-for-the-people-act",
+   "citations": 3,
+   "sole_sourced": 0,
+   "who": "Tony Cardenas",
+   "surnames": [
+    "Cardenas"
+   ],
+   "repair": "ARCHIVE",
+   "verdict": "RESOLVED",
+   "retry_via": "availability",
+   "capture_ts": "20230624095732",
+   "target": "https://web.archive.org/web/20230624095732/https://democracyreform-sarbanes.house.gov/newsroom/press-releases/221-house-democrats-co-sponsor-hr-1-the-for-the-people-act",
+   "target_http": 200,
+   "body_len": 6062,
+   "names_politician": true
+  },
+  {
+   "url": "https://cardenas.house.gov/issues/environment-and-climate-change",
+   "citations": 2,
+   "sole_sourced": 0,
+   "who": "Tony Cardenas",
+   "surnames": [
+    "Cardenas"
+   ],
+   "repair": "ARCHIVE",
+   "verdict": "RESOLVED",
+   "retry_via": "availability",
+   "capture_ts": "20241128052016",
+   "target": "https://web.archive.org/web/20241128052016/https://cardenas.house.gov/issues/environment-and-climate-change",
+   "target_http": 200,
+   "body_len": 3445,
+   "names_politician": true
+  },
+  {
+   "url": "https://schiff.house.gov/news/press-releases/rep-schiff-introduces-bill-to-address-dual-housing-and-behavioral-health-crises",
+   "citations": 2,
+   "sole_sourced": 0,
+   "who": "Adam B. Schiff",
+   "surnames": [
+    "Schiff"
+   ],
+   "repair": "ARCHIVE",
+   "verdict": "RESOLVED",
+   "retry_via": "availability",
+   "capture_ts": "20241207211842",
+   "target": "https://web.archive.org/web/20241207211842/https://schiff.house.gov/news/press-releases/rep-schiff-introduces-bill-to-address-dual-housing-and-behavioral-health-crises",
+   "target_http": 200,
+   "body_len": 8977,
+   "names_politician": true
+  },
+  {
+   "url": "https://schiff.house.gov/issues/lgbtq-equality",
+   "citations": 2,
+   "sole_sourced": 0,
+   "who": "Adam B. Schiff",
+   "surnames": [
+    "Schiff"
+   ],
+   "repair": "ARCHIVE",
+   "verdict": "RESOLVED",
+   "retry_via": "availability",
+   "capture_ts": "20241106211925",
+   "target": "https://web.archive.org/web/20241106211925/https://schiff.house.gov/issues/lgbtq-equality",
+   "target_http": 200,
+   "body_len": 5667,
+   "names_politician": true
+  },
+  {
+   "url": "https://cardenas.house.gov/issues/healthcare",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Tony Cardenas",
+   "surnames": [
+    "Cardenas"
+   ],
+   "repair": "ARCHIVE",
+   "verdict": "RESOLVED",
+   "retry_via": "availability",
+   "capture_ts": "20241106202234",
+   "target": "https://web.archive.org/web/20241106202234/https://cardenas.house.gov/issues/healthcare",
+   "target_http": 200,
+   "body_len": 2730,
+   "names_politician": true
+  },
+  {
+   "url": "https://cardenas.house.gov/issues/immigration-and-diversity-",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Tony Cardenas",
+   "surnames": [
+    "Cardenas"
+   ],
+   "repair": "ARCHIVE",
+   "verdict": "RESOLVED",
+   "retry_via": "availability",
+   "capture_ts": "20241128052017",
+   "target": "https://web.archive.org/web/20241128052017/https://cardenas.house.gov/issues/immigration-and-diversity-",
+   "target_http": 200,
+   "body_len": 3187,
+   "names_politician": true
+  },
+  {
+   "url": "https://cardenas.house.gov/media-center/in-the-news/univision-34_-al-punto-california-congressman-cardenas-on-the-inflation-reduction-act",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Tony Cardenas",
+   "surnames": [
+    "Cardenas"
+   ],
+   "repair": "ARCHIVE",
+   "verdict": "RESOLVED",
+   "retry_via": "availability",
+   "capture_ts": "20241217085821",
+   "target": "https://web.archive.org/web/20241217085821/https://cardenas.house.gov/media-center/in-the-news/univision-34_-al-punto-california-congressman-cardenas-on-the-inflation-reduction-act",
+   "target_http": 200,
+   "body_len": 1937,
+   "names_politician": true
+  },
+  {
+   "url": "https://cardenas.house.gov/media-center/press-releases/c-rdenas-hayes-introduces-resolution-declaring-racism-public-health",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Tony Cardenas",
+   "surnames": [
+    "Cardenas"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20241106220722/https://cardenas.house.gov/media-center/press-releases/c-rdenas-hayes-introduces-resolution-declaring-racism-public-health",
+   "capture_ts": "20241106220722",
+   "target_http": 200,
+   "body_len": 7166,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://cardenas.house.gov/media-center/press-releases/c-rdenas-to-force-vote-on-comprehensive-immigration-reform-tomorrow",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Tony Cardenas",
+   "surnames": [
+    "Cardenas"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20190618141559/https://cardenas.house.gov/media-center/press-releases/c-rdenas-to-force-vote-on-comprehensive-immigration-reform-tomorrow",
+   "capture_ts": "20190618141559",
+   "target_http": 200,
+   "body_len": 5582,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://cardenas.house.gov/media-center/press-releases/cardenas-votes-to-pass-historic-budget-resolution",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Tony Cardenas",
+   "surnames": [
+    "Cardenas"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20250102063206/https://cardenas.house.gov/media-center/press-releases/cardenas-votes-to-pass-historic-budget-resolution",
+   "capture_ts": "20250102063206",
+   "target_http": 200,
+   "body_len": 4464,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://curtis.house.gov/news/documentsingle.aspx?DocumentID=3344",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "John Curtis",
+   "surnames": [
+    "Curtis"
+   ],
+   "repair": "ARCHIVE",
+   "verdict": "RESOLVED",
+   "retry_via": "availability",
+   "capture_ts": "20241202174713",
+   "target": "https://web.archive.org/web/20241202174713/https://curtis.house.gov/news/documentsingle.aspx?DocumentID=3344",
+   "target_http": 200,
+   "body_len": 4662,
+   "names_politician": true
+  },
+  {
+   "url": "https://rubio.senate.gov/public/index.cfm/2021/2/rubio-reintroduces-educational-opportunities-act",
+   "citations": 1,
+   "sole_sourced": 1,
+   "who": "Marco Rubio",
+   "surnames": [
+    "Rubio"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20230704015116/https://rubio.senate.gov/public/index.cfm/2021/2/rubio-reintroduces-educational-opportunities-act",
+   "capture_ts": "20230704015116",
+   "target_http": 200,
+   "body_len": 2137,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://schiff.house.gov/news/press-releases/congressman-schiff-on-house-passage-of-the-build-back-better-act",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Adam B. Schiff",
+   "surnames": [
+    "Schiff"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20241107034430/https://schiff.house.gov/news/press-releases/congressman-schiff-on-house-passage-of-the-build-back-better-act",
+   "capture_ts": "20241107034430",
+   "target_http": 200,
+   "body_len": 2821,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://schiff.house.gov/news/press-releases/congressman-schiff-on-passage-of-respect-for-marriage-act",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Adam B. Schiff",
+   "surnames": [
+    "Schiff"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20241106214001/https://schiff.house.gov/news/press-releases/congressman-schiff-on-passage-of-respect-for-marriage-act",
+   "capture_ts": "20241106214001",
+   "target_http": 200,
+   "body_len": 1924,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://schiff.house.gov/news/press-releases/congressman-schiff-on-senate-failure-to-pass-womens-health-protection-act",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Adam B. Schiff",
+   "surnames": [
+    "Schiff"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20241130120643/https://schiff.house.gov/news/press-releases/congressman-schiff-on-senate-failure-to-pass-womens-health-protection-act",
+   "capture_ts": "20241130120643",
+   "target_http": 200,
+   "body_len": 2682,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://schiff.house.gov/news/press-releases/congressman-schiff-on-senate-passage-of-respect-for-marriage-act",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Adam B. Schiff",
+   "surnames": [
+    "Schiff"
+   ],
+   "repair": "ARCHIVE",
+   "verdict": "RESOLVED",
+   "retry_via": "availability",
+   "capture_ts": "20241106214007",
+   "target": "https://web.archive.org/web/20241106214007/https://schiff.house.gov/news/press-releases/congressman-schiff-on-senate-passage-of-respect-for-marriage-act",
+   "target_http": 200,
+   "body_len": 2100,
+   "names_politician": true
+  },
+  {
+   "url": "https://schiff.house.gov/news/press-releases/congressman-schiff-on-supreme-court-decision-to-strike-down-roe-v-wade",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Adam B. Schiff",
+   "surnames": [
+    "Schiff"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20241207205044/https://schiff.house.gov/news/press-releases/congressman-schiff-on-supreme-court-decision-to-strike-down-roe-v-wade",
+   "capture_ts": "20241207205044",
+   "target_http": 200,
+   "body_len": 3195,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://schiff.house.gov/news/press-releases/rep-schiff-introduces-hotels-to-housing-conversion-act",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Adam B. Schiff",
+   "surnames": [
+    "Schiff"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20241107103655/https://schiff.house.gov/news/press-releases/rep-schiff-introduces-hotels-to-housing-conversion-act",
+   "capture_ts": "20241107103655",
+   "target_http": 200,
+   "body_len": 3805,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://schiff.house.gov/news/press-releases/rep-schiff-introduces-landmark-bipartisan-bill-to-combat-fraudulent-ai-campaign-ads",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Adam B. Schiff",
+   "surnames": [
+    "Schiff"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20241128045453/https://schiff.house.gov/news/press-releases/rep-schiff-introduces-landmark-bipartisan-bill-to-combat-fraudulent-ai-campaign-ads",
+   "capture_ts": "20241128045453",
+   "target_http": 200,
+   "body_len": 9219,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://schiff.house.gov/news/press-releases/rep-schiff-statement-on-facebooks-deepfake-policy",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Adam B. Schiff",
+   "surnames": [
+    "Schiff"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20241107080122/https://schiff.house.gov/news/press-releases/rep-schiff-statement-on-facebooks-deepfake-policy",
+   "capture_ts": "20241107080122",
+   "target_http": 200,
+   "body_len": 3589,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://schiff.house.gov/news/press-releases/schiff-demands-social-media-companies-take-action-in-advance-of-2024-election-to-address-spread-of-election-misinformation",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Adam B. Schiff",
+   "surnames": [
+    "Schiff"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20241207211352/https://schiff.house.gov/news/press-releases/schiff-demands-social-media-companies-take-action-in-advance-of-2024-election-to-address-spread-of-election-misinformation",
+   "capture_ts": "20241207211352",
+   "target_http": 200,
+   "body_len": 3876,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://schiff.house.gov/news/press-releases/schiff-introduces-equal-health-care-for-all-act",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Adam B. Schiff",
+   "surnames": [
+    "Schiff"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20241207200849/https://schiff.house.gov/news/press-releases/schiff-introduces-equal-health-care-for-all-act",
+   "capture_ts": "20241207200849",
+   "target_http": 200,
+   "body_len": 3948,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://www.braun.senate.gov/news/press-releases/im-voting-no-senator-braun-on-84-billion-senate-bill-to-secure-other-countries-borders/",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Mike Braun",
+   "surnames": [
+    "Braun"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20241106232213/https://www.braun.senate.gov/news/press-releases/im-voting-no-senator-braun-on-84-billion-senate-bill-to-secure-other-countries-borders/",
+   "capture_ts": "20241106232213",
+   "target_http": 200,
+   "body_len": 1438,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://www.rubio.senate.gov/public/index.cfm/2012/2/support-grows-for-religious-freedom-restoration-act-of-2012",
+   "citations": 1,
+   "sole_sourced": 1,
+   "who": "Marco Rubio",
+   "surnames": [
+    "Rubio"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20230610205840/https://www.rubio.senate.gov/public/index.cfm/2012/2/support-grows-for-religious-freedom-restoration-act-of-2012",
+   "capture_ts": "20230610205840",
+   "target_http": 200,
+   "body_len": 5435,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://bass.house.gov/media-center/press-releases/bass-votes-codify-supreme-court-marriage-equality-decision",
+   "citations": 1,
+   "sole_sourced": 1,
+   "who": "Karen Ruth Bass",
+   "surnames": [
+    "Bass"
+   ],
+   "repair": "ARCHIVE",
+   "verdict": "RESOLVED",
+   "retry_via": "cdx",
+   "capture_ts": "20221209120805",
+   "target": "https://web.archive.org/web/20221209120805/https://bass.house.gov/media-center/press-releases/bass-votes-codify-supreme-court-marriage-equality-decision",
+   "target_http": 200,
+   "body_len": 3888,
+   "names_politician": true
+  },
+  {
+   "url": "https://www.vance.senate.gov/press-releases/vance-introduces-resolution-to-support-americas-law-enforcement-officers/",
+   "citations": 1,
+   "sole_sourced": 1,
+   "who": "J.D. Vance",
+   "surnames": [
+    "Vance"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20241205150405/https://www.vance.senate.gov/press-releases/vance-introduces-resolution-to-support-americas-law-enforcement-officers/",
+   "capture_ts": "20241205150405",
+   "target_http": 200,
+   "body_len": 2646,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://cardenas.house.gov/",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Tony Cardenas",
+   "surnames": [
+    "Cardenas"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20241227072544/https://cardenas.house.gov/",
+   "capture_ts": "20241227072544",
+   "target_http": 200,
+   "body_len": 1744,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://cardenas.house.gov/6-encourage-clean-energy-alternatives-and-protect-our-environment",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Tony Cardenas",
+   "surnames": [
+    "Cardenas"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20201027200851/https://cardenas.house.gov/6-encourage-clean-energy-alternatives-and-protect-our-environment",
+   "capture_ts": "20201027200851",
+   "target_http": 200,
+   "body_len": 4095,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://cardenas.house.gov/issues/1-pass-responsible-comprehensive-immigration-reform",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Tony Cardenas",
+   "surnames": [
+    "Cardenas"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20161207041404/https://cardenas.house.gov/issues/1-pass-responsible-comprehensive-immigration-reform",
+   "capture_ts": "20161207041404",
+   "target_http": 200,
+   "body_len": 2856,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  },
+  {
+   "url": "https://cardenas.house.gov/issues/commitment-to-our-seniors",
+   "citations": 1,
+   "sole_sourced": 0,
+   "who": "Tony Cardenas",
+   "surnames": [
+    "Cardenas"
+   ],
+   "repair": "ARCHIVE",
+   "target": "https://web.archive.org/web/20241128065753/https://cardenas.house.gov/issues/commitment-to-our-seniors",
+   "capture_ts": "20241128065753",
+   "target_http": 200,
+   "body_len": 2359,
+   "names_politician": true,
+   "verdict": "RESOLVED"
+  }
+ ]
+}
