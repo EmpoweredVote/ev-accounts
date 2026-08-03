@@ -16,6 +16,50 @@ New check **`NON_URL_SOURCE`** — now **0 and ZERO-TOLERANCE** (1527–1530 clo
 
 ---
 
+## 🔴 HANDOFF 2026-08-02 (seventh) — roll-call pass: 594 votes CONFIRMED, and 20 that never happened
+
+**No migration.** 1,706 roll-call citations / 233 records / 4 formats (US House XML, US Senate XML,
+Maine, Wisconsin). Review: [`2026-08-02-rollcall-audit.md`](../../backend/data/stance-retirement/2026-08-02-rollcall-audit.md).
+
+| | n | |
+|---|---|---|
+| **VOTE_CONFIRMED** | **594** | asserted direction matches the official record |
+| **VOTE_CONTRADICTED** | **0** | |
+| 🔴 **MEMBER_ABSENT** | **23** | 20 of them a vote the member could not have cast |
+| 🔴 **MEASURE_MISMATCH** | **29** | cited roll call is for a bill the row never names |
+| abstentions (procedural / no measure / no direction / ambiguous) | 1,059 | "cannot tell", by design |
+
+🔴 **20 rows assert a US House vote before the member was in Congress.** Val Hoyle ×11 and Andrea
+Salinas ×5 (both took office **Jan 2023**, rows cite 2017–2022 roll calls), Cliff Bentz ×2 (took office
+2021, rows cite 2017). Proof is internal: each record lists the whole chamber and the 2021–22 Oregon
+delegation is Bentz/Blumenauer/Bonamici/DeFazio/Schrader. One row says it outright — *"Hoyle voted YES
+on Inflation Reduction Act (2022) … **as Labor Commissioner** advocated for green jobs"*. ⏳ **Operator
+decision: correct or retire.** A citation change cannot fix a vote that did not happen.
+
+🔴 **29 rows cite a roll call for a different bill.** e.g. *"Bentz voted NO on H.R. 1 (For the People
+Act)"* → `evs/2021/roll073.xml`, which is **H R 1446**, a background-checks bill. ⚠ `H R 1280 ←
+H.R. 7120` is the mild case: the George Floyd Act **renumbered** between Congresses, right vote.
+
+🔴 **THE DETECTOR WAS WRONG FIVE WAYS — first cut said 4 contradictions, all four were wrong, final is
+0.** (1) it compared direction on procedural motions, where a YES on `OUGHT NOT TO PASS` **kills** the
+bill; only ~40% of records are plain passage votes. (2) it took the first direction verb in a clause
+containing both ("Voted Nay on … and Yea on …"). (3) it missed present-tense "vote Yea". (4) compound
+surnames (Van Hollen → "Hollen"). (5) the clerk writes **`Hoyle (OR)`** when a surname is shared — that
+bug reported her absent from 2023/24 votes she is in and nearly **buried the real finding**.
+Also: the WI Assembly column header `A N NV NAME` repeats mid-page and was absorbed into names; the WI
+Senate is a name-list, not a grid, and needs block matching (`BRADLEY JAGLER` is two senators,
+`HABUSH SINYKIN` is one). **Sixth pass running where the first cut of a detector over-fired.**
+
+⚠ **CORRECTION to handoff (sixth): James Dill is NOT a defect.** He cites **both** roll calls (#815
+enactment and #828 veto reconsideration) as two separate sources; the single-citation view could not
+see it. A dedicated roll-call-number check found **zero** mismatches in all 1,706.
+
+🔴 **Highest-value detector left, on this evidence:** the pre-tenure error almost certainly is not
+confined to rows that cite a roll call. For every row naming a year or Congress, compare against the
+politician's term start.
+
+---
+
 ## 🟢 HANDOFF 2026-08-02 (sixth) — all sources of the 100 rows: the residue is 11%, and it is quotes
 
 **No migration.** Same 100 rows, all **198 source-citations** (197 distinct urls).
