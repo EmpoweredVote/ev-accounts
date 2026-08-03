@@ -16,6 +16,36 @@ New check **`NON_URL_SOURCE`** — now **0 and ZERO-TOLERANCE** (1527–1530 clo
 
 ---
 
+## 🟢 HANDOFF 2026-08-02 (fifth) — the OK set was sampled: it is a TAIL problem, not a corpus problem
+
+**No migration.** 100-row seeded sample of the 51,092 `OK`-classified citations, verified live + archive.
+Review: [`2026-08-02-ok-sample-audit.md`](../../backend/data/stance-retirement/2026-08-02-ok-sample-audit.md).
+
+| defect | rate | 95% CI | of 51,092 |
+|---|---|---|---|
+| **URL dead or wrong** | 3/100 | 1.0–8.5% | 524–4,318 |
+| page right, asserted specific absent | 16/100 | 10.1–24.4% | 5,158–12,477 |
+
+🔴 **Do NOT extrapolate the composed-URL finding to the corpus.** At 3% the OK set is nothing like the
+GONE tail (where 518 of 559 urls were never archived). Re-researching 51,092 citations is not warranted.
+The three: White Holland's mgaleg member id **soft-404s** (302 → a page titled `NotFound`, HTTP 200);
+Karen Ross's cdfa.ca.gov post now **404s**; Cataldo's `malegislature.gov/Committees/Detail/J28` is the
+**wrong committee** (Housing, not Mental Health). All three have a second source.
+
+🔴 **The 16% is the real story and needs one more measurement before anyone acts on it.** In 13 of 16
+the politician IS named — right page — but an asserted bill number (9) or quoted span (7) is not on it.
+14 of the 16 carry a second source, and a row citing a person-page *and* a bill-page may legitimately
+name a bill the person-page omits. **Next: re-run the same tool over ALL sources of each sampled row,
+not one.** That splits "second source covers it" from "nothing covers it".
+
+⚠ **The detector was wrong four ways on its first run** (6 UNSUPPORTED → 3). Surname kept trailing
+punctuation (`Kean,`); Maine's `LD nnnn` format was missing so a page titled "Summary of LD 2077"
+scored unsupported; bare letter+number matched LA council file numbers as bills; and the soft-404 test
+required a space, so `NotFound` slipped through — that one **hid a real defect**. Fourth time on this
+workstream a first-cut detector has over-fired. Hand-check every failure against the page.
+
+---
+
 ## 🔴 HANDOFF 2026-08-02 (fourth) — the dead tail is mostly NOT link rot
 
 **1535 applied.** 234 row-citations fixed. Gate green, **643 rows / 3 checks**. **Next number: 1536.**

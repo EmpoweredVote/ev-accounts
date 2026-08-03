@@ -1,0 +1,1363 @@
+{
+  "seed": 20260802,
+  "n": 100,
+  "population_urls": 15405,
+  "population_citations": 51092,
+  "distinct_hosts_in_sample": 54,
+  "hosts": {
+    "www.ontheissues.org": 13,
+    "senate.texas.gov": 1,
+    "leginfo.legislature.ca.gov": 9,
+    "www.vincegeorgeforcongress.com": 1,
+    "legislature.maine.gov": 5,
+    "www.tucsonlocalmedia.com": 1,
+    "mgaleg.maryland.gov": 7,
+    "en.wikipedia.org": 16,
+    "jeffreyhulumiiiforcongress.com": 1,
+    "chrisbeckforcongress.com": 1,
+    "www.lcv.org": 1,
+    "www.maine.gov": 1,
+    "nicklangworthy.com": 1,
+    "sacramentocityexpress.com": 2,
+    "www.mainelegislature.org": 1,
+    "pressley.house.gov": 1,
+    "www.kuer.org": 1,
+    "www.senate.gov": 1,
+    "www.southbostontoday.com": 1,
+    "danielbiss.com": 1,
+    "www.nurselee4az.com": 1,
+    "www.carrforgeorgia.com": 1,
+    "friscochronicles.com": 1,
+    "www.markhenderson.org": 1,
+    "blackburn.senate.gov": 1,
+    "laist.com": 1,
+    "www.timmcosker.com": 1,
+    "malegislature.gov": 1,
+    "www.senate.texas.gov": 1,
+    "ballotpedia.org": 1,
+    "www.mikesmith.vote": 1,
+    "docs.legis.wisconsin.gov": 1,
+    "rivas.house.gov": 1,
+    "www.jeffleach.com": 1,
+    "www.dublinforcongress.com": 1,
+    "plantingseedsblog.cdfa.ca.gov": 1,
+    "mikeolcott.com": 1,
+    "stevehiltonforgovernor.com": 1,
+    "washcodems.org": 1,
+    "heslopforcongress.com": 1,
+    "www.peoplefor.org": 1,
+    "www.yahoo.com": 1,
+    "clerk.house.gov": 1,
+    "tigardlife.com": 1,
+    "nancylacore.com": 1,
+    "capitol.texas.gov": 1,
+    "www.kincaidforcongress.com": 1,
+    "sd07.senate.ca.gov": 1,
+    "newjerseyglobe.com": 1,
+    "www.mccartneyforcongress.com": 1,
+    "illinoisattorneygeneral.gov": 1,
+    "da.lacounty.gov": 1,
+    "sarahc603.com": 1,
+    "www.jessicaancona.com": 1
+  },
+  "sample": [
+    {
+      "politician_id": "b8427e5d-f570-45bd-945f-c192e78b4d12",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "politician": "Bob Ferguson",
+      "topic": "Immigration and Treatment of Immigrants",
+      "chair": "2.0",
+      "reasoning": "Ferguson filed suit within 72 hours of Trump's 2017 Muslim travel ban and successfully blocked it; fought to preserve DACA; signed EO 25-04 on his first day protecting immigrant families from separation; signed EO 25-09 in September 2025 protecting immigrant communities' rights. He called ICE actions 'a shameful period' and has consistently supported keeping legal immigration open with public services available regardless of status.",
+      "sources": [
+        "https://governor.wa.gov/executive-orders",
+        "https://en.wikipedia.org/wiki/Bob_Ferguson_(politician)",
+        "https://www.ontheissues.org/Bob_Ferguson.htm"
+      ],
+      "cited_url": "https://www.ontheissues.org/Bob_Ferguson.htm"
+    },
+    {
+      "politician_id": "457620ac-d32b-434f-ad00-d860a5615e6d",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "politician": "Phil King",
+      "topic": "Fossil Fuel Policy",
+      "chair": "5.0",
+      "reasoning": "King authored SB 6 (88th Legislature) creating the Texas Energy Insurance Program subsidizing natural gas and coal power plants to maintain dispatchable capacity, and authored SB 7 (88th) on ERCOT grid reliability focused on conventional power. His record prioritizes maximizing fossil fuel generation over environmental restrictions.",
+      "sources": [
+        "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB6",
+        "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB7",
+        "https://senate.texas.gov/member.php?d=10"
+      ],
+      "cited_url": "https://senate.texas.gov/member.php?d=10"
+    },
+    {
+      "politician_id": "86c12b33-cb76-41da-bdf0-6b58a0cbbed6",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "politician": "David Chiu",
+      "topic": "Residential Zoning",
+      "chair": "4.0",
+      "reasoning": "Chiu authored AB 2923 (2017) allowing BART to override local zoning near transit stations to enable density; AB 1763 (2019) removing density caps entirely for 100% affordable projects near transit; AB 2162 (2017) making supportive housing a 'use by right' in multifamily zones; and legalized in-law units citywide in San Francisco (2014). These bills broadly upzone to allow multifamily by right and streamline approvals.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201720180AB2923",
+        "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB1763",
+        "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201720180AB2162"
+      ],
+      "cited_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201720180AB2162"
+    },
+    {
+      "politician_id": "110a1d65-116a-4977-ac1d-2083fadf3c8f",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "politician": "Vince George",
+      "topic": "Social Security",
+      "chair": "1.0",
+      "reasoning": "In his Ballotpedia Candidate Connection survey, George lists 'expansion of eligibility & benefits for Social Security participants' as one of his three key 2026 campaign messages, alongside opposing safety-net cuts elsewhere on his campaign site; this significant-expansion framing, without proposing benefit cuts or privatization, is closest to stance 1.",
+      "sources": [
+        "https://ballotpedia.org/Vince_George",
+        "https://www.vincegeorgeforcongress.com"
+      ],
+      "cited_url": "https://www.vincegeorgeforcongress.com"
+    },
+    {
+      "politician_id": "403fb454-25fd-4c9f-9657-975715511b57",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Amy Kuhn",
+      "topic": "Affordable Housing",
+      "chair": "3.0",
+      "reasoning": "Voted to advance LD 2077, providing state grants to reduce mortgage rates for homebuyers (House Roll Call #715, 4/2/2026; passed the House but died in the Senate). Supporting a targeted first-time-buyer mortgage subsidy program matches stance 3's \"targeted help like subsidies for affordable projects, first-time buyer assistance.\"",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=2077",
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280101124&chamber=H&serialnumber=715"
+      ],
+      "cited_url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=2077"
+    },
+    {
+      "politician_id": "d3009d53-a6f0-4ea0-b41d-658ce62e3753",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "politician": "Joseph \"Joe\" Winfield",
+      "topic": "Transportation Priorities",
+      "chair": "3.0",
+      "reasoning": "Winfield's transportation record prioritizes maintaining the road network while selectively adding pedestrian/bike facilities where safety warrants. In his State of the Town address he highlighted that Oro Valley's pavement-preservation program \"continues to extend roadway life, saving taxpayers money over time.\" At the same time, his administration pursued and, in November 2025, began construction of a 1.75-mile, 10-foot multi-use path along Naranja Drive — one of the only town roads then lacking a protected sidewalk or path — funded largely by ~$3.5M in federal Transportation Alternatives grants plus RTA money (town share under 9%), to connect neighborhoods to Naranja Park, the library and businesses after a 2023 pedestrian fatality. Maintaining roads while adding targeted pedestrian/bike improvements where density and safety support it matches the balanced, road-plus-selective-multimodal chair.",
+      "sources": [
+        "https://www.tucsonlocalmedia.com/explorernews/news/investments-for-a-resilient-tomorrow/article_cb9854b7-4343-44e8-bb99-fcd214bbb8dc.html",
+        "https://www.kold.com/2025/11/18/oro-valley-begins-construction-multi-use-path-along-naranja-drive/"
+      ],
+      "cited_url": "https://www.tucsonlocalmedia.com/explorernews/news/investments-for-a-resilient-tomorrow/article_cb9854b7-4343-44e8-bb99-fcd214bbb8dc.html"
+    },
+    {
+      "politician_id": "98d6a17e-59dc-4d11-a342-869603862f10",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "politician": "Charlotte Crutchfield",
+      "topic": "Jail Capacity and Incarceration Alternatives",
+      "chair": "1.0",
+      "reasoning": "Sponsored/co-sponsored HB0438 (Adult Prison School Board Model Development Committee) on correctional policy.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0438?ys=2026RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/crutchfield01"
+      ],
+      "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/crutchfield01"
+    },
+    {
+      "politician_id": "108874f4-314b-44fc-83df-31eea167064b",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "politician": "Kim Reynolds",
+      "topic": "Reproductive Rights and Abortion Access",
+      "chair": "4.0",
+      "reasoning": "Reynolds signed Iowa's six-week abortion ban in 2023, which includes exceptions for rape, incest, fetal abnormality, and threats to the mother's life. She signed the original fetal heartbeat bill in 2018 and pledged to keep fighting to restrict abortion. The law bans most abortions but retains the enumerated exceptions, placing her at value 4 rather than a complete ban.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kim_Reynolds",
+        "https://www.ontheissues.org/Kim_Reynolds.htm"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/Kim_Reynolds"
+    },
+    {
+      "politician_id": "efd863c6-df64-4b40-9b49-73ddd003dc5d",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "politician": "Paul A. Gosar",
+      "topic": "United States Tariff Policy",
+      "chair": "3.0",
+      "reasoning": "Gosar voted YES on the USMCA Implementation Act (2019), supporting a managed trade agreement with labor and environmental standards — selective rather than maximum-tariff protectionism. USA*Engage rated him 50% on trade engagement, indicating a mixed record. His record shows pragmatic support for trade frameworks protecting key American industries rather than blanket high tariffs or full free trade.",
+      "sources": [
+        "https://www.ontheissues.org/House/Paul_Gosar_Free_Trade.htm",
+        "https://www.ontheissues.org/House/Paul_Gosar_Jobs.htm"
+      ],
+      "cited_url": "https://www.ontheissues.org/House/Paul_Gosar_Jobs.htm"
+    },
+    {
+      "politician_id": "6ff3ff30-00b9-4077-8cde-700cf687d106",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "politician": "Jeffrey Hulum III",
+      "topic": "Civil Rights and Social Justice",
+      "chair": "2.0",
+      "reasoning": "Campaign platform's Social Justice section calls for actively ensuring civil rights, voting rights, and basic freedoms are protected 'for all Mississippians,' framing this as a matter of active protection/enforcement against erosion rather than simply maintaining the status quo, consistent with strengthening civil rights enforcement.",
+      "sources": [
+        "https://jeffreyhulumiiiforcongress.com/issues"
+      ],
+      "cited_url": "https://jeffreyhulumiiiforcongress.com/issues"
+    },
+    {
+      "politician_id": "149ec01f-2344-446e-801a-74b397cfe17d",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "politician": "Chris Beck",
+      "topic": "Healthcare Access",
+      "chair": "2.0",
+      "reasoning": "Beck proposes phasing in a public option modeled on the Oregon Health Plan for all Americans while preserving private insurance, and opposes federal Medicaid cuts affecting rural hospitals and clinics.",
+      "sources": [
+        "https://chrisbeckforcongress.com/issues",
+        "https://chrisbeckforcongress.com"
+      ],
+      "cited_url": "https://chrisbeckforcongress.com/issues"
+    },
+    {
+      "politician_id": "1bc949f5-0696-481c-979b-64cfd494983a",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Thomas H. Kean, Jr.",
+      "topic": "Climate Change and Environmental Protection",
+      "chair": "4.0",
+      "reasoning": "Kean is a member of the Climate Solutions Caucus but his LCV scores are 22% (2023), 21% (2024), and 9% (2025). His anti-environment votes include blocking offshore wind protections, opposing the American Climate Corps, supporting LNG export expansion, and blocking cleaner car and truck standards. He voted yes on the One Big Beautiful Bill Act, which eliminated EV and clean energy tax credits from the IRA. This record aligns with stance 4 — letting market forces drive any energy transition rather than active climate investment.",
+      "sources": [
+        "https://www.lcv.org/congressional-scorecard/moc/thomas-kean/",
+        "https://en.wikipedia.org/wiki/One_Big_Beautiful_Bill_Act"
+      ],
+      "cited_url": "https://www.lcv.org/congressional-scorecard/moc/thomas-kean/"
+    },
+    {
+      "politician_id": "2e737f21-8570-4ad2-8d68-9b0678ac2c3f",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "politician": "Deqa Dhalac",
+      "topic": "Immigration and Treatment of Immigrants",
+      "chair": "2.0",
+      "reasoning": "In the 131st Legislature (per the 1/31/2024 Maine House Democrats press release; that LD number has since been reused for an unrelated 132nd bill so is not re-cited here) she introduced legislation to establish a state Office of New Americans providing English-language, workforce, and integration support for immigrants and refugees. She also co-authored a December 2025 open letter with two Somali American House colleagues defending Somali immigrants and TPS holders against President Trump's rhetoric.",
+      "sources": [
+        "https://www.maine.gov/housedems/news/dhalac-proposal-would-create-office-new-americans-maine-state-government",
+        "https://www.maine.gov/housedems/news/reps-abdi-dhalac-and-yusuf-respond-president-trumps-attacks-somali-americans"
+      ],
+      "cited_url": "https://www.maine.gov/housedems/news/reps-abdi-dhalac-and-yusuf-respond-president-trumps-attacks-somali-americans"
+    },
+    {
+      "politician_id": "556dded4-bd76-4e22-863f-60fa5e1d4d56",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "politician": "Nicholas A. Langworthy",
+      "topic": "United States Tariff Policy",
+      "chair": "4.0",
+      "reasoning": "Campaign website states a goal to 'shift manufacturing away from China and strengthen domestic production capacity,' consistent with using tariffs to target unfair trading partners. As a Trump-aligned Republican representing a manufacturing district (Buffalo/Southern Tier), supports increased tariffs on countries that don't trade fairly with America.",
+      "sources": [
+        "https://nicklangworthy.com",
+        "https://www.ontheissues.org/NY/Nick_Langworthy.htm"
+      ],
+      "cited_url": "https://nicklangworthy.com"
+    },
+    {
+      "politician_id": "8bb3b17a-334b-48e2-987a-090024c793b8",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "politician": "Roger Dickinson",
+      "topic": "Fossil Fuel Policy",
+      "chair": "3.0",
+      "reasoning": "Dickinson's environmental Assembly record (2011-2014) focused on railroad hazmat spill response (AB-380) and green building standards (AB-341) rather than fossil fuel extraction policy. No bill specifically addressing drilling permits or fossil fuel expansion found. His work suggests general environmental responsibility without strong fossil fuel phase-out positioning.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201320140AB380",
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201320140AB341"
+      ],
+      "cited_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201320140AB380"
+    },
+    {
+      "politician_id": "d7f3b400-2d9f-4d23-bd02-9edea5274e92",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "politician": "Warren Davidson",
+      "topic": "Religious Freedom",
+      "chair": "5.0",
+      "reasoning": "Davidson is a devout Christian who co-signed the First Amendment Defense Act to protect businesses and organizations that oppose same-sex marriage from federal penalties, stated that government must not \"coerce actions willfully hostile to our traditions and values,\" and advocates that Judeo-Christian values form the moral framework underlying American limited government. He consistently supports full religious autonomy for faith-based organizations.",
+      "sources": [
+        "https://www.ontheissues.org/OH/Warren_Davidson_Principles_+_Values.htm",
+        "https://www.ontheissues.org/OH/Warren_Davidson_Civil_Rights.htm"
+      ],
+      "cited_url": "https://www.ontheissues.org/OH/Warren_Davidson_Principles_+_Values.htm"
+    },
+    {
+      "politician_id": "cf2c7616-eb16-4830-be50-6d6096de44dd",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "politician": "Karina Talamantes",
+      "topic": "Civil Rights and Social Justice",
+      "chair": "2.0",
+      "reasoning": "Talamantes serves on Sacramento's Racial Equity Committee — one of only four formal council committees — assigned since January 2023. She was part of the council that voted to adopt the CityStart Blueprint for racial wealth equity for Black residents (2025) and the city's cannabis equity program. Her Racial Equity committee membership reflects a direct institutional commitment to addressing systemic discrimination.",
+      "sources": [
+        "https://sacramentocityexpress.com/2025/01/09/city-council-confirms-its-vice-mayor-mayor-pro-tem-and-committee-positions-3/",
+        "https://sacramentocityexpress.com/2025/05/09/youre-invited-sacramento-unveils-citystart-blueprint-to-advance-wealth-equity/"
+      ],
+      "cited_url": "https://sacramentocityexpress.com/2025/05/09/youre-invited-sacramento-unveils-citystart-blueprint-to-advance-wealth-equity/"
+    },
+    {
+      "politician_id": "90369b67-99c3-4e29-9f6c-8529350cf1eb",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "politician": "Kathy Hochul",
+      "topic": "Deportation Priorities",
+      "chair": "2.0",
+      "reasoning": "Hochul stated in January 2026 that there would be 'no state resources to assist in federal immigration raids' and advocated in 2023 for federal expedited work authorizations for migrants. OnTheIssues documents her position as 'opposes open borders; supports deporting criminals,' consistent with deportation limited to those convicted of serious violent crimes.",
+      "sources": [
+        "https://www.ontheissues.org/Kathy_Hochul.htm",
+        "https://en.wikipedia.org/wiki/Kathy_Hochul"
+      ],
+      "cited_url": "https://www.ontheissues.org/Kathy_Hochul.htm"
+    },
+    {
+      "politician_id": "a37ec3f9-faa6-4c06-8856-92fa618a28ad",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "politician": "Rachel Henderson",
+      "topic": "Transgender Athletes",
+      "chair": "4.0",
+      "reasoning": "Henderson voted Nay on the motion to accept the Report B Ought Not to Pass on LD 1134 (An Act to Prohibit Males from Participating in Female Sports or Using Female Facilities), Roll Call 481 on 6/13/2025 -- opposing the move to kill the bill and thereby supporting a requirement that athletes compete based on biological sex (the bill nonetheless died, 73-72).",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1134",
+        "http://www.mainelegislature.org/LawMakerWeb/rollcall.asp?ID=280097524&chamber=H&serialnumber=481"
+      ],
+      "cited_url": "http://www.mainelegislature.org/LawMakerWeb/rollcall.asp?ID=280097524&chamber=H&serialnumber=481"
+    },
+    {
+      "politician_id": "8f4379fc-ae32-4f6a-8773-ac1d723106a5",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "politician": "Rob Wittman",
+      "topic": "Social Security",
+      "chair": "5.0",
+      "reasoning": "OnTheIssues rates Wittman 13–15% by senior advocacy groups, indicating strong preference for reducing Social Security benefits and transitioning toward private accounts.",
+      "sources": [
+        "https://www.ontheissues.org/VA/Rob_Wittman.htm"
+      ],
+      "cited_url": "https://www.ontheissues.org/VA/Rob_Wittman.htm"
+    },
+    {
+      "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Ayanna Pressley",
+      "topic": "Affordable Housing",
+      "chair": "1.0",
+      "reasoning": "Pressley has introduced the Housing is a Human Right Act and co-sponsored the Homes for All Act which would create 12 million new affordable units. She has been a leading advocate for community land trusts, social housing models, and strong renter protections. She has voted for every federal housing investment package. Her Boston district has some of the highest rents in the country relative to resident incomes, giving her a strong constituency for aggressive housing policy.",
+      "sources": [
+        "https://pressley.house.gov/issues/housing",
+        "https://congress.gov/bill/117th-congress/house-bill/5765",
+        "https://www.govtrack.us/congress/votes/117-2021/h369"
+      ],
+      "cited_url": "https://pressley.house.gov/issues/housing"
+    },
+    {
+      "politician_id": "1e25123b-7f6c-47c3-b597-bbd626c185ae",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Jenny Wilson",
+      "topic": "Environmental Protection vs. Development",
+      "chair": "2.0",
+      "reasoning": "Wilson created an Office of Environmental Services upon taking office in 2019 and has pursued aggressive sustainability under a 'Green Vision' initiative covering air quality, water conservation, waste, and energy. County funded $2M ARPA water-wise landscaping conversions ('Flip the Strip'), is transitioning the county fleet to electric/hybrid, and actively tracks Great Salt Lake decline. She said 'We have a shrinking Great Salt Lake. We can conserve water ... we need to clean up our air.'",
+      "sources": [
+        "https://www.saltlakecounty.gov/sustainability",
+        "https://www.abc4.com/news/local-news/mayor-wilson-county-council-approve-proclamation-to-set-salt-lake-county-as-environmental-leaders/",
+        "https://www.kuer.org/politics-government/2024-10-11/2024-voter-guide-salt-lake-county-mayor-erin-rider-jenny-wilson"
+      ],
+      "cited_url": "https://www.kuer.org/politics-government/2024-10-11/2024-voter-guide-salt-lake-county-mayor-erin-rider-jenny-wilson"
+    },
+    {
+      "politician_id": "0c789b27-d50c-4822-95ff-409ecb7db08a",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Mike Griffith",
+      "topic": "Taxation and Public Spending",
+      "chair": "4.0",
+      "reasoning": "Griffith sponsored the Income Tax - Itemized Deductions - Charitable Donations bill and military retirement income subtraction modification — tax-cut-oriented legislation consistent with Republican preference for tax reduction.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/griffith02",
+        "https://ballotpedia.org/Mike_Griffith_(Maryland)"
+      ],
+      "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/griffith02"
+    },
+    {
+      "politician_id": "5fe0fed0-05b0-49e4-b7e2-99d2c8463a0d",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "politician": "Raphael Warnock",
+      "topic": "Social Security",
+      "chair": "2.0",
+      "reasoning": "Warnock voted YEA in April 2025 on Bennet Amendment 2186 to protect Social Security from DOGE-related cuts and opposes raising the retirement age or privatizing benefits. OTI notes his consistent opposition to Social Security cuts. His record reflects protecting current benefits rather than major expansion or privatization.",
+      "sources": [
+        "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00180.htm",
+        "https://www.ontheissues.org/Senate/Raphael_Warnock.htm"
+      ],
+      "cited_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00180.htm"
+    },
+    {
+      "politician_id": "b8c7510c-20d7-4bd7-a765-07b77d3a5b6c",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "politician": "Edward M. Flynn",
+      "topic": "Residential Zoning",
+      "chair": "2.0",
+      "reasoning": "Opposed a proposed 70-unit housing development on Dorchester Avenue in 2025 for lacking parking requirements despite its proximity to transit, citing displacement concerns for working-class residents. His record on STR ordinances and neighborhood character shows preference for development with strong design review and community input rather than broad upzoning or pure market deregulation.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ed_Flynn_(politician)",
+        "https://www.southbostontoday.com/flynn-votes-to-ban-airbnb-investor-units/"
+      ],
+      "cited_url": "https://www.southbostontoday.com/flynn-votes-to-ban-airbnb-investor-units/"
+    },
+    {
+      "politician_id": "2763b8c4-a297-4e6e-9aee-5d2e7784f3d8",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "politician": "Daniel Biss",
+      "topic": "Misinformation and the Role of Algorithms in Democracy",
+      "chair": "2.0",
+      "reasoning": "Biss's 2026 campaign site explicitly calls for regulating social media platforms' spread of misinformation, framing this as a democracy protection issue. Mandating platform accountability for content aligns with stance 2 (mandate fact-checking and transparency in how algorithms promote content).",
+      "sources": [
+        "https://danielbiss.com/issues"
+      ],
+      "cited_url": "https://danielbiss.com/issues"
+    },
+    {
+      "politician_id": "ed50ac62-ef55-4b27-b503-4c6661220138",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Elizabeth Lee",
+      "topic": "Affordable Housing",
+      "chair": "2.0",
+      "reasoning": "Lee's survey states: 'corporations and private equity firms buying up homes, inflating prices and treating shelter like a commodity... We must reject a system that rewards greed over stability and take bold steps to make housing affordable again... fight to curb corporate control of real estate.' This activist-intervention framing to constrain market forces driving up costs matches stance 2 (use rent caps, require new developments to include affordable units, and publicly fund new housing) rather than a market-deregulation or hands-off approach.",
+      "sources": [
+        "https://ballotpedia.org/Elizabeth_Lee_(Arizona)",
+        "https://www.nurselee4az.com"
+      ],
+      "cited_url": "https://www.nurselee4az.com"
+    },
+    {
+      "politician_id": "42f9ff9e-b15d-4b0a-9f73-23015121069c",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "politician": "Hakeem S. Jeffries",
+      "topic": "Civil Rights and Social Justice",
+      "chair": "2.0",
+      "reasoning": "Jeffries supports affirmative action, introduced the Excessive Use of Force Prevention Act to ban chokeholds federally, called for a DOJ investigation into Eric Garner's death, sponsored the bipartisan First Step Act, and backed the Violence Against Women Act reauthorization. His record reflects strengthening civil rights enforcement to address systemic discrimination.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Hakeem_Jeffries",
+        "https://www.ontheissues.org/NY/Hakeem_Jeffries.htm"
+      ],
+      "cited_url": "https://www.ontheissues.org/NY/Hakeem_Jeffries.htm"
+    },
+    {
+      "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "politician": "Marc Berman",
+      "topic": "Childcare Affordability & Access",
+      "chair": "2.0",
+      "reasoning": "Voted AYE on AB-752 (3/20/23) and AB-2258 (5/23/24) both expanding childcare subsidies and access for low- and middle-income families.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB752",
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB2258"
+      ],
+      "cited_url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB752"
+    },
+    {
+      "politician_id": "d90f754e-c3c6-44f9-890d-a8f2a9a00d22",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Chris Carr",
+      "topic": "Taxation and Public Spending",
+      "chair": "4.0",
+      "reasoning": "Carr's 2026 governor campaign calls for cutting income taxes by half, lowering property taxes on primary residences, and creating a 'Taxpayer Relief Fund' to automatically reduce income tax rates. He states: 'I support cutting taxes so families can keep more of what they earn.' This aligns with cutting taxes for everyone and scaling back government services.",
+      "sources": [
+        "https://www.carrforgeorgia.com/keep-georgia-competitive"
+      ],
+      "cited_url": "https://www.carrforgeorgia.com/keep-georgia-competitive"
+    },
+    {
+      "politician_id": "ac1ed3c9-db6c-4931-bc55-4d53c6c81b35",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Jeff Cheney",
+      "topic": "Affordable Housing",
+      "chair": "4.0",
+      "reasoning": "Inferred from public statements: Cheney stated \"Texas is very much a property-rights state\" and that the city cannot compel developers to offer housing at any particular price. He acknowledged the issue and said the city would \"work with businesses to explore viable solutions\" but rejected mandates. No record of rent caps, inclusionary zoning requirements, or direct public housing support. Philosophy is to let private market respond to demand. Value 4: cut regulations, let private developers decide.",
+      "sources": [
+        "https://communityimpact.com/commerce/2017/07/10/frisco-businesses-struggle-hire-high-housing-costs/",
+        "https://www.friscotexas.gov/586/Mayor-Jeff-Cheney",
+        "https://friscochronicles.com/who-is-jeff-cheney/"
+      ],
+      "cited_url": "https://friscochronicles.com/who-is-jeff-cheney/"
+    },
+    {
+      "politician_id": "f584e436-2e32-43c2-b553-3121e0d89fc2",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "politician": "Mark E. Henderson",
+      "topic": "Economic Development Incentives",
+      "chair": "2.0",
+      "reasoning": "Henderson facilitates meetings with the business community to foster economic growth and supports active economic development in Gardena.",
+      "sources": [
+        "https://www.markhenderson.org/"
+      ],
+      "cited_url": "https://www.markhenderson.org/"
+    },
+    {
+      "politician_id": "808ab926-365f-4b8a-a42e-628f11ecc48e",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "politician": "Marsha Blackburn",
+      "topic": "Fossil Fuel Policy",
+      "chair": "5.0",
+      "reasoning": "Blackburn strongly supports domestic fossil fuel production and states the nation is blessed with abundant natural resources to produce reliable affordable energy. She opposes the Green New Deal agenda, supports unleashing domestic production, introduced bills to protect energy infrastructure from eco-terrorists, and opposes all restrictions on oil and gas development. LCV lifetime rating: 0%.",
+      "sources": [
+        "https://blackburn.senate.gov/energy",
+        "https://www.ontheissues.org/Senate/Marsha_Blackburn.htm",
+        "https://en.wikipedia.org/wiki/Marsha_Blackburn"
+      ],
+      "cited_url": "https://blackburn.senate.gov/energy"
+    },
+    {
+      "politician_id": "f3a27837-9be8-4734-a672-d6ba6de4b045",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Jorge Hernandez Rosas",
+      "topic": "Affordable Housing",
+      "chair": "2.0",
+      "reasoning": "Hernandez Rosas supports stronger rent control protections, fair and affordable housing policies, and anti-displacement measures to prevent families from being pushed out of South LA. He advocates growth near transit corridors and underutilized commercial land with streamlined permitting, pairing new development with tenant protections.",
+      "sources": [
+        "https://patch.com/california/los-angeles/meet-jorge-hernandez-rosas-candidate-los-angeles-city-council-district-9",
+        "https://laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-9"
+      ],
+      "cited_url": "https://laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-9"
+    },
+    {
+      "politician_id": "590fd6ec-3194-43af-97fc-25490490c565",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician": "Kenneth Mejia",
+      "topic": "Campaign Finance Reform",
+      "chair": "2.0",
+      "reasoning": "Mejia's 2017 congressional campaign was noted for its reliance on small-dollar donations, and he obtained ballot access for his 2022 Controller run entirely through signature gathering rather than campaign funding — 'the only city candidate in 2022 to receive ballot access through signatures alone.' His DSA endorsement and political trajectory from Green Party to Democratic Socialists reflects a consistent philosophy favoring grassroots, small-dollar funded campaigns over corporate money.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kenneth_Mejia"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/Kenneth_Mejia"
+    },
+    {
+      "politician_id": "5cf02835-9024-4a00-80f7-bc2dcc3165df",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Tim McOsker",
+      "topic": "Environmental Protection vs. Development",
+      "chair": "3.0",
+      "reasoning": "McOsker voted YES on Cap-and-Trade alignment (CF 25-0002-S25, 15-0, May 2025), water conservation measures (CF 25-0002-S23, 14-0-1, May 2025), the composting ordinance (CF 25-0002-S15, May 2025), and SB 71 CEQA transit exemptions (CF 25-0002-S31, Aug 2025). His AltaSea background (ocean sustainability) informs a pro-environment stance, but he consistently pairs environmental progress with worker protections — particularly for port and logistics workers — rather than advocating for emissions bans.",
+      "sources": [
+        "https://www.altasea.org/team/tim-mcosker/",
+        "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=25-0002-S25",
+        "https://www.timmcosker.com/priorities"
+      ],
+      "cited_url": "https://www.timmcosker.com/priorities"
+    },
+    {
+      "politician_id": "918296a2-5def-4ddf-8986-860d542900e7",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "politician": "Simon Cataldo",
+      "topic": "Healthcare Access",
+      "chair": "2.0",
+      "reasoning": "Cataldo serves on the Joint Committee on Mental Health, Substance Use and Recovery, which handles healthcare policy for mental health and addiction services. He also co-sponsored the Cherish Act for public higher education access. His committee role reflects direct engagement with expanding healthcare access, particularly for mental health services.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/S_C1/Committees",
+        "https://malegislature.gov/Committees/Detail/J28"
+      ],
+      "cited_url": "https://malegislature.gov/Committees/Detail/J28"
+    },
+    {
+      "politician_id": "1d0b1e50-5bd7-46f6-b9a9-6ca7cdfcebe6",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "politician": "Judith Zaffirini",
+      "topic": "Fossil Fuel Policy",
+      "chair": "3.0",
+      "reasoning": "No specific fossil fuel legislation authored or opposed by Zaffirini found. She serves on Natural Resources (Vice Chair) and Business and Commerce committees. Her border district has significant oil and gas activity in the Eagle Ford Shale. Assigning neutral value 3 absent specific evidence.",
+      "sources": [
+        "https://www.senate.texas.gov/member.php?d=21"
+      ],
+      "cited_url": "https://www.senate.texas.gov/member.php?d=21"
+    },
+    {
+      "politician_id": "01e077b4-201c-41a8-b765-d86c675cf841",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "politician": "Julie Fedorchak",
+      "topic": "Immigration and Treatment of Immigrants",
+      "chair": "4.0",
+      "reasoning": "During the September 2024 debate with Trygve Hammer, Fedorchak attributed immigration challenges to Biden administration policies and advocated for strict border enforcement. Her campaign consistently called for tighter immigration controls and limiting public services for undocumented individuals, without calling for stopping all legal immigration.",
+      "sources": [
+        "https://www.inforum.com/search?q=Fedorchak+immigration+border",
+        "https://en.wikipedia.org/wiki/Julie_Fedorchak"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/Julie_Fedorchak"
+    },
+    {
+      "politician_id": "c44ef357-336e-4bda-9584-b16866e8bfcd",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "politician": "Andy Manske",
+      "topic": "Voting Rights and Electoral Integrity",
+      "chair": "4.0",
+      "reasoning": "His platform states verbatim he would 'establish mail in ballots back to days before covid in which some groups like military personal, infirm and sick, and those with valid conditions can vote via mail' — ending no-excuse mail voting — alongside 'secure' elections with 'verifiable results' and earlier ballot counting; his Ballotpedia survey likewise calls for counting that is 'smoother, more transparent, and votes are secure.' He lands security-side but short of chair 5, since he retains excuse-based absentee beyond military-overseas and wants Election Day made a statewide holiday so everyone can vote.",
+      "sources": [
+        "https://andymanske4governor.com/platform",
+        "https://ballotpedia.org/Andrew_Manske"
+      ],
+      "cited_url": "https://ballotpedia.org/Andrew_Manske"
+    },
+    {
+      "politician_id": "59ae2b63-0e76-4e21-93ce-e16994f64581",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "Mike Smith",
+      "topic": "Public Safety Approach",
+      "chair": "3.0",
+      "reasoning": "Smith emphasizes a 'team approach' combining enforcement with mental health services. He instituted mandatory annual mental health check-ins for all deputies, implemented de-escalation and implicit bias training, established body-worn cameras and voluntary audits for transparency, and created an officer-involved critical incident investigation team. His approach mixes traditional law enforcement with community partnership and transparency measures — neither purely enforcement-first nor services-first.",
+      "sources": [
+        "https://www.mikesmith.vote/",
+        "https://www.utahcounty.gov/portfolio/mike-smith",
+        "https://utahsheriffs.org/sheriff-directory/sheriff-mike-smith"
+      ],
+      "cited_url": "https://www.mikesmith.vote/"
+    },
+    {
+      "politician_id": "842f6e36-3ffa-423c-b445-f38f63060de6",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "politician": "Shannon Zimmerman",
+      "topic": "Data Center Development & Energy Costs",
+      "chair": "2.0",
+      "reasoning": "Voted Yes on 2025 Assembly Bill 840, which directs the Public Service Commission to ensure in its rate-making orders that “no costs associated with the construction or extension of electric infrastructure that primarily serves the load of a data center are allocated to or recovered from any other customer,” and requires that any renewable energy facility primarily serving a data center be located at the data center site. The bill also mandates closed-loop cooling, annual water-use reporting to the DNR, and a reclamation bond. Those first two provisions are precisely the two clauses of this scale's second position: requiring data centers to fund their own dedicated power generation, and barring utilities from passing data center infrastructure costs through to other customers. Recorded vote: 2025 Assembly Vote 182, 53-44.",
+      "sources": [
+        "https://docs.legis.wisconsin.gov/document/votes/2025/av0182",
+        "https://docs.legis.wisconsin.gov/document/proposaltext/2025/REG/AB840"
+      ],
+      "cited_url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0182"
+    },
+    {
+      "politician_id": "d3b4ee4d-4cf5-4a3d-8e86-2320fc4a7c26",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "politician": "Melissa Hurtado",
+      "topic": "Immigration and Treatment of Immigrants",
+      "chair": "2.0",
+      "reasoning": "Voted Aye on SJR 9 (2026 opposing mass immigration raids in California). Her Central Valley district depends heavily on immigrant farmworkers. She consistently voted Aye on immigrant worker protections including SB 686 (2023 domestic workers). This reflects strongly supporting existing immigrant communities and significantly increasing legal pathways consistent with value 2.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SJR9",
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB686"
+      ],
+      "cited_url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB686"
+    },
+    {
+      "politician_id": "a1fc524b-7c90-43c0-83a7-c76664293913",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "politician": "Luz Maria Rivas",
+      "topic": "Immigration and Treatment of Immigrants",
+      "chair": "1.0",
+      "reasoning": "Rivas voted to expand Medi-Cal eligibility to all low-income adults regardless of immigration status (AB 4, 2021). As a U.S. Congresswoman, she cosponsored H.R. 1589 (American Dream and Promise Act of 2025), providing a citizenship pathway for DACA recipients, DREAMers, and TPS holders. She also voted against H.R. 2966, which would have denied SBA loans to DACA recipients — demonstrating consistent support for full public services and expanded legal pathways for undocumented residents, aligning squarely with stance 1.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202120220AB4",
+        "https://www.congress.gov/bill/119th-congress/house-bill/1589/text",
+        "https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-votes-protect-immigrant-small-businesses"
+      ],
+      "cited_url": "https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-votes-protect-immigrant-small-businesses"
+    },
+    {
+      "politician_id": "0c1b5005-e1e5-4ba1-9e85-ce858371cd6e",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "politician": "Tavis Hasenfus",
+      "topic": "Residential Zoning",
+      "chair": "2.0",
+      "reasoning": "Hasenfus voted Yea on LD 427, which repealed mandatory parking space minimums in state and municipal building codes (House 82-65, 6/16/2025; signed into law 6/20/2025 as Chapter 374). Supporting the repeal of parking mandates aligns with a less car-centric approach to transportation/land-use policy, matching stance 2.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280096272&chamber=H&serialnumber=534",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=427"
+      ],
+      "cited_url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=427"
+    },
+    {
+      "politician_id": "c4ea9acb-af11-46ea-9e5c-4f9c3fed7207",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Jeff Leach",
+      "topic": "Taxation and Public Spending",
+      "chair": "4.0",
+      "reasoning": "Campaign site advocates raising homestead exemptions, opposing state income tax, and cutting property taxes. Co-authored SB 14 (sweeping regulatory reform). Standard Texas Republican anti-tax position.",
+      "sources": [
+        "https://www.jeffleach.com/issues",
+        "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB14"
+      ],
+      "cited_url": "https://www.jeffleach.com/issues"
+    },
+    {
+      "politician_id": "2b022ce1-6272-40db-9332-015a057ec9f8",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician": "John Cornyn",
+      "topic": "Campaign Finance Reform",
+      "chair": "4.0",
+      "reasoning": "Cornyn supports Citizens United and opposes mail-in voting expansion. He has stated support for the Citizens United ruling (Sep 2020) which removed corporate spending limits. He opposes Super PACs but generally favors fewer restrictions on political spending.",
+      "sources": [
+        "https://www.ontheissues.org/Senate/John_Cornyn.htm",
+        "https://en.wikipedia.org/wiki/John_Cornyn"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/John_Cornyn"
+    },
+    {
+      "politician_id": "27ccce9d-4c8f-4942-a576-6b808c35c67b",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "politician": "Michael Dublin",
+      "topic": "Healthcare Access",
+      "chair": "1.0",
+      "reasoning": "Platform calls for \"free, high-quality healthcare for all, including gender-affirming treatment and mental health services\" plus democratic public ownership of pharmaceutical companies and for-profit hospitals, matching a fully public, government-run single-payer system.",
+      "sources": [
+        "https://www.dublinforcongress.com/platform",
+        "https://ballotpedia.org/Michael_Dublin"
+      ],
+      "cited_url": "https://www.dublinforcongress.com/platform"
+    },
+    {
+      "politician_id": "43b17d54-473e-46f8-add4-bf395e423ba1",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Karen Ross",
+      "topic": "Climate Change and Environmental Protection",
+      "chair": "2.0",
+      "reasoning": "Ross has been a leading voice on climate-smart agriculture, personally attending COP28 (2023), COP30 (2025), and Climate Week NYC (2024). She said: \"Both of these events provided California with excellent opportunities to discuss our leadership on climate issues.\" She championed California's Climate Resilience Strategy and welcomed Biden climate actions in 2021 with: \"I am eager to work with my friend and former boss Secretary Tom Vilsack to expand climate smart agriculture practices to more acres of farm and ranch land!\" She has led trade delegations to Denmark and Brazil explicitly to build climate partnerships for agriculture.",
+      "sources": [
+        "http://plantingseedsblog.cdfa.ca.gov/wordpress/index.php/2021/01/27/california-welcomes-biden-administration-actions-on-climate-change/",
+        "https://plantingseedsblog.cdfa.ca.gov/wordpress/index.php/2023/12/14/secretary-ross-looks-back-at-cop28/",
+        "https://plantingseedsblog.cdfa.ca.gov/wordpress/index.php/2024/09/27/secretary-ross-at-climate-week-nyc-farm-to-school-and-discussions-of-nature-based-solutions-climate-resiliency-food-security-and-sustainability/"
+      ],
+      "cited_url": "https://plantingseedsblog.cdfa.ca.gov/wordpress/index.php/2024/09/27/secretary-ross-at-climate-week-nyc-farm-to-school-and-discussions-of-nature-based-solutions-climate-resiliency-food-security-and-sustainability/"
+    },
+    {
+      "politician_id": "12eef223-444e-4bed-8081-f1fd26c43e42",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "politician": "Morgan Griffith",
+      "topic": "Religious Freedom",
+      "chair": "4.0",
+      "reasoning": "Griffith supports \"faith-based opposition to same-sex marriage\" and voted to kill a bill prohibiting sexual orientation discrimination for government employees. He favors religious exemptions from anti-discrimination laws.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Morgan_Griffith",
+        "https://www.ontheissues.org/VA/Morgan_Griffith.htm"
+      ],
+      "cited_url": "https://www.ontheissues.org/VA/Morgan_Griffith.htm"
+    },
+    {
+      "politician_id": "dc92c805-4734-4d4b-8ceb-597e59b0e268",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Mazie Hirono",
+      "topic": "Affordable Housing",
+      "chair": "2.0",
+      "reasoning": "Hirono co-signed a bipartisan letter praising HUD Section 4 Capacity Building programs (2019) and supported the Build Back Better framework including significant affordable housing investments. Her record reflects support for building affordable housing units and expanding rental assistance rather than deregulation-only approaches.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mazie_Hirono",
+        "https://www.ontheissues.org/Senate/Mazie_Hirono.htm"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/Mazie_Hirono"
+    },
+    {
+      "politician_id": "661c0499-af4c-4cf9-a34b-eb0c20d5cd4b",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "John Thune",
+      "topic": "Climate Change and Environmental Protection",
+      "chair": "5.0",
+      "reasoning": "Thune signed the No Climate Tax Pledge, voted against implementing the Kyoto Protocol, opposed carbon emissions restrictions, and in March 2023 introduced legislation to protect South Dakota consumers from 'radical environmental policies.' He voted against the Green New Deal resolution (March 2019) arguing it would be 'absolutely devastating and disastrous.' His record consistently rejects climate change policies in favor of economic growth.",
+      "sources": [
+        "https://www.thune.senate.gov/public/index.cfm/press-releases",
+        "https://www.ontheissues.org/Senate/John_Thune.htm",
+        "https://en.wikipedia.org/wiki/John_Thune"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/John_Thune"
+    },
+    {
+      "politician_id": "dafa64fd-de0a-4b33-817c-813d3c799b99",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "politician": "Mike Rogers",
+      "topic": "Same-Sex Marriage",
+      "chair": "5.0",
+      "reasoning": "Rogers voted for the Marriage Protection Amendment (2004) to define marriage as between a man and a woman and holds a 0/100 rating from the Human Rights Campaign. He voted against the Employment Non-Discrimination Act (2007) and consistently opposed federal LGBTQ protections, aligning with stance 5 (make same-sex marriage illegal and define marriage as only between one man and one woman).",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mike_Rogers_(Alabama_politician)"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/Mike_Rogers_(Alabama_politician)"
+    },
+    {
+      "politician_id": "71542618-59c8-4b06-a765-e3df60cca763",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "politician": "Mark N. Fisher",
+      "topic": "Immigration and Treatment of Immigrants",
+      "chair": "5.0",
+      "reasoning": "Sponsored Public Safety - Immigration Enforcement - Prohibition Against Sanctuary Policies (2026); sponsored Correctional Services - Immigration Enforcement - Required Notice and Transfer; strongly supports aggressive immigration enforcement and opposes sanctuary policies.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fisher?tab=2026RS-legislation"
+      ],
+      "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fisher?tab=2026RS-legislation"
+    },
+    {
+      "politician_id": "52bbba11-e099-457b-a05b-aa8f4f5a5b13",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Paul Tonko",
+      "topic": "Climate Change and Environmental Protection",
+      "chair": "2.0",
+      "reasoning": "Co-sponsored resolution for 50% clean carbon-free electricity by 2030; supports Green New Deal; voted NO on barring EPA from regulating greenhouse gases (2011); championed EPA carbon regulatory authority as ranking member/chair of the House Energy and Commerce Subcommittee on Environment. Advocates rapid renewable transition, not merely a gradual reduction.",
+      "sources": [
+        "https://www.ontheissues.org/NY/Paul_Tonko_Energy_+_Oil.htm",
+        "https://en.wikipedia.org/wiki/Paul_Tonko",
+        "https://ballotpedia.org/Paul_Tonko"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/Paul_Tonko"
+    },
+    {
+      "politician_id": "2c3372a7-dadc-4622-944c-1783abe57b56",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "politician": "Richard Durbin",
+      "topic": "United States Tariff Policy",
+      "chair": "3.0",
+      "reasoning": "Durbin earned a 17% rating from CATO indicating a pro-fair-trade stance and sponsored sugar quotas and import tariffs to stabilize domestic prices. He supports vigorous enforcement against unfair importation and dumping reflecting selective tariff use to protect key American industries rather than blanket protectionism or free trade.",
+      "sources": [
+        "https://www.ontheissues.org/Senate/Dick_Durbin.htm",
+        "https://en.wikipedia.org/wiki/Dick_Durbin"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/Dick_Durbin"
+    },
+    {
+      "politician_id": "9edc0c37-f213-4aae-9212-c9cb4780d854",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "politician": "Laura Richardson",
+      "topic": "Fossil Fuel Policy",
+      "chair": "3.0",
+      "reasoning": "Richardson authored SB 34 (2025) on port emissions reductions but included explicit provisions against caps on cargo throughput and worker protections — balancing emissions reductions with economic continuity. She authored SB 767 (2025) requiring monthly crude oil pipeline reporting, a transparency measure. She voted YES on SB 1259 (refinery decommission estimates). This reflects maintaining current fossil fuel production with tightened environmental oversight rather than banning new drilling.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB34",
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB767",
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB1259"
+      ],
+      "cited_url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB1259"
+    },
+    {
+      "politician_id": "42f9ff9e-b15d-4b0a-9f73-23015121069c",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Hakeem S. Jeffries",
+      "topic": "Taxation and Public Spending",
+      "chair": "1.0",
+      "reasoning": "Jeffries favors progressive taxation, supports income tax increases on high earners, and higher estate taxes. In 2025 he criticized the Trump tax law for giving \"tax breaks for billionaires, permanent; tax breaks for everybody else, expire\" (rated Half True by PolitiFact). His record consistently supports raising taxes on high earners to fund public services.",
+      "sources": [
+        "https://www.ontheissues.org/NY/Hakeem_Jeffries.htm",
+        "https://www.politifact.com/personalities/hakeem-jeffries/"
+      ],
+      "cited_url": "https://www.ontheissues.org/NY/Hakeem_Jeffries.htm"
+    },
+    {
+      "politician_id": "b0ef94c3-d047-4af3-907d-3d1da2b09e50",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "politician": "Julia Letlow",
+      "topic": "Healthcare Access",
+      "chair": "4.0",
+      "reasoning": "OnTheIssues classifies Letlow as favoring expanding ObamaCare modestly, placing her as a moderate on the conservative side rather than a full repeal advocate. She serves on the Appropriations Subcommittee on Labor, Health and Human Services, and has not called for full ACA repeal. She does not support a public option or single-payer system.",
+      "sources": [
+        "https://www.ontheissues.org/House/Julia_Letlow.htm",
+        "https://en.wikipedia.org/wiki/Julia_Letlow"
+      ],
+      "cited_url": "https://www.ontheissues.org/House/Julia_Letlow.htm"
+    },
+    {
+      "politician_id": "ecf2b5c5-8686-4160-8f7d-a0090e5c4a47",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "politician": "Mike Olcott",
+      "topic": "Civil Rights and Social Justice",
+      "chair": "5.0",
+      "reasoning": "Olcott authored HB 5497 to abolish the Texas Center for Elimination of Disproportionality and Disparities — an explicit anti-DEI action. He co-authored HB 3175 (pharmacists dispense ivermectin without prescription — anti-regulatory). His campaign explicitly opposes Critical Race Theory and 'woke ideology.' Aligns with stance 5 (eliminate affirmative action and all race-based government programs).",
+      "sources": [
+        "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB05497I.htm",
+        "https://mikeolcott.com/issues/"
+      ],
+      "cited_url": "https://mikeolcott.com/issues/"
+    },
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "politician": "Steve Hilton",
+      "topic": "Economic Development Incentives",
+      "chair": "5.0",
+      "reasoning": "Golden Together's April 2024 business climate policy paper \"From Worst to Best\" calls for repealing CEQA, reversing AB5, cutting corporate and income taxes, and eliminating bureaucratic regulations across labor, environment, and taxes — 45 specific reforms. The paper explicitly states \"California's policy regime should be unequivocally on the side of job- and wealth-creators.\" His campaign platform adds maximum incentives for crypto, Hollywood, and AI sectors with minimal regulatory barriers. This maps squarely to value 5 (maximum incentives, economic growth as top priority, remove regulatory barriers).",
+      "sources": [
+        "https://goldentogether.com/wp-content/uploads/2024/04/GT_The-Business-Climate-3.pdf",
+        "https://stevehiltonforgovernor.com/policy/make-california-the-crypto-capital-of-the-world/",
+        "https://stevehiltonforgovernor.com/policy/bring-hollywood-home/"
+      ],
+      "cited_url": "https://stevehiltonforgovernor.com/policy/bring-hollywood-home/"
+    },
+    {
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Susan K. McComas",
+      "topic": "Climate Change and Environmental Protection",
+      "chair": "4.0",
+      "reasoning": "McComas co-sponsored the Solar Energy - Construction of Generating Stations in Priority Preservation Areas and Study bill restricting solar farm placement — reflecting skepticism of aggressive renewable energy mandates.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccomas"
+      ],
+      "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccomas"
+    },
+    {
+      "politician_id": "76b00811-8bf8-46c0-bb0c-9867c90fe9d4",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Kathryn Harrington",
+      "topic": "Climate Change and Environmental Protection",
+      "chair": "3.0",
+      "reasoning": "The county matches 100% of its electricity via PGE Green Future solar, installed facility solar arrays, and after the 2021 heat dome she opened cooling centers, made 211 a 24/7 service, and backed right-to-cool rules - clean-energy investment and resilience, not a climate emergency or fossil-fuel ban.",
+      "sources": [
+        "https://washcodems.org/2022/04/30/kathryn-harrington-washington-county-chair-candidate-interview/",
+        "https://www.washingtoncountyor.gov/sustainability/energy-conservation"
+      ],
+      "cited_url": "https://washcodems.org/2022/04/30/kathryn-harrington-washington-county-chair-candidate-interview/"
+    },
+    {
+      "politician_id": "12091a62-38d5-40a8-bb05-55e9128ffbd1",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "politician": "Gordon Heslop",
+      "topic": "Immigration and Treatment of Immigrants",
+      "chair": "4.0",
+      "reasoning": "Heslop's campaign site calls for ending chain migration and banning/defunding sanctuary cities while sealing the southern border, indicating support for tightening legal immigration pathways and cutting services tied to sanctuary jurisdictions rather than a broader crackdown that would also target long-term legal residents.",
+      "sources": [
+        "https://heslopforcongress.com"
+      ],
+      "cited_url": "https://heslopforcongress.com"
+    },
+    {
+      "politician_id": "929346a2-8037-4b14-af33-4820eb365323",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "politician": "Micah Beckwith",
+      "topic": "State Redistricting and Gerrymandering",
+      "chair": "5.0",
+      "reasoning": "Beckwith actively lobbied Indiana Senate Republicans to pass a 9-0 Republican congressional map in a 2025 special session, calling holdout Republicans 'Neville Chamberlain type' appeasers and saying they were 'failing to stand with President Trump.' He stated 'Democrats are just mad that we figured out their game plan' when confronted about gerrymandering. His position is that the party controlling the legislature should draw maps to maximize partisan advantage. Aligns with stance 5 (the party that controls the state legislature without outside interference).",
+      "sources": [
+        "https://www.wrtv.com/news/local-news/beckwith-challenges-senate-gop-colleagues-on-redistricting-find-your-backbone",
+        "https://www.peoplefor.org/rightwingwatch/indiana-lt-gov-micah-beckwith-blasts-republicans-who-refuse-redistrict-neville",
+        "https://thehill.com/homenews/state-watch/5646105-indiana-redistricting-micah-beckwith-gop/"
+      ],
+      "cited_url": "https://www.peoplefor.org/rightwingwatch/indiana-lt-gov-micah-beckwith-blasts-republicans-who-refuse-redistrict-neville"
+    },
+    {
+      "politician_id": "29e15a5d-d98f-4536-ad62-05b2612f30ca",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "politician": "Bob Archuleta",
+      "topic": "Reproductive Rights and Abortion Access",
+      "chair": "2.0",
+      "reasoning": "Archuleta voted Aye on SB 1375 (2022) expanding nurse practitioners scope of practice for abortion services and Aye on AB 2099 (2024) addressing crimes against reproductive health services. No anti-abortion bills authored or supported. His voting record is consistent with California mainstream Democratic support for legal abortion access through at least the second trimester.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202120220SB1375",
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB2099"
+      ],
+      "cited_url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB2099"
+    },
+    {
+      "politician_id": "c9205ba1-d0c8-4f17-a165-fb2a8fdae742",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "politician": "Blanca Pacheco",
+      "topic": "Misinformation and the Role of Algorithms in Democracy",
+      "chair": "2.0",
+      "reasoning": "Voted YES AB-2655 (Defending Democracy from Deepfake Deception Act 2024) requiring labeling of AI-generated political content. Supports platform transparency requirements.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB2655"
+      ],
+      "cited_url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB2655"
+    },
+    {
+      "politician_id": "87546d4d-78ee-4aae-82cb-89ae805e10b4",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "politician": "R. Rex Parris",
+      "topic": "Homelessness Response",
+      "chair": "5.0",
+      "reasoning": "Parris's on-record homelessness strategy — forced encampment congregation plus 'purge'/'free fentanyl' rhetoric — signals strict enforcement and hostility to service spending.",
+      "sources": [
+        "https://www.aol.com/news/lancaster-mayors-remedy-homelessness-free-100005128.html",
+        "https://www.yahoo.com/news/california-mayor-says-wants-homeless-225659472.html"
+      ],
+      "cited_url": "https://www.yahoo.com/news/california-mayor-says-wants-homeless-225659472.html"
+    },
+    {
+      "politician_id": "fb00c887-11f5-46f2-b822-f9848368bbd2",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "politician": "Cliff Bentz",
+      "topic": "Civil Rights and Social Justice",
+      "chair": "4.0",
+      "reasoning": "Bentz voted NO on George Floyd Justice in Policing Act (H.R. 7120, 2020) and NO on Equality Act (H.R. 5, 2021). https://clerk.house.gov/evs/2021/roll060.xml",
+      "sources": [
+        "https://clerk.house.gov/evs/2021/roll060.xml"
+      ],
+      "cited_url": "https://clerk.house.gov/evs/2021/roll060.xml"
+    },
+    {
+      "politician_id": "9e4d8f47-e4d5-4652-8fda-8e19b33bedea",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "politician": "Jeanette Shaw",
+      "topic": "Growth and Development Pace",
+      "chair": "3.0",
+      "reasoning": "In her 2020 Tigard Life profile Shaw framed growth in the Tigard Triangle, Washington Square, and Downtown Tigard as an opportunity to \"be at the forefront of community innovation\" and called for \"developing Tigard's future growth through a comprehensive strategic plan.\" Her campaign bio describes engaging the community on River Terrace 2.0 planning (community plan phase through 2026), and her 2024 achievements emphasize infrastructure investment ahead of need — citywide software modernization, water billing systems, and purchasing property for new police and public works facilities. This proactive plan-and-invest posture matches chair 3.",
+      "sources": [
+        "https://tigardlife.com/local-news/jeanette-shaw/",
+        "https://www.shawfortigard.com/meet-jeanette",
+        "https://www.shawfortigard.com/achievements"
+      ],
+      "cited_url": "https://tigardlife.com/local-news/jeanette-shaw/"
+    },
+    {
+      "politician_id": "b3c44b70-0c00-445a-9de0-6d158d37c89d",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "politician": "Nancy Lacore",
+      "topic": "Childcare Affordability & Access",
+      "chair": "2.0",
+      "reasoning": "She proposes capping childcare costs at 7% of family income via quarterly tax credits, plus tax credits for childcare providers and expanded employer-provided childcare credits — a significant subsidy/credit expansion for low- and middle-income families short of a universal publicly funded system.",
+      "sources": [
+        "https://nancylacore.com/priorities"
+      ],
+      "cited_url": "https://nancylacore.com/priorities"
+    },
+    {
+      "politician_id": "ad28f54e-0639-4005-ade9-3be3b90c3d39",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Cassie Julia",
+      "topic": "Affordable Housing",
+      "chair": "2.0",
+      "reasoning": "Primary sponsor of LD 1765, enacted as Public Law Ch. 365 (signed 6/18/2025), which caps mobile-home-park rent and fee increases at the lesser of 5% or CPI+1% annually, requires written fee disclosure to prospective tenants, and directs the state to develop a model rent-stabilization ordinance for manufactured housing. Authoring binding rent caps and tenant protections aligns with stance 2 (use rent caps and require affordability measures, publicly fund new housing).",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1765"
+      ],
+      "cited_url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1765"
+    },
+    {
+      "politician_id": "ace0b96d-8ef8-4aca-8928-6848ae430da6",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "politician": "Mike Rogers",
+      "topic": "Reproductive Rights and Abortion Access",
+      "chair": "5.0",
+      "reasoning": "Rogers has a 100% rating from the National Right to Life Committee and 0% from NARAL, reflecting a consistent anti-abortion record across 14 years in Congress (2001–2015). He voted YES on banning partial-birth abortion (2003), restricting interstate transport of minors for abortion (2005), and banning federal health coverage that includes abortion (2011). He co-sponsored the Right to Life Act to grant 'pre-born equal protection under 14th Amendment.' In 2024, he stated the issue 'should be left to the states' and that he would not try to change Michigan's 2022 constitutional amendment.",
+      "sources": [
+        "https://www.ontheissues.org/MI/Mike_Rogers.htm",
+        "https://www.ontheissues.org/MI/Mike_Rogers_Abortion.htm",
+        "https://en.wikipedia.org/wiki/Mike_Rogers_(Michigan_politician)"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/Mike_Rogers_(Michigan_politician)"
+    },
+    {
+      "politician_id": "21940b7c-2424-47e9-a649-077b0f827c2c",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "politician": "Gregg Hart",
+      "topic": "Fossil Fuel Policy",
+      "chair": "2.0",
+      "reasoning": "Co-authored SB 252 (Fossil Fuel Divestment Act for CalPERS/CalSTRS). Authored/co-authored Polluters Pay Climate Superfund Act. Chairs Senate Emergency Management Committee. Acknowledged as 'dedicated environmental champion' on official bio. Co-authored SB 684. Supports ending new fossil fuel investment by state entities.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB252",
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB684"
+      ],
+      "cited_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB684"
+    },
+    {
+      "politician_id": "c4e1ab3e-27b2-4531-987e-11958d0c23c4",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "politician": "Alan Schoolcraft",
+      "topic": "State Redistricting and Gerrymandering",
+      "chair": "4.0",
+      "reasoning": "Schoolcraft is a Republican in the Republican-controlled Texas House who won under existing maps and cosponsored major Republican priorities (SB2 vouchers). No evidence of support for independent redistricting. Aligns with legislative control with court oversight.",
+      "sources": [
+        "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A4745"
+      ],
+      "cited_url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A4745"
+    },
+    {
+      "politician_id": "d04b548f-8655-40f6-8d27-9989f473a828",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician": "Cynthia Lummis",
+      "topic": "Campaign Finance Reform",
+      "chair": "4.0",
+      "reasoning": "OTI classifies Lummis as strongly opposing campaign finance restrictions. As a founding member of the House Freedom Caucus and Tea Party member she has consistently opposed limits on political donations and spending. Her record shows no support for disclosure mandates or contribution limits, aligning with value 4 - reduce restrictions on political donations and spending.",
+      "sources": [
+        "https://www.ontheissues.org/Senate/Cynthia_Lummis.htm"
+      ],
+      "cited_url": "https://www.ontheissues.org/Senate/Cynthia_Lummis.htm"
+    },
+    {
+      "politician_id": "352e6532-4873-4dba-a69b-8d707570697b",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "politician": "Benjamin Kincaid",
+      "topic": "Healthcare Access",
+      "chair": "2.0",
+      "reasoning": "Proposes the Public Option Healthcare Innovation and Pilot Act (POHIPA): a federal public-hospital/public-insurance option that coexists with private insurance and private hospitals, explicitly rejecting both the status quo and single-payer Medicare for All.",
+      "sources": [
+        "https://www.kincaidforcongress.com/2025/06/healthcare-policy-proposal-for.html",
+        "https://www.kincaidforcongress.com/p/issues.html"
+      ],
+      "cited_url": "https://www.kincaidforcongress.com/2025/06/healthcare-policy-proposal-for.html"
+    },
+    {
+      "politician_id": "eeeaf1be-3372-4cf9-b3b6-d5d1dff42615",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "politician": "Jesse Arreguín",
+      "topic": "State Redistricting and Gerrymandering",
+      "chair": "2.0",
+      "reasoning": "Arreguín voted YES on SB 1414 (2026), establishing a Citizens Redistricting Commission for San Bernardino County to replace partisan legislative line-drawing. His support for independent redistricting reflects a preference for independent commissions with equal representation from major parties.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB1414",
+        "https://sd07.senate.ca.gov"
+      ],
+      "cited_url": "https://sd07.senate.ca.gov"
+    },
+    {
+      "politician_id": "6609f174-6c1e-4fe9-afe6-2ed20f5f2463",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "politician": "Mikie Sherrill",
+      "topic": "Reproductive Rights and Abortion Access",
+      "chair": "2.0",
+      "reasoning": "As a House member (2019–2025) Sherrill consistently supported abortion access including public funding and opposed parental notification requirements for minors. She voiced support for enshrining abortion rights in the NJ state constitution (Feb 2025). Her documented positions align with keeping abortion legal and accessible but stop short of explicitly endorsing all-stage access.",
+      "sources": [
+        "https://www.ontheissues.org/Mikie_Sherrill.htm",
+        "https://www.ontheissues.org/NJ/Mikie_Sherrill.htm"
+      ],
+      "cited_url": "https://www.ontheissues.org/Mikie_Sherrill.htm"
+    },
+    {
+      "politician_id": "a1467b58-9cc8-4611-a03e-07defc1679bf",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "politician": "Avelino Valencia",
+      "topic": "Medicare / Medicaid",
+      "chair": "2.0",
+      "reasoning": "Voted AYE on SB 729 (Medi-Cal infertility coverage mandate, 8/28/24, 62-1) and AYE on AB 618 (Medi-Cal/health coverage access, 6/2/25, 79-0) and AYE on AB 1629 (Medi-Cal coverage expansion, 5/22/26, 61-0). Supports significantly expanding Medicaid coverage and lowering eligibility thresholds.",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB729",
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB618",
+        "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1629"
+      ],
+      "cited_url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB729"
+    },
+    {
+      "politician_id": "512f27a4-e24f-4f62-a288-18b1e37db463",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "politician": "Jen Kiggans",
+      "topic": "Deportation Priorities",
+      "chair": "4.0",
+      "reasoning": "Kiggans ran on \"Do more to physically secure the southern border\" and supports questioning immigration status in law enforcement contexts. She co-sponsored DIGNIDAD Act with strict enforcement provisions alongside any pathway elements.",
+      "sources": [
+        "https://www.ontheissues.org/VA/Jen_Kiggans.htm",
+        "https://en.wikipedia.org/wiki/Jen_Kiggans"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/Jen_Kiggans"
+    },
+    {
+      "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "politician": "Jennifer White Holland",
+      "topic": "Voting Rights and Electoral Integrity",
+      "chair": "1.0",
+      "reasoning": "White Holland supported expanded voting access legislation including early voting expansion and automatic registration.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03",
+        "https://ballotpedia.org/Jennifer_White_Holland"
+      ],
+      "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03"
+    },
+    {
+      "politician_id": "51e4c723-299f-46a6-b1b2-f75386ee64f0",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "politician": "Sara Jacobs",
+      "topic": "Healthcare Access",
+      "chair": "1.0",
+      "reasoning": "Member of the Medicare for All Caucus, which specifically advocates for a universal single-payer healthcare system covering all Americans. Voted with President Biden's stated positions 100% of the time in the 117th Congress per FiveThirtyEight, including for the Inflation Reduction Act's expanded ACA subsidies and drug pricing reforms.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sara_Jacobs",
+        "https://progressivepunch.org/scores.htm?house=house&party=D&state=CA&district=051"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/Sara_Jacobs"
+    },
+    {
+      "politician_id": "cf2c7616-eb16-4830-be50-6d6096de44dd",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Karina Talamantes",
+      "topic": "Climate Change and Environmental Protection",
+      "chair": "2.0",
+      "reasoning": "Talamantes voted with the Sacramento City Council to adopt the 2040 General Plan and Climate Action & Adaptation Plan in February 2024, which targets carbon neutrality by 2045, mandates all-electric new construction, restricts drive-through restaurants near transit, and prioritizes pedestrian and transit infrastructure. The council also adopted the Neighborhood Connections Plan (March 2025) designed to reduce vehicle travel.",
+      "sources": [
+        "https://sacramentocityexpress.com/2024/02/23/citys-20-year-plan-set-to-make-bold-moves-in-housing-equity-and-sustainability/",
+        "https://sacramentocityexpress.com/2023/05/09/city-of-sacramento-takes-significant-steps-to-address-climate-change/"
+      ],
+      "cited_url": "https://sacramentocityexpress.com/2023/05/09/city-of-sacramento-takes-significant-steps-to-address-climate-change/"
+    },
+    {
+      "politician_id": "8f59c9fd-03f9-4652-bc4a-418bd8764a1f",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "politician": "Chyanne Chen",
+      "topic": "Economic Development Incentives",
+      "chair": "2.0",
+      "reasoning": "Chen was a labor organizer with SEIU 1021 and the Chinese Progressive Association, both worker and community-centered organizations. Her economic development priorities focus on supporting small businesses (assistance with insurance, online presence, filling vacancies), maintaining nonprofit funding, and protecting community-serving programs during budget cuts rather than offering corporate tax incentives.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chyanne_Chen",
+        "https://missionlocal.org/2025/01/in-district-11-hope-and-needs-go-hand-in-hand-for-new-supervisor-chyanne-chen/"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/Chyanne_Chen"
+    },
+    {
+      "politician_id": "1d2e435f-968e-465b-937a-d6b3a1a8bb48",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "politician": "Rosie Pino",
+      "topic": "Deportation Priorities",
+      "chair": "3.0",
+      "reasoning": "Pino voted for the NJ Immigrant Trust Act (fall 2025), which limits local law enforcement from cooperating with federal immigration enforcement. Her stated position — that people should not live in fear regardless of legal status — and her defense of long-term undocumented residents' security align with scale value 3: focusing enforcement on recent arrivals while protecting long-term residents. She has not called to stop all deportations, nor to immediately deport all undocumented people.",
+      "sources": [
+        "https://newjerseyglobe.com/congress/vying-to-unseat-nellie-pou-nj-9-republicans-face-a-stark-choice/"
+      ],
+      "cited_url": "https://newjerseyglobe.com/congress/vying-to-unseat-nellie-pou-nj-9-republicans-face-a-stark-choice/"
+    },
+    {
+      "politician_id": "897f1a09-6595-4411-b8db-953cf6fddaf7",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "politician": "Rick McCartney",
+      "topic": "Reproductive Rights and Abortion Access",
+      "chair": "2.0",
+      "reasoning": "McCartney's priorities page states he 'will work to codify Roe v. Wade into federal law' and 'fight to ensure access to abortion medication and uphold the legal right to travel across state lines to access abortion services.' Codifying Roe (which allowed first/second-trimester access with increasing restriction near viability) matches stance 2.",
+      "sources": [
+        "https://www.mccartneyforcongress.com/priorities"
+      ],
+      "cited_url": "https://www.mccartneyforcongress.com/priorities"
+    },
+    {
+      "politician_id": "ba88f088-54a4-4c9c-96cd-91fb26556d3e",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "politician": "Mariannette Miller-Meeks",
+      "topic": "Healthcare Access",
+      "chair": "4.0",
+      "reasoning": "She opposed the Affordable Care Act during her 2014 campaign (Wikipedia) and as a physician-Republican has consistently favored private market healthcare solutions, supporting only limited assistance for those who cannot afford care while leaving others to employers and private insurance.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mariannette_Miller-Meeks",
+        "https://www.ontheissues.org/House/Mariannette_Miller-Meeks.htm"
+      ],
+      "cited_url": "https://www.ontheissues.org/House/Mariannette_Miller-Meeks.htm"
+    },
+    {
+      "politician_id": "fb1fe811-b340-42d3-88ee-97b5364117cd",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "politician": "Thomas S. Hutchinson",
+      "topic": "Economic Development Incentives",
+      "chair": "3.0",
+      "reasoning": "Hutchinson's Workgroup on Seafood Marketing and rural economic bills reflect support for traditional Eastern Shore industries with targeted government support.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hutchinson01"
+      ],
+      "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hutchinson01"
+    },
+    {
+      "politician_id": "960e5acd-c847-4c8b-9a00-980483647849",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "politician": "Jared Huffman",
+      "topic": "Civil Rights and Social Justice",
+      "chair": "2.0",
+      "reasoning": "Maintains a 100% voting record from Equality California and has a long record of representing women in gender discrimination cases. Voted YES on reauthorizing the Violence Against Women Act expanding protections to LGBT individuals and immigrants. Cosponsored the Paycheck Fairness Act and the Student Non-Discrimination Act. Voted with Biden 100% in 117th Congress on civil rights measures.",
+      "sources": [
+        "https://www.ontheissues.org/CA/Jared_Huffman_Civil_Rights.htm",
+        "https://en.wikipedia.org/wiki/Jared_Huffman"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/Jared_Huffman"
+    },
+    {
+      "politician_id": "dcf335bf-ca4f-4878-8ef6-616380ff19db",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "politician": "Kwame Raoul",
+      "topic": "Reproductive Rights and Abortion Access",
+      "chair": "2.0",
+      "reasoning": "As a state senator Raoul campaigned on safe, legal, and accessible abortion; as AG he has made defending reproductive rights a top office priority, prominently featured on his official website. Evidence supports broad access but does not document a specific position on public funding at all stages of pregnancy.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kwame_Raoul",
+        "https://illinoisattorneygeneral.gov"
+      ],
+      "cited_url": "https://illinoisattorneygeneral.gov"
+    },
+    {
+      "politician_id": "ecdb6fda-81cd-48bd-9403-a03a82f3ebad",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "politician": "Bradley Scott Schneider",
+      "topic": "Same-Sex Marriage",
+      "chair": "1.0",
+      "reasoning": "Schneider stated 'All Americans should be entitled to the unconditional right to marry, regardless of sexual orientation,' co-sponsored repeal of DOMA, and voted for the Respect for Marriage Act requiring all states to recognize same-sex marriages with full federal benefits. This matches stance 1: require all states to recognize same-sex marriages and provide full federal benefits and protections.",
+      "sources": [
+        "https://www.ontheissues.org/IL/Brad_Schneider_Civil_Rights.htm",
+        "https://en.wikipedia.org/wiki/Brad_Schneider"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/Brad_Schneider"
+    },
+    {
+      "politician_id": "6b817122-f196-4b72-b0b4-2d9763c4be47",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "politician": "Susan M. Collins",
+      "topic": "State Redistricting and Gerrymandering",
+      "chair": "2.0",
+      "reasoning": "Collins has supported bipartisan redistricting reform and endorsed independent redistricting commission concepts. Her record reflects support for independent commissions with equal representation from both major parties to reduce partisan gerrymandering.",
+      "sources": [
+        "https://www.ontheissues.org/Senate/Susan_Collins.htm",
+        "https://en.wikipedia.org/wiki/Susan_Collins"
+      ],
+      "cited_url": "https://www.ontheissues.org/Senate/Susan_Collins.htm"
+    },
+    {
+      "politician_id": "853f0b26-a2b5-48b6-8dd6-f40ca48c87fd",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "politician": "Lindsay Sabadosa",
+      "topic": "Medicare / Medicaid",
+      "chair": "1.0",
+      "reasoning": "Sabadosa co-sponsored Medicare for All (H.1239) and co-founded the MA Medicare for All Caucus — among the House's clearest signals for expanding Medicare to everyone regardless of age.",
+      "sources": [
+        "https://web.archive.org/web/20260510012513/https://actonmass.org/legislators/lindsay-sabadosa/",
+        "https://en.wikipedia.org/wiki/Lindsay_Sabadosa"
+      ],
+      "cited_url": "https://en.wikipedia.org/wiki/Lindsay_Sabadosa"
+    },
+    {
+      "politician_id": "1e8bac4b-6d4d-4425-8628-bdfdddf46058",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Michel Lajoie",
+      "topic": "Climate Change and Environmental Protection",
+      "chair": "2.0",
+      "reasoning": "Voted Yea on LD 1870, \"An Act to Establish a Climate Superfund Cost Recovery Program to Impose Penalties on Climate Polluters\" (prevailed 75-72), and voted Yea on the related LD 2037 RGGI-allowance update (enacted 71-66).",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280099027&chamber=House&serialnumber=708",
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280100902&chamber=House&serialnumber=627",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1870"
+      ],
+      "cited_url": "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280100902&chamber=House&serialnumber=627"
+    },
+    {
+      "politician_id": "4025a524-5e29-4c04-9026-009ba23878e5",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Robert Foley",
+      "topic": "Taxation and Public Spending",
+      "chair": "4.0",
+      "reasoning": "Voted Nay on the June 13, 2025 Enactment of LD 229, opposing new upper-income tax brackets.",
+      "sources": [
+        "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280095865&chamber=House&serialnumber=474",
+        "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=229"
+      ],
+      "cited_url": "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280095865&chamber=House&serialnumber=474"
+    },
+    {
+      "politician_id": "83474f06-c501-416d-a870-65d75f0cec9d",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "politician": "Nathan Hochman",
+      "topic": "Civil Rights and Social Justice",
+      "chair": "3.0",
+      "reasoning": "Hochman implemented race-blind charging procedures (GOM 25-028, March 2025) to remove racial bias from initial case reviews, consistent with state legislation promoting equity. His \"Hard Middle Approach\" emphasizes individualized case assessments considering defendant background, crime, and victim impact. He also acted swiftly to exonerate two wrongfully convicted individuals, but does not call for reparations or mandating racial equity outcomes.",
+      "sources": [
+        "https://da.lacounty.gov/media/news/promoting-public-safety-strengthening-partnerships-and-creating-more-just-community-da",
+        "https://da.lacounty.gov/policies"
+      ],
+      "cited_url": "https://da.lacounty.gov/media/news/promoting-public-safety-strengthening-partnerships-and-creating-more-just-community-da"
+    },
+    {
+      "politician_id": "c0abb4fa-be8d-4fbe-9b6d-6319a8ecd255",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "politician": "Kenneth Kerr",
+      "topic": "Fossil Fuel Policy",
+      "chair": "2.0",
+      "reasoning": "Kerr co-sponsored the Lower Bills and Local Power Act of 2026 reforming electricity transmission and expanding energy storage — supporting clean energy transition over fossil fuel continuation.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kerr01"
+      ],
+      "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kerr01"
+    },
+    {
+      "politician_id": "64427398-a2c9-41bc-8adf-98ccc4fa99cf",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "politician": "Sarah Chadzynski",
+      "topic": "Childcare Affordability & Access",
+      "chair": "2.0",
+      "reasoning": "Her affordability platform commits to cutting childcare costs as part of a broader working-families economic package alongside a rising minimum wage and housing construction, but does not specify a universal public program or income-based subsidy tiers, placing her closer to stance 2 (significantly expanding subsidies for low- and middle-income families) than a fully public universal system.",
+      "sources": [
+        "https://sarahc603.com/issues/affordability/"
+      ],
+      "cited_url": "https://sarahc603.com/issues/affordability/"
+    },
+    {
+      "politician_id": "c7f76380-249c-436b-824c-ba44ff496c40",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Jessica Ancona",
+      "topic": "Environmental Protection vs. Development",
+      "chair": "2.0",
+      "reasoning": "A core stated priority is \"planting of more trees throughout the city to increase our urban tree canopy\" and ensuring \"all residents have access to green spaces,\" alongside reducing the city's carbon footprint — an affirmative commitment to protecting/expanding parks and tree canopy.",
+      "sources": [
+        "https://www.jessicaancona.com/platfrom-issues",
+        "https://www.jessicaancona.com/"
+      ],
+      "cited_url": "https://www.jessicaancona.com/"
+    }
+  ]
+}
