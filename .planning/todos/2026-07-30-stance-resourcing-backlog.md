@@ -16,6 +16,44 @@ New check **`NON_URL_SOURCE`** — now **0 and ZERO-TOLERANCE** (1527–1530 clo
 
 ---
 
+## 🟢 HANDOFF 2026-08-02 (sixth) — all sources of the 100 rows: the residue is 11%, and it is quotes
+
+**No migration.** Same 100 rows, all **198 source-citations** (197 distinct urls).
+Review: [`2026-08-02-ok-allsources-audit.md`](../../backend/data/stance-retirement/2026-08-02-ok-allsources-audit.md).
+
+| row verdict, all sources | n | 95% CI |
+|---|---|---|
+| FULLY_COVERED | **86** | 77.9–91.5% |
+| PARTLY_COVERED | **11** | 6.3–18.6% |
+| UNCOVERED / no working source | **2** | 0.6–7.0% |
+
+**The 16% from the single-source pass was about half benign** — 7 of the 16 are covered by the row's
+other source, 9 are not. The residue is **quote and bill-number accuracy**, not URLs: 5 rows assert a
+bill no source carries, 5 quote a span no source contains, 1 (Gregg Hart) cites two leginfo bill texts
+that cannot name him. This is the 1518 class — a **reading queue**, not a bulk operation.
+
+🔴 **CORRECTION to handoff (fifth): the hard-URL-defect rate is 2/100, not 3.** Karen Ross's
+`plantingseedsblog.cdfa.ca.gov` is **intermittent, not dead** — it 301s to a path without `/wordpress/`
+that 404s, but a direct fetch returns the real 11,011-char article. Calling it a 404 was wrong. White
+Holland (soft-404) and Cataldo (wrong committee — J28 is Housing) hold. Conclusion unchanged.
+**Also: Amy Kuhn is fully covered** — her "missing quote" is OUR chair text, and the row says so
+(*matches stance 3's "…"*). The chair-label guard needs the span reused across 3+ politicians; a
+self-referential quote used ONCE slips through. Catch it on the introducing phrase.
+
+🔴 **THE SWEEP IS PERISHABLE. 3 of the 4 dead sources found here were classed `OK` four weeks ago** —
+communityimpact.com, friscotexas.gov/586/Mayor-Jeff-Cheney, ballotpedia.org/Jennifer_White_Holland.
+Link rot is a flow, not a fixed backlog. Date any sweep and re-run it before it drives a migration.
+
+🔴 **Sharpest single finding: Cliff Bentz.** His only source is `clerk.house.gov/evs/2021/roll060.xml`,
+the roll call for **H R 1280** (117th Congress). The row asserts votes on **H.R. 7120** (116th) and
+**H.R. 5**. Real vote, wrong bill numbers cited against it — invisible to every check except reading.
+**Roll-call citations are worth a targeted pass.**
+
+⚠ Source-level: 188/198 readable, **4 dead-or-soft-404 (2.0%, CI 0.8–5.1%)**, 3 bot-blocked, 2 JS
+shells, 1 PDF.
+
+---
+
 ## 🟢 HANDOFF 2026-08-02 (fifth) — the OK set was sampled: it is a TAIL problem, not a corpus problem
 
 **No migration.** 100-row seeded sample of the 51,092 `OK`-classified citations, verified live + archive.
