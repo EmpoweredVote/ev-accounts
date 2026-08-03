@@ -1,0 +1,1349 @@
+{
+ "scope": "BOT_BLOCKED (732 urls) + HTTP_202 (570 urls) of the deep reachability sweep",
+ "method": "live probe first (any response <500 proves the host real, including 403); Wayback only on failure, 2 query forms x 2 rounds, absence must reproduce",
+ "controls": {
+  "walthamatch.com": "NEVER_EXISTED",
+  "alhambrasource.com": "RETIRED_BUT_REAL",
+  "katherineclark.house.gov": "LIVE"
+ },
+ "controls_voided": true,
+ "hosts": 130,
+ "stats": {
+  "LIVE": 130
+ },
+ "results": [
+  {
+   "host": "ballotpedia.org",
+   "urls": 538,
+   "rows": 2460,
+   "cls": "HTTP_202",
+   "live_http": 200,
+   "live_final": "https://ballotpedia.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "congress.gov",
+   "urls": 164,
+   "rows": 384,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://congress.gov/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "berkeleyca.gov",
+   "urls": 47,
+   "rows": 233,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://berkeleyca.gov/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "webapi.legistar.com",
+   "urls": 15,
+   "rows": 122,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://webapi.legistar.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "utahnewsdispatch.com",
+   "urls": 42,
+   "rows": 77,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://utahnewsdispatch.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "vpap.org",
+   "urls": 31,
+   "rows": 73,
+   "cls": "HTTP_202",
+   "live_http": 200,
+   "live_final": "https://www.vpap.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "masslive.com",
+   "urls": 12,
+   "rows": 53,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://www.masslive.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "marylandmatters.org",
+   "urls": 32,
+   "rows": 46,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://marylandmatters.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "dailybreeze.com",
+   "urls": 12,
+   "rows": 34,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://www.dailybreeze.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "kansasreflector.com",
+   "urls": 14,
+   "rows": 32,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://kansasreflector.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "nmpoliticalreport.com",
+   "urls": 17,
+   "rows": 28,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://nmpoliticalreport.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "wispolitics.com",
+   "urls": 17,
+   "rows": 28,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://wispolitics.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "justfacts.votesmart.org",
+   "urls": 10,
+   "rows": 28,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://justfacts.votesmart.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "azmirror.com",
+   "urls": 22,
+   "rows": 27,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://azmirror.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "indianacapitalchronicle.com",
+   "urls": 18,
+   "rows": 27,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://indianacapitalchronicle.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "alaskabeacon.com",
+   "urls": 5,
+   "rows": 24,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://alaskabeacon.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "wortfm.org",
+   "urls": 6,
+   "rows": 22,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://wortfm.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "lowellsun.com",
+   "urls": 13,
+   "rows": 18,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://www.lowellsun.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "tucsonsentinel.com",
+   "urls": 14,
+   "rows": 18,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://tucsonsentinel.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "axios.com",
+   "urls": 10,
+   "rows": 17,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://www.axios.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "nevadacurrent.com",
+   "urls": 11,
+   "rows": 16,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://nevadacurrent.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "legiscan.com",
+   "urls": 12,
+   "rows": 15,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://legiscan.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "kslnewsradio.com",
+   "urls": 7,
+   "rows": 14,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://kslnewsradio.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "dojmt.gov",
+   "urls": 8,
+   "rows": 12,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://dojmt.gov/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "oregonlive.com",
+   "urls": 7,
+   "rows": 12,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://www.oregonlive.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "brockton.ma.us",
+   "urls": 4,
+   "rows": 12,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://brockton.ma.us/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "opensecrets.org",
+   "urls": 10,
+   "rows": 10,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://opensecrets.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "mainemorningstar.com",
+   "urls": 10,
+   "rows": 10,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://mainemorningstar.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "wavy.com",
+   "urls": 8,
+   "rows": 10,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://wavy.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "medium.com",
+   "urls": 2,
+   "rows": 10,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://medium.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "iowacapitaldispatch.com",
+   "urls": 6,
+   "rows": 9,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://iowacapitaldispatch.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "onyourballot.vote411.org",
+   "urls": 2,
+   "rows": 9,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://onyourballot.vote411.org/build.do",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "mynorthwest.com",
+   "urls": 5,
+   "rows": 8,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://mynorthwest.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "virginiamercury.com",
+   "urls": 5,
+   "rows": 7,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://virginiamercury.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "nebraskaexaminer.com",
+   "urls": 3,
+   "rows": 7,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://nebraskaexaminer.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "missourinet.com",
+   "urls": 5,
+   "rows": 7,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://missourinet.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "wisconsinexaminer.com",
+   "urls": 2,
+   "rows": 7,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://wisconsinexaminer.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "dailynews.com",
+   "urls": 2,
+   "rows": 7,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://www.dailynews.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "governor.ny.gov",
+   "urls": 1,
+   "rows": 7,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://governor.ny.gov/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "missouriindependent.com",
+   "urls": 6,
+   "rows": 6,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://missouriindependent.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "abc4.com",
+   "urls": 5,
+   "rows": 6,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://abc4.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "lasentinel.net",
+   "urls": 4,
+   "rows": 6,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://lasentinel.net/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "nondoc.com",
+   "urls": 1,
+   "rows": 6,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://nondoc.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "scottstephenson4utah.com",
+   "urls": 1,
+   "rows": 6,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://scottstephenson4utah.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "edsource.org",
+   "urls": 5,
+   "rows": 5,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://edsource.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "burbankca.gov",
+   "urls": 5,
+   "rows": 5,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://burbankca.gov/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "koin.com",
+   "urls": 5,
+   "rows": 5,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://koin.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "hoodline.com",
+   "urls": 4,
+   "rows": 5,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://hoodline.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "bendoregon.gov",
+   "urls": 4,
+   "rows": 5,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://bendoregon.gov/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "ad36.asmrc.org",
+   "urls": 3,
+   "rows": 5,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://ad36.asmrc.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "nysenate.gov",
+   "urls": 3,
+   "rows": 5,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://nysenate.gov/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "gephardtdaily.com",
+   "urls": 2,
+   "rows": 5,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://gephardtdaily.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "naag.org",
+   "urls": 2,
+   "rows": 5,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://naag.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "wpri.com",
+   "urls": 4,
+   "rows": 4,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://wpri.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "michiganadvance.com",
+   "urls": 3,
+   "rows": 4,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://michiganadvance.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "beaverton.municipal.codes",
+   "urls": 2,
+   "rows": 4,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://beaverton.municipal.codes/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "bipartisanpolicy.org",
+   "urls": 2,
+   "rows": 4,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://bipartisanpolicy.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "couragescore.org",
+   "urls": 2,
+   "rows": 4,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://couragescore.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "insideclimatenews.org",
+   "urls": 2,
+   "rows": 4,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://insideclimatenews.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "kentuckylantern.com",
+   "urls": 2,
+   "rows": 4,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://kentuckylantern.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "radioiowa.com",
+   "urls": 2,
+   "rows": 4,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://radioiowa.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "ellieforidaho.com",
+   "urls": 1,
+   "rows": 4,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://ellieforidaho.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "luthercifers.com",
+   "urls": 1,
+   "rows": 4,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://luthercifers.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "radicallawcenter.com",
+   "urls": 1,
+   "rows": 4,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://radicallawcenter.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "lapublicpress.org",
+   "urls": 3,
+   "rows": 3,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://lapublicpress.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "trackbill.com",
+   "urls": 3,
+   "rows": 3,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://trackbill.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "ad01.asmrc.org",
+   "urls": 2,
+   "rows": 3,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://ad01.asmrc.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "dailyjournal.net",
+   "urls": 2,
+   "rows": 3,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://dailyjournal.net/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "oregoncapitalchronicle.com",
+   "urls": 2,
+   "rows": 3,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://oregoncapitalchronicle.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "keloland.com",
+   "urls": 2,
+   "rows": 3,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://keloland.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "edwinriveraforcongress.com",
+   "urls": 1,
+   "rows": 3,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://edwinriveraforcongress.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "idahocapitalsun.com",
+   "urls": 1,
+   "rows": 3,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://idahocapitalsun.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "sandpointreader.com",
+   "urls": 1,
+   "rows": 3,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://sandpointreader.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "tualatinmovingforward.com",
+   "urls": 1,
+   "rows": 3,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://www.shreejahospital.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "aflcio.org",
+   "urls": 2,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://aflcio.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "fox59.com",
+   "urls": 2,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://fox59.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "ktla.com",
+   "urls": 2,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://ktla.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "nhjournal.com",
+   "urls": 2,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://nhjournal.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "rivcohws.org",
+   "urls": 2,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://rivcohws.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "supervisorchuckwashington.com",
+   "urls": 2,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://supervisorchuckwashington.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "culvercitynews.org",
+   "urls": 1,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://www.culvercitynews.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "newsfromthestates.com",
+   "urls": 2,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://newsfromthestates.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "mcdermott4congress4alaska.com",
+   "urls": 1,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://www.mcdermott4congress4alaska.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "erickson4weho.com",
+   "urls": 1,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 401,
+   "live_final": "https://erickson4weho.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "fox40.com",
+   "urls": 1,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://fox40.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "greggoetzman.com",
+   "urls": 1,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://greggoetzman.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "minnesotareformer.com",
+   "urls": 1,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://minnesotareformer.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "theapopkachief.com",
+   "urls": 1,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://theapopkachief.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "8newsnow.com",
+   "urls": 1,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://8newsnow.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "fastcompany.com",
+   "urls": 1,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://fastcompany.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "lawattstimes.com",
+   "urls": 1,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://lawattstimes.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "valleyjournals.com",
+   "urls": 1,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://www.valleyjournals.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "wvcjournal.com",
+   "urls": 1,
+   "rows": 2,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://www.wvcjournal.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "somervillema.gov",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://www.somervillema.gov/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "cityofallen.org",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://www.cityofallen.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "19thnews.org",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://19thnews.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "alabamareflector.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://alabamareflector.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "dsa-la.org",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://dsa-la.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "earlyedgecalifornia.org",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://earlyedgecalifornia.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "floridaphoenix.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://floridaphoenix.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "flvoicenews.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://flvoicenews.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "iowagop.org",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://iowagop.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "lailluminator.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://lailluminator.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "lbforward.org",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://lbforward.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "michiganchronicle.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://michiganchronicle.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "news.wttw.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://news.wttw.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "northdakotamonitor.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://northdakotamonitor.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "parkingreform.org",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://parkingreform.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "publicnow.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://publicnow.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "quadrangle.michigan.law.umich.edu",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://quadrangle.michigan.law.umich.edu/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "rhodeislandcurrent.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://rhodeislandcurrent.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "scdailygazette.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://scdailygazette.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "southdakotasearchlight.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://southdakotasearchlight.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "trellis.law",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://trellis.law/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "wreg.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://wreg.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "afge.org",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://www.afge.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "cbpp.org",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://cbpp.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "hansonbridgett.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://hansonbridgett.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "housingfinance.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://www.housingfinance.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "myarklamiss.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://myarklamiss.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "ourquadcities.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://ourquadcities.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "politico.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://www.politico.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "pressdemocrat.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 200,
+   "live_final": "https://www.pressdemocrat.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "qcnews.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://qcnews.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "realclearpolitics.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://www.realclearpolitics.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "the-rheumatologist.org",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://the-rheumatologist.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "themidwesterner.news",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://www.themidwesterner.news/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "vpm.org",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://vpm.org/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "wtnh.com",
+   "urls": 1,
+   "rows": 1,
+   "cls": "BOT_BLOCKED",
+   "live_http": 403,
+   "live_final": "https://wtnh.com/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "acf.gov",
+   "urls": 1,
+   "rows": 1,
+   "cls": "HTTP_202",
+   "live_http": 200,
+   "live_final": "https://acf.gov/",
+   "archive": null,
+   "verdict": "LIVE"
+  },
+  {
+   "host": "walthamatch.com",
+   "urls": 0,
+   "rows": 0,
+   "cls": "CONTROL",
+   "expect": "NEVER_EXISTED",
+   "live_http": null,
+   "live_final": null,
+   "archive": "UNKNOWN",
+   "verdict": "UNKNOWN"
+  },
+  {
+   "host": "alhambrasource.com",
+   "urls": 0,
+   "rows": 0,
+   "cls": "CONTROL",
+   "expect": "RETIRED_BUT_REAL",
+   "live_http": null,
+   "live_final": null,
+   "archive": "ARCHIVED",
+   "verdict": "RETIRED_BUT_REAL"
+  },
+  {
+   "host": "katherineclark.house.gov",
+   "urls": 0,
+   "rows": 0,
+   "cls": "CONTROL",
+   "expect": "LIVE",
+   "live_http": 200,
+   "live_final": "https://katherineclark.house.gov/",
+   "archive": null,
+   "verdict": "LIVE"
+  }
+ ]
+}

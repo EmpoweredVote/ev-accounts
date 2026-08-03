@@ -1,0 +1,681 @@
+{
+ "method": "3 independent rounds x 3 query forms (availability, cdx matchType=domain, cdx prefix); absence requires every successful probe empty AND >=2 methods AND >=4 successful probes",
+ "why": "the first sweep is void: clark.house.gov was falsely flagged because both endpoints returned HTTP 200 with an empty result, which the retry-on-non-200 rule cannot detect",
+ "controls_voided": true,
+ "results": [
+  {
+   "host": "medfordmirror.com",
+   "kind": "news",
+   "verdict": "ABSENT_REPRODUCIBLE",
+   "probes_ok": 8,
+   "probes_total": 9,
+   "methods_ok": 3,
+   "rounds": [
+    [
+     {
+      "method": "available",
+      "ok": false,
+      "has": null
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ]
+   ]
+  },
+  {
+   "host": "alhambraource.com",
+   "kind": "news",
+   "verdict": "ABSENT_REPRODUCIBLE",
+   "probes_ok": 9,
+   "probes_total": 9,
+   "methods_ok": 3,
+   "rounds": [
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ]
+   ]
+  },
+  {
+   "host": "walthamtribunenews.com",
+   "kind": "news",
+   "verdict": "ABSENT_REPRODUCIBLE",
+   "probes_ok": 9,
+   "probes_total": 9,
+   "methods_ok": 3,
+   "rounds": [
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ]
+   ]
+  },
+  {
+   "host": "walthamatch.com",
+   "kind": "news",
+   "verdict": "ABSENT_REPRODUCIBLE",
+   "probes_ok": 9,
+   "probes_total": 9,
+   "methods_ok": 3,
+   "rounds": [
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ]
+   ]
+  },
+  {
+   "host": "newtonvillearea.com",
+   "kind": "news",
+   "verdict": "ABSENT_REPRODUCIBLE",
+   "probes_ok": 9,
+   "probes_total": 9,
+   "methods_ok": 3,
+   "rounds": [
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ]
+   ]
+  },
+  {
+   "host": "octavioforwhittier.com",
+   "kind": "campaign",
+   "verdict": "ABSENT_REPRODUCIBLE",
+   "probes_ok": 9,
+   "probes_total": 9,
+   "methods_ok": 3,
+   "rounds": [
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ]
+   ]
+  },
+  {
+   "host": "kennethforla.com",
+   "kind": "campaign",
+   "verdict": "ABSENT_REPRODUCIBLE",
+   "probes_ok": 9,
+   "probes_total": 9,
+   "methods_ok": 3,
+   "rounds": [
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ]
+   ]
+  },
+  {
+   "host": "fairshareforma.com",
+   "kind": "campaign",
+   "verdict": "ABSENT_REPRODUCIBLE",
+   "probes_ok": 9,
+   "probes_total": 9,
+   "methods_ok": 3,
+   "rounds": [
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ]
+   ]
+  },
+  {
+   "host": "clark.house.gov",
+   "kind": "control",
+   "expect": "ARCHIVED",
+   "verdict": "ABSENT_REPRODUCIBLE",
+   "probes_ok": 9,
+   "probes_total": 9,
+   "methods_ok": 3,
+   "rounds": [
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": false
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": false
+     }
+    ]
+   ]
+  },
+  {
+   "host": "alhambrasource.com",
+   "kind": "control",
+   "expect": "ARCHIVED",
+   "verdict": "ARCHIVED",
+   "probes_ok": 9,
+   "probes_total": 9,
+   "methods_ok": 3,
+   "rounds": [
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": true
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": true
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": true
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": true
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": true
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": true
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": true,
+      "has": true
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": true
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": true
+     }
+    ]
+   ]
+  },
+  {
+   "host": "walthampatch.com",
+   "kind": "control",
+   "expect": "ARCHIVED",
+   "verdict": "ARCHIVED",
+   "probes_ok": 6,
+   "probes_total": 9,
+   "methods_ok": 2,
+   "rounds": [
+    [
+     {
+      "method": "available",
+      "ok": false,
+      "has": null
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": true
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": true
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": false,
+      "has": null
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": true
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": true
+     }
+    ],
+    [
+     {
+      "method": "available",
+      "ok": false,
+      "has": null
+     },
+     {
+      "method": "cdx-domain",
+      "ok": true,
+      "has": true
+     },
+     {
+      "method": "cdx-prefix",
+      "ok": true,
+      "has": true
+     }
+    ]
+   ]
+  }
+ ]
+}

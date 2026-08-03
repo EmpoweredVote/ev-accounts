@@ -1,0 +1,4192 @@
+{
+ "method": "browser UA, serial with 900ms delay, windows-1252 tolerated, soft-404 without space, surname folded",
+ "stats": {
+  "rows": 187,
+  "urls_fetched": 103,
+  "by_bucket": {
+   "STILL_UNREACHABLE": 183,
+   "OTHER_SOURCE_NAMES_POLITICIAN": 4
+  },
+  "prior_class_corrections": 3
+ },
+ "verdicts": [
+  {
+   "politician_id": "dee11bee-c034-49b1-ba4c-30f94622ddd3",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Brittany Hume Charm",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.newtonvillearea.com/category/city-council",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "bda8ce6a-c704-45a1-85ed-fbcc6fecfb0c",
+   "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "politician": "Tony Cardenas",
+   "topic": "Fossil Fuel Policy",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://scorecard.lcv.org/moc/tony-c%C3%A1rdenas"
+   ],
+   "per_source": [
+    {
+     "url": "https://cardenas.house.gov/issues/environment-and-climate-change",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    },
+    {
+     "url": "https://cardenas.house.gov/6-encourage-clean-energy-alternatives-and-protect-our-environment",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "583a5fab-16d5-40c5-8c6c-25b9ea4b97ae",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Cyrus Dahmubed",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.newtonvillearea.com/category/city-council",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a2c6adc7-7689-49b9-964f-8f2aeb243a83",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "politician": "Sydney Kamlager-Dove",
+   "topic": "Medicare / Medicaid",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://kamlager-dove.house.gov/issues/health-care"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/3069",
+     "verdict": "HTTP_403",
+     "http": 403
+    },
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/3954",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a2c6adc7-7689-49b9-964f-8f2aeb243a83",
+   "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+   "politician": "Sydney Kamlager-Dove",
+   "topic": "Religious Freedom",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://kamlager-dove.house.gov/issues/lgbtq"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/15",
+     "verdict": "HTTP_403",
+     "http": 403
+    },
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/6151",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Brian Golden",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.newtonvillearea.com/category/city-council",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "politician": "Brian Golden",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.newtonvillearea.com/category/city-council",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Brian Golden",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.newtonvillearea.com/category/city-council",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c62e5d6a-0115-4f2d-9084-b0c3980e6db4",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Paul Coogan",
+   "topic": "Public Safety Approach",
+   "chair": "4.0",
+   "composed_urls": [
+    "https://www.heraldnews.com/story/news/local/2021/03/15/fall-river-mayor-coogan-public-safety-police-budget/4711234001/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.wpri.com/news/local-news/fall-river/fall-river-mayor-public-safety-initiatives-2022/",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c62e5d6a-0115-4f2d-9084-b0c3980e6db4",
+   "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "politician": "Paul Coogan",
+   "topic": "Criminalization of Homelessness",
+   "chair": "4.0",
+   "composed_urls": [
+    "https://www.heraldnews.com/story/news/local/2023/04/18/fall-river-homelessness-mayor-coogan-approach/9911234001/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.wpri.com/news/local-news/fall-river/fall-river-homelessness-encampments-2023/",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "5b590765-e701-41cf-b0c3-e7efdeea16d3",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Lisa Gordon",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.newtonvillearea.com/category/city-council",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "b3231976-f6f0-4f7f-960e-4ba5cdac9700",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Becky Grossman",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "b3231976-f6f0-4f7f-960e-4ba5cdac9700",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "politician": "Becky Grossman",
+   "topic": "Environmental Protection vs. Development",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2025/becky-grossman-mayor-campaign-environment",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "b3231976-f6f0-4f7f-960e-4ba5cdac9700",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "politician": "Becky Grossman",
+   "topic": "Climate Change and Environmental Protection",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/sustainability/climate-action-plan"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2025/becky-grossman-mayor-campaign-environment",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "b3231976-f6f0-4f7f-960e-4ba5cdac9700",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Becky Grossman",
+   "topic": "Transportation Priorities",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2025/becky-grossman-mayor-transportation",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "b3231976-f6f0-4f7f-960e-4ba5cdac9700",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Becky Grossman",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2025/becky-grossman-mayor-campaign-environment",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "b3231976-f6f0-4f7f-960e-4ba5cdac9700",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Becky Grossman",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.wbur.org/news/2025/09/newton-mayor-race-housing"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2025/newton-mayor-race-public-safety",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "cbc9201b-a23c-44ff-af75-5174d4531762",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "David Kalis",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "cbc9201b-a23c-44ff-af75-5174d4531762",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "David Kalis",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c62e5d6a-0115-4f2d-9084-b0c3980e6db4",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Paul Coogan",
+   "topic": "Transportation Priorities",
+   "chair": "3.0",
+   "composed_urls": [
+    "https://www.heraldnews.com/story/news/local/2023/06/20/south-coast-rail-fall-river-coogan/10311234001/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.wpri.com/news/local-news/fall-river/south-coast-rail-fall-river-update-2023/",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "94de05c6-d1bc-4cd5-ae9a-7c292ec8149e",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "politician": "Lula Davis-Holmes",
+   "topic": "Environmental Protection vs. Development",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.precinctreporter.com/2022/10/carson-environmental-justice-mayor/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.dailybreeze.com/2023/03/22/carson-refinery-pollution-city-response-davis-holmes/",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "fbec8ba0-4a3c-4704-b4a5-9cddc42a3635",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Andrea Kelley",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "fbec8ba0-4a3c-4704-b4a5-9cddc42a3635",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Andrea Kelley",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "fbec8ba0-4a3c-4704-b4a5-9cddc42a3635",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Andrea Kelley",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/newton-public-safety-review",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "d0977350-df68-4cfe-822e-816ba13f9213",
+   "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+   "politician": "Traci Park",
+   "topic": "Deportation Priorities",
+   "chair": "4.0",
+   "composed_urls": [
+    "https://www.audacy.com/knxnews/news/local/la-councilmember-traci-park-blasts-sanctuary-city-law"
+   ],
+   "per_source": [
+    {
+     "url": "https://lapublicpress.org/2026/04/los-angeles-primary-june-election-candidates-la-city-council-district-11/",
+     "verdict": "HTTP_403",
+     "http": 403
+    },
+    {
+     "url": "https://www.dailynews.com/2024/11/19/los-angeles-city-council-passes-sanctuary-city-ordinance/",
+     "verdict": "NAMES_POLITICIAN",
+     "http": 200
+    }
+   ],
+   "bucket": "OTHER_SOURCE_NAMES_POLITICIAN"
+  },
+  {
+   "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Josh Krintzman",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "politician": "Josh Krintzman",
+   "topic": "Climate Change and Environmental Protection",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/sustainability/climate-action-plan"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/krintzman-climate-newton-council",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Josh Krintzman",
+   "topic": "Transportation Priorities",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Josh Krintzman",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/krintzman-village-center-development",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a2c6adc7-7689-49b9-964f-8f2aeb243a83",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "politician": "Sydney Kamlager-Dove",
+   "topic": "Artificial Intelligence Oversight",
+   "chair": "4.0",
+   "composed_urls": [
+    "https://kamlager-dove.house.gov/issues/technology"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/1941",
+     "verdict": "HTTP_403",
+     "http": 403
+    },
+    {
+     "url": "https://www.congress.gov/member/sydney-kamlager-dove/K000402?q=%7B%22search%22%3A%22AI%22%7D",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Josh Krintzman",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2022/newton-police-reform-council",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "politician": "Josh Krintzman",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/krintzman-housing-tenant-protections",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Josh Krintzman",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2024/newton-welcoming-city-immigration",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "politician": "Josh Krintzman",
+   "topic": "Civil Rights and Social Justice",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/newton-council-civil-rights-resolution",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "bc313a82-8b30-4ca7-acdb-47d2cc6906e3",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Allison Leary",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "bc313a82-8b30-4ca7-acdb-47d2cc6906e3",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Allison Leary",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "bc313a82-8b30-4ca7-acdb-47d2cc6906e3",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Allison Leary",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/newton-public-safety-review",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "36e3f861-85f4-42b5-a7ff-a406e7b05302",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Tarik Lucas",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "36e3f861-85f4-42b5-a7ff-a406e7b05302",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Tarik Lucas",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c6a65ddf-9c48-4683-9100-28ce1c9f7983",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "John Oliver",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c6a65ddf-9c48-4683-9100-28ce1c9f7983",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "John Oliver",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "e9abe848-ca92-4197-924d-294e7ed92100",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Sean Roche",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "e9abe848-ca92-4197-924d-294e7ed92100",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Sean Roche",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "e9abe848-ca92-4197-924d-294e7ed92100",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Sean Roche",
+   "topic": "Transportation Priorities",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "1581974b-2a8c-4439-acae-377bc06e1788",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "politician": "Jim Dear",
+   "topic": "Economic Development Incentives",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.latimes.com/socal/daily-pilot/news/story/carson-economic-development-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.dailybreeze.com/2020/06/18/amazon-warehouse-carson-city-council-approval/",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+   "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+   "politician": "Ayanna Pressley",
+   "topic": "Jail Capacity and Incarceration Alternatives",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://pressley.house.gov/issues/criminal-justice",
+    "https://www.govtrack.us/congress/members/ayanna_pressley/P000617"
+   ],
+   "per_source": [
+    {
+     "url": "https://congress.gov/bill/117th-congress/house-bill/1442",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+   "topic_id": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+   "politician": "Ayanna Pressley",
+   "topic": "Access to Justice",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://pressley.house.gov/issues/criminal-justice"
+   ],
+   "per_source": [
+    {
+     "url": "https://congress.gov/bill/117th-congress/house-bill/3407",
+     "verdict": "HTTP_403",
+     "http": 403
+    },
+    {
+     "url": "https://congress.gov/member/ayanna-pressley/P000617",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "politician": "Ayanna Pressley",
+   "topic": "Prosecution Priorities",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://pressley.house.gov/issues/criminal-justice"
+   ],
+   "per_source": [
+    {
+     "url": "https://congress.gov/bill/117th-congress/house-bill/1442",
+     "verdict": "HTTP_403",
+     "http": 403
+    },
+    {
+     "url": "https://congress.gov/member/ayanna-pressley/P000617",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+   "topic_id": "6674d87e-999d-433a-aab7-3f626f59fd5f",
+   "politician": "Ayanna Pressley",
+   "topic": "Transparency in Legal Proceedings",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://pressley.house.gov/issues/democracy"
+   ],
+   "per_source": [
+    {
+     "url": "https://congress.gov/bill/118th-congress/senate-bill/359",
+     "verdict": "HTTP_403",
+     "http": 403
+    },
+    {
+     "url": "https://congress.gov/member/ayanna-pressley/P000617",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+   "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+   "politician": "Ayanna Pressley",
+   "topic": "Social Security",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://pressley.house.gov/issues/seniors"
+   ],
+   "per_source": [
+    {
+     "url": "https://congress.gov/bill/117th-congress/house-bill/4583",
+     "verdict": "HTTP_403",
+     "http": 403
+    },
+    {
+     "url": "https://congress.gov/member/ayanna-pressley/P000617",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "ec923a42-9b27-4f8a-a839-69d6e45c2cf8",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Jacob Silber",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "ec923a42-9b27-4f8a-a839-69d6e45c2cf8",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Jacob Silber",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "8a35fe01-8450-4726-a9b3-b61b7a967475",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Pamela Wright",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "8a35fe01-8450-4726-a9b3-b61b7a967475",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Pamela Wright",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "politician": "Stephen Lynch",
+   "topic": "Reproductive Rights and Abortion Access",
+   "chair": "4.0",
+   "composed_urls": [
+    "https://votesmart.org/candidate/evaluations/7740/stephen-lynch"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.naral.org/scorecards/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    },
+    {
+     "url": "https://www.ontheissues.org/MA/Steve_Lynch.htm",
+     "verdict": "NAMES_POLITICIAN",
+     "http": 200
+    }
+   ],
+   "bucket": "OTHER_SOURCE_NAMES_POLITICIAN"
+  },
+  {
+   "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "politician": "Stephen Lynch",
+   "topic": "Immigration and Treatment of Immigrants",
+   "chair": "3.0",
+   "composed_urls": [
+    "https://lynch.house.gov/issues/immigration",
+    "https://votesmart.org/candidate/evaluations/7740/stephen-lynch"
+   ],
+   "per_source": [
+    {
+     "url": "https://congress.gov/member/stephen-lynch/L000562",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "politician": "Stephen Lynch",
+   "topic": "School Vouchers & Public Education Funding",
+   "chair": "4.0",
+   "composed_urls": [
+    "https://lynch.house.gov/issues/education",
+    "https://votesmart.org/candidate/evaluations/7740/stephen-lynch"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.ontheissues.org/MA/Steve_Lynch.htm",
+     "verdict": "NAMES_POLITICIAN",
+     "http": 200
+    }
+   ],
+   "bucket": "OTHER_SOURCE_NAMES_POLITICIAN"
+  },
+  {
+   "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+   "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+   "politician": "Stephen Lynch",
+   "topic": "Social Security",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://lynch.house.gov/issues/seniors",
+    "https://votesmart.org/candidate/evaluations/7740/stephen-lynch"
+   ],
+   "per_source": [
+    {
+     "url": "https://congress.gov/member/stephen-lynch/L000562",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "9d34705c-0a66-4c08-8936-7e63629ce435",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "R. Lisle Baker",
+   "topic": "Transportation Priorities",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "ef936b01-3409-4b17-96ff-48b08c3cfdea",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Martha Bixby",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "ef936b01-3409-4b17-96ff-48b08c3cfdea",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Martha Bixby",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a3bc0f3b-3cee-4c3a-bfea-5aa382a161eb",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Randy Block",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a3bc0f3b-3cee-4c3a-bfea-5aa382a161eb",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Randy Block",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://commonwealthbeacon.org/housing/mbta-communities-zoning-medford/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/departments/planning-development/housing/",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.wbur.org/news/2023/10/18/mbta-communities-zoning-compliance"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/departments/planning-development/zoning/",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Transportation Priorities",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.bostonglobe.com/2022/04/14/metro/mayors-push-mbta-service-restoration/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.medfordma.org/medford-mayor-lungo-koehn-advocates-for-green-line-extension/",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c04fedbe-a020-433c-a47a-3e737a5ccbe4",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Stephen Farrell",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c04fedbe-a020-433c-a47a-3e737a5ccbe4",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Stephen Farrell",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.bostonglobe.com/2025/01/28/metro/mass-mayors-immigration-enforcement/"
+   ],
+   "per_source": [
+    {
+     "url": "https://medfordmirror.com/2025/02/medford-mayor-immigration-welcoming-city/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://malegislature.gov/People/Profile/B_L1/BillsSponsored"
+   ],
+   "per_source": [
+    {
+     "url": "https://medfordmirror.com/2021/08/lungo-koehn-community-health-arpa/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "politician": "Breanna Lungo-Koehn",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://commonwealthbeacon.org/housing/mayors-call-for-rent-control-home-rule/"
+   ],
+   "per_source": [
+    {
+     "url": "https://medfordmirror.com/2023/05/lungo-koehn-rent-control-ma-mayors/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "3d68627c-c4cb-44f5-8b13-b48cd0edcd7a",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Maria S. Greenberg",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "3d68627c-c4cb-44f5-8b13-b48cd0edcd7a",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Maria S. Greenberg",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "df7397a9-5735-4d08-b113-e1684e11a144",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Isaac Bears",
+   "topic": "Transportation Priorities",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://malegislature.gov/People/Profile/Z_B1/BillsSponsored"
+   ],
+   "per_source": [
+    {
+     "url": "https://medfordmirror.com/2022/05/zac-bears-mbta-service-restoration-op-ed/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "3113dcf1-5775-46cc-bb55-4881611fbd98",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Julie Irish",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "3113dcf1-5775-46cc-bb55-4881611fbd98",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Julie Irish",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a00a26a4-f0f1-4a12-945a-d52498de8a3f",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Julia Malakie",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a00a26a4-f0f1-4a12-945a-d52498de8a3f",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Julia Malakie",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "3865037a-c226-4b93-a769-e13898efe226",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "David Micley",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "3865037a-c226-4b93-a769-e13898efe226",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "David Micley",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.newtonma.gov/government/city-council/agendas-minutes"
+   ],
+   "per_source": [
+    {
+     "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "41ced04d-7403-4170-a267-c339191e6fcd",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Jake Wilson",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2025/01/08/mayor-wilson-sanctuary-city/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "41ced04d-7403-4170-a267-c339191e6fcd",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "politician": "Jake Wilson",
+   "topic": "Homelessness Response",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/somerville-homeless-coalition"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2026/02/wilson-homelessness-housing-first/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "41ced04d-7403-4170-a267-c339191e6fcd",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Jake Wilson",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/somerville-heart-program"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2022/11/heart-program-expansion/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "5fdefd59-b543-4221-b6ed-b33532f9bd5f",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "politician": "Ronald Mariano",
+   "topic": "Campaign Finance Reform",
+   "chair": "3.0",
+   "composed_urls": [
+    "https://www.bostonglobe.com/2021/01/21/metro/mariano-elected-house-speaker/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.opensecrets.org/",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "5fdefd59-b543-4221-b6ed-b33532f9bd5f",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "politician": "Ronald Mariano",
+   "topic": "Taxation and Public Spending",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.bostonglobe.com/2023/09/26/metro/massachusetts-tax-relief-package-governor-healey/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.ballotpedia.org/Massachusetts_Question_1,_Income_Tax_Surtax_for_Education_and_Transportation_Amendment_(2022)",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "41ced04d-7403-4170-a267-c339191e6fcd",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Jake Wilson",
+   "topic": "Transportation Priorities",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/somerville-by-design"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2024/03/wilson-bike-lanes-transit/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "41ced04d-7403-4170-a267-c339191e6fcd",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "politician": "Jake Wilson",
+   "topic": "Economic Development Incentives",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/economic-development"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2024/12/wilson-union-square-development/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "8242a03d-6801-4b91-aed9-918a603b4a21",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Jon Link",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/jon-link"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2023/11/link-council-election/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "8242a03d-6801-4b91-aed9-918a603b4a21",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "politician": "Jon Link",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/jon-link"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2024/05/somerville-rent-stabilization-debate/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "8242a03d-6801-4b91-aed9-918a603b4a21",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Jon Link",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "8242a03d-6801-4b91-aed9-918a603b4a21",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Jon Link",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/somerville-heart-program"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2024/09/heart-expansion-council-vote/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "8242a03d-6801-4b91-aed9-918a603b4a21",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Jon Link",
+   "topic": "Transportation Priorities",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/somerville-by-design"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2023/11/link-council-election/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "9b11117c-d064-404b-8c89-0042f417c576",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Wilfred N. Mbah",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/wilfred-mbah"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2022/09/mbah-housing-equity/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "9b11117c-d064-404b-8c89-0042f417c576",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "politician": "Wilfred N. Mbah",
+   "topic": "Immigration and Treatment of Immigrants",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2020/09/mbah-immigrant-rights-op-ed/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "9b11117c-d064-404b-8c89-0042f417c576",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Wilfred N. Mbah",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2021/10/mbah-sanctuary-icu-resolution/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "9b11117c-d064-404b-8c89-0042f417c576",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "politician": "Wilfred N. Mbah",
+   "topic": "Civil Rights and Social Justice",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/wilfred-mbah"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2020/06/mbah-racial-justice-statement/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "9b11117c-d064-404b-8c89-0042f417c576",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Wilfred N. Mbah",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/somerville-heart-program"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2020/07/mbah-police-reform-council/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "9b11117c-d064-404b-8c89-0042f417c576",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "politician": "Wilfred N. Mbah",
+   "topic": "Homelessness Response",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/somerville-homeless-coalition"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2023/09/mbah-homelessness-housing-first/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "1e5429d3-c4b2-4a1f-913f-483833565e93",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Kristen E. Strezo",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/kristen-strezo"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2022/09/somerville-housing-debate-council/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "1e5429d3-c4b2-4a1f-913f-483833565e93",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "politician": "Kristen E. Strezo",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/kristen-strezo"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2024/05/somerville-rent-stabilization-debate/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "1e5429d3-c4b2-4a1f-913f-483833565e93",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Kristen E. Strezo",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/somerville-heart-program"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2022/07/somerville-police-reform-update/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "1e5429d3-c4b2-4a1f-913f-483833565e93",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Kristen E. Strezo",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "1e5429d3-c4b2-4a1f-913f-483833565e93",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Kristen E. Strezo",
+   "topic": "Transportation Priorities",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/somerville-by-design"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2024/03/somerville-bike-lane-debate/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "ce379255-f87e-4856-9e2c-dda38c976bdc",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Ben Wheeler",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/ben-wheeler"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2023/11/somerville-at-large-council-results/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "ce379255-f87e-4856-9e2c-dda38c976bdc",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Ben Wheeler",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "5b2a514f-ea4b-4476-bf45-0d221a138d3a",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Matthew McLaughlin",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/matthew-mclaughlin"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2023/05/somerville-ward1-housing-development/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "5b2a514f-ea4b-4476-bf45-0d221a138d3a",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Matthew McLaughlin",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/somerville-heart-program"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2022/07/somerville-police-reform-update/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "5b2a514f-ea4b-4476-bf45-0d221a138d3a",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Matthew McLaughlin",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "cab6c573-7335-4c8f-8100-5063908dba32",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "politician": "Anna Callahan",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://commonwealthbeacon.org/housing/mayors-call-for-rent-control-home-rule/"
+   ],
+   "per_source": [
+    {
+     "url": "https://medfordmirror.com/2023/05/medford-council-rent-stabilization-discussion/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a79ac715-57a6-4a18-82a0-0b8a5ed60464",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Jefferson Thomas Scott",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/jefferson-scott"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2022/10/somerville-brickbottom-development/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a79ac715-57a6-4a18-82a0-0b8a5ed60464",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Jefferson Thomas Scott",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "073a3e12-55bb-4c88-9bd9-3333b93f40cd",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Ben Ewen-Campen",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/ben-ewen-campen"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2021/04/ewen-campen-housing-resolution/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "073a3e12-55bb-4c88-9bd9-3333b93f40cd",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Ben Ewen-Campen",
+   "topic": "Public Safety Approach",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/somerville-heart-program"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2021/03/somerville-heart-program-launched/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "21e534c8-c0c0-42f5-b52b-5eb2f246d632",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "politician": "Wes Moore",
+   "topic": "Environmental Protection vs. Development",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://governor.maryland.gov/priorities/environment/"
+   ],
+   "per_source": [
+    {
+     "url": "https://marylandmatters.org/2023/chesapeake-bay-protection/",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "073a3e12-55bb-4c88-9bd9-3333b93f40cd",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Ben Ewen-Campen",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2021/10/mbah-sanctuary-icu-resolution/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "073a3e12-55bb-4c88-9bd9-3333b93f40cd",
+   "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+   "politician": "Ben Ewen-Campen",
+   "topic": "Deportation Priorities",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2025/01/somerville-anti-deportation-response/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "073a3e12-55bb-4c88-9bd9-3333b93f40cd",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Ben Ewen-Campen",
+   "topic": "Transportation Priorities",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/somerville-by-design"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2022/08/ewen-campen-bike-lane-resolution/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "073a3e12-55bb-4c88-9bd9-3333b93f40cd",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "politician": "Ben Ewen-Campen",
+   "topic": "Civil Rights and Social Justice",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/ben-ewen-campen"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2020/06/somerville-racial-justice-resolution/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "073a3e12-55bb-4c88-9bd9-3333b93f40cd",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "politician": "Ben Ewen-Campen",
+   "topic": "Homelessness Response",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/somerville-homeless-coalition"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2023/09/somerville-homelessness-housing-first/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "13f3e9dc-67fc-4115-99a5-77c4647f1b3c",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Jesse Clingan",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/somerville-heart-program"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2022/07/somerville-police-reform-update/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "13f3e9dc-67fc-4115-99a5-77c4647f1b3c",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Jesse Clingan",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "cb506153-5bd5-4b43-b982-58d07c9611e4",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Naima Sait",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/naima-sait"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2022/04/somerville-housing-equity-council/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "cb506153-5bd5-4b43-b982-58d07c9611e4",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Naima Sait",
+   "topic": "Public Safety Approach",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/somerville-heart-program"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2021/11/sait-public-safety-social-work/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "cb506153-5bd5-4b43-b982-58d07c9611e4",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "politician": "Naima Sait",
+   "topic": "Civil Rights and Social Justice",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/naima-sait"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2021/11/sait-racial-equity-election/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "cb506153-5bd5-4b43-b982-58d07c9611e4",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Naima Sait",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "cb506153-5bd5-4b43-b982-58d07c9611e4",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "politician": "Naima Sait",
+   "topic": "Homelessness Response",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/somerville-homeless-coalition"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2022/11/sait-homelessness-social-services/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "3c43a3fa-9c89-4278-8d36-f5e4e5000d64",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Lance L. Davis",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/lance-davis"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2023/05/somerville-housing-council-president/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "3c43a3fa-9c89-4278-8d36-f5e4e5000d64",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "politician": "Lance L. Davis",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/lance-davis"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2024/05/somerville-rent-stabilization-debate/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "3c43a3fa-9c89-4278-8d36-f5e4e5000d64",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "politician": "Lance L. Davis",
+   "topic": "Public Safety Approach",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/somerville-heart-program"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2022/07/somerville-police-reform-update/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "3c43a3fa-9c89-4278-8d36-f5e4e5000d64",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Lance L. Davis",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "3c43a3fa-9c89-4278-8d36-f5e4e5000d64",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "politician": "Lance L. Davis",
+   "topic": "Economic Development Incentives",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/economic-development"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2023/08/somerville-gilman-square-development/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "bc02a2c7-2033-40a3-89f6-e50d95ac1e4e",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Emily Hardt",
+   "topic": "Affordable Housing",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/city-council/members/emily-hardt"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2025/11/somerville-ward7-council-election/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "bc02a2c7-2033-40a3-89f6-e50d95ac1e4e",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Emily Hardt",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "b9c5dd29-eeb5-4903-af31-d4ab09041b0a",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Jared Nicholson",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/02/mayor-nicholson-supports-mbta-communities-zoning"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/news/mayor-nicholson-announces-housing-development-initiative",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "b9c5dd29-eeb5-4903-af31-d4ab09041b0a",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "politician": "Jared Nicholson",
+   "topic": "Economic Development Incentives",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2022/09/mayor-nicholson-economic-development-downtown"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/news/lynn-waterfront-master-plan",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "b9c5dd29-eeb5-4903-af31-d4ab09041b0a",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Jared Nicholson",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/04/nicholson-waterfront-development-plans"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/news/downtown-development-updates",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "b9c5dd29-eeb5-4903-af31-d4ab09041b0a",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "politician": "Jared Nicholson",
+   "topic": "Environmental Protection vs. Development",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/03/nicholson-environmental-justice-lynn"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/news/lynn-harbor-cleanup-waterfront",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "b9c5dd29-eeb5-4903-af31-d4ab09041b0a",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "politician": "Jared Nicholson",
+   "topic": "Homelessness Response",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2022/10/nicholson-homelessness-task-force-lynn"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/news/homelessness-services-update",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "b9c5dd29-eeb5-4903-af31-d4ab09041b0a",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Jared Nicholson",
+   "topic": "Local Immigration Enforcement",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2025/02/nicholson-defends-immigrant-community-ice-enforcement"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/office-of-new-americans",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "b9c5dd29-eeb5-4903-af31-d4ab09041b0a",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Jared Nicholson",
+   "topic": "Transportation Priorities",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/05/nicholson-ferry-service-lynn-boston"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/news/complete-streets-grant",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "6d30fb7c-99cb-4705-86bc-c3d13ffd44d4",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Brian M. Field",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/03/lynn-city-council-housing-zoning-vote"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "6d30fb7c-99cb-4705-86bc-c3d13ffd44d4",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "politician": "Brian M. Field",
+   "topic": "Economic Development Incentives",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2022/11/lynn-city-council-tif-economic-development"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/agendas",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "965de422-660e-4e24-9fe6-717cc0313403",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Adena Ishii",
+   "topic": "Transportation Priorities",
+   "chair": "4.0",
+   "composed_urls": [
+    "https://mayoradenaishii.com/from-the-mayors-desk"
+   ],
+   "per_source": [
+    {
+     "url": "https://berkeleyca.gov/your-government/city-council/council-roster/adena-ishii",
+     "verdict": "NAMES_POLITICIAN",
+     "http": 200
+    },
+    {
+     "url": "https://berkeleyca.gov/city-council-regular-meeting-eagenda-march-24-2026",
+     "verdict": "NAMES_POLITICIAN",
+     "http": 200
+    }
+   ],
+   "bucket": "OTHER_SOURCE_NAMES_POLITICIAN"
+  },
+  {
+   "politician_id": "6d30fb7c-99cb-4705-86bc-c3d13ffd44d4",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Brian M. Field",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/05/lynn-council-development-votes"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a24baf50-54d3-4319-9bfb-f354c3f5ca03",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Brian P. LaPierre",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/03/lynn-council-housing-vote"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "a24baf50-54d3-4319-9bfb-f354c3f5ca03",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "politician": "Brian P. LaPierre",
+   "topic": "Economic Development Incentives",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2022/10/lynn-council-economic-development"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/agendas",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c0ba9af7-714c-44c7-a3e4-abf735fb0ad9",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Nicole D. McClain",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/03/lynn-city-council-housing-zoning-vote"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c0ba9af7-714c-44c7-a3e4-abf735fb0ad9",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "politician": "Nicole D. McClain",
+   "topic": "Economic Development Incentives",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2022/11/lynn-council-economic-development-tif"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/agendas",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c0ba9af7-714c-44c7-a3e4-abf735fb0ad9",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "politician": "Nicole D. McClain",
+   "topic": "Homelessness Response",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2022/10/lynn-homelessness-task-force-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/news/homelessness-services-update",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "ddb4ff9a-d17a-4db7-9d70-b326aaf72e05",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Hong L. Net",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/03/lynn-city-council-housing-zoning-vote"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "3eab65f7-083a-49c6-9944-1a20a5373538",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Arthur Donahue",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://mass.gov/info-details/mbta-communities-compliance-status"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.walthampatch.com/posts/waltham-mbta-communities-zoning-compliance-2024",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "3eab65f7-083a-49c6-9944-1a20a5373538",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Arthur Donahue",
+   "topic": "Residential Zoning",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://mass.gov/info-details/mbta-communities-compliance-status"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.walthamatch.com/posts/waltham-mbta-zoning-overlay-district-2024",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "bd6f9a13-40d9-4b6c-a1ef-64dc010c1f91",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Peter Meaney",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/03/lynn-city-council-housing-zoning-vote"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "bd6f9a13-40d9-4b6c-a1ef-64dc010c1f91",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Peter Meaney",
+   "topic": "Local Immigration Enforcement",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2025/02/lynn-council-immigrant-protections-resolution"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "e48dc9c7-8359-486c-8044-cbae730490e2",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Obed A. Matul",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/03/lynn-city-council-housing-zoning-vote"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "e48dc9c7-8359-486c-8044-cbae730490e2",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Obed A. Matul",
+   "topic": "Local Immigration Enforcement",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2025/02/lynn-council-immigrant-protections-resolution"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "42550273-382a-481f-afc9-ccdf32329bf6",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Colleen Bradley-MacArthur",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://mass.gov/info-details/mbta-communities-compliance-status"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.walthampatch.com/posts/waltham-city-council-mbta-zoning-vote-2024",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "f8fc0768-f42d-426c-b580-b053cb802f3f",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Constantino Alinsug",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/03/lynn-city-council-housing-zoning-vote"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "f8fc0768-f42d-426c-b580-b053cb802f3f",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Constantino Alinsug",
+   "topic": "Local Immigration Enforcement",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2025/02/lynn-council-immigrant-protections-resolution"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "94051951-ca12-452e-bfa3-854dbce765eb",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Natasha S. Megie-Maddrey",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/03/lynn-city-council-housing-zoning-vote"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "94051951-ca12-452e-bfa3-854dbce765eb",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Natasha S. Megie-Maddrey",
+   "topic": "Local Immigration Enforcement",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2025/02/lynn-council-immigrant-protections-resolution"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "28d25ed6-6a0f-428e-8b42-85a448ffb0c2",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Paul Brasco",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://mass.gov/info-details/mbta-communities-compliance-status"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.walthampatch.com/posts/waltham-city-council-mbta-zoning-vote-2024",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "9c897f77-6567-4a07-a810-c3fb11f2e50c",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Cardeliz Paez",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/03/lynn-city-council-housing-zoning-vote"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "9c897f77-6567-4a07-a810-c3fb11f2e50c",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Cardeliz Paez",
+   "topic": "Local Immigration Enforcement",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2025/02/lynn-council-immigrant-protections-resolution"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "d4aa5f35-7491-450d-9c7e-ada82378504d",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Frederick W. Hogan",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/03/lynn-city-council-housing-zoning-vote"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "d4aa5f35-7491-450d-9c7e-ada82378504d",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Frederick W. Hogan",
+   "topic": "Local Immigration Enforcement",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2025/02/lynn-council-immigrant-protections-resolution"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "ab208b92-9067-4f3d-9791-60b404793b3a",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Tim King",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://mass.gov/info-details/mbta-communities-compliance-status"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.walthampatch.com/posts/waltham-city-council-mbta-zoning-vote-2024",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "73a1f2f1-9112-4820-b853-8a8542c72d85",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Randall LeBlanc",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://mass.gov/info-details/mbta-communities-compliance-status"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.walthampatch.com/posts/waltham-city-council-mbta-zoning-vote-2024",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+   "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+   "politician": "Seth Moulton",
+   "topic": "Data Center Development & Energy Costs",
+   "chair": "3.0",
+   "composed_urls": [
+    "https://moulton.house.gov/issues/technology"
+   ],
+   "per_source": [
+    {
+     "url": "https://congress.gov/member/seth-moulton/M001196",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Seth Moulton",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://moulton.house.gov/issues/jobs-economy"
+   ],
+   "per_source": [
+    {
+     "url": "https://congress.gov/member/seth-moulton/M001196",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+   "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+   "politician": "Seth Moulton",
+   "topic": "Misinformation and the Role of Algorithms in Democracy",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://moulton.house.gov/issues/national-security",
+    "https://armedservices.house.gov/press-releases"
+   ],
+   "per_source": [
+    {
+     "url": "https://congress.gov/member/seth-moulton/M001196",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+   "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+   "politician": "Ayanna Pressley",
+   "topic": "Data Center Development & Energy Costs",
+   "chair": "3.0",
+   "composed_urls": [
+    "https://pressley.house.gov/issues/climate",
+    "https://pressley.house.gov/issues/technology"
+   ],
+   "per_source": [
+    {
+     "url": "https://congress.gov/member/ayanna-pressley/P000617",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "politician": "Ayanna Pressley",
+   "topic": "Bail and Pretrial Decisions",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://pressley.house.gov/issues/criminal-justice",
+    "https://www.govtrack.us/congress/members/ayanna_pressley/P000617"
+   ],
+   "per_source": [
+    {
+     "url": "https://congress.gov/bill/117th-congress/house-bill/1437",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+   "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+   "politician": "Stephen Lynch",
+   "topic": "Data Center Development & Energy Costs",
+   "chair": "3.0",
+   "composed_urls": [
+    "https://lynch.house.gov/issues/technology"
+   ],
+   "per_source": [
+    {
+     "url": "https://congress.gov/member/stephen-lynch/L000562",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+   "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+   "politician": "Stephen Lynch",
+   "topic": "Deportation Priorities",
+   "chair": "3.0",
+   "composed_urls": [
+    "https://lynch.house.gov/issues/immigration",
+    "https://votesmart.org/candidate/evaluations/7740/stephen-lynch"
+   ],
+   "per_source": [
+    {
+     "url": "https://congress.gov/member/stephen-lynch/L000562",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "1f6e314e-c34f-43dd-b599-ff8d4c2caee9",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "politician": "Jordan T. Avery",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2023/03/lynn-city-council-housing-zoning-vote"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "1f6e314e-c34f-43dd-b599-ff8d4c2caee9",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Jordan T. Avery",
+   "topic": "Local Immigration Enforcement",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.lynnjournal.com/2025/02/lynn-council-immigrant-protections-resolution"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.lynnma.gov/city-council/minutes",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c2eac407-10ce-4f4e-8796-1acb3feb42ac",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "politician": "Erik R. Gitschier",
+   "topic": "Homelessness Response",
+   "chair": "4.0",
+   "composed_urls": [
+    "https://lowellma.gov/mayor"
+   ],
+   "per_source": [
+    {
+     "url": "https://lowellsun.com/2024/01/15/lowell-launches-housing-first-initiative/",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c2eac407-10ce-4f4e-8796-1acb3feb42ac",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Erik R. Gitschier",
+   "topic": "Local Immigration Enforcement",
+   "chair": "3.0",
+   "composed_urls": [
+    "https://lowellma.gov/mayor"
+   ],
+   "per_source": [
+    {
+     "url": "https://lowellsun.com/2023/11/04/lowell-mayor-immigration-policy/",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c2eac407-10ce-4f4e-8796-1acb3feb42ac",
+   "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+   "politician": "Erik R. Gitschier",
+   "topic": "Data Center Development & Energy Costs",
+   "chair": "3.0",
+   "composed_urls": [
+    "https://lowellma.gov/mayor"
+   ],
+   "per_source": [
+    {
+     "url": "https://lowellsun.com/2024/03/20/lowell-tech-economy-development/",
+     "verdict": "HTTP_404",
+     "http": 404
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "9c64b145-cce4-4b31-a4e0-c041a12af62b",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Marc C. Laredo",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://newtonma.gov/government/city-council/city-council-meetings"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "politician": "Susan Albright",
+   "topic": "Residential Zoning",
+   "chair": "1.0",
+   "composed_urls": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.newtonvillearea.com/category/city-council",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "politician": "Susan Albright",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.newtonvillearea.com/category/city-council",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "politician": "Susan Albright",
+   "topic": "Growth and Development Pace",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://newtonma.gov/government/city-council"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.newtonvillearea.com/category/city-council",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "c0dad47a-8ac9-4ae5-9990-d5f1e16e0c71",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "politician": "Daniel E. Dugan",
+   "topic": "Transportation Priorities",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://www.slc.gov/council/completed-projects/connect-slc-a-city-wide-transportation-plan/"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.axios.com/local/salt-lake-city/2023/10/30/council-candidate-dan-dugan-election-district-6",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "169596c9-1ece-4a8a-b601-ce87af369a33",
+   "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "politician": "Brian Knudsen",
+   "topic": "Criminalization of Homelessness",
+   "chair": "2.0",
+   "composed_urls": [
+    "https://battlebornprogress.org/homelessordinancevote/"
+   ],
+   "per_source": [
+    {
+     "url": "https://m.lasvegassun.com/news/2019/nov/06/tense-las-vegas-council-oks-homeless-ordinance/",
+     "verdict": "FETCH_FAILED",
+     "http": null
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  },
+  {
+   "politician_id": "8fbc9fc7-6840-450f-b490-24c41b2a153f",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "politician": "Frank Bubenik",
+   "topic": "Local Immigration Enforcement",
+   "chair": "3.0",
+   "composed_urls": [
+    "https://www.valleytimes.news/news/tualatin-an-inclusive-city-city-council-declares-in-unanimous-vote/article_56c42f54-ee21-5a28-aad7-fef95025a927.html"
+   ],
+   "per_source": [
+    {
+     "url": "https://www.koin.com/am-extra/tualatin-oregon-inclusion-diversity-access/",
+     "verdict": "HTTP_403",
+     "http": 403
+    }
+   ],
+   "bucket": "STILL_UNREACHABLE"
+  }
+ ],
+ "fetches": [
+  {
+   "url": "https://www.newtonvillearea.com/category/city-council",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://cardenas.house.gov/issues/environment-and-climate-change",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://cardenas.house.gov/6-encourage-clean-energy-alternatives-and-protect-our-environment",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/3069",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://www.congress.gov/bill/119th-congress/house-bill/3069",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/3954",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://www.congress.gov/bill/119th-congress/house-bill/3954",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/15",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://www.congress.gov/bill/119th-congress/house-bill/15",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.congress.gov/bill/118th-congress/house-bill/6151",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://www.congress.gov/bill/118th-congress/house-bill/6151",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.wpri.com/news/local-news/fall-river/fall-river-mayor-public-safety-initiatives-2022/",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://www.wpri.com/news/local-news/fall-river/fall-river-mayor-public-safety-initiatives-2022/",
+   "title": "Access to this page has been denied",
+   "body_len": 375,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.wpri.com/news/local-news/fall-river/fall-river-homelessness-encampments-2023/",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://www.wpri.com/news/local-news/fall-river/fall-river-homelessness-encampments-2023/",
+   "title": "Access to this page has been denied",
+   "body_len": 375,
+   "soft_404": false
+  },
+  {
+   "url": "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://newtonobserver.com/2025/becky-grossman-mayor-campaign-environment",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://newtonobserver.com/2025/becky-grossman-mayor-transportation",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://newtonobserver.com/2025/newton-mayor-race-public-safety",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.wpri.com/news/local-news/fall-river/south-coast-rail-fall-river-update-2023/",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://www.wpri.com/news/local-news/fall-river/south-coast-rail-fall-river-update-2023/",
+   "title": "Access to this page has been denied",
+   "body_len": 375,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.dailybreeze.com/2023/03/22/carson-refinery-pollution-city-response-davis-holmes/",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://www.dailybreeze.com/2023/03/22/carson-refinery-pollution-city-response-davis-holmes/",
+   "title": "Checking your browser...",
+   "body_len": 44,
+   "soft_404": false
+  },
+  {
+   "url": "https://newtonobserver.com/2023/newton-public-safety-review",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://lapublicpress.org/2026/04/los-angeles-primary-june-election-candidates-la-city-council-district-11/",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://lapublicpress.org/2026/04/los-angeles-primary-june-election-candidates-la-city-council-district-11/",
+   "title": "Attention Required! | Cloudflare",
+   "body_len": 773,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.dailynews.com/2024/11/19/los-angeles-city-council-passes-sanctuary-city-ordinance/",
+   "prior_class": "BOT_BLOCKED",
+   "http": 200,
+   "final_url": "https://www.dailynews.com/2024/11/19/los-angeles-city-council-passes-sanctuary-city-ordinance-to-protect-migrants/",
+   "title": "Los Angeles City Council passes sanctuary city ordinance to protect migrants &#8211; Daily News",
+   "body_len": 6048,
+   "soft_404": false
+  },
+  {
+   "url": "https://newtonobserver.com/2023/krintzman-climate-newton-council",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://newtonobserver.com/2023/krintzman-village-center-development",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/1941",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://www.congress.gov/bill/119th-congress/house-bill/1941",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.congress.gov/member/sydney-kamlager-dove/K000402?q=%7B%22search%22%3A%22AI%22%7D",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://www.congress.gov/member/sydney-kamlager-dove/K000402?q=%7B%22search%22%3A%22AI%22%7D",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://newtonobserver.com/2022/newton-police-reform-council",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://newtonobserver.com/2023/krintzman-housing-tenant-protections",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://newtonobserver.com/2024/newton-welcoming-city-immigration",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://newtonobserver.com/2023/newton-council-civil-rights-resolution",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.dailybreeze.com/2020/06/18/amazon-warehouse-carson-city-council-approval/",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://www.dailybreeze.com/2020/06/18/amazon-warehouse-carson-city-council-approval/",
+   "title": "Checking your browser...",
+   "body_len": 44,
+   "soft_404": false
+  },
+  {
+   "url": "https://congress.gov/bill/117th-congress/house-bill/1442",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://congress.gov/bill/117th-congress/house-bill/1442",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://congress.gov/bill/117th-congress/house-bill/3407",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://congress.gov/bill/117th-congress/house-bill/3407",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://congress.gov/member/ayanna-pressley/P000617",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://congress.gov/member/ayanna-pressley/P000617",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://congress.gov/bill/118th-congress/senate-bill/359",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://congress.gov/bill/118th-congress/senate-bill/359",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://congress.gov/bill/117th-congress/house-bill/4583",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://congress.gov/bill/117th-congress/house-bill/4583",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.naral.org/scorecards/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.ontheissues.org/MA/Steve_Lynch.htm",
+   "prior_class": null,
+   "http": 200,
+   "final_url": "https://www.ontheissues.org/MA/Steve_Lynch.htm",
+   "title": "Steve Lynch on the Issues",
+   "body_len": 49095,
+   "soft_404": false
+  },
+  {
+   "url": "https://congress.gov/member/stephen-lynch/L000562",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://congress.gov/member/stephen-lynch/L000562",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.medfordma.org/departments/planning-development/housing/",
+   "prior_class": "GONE",
+   "http": 404,
+   "final_url": "https://www.medfordma.org/departments/planning-development/housing/",
+   "title": "404 - Page Not Found - City of Medford",
+   "body_len": 8595,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.medfordma.org/departments/planning-development/zoning/",
+   "prior_class": "GONE",
+   "http": 404,
+   "final_url": "https://www.medfordma.org/departments/planning-development/zoning/",
+   "title": "404 - Page Not Found - City of Medford",
+   "body_len": 8595,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.medfordma.org/medford-mayor-lungo-koehn-advocates-for-green-line-extension/",
+   "prior_class": "GONE",
+   "http": 404,
+   "final_url": "https://www.medfordma.org/medford-mayor-lungo-koehn-advocates-for-green-line-extension/",
+   "title": "404 - Page Not Found - City of Medford",
+   "body_len": 8595,
+   "soft_404": true
+  },
+  {
+   "url": "https://medfordmirror.com/2025/02/medford-mayor-immigration-welcoming-city/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://medfordmirror.com/2021/08/lungo-koehn-community-health-arpa/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://medfordmirror.com/2023/05/lungo-koehn-rent-control-ma-mayors/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://medfordmirror.com/2022/05/zac-bears-mbta-service-restoration-op-ed/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2025/01/08/mayor-wilson-sanctuary-city/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2026/02/wilson-homelessness-housing-first/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2022/11/heart-program-expansion/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.opensecrets.org/",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://www.opensecrets.org/",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.ballotpedia.org/Massachusetts_Question_1,_Income_Tax_Surtax_for_Education_and_Transportation_Amendment_(2022)",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2024/03/wilson-bike-lanes-transit/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2024/12/wilson-union-square-development/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2023/11/link-council-election/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2024/05/somerville-rent-stabilization-debate/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2024/09/heart-expansion-council-vote/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2022/09/mbah-housing-equity/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2020/09/mbah-immigrant-rights-op-ed/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2021/10/mbah-sanctuary-icu-resolution/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2020/06/mbah-racial-justice-statement/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2020/07/mbah-police-reform-council/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2023/09/mbah-homelessness-housing-first/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2022/09/somerville-housing-debate-council/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2022/07/somerville-police-reform-update/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2024/03/somerville-bike-lane-debate/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2023/11/somerville-at-large-council-results/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2023/05/somerville-ward1-housing-development/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://medfordmirror.com/2023/05/medford-council-rent-stabilization-discussion/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2022/10/somerville-brickbottom-development/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2021/04/ewen-campen-housing-resolution/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2021/03/somerville-heart-program-launched/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://marylandmatters.org/2023/chesapeake-bay-protection/",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://marylandmatters.org/2023/chesapeake-bay-protection/",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.somervillejournal.com/2025/01/somerville-anti-deportation-response/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2022/08/ewen-campen-bike-lane-resolution/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2020/06/somerville-racial-justice-resolution/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2023/09/somerville-homelessness-housing-first/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2022/04/somerville-housing-equity-council/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2021/11/sait-public-safety-social-work/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2021/11/sait-racial-equity-election/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2022/11/sait-homelessness-social-services/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2023/05/somerville-housing-council-president/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2023/08/somerville-gilman-square-development/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.somervillejournal.com/2025/11/somerville-ward7-council-election/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.lynnma.gov/news/mayor-nicholson-announces-housing-development-initiative",
+   "prior_class": "GONE",
+   "http": 404,
+   "final_url": "https://www.lynnma.gov/news/mayor-nicholson-announces-housing-development-initiative",
+   "title": "Page Not Found",
+   "body_len": 832,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.lynnma.gov/news/lynn-waterfront-master-plan",
+   "prior_class": "GONE",
+   "http": 404,
+   "final_url": "https://www.lynnma.gov/news/lynn-waterfront-master-plan",
+   "title": "Page Not Found",
+   "body_len": 832,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.lynnma.gov/news/downtown-development-updates",
+   "prior_class": "GONE",
+   "http": 404,
+   "final_url": "https://www.lynnma.gov/news/downtown-development-updates",
+   "title": "Page Not Found",
+   "body_len": 832,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.lynnma.gov/news/lynn-harbor-cleanup-waterfront",
+   "prior_class": "GONE",
+   "http": 404,
+   "final_url": "https://www.lynnma.gov/news/lynn-harbor-cleanup-waterfront",
+   "title": "Page Not Found",
+   "body_len": 832,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.lynnma.gov/news/homelessness-services-update",
+   "prior_class": "GONE",
+   "http": 404,
+   "final_url": "https://www.lynnma.gov/news/homelessness-services-update",
+   "title": "Page Not Found",
+   "body_len": 832,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.lynnma.gov/office-of-new-americans",
+   "prior_class": "GONE",
+   "http": 404,
+   "final_url": "https://www.lynnma.gov/office-of-new-americans",
+   "title": "Page Not Found",
+   "body_len": 832,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.lynnma.gov/news/complete-streets-grant",
+   "prior_class": "GONE",
+   "http": 404,
+   "final_url": "https://www.lynnma.gov/news/complete-streets-grant",
+   "title": "Page Not Found",
+   "body_len": 832,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.lynnma.gov/city-council/minutes",
+   "prior_class": "GONE",
+   "http": 404,
+   "final_url": "https://www.lynnma.gov/city-council/minutes",
+   "title": "Page Not Found",
+   "body_len": 832,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.lynnma.gov/city-council/agendas",
+   "prior_class": "GONE",
+   "http": 404,
+   "final_url": "https://www.lynnma.gov/city-council/agendas",
+   "title": "Page Not Found",
+   "body_len": 832,
+   "soft_404": true
+  },
+  {
+   "url": "https://berkeleyca.gov/your-government/city-council/council-roster/adena-ishii",
+   "prior_class": "BOT_BLOCKED",
+   "http": 200,
+   "final_url": "https://berkeleyca.gov/your-government/city-council/council-roster/adena-ishii",
+   "title": "Adena Ishii | City of Berkeley",
+   "body_len": 5063,
+   "soft_404": false
+  },
+  {
+   "url": "https://berkeleyca.gov/city-council-regular-meeting-eagenda-march-24-2026",
+   "prior_class": "BOT_BLOCKED",
+   "http": 200,
+   "final_url": "https://berkeleyca.gov/city-council-regular-meeting-eagenda-march-24-2026",
+   "title": "City Council Regular Meeting eAgenda March 24, 2026 | City of Berkeley",
+   "body_len": 52503,
+   "soft_404": false
+  },
+  {
+   "url": "https://www.walthampatch.com/posts/waltham-mbta-communities-zoning-compliance-2024",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.walthamatch.com/posts/waltham-mbta-zoning-overlay-district-2024",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.walthampatch.com/posts/waltham-city-council-mbta-zoning-vote-2024",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://congress.gov/member/seth-moulton/M001196",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://congress.gov/member/seth-moulton/M001196",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://congress.gov/bill/117th-congress/house-bill/1437",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://congress.gov/bill/117th-congress/house-bill/1437",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://lowellsun.com/2024/01/15/lowell-launches-housing-first-initiative/",
+   "prior_class": "BOT_BLOCKED",
+   "http": 404,
+   "final_url": "https://www.lowellsun.com/2024/01/15/lowell-launches-housing-first-initiative/",
+   "title": "Page not found &#8211; Lowell Sun",
+   "body_len": 1981,
+   "soft_404": true
+  },
+  {
+   "url": "https://lowellsun.com/2023/11/04/lowell-mayor-immigration-policy/",
+   "prior_class": "BOT_BLOCKED",
+   "http": 404,
+   "final_url": "https://www.lowellsun.com/2023/11/04/lowell-mayor-immigration-policy/",
+   "title": "Page not found &#8211; Lowell Sun",
+   "body_len": 1981,
+   "soft_404": true
+  },
+  {
+   "url": "https://lowellsun.com/2024/03/20/lowell-tech-economy-development/",
+   "prior_class": "BOT_BLOCKED",
+   "http": 404,
+   "final_url": "https://www.lowellsun.com/2024/03/20/lowell-tech-economy-development/",
+   "title": "Page not found &#8211; Lowell Sun",
+   "body_len": 1981,
+   "soft_404": true
+  },
+  {
+   "url": "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.axios.com/local/salt-lake-city/2023/10/30/council-candidate-dan-dugan-election-district-6",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://www.axios.com/local/salt-lake-city/2023/10/30/council-candidate-dan-dugan-election-district-6",
+   "title": "Just a moment...",
+   "body_len": 58,
+   "soft_404": false
+  },
+  {
+   "url": "https://m.lasvegassun.com/news/2019/nov/06/tense-las-vegas-council-oks-homeless-ordinance/",
+   "prior_class": "FETCH_FAILED",
+   "http": null,
+   "error": "fetch failed"
+  },
+  {
+   "url": "https://www.koin.com/am-extra/tualatin-oregon-inclusion-diversity-access/",
+   "prior_class": "BOT_BLOCKED",
+   "http": 403,
+   "final_url": "https://www.koin.com/am-extra/tualatin-oregon-inclusion-diversity-access/",
+   "title": "Access to this page has been denied",
+   "body_len": 375,
+   "soft_404": false
+  }
+ ]
+}
