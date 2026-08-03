@@ -72,21 +72,59 @@ excludes the holder's tier:
 Of the 194 federal Affordable Housing answers, 193 predate mine; of the 77 federal Criminal Justice
 answers, 76 do.
 
-### Why I have not acted on it
+### ✅ RESOLVED for these two topics — migration 1543, applied
 
-There are two coherent readings and they call for **opposite** actions, so this is a product decision:
+Operator chose reading **(B)**: the role table was under-scoped. Migration 1543 adds the missing `federal`
+rows to `inform.compass_topic_roles` for both topics. **No stance data changed** — `politician_answers`
+stayed at 33,175 and `politician_context` at 33,721, asserted by a guard.
 
-- **(A) The role table is right.** Then these ~3,300 rows are dead weight inflating coverage counts, and
-  the fix is to retire them — starting with, but not limited to, my two.
-- **(B) The role table is under-scoped.** Congress legislates housing (LIHTC, Section 8) and criminal
-  justice constantly, so arguably `Affordable Housing` and `Criminal Justice Approach` should carry
-  `federal` rows. Adding them would surface 271 existing rows plus my two, with no data change.
+| | before | after |
+|---|---|---|
+| Affordable Housing | `local` | `local` + **`federal`** |
+| Criminal Justice Approach | `judicial` | `judicial` + **`federal`** |
+| federal answers able to display | 0 of 271 | **271** (194 housing + 77 criminal justice) |
+| out-of-tier answers, all tiers | 3,325 | **3,054** |
+| federal required topics | 24 | **26** |
 
-I lean **(B)** for those two specific topics on the merits, and **(A)** for genuinely municipal topics like
-`City Sanitation and Cleanliness`. But (B) changes what 271 profiles display and (A) deletes thousands of
-rows, and neither is inferable from the data — so **nothing has been changed** and both my rows stand as
-applied, consistent with their 269 peers.
+Verified on the live API (`/api/compass/topics`): both now return `applies_federal: true`, while
+Transportation Priorities and Economic Development Incentives correctly still return `false`.
 
-**Recommended next step:** decide (A) or (B) per topic, not globally, and treat the ~3,300-row count as its
-own workstream with a gate — the same shape as `check-stance-sources.mjs` — so the number cannot grow
-again once settled.
+🔴 **The one real risk, measured before writing rather than after.** `is_required` feeds a *hard gate*:
+`get_compass_completeness` counts only `is_required = true` rows, and `run_empower_preflight` turns an
+incomplete compass into `eligible: false` with `CALIBRATION_INCOMPLETE`. Adding required topics moves the
+federal bar from 24 to 26, which would strip eligibility from a candidate sitting at exactly 24. Production
+check: **0 of 12 connected profiles have `candidate_role` set and there are 0 empowered profiles**, so
+nobody can be demoted today — preflight fails earlier on `ROLE_NOT_SET` for all of them. `is_required=true`
+was therefore both safe and consistent with all 80 pre-existing rows (not one `false` exists).
+⚠ Expected, not a bug: the first federal-role candidate will see `required` = 26. If that is unwanted, flip
+these two rows to `is_required=false` — the display flags ignore `is_required`, so the topics stay visible
+while leaving the completeness denominator alone.
+
+### What remains, and why I did not extend it further
+
+1543 fixed the **federal** side of these two topics only, because that is what was decided. **3,054
+out-of-tier answers remain**, and the composition has shifted — the problem is now overwhelmingly a *state*
+one:
+
+| holder tier | answers out of tier | largest single bucket |
+|---|---|---|
+| **state** | **1,975** | **Affordable Housing, 712** — still has no `state` row |
+| local | 733 | Taxation and Public Spending, 135 |
+| federal | 346 | Judicial Interpretation, 61 (judicial-only) |
+
+⚠ **`Affordable Housing` still carries no `state` row**, so 712 state-legislator housing stances remain
+invisible — a bigger bucket than everything 1543 fixed. It is the obvious next candidate for the same
+treatment, and it was left alone only because the decision covered federal.
+
+The remaining 3,054 still split along the same (A)/(B) line, and the split is now clearer:
+- **(B) under-scoped, add the row:** topics a tier plainly legislates — `Affordable Housing` for state,
+  `Taxation and Public Spending` for local (many cities set property tax rates).
+- **(A) genuinely inapplicable, retire the rows:** municipal-only questions answered by the wrong tier —
+  `City Sanitation and Cleanliness`, `Residential Zoning` for federal officials, and the judicial-only
+  topics held by non-judges.
+
+**Recommended next step:** decide per topic, not globally, then add a gate in the shape of
+`check-stance-sources.mjs` keyed on out-of-tier count so the number cannot regrow once settled. Note the
+gate must classify tiers with **`upper(governments.type)`** — the values are `NATIONAL`/`STATE`/`LOCAL` plus
+`City`/`County`/`School District`/`Township`/`Village`/`Town` and one stray lowercase `federal`, and a
+case-sensitive comparison silently buckets every official as local.
