@@ -22,6 +22,21 @@ introduction rather than joining later).
 evidence: Hoyle / Campaign Finance Reform, Hoyle / State Redistricting, Van Epps / Immigration. Same-Sex
 Marriage went from *zero* usable roll calls to candidates for all four members.
 
+> ## ✅ BOTH DEFECTS BELOW ARE FIXED — see `ADJUDICATION-TRANCHE-2.md`
+> - **CRS mappings tightened**: 1,595 → **434** candidates. `policyArea` is now a GATE (AND) not an
+>   alternative; subject terms match EXACTLY (no substring); identity bills match by exact title. The
+>   mapping moved to a shared module, `_tmp-pretenure-topic-crs.mjs`, imported by the roll-call re-triage
+>   too so the two cannot drift. ⚠ Title *regex* matching re-ran the same bug a third time
+>   (`/equality act/` → **DAIRY PRIDE Act**), which is why identity matching is exact-title only.
+> - **Bill id**: 952 nulls → **0**, 100% of 85,352 files, cross-validated 13,396/13,396 against
+>   `legislationUrl` with zero disagreements. `legislationUrl` was never a parse bug — it simply does not
+>   exist in 116th/117th BILLSTATUS. And `<billType>`/`<billNumber>` **do** exist, in the older schema,
+>   correcting the note below.
+> - Also done: roll calls re-triaged (**277 → 76** worth reading), and **both** of Hyde-Smith's sources
+>   built (Senate BILLSTATUS + Senate LIS roll calls, 526 on-topic votes, `lis_member_id` **S395**).
+>
+> The section below is kept as the original handoff record.
+
 ## 🔴 Two defects handed off, not papered over
 
 **1. My CRS mappings are too broad, and this is the same error class as the keyword pass.** I claimed CRS
