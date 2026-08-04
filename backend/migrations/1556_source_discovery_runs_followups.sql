@@ -1,5 +1,5 @@
--- 1550_source_discovery_runs_followups.sql
--- Fast-follows from review of 1535: funnel-loss counters + catalog comments + post-verify gate.
+-- 1556_source_discovery_runs_followups.sql
+-- Fast-follows from review of the source_discovery_runs migration (now 1553): funnel-loss counters + catalog comments + post-verify gate.
 
 BEGIN;
 
