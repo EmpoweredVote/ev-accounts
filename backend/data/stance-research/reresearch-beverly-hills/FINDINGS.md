@@ -94,6 +94,15 @@ BLANK_OUT_OF_SCOPE, do not research). **10 dropped** as Mirisch/OUT_OF_OFFICE. *
 **678 rows / 3 checks (159/1/518)** — the new citations are pathed, non-Ballotpedia URLs, so they add
 nothing to the backlog. **Next free migration number: 1548.**
 
+⚠ **`rows.csv` in this directory is gitignored** (`.gitignore:45` — `backend/data/stance-research/**/*.csv`;
+the 798 tracked CSVs predate that rule). So the row is reproduced verbatim here, and this file plus
+migration 1547 are the authoritative record — do not go looking for the CSV in a clone:
+
+```csv
+full_name,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3
+Craig A. Corman,residential-zoning,3,"On the Transit-Oriented Development Alternative Plan, said the council has taken as much density as it can out of single-family neighborhoods and can concentrate it next to the new Metro subway stop; the plan moves half the housing density Senate Bill 79 requires near transit onto mixed-use overlay sites east of La Cienega",https://beverlypress.com/2026/06/beverly-hills-approves-transit-plan-for-sb-79/,https://beverlypress.com/2026/07/corman-charts-course-for-the-future-of-beverly-hills/,
+```
+
 ### ✅ Craig A. Corman — Residential Zoning = **3**
 
 Chair 3 is *"Allow multifamily and mixed-use near commercial corridors while protecting most
