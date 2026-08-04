@@ -1,0 +1,65 @@
+{
+  "migration": "1557_repoint_bilalmahmood_to_archive.sql",
+  "applied": "2026-08-04",
+  "defect_class": "dead_host_repointable",
+  "politician": { "id": "d3c5004c-9ca0-444e-96d9-107d4315abcb", "name": "Bilal Mahmood", "office": "San Francisco Board of Supervisors, District 5" },
+  "summary": {
+    "context_rows": 12,
+    "bilalmahmood_citations": 14,
+    "distinct_paths": 3,
+    "rows_sole_sourced_to_dead_host": 2,
+    "chairs_changed": 0,
+    "reasoning_changed": 0
+  },
+  "why": "bilalmahmood.com no longer resolves (curl exit 6, no A record). The pages were real and are archived, so this is a re-point to captures, NOT a retirement. Every capture was fetched with the id_ modifier (raw original bytes, no Wayback banner) and verified to name Mahmood and to contain the distinctive claim terms of the rows citing it.",
+  "capture_choice": "2026-06-24 captures were used because they post-date the 2026-05 journalism cited alongside on 10 of the 12 rows. Earlier captures (2023-2024) are pre-incumbency campaign material and would have misdated the evidence.",
+  "url_mapping": [
+    {
+      "from": "https://bilalmahmood.com/",
+      "to": "https://web.archive.org/web/20260624203238/https://bilalmahmood.com/",
+      "rows": 3,
+      "verified": "HTTP 200; title 'Bilal Mahmood for San Francisco District 5 Supervisor'; contains verbatim 'No corporate PAC Money. No fossil fuel money. No law enforcement money.'"
+    },
+    {
+      "from": "https://bilalmahmood.com/platform",
+      "to": "https://web.archive.org/web/20260624203251/https://bilalmahmood.com/platform",
+      "rows": 9,
+      "verified": "HTTP 200; title '... | Platform'; contains 'Upgrade California', 'Smart A/C', 'heat pumps', 'electrify', 'decarboniz', 'state legislators', 'tax credit', 'EV charging'; 11 policy section headings incl. Housing, Public Safety, Climate Change, Labor, Education"
+    },
+    {
+      "from": "https://bilalmahmood.com/about",
+      "to": "https://web.archive.org/web/20260624203251/https://bilalmahmood.com/about",
+      "rows": 2,
+      "verified": "HTTP 200; title '... | About Bilal'; contains 'Electric Action', 'Upgrade California', 'zero emission buildings'"
+    }
+  ],
+  "sole_sourced_rows_checked_individually": [
+    {
+      "topic": "Fossil Fuel Policy",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "sources_before": ["https://bilalmahmood.com/", "https://bilalmahmood.com/platform"],
+      "note": "Both citations were the dead host, so this row had no checkable source at all. Primary claim ('No fossil fuel money') is verbatim on the archived root page; 'EV charging' and 'Upgrade California' are on the archived platform page. NOT REPAIRED HERE: the reasoning also asserts he 'worked previously at Electric Action', which appears only on /about — a page this row does not cite. Pre-existing gap in the reasoning, left for the re-research queue rather than papered over by adding a citation the original author did not use."
+    },
+    {
+      "topic": "Climate Change and Environmental Protection",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "sources_before": ["https://bilalmahmood.com/platform", "https://bilalmahmood.com/about"],
+      "note": "Also wholly dead-hosted. Every distinctive term verified: 'Upgrade California' and 'zero emission buildings' on /about, 'Smart A/C', 'heat pumps', 'state legislators', 'tax credit' on /platform. 'Electric Action' (the claimed employer) is on /about, which this row does cite. Fully supported."
+    }
+  ],
+  "rows": [
+    { "politician_id": "d3c5004c-9ca0-444e-96d9-107d4315abcb", "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3", "topic": "Affordable Housing", "sources_before": ["https://missionlocal.org/2026/05/sf-bilal-mahmood-shadow-ceqa-housing/", "https://missionlocal.org/2026/03/sf-housing-ballot-measure-building-permit-bilal-mahmood/", "https://bilalmahmood.com/platform"] },
+    { "politician_id": "d3c5004c-9ca0-444e-96d9-107d4315abcb", "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d", "topic": "Campaign Finance Reform", "sources_before": ["https://bilalmahmood.com/", "https://missionlocal.org/2026/04/sf-moderates-bilal-mahmood-oust-leftiest-supe/"] },
+    { "politician_id": "d3c5004c-9ca0-444e-96d9-107d4315abcb", "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762", "topic": "Civil Rights and Social Justice", "sources_before": ["https://sfstandard.com/2026/05/18/fair-chance-ordinance-abortion-transgender/", "https://bilalmahmood.com/platform"] },
+    { "politician_id": "d3c5004c-9ca0-444e-96d9-107d4315abcb", "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c", "topic": "Climate Change and Environmental Protection", "sources_before": ["https://bilalmahmood.com/platform", "https://bilalmahmood.com/about"] },
+    { "politician_id": "d3c5004c-9ca0-444e-96d9-107d4315abcb", "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53", "topic": "Economic Development Incentives", "sources_before": ["https://sfstandard.com/2026/02/19/san-francisco-theater-mid-market-bilal-mahmood/", "https://missionlocal.org/2026/03/sf-lurie-mahmood-transfer-tax-cut-housing/", "https://bilalmahmood.com/platform"] },
+    { "politician_id": "d3c5004c-9ca0-444e-96d9-107d4315abcb", "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa", "topic": "Environmental Protection vs. Development", "sources_before": ["https://missionlocal.org/2026/05/sf-bilal-mahmood-shadow-ceqa-housing/", "https://bilalmahmood.com/platform"] },
+    { "politician_id": "d3c5004c-9ca0-444e-96d9-107d4315abcb", "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570", "topic": "Fossil Fuel Policy", "sources_before": ["https://bilalmahmood.com/", "https://bilalmahmood.com/platform"] },
+    { "politician_id": "d3c5004c-9ca0-444e-96d9-107d4315abcb", "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4", "topic": "Growth and Development Pace", "sources_before": ["https://missionlocal.org/2026/03/sf-lurie-mahmood-transfer-tax-cut-housing/", "https://missionlocal.org/2026/03/sf-housing-ballot-measure-building-permit-bilal-mahmood/", "https://bilalmahmood.com/platform"] },
+    { "politician_id": "d3c5004c-9ca0-444e-96d9-107d4315abcb", "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390", "topic": "Immigration and Treatment of Immigrants", "sources_before": ["https://missionlocal.org/2025/02/sf-intro-interview-bilal-mahmood-district-5/", "https://bilalmahmood.com/about"] },
+    { "politician_id": "d3c5004c-9ca0-444e-96d9-107d4315abcb", "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0", "topic": "Jail Capacity and Incarceration Alternatives", "sources_before": ["https://missionlocal.org/2025/02/sf-intro-interview-bilal-mahmood-district-5/", "https://bilalmahmood.com/platform"] },
+    { "politician_id": "d3c5004c-9ca0-444e-96d9-107d4315abcb", "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6", "topic": "Same-Sex Marriage", "sources_before": ["https://sfstandard.com/2026/05/18/fair-chance-ordinance-abortion-transgender/", "https://bilalmahmood.com/"] },
+    { "politician_id": "d3c5004c-9ca0-444e-96d9-107d4315abcb", "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27", "topic": "Transportation Priorities", "sources_before": ["https://www.sf.gov/profile--bilal-mahmood", "https://bilalmahmood.com/platform"] }
+  ],
+  "reverse": "UPDATE inform.politician_context SET sources = array_replace(sources, '<to>', '<from>') for each url_mapping entry, restricted to politician_id d3c5004c-9ca0-444e-96d9-107d4315abcb."
+}
