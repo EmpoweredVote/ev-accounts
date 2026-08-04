@@ -1,0 +1,919 @@
+{
+  "generated": "2026-08-04",
+  "cluster": "City of Newton, Massachusetts, US",
+  "in_scope": [
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "5b590765-e701-41cf-b0c3-e7efdeea16d3",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Lisa Gordon",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonma.gov/government/planning-development/climate-action-plan"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "5b590765-e701-41cf-b0c3-e7efdeea16d3",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Lisa Gordon",
+      "topic": "Climate Change and Environmental Protection",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonma.gov/government/planning-development/climate-action-plan"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "5b590765-e701-41cf-b0c3-e7efdeea16d3",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "Lisa Gordon",
+      "topic": "Public Safety Approach",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.wickedlocal.com/story/newton-tab/newton-public-safety.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "bc313a82-8b30-4ca7-acdb-47d2cc6906e3",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Allison Leary",
+      "topic": "Climate Change and Environmental Protection",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 3,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "8a35fe01-8450-4726-a9b3-b61b7a967475",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "Pamela Wright",
+      "topic": "Public Safety Approach",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://www.newtonma.gov/government/police-department"
+      ],
+      "answers_kept": 2,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "bc313a82-8b30-4ca7-acdb-47d2cc6906e3",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Allison Leary",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 3,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "9c64b145-cce4-4b31-a4e0-c041a12af62b",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "Marc C. Laredo",
+      "topic": "Public Safety Approach",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/mayor",
+        "https://www.wickedlocal.com/story/newton-tab/2025/10/newton-mayor-race-laredo.html"
+      ],
+      "answers_kept": 3,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "9c64b145-cce4-4b31-a4e0-c041a12af62b",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Marc C. Laredo",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/mayor",
+        "https://www.newtonma.gov/government/planning-development/climate-action-plan"
+      ],
+      "answers_kept": 3,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "9c64b145-cce4-4b31-a4e0-c041a12af62b",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Marc C. Laredo",
+      "topic": "Climate Change and Environmental Protection",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/mayor",
+        "https://www.newtonma.gov/government/planning-development/climate-action-plan"
+      ],
+      "answers_kept": 3,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Susan Albright",
+      "topic": "Affordable Housing",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.wickedlocal.com/story/newton-tab/newton-city-council-mbta-communities.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Susan Albright",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonma.gov/government/planning-development/climate-action-plan"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Susan Albright",
+      "topic": "Climate Change and Environmental Protection",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonma.gov/government/planning-development/climate-action-plan"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "politician": "Susan Albright",
+      "topic": "Transportation Priorities",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.wickedlocal.com/story/newton-tab/newton-transportation.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "Susan Albright",
+      "topic": "Public Safety Approach",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.wickedlocal.com/story/newton-tab/newton-public-safety.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "politician": "Susan Albright",
+      "topic": "Local Immigration Enforcement",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.wickedlocal.com/story/newton-tab/newton-immigration-resolution.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "dee11bee-c034-49b1-ba4c-30f94622ddd3",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "politician": "Brittany Hume Charm",
+      "topic": "Residential Zoning",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.wickedlocal.com/story/newton-tab/newton-city-council-mbta-communities.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "dee11bee-c034-49b1-ba4c-30f94622ddd3",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Brittany Hume Charm",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonma.gov/government/planning-development/climate-action-plan"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "dee11bee-c034-49b1-ba4c-30f94622ddd3",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Brittany Hume Charm",
+      "topic": "Climate Change and Environmental Protection",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonma.gov/government/planning-development/climate-action-plan"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "dee11bee-c034-49b1-ba4c-30f94622ddd3",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "Brittany Hume Charm",
+      "topic": "Public Safety Approach",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.wickedlocal.com/story/newton-tab/newton-public-safety.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "583a5fab-16d5-40c5-8c6c-25b9ea4b97ae",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Cyrus Dahmubed",
+      "topic": "Affordable Housing",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.wickedlocal.com/story/newton-tab/newton-city-council-mbta-communities.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "d7479ffb-177a-44cd-aaac-d86d91522fc3",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Rena Getz",
+      "topic": "Affordable Housing",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.wickedlocal.com/story/newton-tab/newton-city-council-mbta-communities.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "d7479ffb-177a-44cd-aaac-d86d91522fc3",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Rena Getz",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonma.gov/government/planning-development/climate-action-plan"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "politician": "Brian Golden",
+      "topic": "Residential Zoning",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.wickedlocal.com/story/newton-tab/newton-city-council-mbta-communities.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Brian Golden",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonma.gov/government/planning-development/climate-action-plan"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Brian Golden",
+      "topic": "Climate Change and Environmental Protection",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonma.gov/government/planning-development/climate-action-plan"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "politician": "Brian Golden",
+      "topic": "Transportation Priorities",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.wickedlocal.com/story/newton-tab/newton-transportation.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "Brian Golden",
+      "topic": "Public Safety Approach",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.wickedlocal.com/story/newton-tab/newton-public-safety.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "politician": "Brian Golden",
+      "topic": "Local Immigration Enforcement",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.wickedlocal.com/story/newton-tab/newton-immigration-resolution.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "5b590765-e701-41cf-b0c3-e7efdeea16d3",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Lisa Gordon",
+      "topic": "Affordable Housing",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.wickedlocal.com/story/newton-tab/newton-city-council-mbta-communities.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "b3231976-f6f0-4f7f-960e-4ba5cdac9700",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Becky Grossman",
+      "topic": "Affordable Housing",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://www.wbur.org/news/2025/09/newton-mayor-race-housing"
+      ],
+      "answers_kept": 6,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "fbec8ba0-4a3c-4704-b4a5-9cddc42a3635",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Andrea Kelley",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 3,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "fbec8ba0-4a3c-4704-b4a5-9cddc42a3635",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Andrea Kelley",
+      "topic": "Climate Change and Environmental Protection",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 3,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Josh Krintzman",
+      "topic": "Affordable Housing",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://www.wgbh.org/news/local/2023-10-newton-mbta-communities-housing"
+      ],
+      "answers_kept": 8,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Josh Krintzman",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 8,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "c6a65ddf-9c48-4683-9100-28ce1c9f7983",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "John Oliver",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 2,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "e9abe848-ca92-4197-924d-294e7ed92100",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Sean Roche",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 3,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "e9abe848-ca92-4197-924d-294e7ed92100",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Sean Roche",
+      "topic": "Climate Change and Environmental Protection",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 3,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "8a35fe01-8450-4726-a9b3-b61b7a967475",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Pamela Wright",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 2,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "8a35fe01-8450-4726-a9b3-b61b7a967475",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Pamela Wright",
+      "topic": "Climate Change and Environmental Protection",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 2,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "9d34705c-0a66-4c08-8936-7e63629ce435",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "R. Lisle Baker",
+      "topic": "Climate Change and Environmental Protection",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 5,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "9d34705c-0a66-4c08-8936-7e63629ce435",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "R. Lisle Baker",
+      "topic": "Public Safety Approach",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://www.newtonma.gov/government/police-department"
+      ],
+      "answers_kept": 5,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "ef936b01-3409-4b17-96ff-48b08c3cfdea",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Martha Bixby",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 2,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "ef936b01-3409-4b17-96ff-48b08c3cfdea",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Martha Bixby",
+      "topic": "Climate Change and Environmental Protection",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 2,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "ef936b01-3409-4b17-96ff-48b08c3cfdea",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "Martha Bixby",
+      "topic": "Public Safety Approach",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://www.newtonma.gov/government/police-department"
+      ],
+      "answers_kept": 2,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "3d68627c-c4cb-44f5-8b13-b48cd0edcd7a",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Maria S. Greenberg",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 2,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "3d68627c-c4cb-44f5-8b13-b48cd0edcd7a",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "Maria S. Greenberg",
+      "topic": "Climate Change and Environmental Protection",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "answers_kept": 2,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "3d68627c-c4cb-44f5-8b13-b48cd0edcd7a",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "Maria S. Greenberg",
+      "topic": "Public Safety Approach",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://www.newtonma.gov/government/police-department"
+      ],
+      "answers_kept": 2,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1540",
+      "defect_class": "invented-outlet",
+      "politician_id": "5b590765-e701-41cf-b0c3-e7efdeea16d3",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "politician": "Lisa Gordon",
+      "topic": "Residential Zoning",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonvillearea.com/category/city-council"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1540",
+      "defect_class": "invented-outlet",
+      "politician_id": "9c64b145-cce4-4b31-a4e0-c041a12af62b",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "politician": "Marc C. Laredo",
+      "topic": "Residential Zoning",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://www.newtonvillearea.com/2025/10/laredo-wins-newton-mayoral-race.html",
+        "https://newtonma.gov/government/city-council/city-council-meetings"
+      ],
+      "answers_kept": 3,
+      "visibility": "PARTIAL_INVISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1540",
+      "defect_class": "invented-outlet",
+      "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "politician": "Susan Albright",
+      "topic": "Residential Zoning",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonvillearea.com/category/city-council"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1540",
+      "defect_class": "invented-outlet",
+      "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "politician": "Susan Albright",
+      "topic": "Rent Regulation",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonvillearea.com/category/city-council"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1540",
+      "defect_class": "invented-outlet",
+      "politician_id": "773aa577-9e09-4721-80ee-6219edb151e7",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "politician": "Susan Albright",
+      "topic": "Growth and Development Pace",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonvillearea.com/category/city-council"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1540",
+      "defect_class": "invented-outlet",
+      "politician_id": "dee11bee-c034-49b1-ba4c-30f94622ddd3",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Brittany Hume Charm",
+      "topic": "Affordable Housing",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonvillearea.com/category/city-council"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1540",
+      "defect_class": "invented-outlet",
+      "politician_id": "583a5fab-16d5-40c5-8c6c-25b9ea4b97ae",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "politician": "Cyrus Dahmubed",
+      "topic": "Residential Zoning",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonvillearea.com/category/city-council"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1540",
+      "defect_class": "invented-outlet",
+      "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Brian Golden",
+      "topic": "Affordable Housing",
+      "retired_chair": "1.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonvillearea.com/category/city-council"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1540",
+      "defect_class": "invented-outlet",
+      "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "politician": "Brian Golden",
+      "topic": "Rent Regulation",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonvillearea.com/category/city-council"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "migration": "1540",
+      "defect_class": "invented-outlet",
+      "politician_id": "41c14549-89c4-451c-91d7-22a578a4dc7d",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "politician": "Brian Golden",
+      "topic": "Growth and Development Pace",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://newtonma.gov/government/city-council",
+        "https://www.newtonvillearea.com/category/city-council"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Newton, Massachusetts, US"
+    }
+  ],
+  "out_of_scope": []
+}
