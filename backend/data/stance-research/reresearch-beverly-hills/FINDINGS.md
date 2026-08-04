@@ -85,9 +85,14 @@ BLANK_OUT_OF_SCOPE, do not research). **10 dropped** as Mirisch/OUT_OF_OFFICE. *
 
 | verdict | rows | meaning |
 |---|---|---|
-| ✅ CHAIR ASSIGNED | 1 | evidence read verbatim, one chair distinctly fits |
+| ✅ CHAIR ASSIGNED | 1 | evidence read verbatim, one chair distinctly fits — **applied as migration 1547** |
 | ⏭ SKIP_ADJACENT | 2 | evidence read; two adjacent chairs both fit, so no answer is correct |
 | ⏳ PENDING | 24 | not yet decidable from sources read — **not** blanks |
+
+**Migration 1547 applied 2026-08-04** (dry-run first): `politician_answers` 33,171 → **33,172**,
+`politician_context` 33,717 → **33,718**, 0 orphans, 0 fractional. The CI gate is unchanged at
+**678 rows / 3 checks (159/1/518)** — the new citations are pathed, non-Ballotpedia URLs, so they add
+nothing to the backlog. **Next free migration number: 1548.**
 
 ### ✅ Craig A. Corman — Residential Zoning = **3**
 
