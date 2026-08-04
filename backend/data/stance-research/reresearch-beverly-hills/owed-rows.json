@@ -1,0 +1,680 @@
+{
+  "generated": "2026-08-04",
+  "cluster": "City of Beverly Hills, California, US",
+  "in_scope": [
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "4f69ba91-d6f4-400e-aa46-10f1706d2f3c",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Lester Friedman",
+      "topic": "Affordable Housing",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-files-lawsuit-against-the-state-over-housing-element/",
+        "https://www.latimes.com/california/story/2022-04-14/beverly-hills-sues-state-over-housing-mandate"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "4f69ba91-d6f4-400e-aa46-10f1706d2f3c",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "politician": "Lester Friedman",
+      "topic": "Residential Zoning",
+      "retired_chair": "5.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-opposes-sb-9-duplex-bill/",
+        "https://www.latimes.com/california/story/2021-09-16/beverly-hills-sb9-opposition"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "4f69ba91-d6f4-400e-aa46-10f1706d2f3c",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "politician": "Lester Friedman",
+      "topic": "Homelessness Response",
+      "retired_chair": "5.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-homelessness-operation-clean-sweep/",
+        "https://patch.com/california/beverlyhills/beverly-hills-tackles-homelessness-enforcement"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "4f69ba91-d6f4-400e-aa46-10f1706d2f3c",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "Lester Friedman",
+      "topic": "Public Safety Approach",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/mayor-friedman-beverly-hills-police-department-funding/",
+        "https://www.latimes.com/california/story/2022-01-beverly-hills-crime-surge-response"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "4f69ba91-d6f4-400e-aa46-10f1706d2f3c",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "politician": "Lester Friedman",
+      "topic": "Local Immigration Enforcement",
+      "retired_chair": "5.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-not-a-sanctuary-city/",
+        "https://patch.com/california/beverlyhills/beverly-hills-sanctuary-city-policy"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "4f69ba91-d6f4-400e-aa46-10f1706d2f3c",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "politician": "Lester Friedman",
+      "topic": "Transportation Priorities",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-purple-line-lawsuit-metro/",
+        "https://www.latimes.com/local/lanow/la-me-ln-beverly-hills-metro-lawsuit-20151209-story.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "4f69ba91-d6f4-400e-aa46-10f1706d2f3c",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "politician": "Lester Friedman",
+      "topic": "Growth and Development Pace",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hilton-redevelopment-approval/",
+        "https://patch.com/california/beverlyhills/beverly-hills-development-policy"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "4f69ba91-d6f4-400e-aa46-10f1706d2f3c",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "Lester Friedman",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "3.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-tree-preservation-ordinance/",
+        "https://www.beverlyhills.org/departments/communityservices/environment/climateactionplan/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "1221c215-2b80-46f7-b980-c04f25c5866f",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Craig A. Corman",
+      "topic": "Affordable Housing",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-housing-element-rejection/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "1221c215-2b80-46f7-b980-c04f25c5866f",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "politician": "Craig A. Corman",
+      "topic": "Residential Zoning",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-sb9-implementation-restrictions/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "1221c215-2b80-46f7-b980-c04f25c5866f",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "politician": "Craig A. Corman",
+      "topic": "Homelessness Response",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-homelessness-policy-council/",
+        "https://patch.com/california/beverlyhills/beverly-hills-council-homelessness-enforcement"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "1221c215-2b80-46f7-b980-c04f25c5866f",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "Craig A. Corman",
+      "topic": "Public Safety Approach",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-police-budget-expansion/",
+        "https://www.bhcourier.com/article/beverly-hills-smash-grab-robbery-response/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "1221c215-2b80-46f7-b980-c04f25c5866f",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "politician": "Craig A. Corman",
+      "topic": "Local Immigration Enforcement",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-sanctuary-city-policy-position/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "1221c215-2b80-46f7-b980-c04f25c5866f",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "politician": "Craig A. Corman",
+      "topic": "Transportation Priorities",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-metro-purple-line-legal-fight/",
+        "https://www.latimes.com/local/lanow/la-me-ln-beverly-hills-purple-line-20161110-story.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "30f6667d-a88b-46e4-91d8-678130ae37b6",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "John A. Mirisch",
+      "topic": "Affordable Housing",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/mirisch-beverly-hills-rhna-housing-element-opposition/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "30f6667d-a88b-46e4-91d8-678130ae37b6",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "politician": "John A. Mirisch",
+      "topic": "Residential Zoning",
+      "retired_chair": "5.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/mirisch-op-ed-state-housing-mandates-beverly-hills/",
+        "https://patch.com/california/beverlyhills/beverly-hills-sb9-implementation"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "30f6667d-a88b-46e4-91d8-678130ae37b6",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "politician": "John A. Mirisch",
+      "topic": "Homelessness Response",
+      "retired_chair": "5.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-homelessness-enforcement-mirisch/",
+        "https://patch.com/california/beverlyhills/beverly-hills-homelessness-clean-sweep"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "30f6667d-a88b-46e4-91d8-678130ae37b6",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "John A. Mirisch",
+      "topic": "Public Safety Approach",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-bhpd-budget-mirisch/",
+        "https://www.bhcourier.com/article/beverly-hills-smash-grab-council-response/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "30f6667d-a88b-46e4-91d8-678130ae37b6",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "politician": "John A. Mirisch",
+      "topic": "Local Immigration Enforcement",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-immigration-policy-council/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "30f6667d-a88b-46e4-91d8-678130ae37b6",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "politician": "John A. Mirisch",
+      "topic": "Transportation Priorities",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-purple-line-legal-fight-council/",
+        "https://www.latimes.com/local/lanow/la-me-ln-beverly-hills-purple-line-20161110-story.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "30f6667d-a88b-46e4-91d8-678130ae37b6",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "politician": "John A. Mirisch",
+      "topic": "Growth and Development Pace",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-development-policy-mirisch/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "30f6667d-a88b-46e4-91d8-678130ae37b6",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "politician": "John A. Mirisch",
+      "topic": "Environmental Protection vs. Development",
+      "retired_chair": "3.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-sustainability-plan-carbon-neutral/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "30f6667d-a88b-46e4-91d8-678130ae37b6",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "politician": "John A. Mirisch",
+      "topic": "Campaign Finance Reform",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/mirisch-op-ed-campaign-finance-reform-beverly-hills/",
+        "https://patch.com/california/beverlyhills/mirisch-campaign-contribution-limits-beverly-hills"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "30f6667d-a88b-46e4-91d8-678130ae37b6",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "politician": "John A. Mirisch",
+      "topic": "Climate Change and Environmental Protection",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/mirisch-beverly-hills-climate-change-sustainability/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "c526a928-ab27-424f-a809-c6ed26bf26d3",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "politician": "Sharona R. Nazarian",
+      "topic": "Civil Rights and Social Justice",
+      "retired_chair": "2.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/nazarian-beverly-hills-civil-rights-hate-crimes/",
+        "https://patch.com/california/beverlyhills/nazarian-anti-discrimination-beverly-hills"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "c526a928-ab27-424f-a809-c6ed26bf26d3",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Sharona R. Nazarian",
+      "topic": "Affordable Housing",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-housing-element-council-vote/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "c526a928-ab27-424f-a809-c6ed26bf26d3",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "politician": "Sharona R. Nazarian",
+      "topic": "Residential Zoning",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-sb9-implementation-council/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "c526a928-ab27-424f-a809-c6ed26bf26d3",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "politician": "Sharona R. Nazarian",
+      "topic": "Homelessness Response",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-homelessness-response-council/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "c526a928-ab27-424f-a809-c6ed26bf26d3",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "Sharona R. Nazarian",
+      "topic": "Public Safety Approach",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-bhpd-budget-council/",
+        "https://www.bhcourier.com/article/beverly-hills-smash-grab-surveillance-response/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "c526a928-ab27-424f-a809-c6ed26bf26d3",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "politician": "Sharona R. Nazarian",
+      "topic": "Local Immigration Enforcement",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-sanctuary-city-council-position/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "b4f9688b-add0-44d6-bab8-e923d17d105e",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "politician": "Mary N. Wells",
+      "topic": "Affordable Housing",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-housing-element-council-vote/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "b4f9688b-add0-44d6-bab8-e923d17d105e",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "politician": "Mary N. Wells",
+      "topic": "Residential Zoning",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-sb9-zoning-restrictions/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "b4f9688b-add0-44d6-bab8-e923d17d105e",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "politician": "Mary N. Wells",
+      "topic": "Homelessness Response",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-homelessness-ordinance-council/",
+        "https://patch.com/california/beverlyhills/beverly-hills-council-homelessness-response-vote"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "b4f9688b-add0-44d6-bab8-e923d17d105e",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "politician": "Mary N. Wells",
+      "topic": "Public Safety Approach",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-bhpd-budget-council-vote/",
+        "https://www.bhcourier.com/article/beverly-hills-smash-grab-lpr-expansion/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "b4f9688b-add0-44d6-bab8-e923d17d105e",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "politician": "Mary N. Wells",
+      "topic": "Local Immigration Enforcement",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-immigration-policy-no-sanctuary/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "b4f9688b-add0-44d6-bab8-e923d17d105e",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "politician": "Mary N. Wells",
+      "topic": "Growth and Development Pace",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-development-planning-council/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "b4f9688b-add0-44d6-bab8-e923d17d105e",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "politician": "Mary N. Wells",
+      "topic": "Transportation Priorities",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-metro-purple-line-opposition/",
+        "https://www.latimes.com/local/lanow/la-me-ln-beverly-hills-purple-line-20161110-story.html"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    }
+  ],
+  "out_of_scope": [
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "4f69ba91-d6f4-400e-aa46-10f1706d2f3c",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Lester Friedman",
+      "topic": "Taxation and Public Spending",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-mansion-tax-measure-ula-impact/",
+        "https://patch.com/california/beverlyhills/beverly-hills-mayor-opposes-prop-13-split-roll"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "1221c215-2b80-46f7-b980-c04f25c5866f",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Craig A. Corman",
+      "topic": "Taxation and Public Spending",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-fiscal-policy-council/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "30f6667d-a88b-46e4-91d8-678130ae37b6",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "John A. Mirisch",
+      "topic": "Taxation and Public Spending",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-fiscal-policy-mirisch/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "c526a928-ab27-424f-a809-c6ed26bf26d3",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Sharona R. Nazarian",
+      "topic": "Taxation and Public Spending",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-fiscal-budget-council/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": "City of Beverly Hills, California, US"
+    },
+    {
+      "migration": "1538",
+      "defect_class": "composed-citation",
+      "politician_id": "b4f9688b-add0-44d6-bab8-e923d17d105e",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "politician": "Mary N. Wells",
+      "topic": "Taxation and Public Spending",
+      "retired_chair": "4.0",
+      "retired_sources": [
+        "https://www.bhcourier.com/article/beverly-hills-budget-fiscal-policy-council/",
+        "https://www.beverlyhills.org/government/city-council/meetings-agendas/"
+      ],
+      "answers_kept": 0,
+      "visibility": "EMPTIED_VISIBLE",
+      "government": null
+    }
+  ]
+}
