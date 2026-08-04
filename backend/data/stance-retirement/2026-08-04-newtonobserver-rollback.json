@@ -1,0 +1,837 @@
+{
+  "generated": "2026-08-04",
+  "migration": "1548",
+  "defect": "invented outlet newtonobserver.com (does not resolve, 5 ever-archived URLs all parking artifacts) paired in 45 of 48 rows with the composed path newtonma.gov/government/city-council/agendas-minutes (ABSENT 3 rounds; cited directory has 3 archived siblings under a different slug vs 300 for the real government/city-clerk/city-council/* family). Neither citation is checkable by a reader.",
+  "review": "data/stance-research/reresearch-newton/FINDINGS.md",
+  "totals": {
+    "rows": 48,
+    "politicians": 18,
+    "emptied_to_zero": 17
+  },
+  "emptied_to_zero": [
+    {
+      "politician_id": "bc313a82-8b30-4ca7-acdb-47d2cc6906e3",
+      "full_name": "Allison Leary",
+      "answers_before": 3,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "fbec8ba0-4a3c-4704-b4a5-9cddc42a3635",
+      "full_name": "Andrea Kelley",
+      "answers_before": 3,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "b3231976-f6f0-4f7f-960e-4ba5cdac9700",
+      "full_name": "Becky Grossman",
+      "answers_before": 6,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "cbc9201b-a23c-44ff-af75-5174d4531762",
+      "full_name": "David Kalis",
+      "answers_before": 2,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "3865037a-c226-4b93-a769-e13898efe226",
+      "full_name": "David Micley",
+      "answers_before": 2,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "ec923a42-9b27-4f8a-a839-69d6e45c2cf8",
+      "full_name": "Jacob Silber",
+      "answers_before": 2,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "c6a65ddf-9c48-4683-9100-28ce1c9f7983",
+      "full_name": "John Oliver",
+      "answers_before": 2,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+      "full_name": "Josh Krintzman",
+      "answers_before": 8,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "a00a26a4-f0f1-4a12-945a-d52498de8a3f",
+      "full_name": "Julia Malakie",
+      "answers_before": 2,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "3113dcf1-5775-46cc-bb55-4881611fbd98",
+      "full_name": "Julie Irish",
+      "answers_before": 2,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "3d68627c-c4cb-44f5-8b13-b48cd0edcd7a",
+      "full_name": "Maria S. Greenberg",
+      "answers_before": 2,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "ef936b01-3409-4b17-96ff-48b08c3cfdea",
+      "full_name": "Martha Bixby",
+      "answers_before": 2,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "8a35fe01-8450-4726-a9b3-b61b7a967475",
+      "full_name": "Pamela Wright",
+      "answers_before": 2,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "a3bc0f3b-3cee-4c3a-bfea-5aa382a161eb",
+      "full_name": "Randy Block",
+      "answers_before": 2,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "e9abe848-ca92-4197-924d-294e7ed92100",
+      "full_name": "Sean Roche",
+      "answers_before": 3,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "c04fedbe-a020-433c-a47a-3e737a5ccbe4",
+      "full_name": "Stephen Farrell",
+      "answers_before": 2,
+      "last_stances_researched_at": null
+    },
+    {
+      "politician_id": "36e3f861-85f4-42b5-a7ff-a406e7b05302",
+      "full_name": "Tarik Lucas",
+      "answers_before": 2,
+      "last_stances_researched_at": null
+    }
+  ],
+  "rows": [
+    {
+      "politician_id": "bc313a82-8b30-4ca7-acdb-47d2cc6906e3",
+      "full_name": "Allison Leary",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 1,
+      "reasoning": "Leary voted in favor of Newton's MBTA Communities zoning compliance plan in October 2023, supporting the addition of multi-family housing near transit stations. She has supported efforts to increase housing production and affordability in Newton as part of the council's progressive majority on housing policy.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "bc313a82-8b30-4ca7-acdb-47d2cc6906e3",
+      "full_name": "Allison Leary",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "topic_key": "public-safety-approach",
+      "value": 2,
+      "reasoning": "Leary has backed community-oriented policing approaches and supported allocating resources to mental health crisis response teams as a complement to traditional policing. Her public safety approach reflects the reform-oriented consensus of the Newton council's progressive bloc — focused on prevention, social services, and community engagement alongside law enforcement.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/newton-public-safety-review"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "bc313a82-8b30-4ca7-acdb-47d2cc6906e3",
+      "full_name": "Allison Leary",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 1,
+      "reasoning": "Leary voted yes on Newton's MBTA Communities Act compliance in 2023, supporting the rezoning of areas near transit stations for multi-family residential development. This vote is the primary documented evidence of her stance on residential zoning, placing her with the pro-housing reform majority on the council.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "fbec8ba0-4a3c-4704-b4a5-9cddc42a3635",
+      "full_name": "Andrea Kelley",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 1,
+      "reasoning": "Kelley voted yes on Newton's MBTA Communities zoning compliance vote in October 2023, supporting multi-family housing development near transit stations. She has been a consistent advocate for increasing housing production and affordability in Newton, backing policies that allow more residential density in the city.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "fbec8ba0-4a3c-4704-b4a5-9cddc42a3635",
+      "full_name": "Andrea Kelley",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "topic_key": "public-safety-approach",
+      "value": 2,
+      "reasoning": "Kelley has supported community-oriented policing approaches and investments in social services as complements to traditional public safety. She voted in favor of funding mental health response programs and community outreach initiatives, reflecting a public health approach to safety that complements but does not replace traditional law enforcement in Newton.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/newton-public-safety-review"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "fbec8ba0-4a3c-4704-b4a5-9cddc42a3635",
+      "full_name": "Andrea Kelley",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 1,
+      "reasoning": "Kelley voted in favor of Newton's MBTA Communities Act compliance zoning changes in 2023, supporting the rezoning of areas near Green Line stations to allow multi-family housing. Her vote reflects support for allowing denser residential development to meet state housing goals and address Newton's housing shortage.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "b3231976-f6f0-4f7f-960e-4ba5cdac9700",
+      "full_name": "Becky Grossman",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic": "Climate Change and Environmental Protection",
+      "topic_key": "climate-change",
+      "value": 1,
+      "reasoning": "Grossman supported Newton's commitment to net-zero emissions goals and backed the city's Climate Action Plan targets. Her 2025 mayoral campaign platform called for accelerating Newton's transition away from fossil fuels and expanding renewable energy adoption in municipal buildings. She consistently voted in support of climate-related resolutions at the council level.",
+      "sources": [
+        "https://newtonobserver.com/2025/becky-grossman-mayor-campaign-environment",
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "b3231976-f6f0-4f7f-960e-4ba5cdac9700",
+      "full_name": "Becky Grossman",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "topic": "Environmental Protection vs. Development",
+      "topic_key": "local-environment",
+      "value": 1,
+      "reasoning": "Grossman has been an active supporter of Newton's Climate Action Plan and local environmental initiatives. She co-sponsored resolutions supporting the city's sustainability commitments and has backed funding for urban tree canopy preservation and stormwater management improvements. Her mayoral campaign emphasized strengthening Newton's climate resilience efforts.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2025/becky-grossman-mayor-campaign-environment"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "b3231976-f6f0-4f7f-960e-4ba5cdac9700",
+      "full_name": "Becky Grossman",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic": "Growth and Development Pace",
+      "topic_key": "growth-and-development",
+      "value": 2,
+      "reasoning": "Grossman has generally supported smart growth and transit-oriented development while advocating for community input in the development review process. She backed the MBTA Communities zoning compliance and mixed-use development near Newton's village centers, but also emphasized the importance of preserving neighborhood character and ensuring new development includes affordable units.",
+      "sources": [
+        "https://newtonobserver.com/2025/becky-grossman-mayor-campaign-environment",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "b3231976-f6f0-4f7f-960e-4ba5cdac9700",
+      "full_name": "Becky Grossman",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "topic_key": "public-safety-approach",
+      "value": 2,
+      "reasoning": "Grossman has supported community-oriented policing and non-enforcement approaches to public safety, including investments in mental health response teams and social services as alternatives to police intervention. Her 2025 mayoral campaign emphasized a public health approach to safety. She stopped short of more radical defund rhetoric, positioning herself as a reform-oriented progressive on public safety.",
+      "sources": [
+        "https://newtonobserver.com/2025/newton-mayor-race-public-safety",
+        "https://www.wbur.org/news/2025/09/newton-mayor-race-housing"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "b3231976-f6f0-4f7f-960e-4ba5cdac9700",
+      "full_name": "Becky Grossman",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 1,
+      "reasoning": "Grossman was a strong proponent of Newton's MBTA Communities Act compliance, voting to rezone areas near transit stops for multi-family housing. She supported allowing denser residential development to increase housing supply, positioning herself as a progressive voice for zoning reform on the Newton City Council.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "b3231976-f6f0-4f7f-960e-4ba5cdac9700",
+      "full_name": "Becky Grossman",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "topic": "Transportation Priorities",
+      "topic_key": "transportation-priorities",
+      "value": 1,
+      "reasoning": "Grossman has advocated for improved public transit options in Newton, including support for Green Line station access improvements and bus rapid transit. She has endorsed pedestrian and bicycle infrastructure investments and transit-oriented development to reduce car dependency. Her mayoral campaign platform included a commitment to improving Newton's multimodal transportation network.",
+      "sources": [
+        "https://newtonobserver.com/2025/becky-grossman-mayor-transportation",
+        "https://www.newtonma.gov/government/city-council/agendas-minutes"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "cbc9201b-a23c-44ff-af75-5174d4531762",
+      "full_name": "David Kalis",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 2,
+      "reasoning": "Kalis voted in favor of Newton's MBTA Communities zoning compliance plan in October 2023, supporting the addition of multi-family housing near transit stations. His vote placed him among the council majority supporting state-required zoning reform to increase housing production in Newton.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "cbc9201b-a23c-44ff-af75-5174d4531762",
+      "full_name": "David Kalis",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 2,
+      "reasoning": "Kalis voted yes on Newton's MBTA Communities Act compliance vote in 2023, supporting rezoning to allow multi-family residential development near transit stations. This vote is the primary documented evidence of his position on residential zoning, indicating support for allowing denser housing in transit-accessible areas.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "3865037a-c226-4b93-a769-e13898efe226",
+      "full_name": "David Micley",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 2,
+      "reasoning": "Micley voted in favor of Newton's MBTA Communities zoning compliance plan in October 2023, supporting multi-family housing near transit stations. This vote is the primary documented evidence of his housing position, placing him with the council majority supporting increased production to address Newton's affordability challenges.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 2)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "3865037a-c226-4b93-a769-e13898efe226",
+      "full_name": "David Micley",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 2,
+      "reasoning": "Micley voted yes on Newton's MBTA Communities Act compliance in October 2023, supporting the rezoning of areas near transit stations for multi-family residential development. This MBTA Communities vote is the primary documented evidence of his zoning position, placing him with the council majority supporting state-required zoning reforms.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 2)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "ec923a42-9b27-4f8a-a839-69d6e45c2cf8",
+      "full_name": "Jacob Silber",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 2,
+      "reasoning": "Silber voted in favor of Newton's MBTA Communities zoning compliance plan in October 2023, supporting multi-family housing near transit stations. He has supported housing production efforts on the Newton City Council consistent with the council's progressive majority position on addressing Newton's affordability challenges.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "ec923a42-9b27-4f8a-a839-69d6e45c2cf8",
+      "full_name": "Jacob Silber",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 2,
+      "reasoning": "Silber voted yes on Newton's MBTA Communities Act compliance in October 2023, supporting the rezoning of areas near transit stations for multi-family residential development. This is the primary documented evidence of his position on residential zoning, placing him with the council majority supporting state-required zoning reforms.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "c6a65ddf-9c48-4683-9100-28ce1c9f7983",
+      "full_name": "John Oliver",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 2,
+      "reasoning": "Oliver voted in favor of Newton's MBTA Communities zoning compliance plan in October 2023. He has generally supported efforts to increase housing production but has at times emphasized the importance of neighborhood-scale review processes and community input when considering development proposals, reflecting a somewhat more cautious approach than the most progressive council members.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "c6a65ddf-9c48-4683-9100-28ce1c9f7983",
+      "full_name": "John Oliver",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 2,
+      "reasoning": "Oliver voted yes on Newton's MBTA Communities Act compliance in 2023. His record indicates support for allowing multi-family housing near transit while balancing neighborhood input and design standards. The MBTA vote is the primary documented evidence of his position on residential zoning reform.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+      "full_name": "Josh Krintzman",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic": "Civil Rights and Social Justice",
+      "topic_key": "civil-rights",
+      "value": 1,
+      "reasoning": "As Council President, Krintzman led Newton's efforts to strengthen anti-discrimination protections and backed equity and inclusion initiatives at the city level. He supported resolutions affirming civil rights for all Newton residents, including LGBTQ+ protections, and spoke publicly about the importance of Newton being an inclusive and welcoming community. His multi-term council record shows consistent support for civil rights measures.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/newton-council-civil-rights-resolution"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+      "full_name": "Josh Krintzman",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic": "Climate Change and Environmental Protection",
+      "topic_key": "climate-change",
+      "value": 1,
+      "reasoning": "Krintzman has been an outspoken advocate for Newton's commitment to net-zero emissions and the city's Climate Action Plan. He championed resolutions supporting renewable energy, building electrification, and reducing reliance on fossil fuels in city buildings. As Council President, he used his platform to emphasize the urgency of climate action at the local level.",
+      "sources": [
+        "https://www.newtonma.gov/government/sustainability/climate-action-plan",
+        "https://newtonobserver.com/2023/krintzman-climate-newton-council"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+      "full_name": "Josh Krintzman",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic": "Growth and Development Pace",
+      "topic_key": "growth-and-development",
+      "value": 2,
+      "reasoning": "Krintzman backed smart growth and transit-oriented development, supporting new mixed-use development in Newton's village centers and near Green Line stations. As Council President he worked to balance neighborhood concerns about development scale with the city's need for more housing and economic vitality. He supported the MBTA Communities process as a growth framework while managing community input throughout.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/krintzman-village-center-development"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+      "full_name": "Josh Krintzman",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "topic": "Local Immigration Enforcement",
+      "topic_key": "local-immigration",
+      "value": 1,
+      "reasoning": "Krintzman has supported Newton's welcoming city policies for immigrants and has spoken out against local law enforcement cooperation with federal immigration authorities. As Council President he backed resolutions affirming Newton's commitment to being a welcoming and inclusive community regardless of immigration status. His public statements reflect strong support for protecting immigrant residents from local enforcement of federal immigration law.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2024/newton-welcoming-city-immigration"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+      "full_name": "Josh Krintzman",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "topic_key": "public-safety-approach",
+      "value": 2,
+      "reasoning": "Krintzman has supported community policing reforms and investments in mental health response capabilities as complements to traditional public safety. As Council President, he oversaw debates about the city's PILOT program review and supported the creation of civilian review mechanisms for police. He took a reform-oriented but not radical position on public safety, emphasizing prevention and social services alongside law enforcement.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2022/newton-police-reform-council"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+      "full_name": "Josh Krintzman",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic": "Rent Regulation",
+      "topic_key": "rent-regulation",
+      "value": 2,
+      "reasoning": "Krintzman has expressed support for tenant protections and has backed efforts at the state level to give municipalities more tools to address housing stability, including rent stabilization discussions. As Council President he highlighted the rental affordability crisis in Newton and supported city resolutions calling for state-level tenant protection legislation.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/krintzman-housing-tenant-protections"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+      "full_name": "Josh Krintzman",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 1,
+      "reasoning": "As Council President, Krintzman led Newton's multi-year MBTA Communities zoning compliance process and was one of the strongest advocates for allowing multi-family housing near transit stations. He actively managed community engagement sessions and advocated publicly for the zoning changes needed to meet state requirements and address Newton's housing shortage.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "67e5e2f0-f5dc-430b-9d7f-8a10e9a5e6a2",
+      "full_name": "Josh Krintzman",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "topic": "Transportation Priorities",
+      "topic_key": "transportation-priorities",
+      "value": 1,
+      "reasoning": "Krintzman has strongly supported transit-oriented development tied to Newton's Green Line stations and backed investments in pedestrian infrastructure and bike lanes throughout Newton. He linked the MBTA Communities zoning effort directly to transit access improvements. His public statements reflect a commitment to reducing car dependency and making Newton more walkable and bikeable.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "a00a26a4-f0f1-4a12-945a-d52498de8a3f",
+      "full_name": "Julia Malakie",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 2,
+      "reasoning": "Malakie voted in favor of Newton's MBTA Communities zoning compliance plan in October 2023, supporting multi-family housing near transit stations. As Ward 3 councillor she participates in council deliberations on housing production consistent with the council's majority position on addressing Newton's housing affordability challenges.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 3)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "a00a26a4-f0f1-4a12-945a-d52498de8a3f",
+      "full_name": "Julia Malakie",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 2,
+      "reasoning": "Malakie voted yes on Newton's MBTA Communities Act compliance in October 2023, supporting the rezoning of areas near transit stations for multi-family residential development. This vote is the primary documented evidence of her residential zoning position, placing her with the council majority on state-required zoning reforms.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 3)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "3113dcf1-5775-46cc-bb55-4881611fbd98",
+      "full_name": "Julie Irish",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 2,
+      "reasoning": "Irish voted in favor of Newton's MBTA Communities zoning compliance plan in October 2023, supporting multi-family housing near transit stations. This vote is the primary documented evidence of her housing position, placing her with the council majority supporting increased housing production to address Newton's affordability challenges.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 5)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "3113dcf1-5775-46cc-bb55-4881611fbd98",
+      "full_name": "Julie Irish",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 2,
+      "reasoning": "Irish voted yes on Newton's MBTA Communities Act compliance in October 2023, supporting the rezoning of areas near transit stations for multi-family residential development. The MBTA Communities vote is the primary documented evidence of her residential zoning position, placing her with the council majority supporting state-required zoning reforms.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 5)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "3d68627c-c4cb-44f5-8b13-b48cd0edcd7a",
+      "full_name": "Maria S. Greenberg",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 2,
+      "reasoning": "Greenberg voted in favor of Newton's MBTA Communities zoning compliance plan in October 2023, supporting multi-family housing production near transit stations. As a long-serving Ward 1 councillor, she has backed the council majority's position on addressing Newton's housing affordability challenges through increased production.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 1)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "3d68627c-c4cb-44f5-8b13-b48cd0edcd7a",
+      "full_name": "Maria S. Greenberg",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 2,
+      "reasoning": "Greenberg voted yes on Newton's MBTA Communities Act compliance in October 2023, supporting the rezoning of areas near transit stations for multi-family residential development. This MBTA Communities vote is the primary documented evidence of her residential zoning position, placing her with the council majority supporting state-required zoning reforms.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 1)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "ef936b01-3409-4b17-96ff-48b08c3cfdea",
+      "full_name": "Martha Bixby",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 2,
+      "reasoning": "Bixby voted in favor of Newton's MBTA Communities zoning compliance plan in October 2023, supporting multi-family housing production near transit stations. As Ward 6 councillor, she has backed housing affordability efforts and participated in council deliberations on Newton's housing production challenges.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 6)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "ef936b01-3409-4b17-96ff-48b08c3cfdea",
+      "full_name": "Martha Bixby",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 2,
+      "reasoning": "Bixby voted yes on Newton's MBTA Communities Act compliance in October 2023, supporting residential rezoning near transit stations for multi-family development. The MBTA Communities vote is the primary documented evidence of her zoning position, placing her with the council majority that supported state-required zoning reforms.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 6)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "8a35fe01-8450-4726-a9b3-b61b7a967475",
+      "full_name": "Pamela Wright",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 2,
+      "reasoning": "Wright voted in favor of Newton's MBTA Communities zoning compliance plan in October 2023, supporting multi-family housing production near transit stations. She has been part of the Newton City Council majority that has prioritized addressing Newton's housing affordability challenges through increased housing production.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "8a35fe01-8450-4726-a9b3-b61b7a967475",
+      "full_name": "Pamela Wright",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 2,
+      "reasoning": "Wright voted yes on Newton's MBTA Communities Act compliance in October 2023, supporting the rezoning of areas near transit stations for multi-family residential development. The MBTA Communities vote is the primary documented evidence of her zoning position, placing her with the council majority on state-required zoning reforms.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "9d34705c-0a66-4c08-8936-7e63629ce435",
+      "full_name": "R. Lisle Baker",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "topic": "Transportation Priorities",
+      "topic_key": "transportation-priorities",
+      "value": 2,
+      "reasoning": "Baker has supported transit-oriented development and linked housing production near Green Line stations to better transit use and reduced car dependence. His support for the MBTA Communities Act compliance reflects an orientation toward transit-friendly development patterns. As a long-serving Newton councillor, he has also engaged with pedestrian and bicycle infrastructure improvements in council deliberations.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 7)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "a3bc0f3b-3cee-4c3a-bfea-5aa382a161eb",
+      "full_name": "Randy Block",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 2,
+      "reasoning": "Block voted in favor of Newton's MBTA Communities zoning compliance plan in October 2023, supporting multi-family housing production near transit stations. As Ward 4 councillor, he has participated in council deliberations on housing affordability and production in Newton, consistent with the council's progressive majority position.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 4)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "a3bc0f3b-3cee-4c3a-bfea-5aa382a161eb",
+      "full_name": "Randy Block",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 2,
+      "reasoning": "Block voted yes on Newton's MBTA Communities Act compliance in October 2023, supporting the rezoning of areas near transit stations for multi-family residential development. This is the primary documented evidence of his zoning position, placing him with the council majority that supported state-required zoning reforms.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 4)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "e9abe848-ca92-4197-924d-294e7ed92100",
+      "full_name": "Sean Roche",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 1,
+      "reasoning": "Roche voted in favor of Newton's MBTA Communities zoning compliance plan in October 2023, supporting multi-family housing development near transit stations. He has backed housing production efforts on the council and has expressed support for addressing Newton's affordability challenges by increasing housing supply.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "e9abe848-ca92-4197-924d-294e7ed92100",
+      "full_name": "Sean Roche",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 1,
+      "reasoning": "Roche voted yes on Newton's MBTA Communities Act compliance in 2023, supporting the rezoning of areas near transit stations for multi-family residential development. The MBTA Communities vote is the primary documented evidence of his position on residential zoning, placing him with the council majority supporting state-required zoning reforms.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "e9abe848-ca92-4197-924d-294e7ed92100",
+      "full_name": "Sean Roche",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "topic": "Transportation Priorities",
+      "topic_key": "transportation-priorities",
+      "value": 2,
+      "reasoning": "Roche has supported transit-friendly development approaches in Newton and backed investments in pedestrian and bicycle infrastructure. He has linked housing production near Green Line stations to improved transit access, and has voted in support of transportation-related sustainability measures at the council level.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "c04fedbe-a020-433c-a47a-3e737a5ccbe4",
+      "full_name": "Stephen Farrell",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 2,
+      "reasoning": "Farrell voted in favor of Newton's MBTA Communities zoning compliance plan in October 2023, supporting multi-family housing near transit stations. As Ward 8 councillor, he participates in council housing deliberations consistent with the council majority's pro-production stance on addressing Newton's housing affordability challenges.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 8)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "c04fedbe-a020-433c-a47a-3e737a5ccbe4",
+      "full_name": "Stephen Farrell",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 2,
+      "reasoning": "Farrell voted yes on Newton's MBTA Communities Act compliance in October 2023, supporting the rezoning of areas near transit stations for multi-family residential development. This is the primary documented evidence of his zoning position, placing him with the council majority that supported state-required zoning reforms.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor (Ward 8)",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "36e3f861-85f4-42b5-a7ff-a406e7b05302",
+      "full_name": "Tarik Lucas",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "topic_key": "housing",
+      "value": 1,
+      "reasoning": "Lucas voted in favor of Newton's MBTA Communities zoning compliance plan in October 2023, supporting multi-family housing development near transit stations. His vote placed him with the council majority supporting state-required zoning changes to increase housing production in Newton.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    },
+    {
+      "politician_id": "36e3f861-85f4-42b5-a7ff-a406e7b05302",
+      "full_name": "Tarik Lucas",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "topic_key": "residential-zoning",
+      "value": 1,
+      "reasoning": "Lucas voted yes on Newton's MBTA Communities Act compliance in 2023, supporting rezoning near transit stations for multi-family housing. This vote is the primary documented evidence of his position on residential zoning, placing him with the pro-housing reform majority on the Newton City Council.",
+      "sources": [
+        "https://www.newtonma.gov/government/city-council/agendas-minutes",
+        "https://newtonobserver.com/2023/10/newton-council-mbta-communities-vote"
+      ],
+      "office_title": "City Councilor",
+      "government": "City of Newton, Massachusetts, US"
+    }
+  ]
+}
