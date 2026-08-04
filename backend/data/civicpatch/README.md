@@ -17,8 +17,12 @@ uptime. **The importer reads this archive, not the network.** See
 | `civicpatch-open-data-928579c0.tar.gz` | 1.67 MB — the `data/` YAML tree plus root metadata |
 | `MANIFEST.json` | source SHA, checksum, per-state counts, known discrepancies |
 
-3,258 YAML files, **18,534 official records**, 13 states (ca co id ma mi nc nd nh nj sc tn tx wa).
+3,258 YAML files, **19,737 official records**, 13 states (ca co id ma mi nc nd nh nj sc tn tx wa).
 **Municipal tier only** — their README claims county and state tiers; those do not exist in the tree.
+
+**Count records by parsing the YAML, not with `grep -c '^- name:'`.** That grep misses the 1,203
+records whose first key is `id` rather than `name`, which is what produced the phantom
+"18,534 vs 19,737" discrepancy this manifest used to carry. Their API and their repo agree exactly.
 
 ## Restore
 

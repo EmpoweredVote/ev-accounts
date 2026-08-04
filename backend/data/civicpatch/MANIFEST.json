@@ -29,32 +29,33 @@
   },
   "contents": {
     "yml_files": 3258,
-    "official_records": 18534,
+    "official_records": 19737,
+    "counting_method": "YAML-parsed list items per data/<state>/local/*.yml. Do NOT count with `grep -c '^- name:'` - see resolved_discrepancies.",
     "uncompressed_bytes": 23290000,
     "states": 13,
     "per_state": {
       "ca": { "files": 73, "officials": 471 },
-      "co": { "files": 120, "officials": 827 },
+      "co": { "files": 120, "officials": 850 },
       "id": { "files": 95, "officials": 529 },
       "ma": { "files": 1, "officials": 14 },
-      "mi": { "files": 878, "officials": 5211 },
+      "mi": { "files": 878, "officials": 5233 },
       "nc": { "files": 6, "officials": 37 },
       "nd": { "files": 37, "officials": 230 },
       "nh": { "files": 187, "officials": 816 },
       "nj": { "files": 496, "officials": 3032 },
       "sc": { "files": 92, "officials": 583 },
       "tn": { "files": 113, "officials": 698 },
-      "tx": { "files": 964, "officials": 4684 },
+      "tx": { "files": 964, "officials": 5842 },
       "wa": { "files": 196, "officials": 1402 }
     }
   },
-  "discrepancies": [
+  "resolved_discrepancies": [
     {
       "field": "official_records",
-      "repo_snapshot": 18534,
-      "decision_doc_via_api": 19737,
-      "delta": -1203,
-      "note": "The 19737 figure in .planning/decisions/2026-07-30-civicpatch-api-decision.md came from live civicpatch.org/api/v1 calls. This snapshot counts top-level '- name:' records in the git repo and finds 1203 fewer. Unresolved: the API may serve records not committed to the repo, or count differently. Import sizing should be taken from this snapshot, which is what the importer actually reads."
+      "was_recorded": 18534,
+      "corrected_to": 19737,
+      "resolved_on": "2026-08-04",
+      "note": "RESOLVED - the gap was OUR counting bug, not missing data. The 18534 figure came from `grep -c '^- name:'`, which misses 1203 records that list `id` before `name` (YAML key order is not fixed). 18534 + 1203 = 19737, which is exactly what live civicpatch.org/api/v1 serves. Their API and their repo agree. Every per_state count above was undercounted the same way and has been recalculated by YAML parse. Do not report this to Civic Data Tech as a defect. Detail: .planning/decisions/2026-08-04-civicpatch-snapshot-diff.md"
     }
   ],
   "why_data_source_excluded": "data_source/<state>/local/place_*/workflow_context.json is 2781 files / 188 MB - 89% of the clone by size. It holds the scraper's LLM pipeline internals (page content, per-LLM merge steps, review steps), not row provenance. Provenance we rely on (source_urls, updated_at) is carried in the data/ YAML itself, so excluding it loses nothing the importer or an audit needs."
