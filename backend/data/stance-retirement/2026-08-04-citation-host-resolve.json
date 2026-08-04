@@ -1,0 +1,1454 @@
+{
+  "generated": "2026-08-04",
+  "total": 2731,
+  "resolves": 2641,
+  "no_dns": 42,
+  "errors": 48,
+  "no_dns_hosts": [
+    {
+      "host": "bilalmahmood.com",
+      "citations": 14,
+      "rows_touched": 12,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 3,
+      "governments": 1,
+      "example_government": "City and County of San Francisco",
+      "example": "https://bilalmahmood.com/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "lapublicpress.org/2026/03/la-city-attorney-election-2026/",
+      "citations": 7,
+      "rows_touched": 7,
+      "politicians": 2,
+      "on_sole_sourced_rows": 0,
+      "without_path": 7,
+      "governments": 1,
+      "example_government": "Los Angeles, California, US",
+      "example": "lapublicpress.org/2026/03/la-city-attorney-election-2026/",
+      "priority": 3,
+      "flags": [
+        "press-shaped",
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "davidredkey4congress.com",
+      "citations": 7,
+      "rows_touched": 7,
+      "politicians": 1,
+      "on_sole_sourced_rows": 7,
+      "without_path": 0,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://www.davidredkey4congress.com/economic-bill-of-rights",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "beverlypress.com/2026/05/cd-5-candidates-outline-differences-at-forum/",
+      "citations": 5,
+      "rows_touched": 5,
+      "politicians": 2,
+      "on_sole_sourced_rows": 0,
+      "without_path": 5,
+      "governments": 0,
+      "example_government": null,
+      "example": "beverlypress.com/2026/05/cd-5-candidates-outline-differences-at-forum/",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "chapmanforcongress.com",
+      "citations": 5,
+      "rows_touched": 5,
+      "politicians": 1,
+      "on_sole_sourced_rows": 5,
+      "without_path": 0,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://chapmanforcongress.com/issues/",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "tracinskiletter.com",
+      "citations": 7,
+      "rows_touched": 4,
+      "politicians": 1,
+      "on_sole_sourced_rows": 1,
+      "without_path": 0,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://www.tracinskiletter.com/about",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "davidfbristol.com",
+      "citations": 4,
+      "rows_touched": 4,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 4,
+      "governments": 1,
+      "example_government": "Town of Prosper, Texas, US",
+      "example": "https://davidfbristol.com/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "kateforbloomington.org",
+      "citations": 4,
+      "rows_touched": 4,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 0,
+      "governments": 1,
+      "example_government": "City of Bloomington, Indiana, US",
+      "example": "https://kateforbloomington.org/issues/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "ballotpedia.org/john_logsdon",
+      "citations": 3,
+      "rows_touched": 3,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 3,
+      "governments": 0,
+      "example_government": null,
+      "example": "ballotpedia.org/John_Logsdon",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "ballotpedia.org/colter_carlisle",
+      "citations": 3,
+      "rows_touched": 3,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 3,
+      "governments": 0,
+      "example_government": null,
+      "example": "ballotpedia.org/Colter_Carlisle",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "thelalocal.org/government/election/voter-guide-la-district-1/",
+      "citations": 3,
+      "rows_touched": 3,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 3,
+      "governments": 0,
+      "example_government": null,
+      "example": "thelalocal.org/government/election/voter-guide-la-district-1/",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "19thnews.org/2025/12/rae-huang-la-mayor-campaign/",
+      "citations": 3,
+      "rows_touched": 3,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 3,
+      "governments": 0,
+      "example_government": null,
+      "example": "19thnews.org/2025/12/rae-huang-la-mayor-campaign/",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "bradknott.com",
+      "citations": 3,
+      "rows_touched": 3,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 0,
+      "governments": 1,
+      "example_government": "United States Federal Government",
+      "example": "https://www.bradknott.com/priorities",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "dutra4whittier.com",
+      "citations": 3,
+      "rows_touched": 3,
+      "politicians": 1,
+      "on_sole_sourced_rows": 3,
+      "without_path": 0,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://www.dutra4whittier.com/about/",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "boli.oregon.gov",
+      "citations": 3,
+      "rows_touched": 3,
+      "politicians": 1,
+      "on_sole_sourced_rows": 3,
+      "without_path": 0,
+      "governments": 1,
+      "example_government": "State of Oregon",
+      "example": "https://boli.oregon.gov/pages/news.aspx",
+      "priority": 0,
+      "flags": [
+        "single-government",
+        "dot-gov"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "ladefensa.org/2026-primary-voter-guide-6/",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 2,
+      "governments": 0,
+      "example_government": null,
+      "example": "ladefensa.org/2026-primary-voter-guide-6/",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "lindseyhorvath.lacounty.gov/public-safety-justice-reform/",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 2,
+      "governments": 1,
+      "example_government": "Los Angeles County, California, US",
+      "example": "lindseyhorvath.lacounty.gov/public-safety-justice-reform/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "kennethforla.com",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 2,
+      "governments": 1,
+      "example_government": "Los Angeles, California, US",
+      "example": "https://www.kennethforla.com/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "craigandresforprosper.com",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 2,
+      "governments": 1,
+      "example_government": "Town of Prosper, Texas, US",
+      "example": "https://craigandresforprosper.com/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "act.juliabrownley.com",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 0,
+      "governments": 1,
+      "example_government": "United States Federal Government",
+      "example": "https://act.juliabrownley.com/page/s/call-on-congress-to-pass-the-dream-act",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "octavioforwhittier.com",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 2,
+      "without_path": 2,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://octavioforwhittier.com/",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "markhenderson.org",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 2,
+      "without_path": 2,
+      "governments": 1,
+      "example_government": "City of Gardena",
+      "example": "https://www.markhenderson.org/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "maryannforwhittier.com",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 2,
+      "without_path": 0,
+      "governments": 1,
+      "example_government": "City of Whittier",
+      "example": "https://www.maryannforwhittier.com/issues",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "beverlypress.com/2026/04/candidates-share-views-in-l-a-cd-13-council-race/",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 2,
+      "governments": 0,
+      "example_government": null,
+      "example": "beverlypress.com/2026/04/candidates-share-views-in-l-a-cd-13-council-race/",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "monteiro4council2022.com",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 2,
+      "without_path": 2,
+      "governments": 1,
+      "example_government": "City of Hawthorne",
+      "example": "https://www.monteiro4council2022.com/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "m.lasvegassun.com",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 0,
+      "governments": 1,
+      "example_government": "City of Las Vegas, Nevada, US",
+      "example": "https://m.lasvegassun.com/news/2019/nov/06/tense-las-vegas-council-oks-homeless-ordinance/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "metromayor.org",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 0,
+      "governments": 2,
+      "example_government": "City of Medford, Massachusetts, US",
+      "example": "https://metromayor.org/climate-resolutions/",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "downeylegend.com",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 1,
+      "without_path": 0,
+      "governments": 1,
+      "example_government": "City of Downey, California, US",
+      "example": "https://downeylegend.com/get-to-know-mayor-claudia-frometa/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "rightnowmn.org",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 0,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://www.rightnowmn.org/hughmctavish",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "spectrumnews1.com/ca/la-west/transportation/2023/03/23/metro-action",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 1,
+      "example_government": "Los Angeles County, California, US",
+      "example": "spectrumnews1.com/ca/la-west/transportation/2023/03/23/metro-action",
+      "priority": 3,
+      "flags": [
+        "press-shaped",
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "therealdeal.com/la/2026/05/07/what-las-mayoral-race-means-for-real-estate/",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "therealdeal.com/la/2026/05/07/what-las-mayoral-race-means-for-real-estate/",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "cambridgeresidentsalliance.org",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 1,
+      "without_path": 1,
+      "governments": 1,
+      "example_government": "City of Cambridge, Massachusetts, US",
+      "example": "https://www.cambridgeresidentsalliance.org/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "valleynewsgroup.com/tim-gaspar-announces-candidacy-for-city-council/",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "valleynewsgroup.com/tim-gaspar-announces-candidacy-for-city-council/",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "ballotpedia.org/tish_hyman",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "ballotpedia.org/Tish_Hyman",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "ballotpedia.org/asaad_alnajjar",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "ballotpedia.org/Asaad_Alnajjar",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "ballotpedia.org/rae_chen_huang",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "ballotpedia.org/Rae_Chen_Huang",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "vivioforcongress.com",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 0,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://vivioforcongress.com/about/",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "lindseyhorvath.lacounty.gov/board-strengthens-protections/",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 1,
+      "example_government": "Los Angeles County, California, US",
+      "example": "lindseyhorvath.lacounty.gov/board-strengthens-protections/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "lindseyhorvath.lacounty.gov/ice-free-zones/",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 1,
+      "example_government": "Los Angeles County, California, US",
+      "example": "lindseyhorvath.lacounty.gov/ice-free-zones/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "lindseyhorvath.lacounty.gov/climate-action/",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 1,
+      "example_government": "Los Angeles County, California, US",
+      "example": "lindseyhorvath.lacounty.gov/climate-action/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "lindseyhorvath.lacounty.gov/homelessness-and-housing/",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 1,
+      "example_government": "Los Angeles County, California, US",
+      "example": "lindseyhorvath.lacounty.gov/homelessness-and-housing/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "NO_DNS"
+    },
+    {
+      "host": "allenrwaters.com",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://www.allenrwaters.com",
+      "priority": 0,
+      "flags": [],
+      "dns": "NO_DNS"
+    }
+  ],
+  "error_hosts": [
+    {
+      "host": "laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-9",
+      "citations": 12,
+      "rows_touched": 12,
+      "politicians": 2,
+      "on_sole_sourced_rows": 0,
+      "without_path": 12,
+      "governments": 0,
+      "example_government": null,
+      "example": "laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-9",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "laist.com/news/politics/voter-guides/2026-election-california-primary-la-county-board-of-supervisors-district-3",
+      "citations": 9,
+      "rows_touched": 9,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 9,
+      "governments": 1,
+      "example_government": "Los Angeles County, California, US",
+      "example": "laist.com/news/politics/voter-guides/2026-election-california-primary-la-county-board-of-supervisors-district-3",
+      "priority": 3,
+      "flags": [
+        "press-shaped",
+        "single-government"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "laist.com/news/politics/voter-guides/2026-election-california-primary-la-mayor",
+      "citations": 8,
+      "rows_touched": 8,
+      "politicians": 3,
+      "on_sole_sourced_rows": 0,
+      "without_path": 8,
+      "governments": 0,
+      "example_government": null,
+      "example": "laist.com/news/politics/voter-guides/2026-election-california-primary-la-mayor",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "laist.com/news/politics/2026-election-california-primary-rae-huang-los-angeles-mayor-governor-transcript",
+      "citations": 7,
+      "rows_touched": 7,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 7,
+      "governments": 0,
+      "example_government": null,
+      "example": "laist.com/news/politics/2026-election-california-primary-rae-huang-los-angeles-mayor-governor-transcript",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "laist.com/news/politics/2026-election-california-primary-adam-miller-los-angeles-mayor-transcript",
+      "citations": 7,
+      "rows_touched": 7,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 7,
+      "governments": 0,
+      "example_government": null,
+      "example": "laist.com/news/politics/2026-election-california-primary-adam-miller-los-angeles-mayor-transcript",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "nbclosangeles.com/news/local/spencer-pratt-los-angeles-mayor-election/3886136/",
+      "citations": 7,
+      "rows_touched": 7,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 7,
+      "governments": 0,
+      "example_government": null,
+      "example": "nbclosangeles.com/news/local/spencer-pratt-los-angeles-mayor-election/3886136/",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-3",
+      "citations": 7,
+      "rows_touched": 7,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 7,
+      "governments": 0,
+      "example_government": null,
+      "example": "laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-3",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-attorney",
+      "citations": 7,
+      "rows_touched": 7,
+      "politicians": 2,
+      "on_sole_sourced_rows": 0,
+      "without_path": 7,
+      "governments": 1,
+      "example_government": "Los Angeles, California, US",
+      "example": "laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-attorney",
+      "priority": 3,
+      "flags": [
+        "press-shaped",
+        "single-government"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "house.utleg.gov",
+      "citations": 6,
+      "rows_touched": 6,
+      "politicians": 3,
+      "on_sole_sourced_rows": 1,
+      "without_path": 0,
+      "governments": 1,
+      "example_government": "State of Utah",
+      "example": "https://house.utleg.gov/firefighting-farming-and-public-service-meet-utahs-new-house-majority-leader-rep-casey-snider/",
+      "priority": 0,
+      "flags": [
+        "single-government",
+        "dot-gov"
+      ],
+      "dns": "ERROR",
+      "code": "ESERVFAIL"
+    },
+    {
+      "host": "walthampatch.com",
+      "citations": 5,
+      "rows_touched": 5,
+      "politicians": 5,
+      "on_sole_sourced_rows": 0,
+      "without_path": 0,
+      "governments": 1,
+      "example_government": "City of Waltham, Massachusetts, US",
+      "example": "https://www.walthampatch.com/posts/waltham-city-council-mbta-zoning-vote-2024",
+      "priority": 3,
+      "flags": [
+        "press-shaped",
+        "single-government"
+      ],
+      "dns": "ERROR",
+      "code": "ESERVFAIL"
+    },
+    {
+      "host": "patch.com/california/los-angeles/meet-elmer-roldan-candidate-los-angeles-city-council-district-9",
+      "citations": 5,
+      "rows_touched": 5,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 5,
+      "governments": 0,
+      "example_government": null,
+      "example": "patch.com/california/los-angeles/meet-elmer-roldan-candidate-los-angeles-city-council-district-9",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "mynewsla.com/government/2026/05/06/mayoral-candidate-adam-miller-talks-7x7-policy-plan-to-improve-la/",
+      "citations": 4,
+      "rows_touched": 4,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 4,
+      "governments": 0,
+      "example_government": null,
+      "example": "mynewsla.com/government/2026/05/06/mayoral-candidate-adam-miller-talks-7x7-policy-plan-to-improve-la/",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "theeastsiderla.com/news/government_and_politics/colter-carlisle-l-a-city-council-district-13-candidate",
+      "citations": 4,
+      "rows_touched": 4,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 4,
+      "governments": 0,
+      "example_government": null,
+      "example": "theeastsiderla.com/news/government_and_politics/colter-carlisle-l-a-city-council-district-13-candidate",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "patch.com/california/los-angeles/meet-maria-lou-calanche-candidate-los-angeles-city-council-district-1",
+      "citations": 3,
+      "rows_touched": 3,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 3,
+      "governments": 0,
+      "example_government": null,
+      "example": "patch.com/california/los-angeles/meet-maria-lou-calanche-candidate-los-angeles-city-council-district-1",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "hooslynforhouse.com#policies",
+      "citations": 3,
+      "rows_touched": 3,
+      "politicians": 1,
+      "on_sole_sourced_rows": 3,
+      "without_path": 3,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://hooslynforhouse.com#policies",
+      "priority": 0,
+      "flags": [],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-13",
+      "citations": 3,
+      "rows_touched": 3,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 3,
+      "governments": 0,
+      "example_government": null,
+      "example": "laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-13",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-5",
+      "citations": 3,
+      "rows_touched": 3,
+      "politicians": 2,
+      "on_sole_sourced_rows": 0,
+      "without_path": 3,
+      "governments": 0,
+      "example_government": null,
+      "example": "laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-5",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "lalcv.org/lalcv-endorses-estuardo-mazariegos-for-los-angeles-city-council-district-9/",
+      "citations": 3,
+      "rows_touched": 3,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 3,
+      "governments": 0,
+      "example_government": null,
+      "example": "lalcv.org/lalcv-endorses-estuardo-mazariegos-for-los-angeles-city-council-district-9/",
+      "priority": 0,
+      "flags": [],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "marvistavoice.org/tenant-rights-attorney-henry-mantel-enters-cd5-race-with-housing-at-the-center/",
+      "citations": 3,
+      "rows_touched": 3,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 3,
+      "governments": 0,
+      "example_government": null,
+      "example": "marvistavoice.org/tenant-rights-attorney-henry-mantel-enters-cd5-race-with-housing-at-the-center/",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "patch.com/california/los-angeles/meet-andrej-selivra-candidate-los-angeles-mayor",
+      "citations": 3,
+      "rows_touched": 3,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 3,
+      "governments": 0,
+      "example_government": null,
+      "example": "patch.com/california/los-angeles/meet-andrej-selivra-candidate-los-angeles-mayor",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "ladowntownnews.com/features/fighting-corruption-fraud-and-waste-bryant-acosta-runs-for-mayor-alongside-around-40-other-candidates",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 2,
+      "governments": 0,
+      "example_government": null,
+      "example": "ladowntownnews.com/features/fighting-corruption-fraud-and-waste-bryant-acosta-runs-for-mayor-alongside-around-40-other-candidates",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "foxnews.com/politics/spencer-pratt-standout-la-mayoral-candidate-debut-debate-performance-1010-notes",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 2,
+      "governments": 0,
+      "example_government": null,
+      "example": "foxnews.com/politics/spencer-pratt-standout-la-mayoral-candidate-debut-debate-performance-1010-notes",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "erickakopp.com#priorities-section",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 2,
+      "without_path": 2,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://erickakopp.com#priorities-section",
+      "priority": 0,
+      "flags": [],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "erickakopp.com#about-section",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 2,
+      "without_path": 2,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://erickakopp.com#about-section",
+      "priority": 0,
+      "flags": [],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "patch.com/california/los-angeles/meet-dylan-kendall-candidate-los-angeles-city-council-district-13",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 2,
+      "governments": 0,
+      "example_government": null,
+      "example": "patch.com/california/los-angeles/meet-dylan-kendall-candidate-los-angeles-city-council-district-13",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "patch.com/california/los-angeles/meet-henry-mantel-candidate-los-angeles-city-council-district-5",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 2,
+      "governments": 0,
+      "example_government": null,
+      "example": "patch.com/california/los-angeles/meet-henry-mantel-candidate-los-angeles-city-council-district-5",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "patch.com/california/los-angeles/meet-morgan-oyler-candidate-los-angeles-city-council-district-5",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 2,
+      "governments": 0,
+      "example_government": null,
+      "example": "patch.com/california/los-angeles/meet-morgan-oyler-candidate-los-angeles-city-council-district-5",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "brooksbenson4utah.com#issues",
+      "citations": 2,
+      "rows_touched": 2,
+      "politicians": 1,
+      "on_sole_sourced_rows": 2,
+      "without_path": 2,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://brooksbenson4utah.com#issues",
+      "priority": 0,
+      "flags": [],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "marclahood.com#about",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 1,
+      "without_path": 1,
+      "governments": 1,
+      "example_government": "State of Texas",
+      "example": "https://marclahood.com#ABOUT",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "whiteforlancasterca.net#platform",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 1,
+      "without_path": 1,
+      "governments": 1,
+      "example_government": "City of Lancaster, California, US",
+      "example": "https://whiteforlancasterca.net#platform",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "msmagazine.com/2024/08/06/los-angeles-california-city-attorney-hydee-feldstein-soto-child-sex-trafficking-abuse/",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 1,
+      "example_government": "Los Angeles, California, US",
+      "example": "msmagazine.com/2024/08/06/los-angeles-california-city-attorney-hydee-feldstein-soto-child-sex-trafficking-abuse/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "mynewsla.com/crime/2026/04/10/lapd-union-rescinds-endorsement-of-la-city-attorneys-reelection-bid/",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 1,
+      "example_government": "Los Angeles, California, US",
+      "example": "mynewsla.com/crime/2026/04/10/lapd-union-rescinds-endorsement-of-la-city-attorneys-reelection-bid/",
+      "priority": 3,
+      "flags": [
+        "press-shaped",
+        "single-government"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "willametteweek.com",
+      "citations": 57,
+      "rows_touched": 57,
+      "politicians": 12,
+      "on_sole_sourced_rows": 57,
+      "without_path": 0,
+      "governments": 1,
+      "example_government": "City of Portland, Oregon, US",
+      "example": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "ERROR",
+      "code": "ESERVFAIL"
+    },
+    {
+      "host": "ericjenkinsforkansas.com#page-issues",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 1,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://ericjenkinsforkansas.com#page-issues",
+      "priority": 0,
+      "flags": [],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "patch.com/california/los-angeles/meet-aida-ashouri-candidate-los-angeles-city-attorney",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "patch.com/california/los-angeles/meet-aida-ashouri-candidate-los-angeles-city-attorney",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "patch.com/california/los-angeles/meet-andrew-kim-candidate-los-angeles-mayor",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "patch.com/california/los-angeles/meet-andrew-kim-candidate-los-angeles-mayor",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "patch.com/california/los-angeles/meet-asaad-alnajjar-candidate-los-angeles-mayor",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "patch.com/california/los-angeles/meet-asaad-alnajjar-candidate-los-angeles-mayor",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "patch.com/california/los-angeles/meet-tish-hyman-candidate-los-angeles-mayor",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "patch.com/california/los-angeles/meet-tish-hyman-candidate-los-angeles-mayor",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "electbrianknudsen.com#brians-priorities",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 1,
+      "without_path": 1,
+      "governments": 1,
+      "example_government": "City of Las Vegas, Nevada, US",
+      "example": "https://www.electbrianknudsen.com#brians-priorities",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "publicleadershipinstitute.org",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 0,
+      "governments": 1,
+      "example_government": "United States Federal Government",
+      "example": "https://publicleadershipinstitute.org/2019/09/25/proactive-abortion-rights-summary-of-2019/",
+      "priority": 3,
+      "flags": [
+        "press-shaped",
+        "single-government"
+      ],
+      "dns": "ERROR",
+      "code": "ESERVFAIL"
+    },
+    {
+      "host": "davedawsonforiowa.com#bio",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 1,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://davedawsonforiowa.com#bio",
+      "priority": 0,
+      "flags": [],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "scottschwab.com#priorities",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 1,
+      "without_path": 1,
+      "governments": 1,
+      "example_government": "State of Kansas",
+      "example": "https://scottschwab.com#priorities",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "cch8th.com#priorities",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 1,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://www.cch8th.com#priorities",
+      "priority": 0,
+      "flags": [],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "theeastsiderla.com/news/government_and_politics/maria-lou-calanche-l-a-city-council-district-1-candidate",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "theeastsiderla.com/news/government_and_politics/maria-lou-calanche-l-a-city-council-district-1-candidate",
+      "priority": 2,
+      "flags": [
+        "press-shaped"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "brandon4missouri.com#promises",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 1,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://www.brandon4missouri.com#PROMISES",
+      "priority": 0,
+      "flags": [],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "tomcraddick.com#about",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 1,
+      "without_path": 1,
+      "governments": 1,
+      "example_government": "State of Texas",
+      "example": "https://tomcraddick.com#about",
+      "priority": 1,
+      "flags": [
+        "single-government"
+      ],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "ballotpedia.org/andrew_kim_(los_angeles_mayoral_candidate,_california)",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 0,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "ballotpedia.org/Andrew_Kim_(Los_Angeles_mayoral_candidate,_California)",
+      "priority": 0,
+      "flags": [],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    },
+    {
+      "host": "allenforutahcounty.com#whyus",
+      "citations": 1,
+      "rows_touched": 1,
+      "politicians": 1,
+      "on_sole_sourced_rows": 1,
+      "without_path": 1,
+      "governments": 0,
+      "example_government": null,
+      "example": "https://allenforutahcounty.com#whyus",
+      "priority": 0,
+      "flags": [],
+      "dns": "ERROR",
+      "code": "EBADNAME"
+    }
+  ]
+}
