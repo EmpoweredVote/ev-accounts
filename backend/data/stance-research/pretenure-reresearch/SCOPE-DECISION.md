@@ -117,31 +117,52 @@ wrong. 1544 adds it. No stance data changed (33,175 / 33,721 asserted).
 defaults to all-true) — but the rows are not redundant, because they are what puts the topic in each tier's
 **required** set for compass completeness.
 
+### ✅ Also resolved: `Criminal Justice Approach` at STATE tier — migration 1545, applied
+
+Third in the series, same reasoning. The topic was `judicial`-only until 1543 added `federal`; it still had
+no `state` row, leaving **140 state-legislator stances invisible**. States own most of the criminal justice
+system — they write the sentencing codes, run the prisons and parole boards, and set bail and juvenile law.
+Now `federal + state + judicial`, verified live. State required topics **27 → 28**. No stance data changed.
+
+⚠ **It deliberately has no `local` row, so 37 local-tier answers on it remain out of scope** and were not
+addressed. Whether a local official should be asked *"when someone breaks the law, what matters most?"*
+depends on **which** local office — a county sheriff or DA plausibly yes, a city zoning board no — so it
+cannot be settled by the topic alone the way the state row could.
+
 ## Running total and what is left
 
 | | out-of-tier answers |
 |---|---|
 | before 1543 | 3,325 |
 | after 1543 (federal housing + criminal justice, 271) | 3,054 |
-| **after 1544 (state housing, 712)** | **2,342** |
+| after 1544 (state housing, 712) | 2,342 |
+| **after 1545 (state criminal justice, 140)** | **2,202** |
 
-The remaining 2,342, largest buckets first:
+**1,123 previously-invisible stances now surface**, across three migrations that changed no stance data at all.
+
+The remaining 2,202, largest buckets first:
 
 | holder tier | topic | topic's scope | answers | likely call |
 |---|---|---|---|---|
 | state | Local Immigration Enforcement | local | 263 | arguable — states pass sanctuary preemption |
 | state | Public Safety Approach | local | 249 | arguable |
-| state | United States Tariff Policy | fed | 141 | **(A) retire** — states set no tariffs |
-| **state** | **Criminal Justice Approach** | **fed** (+judicial) | **140** | **(B) add `state`** |
+| state | United States Tariff Policy | fed | 141 | **retire** — states set no tariffs |
 | local | Taxation and Public Spending | fed+state | 135 | arguable — many cities set property tax |
 | state | Residential Zoning | local | 107 | arguable — states increasingly preempt zoning |
-| state | Social Security | fed | 104 | **(A) retire** — not a state programme |
+| state | Social Security | fed | 104 | **retire** — not a state programme |
 | federal | Judicial Interpretation | judicial-only | 61 | arguable |
+| local | Criminal Justice Approach | fed+state+judicial | 37 | depends on WHICH local office |
 
-🔴 **The clearest next one is `Criminal Justice Approach` at state tier.** 1543 gave it a `federal` row but
-not a `state` one, and 140 state legislators hold stances on it — states run the sentencing codes, prisons
-and parole systems. It is the exact analogue of what 1544 just did for housing, and by the same reasoning it
-is under-scoped rather than wrongly answered.
+**The easy additions are done.** What is left is genuinely harder, and in a specific way: the two clear
+*retirements* (Tariff Policy 141, Social Security 104 — neither is a state function) are straightforward, but
+everything else turns on **which offices within a tier**, not on the topic. `Local Immigration Enforcement`
+and `Residential Zoning` are real state questions in preemption fights and not otherwise; `Taxation and
+Public Spending` fits a city that sets property tax rates and not a school board; `Criminal Justice Approach`
+fits a county sheriff or DA and not a city clerk.
+
+That means the remaining backlog probably cannot be cleared by adding tier rows at all — a per-office
+dimension the current model does not have would be needed, or the rows get retired. **That is a design
+question, not a data question**, and it is where this should stop until someone decides it.
 
 **Recommended next step:** decide the arguable rows per topic, not globally, then add a gate in the shape of
 `check-stance-sources.mjs` keyed on out-of-tier count so the number cannot regrow once settled. The gate must
