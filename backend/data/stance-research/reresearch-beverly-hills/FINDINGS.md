@@ -29,9 +29,26 @@ and cannot distinguish a sitting member from a departed one. Newton (57 rows) an
 both held municipal elections since their seeding and must be roster-checked the same way **before**
 any stance work, not after.
 
-⏳ **Owed, operator decision:** a roster migration to close Mirisch's term (`term_end = 2026-07-07`,
-`how_ended` = term limit) and seat Pynoos. Until it runs, Beverly Hills shows a departed councilmember
-and hides a sitting one, and the city's coverage denominator is wrong.
+✅ **RESOLVED by migration 1546** (applied 2026-08-04 on operator instruction, dry-run first). Mirisch's
+term closed `2026-07-06 / term_expired` and `is_incumbent` cleared — both gates, because
+`current_office_holders` filters on `term_end` while `getPoliticiansFlatList`'s incumbents-only view
+filters `p.is_incumbent` with no occupancy join at all, so fixing one alone is a half-repair. Pynoos
+seated `term_start 2026-07-07`, `how_started 'elected'`. Verified after: the council reads exactly
+*Corman, Friedman, Wells, Pynoos, Nazarian*; Mirisch has 0 current-holder rows; stance counts unmoved at
+33,171 / 33,717.
+
+🔴 **The handoff had to be dated 07-06 → 07-07, not 07-07 → 07-07.** `office_terms_no_overlap` is
+`EXCLUDE USING gist (office_id =, daterange(term_start, term_end, '[]') &&)` — **inclusive both ends** —
+so ending the predecessor on the successor's start date is rejected outright. Pynoos's 07-07 is the
+verified fact; Mirisch's 07-06 is the modelling consequence, and it is recorded as such in the migration.
+
+🔴 **TWELFTH first-cut detector over-fire, and a warning for every future roster migration.** The guard
+"no existing Pynoos row" fired on **3 rows** — all of them **campaign-finance committees**:
+`PYNOOS FOR BH CITY COUNCIL 2026; REBECCA` (twice) and `PYNOOS FOR LA CITY COUNCIL 2022; KATE`, with
+empty `first_name`, `is_active` false, and `office_terms` rows pointing at offices that have no title,
+chamber or government. **Most of `essentials.politicians` is not people** — roughly 77,000 of 85,139 rows
+are committees — so any name-matching guard must use the exact person form, or it blocks correct work
+while looking like it caught a duplicate.
 
 ## ⚠ FINDING 2 — `beverlyhillscourier.com` is paywalled, and it fails open
 
