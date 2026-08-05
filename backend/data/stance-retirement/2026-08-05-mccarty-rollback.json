@@ -1,0 +1,36 @@
+{
+  "migration": "1561_retire_mccarty_sanitation_unsupportable.sql",
+  "applied": "2026-08-05",
+  "defect_class": "nav_page_no_evidence_and_contradicted",
+  "operator_approved": "2026-08-05",
+  "summary": {
+    "rows_retired": 1,
+    "politicians": 1,
+    "answers_before": 23,
+    "answers_after": 22,
+    "emptied": false,
+    "chips_affected": 0
+  },
+  "why": [
+    "Sole-sourced to cityofsacramento.gov/mayor, a nav page. Its only body prose is a two-sentence bio; the 147 name / 64 'homeless' / 36 'clean' hits and the ~19,700 word count are the site-wide navigation menu. An earlier note in this audit called the page substantive on that basis and was wrong — word counts on .gov pages are nav-inflated and are not a substance signal.",
+    "Re-source attempt 1 (official): cityofsacramento.gov/mayor-council/mayor/mayor-mccarty-memo/9-16-homelessness-plan-update, 'State of Homelessness Update'. Real, mayor-specific, item-specific, substantive — 6-point plan, '1375 beds ... on track to add nearly 500 beds this year', beds 12 / shelter 13. But 'sanitation' appears 0 times, and the row's topic is City Sanitation and Cleanliness.",
+    "Re-source attempt 2 (campaign): mccartyformayor.com/issues/ — host now dead (no A record); Wayback capture 2025-04-22 readable, 185 name mentions. 'sanitation' 0, 'clean' 1, 'dumping' 1.",
+    "🔴 That page CONTRADICTS the row. Its one relevant passage: 'We cannot sustain this treasure if we don't address dumping, camping and public safety. This is why I worked on a new law to ban illegal camping, while also fighting for $25 million for the county to provide services for those in need.' The row's reasoning claims his approach is 'adding beds and shelter rather than punitive sanitation enforcement'. He authored a camping ban and has said 'We need to enforce the law. We can't have urban camping.' The 'coupling enforcement with social service connections' half is supported; the 'rather than punitive enforcement' half is refuted.",
+    "Re-pointing to either candidate would attach a source that does not support the claim as written. The alternative — keep the row and rewrite the reasoning to a balanced-to-enforcement posture — changes a voter-facing stance, so it went to the operator, who chose retirement."
+  ],
+  "rows": [
+    {
+      "politician_id": "b89b09f0-6a9f-46e5-9193-8a9de99867b0",
+      "full_name": "Kevin McCarty",
+      "office": "Mayor of Sacramento",
+      "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+      "topic": "City Sanitation and Cleanliness",
+      "value": 3.0,
+      "write_in_text": null,
+      "reasoning": "As Sacramento Mayor since December 2024, McCarty's homelessness plan focuses on adding beds and shelter rather than punitive sanitation enforcement. His approach maintains current city sanitation services while coupling enforcement with social service connections, consistent with a balanced stance 3.",
+      "sources": ["https://www.cityofsacramento.gov/mayor"]
+    }
+  ],
+  "owed": "If this topic is re-researched for McCarty, the honest answer is likely a balanced-to-enforcement value, not the 'rather than punitive enforcement' framing. Use the official homelessness memo plus a source that actually addresses sanitation/street cleaning, and verify each URL resolves and is captured.",
+  "reverse": "INSERT INTO inform.politician_answers (politician_id, topic_id, value, write_in_text) VALUES ('b89b09f0-6a9f-46e5-9193-8a9de99867b0','7687de4f-4d0b-462a-b803-bdfb23b16b42',3.0,NULL); and the matching politician_context row with the reasoning and sources above."
+}
