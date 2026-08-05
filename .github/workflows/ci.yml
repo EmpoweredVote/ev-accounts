@@ -132,8 +132,16 @@ jobs:
       # Ballotpedia and nothing else", not "stances are sourced". Content needs a fetch and is the
       # article-body test's job.
       #
+      # ONE PARTIAL EXCEPTION since 2026-08-05: FABRICATED_SOURCE (zero-tolerance) does concern whether a
+      # cited page exists, but it cannot decide that here — it matches a denylist of URLs and hosts
+      # already proven absent (backend/data/fabricated-sources.json). Discovery needs a fetch plus an
+      # archive probe with a period control, which archive.org rate-limits, so it runs on demand via
+      # `npm run sweep:fabricated-articles` and NOT in CI. Six migrations' worth of fabricated citations
+      # (1539, 1540, 1548, 1558, 1562) passed this step green while they were live; the check stops what
+      # was confirmed from coming back, it does not prove none exists.
+      #
       # Same prod-drift reasoning as the check above, and it likewise skips itself without DATABASE_URL.
-      - name: Check no stance cites Ballotpedia as its only source
+      - name: Check stance sourcing — no Ballotpedia-only rows, no known-fabricated citations
         run: npm run check:stance-sources
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
