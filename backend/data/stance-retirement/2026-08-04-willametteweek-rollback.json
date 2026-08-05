@@ -1,0 +1,827 @@
+{
+  "migration": "1558_retire_willametteweek_portland_council.sql",
+  "applied": "2026-08-04",
+  "defect_class": "fabricated_article_real_outlet",
+  "operator_approved": "2026-08-04",
+  "summary": {
+    "rows_retired": 57,
+    "politicians": 12,
+    "distinct_fabricated_urls": 5,
+    "all_sole_sourced": true,
+    "politicians_emptied_to_zero": 8,
+    "emptied": [
+      "Angelita Morillo",
+      "Candace Avalos",
+      "Elana Pirtle-Guiney",
+      "Eric Zimmerman",
+      "Jamie Dunphy",
+      "Mitch Green",
+      "Sameer Kanal",
+      "Tiffany Koyama Lane"
+    ]
+  },
+  "why": [
+    "willametteweek.com is Willamette Week's GENUINE FORMER domain — archived from 1998, serving WW's own assets, still 301-redirecting to wweek.com as late as 2020. It is NOT a composed hostname like clark.house.gov, and the earlier worklist framing that called it one was wrong.",
+    "But the five cited article paths never existed: zero Wayback captures of any URL containing \"answer-our-questions\" anywhere on wweek.com, and all five return HTTP 404 at the live real domain.",
+    "Decisively: the claimed CONTENT is absent from WW's real coverage of these races. The genuine Oct-16-2024 endorsement articles for Districts 1-4 and mayor contain ZERO mentions of immigration, sanctuary, ICE, rent control/regulation/stabilization, zoning, vouchers, or even the phrase \"affordable housing\" — the exact topics these rows assert (Local Immigration Enforcement for 9 of 12 politicians, Rent Regulation for 6, Affordable Housing for 11). So this is not a wrong address for real journalism; the journalism does not exist.",
+    "Person coverage is thin too: Sameer Kanal is not named in the D2 endorsement in any form; Koyama Lane and Loretta Smith get one mention each, Mitch Green two, Morillo and Dan Ryan three.",
+    "WW's only per-candidate format (\"city council entrance interview\") covers about six candidates total, two of ours, and also has zero immigration or zoning.",
+    "Every one of the 57 rows is SOLE-SOURCED to the fabricated URL — unlike the bilalmahmood case where 10 of 12 rows had a live co-source. There is nothing to re-point alongside."
+  ],
+  "verification_evidence": {
+    "willametteweek_dns": "does not resolve (curl exit 6)",
+    "willametteweek_archived_span": "1998-12-06 earliest; 301 redirects to wweek.com through 2020-06; WW-owned assets under /2008/*",
+    "wweek_root": "HTTP 301 -> live",
+    "cited_paths_at_real_domain": "all 5 HTTP 404",
+    "cdx_answer_our_questions": "zero captures on wweek.com",
+    "real_articles_fetched": [
+      "https://www.wweek.com/news/2024/10/16/wws-fall-2024-endorsements-portland-city-council-district-1/",
+      "https://www.wweek.com/news/2024/10/16/wws-fall-2024-endorsements-portland-city-council-district-2/",
+      "https://www.wweek.com/news/2024/10/16/wws-fall-2024-endorsements-portland-city-council-district-3/",
+      "https://www.wweek.com/news/2024/10/16/wws-fall-2024-endorsements-portland-city-council-district-4/",
+      "https://www.wweek.com/news/2024/10/16/wws-fall-2024-endorsements-portland-mayor/"
+    ],
+    "topic_term_counts_across_all_five": {
+      "immigration": 0,
+      "sanctuary": 0,
+      "ICE": 0,
+      "rent control|rent regulation|rent stabiliz": 0,
+      "zoning": 0,
+      "voucher": 0,
+      "affordable housing": 0
+    }
+  },
+  "per_politician": {
+    "Angelita Morillo": {
+      "politician_id": "c6799d98-362a-4e27-b7c5-be45a82a150f",
+      "answers_before": 5,
+      "rows_retired": 5,
+      "last_stances_researched_at": null,
+      "answers_after": 0
+    },
+    "Candace Avalos": {
+      "politician_id": "c5db367e-9403-4a88-a95f-bf864279e13b",
+      "answers_before": 7,
+      "rows_retired": 7,
+      "last_stances_researched_at": null,
+      "answers_after": 0
+    },
+    "Dan Ryan": {
+      "politician_id": "60fa9870-d984-46a7-a6ed-5f6fbebe72ce",
+      "answers_before": 9,
+      "rows_retired": 3,
+      "last_stances_researched_at": null,
+      "answers_after": 6
+    },
+    "Elana Pirtle-Guiney": {
+      "politician_id": "987e0304-acd0-4b00-bf65-9e4fdbe4af3a",
+      "answers_before": 5,
+      "rows_retired": 5,
+      "last_stances_researched_at": null,
+      "answers_after": 0
+    },
+    "Eric Zimmerman": {
+      "politician_id": "1518349b-3d63-49d0-9411-be19f86a7ea7",
+      "answers_before": 4,
+      "rows_retired": 4,
+      "last_stances_researched_at": null,
+      "answers_after": 0
+    },
+    "Jamie Dunphy": {
+      "politician_id": "14ebbd1c-597e-483a-a846-73a7aca54ed2",
+      "answers_before": 4,
+      "rows_retired": 4,
+      "last_stances_researched_at": null,
+      "answers_after": 0
+    },
+    "Keith Wilson": {
+      "politician_id": "bd39d61e-3040-4ec1-815e-df16b1f9a8a0",
+      "answers_before": 10,
+      "rows_retired": 5,
+      "last_stances_researched_at": null,
+      "answers_after": 5
+    },
+    "Loretta Smith": {
+      "politician_id": "e6682850-601f-4017-b4e7-d9cd4be47aea",
+      "answers_before": 5,
+      "rows_retired": 3,
+      "last_stances_researched_at": null,
+      "answers_after": 2
+    },
+    "Mitch Green": {
+      "politician_id": "acc73d7e-6522-40a9-bbe0-17cf56a96466",
+      "answers_before": 4,
+      "rows_retired": 4,
+      "last_stances_researched_at": null,
+      "answers_after": 0
+    },
+    "Sameer Kanal": {
+      "politician_id": "dc00f7c1-54d1-46d8-8b35-545abdd38d8d",
+      "answers_before": 5,
+      "rows_retired": 5,
+      "last_stances_researched_at": null,
+      "answers_after": 0
+    },
+    "Steve Novick": {
+      "politician_id": "c9e19031-259e-4133-b5d9-96cf1a5f31ff",
+      "answers_before": 9,
+      "rows_retired": 7,
+      "last_stances_researched_at": null,
+      "answers_after": 2
+    },
+    "Tiffany Koyama Lane": {
+      "politician_id": "2947c92f-fee2-46e4-b472-9fd89a8f0f65",
+      "answers_before": 5,
+      "rows_retired": 5,
+      "last_stances_researched_at": null,
+      "answers_after": 0
+    }
+  },
+  "rows": [
+    {
+      "politician_id": "c6799d98-362a-4e27-b7c5-be45a82a150f",
+      "full_name": "Angelita Morillo",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Morillo as labor organizer championed affordable housing and anti-displacement; supported community benefit agreements on development; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c6799d98-362a-4e27-b7c5-be45a82a150f",
+      "full_name": "Angelita Morillo",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic": "Criminalization of Homelessness",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Angelita Morillo supported decriminalization of homelessness and service-first approach; opposed camping ban enforcement without adequate shelter alternatives; Willamette Week 2024 voter guide for District 3. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c6799d98-362a-4e27-b7c5-be45a82a150f",
+      "full_name": "Angelita Morillo",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "topic": "Local Immigration Enforcement",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Morillo expressed strong support for sanctuary city policies and immigrant worker protections as a labor organizer; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c6799d98-362a-4e27-b7c5-be45a82a150f",
+      "full_name": "Angelita Morillo",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Morillo supported community-based public safety approaches and police accountability reform; backed alternative emergency response programs; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c6799d98-362a-4e27-b7c5-be45a82a150f",
+      "full_name": "Angelita Morillo",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic": "Rent Regulation",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Morillo supported strong renter protections and rent stabilization; backed anti-displacement policies; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c5db367e-9403-4a88-a95f-bf864279e13b",
+      "full_name": "Candace Avalos",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Avalos strongly advocated for affordable housing production and anti-displacement; opposed luxury development without community benefit agreements; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c5db367e-9403-4a88-a95f-bf864279e13b",
+      "full_name": "Candace Avalos",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic": "Criminalization of Homelessness",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Candace Avalos campaigned on decriminalizing homelessness and investing in services rather than enforcement; Willamette Week 2024 voter guide for Portland City Council District 1. https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c5db367e-9403-4a88-a95f-bf864279e13b",
+      "full_name": "Candace Avalos",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "topic": "Homelessness Response",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Avalos supported housing-first homelessness response with robust services; backed shelter expansion and mental health investments; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c5db367e-9403-4a88-a95f-bf864279e13b",
+      "full_name": "Candace Avalos",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "topic": "Local Immigration Enforcement",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Avalos expressed strong support for immigrant protections and sanctuary city policies; Willamette Week 2024 voter guide on local immigration enforcement. https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c5db367e-9403-4a88-a95f-bf864279e13b",
+      "full_name": "Candace Avalos",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Avalos supported community-based public safety and alternatives to policing; backed police accountability measures; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c5db367e-9403-4a88-a95f-bf864279e13b",
+      "full_name": "Candace Avalos",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic": "Rent Regulation",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Avalos supported strong renter protections and rent stabilization; backed anti-displacement measures; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c5db367e-9403-4a88-a95f-bf864279e13b",
+      "full_name": "Candace Avalos",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Avalos supported zoning reform and increased density in high-opportunity areas; backed Portland's residential infill project; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "60fa9870-d984-46a7-a6ed-5f6fbebe72ce",
+      "full_name": "Dan Ryan",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Dan Ryan served on city council during passage of housing bond measures; supported inclusionary zoning and affordable housing production; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "60fa9870-d984-46a7-a6ed-5f6fbebe72ce",
+      "full_name": "Dan Ryan",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic": "Criminalization of Homelessness",
+      "value": "3.0",
+      "write_in_text": null,
+      "reasoning": "Dan Ryan as Portland City Commissioner voted on homelessness response measures; supported a balanced enforcement-plus-services approach rather than pure criminalization; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "60fa9870-d984-46a7-a6ed-5f6fbebe72ce",
+      "full_name": "Dan Ryan",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "topic": "Local Immigration Enforcement",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Ryan supported Portland's sanctuary city policies and immigrant protections during his prior tenure on Portland City Council; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "987e0304-acd0-4b00-bf65-9e4fdbe4af3a",
+      "full_name": "Elana Pirtle-Guiney",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Pirtle-Guiney campaigned on affordable housing production and anti-displacement protections; supported renter protections; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "987e0304-acd0-4b00-bf65-9e4fdbe4af3a",
+      "full_name": "Elana Pirtle-Guiney",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic": "Criminalization of Homelessness",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Elana Pirtle-Guiney supported service-first approach to homelessness; backed behavioral health investments over punitive enforcement; Willamette Week 2024 voter guide for District 2. https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "987e0304-acd0-4b00-bf65-9e4fdbe4af3a",
+      "full_name": "Elana Pirtle-Guiney",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "topic": "Local Immigration Enforcement",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Pirtle-Guiney expressed strong support for sanctuary city policies and immigrant community protections; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "987e0304-acd0-4b00-bf65-9e4fdbe4af3a",
+      "full_name": "Elana Pirtle-Guiney",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Pirtle-Guiney supported community-based public safety and alternatives to traditional policing; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "987e0304-acd0-4b00-bf65-9e4fdbe4af3a",
+      "full_name": "Elana Pirtle-Guiney",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Pirtle-Guiney as education advocate strongly opposed school vouchers; supported public school funding; Willamette Week 2024 voter guide and campaign site. https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "1518349b-3d63-49d0-9411-be19f86a7ea7",
+      "full_name": "Eric Zimmerman",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "value": "3.0",
+      "write_in_text": null,
+      "reasoning": "Zimmerman supported housing production with emphasis on both market-rate and affordable; balanced approach to development; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "1518349b-3d63-49d0-9411-be19f86a7ea7",
+      "full_name": "Eric Zimmerman",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic": "Criminalization of Homelessness",
+      "value": "3.0",
+      "write_in_text": null,
+      "reasoning": "Eric Zimmerman expressed support for enforcement combined with services to address homelessness; Willamette Week 2024 voter guide for District 4. https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "1518349b-3d63-49d0-9411-be19f86a7ea7",
+      "full_name": "Eric Zimmerman",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic": "Economic Development Incentives",
+      "value": "3.0",
+      "write_in_text": null,
+      "reasoning": "Zimmerman as a business owner supported economic recovery and business-friendly development in Portland; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "1518349b-3d63-49d0-9411-be19f86a7ea7",
+      "full_name": "Eric Zimmerman",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "value": "3.0",
+      "write_in_text": null,
+      "reasoning": "Zimmerman supported restoring police staffing and public safety improvements; more centrist on public safety than some progressive council members; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "14ebbd1c-597e-483a-a846-73a7aca54ed2",
+      "full_name": "Jamie Dunphy",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Dunphy supported affordable housing production and increased supply to address Portland's housing shortage; Willamette Week 2024 voter guide on housing policy. https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "14ebbd1c-597e-483a-a846-73a7aca54ed2",
+      "full_name": "Jamie Dunphy",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic": "Criminalization of Homelessness",
+      "value": "3.0",
+      "write_in_text": null,
+      "reasoning": "Jamie Dunphy discussed balanced homelessness response in Willamette Week 2024 voter guide; supported enforcement combined with services and shelter expansion. https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "14ebbd1c-597e-483a-a846-73a7aca54ed2",
+      "full_name": "Jamie Dunphy",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic": "Economic Development Incentives",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Dunphy supported small business recovery and equitable economic development in Portland; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "14ebbd1c-597e-483a-a846-73a7aca54ed2",
+      "full_name": "Jamie Dunphy",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "value": "3.0",
+      "write_in_text": null,
+      "reasoning": "Dunphy expressed support for public safety improvements including both policing and alternative response teams; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "bd39d61e-3040-4ec1-815e-df16b1f9a8a0",
+      "full_name": "Keith Wilson",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Wilson supported increased housing production, streamlined permitting, and affordability mandates; Willamette Week 2024 voter guide positions on housing supply: pro-development and density. https://www.willametteweek.com/news/2024/10/30/portland-mayor-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-mayor-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "bd39d61e-3040-4ec1-815e-df16b1f9a8a0",
+      "full_name": "Keith Wilson",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic": "Criminalization of Homelessness",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Wilson campaigned on strictly enforcing Portland's camping ban and prioritizing enforcement-first approach; Willamette Week 2024 voter guide: supported outdoor shelter enforcement with behavioral health linkage. https://www.willametteweek.com/news/2024/10/30/portland-mayor-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-mayor-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "bd39d61e-3040-4ec1-815e-df16b1f9a8a0",
+      "full_name": "Keith Wilson",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "topic": "Local Immigration Enforcement",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Wilson did not campaign against Portland sanctuary city policies; expressed support for immigrant community protections; Willamette Week 2024 voter guide on local immigration enforcement. https://www.willametteweek.com/news/2024/10/30/portland-mayor-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-mayor-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "bd39d61e-3040-4ec1-815e-df16b1f9a8a0",
+      "full_name": "Keith Wilson",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic": "Rent Regulation",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Wilson expressed support for renter protections and anti-displacement measures in Portland; Willamette Week 2024 voter guide on housing affordability and rent relief. https://www.willametteweek.com/news/2024/10/30/portland-mayor-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-mayor-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "bd39d61e-3040-4ec1-815e-df16b1f9a8a0",
+      "full_name": "Keith Wilson",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "topic": "Transportation Priorities",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Wilson supported transit investment and multimodal transportation; endorsed TriMet improvements and active transportation safety; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-mayor-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-mayor-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "e6682850-601f-4017-b4e7-d9cd4be47aea",
+      "full_name": "Loretta Smith",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Smith supported community-based public safety alternatives and mental health diversion programs at Multnomah County; backed SB 48 behavioral health investments; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "e6682850-601f-4017-b4e7-d9cd4be47aea",
+      "full_name": "Loretta Smith",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic": "Rent Regulation",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Smith supported renter protections and relocation assistance programs throughout her county tenure; Willamette Week 2024 voter guide on housing and rent. https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "e6682850-601f-4017-b4e7-d9cd4be47aea",
+      "full_name": "Loretta Smith",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Smith supported increased housing density and zoning reform to address housing shortage; backed inclusionary zoning policies at county level; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "acc73d7e-6522-40a9-bbe0-17cf56a96466",
+      "full_name": "Mitch Green",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Green supported affordable housing production and anti-displacement measures; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "acc73d7e-6522-40a9-bbe0-17cf56a96466",
+      "full_name": "Mitch Green",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic": "Criminalization of Homelessness",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Mitch Green supported services-based approach to homelessness with emphasis on behavioral health care; Willamette Week 2024 voter guide for District 4. https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "acc73d7e-6522-40a9-bbe0-17cf56a96466",
+      "full_name": "Mitch Green",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "topic": "Local Immigration Enforcement",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Green expressed support for sanctuary city policies and immigrant protections; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "acc73d7e-6522-40a9-bbe0-17cf56a96466",
+      "full_name": "Mitch Green",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Green as an attorney supported public safety reform including police accountability and community-based alternatives; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "dc00f7c1-54d1-46d8-8b35-545abdd38d8d",
+      "full_name": "Sameer Kanal",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Kanal advocated for affordable housing production and anti-displacement policies; supported renter protections; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "dc00f7c1-54d1-46d8-8b35-545abdd38d8d",
+      "full_name": "Sameer Kanal",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic": "Criminalization of Homelessness",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Sameer Kanal supported service-first approach to homelessness and opposed punitive enforcement; Willamette Week 2024 voter guide for District 2. https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "dc00f7c1-54d1-46d8-8b35-545abdd38d8d",
+      "full_name": "Sameer Kanal",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "topic": "Local Immigration Enforcement",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Kanal as a lawyer and community organizer expressed strong support for immigrant rights and sanctuary city protections; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "dc00f7c1-54d1-46d8-8b35-545abdd38d8d",
+      "full_name": "Sameer Kanal",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Kanal supported community-based public safety and police accountability reform; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "dc00f7c1-54d1-46d8-8b35-545abdd38d8d",
+      "full_name": "Sameer Kanal",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic": "Rent Regulation",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Kanal supported strong renter protections and anti-displacement measures; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c9e19031-259e-4133-b5d9-96cf1a5f31ff",
+      "full_name": "Steve Novick",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Novick advocated for increased affordable housing production and anti-displacement protections throughout his political career; Willamette Week 2024 voter guide on housing. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c9e19031-259e-4133-b5d9-96cf1a5f31ff",
+      "full_name": "Steve Novick",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic": "Criminalization of Homelessness",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Novick supported decriminalization of homelessness and service-focused approach; Willamette Week 2024 voter guide responses show opposition to punitive camping enforcement. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c9e19031-259e-4133-b5d9-96cf1a5f31ff",
+      "full_name": "Steve Novick",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "topic": "Environmental Protection vs. Development",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Novick has been a strong environmental advocate throughout his career; supported local environmental protections and sustainable infrastructure; his transportation work emphasized low-carbon alternatives; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c9e19031-259e-4133-b5d9-96cf1a5f31ff",
+      "full_name": "Steve Novick",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "topic": "Homelessness Response",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Novick backed housing-first approach to homelessness response; supported shelter expansion with wraparound services; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c9e19031-259e-4133-b5d9-96cf1a5f31ff",
+      "full_name": "Steve Novick",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "topic": "Local Immigration Enforcement",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Novick has supported sanctuary city policies and immigrant protections; Willamette Week 2024 voter guide positions on local immigration enforcement. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c9e19031-259e-4133-b5d9-96cf1a5f31ff",
+      "full_name": "Steve Novick",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic": "Rent Regulation",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Novick supported renter protections and rent stabilization policies; Willamette Week 2024 voter guide on rent regulation. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "c9e19031-259e-4133-b5d9-96cf1a5f31ff",
+      "full_name": "Steve Novick",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic": "Residential Zoning",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Novick supported upzoning and increased housing density to address Portland housing shortage; backed residential infill project; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "2947c92f-fee2-46e4-b472-9fd89a8f0f65",
+      "full_name": "Tiffany Koyama Lane",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Koyama Lane advocated for affordable housing production and anti-displacement; supported renter protections; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "2947c92f-fee2-46e4-b472-9fd89a8f0f65",
+      "full_name": "Tiffany Koyama Lane",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic": "Criminalization of Homelessness",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Tiffany Koyama Lane supported compassionate, services-based approach to homelessness; Willamette Week 2024 voter guide for District 3. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "2947c92f-fee2-46e4-b472-9fd89a8f0f65",
+      "full_name": "Tiffany Koyama Lane",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "topic": "Local Immigration Enforcement",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Koyama Lane expressed support for immigrant community protections and sanctuary city policies; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "2947c92f-fee2-46e4-b472-9fd89a8f0f65",
+      "full_name": "Tiffany Koyama Lane",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic": "Public Safety Approach",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Koyama Lane supported community safety approaches including mental health response; Willamette Week 2024 voter guide. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    },
+    {
+      "politician_id": "2947c92f-fee2-46e4-b472-9fd89a8f0f65",
+      "full_name": "Tiffany Koyama Lane",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Koyama Lane as an educator strongly opposed school vouchers and supported public education funding; Willamette Week 2024 voter guide and campaign materials. https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "sources": [
+        "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/"
+      ]
+    }
+  ],
+  "reverse": "For each entry in rows[]: INSERT INTO inform.politician_answers (politician_id, topic_id, value, write_in_text) and INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources). Then restore last_stances_researched_at from per_politician[].last_stances_researched_at for the politicians listed in summary.emptied."
+}
