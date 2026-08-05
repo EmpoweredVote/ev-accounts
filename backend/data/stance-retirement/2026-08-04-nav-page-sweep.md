@@ -56,7 +56,7 @@ being blessed by a successful re-point.
 
 ---
 
-## ⛔ Recommended for retirement — 5 rows, awaiting operator approval
+## ✅ Retired by migration 1560 — 5 rows (operator-approved 2026-08-04)
 
 Each is sole-sourced to a government nav page that was fetched and searched. The claim is about votes or
 positions; the page contains a roster and nothing else.
@@ -72,13 +72,43 @@ positions; the page contains a roster and nothing else.
 Thomson's is the worst of the set: a voter-facing stance with no reasoning text and a citation that does
 not mention the topic.
 
-## ⚠ Re-source rather than retire — 1 row
+Blast radius, proven not assumed: Robinson 1→0 and Descoteaux 1→0 (emptied); Mercier 2→1, Lavine 6→5,
+Thomson 20→19. **No `hasContext` chip breaks** — Lowell keeps 9 stanced officials of 12 seated, Plano
+keeps 8 of 8, and Bloomington's coverage.js entry is address-based. `last_stances_researched_at` was
+already NULL for all five, so the null-if-emptied step was a no-op.
 
-**Kevin McCarty · City Sanitation and Cleanliness · 3 · `cityofsacramento.gov/mayor`.** Unlike the five
-above, this page is genuinely about him and genuinely substantive — 147 name mentions, "homeless" 64,
-"clean" 36, "shelter" 10 across ~19,700 words. But the row's distinctive terms are absent
-(**"sanitation" 0, "beds" 0**), so it fails the claim-term standard while clearly having a real basis.
-The right remedy is a specific plan or item page, not retirement.
+⚠ **12 rows still cite these same nav pages** and are deliberately out of scope, because each pairs the
+nav page with a co-source: `lowellma.gov/council` 11, `bloomington.in.gov/mayor` 1. A draft guard
+asserting "nobody cites this page any more" failed on exactly this and had to be corrected to assert 12.
+**Those 12 are a follow-up queue, not a clean bill of health** — the 1548 lesson is that a worthless
+citation sharing a row with a plausible one is invisible to row-level checks.
+
+## ⛔ Kevin McCarty — re-source ATTEMPTED and NOT POSSIBLE as written. Row left untouched.
+
+Instruction was "re-source rather than retire". It could not be done faithfully.
+
+🔴 **First, a correction to this document's own earlier draft.** I described `cityofsacramento.gov/mayor`
+as "genuinely substantive — 147 name mentions, homeless 64, clean 36, ~19,700 words". That was wrong. The
+page's only body prose is a two-sentence bio ("Kevin McCarty was elected as the 57th Mayor … From 2014 to
+2024, McCarty served in the State Legislature"). The homeless/clean hits are the **site-wide navigation
+menu**, and the word count is nav too. It is the same landing-page defect as the other five.
+
+Two real candidates were found, fetched and read. Neither supports the row:
+
+| candidate | status | why it fails |
+|---|---|---|
+| `cityofsacramento.gov/mayor-council/mayor/mayor-mccarty-memo/9-16-homelessness-plan-update` — "State of Homelessness Update" | ✅ live 200, official, mayor-specific, item-specific, substantive (6-point plan, "1375 beds … on track to add nearly 500 beds this year") | Supports "adding beds and shelter" (beds 12, shelter 13) but **"sanitation" 0**. The row's topic is *City Sanitation and Cleanliness*. |
+| `mccartyformayor.com/issues/` | host **DEAD** (no A record); Wayback 2025-04-22 readable, 185 name mentions | **"sanitation" 0**, "clean" 1, "dumping" 1. Its one relevant passage is about the American River Parkway: *"We cannot sustain this treasure if we don't address dumping, camping and public safety. This is why I worked on a new law to ban illegal camping, while also fighting for $25 million for the county to provide services for those in need."* |
+
+🔴 **That passage contradicts the row.** The reasoning says his approach is "adding beds and shelter
+**rather than punitive sanitation enforcement**" — but he authored a camping ban and has said publicly
+"We need to enforce the law. We can't have urban camping." The "coupling enforcement with social service
+connections" half IS supported; the "rather than punitive enforcement" half is not.
+
+Re-pointing to either page would attach a source that does not support the claim as written — the
+Portland error in miniature. **Two honest options, operator's call:** retire the row, or keep it and
+rewrite the reasoning to match the evidence (a balanced-to-enforcement posture), which changes a
+voter-facing stance.
 
 ## Not a defect — ~31 rows
 

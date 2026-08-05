@@ -1,0 +1,108 @@
+{
+  "migration": "1560_retire_nav_page_sourced_stances.sql",
+  "applied": "2026-08-04",
+  "defect_class": "nav_page_no_evidence",
+  "operator_approved": "2026-08-04",
+  "summary": {
+    "rows_retired": 5,
+    "politicians": 5,
+    "all_sole_sourced": true,
+    "politicians_emptied_to_zero": 2,
+    "emptied": ["Corey Robinson", "John Descoteaux"],
+    "chips_broken": 0
+  },
+  "why": [
+    "Each row is sole-sourced to a government navigation page that was fetched and searched. The claims are about votes, public statements or fiscal positions; the pages contain a roster and nothing else.",
+    "lowellma.gov/council names Robinson, Descoteaux and Mercier twice each (roster listing) and contains 'affordable' 0 times and 'mill' 0 times, while all three rows claim backed housing projects and mill redevelopment.",
+    "plano.gov/city-council names Lavine twice and contains 'tax' 0, 'budget' 0, 'spending' 0 — the entire claim is about tax and spending positions.",
+    "bloomington.in.gov/mayor contains 'healthcare' 0 and 'health' 1, and the Thomson row's reasoning is an EMPTY STRING — a voter-facing stance with no stated reasoning at all."
+  ],
+  "chip_check": {
+    "method": "occupancy joined through office_current_holder -> offices -> chambers -> governments, not politicians.office_id (the ca993e74 note)",
+    "lowell_2537000": "12 seated, 11 with answers before / 9 after, 20 answers before / 17 after — chip stays honest",
+    "plano_4858016": "8 seated, 8 with answers, 30 answers before / 29 after — chip stays honest",
+    "bloomington": "Thomson 20 answers before / 19 after — chip stays honest; the coverage.js entry is address-based, not geo_id-based",
+    "conclusion": "No hasContext chip breaks. Proven, not assumed."
+  },
+  "timestamps": "last_stances_researched_at was already NULL for all 5 politicians before this migration, so the null-if-emptied step is a no-op here. It is retained in the migration for correctness (rule 1494/1507/1508).",
+  "rows": [
+    {
+      "politician_id": "246e6b71-e8ad-44bb-aa5c-10228d2c056a",
+      "full_name": "Corey Robinson",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "value": 4.0,
+      "write_in_text": null,
+      "reasoning": "Robinson has been a consistent supporter of housing development and has backed major projects in District 2. He has supported mill redevelopment and large mixed-use projects. His public statements emphasize the need to produce more housing units to address the affordability crisis.",
+      "sources": ["https://www.lowellma.gov/council"],
+      "answers_before": 1,
+      "answers_after": 0
+    },
+    {
+      "politician_id": "b7015fbc-6173-48bc-99ba-d0363b771048",
+      "full_name": "John Descoteaux",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "value": 4.0,
+      "write_in_text": null,
+      "reasoning": "Descoteaux has backed housing production in District 8 and has supported council approvals for large development projects. His votes reflect a pro-development stance prioritizing supply growth. He has not been a vocal advocate for strong affordability mandates but has supported projects that include market-rate and affordable components.",
+      "sources": ["https://www.lowellma.gov/council"],
+      "answers_before": 1,
+      "answers_after": 0
+    },
+    {
+      "politician_id": "ef52f3fd-dc4d-4a4a-8320-fbae613a4baa",
+      "full_name": "Rita Mercier",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic": "Affordable Housing",
+      "value": 4.0,
+      "write_in_text": null,
+      "reasoning": "Despite her conservative positions on some social issues, Mercier has historically supported housing production including market-rate development and mill redevelopment in Lowell. She has backed several major mixed-use projects that include some affordable units. Her housing stance is generally pro-development.",
+      "sources": ["https://www.lowellma.gov/council"],
+      "answers_before": 2,
+      "answers_after": 1
+    },
+    {
+      "politician_id": "ecef0481-27c7-4955-b822-83d64c7ef63f",
+      "full_name": "Steve Lavine",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic": "Taxation and Public Spending",
+      "value": 4.0,
+      "write_in_text": null,
+      "reasoning": "Lavine has taken a fiscally conservative approach on Plano City Council, opposing tax rate increases and emphasizing spending efficiency. His anti-tax score reflects consistent positions favoring lower property tax rates and scrutiny of city budget expansions.",
+      "sources": ["https://www.plano.gov/city-council"],
+      "answers_before": 6,
+      "answers_after": 5
+    },
+    {
+      "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+      "full_name": "Kerry Thomson",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic": "Healthcare Access",
+      "value": 3.0,
+      "write_in_text": null,
+      "reasoning": "",
+      "sources": ["https://bloomington.in.gov/mayor"],
+      "answers_before": 20,
+      "answers_after": 19,
+      "note": "The reasoning was an empty string. This row asserted a compass value to voters with no stated basis whatsoever."
+    }
+  ],
+  "not_retired_pending_decision": {
+    "politician": "Kevin McCarty",
+    "politician_id_note": "Sacramento mayor",
+    "topic": "City Sanitation and Cleanliness",
+    "value": 3.0,
+    "current_source": "https://www.cityofsacramento.gov/mayor-council/mayor",
+    "instruction_was": "re-source rather than retire",
+    "outcome": "COULD NOT be re-sourced faithfully; left untouched for a decision.",
+    "detail": [
+      "The cited page's only body prose is a two-sentence bio ('Kevin McCarty was elected as the 57th Mayor ... From 2014 to 2024, McCarty served in the State Legislature'). Its 64 'homeless' and 36 'clean' hits are the site-wide navigation menu, not content about him — my earlier description of it as substantive was wrong.",
+      "Best official candidate: cityofsacramento.gov/mayor-council/mayor/mayor-mccarty-memo/9-16-homelessness-plan-update — 'State of Homelessness Update', real, mayor-specific, item-specific, HTTP 200, with a 6-point plan and '1375 beds ... on track to add nearly 500 beds this year'. Supports 'adding beds and shelter' (beds 12, shelter 13) but contains 'sanitation' 0. It does not evidence a sanitation-and-cleanliness stance.",
+      "Best campaign candidate: mccartyformayor.com/issues/ — host is DEAD (no A record); Wayback capture 2025-04-22 is readable and names him 185 times. Contains 'sanitation' 0, 'clean' 1, 'dumping' 1. The one relevant passage is about the American River Parkway: 'We cannot sustain this treasure if we don't address dumping, camping and public safety. This is why I worked on a new law to ban illegal camping, while also fighting for $25 million for the county to provide services for those in need.'",
+      "🔴 That passage CONTRADICTS a clause of the row's reasoning. The row says his approach is 'adding beds and shelter rather than punitive sanitation enforcement'; the record shows he authored a camping ban and has said 'We need to enforce the law. We can't have urban camping.' The 'coupling enforcement with social service connections' half is supported; the 'rather than punitive enforcement' half is not.",
+      "Re-pointing to either page would attach a source that does not support the claim as written — the Portland error in miniature. The honest options are to retire the row, or to keep it and rewrite the reasoning to match the evidence, which changes a voter-facing stance and is the operator's call."
+    ]
+  },
+  "reverse": "For each entry in rows[]: INSERT INTO inform.politician_answers (politician_id, topic_id, value, write_in_text) and INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)."
+}
