@@ -27,6 +27,14 @@
  * Content is the article-body test's job and needs a fetch. Do not read a green run as "stances are
  * sourced" — read it as "no row cites Ballotpedia and nothing else".
  *
+ * 🔴 THE ONE EXCEPTION IS FABRICATED_SOURCE, AND IT IS ONLY HALF AN EXCEPTION. That check does concern
+ * whether a page exists, but it cannot DECIDE that — it matches a denylist of URLs and hosts already
+ * proven absent (`data/fabricated-sources.json`). Discovery needs a fetch plus an archive probe with a
+ * period control, which archive.org rate-limits and 504s, so it lives in
+ * `scripts/sweep-fabricated-articles.mjs` and runs on demand. Six migrations' worth of fabricated
+ * citations (1539, 1540, 1548, 1558, 1562) passed this gate green while they were live. A green run
+ * means no KNOWN fabrication has come back, not that none exists.
+ *
  * WHY BASELINED AND NOT ZERO. 596 live rows violate the Ballotpedia-only rule today (the backlog's
  * Workstream A). Failing red on day one trains people to ignore the gate — the same reasoning as
  * check-address-reachability, and the same per-bucket shape so growth in one state still fires while
@@ -57,6 +65,7 @@ import { Pool } from 'pg';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const BASELINE = path.join(HERE, '..', 'data', 'stance-source-baseline.json');
+const FABRICATED = path.join(HERE, '..', 'data', 'fabricated-sources.json');
 
 const argv = process.argv.slice(2);
 const VERBOSE = argv.includes('--verbose');
@@ -65,7 +74,36 @@ const UPDATE = argv.includes('--update-baseline');
 // NON_URL_SOURCE joined the zero-tolerance set on 2026-08-02, once 1527-1530 had driven it to 0.
 // It was baselined at 279 -> 22 -> 9 only while the backlog was being worked; no legitimate row has
 // ever had prose in `sources`, so any future occurrence is a regression, not a backlog item.
-const ZERO_TOLERANCE = new Set(['ANSWER_WITHOUT_CONTEXT', 'EMPTY_SOURCES', 'NON_URL_SOURCE']);
+// FABRICATED_SOURCE joined the zero-tolerance set on 2026-08-05. Prod held 0 citations to every entry
+// in data/fabricated-sources.json when it was added (verified, not assumed), so any occurrence is a
+// regression that re-introduces a citation a migration already proved does not exist.
+const ZERO_TOLERANCE = new Set([
+  'ANSWER_WITHOUT_CONTEXT', 'EMPTY_SOURCES', 'NON_URL_SOURCE', 'FABRICATED_SOURCE',
+]);
+
+/**
+ * Confirmed-fabricated hosts and URLs. Loaded from disk so the sweep can extend the list without
+ * touching this file, and so the denylist is reviewable in a diff on its own.
+ *
+ * ⚠ THIS CHECK CANNOT DISCOVER THE CLASS, ONLY RE-DETECT IT. Deciding that a cited article never
+ * existed requires fetching the path and querying an archive with a period control — network work that
+ * archive.org rate-limits and 504s, so it must not run in CI. That is
+ * `scripts/sweep-fabricated-articles.mjs`, run on demand; this gate only stops what it confirmed from
+ * coming back. A green run here does NOT mean no fabricated citations exist.
+ */
+function loadFabricated() {
+  try {
+    const f = JSON.parse(readFileSync(FABRICATED, 'utf8'));
+    return {
+      hosts: (f.hosts ?? []).map((h) => h.host.toLowerCase()),
+      urls: (f.urls ?? []).map((u) => u.url),
+    };
+  } catch {
+    // A missing denylist must not silently disable the check — that is how a gate rots.
+    console.error(`FAIL: cannot read ${path.relative(process.cwd(), FABRICATED)}. The FABRICATED_SOURCE check needs it.`);
+    process.exit(2);
+  }
+}
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 
@@ -82,6 +120,28 @@ const QUERY = `
       CASE
         WHEN pc.politician_id IS NULL                              THEN 'ANSWER_WITHOUT_CONTEXT'
         WHEN coalesce(cardinality(pc.sources), 0) = 0              THEN 'EMPTY_SOURCES'
+        -- A citation to a page that was PROVEN not to exist. Checked before every other class because
+        -- it is the most severe: the others say a citation is weak, this one says it is imaginary.
+        --
+        -- 🔴 WHY A DENYLIST AND NOT A PREDICATE. There is no shape that distinguishes a fabricated
+        -- article from a real one. lowellsun.com/2023/09/21/lowell-council-rent-stabilization/ is
+        -- well-formed, on a live real newspaper, with a plausible date and a house-style slug; the only
+        -- (NB: no backticks in this comment -- it is inside a JS template literal and they close it.)
+        -- thing wrong with it is that the article was never published. Deciding that needs a fetch plus
+        -- an archive probe with a period control, so this branch can only re-detect what the sweep
+        -- already confirmed. See sweep-fabricated-articles.mjs.
+        --
+        -- Two match modes, and the distinction is load-bearing:
+        --   HOST  — the outlet itself never existed (medfordmirror.com). Any path on it is fabricated.
+        --   URL   — the outlet is REAL and live and only the article is fake (lowellsun.com). Blocking
+        --           the host would block legitimate future citations to the same paper, so these match
+        --           exactly. Hosts are compared with www. stripped; URLs are not normalised, because a
+        --           fabricated path is fabricated at the exact string that was invented.
+        WHEN EXISTS (
+          SELECT 1 FROM unnest(pc.sources) s
+           WHERE s = ANY($1::text[])
+              OR lower(regexp_replace(s, '^https?://(www\\.)?([^/]+).*\$', '\\2')) = ANY($2::text[])
+        )                                                          THEN 'FABRICATED_SOURCE'
         -- A "source" that is not a URL at all cannot be opened, checked or believed.
         --
         -- 🔴 THIS CLASS WAS INVISIBLE TO THIS GATE UNTIL 2026-08-01, AND THE REASON IS STRUCTURAL:
@@ -197,7 +257,8 @@ const QUERY = `
     process.exit(0);
   }
 
-  const { rows } = await pool.query(QUERY);
+  const deny = loadFabricated();
+  const { rows } = await pool.query(QUERY, [deny.urls, deny.hosts]);
 
   const observed = {};
   for (const r of rows) {
@@ -250,6 +311,10 @@ const QUERY = `
   }
 
   console.log(`stance sources — ${rows.length} offending row(s) across ${checks.size} check(s)`);
+  // Zero-tolerance checks are printed even at 0. A check that vanishes from the output when it passes
+  // is indistinguishable from a check that is not running — and FABRICATED_SOURCE is expected to sit at
+  // 0 forever, so it would be invisible for its entire useful life.
+  for (const chk of ZERO_TOLERANCE) checks.add(chk);
   for (const chk of [...checks].sort()) {
     const total = Object.values(observed[chk] ?? {}).reduce((a, b) => a + b, 0);
     const baseTotal = Object.values(baseline.counts?.[chk] ?? {}).reduce((a, b) => a + b, 0);
@@ -290,6 +355,11 @@ const QUERY = `
     PRIMARY_SITE_NO_PATH:   'The site is right, the path is missing -- link the issues page that carries ' +
                             'the claim. Do NOT swap in a different source, and do not retire the row.',
     PROXY_URL_AS_SOURCE:    'Store the wrapped URL, not the r.jina.ai fetch wrapper.',
+    FABRICATED_SOURCE:      'This citation points at a page PROVEN not to exist (data/fabricated-sources.json ' +
+                            'records which migration retired it). Do NOT re-point it -- there is nothing ' +
+                            'upstream to re-point to. Re-research the row from a source you fetched, or ' +
+                            'retire it. If you believe the denylist entry is wrong, re-verify with a ' +
+                            'period control and say so in the commit.',
   };
   console.error('');
   for (const chk of [...new Set(violations.map((v) => v.chk))]) {

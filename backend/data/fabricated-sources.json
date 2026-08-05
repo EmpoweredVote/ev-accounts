@@ -1,0 +1,45 @@
+{
+  "_comment": "Confirmed-fabricated citation sources. Read by check-stance-sources.mjs as the zero-tolerance FABRICATED_SOURCE check, and appended to by sweep-fabricated-articles.mjs. Every entry here has been VERIFIED ABSENT and retired by a migration — this file is a regression guard, not a suspect list. Prod held 0 citations to every entry when the check was added (2026-08-05), which is why it is zero-tolerance rather than baselined.",
+  "_verified": "2026-08-05",
+  "_admission_criteria": [
+    "A host goes in `hosts` only if it never existed: no DNS, no Wayback captures across >=2 query forms and >=3 rounds, with a POSITIVE CONTROL verified in the same run (see project_invented_publications).",
+    "A URL goes in `urls` only if the HOST IS REAL but the article never existed: the path returns 404 on the live site AND has zero Wayback captures AND sibling paths from the same period ARE archived. That control is what separates 'never published' from 'archive missed it'.",
+    "Never add a suspect. A lapsed campaign domain, a paywalled page, a bot-blocked 403 and a rate-limited archive probe are all NOT fabrication, and three of those look identical to it on a single attempt."
+  ],
+  "hosts": [
+    { "host": "medfordmirror.com",      "citations_at_discovery": 36, "retired_by": "1539/1540", "note": "invented outlet" },
+    { "host": "newtonvillearea.com",    "citations_at_discovery": 13, "retired_by": "1539/1540", "note": "invented outlet" },
+    { "host": "alhambraource.com",      "citations_at_discovery": 7,  "retired_by": "1539/1540", "note": "one letter off the real alhambrasource.com; host AND paths fabricated" },
+    { "host": "walthamtribunenews.com", "citations_at_discovery": 4,  "retired_by": "1539/1540", "note": "invented outlet" },
+    { "host": "walthamatch.com",        "citations_at_discovery": 2,  "retired_by": "1539/1540", "note": "walthampatch.com with the p missing" },
+    { "host": "newtonobserver.com",     "citations_at_discovery": 48, "retired_by": "1548",      "note": "dead DNS; 5 ever-archived URLs from 2011, all ?epl= parking artifacts" }
+  ],
+  "urls": [
+    { "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/", "retired_by": "1558" },
+    { "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/", "retired_by": "1558" },
+    { "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/", "retired_by": "1558" },
+    { "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/", "retired_by": "1558" },
+    { "url": "https://www.willametteweek.com/news/2024/10/30/portland-mayor-candidates-answer-our-questions/",             "retired_by": "1558" },
+
+    { "url": "https://lowellsun.com/2022/06/10/vesna-nuon-sanctuary-city/",                    "retired_by": "1562" },
+    { "url": "https://lowellsun.com/2022/09/20/rita-mercier-homelessness/",                    "retired_by": "1562" },
+    { "url": "https://lowellsun.com/2022/10/18/lowell-climate-declaration/",                   "retired_by": "1562" },
+    { "url": "https://lowellsun.com/2023/05/14/lowell-immigration-policy-council/",            "retired_by": "1562" },
+    { "url": "https://lowellsun.com/2023/07/08/lowell-homelessness-response/",                 "retired_by": "1562" },
+    { "url": "https://lowellsun.com/2023/08/15/lowell-housing-council-votes/",                 "retired_by": "1562" },
+    { "url": "https://lowellsun.com/2023/08/15/vesna-nuon-housing-affordability/",             "retired_by": "1562" },
+    { "url": "https://lowellsun.com/2023/09/05/sokhary-chau-district-6-housing/",              "retired_by": "1562" },
+    { "url": "https://lowellsun.com/2023/09/21/lowell-council-rent-stabilization/",            "retired_by": "1562" },
+    { "url": "https://lowellsun.com/2023/11/02/lowell-shelter-debate-mercier/",                "retired_by": "1562" },
+    { "url": "https://lowellsun.com/2023/11/04/lowell-mayor-immigration-policy/",              "retired_by": "1562" },
+    { "url": "https://lowellsun.com/2024/01/15/lowell-launches-housing-first-initiative/",     "retired_by": "1562" },
+    { "url": "https://lowellsun.com/2024/03/20/lowell-data-center-moratorium/",                "retired_by": "1562" },
+    { "url": "https://lowellsun.com/2024/03/20/lowell-tech-economy-development/",              "retired_by": "1562" },
+    { "url": "https://lowellsun.com/2024/04/15/lowell-tech-development-debate/",               "retired_by": "1562" }
+  ],
+  "_deliberately_absent": {
+    "willametteweek.com": "The HOST is not listed. It is Willamette Week's genuine former domain (archived from 1998, 301-redirecting to wweek.com through 2020), so a future citation to an ARCHIVED capture of a REAL willametteweek.com page would be legitimate. Only the 5 fabricated article paths are blocked.",
+    "lowellsun.com": "Same reasoning — The Lowell Sun is a real, live paper with a real archive. Blocking the host would block legitimate future citations. Only the 15 fabricated paths are blocked.",
+    "dead_campaign_domains": "dutra4whittier.com, chaselaporte.com, mccartyformayor.com and bilalmahmood.com are all REAL sites whose domains lapsed. Those are re-point targets (migrations 1557, 1559), not fabrications."
+  }
+}
