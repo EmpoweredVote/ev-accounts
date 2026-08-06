@@ -60,6 +60,19 @@ copy my run had already produced*. Two more old node processes (21:58, 22:05) we
 "It stalled" is a hypothesis about a process, and this workstream has now twice mistaken *slow* for
 *dead*. Artifact mtimes are the cheap check: they were rising the whole time.
 
+🔴 **AND I LAUNCHED A DUPLICATE OF MY OWN DRIVER.** `nohup … &` inside an already-backgrounded call left
+two copies of `sweep-wide.sh` running in near-lockstep, each re-doing chunks the other had written —
+chunk 11250-11500 was written at 01:47 and rewritten at 01:58. So three sweeps were live at once, not
+two. Launch a long driver **once**, in one mechanism, and confirm a single process before walking away.
+
+⚠ **"The log stopped growing" is NOT proof a sweep finished.** I checked the driver log at 01:53, saw it
+stable, and reported the run complete — while a second driver kept writing artifacts until **02:00**.
+The log belonged to one process; the work did not. **Check the artifacts' newest mtime over an interval,
+and check for live node processes.** Two verdicts moved between my first and final aggregate because of
+this (one URL EXISTS→INCONCLUSIVE): totals taken while anything is still writing are provisional.
+✅ The 121 FABRICATED and the 34 new were **identical across both aggregates** — findings were stable
+even while the tail was not.
+
 ---
 
 ## Findings: 121 fabricated URLs → 390 stance rows, 84 politicians
@@ -208,10 +221,17 @@ direction that looks clean.
 probe and no curl fallback because their host had failed 3 times consecutively. That is a throughput
 decision, never a classification — see the note in the script.
 
-**INCONCLUSIVE 22 / WEAK_CONTROL 1.** Unproven, not clean. Notable: **4 on `somervillema.gov/city-council/members/*`**
-(404, but the archive holds no siblings for that control). Normally a shrug — except `somervillema.gov`
-**already has 5 confirmed fabrications**. An INCONCLUSIVE on a host with confirmed fabrications deserves
-elevated scrutiny, not the default dismissal.
+**INCONCLUSIVE 23 / WEAK_CONTROL 1.** Unproven, not clean.
+
+🔴 **10 of the 23 are `somervillema.gov`** — mostly `/city-council/members/*`: they 404, but the archive
+holds no siblings for that control, so absence proves nothing. Normally a shrug. Not here:
+`somervillema.gov` **already has 5 confirmed fabrications and 33 row-citations**, the third-largest
+cluster in the set. An INCONCLUSIVE on a host with confirmed fabrications is a lead, not a dismissal —
+and this one needs a *different control period*, not a verdict.
+Remaining 13: `heraldnews.com` 3, `lynnma.gov` 2, and singles on `spectrumnews1.com`, `deseret.com`,
+`wbur.org`, `carsonca.gov`, `alhambraca.gov`, `medfordma.org`, `sherwoodoregon.gov`, `valleytimes.news`.
+⚠ Four of those hosts (`lynnma.gov`, `alhambraca.gov`, `carsonca.gov`, `medfordma.org`) are the known
+thin-Wayback set, so INCONCLUSIVE there is expected and is not evidence either way.
 
 ---
 
