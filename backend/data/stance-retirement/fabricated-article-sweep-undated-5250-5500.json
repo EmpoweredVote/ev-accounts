@@ -189,9 +189,11 @@
       "host": "lynnma.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 8,
+      "control_siblings": 7,
       "control": "lynnma.gov/news*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 8,
+      "control_urls": 8
     },
     {
       "url": "https://www.maine.gov/governor/mills/news/governor-mills-signs-law-strengthen-protections-maine-people-harmful-impacts-medical-debt-2026",
@@ -220,9 +222,11 @@
       "host": "markey.senate.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 901,
       "control": "markey.senate.gov/news/press-releases*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.maryvilleforum.com/news/stigall-makes-case-in-maryville-as-graves-handpicked-successor/article_07c90bd0-e10c-4012-9665-554dbda9834b.html",

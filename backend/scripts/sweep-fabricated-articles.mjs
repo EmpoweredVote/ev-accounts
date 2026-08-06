@@ -247,6 +247,59 @@ async function cdxCount(pattern, extra = '') {
   return null;
 }
 
+/**
+ * Sibling PAGES under a control prefix, not sibling URLs.
+ *
+ * 🔴 WHY THIS IS SEPARATE FROM cdxCount. The control decides every FABRICATED verdict, and counting rows
+ * is not the same as counting published pages. Two ways it inflates, both found on real findings:
+ *
+ *   1. ASSET AND MODULE PATHS. pressley.house.gov/issues* reports 200. Of 1,000 archived URLs under that
+ *      prefix, 993 are JavaScript module paths — /issues/dojo/dom-class, /issues/esri/dijit/Popup —
+ *      relative-path artifacts of an embedded ArcGIS widget that the crawler recorded as pages. The real
+ *      count is 7. Four findings rested on that.
+ *   2. INDEX PAGES. lynnma.gov/news* reports 8, and four of those eight are /news, /news/archived_news,
+ *      /news/what_s_new and .../advisories___notices — section indexes, not articles. Four real articles
+ *      is below MIN_SIBLINGS, so those findings are not proven by the control at all.
+ *
+ * ⚠ The count was never "captures": collapse=urlkey does dedupe (lynnma.gov/news* is 240 captures and 8
+ * distinct URLs). The defect is which URLs count as a sibling, not double-counting.
+ *
+ * Returns {total, pages, capped} or null if the archive did not answer. `pages` is what MIN_SIBLINGS is
+ * tested against; `total` is kept so an inflated control is visible rather than silently corrected.
+ */
+const ASSET_SEG = /\/(dojo|dijit|esri|embed|widgets?|assets?|static|dist|build|js|css|img|images?|fonts?|scripts?|styles?)(\/|$)/i;
+const ASSET_EXT = /\.(js|css|png|jpe?g|gif|svg|webp|ico|woff2?|ttf|eot|map|json|xml|rss|atom)$/i;
+
+async function cdxSiblingPages(prefix, limit = 1000) {
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    if (attempt > 0) await sleep(PACE * (attempt * 3));
+    const u = `http://web.archive.org/cdx/search/cdx?url=${encodeURIComponent(prefix)}`
+            + `&output=text&fl=original&collapse=urlkey&limit=${limit}`;
+    try {
+      const res = await fetch(u, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(60_000) });
+      if (!res.ok) continue;
+      const body = await res.text();
+      if (/<html|<head|Gateway Time-?out|Too Many Requests/i.test(body)) continue;
+      const urls = body.split('\n').map((l) => l.trim()).filter(Boolean);
+
+      // The prefix's own index page and its section indexes are not evidence that ARTICLES were
+      // published there. Depth is measured against the control prefix, so a sibling must be at least one
+      // segment deeper than the section being controlled.
+      const base = prefix.replace(/\*$/, '').replace(/\/$/, '');
+      const baseDepth = base.split('/').filter(Boolean).length;
+      const pages = urls.filter((u2) => {
+        let path;
+        try { const x = new URL(u2.startsWith('http') ? u2 : `http://${u2}`); path = x.host.replace(/^www\./, '') + x.pathname; }
+        catch { return false; }
+        if (ASSET_SEG.test(path) || ASSET_EXT.test(path)) return false;
+        return path.replace(/\/$/, '').split('/').filter(Boolean).length > baseDepth;
+      });
+      return { total: urls.length, pages: pages.length, capped: urls.length >= limit };
+    } catch { /* retry */ }
+  }
+  return null;
+}
+
 async function cdxOnce(pattern, extra = '') {
   const u = `http://web.archive.org/cdx/search/cdx?url=${encodeURIComponent(pattern)}&output=text&fl=timestamp&limit=200${extra}`;
   try {
@@ -264,7 +317,7 @@ async function cdxOnce(pattern, extra = '') {
 }
 
 const VERDICTS = {
-  FABRICATED:    `path 404s, never archived, and >=${MIN_SIBLINGS} sibling pages in the same section/month ARE archived`,
+  FABRICATED:    `path 404s, never archived, and >=${MIN_SIBLINGS} sibling PAGES (assets and section indexes excluded) in the same section/month ARE archived`,
   EXISTS:        'the archive holds a capture of this exact path',
   LIVE:          'the path answers with something other than 404/410',
   WEAK_CONTROL:  `path 404s and is unarchived, but the control has <${MIN_SIBLINGS} siblings — suggestive, NOT proven`,
@@ -289,25 +342,38 @@ async function classify(url, controlCache = new Map(), hostState = new Map()) {
   if (exact === null) return { host, status, verdict: 'INCONCLUSIVE', why: 'CDX did not answer for the exact path', control: key };
   if (exact > 0)      return { host, status, verdict: 'EXISTS', captures: exact };
 
-  let siblings = controlCache.get(key);
-  if (siblings === undefined) {
+  let ctl = controlCache.get(key);
+  if (ctl === undefined) {
     await sleep(PACE);
-    siblings = await cdxCount(key, '&collapse=urlkey');
+    ctl = await cdxSiblingPages(key);
     // Only cache a real answer. Caching a null would poison every later URL in the same section with
     // one transient throttle — turning one unanswered probe into a whole section of false INCONCLUSIVE.
-    if (siblings !== null) controlCache.set(key, siblings);
+    if (ctl !== null) controlCache.set(key, ctl);
   }
 
-  if (siblings === null) return { host, status, verdict: 'INCONCLUSIVE', why: 'control did not answer', control: key };
-  if (siblings === 0)    return { host, status, verdict: 'INCONCLUSIVE', why: `archive holds no ${key} siblings either`, control: key };
-  if (siblings < MIN_SIBLINGS) {
-    return { host, status, verdict: 'WEAK_CONTROL', control_siblings: siblings, control: key,
-             why: `only ${siblings} siblings — below the ${MIN_SIBLINGS} needed to call absence proof` };
+  if (ctl === null)      return { host, status, verdict: 'INCONCLUSIVE', why: 'control did not answer', control: key };
+  if (ctl.pages === 0)   return { host, status, verdict: 'INCONCLUSIVE', control: key, control_urls: ctl.total,
+                                  why: ctl.total > 0
+                                    ? `${ctl.total} archived urls under ${key} but none are article pages (assets/indexes only)`
+                                    : `archive holds no ${key} siblings either` };
+  if (ctl.pages < MIN_SIBLINGS) {
+    return { host, status, verdict: 'WEAK_CONTROL', control_siblings: ctl.pages, control_urls: ctl.total, control: key,
+             why: `only ${ctl.pages} sibling PAGES (of ${ctl.total} archived urls) — below the ${MIN_SIBLINGS} needed to call absence proof` };
   }
-  return { host, status, verdict: 'FABRICATED', control_siblings: siblings, control: key, dated: DATED_RE.test(url) };
+  return { host, status, verdict: 'FABRICATED', control_siblings: ctl.pages, control_urls: ctl.total,
+           control_capped: ctl.capped, control: key, dated: DATED_RE.test(url) };
 }
 
-(async () => {
+// Exported so re-derivation tools use THIS control implementation rather than a copy. The header already
+// warns that the loop and --url mode drift apart the moment they hold separate copies of the same test;
+// a second file re-implementing the control would drift the same way, and the control is the part that
+// decides verdicts.
+export { cdxSiblingPages, controlPrefix, hostOf, MIN_SIBLINGS };
+
+// Only run the CLI when executed directly — importing this module must not start a sweep.
+const INVOKED_DIRECTLY = process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
+
+if (INVOKED_DIRECTLY) await (async () => {
   const ONE = arg('url', null);
   if (ONE) {
     const r = await classify(ONE);

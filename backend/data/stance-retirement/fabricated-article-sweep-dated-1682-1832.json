@@ -335,8 +335,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 141,
-      "control": "lynnjournal.com|2022/09"
+      "control_siblings": 138,
+      "control": "lynnjournal.com/2022/09*",
+      "control_siblings_urls_original": 141,
+      "control_urls": 141
     },
     {
       "url": "https://www.lynnjournal.com/2022/10/lynn-council-economic-development",
@@ -344,8 +346,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 108,
-      "control": "lynnjournal.com|2022/10"
+      "control_siblings": 105,
+      "control": "lynnjournal.com/2022/10*",
+      "control_siblings_urls_original": 108,
+      "control_urls": 108
     },
     {
       "url": "https://www.lynnjournal.com/2022/10/lynn-homelessness-task-force-council",
@@ -353,8 +357,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 108,
-      "control": "lynnjournal.com|2022/10"
+      "control_siblings": 105,
+      "control": "lynnjournal.com/2022/10*",
+      "control_siblings_urls_original": 108,
+      "control_urls": 108
     },
     {
       "url": "https://www.lynnjournal.com/2022/10/nicholson-homelessness-task-force-lynn",
@@ -362,8 +368,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 108,
-      "control": "lynnjournal.com|2022/10"
+      "control_siblings": 105,
+      "control": "lynnjournal.com/2022/10*",
+      "control_siblings_urls_original": 108,
+      "control_urls": 108
     },
     {
       "url": "https://www.lynnjournal.com/2022/11/lynn-city-council-tif-economic-development",
@@ -371,8 +379,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 53,
-      "control": "lynnjournal.com|2022/11"
+      "control_siblings": 50,
+      "control": "lynnjournal.com/2022/11*",
+      "control_siblings_urls_original": 53,
+      "control_urls": 53
     },
     {
       "url": "https://www.lynnjournal.com/2022/11/lynn-council-economic-development-tif",
@@ -380,8 +390,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 53,
-      "control": "lynnjournal.com|2022/11"
+      "control_siblings": 50,
+      "control": "lynnjournal.com/2022/11*",
+      "control_siblings_urls_original": 53,
+      "control_urls": 53
     },
     {
       "url": "https://www.lynnjournal.com/2023/02/mayor-nicholson-supports-mbta-communities-zoning",
@@ -389,8 +401,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 27,
-      "control": "lynnjournal.com|2023/02"
+      "control_siblings": 24,
+      "control": "lynnjournal.com/2023/02*",
+      "control_siblings_urls_original": 27,
+      "control_urls": 27
     },
     {
       "url": "https://www.lynnjournal.com/2023/03/lynn-council-housing-vote",
@@ -398,8 +412,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 37,
-      "control": "lynnjournal.com|2023/03"
+      "control_siblings": 34,
+      "control": "lynnjournal.com/2023/03*",
+      "control_siblings_urls_original": 37,
+      "control_urls": 37
     },
     {
       "url": "https://www.lynnjournal.com/2023/03/nicholson-environmental-justice-lynn",
@@ -407,8 +423,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 37,
-      "control": "lynnjournal.com|2023/03"
+      "control_siblings": 34,
+      "control": "lynnjournal.com/2023/03*",
+      "control_siblings_urls_original": 37,
+      "control_urls": 37
     },
     {
       "url": "https://www.lynnjournal.com/2023/04/nicholson-waterfront-development-plans",
@@ -416,8 +434,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 13,
-      "control": "lynnjournal.com|2023/04"
+      "control_siblings": 10,
+      "control": "lynnjournal.com/2023/04*",
+      "control_siblings_urls_original": 13,
+      "control_urls": 13
     },
     {
       "url": "https://www.lynnjournal.com/2023/05/lynn-council-development-votes",
@@ -425,8 +445,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 45,
-      "control": "lynnjournal.com|2023/05"
+      "control_siblings": 42,
+      "control": "lynnjournal.com/2023/05*",
+      "control_siblings_urls_original": 45,
+      "control_urls": 45
     },
     {
       "url": "https://www.lynnjournal.com/2023/05/nicholson-ferry-service-lynn-boston",
@@ -434,8 +456,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 45,
-      "control": "lynnjournal.com|2023/05"
+      "control_siblings": 42,
+      "control": "lynnjournal.com/2023/05*",
+      "control_siblings_urls_original": 45,
+      "control_urls": 45
     },
     {
       "url": "https://www.lynnjournal.com/2025/02/nicholson-defends-immigrant-community-ice-enforcement",
@@ -443,8 +467,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 83,
-      "control": "lynnjournal.com|2025/02"
+      "control_siblings": 80,
+      "control": "lynnjournal.com/2025/02*",
+      "control_siblings_urls_original": 83,
+      "control_urls": 83
     },
     {
       "url": "https://www.mainemorningstar.com/2026/01/24/mainers-refuse-to-look-away-with-thousands-rallying-against-ice-operation/",
@@ -726,7 +752,7 @@
       "status": 404,
       "verdict": "FABRICATED",
       "control_siblings": 25,
-      "control": "precinctreporter.com|2022/10"
+      "control": "precinctreporter.com/2022/10*"
     },
     {
       "url": "https://www.pressdemocrat.com/2024/03/01/assembly-district-2-race-turned-into-an-expensive-blizzard-of-campaign-ads-replete-with-mud-slinging/",
@@ -846,8 +872,10 @@
       "host": "sgvtribune.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "sgvtribune.com|2021/08"
+      "control_siblings": 992,
+      "control": "sgvtribune.com/2021/08*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.sgvtribune.com/2022/05/alhambra-mental-health-co-responder-program/",
@@ -855,8 +883,10 @@
       "host": "sgvtribune.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "sgvtribune.com|2022/05"
+      "control_siblings": 998,
+      "control": "sgvtribune.com/2022/05*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.sgvtribune.com/2024/11/05/2024-election-results-californias-31st-congressional-district-gil-cisneros-vs-daniel-jose-bocic-martinez/",

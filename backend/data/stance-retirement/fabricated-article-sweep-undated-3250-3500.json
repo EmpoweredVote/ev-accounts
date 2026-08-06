@@ -129,9 +129,11 @@
       "host": "markey.senate.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 901,
       "control": "markey.senate.gov/news/press-releases*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.markey.senate.gov/news/press-releases/senators-markey-booker-introduce-algorithmic-accountability-act",
@@ -139,9 +141,11 @@
       "host": "markey.senate.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 901,
       "control": "markey.senate.gov/news/press-releases*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.mcclainforsc.com/issues/issue-2",

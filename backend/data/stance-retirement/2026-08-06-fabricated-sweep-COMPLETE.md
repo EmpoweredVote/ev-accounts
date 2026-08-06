@@ -75,9 +75,10 @@ even while the tail was not.
 
 ---
 
-## Findings: 121 fabricated URLs → 390 stance rows, 84 politicians
+## Findings: 120 fabricated URLs → 389 stance rows, 83 politicians
 
-87 prior + **34 new**. Row-citations 411 (a row can cite more than one fabricated URL).
+*(121 → 120: the control re-derivation below downgraded one. Pre-re-derivation: 121 / 390 / 84.)*
+87 prior + **33 new** (34 found, 1 downgraded). Row-citations 410 — a row can cite more than one.
 
 | host | urls | row-cites | new? |
 |---|---|---|---|
@@ -99,7 +100,8 @@ even while the tail was not.
 | **`medfordma.org`** | **2** | **2** | **all new** gov |
 | `govtrack.us` | 1 | 2 | |
 | singles: `precinctreporter.com`, `commonwealthbeacon.org`, `governor.maryland.gov` | 1 each | 1 each | |
-| **new singles: `latimes.com`, `slc.gov`, `lynch.house.gov`, `onyourballot.vote411.org`, `audacy.com`, `cbsnews.com`** | 1 each | 1 each | **all new** |
+| **new singles: `latimes.com`, `slc.gov`, `lynch.house.gov`, `onyourballot.vote411.org`, `cbsnews.com`** | 1 each | 1 each | **all new** |
+| ~~`audacy.com`~~ | — | — | found new, then **downgraded to WEAK_CONTROL** on re-derivation |
 
 ### Two things the new findings establish that the old set did not
 
@@ -120,21 +122,61 @@ sweep re-found it independently, which is the evidence that eligibility-by-depth
 
 ---
 
-## 🔴 A REAL DETECTOR FLAW: THE SIBLING CONTROL COUNTS CAPTURES, NOT PAGES
+## ✅ DETECTOR FLAW FOUND **AND FIXED**, ALL 121 CONTROLS RE-DERIVED (2026-08-06)
 
-`pressley.house.gov/issues*` reports **200 siblings** and that number is worthless. Of 1,000 archived
-captures under that prefix, **993 are JavaScript module paths** — `/issues/dojo/dom-class`,
-`/issues/esri/dijit/Popup`, `/issues/dijit/TooltipDialog` — relative-path artifacts of an embedded ArcGIS
-widget that the crawler recorded as if they were pages. **The real sibling count is 7.**
+**The control counted the wrong thing.** It counted distinct archived URLs under the prefix — which
+includes crawler asset paths and the section's own index — and called them "sibling pages".
 
-So four of the new findings (`pressley.house.gov/issues/*`) rest on a control of ~7, not 200. They are
-**thin-control, suggestive, not proven** — the same band as `lynnma.gov`, not the same band as
-`markey.senate.gov` (497 real siblings) or `moulton.house.gov` (150 real).
+⚠ **My first diagnosis of this said "it counts CAPTURES, not pages". That was wrong.** `collapse=urlkey`
+does dedupe: `lynnma.gov/news*` is 240 captures and 8 distinct URLs, and the sweep recorded 8. The defect
+was never double-counting; it is **which URLs qualify as a sibling.** Three ways it inflated, all on real
+findings:
 
-⚠ **This affects the ORIGINAL 87 too and has not been re-checked for them.** Any host serving a JS widget
-under the control prefix has an inflated control. **Fix before the migration:** exclude
-`dojo|dijit|esri|embed|js|css|images|widgets` path segments from the control count, or count distinct
-*pages* rather than distinct capture URLs, and re-derive `control_siblings` for all 121.
+| control | reported | real pages | what the rest were |
+|---|---|---|---|
+| `pressley.house.gov/issues*` | 200 | **6** | 993 of 1,000 are JS module paths (`/issues/dojo/dom-class`, `/issues/esri/dijit/Popup`) from an embedded ArcGIS widget |
+| `lynnma.gov/news*` | 8 | **7** | `/news`, `/news/archived_news`, `/news/what_s_new` are section indexes, not articles |
+| `audacy.com/knxnews/news/local*` | 200 | **1** | almost all are entity-mangled image URLs: `/local/&apos;https://images.radio.com/….jpg?width=70` |
+
+**Fixed** in `cdxSiblingPages()`: query `fl=original` at limit 1000, drop asset/module segments and file
+extensions, and require a sibling to be deeper than the controlled section. Both numbers are kept —
+`control_siblings` is now real pages, `control_urls` the raw count — so an inflated control stays visible
+instead of being silently corrected away.
+
+### Re-derivation result — 59 distinct controls behind 121 findings
+
+| | |
+|---|---|
+| still FABRICATED | **120** urls, 410 row-cites |
+| **DOWNGRADED** | **1** — `audacy.com/…/la-councilmember-traci-park-blasts-sanctuary-city-law` → **WEAK_CONTROL** (1 real page) |
+| control unresolved | 0 |
+
+🔑 **The re-derivation can only ever downgrade.** Filtering removes siblings, so no URL can cross *into*
+FABRICATED — this pass cannot manufacture a finding, only retract one that was never proven.
+
+Artifacts updated in place with `verdict_original` and `control_siblings_urls_original` preserved.
+Record: `2026-08-06-control-rederivation.json`.
+
+⚠ **11 findings now sit in the THIN band (<10 real pages) — suggestive, NOT proven**: 6 × `lynnma.gov/news/*`
+at 7, and 5 × `pressley.house.gov/issues/*` at 6. Both were reported at 8 and 200 before.
+Independent evidence still points at `lynnma.gov`: the site's real scheme is
+`/news/what_s_new/<underscore_slug>` while every cited URL is `/news/<hyphen-slug>` — they do not match
+the site's URL convention at all. **Control strength and scheme-mismatch are separate signals; the thin
+control means the archive cannot prove absence, not that the citation is sound.**
+
+⚠ **Remaining limit, deliberately not "fixed":** the page count still includes section indexes one level
+down (`/news/archived_news` counts). Telling an index from an article by URL alone is not reliable, and
+inventing a heuristic for it is how this audit has over-fired sixteen times. So lynnma's 7 is really
+~4 articles + 3 indexes. **Anything in the 5–10 band needs a human to look at the control listing.**
+
+### 🔴 The re-derivation tool nearly destroyed the findings it was written to check
+41 of the 121 — every dated one, from the original run — store `control` as a **display label in an old
+format**: `bostonglobe.com|2021/01`, a pipe instead of a slash and no trailing `*`. Fed to CDX that
+matches nothing, so the first run reported **"0 pages of 0 urls" for every dated control** and would have
+downgraded all of them to INCONCLUSIVE. With `--write` that erases real verdicts silently, and the output
+reads like a finding rather than a bug. **The tool now recomputes the prefix from the URL and never
+trusts the stored string.** 🔑 **Run a reclassifier in report-only mode first — and if every result comes
+back the same way, suspect the tool before the data.**
 
 ⚠ **And my ad-hoc verification of this nearly went the other way.** A one-off `curl` of the lynch control
 returned "3 siblings", which I briefly took as evidence the finding was weak. It was a **503 HTML error
@@ -144,27 +186,28 @@ not. Real answer for lynch: 312 captures, 240 real pages, control strong, findin
 
 ### Evidence strength across all 121 (as currently recorded — see the flaw above)
 
-| archived siblings | urls |
+| real sibling pages | urls |
 |---|---|
-| 5–9 (**THIN — suggestive only**) | 6 |
-| 10–49 | 13 |
-| 50–199 | 40 |
-| 200+ (capped at the query limit) | 62 |
+| 5–9 (**THIN — suggestive only**) | 11 |
+| 10–49 | 15 |
+| 50–199 | 39 |
+| 200+ | 55 |
 
-The 6 thin ones are all `lynnma.gov/news/*` at 8 siblings — and `lynnma.gov` is named in this audit's own
-notes as one of four hosts with a **real Wayback gap**. They cleared `MIN_SIBLINGS=5` by three.
+Post-re-derivation. **The thin band nearly doubled (6 → 11)** once assets and section indexes stopped
+counting: 6 × `lynnma.gov/news/*` at 7 pages and 5 × `pressley.house.gov/issues/*` at 6.
+`lynnma.gov` is named in this audit's own notes as one of four hosts with a **real Wayback gap**.
 
 ---
 
 ## The remedy is a three-way split, and these numbers are a FLOOR
 
-Computed by `fabricated-impact-report.mjs`, over all 390 rows:
+Computed by `fabricated-impact-report.mjs`, over all 389 rows:
 
 | | rows |
 |---|---|
 | **SOLE_SOURCED** — cites nothing else. Unambiguous retirement | **141** |
 | **NAV_ONLY** — only nav/landing pages survive → retire per the 2026-08-04 ruling | **42** |
-| **HAS_COSOURCE** — a real citation survives → **strip the citation, keep the row** | **207** |
+| **HAS_COSOURCE** — a real citation survives → **strip the citation, keep the row** | **206** |
 
 🔴 **NAV_ONLY IS UNDER-COUNTED AND THE SPLIT MUST NOT BE USED AS-IS.** My classifier is structural — it
 calls a survivor a nav page when its path has ≤1 segment. The operator ruling is not structural: it is
@@ -237,9 +280,10 @@ thin-Wayback set, so INCONCLUSIVE there is expected and is not evidence either w
 
 ## Next-session checklist
 
-1. 🔴 **Fix the control to count pages, not captures** (strip `dojo|dijit|esri|embed|js|css|images|widgets`),
-   then **re-derive `control_siblings` for all 121** — including the original 87, which were never checked
-   for this. Findings whose control collapses below ~10 real siblings drop to suggestive.
+1. ✅ **DONE 2026-08-06** — control now counts real pages, all 59 controls behind the 121 findings
+   re-derived (including the original 87). 1 downgraded, 11 now in the thin band.
+   ▶ **What is left from it:** eyeball the control listing for those **11 thin findings** — a count of 6–7
+   that still includes section indexes is not something a threshold should decide alone.
 2. **Hand-check the .gov / congressional URLs individually** — now **25**, not 14 (+8 markey, +4 pressley,
    +3 moulton, +1 lynch, +3 oag.ca.gov, +2 medfordma.org, +1 slc.gov). These sites restructure routinely,
    so a re-point may exist. `pressley.house.gov/issues/climate` may simply be today's `/issues/energy`.

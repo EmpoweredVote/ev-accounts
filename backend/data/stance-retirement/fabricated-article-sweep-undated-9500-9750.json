@@ -1521,9 +1521,11 @@
       "host": "cbsnews.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 904,
       "control": "cbsnews.com/news*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.cbsnews.com/news/transgender-sports-student-athletes-bill-utah-legislature-ovverrides-governor-spencer-cox/",

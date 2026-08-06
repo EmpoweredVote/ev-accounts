@@ -596,9 +596,11 @@
       "host": "moulton.house.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 172,
+      "control_siblings": 126,
       "control": "moulton.house.gov/issues*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 172,
+      "control_urls": 172
     },
     {
       "url": "https://moulton.house.gov/issues/national-security",
@@ -606,9 +608,11 @@
       "host": "moulton.house.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 172,
+      "control_siblings": 126,
       "control": "moulton.house.gov/issues*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 172,
+      "control_urls": 172
     },
     {
       "url": "https://moulton.house.gov/issues/technology",
@@ -616,9 +620,11 @@
       "host": "moulton.house.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 172,
+      "control_siblings": 126,
       "control": "moulton.house.gov/issues*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 172,
+      "control_urls": 172
     },
     {
       "url": "https://munterforcongress.substack.com/p/beware-medical-advantage-plans",
@@ -1053,9 +1059,11 @@
       "host": "oag.ca.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 967,
       "control": "oag.ca.gov/news/press-releases*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-joins-multistate-coalition-support-lgbtq-americans-rights",
@@ -1070,9 +1078,11 @@
       "host": "oag.ca.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 967,
       "control": "oag.ca.gov/news/press-releases*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-leads-coalition-22-states-support-increased-access-birth-control",
@@ -1080,9 +1090,11 @@
       "host": "oag.ca.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 967,
       "control": "oag.ca.gov/news/press-releases*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-leads-coalition-opposing-illegal-%E2%80%9Cno-bond%E2%80%9D-immigration",
@@ -1790,9 +1802,11 @@
       "host": "onyourballot.vote411.org",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 998,
       "control": "onyourballot.vote411.org/m*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     }
   ]
 }

@@ -610,9 +610,11 @@
       "host": "somervillema.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 270,
       "control": "somervillema.gov/departments/programs*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 304
     },
     {
       "url": "https://www.somervillema.gov/departments/somerville-homeless-coalition",
@@ -620,9 +622,11 @@
       "host": "somervillema.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 953,
       "control": "somervillema.gov/departments*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.terrytaplin.com/priorities/vision-2050",
@@ -777,9 +781,11 @@
       "host": "actonmass.org",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 135,
+      "control_siblings": 127,
       "control": "actonmass.org/bills*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 135,
+      "control_urls": 135
     },
     {
       "url": "https://actonmass.org/bills/universal-childcare/",
@@ -787,9 +793,11 @@
       "host": "actonmass.org",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 135,
+      "control_siblings": 127,
       "control": "actonmass.org/bills*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 135,
+      "control_urls": 135
     },
     {
       "url": "https://actonmass.org/legislators/kenneth-gordon/",

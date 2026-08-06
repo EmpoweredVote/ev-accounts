@@ -65,9 +65,11 @@
       "host": "kamlager-dove.house.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 21,
+      "control_siblings": 19,
       "control": "kamlager-dove.house.gov/issues*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 21,
+      "control_urls": 21
     },
     {
       "url": "https://kamlager-dove.house.gov/issues/lgbtq",
@@ -75,9 +77,11 @@
       "host": "kamlager-dove.house.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 21,
+      "control_siblings": 19,
       "control": "kamlager-dove.house.gov/issues*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 21,
+      "control_urls": 21
     },
     {
       "url": "https://kamlager-dove.house.gov/issues/technology",
@@ -85,9 +89,11 @@
       "host": "kamlager-dove.house.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 21,
+      "control_siblings": 19,
       "control": "kamlager-dove.house.gov/issues*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 21,
+      "control_urls": 21
     },
     {
       "url": "https://kamlager-dove.house.gov/media/press-releases/kamlager-dove-convenes-government-agencies-housing-developers-and-faith",

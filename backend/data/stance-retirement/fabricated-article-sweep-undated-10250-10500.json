@@ -164,9 +164,11 @@
       "host": "latimes.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 973,
       "control": "latimes.com/socal/daily-pilot/news/story*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.lbreport.com/news/jun20/counafrt1.htm",
@@ -706,9 +708,11 @@
       "host": "lynnma.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 8,
+      "control_siblings": 7,
       "control": "lynnma.gov/news*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 8,
+      "control_urls": 8
     },
     {
       "url": "https://www.lynnma.gov/news/downtown-development-updates",
@@ -716,9 +720,11 @@
       "host": "lynnma.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 8,
+      "control_siblings": 7,
       "control": "lynnma.gov/news*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 8,
+      "control_urls": 8
     },
     {
       "url": "https://www.lynnma.gov/news/lynn-harbor-cleanup-waterfront",
@@ -726,9 +732,11 @@
       "host": "lynnma.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 8,
+      "control_siblings": 7,
       "control": "lynnma.gov/news*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 8,
+      "control_urls": 8
     },
     {
       "url": "https://www.lynnma.gov/news/lynn-waterfront-master-plan",
@@ -736,9 +744,11 @@
       "host": "lynnma.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 8,
+      "control_siblings": 7,
       "control": "lynnma.gov/news*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 8,
+      "control_urls": 8
     },
     {
       "url": "https://www.lynnma.gov/news/mayor-nicholson-announces-housing-development-initiative",
@@ -746,9 +756,11 @@
       "host": "lynnma.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 8,
+      "control_siblings": 7,
       "control": "lynnma.gov/news*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 8,
+      "control_urls": 8
     },
     {
       "url": "https://www.maine.gov/governor/mills/news/governor-mills-signs-executive-order-establish-maine-data-center-advisory-council-2026-04-29",
@@ -1029,9 +1041,11 @@
       "host": "markey.senate.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 901,
       "control": "markey.senate.gov/news/press-releases*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.markey.senate.gov/news/press-releases/markey-nadler-introduce-judiciary-act",
@@ -1039,9 +1053,11 @@
       "host": "markey.senate.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 901,
       "control": "markey.senate.gov/news/press-releases*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.markey.senate.gov/news/press-releases/markey-statement-on-supreme-court-dobbs-decision",
@@ -1049,9 +1065,11 @@
       "host": "markey.senate.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 901,
       "control": "markey.senate.gov/news/press-releases*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.markey.senate.gov/news/press-releases/markey-statement-on-supreme-court-loper-bright-decision",
@@ -1059,9 +1077,11 @@
       "host": "markey.senate.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 901,
       "control": "markey.senate.gov/news/press-releases*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.markey.senate.gov/news/press-releases/markey-supports-bipartisan-safer-communities-act",
@@ -1069,9 +1089,11 @@
       "host": "markey.senate.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 901,
       "control": "markey.senate.gov/news/press-releases*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.markey.senate.gov/news/press-releases/markey-votes-to-pass-american-rescue-plan",
@@ -1079,9 +1101,11 @@
       "host": "markey.senate.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 901,
       "control": "markey.senate.gov/news/press-releases*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.markey.senate.gov/news/press-releases/markey-votes-to-pass-infrastructure-investment-and-jobs-act",
@@ -1089,9 +1113,11 @@
       "host": "markey.senate.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 901,
       "control": "markey.senate.gov/news/press-releases*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.markey.senate.gov/news/press-releases/senators-markey-whitehouse-reintroduce-disclose-act",
@@ -1099,9 +1125,11 @@
       "host": "markey.senate.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 901,
       "control": "markey.senate.gov/news/press-releases*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.mass.gov/orgs/executive-office-of-housing-and-livable-communities",
@@ -1179,9 +1207,11 @@
       "host": "medfordma.org",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 82,
+      "control_siblings": 46,
       "control": "medfordma.org/departments/planning-development*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 82,
+      "control_urls": 82
     },
     {
       "url": "https://www.medfordma.org/departments/planning-development/zoning/",
@@ -1189,9 +1219,11 @@
       "host": "medfordma.org",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 82,
+      "control_siblings": 46,
       "control": "medfordma.org/departments/planning-development*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 82,
+      "control_urls": 82
     },
     {
       "url": "https://www.medfordma.org/departments/sustainability/climate-action/",

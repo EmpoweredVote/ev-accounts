@@ -402,9 +402,11 @@
       "host": "pressley.house.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 6,
       "control": "pressley.house.gov/issues*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://pressley.house.gov/issues/democracy",
@@ -412,9 +414,11 @@
       "host": "pressley.house.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 6,
       "control": "pressley.house.gov/issues*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://pressley.house.gov/issues/economy",
@@ -436,9 +440,11 @@
       "host": "pressley.house.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 6,
       "control": "pressley.house.gov/issues*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://pressley.house.gov/issues/technology",
@@ -446,9 +452,11 @@
       "host": "pressley.house.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 6,
       "control": "pressley.house.gov/issues*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://pressley.house.gov/issues/transportation",
@@ -1550,9 +1558,11 @@
       "host": "theeastsiderla.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 771,
       "control": "theeastsiderla.com/news/government_and_politics*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://thehill.com/blogs/ballot-box/presidential-races/205995-rubio-outlines-proposals-to-reform-social-security-and/",

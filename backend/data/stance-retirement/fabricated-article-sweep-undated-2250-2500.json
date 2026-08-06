@@ -1198,9 +1198,11 @@
       "host": "pressley.house.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 6,
       "control": "pressley.house.gov/issues*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://progressivevotersguide.com/california/2024/general/george-whitesides?language_content_entity=en",
@@ -1299,9 +1301,11 @@
       "host": "theeastsiderla.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 771,
       "control": "theeastsiderla.com/news/government_and_politics*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://thelalocal.org/government/election/lausd-school-board-district-2-voter-guide/",

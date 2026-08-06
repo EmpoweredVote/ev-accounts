@@ -132,8 +132,10 @@
       "host": "dailybreeze.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "dailybreeze.com|2020/06"
+      "control_siblings": 855,
+      "control": "dailybreeze.com/2020/06*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.deseret.com/2019/1/28/20664583/utah-lawmakers-intend-to-fight-voter-approved-medicaid-expansion",
@@ -323,8 +325,10 @@
       "host": "sgvtribune.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "sgvtribune.com|2020/06"
+      "control_siblings": 870,
+      "control": "sgvtribune.com/2020/06*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.sgvtribune.com/2023/09/12/sgv-cities-ramp-up-homelessness-response/",
@@ -332,8 +336,10 @@
       "host": "sgvtribune.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "sgvtribune.com|2023/09"
+      "control_siblings": 984,
+      "control": "sgvtribune.com/2023/09*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.slc.gov/blog/2024/03/20/approval-of-17-7-million-for-14-affordable-housing-projects-sets-salt-lake-city-record/",

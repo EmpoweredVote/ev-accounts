@@ -1633,10 +1633,14 @@
       "rows_citing": "1",
       "host": "audacy.com",
       "status": 404,
-      "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "verdict": "WEAK_CONTROL",
+      "control_siblings": 1,
       "control": "audacy.com/knxnews/news/local*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000,
+      "verdict_original": "FABRICATED",
+      "why": "downgraded on control re-derivation: 1 sibling pages of 1000 archived urls"
     },
     {
       "url": "https://www.avpress.com/news/count-shows-number-of-palmdale-homeless-down/article_fcc20030-d3a0-11ea-9c2d-671eb0e36d2f.html",

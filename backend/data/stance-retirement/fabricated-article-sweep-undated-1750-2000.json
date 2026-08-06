@@ -1311,9 +1311,11 @@
       "host": "ladowntownnews.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 225,
       "control": "ladowntownnews.com/features*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 276
     },
     {
       "url": "https://laist.com/news/politics/voter-guides/2026-election-california-primary-la-city-councilmember-district-15",

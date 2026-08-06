@@ -519,9 +519,11 @@
       "host": "somervillema.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 270,
       "control": "somervillema.gov/departments/programs*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 304
     },
     {
       "url": "https://actonmass.org/legislators/carole-fiola/",

@@ -580,8 +580,10 @@
       "host": "bostonglobe.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "bostonglobe.com|2021/01"
+      "control_siblings": 870,
+      "control": "bostonglobe.com/2021/01*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.bostonglobe.com/2021/02/24/metro/50-million-cut-bpds-budget-campbell-pitch-shows-police-reform-will-be-key-issue-mayoral-race/",
@@ -596,8 +598,10 @@
       "host": "bostonglobe.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "bostonglobe.com|2022/04"
+      "control_siblings": 821,
+      "control": "bostonglobe.com/2022/04*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.bostonglobe.com/2023/09/26/metro/massachusetts-tax-relief-package-governor-healey/",
@@ -605,8 +609,10 @@
       "host": "bostonglobe.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "bostonglobe.com|2023/09"
+      "control_siblings": 976,
+      "control": "bostonglobe.com/2023/09*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.bostonglobe.com/metro/2019/12/10/kim-janey-claims-votes-next-boston-city-council-president/1dJ1PlOOCCtJiBYeup1g7N/story.html",
@@ -1041,8 +1047,10 @@
       "host": "dailybreeze.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "dailybreeze.com|2019/11"
+      "control_siblings": 999,
+      "control": "dailybreeze.com/2019/11*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.dailybreeze.com/2022/06/15/carson-city-budget-adopted-council/",
@@ -1050,8 +1058,10 @@
       "host": "dailybreeze.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "dailybreeze.com|2022/06"
+      "control_siblings": 1000,
+      "control": "dailybreeze.com/2022/06*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.dailybreeze.com/2022/08/20/carson-utility-tax-measure-budget-davis-holmes/",
@@ -1059,8 +1069,10 @@
       "host": "dailybreeze.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "dailybreeze.com|2022/08"
+      "control_siblings": 996,
+      "control": "dailybreeze.com/2022/08*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.dailybreeze.com/2022/11/03/carson-amazon-local-hiring-policy-davis-holmes/",
@@ -1068,8 +1080,10 @@
       "host": "dailybreeze.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "dailybreeze.com|2022/11"
+      "control_siblings": 999,
+      "control": "dailybreeze.com/2022/11*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.dailybreeze.com/2023/02/14/carson-transit-transportation-silver-line-sbccog/",
@@ -1077,8 +1091,10 @@
       "host": "dailybreeze.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "dailybreeze.com|2023/02"
+      "control_siblings": 999,
+      "control": "dailybreeze.com/2023/02*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     }
   ]
 }

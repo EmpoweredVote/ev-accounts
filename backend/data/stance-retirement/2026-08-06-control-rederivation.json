@@ -1,0 +1,1572 @@
+{
+  "generated_by": "scripts/rederive-control-siblings.mjs",
+  "min_siblings": 5,
+  "controls": [
+    {
+      "prefix": "marylandmatters.org/2021/04*",
+      "total": 736,
+      "pages": 701,
+      "capped": false
+    },
+    {
+      "prefix": "marylandmatters.org/2023/04*",
+      "total": 541,
+      "pages": 527,
+      "capped": false
+    },
+    {
+      "prefix": "marylandmatters.org/2023/05*",
+      "total": 516,
+      "pages": 495,
+      "capped": false
+    },
+    {
+      "prefix": "marylandmatters.org/2024/01*",
+      "total": 616,
+      "pages": 594,
+      "capped": false
+    },
+    {
+      "prefix": "bostonglobe.com/2021/01*",
+      "total": 1000,
+      "pages": 870,
+      "capped": true
+    },
+    {
+      "prefix": "bostonglobe.com/2022/04*",
+      "total": 1000,
+      "pages": 821,
+      "capped": true
+    },
+    {
+      "prefix": "bostonglobe.com/2023/09*",
+      "total": 1000,
+      "pages": 976,
+      "capped": true
+    },
+    {
+      "prefix": "dailybreeze.com/2019/11*",
+      "total": 1000,
+      "pages": 999,
+      "capped": true
+    },
+    {
+      "prefix": "dailybreeze.com/2022/06*",
+      "total": 1000,
+      "pages": 1000,
+      "capped": true
+    },
+    {
+      "prefix": "dailybreeze.com/2022/08*",
+      "total": 1000,
+      "pages": 996,
+      "capped": true
+    },
+    {
+      "prefix": "dailybreeze.com/2022/11*",
+      "total": 1000,
+      "pages": 999,
+      "capped": true
+    },
+    {
+      "prefix": "dailybreeze.com/2023/02*",
+      "total": 1000,
+      "pages": 999,
+      "capped": true
+    },
+    {
+      "prefix": "dailybreeze.com/2023/04*",
+      "total": 1000,
+      "pages": 1000,
+      "capped": true
+    },
+    {
+      "prefix": "lynnjournal.com/2022/09*",
+      "total": 141,
+      "pages": 138,
+      "capped": false
+    },
+    {
+      "prefix": "lynnjournal.com/2022/10*",
+      "total": 108,
+      "pages": 105,
+      "capped": false
+    },
+    {
+      "prefix": "lynnjournal.com/2022/11*",
+      "total": 53,
+      "pages": 50,
+      "capped": false
+    },
+    {
+      "prefix": "lynnjournal.com/2023/02*",
+      "total": 27,
+      "pages": 24,
+      "capped": false
+    },
+    {
+      "prefix": "lynnjournal.com/2023/03*",
+      "total": 37,
+      "pages": 34,
+      "capped": false
+    },
+    {
+      "prefix": "lynnjournal.com/2023/04*",
+      "total": 13,
+      "pages": 10,
+      "capped": false
+    },
+    {
+      "prefix": "lynnjournal.com/2023/05*",
+      "total": 45,
+      "pages": 42,
+      "capped": false
+    },
+    {
+      "prefix": "lynnjournal.com/2025/02*",
+      "total": 83,
+      "pages": 80,
+      "capped": false
+    },
+    {
+      "prefix": "precinctreporter.com/2022/10*",
+      "total": 25,
+      "pages": 25,
+      "capped": false
+    },
+    {
+      "prefix": "sgvtribune.com/2021/08*",
+      "total": 1000,
+      "pages": 992,
+      "capped": true
+    },
+    {
+      "prefix": "sgvtribune.com/2022/05*",
+      "total": 1000,
+      "pages": 998,
+      "capped": true
+    },
+    {
+      "prefix": "sgvtribune.com/2019/03*",
+      "total": 1000,
+      "pages": 967,
+      "capped": true
+    },
+    {
+      "prefix": "sgvtribune.com/2022/11*",
+      "total": 1000,
+      "pages": 998,
+      "capped": true
+    },
+    {
+      "prefix": "dailybreeze.com/2017/03*",
+      "total": 1000,
+      "pages": 976,
+      "capped": true
+    },
+    {
+      "prefix": "dailybreeze.com/2022/09*",
+      "total": 1000,
+      "pages": 988,
+      "capped": true
+    },
+    {
+      "prefix": "dailybreeze.com/2023/03*",
+      "total": 1000,
+      "pages": 998,
+      "capped": true
+    },
+    {
+      "prefix": "dailybreeze.com/2023/05*",
+      "total": 1000,
+      "pages": 999,
+      "capped": true
+    },
+    {
+      "prefix": "dailybreeze.com/2023/06*",
+      "total": 1000,
+      "pages": 997,
+      "capped": true
+    },
+    {
+      "prefix": "dailybreeze.com/2020/06*",
+      "total": 1000,
+      "pages": 855,
+      "capped": true
+    },
+    {
+      "prefix": "sgvtribune.com/2020/06*",
+      "total": 1000,
+      "pages": 870,
+      "capped": true
+    },
+    {
+      "prefix": "sgvtribune.com/2023/09*",
+      "total": 1000,
+      "pages": 984,
+      "capped": true
+    },
+    {
+      "prefix": "actonmass.org/legislators*",
+      "total": 183,
+      "pages": 183,
+      "capped": false
+    },
+    {
+      "prefix": "somervillema.gov/departments*",
+      "total": 1000,
+      "pages": 953,
+      "capped": true
+    },
+    {
+      "prefix": "actonmass.org/bills*",
+      "total": 135,
+      "pages": 127,
+      "capped": false
+    },
+    {
+      "prefix": "carsonca.gov/government*",
+      "total": 67,
+      "pages": 66,
+      "capped": false
+    },
+    {
+      "prefix": "latimes.com/socal/daily-pilot/news/story*",
+      "total": 1000,
+      "pages": 973,
+      "capped": true
+    },
+    {
+      "prefix": "lynnma.gov/news*",
+      "total": 8,
+      "pages": 7,
+      "capped": false
+    },
+    {
+      "prefix": "markey.senate.gov/news/press-releases*",
+      "total": 1000,
+      "pages": 901,
+      "capped": true
+    },
+    {
+      "prefix": "medfordma.org/departments/planning-development*",
+      "total": 82,
+      "pages": 46,
+      "capped": false
+    },
+    {
+      "prefix": "slc.gov/council/completed-projects*",
+      "total": 31,
+      "pages": 31,
+      "capped": false
+    },
+    {
+      "prefix": "ladowntownnews.com/features*",
+      "total": 276,
+      "pages": 225,
+      "capped": false
+    },
+    {
+      "prefix": "mass.gov/info-details*",
+      "total": 1000,
+      "pages": 967,
+      "capped": true
+    },
+    {
+      "prefix": "pressley.house.gov/issues*",
+      "total": 1000,
+      "pages": 6,
+      "capped": true
+    },
+    {
+      "prefix": "theeastsiderla.com/news/government_and_politics*",
+      "total": 1000,
+      "pages": 771,
+      "capped": true
+    },
+    {
+      "prefix": "somervillema.gov/departments/programs*",
+      "total": 304,
+      "pages": 270,
+      "capped": false
+    },
+    {
+      "prefix": "govtrack.us/congress/members/ayanna_pressley*",
+      "total": 11,
+      "pages": 10,
+      "capped": false
+    },
+    {
+      "prefix": "commonwealthbeacon.org/housing*",
+      "total": 1000,
+      "pages": 974,
+      "capped": true
+    },
+    {
+      "prefix": "governor.maryland.gov/priorities*",
+      "total": 1000,
+      "pages": 930,
+      "capped": true
+    },
+    {
+      "prefix": "kamlager-dove.house.gov/issues*",
+      "total": 21,
+      "pages": 19,
+      "capped": false
+    },
+    {
+      "prefix": "lynch.house.gov/issues*",
+      "total": 312,
+      "pages": 195,
+      "capped": false
+    },
+    {
+      "prefix": "marylandmatters.org/2023*",
+      "total": 1000,
+      "pages": 964,
+      "capped": true
+    },
+    {
+      "prefix": "moulton.house.gov/issues*",
+      "total": 172,
+      "pages": 126,
+      "capped": false
+    },
+    {
+      "prefix": "oag.ca.gov/news/press-releases*",
+      "total": 1000,
+      "pages": 967,
+      "capped": true
+    },
+    {
+      "prefix": "onyourballot.vote411.org/m*",
+      "total": 1000,
+      "pages": 998,
+      "capped": true
+    },
+    {
+      "prefix": "audacy.com/knxnews/news/local*",
+      "total": 1000,
+      "pages": 1,
+      "capped": true
+    },
+    {
+      "prefix": "cbsnews.com/news*",
+      "total": 1000,
+      "pages": 904,
+      "capped": true
+    }
+  ],
+  "changes": [
+    {
+      "url": "https://marylandmatters.org/2021/04/10/police-accountability-act-signed/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "marylandmatters.org|2021/04",
+      "prefix": "marylandmatters.org/2021/04*",
+      "verdict": "FABRICATED",
+      "pages": 701,
+      "total": 736
+    },
+    {
+      "url": "https://marylandmatters.org/2023/04/healthcare-expansion/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "marylandmatters.org|2023/04",
+      "prefix": "marylandmatters.org/2023/04*",
+      "verdict": "FABRICATED",
+      "pages": 527,
+      "total": 541
+    },
+    {
+      "url": "https://marylandmatters.org/2023/05/voting-rights-maryland/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "marylandmatters.org|2023/05",
+      "prefix": "marylandmatters.org/2023/05*",
+      "verdict": "FABRICATED",
+      "pages": 495,
+      "total": 516
+    },
+    {
+      "url": "https://marylandmatters.org/2024/01/moore-fy2025-budget/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "marylandmatters.org|2024/01",
+      "prefix": "marylandmatters.org/2024/01*",
+      "verdict": "FABRICATED",
+      "pages": 594,
+      "total": 616
+    },
+    {
+      "url": "https://www.bostonglobe.com/2021/01/21/metro/mariano-elected-house-speaker/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "bostonglobe.com|2021/01",
+      "prefix": "bostonglobe.com/2021/01*",
+      "verdict": "FABRICATED",
+      "pages": 870,
+      "total": 1000
+    },
+    {
+      "url": "https://www.bostonglobe.com/2022/04/14/metro/mayors-push-mbta-service-restoration/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "bostonglobe.com|2022/04",
+      "prefix": "bostonglobe.com/2022/04*",
+      "verdict": "FABRICATED",
+      "pages": 821,
+      "total": 1000
+    },
+    {
+      "url": "https://www.bostonglobe.com/2023/09/26/metro/massachusetts-tax-relief-package-governor-healey/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "bostonglobe.com|2023/09",
+      "prefix": "bostonglobe.com/2023/09*",
+      "verdict": "FABRICATED",
+      "pages": 976,
+      "total": 1000
+    },
+    {
+      "url": "https://www.dailybreeze.com/2019/11/15/carson-development-projects-city-council/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "dailybreeze.com|2019/11",
+      "prefix": "dailybreeze.com/2019/11*",
+      "verdict": "FABRICATED",
+      "pages": 999,
+      "total": 1000
+    },
+    {
+      "url": "https://www.dailybreeze.com/2022/06/15/carson-city-budget-adopted-council/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "dailybreeze.com|2022/06",
+      "prefix": "dailybreeze.com/2022/06*",
+      "verdict": "FABRICATED",
+      "pages": 1000,
+      "total": 1000
+    },
+    {
+      "url": "https://www.dailybreeze.com/2022/08/20/carson-utility-tax-measure-budget-davis-holmes/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "dailybreeze.com|2022/08",
+      "prefix": "dailybreeze.com/2022/08*",
+      "verdict": "FABRICATED",
+      "pages": 996,
+      "total": 1000
+    },
+    {
+      "url": "https://www.dailybreeze.com/2022/11/03/carson-amazon-local-hiring-policy-davis-holmes/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "dailybreeze.com|2022/11",
+      "prefix": "dailybreeze.com/2022/11*",
+      "verdict": "FABRICATED",
+      "pages": 999,
+      "total": 1000
+    },
+    {
+      "url": "https://www.dailybreeze.com/2023/02/14/carson-transit-transportation-silver-line-sbccog/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "dailybreeze.com|2023/02",
+      "prefix": "dailybreeze.com/2023/02*",
+      "verdict": "FABRICATED",
+      "pages": 999,
+      "total": 1000
+    },
+    {
+      "url": "https://www.dailybreeze.com/2023/04/10/carson-mixed-use-development-dignity-sports-park-corridor/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "dailybreeze.com|2023/04",
+      "prefix": "dailybreeze.com/2023/04*",
+      "verdict": "FABRICATED",
+      "pages": 1000,
+      "total": 1000
+    },
+    {
+      "url": "https://www.lynnjournal.com/2022/09/mayor-nicholson-economic-development-downtown",
+      "old": 141,
+      "rows": 1,
+      "storedControl": "lynnjournal.com|2022/09",
+      "prefix": "lynnjournal.com/2022/09*",
+      "verdict": "FABRICATED",
+      "pages": 138,
+      "total": 141
+    },
+    {
+      "url": "https://www.lynnjournal.com/2022/10/lynn-council-economic-development",
+      "old": 108,
+      "rows": 1,
+      "storedControl": "lynnjournal.com|2022/10",
+      "prefix": "lynnjournal.com/2022/10*",
+      "verdict": "FABRICATED",
+      "pages": 105,
+      "total": 108
+    },
+    {
+      "url": "https://www.lynnjournal.com/2022/10/lynn-homelessness-task-force-council",
+      "old": 108,
+      "rows": 1,
+      "storedControl": "lynnjournal.com|2022/10",
+      "prefix": "lynnjournal.com/2022/10*",
+      "verdict": "FABRICATED",
+      "pages": 105,
+      "total": 108
+    },
+    {
+      "url": "https://www.lynnjournal.com/2022/10/nicholson-homelessness-task-force-lynn",
+      "old": 108,
+      "rows": 1,
+      "storedControl": "lynnjournal.com|2022/10",
+      "prefix": "lynnjournal.com/2022/10*",
+      "verdict": "FABRICATED",
+      "pages": 105,
+      "total": 108
+    },
+    {
+      "url": "https://www.lynnjournal.com/2022/11/lynn-city-council-tif-economic-development",
+      "old": 53,
+      "rows": 1,
+      "storedControl": "lynnjournal.com|2022/11",
+      "prefix": "lynnjournal.com/2022/11*",
+      "verdict": "FABRICATED",
+      "pages": 50,
+      "total": 53
+    },
+    {
+      "url": "https://www.lynnjournal.com/2022/11/lynn-council-economic-development-tif",
+      "old": 53,
+      "rows": 1,
+      "storedControl": "lynnjournal.com|2022/11",
+      "prefix": "lynnjournal.com/2022/11*",
+      "verdict": "FABRICATED",
+      "pages": 50,
+      "total": 53
+    },
+    {
+      "url": "https://www.lynnjournal.com/2023/02/mayor-nicholson-supports-mbta-communities-zoning",
+      "old": 27,
+      "rows": 1,
+      "storedControl": "lynnjournal.com|2023/02",
+      "prefix": "lynnjournal.com/2023/02*",
+      "verdict": "FABRICATED",
+      "pages": 24,
+      "total": 27
+    },
+    {
+      "url": "https://www.lynnjournal.com/2023/03/lynn-council-housing-vote",
+      "old": 37,
+      "rows": 1,
+      "storedControl": "lynnjournal.com|2023/03",
+      "prefix": "lynnjournal.com/2023/03*",
+      "verdict": "FABRICATED",
+      "pages": 34,
+      "total": 37
+    },
+    {
+      "url": "https://www.lynnjournal.com/2023/03/nicholson-environmental-justice-lynn",
+      "old": 37,
+      "rows": 1,
+      "storedControl": "lynnjournal.com|2023/03",
+      "prefix": "lynnjournal.com/2023/03*",
+      "verdict": "FABRICATED",
+      "pages": 34,
+      "total": 37
+    },
+    {
+      "url": "https://www.lynnjournal.com/2023/03/lynn-city-council-housing-zoning-vote",
+      "old": 37,
+      "rows": 10,
+      "storedControl": "lynnjournal.com|2023/03",
+      "prefix": "lynnjournal.com/2023/03*",
+      "verdict": "FABRICATED",
+      "pages": 34,
+      "total": 37
+    },
+    {
+      "url": "https://www.lynnjournal.com/2023/04/nicholson-waterfront-development-plans",
+      "old": 13,
+      "rows": 1,
+      "storedControl": "lynnjournal.com|2023/04",
+      "prefix": "lynnjournal.com/2023/04*",
+      "verdict": "FABRICATED",
+      "pages": 10,
+      "total": 13
+    },
+    {
+      "url": "https://www.lynnjournal.com/2023/05/lynn-council-development-votes",
+      "old": 45,
+      "rows": 1,
+      "storedControl": "lynnjournal.com|2023/05",
+      "prefix": "lynnjournal.com/2023/05*",
+      "verdict": "FABRICATED",
+      "pages": 42,
+      "total": 45
+    },
+    {
+      "url": "https://www.lynnjournal.com/2023/05/nicholson-ferry-service-lynn-boston",
+      "old": 45,
+      "rows": 1,
+      "storedControl": "lynnjournal.com|2023/05",
+      "prefix": "lynnjournal.com/2023/05*",
+      "verdict": "FABRICATED",
+      "pages": 42,
+      "total": 45
+    },
+    {
+      "url": "https://www.lynnjournal.com/2025/02/nicholson-defends-immigrant-community-ice-enforcement",
+      "old": 83,
+      "rows": 1,
+      "storedControl": "lynnjournal.com|2025/02",
+      "prefix": "lynnjournal.com/2025/02*",
+      "verdict": "FABRICATED",
+      "pages": 80,
+      "total": 83
+    },
+    {
+      "url": "https://www.lynnjournal.com/2025/02/lynn-council-immigrant-protections-resolution",
+      "old": 83,
+      "rows": 7,
+      "storedControl": "lynnjournal.com|2025/02",
+      "prefix": "lynnjournal.com/2025/02*",
+      "verdict": "FABRICATED",
+      "pages": 80,
+      "total": 83
+    },
+    {
+      "url": "https://www.precinctreporter.com/2022/10/carson-environmental-justice-mayor/",
+      "old": 25,
+      "rows": 1,
+      "storedControl": "precinctreporter.com|2022/10",
+      "prefix": "precinctreporter.com/2022/10*",
+      "verdict": "FABRICATED",
+      "pages": 25,
+      "total": 25
+    },
+    {
+      "url": "https://www.sgvtribune.com/2021/08/alhambra-development-valley-boulevard/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "sgvtribune.com|2021/08",
+      "prefix": "sgvtribune.com/2021/08*",
+      "verdict": "FABRICATED",
+      "pages": 992,
+      "total": 1000
+    },
+    {
+      "url": "https://www.sgvtribune.com/2022/05/alhambra-mental-health-co-responder-program/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "sgvtribune.com|2022/05",
+      "prefix": "sgvtribune.com/2022/05*",
+      "verdict": "FABRICATED",
+      "pages": 998,
+      "total": 1000
+    },
+    {
+      "url": "https://www.sgvtribune.com/2019/03/19/alhambra-adopts-welcoming-city-resolution/",
+      "old": 200,
+      "rows": 4,
+      "storedControl": "sgvtribune.com|2019/03",
+      "prefix": "sgvtribune.com/2019/03*",
+      "verdict": "FABRICATED",
+      "pages": 967,
+      "total": 1000
+    },
+    {
+      "url": "https://www.sgvtribune.com/2022/11/16/alhambra-city-council-approves-housing-element-update/",
+      "old": 200,
+      "rows": 7,
+      "storedControl": "sgvtribune.com|2022/11",
+      "prefix": "sgvtribune.com/2022/11*",
+      "verdict": "FABRICATED",
+      "pages": 998,
+      "total": 1000
+    },
+    {
+      "url": "https://www.dailybreeze.com/2017/03/03/carson-city-council-immigration-resolution-trust-act/",
+      "old": 200,
+      "rows": 5,
+      "storedControl": "dailybreeze.com|2017/03",
+      "prefix": "dailybreeze.com/2017/03*",
+      "verdict": "FABRICATED",
+      "pages": 976,
+      "total": 1000
+    },
+    {
+      "url": "https://www.dailybreeze.com/2022/09/15/carson-housing-element-rhna-compliance-council/",
+      "old": 200,
+      "rows": 5,
+      "storedControl": "dailybreeze.com|2022/09",
+      "prefix": "dailybreeze.com/2022/09*",
+      "verdict": "FABRICATED",
+      "pages": 988,
+      "total": 1000
+    },
+    {
+      "url": "https://www.dailybreeze.com/2023/03/22/carson-refinery-pollution-city-response-davis-holmes/",
+      "old": 200,
+      "rows": 5,
+      "storedControl": "dailybreeze.com|2023/03",
+      "prefix": "dailybreeze.com/2023/03*",
+      "verdict": "FABRICATED",
+      "pages": 998,
+      "total": 1000
+    },
+    {
+      "url": "https://www.dailybreeze.com/2023/05/12/carson-city-council-homelessness-encampment-response/",
+      "old": 200,
+      "rows": 5,
+      "storedControl": "dailybreeze.com|2023/05",
+      "prefix": "dailybreeze.com/2023/05*",
+      "verdict": "FABRICATED",
+      "pages": 999,
+      "total": 1000
+    },
+    {
+      "url": "https://www.dailybreeze.com/2023/06/07/carson-lasd-contract-public-safety-budget/",
+      "old": 200,
+      "rows": 5,
+      "storedControl": "dailybreeze.com|2023/06",
+      "prefix": "dailybreeze.com/2023/06*",
+      "verdict": "FABRICATED",
+      "pages": 997,
+      "total": 1000
+    },
+    {
+      "url": "https://www.dailybreeze.com/2020/06/18/amazon-warehouse-carson-city-council-approval/",
+      "old": 200,
+      "rows": 3,
+      "storedControl": "dailybreeze.com|2020/06",
+      "prefix": "dailybreeze.com/2020/06*",
+      "verdict": "FABRICATED",
+      "pages": 855,
+      "total": 1000
+    },
+    {
+      "url": "https://www.sgvtribune.com/2020/06/15/alhambra-council-debates-police-reform/",
+      "old": 200,
+      "rows": 3,
+      "storedControl": "sgvtribune.com|2020/06",
+      "prefix": "sgvtribune.com/2020/06*",
+      "verdict": "FABRICATED",
+      "pages": 870,
+      "total": 1000
+    },
+    {
+      "url": "https://www.sgvtribune.com/2023/09/12/sgv-cities-ramp-up-homelessness-response/",
+      "old": 200,
+      "rows": 3,
+      "storedControl": "sgvtribune.com|2023/09",
+      "prefix": "sgvtribune.com/2023/09*",
+      "verdict": "FABRICATED",
+      "pages": 984,
+      "total": 1000
+    },
+    {
+      "url": "https://actonmass.org/legislators/angelo-puppolo/",
+      "old": 183,
+      "rows": 9,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/karen-spilka",
+      "old": 183,
+      "rows": 9,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/kevin-honan",
+      "old": 183,
+      "rows": 9,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/richard-wells/",
+      "old": 183,
+      "rows": 9,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/ronald-mariano",
+      "old": 183,
+      "rows": 9,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/tackey-chan/",
+      "old": 183,
+      "rows": 9,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/aaron-michlewitz",
+      "old": 183,
+      "rows": 8,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/daniel-donahue",
+      "old": 183,
+      "rows": 8,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/william-driscoll",
+      "old": 183,
+      "rows": 7,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/james-oday/",
+      "old": 183,
+      "rows": 5,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/tricia-farley-bouvier/",
+      "old": 183,
+      "rows": 5,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/kate-hogan",
+      "old": 183,
+      "rows": 16,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/dawne-shand/",
+      "old": 183,
+      "rows": 15,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/kenneth-gordon/",
+      "old": 183,
+      "rows": 3,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/thomas-stanley/",
+      "old": 183,
+      "rows": 2,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/carole-fiola/",
+      "old": 183,
+      "rows": 13,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/adrianne-ramos/",
+      "old": 183,
+      "rows": 12,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/bud-williams/",
+      "old": 183,
+      "rows": 12,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/james-arena-derosa/",
+      "old": 183,
+      "rows": 12,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/mark-montigny",
+      "old": 183,
+      "rows": 12,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/william-brownsberger/",
+      "old": 183,
+      "rows": 1,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://actonmass.org/legislators/sam-montano",
+      "old": 183,
+      "rows": 10,
+      "storedControl": "actonmass.org/legislators*",
+      "prefix": "actonmass.org/legislators*",
+      "verdict": "FABRICATED",
+      "pages": 183,
+      "total": 183
+    },
+    {
+      "url": "https://www.somervillema.gov/departments/somerville-heart-program",
+      "old": 200,
+      "rows": 9,
+      "storedControl": "somervillema.gov/departments*",
+      "prefix": "somervillema.gov/departments*",
+      "verdict": "FABRICATED",
+      "pages": 953,
+      "total": 1000
+    },
+    {
+      "url": "https://www.somervillema.gov/departments/somerville-homeless-coalition",
+      "old": 200,
+      "rows": 4,
+      "storedControl": "somervillema.gov/departments*",
+      "prefix": "somervillema.gov/departments*",
+      "verdict": "FABRICATED",
+      "pages": 953,
+      "total": 1000
+    },
+    {
+      "url": "https://www.somervillema.gov/departments/economic-development",
+      "old": 200,
+      "rows": 2,
+      "storedControl": "somervillema.gov/departments*",
+      "prefix": "somervillema.gov/departments*",
+      "verdict": "FABRICATED",
+      "pages": 953,
+      "total": 1000
+    },
+    {
+      "url": "https://actonmass.org/bills/rent-control/",
+      "old": 135,
+      "rows": 8,
+      "storedControl": "actonmass.org/bills*",
+      "prefix": "actonmass.org/bills*",
+      "verdict": "FABRICATED",
+      "pages": 127,
+      "total": 135
+    },
+    {
+      "url": "https://actonmass.org/bills/the-roe-act/",
+      "old": 135,
+      "rows": 3,
+      "storedControl": "actonmass.org/bills*",
+      "prefix": "actonmass.org/bills*",
+      "verdict": "FABRICATED",
+      "pages": 127,
+      "total": 135
+    },
+    {
+      "url": "https://actonmass.org/bills/universal-childcare/",
+      "old": 135,
+      "rows": 3,
+      "storedControl": "actonmass.org/bills*",
+      "prefix": "actonmass.org/bills*",
+      "verdict": "FABRICATED",
+      "pages": 127,
+      "total": 135
+    },
+    {
+      "url": "https://actonmass.org/bills/racially-inclusive-education/",
+      "old": 135,
+      "rows": 1,
+      "storedControl": "actonmass.org/bills*",
+      "prefix": "actonmass.org/bills*",
+      "verdict": "FABRICATED",
+      "pages": 127,
+      "total": 135
+    },
+    {
+      "url": "https://carsonca.gov/government/mayor",
+      "old": 67,
+      "rows": 8,
+      "storedControl": "carsonca.gov/government*",
+      "prefix": "carsonca.gov/government*",
+      "verdict": "FABRICATED",
+      "pages": 66,
+      "total": 67
+    },
+    {
+      "url": "https://www.latimes.com/socal/daily-pilot/news/story/carson-economic-development-council",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "latimes.com/socal/daily-pilot/news/story*",
+      "prefix": "latimes.com/socal/daily-pilot/news/story*",
+      "verdict": "FABRICATED",
+      "pages": 973,
+      "total": 1000
+    },
+    {
+      "url": "https://www.lynnma.gov/news/complete-streets-grant",
+      "old": 8,
+      "rows": 1,
+      "storedControl": "lynnma.gov/news*",
+      "prefix": "lynnma.gov/news*",
+      "verdict": "FABRICATED",
+      "pages": 7,
+      "total": 8
+    },
+    {
+      "url": "https://www.lynnma.gov/news/downtown-development-updates",
+      "old": 8,
+      "rows": 1,
+      "storedControl": "lynnma.gov/news*",
+      "prefix": "lynnma.gov/news*",
+      "verdict": "FABRICATED",
+      "pages": 7,
+      "total": 8
+    },
+    {
+      "url": "https://www.lynnma.gov/news/lynn-harbor-cleanup-waterfront",
+      "old": 8,
+      "rows": 1,
+      "storedControl": "lynnma.gov/news*",
+      "prefix": "lynnma.gov/news*",
+      "verdict": "FABRICATED",
+      "pages": 7,
+      "total": 8
+    },
+    {
+      "url": "https://www.lynnma.gov/news/lynn-waterfront-master-plan",
+      "old": 8,
+      "rows": 1,
+      "storedControl": "lynnma.gov/news*",
+      "prefix": "lynnma.gov/news*",
+      "verdict": "FABRICATED",
+      "pages": 7,
+      "total": 8
+    },
+    {
+      "url": "https://www.lynnma.gov/news/mayor-nicholson-announces-housing-development-initiative",
+      "old": 8,
+      "rows": 1,
+      "storedControl": "lynnma.gov/news*",
+      "prefix": "lynnma.gov/news*",
+      "verdict": "FABRICATED",
+      "pages": 7,
+      "total": 8
+    },
+    {
+      "url": "https://www.lynnma.gov/news/homelessness-services-update",
+      "old": 8,
+      "rows": 2,
+      "storedControl": "lynnma.gov/news*",
+      "prefix": "lynnma.gov/news*",
+      "verdict": "FABRICATED",
+      "pages": 7,
+      "total": 8
+    },
+    {
+      "url": "https://www.markey.senate.gov/news/press-releases/markey-introduces-supreme-court-ethics-recusal-transparency-act",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "markey.senate.gov/news/press-releases*",
+      "prefix": "markey.senate.gov/news/press-releases*",
+      "verdict": "FABRICATED",
+      "pages": 901,
+      "total": 1000
+    },
+    {
+      "url": "https://www.markey.senate.gov/news/press-releases/markey-nadler-introduce-judiciary-act",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "markey.senate.gov/news/press-releases*",
+      "prefix": "markey.senate.gov/news/press-releases*",
+      "verdict": "FABRICATED",
+      "pages": 901,
+      "total": 1000
+    },
+    {
+      "url": "https://www.markey.senate.gov/news/press-releases/markey-statement-on-supreme-court-dobbs-decision",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "markey.senate.gov/news/press-releases*",
+      "prefix": "markey.senate.gov/news/press-releases*",
+      "verdict": "FABRICATED",
+      "pages": 901,
+      "total": 1000
+    },
+    {
+      "url": "https://www.markey.senate.gov/news/press-releases/markey-statement-on-supreme-court-loper-bright-decision",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "markey.senate.gov/news/press-releases*",
+      "prefix": "markey.senate.gov/news/press-releases*",
+      "verdict": "FABRICATED",
+      "pages": 901,
+      "total": 1000
+    },
+    {
+      "url": "https://www.markey.senate.gov/news/press-releases/markey-supports-bipartisan-safer-communities-act",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "markey.senate.gov/news/press-releases*",
+      "prefix": "markey.senate.gov/news/press-releases*",
+      "verdict": "FABRICATED",
+      "pages": 901,
+      "total": 1000
+    },
+    {
+      "url": "https://www.markey.senate.gov/news/press-releases/markey-votes-to-pass-american-rescue-plan",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "markey.senate.gov/news/press-releases*",
+      "prefix": "markey.senate.gov/news/press-releases*",
+      "verdict": "FABRICATED",
+      "pages": 901,
+      "total": 1000
+    },
+    {
+      "url": "https://www.markey.senate.gov/news/press-releases/markey-votes-to-pass-infrastructure-investment-and-jobs-act",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "markey.senate.gov/news/press-releases*",
+      "prefix": "markey.senate.gov/news/press-releases*",
+      "verdict": "FABRICATED",
+      "pages": 901,
+      "total": 1000
+    },
+    {
+      "url": "https://www.markey.senate.gov/news/press-releases/senators-markey-whitehouse-reintroduce-disclose-act",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "markey.senate.gov/news/press-releases*",
+      "prefix": "markey.senate.gov/news/press-releases*",
+      "verdict": "FABRICATED",
+      "pages": 901,
+      "total": 1000
+    },
+    {
+      "url": "https://www.markey.senate.gov/news/press-releases/markey-statement-on-inflation-reduction-act-passage",
+      "old": 200,
+      "rows": 3,
+      "storedControl": "markey.senate.gov/news/press-releases*",
+      "prefix": "markey.senate.gov/news/press-releases*",
+      "verdict": "FABRICATED",
+      "pages": 901,
+      "total": 1000
+    },
+    {
+      "url": "https://www.markey.senate.gov/news/press-releases/senators-markey-booker-introduce-algorithmic-accountability-act",
+      "old": 200,
+      "rows": 3,
+      "storedControl": "markey.senate.gov/news/press-releases*",
+      "prefix": "markey.senate.gov/news/press-releases*",
+      "verdict": "FABRICATED",
+      "pages": 901,
+      "total": 1000
+    },
+    {
+      "url": "https://www.markey.senate.gov/news/press-releases/markey-jayapal-introduce-transgender-bill-of-rights",
+      "old": 200,
+      "rows": 2,
+      "storedControl": "markey.senate.gov/news/press-releases*",
+      "prefix": "markey.senate.gov/news/press-releases*",
+      "verdict": "FABRICATED",
+      "pages": 901,
+      "total": 1000
+    },
+    {
+      "url": "https://www.medfordma.org/departments/planning-development/housing/",
+      "old": 82,
+      "rows": 1,
+      "storedControl": "medfordma.org/departments/planning-development*",
+      "prefix": "medfordma.org/departments/planning-development*",
+      "verdict": "FABRICATED",
+      "pages": 46,
+      "total": 82
+    },
+    {
+      "url": "https://www.medfordma.org/departments/planning-development/zoning/",
+      "old": 82,
+      "rows": 1,
+      "storedControl": "medfordma.org/departments/planning-development*",
+      "prefix": "medfordma.org/departments/planning-development*",
+      "verdict": "FABRICATED",
+      "pages": 46,
+      "total": 82
+    },
+    {
+      "url": "https://www.slc.gov/council/completed-projects/connect-slc-a-city-wide-transportation-plan/",
+      "old": 31,
+      "rows": 1,
+      "storedControl": "slc.gov/council/completed-projects*",
+      "prefix": "slc.gov/council/completed-projects*",
+      "verdict": "FABRICATED",
+      "pages": 31,
+      "total": 31
+    },
+    {
+      "url": "https://ladowntownnews.com/features/fighting-corruption-fraud-and-waste-bryant-acosta-runs-for-mayor-alongside-around-40-other-candidates",
+      "old": 200,
+      "rows": 5,
+      "storedControl": "ladowntownnews.com/features*",
+      "prefix": "ladowntownnews.com/features*",
+      "verdict": "FABRICATED",
+      "pages": 225,
+      "total": 276
+    },
+    {
+      "url": "https://mass.gov/info-details/mbta-communities-compliance-status",
+      "old": 200,
+      "rows": 5,
+      "storedControl": "mass.gov/info-details*",
+      "prefix": "mass.gov/info-details*",
+      "verdict": "FABRICATED",
+      "pages": 967,
+      "total": 1000
+    },
+    {
+      "url": "https://pressley.house.gov/issues/criminal-justice",
+      "old": 200,
+      "rows": 4,
+      "storedControl": "pressley.house.gov/issues*",
+      "prefix": "pressley.house.gov/issues*",
+      "verdict": "FABRICATED",
+      "pages": 6,
+      "total": 1000
+    },
+    {
+      "url": "https://pressley.house.gov/issues/climate",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "pressley.house.gov/issues*",
+      "prefix": "pressley.house.gov/issues*",
+      "verdict": "FABRICATED",
+      "pages": 6,
+      "total": 1000
+    },
+    {
+      "url": "https://pressley.house.gov/issues/democracy",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "pressley.house.gov/issues*",
+      "prefix": "pressley.house.gov/issues*",
+      "verdict": "FABRICATED",
+      "pages": 6,
+      "total": 1000
+    },
+    {
+      "url": "https://pressley.house.gov/issues/seniors",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "pressley.house.gov/issues*",
+      "prefix": "pressley.house.gov/issues*",
+      "verdict": "FABRICATED",
+      "pages": 6,
+      "total": 1000
+    },
+    {
+      "url": "https://pressley.house.gov/issues/technology",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "pressley.house.gov/issues*",
+      "prefix": "pressley.house.gov/issues*",
+      "verdict": "FABRICATED",
+      "pages": 6,
+      "total": 1000
+    },
+    {
+      "url": "https://theeastsiderla.com/news/government_and_politics/colter-carlisle-l-a-city-council-district-13-candidate",
+      "old": 200,
+      "rows": 4,
+      "storedControl": "theeastsiderla.com/news/government_and_politics*",
+      "prefix": "theeastsiderla.com/news/government_and_politics*",
+      "verdict": "FABRICATED",
+      "pages": 771,
+      "total": 1000
+    },
+    {
+      "url": "https://theeastsiderla.com/news/government_and_politics/maria-lou-calanche-l-a-city-council-district-1-candidate",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "theeastsiderla.com/news/government_and_politics*",
+      "prefix": "theeastsiderla.com/news/government_and_politics*",
+      "verdict": "FABRICATED",
+      "pages": 771,
+      "total": 1000
+    },
+    {
+      "url": "https://www.somervillema.gov/departments/programs/somerville-by-design",
+      "old": 200,
+      "rows": 4,
+      "storedControl": "somervillema.gov/departments/programs*",
+      "prefix": "somervillema.gov/departments/programs*",
+      "verdict": "FABRICATED",
+      "pages": 270,
+      "total": 304
+    },
+    {
+      "url": "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration",
+      "old": 200,
+      "rows": 14,
+      "storedControl": "somervillema.gov/departments/programs*",
+      "prefix": "somervillema.gov/departments/programs*",
+      "verdict": "FABRICATED",
+      "pages": 270,
+      "total": 304
+    },
+    {
+      "url": "https://www.govtrack.us/congress/members/ayanna_pressley/P000617",
+      "old": 11,
+      "rows": 2,
+      "storedControl": "govtrack.us/congress/members/ayanna_pressley*",
+      "prefix": "govtrack.us/congress/members/ayanna_pressley*",
+      "verdict": "FABRICATED",
+      "pages": 10,
+      "total": 11
+    },
+    {
+      "url": "https://commonwealthbeacon.org/housing/mbta-communities-zoning-medford/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "commonwealthbeacon.org/housing*",
+      "prefix": "commonwealthbeacon.org/housing*",
+      "verdict": "FABRICATED",
+      "pages": 974,
+      "total": 1000
+    },
+    {
+      "url": "https://governor.maryland.gov/priorities/environment/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "governor.maryland.gov/priorities*",
+      "prefix": "governor.maryland.gov/priorities*",
+      "verdict": "FABRICATED",
+      "pages": 930,
+      "total": 1000
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/issues/health-care",
+      "old": 21,
+      "rows": 1,
+      "storedControl": "kamlager-dove.house.gov/issues*",
+      "prefix": "kamlager-dove.house.gov/issues*",
+      "verdict": "FABRICATED",
+      "pages": 19,
+      "total": 21
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/issues/lgbtq",
+      "old": 21,
+      "rows": 1,
+      "storedControl": "kamlager-dove.house.gov/issues*",
+      "prefix": "kamlager-dove.house.gov/issues*",
+      "verdict": "FABRICATED",
+      "pages": 19,
+      "total": 21
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/issues/technology",
+      "old": 21,
+      "rows": 1,
+      "storedControl": "kamlager-dove.house.gov/issues*",
+      "prefix": "kamlager-dove.house.gov/issues*",
+      "verdict": "FABRICATED",
+      "pages": 19,
+      "total": 21
+    },
+    {
+      "url": "https://lynch.house.gov/issues/technology",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "lynch.house.gov/issues*",
+      "prefix": "lynch.house.gov/issues*",
+      "verdict": "FABRICATED",
+      "pages": 195,
+      "total": 312
+    },
+    {
+      "url": "https://marylandmatters.org/2023/childcare-moore/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "marylandmatters.org/2023*",
+      "prefix": "marylandmatters.org/2023*",
+      "verdict": "FABRICATED",
+      "pages": 964,
+      "total": 1000
+    },
+    {
+      "url": "https://marylandmatters.org/2023/moore-clean-energy-buildings/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "marylandmatters.org/2023*",
+      "prefix": "marylandmatters.org/2023*",
+      "verdict": "FABRICATED",
+      "pages": 964,
+      "total": 1000
+    },
+    {
+      "url": "https://moulton.house.gov/issues/jobs-economy",
+      "old": 172,
+      "rows": 1,
+      "storedControl": "moulton.house.gov/issues*",
+      "prefix": "moulton.house.gov/issues*",
+      "verdict": "FABRICATED",
+      "pages": 126,
+      "total": 172
+    },
+    {
+      "url": "https://moulton.house.gov/issues/national-security",
+      "old": 172,
+      "rows": 1,
+      "storedControl": "moulton.house.gov/issues*",
+      "prefix": "moulton.house.gov/issues*",
+      "verdict": "FABRICATED",
+      "pages": 126,
+      "total": 172
+    },
+    {
+      "url": "https://moulton.house.gov/issues/technology",
+      "old": 172,
+      "rows": 1,
+      "storedControl": "moulton.house.gov/issues*",
+      "prefix": "moulton.house.gov/issues*",
+      "verdict": "FABRICATED",
+      "pages": 126,
+      "total": 172
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-joins-bipartisan-coalition-urging-congress-pass-legislation-support-workforce",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "oag.ca.gov/news/press-releases*",
+      "prefix": "oag.ca.gov/news/press-releases*",
+      "verdict": "FABRICATED",
+      "pages": 967,
+      "total": 1000
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-joins-nationwide-fight-underscore-need-preventive-healthcare-access",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "oag.ca.gov/news/press-releases*",
+      "prefix": "oag.ca.gov/news/press-releases*",
+      "verdict": "FABRICATED",
+      "pages": 967,
+      "total": 1000
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-leads-coalition-22-states-support-increased-access-birth-control",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "oag.ca.gov/news/press-releases*",
+      "prefix": "oag.ca.gov/news/press-releases*",
+      "verdict": "FABRICATED",
+      "pages": 967,
+      "total": 1000
+    },
+    {
+      "url": "https://onyourballot.vote411.org/m/candidate-detail.do?id=72262938",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "onyourballot.vote411.org/m*",
+      "prefix": "onyourballot.vote411.org/m*",
+      "verdict": "FABRICATED",
+      "pages": 998,
+      "total": 1000
+    },
+    {
+      "url": "https://www.audacy.com/knxnews/news/local/la-councilmember-traci-park-blasts-sanctuary-city-law",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "audacy.com/knxnews/news/local*",
+      "prefix": "audacy.com/knxnews/news/local*",
+      "verdict": "WEAK_CONTROL",
+      "pages": 1,
+      "total": 1000
+    },
+    {
+      "url": "https://www.cbsnews.com/news/murkowski-ukraine-aid/",
+      "old": 200,
+      "rows": 1,
+      "storedControl": "cbsnews.com/news*",
+      "prefix": "cbsnews.com/news*",
+      "verdict": "FABRICATED",
+      "pages": 904,
+      "total": 1000
+    }
+  ]
+}

@@ -21,8 +21,10 @@
       "host": "dailybreeze.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "dailybreeze.com|2023/04"
+      "control_siblings": 1000,
+      "control": "dailybreeze.com/2023/04*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.dailyfly.com/2025/08/09/judge-sides-with-faith-group-over-utah-county-in-psychedelic-mushroom-religious-freedom-lawsuit/",

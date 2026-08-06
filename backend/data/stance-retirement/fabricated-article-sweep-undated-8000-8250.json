@@ -131,9 +131,11 @@
       "host": "lynch.house.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 195,
       "control": "lynch.house.gov/issues*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 312
     },
     {
       "url": "https://m.lasvegassun.com/news/2019/nov/06/tense-las-vegas-council-oks-homeless-ordinance/",

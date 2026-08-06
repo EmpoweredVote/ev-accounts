@@ -477,9 +477,11 @@
       "host": "commonwealthbeacon.org",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 974,
       "control": "commonwealthbeacon.org/housing*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://commonwealthbeacon.org/opinion/support-black-owned-cannabis-shop-in-harvard-square/",

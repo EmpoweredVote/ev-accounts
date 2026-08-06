@@ -967,9 +967,11 @@
       "host": "governor.maryland.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 930,
       "control": "governor.maryland.gov/priorities*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://governor.mo.gov/official-statements/appellate-court-rewrite-amendment-5-language",

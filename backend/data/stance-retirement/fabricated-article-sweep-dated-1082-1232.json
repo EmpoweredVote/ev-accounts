@@ -390,8 +390,10 @@
       "host": "marylandmatters.org",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "marylandmatters.org|2021/04"
+      "control_siblings": 701,
+      "control": "marylandmatters.org/2021/04*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 736
     },
     {
       "url": "https://marylandmatters.org/2022/04/09/senate-president-bill-ferguson/",
@@ -406,8 +408,10 @@
       "host": "marylandmatters.org",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "marylandmatters.org|2023/04"
+      "control_siblings": 527,
+      "control": "marylandmatters.org/2023/04*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 541
     },
     {
       "url": "https://marylandmatters.org/2023/05/maryland-way-act-signed/",
@@ -422,8 +426,10 @@
       "host": "marylandmatters.org",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "marylandmatters.org|2023/05"
+      "control_siblings": 495,
+      "control": "marylandmatters.org/2023/05*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 516
     },
     {
       "url": "https://marylandmatters.org/2024/01/20/fergusons-economic-agenda/",
@@ -438,8 +444,10 @@
       "host": "marylandmatters.org",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "marylandmatters.org|2024/01"
+      "control_siblings": 594,
+      "control": "marylandmatters.org/2024/01*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 616
     },
     {
       "url": "https://marylandmatters.org/2024/02/12/fergusons-priorities-for-2024-session/",

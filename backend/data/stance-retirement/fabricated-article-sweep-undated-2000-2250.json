@@ -107,9 +107,11 @@
       "host": "mass.gov",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
+      "control_siblings": 967,
       "control": "mass.gov/info-details*",
-      "dated": false
+      "dated": false,
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1131?ys=2026RS",

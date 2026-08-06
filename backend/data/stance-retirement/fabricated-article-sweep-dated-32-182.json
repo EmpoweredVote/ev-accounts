@@ -27,8 +27,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 37,
-      "control": "lynnjournal.com|2023/03"
+      "control_siblings": 34,
+      "control": "lynnjournal.com/2023/03*",
+      "control_siblings_urls_original": 37,
+      "control_urls": 37
     },
     {
       "url": "https://forestgrovenewstimes.com/2025/11/11/forest-grove-declares-state-of-emergency-over-ice-raids/",
@@ -267,8 +269,10 @@
       "host": "lynnjournal.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 83,
-      "control": "lynnjournal.com|2025/02"
+      "control_siblings": 80,
+      "control": "lynnjournal.com/2025/02*",
+      "control_siblings_urls_original": 83,
+      "control_urls": 83
     },
     {
       "url": "https://www.sgvtribune.com/2022/11/16/alhambra-city-council-approves-housing-element-update/",
@@ -276,8 +280,10 @@
       "host": "sgvtribune.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "sgvtribune.com|2022/11"
+      "control_siblings": 998,
+      "control": "sgvtribune.com/2022/11*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.texastribune.org/2025/01/dan-patrick-priorities/",
@@ -719,8 +725,10 @@
       "host": "dailybreeze.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "dailybreeze.com|2017/03"
+      "control_siblings": 976,
+      "control": "dailybreeze.com/2017/03*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.dailybreeze.com/2022/09/15/carson-housing-element-rhna-compliance-council/",
@@ -728,8 +736,10 @@
       "host": "dailybreeze.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "dailybreeze.com|2022/09"
+      "control_siblings": 988,
+      "control": "dailybreeze.com/2022/09*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.dailybreeze.com/2023/03/22/carson-refinery-pollution-city-response-davis-holmes/",
@@ -737,8 +747,10 @@
       "host": "dailybreeze.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "dailybreeze.com|2023/03"
+      "control_siblings": 998,
+      "control": "dailybreeze.com/2023/03*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.dailybreeze.com/2023/05/12/carson-city-council-homelessness-encampment-response/",
@@ -746,8 +758,10 @@
       "host": "dailybreeze.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "dailybreeze.com|2023/05"
+      "control_siblings": 999,
+      "control": "dailybreeze.com/2023/05*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.dailybreeze.com/2023/06/07/carson-lasd-contract-public-safety-budget/",
@@ -755,8 +769,10 @@
       "host": "dailybreeze.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "dailybreeze.com|2023/06"
+      "control_siblings": 997,
+      "control": "dailybreeze.com/2023/06*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.jamaicaplaingazette.com/2024/02/09/weber-discusses-his-time-in-office-so-far/",

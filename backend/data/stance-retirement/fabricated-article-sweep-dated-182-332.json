@@ -216,8 +216,10 @@
       "host": "sgvtribune.com",
       "status": 404,
       "verdict": "FABRICATED",
-      "control_siblings": 200,
-      "control": "sgvtribune.com|2019/03"
+      "control_siblings": 967,
+      "control": "sgvtribune.com/2019/03*",
+      "control_siblings_urls_original": 200,
+      "control_urls": 1000
     },
     {
       "url": "https://www.sltrib.com/news/politics/2024/10/17/utah-house-district-35-rosalba/",
