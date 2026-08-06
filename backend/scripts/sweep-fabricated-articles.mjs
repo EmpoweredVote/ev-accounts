@@ -106,8 +106,18 @@ const CURL_TIMEOUT  = Number(arg('curl-timeout', '15'));      // seconds, curl -
 // ⚠ Tuned down from 5000 after measurement, and the measurement is the point: a blocked host does not
 // fail the same way twice. In one run leginfo refused connections instantly (~0.6s/URL) and in the next
 // it black-holed them, so every degraded probe burned the full timeout and this value alone set the
-// throughput. A host that has already failed ZERO_STREAK times at full price is not going to deliver a
-// slow success worth waiting seconds for, and anything it does answer is still recorded.
+// throughput.
+//
+// 🔴 THIS IS A THROUGHPUT KNOB, NOT A CLASSIFICATION THRESHOLD, AND I FIRST JUSTIFIED IT AS THOUGH IT
+// WERE ONE. The reasoning was "a host that already failed ZERO_STREAK times at full price will not
+// deliver a slow success worth waiting for". malegislature.gov is the counterexample, found in the very
+// next chunk: it answers 200 in ~3.0-3.3s to curl, so a 3s probe times out by a hair and the breaker
+// then skips the curl fallback that would have caught it — 60 URLs of a KEY re-research host recorded
+// NO_ANSWER while the host was up. It was throttling under sustained load, not blocked.
+// Whatever this value is, it will misclassify some host that is merely slow. That is tolerable ONLY
+// because degraded NO_ANSWER is a queue: reprobe-no-answer.mjs re-asks every one of them with curl,
+// a 25s timeout and per-host pacing. Never report a degraded NO_ANSWER as a verdict, and never raise
+// this number hoping to make the re-probe unnecessary.
 const PROBE_TIMEOUT = Number(arg('probe-timeout', '3000'));   // circuit-broken hosts
 const ZERO_STREAK   = Number(arg('zero-streak', '3'));        // consecutive zeros that break a host
 const UNBREAK_STREAK = Number(arg('unbreak-streak', '3'));    // consecutive answers that restore it
