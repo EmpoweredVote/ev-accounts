@@ -157,12 +157,45 @@ FABRICATED — this pass cannot manufacture a finding, only retract one that was
 Artifacts updated in place with `verdict_original` and `control_siblings_urls_original` preserved.
 Record: `2026-08-06-control-rederivation.json`.
 
-⚠ **11 findings now sit in the THIN band (<10 real pages) — suggestive, NOT proven**: 6 × `lynnma.gov/news/*`
-at 7, and 5 × `pressley.house.gov/issues/*` at 6. Both were reported at 8 and 200 before.
-Independent evidence still points at `lynnma.gov`: the site's real scheme is
-`/news/what_s_new/<underscore_slug>` while every cited URL is `/news/<hyphen-slug>` — they do not match
-the site's URL convention at all. **Control strength and scheme-mismatch are separate signals; the thin
-control means the archive cannot prove absence, not that the citation is sound.**
+### ✅ The 11 thin-control findings were HAND-CHECKED (2026-08-06). All 11 resolve; none are dropped.
+
+A thin control means *the archive cannot prove absence by itself* — so each was decided on evidence that
+does not depend on the sibling count. **Verdict: 10 confirmed, 1 re-point. Nothing withdrawn.**
+
+**`lynnma.gov/news/*` — 6 findings, CONFIRMED and effectively upgraded.** The thin control here is not an
+archive gap:
+- All 6 cited URLs **404 live**.
+- 🔑 **The archive's coverage is COMPLETE relative to the live site.** `lynnma.gov/news/what_s_new/` today
+  lists exactly the same 4 articles the archive holds. The section is genuinely tiny; Wayback did not
+  miss anything. So absence *is* meaningful despite the count of 7.
+- 🔑 **The cited URL convention does not exist on this site.** Real articles are
+  `/news/what_s_new/<underscore_slug>`; every citation is `/news/<hyphen-slug>`. **Zero** hyphenated
+  `/news/<slug>` links appear anywhere on the live index or section page.
+- 🔑 **Topic test over 3,000 archived `lynnma.gov` URLs** (the willametteweek rule — ask whether the
+  outlet ever covered the topic): `complete street` **0**, `homeless` **0**, `housing development` **0**.
+  `waterfront`/`harbor` appear only as 2008–2011 planning PDFs and a parks page — never as news. The
+  Nicholson hits are all campaign-finance PDFs, never a housing announcement.
+
+**`pressley.house.gov/issues/*` — 5 findings, 4 CONFIRMED + 1 RE-POINT.**
+⚠ The site **has restructured**: issue pages now live at the ROOT (`/criminal-injustice/`,
+`/energy-the-environment/`, `/housing/`), not under `/issues/`. This is exactly the case the 08-05 doc
+warned about, so each was tested against the **live taxonomy**, not the archive.
+- 🔴 **`/issues/criminal-justice` → RE-POINT, do not retire.** Pressley's real page is
+  **`criminal-injustice`** — her deliberate wording — and it is **live 200**. The citation is a
+  one-word corruption of a real page, not an invented one.
+- ✅ `climate`, `democracy`, `seniors`, `technology` — **404 under `/issues/` AND at root**, and none of
+  them exist anywhere in Pressley's live taxonomy (`congress, covid-19, criminal-injustice, education,
+  energy-the-environment, financial-services-economy, haiti, healthcare-public-health, housing,
+  immigration, labor, reproductive-justice, survivor-justice, transportation, trauma, veterans`).
+  Climate is covered as *energy-the-environment*; there is no seniors, technology or democracy page and
+  no evidence there ever was. Fabricated topics, not moved pages.
+- ⚠ **Do not trust this host's control either way:** `/healthcare` is live 200 but **absent from the
+  archived `/issues*` listing**, so the archive demonstrably missed a real page here. The live-taxonomy
+  test is what carried these verdicts.
+
+🔑 **Generalised: control strength and scheme/taxonomy mismatch are INDEPENDENT signals.** A thin control
+is a reason to stop trusting the archive, not a reason to doubt the finding — go and ask the live site
+what it actually publishes and how it names things.
 
 ⚠ **Remaining limit, deliberately not "fixed":** the page count still includes section indexes one level
 down (`/news/archived_news` counts). Telling an index from an article by URL alone is not reliable, and
@@ -280,13 +313,15 @@ thin-Wayback set, so INCONCLUSIVE there is expected and is not evidence either w
 
 ## Next-session checklist
 
-1. ✅ **DONE 2026-08-06** — control now counts real pages, all 59 controls behind the 121 findings
-   re-derived (including the original 87). 1 downgraded, 11 now in the thin band.
-   ▶ **What is left from it:** eyeball the control listing for those **11 thin findings** — a count of 6–7
-   that still includes section indexes is not something a threshold should decide alone.
+1. ✅ **DONE 2026-08-06** — control counts real pages; all 59 controls re-derived (including the original
+   87); 1 downgraded. ✅ **All 11 thin-control findings hand-checked: 10 confirmed, 1 re-point
+   (`pressley.house.gov/issues/criminal-justice` → the live `criminal-injustice`).** Nothing withdrawn.
 2. **Hand-check the .gov / congressional URLs individually** — now **25**, not 14 (+8 markey, +4 pressley,
    +3 moulton, +1 lynch, +3 oag.ca.gov, +2 medfordma.org, +1 slc.gov). These sites restructure routinely,
-   so a re-point may exist. `pressley.house.gov/issues/climate` may simply be today's `/issues/energy`.
+   so a re-point may exist. ✅ Pressley's 5 are done (4 confirmed, 1 re-point) — **20 left**.
+   🔑 The method that worked: these sites move issue pages, so test the cited topic against the **live
+   taxonomy**, not the archive. Pressley's `/issues/*` pages are now at the root; `climate` is not a
+   moved page, it is a topic she has never had (hers is `energy-the-environment`).
 3. **Treat `onyourballot.vote411.org/m/candidate-detail.do?id=72262938` as a likely FALSE POSITIVE** —
    VOTE411 rotates candidate IDs per cycle, so a 404 is expiry, not fabrication.
 4. **Re-probe the 126 degraded + the non-leginfo, non-archive NO_ANSWER tail** with
