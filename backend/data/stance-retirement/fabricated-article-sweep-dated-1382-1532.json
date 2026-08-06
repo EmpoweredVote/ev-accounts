@@ -1,0 +1,1084 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--from 1382 --to 1532 --pace 1200",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and siblings from the same month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "INCONCLUSIVE": "no sibling coverage for that host+month, so absence proves nothing",
+    "NO_ANSWER": "host did not answer at all — invented-host sweep territory, not this one"
+  },
+  "tally": {
+    "LIVE": 141,
+    "NO_ANSWER": 1,
+    "FABRICATED": 8
+  },
+  "findings": [
+    {
+      "url": "https://utahnewsdispatch.com/2026/04/30/effort-to-repeal-prop-4-utah-anti-gerrymandering-law-officially-fails/",
+      "rows_citing": "1",
+      "host": "utahnewsdispatch.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://valleytimes.news/2022/08/01/sherwoods-mays-wont-seek-eight-term-as-mayor/",
+      "rows_citing": "1",
+      "host": "valleytimes.news",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://valleytimes.news/2023/11/09/tigard-opens-first-low-income-housing-complex-for-seniors/",
+      "rows_citing": "1",
+      "host": "valleytimes.news",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://valleytimes.news/2025/09/26/tualatin-awards-50k-to-19-area-nonprofits/",
+      "rows_citing": "1",
+      "host": "valleytimes.news",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://virginiamercury.com/2023/03/01/jillian-balow-resigns-as-virginias-superintendent-of-public-instruction/",
+      "rows_citing": "1",
+      "host": "virginiamercury.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://virginiamercury.com/2026/03/24/after-bills-passed-nova-lawmakers-urge-scc-to-consider-burying-transmission-lines/",
+      "rows_citing": "1",
+      "host": "virginiamercury.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://voiceofsandiego.org/2021/10/wow-trash-talk-picked-up-huh/",
+      "rows_citing": "1",
+      "host": "voiceofsandiego.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://vtdigger.org/2022/09/14/in-june-gerald-malloy-said-hed-back-a-nationwide-abortion-ban-now-hed-have-to-look-at-it/",
+      "rows_citing": "1",
+      "host": "vtdigger.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://vtdigger.org/2024/10/21/at-vtdigger-debate-rep-becca-balints-challenger-mark-coester-questions-the-questions/",
+      "rows_citing": "1",
+      "host": "vtdigger.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://vtdigger.org/2025/11/12/lt-gov-john-rodgers-a-year-of-balance-progress-and-putting-vermonters-first/",
+      "rows_citing": "1",
+      "host": "vtdigger.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://vtdigger.org/2026/06/17/",
+      "rows_citing": "1",
+      "host": "vtdigger.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://washcodems.org/2020/04/26/lacey-beaty-candidate-interview/",
+      "rows_citing": "1",
+      "host": "washcodems.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://waysandmeans.house.gov/2023/11/08/virtue-signaling-is-expensive-esg-investings-threats-to-retirement-security/",
+      "rows_citing": "1",
+      "host": "waysandmeans.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://wdet.org/2024/07/12/running-as-a-republican-in-detroit-martell-bivings-has-work-to-do/",
+      "rows_citing": "1",
+      "host": "wdet.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://weareprosper.com/2021/04/15/meet-the-prosper-town-council-candidates-may-1-2021/",
+      "rows_citing": "1",
+      "host": "weareprosper.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20220526194117/https://ltgovernor.utah.gov/2021/11/16/utahs-2021-fiscal-year-ends-strong/",
+      "rows_citing": "1",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20230610205840/https://www.rubio.senate.gov/public/index.cfm/2012/2/support-grows-for-religious-freedom-restoration-act-of-2012",
+      "rows_citing": "1",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20230704015116/https://rubio.senate.gov/public/index.cfm/2021/2/rubio-reintroduces-educational-opportunities-act",
+      "rows_citing": "1",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://weststpaulreader.com/2026/07/02/2026-2nd-congressional-primary-top-issues/",
+      "rows_citing": "1",
+      "host": "weststpaulreader.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://whitesides.house.gov/2025/08/05/rep-george-whitesides-introduces-bill-protect-impartiality-and-independence/",
+      "rows_citing": "1",
+      "host": "whitesides.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://wtop.com/virginia-election/2024/09/abortion-remains-top-issue-in-virginias-most-competitive-u-s-house-race/",
+      "rows_citing": "1",
+      "host": "wtop.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://wvmetronews.com/2025/05/02/warner-says-voter-education-efforts-will-focus-on-new-photo-id-voting-law/",
+      "rows_citing": "1",
+      "host": "wvmetronews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://wvmetronews.com/2026/03/05/sos-warner-rebuffs-trumps-voter-registration-fishing-expedition/",
+      "rows_citing": "1",
+      "host": "wvmetronews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.25newsnow.com/2026/03/25/lack-transparency-cited-data-center-speculation-bloomington/",
+      "rows_citing": "1",
+      "host": "25newsnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.29news.com/2026/05/23/democratic-congressional-candidates-host-town-hall-virginias-5th-district/",
+      "rows_citing": "1",
+      "host": "29news.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.953mnc.com/2021/06/20/senator-todd-young-not-happy-with-for-the-people-act/",
+      "rows_citing": "1",
+      "host": "953mnc.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.953mnc.com/2026/05/20/libertarian-candidate-william-henry-to-run-for-congress/",
+      "rows_citing": "1",
+      "host": "953mnc.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.adn.com/politics/2024/08/11/attacks-on-relatively-unknown-gop-candidate-for-alaskas-us-house-seat-could-shape-primary-results/",
+      "rows_citing": "1",
+      "host": "adn.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.adn.com/politics/2026/06/02/us-senate-and-house-races-set-with-over-30-candidates-and-battle-of-the-dan-sullivans/",
+      "rows_citing": "1",
+      "host": "adn.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.advocate.com/election/2016/11/02/meet-candidates-arizonas-matt-heinz",
+      "rows_citing": "1",
+      "host": "advocate.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ajc.com/politics/2026/04/georgias-14th-district-runoff-reveals-significant-shift-to-democrats/",
+      "rows_citing": "1",
+      "host": "ajc.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alaskasnewssource.com/2026/06/17/guess-well-find-out-hill-wont-say-if-hell-caucus-with-democrats-challenge-against-rep-nick-begich/",
+      "rows_citing": "1",
+      "host": "alaskasnewssource.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alreporter.com/2021/06/moore-urges-biden-to-adopt-trump-era-policies-to-address-border/",
+      "rows_citing": "1",
+      "host": "alreporter.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alreporter.com/2023/06/02/opinion-give-ainsworth-his-due-on-grocery-tax-cut/",
+      "rows_citing": "1",
+      "host": "alreporter.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alreporter.com/2023/12/moore-only-alabama-congress-member-to-vote-against-ndaa/",
+      "rows_citing": "1",
+      "host": "alreporter.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2024/06/11/two-term-alexandria-school-board-member-jacinta-greene-vies-for-city-council/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2025/06/02/alexandria-councilman-canek-aguirre-elected-vice-president-of-virginia-transit-association/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2025/06/14/photos-thousands-attend-no-kings-rally-in-old-town-alexandria/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2025/07/10/just-in-alexandria-school-board-elects-chair-michelle-rief-to-third-term-christopher-harris-elected-vice-chair/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2025/08/seifeldein/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2025/09/02/alexandria-mayor-discusses-federal-funding-risks-infrastructure-projects-during-monthly-alxnow-chat/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2025/09/04/alexandria-mayor-clarifies-flock-camera-policies-amid-immigration-enforcement-concerns/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2025/10/30/spanberger-rallies-with-latino-legislators-in-del-ray-ahead-of-election-day-next-week/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2026/01/24/former-adc-chair-sandy-marks-announces-special-election-run-for-city-council/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2026/02/05/councilman-aguirre-pushes-back-against-skill-games-legalization-bill-citing-harms/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2026/02/20/acps-board-member-booz-visits-minneapolis-to-create-ice-response-resources-for-schools/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2026/03/11/city-council-sets-one-cent-tax-hike-as-ceiling-for-budget-talks/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2026/03/16/city-council-scrutinizes-funding-gap-for-acps-collective-bargaining-agreement/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2026/03/30/with-19000-voters-expected-at-school-sites-acps-approves-april-21-student-holiday/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2026/04/20/do-you-want-to-be-in-the-jail-business-sheriff-casey-asks-city-council-amid-budget-talks/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2026/04/21/developing-marks-claims-win-in-city-council-race-alexandrians-largely-support-redistricting/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2026/04/27/ridiculous-mayor-gaskins-calls-gop-bill-to-return-alexandria-and-arlington-to-d-c/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2026/05/06/acps-board-weighs-staffing-and-program-cuts-to-address-5-6m-budget-gap/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2026/05/13/sandy-marks-sworn-into-alexandria-city-council-creating-historic-first-ever-female-majority/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2026/05/18/faith-in-housing-bill-on-by-right-affordable-housing-will-require-new-ordinance-in-alexandria/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2026/05/21/school-board-asks-city-council-to-redirect-reserve-funds-to-program-for-high-needs-students/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.alxnow.com/2026/05/27/increased-building-heights-more-housing-areas-considered-in-duke-street-land-use-plan/",
+      "rows_citing": "1",
+      "host": "alxnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.americandemocracyminute.org/wethepeople/2026/05/06/maryland-passed-its-state-voting-rights-act-24-hours-before-the-scotus-callais-decision-will-state-vras-replace-the-federal-protections",
+      "rows_citing": "1",
+      "host": "americandemocracyminute.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.argusleader.com/story/news/politics/2025/09/19/jackley-calls-for-improved-legal-immigration-policy-while-launching-his-campaign-for-congress/86238889007/",
+      "rows_citing": "1",
+      "host": "argusleader.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.axios.com/2025/08/05/trump-texas-five-seats-entitled",
+      "rows_citing": "1",
+      "host": "axios.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.axios.com/local/indianapolis/2025/04/18/indiana-democrats-split-vote-transgender-athlete-sports-ban",
+      "rows_citing": "1",
+      "host": "axios.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.axios.com/local/indianapolis/2025/11/03/rep-andre-carson-7th-district-seat-at-risk-indiana-redistricting",
+      "rows_citing": "1",
+      "host": "axios.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.axios.com/local/salt-lake-city/2023/04/06/block-utah-air-quality-board-nomination-suzanne-harrison",
+      "rows_citing": "1",
+      "host": "axios.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.axios.com/local/salt-lake-city/2025/02/04/utah-birthright-citizenship-trump-order-republican-amicus-brief",
+      "rows_citing": "1",
+      "host": "axios.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.axios.com/local/salt-lake-city/2025/10/24/district-5-city-council-voter-guide-2025-ballpark",
+      "rows_citing": "1",
+      "host": "axios.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azcentral.com/story/news/politics/legislature/2025/02/05/arizona-republican-contract-bidders-disclose-political-donations/78217936007/",
+      "rows_citing": "1",
+      "host": "azcentral.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.baltimoresun.com/2020/09/08/baltimore-countys-olszewski-jones-announce-new-police-reform-bill/",
+      "rows_citing": "1",
+      "host": "baltimoresun.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.baltimoresun.com/2026/07/01/andy-harris-housing-reform-vote/",
+      "rows_citing": "1",
+      "host": "baltimoresun.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bangordailynews.com/2021/04/15/opinion/opinion-contributor/mental-health-crises-can-happen-at-any-time-and-need-24-7-responses/",
+      "rows_citing": "1",
+      "host": "bangordailynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bangordailynews.com/2024/02/27/opinion/opinion-contributor/maine-family-planning-centers-need-funding/",
+      "rows_citing": "1",
+      "host": "bangordailynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bangordailynews.com/2025/03/27/politics/state-politics/bangor-democrat-proposes-ban-maine-police-contracting-with-ice-agents-joam40zk0w/",
+      "rows_citing": "1",
+      "host": "bangordailynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bangordailynews.com/2025/08/23/politics/elections/unions-found-susan-collins-challenger-oysterman-graham-platner-joam40zk0w/",
+      "rows_citing": "1",
+      "host": "bangordailynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bendbulletin.com/2024/08/08/pahlisch-homes-says-bend-tree-code-needs-changes-launches-appeal/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bendbulletin.com/2025/08/08/bend-council-approves-5-5-million-in-affordable-housing-funding/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bendparksandrec.org/wp-content/uploads/2026/07/7.21.2026-Board-Summary.pdf",
+      "rows_citing": "1",
+      "host": "bendparksandrec.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bennet.senate.gov/2026/05/04/bennet-smith-cortez-masto-introduce-legislation-protecting-children-harmed-by-ice-actions-against-their-parents/",
+      "rows_citing": "1",
+      "host": "bennet.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bennet.senate.gov/2026/05/05/bennet-leads-13-colleagues-to-demand-trump-administration-resume-russian-oil-sanctions/",
+      "rows_citing": "1",
+      "host": "bennet.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bennet.senate.gov/2026/05/20/bennet-introduces-legislation-targeting-critical-reforms-for-immigration-and-customs-enforcement/",
+      "rows_citing": "1",
+      "host": "bennet.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.boston.com/news/local-news/2024/08/16/city-councilors-call-for-downtown-events-to-be-canceled-draws-pushback-from-colleagues-mayor-wu/",
+      "rows_citing": "1",
+      "host": "boston.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bostonglobe.com/2020/07/13/metro/calling-accountability-campbell-proposes-police-oversight-board/",
+      "rows_citing": "1",
+      "host": "bostonglobe.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bostonglobe.com/2021/01/21/metro/mariano-elected-house-speaker/",
+      "rows_citing": "1",
+      "host": "bostonglobe.com",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "bostonglobe.com|2021/01"
+    },
+    {
+      "url": "https://www.bostonglobe.com/2021/02/24/metro/50-million-cut-bpds-budget-campbell-pitch-shows-police-reform-will-be-key-issue-mayoral-race/",
+      "rows_citing": "1",
+      "host": "bostonglobe.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bostonglobe.com/2022/04/14/metro/mayors-push-mbta-service-restoration/",
+      "rows_citing": "1",
+      "host": "bostonglobe.com",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "bostonglobe.com|2022/04"
+    },
+    {
+      "url": "https://www.bostonglobe.com/2023/09/26/metro/massachusetts-tax-relief-package-governor-healey/",
+      "rows_citing": "1",
+      "host": "bostonglobe.com",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "bostonglobe.com|2023/09"
+    },
+    {
+      "url": "https://www.bostonglobe.com/metro/2019/12/10/kim-janey-claims-votes-next-boston-city-council-president/1dJ1PlOOCCtJiBYeup1g7N/story.html",
+      "rows_citing": "1",
+      "host": "bostonglobe.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bostonglobe.com/news/nation/2015/06/20/timeline-marco-rubio-immigration/6JZySKjwA175pBi3oyoMAN/story.html",
+      "rows_citing": "1",
+      "host": "bostonglobe.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bostonherald.com/2016/08/04/council-votes-against-more-charter-schools/",
+      "rows_citing": "1",
+      "host": "bostonherald.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bostonherald.com/2023/08/19/ag-andrea-campbell-appoints-new-head-of-elder-justice-unit",
+      "rows_citing": "1",
+      "host": "bostonherald.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bostonherald.com/2024/10/01/gop-senate-candidate-john-deaton-willing-to-change-parties-over-federal-abortion-ban/",
+      "rows_citing": "1",
+      "host": "bostonherald.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.breitbart.com/politics/2025/04/08/exclusive-republican-sen-jim-banks-rep-eli-crane-introduce-bill-to-restrict-chain-migration/",
+      "rows_citing": "1",
+      "host": "breitbart.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.breitbart.com/politics/2025/08/13/eli-crane-blasts-obama-over-healthcare-rant/",
+      "rows_citing": "1",
+      "host": "breitbart.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.breitbart.com/politics/2026/05/19/rep-eli-crane-says-citizens-can-get-h-1b-curbs-from-congress/",
+      "rows_citing": "1",
+      "host": "breitbart.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2019/06/25/azeem-mit-student-of-sustainability-running-for-council-with-housing-transportation-focus/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2021/01/12/bench-bars-at-cambridge-t-stops-draw-criticism-as-hostile-architecture-aimed-at-the-homeless/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2021/06/27/attend-meetings-on-a-condo-conversion-law-after-school-programs-harvard-dining-more/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2021/07/30/rally-for-cambridge-trees-takes-place-monday-before-an-order-to-strengthen-the-citys-canopy/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2021/08/04/cambridge-now-has-restitution-and-reparations-on-the-table-awaiting-input-from-the-community/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2022/11/29/in-handling-homelessness-and-substance-abuse-foundation-exists-for-easing-the-crisis-staff-says/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2023/06/08/sobrinho-wheeler-is-running-to-rejoin-council-after-serving-as-a-cambridge-leader-2020-2021/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2023/09/29/group-endorsements-for-cambridge-city-council-have-few-points-of-overlap-as-housing-stays-key/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2023/10/23/councillor-azeem-describes-his-positive-vision-helping-cambridge-address-its-biggest-issues/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2023/10/catherine-zusy-for-city-council-2023/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2023/11/01/for-concerns-about-after-school-and-child-care-parents-have-a-champion-in-sobrinho-wheeler/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2024/01/30/cease-fire-resolution-is-approved-in-cambridge-protesters-police-are-biggest-city-hall-presences/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2024/09/zusy-is-elected-to-cambridges-city-council-filling-surprise-vacancy-for-a-monday-start/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2024/11/27/reappointment-to-central-square-adviser-group-draws-anger-for-online-remarks-and-for-process/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/01/20/cambridge-moves-forward-with-four-plus-two-multifamily-plan-final-vote-in-less-than-a-month/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/01/31/rejection-of-three-story-zoning-plan-paves-way-for-passage-of-four-story-residential-in-february/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/02/03/know-your-rights-trainings-draw-hundreds-worried-over-trump-attacks-on-immigrants/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/03/answers-expected-on-police-request-for-new-guns-are-delayed-again-until-mondays-council-meeting/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/04/30/unarmed-care-team-gets-only-45-of-calls-its-due-and-often-find-police-social-worker-has-come-too/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/04/council-concedes-to-closing-a-homeless-shelter-while-bulking-up-services/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/07/29/welcoming-community-law-is-changed-slightly-for-council-vote-reflecting-few-options-on-arrests/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/10/08/higher-cambridge-construction-fees-get-a-study-and-council-deals-with-park-safety-solar-zoning/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/10/15/ayah-al-zubi-vies-again-for-a-seat-on-city-council-after-ranking-high-in-no-1-votes-during-2023-run/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/10/21/cambridge-wants-surveillance-tech-paused-until-company-addresses-fears/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/10/30/cambridge-school-committee-election-guide-2025",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/10/30/cambridge-school-committee-election-guide-2025/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/11/02/after-taking-on-trump-jaikumar-was-called-to-run-by-a-lack-of-transparency-from-school-committee/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/11/27/attend-cambridge-meetings-from-nov-27-dec-4-on-development-incentives-and-brattle-bike-lanes/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2026/01/28/city-prepares-for-ice/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2026/02/06/somerville-cambridge-police-ice/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2026/03/06/city-council-snow-corps/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2026/03/10/city-council-approves-settlement-agreement-with-former-officer/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2026/06/05/the-lorax-comes-to-cambridge-city-council/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/news/2026/04/cambridgecitymanageryianhuangsubmitsproposedfy27budgettocitycouncil",
+      "rows_citing": "1",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.capradio.org/articles/2020/01/06/california-could-get-a-green-new-deal-of-its-own-as-lawmakers-aim-to-address-climate-change-and-inequality/",
+      "rows_citing": "1",
+      "host": "capradio.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.capradio.org/articles/2023/02/13/california-bill-would-require-redistricting-commission-for-sacramento-county-supervisor-districts/",
+      "rows_citing": "1",
+      "host": "capradio.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.capradio.org/articles/2023/04/24/current-lieutenant-governor-eleni-kounalakis-announces-run-for-california-governor/",
+      "rows_citing": "1",
+      "host": "capradio.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.capradio.org/articles/2025/03/06/lgbtqplus-advocates-push-back-on-newsoms-remarks-about-transgender-athletes/",
+      "rows_citing": "1",
+      "host": "capradio.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.capradio.org/news/insight/2021/01/05/lt-gov-eleni-kounalakis-reflects-on-2020-looks-ahead-to-new-year-covid-19-updates-from-sacramento-county-why-flu-numbers-are-historically-low/",
+      "rows_citing": "1",
+      "host": "capradio.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.castlecountryradio.com/2026/02/26/building-bridges-kent-udell-announces-bid-for-utahs-third-congressional-district/",
+      "rows_citing": "1",
+      "host": "castlecountryradio.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.chalkbeat.org/indiana/2024/01/18/indiana-lawmakers-school-funding-students-first-proposal-bill/",
+      "rows_citing": "1",
+      "host": "chalkbeat.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.chalkbeat.org/indiana/2025/10/27/beckwith-urges-defeat-of-school-referendums/",
+      "rows_citing": "1",
+      "host": "chalkbeat.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.childcarelaw.org/2023/07/child-care-reforms-in-the-state-budget-will-bring-transformative-change-in-2023-and-2024/",
+      "rows_citing": "1",
+      "host": "childcarelaw.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cnbc.com/2017/11/15/senate-gop-raises-child-tax-credit-to-win-over-marco-rubio-mike-lee.html",
+      "rows_citing": "1",
+      "host": "cnbc.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cnbc.com/2019/01/31/where-rep-maxine-waters-stands-on-raising-taxes-on-the-rich.html",
+      "rows_citing": "1",
+      "host": "cnbc.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cnbc.com/2025/11/08/trump-republicans-health-insurance.html",
+      "rows_citing": "1",
+      "host": "cnbc.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cnn.com/2023/04/20/politics/house-transgender-sports-bill/index.html",
+      "rows_citing": "1",
+      "host": "cnn.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cnn.com/2025/01/14/politics/house-vote-ban-transgender-athletes-womens-sports/index.html",
+      "rows_citing": "1",
+      "host": "cnn.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.concordmonitor.com/2024/10/21/cd2-foreign-policy-forum-57462851/",
+      "rows_citing": "1",
+      "host": "concordmonitor.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cowboystatedaily.com/2020/02/01/medicaid-expansion-in-wyoming-supporters-opponents-debate/",
+      "rows_citing": "1",
+      "host": "cowboystatedaily.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ctmirror.org/2021/01/25/healthcare-the-key-to-a-new-age-of-economic-development/",
+      "rows_citing": "1",
+      "host": "ctmirror.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.culvercityobserver.com/story/2024/01/25/news/city-council-awards-construction-contract-for-move-culver-city-modifications-sidewalk-business-fees-municipal-code-revisions/13236.html",
+      "rows_citing": "1",
+      "host": "culvercityobserver.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.culvercityobserver.com/story/2025/04/17/news/lot-program-to-provide-free-legal-support-to-rental-tenants-established/15019.html",
+      "rows_citing": "1",
+      "host": "culvercityobserver.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dailybreeze.com/2019/11/15/carson-development-projects-city-council/",
+      "rows_citing": "1",
+      "host": "dailybreeze.com",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "dailybreeze.com|2019/11"
+    },
+    {
+      "url": "https://www.dailybreeze.com/2022/06/15/carson-city-budget-adopted-council/",
+      "rows_citing": "1",
+      "host": "dailybreeze.com",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "dailybreeze.com|2022/06"
+    },
+    {
+      "url": "https://www.dailybreeze.com/2022/08/20/carson-utility-tax-measure-budget-davis-holmes/",
+      "rows_citing": "1",
+      "host": "dailybreeze.com",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "dailybreeze.com|2022/08"
+    },
+    {
+      "url": "https://www.dailybreeze.com/2022/11/03/carson-amazon-local-hiring-policy-davis-holmes/",
+      "rows_citing": "1",
+      "host": "dailybreeze.com",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "dailybreeze.com|2022/11"
+    },
+    {
+      "url": "https://www.dailybreeze.com/2023/02/14/carson-transit-transportation-silver-line-sbccog/",
+      "rows_citing": "1",
+      "host": "dailybreeze.com",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "dailybreeze.com|2023/02"
+    }
+  ]
+}

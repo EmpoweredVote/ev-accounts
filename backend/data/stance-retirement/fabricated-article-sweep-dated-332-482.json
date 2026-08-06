@@ -1,0 +1,1074 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--from 332 --to 482 --pace 1200",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and siblings from the same month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "INCONCLUSIVE": "no sibling coverage for that host+month, so absence proves nothing",
+    "NO_ANSWER": "host did not answer at all — invented-host sweep territory, not this one"
+  },
+  "tally": {
+    "LIVE": 146,
+    "FABRICATED": 3,
+    "NO_ANSWER": 1
+  },
+  "findings": [
+    {
+      "url": "https://www.1011now.com/2024/04/11/third-congressional-district-candidate-profile-david-else/",
+      "rows_citing": "3",
+      "host": "1011now.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.baltimoresun.com/2024/04/11/scott-collier/",
+      "rows_citing": "3",
+      "host": "baltimoresun.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.baltimoresun.com/2026/05/20/maryland-3rd-congressional-district-candidates-2026-election/",
+      "rows_citing": "3",
+      "host": "baltimoresun.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bangordailynews.com/2026/06/09/politics/bobby-charles-leads-republican-gubernatorial-primary-going-into-ranked-choice/",
+      "rows_citing": "3",
+      "host": "bangordailynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bangordailynews.com/2026/06/20/politics/maine-governor-race-analysis/",
+      "rows_citing": "3",
+      "host": "bangordailynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bendparksandrec.org/wp-content/uploads/2025/08/Y-9.23.25-board-summary.docx",
+      "rows_citing": "3",
+      "host": "bendparksandrec.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bleedingheartland.com/2026/07/05/no-spoiler-here-says-libertarian-senate-candidate-thomas-laehn/",
+      "rows_citing": "3",
+      "host": "bleedingheartland.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bostonglobe.com/2023/03/24/metro/wholly-unnecessary-mass-house-speaker-says-he-will-not-comply-with-state-auditors-legislative-probe/",
+      "rows_citing": "3",
+      "host": "bostonglobe.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/10/02/exploration-of-social-housing-given-a-step-forward-by-cambridge-councillors-amid-affordability-crisis/",
+      "rows_citing": "3",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2026/01/03/can-socialists-on-city-council-make-cambridge-more-affordable/",
+      "rows_citing": "3",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2026/04/29/cambridge-billion-dollar-budget/",
+      "rows_citing": "3",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2026/05/15/cambridge-needs-social-housing/",
+      "rows_citing": "3",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2026/05/19/council-drops-shotspotter-in-close-vote/",
+      "rows_citing": "3",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.civilbeat.org/2024/07/candidate-qa-u-s-senate-adriel-lam/",
+      "rows_citing": "3",
+      "host": "civilbeat.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.civilbeat.org/2026/06/candidate-qa-us-house-district-1-nicholas-kiswanto/",
+      "rows_citing": "3",
+      "host": "civilbeat.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.concordmonitor.com/2026/06/25/scott-brown-john-sununu-debate/",
+      "rows_citing": "3",
+      "host": "concordmonitor.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dailybreeze.com/2020/06/18/amazon-warehouse-carson-city-council-approval/",
+      "rows_citing": "3",
+      "host": "dailybreeze.com",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "dailybreeze.com|2020/06"
+    },
+    {
+      "url": "https://www.deseret.com/2019/1/28/20664583/utah-lawmakers-intend-to-fight-voter-approved-medicaid-expansion",
+      "rows_citing": "3",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2024/10/24/utah-burgess-owens-debate-2024/",
+      "rows_citing": "3",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2025/02/12/salt-lake-county-council-approves-new-sales-tax-to-fund-jail-transportation-improvements/",
+      "rows_citing": "3",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2025/02/12/utah-house-lawmakers-approve-law-to-deport-immigrants-convicted-of-crimes/",
+      "rows_citing": "3",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2026/03/25/salt-lake-city-adopts-emergency-water-ordinance-that-also-complicates-ice-facility/",
+      "rows_citing": "3",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dotnews.com/2020/07/02/councillors-propose-crisis-response-system-non-violent-911-calls/",
+      "rows_citing": "3",
+      "host": "dotnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dotnews.com/2023/10/25/three-councillors-three-decisions-how-single-vote-can-alter-city-life/",
+      "rows_citing": "3",
+      "host": "dotnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dotnews.com/2025/08/20/survey-offers-new-insights-council-large-field/",
+      "rows_citing": "3",
+      "host": "dotnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fcnp.com/2026/03/06/f-c-s-affordable-virginia-village-housing-plans-tee-off/",
+      "rows_citing": "3",
+      "host": "fcnp.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox5vegas.com/2026/04/01/las-vegas-city-council-approves-tiny-homes-development-proposal/",
+      "rows_citing": "3",
+      "host": "fox5vegas.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2024/02/district-5-city-council-candidates-discuss-public-safety-homelessness-at-forum",
+      "rows_citing": "3",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2024/03/courtney-daily-selected-as-new-bloomington-city-council-district-5-representative",
+      "rows_citing": "3",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2024/09/bloomington-indiana-homelessness-city-council-meeting-sept11-2024",
+      "rows_citing": "3",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2025/04/housing-transportation-udo-2026-budget-city-council",
+      "rows_citing": "3",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2025/10/bloomington-city-council-adopts-2026-budget",
+      "rows_citing": "3",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2026/02/bloomington-flock-contract-what-to-know",
+      "rows_citing": "3",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.iustv.com/article/2025/02/city-council-approves-merging-commissions-into-new-transportation-commission",
+      "rows_citing": "3",
+      "host": "iustv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.live5news.com/2026/04/10/we-palmetto-meet-candidate-bill-reeside-sc-01/",
+      "rows_citing": "3",
+      "host": "live5news.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.masslive.com/news/2023/04/heres-how-mass-ag-andrea-campbell-is-changing-the-office-she-now-runs.html",
+      "rows_citing": "3",
+      "host": "masslive.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.masslive.com/politics/2016/10/question_2_charter_schools_massachusetts.html",
+      "rows_citing": "3",
+      "host": "masslive.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.masslive.com/politics/2023/04/massachusetts-republicans-file-bill-to-ban-transgender-athletes-from-girls-sports.html",
+      "rows_citing": "3",
+      "host": "masslive.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opb.org/article/2024/09/26/bend-city-council-candidates-housing/",
+      "rows_citing": "3",
+      "host": "opb.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.oregonlive.com/portland/2024/10/portland-mayoral-candidates-weigh-in-on-homelessness-housing-and-public-safety.html",
+      "rows_citing": "3",
+      "host": "oregonlive.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.planningreport.com/2019/09/03/katy-young-yaroslavsky-unpacks-measure-w-implementation-la-s-safe-clean-water-program",
+      "rows_citing": "3",
+      "host": "planningreport.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.potomaclocal.com/2025/09/16/doug-ollivant-just-jumped-into-the-va-7-race-against-tara-durant/",
+      "rows_citing": "3",
+      "host": "potomaclocal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sacramentocityexpress.com/2025/01/29/city-of-sacramento-reaffirms-commitment-to-sanctuary-city-policies/",
+      "rows_citing": "3",
+      "host": "sacramentocityexpress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sgvtribune.com/2020/06/15/alhambra-council-debates-police-reform/",
+      "rows_citing": "3",
+      "host": "sgvtribune.com",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "sgvtribune.com|2020/06"
+    },
+    {
+      "url": "https://www.sgvtribune.com/2023/09/12/sgv-cities-ramp-up-homelessness-response/",
+      "rows_citing": "3",
+      "host": "sgvtribune.com",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "sgvtribune.com|2023/09"
+    },
+    {
+      "url": "https://www.slc.gov/blog/2024/03/20/approval-of-17-7-million-for-14-affordable-housing-projects-sets-salt-lake-city-record/",
+      "rows_citing": "3",
+      "host": "slc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.slc.gov/blog/2024/10/01/salt-lake-city-council-approves-sports-entertainment-culture-and-convention-district/",
+      "rows_citing": "3",
+      "host": "slc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/2024/12/10/power-district-slc-council-reaches/",
+      "rows_citing": "3",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/2025/02/18/trump-immigration-orders-utah/",
+      "rows_citing": "3",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/06/somerville-climate-forward-update/",
+      "rows_citing": "3",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/04/texas-vouchers/",
+      "rows_citing": "3",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/2026/05/15/texas-supreme-court-gene-wu-greg-abbott-redistricting-map-quorum-break/",
+      "rows_citing": "3",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.thepomonan.com/theopera/2025/10/28/pomona-city-council-quietly-reverses-course-on-rent-cap-ordinance",
+      "rows_citing": "3",
+      "host": "thepomonan.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonblade.com/2025/09/25/va-statewide-candidates-differ-widely-on-lgbtq-rights/",
+      "rows_citing": "3",
+      "host": "washingtonblade.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wbur.org/news/2022/09/06/2022-massachusetts-democratic-lieutenant-governor-primary-result",
+      "rows_citing": "3",
+      "host": "wbur.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wgbh.org/news/politics/2022/11/01/city-council-president-flynn-seeks-to-put-boston-redistricting-on-hold",
+      "rows_citing": "3",
+      "host": "wgbh.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "http://plantingseedsblog.cdfa.ca.gov/wordpress/index.php/2021/01/27/california-welcomes-biden-administration-actions-on-climate-change/",
+      "rows_citing": "2",
+      "host": "plantingseedsblog.cdfa.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://48hills.org/2024/06/a-truly-bizarre-debate-on-rent-control-at-the-board-of-supes/",
+      "rows_citing": "2",
+      "host": "48hills.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://48hills.org/2025/01/how-fawning-media-helped-berkeleys-new-mayor-win-the-election/",
+      "rows_citing": "2",
+      "host": "48hills.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://48hills.org/2025/04/dorsey-measure-that-undermines-harm-reduction-moves-forward/",
+      "rows_citing": "2",
+      "host": "48hills.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://48hills.org/2025/10/activists-pressure-melgar-on-key-element-of-mayors-rich-family-zoning-plan/",
+      "rows_citing": "2",
+      "host": "48hills.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ad01.asmrc.org/2025/01/",
+      "rows_citing": "2",
+      "host": "ad01.asmrc.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ad36.asmrc.org/2026/05/28/el-asambleista-jeff-gonzalez-apoya-medidas-de-transparencia-y-rendicion-de-cuentas-para-los-centros-de-datos/",
+      "rows_citing": "2",
+      "host": "ad36.asmrc.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://alaskabeacon.com/2024/09/26/all-alaska-schools-need-instruction-on-sexual-orientation-and-gender-identity/",
+      "rows_citing": "2",
+      "host": "alaskabeacon.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azluminaria.org/2023/10/12/voter-guide-tucsons-ward-1-city-council-race-between-lane-santa-cruz-and-victoria-lem/",
+      "rows_citing": "2",
+      "host": "azluminaria.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azluminaria.org/2023/10/13/voter-guide-tucsons-ward-2-city-council-race-among-paul-cunningham-ernie-shack-and-pendleton-spicer/",
+      "rows_citing": "2",
+      "host": "azluminaria.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azluminaria.org/2025/05/07/pima-county-proposes-raising-property-taxes-to-build-more-affordable-housing/",
+      "rows_citing": "2",
+      "host": "azluminaria.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azluminaria.org/2025/06/04/a-boost-for-affordable-housing-a-new-library-and-an-ongoing-investigation-into-sheriffs-department-3-things-to-know-from-pima-county-board-of-supervisors-meeting/",
+      "rows_citing": "2",
+      "host": "azluminaria.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azluminaria.org/2025/10/09/tucson-city-council-election-2025-where-candidates-stand-on-housing-transit-taxes/",
+      "rows_citing": "2",
+      "host": "azluminaria.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azluminaria.org/2026/02/19/facing-27-million-deficit-tucson-leaders-push-back-on-cuts-to-housing-and-public-drug-ordinance/",
+      "rows_citing": "2",
+      "host": "azluminaria.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2024/05/01/the-az-senate-has-repealed-the-1864-abortion-ban-after-2-republicans-join-dems/",
+      "rows_citing": "2",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2026/02/09/arizona-house-approves-resolution-ending-election-day-ballot-drop-offs/",
+      "rows_citing": "2",
+      "host": "azmirror.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://barragan.house.gov/2017/04/05/barragan-larson-introduce-social-security-proposal-to-cut-taxes-for-seniors-increase-benefits-and-strengthen-program/",
+      "rows_citing": "2",
+      "host": "barragan.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://barragan.house.gov/2020/07/24/omar-sanders-merkley-markey-barragan-introduce-bill-to-end-corporate-handouts-to-the-fossil-fuel-industry/",
+      "rows_citing": "2",
+      "host": "barragan.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonvalleytimes.com/2023/05/03/new-affordable-housing-project-approved-at-beaverton-community-center/",
+      "rows_citing": "2",
+      "host": "beavertonvalleytimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonvalleytimes.com/2026/02/05/beaverton-to-wait-a-year-before-sending-public-safety-levy-ask-to-voters/",
+      "rows_citing": "2",
+      "host": "beavertonvalleytimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonvalleytimes.com/2026/04/08/washington-county-declines-portland-mayors-6m-request-for-homeless-funding/",
+      "rows_citing": "2",
+      "host": "beavertonvalleytimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2020/09/26/phil-vs-phil-chang-henderson-vie-deschutes-county-commission-seat/",
+      "rows_citing": "2",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2022/11/17/the-bend-city-council-has-approved-rules-for-unhoused-camping-in-public/",
+      "rows_citing": "2",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2024/01/25/editorial-kropf-kotek-and-knopp-on-changes-to-measure-110/",
+      "rows_citing": "2",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2026/04/21/guest-column-failing-wells-polluted-aquifers-debones-legacy/",
+      "rows_citing": "2",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2026/06/18/bend-approves-climate-pollution-fee-on-gas-appliances-in-new-homes/",
+      "rows_citing": "2",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beverlypress.com/2021/09/weho-explores-opening-a-homeless-services-center/",
+      "rows_citing": "2",
+      "host": "beverlypress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beverlypress.com/2026/04/candidates-share-views-in-l-a-cd-13-council-race/",
+      "rows_citing": "2",
+      "host": "beverlypress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bigislandnow.com/2026/06/11/3-big-island-men-in-race-to-unseat-hawaiʻi-gov-green-who-else-from-the-island-is-running-for-state-u-s-seats/",
+      "rows_citing": "2",
+      "host": "bigislandnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bikeportland.org/2012/11/16/hillsboro-mayor-pushes-massive-new-westside-freeway-project-80215",
+      "rows_citing": "2",
+      "host": "bikeportland.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2024/11/08/6093",
+      "rows_citing": "2",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2024/11/27/6108",
+      "rows_citing": "2",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2025/01/28/6156",
+      "rows_citing": "2",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2025/07/30/6313",
+      "rows_citing": "2",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2025/09/03/6346",
+      "rows_citing": "2",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bluevirginia.us/2025/07/democrat-salaam-bhatti-launches-campaign-for-congress-in-virginias-1st-district/",
+      "rows_citing": "2",
+      "host": "bluevirginia.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bluevirginia.us/2025/09/video-henrico-countys-top-prosecutor-shannon-taylor-announces-run-for-democratic-nomination-to-face-the-abysmal-rep-rob-wittman-r-va01-next-year/",
+      "rows_citing": "2",
+      "host": "bluevirginia.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2020/05/14/bloomington-council-committee-digs-into-road-funding-to-weigh-repaving-of-college-mall-road-against-other-transportation-goals/",
+      "rows_citing": "2",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2022/03/03/catalent-tax-break-gets-just-a-6-vote-majority-from-9-member-bloomington-city-council-but-its-enough/",
+      "rows_citing": "2",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2023/10/12/unchanged-2024-budget-okd-by-bloomington-council-after-debate-on-police-pay-econ-development-money/",
+      "rows_citing": "2",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2023/01/27/budd-sponsors-bill-to-end-chinas-permanent-normal-trade-status/",
+      "rows_citing": "2",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2023/03/01/senator-budd-receives-true-blue-award-from-family-research-council-action/",
+      "rows_citing": "2",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2024/05/01/budd-helps-introduce-bipartisan-bill-to-set-limits-on-social-media-for-children/",
+      "rows_citing": "2",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://burbankleader.outlooknewspapers.com/2022/11/23/city-doubles-down-on-services-for-homeless-people/",
+      "rows_citing": "2",
+      "host": "burbankleader.outlooknewspapers.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cabaynews.com/2026/01/15/grammy-nominated-artist-tish-hyman-enters-2026-los-angeles-mayoral-race-as-outsider-challenger/",
+      "rows_citing": "2",
+      "host": "cabaynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/housing/2024/10/norwalk-builders-remedy/",
+      "rows_citing": "2",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/housing/homelessness/2026/01/homelessness-funding-2026/",
+      "rows_citing": "2",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/justice/2025/09/newsom-new-immigration-laws/",
+      "rows_citing": "2",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/politics/2025/10/richard-pan-3rd-congressional-district/",
+      "rows_citing": "2",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/politics/2026/03/california-governor-single-payer-health-care/",
+      "rows_citing": "2",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/politics/2026/04/newsom-moves-for-california-ai-startups/",
+      "rows_citing": "2",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgeday.com/2025/10/18/coming-to-cambridge-city-council-utility-bills-license-plate-reading-tech-and-funded-elections/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgeday.com/2026/02/12/city-codifies-ice-response/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgeday.com/2026/03/06/city-council-snow-corps/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capcity.news/community/elections/2026/07/06/election-qa-keith-goodenough-for-us-house-of-representatives/",
+      "rows_citing": "2",
+      "host": "capcity.news",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cardinalnews.org/2022/03/31/bold-tax-relief-is-needed/",
+      "rows_citing": "2",
+      "host": "cardinalnews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cardinalnews.org/2026/04/06/bipartisan-civility-was-the-rule-at-cardinal-way-luncheon-but-redistricting-struck-a-nerve/",
+      "rows_citing": "2",
+      "host": "cardinalnews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://chicago.suntimes.com/2018/2/14/18355989/9th-congressional-district-gop-candidate-john-elleson",
+      "rows_citing": "2",
+      "host": "chicago.suntimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://colinallred.com/wp-content/uploads/2026/04/Allred_Immigration_Plan.pdf",
+      "rows_citing": "2",
+      "host": "colinallred.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://coloradosun.com/2026/06/04/manny-rutinel-changed-positions-healthcare-student-debt-fracking/",
+      "rows_citing": "2",
+      "host": "coloradosun.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://commonwealthbeacon.org/2023/10/boston-city-council-approves-controversy-plagued-police-grants/",
+      "rows_citing": "2",
+      "host": "commonwealthbeacon.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/frisco/election/2023/05/06/rummel-wins-re-election-for-frisco-city-council-seat/",
+      "rows_citing": "2",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/frisco/government/2024/07/05/frisco-council-oks-95m-in-construction-incentives-for-fields-west-development/",
+      "rows_citing": "2",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/mckinney/government/2025/08/22/mckinney-council-approves-zoning-for-affordable-townhome-development/",
+      "rows_citing": "2",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/mckinney/government/2025/10/28/mckinney-council-approves-zoning-for-11-acre-apartment-development/",
+      "rows_citing": "2",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/plano-north/election/2025/04/03/qa-meet-the-candidates-for-plano-city-council-place-5/",
+      "rows_citing": "2",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/election/2026/03/16/qa-meet-the-candidates-running-for-celina-city-council-place-4/",
+      "rows_citing": "2",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/government/2024/05/07/meet-cameron-reeves-prospers-newest-town-council-member/",
+      "rows_citing": "2",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/government/2024/12/30/best-of-2024-11-stories-from-celina-city-council/",
+      "rows_citing": "2",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/richardson/election/2023/04/10/meet-the-2-candidates-running-for-richardson-city-council-place-3/",
+      "rows_citing": "2",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/richardson/government/2024/01/24/richardson-council-approves-390-unit-apartment-complex-construction/",
+      "rows_citing": "2",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/richardson/government/2026/01/14/richardson-to-focus-on-increasing-affordable-housing-supply-with-new-initiatives/",
+      "rows_citing": "2",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/guides/dallas-fort-worth/plano/news/city-county/2019/03/13/candidate-qa-maria-tu-runs-for-place-1-seat-on-plano-city-council/",
+      "rows_citing": "2",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://county17.com/2026/06/15/election-qa-david-giralt-for-us-house-of-representatives/",
+      "rows_citing": "2",
+      "host": "county17.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://covertactionmagazine.com/2026/01/29/new-political-party-in-kentucky-adopts-antiwar-anti-corruption-platform/",
+      "rows_citing": "2",
+      "host": "covertactionmagazine.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cowboystatedaily.com/2026/01/13/former-wyoming-schools-superintendent-running-for-u-s-house/",
+      "rows_citing": "2",
+      "host": "cowboystatedaily.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cowboystatedaily.com/2026/07/07/hageman-opponent-sam-mead-defends-27-donation-to-bernie-sanders/",
+      "rows_citing": "2",
+      "host": "cowboystatedaily.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://culvercitycrossroads.com/2025/04/18/city-council-steps-back-on-tenant-right-to-council-motion-fails-on-a-2-2-1-vote/",
+      "rows_citing": "2",
+      "host": "culvercitycrossroads.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cvindependent.com/2026/05/candidate-qa-the-two-candidates-for-riverside-countys-board-of-supervisors-district-4-discuss-the-most-pressing-issues/",
+      "rows_citing": "2",
+      "host": "cvindependent.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://dailyjournal.net/2025/01/22/beckwith-comments-on-climate-change-bill-threatening-his-agriculture-role-and-more/",
+      "rows_citing": "2",
+      "host": "dailyjournal.net",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://davisvanguard.org/2025/07/la-county-sheriff-ice-transfer/",
+      "rows_citing": "2",
+      "host": "davisvanguard.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2022/07/20/city-councilor-coletta-secures-budget-amendment/",
+      "rows_citing": "2",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2022/10/27/guest-op-ed-yes-on-4-practical-safe-economic-policy/",
+      "rows_citing": "2",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2024/05/02/coletta-pushes-zba-to-uphold-and-enforce-new-zoning-with-plan-east-boston/",
+      "rows_citing": "2",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2024/05/09/coletta-advocates-priorities-during-budget-hearings/",
+      "rows_citing": "2",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2025/01/15/coletta-zapata-publishes-report-on-local-climate-action/",
+      "rows_citing": "2",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2025/08/06/councilor-coletta-zapata-joins-mayor-wu-at-press-conference-to-discuss-community-benefits-agreement-agreement-for-proposed-soccer-stadium/",
+      "rows_citing": "2",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2026/05/06/coletta-zapata-introduces-legislation-strengthening-tenant-protections/",
+      "rows_citing": "2",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://forestgrovenewstimes.com/2024/09/20/brian-schimmel-runs-for-forest-grove-city-council/",
+      "rows_citing": "2",
+      "host": "forestgrovenewstimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://forestgrovenewstimes.com/2024/09/20/donna-gustafson-seeks-reelection-to-forest-grove-city-council/",
+      "rows_citing": "2",
+      "host": "forestgrovenewstimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://forestgrovenewstimes.com/2026/06/25/forest-grove-police-facility-bond-likely-to-return-to-ballot-after-2025-defeat/",
+      "rows_citing": "2",
+      "host": "forestgrovenewstimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://goldentogether.com/wp-content/uploads/2024/10/GT_Sustainable-Suburbs-4.pdf",
+      "rows_citing": "2",
+      "host": "goldentogether.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.nc.gov/news/press-releases/2025/06/16/governors-stein-mcmaster-call-trump-administration-maintain-moratorium-offshore-drilling-carolina",
+      "rows_citing": "2",
+      "host": "governor.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.nc.gov/news/press-releases/2025/12/10/governor-stein-continues-stand-3-million-medicaid-patients-north-carolina-directs-ncdhhs-restore",
+      "rows_citing": "2",
+      "host": "governor.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

@@ -1,0 +1,1777 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 10000 --to 10250 --pace 1200",
+  "slice": "undated",
+  "timing": {
+    "fetch_timeout_ms": 20000,
+    "curl_timeout_s": 15,
+    "probe_timeout_ms": 3000,
+    "zero_streak": 3,
+    "unbreak_streak": 3,
+    "pace_ms": 1200
+  },
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 249,
+    "NO_ANSWER": 1
+  },
+  "findings": [
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-118hjres25ih/html/BILLS-118hjres25ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-118hr1118ih/html/BILLS-118hr1118ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-118hr12ih/html/BILLS-118hr12ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-118hr15ih/html/BILLS-118hr15ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-118hr23eh/html/BILLS-118hr23eh.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-118hr561ih/html/BILLS-118hr561ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-118hr6970ih/html/BILLS-118hr6970ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-118hr815enr/html/BILLS-118hr815enr.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-118hr8706ih/html/BILLS-118hr8706ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22ih/html/BILLS-119hr22ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr738ih/html/BILLS-119hr738ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7802ih/html/BILLS-119hr7802ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr925ih/html/BILLS-119hr925ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtech.com/artificial-intelligence/clark-county-nev-commissioners-approve-data-center-project",
+      "rows_citing": "1",
+      "host": "govtech.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtech.com/policy/oregon-counties-want-help-with-data-center-tax-breaks",
+      "rows_citing": "1",
+      "host": "govtech.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/bills/116/hconres14",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/bills/116/hr1384",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/bills/117/hr40",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/bills/118/hr2/summary",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/bills/119/hr1589/cosponsors",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/members/ayanna_pressley/412786",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/members/blake_moore/456851",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/members/mark_warner/412321",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/members/seth_moulton/412595",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/111-2010/h165",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/115-2017/h652",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/115-2017/s167",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/115-2017/s303",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/115-2017/s323",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/115-2018/s223",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/116-2019/h109",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/117-2021/h39",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/117-2021/h62",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/117-2021/s314",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/117-2022/h141",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/117-2022/h420",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/119-2025/h145",
+      "rows_citing": "1",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.grandforksherald.com/news/us-house-debate-julie-fedorchak-blames-biden-on-immigration-while-trygve-hammer-criticizes-gop-rhetoric",
+      "rows_citing": "1",
+      "host": "grandforksherald.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gvnews.com/news/christy-anti-trump-county-board-is-at-it-again/article_f7a52bec-d738-11e8-941e-bf15e3a7e9bf.html",
+      "rows_citing": "1",
+      "host": "gvnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gvnews.com/news/local/christy-concerned-about-new-jail-commission/article_fed5b13c-e25b-11ee-8860-e350f51b4299.html",
+      "rows_citing": "1",
+      "host": "gvnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gvnews.com/news/local/q-a-sahuarita-town-council-election/article_6f72fd43-500d-431f-9296-9b955ad7ae46.html",
+      "rows_citing": "1",
+      "host": "gvnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hammondstar.com/news/bunkie-attorney-seeks-district-5-seat-in-congress/article_7baa0163-6d34-51a4-92c3-c210a7875e29.html",
+      "rows_citing": "1",
+      "host": "hammondstar.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hansonbridgett.com/publications/251201-2021-vetoes_data_center_law",
+      "rows_citing": "1",
+      "host": "hansonbridgett.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hawaiipublicradio.org/search/?q=tokuda+abortion",
+      "rows_citing": "1",
+      "host": "hawaiipublicradio.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hawaiipublicradio.org/search/?q=tokuda+ICE+deportation",
+      "rows_citing": "1",
+      "host": "hawaiipublicradio.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hawaiipublicradio.org/search/?q=tokuda+immigration",
+      "rows_citing": "1",
+      "host": "hawaiipublicradio.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hawaiipublicradio.org/search/?q=tokuda+tariffs",
+      "rows_citing": "1",
+      "host": "hawaiipublicradio.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hcd.ca.gov/planning-and-research/prohousing/designated-jurisdictions",
+      "rows_citing": "1",
+      "host": "hcd.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldbulletin.com/news/anderson-child-care-director-lt-gov-beckwith-called-struggling-parents-deadbeats/article_76dce2ba-e272-44cd-abf3-e7be602f5e1f.html",
+      "rows_citing": "1",
+      "host": "heraldbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/2024/dec/05/utah-county-commission-allows-final-public-comments-on-2025-budget-county-attorney-asks-for-more-funds/",
+      "rows_citing": "1",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/2025/jan/31/mayor-michelle-kaufusi-highlights-provos-2024-milestones-in-state-of-the-city-address/",
+      "rows_citing": "1",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/2026/apr/27/republicans-must-be-more-thoughtful-members-around-solar-energy-moore-tells-developers/",
+      "rows_citing": "1",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/2026/feb/03/utah-county-attorney-finds-2024-nonfatal-police-shooting-in-saratoga-springs-unjustified/",
+      "rows_citing": "1",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/2026/may/14/utah-county-sheriff-mike-smith-reaffirms-support-for-agreement-with-ice/",
+      "rows_citing": "1",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/local/2022/feb/23/orem-city-council-turns-back-zoning-clock-on-state-street-master-plan/",
+      "rows_citing": "1",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/local/2023/jan/20/provo-mayor-shares-citys-sustainability-projects/",
+      "rows_citing": "1",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/local/2024/may/30/orem-allocates-3-4m-to-recreation-arts-with-city-care-tax-funds/",
+      "rows_citing": "1",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/local/2024/nov/01/utah-county-clerks-vote-method-tracking-amounts-to-voter-intimidation-commissioner-says/",
+      "rows_citing": "1",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/local/2025/jan/10/utah-legislature-poised-to-cut-taxes-for-5th-year-in-a-row-but-how/",
+      "rows_citing": "1",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/local/2025/jul/02/leadership-change-underway-at-community-action-services-and-food-bank/",
+      "rows_citing": "1",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/opinion/mailbag/2024/jul/06/letter-wheres-the-utah-county-da-when-we-really-need-him/",
+      "rows_citing": "1",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldonline.com/opinion/article315265299.html",
+      "rows_citing": "1",
+      "host": "heraldonline.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hickenlooper.senate.gov/press_releases/hickenlooper-curtis-introduce-bipartisan-bill-to-boost-clean-energy-streamline-permitting/",
+      "rows_citing": "1",
+      "host": "hickenlooper.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hildasolis.com/2022/homelessness/",
+      "rows_citing": "1",
+      "host": "hildasolis.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hildasolis.com/2022/public-safety/",
+      "rows_citing": "1",
+      "host": "hildasolis.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hildasolis.com/2022/transportation/",
+      "rows_citing": "1",
+      "host": "hildasolis.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hillsboro-oregon.gov/Home/Components/News/News/16159/4300",
+      "rows_citing": "1",
+      "host": "hillsboro-oregon.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hjnews.com/news/local/child-care-business-tax-credit-passes-in-the-house-of-reps/article_68c4b58c-2c9e-4bbf-a9e6-1ced85600937.html",
+      "rows_citing": "1",
+      "host": "hjnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hjnews.com/news/local/utah-lawmakers-propose-laws-to-address-housing-supply-and-affordability/article_bef025d9-309f-4a2f-ac81-bf889ffcdaf3.html",
+      "rows_citing": "1",
+      "host": "hjnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hoeven.senate.gov/issues/national-security",
+      "rows_citing": "1",
+      "host": "hoeven.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hometownsource.com/elk_river_star_news/mn-6th-republican-candidate-reaching-across-the-aisle-at-local-protest/article_7d871129-131d-499b-965f-3bb8da2328c1.html",
+      "rows_citing": "1",
+      "host": "hometownsource.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hometownsource.com/forest_lake_times/minnesotas-congressional-6th-and-8th-district-primary-challenges-set/article_b90da25f-f0fa-43a7-bc5e-1a01dcdc74e1.html",
+      "rows_citing": "1",
+      "host": "hometownsource.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hometownsource.com/monticello_times/letter-use-your-free-will-and-vote-as-you-see-fit/article_2aba5940-332b-11ef-82bc-933833ae70cd.html",
+      "rows_citing": "1",
+      "host": "hometownsource.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hometownstation.com/santa-clarita-latest-news/santa-clarita-to-officially-take-over-fourth-of-july-parade-council-opposes-county-sales-tax-594010",
+      "rows_citing": "1",
+      "host": "hometownstation.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hometownstation.com/santa-clarita-news/community-news/a-new-dawn-in-santa-clarita-family-promises-new-housing-center-brings-hope-to-homeless-families-527582",
+      "rows_citing": "1",
+      "host": "hometownstation.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hometownstation.com/santa-clarita-news/community-news/decades-long-battle-against-cemex-soledad-canyon-mega-mine-could-be-over-337973",
+      "rows_citing": "1",
+      "host": "hometownstation.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hometownstation.com/santa-clarita-news/community-news/santa-clarita-set-for-major-expansion-with-new-housing-parks-and-infrastructure-projects-538699",
+      "rows_citing": "1",
+      "host": "hometownstation.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hometownstation.com/santa-clarita-news/politics/santa-clarita-city-council/santa-clarita-city-council-passes-361-4-million-budget-for-2026-27-592719",
+      "rows_citing": "1",
+      "host": "hometownstation.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hometownstation.com/santa-clarita-news/press-releases/representative-whitesides-to-announce-over-1-million-investment-for-traffic-and-pedestrian-safety-improvements-in-santa-clarita-592203",
+      "rows_citing": "1",
+      "host": "hometownstation.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.housedemocrats.wa.gov/members/pellicciotti/",
+      "rows_citing": "1",
+      "host": "housedemocrats.wa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.housingfinance.com/finance/california-awards-2-billion-bonds-affordable-housing",
+      "rows_citing": "1",
+      "host": "housingfinance.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.huffpost.com/entry/ritchie-torres-scott-jennings-debate-medicaid-work-requirements_n_686fb0dce4b0d01c494cd707",
+      "rows_citing": "1",
+      "host": "huffpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ibj.com/articles/micah-beckwith",
+      "rows_citing": "1",
+      "host": "ibj.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ideastream.org/2026-03-10/dewine-calls-for-ohio-laws-on-ai-seat-belts-in-final-state-of-the-state-speech",
+      "rows_citing": "1",
+      "host": "ideastream.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ideastream.org/news/government-politics/2020-02-10/frank-larose-warns-against-spreading-election-misinformation",
+      "rows_citing": "1",
+      "host": "ideastream.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.iheart.com/podcast/867-the-michele-tafoya-podcast-112693664/episode/big-beautiful-school-choice-274996313/",
+      "rows_citing": "1",
+      "host": "iheart.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.in.gov/sos/elections/",
+      "rows_citing": "1",
+      "host": "in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.indio.org/Home/Components/StaffDirectory/StaffDirectory/40/181",
+      "rows_citing": "1",
+      "host": "indio.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.insidernj.com/press-release/conservative-panel-discussion-of-how-big-money-smothers-conservative-voices/",
+      "rows_citing": "1",
+      "host": "insidernj.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.insidernj.com/press-release/neptune-deputy-mayor-endorses-rachel-peace-for-congress/",
+      "rows_citing": "1",
+      "host": "insidernj.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.insidernj.com/press-release/rachel-peace-emerges-as-leading-contender-in-democratic-congressional-primary-for-njs-4th-congressional-district/",
+      "rows_citing": "1",
+      "host": "insidernj.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.instagram.com/p/DFODmZNRQpx/",
+      "rows_citing": "1",
+      "host": "instagram.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.instagram.com/p/DRvHlJegd37/",
+      "rows_citing": "1",
+      "host": "instagram.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.instagram.com/p/DUJiR7DEy2T/",
+      "rows_citing": "1",
+      "host": "instagram.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.insurance.ca.gov/0250-insurers/0500-legal-info/0200-regulations/HealthGuidance/upload/SB-1120-1-Guidance-Use-of-Artificial-Intelligence-Algorithms-and-Other-Software-Tools-in-Utilization-Management.pdf",
+      "rows_citing": "1",
+      "host": "insurance.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2019/",
+      "rows_citing": "1",
+      "host": "insurance.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2020/",
+      "rows_citing": "1",
+      "host": "insurance.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2022/",
+      "rows_citing": "1",
+      "host": "insurance.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2025/release073-2025.cfm",
+      "rows_citing": "1",
+      "host": "insurance.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.iowafieldreport.com/congress/national-police-week-spotlights-bohannans-record-on-law-enforcement-and-public-safety/",
+      "rows_citing": "1",
+      "host": "iowafieldreport.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.iowapublicradio.org/political-news/2025-10-11/libertarian-candidate-thomas-laehn-u-s-senate-race-2026",
+      "rows_citing": "1",
+      "host": "iowapublicradio.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/2023-10-20/bloomington-residents-share-mixed-opinions-on-s-r-45-project",
+      "rows_citing": "1",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/2024-09-10/city-fire-and-police-hiring-struggles-go-deeper-than-just-money",
+      "rows_citing": "1",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/2024-10-25/indiana-lieutenant-governor-an-interview-with-micah-beckwith",
+      "rows_citing": "1",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/features/righteous/part1",
+      "rows_citing": "1",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/news/2025-08-19/indianas-house-gop-congressional-contingent-lines-up-behind-redistricting-effort",
+      "rows_citing": "1",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/news/2025-08-27/indiana-protesters-say-trump-backed-redistricting-would-weaken-their-votes",
+      "rows_citing": "1",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/news/2025-12-18/convention-center-hotel-deal-stalls-amid-debate-over-incentives",
+      "rows_citing": "1",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/news/2026-01-30/protest-targets-citys-use-of-tech-companys-surveillance-tools",
+      "rows_citing": "1",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/news/2026-02-27/lt-gov-micah-beckwith-to-spearhead-faith-based-institute-initiative/",
+      "rows_citing": "1",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/news/2026-03-27/bloomington-leaders-advocates-raise-concerns-over-new-homelessness-law",
+      "rows_citing": "1",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/news/2026-05-08/hopewell-south-passes-city-council-unanimously",
+      "rows_citing": "1",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/news/ask-the-mayor-bloomingtons-kerry-thomson-on-ice-response-branding-initiative-parking.php",
+      "rows_citing": "1",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/show/askthemayor/2025-11-19/bloomingtons-thomson-on-new-jail-stadium-district-best-lit-square",
+      "rows_citing": "1",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/addison-mcdowell/policies/education",
+      "rows_citing": "1",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/addison-mcdowell/policies/foreign-policy",
+      "rows_citing": "1",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/addison-mcdowell/policies/science",
+      "rows_citing": "1",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/carlos-gimenez",
+      "rows_citing": "1",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/david-brock-smith/policies/foreign-policy",
+      "rows_citing": "1",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/heather-smiley/policies/education",
+      "rows_citing": "1",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/heather-smiley/policies/foreign-policy",
+      "rows_citing": "1",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/jonathan-jackson/policies/domestic-policy",
+      "rows_citing": "1",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/jonathan-jackson/policies/education",
+      "rows_citing": "1",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/pat-harrigan/policies/environmental",
+      "rows_citing": "1",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/pat-harrigan/policies/social",
+      "rows_citing": "1",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.jamestalarico.com/issue/rural-investment/",
+      "rows_citing": "1",
+      "host": "jamestalarico.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.jasmine4ga.com/news/1-14-26pressrelease",
+      "rows_citing": "1",
+      "host": "jasmine4ga.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.jec.senate.gov/public/index.cfm/republicans/newsroom?id=5275CAF6-F817-41DC-8651-A503356D041D",
+      "rows_citing": "1",
+      "host": "jec.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.jhnewsandguide.com/news/schools/local/former-wyo-schools-superintendent-balow-makes-her-case-to-teton-county-for-u-s-house/article_2fd2dd98-b380-4de6-89e2-61217134a327.html",
+      "rows_citing": "1",
+      "host": "jhnewsandguide.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.joannamendoza.com/issues/healthcare/",
+      "rows_citing": "1",
+      "host": "joannamendoza.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.journalgazette.net/local/indiana/state-government/indiana-abortion-ban-bill-passes-senate-committee-vote/article_7c6702fa-0d05-11ed-89cc-33e820bd0feb.html",
+      "rows_citing": "1",
+      "host": "journalgazette.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.journalgazette.net/local/indiana/study-indiana-ranks-last-in-campaign-finance-laws/article_9bc75a20-24c8-11ed-a784-3306e660682f.html",
+      "rows_citing": "1",
+      "host": "journalgazette.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kansascommerce.gov/program/housing/",
+      "rows_citing": "1",
+      "host": "kansascommerce.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.katiefryhester.com/issues/reproductive-rights/",
+      "rows_citing": "1",
+      "host": "katiefryhester.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kcur.org/politics-elections-and-government/2025-10-02/missouri-podcast-host-fred-wellman-ann-wagner-2nd-district",
+      "rows_citing": "1",
+      "host": "kcur.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kcur.org/tags/wesley-bell",
+      "rows_citing": "1",
+      "host": "kcur.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keepinglawsimple.org/states/virginia/bills/2026/HB1051",
+      "rows_citing": "1",
+      "host": "keepinglawsimple.org",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.keepinglawsimple.org/states/virginia/bills/2026/HB1057",
+      "rows_citing": "1",
+      "host": "keepinglawsimple.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keepinglawsimple.org/states/virginia/bills/2026/HB1058",
+      "rows_citing": "1",
+      "host": "keepinglawsimple.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keepinglawsimple.org/states/virginia/bills/2026/HB1459",
+      "rows_citing": "1",
+      "host": "keepinglawsimple.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keepinglawsimple.org/states/virginia/bills/2026/HB1521",
+      "rows_citing": "1",
+      "host": "keepinglawsimple.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keepinglawsimple.org/states/virginia/bills/2026/HB28",
+      "rows_citing": "1",
+      "host": "keepinglawsimple.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keepinglawsimple.org/states/virginia/bills/2026/HB379",
+      "rows_citing": "1",
+      "host": "keepinglawsimple.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keepinglawsimple.org/states/virginia/bills/2026/HB655",
+      "rows_citing": "1",
+      "host": "keepinglawsimple.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keepinglawsimple.org/states/virginia/bills/2026/HB711",
+      "rows_citing": "1",
+      "host": "keepinglawsimple.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keepinglawsimple.org/states/virginia/bills/2026/HB744",
+      "rows_citing": "1",
+      "host": "keepinglawsimple.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keepinglawsimple.org/states/virginia/bills/2026/HR5",
+      "rows_citing": "1",
+      "host": "keepinglawsimple.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kellythompsonforcongress.com/policies/economy/protecting-your-paychecks",
+      "rows_citing": "1",
+      "host": "kellythompsonforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kellythompsonforcongress.com/policies/education/education-and-childcare",
+      "rows_citing": "1",
+      "host": "kellythompsonforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kellythompsonforcongress.com/policies/healthcare/healthcare",
+      "rows_citing": "1",
+      "host": "kellythompsonforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kellythompsonforcongress.com/policies/technology/data-privacy-and-ai-accountability",
+      "rows_citing": "1",
+      "host": "kellythompsonforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keloland.com/news/local-news/social-security-healthcare-top-of-mind-for-gronli/",
+      "rows_citing": "1",
+      "host": "keloland.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keranews.org/news/2024-12-16/princeton-voters-elect-mayoral-candidate-who-raised-concerns-about-rapid-growth-oust-incumbent",
+      "rows_citing": "1",
+      "host": "keranews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keranews.org/news/2025-02-18/whos-running-for-local-office-in-planos-may-election",
+      "rows_citing": "1",
+      "host": "keranews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keranews.org/news/2025-06-07/frisco-council-member-appears-to-lose-reelection-after-controversial-recordings-burt-thakur-place-2-tammy-meinershagen-lost-jared-elad-place-4",
+      "rows_citing": "1",
+      "host": "keranews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keranews.org/news/2025-06-07/mckinney-voters-appear-to-elect-new-mayor-who-supports-the-citys-airport-expansion",
+      "rows_citing": "1",
+      "host": "keranews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kgun9.com/news/community-inspired-journalism/oro-valley/oro-valley-mayor-lays-foundation-for-towns-future-during-state-of-the-town-address",
+      "rows_citing": "1",
+      "host": "kgun9.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kgun9.com/news/local-news/pima-county-supervisors-approve-lithium-battery-gigafactory",
+      "rows_citing": "1",
+      "host": "kgun9.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kgun9.com/news/local-news/pima-county-to-adopt-a-climate-action-plan",
+      "rows_citing": "1",
+      "host": "kgun9.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kgun9.com/news/local-news/tucson-mayor-regina-romero-speaks-out-against-proposed-sanctuary-city-ban-in-arizona",
+      "rows_citing": "1",
+      "host": "kgun9.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kgw.com/article/news/local/homeless/beaverton-mayor-response-man-accidentally-sets-himself-on-fire/283-129d5289-0dbd-4dd5-81d8-c186df28ff44",
+      "rows_citing": "1",
+      "host": "kgw.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kgw.com/article/news/local/the-story/washington-county-audit-sewer-agency-investigation-lavish-spending-clean-water-services/283-8cad6b52-2658-4080-b5cf-f9fb526444dc",
+      "rows_citing": "1",
+      "host": "kgw.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kgw.com/article/news/politics/immigration-news/county-leaders-repond-ice-detainments/283-704ce267-4354-4bc6-be1f-125a120eaeb3",
+      "rows_citing": "1",
+      "host": "kgw.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kgw.com/article/sports/high-school/beaverton-council-school-youth-services-officers-armed-police-schools/283-83cdb8f4-3a61-4dff-a056-bf60dcad83ec",
+      "rows_citing": "1",
+      "host": "kgw.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kincaidforcongress.com/p/issues.html",
+      "rows_citing": "1",
+      "host": "kincaidforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kjzz.org/content/1877278/pima-county-supervisors-pass-resolution-against-1864-abortion-ban",
+      "rows_citing": "1",
+      "host": "kjzz.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kjzz.org/politics/2026-05-06/pima-county-can-restrict-ice-activity-on-its-property-arizona-ag-says",
+      "rows_citing": "1",
+      "host": "kjzz.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.klcc.org/politics-government/2026-05-04/meet-the-two-republicans-vying-to-flip-oregons-5th-congressional-district",
+      "rows_citing": "1",
+      "host": "klcc.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.klobuchar.senate.gov/public/index.cfm/education",
+      "rows_citing": "1",
+      "host": "klobuchar.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.klobuchar.senate.gov/public/index.cfm/issues",
+      "rows_citing": "1",
+      "host": "klobuchar.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.klobuchar.senate.gov/public/index.cfm/national-security",
+      "rows_citing": "1",
+      "host": "klobuchar.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.koin.com/am-extra/tualatin-oregon-inclusion-diversity-access/",
+      "rows_citing": "1",
+      "host": "koin.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.koin.com/local/washington-county/laser-focus-helps-beaverton-boom-outpace-portland/",
+      "rows_citing": "1",
+      "host": "koin.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.koin.com/news/education/beaverton-youth-service-officers-schools-07252023/",
+      "rows_citing": "1",
+      "host": "koin.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.koin.com/news/homeless/beaverton-breaks-ground-on-first-year-round-homeless-shelter-in-washington-county/",
+      "rows_citing": "1",
+      "host": "koin.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.koin.com/news/portland-beaverton-to-remain-sanctuary-cities/",
+      "rows_citing": "1",
+      "host": "koin.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kpax.com/news/montana-politics/u-s-rep-troy-downing-officially-files-for-second-term",
+      "rows_citing": "1",
+      "host": "kpax.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kpax.com/news/montana-politics/u-s-rep-troy-downing-tours-helena-airport-as-federal-shutdown-continues",
+      "rows_citing": "1",
+      "host": "kpax.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kpcw.org/state-regional/2026-04-30/cox-we-have-an-obligation-to-support-data-center-development",
+      "rows_citing": "1",
+      "host": "kpcw.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kriegdevault.com/insights/governor-brauns-executive-order-prompts-idem-to-potentially-roll-back-environmental-regulations",
+      "rows_citing": "1",
+      "host": "kriegdevault.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/46481896/utah-lawmaker-pushing-bill-requiring-cities-to-zone-affordable-housing-if-they-want-state-dollars",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/46485207/gov-herbert-signs-prop-3-medicaid-expansion-replacement-into-law",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/46662261/why-salt-lake-county-mayor-jenny-wilson-used-only-mass-transit-for-a-week",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50030705/salt-lake-county-signs-compact-for-utah-to-be-pragmatic-leader-in-climate-change",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50128251/salt-lake-county-sheriff-creates-ice-dashboard-to-show-local-immigration-enforcement-stats",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50155974/why-sen-mike-lee-says-biden-child-allowance-plan-is-a-return-to-failed-welfare-policies",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50195658/why-the-fec-ordered-utah-gop-rep-burgess-owens-to-pay-a-4000-fine",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50285711/slc-leaders-frustrated-as-city-tapped-to-house-temporary-winter-homeless-shelter-again",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50361572/utah-legislature-passes-last-minute-ban-on-transgender-female-athletes-gov-says-hell-veto",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50415647/whats-driving-salt-lake-citys-proposed-property-tax-police-budget-increases",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50439640/uncertainty-swirls-around-how-utah-will-enforce-its-trigger-abortion-ban",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50459669/district-attorney-touts-success-with-new-diversion-program-says-only-8-reoffended",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50563619/state-officials-agencies-debate-school-choice-bill-on-1st-day-of-utah-school-choice-week",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50565362/utah-senate-approves-choice-scholarship-teacher-compensation-bill-on-2nd-reading",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50566124/utah-legislature-gives-final-passage-to-school-choice-scholarships-teacher-raises",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50567331/gov-cox-signs-high-profile-bills-on-transgender-surgeries-school-choice-vouchers",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50582216/house-passes-pair-of-bills-to-further-restrict-abortion-access-in-utah",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50605955/utah-governor-signs-historic-400m-tax-cut",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50887069/house-passes-bill-to-end-ranked-choice-voting-option-for-utah-cities",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50937164/the-utah-legislature-approved-another-tax-cut-heres-what-taxpayers-need-to-know",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51035668/salt-lake-city-leaders-weigh-bathroom-situation-impacting-city-streets-jordan-river",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51240220/utah-lawmakers-want-to-raise-the-standards-for-freestanding-emergency-rooms-around-utah",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51249005/utahs-been-called-a-child-care-desert-state-lawmakers-look-at-ways-to-increase-access",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51250538/why-salt-lake-city-is-seeking-to-drastically-change-its-zoning-map",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51251920/utah-house-votes-to-streamline-deportations-of-immigrants-convicted-of-crimes",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51253834/i-hear-you-parents-utah-attorney-general-responds-to-concerns-over-section-504-lawsuit",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51265296/the-utah-senate-shut-down-this-house-immigration-bill-why-",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51289226/heres-how-utahs-congressional-delegation-is-responding-to-trumps-tariffs",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51297865/-salt-lake-police-report-33-felony-49-misdemeanor-arrests-this-month-on-jordan-river-trail",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51309726/provo-orem-leaders-hope-new-uta-service-will-fill-gaps-in-fast-growing-county/",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51313223/utah-treasurer-marlo-oaks-on-the-harmful-politicization-of-americas-economy",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51339353/trumps-sweeping-tax-cut-and-spending-bill-wins-congressional-approval",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51416241/salt-lake-county-da-unveils-new-screening-dashboard-for-the-public",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51416846/audit-calls-for-more-transparency-in-how-salt-lake-county-da-makes-decisions",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51424958/how-salt-lake-city-responded-to-mounting-challenges-in-2025",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51426955/provo-mayor-michelle-kaufusi-announces-run-for-utah-county-commission",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51428770/heres-whos-running-for-the-utah-legislature-in-2026",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51437167/bill-meant-to-curb-immigration-enforcement-efforts-in-utah-stalls-in-committee",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51442265/reps-owens-maloy-take-utahs-redistricting-battle-to-federal-court",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51442917/salt-lake-city-voices-concerns-on-bill-calling-it-to-partner-with-udot-on-road-safety",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51445830/babies-will-be-happier-expanding-utahs-infant-at-work-program",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51446988/blindsided-by-new-homeless-campus-west-side-lawmakers-want-a-seat-at-the-table",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51450337/utah-house-oks-bill-expanding-tax-credit-for-businesses-that-provide-child-care",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51453302/salt-lake-county-explores-partnerships-to-preserve-existing-child-care-centers",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51463686/salt-lake-immigration-detention-center-plans-spark-opposition-from-mayors-others-quiet",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51472448/cox-approves-bill-cutting-income-tax-for-sixth-straight-year",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51473126/uta-set-to-extend-s-line-deeper-into-sugar-house-with-resolution-in-place",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51478551/salt-lake-city-rejects-rezone-for-controversial-7-story-hotel-next-to-sugar-house-park",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51479898/why-salt-lake-city-wants-to-indefinitely-close-these-2-road-sections",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51483350/salt-lake-citys-proposed-camping-ban-draws-fierce-debate",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51488565/utah-box-elder-county-officials-mull-plan-to-spur-energy-production-data-center-development",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51491313/cox-backs-box-elder-county-data-center-proposal-in-part-due-to-national-security-factors",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51500333/utah-county-commissioner-debate-watch-the-videos-and-meet-the-candidates",
+      "rows_citing": "1",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2019-12-03/greene-county-officials-say-steel-costs-city-skyline-among-factors-in-relocating-jail",
+      "rows_citing": "1",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2023-04-05/who-won-races-for-springfield-mayor-and-city-council-ozarks-public-radio-has-the-recap",
+      "rows_citing": "1",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2023-10-03/springfield-city-council-considers-community-center-residential-developments",
+      "rows_citing": "1",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2024-05-03/springfield-homeless-nonprofit-reveals-it-closed-revive-66-campsite-to-focus-on-tiny-home-developments",
+      "rows_citing": "1",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2025-10-07/springfield-city-council-hears-arguments-on-university-heights-rezoning",
+      "rows_citing": "1",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2026-02-03/springfield-city-council-member-questions-chambers-support-of-bill-that-would-impact-the-city",
+      "rows_citing": "1",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2026-04-06/springfield-city-council-approves-agreement-with-a-local-nonprofit-that-will-benefit-the-downtown-area",
+      "rows_citing": "1",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2026-04-21/substitute-springfield-city-council-mayoral-campaign-finance-limit-bill-moves-forward",
+      "rows_citing": "1",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2026-05-27/city-council-question-on-budget-highlights-goals-on-redevelopment",
+      "rows_citing": "1",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2026-06-09/city-of-springfield-looks-to-strengthen-its-nuisance-and-housing-code-to-target-illegal-signs",
+      "rows_citing": "1",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/show/making-democracy-work/2025-10-08/springfield-city-council-member-elected-in-april-talks-about-acclimating-to-the-new-role",
+      "rows_citing": "1",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ktnv.com/neighborhoods/north-las-vegas/north-las-vegas-mayoral-candidates-face-off-in-chamber-debate-residents-discuss-priorities",
+      "rows_citing": "1",
+      "host": "ktnv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ktnv.com/news/las-vegas-mayor-elect-shelley-berkley-outlines-her-plans-for-the-citys-future",
+      "rows_citing": "1",
+      "host": "ktnv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ktnv.com/news/north-las-vegas-mayor-pamela-goynes-brown-touts-successes-in-annual-state-of-the-city-speech",
+      "rows_citing": "1",
+      "host": "ktnv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kuer.org/justice/2020-06-01/salt-lake-county-sheriff-rosie-rivera-says-police-need-to-be-held-accountable",
+      "rows_citing": "1",
+      "host": "kuer.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kuer.org/politics-government/2022-03-25/utah-legislature-overrides-transgender-sports-ban-veto",
+      "rows_citing": "1",
+      "host": "kuer.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kuer.org/politics-government/2022-04-26/reform-or-aggressive-prosecution-thats-the-gop-debate-in-the-utah-county-attorney-primary",
+      "rows_citing": "1",
+      "host": "kuer.org",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

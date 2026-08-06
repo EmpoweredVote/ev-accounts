@@ -1,0 +1,1769 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 3750 --to 4000 --pace 1200",
+  "slice": "undated",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 239,
+    "NO_ANSWER": 11
+  },
+  "findings": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Jeff_Jackson_(politician)",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jefferson_Shreve",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jeremy_Moss",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jerry_Carl",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jillian_Gilchrest",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jim_Desmond",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Joanne_Shofner",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/John_Bucy_III",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/John_Thurston_(politician)",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jolanda_Jones",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jose_Solache",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Josh_Stein",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Josh_Turek",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Julian_Cyr",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Justin_J._Pearson",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kannan_Srinivasan",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kate_Hogan",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Katy_Hall",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kevin_Lincoln_(politician)",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kim_Schrier",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Laura_Montoya_(politician)",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lauren_Simmons",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Laurie_Davies_(politician)",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Letitia_James",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lily_Franklin",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lola_Smallwood-Cuevas",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lydia_Edwards",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Marcus_B._Simon",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Matt_Gress",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Matt_Heinz",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Matt_Van_Epps",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Maura_Healey",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Michael_Frerichs",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Michael_Jones_(Virginia_politician)",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mike_McGuire_(politician)",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mitch_Little",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Nate_Schatzline",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Operation_Lone_Star",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Pat_Harrigan",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Phil_McGrane",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Phillip_Scott_(Virginia_politician)",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/R._Rex_Parris",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Raj_Salwan",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Robert_Guerra_(politician)",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ryan_Fecteau",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Same-sex_marriage_in_Hawaii",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sarah_Huckabee_Sanders",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Satya_Rhodes-Conway",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Schuyler_VanValkenburg",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Scott_Franklin_(politician)",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Scott_L._Fitzgerald",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sheila_Kuehl",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sheryl_Cole",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Susan_Bysiewicz",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Suzette_Martinez_Valladares",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Terry_Canales",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Texas_Senate_Bill_4_(2023)",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Tim_Burchett",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Todd_Russ",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Tony_Venhuizen",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Troy_Balderson",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Utah_SB_296_(2015)",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Venton_Jones",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Vince_Leach",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Virginia_Foxx",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Warren_Petersen",
+      "rows_citing": "2",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://enochforcongress.com/issue/reducing-rising-healthcare-costs/",
+      "rows_citing": "2",
+      "host": "enochforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://enochforcongress.com/issue/restoring-trust-and-integrity-in-our-democracy-and-economy/",
+      "rows_citing": "2",
+      "host": "enochforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://envirovoters.org/archives/scorecard/2017/assembly/weber/index.html",
+      "rows_citing": "2",
+      "host": "envirovoters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://envirovoters.org/scorecard/assembly/",
+      "rows_citing": "2",
+      "host": "envirovoters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://escobar.house.gov/issues/issue/?IssueID=15506",
+      "rows_citing": "2",
+      "host": "escobar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://events.in.gov/event/gov-mike-braun-signs-executive-orders-to-invest-in-a-healthier-indiana",
+      "rows_citing": "2",
+      "host": "events.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://events.in.gov/event/release-governor-braun-signs-executive-orders-on-reducing-over-regulation-and-creating-opportunity-while-protecting-our-environment",
+      "rows_citing": "2",
+      "host": "events.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://fastdemocracy.com/bill-search/ut/2026/bills/UTB00014679/",
+      "rows_citing": "2",
+      "host": "fastdemocracy.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://fletcher.house.gov/issues/issue/?IssueID=14892",
+      "rows_citing": "2",
+      "host": "fletcher.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://fox40.com/inside-california-politics/interview-california-attorney-general-candidate-hochman-on-guns-abortion-access/",
+      "rows_citing": "2",
+      "host": "fox40.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://foxnews.com/politics/spencer-pratt-standout-la-mayoral-candidate-debut-debate-performance-1010-notes",
+      "rows_citing": "2",
+      "host": "foxnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://freedomindex.us/ut/legislator/13830/",
+      "rows_citing": "2",
+      "host": "freedomindex.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://freedomindex.us/ut/legislator/15452/",
+      "rows_citing": "2",
+      "host": "freedomindex.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://friessforwy.com/issues/oil-and-gas/",
+      "rows_citing": "2",
+      "host": "friessforwy.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://friessforwy.com/issues/social-security-and-medicare/",
+      "rows_citing": "2",
+      "host": "friessforwy.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://friessforwy.com/issues/traditional-values",
+      "rows_citing": "2",
+      "host": "friessforwy.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://gomez.house.gov/issues/issue/?IssueID=14890",
+      "rows_citing": "2",
+      "host": "gomez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://gomez.house.gov/issues/issue/?IssueID=14927",
+      "rows_citing": "2",
+      "host": "gomez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://gomez.house.gov/issues/issue/?IssueID=14949",
+      "rows_citing": "2",
+      "host": "gomez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://gonzalez.house.gov/issues/health",
+      "rows_citing": "2",
+      "host": "gonzalez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.utah.gov/uncategorized/gov-cox-announces-fiscal-year-2026-budget-recommendations-including-elimination-of-social-security-tax/",
+      "rows_citing": "2",
+      "host": "governor.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://greenvillejournal.com/community/meet-the-candidates-u-s-house-congressional-races/",
+      "rows_citing": "2",
+      "host": "greenvillejournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hahn.lacounty.gov/news/hahn-celebrates-anniversary-of-historic-opening-of-whittier-lgbtq-community-center/",
+      "rows_citing": "2",
+      "host": "hahn.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hahn.lacounty.gov/news/hahn-celebrates-grand-opening-of-97-new-apartments-for-formerly-homeless-in-west-whittier/",
+      "rows_citing": "2",
+      "host": "hahn.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hahn.lacounty.gov/news/hahn-opens-55-unit-permanent-supportive-housing-at-former-motel-6-site-in-norwalk/",
+      "rows_citing": "2",
+      "host": "hahn.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hahn.lacounty.gov/news/hahn-testifies-at-congressional-hearing-on-ice-misconduct/",
+      "rows_citing": "2",
+      "host": "hahn.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hahn.lacounty.gov/news/la-county-will-explore-expanding-legal-assistance-for-immigrants/",
+      "rows_citing": "2",
+      "host": "hahn.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hahn.lacounty.gov/news/supervisors-move-forward-on-effort-to-preserve-lgbtq-crisis-hotline-services-locally-after-federal-funding-cuts/",
+      "rows_citing": "2",
+      "host": "hahn.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hahn.lacounty.gov/news/we-have-a-chance-to-do-something-real-about-homelessness-in-torrance/",
+      "rows_citing": "2",
+      "host": "hahn.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hayspost.com/posts/2ac5a87c-4b19-4a42-8db8-1deab18eb3f7",
+      "rows_citing": "2",
+      "host": "hayspost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://heinrich.senate.gov/newsroom/press-releases/?issue=artificial-intelligence",
+      "rows_citing": "2",
+      "host": "heinrich.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hickenlooper.senate.gov/issues/climate/",
+      "rows_citing": "2",
+      "host": "hickenlooper.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hickenlooper.senate.gov/issues/health-care/",
+      "rows_citing": "2",
+      "host": "hickenlooper.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hickenlooper.senate.gov/issues/immigration/",
+      "rows_citing": "2",
+      "host": "hickenlooper.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hillsboro-oregon.civicweb.net/document/253982/",
+      "rows_citing": "2",
+      "host": "hillsboro-oregon.civicweb.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hillsboro-oregon.civicweb.net/document/254838/",
+      "rows_citing": "2",
+      "host": "hillsboro-oregon.civicweb.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://homeless.lacounty.gov/news/new-hope-in-bellflower/",
+      "rows_citing": "2",
+      "host": "homeless.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://houchin.house.gov/media/press-releases/congresswoman-erin-houchin-votes-first-bill-pass-house",
+      "rows_citing": "2",
+      "host": "houchin.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://houchin.house.gov/media/press-releases/congresswoman-houchin-releases-statement-house-passage-border-bill",
+      "rows_citing": "2",
+      "host": "houchin.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://iaproject.org/accountability/members/M001233",
+      "rows_citing": "2",
+      "host": "iaproject.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://illinoistreasurer.gov/home/about/sustainable-investing",
+      "rows_citing": "2",
+      "host": "illinoistreasurer.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://illinoistreasurer.gov/home/office-of-the-treasurer/treasurer-michael-frerichs/",
+      "rows_citing": "2",
+      "host": "illinoistreasurer.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://insideclimatenews.org/news/23012026/virginia-attorney-general-takes-steps-to-rejoin-the-regional-greenhouse-gas-initiative/",
+      "rows_citing": "2",
+      "host": "insideclimatenews.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://insideclimatenews.org/news/29102021/john-curtis-conservative-climate-caucus-glasgow-cop26/",
+      "rows_citing": "2",
+      "host": "insideclimatenews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ivey.house.gov/issues/economy",
+      "rows_citing": "2",
+      "host": "ivey.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ivey.house.gov/issues/energy",
+      "rows_citing": "2",
+      "host": "ivey.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ivey.house.gov/issues/healthcare",
+      "rows_citing": "2",
+      "host": "ivey.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ivey.house.gov/issues/hr-1-one-big-ugly-bill",
+      "rows_citing": "2",
+      "host": "ivey.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ivey.house.gov/issues/immigration",
+      "rows_citing": "2",
+      "host": "ivey.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://jamestalarico.com/issues/immigration-border-security/",
+      "rows_citing": "2",
+      "host": "jamestalarico.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://jamestalarico.com/issues/public-education/",
+      "rows_citing": "2",
+      "host": "jamestalarico.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://jamestalarico.com/issues/taxes-cost-of-living/",
+      "rows_citing": "2",
+      "host": "jamestalarico.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://jeffwadlin.com/in-the-news/rgt4p58qm0ttaqu839of3w801ix7t8",
+      "rows_citing": "2",
+      "host": "jeffwadlin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://jocelynbenson.com/issues/data-centers",
+      "rows_citing": "2",
+      "host": "jocelynbenson.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://jocelynbenson.com/issues/energy-costs",
+      "rows_citing": "2",
+      "host": "jocelynbenson.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://jocelynbenson.com/issues/healthcare",
+      "rows_citing": "2",
+      "host": "jocelynbenson.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://johngociforcongress.com/issues/healthcare",
+      "rows_citing": "2",
+      "host": "johngociforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://johngociforcongress.com/issues/immigration",
+      "rows_citing": "2",
+      "host": "johngociforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://journaltimes.com/news/local/business/development/article_75a0503e-53f9-11ee-94cb-b70956c395f6.html",
+      "rows_citing": "2",
+      "host": "journaltimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://joycelacey.com/f/joyce-lacey---views-on-issues",
+      "rows_citing": "2",
+      "host": "joycelacey.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://joycelacey.com/f/speech-given-at-independence-alliance-conference",
+      "rows_citing": "2",
+      "host": "joycelacey.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://juliabrownley.house.gov/issues/civil-rights-civil-rights/",
+      "rows_citing": "2",
+      "host": "juliabrownley.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://justfacts.votesmart.org/candidate/political-courage-test/28963/karen-bass",
+      "rows_citing": "2",
+      "host": "justfacts.votesmart.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://justicedemocrats.com/candidate/dr-adam-hamawy/",
+      "rows_citing": "2",
+      "host": "justicedemocrats.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/media/press-releases/kamlager-dove-holds-first-hearing-top-democrat-house-foreign-affairs",
+      "rows_citing": "2",
+      "host": "kamlager-dove.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/media/press-releases/kamlager-dove-statement-supreme-court-decision-restrict-equality-lgbtq",
+      "rows_citing": "2",
+      "host": "kamlager-dove.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/media/press-releases/kamlager-dove-vargas-lead-federal-effort-block-immigrants-personal-data-being",
+      "rows_citing": "2",
+      "host": "kamlager-dove.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://katu.com/news/local/after-surge-in-requests-hillsboro-halts-new-data-center-tax-break-applications",
+      "rows_citing": "2",
+      "host": "katu.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://katu.com/news/local/beaverton-city-council-discusses-oregons-sanctuary-promise-act",
+      "rows_citing": "2",
+      "host": "katu.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://katu.com/news/local/beaverton-faces-107-million-budget-shortfall-plans-cuts-to-police-and-public-works-library-street-repair-resident-portland-oregon-washington-county-finances-economy-consumer",
+      "rows_citing": "2",
+      "host": "katu.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://katu.com/news/local/hillsboro-to-open-year-round-homeless-shelter-with-75-capacity-pets-welcome-homelessness-oregon-portland-suburbs-baseline-bonamici-suzanne-project-funding",
+      "rows_citing": "2",
+      "host": "katu.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kelly.senate.gov/newsroom/press-releases/",
+      "rows_citing": "2",
+      "host": "kelly.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kennedy.senate.gov/public/press-releases",
+      "rows_citing": "2",
+      "host": "kennedy.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kslnewsradio.com/housing-homelessness/507-million-public-safety-bond-heads-to-november-ballot/2125988/",
+      "rows_citing": "2",
+      "host": "kslnewsradio.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kslnewsradio.com/utah/governor-signs-income-tax-cut-bill/2197270/",
+      "rows_citing": "2",
+      "host": "kslnewsradio.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ksltv.com/local-news/fear-sells-facts-are-boring-utah-lt-gov-henderson-defends-election-security/906208/",
+      "rows_citing": "2",
+      "host": "ksltv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/brief/news/climate-environment/new-warehouses-will-be-allowed-in-pomona-again-after-city-council-ban-fails",
+      "rows_citing": "2",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/criminal-justice/what-kind-of-la-county-sheriff-will-robert-luna-be",
+      "rows_citing": "2",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/housing-homelessness/los-angeles-city-affordable-housing-ed1-historic-preservation-zones-yaroslavsky-motion",
+      "rows_citing": "2",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/housing-homelessness/los-angeles-city-council-housing-vote-sb-79-delay-low-rise-ordinance",
+      "rows_citing": "2",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/housing-homelessness/los-angeles-ed-1-changes-mayor-karen-bass-affordable-housing-low-income-streamline-revision",
+      "rows_citing": "2",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/housing-homelessness/los-angeles-metro-board-of-directors-sb-79-opposition-vote",
+      "rows_citing": "2",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/la-homeless-underspending",
+      "rows_citing": "2",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/politics/2024-election-california-primary-pasadena-city-council",
+      "rows_citing": "2",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/transportation/street-services-wilmington-boyle-heights-skid-row",
+      "rows_citing": "2",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lankford.senate.gov/newsroom/in-the-news/",
+      "rows_citing": "2",
+      "host": "lankford.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lasvegassun.com/news/2024/oct/15/clark-county-introduces-ordinance-to-ban-camping-i/",
+      "rows_citing": "2",
+      "host": "lasvegassun.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lasvegassun.com/news/2024/sep/24/clark-county-commissioner-wants-to-battle-encampme/",
+      "rows_citing": "2",
+      "host": "lasvegassun.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lasvegassun.com/news/2026/jun/23/switch-wins-las-vegas-expansion-approval-even-as-d/",
+      "rows_citing": "2",
+      "host": "lasvegassun.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lateefahsimon.com/priorities/affordable-housing",
+      "rows_citing": "2",
+      "host": "lateefahsimon.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lateefahsimon.com/priorities/climate-and-environmental-justice",
+      "rows_citing": "2",
+      "host": "lateefahsimon.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lateefahsimon.com/priorities/immigration",
+      "rows_citing": "2",
+      "host": "lateefahsimon.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lateefahsimon.com/priorities/lgbtq-rights",
+      "rows_citing": "2",
+      "host": "lateefahsimon.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2022-04-12/carr-calls-biden-administration-increase-incentivize-domestic-energy",
+      "rows_citing": "2",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2024-05-09/carr-takes-legal-action-stop-biden-administrations-attack-energy",
+      "rows_citing": "2",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lbpost.com/news/city-council-approves-temporary-ban-on-remodel-driven-evictions",
+      "rows_citing": "2",
+      "host": "lbpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lbpost.com/news/politics/elections/long-beach-voter-guide-city-council-district-1/",
+      "rows_citing": "2",
+      "host": "lbpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lcv.org/scorecard/mike-simpson/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2024/bills/static/HB0165.html",
+      "rows_citing": "2",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2025/bills/static/HB0324.html",
+      "rows_citing": "2",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2025/bills/static/HB0410.html",
+      "rows_citing": "2",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2025/bills/static/SB0222.html",
+      "rows_citing": "2",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2026/bills/static/HCR004.html",
+      "rows_citing": "2",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/Session/2026/bills/static/SB0319.html",
+      "rows_citing": "2",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/hb19-1261",
+      "rows_citing": "2",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/sb18-266",
+      "rows_citing": "2",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/sb21-131",
+      "rows_citing": "2",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/sb21-175",
+      "rows_citing": "2",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB77",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?211+mbr+H224C",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+mbr+H242S",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+mbr+H224C",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+mbr+H242C",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+mbr+S19C",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB785",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB900",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+HB174",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+HB199",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+SB0302",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+ful+SB3",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+S124C",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+S131C",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0001",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0406",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB107",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB174",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB954",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB0304",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB0373",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB0588",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB0729",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB255",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB274",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB3",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB300",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB53",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB588",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+SB78",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+HV0064",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+HV0202",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+HV0958",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+HV1115",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+HV1127",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+HV1166",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+HV1267",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+HV1680",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+HV1723",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0134SB0393",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0304SB0234",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0307",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0340SB0016",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0369",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0382",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0403",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0410",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0430",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0435",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0582HB0001",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0592",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?251+sum+HB1490",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?251+sum+SJ1",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?ses=241&typ=vot&val=HV1127",
+      "rows_citing": "2",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=200120020AB2491",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=200120020AB767",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=200720080AB288",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201120120SB810",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201320140AB341",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201320140SB1441",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160AB1343",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160AB1392",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160AB1496",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160AB2756",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160AB329",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160SB1146",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160SB1161",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160SB1380",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160SB1383",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160SB277",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160SB4",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180AB1008",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180SB190",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180SB29",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180SB31",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180SB323",
+      "rows_citing": "2",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

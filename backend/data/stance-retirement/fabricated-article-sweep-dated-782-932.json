@@ -1,0 +1,1068 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--from 782 --to 932 --pace 1200",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and siblings from the same month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "INCONCLUSIVE": "no sibling coverage for that host+month, so absence proves nothing",
+    "NO_ANSWER": "host did not answer at all — invented-host sweep territory, not this one"
+  },
+  "tally": {
+    "LIVE": 149,
+    "EXISTS": 1
+  },
+  "findings": [
+    {
+      "url": "https://afcitizen.com/2026/03/19/utah-county-commission-seat-a-profiles/",
+      "rows_citing": "1",
+      "host": "afcitizen.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://aguilar.house.gov/2018/07/25/aguilar-amendments-protect-daca-recipients-deportation-pass/",
+      "rows_citing": "1",
+      "host": "aguilar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://aguilar.house.gov/2019/06/25/aguilar-s-provision-allow-daca-recipients-serve-federal-government/",
+      "rows_citing": "1",
+      "host": "aguilar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://aguilar.house.gov/2022/05/11/rep-aguilar-supports-nearly-40-billion-in-emergency-security-and-humanitarian-aid-for-ukraine/",
+      "rows_citing": "1",
+      "host": "aguilar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://aguilar.house.gov/2022/07/15/rep-aguilar-votes-to-ensure-access-to-abortion/",
+      "rows_citing": "1",
+      "host": "aguilar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://aguilar.house.gov/2022/07/20/rep-aguilar-votes-to-protect-marriage-equality/",
+      "rows_citing": "1",
+      "host": "aguilar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://aguilar.house.gov/2022/08/26/rep-aguilar-passes-the-inflation-reduction-act/",
+      "rows_citing": "1",
+      "host": "aguilar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://aguilar.house.gov/2022/12/08/rep-aguilar-votes-to-enshrine-marriage-equality/",
+      "rows_citing": "1",
+      "host": "aguilar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://aguilar.house.gov/2025/10/20/rep-aguilar-on-kqed/",
+      "rows_citing": "1",
+      "host": "aguilar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://aguilar.house.gov/2026/02/19/rep-aguilar-tours-local-business-hurt-by-trumps-tariffs/",
+      "rows_citing": "1",
+      "host": "aguilar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://alabamareflector.com/2024/04/20/aid-to-ukraine-israel-overwhelmingly-approved-by-u-s-house-in-bipartisan-vote/",
+      "rows_citing": "1",
+      "host": "alabamareflector.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://alaskabeacon.com/2025/10/21/anchorage-pastor-matt-schultz-to-challenge-rep-nick-begich-in-2026-u-s-house-race/",
+      "rows_citing": "1",
+      "host": "alaskabeacon.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ari.us/wp-content/uploads/2025/06/State-Policymaker-Coalition-Letter-Oppose-AI-Preemption-6-3-25.pdf",
+      "rows_citing": "1",
+      "host": "ari.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://arktimes.com/arkansas-blog/2026/05/19/libertarian-u-s-senate-candidate-announces-campaign-kickoff",
+      "rows_citing": "1",
+      "host": "arktimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azluminaria.org/2023/10/13/voter-guide-tucsons-ward-4-city-council-race-between-nikki-lee-and-ross-kaplowitch/",
+      "rows_citing": "1",
+      "host": "azluminaria.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azluminaria.org/2025/03/04/pima-county-grapples-with-budget-shortfalls-tax-hikes-sheriffs-department/",
+      "rows_citing": "1",
+      "host": "azluminaria.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azluminaria.org/2025/04/15/supervisors-appoint-andres-cano-to-represent-pima-countys-district-5/",
+      "rows_citing": "1",
+      "host": "azluminaria.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azluminaria.org/2026/01/30/pima-county-supervisors-share-2026-priorities-from-leadership-hire-to-addiction-response/",
+      "rows_citing": "1",
+      "host": "azluminaria.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azluminaria.org/2026/04/21/tucson-city-council-at-odds-on-how-to-move-forward-with-fare-free-transit/",
+      "rows_citing": "1",
+      "host": "azluminaria.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azluminaria.org/2026/06/10/tucson-approves-transit-ambassador-program-and-more-police-patrols-amid-sun-tran-strike-threat/",
+      "rows_citing": "1",
+      "host": "azluminaria.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2019/10/25/legislator-readies-defense-of-heart-and-soul-of-sb1070-as-tucson-voters-decide-on-sanctuary-city-measure/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2020/02/25/ice-detainers-sanctuary-cities-bill-still-alive/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2021/03/09/its-past-time-for-cleaner-cars-on-arizona-roadways/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2021/06/22/shawnna-bolick-author-of-bill-to-reject-voters-presidential-choice-running-to-be-top-elections-official/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2021/06/24/corporations-must-pay-their-fair-share-if-we-want-a-21st-century-infrastructure/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2021/07/20/gop-sen-wendy-rogers-defends-her-promotion-of-racist-great-replacement-ideology/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2023/01/18/pair-of-proposed-bills-would-criminalize-homelessness-in-arizona/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2024/03/13/democrats-push-for-strongest-ever-vehicle-emissions-standards-transition-to-evs/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2024/03/26/arizona-republicans-could-ask-voters-to-enshrine-the-right-to-a-gas-stove-in-the-constitution/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2024/04/15/dems-say-republicans-broke-senate-rules-by-ignoring-attempts-to-force-a-vote-on-an-abortion-ban-repeal/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2024/05/16/republicans-take-aim-at-the-convenience-of-voting-with-sweeping-election-reform-ballot-measure/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2024/06/04/ethics-panel-concludes-2-dems-broke-az-house-rules-by-yelling-at-republicans-amid-abortion-uproar/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2025/10/21/solar-advocates-warn-epa-cuts-to-solar-energy-send-arizona-backwards-amid-energy-demands/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2025/11/24/gop-pushes-constitutional-amendment-to-restrict-arizona-early-voting/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2026/03/18/arizona-republicans-stuff-vetoed-proposals-into-a-must-pass-agency-extension-bill/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2026/05/06/pima-county-can-require-judicial-warrants-before-letting-ice-onto-its-property-mayes-says/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/2026/06/13/after-compromise-dies-arizona-gop-rushes-through-ballot-referral-to-block-voucher-reforms/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bangordailynews.com/2013/10/02/politics/maine-house-gop-leader-introduces-2-welfare-reform-bills-democrats-say-they-vilify-poor-families/",
+      "rows_citing": "1",
+      "host": "bangordailynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bangordailynews.com/2025/06/24/politics/maine-elections/rick-bennett/",
+      "rows_citing": "1",
+      "host": "bangordailynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://barragan.house.gov/2020/09/17/schakowsky-barragan-introduce-legislation-to-end-fossil-fuel-expansion-and-protect-our-communities/",
+      "rows_citing": "1",
+      "host": "barragan.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://barragan.house.gov/2021/04/12/barragan-introduces-climate-justice-grants-act/",
+      "rows_citing": "1",
+      "host": "barragan.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://barragan.house.gov/2022/06/24/congresswoman-barragan-reacts-to-supreme-court-decision-to-overturn-roe-v-wade-2/",
+      "rows_citing": "1",
+      "host": "barragan.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://barragan.house.gov/2022/07/15/rep-barragan-votes-to-protect-womens-access-to-abortion-protections-for-reproductive-health-freedom/",
+      "rows_citing": "1",
+      "host": "barragan.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://barragan.house.gov/2022/07/19/rep-barragan-votes-to-protect-marriage-equality/",
+      "rows_citing": "1",
+      "host": "barragan.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://barragan.house.gov/2022/12/08/rep-barragan-votes-to-pass-respect-for-marriage-act-sending-the-bill-to-president-biden/",
+      "rows_citing": "1",
+      "host": "barragan.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://barragan.house.gov/2025/11/18/press-release-rep-barragan-introduces-the-heal-a-i-act-to-encourage-further-development-of-a-i-literacy-for-medical-students/",
+      "rows_citing": "1",
+      "host": "barragan.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://barragan.house.gov/2026/01/07/reps-barragan-obernolte-introduce-bipartisan-legislation-to-improve-public-understanding-and-trust-in-artificial-intelligence/",
+      "rows_citing": "1",
+      "host": "barragan.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://barragan.house.gov/2026/01/20/reps-barragan-and-brown-introduce-bill-to-open-door-for-faith-based-organizations-and-institutions-of-higher-education-to-build-affordable-housing/",
+      "rows_citing": "1",
+      "host": "barragan.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://barragan.house.gov/2026/02/18/rep-barragan-holds-day-of-action-on-the-state-of-health-care-roundtable-with-community-health-center-leadership-and-physicians-to-discuss-high-cost-of-health-care/",
+      "rows_citing": "1",
+      "host": "barragan.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonvalleytimes.com/2014/08/14/officials-see-intel-pledge-as-legacy/",
+      "rows_citing": "1",
+      "host": "beavertonvalleytimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonvalleytimes.com/2023/06/16/beaverton-raises-property-taxes-using-decades-old-oregon-laws/",
+      "rows_citing": "1",
+      "host": "beavertonvalleytimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonvalleytimes.com/2023/10/05/construction-for-beavertons-year-round-homeless-shelter-set-to-start-next-month/",
+      "rows_citing": "1",
+      "host": "beavertonvalleytimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonvalleytimes.com/2024/03/06/sherwood-breaks-ground-on-1000-foot-pedestrian-bridge-across-highway-99w/",
+      "rows_citing": "1",
+      "host": "beavertonvalleytimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonvalleytimes.com/2024/11/21/a-beacon-of-hope-beavertons-first-permanent-homeless-shelter-is-complete/",
+      "rows_citing": "1",
+      "host": "beavertonvalleytimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonvalleytimes.com/2025/07/20/beaverton-named-global-finalist-in-bloomberg-mayors-challenge-for-innovative-housing-plan/",
+      "rows_citing": "1",
+      "host": "beavertonvalleytimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonvalleytimes.com/2025/11/04/washington-county-declares-states-of-emergency-over-ice-snap-concerns/",
+      "rows_citing": "1",
+      "host": "beavertonvalleytimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonvalleytimes.com/2026/02/17/opinion-fais-approach-to-public-safety-gets-it-right/",
+      "rows_citing": "1",
+      "host": "beavertonvalleytimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonvalleytimes.com/2026/03/11/beaverton-looks-at-possible-monthly-fee-on-utility-bills-to-help-with-declining-revenues/",
+      "rows_citing": "1",
+      "host": "beavertonvalleytimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonvalleytimes.com/2026/05/30/beaverton-metro-cuts-the-ribbon-on-multigenerational-affordable-housing-complex-amity-orchards/",
+      "rows_citing": "1",
+      "host": "beavertonvalleytimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2020/08/25/ron-rondo-boozell-runs-for-the-bend-city-council-again/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2020/09/24/perkins-piper-and-boozell-face-off-for-position-no-3-on-bend-city-council/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2021/06/01/mendez-broadman-team-up-to-promote-crosstown-dedicated-bike-lanes/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2022/11/01/new-changes-to-bends-proposed-homelessness-code-try-to-balance-concerns-demands/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2024/06/22/bends-newest-policy-is-meant-to-protect-urban-tree-canopy/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2024/10/03/bend-approves-stricter-rules-for-living-in-vehicles/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2024/10/16/campbell-guards-long-held-bend-council-seat-in-three-way-race/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2024/10/24/deschutes-commission-flips-in-support-homeless-camp-plan-for-juniper-ridge/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2025/06/23/bend-tax-rebates-for-housing-near-100-million/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2025/08/05/deschutes-county-backs-thornburgh-resort-plan-again/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2025/09/30/bend-deschutes-county-rethink-closure-of-sanctioned-homeless-camp/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2026/01/15/bend-drafts-policy-to-stop-ice-on-city-property/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2026/01/21/bend-deschutes-county-push-back-closure-of-temporary-homeless-camp/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2026/02/24/in-fight-over-bends-climate-fee-neither-side-is-happy/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2026/03/09/central-oregon-legislators-made-strides-in-short-session/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2026/04/15/bend-weighs-new-fee-on-gas-appliances-in-homes-to-curb-emissions/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2026/04/21/editorial-rules-for-water-in-central-oregon-may-change/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2026/06/04/bend-city-council-moves-forward-with-climate-pollution-fee/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bendbulletin.com/2026/06/19/bend-council-mike-riley-will-not-run-for-re-election/",
+      "rows_citing": "1",
+      "host": "bendbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beverlypress.com/2024/07/board-stays-the-course-on-homelessness-plan/",
+      "rows_citing": "1",
+      "host": "beverlypress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beverlypress.com/2026/01/danny-hang-begins-term-as-wehos-vice-mayor/",
+      "rows_citing": "1",
+      "host": "beverlypress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beverlypress.com/2026/06/beverly-hills-approves-transit-plan-for-sb-79/",
+      "rows_citing": "1",
+      "host": "beverlypress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beverlypress.com/2026/07/corman-charts-course-for-the-future-of-beverly-hills/",
+      "rows_citing": "1",
+      "host": "beverlypress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bikeportland.org/2022/08/11/beaverton-gets-2-million-grant-for-downtown-loop-project-361391",
+      "rows_citing": "1",
+      "host": "bikeportland.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bikeportland.org/2024/06/14/tigard-beaverton-councilors-face-cycling-conditions-on-policy-ride-387570",
+      "rows_citing": "1",
+      "host": "bikeportland.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://billswire.usatoday.com/story/news/politics/elections/candidate-profiles/2022/06/01/illinois-primary-election-bill-redpath-us-senate-candidate/9752511002/",
+      "rows_citing": "1",
+      "host": "billswire.usatoday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2022/10/27/5374",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2023/05/11/5614",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2023/11/16/5789",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2024/08/12/6008",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2024/10/11/6074",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2025/05/16/6259",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2025/06/02/6274",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2025/07/01/6296",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2025/10/03/6366",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2025/10/10/6371",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2025/11/20/6389",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2025/12/05/6397",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2026/01/21/6431",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/news/2026/02/02/6440",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomingtonian.com/2021/05/06/plexes-approved-in-bloomington-but-with-conditions-still-up-for-legislation-political-battle-continues-online-in-divided-city/",
+      "rows_citing": "1",
+      "host": "bloomingtonian.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomingtonian.com/2024/04/30/letter-statement-regarding-the-violation-of-first-amendment-rights-on-iub-campus/",
+      "rows_citing": "1",
+      "host": "bloomingtonian.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomingtonian.com/2025/05/21/press-release-monroe-county-commissioners-slam-election-board-for-blocking-vote-centers-call-decision-a-blow-to-voter-access/",
+      "rows_citing": "1",
+      "host": "bloomingtonian.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomingtonian.com/2025/07/30/video-we-cant-arrest-our-way-out-bloomington-mayor-on-homeless-crisis-drug-raids/",
+      "rows_citing": "1",
+      "host": "bloomingtonian.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomingtonian.com/2025/08/21/lt-gov-beckwith-tells-builders-state-must-cut-red-tape-protect-small-towns-and-expand-housing-opportunities/",
+      "rows_citing": "1",
+      "host": "bloomingtonian.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomingtonian.com/2025/09/26/lillian-young-launches-campaign-for-indiana-house-with-bloomington-town-hall-on-trans-rights/",
+      "rows_citing": "1",
+      "host": "bloomingtonian.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bluevirginia.us/2024/04/video-delegates-mark-sickles-rodney-willett-and-kannan-srinivasan-join-advocates-and-protect-our-care-virginia-to-celebrate-sixth-anniversary-of-medicaid-expansion-and-its-impact-on-rural-virginia/",
+      "rows_citing": "1",
+      "host": "bluevirginia.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bluevirginia.us/2025/07/democrat-melvin-tull-launches-campaign-for-congress-in-virginias-1st-district-argues-correctly-that-rep-rob-wittman-r-va01-has-failed-the-families-that-depend-on-him/",
+      "rows_citing": "1",
+      "host": "bluevirginia.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bluevirginia.us/2025/10/dr-nila-devanath-d-launches-campaign-for-congress-in-va02-currently-misrepresented-by-trump-loyalist-rep-jen-kiggans-r-va02/",
+      "rows_citing": "1",
+      "host": "bluevirginia.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bluevirginia.us/2026/02/shannon-taylor-statement-on-new-reporting-that-rob-wittman-voted-to-slash-his-own-taxes-on-his-triple-decker-beach-house/",
+      "rows_citing": "1",
+      "host": "bluevirginia.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bluevirginia.us/2026/03/ag-jay-jones-joins-coalition-of-24-states-dc-etc-in-challenging-trump-epas-unlawful-rollback-of-2009-greenhouse-gas-endangerment-finding/",
+      "rows_citing": "1",
+      "host": "bluevirginia.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bluevirginia.us/2026/04/statements-by-rep-eugene-vindman-rep-don-beyer-elaine-luria-tom-perriello-shannon-taylor-etc-after-virginia-approves-new-us-house-districts/",
+      "rows_citing": "1",
+      "host": "bluevirginia.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bluevirginia.us/2026/06/a-few-thoughts-on-va01-democratic-candidate-shannon-taylors-serve-the-people-first-agenda/",
+      "rows_citing": "1",
+      "host": "bluevirginia.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2020/08/13/bloomington-city-council-oks-habitat-for-humanity-project-to-build-70-houses-in-southwest-part-of-town/",
+      "rows_citing": "1",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2020/09/24/split-votes-on-race-related-topics-by-city-county-electeds/",
+      "rows_citing": "1",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2021/02/22/proposed-ordinance-giving-protections-to-houseless-encampments-gets-a-look-from-bloomington-human-rights-group/",
+      "rows_citing": "1",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2021/03/04/bloomington-city-council-votes-down-proposed-law-on-protections-for-houseless-on-4-4-tie-at-321-a-m/",
+      "rows_citing": "1",
+      "host": "bsquarebulletin.com",
+      "status": 404,
+      "verdict": "EXISTS",
+      "captures": 10
+    },
+    {
+      "url": "https://bsquarebulletin.com/2021/08/24/bloomington-city-council-critical-on-first-night-of-2022-budget-hearings-police-parking-sidewalks/",
+      "rows_citing": "1",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2022/06/16/3-oks-in-3-days-bloomington-gets-needed-nods-for-high-speed-internet-fiber-deal-with-meridiam/",
+      "rows_citing": "1",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2023/05/11/on-4-5-vote-city-council-rejects-direct-oversight-of-bloomington-traffic-calming-greenways-program/",
+      "rows_citing": "1",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2023/10/05/5-4-bloomington-council-vote-3-more-stops-not-just-dunn-okd-for-reinstallation-on-7-line-bicycle-route/",
+      "rows_citing": "1",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2024/04/03/gaza-ceasefire-resolution-gets-9-0-vote-from-bloomington-council-mayoral-veto-uncertain/amp/",
+      "rows_citing": "1",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2024/05/16/140-acre-rezone-in-southwest-part-of-town-okd-by-bloomington-city-council-on-7-2-vote/",
+      "rows_citing": "1",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2024/09/04/bloomington-mayor-city-council-try-to-tackle-2025-budget-tensions-ahead-of-sept-25-hearing/",
+      "rows_citing": "1",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2024/09/28/bloomington-mulls-go-bonds-as-way-to-keep-tax-rate-constant-but-increase-amount-paid-by-14-5/",
+      "rows_citing": "1",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsquarebulletin.com/2024/11/21/bloomington-oks-4-3m-in-bonds-for-capital-projects-property-owners-to-pay-more-tax-as-a-result/",
+      "rows_citing": "1",
+      "host": "bsquarebulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2023/01/26/budd-sponsors-bill-to-end-taxpayer-funding-of-abortions/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2023/01/27/budd-sponsors-a-plus-act/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2023/02/09/budd-sponsors-felony-murder-for-deadly-fentanyl-distribution-act/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2023/03/06/budd-cosponsors-no-tiktok-on-united-states-devices-act/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2023/05/18/budd-proposes-bill-to-make-assaulting-a-police-officer-a-deportable-offense/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2023/07/18/budd-markey-introduce-bipartisan-bills-to-prepare-for-ai-threats/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2023/07/28/budd-lankford-lead-effort-to-protect-religious-liberty-of-federal-contractors/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2023/08/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2024/01/18/budd-signs-amicus-brief-defending-president-trumps-ballot-access/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2024/01/24/budd-leads-colleagues-to-introduce-strategically-lowering-gas-prices-act/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2024/01/26/budd-joins-coalition-blasting-biden-for-pausing-lng-permits/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2024/02/05/budd-statement-opposing-national-security-supplemental-deal/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2024/02/08/budd-statement-opposing-foreign-aid-without-border-security/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2024/02/20/budd-tillis-urge-action-against-mexican-steel-imports-impacting-nc/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2024/02/29/budd-helps-introduce-bill-to-deport-illegal-immigrants-that-commit-duis/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2024/04/17/budd-hagerty-colleagues-introduce-bill-to-prohibit-foreign-nationals-from-funding-u-s-elections/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2024/04/23/budd-announces-opposition-to-foreign-aid-package/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2024/05/24/budd-hassan-introduce-bill-to-cut-taxes-for-small-businesses-to-provide-retirement-plans/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2025/01/10/budd-joins-reintroduction-of-protection-of-women-and-girls-in-sports-act/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2025/01/29/president-trump-signs-budd-britt-laken-riley-act-into-law/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://budd.senate.gov/2026/04/20/senator-budd-introduces-bill-to-provide-transparency-on-medicaid-spending-resulting-from-marijuana-use/",
+      "rows_citing": "1",
+      "host": "budd.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://businesstribune.online/2022/04/22/portland-high-tech-firm-nsi-headed-to-sherwood/",
+      "rows_citing": "1",
+      "host": "businesstribune.online",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://businesstribune.online/2023/05/03/new-affordable-housing-project-approved-at-beaverton-community-center/",
+      "rows_citing": "1",
+      "host": "businesstribune.online",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://businesstribune.online/2024/07/15/tigard-moves-forward-with-river-terrace-2-0-planning-creating-possibility-of-4500-new-homes/",
+      "rows_citing": "1",
+      "host": "businesstribune.online",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://caimmigrant.org/wp-content/uploads/2022/03/Vision-Act-AB-937-Fact-Sheet-ENG.pdf",
+      "rows_citing": "1",
+      "host": "caimmigrant.org",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

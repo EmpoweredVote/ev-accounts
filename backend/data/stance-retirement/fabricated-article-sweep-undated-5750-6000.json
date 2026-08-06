@@ -1,0 +1,1792 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 5750 --to 6000 --pace 1200",
+  "slice": "undated",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 236,
+    "INCONCLUSIVE": 6,
+    "FABRICATED": 3,
+    "NO_ANSWER": 5
+  },
+  "findings": [
+    {
+      "url": "https://www.pa.gov/en/agencies/ltgovernor/newsroom/lt--governor-davis-launches--putting-more-money-back-in-your-poc.html",
+      "rows_citing": "2",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/governor/newsroom/2026-press-releases.html",
+      "rows_citing": "2",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/",
+      "rows_citing": "2",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-announces-bill-to-reopen-lawful-pathway-to-legalization-countering-trumps-cruel-mass-deportation-agenda/",
+      "rows_citing": "2",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-introduces-legislation-to-protect-against-ai-generated-election-disinformation/",
+      "rows_citing": "2",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-joins-sanders-and-over-100-lawmakers-in-reintroduction-of-medicare-for-all/",
+      "rows_citing": "2",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.palegis.us/house/members/bio/1760/rep-rabb/about",
+      "rows_citing": "2",
+      "host": "palegis.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.palegis.us/house/members/bio/1760/rep-rabb/cosponsor",
+      "rows_citing": "2",
+      "host": "palegis.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.palegis.us/legislation/bills/2023/hb300",
+      "rows_citing": "2",
+      "host": "palegis.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pasadenanow.com/main/city-council-approves-community-police-oversight-commission-independent-auditor",
+      "rows_citing": "2",
+      "host": "pasadenanow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pasadenaweekly.com/news/the-future-of-pasadena-mayor-gordo-seeks-2nd-term/article_d0a8a808-ef60-11ed-87f7-630f30dff74b.html",
+      "rows_citing": "2",
+      "host": "pasadenaweekly.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/tag/kevin-stitt",
+      "rows_citing": "2",
+      "host": "pbs.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/tag/maxwell-frost",
+      "rows_citing": "2",
+      "host": "pbs.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.phoenixnewtimes.com/news/1864-abortion-ban-repealed-arizona-senate-18877099/",
+      "rows_citing": "2",
+      "host": "phoenixnewtimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.politifact.com/factchecks/list/?speaker=nick-lalota",
+      "rows_citing": "2",
+      "host": "politifact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.politifact.com/personalities/nick-lalota/",
+      "rows_citing": "2",
+      "host": "politifact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pomonaca.gov/government/mayor-city-council/councilmember-elizabeth-ontiveros-cole",
+      "rows_citing": "2",
+      "host": "pomonaca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.postbulletin.com/news/local/another-candidate-is-running-against-finstad-in-the-1st-congressional-district",
+      "rows_citing": "2",
+      "host": "postbulletin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/mayor-r-rex-parris-embraces-hydrogen-as-the-next-clean-green-fuel-301120456.html",
+      "rows_citing": "2",
+      "host": "prnewswire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.purdueexponent.org/city_state/politics/purdue-professor-runs-for-congress/article_d2936439-caa8-483e-8ff7-8db968073b8e.html",
+      "rows_citing": "2",
+      "host": "purdueexponent.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.quiverquant.com/news/Press+Release:+Utah+Rep.+Mike+Kennedy+Introduces+Algorithm+Accountability+Act+to+Enhance+Online+Family+Safety",
+      "rows_citing": "2",
+      "host": "quiverquant.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.rebeccabennettforcongress.com/priorities/growing-new-jerseys-economy/",
+      "rows_citing": "2",
+      "host": "rebeccabennettforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.rebeccabennettforcongress.com/priorities/lowering-healthcare-costs/",
+      "rows_citing": "2",
+      "host": "rebeccabennettforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.rebeccabennettforcongress.com/priorities/safeguarding-new-jerseys-environment/",
+      "rows_citing": "2",
+      "host": "rebeccabennettforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.reviewjournal.com/local/henderson/a-significant-investment-henderson-annexes-eldorado-valley-land-2771502/",
+      "rows_citing": "2",
+      "host": "reviewjournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.reviewjournal.com/local/henderson/water-rates-to-go-up-in-henderson-2962496/",
+      "rows_citing": "2",
+      "host": "reviewjournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.reviewjournal.com/local/north-las-vegas/barron-rivera-focus-on-jobs-revitalization-in-north-las-vegas-ward-1/",
+      "rows_citing": "2",
+      "host": "reviewjournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.reviewjournal.com/local/north-las-vegas/north-las-vegas-industrial-park-bill-awaits-trumps-signature-3387507/",
+      "rows_citing": "2",
+      "host": "reviewjournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.reviewjournal.com/local/north-las-vegas/not-waiting-for-opportunity-nlv-mayor-goynes-brown-gives-her-final-state-of-the-city-address-3731519/",
+      "rows_citing": "2",
+      "host": "reviewjournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.reviewjournal.com/news/environment/data-centers-will-be-on-the-ballot-in-this-southern-nevada-city-3727498/",
+      "rows_citing": "2",
+      "host": "reviewjournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.reviewjournal.com/news/politics-and-government/candidates-spar-on-housing-density-in-north-las-vegas-race-1671997/",
+      "rows_citing": "2",
+      "host": "reviewjournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.reviewjournal.com/news/politics-and-government/clark-county/crime-homelessness-countys-biggest-challenges-district-c-candidates-say-3054394/",
+      "rows_citing": "2",
+      "host": "reviewjournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.reviewjournal.com/news/politics-and-government/las-vegas/las-vegas-city-council-votes-to-strengthen-camping-ban-3207766/",
+      "rows_citing": "2",
+      "host": "reviewjournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF4&ssn=0&y=2023",
+      "rows_citing": "2",
+      "host": "revisor.mn.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.rounds.senate.gov/issues/immigration",
+      "rows_citing": "2",
+      "host": "rounds.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.saltlakecounty.gov/district-attorney/district-attorney-sim-gill/",
+      "rows_citing": "2",
+      "host": "saltlakecounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.saltlakecounty.gov/regional-development/news/$25-million-in-support-to-affordable-housing/",
+      "rows_citing": "2",
+      "host": "saltlakecounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sandiego.gov/citycouncil/cd6",
+      "rows_citing": "2",
+      "host": "sandiego.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.santaclarita.gov/city-council/jason-gibbs/",
+      "rows_citing": "2",
+      "host": "santaclarita.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.santamonica.gov/elections/2024-11-05/candidates/barry-a-snell",
+      "rows_citing": "2",
+      "host": "santamonica.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.schatz.senate.gov/about/issues/climate-change",
+      "rows_citing": "2",
+      "host": "schatz.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.schatz.senate.gov/about/issues/health-care",
+      "rows_citing": "2",
+      "host": "schatz.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.schatz.senate.gov/about/issues/housing-and-transportation",
+      "rows_citing": "2",
+      "host": "schatz.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.schatz.senate.gov/about/issues/technology",
+      "rows_citing": "2",
+      "host": "schatz.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.schiff.senate.gov/news/press-releases/news-sen-schiff-senate-democrats-urge-trump-admin-to-balance-technological-innovation-with-longstanding-environmental-protections-in-permitting-of-ai-data-centers/",
+      "rows_citing": "2",
+      "host": "schiff.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.schiff.senate.gov/news/press-releases/news-sen-schiff-unveils-landmark-legislation-to-spur-new-housing-boom-address-housing-crisis/",
+      "rows_citing": "2",
+      "host": "schiff.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.schiff.senate.gov/news/press-releases/news-sens-schiff-padilla-colleagues-raise-alarm-on-trump-administration-targeting-cuts-to-medicare-and-medicaid/",
+      "rows_citing": "2",
+      "host": "schiff.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.schiff.senate.gov/news/press-releases/statement-schiff-votes-against-ndaa-cites-policy-riders-and-failure-to-aid-ukraine/",
+      "rows_citing": "2",
+      "host": "schiff.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.schiff.senate.gov/news/press-releases/watch-sen-schiff-demands-accountability-for-ongoing-abuse-of-power-and-force-by-immigration-enforcement-agencies-opposes-additional-dhs-funding/",
+      "rows_citing": "2",
+      "host": "schiff.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.schumer.senate.gov/newsroom/press-releases?page=1&year=2023",
+      "rows_citing": "2",
+      "host": "schumer.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.schumer.senate.gov/newsroom/press-releases?page=4&year=2025",
+      "rows_citing": "2",
+      "host": "schumer.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.schwarzeforsenate.com/campaignissue/a-stronger-american-economy/",
+      "rows_citing": "2",
+      "host": "schwarzeforsenate.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.schwarzeforsenate.com/campaignissue/commonsense-solutions-that-work/",
+      "rows_citing": "2",
+      "host": "schwarzeforsenate.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=117&session=1&vote=00358",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=119&session=1&vote=00071",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=119&session=1&vote=00160",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=119&session=1&vote=00190",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=119&session=1&vote=00600",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00142.xml",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00338.xml",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00006.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00011.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00064.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00075.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00075.xml",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00096.xml",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00178.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00186.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00188.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00190.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00360.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00600.xml",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00076.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00078.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00092.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00101.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00110.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00111.htm",
+      "rows_citing": "2",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sevendaysvt.com/guides/qanda-with-us-house-candidates-41856567/",
+      "rows_citing": "2",
+      "host": "sevendaysvt.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sevendaysvt.com/news/in-john-rodgers-upset-win-some-see-a-bright-political-future-42715158/",
+      "rows_citing": "2",
+      "host": "sevendaysvt.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sevendaysvt.com/news/legal-defense-fund-for-immigrants-surpasses-1-million-goal/",
+      "rows_citing": "2",
+      "host": "sevendaysvt.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.shawnforgeorgia.com/news/secretary-pete-buttigieg-endorses-retired-brigadier-general-shawn-harris-for-ga-14-u-s-congress-seat/",
+      "rows_citing": "2",
+      "host": "shawnforgeorgia.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.shawnforgeorgia.com/on-the-issues/healthcare/",
+      "rows_citing": "2",
+      "host": "shawnforgeorgia.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sherwoodoregon.gov/news/sherwood-councilor-keith-mays-receives-prestigious-leage-of-oregon-cities-award/",
+      "rows_citing": "2",
+      "host": "sherwoodoregon.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.slc.gov/sustainability/climate-positive/",
+      "rows_citing": "2",
+      "host": "slc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.smith.senate.gov/issues/jobs-and-economy/",
+      "rows_citing": "2",
+      "host": "smith.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/ben-ewen-campen",
+      "rows_citing": "2",
+      "host": "somervillema.gov",
+      "status": 404,
+      "verdict": "INCONCLUSIVE",
+      "why": "archive holds no somervillema.gov/city-council/members* siblings either",
+      "control": "somervillema.gov/city-council/members*"
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/jon-link",
+      "rows_citing": "2",
+      "host": "somervillema.gov",
+      "status": 404,
+      "verdict": "INCONCLUSIVE",
+      "why": "archive holds no somervillema.gov/city-council/members* siblings either",
+      "control": "somervillema.gov/city-council/members*"
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/kristen-strezo",
+      "rows_citing": "2",
+      "host": "somervillema.gov",
+      "status": 404,
+      "verdict": "INCONCLUSIVE",
+      "why": "archive holds no somervillema.gov/city-council/members* siblings either",
+      "control": "somervillema.gov/city-council/members*"
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/lance-davis",
+      "rows_citing": "2",
+      "host": "somervillema.gov",
+      "status": 404,
+      "verdict": "INCONCLUSIVE",
+      "why": "archive holds no somervillema.gov/city-council/members* siblings either",
+      "control": "somervillema.gov/city-council/members*"
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/naima-sait",
+      "rows_citing": "2",
+      "host": "somervillema.gov",
+      "status": 404,
+      "verdict": "INCONCLUSIVE",
+      "why": "archive holds no somervillema.gov/city-council/members* siblings either",
+      "control": "somervillema.gov/city-council/members*"
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/wilfred-mbah",
+      "rows_citing": "2",
+      "host": "somervillema.gov",
+      "status": 404,
+      "verdict": "INCONCLUSIVE",
+      "why": "archive holds no somervillema.gov/city-council/members* siblings either",
+      "control": "somervillema.gov/city-council/members*"
+    },
+    {
+      "url": "https://www.somervillema.gov/departments/economic-development",
+      "rows_citing": "2",
+      "host": "somervillema.gov",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "somervillema.gov/departments*",
+      "dated": false
+    },
+    {
+      "url": "https://www.sos.ca.gov/administration/about",
+      "rows_citing": "2",
+      "host": "sos.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sos.ri.gov/about/secretary-of-state-gregg-m-amore",
+      "rows_citing": "2",
+      "host": "sos.ri.gov",
+      "status": 522,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.standard.net/news/2025/jul/04/utah-republicans-celebrate-big-beautiful-bill-passage-health-advocates-dismayed/",
+      "rows_citing": "2",
+      "host": "standard.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tandonforcongress.com/policies/climate/",
+      "rows_citing": "2",
+      "host": "tandonforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tandonforcongress.com/policies/create-better-educational-opportunities-for-our-children/",
+      "rows_citing": "2",
+      "host": "tandonforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tandonforcongress.com/policies/foreign-policy/",
+      "rows_citing": "2",
+      "host": "tandonforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tandonforcongress.com/policies/support-our-immigrant-community/",
+      "rows_citing": "2",
+      "host": "tandonforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.terrytaplin.com/priorities/community-safety",
+      "rows_citing": "2",
+      "host": "terrytaplin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.terrytaplin.com/priorities/homelessness",
+      "rows_citing": "2",
+      "host": "terrytaplin.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/people/jessica-gonzalez/",
+      "rows_citing": "2",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/people/ryan-guillen/",
+      "rows_citing": "2",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.theeastsiderla.com/news/government_and_politics/nelson-grande-l-a-city-council-district-1-candidate/article_bd020452-5e48-46be-91da-0afca58d764d.html",
+      "rows_citing": "2",
+      "host": "theeastsiderla.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.thegazette.com/news/elections/campaign-almanac-emily-s-list-endorses-lindsay-james-for-congress/article_7ff1f82b-9235-5384-9dac-54c224725bc0.html",
+      "rows_citing": "2",
+      "host": "thegazette.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.therhodeislandwave.com/rhode-island-wave-news-stories/dr-stephen-skoly-announces-run-for-congress-in-rhode-islands-2nd-district",
+      "rows_citing": "2",
+      "host": "therhodeislandwave.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tn.gov/governor/news.html",
+      "rows_citing": "2",
+      "host": "tn.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.tracinskiletter.com/p/so-much-for-originalism",
+      "rows_citing": "2",
+      "host": "tracinskiletter.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tracinskiletter.com/p/the-borderline-constitution",
+      "rows_citing": "2",
+      "host": "tracinskiletter.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tramforcongress.com/issues/healthcare",
+      "rows_citing": "2",
+      "host": "tramforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.treasurer.ca.gov/comm-external-urls/fiona-ma-bio.pdf",
+      "rows_citing": "2",
+      "host": "treasurer.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tucsonlocalmedia.com/explorernews/news/investments-for-a-resilient-tomorrow/article_cb9854b7-4343-44e8-bb99-fcd214bbb8dc.html",
+      "rows_citing": "2",
+      "host": "tucsonlocalmedia.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tucsonsentinel.com/local/report/072825_project_blue_council_races/dem-candidates-tucson-council-oppose-proposed-project-blue-data-center",
+      "rows_citing": "2",
+      "host": "tucsonsentinel.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tucsonsentinel.com/local/report/102825_council_public_safety/tucson-council-candidates-struggle-with-solutions-public-safety-issues",
+      "rows_citing": "2",
+      "host": "tucsonsentinel.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ufford4michigan.com/issues/ending-corruption-in-washington",
+      "rows_citing": "2",
+      "host": "ufford4michigan.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ufford4michigan.com/issues/protect-and-expand-healthcare-access",
+      "rows_citing": "2",
+      "host": "ufford4michigan.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.utahcounty.gov/portfolio/jeffrey-s.-gray",
+      "rows_citing": "2",
+      "host": "utahcounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vanhollen.senate.gov/news/press-releases/van-hollen-nadler-chu-introduce-legislation-to-make-polluters-pay-for-fueling-climate-change",
+      "rows_citing": "2",
+      "host": "vanhollen.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vincentforcongress.com/issues/fight-to-end-government-dysfunction",
+      "rows_citing": "2",
+      "host": "vincentforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vincentforcongress.com/issues/issue-1",
+      "rows_citing": "2",
+      "host": "vincentforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/162092-christopher-head/list-votes/close-votes/?session=38",
+      "rows_citing": "2",
+      "host": "vpap.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/225218-joe-mcnamara/list-votes/close-votes/?session=39",
+      "rows_citing": "2",
+      "host": "vpap.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/250114-eric-zehr/list-votes/close-votes/?session=39",
+      "rows_citing": "2",
+      "host": "vpap.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/331499-wren-williams/legislation/",
+      "rows_citing": "2",
+      "host": "vpap.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/369687-mike-cherry/list-votes/close-votes/?session=39",
+      "rows_citing": "2",
+      "host": "vpap.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/380864-eric-phillips/list-votes/close-votes/?session=39",
+      "rows_citing": "2",
+      "host": "vpap.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/455254-mitchell-d-cornett/list-votes/close-votes/?session=39",
+      "rows_citing": "2",
+      "host": "vpap.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/6076-wendell-walker/list-votes/close-votes/?session=39",
+      "rows_citing": "2",
+      "host": "vpap.org",
+      "status": 202,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wamc.org/news/2022-04-20/springfield-city-councilors-want-advance-briefings-on-economic-development-projects",
+      "rows_citing": "2",
+      "host": "wamc.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wamc.org/news/2025-04-12/springfield-city-council-questions-commission-re-appointments-oks-utility-bill-pricing-resolution",
+      "rows_citing": "2",
+      "host": "wamc.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wamc.org/news/2026-01-07/new-springfield-city-council-prez-vice-prez-talk-priorities-heading-into-new-term",
+      "rows_citing": "2",
+      "host": "wamc.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wamc.org/news/2026-01-13/coming-going-incoming-springfield-city-councilors-talk-priorities-outgoing-councilors-reflect-on-work",
+      "rows_citing": "2",
+      "host": "wamc.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wamc.org/news/2026-03-04/springfield-city-council-calls-for-hoophall-classic-to-stay",
+      "rows_citing": "2",
+      "host": "wamc.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/behavioral-health/center-addictions-triage-treatment",
+      "rows_citing": "2",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/cao/measure-34-346-proposed-local-option-levy-2025",
+      "rows_citing": "2",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/cao/news/chair-harrington-issues-levy-results-statement",
+      "rows_citing": "2",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/lut/mstip",
+      "rows_citing": "2",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonexaminer.com/tag/warren-davidson",
+      "rows_citing": "2",
+      "host": "washingtonexaminer.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/politics/interactive/2022/house-vote-count-respect-for-marriage-act/",
+      "rows_citing": "2",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/politics/interactive/2022/senator-vote-count-respect-for-marriage-act/",
+      "rows_citing": "2",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wavy.com/news/politics/candidates/candidate-profile-c-e-cliff-hayes-jr-va-district-91/",
+      "rows_citing": "2",
+      "host": "wavy.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wavy.com/news/politics/candidates/candidate-profile-jackie-hope-glass-va-district-93/",
+      "rows_citing": "2",
+      "host": "wavy.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wboc.com/news/update-epa-rules-us-wind-offshore-permit-issued-in-error/article_15891652-a792-4cfb-8f35-8ac28f91ab80.html",
+      "rows_citing": "2",
+      "host": "wboc.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.westcovina.gov/330/Homeless-Solutions-for-West-Covina",
+      "rows_citing": "2",
+      "host": "westcovina.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.westsidecurrent.com/elections/katy-young-yaroslavsky-set-to-win-la-councils-5th-district-seat-yebri-concedes/article_dc418cf2-651d-11ed-b569-b75e1a947e81.html",
+      "rows_citing": "2",
+      "host": "westsidecurrent.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wfyi.org/news/articles/indiana-senate-passes-medicaid-hip-overhaul-despite-concerns-about-access-coverage",
+      "rows_citing": "2",
+      "host": "wfyi.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wfyi.org/news/articles/israeli-bonds-are-one-of-indianas-best-performing-investments-according-to-state-treasurer",
+      "rows_citing": "2",
+      "host": "wfyi.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wfyi.org/public-affairs/2024-02-10/jefferson-shreve-to-run-for-congress-after-expensive-mayoral-campaign",
+      "rows_citing": "2",
+      "host": "wfyi.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wgbh.org/news/local/2018-05-18/battle-of-the-bridge-a-sit-down-with-quincy-mayor-tom-koch",
+      "rows_citing": "2",
+      "host": "wgbh.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wgbh.org/news/local/2024-02-27/ag-campbell-sues-milton-over-mbta-communities-law-vote",
+      "rows_citing": "2",
+      "host": "wgbh.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wgbh.org/news/politics/2025-11-11/5-things-to-know-about-republican-john-deaton-whos-launching-his-second-us-senate-run",
+      "rows_citing": "2",
+      "host": "wgbh.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wgvunews.org/news/2026-02-18/michigan-u-s-congresswomen-visit-ice-detention-center-in-baldwin",
+      "rows_citing": "2",
+      "host": "wgvunews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wispolitics.com/2021/treasurer-godlewski-statement-in-advance-of-exxon-mobil-annual-shareholder-meeting/",
+      "rows_citing": "2",
+      "host": "wispolitics.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wmur.com/article/brian-cole-candidate-filing-6326/71486445",
+      "rows_citing": "2",
+      "host": "wmur.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wmur.com/article/closeup-sarah-chadzynski-1st-district/66006611",
+      "rows_citing": "2",
+      "host": "wmur.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wmur.com/article/nh-closeup-noveletsky-challenges-pappas-in-nh-01/45477682",
+      "rows_citing": "2",
+      "host": "wmur.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wmur.com/article/sarah-chadzynski-abolishing-ice-closeup-01112026/69967726",
+      "rows_citing": "2",
+      "host": "wmur.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wmur.com/article/victor-orlando-nh-02-gop-race-closeup/70938190",
+      "rows_citing": "2",
+      "host": "wmur.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wpr.org/economy/madison-population-zoning-public-transport-housing-crisis-rent-historic-districts",
+      "rows_citing": "2",
+      "host": "wpr.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wpr.org/news/microsoft-caledonia-data-center-site-ozaukee-county",
+      "rows_citing": "2",
+      "host": "wpr.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wpr.org/news/wisconsin-democrats-governor-race-healthcare-medicaid",
+      "rows_citing": "2",
+      "host": "wpr.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wunc.org/politics/2026-04-21/nc-gov-stein-calls-for-halt-to-tax-reductions-phase-out-of-school-vouchers-in-35b-budget-proposal",
+      "rows_citing": "2",
+      "host": "wunc.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wusf.org/education/2026-04-03/florida-can-fund-religious-charter-schools-ag-uthmeier-says",
+      "rows_citing": "2",
+      "host": "wusf.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wusf.org/politics-issues/2022-12-02/florida-pulls-2-billion-from-the-blackrock-asset-management-firm-over-esg",
+      "rows_citing": "2",
+      "host": "wusf.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wusf.org/politics-issues/2025-06-18/judge-finds-florida-attorney-general-uthmeier-contempt-immigration-law",
+      "rows_citing": "2",
+      "host": "wusf.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wusf.org/politics-issues/2025-11-06/u-s-rep-jimmy-patronis-government-shutdown-property-tax-reform-more",
+      "rows_citing": "2",
+      "host": "wusf.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.xavierbecerra2026.com/priorities/economy-and-affordability/",
+      "rows_citing": "2",
+      "host": "xavierbecerra2026.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.xavierbecerra2026.com/priorities/housing/",
+      "rows_citing": "2",
+      "host": "xavierbecerra2026.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.yahoo.com/news/reflects-americans-voted-utah-leaders-203748813.html",
+      "rows_citing": "2",
+      "host": "yahoo.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.yahoo.com/news/shondra-summers-armstrong-discusses-key-234013964.html",
+      "rows_citing": "2",
+      "host": "yahoo.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.young.senate.gov/newsroom/press-releases/young-supports-laken-riley-act/",
+      "rows_citing": "2",
+      "host": "young.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www12.worcesterma.gov/agendas-minutes/standing-committees/education/pending.pdf",
+      "rows_citing": "2",
+      "host": "www12.worcesterma.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www12.worcesterma.gov/agendas-minutes/standing-committees/public-safety/pending.pdf",
+      "rows_citing": "2",
+      "host": "www12.worcesterma.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://zeteo.com/p/meet-the-disillusioned-veteran-who",
+      "rows_citing": "2",
+      "host": "zeteo.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "http://nevadanewsmakers.com/RayHagar/article.asp?ID=429",
+      "rows_citing": "1",
+      "host": "nevadanewsmakers.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://1819news.com/news/item/see-how-alabama-voted-federal-delegation-split-on-congressional-foreign-aid-package",
+      "rows_citing": "1",
+      "host": "1819news.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://1819news.com/news/item/u-s-rep-jerry-carl-tax-hikes-are-looming-if-democrats-take-control-of-washington",
+      "rows_citing": "1",
+      "host": "1819news.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://a43.asmdc.org/press-releases/20230426-homelessness-accountability-bill-clears-assembly-housing-committee",
+      "rows_citing": "1",
+      "host": "a43.asmdc.org",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://a55.asmdc.org/press-releases/20220217-isaac-bryan-introduces-bill-achieve-justice40-california-historically",
+      "rows_citing": "1",
+      "host": "a55.asmdc.org",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://a55.asmdc.org/press-releases/20220624-assemblymember-isaac-bryan-releases-statement-supreme-court-ruling-overturn",
+      "rows_citing": "1",
+      "host": "a55.asmdc.org",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://abc7.com/post/lancaster-mayor-rex-parris-defends-controversial-comments-giving-homeless-free-fentanyl/16227283/",
+      "rows_citing": "1",
+      "host": "abc7.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://abc7.com/post/los-angeles-mayor-karen-bass-urges-city-council-find-44m-lapd-police-hiring/18277318/",
+      "rows_citing": "1",
+      "host": "abc7.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://abc7.com/post/santa-clarita-council-votes-to-opt-out-of-sanctuary-state-law/3448016/",
+      "rows_citing": "1",
+      "host": "abc7.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://abc7.com/santa-clarita-sanctuary-state-law-california-sb54/3448016/",
+      "rows_citing": "1",
+      "host": "abc7.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://abcnews.com/Politics/graham-platner-oysterman-harbormaster-rural-maine-enters-race/story?id=124758156",
+      "rows_citing": "1",
+      "host": "abcnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://abcnews.com/Politics/joke-republicans-lock-horns-medicaid-proposal/story?id=121803510",
+      "rows_citing": "1",
+      "host": "abcnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://abcnews.com/Politics/trump-pledges-protect-social-security-amid-cost-cutting/story?id=124590567",
+      "rows_citing": "1",
+      "host": "abcnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://abcnews.go.com/Health/utah-governor-signs-bill-banning-abortion-clinics-state/story?id=97905012",
+      "rows_citing": "1",
+      "host": "abcnews.go.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://abcnews.go.com/Politics/men-place-womens-sports-house-gop-votes-roll/story?id=117673985",
+      "rows_citing": "1",
+      "host": "abcnews.go.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://actonmass.org/bills/racially-inclusive-education/",
+      "rows_citing": "1",
+      "host": "actonmass.org",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 135,
+      "control": "actonmass.org/bills*",
+      "dated": false
+    },
+    {
+      "url": "https://actonmass.org/legislators/william-brownsberger/",
+      "rows_citing": "1",
+      "host": "actonmass.org",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 183,
+      "control": "actonmass.org/legislators*",
+      "dated": false
+    },
+    {
+      "url": "https://aflcio.org/scorecard/legislators/ted-lieu",
+      "rows_citing": "1",
+      "host": "aflcio.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://aflcio.org/scorecard/legislators/tony-cardenas",
+      "rows_citing": "1",
+      "host": "aflcio.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ag.ny.gov/individuals/voting-rights",
+      "rows_citing": "1",
+      "host": "ag.ny.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ag.ny.gov/resources/individuals/tenants-homeowners",
+      "rows_citing": "1",
+      "host": "ag.ny.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ag.ny.gov/sites/default/files/reports/oag-fakecommentsreport.pdf",
+      "rows_citing": "1",
+      "host": "ag.ny.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://alicebtoklas.org/statements/statement-on-senator-padillas-vote-for-the-ndaa",
+      "rows_citing": "1",
+      "host": "alicebtoklas.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://americanpromise.net/candidates/gregg-mele",
+      "rows_citing": "1",
+      "host": "americanpromise.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://annatexas.gov/DocumentCenter/View/9130/2025-2026-Work-Plan-Update",
+      "rows_citing": "1",
+      "host": "annatexas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.congress.gov/v3/member/W000806/cosponsored-legislation?api_key=DEMO_KEY&limit=50&sort=updateDate+desc&offset=100",
+      "rows_citing": "1",
+      "host": "api.congress.gov",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.congress.gov/v3/member/W000806/cosponsored-legislation?api_key=DEMO_KEY&limit=50&sort=updateDate+desc&offset=250",
+      "rows_citing": "1",
+      "host": "api.congress.gov",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.congress.gov/v3/member/W000806/cosponsored-legislation?api_key=DEMO_KEY&limit=50&sort=updateDate+desc&offset=300",
+      "rows_citing": "1",
+      "host": "api.congress.gov",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2023R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%202002%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2023R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%202107%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2023R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%203409%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2023R1'%20and%20MeasurePrefix%20eq%20'SB'%20and%20MeasureNumber%20eq%20611%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2024R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%204024%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2025R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%202010%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2025R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%202138%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2025R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%203054%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2025R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%203546%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2025R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%203560%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2026R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%204007%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2026R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%204018%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2026R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%204111%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2026R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%204114%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes?$filter=SessionKey%20eq%20'2026R1'%20and%20MeasurePrefix%20eq%20'HB'%20and%20MeasureNumber%20eq%204149%20and%20VoteName%20eq%20'Rep%20Levy%20E'&$format=json",
+      "rows_citing": "1",
+      "host": "api.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://apnews.com/article/ukraine-funding-taiwan-us-china-military-8cbb671399a51e0e34b9e40f72f51e56",
+      "rows_citing": "1",
+      "host": "apnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://apps.legislature.ky.gov/record/22rs/sb50.html",
+      "rows_citing": "1",
+      "host": "apps.legislature.ky.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://apps.senate.virginia.gov/Senator/memberpage.php?id=S131",
+      "rows_citing": "1",
+      "host": "apps.senate.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://armedservices.house.gov/press-releases/moulton-ai-defense",
+      "rows_citing": "1",
+      "host": "armedservices.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://armedservices.house.gov/press-releases/moulton-ukraine",
+      "rows_citing": "1",
+      "host": "armedservices.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://assembly.ca.gov/assemblymembers/02\r",
+      "rows_citing": "1",
+      "host": "assembly.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://atg.sd.gov/OurOffice/Media/pressreleasesdetail.aspx?id=3010",
+      "rows_citing": "1",
+      "host": "atg.sd.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://atg.sd.gov/OurOffice/Media/pressreleasesdetail.aspx?id=3018",
+      "rows_citing": "1",
+      "host": "atg.sd.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://atg.sd.gov/OurOffice/Media/pressreleasesdetail.aspx?id=3024",
+      "rows_citing": "1",
+      "host": "atg.sd.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://atg.sd.gov/OurOffice/Media/pressreleasesdetail.aspx?id=3035",
+      "rows_citing": "1",
+      "host": "atg.sd.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://atg.sd.gov/OurOffice/Media/pressreleasesdetail.aspx?id=3074",
+      "rows_citing": "1",
+      "host": "atg.sd.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://atg.sd.gov/OurOffice/Media/pressreleasesdetail.aspx?id=3104",
+      "rows_citing": "1",
+      "host": "atg.sd.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://atty.utahcounty.gov/administration/grama",
+      "rows_citing": "1",
+      "host": "atty.utahcounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://atty.utahcounty.gov/criminal/victims",
+      "rows_citing": "1",
+      "host": "atty.utahcounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/briefs/gop-led-committee-vows-arizona-will-remain-innovation-friendly-on-ai-regulation/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://azmirror.com/briefs/phoenix-says-its-ice-policy-is-legal-a-gop-lawmaker-wants-kris-mayes-to-decide/",
+      "rows_citing": "1",
+      "host": "azmirror.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://baird.house.gov/news/documentsingle.aspx?DocumentID=1453",
+      "rows_citing": "1",
+      "host": "baird.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://baird.house.gov/news/documentsingle.aspx?DocumentID=390",
+      "rows_citing": "1",
+      "host": "baird.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://baldwin.senate.gov/news/press-releases",
+      "rows_citing": "1",
+      "host": "baldwin.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beaverton.municipal.codes/enactments/Ord4743",
+      "rows_citing": "1",
+      "host": "beaverton.municipal.codes",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonoregon.gov/1499/Beaverton-Homelessness-Response",
+      "rows_citing": "1",
+      "host": "beavertonoregon.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonoregon.gov/385/Cultural-Inclusion",
+      "rows_citing": "1",
+      "host": "beavertonoregon.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonoregon.gov/410/Active-Transportation-Plan",
+      "rows_citing": "1",
+      "host": "beavertonoregon.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonoregon.gov/420/Beaverton-Downtown-Loop-Project",
+      "rows_citing": "1",
+      "host": "beavertonoregon.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonpolice.org/198/Mental-Health-Response-Team",
+      "rows_citing": "1",
+      "host": "beavertonpolice.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://benmcadamsutah.com/platform/protecting-the-environment/",
+      "rows_citing": "1",
+      "host": "benmcadamsutah.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bentz.house.gov/issues/economy",
+      "rows_citing": "1",
+      "host": "bentz.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bentz.house.gov/issues/education",
+      "rows_citing": "1",
+      "host": "bentz.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett",
+      "rows_citing": "1",
+      "host": "berkeleyca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bethmacy.substack.com/p/they-say-god-can-fix-everything",
+      "rows_citing": "1",
+      "host": "bethmacy.substack.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bettercandidates.org/blog/f/the-system-by-robert-reich---book-review-by-joseph-oddo",
+      "rows_citing": "1",
+      "host": "bettercandidates.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beyer.house.gov/news/documentsingle.aspx?DocumentID=8604",
+      "rows_citing": "1",
+      "host": "beyer.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

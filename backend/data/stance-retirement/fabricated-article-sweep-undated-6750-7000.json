@@ -1,0 +1,1781 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 6750 --to 7000 --pace 1200",
+  "slice": "undated",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 245,
+    "FABRICATED": 3,
+    "EXISTS": 1,
+    "NO_ANSWER": 1
+  },
+  "findings": [
+    {
+      "url": "https://justfacts.votesmart.org/candidate/political-courage-test/179370/gil-cisneros",
+      "rows_citing": "1",
+      "host": "justfacts.votesmart.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://justfacts.votesmart.org/candidate/political-courage-test/68106/matthew-heinz",
+      "rows_citing": "1",
+      "host": "justfacts.votesmart.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://justinneth.substack.com/p/richardson-city-council-work-session-ead",
+      "rows_citing": "1",
+      "host": "justinneth.substack.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kaine.senate.gov/issues/health-care",
+      "rows_citing": "1",
+      "host": "kaine.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/about/committees-and-caucuses",
+      "rows_citing": "1",
+      "host": "kamlager-dove.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/issues/education",
+      "rows_citing": "1",
+      "host": "kamlager-dove.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/issues/health-care",
+      "rows_citing": "1",
+      "host": "kamlager-dove.house.gov",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 21,
+      "control": "kamlager-dove.house.gov/issues*",
+      "dated": false
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/issues/lgbtq",
+      "rows_citing": "1",
+      "host": "kamlager-dove.house.gov",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 21,
+      "control": "kamlager-dove.house.gov/issues*",
+      "dated": false
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/issues/technology",
+      "rows_citing": "1",
+      "host": "kamlager-dove.house.gov",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 21,
+      "control": "kamlager-dove.house.gov/issues*",
+      "dated": false
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/media/press-releases/kamlager-dove-convenes-government-agencies-housing-developers-and-faith",
+      "rows_citing": "1",
+      "host": "kamlager-dove.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/media/press-releases/kamlager-dove-delivers-16-million-butterflys-haven-increase-housing-and",
+      "rows_citing": "1",
+      "host": "kamlager-dove.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/media/press-releases/kamlager-dove-secures-500k-permanent-supportive-housing-site-west-la",
+      "rows_citing": "1",
+      "host": "kamlager-dove.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/media/press-releases/kamlager-dove-statement-congressional-republicans-failure-protect-health-care",
+      "rows_citing": "1",
+      "host": "kamlager-dove.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kamlager-dove.house.gov/media/press-releases/kamlager-dove-statement-pride-month",
+      "rows_citing": "1",
+      "host": "kamlager-dove.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kannanforvirginia.com/press/general-assembly-passes-bipartisan-legislation-to-create-pilot-program-to-place-major-transmission-lines-underground/",
+      "rows_citing": "1",
+      "host": "kannanforvirginia.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kannanforvirginia.com/press/senate-district-32-democratic-nominee-kannan-srinivasan-will-resign-in-january-2025-to-ensure-house-district-26-residents-are-represented-during-the-2025-general-assembly-session-1/",
+      "rows_citing": "1",
+      "host": "kannanforvirginia.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kannanforvirginia.com/press/virginia-lawmakers-approve-legislation-to-track-water-use-by-data-centers-across-virginia/",
+      "rows_citing": "1",
+      "host": "kannanforvirginia.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kansasreflector.com/podcasts/jason-hart-launches-u-s-senate-race-without-constraints-of-a-campaign-manager/",
+      "rows_citing": "1",
+      "host": "kansasreflector.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kansasreflector.com/tag/sen-patrick-schmidt/",
+      "rows_citing": "1",
+      "host": "kansasreflector.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kateforthepeople.substack.com/p/candidates-of-our-dreams-jason-brown",
+      "rows_citing": "1",
+      "host": "kateforthepeople.substack.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://katu.com/news/local/high-stakes-hillsboro-city-council-meeting-to-tackle-data-center-boom-mayor-beach-pace-washington-county-nike-intel",
+      "rows_citing": "1",
+      "host": "katu.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://katu.com/news/local/tigard-voters-weigh-public-safety-bond-tigard-police-department-public-works-debate-over-cost-growth-efficiency-city-councilor-jake-schlack-former-city-manager-bill-monahan",
+      "rows_citing": "1",
+      "host": "katu.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://katu.com/news/local/washington-county-law-enforcement-clarifies-stance-on-federal-immigration-involvement-forest-grove-hillsboro-beaverton-salem-woodburn-marion-ice",
+      "rows_citing": "1",
+      "host": "katu.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://katu.com/news/local/washington-county-leaders-unite-against-ice-activity-and-policy-changes",
+      "rows_citing": "1",
+      "host": "katu.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kelly.house.gov/media/press-releases/kelly-sanchez-moore-gomez-introduce-bipartisan-bill-protect-disabled-veterans",
+      "rows_citing": "1",
+      "host": "kelly.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kevinteater.com/blog/f/restoring-neighborhood-tree-canopies",
+      "rows_citing": "1",
+      "host": "kevinteater.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kffhealthnews.org/morning-breakout/virginia-lawmaker-who-switched-stance-on-medicaid-expansion-was-braced-for-backlash-it-never-came/",
+      "rows_citing": "1",
+      "host": "kffhealthnews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://krcgtv.com/news/local/without-completed-district-maps-missouri-faces-more-lawsuits-us-house-primary-senate-governors-office-paul-berry-iii-republican-gov-chris-sununu-house-speaker-rob-vescovo-rep-ann-wagner-gop-gov-ron-desantis-sen-andrew-koenig",
+      "rows_citing": "1",
+      "host": "krcgtv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kslnewsradio.com/1971735/lt-gov-henderson-announces-bonus-for-childcare-workers/",
+      "rows_citing": "1",
+      "host": "kslnewsradio.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kslnewsradio.com/elections-politics-government/elections/lt-gov-deidre-henderson-hits-out-against-misinformation-and-election-denying-before-the-vote/2141982/",
+      "rows_citing": "1",
+      "host": "kslnewsradio.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kslnewsradio.com/utah/foreign-influence-reduction-bill/2183899/",
+      "rows_citing": "1",
+      "host": "kslnewsradio.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kslnewsradio.com/utah/salt-lake-co-jail-expansion/2292291/",
+      "rows_citing": "1",
+      "host": "kslnewsradio.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ksltv.com/488983/sl-county-council-votes-unanimously-to-ban-mining-in-area-canyons-including-parleys/",
+      "rows_citing": "1",
+      "host": "ksltv.com",
+      "status": 404,
+      "verdict": "EXISTS",
+      "captures": 4
+    },
+    {
+      "url": "https://ktla.com/news/local-news/city-council-candidate-pledges-to-live-in-macarthur-park-until-its-cleaned-up/",
+      "rows_citing": "1",
+      "host": "ktla.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ktla.com/news/local-news/lancaster-creates-new-police-department/",
+      "rows_citing": "1",
+      "host": "ktla.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kuer.org/politics-government/2025-10-03/theres-partisan-squabbling-ahead-of-utah-lawmakers-expected-redistricting-vote",
+      "rows_citing": "1",
+      "host": "kuer.org",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://kutv.com/news/local/at-utah-capitol-rally-gov-cox-urges-united-support-for-ukraine-rally",
+      "rows_citing": "1",
+      "host": "kutv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kutv.com/news/local/salt-lake-county-da-among-39-us-prosecutors-demanding-police-reform",
+      "rows_citing": "1",
+      "host": "kutv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kutv.com/news/local/salt-lake-county-district-attorney-sim-gill-releases-use-of-deadly-force-policy-ideas",
+      "rows_citing": "1",
+      "host": "kutv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kutv.com/news/local/utah-legislature-unanimously-votes-to-condemn-russias-invasion-of-ukraine-house-senate",
+      "rows_citing": "1",
+      "host": "kutv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kutv.com/news/politics/utah-rental-market-housing-house-bill-316-business-labor-committee-rent-increases-represenative-gay-lynn-bennion-landlords-tenants",
+      "rows_citing": "1",
+      "host": "kutv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kutv.com/news/utahs-growing-pains/rapid-growth-drives-infrastructure-boom-in-utah-county",
+      "rows_citing": "1",
+      "host": "kutv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://labusinessjournal.com/featured/receipts-tax-to-be-reevaluated/",
+      "rows_citing": "1",
+      "host": "labusinessjournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://labusinessjournal.com/real-estate/fire-resistant-debate-brews/",
+      "rows_citing": "1",
+      "host": "labusinessjournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lacounty.gov/government/board-of-supervisors/hilda-l-solis/",
+      "rows_citing": "1",
+      "host": "lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/ab-71-homelessness-funding-corporate-tax",
+      "rows_citing": "1",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/glendale-just-approved-what-may-be-californias-last-natural-gas-lit-power-plant",
+      "rows_citing": "1",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/housing-homelessness/los-angeles-city-council-votes-oppose-sb-79-housing-density-transit-wiener-bill",
+      "rows_citing": "1",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/housing-homelessness/los-angeles-city-rent-control-stabilization-vote-three-percent-increase-housing-landlord-tenant",
+      "rows_citing": "1",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/housing-homelessness/los-angeles-fire-eviction-protections-proposal-vote",
+      "rows_citing": "1",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/housing-homelessness/los-angeles-rent-increase-freeze-covid-pandemic-rso-six-month-extension-delay-9-7-4-percent-housing-tenants-landlords",
+      "rows_citing": "1",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/housing-homelessness/pasadena-affordable-housing-city-council-design-review-vote-eaton-fire",
+      "rows_citing": "1",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/politics/voter-guides/2026-election-california-primary-pasadena-city-councilmember-district-7",
+      "rows_citing": "1",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/politics/why-city-officials-are-warning-that-the-olympics-could-bankrupt-los-angeles",
+      "rows_citing": "1",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/transportation/la-metro-budget",
+      "rows_citing": "1",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/shows/airtalk/la-city-council-places-independent-redistricting-on-2024-ballot",
+      "rows_citing": "1",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lalgbtcenter.org/vanguard/we-will-get-through-this-rep-kamlager-dove-energizes-center-community-in-post-election-gathering/",
+      "rows_citing": "1",
+      "host": "lalgbtcenter.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lancasteronline.com/news/local/lancaster-city-council-votes-to-approve-data-center-benefits-agreement/article_b05cb1fd-a585-4c4f-8945-c96ada3172ad.html",
+      "rows_citing": "1",
+      "host": "lancasteronline.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://larson.house.gov/media-center/press-releases/larson-and-200-members-congress-introduce-landmark-social-security",
+      "rows_citing": "1",
+      "host": "larson.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lasvegassun.com/news/2011/may/28/unions-speaking-loud-nlv-race/",
+      "rows_citing": "1",
+      "host": "lasvegassun.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lasvegassun.com/news/2024/may/08/clark-county-allocates-funds-to-help-build-1273-af/",
+      "rows_citing": "1",
+      "host": "lasvegassun.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lasvegassun.com/news/2024/sep/12/las-vegas-mayor-pro-tem-to-receive-award-for-leade/",
+      "rows_citing": "1",
+      "host": "lasvegassun.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lasvegassun.com/news/2025/feb/17/las-vegas-councilwoman-aims-to-reinvigorate-commun/",
+      "rows_citing": "1",
+      "host": "lasvegassun.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lasvegassun.com/news/2025/nov/13/henderson-mayor-touts-crime-reduction-major-invest/",
+      "rows_citing": "1",
+      "host": "lasvegassun.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lasvegasweekly.com/ae/2026/mar/05/north-las-vegas-mayor-pamela-goynes-qa/",
+      "rows_citing": "1",
+      "host": "lasvegasweekly.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lasvegasweekly.com/news/2025/jan/30/clark-countys-camping-ban-goes-into-effect/",
+      "rows_citing": "1",
+      "host": "lasvegasweekly.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lateefahsimon.com/priorities/affordability-and-job-creation",
+      "rows_citing": "1",
+      "host": "lateefahsimon.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lateefahsimon.com/priorities/building-a-care-economy",
+      "rows_citing": "1",
+      "host": "lateefahsimon.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lateefahsimon.com/priorities/innovation",
+      "rows_citing": "1",
+      "host": "lateefahsimon.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lateefahsimon.com/priorities/racial-and-social-justice",
+      "rows_citing": "1",
+      "host": "lateefahsimon.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lateefahsimon.com/priorities/reproductive-freedom",
+      "rows_citing": "1",
+      "host": "lateefahsimon.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2020-07-09/carr-commends-united-states-supreme-court-protecting-religious-liberty",
+      "rows_citing": "1",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2021-03-04/carr-joins-21-state-amicus-brief-supporting-tennessee-abortion-waiting",
+      "rows_citing": "1",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2022-06-24/carr-issues-statement-us-supreme-courts-decision-dobbs-v-jackson-womens",
+      "rows_citing": "1",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2024-04-29/carr-takes-action-protect-womens-sports",
+      "rows_citing": "1",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2025-02-14/carr-defends-doge-eliminate-government-waste-protect-taxpayer-dollars",
+      "rows_citing": "1",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2025-04-02/carr-takes-new-action-deport-violent-tren-de-aragua-gang-members",
+      "rows_citing": "1",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2025-10-23/carr-backs-rule-requiring-proof-citizenship-vote-federal-elections",
+      "rows_citing": "1",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2026-01-13/carr-joins-republican-ags-fight-protect-womens-sports",
+      "rows_citing": "1",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2026-01-27/carr-secures-another-victory-defense-georgias-election-integrity-act",
+      "rows_citing": "1",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2026-02-20/carr-pushes-permanent-halt-medicare-and-medicaid-funding-child-sex-change",
+      "rows_citing": "1",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2026-04-07/carr-joins-25-state-coalition-amicus-brief-against-noncitizen-voting",
+      "rows_citing": "1",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2026-05-26/carr-us-supreme-court-one-city-cannot-set-energy-policy-whole-country",
+      "rows_citing": "1",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://law.georgia.gov/press-releases/2026-05-28/carr-pushes-stronger-online-protections-children",
+      "rows_citing": "1",
+      "host": "law.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lbforward.org/news/long-beach-approves-more-protections-for-tenants-aligning-with-state-law/",
+      "rows_citing": "1",
+      "host": "lbforward.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lbpost.com/news/budget-committee-tenant-eviction-fund-budget-oversight/",
+      "rows_citing": "1",
+      "host": "lbpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lbpost.com/news/city-council-approves-framework-for-reconciliation-plan-to-address-racial-inequity/",
+      "rows_citing": "1",
+      "host": "lbpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lbpost.com/news/hundreds-gather-in-long-beach-to-rally-for-abortion-rights-in-wake-of-draft-supreme-court-ruling",
+      "rows_citing": "1",
+      "host": "lbpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lbpost.com/news/immigration/long-beach-strengthens-its-sanctuary-city-laws-ahead-of-second-trump-term",
+      "rows_citing": "1",
+      "host": "lbpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lbpost.com/news/long-beach-mayoral-candidates-stake-out-positions-on-rent-control-queen-mary-in-east-long-beach-debate/",
+      "rows_citing": "1",
+      "host": "lbpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lbpost.com/news/long-beach-will-make-it-harder-more-expensive-to-evict-tenants-to-remodel-units/",
+      "rows_citing": "1",
+      "host": "lbpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lbpost.com/news/police-budget-long-beach-defund-city-council/",
+      "rows_citing": "1",
+      "host": "lbpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lbpost.com/news/politics/long-beach-oil-revenue-renegotiate-tidelands-state/",
+      "rows_citing": "1",
+      "host": "lbpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2022/bills/static/HB0232.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2022/bills/static/HCR021.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2023/bills/static/SB0283.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2024/bills/sbillint/SB0149.htm",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2024/bills/static/HB0261.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2024/bills/static/HB0298.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2024/bills/static/HB0421.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2024/bills/static/HB0452.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2024/bills/static/HB0463.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2024/bills/static/HB0464.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2024/bills/static/SB0057.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2024/bills/static/SB0149.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2024/bills/static/SB0220.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2025/bills/static/HB0179.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2025/bills/static/HB0300.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2025/bills/static/HB0326.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2025/bills/static/HB0389.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2025/bills/static/HB0393.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2025/bills/static/HB0430.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2025/bills/static/HB0455.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2025/bills/static/HCR004.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2025/bills/static/SB0192.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2025/bills/static/SB0284.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2026/bills/static/HB0015.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2026/bills/static/HB0174.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2026/bills/static/HB0575.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2026/bills/static/SB0060.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2026/bills/static/SB0195.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/~2026/bills/static/SB0295.html",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/asp/billsintro/RepResults.asp?Listbox3=THOMJA",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/asp/roster/roster.asp?year=2025&type=H",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2020GS&voteid=1000&house=S",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2020GS&voteid=1649&house=S",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2025GS&voteid=1010&house=H",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2025GS&voteid=1901&house=S",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2026GS&voteid=500&house=H",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/interim/2025/pdf/00001939.pdf",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/Session/2025/bills/enrolled/HB0424.pdf",
+      "rows_citing": "1",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lee.senate.gov/public/index.cfm/press-releases?ID=05cdbb9c-c658-496e-b63d-c9acde1deff3",
+      "rows_citing": "1",
+      "host": "lee.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/hb16-1387",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/hb18-1327",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/hb18-1330",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/hb18-1335",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/hb18-1407",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/hb19-1003",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/hb21-1232",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/hb24-1039",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/sb18-249",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/sb18-250",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/sb21-250",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/sb21-260",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/sb23-188",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/sb24-205",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/bills/sb25-014",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/legislators/janak-joshi",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/legislators/manny-rutinel",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leg.colorado.gov/legislators/mark-baisley",
+      "rows_citing": "1",
+      "host": "leg.colorado.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+mbr+H0219S",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB1",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB3",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB386",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB529",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?211+sum+HB2273",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+bil+HB139",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+sum+SB16",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+sum+SB742",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+mbr+H224S",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+mbr+H242S",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+mbr+S112S",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+mbr+S78C",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1552",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB2382",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB1001",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB1053",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB1116",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB1184",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB1186",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB1191",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB1199",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB1207",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB1248",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB1284",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB1437",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB1438",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB1523",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB794",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+HB18",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+HB819",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+SB0007",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+SB0260",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+SB0558",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+SB0720",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+SB376D",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+SB517D",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+SB525D",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+SB555D",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+SB69",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+SB696D",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+bil+SJ2D",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+ful+SB310",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+ful+SB533",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+ful+SB58",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+ful+SB7",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+H242C",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+S120C",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+S125",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+S126",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+S126C",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+S19S",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+S98",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0040",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0174",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0256",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0375",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0570",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0817",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB0819",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB1045",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB108",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB117",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB1216",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB1252",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB1253",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB1268",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB1329",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB1398",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB1471",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB167",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB18",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB192",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB26",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB260",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB276",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB278",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB353",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB365",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB405",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB441",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB555",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB568",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB570",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB597",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB627",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB760",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB773",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB781",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB796",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB819",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB841",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB908",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB909",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB912",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB952",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB953",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB957",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB962",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB968",
+      "rows_citing": "1",
+      "host": "legacylis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

@@ -1,0 +1,1798 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 8750 --to 9000 --pace 1200",
+  "slice": "undated",
+  "timing": {
+    "fetch_timeout_ms": 20000,
+    "curl_timeout_s": 15,
+    "probe_timeout_ms": 3000,
+    "zero_streak": 3,
+    "unbreak_streak": 3,
+    "pace_ms": 1200
+  },
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 243,
+    "FABRICATED": 7
+  },
+  "findings": [
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0576?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0578?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/HB0583?ys=2022RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0605?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0630?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0637?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0659?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0671?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0672?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0680?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0687?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0742?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0753?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0761?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0774?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0776?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0794?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0798?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0800?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0805?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0832?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0870?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0871?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0883?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0894?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0897?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0904?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0906?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0930?ys=2025RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0954?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0965?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0980?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1009?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1018?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1032?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1068?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1080?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1104?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1108?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1124?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1135?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/HB1145?ys=2021RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1161?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/HB1165?ys=2021RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1181?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1188?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/HB1198?ys=2021RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1221?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1261?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1268?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1356?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1377?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1389?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1438?ys=2024RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1454?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1458?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1470?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1479?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1618?ys=2026RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0454?ys=2023RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/alston01?tab=2022RS-legislation",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2022RS-legislation",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/corderman02",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/cox01?ys=2019RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/cox01?ys=2022RS",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harrison01?tab=2022RS-legislation",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holmes01?tab=2022RS-legislation",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lam02",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01?tab=2022RS-legislation",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01?tab=2022RS-legislation",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberts03?tab=2022RS-legislation",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taylor05?tab=2022RS-legislation",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/toles01?tab=2022RS-legislation",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/williams08?tab=2022RS-legislation",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/young04",
+      "rows_citing": "1",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://michiganadvance.com/briefs/end-citizens-united-backs-maasdam-in-race-for-michigans-7th-congressional-district/",
+      "rows_citing": "1",
+      "host": "michiganadvance.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mikekennedy.house.gov/media/op-eds/why-we-voted-president-trumps-beautiful-bill",
+      "rows_citing": "1",
+      "host": "mikekennedy.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mikekennedy.house.gov/media/press-releases/rep-kennedy-introduces-resolution-officially-designate-coal-week",
+      "rows_citing": "1",
+      "host": "mikekennedy.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missionlocal.org/tag/danny-sauter/",
+      "rows_citing": "1",
+      "host": "missionlocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://montanafreepress.org/tag/christi-jacobsen/",
+      "rows_citing": "1",
+      "host": "montanafreepress.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://moran.senate.gov/public/index.cfm/newsroom",
+      "rows_citing": "1",
+      "host": "moran.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://moulton.house.gov/issues/jobs-economy",
+      "rows_citing": "1",
+      "host": "moulton.house.gov",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 172,
+      "control": "moulton.house.gov/issues*",
+      "dated": false
+    },
+    {
+      "url": "https://moulton.house.gov/issues/national-security",
+      "rows_citing": "1",
+      "host": "moulton.house.gov",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 172,
+      "control": "moulton.house.gov/issues*",
+      "dated": false
+    },
+    {
+      "url": "https://moulton.house.gov/issues/technology",
+      "rows_citing": "1",
+      "host": "moulton.house.gov",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 172,
+      "control": "moulton.house.gov/issues*",
+      "dated": false
+    },
+    {
+      "url": "https://munterforcongress.substack.com/p/beware-medical-advantage-plans",
+      "rows_citing": "1",
+      "host": "munterforcongress.substack.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://munterforcongress.substack.com/p/big-ag-needs-to-cover-crop-and-dry",
+      "rows_citing": "1",
+      "host": "munterforcongress.substack.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://munterforcongress.substack.com/p/illegal-immigration-solutions",
+      "rows_citing": "1",
+      "host": "munterforcongress.substack.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://munterforcongress.substack.com/p/rebuilding-the-middle-class-with",
+      "rows_citing": "1",
+      "host": "munterforcongress.substack.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://munterforcongress.substack.com/p/strenthen-defense-by-cutting-the",
+      "rows_citing": "1",
+      "host": "munterforcongress.substack.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://munterforcongress.substack.com/p/we-dont-need-new-minings-jobs-and",
+      "rows_citing": "1",
+      "host": "munterforcongress.substack.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://murray.senate.gov/issues/education-and-workforce/",
+      "rows_citing": "1",
+      "host": "murray.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://murray.senate.gov/issues/seniors/",
+      "rows_citing": "1",
+      "host": "murray.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://myburbanktalks.buzzsprout.com/2131974/episodes/15672727-meet-the-candidate-chris-rizzotti-burbank-city-council-candidate",
+      "rows_citing": "1",
+      "host": "myburbanktalks.buzzsprout.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://natlawreview.com/article/somebodys-watching-me-what-you-need-know-about-californias-proposed-ai-employee",
+      "rows_citing": "1",
+      "host": "natlawreview.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ndlegis.gov/assembly/64-2015/regular/sponsor-inquiry/representative/tbeadle.html",
+      "rows_citing": "1",
+      "host": "ndlegis.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ndlegis.gov/assembly/66-2019/regular/sponsor-inquiry/representative/mstrinden.html",
+      "rows_citing": "1",
+      "host": "ndlegis.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ndlegis.gov/assembly/67-2021/regular/sponsor-inquiry/representative/mstrinden.html",
+      "rows_citing": "1",
+      "host": "ndlegis.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo1205.html",
+      "rows_citing": "1",
+      "host": "ndlegis.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo1256.html",
+      "rows_citing": "1",
+      "host": "ndlegis.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo1306.html",
+      "rows_citing": "1",
+      "host": "ndlegis.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo1347.html",
+      "rows_citing": "1",
+      "host": "ndlegis.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo1368.html",
+      "rows_citing": "1",
+      "host": "ndlegis.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo1438.html",
+      "rows_citing": "1",
+      "host": "ndlegis.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ndlegis.gov/biography/thomas-beadle",
+      "rows_citing": "1",
+      "host": "ndlegis.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://networkofutahmoderates.com/p/utah-county-commission-seat-a-brent",
+      "rows_citing": "1",
+      "host": "networkofutahmoderates.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://newbedfordlight.org/tag/mayor-mitchell/",
+      "rows_citing": "1",
+      "host": "newbedfordlight.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://newdealleaders.org/idea/las-vegas-city-councilman-brian-knudsen-fights-homelessness-with-nevadas-new-campus-for-hope/",
+      "rows_citing": "1",
+      "host": "newdealleaders.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://newdealleaders.org/leader/michael-naft/",
+      "rows_citing": "1",
+      "host": "newdealleaders.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://newjerseyglobe.com/congress/grayzel-hathaway-confirm-theyre-in-for-special-election-to-succeed-sherrill/",
+      "rows_citing": "1",
+      "host": "newjerseyglobe.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://newjerseyglobe.com/congress/hamawy-endorsed-by-khanna-in-nj-12/",
+      "rows_citing": "1",
+      "host": "newjerseyglobe.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://newjerseyglobe.com/congress/hamawys-plastic-surgery-practice-features-high-interest-financing-option/",
+      "rows_citing": "1",
+      "host": "newjerseyglobe.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://newjerseyglobe.com/congress/how-debates-over-the-middle-east-are-defining-the-race-for-bonnie-watson-colemans-seat/",
+      "rows_citing": "1",
+      "host": "newjerseyglobe.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://newjerseyglobe.com/congress/in-packed-nj-12-race-bernie-sanders-will-support-adam-hamawy/",
+      "rows_citing": "1",
+      "host": "newjerseyglobe.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://newjerseyglobe.com/congress/njea-endorses-bennett-mullock-for-congress/",
+      "rows_citing": "1",
+      "host": "newjerseyglobe.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://newjerseyglobe.com/congress/watson-coleman-mciver-and-conaway-pass-the-new-jersey-voter-empowerment-act/",
+      "rows_citing": "1",
+      "host": "newjerseyglobe.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://newjerseyglobe.com/contrast/in-new-jersey-the-political-battle-over-the-big-beautiful-bill-is-just-beginning/",
+      "rows_citing": "1",
+      "host": "newjerseyglobe.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://newjerseyglobe.com/local/monmouth/monmouth-dems-endorse-rachel-peace-for-nj-4-at-2026s-first-county-convention/",
+      "rows_citing": "1",
+      "host": "newjerseyglobe.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://newrepublic.com/article/199682/graham-platner-maine-senate-profile",
+      "rows_citing": "1",
+      "host": "newrepublic.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news.azpm.org/s/100149-mayor-romero-delivers-annual-report-on-tucsons-growth-and-challenges/",
+      "rows_citing": "1",
+      "host": "news.azpm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news.delaware.gov/category/ost/",
+      "rows_citing": "1",
+      "host": "news.delaware.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news.wttw.com/elections/voters-guide/2022-general/William-Redpath",
+      "rows_citing": "1",
+      "host": "news.wttw.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news3lv.com/news/local/clark-county-ramps-up-efforts-to-address-homelessness-amid-resident-complaints-on-safety",
+      "rows_citing": "1",
+      "host": "news3lv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news3lv.com/news/local/las-vegas-mayor-addresses-homelessness-crisis-strategy-expected-by-2026",
+      "rows_citing": "1",
+      "host": "news3lv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news3lv.com/news/local/las-vegas-pickleball-project-sparks-debate-over-federal-spending",
+      "rows_citing": "1",
+      "host": "news3lv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://newsroom.haas.berkeley.edu/magazine/spring-2025/the-can-do-mayor/",
+      "rows_citing": "1",
+      "host": "newsroom.haas.berkeley.edu",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nlihc.org/resource/representative-waters-reintroduces-bills-combat-affordable-housing-and-homelessness-crises",
+      "rows_citing": "1",
+      "host": "nlihc.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nlihc.org/resource/senator-padilla-announces-legislation-address-affordable-housing-and-homelessness-crisis",
+      "rows_citing": "1",
+      "host": "nlihc.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nmpoliticalreport.com/tag/howie-morales/",
+      "rows_citing": "1",
+      "host": "nmpoliticalreport.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://northdakotamonitor.com/briefs/round-two-north-dakota-democrat-trygve-hammer-announces-second-run-for-us-house/",
+      "rows_citing": "1",
+      "host": "northdakotamonitor.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://noticias.foxnews.com/media/utah-mayor-reveals-how-provo-ranked-best-run-city-4th-lowest-violent-crime-rate.print",
+      "rows_citing": "1",
+      "host": "noticias.foxnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/ag-bonta-leads-multistate-coalition-opposing-citizenship-requirement",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-alerts-city-attorneys-and-county-counsel-new-enforcement",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-california-will-remain-ironclad-protecting-reproductive",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-calls-congress-fund-civil-legal-assistance",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-calls-social-media-companies-stop-spread-disinformation",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-calls-us-epa-withdraw-harmful-proposed-repeal-greenhouse",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-co-leads-brief-opposing-trump%E2%80%99s-continued-attempts",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-co-leads-lawsuit-challenging-president-trump%E2%80%99s-executive",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-defeats-trump-administration-court-again-continues",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-files-amended-complaint-lawsuit-against-five-largest",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-files-lawsuit-against-city-tulare-violating-ceqa-through",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-files-pre-enforcement-lawsuit-amid-us-doj-demands",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-governor-newsom-secure-order-holding-huntington-beach",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-helps-secure-74-billion-purdue-pharma-and-sackler-family",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-issues-legal-advisories-application-california-law-ai",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-joins-bipartisan-coalition-urging-congress-pass-legislation-support-workforce",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "oag.ca.gov/news/press-releases*",
+      "dated": false
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-joins-multistate-coalition-support-lgbtq-americans-rights",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-joins-nationwide-fight-underscore-need-preventive-healthcare-access",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "oag.ca.gov/news/press-releases*",
+      "dated": false
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-leads-coalition-22-states-support-increased-access-birth-control",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "oag.ca.gov/news/press-releases*",
+      "dated": false
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-leads-coalition-opposing-illegal-%E2%80%9Cno-bond%E2%80%9D-immigration",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-effort-undermine-state-laws-protecting",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-states%E2%80%99-attacks-transgender-youth-participation",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-trump-administration%E2%80%99s-attempt-permanently-exempt",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-trump-administrations-efforts-dramatically-expand",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-provides-guidance-abortion-rights-and-protections",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-provides-guidance-child-care-providers-new-legal",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-reaffirms-commitment-protecting-reproductive-rights",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-rejects-ai-preemption-ndaa",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-reminds-california-immigrants-their-rights-and",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-california-supreme-court-decision-affirming-anti",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-decisive-victory-lawsuit-protect-over-200-million",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-emergency-order-unfreezing-10-billion-federal",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-seeks-halt-trump-administration%E2%80%99s-illegal-greenlight-oil",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-submits-comment-letter-calling-greater-ai-transparency",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-sues-trump-administration-illegally-sharing-californians%E2%80%99",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-sues-trump-administration-over-unconstitutional",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-supports-epas-proposed-rule-regarding-fossil-fuel-fired",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-takes-action-defense-marriage-equality-rights-lgbtq",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-trump-administrations-second-tariff-regime-struck-down",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-urges-congress-fix-trump%E2%80%99s-tariff-mess-refund-americans",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-urges-congress-implement-voting-rights-legislation",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-urges-top-social-media-and-ai-executives-address-election",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-us-supreme-court-taxpayer-funded-charter-schools-must",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-rob-bonta-announces-guidance-prevent-discriminatory-housing",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/california-attorney-general-rob-bonta-denounces-epa%E2%80%99s-rescission-greenhouse-0",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/defending-protecting-delivering-attorney-general-bonta-highlights-doj%E2%80%99s-work",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/protecting-world%E2%80%99s-5th-largest-economy-attorney-general-bonta-governor-newsom",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/response-increased-threats-california-immigrant-communities-attorney-general",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/news/press-releases/what%E2%80%99s-there-hide-attorney-general-bonta-urges-transparency-federal-spending",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oag.ca.gov/system/files/initiatives/pdfs/25-0024A1%20(Billionaire%20Tax%20).pdf",
+      "rows_citing": "1",
+      "host": "oag.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ocpathink.org/post/analysis/the-sky-wont-fall-when-oklahoma-empowers-parents",
+      "rows_citing": "1",
+      "host": "ocpathink.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oklahoma.gov/governor/newsroom.html",
+      "rows_citing": "1",
+      "host": "oklahoma.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2017R1/Measures/Overview/HB2017",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/HB2936",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/HB3115",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/HB3265",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/HB3352",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB278",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB282",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB391",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB458",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB48",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB8",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2022R1/Measures/Overview/HB4123",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2022R1/Measures/Overview/HB4139",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2022R1/Measures/Overview/SB1579",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2107",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2683",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2705",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB3197",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB3294",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB3620",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/SB611",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/HB4001",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/HB4002",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/HB4098",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/HB4103",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/SB1089",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/SB1098",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/SB1571",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Downloads/PublicTestimonyDocument/137830",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB2081",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3011",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3069",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3079",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3085",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3529",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3644",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB1011",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB1097",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB1129",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB1137",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB20",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB690",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB957",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB969",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB974",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Measures/Overview/HB4031",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Measures/Overview/HB4117",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Measures/Overview/HB4138",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Measures/Overview/HB4150",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Measures/Overview/SB1567",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Measures/Overview/SB1570",
+      "rows_citing": "1",
+      "host": "olis.oregonlegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://olszewski.house.gov/media/press-releases/olszewski-votes-against-healthcare-bill-fails-address-soaring-costs",
+      "rows_citing": "1",
+      "host": "olszewski.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontheissues.org/CA/Jay_Obernolte.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontheissues.org/ca/Ted_Lieu_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontheissues.org/CA/Tony_Cardenas_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontheissues.org/CA/Tony_Cardenas_Immigration.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontheissues.org/Governor/Eleni_Kounalakis_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontheissues.org/governor/Spencer_Cox_Environment.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontheissues.org/House/Blake_Moore_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontheissues.org/IN/Erin_Houchin_Civil_Rights.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontherecord.empowered.vote/meetings/1dc4a5f7-2f0b-48a6-919e-67def1629e4f",
+      "rows_citing": "1",
+      "host": "ontherecord.empowered.vote",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+      "rows_citing": "1",
+      "host": "ontherecord.empowered.vote",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontherecord.empowered.vote/meetings/4d53e045-cf54-4679-896a-9b162d22f6db",
+      "rows_citing": "1",
+      "host": "ontherecord.empowered.vote",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontherecord.empowered.vote/meetings/6f206fe5-a18b-4af5-b945-c72178d53289",
+      "rows_citing": "1",
+      "host": "ontherecord.empowered.vote",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontherecord.empowered.vote/meetings/76051973-b3ac-42f0-b3dc-d36bfffaa42e",
+      "rows_citing": "1",
+      "host": "ontherecord.empowered.vote",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontherecord.empowered.vote/meetings/deb719ec-159d-41f7-bcd1-99f7e90d370f",
+      "rows_citing": "1",
+      "host": "ontherecord.empowered.vote",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontherecord.empowered.vote/meetings/f3181318-9fab-49ea-a15f-44af7caa654d",
+      "rows_citing": "1",
+      "host": "ontherecord.empowered.vote",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://onyourballot.vote411.org/m/candidate-detail.do?id=72262938",
+      "rows_citing": "1",
+      "host": "onyourballot.vote411.org",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "onyourballot.vote411.org/m*",
+      "dated": false
+    }
+  ]
+}

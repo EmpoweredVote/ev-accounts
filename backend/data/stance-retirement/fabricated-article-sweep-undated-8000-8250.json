@@ -1,0 +1,1784 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 8000 --to 8250 --pace 1200",
+  "slice": "undated",
+  "timing": {
+    "fetch_timeout_ms": 20000,
+    "curl_timeout_s": 15,
+    "probe_timeout_ms": 3000,
+    "zero_streak": 3,
+    "unbreak_streak": 3,
+    "pace_ms": 1200
+  },
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 246,
+    "EXISTS": 2,
+    "FABRICATED": 1,
+    "NO_ANSWER": 1
+  },
+  "findings": [
+    {
+      "url": "https://littleforcongress.com/key-issues/fighting-for-affordable-childcare/",
+      "rows_citing": "1",
+      "host": "littleforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://littleforcongress.com/key-issues/fighting-for-anti-corruption-policies/",
+      "rows_citing": "1",
+      "host": "littleforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://littleforcongress.com/key-issues/fighting-for-tax-cuts/",
+      "rows_citing": "1",
+      "host": "littleforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://littleforcongress.com/key-issues/fighting-for-womens-reproductive-rights/",
+      "rows_citing": "1",
+      "host": "littleforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://littleforcongress.com/key-issues/fighting-fot-lgbtqia2s-rights/",
+      "rows_citing": "1",
+      "host": "littleforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://littleforcongress.com/key-issues/fighting-to-get-ice-out-of-minnesota-now/",
+      "rows_citing": "1",
+      "host": "littleforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lp.org/candidate/brian-corriea/",
+      "rows_citing": "1",
+      "host": "lp.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lp.org/candidate/drew-cranmer/",
+      "rows_citing": "1",
+      "host": "lp.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltgov.georgia.gov/press-releases/2026-04-29/lt-governor-burt-jones-issues-statement-scotus-redistricting-decision",
+      "rows_citing": "1",
+      "host": "ltgov.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltgov.georgia.gov/press-releases/2026-06-09/lt-governor-burt-jones-prioritizes-funding-georgias-hospitals",
+      "rows_citing": "1",
+      "host": "ltgov.georgia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltgov.nc.gov/about/rachel-hunt",
+      "rows_citing": "1",
+      "host": "ltgov.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltgovernor.utah.gov/press/gov-cox-and-lt-gov-henderson-sign-bill-that-consolidates-utah-department-of-health-and-human-services-by-july-2022/",
+      "rows_citing": "1",
+      "host": "ltgovernor.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lynch.house.gov/issues/education",
+      "rows_citing": "1",
+      "host": "lynch.house.gov",
+      "status": 404,
+      "verdict": "EXISTS",
+      "captures": 21
+    },
+    {
+      "url": "https://lynch.house.gov/issues/seniors",
+      "rows_citing": "1",
+      "host": "lynch.house.gov",
+      "status": 404,
+      "verdict": "EXISTS",
+      "captures": 4
+    },
+    {
+      "url": "https://lynch.house.gov/issues/technology",
+      "rows_citing": "1",
+      "host": "lynch.house.gov",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "lynch.house.gov/issues*",
+      "dated": false
+    },
+    {
+      "url": "https://m.lasvegassun.com/news/2019/nov/06/tense-las-vegas-council-oks-homeless-ordinance/",
+      "rows_citing": "1",
+      "host": "m.lasvegassun.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://madison.com/wsj/opinion/column/scott-mcdonell-and-sharon-corrigan-dane-county-study-shows-voter/article_98221542-f05e-55de-84d5-955e8ceaabda.html",
+      "rows_citing": "1",
+      "host": "madison.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mailchi.mp/3baae013a071/a-letter-from-chris-8743612",
+      "rows_citing": "1",
+      "host": "mailchi.mp",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/1140/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/bill-to-provide-tax-relief-to-lower-and-middle-income-earners-to-have-public-hearing/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/common-sense/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/government-now-has-an-extra-1-2-billion-of-your-money/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/government-takes-too-return-money-to-mainers-hurt-by-rising-prices/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/large-tax-increase-now-in-effect/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/maine-should-not-move-toward-eliminating-gas-powered-vehicles/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/personal-income-increased-everywhere-but-maine/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/rep-laurel-libby-introduces-school-choice-legislation-to-benefit-students/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/rep-morris-paid-family-leave-proposal-is-a-new-tax-on-working-people-2/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/rep-sheila-lyman-where-are-you-governor-mills/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/representative-lemelin-named-lead-on-health-and-human-services-committee/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/republicans-uncover-shocking-cost-of-our-open-border-policy/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/senior-house-republicans-blast-latest-mills-tax-on-medicines-ambulances/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/tax-relief-must-be-part-of-the-conversation/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/we-need-solutions-that-lower-energy-costs/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/newsroom/legislature-is-out-of-touch-with-people-trying-to-survive/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/newsroom/maine-election-security-and-integrity-called-into-question-again/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/newsroom/maine-is-making-international-news/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/newsroom/maine-ratepayers-deserve-relief-from-skyrocketing-electricity-costs/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/newsroom/maine-schools-warned-against-discriminating-on-the-basis-of-race-color-or-national-origin/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/newsroom/maines-housing-situation-changed-drastically-in-5-years/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/newsroom/republicans-urge-governor-to-veto-bill-that-interferes-with-local-law-enforcement/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/newsroom/there-is-bipartisan-support-for-voter-i-d/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/newsroom/time-seems-ripe-for-bipartisan-action-on-income-tax-cuts-in-maine/",
+      "rows_citing": "1",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/190/S2371",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/191/S2090",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H1100",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H1267",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H1677",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H1867",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H1951",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H3012",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H3820",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H4967",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/S1209",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/193/H2836",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/193/H3287",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/193/H4104",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1003",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1004",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1005",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1006",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1012",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1013",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1019",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1020",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1025",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1026",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1028",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H103",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1030",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1038",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1040",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1042",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1044",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1051",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1053",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1058",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1067",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1095",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1107",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1108",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1115",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1128",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H114",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1145",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1147",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1148",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1149",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1154",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1155",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1157",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1164",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1165",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1174",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1177",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1178",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1179",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1181",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H120",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1200",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H121",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1218",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1222",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1223",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1224",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1225",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1240",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1258",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H126",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1261",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1263",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1275",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1280",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1288",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1289",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1290",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1295",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1296",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1297",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1298",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1308",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1309",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1310",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1311",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1317",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1320",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1337",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1341",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1342",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1343",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1344",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1345",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1346",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1348",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1349",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1352",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1353",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1361",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1362",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1364",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1371",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1378",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1387",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1390",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1392",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1399",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1400",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1401",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1402",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1407",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H141",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1426",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1429",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1446",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1462",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1472",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1473",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1483",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1492",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1493",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1494",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1497",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1498",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1500",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1501",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1505",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1508",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1509",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1526",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1540",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1550",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1551",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1552",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1553",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1556",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1561",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1565",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1566",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1572",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1574",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1575",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1619",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1623",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1627",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1648",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1653",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1657",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1659",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1662",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1663",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1665",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1666",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1671",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1675",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1676",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1679",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1681",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1691",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1693",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1699",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1700",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1703",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1707",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1721",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1724",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1725",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1727",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1730",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1762",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1807",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1810",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1811",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1814",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1815",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1820",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1824",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1825",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1827",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1865",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1869",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1877",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1883",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1886",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1889",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1891",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1893",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1895",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1897",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1899",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1901",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1913",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1918",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1919",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1920",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1922",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1923",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1928",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1929",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1931",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1933",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1937",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1941",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1954",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1964",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1970",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1991",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H200",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H2001",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H2005",
+      "rows_citing": "1",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

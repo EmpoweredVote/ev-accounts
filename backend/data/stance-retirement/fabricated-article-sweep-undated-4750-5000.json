@@ -1,0 +1,1772 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 4750 --to 5000 --pace 1200",
+  "slice": "undated",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 249,
+    "FABRICATED": 1
+  },
+  "findings": [
+    {
+      "url": "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2298",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2301",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2302",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2303",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2323",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2333",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2340",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2341",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2365",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2110p.pdf",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2141p.pdf",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2520p.pdf",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hcr2001p.pdf",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hcr2016p.pdf",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1264P.pdf",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/scr1018p.pdf",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/Senate/Senate-member/?legislature=57&session=130&legislator=2373",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/Senate/Senate-member/?legislature=57&session=130&legislator=2375",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/Senate/Senate-member/?legislature=57&session=130&legislator=2379",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/Senate/Senate-member/?legislature=57&session=130&legislator=2381",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/Senate/Senate-member/?legislature=57&session=130&legislator=2387",
+      "rows_citing": "2",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/ben-ambrose",
+      "rows_citing": "2",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/edward-kimmi",
+      "rows_citing": "2",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/gina-franzoza",
+      "rows_citing": "2",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/jamie-hill",
+      "rows_citing": "2",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/justin-kirk-51b56f81-1be7-4ff0-86fc-57ce6624aae6",
+      "rows_citing": "2",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bangordailynews.com/profile/lucien-jb-daigle/",
+      "rows_citing": "2",
+      "host": "bangordailynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.boston.gov/departments/city-council/sharon-durkan",
+      "rows_citing": "2",
+      "host": "boston.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.boston.gov/departments/environment/berdo",
+      "rows_citing": "2",
+      "host": "boston.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.boston.gov/departments/housing/rent-stabilization",
+      "rows_citing": "2",
+      "host": "boston.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.boston.gov/departments/transportation/go-boston-2030",
+      "rows_citing": "2",
+      "host": "boston.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bradsherman.com/in-the-news/congressman-sherman%E2%80%99s-bill-to-help-house-homeless-vets-passed-by-house",
+      "rows_citing": "2",
+      "host": "bradsherman.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.branch.vote/races/2023-virginia-general-elections-state-delegate-va-state-house-28/candidates/david-reid",
+      "rows_citing": "2",
+      "host": "branch.vote",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bridgemi.com/tag/dana-nessel",
+      "rows_citing": "2",
+      "host": "bridgemi.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bridgetbrink.com/issues/healthcare",
+      "rows_citing": "2",
+      "host": "bridgetbrink.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bridgetbrink.com/issues/social-security-and-medicare",
+      "rows_citing": "2",
+      "host": "bridgetbrink.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.britt.senate.gov/issues/education/",
+      "rows_citing": "2",
+      "host": "britt.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.britt.senate.gov/issues/energy/",
+      "rows_citing": "2",
+      "host": "britt.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.britt.senate.gov/issues/faith-family-freedom/",
+      "rows_citing": "2",
+      "host": "britt.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.calonews.com/sela-cities-mayors-speak-about-their-priorities-for-their-new-term/article_aac87588-bcae-11ef-995d-7f619c5c2169.html",
+      "rows_citing": "2",
+      "host": "calonews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/CDD/housing/housingdevelopment/aho",
+      "rows_citing": "2",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/Departments/citycouncil/members/burhanazeem",
+      "rows_citing": "2",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/Departments/citycouncil/members/denisesimmons",
+      "rows_citing": "2",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cantwell.senate.gov/issues/equal-rights-and-protection/",
+      "rows_citing": "2",
+      "host": "cantwell.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cantwell.senate.gov/issues/immigration/",
+      "rows_citing": "2",
+      "host": "cantwell.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cassidy.senate.gov/issues/border-security/",
+      "rows_citing": "2",
+      "host": "cassidy.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cassidy.senate.gov/issues/energy-natural-resources/",
+      "rows_citing": "2",
+      "host": "cassidy.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cassidy.senate.gov/issues/life-and-family-values",
+      "rows_citing": "2",
+      "host": "cassidy.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbs8.com/article/tech/california-congressman-is-working-on-legislation-to-reform-ai/509-5a30ed6b-8392-46ce-8037-be3706d52f71",
+      "rows_citing": "2",
+      "host": "cbs8.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbsnews.com/amp/losangeles/news/long-beach-declares-a-state-of-emergency-on-homelessness",
+      "rows_citing": "2",
+      "host": "cbsnews.com",
+      "status": 406,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbsnews.com/amp/losangeles/news/long-beach-dia-de-los-muertos-canceled-immigration-enforcement",
+      "rows_citing": "2",
+      "host": "cbsnews.com",
+      "status": 406,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbsnews.com/losangeles/video/supervisor-holly-mitchell-responds-to-fire-at-chevron-refinery-in-el-segundo/",
+      "rows_citing": "2",
+      "host": "cbsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbsnews.com/news/murkowski-medicaid-big-beautiful-bill-republicans/",
+      "rows_citing": "2",
+      "host": "cbsnews.com",
+      "status": 406,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbsnews.com/texas/news/mckinney-passes-controversial-homelessness-ordinances-amid-public-pushback/",
+      "rows_citing": "2",
+      "host": "cbsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cde.ca.gov/nr/ne/yr24/yr24rel38.asp",
+      "rows_citing": "2",
+      "host": "cde.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cde.ca.gov/nr/ne/yr24/yr24rel40.asp",
+      "rows_citing": "2",
+      "host": "cde.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cde.ca.gov/nr/ne/yr24/yr24rel52.asp",
+      "rows_citing": "2",
+      "host": "cde.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.christianpost.com/news/adam-hamilton-releases-pro-choice-anti-tariff-platform.html",
+      "rows_citing": "2",
+      "host": "christianpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ci.el-monte.ca.us/AgendaCenter/ViewFile/Minutes/_07162024-1170",
+      "rows_citing": "2",
+      "host": "ci.el-monte.ca.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.citizenscount.org/candidate/anthony-dilorenzo",
+      "rows_citing": "2",
+      "host": "citizenscount.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.citizenscount.org/candidate/maura-sullivan/running/2026-primary-us-house",
+      "rows_citing": "2",
+      "host": "citizenscount.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofhawthorne.org/government/elected-officials/mayor-alex-vargas",
+      "rows_citing": "2",
+      "host": "cityofhawthorne.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofhenderson.com/government/mayor-and-city-council/mayor-michelle-romero",
+      "rows_citing": "2",
+      "host": "cityofhenderson.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofinglewood.org/1594/Allowable-Rent-Increases",
+      "rows_citing": "2",
+      "host": "cityofinglewood.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityoflancasterca.org/Home/Components/News/News/10422/20",
+      "rows_citing": "2",
+      "host": "cityoflancasterca.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofmadison.com/mayor/priorities/know-your-rights",
+      "rows_citing": "2",
+      "host": "cityofmadison.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofmadison.com/news/2026-07-21/new-mens-shelter-scheduled-to-open-september-1",
+      "rows_citing": "2",
+      "host": "cityofmadison.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofpalmdaleca.gov/306/Councilmember-Austin-Bishop",
+      "rows_citing": "2",
+      "host": "cityofpalmdaleca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofpasadena.net/district6/bio/",
+      "rows_citing": "2",
+      "host": "cityofpasadena.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofsouthgate.org/Government/City-Council/Meet-the-City-Council/Council-Member-Maria-del-Pilar-Avalos",
+      "rows_citing": "2",
+      "host": "cityofsouthgate.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.citywatchla.com/election-2024/32482-tal-khan-valbuena-candidate-for-la-superior-court-judge-2-restoring-trust-in-the-judiciary",
+      "rows_citing": "2",
+      "host": "citywatchla.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.citywatchla.com/la-election-2022/32494-the-david-ross-interview-for-la-county-judge",
+      "rows_citing": "2",
+      "host": "citywatchla.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.citywatchla.com/neighborhood-politics/32413-meet-angie-christides-deputy-da-surfer-and-candidate-for-the-l-a-county-bench",
+      "rows_citing": "2",
+      "host": "citywatchla.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityweekly.net/news/salt-lake-city-council-adopts-new-transportation-plan-and-receives-mayor-mendenhalls-budget-recommendations-21484456",
+      "rows_citing": "2",
+      "host": "cityweekly.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.civoren.com/candidate/michael-mike-soetaert",
+      "rows_citing": "2",
+      "host": "civoren.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.civoren.com/candidate/missi-hesketh",
+      "rows_citing": "2",
+      "host": "civoren.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.clarkforwi.com/issues/a-real-affordability-agenda",
+      "rows_citing": "2",
+      "host": "clarkforwi.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.clarkforwi.com/issues/issue-1",
+      "rows_citing": "2",
+      "host": "clarkforwi.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.clarkforwi.com/issues/safety-at-the-border-and-immigration-policy",
+      "rows_citing": "2",
+      "host": "clarkforwi.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.clarkforwi.com/issues/supporting-womens-rights-and-womens-health",
+      "rows_citing": "2",
+      "host": "clarkforwi.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.commondreams.org/news/stop-data-centers",
+      "rows_citing": "2",
+      "host": "commondreams.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.commondreams.org/news/susan-collins-reelection",
+      "rows_citing": "2",
+      "host": "commondreams.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.commondreams.org/opinion/analilia-mejia-win",
+      "rows_citing": "2",
+      "host": "commondreams.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.commondreams.org/opinion/mejia-progressive-ideas-win",
+      "rows_citing": "2",
+      "host": "commondreams.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.commondreams.org/tag/becca-balint",
+      "rows_citing": "2",
+      "host": "commondreams.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/113th-congress/senate-bill/744",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/115th-congress/senate-bill/1006/cosponsors",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/116th-congress/house-bill/1384/cosponsors",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/116th-congress/house-bill/1384/text",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/116th-congress/house-resolution/109/cosponsors",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/116th-congress/senate-bill/3912",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/1280",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/3755",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/8404/cosponsors",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/1/cosponsors",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/1/all-actions",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/2",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/3421",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/8035",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/senate-bill/2770",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/senate-bill/686",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/12/text",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/15",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/15/text/ih",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/28/all-actions",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/4393/cosponsors",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1506",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/member/alex-padilla/P000145",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/member/andre-carson/C001072",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/member/laura-friedman/F000483",
+      "rows_citing": "2",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.coons.senate.gov/issues/energy-and-environment",
+      "rows_citing": "2",
+      "host": "coons.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.coons.senate.gov/issues/health-care",
+      "rows_citing": "2",
+      "host": "coons.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.coons.senate.gov/issues/innovation",
+      "rows_citing": "2",
+      "host": "coons.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cor.net/government/city-council/who-are-our-city-council-members/ken-hutchenrider",
+      "rows_citing": "2",
+      "host": "cor.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.corneliusor.gov/AgendaCenter/ViewFile/Item/283?fileID=1401",
+      "rows_citing": "2",
+      "host": "corneliusor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.corneliusor.gov/AgendaCenter/ViewFile/Minutes/_03022026-192",
+      "rows_citing": "2",
+      "host": "corneliusor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.crescentavalleyweekly.com/news/10/23/2025/council-rejects-proposal-for-sears-property/",
+      "rows_citing": "2",
+      "host": "crescentavalleyweekly.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dailyherald.com/news/20241014/undeterred-by-previous-losses-hanson-again-challenging-quigley-in-5th-district",
+      "rows_citing": "2",
+      "host": "dailyherald.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.daines.senate.gov/issues/health-care/",
+      "rows_citing": "2",
+      "host": "daines.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.daines.senate.gov/issues/pro-life/",
+      "rows_citing": "2",
+      "host": "daines.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.delanoheraldjournal.com/articles/delanoheraldjournal/mike-foley-challenges-tom-emmer-in-republican-primary/",
+      "rows_citing": "2",
+      "host": "delanoheraldjournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dems.gov/newsroom/press-releases/chairman-aguilar-president-biden-house-democrats-stood-up-for-social-security-medicare-and-medicaid",
+      "rows_citing": "2",
+      "host": "dems.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.devasimmons.com/en/issues",
+      "rows_citing": "2",
+      "host": "devasimmons.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dotnews.com/2024/squares-streets",
+      "rows_citing": "2",
+      "host": "dotnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dotnews.com/2025/council-hearing-probes-pros-cons-changes-zoning-upgrade-density",
+      "rows_citing": "2",
+      "host": "dotnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dotnews.com/opinion/erin-murphy",
+      "rows_citing": "2",
+      "host": "dotnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.electsummers.com/post/affordable-housing-in-central-oregon",
+      "rows_citing": "2",
+      "host": "electsummers.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.elsegundo.gov/government/departments/city-council-elected-officials/mayor-drew-boyles",
+      "rows_citing": "2",
+      "host": "elsegundo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.emilyslist.org/candidates/shannon-taylor/",
+      "rows_citing": "2",
+      "host": "emilyslist.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.eqca.org/tag/lola-smallwood-cuevas/",
+      "rows_citing": "2",
+      "host": "eqca.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ernst.senate.gov/priorities/energy-and-environment",
+      "rows_citing": "2",
+      "host": "ernst.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ernst.senate.gov/priorities/protecting-life",
+      "rows_citing": "2",
+      "host": "ernst.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/amydonahueforcongress/posts/and-abolish-ice/122140074861078893/",
+      "rows_citing": "2",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/geraldmalloyvt/posts/-from-gerald-malloyim-sick-of-democrats-lecturing-us-about-22-billion-in-war-cos/946152634767816/",
+      "rows_citing": "2",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/RepSarahElfreth/posts/todays-supreme-court-ruling-attacks-our-fundamental-rights-as-americans-and-erod/122158449170718944/",
+      "rows_citing": "2",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/wesclimersc/posts/legislative-update-certificate-of-need-school-choice-abortion-fentanylcertificat/648773313719624/",
+      "rows_citing": "2",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fastcompany.com/91117132/jay-obernolte-interview-house-ai-task-force",
+      "rows_citing": "2",
+      "host": "fastcompany.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fec.gov/data/candidate/H6MO03390/",
+      "rows_citing": "2",
+      "host": "fec.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.flsenate.gov/Senators/2022-2024/S14",
+      "rows_citing": "2",
+      "host": "flsenate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.flsenate.gov/Session/Bill/2023/1",
+      "rows_citing": "2",
+      "host": "flsenate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.flsenate.gov/Session/Bill/2023/1248",
+      "rows_citing": "2",
+      "host": "flsenate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.flsenate.gov/Session/Bill/2024/1645",
+      "rows_citing": "2",
+      "host": "flsenate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.flsenate.gov/Session/Bill/2025/90",
+      "rows_citing": "2",
+      "host": "flsenate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.forestgrove-or.gov/707/Inclusive-Community-and-Immigration-Reso",
+      "rows_citing": "2",
+      "host": "forestgrove-or.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox13now.com/news/local-news/utah-politicians-criticize-biden-decision-to-suspend-energy-leases-on-federal-lands",
+      "rows_citing": "2",
+      "host": "fox13now.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox13now.com/news/politics/2026-utah-legislature-on-health-care",
+      "rows_citing": "2",
+      "host": "fox13now.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox13now.com/news/politics/2026-utah-legislature-on-immigration",
+      "rows_citing": "2",
+      "host": "fox13now.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox13now.com/news/politics/2026-utah-legislature-on-redistricting-and-elections",
+      "rows_citing": "2",
+      "host": "fox13now.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox13now.com/news/politics/sl-countys-507-million-public-safety-bond-fails-to-pass-what-happens-next",
+      "rows_citing": "2",
+      "host": "fox13now.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox9.com/news/ex-ice-attorney-julie-le-announces-bid-5th-congressional-district",
+      "rows_citing": "2",
+      "host": "fox9.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.foxnews.com/media/democrat-mayor-spanked-drag-queen-wants-destroy-police-prisons-claims-marxism-real-american-dream",
+      "rows_citing": "2",
+      "host": "foxnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.giant.fm/marshall-county/news/local-news/state-treasurer-daniel-elliott-commends-inprs-board-for-sending-a-message-to-blackrock-inc/",
+      "rows_citing": "2",
+      "host": "giant.fm",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.glazer.vote/p/2024-declaration-of-candidacy",
+      "rows_citing": "2",
+      "host": "glazer.vote",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.glendaleca.gov/government/city-council/mayor-elen-asatryan",
+      "rows_citing": "2",
+      "host": "glendaleca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gloucestertimes.com/news/local_news/ag-campbell-proposes-new-unit-to-tackle-housing-affordability/article_238da9d8-dd9a-11ee-b319-af15dbff2872.html",
+      "rows_citing": "2",
+      "host": "gloucestertimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gofundme.com/f/help-travis-jack-stevens-register-for-senate",
+      "rows_citing": "2",
+      "host": "gofundme.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/app/details/BILLS-118hr3599ih",
+      "rows_citing": "2",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/hr/BILLSTATUS-118hr3421.xml",
+      "rows_citing": "2",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117hr8152ih/html/BILLS-117hr8152ih.htm",
+      "rows_citing": "2",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117hr8404enr/html/BILLS-117hr8404enr.htm",
+      "rows_citing": "2",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/bills/118/hr3421/cosponsors",
+      "rows_citing": "2",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/members/ayanna_pressley/P000617",
+      "rows_citing": "2",
+      "host": "govtrack.us",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 11,
+      "control": "govtrack.us/congress/members/ayanna_pressley*",
+      "dated": false
+    },
+    {
+      "url": "https://www.govtrack.us/congress/members/pete_aguilar/412615",
+      "rows_citing": "2",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/members/tony_cardenas/412517",
+      "rows_citing": "2",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/115-2017/h637",
+      "rows_citing": "2",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/116-2019/h358",
+      "rows_citing": "2",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/116-2019/h656",
+      "rows_citing": "2",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/117-2021/h185",
+      "rows_citing": "2",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/117-2021/h252",
+      "rows_citing": "2",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/117-2021/h268",
+      "rows_citing": "2",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/117-2021/h346",
+      "rows_citing": "2",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/117-2021/h395",
+      "rows_citing": "2",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/117-2022/s362",
+      "rows_citing": "2",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govtrack.us/congress/votes/118-2023/h108",
+      "rows_citing": "2",
+      "host": "govtrack.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.grandforksherald.com/news/in-debate-north-dakotas-u-s-house-candidates-say-next-representative-needs-to-be-a-leader",
+      "rows_citing": "2",
+      "host": "grandforksherald.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heatherhutt.com/issues/homelessness/",
+      "rows_citing": "2",
+      "host": "heatherhutt.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/local/2022/may/17/commissioner-gardner-plans-to-prepare-utah-county-for-growth-if-reelected/",
+      "rows_citing": "2",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/local/2023/oct/11/orem-city-council-passes-new-transportation-master-plan/",
+      "rows_citing": "2",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/local/2023/oct/26/orem-city-council-candidate-debate-brings-discussions-on-growth-affordable-housing-and-traffic/",
+      "rows_citing": "2",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/local/2024/jun/10/as-utah-county-grows-commissioners-agree-government-body-needs-expansion/",
+      "rows_citing": "2",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldextra.com/news/local/2025/mar/16/orem-city-council-provides-state-of-the-city-report/",
+      "rows_citing": "2",
+      "host": "heraldextra.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldnet.com/news/state/steve-hobbs/",
+      "rows_citing": "2",
+      "host": "heraldnet.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hildasolis.com/2022/jobs/",
+      "rows_citing": "2",
+      "host": "hildasolis.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hillsboro-oregon.gov/Home/Components/News/News/17035/",
+      "rows_citing": "2",
+      "host": "hillsboro-oregon.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hoeven.senate.gov/issues/energy",
+      "rows_citing": "2",
+      "host": "hoeven.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hoeven.senate.gov/issues/jobs-economy-and-fiscal-responsibility",
+      "rows_citing": "2",
+      "host": "hoeven.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hometownsource.com/elk_river_star_news/exclusive-elk-river-veteran-challenging-emmer-wont-abide-by-republican-endorsement/article_1a72100b-68a4-4cc7-9fc4-f5fbe5813b07.html",
+      "rows_citing": "2",
+      "host": "hometownsource.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hrc.org/campaigns/equality-act",
+      "rows_citing": "2",
+      "host": "hrc.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.huffpost.com/entry/maine-senate-graham-platner_n_68b70ec0e4b081a4d93beebb",
+      "rows_citing": "2",
+      "host": "huffpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.indianahousedemocrats.org/news/pierce-reacts-to-the-house-passage-of-republicans-gerrymandered-congressional-map",
+      "rows_citing": "2",
+      "host": "indianahousedemocrats.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.indianahousedemocrats.org/news/pierce-rejects-bill-forcing-all-levels-of-state-government-schools-and-universities-to-assist-ice",
+      "rows_citing": "2",
+      "host": "indianahousedemocrats.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.indio.org/Home/Components/StaffDirectory/StaffDirectory/42/181",
+      "rows_citing": "2",
+      "host": "indio.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.inforum.com/opinion/columns/plain-talk-julie-fedorchak-trygve-hammer-square-off-in-the-plain-talk-u-s-house-debate",
+      "rows_citing": "2",
+      "host": "inforum.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.insidenova.com/news/loudoun/three-way-race-to-determine-gop-challenger-for-subramanyam-s-10th-district-seat/article_af2200d5-1bbc-41a6-843a-813a84055459.html",
+      "rows_citing": "2",
+      "host": "insidenova.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.instagram.com/p/DRJOGc9kV3b/",
+      "rows_citing": "2",
+      "host": "instagram.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2021/",
+      "rows_citing": "2",
+      "host": "insurance.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2023/",
+      "rows_citing": "2",
+      "host": "insurance.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.iowapublicradio.org/political-news/2026-04-16/independent-candidate-michael-bridgford-1st-congressional-district",
+      "rows_citing": "2",
+      "host": "iowapublicradio.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/news/2026-02-06/bloomington-city-council-member-speaks-against-flock-contract",
+      "rows_citing": "2",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/news/2026-03-31/city-council-members-ask-mayor-to-change-hopewell-proposal",
+      "rows_citing": "2",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/show/ask-the-mayor/2025-07-16/bloomingtons-thomson-on-udo-changes-hopewell-developer-budget-deficit",
+      "rows_citing": "2",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/addison-mcdowell/policies/healthcare",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/addison-mcdowell/policies/immigration",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/annie-andrews/policies/healthcare",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/annie-andrews/policies/immigration",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/brad-knott",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/david-brock-smith/policies/education",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/david-brock-smith/policies/electoral",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/david-brock-smith/policies/environmental",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/david-brock-smith/policies/healthcare",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/david-brock-smith/policies/immigration",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/heather-smiley",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/heather-smiley/policies/domestic-policy",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/heather-smiley/policies/environmental",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/heather-smiley/policies/healthcare",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.isidewith.com/candidates/heather-smiley/policies/immigration",
+      "rows_citing": "2",
+      "host": "isidewith.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.jamestalarico.com/issue/foreign-policy/",
+      "rows_citing": "2",
+      "host": "jamestalarico.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.jamestalarico.com/issue/social-media-artificial-intelligence-tech/",
+      "rows_citing": "2",
+      "host": "jamestalarico.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.jamestalarico.com/issue/taxes-cost-of-living/",
+      "rows_citing": "2",
+      "host": "jamestalarico.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.joannamendoza.com/issues/cost-of-living/",
+      "rows_citing": "2",
+      "host": "joannamendoza.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.joannamendoza.com/issues/environment/",
+      "rows_citing": "2",
+      "host": "joannamendoza.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.joannamendoza.com/issues/immigration-border-security/",
+      "rows_citing": "2",
+      "host": "joannamendoza.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.joyforva.com/post/a-fairer-future-ensuring-clean-energy-benefits-rural-virginia",
+      "rows_citing": "2",
+      "host": "joyforva.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.joyforva.com/post/wait-you-re-a-democrat",
+      "rows_citing": "2",
+      "host": "joyforva.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.joyforva.com/post/your-schools-your-kids-your-voice",
+      "rows_citing": "2",
+      "host": "joyforva.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kellythompsonforcongress.com/policies/democracy/campaign-finance-and-media-fairness",
+      "rows_citing": "2",
+      "host": "kellythompsonforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kellythompsonforcongress.com/policies/energy/jobs-and-energy",
+      "rows_citing": "2",
+      "host": "kellythompsonforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keloland.com/news/local-news/nikki-gronli-running-for-sds-us-house-seat/",
+      "rows_citing": "2",
+      "host": "keloland.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kentucky.com/news/politics-government/article312581626.html",
+      "rows_citing": "2",
+      "host": "kentucky.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keranews.org/news/2024-12-10/former-small-towns-growing-pains-lead-to-tensions-in-mayoral-runoff-election",
+      "rows_citing": "2",
+      "host": "keranews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keranews.org/news/2025-03-25/four-candidates-are-vying-for-mayor-of-mckinney-heres-what-to-know",
+      "rows_citing": "2",
+      "host": "keranews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.keranews.org/news/2025-11-05/plano-dart-withdrawal-election-vote",
+      "rows_citing": "2",
+      "host": "keranews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kgun9.com/news/community-inspired-journalism/oro-valley/winfield-delivers-state-of-the-town-calls-small-business-oro-valleys-heartbeat",
+      "rows_citing": "2",
+      "host": "kgun9.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kgun9.com/news/local-news/mayor-romero-touts-housing-homelessness-and-health-gains-outlines-plan-to-expand-treatment-shelter-and-affordable-homes",
+      "rows_citing": "2",
+      "host": "kgun9.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kgun9.com/news/local-news/pima-county-takes-steps-toward-new-jail",
+      "rows_citing": "2",
+      "host": "kgun9.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kgun9.com/news/local-news/project-blue-datacenter-pima-co-accepts-binding-commitment-to-100-renewable-energy",
+      "rows_citing": "2",
+      "host": "kgun9.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kgw.com/article/news/politics/tigard-city-council-appoints-mayor-yi-kang-hu/283-3c320b4a-25ce-4438-94f6-5e13634440ab",
+      "rows_citing": "2",
+      "host": "kgw.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.king.senate.gov/newsroom/press-releases",
+      "rows_citing": "2",
+      "host": "king.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kjzz.org/fronteras-desk/2026-02-03/pima-county-leaders-vote-to-advance-trio-of-policies-outlining-how-ice-can-function-within-county",
+      "rows_citing": "2",
+      "host": "kjzz.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.klobuchar.senate.gov/public/index.cfm/consumer-protection",
+      "rows_citing": "2",
+      "host": "klobuchar.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.klobuchar.senate.gov/public/index.cfm/families-children",
+      "rows_citing": "2",
+      "host": "klobuchar.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.klobuchar.senate.gov/public/index.cfm/health-care",
+      "rows_citing": "2",
+      "host": "klobuchar.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.klobuchar.senate.gov/public/index.cfm/immigration",
+      "rows_citing": "2",
+      "host": "klobuchar.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.klobuchar.senate.gov/public/index.cfm/jobs-and-the-economy",
+      "rows_citing": "2",
+      "host": "klobuchar.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.klobuchar.senate.gov/public/index.cfm/seniors",
+      "rows_citing": "2",
+      "host": "klobuchar.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kqed.org/news/12023104/trump-wants-to-deport-immigrants-accused-of-crimes-california-sheriffs-could-play-a-key-role",
+      "rows_citing": "2",
+      "host": "kqed.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50529357/being-homeless-is-not-a-crime-salt-lake-officials-discuss-shift-in-response-to-homelessness",
+      "rows_citing": "2",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50535320/house-passes-marriage-equality-bill-with-religious-freedom-protections-how-did-utah-reps-vote",
+      "rows_citing": "2",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/50591382/utah-bill-to-close-abortion-clinics-passes-senate",
+      "rows_citing": "2",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51148691/utahs-delegation-wants-to-change-assumptions-about-republicans-and-conservation",
+      "rows_citing": "2",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

@@ -1,0 +1,1067 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--from 632 --to 782 --pace 1200",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and siblings from the same month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "INCONCLUSIVE": "no sibling coverage for that host+month, so absence proves nothing",
+    "NO_ANSWER": "host did not answer at all — invented-host sweep territory, not this one"
+  },
+  "tally": {
+    "LIVE": 139,
+    "NO_ANSWER": 11
+  },
+  "findings": [
+    {
+      "url": "https://www.boston.com/news/local-news/2023/08/09/with-wu-out-of-town-acting-mayor-ed-flynn-keeps-focus-on-mass-and-cass/",
+      "rows_citing": "2",
+      "host": "boston.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.breitbart.com/clips/2025/12/17/raskin-gop-is-whole-reason-weve-got-the-affordable-care-act-need-medicare-for-all-to-deal-with-insurance/",
+      "rows_citing": "2",
+      "host": "breitbart.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2024/07/28/planners-test-tone-on-central-square-rezoning-with-one-option-for-buildings-up-to-22-stories/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/02/04/fears-of-increasingly-totalitarian-government-cited-when-cambridge-police-ask-for-more-tech/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/02/10/in-landmark-zoning-reform-cambridge-votes-to-legalize-four-story-multifamily-homes-citywide/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/03/30/answers-expected-on-police-request-for-new-guns-are-delayed-again-until-mondays-council-meeting/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/04/28/cambridge-leaders-weigh-reviving-cash-program-for-lower-income-families-in-the-next-fiscal-year/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/05/06/councillors-keep-shelter-and-basic-income-ideas-on-life-support-amid-dire-talk-of-budgeting-limits/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/05/30/cambridge-and-somerville-are-named-on-list-identifying-sanctuary-jurisdictions-by-feds/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/07/welcoming-community-law-is-changed-slightly-for-council-vote-reflecting-few-options-on-arrests/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/09/26/coming-to-cambridge-city-council-eco-issues-social-housing-mbta-tunnel-seal-and-motto/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/10/cambridge-city-council-election-guide-2025/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2026/03/24/future-bathrooms-gender-neutral/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2026/04/14/ahern-turf-on-hold/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2026/05/13/shotspotter-vote-strong-feelings/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2026/06/will-new-cambridge-buildings-get-cut-down-to-size/",
+      "rows_citing": "2",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/news/2024/04/cambridgecitymanageryianhuangsubmitsproposedfy25budgettocitycouncil",
+      "rows_citing": "2",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/news/2025/04/cambridgecitymanageryianhuangsubmitsproposedfy26budgettocitycouncil",
+      "rows_citing": "2",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dailycardinal.com/article/2026/04/ellen-zhang-wins-district-8-election-champions-affordability-public-transit",
+      "rows_citing": "2",
+      "host": "dailycardinal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/2024/2/6/24062645/rep-burgess-owens-rep-celeste-maloy-118-billion-border-bill/",
+      "rows_citing": "2",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/opinion/2025/06/23/public-lands-proposal-housing-energy-economy-environmental-stewardship/",
+      "rows_citing": "2",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/04/04/utah-responds-to-trump-tariffs/",
+      "rows_citing": "2",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/08/18/utah-congressmen-blake-moore-and-mike-kennedy-defend-trump-deportations-as-consequence-of-biden-border-policy/",
+      "rows_citing": "2",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2019/8/13/20803963/republican-tina-cannon-utah-first-congressional-district-seat-2020-race-rob-bishop/",
+      "rows_citing": "2",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2022/3/25/22996277/you-belong-salt-lake-city-leaders-tell-utah-transgender-youth-veto-override-lgbt-politics-sports-ban/",
+      "rows_citing": "2",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2022/4/21/23035963/climate-change-why-utah-gov-cox-fired-up-fossil-fuel-ukraine-biden-energy/",
+      "rows_citing": "2",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2023/1/25/23569355/utah-senate-approves-choice-scholarship-teacher-compensation-bill/",
+      "rows_citing": "2",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2023/1/26/23572784/final-vote-on-hb215-voucher-teacher-raise-legislature/",
+      "rows_citing": "2",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2023/3/3/23624526/utah-bill-to-close-abortion-clinics-passes-legislature/",
+      "rows_citing": "2",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2024/07/22/salt-lake-country-unveils-criminal-justice-homelessness-reform/",
+      "rows_citing": "2",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2024/2/13/24072236/utah-religious-freedom-restoration-act/",
+      "rows_citing": "2",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2025/11/13/utah-attorney-general-derek-brown-ai-task-force-open-ai/",
+      "rows_citing": "2",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2025/12/09/salt-lake-city-audit-report-of-county-criminal-justice-system/",
+      "rows_citing": "2",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dotnews.com/2020/07/15/pitch-civilian-review-board-probe-complaints-against-bpd/",
+      "rows_citing": "2",
+      "host": "dotnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dotnews.com/2021/10/27/st-brendan-s-large-candidates-weigh-mass-and-cass/",
+      "rows_citing": "2",
+      "host": "dotnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fcnp.com/2023/10/25/uncontested-f-c-school-board-trio-share-views/",
+      "rows_citing": "2",
+      "host": "fcnp.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fcnp.com/2026/05/07/will-a-half-penny-do-f-c-council-vote-monday/",
+      "rows_citing": "2",
+      "host": "fcnp.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fsfreepressonline.com/feature/2026/04/30/feature-putting-the-big-first-first/",
+      "rows_citing": "2",
+      "host": "fsfreepressonline.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2020/09/23/governor-newsom-announces-california-will-phase-out-gasoline-powered-cars-drastically-reduce-demand-for-fossil-fuel-in-californias-fight-against-climate-change/",
+      "rows_citing": "2",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2024/09/17/governor-newsom-signs-bills-to-combat-deepfake-election-content/",
+      "rows_citing": "2",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.governor.state.nm.us/2025/11/",
+      "rows_citing": "2",
+      "host": "governor.state.nm.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.holliefornewhampshire.com/2026/03/17/noveletsky-releases-new-ad-highlights-key-difference-with-opponent-on-immigration/",
+      "rows_citing": "2",
+      "host": "holliefornewhampshire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hudsonvalleyone.com/2024/10/13/congressmembers-ryan-and-ocasio-cortez-want-to-hold-ge-accountable/",
+      "rows_citing": "2",
+      "host": "hudsonvalleyone.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hudsonvalleyone.com/2026/01/26/hudson-valley-lawmakers-move-to-limit-ice-powers-statewide/",
+      "rows_citing": "2",
+      "host": "hudsonvalleyone.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2025/10/stride-crisis-bloomington-crime-rate-indiana-news-monroe-county-jail",
+      "rows_citing": "2",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2025/11/bloomington-housing-homelessness-report-affordability-development",
+      "rows_citing": "2",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2026/01/bloomington-protest-ice-immigration-flock-cameras",
+      "rows_citing": "2",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2026/01/david-henry-run-monroe-county-commissioner",
+      "rows_citing": "2",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2026/01/trent-deckard-monroe-county-commissioner-campaign",
+      "rows_citing": "2",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kltv.com/2025/06/04/longview-mayor-creates-5-new-taskforces-help-homeless-transient-population/",
+      "rows_citing": "2",
+      "host": "kltv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kold.com/2025/06/04/pima-county-supervisors-vote-fund-more-affordable-housing/",
+      "rows_citing": "2",
+      "host": "kold.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kold.com/2025/06/18/pima-county-board-supervisors-approve-land-deal-project-blue-data-center/",
+      "rows_citing": "2",
+      "host": "kold.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ktoo.org/2024/10/11/peltola-begich-face-off-in-amiable-debate-for-the-state/",
+      "rows_citing": "2",
+      "host": "ktoo.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ktoo.org/2026/03/11/rep-begich-tells-legislators-to-seize-the-moment-on-resource-extraction-and-gas-line/",
+      "rows_citing": "2",
+      "host": "ktoo.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.longislandpress.com/2024/10/29/gillen-announces-plan-to-lower-healthcare-costs-for-latino-families/",
+      "rows_citing": "2",
+      "host": "longislandpress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.longislandpress.com/2025/04/18/",
+      "rows_citing": "2",
+      "host": "longislandpress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.longislandpress.com/2025/07/17/laura-gillen-backs-immigration-bill-that-would-limit-ice-grant-legal-work-status-to-some/",
+      "rows_citing": "2",
+      "host": "longislandpress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.losangelesblade.com/2026/01/14/we-will-get-through-all-of-this-culver-citys-first-lgbtq-mayor-discusses-queer-community-and-hope/",
+      "rows_citing": "2",
+      "host": "losangelesblade.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.marksteger.com/2025/04/lwv-forum-for-richardson-city-council.html",
+      "rows_citing": "2",
+      "host": "marksteger.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.marksteger.com/2026/02/council-recap-dart.html",
+      "rows_citing": "2",
+      "host": "marksteger.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.marksteger.com/2026/02/town-hall-tag-team-omar-and-corcoran.html",
+      "rows_citing": "2",
+      "host": "marksteger.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.marylandmatters.org/2021/03/10/md-senate-advances-far-reaching-climate-bill/",
+      "rows_citing": "2",
+      "host": "marylandmatters.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.masslive.com/news/2023/06/emerging-black-leaders-in-massachusetts-andrea-campbell.html",
+      "rows_citing": "2",
+      "host": "masslive.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.missourinet.com/2018/07/16/outgoing-state-senator-trying-to-unseat-fellow-republican-in-major-sw-missouri-county-commission/",
+      "rows_citing": "2",
+      "host": "missourinet.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.nctreasurer.gov/news/press-releases/2025/04/30/treasurer-brad-briner-announces-nc-utilities-commission-nomination",
+      "rows_citing": "2",
+      "host": "nctreasurer.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.nctreasurer.gov/news/press-releases/2025/05/19/state-treasurer-brad-briner-releases-statement-support-house-budget-proposal",
+      "rows_citing": "2",
+      "host": "nctreasurer.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.newhavenindependent.org/2024/04/02/2nd_republican_pursues_delauro_challenge/",
+      "rows_citing": "2",
+      "host": "newhavenindependent.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.npr.org/2022/03/24/1088624777/arizona-legislature-passes-2-bills-to-curb-transgender-rights",
+      "rows_citing": "2",
+      "host": "npr.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.npr.org/2022/03/25/1088908741/utah-transgender-athletes-veto-override",
+      "rows_citing": "2",
+      "host": "npr.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ocregister.com/2024/10/04/derek-tran-ca-45-candidate-2024-election-questionnaire/",
+      "rows_citing": "2",
+      "host": "ocregister.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opb.org/article/2025/11/05/washington-county-emergency-increased-ice-activity/",
+      "rows_citing": "2",
+      "host": "opb.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opb.org/article/2026/01/18/sherwood-votes-overwhelmingly-to-challenge-new-state-housing-laws/",
+      "rows_citing": "2",
+      "host": "opb.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opb.org/article/2026/02/17/oregon-senators-tech-development-hillsboro-farm-group/",
+      "rows_citing": "2",
+      "host": "opb.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.oregonlive.com/politics/2024/03/oregon-governor-signs-new-drug-recriminalization-law.html",
+      "rows_citing": "2",
+      "host": "oregonlive.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pacenewsonline.com/2025/10/26/inglewood-4th-district-councilwoman-dionne-faulk-holds-second-community-meeting-for-residents-to-speak-on-proposed-project-at-site-of-morningside-high/",
+      "rows_citing": "2",
+      "host": "pacenewsonline.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pressherald.com/2025/06/24/maine-sen-rick-bennett-announces-run-for-governor-as-an-independent/",
+      "rows_citing": "2",
+      "host": "pressherald.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sacramentocityexpress.com/2024/09/19/sacramento-first-in-california-to-allow-multi-unit-housing-in-every-neighborhood/",
+      "rows_citing": "2",
+      "host": "sacramentocityexpress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sacramentocityexpress.com/2025/01/15/new-shelter-and-service-campus-for-people-experiencing-homelessness-opens-in-south-sacramento/",
+      "rows_citing": "2",
+      "host": "sacramentocityexpress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.seacoastonline.com/story/news/politics/2026/06/24/john-sununu-vs-scott-brown-debate-trump-nh-voters/90684473007/",
+      "rows_citing": "2",
+      "host": "seacoastonline.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sentinelandenterprise.com/2008/10/23/bech-olver-debate-earmarks-economy/",
+      "rows_citing": "2",
+      "host": "sentinelandenterprise.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sierraclub.org/press-releases/2023/03/long-beach-city-council-approves-plan-extend-and-expand-oil-drilling",
+      "rows_citing": "2",
+      "host": "sierraclub.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.skadden.com/insights/publications/2024/09/california-enacts-new-laws",
+      "rows_citing": "2",
+      "host": "skadden.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.slc.gov/mayor/2025/01/16/mayor-mendenhall-releases-comprehensive-public-safety-plan/",
+      "rows_citing": "2",
+      "host": "slc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.slc.gov/mayor/2025/01/28/mayor-erin-mendenhall-salt-lake-city-is-focused-on-residents-day-to-day-issues/",
+      "rows_citing": "2",
+      "host": "slc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/2022/03/25/how-each-utah-state/",
+      "rows_citing": "2",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/2022/08/17/salt-lake-county-initiative/",
+      "rows_citing": "2",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2022/03/22/gov-spencer-coxs/",
+      "rows_citing": "2",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2022/09/18/utah-state-treasurer-pulls/",
+      "rows_citing": "2",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2025/03/26/utah-gov-cox-signs-bill-end/",
+      "rows_citing": "2",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2025/05/21/utah-ag-derek-brown-praises/",
+      "rows_citing": "2",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2020/09/mbah-immigrant-rights-op-ed/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2020/12/ewen-campen-climate-emergency-resolution/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/06/wilson-pride-civil-rights/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/10/mbah-sanctuary-icu-resolution/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/03/somerville-rent-stabilization-petition/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/04/somerville-housing-equity-council/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/09/mbah-housing-equity/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/10/somerville-brickbottom-development/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/11/link-council-election/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/11/somerville-at-large-council-results/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2025/01/somerville-anti-deportation-response/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.spotlightpa.org/news/2024/10/pennsylvania-election-2024-us-senate-economy-inflation-bob-casey-dave-mccormick/",
+      "rows_citing": "2",
+      "host": "spotlightpa.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sunjournal.com/2023/03/21/maine-lawmakers-want-federal-waiver-allowing-asylum-seekers-to-work-right-away/",
+      "rows_citing": "2",
+      "host": "sunjournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/04/17/texas-house-school-vouchers/",
+      "rows_citing": "2",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/05/24/ten-commandments-texas-schools-senate-bill-10/",
+      "rows_citing": "2",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/2026/04/27/texas-redistricting-map-ruling-us-supreme-court-upheld-2026-midterms/",
+      "rows_citing": "2",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.thecrimson.com/article/2026/2/10/240-albany-street-renovation/",
+      "rows_citing": "2",
+      "host": "thecrimson.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.themainewire.com/2024/03/maine-rejects-electric-vehicle-nonsense-bobby-charles/",
+      "rows_citing": "2",
+      "host": "themainewire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.themainewire.com/2026/01/bobby-charles-rips-maine-democrats-on-ice-cooperation-vows-rapid-removals-as-portland-and-lewiston-brace-for-possible-enforcement-surge/",
+      "rows_citing": "2",
+      "host": "themainewire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.thestranger.com/news/2019/01/16/38825085/adam-smith-and-pramila-jayapal-take-on-trump",
+      "rows_citing": "2",
+      "host": "thestranger.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.thune.senate.gov/public/index.cfm/2026/3/thune-the-save-america-act-protects-our-elections-and-our-youth",
+      "rows_citing": "2",
+      "host": "thune.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.uiargonaut.com/2026/01/29/independent-representative-candidate-visits-moscow-talks-about-womens-rights-and-climate-change/",
+      "rows_citing": "2",
+      "host": "uiargonaut.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.valleyjournals.com/2024/02/02/480291/sheldon-stewart-salt-lake-county-councilmember-star-wars-fan-extreme-fiscal-conservative",
+      "rows_citing": "2",
+      "host": "valleyjournals.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonblade.com/2023/02/09/exclusive-adam-schiff-discusses-senate-run-and-new-bill-protecting-trans-youth/",
+      "rows_citing": "2",
+      "host": "washingtonblade.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonblade.com/2025/02/18/federal-workers-trans-service-members-cope-trump-attacks/",
+      "rows_citing": "2",
+      "host": "washingtonblade.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/housing/news/2023/07/18/regulations-public-camping-adopted-board-county-commissioners",
+      "rows_citing": "2",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/housing/news/2024/11/18/beaverton-shelter-joins-washington-county-shelter-program",
+      "rows_citing": "2",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/sheriff/news/2025/11/05/washington-county-voters-show-strong-support-public-safety-levy",
+      "rows_citing": "2",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/opinions/2021/09/17/tim-kaine-jan-6-attack-protect-voting-rights/",
+      "rows_citing": "2",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/opinions/tim-kaine-keystone-xl-pipeline-should-be-stopped/2013/06/20/5c160bb4-d852-11e2-a9f2-42ee3912ae0e_story.html",
+      "rows_citing": "2",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/politics/2025/08/01/kaine-democrats-force-votes-trump/",
+      "rows_citing": "2",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wbur.org/news/2023/02/23/boston-rent-control-legislature-massachusetts-debate",
+      "rows_citing": "2",
+      "host": "wbur.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wcax.com/2024/10/25/sen-sanders-gerald-malloy-talk-immigration-abortion-taxes-more-wcax-us-senate-debate/",
+      "rows_citing": "2",
+      "host": "wcax.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wgbh.org/news/local/2018/10/17/a-proposed-boston-harbor-bridge-creates-a-divide",
+      "rows_citing": "2",
+      "host": "wgbh.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/01/protecting-the-american-people-against-invasion/",
+      "rows_citing": "2",
+      "host": "whitehouse.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/04/strengthening-and-unleashing-americas-law-enforcement-to-pursue-criminals-and-protect-innocent-citizens/",
+      "rows_citing": "2",
+      "host": "whitehouse.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/07/ending-crime-and-disorder-on-americas-streets/",
+      "rows_citing": "2",
+      "host": "whitehouse.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whsv.com/2024/10/18/several-candidates-vying-be-west-virginias-next-governor/",
+      "rows_citing": "2",
+      "host": "whsv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wsaw.com/2026/02/18/wausau-businessman-enters-7th-congressional-district-race/",
+      "rows_citing": "2",
+      "host": "wsaw.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wvcjournal.com/2025/03/31/527782/carlos-moreno-from-political-asylum-to-salt-lake-county-council",
+      "rows_citing": "2",
+      "host": "wvcjournal.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://youroregonnews.com/2026/04/24/tigard-tightens-ban-on-keeping-camping-materials-on-city-property/",
+      "rows_citing": "2",
+      "host": "youroregonnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://youroregonnews.com/2026/04/28/john-dugger-seeks-another-term-on-beaverton-city-council/",
+      "rows_citing": "2",
+      "host": "youroregonnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "http://kevinforcongress.blogspot.com/2015/06/obergefell-v-hodges.html",
+      "rows_citing": "1",
+      "host": "kevinforcongress.blogspot.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "http://www.telegramnews.net/story/2024/09/19/news/city-leaders-in-inkster-working-to-adopt-2024-master-plan/2797.html",
+      "rows_citing": "1",
+      "host": "telegramnews.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "http://www.thenorwalkpatriot.com/news/2019/4/3/margarita-rios-named-mayor-for-2019-20",
+      "rows_citing": "1",
+      "host": "thenorwalkpatriot.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://1027vgs.com/2025/04/10/north-las-vegas-kicks-off-638-million-growth-plan-with-parks-homes-medical-hub/",
+      "rows_citing": "1",
+      "host": "1027vgs.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://1350kman.com/2026/06/us-senate-hopeful-patrick-schmidt-targets-property-taxes-ai-safety-in-primary-push/",
+      "rows_citing": "1",
+      "host": "1350kman.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://19thnews.org/2026/05/georgia-primary-election-jasmine-clark-congress/",
+      "rows_citing": "1",
+      "host": "19thnews.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://2urbangirls.com/2021/05/jonathan-bowers-is-the-best-choice-for-compton-city-council-district-3/",
+      "rows_citing": "1",
+      "host": "2urbangirls.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://2urbangirls.com/2025/02/sheriff-says-department-will-not-assist-with-immigration-enforcement/",
+      "rows_citing": "1",
+      "host": "2urbangirls.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://48hills.org/2023/11/who-should-pay-for-more-cops-plus-high-speed-police-chases/",
+      "rows_citing": "1",
+      "host": "48hills.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://48hills.org/2023/12/breed-announces-budget-cuts-as-dorsey-plays-the-cops-tax-card-in-campaign/",
+      "rows_citing": "1",
+      "host": "48hills.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://48hills.org/2024/10/rent-control-bill-advances-with-melgar-in-opposition/",
+      "rows_citing": "1",
+      "host": "48hills.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://48hills.org/2024/12/leading-candidates-attacked-each-other-making-room-for-upset-in-berkeley/",
+      "rows_citing": "1",
+      "host": "48hills.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://48hills.org/2024/12/supes-approve-tay-housing-but-dorsey-makes-it-easier-to-evict-the-vulnerable-residents/",
+      "rows_citing": "1",
+      "host": "48hills.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://48hills.org/2025/04/supes-approve-public-notice-for-neighborhood-zoning-changes/",
+      "rows_citing": "1",
+      "host": "48hills.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://48hills.org/2025/10/a-move-to-undermine-sfs-law-that-controls-police-surveillance/",
+      "rows_citing": "1",
+      "host": "48hills.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://48hills.org/2025/10/dorsey-wants-to-block-city-funding-for-supportive-housing-that-isnt-drug-free/",
+      "rows_citing": "1",
+      "host": "48hills.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ad36.asmrc.org/2026/05/29/assemblyman-jeff-gonzalez-applauds-distressed-hospital-grant-awards-for-palo-verde-hospital-and-el-centro-regional-medical-center/",
+      "rows_citing": "1",
+      "host": "ad36.asmrc.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://afcitizen.com/2025/10/08/winter-homeless-services-plan-announced-utah-county-commissioner-gordon-honored/",
+      "rows_citing": "1",
+      "host": "afcitizen.com",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

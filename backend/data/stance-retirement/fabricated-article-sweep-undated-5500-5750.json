@@ -1,0 +1,1768 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 5500 --to 5750 --pace 1200",
+  "slice": "undated",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 250
+  },
+  "findings": [
+    {
+      "url": "https://www.ontheissues.org/House/James_Clyburn_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/James_Clyburn_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/James_Clyburn_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/James_Clyburn_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Jason_Crow_Corporations.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Jason_Crow_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Jason_Crow_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Jason_Crow_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Joe_Courtney_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Joe_Courtney_Government_Reform.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Joe_Neguse_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Joe_Neguse_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Joe_Wilson_Education.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Joe_Wilson_Environment.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Joe_Wilson_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/John_Fleming_Abortion.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/John_Fleming_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/John_Fleming_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Julia_Letlow_Abortion.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Julia_Letlow_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Kim_Schrier_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Kim_Schrier_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Kim_Schrier_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Kim_Schrier_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Kim_Schrier_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Lauren_Boebert_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Marilyn_Strickland_Environment.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Marilyn_Strickland_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Marilyn_Strickland_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/house/Mark_Alford_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Mark_Alford.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Mark_Pocan_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Mark_Pocan_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Mark_Pocan_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Michael_Guest_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Michael_Guest_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Michelle_Fischbach_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Michelle_Fischbach_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Michelle_Fischbach_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Michelle_Fischbach_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Mike_Simpson_Environment.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Mike_Simpson_Government_Reform.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Mike_Simpson_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Mike_Simpson_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Paul_Gosar_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Paul_Gosar_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Paul_Gosar_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Pete_Stauber_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Pete_Stauber_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Pete_Stauber_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Pramila_Jayapal_Education.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Pramila_Jayapal_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Randy_Feenstra_Government_Reform.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Randy_Feenstra_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Rosa_DeLauro_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Rosa_DeLauro_Corporations.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Rosa_DeLauro_Environment.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Rosa_DeLauro_Government_Reform.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Rosa_DeLauro_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Rosa_DeLauro_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Russ_Fulcher_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Russ_Fulcher_Government_Reform.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Russ_Fulcher_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Russ_Fulcher_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Samuel_Graves_Environment.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Samuel_Graves_Government_Reform.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Samuel_Graves_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Samuel_Graves_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Scott_DesJarlais_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Scott_DesJarlais_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Steve_Cohen_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Steve_Cohen_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Steve_Cohen_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Steve_Scalise_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Steve_Scalise_Government_Reform.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Steve_Scalise_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Steve_Scalise_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Suzan_DelBene_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Suzan_DelBene_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Suzan_DelBene_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Terri_Sewell_Environment.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Terri_Sewell_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Thomas_Massie_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Thomas_Massie_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Thomas_Massie_Technology.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Tom_Emmer_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Tom_Emmer_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Trent_Kelly_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Bill_Foster_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Bill_Foster_Government_Reform.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Bill_Foster_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Bill_Foster_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Brad_Schneider_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Brad_Schneider_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Brad_Schneider_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Chuy_Garcia_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Chuy_Garcia_Corporations.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Chuy_Garcia_Environment.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Chuy_Garcia_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Chuy_Garcia_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Chuy_Garcia_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Darin_LaHood_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Darin_LaHood_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Eric_Sorensen.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Mary_Miller_Budget_+_Economy.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Mary_Miller_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Mary_Miller_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Mike_Quigley_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Robin_Kelly_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Robin_Kelly_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Sean_Casten_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Sean_Casten_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Sean_Casten_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Sean_Casten_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IN/Rudy_Yakym_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IN/Rudy_Yakym_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IN/Rudy_Yakym_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/International/John_Deaton_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/International/Mark_Baisley_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/international/Reid_Rasner_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Bill_Huizenga_Education.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Bill_Huizenga_Government_Reform.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Bill_Huizenga_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Bill_Huizenga_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Hillary_Scholten.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/John_Moolenaar_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/John_Moolenaar_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Lisa_McClain_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Lisa_McClain_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Mike_Rogers_Crime.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Mike_Rogers_Education.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Mike_Rogers_Environment.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Mike_Rogers_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Mike_Rogers_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Mike_Rogers_Technology.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Rashida_Tlaib_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Rashida_Tlaib_Corporations.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Rashida_Tlaib_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Rashida_Tlaib_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Rashida_Tlaib_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Rashida_Tlaib_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Tim_Walberg_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Alma_Adams_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Alma_Adams_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Alma_Adams_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Alma_Adams_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/David_Rouzer_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/David_Rouzer_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Deborah_Ross_Budget_+_Economy.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Deborah_Ross_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Deborah_Ross_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Deborah_Ross_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Don_Davis_Environment.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Don_Davis_Government_Reform.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Mark_Harris_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Mark_Harris_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Mark_Harris_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Richard_Hudson_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Budget_+_Economy.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Government_Reform.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NJ/Donald_Norcross_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NJ/Donald_Norcross_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Adriano_Espaillat_Budget_+_Economy.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Adriano_Espaillat_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Adriano_Espaillat_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Adriano_Espaillat_Government_Reform.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Andrew_Garbarino_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Claudia_Tenney_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Claudia_Tenney_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Grace_Meng_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Grace_Meng_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Jerrold_Nadler_Government_Reform.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Jerrold_Nadler_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Jerrold_Nadler_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Nicole_Malliotakis_Government_Reform.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Nicole_Malliotakis_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Paul_Tonko_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Paul_Tonko_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Paul_Tonko_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Paul_Tonko_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Paul_Tonko.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Yvette_Clarke_Education.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Yvette_Clarke_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Yvette_Clarke_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Yvette_Clarke_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Yvette_Clarke_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Yvette_Clarke_Technology.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Joyce_Beatty_Education.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Joyce_Beatty_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Joyce_Beatty_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Joyce_Beatty_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Joyce_Beatty_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Joyce_Beatty_Welfare_+_Poverty.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Max_Miller_Education.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Michael_Rulli.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Mike_Carey_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Mike_Carey_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Mike_Carey_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Shontel_Brown_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Shontel_Brown_Families_+_Children.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Shontel_Brown_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Troy_Balderson_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Troy_Balderson_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Troy_Balderson_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Troy_Balderson_Principles_+_Values.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Troy_Balderson_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Warren_Davidson_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Warren_Davidson_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/pa/Chrissy_Houlahan_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/pa/Chrissy_Houlahan_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Dwight_Evans_Civil_Rights.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Dwight_Evans_Education.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Dwight_Evans_Environment.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Dwight_Evans_Welfare_+_Poverty.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Guy_Reschenthaler_Budget_+_Economy.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Guy_Reschenthaler_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Guy_Reschenthaler_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/John_Joyce_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/John_Joyce_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Lloyd_Smucker_Energy_+_Oil.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Lloyd_Smucker_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Lloyd_Smucker_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mary_Gay_Scanlon_Education.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mary_Gay_Scanlon_Foreign_Policy.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mary_Gay_Scanlon_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mary_Gay_Scanlon_Social_Security.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mike_Kelly_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mike_Kelly_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Senate/Alex_Vindman.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Senate/Cindy_Burbank.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/senate/Harriet_Hageman.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Senate/Julian_Beaudion.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Senate/Mark_Baisley.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Senate/Tim_Kaine.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Senate/Zach_Wahls.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Social/Lisa_Murkowski_Principles_+_Values.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Social/Mark_Baisley_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/VA/Bob_Good_Health_Care.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/VA/Bob_Good_Immigration.htm",
+      "rows_citing": "2",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opencampaign.com/politicians-in-united-states/21854/gil-hurtado",
+      "rows_citing": "2",
+      "host": "opencampaign.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.oregonlive.com/portland/loretta-smith",
+      "rows_citing": "2",
+      "host": "oregonlive.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.oregonlive.com/portland/steve-novick",
+      "rows_citing": "2",
+      "host": "oregonlive.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.oregonmetro.gov/committees/supportive-housing-services-regional-policy-oversight-committee",
+      "rows_citing": "2",
+      "host": "oregonmetro.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.oregonmetro.gov/stories/beaverton-opens-its-first-year-round-homeless-shelter",
+      "rows_citing": "2",
+      "host": "oregonmetro.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.osc.ny.gov/common-retirement-fund/leading-way-climate-investment",
+      "rows_citing": "2",
+      "host": "osc.ny.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.osc.ny.gov/files/reports/special-topics/pdf/progress-report-climate-action-plan-2024.pdf",
+      "rows_citing": "2",
+      "host": "osc.ny.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ourculver.org/blog/2024-voter-guide",
+      "rows_citing": "2",
+      "host": "ourculver.org",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

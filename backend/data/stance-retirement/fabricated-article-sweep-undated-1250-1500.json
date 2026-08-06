@@ -1,0 +1,1773 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 1250 --to 1500 --pace 1200",
+  "slice": "undated",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 247,
+    "FABRICATED": 1,
+    "NO_ANSWER": 2
+  },
+  "findings": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Josh_Green_(politician)",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Julia_Letlow",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kathryn_Barger",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kathy_Castor",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Katie_Fry_Hester",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Katie_Hobbs",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kelly_Ayotte",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kelly_Dooner",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kevin_Stitt",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lisa_McClain",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lou_Correa",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lynn_Fitch",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Maria_Elvira_Salazar",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mark_Amodei",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mary_Ann_Perez",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Michael_Watson_(Mississippi_politician)",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mike_Dunleavy_(politician)",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mike_Pellicciotti",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mindy_Domb",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Nancy_Mace",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Paul_Gosar",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Rafael_Anchia",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ramon_Romero_Jr.",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ray_Lopez",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Rick_Crawford_(politician)",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sarah_McBride",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Stephen_Whitburn",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Summer_Lee",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sylvia_Luke",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ted_Budd",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Tom_Suozzi",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ukraine_Democracy_Defense_Lend-Lease_Act_of_2022",
+      "rows_citing": "8",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://johnforutah.com/cpt_services_group/issues/",
+      "rows_citing": "8",
+      "host": "johnforutah.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB1806",
+      "rows_citing": "8",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB2106",
+      "rows_citing": "8",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB43",
+      "rows_citing": "8",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB770",
+      "rows_citing": "8",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB618",
+      "rows_citing": "8",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB323",
+      "rows_citing": "8",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280096167&chamber=H&serialnumber=154",
+      "rows_citing": "8",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=2162&SessionID=16",
+      "rows_citing": "8",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=868",
+      "rows_citing": "8",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/getPDF.asp?paper=HP1451&item=1&snum=132",
+      "rows_citing": "8",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainehousegop.org/member_news_item/legislators-urge-education-department-to-comply-with-new-federal-guidelines/",
+      "rows_citing": "8",
+      "host": "mainehousegop.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/191/H4990",
+      "rows_citing": "8",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1304",
+      "rows_citing": "8",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/BHJ1/Bills",
+      "rows_citing": "8",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/ERP1/Bills",
+      "rows_citing": "8",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/FAM1",
+      "rows_citing": "8",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/G_S1",
+      "rows_citing": "8",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/H_G1",
+      "rows_citing": "8",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/JFM1",
+      "rows_citing": "8",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/JJC0",
+      "rows_citing": "8",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/JKH1",
+      "rows_citing": "8",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/JRO0",
+      "rows_citing": "8",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/L%20M0",
+      "rows_citing": "8",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/R_C1",
+      "rows_citing": "8",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://meetthefreshmen.marathonstrategies.com/meet-the-freshmen/826/gil-cisneros/",
+      "rows_citing": "8",
+      "host": "meetthefreshmen.marathonstrategies.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0155?ys=2026RS",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/anderson01",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ciliberti01",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ghrist01",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/griffith02",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hartman01",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hornberger01",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/howard02?tab=2026RS-legislation",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jacobs%20j",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kerr01",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mautz01",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/metzgar01",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/morgan03?tab=2026RS-legislation",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/morgan04?tab=2026RS-legislation",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/nkongolo?tab=2026RS-legislation",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/reilly01",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rose01",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/schmidt01?tab=2026RS-legislation",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stonko01",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valderrama?tab=2026RS-legislation",
+      "rows_citing": "8",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news.delaware.gov/category/justice/",
+      "rows_citing": "8",
+      "host": "news.delaware.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://outlooknewspapers.com/burbankleader/burbank-city-council-votes-for-soft-rent-cap/article_7ab49793-bbb8-410a-84d1-0de1911a0cb3.html",
+      "rows_citing": "8",
+      "host": "outlooknewspapers.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://patch.com/california/los-angeles/meet-aida-ashouri-candidate-los-angeles-city-attorney",
+      "rows_citing": "8",
+      "host": "patch.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://tigardlife.com/featured/as-homelessness-surges-tigard-revisits-regulations-questions-equity-of-shared-response/",
+      "rows_citing": "8",
+      "host": "tigardlife.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://tualatinlife.com/featured/state-of-the-city-tualatin-is-going-full-steam-ahead/",
+      "rows_citing": "8",
+      "host": "tualatinlife.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://utahpolicy.com/news-release/76453-taylor-paden-launches-campaign-for-utah-senate-district-13",
+      "rows_citing": "8",
+      "host": "utahpolicy.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20241031001432/https://actonmass.org/legislators/joanne-comerford/",
+      "rows_citing": "8",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20250518072529/https://actonmass.org/legislators/donald-berthiaume/",
+      "rows_citing": "8",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20260212220607/https://actonmass.org/legislators/adam-gomez/",
+      "rows_citing": "8",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20260310194841/https://actonmass.org/legislators/joseph-mcgonagle/",
+      "rows_citing": "8",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20260510013320/https://actonmass.org/legislators/jeffrey-roy/",
+      "rows_citing": "8",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20260510014441/https://actonmass.org/legislators/joan-meschino/",
+      "rows_citing": "8",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20260510014603/https://actonmass.org/legislators/joan-lovely/",
+      "rows_citing": "8",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20260510024118/https://actonmass.org/legislators/peter-durant/",
+      "rows_citing": "8",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.citizenscount.org/candidate/dan-nicholson/running/2026-primary-us-house",
+      "rows_citing": "8",
+      "host": "citizenscount.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/member/ted-lieu/L000582",
+      "rows_citing": "8",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/2024-10-11/indianas-9th-house-an-interview-with-tim-peck",
+      "rows_citing": "8",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ipm.org/news/2026-02-18/rep-pierce-faces-first-primary-challenger-in-more-than-20-years",
+      "rows_citing": "8",
+      "host": "ipm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.mass.gov/orgs/office-of-state-treasurer-and-receiver-general-deborah-b-goldberg",
+      "rows_citing": "8",
+      "host": "mass.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Adam_Gray.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Norma_Torres.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Brian_Mast.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Darren_Soto.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Lois_Frankel.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Ron_DeSantis.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Eli_Crane.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Emanuel_Cleaver.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/house/Seth_Magaziner.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Thomas_Massie.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IN/Andre_Carson.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MA/Seth_Moulton.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/John_Moolenaar.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Adriano_Espaillat.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Michael_Lawler.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Brian_Fitzpatrick.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Senate/Andy_Kim.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Senate/Ashley_Hinson.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Senate/Marquita_Bradshaw.htm",
+      "rows_citing": "8",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sandiego.gov/citycouncil/cd7/policy",
+      "rows_citing": "8",
+      "host": "sandiego.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00007.xml",
+      "rows_citing": "8",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.thune.senate.gov/public/index.cfm/press-releases",
+      "rows_citing": "8",
+      "host": "thune.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tualatinoregon.gov/administration/camping-regulations",
+      "rows_citing": "8",
+      "host": "tualatinoregon.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tucsonlocalmedia.com/explorernews/news/marana-incumbents-face-voters/article_d16cd57f-a8b6-44e7-987e-4a65e6ea226d.html",
+      "rows_citing": "8",
+      "host": "tucsonlocalmedia.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vermontpublic.org/show/vermont-edition/2024-10-01/vermont-general-election-debate-candidates-for-u-s-house-becca-balint-and-mark-coester",
+      "rows_citing": "8",
+      "host": "vermontpublic.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wwno.org/2026-06-24/q-a-louisiana-u-s-senate-candidates-sound-off-on-important-issues-ahead-of-primary-run-off",
+      "rows_citing": "8",
+      "host": "wwno.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "http://house.texas.gov/members/member-page?district=75",
+      "rows_citing": "7",
+      "host": "house.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://abdulforsenate.com/priority/money-in-your-pocket/",
+      "rows_citing": "7",
+      "host": "abdulforsenate.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://actonmass.org/legislators/william-driscoll",
+      "rows_citing": "7",
+      "host": "actonmass.org",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 183,
+      "control": "actonmass.org/legislators*",
+      "dated": false
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=SB16",
+      "rows_citing": "7",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB3",
+      "rows_citing": "7",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/history.aspx?LegSess=89R&Bill=HB17",
+      "rows_citing": "7",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB20",
+      "rows_citing": "7",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A3585",
+      "rows_citing": "7",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A4360",
+      "rows_citing": "7",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A4415",
+      "rows_citing": "7",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A4930",
+      "rows_citing": "7",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/reports/report.aspx?LegSess=89R&ID=author&Code=A3095",
+      "rows_citing": "7",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00003I.htm",
+      "rows_citing": "7",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://captimes.com/news/government/meet-the-new-dane-county-supervisors-running-unopposed-april-5/article_6b77e93b-5b4d-51de-921b-bf2d7b1c822c.html",
+      "rows_citing": "7",
+      "host": "captimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=25-0600",
+      "rows_citing": "7",
+      "host": "cityclerk.lacity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://congress.gov/member/seth-moulton/M001196",
+      "rows_citing": "7",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://dailybulldog.com/features/graham-platner-outlines-campaign-platform-and-addresses-questions-at-town-hall-event/",
+      "rows_citing": "7",
+      "host": "dailybulldog.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Abraham_Hamadeh",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Brad_Little",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Carlos_A._Gimenez",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Carmen_Chu",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Chris_Coons",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Dan_Newhouse",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Daniel_Webster_(Florida_politician)",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Dianne_Primavera",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Don_Davis_(North_Carolina_politician)",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Eddie_Morales",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Eli_Crane",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Eric_Burlison",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Garlin_Gilchrist_II",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Gary_Palmer_(politician)",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Grace_Meng",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Guy_Guzzone",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/James_Walkinshaw",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jared_Patterson",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jim_Costa",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jim_Jordan_(politician)",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Josh_Brecheen",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Julie_Fedorchak",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Karen_Kwan_(politician)",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Karen_Spilka",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kenneth_Mejia",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lisa_Murkowski",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mariannette_Miller-Meeks",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mike_DeWine",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mike_Ezell",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mike_Quigley_(politician)",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Nanette_Barrag%C3%A1n",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Nathan_Johnson_(Texas_politician)",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Paul_D._Corderman",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Philip_Cortez",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Political_positions_of_Bernie_Sanders",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ralph_Norman",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Rhetta_Bowers",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Richard_Hudson_(American_politician)",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Rob_Bresnahan",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sanford_Bishop",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sharice_Davids",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Steve_Hobbs_(Washington_politician)",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Teresa_Leger_Fernandez",
+      "rows_citing": "7",
+      "host": "en.wikipedia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://freedomindex.us/ut/legislator/19707/",
+      "rows_citing": "7",
+      "host": "freedomindex.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://greenecountymo.gov/about/elected_officials.php",
+      "rows_citing": "7",
+      "host": "greenecountymo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hillsboro-oregon.civicweb.net/document/254837/City%20Council%20-%2002%20Dec%202025.pdf",
+      "rows_citing": "7",
+      "host": "hillsboro-oregon.civicweb.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hillsboro-oregon.civicweb.net/document/256729/City%20Council%20-%2003%20Feb%202026.pdf",
+      "rows_citing": "7",
+      "host": "hillsboro-oregon.civicweb.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://isthmus.com/news/news/madison-city-council-races-become-referendum-on-the-referendum/",
+      "rows_citing": "7",
+      "host": "isthmus.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://laist.com/news/politics/2026-election-california-primary-adam-miller-los-angeles-mayor-transcript",
+      "rows_citing": "7",
+      "host": "laist.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://le.utah.gov/asp/billsintro/RepResults.asp?Listbox3=CHRISKJ",
+      "rows_citing": "7",
+      "host": "le.utah.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB1099",
+      "rows_citing": "7",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB2716",
+      "rows_citing": "7",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB107",
+      "rows_citing": "7",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB423",
+      "rows_citing": "7",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2164",
+      "rows_citing": "7",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2464",
+      "rows_citing": "7",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB316",
+      "rows_citing": "7",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB752",
+      "rows_citing": "7",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB243",
+      "rows_citing": "7",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB813",
+      "rows_citing": "7",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1302",
+      "rows_citing": "7",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Bills/194/H1795",
+      "rows_citing": "7",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/DAF0",
+      "rows_citing": "7",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/DCG2",
+      "rows_citing": "7",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/DCG2/Bills",
+      "rows_citing": "7",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/G_S1/Bills",
+      "rows_citing": "7",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/HLB1/Bills",
+      "rows_citing": "7",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/JBL0",
+      "rows_citing": "7",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/K_D1/Bills",
+      "rows_citing": "7",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/LME0",
+      "rows_citing": "7",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/N_H1/Bills",
+      "rows_citing": "7",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/PDJ0",
+      "rows_citing": "7",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://malegislature.gov/Legislators/Profile/WFM1",
+      "rows_citing": "7",
+      "host": "malegislature.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://meetthefreshmen.marathonstrategies.com/meet-the-freshmen/824/luz-maria-rivas/",
+      "rows_citing": "7",
+      "host": "meetthefreshmen.marathonstrategies.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://merkley.senate.gov/newsroom/press-releases/",
+      "rows_citing": "7",
+      "host": "merkley.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Committees/Details/jpr01",
+      "rows_citing": "7",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/adams01",
+      "rows_citing": "7",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/arentz01",
+      "rows_citing": "7",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes01?tab=2025RS-legislation",
+      "rows_citing": "7",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/conaway",
+      "rows_citing": "7",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hutchinson01",
+      "rows_citing": "7",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/miller03",
+      "rows_citing": "7",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/schindler01",
+      "rows_citing": "7",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simpson01",
+      "rows_citing": "7",
+      "host": "mgaleg.maryland.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nbclosangeles.com/news/local/spencer-pratt-los-angeles-mayor-election/3886136/",
+      "rows_citing": "7",
+      "host": "nbclosangeles.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ontheissues.org/Senate/Mandela_Barnes.htm",
+      "rows_citing": "7",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://patch.com/california/los-angeles/meet-jorge-hernandez-rosas-candidate-los-angeles-city-council-district-9",
+      "rows_citing": "7",
+      "host": "patch.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://patch.com/california/los-angeles/meet-nelson-cheng-candidate-los-angeles-mayor",
+      "rows_citing": "7",
+      "host": "patch.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ronmeinhardt.substack.com/p/frequently-asked-questions",
+      "rows_citing": "7",
+      "host": "ronmeinhardt.substack.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://sahuaritaaz.gov/274/Town-Council",
+      "rows_citing": "7",
+      "host": "sahuaritaaz.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://smarter.vote/races/ky-house-06-2026/pete-lynch/",
+      "rows_citing": "7",
+      "host": "smarter.vote",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://thelalocal.org/los-angeles-city/voter-guide-la-city-council-district-9/",
+      "rows_citing": "7",
+      "host": "thelalocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://tualatinlife.com/featured/tualatin-to-recognize-transgender-day-of-visibility/",
+      "rows_citing": "7",
+      "host": "tualatinlife.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://tualatinlife.com/local-news/tualatin-among-13-cities-suing-oregon-to-halt-new-climate-regulations/",
+      "rows_citing": "7",
+      "host": "tualatinlife.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://tualatinlife.com/local-news/tualatin-city-council-grapples-with-new-zoning-requirements/",
+      "rows_citing": "7",
+      "host": "tualatinlife.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://tuberville.senate.gov/issues/economy-fiscal-responsibility/",
+      "rows_citing": "7",
+      "host": "tuberville.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://urbanmilwaukee.com/person/sarah-godlewski/",
+      "rows_citing": "7",
+      "host": "urbanmilwaukee.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20241031001442/https://actonmass.org/legislators/mark-cusack/",
+      "rows_citing": "7",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20241031001537/https://actonmass.org/legislators/pavel-payano/",
+      "rows_citing": "7",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20241031023940/https://actonmass.org/legislators/manny-cruz/",
+      "rows_citing": "7",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20250124162751/https://actonmass.org/legislators/william-galvin/",
+      "rows_citing": "7",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20250124165438/https://actonmass.org/legislators/paul-donato/",
+      "rows_citing": "7",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20260212213046/https://actonmass.org/legislators/robyn-kennedy/",
+      "rows_citing": "7",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20260212225811/https://actonmass.org/legislators/steven-ultrino/",
+      "rows_citing": "7",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20260310180246/https://actonmass.org/legislators/james-eldridge/",
+      "rows_citing": "7",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20260412022647/https://actonmass.org/legislators/patrick-oconnor/",
+      "rows_citing": "7",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20260510012200/https://actonmass.org/legislators/michael-day/",
+      "rows_citing": "7",
+      "host": "web.archive.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://web.archive.org/web/20260510013708/https://actonmass.org/legislators/barry-finegold/",
+      "rows_citing": "7",
+      "host": "web.archive.org",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://web.archive.org/web/20260510015606/https://actonmass.org/legislators/jason-lewis/",
+      "rows_citing": "7",
+      "host": "web.archive.org",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    }
+  ]
+}

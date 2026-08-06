@@ -1,0 +1,1066 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--from 932 --to 1082 --pace 1200",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and siblings from the same month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "INCONCLUSIVE": "no sibling coverage for that host+month, so absence proves nothing",
+    "NO_ANSWER": "host did not answer at all — invented-host sweep territory, not this one"
+  },
+  "tally": {
+    "LIVE": 150
+  },
+  "findings": [
+    {
+      "url": "https://calmatters.org/california-divide/2020/08/coronavirus-economic-fallout-wealth-tax/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/commentary/2021/05/california-needs-to-recognize-racism-as-a-public-health-crisis/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/education/2017/08/shirley-weber-sharecroppers-daughter-fierce-california-lawmaker/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/education/2024/11/california-transgender-student-athletes/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/environment/2025/12/data-center-energy-study-california/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/environment/climate-change/2020/11/california-lt-gov-kounalakis-our-future-rests-on-climate-action/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/housing/homelessness/2024/07/newsom-homeless-encampments-order/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/housing/homelessness/2025/05/newsom-encampment-sweep-ordinance/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/justice/2020/06/affirmative-action-california-aca5-webe/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/justice/2026/05/ice-detention-centers-state-inspections/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/politics/2018/04/lt-gov-candidates-spar-over-whos-cleaner-in-messy-world-of-campaign-finance/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/politics/2021/08/newsom-recall-candidates-kevin-kiley-interview/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/politics/2022/09/eleni-kounalakis-lieutenant-governor-election/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/politics/2023/02/california-elections-independent-local-redistricting/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/politics/2023/10/redistricting-california-newsom/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/politics/2024/11/prop-36-california/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/politics/2025/02/california-sanctuary-immigrants-democrats/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/politics/2025/09/california-social-security-renter-protections/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/politics/2026/01/democrats-immigration-legislation/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/politics/capitol/2024/09/california-reparations-slavery-apology/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/politics/elections/2024/10/california-abortion-election-congress/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgeday.com/2021/02/04/city-could-keep-homeless-shelter-in-empty-dorm-after-current-contract-with-state-ends-in-spring/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgeday.com/2021/10/31/residents-alliance-endorses-seven-for-council/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgeday.com/2025/01/31/rejection-of-three-story-zoning-plan-paves-way-for-passage-of-four-story-residential-in-february/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgeday.com/2025/10/patty-nolan/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgeday.com/2026/01/03/can-socialists-on-city-council-make-cambridge-more-affordable/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgeday.com/2026/01/28/city-prepares-for-ice/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgeday.com/2026/03/04/cambridge-real-estate-fee/",
+      "rows_citing": "1",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://candysdirt.com/2024/09/05/garden-style-apartments-banned-in-prosper-under-new-zoning-regulations/",
+      "rows_citing": "1",
+      "host": "candysdirt.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capoliticalreview.com/2026/06/07/democrat-elections/",
+      "rows_citing": "1",
+      "host": "capoliticalreview.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cardinalnews.org/2025/10/31/general-assembly-passes-constitutional-amendment-to-redraw-virginias-congressional-maps/",
+      "rows_citing": "1",
+      "host": "cardinalnews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cardinalnews.org/2025/12/18/reid-vacos-silence-on-housing-leaves-the-general-assembly-no-choice-but-to-act/",
+      "rows_citing": "1",
+      "host": "cardinalnews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cardinalnews.org/2026/01/09/meet-southwest-and-southsides-three-new-members-of-the-house-of-delegates/",
+      "rows_citing": "1",
+      "host": "cardinalnews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cardinalnews.org/2026/05/01/state-election-board-unable-to-certify-redistricting-referendum/",
+      "rows_citing": "1",
+      "host": "cardinalnews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cardinalnews.org/2026/05/08/supreme-court-of-virginia-voids-redistricting-election-as-unconstitutional/",
+      "rows_citing": "1",
+      "host": "cardinalnews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cardinalnews.org/2026/06/22/general-assembly-passes-a-budget-consumption-tax-for-data-centers-included/",
+      "rows_citing": "1",
+      "host": "cardinalnews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://climateactionsantamonica.org/2023/10/09/meet-our-advisors-natalya-zernitskaya/",
+      "rows_citing": "1",
+      "host": "climateactionsantamonica.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cnsmaryland.org/2025/02/20/maryland-democrats-appalled-by-trumps-ukraine-stance/",
+      "rows_citing": "1",
+      "host": "cnsmaryland.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://commonwealthbeacon.org/2023/11/creating-equity-in-bostons-liquor-license-market/",
+      "rows_citing": "1",
+      "host": "commonwealthbeacon.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/frisco/election/2024/04/15/qa-meet-the-candidates-running-for-frisco-city-council-place-3/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/frisco/election/2025/03/11/qa-meet-the-candidates-in-the-race-for-frisco-city-council-place-2/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/frisco/government/2025/08/12/friscos-3048m-budget-proposes-rate-increase-more-public-safety-positions/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/mckinney/2019/12/03/affordable-workforce-apartments-receive-zoning-approval-by-mckinney-city-council/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/mckinney/development/2023/03/08/new-affordable-multifamily-housing-project-gets-green-light-from-mckinney-officials/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/mckinney/development/2023/10/02/palladium-usa-officials-break-ground-on-46m-affordable-housing-project-in-mckinney/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/mckinney/development/2025/05/08/mckinney-council-tables-zoning-case-for-785-acre-billingsley-development/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/mckinney/government/2023/04/03/meet-the-candidates-for-mckinney-city-council-at-large-2-seat/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/mckinney/government/2024/10/16/new-municipal-management-district-proposed-for-northwest-mckinney/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/mckinney/government/2025/02/06/mckinney-leaders-lend-support-to-proposed-31m-affordable-senior-housing-project/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/mckinney/government/2025/09/03/mckinney-council-approves-942m-budget-lower-tax-rate-for-fy-2025-26/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/mckinney/nonprofit/2026/04/14/mckinney-front-porch-hosts-first-affordable-housing-summit/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/plano-south/government/2025/07/22/plano-officials-anticipate-impacts-to-residential-development-standards-following-texas-legislature-session/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/plano-south/government/2025/08/27/plano-council-approves-development-zoning-changes-due-to-new-state-laws/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/plano-south/government/2025/12/29/roundup-planos-local-transit-committee-cotton-belt-trail-and-other-recent-dart-updates/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/election/2025/03/19/qa-meet-the-candidates-for-celina-city-council-place-1/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/government/2024/07/11/celina-council-asks-economic-development-corporation-board-to-reapply-for-positions/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/government/2025/09/01/prosper-council-tables-zoning-change-for-374-acre-housing-development-off-parvin-road/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/government/2025/10/16/prosper-council-approves-775-home-neighborhood-off-parvin-road/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/government/2025/11/12/3136m-bella-prosper-mixed-use-project-tabled-until-2026-over-multifamily-concerns/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/government/2026/02/17/celina-council-amends-zoning-ordinance-in-response-to-state-multifamily-housing-law/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/government/2026/02/18/prosper-officials-discuss-priorities-for-2026-post-bond-next-steps/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/government/2026/02/25/prosper-town-council-tables-302m-bella-prosper-development-for-third-time/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/prosper-celina/transportation/2026/04/22/relieving-the-pressure-136m-us-380-project-adds-overpasses-reduces-congestion/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/richardson/development/2026/05/14/single-family-neighborhood-heads-for-development-in-richardson/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/richardson/development/2026/05/26/richardson-considers-federal-funding-program-for-home-repair-infrastructure/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/richardson/election/2023/04/11/meet-the-candidates-running-for-richardson-city-council-place-5/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/richardson/election/2025/05/12/qa-meet-amir-omar-richardsons-new-mayor/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/richardson/government/2025/01/17/city-council-approves-townhome-development-in-richardson/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/dallas-fort-worth/richardson/government/2025/10/07/richardson-council-eyes-infrastructure-drainage-as-priorities-for-potential-2026-bond/",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://communityimpact.com/guides/dallas-fort-worth/mckinney/news/city-county/2019/03/12/qa-rick-franklin-running-for-mckinney-city-council-district-4-seat",
+      "rows_citing": "1",
+      "host": "communityimpact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://connecticutcentinal.com/politics/2026/05/07/republican-challenger-christopher-lancia-takes-aim-at-career-politics-in-connecticuts-3rd-district/",
+      "rows_citing": "1",
+      "host": "connecticutcentinal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://county17.com/2026/05/01/reid-rasner-outlines-vision-for-wyoming-economy-land-energy-policy/",
+      "rows_citing": "1",
+      "host": "county17.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cowboystatedaily.com/2024/11/18/wyoming-delegation-urges-mountain-west-conf-to-ban-males-from-womens-sports/",
+      "rows_citing": "1",
+      "host": "cowboystatedaily.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cowboystatedaily.com/2026/05/31/libertarians-nominate-combat-medic-attorney-shawn-johnson-to-run-for-u-s-house/",
+      "rows_citing": "1",
+      "host": "cowboystatedaily.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ctmirror.org/2025/04/11/cts-election-system-doesnt-need-to-be-saved-democracy-does/",
+      "rows_citing": "1",
+      "host": "ctmirror.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ctmirror.org/2026/02/05/the-danger-of-nationalizing-the-vote/",
+      "rows_citing": "1",
+      "host": "ctmirror.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://culvercitycrossroads.com/2022/03/16/puza-focuses-council-campaign-on-diversity-equity-and-inclusion/",
+      "rows_citing": "1",
+      "host": "culvercitycrossroads.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://culvercitycrossroads.com/2023/04/25/council-votes-to-end-protected-bike-lanes-on-move-transit-project/",
+      "rows_citing": "1",
+      "host": "culvercitycrossroads.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://dailyiowan.com/2026/02/10/iowa-democratic-congressional-candidates-push-for-corporate-pac-money-ban-overturning-citizens-united-ruling/",
+      "rows_citing": "1",
+      "host": "dailyiowan.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://dailyjournal.net/2025/04/14/beckwith-calls-on-braun-to-veto-property-tax-bill-nobody-understands-this-thing/",
+      "rows_citing": "1",
+      "host": "dailyjournal.net",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://dailyutahchronicle.com/2025/03/31/mandatory-jail-utah-immigration-law/",
+      "rows_citing": "1",
+      "host": "dailyutahchronicle.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2022/08/31/coletta-bok-seek-tree-mitigation-fund/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2023/03/01/arroyo-coletta-file-ordinance-to-make-boston-first-in-the-country-to-establish-food-recovery-program/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2023/05/17/coletta-announces-community-trash-initiative-in-district-1/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2024/01/24/coletta-comments-on-plan-east-boston/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2024/06/12/coletta-zapata-seeks-to-hire-more-officers/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2025/02/14/coletta-zapata-introduces-legislation-providing-tax-exemptions/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2025/03/05/coletta-zapata-holds-hearing-on-road-safety-ordinance/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2025/03/18/coletta-zapata-seeks-to-reform-the-zoning-board-of-aappeal/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2025/04/09/coletta-zapata-stewards-passage-of-legislation-on-road-safety-regarding-food-delivery-apps/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2025/04/15/coletta-zapata-holds-hearing-to-explore-creating-municipal-climate-bank/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2025/07/15/coletta-zapata-leads-hearing-on-proposal-to-reform-the-zba/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2025/11/05/coletta-zapata-condemns-trump-administrations-decision-to-end-snap-benefits/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2025/11/05/coletta-zapata-holds-oversight-hearing-on-short-term-rentals/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2025/11/26/coletta-zapata-highlights-need-for-coordinated-climate-action/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://eastietimes.com/2026/04/29/edwards-coletta-zapata-deliver-remarks-at-climate-change-plan/",
+      "rows_citing": "1",
+      "host": "eastietimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://fitzpatrick.house.gov/2025/4/fitzpatrick-s-nchez-lead-bipartisan-bicameral-charge-to-power-clean-energy-and-job-creation",
+      "rows_citing": "1",
+      "host": "fitzpatrick.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://floridaphoenix.com/2022/11/16/u-s-sens-rubio-and-scott-voted-against-advancing-federal-marriage-equality-law/",
+      "rows_citing": "1",
+      "host": "floridaphoenix.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://forestgrovenewstimes.com/2025/06/27/washington-county-dei-policy-stands-despite-federal-funding-concerns/",
+      "rows_citing": "1",
+      "host": "forestgrovenewstimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://goldentogether.com/wp-content/uploads/2024/04/GT_The-Business-Climate-3.pdf",
+      "rows_citing": "1",
+      "host": "goldentogether.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://goldentogether.com/wp-content/uploads/2024/06/GT_Home-Visiting-3.pdf",
+      "rows_citing": "1",
+      "host": "goldentogether.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.nc.gov/news/press-releases/2025/01/16/governor-josh-stein-announces-executive-order-protecting-womens-reproductive-freedom-privacy-1",
+      "rows_citing": "1",
+      "host": "governor.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.nc.gov/news/press-releases/2025/01/17/op-ed-mlk-weekend-publication-governor-stein-time-always-right-do-what-right",
+      "rows_citing": "1",
+      "host": "governor.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.nc.gov/news/press-releases/2025/04/09/nc-medicaid-expansion-reaches-650000-north-carolinians-enrolled-fewer-18-months-after-launch",
+      "rows_citing": "1",
+      "host": "governor.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.nc.gov/news/press-releases/2025/06/11/governor-stein-urges-senate-leaders-support-nc-economy-protecting-ira-tax-credits",
+      "rows_citing": "1",
+      "host": "governor.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.nc.gov/news/press-releases/2025/07/01/governor-steins-task-force-child-care-and-early-education-release-report-proposing-initial-solutions",
+      "rows_citing": "1",
+      "host": "governor.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.nc.gov/news/press-releases/2025/07/03/governor-stein-takes-action-12-bills",
+      "rows_citing": "1",
+      "host": "governor.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.nc.gov/news/press-releases/2026/01/22/statement-governor-josh-stein-53rd-anniversary-roe-v-wade",
+      "rows_citing": "1",
+      "host": "governor.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.nc.gov/news/press-releases/2026/03/11/governor-stein-joins-governors-calling-congress-reclaim-authority-over-tariff-power",
+      "rows_citing": "1",
+      "host": "governor.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.nc.gov/news/press-releases/2026/04/14/governor-stein-highlights-value-child-care-investments-workforce-development-programs",
+      "rows_citing": "1",
+      "host": "governor.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.nc.gov/news/press-releases/2026/04/15/governor-stein-reacts-duke-energy-efforts-charge-ratepayers-additional-800-million",
+      "rows_citing": "1",
+      "host": "governor.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.nc.gov/news/press-releases/2026/04/16/governor-stein-spotlights-north-carolinas-leadership-clean-energy-economy-davidson",
+      "rows_citing": "1",
+      "host": "governor.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://governor.nc.gov/news/press-releases/2026/05/19/governor-stein-signs-executive-order-aimed-increasing-housing-opportunities-and-affordability-across",
+      "rows_citing": "1",
+      "host": "governor.nc.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://heysocal.com/2024/10/03/state-revokes-norwalks-eligibility-for-housing-homelessness-funds/",
+      "rows_citing": "1",
+      "host": "heysocal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://heysocal.com/2024/11/04/state-sues-norwalk-over-ban-on-new-homeless-shelters-housing/",
+      "rows_citing": "1",
+      "host": "heysocal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hillsboronewstimes.com/2024/08/23/hillsboro-city-councilor-beach-pace-places-bid-for-mayor/",
+      "rows_citing": "1",
+      "host": "hillsboronewstimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hillsboronewstimes.com/2024/08/23/ward-1-profile-saba-anvery-runs-unopposed-for-hillsboro-city-council/",
+      "rows_citing": "1",
+      "host": "hillsboronewstimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hillsboronewstimes.com/2024/08/23/ward-2-profile-elizabeth-case-joins-the-race-for-hillsboro-city-council/",
+      "rows_citing": "1",
+      "host": "hillsboronewstimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hillsboronewstimes.com/2025/11/04/washington-county-declares-states-of-emergency-over-ice-snap-concerns/",
+      "rows_citing": "1",
+      "host": "hillsboronewstimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hillsboronewstimes.com/2025/11/05/hillsboro-residents-call-for-city-action-as-ice-raids-immigration-enforcement-fears-grow/",
+      "rows_citing": "1",
+      "host": "hillsboronewstimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hillsboronewstimes.com/2026/04/22/opinion-where-we-grow-matters-vote-nafisa-fai-for-washington-county-chair/",
+      "rows_citing": "1",
+      "host": "hillsboronewstimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hillsboronewstimes.com/2026/05/08/hillsboro-data-center-tax-incentives-spark-scrutiny-before-statewide-moratorium/",
+      "rows_citing": "1",
+      "host": "hillsboronewstimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hillsborosignal.com/2018/10/27/conversation-with-city-council-candidate-beach-pace/",
+      "rows_citing": "1",
+      "host": "hillsborosignal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hoodline.com/2024/06/allen-welcomes-ken-cook-and-carl-clemencich-to-city-council-in-civic-transition-ceremony/",
+      "rows_citing": "1",
+      "host": "hoodline.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hoodline.com/2026/04/beaverton-left-showdown-dueling-progressives-battle-for-house-district-27/",
+      "rows_citing": "1",
+      "host": "hoodline.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hoodline.com/2026/04/political-scientist-crashes-l-a-mayor-s-race-with-trash-and-taxes-on-the-line/",
+      "rows_citing": "1",
+      "host": "hoodline.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://indianacapitalchronicle.com/2024/01/19/indiana-senator-eyes-2025-for-school-choice-overhaul/",
+      "rows_citing": "1",
+      "host": "indianacapitalchronicle.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://indianacapitalchronicle.com/2024/10/16/lieutenant-governor-nominees-talk-controversies-priorities-and-duties/",
+      "rows_citing": "1",
+      "host": "indianacapitalchronicle.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://indianacapitalchronicle.com/2025/02/12/indiana-bill-to-expand-transgender-athlete-ban-to-college-sports-advances-with-bipartisan-support/",
+      "rows_citing": "1",
+      "host": "indianacapitalchronicle.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://indianacapitalchronicle.com/2025/04/04/ban-on-transgender-female-athletes-from-womens-college-teams-passes-with-bipartisan-support/",
+      "rows_citing": "1",
+      "host": "indianacapitalchronicle.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://indianacapitalchronicle.com/2025/04/08/senate-sends-vote-center-study-student-id-voting-ban-income-tax-cuts-to-governor/",
+      "rows_citing": "1",
+      "host": "indianacapitalchronicle.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://indianacapitalchronicle.com/2025/04/28/a-great-move-or-revisionist-history-indianas-beckwith-sparks-three-fifths-compromise-debate/",
+      "rows_citing": "1",
+      "host": "indianacapitalchronicle.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://indianacapitalchronicle.com/2025/08/18/indiana-house-republicans-weigh-redistricting-in-closed-door-caucus/",
+      "rows_citing": "1",
+      "host": "indianacapitalchronicle.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://indianacapitalchronicle.com/2025/10/27/indiana-governor-summons-lawmakers-for-redistricting-session-amid-national-gop-pressure/",
+      "rows_citing": "1",
+      "host": "indianacapitalchronicle.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://indianacapitalchronicle.com/2026/01/21/affordable-electricity-bill-moves-to-house-floor-after-spate-of-edits/",
+      "rows_citing": "1",
+      "host": "indianacapitalchronicle.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://indianacapitalchronicle.com/2026/03/26/that-1-incentive-to-encourage-data-center-approvals-final-deal-watered-it-down/",
+      "rows_citing": "1",
+      "host": "indianacapitalchronicle.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://iowacapitaldispatch.com/2021/02/24/why-i-shared-a-muslim-prayer-in-the-iowa-senate/",
+      "rows_citing": "1",
+      "host": "iowacapitaldispatch.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://iowacapitaldispatch.com/2024/08/10/democrat-christina-bohannan-vows-to-defend-abortion-in-iowa-state-fair-speech/",
+      "rows_citing": "1",
+      "host": "iowacapitaldispatch.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://iowacapitaldispatch.com/2024/10/21/miller-meeks-bohannan-face-off-on-abortion-immigration-at-1st-district-debate/",
+      "rows_citing": "1",
+      "host": "iowacapitaldispatch.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://iowacapitaldispatch.com/2026/06/02/iowa-4th-district-former-state-rep-dave-dawson-wins-democratic-primary-ap-projects/",
+      "rows_citing": "1",
+      "host": "iowacapitaldispatch.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://iowastartingline.com/2024/09/27/iowa-house-democrats-agenda/",
+      "rows_citing": "1",
+      "host": "iowastartingline.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ironcountytoday.com/2025/02/11/rep-maloy-introduces-west-act-to-overturn-illegal-conservation-and-landscape-health-rule/",
+      "rows_citing": "1",
+      "host": "ironcountytoday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://jayapal.house.gov/2023/05/17/jayapal-dingell-sanders-introduce-medicare-for-all-with-record-number-of-house-cosponsors/",
+      "rows_citing": "1",
+      "host": "jayapal.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://jayapal.house.gov/2025/12/02/jayapal-markey-clarke-lee-reintroduce-ai-civil-rights-act-to-eliminate-ai-discrimination-and-enact-guardrails-on-use-of-algorithms-in-decisions-impacting-peoples-rights-civil-li/",
+      "rows_citing": "1",
+      "host": "jayapal.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kansasreflector.com/2025/03/13/kansas-senate-democrat-breaks-from-party-to-add-tax-credit-to-fetal-child-support-bill/",
+      "rows_citing": "1",
+      "host": "kansasreflector.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kansasreflector.com/2025/08/25/democratic-immigration-lawyer-wants-to-fix-broken-system-with-run-for-u-s-senate-in-kansas/",
+      "rows_citing": "1",
+      "host": "kansasreflector.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kansasreflector.com/2025/11/25/kansas-democratic-candidates-for-u-s-senate-sharpen-attack-on-gop-incumbent-roger-marshall/",
+      "rows_citing": "1",
+      "host": "kansasreflector.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kathrynbarger.lacounty.gov/2017/01/",
+      "rows_citing": "1",
+      "host": "kathrynbarger.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kathrynbarger.lacounty.gov/2018/06/",
+      "rows_citing": "1",
+      "host": "kathrynbarger.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

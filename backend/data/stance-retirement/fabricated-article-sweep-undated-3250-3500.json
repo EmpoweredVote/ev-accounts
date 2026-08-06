@@ -1,0 +1,1778 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 3250 --to 3500 --pace 1200",
+  "slice": "undated",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 247,
+    "INCONCLUSIVE": 1,
+    "FABRICATED": 2
+  },
+  "findings": [
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/troy-carter",
+      "rows_citing": "3",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/vince-fong",
+      "rows_citing": "3",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/yassamin-ansari",
+      "rows_citing": "3",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/moc/adam-b-schiff/",
+      "rows_citing": "3",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/moc/erin-houchin/",
+      "rows_citing": "3",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/moc/george-whitesides/",
+      "rows_citing": "3",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/moc/shomari-figures/",
+      "rows_citing": "3",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/jeff-crank/",
+      "rows_citing": "3",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/julia-letlow/",
+      "rows_citing": "3",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lehighvalleynews.com/elections/ryan-mackenzie-prepares-for-congress-and-u-s-policy-shifts-on-spending-immigration-energy",
+      "rows_citing": "3",
+      "host": "lehighvalleynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.localprofile.com/real-estate/plano-approves-next-phase-of-heritage-creekside-development-12081025",
+      "rows_citing": "3",
+      "host": "localprofile.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.longviewtexas.gov/AgendaCenter/ViewFile/Minutes/_04092026-2237",
+      "rows_citing": "3",
+      "host": "longviewtexas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lynnma.gov/city-council/agendas",
+      "rows_citing": "3",
+      "host": "lynnma.gov",
+      "status": 404,
+      "verdict": "INCONCLUSIVE",
+      "why": "archive holds no lynnma.gov/city-council* siblings either",
+      "control": "lynnma.gov/city-council*"
+    },
+    {
+      "url": "https://www.maine.gov/housedems/supical",
+      "rows_citing": "3",
+      "host": "maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.mark4wi.info/post/fairshare-democracy-restoring-balance-trust-and-representation-in-the-american-republic",
+      "rows_citing": "3",
+      "host": "mark4wi.info",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.markey.senate.gov/news/press-releases/markey-statement-on-inflation-reduction-act-passage",
+      "rows_citing": "3",
+      "host": "markey.senate.gov",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "markey.senate.gov/news/press-releases*",
+      "dated": false
+    },
+    {
+      "url": "https://www.markey.senate.gov/news/press-releases/senators-markey-booker-introduce-algorithmic-accountability-act",
+      "rows_citing": "3",
+      "host": "markey.senate.gov",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "markey.senate.gov/news/press-releases*",
+      "dated": false
+    },
+    {
+      "url": "https://www.mcclainforsc.com/issues/issue-2",
+      "rows_citing": "3",
+      "host": "mcclainforsc.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.mississippivalleypublishing.com/daily_gate/independent-michael-bridgford-endorsed-by-forward-party/article_c7ad87cb-8125-43d4-a7fc-840ca0cda1d2.html",
+      "rows_citing": "3",
+      "host": "mississippivalleypublishing.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.missouribusinessalert.com/government/election_2024/voter-guide-us-house-missouri-2nd-district/article_911d314c-4e94-11ef-af44-fb015539d6eb.html",
+      "rows_citing": "3",
+      "host": "missouribusinessalert.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.mtpr.org/montana-news/2026-05-01/seth-bodnar-interview",
+      "rows_citing": "3",
+      "host": "mtpr.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.mtpr.org/montana-news/2026-05-06/q-a-kyle-austin-libertarian-u-s-senate-candidate",
+      "rows_citing": "3",
+      "host": "mtpr.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.murphy.senate.gov/issues/election-reform",
+      "rows_citing": "3",
+      "host": "murphy.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.murphy.senate.gov/issues/lgbtq-equality",
+      "rows_citing": "3",
+      "host": "murphy.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.murphy.senate.gov/newsroom/press-releases",
+      "rows_citing": "3",
+      "host": "murphy.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.mycameronnews.com/stories/smead-emphasizes-rural-outreach-healthcare-access-in-6th-district-interview,46873",
+      "rows_citing": "3",
+      "host": "mycameronnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.myreptracker.com/utah/legislators/ut-senate-9-jen-plumb/voting-record",
+      "rows_citing": "3",
+      "host": "myreptracker.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.newsbreak.com/news/2783850894715-q-a-what-do-candidates-for-forest-grove-mayor-have-to-say",
+      "rows_citing": "3",
+      "host": "newsbreak.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.nprillinois.org/government-politics/2022-10-07/abortion-and-covid-19-are-among-the-many-dividing-lines-for-13th-congressional-candidates",
+      "rows_citing": "3",
+      "host": "nprillinois.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.nprillinois.org/government-politics/2025-07-03/miller-budzisnki-vote-along-party-lines-on-trumps-megabill",
+      "rows_citing": "3",
+      "host": "nprillinois.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Ami_Bera_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Ami_Bera_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Doris_Matsui_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Doris_Matsui_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Jared_Huffman_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Jay_Obernolte_Crime.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Jimmy_Panetta_Education.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Jimmy_Panetta_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/John_Garamendi_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Linda_Sanchez_Budget_+_Economy.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Lou_Correa_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Lou_Correa_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Lou_Correa.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Mark_Takano_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Maxine_Waters_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Maxine_Waters_Education.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Maxine_Waters_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/CA/Tom_McClintock_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Brian_Mast_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Carlos_Gimenez.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Darren_Soto_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Darren_Soto_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Debbie_Wasserman_Schultz_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Debbie_Wasserman_Schultz_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Greg_Steube_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Jared_Moskowitz.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/John_Rutherford_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Kathy_Castor_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Kathy_Castor_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Lois_Frankel_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Lois_Frankel_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Vern_Buchanan_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/FL/Vern_Buchanan_Health_Care.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/GA/Austin_Scott_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/GA/Barry_Loudermilk_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/GA/Hank_Johnson_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/GA/Hank_Johnson_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/GA/Lucy_McBath_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/GA/Mike_Collins.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/GA/Rich_McCormick_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/GA/Sanford_Bishop_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Angie_Craig_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Angie_Craig_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Betty_McCollum_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Betty_McCollum_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Brett_Guthrie_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Brett_Guthrie_Health_Care.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Carol_Miller_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/house/Chuck_Fleischmann_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/house/Clay_Higgins_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/house/Clay_Higgins_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Dale_Strong_Immigration.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Denny_Heck_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Denny_Heck_Social_Security.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Diana_DeGette_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Diana_DeGette_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Diana_Harshbarger_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Emanuel_Cleaver_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Glenn_Grothman_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Gwen_Moore_Budget_+_Economy.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Gwen_Moore_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Hal_Rogers_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Hal_Rogers_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Hal_Rogers.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Harriet_Hageman_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Ilhan_Omar_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Ilhan_Omar_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Jahana_Hayes_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/James_Clyburn_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Jason_Crow_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Jerry_Carl_Families_+_Children.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Joe_Neguse_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Joe_Wilson_Health_Care.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/John_Fleming_Health_Care.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/John_Fleming_Tax_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/John_Fleming_Welfare_+_Poverty.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Kim_Schrier_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Lauren_Boebert_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Marilyn_Strickland_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Mark_Pocan_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Michael_Guest_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Michelle_Fischbach_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Mike_Simpson_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Paul_Gosar_Budget_+_Economy.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Paul_Gosar_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Paul_Gosar_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Paul_Gosar_Principles_+_Values.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Paul_Gosar.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Pramila_Jayapal_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Pramila_Jayapal_Immigration.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Ryan_Zinke_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Samuel_Graves_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Steve_Cohen_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Steve_Scalise_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Suzan_DelBene_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Suzan_DelBene_Health_Care.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Terri_Sewell_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Terri_Sewell_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Terri_Sewell_Immigration.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Thomas_Massie_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Tom_Emmer_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Trent_Kelly_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/House/Trent_Kelly_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Bill_Foster_Health_Care.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Brad_Schneider_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Brad_Schneider_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Chuy_Garcia_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Darin_LaHood_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Darin_LaHood_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Lauren_Underwood_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Lauren_Underwood_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Mike_Bost_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Mike_Quigley_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Mike_Quigley_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Robin_Kelly_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Robin_Kelly_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IL/Sean_Casten_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Bill_Huizenga_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/John_Moolenaar_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Mike_Rogers_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Mike_Rogers_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Rashida_Tlaib_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Alma_Adams_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Deborah_Ross_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Richard_Hudson_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NJ/Donald_Norcross_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NJ/Donald_Norcross_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NJ/Donald_Norcross_Immigration.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Adriano_Espaillat_Immigration.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Claudia_Tenney_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Claudia_Tenney_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Grace_Meng_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Grace_Meng_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Nick_LaLota.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Paul_Tonko_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Paul_Tonko_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Yvette_Clarke_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Greg_Landsman.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Joyce_Beatty_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Joyce_Beatty_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Shontel_Brown_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Troy_Balderson_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Warren_Davidson_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Warren_Davidson_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Warren_Davidson.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/pa/Chrissy_Houlahan_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Dwight_Evans_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Dwight_Evans_Immigration.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/John_Joyce_Social_Security.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Lloyd_Smucker_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mary_Gay_Scanlon_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mary_Gay_Scanlon_Immigration.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mike_Kelly_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mike_Kelly_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Senate/Mark_Warner.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/VA/Bob_Good_Civil_Rights.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/VA/Bob_Good_Government_Reform.htm",
+      "rows_citing": "3",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.osc.ny.gov/files/reports/special-topics/pdf/2025-corporate-governance-stewardship-report.pdf",
+      "rows_citing": "3",
+      "host": "osc.ny.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/governor/accomplishments/cutting-costs.html",
+      "rows_citing": "3",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/governor/accomplishments/healthcare.html",
+      "rows_citing": "3",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-co-leads-renewed-push-to-protect-freedom-to-vote-and-strengthen-our-democracy/",
+      "rows_citing": "3",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pbs.org/video/democratic-candidates-donna-miller-la-shawn-ford-on-their-congressional-races-w89km9/",
+      "rows_citing": "3",
+      "host": "pbs.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pima.gov/2528/Supervisor-Andrs-Cano-District-5",
+      "rows_citing": "3",
+      "host": "pima.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.predictionedge.com/elections/profile/robin-ficker/",
+      "rows_citing": "3",
+      "host": "predictionedge.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.progressiveindiana.net/p/portraits-and-perspectives-lilliana-b49",
+      "rows_citing": "3",
+      "host": "progressiveindiana.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.progressiveindiana.net/p/virtual-town-hall-w-keil-roark-for",
+      "rows_citing": "3",
+      "host": "progressiveindiana.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.prospertx.gov/223/Town-Council",
+      "rows_citing": "3",
+      "host": "prospertx.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.rebeccabennettforcongress.com/priorities/making-new-jersey-more-affordable/",
+      "rows_citing": "3",
+      "host": "rebeccabennettforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.reviewjournal.com/news/politics-and-government/las-vegas/city-oks-plans-to-develop-site-of-desert-pines-golf-course-2546511/amp/",
+      "rows_citing": "3",
+      "host": "reviewjournal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.rounds.senate.gov/issues/family-values",
+      "rows_citing": "3",
+      "host": "rounds.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.saltlakecounty.gov/council/contact/dea-theodore/",
+      "rows_citing": "3",
+      "host": "saltlakecounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.saltlakecounty.gov/regional-development/planning-transportation/accessory-dwelling-units-adus/",
+      "rows_citing": "3",
+      "host": "saltlakecounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sandiego.gov/citycouncil/cd1",
+      "rows_citing": "3",
+      "host": "sandiego.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sandiego.gov/citycouncil/cd9/policy",
+      "rows_citing": "3",
+      "host": "sandiego.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.schiff.senate.gov/news/press-releases/statement-sen-schiff-on-republicans-bill-to-kick-millions-off-health-care-and-slash-food-assistance-to-give-massive-tax-cuts-to-billionaires/",
+      "rows_citing": "3",
+      "host": "schiff.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=119&session=1&vote=00072",
+      "rows_citing": "3",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=119&session=1&vote=00080",
+      "rows_citing": "3",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1171/vote_117_1_00420.xml",
+      "rows_citing": "3",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1172/vote_117_2_00325.xml",
+      "rows_citing": "3",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1172/vote_117_2_00414.htm",
+      "rows_citing": "3",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00154.htm",
+      "rows_citing": "3",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00160.htm",
+      "rows_citing": "3",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00180.htm",
+      "rows_citing": "3",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00598.xml",
+      "rows_citing": "3",
+      "host": "senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.shawnforgeorgia.com/on-the-issues/affordability/",
+      "rows_citing": "3",
+      "host": "shawnforgeorgia.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.slcountydems.com/post/meet-ross-romero-democratic-nominee-for-county-council-4",
+      "rows_citing": "3",
+      "host": "slcountydems.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.slcountydems.com/post/meet-zach-robinson-democratic-nominee-for-county-council-6",
+      "rows_citing": "3",
+      "host": "slcountydems.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.smith.senate.gov/news/press-releases/",
+      "rows_citing": "3",
+      "host": "smith.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sos.nm.gov/about-the-office/secretary-of-state/",
+      "rows_citing": "3",
+      "host": "sos.nm.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.spna-dtla.org/blog/la-city-attorney-race-4-candidates-their-views",
+      "rows_citing": "3",
+      "host": "spna-dtla.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.standard.net/news/government/2024/oct/30/johnson-sees-challenge-from-bernal-in-utah-senate-district-3/",
+      "rows_citing": "3",
+      "host": "standard.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.stlpr.org/government-politics-issues/2026-05-04/u-s-rep-bell-says-voting-rights-act-decision-should-be-a-wake-up-call-for-st-louis",
+      "rows_citing": "3",
+      "host": "stlpr.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/people/drew-darby/",
+      "rows_citing": "3",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/texas-legislature/members/mihaela-plesa/",
+      "rows_citing": "3",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.theeastsiderla.com/news/government_and_politics/rich-sarian-l-a-city-council-district-13-candidate/article_8358e794-0bd8-4ad8-9d95-37ee81dc4230.html",
+      "rows_citing": "3",
+      "host": "theeastsiderla.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tucsonlocalmedia.com/explorernews/article_c4be4b78-0d53-11ed-911e-ffeb76be5540.html",
+      "rows_citing": "3",
+      "host": "tucsonlocalmedia.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tucsonsentinel.com/local/report/080625_project_blue/tucson-city-council-pulls-plug-amazons-project-blue/",
+      "rows_citing": "3",
+      "host": "tucsonsentinel.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.utahcounty.gov/portfolio/brandon-gordon",
+      "rows_citing": "3",
+      "host": "utahcounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.utahsenatedemocrats.org/home/senator-stephanie-pitcher",
+      "rows_citing": "3",
+      "host": "utahsenatedemocrats.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/161769-luke-torian/list-votes/close-votes/?session=39",
+      "rows_citing": "3",
+      "host": "vpap.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/162092-christopher-head/list-votes/close-votes/?session=39",
+      "rows_citing": "3",
+      "host": "vpap.org",
+      "status": 202,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/270-terry-kilgore/list-votes/close-votes/?session=39",
+      "rows_citing": "3",
+      "host": "vpap.org",
+      "status": 202,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/272244-david-reid/list-votes/close-votes/?session=38",
+      "rows_citing": "3",
+      "host": "vpap.org",
+      "status": 202,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/370308-travis-hackworth/list-votes/close-votes/?session=39",
+      "rows_citing": "3",
+      "host": "vpap.org",
+      "status": 202,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/374412-jason-ballard/list-votes/close-votes/?session=39",
+      "rows_citing": "3",
+      "host": "vpap.org",
+      "status": 202,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.vpap.org/legislators/382634-josh-thomas/legislation/?session=39",
+      "rows_citing": "3",
+      "host": "vpap.org",
+      "status": 202,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wamc.org/news/2023-11-03/in-the-springfield-mayoral-election-the-longtime-incumbent-faces-a-challenger-who-says-change-is-long-overdue",
+      "rows_citing": "3",
+      "host": "wamc.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/cao/2025-public-safety-levy-information",
+      "rows_citing": "3",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonexaminer.com/news/4529490/philip-harding-virginia-seventh-district-republican-abigail-spanberger-seat/",
+      "rows_citing": "3",
+      "host": "washingtonexaminer.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wcpo.com/news/government/elections-local/melissa-strange-wins-democratic-primary-for-kentuckys-4th-congressional-district",
+      "rows_citing": "3",
+      "host": "wcpo.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.westerncity.com/article/pomonas-housing-toolbox-holistic-long-term-plan-housing-construction",
+      "rows_citing": "3",
+      "host": "westerncity.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wgbh.org/news/local/2016-09-21/brockton-debates-becoming-a-sanctuary-city-with-an-informal-policy-to-not-detain-undocumented-immigrants",
+      "rows_citing": "3",
+      "host": "wgbh.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wispolitics.com/2024/climate-action-campaign-racine-mayor-cory-mason-state-and-local-officials-highlight-federal-climate-investments-supporting-citys-clean-energy-expansion/",
+      "rows_citing": "3",
+      "host": "wispolitics.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.worcesterma.gov/city-manager/quality-of-life-team",
+      "rows_citing": "3",
+      "host": "worcesterma.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wpr.org/news/dane-county-flock-license-plate-cameras",
+      "rows_citing": "3",
+      "host": "wpr.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wpr.org/news/democrats-primary-debate-governor-2026",
+      "rows_citing": "3",
+      "host": "wpr.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wusf.org/politics-issues/2025-03-27/florida-elect-two-newest-members-congress-special-elections",
+      "rows_citing": "3",
+      "host": "wusf.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.yahoo.com/news/articles/police-union-president-addiction-recovery-115515870.html",
+      "rows_citing": "3",
+      "host": "yahoo.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.yahoo.com/news/guide-californias-27th-congressional-district-100037409.html",
+      "rows_citing": "3",
+      "host": "yahoo.com",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

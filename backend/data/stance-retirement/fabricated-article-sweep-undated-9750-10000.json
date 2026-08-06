@@ -1,0 +1,1779 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 9750 --to 10000 --pace 1200",
+  "slice": "undated",
+  "timing": {
+    "fetch_timeout_ms": 20000,
+    "curl_timeout_s": 15,
+    "probe_timeout_ms": 3000,
+    "zero_streak": 3,
+    "unbreak_streak": 3,
+    "pace_ms": 1200
+  },
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 248,
+    "NO_ANSWER": 1,
+    "EXISTS": 1
+  },
+  "findings": [
+    {
+      "url": "https://www.cityofpasadena.net/district6/featured-stories/the-vote-on-the-710-freeway-extension/",
+      "rows_citing": "1",
+      "host": "cityofpasadena.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofpasadena.net/rent-stabilization/measure-h/",
+      "rows_citing": "1",
+      "host": "cityofpasadena.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofsacramento.gov/mayor-council/mayor/mayor-mccarty-memo/9-16-homelessness-plan-update",
+      "rows_citing": "1",
+      "host": "cityofsacramento.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofsacramento.gov/mayor-council/mayor/mayor-mccarty-memo/Unsheltered_Homelessness_Six_Point_Plan_Launch",
+      "rows_citing": "1",
+      "host": "cityofsacramento.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofsouthgate.org/Government/City-Council/Meet-the-City-Council/Council-Member-Maria-Davila",
+      "rows_citing": "1",
+      "host": "cityofsouthgate.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityweekly.net/news/its-mind-blowingfree-slc-student-transit-program-expanded-to-include-parents-after-runaway-success-20402161/",
+      "rows_citing": "1",
+      "host": "cityweekly.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityweekly.net/news/salt-lake-city-councils-newest-member-pledges-work-on-community-engagement-affordable-housing-06904b26",
+      "rows_citing": "1",
+      "host": "cityweekly.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityweekly.net/news/salt-lake-county-mayor-calls-for-20-tax-hike-in-the-face-of-major-projects-and-criminal-justice-reforms-670bd4aa",
+      "rows_citing": "1",
+      "host": "cityweekly.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.civoren.com/candidate/chris-reichard",
+      "rows_citing": "1",
+      "host": "civoren.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.civoren.com/candidate/diana-onyejiaka",
+      "rows_citing": "1",
+      "host": "civoren.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.civoren.com/candidate/neelam-perry",
+      "rows_citing": "1",
+      "host": "civoren.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.civoren.com/candidate/paul-berry-iii",
+      "rows_citing": "1",
+      "host": "civoren.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.civoren.com/candidate/tripp-charles-hutchinson",
+      "rows_citing": "1",
+      "host": "civoren.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.clarkcountynv.gov/news/021725-bcc-approves-additional-chf-funding",
+      "rows_citing": "1",
+      "host": "clarkcountynv.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.clarkcountynv.gov/news/news-detail-t28-r1159",
+      "rows_citing": "1",
+      "host": "clarkcountynv.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.clarkforwi.com/issues/A-future-for-our-farms-and-forests",
+      "rows_citing": "1",
+      "host": "clarkforwi.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.clarkforwi.com/issues/making-artificial-intelligence-work-for-us",
+      "rows_citing": "1",
+      "host": "clarkforwi.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.clubforgrowth.org/candidates/jessi-ebben/",
+      "rows_citing": "1",
+      "host": "clubforgrowth.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cnu.org/highways-boulevards/campaign-cities/pasadena-710",
+      "rows_citing": "1",
+      "host": "cnu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cocc.edu/news/sbdc-early-child-education-business-accelerator-program",
+      "rows_citing": "1",
+      "host": "cocc.edu",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.coloradoboulevard.net/events/greenways-ride-with-pasadena-council-members-jason-lyon-and-rick-cole/",
+      "rows_citing": "1",
+      "host": "coloradoboulevard.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.columbiamissourian.com/news/elections/voter-id-ruling-has-election-authorities-worried-about-confusion-at-polls/article_56a4f1d2-cc2f-11e8-9fb4-cb13bef5bd18.html",
+      "rows_citing": "1",
+      "host": "columbiamissourian.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.columbiamissourian.com/opinion/letters_to_the_editor/letter-to-the-editor-the-league-of-women-voters-call-for-more-evidence-on-voter/article_64847ede-78a7-11e8-9bde-17f2053f84c8.html",
+      "rows_citing": "1",
+      "host": "columbiamissourian.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.commondreams.org/news/progressives-introduce-25-minimum-wage",
+      "rows_citing": "1",
+      "host": "commondreams.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.commondreams.org/tag/pramila-jayapal",
+      "rows_citing": "1",
+      "host": "commondreams.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.commondreams.org/tag/yassamin-ansari",
+      "rows_citing": "1",
+      "host": "commondreams.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.comptoncity.org/Home/Components/News/News/97/16",
+      "rows_citing": "1",
+      "host": "comptoncity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.comptoncity.org/our-city/elected-officials/mayor-emma-sharif",
+      "rows_citing": "1",
+      "host": "comptoncity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/115th-congress/senate-bill/1114",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/116th-congress/house-bill/1/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/116th-congress/house-bill/5430",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/116th-congress/house-bill/7120",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/116th-congress/house-bill/860/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/116th-congress/house-resolution/1209/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/3684",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/3755/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/40",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/5723",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/5746",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/7120",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/7691",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/8404/all-actions",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/house-joint-resolution/17/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/house-joint-resolution/80/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/house-resolution/332/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/1168",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/1360",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/1975/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/2797/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/3522",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/4/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/443",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/529/all-info",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/673",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/117th-congress/senate-bill/736/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/1",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/1046/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/12",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/2374",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/2474/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/26/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/2697/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/2925",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/4175",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/4278",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/531/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/561",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/5692",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/6151",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/734",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/7521/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/8035/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-resolution/269/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/senate-bill/1354/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/senate-bill/1569",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/senate-bill/4495/all-actions",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/senate-bill/657/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/12/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/14",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/14/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/15/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1589/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1810",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1941",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2438/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/28/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/3013",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/3014",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/3069",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/3449",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/3954",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/40/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/409",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/433",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/4418/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/5332/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/5449/all-info",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/5452",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/722/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7743",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1322/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1503/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2295/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4297/cosponsors",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/890",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/9",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/967/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/133/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/congressional-record/congressional-record-index/119th-congress/1st-session/whitesides-george-a-representative-from-california/1951390",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/event/117th-congress/house-event/111407",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/event/117th-congress/house-event/111407/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/event/117th-congress/senate-event/LC72808/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/event/118th-congress/senate-event/LC73719/text",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/member/julia-brownley/B001285",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/member/linda-sanchez/S001156",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/member/linda-sanchez/S001156?q=%7B%22sponsorship%22:%22sponsored%22,%22type%22:%22bills%22%7D",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/member/mark-warner/W000805",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/member/robert-garcia/G000598",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/member/seth-moulton/M001196",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.congress.gov/member/sydney-kamlager-dove/K000402?q=%7B%22search%22%3A%22AI%22%7D",
+      "rows_citing": "1",
+      "host": "congress.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.conwaydailysun.com/interviews/sarah-chadzynski-democratic-congressional-candidate/video_e1a9095e-8ea0-4618-9156-438fba42f436.html",
+      "rows_citing": "1",
+      "host": "conwaydailysun.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.coons.senate.gov/issues/economic-opportunity",
+      "rows_citing": "1",
+      "host": "coons.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.coons.senate.gov/issues/public-safety",
+      "rows_citing": "1",
+      "host": "coons.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.coons.senate.gov/issues/womens-rights",
+      "rows_citing": "1",
+      "host": "coons.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.coons.senate.gov/news/press-releases/senators-coons-cramer-introduce-bill-to-expand-access-to-rental-assistance-program-for-affordable-housing",
+      "rows_citing": "1",
+      "host": "coons.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.coons.senate.gov/newsroom/in-the-news",
+      "rows_citing": "1",
+      "host": "coons.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.coons.senate.gov/newsroom/press-releases",
+      "rows_citing": "1",
+      "host": "coons.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cor.net/departments/transportation-mobility/plan-policies/complete-streets",
+      "rows_citing": "1",
+      "host": "cor.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cor.net/government/city-council/who-are-our-city-council-members/jennifer-justice",
+      "rows_citing": "1",
+      "host": "cor.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.corneliusor.gov/AgendaCenter/ViewFile/Minutes/_02022026-187",
+      "rows_citing": "1",
+      "host": "corneliusor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.corneliusor.gov/AgendaCenter/ViewFile/Minutes/_03162026-194",
+      "rows_citing": "1",
+      "host": "corneliusor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.corneliusor.gov/AgendaCenter/ViewFile/Minutes/_04062026-199",
+      "rows_citing": "1",
+      "host": "corneliusor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cortezmasto.senate.gov/news/press-releases/signed-cortez-mastos-legislation-to-create-jobs-at-apex-industrial-park-in-north-las-vegas/",
+      "rows_citing": "1",
+      "host": "cortezmasto.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cpsd.us/school_committee/school-committee-members-subcommittees/arjun-jaikumar",
+      "rows_citing": "1",
+      "host": "cpsd.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cpsd.us/school_committee/school-committee-members-subcommittees/richard-harding",
+      "rows_citing": "1",
+      "host": "cpsd.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.crescentavalleyweekly.com/news/02/20/2020/meet-glendale-city-council-candidates-part-2/",
+      "rows_citing": "1",
+      "host": "crescentavalleyweekly.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.crescentavalleyweekly.com/news/06/26/2025/billion-dollar-budget-approved-by-council/",
+      "rows_citing": "1",
+      "host": "crescentavalleyweekly.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.crescentavalleyweekly.com/news/12/02/2021/biogas-debate-subject-of-council-meeting/",
+      "rows_citing": "1",
+      "host": "crescentavalleyweekly.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.csis.org/podcasts/ai-policy-podcast/congressman-jay-obernolte-future-us-ai-regulation",
+      "rows_citing": "1",
+      "host": "csis.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ctmirror.org/author/stephanie-thomas",
+      "rows_citing": "1",
+      "host": "ctmirror.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ctpublic.org/news/2026-04-13/free-breakfast-for-all-ct-students-increasingly-likely-state-officials-say",
+      "rows_citing": "1",
+      "host": "ctpublic.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.curtis.senate.gov/press-releases/curtis-blunt-rochester-introduce-bill-to-spur-housing-construction-near-transportation-hubs/",
+      "rows_citing": "1",
+      "host": "curtis.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.curtis.senate.gov/press-releases/curtis-colleagues-introduce-bipartisan-legislation-to-keep-kids-safe-healthy-off-social-media/",
+      "rows_citing": "1",
+      "host": "curtis.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.curtis.senate.gov/press-releases/curtis-kelly-introduce-algorithm-accountability-act/",
+      "rows_citing": "1",
+      "host": "curtis.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.curtis.senate.gov/press-releases/curtis-pushes-utah-as-future-home-of-more-advanced-technologies/",
+      "rows_citing": "1",
+      "host": "curtis.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dailyherald.com/news/20240929/casten-conforti-differ-on-abortion-but-both-oppose-federal-ban",
+      "rows_citing": "1",
+      "host": "dailyherald.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dailyherald.com/news/20260218/gop-candidates-in-6th-congressional-district-differ-on-immigration-one-says-close-borders-to-all",
+      "rows_citing": "1",
+      "host": "dailyherald.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dailyjournal.com/article/391228-da-police-union-support-john-mckinney-for-la-city-attorney",
+      "rows_citing": "1",
+      "host": "dailyjournal.com",
+      "status": 307,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.daines.senate.gov/issues/education/",
+      "rows_citing": "1",
+      "host": "daines.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dallasobserver.com/news/collin-county-is-booming-princeton-new-housing-cant-keep-up-21081057/",
+      "rows_citing": "1",
+      "host": "dallasobserver.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.danecounty.gov/PressDetail/11492",
+      "rows_citing": "1",
+      "host": "danecounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.danecounty.gov/PressDetail/11593",
+      "rows_citing": "1",
+      "host": "danecounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.debates.org/voter-education/debate-transcripts/october-19-2016-debate-transcript/",
+      "rows_citing": "1",
+      "host": "debates.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.democracydocket.com/cases/utah-congressional-redistricting-challenge/",
+      "rows_citing": "1",
+      "host": "democracydocket.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dems.gov/newsroom/press-releases/chairman-aguilar-republicans-vote-to-take-away-health-care-from-more-than-10-million-californians-to-pay-for-tax-cuts-for-billionaire",
+      "rows_citing": "1",
+      "host": "dems.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dems.gov/newsroom/press-releases/chairman-aguilar-the-republican-budget-is-going-to-take-health-care-away-from-millions-of-working-americans-to-pay-for-billionaire-tax-cuts",
+      "rows_citing": "1",
+      "host": "dems.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dems.gov/newsroom/press-releases/chairman-aguilar-voting-is-an-act-of-patriotism",
+      "rows_citing": "1",
+      "host": "dems.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dittmerforcongress.com/priorities/education",
+      "rows_citing": "1",
+      "host": "dittmerforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dittmerforcongress.com/priorities/immigration",
+      "rows_citing": "1",
+      "host": "dittmerforcongress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.eaglecountryonline.com/news/local-news/senate-minority-leader-responds-to-passage-of-senate-bill-1/",
+      "rows_citing": "1",
+      "host": "eaglecountryonline.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.eagletribune.com/news/with-bill-dizoglio-hopes-to-make-public-housing-safer/article_ebbc94af-7023-5c93-81d4-007dbb6acfb1.html",
+      "rows_citing": "1",
+      "host": "eagletribune.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.edcutah.org/recent-news/prosperity-post-the-once-and-future-olympic-city-a-conversation-with-mayor-mendenhall",
+      "rows_citing": "1",
+      "host": "edcutah.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.eenews.net/articles/trump-ai-directive-could-spur-congressional-action-on-data-centers/",
+      "rows_citing": "1",
+      "host": "eenews.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.electroyalwebster.org/issues/issue-2",
+      "rows_citing": "1",
+      "host": "electroyalwebster.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.electsummers.com/post/keeping-costs-low",
+      "rows_citing": "1",
+      "host": "electsummers.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.elsegundo.gov/government/departments/city-council-elected-officials/councilmember-chris-pimentel",
+      "rows_citing": "1",
+      "host": "elsegundo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.emwd.org/what-we-do/emwd-construction-updates/temecula-projects/temecula-wine-country-sewer-infrastructure",
+      "rows_citing": "1",
+      "host": "emwd.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.epa.gov/system/files/documents/2025-02/25-1061.pdf",
+      "rows_citing": "1",
+      "host": "epa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ernst.senate.gov/priorities/education",
+      "rows_citing": "1",
+      "host": "ernst.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ernst.senate.gov/priorities/health-care",
+      "rows_citing": "1",
+      "host": "ernst.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ernst.senate.gov/priorities/national-defense",
+      "rows_citing": "1",
+      "host": "ernst.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ernst.senate.gov/priorities/trade",
+      "rows_citing": "1",
+      "host": "ernst.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/DelegateTorian/posts/in-january-i-was-proud-to-vote-for-the-reproductive-freedom-constitutional-amend/1253931533225567/",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/geraldmalloyvt/posts/i-gerald-malloy-support-voter-id-100the-constitution-is-very-specific-that-only-/911572164892530/",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/geraldmalloyvt/posts/i-was-asked-this-question-1-do-you-support-funding-us-proxy-wars-in-ukraine-and-/475640078485743/",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/HollieforNewHampshire/posts/the-irony-of-elected-democrats-who-oppose-voter-id-laws-like-the-save-act-but-re/122231889614063050/",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/lademocrats/posts/our-la-county-assessor-jeff-prang-reminds-us-why-republicans-who-havent-won-stat/10165589144895184/",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/lademocrats/videos/our-la-county-assessor-jeff-prang-reminds-us-why-republicans-who-havent-won-stat/2706630192968933/",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/micheletafoyaforsenate/videos/parents-should-decide-where-their-children-go-to-school-the-government-should-ne/4667376703485772/",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/migreens/posts/for-that-extra-1000-a-month-its-clyde-shabazz-for-us-congress-in-the-michigan-14/1735798429916299/",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/migreens/videos/clyde-shabazz-for-us-congress-explains-gp-universal-basic-income-that-would-pays/967131984974781/",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/p/Dana-Conklin-Melissa-City-Council-Place-3-100078415706860/",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/profile.php/?id=61579970312126",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/RepGlennIvey/videos/seniors-are-entitled-to-their-social-security-benefits-point-blank-taking-away-r/1841243489983898/",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/RepJohnnyOlszewski/videos/no-one-wins-in-a-tariff-war-fox-5-dc/1305475147684627/",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/RepSarahElfreth/posts/our-founders-enshrined-the-right-to-freely-practice-ones-faith-in-the-first-amen/122161401062718944/",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.facebook.com/tnsenatedems/videos/access-to-medical-care-should-be-the-rule-not-the-exceptionstate-senator-london-/1240813373303939/",
+      "rows_citing": "1",
+      "host": "facebook.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.factcheck.org/person/dave-mccormick/",
+      "rows_citing": "1",
+      "host": "factcheck.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.farmersvilletx.com/media/5041",
+      "rows_citing": "1",
+      "host": "farmersvilletx.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.farmersvilletx.com/media/5071",
+      "rows_citing": "1",
+      "host": "farmersvilletx.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.farmersvilletx.com/media/5221",
+      "rows_citing": "1",
+      "host": "farmersvilletx.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.farmersvilletx.com/media/5231",
+      "rows_citing": "1",
+      "host": "farmersvilletx.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.farmersvilletx.com/media/5261",
+      "rows_citing": "1",
+      "host": "farmersvilletx.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.farmersvilletx.com/media/5291",
+      "rows_citing": "1",
+      "host": "farmersvilletx.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.farmersvilletx.com/media/8396",
+      "rows_citing": "1",
+      "host": "farmersvilletx.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fec.gov/data/candidate/H2MO03167/",
+      "rows_citing": "1",
+      "host": "fec.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fec.gov/data/candidate/H6KS04256/",
+      "rows_citing": "1",
+      "host": "fec.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fec.gov/data/candidate/H6LA06141/",
+      "rows_citing": "1",
+      "host": "fec.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.finance.senate.gov/ranking-members-news/wyden-markey-shaheen-and-19-senate-democrats-release-legislation-requiring-refunds-of-trumps-illegal-tariffs",
+      "rows_citing": "1",
+      "host": "finance.senate.gov",
+      "status": 410,
+      "verdict": "EXISTS",
+      "captures": 2
+    },
+    {
+      "url": "https://www.floydct.com/news/pillersdorf-announces-run-for-congress/article_961980ea-c0d5-4abb-b77c-4b859ec8e09d.html",
+      "rows_citing": "1",
+      "host": "floydct.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.flsenate.gov/Session/Bill/2021/1028",
+      "rows_citing": "1",
+      "host": "flsenate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.flsenate.gov/Session/Bill/2022/1557",
+      "rows_citing": "1",
+      "host": "flsenate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.flsenate.gov/Session/Bill/2023/102",
+      "rows_citing": "1",
+      "host": "flsenate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.flsenate.gov/Session/Bill/2023/1580",
+      "rows_citing": "1",
+      "host": "flsenate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.flsenate.gov/Session/Bill/2023/202",
+      "rows_citing": "1",
+      "host": "flsenate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.flsenate.gov/Session/Bill/2023/264",
+      "rows_citing": "1",
+      "host": "flsenate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.flsenate.gov/Session/Bill/2023/HB1",
+      "rows_citing": "1",
+      "host": "flsenate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.forestgrove-or.gov/ArchiveCenter/ViewFile/Item/336",
+      "rows_citing": "1",
+      "host": "forestgrove-or.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox13now.com/news/local-news/utah-lawmakers-plan-for-water-growth-and-artificial-intelligence",
+      "rows_citing": "1",
+      "host": "fox13now.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox13now.com/news/politics/could-this-idea-help-schools-in-some-of-utahs-fastest-growing-areas",
+      "rows_citing": "1",
+      "host": "fox13now.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox13now.com/news/politics/judge-rules-utah-fits-all-voucher-program-is-unconstitutional",
+      "rows_citing": "1",
+      "host": "fox13now.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox13now.com/news/politics/mayor-mendenhall-reaffirms-salt-lake-citys-commitment-to-immigrant-safety-and-inclusion",
+      "rows_citing": "1",
+      "host": "fox13now.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox13now.com/news/politics/trump-wants-to-stop-states-from-regulating-ai-this-utah-republican-isnt-listening",
+      "rows_citing": "1",
+      "host": "fox13now.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox13now.com/news/politics/utah-lawmakers-break-with-trump-oppose-ai-moratorium-in-big-beautiful-bill",
+      "rows_citing": "1",
+      "host": "fox13now.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.foxla.com/news/norwalk-residents-react-city-extending-ban-homeless-shelters",
+      "rows_citing": "1",
+      "host": "foxla.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.foxnews.com/media/chicago-mayor-claims-trump-threat-black-families-from-his-plan-crackdown-illegal-immigration",
+      "rows_citing": "1",
+      "host": "foxnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.foxnews.com/media/former-chicago-gangster-blames-vp-harris-dems-turf-war-between-local-gangs-venezuelas-tren-de-aragua",
+      "rows_citing": "1",
+      "host": "foxnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.foxnews.com/media/mike-lee-republican-success-blocking-for-the-people-act",
+      "rows_citing": "1",
+      "host": "foxnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.foxnews.com/person/s/jason-smith",
+      "rows_citing": "1",
+      "host": "foxnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.foxnews.com/politics/ex-democrat-reveals-why-he-ditched-party-running-republican-blue-stronghold",
+      "rows_citing": "1",
+      "host": "foxnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.foxnews.com/politics/from-combat-boots-campaign-trail-army-veteran-marches-michigan-congressional-race",
+      "rows_citing": "1",
+      "host": "foxnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.foxnews.com/politics/gop-house-hopeful-co-authored-bills-provide-in-state-tuition-driving-cards-illegal-immigrants",
+      "rows_citing": "1",
+      "host": "foxnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.foxnews.com/politics/iowa-dem-touted-strong-work-ethic-misses-more-half-house-votes",
+      "rows_citing": "1",
+      "host": "foxnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.foxnews.com/politics/ukraine-russia-crossroads-how-war-evolved-2025-what-comes-next",
+      "rows_citing": "1",
+      "host": "foxnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.foxnews.com/sports/rubio-demands-usa-boxing-reverse-course-trans-policy-allowing-men-hit-women-reprehensible",
+      "rows_citing": "1",
+      "host": "foxnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.friscotexas.gov/512/Comprehensive-Planning",
+      "rows_citing": "1",
+      "host": "friscotexas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.friscotexas.gov/m/newsflash/home/detail/2176",
+      "rows_citing": "1",
+      "host": "friscotexas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.georgiapol.com/tag/chris-carr/",
+      "rows_citing": "1",
+      "host": "georgiapol.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gingerforus.com/news/ginger-murray-blasts-billionaire-tax-cuts-in-first-television-ad",
+      "rows_citing": "1",
+      "host": "gingerforus.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gingerforus.com/news/ginger-murray-calls-for-an-end-to-dark-money-in-politics",
+      "rows_citing": "1",
+      "host": "gingerforus.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.givegreen.com/candidates/brad-sherman",
+      "rows_citing": "1",
+      "host": "givegreen.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.glendaleca.gov/government/city-council/councilmember-dan-brotman",
+      "rows_citing": "1",
+      "host": "glendaleca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/priorities-and-progress/priorities/health-care/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.governing.com/finance/nearly-half-of-l-a-s-homelessness-funds-went-unused",
+      "rows_citing": "1",
+      "host": "governing.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.governing.com/politics/arizona-senate-repeals-the-1864-abortion-ban",
+      "rows_citing": "1",
+      "host": "governing.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.governing.com/urban/oregon-city-explores-new-ways-to-develop-senior-housing",
+      "rows_citing": "1",
+      "host": "governing.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.governing.com/urban/oregon-mayor-builds-homeless-shelter-at-no-cost-to-the-city",
+      "rows_citing": "1",
+      "host": "governing.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/app/details/BILLS-118hr734ih",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/hr/BILLSTATUS-118hr11.xml",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/hr/BILLSTATUS-118hr5.xml",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/hr/BILLSTATUS-118hr8035.xml",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-116hr3884ih/html/BILLS-116hr3884ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-116hr3922ih/html/BILLS-116hr3922ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117hr1381ih/html/BILLS-117hr1381ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117hr1712ih/html/BILLS-117hr1712ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117hr2471enr/html/BILLS-117hr2471enr.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117hr262ih/html/BILLS-117hr262ih.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117hr3684rh/html/BILLS-117hr3684rh.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-117hr7691enr/html/BILLS-117hr7691enr.htm",
+      "rows_citing": "1",
+      "host": "govinfo.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

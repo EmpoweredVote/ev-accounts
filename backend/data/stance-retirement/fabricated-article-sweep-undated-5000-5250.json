@@ -1,0 +1,1768 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 5000 --to 5250 --pace 1200",
+  "slice": "undated",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 250
+  },
+  "findings": [
+    {
+      "url": "https://www.ksl.com/article/51163128/get-to-know-3rd-congressional-district-candidates-mike-kennedy-glenn-wright",
+      "rows_citing": "2",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51321818/why-salt-lake-city-police-department-is-seeking-a-125-budget-increase",
+      "rows_citing": "2",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51390162/utah-attorney-general-backs-gop-initiative-to-repeal-redistricting-laws-",
+      "rows_citing": "2",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51416794/audit-finds-overcrowding-at-salt-lake-county-jail-increases-recidivism",
+      "rows_citing": "2",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksl.com/article/51430565/the-cost-of-living-is-eating-utahs-utahness-heres-the-gop-plan-to-save-it",
+      "rows_citing": "2",
+      "host": "ksl.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksltv.com/local-news/salt-lake-county-council-reelection/862518/",
+      "rows_citing": "2",
+      "host": "ksltv.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2023-10-05/in-his-2023-state-of-the-county-address-greene-county-presiding-commissioner-bob-dixon-focused-on-mental-health",
+      "rows_citing": "2",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2023-11-07/springfield-city-council-approves-funding-for-two-walkability-projects",
+      "rows_citing": "2",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2024-04-09/council-approves-blight-designation-redevelopment-plan-for-springfields-historic-commercial-street",
+      "rows_citing": "2",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2024-07-11/leaders-of-restore-sgf-tell-springfield-city-council-the-program-is-having-an-impact",
+      "rows_citing": "2",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2024-08-06/springfield-city-council-sends-sales-tax-proposal-to-voters-in-november",
+      "rows_citing": "2",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2024-11-01/numerous-bills-on-agenda-for-november-4-springfield-city-council-meeting",
+      "rows_citing": "2",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2026-01-09/greene-county-commissioners-sign-2026-county-budget",
+      "rows_citing": "2",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2026-02-03/springfield-city-council-approves-review-of-spd-guidelines",
+      "rows_citing": "2",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/news/2026-05-04/springfield-city-council-approves-campaign-finance-contribution-limits",
+      "rows_citing": "2",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ksmu.org/show/informed-voter-coalition/2025-03-26/candidates-for-springfield-school-board-share-their-views-ahead-of-the-april-8-municipal-election",
+      "rows_citing": "2",
+      "host": "ksmu.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ktvq.com/news/local-news/montana-u-s-senate-hopeful-kyle-austin-discusses-his-platform-and-foreign-policy",
+      "rows_citing": "2",
+      "host": "ktvq.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kuer.org/health/2025-07-02/medicaid-snap-cuts-worry-utah-advocates-as-the-gops-budget-bill-nears-passage",
+      "rows_citing": "2",
+      "host": "kuer.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kuer.org/justice/2020-07-17/salt-lake-county-da-says-when-it-comes-to-use-of-force-change-should-start-with-the-law",
+      "rows_citing": "2",
+      "host": "kuer.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kuer.org/politics-government/2024-07-22/salt-lake-countys-new-5-year-homelessness-plan-will-create-1-000-housing-units",
+      "rows_citing": "2",
+      "host": "kuer.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kuer.org/politics-government/2024-10-11/2024-voter-guide-utah-county-commission-seat-c-skyler-beltran-alan-wessman",
+      "rows_citing": "2",
+      "host": "kuer.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kuer.org/politics-government/2025-10-13/kaufusi-judkins-parse-budgets-public-safety-at-provo-mayoral-candidate-forum",
+      "rows_citing": "2",
+      "host": "kuer.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kuer.org/politics-government/2025-12-16/the-forward-party-of-utah-has-a-new-senator-can-they-hold-on-in-2026",
+      "rows_citing": "2",
+      "host": "kuer.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kuer.org/politics-government/2026-01-19/activists-want-more-action-but-what-can-slc-do-to-protect-residents-from-ice",
+      "rows_citing": "2",
+      "host": "kuer.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kuer.org/politics-government/2026-01-20/lawmakers-start-day-1-with-a-promise-to-chase-down-affordability-for-utahns",
+      "rows_citing": "2",
+      "host": "kuer.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kvcrnews.org/local-news/2025-05-13/march-joint-powers-commission-votes-down-proposed-warehouse-project-in-riverside",
+      "rows_citing": "2",
+      "host": "kvcrnews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kvcrnews.org/local-news/2025-10-21/riverside-county-signs-off-on-cajalco-commerce-center-warehouse-in-mead-valley",
+      "rows_citing": "2",
+      "host": "kvcrnews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.kvcrnews.org/local-news/2026-06-03/riverside-county-supervisors-on-track-for-reelection-wins",
+      "rows_citing": "2",
+      "host": "kvcrnews.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/bio/derek-tran/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/bio/laura-friedman/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/members-of-congress/?last_name=Meuser&chamber=house",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/members-of-congress/?search=van+epps",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/members-of-congress/?state=MA&chamber=House",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/members-of-congress/?state=NY&chamber=H",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/members-of-congress/?state=NY&chamber=house",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/aaron-bean",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/adam-gray/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/ami-bera",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/amy-klobuchar",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/andrew-clyde",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/andy-biggs",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/andy-kim",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/angie-craig",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/anna-paulina-luna",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/antonio-delgado",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/ashley-moody",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/austin-scott",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/barry-loudermilk",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/bill-foster",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/bill-hagerty",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/bill-huizenga",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/bonnie-watson-coleman",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/brad-schneider",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/brendan-boyle",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/brett-guthrie",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/brian-fitzpatrick",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/brian-jack",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/brian-mast",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/brittany-pettersen/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/bruce-westerman",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/buddy-carter",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/byron-donalds",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/carlos-gimenez",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/carol-miller",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/catherine-cortez-masto",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/chris-deluzio",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/chrissy-houlahan",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/chuck-edwards",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/cindy-hyde-smith",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/claudia-tenney",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/clay-higgins",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/dale-strong",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/dan-newhouse",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/dan-sullivan",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/danny-k-davis",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/darin-lahood",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/david-kustoff",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/david-rouzer",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/david-schweikert",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/debbie-dingell",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/deborah-ross",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/delia-ramirez/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/denny-heck/412519",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/derrick-van-orden",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/don-bacon",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/dusty-johnson",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/dwight-evans",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/ed-case",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/eli-crane/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/elissa-slotkin",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/emanuel-cleaver",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/emily-randall",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/french-hill",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/gabe-evans",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/gary-palmer",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/glenn-grothman",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/greg-murphy",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/guy-reschenthaler",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/gwen-moore",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/haley-stevens",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/hank-johnson",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/harriet-hageman",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/hillary-scholten",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/ilhan-omar",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/jacky-rosen",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/james-comer",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/jan-schakowsky",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/jared-huffman",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/jason-crow",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/jeanne-shaheen",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/jeff-hurd",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/jim-jordan",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/joe-courtney",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/john-curtis",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/john-james",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/john-joyce",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/john-moolenaar",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/john-rose",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/john-rutherford",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/jonathan-jackson/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/josh-brecheen",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/josh-gottheimer",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/joyce-beatty",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/juan-ciscomani",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/lauren-underwood",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/lisa-blunt-rochester",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/lisa-mcclain",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/lloyd-smucker",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/lois-frankel",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/lucy-mcbath",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/madeleine-dean/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/maria-cantwell",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/maria-elvira-salazar",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/mariannette-miller-meeks",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/marie-gluesenkamp-perez",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/marilyn-strickland",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/mark-harris",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/mark-takano",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/mary-gay-scanlon",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/mary-miller",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/max-miller",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/michael-bennet",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/michael-guest",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/michael-r-turner",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/michelle-fischbach",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/mike-carey",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/mike-johnson",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/mike-kelly",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/mike-quigley/1222",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/mikie-sherrill",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/nancy-mace",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/neal-dunn",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/nellie-pou",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/nikema-williams",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/nikki-budzinski",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/patty-murray",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/paul-gosar",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/pramila-jayapal",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/raja-krishnamoorthi",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/randy-feenstra",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/raphael-warnock",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/rashida-tlaib",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/raul-ruiz",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/rich-mccormick",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/richard-blumenthal",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/richard-hudson",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/rick-allen",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/rick-crawford",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/rick-larsen",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/ro-khanna",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/robin-kelly",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/ruben-gallego",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/russ-fulcher",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/russell-fry",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/salud-carbajal",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/sam-graves",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/scott-desjarlais",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/scott-fitzgerald",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/scott-franklin",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/scott-perry",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/seth-moulton",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/sheldon-whitehouse",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/shontel-brown",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/shri-thanedar",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/stephanie-bice",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/steve-cohen",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/steve-daines",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/suhas-subramanyam",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/susie-lee",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/tammy-baldwin",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/tammy-duckworth",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/tim-burchett",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/tim-walberg",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/tom-cole",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/tom-emmer",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/tom-mcclintock",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/tracey-mann",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/trent-kelly",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/troy-balderson",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/troy-downing",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/valerie-foushee",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/virginia-foxx",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/warren-davidson",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/william-timmons/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/young-kim",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/zach-nunn",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/moc/zoe-lofgren",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/congressional-scorecard/nicole-malliotakis/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/moc/brad-j-sherman/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/moc/gilbert-cisneros/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/moc/mark-alford/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/moc/nick-lalota/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/moc/norma-torres/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/moc/rudy-yakym-2/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/moc/russell-fry/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/moc/sydney-kamlager-dove/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/moc/ted-lieu/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/moc/victoria-spartz/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/adam-smith/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/bernie-moreno/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/betty-mccollum",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/bill-cassidy/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/chris-coons/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/chuck-schumer/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/congressional-votes/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/deb-fischer/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/diana-harshbarger/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/elaine-luria/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/eric-burlison/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/eric-schmitt/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/greg-steube/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/jack-reed/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/james-lankford/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/jeff-merkley/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/john-barrasso/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/jon-husted/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/jon-ossoff/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/kevin-cramer/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/mark-desaulnier/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/mark-kelly/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/mark-pocan/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/marlin-stutzman/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/member/?id=H001081",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/members-of-congress/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/members-of-congress/?congress=118&state=AL&chamber=H",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/members-of-congress/?memberID=F000475&state=FL&chamber=House",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/members-of-congress/?state_id=35&chamber=H",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/members-of-congress/?state=WV&chamber=house",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/michael-lawler/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.lcv.org/scorecard/mike-flood/",
+      "rows_citing": "2",
+      "host": "lcv.org",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

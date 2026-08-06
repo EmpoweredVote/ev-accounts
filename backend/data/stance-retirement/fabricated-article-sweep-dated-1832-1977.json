@@ -1,0 +1,1036 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--from 1832 --to 1977 --pace 1200",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and siblings from the same month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "INCONCLUSIVE": "no sibling coverage for that host+month, so absence proves nothing",
+    "NO_ANSWER": "host did not answer at all — invented-host sweep territory, not this one"
+  },
+  "tally": {
+    "LIVE": 110,
+    "NO_ANSWER": 33,
+    "EXISTS": 1,
+    "INCONCLUSIVE": 1
+  },
+  "findings": [
+    {
+      "url": "https://www.sltrib.com/news/education/2023/01/20/utah-house-pushes-through/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/education/2023/01/23/quick-moving-controversial-utahs/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/education/2023/01/24/utah-gov-cox-calls-voucher-bill/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/education/2024/01/19/house-republicans-pass-anti-dei/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/education/2024/01/31/utahs-gov-cox-signs-anti-dei-bill/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/education/2025/04/21/utahs-school-voucher-program-limbo/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/environment/2025/12/15/utah-leaders-hinder-solar-efforts/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2019/03/14/utah-lawmakers-tee-up/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2021/02/05/sen-mike-lee-seeks-ban/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2021/03/01/utah-prosectors-public/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2021/11/12/gov-spencer-cox-signs/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2022/03/04/utah-legislators-consider/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2023/02/17/abortion-about-get-harder-utah-gop/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2023/03/14/utah-treasurer-marlo-oaks-tells/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2023/03/15/abortion-clinic-ban-signed-by-utah/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2023/06/09/partisan-gerrymandering-is-legal/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2024/01/02/cox-touted-his-action-diversity/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2024/10/17/rep-sandra-hollinss-faces-david/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2024/10/17/utah-legisalture-john-johnson/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2025/02/04/utah-ag-derek-brown-joins-letter/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2025/08/26/timeline-utahs-gerrymandering/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2025/11/11/gerrymander-utah-judge-rejects-gop/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2025/11/25/redistricting-republican-lawmakers/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/politics/2025/12/02/pro-human-ai-utah-gov-cox/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/opinion/commentary/2022/06/27/jenny-wilson-end/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/opinion/commentary/2024/10/18/salt-lake-city-council-were/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/opinion/commentary/2025/11/16/utah-supreme-court-should-issue/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/opinion/letters/2026/02/26/letter-lt-gov-henderson-leads-way/",
+      "rows_citing": "1",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2019/09/wilson-healthcare-expansion/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2020/06/mbah-racial-justice-statement/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2020/06/somerville-racial-justice-resolution/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2020/07/mbah-police-reform-council/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/03/somerville-heart-program-launched/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/04/ewen-campen-housing-resolution/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/07/non-citizen-voting-somerville/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/08/ewen-campen-environmental-justice/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/11/09/wilson-climate-bill/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/11/sait-public-safety-social-work/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/11/sait-racial-equity-election/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/03/24/somerville-rent-stabilization-petition/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/07/ewen-campen-zoning-resolution/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/07/somerville-ward6-environmental-updates/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/08/ewen-campen-bike-lane-resolution/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/09/somerville-housing-debate-council/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/11/heart-program-expansion/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/11/sait-homelessness-social-services/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/04/somerville-east-environment-ward1/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/05/somerville-housing-council-president/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/05/somerville-ward1-housing-development/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/08/somerville-gilman-square-development/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/09/mbah-homelessness-housing-first/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/09/somerville-homelessness-housing-first/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2024/03/somerville-bike-lane-debate/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2024/03/wilson-bike-lanes-transit/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2024/04/link-zoning-transit/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2024/07/somerville-climate-forward-council/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2024/09/heart-expansion-council-vote/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2024/12/wilson-union-square-development/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2025/01/08/mayor-wilson-sanctuary-city/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2025/11/somerville-ward7-council-election/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.somervillejournal.com/2026/02/wilson-homelessness-housing-first/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.state.gov/releases/office-of-the-spokesperson/2025/07/secretary-of-state-marco-rubio-remarks-to-the-traveling-press",
+      "rows_citing": "1",
+      "host": "state.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/2017/05/08/5-things-know-about-sanctuary-cities-law/",
+      "rows_citing": "1",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/04/29/texas-school-voucher-bot/",
+      "rows_citing": "1",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/05/03/texas-school-vouchers-greg-abbott-signs/",
+      "rows_citing": "1",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/07/31/texas-redistricting-map-democrats-defense-targeted-seats-congress/",
+      "rows_citing": "1",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/08/21/texas-redistricting-congressional-map-texans/",
+      "rows_citing": "1",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/08/22/texas-abortion-pill-restrictions-lawsuit-manufacturer/",
+      "rows_citing": "1",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.texastribune.org/2026/05/07/texas-republicans-data-centers-rural/",
+      "rows_citing": "1",
+      "host": "texastribune.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.themainewire.com/2023/03/maine-legislature-spends-more-than-an-hour-debating-symbolic-ukraine-resolution/",
+      "rows_citing": "1",
+      "host": "themainewire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.themainewire.com/2024/04/wisconsins-constitutional-amendments-will-assure-election-integrity-bobby-charles/",
+      "rows_citing": "1",
+      "host": "themainewire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.themainewire.com/2024/06/maines-one-party-government-rules-through-deception-bobby-charles/",
+      "rows_citing": "1",
+      "host": "themainewire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.themainewire.com/2025/02/maines-public-safety-crisis-bobby-charles/",
+      "rows_citing": "1",
+      "host": "themainewire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.themainewire.com/2025/06/national-pro-solar-group-works-to-kill-a-bipartisan-bill-to-reduce-some-of-the-harms-of-net-energy-billing/",
+      "rows_citing": "1",
+      "host": "themainewire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.themainewire.com/2025/06/thanks-to-mike-tipping-proposed-tax-on-maines-millionaires-lives-to-fight-another-day/",
+      "rows_citing": "1",
+      "host": "themainewire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.themainewire.com/2025/07/fringe-clergy-now-joins-fight-against-common-sense-led-by-reps-caruso-and-libby/",
+      "rows_citing": "1",
+      "host": "themainewire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.themainewire.com/2025/10/bobby-charles-blasts-nirav-shahs-covid-record-in-maine-governor-campaign-statement/",
+      "rows_citing": "1",
+      "host": "themainewire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.themainewire.com/2025/11/botched-voter-id-for-maine-effort-tanks-on-election-day/",
+      "rows_citing": "1",
+      "host": "themainewire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.themainewire.com/2026/05/rep-reagan-paul-requests-that-maine-doe-assess-true-hidden-costs-of-green-energy-agenda/",
+      "rows_citing": "1",
+      "host": "themainewire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.themainewire.com/2026/06/bobby-charles-challenges-rivals-to-reject-lobbyist-cmp-and-ai-data-center-money/",
+      "rows_citing": "1",
+      "host": "themainewire.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.themidwesterner.news/2026/06/exclusive-trump-endorsed-michael-bouchard-launches-border-mission-ad-in-10th-district-primary/",
+      "rows_citing": "1",
+      "host": "themidwesterner.news",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.thune.senate.gov/public/index.cfm/2022/3/thune-the-free-world-stands-with-ukraine",
+      "rows_citing": "1",
+      "host": "thune.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.thune.senate.gov/public/index.cfm/2022/7/thune-a-victory-for-life",
+      "rows_citing": "1",
+      "host": "thune.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.thune.senate.gov/public/index.cfm/2023/2/thune-lankford-introduce-born-alive-abortion-survivors-protection-act",
+      "rows_citing": "1",
+      "host": "thune.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.thune.senate.gov/public/index.cfm/2023/3/thune-america-needs-to-lead-on-trade",
+      "rows_citing": "1",
+      "host": "thune.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.thune.senate.gov/public/index.cfm/2025/3/thune-senate-will-vote-to-protect-women-and-girls-sports",
+      "rows_citing": "1",
+      "host": "thune.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.thune.senate.gov/public/index.cfm/2025/5/thune-senate-ready-to-equip-trump-in-ukraine-peace-talks",
+      "rows_citing": "1",
+      "host": "thune.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.thune.senate.gov/public/index.cfm/2026/3/thune-senate-bill-to-unlock-affordable-housing-for-working-families",
+      "rows_citing": "1",
+      "host": "thune.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.tonyskansascity.com/2026/05/report-rev-adam-hamilton-runs-on-pro.html",
+      "rows_citing": "1",
+      "host": "tonyskansascity.com",
+      "status": 404,
+      "verdict": "EXISTS",
+      "captures": 2
+    },
+    {
+      "url": "https://www.usmayors.org/wp-content/uploads/2022/01/COMPACT-ON-RACIAL-EQUITY-011922.docx.pdf",
+      "rows_citing": "1",
+      "host": "usmayors.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.utahbusiness.com/press-releases/2025/05/02/salt-lake-county-sale-downtown-property-economic-growth-revitalize-urban-core-capital-city-smith-entertainment-group/",
+      "rows_citing": "1",
+      "host": "utahbusiness.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.villages-news.com/2022/06/16/pro-life-event-will-be-staged-saturday-at-lake-sumter-landing/",
+      "rows_citing": "1",
+      "host": "villages-news.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonblade.com/2021/02/15/black-trans-service-members-welcome-chance-to-again-serve-openly/",
+      "rows_citing": "1",
+      "host": "washingtonblade.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/bcc/news/2022/09/23/board-adopts-charter-advisory-council-racial-equity",
+      "rows_citing": "1",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/bcc/news/2023/08/29/commissioner-fai-appointed-national-leadership-position-transportation",
+      "rows_citing": "1",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/bcc/news/2024/06/24/washington-county-board-adopts-budget-preserving-basic-county-services-despite-reductions-funds",
+      "rows_citing": "1",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/bcc/news/2025/01/09/county-officials-sworn-2025",
+      "rows_citing": "1",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/bcc/news/2025/11/04/washington-county-declares-state-emergency-response-federal-actions",
+      "rows_citing": "1",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/hhs/news/2023/12/13/washington-county-study-reveals-extent-child-care-difficulties-and-possible-solutions",
+      "rows_citing": "1",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/housing/news/2023/11/06/year-round-shelter-construction-begins-beaverton",
+      "rows_citing": "1",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/housing/news/2024/04/10/opal-apartments-opens-cedar-mills-55-community",
+      "rows_citing": "1",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/housing/news/2024/09/11/supportive-housing-services-shs-fully-committed-and-changing-lives",
+      "rows_citing": "1",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/housing/news/2024/12/09/washington-county-funds-transitional-housing-sites-and-access-center-shs-resources",
+      "rows_citing": "1",
+      "host": "washingtoncountyor.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/housing/news/2025/03/03/hillsboro-year-round-shelter-celebrates-groundbreaking",
+      "rows_citing": "1",
+      "host": "washingtoncountyor.gov",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/lut/news/2024/10/31/planning-grant-fund-washington-county-active-transportation-efforts",
+      "rows_citing": "1",
+      "host": "washingtoncountyor.gov",
+      "status": 429,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/education/2025/03/03/senate-vote-transgender-athletes-womens-sports/",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/local/va-politics/gade-warner-debate-healthcare/2020/10/13/87a0aa92-0cf1-11eb-8a35-237ef1eb2ef7_story.html",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/local/virginia-politics/kaine-warner-guns-virginia/2021/04/15/76d03c20-9e0d-11eb-8005-bffc3a39f6d3_story.html",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/local/virginia-politics/virginia-lawmakers-split-over-off-shore-drilling/2017/04/28/ff7504a6-2b80-11e7-be51-b3fc6ff7faee_story.html",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/news/education/wp/2017/01/31/in-opposing-trumps-education-pick-kaine-cites-virginias-ugly-history-on-school-segregation/",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/news/post-politics/wp/2014/06/26/timeline-the-rise-and-fall-of-immigration-reform/",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/news/wonk/wp/2016/08/12/tim-kaine-just-called-out-donald-trumps-history-of-housing-discrimination/",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/opinions/2025/03/27/trump-kaine-tariffs-canada/",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/opinions/2025/10/29/kaine-paul-senate-votes-trump-tariffs/",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/politics/2022/11/29/respect-for-marriage-act-senate-vote/",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/politics/2024/04/23/senate-vote-foreign-aid-ukraine-israel/",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/politics/2026/03/21/senate-trump-transgender-sports/",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/politics/senate-overwhelmingly-backs-overhaul-of-criminal-justice-system/2018/12/18/89efffb6-02e7-11e9-9122-82e98f91ee6f_story.html",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/politics/tim-kaine-voices-support-for-immigration-bill-on-senate-floor-entirely-in-spanish/2013/06/11/8a146ece-d2a9-11e2-a73e-826d299ff459_story.html",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.washingtonpost.com/technology/2023/05/17/ai-congress-obernolte/",
+      "rows_citing": "1",
+      "host": "washingtonpost.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wbiw.com/2025/04/29/congresswoman-erin-houchin-president-trumps-tariffs-are-reviving-american-manufacturing/",
+      "rows_citing": "1",
+      "host": "wbiw.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wbiw.com/2025/12/08/tonya-hudson-seeking-libertarian-nomination-for-us-house-of-representatives/",
+      "rows_citing": "1",
+      "host": "wbiw.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wbur.org/news/2021/01/05/tear-gas-rubber-bullet-restriction-veto",
+      "rows_citing": "1",
+      "host": "wbur.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wbur.org/news/2023/04/26/boston-rat-czar-ed-flynn-newsletter",
+      "rows_citing": "1",
+      "host": "wbur.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wbur.org/news/2023/10/18/mbta-communities-zoning-compliance",
+      "rows_citing": "1",
+      "host": "wbur.org",
+      "status": 404,
+      "verdict": "INCONCLUSIVE",
+      "why": "archive holds no wbur.org|2023/10 siblings either"
+    },
+    {
+      "url": "https://www.wbur.org/news/2024/03/14/massachusetts-housing-law-milton",
+      "rows_citing": "1",
+      "host": "wbur.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wbur.org/news/2026/05/20/markey-moulton-debate-wbur-wcvb-boston-globe",
+      "rows_citing": "1",
+      "host": "wbur.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wdet.org/2025/02/26/gop-house-members-call-on-scotus-to-reverse-marriage-decision/",
+      "rows_citing": "1",
+      "host": "wdet.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wdet.org/2026/03/19/the-metro-southfield-neighbors-confront-the-moral-weight-of-silence/",
+      "rows_citing": "1",
+      "host": "wdet.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.westernenergyalliance.org/2026/05/14/u-s-house-committee-advances-key-public-lands-permitting-bill/",
+      "rows_citing": "1",
+      "host": "westernenergyalliance.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/01/ending-illegal-discrimination-and-restoring-merit-based-opportunity/",
+      "rows_citing": "1",
+      "host": "whitehouse.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/01/expanding-educational-freedom-and-opportunity-for-families/",
+      "rows_citing": "1",
+      "host": "whitehouse.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/01/putting-america-first-in-international-environmental-agreements/",
+      "rows_citing": "1",
+      "host": "whitehouse.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/01/realigning-the-united-states-refugee-admissions-program/",
+      "rows_citing": "1",
+      "host": "whitehouse.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/01/removing-barriers-to-american-leadership-in-artificial-intelligence/",
+      "rows_citing": "1",
+      "host": "whitehouse.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/01/restoring-freedom-of-speech-and-ending-federal-censorship/",
+      "rows_citing": "1",
+      "host": "whitehouse.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/01/restoring-the-death-penalty-and-protecting-public-safety/",
+      "rows_citing": "1",
+      "host": "whitehouse.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/01/unleashing-american-energy/",
+      "rows_citing": "1",
+      "host": "whitehouse.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/02/eradicating-anti-christian-bias/",
+      "rows_citing": "1",
+      "host": "whitehouse.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/02/keeping-men-out-of-womens-sports/",
+      "rows_citing": "1",
+      "host": "whitehouse.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/07/accelerating-federal-permitting-of-data-center-infrastructure/",
+      "rows_citing": "1",
+      "host": "whitehouse.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wndu.com/2024/10/21/deeper-look-race-michigans-5th-congressional-district/",
+      "rows_citing": "1",
+      "host": "wndu.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wsaw.com/2025/12/03/northwoods-woman-launches-bid-7th-congressional-seat/",
+      "rows_citing": "1",
+      "host": "wsaw.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wymt.com/2025/07/02/floyd-co-attorney-challenge-rep-hal-rogers-amidst-war-less-fortunate/",
+      "rows_citing": "1",
+      "host": "wymt.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://youroregonnews.com/2026/04/24/opinion-supporting-tigard-police-public-works-levy-the-responsible-thing-to-do/",
+      "rows_citing": "1",
+      "host": "youroregonnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

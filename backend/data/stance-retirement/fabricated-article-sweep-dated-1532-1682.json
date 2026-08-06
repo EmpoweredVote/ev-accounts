@@ -1,0 +1,1075 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--from 1532 --to 1682 --pace 1200",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and siblings from the same month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "INCONCLUSIVE": "no sibling coverage for that host+month, so absence proves nothing",
+    "NO_ANSWER": "host did not answer at all — invented-host sweep territory, not this one"
+  },
+  "tally": {
+    "FABRICATED": 1,
+    "LIVE": 143,
+    "INCONCLUSIVE": 4,
+    "NO_ANSWER": 2
+  },
+  "findings": [
+    {
+      "url": "https://www.dailybreeze.com/2023/04/10/carson-mixed-use-development-dignity-sports-park-corridor/",
+      "rows_citing": "1",
+      "host": "dailybreeze.com",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "dailybreeze.com|2023/04"
+    },
+    {
+      "url": "https://www.dailyfly.com/2025/08/09/judge-sides-with-faith-group-over-utah-county-in-psychedelic-mushroom-religious-freedom-lawsuit/",
+      "rows_citing": "1",
+      "host": "dailyfly.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dailynews.com/2024/11/19/los-angeles-city-council-passes-sanctuary-city-ordinance/",
+      "rows_citing": "1",
+      "host": "dailynews.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dakotanewsnow.com/2024/07/24/ag-jackley-requests-scotus-stop-new-epa-rule-existing-power-plants/",
+      "rows_citing": "1",
+      "host": "dakotanewsnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dakotanewsnow.com/2025/09/08/new-us-house-candidate-announced-latest-democrat-party/",
+      "rows_citing": "1",
+      "host": "dakotanewsnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dakotanewsnow.com/2026/02/07/what-dozens-purple-shirts-want-changed-mobile-home-residents/",
+      "rows_citing": "1",
+      "host": "dakotanewsnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dakotanewsnow.com/2026/06/02/ag-jackley-reflects-ice-agreement-almost-one-year-after-signing/",
+      "rows_citing": "1",
+      "host": "dakotanewsnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.democracynow.org/2025/8/7/headlines/tucson_city_council_votes_unanimously_to_reject_project_blue_a_proposed_data_center_linked_to_amazon",
+      "rows_citing": "1",
+      "host": "democracynow.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.democracynow.org/2026/2/25/summer_lee_sotu",
+      "rows_citing": "1",
+      "host": "democracynow.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/2018/7/21/20649537/utah-state-courts-lack-diversity-among-judges/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/2019/5/13/20673289/utah-rep-ben-mcadams-equality-act-step-in-direction-we-need-to-take-but-religious-concerns-must-be-h/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/2022/3/4/22962671/transgender-athlete-ban-utah-legislature-substitute-bill-final-hours-sports/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/2023/12/4/23984733/gov-spencer-cox-homelessness-proposed-budget-utah/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/2023/7/24/23791698/celeste-maloy-the-country-girl-running-for-congress/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/2024/2/16/24075343/utah-gov-spencer-cox-defends-dei-stance/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/business/2026/04/15/utah-data-centers-artificial-intelligence-ai-water-energy-electricity-use-economic-impacts-jobs-tax-incentives/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/environment/2025/12/17/salt-lake-county-launches-green-vision-encouraging-cross-departmental-sustainability-efforts/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/family/2025/12/08/why-salt-lake-city-is-exploring-a-change-to-its-housing-definition-of-family/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/opinion/2025/05/15/utah-families-need-child-care-development-block-grant-funding/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/opinion/2026/02/27/utah-critical-minerals-potential-sb254/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/opinion/2026/03/01/cancer-paperwork-time-matters-sb319/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/opinion/2026/03/01/utah-senator-mike-lee-ai-reform/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2024/04/20/utah-delegation-votes-on-house-foreign-aid-ukraine-israel-tiktok/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2024/07/10/save-act-passes-house-proof-of-citizenship-for-voting-in-federal-elections/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2024/08/01/utah-supreme-court-ruling-abortion-reactions/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2024/10/18/who-is-derek-brown/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2024/12/05/utah-governor-cox-criticizes-tax-on-social-security-benefits/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2024/12/19/utah-governor-cox-supports-trump-mass-deportations/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/01/03/attorney-general-derek-brown-wants-to-return-trust-to-the-office/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/01/03/utah-gov-cox-trump-administration-remove-ice-obstacles-to-deportations/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/01/08/house-laken-riley-act-pass-senate-democrats-split/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/01/21/utah-governor-spencer-cox-questions-trump-executive-order-on-birthright-citizenship/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/01/28/what-utah-representatives-are-pushing-to-include-in-trumps-massive-spending-bill/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/02/03/utah-bill-would-make-class-a-misdemeanor-eligible-for-immediate-deportation/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/02/19/utah-governor-spencer-cox-supports-ukraine-after-donald-trump-criticizes-zelenskyy/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/02/25/sen-escamillas-sb284-would-expand-medicaid-doula-services/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/02/26/xgr-2025-hb503-medical-malpractice-modifications/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/03/01/utah-senate-lawmakers-vote-on-immigration-law-enforcement-bills/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/03/03/senate-rejects-bill-banning-transgender-athletes/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/03/03/utah-legislature-ignores-governor-cox-recommendation-to-end-state-tax-on-social-security/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/03/06/utah-legislature-approves-bill-to-qualify-immigrants-convicted-of-crimes-for-immediate-deportation/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/03/06/utah-legislature-cuts-income-tax-and-social-security-tax/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/04/03/utah-governor-spencer-cox-visits-canada-after-trump-tariffs-spark-trade-ward/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/04/18/utah-rep-kennedy-visits-el-salvador-prison/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/07/02/medicaid-cuts-senate-big-beautiful-bill/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/07/03/utah-lawmakers-react-to-big-beautiful-bill/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/08/25/mike-lee-opposes-redistricting/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/10/29/utah-governor-says-homeless-campus-is-most-compassionate-approach-not-like-nazi-concentration-camp/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/11/07/inside-the-utah-replican-party-ballot-initiative-to-repeal-the-2018-law-creating-an-independent-redistricting-commission/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/11/11/utah-senator-mike-lee-says-district-judge-ruled-unconstitutionally-when-she-selected-her-own-congressional-map-for-2026-midterm-elections/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/11/24/senator-john-curtis-social-media-algorithms-climate-and-energy/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/12/03/reps-maloy-and-auchincloss-introduce-deepfake-liability-act/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/12/23/utah-governor-spencer-cox-targets-social-media-after-charlie-kirk-assassination/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2026/01/06/what-hyde-amendment-how-stalling-health-care-talks/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2026/01/16/curtis-presses-tech-giants-social-media-algorithms/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2026/01/23/trump-endorses-utah-republican-initiative-to-repeal-redistricting-law/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2026/02/17/utah-legislature-responds-to-trump-administration-letter-targeting-state-regulations-for-artificial-intelligence/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2026/03/02/utah-governor-gets-funding-from-legislature-to-overhaul-utah-homeless-policy/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2026/03/21/no-men-womens-sports-save-america-act/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2026/04/08/utah-governor-tells-cambridge-england-government-should-not-be-combating-disinformation-but-says-government-should-treat-big-tech-like-big-tobacco/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2026/04/25/rep-mike-kennedy-wins-gop-nomination-congressional-district-4/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2026/05/11/utah-governor-cox-defends-box-elder-data-center-as-important-to-national-security-in-ai-arms-race-with-china/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2026/05/12/point-in-time-utah-homelessness-declines-for-first-time-in-years-after-peaking-in-2025/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2026/05/13/burgess-owens-restrict-dei-initiatives-in-schools/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2026/05/21/housing-bill-passes-house/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2019/9/24/20881853/salt-lake-candidate-escamilla-announces-green-policies-unveils-support-from-former-primary-opponent/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2020/3/14/21178368/utah-crisis-centers-suicide-prevention-mental-health-funded/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2021/1/11/22219267/governor-spencer-cox-first-budget-proposal-2021-legislature-education/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2021/11/12/22778945/utah-governor-signs-legislature-controversial-congressional-map-cracks-salt-lake-city-gerrymander/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2021/2/21/22278879/prosecutors-defend-utah-bail-reform-as-lawmakers-eye-changes-hb206-220/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2022/12/8/23499239/house-passes-respect-marriage-act-utah-republican-vote-religious-liberty/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2022/5/12/23068647/disinformation-governance-board-burgess-owens-defund-ministry-of-truth-joe-biden-misinformation/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2022/7/19/23270776/utah-gop-congress-vote-bill-make-same-sex-marriage-law-democrats-respect-for-marriage-act/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2022/8/12/23302914/utah-republican-house-vote-inflation-reduction-act-climate-change-health-care-democrats-biden/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2023/03/03/23622289/utah-income-tax-cut-2023-legislature/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 404,
+      "verdict": "INCONCLUSIVE",
+      "why": "archive holds no deseret.com|2023/03 siblings either"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2023/1/20/23563153/transgender-surgery-law-utah-cross-sex-hormones-puberty-blockers-legislature/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2023/1/28/23575685/gov-cox-signs-high-profile-transgender-surgeries-school-choice-voucher-bills/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2023/12/21/24011111/utah-spencer-cox-social-media-laws-netchoice-lawsuit/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2023/3/23/23653096/utah-governor-signs-400m-tax-cut",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2024/03/02/utah-legislature-approves-another-tax-cut/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2024/05/29/utah-teacher-union-sues-over-school-choice/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2024/05/31/mike-kennedy-is-running-to-replace-john-curtis-in-utah-to-reform-federal-health-programs/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2024/1/11/24025471/utah-legislature-republican-supermajority-priorities-2024-session/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2024/2/22/24080543/utah-passes-religious-freedom-bill-prevent-anti-lgbtq-discrimination/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2025/01/28/salt-lake-city-mayor-erin-mendenhall-housing-homelessness-safety-crime/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2025/02/24/utah-fits-all-scholarship-changes-bill/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2025/03/03/bill-calls-for-expanded-free-lunch-programs-in-utah-schools/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2025/03/06/doula-medicaid-bill/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2025/05/12/school-voucher-program-poised-for-appeal-process-following-court-ruling/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2025/06/01/why-salt-lake-city-police-department-is-seeking-a-125-budget-increase/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2025/08/18/salt-lake-city-expects-to-fund-more-traffic-measures-but-will-that-always-be-the-case-/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2025/12/09/salt-lake-county-da-unveils-new-screening-dashboard-for-the-public/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2026/01/24/advocating-for-school-choice-attorney-general-speaks-at-utah-fits-all-rally/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2026/03/17/salt-lake-city-mayor-erin-mendenhall-letter-ice-officials-detention-center/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2026/04/03/audit-raises-issues-with-utahs-oversight-of-a-medicaid-nursing-home-program/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.deseret.com/utah/2026/04/15/salt-lake-city-wants-to-enhance-its-camping-ordinance-but-is-it-going-too-far/",
+      "rows_citing": "1",
+      "host": "deseret.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.detroitnews.com/story/news/politics/2026/06/22/donald-trump-endorses-michael-bouchard-congress/90648813007/",
+      "rows_citing": "1",
+      "host": "detroitnews.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.dotnews.com/2020/03/05/mejia-asks-hearing-parking-tickets-tow-fees-reaction-council-mixed/",
+      "rows_citing": "1",
+      "host": "dotnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dotnews.com/2023/02/08/wu-taps-ten-reparations-panel/",
+      "rows_citing": "1",
+      "host": "dotnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dotnews.com/2023/10/27/notices-warn-mass-and-cass-tent-removals-will-begin-nov-1/",
+      "rows_citing": "1",
+      "host": "dotnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dotnews.com/2026/01/05/breadon-beats-out-worrell-for-council-presidency/",
+      "rows_citing": "1",
+      "host": "dotnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dotnews.com/2026/04/21/councillors-advocates-press-team-wu-for-budget-answers/",
+      "rows_citing": "1",
+      "host": "dotnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.energy.senate.gov/2025/7/chairman-lee-holds-hearing-to-address-urgent-challenges-facing-america-s-skyrocketing-energy-demands",
+      "rows_citing": "1",
+      "host": "energy.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.exposedbycmd.org/2023/03/15/utah-state-treasurer-compares-esg-policies-to-nazism-at-heartlands-climate-misinformation-fest/",
+      "rows_citing": "1",
+      "host": "exposedbycmd.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.factcheck.org/2016/02/rubios-plan-on-sanctuary-cities/",
+      "rows_citing": "1",
+      "host": "factcheck.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fcnp.com/2021/10/15/3-fccps-school-board-candidate-statements/",
+      "rows_citing": "1",
+      "host": "fcnp.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fcnp.com/2026/05/13/f-c-budget-adopted-as-expected-down-1-2c/",
+      "rows_citing": "1",
+      "host": "fcnp.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ffyf.org/2021/03/10/congress-passes-american-rescue-plan-with-39-billion-in-child-care-relief/",
+      "rows_citing": "1",
+      "host": "ffyf.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ffyf.org/resources/2025/07/toplines-tax-package/",
+      "rows_citing": "1",
+      "host": "ffyf.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox5vegas.com/2023/11/22/henderson-votes-move-redevelopment-three-kids-mine-site-forward/",
+      "rows_citing": "1",
+      "host": "fox5vegas.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox5vegas.com/2023/12/02/city-henderson-vote-water-rate-hike/",
+      "rows_citing": "1",
+      "host": "fox5vegas.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox5vegas.com/2026/02/18/20-million-clark-county-funding-approved-toward-attainable-housing/",
+      "rows_citing": "1",
+      "host": "fox5vegas.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox5vegas.com/2026/04/02/boulder-city-residents-oppose-proposed-data-center/",
+      "rows_citing": "1",
+      "host": "fox5vegas.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fox5vegas.com/2026/06/18/clark-county-approves-switch-data-center-project-southwest-valley-after-public-opposition/",
+      "rows_citing": "1",
+      "host": "fox5vegas.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.fredericksburgfreepress.com/2026/06/19/gop-hopefuls-in-virginias-7th-district-talk-data-centers-priorities-if-elected/",
+      "rows_citing": "1",
+      "host": "fredericksburgfreepress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.freep.com/story/news/politics/2024/07/31/mary-waters-on-attack-mailers-i-support-same-sex-marriage/74603366007/",
+      "rows_citing": "1",
+      "host": "freep.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.globalsecurity.org/military/library/news/2024/04/mil-240420-voa05.htm",
+      "rows_citing": "1",
+      "host": "globalsecurity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2021/04/23/governor-newsom-takes-action-to-phase-out-oil-extraction-in-california/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2021/05/12/california-roars-back-governor-newsom-announces-20-billion-in-investments-for-transforming-public-schools-as-gateways-to-equity-opportunity/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2021/09/27/governor-newsom-signs-landmark-elections-legislation-making-vote-by-mail-ballots-permanent-for-every-registered-voter-strengthening-elections-integrity/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2021/10/05/governor-newsom-signs-early-childhood-legislation-highlights-transformative-investments-in-early-learning/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2022/03/04/governor-newsom-orders-state-agencies-to-ensure-contracts-comply-with-sanctions-on-russia-calls-on-california-businesses-and-organizations-to-support-ukraine/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2022/03/31/acting-governor-eleni-kounalakis-signs-legislation-extending-statewide-eviction-protections/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2022/09/16/governor-newsom-signs-sweeping-climate-measures-ushering-in-new-era-of-world-leading-climate-action/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2023/09/27/california-expands-access-and-protections-for-reproductive-health-care/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2023/10/11/governor-newsom-signs-package-to-streamline-housing-and-expand-tenant-protections-in-california/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2024/07/25/governor-newsom-orders-state-agencies-to-address-encampments-in-their-communities-with-urgency-and-dignity/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2024/07/29/what-theyre-saying-california-local-leaders-support-governor-newsoms-executive-order-to-address-homeless-encampments-with-compassion/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2024/09/25/governor-newsom-signs-legislation-to-restrict-polluting-oil-gas-operations-near-schools-daycares-and-across-communities/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2024/09/26/governor-newsom-signs-california-legislative-black-caucus-priority-bills-including-a-formal-bipartisan-apology-for-the-states-role-in-slavery/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2024/11/04/governor-newsom-sues-norwalk-for-unlawful-homeless-shelter-ban/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2025/03/04/governor-newsom-tariffs-are-taxes-on-american-families/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2025/04/04/governor-newsom-directs-state-to-pursue-strategic-relationships-with-international-trading-partners-urges-exemptions-of-california-made-products-from-tariffs/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.gov.ca.gov/2025/05/12/governor-newsom-releases-state-model-for-cities-and-counties-to-immediately-address-encampments-with-urgency-and-dignity/",
+      "rows_citing": "1",
+      "host": "gov.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldmailmedia.com/story/news/local/2024/04/01/democratic-candidates-weigh-in-on-western-marylands-top-priorities/73144386007/",
+      "rows_citing": "1",
+      "host": "heraldmailmedia.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldnews.com/story/news/local/2021/03/15/fall-river-mayor-coogan-public-safety-police-budget/4711234001/",
+      "rows_citing": "1",
+      "host": "heraldnews.com",
+      "status": 404,
+      "verdict": "INCONCLUSIVE",
+      "why": "archive holds no heraldnews.com|2021/03 siblings either"
+    },
+    {
+      "url": "https://www.heraldnews.com/story/news/local/2022/08/10/fall-river-zoning-development-mayor-coogan/7811234001/",
+      "rows_citing": "1",
+      "host": "heraldnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.heraldnews.com/story/news/local/2023/04/18/fall-river-homelessness-mayor-coogan-approach/9911234001/",
+      "rows_citing": "1",
+      "host": "heraldnews.com",
+      "status": 404,
+      "verdict": "INCONCLUSIVE",
+      "why": "archive holds no heraldnews.com|2023/04 siblings either"
+    },
+    {
+      "url": "https://www.heraldnews.com/story/news/local/2023/06/20/south-coast-rail-fall-river-coogan/10311234001/",
+      "rows_citing": "1",
+      "host": "heraldnews.com",
+      "status": 404,
+      "verdict": "INCONCLUSIVE",
+      "why": "archive holds no heraldnews.com|2023/06 siblings either"
+    },
+    {
+      "url": "https://www.hudsonvalleyone.com/2023/05/21/ryan-attacks-far-right-cuts-to-veterans-services/",
+      "rows_citing": "1",
+      "host": "hudsonvalleyone.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hudsonvalleyone.com/2023/06/16/pat-ryan-joins-fellow-democrats-outside-of-the-capitol-building-to-demand-action-on-gun-violence/",
+      "rows_citing": "1",
+      "host": "hudsonvalleyone.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.hudsonvalleyone.com/2025/04/09/congressman-ryan-demands-reversal-of-trump-cuts-to-emergency-food-assistance/",
+      "rows_citing": "1",
+      "host": "hudsonvalleyone.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2021/05/bloomington-city-council-rejects-amendment-offering-affordable-housing-plan",
+      "rows_citing": "1",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2023/08/bloomington-transit-expansion-approved-by-city-council",
+      "rows_citing": "1",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2023/09/bloomington-police-department-new-policy-proposed",
+      "rows_citing": "1",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2024/05/bloomington-indiana-city-council-overrides-mayors-veto-of-gaza-ceasefire-resolution",
+      "rows_citing": "1",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2024/06/city-council-meeting-work-session-may",
+      "rows_citing": "1",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2024/11/bloomington-city-council-traffic-parking-bike-commission-merger",
+      "rows_citing": "1",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2025/01/bloomington-prepares-for-trump-s-era-of-mass-deportation",
+      "rows_citing": "1",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2025/02/mike-braun-property-tax-monroe-county-council-sb1",
+      "rows_citing": "1",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

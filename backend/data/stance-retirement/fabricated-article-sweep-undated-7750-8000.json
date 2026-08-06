@@ -1,0 +1,1881 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 7750 --to 8000 --pace 1200",
+  "slice": "undated",
+  "timing": {
+    "fetch_timeout_ms": 20000,
+    "curl_timeout_s": 15,
+    "probe_timeout_ms": 3000,
+    "zero_streak": 3,
+    "unbreak_streak": 3,
+    "pace_ms": 1200
+  },
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "NO_ANSWER": 115,
+    "LIVE": 135
+  },
+  "findings": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB333",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB35",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB363",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB365",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB380",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB386",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB406",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB457",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB474",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB496",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB518",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB53",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB54\r",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB598",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB616",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB644",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB674",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB7",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB729\r",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB773",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB896",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB90",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB91",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB942\r",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1018\r",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1021",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1078",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1095",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB111",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1111",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1131",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1162",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1240",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1254",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1287",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB131",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB131\r",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1319",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1392",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1411",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1448",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1600",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1627\r",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1629",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1632",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1732",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1854\r",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1882",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB218",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2257",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2270",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2359",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2386",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2412",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2464\r",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB247",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2480",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2510",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2518",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2606",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2613",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2664",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2711",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB2712",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB282",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB306",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB327",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB450",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB551",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB620",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB650",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB736\r",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB760",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB79",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB829",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB838",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB942\r",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB951",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260ACA8",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260ACR128",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AJR16",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AJR29",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB100",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB107",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB1099",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB1168",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB1174",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB131",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB151",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB205",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB222",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB263",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB27",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB271",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB277",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB3\r",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB303",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB307",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB366",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB388",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB402",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB41\r",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB411",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB419",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB423",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB48",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB484",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB5",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB518",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB541",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB567",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB574",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB610",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB644",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB702",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER",
+      "degraded": true
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB717",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB743",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB820",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB838",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB9",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB903",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB92",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB931",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SJR4",
+      "rows_citing": "1",
+      "host": "leginfo.legislature.ca.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://legis.la.gov/legis/BillInfo.aspx?s=15RS&b=HB707&sbi=y",
+      "rows_citing": "1",
+      "host": "legis.la.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/assembly/47/udell/media/fbqdfqfm/udell-press-release-mail-in-ballots.pdf",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/assembly/47/udell/media/muwjtvum/press-release-for-badgercare-public-option.pdf",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/assembly/47/udell/media/sptmq32u/udell-press-release-save-act.pdf",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/assembly/79/subeck/press-release-archive/2025-press-releases/democrats-introduce-bill-to-protect-wisconsin-families-and-communities-by-investing-in-childcare/",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/assembly/79/subeck/press-release-archive/2026-press-releases/postpartum-medicaid-extension-signed-into-law-new-moms-will-maintain-health-care-coverage-for-one-year/",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/assembly/79/subeck/press-release-archive/2026-press-releases/representative-lisa-subeck-statement-on-data-center-legislation/",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/assembly/80/bare/media/tzmhmgau/representative-mike-bare-condemns-speaker-vos-and-assembly-republicans-for-abandoning-wisconsin-moms.pdf",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/assembly/81/joers/media/dmwd5exk/122-rep-joers-leads-child-care-plan-to-cut-costs-for-wisconsin-families.pdf",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/assembly/81/joers/media/erwfi4wt/123-urgent-call-to-establish-age-appropriate-design-code-for-social-media-companies.pdf",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/senate/26/roys/press-releases/democrats-introduce-abortion-rights-restoration-act/",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/senate/26/roys/press-releases/roys-leads-on-energy-affordability/",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/senate/26/roys/press-releases/roys-subeck-introduce-abortion-accessibility-act/",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/senate/26/roys/press-releases/sen-kelda-roys-introduces-legislation-to-prohibit-discriminatory-pricing/",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/senate/26/roys/press-releases/sen-kelda-roys-testifies-to-protect-wisconsinites-from-tech-exploitation/",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legis.wisconsin.gov/senate/27/hesselbein/press-releases/senate-democratic-leader-dianne-hesselbein-d-middleton-applauds-extension-of-postpartum-medicaid-coverage/",
+      "rows_citing": "1",
+      "host": "legis.wisconsin.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legiscan.com/AZ/rollcall/HB2677/id/1437377",
+      "rows_citing": "1",
+      "host": "legiscan.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legiscan.com/AZ/rollcall/SB1109/id/799206",
+      "rows_citing": "1",
+      "host": "legiscan.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legiscan.com/AZ/rollcall/SB1485/id/1075824",
+      "rows_citing": "1",
+      "host": "legiscan.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legiscan.com/CA/bill/SB1155/2025",
+      "rows_citing": "1",
+      "host": "legiscan.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legiscan.com/CA/text/AB19/id/3193784",
+      "rows_citing": "1",
+      "host": "legiscan.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legiscan.com/IN/bill/HB1011/2026",
+      "rows_citing": "1",
+      "host": "legiscan.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legiscan.com/IN/rollcall/HB1032/id/1609931",
+      "rows_citing": "1",
+      "host": "legiscan.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legiscan.com/UT/bill/HB0504/2026?guid=7N6zCAEUsumIkbustnfgQK",
+      "rows_citing": "1",
+      "host": "legiscan.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legiscan.com/UT/people/steven-eliason/id/12088",
+      "rows_citing": "1",
+      "host": "legiscan.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.idaho.gov/sessioninfo/2012/legislation/H0587/",
+      "rows_citing": "1",
+      "host": "legislature.idaho.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.idaho.gov/sessioninfo/2020/legislation/H0500/",
+      "rows_citing": "1",
+      "host": "legislature.idaho.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.idaho.gov/sessioninfo/2021/legislation/H0220/",
+      "rows_citing": "1",
+      "host": "legislature.idaho.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.idaho.gov/sessioninfo/2021/legislation/H0366/",
+      "rows_citing": "1",
+      "host": "legislature.idaho.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.idaho.gov/sessioninfo/2022/legislation/H0436/",
+      "rows_citing": "1",
+      "host": "legislature.idaho.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.idaho.gov/sessioninfo/2022/legislation/S1309/",
+      "rows_citing": "1",
+      "host": "legislature.idaho.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.idaho.gov/sessioninfo/2023/legislation/H0011/",
+      "rows_citing": "1",
+      "host": "legislature.idaho.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.idaho.gov/sessioninfo/2025/legislation/H0093/",
+      "rows_citing": "1",
+      "host": "legislature.idaho.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/backend/App/services/getDocument.aspx?documentId=104472",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/bills/display_ps.asp?snum=132&paper=HP0156&PID=1456",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/bills/display_ps.asp?snum=132&paper=HP1097&PID=1456",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/bills/display_ps.asp?snum=132&paper=SP0655&PID=1456",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/house/MemberProfiles/Details/1428",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280095624&chamber=House&serialnumber=601",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280095879&chamber=H&serialnumber=65",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280097110&chamber=H&serialnumber=489",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280097133&chamber=H&serialnumber=417",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280097133&chamber=House&serialnumber=417",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280100951&chamber=H&serialnumber=730",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280101880&chamber=House&serialnumber=757",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/sponsors.asp?ID=280095865",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/sponsors.asp?ID=280097110",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1018",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1179&SessionID=16",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1186",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1190&SessionID=16",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1259",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1504",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1522",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1682",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1730&SessionID=16",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1746",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1765",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1777",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=179&SessionID=16",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=182",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=2058&SessionID=16",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=2114",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=2231&SessionID=16",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=226",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=268&SessionID=16",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=378",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=449&SessionID=16",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/billdirectory_ps.asp?snum=132&ldFrom=1505&ldTo=1505",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/billdirectory_ps.asp?snum=132&ldFrom=1723&ldTo=1723",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/billdirectory_ps.asp?snum=132&ldFrom=2057&ldTo=2057",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/display_ps.asp?LD=1020&snum=124",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/display_ps.asp?LD=1301&snum=132",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/display_ps.asp?LD=1498&snum=132",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/display_ps.asp?LD=1971&snum=132",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/display_ps.asp?LD=233&snum=132",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/display_ps.asp?LD=437&snum=132",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/display_ps.asp?LD=554&snum=132",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/display_ps.asp?snum=132&LD=1089",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/display_ps.asp?snum=132&LD=233",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/getPDF.asp?paper=HP0291&item=1&snum=132",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/getPDF.asp?paper=HP0982&item=1&snum=132",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/getPDF.asp?paper=HP1315&item=1&snum=132",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/getPDF.asp?paper=SP0531&item=1&snum=132",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/getPDF.asp?paper=SP0620&item=1&snum=132",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/getTestimonyDoc.asp?id=10049832",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/bills/getTestimonyDoc.asp?id=188572",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/legis/senate/district18",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/uploads/visual_edit/roll-call-246-ld-1536.pdf",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/uploads/visual_edit/roll-call-258-ld-671.pdf",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/uploads/visual_edit/roll-call-355-ld-38.pdf",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.maine.gov/uploads/visual_edit/roll-call-77-ld-444.pdf",
+      "rows_citing": "1",
+      "host": "legislature.maine.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://legislature.vermont.gov/bill/status/2010/H.178",
+      "rows_citing": "1",
+      "host": "legislature.vermont.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://legislature.vermont.gov/bill/status/2020/H.57",
+      "rows_citing": "1",
+      "host": "legislature.vermont.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://legislature.vermont.gov/bill/status/2022/H.171",
+      "rows_citing": "1",
+      "host": "legislature.vermont.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://lieu.house.gov/issues/artificial-intelligence",
+      "rows_citing": "1",
+      "host": "lieu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lieu.house.gov/issues/local-issues",
+      "rows_citing": "1",
+      "host": "lieu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lieu.house.gov/media-center/in-the-news/ted-lieu-we-are-trying-extend-expanded-child-tax-credit",
+      "rows_citing": "1",
+      "host": "lieu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lieu.house.gov/media-center/press-releases/lieu-feinstein-padilla-introduce-bill-address-root-causes-homelessness",
+      "rows_citing": "1",
+      "host": "lieu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lieu.house.gov/media-center/press-releases/rep-lieu-and-sen-padilla-announce-transformative-legislation-address",
+      "rows_citing": "1",
+      "host": "lieu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lieu.house.gov/media-center/press-releases/rep-lieu-praises-passage-marriage-equality-law",
+      "rows_citing": "1",
+      "host": "lieu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lieu.house.gov/media-center/press-releases/rep-lieu-tedx-talk-congress-must-regulate-ai-now",
+      "rows_citing": "1",
+      "host": "lieu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lieu.house.gov/media-center/press-releases/reps-lieu-buck-eshoo-and-sen-schatz-introduce-bipartisan-bicameral-bill",
+      "rows_citing": "1",
+      "host": "lieu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lindasanchez.house.gov/issues/housing",
+      "rows_citing": "1",
+      "host": "lindasanchez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lindasanchez.house.gov/issues/seniors",
+      "rows_citing": "1",
+      "host": "lindasanchez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lindasanchez.house.gov/media-center/press-releases/congresswoman-linda-s-nchez-speaks-out-favor-strengthening-voting-righ-0",
+      "rows_citing": "1",
+      "host": "lindasanchez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lindasanchez.house.gov/media-center/press-releases/congresswoman-s-nchez-co-founder-new-lgbt-equality-caucus",
+      "rows_citing": "1",
+      "host": "lindasanchez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lindasanchez.house.gov/media-center/press-releases/linda-s-nchez-floor-statement-republican-tax-scam",
+      "rows_citing": "1",
+      "host": "lindasanchez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lindasanchez.house.gov/media-center/press-releases/reps-linda-s-nchez-introduces-strengthening-social-security-act-2016",
+      "rows_citing": "1",
+      "host": "lindasanchez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lindasanchez.house.gov/media-center/press-releases/s-nchez-democracy-fragile-its-survival-us",
+      "rows_citing": "1",
+      "host": "lindasanchez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lindasanchez.house.gov/media-center/press-releases/s-nchez-statement-final-passage-respect-marriage-act",
+      "rows_citing": "1",
+      "host": "lindasanchez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lindasanchez.house.gov/media-center/press-releases/s-nchez-votes-pass-government-spending-package-secures-funding-15",
+      "rows_citing": "1",
+      "host": "lindasanchez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-fitzpatrick-introduce-bill-create-new-tax-credit-renewable",
+      "rows_citing": "1",
+      "host": "lindasanchez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-introduces-bill-strengthen-social-security-benefits-widows",
+      "rows_citing": "1",
+      "host": "lindasanchez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-pocan-introduce-legislation-increase-social-security-benefits",
+      "rows_citing": "1",
+      "host": "lindasanchez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-republican-tax-bill-dont-buy-bullshit",
+      "rows_citing": "1",
+      "host": "lindasanchez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lindasanchez.house.gov/media-center/press-releases/what-they-are-saying-sanchez-democratic-leaders-respond-hr-2-introduce",
+      "rows_citing": "1",
+      "host": "lindasanchez.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lis.virginia.gov/bill-details/20251/SB780",
+      "rows_citing": "1",
+      "host": "lis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lis.virginia.gov/bill-details/20261/SB73",
+      "rows_citing": "1",
+      "host": "lis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB1049",
+      "rows_citing": "1",
+      "host": "lis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?201+sum+SJ0001",
+      "rows_citing": "1",
+      "host": "lis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?201+sum+SJ0018",
+      "rows_citing": "1",
+      "host": "lis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?201+sum+SJ0029",
+      "rows_citing": "1",
+      "host": "lis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?221+sum+SB0766",
+      "rows_citing": "1",
+      "host": "lis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1508",
+      "rows_citing": "1",
+      "host": "lis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+sum+SJ0002",
+      "rows_citing": "1",
+      "host": "lis.virginia.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

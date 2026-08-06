@@ -1,0 +1,250 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--dated-only --from 0 --to 32",
+  "slice": "dated",
+  "timing": {
+    "fetch_timeout_ms": 20000,
+    "curl_timeout_s": 15,
+    "probe_timeout_ms": 3000,
+    "zero_streak": 3,
+    "unbreak_streak": 3,
+    "pace_ms": 1200
+  },
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 32
+  },
+  "findings": [
+    {
+      "url": "https://mainerighttolife.org/wp-content/uploads/2025/07/2025-132nd-House-Roll-Call.pdf",
+      "rows_citing": "147",
+      "host": "mainerighttolife.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainerighttolife.org/wp-content/uploads/2025/07/2025-132nd-Senate-Roll-Call.pdf",
+      "rows_citing": "34",
+      "host": "mainerighttolife.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/",
+      "rows_citing": "20",
+      "host": "cambridgeday.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.dotnews.com/wp-content/uploads/2025/08/Henry-Santana.pdf",
+      "rows_citing": "20",
+      "host": "dotnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.wbur.org/news/2021/03/26/massachusetts-climate-bill-signed",
+      "rows_citing": "20",
+      "host": "wbur.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missionlocal.org/2025/01/interview-supervisor-shamann-walton-wants-less-nuclear-waste-more-affordable-housing-in-district-10/",
+      "rows_citing": "18",
+      "host": "missionlocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.masslive.com/politics/2020/12/massachusetts-governor-charlie-baker-signs-police-reform-law.html",
+      "rows_citing": "17",
+      "host": "masslive.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.progressivemass.com/wp-content/uploads/2026/03/Craig-Swallow-2026-Congress.pdf",
+      "rows_citing": "17",
+      "host": "progressivemass.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.progressivemass.com/wp-content/uploads/2026/03/Jamie-Belsito-2026-Congress.pdf",
+      "rows_citing": "17",
+      "host": "progressivemass.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.masslive.com/politics/2022/06/massachusetts-senate-passes-drivers-licenses-for-undocumented-immigrants.html",
+      "rows_citing": "16",
+      "host": "masslive.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.progressivemass.com/wp-content/uploads/2026/03/Beth-Andres-Beck-2026-Congress.pdf",
+      "rows_citing": "16",
+      "host": "progressivemass.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.progressivemass.com/wp-content/uploads/2026/03/Mariah-Lancaster-2026-Congress.pdf",
+      "rows_citing": "16",
+      "host": "progressivemass.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://afcitizen.com/2026/03/19/utah-county-commission-seat-b/",
+      "rows_citing": "15",
+      "host": "afcitizen.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://beavertonvalleytimes.com/2022/04/28/qa-get-to-know-beaverton-city-council-candidates/",
+      "rows_citing": "15",
+      "host": "beavertonvalleytimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missionlocal.org/2025/07/district-9-supervisor-jackie-fielder/",
+      "rows_citing": "15",
+      "host": "missionlocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bcdemocrat.com/2026/03/27/four-democrats-running-in-primary-for-us-house-district-9/",
+      "rows_citing": "14",
+      "host": "bcdemocrat.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hillsboronewstimes.com/2022/10/31/qa-hillsboro-city-council-candidates-on-the-issues/",
+      "rows_citing": "14",
+      "host": "hillsboronewstimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lehifreepress.com/2026/03/19/utah-county-commission-seat-b/",
+      "rows_citing": "14",
+      "host": "lehifreepress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://sacramentocityexpress.com/2024/09/19/sacramento-first-in-california-to-allow-multi-unit-housing-in-every-neighborhood/",
+      "rows_citing": "14",
+      "host": "sacramentocityexpress.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://utahnewsdispatch.com/2025/03/07/utah-legislature-passes-immigration-law-to-support-deportations/",
+      "rows_citing": "14",
+      "host": "utahnewsdispatch.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://timesofsandiego.com/politics/2026/01/29/sd-councilmembers-plan-resolution-opposing-excessive-ice-tactics/",
+      "rows_citing": "13",
+      "host": "timesofsandiego.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2025/03/city-council-udo-residential-upzoning",
+      "rows_citing": "12",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capcity.news/community/elections/2026/07/09/wyoming-us-senate-candidates-agree-on-insider-trading-split-on-energy-healthcare-social-security/",
+      "rows_citing": "11",
+      "host": "capcity.news",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://hillsboronewstimes.com/2024/10/01/candidate-qa-forest-grove-city-council-candidates-talk-housing-charter-changes-and-more/",
+      "rows_citing": "11",
+      "host": "hillsboronewstimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missionlocal.org/2025/01/in-district-11-hope-and-needs-go-hand-in-hand-for-new-supervisor-chyanne-chen/",
+      "rows_citing": "11",
+      "host": "missionlocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://washcodems.org/2026/04/26/ashley-hartmeier-prigg-race-for-hd-27-seat-candidate-interview/",
+      "rows_citing": "11",
+      "host": "washcodems.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.idsnews.com/article/2026/03/democratic-candidates-bloomington-state-house-election-public-forum",
+      "rows_citing": "11",
+      "host": "idsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opb.org/article/2023/07/24/beaverton-council-votes-to-eliminate-minimum-parking-requirements-for-new-projects/",
+      "rows_citing": "11",
+      "host": "opb.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sherwoodoregon.gov/wp-content/uploads/2025/12/10.28.2025-City-Council-Meeting-Minutes.pdf",
+      "rows_citing": "11",
+      "host": "sherwoodoregon.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.sltrib.com/news/2026/06/07/salt-lake-county-council-race/",
+      "rows_citing": "11",
+      "host": "sltrib.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lapublicpress.org/2026/03/la-city-attorney-election-2026/",
+      "rows_citing": "10",
+      "host": "lapublicpress.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missionlocal.org/2024/10/district-3-analysis-how-do-the-candidates-differ/",
+      "rows_citing": "10",
+      "host": "missionlocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

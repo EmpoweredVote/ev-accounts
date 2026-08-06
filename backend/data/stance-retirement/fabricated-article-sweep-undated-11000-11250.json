@@ -1,0 +1,1776 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 11000 --to 11250 --pace 1200",
+  "slice": "undated",
+  "timing": {
+    "fetch_timeout_ms": 20000,
+    "curl_timeout_s": 15,
+    "probe_timeout_ms": 3000,
+    "zero_streak": 3,
+    "unbreak_streak": 3,
+    "pace_ms": 1200
+  },
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 250
+  },
+  "findings": [
+    {
+      "url": "https://www.ontheissues.org/IN/Rudy_Yakym_Principles_+_Values.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/IN/Rudy_Yakym_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/International/John_Deaton_Foreign_Policy.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/International/John_Deaton_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/International/Michele_Tafoya_Energy_+_Oil.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/international/Ted_Cruz_Foreign_Policy.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Bill_Huizenga_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Bill_Huizenga_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Bill_Huizenga_Social_Security.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Bill_Huizenga_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Bill_Huizenga_Technology.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/John_Moolenaar_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/John_Moolenaar_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/John_Moolenaar_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/John_Moolenaar_Health_Care.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/John_Moolenaar_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Lisa_McClain_Crime.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Lisa_McClain_Social_Security.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Lisa_McClain.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Mike_Rogers_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Mike_Rogers_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Mike_Rogers_Social_Security.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Rashida_Tlaib_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Rashida_Tlaib_Crime.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Rashida_Tlaib_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Rashida_Tlaib_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/MI/Tim_Walberg_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Alma_Adams_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Alma_Adams_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Alma_Adams_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Alma_Adams_Health_Care.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Alma_Adams_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/David_Rouzer_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/David_Rouzer_Budget_+_Economy.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/David_Rouzer_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/David_Rouzer_Health_Care.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/David_Rouzer_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Deborah_Ross_Corporations.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Deborah_Ross_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Deborah_Ross_Environment.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Deborah_Ross_Health_Care.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Don_Davis.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Mark_Harris_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Mark_Harris_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Mark_Harris_Health_Care.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Mark_Harris_Social_Security.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Mark_Harris_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Richard_Hudson_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Families_+_Children.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Jobs.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Principles_+_Values.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Social_Security.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Technology.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NC/Virginia_Foxx_Welfare_+_Poverty.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NJ/Donald_Norcross_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NJ/Donald_Norcross_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NJ/Donald_Norcross_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NJ/Donald_Norcross_Health_Care.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NJ/Donald_Norcross_Principles_+_Values.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NJ/Donald_Norcross_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Adriano_Espaillat_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Adriano_Espaillat_Corporations.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Adriano_Espaillat_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Adriano_Espaillat_Homeland_Security.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Adriano_Espaillat_Jobs.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Adriano_Espaillat_Welfare_+_Poverty.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Claudia_Tenney_Environment.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Claudia_Tenney_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Claudia_Tenney_Social_Security.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Claudia_Tenney_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Grace_Meng_Corporations.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Grace_Meng_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Grace_Meng_Energy_+_Oil.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Grace_Meng_Environment.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Grace_Meng_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Grace_Meng_Health_Care.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Grace_Meng_Principles_+_Values.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Grace_Meng_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Jerrold_Nadler_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Jerrold_Nadler_Foreign_Policy.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Nicole_Malliotakis_Civil_Rights.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Nicole_Malliotakis_Corporations.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Nicole_Malliotakis_Crime.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Nicole_Malliotakis_Families_+_Children.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Nicole_Malliotakis_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Paul_Tonko_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Paul_Tonko_Corporations.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Paul_Tonko_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Paul_Tonko_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Paul_Tonko_Principles_+_Values.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Yvette_Clarke_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Yvette_Clarke_Budget_+_Economy.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Yvette_Clarke_Corporations.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Yvette_Clarke_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Yvette_Clarke_Principles_+_Values.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/NY/Yvette_Clarke_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Emilia_Sykes.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Joyce_Beatty_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Joyce_Beatty_Budget_+_Economy.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Joyce_Beatty_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Joyce_Beatty_Principles_+_Values.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Joyce_Beatty_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Max_Miller_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Max_Miller_Budget_+_Economy.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Max_Miller_Energy_+_Oil.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Mike_Carey_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Mike_Carey_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Mike_Carey_Environment.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Mike_Carey_Government_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Mike_Carey_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Shontel_Brown_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Shontel_Brown_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Shontel_Brown_Energy_+_Oil.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Shontel_Brown_Environment.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Shontel_Brown_Foreign_Policy.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Shontel_Brown_HouseMatch.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Shontel_Brown_Jobs.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Shontel_Brown_Principles_+_Values.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Troy_Balderson_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Troy_Balderson_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Troy_Balderson_Health_Care.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Troy_Balderson_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Warren_Davidson_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Warren_Davidson_Energy_+_Oil.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Warren_Davidson_Environment.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Warren_Davidson_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Warren_Davidson_Principles_+_Values.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/OH/Warren_Davidson_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/pa/Chrissy_Houlahan_Budget_+_Economy.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/pa/Chrissy_Houlahan_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/pa/Chrissy_Houlahan_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/pa/Chrissy_Houlahan_Social_Security.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Dwight_Evans_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Dwight_Evans_Corporations.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Dwight_Evans_Families_+_Children.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Dwight_Evans_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Dwight_Evans_Homeland_Security.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Dwight_Evans_War_+_Peace.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Guy_Reschenthaler_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Guy_Reschenthaler_Civil_Rights.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Guy_Reschenthaler_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Guy_Reschenthaler_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Guy_Reschenthaler_Homeland_Security.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/John_Joyce_Civil_Rights.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/John_Joyce_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/John_Joyce_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Lloyd_Smucker_Budget_+_Economy.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Lloyd_Smucker_Civil_Rights.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Lloyd_Smucker_Corporations.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Lloyd_Smucker_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Lloyd_Smucker_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Lloyd_Smucker_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mary_Gay_Scanlon_Budget_+_Economy.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mary_Gay_Scanlon_Civil_Rights.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mary_Gay_Scanlon_Energy_+_Oil.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mary_Gay_Scanlon_Environment.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mary_Gay_Scanlon_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mike_Kelly_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mike_Kelly_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mike_Kelly_Environment.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mike_Kelly_Free_Trade.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mike_Kelly_Social_Security.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mike_Kelly_Tax_Reform.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Mike_Kelly_Technology.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/PA/Ryan_Mackenzie.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Senate/Kurt_Alme.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Senate/Mike_Rogers.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Senate/Rachel_Fetty_Anderson.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Social/Gerald_Malloy_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Social/Jenny_Wilson_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Social/Lisa_Murkowski_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Social/Mark_Baisley_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Social/Michele_Tafoya_Health_Care.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/Social/Rick_Scott_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/VA/Bob_Good_Abortion.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/VA/Bob_Good_Education.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ontheissues.org/VA/Bob_Good_Social_Security.htm",
+      "rows_citing": "1",
+      "host": "ontheissues.org",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opencampaign.com/politicians-in-united-states/208298/jason-clark",
+      "rows_citing": "1",
+      "host": "opencampaign.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opensecrets.org/members-of-congress/ayanna-pressley/summary?cid=N00044039",
+      "rows_citing": "1",
+      "host": "opensecrets.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opensecrets.org/members-of-congress/erin-houchin/summary?cid=N00037427",
+      "rows_citing": "1",
+      "host": "opensecrets.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opensecrets.org/members-of-congress/john-curtis/summary?cid=N00041221",
+      "rows_citing": "1",
+      "host": "opensecrets.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opensecrets.org/members-of-congress/seth-moulton/summary?cid=N00035492",
+      "rows_citing": "1",
+      "host": "opensecrets.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opensecrets.org/members-of-congress/stephen-lynch/summary?cid=N00013620",
+      "rows_citing": "1",
+      "host": "opensecrets.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opensecrets.org/members-of-congress/summary?cid=N00033997",
+      "rows_citing": "1",
+      "host": "opensecrets.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opensecrets.org/members-of-congress/summary?cid=N00045377&cycle=2024",
+      "rows_citing": "1",
+      "host": "opensecrets.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.opensecrets.org/officeholders/deidre-m-henderson/summary?cycle=2024&id=10886874",
+      "rows_citing": "1",
+      "host": "opensecrets.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.oregonmetro.gov/projects/tualatin-valley-highway-transit-and-safety-project",
+      "rows_citing": "1",
+      "host": "oregonmetro.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.osc.ny.gov/common-retirement-fund/sustainable-investments-and-climate-solutions-program",
+      "rows_citing": "1",
+      "host": "osc.ny.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ourquadcities.com/news/4-the-record/web-extra-bohannan-miller-meeks-on-ukraine-and-israel-policy/",
+      "rows_citing": "1",
+      "host": "ourquadcities.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/agencies/ltgovernor/newsroom/lg-urges-usda-to-quickly-distribute-assistance-for-2-million-pen.html",
+      "rows_citing": "1",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/agencies/ltgovernor/newsroom/lieutenant-governor-davis-highlights-pennsylvania-s-economic-opp.html",
+      "rows_citing": "1",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/agencies/ltgovernor/newsroom/lt--gov--austin-davis-and-second-lady-on-investments-in-childcar.html",
+      "rows_citing": "1",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/agencies/ltgovernor/newsroom/lt--gov--austin-davis-highlights-policies-to-make-housing-more-a.html",
+      "rows_citing": "1",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/agencies/ltgovernor/newsroom/lt--gov--austin-davis-highlights-shapiro-davis-administration-s-.html",
+      "rows_citing": "1",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/agencies/ltgovernor/newsroom/lt--gov--austin-davis-touts-administration-s-housing-action-plan.html",
+      "rows_citing": "1",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/agencies/ltgovernor/newsroom/lt--gov--davis-highlights-pitt-s-new-program-to-make-college-mor.html",
+      "rows_citing": "1",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/agencies/ltgovernor/newsroom/lt--gov--joins-secretary-schmidt-to-encourage-pennsylvanians-to-.html",
+      "rows_citing": "1",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/agencies/ltgovernor/newsroom/lt--governor-davis-kicks-off--putting-more-money-back-in-your-po.html",
+      "rows_citing": "1",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/agencies/ltgovernor/newsroom/shapiro-davis-administration-s-investments-in-career-and-technic.html",
+      "rows_citing": "1",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/governor/accomplishments/accountability.html",
+      "rows_citing": "1",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/governor/accomplishments/education.html",
+      "rows_citing": "1",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pa.gov/en/governor/accomplishments/government-efficiency.html",
+      "rows_citing": "1",
+      "host": "pa.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/about/issues/environment/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/about/issues/voting-rights/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/on-third-anniversary-of-roe-being-overturned-padilla-joins-senate-democrats-in-introducing-bill-to-restore-abortion-access-nationwide/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-cosponsors-bill-to-get-the-federal-government-out-of-the-fossil-fuel-business/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-delivers-floor-remarks-on-californias-climate-leadership-amidst-climate-crisis/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-joins-effort-to-require-refunds-of-trumps-illegal-tariffs/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-lieu-carbajal-announce-transformative-legislation-to-address-affordable-housing-and-homelessness-crises/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-raises-inclusivity-concerns-at-committee-hearing-on-artificial-intelligence/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-schiff-booker-announce-bill-to-make-access-to-equitable-health-care-a-protected-civil-right/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-schiff-call-on-trump-to-release-billions-of-dollars-in-funding-for-public-education/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-statement-denouncing-senate-republicans-passage-of-billionaire-first-tax-bill/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-statement-on-senate-passage-of-aid-package-for-ukraine%EF%BF%BC/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-statement-on-senate-passage-of-marriage-equality-legislation/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-statement-on-senate-passage-of-national-security-aid-package/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/watch-padilla-blasts-trump-administration-for-rising-energy-costs-cuts-to-renewable-projects/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.padilla.senate.gov/newsroom/press-releases/watch-padilla-proposes-resolution-on-the-floor-to-limit-the-use-of-tariffs-to-offset-republicans-tax-cuts/",
+      "rows_citing": "1",
+      "host": "padilla.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pahouse.com/Rabb/InTheNews/",
+      "rows_citing": "1",
+      "host": "pahouse.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.palegis.us/legislation/bills/2023/hb1888",
+      "rows_citing": "1",
+      "host": "palegis.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.palegis.us/legislation/bills/2023/hb800",
+      "rows_citing": "1",
+      "host": "palegis.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.palegis.us/legislation/bills/2023/hb979",
+      "rows_citing": "1",
+      "host": "palegis.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1600",
+      "rows_citing": "1",
+      "host": "palegis.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1800",
+      "rows_citing": "1",
+      "host": "palegis.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.palegis.us/legislation/bills/2025/hb200",
+      "rows_citing": "1",
+      "host": "palegis.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.palmspringslife.com/40-under-40/2025-honorees/grace-garner/",
+      "rows_citing": "1",
+      "host": "palmspringslife.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pasadenanow.com/main/city-concerned-over-new-housing-numbers",
+      "rows_citing": "1",
+      "host": "pasadenanow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pasadenanow.com/main/more-money-for-police-a-conflicted-city-council-deliberates",
+      "rows_citing": "1",
+      "host": "pasadenanow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pasadenanow.com/main/saturdays-third-post-election-ballot-count-update-shows-pasadenas-rent-control-measure-h-maintaining-lead",
+      "rows_citing": "1",
+      "host": "pasadenanow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.paul.senate.gov/issue/tariffs/",
+      "rows_citing": "1",
+      "host": "paul.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/politics/indiana-gov-mike-braun-calls-a-special-session-to-redraw-the-states-congressional-boundaries",
+      "rows_citing": "1",
+      "host": "pbs.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/tag/josh-kaul",
+      "rows_citing": "1",
+      "host": "pbs.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/tag/mike-dewine",
+      "rows_citing": "1",
+      "host": "pbs.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/world/watch-harris-meets-with-ukraines-zelenskyy-as-russia-makes-nuclear-warning",
+      "rows_citing": "1",
+      "host": "pbs.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.peoplefor.org/rightwingwatch/indiana-lt-gov-micah-beckwith-blasts-republicans-who-refuse-redistrict-neville",
+      "rows_citing": "1",
+      "host": "peoplefor.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.peoplefor.org/rightwingwatch/indiana-lt-gov-micah-beckwith-making-christian-nationalist-nonsense",
+      "rows_citing": "1",
+      "host": "peoplefor.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.peoplefor.org/rightwingwatch/indianas-lt-gov-micah-beckwith-says-three-fifths-compromise-constitution-great-thing",
+      "rows_citing": "1",
+      "host": "peoplefor.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pima.gov/3138/Climate-Change",
+      "rows_citing": "1",
+      "host": "pima.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pima.gov/3622/Climate-Plans",
+      "rows_citing": "1",
+      "host": "pima.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pima.gov/883/Planning-for-RTA-Next",
+      "rows_citing": "1",
+      "host": "pima.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.pionline.com/pension-funds/california-treasurer-calls-calstrs-divest-fossil-fuels",
+      "rows_citing": "1",
+      "host": "pionline.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.plannedparenthoodaction.org/planned-parenthood-action-council-utah-inc/policy/2025-leg-report",
+      "rows_citing": "1",
+      "host": "plannedparenthoodaction.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.plannedparenthoodaction.org/planned-parenthood-advocates-virginia-inc/ppav-elections/ppav-endorsements-2025",
+      "rows_citing": "1",
+      "host": "plannedparenthoodaction.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.plannedparenthoodaction.org/planned-parenthood-affiliates-california/media/press-release-12-22-2020-3",
+      "rows_citing": "1",
+      "host": "plannedparenthoodaction.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.plano.gov/1349/Mayor-John-B-Muns",
+      "rows_citing": "1",
+      "host": "plano.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.politicalcandidatedirectory.com/MI/clyde-shabazz",
+      "rows_citing": "1",
+      "host": "politicalcandidatedirectory.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.politifact.com/factchecks/2014/may/13/marco-rubio/marco-rubio-says-humans-are-not-causing-climate-ch/",
+      "rows_citing": "1",
+      "host": "politifact.com",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

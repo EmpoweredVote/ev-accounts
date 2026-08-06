@@ -1,0 +1,1781 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 9500 --to 9750 --pace 1200",
+  "slice": "undated",
+  "timing": {
+    "fetch_timeout_ms": 20000,
+    "curl_timeout_s": 15,
+    "probe_timeout_ms": 3000,
+    "zero_streak": 3,
+    "unbreak_streak": 3,
+    "pace_ms": 1200
+  },
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 248,
+    "NO_ANSWER": 1,
+    "FABRICATED": 1
+  },
+  "findings": [
+    {
+      "url": "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2361",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2364",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2366",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2367",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2369",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2292P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2294P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2622P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2782P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2812P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2817P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2884P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2938P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/1R/bills/sb1729p.htm",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2002p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2037p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2135p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2217p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2239p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2304p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2311p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2325p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2338p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2341p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2356p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2392p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2403p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2492p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2505p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2521p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2526p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2527p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2530p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2535p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2542p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2551p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2561p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB2572P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2577p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB2580P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2588p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB2595P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB2598P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2602p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2620p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2626p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2629p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2654p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2657p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB2667P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2696p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2705p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2710p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2718p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB2728P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2737p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2738p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2742p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2770p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2796p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2804p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2832p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2855p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2867p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2880p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2881p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB2886P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB2891P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB2912P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2922p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2931p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2942p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2946p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2958p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2962p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb2975p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB2980P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4009p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB4024P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4028p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB4030P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4037p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4046p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4052p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4061p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB4066P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4083p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB4091P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4093p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4095p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4097p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4099p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4111p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4113p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4123p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4132p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hb4135p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HCM2014P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/hcr2058p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/sb1031p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/sb1165p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/sb1213p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1218P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1219P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1220P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1227P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1229P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/sb1264p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/sb1341p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1343P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1380P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/sb1383p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1395P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/sb1398p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1441P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/sb1444p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1467P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/sb1511p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/sb1612p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1660P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/sb1708p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1708P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/sb1727p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1779P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1797P.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/sb1800p.pdf",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.azleg.gov/Senate/Senate-member/?legislature=57&session=130&legislator=2376",
+      "rows_citing": "1",
+      "host": "azleg.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/brad-a-meyer",
+      "rows_citing": "1",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/burt-thakur-71f81bef-f89d-4949-8d70-1e1c31d1674e",
+      "rows_citing": "1",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/christian-vukasovich",
+      "rows_citing": "1",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/emma-sharif",
+      "rows_citing": "1",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/eric-andrew-ohlsen",
+      "rows_citing": "1",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/monique-appeaning",
+      "rows_citing": "1",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/paul-xiong",
+      "rows_citing": "1",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/steve-carlson-9812f2b6-e003-406f-9f89-5fefbfc70ce5",
+      "rows_citing": "1",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/steve-platt",
+      "rows_citing": "1",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/suzanne-dr-k-k-krzyzanowski",
+      "rows_citing": "1",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballotready.org/people/william-b-redpath",
+      "rows_citing": "1",
+      "host": "ballotready.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ballparkactionteam.org/post/building-beyond-the-ballpark-a-community-conversation-between-developers-residents-and-business-o",
+      "rows_citing": "1",
+      "host": "ballparkactionteam.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bangordailynews.com/profile/nicole-c-grohoski/",
+      "rows_citing": "1",
+      "host": "bangordailynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bangordailynews.com/tag/ambureen-rana/",
+      "rows_citing": "1",
+      "host": "bangordailynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.beavertonoregon.gov/1499/Beaverton-Homelessness-Response",
+      "rows_citing": "1",
+      "host": "beavertonoregon.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.beavertonoregon.gov/1585/Beaverton-Complete-Streets-Policy",
+      "rows_citing": "1",
+      "host": "beavertonoregon.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.beavertonoregon.gov/256/City-Incentives",
+      "rows_citing": "1",
+      "host": "beavertonoregon.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.beavertonoregon.gov/961/About-The-Beaverton-Urban-Redevelopment-",
+      "rows_citing": "1",
+      "host": "beavertonoregon.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bendoregon.gov/city-council/ariel-mendez/",
+      "rows_citing": "1",
+      "host": "bendoregon.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bendoregon.gov/top-priorities/2020-transportation-go-bond/",
+      "rows_citing": "1",
+      "host": "bendoregon.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bendoregon.gov/top-priorities/2020-transportation-go-bond/key-routes/",
+      "rows_citing": "1",
+      "host": "bendoregon.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bendsource.com/opinion/ariel-mendez-for-bend-city-council-pos-5-17915819/",
+      "rows_citing": "1",
+      "host": "bendsource.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bendsource.com/opinion/mike-riley-for-bend-city-council-pos-6-17915825/",
+      "rows_citing": "1",
+      "host": "bendsource.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.berkeleydailyplanet.com/issue/2025-02-28",
+      "rows_citing": "1",
+      "host": "berkeleydailyplanet.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.billsponsor.com/politicians/7445/karen-kwan",
+      "rows_citing": "1",
+      "host": "billsponsor.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bisnow.com/dallas-ft-worth/news/commercial-real-estate/plano-chooses-former-pz-chair-john-muns-for-next-mayor-108730",
+      "rows_citing": "1",
+      "host": "bisnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bisnow.com/dallas-ft-worth/news/multifamily/from-rage-to-city-council-gridlock-getting-multifamily-off-the-ground-is-no-simple-feat-in-america-100527",
+      "rows_citing": "1",
+      "host": "bisnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.booker.senate.gov/news/press/booker-wyden-clarke-introduce-bicameral-bill-to-regulate-use-of-artificial-intelligence-to-make-critical-decisions-like-housing-employment-and-education",
+      "rows_citing": "1",
+      "host": "booker.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.boston.gov/departments/boston-public-health-commission",
+      "rows_citing": "1",
+      "host": "boston.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.boston.gov/departments/early-childhood",
+      "rows_citing": "1",
+      "host": "boston.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.boston.gov/departments/economic-development",
+      "rows_citing": "1",
+      "host": "boston.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.boston.gov/departments/small-business",
+      "rows_citing": "1",
+      "host": "boston.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.boston.gov/departments/transportation/vision-zero",
+      "rows_citing": "1",
+      "host": "boston.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.boston.gov/housing/housing-innovation-lab",
+      "rows_citing": "1",
+      "host": "boston.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.brainerddispatch.com/news/minnesota/mora-man-to-challenge-stauber-in-republican-primary",
+      "rows_citing": "1",
+      "host": "brainerddispatch.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.branch.vote/races/2026-alabama-primary-election-al-state-secretary-of-state-al-state-r/candidates/christopher-christian-horn",
+      "rows_citing": "1",
+      "host": "branch.vote",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.breatheutah.org/spred-the-word/item/284-sb-222-vehicle-emission-inspection-program-revisions",
+      "rows_citing": "1",
+      "host": "breatheutah.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.breitbart.com/tag/eli-crane/",
+      "rows_citing": "1",
+      "host": "breitbart.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.breitbart.com/tag/russell-fry/",
+      "rows_citing": "1",
+      "host": "breitbart.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.brennancenter.org/our-work/research-reports/overview-redistricting-provisions-freedom-vote-act",
+      "rows_citing": "1",
+      "host": "brennancenter.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bridgetbrink.com/issues/environment",
+      "rows_citing": "1",
+      "host": "bridgetbrink.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.bridgetbrink.com/issues/fight-corruption-defend-democracy",
+      "rows_citing": "1",
+      "host": "bridgetbrink.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.britt.senate.gov/issues/agriculture/",
+      "rows_citing": "1",
+      "host": "britt.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.brockton.ma.us/government/city-council",
+      "rows_citing": "1",
+      "host": "brockton.ma.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.brookings.edu/articles/how-children-are-treated-in-the-one-big-beautiful-bill-act/",
+      "rows_citing": "1",
+      "host": "brookings.edu",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.buildreuse.org/community-highlights/beaverton-or-climate-action-plan",
+      "rows_citing": "1",
+      "host": "buildreuse.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.burbankca.gov/burbanks-response/homelessness-plan",
+      "rows_citing": "1",
+      "host": "burbankca.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.burbankca.gov/newsroom/-/newsdetail/20124/burbank-city-council-adopts-ordinance-prohibiting-gas-powered-leaf-blowers",
+      "rows_citing": "1",
+      "host": "burbankca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.burbankca.gov/newsroom/-/newsdetail/20124/burbank-city-council-approves-waste-reduction-regulations-ordinance",
+      "rows_citing": "1",
+      "host": "burbankca.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.burbankca.gov/newsroom/-/newsdetail/20124/burbank-water-and-power-celebrates-ribbon-cutting-of-burbank-s-largest-solar-battery-system-at-the-hollywood-burbank-airport-regional-intermodal-transportation-center",
+      "rows_citing": "1",
+      "host": "burbankca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.burbankca.gov/web/police-department/mental-health-evaluation-team",
+      "rows_citing": "1",
+      "host": "burbankca.gov",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.c-span.org/person/jay-obernolte/127883/",
+      "rows_citing": "1",
+      "host": "c-span.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cachevalleydaily.com/news/attorney-general-derek-brown-scores-victory-over-federal-agencies-in-affordable-housing-fight/article_b668b764-6b62-453e-be4b-14140dbf47ee.html",
+      "rows_citing": "1",
+      "host": "cachevalleydaily.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cachevalleydaily.com/news/democrat-peter-crosby-views-uphill-battle-against-incumbent-rep-blake-moore-as-winnable/article_54bbff83-a567-4bc4-9d66-d6ab540f5375.html",
+      "rows_citing": "1",
+      "host": "cachevalleydaily.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cachevalleydaily.com/news/local/u-s-rep-blake-moore-defends-his-support-for-95-3-billion-foreign-aid-package/article_f534e246-073c-11ef-a0e7-73ee34cde3b6.html",
+      "rows_citing": "1",
+      "host": "cachevalleydaily.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cachevalleydaily.com/news/state-democrats-other-opponents-question-midas-role-in-box-elder-data-center-controversy/article_a9cbe5e5-502b-4fbd-811f-624cf42260e0.html",
+      "rows_citing": "1",
+      "host": "cachevalleydaily.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cachevalleydaily.com/news/u-s-rep-blake-moore-proposes-legislation-to-ban-toys-with-artificial-intelligence-in-u/article_43800807-313d-466b-a97a-8312487c02af.html",
+      "rows_citing": "1",
+      "host": "cachevalleydaily.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/cdd/climateandenergy/climatechangeplanning",
+      "rows_citing": "1",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/CDD/economicopportunityanddevelopment",
+      "rows_citing": "1",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/cdd/housing/forrenters",
+      "rows_citing": "1",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/cdd/transportation",
+      "rows_citing": "1",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/cdd/transportation/gettingaroundcambridge",
+      "rows_citing": "1",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/CDD/zoninganddevelopment/sustainabledevelopment/article22greenbldgrequirements",
+      "rows_citing": "1",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/Departments/citycouncil/members/ayahaalzubi",
+      "rows_citing": "1",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/Departments/citymanagersoffice/civicunitycommittee",
+      "rows_citing": "1",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/Departments/departmentofequityandinclusion/interactiveequityandinclusiondashboard",
+      "rows_citing": "1",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/Departments/Transportation",
+      "rows_citing": "1",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cambridgema.gov/Services/911clinician",
+      "rows_citing": "1",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cantonjournal.com/news/local_news/driscoll-economic-development/article_abcd1234.html",
+      "rows_citing": "1",
+      "host": "cantonjournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://www.cantwell.senate.gov/issues/education/",
+      "rows_citing": "1",
+      "host": "cantwell.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cantwell.senate.gov/issues/health-care/",
+      "rows_citing": "1",
+      "host": "cantwell.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.capecodtimes.com/search/?q=Kip+Diggs",
+      "rows_citing": "1",
+      "host": "capecodtimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.capecodtimes.com/search/?q=Moakley+environment",
+      "rows_citing": "1",
+      "host": "capecodtimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.capecodtimes.com/search/?q=Moakley+housing+crisis",
+      "rows_citing": "1",
+      "host": "capecodtimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.capecodtimes.com/search/?q=Xiarhos",
+      "rows_citing": "1",
+      "host": "capecodtimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.capecodtimes.com/search/?q=Xiarhos+Right+to+Shelter",
+      "rows_citing": "1",
+      "host": "capecodtimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.carsonnow.org/03/12/2025/a-bipartisan-mail-ballot-bill-in-nevada-its-not-as-crazy-as-it-sounds",
+      "rows_citing": "1",
+      "host": "carsonnow.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cassidy.senate.gov/issues/education/",
+      "rows_citing": "1",
+      "host": "cassidy.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cassidy.senate.gov/issues/paid-family-leave",
+      "rows_citing": "1",
+      "host": "cassidy.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbpp.org/blog/rubio-lee-child-credit-proposal-should-be-in-final-tax-bill",
+      "rows_citing": "1",
+      "host": "cbpp.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbsnews.com/boston/news/quincy-saint-statues-public-safety-court-lawsuit/",
+      "rows_citing": "1",
+      "host": "cbsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbsnews.com/detroit/news/matt-maasdam-announces-candidacy-for-michigans-7th-congressional-district/",
+      "rows_citing": "1",
+      "host": "cbsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbsnews.com/losangeles/news/inglewood-to-receive-more-than-1-billion-in-federal-funding-for-transit-connector-project/",
+      "rows_citing": "1",
+      "host": "cbsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbsnews.com/losangeles/news/norwalk-overturn-new-homeless-shelter-ban-settlement-state-california/",
+      "rows_citing": "1",
+      "host": "cbsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbsnews.com/losangeles/video/pasadena-mayor-victor-gordo-on-ice-raids-and-a-federal-lawsuit/",
+      "rows_citing": "1",
+      "host": "cbsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbsnews.com/minnesota/news/bob-again-carney-jr-2018-election-guide/",
+      "rows_citing": "1",
+      "host": "cbsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbsnews.com/news/murkowski-ukraine-aid/",
+      "rows_citing": "1",
+      "host": "cbsnews.com",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "cbsnews.com/news*",
+      "dated": false
+    },
+    {
+      "url": "https://www.cbsnews.com/news/transgender-sports-student-athletes-bill-utah-legislature-ovverrides-governor-spencer-cox/",
+      "rows_citing": "1",
+      "host": "cbsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbsnews.com/news/trump-harris-abortion-2024/",
+      "rows_citing": "1",
+      "host": "cbsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cbsnews.com/tag/john-fetterman/",
+      "rows_citing": "1",
+      "host": "cbsnews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cde.ca.gov/nr/ne/yr19/yr19rel45.asp",
+      "rows_citing": "1",
+      "host": "cde.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cde.ca.gov/nr/ne/yr22/yr22rel34.asp",
+      "rows_citing": "1",
+      "host": "cde.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cde.ca.gov/nr/ne/yr24/yr24rel03.asp",
+      "rows_citing": "1",
+      "host": "cde.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cde.ca.gov/nr/ne/yr24/yr24rel18.asp",
+      "rows_citing": "1",
+      "host": "cde.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cde.ca.gov/nr/ne/yr24/yr24rel25.asp",
+      "rows_citing": "1",
+      "host": "cde.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cde.ca.gov/nr/ne/yr24/yr24rel28.asp",
+      "rows_citing": "1",
+      "host": "cde.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cde.ca.gov/nr/ne/yr24/yr24rel37.asp",
+      "rows_citing": "1",
+      "host": "cde.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cde.ca.gov/nr/ne/yr25/yr25rel21.asp",
+      "rows_citing": "1",
+      "host": "cde.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cde.ca.gov/nr/ne/yr25/yr25rel41.asp",
+      "rows_citing": "1",
+      "host": "cde.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.change.org/p/lisa-murkowski-endorse-jim-mcdermott-for-u-s-congress",
+      "rows_citing": "1",
+      "host": "change.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.change.org/p/riverside-county-board-of-supervisors-don-t-give-the-riverside-county-sheriff-s-department-an-increased-budget",
+      "rows_citing": "1",
+      "host": "change.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.channel3000.com/news/dane-county-jail-project-breaks-ground-after-years-of-debate-and-hurdles/article_2348804a-e175-11ee-8177-6b4704d34f05.html",
+      "rows_citing": "1",
+      "host": "channel3000.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.channel3000.com/news/local-news/madison-police-dane-co-district-attorney-explain-how-legalizing-marijuana-would-affect-their-jobs/article_ca79216c-3827-559c-91b7-cd0f96aef736.html",
+      "rows_citing": "1",
+      "host": "channel3000.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.chris4virginia.org/news/campaign-note-41-chainsaws-straight-talk",
+      "rows_citing": "1",
+      "host": "chris4virginia.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.ci.el-monte.ca.us/685/Marisol-Cortez",
+      "rows_citing": "1",
+      "host": "ci.el-monte.ca.us",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.citizenscount.org/bills/hb-511-2025",
+      "rows_citing": "1",
+      "host": "citizenscount.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.citizenscount.org/bills/sb-295-2025",
+      "rows_citing": "1",
+      "host": "citizenscount.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.citizenscount.org/candidate/heath-howard",
+      "rows_citing": "1",
+      "host": "citizenscount.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.citizenscount.org/candidate/stefany-shaheen/running/2026-primary-us-house",
+      "rows_citing": "1",
+      "host": "citizenscount.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.citizenscount.org/elections/2026-us-house-primary",
+      "rows_citing": "1",
+      "host": "citizenscount.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.citynewsgroup.com/articles/first-5-riverside-county-and-supervisor-gutierrez-celebrate-new-child-care-classrooms-in-moreno-val",
+      "rows_citing": "1",
+      "host": "citynewsgroup.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofhawthorne.org/government/elected-officials/council-member-alex-monteiro",
+      "rows_citing": "1",
+      "host": "cityofhawthorne.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofhawthorne.org/government/elected-officials/council-member-angie-reyes-english",
+      "rows_citing": "1",
+      "host": "cityofhawthorne.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofinglewood.org/AgendaCenter/ViewFile/Minutes/_03052019-2692",
+      "rows_citing": "1",
+      "host": "cityofinglewood.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityoflancasterca.org/our-city/departments-services/public-safety/lancaster-police-department",
+      "rows_citing": "1",
+      "host": "cityoflancasterca.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofmadison.com/mayor/blog/2022-11-22/madison-cares-citys-mobile-emergency-service-for-behavior-health-calls",
+      "rows_citing": "1",
+      "host": "cityofmadison.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofmelissa.com/199/Economic-Development",
+      "rows_citing": "1",
+      "host": "cityofmelissa.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofmelissa.com/202/City-Council",
+      "rows_citing": "1",
+      "host": "cityofmelissa.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofmelissa.com/274/Sean-Lehr",
+      "rows_citing": "1",
+      "host": "cityofmelissa.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofmelissa.com/496/Crime-Control-Fire-Prevention-District-E",
+      "rows_citing": "1",
+      "host": "cityofmelissa.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofpasadena.net/city-manager/news/city-of-pasadenas-legal-filing-regarding-aggressive-and-dangerous-federal-immigration-enforcement-practices/",
+      "rows_citing": "1",
+      "host": "cityofpasadena.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofpasadena.net/district1/bio/",
+      "rows_citing": "1",
+      "host": "cityofpasadena.net",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://www.cityofpasadena.net/district3/bio/",
+      "rows_citing": "1",
+      "host": "cityofpasadena.net",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

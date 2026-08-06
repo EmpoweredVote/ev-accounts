@@ -1,0 +1,1075 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--from 1082 --to 1232 --pace 1200",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and siblings from the same month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "INCONCLUSIVE": "no sibling coverage for that host+month, so absence proves nothing",
+    "NO_ANSWER": "host did not answer at all — invented-host sweep territory, not this one"
+  },
+  "tally": {
+    "LIVE": 146,
+    "FABRICATED": 4
+  },
+  "findings": [
+    {
+      "url": "https://kathrynbarger.lacounty.gov/2018/09/",
+      "rows_citing": "1",
+      "host": "kathrynbarger.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kathrynbarger.lacounty.gov/2022/06/",
+      "rows_citing": "1",
+      "host": "kathrynbarger.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kathrynbarger.lacounty.gov/2023/01/",
+      "rows_citing": "1",
+      "host": "kathrynbarger.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kathrynbarger.lacounty.gov/2023/06/",
+      "rows_citing": "1",
+      "host": "kathrynbarger.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kathrynbarger.lacounty.gov/2024/01/",
+      "rows_citing": "1",
+      "host": "kathrynbarger.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kbindependent.org/2024/04/24/ukraine-bill-passes-after-painful-battle-with-the-gop-scott-and-rubio-vote-no/",
+      "rows_citing": "1",
+      "host": "kbindependent.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kelo.com/2025/07/21/the-affordable-care-act-is-about-to-become-unaffordable/",
+      "rows_citing": "1",
+      "host": "kelo.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kesq.com/news/2024/02/15/indio-residents-encourage-the-city-to-approve-a-200-unit-affordable-housing-development/",
+      "rows_citing": "1",
+      "host": "kesq.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kesq.com/news/2024/02/28/riverside-county-board-approves-416000-in-state-funding-for-desert-hot-springs-homeless-shelter/",
+      "rows_citing": "1",
+      "host": "kesq.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kesq.com/news/2026/01/28/infrastructure-projects-signal-long-term-development-plans-near-acrisure-arena/",
+      "rows_citing": "1",
+      "host": "kesq.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kesq.com/news/2026/06/08/sheriff-massive-unfilled-budget-request-will-require-reducing-positions/",
+      "rows_citing": "1",
+      "host": "kesq.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kesq.com/news/2026/06/09/tentative-2026-27-riverside-county-budget-leaves-some-agencies-short/",
+      "rows_citing": "1",
+      "host": "kesq.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kesq.com/news/top-stories/2026/05/11/new-affordable-apartment-community-opens-in-palm-desert-local-leaders-highlight-the-need/",
+      "rows_citing": "1",
+      "host": "kesq.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://knom.org/2016/11/08/election-2016-profile-alaska-us-house-jim-mcdermott-libertarian/",
+      "rows_citing": "1",
+      "host": "knom.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://kscj.com/2025/06/25/mcgowan-announces-run-for-4th-district-congressional-seat/",
+      "rows_citing": "1",
+      "host": "kscj.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ktvz.com/news/bend/2024/06/21/tricky-complex-balancing-act-bend-councilors-ok-new-rules/",
+      "rows_citing": "1",
+      "host": "ktvz.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ktvz.com/news/bend/2024/09/05/bend-city-councilors-accept-5-million-federal-affordable-housing-grant",
+      "rows_citing": "1",
+      "host": "ktvz.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ktvz.com/news/government-politics/2024/02/10/not-a-political-issue-its-a-human-issue-rep-emerson-levy-introduces-bill-to-lower-prescription-drug-costs/",
+      "rows_citing": "1",
+      "host": "ktvz.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ktvz.com/news/government-politics/2024/08/21/bend-city-councilors-discuss-clearer-rules-to-limit-vehicle-camping-on-city-streets-similar-to-tent-camping-code/",
+      "rows_citing": "1",
+      "host": "ktvz.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://la.streetsblog.org/2021/01/06/pomona-mayor-tim-sandoval-elected-to-metro-board-to-represent-sgv",
+      "rows_citing": "1",
+      "host": "la.streetsblog.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://la.streetsblog.org/2024/11/22/interview-with-culver-city-councilmember-elect-bubba-fish",
+      "rows_citing": "1",
+      "host": "la.streetsblog.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://la.streetsblog.org/2025/07/09/whittier-councilmember-fernando-dutra-is-new-metro-board-chair",
+      "rows_citing": "1",
+      "host": "la.streetsblog.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://la.streetsblog.org/2026/04/16/pasadena-adopts-most-of-the-710-stub-vision-plan",
+      "rows_citing": "1",
+      "host": "la.streetsblog.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lailluminator.com/2025/07/23/republican-attorneys-general-call-on-ncaa-to-erase-recognition-for-transgender-athletes/",
+      "rows_citing": "1",
+      "host": "lailluminator.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lamayor2026.org/wp-content/uploads/2025/10/EINPresswire-860321925-los-angeles-mayoral-candidate-asaad-alnajjar-strongly-opposes-costly-2-6b-los-angeles-convention-center-expansion-1.pdf",
+      "rows_citing": "1",
+      "host": "lamayor2026.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lapublicpress.org/2024/01/burbank-is-a-city-of-renters-its-looking-to-expand-tenant-protections-in-2024/",
+      "rows_citing": "1",
+      "host": "lapublicpress.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lapublicpress.org/2026/04/la-budget-2026-bass/",
+      "rows_citing": "1",
+      "host": "lapublicpress.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lapublicpress.org/2026/04/los-angeles-primary-june-election-candidates-la-city-council-district-11/",
+      "rows_citing": "1",
+      "host": "lapublicpress.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://lbcurrent.com/news/2024/10/16/long-beach-city-council-district-four-candidates-share-platforms-and-policies-during-forum/",
+      "rows_citing": "1",
+      "host": "lbcurrent.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://levittownnow.com/2026/02/18/commissioners-unanimously-oppose-ice-detention-centers/",
+      "rows_citing": "1",
+      "host": "levittownnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://levittownnow.com/2026/05/15/democrats-bob-harvie-lucia-simonelli-vie-for-primary/",
+      "rows_citing": "1",
+      "host": "levittownnow.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://localprofile.com/2023/05/11/qa-with-mayor-jeff-cheney/",
+      "rows_citing": "1",
+      "host": "localprofile.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltg.ca.gov/2020/07/21/lieutenant-governor-kounalakis-statement-on-trump-administration-memorandum-excluding-immigrants-from-census-count/",
+      "rows_citing": "1",
+      "host": "ltg.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltg.ca.gov/2021/11/04/lt-governor-eleni-kounalakis-returns-from-leading-californias-delegation-to-the-2021-united-nations-climate-change-conference/",
+      "rows_citing": "1",
+      "host": "ltg.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltg.ca.gov/2022/03/09/lieutenant-governor-kounalakis-delivers-introductory-remarks-at-2022-state-of-the-state-address/",
+      "rows_citing": "1",
+      "host": "ltg.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltg.ca.gov/2022/06/14/lieutenant-governor-kounalakis-statement-on-constitutional-amendment-to-enshrine-right-to-abortion-passing-first-legislative-hurdle/",
+      "rows_citing": "1",
+      "host": "ltg.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltg.ca.gov/2022/06/24/lieutenant-governor-kounalakis-statement-on-u-s-supreme-court-decision-in-dobbs-vs-jackson-womens-health-organization/",
+      "rows_citing": "1",
+      "host": "ltg.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltg.ca.gov/2022/06/28/statement-from-the-lt-governors-transgender-advisory-council-on-scotuss-decision-in-dobbs-vs-jackson-womens-health-organization/",
+      "rows_citing": "1",
+      "host": "ltg.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltg.ca.gov/2022/07/05/lieutenant-governor-kounalakis-and-assemblymember-medina-advocate-for-housing-measures-in-budget/",
+      "rows_citing": "1",
+      "host": "ltg.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltg.ca.gov/2025/01/31/statement-from-lieutenant-governor-kounalakiss-transgender-advisory-council-on-president-trumps-recent-attacks-on-the-tgi-community/",
+      "rows_citing": "1",
+      "host": "ltg.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltg.ca.gov/2025/04/16/lt-governor-kounalakiss-statement-on-california-lawsuit-to-block-president-trumps-tariffs/",
+      "rows_citing": "1",
+      "host": "ltg.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltg.ca.gov/2025/06/25/new-report-lt-governor-kounalakis-highlights-immigrants-vital-role-in-californias-econom/",
+      "rows_citing": "1",
+      "host": "ltg.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ltg.ca.gov/2026/01/02/lieutenant-governor-eleni-kounalakiss-2025-year-in-review/",
+      "rows_citing": "1",
+      "host": "ltg.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainemorningstar.com/2024/02/22/seeking-full-enforcement-of-maine-civil-rights-act-talbot-ross-proposes-new-unit-in-ags-office/",
+      "rows_citing": "1",
+      "host": "mainemorningstar.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainemorningstar.com/2025/02/27/many-believe-maines-net-energy-billing-needs-reform-but-diverge-on-whether-to-tweak-or-toss/",
+      "rows_citing": "1",
+      "host": "mainemorningstar.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainemorningstar.com/2025/06/16/though-majority-of-anti-trans-bills-rejected-maine-house-narrowly-advances-trans-girls-sports-ban/",
+      "rows_citing": "1",
+      "host": "mainemorningstar.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainemorningstar.com/2025/06/17/by-one-vote-maine-house-passes-restrictions-on-federal-immigration-enforcement/",
+      "rows_citing": "1",
+      "host": "mainemorningstar.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainemorningstar.com/2025/08/20/maine-oysterman-stirring-up-democrats-efforts-to-oust-susan-collins/",
+      "rows_citing": "1",
+      "host": "mainemorningstar.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainemorningstar.com/2025/12/09/despite-national-party-reticence-many-cd2-dems-say-they-are-sticking-with-dunlap/",
+      "rows_citing": "1",
+      "host": "mainemorningstar.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainemorningstar.com/2026/01/07/new-bill-could-make-solar-power-more-accessible-to-maine-renters/",
+      "rows_citing": "1",
+      "host": "mainemorningstar.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainemorningstar.com/2026/01/28/maine-advances-climate-superfund-bill-that-would-ask-fossil-fuel-companies-to-pay/",
+      "rows_citing": "1",
+      "host": "mainemorningstar.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mainemorningstar.com/2026/03/13/legislature-poised-to-vote-on-massive-bills-to-offset-federal-cuts-to-snap-health-care/",
+      "rows_citing": "1",
+      "host": "mainemorningstar.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://marylandmatters.org/2021/02/25/blueprint-for-marylands-future/",
+      "rows_citing": "1",
+      "host": "marylandmatters.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://marylandmatters.org/2021/04/10/police-accountability-act-signed/",
+      "rows_citing": "1",
+      "host": "marylandmatters.org",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "marylandmatters.org|2021/04"
+    },
+    {
+      "url": "https://marylandmatters.org/2022/04/09/senate-president-bill-ferguson/",
+      "rows_citing": "1",
+      "host": "marylandmatters.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://marylandmatters.org/2023/04/healthcare-expansion/",
+      "rows_citing": "1",
+      "host": "marylandmatters.org",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "marylandmatters.org|2023/04"
+    },
+    {
+      "url": "https://marylandmatters.org/2023/05/maryland-way-act-signed/",
+      "rows_citing": "1",
+      "host": "marylandmatters.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://marylandmatters.org/2023/05/voting-rights-maryland/",
+      "rows_citing": "1",
+      "host": "marylandmatters.org",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "marylandmatters.org|2023/05"
+    },
+    {
+      "url": "https://marylandmatters.org/2024/01/20/fergusons-economic-agenda/",
+      "rows_citing": "1",
+      "host": "marylandmatters.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://marylandmatters.org/2024/01/moore-fy2025-budget/",
+      "rows_citing": "1",
+      "host": "marylandmatters.org",
+      "status": 404,
+      "verdict": "FABRICATED",
+      "control_siblings": 200,
+      "control": "marylandmatters.org|2024/01"
+    },
+    {
+      "url": "https://marylandmatters.org/2024/02/12/fergusons-priorities-for-2024-session/",
+      "rows_citing": "1",
+      "host": "marylandmatters.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://marylandmatters.org/2024/04/04/elfreth-foes-cry-foul-as-aipac-money-seeps-into-3rd-district-congressional-race/",
+      "rows_citing": "1",
+      "host": "marylandmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://marylandmatters.org/2024/05/housing-affordability-act/",
+      "rows_citing": "1",
+      "host": "marylandmatters.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://marylandmatters.org/2025/12/16/general-assembly-climate-veto-overrides/",
+      "rows_citing": "1",
+      "host": "marylandmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://marylandmatters.org/2026/03/17/senate-gives-preliminary-approval-to-70-8-billion-spending-plan/",
+      "rows_citing": "1",
+      "host": "marylandmatters.org",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://marylandmatters.org/2026/04/03/senate-house-diverging-energy-bill-gas-lines/",
+      "rows_citing": "1",
+      "host": "marylandmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://marylandreporter.com/2026/02/13/redistricting-where-our-current-representatives-stand/",
+      "rows_citing": "1",
+      "host": "marylandreporter.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mesenategop.com/2022/05/06/where-have-all-the-surplus-dollars-gone/",
+      "rows_citing": "1",
+      "host": "mesenategop.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mesenategop.com/2024/07/29/when-it-comes-to-energy-policy-market-principles-should-be-considered/",
+      "rows_citing": "1",
+      "host": "mesenategop.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mesenategop.com/2024/11/03/we-do-not-have-to-live-like-this/",
+      "rows_citing": "1",
+      "host": "mesenategop.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mesenategop.com/2025/05/23/radical-proposals-threaten-maines-public-safety/",
+      "rows_citing": "1",
+      "host": "mesenategop.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mesenategop.com/2025/10/01/question-1-will-maintain-voting-accessibility-while-increasing-confidence-in-our-elections/",
+      "rows_citing": "1",
+      "host": "mesenategop.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mesenategop.com/2025/12/19/republican-vision-for-maine-environmental-stewardship-and-economic-opportunity-can-go-hand-in-hand/",
+      "rows_citing": "1",
+      "host": "mesenategop.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mesenategop.com/2026/02/13/republican-vision-for-maine-real-relief-for-maine-taxpayers/",
+      "rows_citing": "1",
+      "host": "mesenategop.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mesenategop.com/2026/03/10/sen-stewart-proposes-legislation-to-address-mainecare-integrity-and-sustainability-concerns/",
+      "rows_citing": "1",
+      "host": "mesenategop.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mesenategop.com/2026/05/01/republican-vision-for-maine-standing-up-for-fairness-in-girls-sports/",
+      "rows_citing": "1",
+      "host": "mesenategop.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mesenategop.com/2026/05/19/maine-cannot-tax-and-spend-its-way-to-affordability/",
+      "rows_citing": "1",
+      "host": "mesenategop.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mesenategop.com/2026/06/18/maines-business-climate-is-failing-and-we-know-why/",
+      "rows_citing": "1",
+      "host": "mesenategop.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://michiganadvance.com/2025/07/14/navy-veteran-announces-run-for-congress-as-a-republican-in-consequential-michigan-district/",
+      "rows_citing": "1",
+      "host": "michiganadvance.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missionlocal.org/2024/09/see-how-they-run-breed-lurie-trade-barbs-in-latino-focused-mission-mayoral-forum/",
+      "rows_citing": "1",
+      "host": "missionlocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missionlocal.org/2025/02/mayor-lurie-picks-anti-violence-activist-sfpd-commission-mattie-scott-max-carter-oberstone/",
+      "rows_citing": "1",
+      "host": "missionlocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missionlocal.org/2025/07/sf-bilal-mahmood-newcomer-leads-legislation/",
+      "rows_citing": "1",
+      "host": "missionlocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missionlocal.org/2026/03/meet-the-district-2-candidates-stephen-sherrill-lori-brooke-tree-streamlining/",
+      "rows_citing": "1",
+      "host": "missionlocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missionlocal.org/2026/03/sf-district-2-candidates-sherrill-brooke-housing-views-blocked/",
+      "rows_citing": "1",
+      "host": "missionlocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missionlocal.org/2026/04/sf-district-2-sherrill-brooke-canvassing/",
+      "rows_citing": "1",
+      "host": "missionlocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missionlocal.org/2026/04/sf-mayor-lurie-staffer-daca-delays/",
+      "rows_citing": "1",
+      "host": "missionlocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missionlocal.org/2026/05/sf-district-2-candidates-brooke-sherrill-bike-lanes/",
+      "rows_citing": "1",
+      "host": "missionlocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missionlocal.org/2026/05/sf-district-2-candidates-sherrill-brooke-police-surveillance/",
+      "rows_citing": "1",
+      "host": "missionlocal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missouriindependent.com/2021/11/15/cass-county-lawmaker-joins-crowded-gop-contest-in-missouris-4th-congressional-district/",
+      "rows_citing": "1",
+      "host": "missouriindependent.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missouriindependent.com/2022/01/10/lawmakers-eye-expansion-of-missouri-school-choice-program-but-can-it-get-the-votes/",
+      "rows_citing": "1",
+      "host": "missouriindependent.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missouriindependent.com/2025/02/14/missouri-republicans-continue-push-to-bar-state-funding-of-diversity-equity-and-inclusion/",
+      "rows_citing": "1",
+      "host": "missouriindependent.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missouriindependent.com/2025/03/05/abortion-ban-missouri-senate-mike-moon-rape-exceptions/",
+      "rows_citing": "1",
+      "host": "missouriindependent.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missouriindependent.com/2026/02/26/field-expands-in-missouris-gerrymandered-5th-district-as-brattin-joins-gop-primary/",
+      "rows_citing": "1",
+      "host": "missouriindependent.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missouriindependent.com/2026/04/16/republicans-squeeze-tax-overhaul-through-missouri-senate-in-late-night-vote/",
+      "rows_citing": "1",
+      "host": "missouriindependent.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://missourinet.com/2024/08/07/onder-wins-republican-nomination-for-missouris-u-s-house-3rd-district-seat/",
+      "rows_citing": "1",
+      "host": "missourinet.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mitchell.lacounty.gov/2025/04/01/",
+      "rows_citing": "1",
+      "host": "mitchell.lacounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://money.cnn.com/2014/05/14/retirement/rubio-social-security/index.html",
+      "rows_citing": "1",
+      "host": "money.cnn.com",
+      "status": 503,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://montanafreepress.org/2021/09/07/montana-budget-director-kurt-alme-resigns/",
+      "rows_citing": "1",
+      "host": "montanafreepress.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://montanafreepress.org/2026/05/04/montana-eastern-congressional-democrats-2026/",
+      "rows_citing": "1",
+      "host": "montanafreepress.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://msmagazine.com/2024/08/06/los-angeles-california-city-attorney-hydee-feldstein-soto-child-sex-trafficking-abuse/",
+      "rows_citing": "1",
+      "host": "msmagazine.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://murphymonitor.com/2022/04/05/candidate-says-wastewater-plant-is-biggest-issue/",
+      "rows_citing": "1",
+      "host": "murphymonitor.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://murphymonitor.com/2022/04/06/intentional-growth-is-essential-says-candidate/",
+      "rows_citing": "1",
+      "host": "murphymonitor.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://murphymonitor.com/2024/03/21/community-discusses-disputed-development/",
+      "rows_citing": "1",
+      "host": "murphymonitor.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://murphymonitor.com/2025/05/04/unofficial-final-totals-murphy-city-council/",
+      "rows_citing": "1",
+      "host": "murphymonitor.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://murphymonitor.com/2026/04/16/early-voting-starts-april-20/",
+      "rows_citing": "1",
+      "host": "murphymonitor.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mynewsla.com/crime/2026/04/10/lapd-union-rescinds-endorsement-of-la-city-attorneys-reelection-bid/",
+      "rows_citing": "1",
+      "host": "mynewsla.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mynewsla.com/government/2025/06/04/mayor-karen-bass-says-port-of-la-open-for-business/",
+      "rows_citing": "1",
+      "host": "mynewsla.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://mynewsla.com/riverside/2023/01/10/former-moval-mayor-takes-seat-on-board-of-supervisors/",
+      "rows_citing": "1",
+      "host": "mynewsla.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://myvalleynews.com/blog/2023/10/27/a-message-from-district-5-county-supervisor-yxstian-gutierrez-2/",
+      "rows_citing": "1",
+      "host": "myvalleynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://myvalleynews.com/blog/2024/06/07/supervisor-yxstian-gutierrez-brings-affordable-housing-to-the-fifth-district/",
+      "rows_citing": "1",
+      "host": "myvalleynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://myvalleynews.com/blog/2024/08/03/supervisor-yxstian-gutierrez-champions-more-affordable-housing/",
+      "rows_citing": "1",
+      "host": "myvalleynews.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://naomikritzer.com/2022/07/23/primary-elections-2022-us-house-05/",
+      "rows_citing": "1",
+      "host": "naomikritzer.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ncdoj.gov/2025/05/",
+      "rows_citing": "1",
+      "host": "ncdoj.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ncdoj.gov/2025/06/",
+      "rows_citing": "1",
+      "host": "ncdoj.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ncdoj.gov/2025/07/",
+      "rows_citing": "1",
+      "host": "ncdoj.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ncdoj.gov/2025/11/",
+      "rows_citing": "1",
+      "host": "ncdoj.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ncdoj.gov/2025/12/",
+      "rows_citing": "1",
+      "host": "ncdoj.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://ncdoj.gov/2026/05/",
+      "rows_citing": "1",
+      "host": "ncdoj.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nevadabusiness.com/2025/04/senior-supportive-housing-community-coming-to-north-las-vegas/",
+      "rows_citing": "1",
+      "host": "nevadabusiness.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nevadacurrent.com/2024/08/13/buttigieg-marks-groundbreaking-on-maryland-parkway-transit-project/",
+      "rows_citing": "1",
+      "host": "nevadacurrent.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nevadacurrent.com/2024/10/15/berkley-seaman-vie-to-be-mayor-of-las-vegas/",
+      "rows_citing": "1",
+      "host": "nevadacurrent.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nevadacurrent.com/2024/10/18/democratic-legislators-vying-for-open-city-of-las-vegas-council-seat/",
+      "rows_citing": "1",
+      "host": "nevadacurrent.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nevadacurrent.com/2024/11/20/clark-county-lands-bills-boosters-see-economic-growth-critics-see-unsustainable-urban-sprawl/",
+      "rows_citing": "1",
+      "host": "nevadacurrent.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nevadacurrent.com/2026/01/09/clark-county-land-trust-program-aims-to-provide-housing-families-can-afford/",
+      "rows_citing": "1",
+      "host": "nevadacurrent.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nevadacurrent.com/2026/05/21/north-las-vegas-mayor-race-features-city-councilman-and-state-legislator/",
+      "rows_citing": "1",
+      "host": "nevadacurrent.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nevadacurrent.com/2026/06/18/las-vegas-data-center-expansion-approved-as-officials-ponder-need-for-future-regulations/",
+      "rows_citing": "1",
+      "host": "nevadacurrent.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news-journal.com/2017/10/01/new-laws-targeting-homelessness-spur-questions-concerns/",
+      "rows_citing": "1",
+      "host": "news-journal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news-journal.com/2022/07/26/proposal-to-pay-consultant-to-update-longviews-comprehensive-plan-draws-opposition/",
+      "rows_citing": "1",
+      "host": "news-journal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news-journal.com/2025/10/23/dairy-industry-company-to-bring-200m-plus-investment-to-longview/",
+      "rows_citing": "1",
+      "host": "news-journal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news-journal.com/2025/11/14/city-of-longview-public-survey-to-serve-as-road-map-for-growth-of-housing/",
+      "rows_citing": "1",
+      "host": "news-journal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news-journal.com/2025/12/15/longview-task-force-calls-for-better-data-sharing-among-nonprofits-that-serve-homeless-residents/",
+      "rows_citing": "1",
+      "host": "news-journal.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news.azpm.org/p/azpmnews/2026/2/27/228667-contract-for-possible-marana-ice-facility-draws-differing-stances-from-town-county-leaders/",
+      "rows_citing": "1",
+      "host": "news.azpm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news.azpm.org/p/azpmnews/2026/5/11/229686-oro-valley-allows-stores-townhouses-on-parts-of-undeveloped-desert-parcel/",
+      "rows_citing": "1",
+      "host": "news.azpm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news.azpm.org/p/azpmnews/2026/6/10/230104-tucson-to-invest-in-transit-ambassadors-police-as-potential-bus-drivers-strike-looms/",
+      "rows_citing": "1",
+      "host": "news.azpm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news.azpm.org/p/businessnews/2025/7/2/225390-supervisors-move-to-draft-new-economic-development-policies-following-project-blue-approval/",
+      "rows_citing": "1",
+      "host": "news.azpm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news.azpm.org/p/news-articles/2026/1/8/227908-marana-town-council-approves-rezoning-for-luckett-road-project-600-acre-hyperscale-data-center/",
+      "rows_citing": "1",
+      "host": "news.azpm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news.azpm.org/p/news-articles/2026/2/3/228293-pima-county-supervisors-pass-resolution-opposing-marana-detention-center/",
+      "rows_citing": "1",
+      "host": "news.azpm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news.azpm.org/p/news-topical-politics/2026/1/8/227908-marana-town-council-approves-rezoning-for-luckett-road-project-600-acre-hyperscale-data-center/",
+      "rows_citing": "1",
+      "host": "news.azpm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news.azpm.org/p/newsheadlines/2025/8/6/225888-bye-bye-project-blue/",
+      "rows_citing": "1",
+      "host": "news.azpm.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news.delaware.gov/2026/01/20/attorney-general-jennings-sues-hhs-for-discriminating-against-transgender-delawareans/",
+      "rows_citing": "1",
+      "host": "news.delaware.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://news.delaware.gov/2026/01/23/ag-jennings-colleagues-demand-action-from-xai-over-groks-creation-of-nonconsensual-sexual-content/",
+      "rows_citing": "1",
+      "host": "news.delaware.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nmpoliticalreport.com/2021/09/14/leger-fernandez-introduces-bill-to-help-communities-economic-transitions-away-from-fossil-fuels/",
+      "rows_citing": "1",
+      "host": "nmpoliticalreport.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nmpoliticalreport.com/2021/09/24/bill-to-protect-womens-right-to-abortion-passes-u-s-house-of-representatives/",
+      "rows_citing": "1",
+      "host": "nmpoliticalreport.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nmpoliticalreport.com/2022/07/20/u-s-house-passes-equality-bill-but-future-uncertain/",
+      "rows_citing": "1",
+      "host": "nmpoliticalreport.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nmpoliticalreport.com/2022/12/09/respect-for-marriage-act-what-it-means-for-new-mexicans/",
+      "rows_citing": "1",
+      "host": "nmpoliticalreport.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nmpoliticalreport.com/2023/02/19/bill-preventing-cities-counties-from-banning-fuel-sources-passes-committee/",
+      "rows_citing": "1",
+      "host": "nmpoliticalreport.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nmpoliticalreport.com/2024/07/09/leger-fernandez-votes-against-voter-id-bill/",
+      "rows_citing": "1",
+      "host": "nmpoliticalreport.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nmpoliticalreport.com/2024/10/07/huse-minority-leader-visit-talks-housing-affordablity/",
+      "rows_citing": "1",
+      "host": "nmpoliticalreport.com",
+      "status": 403,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://nmpoliticalreport.com/2024/10/27/new-mexico-congressional-delegation-signs-legal-brief-urging-court-to-recognize-federal-law-on-abortion-care/",
+      "rows_citing": "1",
+      "host": "nmpoliticalreport.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://oaklandcountyblog.com/2025/04/10/demolition-of-pontiac-phoenix-center-marks-citys-past-and-future/",
+      "rows_citing": "1",
+      "host": "oaklandcountyblog.com",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}

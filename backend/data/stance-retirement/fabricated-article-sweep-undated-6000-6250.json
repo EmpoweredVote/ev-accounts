@@ -1,0 +1,1772 @@
+{
+  "generated_by": "scripts/sweep-fabricated-articles.mjs",
+  "args": "--skip-dated --from 6000 --to 6250 --pace 1200",
+  "slice": "undated",
+  "verdict_meanings": {
+    "FABRICATED": "path 404s, never archived, and >=5 sibling pages in the same section/month ARE archived",
+    "EXISTS": "the archive holds a capture of this exact path",
+    "LIVE": "the path answers with something other than 404/410",
+    "WEAK_CONTROL": "path 404s and is unarchived, but the control has <5 siblings — suggestive, NOT proven",
+    "INCONCLUSIVE": "no sibling coverage at all for that control, so absence proves nothing",
+    "NO_ANSWER": "nothing answered, curl included — invented-host territory, not this defect"
+  },
+  "tally": {
+    "LIVE": 247,
+    "NO_ANSWER": 1,
+    "EXISTS": 2
+  },
+  "findings": [
+    {
+      "url": "https://beyer.house.gov/news/documentsingle.aspx?DocumentID=9009",
+      "rows_citing": "1",
+      "host": "beyer.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://blackfacts.com/news/article/marc-lamont-hill-and-dr-willie-montague-on-florida-voting-law",
+      "rows_citing": "1",
+      "host": "blackfacts.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://blakemoore.house.gov/issue/border-security-and-immigration",
+      "rows_citing": "1",
+      "host": "blakemoore.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://blakemoore.house.gov/media/press-releases",
+      "rows_citing": "1",
+      "host": "blakemoore.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://blakemoore.house.gov/media/press-releases/congressman-blake-moore-joins-bipartisan-bill-to-protect-disabled-veterans-access-to-affordable-housing",
+      "rows_citing": "1",
+      "host": "blakemoore.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://blakemoore.house.gov/media/press-releases/congressman-blake-moore-secures-major-wins-in-the-tax-portion-of-the-house-republican-reconciliation-bill",
+      "rows_citing": "1",
+      "host": "blakemoore.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://blakemoore.house.gov/media/press-releases/congressmen-moore-stewart-statement-corporate-responses-georgia-voting-law",
+      "rows_citing": "1",
+      "host": "blakemoore.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/boards/human-rights",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/business/districts/tif",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/business/incentives",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/council/district-5",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/council/legislation/Resolution/2025/2025-13",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/departments/esd",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/housing/affordable",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bloomington.in.gov/public-safety/safe-civil",
+      "rows_citing": "1",
+      "host": "bloomington.in.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bluevaluesburbank.org/city-council-candidates/tamala-takahashi/",
+      "rows_citing": "1",
+      "host": "bluevaluesburbank.org",
+      "status": 0,
+      "verdict": "NO_ANSWER"
+    },
+    {
+      "url": "https://bluntrochester.senate.gov/news/press-releases/",
+      "rows_citing": "1",
+      "host": "bluntrochester.senate.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://board.danecounty.gov/supervisors/detail/16",
+      "rows_citing": "1",
+      "host": "board.danecounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://board.danecounty.gov/supervisors/detail/19",
+      "rows_citing": "1",
+      "host": "board.danecounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://board.danecounty.gov/supervisors/detail/20",
+      "rows_citing": "1",
+      "host": "board.danecounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://board.danecounty.gov/supervisors/detail/21",
+      "rows_citing": "1",
+      "host": "board.danecounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://board.danecounty.gov/supervisors/detail/24",
+      "rows_citing": "1",
+      "host": "board.danecounty.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bonamici.house.gov/issues/education",
+      "rows_citing": "1",
+      "host": "bonamici.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bonamici.house.gov/issues/health-care",
+      "rows_citing": "1",
+      "host": "bonamici.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bonamici.house.gov/media/press-releases/bonamici-wyden-merkley-announce-funding-beaverton-road-safety-improvements",
+      "rows_citing": "1",
+      "host": "bonamici.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bouldercityreview.com/news/a-look-at-candidates-for-boulder-city-council-sherri-jorgensen-85105/",
+      "rows_citing": "1",
+      "host": "bouldercityreview.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bouldercityreview.com/news/candidate-profile-steve-walton-69722/",
+      "rows_citing": "1",
+      "host": "bouldercityreview.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bouldercityreview.com/news/city-adopts-fiscal-year-26-budget-100218/",
+      "rows_citing": "1",
+      "host": "bouldercityreview.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bouldercityreview.com/news/land-sale-in-limbo-70455/",
+      "rows_citing": "1",
+      "host": "bouldercityreview.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bouldercityreview.com/news/looking-back-at-24-some-more-90429/",
+      "rows_citing": "1",
+      "host": "bouldercityreview.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bouldercityreview.com/news/tract-350-sale-approved-85123/",
+      "rows_citing": "1",
+      "host": "bouldercityreview.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bouldercityreview.com/opinion/eldorado-valley-the-gift-that-keeps-on-giving-102319/",
+      "rows_citing": "1",
+      "host": "bouldercityreview.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bridgemi.com/michigan-government/haley-stevens",
+      "rows_citing": "1",
+      "host": "bridgemi.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsky.app/profile/beck5thcd.bsky.social/post/3md7aaz5il225",
+      "rows_citing": "1",
+      "host": "bsky.app",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsky.app/profile/beck5thcd.bsky.social/post/3mf3qpvs2ds2n",
+      "rows_citing": "1",
+      "host": "bsky.app",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsky.app/profile/beck5thcd.bsky.social/post/3ml4gkzrbys24",
+      "rows_citing": "1",
+      "host": "bsky.app",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsky.app/profile/beck5thcd.bsky.social/post/3mp4lrg24j72y",
+      "rows_citing": "1",
+      "host": "bsky.app",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsky.app/profile/beck5thcd.bsky.social/post/3mpm4u3zlap2v",
+      "rows_citing": "1",
+      "host": "bsky.app",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bsky.app/profile/did:plc:c5pqkpaegy5hh6x2jz7sht6h",
+      "rows_citing": "1",
+      "host": "bsky.app",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bubbafish.org/news/fg8gw9h4hlw9tk6teb95w4haw8otg5-afbzt-ya2zt",
+      "rows_citing": "1",
+      "host": "bubbafish.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bucyfortexas.com/priorities/education/",
+      "rows_citing": "1",
+      "host": "bucyfortexas.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://bucyfortexas.com/priorities/voting/",
+      "rows_citing": "1",
+      "host": "bucyfortexas.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://buildamericacaucus-harder.house.gov/media/press-releases/leadership-news-build-america-caucus-announces-rep-celeste-maloy-as-bipartisan-co-chair",
+      "rows_citing": "1",
+      "host": "buildamericacaucus-harder.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://californiacouncil.org/news/ccah-endorses-eleni-kounalakis-for-california-state-treasurer",
+      "rows_citing": "1",
+      "host": "californiacouncil.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://californiahealthline.org/news/article/california-ag-rob-bonta-interview-progressive-health-care-agenda-racial-justice-air-quality/",
+      "rows_citing": "1",
+      "host": "californiahealthline.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://californiapolicycenter.org/bills/sb-64-school-choice-flex-account-act-of-2025/",
+      "rows_citing": "1",
+      "host": "californiapolicycenter.org",
+      "status": 404,
+      "verdict": "EXISTS",
+      "captures": 3
+    },
+    {
+      "url": "https://calmatters.org/california-voter-guide-2022/lieutenant-governor/eleni-kounalakis/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/california-voter-guide-2022/treasurer/fiona-ma/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://calmatters.org/economy/technology/",
+      "rows_citing": "1",
+      "host": "calmatters.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgema.gov/Departments/citycouncil/members/burhanazeem",
+      "rows_citing": "1",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgema.gov/Departments/citycouncil/members/sumbulsiddiqui",
+      "rows_citing": "1",
+      "host": "cambridgema.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgema.iqm2.com/Citizens/Detail_Meeting.aspx?ID=4481",
+      "rows_citing": "1",
+      "host": "cambridgema.iqm2.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgema.iqm2.com/Citizens/Detail_Meeting.aspx?ID=4577",
+      "rows_citing": "1",
+      "host": "cambridgema.iqm2.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgema.iqm2.com/Citizens/Detail_Meeting.aspx?ID=4630",
+      "rows_citing": "1",
+      "host": "cambridgema.iqm2.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgema.iqm2.com/Citizens/Detail_Meeting.aspx?ID=4632",
+      "rows_citing": "1",
+      "host": "cambridgema.iqm2.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgema.iqm2.com/Citizens/Detail_Meeting.aspx?ID=4645",
+      "rows_citing": "1",
+      "host": "cambridgema.iqm2.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgema.iqm2.com/Citizens/Detail_Meeting.aspx?ID=4647",
+      "rows_citing": "1",
+      "host": "cambridgema.iqm2.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgema.iqm2.com/Citizens/Detail_Meeting.aspx?ID=4649",
+      "rows_citing": "1",
+      "host": "cambridgema.iqm2.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgema.iqm2.com/Citizens/Detail_Meeting.aspx?ID=4652",
+      "rows_citing": "1",
+      "host": "cambridgema.iqm2.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cambridgema.iqm2.com/Citizens/Detail_Meeting.aspx?ID=4653",
+      "rows_citing": "1",
+      "host": "cambridgema.iqm2.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://campaignlegal.org/update/campaign-legal-center-continues-fight-fair-maps-utah",
+      "rows_citing": "1",
+      "host": "campaignlegal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://campaignlegal.org/update/how-hr-1-will-help-us-achieve-government-people",
+      "rows_citing": "1",
+      "host": "campaignlegal.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Actions.aspx?LegSess=89R&Bill=SB20",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=88R&Bill=HB2127",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=88R&Bill=HB25",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=88R&Bill=HB6",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB1009",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB1263",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB1427",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB149",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB1515",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB1573",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB1645",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB18",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB1879",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB196",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB1982",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB3175",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB36",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB3617",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB3909",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB4",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB45",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB46",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB47",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB4862",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5510",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=SB10",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=SB11",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=SB2",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/BillSummary.aspx?LegSess=89R&Bill=SB12",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/BillSummary.aspx?LegSess=89R&Bill=SB4",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/history.aspx?LegSess=873&Bill=HB25",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/history.aspx?LegSess=87R&Bill=HB1280",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB1515",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/history.aspx?LegSess=87R&Bill=HB1925",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/history.aspx?LegSess=87R&Bill=SB1",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB12",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB31",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB394",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/history.aspx?LegSess=87R&Bill=SB8",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2127",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB4",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB11",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB12",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB16",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/history.aspx?LegSess=88R&Bill=SB17",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB5",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB13",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB145",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB149",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1613",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1681",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB18",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB196",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/history.aspx?LegSess=89R&Bill=HB2",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB20",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/history.aspx?LegSess=89R&Bill=HB200",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB21",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB22",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB24",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB25",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB250",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2525",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2657",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB300",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB31",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3177",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3491",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB41",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB43",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB4503",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB49",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5200",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1058",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB119",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/history.aspx?LegSess=89R&Bill=SB12",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB19",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2018",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB210",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2217",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB25",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB271",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB30",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB32",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB344",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB346",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB347",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB37",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB42",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB48",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB52",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB62",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A2625",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A3155",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A4265",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A4465",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A4595",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=S&Code=A1115",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/85R/analysis/html/SB00004I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/87R/billtext/html/HB01925F.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/88R/billtext/html/HB00900I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00008I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00046I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00149I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00455I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB01009I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB01072I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB01645I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB01651I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB01655I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB01879I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB01979I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB02770I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB03210I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB03361I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB04030I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB04115I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB04120I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB04183I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB04726I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB04778I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB04886I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB05491I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB05497I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00011I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00509I.htm",
+      "rows_citing": "1",
+      "host": "capitol.texas.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://captimes.com/news/government/madison-spring-election-q-a-with-district-1-city-council-candidate/article_dd657e80-ff4f-11ef-b9a8-ef302da30da5.html",
+      "rows_citing": "1",
+      "host": "captimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://captimes.com/news/government/madison-spring-election-q-a-with-district-3-city-council-candidate/article_d8e6bcde-ff4f-11ef-b2ab-6738e48f45cf.html",
+      "rows_citing": "1",
+      "host": "captimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://captimes.com/news/government/madison-spring-election-q-a-with-district-9-city-council-candidates/article_c5504442-ff4f-11ef-9d49-efbd29ee7b4e.html",
+      "rows_citing": "1",
+      "host": "captimes.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://carrollspaper.com/news/democrat-dave-dawson-emphasizes-rural-iowa-in-run-for-4th-congressional-district/article_4a37b2e5-9acb-49ef-9108-9f6313b640e7.html",
+      "rows_citing": "1",
+      "host": "carrollspaper.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://carson.house.gov/issues/education",
+      "rows_citing": "1",
+      "host": "carson.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://carson.house.gov/issues/financial-services",
+      "rows_citing": "1",
+      "host": "carson.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://carson.house.gov/issues/foreign-affairs",
+      "rows_citing": "1",
+      "host": "carson.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://carson.house.gov/issues/housing",
+      "rows_citing": "1",
+      "host": "carson.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://carson.house.gov/issues/immigration",
+      "rows_citing": "1",
+      "host": "carson.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://carson.house.gov/issues/retirement",
+      "rows_citing": "1",
+      "host": "carson.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://carson.house.gov/issues/womens-issues",
+      "rows_citing": "1",
+      "host": "carson.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://casar.house.gov/issues/civil-rights",
+      "rows_citing": "1",
+      "host": "casar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://casar.house.gov/issues/climate",
+      "rows_citing": "1",
+      "host": "casar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://casar.house.gov/issues/housing",
+      "rows_citing": "1",
+      "host": "casar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://casar.house.gov/issues/reproductive-rights",
+      "rows_citing": "1",
+      "host": "casar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://casar.house.gov/issues/social-security-seniors",
+      "rows_citing": "1",
+      "host": "casar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://casar.house.gov/issues/voting-rights",
+      "rows_citing": "1",
+      "host": "casar.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://castro.house.gov/issues/energy-and-environment",
+      "rows_citing": "1",
+      "host": "castro.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cbs58.com/news/microsoft-1-step-closer-to-calling-racine-county-home",
+      "rows_citing": "1",
+      "host": "cbs58.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cbsnews.com/news/california-can-proceed-with-redrawn-congressional-maps/",
+      "rows_citing": "1",
+      "host": "cbsnews.com",
+      "status": 406,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cd11.lacity.gov/about/traci-park",
+      "rows_citing": "1",
+      "host": "cd11.lacity.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cd4.lacity.gov/press-releases/council-adopts-right-to-counsel-ordinance/",
+      "rows_citing": "1",
+      "host": "cd4.lacity.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cdn.southbaycities.org/sites/default/files/Boyles%20Bio.pdf",
+      "rows_citing": "1",
+      "host": "cdn.southbaycities.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://celina-tx.gov/DocumentCenter/View/12732/4---Additional-Information-for-Tax-Code-Section-26",
+      "rows_citing": "1",
+      "host": "celina-tx.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://celinaedc.com/about/in-the-news/inside-americas-fastest-growing-city",
+      "rows_citing": "1",
+      "host": "celinaedc.com",
+      "status": 404,
+      "verdict": "EXISTS",
+      "captures": 15
+    },
+    {
+      "url": "https://ceqanet.lci.ca.gov/2024071167/2",
+      "rows_citing": "1",
+      "host": "ceqanet.lci.ca.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://chandler67.substack.com/p/russia-answered-back-to-the-zionists",
+      "rows_citing": "1",
+      "host": "chandler67.substack.com",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://chci.org/staff-and-leadership/rep-norma-j-torres/",
+      "rows_citing": "1",
+      "host": "chci.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://choicetracker.org/va/people/anne-ferrell-tata/63897600",
+      "rows_citing": "1",
+      "host": "choicetracker.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://choicetracker.org/va/people/otto-wachsmann/63504384",
+      "rows_citing": "1",
+      "host": "choicetracker.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://chu.house.gov/issues/housing",
+      "rows_citing": "1",
+      "host": "chu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://chu.house.gov/media-center/press-releases/10th-anniversary-windsor-decision-reps-chu-and-balint-introduce-pride",
+      "rows_citing": "1",
+      "host": "chu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://chu.house.gov/media-center/press-releases/12th-anniversary-windsor-decision-reps-chu-and-balint-introduce-pride",
+      "rows_citing": "1",
+      "host": "chu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://chu.house.gov/media-center/press-releases/rep-chu-applauds-supreme-court-decision-striking-down-trumps-tariffs",
+      "rows_citing": "1",
+      "host": "chu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://chu.house.gov/media-center/press-releases/rep-chu-statement-gop-tax-scam-20",
+      "rows_citing": "1",
+      "host": "chu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://chu.house.gov/media-center/press-releases/rep-chu-statement-introduction-equality-act",
+      "rows_citing": "1",
+      "host": "chu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://chu.house.gov/media-center/press-releases/rep-chu-statement-launch-medicare-all-congressional-caucus",
+      "rows_citing": "1",
+      "host": "chu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://chu.house.gov/media-center/press-releases/rep-chu-statement-passage-build-back-better-act",
+      "rows_citing": "1",
+      "host": "chu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://chu.house.gov/media-center/press-releases/rep-chu-votes-against-default-america-act",
+      "rows_citing": "1",
+      "host": "chu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://chu.house.gov/media-center/press-releases/rep-chu-votes-ukraine-indo-pacific-aid-against-israel-aid",
+      "rows_citing": "1",
+      "host": "chu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://chu.house.gov/media-center/press-releases/reps-chu-frankel-pressley-and-escobar-reintroduce-womens-health",
+      "rows_citing": "1",
+      "host": "chu.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cisneros.house.gov/issues/economy",
+      "rows_citing": "1",
+      "host": "cisneros.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cisneros.house.gov/issues/health",
+      "rows_citing": "1",
+      "host": "cisneros.house.gov",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://citizenportal.ai/articles/3290999/Prosper/Collin-County/Texas/Prosper-Town-Council-welcomes-new-members-Marcus-Ray-and-Chris-Kern",
+      "rows_citing": "1",
+      "host": "citizenportal.ai",
+      "status": 202,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://citizenportal.ai/articles/6619453/Utah-State-Treasurer-Marlo-Oaks-says-free-speech-under-attack-at-Utah-County-GOP-Lincoln-Day-dinner",
+      "rows_citing": "1",
+      "host": "citizenportal.ai",
+      "status": 202,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://citizenportal.ai/articles/6646388/Washington-County/Oregon/Washington-County-reviews-MSTIP-investments-and-launches-funding-strategy-work-amid-budget-pressure",
+      "rows_citing": "1",
+      "host": "citizenportal.ai",
+      "status": 202,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://citizenportal.ai/articles/6668358/oregon/washington-county/beaverton/Beaverton/Washington-County/Oregon/Votes-at-a-glance-Beaverton-council-approves-annexation-map-amendments-and-zoning-change-consent-agenda-passes-unanimously",
+      "rows_citing": "1",
+      "host": "citizenportal.ai",
+      "status": 202,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://citizenportal.ai/articles/7198530/Bend/Deschutes-County/Oregon/Bend-councilor-says-city-is-weighing-a-climate-fee-on-natural-gas-for-new-development-transportation-safety-plan-set-for-Jan-28",
+      "rows_citing": "1",
+      "host": "citizenportal.ai",
+      "status": 202,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://citizenportal.ai/articles/7591548/Oregon/Deschutes-County/Bend/Councilor-Mendez-outlines-council-movement-on-climate-fee-and-onetime-Juniper-Ridge-allocations",
+      "rows_citing": "1",
+      "host": "citizenportal.ai",
+      "status": 202,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://citizenportal.ai/articles/8233964/oregon/deschutes-county/bend/oregon/deschutes-county/bend/council-adopts-bends-climate-pollution-fee-visit-bend-budget-approved",
+      "rows_citing": "1",
+      "host": "citizenportal.ai",
+      "status": 202,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=15-1022",
+      "rows_citing": "1",
+      "host": "cityclerk.lacity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=19-0722",
+      "rows_citing": "1",
+      "host": "cityclerk.lacity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1365",
+      "rows_citing": "1",
+      "host": "cityclerk.lacity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=21-0002-S118",
+      "rows_citing": "1",
+      "host": "cityclerk.lacity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=21-0002-S16",
+      "rows_citing": "1",
+      "host": "cityclerk.lacity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=21-0002-S168",
+      "rows_citing": "1",
+      "host": "cityclerk.lacity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=21-0002-S18",
+      "rows_citing": "1",
+      "host": "cityclerk.lacity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=21-0002-S191",
+      "rows_citing": "1",
+      "host": "cityclerk.lacity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=21-0002-S31",
+      "rows_citing": "1",
+      "host": "cityclerk.lacity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=21-0002-S47",
+      "rows_citing": "1",
+      "host": "cityclerk.lacity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=21-0002-S48",
+      "rows_citing": "1",
+      "host": "cityclerk.lacity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    },
+    {
+      "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=21-0002-S51",
+      "rows_citing": "1",
+      "host": "cityclerk.lacity.org",
+      "status": 200,
+      "verdict": "LIVE"
+    }
+  ]
+}
