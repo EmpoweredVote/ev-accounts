@@ -83,8 +83,16 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)';
  *
  * THE BREAKER. After ZERO_STREAK consecutive zero-status results from the same host, that host is
  * presumed unreachable for the rest of the run: it gets a short PROBE_TIMEOUT fetch and NO curl fallback,
- * costing seconds instead of a minute. It is a demotion, not a skip — every URL is still probed, and one
- * answer resets the streak and restores full treatment, so a host that recovers mid-run is picked up.
+ * costing seconds instead of a minute. It is a demotion, not a skip — every URL is still probed, and a
+ * host that genuinely recovers mid-run is picked back up.
+ *
+ * 🔴 UN-BREAKING NEEDS HYSTERESIS, AND THE FIRST VERSION DID NOT HAVE IT. Clearing the streak on a
+ * single answer looked obviously right and cost 20 minutes on the first chunk of the resumed run. The
+ * blocking host was not dead, it was THROTTLING: 19 of its 250 URLs answered. Each lucky answer reset
+ * the streak, so the next three failures paid the full 35s again — the breaker re-armed 19 times and the
+ * chunk took 24 minutes instead of ~4. A rate-limited host is the common case here and it is precisely
+ * the one a consecutive-zeros counter reads wrong. Un-breaking therefore takes UNBREAK_STREAK
+ * consecutive answers, and an isolated answer only decrements the streak.
  *
  * ⚠ THE RESULT IS WEAKER EVIDENCE AND IS MARKED AS SUCH. A NO_ANSWER reached under the breaker is
  * recorded with `degraded: true`, because "we gave this host 5 seconds and no fallback" is not the same
@@ -95,8 +103,14 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)';
  */
 const FETCH_TIMEOUT = Number(arg('fetch-timeout', '20000'));
 const CURL_TIMEOUT  = Number(arg('curl-timeout', '15'));      // seconds, curl --max-time
-const PROBE_TIMEOUT = Number(arg('probe-timeout', '5000'));   // circuit-broken hosts
-const ZERO_STREAK   = Number(arg('zero-streak', '3'));
+// ⚠ Tuned down from 5000 after measurement, and the measurement is the point: a blocked host does not
+// fail the same way twice. In one run leginfo refused connections instantly (~0.6s/URL) and in the next
+// it black-holed them, so every degraded probe burned the full timeout and this value alone set the
+// throughput. A host that has already failed ZERO_STREAK times at full price is not going to deliver a
+// slow success worth waiting seconds for, and anything it does answer is still recorded.
+const PROBE_TIMEOUT = Number(arg('probe-timeout', '3000'));   // circuit-broken hosts
+const ZERO_STREAK   = Number(arg('zero-streak', '3'));        // consecutive zeros that break a host
+const UNBREAK_STREAK = Number(arg('unbreak-streak', '3'));    // consecutive answers that restore it
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -164,14 +178,25 @@ function controlPrefix(u) {
  * A fetch failure can only ever land in NO_ANSWER, so the artifact was never able to invent a finding —
  * it could only hide one.
  */
-async function fetchStatus(url, zeroStreaks = new Map()) {
+async function fetchStatus(url, hostState = new Map()) {
   const host = hostOf(url);
-  // Demoted only while the streak holds; any answer below resets it and full treatment returns.
-  const degraded = (zeroStreaks.get(host) ?? 0) >= ZERO_STREAK;
+  const st = hostState.get(host) ?? { zeros: 0, answers: 0 };
+  const degraded = st.zeros >= ZERO_STREAK;
 
   const record = (status) => {
-    if (status === 0) zeroStreaks.set(host, (zeroStreaks.get(host) ?? 0) + 1);
-    else zeroStreaks.delete(host);
+    if (status === 0) {
+      st.zeros += 1;
+      st.answers = 0;          // a zero breaks any run of answers building toward un-breaking
+    } else if (degraded) {
+      st.answers += 1;
+      // Hysteresis: only a sustained run of answers restores full-price probing. A throttling host
+      // sprinkles occasional 200s through a block of timeouts, and treating one of those as recovery
+      // re-arms the breaker over and over — the 24-minute chunk described above.
+      if (st.answers >= UNBREAK_STREAK) { st.zeros = 0; st.answers = 0; }
+    } else {
+      st.zeros = 0;
+    }
+    hostState.set(host, st);
     return { status, degraded };
   };
 
@@ -238,11 +263,11 @@ const VERDICTS = {
 };
 
 /** The three-step test for one URL, shared by --url mode and the DB sweep. */
-async function classify(url, controlCache = new Map(), zeroStreaks = new Map()) {
+async function classify(url, controlCache = new Map(), hostState = new Map()) {
   const host = hostOf(url);
   const key = controlPrefix(url);
 
-  const { status, degraded } = await fetchStatus(url, zeroStreaks);
+  const { status, degraded } = await fetchStatus(url, hostState);
   if (status !== 404 && status !== 410) {
     // `degraded` rides along only on NO_ANSWER: it says how hard we tried before giving up, which is
     // exactly the distinction the re-probe queue needs and the one an un-evaluated bucket loses.
@@ -334,16 +359,16 @@ async function classify(url, controlCache = new Map(), zeroStreaks = new Map()) 
   // Control results are cached per prefix so one archive query serves every URL in the same
   // section/month — the single biggest saving against archive.org's rate limit.
   const controlCache = new Map();
-  // Consecutive-zero streak per host, driving the circuit breaker. Deliberately NOT reset per chunk:
-  // it is rebuilt within each chunk, which costs one full-price probe per host per chunk — cheap, and it
-  // means a host that was blocked during chunk 30 is re-tested for real at the top of chunk 31.
-  const zeroStreaks = new Map();
+  // Per-host breaker state. Scoped to the chunk on purpose: rebuilding it costs ZERO_STREAK full-price
+  // probes per host per chunk — cheap — and it means a host that was blocked during chunk 30 is re-tested
+  // for real at the top of chunk 31 rather than inheriting a stale verdict from an earlier run.
+  const hostState = new Map();
 
   for (const [i, c] of slice.entries()) {
     const label = `[${FROM + i + 1}/${cites.length}]`;
     // classify() is shared with --url mode ON PURPOSE. The loop used to inline its own copy of the same
     // three steps, which is how the two paths would silently drift apart the next time one is changed.
-    const r = await classify(c.url, controlCache, zeroStreaks);
+    const r = await classify(c.url, controlCache, hostState);
     findings.push({ ...c, ...r });
 
     const note = r.verdict === 'FABRICATED'   ? `404 + 0 captures, ${r.control_siblings} siblings in ${r.control}`
@@ -369,7 +394,8 @@ async function classify(url, controlCache = new Map(), zeroStreaks = new Map()) 
   // tried, so two artifacts run under different caps are not comparable and the file has to say which.
   const stampless = { generated_by: 'scripts/sweep-fabricated-articles.mjs', args: argv.join(' '), slice: tag,
                       timing: { fetch_timeout_ms: FETCH_TIMEOUT, curl_timeout_s: CURL_TIMEOUT,
-                                probe_timeout_ms: PROBE_TIMEOUT, zero_streak: ZERO_STREAK, pace_ms: PACE } };
+                                probe_timeout_ms: PROBE_TIMEOUT, zero_streak: ZERO_STREAK,
+                                unbreak_streak: UNBREAK_STREAK, pace_ms: PACE } };
   const out = path.join(OUTDIR, `fabricated-article-sweep-${tag}-${FROM}-${FROM + slice.length}.json`);
   mkdirSync(OUTDIR, { recursive: true });
   writeFileSync(out, `${JSON.stringify({ ...stampless, verdict_meanings: VERDICTS, tally, findings }, null, 2)}\n`);
