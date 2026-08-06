@@ -322,6 +322,78 @@ Computed by `fabricated-impact-report.mjs`, over all 389 rows:
 | **NAV_ONLY** — only nav/landing pages survive → retire per the 2026-08-04 ruling | **42** |
 | **HAS_COSOURCE** — a real citation survives → **strip the citation, keep the row** | **206** |
 
+### ✅ SUPERSEDED — NAV_ONLY re-run BY READING every surviving page (2026-08-06)
+
+The structural split below was a floor, and it was off by nearly 4×. **All 105 surviving citations were
+fetched and read.** Scope corrected first: the 4 mechanical re-points and 1 withdrawn finding are
+excluded, because those rows keep a working citation after repair and were never retirement candidates
+— **115 URLs actually removed, 383 rows affected** (not 120/389).
+
+| survivor URLs (105) | | rows (383) | structural | **by reading** |
+|---|---|---|---|---|
+| GONE (404 / dead / soft-404) | 36 | SOLE_SOURCED | 141 | **141** |
+| COVERAGE | 33 | NAV_ONLY | 42 | **157** |
+| NOT_COVERAGE | 25 | KEPT_UNVERIFIED | — | **8** |
+| UNVERIFIED (bot-walled) | 11 | HAS_COSOURCE | 206 | **77** |
+| | | **total retire** | **183** | **298** |
+
+🔴 **Retirements rise 183 → 298 (+63%).** The structural rule kept 206 rows on "co-sources" that mostly
+are not coverage at all.
+
+**Why the survivors fail — and note the first one is not a nav question at all:**
+- 🔴 **36 of 105 survivors are simply GONE.** The three biggest — `carsonca.gov/…/city-council-agendas-and-minutes`
+  (24 rows), `alhambraca.gov/…/agendas-minutes` (19), `lynnma.gov/city-council/minutes` (19) — are **404**,
+  not merely nav pages. 62 rows rest on pages that no longer exist.
+- **~25 `somervillejournal.com` URLs** are the dead-domain paper. ⚠ Genuine journalism, **re-pointable to
+  Wayback** — they are a repair queue, not fabrications, and must not be lumped in with invented sources.
+- 🔴 **Search-result URLs cited as sources**: `commonwealthbeacon.org/?s=mariano+immigration`,
+  `willbrownsberger.com/?s=redistricting`. A query string is not a source — its content is whatever the
+  index returns today. New defect shape, worth its own detector.
+- 🔴 **Substantive pages that never name the politician** — the attribute-prior class. Every
+  `actonmass.org/<bill>/` topic page carries real prose about the bill and **names none** of the
+  legislators citing it (hand-verified; a promising "Chan" hit turned out to be the word *channel*).
+  Same for bare `malegislature.gov/Bills/<id>` pages — S2977's sponsor is a **committee**. By contrast
+  `/Bills/<id>/Cosponsor` and `/Legislators/Profile/<id>` DO name them and DO count.
+- **Homepages** (`oag.ca.gov`, campaign roots) — banner copy, no attributable position.
+
+⚠ **8 rows are KEPT on UNVERIFIED survivors** — bot-walled `congress.gov` and `ontheissues.org` (403/503).
+A server answered, so absence is not shown. **We retire on demonstrated absence, never on a failure to
+confirm.**
+
+### Chip check under the corrected split — FOUR governments go to zero
+| government | retire / total answers | |
+|---|---|---|
+| **City of Carson** | 34 / 34 | 🔴 ZERO |
+| **City of Lynn MA** | 30 / 30 | 🔴 ZERO |
+| **City of Alhambra** | 19 / 19 | 🔴 **ZERO — invisible to the structural pass** |
+| **City of Waltham MA** | 5 / 5 | 🔴 ZERO |
+| Commonwealth of Massachusetts | 161 / 2,675 | low |
+| City of Somerville MA | 30 / 85 | partial |
+| Somerville Public Schools | 3 / 26 · Medford 3 / 10 · CA 1 / 2,186 · MD 1 / 2,248 | low |
+
+**Alhambra only appears once the survivors are read**: all 19 of its rows hang on a single 404 agendas
+index. ~20 politicians drop to zero, concentrated in Lynn (11) and Waltham (5).
+
+### 🔴 Five tooling bugs found by reading — four would have silently mis-retired rows
+1. **The name matcher stripped non-word characters**, turning `Farley-Bouvier` into `FarleyBouvier` —
+   zero hits on a page *titled* "Representative Tricia Farley-Bouvier". It broke every hyphenated name
+   in the corpus (Kamlager-Dove, Arena-DeRosa, Lungo-Koehn), each reading as "never mentions them".
+2. **`agenda` matched anywhere in a title**, killing a real 1,789-word AG Bonta interview headlined
+   "…Plots a Progressive Health Care **Agenda**". Now anchored to title start/end.
+3. **Soft-404s**: `mgaleg.maryland.gov/…/ferguson01` serves **HTTP 200 with the title "NotFound"**.
+4. **WordPress's empty `<main id="wp--skip-link--target">`** made every `actonmass.org` page extract to
+   0 words from ~178KB and read as blank. Same family as the elanaforbend.com false alarm.
+5. Search-URL vs homepage rule ordering — same verdict, wrong recorded reason. **A wrong reason is what
+   the next reader inherits.**
+
+🔑 **Substring name matching over-fires and under-fires at once**: it missed `Farley-Bouvier` entirely
+while matching `Chan` inside `channel`. Match on a word-bounded, un-mangled name form.
+
+Artifacts: `navonly-workset.json` · `navonly-pages.json` (fetched text) · `navonly-classification.json`.
+Tools: `navonly-workset.mjs`, `navonly-read-pages.mjs`, `navonly-classify.mjs`.
+
+---
+
 🔴 **NAV_ONLY IS UNDER-COUNTED AND THE SPLIT MUST NOT BE USED AS-IS.** My classifier is structural — it
 calls a survivor a nav page when its path has ≤1 segment. The operator ruling is not structural: it is
 *does this page state a position attributable to this person*, which requires reading the page. Live
@@ -406,7 +478,7 @@ thin-Wayback set, so INCONCLUSIVE there is expected and is not evidence either w
    VOTE411 rotates candidate IDs per cycle, so a 404 is expiry, not fabrication.
 4. **Re-probe the 126 degraded + the non-leginfo, non-archive NO_ANSWER tail** with
    `reprobe-no-answer.mjs --host-pace 3000`. Skip leginfo (938 × 25s ≈ 6.5h to confirm a known IP block).
-5. **Re-run the NAV_ONLY classification by reading pages**, not path depth, before sizing any retirement.
+5. ✅ **DONE 2026-08-06** — NAV_ONLY re-run by reading all 105 surviving pages. Retirements 183 → 298; four governments to zero (Carson, Lynn, Alhambra, Waltham). See the section above.
 6. Write the migration with the split computed in SQL. Chip check per the table above; flip in `essentials`.
 7. Add every *confirmed* URL to `backend/data/fabricated-sources.json` so `FABRICATED_SOURCE` blocks it —
    **exact-URL match** for real live outlets (`cbsnews.com`, `latimes.com`, `markey.senate.gov`), never a

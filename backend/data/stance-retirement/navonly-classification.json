@@ -1,0 +1,3460 @@
+{
+  "generated_by": "scripts/navonly-classify.mjs",
+  "url_verdicts": [
+    {
+      "verdict": "GONE",
+      "why": "HTTP 404",
+      "url": "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes",
+      "rows": 24
+    },
+    {
+      "verdict": "GONE",
+      "why": "HTTP 404",
+      "url": "https://www.alhambraca.gov/government/city-council/agendas-minutes",
+      "rows": 19
+    },
+    {
+      "verdict": "GONE",
+      "why": "HTTP 404",
+      "url": "https://www.lynnma.gov/city-council/minutes",
+      "rows": 19
+    },
+    {
+      "verdict": "UNVERIFIED",
+      "why": "HTTP 503 bot wall / throttle — a real server answered; absence NOT shown",
+      "url": "https://www.ontheissues.org/Senate/Ed_Markey.htm",
+      "rows": 15
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "18040w, names the politician 265×",
+      "url": "https://en.wikipedia.org/wiki/Ed_Markey",
+      "rows": 15
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/",
+      "rows": 9
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://acostaforla.com",
+      "rows": 5
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "1575w, names the politician 51×",
+      "url": "https://malegislature.gov/Legislators/Profile/TFB1",
+      "rows": 5
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive (355w) but never names the politician",
+      "url": "https://malegislature.gov/Bills/191/H3320",
+      "rows": 5
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "10733w, names the politician 61×",
+      "url": "https://ballotpedia.org/Wes_Moore",
+      "rows": 5
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "3996w, names the politician 60×",
+      "url": "https://en.wikipedia.org/wiki/Karen_Spilka",
+      "rows": 4
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive bill page that never names the citing legislator (hand-verified)",
+      "url": "https://actonmass.org/safe-communities/",
+      "rows": 4
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "2721w, names the politician 23×",
+      "url": "https://en.wikipedia.org/wiki/Ronald_Mariano",
+      "rows": 4
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "4649w, names the politician 176×",
+      "url": "https://malegislature.gov/Legislators/Profile/T_C1",
+      "rows": 4
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2022/07/somerville-police-reform-update/",
+      "rows": 4
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.walthampatch.com/posts/waltham-city-council-mbta-zoning-vote-2024",
+      "rows": 4
+    },
+    {
+      "verdict": "GONE",
+      "why": "HTTP 404",
+      "url": "https://colterforla.com",
+      "rows": 4
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "2538w, names the politician 93×",
+      "url": "https://malegislature.gov/Legislators/Profile/WJD0/BillsSponsored",
+      "rows": 3
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "search-result URL — a query, not a source",
+      "url": "https://commonwealthbeacon.org/?s=mariano+immigration",
+      "rows": 3
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "1815w, names the politician 63×",
+      "url": "https://malegislature.gov/Legislators/Profile/AJP1/Bills",
+      "rows": 3
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive bill page that never names the citing legislator (hand-verified)",
+      "url": "https://actonmass.org/healthy-youth/",
+      "rows": 3
+    },
+    {
+      "verdict": "UNVERIFIED",
+      "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
+      "url": "https://congress.gov/member/ayanna-pressley/P000617",
+      "rows": 3
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.ballotpedia.org/Massachusetts_Question_1,_Income_Tax_Surtax_for_Education_and_Transportation_Amendment_(2022)",
+      "rows": 3
+    },
+    {
+      "verdict": "GONE",
+      "why": "HTTP 404",
+      "url": "https://www.lynnma.gov/city-council/agendas",
+      "rows": 3
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "167w, names the politician 3×",
+      "url": "https://web.archive.org/web/20260510020804/https://actonmass.org/legislators/erika-uyterhoeven/",
+      "rows": 3
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "188w, names the politician 3×",
+      "url": "https://web.archive.org/web/20260310182424/https://actonmass.org/legislators/christine-barber/",
+      "rows": 3
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "search-result URL — a query, not a source",
+      "url": "https://commonwealthbeacon.org/?s=spilka+immigration+safe+communities",
+      "rows": 2
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "search-result URL — a query, not a source",
+      "url": "https://commonwealthbeacon.org/?s=karen+spilka",
+      "rows": 2
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "2555w, names the politician 18×",
+      "url": "https://en.wikipedia.org/wiki/Kate_Hogan",
+      "rows": 2
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "1225w, names the politician 32×",
+      "url": "https://malegislature.gov/Legislators/Profile/APR1",
+      "rows": 2
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive bill page that never names the citing legislator (hand-verified)",
+      "url": "https://actonmass.org/medicare-for-all/",
+      "rows": 2
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive (398w) but never names the politician",
+      "url": "https://web.archive.org/web/20260510031025/https://actonmass.org/bills/campaign-childcare/",
+      "rows": 2
+    },
+    {
+      "verdict": "GONE",
+      "why": "HTTP 404",
+      "url": "https://pressley.house.gov/issues/criminal-justice",
+      "rows": 2
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "218w, names the politician 3×",
+      "url": "https://malegislature.gov/Legislators/Profile/D_S1/Committees",
+      "rows": 2
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive (290w) but never names the politician",
+      "url": "https://malegislature.gov/Bills/192/H4264",
+      "rows": 2
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive (371w) but never names the politician",
+      "url": "https://malegislature.gov/Bills/192/S2977",
+      "rows": 2
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "920w, names the politician 25×",
+      "url": "https://malegislature.gov/Legislators/Profile/RGW1",
+      "rows": 2
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2021/10/mbah-sanctuary-icu-resolution/",
+      "rows": 2
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "182w, names the politician 3×",
+      "url": "https://web.archive.org/web/20250324121332/https://actonmass.org/legislators/marjorie-decker/",
+      "rows": 2
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "167w, names the politician 3×",
+      "url": "https://web.archive.org/web/20260310181857/https://actonmass.org/legislators/mike-connolly/",
+      "rows": 2
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "645w, names the politician 6×",
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-joins-national-effort-support-fundamental-right-lgbtq",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "553w, names the politician 6×",
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-joins-multistate-coalition-support-lgbtq-americans-rights",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "index/listing page (title: \"From Racial Justice to Dirty Air, California&rsquo;s New AG \")",
+      "url": "https://californiahealthline.org/news/article/california-ag-rob-bonta-interview-progressive-health-care-agenda-racial-justice-air-quality/",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "618w, names the politician 8×",
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-trump-administration%E2%80%99s-proposed-slashing",
+      "rows": 1
+    },
+    {
+      "verdict": "UNVERIFIED",
+      "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1941",
+      "rows": 1
+    },
+    {
+      "verdict": "UNVERIFIED",
+      "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
+      "url": "https://www.congress.gov/member/sydney-kamlager-dove/K000402?q=%7B%22search%22%3A%22AI%22%7D",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive (413w) but never names the politician",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/15",
+      "rows": 1
+    },
+    {
+      "verdict": "UNVERIFIED",
+      "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/6151",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "site homepage / landing page, not a position statement",
+      "url": "https://oag.ca.gov",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "search-result URL — a query, not a source",
+      "url": "https://willbrownsberger.com/?s=redistricting",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive bill page that never names the citing legislator (hand-verified)",
+      "url": "https://actonmass.org/prison-moratorium/",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "site homepage / landing page, not a position statement",
+      "url": "https://www.opensecrets.org/",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "search-result URL — a query, not a source",
+      "url": "https://commonwealthbeacon.org/?s=aaron+michlewitz",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "1225w, names the politician 32×",
+      "url": "https://malegislature.gov/Legislators/Profile/APR1/Bills",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "568w, names the politician 1×",
+      "url": "https://malegislature.gov/Bills/193/H1239/Cosponsor",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "925w, names the politician 31×",
+      "url": "https://malegislature.gov/Legislators/Profile/D_S1",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "soft-404: HTTP 200 with title \"NotFound\"",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ferguson01",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "597w, names the politician 8×",
+      "url": "https://ballotpedia.org/Bill_Ferguson",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "12276w, names the politician 224×",
+      "url": "https://en.wikipedia.org/wiki/Lisa_Murkowski",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive (475w) but never names the politician",
+      "url": "https://web.archive.org/web/20260310191126/https://actonmass.org/bills/cherish-act-fully-funded-public-higher-ed/",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive (330w) but never names the politician",
+      "url": "https://malegislature.gov/Bills/194/H544",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive bill page that never names the citing legislator (hand-verified)",
+      "url": "https://actonmass.org/abortion-access-act/",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive (302w) but never names the politician",
+      "url": "https://web.archive.org/web/20260310182638/https://actonmass.org/bills/environmental-justice/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "HTTP 404",
+      "url": "https://marylandmatters.org/2023/chesapeake-bay-protection/",
+      "rows": 1
+    },
+    {
+      "verdict": "UNVERIFIED",
+      "why": "HTTP 503 bot wall / throttle — a real server answered; absence NOT shown",
+      "url": "https://www.ontheissues.org/Economic/Ed_Markey_Tax_Reform.htm",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "21050w, names the politician 14×",
+      "url": "https://congress.gov/member/seth-moulton/M001196",
+      "rows": 1
+    },
+    {
+      "verdict": "UNVERIFIED",
+      "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
+      "url": "https://congress.gov/bill/117th-congress/house-bill/1442",
+      "rows": 1
+    },
+    {
+      "verdict": "UNVERIFIED",
+      "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
+      "url": "https://congress.gov/bill/117th-congress/house-bill/1437",
+      "rows": 1
+    },
+    {
+      "verdict": "UNVERIFIED",
+      "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
+      "url": "https://congress.gov/bill/118th-congress/senate-bill/359",
+      "rows": 1
+    },
+    {
+      "verdict": "UNVERIFIED",
+      "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
+      "url": "https://congress.gov/bill/117th-congress/house-bill/4583",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "304w, names the politician 3×",
+      "url": "https://malegislature.gov/Bills/194/H573",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "1974w, names the politician 65×",
+      "url": "https://malegislature.gov/Legislators/Profile/CAF1",
+      "rows": 1
+    },
+    {
+      "verdict": "UNVERIFIED",
+      "why": "unreadable (76208b raw, 114w extracted) — needs eyes",
+      "url": "https://malegislature.gov/Committees/Joint/J24",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "384w, names the politician 3×",
+      "url": "https://malegislature.gov/Bills/194/H3398",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "218w, names the politician 3×",
+      "url": "https://malegislature.gov/Legislators/Profile/APR1/Committees",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "1783w, names the politician 63×",
+      "url": "https://malegislature.gov/Legislators/Profile/TMS1",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "2903w, names the politician 89×",
+      "url": "https://malegislature.gov/Legislators/Profile/KIG1",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive bill page that never names the citing legislator (hand-verified)",
+      "url": "https://actonmass.org/stop-wage-theft/",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive (359w) but never names the politician",
+      "url": "https://malegislature.gov/Bills/194/H1279",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive (372w) but never names the politician",
+      "url": "https://malegislature.gov/Bills/191/H4990",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2025/01/08/mayor-wilson-sanctuary-city/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2026/02/wilson-homelessness-housing-first/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2022/11/heart-program-expansion/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2024/03/wilson-bike-lanes-transit/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2024/12/wilson-union-square-development/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2024/09/heart-expansion-council-vote/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2023/11/link-council-election/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2020/09/mbah-immigrant-rights-op-ed/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2020/07/mbah-police-reform-council/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2023/09/mbah-homelessness-housing-first/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2024/03/somerville-bike-lane-debate/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2021/03/somerville-heart-program-launched/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2025/01/somerville-anti-deportation-response/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2022/08/ewen-campen-bike-lane-resolution/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2023/09/somerville-homelessness-housing-first/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2021/11/sait-public-safety-social-work/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2022/11/sait-homelessness-social-services/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.somervillejournal.com/2023/08/somerville-gilman-square-development/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "HTTP 404",
+      "url": "https://www.lynnma.gov/office-of-new-americans",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "HTTP 404",
+      "url": "https://www.wbur.org/news/2023/10/18/mbta-communities-zoning-compliance",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "HTTP 404",
+      "url": "https://www.medfordma.org/medford-mayor-lungo-koehn-advocates-for-green-line-extension/",
+      "rows": 1
+    },
+    {
+      "verdict": "GONE",
+      "why": "nothing answered (dead domain)",
+      "url": "https://www.walthampatch.com/posts/waltham-mbta-communities-zoning-compliance-2024",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "680w, names the politician 5×",
+      "url": "https://www.axios.com/local/salt-lake-city/2023/10/30/council-candidate-dan-dugan-election-district-6",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "site homepage / landing page, not a position statement",
+      "url": "https://louforcd1.com",
+      "rows": 1
+    },
+    {
+      "verdict": "COVERAGE",
+      "why": "214w, names the politician 3×",
+      "url": "https://web.archive.org/web/20251114022621/https://actonmass.org/legislators/kate-lipper-garabedian/",
+      "rows": 1
+    }
+  ],
+  "split": {
+    "SOLE_SOURCED": 141,
+    "NAV_ONLY": 157,
+    "HAS_COSOURCE": 77,
+    "KEPT_UNVERIFIED": 8
+  },
+  "rows": {
+    "SOLE_SOURCED": [
+      {
+        "politician": "Lula Davis-Holmes",
+        "government": "City of Carson",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": []
+      },
+      {
+        "politician": "Lula Davis-Holmes",
+        "government": "City of Carson",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": []
+      },
+      {
+        "politician": "Lula Davis-Holmes",
+        "government": "City of Carson",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": []
+      },
+      {
+        "politician": "Lula Davis-Holmes",
+        "government": "City of Carson",
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": []
+      },
+      {
+        "politician": "Lula Davis-Holmes",
+        "government": "City of Carson",
+        "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+        "survivors": []
+      },
+      {
+        "politician": "Lula Davis-Holmes",
+        "government": "City of Carson",
+        "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+        "survivors": []
+      },
+      {
+        "politician": "Lula Davis-Holmes",
+        "government": "City of Carson",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": []
+      },
+      {
+        "politician": "Lula Davis-Holmes",
+        "government": "City of Carson",
+        "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+        "survivors": []
+      },
+      {
+        "politician": "Lula Davis-Holmes",
+        "government": "City of Carson",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": []
+      },
+      {
+        "politician": "Jim Dear",
+        "government": "City of Carson",
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": []
+      },
+      {
+        "politician": "David B. Walgren",
+        "government": null,
+        "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+        "survivors": []
+      },
+      {
+        "politician": "Karen E. Spilka",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": []
+      },
+      {
+        "politician": "Mark C. Montigny",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": []
+      },
+      {
+        "politician": "Mark C. Montigny",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+        "survivors": []
+      },
+      {
+        "politician": "Mark C. Montigny",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+        "survivors": []
+      },
+      {
+        "politician": "Mark C. Montigny",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+        "survivors": []
+      },
+      {
+        "politician": "Mark C. Montigny",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": []
+      },
+      {
+        "politician": "Mark C. Montigny",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+        "survivors": []
+      },
+      {
+        "politician": "Mark C. Montigny",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": []
+      },
+      {
+        "politician": "Mark C. Montigny",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": []
+      },
+      {
+        "politician": "Mark C. Montigny",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": []
+      },
+      {
+        "politician": "Mark C. Montigny",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+        "survivors": []
+      },
+      {
+        "politician": "Mark C. Montigny",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+        "survivors": []
+      },
+      {
+        "politician": "Mark C. Montigny",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+        "survivors": []
+      },
+      {
+        "politician": "William J. Driscoll",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+        "survivors": []
+      },
+      {
+        "politician": "William J. Driscoll",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+        "survivors": []
+      },
+      {
+        "politician": "Ronald Mariano",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": []
+      },
+      {
+        "politician": "Ronald Mariano",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": []
+      },
+      {
+        "politician": "Aaron Michlewitz",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+        "survivors": []
+      },
+      {
+        "politician": "Aaron Michlewitz",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+        "survivors": []
+      },
+      {
+        "politician": "Aaron Michlewitz",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": []
+      },
+      {
+        "politician": "Aaron Michlewitz",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "survivors": []
+      },
+      {
+        "politician": "Aaron Michlewitz",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+        "survivors": []
+      },
+      {
+        "politician": "Aaron Michlewitz",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": []
+      },
+      {
+        "politician": "Aaron Michlewitz",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": []
+      },
+      {
+        "politician": "Carole A. Fiola",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": []
+      },
+      {
+        "politician": "Samantha Montaño",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": []
+      },
+      {
+        "politician": "Samantha Montaño",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+        "survivors": []
+      },
+      {
+        "politician": "Samantha Montaño",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": []
+      },
+      {
+        "politician": "Samantha Montaño",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": []
+      },
+      {
+        "politician": "Samantha Montaño",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+        "survivors": []
+      },
+      {
+        "politician": "Samantha Montaño",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": []
+      },
+      {
+        "politician": "Samantha Montaño",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+        "survivors": []
+      },
+      {
+        "politician": "Samantha Montaño",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+        "survivors": []
+      },
+      {
+        "politician": "Samantha Montaño",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+        "survivors": []
+      },
+      {
+        "politician": "Samantha Montaño",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "survivors": []
+      },
+      {
+        "politician": "Kevin G. Honan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": []
+      },
+      {
+        "politician": "Kevin G. Honan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": []
+      },
+      {
+        "politician": "Kevin G. Honan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+        "survivors": []
+      },
+      {
+        "politician": "Carole A. Fiola",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": []
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": []
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+        "survivors": []
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+        "survivors": []
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+        "survivors": []
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+        "survivors": []
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": []
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+        "survivors": []
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": []
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+        "survivors": []
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": []
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": []
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+        "survivors": []
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": []
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "survivors": []
+      },
+      {
+        "politician": "Carole A. Fiola",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": []
+      },
+      {
+        "politician": "Adrianne P. Ramos",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": []
+      },
+      {
+        "politician": "Adrianne P. Ramos",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+        "survivors": []
+      },
+      {
+        "politician": "Adrianne P. Ramos",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": []
+      },
+      {
+        "politician": "Adrianne P. Ramos",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+        "survivors": []
+      },
+      {
+        "politician": "Adrianne P. Ramos",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": []
+      },
+      {
+        "politician": "Adrianne P. Ramos",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "survivors": []
+      },
+      {
+        "politician": "Adrianne P. Ramos",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": []
+      },
+      {
+        "politician": "Adrianne P. Ramos",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+        "survivors": []
+      },
+      {
+        "politician": "Angelo J. Puppolo",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": []
+      },
+      {
+        "politician": "Angelo J. Puppolo",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": []
+      },
+      {
+        "politician": "Angelo J. Puppolo",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+        "survivors": []
+      },
+      {
+        "politician": "Angelo J. Puppolo",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": []
+      },
+      {
+        "politician": "Angelo J. Puppolo",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+        "survivors": []
+      },
+      {
+        "politician": "Angelo J. Puppolo",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": []
+      },
+      {
+        "politician": "Bud L. Williams",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": []
+      },
+      {
+        "politician": "Bud L. Williams",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+        "survivors": []
+      },
+      {
+        "politician": "Bud L. Williams",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": []
+      },
+      {
+        "politician": "Bud L. Williams",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+        "survivors": []
+      },
+      {
+        "politician": "Bud L. Williams",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": []
+      },
+      {
+        "politician": "Bud L. Williams",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": []
+      },
+      {
+        "politician": "Bud L. Williams",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "survivors": []
+      },
+      {
+        "politician": "Carole A. Fiola",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": []
+      },
+      {
+        "politician": "Carole A. Fiola",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+        "survivors": []
+      },
+      {
+        "politician": "Carole A. Fiola",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": []
+      },
+      {
+        "politician": "Carole A. Fiola",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": []
+      },
+      {
+        "politician": "Carole A. Fiola",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+        "survivors": []
+      },
+      {
+        "politician": "Carole A. Fiola",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+        "survivors": []
+      },
+      {
+        "politician": "Carole A. Fiola",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": []
+      },
+      {
+        "politician": "Carole A. Fiola",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "survivors": []
+      },
+      {
+        "politician": "Daniel M. Donahue",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": []
+      },
+      {
+        "politician": "Daniel M. Donahue",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+        "survivors": []
+      },
+      {
+        "politician": "Daniel M. Donahue",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": []
+      },
+      {
+        "politician": "Daniel M. Donahue",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+        "survivors": []
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": []
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": []
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+        "survivors": []
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": []
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": []
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": []
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": []
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "survivors": []
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+        "survivors": []
+      },
+      {
+        "politician": "James Arena-DeRosa",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+        "survivors": []
+      },
+      {
+        "politician": "James Arena-DeRosa",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": []
+      },
+      {
+        "politician": "James Arena-DeRosa",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": []
+      },
+      {
+        "politician": "James Arena-DeRosa",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+        "survivors": []
+      },
+      {
+        "politician": "James Arena-DeRosa",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": []
+      },
+      {
+        "politician": "James Arena-DeRosa",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+        "survivors": []
+      },
+      {
+        "politician": "James Arena-DeRosa",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": []
+      },
+      {
+        "politician": "James Arena-DeRosa",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": []
+      },
+      {
+        "politician": "James Arena-DeRosa",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+        "survivors": []
+      },
+      {
+        "politician": "James Arena-DeRosa",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": []
+      },
+      {
+        "politician": "James Arena-DeRosa",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "survivors": []
+      },
+      {
+        "politician": "James Arena-DeRosa",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+        "survivors": []
+      },
+      {
+        "politician": "James J. O'Day",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": []
+      },
+      {
+        "politician": "James J. O'Day",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": []
+      },
+      {
+        "politician": "James J. O'Day",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": []
+      },
+      {
+        "politician": "James J. O'Day",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": []
+      },
+      {
+        "politician": "James J. O'Day",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+        "survivors": []
+      },
+      {
+        "politician": "Kevin G. Honan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+        "survivors": []
+      },
+      {
+        "politician": "Kevin G. Honan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "survivors": []
+      },
+      {
+        "politician": "Kevin G. Honan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+        "survivors": []
+      },
+      {
+        "politician": "Kevin G. Honan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": []
+      },
+      {
+        "politician": "Kevin G. Honan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+        "survivors": []
+      },
+      {
+        "politician": "Kevin G. Honan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+        "survivors": []
+      },
+      {
+        "politician": "Daniel M. Donahue",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+        "survivors": []
+      },
+      {
+        "politician": "Daniel M. Donahue",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+        "survivors": []
+      },
+      {
+        "politician": "Daniel M. Donahue",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+        "survivors": []
+      },
+      {
+        "politician": "Jared Nicholson",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": []
+      },
+      {
+        "politician": "Jared Nicholson",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": []
+      },
+      {
+        "politician": "Jared Nicholson",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+        "survivors": []
+      },
+      {
+        "politician": "Jared Nicholson",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+        "survivors": []
+      },
+      {
+        "politician": "Jared Nicholson",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": []
+      },
+      {
+        "politician": "Jared Nicholson",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+        "survivors": []
+      },
+      {
+        "politician": "Nicole D. McClain",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": []
+      },
+      {
+        "politician": "Breanna Lungo-Koehn",
+        "government": "City of Medford, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": []
+      }
+    ],
+    "NAV_ONLY": [
+      {
+        "politician": "Bryant Acosta",
+        "government": null,
+        "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+        "survivors": [
+          "https://acostaforla.com"
+        ]
+      },
+      {
+        "politician": "Bryant Acosta",
+        "government": null,
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": [
+          "https://acostaforla.com"
+        ]
+      },
+      {
+        "politician": "Katherine Lee",
+        "government": "City of Alhambra",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Katherine Lee",
+        "government": "City of Alhambra",
+        "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Katherine Lee",
+        "government": "City of Alhambra",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Katherine Lee",
+        "government": "City of Alhambra",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Katherine Lee",
+        "government": "City of Alhambra",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Ross J. Maza",
+        "government": "City of Alhambra",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Ross J. Maza",
+        "government": "City of Alhambra",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Ross J. Maza",
+        "government": "City of Alhambra",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Jeff Maloney",
+        "government": "City of Alhambra",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Jeff Maloney",
+        "government": "City of Alhambra",
+        "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Jeff Maloney",
+        "government": "City of Alhambra",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Noya Wang",
+        "government": "City of Alhambra",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Noya Wang",
+        "government": "City of Alhambra",
+        "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Noya Wang",
+        "government": "City of Alhambra",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Noya Wang",
+        "government": "City of Alhambra",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Noya Wang",
+        "government": "City of Alhambra",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Adele Andrade-Stadler",
+        "government": "City of Alhambra",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Adele Andrade-Stadler",
+        "government": "City of Alhambra",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Adele Andrade-Stadler",
+        "government": "City of Alhambra",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://www.alhambraca.gov/government/city-council/agendas-minutes"
+        ]
+      },
+      {
+        "politician": "Jawane Hilton",
+        "government": "City of Carson",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Jawane Hilton",
+        "government": "City of Carson",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Jawane Hilton",
+        "government": "City of Carson",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Jawane Hilton",
+        "government": "City of Carson",
+        "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Jawane Hilton",
+        "government": "City of Carson",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Jim Dear",
+        "government": "City of Carson",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Jim Dear",
+        "government": "City of Carson",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Jim Dear",
+        "government": "City of Carson",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Jim Dear",
+        "government": "City of Carson",
+        "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Jim Dear",
+        "government": "City of Carson",
+        "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Jim Dear",
+        "government": "City of Carson",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Jim Dear",
+        "government": "City of Carson",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Cedric L. Hicks Sr.",
+        "government": "City of Carson",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Cedric L. Hicks Sr.",
+        "government": "City of Carson",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Cedric L. Hicks Sr.",
+        "government": "City of Carson",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Cedric L. Hicks Sr.",
+        "government": "City of Carson",
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Cedric L. Hicks Sr.",
+        "government": "City of Carson",
+        "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Cedric L. Hicks Sr.",
+        "government": "City of Carson",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Arleen B. Rojas",
+        "government": "City of Carson",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Arleen B. Rojas",
+        "government": "City of Carson",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Arleen B. Rojas",
+        "government": "City of Carson",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Arleen B. Rojas",
+        "government": "City of Carson",
+        "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Arleen B. Rojas",
+        "government": "City of Carson",
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Arleen B. Rojas",
+        "government": "City of Carson",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes"
+        ]
+      },
+      {
+        "politician": "Rob Bonta",
+        "government": "State of California",
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": [
+          "https://oag.ca.gov"
+        ]
+      },
+      {
+        "politician": "William N. Brownsberger",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+        "survivors": [
+          "https://willbrownsberger.com/?s=redistricting"
+        ]
+      },
+      {
+        "politician": "Karen E. Spilka",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+        "survivors": [
+          "https://commonwealthbeacon.org/?s=spilka+immigration+safe+communities"
+        ]
+      },
+      {
+        "politician": "Karen E. Spilka",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": [
+          "https://commonwealthbeacon.org/?s=karen+spilka"
+        ]
+      },
+      {
+        "politician": "Karen E. Spilka",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+        "survivors": [
+          "https://commonwealthbeacon.org/?s=karen+spilka"
+        ]
+      },
+      {
+        "politician": "Karen E. Spilka",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://commonwealthbeacon.org/?s=spilka+immigration+safe+communities"
+        ]
+      },
+      {
+        "politician": "William J. Driscoll",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://actonmass.org/safe-communities/"
+        ]
+      },
+      {
+        "politician": "William J. Driscoll",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": [
+          "https://actonmass.org/prison-moratorium/"
+        ]
+      },
+      {
+        "politician": "Ronald Mariano",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+        "survivors": [
+          "https://www.opensecrets.org/"
+        ]
+      },
+      {
+        "politician": "Ronald Mariano",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://commonwealthbeacon.org/?s=mariano+immigration"
+        ]
+      },
+      {
+        "politician": "Ronald Mariano",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+        "survivors": [
+          "https://commonwealthbeacon.org/?s=mariano+immigration"
+        ]
+      },
+      {
+        "politician": "Ronald Mariano",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+        "survivors": [
+          "https://commonwealthbeacon.org/?s=mariano+immigration"
+        ]
+      },
+      {
+        "politician": "Aaron Michlewitz",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": [
+          "https://commonwealthbeacon.org/?s=aaron+michlewitz"
+        ]
+      },
+      {
+        "politician": "Bud L. Williams",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": [
+          "https://actonmass.org/medicare-for-all/"
+        ]
+      },
+      {
+        "politician": "Bud L. Williams",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+        "survivors": [
+          "https://actonmass.org/safe-communities/"
+        ]
+      },
+      {
+        "politician": "Bud L. Williams",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://actonmass.org/safe-communities/"
+        ]
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+        "survivors": [
+          "https://actonmass.org/healthy-youth/"
+        ]
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+        "survivors": [
+          "https://actonmass.org/healthy-youth/"
+        ]
+      },
+      {
+        "politician": "Bud L. Williams",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+        "survivors": [
+          "https://web.archive.org/web/20260310191126/https://actonmass.org/bills/cherish-act-fully-funded-public-higher-ed/"
+        ]
+      },
+      {
+        "politician": "Bud L. Williams",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+        "survivors": [
+          "https://web.archive.org/web/20260510031025/https://actonmass.org/bills/campaign-childcare/"
+        ]
+      },
+      {
+        "politician": "James Arena-DeRosa",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+        "survivors": [
+          "https://actonmass.org/healthy-youth/",
+          "https://malegislature.gov/Bills/194/H544"
+        ]
+      },
+      {
+        "politician": "Kenneth I. Gordon",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": [
+          "https://actonmass.org/abortion-access-act/"
+        ]
+      },
+      {
+        "politician": "Kenneth I. Gordon",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+        "survivors": [
+          "https://web.archive.org/web/20260310182638/https://actonmass.org/bills/environmental-justice/"
+        ]
+      },
+      {
+        "politician": "Tackey Chan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+        "survivors": [
+          "https://actonmass.org/safe-communities/"
+        ]
+      },
+      {
+        "politician": "Wes Moore",
+        "government": "State of Maryland",
+        "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+        "survivors": [
+          "https://marylandmatters.org/2023/chesapeake-bay-protection/"
+        ]
+      },
+      {
+        "politician": "Danielle W. Gregoire",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": [
+          "https://malegislature.gov/Bills/191/H3320"
+        ]
+      },
+      {
+        "politician": "Thomas M. Stanley",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": [
+          "https://malegislature.gov/Bills/191/H3320"
+        ]
+      },
+      {
+        "politician": "John J. Lawn",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": [
+          "https://malegislature.gov/Bills/191/H3320"
+        ]
+      },
+      {
+        "politician": "Thomas M. Stanley",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+        "survivors": [
+          "https://actonmass.org/medicare-for-all/"
+        ]
+      },
+      {
+        "politician": "Tackey Chan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": [
+          "https://malegislature.gov/Bills/191/H3320"
+        ]
+      },
+      {
+        "politician": "Tackey Chan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+        "survivors": [
+          "https://malegislature.gov/Bills/192/H4264"
+        ]
+      },
+      {
+        "politician": "Tackey Chan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": [
+          "https://www.ballotpedia.org/Massachusetts_Question_1,_Income_Tax_Surtax_for_Education_and_Transportation_Amendment_(2022)"
+        ]
+      },
+      {
+        "politician": "Tackey Chan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "survivors": [
+          "https://malegislature.gov/Bills/192/S2977"
+        ]
+      },
+      {
+        "politician": "Ronald Mariano",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": [
+          "https://www.ballotpedia.org/Massachusetts_Question_1,_Income_Tax_Surtax_for_Education_and_Transportation_Amendment_(2022)"
+        ]
+      },
+      {
+        "politician": "Richard G. Wells",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": [
+          "https://actonmass.org/stop-wage-theft/"
+        ]
+      },
+      {
+        "politician": "Richard G. Wells",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": [
+          "https://malegislature.gov/Bills/191/H3320"
+        ]
+      },
+      {
+        "politician": "Richard G. Wells",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+        "survivors": [
+          "https://malegislature.gov/Bills/192/H4264"
+        ]
+      },
+      {
+        "politician": "Richard G. Wells",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+        "survivors": [
+          "https://malegislature.gov/Bills/194/H1279"
+        ]
+      },
+      {
+        "politician": "Richard G. Wells",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+        "survivors": [
+          "https://malegislature.gov/Bills/191/H4990"
+        ]
+      },
+      {
+        "politician": "Richard G. Wells",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": [
+          "https://www.ballotpedia.org/Massachusetts_Question_1,_Income_Tax_Surtax_for_Education_and_Transportation_Amendment_(2022)"
+        ]
+      },
+      {
+        "politician": "Richard G. Wells",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "survivors": [
+          "https://malegislature.gov/Bills/192/S2977"
+        ]
+      },
+      {
+        "politician": "Jake Wilson",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.somervillejournal.com/2025/01/08/mayor-wilson-sanctuary-city/"
+        ]
+      },
+      {
+        "politician": "Jake Wilson",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": [
+          "https://www.somervillejournal.com/2026/02/wilson-homelessness-housing-first/"
+        ]
+      },
+      {
+        "politician": "Jake Wilson",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://www.somervillejournal.com/2022/11/heart-program-expansion/"
+        ]
+      },
+      {
+        "politician": "Jake Wilson",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+        "survivors": [
+          "https://www.somervillejournal.com/2024/03/wilson-bike-lanes-transit/"
+        ]
+      },
+      {
+        "politician": "Jake Wilson",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": [
+          "https://www.somervillejournal.com/2024/12/wilson-union-square-development/"
+        ]
+      },
+      {
+        "politician": "Jon Link",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/"
+        ]
+      },
+      {
+        "politician": "Jon Link",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://www.somervillejournal.com/2024/09/heart-expansion-council-vote/"
+        ]
+      },
+      {
+        "politician": "Jon Link",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+        "survivors": [
+          "https://www.somervillejournal.com/2023/11/link-council-election/"
+        ]
+      },
+      {
+        "politician": "Wilfred N. Mbah",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+        "survivors": [
+          "https://www.somervillejournal.com/2020/09/mbah-immigrant-rights-op-ed/"
+        ]
+      },
+      {
+        "politician": "Wilfred N. Mbah",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.somervillejournal.com/2021/10/mbah-sanctuary-icu-resolution/"
+        ]
+      },
+      {
+        "politician": "Wilfred N. Mbah",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://www.somervillejournal.com/2020/07/mbah-police-reform-council/"
+        ]
+      },
+      {
+        "politician": "Wilfred N. Mbah",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": [
+          "https://www.somervillejournal.com/2023/09/mbah-homelessness-housing-first/"
+        ]
+      },
+      {
+        "politician": "Kristen E. Strezo",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://www.somervillejournal.com/2022/07/somerville-police-reform-update/"
+        ]
+      },
+      {
+        "politician": "Kristen E. Strezo",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/"
+        ]
+      },
+      {
+        "politician": "Kristen E. Strezo",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+        "survivors": [
+          "https://www.somervillejournal.com/2024/03/somerville-bike-lane-debate/"
+        ]
+      },
+      {
+        "politician": "Ben Wheeler",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/"
+        ]
+      },
+      {
+        "politician": "Matthew McLaughlin",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://www.somervillejournal.com/2022/07/somerville-police-reform-update/"
+        ]
+      },
+      {
+        "politician": "Matthew McLaughlin",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/"
+        ]
+      },
+      {
+        "politician": "Jefferson Thomas Scott",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/"
+        ]
+      },
+      {
+        "politician": "Ben Ewen-Campen",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://www.somervillejournal.com/2021/03/somerville-heart-program-launched/"
+        ]
+      },
+      {
+        "politician": "Ben Ewen-Campen",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.somervillejournal.com/2021/10/mbah-sanctuary-icu-resolution/"
+        ]
+      },
+      {
+        "politician": "Ben Ewen-Campen",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+        "survivors": [
+          "https://www.somervillejournal.com/2025/01/somerville-anti-deportation-response/"
+        ]
+      },
+      {
+        "politician": "Ben Ewen-Campen",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+        "survivors": [
+          "https://www.somervillejournal.com/2022/08/ewen-campen-bike-lane-resolution/"
+        ]
+      },
+      {
+        "politician": "Ben Ewen-Campen",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": [
+          "https://www.somervillejournal.com/2023/09/somerville-homelessness-housing-first/"
+        ]
+      },
+      {
+        "politician": "Jesse Clingan",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://www.somervillejournal.com/2022/07/somerville-police-reform-update/"
+        ]
+      },
+      {
+        "politician": "Jesse Clingan",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/"
+        ]
+      },
+      {
+        "politician": "Naima Sait",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://www.somervillejournal.com/2021/11/sait-public-safety-social-work/"
+        ]
+      },
+      {
+        "politician": "Naima Sait",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/"
+        ]
+      },
+      {
+        "politician": "Naima Sait",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": [
+          "https://www.somervillejournal.com/2022/11/sait-homelessness-social-services/"
+        ]
+      },
+      {
+        "politician": "Lance L. Davis",
+        "government": "Somerville Public Schools, Massachusetts, US",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://www.somervillejournal.com/2022/07/somerville-police-reform-update/"
+        ]
+      },
+      {
+        "politician": "Lance L. Davis",
+        "government": "Somerville Public Schools, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/"
+        ]
+      },
+      {
+        "politician": "Lance L. Davis",
+        "government": "Somerville Public Schools, Massachusetts, US",
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": [
+          "https://www.somervillejournal.com/2023/08/somerville-gilman-square-development/"
+        ]
+      },
+      {
+        "politician": "Emily Hardt",
+        "government": "City of Somerville, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/"
+        ]
+      },
+      {
+        "politician": "Jared Nicholson",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.lynnma.gov/office-of-new-americans"
+        ]
+      },
+      {
+        "politician": "Brian M. Field",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Brian M. Field",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/agendas"
+        ]
+      },
+      {
+        "politician": "Brian M. Field",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Brian P. LaPierre",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Brian P. LaPierre",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/agendas"
+        ]
+      },
+      {
+        "politician": "Nicole D. McClain",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Nicole D. McClain",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/agendas"
+        ]
+      },
+      {
+        "politician": "Hong L. Net",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Peter Meaney",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Peter Meaney",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Obed A. Matul",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Obed A. Matul",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Constantino Alinsug",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Constantino Alinsug",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Natasha S. Megie-Maddrey",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Natasha S. Megie-Maddrey",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Cardeliz Paez",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Cardeliz Paez",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Frederick W. Hogan",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Frederick W. Hogan",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Jordan T. Avery",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Jordan T. Avery",
+        "government": "City of Lynn, Massachusetts, US",
+        "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+        "survivors": [
+          "https://www.lynnma.gov/city-council/minutes"
+        ]
+      },
+      {
+        "politician": "Breanna Lungo-Koehn",
+        "government": "City of Medford, Massachusetts, US",
+        "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+        "survivors": [
+          "https://www.wbur.org/news/2023/10/18/mbta-communities-zoning-compliance"
+        ]
+      },
+      {
+        "politician": "Breanna Lungo-Koehn",
+        "government": "City of Medford, Massachusetts, US",
+        "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+        "survivors": [
+          "https://www.medfordma.org/medford-mayor-lungo-koehn-advocates-for-green-line-extension/"
+        ]
+      },
+      {
+        "politician": "Arthur Donahue",
+        "government": "City of Waltham, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.walthampatch.com/posts/waltham-mbta-communities-zoning-compliance-2024"
+        ]
+      },
+      {
+        "politician": "Colleen Bradley-MacArthur",
+        "government": "City of Waltham, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.walthampatch.com/posts/waltham-city-council-mbta-zoning-vote-2024"
+        ]
+      },
+      {
+        "politician": "Paul Brasco",
+        "government": "City of Waltham, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.walthampatch.com/posts/waltham-city-council-mbta-zoning-vote-2024"
+        ]
+      },
+      {
+        "politician": "Tim King",
+        "government": "City of Waltham, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.walthampatch.com/posts/waltham-city-council-mbta-zoning-vote-2024"
+        ]
+      },
+      {
+        "politician": "Randall LeBlanc",
+        "government": "City of Waltham, Massachusetts, US",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://www.walthampatch.com/posts/waltham-city-council-mbta-zoning-vote-2024"
+        ]
+      },
+      {
+        "politician": "Bryant Acosta",
+        "government": null,
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": [
+          "https://acostaforla.com"
+        ]
+      },
+      {
+        "politician": "Bryant Acosta",
+        "government": null,
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://acostaforla.com"
+        ]
+      },
+      {
+        "politician": "Bryant Acosta",
+        "government": null,
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": [
+          "https://acostaforla.com"
+        ]
+      },
+      {
+        "politician": "Colter Carlisle",
+        "government": null,
+        "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+        "survivors": [
+          "https://colterforla.com"
+        ]
+      },
+      {
+        "politician": "Colter Carlisle",
+        "government": null,
+        "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+        "survivors": [
+          "https://colterforla.com"
+        ]
+      },
+      {
+        "politician": "Colter Carlisle",
+        "government": null,
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": [
+          "https://colterforla.com"
+        ]
+      },
+      {
+        "politician": "Colter Carlisle",
+        "government": null,
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://colterforla.com"
+        ]
+      },
+      {
+        "politician": "Maria Lou Calanche",
+        "government": null,
+        "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+        "survivors": [
+          "https://louforcd1.com"
+        ]
+      }
+    ],
+    "HAS_COSOURCE": [
+      {
+        "politician": "Rob Bonta",
+        "government": "State of California",
+        "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+        "survivors": [
+          "https://oag.ca.gov/news/press-releases/attorney-general-bonta-joins-national-effort-support-fundamental-right-lgbtq",
+          "https://oag.ca.gov/news/press-releases/attorney-general-bonta-joins-multistate-coalition-support-lgbtq-americans-rights"
+        ]
+      },
+      {
+        "politician": "Rob Bonta",
+        "government": "State of California",
+        "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+        "survivors": [
+          "https://californiahealthline.org/news/article/california-ag-rob-bonta-interview-progressive-health-care-agenda-racial-justice-air-quality/",
+          "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-trump-administration%E2%80%99s-proposed-slashing"
+        ]
+      },
+      {
+        "politician": "Karen E. Spilka",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Karen_Spilka"
+        ]
+      },
+      {
+        "politician": "Karen E. Spilka",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Karen_Spilka"
+        ]
+      },
+      {
+        "politician": "Karen E. Spilka",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Karen_Spilka"
+        ]
+      },
+      {
+        "politician": "Karen E. Spilka",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Karen_Spilka"
+        ]
+      },
+      {
+        "politician": "William J. Driscoll",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/WJD0/BillsSponsored"
+        ]
+      },
+      {
+        "politician": "William J. Driscoll",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/WJD0/BillsSponsored"
+        ]
+      },
+      {
+        "politician": "William J. Driscoll",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/WJD0/BillsSponsored"
+        ]
+      },
+      {
+        "politician": "Ronald Mariano",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ronald_Mariano"
+        ]
+      },
+      {
+        "politician": "Ronald Mariano",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ronald_Mariano"
+        ]
+      },
+      {
+        "politician": "Ronald Mariano",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ronald_Mariano"
+        ]
+      },
+      {
+        "politician": "Ronald Mariano",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ronald_Mariano"
+        ]
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Kate_Hogan"
+        ]
+      },
+      {
+        "politician": "Kate Hogan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Kate_Hogan"
+        ]
+      },
+      {
+        "politician": "Adrianne P. Ramos",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/APR1/Bills"
+        ]
+      },
+      {
+        "politician": "Adrianne P. Ramos",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/APR1"
+        ]
+      },
+      {
+        "politician": "Adrianne P. Ramos",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/APR1"
+        ]
+      },
+      {
+        "politician": "Angelo J. Puppolo",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/AJP1/Bills"
+        ]
+      },
+      {
+        "politician": "Angelo J. Puppolo",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/AJP1/Bills"
+        ]
+      },
+      {
+        "politician": "Angelo J. Puppolo",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/AJP1/Bills"
+        ]
+      },
+      {
+        "politician": "Daniel M. Donahue",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": [
+          "https://malegislature.gov/Bills/193/H1239/Cosponsor"
+        ]
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/D_S1"
+        ]
+      },
+      {
+        "politician": "Bill Ferguson",
+        "government": "State of Maryland",
+        "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+        "survivors": [
+          "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ferguson01",
+          "https://ballotpedia.org/Bill_Ferguson"
+        ]
+      },
+      {
+        "politician": "Lisa Murkowski",
+        "government": "United States Federal Government",
+        "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Lisa_Murkowski"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+        "survivors": [
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm",
+          "https://en.wikipedia.org/wiki/Ed_Markey"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ed_Markey",
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+        "survivors": [
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm",
+          "https://en.wikipedia.org/wiki/Ed_Markey"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+        "survivors": [
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm",
+          "https://en.wikipedia.org/wiki/Ed_Markey"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ed_Markey",
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ed_Markey",
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ed_Markey",
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "e5e48f0e-8f3a-40e1-8080-889fea389603",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ed_Markey",
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "448b1c9a-b6f3-42b8-8f39-d3bbb5bfa9ee",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ed_Markey",
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "6674d87e-999d-433a-aab7-3f626f59fd5f",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ed_Markey",
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ed_Markey",
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ed_Markey",
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ed_Markey",
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ed_Markey",
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm"
+        ]
+      },
+      {
+        "politician": "Seth Moulton",
+        "government": "United States Federal Government",
+        "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+        "survivors": [
+          "https://congress.gov/member/seth-moulton/M001196"
+        ]
+      },
+      {
+        "politician": "Tricia Farley-Bouvier",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/TFB1"
+        ]
+      },
+      {
+        "politician": "Tricia Farley-Bouvier",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/TFB1"
+        ]
+      },
+      {
+        "politician": "Tricia Farley-Bouvier",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/TFB1"
+        ]
+      },
+      {
+        "politician": "Tricia Farley-Bouvier",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/TFB1"
+        ]
+      },
+      {
+        "politician": "Tricia Farley-Bouvier",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/TFB1"
+        ]
+      },
+      {
+        "politician": "Carole A. Fiola",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+        "survivors": [
+          "https://web.archive.org/web/20260510031025/https://actonmass.org/bills/campaign-childcare/",
+          "https://malegislature.gov/Bills/194/H573"
+        ]
+      },
+      {
+        "politician": "Carole A. Fiola",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/CAF1",
+          "https://malegislature.gov/Committees/Joint/J24"
+        ]
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+        "survivors": [
+          "https://malegislature.gov/Bills/194/H3398"
+        ]
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/D_S1/Committees"
+        ]
+      },
+      {
+        "politician": "Dawne Shand",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/D_S1/Committees"
+        ]
+      },
+      {
+        "politician": "Adrianne P. Ramos",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/APR1/Committees"
+        ]
+      },
+      {
+        "politician": "Thomas M. Stanley",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/TMS1"
+        ]
+      },
+      {
+        "politician": "Kenneth I. Gordon",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/KIG1"
+        ]
+      },
+      {
+        "politician": "Tackey Chan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/T_C1"
+        ]
+      },
+      {
+        "politician": "Tackey Chan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/T_C1"
+        ]
+      },
+      {
+        "politician": "Tackey Chan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/T_C1"
+        ]
+      },
+      {
+        "politician": "Tackey Chan",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/T_C1"
+        ]
+      },
+      {
+        "politician": "Richard G. Wells",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/RGW1"
+        ]
+      },
+      {
+        "politician": "Richard G. Wells",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+        "survivors": [
+          "https://malegislature.gov/Legislators/Profile/RGW1"
+        ]
+      },
+      {
+        "politician": "Daniel E. Dugan",
+        "government": "City of Salt Lake City, Utah, US",
+        "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+        "survivors": [
+          "https://www.axios.com/local/salt-lake-city/2023/10/30/council-candidate-dan-dugan-election-district-6"
+        ]
+      },
+      {
+        "politician": "Wes Moore",
+        "government": "State of Maryland",
+        "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+        "survivors": [
+          "https://ballotpedia.org/Wes_Moore"
+        ]
+      },
+      {
+        "politician": "Wes Moore",
+        "government": "State of Maryland",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": [
+          "https://ballotpedia.org/Wes_Moore"
+        ]
+      },
+      {
+        "politician": "Wes Moore",
+        "government": "State of Maryland",
+        "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+        "survivors": [
+          "https://ballotpedia.org/Wes_Moore"
+        ]
+      },
+      {
+        "politician": "Wes Moore",
+        "government": "State of Maryland",
+        "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+        "survivors": [
+          "https://ballotpedia.org/Wes_Moore"
+        ]
+      },
+      {
+        "politician": "Wes Moore",
+        "government": "State of Maryland",
+        "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+        "survivors": [
+          "https://ballotpedia.org/Wes_Moore"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+        "survivors": [
+          "https://en.wikipedia.org/wiki/Ed_Markey"
+        ]
+      },
+      {
+        "politician": "Marjorie C. Decker",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://web.archive.org/web/20250324121332/https://actonmass.org/legislators/marjorie-decker/"
+        ]
+      },
+      {
+        "politician": "Marjorie C. Decker",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+        "survivors": [
+          "https://web.archive.org/web/20250324121332/https://actonmass.org/legislators/marjorie-decker/"
+        ]
+      },
+      {
+        "politician": "Mike Connolly",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://web.archive.org/web/20260310181857/https://actonmass.org/legislators/mike-connolly/"
+        ]
+      },
+      {
+        "politician": "Mike Connolly",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+        "survivors": [
+          "https://web.archive.org/web/20260310181857/https://actonmass.org/legislators/mike-connolly/"
+        ]
+      },
+      {
+        "politician": "Erika Uyterhoeven",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+        "survivors": [
+          "https://web.archive.org/web/20260510020804/https://actonmass.org/legislators/erika-uyterhoeven/"
+        ]
+      },
+      {
+        "politician": "Erika Uyterhoeven",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://web.archive.org/web/20260510020804/https://actonmass.org/legislators/erika-uyterhoeven/"
+        ]
+      },
+      {
+        "politician": "Erika Uyterhoeven",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+        "survivors": [
+          "https://web.archive.org/web/20260510020804/https://actonmass.org/legislators/erika-uyterhoeven/"
+        ]
+      },
+      {
+        "politician": "Kate Lipper-Garabedian",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+        "survivors": [
+          "https://web.archive.org/web/20251114022621/https://actonmass.org/legislators/kate-lipper-garabedian/"
+        ]
+      },
+      {
+        "politician": "Christine P. Barber",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+        "survivors": [
+          "https://web.archive.org/web/20260310182424/https://actonmass.org/legislators/christine-barber/"
+        ]
+      },
+      {
+        "politician": "Christine P. Barber",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+        "survivors": [
+          "https://web.archive.org/web/20260310182424/https://actonmass.org/legislators/christine-barber/"
+        ]
+      },
+      {
+        "politician": "Christine P. Barber",
+        "government": "Commonwealth of Massachusetts",
+        "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+        "survivors": [
+          "https://web.archive.org/web/20260310182424/https://actonmass.org/legislators/christine-barber/"
+        ]
+      }
+    ],
+    "KEPT_UNVERIFIED": [
+      {
+        "politician": "Sydney Kamlager-Dove",
+        "government": "United States Federal Government",
+        "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+        "survivors": [
+          "https://www.congress.gov/bill/119th-congress/house-bill/1941",
+          "https://www.congress.gov/member/sydney-kamlager-dove/K000402?q=%7B%22search%22%3A%22AI%22%7D"
+        ]
+      },
+      {
+        "politician": "Sydney Kamlager-Dove",
+        "government": "United States Federal Government",
+        "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+        "survivors": [
+          "https://www.congress.gov/bill/119th-congress/house-bill/15",
+          "https://www.congress.gov/bill/118th-congress/house-bill/6151"
+        ]
+      },
+      {
+        "politician": "Edward J. Markey",
+        "government": "United States Federal Government",
+        "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+        "survivors": [
+          "https://www.ontheissues.org/Economic/Ed_Markey_Tax_Reform.htm",
+          "https://www.ontheissues.org/Senate/Ed_Markey.htm"
+        ]
+      },
+      {
+        "politician": "Ayanna Pressley",
+        "government": "United States Federal Government",
+        "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+        "survivors": [
+          "https://congress.gov/member/ayanna-pressley/P000617"
+        ]
+      },
+      {
+        "politician": "Ayanna Pressley",
+        "government": "United States Federal Government",
+        "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+        "survivors": [
+          "https://pressley.house.gov/issues/criminal-justice",
+          "https://congress.gov/bill/117th-congress/house-bill/1442"
+        ]
+      },
+      {
+        "politician": "Ayanna Pressley",
+        "government": "United States Federal Government",
+        "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+        "survivors": [
+          "https://pressley.house.gov/issues/criminal-justice",
+          "https://congress.gov/bill/117th-congress/house-bill/1437"
+        ]
+      },
+      {
+        "politician": "Ayanna Pressley",
+        "government": "United States Federal Government",
+        "topic_id": "6674d87e-999d-433a-aab7-3f626f59fd5f",
+        "survivors": [
+          "https://congress.gov/bill/118th-congress/senate-bill/359",
+          "https://congress.gov/member/ayanna-pressley/P000617"
+        ]
+      },
+      {
+        "politician": "Ayanna Pressley",
+        "government": "United States Federal Government",
+        "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+        "survivors": [
+          "https://congress.gov/bill/117th-congress/house-bill/4583",
+          "https://congress.gov/member/ayanna-pressley/P000617"
+        ]
+      }
+    ]
+  }
+}
