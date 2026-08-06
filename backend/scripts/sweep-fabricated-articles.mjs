@@ -71,24 +71,83 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)';
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-/** Article-shaped: /YYYY/MM/ or /YYYY/MM/DD/ somewhere in the path. */
-const ARTICLE_RE = /\/(19|20)\d{2}\/\d{1,2}\/(\d{1,2}\/)?/;
+/**
+ * Dated article shape. Still special-cased because a YYYY/MM control is the tightest one available.
+ *
+ * 🔴 THIS USED TO BE THE ELIGIBILITY FILTER AND THAT WAS A REAL GAP. Requiring a date in the path meant
+ * the first full sweep probed 1,977 of 17,492 distinct cited URLs — 11%. Four more fabricated URLs were
+ * then found by hand among the CO-SOURCES of the rows it did flag, every one undated:
+ * latimes.com/socal/daily-pilot/news/story/carson-economic-development-council,
+ * two lynnma.gov/news/* pages, and a medfordma.org page. Eligibility is now DEPTH, not a date.
+ */
+const DATED_RE = /\/(19|20)\d{2}\/\d{1,2}\/(\d{1,2}\/)?/;
+
+/**
+ * Minimum sibling captures before absence is allowed to mean "never published". A parent-directory
+ * control on a thin section (lynnma.gov/news has 7 archived URLs) is much weaker evidence than a
+ * newspaper month with 200, so anything under this reports WEAK_CONTROL and is NOT called fabricated.
+ */
+const MIN_SIBLINGS = 5;
 
 function hostOf(u) {
   try { return new URL(u).host.replace(/^www\./, '').toLowerCase(); } catch { return null; }
 }
-/** The YYYY/MM prefix of an article URL, used to build the period control. */
-function periodOf(u) {
-  const m = u.match(/\/((?:19|20)\d{2})\/(\d{1,2})\//);
-  return m ? { year: m[1], month: m[2].padStart(2, '0') } : null;
+
+/** Path segments, empty ones dropped. */
+function segs(u) {
+  try { return new URL(u).pathname.split('/').filter(Boolean); } catch { return []; }
 }
 
+/**
+ * Eligible = a SPECIFIC page, i.e. at least two path segments. One segment (or none) is a section or
+ * landing page: its only available control is the whole host, and a richly-archived host proves nothing
+ * about one unvisited page. Those are the nav-page defect, which has its own remedy.
+ */
+function isEligible(u) {
+  return segs(u).length >= 2;
+}
+
+/**
+ * The control prefix for a URL — the tightest sibling set the archive can be asked about.
+ *   dated   → host/YYYY/MM*      (a newspaper's month; usually hundreds of captures)
+ *   undated → host/<parent dir>* (the section the page claims to live in)
+ * Returning the parent rather than the full path is the point: siblings must EXCLUDE the URL itself.
+ */
+function controlPrefix(u) {
+  const host = hostOf(u);
+  const m = u.match(/\/((?:19|20)\d{2})\/(\d{1,2})\//);
+  if (m) return `${host}/${m[1]}/${m[2].padStart(2, '0')}*`;
+  const s = segs(u);
+  return `${host}/${s.slice(0, -1).join('/')}*`;
+}
+
+/**
+ * HTTP status, with a curl fallback.
+ *
+ * 🔴 WHY THE FALLBACK. The first full sweep put 55 URLs in NO_ANSWER, and five of those hosts —
+ * azcentral.com, detroitnews.com, freep.com, indystar.com, ktlo.com — answer HTTP 200 to curl. Node's
+ * fetch fails on them (TLS/HTTP2 negotiation, or bot protection that fingerprints the client), so
+ * NO_ANSWER was partly a tooling artifact rather than a finding. Any host that answers curl must be
+ * classified on that answer.
+ *
+ * ⚠ This cannot create a false FABRICATED: that verdict requires a 404, which means a server answered.
+ * A fetch failure can only ever land in NO_ANSWER, so the artifact was never able to invent a finding —
+ * it could only hide one.
+ */
 async function fetchStatus(url) {
   try {
     const res = await fetch(url, { method: 'GET', redirect: 'follow', headers: { 'User-Agent': UA },
                                    signal: AbortSignal.timeout(30_000) });
     return res.status;
-  } catch { return 0; }   // 0 = no answer: DNS, TLS, timeout. NOT this defect.
+  } catch { /* fall through to curl */ }
+  try {
+    const { execFileSync } = await import('node:child_process');
+    const out = execFileSync('curl', ['-s', '-o', '/dev/null', '-L', '--compressed', '--max-time', '25',
+                                      '-A', UA, '-w', '%{http_code}', url],
+                             { encoding: 'utf8', timeout: 30_000 });
+    const code = Number(out.trim());
+    return Number.isFinite(code) ? code : 0;
+  } catch { return 0; }   // 0 = genuinely nothing answered: dead host, DNS, TLS.
 }
 
 /**
@@ -126,17 +185,18 @@ async function cdxOnce(pattern, extra = '') {
 }
 
 const VERDICTS = {
-  FABRICATED:   'path 404s, never archived, and siblings from the same month ARE archived',
-  EXISTS:       'the archive holds a capture of this exact path',
-  LIVE:         'the path answers with something other than 404/410',
-  INCONCLUSIVE: 'no sibling coverage for that host+month, so absence proves nothing',
-  NO_ANSWER:    'host did not answer at all — invented-host sweep territory, not this one',
+  FABRICATED:    `path 404s, never archived, and >=${MIN_SIBLINGS} sibling pages in the same section/month ARE archived`,
+  EXISTS:        'the archive holds a capture of this exact path',
+  LIVE:          'the path answers with something other than 404/410',
+  WEAK_CONTROL:  `path 404s and is unarchived, but the control has <${MIN_SIBLINGS} siblings — suggestive, NOT proven`,
+  INCONCLUSIVE:  'no sibling coverage at all for that control, so absence proves nothing',
+  NO_ANSWER:     'nothing answered, curl included — invented-host territory, not this defect',
 };
 
 /** The three-step test for one URL, shared by --url mode and the DB sweep. */
-async function classify(url) {
+async function classify(url, controlCache = new Map()) {
   const host = hostOf(url);
-  const period = periodOf(url);
+  const key = controlPrefix(url);
 
   const status = await fetchStatus(url);
   if (status !== 404 && status !== 410) {
@@ -145,18 +205,25 @@ async function classify(url) {
 
   await sleep(PACE);
   const exact = await cdxCount(url);
-  if (exact === null) return { host, status, verdict: 'INCONCLUSIVE', why: 'CDX did not answer for the exact path' };
+  if (exact === null) return { host, status, verdict: 'INCONCLUSIVE', why: 'CDX did not answer for the exact path', control: key };
   if (exact > 0)      return { host, status, verdict: 'EXISTS', captures: exact };
 
-  await sleep(PACE);
-  const key = period ? `${host}|${period.year}/${period.month}` : `${host}|-`;
-  const siblings = period
-    ? await cdxCount(`${host}/${period.year}/${period.month}*`, '&collapse=urlkey')
-    : null;
+  let siblings = controlCache.get(key);
+  if (siblings === undefined) {
+    await sleep(PACE);
+    siblings = await cdxCount(key, '&collapse=urlkey');
+    // Only cache a real answer. Caching a null would poison every later URL in the same section with
+    // one transient throttle — turning one unanswered probe into a whole section of false INCONCLUSIVE.
+    if (siblings !== null) controlCache.set(key, siblings);
+  }
 
   if (siblings === null) return { host, status, verdict: 'INCONCLUSIVE', why: 'control did not answer', control: key };
   if (siblings === 0)    return { host, status, verdict: 'INCONCLUSIVE', why: `archive holds no ${key} siblings either`, control: key };
-  return { host, status, verdict: 'FABRICATED', control_siblings: siblings, control: key };
+  if (siblings < MIN_SIBLINGS) {
+    return { host, status, verdict: 'WEAK_CONTROL', control_siblings: siblings, control: key,
+             why: `only ${siblings} siblings — below the ${MIN_SIBLINGS} needed to call absence proof` };
+  }
+  return { host, status, verdict: 'FABRICATED', control_siblings: siblings, control: key, dated: DATED_RE.test(url) };
 }
 
 (async () => {
@@ -176,8 +243,14 @@ async function classify(url) {
     process.exit(0);
   }
 
+  // Eligibility is DEPTH, not a date: a specific page has >=2 path segments. Enforced in SQL so the
+  // slice indices used for --from/--to chunking match what isEligible() would keep.
   const params = [];
-  let where = `WHERE s ~ '/(19|20)[0-9]{2}/[0-9]{1,2}/'`;
+  let where = `WHERE s ~* '^https?://[^/]+/[^/]+/.+'`;
+  // --skip-dated excludes the dated URLs already swept and second-method verified, so a widening run
+  // probes only the gap instead of redoing 1,977 URLs.
+  if (argv.includes('--skip-dated')) where += ` AND s !~ '/(19|20)[0-9]{2}/[0-9]{1,2}/'`;
+  if (argv.includes('--dated-only')) where += ` AND s ~ '/(19|20)[0-9]{2}/[0-9]{1,2}/'`;
   if (HOST)  { params.push(`%${HOST}%`); where += ` AND s ILIKE $${params.length}`; }
   if (STATE) {
     params.push(STATE.toLowerCase());
@@ -202,64 +275,40 @@ async function classify(url) {
     SELECT url, rows_citing FROM c ORDER BY rows_citing DESC, url`, params);
 
   const slice = cites.slice(FROM, TO ?? FROM + LIMIT);
-  console.log(`${cites.length} article-shaped cited URLs match; probing ${slice.length} (from ${FROM})\n`);
+  console.log(`${cites.length} specific-page cited URLs match; probing ${slice.length} (from ${FROM})\n`);
 
   const findings = [];
-  const controlCache = new Map();   // host|YYYY/MM -> sibling count, so one control serves many URLs
+  // Control results are cached per prefix so one archive query serves every URL in the same
+  // section/month — the single biggest saving against archive.org's rate limit.
+  const controlCache = new Map();
 
   for (const [i, c] of slice.entries()) {
-    const host = hostOf(c.url);
-    const period = periodOf(c.url);
     const label = `[${FROM + i + 1}/${cites.length}]`;
+    // classify() is shared with --url mode ON PURPOSE. The loop used to inline its own copy of the same
+    // three steps, which is how the two paths would silently drift apart the next time one is changed.
+    const r = await classify(c.url, controlCache);
+    findings.push({ ...c, ...r });
 
-    const status = await fetchStatus(c.url);
-    if (status !== 404 && status !== 410) {
-      findings.push({ ...c, host, status, verdict: status === 0 ? 'NO_ANSWER' : 'LIVE' });
-      console.log(`${label} ${status === 0 ? 'NO_ANSWER' : 'LIVE      '} ${status}  ${c.url}`);
-      continue;
-    }
-
-    await sleep(PACE);
-    const exact = await cdxCount(c.url);
-    if (exact === null) {
-      findings.push({ ...c, host, status, verdict: 'INCONCLUSIVE', why: 'CDX did not answer for the exact path' });
-      console.log(`${label} INCONCLUSIVE (cdx throttled)  ${c.url}`);
-      continue;
-    }
-    if (exact > 0) {
-      findings.push({ ...c, host, status, verdict: 'EXISTS', captures: exact });
-      console.log(`${label} EXISTS     404 now but ${exact} captures  ${c.url}`);
-      continue;
-    }
-
-    // Step 3 — the period control. Without this, a thinly-archived paper reads as fabricated.
-    const key = period ? `${host}|${period.year}/${period.month}` : `${host}|-`;
-    let siblings = controlCache.get(key);
-    if (siblings === undefined) {
-      await sleep(PACE);
-      siblings = period
-        ? await cdxCount(`${host}/${period.year}/${period.month}*`, '&collapse=urlkey')
-        : null;
-      controlCache.set(key, siblings);
-    }
-
-    if (siblings === null) {
-      findings.push({ ...c, host, status, verdict: 'INCONCLUSIVE', why: 'control did not answer' });
-      console.log(`${label} INCONCLUSIVE (control throttled)  ${c.url}`);
-    } else if (siblings === 0) {
-      findings.push({ ...c, host, status, verdict: 'INCONCLUSIVE', why: `archive holds no ${key} siblings either` });
-      console.log(`${label} INCONCLUSIVE (no sibling coverage)  ${c.url}`);
-    } else {
-      findings.push({ ...c, host, status, verdict: 'FABRICATED', control_siblings: siblings, control: key });
-      console.log(`${label} 🔴 FABRICATED  404 + 0 captures, ${siblings} siblings in ${key}  ${c.url}`);
-    }
+    const note = r.verdict === 'FABRICATED'   ? `404 + 0 captures, ${r.control_siblings} siblings in ${r.control}`
+               : r.verdict === 'EXISTS'       ? `404 now but ${r.captures} captures`
+               : r.verdict === 'WEAK_CONTROL' ? r.why
+               : r.verdict === 'INCONCLUSIVE' ? r.why
+               : String(r.status);
+    console.log(`${label} ${(r.verdict === 'FABRICATED' ? '🔴 FABRICATED' : r.verdict).padEnd(14)} ${note}  ${c.url}`);
   }
 
   const tally = {};
   for (const f of findings) tally[f.verdict] = (tally[f.verdict] ?? 0) + 1;
 
-  const stampless = { generated_by: 'scripts/sweep-fabricated-articles.mjs', args: argv.join(' ') };
-  const out = path.join(OUTDIR, `fabricated-article-sweep-${FROM}-${FROM + slice.length}.json`);
+  // Tag the artifact with which slice of the corpus it covers. The dated and undated runs are disjoint
+  // URL sets probed under different filters, and an untagged name makes a merged aggregate impossible to
+  // audit — you cannot tell whether two files overlap or complement each other.
+  const tag = argv.includes('--skip-dated') ? 'undated'
+            : argv.includes('--dated-only') ? 'dated'
+            : HOST ? `host-${HOST.replace(/[^a-z0-9]+/gi, '-')}`
+            : 'all';
+  const stampless = { generated_by: 'scripts/sweep-fabricated-articles.mjs', args: argv.join(' '), slice: tag };
+  const out = path.join(OUTDIR, `fabricated-article-sweep-${tag}-${FROM}-${FROM + slice.length}.json`);
   mkdirSync(OUTDIR, { recursive: true });
   writeFileSync(out, `${JSON.stringify({ ...stampless, verdict_meanings: VERDICTS, tally, findings }, null, 2)}\n`);
 
