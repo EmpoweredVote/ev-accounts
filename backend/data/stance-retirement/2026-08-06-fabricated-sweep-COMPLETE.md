@@ -197,6 +197,86 @@ warned about, so each was tested against the **live taxonomy**, not the archive.
 is a reason to stop trusting the archive, not a reason to doubt the finding — go and ask the live site
 what it actually publishes and how it names things.
 
+---
+
+## ✅ ALL .gov / CONGRESSIONAL FINDINGS HAND-CHECKED (2026-08-06)
+
+⚠ **The count was 41, not 25.** My earlier "25" wrongly included `medfordma.org` and `govtrack.us`,
+which are neither. 41 total: 11 done above (pressley 5, lynnma 6) + **30 checked here**.
+
+**Result: 26 confirmed · 3 mechanical re-points · 1 unproven.** Nothing else withdrawn.
+
+### 🔴 Mechanical RE-POINTS — a real page exists, the citation is a corrupted slug. Do not retire.
+| cited | real page (live 200) |
+|---|---|
+| `kamlager-dove.house.gov/issues/health-care` | **`/issues/health`** |
+| `moulton.house.gov/issues/national-security` | **`/issues/strengthening-our-national-security`** |
+| `moulton.house.gov/issues/jobs-economy` | **`/issues/building-economic-security`** (archived as `jobs-and-the-economy`) |
+
+Together with `pressley/criminal-justice → criminal-injustice`, that is **4 re-points** among the
+congressional set — all the same shape: a plausible generic slug standing in for the member's actual,
+idiosyncratic one.
+
+### Confirmed — the cited URL never existed (26)
+- **`markey.senate.gov` ×11.** Decisive test: **0 of the 11 appear in a COMPLETE archive of 3,375
+  `markey-*` and `senators-*` press releases.** ⚠ His real releases *do* cover most of these topics under
+  quite different slugs — his actual Dobbs statement is
+  `markey-condemns-supreme-court-abortion-ruling-calls-for-supreme-court-expansion-and-abolishing-filibuster`
+  (12 real `supreme-court` releases, 7 `transgender`, 2 `inflation-reduction`, 29 `infrastructure`).
+  **So the URLs are invented but the underlying positions are largely real** — this is a per-row
+  re-research queue, not a mechanical re-point, and re-pointing without reading the release would
+  manufacture support (the willametteweek rule).
+- **`somervillema.gov` ×5** (33 row-cites, the largest .gov cluster). All 404 live; prefix queries over
+  richly-archived sections return nothing: `/departments/somerville-*` holds 21 real paths (police,
+  housing authority, city cable…) but no `heart-program` and no `homeless-coalition`;
+  `/departments/programs*` holds **304** real paths with **0** matches for `by-design` or `immigrant`;
+  `/departments/econo*` is **0**. ⚠ Re-point candidate: the real immigrant-services program is
+  `welcoming-and-inclusive-neighborhoods-somerville-wins`. ⚠ "Somerville Homeless Coalition" is a real
+  **nonprofit** (`somervillehomelesscoalition.org`), not a city department — the citation attributes it
+  to the city.
+- **`oag.ca.gov` ×3.** 0 of 3 in 5,000 archived `attorney-general-bonta-*` releases. Real coverage exists
+  for two topics (`birth-control` 2, `preventive` 4) but **`workforce` 0**.
+- **`kamlager-dove` `lgbtq` + `technology`, `moulton` `technology`.** Absent from both the live taxonomy
+  and a rich archived one (moulton's archive holds ~40 real topic slugs including `health-care`,
+  `seniors`, `jobs-and-the-economy` — but never `technology`).
+- **`carsonca.gov/government/mayor`** (8 row-cites). The site's real convention is
+  `government/<section>/index.php` with **underscores** (`boards_commissions/…`); the cited path matches
+  no page in 67 archived `/government*` paths. ⚠ It is also a **landing page**, so it falls under the
+  2026-08-04 nav ruling regardless of this verdict.
+- **`mass.gov/info-details/mbta-communities-compliance-status`.** The real family is archived 5× over —
+  `mbta-communities-law-qa`, `-frequently-asked-questions`, `-compliance-model-components`,
+  `-compliance-model-user-guide…`, `-catalyst-fund-awards` — and the cited slug is not among them.
+  ⚠ **The live page now returns 403, not 404** (bot wall), so the live signal is unusable in both
+  directions; the verdict rests on the archive. Re-point candidate: `mbta-communities-law-qa`.
+- **`governor.maryland.gov/priorities/environment/`.** The site is SharePoint —
+  `/priorities/Pages/<slug>.aspx` — and the cited directory form matches no generation of it.
+- **`slc.gov/council/completed-projects/connect-slc-a-city-wide-transportation-plan/`** — 404 live,
+  control 31 real pages. No contrary evidence found.
+
+### ⚠ UNPROVEN — withdraw from the retirement set pending per-row work (1)
+**`lynch.house.gov/issues/technology`.** Three separate reasons the evidence will not carry:
+1. The **entire `/issues` section is gone** — `/issues` itself and even a known-archived slug
+   (`/issues/2nd-amendment`) both 404 today, so a 404 on any slug proves nothing about that slug.
+2. 🔴 **The control is contaminated by soft-404s.** The archived slug list for a Massachusetts Democrat
+   includes `illinois-local-issues`, `valley-fever`, `christian-values`, `pro-life` and `obamacare` —
+   the old CMS evidently served 200 for arbitrary `/issues/<anything>`, so captures there are not
+   evidence of a curated taxonomy.
+3. A plausible real equivalent, **`science-and-technology`**, is archived on that host.
+
+🔴 **THIRD CONTROL-INFLATION MODE FOUND HERE, and the re-derivation does not catch it:** lynch's archived
+`/issues*` is full of **inline JavaScript captured as URLs** — `.colorbox`, `.ui-datepicker-calendar`,
+`;a.yearshtml+=`, `1.3.2`. They have no asset segment and no file extension, so the page filter passes
+them. Its "195 real pages" is mostly this. **Treat a control on an old CMS-driven congressional site as
+unverified until the slug list is eyeballed.**
+
+### 🔴 A TRAP THAT INVALIDATED TWO OF MY OWN CHECKS MID-RUN
+**CDX returns results in alphabetical order and truncates at `limit`.** My first Markey keyword test ran
+over 5,000 rows that stopped at `march-20-2011-…`: every slug sorting after "m" was simply absent, so the
+zero counts for `disclose-act`, `dobbs` and the rest meant nothing. The same trap hit the Somerville
+department test (1,000 rows covering only `a…an`). **Both had to be redone by querying narrower prefixes
+until the result no longer hits the cap.** 🔑 **A truncated CDX listing is indistinguishable from
+absence — always check the last row's sort position against what you are looking for.**
+
 ⚠ **Remaining limit, deliberately not "fixed":** the page count still includes section indexes one level
 down (`/news/archived_news` counts). Telling an index from an article by URL alone is not reliable, and
 inventing a heuristic for it is how this audit has over-fired sixteen times. So lynnma's 7 is really
@@ -318,10 +398,10 @@ thin-Wayback set, so INCONCLUSIVE there is expected and is not evidence either w
    (`pressley.house.gov/issues/criminal-justice` → the live `criminal-injustice`).** Nothing withdrawn.
 2. **Hand-check the .gov / congressional URLs individually** — now **25**, not 14 (+8 markey, +4 pressley,
    +3 moulton, +1 lynch, +3 oag.ca.gov, +2 medfordma.org, +1 slc.gov). These sites restructure routinely,
-   so a re-point may exist. ✅ Pressley's 5 are done (4 confirmed, 1 re-point) — **20 left**.
-   🔑 The method that worked: these sites move issue pages, so test the cited topic against the **live
-   taxonomy**, not the archive. Pressley's `/issues/*` pages are now at the root; `climate` is not a
-   moved page, it is a topic she has never had (hers is `energy-the-environment`).
+   ✅ **DONE 2026-08-06 — all 41 hand-checked** (the count was 41, not 25; `medfordma.org` and
+   `govtrack.us` are not .gov). **36 confirmed · 4 mechanical re-points · 1 unproven and withdrawn.**
+   🔑 The method that worked: these sites move their pages, so test the cited topic against the **live
+   taxonomy** and against a **complete** archived slug list — never a truncated one.
 3. **Treat `onyourballot.vote411.org/m/candidate-detail.do?id=72262938` as a likely FALSE POSITIVE** —
    VOTE411 rotates candidate IDs per cycle, so a 404 is expiry, not fabrication.
 4. **Re-probe the 126 degraded + the non-leginfo, non-archive NO_ANSWER tail** with
