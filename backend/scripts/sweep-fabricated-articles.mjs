@@ -35,6 +35,10 @@
  *   node scripts/sweep-fabricated-articles.mjs --state ma --limit 100 --pace 1500
  *   node scripts/sweep-fabricated-articles.mjs --from 100 --to 200      # chunked resume
  *   node scripts/sweep-fabricated-articles.mjs --url <one-url>          # probe one URL, no DB
+ *   scripts/sweep-wide.sh 30 46                                        # resumable multi-chunk driver
+ *
+ * Timing knobs (see the circuit-breaker note below): --fetch-timeout ms, --curl-timeout s,
+ * --probe-timeout ms, --zero-streak n.
  *
  * `--url` exists so the detector can be demonstrated against a KNOWN POSITIVE. Every fabricated
  * citation found so far has already been retired, so a DB-driven run can only ever show negatives —
@@ -67,6 +71,32 @@ const HOST = arg('host', null);
 const STATE = arg('state', null);
 const PACE = Number(arg('pace', '1200'));   // ms between archive.org calls
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)';
+
+/**
+ * Per-URL time caps, and the host circuit breaker that makes a resumable wide sweep finish at all.
+ *
+ * 🔴 WHY. The 2026-08-05 wide run stalled at chunk 29 of 47 and had to be abandoned. The curl fallback
+ * below is right, but it made an unresponsive host cost a full fetch timeout PLUS a full curl timeout on
+ * EVERY url: 30s + 25s = 55s each. The run then walked into a block of leginfo.legislature.ca.gov bill
+ * pages that had rate-limited us into an IP block, so ~440 consecutive URLs each burned the full 55s and
+ * the sweep slowed to a crawl. 374 more of them sit in the unprobed tail.
+ *
+ * THE BREAKER. After ZERO_STREAK consecutive zero-status results from the same host, that host is
+ * presumed unreachable for the rest of the run: it gets a short PROBE_TIMEOUT fetch and NO curl fallback,
+ * costing seconds instead of a minute. It is a demotion, not a skip — every URL is still probed, and one
+ * answer resets the streak and restores full treatment, so a host that recovers mid-run is picked up.
+ *
+ * ⚠ THE RESULT IS WEAKER EVIDENCE AND IS MARKED AS SUCH. A NO_ANSWER reached under the breaker is
+ * recorded with `degraded: true`, because "we gave this host 5 seconds and no fallback" is not the same
+ * claim as "we gave it 55 seconds and curl agreed". Anything degraded belongs in the NO_ANSWER re-probe
+ * queue, not in a coverage total. The direction of the error is the safe one: NO_ANSWER is the
+ * un-evaluated bucket and FABRICATED still requires a real 404 from a server, so the breaker can only
+ * ever hide a finding, never manufacture one.
+ */
+const FETCH_TIMEOUT = Number(arg('fetch-timeout', '20000'));
+const CURL_TIMEOUT  = Number(arg('curl-timeout', '15'));      // seconds, curl --max-time
+const PROBE_TIMEOUT = Number(arg('probe-timeout', '5000'));   // circuit-broken hosts
+const ZERO_STREAK   = Number(arg('zero-streak', '3'));
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -134,20 +164,34 @@ function controlPrefix(u) {
  * A fetch failure can only ever land in NO_ANSWER, so the artifact was never able to invent a finding —
  * it could only hide one.
  */
-async function fetchStatus(url) {
+async function fetchStatus(url, zeroStreaks = new Map()) {
+  const host = hostOf(url);
+  // Demoted only while the streak holds; any answer below resets it and full treatment returns.
+  const degraded = (zeroStreaks.get(host) ?? 0) >= ZERO_STREAK;
+
+  const record = (status) => {
+    if (status === 0) zeroStreaks.set(host, (zeroStreaks.get(host) ?? 0) + 1);
+    else zeroStreaks.delete(host);
+    return { status, degraded };
+  };
+
   try {
     const res = await fetch(url, { method: 'GET', redirect: 'follow', headers: { 'User-Agent': UA },
-                                   signal: AbortSignal.timeout(30_000) });
-    return res.status;
+                                   signal: AbortSignal.timeout(degraded ? PROBE_TIMEOUT : FETCH_TIMEOUT) });
+    return record(res.status);
   } catch { /* fall through to curl */ }
+
+  if (degraded) return record(0);   // the whole point: no second full-price attempt on a dead host.
+
   try {
     const { execFileSync } = await import('node:child_process');
-    const out = execFileSync('curl', ['-s', '-o', '/dev/null', '-L', '--compressed', '--max-time', '25',
+    const out = execFileSync('curl', ['-s', '-o', '/dev/null', '-L', '--compressed',
+                                      '--max-time', String(CURL_TIMEOUT),
                                       '-A', UA, '-w', '%{http_code}', url],
-                             { encoding: 'utf8', timeout: 30_000 });
+                             { encoding: 'utf8', timeout: (CURL_TIMEOUT + 5) * 1000 });
     const code = Number(out.trim());
-    return Number.isFinite(code) ? code : 0;
-  } catch { return 0; }   // 0 = genuinely nothing answered: dead host, DNS, TLS.
+    return record(Number.isFinite(code) ? code : 0);
+  } catch { return record(0); }   // 0 = genuinely nothing answered: dead host, DNS, TLS.
 }
 
 /**
@@ -194,13 +238,15 @@ const VERDICTS = {
 };
 
 /** The three-step test for one URL, shared by --url mode and the DB sweep. */
-async function classify(url, controlCache = new Map()) {
+async function classify(url, controlCache = new Map(), zeroStreaks = new Map()) {
   const host = hostOf(url);
   const key = controlPrefix(url);
 
-  const status = await fetchStatus(url);
+  const { status, degraded } = await fetchStatus(url, zeroStreaks);
   if (status !== 404 && status !== 410) {
-    return { host, status, verdict: status === 0 ? 'NO_ANSWER' : 'LIVE' };
+    // `degraded` rides along only on NO_ANSWER: it says how hard we tried before giving up, which is
+    // exactly the distinction the re-probe queue needs and the one an un-evaluated bucket loses.
+    return { host, status, verdict: status === 0 ? 'NO_ANSWER' : 'LIVE', ...(status === 0 && degraded ? { degraded: true } : {}) };
   }
 
   await sleep(PACE);
@@ -235,7 +281,14 @@ async function classify(url, controlCache = new Map()) {
     if (r.control_siblings) console.log(`  control: ${r.control_siblings} sibling captures in ${r.control}`);
     if (r.why)              console.log(`  ${r.why}`);
     console.log(`  → ${VERDICTS[r.verdict]}\n`);
-    process.exit(r.verdict === 'FABRICATED' ? 1 : 0);
+    // ⚠ SET exitCode AND RETURN — never process.exit() here. On Node 24 + Windows, process.exit() after
+    // a fetch aborts the process on a libuv assertion (`UV_HANDLE_CLOSING`, src\win\async.c) while the
+    // keep-alive socket is still closing, so the run printed the right verdict and then exited 127.
+    // The header documents this exit code as the regression contract and a crash code is not a verdict.
+    // Reproduced on a bare 6-line fetch script, so this is Node's, not ours; draining naturally is clean.
+    await pool.end().catch(() => {});
+    process.exitCode = r.verdict === 'FABRICATED' ? 1 : 0;
+    return;
   }
 
   if (!process.env.DATABASE_URL) {
@@ -281,18 +334,23 @@ async function classify(url, controlCache = new Map()) {
   // Control results are cached per prefix so one archive query serves every URL in the same
   // section/month — the single biggest saving against archive.org's rate limit.
   const controlCache = new Map();
+  // Consecutive-zero streak per host, driving the circuit breaker. Deliberately NOT reset per chunk:
+  // it is rebuilt within each chunk, which costs one full-price probe per host per chunk — cheap, and it
+  // means a host that was blocked during chunk 30 is re-tested for real at the top of chunk 31.
+  const zeroStreaks = new Map();
 
   for (const [i, c] of slice.entries()) {
     const label = `[${FROM + i + 1}/${cites.length}]`;
     // classify() is shared with --url mode ON PURPOSE. The loop used to inline its own copy of the same
     // three steps, which is how the two paths would silently drift apart the next time one is changed.
-    const r = await classify(c.url, controlCache);
+    const r = await classify(c.url, controlCache, zeroStreaks);
     findings.push({ ...c, ...r });
 
     const note = r.verdict === 'FABRICATED'   ? `404 + 0 captures, ${r.control_siblings} siblings in ${r.control}`
                : r.verdict === 'EXISTS'       ? `404 now but ${r.captures} captures`
                : r.verdict === 'WEAK_CONTROL' ? r.why
                : r.verdict === 'INCONCLUSIVE' ? r.why
+               : r.degraded                  ? '0 — host circuit-broken, short probe, no curl fallback'
                : String(r.status);
     console.log(`${label} ${(r.verdict === 'FABRICATED' ? '🔴 FABRICATED' : r.verdict).padEnd(14)} ${note}  ${c.url}`);
   }
@@ -307,13 +365,22 @@ async function classify(url, controlCache = new Map()) {
             : argv.includes('--dated-only') ? 'dated'
             : HOST ? `host-${HOST.replace(/[^a-z0-9]+/gi, '-')}`
             : 'all';
-  const stampless = { generated_by: 'scripts/sweep-fabricated-articles.mjs', args: argv.join(' '), slice: tag };
+  // Record the timing knobs, not just the args: the defaults decide how hard an unreachable host was
+  // tried, so two artifacts run under different caps are not comparable and the file has to say which.
+  const stampless = { generated_by: 'scripts/sweep-fabricated-articles.mjs', args: argv.join(' '), slice: tag,
+                      timing: { fetch_timeout_ms: FETCH_TIMEOUT, curl_timeout_s: CURL_TIMEOUT,
+                                probe_timeout_ms: PROBE_TIMEOUT, zero_streak: ZERO_STREAK, pace_ms: PACE } };
   const out = path.join(OUTDIR, `fabricated-article-sweep-${tag}-${FROM}-${FROM + slice.length}.json`);
   mkdirSync(OUTDIR, { recursive: true });
   writeFileSync(out, `${JSON.stringify({ ...stampless, verdict_meanings: VERDICTS, tally, findings }, null, 2)}\n`);
 
   console.log('\n--- tally ---');
   for (const [k, n] of Object.entries(tally).sort((a, b) => b[1] - a[1])) console.log(`  ${k.padEnd(13)} ${n}`);
+  const degraded = findings.filter((f) => f.degraded).length;
+  if (degraded) {
+    console.log(`  ${'(of which degraded)'.padEnd(13)} ${degraded} NO_ANSWER reached under the host circuit breaker —`);
+    console.log('  weaker than a full-cost NO_ANSWER. These belong in the re-probe queue, not a coverage total.');
+  }
   const fab = findings.filter((f) => f.verdict === 'FABRICATED');
   if (fab.length) {
     console.log(`\n🔴 ${fab.length} FABRICATED, covering ${fab.reduce((a, f) => a + Number(f.rows_citing), 0)} row-citations:`);
@@ -326,5 +393,5 @@ async function classify(url, controlCache = new Map()) {
 })().catch(async (err) => {
   console.error('FAIL:', err.message);
   try { await pool.end(); } catch { /* already closed */ }
-  process.exit(2);
+  process.exitCode = 2;   // not process.exit() — see the exit-code note in --url mode above.
 });
