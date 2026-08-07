@@ -90,6 +90,20 @@ main().catch((e: unknown) => {
   const err = e as { message?: string; code?: string };
   console.error('APPLY FAILED:', err.message);
 
+  // 28P01 = invalid_password. DO NOT immediately conclude the password is wrong: Supabase's pooler
+  // (Supavisor) caches credentials, so for ~30-60s after `ALTER ROLE ... PASSWORD`, a CORRECT password
+  // is still rejected here. Observed 2026-08-07 -- a rotation was diagnosed as a mismatch and rotated
+  // a second time, when the only thing that actually fixed it was waiting. RETRY BEFORE RE-ROTATING.
+  if (err.code === '28P01') {
+    console.error('\nThis is an AUTH failure (SQLSTATE 28P01), which does NOT prove the password is wrong.');
+    console.error(
+      'Supabase\'s pooler caches credentials. If you just ran ALTER ROLE, wait 30-60s and run this\n' +
+      'again BEFORE changing anything. Only if it still fails should you suspect the password in\n' +
+      'backend/.env -- and note a bare `new URL()` check will happily report a well-formed line that\n' +
+      'still holds the wrong string, so compare the value itself, not its shape.',
+    );
+  }
+
   // 42501 = insufficient_privilege. Say which privilege and which role, because the raw Postgres
   // message names the schema and thereby sends you looking in the wrong place.
   if (err.code === '42501') {

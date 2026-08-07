@@ -10,6 +10,16 @@
 -- the running API must never hold DDL rights). To rotate:
 --   ALTER ROLE ev_migrator PASSWORD '<new>';   -- then update backend/.env
 --
+-- 🔴 AFTER ROTATING, WAIT 30-60s BEFORE BELIEVING AN AUTH FAILURE. Supabase's pooler (Supavisor)
+-- caches credentials, so a CORRECT new password is rejected with "password authentication failed"
+-- for up to a minute. Learned the hard way on 2026-08-07: that failure was diagnosed as a mismatch
+-- between .env and the database and the role was rotated a SECOND time, when the only thing that
+-- actually fixed it was the passage of time. Retry before re-rotating. _apply-file.ts now decodes
+-- SQLSTATE 28P01 with this warning so the next person does not repeat it.
+--
+-- Note the password is alphanumeric on purpose: it sits between ':' and '@' in a connection URL, so
+-- '@', ':', '/', '?', '#' and '%' in a password will corrupt the parse rather than fail cleanly.
+--
 -- ---------------------------------------------------------------------------------------------------
 -- WHY THIS ROLE EXISTS
 -- ---------------------------------------------------------------------------------------------------
