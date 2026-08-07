@@ -4,7 +4,8 @@
   "_admission_criteria": [
     "A host goes in `hosts` only if it never existed: no DNS, no Wayback captures across >=2 query forms and >=3 rounds, with a POSITIVE CONTROL verified in the same run (see project_invented_publications).",
     "A URL goes in `urls` only if the HOST IS REAL but the article never existed: the path returns 404 on the live site AND has zero Wayback captures AND sibling paths from the same period ARE archived. That control is what separates 'never published' from 'archive missed it'.",
-    "Never add a suspect. A lapsed campaign domain, a paywalled page, a bot-blocked 403 and a rate-limited archive probe are all NOT fabrication, and three of those look identical to it on a single attempt."
+    "Never add a suspect. A lapsed campaign domain, a paywalled page, a bot-blocked 403 and a rate-limited archive probe are all NOT fabrication, and three of those look identical to it on a single attempt.",
+    "A URL also qualifies when the CITED PATH SCHEME never existed on the site: the path 404s and has zero captures, while the REAL equivalent page for the SAME person/section IS archived. somervillema.gov/city-council/members/jon-link has 0 captures; somervillema.gov/content/councilor-jon-link is archived. Use this only with a same-subject control, never a generic one."
   ],
   "hosts": [
     {
@@ -239,6 +240,47 @@
     "https://www.sgvtribune.com/2022/11/16/alhambra-city-council-approves-housing-element-update/",
     "https://www.sgvtribune.com/2023/09/12/sgv-cities-ramp-up-homelessness-response/",
     "https://www.slc.gov/council/completed-projects/connect-slc-a-city-wide-transportation-plan/",
+    "https://www.somervillejournal.com/2019/09/wilson-healthcare-expansion/",
+    "https://www.somervillejournal.com/2020/06/mbah-racial-justice-statement/",
+    "https://www.somervillejournal.com/2020/06/somerville-racial-justice-resolution/",
+    "https://www.somervillejournal.com/2020/09/mbah-immigrant-rights-op-ed/",
+    "https://www.somervillejournal.com/2020/12/ewen-campen-climate-emergency-resolution/",
+    "https://www.somervillejournal.com/2021/04/ewen-campen-housing-resolution/",
+    "https://www.somervillejournal.com/2021/06/wilson-pride-civil-rights/",
+    "https://www.somervillejournal.com/2021/07/non-citizen-voting-somerville/",
+    "https://www.somervillejournal.com/2021/08/ewen-campen-environmental-justice/",
+    "https://www.somervillejournal.com/2021/11/09/wilson-climate-bill/",
+    "https://www.somervillejournal.com/2021/11/sait-racial-equity-election/",
+    "https://www.somervillejournal.com/2022/03/24/somerville-rent-stabilization-petition/",
+    "https://www.somervillejournal.com/2022/03/somerville-rent-stabilization-petition/",
+    "https://www.somervillejournal.com/2022/04/somerville-housing-equity-council/",
+    "https://www.somervillejournal.com/2022/07/ewen-campen-zoning-resolution/",
+    "https://www.somervillejournal.com/2022/07/somerville-ward6-environmental-updates/",
+    "https://www.somervillejournal.com/2022/09/mbah-housing-equity/",
+    "https://www.somervillejournal.com/2022/09/somerville-housing-debate-council/",
+    "https://www.somervillejournal.com/2022/10/somerville-brickbottom-development/",
+    "https://www.somervillejournal.com/2023/04/somerville-east-environment-ward1/",
+    "https://www.somervillejournal.com/2023/05/somerville-housing-council-president/",
+    "https://www.somervillejournal.com/2023/05/somerville-ward1-housing-development/",
+    "https://www.somervillejournal.com/2023/06/somerville-climate-forward-update/",
+    "https://www.somervillejournal.com/2023/11/link-council-election/",
+    "https://www.somervillejournal.com/2023/11/somerville-at-large-council-results/",
+    "https://www.somervillejournal.com/2024/04/link-zoning-transit/",
+    "https://www.somervillejournal.com/2024/04/somerville-zoning-debate/",
+    "https://www.somervillejournal.com/2024/05/somerville-rent-stabilization-debate/",
+    "https://www.somervillejournal.com/2024/07/somerville-climate-forward-council/",
+    "https://www.somervillejournal.com/2025/01/somerville-anti-deportation-response/",
+    "https://www.somervillejournal.com/2025/11/somerville-ward7-council-election/",
+    "https://www.somervillema.gov/city-council/members/ben-ewen-campen",
+    "https://www.somervillema.gov/city-council/members/ben-wheeler",
+    "https://www.somervillema.gov/city-council/members/emily-hardt",
+    "https://www.somervillema.gov/city-council/members/jefferson-scott",
+    "https://www.somervillema.gov/city-council/members/jon-link",
+    "https://www.somervillema.gov/city-council/members/kristen-strezo",
+    "https://www.somervillema.gov/city-council/members/lance-davis",
+    "https://www.somervillema.gov/city-council/members/matthew-mclaughlin",
+    "https://www.somervillema.gov/city-council/members/naima-sait",
+    "https://www.somervillema.gov/city-council/members/wilfred-mbah",
     "https://www.somervillema.gov/departments/economic-development",
     "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration",
     "https://www.somervillema.gov/departments/programs/somerville-by-design",
@@ -248,6 +290,8 @@
   "_deliberately_absent": {
     "willametteweek.com": "The HOST is not listed. It is Willamette Week's genuine former domain (archived from 1998, 301-redirecting to wweek.com through 2020), so a future citation to an ARCHIVED capture of a REAL willametteweek.com page would be legitimate. Only the 5 fabricated article paths are blocked.",
     "lowellsun.com": "Same reasoning — The Lowell Sun is a real, live paper with a real archive. Blocking the host would block legitimate future citations. Only the 15 fabricated paths are blocked.",
-    "dead_campaign_domains": "dutra4whittier.com, chaselaporte.com, mccartyformayor.com and bilalmahmood.com are all REAL sites whose domains lapsed. Those are re-point targets (migrations 1557, 1559), not fabrications."
+    "dead_campaign_domains": "dutra4whittier.com, chaselaporte.com, mccartyformayor.com and bilalmahmood.com are all REAL sites whose domains lapsed. Those are re-point targets (migrations 1557, 1559), not fabrications.",
+    "somervillejournal.com": "The HOST is not listed. The Somerville Journal was a real Wicked Local paper and the domain holds genuine captures back to 2001 under its true numeric scheme (/20418049.htm), so a future citation to an ARCHIVED capture of a real page would be legitimate. Only the 31 fabricated date-slug paths are blocked. NOTE: from 2021 the domain became a PDF spam farm, so nothing dated after ~2020 on this host can be genuine.",
+    "somervillema.gov": "The HOST is not listed and must not be — it is the live City of Somerville site. Blocked are the 5 fabricated department paths (migration 1564) and the 10 invented /city-council/members/<name> paths (1565), whose real equivalents are /content/councilor-<name>."
   }
 }

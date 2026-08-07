@@ -1,6 +1,6 @@
 -- 1565_retire_somervillejournal_fabricated_citations.sql
 --
--- Retire 44 Somerville stance rows citing somervillejournal.com. ⚠ NOT YET OPERATOR-APPROVED.
+-- APPLIED 2026-08-06, operator-approved. Retire 44 Somerville stance rows citing somervillejournal.com.
 --
 --   Rollback: data/stance-retirement/2026-08-06-migration-1565-rollback.json — all 44 rows verbatim.
 --   Evidence: sj-workset.json · sj-pages.json · sj-classification.json
