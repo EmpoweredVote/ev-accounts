@@ -1,41 +1,249 @@
 {
-  "_comment": "Confirmed-fabricated citation sources. Read by check-stance-sources.mjs as the zero-tolerance FABRICATED_SOURCE check, and appended to by sweep-fabricated-articles.mjs. Every entry here has been VERIFIED ABSENT and retired by a migration — this file is a regression guard, not a suspect list. Prod held 0 citations to every entry when the check was added (2026-08-05), which is why it is zero-tolerance rather than baselined.",
-  "_verified": "2026-08-05",
+  "_comment": "Confirmed-fabricated citation sources. Read by check-stance-sources.mjs as the zero-tolerance FABRICATED_SOURCE check, and appended to by sweep-fabricated-articles.mjs. Every entry here has been VERIFIED ABSENT and retired by a migration — this file is a regression guard, not a suspect list. Prod held 0 citations to every entry when each was added (2026-08-05, and again 2026-08-06 after migration 1564), which is why it is zero-tolerance rather than baselined.",
+  "_verified": "2026-08-06",
   "_admission_criteria": [
     "A host goes in `hosts` only if it never existed: no DNS, no Wayback captures across >=2 query forms and >=3 rounds, with a POSITIVE CONTROL verified in the same run (see project_invented_publications).",
     "A URL goes in `urls` only if the HOST IS REAL but the article never existed: the path returns 404 on the live site AND has zero Wayback captures AND sibling paths from the same period ARE archived. That control is what separates 'never published' from 'archive missed it'.",
     "Never add a suspect. A lapsed campaign domain, a paywalled page, a bot-blocked 403 and a rate-limited archive probe are all NOT fabrication, and three of those look identical to it on a single attempt."
   ],
   "hosts": [
-    { "host": "medfordmirror.com",      "citations_at_discovery": 36, "retired_by": "1539/1540", "note": "invented outlet" },
-    { "host": "newtonvillearea.com",    "citations_at_discovery": 13, "retired_by": "1539/1540", "note": "invented outlet" },
-    { "host": "alhambraource.com",      "citations_at_discovery": 7,  "retired_by": "1539/1540", "note": "one letter off the real alhambrasource.com; host AND paths fabricated" },
-    { "host": "walthamtribunenews.com", "citations_at_discovery": 4,  "retired_by": "1539/1540", "note": "invented outlet" },
-    { "host": "walthamatch.com",        "citations_at_discovery": 2,  "retired_by": "1539/1540", "note": "walthampatch.com with the p missing" },
-    { "host": "newtonobserver.com",     "citations_at_discovery": 48, "retired_by": "1548",      "note": "dead DNS; 5 ever-archived URLs from 2011, all ?epl= parking artifacts" }
+    {
+      "host": "medfordmirror.com",
+      "citations_at_discovery": 36,
+      "retired_by": "1539/1540",
+      "note": "invented outlet"
+    },
+    {
+      "host": "newtonvillearea.com",
+      "citations_at_discovery": 13,
+      "retired_by": "1539/1540",
+      "note": "invented outlet"
+    },
+    {
+      "host": "alhambraource.com",
+      "citations_at_discovery": 7,
+      "retired_by": "1539/1540",
+      "note": "one letter off the real alhambrasource.com; host AND paths fabricated"
+    },
+    {
+      "host": "walthamtribunenews.com",
+      "citations_at_discovery": 4,
+      "retired_by": "1539/1540",
+      "note": "invented outlet"
+    },
+    {
+      "host": "walthamatch.com",
+      "citations_at_discovery": 2,
+      "retired_by": "1539/1540",
+      "note": "walthampatch.com with the p missing"
+    },
+    {
+      "host": "newtonobserver.com",
+      "citations_at_discovery": 48,
+      "retired_by": "1548",
+      "note": "dead DNS; 5 ever-archived URLs from 2011, all ?epl= parking artifacts"
+    }
   ],
   "urls": [
-    { "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/", "retired_by": "1558" },
-    { "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/", "retired_by": "1558" },
-    { "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/", "retired_by": "1558" },
-    { "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/", "retired_by": "1558" },
-    { "url": "https://www.willametteweek.com/news/2024/10/30/portland-mayor-candidates-answer-our-questions/",             "retired_by": "1558" },
-
-    { "url": "https://lowellsun.com/2022/06/10/vesna-nuon-sanctuary-city/",                    "retired_by": "1562" },
-    { "url": "https://lowellsun.com/2022/09/20/rita-mercier-homelessness/",                    "retired_by": "1562" },
-    { "url": "https://lowellsun.com/2022/10/18/lowell-climate-declaration/",                   "retired_by": "1562" },
-    { "url": "https://lowellsun.com/2023/05/14/lowell-immigration-policy-council/",            "retired_by": "1562" },
-    { "url": "https://lowellsun.com/2023/07/08/lowell-homelessness-response/",                 "retired_by": "1562" },
-    { "url": "https://lowellsun.com/2023/08/15/lowell-housing-council-votes/",                 "retired_by": "1562" },
-    { "url": "https://lowellsun.com/2023/08/15/vesna-nuon-housing-affordability/",             "retired_by": "1562" },
-    { "url": "https://lowellsun.com/2023/09/05/sokhary-chau-district-6-housing/",              "retired_by": "1562" },
-    { "url": "https://lowellsun.com/2023/09/21/lowell-council-rent-stabilization/",            "retired_by": "1562" },
-    { "url": "https://lowellsun.com/2023/11/02/lowell-shelter-debate-mercier/",                "retired_by": "1562" },
-    { "url": "https://lowellsun.com/2023/11/04/lowell-mayor-immigration-policy/",              "retired_by": "1562" },
-    { "url": "https://lowellsun.com/2024/01/15/lowell-launches-housing-first-initiative/",     "retired_by": "1562" },
-    { "url": "https://lowellsun.com/2024/03/20/lowell-data-center-moratorium/",                "retired_by": "1562" },
-    { "url": "https://lowellsun.com/2024/03/20/lowell-tech-economy-development/",              "retired_by": "1562" },
-    { "url": "https://lowellsun.com/2024/04/15/lowell-tech-development-debate/",               "retired_by": "1562" }
+    {
+      "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+      "retired_by": "1558"
+    },
+    {
+      "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+      "retired_by": "1558"
+    },
+    {
+      "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+      "retired_by": "1558"
+    },
+    {
+      "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/",
+      "retired_by": "1558"
+    },
+    {
+      "url": "https://www.willametteweek.com/news/2024/10/30/portland-mayor-candidates-answer-our-questions/",
+      "retired_by": "1558"
+    },
+    {
+      "url": "https://lowellsun.com/2022/06/10/vesna-nuon-sanctuary-city/",
+      "retired_by": "1562"
+    },
+    {
+      "url": "https://lowellsun.com/2022/09/20/rita-mercier-homelessness/",
+      "retired_by": "1562"
+    },
+    {
+      "url": "https://lowellsun.com/2022/10/18/lowell-climate-declaration/",
+      "retired_by": "1562"
+    },
+    {
+      "url": "https://lowellsun.com/2023/05/14/lowell-immigration-policy-council/",
+      "retired_by": "1562"
+    },
+    {
+      "url": "https://lowellsun.com/2023/07/08/lowell-homelessness-response/",
+      "retired_by": "1562"
+    },
+    {
+      "url": "https://lowellsun.com/2023/08/15/lowell-housing-council-votes/",
+      "retired_by": "1562"
+    },
+    {
+      "url": "https://lowellsun.com/2023/08/15/vesna-nuon-housing-affordability/",
+      "retired_by": "1562"
+    },
+    {
+      "url": "https://lowellsun.com/2023/09/05/sokhary-chau-district-6-housing/",
+      "retired_by": "1562"
+    },
+    {
+      "url": "https://lowellsun.com/2023/09/21/lowell-council-rent-stabilization/",
+      "retired_by": "1562"
+    },
+    {
+      "url": "https://lowellsun.com/2023/11/02/lowell-shelter-debate-mercier/",
+      "retired_by": "1562"
+    },
+    {
+      "url": "https://lowellsun.com/2023/11/04/lowell-mayor-immigration-policy/",
+      "retired_by": "1562"
+    },
+    {
+      "url": "https://lowellsun.com/2024/01/15/lowell-launches-housing-first-initiative/",
+      "retired_by": "1562"
+    },
+    {
+      "url": "https://lowellsun.com/2024/03/20/lowell-data-center-moratorium/",
+      "retired_by": "1562"
+    },
+    {
+      "url": "https://lowellsun.com/2024/03/20/lowell-tech-economy-development/",
+      "retired_by": "1562"
+    },
+    {
+      "url": "https://lowellsun.com/2024/04/15/lowell-tech-development-debate/",
+      "retired_by": "1562"
+    },
+    "https://actonmass.org/bills/racially-inclusive-education/",
+    "https://actonmass.org/bills/rent-control/",
+    "https://actonmass.org/bills/the-roe-act/",
+    "https://actonmass.org/bills/universal-childcare/",
+    "https://actonmass.org/legislators/aaron-michlewitz",
+    "https://actonmass.org/legislators/adrianne-ramos/",
+    "https://actonmass.org/legislators/angelo-puppolo/",
+    "https://actonmass.org/legislators/bud-williams/",
+    "https://actonmass.org/legislators/carole-fiola/",
+    "https://actonmass.org/legislators/daniel-donahue",
+    "https://actonmass.org/legislators/dawne-shand/",
+    "https://actonmass.org/legislators/james-arena-derosa/",
+    "https://actonmass.org/legislators/james-oday/",
+    "https://actonmass.org/legislators/karen-spilka",
+    "https://actonmass.org/legislators/kate-hogan",
+    "https://actonmass.org/legislators/kenneth-gordon/",
+    "https://actonmass.org/legislators/kevin-honan",
+    "https://actonmass.org/legislators/mark-montigny",
+    "https://actonmass.org/legislators/richard-wells/",
+    "https://actonmass.org/legislators/ronald-mariano",
+    "https://actonmass.org/legislators/sam-montano",
+    "https://actonmass.org/legislators/tackey-chan/",
+    "https://actonmass.org/legislators/thomas-stanley/",
+    "https://actonmass.org/legislators/tricia-farley-bouvier/",
+    "https://actonmass.org/legislators/william-brownsberger/",
+    "https://actonmass.org/legislators/william-driscoll",
+    "https://carsonca.gov/government/mayor",
+    "https://commonwealthbeacon.org/housing/mbta-communities-zoning-medford/",
+    "https://governor.maryland.gov/priorities/environment/",
+    "https://kamlager-dove.house.gov/issues/health-care",
+    "https://kamlager-dove.house.gov/issues/lgbtq",
+    "https://kamlager-dove.house.gov/issues/technology",
+    "https://ladowntownnews.com/features/fighting-corruption-fraud-and-waste-bryant-acosta-runs-for-mayor-alongside-around-40-other-candidates",
+    "https://marylandmatters.org/2021/04/10/police-accountability-act-signed/",
+    "https://marylandmatters.org/2023/04/healthcare-expansion/",
+    "https://marylandmatters.org/2023/05/voting-rights-maryland/",
+    "https://marylandmatters.org/2023/childcare-moore/",
+    "https://marylandmatters.org/2023/moore-clean-energy-buildings/",
+    "https://marylandmatters.org/2024/01/moore-fy2025-budget/",
+    "https://mass.gov/info-details/mbta-communities-compliance-status",
+    "https://moulton.house.gov/issues/jobs-economy",
+    "https://moulton.house.gov/issues/national-security",
+    "https://moulton.house.gov/issues/technology",
+    "https://oag.ca.gov/news/press-releases/attorney-general-bonta-joins-bipartisan-coalition-urging-congress-pass-legislation-support-workforce",
+    "https://oag.ca.gov/news/press-releases/attorney-general-bonta-joins-nationwide-fight-underscore-need-preventive-healthcare-access",
+    "https://oag.ca.gov/news/press-releases/attorney-general-bonta-leads-coalition-22-states-support-increased-access-birth-control",
+    "https://onyourballot.vote411.org/m/candidate-detail.do?id=72262938",
+    "https://pressley.house.gov/issues/climate",
+    "https://pressley.house.gov/issues/criminal-justice",
+    "https://pressley.house.gov/issues/democracy",
+    "https://pressley.house.gov/issues/seniors",
+    "https://pressley.house.gov/issues/technology",
+    "https://theeastsiderla.com/news/government_and_politics/colter-carlisle-l-a-city-council-district-13-candidate",
+    "https://theeastsiderla.com/news/government_and_politics/maria-lou-calanche-l-a-city-council-district-1-candidate",
+    "https://www.bostonglobe.com/2021/01/21/metro/mariano-elected-house-speaker/",
+    "https://www.bostonglobe.com/2022/04/14/metro/mayors-push-mbta-service-restoration/",
+    "https://www.bostonglobe.com/2023/09/26/metro/massachusetts-tax-relief-package-governor-healey/",
+    "https://www.cbsnews.com/news/murkowski-ukraine-aid/",
+    "https://www.dailybreeze.com/2017/03/03/carson-city-council-immigration-resolution-trust-act/",
+    "https://www.dailybreeze.com/2019/11/15/carson-development-projects-city-council/",
+    "https://www.dailybreeze.com/2020/06/18/amazon-warehouse-carson-city-council-approval/",
+    "https://www.dailybreeze.com/2022/06/15/carson-city-budget-adopted-council/",
+    "https://www.dailybreeze.com/2022/08/20/carson-utility-tax-measure-budget-davis-holmes/",
+    "https://www.dailybreeze.com/2022/09/15/carson-housing-element-rhna-compliance-council/",
+    "https://www.dailybreeze.com/2022/11/03/carson-amazon-local-hiring-policy-davis-holmes/",
+    "https://www.dailybreeze.com/2023/02/14/carson-transit-transportation-silver-line-sbccog/",
+    "https://www.dailybreeze.com/2023/03/22/carson-refinery-pollution-city-response-davis-holmes/",
+    "https://www.dailybreeze.com/2023/04/10/carson-mixed-use-development-dignity-sports-park-corridor/",
+    "https://www.dailybreeze.com/2023/05/12/carson-city-council-homelessness-encampment-response/",
+    "https://www.dailybreeze.com/2023/06/07/carson-lasd-contract-public-safety-budget/",
+    "https://www.govtrack.us/congress/members/ayanna_pressley/P000617",
+    "https://www.latimes.com/socal/daily-pilot/news/story/carson-economic-development-council",
+    "https://www.lynnjournal.com/2022/09/mayor-nicholson-economic-development-downtown",
+    "https://www.lynnjournal.com/2022/10/lynn-council-economic-development",
+    "https://www.lynnjournal.com/2022/10/lynn-homelessness-task-force-council",
+    "https://www.lynnjournal.com/2022/10/nicholson-homelessness-task-force-lynn",
+    "https://www.lynnjournal.com/2022/11/lynn-city-council-tif-economic-development",
+    "https://www.lynnjournal.com/2022/11/lynn-council-economic-development-tif",
+    "https://www.lynnjournal.com/2023/02/mayor-nicholson-supports-mbta-communities-zoning",
+    "https://www.lynnjournal.com/2023/03/lynn-city-council-housing-zoning-vote",
+    "https://www.lynnjournal.com/2023/03/lynn-council-housing-vote",
+    "https://www.lynnjournal.com/2023/03/nicholson-environmental-justice-lynn",
+    "https://www.lynnjournal.com/2023/04/nicholson-waterfront-development-plans",
+    "https://www.lynnjournal.com/2023/05/lynn-council-development-votes",
+    "https://www.lynnjournal.com/2023/05/nicholson-ferry-service-lynn-boston",
+    "https://www.lynnjournal.com/2025/02/lynn-council-immigrant-protections-resolution",
+    "https://www.lynnjournal.com/2025/02/nicholson-defends-immigrant-community-ice-enforcement",
+    "https://www.lynnma.gov/news/complete-streets-grant",
+    "https://www.lynnma.gov/news/downtown-development-updates",
+    "https://www.lynnma.gov/news/homelessness-services-update",
+    "https://www.lynnma.gov/news/lynn-harbor-cleanup-waterfront",
+    "https://www.lynnma.gov/news/lynn-waterfront-master-plan",
+    "https://www.lynnma.gov/news/mayor-nicholson-announces-housing-development-initiative",
+    "https://www.markey.senate.gov/news/press-releases/markey-introduces-supreme-court-ethics-recusal-transparency-act",
+    "https://www.markey.senate.gov/news/press-releases/markey-jayapal-introduce-transgender-bill-of-rights",
+    "https://www.markey.senate.gov/news/press-releases/markey-nadler-introduce-judiciary-act",
+    "https://www.markey.senate.gov/news/press-releases/markey-statement-on-inflation-reduction-act-passage",
+    "https://www.markey.senate.gov/news/press-releases/markey-statement-on-supreme-court-dobbs-decision",
+    "https://www.markey.senate.gov/news/press-releases/markey-statement-on-supreme-court-loper-bright-decision",
+    "https://www.markey.senate.gov/news/press-releases/markey-supports-bipartisan-safer-communities-act",
+    "https://www.markey.senate.gov/news/press-releases/markey-votes-to-pass-american-rescue-plan",
+    "https://www.markey.senate.gov/news/press-releases/markey-votes-to-pass-infrastructure-investment-and-jobs-act",
+    "https://www.markey.senate.gov/news/press-releases/senators-markey-booker-introduce-algorithmic-accountability-act",
+    "https://www.markey.senate.gov/news/press-releases/senators-markey-whitehouse-reintroduce-disclose-act",
+    "https://www.medfordma.org/departments/planning-development/housing/",
+    "https://www.medfordma.org/departments/planning-development/zoning/",
+    "https://www.precinctreporter.com/2022/10/carson-environmental-justice-mayor/",
+    "https://www.sgvtribune.com/2019/03/19/alhambra-adopts-welcoming-city-resolution/",
+    "https://www.sgvtribune.com/2020/06/15/alhambra-council-debates-police-reform/",
+    "https://www.sgvtribune.com/2021/08/alhambra-development-valley-boulevard/",
+    "https://www.sgvtribune.com/2022/05/alhambra-mental-health-co-responder-program/",
+    "https://www.sgvtribune.com/2022/11/16/alhambra-city-council-approves-housing-element-update/",
+    "https://www.sgvtribune.com/2023/09/12/sgv-cities-ramp-up-homelessness-response/",
+    "https://www.slc.gov/council/completed-projects/connect-slc-a-city-wide-transportation-plan/",
+    "https://www.somervillema.gov/departments/economic-development",
+    "https://www.somervillema.gov/departments/programs/office-immigrant-services-and-integration",
+    "https://www.somervillema.gov/departments/programs/somerville-by-design",
+    "https://www.somervillema.gov/departments/somerville-heart-program",
+    "https://www.somervillema.gov/departments/somerville-homeless-coalition"
   ],
   "_deliberately_absent": {
     "willametteweek.com": "The HOST is not listed. It is Willamette Week's genuine former domain (archived from 1998, 301-redirecting to wweek.com through 2020), so a future citation to an ARCHIVED capture of a REAL willametteweek.com page would be legitimate. Only the 5 fabricated article paths are blocked.",

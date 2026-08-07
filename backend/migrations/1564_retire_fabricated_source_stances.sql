@@ -1,7 +1,7 @@
 -- 1564_retire_fabricated_source_stances.sql
 --
--- Retire 298 stance rows whose evidence does not exist, and strip the fabricated
--- citations from a further 90 rows that keep a real source. ⚠ NOT YET OPERATOR-APPROVED.
+-- APPLIED 2026-08-06, operator-approved. Retire 298 stance rows whose evidence does not exist, and strip the fabricated
+-- citations from a further 90 rows that keep a real source.
 --
 --   Findings:  data/stance-retirement/2026-08-06-fabricated-sweep-COMPLETE.md
 --   Rollback:  data/stance-retirement/2026-08-06-migration-1564-rollback.json — every retired row

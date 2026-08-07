@@ -1,6 +1,28 @@
 # Fabricated-source sweep — COMPLETE. Findings, corrections, and what the numbers do not say
 
-**Run 2026-08-06, resuming the 2026-08-05 run. Nothing has been retired. No migration has been written.**
+## ✅ MIGRATION 1564 APPLIED 2026-08-06 (operator-approved)
+
+**298 rows retired · 90 rows kept with the fabricated citation stripped · 119 URLs removed.**
+context 33,590 → 33,292 (−298) · answers 33,044 → 32,750 (−294) · **28 politicians emptied to zero**.
+Chips flipped in `essentials` for **Carson, Lynn, Alhambra, Waltham** — all four verified at 0 answers
+after the apply. Rollback: `2026-08-06-migration-1564-rollback.json` (all 298 rows verbatim).
+Gate green afterwards: `FABRICATED_SOURCE 0`, `EMPTY_SOURCES 0`.
+
+⚠ **`BALLOTPEDIA_ONLY` rose 159 → 164 and the baseline was raised to match.** All 5 are **Wes Moore**
+rows that cited a fabricated `marylandmatters.org` article alongside `ballotpedia.org/Wes_Moore`.
+🔑 **The count rose because a fabrication was REMOVED, not because sourcing decayed** — those rows were
+always Ballotpedia-only in substance and the invented citation was masking it. Keeping them is
+consistent with the standard applied everywhere else here (a Ballotpedia bio names the person and states
+positions). **They are a re-sourcing queue, not a clean result.**
+⚠ **62 of the 90 stripped rows are now sole-sourced to a single citation.** Not gate failures, but thin
+— the next quality pass.
+⚠ **404 context rows corpus-wide hold zero citations.** Pre-existing, **not caused by 1564** (verified:
+0 of the 90 stripped rows are empty), and none has an answer behind it — they belong to the ~546-row
+orphan class, still undiagnosed.
+
+---
+
+**Run 2026-08-06, resuming the 2026-08-05 run.**
 Supersedes the coverage section of `2026-08-05-fabricated-source-sweep-FINDINGS.md`; that document's
 findings table is still valid, it is the *totals* and the *stopped-early* framing that were wrong.
 
