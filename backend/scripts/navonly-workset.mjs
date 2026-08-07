@@ -11,9 +11,9 @@
  *   · wikipedia.org/wiki/Ed_Markey (15 rows) — depth 2, and genuinely states positions.
  * So the survivors have to be fetched and read.
  *
- * ⚠ SCOPE. Only citations that will actually be REMOVED count as losses. The 4 mechanical re-points and
- * the 1 withdrawn finding are excluded: those rows keep a working citation after repair, so they were
- * never retirement candidates and must not inflate the queue.
+ * ⚠ SCOPE. Only citations that will actually be REMOVED count as losses. The 1 withdrawn (UNPROVEN)
+ * finding is excluded; the 4 former "re-points" are NOT — see the note below, they could not be
+ * repaired and are ordinary fabricated citations.
  *
  * Writes navonly-workset.json: one entry per distinct surviving URL with the rows that depend on it.
  */
@@ -25,19 +25,30 @@ import { Pool } from 'pg';
 
 const DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'stance-retirement');
 
-// Excluded from "will be removed" — repaired, not deleted. See the scope note above.
-const REPOINT = new Set([
-  'https://kamlager-dove.house.gov/issues/health-care',
-  'https://moulton.house.gov/issues/national-security',
-  'https://moulton.house.gov/issues/jobs-economy',
-  'https://pressley.house.gov/issues/criminal-justice',
-]);
+/**
+ * 🔴 THE FOUR "MECHANICAL RE-POINTS" WERE WITHDRAWN — re-pointing them would MANUFACTURE SUPPORT.
+ *
+ * They looked mechanical: each cited URL is a corrupted slug of a real, live page
+ * (`/issues/health-care` → `/issues/health`, `/issues/criminal-justice` → `/criminal-injustice`, …).
+ * But a re-point is only valid if the TARGET carries the row's claim, and none of them do. Tested
+ * against the rows' own distinctive terms:
+ *   pressley.house.gov/criminal-injustice   bail 0 · "Justice Guarantee" 0 · Gideon 0 · prosecut 0
+ *   kamlager-dove.house.gov/issues/health   Medicare 0 · single-payer 0 · 3069 0
+ *   moulton …/building-economic-security    CHIPS 0 · manufactur 0
+ *   moulton …/strengthening-our-national-security   deepfake 0 · disinformation 0 · Russia 0
+ * The pages are readable and substantive (Pressley's is a list of press releases), so these are real
+ * zeroes, not extraction failures. This is the willametteweek rule: when a citation is unreachable, ask
+ * whether the source ever covered the CLAIM — not merely whether a page with a similar name exists.
+ *
+ * So all 4 are ordinary fabricated citations after all, and their rows are classified like every other.
+ * Only the lynch finding stays out, because it is UNPROVEN rather than repaired.
+ */
 const WITHDRAWN = new Set(['https://lynch.house.gov/issues/technology']);
 
 const fabricated = new Set();
 for (const f of readdirSync(DIR).filter((x) => /^fabricated-article-sweep-.*\.json$/.test(x))) {
   for (const r of JSON.parse(readFileSync(path.join(DIR, f), 'utf8')).findings ?? []) {
-    if (r.verdict === 'FABRICATED' && !REPOINT.has(r.url) && !WITHDRAWN.has(r.url)) fabricated.add(r.url);
+    if (r.verdict === 'FABRICATED' && !WITHDRAWN.has(r.url)) fabricated.add(r.url);
   }
 }
 

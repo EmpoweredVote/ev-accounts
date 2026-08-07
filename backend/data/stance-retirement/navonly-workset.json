@@ -1,7 +1,7 @@
 {
-  "fabricated_removed": 115,
-  "affected_rows": 383,
-  "distinct_survivor_urls": 105,
+  "fabricated_removed": 119,
+  "affected_rows": 388,
+  "distinct_survivor_urls": 108,
   "workset": [
     {
       "url": "https://carsonca.gov/government/city-council/city-council-agendas-and-minutes",
@@ -75,6 +75,13 @@
       "rows": 5,
       "names": [
         "Bryant Acosta"
+      ]
+    },
+    {
+      "url": "https://congress.gov/member/ayanna-pressley/P000617",
+      "rows": 5,
+      "names": [
+        "Ayanna Pressley"
       ]
     },
     {
@@ -189,10 +196,10 @@
       ]
     },
     {
-      "url": "https://congress.gov/member/ayanna-pressley/P000617",
+      "url": "https://congress.gov/member/seth-moulton/M001196",
       "rows": 3,
       "names": [
-        "Ayanna Pressley"
+        "Seth Moulton"
       ]
     },
     {
@@ -272,7 +279,7 @@
       ]
     },
     {
-      "url": "https://pressley.house.gov/issues/criminal-justice",
+      "url": "https://congress.gov/bill/117th-congress/house-bill/1442",
       "rows": 2,
       "names": [
         "Ayanna Pressley"
@@ -367,6 +374,27 @@
     },
     {
       "url": "https://www.congress.gov/member/sydney-kamlager-dove/K000402?q=%7B%22search%22%3A%22AI%22%7D",
+      "rows": 1,
+      "names": [
+        "Sydney Kamlager-Dove"
+      ]
+    },
+    {
+      "url": "https://congress.gov/bill/117th-congress/house-bill/3407",
+      "rows": 1,
+      "names": [
+        "Ayanna Pressley"
+      ]
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/3069",
+      "rows": 1,
+      "names": [
+        "Sydney Kamlager-Dove"
+      ]
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/3954",
       "rows": 1,
       "names": [
         "Sydney Kamlager-Dove"
@@ -506,17 +534,10 @@
       ]
     },
     {
-      "url": "https://congress.gov/member/seth-moulton/M001196",
+      "url": "https://armedservices.house.gov/press-releases",
       "rows": 1,
       "names": [
         "Seth Moulton"
-      ]
-    },
-    {
-      "url": "https://congress.gov/bill/117th-congress/house-bill/1442",
-      "rows": 1,
-      "names": [
-        "Ayanna Pressley"
       ]
     },
     {
@@ -1055,6 +1076,18 @@
       "reasoning": "Council Member Andrade-Stadler has consistently voted to approve the Alhambra Police Department's annual budget during her multi-term service on the council. She did not support police defunding propo"
     },
     {
+      "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+      "topic_id": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+      "name": "Ayanna Pressley",
+      "last_name": "Pressley",
+      "government": "United States Federal Government",
+      "survivors": [
+        "https://congress.gov/bill/117th-congress/house-bill/3407",
+        "https://congress.gov/member/ayanna-pressley/P000617"
+      ],
+      "reasoning": "Pressley has championed expanding access to legal counsel, supporting the Civil Gideon Act to provide right to counsel in housing and civil cases. She has backed legal aid funding increases and has sp"
+    },
+    {
       "politician_id": "94de05c6-d1bc-4cd5-ae9a-7c292ec8149e",
       "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
       "name": "Lula Davis-Holmes",
@@ -1416,6 +1449,18 @@
       "government": null,
       "survivors": [],
       "reasoning": "Researched 2026-05-13. Checked: VOTE411 (submitted Q1 bio only, left Q2 blank), LACBA JEEC (Exceptionally Well Qualified). Walgren is an incumbent appointed in 2012 with 17 years as a deputy DA (LACBA"
+    },
+    {
+      "politician_id": "a2c6adc7-7689-49b9-964f-8f2aeb243a83",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "name": "Sydney Kamlager-Dove",
+      "last_name": "Kamlager-Dove",
+      "government": "United States Federal Government",
+      "survivors": [
+        "https://www.congress.gov/bill/119th-congress/house-bill/3069",
+        "https://www.congress.gov/bill/119th-congress/house-bill/3954"
+      ],
+      "reasoning": "Kamlager-Dove was an original cosponsor of the Medicare for All Act (H.R. 3069, 119th Congress, introduced April 29, 2025), which would expand Medicare to cover all Americans in a single-payer system,"
     },
     {
       "politician_id": "a2c6adc7-7689-49b9-964f-8f2aeb243a83",
@@ -3249,6 +3294,29 @@
       "reasoning": "Moulton has not taken a highly specific public stance on data center siting but has expressed support for digital infrastructure investment as part of economic development and national security. His A"
     },
     {
+      "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "name": "Seth Moulton",
+      "last_name": "Moulton",
+      "government": "United States Federal Government",
+      "survivors": [
+        "https://congress.gov/member/seth-moulton/M001196"
+      ],
+      "reasoning": "Moulton supports managed economic growth with environmental standards, backing the CHIPS Act and infrastructure investments that bring manufacturing jobs. He has supported revitalization of industrial"
+    },
+    {
+      "politician_id": "77f162cd-6ca0-4073-84e1-1c8ab87eb1e0",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "name": "Seth Moulton",
+      "last_name": "Moulton",
+      "government": "United States Federal Government",
+      "survivors": [
+        "https://armedservices.house.gov/press-releases",
+        "https://congress.gov/member/seth-moulton/M001196"
+      ],
+      "reasoning": "Moulton has expressed concern about disinformation campaigns, particularly Russian election interference and AI-generated deepfakes. Through his Armed Services work he has highlighted foreign adversar"
+    },
+    {
       "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
       "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
       "name": "Ayanna Pressley",
@@ -3266,7 +3334,6 @@
       "last_name": "Pressley",
       "government": "United States Federal Government",
       "survivors": [
-        "https://pressley.house.gov/issues/criminal-justice",
         "https://congress.gov/bill/117th-congress/house-bill/1442"
       ],
       "reasoning": "Pressley has called for reducing incarceration as a systemic goal, introducing the People's Justice Guarantee calling for 50% reduction in the federal prison population. She has voted against funding "
@@ -3278,10 +3345,21 @@
       "last_name": "Pressley",
       "government": "United States Federal Government",
       "survivors": [
-        "https://pressley.house.gov/issues/criminal-justice",
         "https://congress.gov/bill/117th-congress/house-bill/1437"
       ],
       "reasoning": "Pressley has been a leading advocate for ending cash bail, supporting the No Money Bail Act of 2021. She has highlighted how the cash bail system disproportionately imprisons low-income people and peo"
+    },
+    {
+      "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+      "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+      "name": "Ayanna Pressley",
+      "last_name": "Pressley",
+      "government": "United States Federal Government",
+      "survivors": [
+        "https://congress.gov/bill/117th-congress/house-bill/1442",
+        "https://congress.gov/member/ayanna-pressley/P000617"
+      ],
+      "reasoning": "Pressley has consistently supported progressive prosecutorial approaches — declining to prosecute low-level offenses, diversion for drug possession, and focusing resources on violent crime. She has ba"
     },
     {
       "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",

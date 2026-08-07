@@ -44,6 +44,12 @@
       "rows": 5
     },
     {
+      "verdict": "UNVERIFIED",
+      "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
+      "url": "https://congress.gov/member/ayanna-pressley/P000617",
+      "rows": 5
+    },
+    {
       "verdict": "COVERAGE",
       "why": "1575w, names the politician 51×",
       "url": "https://malegislature.gov/Legislators/Profile/TFB1",
@@ -128,9 +134,9 @@
       "rows": 3
     },
     {
-      "verdict": "UNVERIFIED",
-      "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
-      "url": "https://congress.gov/member/ayanna-pressley/P000617",
+      "verdict": "COVERAGE",
+      "why": "21050w, names the politician 14×",
+      "url": "https://congress.gov/member/seth-moulton/M001196",
       "rows": 3
     },
     {
@@ -194,9 +200,9 @@
       "rows": 2
     },
     {
-      "verdict": "GONE",
-      "why": "HTTP 404",
-      "url": "https://pressley.house.gov/issues/criminal-justice",
+      "verdict": "UNVERIFIED",
+      "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
+      "url": "https://congress.gov/bill/117th-congress/house-bill/1442",
       "rows": 2
     },
     {
@@ -275,6 +281,24 @@
       "verdict": "UNVERIFIED",
       "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
       "url": "https://www.congress.gov/member/sydney-kamlager-dove/K000402?q=%7B%22search%22%3A%22AI%22%7D",
+      "rows": 1
+    },
+    {
+      "verdict": "UNVERIFIED",
+      "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
+      "url": "https://congress.gov/bill/117th-congress/house-bill/3407",
+      "rows": 1
+    },
+    {
+      "verdict": "UNVERIFIED",
+      "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/3069",
+      "rows": 1
+    },
+    {
+      "verdict": "NOT_COVERAGE",
+      "why": "substantive (289w) but never names the politician",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/3954",
       "rows": 1
     },
     {
@@ -392,15 +416,9 @@
       "rows": 1
     },
     {
-      "verdict": "COVERAGE",
-      "why": "21050w, names the politician 14×",
-      "url": "https://congress.gov/member/seth-moulton/M001196",
-      "rows": 1
-    },
-    {
-      "verdict": "UNVERIFIED",
-      "why": "HTTP 403 bot wall / throttle — a real server answered; absence NOT shown",
-      "url": "https://congress.gov/bill/117th-congress/house-bill/1442",
+      "verdict": "GONE",
+      "why": "HTTP 404",
+      "url": "https://armedservices.house.gov/press-releases",
       "rows": 1
     },
     {
@@ -635,8 +653,8 @@
   "split": {
     "SOLE_SOURCED": 141,
     "NAV_ONLY": 157,
-    "HAS_COSOURCE": 77,
-    "KEPT_UNVERIFIED": 8
+    "HAS_COSOURCE": 79,
+    "KEPT_UNVERIFIED": 11
   },
   "rows": {
     "SOLE_SOURCED": [
@@ -3085,6 +3103,23 @@
         ]
       },
       {
+        "politician": "Seth Moulton",
+        "government": "United States Federal Government",
+        "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+        "survivors": [
+          "https://congress.gov/member/seth-moulton/M001196"
+        ]
+      },
+      {
+        "politician": "Seth Moulton",
+        "government": "United States Federal Government",
+        "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+        "survivors": [
+          "https://armedservices.house.gov/press-releases",
+          "https://congress.gov/member/seth-moulton/M001196"
+        ]
+      },
+      {
         "politician": "Tricia Farley-Bouvier",
         "government": "Commonwealth of Massachusetts",
         "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
@@ -3394,6 +3429,24 @@
         ]
       },
       {
+        "politician": "Ayanna Pressley",
+        "government": "United States Federal Government",
+        "topic_id": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+        "survivors": [
+          "https://congress.gov/bill/117th-congress/house-bill/3407",
+          "https://congress.gov/member/ayanna-pressley/P000617"
+        ]
+      },
+      {
+        "politician": "Sydney Kamlager-Dove",
+        "government": "United States Federal Government",
+        "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+        "survivors": [
+          "https://www.congress.gov/bill/119th-congress/house-bill/3069",
+          "https://www.congress.gov/bill/119th-congress/house-bill/3954"
+        ]
+      },
+      {
         "politician": "Sydney Kamlager-Dove",
         "government": "United States Federal Government",
         "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
@@ -3424,7 +3477,6 @@
         "government": "United States Federal Government",
         "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
         "survivors": [
-          "https://pressley.house.gov/issues/criminal-justice",
           "https://congress.gov/bill/117th-congress/house-bill/1442"
         ]
       },
@@ -3433,8 +3485,16 @@
         "government": "United States Federal Government",
         "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
         "survivors": [
-          "https://pressley.house.gov/issues/criminal-justice",
           "https://congress.gov/bill/117th-congress/house-bill/1437"
+        ]
+      },
+      {
+        "politician": "Ayanna Pressley",
+        "government": "United States Federal Government",
+        "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+        "survivors": [
+          "https://congress.gov/bill/117th-congress/house-bill/1442",
+          "https://congress.gov/member/ayanna-pressley/P000617"
         ]
       },
       {
