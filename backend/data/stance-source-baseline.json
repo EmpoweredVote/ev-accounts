@@ -3,8 +3,8 @@
   "_updated": "2026-08-07",
   "counts": {
     "BALLOTPEDIA_ONLY": {
-      "ca": 18,
-      "-": 13,
+      "ca": 25,
+      "-": 6,
       "md": 13,
       "tx": 30,
       "va": 30,
@@ -24,13 +24,13 @@
       "ky": 6
     },
     "PRIMARY_SITE_NO_PATH": {
-      "-": 47,
+      "ca": 60,
       "va": 58,
       "md": 12,
-      "ca": 48,
       "tx": 20,
       "fl": 7,
       "ma": 11,
+      "-": 35,
       "nc": 1,
       "ut": 32,
       "wa": 37,
@@ -68,6 +68,14 @@
     },
     "BARE_AGGREGATOR_DOMAIN": {
       "ca": 1
+    },
+    "ORPHAN_CONTEXT": {
+      "fl": 6,
+      "ca": 39,
+      "tx": 7,
+      "la": 2,
+      "mn": 1,
+      "ky": 3
     }
   }
 }

@@ -44,6 +44,36 @@
  * candidate card changes as elections pass, so a visibility bucket would churn on the calendar and
  * report drift where nothing changed. State is stable.
  *
+ * 🔴 ORPHAN_CONTEXT NEEDED ITS OWN QUERY, AND THAT IS THE WHOLE POINT OF IT. Every check above reads
+ * `FROM politician_answers LEFT JOIN politician_context`, so a context row with NO answer is outside
+ * this gate's universe by construction -- not missed by a loose predicate, unreachable by any
+ * predicate. 542 such rows sat in prod undetected until 2026-08-07 while the gate ran green. The
+ * second branch of the UNION reverses the join. Diagnosis:
+ * `data/stance-retirement/2026-08-07-orphan-context-findings.md`.
+ *
+ * GENERALISE BEFORE ADDING THE NEXT CHECK: when a class seems invisible, ask whether the FROM clause
+ * can reach it at all before adding another CASE branch. The same shape hid the landing-page class
+ * (1558) and the scheme-less citations (1549).
+ *
+ * WHY IT IS NOT ZERO-TOLERANCE, AND WHY IT CARVES OUT DOCUMENTED BLANKS. An orphan is not per se a
+ * defect: a documented blank ("we looked, found nothing, here is what we checked") has no chair, so
+ * it correctly has no answer row. 404 orphans carry an empty `sources` array and are exactly the
+ * cohort ruled legitimate on 2026-08-07 -- those are excluded on SHAPE. Another 80 carry a citation
+ * to what was checked and are the same honest class, distinguishable only by their prose, so they
+ * are carved out by marker.
+ *
+ * ⚠ THAT MARKER IS A CARVE-OUT, NEVER A CONDEMNATION -- the same posture as the #Campaign_themes
+ * exemption above. Reading prose to EXEMPT a class fails safe: if it under-fires an honest blank gets
+ * flagged and a human reads it; if it over-fires a characterisation goes unreported, which is exactly
+ * the status quo it replaces. Never invert this into a predicate that retires rows.
+ *
+ * What is left is 58 rows on 25 politicians: reasoning that describes a position with no chair
+ * recorded. Two of them narrate a score that does not exist ("her leans-slow-growth score reflects
+ * ..."), which is the signature -- the topic was scored, the prose was stored, the answer was not.
+ * None of the 542 is voter-visible today (verified through all three serving paths), so the harm is
+ * LATENT: write an answer for one of these pairs and Citations.jsx immediately renders prose nobody
+ * re-read under "Why this position?". Baselined so it cannot grow while the 58 are worked down.
+ *
  * TWO CHECKS ARE ZERO-TOLERANCE because prod is genuinely at zero and there is no honest reason to
  * regress: an answer with no context row at all, and a context row with an empty `sources` array.
  * Those were 963 of migration 1494's 969 deletions. Verified 0/0 against prod 2026-07-31 before
@@ -214,6 +244,28 @@ const QUERY = `
     LEFT JOIN inform.politician_context pc
       ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id
     WHERE pa.value <> 0
+
+    UNION ALL
+
+    -- THE JOIN IS REVERSED HERE ON PURPOSE. See ORPHAN_CONTEXT in the header: driven from answers,
+    -- these rows cannot appear at all. Every column must line up with the branch above.
+    SELECT
+      pc.politician_id,
+      pc.topic_id,
+      'ORPHAN_CONTEXT' AS chk,
+      pc.sources
+    FROM inform.politician_context pc
+    LEFT JOIN inform.politician_answers pa
+      ON pa.politician_id = pc.politician_id AND pa.topic_id = pc.topic_id
+    WHERE pa.politician_id IS NULL
+      -- Empty sources = a documented blank, which is SUPPOSED to have no answer. Excluded on shape,
+      -- so this branch never re-reports the 404 rows closed on 2026-08-07.
+      AND coalesce(cardinality(pc.sources), 0) > 0
+      -- ...and the same class again, but diligent enough to cite what it checked. Carve-out only:
+      -- a miss here costs a human read, never a deletion. (Template literal -- double every
+      -- backslash; [0-9] is used instead of \\d to keep the escaping shallow.)
+      AND pc.reasoning !~* '^researched\\s+[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      AND pc.reasoning !~* 'no (scorable |substantive |specific |detailed )?public record|no public statements? found|no record found|no scorable|unable to place|insufficient public record|no substantive [a-z ]{0,40}(available|found)'
   )
   SELECT
     v.chk,
@@ -347,6 +399,12 @@ const QUERY = `
   // it, which is how ~596 true rows nearly got retired as a class on 2026-07-31.
   const FIX = {
     ANSWER_WITHOUT_CONTEXT: 'Write the reasoning and sources row, or retire the answer.',
+    ORPHAN_CONTEXT:         'Reasoning describing a position with no chair recorded. It is NOT published ' +
+                            'today, so there is no emergency -- but do NOT assign a chair to this pair ' +
+                            'without re-reading the existing reasoning first, because saving an answer ' +
+                            'publishes this prose verbatim under "Why this position?". Re-read and rewrite ' +
+                            'it, or delete the context row. If the row honestly records that no stance was ' +
+                            'found, say so in the reasoning and it stops being counted.',
     EMPTY_SOURCES:          'Cite what the chair actually rests on, or retire the answer.',
     BALLOTPEDIA_ONLY:       'Cite the roll call, scorecard, filing or report the bio draws on. If the ' +
                             'claim rests on the candidate\'s own Candidate Connection answers, deep-link ' +
