@@ -6,33 +6,29 @@ import path from 'path';
 /**
  * Apply a .sql migration file by hand. There is no migration runner in this repo.
  *
- * ── WHICH ROLE THIS CONNECTS AS, AND WHY IT MATTERS ────────────────────────────────────────────
- * Prefers MIGRATION_DATABASE_URL (role `ev_migrator`) and falls back to DATABASE_URL (role
- * `ev_api`). They are not interchangeable:
+ * ── ▶ APPLY MIGRATIONS AS `postgres`, OVER THE SUPABASE MCP ────────────────────────────────────
+ * That is the working path, and the one that has always actually been used. This script is a
+ * convenience for when you have a `postgres`-grade connection string in MIGRATION_DATABASE_URL; it is
+ * NOT usable with the API's credentials.
  *
- *   ev_api      the LIVE API's role. Has USAGE on `essentials` and full SELECT/INSERT/UPDATE/DELETE,
- *               but NO CREATE on the schema. Any migration containing CREATE TABLE -- which is every
- *               migration that archives rows before deleting them -- fails against it with the
- *               genuinely misleading "permission denied for schema essentials". The schema is not
- *               the problem; CREATE is. It also holds BYPASSRLS, so it is not a role to widen.
- *   ev_migrator added 2026-08-07 for exactly this job. Same DML, plus CREATE on `essentials` and
- *               `inform`. No SUPERUSER, no CREATEDB, no CREATEROLE, no BYPASSRLS, and no membership
- *               in `postgres`.
+ * TWO REASONS A LESSER ROLE CANNOT DO THIS JOB — both measured on 2026-08-07, not assumed:
  *
- * 🔴 ev_migrator TURNED OUT NOT TO BE USABLE FOR DATA MIGRATIONS AT ALL. Two ceilings, found by
- * running real work through it on 2026-08-07:
- *
- *   1. RLS. Every `essentials` table has RLS ENABLED with no permissive policy, so a role without
- *      BYPASSRLS sees ZERO rows. `ev_api` works only because it HOLDS BypassRLS. Under ev_migrator,
- *      SELECT returns nothing and UPDATE/DELETE match nothing WHILE STILL REPORTING SUCCESS. That is
- *      why the blind-write guard below exists. `postgres` cannot grant BYPASSRLS (not a superuser on
- *      Supabase), so this is not fixable by granting.
+ *   1. RLS. Every table in `essentials` has RLS ENABLED with no permissive policy, so a role WITHOUT
+ *      BYPASSRLS sees ZERO rows. `ev_api` works only because it HOLDS BYPASSRLS. Without it, SELECT
+ *      returns nothing and UPDATE/DELETE match nothing WHILE STILL REPORTING SUCCESS — hence the
+ *      blind-write guard below, which is the load-bearing safety feature of this file.
  *   2. Ownership. CREATE INDEX and ALTER TABLE on an existing table need table OWNERSHIP, which no
  *      schema-level grant confers, and `postgres` owns everything in `essentials`.
  *
- * So in practice migrations run as `postgres` (in this repo, over the supabase MCP), which is what had
- * always actually been happening. ev_migrator can create NEW tables in `essentials` and nothing more.
- * Do not trust an "Applied OK" from a role that cannot see the rows -- the guard below now blocks it.
+ * Neither is fixable by granting: BYPASSRLS requires SUPERUSER and `postgres` is not one on Supabase.
+ * A dedicated `ev_migrator` role was tried for exactly this (migration 1593) and dropped a day later
+ * (migration 1595) once RLS made it inert. Don't rebuild it without reading both.
+ *
+ * DO NOT WIDEN `ev_api` to make this script work. It serves accounts-api.empowered.vote and already
+ * holds BYPASSRLS; granting it CREATE would hand the internet-facing web role DDL on the election
+ * corpus. Its lack of CREATE is why a CREATE TABLE migration fails against DATABASE_URL with the
+ * genuinely misleading "permission denied for schema essentials" — the schema is fine, CREATE is what
+ * is missing.
  *
  * Historical note: the "applied by hand via scripts/_apply-file.ts" line in migration headers before
  * 1593 was boilerplate and was NOT true of the DDL ones. All four archive tables (the
@@ -40,8 +36,18 @@ import path from 'path';
  * were applied over a `postgres` connection.
  */
 
-const MIGRATION_URL = process.env['MIGRATION_DATABASE_URL'];
-const FALLBACK_URL = process.env['DATABASE_URL'];
+/**
+ * Treat blank as unset. `??` alone does NOT: `MIGRATION_DATABASE_URL=` in .env yields '', which is not
+ * nullish, so it wins the fallback and the script then reports "neither is set" while DATABASE_URL sits
+ * right there. Blanking a line is the obvious way to disable it, so it has to work.
+ */
+const env = (k: string): string | undefined => {
+  const v = process.env[k];
+  return v && v.trim() !== '' ? v : undefined;
+};
+
+const MIGRATION_URL = env('MIGRATION_DATABASE_URL');
+const FALLBACK_URL = env('DATABASE_URL');
 const connectionString = MIGRATION_URL ?? FALLBACK_URL;
 
 const file = process.argv[2];
@@ -73,8 +79,9 @@ async function main() {
   console.log(`  via ${which} -> ${describe(connectionString!)}`);
   if (!MIGRATION_URL) {
     console.warn(
-      '  ⚠ MIGRATION_DATABASE_URL is not set, falling back to the API role (ev_api). DML will\n' +
-      '    work; anything with CREATE TABLE will fail. See the header of this file.',
+      '  ⚠ MIGRATION_DATABASE_URL is not set, falling back to the API role (ev_api). It has no CREATE\n' +
+      '    on `essentials`, so any CREATE TABLE will fail. Prefer applying as `postgres` over the\n' +
+      '    supabase MCP -- see the header of this file.',
     );
   }
 
@@ -117,6 +124,19 @@ main().catch((e: unknown) => {
   const err = e as { message?: string; code?: string };
   console.error('APPLY FAILED:', err.message);
 
+  // Supavisor reports a role that does not exist as "(EAUTHQUERY) user not found in the database",
+  // with NO SQLSTATE, so it matches none of the branches below. A dropped role yields this OR 28P01
+  // depending on whether the pooler's credential cache has caught up, so both paths must name it.
+  if (/EAUTHQUERY|user not found in the database/i.test(err.message ?? '')) {
+    console.error(
+      '\nThe ROLE DOES NOT EXIST (the pooler says "user not found"), so this is not a password problem.\n' +
+      '`ev_migrator` was dropped in migration 1595 — if backend/.env still sets MIGRATION_DATABASE_URL\n' +
+      'to it, DELETE that line. With it gone the script falls back to DATABASE_URL (ev_api), which can\n' +
+      'apply DML migrations but not CREATE TABLE; for those use `postgres` over the supabase MCP.',
+    );
+    process.exit(1);
+  }
+
   // 28P01 = invalid_password. DO NOT immediately conclude the password is wrong: Supabase's pooler
   // (Supavisor) caches credentials, so for ~30-60s after `ALTER ROLE ... PASSWORD`, a CORRECT password
   // is still rejected here. Observed 2026-08-07 -- a rotation was diagnosed as a mismatch and rotated
@@ -124,10 +144,13 @@ main().catch((e: unknown) => {
   if (err.code === '28P01') {
     console.error('\nThis is an AUTH failure (SQLSTATE 28P01), which does NOT prove the password is wrong.');
     console.error(
-      'Supabase\'s pooler caches credentials. If you just ran ALTER ROLE, wait 30-60s and run this\n' +
-      'again BEFORE changing anything. Only if it still fails should you suspect the password in\n' +
-      'backend/.env -- and note a bare `new URL()` check will happily report a well-formed line that\n' +
-      'still holds the wrong string, so compare the value itself, not its shape.',
+      'Three causes, in the order worth checking:\n' +
+      '  1. THE ROLE NO LONGER EXISTS. A dropped role gives this identical error. `ev_migrator` was\n' +
+      '     dropped in migration 1595 -- if backend/.env still names it, delete that line.\n' +
+      '  2. POOLER CACHE. Supabase\'s pooler serves the OLD credential for ~30-60s after ALTER ROLE, so\n' +
+      '     a CORRECT new password is rejected. Wait and retry BEFORE re-rotating.\n' +
+      '  3. Genuinely wrong password. Note a bare `new URL()` check will happily report a well-formed\n' +
+      '     line that still holds the wrong string -- compare the value, not its shape.',
     );
   }
 
@@ -135,18 +158,16 @@ main().catch((e: unknown) => {
   // message names the schema and thereby sends you looking in the wrong place.
   if (err.code === '42501') {
     console.error('\nThis is a PRIVILEGE error (SQLSTATE 42501), not a missing schema.');
-    if (!MIGRATION_URL) {
-      console.error(
-        'You are on DATABASE_URL (ev_api), which has no CREATE on `essentials`.\n' +
-        'Set MIGRATION_DATABASE_URL in backend/.env to the ev_migrator connection string and retry.',
-      );
-    } else {
-      console.error(
-        'You are already on MIGRATION_DATABASE_URL (ev_migrator). If this migration does\n' +
-        'CREATE INDEX or ALTER TABLE on an existing table, that needs table OWNERSHIP and no grant\n' +
-        'will fix it -- apply this one as `postgres`. See the header of this file.',
-      );
-    }
+    console.error(
+      'Three different causes wear this same code, and the raw message misdirects on the first:\n' +
+      '  "permission denied for schema essentials"        -> the role lacks CREATE (the schema is fine)\n' +
+      '  "must be owner of table X"                       -> CREATE INDEX / ALTER TABLE need OWNERSHIP,\n' +
+      '                                                      which no grant confers\n' +
+      '  "new row violates row-level security policy"     -> the role lacks BYPASSRLS\n' +
+      'All three are answered the same way: apply this migration as `postgres` over the supabase MCP.\n' +
+      'BYPASSRLS cannot be granted (it needs SUPERUSER, and `postgres` is not one), and do NOT widen\n' +
+      'ev_api to get around it. See the header of this file and migrations 1593/1595.',
+    );
   }
   process.exit(1);
 });
