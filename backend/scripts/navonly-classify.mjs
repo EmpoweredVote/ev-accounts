@@ -24,8 +24,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'stance-retirement');
-const pages = JSON.parse(readFileSync(path.join(DIR, 'navonly-pages.json'), 'utf8'));
-const ws = JSON.parse(readFileSync(path.join(DIR, 'navonly-workset.json'), 'utf8'));
+const argv = process.argv.slice(2);
+const PREFIX = (argv.indexOf('--prefix') !== -1 && argv[argv.indexOf('--prefix') + 1]) || 'navonly';
+const pages = JSON.parse(readFileSync(path.join(DIR, `${PREFIX}-pages.json`), 'utf8'));
+const ws = JSON.parse(readFileSync(path.join(DIR, `${PREFIX}-workset.json`), 'utf8'));
 
 /** A query string is not a source: its content is whatever the index returns today. */
 const isSearchUrl = (u) => /[?&](s|q|search|query)=/i.test(u) || /\/search\b/i.test(u);
@@ -128,10 +130,10 @@ for (const v of [...urlVerdict.values()].filter((x) => x.verdict === 'UNVERIFIED
   console.log(`  ${String(v.rows).padStart(3)}  ${v.url.slice(0, 76)}\n        ${v.why}`);
 }
 
-writeFileSync(path.join(DIR, 'navonly-classification.json'),
+writeFileSync(path.join(DIR, `${PREFIX}-classification.json`),
   `${JSON.stringify({ generated_by: 'scripts/navonly-classify.mjs',
                       url_verdicts: [...urlVerdict.values()],
                       split: Object.fromEntries(Object.entries(split).map(([k, v]) => [k, v.length])),
                       rows: Object.fromEntries(Object.entries(split).map(([k, v]) =>
                         [k, v.map((r) => ({ politician: r.name, government: r.government, topic_id: r.topic_id, survivors: r.survivors }))])) }, null, 2)}\n`);
-console.log('\nwrote data/stance-retirement/navonly-classification.json');
+console.log(`\nwrote data/stance-retirement/${PREFIX}-classification.json`);

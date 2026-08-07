@@ -1,0 +1,616 @@
+{
+  "fabricated_removed": 31,
+  "affected_rows": 44,
+  "distinct_survivor_urls": 18,
+  "fabricated_urls": [
+    "https://www.somervillejournal.com/2019/09/wilson-healthcare-expansion/",
+    "https://www.somervillejournal.com/2020/06/mbah-racial-justice-statement/",
+    "https://www.somervillejournal.com/2020/06/somerville-racial-justice-resolution/",
+    "https://www.somervillejournal.com/2020/09/mbah-immigrant-rights-op-ed/",
+    "https://www.somervillejournal.com/2020/12/ewen-campen-climate-emergency-resolution/",
+    "https://www.somervillejournal.com/2021/04/ewen-campen-housing-resolution/",
+    "https://www.somervillejournal.com/2021/06/wilson-pride-civil-rights/",
+    "https://www.somervillejournal.com/2021/07/non-citizen-voting-somerville/",
+    "https://www.somervillejournal.com/2021/08/ewen-campen-environmental-justice/",
+    "https://www.somervillejournal.com/2021/11/09/wilson-climate-bill/",
+    "https://www.somervillejournal.com/2021/11/sait-racial-equity-election/",
+    "https://www.somervillejournal.com/2022/03/24/somerville-rent-stabilization-petition/",
+    "https://www.somervillejournal.com/2022/03/somerville-rent-stabilization-petition/",
+    "https://www.somervillejournal.com/2022/04/somerville-housing-equity-council/",
+    "https://www.somervillejournal.com/2022/07/ewen-campen-zoning-resolution/",
+    "https://www.somervillejournal.com/2022/07/somerville-ward6-environmental-updates/",
+    "https://www.somervillejournal.com/2022/09/mbah-housing-equity/",
+    "https://www.somervillejournal.com/2022/09/somerville-housing-debate-council/",
+    "https://www.somervillejournal.com/2022/10/somerville-brickbottom-development/",
+    "https://www.somervillejournal.com/2023/04/somerville-east-environment-ward1/",
+    "https://www.somervillejournal.com/2023/05/somerville-housing-council-president/",
+    "https://www.somervillejournal.com/2023/05/somerville-ward1-housing-development/",
+    "https://www.somervillejournal.com/2023/06/somerville-climate-forward-update/",
+    "https://www.somervillejournal.com/2023/11/link-council-election/",
+    "https://www.somervillejournal.com/2023/11/somerville-at-large-council-results/",
+    "https://www.somervillejournal.com/2024/04/link-zoning-transit/",
+    "https://www.somervillejournal.com/2024/04/somerville-zoning-debate/",
+    "https://www.somervillejournal.com/2024/05/somerville-rent-stabilization-debate/",
+    "https://www.somervillejournal.com/2024/07/somerville-climate-forward-council/",
+    "https://www.somervillejournal.com/2025/01/somerville-anti-deportation-response/",
+    "https://www.somervillejournal.com/2025/11/somerville-ward7-council-election/"
+  ],
+  "workset": [
+    {
+      "url": "https://www.somervillema.gov/somervision",
+      "rows": 10,
+      "names": [
+        "Jon Link",
+        "Wilfred N. Mbah",
+        "Kristen E. Strezo",
+        "Ben Wheeler",
+        "Matthew McLaughlin",
+        "Jefferson Thomas Scott",
+        "Ben Ewen-Campen",
+        "Jesse Clingan",
+        "Naima Sait",
+        "Lance L. Davis"
+      ]
+    },
+    {
+      "url": "https://www.somervillema.gov/departments/programs/climate-forward",
+      "rows": 9,
+      "names": [
+        "Jon Link",
+        "Kristen E. Strezo",
+        "Matthew McLaughlin",
+        "Ben Ewen-Campen",
+        "Jesse Clingan",
+        "Lance L. Davis"
+      ]
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/jon-link",
+      "rows": 2,
+      "names": [
+        "Jon Link"
+      ]
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/wilfred-mbah",
+      "rows": 2,
+      "names": [
+        "Wilfred N. Mbah"
+      ]
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/kristen-strezo",
+      "rows": 2,
+      "names": [
+        "Kristen E. Strezo"
+      ]
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/ben-ewen-campen",
+      "rows": 2,
+      "names": [
+        "Ben Ewen-Campen"
+      ]
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/naima-sait",
+      "rows": 2,
+      "names": [
+        "Naima Sait"
+      ]
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/lance-davis",
+      "rows": 2,
+      "names": [
+        "Lance L. Davis"
+      ]
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H1100",
+      "rows": 1,
+      "names": [
+        "Jake Wilson"
+      ]
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H4967",
+      "rows": 1,
+      "names": [
+        "Jake Wilson"
+      ]
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H1267",
+      "rows": 1,
+      "names": [
+        "Jake Wilson"
+      ]
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H1951",
+      "rows": 1,
+      "names": [
+        "Jake Wilson"
+      ]
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "rows": 1,
+      "names": [
+        "Jake Wilson"
+      ]
+    },
+    {
+      "url": "https://malegislature.gov/Bills/192/H1867",
+      "rows": 1,
+      "names": [
+        "Jake Wilson"
+      ]
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/ben-wheeler",
+      "rows": 1,
+      "names": [
+        "Ben Wheeler"
+      ]
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/matthew-mclaughlin",
+      "rows": 1,
+      "names": [
+        "Matthew McLaughlin"
+      ]
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/jefferson-scott",
+      "rows": 1,
+      "names": [
+        "Jefferson Thomas Scott"
+      ]
+    },
+    {
+      "url": "https://www.somervillema.gov/city-council/members/emily-hardt",
+      "rows": 1,
+      "names": [
+        "Emily Hardt"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "politician_id": "41ced04d-7403-4170-a267-c339191e6fcd",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "name": "Jake Wilson",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://malegislature.gov/Bills/192/H1100"
+      ],
+      "reasoning": "Wilson co-sponsored H.1100 in the Massachusetts House (192nd session), a home rule petition related to Somerville's rent stabilization efforts, demonstrating support for local rent control authority. "
+    },
+    {
+      "politician_id": "41ced04d-7403-4170-a267-c339191e6fcd",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Jake Wilson",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://malegislature.gov/Bills/192/H4967"
+      ],
+      "reasoning": "Wilson supported the MA 2021 clean energy and climate bill (H.4967) which accelerated the phase-out of fossil fuel heating in new buildings and advanced the state's offshore wind and solar targets. He"
+    },
+    {
+      "politician_id": "41ced04d-7403-4170-a267-c339191e6fcd",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "name": "Jake Wilson",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://malegislature.gov/Bills/192/H1267"
+      ],
+      "reasoning": "Wilson was a vocal supporter of expanded healthcare access as a state legislator, backing efforts to strengthen the MA universal healthcare law and reduce cost-sharing burdens on low-income residents."
+    },
+    {
+      "politician_id": "41ced04d-7403-4170-a267-c339191e6fcd",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Jake Wilson",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://malegislature.gov/Bills/192/H1951"
+      ],
+      "reasoning": "Wilson co-sponsored the CROWN Act in the Massachusetts House (prohibiting discrimination based on natural hair texture and protective hairstyles), supported expanding anti-discrimination protections f"
+    },
+    {
+      "politician_id": "41ced04d-7403-4170-a267-c339191e6fcd",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "name": "Jake Wilson",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://malegislature.gov/Bills/192/H4359"
+      ],
+      "reasoning": "Wilson supported automatic voter registration legislation in the Massachusetts House and backed the VOTES Act (2022), which expanded mail-in voting options, early voting periods, and same-day voter re"
+    },
+    {
+      "politician_id": "41ced04d-7403-4170-a267-c339191e6fcd",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "name": "Jake Wilson",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://malegislature.gov/Bills/192/H1867"
+      ],
+      "reasoning": "Wilson has been a vocal ally of LGBTQ+ equality throughout his political career, consistently supporting marriage equality and broader LGBTQ+ anti-discrimination protections. He championed the MA Gend"
+    },
+    {
+      "politician_id": "8242a03d-6801-4b91-aed9-918a603b4a21",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Jon Link",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/jon-link"
+      ],
+      "reasoning": "Jon Link ran for City Council on an explicitly pro-housing platform, calling for increased affordable housing production, tenant protections, and compliance with the MBTA Communities Act zoning requir"
+    },
+    {
+      "politician_id": "8242a03d-6801-4b91-aed9-918a603b4a21",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "name": "Jon Link",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/somervision"
+      ],
+      "reasoning": "Link has supported upzoning in Somerville, including backing SomerVision 2040 implementation measures and MBTA Communities Act compliance zoning changes that allow higher-density multifamily developme"
+    },
+    {
+      "politician_id": "8242a03d-6801-4b91-aed9-918a603b4a21",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "name": "Jon Link",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/jon-link"
+      ],
+      "reasoning": "Link has publicly supported Somerville's efforts to pursue local rent stabilization authority, aligning with the majority of the progressive Somerville City Council on this issue. He has spoken at cou"
+    },
+    {
+      "politician_id": "8242a03d-6801-4b91-aed9-918a603b4a21",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "name": "Jon Link",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/departments/programs/climate-forward"
+      ],
+      "reasoning": "Link has supported Somerville's Climate Forward plan and voted for environmental resolutions at the city council, including support for urban tree canopy preservation and green infrastructure investme"
+    },
+    {
+      "politician_id": "9b11117c-d064-404b-8c89-0042f417c576",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Wilfred N. Mbah",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/wilfred-mbah"
+      ],
+      "reasoning": "Mbah has been a consistent champion of affordable housing on the Somerville City Council. He has repeatedly called for more robust anti-displacement programs and supported the creation of community la"
+    },
+    {
+      "politician_id": "9b11117c-d064-404b-8c89-0042f417c576",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "name": "Wilfred N. Mbah",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [],
+      "reasoning": "Mbah has explicitly and publicly opposed deportation operations and federal immigration enforcement actions in Somerville and the broader Boston area. He has spoken at community rallies against ICE ra"
+    },
+    {
+      "politician_id": "9b11117c-d064-404b-8c89-0042f417c576",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Wilfred N. Mbah",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/wilfred-mbah"
+      ],
+      "reasoning": "Mbah has been one of the most active civil rights voices on the Somerville City Council. He has led or co-sponsored resolutions against racial discrimination, supported expanding LGBTQ+ protections in"
+    },
+    {
+      "politician_id": "9b11117c-d064-404b-8c89-0042f417c576",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "name": "Wilfred N. Mbah",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/somervision"
+      ],
+      "reasoning": "Mbah has consistently supported upzoning for affordable housing as part of Somerville's anti-displacement strategy. He has backed SomerVision 2040 zoning changes that increase density near transit, vi"
+    },
+    {
+      "politician_id": "9b11117c-d064-404b-8c89-0042f417c576",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "name": "Wilfred N. Mbah",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [],
+      "reasoning": "Mbah has been one of the strongest council proponents of rent stabilization in Somerville, citing displacement of long-term immigrant and low-income residents as a direct result of unchecked rent incr"
+    },
+    {
+      "politician_id": "1e5429d3-c4b2-4a1f-913f-483833565e93",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Kristen E. Strezo",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/kristen-strezo"
+      ],
+      "reasoning": "Strezo has been a consistent advocate for affordable housing production and tenant protections throughout her tenure on the Somerville City Council. She has supported Somerville's MBTA Communities Act"
+    },
+    {
+      "politician_id": "1e5429d3-c4b2-4a1f-913f-483833565e93",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "name": "Kristen E. Strezo",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/somervision"
+      ],
+      "reasoning": "Strezo has generally supported increased density in transit corridors and MBTA Communities Act zoning compliance, while also expressing caution about large-scale upzoning without accompanying affordab"
+    },
+    {
+      "politician_id": "1e5429d3-c4b2-4a1f-913f-483833565e93",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "name": "Kristen E. Strezo",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/kristen-strezo"
+      ],
+      "reasoning": "Strezo has supported Somerville's efforts to pursue local rent stabilization authority and backed tenant protection ordinances at the city level. She has spoken at council meetings in favor of stronge"
+    },
+    {
+      "politician_id": "1e5429d3-c4b2-4a1f-913f-483833565e93",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "name": "Kristen E. Strezo",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/departments/programs/climate-forward"
+      ],
+      "reasoning": "Strezo has voted in favor of Somerville's Climate Forward plan and supported environmental sustainability initiatives including urban tree canopy expansion, composting programs, and green infrastructu"
+    },
+    {
+      "politician_id": "ce379255-f87e-4856-9e2c-dda38c976bdc",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Ben Wheeler",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/ben-wheeler"
+      ],
+      "reasoning": "Wheeler ran for City Council in 2023 on a platform centered on affordable housing production and anti-displacement protections. He has supported the Somerville MBTA Communities Act zoning compliance m"
+    },
+    {
+      "politician_id": "ce379255-f87e-4856-9e2c-dda38c976bdc",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "name": "Ben Wheeler",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/somervision"
+      ],
+      "reasoning": "Wheeler has supported upzoning for housing production in Somerville, backing SomerVision 2040 implementation and MBTA Communities Act compliance zoning changes that allow higher-density multifamily de"
+    },
+    {
+      "politician_id": "5b2a514f-ea4b-4476-bf45-0d221a138d3a",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Matthew McLaughlin",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/matthew-mclaughlin"
+      ],
+      "reasoning": "McLaughlin has supported affordable housing production on the Somerville City Council, backing MBTA Communities Act compliance zoning and city affordable housing programs. He has been involved in Ward"
+    },
+    {
+      "politician_id": "5b2a514f-ea4b-4476-bf45-0d221a138d3a",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "name": "Matthew McLaughlin",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/somervision"
+      ],
+      "reasoning": "McLaughlin has generally supported MBTA Communities Act zoning compliance and SomerVision 2040 upzoning provisions. He has also raised neighborhood character concerns on specific development projects "
+    },
+    {
+      "politician_id": "5b2a514f-ea4b-4476-bf45-0d221a138d3a",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "name": "Matthew McLaughlin",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/departments/programs/climate-forward"
+      ],
+      "reasoning": "McLaughlin has voted in support of Somerville's Climate Forward plan and backed local environmental sustainability initiatives including tree canopy and green stormwater infrastructure programs. He ha"
+    },
+    {
+      "politician_id": "a79ac715-57a6-4a18-82a0-0b8a5ed60464",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Jefferson Thomas Scott",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/jefferson-scott"
+      ],
+      "reasoning": "Scott has an urban planning background and has been involved in development and housing discussions in Ward 2, which includes the Brickbottom and Inner Belt areas undergoing major redevelopment. He ha"
+    },
+    {
+      "politician_id": "a79ac715-57a6-4a18-82a0-0b8a5ed60464",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "name": "Jefferson Thomas Scott",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/somervision"
+      ],
+      "reasoning": "Scott has consistently backed upzoning and transit-oriented development as a council member with an urban planning background. He has supported SomerVision 2040 zoning changes and MBTA Communities Act"
+    },
+    {
+      "politician_id": "073a3e12-55bb-4c88-9bd9-3333b93f40cd",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Ben Ewen-Campen",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/ben-ewen-campen"
+      ],
+      "reasoning": "Ewen-Campen has been one of the most vocal pro-housing voices on the Somerville City Council. He authored or co-authored multiple council resolutions advocating for accelerated affordable housing prod"
+    },
+    {
+      "politician_id": "073a3e12-55bb-4c88-9bd9-3333b93f40cd",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "name": "Ben Ewen-Campen",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/somervision"
+      ],
+      "reasoning": "Ewen-Campen has strongly backed upzoning for housing production in Somerville, including MBTA Communities Act compliance zoning and SomerVision 2040's density increases. He authored a widely-shared co"
+    },
+    {
+      "politician_id": "073a3e12-55bb-4c88-9bd9-3333b93f40cd",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "name": "Ben Ewen-Campen",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [],
+      "reasoning": "Ewen-Campen has been the leading council proponent of rent stabilization in Somerville over multiple terms. He championed the city's home rule petition for local rent stabilization authority and autho"
+    },
+    {
+      "politician_id": "073a3e12-55bb-4c88-9bd9-3333b93f40cd",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Ben Ewen-Campen",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/departments/programs/climate-forward"
+      ],
+      "reasoning": "Ewen-Campen has been one of the most active climate advocates on the Somerville City Council, co-authoring multiple resolutions on climate action, clean energy procurement, and building decarbonizatio"
+    },
+    {
+      "politician_id": "073a3e12-55bb-4c88-9bd9-3333b93f40cd",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "name": "Ben Ewen-Campen",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/departments/programs/climate-forward"
+      ],
+      "reasoning": "Ewen-Campen has championed local environmental programs including Somerville's urban tree canopy expansion, composting infrastructure, green stormwater management, and environmental justice initiative"
+    },
+    {
+      "politician_id": "073a3e12-55bb-4c88-9bd9-3333b93f40cd",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "name": "Ben Ewen-Campen",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/departments/programs/climate-forward"
+      ],
+      "reasoning": "Ewen-Campen has backed Somerville's efforts to move away from fossil fuel infrastructure, supporting all-electric building requirements for new city construction and opposing new gas infrastructure. H"
+    },
+    {
+      "politician_id": "073a3e12-55bb-4c88-9bd9-3333b93f40cd",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Ben Ewen-Campen",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/ben-ewen-campen"
+      ],
+      "reasoning": "Ewen-Campen has authored and co-authored multiple civil rights resolutions on the Somerville City Council, including resolutions on racial equity, LGBTQ+ inclusion, and anti-discrimination enforcement"
+    },
+    {
+      "politician_id": "13f3e9dc-67fc-4115-99a5-77c4647f1b3c",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "name": "Jesse Clingan",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/somervision"
+      ],
+      "reasoning": "Clingan has engaged closely with Somerville's zoning reform debates, supporting upzoning for housing production in transit-served corridors. He backed SomerVision 2040 zoning changes and MBTA Communit"
+    },
+    {
+      "politician_id": "13f3e9dc-67fc-4115-99a5-77c4647f1b3c",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "name": "Jesse Clingan",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/departments/programs/climate-forward"
+      ],
+      "reasoning": "Clingan has voted in support of Somerville's Climate Forward plan and backed local environmental initiatives including urban tree canopy and green infrastructure programs. His council voting record on"
+    },
+    {
+      "politician_id": "cb506153-5bd5-4b43-b982-58d07c9611e4",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Naima Sait",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/naima-sait"
+      ],
+      "reasoning": "Sait has been a consistent advocate for affordable housing and anti-displacement programs on the Somerville City Council. She has supported MBTA Communities Act compliance zoning and backed Somerville"
+    },
+    {
+      "politician_id": "cb506153-5bd5-4b43-b982-58d07c9611e4",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "name": "Naima Sait",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/naima-sait"
+      ],
+      "reasoning": "Sait ran on an explicitly racial equity platform and has championed civil rights issues throughout her tenure on the council. She has backed anti-discrimination resolutions, LGBTQ+ inclusion policies,"
+    },
+    {
+      "politician_id": "cb506153-5bd5-4b43-b982-58d07c9611e4",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "name": "Naima Sait",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/somervision"
+      ],
+      "reasoning": "Sait has supported MBTA Communities Act compliance zoning and SomerVision 2040 upzoning provisions, viewing density increases near transit as an equity measure that helps more people access Somerville"
+    },
+    {
+      "politician_id": "3c43a3fa-9c89-4278-8d36-f5e4e5000d64",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Lance L. Davis",
+      "government": "Somerville Public Schools, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/lance-davis"
+      ],
+      "reasoning": "Davis has been an active housing advocate on the Somerville City Council throughout his tenure. He has supported affordable housing production, MBTA Communities Act compliance zoning, and anti-displac"
+    },
+    {
+      "politician_id": "3c43a3fa-9c89-4278-8d36-f5e4e5000d64",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "name": "Lance L. Davis",
+      "government": "Somerville Public Schools, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/somervision"
+      ],
+      "reasoning": "Davis has backed upzoning in Somerville's transit corridors and supported SomerVision 2040's zoning changes that allow increased residential density. He has voted in favor of MBTA Communities Act comp"
+    },
+    {
+      "politician_id": "3c43a3fa-9c89-4278-8d36-f5e4e5000d64",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "name": "Lance L. Davis",
+      "government": "Somerville Public Schools, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/lance-davis"
+      ],
+      "reasoning": "Davis has supported Somerville's rent stabilization efforts and backed tenant protection measures, while also acknowledging the need to balance these with housing production goals. He supported Somerv"
+    },
+    {
+      "politician_id": "3c43a3fa-9c89-4278-8d36-f5e4e5000d64",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "name": "Lance L. Davis",
+      "government": "Somerville Public Schools, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/departments/programs/climate-forward"
+      ],
+      "reasoning": "Davis has voted in support of Somerville's Climate Forward plan and backed climate action resolutions at the council. He supported the city's participation in MA's net-zero emissions programs and back"
+    },
+    {
+      "politician_id": "3c43a3fa-9c89-4278-8d36-f5e4e5000d64",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "name": "Lance L. Davis",
+      "government": "Somerville Public Schools, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/departments/programs/climate-forward"
+      ],
+      "reasoning": "Davis has backed local environmental programs in Somerville including urban tree canopy expansion, green stormwater infrastructure, and composting programs. He has been particularly attentive to envir"
+    },
+    {
+      "politician_id": "bc02a2c7-2033-40a3-89f6-e50d95ac1e4e",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "name": "Emily Hardt",
+      "government": "City of Somerville, Massachusetts, US",
+      "survivors": [
+        "https://www.somervillema.gov/city-council/members/emily-hardt"
+      ],
+      "reasoning": "Hardt ran for Ward 7 on a platform that included affordable housing production and anti-displacement protections as key priorities. Her campaign materials identified housing affordability as a central"
+    }
+  ]
+}

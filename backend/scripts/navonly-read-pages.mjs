@@ -34,8 +34,10 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 const argv = process.argv.slice(2);
 const LIMIT = Number((argv.indexOf('--limit') !== -1 && argv[argv.indexOf('--limit') + 1]) || 999);
 
-const ws = JSON.parse(readFileSync(path.join(DIR, 'navonly-workset.json'), 'utf8'));
-const CACHE = path.join(DIR, 'navonly-pages.json');
+// Artifact paths are parameterised so a SECOND cluster reuses this reader rather than a copy of it.
+const PREFIX = (argv.indexOf('--prefix') !== -1 && argv[argv.indexOf('--prefix') + 1]) || 'navonly';
+const ws = JSON.parse(readFileSync(path.join(DIR, `${PREFIX}-workset.json`), 'utf8'));
+const CACHE = path.join(DIR, `${PREFIX}-pages.json`);
 let cache = {};
 try { cache = JSON.parse(readFileSync(CACHE, 'utf8')); } catch { /* first run */ }
 
