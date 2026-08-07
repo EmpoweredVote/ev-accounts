@@ -19,11 +19,20 @@ import path from 'path';
  *               `inform`. No SUPERUSER, no CREATEDB, no CREATEROLE, no BYPASSRLS, and no membership
  *               in `postgres`.
  *
- * ⚠ ev_migrator's CEILING: CREATE INDEX and ALTER TABLE on an EXISTING table require table
- * OWNERSHIP, which no schema-level grant can confer. Every table in `essentials` is owned by
- * `postgres`. So migrations that add a column or build an index (e.g. 1574, 1586, 1589) still cannot
- * run through this script under any grant short of making ev_migrator a table owner -- run those as
- * `postgres`. Data migrations and archive-table migrations (e.g. 1588, 1590-1592) work fine here.
+ * 🔴 ev_migrator TURNED OUT NOT TO BE USABLE FOR DATA MIGRATIONS AT ALL. Two ceilings, found by
+ * running real work through it on 2026-08-07:
+ *
+ *   1. RLS. Every `essentials` table has RLS ENABLED with no permissive policy, so a role without
+ *      BYPASSRLS sees ZERO rows. `ev_api` works only because it HOLDS BypassRLS. Under ev_migrator,
+ *      SELECT returns nothing and UPDATE/DELETE match nothing WHILE STILL REPORTING SUCCESS. That is
+ *      why the blind-write guard below exists. `postgres` cannot grant BYPASSRLS (not a superuser on
+ *      Supabase), so this is not fixable by granting.
+ *   2. Ownership. CREATE INDEX and ALTER TABLE on an existing table need table OWNERSHIP, which no
+ *      schema-level grant confers, and `postgres` owns everything in `essentials`.
+ *
+ * So in practice migrations run as `postgres` (in this repo, over the supabase MCP), which is what had
+ * always actually been happening. ev_migrator can create NEW tables in `essentials` and nothing more.
+ * Do not trust an "Applied OK" from a role that cannot see the rows -- the guard below now blocks it.
  *
  * Historical note: the "applied by hand via scripts/_apply-file.ts" line in migration headers before
  * 1593 was boilerplate and was NOT true of the DDL ones. All four archive tables (the
@@ -71,12 +80,30 @@ async function main() {
 
   const client = await pool.connect();
   try {
-    const { rows } = await client.query<{ role: string; can_create: boolean }>(
+    const { rows } = await client.query<{ role: string; can_create: boolean; visible: number }>(
       `SELECT current_user AS role,
-              has_schema_privilege(current_user, 'essentials', 'CREATE') AS can_create`,
+              has_schema_privilege(current_user, 'essentials', 'CREATE') AS can_create,
+              (SELECT count(*)::int FROM essentials.race_candidates) AS visible`,
     );
-    const { role, can_create } = rows[0]!;
+    const { role, can_create, visible } = rows[0]!;
     console.log(`  connected as ${role} (CREATE on essentials: ${can_create ? 'yes' : 'NO'})`);
+
+    // ── THE RLS BLIND-WRITE GUARD ──────────────────────────────────────────────────────────────
+    // Every table in `essentials` has RLS ENABLED with no permissive policy, so a role without
+    // BYPASSRLS sees ZERO rows -- and an UPDATE matching zero rows SUCCEEDS. Without this check the
+    // script prints "Applied OK" having changed nothing, which is worse than failing: it produces a
+    // false record that a migration was applied. Caught 2026-08-07, after exactly that happened.
+    if (visible === 0) {
+      throw new Error(
+        `role "${role}" can see 0 rows in essentials.race_candidates -- refusing to apply.\n\n` +
+        'The table is not empty; RLS is hiding it. This role lacks BYPASSRLS, so SELECTs return\n' +
+        'nothing and UPDATE/DELETE match nothing while still reporting success. Applying this file\n' +
+        'would silently do nothing and claim it worked.\n\n' +
+        'Use a role with BYPASSRLS (ev_api has it; `postgres` owns the tables). `postgres` CANNOT\n' +
+        'grant BYPASSRLS -- it is not a superuser on Supabase -- so this cannot be fixed by granting.\n' +
+        'See migration 1593.',
+      );
+    }
 
     await client.query(sql);
     console.log(`Applied ${file} OK`);

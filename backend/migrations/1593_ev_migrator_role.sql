@@ -41,7 +41,35 @@
 -- was boilerplate. Headers from 1593 on should say which role the file needs.
 --
 -- ---------------------------------------------------------------------------------------------------
--- 🔴 THE CEILING — READ THIS BEFORE ASSUMING ev_migrator CAN APPLY ANY MIGRATION
+-- 🔴🔴 CORRECTION, 2026-08-07 (same day): THIS ROLE CANNOT APPLY DATA MIGRATIONS. ROW-LEVEL SECURITY.
+-- ---------------------------------------------------------------------------------------------------
+-- Found by running migration 1594 through it. It failed with "new row violates row-level security
+-- policy for table politicians", and the investigation is worse than the error:
+--
+--   Every table in `essentials` has RLS ENABLED and essentially NO permissive policies
+--   (politicians has one SELECT policy for anon/authenticated; races, race_candidates and
+--   elections have NONE). A role without BYPASSRLS therefore sees ZERO ROWS.
+--
+-- Measured as ev_migrator: race_candidates 0, races 0, politicians 0, elections 0, offices 0.
+--
+-- ⚠ AND THE FAILURE MODE IS SILENT. An UPDATE that matches zero rows SUCCEEDS. Applying a
+-- data migration as ev_migrator prints "Applied OK" and changes NOTHING. That is exactly what happened
+-- when migration 1592 was "re-applied as ev_migrator to verify the role works" -- it updated 0 rows
+-- and the check proved nothing. No data was harmed (0 rows changed), but the verification was hollow.
+-- _apply-file.ts now refuses to run when the role can see 0 rows, converting that into a loud failure.
+--
+-- WHY THIS CANNOT BE GRANTED AWAY: `ev_api` works only because it HOLDS BYPASSRLS. Granting BYPASSRLS
+-- requires SUPERUSER, and `postgres` is not a superuser on Supabase (rolsuper = false) -- the same
+-- limitation that already blocked `ALTER ROLE ... NOSUPERUSER` above. The alternatives are to add
+-- permissive RLS policies for ev_migrator on every table (a policy-shaped bypass, and a real change to
+-- production security surface) or to make it a table owner. Neither was done unilaterally.
+--
+-- SO: migrations run as `postgres`, over the supabase MCP — which is what had always actually been
+-- happening, per the boilerplate note below. ev_migrator's remaining honest use is creating NEW tables
+-- in `essentials`; it cannot touch existing data. The role is left in place, unused pending a decision.
+--
+-- ---------------------------------------------------------------------------------------------------
+-- THE OTHER CEILING — OWNERSHIP (still true, independent of RLS)
 -- ---------------------------------------------------------------------------------------------------
 -- CREATE INDEX and ALTER TABLE on an EXISTING table require table OWNERSHIP. Postgres has no
 -- grantable "alter any table" privilege, so NO amount of granting fixes this — every table in
