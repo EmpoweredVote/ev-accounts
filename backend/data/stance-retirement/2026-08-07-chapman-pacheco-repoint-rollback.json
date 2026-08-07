@@ -1,0 +1,82 @@
+{
+  "migration": "1600_repoint_chapman_pacheco_to_archive.sql",
+  "date": "2026-08-07",
+  "action": "repoint",
+  "note": "Re-point only. No chair, value or reasoning changed; sources arrays are single-element, so each restore is a whole-array replacement. To roll back, set sources to `before` for each (politician_id, topic_id).",
+  "verification": "Each capture fetched with the id_ modifier and searched for the distinctive terms of the rows citing it. Full record: 2026-08-07-dead-host-repoint-pass.md",
+  "captures": {
+    "https://chapmanforcongress.com/issues/": {
+      "timestamp": "20260511050003",
+      "why_this_capture": "The URL has 13 captures: 2003 x1, 2014 x11, 2026 x1. The domain was reused across election cycles, so only the 2026 capture belongs to Frank Chapman (2026 WY-AL, FEC H6WY01157). The 2014 captures are a different candidate."
+    },
+    "https://www.maryannforwhittier.com/issues": {
+      "timestamp": "20231215180833",
+      "why_this_capture": "Only 200-capture of the path; contemporaneous with her Whittier council tenure. All six distinctive terms present."
+    }
+  },
+  "rows": [
+    {
+      "politician": "Frank Chapman",
+      "topic": "Abortion",
+      "politician_id": "3f841602-c711-43fe-84a7-d99fa06f4c3c",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "chair": 5.0,
+      "before": ["https://chapmanforcongress.com/issues/"],
+      "after": ["https://web.archive.org/web/20260511050003/https://chapmanforcongress.com/issues/"]
+    },
+    {
+      "politician": "Frank Chapman",
+      "topic": "Fossil Fuels",
+      "politician_id": "3f841602-c711-43fe-84a7-d99fa06f4c3c",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "chair": 4.0,
+      "before": ["https://chapmanforcongress.com/issues/"],
+      "after": ["https://web.archive.org/web/20260511050003/https://chapmanforcongress.com/issues/"]
+    },
+    {
+      "politician": "Frank Chapman",
+      "topic": "Immigration",
+      "politician_id": "3f841602-c711-43fe-84a7-d99fa06f4c3c",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "chair": 3.0,
+      "before": ["https://chapmanforcongress.com/issues/"],
+      "after": ["https://web.archive.org/web/20260511050003/https://chapmanforcongress.com/issues/"]
+    },
+    {
+      "politician": "Frank Chapman",
+      "topic": "Taxes",
+      "politician_id": "3f841602-c711-43fe-84a7-d99fa06f4c3c",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "chair": 4.0,
+      "before": ["https://chapmanforcongress.com/issues/"],
+      "after": ["https://web.archive.org/web/20260511050003/https://chapmanforcongress.com/issues/"]
+    },
+    {
+      "politician": "Frank Chapman",
+      "topic": "Voting Rights",
+      "politician_id": "3f841602-c711-43fe-84a7-d99fa06f4c3c",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "chair": 4.0,
+      "before": ["https://chapmanforcongress.com/issues/"],
+      "after": ["https://web.archive.org/web/20260511050003/https://chapmanforcongress.com/issues/"]
+    },
+    {
+      "politician": "Mary Ann Pacheco",
+      "topic": "Housing",
+      "politician_id": "ae459902-7c4f-4ae9-bce6-de9d6cd93710",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "chair": 2.0,
+      "before": ["https://www.maryannforwhittier.com/issues"],
+      "after": ["https://web.archive.org/web/20231215180833/https://www.maryannforwhittier.com/issues"]
+    },
+    {
+      "politician": "Mary Ann Pacheco",
+      "topic": "Public Safety Approach",
+      "politician_id": "ae459902-7c4f-4ae9-bce6-de9d6cd93710",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "chair": 3.0,
+      "before": ["https://www.maryannforwhittier.com/issues"],
+      "after": ["https://web.archive.org/web/20231215180833/https://www.maryannforwhittier.com/issues"]
+    }
+  ]
+}
