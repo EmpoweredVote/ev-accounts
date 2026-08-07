@@ -67,6 +67,29 @@
 -- shell reads as "this person is running".
 --
 -- ▶ FOLLOW-UP OWED: District 5 needs a real candidate field sourced before November.
+--
+-- ═══════════════════════════════════════════════════════════════════════════════════════════════════
+-- 🔴 CORRECTED 2026-08-07 BY MIGRATION 1596 — THE TWO CLAIMS ABOUT D5 ABOVE ARE FALSE.
+-- Nothing about the DELETEs below changes; retiring all five shells was right. What is wrong is the
+-- reasoning, and the "FOLLOW-UP OWED" line, which was an instruction to fabricate a race. It was acted
+-- on: a later session was asked to seed the D5 field and found there was nothing to seed.
+--
+--   * D5 IS NOT UP IN 2026. Kathryn Barger won D5 outright in the March 5 2024 primary (cancelling
+--     that general) and holds the seat to 2028 — her third and final term under the county's
+--     three-term limit.
+--   * "1, 3 and 5 in gubernatorial years" IS NOT THE CYCLE. It is D1 and D3 in gubernatorial years
+--     (2022, 2026) and D2, D4 AND D5 in presidential years (2024, 2028). Barger and Hahn were both
+--     elected in 2016/2020/2024, which is the presidential cycle.
+--
+-- ⚠ NOTE THE SELF-CONTRADICTION, because it is the lesson. Four lines above, this file states that
+-- "the certified LA County results contain no Supervisor 5th District contest at all" — the correct
+-- and decisive fact — and in the same sentence concludes the seat "IS up in 2026". The evidence was
+-- already in hand and the conclusion was written past it. When a certified list of contests does not
+-- contain a race, the seat is not up; no theory about staggered cycles outranks that.
+--
+-- The `_retired_1589_races.reason` annotations have been amended in place (appended, not overwritten)
+-- so the archive carries this correction too.
+-- ═══════════════════════════════════════════════════════════════════════════════════════════════════
 -- ---------------------------------------------------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS essentials._retired_1589_races AS
