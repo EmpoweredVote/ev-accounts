@@ -15,6 +15,12 @@
 // verdict still requires: reproduce absence (3 rounds x 3 query forms), check per-host sibling coverage,
 // and verify a real control in the same run. Migration 1548's evidence standard, not a shortcut past it.
 // ⚠ Conversely a RESOLVING host proves nothing about the cited path -- 403/paywall/parked all resolve.
+//
+// 🔴 AND A NON-RESOLVING HOST MAY NOT EVEN BE NON-RESOLVING. This script probed the inventory's
+// FOLDED host (www. stripped) until 2026-08-07 and manufactured 8 dead hosts out of a 22-host queue;
+// 14 of 30 "dead" URLs served HTTP 200. It now probes every authority the outlet is actually cited
+// as. **Before trusting any NO_DNS verdict here, fetch the stored URL as stored** -- DNS on a
+// reshaped name is not a test of the citation. See 2026-08-07-dead-host-repoint-pass.md.
 import 'dotenv/config';
 import { readFileSync, writeFileSync } from 'fs';
 import { Resolver } from 'node:dns/promises';
@@ -25,22 +31,51 @@ const hosts = inv.hosts;
 const resolver = new Resolver({ timeout: 4000, tries: 2 });
 resolver.setServers(['1.1.1.1', '8.8.8.8']);
 
-async function probe(h) {
+// Resolve ONE authority string, exactly as given.
+async function probeAuthority(name) {
   for (const fn of ['resolve4', 'resolve6']) {
     try {
-      const a = await resolver[fn](h.host);
-      if (a?.length) return { ...h, dns: 'RESOLVES', via: fn };
+      const a = await resolver[fn](name);
+      if (a?.length) return { dns: 'RESOLVES', via: fn };
     } catch (e) {
       if (e.code === 'ENODATA' || e.code === 'ENOTFOUND') continue;
-      return { ...h, dns: 'ERROR', code: e.code };
+      return { dns: 'ERROR', code: e.code };
     }
   }
   // second opinion before calling it gone: a single NXDOMAIN can be a resolver hiccup
   try {
-    const c = await resolver.resolveCname(h.host);
-    if (c?.length) return { ...h, dns: 'RESOLVES', via: 'cname' };
+    const c = await resolver.resolveCname(name);
+    if (c?.length) return { dns: 'RESOLVES', via: 'cname' };
   } catch { /* fall through */ }
-  return { ...h, dns: 'NO_DNS' };
+  return { dns: 'NO_DNS' };
+}
+
+// 🔴 RESOLVE THE HOST AS CITED, AND EVERY FORM IT IS CITED AS.
+// This probed the inventory's FOLDED host (www. stripped) until 2026-08-07, and that single
+// normalisation manufactured SEVEN dead hosts out of a 22-host queue: davidredkey4congress,
+// tracinskiletter, bradknott, markhenderson, allenrwaters, cambridgeresidentsalliance and
+// rightnowmn publish an A record only on `www`, which is the form their citations already use.
+// (An eighth, publicleadershipinstitute.org, was never dead either but for a different reason -- it
+// sat in the ERROR bucket while serving HTTP 200. ERROR is UNKNOWN; never read it as absence.)
+// 14 of 30 supposedly-dead URLs returned HTTP 200 with real content.
+// Verified after the fix: those 7 flip to RESOLVES, while boli.oregon.gov, octavioforwhittier.com
+// and downeylegend.com correctly stay NO_DNS -- the fix must not resurrect a genuinely dead host.
+// A host is dead only when EVERY form it is cited as fails. Same family as the scheme-less citations
+// of 1549: a probe that reshapes the value before testing it measures something other than the
+// citation.
+async function probe(h) {
+  const names = (h.cited_authorities?.length ? h.cited_authorities : [h.host]);
+  const attempts = [];
+  for (const name of names) {
+    const r = await probeAuthority(name);
+    attempts.push({ name, ...r });
+    // Any single resolving form means the citation opens. Stop and record which one.
+    if (r.dns === 'RESOLVES') return { ...h, dns: 'RESOLVES', via: r.via, resolved_as: name, attempts };
+  }
+  // An ERROR is UNKNOWN, not absence, and must not be downgraded to NO_DNS by a sibling's NXDOMAIN.
+  const err = attempts.find((a) => a.dns === 'ERROR');
+  if (err) return { ...h, dns: 'ERROR', code: err.code, attempts };
+  return { ...h, dns: 'NO_DNS', attempts };
 }
 
 const out = [];

@@ -20,6 +20,13 @@ const { rows } = await pool.query(`
   WITH cite AS (
     SELECT c.politician_id, c.topic_id, s AS url,
            lower(regexp_replace(s, '^https?://(www\\.)?([^/:]+).*$', '\\2')) AS host,
+           -- 🔴 THE AUTHORITY EXACTLY AS CITED, www. INTACT. The folded \`host\` above is the right
+           -- GROUPING key (one outlet, one row) but the WRONG key to resolve. On 2026-08-07 the
+           -- dead-host queue turned out to contain 8 hosts that were never dead: they publish an A
+           -- record only on the www subdomain, which is the form the citations already use, and the
+           -- fold hid it. 14 of 30 "dead" URLs returned HTTP 200 with real content.
+           -- Group on \`host\`, resolve \`cited_authorities\`. Never resolve a value you reshaped.
+           lower(regexp_replace(s, '^https?://([^/:]+).*$', '\\1')) AS cited_authority,
            (s ~ '^https?://[^/]+/.+') AS has_path,
            array_length(c.sources, 1) AS n_src
       FROM inform.politician_context c
@@ -32,6 +39,7 @@ const { rows } = await pool.query(`
          count(DISTINCT politician_id)               AS politicians,
          count(*) FILTER (WHERE n_src = 1)           AS on_sole_sourced_rows,
          count(*) FILTER (WHERE has_path)            AS with_path,
+         array_agg(DISTINCT cited_authority)         AS cited_authorities,
          min(url)                                    AS example
     FROM cite
    GROUP BY host
@@ -81,6 +89,9 @@ const scored = rows.map((r) => {
   }
   return {
     host: r.host,
+    // Every distinct authority this outlet is cited as. citation-host-resolve.mjs probes ALL of
+    // them and only calls the host dead when every form fails.
+    cited_authorities: r.cited_authorities ?? [r.host],
     citations: Number(r.citations),
     rows_touched: Number(r.rows_touched),
     politicians: Number(r.politicians),
