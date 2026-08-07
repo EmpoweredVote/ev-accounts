@@ -20,6 +20,7 @@ const row = (over: Partial<ElectionRow> = {}): ElectionRow => ({
   photo_url: null,
   is_incumbent: false,
   candidate_status: 'active',
+  result: null,
   politician_id: null,
   ...over,
 });

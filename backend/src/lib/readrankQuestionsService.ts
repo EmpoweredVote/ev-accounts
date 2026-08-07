@@ -45,7 +45,7 @@ const LIST_RACE_QUESTIONS_SQL = `
   LEFT JOIN essentials.race_candidates rc
     ON rc.race_id = rq.race_id
    AND rc.politician_id = q.politician_id
-   AND COALESCE(rc.candidate_status, 'active') <> 'withdrawn'
+   AND essentials.is_live_candidate(rc.candidate_status, rc.result)
   WHERE rq.race_id = $1
     AND rq.status = 'confirmed'
   GROUP BY rq.id, rq.topic_key, rq.question_text, rq.origin, rq.status

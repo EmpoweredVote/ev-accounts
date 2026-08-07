@@ -18,12 +18,16 @@ describe('cellState', () => {
 
 describe('listRaceCandidates', () => {
   beforeEach(() => mockQuery.mockReset());
-  it('queries non-withdrawn candidates with a politician_id and maps to camelCase', async () => {
+  it('queries still-standing candidates with a politician_id and maps to camelCase', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{ politician_id: 'p1', full_name: 'Ada' }, { politician_id: 'p2', full_name: 'Ben' }] });
     const out = await listRaceCandidates('race-1');
     const [sql, params] = mockQuery.mock.calls[0];
     expect(sql).toContain('essentials.race_candidates');
-    expect(sql).toContain("COALESCE(rc.candidate_status, 'active') <> 'withdrawn'");
+    // Liveness is the shared predicate from migration 1582, not an inline status test — it excludes
+    // withdrawals AND `not_nominated` (people who ran and did not become the nominee). Asserting on
+    // the function call is what stops this query quietly reverting to a status-only check.
+    expect(sql).toContain('essentials.is_live_candidate(rc.candidate_status, rc.result)');
+    expect(sql).not.toContain("<> 'withdrawn'");
     expect(sql).toContain('rc.politician_id IS NOT NULL');
     expect(params).toEqual(['race-1']);
     expect(out).toEqual([{ politicianId: 'p1', fullName: 'Ada' }, { politicianId: 'p2', fullName: 'Ben' }]);

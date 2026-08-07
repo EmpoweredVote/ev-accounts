@@ -74,6 +74,7 @@ const RACE_SELECT = `
   COALESCE(rc.photo_url, pi.url) AS photo_url,
   rc.is_incumbent,
   rc.candidate_status,
+  rc.result,
   rc.politician_id`;
 
 const PHOTO_LATERAL = `
@@ -276,7 +277,7 @@ export async function getCandidateById(candidateId: string): Promise<CandidateDe
       LIMIT 1
     ) pi ON rc.politician_id IS NOT NULL
     WHERE rc.id = $1
-      AND rc.candidate_status != 'withdrawn'
+      AND essentials.is_live_candidate(rc.candidate_status, rc.result)
   `;
   const { rows } = await pool.query(queryText, [candidateId]);
   return (rows[0] as CandidateDetail) ?? null;

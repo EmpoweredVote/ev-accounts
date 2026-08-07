@@ -15,6 +15,13 @@ export interface ElectionCandidate {
   photo_url: string | null;
   is_incumbent: boolean;
   candidate_status: string;
+  /**
+   * Outcome of this race for this candidate, or null when not yet recorded (mig 1574).
+   * 'not_nominated' means they did not become the nominee — the API already excludes those
+   * from every liveness count via essentials.is_live_candidate (mig 1582), but the field is
+   * passed through so clients can render a finished race without re-querying.
+   */
+  result: string | null;
   politician_id: string | null;
 }
 
@@ -66,6 +73,7 @@ export interface ElectionRow {
   photo_url: string | null;
   is_incumbent: boolean | null;
   candidate_status: string | null;
+  result: string | null;
   politician_id: string | null;
 }
 
@@ -197,6 +205,7 @@ export function groupElectionRows(rows: ElectionRow[]): ElectionResult[] {
         photo_url: row.photo_url,
         is_incumbent: row.is_incumbent ?? false,
         candidate_status: row.candidate_status ?? 'unknown',
+        result: row.result ?? null,
         politician_id: row.politician_id,
       });
     }

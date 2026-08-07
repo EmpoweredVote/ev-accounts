@@ -29,7 +29,7 @@ const LIST_CANDIDATES_SQL = `
   LEFT JOIN essentials.politicians p ON p.id = rc.politician_id
   WHERE rc.race_id = $1
     AND rc.politician_id IS NOT NULL
-    AND COALESCE(rc.candidate_status, 'active') <> 'withdrawn'
+    AND essentials.is_live_candidate(rc.candidate_status, rc.result)
   ORDER BY full_name
 `;
 
@@ -48,7 +48,7 @@ const CELLS_SQL = `
   JOIN essentials.race_candidates rc
     ON rc.race_id = rq.race_id
    AND rc.politician_id = q.politician_id
-   AND COALESCE(rc.candidate_status, 'active') <> 'withdrawn'
+   AND essentials.is_live_candidate(rc.candidate_status, rc.result)
   WHERE rq.race_id = $1 AND rq.status = 'confirmed'
   GROUP BY rq.id, q.politician_id
 `;

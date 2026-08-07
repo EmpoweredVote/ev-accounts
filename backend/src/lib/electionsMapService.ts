@@ -72,12 +72,12 @@ export async function racesForStateDate(stateAbbr: string, date: string): Promis
     `SELECT r.id AS race_id, r.position_name, r.seats,
             COUNT(rc.id) AS candidate_count, d.ocd_id,
             COUNT(rc.id) FILTER (
-              WHERE COALESCE(rc.candidate_status, 'active') <> 'withdrawn')                AS active_count,
+              WHERE essentials.is_live_candidate(rc.candidate_status, rc.result))           AS active_count,
             COUNT(rc.id) FILTER (
-              WHERE COALESCE(rc.candidate_status, 'active') <> 'withdrawn'
+              WHERE essentials.is_live_candidate(rc.candidate_status, rc.result)
                 AND ans.politician_id IS NOT NULL)                                          AS stanced_count,
             COUNT(rc.id) FILTER (
-              WHERE COALESCE(rc.candidate_status, 'active') <> 'withdrawn'
+              WHERE essentials.is_live_candidate(rc.candidate_status, rc.result)
                 AND don.politician_id IS NOT NULL)                                          AS motivated_count
        FROM essentials.elections e
        JOIN essentials.races r ON r.election_id = e.id

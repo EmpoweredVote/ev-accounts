@@ -421,7 +421,12 @@ export async function getCandidates() {
       SELECT url FROM essentials.politician_images
       WHERE politician_id = rc.politician_id AND type = 'default' LIMIT 1
     ) pi ON true
+    -- The candidate_status = 'active' test is stricter than the shared predicate: it also excludes
+    -- 'filed'. That is pre-existing behaviour and whether 'filed' should count here is an open
+    -- product question, so it stays. is_live_candidate is added on top to pick up the
+    -- not_nominated rule (migration 1582).
     WHERE rc.candidate_status = 'active'
+      AND essentials.is_live_candidate(rc.candidate_status, rc.result)
       AND e.election_date >= CURRENT_DATE
       AND rc.politician_id IS NOT NULL
       AND rc.is_incumbent = false

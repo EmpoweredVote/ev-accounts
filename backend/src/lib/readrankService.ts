@@ -314,7 +314,7 @@ export async function getPlayableRaces(
                JOIN inform.compass_topics ct2
                  ON ct2.topic_key = lower(q2.topic_key) AND ct2.is_live = true
                WHERE rc2.race_id = r.id
-                 AND COALESCE(rc2.candidate_status, 'active') <> 'withdrawn'
+                 AND essentials.is_live_candidate(rc2.candidate_status, rc2.result)
                GROUP BY lower(q2.topic_key)
                HAVING COUNT(DISTINCT rc2.politician_id) >= 2
              ) rankable
@@ -325,7 +325,7 @@ export async function getPlayableRaces(
     JOIN essentials.race_candidates rc
       ON rc.race_id = r.id
      AND rc.politician_id IS NOT NULL
-     AND COALESCE(rc.candidate_status, 'active') <> 'withdrawn'
+     AND essentials.is_live_candidate(rc.candidate_status, rc.result)
     JOIN essentials.quotes q
       ON q.politician_id = rc.politician_id
      AND q.deidentified_text IS NOT NULL
@@ -527,7 +527,7 @@ export async function getRaceBlindQuotes(raceId: string): Promise<RacePayload | 
     JOIN essentials.race_candidates rc
       ON rc.race_id = r.id
      AND rc.politician_id IS NOT NULL
-     AND COALESCE(rc.candidate_status, 'active') <> 'withdrawn'
+     AND essentials.is_live_candidate(rc.candidate_status, rc.result)
     JOIN essentials.quotes q
       ON q.politician_id = rc.politician_id
      AND q.deidentified_text IS NOT NULL

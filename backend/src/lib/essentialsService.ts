@@ -63,7 +63,11 @@ const UPCOMING_ELECTIONS_LATERAL = `
     JOIN essentials.races r ON r.election_id = e.id
     LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id AND rc.politician_id = p.id
     WHERE e.election_date >= CURRENT_DATE
-      AND (r.office_id = o.id OR (rc.politician_id IS NOT NULL AND rc.candidate_status = 'active'))
+      -- The candidate_status = 'active' test is stricter than the shared predicate (it also
+      -- excludes 'filed'); kept as-is. is_live_candidate adds the not_nominated rule (mig 1582).
+      AND (r.office_id = o.id OR (rc.politician_id IS NOT NULL
+                                  AND rc.candidate_status = 'active'
+                                  AND essentials.is_live_candidate(rc.candidate_status, rc.result)))
   ) upcoming ON true
 `;
 export { GeocodingError };
