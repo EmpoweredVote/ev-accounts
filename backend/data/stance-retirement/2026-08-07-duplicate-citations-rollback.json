@@ -1,0 +1,48 @@
+{
+  "migration": "1603_dedupe_repeated_citations.sql",
+  "date": "2026-08-07",
+  "action": "dedupe",
+  "note": "4 rows each listed the same URL twice in `sources`. Multiplicity changed; membership did not. No chair, value or reasoning touched. Restore by setting sources back to `before`.",
+  "found_by": "An over-broad duplicate assertion in migration 1602 — corpus-wide where it should have been scoped to the rows that migration touched — failed its dry run at 4. Third time on this workstream an over-broad check has surfaced a real defect (1524, 1530). The rule those established: narrow the check AND fix what it found.",
+  "why_it_matters": "`sources` is voter-facing — StanceAccordion and Citations.jsx render the array, so a duplicate shows a voter the same link twice.",
+  "order_note": "Two of the four had NON-ADJACENT duplicates, so a naive SELECT DISTINCT would have reordered the array. The repair rebuilds each array with unnest(...) WITH ORDINALITY + min(ord), keeping first-occurrence order (the 1549 technique).",
+  "post_state": "citations 58,162 -> 58,158 (-4). context rows 33,292 unchanged. empty-sources still 404. Gate byte-identical before and after — every gate predicate uses ANY/ALL over `sources`, which duplicates cannot affect: BALLOTPEDIA_ONLY 159, PRIMARY_SITE_NO_PATH 536, BARE_AGGREGATOR_DOMAIN 1, ORPHAN_CONTEXT 58, all zero-tolerance 0.",
+  "rows": [
+    {
+      "politician": "Edward Markey",
+      "topic": "Tariffs",
+      "politician_id": "faf86b5b-5add-4afb-a8e2-96b3e8be4b78",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "before": ["https://www.ontheissues.org/Senate/Ed_Markey.htm", "https://en.wikipedia.org/wiki/Ed_Markey", "https://www.ontheissues.org/Senate/Ed_Markey.htm"],
+      "after": ["https://www.ontheissues.org/Senate/Ed_Markey.htm", "https://en.wikipedia.org/wiki/Ed_Markey"],
+      "note": "Duplicate was non-adjacent — it wrapped around the wikipedia citation."
+    },
+    {
+      "politician": "Sharon Quirk-Silva",
+      "topic": "Housing",
+      "politician_id": "1e29ce86-9e02-4079-b50d-bb0d039613a2",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "before": ["https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB956", "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB670", "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB670"],
+      "after": ["https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB956", "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB670"],
+      "note": "Two DIFFERENT bills (AB956, AB670); only AB670 was duplicated. A dedupe that collapsed by host would have destroyed a distinct citation."
+    },
+    {
+      "politician": "Garland Barr",
+      "topic": "Fossil Fuels",
+      "politician_id": "164fb70e-b8c1-48cd-a6ef-12d80165c67d",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "before": ["https://www.ontheissues.org/House/Andy_Barr.htm", "https://www.ontheissues.org/House/Andy_Barr.htm"],
+      "after": ["https://www.ontheissues.org/House/Andy_Barr.htm"],
+      "note": "Now SINGLE-SOURCED — a disclosure, not a weakening. The duplicate was masking that this row rests on one aggregator citation. Garland Barr IS Andy Barr (Garland Hale 'Andy' Barr III), so the Andy_Barr.htm path is correct and this is not a wrong-person citation. Worth a look in the re-research queue on its own merits."
+    },
+    {
+      "politician": "Rick Allen",
+      "topic": "Voting Rights",
+      "politician_id": "3de9e882-a816-42fc-ae70-aa93098c5d02",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "before": ["https://www.ontheissues.org/GA/Rick_Allen.htm", "https://www.ontheissues.org/GA/Rick_Allen.htm"],
+      "after": ["https://www.ontheissues.org/GA/Rick_Allen.htm"],
+      "note": "Now SINGLE-SOURCED — same disclosure as Barr. Keeps a pathed per-person URL, so it does not enter BARE_AGGREGATOR_DOMAIN. Re-research queue."
+    }
+  ]
+}
