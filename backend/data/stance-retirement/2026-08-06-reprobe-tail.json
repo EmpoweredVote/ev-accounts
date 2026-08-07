@@ -1,0 +1,707 @@
+{
+  "generated_by": "scripts/reprobe-no-answer.mjs",
+  "args": "--exclude-host leginfo.legislature.ca.gov --host-pace 4000 --out 2026-08-06-reprobe-tail.json",
+  "skipped_archive_urls": 73,
+  "tally": {
+    "NO_ANSWER_CONFIRMED": 78,
+    "LIVE": 9
+  },
+  "results": [
+    {
+      "url": "https://www.somervillejournal.com/2022/07/somerville-police-reform-update/",
+      "rows_citing": "4",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2024/04/somerville-zoning-debate/",
+      "rows_citing": "4",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2019/09/wilson-healthcare-expansion/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2020/06/mbah-racial-justice-statement/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2020/06/somerville-racial-justice-resolution/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2020/07/mbah-police-reform-council/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/03/somerville-heart-program-launched/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/04/ewen-campen-housing-resolution/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/07/non-citizen-voting-somerville/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/08/ewen-campen-environmental-justice/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/11/09/wilson-climate-bill/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/11/sait-public-safety-social-work/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/11/sait-racial-equity-election/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/03/24/somerville-rent-stabilization-petition/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/07/ewen-campen-zoning-resolution/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/07/somerville-ward6-environmental-updates/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/08/ewen-campen-bike-lane-resolution/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/09/somerville-housing-debate-council/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/11/heart-program-expansion/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/11/sait-homelessness-social-services/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/04/somerville-east-environment-ward1/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/05/somerville-housing-council-president/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/05/somerville-ward1-housing-development/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/08/somerville-gilman-square-development/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/09/mbah-homelessness-housing-first/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/09/somerville-homelessness-housing-first/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2024/03/somerville-bike-lane-debate/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2024/03/wilson-bike-lanes-transit/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2024/04/link-zoning-transit/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2024/07/somerville-climate-forward-council/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2024/09/heart-expansion-council-vote/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2024/12/wilson-union-square-development/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2025/01/08/mayor-wilson-sanctuary-city/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2025/11/somerville-ward7-council-election/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2026/02/wilson-homelessness-housing-first/",
+      "rows_citing": "1",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2025/02/somerville-sanctuary-reaffirmed/",
+      "rows_citing": "9",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2024/05/somerville-rent-stabilization-debate/",
+      "rows_citing": "5",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/06/somerville-climate-forward-update/",
+      "rows_citing": "3",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2020/09/mbah-immigrant-rights-op-ed/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2020/12/ewen-campen-climate-emergency-resolution/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/06/wilson-pride-civil-rights/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2021/10/mbah-sanctuary-icu-resolution/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/03/somerville-rent-stabilization-petition/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/04/somerville-housing-equity-council/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/09/mbah-housing-equity/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2022/10/somerville-brickbottom-development/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/11/link-council-election/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2023/11/somerville-at-large-council-results/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.somervillejournal.com/2025/01/somerville-anti-deportation-response/",
+      "rows_citing": "2",
+      "host": "somervillejournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://pamplinmedia.com/fgnt/36-news/560432-448404-q-and-a-would-be-forest-grove-city-councilors-answer-questions",
+      "rows_citing": "3",
+      "host": "pamplinmedia.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://pamplinmedia.com/pt/9-news/394208-287207-sherwood-withdraws-growth-boundary-request",
+      "rows_citing": "2",
+      "host": "pamplinmedia.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://pamplinmedia.com/bvt/15-news/392097-284219-sherwood-city-council-keeps-possibility-of-expansion-alive-",
+      "rows_citing": "1",
+      "host": "pamplinmedia.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://pamplinmedia.com/bvt/15-news/528701-422624-public-safety-rhetoric-haunts-progressive-candidates-in-washington-county",
+      "rows_citing": "1",
+      "host": "pamplinmedia.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://pamplinmedia.com/bvt/15-news/543526-435063-q-and-a-get-to-know-beaverton-city-council-candidates",
+      "rows_citing": "1",
+      "host": "pamplinmedia.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://legislature.vermont.gov/bill/status/2020/H.688",
+      "rows_citing": "2",
+      "host": "legislature.vermont.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://legislature.vermont.gov/bill/status/2010/H.178",
+      "rows_citing": "1",
+      "host": "legislature.vermont.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://legislature.vermont.gov/bill/status/2020/H.57",
+      "rows_citing": "1",
+      "host": "legislature.vermont.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://legislature.vermont.gov/bill/status/2022/H.171",
+      "rows_citing": "1",
+      "host": "legislature.vermont.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://a55.asmdc.org/press-releases/20230208-assemblymember-isaac-bryan-and-formerly-incarcerated-leaders-introduce",
+      "rows_citing": "2",
+      "host": "a55.asmdc.org",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://a55.asmdc.org/press-releases/20220217-isaac-bryan-introduces-bill-achieve-justice40-california-historically",
+      "rows_citing": "1",
+      "host": "a55.asmdc.org",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://a55.asmdc.org/press-releases/20220624-assemblymember-isaac-bryan-releases-statement-supreme-court-ruling-overturn",
+      "rows_citing": "1",
+      "host": "a55.asmdc.org",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.walthampatch.com/posts/waltham-mbta-communities-zoning-compliance-2024",
+      "rows_citing": "1",
+      "host": "walthampatch.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.walthampatch.com/posts/waltham-city-council-mbta-zoning-vote-2024",
+      "rows_citing": "4",
+      "host": "walthampatch.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://commonwealthmagazine.org/criminal-justice/ag-andrea-campbell-picks-her-targets/",
+      "rows_citing": "5",
+      "host": "commonwealthmagazine.org",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://commonwealthmagazine.org/politics/002-salem-mayor-kim-driscoll/",
+      "rows_citing": "3",
+      "host": "commonwealthmagazine.org",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.azcentral.com/story/news/politics/legislature/2025/02/05/arizona-republican-contract-bidders-disclose-political-donations/78217936007/",
+      "rows_citing": "1",
+      "host": "azcentral.com",
+      "status": 0,
+      "verdict": "LIVE",
+      "reprobe_status": 302
+    },
+    {
+      "url": "https://www.detroitnews.com/story/news/politics/2026/06/22/donald-trump-endorses-michael-bouchard-congress/90648813007/",
+      "rows_citing": "1",
+      "host": "detroitnews.com",
+      "status": 0,
+      "verdict": "LIVE",
+      "reprobe_status": 302
+    },
+    {
+      "url": "https://www.freep.com/story/news/politics/2024/07/31/mary-waters-on-attack-mailers-i-support-same-sex-marriage/74603366007/",
+      "rows_citing": "1",
+      "host": "freep.com",
+      "status": 0,
+      "verdict": "LIVE",
+      "reprobe_status": 302
+    },
+    {
+      "url": "https://www.indystar.com/story/news/politics/2025/08/06/vance-visit-gerrymander-carson-mrvan/85545496007/",
+      "rows_citing": "1",
+      "host": "indystar.com",
+      "status": 0,
+      "verdict": "LIVE",
+      "reprobe_status": 302
+    },
+    {
+      "url": "https://www.ktlo.com/2022/03/09/missouri-congressional-candidate-files-redistricting-lawsuit/",
+      "rows_citing": "1",
+      "host": "ktlo.com",
+      "status": 0,
+      "verdict": "LIVE",
+      "reprobe_status": 200
+    },
+    {
+      "url": "https://eu.prosperpressnews.com/story/news/2020/10/07/meet-candidates-vying-for-prosper-town-council-seats/114235148/",
+      "rows_citing": "3",
+      "host": "eu.prosperpressnews.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.keepinglawsimple.org/states/virginia/bills/2026/HB1051",
+      "rows_citing": "1",
+      "host": "keepinglawsimple.org",
+      "status": 0,
+      "verdict": "LIVE",
+      "reprobe_status": 200
+    },
+    {
+      "url": "https://www.lbreport.com/news/jun20/counafrt1.htm",
+      "rows_citing": "1",
+      "host": "lbreport.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.swampscottreporter.com/news/local_news/crighton-coastal-resilience-funding/article_abcd1234.html",
+      "rows_citing": "1",
+      "host": "swampscottreporter.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.newsobserver.com/news/politics-government/election/voter-guide/article266236281.html",
+      "rows_citing": "4",
+      "host": "newsobserver.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://boli.oregon.gov/pages/news.aspx",
+      "rows_citing": "3",
+      "host": "boli.oregon.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.hrc.org/resources/congressional-scorecard",
+      "rows_citing": "3",
+      "host": "hrc.org",
+      "status": 0,
+      "verdict": "LIVE",
+      "reprobe_status": 200
+    },
+    {
+      "url": "https://act.juliabrownley.com/page/s/call-on-congress-to-pass-the-dream-act",
+      "rows_citing": "2",
+      "host": "act.juliabrownley.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.tn.gov/governor/news.html",
+      "rows_citing": "2",
+      "host": "tn.gov",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "http://nevadanewsmakers.com/RayHagar/article.asp?ID=429",
+      "rows_citing": "1",
+      "host": "nevadanewsmakers.com",
+      "status": 0,
+      "verdict": "LIVE",
+      "reprobe_status": 200
+    },
+    {
+      "url": "https://a43.asmdc.org/press-releases/20230426-homelessness-accountability-bill-clears-assembly-housing-committee",
+      "rows_citing": "1",
+      "host": "a43.asmdc.org",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://bluevaluesburbank.org/city-council-candidates/tamala-takahashi/",
+      "rows_citing": "1",
+      "host": "bluevaluesburbank.org",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://freebeacon.com/elections/iowa-dem-scrubs-left-wing-views-from-website-as-she-kicks-off-moderate-campaign/",
+      "rows_citing": "1",
+      "host": "freebeacon.com",
+      "status": 0,
+      "verdict": "LIVE",
+      "reprobe_status": 200
+    },
+    {
+      "url": "https://kuer.org/politics-government/2025-10-03/theres-partisan-squabbling-ahead-of-utah-lawmakers-expected-redistricting-vote",
+      "rows_citing": "1",
+      "host": "kuer.org",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://m.lasvegassun.com/news/2019/nov/06/tense-las-vegas-council-oks-homeless-ordinance/",
+      "rows_citing": "1",
+      "host": "m.lasvegassun.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.cantonjournal.com/news/local_news/driscoll-economic-development/article_abcd1234.html",
+      "rows_citing": "1",
+      "host": "cantonjournal.com",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    },
+    {
+      "url": "https://www.cocc.edu/news/sbdc-early-child-education-business-accelerator-program",
+      "rows_citing": "1",
+      "host": "cocc.edu",
+      "status": 0,
+      "verdict": "NO_ANSWER_CONFIRMED",
+      "reprobe_status": 0
+    }
+  ]
+}

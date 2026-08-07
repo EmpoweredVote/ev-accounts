@@ -18,8 +18,13 @@ Tooling: `sweep-fabricated-articles.mjs`, `sweep-wide.sh`, `aggregate-fabricated
 | Eligible (specific page, ≥2 path segments) | **13,705** |
 | **With a verdict** | **13,705 (100.0%)** |
 | Never probed | **0** |
-| ⚠ Of those, degraded NO_ANSWER (probed, not evaluated) | 126 |
-| **Genuinely evaluated** | **13,579 (99.1%)** |
+| ✅ NO_ANSWER re-probed and resolved (was the un-evaluated hole) | **1,025** |
+| Remaining un-evaluated: archive.org citations, moot by design | 73 |
+| **Genuinely evaluated** | **13,632 (99.5%)** |
+
+✅ **The "126 degraded NO_ANSWER" caveat is CLOSED** — every one was re-asked with curl, per-host pacing
+and a 25s timeout. 914 answered LIVE, 111 reproduced as dead across two independent measurements, and
+**not one new fabrication was hiding there.** See the re-probe section below.
 
 Computed by `aggregate-fabricated-sweep.mjs` from the artifacts, not by hand. Undated 11,728 URLs across
 47 chunks, dated 1,977 across 14 — **0 duplicate URL records and 0 gaps**, verified.
@@ -433,6 +438,49 @@ Chips live in `essentials/src/lib/coverage.js`; precedent `ca993e74`, `f0b26b4e`
 
 ---
 
+## ✅ NO_ANSWER RE-PROBE DONE (2026-08-06) — the bucket is evaluated, and it holds NOTHING
+
+**1,025 of the 1,098 NO_ANSWER URLs re-probed** (the other 73 are archive.org citations, skipped by
+design — asking "is this archived?" of an archive URL is meaningless). Results, **reproduced by two
+independent measurements** at different pacings (700ms/2.5s, then 3s/4s):
+
+| | urls | row-cites |
+|---|---|---|
+| **LIVE** — answered fine, never was this defect | **914** | 1,703 |
+| **NO_ANSWER_CONFIRMED** — dead in both measurements | **111** | 168 |
+| 🔴 **new FABRICATED found hiding in the bucket** | **0** | 0 |
+
+**Zero new findings.** The largest un-evaluated hole in the audit is now closed, and it was empty.
+Findings stay at **120**; NO_ANSWER never produced a 404, and FABRICATED requires one.
+
+### 🔴 "leginfo is IP-blocked" was substantially OUR BUG, not their block
+905 of its 938 URLs answer **HTTP 200 in ~0.2s**. The doc's advice — "skip leginfo, 938 × 25s ≈ 6.5h to
+confirm a known IP block" — was wrong on both halves: the block was gone (and may never have been the
+whole story), and the pass took minutes, not hours.
+
+🔴 **THE BUG, which invalidated a whole pass before it was caught: `curl` can print HTTP 200 on stdout
+and STILL exit non-zero** (a content-decoding/stream quirk under `-L --compressed`). `execFileSync`
+throws on a non-zero exit, and both `reprobe-no-answer.mjs` and the sweep's own curl fallback had
+`catch { return 0 }` — so a perfectly good 200 was recorded as "nothing answered". The first re-probe
+run confirmed **362 leginfo URLs dead while plain curl returned 200 in 0.2s**.
+**The written status code is authoritative; the exit code is not.** Fixed in both scripts: read
+`e.stdout` on throw.
+🔑 **The failure direction is the dangerous one** — it MANUFACTURES NO_ANSWER, and NO_ANSWER is the
+bucket that looks clean. A tool that invents un-evaluated states is as bad as one that invents findings.
+
+### The 111 that stayed dead (two measurements, 168 row-cites)
+`somervillejournal.com` **49** ⚠ genuine paper, dead domain — **re-point to Wayback, not a fabrication** ·
+`leginfo.legislature.ca.gov` 33 (residue of 938) · `pamplinmedia.com` 5 · `legislature.vermont.gov` 4 ·
+`a55.asmdc.org` 3 · `walthampatch.com` 2 · `commonwealthmagazine.org` 2 (confirmed dead earlier) ·
+15 singles incl. `boli.oregon.gov`, `m.lasvegassun.com`, `tn.gov`, `cantonjournal.com`.
+
+✅ The five "live major papers" the 08-05 doc flagged as a client artifact (`azcentral`, `detroitnews`,
+`freep`, `indystar`, `ktlo`) all came back **LIVE** — that diagnosis was right.
+
+Artifacts: `2026-08-06-reprobe-leginfo.json`, `2026-08-06-reprobe-tail.json`.
+
+---
+
 ## NOT findings — the un-evaluated remainder
 
 **NO_ANSWER 1,098.** Nothing answered, so nothing was evaluated. This is not a verdict and it fails in the
@@ -476,7 +524,7 @@ thin-Wayback set, so INCONCLUSIVE there is expected and is not evidence either w
    taxonomy** and against a **complete** archived slug list — never a truncated one.
 3. **Treat `onyourballot.vote411.org/m/candidate-detail.do?id=72262938` as a likely FALSE POSITIVE** —
    VOTE411 rotates candidate IDs per cycle, so a 404 is expiry, not fabrication.
-4. **Re-probe the 126 degraded + the non-leginfo, non-archive NO_ANSWER tail** with
+4. ✅ **DONE 2026-08-06** — 1,025 of 1,098 re-probed (73 archive.org skipped by design): 914 LIVE, 111 dead in two independent measurements, **0 new FABRICATED**. See the section above. Superseded advice was:
    `reprobe-no-answer.mjs --host-pace 3000`. Skip leginfo (938 × 25s ≈ 6.5h to confirm a known IP block).
 5. ✅ **DONE 2026-08-06** — NAV_ONLY re-run by reading all 105 surviving pages. Retirements 183 → 298; four governments to zero (Carson, Lynn, Alhambra, Waltham). See the section above.
 6. Write the migration with the split computed in SQL. Chip check per the table above; flip in `essentials`.

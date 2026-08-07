@@ -218,15 +218,22 @@ async function fetchStatus(url, hostState = new Map()) {
 
   if (degraded) return record(0);   // the whole point: no second full-price attempt on a dead host.
 
+  // 🔴 READ STDOUT EVEN WHEN curl EXITS NON-ZERO. curl can print HTTP 200 and still exit non-zero (a
+  // content-decoding or stream quirk under `-L --compressed`), and execFileSync throws on that. Treating
+  // the throw as "nothing answered" manufactures NO_ANSWER out of a perfectly good 200 — it invalidated
+  // a whole re-probe pass on leginfo before it was caught. The written status code is authoritative,
+  // the exit code is not.
+  const { execFileSync } = await import('node:child_process');
+  const args = ['-s', '-o', '/dev/null', '-L', '--compressed', '--max-time', String(CURL_TIMEOUT),
+                '-A', UA, '-w', '%{http_code}', url];
+  let out;
   try {
-    const { execFileSync } = await import('node:child_process');
-    const out = execFileSync('curl', ['-s', '-o', '/dev/null', '-L', '--compressed',
-                                      '--max-time', String(CURL_TIMEOUT),
-                                      '-A', UA, '-w', '%{http_code}', url],
-                             { encoding: 'utf8', timeout: (CURL_TIMEOUT + 5) * 1000 });
-    const code = Number(out.trim());
-    return record(Number.isFinite(code) ? code : 0);
-  } catch { return record(0); }   // 0 = genuinely nothing answered: dead host, DNS, TLS.
+    out = execFileSync('curl', args, { encoding: 'utf8', timeout: (CURL_TIMEOUT + 5) * 1000 });
+  } catch (e) {
+    out = String(e.stdout ?? '');
+  }
+  const code = Number(String(out).trim());
+  return record(Number.isFinite(code) ? code : 0);   // 0 = genuinely nothing answered: dead host, DNS, TLS.
 }
 
 /**
