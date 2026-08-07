@@ -100,3 +100,76 @@ people and stale handoffs, both of which surface as a positive delta. Worth runn
 **Recommended cheap follow-up:** backfill `chambers.official_count` from charter data. It converts the
 seat-count scan from a partial filter into a complete one, and it is the only test here that found
 anything without a per-city web fetch.
+
+---
+
+# Follow-up 2026-08-06: the `official_count` backfill was the WRONG fix
+
+The recommendation immediately above was to backfill `chambers.official_count`. **Investigating it
+showed that would have been actively harmful — and the same investigation found two real defects.**
+
+## Why the backfill was wrong
+
+`essentials.chambers` has 1,073 rows: **538 NULL, 535 populated — but 320 of those are ZERO**, which is
+"unset" rather than a real body size. Only **215 carry a real positive count.**
+
+🔴 **Of those 215, 200 (93%) already equal `count(offices)` for the chamber.** `official_count` is
+therefore largely a *copy of our own offices table*, not an independent charter fact. Backfilling the
+remaining 538 from `offices` would have made the seat-count detector **circular** — delta zero by
+construction, detecting nothing, while looking like a strengthened check.
+
+🔑 **A detector is only worth as much as the independence of the two things it compares.** Filling the
+gap in a redundant column would have destroyed the detector it was meant to strengthen.
+
+## The better detector, which needs no backfill
+
+What caught Wisconsin was structural — **7 offices, 8 office_terms** — and needs no `official_count` at
+all. Filtered to *current* terms that is already clean corpus-wide (0 double-occupied offices), because
+Bradley's term genuinely ended.
+
+The signal that remains is the **disagreement between the two occupancy gates**, derivable entirely from
+our own data across all **82,352** office_terms:
+
+    -- flagged in, but the term has ended
+    p.is_incumbent AND ot.term_end < CURRENT_DATE
+    -- flagged out, but the term is current
+    NOT p.is_incumbent AND ot.term_start <= CURRENT_DATE
+      AND (ot.term_end IS NULL OR ot.term_end >= CURRENT_DATE)
+
+**Result: 0 and 2.** Both of the two are sitting members of Congress. Fixed by **migration 1572**.
+
+## 🔴 Gilbert Cisneros — a sitting U.S. Representative whose stances and seat were on different records
+
+Two rows, inserted in the same batch at the *same microsecond*, by two sources:
+
+| row | source | stances | office | flags |
+|---|---|---|---|---|
+| `65f08851` | `inform-migration` | **19 answers / 19 context** | none | `is_active` FALSE |
+| `d26d3a2f` | `federal_2026_bulk_seed` | 0 | U.S. Representative, from 2025-01-03 | `is_incumbent` FALSE |
+
+Nineteen researched, voter-facing stances hung off a deactivated record holding no office, while the
+record holding his seat had none and read as non-incumbent. Verified currently serving against the very
+source his office_term cites — `legislators-current.json`: **Gilbert Ray Cisneros, Jr., C001123,
+rep CA-31, 2025-01-03 → 2027-01-03.**
+
+⚠ **Scope measured, not assumed:** exactly **one** name in the corpus has this split with stances on one
+side and an office on the other. (13,102 names recur across an 85k-person corpus — ordinary, not this.)
+
+**Raul Ruiz** was the second hit and is benign: his real record (`-6000325`) is correct and holds 15
+answers; an inactive duplicate held a redundant office_term for the same seat, now removed.
+
+## 🔑 The lesson worth more than either fix
+
+Reconciling our records against `legislators-current` **keyed on `bioguide_id` returns ZERO offenders** —
+because **neither Cisneros row nor either Ruiz row has a `bioguide_id`**, while 523 politicians do. The
+join silently skipped precisely the rows that were broken.
+
+**A reconciliation keyed on a column that is NULL on the defective rows reports "all clean" and means
+nothing. Check the join's coverage before trusting its emptiness.**
+
+## Revised recommendation
+
+Do **not** backfill `official_count` from `offices`. Either source it independently from charter data —
+in which case it becomes a genuine cross-check — or drop it from the detector and run the two-gate
+incumbency query above, which is complete today, needs no backfill, and found two sitting members of
+Congress on its first run.
