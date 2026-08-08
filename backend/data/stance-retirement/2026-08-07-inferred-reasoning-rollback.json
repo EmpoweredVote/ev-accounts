@@ -1,0 +1,63 @@
+{
+  "migration": "1606_rewrite_inferred_orphan_reasoning.sql",
+  "date": "2026-08-07",
+  "action": "rewrite reasoning (7 orphan rows); 6 become documented blanks, 1 gains real evidence",
+  "research_record": "data/stance-research/2026-08-07-orphan-58-triage.md",
+  "note": "No row was published, promoted, retired or given a chair. Only `reasoning` changed, plus a verified source prepended on three rows. Restore by setting reasoning (and sources) back to `before`.",
+  "why_now": "These are unpublished, so nothing was voter-facing — the point was to defuse them BEFORE anyone can promote them. Writing an answer publishes the reasoning verbatim; that is what the ORPHAN_CONTEXT cohort exists to prevent.",
+  "detector_note": "A regex for inference verbs matched 9 rows; 7 were real. Excluded after reading: Rae Huang / Residential Zoning matched ONLY because 'displacement' contains 'placement' and contains no inference at all (sixteenth first-cut over-fire on this workstream); Andrew Kim / Housing STATES an absence rather than inferring a stance from one, and the LAist guide independently records 'lacks specific strategies'. Inferring a POSITION from an absence is the defect; reporting the absence is the remedy.",
+  "post_state": "ORPHAN_CONTEXT 56 -> 50, baseline ratcheted in the same commit. All other gate counts unchanged; empty-sources still 404; no duplicate citations created by the array prepends.",
+  "rows": [
+    {
+      "politician": "Amy Bartley", "topic": "Growth and Development Pace",
+      "politician_id": "3631dd31-cb1a-46e1-ae2d-da54ea911411", "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "defect": "Narrates a SCORE that does not exist, and attributes the council's collective posture to an individual member. Its only citation is the town council ROSTER page.",
+      "before": "Bartley serves on Prosper Town Council alongside Mayor Bristol and has been part of a council that has carefully managed Prosper's rapid growth. Her leans-slow-growth score reflects Prosper's broader council posture of requiring developments to meet high standards and contribute positively to the town's fiscal health and character before approval.",
+      "sources_changed": false
+    },
+    {
+      "politician": "Marcus Ray", "topic": "Taxes",
+      "politician_id": "e89206d9-e960-472f-8402-691dc498355e", "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "defect": "Attribute-prior: a tax stance deduced from Finance Committee membership and a former job title. Cited to a staff directory entry and a biography; neither states a tax position.",
+      "before": "Ray serves on Prosper's Finance Committee and has a background as VP of Sales and Operations at a cybersecurity company. His Finance Committee role and consistent skepticism toward development approvals suggest a fiscally conservative orientation focused on ensuring new development pays its own way.",
+      "sources_changed": false
+    },
+    {
+      "politician": "Andy Barr", "topic": "Medicare/aid",
+      "politician_id": "d6d297f5-5319-4be1-b938-6bcce63368e7", "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "defect": "A stance inferred from an interest-group rating ('his 0% ARA rating ... signals strong support for reducing Medicare and Medicaid'). His OWN healthcare page points the other way on the specifics: he cosponsored legislation 'fix[ing] the Medicare physician fee schedule, preventing further cuts to physicians pay' and supported expediting coverage determinations 'ensuring that seniors have access' to breakthrough devices. The page does not mention Medicaid, repeal, or entitlements.",
+      "before": "Barr's consistent support for full ACA repeal and market-based healthcare, combined with his 0% ARA rating indicating opposition to protecting entitlement programs, signals strong support for reducing Medicare and Medicaid. His overall budget philosophy demands spending caps and opposes expanding government health programs.",
+      "sources_changed": "prepended https://barr.house.gov/healthcare; both ontheissues.org citations KEPT"
+    },
+    {
+      "politician": "Andy Barr", "topic": "Misinformation",
+      "politician_id": "d6d297f5-5319-4be1-b938-6bcce63368e7", "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "defect": "Textbook attribute-prior: 'His conservative alignment suggests strong opposition to government content moderation mandates.' Verified while re-sourcing him: his official policy-issues menu carries no technology or online-speech section at all.",
+      "before": "Barr voted YES on CISPA in 2013 favoring private-government cybersecurity data sharing, and his broader record strongly emphasizes free speech and opposition to government regulation of online content. His conservative alignment suggests strong opposition to government content moderation mandates.",
+      "sources_changed": false
+    },
+    {
+      "politician": "Andrew Kim", "topic": "Taxes",
+      "politician_id": "7f6c4fa3-192b-4abf-885b-2006c43a3fc9", "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "defect": "Argues from absence: the sentence concedes there is no evidence and then scores one anyway.",
+      "before": "No specific tax policy positions stated in public materials. Campaign emphasis on accountability, reducing costs for working families, and opposing waste suggests a preference for fiscal restraint and efficiency over new tax measures.",
+      "sources_changed": false,
+      "wording_note": "The replacement was first drafted opening 'No specific tax policy position stated', which is equally true but does NOT match the gate's documented-blank carve-out — the dry run failed at 51 instead of 50. Fixed by wording the blank the way every other blank is worded, NOT by widening the carve-out regex, which would have exempted other rows nobody has read."
+    },
+    {
+      "politician": "Bryant Acosta", "topic": "Immigration",
+      "politician_id": "ac0d1a12-af8e-4464-9cb7-4ed2b549cbbe", "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "defect": "Same shape as his Local Immigration Enforcement row corrected in 1605 — a stance characterised while conceding the detail was not available.",
+      "before": "Identifies immigration as a policy priority and takes a supportive stance toward immigrant communities in Los Angeles, though detailed policy positions were not publicly available at time of research.",
+      "sources_changed": "prepended the LAist LA-mayor voter guide; acostaforla.com KEPT"
+    },
+    {
+      "politician": "Andrew Kim", "topic": "Local Immigration Enforcement",
+      "politician_id": "7f6c4fa3-192b-4abf-885b-2006c43a3fc9", "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "defect": "'framing suggests neither full sanctuary nor aggressive deportation cooperation' — a position inferred from framing. THE ONE ROW HERE THAT GAINED REAL EVIDENCE rather than a blank: the LAist guide carries his actual words verbatim. It remains unpublished because those words support federal enforcement generally without stating a position on detainers, information sharing, or local police resources.",
+      "before": "Supports some cooperation with federal immigration enforcement as part of measured law enforcement, while opposing extreme tactics. Limited public detail available; framing suggests neither full sanctuary nor aggressive deportation cooperation.",
+      "sources_changed": "prepended the LAist LA-mayor voter guide; kimforla.com KEPT"
+    }
+  ],
+  "source_policy": "ontheissues.org citations were KEPT on both Barr rows. The host resolves (A 68.178.204.78) but will not connect from here — UNKNOWN, not dead, and unknown is never grounds for removal. The defect fixed here is the reasoning's inference structure, which does not depend on what ontheissues says."
+}
