@@ -1,0 +1,114 @@
+-- 1628: seed City of Euless, Texas, US - City Council
+--
+-- 7 seats: 3 occupied, 4 seeded VACANT.
+--
+-- FOUR of seven seats seeded VACANT. Mayor, Place 2 and Place 4 appear in NO published
+-- Tarrant County election (May 2024 = P5/P6 only, May 2025 = P1/P3 only, May 2026 = charter
+-- propositions only) - the signature of unopposed candidates whose election was cancelled.
+-- Place 5 is vacant because its only source is an "Unofficial Results" runoff report on a
+-- 16-vote margin, while every other Euless figure comes from a report stamped Official.
+--
+-- Roster source: Tarrant seed 2026-08-08; see backend/data/seed-tarrant-2026/ROSTERS.md
+-- party NULL (antipartisan), role_canonical NULL, external_id NULL - matches the current TX
+-- pattern (City of Frisco), not the legacy Lynn scheme. Occupancy = is_incumbent + an
+-- office_terms row; term dates NULL, as every existing TX city row has.
+-- office_id is set ON THE POLITICIAN INSERT: data-modifying CTEs cannot see each other's
+-- rows, so a follow-up UPDATE would scan a stale snapshot and match zero rows.
+
+BEGIN;
+
+DO $$
+BEGIN
+  IF (SELECT count(*) FROM essentials.chambers c JOIN essentials.governments g ON g.id=c.government_id
+       WHERE g.name='City of Euless, Texas, US' AND c.name='City Council') > 0 THEN
+    RAISE EXCEPTION 'Migration 1628 already applied';
+  END IF;
+  IF (SELECT count(*) FROM essentials.geofence_boundaries WHERE geo_id='4824768' AND mtfcc='G4110') = 0 THEN
+    RAISE EXCEPTION 'Pre-flight FAILED: geofence 4824768/G4110 not found';
+  END IF;
+END $$;
+
+INSERT INTO essentials.governments (id, name, type, state, city, geo_id)
+SELECT gen_random_uuid(), 'City of Euless, Texas, US', 'LOCAL', 'TX', 'Euless', '4824768'
+WHERE NOT EXISTS (SELECT 1 FROM essentials.governments WHERE name='City of Euless, Texas, US');
+
+INSERT INTO essentials.districts (id, district_type, state, geo_id, label, mtfcc, ocd_id, government_id)
+SELECT gen_random_uuid(), 'LOCAL', 'tx', '4824768', 'City of Euless', 'G4110',
+       'ocd-division/country:us/state:tx/place:euless',
+       (SELECT id FROM essentials.governments WHERE name='City of Euless, Texas, US')
+WHERE NOT EXISTS (SELECT 1 FROM essentials.districts
+  WHERE geo_id='4824768' AND district_type='LOCAL' AND state='tx');
+
+DO $$
+BEGIN
+  IF (SELECT count(*) FROM essentials.districts
+       WHERE geo_id='4824768' AND district_type='LOCAL' AND state='tx') <> 1 THEN
+    RAISE EXCEPTION 'expected exactly 1 LOCAL district for 4824768';
+  END IF;
+END $$;
+
+INSERT INTO essentials.chambers (id, name, name_formal, government_id, official_count)
+SELECT gen_random_uuid(), 'City Council', 'Euless City Council',
+       (SELECT id FROM essentials.governments WHERE name='City of Euless, Texas, US'), 7
+WHERE NOT EXISTS (SELECT 1 FROM essentials.chambers c JOIN essentials.governments gg ON gg.id=c.government_id
+  WHERE gg.name='City of Euless, Texas, US' AND c.name='City Council');
+
+-- 3 occupied seats. Titles are unique within the chamber, which is what the
+-- ofc/seats join below relies on.
+WITH seats(title, full_name, first_name, last_name) AS (VALUES
+  ('Council Member Place 1', 'Tim Stinneford', 'Tim', 'Stinneford'),
+  ('Council Member Place 3', 'Eddie Price', 'Eddie', 'Price'),
+  ('Council Member Place 6', 'Tika Paudel', 'Tika', 'Paudel')
+), ofc AS (
+  INSERT INTO essentials.offices
+    (id, chamber_id, district_id, title, representing_state, representing_city, seats,
+     is_appointed_position, is_vacant, role_canonical)
+  SELECT gen_random_uuid(), (SELECT id FROM essentials.chambers WHERE name='City Council' AND government_id=(SELECT id FROM essentials.governments WHERE name='City of Euless, Texas, US')), (SELECT id FROM essentials.districts WHERE geo_id='4824768' AND district_type='LOCAL' AND state='tx'), s.title, 'TX', 'Euless', 1, false, false, NULL
+    FROM seats s
+  RETURNING id, title
+), pol AS (
+  INSERT INTO essentials.politicians
+    (id, full_name, first_name, last_name, party, is_active, is_appointed, is_vacant,
+     is_incumbent, data_source, office_id)
+  SELECT gen_random_uuid(), s.full_name, s.first_name, s.last_name, NULL,
+         true, false, false, true, 'Tarrant seed 2026-08-08; see backend/data/seed-tarrant-2026/ROSTERS.md', o.id
+    FROM seats s JOIN ofc o ON o.title = s.title
+  RETURNING id, office_id
+)
+INSERT INTO essentials.office_terms (id, office_id, politician_id, source)
+SELECT gen_random_uuid(), p.office_id, p.id, 'Tarrant seed 2026-08-08; see backend/data/seed-tarrant-2026/ROSTERS.md' FROM pol p;
+
+-- 4 VACANT seats: office row only, no politician and no office_term.
+INSERT INTO essentials.offices
+  (id, chamber_id, district_id, title, representing_state, representing_city, seats,
+   is_appointed_position, is_vacant, role_canonical)
+SELECT gen_random_uuid(), (SELECT id FROM essentials.chambers WHERE name='City Council' AND government_id=(SELECT id FROM essentials.governments WHERE name='City of Euless, Texas, US')), (SELECT id FROM essentials.districts WHERE geo_id='4824768' AND district_type='LOCAL' AND state='tx'), v.title, 'TX', 'Euless', 1, false, true, NULL
+  FROM (VALUES
+  ('Mayor'),
+  ('Council Member Place 2'),
+  ('Council Member Place 4'),
+  ('Council Member Place 5')
+) AS v(title);
+
+DO $$
+DECLARE v_off int; v_fill int; v_vac int; v_term int; v_bad int; v_ch uuid;
+BEGIN
+  SELECT (SELECT id FROM essentials.chambers WHERE name='City Council' AND government_id=(SELECT id FROM essentials.governments WHERE name='City of Euless, Texas, US')) INTO v_ch;
+  SELECT count(*) INTO v_off FROM essentials.offices WHERE chamber_id=v_ch;
+  IF v_off <> 7 THEN RAISE EXCEPTION 'expected 7 offices, found %', v_off; END IF;
+  SELECT count(*) INTO v_vac FROM essentials.offices WHERE chamber_id=v_ch AND is_vacant;
+  IF v_vac <> 4 THEN RAISE EXCEPTION 'expected 4 vacant, found %', v_vac; END IF;
+  SELECT count(*) INTO v_fill FROM essentials.offices WHERE chamber_id=v_ch AND NOT is_vacant;
+  IF v_fill <> 3 THEN RAISE EXCEPTION 'expected 3 filled, found %', v_fill; END IF;
+  SELECT count(*) INTO v_term FROM essentials.office_terms ot JOIN essentials.offices o ON o.id=ot.office_id WHERE o.chamber_id=v_ch;
+  IF v_term <> 3 THEN RAISE EXCEPTION 'expected 3 office_terms, found %', v_term; END IF;
+  SELECT count(*) INTO v_bad FROM essentials.office_terms ot JOIN essentials.offices o ON o.id=ot.office_id
+    JOIN essentials.politicians p ON p.id=ot.politician_id
+   WHERE o.chamber_id=v_ch AND (p.office_id IS NULL OR p.office_id <> o.id);
+  IF v_bad <> 0 THEN RAISE EXCEPTION '% politicians missing office_id back-fill', v_bad; END IF;
+  SELECT count(*) INTO v_bad FROM essentials.office_terms ot JOIN essentials.offices o ON o.id=ot.office_id
+   WHERE o.chamber_id=v_ch AND o.is_vacant;
+  IF v_bad <> 0 THEN RAISE EXCEPTION '% vacant offices carry a term', v_bad; END IF;
+END $$;
+
+COMMIT;
