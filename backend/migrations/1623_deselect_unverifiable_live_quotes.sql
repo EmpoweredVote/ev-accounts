@@ -1,4 +1,4 @@
--- 1569_deselect_unverifiable_live_quotes.sql
+-- 1623_deselect_unverifiable_live_quotes.sql
 --
 -- URGENT. Two quotes that are LIVE to voters cannot be verified against any source. The reveal
 -- IS the provenance in Read & Rank, so an unverifiable live quote is the one thing the product

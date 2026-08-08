@@ -1,4 +1,4 @@
--- 1568_repoint_ca_governor_swapped_debate_citations.sql
+-- 1622_repoint_ca_governor_swapped_debate_citations.sql
 --
 -- The 2026-08-07 comparability audit's --verify-written pass flagged 18 CA Governor quotes whose
 -- text does not appear in the video they cite. Investigation (all read-only) found the cause:

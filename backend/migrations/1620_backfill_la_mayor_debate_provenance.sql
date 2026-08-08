@@ -1,4 +1,4 @@
--- 1566_backfill_la_mayor_debate_provenance.sql
+-- 1620_backfill_la_mayor_debate_provenance.sql
 --
 -- APPLIED 2026-08-07 against production (dry-run verified, guards passed, 30 rows updated).
 -- Researched and drafted in on-the-record; moved here on apply.
