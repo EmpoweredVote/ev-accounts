@@ -116,6 +116,7 @@ function loadCensus(path: string, states: string[]): CensusUnit[] {
 const Q_DISTRICTS = `
   SELECT d.id::text                         AS district_id,
          coalesce(btrim(d.geo_id), '')      AS geo_id,
+         coalesce(btrim(d.ocd_id), '')      AS ocd_id,
          lower(d.state)                     AS state,
          d.district_type,
          coalesce(d.label, '')              AS label,
@@ -130,9 +131,29 @@ const Q_DISTRICTS = `
 `;
 
 type Ours = {
-  district_id: string; geo_id: string; state: string; district_type: string;
+  district_id: string; geo_id: string; ocd_id: string; state: string; district_type: string;
   label: string; offices: number; seated: number;
 };
+
+/**
+ * Parent place or county for a sub-jurisdictional district, read out of its OCD id.
+ *
+ * A council ward has NO FIPS place code -- FIPS identifies places, not wards inside them -- so a
+ * ward district legitimately carries a synthesized geo_id like `boston-ma-council-district-5`.
+ * Those slugs are the join key to geofence_boundaries and must never be rewritten; 361 of the 381
+ * non-FIPS rows have live geometry keyed on the exact string.
+ *
+ * The parent is nonetheless recoverable, because ocd_id already encodes it:
+ *   ocd-division/country:us/state:ma/place:boston/ward:5   -> place boston
+ *   ocd-division/country:us/state:ca/county:los_angeles/... -> county los_angeles
+ * Reading it turns a ward into evidence that its city is covered, which is what the coverage
+ * question actually asks.
+ */
+function ocdParent(ocdId: string): { kind: 'place' | 'county'; name: string } | null {
+  const m = ocdId.match(/\/(place|county):([a-z0-9_~.-]+)/i);
+  if (!m) return null;
+  return { kind: m[1].toLowerCase() as 'place' | 'county', name: m[2].replace(/_/g, ' ') };
+}
 
 /** Only a numeric geo_id of the right width is a FIPS key. Everything else needs human review. */
 function fipsKeyOf(r: Ours): { key: string; kind: 'county' | 'place' } | null {
@@ -182,9 +203,33 @@ async function main() {
     byKey.set(k.key, e);
   }
 
+  // Roll wards up to their parent via ocd_id. This resolves by NAME, which is why it is kept in
+  // its own bucket and reported separately -- a name match is evidence, not proof, and the strict
+  // FIPS number stays visible next to it so neither can hide the other.
+  const censusByName = new Map<string, CensusUnit[]>();
+  for (const c of census) {
+    censusByName.set(`${c.fipsState}|${c.kind}|${normName(c.name)}`, [
+      ...(censusByName.get(`${c.fipsState}|${c.kind}|${normName(c.name)}`) ?? []), c,
+    ]);
+  }
+  const rollup = new Map<string, { offices: number; seated: number; rows: Ours[] }>();
+  const unresolved: Ours[] = [];
+  for (const r of unjoinable) {
+    const p = ocdParent(r.ocd_id);
+    const fs = STATE_FIPS[r.state];
+    const cands = p && fs ? censusByName.get(`${fs}|${p.kind}|${normName(p.name)}`) ?? [] : [];
+    if (cands.length !== 1) { unresolved.push(r); continue; }
+    const e = rollup.get(cands[0].key) ?? { offices: 0, seated: 0, rows: [] };
+    e.offices += r.offices; e.seated += r.seated; e.rows.push(r);
+    rollup.set(cands[0].key, e);
+  }
+  console.log(`[census] ward rollup: ${unjoinable.length - unresolved.length} of ${unjoinable.length} ` +
+    `non-FIPS districts resolved to a parent via ocd_id`);
+
   // ---- coverage_vs_census.csv : one row per Census unit
   const coverage = census.map((c) => {
     const m = byKey.get(c.key);
+    const ru = rollup.get(c.key);
     return {
       state: c.state,
       unit_name: c.name,
@@ -195,10 +240,15 @@ async function main() {
       population: c.population,
       population_year: c.popYear,
       census_web_address: c.web,
-      we_have_district: m ? 'yes' : 'no',
-      our_offices: m?.offices ?? 0,
-      our_seated_officeholders: m?.seated ?? 0,
-      coverage_status: !m ? 'absent' : m.seated > 0 ? 'seated' : 'district_only',
+      we_have_district: m ? 'yes' : ru ? 'via_ward_only' : 'no',
+      our_offices: (m?.offices ?? 0) + (ru?.offices ?? 0),
+      our_seated_officeholders: (m?.seated ?? 0) + (ru?.seated ?? 0),
+      // Strict = FIPS-joined only. The rolled-up view additionally credits wards matched to this
+      // place by name through ocd_id. Both are emitted; the summary shows them side by side.
+      coverage_status_strict: !m ? 'absent' : m.seated > 0 ? 'seated' : 'district_only',
+      coverage_status: (m?.seated ?? 0) + (ru?.seated ?? 0) > 0 ? 'seated'
+        : m || ru ? 'district_only' : 'absent',
+      ward_rollup_applied: ru ? 'yes' : '',
     };
   }).sort((a, b) => a.state.localeCompare(b.state) || (b.population ?? 0) - (a.population ?? 0));
 
@@ -207,22 +257,25 @@ async function main() {
     .filter((r) => r.coverage_status !== 'seated')
     .sort((a, b) => (b.population ?? 0) - (a.population ?? 0));
 
-  // ---- geo_id_review.csv : everything the deterministic join could not settle
-  const censusByName = new Map<string, CensusUnit[]>();
-  for (const c of census) {
-    const nk = `${c.fipsState}|${normName(c.name)}`;
-    censusByName.set(nk, [...(censusByName.get(nk) ?? []), c]);
-  }
+  // ---- geo_id_review.csv : only what neither the FIPS join nor the ocd rollup could settle.
+  // A slug geo_id is NOT reportable on its own -- a ward has no FIPS code, so a synthesized key
+  // is the correct design there, and the slug is the join key to geofence_boundaries. Rewriting
+  // one would detach the district from its polygon. Only unresolvable PARENTAGE is a finding.
   const censusKeys = new Set(census.map((c) => c.key));
 
   const review = [
-    ...unjoinable.map((r) => {
-      const guess = guessNameFromGeoId(r.geo_id);
-      const nk = `${STATE_FIPS[r.state]}|${normName(guess)}`;
-      const cands = censusByName.get(nk) ?? [];
+    ...unresolved.map((r) => {
+      // ocd_id first; fall back to picking a name out of the slug only when there is no ocd_id.
+      const p = ocdParent(r.ocd_id);
+      const guess = p ? p.name : guessNameFromGeoId(r.geo_id);
+      const fs = STATE_FIPS[r.state];
+      const cands = [
+        ...(censusByName.get(`${fs}|place|${normName(guess)}`) ?? []),
+        ...(censusByName.get(`${fs}|county|${normName(guess)}`) ?? []),
+      ];
       const one = cands.length === 1 ? cands[0] : null;
       return {
-        reason: 'non_fips_geo_id',
+        reason: p ? 'ocd_parent_unmatched' : 'no_parent_recoverable',
         state: r.state,
         district_id: r.district_id,
         district_type: r.district_type,
@@ -299,7 +352,7 @@ async function main() {
   const summary = renderSummary(coverage, review, files);
   writeFileSync(join(OUT_DIR, `SUMMARY_${SLUG}.md`), summary, 'utf8');
 
-  verify(coverage, review, census, ours, byKey, unjoinable);
+  verify(coverage, review, census, ours, byKey, unjoinable, rollup, unresolved);
   console.log(`[census] wrote 4 files to ${OUT_DIR}`);
   console.log(summary.split('\n').slice(0, 40).join('\n'));
 }
@@ -332,21 +385,29 @@ function renderSummary(coverage: Cov[], review: any[], files: Record<string, str
   L.push('the failure mode that produces silently invisible offices. It is counted separately from');
   L.push('`absent` on purpose.', '');
 
-  const nonFips = review.filter((r) => r.reason === 'non_fips_geo_id');
+  const nonFips = review.filter((r) => r.reason === 'ocd_parent_unmatched' || r.reason === 'no_parent_recoverable');
   const orphan = review.filter((r) => r.reason === 'fips_not_in_census');
-  L.push('## Why these numbers are a lower bound', '');
-  L.push(`${nonFips.length} of our district rows carry a geo_id that is not a FIPS code and could not`);
-  L.push('be joined deterministically. They are listed in the review file with a *proposed* match and');
-  L.push('a confidence flag; nothing was auto-resolved. Any that turn out to be places missing from');
-  L.push('the covered set will raise the coverage figures above.');
+  L.push('## How wards are counted', '');
+  L.push('A council ward has no FIPS place code, so a ward district carries a synthesized geo_id such');
+  L.push('as `boston-ma-council-district-5`. That string is the join key to geofence_boundaries and is');
+  L.push('correct by design -- it is not a defect and must never be rewritten. Its parent is read from');
+  L.push('`ocd_id` (`.../place:boston/ward:5`) so the ward counts toward its city.');
+  L.push('');
+  L.push('That rollup resolves by NAME, so the CSV carries both readings: `coverage_status_strict` is');
+  L.push('the FIPS-join-only view, `coverage_status` includes the rollup, and `ward_rollup_applied`');
+  L.push('marks which rows differ. Neither number is hidden behind the other.');
+  L.push('');
+  L.push(`${nonFips.length} district rows could not be attributed to any parent and remain unmeasured.`);
   const adds = nonFips.filter((r) => r.proposal_adds_coverage === 'yes');
   const already = nonFips.filter((r) => r.proposal_adds_coverage === 'no_already_covered').length;
-  const nomatch = nonFips.filter((r) => r.match_confidence === 'no_match').length;
+  const noParent = nonFips.filter((r) => r.reason === 'no_parent_recoverable').length;
   const addPlaces = new Set(adds.map((r) => r.proposed_fips_key));
   L.push('');
   L.push(`- ${already} propose a place already counted (would add nothing)`);
   L.push(`- ${adds.length} propose a place NOT currently counted — ${addPlaces.size} distinct place(s), so coverage rises by that much`);
-  L.push(`- ${nomatch} could not be matched to any Census name and need a human`);
+  L.push(`- ${noParent} carry no ocd_id at all, so their parent cannot be recovered without research`);
+  L.push('');
+  L.push('The fix for the last group is to populate `ocd_id`, NOT to touch `geo_id`.');
 
   const dupes = review.filter((r) => r.reason === 'duplicate_district_rows');
   if (dupes.length) {
@@ -381,7 +442,8 @@ function renderSummary(coverage: Cov[], review: any[], files: Record<string, str
 // ---------------------------------------------------------------- verify
 
 function verify(coverage: any[], review: any[], census: CensusUnit[], ours: Ours[],
-                byKey: Map<string, any>, unjoinable: Ours[]) {
+                byKey: Map<string, any>, unjoinable: Ours[], rollup: Map<string, any>,
+                unresolved: Ours[]) {
   const fail = (m: string) => { throw new Error(`[verify] ${m}`); };
 
   if (coverage.length !== census.length) fail(`coverage rows ${coverage.length} != census units ${census.length}`);
@@ -392,10 +454,21 @@ function verify(coverage: any[], review: any[], census: CensusUnit[], ours: Ours
   if (joined + unjoinable.length !== ours.length) {
     fail(`${joined} joined + ${unjoinable.length} unjoinable != ${ours.length} districts`);
   }
-  const reviewedNonFips = review.filter((r) => r.reason === 'non_fips_geo_id').length;
-  if (reviewedNonFips !== unjoinable.length) {
-    fail(`${unjoinable.length} unjoinable districts but ${reviewedNonFips} in the review file`);
+  // Every non-FIPS district is either rolled up to a parent or surfaced for review. Nothing may
+  // fall between the two, which is the only way a coverage number could quietly overstate itself.
+  const rolled = [...rollup.values()].reduce((a, e) => a + e.rows.length, 0);
+  if (rolled + unresolved.length !== unjoinable.length) {
+    fail(`${rolled} rolled up + ${unresolved.length} unresolved != ${unjoinable.length} non-FIPS districts`);
   }
+  const reviewedNonFips = review.filter(
+    (r) => r.reason === 'ocd_parent_unmatched' || r.reason === 'no_parent_recoverable').length;
+  if (reviewedNonFips !== unresolved.length) {
+    fail(`${unresolved.length} unresolved districts but ${reviewedNonFips} in the review file`);
+  }
+
+  // The rolled-up view can only ever be equal or better than the strict one, never worse.
+  const regressed = coverage.filter((r) => r.coverage_status_strict === 'seated' && r.coverage_status !== 'seated');
+  if (regressed.length) fail(`${regressed.length} units lost 'seated' status under the ward rollup`);
 
   const statuses = new Set(coverage.map((r) => r.coverage_status));
   const known = ['absent', 'district_only', 'seated'];
@@ -414,7 +487,8 @@ function verify(coverage: any[], review: any[], census: CensusUnit[], ours: Ours
   if (dupes) fail(`${dupes} duplicate fips_key rows in coverage output`);
 
   console.log(`[verify] ${coverage.length} census units, ${ours.length} districts ` +
-    `(${joined} joined, ${unjoinable.length} to review), all assertions passed`);
+    `(${joined} FIPS-joined, ${rolled} rolled up via ocd_id, ${unresolved.length} to review), ` +
+    'all assertions passed');
 }
 
 main()
