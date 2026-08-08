@@ -1,0 +1,74 @@
+{
+  "migration": "1604_reresearch_five_owed_rows.sql",
+  "date": "2026-08-07",
+  "action": "re-source + rewrite (4), chair correction (1 of those 4), retire (1)",
+  "research_record": "data/stance-research/2026-08-07-five-row-reresearch.md",
+  "restore": "For the four rewritten rows, set reasoning/sources back to `before` (and value back to 1 for Lungo-Koehn). For the retired row, re-insert into inform.politician_context and inform.politician_answers from `before`.",
+  "rule_note": "Re-research did not return to the original sources (1508's rule). Every citation written by this migration was fetched on 2026-08-07.",
+  "rows": [
+    {
+      "politician": "Breanna Lungo-Koehn",
+      "topic": "Climate Change",
+      "politician_id": "a4320764-6ba2-4563-9a58-abb1333c2f40",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "action": "chair 1 -> 2, rewritten, re-sourced",
+      "chair_before": 1,
+      "chair_after": 2,
+      "before": {
+        "sources": ["https://www.medfordma.org/departments/sustainability/climate-action/", "https://metromayor.org/climate-resolutions/"],
+        "reasoning": "Lungo-Koehn signed the City Climate Change Commitment and committed Medford to 100% renewable electricity for city operations by 2030 and net-zero emissions citywide by 2050. She participated in the Metro Mayors Coalition climate working group and publicly stated that climate change is an existential threat requiring urgent local action. She has backed state climate legislation including the 2021 MA Climate Act and directed city buildings to transition away from fossil fuel heating."
+      },
+      "why": "BOTH citations were unreachable — metromayor.org has no DNS and no captures, and medfordma.org/departments/sustainability/climate-action/ returns 404 (as does its parent; the root is 200, so the site reorganised). Chair 1 is 'declare a climate emergency and ban all activities that increase carbon emissions'; Medford declared no emergency and banned nothing. The old reasoning also overstated the 2030 target as '100% renewable electricity' when the actual commitment is a 50% cut, and named a 'City Climate Change Commitment' document that does not exist. Its Metro Mayors clause was TRUE — only the host cited for it died."
+    },
+    {
+      "politician": "Garland Barr",
+      "topic": "Fossil Fuels",
+      "politician_id": "164fb70e-b8c1-48cd-a6ef-12d80165c67d",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "action": "rewritten, re-sourced; chair 4 unchanged",
+      "before": {
+        "sources": ["https://www.ontheissues.org/House/Andy_Barr.htm"],
+        "reasoning": "Barr opposes the EPA's 'war on coal,' supports 'exploring proven energy reserves,' voted to support offshore energy production and offshore oil/gas drilling (2016), and backed letting the wind energy tax credit expire. He favors expanding domestic fossil fuel production through drilling without major new restrictions."
+      },
+      "why": "Sole-sourced to an aggregator after 1603 removed its duplicate. The old reasoning's specifics are ontheissues artifacts that appear NOWHERE on his own energy page — drill, offshore, wind and tax credit all score zero there. Replaced with verbatim material from barr.house.gov/energy. Chair 4 retained: he wants permits expanded and expedited and names specific rules to repeal (WOTUS, EPA anti-coal), rather than removing environmental restrictions wholesale (chair 5)."
+    },
+    {
+      "politician": "Rick Allen",
+      "topic": "Voting Rights",
+      "politician_id": "3de9e882-a816-42fc-ae70-aa93098c5d02",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "action": "rewritten, re-sourced; chair 4 unchanged",
+      "before": {
+        "sources": ["https://www.ontheissues.org/GA/Rick_Allen.htm"],
+        "reasoning": "Allen requires photo ID for voting and opposes same-day voter registration, per documented voter guide responses. His position aligns with requiring photo ID and regularly updating voter rolls, but stops short of eliminating mail-in voting entirely."
+      },
+      "why": "Sole-sourced to an aggregator after 1603. Replaced with his own office's 2026-02-11 release on the SAVE America Act. The old 'opposes same-day voter registration, per documented voter guide responses' is an ontheissues artifact and is dropped. NOTE: 'voter rolls' does not appear on the cited release, so the rewrite does not claim roll maintenance even though chair 4's label mentions it."
+    },
+    {
+      "politician": "Kenneth Mejia",
+      "topic": "Climate Change",
+      "politician_id": "590fd6ec-3194-43af-97fc-25490490c565",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "action": "rewritten, re-sourced; chair 2 unchanged",
+      "before": {
+        "sources": ["https://lacontroller.org/", "https://ballotpedia.org/Kenneth_Mejia", "https://www.kennethforla.com/"],
+        "reasoning": "Mejia has used the Controller's office to audit city sustainability spending and track progress on climate commitments. He has published transparency reports on how climate and environmental funds are spent across city departments, holding the city accountable to its climate goals."
+      },
+      "why": "Cited a dead host (kennethforla.com, zero captures) and a bare root (lacontroller.org; his official site is controller.lacity.gov). More seriously, the old reasoning described his JOB, not a position — auditing sustainability spending is compatible with any chair, so the row was scored 2 on evidence that could not distinguish 2 from 4. Real evidence exists and is now cited: he wants Los Angeles at 100% clean, renewable energy by 2030. Right chair, wrong basis."
+    },
+    {
+      "politician": "Kenneth Mejia",
+      "topic": "Abortion",
+      "politician_id": "590fd6ec-3194-43af-97fc-25490490c565",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "action": "RETIRED — deleted from both tables",
+      "chair_before": 2,
+      "before": {
+        "sources": ["https://www.kennethforla.com/", "https://ballotpedia.org/Kenneth_Mejia"],
+        "reasoning": "Mejia is a strong reproductive rights supporter, having been endorsed by progressive organizations that prioritize abortion access. As a Democratic Socialist and former congressional candidate, he consistently supports full reproductive autonomy and opposes restrictions on abortion access."
+      },
+      "why": "VERIFIED ABSENT, meeting the strict bar the lapsed-domain rows in 1601 did not. The reasoning was openly attribute-prior ('As a Democratic Socialist and former congressional candidate, he consistently supports...') — the class 1521 retired. The LA City Controller is a fiscal-oversight office with NO abortion jurisdiction, so no official record can exist. The most detailed profile of him does not mention abortion at all, and a targeted search found no statement by him; the only Dobbs connection in the record is post-Dobbs youth turnout aiding his 2022 campaign, a fact about the electorate rather than about him. Its only surviving citation was Ballotpedia, which is why 1602 held it rather than stripping it into a BALLOTPEDIA_ONLY gate regression.",
+      "effects": "Mejia keeps 12 answers, so he is not emptied and last_stances_researched_at is not cleared (the 1494 rule)."
+    }
+  ]
+}
