@@ -51,6 +51,29 @@ owing** — the PARTIAL_INVISIBLE class. Drive this cluster from **this file**, 
 
 ---
 
+## ✅ THE 15 SURVIVORS ARE CLOSED — migration 1608, 2026-08-07
+
+All five authorities below were verified to fail; **12 repaired, 3 retired, 6 chairs corrected**.
+Full record: `2026-08-07-survivors-verification.md`. Rollback:
+`data/stance-retirement/2026-08-07-portland-survivors-rollback.json`.
+
+🔑 **THE UNLOCK, and it re-sources the 57 owed rows too**: portland.gov publishes **per-member
+roll-call records** at `portland.gov/council/districts/<n>/<name>/votes` — council document number,
+date, full title, and that member's **Yea / Nay / Absent / Abstain**. Ryan's holds **2,679 votes**.
+Filter with `?council_document=<keywords>&voted=<Yea|Nay|Absent|Abstain>`. This is better than the
+"council minutes" proposed below and it dissolves the "unanimously approved is not per-member
+evidence" problem.
+- ⚠ **Does NOT work for the mayor** — under the new charter Wilson votes only to break ties and has
+  **exactly 1** vote on file. Source him from `portland.gov/promise/about-portlands-promise/*` and
+  `portland.gov/homeless/homeless-crisis` instead.
+- 🔴 **Keyword totals are NOT evidence.** The search matches full document text: `rent` matches
+  "cur**rent**"/"B**rent**wood", `tree` matches "s**tree**t" (107 hits, nearly all street LIDs), and
+  `sanctuary` matches "Guild's Lake Industrial **Sanctuary**". **Read every title.**
+- ⚠ Near-unanimous votes are weak for *distinguishing* councilors but fine as evidence of one
+  person's own position when the item is squarely on topic.
+
+⛔ The section below is the **pre-1608 diagnosis, kept for the record.** Do not re-work it.
+
 ## 🔴 15 suspect survivors — verify BEFORE treating them as coverage
 
 These were not retired by 1558 (they do not cite willametteweek) but none is safe to lean on. They are
