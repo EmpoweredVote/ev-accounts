@@ -25,7 +25,7 @@ vi.mock('./informBoundaryService.js', () => ({
   getCountyNames: mockGetCountyNames,
 }));
 
-import { getPlayableRaces, deriveTierScope, deriveOfficeSeat, getRaceBlindQuotes, computeRaceMatch } from './readrankService.js';
+import { getPlayableRaces, deriveTierScope, deriveOfficeSeat, getRaceBlindQuotes, computeRaceMatch, topicTitleFromKey } from './readrankService.js';
 import type { JurisdictionGeoIds } from './essentialsService.js';
 
 // getPlayableRaces now returns { races, counties }. Existing array-style assertions
@@ -763,7 +763,10 @@ describe('getRaceBlindQuotes — resolved ranking question (override ?? compass)
 
     const sql = mockQuery.mock.calls[0][0] as string;
     expect(sql).toContain('essentials.readrank_race_topic_questions');
-    expect(sql).toMatch(/COALESCE\(\s*rtq\.question_text\s*,\s*ct\.question_text\s*\)/);
+    // The COALESCE gained a third, higher-priority source (rq = the quote's own
+    // readrank_question), because a topic with no Compass row has no ct.question_text
+    // to fall back to. The override-beats-compass ordering asserted here is unchanged.
+    expect(sql).toMatch(/COALESCE\(\s*rq\.question_text\s*,\s*rtq\.question_text\s*,\s*ct\.question_text\s*\)/);
   });
 });
 
@@ -852,5 +855,143 @@ describe('computeRaceMatch — candidates you judged but never agreed with', () 
     ]);
 
     expect(result!.ballot.map((e) => e.name)).toEqual(['Alex Doe', 'Blair Roe']);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// A question can ship without a live Compass topic.
+//
+// The four inner joins on inform.compass_topics became LEFT JOINs, so a quote
+// whose topic_key has no Compass row now reaches the payload — and arrives with
+// topic_title NULL. The readable heading is derived in TypeScript (here, where
+// it is testable) rather than in SQL, because pool.query is mocked in this file
+// and no SQL behaviour is exercised by these tests at all.
+// ---------------------------------------------------------------------------
+
+describe('topicTitleFromKey', () => {
+  it('title-cases a hyphenated key: israel-aid -> Israel Aid', () => {
+    expect(topicTitleFromKey('israel-aid')).toBe('Israel Aid');
+  });
+
+  it('title-cases a single-word key: housing -> Housing', () => {
+    expect(topicTitleFromKey('housing')).toBe('Housing');
+  });
+
+  it('title-cases a multi-hyphen key: public-safety-approach -> Public Safety Approach', () => {
+    expect(topicTitleFromKey('public-safety-approach')).toBe('Public Safety Approach');
+  });
+
+  it('handles underscores the same way as hyphens', () => {
+    expect(topicTitleFromKey('gun_policy')).toBe('Gun Policy');
+  });
+
+  it('normalises an already-cased or spaced key rather than doubling separators', () => {
+    expect(topicTitleFromKey('ISRAEL--AID')).toBe('Israel Aid');
+    expect(topicTitleFromKey('  israel aid  ')).toBe('Israel Aid');
+  });
+
+  it('returns an empty string for an empty, whitespace-only, or missing key', () => {
+    // A heading is a user-facing string; there is nothing honest to invent from
+    // no key at all, so the caller falls back to '' exactly as it did before.
+    expect(topicTitleFromKey('')).toBe('');
+    expect(topicTitleFromKey('   ')).toBe('');
+    expect(topicTitleFromKey('---')).toBe('');
+    expect(topicTitleFromKey(null)).toBe('');
+    expect(topicTitleFromKey(undefined)).toBe('');
+  });
+});
+
+describe('getRaceBlindQuotes — topic with no live Compass topic', () => {
+  it('derives the heading from topic_key when topic_title is NULL', async () => {
+    // What a non-Compass topic looks like coming back from the LEFT JOIN:
+    // ct.short_title and ct.question_text are both NULL; the question is
+    // supplied by essentials.readrank_questions instead.
+    mockQuery.mockResolvedValueOnce({
+      rows: [
+        { quote_id: 'q1', deidentified_text: 'Conditions on aid.', topic_key: 'israel-aid', politician_id: 'p1', topic_title: null, topic_question: 'Should US aid to Israel carry conditions?', position_name: 'U.S. Senate' },
+        { quote_id: 'q2', deidentified_text: 'No conditions.', topic_key: 'israel-aid', politician_id: 'p2', topic_title: null, topic_question: 'Should US aid to Israel carry conditions?', position_name: 'U.S. Senate' },
+      ],
+    });
+
+    const payload = await getRaceBlindQuotes('race-mi-senate');
+
+    expect(payload).not.toBeNull();
+    expect(payload!.topics).toHaveLength(1);
+    expect(payload!.topics[0].title).toBe('Israel Aid');
+    expect(payload!.topics[0].question).toBe('Should US aid to Israel carry conditions?');
+    expect(payload!.topics[0].quotes).toHaveLength(2);
+    // Blindness invariant: no attribution leaks onto the blind card.
+    for (const q of payload!.topics[0].quotes) {
+      expect(Object.keys(q).sort()).toEqual(['candidateToken', 'id', 'text', 'topicKey']);
+    }
+  });
+
+  it('prefers a real Compass short_title over the derived one', async () => {
+    mockQuery.mockResolvedValueOnce({
+      rows: [
+        { quote_id: 'q1', deidentified_text: 'Build more homes.', topic_key: 'housing', politician_id: 'p1', topic_title: 'Housing', topic_question: 'Q?', position_name: 'Mayor' },
+      ],
+    });
+
+    const payload = await getRaceBlindQuotes('race-1');
+
+    expect(payload!.topics[0].title).toBe('Housing');
+  });
+
+  it('keeps a Compass short_title that differs from the key title-cased', async () => {
+    // Guards against a fallback that silently overwrites curated wording:
+    // 'fossil-fuels' would derive as 'Fossil Fuels', but Compass says otherwise.
+    mockQuery.mockResolvedValueOnce({
+      rows: [
+        { quote_id: 'q1', deidentified_text: 'Phase them out.', topic_key: 'fossil-fuels', politician_id: 'p1', topic_title: 'Fossil fuels', topic_question: 'Q?', position_name: 'Governor' },
+      ],
+    });
+
+    const payload = await getRaceBlindQuotes('race-1');
+
+    expect(payload!.topics[0].title).toBe('Fossil fuels');
+  });
+
+  it('resolves the question across question -> race override -> compass', async () => {
+    // Weak structural guard: pool.query is mocked, so the COALESCE is never
+    // executed. This only asserts the three sources appear in the right order
+    // in the SQL text — it does NOT prove the database resolves them correctly.
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getRaceBlindQuotes('race-1');
+
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(/COALESCE\(\s*rq\.question_text\s*,\s*rtq\.question_text\s*,\s*ct\.question_text\s*\)/);
+    expect(sql).toContain('essentials.readrank_questions rq');
+  });
+});
+
+describe('computeRaceMatch — topic with no live Compass topic', () => {
+  it('derives the per-topic heading from topic_key when topic_title is NULL', async () => {
+    mockQuery.mockResolvedValueOnce({
+      rows: [{
+        quote_id: 'q1', politician_id: 'p1', topic_key: 'israel-aid', deidentified_text: 'Conditions on aid.',
+        source_name: 'Debate', source_url: 'https://example.com/debate', full_name: 'Alex Doe', photo: null,
+        office_title: 'State Senator', topic_title: null, position_name: 'U.S. Senate',
+      }],
+    });
+
+    const result = await computeRaceMatch('race-mi-senate', [{ quote_id: 'q1', supported: true, rank: 1 }]);
+
+    expect(result!.ballot).toHaveLength(1);
+    expect(result!.ballot[0].perTopic[0]).toMatchObject({ topicKey: 'israel-aid', title: 'Israel Aid' });
+  });
+
+  it('prefers a real Compass short_title at the reveal too', async () => {
+    mockQuery.mockResolvedValueOnce({
+      rows: [{
+        quote_id: 'q1', politician_id: 'p1', topic_key: 'housing', deidentified_text: 'Build more homes.',
+        source_name: null, source_url: null, full_name: 'Alex Doe', photo: null,
+        office_title: 'State Senator', topic_title: 'Housing', position_name: 'Governor',
+      }],
+    });
+
+    const result = await computeRaceMatch('race-1', [{ quote_id: 'q1', supported: true, rank: 1 }]);
+
+    expect(result!.ballot[0].perTopic[0].title).toBe('Housing');
   });
 });

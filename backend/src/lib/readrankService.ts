@@ -28,6 +28,27 @@ function candidateToken(raceId: string, politicianId: string): string {
     .slice(0, 16);
 }
 
+/**
+ * Readable heading for a topic that has no live Compass row to name it.
+ *
+ * A Read & Rank question does not require a matching inform.compass_topics row
+ * (a salient local question — Israel aid in a Michigan Senate race — may have no
+ * Compass topic at all), so ct.short_title arrives NULL. This derives a heading
+ * from the topic key instead: 'israel-aid' -> 'Israel Aid'.
+ *
+ * Deliberately in TypeScript rather than a SQL COALESCE: pool.query is mocked in
+ * the tests, so SQL-side behaviour is untestable in-process while this is not.
+ * A real short_title always wins — callers only reach for this on NULL.
+ */
+export function topicTitleFromKey(topicKey: string | null | undefined): string {
+  if (!topicKey) return '';
+  return topicKey
+    .split(/[-_\s]+/)
+    .filter(Boolean)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+    .join(' ');
+}
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -311,10 +332,15 @@ export async function getPlayableRaces(
                JOIN essentials.quotes q2
                  ON q2.politician_id = rc2.politician_id
                 AND q2.deidentified_text IS NOT NULL AND q2.readrank_selected = true
-               JOIN inform.compass_topics ct2
-                 ON ct2.topic_key = lower(q2.topic_key) AND ct2.is_live = true
+               LEFT JOIN inform.compass_topics ct2
+                 ON ct2.topic_key = lower(q2.topic_key)
                WHERE rc2.race_id = r.id
                  AND essentials.is_live_candidate(rc2.candidate_status, rc2.result)
+                 -- A topic with no Compass row is allowed through; one that HAS a
+                 -- Compass row must have it live. Keeping is_live in the LEFT JOIN's
+                 -- ON clause would invert the kill switch: a retired topic would fail
+                 -- to match, yield ct2 IS NULL, and survive as an "unknown" topic.
+                 AND (ct2.topic_key IS NULL OR ct2.is_live = true)
                GROUP BY lower(q2.topic_key)
                HAVING COUNT(DISTINCT rc2.politician_id) >= 2
              ) rankable
@@ -330,8 +356,8 @@ export async function getPlayableRaces(
       ON q.politician_id = rc.politician_id
      AND q.deidentified_text IS NOT NULL
      AND q.readrank_selected = true
-    JOIN inform.compass_topics ct
-      ON ct.topic_key = lower(q.topic_key) AND ct.is_live = true
+    LEFT JOIN inform.compass_topics ct
+      ON ct.topic_key = lower(q.topic_key)
     LEFT JOIN essentials.offices o ON o.id = r.office_id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     LEFT JOIN essentials.geofence_boundaries cb
@@ -349,6 +375,10 @@ export async function getPlayableRaces(
       ORDER BY ST_Area(fp.geometry) ASC
       LIMIT 1
     ) frame ON (d.mtfcc = 'G4110' OR d.mtfcc LIKE 'X%')
+    -- Topic spine, in WHERE not ON: a quote whose topic has no Compass row is kept,
+    -- but a quote on a RETIRED (is_live = false) Compass topic is still dropped.
+    -- In the ON clause this predicate would silently disable that kill switch.
+    WHERE (ct.topic_key IS NULL OR ct.is_live = true)
     GROUP BY r.id, r.position_name, e.id, e.name, e.election_date, e.jurisdiction_level, e.state,
              d.mtfcc, d.label, d.district_type, COALESCE(d.geo_id, d.tiger_geoid), frame.frame_layer, frame.frame_geoid
     HAVING COUNT(DISTINCT rc.politician_id) >= 2
@@ -516,12 +546,16 @@ export async function getPlayableRaces(
 export async function getRaceBlindQuotes(raceId: string): Promise<RacePayload | null> {
   const { rows } = await pool.query<{
     quote_id: string; deidentified_text: string; topic_key: string; politician_id: string;
-    topic_title: string; topic_question: string; position_name: string;
+    // topic_title / topic_question are NULL for a topic with no Compass row.
+    topic_title: string | null; topic_question: string | null; position_name: string;
   }>(`
     SELECT q.id AS quote_id, q.deidentified_text, lower(q.topic_key) AS topic_key,
            q.politician_id,
            ct.short_title AS topic_title,
-           COALESCE(rtq.question_text, ct.question_text) AS topic_question,
+           -- Question resolves: the quote's own question -> per-race topic override
+           -- -> Compass. A non-Compass topic has only the first source, so this
+           -- COALESCE (not the title) has to stay in SQL: three tables, three joins.
+           COALESCE(rq.question_text, rtq.question_text, ct.question_text) AS topic_question,
            r.position_name
     FROM essentials.races r
     JOIN essentials.race_candidates rc
@@ -532,12 +566,19 @@ export async function getRaceBlindQuotes(raceId: string): Promise<RacePayload | 
       ON q.politician_id = rc.politician_id
      AND q.deidentified_text IS NOT NULL
      AND q.readrank_selected = true
-    JOIN inform.compass_topics ct
-      ON ct.topic_key = lower(q.topic_key) AND ct.is_live = true
+    LEFT JOIN inform.compass_topics ct
+      ON ct.topic_key = lower(q.topic_key)
+    LEFT JOIN essentials.readrank_questions rq
+      ON rq.id = q.question_id
     LEFT JOIN essentials.readrank_race_topic_questions rtq
       ON rtq.race_id = r.id AND rtq.topic_key = lower(q.topic_key)
     WHERE r.id = $1
-    ORDER BY ct.short_title
+      -- See getPlayableRaces: the is_live kill switch lives here, not in the ON
+      -- clause, so a retired Compass topic still disappears from the evaluation.
+      AND (ct.topic_key IS NULL OR ct.is_live = true)
+    -- Non-Compass topics have no short_title; order them by key so a race with
+    -- several of them still comes back in a stable order rather than by chance.
+    ORDER BY COALESCE(ct.short_title, lower(q.topic_key))
   `, [raceId]);
 
   if (rows.length === 0) return null;
@@ -549,7 +590,12 @@ export async function getRaceBlindQuotes(raceId: string): Promise<RacePayload | 
   for (const row of rows) {
     let topic = byTopic.get(row.topic_key);
     if (!topic) {
-      topic = { topicKey: row.topic_key, title: row.topic_title ?? '', question: row.topic_question ?? '', quotes: [] };
+      topic = {
+        topicKey: row.topic_key,
+        title: row.topic_title ?? topicTitleFromKey(row.topic_key),
+        question: row.topic_question ?? '',
+        quotes: [],
+      };
       byTopic.set(row.topic_key, topic);
       topicOrder.push(row.topic_key);
     }
@@ -581,7 +627,7 @@ export async function computeRaceMatch(
   const { rows } = await pool.query<{
     quote_id: string; politician_id: string; topic_key: string; deidentified_text: string;
     source_name: string | null; source_url: string | null; full_name: string;
-    photo: string | null; office_title: string | null; topic_title: string; position_name: string;
+    photo: string | null; office_title: string | null; topic_title: string | null; position_name: string;
   }>(`
     SELECT q.id AS quote_id, q.politician_id, lower(q.topic_key) AS topic_key,
            q.deidentified_text, q.source_name, q.source_url,
@@ -600,8 +646,11 @@ export async function computeRaceMatch(
       ORDER BY o.id DESC
       LIMIT 1
     ) o ON true
-    JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key) AND ct.is_live = true
+    LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key)
     WHERE r.id = $1 AND q.id = ANY($2::uuid[])
+      -- Kill switch in WHERE, not ON — see getPlayableRaces. The reveal must not
+      -- resurrect a retired topic the evaluation payload already refused to show.
+      AND (ct.topic_key IS NULL OR ct.is_live = true)
   `, [raceId, quoteIds]);
 
   if (rows.length === 0) return { raceId, positionName: '', ballot: [] };
@@ -633,7 +682,12 @@ export async function computeRaceMatch(
     }
     let pt = a.perTopic.get(row.topic_key);
     if (!pt) {
-      pt = { topicKey: row.topic_key, title: row.topic_title ?? '', userTopWinner: false, quotes: [] };
+      pt = {
+        topicKey: row.topic_key,
+        title: row.topic_title ?? topicTitleFromKey(row.topic_key),
+        userTopWinner: false,
+        quotes: [],
+      };
       a.perTopic.set(row.topic_key, pt);
     }
     pt.quotes.push({
