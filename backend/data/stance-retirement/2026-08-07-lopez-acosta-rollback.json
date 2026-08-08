@@ -1,0 +1,40 @@
+{
+  "migration": "1605_promote_lopez_correct_acosta.sql",
+  "date": "2026-08-07",
+  "action": "promote (1) + correct a false inference (1)",
+  "research_record": "data/stance-research/2026-08-07-orphan-58-triage.md",
+  "scope_note": "The LA orphan cluster was 34 rows; this migration touches 2. The other 32 are not scorable from their (live, rich) citations because candidate guides answer different questions than the compass topics ask. Do not read this as the cluster being done.",
+  "post_state": "ORPHAN_CONTEXT 58 -> 56 (Lopez leaves by gaining an answer, Acosta leaves by becoming a documented blank); baseline ratcheted in the same commit. All other gate counts unchanged: BALLOTPEDIA_ONLY 159, PRIMARY_SITE_NO_PATH 536, BARE_AGGREGATOR_DOMAIN 1, zero-tolerance all 0. empty-sources still 404.",
+  "rows": [
+    {
+      "politician": "Juanita Lopez",
+      "topic": "Homelessness Response",
+      "politician_id": "1e76d1d0-ca06-47bd-a9a1-fd8a34a676b0",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "action": "PROMOTED — answer inserted at chair 4; reasoning and sources UNCHANGED",
+      "chair_before": null,
+      "chair_after": 4,
+      "restore": "DELETE FROM inform.politician_answers WHERE politician_id AND topic_id match. The context row was not modified.",
+      "verification": "First promotion out of the ORPHAN_CONTEXT cohort, so the reasoning was verified BEFORE the answer was written — writing an answer publishes the existing prose verbatim under 'Why this position?'. The LAist LA-mayor voter guide, already cited on the row (HTTP 200, 57k visible chars), carries her programme in the same terms the row uses: a database of unhoused people with photographs and fingerprints, returning those with outstanding warrants, detaining those who refuse assistance for mandatory detoxification, and Permanent Supportive Housing for the rest.",
+      "chair_rationale": "Chair 4 — coercive intervention is her primary instrument. NOT 5: she proposes Permanent Supportive Housing and hiring social workers, so she is not minimising spending on services. NOT 3: 'enforcing reasonable public space rules' does not describe court-ordered detention and mandatory detoxification."
+    },
+    {
+      "politician": "Bryant Acosta",
+      "topic": "Local Immigration Enforcement",
+      "politician_id": "ac0d1a12-af8e-4464-9cb7-4ed2b549cbbe",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "action": "CORRECTED — false inference replaced with a documented blank; stays unpublished, no chair",
+      "before": {
+        "sources": ["https://acostaforla.com"],
+        "reasoning": "Appears to support sanctuary city policies and protection of immigrant communities in LA, consistent with his overall progressive-to-moderate positioning on social issues. Detailed positions on local ICE cooperation were not publicly detailed."
+      },
+      "after": {
+        "sources": ["https://laist.com/news/politics/voter-guides/2026-election-california-primary-la-mayor", "https://acostaforla.com"],
+        "reasoning": "No public record found on local immigration enforcement. Acosta's only stated position on federal relations is that he will \"work with the White House when it benefits Los Angeles and push back hard when it doesn't\" — a general posture toward federal cooperation that takes no position on ICE detainers, on sharing immigration status information with federal agencies, or on the use of local police resources for immigration enforcement."
+      },
+      "why": "REFUTED BY THE EVIDENCE, not merely unsupported. The old text inferred sanctuary support from his 'overall progressive-to-moderate positioning', with no quote; his actual words in the LAist guide are 'I'll work with the White House when it benefits Los Angeles and push back hard when it doesn't', which is not sanctuary advocacy. The attribute-prior class (1521) caught BEFORE publication rather than after — the orphan cohort's whole point.",
+      "not_retired_because": "The row is a real research artifact with a real citation, and what he actually said is worth recording. Corrected to the honest documented blank it should always have been, which is why it leaves the ORPHAN_CONTEXT queue by the same carve-out that exempts every other documented blank.",
+      "source_note": "acostaforla.com was KEPT, not dropped. It resolves (A 64.207.152.120) but will not connect from here — UNKNOWN, not dead, and unknown is never grounds for removal. The LAist guide was added ahead of it because it is the source actually read."
+    }
+  ]
+}
