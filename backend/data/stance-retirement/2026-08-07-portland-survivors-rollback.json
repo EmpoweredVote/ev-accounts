@@ -1,0 +1,159 @@
+{
+  "migration": "1608_reresearch_portland_survivors.sql",
+  "date": "2026-08-07",
+  "note": "Pre-change state of the 15 published Portland survivors. 12 repaired (new sources + reasoning; 6 chairs changed), 3 retired. Restore by re-inserting sources/reasoning/value for the repaired rows and re-inserting the 3 retired rows into BOTH inform.politician_context and inform.politician_answers.",
+  "canonical_md5": "9835bcc6030512f035ab50d1abb0b7b0",
+  "canonical_md5_note": "md5 of jsonb_agg(jsonb_build_object('full_name','topic','politician_id','topic_id','chair','sources','reasoning') ORDER BY full_name, topic)::text over the 15 rows, computed against the DB before the migration. The 'rows' array below is that same data.",
+  "rows": [
+    {
+      "full_name": "Dan Ryan",
+      "topic": "Environmental Protection vs. Development",
+      "politician_id": "60fa9870-d984-46a7-a6ed-5f6fbebe72ce",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "chair": 2.0,
+      "sources": ["https://www.portland.gov/council/agenda"],
+      "reasoning": "Ryan supported Portland's climate action framework and local environmental protection ordinances; voted on green infrastructure investments during his prior council tenure; Portland City Council minutes. https://www.portland.gov/council/agenda",
+      "disposition": "REPAIRED chair 2 -> 3"
+    },
+    {
+      "full_name": "Dan Ryan",
+      "topic": "Homelessness Response",
+      "politician_id": "60fa9870-d984-46a7-a6ed-5f6fbebe72ce",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "chair": 2.0,
+      "sources": ["https://www.portland.gov/council/agenda"],
+      "reasoning": "Ryan chaired Portland City Council housing and homelessness discussions; voted for shelter expansion and Housing Bond implementation; Portland city council meeting minutes 2020-2024. https://www.portland.gov/council/agenda",
+      "disposition": "REPAIRED chair 2 -> 3"
+    },
+    {
+      "full_name": "Dan Ryan",
+      "topic": "Public Safety Approach",
+      "politician_id": "60fa9870-d984-46a7-a6ed-5f6fbebe72ce",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "chair": 3.0,
+      "sources": ["https://www.portland.gov/council/agenda"],
+      "reasoning": "Ryan supported both community policing reforms and maintaining police staffing; voted on Portland Police accountability measures; took balanced approach on PPB budget; Portland city council meeting minutes 2021-2024. https://www.portland.gov/council/agenda",
+      "disposition": "REPAIRED chair 3 unchanged"
+    },
+    {
+      "full_name": "Dan Ryan",
+      "topic": "Rent Regulation",
+      "politician_id": "60fa9870-d984-46a7-a6ed-5f6fbebe72ce",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "chair": 2.0,
+      "sources": ["https://www.portland.gov/council/agenda"],
+      "reasoning": "Ryan supported renter protections including relocation assistance requirements and tenant rights ordinances during his Portland City Council tenure; Portland Council meeting minutes 2020-2024. https://www.portland.gov/council/agenda",
+      "disposition": "REPAIRED chair 2 -> 3"
+    },
+    {
+      "full_name": "Dan Ryan",
+      "topic": "Residential Zoning",
+      "politician_id": "60fa9870-d984-46a7-a6ed-5f6fbebe72ce",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "chair": 2.0,
+      "sources": ["https://www.portland.gov/council/agenda"],
+      "reasoning": "Ryan supported residential infill and housing density measures on Portland City Council; voted for zoning reforms to allow more housing types; Portland City Council records. https://www.portland.gov/council/agenda",
+      "disposition": "REPAIRED chair 2 -> 4"
+    },
+    {
+      "full_name": "Dan Ryan",
+      "topic": "Transportation Priorities",
+      "politician_id": "60fa9870-d984-46a7-a6ed-5f6fbebe72ce",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "chair": 2.0,
+      "sources": ["https://www.portland.gov/council/agenda"],
+      "reasoning": "Ryan voted in favor of Portland's active transportation and transit investment programs; supported Vision Zero safety measures and TriMet funding; Portland City Council records 2020-2024. https://www.portland.gov/council/agenda",
+      "disposition": "REPAIRED chair 2 unchanged"
+    },
+    {
+      "full_name": "Keith Wilson",
+      "topic": "Economic Development Incentives",
+      "politician_id": "bd39d61e-3040-4ec1-815e-df16b1f9a8a0",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "chair": 2.0,
+      "sources": ["https://www.portland.gov/mayor"],
+      "reasoning": "Wilson emphasized Portland's economic revitalization and attracting businesses downtown; supported economic development incentives as part of mayoral recovery agenda; Portland.gov mayor press releases 2025. https://www.portland.gov/mayor",
+      "disposition": "REPAIRED chair 2 -> 3"
+    },
+    {
+      "full_name": "Keith Wilson",
+      "topic": "Environmental Protection vs. Development",
+      "politician_id": "bd39d61e-3040-4ec1-815e-df16b1f9a8a0",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "chair": 2.0,
+      "sources": ["https://www.portland.gov/mayor"],
+      "reasoning": "Wilson committed to Portland's climate action plan and environmental protection; supports green infrastructure and reducing carbon footprint; Portland.gov mayor office statements Jan 2025. https://www.portland.gov/mayor",
+      "disposition": "RETIRED - no source found addressing the development-vs-preservation tradeoff"
+    },
+    {
+      "full_name": "Keith Wilson",
+      "topic": "Homelessness Response",
+      "politician_id": "bd39d61e-3040-4ec1-815e-df16b1f9a8a0",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "chair": 3.0,
+      "sources": ["https://www.oregonlive.com/portland/2024/10/portland-mayoral-candidates-weigh-in-on-homelessness-housing-and-public-safety.html"],
+      "reasoning": "Wilson pledged 1,000 shelter beds within first 100 days as mayor; combined enforcement with service investment; Oregonian coverage of mayoral campaign 2024: balanced shelter-plus-accountability approach. https://www.oregonlive.com/portland/2024/10/portland-mayoral-candidates-weigh-in-on-homelessness-housing-and-public-safety.html",
+      "disposition": "REPAIRED chair 3 unchanged - claim was substantively correct, only the citation was fabricated"
+    },
+    {
+      "full_name": "Keith Wilson",
+      "topic": "Public Safety Approach",
+      "politician_id": "bd39d61e-3040-4ec1-815e-df16b1f9a8a0",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "chair": 4.0,
+      "sources": ["https://www.oregonlive.com/portland/2024/10/portland-mayoral-candidates-weigh-in-on-homelessness-housing-and-public-safety.html"],
+      "reasoning": "Wilson made public safety restoration a centerpiece of his mayoral campaign; pledged to rebuild Portland Police Bureau, hire more officers, and reduce property crime; Oregonian 2024 campaign coverage. https://www.oregonlive.com/portland/2024/10/portland-mayoral-candidates-weigh-in-on-homelessness-housing-and-public-safety.html",
+      "disposition": "REPAIRED chair 4 unchanged, reasoning narrowed to what the source states"
+    },
+    {
+      "full_name": "Keith Wilson",
+      "topic": "Residential Zoning",
+      "politician_id": "bd39d61e-3040-4ec1-815e-df16b1f9a8a0",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "chair": 2.0,
+      "sources": ["https://www.oregonlive.com/portland/2024/10/portland-mayoral-candidates-weigh-in-on-homelessness-housing-and-public-safety.html"],
+      "reasoning": "Wilson supported zoning reform to allow more housing types and density; backed Portland's residential infill project and upzoning efforts; Oregonian 2024 campaign coverage. https://www.oregonlive.com/portland/2024/10/portland-mayoral-candidates-weigh-in-on-homelessness-housing-and-public-safety.html",
+      "disposition": "RETIRED - agenda states housing production targets, not zoning or density policy"
+    },
+    {
+      "full_name": "Loretta Smith",
+      "topic": "Homelessness Response",
+      "politician_id": "e6682850-601f-4017-b4e7-d9cd4be47aea",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "chair": 2.0,
+      "sources": ["https://www.oregonlive.com/portland/loretta-smith"],
+      "reasoning": "Smith voted for Multnomah County's housing-first programs and shelter expansion as Commissioner; championed service-oriented approach to homelessness; Oregonian coverage of county commission decisions. https://www.oregonlive.com/portland/loretta-smith",
+      "disposition": "RETIRED - only two procedural votes on file, neither locating her on the service/enforcement scale"
+    },
+    {
+      "full_name": "Loretta Smith",
+      "topic": "Local Immigration Enforcement",
+      "politician_id": "e6682850-601f-4017-b4e7-d9cd4be47aea",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "chair": 1.0,
+      "sources": ["https://www.oregonlive.com/portland/loretta-smith"],
+      "reasoning": "Smith strongly supported immigrant rights and expanded protections; Multnomah County passed immigration protection resolutions under her support; Oregonian coverage of county commission. https://www.oregonlive.com/portland/loretta-smith",
+      "disposition": "REPAIRED chair 1 unchanged"
+    },
+    {
+      "full_name": "Steve Novick",
+      "topic": "Public Safety Approach",
+      "politician_id": "c9e19031-259e-4133-b5d9-96cf1a5f31ff",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "chair": 2.0,
+      "sources": ["https://www.oregonlive.com/portland/steve-novick"],
+      "reasoning": "Novick supported community-based public safety and police accountability measures; backed civilian oversight during his Commissioner tenure; Oregonian coverage of his prior Commissioner record. https://www.oregonlive.com/portland/steve-novick",
+      "disposition": "REPAIRED chair 2 unchanged"
+    },
+    {
+      "full_name": "Steve Novick",
+      "topic": "Transportation Priorities",
+      "politician_id": "c9e19031-259e-4133-b5d9-96cf1a5f31ff",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "chair": 1.0,
+      "sources": ["https://www.oregonlive.com/portland/steve-novick"],
+      "reasoning": "Steve Novick served as Portland Commissioner of Public Utilities 2013-2017 and championed multimodal transportation, bike infrastructure, and transit investment; led transportation bureau and street fee proposals; Oregonian coverage of prior tenure. https://www.oregonlive.com/portland/steve-novick",
+      "disposition": "REPAIRED chair 1 -> 2"
+    }
+  ]
+}
