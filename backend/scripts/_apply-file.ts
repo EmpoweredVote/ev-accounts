@@ -6,10 +6,22 @@ import path from 'path';
 /**
  * Apply a .sql migration file by hand. There is no migration runner in this repo.
  *
- * ── ▶ APPLY MIGRATIONS AS `postgres`, OVER THE SUPABASE MCP ────────────────────────────────────
- * That is the working path, and the one that has always actually been used. This script is a
- * convenience for when you have a `postgres`-grade connection string in MIGRATION_DATABASE_URL; it is
- * NOT usable with the API's credentials.
+ * ── ▶ WHICH CONNECTION YOU NEED DEPENDS ENTIRELY ON WHETHER THE FILE CONTAINS DDL ──────────────
+ *
+ *   PURE DML (INSERT/UPDATE/DELETE only) — run it right now, no .env entry needed:
+ *       npx tsx scripts/_apply-file.ts migrations/NNNN_whatever.sql
+ *     It falls back to DATABASE_URL and `ev_api` applies it CORRECTLY, because ev_api holds
+ *     BYPASSRLS. Verified 2026-08-07 with migration 1592.
+ *
+ *   ANY DDL (ALTER TABLE / CREATE TABLE / CREATE INDEX) — this script cannot help.
+ *     Apply as `postgres` over the Supabase MCP. DDL on an existing table needs table OWNERSHIP,
+ *     which no schema-level grant confers, and `postgres` owns everything in `essentials`.
+ *
+ * MIGRATION_DATABASE_URL is a DEAD ENV VAR. It named the `ev_migrator` role, created by migration
+ * 1593 and dropped by 1595 a day later once RLS made it inert. If it is still set in your .env it
+ * names a role that does not exist and every apply fails with "(EAUTHQUERY) user not found in the
+ * database" — delete or blank the line (blank is treated as unset). The variable is still read here
+ * only so that a genuine `postgres`-grade string can be dropped in if one ever exists.
  *
  * TWO REASONS A LESSER ROLE CANNOT DO THIS JOB — both measured on 2026-08-07, not assumed:
  *
@@ -23,6 +35,9 @@ import path from 'path';
  * Neither is fixable by granting: BYPASSRLS requires SUPERUSER and `postgres` is not one on Supabase.
  * A dedicated `ev_migrator` role was tried for exactly this (migration 1593) and dropped a day later
  * (migration 1595) once RLS made it inert. Don't rebuild it without reading both.
+ *
+ * Note that reason 1 does NOT apply to `ev_api` — it holds BYPASSRLS, which is why pure-DML files
+ * go through fine over DATABASE_URL. Only reason 2 blocks it, and only for DDL.
  *
  * DO NOT WIDEN `ev_api` to make this script work. It serves accounts-api.empowered.vote and already
  * holds BYPASSRLS; granting it CREATE would hand the internet-facing web role DDL on the election
