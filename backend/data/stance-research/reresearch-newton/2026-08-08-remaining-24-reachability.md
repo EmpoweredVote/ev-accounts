@@ -56,30 +56,30 @@ candidate sentence below was read by eye, not trusted from a count.
 
 ### ✅ Good prospect (3 rows) — converging, first-person, on-topic
 
-- **Allison Leary / Residential Zoning.** The richest of the nine. She is running for state
-  representative, so the Beacon covers her housing views directly: she "wants to build on" the
-  Healey housing law that "undid certain zoning regulations in communities statewide", "supports both
-  pieces of legislation and said the state should actually intervene more to advance housing
-  development", with the counterweight *"I think we have to have some local control of where duplexes
-  should be in a single-family zone, where some neighborhoods' characters could really change."* Plus
-  her MU4 quote in Fig City: the development *"fits the bill for MU4"* because it is not displacing
-  residents and MU4 "would always need to come before the City Council for a vote."
-  ⚠ Chair 3 vs 4 is a real decision — she wants MORE state intervention but local control over
-  duplex placement. Read the full state-rep profile before choosing.
-- **Randy Block / Residential Zoning.** Consistent restraint-and-study posture: opposed the 148
-  California rezoning "warning it could open the door to additional residential development"; *"a
-  zoning change to business use needs a much more thorough analysis by the Planning Department"*;
-  wanted "more data and comprehensive studies done before the city starts rezoning manufacturing
-  parcels"; opposed 60 Brookside Avenue (four attached dwellings); "would be happy to see demolition
-  delays of up to two years"; wants the city "more aggressive in landmarking". He was with
-  **RightSize Newton** before election. Chair 1 or 2 — note chair 1 needs community votes before any
-  rezoning, which he never proposes, so probably 2.
-- **Maria S. Greenberg / Residential Zoning.** *"One size doesn't fit all if you have unique
-  neighborhoods with different needs"*; supported the Mula zoning changes and the MU4 rezoning.
-  ⚠ Her stated reasons are consistently **commercial** (tax base, foot traffic, attracting
-  industries). Chairing her on residential density from a commercial rationale risks the
-  Malakie/Newton-Crossing error refused in block 2. Usable only if the reasoning stays on the
-  "one size doesn't fit all" passage.
+> 🔴 **WORKED 2026-08-08, mig 1618: 1 of these 3 survived the full read.** The verdicts below are
+> superseded by the ⛔ notes. Left in place as the record of what an extract-level pass claimed.
+
+- **Allison Leary / Residential Zoning.** ✅ **RESTORED at chair 4 (mig 1618).** She is running for
+  state representative, so the Beacon covers her housing views directly.
+  🔴 **ATTRIBUTION ERROR IN MY OWN TEXT — the counterweight quote below is NOT HERS.** *"I think we
+  have to have some local control of where duplexes should be in a single-family zone, where some
+  neighborhoods' characters could really change"* is **John LAWN**, her opponent; a sentence splitter
+  glued his quote onto her next sentence. Same family as the scope doc's "Grossman interview" that was
+  really an interview with Brian Golden. Her actual position is *less* hedged: multifamily by-right so
+  projects "don't have to go through the Land Use Committee", "even more density" in village centres,
+  statewide duplexes, and "if they're not doing it, I think the state needs to step in."
+- **Randy Block / Residential Zoning.** ⛔ **NOT RESTORED (mig 1618).** The restraint-and-study
+  reading does not hold: **his stated rationale is the commercial tax base**, in his own words —
+  rezoning "opens up the possibility, even the likelihood, of residential development instead of
+  commercial development … given our concern to protect our commercial tax base" — and his
+  preservation motive is explicitly historical ("That's the historian in me talking"). Two facts cut
+  the other way: he **opposed the amendment to add parking requirements**, and his 60 Brookside
+  dissent carries **no stated reason at all**. ⚠ "He was with RightSize Newton" is a third party's
+  description of a past affiliation and what that group stands for is not on the page — unusable.
+- **Maria S. Greenberg / Residential Zoning.** ⛔ **NOT RESTORED (mig 1618).** 🔴 The *"One size
+  doesn't fit all"* quote this rested on is from a **WINTER PARKING BAN** debate — she was asking for
+  per-neighbourhood parking-pattern data, not talking about zoning. The caveat below was right and
+  it fired: her genuine zoning remarks are reasoned entirely on commerce.
 
 ### ⚠ Worth one read each, may well fail (5 rows)
 
@@ -127,3 +127,23 @@ the cluster; this cohort is the residue.
 
 Realistic end state for Newton: **12 live rows today, plausibly 15-17 when this cohort is worked,
 against 48 owed.** The remaining ~31 are not recoverable from public sources.
+
+---
+
+## 🔴 OUTCOME 2026-08-08 (mig 1618) — the "3 good" were 1
+
+**Even this document over-fired.** Reading the three source articles end to end, only Leary survived.
+Both failures share one shape, and it is the shape to test for next time:
+
+🔑 **A sentence can be on-topic by VOCABULARY and off-topic by RATIONALE.** Block and Greenberg both
+talk fluently about rezoning; both reason from the **commercial tax base**. Neither states a position
+on housing density or neighbourhood character, which is what the topic actually asks. Sentence-level
+extraction cannot see this — only the full passage shows why someone holds the position.
+**Extract to build the queue; never to assign the chair.**
+
+🔑 **Check the ARTICLE the quote lives in, not just the quote.** Greenberg's decisive line came from a
+winter-parking-ban debate. The topic-keyword filter matched it; the article's subject would have
+excluded it instantly.
+
+Revised planning number for the remaining rows: of the **5 "worth one read"**, expect **0-2**. The
+honest expectation for Newton is now **13 live rows, plausibly 13-15 of 48 owed.**
