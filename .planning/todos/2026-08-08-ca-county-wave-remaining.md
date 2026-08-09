@@ -1,9 +1,27 @@
 # CA county wave — remaining work (as of 2026-08-08)
 
-Shipped: 1629, 1630, 1631, 1633, 1637, 1638, 1639, 1641, 1642, 1643 (seeds), 1635 (LA repair).
-**14 counties, 72 seats, 22.16M residents.** LA repaired. San Francisco confirmed already complete.
-(Corpus-wide that is 15 CA county districts / 75 offices / 75 seated — the extra county is LA,
+Shipped: 1629-1631, 1633, 1637-1639, 1641-1644 (seeds), 1635 (LA repair).
+**15 counties, 76 seats, 22.64M residents.** LA repaired. San Francisco confirmed already complete.
+(Corpus-wide that is 16 CA county districts / 79 offices / 79 seated — the extra county is LA,
 seeded before this wave and only repaired by it.)
+
+## 🔴🔴 NEXT TASK FOUND: `official_web_url` IS ROTTEN ACROSS ALL 58 CA COUNTIES
+
+Sonoma's stored county URL turned out to redirect to **winecountry.com**, a commercial tourism
+site. That prompted a sweep of all 58 CA county districts (`district_type='COUNTY'`, `state='ca'`):
+
+- **2 point at NON-COUNTY sites.** `sonomacounty.org` → winecountry.com (fixed in 1644);
+  🔴 **Sierra County `sierracounty.ws` → `mampir123.org`**, an expired-domain takeover serving
+  "The mampir123". STILL BROKEN — not fixed here.
+- **28 of 58 do not return 200.** Many are dead hosts (`co.alameda.ca.us`, `co.marin.ca.us`,
+  `co.napa.ca.us`, `co.solano.ca.us`, `co.slo.ca.us`, `san-benito.ca.us`, …); some are only
+  WAF 403s that a browser would render, so **each needs classifying, not bulk-replacing**.
+- **1 is a typo:** Lake County holds `http://www.w.co.lake.ca.us` ("www.w."). `co.lake.ca.us`
+  answers 200 and the current site is `lakecountyca.gov`.
+- **14 redirect off the stored host**, mostly benign `.ca.us` → `.gov` migrations.
+
+**A URL that resolves is not evidence that it resolves to the county.** Worth its own migration;
+check the other states too, since these all came from the same migration-1619 import.
 
 ## ⭐ LOOK FOR AN ROV "ELECTED OFFICIALS" LIST FIRST
 
@@ -256,9 +274,34 @@ four-year terms back) and by their peer Dirkse being sworn 2019-01-07 — but th
 check for an early start could not be completed: the Nov 2018 SOV is a ~50 MB scan that would not
 download intact and the HTML summary has no signature block. Day precision was not assumed.
 
-## Then: 11 more counties to reach the 93.4% target
+## ✅ Sonoma — SEEDED (migration 1644). FOUR offices — the most consolidated set in the wave.
 
-By population: Sonoma, Tulare, Solano, Santa Barbara, Monterey, Placer, Merced, San Luis Obispo,
+## Sonoma County (06097, pop 481,812) — DONE
+
+| Title | Holder | Occupancy start | Precision |
+|---|---|---|---|
+| County Clerk-Recorder-Assessor | Deva Marie Proto | Jan 2019 | month |
+| Auditor-Controller-Treasurer-Tax Collector | Erick Roeser | Jun 2017 (appointed) | month |
+| District Attorney | Carla Rodriguez | Jan 2023 | month |
+| Sheriff-Coroner | Eddie Engram | 2023-01-02 | day |
+
+🔴 **FOUR OFFICES — two mega-combined seats do the work of six elsewhere** (one officer is Auditor
++ Controller + Treasurer + Tax Collector; another is County Clerk + Recorder + Assessor + ROV).
+Fifth distinct office set in the wave; a template would have invented two or three empty seats.
+
+🔴 **THE CANDIDATE LIST IS WHAT REVEALED THE PENDING TURNOVER.** The only candidate for ACTTC is
+**Amanda Ruch**, ballot designation "*Assistant* Auditor-Controller" — the incumbent didn't run.
+That is the Contra Costa shape, where the deputy standing for the seat meant the incumbent had
+already gone mid-term. Checked, not assumed: Roeser's own department page still has him in office,
+so he holds through Dec 2026 and Ruch takes over Jan 2027. The migration carries a guard that fails
+if Ruch is ever seated early. **Re-check this county in January 2027.**
+
+Office set came from the ROV's "Candidates on the Ballot" page — a good substitute where no
+standing elected-officials roster exists (Stanislaus has the better version).
+
+## Then: 10 more counties to reach the 93.4% target
+
+By population: Tulare, Solano, Santa Barbara, Monterey, Placer, Merced, San Luis Obispo,
 Santa Cruz, Marin (+ San Francisco already done, which displaces Marin from the top 25).
 
 ## Adjacent defects found, not fixed
