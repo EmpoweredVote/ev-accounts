@@ -51,7 +51,9 @@ and is not running in 2026. Do not seed Campbell.
 🔴 The June 2, 2026 primary elected a new Clerk-Recorder and a new Assessor. **They take office
 January 2027** — the holders above are correct through December 2026. Re-check after Jan 2027.
 
-## Kern County (06029, pop 913,820) — NOT SOURCED
+## ✅ Kern — SEEDED (migration 1638). Roster came from the ACFR "Directory of County Officials".
+
+## Kern County (06029, pop 913,820) — DONE
 
 `kerncounty.com` 403s WebFetch (Playwright works). `kernvote.com` publishes a Form 700 filer list
 that names OFFICES but no people. Likely office set (UNVERIFIED — confirm from source):
@@ -67,8 +69,19 @@ Next step: Playwright + same-origin fetch on each `kerncounty.com/government/dep
 (`countyofventura.org`) is stale. `venturacounty.gov/government/elected-officials/` lists SIX office
 titles and no names: Assessor · Auditor-Controller · Clerk-Recorder, Registrar of Voters ·
 District Attorney · Sheriff · Treasurer-Tax Collector.
-**CONFIRMED from source: District Attorney = Erik Nasarenko** (`da.venturacounty.gov`, fetched
-2026-08-08). That subdomain is open.
+**2 of 6 CONFIRMED from primary sources (2026-08-08):**
+- **District Attorney = Erik Nasarenko** — `da.venturacounty.gov` (that subdomain answers plain fetches)
+- **Auditor-Controller = Jeffery S. Burgh** — signature block of the **FY2025 ACFR Letter of
+  Transmittal**, `vcportal.venturacounty.gov/auditor/docs/financial-reports/Annual%20Comprehensive%20Financial%20Reports-2025/Letter%20of%20Transmittal%202025.pdf`
+  (8 pages, page 8). 🔴 `vcportal.venturacounty.gov` is NOT walled — use it, not `venturacounty.gov`.
+
+**Still needed (4):** Assessor · Clerk-Recorder, Registrar of Voters · Sheriff · Treasurer-Tax Collector.
+Best next move: the FY2025 ACFR is published as SEPARATE component PDFs in that same folder. A
+`List of Principal Officials 2025.pdf` / `Principal Officials 2025.pdf` returns 404, so find the
+real filename by listing the 2025 folder or reading the FY2023 full ACFR
+(`.../Annual Comprehensive Financial Reports-2023/Annual Comprehensive Financial Report 2023.pdf`,
+already downloadable) for its principal-officials page — then CONFIRM each name against a current
+page, since 2023 is stale.
 
 🔴 **The other Ventura subdomains sit behind a WAF that returns "The requested URL was rejected"
 to plain fetches** — `assessor.`, `sheriff.`, and `venturacounty.gov/ttc/` all rejected. Playwright
