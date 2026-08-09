@@ -1,4 +1,4 @@
--- 1632_seed_ca_county_fresno.sql
+-- 1633_seed_ca_county_fresno.sql
 --
 -- CA county wave: Fresno County. 6 countywide elected officials, 1.02M residents.
 -- Running total for the wave: 8 counties, 38 seats, 17.19M residents.
@@ -59,7 +59,26 @@
 --
 -- Idempotent. Party left NULL -- these offices are nonpartisan.
 
+-- ── RENUMBERED 1632 -> 1633 ───────────────────────────────────────────────────────────────────
+-- This file was originally applied as 1632. A parallel session had already renumbered its own
+-- Euless roster fix 1631 -> 1632 and pushed it first, so both files claimed 1632. Note that
+-- `npm run check:migrations` did NOT catch this: it compares newly added files against
+-- origin/master, so once both sides are pushed the collision is invisible to it.
+--
+-- Renumbering after apply means the number is already embedded in data in prod (CLAUDE.md warns
+-- about exactly this), so the rewrite below repairs the 6 politicians + 6 office_terms rows this
+-- migration wrote. Guarded and idempotent: it matches only this migration's own Fresno source
+-- string and is a no-op once corrected.
+
 BEGIN;
+
+UPDATE essentials.politicians
+   SET source = replace(source, 'migration 1632 — Fresno', 'migration 1633 — Fresno')
+ WHERE source LIKE 'migration 1632 — Fresno%';
+
+UPDATE essentials.office_terms
+   SET source = replace(source, 'migration 1632 — Fresno', 'migration 1633 — Fresno')
+ WHERE source LIKE 'migration 1632 — Fresno%';
 
 CREATE TEMP TABLE _seed (
   title text, ext_id bigint,
@@ -111,7 +130,7 @@ SELECT 'Countywide Elected Officials', 'Fresno County Countywide Elected Officia
 INSERT INTO essentials.politicians
        (external_id, full_name, first_name, last_name, middle_initial, source, is_incumbent, is_active)
 SELECT s.ext_id, s.full_name, s.first_name, s.last_name, s.mid,
-       'migration 1632 — Fresno County ROV elected-offices roster PDF (updated 2025-01-06), read 2026-08-08',
+       'migration 1633 — Fresno County ROV elected-offices roster PDF (updated 2025-01-06), read 2026-08-08',
        true, true
   FROM _seed s
  WHERE NOT EXISTS (SELECT 1 FROM essentials.politicians p WHERE p.external_id = s.ext_id);
@@ -137,7 +156,7 @@ BEGIN
 
     PERFORM essentials.seat_officeholder(
       v_office_id, v_pid, r.term_start,
-      'migration 1632 — Fresno County ROV elected-offices roster PDF (updated 2025-01-06), read 2026-08-08',
+      'migration 1633 — Fresno County ROV elected-offices roster PDF (updated 2025-01-06), read 2026-08-08',
       r.how_started, r.precision);
   END LOOP;
 END $$;
@@ -171,6 +190,12 @@ BEGIN
   SELECT count(*) INTO v_chambers FROM essentials.chambers
    WHERE name_formal = 'Fresno County Countywide Elected Officials';
   IF v_chambers <> 1 THEN RAISE EXCEPTION 'Expected 1 Fresno chamber, found %', v_chambers; END IF;
+
+  -- No row may still carry the pre-renumber source string.
+  IF EXISTS (SELECT 1 FROM essentials.politicians WHERE source LIKE 'migration 1632 — Fresno%')
+     OR EXISTS (SELECT 1 FROM essentials.office_terms WHERE source LIKE 'migration 1632 — Fresno%') THEN
+    RAISE EXCEPTION 'Rows still carry the pre-renumber "migration 1632 — Fresno" source string';
+  END IF;
 END $$;
 
 COMMIT;
