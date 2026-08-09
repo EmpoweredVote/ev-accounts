@@ -1,9 +1,17 @@
 # CA county wave — remaining work (as of 2026-08-08)
 
-Shipped: migrations 1629, 1630, 1631, 1633, 1637, 1638, 1639, 1641, 1642 (seeds), 1635 (LA repair).
-**13 counties, 66 seats, 21.61M residents.** LA repaired. San Francisco confirmed already complete.
-(Corpus-wide that is 14 CA county districts / 69 offices / 69 seated — the extra county is LA,
+Shipped: 1629, 1630, 1631, 1633, 1637, 1638, 1639, 1641, 1642, 1643 (seeds), 1635 (LA repair).
+**14 counties, 72 seats, 22.16M residents.** LA repaired. San Francisco confirmed already complete.
+(Corpus-wide that is 15 CA county districts / 75 offices / 75 seated — the extra county is LA,
 seeded before this wave and only repaired by it.)
+
+## ⭐ LOOK FOR AN ROV "ELECTED OFFICIALS" LIST FIRST
+
+Stanislaus' Registrar publishes `stanvote.com/pdf/elected-officials-list.pdf` — office, name,
+election year and **term expires** in one table, with `(A)` marking appointees, updated fortnightly.
+One PDF replaced six department pages, and its term-expiry column independently confirmed AB 759.
+Riverside has the same thing as a compensation page. **Check for this before reading department
+sites** — then still confirm each holder once against their own page.
 
 ## 🔴🔴 CORRECTION TO EVERY EARLIER MIGRATION HEADER — AB 759
 
@@ -216,11 +224,42 @@ fell in between.**
 Mark Church did not run and is the correct holder through December 2026. Raigoza, Foucrault and
 Arnott each won unopposed.
 
-## Then: 12 more counties to reach the 93.4% target
+## ✅ Stanislaus — SEEDED (migration 1643). 6 offices, from the ROV's own roster PDF.
 
-By population: Stanislaus, Sonoma, Tulare, Solano, Santa Barbara, Monterey,
-Placer, Merced, San Luis Obispo, Santa Cruz, Marin (+ San Francisco already done, which displaces
-Marin from the top 25).
+## Stanislaus County (06099, pop 551,430) — DONE
+
+Roster from `stanvote.com/pdf/elected-officials-list.pdf` (updated 7/27/26), every name
+re-confirmed against that office's own bio page. Titles are the ROV's: **"Sheriff-Coroner"** (not
+"Sheriff") and **"County Clerk-Recorder"** (though that department's own page says "Clerk-Recorder,
+Registrar of Voters").
+
+| Title | Holder | Occupancy start | Precision |
+|---|---|---|---|
+| Assessor | Don H. Gaekle | Oct 2013 (appointed) | month |
+| Auditor-Controller | Mandip Dhillon | Oct 2024 (appointed) | month |
+| County Clerk-Recorder | Donna Linder | Jan 2019 | month |
+| District Attorney | Jeff Laugero | 2023-01-03 | day |
+| Sheriff-Coroner | Jeff Dirkse | 2019-01-07 | day |
+| Treasurer-Tax Collector | Donna Riley | Jan 2019 | month |
+
+🔴 **AB 759 CONFIRMED BY A COUNTY DOCUMENT.** The ROV list states it as data: DA and Sheriff-Coroner
+show election year **2028**, term expires **1-8-29**; the other four show 2026 / 1-4-27.
+
+🔴 **A NAME-SHAPED REGEX FOUND A MURDER DEFENDANT.** Scanning the DA site for "District Attorney
+<Name>" returned "District Attorney Peterson" — office news about the **Scott Peterson** case, not
+the officeholder (Jeff Laugero). Pattern matching over a department site finds the office's subject
+matter as readily as its staff. Only reading the page catches it.
+
+🔴 **Linder and Riley are MONTH, and the early-start check was INCONCLUSIVE.** Both elected
+2018-06-05. January 2019 is carried by the county's own term arithmetic (terms expire 1-4-27 = two
+four-year terms back) and by their peer Dirkse being sworn 2019-01-07 — but the San Joaquin-style
+check for an early start could not be completed: the Nov 2018 SOV is a ~50 MB scan that would not
+download intact and the HTML summary has no signature block. Day precision was not assumed.
+
+## Then: 11 more counties to reach the 93.4% target
+
+By population: Sonoma, Tulare, Solano, Santa Barbara, Monterey, Placer, Merced, San Luis Obispo,
+Santa Cruz, Marin (+ San Francisco already done, which displaces Marin from the top 25).
 
 ## Adjacent defects found, not fixed
 
