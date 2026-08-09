@@ -1,0 +1,58 @@
+06001	Alameda	DEAD	http://www.co.alameda.ca.us	http://www.co.alameda.ca.us
+06003	Alpine	OK	http://www.alpinecountyca.gov	http://www.alpinecountyca.gov/
+06005	Amador	403-maybe-WAF	http://www.co.amador.ca.us/	https://www.amadorcounty.gov/
+06007	Butte	OK	http://www.buttecounty.net	https://www.buttecounty.net/
+06009	Calaveras	REDIRECT-OFFHOST	http://www.co.calaveras.ca.us	https://www.calaverasgov.us/
+06011	Colusa	DEAD	http://www.colusacounty.org	http://www.colusacounty.org
+06013	Contra Costa	DEAD	http://www.co.contracosta.ca.us/	http://www.co.contracosta.ca.us
+06015	Del Norte	REDIRECT-OFFHOST	http://www.dnco.org	https://www.co.del-norte.ca.us/
+06017	El Dorado	DEAD	http://www.co.eldorado.ca.us	http://www.co.eldorado.ca.us
+06019	Fresno	REDIRECT-OFFHOST	http://www.co.fresno.ca.us/	https://www.fresnocountyca.gov/Home
+06021	Glenn	403-maybe-WAF	http://www.countyofglenn.net	http://www.countyofglenn.net/
+06023	Humboldt	HTTP-502	http://www.co.humboldt.ca.us	http://www.co.humboldt.ca.us/
+06025	Imperial	DEAD	http://www.co.imperial.ca.us/	http://www.co.imperial.ca.us
+06027	Inyo	OK	http://www.inyocounty.us/	https://www.inyocounty.us/
+06029	Kern	403-maybe-WAF	http://www.co.kern.ca.us	https://www.kerncounty.com/
+06031	Kings	403-maybe-WAF	http://www.countyofkings.com/	https://www.countyofkingsca.gov/
+06033	Lake	DEAD	http://www.w.co.lake.ca.us	http://www.w.co.lake.ca.us
+06035	Lassen	REDIRECT-OFFHOST	http://www.co.lassen.ca.us	https://www.lassencounty.gov/
+06037	Los Angeles	OK	http://www.lacounty.gov	https://lacounty.gov/
+06039	Madera	403-maybe-WAF	http://www.maderacounty.com	http://www.maderacounty.com/
+06041	Marin	DEAD	http://www.co.marin.ca.us	http://www.co.marin.ca.us
+06043	Mariposa	REDIRECT-OFFHOST	http://www.mariposacounty.org	http://www.mariposacounty.gov/
+06045	Mendocino	403-maybe-WAF	http://www.co.mendocino.ca.us/	https://www.mendocinocounty.gov/
+06047	Merced	REDIRECT-OFFHOST	http://www.co.merced.ca.us	https://www.countyofmerced.com/
+06049	Modoc	DEAD	http://www.modoccounty.ca.us	http://www.modoccounty.ca.us
+06051	Mono	OK	http://www.monocounty.ca.gov	https://www.monocounty.ca.gov/
+06053	Monterey	403-maybe-WAF	http://www.co.monterey.ca.us	https://www.countyofmonterey.gov/
+06055	Napa	DEAD	http://www.co.napa.ca.us	http://www.co.napa.ca.us
+06057	Nevada	REDIRECT-OFFHOST	http://www.mynevadacounty.com	https://www.nevadacountyca.gov/
+06059	Orange	OK	http://www.ocgov.com	https://www.ocgov.com/
+06061	Placer	OK	http://www.placer.ca.gov	https://www.placer.ca.gov/
+06063	Plumas	REDIRECT-OFFHOST	http://www.countyofplumas.com	https://www.plumascounty.us/
+06065	Riverside	403-maybe-WAF	http://www.co.riverside.ca.us	https://www.co.riverside.ca.us/
+06067	Sacramento	OK	https://www.saccounty.gov/	https://www.saccounty.gov/
+06069	San Benito	DEAD	http://www.san-benito.ca.us	http://www.san-benito.ca.us
+06071	San Bernardino	REDIRECT-OFFHOST	http://www.sbcounty.gov	https://main.sbcounty.gov
+06073	San Diego	REDIRECT-OFFHOST	http://www.sdcounty.ca.gov	https://www.sandiegocounty.gov/
+06075	San Francisco	REDIRECT-OFFHOST	http://www.sfgov.org	https://www.sf.gov/
+06077	San Joaquin	OK	http://www.sjgov.org	https://www.sjgov.org/
+06079	San Luis Obispo	DEAD	http://www.co.slo.ca.us	http://www.co.slo.ca.us
+06081	San Mateo	OK	http://www.smcgov.org	https://www.smcgov.org/
+06083	Santa Barbara	OK	http://www.countyofsb.org	https://www.countyofsb.org/
+06085	Santa Clara	403-maybe-WAF	http://www.sccgov.org/	http://www.sccgov.org/
+06087	Santa Cruz	REDIRECT-OFFHOST	http://www.co.santa-cruz.ca.us	https://www.santacruzcountyca.gov/
+06089	Shasta	DEAD	http://www.co.shasta.ca.us/	http://www.co.shasta.ca.us
+06091	Sierra	REDIRECT-OFFHOST	http://www.sierracounty.ws	https://mampir123.org/
+06093	Siskiyou	REDIRECT-OFFHOST	http://www.co.siskiyou.ca.us/	https://www.siskiyoucounty.gov/
+06095	Solano	DEAD	http://www.co.solano.ca.us	http://www.co.solano.ca.us
+06097	Sonoma	OK	https://sonomacounty.gov/	https://sonomacounty.gov/
+06099	Stanislaus	OK	http://www.stancounty.com	https://www.stancounty.com/
+06101	Sutter	403-maybe-WAF	http://www.co.sutter.ca.us	https://www.sutter.gov/
+06103	Tehama	DEAD	http://www.co.tehama.ca.us	http://www.co.tehama.ca.us
+06105	Trinity	OK	http://www.trinitycounty.org	https://www.trinitycounty.org/
+06107	Tulare	HTTP-301	http://www.co.tulare.ca.us	https://www.co.tulare.ca.us
+06109	Tuolumne	403-maybe-WAF	http://www.tuolumnecounty.ca.gov	http://www.tuolumnecounty.ca.gov/
+06111	Ventura	OK	https://venturacounty.gov/	https://venturacounty.gov/
+06113	Yolo	403-maybe-WAF	http://www.yolocounty.org	https://www.yolocounty.gov/
+06115	Yuba	403-maybe-WAF	http://www.co.yuba.ca.us/	http://www.co.yuba.ca.us/
