@@ -1,7 +1,9 @@
 # CA county wave — remaining work (as of 2026-08-08)
 
-Shipped: migrations 1629, 1630, 1631, 1633 (seeds), 1635 (LA repair).
-**8 counties, 38 seats, 17.19M residents.** LA repaired. San Francisco confirmed already complete.
+Shipped: migrations 1629, 1630, 1631, 1633, 1637, 1638, 1639 (seeds), 1635 (LA repair).
+**11 counties, 55 seats, 20.08M residents.** LA repaired. San Francisco confirmed already complete.
+(Corpus-wide that is 12 CA county districts / 58 offices / 58 seated — the extra county is LA,
+seeded before this wave and only repaired by it.)
 
 ## Standing rules for this wave (do not relax these)
 
@@ -73,34 +75,58 @@ Names seen only in search (**do not seed these — unverified**): Laura Jeanne A
 Espinoza, Cynthia Jane Zimmer, Donny Youngblood, Jordan Alexander Kaufman.
 Next step: Playwright + same-origin fetch on each `kerncounty.com/government/departments/<dept>`.
 
-## Ventura County (06111, pop 829,590) — NOT SOURCED
+## ✅ Ventura — SEEDED (migration 1639). 6 of 6 sourced from one primary document.
 
-🔴 The county moved to **`venturacounty.gov`**; mig 1619's `official_web_url`
-(`countyofventura.org`) is stale. `venturacounty.gov/government/elected-officials/` lists SIX office
-titles and no names: Assessor · Auditor-Controller · Clerk-Recorder, Registrar of Voters ·
-District Attorney · Sheriff · Treasurer-Tax Collector.
-**2 of 6 CONFIRMED from primary sources (2026-08-08):**
-- **District Attorney = Erik Nasarenko** — `da.venturacounty.gov` (that subdomain answers plain fetches)
-- **Auditor-Controller = Jeffery S. Burgh** — signature block of the **FY2025 ACFR Letter of
-  Transmittal**, `vcportal.venturacounty.gov/auditor/docs/financial-reports/Annual%20Comprehensive%20Financial%20Reports-2025/Letter%20of%20Transmittal%202025.pdf`
-  (8 pages, page 8). 🔴 `vcportal.venturacounty.gov` is NOT walled — use it, not `venturacounty.gov`.
+## Ventura County (06111, pop 829,590) — DONE
 
-**Still needed (4):** Assessor · Clerk-Recorder, Registrar of Voters · Sheriff · Treasurer-Tax Collector.
-Best next move: the FY2025 ACFR is published as SEPARATE component PDFs in that same folder. A
-`List of Principal Officials 2025.pdf` / `Principal Officials 2025.pdf` returns 404, so find the
-real filename by listing the 2025 folder or reading the FY2023 full ACFR
-(`.../Annual Comprehensive Financial Reports-2023/Annual Comprehensive Financial Report 2023.pdf`,
-already downloadable) for its principal-officials page — then CONFIRM each name against a current
-page, since 2023 is stale.
+The whole roster came from **one page of the county's own ACFR**: "LISTING OF PRINCIPAL OFFICIALS /
+JUNE 30, 2025", section ELECTED OFFICIALS → *Other Elected Officials* — printed page 14, **PDF page
+20** of `vcportal.venturacounty.gov/auditor/docs/financial-reports/Annual%20Comprehensive%20Financial%20Reports-2025/Annual%20Comprehensive%20Financial%20Report%202025.pdf`
+(10.7 MB, downloads with plain `curl`). The same page also names the five supervisors.
 
-🔴 **The other Ventura subdomains sit behind a WAF that returns "The requested URL was rejected"
-to plain fetches** — `assessor.`, `sheriff.`, and `venturacounty.gov/ttc/` all rejected. Playwright
-DOES render `venturacounty.gov`, so drive each department in the browser and read the DOM (or use
-the same-origin `fetch()` trick once on that origin). Remaining to source:
-`assessor.venturacounty.gov`, `sheriff.venturacounty.gov`, `clerkrecorder.venturacounty.gov`,
-`venturacounty.gov/auditor-controllers-office/`, `venturacounty.gov/ttc/`.
-Names seen only in search (**do not seed**): Jeffery Burgh (Auditor-Controller), Sue Horgan
-(Treasurer-Tax Collector).
+🔴 **The component-PDF hunt was the wrong move.** `Principal Officials 2025.pdf` and friends all
+404; the FULL ACFR is published under a predictable name in that folder and its **table of contents
+gives the page number** ("Listing of Principal Officials … 14"). Printed page 1 = PDF page 5.
+Download the whole report and read two pages — that is cheaper than guessing filenames.
+
+| Title (verbatim, county elected-officials page) | Holder | Occupancy start | Precision |
+|---|---|---|---|
+| Assessor | Keith Taylor | 2023 | year |
+| Auditor-Controller | Jeffery S. Burgh | 2014 | year |
+| Clerk-Recorder, Registrar of Voters | Michelle Ascencion | 2023 | year |
+| District Attorney | Erik Nasarenko | 2021 (appointed) | year |
+| Sheriff | James Fryhoff | 2023-01-02 | day |
+| Treasurer-Tax Collector | Sue Horgan | Jan 2023 | month |
+
+Titles are from `venturacounty.gov/government/elected-officials/`, not the ACFR (which says "Clerk
+and Recorder"). Each holder was re-confirmed against a current department page before seeding —
+the ACFR is 13 months old.
+
+🔴 **All six were on the 2026-06-02 ballot; winners take office January 2027.** Re-check with the
+rest of the wave.
+
+🔴 **Bracketing a start date off LETTERHEAD works.** Burgh's start was in no bio anywhere. His own
+office's audit PDFs settle it: he signs *Assistant* Auditor-Controller on 2014-01-30 and 2014-04-25,
+and *Auditor-Controller* on the FY2014-15 Internal Audit Plan and the 2015-01-27 board letter. That
+is a sourced YEAR, not a guess — and note the Jan-2014 letterhead has **no** Auditor-Controller name
+at all, i.e. the office was vacant and the predecessor had already gone.
+
+🔴 **A widely repeated date can still be unusable.** Search says Nasarenko was appointed by a 5-0
+Board vote on 2021-01-26. No county document confirmed it, so the migration records 2021 at year
+precision instead. The DA office's own "Past District Attorneys" page (Totten *2002-2021*) plus his
+bio (elected 2022-06-07) is what carries the year.
+
+🔴 **WAF note.** `venturacounty.gov` and every department subdomain answer plain fetches with
+"The requested URL was rejected" — **HTTP 200, 269 bytes**, so a status-code check reads it as
+success. `clerkrecorder.` returns **202 with an empty body** instead. Playwright renders all of
+them; the same-origin `fetch()` trick works per-origin (cross-origin `fetch` from another Ventura
+host is CORS-blocked — navigate first). `vcportal.venturacounty.gov` is NOT walled.
+
+Also repointed the district's `official_web_url` to `https://venturacounty.gov/` (the old
+`countyofventura.org` still 301s there, so it was stale rather than dead).
+
+**Not done for Ventura:** the five supervisors (LaVere D1, Gorell D2, Long D3, Parvin D4, Lopez D5,
+per that same ACFR page) are unseated — same scope rule as every other county in this wave.
 
 ## Then: 14 more counties to reach the 93.4% target
 
