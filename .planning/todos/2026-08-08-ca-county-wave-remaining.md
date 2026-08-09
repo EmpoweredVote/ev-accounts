@@ -28,7 +28,9 @@ Several counties 403 both `curl` and WebFetch. What works:
 
 ---
 
-## Contra Costa County (06013, pop 1,155,025) — ROSTER VERIFIED, DATES PENDING
+## ✅ Contra Costa — SEEDED (migration 1637). Kept below as the worked example.
+
+## Contra Costa County (06013, pop 1,155,025) — DONE
 
 District id `<look up by geo_id 06013>`. Six countywide elected offices. Titles taken from the
 county's own org chart (`contracosta.ca.gov/DocumentCenter/View/39121/ContraCostaCountyOrgChart`,
@@ -65,11 +67,17 @@ Next step: Playwright + same-origin fetch on each `kerncounty.com/government/dep
 (`countyofventura.org`) is stale. `venturacounty.gov/government/elected-officials/` lists SIX office
 titles and no names: Assessor · Auditor-Controller · Clerk-Recorder, Registrar of Voters ·
 District Attorney · Sheriff · Treasurer-Tax Collector.
-Department subdomains exist and are the next stop: `assessor.venturacounty.gov`,
-`da.venturacounty.gov`, `sheriff.venturacounty.gov`, `clerkrecorder.venturacounty.gov`,
+**CONFIRMED from source: District Attorney = Erik Nasarenko** (`da.venturacounty.gov`, fetched
+2026-08-08). That subdomain is open.
+
+🔴 **The other Ventura subdomains sit behind a WAF that returns "The requested URL was rejected"
+to plain fetches** — `assessor.`, `sheriff.`, and `venturacounty.gov/ttc/` all rejected. Playwright
+DOES render `venturacounty.gov`, so drive each department in the browser and read the DOM (or use
+the same-origin `fetch()` trick once on that origin). Remaining to source:
+`assessor.venturacounty.gov`, `sheriff.venturacounty.gov`, `clerkrecorder.venturacounty.gov`,
 `venturacounty.gov/auditor-controllers-office/`, `venturacounty.gov/ttc/`.
-Names seen only in search (**do not seed**): Erik Nasarenko (DA), Jeffery Burgh (Auditor-Controller),
-Sue Horgan (Treasurer-Tax Collector).
+Names seen only in search (**do not seed**): Jeffery Burgh (Auditor-Controller), Sue Horgan
+(Treasurer-Tax Collector).
 
 ## Then: 14 more counties to reach the 93.4% target
 
