@@ -1,8 +1,8 @@
 # CA county wave — remaining work (as of 2026-08-08)
 
-Shipped: migrations 1629, 1630, 1631, 1633, 1637, 1638, 1639 (seeds), 1635 (LA repair).
-**11 counties, 55 seats, 20.08M residents.** LA repaired. San Francisco confirmed already complete.
-(Corpus-wide that is 12 CA county districts / 58 offices / 58 seated — the extra county is LA,
+Shipped: migrations 1629, 1630, 1631, 1633, 1637, 1638, 1639, 1641 (seeds), 1635 (LA repair).
+**12 counties, 60 seats, 20.88M residents.** LA repaired. San Francisco confirmed already complete.
+(Corpus-wide that is 13 CA county districts / 63 offices / 63 seated — the extra county is LA,
 seeded before this wave and only repaired by it.)
 
 ## Standing rules for this wave (do not relax these)
@@ -128,9 +128,55 @@ Also repointed the district's `official_web_url` to `https://venturacounty.gov/`
 **Not done for Ventura:** the five supervisors (LaVere D1, Gorell D2, Long D3, Parvin D4, Lopez D5,
 per that same ACFR page) are unseated — same scope rule as every other county in this wave.
 
-## Then: 14 more counties to reach the 93.4% target
+## ✅ San Joaquin — SEEDED (migration 1641). 5 offices; NOT an ACFR county.
 
-By population: San Joaquin, San Mateo, Stanislaus, Sonoma, Tulare, Solano, Santa Barbara, Monterey,
+## San Joaquin County (06077, pop 800,965) — DONE
+
+**`sjgov.org` is NOT walled** — plain `curl` works, so each holder came straight off their own
+department page: `/department/assessor` (Steve J. Bestolarides), `/department/aud`
+(Jeffery M. Woltkamp), `/department/da` (Ron Freitas), `sjsheriff.org` (Patrick Withrow),
+`/department/ttc` (Phonxay Keokham).
+
+🔴 **THE ACFR TRICK FAILS HERE — CHECK THE DOCUMENT TYPE BEFORE PLANNING AROUND IT.** San Joaquin
+publishes *audited financial statements prepared by CLA*, not an ACFR: no introductory section, so
+no principal-officials page. **The substitute is the Registrar of Voters.** The certified
+**Statement of Votes Cast** names the countywide contests exactly (its TOC alone is enough), and
+the **qualified candidate list** carries each incumbent's ballot designation — which cross-checked
+three of the five holders against a second county document with no row shift.
+
+🔴🔴 **"ALL CA COUNTY SEATS WERE ON THE JUNE 2026 BALLOT" IS FALSE — SAN JOAQUIN RUNS TWO CYCLES.**
+The 2026 SOV lists Assessor-Recorder-County Clerk, County Auditor-Controller and Treasurer-Tax
+Collector and **no DA and no Sheriff**. Not a single-candidate cancellation either: the SOV's own
+"Resolution to Appoint Candidates in Lieu of Election" (R-26-46) covers only two Board of Education
+trustee areas. So those two terms do not expire in January 2027. Ballotpedia puts the DA's term end
+at 2029-01-08 (a one-time extension onto the presidential cycle would explain it) — **mechanism
+unverified, not asserted in the migration.** Re-check the other three after Jan 2027; leave DA and
+Sheriff until 2028. **Test this assumption per county from now on rather than carrying it.**
+
+🔴 **THE LETTERHEAD TRICK PAID OFF AGAIN, AND CONTRADICTED THE CALENDAR.** Keokham was elected
+2018-06-05, which implies a January 2019 start — but he was already certifying the county treasury
+over his own name on the **2018-07-31** and **2018-08-31** monthly portfolio reports. Same shape as
+Ventura's Burgh: elected in June to an already-vacant office. Recorded as 2018 at year precision.
+
+🔴 **A STATE agency can be the primary source for a COUNTY appointment.** Bestolarides' exact start
+(2015-08-25, appointed to finish Kenneth Blakemore's term) came from **CA State Board of
+Equalization Letter To Assessors No. 2015/048** — `boe.ca.gov/proptaxes/pdf/lta15048.pdf`. BOE
+issues an LTA for every new county assessor; that is a reusable source class for all 58 counties.
+
+Freitas and Woltkamp are **month** precision, not day: their 2023-01-02 start is widely repeated
+and the county's own press-release URL is dated 2023/01/03, but that release is no longer served,
+so no primary document could be read for the day.
+
+🔴 **MIGRATION NUMBER COLLIDED MID-FLIGHT.** This shipped as 1640, was applied to prod, and then
+another session pushed `1640_seed_tarrant_county_full_ballot.sql`. Renumbering meant fixing the
+filename, the header, the in-file `source` strings **and the `source` text already written to
+prod** — the migration carries a guarded UPDATE that repoints those 10 rows. `check:migrations`
+only catches this when the other side is already on `origin/master`, so **re-run it immediately
+before committing, not only when you write the file.**
+
+## Then: 13 more counties to reach the 93.4% target
+
+By population: San Mateo, Stanislaus, Sonoma, Tulare, Solano, Santa Barbara, Monterey,
 Placer, Merced, San Luis Obispo, Santa Cruz, Marin (+ San Francisco already done, which displaces
 Marin from the top 25).
 
