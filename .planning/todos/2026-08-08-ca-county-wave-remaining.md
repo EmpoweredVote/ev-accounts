@@ -1,8 +1,8 @@
-# CA county wave — remaining work (as of 2026-08-08)
+# CA county wave — remaining work (as of 2026-08-09)
 
-Shipped: 1629-1631, 1633, 1637-1639, 1641-1644 (seeds), 1635 (LA repair).
-**15 counties, 76 seats, 22.64M residents.** LA repaired. San Francisco confirmed already complete.
-(Corpus-wide that is 16 CA county districts / 79 offices / 79 seated — the extra county is LA,
+Shipped: 1629-1631, 1633, 1637-1639, 1641-1645 (seeds), 1635 (LA repair), 1646 (Sierra URL).
+**16 counties, 80 seats, 23.12M residents.** LA repaired. San Francisco confirmed already complete.
+(Corpus-wide that is 17 CA county districts / 83 offices / 83 seated — the extra county is LA,
 seeded before this wave and only repaired by it.)
 
 ## 🔴🔴 NEXT TASK FOUND: `official_web_url` IS ROTTEN ACROSS ALL 58 CA COUNTIES
@@ -299,9 +299,69 @@ if Ruch is ever seated early. **Re-check this county in January 2027.**
 Office set came from the ROV's "Candidates on the Ballot" page — a good substitute where no
 standing elected-officials roster exists (Stanislaus has the better version).
 
-## Then: 10 more counties to reach the 93.4% target
+## ✅ Tulare — SEEDED (migration 1645). 4 offices; the first county in the wave with NO Jan-2027 turnover.
 
-By population: Tulare, Solano, Santa Barbara, Monterey, Placer, Merced, San Luis Obispo,
+## Tulare County (06107, pop 479,468) — DONE
+
+`tularecounty.ca.gov` 403s plain curl and WebFetch with its own "Access denied" page — Playwright
+renders it. But the two primary documents both live on the **`tc-web.widen.net` CDN, which is NOT
+walled**, so each downloads with plain `curl`. Worth trying first on any county whose site 403s.
+
+| Title (ACFR verbatim) | Holder | Occupancy start | Precision |
+|---|---|---|---|
+| Assessor/Clerk-Recorder | Tara K. Freitas | Apr 2021 (appointed) | month |
+| Auditor-Controller/Treasurer-Tax Collector | Cass Cook | Oct 2017 (appointed) | month |
+| District Attorney | Tim Ward | 2012 (appointed) | year |
+| Sheriff-Coroner | Mike Boudreaux | 2013-10-08 (appointed) | day |
+
+Roster from the county's **ACFR "List of Elected and Appointed Officials", printed p.15** of
+`tc-web.widen.net/s/ldfs6xbkn5/tulare-county-acfr-24-25` (printed page == PDF page), cross-checked
+against the certified **2026-06-02 Statement of Vote** (`.../s/fkq6vdxkxx/june-2-2026-statement-of-vote`),
+then each holder re-confirmed on their own department page.
+
+🔴 **THE ROV PAGE NAMED "ELECTED OFFICIALS INFORMATION" IS NOT A ROSTER.** Tulare publishes
+`/elections/registrar-of-voters/elected-officials` — the exact path shape that gave Stanislaus its
+roster PDF (1643) — and it contains only STATE/FEDERAL links plus a statutory terms-of-office table.
+No county names at all. The source class is real; the page title does not identify it. Open and read.
+
+🔴 **THE TWO PRIMARY DOCUMENTS DISAGREE ABOUT THE SUPERINTENDENT OF SCHOOLS — the roster wins.**
+The SOV lists "County Superintendent of Schools" under its **COUNTY** heading (Tim A. Hire,
+unopposed). The ACFR's elected-officials list does not, the org chart does not, and the department
+directory has no Office of Education entry. Kern (1638) and Riverside (1630) resolved the same way;
+San Bernardino / Alameda / Fresno seed one only because *their* rosters list it. **The ROV conducts
+the election because that is its job — the ballot is not evidence of what is a county office.**
+Migration 1645 carries a gate that fails if a Superintendent office ever appears here.
+
+🔴 **THE REGISTRAR OF VOTERS IS APPOINTED HERE** (Michelle Baldwin, under *Appointed Officials*).
+Sixth distinct office set in the wave.
+
+🔴 **FIRST COUNTY IN THE WAVE WITH NO JANUARY 2027 TURNOVER.** Both seats on the 2026 ballot were
+won by their own incumbents unopposed at 100.00% — Freitas (53,045) and Cook (52,618). No
+post-turnover re-check needed. AB 759 holds for a sixth county (no DA, no Sheriff contest); a junk
+`cal_access_discovery` row, the committee **"BOUDREAUX FOR SHERIFF 2028"**, says the same thing
+from an unrelated direction.
+
+🔴 **THE LETTERHEAD TRICK WORKED AGAIN — BUT THE LETTERHEAD LIED AND THE SIGNATURE BLOCK DID NOT.**
+Three consecutive Treasurer's investment reports bracket Cook's start inside two weeks:
+2017-10-03 letterhead *and* signature Rita A. Woodard → 2017-10-20 letterhead *and* signature Cass
+Cook → **2017-11-17 letterhead RITA A. WOODARD, signed CASS COOK.** The November template simply
+had not been updated, so it named someone who had already left, a month *after* a document naming
+her successor in both places. Ventura (1639) read a start date *off* the letterhead; here that
+would have been wrong in both directions. **Prefer the signature block — it is what the officer
+actually asserted.** Reports go back to 2007 at `/treasurertaxcollector/treasurer/reports/`.
+
+🔴 **A CONGRESSIONAL WITNESS BIOGRAPHY IS A CLEAN SOURCE FOR A LOCAL OFFICIAL'S START DATE.**
+Boudreaux's exact appointment (2013-10-08, by the Board of Supervisors) is in no county document
+found, but is stated in his official bio filed with the **U.S. House Judiciary Committee** for its
+2024-09-10 hearing: `congress.gov/118/meeting/house/117608/witnesses/HHRG-118-JU00-Bio-BoudreauxM-20240910-U1.pdf`.
+Reusable source class for any sheriff/DA who has testified.
+
+Ward is **year** precision: his own office says only "has served as District Attorney since 2012";
+no county document names the month (LinkedIn says December — not a source). The Nasarenko rule.
+
+## Then: 9 more counties to reach the 93.4% target
+
+By population: Solano, Santa Barbara, Monterey, Placer, Merced, San Luis Obispo,
 Santa Cruz, Marin (+ San Francisco already done, which displaces Marin from the top 25).
 
 ## Adjacent defects found, not fixed

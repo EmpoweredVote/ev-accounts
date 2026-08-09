@@ -21,12 +21,19 @@ this** — sweep them before deciding the fix is CA-only.
 | HTTP-502 | 1 | Humboldt |
 | HTTP-301 | 1 | Tulare (redirect loop / unresolved) |
 
-## 🔴 Fix first — pointing at NON-COUNTY sites
+## ✅ Fix first — pointing at NON-COUNTY sites — BOTH DONE
 
 - **06091 Sierra** — `http://www.sierracounty.ws` → `https://mampir123.org/` ("The mampir123",
-  an expired-domain takeover). **STILL BROKEN IN PROD.** Real site appears to be
-  `sierracounty.ca.gov` — verify before writing.
+  an expired-domain takeover). ✅ **FIXED in migration 1646** → `https://sierracounty.ca.gov/`.
+  Verified before writing: 200 on the stored host with no cross-host redirect, title
+  "Sierra County, CA - Official Website", content specific to this county (Downieville, Loyalton,
+  Sierra Buttes, Sierra County Waterworks District). **Prefer a `.ca.gov` host where one exists —
+  it is state-administered and cannot be registered by a squatter, which is exactly the property
+  the old `.ws` domain lacked.** The migration also gates that no district anywhere still points at
+  `sierracounty.ws` or `mampir123`.
 - **06097 Sonoma** — `sonomacounty.org` → winecountry.com. ✅ FIXED in migration 1644.
+- **06107 Tulare** — the HTTP-301 row below; `co.tulare.ca.us` does not resolve to the county.
+  ✅ FIXED in migration 1645 → `https://tularecounty.ca.gov/` (benign dead-host class).
 
 ## 🔴 Typo
 
