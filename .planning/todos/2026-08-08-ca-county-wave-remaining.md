@@ -1,9 +1,27 @@
 # CA county wave — remaining work (as of 2026-08-08)
 
-Shipped: migrations 1629, 1630, 1631, 1633, 1637, 1638, 1639, 1641 (seeds), 1635 (LA repair).
-**12 counties, 60 seats, 20.88M residents.** LA repaired. San Francisco confirmed already complete.
-(Corpus-wide that is 13 CA county districts / 63 offices / 63 seated — the extra county is LA,
+Shipped: migrations 1629, 1630, 1631, 1633, 1637, 1638, 1639, 1641, 1642 (seeds), 1635 (LA repair).
+**13 counties, 66 seats, 21.61M residents.** LA repaired. San Francisco confirmed already complete.
+(Corpus-wide that is 14 CA county districts / 69 offices / 69 seated — the extra county is LA,
 seeded before this wave and only repaired by it.)
+
+## 🔴🔴 CORRECTION TO EVERY EARLIER MIGRATION HEADER — AB 759
+
+Migrations 1630–1641 each say "all countywide seats were on the 2026-06-02 ballot; winners take
+office January 2027". **That is wrong for DA and Sheriff in every California county.**
+**AB 759 (Chapter 743, approved 2022-09-29)** amended Elections Code §1300 and Government Code
+§24200: *"An election to select a district attorney and sheriff shall be held with the presidential
+primary"*, and *"a district attorney or sheriff elected in 2022 shall serve a six-year term and the
+next election for that office shall occur at the 2028 presidential primary."*
+
+- The 2026 winners for Assessor / Auditor / Controller / Clerk / Treasurer seats **do** take office
+  January 2027 — that part stands.
+- **DA and Sheriff do not turn over until January 2029.** Ventura's, Kern's, Contra Costa's and
+  Fresno's DA/Sheriff rows are good two years longer than their headers claim. **No seeded row is
+  wrong** — occupancy is unaffected; only the re-check dates in those comments.
+- Diagnosis path worth remembering: San Joaquin showed the symptom (no DA/Sheriff contest on its
+  certified 2026 ballot), San Mateo showed the same gap, and two counties agreeing meant a
+  statewide cause rather than a local quirk. Then read the bill text, not a summary of it.
 
 ## Standing rules for this wave (do not relax these)
 
@@ -174,9 +192,33 @@ prod** — the migration carries a guarded UPDATE that repoints those 10 rows. `
 only catches this when the other side is already on `origin/master`, so **re-run it immediately
 before committing, not only when you write the file.**
 
-## Then: 13 more counties to reach the 93.4% target
+## ✅ San Mateo — SEEDED (migration 1642). 6 offices, including a separately elected CORONER.
 
-By population: San Mateo, Stanislaus, Sonoma, Tulare, Solano, Santa Barbara, Monterey,
+## San Mateo County (06081, pop 726,353) — DONE
+
+`smcgov.org` is unwalled and its own nav carries an **"Elected Officials"** block — the cleanest
+office-set source this wave has found. Titles come from the **certified Election Summary Report**
+for 2026-06-02 (certified 2026-06-30); each holder from that office's own page.
+
+🔴 **SAN MATEO ELECTS A SEPARATE CORONER** — most CA counties fold it into a Sheriff-Coroner. Fourth
+distinct office set in this wave. Also note the county nav says "Tax Collector - Treasurer" while
+the certified ballot says "Treasurer-Tax Collector"; the ballot name wins.
+
+🔴🔴 **THE SHERIFF SEAT CHANGED HANDS WITH NO ELECTION, AND THE OFFICE'S HOME PAGE NAMES NO
+SHERIFF.** Christina Corpus (elected 2022) was **removed** in 2025; the Board appointed **Kenneth
+Binder**, who took the oath **2025-11-12**. Found only because the homepage naming nobody looked
+wrong and the `/administration` page was checked. Any stale roster would have seeded Corpus. The
+migration carries a named guard that fails if a "Corpus" is ever seated in this county.
+**Recency of a source ≠ freshness of a roster — what matters is whether an election OR A REMOVAL
+fell in between.**
+
+🔴 **One seat turns over in Jan 2027:** David Canepa won Assessor-County Clerk-Recorder (56.21%);
+Mark Church did not run and is the correct holder through December 2026. Raigoza, Foucrault and
+Arnott each won unopposed.
+
+## Then: 12 more counties to reach the 93.4% target
+
+By population: Stanislaus, Sonoma, Tulare, Solano, Santa Barbara, Monterey,
 Placer, Merced, San Luis Obispo, Santa Cruz, Marin (+ San Francisco already done, which displaces
 Marin from the top 25).
 
