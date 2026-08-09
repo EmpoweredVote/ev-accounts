@@ -17,6 +17,16 @@ Shipped: migrations 1629, 1630, 1631, 1633 (seeds), 1635 (LA repair).
    Keep the pre-flight collision gate — a collision silently seats the wrong person.
 6. Scope every `geo_id` predicate by `district_type` (1,159 collisions exist corpus-wide).
 
+## Tooling already sitting in the tree
+
+- **`backend/.tmp-q.ts`** (untracked) — one-off read-only SQL runner:
+  `cd /c/EV-Accounts/backend && npx tsx .tmp-q.ts <path/to/query.sql>`. Uses `DATABASE_URL`, prints
+  JSON. Used for every verification query in this wave. Delete it whenever; it is not load-bearing.
+- Apply migrations with `npx tsx scripts/_apply-file.ts migrations/NNNN_*.sql` (pure DML works as
+  `ev_api`). Dry-run first: `sed 's/^COMMIT;/ROLLBACK;/'` into a temp file, run it, then CONFIRM the
+  rollback actually reverted before applying for real.
+- 🔴 `cd /c/EV-Accounts/backend &&` in the SAME command — cwd resets between Bash calls.
+
 ## Retrieval technique for bot-walled county sites
 
 Several counties 403 both `curl` and WebFetch. What works:
