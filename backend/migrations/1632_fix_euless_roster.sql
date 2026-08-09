@@ -1,4 +1,8 @@
--- 1631: correct the City of Euless, Texas, US council roster seeded by 1628.
+-- 1632: correct the City of Euless, Texas, US council roster seeded by 1628.
+--
+-- RENUMBERED from 1631. A concurrent session pushed 1631_seed_ca_county_batch2.sql
+-- with the same number; this file moved because it landed first and was already
+-- applied, so moving it disturbs no in-flight work. Content is unchanged.
 --
 -- WHAT WAS WRONG
 -- 1628 seeded 4 of 7 Euless seats VACANT and put Tim Stinneford on Council Member
