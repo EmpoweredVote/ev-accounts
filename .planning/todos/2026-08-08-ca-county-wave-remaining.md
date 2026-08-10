@@ -1,8 +1,8 @@
 # CA county wave — remaining work (as of 2026-08-10)
 
-Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650, 1652 (seeds), 1635 (LA repair),
-1646 (Sierra URL). **18 counties, 90 seats, 24.01M residents.** LA repaired. San Francisco
-confirmed already complete. (Corpus-wide that is 19 CA county districts / 93 offices / 93 seated —
+Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650, 1652, 1656 (seeds), 1635 (LA repair),
+1646 (Sierra URL). **19 counties, 95 seats, 24.44M residents.** LA repaired. San Francisco
+confirmed already complete. (Corpus-wide that is 20 CA county districts / 98 offices / 98 seated —
 the extra county is LA, seeded before this wave and only repaired by it.)
 
 ## 🔴🔴 JANUARY 2027 RE-CHECK QUEUE (build this into the Jan-2027 pass)
@@ -466,9 +466,57 @@ same article's "seeking his sixth term" implies 2007. Recorded as **2003 at year
 statutory start after a regular March 2002 primary) with an explicit note. **Do not sharpen it on
 the news accounts** — correct it only from a county primary.
 
-## Then: 7 more counties to reach the 93.4% target
+## ✅ Monterey — SEEDED (migration 1656). 5 offices; the June winner ALREADY holds one of them.
 
-By population: Monterey, Placer, Merced, San Luis Obispo,
+## Monterey County (06053, pop 430,723) — DONE
+
+`countyofmonterey.gov` 403s plain curl (WAF) but renders in Playwright, and a same-origin `fetch()`
+reaches every path. `mcso.countyofmonterey.gov` redirects to the same host, so the Sheriff's pages
+are same-origin too.
+
+| Title (county roster) | Holder | Occupancy start | Precision |
+|---|---|---|---|
+| Assessor-County Clerk/Recorder | Xochitl Marina Camacho | 2022-12-31 (interim appt) | day |
+| Auditor/Controller | Enedina Garcia | 2026-07-07 (appointed) | day |
+| District Attorney | Jeannine M. Pacioni | Jan 2019 | month |
+| Sheriff/Coroner | Tina M. Nieto | 2022-12-30 | day |
+| Treasurer/Tax Collector | Jake Stroud | 2025-12-30 (appointed) | day |
+
+🔴🔴 **THE JUNE 2026 WINNER ALREADY HOLDS THE AUDITOR-CONTROLLER SEAT — THE EXACT INVERSE OF THE
+SANTA BARBARA TRAP (1652).** The county's elected-officials roster still names **Rupa Shah**; she
+retired. The Auditor-Controller's *bios* page says **Enedina Garcia "was appointed Auditor-Controller
+on July 7, 2026, by the Board of Supervisors, following the June 2026 election in which she was
+elected to begin her first four year term in January 2027."** Seeding Shah would be wrong — and so
+would mechanically applying 1652's rule that a 2026 winner waits until January. **"The winner is not
+yet in office" is a DEFAULT, not a rule**; it is the same election-or-removal question as San Mateo
+and Solano, asked in the opposite direction. Note the two county sources disagree and the *newer,
+more specific* one wins: a bios page stating a dated Board action beats a roster listing a name.
+
+🔴 **AND IT IS NOT THE ONLY ONE — TWO OF FIVE ARE RECENT BOARD APPOINTEES.** Jake Stroud "was
+unanimously appointed by the Board of Supervisors and began serving on December 30, 2025". Monterey
+turns over faster than any other county in the wave and its own roster had caught neither change.
+
+🔴 **AB 759, ninth county, and the clearest statement of the mechanism yet.** The County Offices
+roster prints for DA and Sheriff/Coroner: **Term Length: 6 · Next Election: 03/07/2028** — the
+six-year term AND the presidential-primary date, in a table where every other office shows 4.
+
+🔴 **Superintendent excluded on the strongest form of the discriminator yet:** the county's own
+elections directory has separate top-level sections for **County Offices** and **Superintendents &
+Board of Education Members**. The county files it outside County Offices itself.
+
+🔴 **DAY-vs-MONTH FOR END-OF-DECEMBER STARTS — the rule this wave now follows.** Monterey seats
+officials in the last days of December when a predecessor retires early (Camacho 12-31, Nieto 12-30,
+both 2022) rather than at the statutory first-Monday-after-Jan-1. Contrast Solano's Zook (1650),
+whose 2022-12-30 oath is reported only by a newspaper and so is recorded at month precision against
+the statutory January start. **County publishes a specific date → day precision; only press reports
+it → statutory month.** Camacho's is nailed by BoS File **APP 22-234** (meeting 2022-12-07) on
+`monterey.legistar.com` — Legistar is a good primary-source channel for appointment dates.
+
+**Monterey needs NO January 2027 re-check** — all three June winners are already the seated holders.
+
+## Then: 6 more counties to reach the 93.4% target
+
+By population: Placer, Merced, San Luis Obispo,
 Santa Cruz, Marin (+ San Francisco already done, which displaces Marin from the top 25).
 
 ## Adjacent defects found, not fixed
