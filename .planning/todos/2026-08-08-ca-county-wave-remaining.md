@@ -25,15 +25,24 @@ Merced need no re-check.
 Sonoma's stored county URL turned out to redirect to **winecountry.com**, a commercial tourism
 site. That prompted a sweep of all 58 CA county districts (`district_type='COUNTY'`, `state='ca'`):
 
-- **2 point at NON-COUNTY sites.** `sonomacounty.org` → winecountry.com (fixed in 1644);
-  🔴 **Sierra County `sierracounty.ws` → `mampir123.org`**, an expired-domain takeover serving
-  "The mampir123". STILL BROKEN — not fixed here.
-- **28 of 58 do not return 200.** Many are dead hosts (`co.alameda.ca.us`, `co.marin.ca.us`,
-  `co.napa.ca.us`, `co.solano.ca.us`, `co.slo.ca.us`, `san-benito.ca.us`, …); some are only
-  WAF 403s that a browser would render, so **each needs classifying, not bulk-replacing**.
-- **1 is a typo:** Lake County holds `http://www.w.co.lake.ca.us` ("www.w."). `co.lake.ca.us`
-  answers 200 and the current site is `lakecountyca.gov`.
-- **14 redirect off the stored host**, mostly benign `.ca.us` → `.gov` migrations.
+- **✅ BOTH NON-COUNTY URLs ARE CLOSED.** `sonomacounty.org` → winecountry.com (fixed in **1644**);
+  Sierra County `sierracounty.ws` → `mampir123.org`, an expired-domain takeover, fixed in **1646**.
+  🔴 **THIS BULLET SAID "STILL BROKEN — not fixed here" UNTIL 2026-08-10, WHILE THE SAME FILE'S OWN
+  "Shipped" LINE ALREADY LISTED `1646 (Sierra URL)`.** Re-verified against prod 2026-08-10: Sierra
+  holds `https://sierracounty.ca.gov/`, which returns 200 with "Sierra County" ×4, **Downieville**
+  ×8 (county seat) and **Loyalton** ×6 in 5,493 bytes of extracted text — the county's own site.
+  `sierracounty.ws` is *still* a live squat in the world; we simply no longer point at it.
+  **A doc that contradicts itself costs a whole re-investigation — re-test the caveat, and when two
+  lines in one file disagree, believe the DB.**
+- **The remaining rot is REAL and unfixed — 46 of 58 rows** carry a legacy host, plain `http://`,
+  or a non-`.gov` domain (re-counted from prod 2026-08-10; only the 12 counties the wave repointed
+  as it went are clean). Many are dead hosts (`co.alameda.ca.us`, `co.napa.ca.us`,
+  `san-benito.ca.us`, …); some are only WAF 403s a browser would render, so **each needs
+  classifying, not bulk-replacing**, and ~14 are benign `.ca.us` → `.gov` redirects.
+- 🔴 **NEXT CONCRETE ITEM — 1 is a typo:** Lake County (06033) still holds
+  `http://www.w.co.lake.ca.us` ("www.w."). `co.lake.ca.us` answers 200 and the current site is
+  `lakecountyca.gov`. **Verify the destination is the county before repointing** — that is the whole
+  lesson of Sonoma and Sierra.
 
 **A URL that resolves is not evidence that it resolves to the county.** Worth its own migration;
 check the other states too, since these all came from the same migration-1619 import.
