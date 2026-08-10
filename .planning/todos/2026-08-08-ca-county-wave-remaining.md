@@ -56,8 +56,45 @@ assumed from the name.
 `countyofglenn.net` sits behind a Cloudflare interstitial that never cleared in headless *or* a real
 profile. Its 1667 change is **scheme-only** (`http`→`https`, same host, risk-neutral). Re-check it.
 
-**Still to do: the other states.** These URLs all came from the same migration-1619 import, so the
-same rot is expected outside CA. The tooling is reusable — see `1667`'s header for the method.
+### ▶️ NEXT: the remaining 291 rows — and the scope is far smaller than "all other states"
+
+**Only TWO states have any `official_web_url` at all.** Measured 2026-08-10:
+
+| state | district_type | rows | all plain `http`? |
+|---|---|---|---|
+| ca | COUNTY | 58 | ✅ **done (1667)** |
+| ca | LOCAL | 140 | yes |
+| ca | LOCAL_EXEC | 91 | yes |
+| or | COUNTY | 36 | yes |
+| or | LOCAL | 12 | yes |
+| or | LOCAL_EXEC | 12 | yes |
+
+**291 rows left, CA + OR only.** Every one is still plain `http` — none has ever been touched. There
+is no 50-state sweep hiding here. `LOCAL` and `LOCAL_EXEC` are probably the same places twice (council
+rows + a citywide executive row), so the distinct-host count is likely well under 255 — **dedupe by
+host before probing.**
+
+**✅ TOOL: `npm run audit:district-urls --prefix backend -- --state or --type COUNTY [--json out.json]`**
+(`backend/scripts/audit-district-urls.mjs`). READ-ONLY; renders every candidate in a real browser and
+classifies it. Its header carries the full method and every detector failure found so far. It emits
+`⚠ READ` per row that a human must open — do not skip those.
+
+🔴🔴 **THE DISCRIMINATOR INVERTS FOR THE REMAINING ROWS.** 1667 rested on "a CA county has a BOARD OF
+SUPERVISORS; a city has a CITY COUNCIL". **255 of the 291 remaining rows are `LOCAL`/`LOCAL_EXEC` —
+CITIES — where that runs backwards:** "City Council"/"Mayor" is the CORRECT signal and "Board of
+Supervisors" is the wrong-entity signal. A city record pointed at its county's site is the same defect
+as a county record pointed at its city's. Applying 1667's rule naively to municipal rows would reject
+every correct answer. The tool already keys its marker set off `district_type`; keep it that way.
+
+🔴🔴 **AND THE COUNTY GOVERNING BODY IS NAMED DIFFERENTLY IN EVERY STATE.** The tool's first smoke
+test against Oregon, still carrying only California's "Board of Supervisors", reported **4 of 6 OR
+counties as NAME_ONLY** — which on this task reads as "repoint it". **Oregon counties have a BOARD OF
+COMMISSIONERS** (a few retain a County Court). After generalising the regex to the union of American
+forms, the same six went 5 VERIFIED / 1 to read. **If you point this at a new state and see a wall of
+NAME_ONLY, suspect the regex before you suspect the data.**
+
+🔴 Two OR rows already look like the `yuba.gov`/`sutter.gov` class and are flagged: Clackamas
+(`clackamas.us`) and Clatsop. Baker County is the one that still shows no governing body — read it.
 
 ## (historical) `official_web_url` IS ROTTEN ACROSS ALL 58 CA COUNTIES
 
