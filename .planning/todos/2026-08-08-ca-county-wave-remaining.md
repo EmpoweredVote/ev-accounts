@@ -1,8 +1,8 @@
-# CA county wave — remaining work (as of 2026-08-09)
+# CA county wave — remaining work (as of 2026-08-10)
 
-Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650, 1652, 1656, 1658, 1660 (seeds), 1635 (LA
-repair), 1646 (Sierra URL). **21 counties, 106 seats, 25.16M residents.** LA repaired. San Francisco
-confirmed already complete. (Corpus-wide that is 22 CA county districts / 109 offices / 109 seated —
+Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650, 1652, 1656, 1658, 1660, 1662 (seeds), 1635 (LA
+repair), 1646 (Sierra URL). **22 counties, 111 seats, 25.44M residents.** LA repaired. San Francisco
+confirmed already complete. (Corpus-wide that is 23 CA county districts / 114 offices / 114 seated —
 the extra county is LA, seeded before this wave and only repaired by it.)
 
 ## 🔴🔴 JANUARY 2027 RE-CHECK QUEUE (build this into the Jan-2027 pass)
@@ -622,10 +622,67 @@ Certified results are on **Clarity** (`results.enr.clarityelections.com/CA/Merce
 `current_ver.txt`, then `<ver>/json/en/summary.json` **with `curl --compressed`** — it is gzipped and
 a plain fetch returns binary. Cheapest results format the wave has met.
 
-## Then: 4 more counties to reach the 93.4% target
+## ✅ San Luis Obispo — SEEDED (migration 1662). 5 offices; TWO OFFICERS-ELECT SEATED EARLY.
 
-By population: San Luis Obispo, Santa Cruz, Marin (+ San Francisco already done, which displaces
-Marin from the top 25).
+## San Luis Obispo County (06079, pop 281,639) — DONE
+
+`slocounty.ca.gov` answers plain curl. 🔴 The stored `co.slo.ca.us` **does not resolve at all**
+(NXDOMAIN) — a genuinely dead host from the 58-county sweep, not a redirect like Merced's.
+
+| Title (certified ballot / ACFR) | Holder | Occupancy start | Precision |
+|---|---|---|---|
+| Assessor | Tom J. Bordonaro Jr. | 2003-01-01 | month |
+| Auditor-Controller-Treasurer-Tax Collector-Public Administrator | James W. Hamilton | 2018-12-15 (appointed) | day |
+| County Clerk-Recorder | Elaina Cano | 2021-11-14 (appointed) | day |
+| District Attorney | Dan Dow | 2014-11-07 (appointed) | day |
+| Sheriff-Coroner | Ian Parkinson | 2011-01-03 | day |
+
+🔴🔴 **"THE WINNER STARTS IN JANUARY" FAILED IN A SECOND COUNTY, THE SAME WAY.** Dow and Hamilton
+were each seated by Board appointment **as the officer-ELECT**, weeks early, because the incumbent
+retired ahead of the term: *"appoint District Attorney-Elect Dan Dow to take office on November 7,
+2014 to replace current District Attorney Gerald Shea, who will be retiring November 6, 2014"*, and
+*"appoint … (ACTTC) Elect, James W. Hamilton, to take office as ACTTC on December 15, 2018, to
+replace current ACTTC, James P. Erb, who is retiring December 14, 2018."* Merced (1660) showed the
+identical habit. **Two counties running, error always in the same direction — check the minutes.**
+
+🔴 **THE BOARD-MINUTES CHANNEL AGAIN, ON GRANICUS.** `slocounty.granicus.com/ViewPublisher.php?view_id=46`
+indexes back to **2006**; each meeting's `MinutesViewer.php` lists every agenda item with a link to
+its own PDF transmittal. Retrieval gotchas worth carrying: the item PDFs **404 on the granicus host
+— fetch them from `agenda.slocounty.ca.gov/iip/sanluisobispo/file/getfile/<id>`**, same ids; and
+pre-2011 meetings use `DocumentViewer.php?file=slocounty_<hash>.pdf`, which IS the real minutes with
+motions and votes (that is where Parkinson's oath was found).
+
+🔴 **`grep` SILENTLY SUPPRESSED MATCHES AS "Binary file … matches"** when scanning stripped HTML —
+a false-negative sweep until re-run with `grep -a`. Pipe through `tr -d '\000'` and use `-a`.
+
+🔴 **THE OFFICE SET CHANGED WITHIN THE ACFR RUN — SIX SEATS BECAME FIVE.** FY2011-12 lists a
+separate **Auditor-Controller** (Gere W. Sibbach) and **Treasurer/Tax Collector/Public
+Administrator** (Frank L. Freitas); by FY2013-14 they had merged into today's ACTTC-PA, first held
+by James P. Erb. Hamilton is seeded against the merged office he actually holds — he was a *deputy*
+in FY2011-12, not an elected officer. Ninth distinct office set in the wave.
+
+🔴 **AB 759, twelfth county, cited by SUBDIVISION.** The Clerk-Recorder's officeholders page prints
+DA and Sheriff-Coroner as "Six Years* … TERM EXPIRES 01/08/2029*" footnoted *"Gov't. Code 24200,
+\*Elections Code 1300(d)"* — sharper than Solano's by-name citation.
+
+🔴 **A CEREMONY IS NOT A START DATE, said by the county for the second time** (cf. Placer 1658): the
+2007-01-08 minutes note the DA "couldn't be here today but was sworn in **last week** in her office."
+Only Parkinson takes a day from an oath, and only because it fell on the statutory term-start date.
+
+🔴 **THE RESULTS PDF TEXT LAYER IS SHIFTED BY A ROW** — extraction pairs Bordonaro with Frank's
+total. Read the rendered page: Bordonaro **28,824** def. Frank **27,127** (March 2002). Frank was the
+sitting incumbent, so the seat never fell vacant and Bordonaro started the following January; no
+county document reaches back to name the day, hence month precision.
+
+**No January 2027 turnover** in the seeded seats — Bordonaro 100.00% and Hamilton 100.00% (both
+sole), Cano 63.53% over two challengers (a primary majority, no runoff). Fifth such county.
+**Superintendent excluded** as always — but note Brescia did NOT run and **Joe Koski** won it
+unopposed, so that seat *does* turn over; never take Brescia off the ballot-directory page.
+
+## Then: 2 more counties to reach the 93.4% target
+
+By population: Santa Cruz, Marin (+ San Francisco already done, which displaces Marin from the
+top 25).
 
 ## Adjacent defects found, not fixed
 
