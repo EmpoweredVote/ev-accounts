@@ -59,7 +59,8 @@ interface FecEmployerRow {
 }
 
 interface FinanceSummary {
-  total_raised: number;
+  /** Omitted entirely when FEC has no totals row — absent means unknown, never $0. */
+  total_raised?: number;
   top_donors: Array<{ employer: string; amount: number; count: number }>;
   cycle: string;
   source: 'FEC';
@@ -146,13 +147,22 @@ async function fetchCommitteeIdFallback(fecCandidateId: string, apiKey: string):
 
 /**
  * Step 2: Fetches total raised (receipts) for the FEC candidate in the given cycle.
- * Returns 0 if no 2026 data found. Always coerces to Number() — never store raw string.
+ *
+ * Returns null — NOT 0 — when FEC has no totals row for this candidate+cycle.
+ * "Unknown" and "raised nothing" must not collapse onto the same value.
+ *
+ * ⚠ election_full=false is REQUIRED; it defaults to TRUE, which asks for the full
+ * ELECTION cycle rather than the two-year period. A member not on the 2026 ballot
+ * has no 2026 election cycle, so the call returns zero results and the old `?? 0`
+ * recorded that absence as a real $0. See run-fec-finance-summary.ts for the same
+ * fix and migration 1657 for the 65 rows it silently zeroed.
  */
-async function fetchTotalRaised(fecCandidateId: string, apiKey: string): Promise<number> {
+async function fetchTotalRaised(fecCandidateId: string, apiKey: string): Promise<number | null> {
   const params = new URLSearchParams({
     api_key: apiKey,
     candidate_id: fecCandidateId,
     cycle: FEC_CYCLE,
+    election_full: 'false',
     per_page: '1',
   });
   const resp = await fetch(`${FEC_TOTALS_URL}?${params}`, {
@@ -161,8 +171,11 @@ async function fetchTotalRaised(fecCandidateId: string, apiKey: string): Promise
   if (!resp.ok) {
     throw new Error(`FEC candidates/totals HTTP ${resp.status} for ${fecCandidateId}`);
   }
-  const data = (await resp.json()) as { results: Array<{ receipts: unknown }> };
-  return Number(data.results[0]?.receipts ?? 0); // always coerce — never store raw string
+  const data = (await resp.json()) as { results?: Array<{ receipts?: unknown }> };
+  const row = data.results?.[0];
+  if (!row || row.receipts == null) return null;
+  const receipts = Number(row.receipts); // always coerce — never store raw string
+  return Number.isFinite(receipts) ? receipts : null;
 }
 
 /**
@@ -258,16 +271,24 @@ async function main(): Promise<void> {
   // Step 2: Get total raised
   await sleep(SLEEP_BETWEEN_FEC_CALLS_MS);
   const totalRaised = await fetchTotalRaised(fecId, apiKey);
-  console.log(`[ehn-fec-finance] Total raised: $${totalRaised.toLocaleString()}`);
+  if (totalRaised === null) {
+    console.warn(
+      `[ehn-fec-finance] FEC has no ${FEC_CYCLE} totals row for ${fecId} — ` +
+        `writing finance_summary WITHOUT total_raised (unknown, not $0).`,
+    );
+  } else {
+    console.log(`[ehn-fec-finance] Total raised: $${totalRaised.toLocaleString()}`);
+  }
 
   // Step 3: Get top donors by employer
   await sleep(SLEEP_BETWEEN_FEC_CALLS_MS);
   const topDonors = await fetchTopDonorsByEmployer(committeeId, apiKey);
   console.log(`[ehn-fec-finance] Top donors: ${topDonors.length} entries`);
 
-  // Build finance_summary — never spread raw FEC response
+  // Build finance_summary — never spread raw FEC response.
+  // total_raised is omitted rather than zeroed when FEC has no totals row.
   const summary: FinanceSummary = {
-    total_raised: totalRaised,
+    ...(totalRaised !== null ? { total_raised: totalRaised } : {}),
     top_donors: topDonors,
     cycle: FEC_CYCLE,
     source: 'FEC',

@@ -96,7 +96,12 @@ const ENCLAVE_CITY_ALIASES: Record<string, { hostCity: string; lat: number; lng:
  * null for non-federal politicians and federal politicians without matched FEC IDs.
  */
 export interface FinanceSummary {
-  total_raised: number;
+  /**
+   * Absent when FEC has no totals row for the cycle — unknown, NOT $0.
+   * Migration 1657 removed the key from rows the loader had silently zeroed;
+   * consumers must distinguish `undefined` from `0` rather than `|| 0` them together.
+   */
+  total_raised?: number;
   top_donors: Array<{ employer: string; amount: number; count: number }>;
   cycle: string;
   source: 'FEC';
