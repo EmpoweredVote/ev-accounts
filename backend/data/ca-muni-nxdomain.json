@@ -1,0 +1,2506 @@
+[
+ {
+  "geo_id": "0600394",
+  "place": "Agoura Hills",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ciagoura-hills.ca.us"
+   },
+   {
+    "label": "Agoura Hills Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ciagoura-hills.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ciagoura-hills.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ciagoura-hills.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 10,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ciagoura-hills.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ciagoura-hills.ca.us/"
+   },
+   {
+    "url": "https://www.agourahills.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.agourahills.ca.gov/"
+   },
+   {
+    "url": "https://www.cityofagourahills.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofagourahills.gov/"
+   },
+   {
+    "url": "https://www.agourahills.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.agourahills.gov/"
+   },
+   {
+    "url": "https://www.cityofagourahills.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofagourahills.org/"
+   },
+   {
+    "url": "https://www.agourahillsca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.agourahillsca.gov/"
+   },
+   {
+    "url": "https://www.ci.agourahills.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ci.agourahills.ca.us/"
+   },
+   {
+    "url": "https://www.agourahillscalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.agourahillscalifornia.gov/"
+   },
+   {
+    "url": "https://www.cityofagourahills.com/",
+    "finalUrl": "https://cityofagourahills.com/",
+    "status": 200,
+    "textLen": 1225,
+    "title": "cityofagourahills.com - contact with domain owner | Epik.com",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 491,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.agourahills.org/",
+    "finalUrl": "https://agourahills.org/",
+    "status": 200,
+    "textLen": 387,
+    "title": "Agoura Hills - The Sandbox",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 151,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.agourahills.us/",
+    "finalUrl": "https://domainname.us/",
+    "status": 200,
+    "textLen": 4358,
+    "title": ".US Domain Name",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 26,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0602462",
+  "place": "Arcadia",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.arcadia.ca.us/"
+   },
+   {
+    "label": "Arcadia Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.arcadia.ca.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.arcadia.ca.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.arcadia.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": "https://www.arcadiaca.gov/",
+  "landingUrl": "https://www.arcadiaca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 10,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [
+   {
+    "url": "https://www.hugedomains.com/domain_profile.cfm?d=cityofarcadia.com",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "title": "CityOfArcadia.com is for sale | HugeDomains"
+   }
+  ],
+  "probes": [
+   {
+    "url": "http://www.ci.arcadia.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.arcadia.ca.us/"
+   },
+   {
+    "url": "https://www.arcadia.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.arcadia.ca.gov/"
+   },
+   {
+    "url": "https://www.cityofarcadia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofarcadia.gov/"
+   },
+   {
+    "url": "https://www.arcadia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.arcadia.gov/"
+   },
+   {
+    "url": "https://www.cityofarcadia.org/",
+    "finalUrl": "https://www.cityofarcadia.org/",
+    "status": 200,
+    "textLen": 53,
+    "title": "www.cityofarcadia.org - Coming Soon",
+    "verdict": "EMPTY",
+    "why": "only 53 chars of text and 0 of links rendered",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.arcadiaca.gov/",
+    "finalUrl": "https://www.arcadiaca.gov/",
+    "status": 200,
+    "textLen": 6502,
+    "title": "Arcadia, CA",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 14752,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.ci.arcadia.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ci.arcadia.ca.us/"
+   },
+   {
+    "url": "https://www.arcadiacalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.arcadiacalifornia.gov/"
+   },
+   {
+    "url": "https://www.cityofarcadia.com/",
+    "finalUrl": "https://www.hugedomains.com/domain_profile.cfm?d=cityofarcadia.com",
+    "status": 200,
+    "textLen": 3166,
+    "title": "CityOfArcadia.com is for sale | HugeDomains",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "linkLen": 4044,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.arcadia.org/",
+    "finalUrl": "https://arcadia.org/",
+    "status": 200,
+    "textLen": 1770,
+    "title": "Arcadia.org | Homepage",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 761,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.arcadia.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_SSL_UNRECOGNIZED_NAME_ALERT at https://www.arcadia.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0603386",
+  "place": "Azusa",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.azusa.ca.us/"
+   },
+   {
+    "label": "Azusa Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.azusa.ca.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.azusa.ca.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.azusa.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": "https://www.azusaca.gov/",
+  "landingUrl": "https://www.azusaca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 10,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.azusa.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.azusa.ca.us/"
+   },
+   {
+    "url": "https://www.azusa.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.azusa.ca.gov/"
+   },
+   {
+    "url": "https://www.cityofazusa.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofazusa.gov/"
+   },
+   {
+    "url": "https://www.azusa.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.azusa.gov/"
+   },
+   {
+    "url": "https://www.cityofazusa.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_CONNECTION_REFUSED at https://www.cityofazusa.org/"
+   },
+   {
+    "url": "https://www.azusaca.gov/",
+    "finalUrl": "https://www.azusaca.gov/",
+    "status": 200,
+    "textLen": 5801,
+    "title": "Azusa, CA - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": "governing body found in navigation only, not in page prose",
+    "linkLen": 5859,
+    "rightFromNavOnly": true,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.ci.azusa.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ci.azusa.ca.us/"
+   },
+   {
+    "url": "https://www.azusacalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.azusacalifornia.gov/"
+   },
+   {
+    "url": "https://www.cityofazusa.com/",
+    "finalUrl": "https://www.cityofazusa.com/",
+    "status": 200,
+    "textLen": 0,
+    "title": "City of Azusa in Los Angeles County and Southern California - Ciudad de Azusa | #Azusa #CityOfAzusa #AzusaCA #AzusaCalifornia #AzusaCity",
+    "verdict": "EMPTY",
+    "why": "only 0 chars of text and 0 of links rendered",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.azusa.org/",
+    "finalUrl": "https://www.azusa.org/",
+    "status": 200,
+    "textLen": 15204,
+    "title": "Home - Azusa Unified School District",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 26841,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.azusa.us/",
+    "finalUrl": "https://www.azusa.us/",
+    "status": 200,
+    "textLen": 0,
+    "title": "azusa.us",
+    "verdict": "EMPTY",
+    "why": "only 0 chars of text and 0 of links rendered",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0609598",
+  "place": "Calabasas",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofcalabases.com"
+   },
+   {
+    "label": "Calabasas Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofcalabases.com"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityofcalabases.com",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.cityofcalabases.com/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 9,
+  "candidatesSkipped": 1,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofcalabases.com",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.cityofcalabases.com/"
+   },
+   {
+    "url": "https://www.calabasas.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.calabasas.ca.gov/"
+   },
+   {
+    "url": "https://www.cityofcalabasas.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofcalabasas.gov/"
+   },
+   {
+    "url": "https://www.calabasas.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.calabasas.gov/"
+   },
+   {
+    "url": "https://www.cityofcalabasas.org/",
+    "finalUrl": "https://cityofcalabasas.org/",
+    "status": 200,
+    "textLen": 1223,
+    "title": "cityofcalabasas.org - contact with domain owner | Epik.com",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 485,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.calabasasca.gov/",
+    "finalUrl": "https://www.cityofcalabasas.com/",
+    "status": 403,
+    "textLen": 219,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (219 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.ci.calabasas.ca.us/",
+    "finalUrl": "https://www.ci.calabasas.ca.us/404.html",
+    "status": 200,
+    "textLen": 98,
+    "title": "404 Error",
+    "verdict": "EMPTY",
+    "why": "only 98 chars of text and 0 of links rendered",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.calabasascalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.calabasascalifornia.gov/"
+   },
+   {
+    "url": "https://www.calabasas.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.calabasas.org/"
+   },
+   {
+    "url": "https://www.calabasas.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_SSL_UNRECOGNIZED_NAME_ALERT at https://www.calabasas.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0636000",
+  "place": "Huntington Beach",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.huntington-beach.ca.us/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.ci.huntington-beach.ca.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.huntington-beach.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": "https://www.huntingtonbeachca.gov/",
+  "landingUrl": "https://www.huntingtonbeachca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 10,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.huntington-beach.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.huntington-beach.ca.us/"
+   },
+   {
+    "url": "https://www.huntingtonbeach.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.huntingtonbeach.ca.gov/"
+   },
+   {
+    "url": "https://www.cityofhuntingtonbeach.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofhuntingtonbeach.gov/"
+   },
+   {
+    "url": "https://www.huntingtonbeach.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.huntingtonbeach.gov/"
+   },
+   {
+    "url": "https://www.cityofhuntingtonbeach.org/",
+    "finalUrl": "https://cityofhuntingtonbeach.org/",
+    "status": 200,
+    "textLen": 1229,
+    "title": "cityofhuntingtonbeach.org - contact with domain owner | Epik.com",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 503,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.huntingtonbeachca.gov/",
+    "finalUrl": "https://www.huntingtonbeachca.gov/",
+    "status": 200,
+    "textLen": 4143,
+    "title": "Welcome to Huntington Beach, CA",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 18670,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.ci.huntingtonbeach.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ci.huntingtonbeach.ca.us/"
+   },
+   {
+    "url": "https://www.huntingtonbeachcalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.huntingtonbeachcalifornia.gov/"
+   },
+   {
+    "url": "https://www.cityofhuntingtonbeach.com/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.cityofhuntingtonbeach.com/"
+   },
+   {
+    "url": "https://www.huntingtonbeach.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.huntingtonbeach.org/"
+   },
+   {
+    "url": "https://www.huntingtonbeach.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_SSL_UNRECOGNIZED_NAME_ALERT at https://www.huntingtonbeach.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0636826",
+  "place": "Irwindale",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.irwindale.ca.us"
+   },
+   {
+    "label": "Irwindale Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.irwindale.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.irwindale.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.irwindale.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": "https://www.irwindaleca.gov/",
+  "landingUrl": "https://www.irwindaleca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 10,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.irwindale.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.irwindale.ca.us/"
+   },
+   {
+    "url": "https://www.irwindale.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.irwindale.ca.gov/"
+   },
+   {
+    "url": "https://www.cityofirwindale.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofirwindale.gov/"
+   },
+   {
+    "url": "https://www.irwindale.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.irwindale.gov/"
+   },
+   {
+    "url": "https://www.cityofirwindale.org/",
+    "finalUrl": "https://cityofirwindale.org/",
+    "status": 200,
+    "textLen": 1223,
+    "title": "cityofirwindale.org - contact with domain owner | Epik.com",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 485,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.irwindaleca.gov/",
+    "finalUrl": "https://www.irwindaleca.gov/",
+    "status": 200,
+    "textLen": 3154,
+    "title": "Irwindale, CA - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 2088,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.ci.irwindale.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ci.irwindale.ca.us/"
+   },
+   {
+    "url": "https://www.irwindalecalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.irwindalecalifornia.gov/"
+   },
+   {
+    "url": "https://www.cityofirwindale.com/",
+    "finalUrl": "https://cityofirwindale.com/",
+    "status": 200,
+    "textLen": 1223,
+    "title": "cityofirwindale.com - contact with domain owner | Epik.com",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 485,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.irwindale.org/",
+    "finalUrl": "http://resultslookup.com/?dn=irwindale.org&sksubid=300235&_slsen=1",
+    "status": 200,
+    "textLen": 0,
+    "title": "",
+    "verdict": "EMPTY",
+    "why": "only 0 chars of text and 46 of links rendered",
+    "linkLen": 46,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.irwindale.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.irwindale.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0640830",
+  "place": "La Verne",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.laverne.ca.us"
+   },
+   {
+    "label": "La Verne Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.laverne.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.laverne.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.laverne.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": "https://www.laverneca.gov/",
+  "landingUrl": "https://www.laverneca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 9,
+  "candidatesSkipped": 1,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.laverne.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.laverne.ca.us/"
+   },
+   {
+    "url": "https://www.laverne.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.laverne.ca.gov/"
+   },
+   {
+    "url": "https://www.cityoflaverne.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityoflaverne.gov/"
+   },
+   {
+    "url": "https://www.laverne.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.laverne.gov/"
+   },
+   {
+    "url": "https://www.cityoflaverne.org/",
+    "finalUrl": "https://www.laverneca.gov/",
+    "status": 200,
+    "textLen": 12484,
+    "title": "La Verne, CA | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 11334,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.ci.laverne.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ci.laverne.ca.us/"
+   },
+   {
+    "url": "https://www.lavernecalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.lavernecalifornia.gov/"
+   },
+   {
+    "url": "https://www.cityoflaverne.com/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.cityoflaverne.com/"
+   },
+   {
+    "url": "https://www.laverne.org/",
+    "finalUrl": "https://www.laverne.org/",
+    "status": 200,
+    "textLen": 184,
+    "title": "laverne.org",
+    "verdict": "EMPTY",
+    "why": "only 184 chars of text and 151 of links rendered",
+    "linkLen": 151,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.laverne.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.laverne.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0643224",
+  "place": "Los Alamitos",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.losalamitos.ca.us/"
+   },
+   {
+    "label": "Los Alamitos Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.losalamitos.ca.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.losalamitos.ca.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.losalamitos.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": "https://www.cityoflosalamitos.org/",
+  "landingUrl": "https://www.cityoflosalamitos.org/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 10,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.losalamitos.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.losalamitos.ca.us/"
+   },
+   {
+    "url": "https://www.losalamitos.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.losalamitos.ca.gov/"
+   },
+   {
+    "url": "https://www.cityoflosalamitos.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityoflosalamitos.gov/"
+   },
+   {
+    "url": "https://www.losalamitos.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.losalamitos.gov/"
+   },
+   {
+    "url": "https://www.cityoflosalamitos.org/",
+    "finalUrl": "https://www.cityoflosalamitos.org/",
+    "status": 200,
+    "textLen": 5879,
+    "title": "Los Alamitos, CA | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 6045,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.losalamitosca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.losalamitosca.gov/"
+   },
+   {
+    "url": "https://www.ci.losalamitos.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ci.losalamitos.ca.us/"
+   },
+   {
+    "url": "https://www.losalamitoscalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.losalamitoscalifornia.gov/"
+   },
+   {
+    "url": "https://www.cityoflosalamitos.com/",
+    "finalUrl": "https://cityoflosalamitos.com/",
+    "status": 200,
+    "textLen": 1225,
+    "title": "cityoflosalamitos.com - contact with domain owner | Epik.com",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 491,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.losalamitos.org/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/www.losalamitos.org?utm_source=TDFS_BINNS2&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-binns2_base&traffic_type=TDFS_BINNS2&traffic_id=binns2&",
+    "status": 200,
+    "textLen": 229,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (229 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.losalamitos.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.losalamitos.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0648648",
+  "place": "Monrovia",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.monrovia.ca.us"
+   },
+   {
+    "label": "Monrovia Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.monrovia.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.monrovia.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.monrovia.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 9,
+  "candidatesSkipped": 1,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.monrovia.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.monrovia.ca.us/"
+   },
+   {
+    "url": "https://www.monrovia.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.monrovia.ca.gov/"
+   },
+   {
+    "url": "https://www.cityofmonrovia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofmonrovia.gov/"
+   },
+   {
+    "url": "https://www.monrovia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.monrovia.gov/"
+   },
+   {
+    "url": "https://www.cityofmonrovia.org/",
+    "finalUrl": "https://www.monroviaca.gov/",
+    "status": 403,
+    "textLen": 198,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (198 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.ci.monrovia.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ci.monrovia.ca.us/"
+   },
+   {
+    "url": "https://www.monroviacalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.monroviacalifornia.gov/"
+   },
+   {
+    "url": "https://www.cityofmonrovia.com/",
+    "finalUrl": "https://www.socalhousesforyou.com/community/id/1441336/area/Monrovia/",
+    "status": 200,
+    "textLen": 2900,
+    "title": "Living in Monrovia, CA: Small-Town Charm Close to Downtown LA",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 2877,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.monrovia.org/",
+    "finalUrl": "https://www.monrovia.org/",
+    "status": 200,
+    "textLen": 1797,
+    "title": "Monrovia Church of Christ",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 5405,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.monrovia.us/",
+    "finalUrl": "https://domainname.us/",
+    "status": 200,
+    "textLen": 4358,
+    "title": ".US Domain Name",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 26,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0652526",
+  "place": "Norwalk",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci-norwalk.ca.us"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.ci-norwalk.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci-norwalk.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": "https://www.norwalkca.gov/",
+  "landingUrl": "https://www.norwalkca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 6,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci-norwalk.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci-norwalk.ca.us/"
+   },
+   {
+    "url": "https://www.norwalk.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.norwalk.ca.gov/"
+   },
+   {
+    "url": "https://www.cityofnorwalk.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofnorwalk.gov/"
+   },
+   {
+    "url": "https://www.norwalk.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.norwalk.gov/"
+   },
+   {
+    "url": "https://www.cityofnorwalk.org/",
+    "finalUrl": "https://cityofnorwalk.org/",
+    "status": 200,
+    "textLen": 1221,
+    "title": "cityofnorwalk.org - contact with domain owner | Epik.com",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 479,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.norwalkca.gov/",
+    "finalUrl": "https://www.norwalkca.gov/",
+    "status": 200,
+    "textLen": 3175,
+    "title": "City of Norwalk",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 32033,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.ci.norwalk.ca.us/",
+    "finalUrl": "https://www.ci.norwalk.ca.us/",
+    "status": 200,
+    "textLen": 3589,
+    "title": "City of Norwalk",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 32508,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0658072",
+  "place": "Pomona",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "District 5",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pomona.ca.us/"
+   },
+   {
+    "label": "District 4",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pomona.ca.us/"
+   },
+   {
+    "label": "District 1",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pomona.ca.us/"
+   },
+   {
+    "label": "District 2",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pomona.ca.us/"
+   },
+   {
+    "label": "District 6",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pomona.ca.us/"
+   },
+   {
+    "label": "District 3",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pomona.ca.us/"
+   },
+   {
+    "label": "Pomona Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.pomona.ca.us/"
+   }
+  ],
+  "rowCount": 7,
+  "stored": "http://www.ci.pomona.ca.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.pomona.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 10,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.pomona.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.pomona.ca.us/"
+   },
+   {
+    "url": "https://www.pomona.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.pomona.ca.gov/"
+   },
+   {
+    "url": "https://www.cityofpomona.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofpomona.gov/"
+   },
+   {
+    "url": "https://www.pomona.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.pomona.gov/"
+   },
+   {
+    "url": "https://www.cityofpomona.org/",
+    "finalUrl": "https://cityofpomona.org/",
+    "status": 200,
+    "textLen": 1220,
+    "title": "cityofpomona.org - contact with domain owner | Epik.com",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 476,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.pomonaca.gov/",
+    "finalUrl": "https://www.pomonaca.gov/",
+    "status": 403,
+    "textLen": 198,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (198 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.ci.pomona.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ci.pomona.ca.us/"
+   },
+   {
+    "url": "https://www.pomonacalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.pomonacalifornia.gov/"
+   },
+   {
+    "url": "https://www.cityofpomona.com/",
+    "finalUrl": "http://agomuk.com/fk?dat=q2819TTnsELfSPvE5RJKc349fjlWNkVOU3lLVmx4UzRDMnV6N0ZHWEczUFZWU21yYWlKTmRlUGx4b3BhTWVGR1c5RVQwZW5JaGkwOUU4UnB0dGFJUGttaXdHS05TWWwyRktoVG5ZcU5YTXFISzN2S3NWYmdqcmQzdG5KYk5XVlVOZXFOWVM0OS9CeE0ybERMZHhaWms1dE5xK0Z4aGd6YllKWldxUXN1QUc2THIwYjlLSGhVV0lOOFB1dk5KU2dZeFZiQ0NnK1EyVUg0UTc4OEtDT3JQdjFHb2NHd2piUzZZbmtJalZCeHF3OFlualo2SkdoMnpFZHp1L0R6VkNJaXMyVEQvQzZQcDU0VTBxQ3cxeEs4akVxcUNBQnM0ZHI5NlMvQk1pVzh3dDhxbkdETnVYaVJ0MHdkWFpkYm5FYmNhdW90UlZSRUZ3UTRxV1Uyck82cytKMVVlVEVuU1A0QktEelZJVGJtMTdSSU42L0taTWI5emxpM1lCUUlQcHNTUE1pS3pNVTBHNmgvbnVTTGRWSXV0NXlFVVhFQ2lVZ251RWZUejlXYU1kUG43ZHZZMzhHRHV4Tmp0OWgwQ2Z5K004dFdiWGVJeWJza1FBWVYrekd0eHduNm4zWGlNc01paDc0Q2VjZ0lyRE5LWGIvMHlNdTFiMkhPSTZXcTJaVGFvVlpxdUxqZVBMaXl2TXpINXBtNzdMdVhvbFlOSHhSV2xEMzhGdjJvR1FkNkdMdzE1U2paOFRLa0prdW9WbzlDZDNCb0ozRklZeXJYK0dnU2RZQVQ0dkZoZVV4QUErbHpaVDhaOU5XdDZtVmR4aXBmWVJEcmxwc0VULytLdmhudEZqYTdudUJBZWtFRTFOWEZNRU8%3D",
+    "status": 200,
+    "textLen": 0,
+    "title": "",
+    "verdict": "EMPTY",
+    "why": "only 0 chars of text and 0 of links rendered",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.pomona.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_SSL_PROTOCOL_ERROR at https://www.pomona.org/"
+   },
+   {
+    "url": "https://www.pomona.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_SSL_UNRECOGNIZED_NAME_ALERT at https://www.pomona.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0662644",
+  "place": "Rolling Hills Estates",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.rollinghillsestates.ca.us"
+   },
+   {
+    "label": "Rolling Hills Estates Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.rollinghillsestates.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.rollinghillsestates.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.rollinghillsestates.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 10,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 3,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.rollinghillsestates.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.rollinghillsestates.ca.us/"
+   },
+   {
+    "url": "https://www.rollinghillsestates.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.rollinghillsestates.ca.gov/"
+   },
+   {
+    "url": "https://www.cityofrollinghillsestates.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofrollinghillsestates.gov/"
+   },
+   {
+    "url": "https://www.rollinghillsestates.gov/",
+    "finalUrl": "https://www.rollinghillsestates.gov/",
+    "status": 403,
+    "textLen": 207,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (207 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.cityofrollinghillsestates.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofrollinghillsestates.org/"
+   },
+   {
+    "url": "https://www.rollinghillsestatesca.gov/",
+    "finalUrl": "https://www.rollinghillsestates.gov/",
+    "status": 403,
+    "textLen": 207,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (207 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.ci.rollinghillsestates.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ci.rollinghillsestates.ca.us/"
+   },
+   {
+    "url": "https://www.rollinghillsestatescalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.rollinghillsestatescalifornia.gov/"
+   },
+   {
+    "url": "https://www.cityofrollinghillsestates.com/",
+    "finalUrl": "https://cityofrollinghillsestates.com/",
+    "status": 200,
+    "textLen": 1233,
+    "title": "cityofrollinghillsestates.com - contact with domain owner | Epik.com",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 515,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.rollinghillsestates.org/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/www.rollinghillsestates.org?utm_source=TDFS_BINNS2&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-binns2_base&traffic_type=TDFS_BINNS2&traffic_id=binns2&",
+    "status": 200,
+    "textLen": 237,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (237 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.rollinghillsestates.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.rollinghillsestates.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0670000",
+  "place": "Santa Monica",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://pen.ci.santa-monica.ca.us"
+   },
+   {
+    "label": "Santa Monica Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://pen.ci.santa-monica.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://pen.ci.santa-monica.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://pen.ci.santa-monica.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": "https://www.santamonica.gov/",
+  "landingUrl": "https://www.santamonica.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 10,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": true,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 2,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://pen.ci.santa-monica.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://pen.ci.santa-monica.ca.us/"
+   },
+   {
+    "url": "https://www.santamonica.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.santamonica.ca.gov/"
+   },
+   {
+    "url": "https://www.cityofsantamonica.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofsantamonica.gov/"
+   },
+   {
+    "url": "https://www.santamonica.gov/",
+    "finalUrl": "https://www.santamonica.gov/",
+    "status": 200,
+    "textLen": 4160,
+    "title": "santamonica.gov - Home Page",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 30616,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": [],
+    "stateUnconfirmed": true,
+    "nameAmbiguous": true
+   },
+   {
+    "url": "https://www.cityofsantamonica.org/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/www.cityofsantamonica.org?utm_source=TDFS_DASLNC&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-daslnc_base&traffic_type=TDFS_DASLNC&traffic_id=daslnc&",
+    "status": 200,
+    "textLen": 235,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (235 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.santamonicaca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.santamonicaca.gov/"
+   },
+   {
+    "url": "https://www.ci.santamonica.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ci.santamonica.ca.us/"
+   },
+   {
+    "url": "https://www.santamonicacalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.santamonicacalifornia.gov/"
+   },
+   {
+    "url": "https://www.cityofsantamonica.com/",
+    "finalUrl": "https://www.cityofsantamonica.com/lander",
+    "status": 200,
+    "textLen": 385,
+    "title": "",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 8651,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.santamonica.org/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/www.santamonica.org?utm_source=TDFS_DASLNC&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-daslnc_base&traffic_type=TDFS_DASLNC&traffic_id=daslnc&",
+    "status": 200,
+    "textLen": 229,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (229 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.santamonica.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.santamonica.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0672996",
+  "place": "South El Monte",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.southelmonte.ca.us/"
+   },
+   {
+    "label": "South El Monte Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.southelmonte.ca.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.southelmonte.ca.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.southelmonte.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": "https://www.cityofsouthelmonte.org/",
+  "landingUrl": "https://www.cityofsouthelmonte.org/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 10,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.southelmonte.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.southelmonte.ca.us/"
+   },
+   {
+    "url": "https://www.southelmonte.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.southelmonte.ca.gov/"
+   },
+   {
+    "url": "https://www.cityofsouthelmonte.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofsouthelmonte.gov/"
+   },
+   {
+    "url": "https://www.southelmonte.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.southelmonte.gov/"
+   },
+   {
+    "url": "https://www.cityofsouthelmonte.org/",
+    "finalUrl": "https://www.cityofsouthelmonte.org/",
+    "status": 200,
+    "textLen": 4027,
+    "title": "South El Monte, CA | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 3801,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.southelmonteca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.southelmonteca.gov/"
+   },
+   {
+    "url": "https://www.ci.southelmonte.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ci.southelmonte.ca.us/"
+   },
+   {
+    "url": "https://www.southelmontecalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.southelmontecalifornia.gov/"
+   },
+   {
+    "url": "https://www.cityofsouthelmonte.com/",
+    "finalUrl": "https://www.cityofsouthelmonte.com/lander",
+    "status": 200,
+    "textLen": 578,
+    "title": "",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 10073,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.southelmonte.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_SSL_PROTOCOL_ERROR at https://www.southelmonte.org/"
+   },
+   {
+    "url": "https://www.southelmonte.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.southelmonte.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0673220",
+  "place": "South Pasadena",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.southpasadena.ca.us"
+   },
+   {
+    "label": "South Pasadena Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.southpasadena.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.southpasadena.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.southpasadena.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": "https://www.southpasadenaca.gov/",
+  "landingUrl": "https://www.southpasadenaca.gov/Home",
+  "canonicalNote": "canonicalised from https://www.southpasadenaca.gov/Home",
+  "candidatesIncomplete": false,
+  "candidatesTried": 10,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.southpasadena.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.southpasadena.ca.us/"
+   },
+   {
+    "url": "https://www.southpasadena.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.southpasadena.ca.gov/"
+   },
+   {
+    "url": "https://www.cityofsouthpasadena.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityofsouthpasadena.gov/"
+   },
+   {
+    "url": "https://www.southpasadena.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.southpasadena.gov/"
+   },
+   {
+    "url": "https://www.cityofsouthpasadena.org/",
+    "finalUrl": "https://cityofsouthpasadena.org/",
+    "status": 200,
+    "textLen": 1227,
+    "title": "cityofsouthpasadena.org - contact with domain owner | Epik.com",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 497,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.southpasadenaca.gov/",
+    "finalUrl": "https://www.southpasadenaca.gov/Home",
+    "status": 200,
+    "textLen": 3968,
+    "title": "Home - City of South Pasadena",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 19166,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.ci.southpasadena.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ci.southpasadena.ca.us/"
+   },
+   {
+    "url": "https://www.southpasadenacalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.southpasadenacalifornia.gov/"
+   },
+   {
+    "url": "https://www.cityofsouthpasadena.com/",
+    "finalUrl": "https://cityofsouthpasadena.com/",
+    "status": 200,
+    "textLen": 594,
+    "title": "cityofsouthpasadena.com",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 1633,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.southpasadena.org/",
+    "finalUrl": "https://gamutindustries.com/",
+    "status": 403,
+    "textLen": 193,
+    "title": "Gamut Industries – Internet Investment and Development",
+    "verdict": "BLOCKED",
+    "why": "WAF (193 chars) — confirm by hand, do NOT repoint on this",
+    "reRendered": true,
+    "linkLen": 1095,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.southpasadena.us/",
+    "finalUrl": "https://www.southpasadena.us/",
+    "status": 200,
+    "textLen": 484,
+    "title": "Redirecting...",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 1249,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.southpasadenaca.gov/",
+    "finalUrl": "https://www.southpasadenaca.gov/Home",
+    "status": 200,
+    "textLen": 3968,
+    "title": "Home - City of South Pasadena",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 19166,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0644000",
+  "place": "Los Angeles",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL_EXEC",
+  "types": [
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "Los Angeles city",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.la.ca.us/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.ci.la.ca.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.la.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 10,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 10,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.la.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.la.ca.us/"
+   },
+   {
+    "url": "https://www.losangeles.ca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.losangeles.ca.gov/"
+   },
+   {
+    "url": "https://www.cityoflosangeles.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cityoflosangeles.gov/"
+   },
+   {
+    "url": "https://www.losangeles.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.losangeles.gov/"
+   },
+   {
+    "url": "https://www.cityoflosangeles.org/",
+    "finalUrl": "https://www.cityoflosangeles.org/",
+    "status": 200,
+    "textLen": 156,
+    "title": "cityoflosangeles.org",
+    "verdict": "EMPTY",
+    "why": "only 156 chars of text and 58 of links rendered",
+    "linkLen": 58,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.losangelesca.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.losangelesca.gov/"
+   },
+   {
+    "url": "https://www.ci.losangeles.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.ci.losangeles.ca.us/"
+   },
+   {
+    "url": "https://www.losangelescalifornia.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.losangelescalifornia.gov/"
+   },
+   {
+    "url": "https://www.cityoflosangeles.com/",
+    "finalUrl": "https://www.cityoflosangeles.com/lander",
+    "status": 200,
+    "textLen": 589,
+    "title": "",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 10014,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.losangeles.org/",
+    "finalUrl": "https://losangeles.org/",
+    "status": 403,
+    "textLen": 109,
+    "title": "Losangeles,org: Breaking News, Losangeles News, Us News, World News and Videos",
+    "verdict": "BLOCKED",
+    "why": "WAF (109 chars) — confirm by hand, do NOT repoint on this",
+    "reRendered": true,
+    "linkLen": 269,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.losangeles.us/",
+    "finalUrl": "https://www.losangeles.us/lander",
+    "status": 200,
+    "textLen": 401,
+    "title": "",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 9795,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ }
+]
