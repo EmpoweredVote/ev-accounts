@@ -1,9 +1,14 @@
-# CA county wave — remaining work (as of 2026-08-10)
+# CA county wave — ✅ COMPLETE (as of 2026-08-10)
 
-Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650, 1652, 1656, 1658, 1660, 1662, 1663 (seeds),
-1635 (LA repair), 1646 (Sierra URL). **23 counties, 116 seats, 25.70M residents.** LA repaired. San
-Francisco confirmed already complete. (Corpus-wide that is 24 CA county districts / 119 offices /
-119 seated — the extra county is LA, seeded before this wave and only repaired by it.)
+Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650, 1652, 1656, 1658, 1660, 1662, 1663, **1666**
+(seeds), 1635 (LA repair), 1646 (Sierra URL). **24 counties, 119 seats, 25,967,746 residents** —
+verified post-apply. LA repaired. San Francisco confirmed already complete. (Corpus-wide that is 25
+CA county districts / 122 offices / 122 seated — the extra county is LA, seeded before this wave and
+only repaired by it.)
+
+**MARIN WAS THE LAST ONE (1666).** The population target is met; no CA county remains on this
+wave's list. Remaining CA county work is the `official_web_url` rot below and the Jan-2027 re-check
+queue. `check:reachability` DEAD_GEOGRAPHY dropped 20 → 19 when Marin was seated.
 
 ## 🔴🔴 JANUARY 2027 RE-CHECK QUEUE (build this into the Jan-2027 pass)
 
@@ -756,9 +761,90 @@ County Clerk Office created again in July 2004"). **No January 2027 turnover** �
 Bowers 98.61%, Webber 98.81%, all against write-ins only; sixth such county. Superintendent (Faris M.
 Sabbah, 97.81%) excluded as always.
 
-## Then: 1 more county to reach the 93.4% target
+## ✅ Marin — SEEDED (migration 1666). THREE offices; no elected finance officer at all.
 
-Marin (+ San Francisco already done, which displaces Marin from the top 25).
+## Marin County (06041, pop 254,407) — DONE. Final county in the wave.
+
+| Title (ACFR / dept / ROV) | Holder | Occupancy start | Precision |
+|---|---|---|---|
+| Assessor-Recorder-County Clerk | Shelly Scott | 2019-01-07 | day |
+| District Attorney | Lori E. Frugoli | 2019-01-01 | month |
+| Sheriff-Coroner | Jamie Scardina | 2022-07-19 (appointed) | day |
+
+🔴🔴 **THE SMALLEST OFFICE SET IN THE WAVE — 3, AND NO ELECTED FINANCE OFFICER EXISTS.** Auditor,
+Controller, Treasurer, Tax Collector and Public Administrator are ALL inside an **appointed**
+Department of Finance (Director Mina L. Martinovich, listed by the ACFR under "APPOINTED OFFICIALS
+(by the Board of Supervisors)"); the Registrar of Voters is appointed by the County Administrator.
+Sonoma (1644) held the previous minimum at four. Eleventh distinct office set. A template from any
+other county would have invented two or three empty — and therefore invisible — seats.
+
+🔴🔴 **`pdftotext -layout` MISPAIRED 9 OF THE 15 APPOINTED ROWS ON THE ACFR OFFICIALS PAGE.** Two
+columns, and the name column drifts by a row then corrects itself — it read "Director of Finance"
+against an empty cell and slid Martinovich onto UC Cooperative Extension. **This is the Fresno
+off-by-one (1633) inside the document class this wave leans on hardest, and no gate can catch it.**
+Fix: `pdftoppm -f <p> -l <p> -r 160 -png` and `Read` the image. **Render the officials page of every
+ACFR from now on; do not trust a layout extraction to pair two columns.**
+
+🔴 **THE ORG CHART IS A SECOND, INDEPENDENT READING OF THE ELECTED SET** — printed p. xxv marks
+elected departments with a dashed border keyed "(EO) Elected Official". Exactly three boxes carry
+it; Department of Finance and Elections sit in the same column unmarked. A different notation, on a
+different page, that does not depend on the pairing the extraction got wrong. Look for it.
+
+🔴 **THE COUNTY PUBLISHES THE ELECTION CYCLE AS DATA, so AB 759 needed no inference** (14th county).
+`/departments/elections/election-information/when-offices-are-election/when-offices-are-election-county-offices`
+(updated 2026-02-12): Assessor-Recorder-County Clerk in the "Primary Election of Any Year **Not**
+Evenly Divisible by Four", DA and Sheriff-Coroner in the year **Evenly** divisible by four. Every
+earlier county inferred this from a contest MISSING off a ballot. **Look for this page shape first.**
+
+🔴 **THE SHERIFF SEAT HAD THREE CANDIDATE START DATES AND THE COUNTY DISTINGUISHED ALL THREE:**
+Doyle retired 06-30 and Scardina became **Acting** Sheriff; the Board appointed him "**effective
+July 19, 2022**" (BoS minutes 2022-07-19 item 7, carried 4-0, same meeting that honoured Doyle); the
+ceremonial oath was **July 28**, administered by Doyle. First time in the wave a ceremony falls
+**behind** the effective date rather than in front of it (cf. Placer 1658, SLO 1662). Acting ≠
+holding. **Third county where "the winner takes office in January" failed** — he had won June 2022
+unopposed and "was to be sworn in when Doyle's term ended January 2, 2023" (cf. Merced, SLO).
+
+🔴 **AN OATH DATE THREE DAYS BEFORE THE TERM COULD BEGIN.** One county release (2019-01-07) covers
+both: Scott "sworn in … on January 7" and Frugoli "took the oath as District Attorney on January 4".
+The statutory commencement was **2019-01-07** (Gov. Code 24200, noon on the first Monday after Jan 1)
+and Gov. Code 1360 permits an early oath. So Scott gets **day** precision — the county's date and
+the statute name the same day, the SLO/Parkinson test — and Frugoli gets **month**, because the only
+published day is not the start day. Sweeps of every BoS meeting Nov 2018–Jan 2019 found no
+appointment item and no mention of Frugoli or of predecessor Berberian, so she was NOT seated early.
+
+🔴 **SHERIFF'S HOME PAGE NAMES NO SHERIFF — the San Mateo shape (1642), benign this time**; holder is
+only on `/about-us/executive-staff`. **And a surname homonym sits on that same team: Captain *Craig*
+Scardina** next to Sheriff *Jamie* Scardina (the Stanislaus 1643 / Merced 1660 shape).
+
+🔴 **CLOUDFLARE BLOCKS ON THE TLS FINGERPRINT, NOT THE USER-AGENT** — `marincounty.gov`,
+`marinsheriff.gov` and even the asset host `assets.marincounty.gov` 403 plain curl *including a full
+browser header set*. Playwright + same-origin `fetch()` works; for the 17.4 MB ACFR, fetch to
+`arrayBuffer`, base64 in 0x8000 chunks, and save with `browser_evaluate`'s **`filename` param** so
+23 MB goes to disk instead of into context (it lands in the repo root). Verify byte count + `%PDF-`
+magic after decoding — a 403 saved as `.pdf` is HTML and `file` will say so.
+
+🔴 **BOARD RECORD = A HYLAND OnBase PublicAccess PORTAL**, `pav.marincounty.org/publicaccessbosrecords/`:
+`POST api/CustomQuery/KeywordSearch` `{"QueryID":213,"Keywords":[{"ID":428,"Value":"BOS MINUTES"},…,
+{"ID":598,"Value":"<MM>"},{"ID":599,"Value":"<YYYY>"},…],"QueryLimit":0}` → opaque IDs; then **`GET
+api/Document/<urlencoded id>` returns the PDF** (a POST to the same URL returns only metadata).
+🔴 Its `PAV_BOS_Records_Text_Search` type is offered in the UI but the endpoint is **403 for the
+public** — sweep months instead. 🔴 **Two of five July 2022 minutes extracted 2 CHARACTERS** — image
+scans, the Santa Cruz GovStream mode. Print the extracted byte count before believing a negative.
+
+🔴 **`geo_id` 06041 IS A LIVE COLLISION, NOT A THEORETICAL ONE** — it is Marin County (COUNTY, 'ca')
+AND **Assembly District 41** (STATE_LOWER, 'CA'). The pre-flight proved it: an unscoped
+`geo_id='06041'` join returned AD-41's Assembly Member office. 1666 scopes every predicate by
+`district_type` and gates on AD-41 not being attached to the Marin chamber.
+
+🔴 **A `name_formal ILIKE '%Marin%'` PRE-FLIGHT MATCHED ONLY *SAN MARINO*** (city council + unified
+board). Substring matching on a place name — the same defect class 1664 is cleaning up for surnames.
+
+**No January 2027 turnover** (7th such county): Scott 68,582 sole candidate on the certified June
+2026 ballot (Clarity ver 376467), and the **November 2026 candidate-status list contains no
+countywide county office at all**, so no runoff. Superintendent (John A. Carroll, 70,127) excluded as
+always — ACFR lists three elected officers and no Superintendent, org chart has no Office of
+Education box, 25-department directory has none (MCOE is `marinschools.org`).
+`official_web_url` repointed: stored `co.marin.ca.us` is **NXDOMAIN** (the SLO shape) → `https://www.marincounty.gov/`.
 
 ## Adjacent defects found, not fixed
 
