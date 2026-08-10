@@ -1,0 +1,1895 @@
+[
+ {
+  "geo_id": "41007",
+  "place": "Clatsop",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Clatsop County",
+    "district_type": "COUNTY",
+    "stored": "http://www.co.clatsop.or.us/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.co.clatsop.or.us/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3060,
+  "storedTitle": "Clatsop County, OR | Official Website",
+  "recommended": "https://www.clatsopcounty.gov/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 15,
+  "candidatesSkipped": 1,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.co.clatsop.or.us/",
+    "finalUrl": "https://www.clatsopcounty.gov/",
+    "status": 200,
+    "textLen": 3060,
+    "title": "Clatsop County, OR | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 4160,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.clatsopcounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clatsopcounty.or.gov/"
+   },
+   {
+    "url": "https://www.clatsopcountyor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clatsopcountyor.gov/"
+   },
+   {
+    "url": "https://www.countyofclatsop.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofclatsop.gov/"
+   },
+   {
+    "url": "https://www.countyofclatsopor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofclatsopor.gov/"
+   },
+   {
+    "url": "https://www.clatsop.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clatsop.or.gov/"
+   },
+   {
+    "url": "https://www.clatsopcountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clatsopcountyoregon.gov/"
+   },
+   {
+    "url": "https://www.clatsopcountyoregon.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clatsopcountyoregon.org/"
+   },
+   {
+    "url": "https://www.clatsopcountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clatsopcountyoregon.net/"
+   },
+   {
+    "url": "https://www.clatsopcountyoregon.com/",
+    "finalUrl": "https://www.clatsopcountyoregon.com/",
+    "status": 200,
+    "textLen": 0,
+    "title": "Clatsop County Oregon",
+    "verdict": "EMPTY",
+    "why": "only 0 chars of text and 0 of links rendered",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.clatsopcounty.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clatsopcounty.org/"
+   },
+   {
+    "url": "https://www.clatsopcounty.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clatsopcounty.us/"
+   },
+   {
+    "url": "https://www.clatsopcounty.com/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/www.clatsopcounty.com?utm_source=TDFS_DASLNC&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-daslnc_base&traffic_type=TDFS_DASLNC&traffic_id=daslnc&",
+    "status": 200,
+    "textLen": 231,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (231 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.clatsopcounty.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clatsopcounty.net/"
+   },
+   {
+    "url": "https://clatsopgov.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://clatsopgov.org/"
+   },
+   {
+    "url": "https://www.co.clatsop.or.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_CONNECTION_RESET at https://www.co.clatsop.or.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "41015",
+  "place": "Curry",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Curry County",
+    "district_type": "COUNTY",
+    "stored": "http://www.co.curry.or.us/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.co.curry.or.us/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 1701,
+  "storedTitle": "Welcome To Curry County, OR",
+  "recommended": "https://www.currycountyor.gov/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 15,
+  "candidatesSkipped": 1,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "needsHumanRead": false,
+  "rejected": [
+   {
+    "url": "http://brookingsharbororegon.com/",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "title": "Flywheel - Unknown Domain"
+   }
+  ],
+  "probes": [
+   {
+    "url": "http://www.co.curry.or.us/",
+    "finalUrl": "https://www.currycountyor.gov/",
+    "status": 200,
+    "textLen": 1701,
+    "title": "Welcome To Curry County, OR",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 9764,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.currycounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.currycounty.or.gov/"
+   },
+   {
+    "url": "https://www.currycounty.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.currycounty.gov/"
+   },
+   {
+    "url": "https://www.countyofcurry.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofcurry.gov/"
+   },
+   {
+    "url": "https://www.countyofcurryor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofcurryor.gov/"
+   },
+   {
+    "url": "https://www.curry.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.curry.or.gov/"
+   },
+   {
+    "url": "https://www.currycountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.currycountyoregon.gov/"
+   },
+   {
+    "url": "https://www.currycountyoregon.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.currycountyoregon.org/"
+   },
+   {
+    "url": "https://www.currycountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.currycountyoregon.net/"
+   },
+   {
+    "url": "https://www.currycountyoregon.com/",
+    "finalUrl": "http://brookingsharbororegon.com/",
+    "status": 404,
+    "textLen": 1013,
+    "title": "Flywheel - Unknown Domain",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "linkLen": 309,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.currycounty.org/",
+    "finalUrl": "https://www.currycountynm.gov/",
+    "status": 403,
+    "textLen": 201,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (201 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": [
+     "new mexico"
+    ]
+   },
+   {
+    "url": "https://www.currycounty.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.currycounty.us/"
+   },
+   {
+    "url": "https://www.currycounty.com/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.currycounty.com/"
+   },
+   {
+    "url": "https://www.currycounty.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.currycounty.net/"
+   },
+   {
+    "url": "https://currygov.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://currygov.org/"
+   },
+   {
+    "url": "https://www.co.curry.or.us/",
+    "finalUrl": "https://www.currycountyor.gov/",
+    "status": 200,
+    "textLen": 1701,
+    "title": "Welcome To Curry County, OR",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 9764,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "41017",
+  "place": "Deschutes",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Deschutes County",
+    "district_type": "COUNTY",
+    "stored": "http://www.deschutes.org/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.deschutes.org/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 4732,
+  "storedTitle": "Deschutes County, OR | Official Website",
+  "recommended": "https://www.deschutescounty.gov/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 15,
+  "candidatesSkipped": 1,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.deschutes.org/",
+    "finalUrl": "https://www.deschutescounty.gov/",
+    "status": 200,
+    "textLen": 4732,
+    "title": "Deschutes County, OR | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 3775,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.deschutescounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.deschutescounty.or.gov/"
+   },
+   {
+    "url": "https://www.deschutescountyor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.deschutescountyor.gov/"
+   },
+   {
+    "url": "https://www.countyofdeschutes.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofdeschutes.gov/"
+   },
+   {
+    "url": "https://www.countyofdeschutesor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofdeschutesor.gov/"
+   },
+   {
+    "url": "https://www.deschutes.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.deschutes.or.gov/"
+   },
+   {
+    "url": "https://www.deschutescountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.deschutescountyoregon.gov/"
+   },
+   {
+    "url": "https://www.deschutescountyoregon.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.deschutescountyoregon.org/"
+   },
+   {
+    "url": "https://www.deschutescountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.deschutescountyoregon.net/"
+   },
+   {
+    "url": "https://www.deschutescountyoregon.com/",
+    "finalUrl": "https://www.deschutescountyoregon.com/lander",
+    "status": 200,
+    "textLen": 577,
+    "title": "",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 10185,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.deschutescounty.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.deschutescounty.org/"
+   },
+   {
+    "url": "https://www.deschutescounty.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.deschutescounty.us/"
+   },
+   {
+    "url": "https://www.deschutescounty.com/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/www.deschutescounty.com?utm_source=TDFS_DASLNC&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-daslnc_base&traffic_type=TDFS_DASLNC&traffic_id=daslnc&",
+    "status": 200,
+    "textLen": 233,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (233 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.deschutescounty.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.deschutescounty.net/"
+   },
+   {
+    "url": "https://deschutesgov.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://deschutesgov.org/"
+   },
+   {
+    "url": "https://www.co.deschutes.or.us/",
+    "finalUrl": "https://www.deschutescounty.gov/",
+    "status": 200,
+    "textLen": 4732,
+    "title": "Deschutes County, OR | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 3775,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "41019",
+  "place": "Douglas",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Douglas County",
+    "district_type": "COUNTY",
+    "stored": "http://www.co.douglas.or.us/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.co.douglas.or.us/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 1964,
+  "storedTitle": "Douglas County, OR | Official Website",
+  "recommended": "https://www.douglascountyor.gov/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 15,
+  "candidatesSkipped": 1,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "needsHumanRead": false,
+  "rejected": [
+   {
+    "url": "https://douglascounty.us/",
+    "verdict": "STATE_MISMATCH",
+    "why": "names minnesota/wisconsin, not OR",
+    "title": "Home | Douglas County Wisconsin"
+   }
+  ],
+  "probes": [
+   {
+    "url": "http://www.co.douglas.or.us/",
+    "finalUrl": "https://www.douglascountyor.gov/",
+    "status": 200,
+    "textLen": 1964,
+    "title": "Douglas County, OR | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 3399,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.douglascounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.douglascounty.or.gov/"
+   },
+   {
+    "url": "https://www.douglascounty.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.douglascounty.gov/"
+   },
+   {
+    "url": "https://www.countyofdouglas.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofdouglas.gov/"
+   },
+   {
+    "url": "https://www.countyofdouglasor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofdouglasor.gov/"
+   },
+   {
+    "url": "https://www.douglas.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.douglas.or.gov/"
+   },
+   {
+    "url": "https://www.douglascountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.douglascountyoregon.gov/"
+   },
+   {
+    "url": "https://www.douglascountyoregon.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.douglascountyoregon.org/"
+   },
+   {
+    "url": "https://www.douglascountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.douglascountyoregon.net/"
+   },
+   {
+    "url": "https://www.douglascountyoregon.com/",
+    "finalUrl": "https://www.douglascountyoregon.com/lander",
+    "status": 200,
+    "textLen": 604,
+    "title": "",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 10174,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.douglascounty.org/",
+    "finalUrl": "https://forsale.dynadot.com/douglascounty.org?drefid=2071",
+    "status": 200,
+    "textLen": 575,
+    "title": "For Sale Domain: douglascounty.org",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 1797,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.douglascounty.us/",
+    "finalUrl": "https://douglascounty.us/",
+    "status": 200,
+    "textLen": 4323,
+    "title": "Home | Douglas County Wisconsin",
+    "verdict": "STATE_MISMATCH",
+    "why": "names minnesota/wisconsin, not OR",
+    "linkLen": 7067,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": [
+     "minnesota",
+     "wisconsin"
+    ]
+   },
+   {
+    "url": "https://www.douglascounty.com/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/douglascounty.com?utm_source=TDFS&utm_medium=sn_affiliate_click&utm_campaign=TDFS_GoDaddy_DLS&traffic_type=TDFS&traffic_id=GoDaddy_DLS",
+    "status": 403,
+    "textLen": 227,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (227 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.douglascounty.net/",
+    "finalUrl": "https://www.douglascounty.net/",
+    "status": 404,
+    "textLen": 257,
+    "title": "404 Not Found",
+    "verdict": "EMPTY",
+    "why": "only 257 chars of text and 0 of links rendered",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://douglasgov.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://douglasgov.org/"
+   },
+   {
+    "url": "https://www.co.douglas.or.us/",
+    "finalUrl": "https://www.douglascountyor.gov/",
+    "status": 200,
+    "textLen": 1333,
+    "title": "Douglas County, OR | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 3072,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "41029",
+  "place": "Jackson",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Jackson County",
+    "district_type": "COUNTY",
+    "stored": "http://www.co.jackson.or.us/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.co.jackson.or.us/",
+  "storedVerdict": "EMPTY",
+  "storedWhy": "only 26 chars of text and 55 of links rendered",
+  "storedTextLen": 26,
+  "storedTitle": "JacksonCounty.org",
+  "recommended": "https://www.jacksoncountyor.gov/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 15,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "needsHumanRead": true,
+  "rejected": [
+   {
+    "url": "https://www.hugedomains.com/domain_profile.cfm?d=jacksoncountyoregon.com",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "title": "JacksonCountyOregon.com is for sale | HugeDomains"
+   },
+   {
+    "url": "https://jacksoncounty.com/",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "title": "Home - Jackson County Chamber of Commerce"
+   }
+  ],
+  "probes": [
+   {
+    "url": "http://www.co.jackson.or.us/",
+    "finalUrl": "http://www.co.jackson.or.us/",
+    "status": 200,
+    "textLen": 26,
+    "title": "JacksonCounty.org",
+    "verdict": "EMPTY",
+    "why": "only 26 chars of text and 55 of links rendered",
+    "linkLen": 55,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.jacksoncounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.jacksoncounty.or.gov/"
+   },
+   {
+    "url": "https://www.jacksoncountyor.gov/",
+    "finalUrl": "https://www.jacksoncountyor.gov/",
+    "status": 200,
+    "textLen": 2632,
+    "title": "Jackson County, Oregon - Official Government Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 14377,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.jacksoncounty.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.jacksoncounty.gov/"
+   },
+   {
+    "url": "https://www.countyofjackson.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofjackson.gov/"
+   },
+   {
+    "url": "https://www.countyofjacksonor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofjacksonor.gov/"
+   },
+   {
+    "url": "https://www.jackson.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.jackson.or.gov/"
+   },
+   {
+    "url": "https://www.jacksoncountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.jacksoncountyoregon.gov/"
+   },
+   {
+    "url": "https://www.jacksoncountyoregon.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.jacksoncountyoregon.org/"
+   },
+   {
+    "url": "https://www.jacksoncountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.jacksoncountyoregon.net/"
+   },
+   {
+    "url": "https://www.jacksoncountyoregon.com/",
+    "finalUrl": "https://www.hugedomains.com/domain_profile.cfm?d=jacksoncountyoregon.com",
+    "status": 200,
+    "textLen": 2914,
+    "title": "JacksonCountyOregon.com is for sale | HugeDomains",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "linkLen": 3964,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.jacksoncounty.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_CONNECTION_RESET at https://www.jacksoncounty.org/"
+   },
+   {
+    "url": "https://www.jacksoncounty.us/",
+    "finalUrl": "https://www.jacksoncounty.us/",
+    "status": 200,
+    "textLen": 0,
+    "title": "Jackson County Ohio",
+    "verdict": "EMPTY",
+    "why": "only 0 chars of text and 0 of links rendered",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.jacksoncounty.com/",
+    "finalUrl": "https://jacksoncounty.com/",
+    "status": 200,
+    "textLen": 3594,
+    "title": "Home - Jackson County Chamber of Commerce",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "linkLen": 5134,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.jacksoncounty.net/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/www.jacksoncounty.net?utm_source=TDFS_BINNS2&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-binns2_base&traffic_type=TDFS_BINNS2&traffic_id=binns2&",
+    "status": 200,
+    "textLen": 231,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (231 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://jacksongov.org/",
+    "finalUrl": "https://www.jacksongov.org/Home",
+    "status": 200,
+    "textLen": 2528,
+    "title": "HOME - Jackson County MO",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 24616,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": [],
+    "stateUnconfirmed": true,
+    "nameAmbiguous": true
+   }
+  ]
+ },
+ {
+  "geo_id": "41033",
+  "place": "Josephine",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Josephine County",
+    "district_type": "COUNTY",
+    "stored": "http://www.co.josephine.or.us/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.co.josephine.or.us/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3145,
+  "storedTitle": "Josephine County, OR",
+  "recommended": "https://www.josephinecounty.gov/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 15,
+  "candidatesSkipped": 1,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.co.josephine.or.us/",
+    "finalUrl": "https://www.josephinecounty.gov/",
+    "status": 200,
+    "textLen": 3145,
+    "title": "Josephine County, OR",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 12417,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.josephinecounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.josephinecounty.or.gov/"
+   },
+   {
+    "url": "https://www.josephinecountyor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.josephinecountyor.gov/"
+   },
+   {
+    "url": "https://www.countyofjosephine.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofjosephine.gov/"
+   },
+   {
+    "url": "https://www.countyofjosephineor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofjosephineor.gov/"
+   },
+   {
+    "url": "https://www.josephine.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.josephine.or.gov/"
+   },
+   {
+    "url": "https://www.josephinecountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.josephinecountyoregon.gov/"
+   },
+   {
+    "url": "https://www.josephinecountyoregon.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.josephinecountyoregon.org/"
+   },
+   {
+    "url": "https://www.josephinecountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.josephinecountyoregon.net/"
+   },
+   {
+    "url": "https://www.josephinecountyoregon.com/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.josephinecountyoregon.com/"
+   },
+   {
+    "url": "https://www.josephinecounty.org/",
+    "finalUrl": "https://www.josephinecounty.org/lander",
+    "status": 200,
+    "textLen": 0,
+    "title": "",
+    "verdict": "EMPTY",
+    "why": "only 0 chars of text and 0 of links rendered",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.josephinecounty.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.josephinecounty.us/"
+   },
+   {
+    "url": "https://www.josephinecounty.com/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/www.josephinecounty.com?utm_source=TDFS_DASLNC&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-daslnc_base&traffic_type=TDFS_DASLNC&traffic_id=daslnc&",
+    "status": 200,
+    "textLen": 233,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (233 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.josephinecounty.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.josephinecounty.net/"
+   },
+   {
+    "url": "https://josephinegov.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://josephinegov.org/"
+   },
+   {
+    "url": "https://www.co.josephine.or.us/",
+    "finalUrl": "https://www.josephinecounty.gov/",
+    "status": 200,
+    "textLen": 3145,
+    "title": "Josephine County, OR",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 12417,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "41053",
+  "place": "Polk",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Polk County",
+    "district_type": "COUNTY",
+    "stored": "http://www.co.polk.or.us/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.co.polk.or.us/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 1198,
+  "storedTitle": "Polk County, OR | Official Website",
+  "recommended": "https://www.polkcountyor.gov/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 15,
+  "candidatesSkipped": 1,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 2,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.co.polk.or.us/",
+    "finalUrl": "https://www.polkcountyor.gov/",
+    "status": 200,
+    "textLen": 1198,
+    "title": "Polk County, OR | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 1666,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.polkcounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.polkcounty.or.gov/"
+   },
+   {
+    "url": "https://www.polkcounty.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.polkcounty.gov/"
+   },
+   {
+    "url": "https://www.countyofpolk.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofpolk.gov/"
+   },
+   {
+    "url": "https://www.countyofpolkor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofpolkor.gov/"
+   },
+   {
+    "url": "https://www.polk.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.polk.or.gov/"
+   },
+   {
+    "url": "https://www.polkcountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.polkcountyoregon.gov/"
+   },
+   {
+    "url": "https://www.polkcountyoregon.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.polkcountyoregon.org/"
+   },
+   {
+    "url": "https://www.polkcountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.polkcountyoregon.net/"
+   },
+   {
+    "url": "https://www.polkcountyoregon.com/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.polkcountyoregon.com/"
+   },
+   {
+    "url": "https://www.polkcounty.org/",
+    "finalUrl": "https://www.polkcounty.org/",
+    "status": 403,
+    "textLen": 32,
+    "title": "403 Forbidden",
+    "verdict": "BLOCKED",
+    "why": "WAF (32 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.polkcounty.us/",
+    "finalUrl": "https://www.polkcounty.us/lander",
+    "status": 200,
+    "textLen": 590,
+    "title": "",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 9672,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.polkcounty.com/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/www.polkcounty.com?utm_source=TDFS_DASLNC&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-daslnc_base&traffic_type=TDFS_DASLNC&traffic_id=daslnc&",
+    "status": 200,
+    "textLen": 228,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (228 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.polkcounty.net/",
+    "finalUrl": "https://www.polkcounty.net/",
+    "status": 200,
+    "textLen": 57,
+    "title": "polkcounty.net",
+    "verdict": "EMPTY",
+    "why": "only 57 chars of text and 30 of links rendered",
+    "linkLen": 30,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://polkgov.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://polkgov.org/"
+   },
+   {
+    "url": "https://www.co.polk.or.us/",
+    "finalUrl": "https://www.polkcountyor.gov/",
+    "status": 200,
+    "textLen": 888,
+    "title": "Polk County, OR | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 1666,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "41055",
+  "place": "Sherman",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Sherman County",
+    "district_type": "COUNTY",
+    "stored": "http://www.sherman-county.com/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.sherman-county.com/",
+  "storedVerdict": "SPAM",
+  "storedWhy": "gambling/pharma keywords",
+  "storedTextLen": 19030,
+  "storedTitle": "Sherman County Trackside Adventures: A Road Trip & Motorsport Travel Guide",
+  "recommended": "https://www.shermancountyor.gov/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 14,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "needsHumanRead": false,
+  "rejected": [
+   {
+    "url": "http://www.sherman-county.com/",
+    "verdict": "SPAM",
+    "why": "gambling/pharma keywords",
+    "title": "Sherman County Trackside Adventures: A Road Trip & Motorsport Travel Guide"
+   },
+   {
+    "url": "https://shermancountyoregon.com/",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "title": "Sherman County Oregon History | A historical collection"
+   },
+   {
+    "url": "https://www.shermancountyks.gov/",
+    "verdict": "STATE_MISMATCH",
+    "why": "names kansas, not OR",
+    "title": "Sherman County, KS | Official Government Website"
+   }
+  ],
+  "probes": [
+   {
+    "url": "http://www.sherman-county.com/",
+    "finalUrl": "http://www.sherman-county.com/",
+    "status": 200,
+    "textLen": 19030,
+    "title": "Sherman County Trackside Adventures: A Road Trip & Motorsport Travel Guide",
+    "verdict": "SPAM",
+    "why": "gambling/pharma keywords",
+    "linkLen": 19192,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.shermancounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.shermancounty.or.gov/"
+   },
+   {
+    "url": "https://www.shermancountyor.gov/",
+    "finalUrl": "https://www.shermancountyor.gov/",
+    "status": 200,
+    "textLen": 1211,
+    "title": "Sherman County, OR | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 2259,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.shermancounty.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.shermancounty.gov/"
+   },
+   {
+    "url": "https://www.countyofsherman.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofsherman.gov/"
+   },
+   {
+    "url": "https://www.countyofshermanor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofshermanor.gov/"
+   },
+   {
+    "url": "https://www.sherman.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.sherman.or.gov/"
+   },
+   {
+    "url": "https://www.shermancountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.shermancountyoregon.gov/"
+   },
+   {
+    "url": "https://www.shermancountyoregon.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.shermancountyoregon.org/"
+   },
+   {
+    "url": "https://www.shermancountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.shermancountyoregon.net/"
+   },
+   {
+    "url": "https://www.shermancountyoregon.com/",
+    "finalUrl": "https://shermancountyoregon.com/",
+    "status": 200,
+    "textLen": 2683,
+    "title": "Sherman County Oregon History | A historical collection",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "linkLen": 14922,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.shermancounty.org/",
+    "finalUrl": "https://www.shermancountyks.gov/",
+    "status": 200,
+    "textLen": 2438,
+    "title": "Sherman County, KS | Official Government Website",
+    "verdict": "STATE_MISMATCH",
+    "why": "names kansas, not OR",
+    "linkLen": 16983,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": [
+     "kansas"
+    ]
+   },
+   {
+    "url": "https://www.shermancounty.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.shermancounty.us/"
+   },
+   {
+    "url": "https://www.shermancounty.com/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/www.shermancounty.com?utm_source=TDFS_DASLNC&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-daslnc_base&traffic_type=TDFS_DASLNC&traffic_id=daslnc&",
+    "status": 200,
+    "textLen": 231,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (231 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.shermancounty.net/",
+    "finalUrl": "https://www.shermancountyor.gov/",
+    "status": 200,
+    "textLen": 1211,
+    "title": "Sherman County, OR | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 2259,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "41061",
+  "place": "Union",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Union County",
+    "district_type": "COUNTY",
+    "stored": "http://www.unioncounty.org"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.unioncounty.org",
+  "storedVerdict": "NOT_GOVERNMENT",
+  "storedWhy": "tourism / chamber / directory vocabulary in prose",
+  "storedTextLen": 2503,
+  "storedTitle": "Union County Chamber of Commerce – Marysville, Ohio",
+  "recommended": "https://unioncountyor.gov/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 16,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 2,
+  "needsHumanRead": false,
+  "rejected": [
+   {
+    "url": "https://unioncounty.org/",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "title": "Union County Chamber of Commerce – Marysville, Ohio"
+   },
+   {
+    "url": "https://unioncounty.org/",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "title": "Union County Chamber of Commerce – Marysville, Ohio"
+   }
+  ],
+  "probes": [
+   {
+    "url": "http://www.unioncounty.org",
+    "finalUrl": "https://unioncounty.org/",
+    "status": 200,
+    "textLen": 2503,
+    "title": "Union County Chamber of Commerce – Marysville, Ohio",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "linkLen": 5256,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.unioncounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.unioncounty.or.gov/"
+   },
+   {
+    "url": "https://www.unioncountyor.gov/",
+    "finalUrl": "https://unioncountyor.gov/",
+    "status": 200,
+    "textLen": 1144,
+    "title": "Home - UNION COUNTY",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 9590,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.unioncounty.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.unioncounty.gov/"
+   },
+   {
+    "url": "https://www.countyofunion.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofunion.gov/"
+   },
+   {
+    "url": "https://www.countyofunionor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofunionor.gov/"
+   },
+   {
+    "url": "https://www.union.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.union.or.gov/"
+   },
+   {
+    "url": "https://www.unioncountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.unioncountyoregon.gov/"
+   },
+   {
+    "url": "https://www.unioncountyoregon.org/",
+    "finalUrl": "https://www.unioncountyoregon.org/lander",
+    "status": 200,
+    "textLen": 580,
+    "title": "",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 10010,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.unioncountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.unioncountyoregon.net/"
+   },
+   {
+    "url": "https://www.unioncountyoregon.com/",
+    "finalUrl": "https://www.unioncountyoregon.com/",
+    "status": 404,
+    "textLen": 194,
+    "title": "Reconnect Your Domain | Wix.com",
+    "verdict": "EMPTY",
+    "why": "only 194 chars of text and 156 of links rendered",
+    "linkLen": 156,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.unioncounty.org/",
+    "finalUrl": "https://unioncounty.org/",
+    "status": 200,
+    "textLen": 2503,
+    "title": "Union County Chamber of Commerce – Marysville, Ohio",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "linkLen": 5256,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.unioncounty.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.unioncounty.us/"
+   },
+   {
+    "url": "https://www.unioncounty.com/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/www.unioncounty.com?utm_source=TDFS_BINNS2&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-binns2_base&traffic_type=TDFS_BINNS2&traffic_id=binns2&",
+    "status": 200,
+    "textLen": 229,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (229 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.unioncounty.net/",
+    "finalUrl": "https://unioncounty.net/",
+    "status": 403,
+    "textLen": 58,
+    "title": "Checking your browser...",
+    "verdict": "BLOCKED",
+    "why": "WAF (58 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://uniongov.org/",
+    "finalUrl": "https://uniongov.org/lander",
+    "status": 200,
+    "textLen": 483,
+    "title": "",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 9257,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.co.union.or.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.co.union.or.us/"
+   }
+  ]
+ }
+]

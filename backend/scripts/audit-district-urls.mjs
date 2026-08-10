@@ -564,6 +564,19 @@ async function main() {
       // candidate came back CONTEXT_LOST, the sweep is incomplete and its silence means nothing.
       const lostProbes = probes.filter(p => p.verdict === 'CONTEXT_LOST').length;
       const candidatesIncomplete = !NO_CAND && needsWork && !settled.length && (lostProbes > 0 || sweepTruncated);
+
+      // 🔴 A BLOCKED PROBE ONLY MATTERS IF IT IS THE ANSWER. Flagging a unit because *any* probe was
+      // blocked marked all 9 of Oregon's WAF-caveat counties for a human read, and on inspection the
+      // blocked page was a GoDaddy parked-domain lander every time — a destination already being
+      // rejected. (Two were thin non-candidates, one was `currycountynm.gov`: Curry County NEW
+      // MEXICO.) The recommendation itself was VERIFIED and state-confirmed on all 9. Over-warning
+      // is not free: it spends the reviewer's attention on rows that need none, which is how a real
+      // warning gets skimmed past. So a block counts when it IS the recommendation, or when nothing
+      // verified at all — in that case the blocked page might have been the right site, and the
+      // header's rule stands: a BLOCKED row is not a licence to repoint.
+      const blockedProbes = probes.filter(p => p.verdict === 'BLOCKED');
+      const blockedRecommendation = blockedProbes.some(p => (p.finalUrl || p.url) === settled[0]);
+      const blockedMatters = blockedRecommendation || (!settled.length && blockedProbes.length > 0);
       const rec = {
         geo_id: unit.geo_id, place: unit.place, placeSource: unit.placeSource,
         district_type: unit.district_type, types: unit.types, state: unit.state,
@@ -575,7 +588,8 @@ async function main() {
         recommended: settled[0] || null,
         candidatesIncomplete, candidatesTried, candidatesSkipped, candidatesPlanned, lostProbes, sweepTruncated,
         stateUnconfirmed: verified.some(p => p.stateUnconfirmed && (p.finalUrl || p.url) === settled[0]),
-        needsHumanRead: !settled.length || verified.some(p => p.nameAmbiguous) || probes.some(p => p.verdict === 'BLOCKED')
+        blockedRecommendation, blockedOtherCandidates: blockedProbes.length - (blockedRecommendation ? 1 : 0),
+        needsHumanRead: !settled.length || verified.some(p => p.nameAmbiguous) || blockedMatters
           || unit.placeSource === 'NONE' || candidatesIncomplete
           || verified.some(p => p.stateUnconfirmed || p.rightFromNavOnly),
         rejected: probes.filter(p => ['WRONG_ENTITY', 'NOT_GOVERNMENT', 'SPAM', 'STATE_MISMATCH'].includes(p.verdict))
