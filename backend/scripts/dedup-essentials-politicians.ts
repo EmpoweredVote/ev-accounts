@@ -142,6 +142,100 @@ function selectCanonical(scores: PoliticianScore[]): { canonical: PoliticianScor
   return { canonical, spares };
 }
 
+/**
+ * Two rows sharing a full_name are NOT necessarily the same person, and merging two distinct
+ * officeholders is unrecoverable: the spare's term, stances and contributions are moved onto
+ * someone else and the spare row is deleted. Grouping by full_name is a name-collision detector,
+ * not an identity test, so every group is screened before it is touched.
+ *
+ * Two signals, either of which proves the group holds more than one person:
+ *
+ *   1. SEAT CONFLICT — two rows hold office terms on real seats in different governments.
+ *      "Candidate for ..." offices are excluded: they are candidacy placeholders, not seats, and
+ *      counting them fires on every incumbent running for higher office (Barr, Moulton, Marshall
+ *      all hold a seat AND a "Candidate for U.S. Senate" placeholder, and are one person each).
+ *
+ *   2. RACE CONFLICT — two rows are candidates in different races. A person contests one office
+ *      per cycle, so two rows in two races are two people. This catches pairs that detector 1
+ *      misses because the challenger holds no seat at all (e.g. "Mike Johnson" = the sitting
+ *      U.S. Rep for District 4 and an unrelated District 7 candidate).
+ *
+ * Screened against the live corpus: 11 of 49 groups flagged, 10 of them genuinely distinct people
+ * (Alex Padilla = an Inglewood councilmember and the U.S. Senator; Mike Rogers = three people).
+ * The known false positive is a row whose only "seat" is a generic placeholder such as
+ * "Indiana Elected Official" — Victoria Spartz trips detector 1 for that reason and is in fact one
+ * person. A false positive costs a hand-review; a false negative destroys an officeholder, so the
+ * check deliberately errs toward refusing.
+ *
+ * There is no bypass flag. A blocked group must be merged by hand in a migration, where the
+ * reasoning is reviewable, rather than by a scripted heuristic.
+ */
+async function detectDistinctPersons(ids: string[]): Promise<string[]> {
+  const conflicts: string[] = [];
+
+  const seatRes = await pool.query<{ n: string; distinct_seats: string; detail: string }>(
+    `WITH seats AS (
+       SELECT p.id,
+              string_agg(DISTINCT coalesce(g.name, '(orphan office)') || ' / ' || o.title, ' + ') AS seat
+       FROM essentials.politicians p
+       JOIN essentials.office_terms t ON t.politician_id = p.id
+       JOIN essentials.offices o ON o.id = t.office_id
+       LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
+       LEFT JOIN essentials.governments g ON g.id = ch.government_id
+       WHERE p.id = ANY($1::uuid[])
+         AND o.title NOT ILIKE 'Candidate for%'
+       GROUP BY p.id
+     )
+     SELECT count(*) AS n, count(DISTINCT seat) AS distinct_seats,
+            string_agg(seat, '  ||  ') AS detail
+     FROM seats`,
+    [ids]
+  );
+  const seat = seatRes.rows[0];
+  if (Number(seat?.n ?? 0) > 1 && Number(seat?.distinct_seats ?? 0) > 1) {
+    conflicts.push(`holds two real seats in different governments: ${seat.detail}`);
+  }
+
+  const raceRes = await pool.query<{ n: string; distinct_races: string; detail: string }>(
+    `WITH cands AS (
+       SELECT p.id, string_agg(DISTINCT ra.position_name, ' + ') AS race
+       FROM essentials.politicians p
+       JOIN essentials.race_candidates rc ON rc.politician_id = p.id
+       JOIN essentials.races ra ON ra.id = rc.race_id
+       WHERE p.id = ANY($1::uuid[])
+       GROUP BY p.id
+     )
+     SELECT count(*) AS n, count(DISTINCT race) AS distinct_races,
+            string_agg(race, '  ||  ') AS detail
+     FROM cands`,
+    [ids]
+  );
+  const race = raceRes.rows[0];
+  if (Number(race?.n ?? 0) > 1 && Number(race?.distinct_races ?? 0) > 1) {
+    conflicts.push(`is a candidate in two different races: ${race.detail}`);
+  }
+
+  return conflicts;
+}
+
+/**
+ * Non-blocking risk note. Neither detector above fires when one row is a bare stub, yet a stub can
+ * still carry campaign finance sources that a merge would reattribute to whoever wins. That is the
+ * same failure mode as the surname-substring mislinks (migrations 1664/1665), so it is surfaced
+ * rather than silently accepted — but it is not proof of anything, so it does not block.
+ */
+async function financeRiskNote(spareIds: string[]): Promise<string | null> {
+  const res = await pool.query<{ cnt: string }>(
+    `SELECT COUNT(*) AS cnt FROM transparent_motivations.politician_sources
+     WHERE essentials_politician_id = ANY($1::uuid[])`,
+    [spareIds]
+  );
+  const n = Number(res.rows[0]?.cnt ?? 0);
+  return n > 0
+    ? `${n} campaign finance source(s) on the spare row(s) will be reattributed to the canonical record`
+    : null;
+}
+
 interface RerouteResult {
   officesRerouted: number;
   contactsRerouted: number;
@@ -486,8 +580,11 @@ async function main() {
 
   const startMs = Date.now();
 
+  const blocked: Array<{ name: string; reasons: string[] }> = [];
+
   const summary = {
     groupsProcessed: 0,
+    groupsBlocked: 0,
     sparesDeleted: 0,
     officesRerouted: 0,
     contactsRerouted: 0,
@@ -517,8 +614,24 @@ async function main() {
     }
 
     for (const group of groups) {
+      // Screen BEFORE scoring is acted on: a name collision must never reach the merge path,
+      // in dry-run or execute.
+      const conflicts = await detectDistinctPersons(group.ids);
+      if (conflicts.length > 0) {
+        console.log(`\n--- BLOCKED: "${group.full_name}" (${group.ids.length} rows) ---`);
+        for (const c of conflicts) console.log(`  ! ${c}`);
+        console.log(`  These rows are NOT the same person. Skipping — merge by hand in a migration`);
+        console.log(`  if review shows otherwise (a generic placeholder seat can trip this).`);
+        summary.groupsBlocked++;
+        blocked.push({ name: group.full_name, reasons: conflicts });
+        continue;
+      }
+
       const scores = await scoreGroup(group.ids);
       const { canonical, spares } = selectCanonical(scores);
+
+      const risk = await financeRiskNote(spares.map(s => s.id));
+      if (risk) console.log(`\n  NOTE ("${group.full_name}"): ${risk}`);
 
       if (isDryRun) {
         await printDryRunGroup(group.full_name, canonical, spares);
@@ -598,6 +711,7 @@ async function main() {
       console.log('(DRY-RUN — no changes made)');
     }
     console.log(`Groups processed:      ${summary.groupsProcessed}`);
+    console.log(`Groups BLOCKED (not one person): ${summary.groupsBlocked}`);
     console.log(`Spares deleted:        ${summary.sparesDeleted}`);
     console.log(`Offices rerouted:      ${summary.officesRerouted}`);
     console.log(`Contacts rerouted:     ${summary.contactsRerouted}`);
@@ -615,6 +729,15 @@ async function main() {
     console.log(`Politician answers rerouted: ${summary.politicianAnswersRerouted}`);
     console.log(`Politician context rerouted: ${summary.politicianContextRerouted}`);
     console.log(`ID bridge rerouted:    ${summary.idBridgeRerouted}`);
+    if (blocked.length > 0) {
+      console.log(`\n=== BLOCKED GROUPS (${blocked.length}) — these are not duplicates ===`);
+      for (const b of blocked) {
+        console.log(`  ${b.name}`);
+        for (const r of b.reasons) console.log(`    - ${r}`);
+      }
+      console.log(`\nEach needs a hand-written migration, not a scripted merge.`);
+    }
+
     console.log(`\nCompleted in ${(durationMs / 1000).toFixed(1)}s`);
 
     process.exit(0);
