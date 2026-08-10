@@ -160,8 +160,15 @@ async function buildCrosswalkMaps(): Promise<CrosswalkMaps> {
 
 /**
  * Returns all active federal politicians (senators + House members) from the DB.
- * Joins essentials.politicians -> essentials.offices -> essentials.districts
- * filtered to NATIONAL_UPPER (Senate) and NATIONAL_LOWER (House).
+ * Occupancy is resolved through essentials.office_current_holder -- essentials.offices is a SEAT
+ * and holds no occupant (ADR 0002 phase 5 dropped offices.politician_id in migration 1463). The
+ * view is exactly one row per office, so it cannot fan this result set out.
+ *
+ * The `Candidate for%` exclusion is load-bearing: candidate offices hang off the same
+ * NATIONAL_UPPER / NATIONAL_LOWER districts, and without it 50 candidates join the roster of
+ * sitting members -- e.g. Angie Craig under "Candidate for U.S. Senate - Minnesota" -- and their
+ * campaign committees would be summarised as incumbent finances. With it: 100 senators + 434
+ * representatives.
  */
 async function getFederalPoliticiansFromDb(): Promise<FederalPolitician[]> {
   const sql = `
@@ -174,10 +181,12 @@ async function getFederalPoliticiansFromDb(): Promise<FederalPolitician[]> {
         ELSE 'H'
       END AS chamber_short
     FROM essentials.politicians p
-    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.office_current_holder och ON och.politician_id = p.id
+    JOIN essentials.offices o ON o.id = och.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     WHERE p.is_active = true
       AND d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_LOWER')
+      AND o.title NOT ILIKE 'Candidate for%'
     ORDER BY p.full_name
   `;
   const result = await pool.query<FederalPolitician>(sql);
