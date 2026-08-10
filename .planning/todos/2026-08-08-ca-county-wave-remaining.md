@@ -1,8 +1,8 @@
-# CA county wave — remaining work (as of 2026-08-09)
+# CA county wave — remaining work (as of 2026-08-10)
 
-Shipped: 1629-1631, 1633, 1637-1639, 1641-1645 (seeds), 1635 (LA repair), 1646 (Sierra URL).
-**16 counties, 80 seats, 23.12M residents.** LA repaired. San Francisco confirmed already complete.
-(Corpus-wide that is 17 CA county districts / 83 offices / 83 seated — the extra county is LA,
+Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650 (seeds), 1635 (LA repair), 1646 (Sierra URL).
+**17 counties, 85 seats, 23.57M residents.** LA repaired. San Francisco confirmed already complete.
+(Corpus-wide that is 18 CA county districts / 88 offices / 88 seated — the extra county is LA,
 seeded before this wave and only repaired by it.)
 
 ## 🔴🔴 NEXT TASK FOUND: `official_web_url` IS ROTTEN ACROSS ALL 58 CA COUNTIES
@@ -359,9 +359,61 @@ Reusable source class for any sheriff/DA who has testified.
 Ward is **year** precision: his own office says only "has served as District Attorney since 2012";
 no county document names the month (LinkedIn says December — not a source). The Nasarenko rule.
 
-## Then: 9 more counties to reach the 93.4% target
+## ✅ Solano — SEEDED (migration 1650). 5 offices; the ACFR named the WRONG SHERIFF.
 
-By population: Solano, Santa Barbara, Monterey, Placer, Merced, San Luis Obispo,
+## Solano County (06095, pop 449,218) — DONE
+
+`solanocounty.gov` is unwalled (plain curl), except the ROV roster whose accordion panels render
+client-side — expand them in Playwright.
+
+| Title (certified ballot / ACFR) | Holder | Occupancy start | Precision |
+|---|---|---|---|
+| Assessor/Recorder | Glenn Zook | Jan 2023 | month |
+| Auditor-Controller | Janine Harris | Feb 2025 (appointed) | month |
+| District Attorney | Krishna A. Abrams | 2014 (appointed) | year |
+| Sheriff/Coroner | Brad DeWall | 2025-09-26 (appointed) | day |
+| Treasurer/Tax Collector/County Clerk | Charles A. Lomeli | 1999 | year |
+
+🔴🔴 **THE NEWEST, MOST OFFICIAL-LOOKING COUNTY DOCUMENT NAMED A RETIRED SHERIFF.** The FY2025 ACFR
+was **published February 2026** and its Elected Officials org chart shows **Tom A. Ferrara** with a
+photograph. Ferrara retired; the Board appointed Undersheriff **Brad DeWall on 2025-09-26**. The
+chart is captioned "June 30, 2025" — it reports the fiscal year it covers, not the date it shipped.
+Seeding from the ACFR alone — the document this wave leans on hardest (1638, 1639, 1645) — would
+have put a retired sheriff in a live seat with every count-based gate passing. **Ask what a document
+is AS OF, not when it was published.** 1650 guards against a "Ferrara" being seated.
+(Second time a Solano-class sheriff seat changed hands with no election — cf. San Mateo, 1642.)
+
+🔴 **THE ROV PAGE SETTLED ITS OWN AUTHORITY ON THE SUPERINTENDENT QUESTION.** Solano's ROV roster
+lists SUPERINTENDENT OF SCHOOLS under "SOLANO COUNTY ELECTED OFFICIALS" — but the *same page* also
+lists City of Benicia / Fairfield / Vallejo officials, nine school districts, three community
+colleges and four special districts. It is an **elections directory of every office on the county's
+ballots**, not a roster of county government. The ACFR's ELECTED OFFICIALS column lists five and no
+Superintendent, the Department Head Listing has no Office of Education, and Parr's address is
+`solanocoe.net`. Excluded, as in Kern (1638), Riverside (1630) and Tulare (1645). **Sharpened rule:
+the discriminator is the county's own GOVERNMENT roster; a ballot directory is not one.**
+
+🔴 **AB 759, SEVENTH COUNTY — AND HERE THE COUNTY CITES THE BILL BY NAME.** The ROV roster's own
+footnote: *"With passage of AB 759, District Attorney and Sheriff elections will move to be in line
+with Presidential Elections beginning in 2028"*, with both terms printed as 2022-2028. Stanislaus
+(1643) stated it as data; Solano states it as law.
+
+🔴 **ONE SEAT TURNS OVER JANUARY 2027 — the Contra Costa/Sonoma shape a third time.** All three
+county contests were single-candidate: Zook 75,242 and Harris 74,801 (re-elected, continue), and
+**Denise Dix 74,051** for Treasurer/Tax Collector/County Clerk. The county's press release of
+2026-02-27 says Lomeli **retires 2026-12-28** after 28 years and endorsed his *Assistant* TTCCC,
+Dix, to succeed him. Dix is not seeded; 1650 guards against it. **Re-check in January 2027.**
+
+🔴 **Seventh distinct office set:** Assessor+Recorder combined, but Treasurer+Tax Collector+County
+Clerk combined *separately* from the Recorder — a split no earlier county in the wave has. The ROV
+is appointed here too (Tim P. Flanagan, who is also the CIO).
+
+🔴 **ONLY ONE OF THE FIVE HAS A BIO PAGE** (`/government/sheriff-coroner/sheriff-coroner-brad-dewall`)
+— and it is the one that gave an exact date. Lomeli's start came from arithmetic on a county press
+release ("28 years", retiring 2026-12-28 → January 1999), which is why it is year precision.
+
+## Then: 8 more counties to reach the 93.4% target
+
+By population: Santa Barbara, Monterey, Placer, Merced, San Luis Obispo,
 Santa Cruz, Marin (+ San Francisco already done, which displaces Marin from the top 25).
 
 ## Adjacent defects found, not fixed
