@@ -179,7 +179,12 @@ function stateEvidence(hay, url, st, place) {
   if (!own && full) {
     const esc = full.replace(/\s+/g, '\\s+');
     if (new RegExp(`\\b${esc}\\b`, 'i').test(hay)) own = true;
-    if (new RegExp(`,\\s*${st}\\b`, 'i').test(hay)) own = true;          // "Bend, OR"
+    // 🔴 CASE-SENSITIVE, and never with the /i flag. Matching `,\s*or\b` case-INSENSITIVELY matches
+    // the ordinary English word "or" in ", or" — which occurs on virtually every page — so `own`
+    // came back true for any state whose abbreviation is a word (OR, IN, IT, ME, HI, OH, OK, DE,
+    // LA, MS, MT, PA, SC, MD...). That silently disabled the mismatch check below and let
+    // `lincolncountync.gov` (NORTH CAROLINA) be recommended, VERIFIED, for Lincoln County OREGON.
+    if (new RegExp(`,\\s*${st.toUpperCase()}\\b`).test(hay)) own = true;   // "Bend, OR"
   }
   const others = [];
   for (const [name, abbr] of Object.entries(STATE_FULL_NAMES)) {
@@ -187,7 +192,10 @@ function stateEvidence(hay, url, st, place) {
     if (placeLc && name.includes(placeLc)) continue;                     // the place IS a state name
     const esc = name.replace(/\s+/g, '\\s+');
     if (new RegExp(`\\bstate of ${esc}\\b|\\b${esc}\\.gov\\b|\\b${esc} (county|state) (government|of)\\b`, 'i').test(hay)) others.push(name);
-    else if (new RegExp(`\\.${abbr}\\.gov\\b`, 'i').test(host) || new RegExp(`^(www\\.)?${abbr}\\.gov$`, 'i').test(host)) others.push(name);
+    // Mirror of the `own` host test above — `lincolncountync.gov` glues the abbreviation on with no
+    // separating dot, so `\.nc\.gov` never sees it.
+    else if (new RegExp(`\\.${abbr}\\.(gov|us)\\b`, 'i').test(host) || new RegExp(`^(www\\.)?${abbr}\\.gov$`, 'i').test(host)
+             || new RegExp(`(county|city|gov)${abbr}\\.`, 'i').test(host)) others.push(name);
   }
   return { own, others: [...new Set(others)] };
 }
@@ -352,14 +360,26 @@ async function classify(page, url, place, type, st) {
     const links = (await page.evaluate(() => Array.from(document.querySelectorAll('a'))
       .slice(0, 400).map(a => `${a.textContent || ''} ${a.getAttribute('href') || ''}`).join(' \n')).catch(() => '')) || '';
     rec.linkLen = links.length;
-    const hay = `${text} ${rec.title} ${links.replace(/[-_/]+/g, ' ')}`;
+    // 🔴 PROSE AND NAVIGATION ARE SEPARATE EVIDENCE AND MUST BE WEIGHED SEPARATELY. Folding link
+    // text into one haystack let `lakecountyor.org` — a tourism site this script had correctly
+    // called NOT_GOVERNMENT — reach VERIFIED, because some nav link satisfied the governing-body
+    // marker and the NONGOV test sits below the VERIFIED branch and never got a say. Nav evidence
+    // still rescues a county homepage whose prose omits its own Board of Commissioners; it just
+    // cannot outvote prose that is plainly selling lodging.
+    const hayText = `${text} ${rec.title}`;
+    const hayNav = links.replace(/[-_/]+/g, ' ');
+    const hay = `${hayText} ${hayNav}`;
     // 🔴 An EMPTY place name must never read as "the page names the place" — `\b\b` matches every
     // string, so a unit with no resolvable name would VERIFY against literally any live page.
     const norm = (s) => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '');
     const esc = norm(place).replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+');
     const hasName = esc.length > 0 && new RegExp(`\\b${esc}\\b`, 'i').test(norm(hay));
-    const right = rules.right.test(hay);
-    const wrong = rules.wrong.test(hay);
+    const rightText = rules.right.test(hayText);
+    const rightNav = rules.right.test(hayNav);
+    const right = rightText || rightNav;
+    const wrong = rules.wrong.test(hayText) || rules.wrong.test(hayNav);
+    const nongov = NONGOV.test(hayText);
+    rec.rightFromNavOnly = !rightText && rightNav;
 
     const stEv = stateEvidence(hay, rec.finalUrl || url, (st || STATE || 'ca').toLowerCase(), place);
     rec.stateOwn = stEv.own;
@@ -375,10 +395,16 @@ async function classify(page, url, place, type, st) {
       rec.verdict = 'STATE_MISMATCH';
       rec.why = `names ${stEv.others.join('/')}, not ${(st || STATE).toUpperCase()}`;
     }
-    else if (hasName && right && !wrong) { rec.verdict = 'VERIFIED'; if (!stEv.own) rec.stateUnconfirmed = true; }
+    // 🔴 Tourism/for-sale PROSE outranks a governing-body marker found only in NAVIGATION.
+    else if (nongov && !rightText) { rec.verdict = 'NOT_GOVERNMENT'; rec.why = `tourism / chamber / directory vocabulary in prose${rightNav ? ' (a nav link matched a government marker — not enough)' : ''}`; }
+    else if (hasName && right && !wrong) {
+      rec.verdict = 'VERIFIED';
+      if (!stEv.own) rec.stateUnconfirmed = true;
+      if (rec.rightFromNavOnly) rec.why = 'governing body found in navigation only, not in page prose';
+    }
     else if (hasName && right && wrong) { rec.verdict = 'VERIFIED_MIXED'; rec.why = 'both entity markers present (normal for a consolidated city-county such as San Francisco)'; }
     else if (wrong && !right) { rec.verdict = 'WRONG_ENTITY'; rec.why = rules.wrongLabel; }
-    else if (NONGOV.test(hay)) { rec.verdict = 'NOT_GOVERNMENT'; rec.why = 'tourism / chamber / directory vocabulary'; }
+    else if (nongov) { rec.verdict = 'NOT_GOVERNMENT'; rec.why = 'tourism / chamber / directory vocabulary'; }
     else if (hasName) { rec.verdict = 'NAME_ONLY'; rec.why = 'names the place but shows no governing body'; }
     else { rec.verdict = 'UNRELATED'; rec.why = 'does not name the place'; }
 
@@ -526,7 +552,14 @@ async function main() {
       }
       await page.close().catch(() => {});
       const verified = probes.filter(p => p.verdict.startsWith('VERIFIED'));
-      const settled = [...new Set(verified.map(p => p.finalUrl).filter(Boolean))].sort((a, b) => score(b) - score(a) || a.length - b.length);
+      // 🔴 A destination that never placed itself in our state must not compete with one that did.
+      // Probing Jackson County OREGON, `jacksongov.org` — Jackson County MISSOURI — reached VERIFIED
+      // with own=false; it lost only because score() happens to prefer the `.gov` of the correct
+      // `jacksoncountyor.gov`. Ranking is the wrong place to settle a question of identity, so
+      // state-confirmed destinations win outright whenever any exist.
+      const confirmed = verified.filter(p => p.stateOwn);
+      const pool = confirmed.length ? confirmed : verified;
+      const settled = [...new Set(pool.map(p => p.finalUrl).filter(Boolean))].sort((a, b) => score(b) - score(a) || a.length - b.length);
       // 🔴 `(none)` is only a finding if the search actually RAN. If the browser died mid-sweep, or any
       // candidate came back CONTEXT_LOST, the sweep is incomplete and its silence means nothing.
       const lostProbes = probes.filter(p => p.verdict === 'CONTEXT_LOST').length;
@@ -543,7 +576,8 @@ async function main() {
         candidatesIncomplete, candidatesTried, candidatesSkipped, candidatesPlanned, lostProbes, sweepTruncated,
         stateUnconfirmed: verified.some(p => p.stateUnconfirmed && (p.finalUrl || p.url) === settled[0]),
         needsHumanRead: !settled.length || verified.some(p => p.nameAmbiguous) || probes.some(p => p.verdict === 'BLOCKED')
-          || unit.placeSource === 'NONE' || candidatesIncomplete || verified.some(p => p.stateUnconfirmed),
+          || unit.placeSource === 'NONE' || candidatesIncomplete
+          || verified.some(p => p.stateUnconfirmed || p.rightFromNavOnly),
         rejected: probes.filter(p => ['WRONG_ENTITY', 'NOT_GOVERNMENT', 'SPAM', 'STATE_MISMATCH'].includes(p.verdict))
           .map(p => ({ url: p.finalUrl || p.url, verdict: p.verdict, why: p.why, title: p.title })),
         probes,
