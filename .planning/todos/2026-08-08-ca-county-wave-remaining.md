@@ -1,8 +1,8 @@
-# CA county wave — remaining work (as of 2026-08-10)
+# CA county wave — remaining work (as of 2026-08-09)
 
-Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650, 1652, 1656, 1658 (seeds), 1635 (LA repair),
-1646 (Sierra URL). **20 counties, 101 seats, 24.87M residents.** LA repaired. San Francisco
-confirmed already complete. (Corpus-wide that is 21 CA county districts / 104 offices / 104 seated —
+Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650, 1652, 1656, 1658, 1660 (seeds), 1635 (LA
+repair), 1646 (Sierra URL). **21 counties, 106 seats, 25.16M residents.** LA repaired. San Francisco
+confirmed already complete. (Corpus-wide that is 22 CA county districts / 109 offices / 109 seated —
 the extra county is LA, seeded before this wave and only repaired by it.)
 
 ## 🔴🔴 JANUARY 2027 RE-CHECK QUEUE (build this into the Jan-2027 pass)
@@ -12,7 +12,8 @@ Contra Costa (Clerk-Recorder, Assessor) · Sonoma (ACTTC → Amanda Ruch) · San
 Clerk-Recorder → David Canepa) · Kern (Assessor-Recorder, Auditor-Controller-County Clerk) ·
 Ventura (all six) · Solano (Treasurer/TC/County Clerk → **Denise Dix**) ·
 **Santa Barbara (THREE: Auditor-Controller → Kyle Slattery; Clerk, Recorder and Assessor →
-Melinda Greene; Treasurer-TC-PA → Kimberly A. Tesoro)**. Tulare and Stanislaus need no re-check.
+Melinda Greene; Treasurer-TC-PA → Kimberly A. Tesoro)**. Tulare, Stanislaus, Monterey, Placer and
+Merced need no re-check.
 
 ## 🔴🔴 NEXT TASK FOUND: `official_web_url` IS ROTTEN ACROSS ALL 58 CA COUNTIES
 
@@ -561,10 +562,70 @@ NULL rows.)
 **No January 2027 turnover** — all four incumbents re-elected effectively unopposed. Third such
 county after Tulare and Monterey.
 
-## Then: 5 more counties to reach the 93.4% target
+## ✅ Merced — SEEDED (migration 1660). 5 offices; FOUR OF FIVE ARE BOARD APPOINTEES.
 
-By population: Merced, San Luis Obispo,
-Santa Cruz, Marin (+ San Francisco already done, which displaces Marin from the top 25).
+## Merced County (06047, pop 291,920) — DONE
+
+`countyofmerced.com` answers plain curl — no WAF, no client-side rendering. The easiest county in
+the wave to read, and the one whose start dates were least guessable.
+
+| Title (certified ballot / staff directory) | Holder | Occupancy start | Precision |
+|---|---|---|---|
+| Assessor-Clerk-Recorder | Matt H. May | 2020-12-21 (appointed) | day |
+| Auditor-Controller | Lisa Cardella-Presto | 2008-10-06 (appointed) | day |
+| District Attorney | Nicole Silveira | 2023-01-02 | day |
+| Sheriff-Coroner | Vernon H. Warnke | 2014-12-27 (appointed) | day |
+| Treasurer-Tax Collector | Karen D. Adams | 2002-12-14 (appointed) | day |
+
+🔴🔴 **THE BOARD MINUTES ARE AT A PREDICTABLE URL AND GO BACK TO 2000 —
+`web2.co.merced.ca.us/pdfs/bos/sam/<YYYY>/<MMDDYYYY>.pdf`** (2010 and earlier:
+`/pdfs/<YYYY>sam/<MMDDYYYY>.pdf`), indexed by a "Board Archive <year>" page per year, all with real
+text layers. Four of the five start dates came from that channel and **nowhere else**. Same class as
+Monterey's Legistar (1656) and Placer's DocumentCenter agendas (1658), but complete for 25 years and
+grep-able. Look for this shape first in any remaining county.
+
+🔴🔴 **FOUR OF FIVE REACHED OFFICE BY MID-TERM BOARD APPOINTMENT** — the highest rate in the wave
+(Placer was 3 of 6), and the statutory rule would have erred in **both** directions: Cardella-Presto
+three months EARLY of the January-after-election date (appointed 2008-10-06 to an unexpired term),
+and Adams / May / Warnke each seated in LATE DECEMBER, before the January term they had won. Merced
+seats officials in late December when a predecessor leaves early — the Monterey habit (1656) again.
+
+🔴 **THE ACFR TRICK WORKS HERE** (first time in four counties): "Directory of County Officials, as of
+June 30, 2025", printed p. X = PDF p. 17 of `Archive.aspx?ADID=967`, with an org chart facing it.
+The archive runs back to **FY2002**, and reading one page from each year brackets every officer's
+start to a fiscal year in minutes — that is what located all four appointments before the minutes
+confirmed them. FY2002/FY2003 are image scans with no text layer; FY2004 onward extract cleanly.
+
+🔴 **THE FRESHEST DOCUMENT IS NOT THE ACFR** — `DocumentCenter/View/1377` is the live county org
+chart, stamped **"Effective July 24, 2026"**, three weeks before this seeding. It named the same
+five. Asking what a document is *as of* (Solano, 1650) is cheap when the county publishes a dated
+current one.
+
+🔴 **TWO PRESS ACCOUNTS DISAGREED WITH THE COUNTY AND WITH EACH OTHER** on May's start — one said
+December 28 2020, a 2022 campaign profile said he succeeded Levey "a year ago in January". The
+minutes say **effective December 21, 2020**. The Nasarenko rule (1639) holds.
+
+🔴 **A HOMONYM SITS ON THE BOARD OF SUPERVISORS.** District Attorney **Nicole** Silveira vs.
+Supervisor **Scott** Silveira, whose name is all over the minutes being read. The Stanislaus
+"District Attorney Peterson" shape (1643). 1660's identity gate compares FULL names, not surnames.
+
+**AB 759, eleventh county** — the certified June 2026 ballot has no DA and no Sheriff, and the ROV's
+incumbent list prints those two terms to **1/8/2029** while the other three end 1/4/2027.
+**Superintendent** excluded as always, on the strongest discriminator yet: the ACFR Directory lists
+5 Elected and 18 Appointed officials with no Superintendent in either column, and the 100+ entry
+staff directory has no Office of Education. The **Registrar of Voters is appointed** here too
+(Melvin Levey). **No January 2027 turnover** — all three incumbents re-elected against write-ins
+only (May 98.45%, Cardella-Presto 98.26%, Adams 98.19%); fourth such county after Tulare, Monterey
+and Placer. `official_web_url` repointed `co.merced.ca.us` → `https://www.countyofmerced.com/`.
+
+Certified results are on **Clarity** (`results.enr.clarityelections.com/CA/Merced/126388`): read
+`current_ver.txt`, then `<ver>/json/en/summary.json` **with `curl --compressed`** — it is gzipped and
+a plain fetch returns binary. Cheapest results format the wave has met.
+
+## Then: 4 more counties to reach the 93.4% target
+
+By population: San Luis Obispo, Santa Cruz, Marin (+ San Francisco already done, which displaces
+Marin from the top 25).
 
 ## Adjacent defects found, not fixed
 
