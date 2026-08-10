@@ -1,9 +1,18 @@
 # CA county wave — remaining work (as of 2026-08-10)
 
-Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650 (seeds), 1635 (LA repair), 1646 (Sierra URL).
-**17 counties, 85 seats, 23.57M residents.** LA repaired. San Francisco confirmed already complete.
-(Corpus-wide that is 18 CA county districts / 88 offices / 88 seated — the extra county is LA,
-seeded before this wave and only repaired by it.)
+Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650, 1652 (seeds), 1635 (LA repair),
+1646 (Sierra URL). **18 counties, 90 seats, 24.01M residents.** LA repaired. San Francisco
+confirmed already complete. (Corpus-wide that is 19 CA county districts / 93 offices / 93 seated —
+the extra county is LA, seeded before this wave and only repaired by it.)
+
+## 🔴🔴 JANUARY 2027 RE-CHECK QUEUE (build this into the Jan-2027 pass)
+
+Seats seeded with a holder who leaves in Dec 2026, and the successor already elected:
+Contra Costa (Clerk-Recorder, Assessor) · Sonoma (ACTTC → Amanda Ruch) · San Mateo (Assessor-County
+Clerk-Recorder → David Canepa) · Kern (Assessor-Recorder, Auditor-Controller-County Clerk) ·
+Ventura (all six) · Solano (Treasurer/TC/County Clerk → **Denise Dix**) ·
+**Santa Barbara (THREE: Auditor-Controller → Kyle Slattery; Clerk, Recorder and Assessor →
+Melinda Greene; Treasurer-TC-PA → Kimberly A. Tesoro)**. Tulare and Stanislaus need no re-check.
 
 ## 🔴🔴 NEXT TASK FOUND: `official_web_url` IS ROTTEN ACROSS ALL 58 CA COUNTIES
 
@@ -411,9 +420,55 @@ is appointed here too (Tim P. Flanagan, who is also the CIO).
 — and it is the one that gave an exact date. Lomeli's start came from arithmetic on a county press
 release ("28 years", retiring 2026-12-28 → January 1999), which is why it is year precision.
 
-## Then: 8 more counties to reach the 93.4% target
+## ✅ Santa Barbara — SEEDED (migration 1652). 5 offices; TWO SITTING OFFICERS WERE DEFEATED.
 
-By population: Santa Barbara, Monterey, Placer, Merced, San Luis Obispo,
+## Santa Barbara County (06083, pop 441,257) — DONE
+
+`countyofsb.org` is not walled but is a CivicPlus site that renders department pages
+**client-side** — plain curl returns a shell with no officeholder names. Use Playwright.
+`da.countyofsb.org` and `sbsheriff.org` are ordinary sites where curl works.
+
+| Title (certified ballot / dept) | Holder | Occupancy start | Precision |
+|---|---|---|---|
+| Auditor-Controller | Betsy M. Schaffer | Jan 2019 | month |
+| Clerk, Recorder and Assessor | Joseph E. Holland | 2003 | year |
+| District Attorney | John T. Savrnoch | 2023-01-02 | day |
+| Sheriff-Coroner | Bill Brown | 2007-01-09 | day |
+| Treasurer-Tax Collector-Public Administrator | Harry E. Hagen | 2011 | year |
+
+🔴 **THE ACFR TRICK FAILS HERE — READ THE TOC FIRST.** Santa Barbara publishes a 17 MB ACFR whose
+Introductory Section contains **only a letter of transmittal**: no principal-officials list, no org
+chart. That is the San Joaquin shape (1641), not the Kern/Ventura/Tulare/Solano shape. Substitute =
+the Registrar of Voters; the certified Statement of Vote is published as plain **HTML** at
+`sbcvote.com/elections/results/2026june02/results-1.htm`, which is far easier to parse than the
+185-page district-results PDFs other counties publish.
+
+🔴🔴 **FIRST COUNTY IN THE WAVE WHERE SITTING OFFICERS WERE DEFEATED AT THE POLLS — TWO OF THEM.**
+Certified June 2026: **Kyle Slattery 51.72% def. Auditor-Controller Betsy Schaffer 47.93%**;
+**Melinda Greene 60.22% def. Clerk-Recorder-Assessor Joseph Holland 39.48%**; Kimberly A. Tesoro
+98.49% (sole) succeeds the retiring Hagen. Every earlier turnover in this wave was a retirement or
+an unopposed succession, where the incumbent's own page still being current was reassuring. **Here
+the loser is still the correct holder through December 2026** — a post-election roster read
+carelessly would seed the WINNERS eight months early. Verified the other way round: Schaffer and
+Holland are both still named on their own department pages today. 1652 guards all three names.
+Tesoro is the **fourth** "deputy succeeds a departing incumbent" case (Contra Costa, Sonoma, Solano).
+
+🔴 **AB 759, eighth county** — no DA and no Sheriff contest on the certified ballot.
+
+🔴 **Superintendent of Schools (Susan C. Salcido, 96.01%) on the county ballot, not seeded.** Same
+rule as Kern/Riverside/Tulare/Solano — but note this county gives **no ACFR officials list to
+cross-check**, so the discriminator rests on the department directory at `/cosb-departments` alone
+(28 departments, no office of education; SBCEO is `sbceo.org`).
+
+🔴 **Holland's start is the weakest row in the county wave so far and is deliberately coarse.**
+Two accounts agree "first elected in March 2002", but one says he "has served since 2002" while the
+same article's "seeking his sixth term" implies 2007. Recorded as **2003 at year precision** (the
+statutory start after a regular March 2002 primary) with an explicit note. **Do not sharpen it on
+the news accounts** — correct it only from a county primary.
+
+## Then: 7 more counties to reach the 93.4% target
+
+By population: Monterey, Placer, Merced, San Luis Obispo,
 Santa Cruz, Marin (+ San Francisco already done, which displaces Marin from the top 25).
 
 ## Adjacent defects found, not fixed
