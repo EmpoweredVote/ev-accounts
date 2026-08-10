@@ -105,6 +105,7 @@ const LIMIT = parseInt(arg('limit', '0'), 10) || 0;
 const JSON_OUT = arg('json');
 const NO_CAND = argv.includes('--no-candidates');
 const PLAN_ONLY = argv.includes('--plan-only');
+const NO_ROOT = argv.includes('--no-canonical');
 // Re-run just the units a previous pass left unresolved, without re-rendering the ones it settled.
 const GEO = (arg('geo') || '').split(',').map(s => s.trim()).filter(Boolean);
 const CONC = parseInt(arg('concurrency', '4'), 10) || 4;
@@ -323,14 +324,30 @@ function score(url) {
   return s;
 }
 
-function nameAmbiguous(url, place, type) {
+function nameAmbiguous(url, place, type, stateOwn) {
   let host = '';
   try { host = new URL(url).host.toLowerCase(); } catch { return false; }
   const slug = String(place || '').toLowerCase().replace(/[^a-z]/g, '');
   if (!slug) return false;
-  // A host that is the bare place name cannot say which entity it is (yuba.gov / sutter.gov).
-  return new RegExp(`^(www\\.)?${slug}\\.(gov|org|us|com|net)$`).test(host)
-      || (type === 'COUNTY' && !/county|countyof|^co\./.test(host));
+  const bareName = new RegExp(`^(www\\.)?${slug}\\.(gov|org|us|com|net)$`).test(host);
+
+  // 🔴 THIS TEST MEANS DIFFERENT THINGS FOR A COUNTY AND A CITY, so it cannot be shared as-is.
+  //
+  // For a COUNTY, a bare place-name host cannot say whether it is the county or the like-named city:
+  // `yuba.gov` and `sutter.gov` are both real county sites, but YUBA CITY IS IN SUTTER COUNTY, so
+  // neither could be accepted from its name. That ambiguity is real and stays flagged.
+  //
+  // For a CITY, a bare place name is the NORMAL form — `beverlyhills.org`, `longbeach.gov`,
+  // `torranceca.gov`. Applying the county rule to municipal rows flags nearly every correct answer:
+  // it would have marked most of California's 95 municipal units for a human read and buried the few
+  // that need one. The genuine ambiguity for a city is a same-named city in ANOTHER STATE (Pasadena
+  // CA/TX, Glendale CA/AZ, Lancaster CA/PA, Ontario CA/Canada), which stateEvidence() now decides
+  // directly — so for a city this is ambiguous only when the state was NOT confirmed.
+  if (type !== 'COUNTY') return bareName && !stateOwn;
+
+  // `^co\.` must survive a `www.` prefix — `www.co.wallowa.or.us` is a county host and was flagged
+  // ambiguous in 1673 purely because the anchor could not see past `www.`.
+  return bareName || !/county|countyof|(^|\.)co\./.test(host);
 }
 
 async function classify(page, url, place, type, st) {
@@ -408,7 +425,7 @@ async function classify(page, url, place, type, st) {
     else if (hasName) { rec.verdict = 'NAME_ONLY'; rec.why = 'names the place but shows no governing body'; }
     else { rec.verdict = 'UNRELATED'; rec.why = 'does not name the place'; }
 
-    if (rec.verdict.startsWith('VERIFIED') && nameAmbiguous(rec.finalUrl || url, place, type)) {
+    if (rec.verdict.startsWith('VERIFIED') && nameAmbiguous(rec.finalUrl || url, place, type, stEv.own)) {
       rec.nameAmbiguous = true;                            // yuba.gov / sutter.gov class
     }
   } catch (e) {
@@ -560,6 +577,44 @@ async function main() {
       const confirmed = verified.filter(p => p.stateOwn);
       const pool = confirmed.length ? confirmed : verified;
       const settled = [...new Set(pool.map(p => p.finalUrl).filter(Boolean))].sort((a, b) => score(b) - score(a) || a.length - b.length);
+
+      // ── 🔴 CANONICALISE THE DESTINATION. `finalUrl` IS WHERE A REDIRECT LANDED, NOT A HOMEPAGE. ──
+      //
+      // This column is a jurisdiction's official web address, so it must be the site root. Storing
+      // the landing URL verbatim was about to write, for Rancho Palos Verdes:
+      //     https://www.rpvca.gov/search/?searchPhrase=&pageNumber=1&perPage=10&departmentId=-1
+      // — a SEARCH QUERY — plus `/Home` on six cities and `/index.php` on Carson.
+      //
+      // And a redirect can land on http: Monterey Park's chain ends at
+      // `http://www.montereypark.ca.gov/` and Artesia's at `http://www.cityofartesia.us/`, so the
+      // "upgrade" would not have upgraded anything.
+      //
+      // So: try `https://<host>/` and accept it only if it VERIFIES on its own. Never rewrite a URL
+      // to a root that was not itself rendered and checked — that would be assuming a homepage exists
+      // because a subpage did, which is the same class of error as assuming a `.gov` exists because
+      // the county does.
+      let canonical = settled[0] || null;
+      let canonicalNote = null;
+      if (canonical && !NO_ROOT) {
+        try {
+          const u = new URL(canonical);
+          const root = `https://${u.host}/`;
+          const needsRoot = u.protocol !== 'https:' || u.pathname !== '/' || u.search || u.hash;
+          if (needsRoot && root !== canonical) {
+            let rp = page;
+            try { rp = await ctx.newPage(); } catch { /* fall back to the unit page */ }
+            const probe = await classify(rp, root, unit.place, unit.district_type, unit.state);
+            if (rp !== page) await rp.close().catch(() => {});
+            probes.push(probe);
+            if (probe.verdict.startsWith('VERIFIED') && (!confirmed.length || probe.stateOwn)) {
+              canonicalNote = `canonicalised from ${canonical}`;
+              canonical = probe.finalUrl && new URL(probe.finalUrl).host === u.host ? root : root;
+            } else {
+              canonicalNote = `root ${root} did NOT verify (${probe.verdict}) — kept the landing URL, READ IT`;
+            }
+          }
+        } catch { /* unparseable: leave the destination exactly as found */ }
+      }
       // 🔴 `(none)` is only a finding if the search actually RAN. If the browser died mid-sweep, or any
       // candidate came back CONTEXT_LOST, the sweep is incomplete and its silence means nothing.
       const lostProbes = probes.filter(p => p.verdict === 'CONTEXT_LOST').length;
@@ -585,13 +640,18 @@ async function main() {
         rowCount: unit.rows.length,
         stored: unit.stored, storedVerdict: stored.verdict, storedWhy: stored.why,
         storedTextLen: stored.textLen, storedTitle: stored.title,
-        recommended: settled[0] || null,
+        recommended: canonical,
+        landingUrl: settled[0] || null, canonicalNote,
         candidatesIncomplete, candidatesTried, candidatesSkipped, candidatesPlanned, lostProbes, sweepTruncated,
         stateUnconfirmed: verified.some(p => p.stateUnconfirmed && (p.finalUrl || p.url) === settled[0]),
         blockedRecommendation, blockedOtherCandidates: blockedProbes.length - (blockedRecommendation ? 1 : 0),
+        // A destination still on http, or one whose root refused to verify, is not ready to store.
+        stillHttp: !!canonical && /^http:\/\//i.test(canonical),
         needsHumanRead: !settled.length || verified.some(p => p.nameAmbiguous) || blockedMatters
           || unit.placeSource === 'NONE' || candidatesIncomplete
-          || verified.some(p => p.stateUnconfirmed || p.rightFromNavOnly),
+          || verified.some(p => p.stateUnconfirmed || p.rightFromNavOnly)
+          || (!!canonicalNote && canonicalNote.includes('did NOT verify'))
+          || (!!canonical && /^http:\/\//i.test(canonical)),
         rejected: probes.filter(p => ['WRONG_ENTITY', 'NOT_GOVERNMENT', 'SPAM', 'STATE_MISMATCH'].includes(p.verdict))
           .map(p => ({ url: p.finalUrl || p.url, verdict: p.verdict, why: p.why, title: p.title })),
         probes,
@@ -602,6 +662,8 @@ async function main() {
         || (candidatesIncomplete ? `(SEARCH INCOMPLETE — ${candidatesTried}/${candidatesPlanned} candidates, ${lostProbes} lost; NOT evidence no site exists)` : '(none)');
       console.log(`${unit.district_type.padEnd(10)} ${unit.geo_id.padEnd(8)} ${String(unit.place || '(no name)').slice(0, 24).padEnd(24)} ` +
                   `${String(unit.rowCount ?? unit.rows.length).padStart(2)}r ${rec.storedVerdict.padEnd(14)} len=${String(rec.storedTextLen).padStart(6)} -> ${dest}${flag}`);
+      if (rec.canonicalNote) console.log(`           ↳ ${rec.canonicalNote}`);
+      if (rec.stillHttp) console.log('           🔴 destination is STILL http — not an upgrade, read it');
       for (const r of rec.rejected) console.log(`           🔴 rejected ${r.url} — ${r.verdict}: ${r.why}`);
     }
     await ctx.close().catch(() => {});

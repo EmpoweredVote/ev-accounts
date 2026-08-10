@@ -1,0 +1,5886 @@
+[
+ {
+  "geo_id": "0600394",
+  "place": "Agoura Hills",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ciagoura-hills.ca.us"
+   },
+   {
+    "label": "Agoura Hills Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ciagoura-hills.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ciagoura-hills.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ciagoura-hills.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ciagoura-hills.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ciagoura-hills.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0600884",
+  "place": "Alhambra",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofalhambra.org/"
+   },
+   {
+    "label": "Alhambra Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofalhambra.org/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityofalhambra.org/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 5097,
+  "storedTitle": "Alhambra, CA | Official Website",
+  "recommended": "https://www.alhambraca.gov/",
+  "landingUrl": "https://www.alhambraca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofalhambra.org/",
+    "finalUrl": "https://www.alhambraca.gov/",
+    "status": 200,
+    "textLen": 5097,
+    "title": "Alhambra, CA | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 4839,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0602462",
+  "place": "Arcadia",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.arcadia.ca.us/"
+   },
+   {
+    "label": "Arcadia Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.arcadia.ca.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.arcadia.ca.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.arcadia.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.arcadia.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.arcadia.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0602896",
+  "place": "Artesia",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofartesia.us"
+   },
+   {
+    "label": "Artesia Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofartesia.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityofartesia.us",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": "governing body found in navigation only, not in page prose",
+  "storedTextLen": 2102,
+  "storedTitle": "Artesia, CA - Official Website | Official Website",
+  "recommended": "https://www.cityofartesia.us/",
+  "landingUrl": "http://www.cityofartesia.us/",
+  "canonicalNote": "canonicalised from http://www.cityofartesia.us/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofartesia.us",
+    "finalUrl": "http://www.cityofartesia.us/",
+    "status": 200,
+    "textLen": 2102,
+    "title": "Artesia, CA - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": "governing body found in navigation only, not in page prose",
+    "linkLen": 4778,
+    "rightFromNavOnly": true,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.cityofartesia.us/",
+    "finalUrl": "https://www.cityofartesia.us/",
+    "status": 200,
+    "textLen": 2102,
+    "title": "Artesia, CA - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": "governing body found in navigation only, not in page prose",
+    "linkLen": 4785,
+    "rightFromNavOnly": true,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0603274",
+  "place": "Avalon",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://WWW.CITYOFAVALON.COM"
+   },
+   {
+    "label": "Avalon Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://WWW.CITYOFAVALON.COM"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://WWW.CITYOFAVALON.COM",
+  "storedVerdict": "NAME_ONLY",
+  "storedWhy": "names the place but shows no governing body",
+  "storedTextLen": 3478,
+  "storedTitle": "Avalon, CA | Official Website",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://WWW.CITYOFAVALON.COM",
+    "finalUrl": "https://www.cityofavalon.gov/",
+    "status": 200,
+    "textLen": 3478,
+    "title": "Avalon, CA | Official Website",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 5329,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0603386",
+  "place": "Azusa",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.azusa.ca.us/"
+   },
+   {
+    "label": "Azusa Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.azusa.ca.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.azusa.ca.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.azusa.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.azusa.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.azusa.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0603666",
+  "place": "Baldwin Park",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.baldwinpark.com"
+   },
+   {
+    "label": "Baldwin Park Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.baldwinpark.com"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.baldwinpark.com",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 4960,
+  "storedTitle": "Baldwin Park, CA | Official Website",
+  "recommended": "https://www.baldwinpark.com/",
+  "landingUrl": "https://www.baldwinpark.com/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.baldwinpark.com",
+    "finalUrl": "https://www.baldwinpark.com/",
+    "status": 200,
+    "textLen": 4960,
+    "title": "Baldwin Park, CA | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 5886,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0604982",
+  "place": "Bellflower",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "District 3",
+    "district_type": "LOCAL",
+    "stored": "http://www.bellflower.org"
+   },
+   {
+    "label": "District 5",
+    "district_type": "LOCAL",
+    "stored": "http://www.bellflower.org"
+   },
+   {
+    "label": "District 4",
+    "district_type": "LOCAL",
+    "stored": "http://www.bellflower.org"
+   },
+   {
+    "label": "District 1",
+    "district_type": "LOCAL",
+    "stored": "http://www.bellflower.org"
+   },
+   {
+    "label": "District 2",
+    "district_type": "LOCAL",
+    "stored": "http://www.bellflower.org"
+   }
+  ],
+  "rowCount": 5,
+  "stored": "http://www.bellflower.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 2445,
+  "storedTitle": "Bellflower, CA",
+  "recommended": "https://bellflower.ca.gov/",
+  "landingUrl": "https://bellflower.ca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.bellflower.org",
+    "finalUrl": "https://bellflower.ca.gov/",
+    "status": 200,
+    "textLen": 2445,
+    "title": "Bellflower, CA",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 8855,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0604996",
+  "place": "Bell Gardens",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.bellgardens.org"
+   },
+   {
+    "label": "Bell Gardens Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.bellgardens.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.bellgardens.org",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (201 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 201,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.bellgardens.org",
+    "finalUrl": "https://www.bellgardens.org/",
+    "status": 403,
+    "textLen": 201,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (201 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0606308",
+  "place": "Beverly Hills",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.beverlyhills.org"
+   },
+   {
+    "label": "Beverly Hills Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.beverlyhills.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.beverlyhills.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 9049,
+  "storedTitle": "Beverly Hills, CA | Official Website",
+  "recommended": "https://www.beverlyhills.org/",
+  "landingUrl": "https://www.beverlyhills.org/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.beverlyhills.org",
+    "finalUrl": "https://www.beverlyhills.org/",
+    "status": 200,
+    "textLen": 9049,
+    "title": "Beverly Hills, CA | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 9049,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0607946",
+  "place": "Bradbury",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofbradbury.org/"
+   },
+   {
+    "label": "Bradbury Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofbradbury.org/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityofbradbury.org/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 1397,
+  "storedTitle": "Bradbury, CA",
+  "recommended": "https://www.bradburyca.gov/",
+  "landingUrl": "https://www.bradburyca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofbradbury.org/",
+    "finalUrl": "https://www.bradburyca.gov/",
+    "status": 200,
+    "textLen": 1397,
+    "title": "Bradbury, CA",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 9569,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0608954",
+  "place": "Burbank",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.burbankusa.com"
+   },
+   {
+    "label": "Burbank Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.burbankusa.com"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.burbankusa.com",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3048,
+  "storedTitle": "City of Burbank - Official Website - City of Burbank",
+  "recommended": "https://www.burbankca.gov/",
+  "landingUrl": "https://www.burbankca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.burbankusa.com",
+    "finalUrl": "https://www.burbankca.gov/",
+    "status": 200,
+    "textLen": 3048,
+    "title": "City of Burbank - Official Website - City of Burbank",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 21842,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0609598",
+  "place": "Calabasas",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofcalabases.com"
+   },
+   {
+    "label": "Calabasas Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofcalabases.com"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityofcalabases.com",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.cityofcalabases.com/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofcalabases.com",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.cityofcalabases.com/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0611530",
+  "place": "Carson",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://ci.carson.ca.us"
+   },
+   {
+    "label": "Carson Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://ci.carson.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://ci.carson.ca.us",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3600,
+  "storedTitle": "City of Carson, CA",
+  "recommended": "https://carsonca.gov/",
+  "landingUrl": "https://carsonca.gov/index.php",
+  "canonicalNote": "canonicalised from https://carsonca.gov/index.php",
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://ci.carson.ca.us",
+    "finalUrl": "https://carsonca.gov/index.php",
+    "status": 200,
+    "textLen": 3600,
+    "title": "City of Carson, CA",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 14462,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://carsonca.gov/",
+    "finalUrl": "https://carsonca.gov/",
+    "status": 200,
+    "textLen": 3600,
+    "title": "City of Carson, CA",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 14462,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0612552",
+  "place": "Cerritos",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cerritos.us"
+   },
+   {
+    "label": "Cerritos Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cerritos.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cerritos.us",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 2029,
+  "storedTitle": "City | City of Cerritos",
+  "recommended": "https://www.cerritos.gov/",
+  "landingUrl": "https://www.cerritos.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cerritos.us",
+    "finalUrl": "https://www.cerritos.gov/",
+    "status": 200,
+    "textLen": 2029,
+    "title": "City | City of Cerritos",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 18516,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0613756",
+  "place": "Claremont",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.claremont.ca.us"
+   },
+   {
+    "label": "Claremont Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.claremont.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.claremont.ca.us",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 2792,
+  "storedTitle": "Home | City of Claremont, CA",
+  "recommended": "https://www.claremontca.gov/",
+  "landingUrl": "https://www.claremontca.gov/Home",
+  "canonicalNote": "canonicalised from https://www.claremontca.gov/Home",
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.claremont.ca.us",
+    "finalUrl": "https://www.claremontca.gov/Home",
+    "status": 200,
+    "textLen": 2792,
+    "title": "Home | City of Claremont, CA",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 37201,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.claremontca.gov/",
+    "finalUrl": "https://www.claremontca.gov/Home",
+    "status": 200,
+    "textLen": 2792,
+    "title": "Home | City of Claremont, CA",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 37201,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0614974",
+  "place": "Commerce",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.commerce.ca.us/"
+   },
+   {
+    "label": "Commerce Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.commerce.ca.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.commerce.ca.us/",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (212 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 212,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.commerce.ca.us/",
+    "finalUrl": "https://www.commerceca.gov/",
+    "status": 403,
+    "textLen": 212,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (212 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0615044",
+  "place": "Compton",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.comptoncity.org/"
+   },
+   {
+    "label": "Compton Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.comptoncity.org/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.comptoncity.org/",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (215 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 215,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.comptoncity.org/",
+    "finalUrl": "https://www.comptoncity.org/",
+    "status": 403,
+    "textLen": 215,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (215 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0616742",
+  "place": "Covina",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.covinaca.gov"
+   },
+   {
+    "label": "Covina Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.covinaca.gov"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.covinaca.gov",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3823,
+  "storedTitle": "Covina – The City of Covina provides responsive municipal services and manages public resources to enhance the quality of life for our commu",
+  "recommended": "https://covinaca.gov/",
+  "landingUrl": "https://covinaca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.covinaca.gov",
+    "finalUrl": "https://covinaca.gov/",
+    "status": 200,
+    "textLen": 3823,
+    "title": "Covina – The City of Covina provides responsive municipal services and manages public resources to enhance the quality of life for our commu",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 24259,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0617498",
+  "place": "Cudahy",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cudahy.ca.us/"
+   },
+   {
+    "label": "Cudahy Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cudahy.ca.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cudahy.ca.us/",
+  "storedVerdict": "FAIL",
+  "storedWhy": "page.goto: net::ERR_CONNECTION_TIMED_OUT at http://www.cudahy.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cudahy.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_CONNECTION_TIMED_OUT at http://www.cudahy.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0617568",
+  "place": "Culver City",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.culvercity.org"
+   },
+   {
+    "label": "Culver City Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.culvercity.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.culvercity.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 2341,
+  "storedTitle": "Home - City of Culver City",
+  "recommended": "https://www.culvercity.gov/",
+  "landingUrl": "https://www.culvercity.gov/Home",
+  "canonicalNote": "canonicalised from https://www.culvercity.gov/Home",
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.culvercity.org",
+    "finalUrl": "https://www.culvercity.gov/Home",
+    "status": 200,
+    "textLen": 2341,
+    "title": "Home - City of Culver City",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 38624,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.culvercity.gov/",
+    "finalUrl": "https://www.culvercity.gov/Home",
+    "status": 200,
+    "textLen": 2341,
+    "title": "Home - City of Culver City",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 38624,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0619192",
+  "place": "Diamond Bar",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.diamondbarca.gov"
+   },
+   {
+    "label": "Diamond Bar Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.diamondbarca.gov"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.diamondbarca.gov",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 5345,
+  "storedTitle": "Diamond Bar, CA | Official Website",
+  "recommended": "https://www.diamondbarca.gov/",
+  "landingUrl": "https://www.diamondbarca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.diamondbarca.gov",
+    "finalUrl": "https://www.diamondbarca.gov/",
+    "status": 200,
+    "textLen": 5345,
+    "title": "Diamond Bar, CA | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 5044,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0619766",
+  "place": "Downey",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "District 1",
+    "district_type": "LOCAL",
+    "stored": "http://www.downeyca.org/"
+   },
+   {
+    "label": "District 3",
+    "district_type": "LOCAL",
+    "stored": "http://www.downeyca.org/"
+   },
+   {
+    "label": "District 2",
+    "district_type": "LOCAL",
+    "stored": "http://www.downeyca.org/"
+   },
+   {
+    "label": "District 4",
+    "district_type": "LOCAL",
+    "stored": "http://www.downeyca.org/"
+   },
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.downeyca.org/"
+   },
+   {
+    "label": "District 5",
+    "district_type": "LOCAL",
+    "stored": "http://www.downeyca.org/"
+   }
+  ],
+  "rowCount": 6,
+  "stored": "http://www.downeyca.org/",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (198 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 198,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.downeyca.org/",
+    "finalUrl": "https://www.downeyca.org/",
+    "status": 403,
+    "textLen": 198,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (198 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0622230",
+  "place": "El Monte",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "District 4",
+    "district_type": "LOCAL",
+    "stored": "http://www.elmonte.org"
+   },
+   {
+    "label": "District 6",
+    "district_type": "LOCAL",
+    "stored": "http://www.elmonte.org"
+   },
+   {
+    "label": "District 1",
+    "district_type": "LOCAL",
+    "stored": "http://www.elmonte.org"
+   },
+   {
+    "label": "District 5",
+    "district_type": "LOCAL",
+    "stored": "http://www.elmonte.org"
+   },
+   {
+    "label": "District 2",
+    "district_type": "LOCAL",
+    "stored": "http://www.elmonte.org"
+   },
+   {
+    "label": "District 3",
+    "district_type": "LOCAL",
+    "stored": "http://www.elmonte.org"
+   },
+   {
+    "label": "El Monte Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.elmonte.org"
+   }
+  ],
+  "rowCount": 7,
+  "stored": "http://www.elmonte.org",
+  "storedVerdict": "FAIL",
+  "storedWhy": "page.goto: net::ERR_CONNECTION_TIMED_OUT at http://www.elmonte.org/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.elmonte.org",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_CONNECTION_TIMED_OUT at http://www.elmonte.org/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0622412",
+  "place": "El Segundo",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.elsegundo.org"
+   },
+   {
+    "label": "El Segundo Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.elsegundo.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.elsegundo.org",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (211 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 211,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.elsegundo.org",
+    "finalUrl": "https://www.elsegundo.gov/",
+    "status": 403,
+    "textLen": 211,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (211 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0628168",
+  "place": "Gardena",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.gardena.ca.us/"
+   },
+   {
+    "label": "Gardena Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.gardena.ca.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.gardena.ca.us/",
+  "storedVerdict": "VERIFIED_MIXED",
+  "storedWhy": "both entity markers present (normal for a consolidated city-county such as San Francisco)",
+  "storedTextLen": 3241,
+  "storedTitle": "Home | City of Gardena",
+  "recommended": "https://cityofgardena.org/",
+  "landingUrl": "https://cityofgardena.org/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.gardena.ca.us/",
+    "finalUrl": "https://cityofgardena.org/",
+    "status": 200,
+    "textLen": 3241,
+    "title": "Home | City of Gardena",
+    "verdict": "VERIFIED_MIXED",
+    "why": "both entity markers present (normal for a consolidated city-county such as San Francisco)",
+    "linkLen": 24905,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0630000",
+  "place": "Glendale",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.glendale.ca.us"
+   },
+   {
+    "label": "Glendale Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.glendale.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.glendale.ca.us",
+  "storedVerdict": "FAIL",
+  "storedWhy": "page.goto: net::ERR_CONNECTION_TIMED_OUT at http://www.ci.glendale.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.glendale.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_CONNECTION_TIMED_OUT at http://www.ci.glendale.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0630014",
+  "place": "Glendora",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.glendora.ca.us/"
+   },
+   {
+    "label": "Glendora Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.glendora.ca.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.glendora.ca.us/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 1385,
+  "storedTitle": "Home | City of Glendora",
+  "recommended": "https://www.cityofglendora.gov/",
+  "landingUrl": "https://www.cityofglendora.gov/Home",
+  "canonicalNote": "canonicalised from https://www.cityofglendora.gov/Home",
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.glendora.ca.us/",
+    "finalUrl": "https://www.cityofglendora.gov/Home",
+    "status": 200,
+    "textLen": 1385,
+    "title": "Home | City of Glendora",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 21687,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.cityofglendora.gov/",
+    "finalUrl": "https://www.cityofglendora.gov/Home",
+    "status": 200,
+    "textLen": 1385,
+    "title": "Home | City of Glendora",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 21687,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0632506",
+  "place": "Hawaiian Gardens",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://hgcity.org/"
+   },
+   {
+    "label": "Hawaiian Gardens Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://hgcity.org/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://hgcity.org/",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (210 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 210,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://hgcity.org/",
+    "finalUrl": "https://www.hgcity.org/",
+    "status": 403,
+    "textLen": 210,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (210 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0632548",
+  "place": "Hawthorne",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofhawthorne.org"
+   },
+   {
+    "label": "Hawthorne Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofhawthorne.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityofhawthorne.org",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (219 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 219,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofhawthorne.org",
+    "finalUrl": "https://www.cityofhawthorne.org/",
+    "status": 403,
+    "textLen": 219,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (219 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0633364",
+  "place": "Hermosa Beach",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://hermosabch.org"
+   },
+   {
+    "label": "Hermosa Beach Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://hermosabch.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://hermosabch.org",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (200 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 200,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://hermosabch.org",
+    "finalUrl": "https://www.hermosabeach.gov/",
+    "status": 403,
+    "textLen": 200,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (200 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0633518",
+  "place": "Hidden Hills",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.hiddenhillscity.org"
+   },
+   {
+    "label": "Hidden Hills Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.hiddenhillscity.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.hiddenhillscity.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3287,
+  "storedTitle": "City of Hidden Hills, California",
+  "recommended": "https://hiddenhills.gov/",
+  "landingUrl": "https://hiddenhills.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.hiddenhillscity.org",
+    "finalUrl": "https://hiddenhills.gov/",
+    "status": 200,
+    "textLen": 3287,
+    "title": "City of Hidden Hills, California",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 10190,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0636000",
+  "place": "Huntington Beach",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.huntington-beach.ca.us/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.ci.huntington-beach.ca.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.huntington-beach.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.huntington-beach.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.huntington-beach.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0636490",
+  "place": "Industry",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofindustry.org"
+   },
+   {
+    "label": "Industry Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofindustry.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityofindustry.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 1392,
+  "storedTitle": "City of Industry, CA | Official Website",
+  "recommended": "https://www.cityofindustry.org/",
+  "landingUrl": "https://www.cityofindustry.org/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofindustry.org",
+    "finalUrl": "https://www.cityofindustry.org/",
+    "status": 200,
+    "textLen": 1392,
+    "title": "City of Industry, CA | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 2402,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0636546",
+  "place": "Inglewood",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofinglewood.org/"
+   },
+   {
+    "label": "District 2",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofinglewood.org/"
+   },
+   {
+    "label": "District 3",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofinglewood.org/"
+   },
+   {
+    "label": "District 1",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofinglewood.org/"
+   },
+   {
+    "label": "District 4",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofinglewood.org/"
+   },
+   {
+    "label": "Inglewood Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofinglewood.org/"
+   }
+  ],
+  "rowCount": 6,
+  "stored": "http://www.cityofinglewood.org/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 5378,
+  "storedTitle": "Inglewood, CA | Official Website",
+  "recommended": "https://www.cityofinglewood.org/",
+  "landingUrl": "https://www.cityofinglewood.org/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofinglewood.org/",
+    "finalUrl": "https://www.cityofinglewood.org/",
+    "status": 200,
+    "textLen": 5378,
+    "title": "Inglewood, CA | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 5539,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0636826",
+  "place": "Irwindale",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.irwindale.ca.us"
+   },
+   {
+    "label": "Irwindale Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.irwindale.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.irwindale.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.irwindale.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.irwindale.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.irwindale.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0639003",
+  "place": "La Canada Flintridge",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.lacanadaflintridge.com"
+   },
+   {
+    "label": "La Canada Flintridge Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.lacanadaflintridge.com"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.lacanadaflintridge.com",
+  "storedVerdict": "NOT_GOVERNMENT",
+  "storedWhy": "tourism / chamber / directory vocabulary in prose",
+  "storedTextLen": 3490,
+  "storedTitle": "Home - La Cañada Flintridge Chamber of Commerce",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [
+   {
+    "url": "https://www.lacanadaflintridge.com/",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "title": "Home - La Cañada Flintridge Chamber of Commerce"
+   }
+  ],
+  "probes": [
+   {
+    "url": "http://www.lacanadaflintridge.com",
+    "finalUrl": "https://www.lacanadaflintridge.com/",
+    "status": 200,
+    "textLen": 3490,
+    "title": "Home - La Cañada Flintridge Chamber of Commerce",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "linkLen": 17373,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0639304",
+  "place": "La Habra Heights",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.la-habra-heights.org/"
+   },
+   {
+    "label": "La Habra Heights Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.la-habra-heights.org/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.la-habra-heights.org/",
+  "storedVerdict": "EMPTY",
+  "storedWhy": "only 0 chars of text and 46 of links rendered",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.la-habra-heights.org/",
+    "finalUrl": "http://www.la-habra-heights.org/",
+    "status": 200,
+    "textLen": 0,
+    "title": "",
+    "verdict": "EMPTY",
+    "why": "only 0 chars of text and 46 of links rendered",
+    "linkLen": 46,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0639892",
+  "place": "Lakewood",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.LakewoodCity.org"
+   },
+   {
+    "label": "Lakewood Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.LakewoodCity.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.LakewoodCity.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3161,
+  "storedTitle": "Home Lakewood Online",
+  "recommended": "https://www.lakewoodca.gov/",
+  "landingUrl": "https://www.lakewoodca.gov/Home",
+  "canonicalNote": "canonicalised from https://www.lakewoodca.gov/Home",
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.LakewoodCity.org",
+    "finalUrl": "https://www.lakewoodca.gov/Home",
+    "status": 200,
+    "textLen": 3161,
+    "title": "Home Lakewood Online",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 33837,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.lakewoodca.gov/",
+    "finalUrl": "https://www.lakewoodca.gov/Home",
+    "status": 200,
+    "textLen": 3161,
+    "title": "Home Lakewood Online",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 33837,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0640032",
+  "place": "La Mirada",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityoflamirada.org/"
+   },
+   {
+    "label": "La Mirada Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityoflamirada.org/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityoflamirada.org/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 2838,
+  "storedTitle": "City of La Mirada",
+  "recommended": "https://www.lamirada.gov/",
+  "landingUrl": "https://www.lamirada.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityoflamirada.org/",
+    "finalUrl": "https://www.lamirada.gov/",
+    "status": 200,
+    "textLen": 2838,
+    "title": "City of La Mirada",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 19870,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0640130",
+  "place": "Lancaster",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityoflancasterca.org/"
+   },
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityoflancasterca.org/"
+   },
+   {
+    "label": "Lancaster Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityoflancasterca.org/"
+   }
+  ],
+  "rowCount": 3,
+  "stored": "http://www.cityoflancasterca.org/",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (205 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 205,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityoflancasterca.org/",
+    "finalUrl": "https://www.cityoflancasterca.org/",
+    "status": 403,
+    "textLen": 205,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (205 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0640256",
+  "place": "La Palma",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://WWW.CITYOFLAPALMA.ORG"
+   },
+   {
+    "label": "La Palma Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://WWW.CITYOFLAPALMA.ORG"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://WWW.CITYOFLAPALMA.ORG",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 2605,
+  "storedTitle": "La Palma, CA - Official Website | Official Website",
+  "recommended": "https://www.lapalmaca.gov/",
+  "landingUrl": "https://www.lapalmaca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://WWW.CITYOFLAPALMA.ORG",
+    "finalUrl": "https://www.lapalmaca.gov/",
+    "status": 200,
+    "textLen": 2605,
+    "title": "La Palma, CA - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 3642,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0640340",
+  "place": "La Puente",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.lapuente.org"
+   },
+   {
+    "label": "La Puente Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.lapuente.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.lapuente.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3624,
+  "storedTitle": "City of La Puente -Where the past meets the future.",
+  "recommended": "https://lapuente.org/",
+  "landingUrl": "https://lapuente.org/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.lapuente.org",
+    "finalUrl": "https://lapuente.org/",
+    "status": 200,
+    "textLen": 3624,
+    "title": "City of La Puente -Where the past meets the future.",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 16698,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0640830",
+  "place": "La Verne",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.laverne.ca.us"
+   },
+   {
+    "label": "La Verne Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.laverne.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.laverne.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.laverne.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.laverne.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.laverne.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0640886",
+  "place": "Lawndale",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.lawndalecity.org/"
+   },
+   {
+    "label": "Lawndale Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.lawndalecity.org/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.lawndalecity.org/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3513,
+  "storedTitle": "Home - City of Lawndale, CA",
+  "recommended": "https://www.lawndale.ca.gov/",
+  "landingUrl": "https://www.lawndale.ca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.lawndalecity.org/",
+    "finalUrl": "https://www.lawndale.ca.gov/",
+    "status": 200,
+    "textLen": 3513,
+    "title": "Home - City of Lawndale, CA",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 24120,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0642468",
+  "place": "Lomita",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.lomita.com/cityhall"
+   },
+   {
+    "label": "Lomita Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.lomita.com/cityhall"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.lomita.com/cityhall",
+  "storedVerdict": "EMPTY",
+  "storedWhy": "only 105 chars of text and 0 of links rendered",
+  "storedTextLen": 105,
+  "storedTitle": "404 Not Found",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.lomita.com/cityhall",
+    "finalUrl": "http://www.lomita.com/cityhall",
+    "status": 404,
+    "textLen": 105,
+    "title": "404 Not Found",
+    "verdict": "EMPTY",
+    "why": "only 105 chars of text and 0 of links rendered",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0643000",
+  "place": "Long Beach",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "District 2",
+    "district_type": "LOCAL",
+    "stored": "http://www.longbeach.gov"
+   },
+   {
+    "label": "District 1",
+    "district_type": "LOCAL",
+    "stored": "http://www.longbeach.gov"
+   },
+   {
+    "label": "District 9",
+    "district_type": "LOCAL",
+    "stored": "http://www.longbeach.gov"
+   },
+   {
+    "label": "District 7",
+    "district_type": "LOCAL",
+    "stored": "http://www.longbeach.gov"
+   },
+   {
+    "label": "District 8",
+    "district_type": "LOCAL",
+    "stored": "http://www.longbeach.gov"
+   },
+   {
+    "label": "District 6",
+    "district_type": "LOCAL",
+    "stored": "http://www.longbeach.gov"
+   },
+   {
+    "label": "District 5",
+    "district_type": "LOCAL",
+    "stored": "http://www.longbeach.gov"
+   },
+   {
+    "label": "District 4",
+    "district_type": "LOCAL",
+    "stored": "http://www.longbeach.gov"
+   },
+   {
+    "label": "District 3",
+    "district_type": "LOCAL",
+    "stored": "http://www.longbeach.gov"
+   },
+   {
+    "label": "Long Beach Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.longbeach.gov"
+   },
+   {
+    "label": "Long Beach City Attorney",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.longbeach.gov"
+   },
+   {
+    "label": "Long Beach City Auditor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.longbeach.gov"
+   },
+   {
+    "label": "Long Beach City Prosecutor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.longbeach.gov"
+   }
+  ],
+  "rowCount": 13,
+  "stored": "http://www.longbeach.gov",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3568,
+  "storedTitle": "City of Long Beach",
+  "recommended": "https://www.longbeach.gov/",
+  "landingUrl": "https://www.longbeach.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": true,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.longbeach.gov",
+    "finalUrl": "https://www.longbeach.gov/",
+    "status": 200,
+    "textLen": 3568,
+    "title": "City of Long Beach",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 12699,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": [],
+    "stateUnconfirmed": true,
+    "nameAmbiguous": true
+   }
+  ]
+ },
+ {
+  "geo_id": "0643224",
+  "place": "Los Alamitos",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.losalamitos.ca.us/"
+   },
+   {
+    "label": "Los Alamitos Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.losalamitos.ca.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.losalamitos.ca.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.losalamitos.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.losalamitos.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.losalamitos.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0644574",
+  "place": "Lynwood",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.lynwood.ca.us/"
+   },
+   {
+    "label": "Lynwood Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.lynwood.ca.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.lynwood.ca.us/",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (13 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 13,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.lynwood.ca.us/",
+    "finalUrl": "http://www.lynwood.ca.us/",
+    "status": 403,
+    "textLen": 13,
+    "title": "",
+    "verdict": "BLOCKED",
+    "why": "WAF (13 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0645246",
+  "place": "Malibu",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.malibucity.org"
+   },
+   {
+    "label": "Malibu Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.malibucity.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.malibucity.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 7282,
+  "storedTitle": "Malibu, CA - Official Website | Official Website",
+  "recommended": "https://www.malibucity.org/",
+  "landingUrl": "https://www.malibucity.org/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.malibucity.org",
+    "finalUrl": "https://www.malibucity.org/",
+    "status": 200,
+    "textLen": 7282,
+    "title": "Malibu, CA - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 10797,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0645400",
+  "place": "Manhattan Beach",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.manhattan-beach.ca.us"
+   },
+   {
+    "label": "Manhattan Beach Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.manhattan-beach.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.manhattan-beach.ca.us",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (204 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 204,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.manhattan-beach.ca.us",
+    "finalUrl": "https://www.manhattanbeach.gov/",
+    "status": 403,
+    "textLen": 204,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (204 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0646492",
+  "place": "Maywood",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofmaywood.com"
+   },
+   {
+    "label": "Maywood Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofmaywood.com"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityofmaywood.com",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 4159,
+  "storedTitle": "Maywood, CA | Official Website",
+  "recommended": "https://www.cityofmaywood.com/",
+  "landingUrl": "https://www.cityofmaywood.com/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofmaywood.com",
+    "finalUrl": "https://www.cityofmaywood.com/",
+    "status": 200,
+    "textLen": 4159,
+    "title": "Maywood, CA | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 5029,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0648648",
+  "place": "Monrovia",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.monrovia.ca.us"
+   },
+   {
+    "label": "Monrovia Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.monrovia.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.monrovia.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.monrovia.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.monrovia.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.monrovia.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0648816",
+  "place": "Montebello",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofmontebello.com/"
+   },
+   {
+    "label": "Montebello Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofmontebello.com/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityofmontebello.com/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 5492,
+  "storedTitle": "Home - City of Montebello",
+  "recommended": "https://www.montebelloca.gov/",
+  "landingUrl": "https://www.montebelloca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofmontebello.com/",
+    "finalUrl": "https://www.montebelloca.gov/",
+    "status": 200,
+    "textLen": 5492,
+    "title": "Home - City of Montebello",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 24075,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0648914",
+  "place": "Monterey Park",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.monterey-park.ca.us"
+   },
+   {
+    "label": "Monterey Park Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.monterey-park.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.monterey-park.ca.us",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3507,
+  "storedTitle": "Monterey Park, CA - Official Website | Official Website",
+  "recommended": "https://www.montereypark.ca.gov/",
+  "landingUrl": "http://www.montereypark.ca.gov/",
+  "canonicalNote": "canonicalised from http://www.montereypark.ca.gov/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.monterey-park.ca.us",
+    "finalUrl": "http://www.montereypark.ca.gov/",
+    "status": 200,
+    "textLen": 3507,
+    "title": "Monterey Park, CA - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 7000,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.montereypark.ca.gov/",
+    "finalUrl": "https://www.montereypark.ca.gov/",
+    "status": 200,
+    "textLen": 5776,
+    "title": "Monterey Park, CA - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 7040,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0652526",
+  "place": "Norwalk",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci-norwalk.ca.us"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.ci-norwalk.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci-norwalk.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci-norwalk.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci-norwalk.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0655156",
+  "place": "Palmdale",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "District 2",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofpalmdale.org/"
+   },
+   {
+    "label": "District 3",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofpalmdale.org/"
+   },
+   {
+    "label": "District 5",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofpalmdale.org/"
+   },
+   {
+    "label": "District 1",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofpalmdale.org/"
+   },
+   {
+    "label": "District 4",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofpalmdale.org/"
+   }
+  ],
+  "rowCount": 5,
+  "stored": "http://www.cityofpalmdale.org/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3707,
+  "storedTitle": "Palmdale, CA | Official Website",
+  "recommended": "https://www.cityofpalmdaleca.gov/",
+  "landingUrl": "https://www.cityofpalmdaleca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofpalmdale.org/",
+    "finalUrl": "https://www.cityofpalmdaleca.gov/",
+    "status": 200,
+    "textLen": 3707,
+    "title": "Palmdale, CA | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 7691,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0655380",
+  "place": "Palos Verdes Estates",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.pvestates.org"
+   },
+   {
+    "label": "Palos Verdes Estates Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.pvestates.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.pvestates.org",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (199 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 199,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.pvestates.org",
+    "finalUrl": "https://www.pvestates.org/",
+    "status": 403,
+    "textLen": 199,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (199 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0655618",
+  "place": "Paramount",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.paramountcity.com/"
+   },
+   {
+    "label": "Paramount Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.paramountcity.com/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.paramountcity.com/",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (32 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 32,
+  "storedTitle": "403 Forbidden",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.paramountcity.com/",
+    "finalUrl": "http://www.paramountcity.com/",
+    "status": 403,
+    "textLen": 32,
+    "title": "403 Forbidden",
+    "verdict": "BLOCKED",
+    "why": "WAF (32 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0656000",
+  "place": "Pasadena",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "District 1",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pasadena.ca.us/"
+   },
+   {
+    "label": "District 5",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pasadena.ca.us/"
+   },
+   {
+    "label": "District 4",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pasadena.ca.us/"
+   },
+   {
+    "label": "District 2",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pasadena.ca.us/"
+   },
+   {
+    "label": "District 3",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pasadena.ca.us/"
+   },
+   {
+    "label": "District 7",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pasadena.ca.us/"
+   },
+   {
+    "label": "District 6",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pasadena.ca.us/"
+   },
+   {
+    "label": "Pasadena Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.pasadena.ca.us/"
+   }
+  ],
+  "rowCount": 8,
+  "stored": "http://www.ci.pasadena.ca.us/",
+  "storedVerdict": "EMPTY",
+  "storedWhy": "only 170 chars of text and 0 of links rendered",
+  "storedTextLen": 170,
+  "storedTitle": "This is the default server vhost",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.pasadena.ca.us/",
+    "finalUrl": "https://www.ci.pasadena.ca.us/",
+    "status": 200,
+    "textLen": 170,
+    "title": "This is the default server vhost",
+    "verdict": "EMPTY",
+    "why": "only 170 chars of text and 0 of links rendered",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0656924",
+  "place": "Pico Rivera",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.picorivera.org"
+   },
+   {
+    "label": "Pico Rivera Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.picorivera.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.picorivera.org",
+  "storedVerdict": "UNRELATED",
+  "storedWhy": "does not name the place",
+  "storedTextLen": 765,
+  "storedTitle": "picorivera.org Is For Sale - Synergy_Technologies_LLC",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.picorivera.org",
+    "finalUrl": "https://synergytech.com/buy-domain/picorivera.org?redirected=true",
+    "status": 200,
+    "textLen": 765,
+    "title": "picorivera.org Is For Sale - Synergy_Technologies_LLC",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 941,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0658072",
+  "place": "Pomona",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "District 4",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pomona.ca.us/"
+   },
+   {
+    "label": "District 5",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pomona.ca.us/"
+   },
+   {
+    "label": "District 6",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pomona.ca.us/"
+   },
+   {
+    "label": "District 2",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pomona.ca.us/"
+   },
+   {
+    "label": "District 3",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pomona.ca.us/"
+   },
+   {
+    "label": "District 1",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.pomona.ca.us/"
+   },
+   {
+    "label": "Pomona Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.pomona.ca.us/"
+   }
+  ],
+  "rowCount": 7,
+  "stored": "http://www.ci.pomona.ca.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.pomona.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.pomona.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.pomona.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0659514",
+  "place": "Rancho Palos Verdes",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.palosverdes.com/rpv/"
+   },
+   {
+    "label": "Rancho Palos Verdes Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.palosverdes.com/rpv/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.palosverdes.com/rpv/",
+  "storedVerdict": "VERIFIED_MIXED",
+  "storedWhy": "both entity markers present (normal for a consolidated city-county such as San Francisco)",
+  "storedTextLen": 6079,
+  "storedTitle": "Search • Rancho Palos Verdes, CA • CivicEngage",
+  "recommended": "https://www.rpvca.gov/",
+  "landingUrl": "https://www.rpvca.gov/search/?searchPhrase=&pageNumber=1&perPage=10&departmentId=-1",
+  "canonicalNote": "canonicalised from https://www.rpvca.gov/search/?searchPhrase=&pageNumber=1&perPage=10&departmentId=-1",
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.palosverdes.com/rpv/",
+    "finalUrl": "https://www.rpvca.gov/search/?searchPhrase=&pageNumber=1&perPage=10&departmentId=-1",
+    "status": 200,
+    "textLen": 6079,
+    "title": "Search • Rancho Palos Verdes, CA • CivicEngage",
+    "verdict": "VERIFIED_MIXED",
+    "why": "both entity markers present (normal for a consolidated city-county such as San Francisco)",
+    "linkLen": 3586,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.rpvca.gov/",
+    "finalUrl": "https://www.rpvca.gov/",
+    "status": 200,
+    "textLen": 6987,
+    "title": "Rancho Palos Verdes, CA - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 10530,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0660018",
+  "place": "Redondo Beach",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.redondo.org"
+   },
+   {
+    "label": "Redondo Beach Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.redondo.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.redondo.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 2364,
+  "storedTitle": "Welcome to Redondo Beach, CA",
+  "recommended": "https://www.redondo.org/",
+  "landingUrl": "https://www.redondo.org/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.redondo.org",
+    "finalUrl": "https://www.redondo.org/",
+    "status": 200,
+    "textLen": 2364,
+    "title": "Welcome to Redondo Beach, CA",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 18091,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0662602",
+  "place": "Rolling Hills",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.rollinghills.org"
+   },
+   {
+    "label": "Rolling Hills Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.rollinghills.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.rollinghills.org",
+  "storedVerdict": "NAME_ONLY",
+  "storedWhy": "names the place but shows no governing body",
+  "storedTextLen": 2474,
+  "storedTitle": "Rolling Hills Community Church - Tualatin, Oregon",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.rollinghills.org",
+    "finalUrl": "https://rollinghills.org/",
+    "status": 200,
+    "textLen": 2474,
+    "title": "Rolling Hills Community Church - Tualatin, Oregon",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 1255,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0662644",
+  "place": "Rolling Hills Estates",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.rollinghillsestates.ca.us"
+   },
+   {
+    "label": "Rolling Hills Estates Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.rollinghillsestates.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.rollinghillsestates.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.rollinghillsestates.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.rollinghillsestates.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.rollinghillsestates.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0662896",
+  "place": "Rosemead",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofrosemead.org"
+   },
+   {
+    "label": "Rosemead Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofrosemead.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityofrosemead.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 4794,
+  "storedTitle": "Rosemead, CA",
+  "recommended": "https://rosemeadca.gov/",
+  "landingUrl": "https://rosemeadca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofrosemead.org",
+    "finalUrl": "https://rosemeadca.gov/",
+    "status": 200,
+    "textLen": 4794,
+    "title": "Rosemead, CA",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 19188,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0666070",
+  "place": "San Dimas",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://cityofsandimas.com"
+   },
+   {
+    "label": "San Dimas Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://cityofsandimas.com"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://cityofsandimas.com",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3383,
+  "storedTitle": "City of San Dimas, CA",
+  "recommended": "https://sandimasca.gov/",
+  "landingUrl": "https://sandimasca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://cityofsandimas.com",
+    "finalUrl": "https://sandimasca.gov/",
+    "status": 200,
+    "textLen": 3383,
+    "title": "City of San Dimas, CA",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 20318,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0666140",
+  "place": "San Fernando",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.san-fernando.ca.us/"
+   },
+   {
+    "label": "San Fernando Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.san-fernando.ca.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.san-fernando.ca.us/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 2805,
+  "storedTitle": "Home | The City of San Fernando, CA",
+  "recommended": "https://www.sanfernando.gov/",
+  "landingUrl": "https://www.sanfernando.gov/Home",
+  "canonicalNote": "canonicalised from https://www.sanfernando.gov/Home",
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.san-fernando.ca.us/",
+    "finalUrl": "https://www.sanfernando.gov/Home",
+    "status": 200,
+    "textLen": 2805,
+    "title": "Home | The City of San Fernando, CA",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 36766,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.sanfernando.gov/",
+    "finalUrl": "https://www.sanfernando.gov/Home",
+    "status": 200,
+    "textLen": 2805,
+    "title": "Home | The City of San Fernando, CA",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 36766,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0667042",
+  "place": "San Gabriel",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.sangabrielcity.com/"
+   },
+   {
+    "label": "San Gabriel Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.sangabrielcity.com/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.sangabrielcity.com/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 4447,
+  "storedTitle": "San Gabriel, CA - Official Website | Official Website",
+  "recommended": "https://www.sangabrielcity.com/",
+  "landingUrl": "https://www.sangabrielcity.com/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.sangabrielcity.com/",
+    "finalUrl": "https://www.sangabrielcity.com/",
+    "status": 200,
+    "textLen": 4447,
+    "title": "San Gabriel, CA - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 5085,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0668224",
+  "place": "San Marino",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofsanmarino.org"
+   },
+   {
+    "label": "San Marino Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofsanmarino.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityofsanmarino.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 18566,
+  "storedTitle": "City Of SanMarino",
+  "recommended": "https://sanmarinoca.gov/",
+  "landingUrl": "https://sanmarinoca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofsanmarino.org",
+    "finalUrl": "https://sanmarinoca.gov/",
+    "status": 200,
+    "textLen": 18566,
+    "title": "City Of SanMarino",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 95309,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0669088",
+  "place": "Santa Clarita",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.santaclarita.com"
+   },
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.santaclarita.com"
+   },
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.santaclarita.com"
+   },
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.santaclarita.com"
+   }
+  ],
+  "rowCount": 4,
+  "stored": "http://www.santaclarita.com",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 5547,
+  "storedTitle": "SantaClarita.com: Santa Clarita, California - SantaClarita.com",
+  "recommended": "https://www.santaclarita.com/",
+  "landingUrl": "https://www.santaclarita.com/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.santaclarita.com",
+    "finalUrl": "https://www.santaclarita.com/",
+    "status": 200,
+    "textLen": 5547,
+    "title": "SantaClarita.com: Santa Clarita, California - SantaClarita.com",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 9407,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0669154",
+  "place": "Santa Fe Springs",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://santafesprings.org"
+   },
+   {
+    "label": "Santa Fe Springs Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://santafesprings.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://santafesprings.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 2470,
+  "storedTitle": "Santa Fe Springs, CA | Official Website",
+  "recommended": "https://www.santafesprings.gov/",
+  "landingUrl": "https://www.santafesprings.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://santafesprings.org",
+    "finalUrl": "https://www.santafesprings.gov/",
+    "status": 200,
+    "textLen": 2470,
+    "title": "Santa Fe Springs, CA | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 7480,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0670000",
+  "place": "Santa Monica",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://pen.ci.santa-monica.ca.us"
+   },
+   {
+    "label": "Santa Monica Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://pen.ci.santa-monica.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://pen.ci.santa-monica.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://pen.ci.santa-monica.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://pen.ci.santa-monica.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://pen.ci.santa-monica.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0671876",
+  "place": "Signal Hill",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofsignalhill.org"
+   },
+   {
+    "label": "Signal Hill Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofsignalhill.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityofsignalhill.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 5619,
+  "storedTitle": "Signal Hill, CA - Official Website | Official Website",
+  "recommended": "https://www.cityofsignalhill.org/",
+  "landingUrl": "https://www.cityofsignalhill.org/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofsignalhill.org",
+    "finalUrl": "https://www.cityofsignalhill.org/",
+    "status": 200,
+    "textLen": 5619,
+    "title": "Signal Hill, CA - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 9454,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0672996",
+  "place": "South El Monte",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.southelmonte.ca.us/"
+   },
+   {
+    "label": "South El Monte Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.southelmonte.ca.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.southelmonte.ca.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.southelmonte.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.southelmonte.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.southelmonte.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0673080",
+  "place": "South Gate",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.sogate.org"
+   },
+   {
+    "label": "South Gate Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.sogate.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.sogate.org",
+  "storedVerdict": "EMPTY",
+  "storedWhy": "only 0 chars of text and 57 of links rendered",
+  "storedTextLen": 0,
+  "storedTitle": "IIS Windows Server",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.sogate.org",
+    "finalUrl": "http://www.sogate.org/",
+    "status": 200,
+    "textLen": 0,
+    "title": "IIS Windows Server",
+    "verdict": "EMPTY",
+    "why": "only 0 chars of text and 57 of links rendered",
+    "linkLen": 57,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0673220",
+  "place": "South Pasadena",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.southpasadena.ca.us"
+   },
+   {
+    "label": "South Pasadena Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.southpasadena.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.southpasadena.ca.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.southpasadena.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.southpasadena.ca.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.southpasadena.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0678148",
+  "place": "Temple City",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.templecity.us"
+   },
+   {
+    "label": "Temple City Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.templecity.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.templecity.us",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 4012,
+  "storedTitle": "Temple City, CA - Official Website | Official Website",
+  "recommended": "https://www.templecityca.gov/",
+  "landingUrl": "https://www.templecityca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.templecity.us",
+    "finalUrl": "https://www.templecityca.gov/",
+    "status": 200,
+    "textLen": 4012,
+    "title": "Temple City, CA - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 3257,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0680000",
+  "place": "Torrance",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.torranceca.gov"
+   },
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.torranceca.gov"
+   },
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.torranceca.gov"
+   },
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.torranceca.gov"
+   },
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.torranceca.gov"
+   },
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.torranceca.gov"
+   },
+   {
+    "label": "Torrance Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.torranceca.gov"
+   }
+  ],
+  "rowCount": 7,
+  "stored": "http://www.torranceca.gov",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 2588,
+  "storedTitle": "Home - City of Torrance",
+  "recommended": "https://www.torranceca.gov/",
+  "landingUrl": "https://www.torranceca.gov/Home",
+  "canonicalNote": "canonicalised from https://www.torranceca.gov/Home",
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.torranceca.gov",
+    "finalUrl": "https://www.torranceca.gov/Home",
+    "status": 200,
+    "textLen": 2588,
+    "title": "Home - City of Torrance",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 20901,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.torranceca.gov/",
+    "finalUrl": "https://www.torranceca.gov/Home",
+    "status": 200,
+    "textLen": 2588,
+    "title": "Home - City of Torrance",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 20901,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0682422",
+  "place": "Vernon",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofvernon.org/"
+   },
+   {
+    "label": "Vernon Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofvernon.org/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityofvernon.org/",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (204 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 204,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofvernon.org/",
+    "finalUrl": "https://www.cityofvernonca.gov/",
+    "status": 403,
+    "textLen": 204,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (204 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0683332",
+  "place": "Walnut",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.walnut.ca.us"
+   },
+   {
+    "label": "Walnut Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.walnut.ca.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.walnut.ca.us",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 2390,
+  "storedTitle": "Home - City of Walnut California",
+  "recommended": "https://www.walnutca.gov/",
+  "landingUrl": "https://www.walnutca.gov/Home",
+  "canonicalNote": "canonicalised from https://www.walnutca.gov/Home",
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.walnut.ca.us",
+    "finalUrl": "https://www.walnutca.gov/Home",
+    "status": 200,
+    "textLen": 2390,
+    "title": "Home - City of Walnut California",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 14710,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.walnutca.gov/",
+    "finalUrl": "https://www.walnutca.gov/Home",
+    "status": 200,
+    "textLen": 2390,
+    "title": "Home - City of Walnut California",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 14710,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0684200",
+  "place": "West Covina",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "District 5",
+    "district_type": "LOCAL",
+    "stored": "http://www.westcovina.org"
+   },
+   {
+    "label": "District 1",
+    "district_type": "LOCAL",
+    "stored": "http://www.westcovina.org"
+   },
+   {
+    "label": "District 2",
+    "district_type": "LOCAL",
+    "stored": "http://www.westcovina.org"
+   },
+   {
+    "label": "District 3",
+    "district_type": "LOCAL",
+    "stored": "http://www.westcovina.org"
+   },
+   {
+    "label": "District 4",
+    "district_type": "LOCAL",
+    "stored": "http://www.westcovina.org"
+   }
+  ],
+  "rowCount": 5,
+  "stored": "http://www.westcovina.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 6547,
+  "storedTitle": "West Covina, CA | Official Website",
+  "recommended": "https://www.westcovina.gov/",
+  "landingUrl": "https://www.westcovina.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.westcovina.org",
+    "finalUrl": "https://www.westcovina.gov/",
+    "status": 200,
+    "textLen": 6547,
+    "title": "West Covina, CA | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 6882,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0684410",
+  "place": "West Hollywood",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.weho.org"
+   },
+   {
+    "label": "West Hollywood Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.weho.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.weho.org",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (208 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 208,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.weho.org",
+    "finalUrl": "https://www.weho.org/",
+    "status": 403,
+    "textLen": 208,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (208 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0684438",
+  "place": "Westlake Village",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.wlv.org"
+   },
+   {
+    "label": "Westlake Village Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.wlv.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.wlv.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3087,
+  "storedTitle": "Westlake Village, CA - Official Website | Official Website",
+  "recommended": "https://www.wlv.org/",
+  "landingUrl": "http://www.wlv.org/",
+  "canonicalNote": "canonicalised from http://www.wlv.org/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.wlv.org",
+    "finalUrl": "http://www.wlv.org/",
+    "status": 200,
+    "textLen": 3087,
+    "title": "Westlake Village, CA - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 8437,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.wlv.org/",
+    "finalUrl": "https://www.wlv.org/",
+    "status": 200,
+    "textLen": 3087,
+    "title": "Westlake Village, CA - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 8437,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0685292",
+  "place": "Whittier",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "At-Large",
+    "district_type": "LOCAL",
+    "stored": "http://www.cityofwhittier.org"
+   },
+   {
+    "label": "Whittier Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofwhittier.org"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.cityofwhittier.org",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (218 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 218,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofwhittier.org",
+    "finalUrl": "https://www.cityofwhittier.org/",
+    "status": 403,
+    "textLen": 218,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (218 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0606000",
+  "place": "Berkeley",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL_EXEC",
+  "types": [
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "Berkeley (Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofberkeley.info"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.cityofberkeley.info",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 4439,
+  "storedTitle": "The City of Berkeley",
+  "recommended": "https://berkeleyca.gov/",
+  "landingUrl": "https://berkeleyca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofberkeley.info",
+    "finalUrl": "https://berkeleyca.gov/",
+    "status": 200,
+    "textLen": 4439,
+    "title": "The City of Berkeley",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 11799,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0619990",
+  "place": "Duarte",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL_EXEC",
+  "types": [
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "Duarte Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.accessduarte.com/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.accessduarte.com/",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (219 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 219,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.accessduarte.com/",
+    "finalUrl": "https://www.cityofduarte.ca.gov/",
+    "status": 403,
+    "textLen": 219,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (219 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0626000",
+  "place": "Fremont",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL_EXEC",
+  "types": [
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "Fremont (Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.fremont.gov"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.fremont.gov",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (209 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 209,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.fremont.gov",
+    "finalUrl": "https://www.fremont.gov/",
+    "status": 403,
+    "textLen": 209,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (209 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0636056",
+  "place": "Huntington Park",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL_EXEC",
+  "types": [
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "Huntington Park Mayor",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.huntingtonpark.org/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.huntingtonpark.org/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 5631,
+  "storedTitle": "The Official Site of Huntington Park, CA! | Official Website",
+  "recommended": "https://hpca.gov/",
+  "landingUrl": "https://hpca.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.huntingtonpark.org/",
+    "finalUrl": "https://hpca.gov/",
+    "status": 200,
+    "textLen": 5631,
+    "title": "The Official Site of Huntington Park, CA! | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 5148,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0644000",
+  "place": "Los Angeles",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL_EXEC",
+  "types": [
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "Los Angeles city",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.la.ca.us/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.ci.la.ca.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.la.ca.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.la.ca.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.la.ca.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "0664000",
+  "place": "Sacramento",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL_EXEC",
+  "types": [
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "Sacramento (Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.cityofsacramento.org"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.cityofsacramento.org",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 5364,
+  "storedTitle": "Home | City of Sacramento",
+  "recommended": "https://www.cityofsacramento.gov/",
+  "landingUrl": "https://www.cityofsacramento.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": true,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.cityofsacramento.org",
+    "finalUrl": "https://www.cityofsacramento.gov/",
+    "status": 200,
+    "textLen": 5364,
+    "title": "Home | City of Sacramento",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 84239,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": [],
+    "stateUnconfirmed": true
+   }
+  ]
+ },
+ {
+  "geo_id": "0666000",
+  "place": "San Diego",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL_EXEC",
+  "types": [
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "San Diego (Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.sandiego.gov/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.sandiego.gov/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3533,
+  "storedTitle": "City of San Diego Official Website",
+  "recommended": "https://www.sandiego.gov/",
+  "landingUrl": "https://www.sandiego.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.sandiego.gov/",
+    "finalUrl": "https://www.sandiego.gov/",
+    "status": 200,
+    "textLen": 3533,
+    "title": "City of San Diego Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 24072,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0667000",
+  "place": "San Francisco",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL_EXEC",
+  "types": [
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "San Francisco (Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.sfgov.org"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.sfgov.org",
+  "storedVerdict": "VERIFIED_MIXED",
+  "storedWhy": "both entity markers present (normal for a consolidated city-county such as San Francisco)",
+  "storedTextLen": 1692,
+  "storedTitle": "SF.gov",
+  "recommended": "https://www.sf.gov/",
+  "landingUrl": "https://www.sf.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.sfgov.org",
+    "finalUrl": "https://www.sf.gov/",
+    "status": 200,
+    "textLen": 1692,
+    "title": "SF.gov",
+    "verdict": "VERIFIED_MIXED",
+    "why": "both entity markers present (normal for a consolidated city-county such as San Francisco)",
+    "linkLen": 13653,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "0668000",
+  "place": "San Jose",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL_EXEC",
+  "types": [
+   "LOCAL_EXEC"
+  ],
+  "state": "ca",
+  "appliesTo": [
+   {
+    "label": "San Jose (Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.sanjoseca.gov"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.sanjoseca.gov",
+  "storedVerdict": "BLOCKED",
+  "storedWhy": "WAF (199 chars) — confirm by hand, do NOT repoint on this",
+  "storedTextLen": 199,
+  "storedTitle": "Access Denied",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 1,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.sanjoseca.gov",
+    "finalUrl": "https://www.sanjoseca.gov/",
+    "status": 403,
+    "textLen": 199,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (199 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   }
+  ]
+ }
+]
