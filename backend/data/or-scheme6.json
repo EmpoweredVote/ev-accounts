@@ -1,0 +1,1224 @@
+[
+ {
+  "geo_id": "41005",
+  "place": "Clackamas",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Clackamas County",
+    "district_type": "COUNTY",
+    "stored": "http://www.clackamas.us"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.clackamas.us",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 2858,
+  "storedTitle": "Home | Clackamas County",
+  "recommended": "https://www.clackamas.us/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 16,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": true,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.clackamas.us",
+    "finalUrl": "https://www.clackamas.us/",
+    "status": 200,
+    "textLen": 2858,
+    "title": "Home | Clackamas County",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 4160,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": [],
+    "stateUnconfirmed": true,
+    "nameAmbiguous": true
+   },
+   {
+    "url": "https://www.clackamascounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clackamascounty.or.gov/"
+   },
+   {
+    "url": "https://www.clackamascountyor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clackamascountyor.gov/"
+   },
+   {
+    "url": "https://www.clackamascounty.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clackamascounty.gov/"
+   },
+   {
+    "url": "https://www.countyofclackamas.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofclackamas.gov/"
+   },
+   {
+    "url": "https://www.countyofclackamasor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofclackamasor.gov/"
+   },
+   {
+    "url": "https://www.clackamas.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clackamas.or.gov/"
+   },
+   {
+    "url": "https://www.clackamascountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clackamascountyoregon.gov/"
+   },
+   {
+    "url": "https://www.clackamascountyoregon.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clackamascountyoregon.org/"
+   },
+   {
+    "url": "https://www.clackamascountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clackamascountyoregon.net/"
+   },
+   {
+    "url": "https://www.clackamascountyoregon.com/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clackamascountyoregon.com/"
+   },
+   {
+    "url": "https://www.clackamascounty.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clackamascounty.org/"
+   },
+   {
+    "url": "https://www.clackamascounty.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clackamascounty.us/"
+   },
+   {
+    "url": "https://www.clackamascounty.com/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/www.clackamascounty.com?utm_source=TDFS_DASLNC&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-daslnc_base&traffic_type=TDFS_DASLNC&traffic_id=daslnc&",
+    "status": 200,
+    "textLen": 233,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (233 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.clackamascounty.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.clackamascounty.net/"
+   },
+   {
+    "url": "https://clackamasgov.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://clackamasgov.org/"
+   },
+   {
+    "url": "https://www.co.clackamas.or.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.co.clackamas.or.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "41011",
+  "place": "Coos",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Coos County",
+    "district_type": "COUNTY",
+    "stored": "http://www.co.coos.or.us/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.co.coos.or.us/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 1676,
+  "storedTitle": "Homepage Coos County",
+  "recommended": "https://co.coos.or.us/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 16,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.co.coos.or.us/",
+    "finalUrl": "https://co.coos.or.us/",
+    "status": 200,
+    "textLen": 1676,
+    "title": "Homepage Coos County",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 18766,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.cooscounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cooscounty.or.gov/"
+   },
+   {
+    "url": "https://www.cooscountyor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://www.cooscountyor.gov/"
+   },
+   {
+    "url": "https://www.cooscounty.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cooscounty.gov/"
+   },
+   {
+    "url": "https://www.countyofcoos.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofcoos.gov/"
+   },
+   {
+    "url": "https://www.countyofcoosor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofcoosor.gov/"
+   },
+   {
+    "url": "https://www.coos.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.coos.or.gov/"
+   },
+   {
+    "url": "https://www.cooscountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cooscountyoregon.gov/"
+   },
+   {
+    "url": "https://www.cooscountyoregon.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cooscountyoregon.org/"
+   },
+   {
+    "url": "https://www.cooscountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cooscountyoregon.net/"
+   },
+   {
+    "url": "https://www.cooscountyoregon.com/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cooscountyoregon.com/"
+   },
+   {
+    "url": "https://www.cooscounty.org/",
+    "finalUrl": "https://www.cooscounty.org/lander",
+    "status": 200,
+    "textLen": 0,
+    "title": "",
+    "verdict": "EMPTY",
+    "why": "only 0 chars of text and 0 of links rendered",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.cooscounty.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cooscounty.us/"
+   },
+   {
+    "url": "https://www.cooscounty.com/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/www.cooscounty.com?utm_source=TDFS_DASLNC&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-daslnc_base&traffic_type=TDFS_DASLNC&traffic_id=daslnc&",
+    "status": 200,
+    "textLen": 228,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (228 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.cooscounty.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cooscounty.net/"
+   },
+   {
+    "url": "https://coosgov.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://coosgov.org/"
+   },
+   {
+    "url": "https://www.co.coos.or.us/",
+    "finalUrl": "https://co.coos.or.us/",
+    "status": 200,
+    "textLen": 1676,
+    "title": "Homepage Coos County",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 18766,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "41041",
+  "place": "Lincoln",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Lincoln County",
+    "district_type": "COUNTY",
+    "stored": "http://www.co.lincoln.or.us/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.co.lincoln.or.us/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 6243,
+  "storedTitle": "Lincoln County, OR | Official Website",
+  "recommended": "https://www.co.lincoln.or.us/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 15,
+  "candidatesSkipped": 1,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "needsHumanRead": true,
+  "rejected": [
+   {
+    "url": "http://www.lincolncountync.gov/",
+    "verdict": "STATE_MISMATCH",
+    "why": "names north carolina, not OR",
+    "title": "County of Lincoln, NC - Official Website | Official Website"
+   }
+  ],
+  "probes": [
+   {
+    "url": "http://www.co.lincoln.or.us/",
+    "finalUrl": "https://www.co.lincoln.or.us/",
+    "status": 200,
+    "textLen": 6243,
+    "title": "Lincoln County, OR | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 4625,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": [],
+    "nameAmbiguous": true
+   },
+   {
+    "url": "https://www.lincolncounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.lincolncounty.or.gov/"
+   },
+   {
+    "url": "https://www.lincolncountyor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.lincolncountyor.gov/"
+   },
+   {
+    "url": "https://www.lincolncounty.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.lincolncounty.gov/"
+   },
+   {
+    "url": "https://www.countyoflincoln.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyoflincoln.gov/"
+   },
+   {
+    "url": "https://www.countyoflincolnor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyoflincolnor.gov/"
+   },
+   {
+    "url": "https://www.lincoln.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.lincoln.or.gov/"
+   },
+   {
+    "url": "https://www.lincolncountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_CONNECTION_RESET at https://www.lincolncountyoregon.gov/"
+   },
+   {
+    "url": "https://www.lincolncountyoregon.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.lincolncountyoregon.org/"
+   },
+   {
+    "url": "https://www.lincolncountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.lincolncountyoregon.net/"
+   },
+   {
+    "url": "https://www.lincolncountyoregon.com/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.lincolncountyoregon.com/"
+   },
+   {
+    "url": "https://www.lincolncounty.org/",
+    "finalUrl": "http://www.lincolncountync.gov/",
+    "status": 200,
+    "textLen": 6986,
+    "title": "County of Lincoln, NC - Official Website | Official Website",
+    "verdict": "STATE_MISMATCH",
+    "why": "names north carolina, not OR",
+    "linkLen": 8392,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": [
+     "north carolina"
+    ]
+   },
+   {
+    "url": "https://www.lincolncounty.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.lincolncounty.us/"
+   },
+   {
+    "url": "https://www.lincolncounty.com/",
+    "finalUrl": "https://lincolncounty.com/",
+    "status": 200,
+    "textLen": 371,
+    "title": "HOME",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 4215,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.lincolncounty.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.lincolncounty.net/"
+   },
+   {
+    "url": "https://lincolngov.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://lincolngov.org/"
+   }
+  ]
+ },
+ {
+  "geo_id": "41045",
+  "place": "Malheur",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Malheur County",
+    "district_type": "COUNTY",
+    "stored": "http://www.malheurco.org/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.malheurco.org/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 8569,
+  "storedTitle": "Malheur County Oregon – Malheur County Official Web Site",
+  "recommended": "https://www.malheurco.org/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 16,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.malheurco.org/",
+    "finalUrl": "https://www.malheurco.org/",
+    "status": 200,
+    "textLen": 8569,
+    "title": "Malheur County Oregon – Malheur County Official Web Site",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 32198,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": [],
+    "nameAmbiguous": true
+   },
+   {
+    "url": "https://www.malheurcounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.malheurcounty.or.gov/"
+   },
+   {
+    "url": "https://www.malheurcountyor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.malheurcountyor.gov/"
+   },
+   {
+    "url": "https://www.malheurcounty.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.malheurcounty.gov/"
+   },
+   {
+    "url": "https://www.countyofmalheur.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofmalheur.gov/"
+   },
+   {
+    "url": "https://www.countyofmalheuror.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofmalheuror.gov/"
+   },
+   {
+    "url": "https://www.malheur.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.malheur.or.gov/"
+   },
+   {
+    "url": "https://www.malheurcountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.malheurcountyoregon.gov/"
+   },
+   {
+    "url": "https://www.malheurcountyoregon.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.malheurcountyoregon.org/"
+   },
+   {
+    "url": "https://www.malheurcountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.malheurcountyoregon.net/"
+   },
+   {
+    "url": "https://www.malheurcountyoregon.com/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.malheurcountyoregon.com/"
+   },
+   {
+    "url": "https://www.malheurcounty.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.malheurcounty.org/"
+   },
+   {
+    "url": "https://www.malheurcounty.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.malheurcounty.us/"
+   },
+   {
+    "url": "https://www.malheurcounty.com/",
+    "finalUrl": "https://forsale.godaddy.com/forsale/www.malheurcounty.com?utm_source=TDFS_DASLNC&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-daslnc_base&traffic_type=TDFS_DASLNC&traffic_id=daslnc&",
+    "status": 200,
+    "textLen": 231,
+    "title": "Access Denied",
+    "verdict": "BLOCKED",
+    "why": "WAF (231 chars) — confirm by hand, do NOT repoint on this",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.malheurcounty.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.malheurcounty.net/"
+   },
+   {
+    "url": "https://malheurgov.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://malheurgov.org/"
+   },
+   {
+    "url": "https://www.co.malheur.or.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.co.malheur.or.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "41047",
+  "place": "Marion",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Marion County",
+    "district_type": "COUNTY",
+    "stored": "http://co.marion.or.us/"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://co.marion.or.us/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 948,
+  "storedTitle": "Marion County Oregon - Home",
+  "recommended": "https://www.co.marion.or.us/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 16,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "needsHumanRead": true,
+  "rejected": [
+   {
+    "url": "https://www.cascadelandandhomes.com/",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "title": "Cascade Land And Homes, Oregon Real Estate, Homes, Land, Recreational and Investment Properties Contact: Robert Tessmer, REALTOR® www.cascad"
+   }
+  ],
+  "probes": [
+   {
+    "url": "http://co.marion.or.us/",
+    "finalUrl": "https://co.marion.or.us/",
+    "status": 200,
+    "textLen": 948,
+    "title": "Marion County Oregon - Home",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 17441,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.marioncounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.marioncounty.or.gov/"
+   },
+   {
+    "url": "https://www.marioncountyor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.marioncountyor.gov/"
+   },
+   {
+    "url": "https://www.marioncounty.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.marioncounty.gov/"
+   },
+   {
+    "url": "https://www.countyofmarion.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofmarion.gov/"
+   },
+   {
+    "url": "https://www.countyofmarionor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofmarionor.gov/"
+   },
+   {
+    "url": "https://www.marion.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.marion.or.gov/"
+   },
+   {
+    "url": "https://www.marioncountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.marioncountyoregon.gov/"
+   },
+   {
+    "url": "https://www.marioncountyoregon.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.marioncountyoregon.org/"
+   },
+   {
+    "url": "https://www.marioncountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.marioncountyoregon.net/"
+   },
+   {
+    "url": "https://www.marioncountyoregon.com/",
+    "finalUrl": "https://www.cascadelandandhomes.com/",
+    "status": 200,
+    "textLen": 14918,
+    "title": "Cascade Land And Homes, Oregon Real Estate, Homes, Land, Recreational and Investment Properties Contact: Robert Tessmer, REALTOR® www.cascad",
+    "verdict": "NOT_GOVERNMENT",
+    "why": "tourism / chamber / directory vocabulary in prose",
+    "linkLen": 46152,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.marioncounty.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "FAIL",
+    "why": "page.goto: net::ERR_SSL_PROTOCOL_ERROR at https://www.marioncounty.org/"
+   },
+   {
+    "url": "https://www.marioncounty.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.marioncounty.us/"
+   },
+   {
+    "url": "https://www.marioncounty.com/",
+    "finalUrl": "https://www.natconet.com/",
+    "status": 200,
+    "textLen": 4491,
+    "title": "Internet & Telecommunications | NATCO Inc. | Flippin, AR | Bull Shoals, AR | Diamond City, AR",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 8483,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.marioncounty.net/",
+    "finalUrl": "https://get.safedomainapp.com/?click_id=91200054169&cid=3306&dkw=marioncounty.net&pid=458117&yid=sdbt&cachecode=wFNJr8pl86%2FlvoPjEcx0DQ%3D%3D&rhi=58d24744-80c2-4546-81ae-b4c73b652409",
+    "status": 200,
+    "textLen": 378,
+    "title": "Safe Domain",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 69,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://mariongov.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://mariongov.org/"
+   },
+   {
+    "url": "https://www.co.marion.or.us/",
+    "finalUrl": "https://www.co.marion.or.us/",
+    "status": 200,
+    "textLen": 948,
+    "title": "Marion County Oregon - Home",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 17457,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": [],
+    "nameAmbiguous": true
+   }
+  ]
+ },
+ {
+  "geo_id": "41051",
+  "place": "Multnomah",
+  "placeSource": "ocd_id",
+  "district_type": "COUNTY",
+  "types": [
+   "COUNTY"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Multnomah County",
+    "district_type": "COUNTY",
+    "stored": "http://www.multco.us"
+   }
+  ],
+  "rowCount": 1,
+  "stored": "http://www.multco.us",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3380,
+  "storedTitle": "Welcome to Multnomah County | Multnomah County",
+  "recommended": "https://multco.us/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 16,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 16,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.multco.us",
+    "finalUrl": "https://multco.us/",
+    "status": 200,
+    "textLen": 3380,
+    "title": "Welcome to Multnomah County | Multnomah County",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 4339,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": [],
+    "nameAmbiguous": true
+   },
+   {
+    "url": "https://www.multnomahcounty.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.multnomahcounty.or.gov/"
+   },
+   {
+    "url": "https://www.multnomahcountyor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.multnomahcountyor.gov/"
+   },
+   {
+    "url": "https://www.multnomahcounty.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.multnomahcounty.gov/"
+   },
+   {
+    "url": "https://www.countyofmultnomah.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofmultnomah.gov/"
+   },
+   {
+    "url": "https://www.countyofmultnomahor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.countyofmultnomahor.gov/"
+   },
+   {
+    "url": "https://www.multnomah.or.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.multnomah.or.gov/"
+   },
+   {
+    "url": "https://www.multnomahcountyoregon.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.multnomahcountyoregon.gov/"
+   },
+   {
+    "url": "https://www.multnomahcountyoregon.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.multnomahcountyoregon.org/"
+   },
+   {
+    "url": "https://www.multnomahcountyoregon.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.multnomahcountyoregon.net/"
+   },
+   {
+    "url": "https://www.multnomahcountyoregon.com/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.multnomahcountyoregon.com/"
+   },
+   {
+    "url": "https://www.multnomahcounty.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.multnomahcounty.org/"
+   },
+   {
+    "url": "https://www.multnomahcounty.us/",
+    "finalUrl": "https://www.multnomahcounty.us/",
+    "status": 401,
+    "textLen": 65,
+    "title": "Pantheon | Site Locked",
+    "verdict": "EMPTY",
+    "why": "only 65 chars of text and 0 of links rendered",
+    "linkLen": 0,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.multnomahcounty.com/",
+    "finalUrl": "https://forsale.dynadot.com/multnomahcounty.com?drefid=2071",
+    "status": 200,
+    "textLen": 574,
+    "title": "For Sale Domain: multnomahcounty.com",
+    "verdict": "UNRELATED",
+    "why": "does not name the place",
+    "linkLen": 1857,
+    "rightFromNavOnly": false,
+    "stateOwn": false,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.multnomahcounty.net/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.multnomahcounty.net/"
+   },
+   {
+    "url": "https://multnomahgov.org/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://multnomahgov.org/"
+   },
+   {
+    "url": "https://www.co.multnomah.or.us/",
+    "finalUrl": "https://multco.us/",
+    "status": 200,
+    "textLen": 3380,
+    "title": "Welcome to Multnomah County | Multnomah County",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 4339,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": [],
+    "nameAmbiguous": true
+   }
+  ]
+ }
+]
