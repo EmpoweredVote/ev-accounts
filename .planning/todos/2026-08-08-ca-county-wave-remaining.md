@@ -20,7 +20,46 @@ Ventura (all six) · Solano (Treasurer/TC/County Clerk → **Denise Dix**) ·
 Melinda Greene; Treasurer-TC-PA → Kimberly A. Tesoro)**. Tulare, Stanislaus, Monterey, Placer and
 Merced need no re-check.
 
-## 🔴🔴 NEXT TASK FOUND: `official_web_url` IS ROTTEN ACROSS ALL 58 CA COUNTIES
+## ✅ CLOSED: `official_web_url` CLASSIFICATION PASS DONE (migration 1667, 2026-08-10)
+
+**45 of 58 CA county URLs repointed; 13 were already correct.** End state, verified post-apply:
+58 rows, **all https**, 0 plain `http`, 0 NULL, 0 `www.w.` typos, **44 now on `.gov`**. The 14
+non-`.gov` rows are each a verified county site where the county genuinely has no `.gov`
+(calaverasgov.us, co.del-norte.ca.us, countyofglenn.net, humboldtgov.org, imperialcounty.org,
+inyocounty.us, kerncounty.com, maderacounty.com, countyofmerced.com, ocgov.com, plumascounty.us,
+smcgov.org, countyofsb.org, stancounty.com).
+
+🔴🔴 **THE HARD PART WAS IDENTITY, NOT LIVENESS — AND TWO AUTOMATED RANKINGS BOTH FAILED, IN
+OPPOSITE DIRECTIONS.** Ranking by government TLD recommended **`sandiego.gov` for San Diego County**
+and **`monterey.gov` for Monterey County** (the CITIES). Correcting that to prefer a hostname
+containing "county" then recommended **`orangecounty.net`** (a visitor guide) and
+**`sanfranciscocounty.us`** (a 611-byte shell) — because "county" in a hostname is exactly what a
+tourism site or squatter has too. **No destination in 1667 was chosen by a ranking function; each was
+read.** The discriminator that works: **a CA county has a BOARD OF SUPERVISORS; a city has a CITY
+COUNCIL.** Migration 1667 carries a gate that fails if any known wrong-entity host is ever stored.
+
+🔴 **THREE DETECTOR FAILURES WORTH REMEMBERING.** (1) A raw-HTML classifier called **Sierra
+NOT_COUNTY** and **Santa Barbara EMPTY** — both correct county sites whose government nav is
+client-rendered. Render before judging. (2) **Headless Chromium is itself blocked** by some WAFs with
+a hard "Access Denied" on every path — Amador, Kern, Kings, Madera, Mendocino, San Benito, Sutter and
+Yolo all returned ~200 bytes to headless while rendering fine in a normal browser profile; those
+eight were confirmed by hand. (3) **Derived hostname patterns miss counties that brand differently**
+— Humboldt is `humboldtgov.org`, which no `<name>county.<tld>` / `countyof<name>.<tld>` pattern
+generates. Assume the candidate list has holes.
+
+🔴 **TWO BARE PLACE-NAME `.gov` HOSTS NEEDED SPECIFIC DISAMBIGUATION** because **Yuba City is in
+SUTTER county**: `yuba.gov` renders "Welcome to Yuba County CALIFORNIA" with a Board of Supervisors,
+`sutter.gov` renders "Sutter County, CA | Home". `tehama.gov` checked the same way. Confirmed, never
+assumed from the name.
+
+**Still open, one row:** 🔴 **Glenn County is the only row whose content could not be verified** —
+`countyofglenn.net` sits behind a Cloudflare interstitial that never cleared in headless *or* a real
+profile. Its 1667 change is **scheme-only** (`http`→`https`, same host, risk-neutral). Re-check it.
+
+**Still to do: the other states.** These URLs all came from the same migration-1619 import, so the
+same rot is expected outside CA. The tooling is reusable — see `1667`'s header for the method.
+
+## (historical) `official_web_url` IS ROTTEN ACROSS ALL 58 CA COUNTIES
 
 Sonoma's stored county URL turned out to redirect to **winecountry.com**, a commercial tourism
 site. That prompted a sweep of all 58 CA county districts (`district_type='COUNTY'`, `state='ca'`):
