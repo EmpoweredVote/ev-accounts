@@ -1,9 +1,9 @@
 # CA county wave — remaining work (as of 2026-08-10)
 
-Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650, 1652, 1656, 1658, 1660, 1662 (seeds), 1635 (LA
-repair), 1646 (Sierra URL). **22 counties, 111 seats, 25.44M residents.** LA repaired. San Francisco
-confirmed already complete. (Corpus-wide that is 23 CA county districts / 114 offices / 114 seated —
-the extra county is LA, seeded before this wave and only repaired by it.)
+Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650, 1652, 1656, 1658, 1660, 1662, 1663 (seeds),
+1635 (LA repair), 1646 (Sierra URL). **23 counties, 116 seats, 25.70M residents.** LA repaired. San
+Francisco confirmed already complete. (Corpus-wide that is 24 CA county districts / 119 offices /
+119 seated — the extra county is LA, seeded before this wave and only repaired by it.)
 
 ## 🔴🔴 JANUARY 2027 RE-CHECK QUEUE (build this into the Jan-2027 pass)
 
@@ -679,10 +679,63 @@ sole), Cano 63.53% over two challengers (a primary majority, no runoff). Fifth s
 **Superintendent excluded** as always — but note Brescia did NOT run and **Joe Koski** won it
 unopposed, so that seat *does* turn over; never take Brescia off the ballot-directory page.
 
-## Then: 2 more counties to reach the 93.4% target
+## ✅ Santa Cruz — SEEDED (migration 1663). 5 offices; FOUR APPOINTEES, DATED TO THE MINUTE.
 
-By population: Santa Cruz, Marin (+ San Francisco already done, which displaces Marin from the
-top 25).
+## Santa Cruz County (06087, pop 261,547) — DONE
+
+`santacruzcountyca.gov` answers plain curl. Stored `co.santa-cruz.ca.us` 301s there (stale, not dead).
+
+| Title (certified ballot / ACFR) | Holder | Occupancy start | Precision |
+|---|---|---|---|
+| Assessor-Recorder | Sheri Thomas | 2023-01-01 | month |
+| Auditor-Controller-Treasurer-Tax Collector | Laura Bowers | 2025-07-03 (appointed) | day |
+| County Clerk | Tricia Webber | 2020-12-30 (appointed) | day |
+| District Attorney-Public Administrator | Jeffrey S. Rosell | 2014-11-18 (appointed) | day |
+| Sheriff-Coroner | Christopher Clark | 2024-12-06 (appointed) | day |
+
+🔴🔴 **THE BOARD ACTION DATE IS NOT THE START DATE — AND THIS COUNTY PROVES IT IN WRITING.** Santa
+Cruz writes the effective moment into the recommended action: *"effective 5:00 pm on July 3, 2025"*,
+*"effective 5:00 pm on December 6, 2024"*, *"effective 5:00 p.m. on December 30, 2020"*. Clark's
+appointment was **approved 2024-08-27 and took effect 2024-12-06** — over three months apart.
+Seeding from the meeting date would be wrong for three of the four appointees. Always read the item,
+not the agenda line.
+
+🔴🔴 **THREE MINUTES PORTALS, ONE PER ERA — AND ALL THREE WERE NEEDED.**
+- **2025→**: PrimeGov. `…primegov.com/api/v2/PublicPortal/ListArchivedMeetings?year=YYYY` → JSON with
+  a documentList; fetch via **`/Public/CompiledDocument?compiledMeetingDocumentFileId=<id>`**
+  (`meetingTemplateId` answers "Document Not Found"; `/Portal/viewer` is an Accusoft JS shell).
+- **Feb 2016 – Dec 2024**: IQM2. `…iqm2.com/Citizens/Calendar.aspx?From=1/1/YYYY&To=12/31/YYYY`,
+  then `Detail_Meeting.aspx?ID=<n>` (every item + vote result), memos at
+  `FileOpen.aspx?Type=30&ID=<n>&MeetingID=<n>`.
+- **1997 – Jan 2016**: GovStream. 🔴 **Its agenda PDFs are IMAGE SCANS with no text layer** — a grep
+  returns a clean-looking negative. Use `ASP/Display/SCCB_MinutesDisplayWeb.asp?MeetingID=<n>`,
+  which serves the same meeting as real HTML. Rosell's 2014 appointment was only there.
+
+🔴🔴 **THIS COUNTY'S ACFR DIRECTORY IS AS-OF-PUBLICATION, THE EXACT OPPOSITE OF SOLANO'S.** The
+FY2024-25 ACFR (year ended 2025-06-30) lists **Bowers**, who took office 2025-07-03. Solano's (1650)
+was captioned "June 30, 2025", published February 2026, and pictured a sheriff who had already
+retired. **So the rule is not "ACFRs are stale" or "ACFRs are current" — it is: find what the
+document says it is AS OF, and where it says nothing, trust it for neither.** Santa Cruz's carries no
+as-of line at all; it was checked against the department sites and the Board record instead.
+
+🔴 **A COUNTY'S OWN HISTORICAL ROSTER ROUNDED A DATE INTO THE WRONG YEAR.** The Clerk's "Santa Cruz
+County Clerks from 1850 to Present" prints "Tricia Webber 2021 –"; the Board memo says effective
+**5:00 p.m. December 30, 2020**. A dated Board action beats a list that prints only a year.
+
+🔴 **AB 759, thirteenth county — the Board REASONS from it in a memo:** *"A recent change to State law
+reflected in Elections Code Section 1300 establishes that Sheriff Hart's current term lasts until
+January 8, 2029."* The ACFR run records the county learning this: FY2023 and FY2024 print the
+Sheriff-Coroner term ending January 2027, FY2025 prints January 2029.
+
+**Tenth distinct office set:** Recorder rides with the Assessor, and the **County Clerk stands alone**
+(the Clerk's own page: combined with Recorder 1961, with Treasurer-Tax Collector 1994, "Separate
+County Clerk Office created again in July 2004"). **No January 2027 turnover** — Thomas 98.61%,
+Bowers 98.61%, Webber 98.81%, all against write-ins only; sixth such county. Superintendent (Faris M.
+Sabbah, 97.81%) excluded as always.
+
+## Then: 1 more county to reach the 93.4% target
+
+Marin (+ San Francisco already done, which displaces Marin from the top 25).
 
 ## Adjacent defects found, not fixed
 
