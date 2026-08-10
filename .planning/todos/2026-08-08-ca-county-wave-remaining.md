@@ -82,6 +82,29 @@ next election for that office shall occur at the 2028 presidential primary."*
   `ev_api`). Dry-run first: `sed 's/^COMMIT;/ROLLBACK;/'` into a temp file, run it, then CONFIRM the
   rollback actually reverted before applying for real.
 - 🔴 `cd /c/EV-Accounts/backend &&` in the SAME command — cwd resets between Bash calls.
+- **HTML→text helper.** Every county in this wave needed one. 🔴 On Windows Python defaults stdout to
+  **cp1252**, so the script dies with `UnicodeEncodeError` on the first BOM, curly quote or `§` —
+  which on a sweep looks like the page having no content. Start it with the reconfigure line:
+
+  ```python
+  import re, sys, html
+  sys.stdout.reconfigure(encoding='utf-8', errors='replace')            # 🔴 required on Windows
+  s = open(sys.argv[1], encoding='utf-8-sig', errors='replace').read()  # -sig eats the BOM
+  s = re.sub(r'(?is)<(script|style)[^>]*>.*?</\1>', ' ', s)
+  s = re.sub(r'(?is)<br\s*/?>|</p>|</div>|</li>|</h[1-6]>|</td>|</tr>', '\n', s)
+  s = re.sub(r'(?s)<[^>]+>', ' ', s)
+  s = html.unescape(s)
+  s = re.sub(r'[ \t\xa0]+', ' ', s); s = re.sub(r'\n\s*\n+', '\n', s)
+  print(s.strip())
+  ```
+
+  Verified 2026-08-10 against a fixture with a BOM, a curly apostrophe, `§` and both `&nbsp;` and a
+  UTF-8 non-breaking space: exits 0, drops `<script>`, collapses nbsp to a plain space. Use
+  `utf-8-sig`, not `utf-8` — a surviving BOM silently breaks a `^`-anchored grep on the first line.
+
+  Then pipe through `tr -d '\000' | grep -a` — see the two silent-false-negative modes under Santa
+  Cruz. `pdftotext -layout` needs the same care: **confirm it produced text at all** before trusting
+  an empty grep, because scanned PDFs return nothing and look like a clean miss.
 
 ## Retrieval technique for bot-walled county sites
 
