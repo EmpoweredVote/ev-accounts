@@ -1,8 +1,8 @@
 # CA county wave — remaining work (as of 2026-08-10)
 
-Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650, 1652, 1656 (seeds), 1635 (LA repair),
-1646 (Sierra URL). **19 counties, 95 seats, 24.44M residents.** LA repaired. San Francisco
-confirmed already complete. (Corpus-wide that is 20 CA county districts / 98 offices / 98 seated —
+Shipped: 1629-1631, 1633, 1637-1639, 1641-1645, 1650, 1652, 1656, 1658 (seeds), 1635 (LA repair),
+1646 (Sierra URL). **20 counties, 101 seats, 24.87M residents.** LA repaired. San Francisco
+confirmed already complete. (Corpus-wide that is 21 CA county districts / 104 offices / 104 seated —
 the extra county is LA, seeded before this wave and only repaired by it.)
 
 ## 🔴🔴 JANUARY 2027 RE-CHECK QUEUE (build this into the Jan-2027 pass)
@@ -514,9 +514,56 @@ it → statutory month.** Camacho's is nailed by BoS File **APP 22-234** (meetin
 
 **Monterey needs NO January 2027 re-check** — all three June winners are already the seated holders.
 
-## Then: 6 more counties to reach the 93.4% target
+## ✅ Placer — SEEDED (migration 1658). 6 offices, including a MARSHAL; 3 of 6 are appointees.
 
-By population: Placer, Merced, San Luis Obispo,
+## Placer County (06061, pop 423,561) — DONE
+
+`placer.ca.gov` answers plain curl. `placercountyelections.gov` 403s curl, renders in Playwright.
+
+| Title | Holder | Occupancy start | Precision |
+|---|---|---|---|
+| Assessor | Matthew R. Maynard | Jan 2023 | month |
+| Auditor-Controller | Andrew C. Sisk | 2012 | year (`how_started` NULL) |
+| Clerk-Recorder-Registrar of Voters | Ryan Ronco | May 2016 (appointed) | month |
+| District Attorney | Morgan Gire | Apr 2020 (appointed) | month |
+| Sheriff-Coroner-Marshal | Wayne Woo | 2022-07-26 (appointed) | day |
+| Treasurer-Tax Collector | Tristan Butcher | Jan 2023 | month |
+
+🔴 **THE ACFR TRICK FAILED FOR THE THIRD COUNTY RUNNING** (Santa Barbara, Monterey by absence,
+Placer) — 12 MB report, introductory section is a transmittal letter only. **Read the TOC first.**
+
+🔴 **A MARSHAL — eighth distinct office set.** Placer's is the *Sheriff-Coroner-Marshal*, per the
+county staff directory and the Board's own appointment action.
+
+🔴 **THREE OF SIX REACHED OFFICE BY MID-TERM APPOINTMENT** (Woo 2022, Gire 2020, Ronco 2016), each
+later elected. Seating Woo from his election would be six months late; Gire and Ronco years late.
+
+🔴 **WOO'S OWN COUNTY BIO OMITS THE APPOINTMENT** — it says only "He was elected Sheriff of Placer
+County in 2022". The real start is in the **Board of Supervisors agenda for 2022-07-26, item 1.A**:
+"Appoint Undersheriff Wayne Woo … to serve the remainder of Sheriff Devon Bell's current unexpired
+term which ends January 2, 2023. If approved by the Board, the appointment would take effect
+immediately." **Board agendas are searchable HTML on placer.ca.gov/DocumentCenter** — a cheap
+primary channel, like Monterey's Legistar.
+
+🔴🔴 **A COUNTY RELEASE SPELLED OUT WHY AN OATH DATE IS NOT A START DATE.** "Seven elected officials
+take oath of office" (2023-01-10): *"Today's ceremonial swearing-in was preceded by the
+administration of an official oath of office for each elected representative that was conducted
+prior to the end of 2022."* Three candidate dates — a late-2022 official oath, the statutory
+2023-01-02 term start, and a 2023-01-10 ceremony — and none is the ceremony. **Month precision on
+January 2023 is the only honest encoding.** Vindicates the Solano/Zook caution (1650).
+
+🔴 **`how_started` IS NULLABLE AND NULL IS THE HONEST VALUE WHEN NOTHING ESTABLISHES IT.** Sisk's
+directory entry says only "has served as Auditor-Controller since 2012"; nothing read says elected
+or appointed, so the row carries NULL rather than defaulting to 'elected'. (The corpus already has
+NULL rows.)
+
+**AB 759, tenth county.** Superintendent (Gayle Garbolino-Mojica, 98.01%) excluded as always.
+**No January 2027 turnover** — all four incumbents re-elected effectively unopposed. Third such
+county after Tulare and Monterey.
+
+## Then: 5 more counties to reach the 93.4% target
+
+By population: Merced, San Luis Obispo,
 Santa Cruz, Marin (+ San Francisco already done, which displaces Marin from the top 25).
 
 ## Adjacent defects found, not fixed
