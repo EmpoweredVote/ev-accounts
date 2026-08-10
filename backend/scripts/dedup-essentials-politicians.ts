@@ -18,10 +18,20 @@
  *      - Tiebreaker: earliest created_at
  *   3. Re-routes all FK references from spare rows to the canonical row.
  *   4. Deletes spare rows.
+ *
+ * Campaign finance (migration 1668 onwards):
+ *   transparent_motivations.politician_sources.essentials_politician_id has a
+ *   FOREIGN KEY ... ON DELETE RESTRICT, so every source row must be detached before the spare
+ *   politician can be deleted. This script already did that; what it did NOT do was look after
+ *   the data hanging off a source row it dropped. Nothing references politician_sources by FK,
+ *   so deleting a row that the canonical already had an equivalent of silently orphaned its
+ *   contributions — the same defect migrations 1668/1669 cleaned up one level higher. Those rows
+ *   are now folded into the canonical's twin source instead of being dropped on the floor.
  */
 
 import 'dotenv/config';
 import { Pool, PoolClient } from 'pg';
+import { refreshSummaryAggForSource } from '../src/lib/campaignFinanceService.js';
 
 if (!process.env.DATABASE_URL) {
   console.error('ERROR: DATABASE_URL is not set');
@@ -140,6 +150,10 @@ interface RerouteResult {
   experiencesRerouted: number;
   sourcesRerouted: number;
   sourcesDeleted: number;
+  contributionsMoved: number;
+  ingestArtefactsMoved: number;
+  /** Canonical source ids that received contributions and need their agg recomputed post-commit. */
+  aggRefreshTargets: string[];
   // Additional FK tables discovered during execution
   addressesRerouted: number;
   identifiersRerouted: number;
@@ -194,6 +208,9 @@ async function rerouteFKsForSpare(
     experiencesRerouted: 0,
     sourcesRerouted: 0,
     sourcesDeleted: 0,
+    contributionsMoved: 0,
+    ingestArtefactsMoved: 0,
+    aggRefreshTargets: [],
     addressesRerouted: 0,
     identifiersRerouted: 0,
     committeesRerouted: 0,
@@ -307,10 +324,16 @@ async function rerouteFKsForSpare(
   );
   result.idBridgeRerouted = bridgeR;
 
-  // politician_sources — unique constraint on (essentials_politician_id, source_system, external_id)
+  // politician_sources — unique constraint on (essentials_politician_id, source_system, external_id).
+  // Every one of the spare's source rows MUST be moved or deleted here: since migration 1668 the
+  // column carries a FOREIGN KEY ... ON DELETE RESTRICT, so the politician delete below fails if
+  // any source is left pointing at the spare. That is the intended behaviour — it is what stops a
+  // merge from silently stranding a politician's finance data.
+  //
   // Multi-committee support: check each spare source row individually.
-  // If canonical already has the same (source_system, external_id) pair → delete (true duplicate).
-  // If the pair is distinct (different committee) → reroute to canonical.
+  //   canonical already has the same (source_system, external_id) → same committee, fold the spare
+  //     into the canonical row: MOVE its data across, then drop the now-empty row.
+  //   pair is distinct (different committee) → reroute the row itself to canonical.
   await client.query('SAVEPOINT sp_sources');
   try {
     const spareSourcesRes = await client.query(
@@ -325,20 +348,79 @@ async function rerouteFKsForSpare(
     let reroutedCount = 0;
 
     for (const src of spareSourcesRes.rows) {
-      const exists = await client.query(
-        `SELECT 1 FROM transparent_motivations.politician_sources
-         WHERE essentials_politician_id = $1 AND source_system = $2 AND external_id = $3`,
+      const twin = await client.query<{ id: string }>(
+        `SELECT id FROM transparent_motivations.politician_sources
+         WHERE essentials_politician_id = $1 AND source_system = $2 AND external_id = $3
+         LIMIT 1`,
         [canonicalId, src.source_system, src.external_id]
       );
-      if ((exists.rowCount ?? 0) > 0) {
-        // True duplicate: canonical already has this (source_system, external_id) — delete spare's row
+
+      if ((twin.rowCount ?? 0) > 0) {
+        const canonicalSourceId = twin.rows[0].id;
+
+        // Nothing references politician_sources by FK, so deleting this row would NOT raise —
+        // it would silently orphan every contribution hanging off it. Move the data first.
+        //
+        // contributions is unique on (data_source, source_transaction_id), which does not include
+        // politician_source_id, so the same transaction cannot already exist under the canonical
+        // source and this UPDATE cannot conflict.
+        const movedContribs = await client.query(
+          `UPDATE transparent_motivations.contributions
+           SET politician_source_id = $1 WHERE politician_source_id = $2`,
+          [canonicalSourceId, src.id]
+        );
+        result.contributionsMoved += movedContribs.rowCount ?? 0;
+        if ((movedContribs.rowCount ?? 0) > 0 && !result.aggRefreshTargets.includes(canonicalSourceId)) {
+          result.aggRefreshTargets.push(canonicalSourceId);
+        }
+
+        // ingestion_runs and committees are keyed by their own id — a plain move is safe.
+        const movedRuns = await client.query(
+          `UPDATE transparent_motivations.ingestion_runs
+           SET politician_source_id = $1 WHERE politician_source_id = $2`,
+          [canonicalSourceId, src.id]
+        );
+        const movedCommittees = await client.query(
+          `UPDATE transparent_motivations.committees
+           SET politician_source_id = $1 WHERE politician_source_id = $2`,
+          [canonicalSourceId, src.id]
+        );
+        result.ingestArtefactsMoved += (movedRuns.rowCount ?? 0) + (movedCommittees.rowCount ?? 0);
+
+        // fec_ingest_window_progress is keyed by
+        // (politician_source_id, election_cycle, committee_id, window_start, window_end), so the
+        // canonical source may already have covered the same window. It is a resumability
+        // bookmark, not data: on collision the spare's row is redundant and gets dropped.
+        const [movedWindows] = await updateOrDelete(
+          client, `sp_windows_${deletedCount}`,
+          `UPDATE transparent_motivations.fec_ingest_window_progress
+           SET politician_source_id = $1 WHERE politician_source_id = $2`,
+          `DELETE FROM transparent_motivations.fec_ingest_window_progress WHERE politician_source_id = $1`,
+          [canonicalSourceId, src.id]
+        );
+        result.ingestArtefactsMoved += movedWindows;
+
+        // contribution_summary_agg is a derived cache keyed by (politician_source_id,
+        // election_cycle) — never move it, it is recomputed from the contributions we just moved.
+        // Drop BOTH sides: the spare's rows are dead, and the canonical's are now stale because
+        // they predate the contributions we just folded in. Deleting rather than leaving them
+        // stale is what makes the post-commit refresh optional — getSummary falls back to a live
+        // scan for any cycle with no agg row, so a failed refresh costs speed, never accuracy.
+        // Leaving them in place would quietly undercount the profile instead.
+        await client.query(
+          `DELETE FROM transparent_motivations.contribution_summary_agg
+           WHERE politician_source_id = ANY($1::uuid[])`,
+          [[src.id, canonicalSourceId]]
+        );
+
         await client.query(
           `DELETE FROM transparent_motivations.politician_sources WHERE id = $1`,
           [src.id]
         );
         deletedCount++;
       } else {
-        // Distinct committee: reroute spare's source row to canonical
+        // Distinct committee: reroute spare's source row to canonical. Contributions ride along
+        // untouched — they reference the source row, which keeps its id.
         await client.query(
           `UPDATE transparent_motivations.politician_sources SET essentials_politician_id = $1 WHERE id = $2`,
           [canonicalId, src.id]
@@ -352,6 +434,20 @@ async function rerouteFKsForSpare(
   } catch (err: any) {
     await client.query('ROLLBACK TO SAVEPOINT sp_sources');
     throw err;
+  }
+
+  // Belt and braces: prove no source still points at the spare before deleting it. Without this
+  // the FK would reject the delete with a bare constraint error naming neither politician.
+  const leftover = await client.query<{ cnt: string }>(
+    `SELECT COUNT(*) AS cnt FROM transparent_motivations.politician_sources
+     WHERE essentials_politician_id = $1`,
+    [spareId]
+  );
+  if (Number(leftover.rows[0].cnt) > 0) {
+    throw new Error(
+      `refusing to delete politician ${spareId}: ${leftover.rows[0].cnt} politician_sources row(s) ` +
+      `still reference it (FK politician_sources_essentials_politician_id_fkey would block this)`
+    );
   }
 
   // Delete the spare politician
@@ -376,7 +472,10 @@ async function printDryRunGroup(
     const spareSync = spare.last_synced ? spare.last_synced.toISOString().slice(0, 10) : 'never';
     console.log(`  Spare:     ${spare.id} (score=${spare.score}, source=${spare.has_source}, office=${spare.has_office}, photo=${spare.has_photo}, last_synced=${spareSync})`);
     console.log(`    Would reroute: offices, politician_contacts, politician_images, degrees, experiences`);
-    console.log(`    Would reroute politician_sources (or DELETE if canonical already has same source_system)`);
+    console.log(`    Would reroute politician_sources; where canonical already holds the same`);
+    console.log(`      (source_system, external_id), would MOVE that row's contributions,`);
+    console.log(`      ingestion_runs, committees and window bookmarks onto the canonical source`);
+    console.log(`      first, then drop the emptied row and recompute its summary agg`);
     console.log(`    Would DELETE essentials.politicians WHERE id = '${spare.id}'`);
   }
 }
@@ -397,6 +496,8 @@ async function main() {
     experiencesRerouted: 0,
     sourcesRerouted: 0,
     sourcesDeleted: 0,
+    contributionsMoved: 0,
+    ingestArtefactsMoved: 0,
     addressesRerouted: 0,
     identifiersRerouted: 0,
     committeesRerouted: 0,
@@ -427,6 +528,7 @@ async function main() {
       }
 
       // Execute mode: use a transaction per group
+      const aggRefreshTargets = new Set<string>();
       const client = await pool.connect();
       try {
         await client.query('BEGIN');
@@ -437,8 +539,11 @@ async function main() {
         for (const spare of spares) {
           console.log(`  Rerouting spare: ${spare.id}`);
           const rerouteResult = await rerouteFKsForSpare(client, canonical.id, spare.id);
-          console.log(`    offices=${rerouteResult.officesRerouted}, contacts=${rerouteResult.contactsRerouted}, images=${rerouteResult.imagesRerouted}, degrees=${rerouteResult.degreesRerouted}, experiences=${rerouteResult.experiencesRerouted}, sources_rerouted=${rerouteResult.sourcesRerouted}, sources_deleted=${rerouteResult.sourcesDeleted}`);
+          console.log(`    offices=${rerouteResult.officesRerouted}, contacts=${rerouteResult.contactsRerouted}, images=${rerouteResult.imagesRerouted}, degrees=${rerouteResult.degreesRerouted}, experiences=${rerouteResult.experiencesRerouted}, sources_rerouted=${rerouteResult.sourcesRerouted}, sources_folded=${rerouteResult.sourcesDeleted}, contributions_moved=${rerouteResult.contributionsMoved}, ingest_artefacts_moved=${rerouteResult.ingestArtefactsMoved}`);
 
+          for (const target of rerouteResult.aggRefreshTargets) aggRefreshTargets.add(target);
+          summary.contributionsMoved += rerouteResult.contributionsMoved;
+          summary.ingestArtefactsMoved += rerouteResult.ingestArtefactsMoved;
           summary.officesRerouted += rerouteResult.officesRerouted;
           summary.contactsRerouted += rerouteResult.contactsRerouted;
           summary.imagesRerouted += rerouteResult.imagesRerouted;
@@ -466,6 +571,24 @@ async function main() {
       } finally {
         client.release();
       }
+
+      // Post-commit: recompute the agg for any canonical source that absorbed contributions.
+      // Deliberately outside the transaction — refreshSummaryAggForSource uses the service pool,
+      // and it must read committed data. A failure here is not fatal: the agg rows for the moved
+      // cycles were deleted, so getSummary falls back to a live scan and still reports correctly.
+      for (const sourceId of aggRefreshTargets) {
+        try {
+          await refreshSummaryAggForSource(sourceId);
+          console.log(`  Refreshed summary agg for source ${sourceId}.`);
+        } catch (err) {
+          console.warn(
+            `  WARN: agg refresh failed for source ${sourceId}. Totals stay CORRECT — the stale agg ` +
+            `rows were deleted in the transaction, so getSummary serves this source by live scan. ` +
+            `Re-run scripts/030-backfill-summary-agg.ts to restore the cache and the fast path.`,
+            err instanceof Error ? err.message : String(err)
+          );
+        }
+      }
     }
 
     const durationMs = Date.now() - startMs;
@@ -482,7 +605,9 @@ async function main() {
     console.log(`Degrees rerouted:      ${summary.degreesRerouted}`);
     console.log(`Experiences rerouted:  ${summary.experiencesRerouted}`);
     console.log(`Sources rerouted:      ${summary.sourcesRerouted}`);
-    console.log(`Sources deleted (conflict): ${summary.sourcesDeleted}`);
+    console.log(`Sources folded into canonical twin: ${summary.sourcesDeleted}`);
+    console.log(`Contributions moved:   ${summary.contributionsMoved}`);
+    console.log(`Ingest artefacts moved: ${summary.ingestArtefactsMoved}`);
     console.log(`Addresses rerouted:    ${summary.addressesRerouted}`);
     console.log(`Identifiers rerouted:  ${summary.identifiersRerouted}`);
     console.log(`Committees rerouted:   ${summary.committeesRerouted}`);
