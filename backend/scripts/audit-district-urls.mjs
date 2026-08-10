@@ -105,6 +105,8 @@ const LIMIT = parseInt(arg('limit', '0'), 10) || 0;
 const JSON_OUT = arg('json');
 const NO_CAND = argv.includes('--no-candidates');
 const PLAN_ONLY = argv.includes('--plan-only');
+// Re-run just the units a previous pass left unresolved, without re-rendering the ones it settled.
+const GEO = (arg('geo') || '').split(',').map(s => s.trim()).filter(Boolean);
 const CONC = parseInt(arg('concurrency', '4'), 10) || 4;
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36';
@@ -134,7 +136,61 @@ const ENTITY_RULES = {
 ENTITY_RULES.LOCAL_EXEC = ENTITY_RULES.LOCAL;
 
 // Non-government lookalikes seen on real rows. Not exhaustive; these are the ones already caught.
-const NONGOV = /\b(visitor|visit |tourism|travel guide|things to do|lodging|winery|wineries|chamber of commerce|business directory|real estate listings|book your stay|vacation rental)\b/i;
+const NONGOV = /\b(visitor|visit |tourism|travel guide|things to do|lodging|winery|wineries|chamber of commerce|business directory|real estate listings|book your stay|vacation rental|domain (is )?for sale|buy this domain)\b/i;
+
+// 🔴🔴 COUNTY AND CITY NAMES REPEAT ACROSS STATES, AND THE NAME TEST CANNOT SEE THE DIFFERENCE.
+// Probing Grant County OREGON, this script recommended `https://www.in.gov/counties/grant/` — Grant
+// County INDIANA. The page names "Grant" and shows "County Commissioners", so every marker passed.
+// 33 states have a Washington County; Oregon, Indiana, Kentucky, Wisconsin, Arkansas, Kansas,
+// Minnesota, Nebraska, New Mexico, North Dakota, Oklahoma, South Dakota, West Virginia and
+// Washington all have a Grant County. A destination must therefore be placed in the RIGHT STATE, and
+// naming a different state is a hard rejection, not a caveat.
+const STATE_FULL_NAMES = {
+  alabama: 'al', alaska: 'ak', arizona: 'az', arkansas: 'ar', california: 'ca', colorado: 'co',
+  connecticut: 'ct', delaware: 'de', florida: 'fl', georgia: 'ga', hawaii: 'hi', idaho: 'id',
+  illinois: 'il', indiana: 'in', iowa: 'ia', kansas: 'ks', kentucky: 'ky', louisiana: 'la',
+  maine: 'me', maryland: 'md', massachusetts: 'ma', michigan: 'mi', minnesota: 'mn',
+  mississippi: 'ms', missouri: 'mo', montana: 'mt', nebraska: 'ne', nevada: 'nv',
+  'new hampshire': 'nh', 'new jersey': 'nj', 'new mexico': 'nm', 'new york': 'ny',
+  'north carolina': 'nc', 'north dakota': 'nd', ohio: 'oh', oklahoma: 'ok', oregon: 'or',
+  pennsylvania: 'pa', 'rhode island': 'ri', 'south carolina': 'sc', 'south dakota': 'sd',
+  tennessee: 'tn', texas: 'tx', utah: 'ut', vermont: 'vt', virginia: 'va', washington: 'wa',
+  'west virginia': 'wv', wisconsin: 'wi', wyoming: 'wy',
+};
+
+/**
+ * Which states does this page/host place itself in? Returns { own, others }.
+ * `own` is true if our state is named or the host sits in its namespace; `others` lists other
+ * states positively named. "Washington" is skipped as a bare word when it could be the place name
+ * itself — it is a county in 33 states and a city everywhere.
+ */
+function stateEvidence(hay, url, st, place) {
+  let host = '';
+  try { host = new URL(url).host.toLowerCase(); } catch { /* keep '' */ }
+  const full = Object.keys(STATE_FULL_NAMES).find(k => STATE_FULL_NAMES[k] === st) || '';
+  const placeLc = String(place || '').toLowerCase();
+  let own = false;
+  if (host) {
+    const bare = full.replace(/\s+/g, '');
+    if (new RegExp(`\\.${st}\\.(gov|us)$`).test(host)) own = true;
+    else if (bare && host.includes(bare)) own = true;
+    else if (new RegExp(`(county|city)${st}\\.`).test(host)) own = true;
+  }
+  if (!own && full) {
+    const esc = full.replace(/\s+/g, '\\s+');
+    if (new RegExp(`\\b${esc}\\b`, 'i').test(hay)) own = true;
+    if (new RegExp(`,\\s*${st}\\b`, 'i').test(hay)) own = true;          // "Bend, OR"
+  }
+  const others = [];
+  for (const [name, abbr] of Object.entries(STATE_FULL_NAMES)) {
+    if (abbr === st) continue;
+    if (placeLc && name.includes(placeLc)) continue;                     // the place IS a state name
+    const esc = name.replace(/\s+/g, '\\s+');
+    if (new RegExp(`\\bstate of ${esc}\\b|\\b${esc}\\.gov\\b|\\b${esc} (county|state) (government|of)\\b`, 'i').test(hay)) others.push(name);
+    else if (new RegExp(`\\.${abbr}\\.gov\\b`, 'i').test(host) || new RegExp(`^(www\\.)?${abbr}\\.gov$`, 'i').test(host)) others.push(name);
+  }
+  return { own, others: [...new Set(others)] };
+}
 const SPAM = /\b(gacor|slot|judi|togel|casino|bandar|maxwin|situs|toto|pkv|rtp live|winrate|jackpot|viagra|cialis|escort|bokep)\b/i;
 const WAFTITLE = /just a moment|attention required|access denied|request rejected|cloudflare|incapsula|pardon our interruption|unusual traffic|are you a robot/i;
 
@@ -202,24 +258,44 @@ function buildUnits(rows) {
   }).sort((a, b) => a.district_type.localeCompare(b.district_type) || a.geo_id.localeCompare(b.geo_id));
 }
 
-function candidatesFor(place, type) {
+// 🔴 Some jurisdictions brand with the state SPELLED OUT, and no `<name>county<abbr>` pattern ever
+// reaches them. Two are already sitting in this corpus — `wheelercountyoregon.gov` and
+// `morrowcountyoregon.com` — and Grant County OR was reported FAIL with `(none)` recommended purely
+// because every generated candidate used `or` rather than `oregon`.
+const STATE_NAMES = {
+  ak: 'alaska', al: 'alabama', ar: 'arkansas', az: 'arizona', ca: 'california', co: 'colorado',
+  ct: 'connecticut', de: 'delaware', fl: 'florida', ga: 'georgia', hi: 'hawaii', ia: 'iowa',
+  id: 'idaho', il: 'illinois', in: 'indiana', ks: 'kansas', ky: 'kentucky', la: 'louisiana',
+  ma: 'massachusetts', md: 'maryland', me: 'maine', mi: 'michigan', mn: 'minnesota', mo: 'missouri',
+  ms: 'mississippi', mt: 'montana', nc: 'northcarolina', nd: 'northdakota', ne: 'nebraska',
+  nh: 'newhampshire', nj: 'newjersey', nm: 'newmexico', nv: 'nevada', ny: 'newyork', oh: 'ohio',
+  ok: 'oklahoma', or: 'oregon', pa: 'pennsylvania', ri: 'rhodeisland', sc: 'southcarolina',
+  sd: 'southdakota', tn: 'tennessee', tx: 'texas', ut: 'utah', va: 'virginia', vt: 'vermont',
+  wa: 'washington', wi: 'wisconsin', wv: 'westvirginia', wy: 'wyoming',
+};
+
+function candidatesFor(place, type, state) {
   const slug = String(place || '').toLowerCase().replace(/[^a-z]/g, '');
   if (!slug) return [];
-  const st = (STATE || 'ca').toLowerCase();
+  const st = (state || STATE || 'ca').toLowerCase();
+  const full = STATE_NAMES[st] || st;
   if (type === 'COUNTY') {
     return [
       `https://www.${slug}county.${st}.gov/`, `https://www.${slug}county${st}.gov/`,
       `https://www.${slug}county.gov/`, `https://www.countyof${slug}.gov/`,
       `https://www.countyof${slug}${st}.gov/`, `https://www.${slug}.${st}.gov/`,
+      `https://www.${slug}county${full}.gov/`, `https://www.${slug}county${full}.org/`,
+      `https://www.${slug}county${full}.net/`, `https://www.${slug}county${full}.com/`,
       `https://www.${slug}county.org/`, `https://www.${slug}county.us/`,
       `https://www.${slug}county.com/`, `https://www.${slug}county.net/`,
-      `https://${slug}gov.org/`,
+      `https://${slug}gov.org/`, `https://www.co.${slug}.${st}.us/`,
     ];
   }
   return [
     `https://www.${slug}.${st}.gov/`, `https://www.cityof${slug}.gov/`,
     `https://www.${slug}.gov/`, `https://www.cityof${slug}.org/`,
-    `https://www.${slug}ca.gov/`, `https://www.ci.${slug}.${st}.us/`,
+    `https://www.${slug}${st}.gov/`, `https://www.ci.${slug}.${st}.us/`,
+    `https://www.${slug}${full}.gov/`, `https://www.cityof${slug}.com/`,
     `https://www.${slug}.org/`, `https://www.${slug}.us/`,
   ];
 }
@@ -249,18 +325,34 @@ function nameAmbiguous(url, place, type) {
       || (type === 'COUNTY' && !/county|countyof|^co\./.test(host));
 }
 
-async function classify(page, url, place, type) {
+async function classify(page, url, place, type, st) {
   const rules = ENTITY_RULES[type] || ENTITY_RULES.COUNTY;
   const rec = { url, finalUrl: null, status: null, textLen: 0, title: '', verdict: 'FAIL', why: null };
   try {
     const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
     rec.status = resp ? resp.status() : null;
     await page.waitForTimeout(2500);                       // let client-rendered nav paint
+    // 🔴 A BARELY-PAINTED PAGE IS NOT A PAGE WITHOUT A GOVERNING BODY. Oregon's Jefferson (311
+    // chars) and Morrow (482) counties classified NAME_ONLY on the CORRECT `.gov` sites their stored
+    // URLs already redirect to, purely because 2.5s was not enough. Give a thin render a second
+    // chance before drawing any conclusion from its silence.
+    let text = (await page.evaluate(() => (document.body ? document.body.innerText : '')).catch(() => '')) || '';
+    if (text.length < 1200) {
+      await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
+      await page.waitForTimeout(2500);
+      const again = (await page.evaluate(() => (document.body ? document.body.innerText : '')).catch(() => '')) || '';
+      if (again.length > text.length) { text = again; rec.reRendered = true; }
+    }
     rec.finalUrl = page.url().replace(/#.*$/, '');
     rec.title = (await page.title().catch(() => '')).slice(0, 140);
-    const text = (await page.evaluate(() => (document.body ? document.body.innerText : '')).catch(() => '')) || '';
     rec.textLen = text.length;                             // 🔴 always report what was searched
-    const hay = `${text} ${rec.title}`;
+    // 🔴 SEARCH THE NAVIGATION, NOT JUST THE PROSE. A county homepage reliably LINKS to "Board of
+    // Commissioners" while its body copy says nothing of the kind — judging on innerText alone
+    // produced a wall of NAME_ONLY across Oregon on sites that were correct all along.
+    const links = (await page.evaluate(() => Array.from(document.querySelectorAll('a'))
+      .slice(0, 400).map(a => `${a.textContent || ''} ${a.getAttribute('href') || ''}`).join(' \n')).catch(() => '')) || '';
+    rec.linkLen = links.length;
+    const hay = `${text} ${rec.title} ${links.replace(/[-_/]+/g, ' ')}`;
     // 🔴 An EMPTY place name must never read as "the page names the place" — `\b\b` matches every
     // string, so a unit with no resolvable name would VERIFY against literally any live page.
     const norm = (s) => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -269,11 +361,21 @@ async function classify(page, url, place, type) {
     const right = rules.right.test(hay);
     const wrong = rules.wrong.test(hay);
 
+    const stEv = stateEvidence(hay, rec.finalUrl || url, (st || STATE || 'ca').toLowerCase(), place);
+    rec.stateOwn = stEv.own;
+    rec.stateOthers = stEv.others;
+
     if (SPAM.test(hay)) { rec.verdict = 'SPAM'; rec.why = 'gambling/pharma keywords'; }
     else if (WAFTITLE.test(rec.title) || (rec.textLen < 400 && rec.status === 403)) {
       rec.verdict = 'BLOCKED'; rec.why = `WAF (${rec.textLen} chars) — confirm by hand, do NOT repoint on this`;
-    } else if (rec.textLen < 300) { rec.verdict = 'EMPTY'; rec.why = `only ${rec.textLen} chars rendered`; }
-    else if (hasName && right && !wrong) { rec.verdict = 'VERIFIED'; }
+    } else if (rec.textLen < 300 && rec.linkLen < 300) { rec.verdict = 'EMPTY'; rec.why = `only ${rec.textLen} chars of text and ${rec.linkLen} of links rendered`; }
+    // 🔴 Naming ANOTHER state outranks every positive marker — see stateEvidence(). This is what
+    // stops Grant County Indiana from being recommended for Grant County Oregon.
+    else if (!stEv.own && stEv.others.length) {
+      rec.verdict = 'STATE_MISMATCH';
+      rec.why = `names ${stEv.others.join('/')}, not ${(st || STATE).toUpperCase()}`;
+    }
+    else if (hasName && right && !wrong) { rec.verdict = 'VERIFIED'; if (!stEv.own) rec.stateUnconfirmed = true; }
     else if (hasName && right && wrong) { rec.verdict = 'VERIFIED_MIXED'; rec.why = 'both entity markers present (normal for a consolidated city-county such as San Francisco)'; }
     else if (wrong && !right) { rec.verdict = 'WRONG_ENTITY'; rec.why = rules.wrongLabel; }
     else if (NONGOV.test(hay)) { rec.verdict = 'NOT_GOVERNMENT'; rec.why = 'tourism / chamber / directory vocabulary'; }
@@ -285,7 +387,18 @@ async function classify(page, url, place, type) {
     }
   } catch (e) {
     rec.why = String(e.message || e).split('\n')[0].slice(0, 100);
-    rec.verdict = /ERR_NAME_NOT_RESOLVED|ENOTFOUND/i.test(rec.why) ? 'NXDOMAIN' : 'FAIL';
+    // 🔴 A DEAD BROWSER MUST NOT LOOK LIKE A DEAD WEBSITE. This catch used to fold both into FAIL,
+    // so when the browser died partway through a unit's candidate list every remaining candidate was
+    // recorded FAIL, no candidate reached VERIFIED, and the unit printed `-> (none)` — which on this
+    // task reads as "no site exists for this county, leave it broken". Oregon's Washington County
+    // reported exactly that while `washingtoncountyor.gov` was up the whole time.
+    if (/target (page|closed)|browser has been closed|session closed|page crashed|websocket/i.test(rec.why)) {
+      rec.verdict = 'CONTEXT_LOST';
+    } else if (/ERR_NAME_NOT_RESOLVED|ENOTFOUND/i.test(rec.why)) {
+      rec.verdict = 'NXDOMAIN';
+    } else {
+      rec.verdict = 'FAIL';
+    }
   }
   return rec;
 }
@@ -313,6 +426,11 @@ async function main() {
   // 🔴 Collapse to one probe per place+host BEFORE opening a browser. --limit caps PROBES, not rows.
   let units = buildUnits(rows);
   const allUnits = units.length;
+  if (GEO.length) {
+    units = units.filter(u => GEO.includes(u.geo_id));
+    const missing = GEO.filter(g => !units.some(u => u.geo_id === g));
+    if (missing.length) console.log(`🔴 --geo named ${missing.length} geo_id(s) with no matching unit: ${missing.join(', ')}`);
+  }
   if (LIMIT) units = units.slice(0, LIMIT);
   const coveredRows = units.reduce((n, u) => n + u.rows.length, 0);
 
@@ -336,30 +454,83 @@ async function main() {
     return;
   }
 
-  const browser = await chromium.launch({ headless: true });
-  const queue = units.slice();
+  const launch = () => chromium.launch({ headless: true });
+  let browser = await launch();
+  const queue = [];
   const out = [];
 
+  // 🔴 THESE VERDICTS DESCRIBE THE PROBE, NOT THE URL, SO THEY MUST BE RETRIED.
+  // Two consecutive runs over Oregon disagreed: Wasco went VERIFIED -> FAIL and Washington
+  // NAME_ONLY -> FAIL, purely because a browser context died mid-run and took its neighbours with
+  // it. An unretried FAIL reads on this task as "the site is gone, repoint it" — the single most
+  // dangerous error here, and it would have been indistinguishable from Wallowa's real NXDOMAIN.
+  // EMPTY is deliberately NOT retried: 26 rendered chars is a finding about the page.
+  const TRANSPORT_VERDICTS = new Set(['FAIL', 'CONTEXT_LOST']);
+
+  const newCtx = () => browser.newContext({ userAgent: UA, viewport: { width: 1280, height: 900 }, ignoreHTTPSErrors: true });
+
   async function worker() {
-    const ctx = await browser.newContext({ userAgent: UA, viewport: { width: 1280, height: 900 }, ignoreHTTPSErrors: true });
+    let ctx = await newCtx();
     while (queue.length) {
       const unit = queue.shift(); if (!unit) break;
-      const page = await ctx.newPage();
-      const stored = await classify(page, unit.stored, unit.place, unit.district_type);
+      // 🔴 A dead browser context must cost ONE unit, not the whole report. A crashed context used
+      // to reject out of the worker, reject Promise.all, and abort main() before it wrote anything —
+      // 35 classified Oregon counties (including a gambling squat on sherman-county.com) were
+      // printed to the terminal and then thrown away. Re-establish the context and carry on; a unit
+      // that still cannot be probed is recorded as CONTEXT_LOST so it shows up as work remaining
+      // rather than silently vanishing from the tally.
+      let page;
+      try { page = await ctx.newPage(); }
+      catch {
+        await ctx.close().catch(() => {});
+        try { ctx = await newCtx(); page = await ctx.newPage(); }
+        catch (e) {
+          out.push({
+            geo_id: unit.geo_id, place: unit.place, placeSource: unit.placeSource,
+            district_type: unit.district_type, types: unit.types, state: unit.state,
+            appliesTo: unit.rows.map(r => ({ label: r.label, district_type: r.district_type, stored: r.official_web_url })),
+            rowCount: unit.rows.length, stored: unit.stored, storedVerdict: 'CONTEXT_LOST',
+            storedWhy: String(e.message || e).split('\n')[0].slice(0, 100), storedTextLen: 0, storedTitle: '',
+            recommended: null, needsHumanRead: true, rejected: [], probes: [],
+          });
+          console.log(`${unit.district_type.padEnd(10)} ${unit.geo_id.padEnd(8)} ${String(unit.place || '(no name)').slice(0, 24).padEnd(24)} ` +
+                      `${String(unit.rows.length).padStart(2)}r CONTEXT_LOST   — not probed, re-run this unit ⚠ READ`);
+          continue;
+        }
+      }
+      const stored = await classify(page, unit.stored, unit.place, unit.district_type, unit.state);
       const probes = [stored];
       const needsWork = !stored.verdict.startsWith('VERIFIED')
         || /^http:\/\//i.test(unit.stored)
         || (stored.finalUrl && stored.finalUrl.replace(/\/$/, '') !== unit.stored.replace(/\/$/, ''));
+      // 🔴 `candidatesTried < candidatesPlanned` is NOT evidence the sweep was cut short: the loop
+      // legitimately skips a candidate already reached by an earlier redirect, and stops early once
+      // two destinations verify. Counting those as untried labelled 7 COMPLETE Oregon sweeps
+      // "SEARCH INCOMPLETE". Only an actual break-out is truncation, so record that directly.
+      let candidatesTried = 0, candidatesSkipped = 0, candidatesPlanned = 0, sweepTruncated = false;
       if (needsWork && !NO_CAND) {
-        for (const c of candidatesFor(unit.place, unit.district_type)) {
+        const cands = candidatesFor(unit.place, unit.district_type, unit.state);
+        candidatesPlanned = cands.length;
+        for (const c of cands) {
           if (probes.filter(p => p.verdict.startsWith('VERIFIED')).length >= 2) break;
-          if (probes.some(p => (p.finalUrl || '').replace(/\/$/, '') === c.replace(/\/$/, ''))) continue;
-          probes.push(await classify(page, c, unit.place, unit.district_type));
+          if (probes.some(p => (p.finalUrl || '').replace(/\/$/, '') === c.replace(/\/$/, ''))) { candidatesSkipped++; continue; }
+          // A fresh page per candidate: one crashed navigation used to poison every later candidate
+          // probed on the same page.
+          let cp = page;
+          try { cp = await ctx.newPage(); } catch { /* reuse `page`; the guard below records the loss */ }
+          probes.push(await classify(cp, c, unit.place, unit.district_type, unit.state));
+          candidatesTried++;
+          if (cp !== page) await cp.close().catch(() => {});
+          if (!browser.isConnected()) { sweepTruncated = true; break; }   // stop pretending to probe a dead browser
         }
       }
       await page.close().catch(() => {});
       const verified = probes.filter(p => p.verdict.startsWith('VERIFIED'));
       const settled = [...new Set(verified.map(p => p.finalUrl).filter(Boolean))].sort((a, b) => score(b) - score(a) || a.length - b.length);
+      // 🔴 `(none)` is only a finding if the search actually RAN. If the browser died mid-sweep, or any
+      // candidate came back CONTEXT_LOST, the sweep is incomplete and its silence means nothing.
+      const lostProbes = probes.filter(p => p.verdict === 'CONTEXT_LOST').length;
+      const candidatesIncomplete = !NO_CAND && needsWork && !settled.length && (lostProbes > 0 || sweepTruncated);
       const rec = {
         geo_id: unit.geo_id, place: unit.place, placeSource: unit.placeSource,
         district_type: unit.district_type, types: unit.types, state: unit.state,
@@ -369,24 +540,67 @@ async function main() {
         stored: unit.stored, storedVerdict: stored.verdict, storedWhy: stored.why,
         storedTextLen: stored.textLen, storedTitle: stored.title,
         recommended: settled[0] || null,
+        candidatesIncomplete, candidatesTried, candidatesSkipped, candidatesPlanned, lostProbes, sweepTruncated,
+        stateUnconfirmed: verified.some(p => p.stateUnconfirmed && (p.finalUrl || p.url) === settled[0]),
         needsHumanRead: !settled.length || verified.some(p => p.nameAmbiguous) || probes.some(p => p.verdict === 'BLOCKED')
-          || unit.placeSource === 'NONE',
-        rejected: probes.filter(p => ['WRONG_ENTITY', 'NOT_GOVERNMENT', 'SPAM'].includes(p.verdict))
+          || unit.placeSource === 'NONE' || candidatesIncomplete || verified.some(p => p.stateUnconfirmed),
+        rejected: probes.filter(p => ['WRONG_ENTITY', 'NOT_GOVERNMENT', 'SPAM', 'STATE_MISMATCH'].includes(p.verdict))
           .map(p => ({ url: p.finalUrl || p.url, verdict: p.verdict, why: p.why, title: p.title })),
         probes,
       };
       out.push(rec);
       const flag = rec.needsHumanRead ? ' ⚠ READ' : '';
+      const dest = rec.recommended
+        || (candidatesIncomplete ? `(SEARCH INCOMPLETE — ${candidatesTried}/${candidatesPlanned} candidates, ${lostProbes} lost; NOT evidence no site exists)` : '(none)');
       console.log(`${unit.district_type.padEnd(10)} ${unit.geo_id.padEnd(8)} ${String(unit.place || '(no name)').slice(0, 24).padEnd(24)} ` +
-                  `${String(unit.rowCount ?? unit.rows.length).padStart(2)}r ${rec.storedVerdict.padEnd(14)} len=${String(rec.storedTextLen).padStart(6)} -> ${rec.recommended || '(none)'}${flag}`);
+                  `${String(unit.rowCount ?? unit.rows.length).padStart(2)}r ${rec.storedVerdict.padEnd(14)} len=${String(rec.storedTextLen).padStart(6)} -> ${dest}${flag}`);
       for (const r of rec.rejected) console.log(`           🔴 rejected ${r.url} — ${r.verdict}: ${r.why}`);
     }
-    await ctx.close();
+    await ctx.close().catch(() => {});
   }
-  await Promise.all(Array.from({ length: CONC }, () => worker()));
-  await browser.close();
+  // allSettled, not all: a worker that dies anyway must not discard the units already classified.
+  const keyOf = (u) => `${u.geo_id}|${u.stored}`;
+
+  async function runRound(toProbe) {
+    // The BROWSER itself can die, not just a context — then every worker fails on newContext and the
+    // round probes nothing. Relaunch before assuming the round can run at all.
+    if (!browser.isConnected()) {
+      console.log('🔴 the browser had died — relaunching before this round.');
+      try { browser = await launch(); } catch (e) { console.log(`🔴 relaunch failed: ${e.message}`); return; }
+    }
+    queue.length = 0;
+    queue.push(...toProbe);
+    const settledWorkers = await Promise.allSettled(Array.from({ length: CONC }, () => worker()));
+    for (const w of settledWorkers.filter(w => w.status === 'rejected')) {
+      console.log(`🔴 a probe worker died: ${String(w.reason && w.reason.message || w.reason).split('\n')[0].slice(0, 120)}`);
+    }
+    if (queue.length) console.log(`🔴 ${queue.length} unit(s) were never probed in this round.`);
+  }
+
+  await runRound(units);
+
+  const flaky = out.filter(r => TRANSPORT_VERDICTS.has(r.storedVerdict) || r.candidatesIncomplete);
+  if (flaky.length) {
+    console.log(`\n--- retry round: ${flaky.length} unit(s) whose verdict described the PROBE, not the URL ---`);
+    const keys = new Set(flaky.map(keyOf));
+    const before = new Map(flaky.map(r => [keyOf(r), r]));
+    for (let i = out.length - 1; i >= 0; i--) if (keys.has(keyOf(out[i]))) out.splice(i, 1);
+    await runRound(units.filter(u => keys.has(keyOf(u))));
+    // 🔴 A unit pulled out for retry and then never re-probed would VANISH from the report — and the
+    // "resolved on retry" line would count that vanishing as a success. Put the original verdict
+    // back, and count only units that actually produced a new record.
+    const reprobed = new Set(out.filter(r => keys.has(keyOf(r))).map(keyOf));
+    for (const [k, rec] of before) if (!reprobed.has(k)) { out.push(rec); console.log(`🔴 ${k} was NOT re-probed — its original ${rec.storedVerdict} stands.`); }
+    const resolved = [...reprobed].filter((k) => {
+      const r = out.find(x => keyOf(x) === k);
+      return !TRANSPORT_VERDICTS.has(r.storedVerdict) && !r.candidatesIncomplete;
+    });
+    console.log(`--- retried ${reprobed.size} of ${flaky.length}; ${resolved.length} produced a complete result ---`);
+  }
+  await browser.close().catch(() => {});
 
   out.sort((a, b) => a.district_type.localeCompare(b.district_type) || a.geo_id.localeCompare(b.geo_id));
+  if (out.length !== units.length) console.log(`\n🔴 classified ${out.length} of ${units.length} planned unit(s).`);
   const tally = out.reduce((m, r) => (m[r.storedVerdict] = (m[r.storedVerdict] || 0) + 1, m), {});
   const rowsOf = (pred) => out.filter(pred).reduce((n, r) => n + r.rowCount, 0);
   console.log('\n=== stored-URL verdicts (units, and the rows they cover) ===');
@@ -395,6 +609,12 @@ async function main() {
   const changed = (r) => r.recommended && r.recommended.replace(/\/$/, '') !== r.stored.replace(/\/$/, '');
   console.log(`\n  changes proposed : ${out.filter(changed).length} unit(s) / ${rowsOf(changed)} row(s)`);
   console.log(`  need a human read: ${out.filter(r => r.needsHumanRead).length} unit(s) / ${rowsOf(r => r.needsHumanRead)} row(s)  ⚠`);
+  const inc = out.filter(r => r.candidatesIncomplete);
+  if (inc.length) {
+    console.log(`  🔴 SEARCH INCOMPLETE on ${inc.length} unit(s) / ${rowsOf(r => r.candidatesIncomplete)} row(s) — a dead browser truncated the`);
+    console.log('     candidate sweep. Their "(none)" is NOT a finding. Re-run them with --geo:');
+    console.log(`       --geo ${inc.map(r => r.geo_id).join(',')}`);
+  }
   console.log(`  wrong-entity destinations rejected: ${out.reduce((n, r) => n + r.rejected.length, 0)}`);
 
   const nameless = out.filter(r => r.placeSource === 'NONE');
