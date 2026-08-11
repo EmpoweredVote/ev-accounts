@@ -8,6 +8,7 @@
  */
 import { pool } from './db.js';
 import { STATE_ABBR_TO_FIPS } from './treasuryService.js';
+import { HAS_ANY_CONTRIBUTION_SQL } from './donorCoverage.js';
 import {
   toSlug, PLACE_STRIP, raceCoverage, resolveRaceCountyFips, classifyCounty, classifyRaces,
   classifyRaceTier, weightedDepthScore, type RaceRow,
@@ -78,7 +79,7 @@ export async function racesForStateDate(stateAbbr: string, date: string): Promis
                 AND ans.politician_id IS NOT NULL)                                          AS stanced_count,
             COUNT(rc.id) FILTER (
               WHERE essentials.is_live_candidate(rc.candidate_status, rc.result)
-                AND don.politician_id IS NOT NULL)                                          AS motivated_count
+                AND ${HAS_ANY_CONTRIBUTION_SQL})                                             AS motivated_count
        FROM essentials.elections e
        JOIN essentials.races r ON r.election_id = e.id
        LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
@@ -87,11 +88,6 @@ export async function racesForStateDate(stateAbbr: string, date: string): Promis
        LEFT JOIN essentials.politicians p ON p.id = rc.politician_id
        LEFT JOIN (SELECT DISTINCT politician_id FROM inform.politician_answers) ans
               ON ans.politician_id = p.id
-       LEFT JOIN (
-         SELECT DISTINCT ps.essentials_politician_id AS politician_id
-           FROM transparent_motivations.politician_sources ps
-           JOIN transparent_motivations.contributions c ON c.politician_source_id = ps.id
-       ) don ON don.politician_id = p.id
       WHERE e.state = $1 AND e.election_date = $2
       GROUP BY r.id, r.position_name, r.seats, d.ocd_id`,
     [stateAbbr, date],

@@ -38,6 +38,7 @@ import { listCoverageStates, readCoverageFile, type Tristate } from './coverageS
 import { toSlug, PLACE_STRIP } from './electionsMap.js';
 import { aggregateUnits, type Unit } from './coverageBivariate.js';
 import { HAS_RENDERABLE_PHOTO_SQL } from './photoCoverage.js';
+import { HAS_ANY_CONTRIBUTION_SQL } from './donorCoverage.js';
 
 export interface AxisWeights {
   geofenced: number;
@@ -209,7 +210,7 @@ async function statsByJurisdiction(stateCode: string): Promise<Map<string, Juris
        COUNT(DISTINCT p.id)                                                         AS total,
        COUNT(DISTINCT p.id) FILTER (WHERE ${HAS_RENDERABLE_PHOTO_SQL})              AS with_photos,
        COUNT(DISTINCT p.id) FILTER (WHERE ans.politician_id IS NOT NULL)            AS researched,
-       COUNT(DISTINCT p.id) FILTER (WHERE don.politician_id IS NOT NULL)            AS with_donors
+       COUNT(DISTINCT p.id) FILTER (WHERE ${HAS_ANY_CONTRIBUTION_SQL})              AS with_donors
      FROM essentials.politicians p
      -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
      JOIN essentials.office_current_holder och ON och.politician_id = p.id
@@ -218,11 +219,6 @@ async function statsByJurisdiction(stateCode: string): Promise<Map<string, Juris
      LEFT JOIN essentials.politician_images img ON img.politician_id = p.id
      LEFT JOIN (SELECT DISTINCT politician_id FROM inform.politician_answers) ans
             ON ans.politician_id = p.id
-     LEFT JOIN (
-       SELECT DISTINCT ps.essentials_politician_id AS politician_id
-         FROM transparent_motivations.politician_sources ps
-         JOIN transparent_motivations.contributions c ON c.politician_source_id = ps.id
-     ) don ON don.politician_id = p.id
      WHERE p.is_active = true
        AND d.ocd_id LIKE 'ocd-division/country:us/state:' || $1 || '/%'
      GROUP BY juris_ocd`,
