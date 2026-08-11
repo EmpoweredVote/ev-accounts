@@ -28,6 +28,42 @@ here because they cannot be told apart from working portraits without a per-row 
 Included: holds a seat by **either** occupancy link, not vacant, portrait not renderable.
 Excluded: `source = 'cal_access_discovery'` — the ~76k triage pool is not a worklist.
 
+> ### ⚠️ That exclusion is wrong, and it cost us. Corrected 2026-08-11 (migration 1702).
+>
+> Excluding the triage pool **by source string** catches CalAccess and nothing else. CalAccess is
+> not a special case — it is one instance of a general class: people discovered from
+> campaign-finance **candidate committee** filings, given a placeholder office, whose
+> `offices.politician_id` pointer the ADR 0002 phase-2 backfill (migration 1459) then converted
+> into an open-ended term. They read as current officeholders and are not.
+>
+> **957 of the 2,344 rows in this file (41%) are candidates, not officeholders** — 674 of
+> Indiana's 810 and 277 Californians the name-based rule missed. Per state:
+>
+> | state | listed | candidates | true officeholders |
+> |---|---|---|---|
+> | CA | 1,060 | 277 (26%) | 783 |
+> | IN | 810 | 674 (83%) | **136** |
+> | MA | 118 | 6 | 112 |
+> | UT · WI · TX · ME · OR · NV | 355 | 0 | 355 |
+>
+> **Use `essentials.politician_occupancy_evidence` instead of any source-name test.** Add to the
+> WHERE clause:
+>
+> ```sql
+> AND NOT EXISTS (SELECT 1 FROM essentials.politician_occupancy_evidence e
+>                 WHERE e.politician_id = p.id AND e.is_placeholder_occupancy)
+> ```
+>
+> 🔴 **Do not test on `has_candidate_committee`.** Every incumbent seeking re-election has a
+> committee — Lindsey Graham, Bill Keating and Nanette Díaz Barragán all do, and all hold real
+> seats. The discriminator is **structural**: a real seat carries geography (district, chamber or
+> city); a discovery placeholder carries none. That column exists on the view as information
+> only, and the migration's post-verify gate names those five people specifically because an
+> earlier draft flagged them.
+>
+> The people themselves are legitimate records with real provenance
+> (`backend/scripts/discover-indiana-candidates.ts`) — **never delete them.**
+
 ## Jurisdiction is resolved three ways, in this order
 
 1. current `office_terms` → office → chamber → government  (ADR 0002, the modern link)
