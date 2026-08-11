@@ -1,0 +1,707 @@
+[
+ {
+  "geo_id": "4105350",
+  "place": "Beaverton",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Beaverton (At-Large)",
+    "district_type": "LOCAL",
+    "stored": "http://www.beavertonoregon.gov/"
+   },
+   {
+    "label": "Beaverton (Mayor, Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.beavertonoregon.gov/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.beavertonoregon.gov/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 5726,
+  "storedTitle": "Beaverton, OR - Official Website | Official Website",
+  "recommended": "https://www.beavertonoregon.gov/",
+  "landingUrl": "https://www.beavertonoregon.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.beavertonoregon.gov/",
+    "finalUrl": "https://www.beavertonoregon.gov/",
+    "status": 200,
+    "textLen": 5726,
+    "title": "Beaverton, OR - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 9907,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "4105800",
+  "place": "Bend",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Bend (At-Large)",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.bend.or.us/"
+   },
+   {
+    "label": "Bend (Mayor, Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.bend.or.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.bend.or.us/",
+  "storedVerdict": "EMPTY",
+  "storedWhy": "only 0 chars of text and 57 of links rendered",
+  "storedTextLen": 0,
+  "storedTitle": "IIS Windows Server",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.bend.or.us/",
+    "finalUrl": "http://www.ci.bend.or.us/",
+    "status": 200,
+    "textLen": 0,
+    "title": "IIS Windows Server",
+    "verdict": "EMPTY",
+    "why": "only 0 chars of text and 57 of links rendered",
+    "linkLen": 57,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "4115550",
+  "place": "Cornelius",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Cornelius (At-Large)",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.cornelius.or.us/"
+   },
+   {
+    "label": "Cornelius (Mayor, Citywide, 2-Year Term)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.cornelius.or.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.cornelius.or.us/",
+  "storedVerdict": "NAME_ONLY",
+  "storedWhy": "names the place but shows no governing body",
+  "storedTextLen": 5463,
+  "storedTitle": "Cornelius, OR | Official Website",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.cornelius.or.us/",
+    "finalUrl": "https://www.corneliusor.gov/",
+    "status": 200,
+    "textLen": 5463,
+    "title": "Cornelius, OR | Official Website",
+    "verdict": "NAME_ONLY",
+    "why": "names the place but shows no governing body",
+    "linkLen": 4056,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "4124250",
+  "place": "Fairview",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Fairview (At-Large)",
+    "district_type": "LOCAL",
+    "stored": "http://www.fairvieworegon.gov"
+   },
+   {
+    "label": "Fairview (Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.fairvieworegon.gov"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.fairvieworegon.gov",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3793,
+  "storedTitle": "Fairview, OR - Official Website | Official Website",
+  "recommended": "https://www.fairvieworegon.gov/",
+  "landingUrl": "http://www.fairvieworegon.gov/",
+  "canonicalNote": "canonicalised from http://www.fairvieworegon.gov/",
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.fairvieworegon.gov",
+    "finalUrl": "http://www.fairvieworegon.gov/",
+    "status": 200,
+    "textLen": 3793,
+    "title": "Fairview, OR - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 4515,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   },
+   {
+    "url": "https://www.fairvieworegon.gov/",
+    "finalUrl": "https://www.fairvieworegon.gov/",
+    "status": 200,
+    "textLen": 3793,
+    "title": "Fairview, OR - Official Website | Official Website",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 4515,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "4126200",
+  "place": "Forest Grove",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Forest Grove (At-Large)",
+    "district_type": "LOCAL",
+    "stored": "http://www.forestgroveor.gov"
+   },
+   {
+    "label": "Forest Grove (Mayor, Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.forestgroveor.gov"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.forestgroveor.gov",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.forestgroveor.gov/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.forestgroveor.gov",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.forestgroveor.gov/"
+   }
+  ]
+ },
+ {
+  "geo_id": "4131250",
+  "place": "Gresham",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Gresham (At-Large)",
+    "district_type": "LOCAL",
+    "stored": "http://www.greshamoregon.gov"
+   },
+   {
+    "label": "Gresham (Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.greshamoregon.gov"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.greshamoregon.gov",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 2205,
+  "storedTitle": "Home | City of Gresham",
+  "recommended": "https://www.greshamoregon.gov/",
+  "landingUrl": "https://www.greshamoregon.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.greshamoregon.gov",
+    "finalUrl": "https://www.greshamoregon.gov/",
+    "status": 200,
+    "textLen": 2205,
+    "title": "Home | City of Gresham",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 12184,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "4134100",
+  "place": "Hillsboro",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Hillsboro (At-Large)",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.hillsboro.or.us/"
+   },
+   {
+    "label": "Hillsboro (Mayor, Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.hillsboro.or.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.hillsboro.or.us/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.hillsboro.or.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.hillsboro.or.us/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.hillsboro.or.us/"
+   }
+  ]
+ },
+ {
+  "geo_id": "4167100",
+  "place": "Sherwood",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Sherwood (At-Large)",
+    "district_type": "LOCAL",
+    "stored": "http://www.sherwoodoregon.gov"
+   },
+   {
+    "label": "Sherwood (Mayor, Citywide, 2-Year Term)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.sherwoodoregon.gov"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.sherwoodoregon.gov",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 2348,
+  "storedTitle": "Home - City of Sherwood",
+  "recommended": "https://www.sherwoodoregon.gov/",
+  "landingUrl": "https://www.sherwoodoregon.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.sherwoodoregon.gov",
+    "finalUrl": "https://www.sherwoodoregon.gov/",
+    "status": 200,
+    "textLen": 2348,
+    "title": "Home - City of Sherwood",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 27161,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "4173650",
+  "place": "Tigard",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Tigard (At-Large)",
+    "district_type": "LOCAL",
+    "stored": "http://www.tigardor.gov/"
+   },
+   {
+    "label": "Tigard (Mayor, Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.tigardor.gov/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.tigardor.gov/",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.tigardor.gov/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.tigardor.gov/",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.tigardor.gov/"
+   }
+  ]
+ },
+ {
+  "geo_id": "4174850",
+  "place": "Troutdale",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Troutdale (At-Large)",
+    "district_type": "LOCAL",
+    "stored": "http://www.troutdaleoregon.gov"
+   },
+   {
+    "label": "Troutdale (Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.troutdaleoregon.gov"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.troutdaleoregon.gov",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": "governing body found in navigation only, not in page prose",
+  "storedTextLen": 1081,
+  "storedTitle": "Home Page | Troutdale OR",
+  "recommended": "https://www.troutdaleoregon.gov/",
+  "landingUrl": "https://www.troutdaleoregon.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.troutdaleoregon.gov",
+    "finalUrl": "https://www.troutdaleoregon.gov/",
+    "status": 200,
+    "textLen": 1081,
+    "title": "Home Page | Troutdale OR",
+    "verdict": "VERIFIED",
+    "why": "governing body found in navigation only, not in page prose",
+    "linkLen": 9034,
+    "rightFromNavOnly": true,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "4174950",
+  "place": "Tualatin",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Tualatin (At-Large)",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.tualatin.or.us/"
+   },
+   {
+    "label": "Tualatin (Mayor, Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.tualatin.or.us/"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.tualatin.or.us/",
+  "storedVerdict": "VERIFIED",
+  "storedWhy": null,
+  "storedTextLen": 3126,
+  "storedTitle": "Home - The City of Tualatin Oregon",
+  "recommended": "https://tualatinoregon.gov/",
+  "landingUrl": "https://tualatinoregon.gov/",
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": false,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.tualatin.or.us/",
+    "finalUrl": "https://tualatinoregon.gov/",
+    "status": 200,
+    "textLen": 3126,
+    "title": "Home - The City of Tualatin Oregon",
+    "verdict": "VERIFIED",
+    "why": null,
+    "linkLen": 12470,
+    "rightFromNavOnly": false,
+    "stateOwn": true,
+    "stateOthers": []
+   }
+  ]
+ },
+ {
+  "geo_id": "4183950",
+  "place": "Wood Village",
+  "placeSource": "ocd_id",
+  "district_type": "LOCAL",
+  "types": [
+   "LOCAL",
+   "LOCAL_EXEC"
+  ],
+  "state": "or",
+  "appliesTo": [
+   {
+    "label": "Wood Village (At-Large)",
+    "district_type": "LOCAL",
+    "stored": "http://www.ci.woodvillage.or.us"
+   },
+   {
+    "label": "Wood Village (Citywide)",
+    "district_type": "LOCAL_EXEC",
+    "stored": "http://www.ci.woodvillage.or.us"
+   }
+  ],
+  "rowCount": 2,
+  "stored": "http://www.ci.woodvillage.or.us",
+  "storedVerdict": "NXDOMAIN",
+  "storedWhy": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.woodvillage.or.us/",
+  "storedTextLen": 0,
+  "storedTitle": "",
+  "recommended": null,
+  "landingUrl": null,
+  "canonicalNote": null,
+  "candidatesIncomplete": false,
+  "candidatesTried": 0,
+  "candidatesSkipped": 0,
+  "candidatesPlanned": 0,
+  "lostProbes": 0,
+  "sweepTruncated": false,
+  "stateUnconfirmed": false,
+  "blockedRecommendation": false,
+  "blockedOtherCandidates": 0,
+  "stillHttp": false,
+  "needsHumanRead": true,
+  "rejected": [],
+  "probes": [
+   {
+    "url": "http://www.ci.woodvillage.or.us",
+    "finalUrl": null,
+    "status": null,
+    "textLen": 0,
+    "title": "",
+    "verdict": "NXDOMAIN",
+    "why": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.ci.woodvillage.or.us/"
+   }
+  ]
+ }
+]
