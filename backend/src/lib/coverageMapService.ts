@@ -314,23 +314,47 @@ async function buildJurisdictions(
         WHERE state = $1 AND mtfcc = 'G4020' AND name IS NOT NULL`,
       [stateFips],
     ),
-    // Assign each place / school to the county it OVERLAPS MOST, not by centroid.
-    // Centroid containment breaks for jurisdictions with offshore parts — e.g.
-    // San Francisco's centroid lands in the ocean (Farallon Islands), so it would
-    // be dropped from SF County entirely.
-    pool.query<{ mtfcc: string; name: string; geo_id: string; county_fips: string | null }>(
+    // Each place / school is assigned to the county it OVERLAPS MOST, not by centroid — centroid
+    // containment breaks for jurisdictions with offshore parts, e.g. San Francisco's centroid lands
+    // in the ocean (Farallon Islands), which would drop SF from its own county.
+    //
+    // That assignment is now PERSISTED in essentials.geofence_child_county (migration 1696) rather
+    // than recomputed here. It was the single largest cost in this endpoint — 15.9 s of
+    // ST_Area(ST_Intersection(...)) across the 13 tracked states (ca 5.8 s alone) — and it depends
+    // only on geometry, so a request never needed to recompute it. Reading it: 282 ms for all 13.
+    //
+    // 🔴 REFRESH MATERIALIZED VIEW CONCURRENTLY essentials.geofence_child_county;  -- after ANY
+    // boundary load. A child with no mapping row degrades to an unassigned county (never a dropped
+    // row) and is reported by essentials.geofence_child_county_stale and the warning below.
+    pool.query<{
+      mtfcc: string; name: string; geo_id: string;
+      county_fips: string | null; mapping_missing: boolean;
+    }>(
       `SELECT child.mtfcc, child.name, child.geo_id,
-         (SELECT c.geo_id FROM essentials.geofence_boundaries c
-           WHERE c.state = $1 AND c.mtfcc = 'G4020' AND ST_Intersects(c.geometry, child.geometry)
-           ORDER BY ST_Area(ST_Intersection(c.geometry, child.geometry)) DESC
-           LIMIT 1) AS county_fips
+              m.county_geo_id            AS county_fips,
+              (m.child_geo_id IS NULL)   AS mapping_missing
          FROM essentials.geofence_boundaries child
+         LEFT JOIN essentials.geofence_child_county m
+                ON m.child_geo_id = child.geo_id AND m.child_mtfcc = child.mtfcc
         WHERE child.state = $1 AND child.mtfcc IN ('G4110', 'G5420', 'G5400', 'G5410') AND child.name IS NOT NULL`,
       [stateFips],
     ),
     statsByJurisdiction(stateCode),
     treasuryGeoIds(stateCode),
   ]);
+
+  // Say so loudly if the persisted mapping is behind the boundary table. Silence here would mean a
+  // jurisdiction quietly losing its county after a boundary load — the failure mode CLAUDE.md warns
+  // about for office_terms, in a different table.
+  const unmapped = children.rows.filter((r) => r.mapping_missing).length;
+  if (unmapped > 0) {
+    console.warn(
+      `[coverage] ${stateCode}: ${unmapped} of ${children.rows.length} children have no ` +
+        `essentials.geofence_child_county row — run ` +
+        `REFRESH MATERIALIZED VIEW CONCURRENTLY essentials.geofence_child_county; ` +
+        `(see essentials.geofence_child_county_stale)`,
+    );
+  }
 
   const yaml = yamlByOcd(stateCode);
   const out: JurisdictionScore[] = [];
