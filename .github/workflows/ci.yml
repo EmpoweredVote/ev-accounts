@@ -48,8 +48,19 @@ jobs:
   migrations:
     name: migration numbering
     runs-on: ubuntu-latest
-    # Only meaningful on PRs — it compares files added on the branch against the base.
-    if: github.event_name == 'pull_request'
+    # Runs on PRs AND on pushes to master.
+    #
+    # 🔴 It was PR-only until 2026-08-10, on the reasoning that it "compares files added on the branch
+    # against the base" and so has nothing to say outside a PR. That was true of the old check and it
+    # left the real hole wide open: this repo is worked by DIRECT PUSHES TO MASTER (autoDeploy is on
+    # for master), and on 2026-08-10 two parallel sessions each pushed a migration numbered 1681
+    # without a PR between them. CI never ran this job for either push, so nothing objected.
+    #
+    # The check now also scans the migrations directory for duplicate numbers outright, which is
+    # meaningful on any event — so the trigger is widened to match. On a push there is no base_ref;
+    # BASE_REF is left unset and the script resolves origin/master itself, or falls back to the tree
+    # scan alone if it cannot.
+    if: github.event_name == 'pull_request' || github.event_name == 'push'
     steps:
       # fetch-depth: 0 so the base branch is available to diff against.
       - uses: actions/checkout@v4
@@ -64,7 +75,7 @@ jobs:
       - name: Check for duplicate migration numbers
         run: node backend/scripts/check-migration-numbers.mjs
         env:
-          BASE_REF: origin/${{ github.base_ref }}
+          BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
 
   occupancy:
     name: office occupancy (ADR 0002)
