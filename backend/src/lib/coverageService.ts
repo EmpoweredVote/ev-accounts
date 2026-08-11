@@ -20,6 +20,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
 import { pool } from './db.js';
+import { HAS_RENDERABLE_PHOTO_SQL } from './photoCoverage.js';
 
 const FRESHNESS_DAYS = 180;
 
@@ -228,10 +229,7 @@ export async function computeLocationStats(spec: LocationStatSpec): Promise<Loca
   }>(
     `SELECT
        COUNT(DISTINCT p.id)                                                    AS total,
-       COUNT(DISTINCT p.id) FILTER (
-         WHERE img.politician_id IS NOT NULL
-            OR p.photo_origin_url IS NOT NULL
-            OR p.photo_custom_url IS NOT NULL)                                 AS with_photos,
+       COUNT(DISTINCT p.id) FILTER (WHERE ${HAS_RENDERABLE_PHOTO_SQL})         AS with_photos,
        -- "researched" = politician has ≥1 compass answer (the real data), NOT the
        -- last_stances_researched_at timestamp, which is unstamped for bulk-loaded
        -- states (CA/OR show 0 stamped despite hundreds with answers). The date

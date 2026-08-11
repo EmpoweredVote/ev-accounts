@@ -37,6 +37,7 @@ import { pool } from './db.js';
 import { listCoverageStates, readCoverageFile, type Tristate } from './coverageService.js';
 import { toSlug, PLACE_STRIP } from './electionsMap.js';
 import { aggregateUnits, type Unit } from './coverageBivariate.js';
+import { HAS_RENDERABLE_PHOTO_SQL } from './photoCoverage.js';
 
 export interface AxisWeights {
   geofenced: number;
@@ -206,10 +207,7 @@ async function statsByJurisdiction(stateCode: string): Promise<Map<string, Juris
        (regexp_match(d.ocd_id,
          '^(ocd-division/country:us/state:' || $1 || '/(?:county|place|school_district):[^/]+)'))[1] AS juris_ocd,
        COUNT(DISTINCT p.id)                                                         AS total,
-       COUNT(DISTINCT p.id) FILTER (
-         WHERE img.politician_id IS NOT NULL
-            OR p.photo_origin_url IS NOT NULL
-            OR p.photo_custom_url IS NOT NULL)                                      AS with_photos,
+       COUNT(DISTINCT p.id) FILTER (WHERE ${HAS_RENDERABLE_PHOTO_SQL})              AS with_photos,
        COUNT(DISTINCT p.id) FILTER (WHERE ans.politician_id IS NOT NULL)            AS researched,
        COUNT(DISTINCT p.id) FILTER (WHERE don.politician_id IS NOT NULL)            AS with_donors
      FROM essentials.politicians p

@@ -1,0 +1,1347 @@
+{
+  "captured_at": "2026-08-11",
+  "purpose": "Rows whose photo_origin_url held a research breadcrumb rather than a URL, cleared by migration 1688. Each is a politician somebody already searched for a portrait without success — undated, method unknown. Treat as a reading queue, not as proof no portrait exists.",
+  "row_count": 148,
+  "value_histogram": {
+    "searched:no_results": 97,
+    "explored": 48,
+    "local:public/images/HollyHarvey_.jfif": 1,
+    "wvc-ut.gov/city-council": 1,
+    "searched:circular_crop_only": 1
+  },
+  "needs_portrait_and_seated": 139,
+  "rows": [
+    {
+      "id": "592ec924-ac8d-4b6e-928e-a94583ea76c9",
+      "full_name": "Aaron Summers",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "9cab21a6-f107-4789-bcd1-b5b1e6cd7a15",
+      "full_name": "Adam Schur",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "6b5b7342-cb31-4e47-9367-97cc363acd1f",
+      "full_name": "Adela Martinez",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "d9e394d9-3e01-4643-ae70-90fbccc5aeb7",
+      "full_name": "Adriana Camorlinga",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "b4a1311d-edab-44c9-81fb-05923f998753",
+      "full_name": "Adyson Quashie",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "b3799cb0-d361-4405-b82e-59031c5ffe73",
+      "full_name": "Aja Jester",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "81154d3e-fe2c-4864-a341-5c8c8538e4b6",
+      "full_name": "Al Winkler",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "c123ba35-f671-4e76-82bd-f90ae5aabfa0",
+      "full_name": "Alberto Guerrero",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "9e396ede-1420-4b3e-aab2-d1799e284e18",
+      "full_name": "Alex Lujan",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "636c3d78-e230-4c1f-b267-921c4775b2c4",
+      "full_name": "Alicia Brodkin",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "8c0fdb31-0020-4d1f-a60b-230e1146eef5",
+      "full_name": "Alma Carina Larrazolo",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "3f06b286-4c26-4a01-a29c-88a0e1145bb1",
+      "full_name": "Alma Guerrero",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "929dae10-0eda-4c53-bfa7-0216f2f10e16",
+      "full_name": "Amanda C Lowery",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "1bef4877-5dec-4460-ad79-a7ecb186c1b8",
+      "full_name": "Amanda Grossman",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "f0e9775a-f691-4fe8-84dc-d8f9c5e301c7",
+      "full_name": "Amy Rottschafer",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "5d970ad1-ab54-4927-843d-de7c92539b8e",
+      "full_name": "Ana Paula Cruz",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "c043a9b5-ebc1-4a58-8c0d-0125744767c8",
+      "full_name": "Ana Ponce",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "f12ba4c2-859f-4453-9b32-37624d0132a0",
+      "full_name": "Anastasia Flores",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "26202d91-c4a7-4959-b3aa-cd60e200df88",
+      "full_name": "Andrew Beaver",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "dec98c56-6f77-4015-a5fb-c654178c946c",
+      "full_name": "Andrew G Finney",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "15c77faa-dfb6-485e-8b83-4611727d1eb3",
+      "full_name": "Andy Spriggs",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "d50ad38d-ed64-45ac-b3c3-cf4e0f6ac788",
+      "full_name": "Andy Torres",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "2376dcb8-0374-49de-b041-88035ed3c9f4",
+      "full_name": "Angela Portillo",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "2551c624-92bb-4510-8770-e7e10d29c143",
+      "full_name": "Anita Torres",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "c9875c5f-aa1f-400e-8a7b-e085ee305795",
+      "full_name": "Ann Behrens",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "1a7a4b31-f17f-4e95-954b-0cd7f78b5e85",
+      "full_name": "Ann Huang",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "1356e41f-1fec-4719-9d4d-52ab6dddf497",
+      "full_name": "Anna M Voyles",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "8766ef1c-343a-49d6-aa6c-339a863d704b",
+      "full_name": "Anna Muñiz",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "5562b788-c13f-4f4d-87c4-521e271059e9",
+      "full_name": "Anna Wren",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "2209bc3f-c842-4e9b-afda-5c2a819cdb6f",
+      "full_name": "Annabella Figueroa Mazariegos",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": false,
+      "is_active": true
+    },
+    {
+      "id": "75c60e41-1ef0-426b-9899-67b8796ea4b8",
+      "full_name": "Anthony Medina",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "9d2713c4-1d4f-4c40-ae35-b331e9771fa1",
+      "full_name": "Ariel Mestas",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "e1b7f87e-cde7-408b-860a-f2e034a5dfe0",
+      "full_name": "Arturo Montez",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "a72b6e3b-1f34-4469-b9d1-622b64496927",
+      "full_name": "Ashley Johnson",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "c8a73d2a-205d-482e-bc78-8c81d965a28c",
+      "full_name": "Barbara E McKinney",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "3845a8c4-ef17-4cf1-8384-6d2f57f02b29",
+      "full_name": "Barbara Ige",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "0af9a347-846e-441e-b575-a187d8c0528f",
+      "full_name": "Barbara Sturbaum",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "8f5fded3-98c2-4703-8c83-4ccbf8a6cc7d",
+      "full_name": "Barry Zorthian",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "a08c5e26-feee-4bbf-a60a-5de90eda74b5",
+      "full_name": "Ben Kay",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "0136184a-71a4-48cf-b3f0-52beb7da6038",
+      "full_name": "Bob Gard",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "a4a501a5-874a-4920-bdec-cf88ca8ebb36",
+      "full_name": "Brent A Murray",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "c80e1343-70e4-4371-ade4-40f276dd3e25",
+      "full_name": "Brian Bergman",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "35d08038-550b-4f13-b564-dcfe48b3dfa6",
+      "full_name": "Brian Goldberg",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "9f240574-48a1-44f7-9728-712ade528e84",
+      "full_name": "Brian Riddick",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "2f3be1f4-879c-4bfa-977e-ebd5a1069609",
+      "full_name": "Bruce A MacTavish",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "ffaa618a-f72d-44e1-8fc9-7f889fab58ee",
+      "full_name": "Bruce Lathrop",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "4022fac2-7c62-48fe-a194-b451796f636f",
+      "full_name": "Carl Coles",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "7a441141-a7bc-430f-8a0a-a87773a49368",
+      "full_name": "Carlos Cuevas",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "5db21599-5f8e-4f08-b2e9-edbeb012add7",
+      "full_name": "Carole Hussey",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "9b1ebb14-fc87-4705-8639-667d8f3b3101",
+      "full_name": "Cary Romo Nakayama",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "b615a7a7-443f-4490-84a5-040116bd1708",
+      "full_name": "Cassie Thomas",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "32a054c8-990a-4cad-a7d4-86964b42b402",
+      "full_name": "Cesar A. Garcia",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "352826a5-7a8a-4f18-980d-a3a655f17720",
+      "full_name": "Charlene Stiles",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "c6118014-119c-419d-b996-12c563438482",
+      "full_name": "Charlie Honeycutt",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "41076964-edd9-4e7b-866f-79680545bb2c",
+      "full_name": "Cherise Moore",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "06b5dac4-73b6-44a3-a279-77b1758a6163",
+      "full_name": "Cheryl Cox",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "c7a69d69-20b9-4d54-ab4a-33198c9f7c78",
+      "full_name": "Christian Thomas",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "f8dddc8f-f5aa-4e6e-be08-7f686436b3db",
+      "full_name": "Christina Lara",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "b2e08aa4-a9ee-4282-afbc-3a5179eb62ea",
+      "full_name": "Christina R Klineman",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "62674342-08a9-48ba-bd31-6fb3fe3f8fde",
+      "full_name": "Christine Wood",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "c905324f-0568-48e9-931f-d42ddc657ec3",
+      "full_name": "Christopher R Reynolds",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "54dbc290-591b-4a01-95c4-6c2c80c68195",
+      "full_name": "Chuck Kauffman",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "7cbf6f43-43d0-4a61-84ed-277eb3a8cf05",
+      "full_name": "Cindy Byelich",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "6edc2e44-f7f7-4212-8746-03112a933be3",
+      "full_name": "Cindy Rosenberger",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "509fe7b3-e444-4b85-9ffe-850d2adf7809",
+      "full_name": "Cindy Ruelas",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "3f72432f-01db-4329-be69-0b85e85470a3",
+      "full_name": "Clark Rogers",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "a1643116-8ce4-495a-bcf0-2a967e17230f",
+      "full_name": "Claudia Hernandez",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "8a0d4875-70b5-4678-badb-4e1b8caa432c",
+      "full_name": "Claudia Valenzuela",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "823e3a9a-f135-4014-91cf-2b947f03f256",
+      "full_name": "Colleen Hawkins",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "592a2ac4-686f-47d5-8668-269e21ad1924",
+      "full_name": "Craig Foster",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "115885e8-3503-4efc-8811-07baed6cee81",
+      "full_name": "Crystal L Pottorff",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "26ae5f79-9ec5-4b3f-8b9e-dc2caaa71101",
+      "full_name": "Crystal Sherrill",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "7e2ecc87-9c9d-413d-9948-dfb688e59088",
+      "full_name": "Cynthia Cervantes Jackson",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "af08db12-bace-48ce-b9e5-eaa0e3e2ffd8",
+      "full_name": "Cynthia Moran",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "002969f3-e8cf-4c1e-8ee9-bc855b0f39ac",
+      "full_name": "Damien Straughn",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "a70ff00f-d6a6-4053-9cd5-72dd75638ff5",
+      "full_name": "Dan Combs",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": false
+    },
+    {
+      "id": "c5a9c6f7-c0f1-477f-b078-23bf17e54709",
+      "full_name": "Danielle Zefferino",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "28018031-c46f-4e1b-b10b-6edf33bb09cc",
+      "full_name": "Danna Perez",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "c3dc758d-378f-4867-91c1-00422760ef54",
+      "full_name": "Danny Argueta",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "ced90e57-de77-4a49-a9d8-5fa4ec9599c7",
+      "full_name": "Darcy McNaboe",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "0720ce76-332a-4817-b887-2e7599934f64",
+      "full_name": "Darleen Ramos",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "afd709ef-b2a3-487f-b51f-61061243e3ef",
+      "full_name": "Darren Byrd",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "d0f59905-f5e3-4e38-a3df-2dc6fb51a4a4",
+      "full_name": "Dave Horner",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "91b3fdfd-9908-495e-86c6-e2d523982e15",
+      "full_name": "David Aguirre",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "95860909-eb07-4ed4-bea1-54081d92ce8d",
+      "full_name": "David Argudo",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": false,
+      "is_active": true
+    },
+    {
+      "id": "53a867be-2009-4139-aca4-6371dd05cb6a",
+      "full_name": "David B Willibey",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "3f09884f-950d-462b-821f-6161c5d52784",
+      "full_name": "David Buerge",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "6684b629-12c1-46ac-80ea-6d9e7bf51c6c",
+      "full_name": "David Gallardo",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "649e6bdf-eaed-40aa-b383-3af5725209f3",
+      "full_name": "David Maron",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "903b537b-a806-4fa0-8427-1f72e9e85e3b",
+      "full_name": "David Patterson",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": false,
+      "is_active": false
+    },
+    {
+      "id": "d29e4645-d19f-4081-992d-fe66344a126c",
+      "full_name": "Dawn Durnil",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "628180d5-26f9-4213-b2c7-6c22ceb120ef",
+      "full_name": "Dawn Espe",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "215f92ac-46d3-4b48-9567-62ecbc9ed45c",
+      "full_name": "Dawn Sherrill",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "288499db-64df-4c1f-ada4-9b94af531a34",
+      "full_name": "Dawn Snyder",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "376e56bf-5114-444f-8850-e96e4d0f7f67",
+      "full_name": "Dean Francois",
+      "photo_origin_url": "explored",
+      "has_custom_url": true,
+      "has_hosted_image": true,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "4e1915ca-20d8-49e0-aa5d-af15a5e85f44",
+      "full_name": "Deb Hartwell",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "420537c2-18a8-4956-8e62-320e1e4760b3",
+      "full_name": "Debra A Hutson",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "db853cfa-ab6d-4a30-bfbc-fb05b3956970",
+      "full_name": "Debra Martin",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": true,
+      "has_hosted_image": true,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "d672334c-0b65-446f-be5e-0594889a71d2",
+      "full_name": "Denise Jaquez",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "ea6acf1c-3ada-4062-b324-0278459c99be",
+      "full_name": "Diana Carey",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "4fe290b2-aa2f-4ba1-b172-c0e75e8994ee",
+      "full_name": "Diana Corona",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "b9ded757-2653-4c45-982d-36682b08b8f8",
+      "full_name": "Diana Coronel",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "76e70bf9-f53e-4fcc-95c5-e0e268b318c1",
+      "full_name": "Diana Hernandez",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "134cc13a-f45a-442c-9946-4cfe893c46b8",
+      "full_name": "Diego Cardenas",
+      "photo_origin_url": "explored",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "6f8f75ba-af02-47d6-b7cb-9b75fddc2244",
+      "full_name": "Donald R Vandermoere",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "ff0c2b87-6798-4117-bcc2-a385d8aa8e8e",
+      "full_name": "Dusty White",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "aeb7f32b-0eb9-443a-88c0-342f9f36ce2c",
+      "full_name": "Dwight Schneck",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "84eebb94-9163-40ec-8cc2-1391a00e636e",
+      "full_name": "Elen Asatryan",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": true,
+      "has_hosted_image": true,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "15c278e1-20d8-4a2c-9575-2e130a0ec37f",
+      "full_name": "Elizabeth Sensenstein",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "0c32a92b-ae6b-457b-b3c3-317a9caec235",
+      "full_name": "Ella Hollis",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "30fc246f-8ac2-4424-8240-ec5f9d043a92",
+      "full_name": "Erik Allen",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "c92e5eae-a56f-4c75-9ce4-ddd20226ff18",
+      "full_name": "Francie Zoller-Teeters",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "6454cabf-c999-4066-a5f1-3853bd35590d",
+      "full_name": "Frank Calabrese",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "d2f1d9a4-a24b-4b49-b370-78b7ff7c972a",
+      "full_name": "Gary Burton",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "52e04c30-3d9d-4fba-83ce-8597d031db1b",
+      "full_name": "Gary J Huett",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "31feab39-ad52-487b-97cf-309ed364c267",
+      "full_name": "Gerald D Montgomery",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "52a1db12-bef7-4e68-9daf-bdd17c82f6c0",
+      "full_name": "Holly M Harvey",
+      "photo_origin_url": "local:public/images/HollyHarvey_.jfif",
+      "has_custom_url": true,
+      "has_hosted_image": true,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "ec9aa60a-c57b-4bd9-b169-22c05b628f96",
+      "full_name": "Jack Davis",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "dae02b0b-9ec9-4a8f-bd66-ba6972825510",
+      "full_name": "Jake Dodds",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "3c45e748-055e-4b28-8ae9-05378fe1ee9a",
+      "full_name": "James Aldana",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": false,
+      "is_active": true
+    },
+    {
+      "id": "6caa511c-7051-4974-b86f-f112ca3ada2b",
+      "full_name": "Jay M Thrasher",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "8be5432f-fd7b-46b4-ab75-96ae84af0714",
+      "full_name": "Jeffrey L Marchal",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "ad773a1b-a007-4b7f-a1fe-2091db751d0d",
+      "full_name": "Jerry W Ayers",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "6775a8e6-37cb-437b-923b-5f664f6b3b5d",
+      "full_name": "Joan C Hall",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "19e936a0-9478-4576-9807-16cd8486d2a6",
+      "full_name": "John M Plummer",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "85194f5e-6574-4371-97da-f1cc89568870",
+      "full_name": "Joseph G Husk",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "3bf35f73-452e-4879-bff4-1bba4e515d8e",
+      "full_name": "Joseph Hickman",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "664899b9-9002-410b-b42a-40dbaf050d12",
+      "full_name": "Kenny L Bryant",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "c001af02-3cd6-499f-a3c2-518c5a34ea74",
+      "full_name": "Lars Nordfelt",
+      "photo_origin_url": "wvc-ut.gov/city-council",
+      "has_custom_url": true,
+      "has_hosted_image": true,
+      "seated_now": false,
+      "is_active": false
+    },
+    {
+      "id": "be355b0e-79a9-4af2-9926-d5bee7ae2515",
+      "full_name": "Mary Vandeventer",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "5cb442fb-d62e-4e66-a719-7eb8ab52880b",
+      "full_name": "Mary Wertz",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "df0ddb05-3097-468d-ba0f-c5870d0c6f69",
+      "full_name": "Matthew G Hanson",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "c096fd15-2656-4e1c-bf86-beb506d472d7",
+      "full_name": "Michelle Bright",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "125c4d54-6b38-4ccc-a05c-b119f1ea34de",
+      "full_name": "Noelle M Conyer",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "763dde06-c0b6-4a94-9c0b-db8af317ceda",
+      "full_name": "Patrick J Dietrick",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "bc14c29f-93aa-4326-96f1-dc1e88a3ad0a",
+      "full_name": "Randy Jacobs",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "546e468b-c0c6-4ece-84a5-0342024aff9a",
+      "full_name": "Randy May",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "b407f620-d412-46b4-939a-d0967f8f80d2",
+      "full_name": "Ronald H Hutson",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "9b6c6fda-4a19-4fa2-ab2c-39f18964426e",
+      "full_name": "Scott McGlocklin",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "b350d009-1533-4829-a88f-ac3387a43bb1",
+      "full_name": "Scott Oldham",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "c2e83228-1f15-4fb6-a1a2-8b11714afe4c",
+      "full_name": "Sean P Hall",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "ca5f69c1-5fd3-4a27-8e58-f78b0a2d3d2d",
+      "full_name": "Steven Hinds",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "09ae2145-53d0-4def-a32b-0d18d020aed5",
+      "full_name": "Susie Hamilton",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "dc7f4747-abc2-4a1a-8d65-c1d4d5b609d2",
+      "full_name": "Valerie Munoz",
+      "photo_origin_url": "searched:circular_crop_only",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "5fbd1c3f-46f2-4532-89d0-ac971c60c1c8",
+      "full_name": "Vic Streiff",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "2fca4382-a1f2-431a-b6dd-cfb924d1f8c1",
+      "full_name": "Vicki L McGlocklin",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "8e5d7373-4c60-4069-a71e-cec378c783e3",
+      "full_name": "Warren Kilmer",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    },
+    {
+      "id": "d5c43411-143e-4a1c-a5d4-4ea346f638b5",
+      "full_name": "Wendi Reynolds",
+      "photo_origin_url": "searched:no_results",
+      "has_custom_url": false,
+      "has_hosted_image": false,
+      "seated_now": true,
+      "is_active": true
+    }
+  ]
+}
