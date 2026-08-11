@@ -1,0 +1,1603 @@
+{
+ "audit": "MD cited member-page URLs, judged as stored",
+ "tally": {
+  "OK": 199
+ },
+ "rowTally": {
+  "OK": 1851
+ },
+ "rows": [
+  {
+   "politician": "Aaron M. Kaufman",
+   "politician_id": "bc703231-6af8-48c6-8ae6-4a93fc60b18f",
+   "rows": 19,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kaufman01",
+   "url_names": "Aaron M. Kaufman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Adrian Boafo",
+   "politician_id": "1da26040-98b4-4eb0-aa1f-3ec05b297a29",
+   "rows": 3,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/boafo01?tab=2026RS-legislation",
+   "url_names": "Adrian Boafo",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Adrienne A. Jones",
+   "politician_id": "760cd4a7-235c-472f-a0ba-fb07098dfd57",
+   "rows": 17,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jones",
+   "url_names": "Adrienne A. Jones",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Aletheia McCaskill",
+   "politician_id": "fcfa1844-032e-4dba-9ae0-c52b82447fa8",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccaskill01",
+   "url_names": "Aletheia McCaskill",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Alonzo T. Washington",
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "rows": 14,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+   "url_names": "Alonzo T. Washington",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Andre V. Johnson, Jr.",
+   "politician_id": "b592e432-6411-48b3-bca3-d5596d0d81e9",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson02",
+   "url_names": "Andre V. Johnson, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Andrea Fletcher Harrison",
+   "politician_id": "d61a670a-7626-4464-93dc-c1e21d7b26da",
+   "rows": 1,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harrison01?tab=2022RS-legislation",
+   "url_names": "Andrea Fletcher Harrison",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Andrea Fletcher Harrison",
+   "politician_id": "d61a670a-7626-4464-93dc-c1e21d7b26da",
+   "rows": 2,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harrison01?tab=2023RS-legislation",
+   "url_names": "Andrea Fletcher Harrison",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Andrea Fletcher Harrison",
+   "politician_id": "d61a670a-7626-4464-93dc-c1e21d7b26da",
+   "rows": 5,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harrison01?tab=2025RS-legislation",
+   "url_names": "Andrea Fletcher Harrison",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Andrea Fletcher Harrison",
+   "politician_id": "d61a670a-7626-4464-93dc-c1e21d7b26da",
+   "rows": 4,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harrison01?tab=2026RS-legislation",
+   "url_names": "Andrea Fletcher Harrison",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Andrew C. Pruski",
+   "politician_id": "ddfd43d3-023d-417e-9b68-af5a693e601e",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pruski01",
+   "url_names": "Andrew C. Pruski",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Anne Healey",
+   "politician_id": "4436b432-a63f-4946-919a-f30c41f899e4",
+   "rows": 13,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/healey",
+   "url_names": "Anne Healey",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Anne R. Kaiser",
+   "politician_id": "bfd0f15f-abb1-4d28-b1f4-e06875adce16",
+   "rows": 13,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kaiser",
+   "url_names": "Anne R. Kaiser",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Antonio Hayes",
+   "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes02",
+   "url_names": "Antonio Hayes",
+   "verdict": "OK"
+  },
+  {
+   "politician": "April Miller",
+   "politician_id": "b389687f-817b-4fda-8770-a888029f4629",
+   "rows": 7,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/miller03",
+   "url_names": "April Miller",
+   "verdict": "OK"
+  },
+  {
+   "politician": "April Rose",
+   "politician_id": "5967c703-2583-466f-a438-c3ac182111d5",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rose01",
+   "url_names": "April Rose",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Arthur Ellis",
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "rows": 13,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01",
+   "url_names": "Arthur Ellis",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Aruna Miller",
+   "politician_id": "ea9fc2d6-3b26-469a-978c-e8c846d2d49a",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/miller%20a?ys=2019RS",
+   "url_names": "Aruna Miller",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Ashanti Martinez",
+   "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+   "rows": 1,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01?tab=2022RS-legislation",
+   "url_names": "Ashanti Martinez",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Ashanti Martinez",
+   "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+   "rows": 2,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01?tab=2023RS-legislation",
+   "url_names": "Ashanti Martinez",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Ashanti Martinez",
+   "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+   "rows": 4,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01?tab=2025RS-legislation",
+   "url_names": "Ashanti Martinez",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Ashanti Martinez",
+   "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+   "rows": 5,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01?tab=2026RS-legislation",
+   "url_names": "Ashanti Martinez",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Barrie S. Ciliberti",
+   "politician_id": "00a1eaeb-157c-42f8-a6e5-9a9d02decbe9",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ciliberti01",
+   "url_names": "Barrie S. Ciliberti",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Barry Beauchamp",
+   "politician_id": "bc7ee014-a452-4eaf-81e9-2f4c55d3eaea",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/beauchamp01",
+   "url_names": "Barry Beauchamp",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Ben Barnes",
+   "politician_id": "590b56b2-1473-4e86-ba96-0490e172f6ff",
+   "rows": 16,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes",
+   "url_names": "Ben Barnes",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Benjamin F. Kramer",
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "rows": 14,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+   "url_names": "Benjamin F. Kramer",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Bernice Mireku-North",
+   "politician_id": "8abee534-5db0-4950-a2b9-d0d1e8088cc7",
+   "rows": 16,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mireku01",
+   "url_names": "Bernice Mireku-North",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Bill Ferguson",
+   "politician_id": "6e3c30f5-52be-48b0-b5b4-383e5d745c57",
+   "rows": 20,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ferguson",
+   "url_names": "Bill Ferguson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Bonnie Cullison",
+   "politician_id": "17c22fec-63a4-4f5d-8607-0c364ddffd71",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/cullison",
+   "url_names": "Bonnie Cullison",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Brian Chisholm",
+   "politician_id": "cfc704da-dd6c-40b0-97fa-0c5ece8d3976",
+   "rows": 7,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/chisholm01",
+   "url_names": "Brian Chisholm",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Brian J. Feldman",
+   "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714",
+   "rows": 3,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldman",
+   "url_names": "Brian J. Feldman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Brian J. Feldman",
+   "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714",
+   "rows": 6,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldman?ys=2025RS",
+   "url_names": "Brian J. Feldman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Brian M. Crosby",
+   "politician_id": "898845f9-cb93-4162-b0ed-6842eacda5d6",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/crosby01?tab=2026RS-legislation",
+   "url_names": "Brian M. Crosby",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Brooke Lierman",
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "rows": 14,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lierman01?ys=2025RS",
+   "url_names": "Brooke E. Lierman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Bryan W. Simonaire",
+   "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b",
+   "rows": 14,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simonaire",
+   "url_names": "Bryan W. Simonaire",
+   "verdict": "OK"
+  },
+  {
+   "politician": "C. Anthony Muse",
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+   "url_names": "C. Anthony Muse",
+   "verdict": "OK"
+  },
+  {
+   "politician": "C. T. Wilson",
+   "politician_id": "69870c10-cea2-43c2-8cf9-bfcaf0b82265",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wilson",
+   "url_names": "C. T. Wilson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Catherine M. Forbes",
+   "politician_id": "c017b328-4469-45c4-aa8a-7b9035c77e22",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/forbes01",
+   "url_names": "Catherine M. Forbes",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Caylin Young",
+   "politician_id": "92075c9b-6c7e-4763-981f-5a42a8afddf5",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/young05",
+   "url_names": "Caylin Young",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Chao Wu",
+   "politician_id": "7ced90a8-39dc-447e-ba33-e3af4cd47473",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wu01",
+   "url_names": "Chao Wu",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Charlotte Crutchfield",
+   "politician_id": "98d6a17e-59dc-4d11-a342-869603862f10",
+   "rows": 17,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/crutchfield01",
+   "url_names": "Charlotte Crutchfield",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Cheryl C. Kagan",
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "rows": 16,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+   "url_names": "Cheryl C. Kagan",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Cheryl E. Pasteur",
+   "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pasteur01",
+   "url_names": "Cheryl E. Pasteur",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Chris Tomlinson",
+   "politician_id": "6e5ac4b7-73fd-497d-a4e9-7d5124c3d904",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/tomlinson01",
+   "url_names": "Chris Tomlinson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Chris West",
+   "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/west02",
+   "url_names": "Chris West",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Christopher Eric Bouchat",
+   "politician_id": "c12bb600-318a-4541-bcdd-8260f1ba172e",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bouchat01",
+   "url_names": "Christopher Eric Bouchat",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Christopher T. Adams",
+   "politician_id": "1eada938-f28c-46b9-bd21-df241656cd2b",
+   "rows": 7,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/adams01",
+   "url_names": "Christopher T. Adams",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Clarence K. Lam",
+   "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997",
+   "rows": 1,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lam02",
+   "url_names": "Clarence K. Lam",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Clarence K. Lam",
+   "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lam02?ys=2025RS",
+   "url_names": "Clarence K. Lam",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Cory V. McCray",
+   "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray02",
+   "url_names": "Cory V. McCray",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Courtney Watson",
+   "politician_id": "a4b61b58-9006-4e58-952d-abeb2521cda0",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson02",
+   "url_names": "Courtney Watson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Craig J. Zucker",
+   "politician_id": "82145bc2-770a-421e-a2a1-0e79aae5b643",
+   "rows": 6,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/zucker01?ys=2025RS",
+   "url_names": "Craig J. Zucker",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Dalya Attar",
+   "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar02",
+   "url_names": "Dalya Attar",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Dan Cox",
+   "politician_id": "4a876d03-4e8f-4d0a-a236-4f594b59f29c",
+   "rows": 2,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/cox01?ys=2023RS",
+   "url_names": "Daniel L. Cox",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Dana Jones",
+   "politician_id": "d8eabd9b-2aa8-40de-94ce-06ce6ef167cf",
+   "rows": 7,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jones01",
+   "url_names": "Dana Jones",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Dana Stein",
+   "politician_id": "e94337e1-4776-4058-87b4-32dfeb7732a0",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stein",
+   "url_names": "Dana Stein",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Darrell Odom",
+   "politician_id": "0e238dbf-5b4e-4e95-8a94-e02d97a136f5",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/odom01?tab=2026RS-legislation",
+   "url_names": "Darrell Odom",
+   "verdict": "OK"
+  },
+  {
+   "politician": "David Fraser-Hidalgo",
+   "politician_id": "ab8aa19a-42c3-445e-9632-a5c7f05458ee",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fraser01",
+   "url_names": "David Fraser-Hidalgo",
+   "verdict": "OK"
+  },
+  {
+   "politician": "David Moon",
+   "politician_id": "96876928-53f8-4ed5-b2de-deab3a456d83",
+   "rows": 15,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moon01",
+   "url_names": "David Moon",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Dawn Gile",
+   "politician_id": "ff266ecf-9ea5-4282-b729-9830cc8abfa3",
+   "rows": 13,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/gile01",
+   "url_names": "Dawn Gile",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Debra Davis",
+   "politician_id": "1cc5a555-4b8a-4573-8525-9ad2c7c0bf46",
+   "rows": 7,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/davis02",
+   "url_names": "Debra Davis",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Deni Taveras",
+   "politician_id": "a92085b6-642a-4cf6-a73e-c985a6fd09fa",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taveras01",
+   "url_names": "Deni Taveras",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Denise Roberts",
+   "politician_id": "d5999df9-83b8-4870-a170-4d13f40473e2",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberts01",
+   "url_names": "Denise Roberts",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Dereck E. Davis",
+   "politician_id": "75378a96-8886-46eb-b0c1-37cbe2579265",
+   "rows": 4,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/davis%20d?ys=2025RS",
+   "url_names": "Dereck E. Davis",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Derrick Coley",
+   "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+   "rows": 1,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2022RS-legislation",
+   "url_names": "Derrick Coley",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Derrick Coley",
+   "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+   "rows": 2,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2023RS-legislation",
+   "url_names": "Derrick Coley",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Derrick Coley",
+   "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+   "rows": 4,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2025RS-legislation",
+   "url_names": "Derrick Coley",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Derrick Coley",
+   "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+   "rows": 4,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2026RS-legislation",
+   "url_names": "Derrick Coley",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Diana M. Fennell",
+   "politician_id": "192e8ffb-e576-41f1-915a-dbc0c30d4769",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fennell01",
+   "url_names": "Diana M. Fennell",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Dylan Behler",
+   "politician_id": "3f45bad5-b856-4d8e-b3d9-8c03623e030a",
+   "rows": 6,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/behler01",
+   "url_names": "Dylan Behler",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Edith J. Patterson",
+   "politician_id": "b9c61fea-fcb1-45cc-8e2c-e5b3046b7266",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/patterson02",
+   "url_names": "Edith J. Patterson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Elizabeth Embry",
+   "politician_id": "03a161cf-1da8-4c34-9c08-d91bbf958987",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/embry01",
+   "url_names": "Elizabeth Embry",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Emily Shetty",
+   "politician_id": "d1a30768-52e8-4a0d-badc-3e5f2f5792c7",
+   "rows": 13,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/shetty01",
+   "url_names": "Emily Shetty",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Eric Ebersole",
+   "politician_id": "22610d7f-eaca-4802-b486-0e48544e6e7d",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ebersole01",
+   "url_names": "Eric Ebersole",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Frank M. Conaway, Jr.",
+   "politician_id": "94855fb3-0e08-45ac-8c67-ba668ef67c4b",
+   "rows": 7,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/conaway",
+   "url_names": "Frank M. Conaway, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Gabriel Acevero",
+   "politician_id": "e1b53b61-d4f7-4d10-bdb3-2a8dcfb12820",
+   "rows": 15,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/acevero01",
+   "url_names": "Gabriel Acevero",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Gabriel M. Moreno",
+   "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moreno01",
+   "url_names": "Gabriel M. Moreno",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Greg Wims",
+   "politician_id": "b7e2aa8f-a301-4004-81e9-d1f857c81075",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wims01",
+   "url_names": "Greg Wims",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Guy Guzzone",
+   "politician_id": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7",
+   "rows": 4,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone?ys=2025RS",
+   "url_names": "Guy Guzzone",
+   "verdict": "OK"
+  },
+  {
+   "politician": "H. Kevin Anderson",
+   "politician_id": "d17104a7-8a35-4bcd-8879-76ceb997df6a",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/anderson01",
+   "url_names": "H. Kevin Anderson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Harry Bhandari",
+   "politician_id": "6d95657c-6c46-4aab-886f-f9688adc7b33",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bhandari01",
+   "url_names": "Harry Bhandari",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Heather Bagnall",
+   "politician_id": "41749b94-11b8-4047-8421-95db0900d4b2",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bagnall01",
+   "url_names": "Heather Bagnall",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jack Bailey",
+   "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bailey01",
+   "url_names": "Jack Bailey",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jackie Addison",
+   "politician_id": "01aaf4ba-c8ec-4a50-bd56-8d181d35e903",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/addison01",
+   "url_names": "Jackie Addison",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jamila J. Woods",
+   "politician_id": "916afe40-4061-476f-9a54-b271b32778d2",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/woods01?tab=2026RS-legislation",
+   "url_names": "Jamila J. Woods",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jared Solomon",
+   "politician_id": "c0bf0c64-6254-40a7-b810-8717977759dd",
+   "rows": 14,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/solomon01",
+   "url_names": "Jared Solomon",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jason C. Buckel",
+   "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/buckel01",
+   "url_names": "Jason C. Buckel",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jason C. Gallion",
+   "politician_id": "e2ca1bfd-255d-417b-a9d7-424e6c10749d",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/gallion01",
+   "url_names": "Jason C. Gallion",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jay A. Jacobs",
+   "politician_id": "8b43dd9c-26c3-48bb-ac60-d95f8a39349a",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jacobs%20j",
+   "url_names": "Jay A. Jacobs",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jeff Waldstreicher",
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "rows": 20,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+   "url_names": "Jeff Waldstreicher",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jefferson L. Ghrist",
+   "politician_id": "eca530ff-628d-417d-a3dc-b858dc7c2376",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ghrist01",
+   "url_names": "Jefferson L. Ghrist",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jeffrie E. Long, Jr.",
+   "politician_id": "70f63959-f51d-4411-adc1-f1c429bbc397",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/long02?tab=2026RS-legislation",
+   "url_names": "Jeffrie E. Long, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jen Terrasa",
+   "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/terrasa01",
+   "url_names": "Jen Terrasa",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jesse T. Pippy",
+   "politician_id": "ce2fc441-abd5-4d8f-9c56-114e31c4d43c",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pippy01",
+   "url_names": "Jesse T. Pippy",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jessica Feldmark",
+   "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldmark01",
+   "url_names": "Jessica Feldmark",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jheanelle K. Wilkins",
+   "politician_id": "cf68a5cd-f375-4296-8a87-1828d903baea",
+   "rows": 17,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wilkins01",
+   "url_names": "Jheanelle K. Wilkins",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jim Hinebaugh, Jr.",
+   "politician_id": "3817ad52-3f43-4bd3-8525-e7dcd0816153",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hinebaugh01",
+   "url_names": "Jim Hinebaugh, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jim Rosapepe",
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "rows": 14,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+   "url_names": "Jim Rosapepe",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Joanne C. Benson",
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+   "url_names": "Joanne C. Benson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Joe Vogel",
+   "politician_id": "458a60ba-a235-4b36-80bb-8b537375a4ff",
+   "rows": 18,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/vogel01",
+   "url_names": "Joe Vogel",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Johnny Mautz",
+   "politician_id": "34c94aa4-11b7-4594-9c3e-c506f10309f6",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mautz01",
+   "url_names": "Johnny Mautz",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jon S. Cardin",
+   "politician_id": "631dac5c-fb86-41f5-a82d-5963164a9142",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/cardin01",
+   "url_names": "Jon S. Cardin",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Joseline Peña-Melnyk",
+   "politician_id": "00cd05cc-75de-4d9a-ab23-9f53441bc186",
+   "rows": 18,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena",
+   "url_names": "Joseline A. Peña-Melnyk",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Joshua J. Stonko",
+   "politician_id": "656a8bc9-348e-4ffc-819c-2f4611b3ddc8",
+   "rows": 7,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stonko01",
+   "url_names": "Joshua J. Stonko",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Julian Ivey",
+   "politician_id": "69bf6043-4546-4804-ae04-311cff54a986",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ivey01",
+   "url_names": "Julian Ivey",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Julie Palakovich Carr",
+   "politician_id": "70d58d4b-4203-4fc2-b36f-32e6231c4339",
+   "rows": 15,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/palakovich01",
+   "url_names": "Julie Palakovich Carr",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Karen Lewis Young",
+   "politician_id": "1f78b5e2-b192-4aae-8112-19338aaa891d",
+   "rows": 1,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/young04",
+   "url_names": "Karen Lewis Young",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Karen Simpson",
+   "politician_id": "5946ad0c-ddf5-4674-840e-6968105042cd",
+   "rows": 7,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simpson01",
+   "url_names": "Karen Simpson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Karen Toles",
+   "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+   "rows": 1,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/toles01?tab=2022RS-legislation",
+   "url_names": "Karen Toles",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Karen Toles",
+   "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+   "rows": 2,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/toles01?tab=2023RS-legislation",
+   "url_names": "Karen Toles",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Karen Toles",
+   "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+   "rows": 4,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/toles01?tab=2025RS-legislation",
+   "url_names": "Karen Toles",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Karen Toles",
+   "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+   "rows": 4,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/toles01?tab=2026RS-legislation",
+   "url_names": "Karen Toles",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kathy Szeliga",
+   "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/szeliga",
+   "url_names": "Kathy Szeliga",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kenneth Kerr",
+   "politician_id": "c0abb4fa-be8d-4fbe-9b6d-6319a8ecd255",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kerr01",
+   "url_names": "Kenneth Kerr",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kent Roberson",
+   "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+   "rows": 1,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01?tab=2022RS-legislation",
+   "url_names": "Kent Roberson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kent Roberson",
+   "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+   "rows": 2,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01?tab=2023RS-legislation",
+   "url_names": "Kent Roberson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kent Roberson",
+   "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+   "rows": 4,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01?tab=2025RS-legislation",
+   "url_names": "Kent Roberson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kent Roberson",
+   "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+   "rows": 4,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01?tab=2026RS-legislation",
+   "url_names": "Kent Roberson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kevin B. Hornberger",
+   "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hornberger01",
+   "url_names": "Kevin B. Hornberger",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kevin M. Harris",
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "rows": 14,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+   "url_names": "Kevin M. Harris",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kim Ross",
+   "politician_id": "5d17e3ea-9d63-4a96-8848-9e293ac05fdb",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ross01",
+   "url_names": "Kim Ross",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kris Fair",
+   "politician_id": "dfb9ae21-4605-4c58-94e8-84b1eb1a30c1",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fair01",
+   "url_names": "Kris Fair",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kriselda Valderrama",
+   "politician_id": "768ac1cf-a599-4ddb-943c-c985fafb2607",
+   "rows": 7,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valderrama?tab=2026RS-legislation",
+   "url_names": "Kriselda Valderrama",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kym Taylor",
+   "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taylor03",
+   "url_names": "Kym Taylor",
+   "verdict": "OK"
+  },
+  {
+   "politician": "LaToya Nkongolo",
+   "politician_id": "13462ee2-0dd9-4f70-809f-a813c23951d4",
+   "rows": 5,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/nkongolo01",
+   "url_names": "LaToya Nkongolo",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Lauren Arikan",
+   "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/arikan01",
+   "url_names": "Lauren Arikan",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Lesley J. Lopez",
+   "politician_id": "2fa68ca4-00b5-4518-a692-d12447d7fec3",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lopez01",
+   "url_names": "Lesley J. Lopez",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Lily Qi",
+   "politician_id": "e00e72f9-6b53-46a7-a1e4-74ab7b91d68d",
+   "rows": 13,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/qi01",
+   "url_names": "Lily Qi",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Linda Foley",
+   "politician_id": "b80a680a-9f79-4d56-994b-00ce24ec7ef3",
+   "rows": 13,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/foley01",
+   "url_names": "Linda Foley",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Lorig Charkoudian",
+   "politician_id": "9c5e1ac7-8a39-4c6e-8b20-0788a92f8607",
+   "rows": 14,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charkoudian01",
+   "url_names": "Lorig Charkoudian",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Luke Clippinger",
+   "politician_id": "ad1aaa25-0ef6-4c88-9d78-d75aec7398c7",
+   "rows": 13,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/clippinger",
+   "url_names": "Luke Clippinger",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Malcolm Augustine",
+   "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/augustine01",
+   "url_names": "Malcolm Augustine",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Malcolm P. Ruff",
+   "politician_id": "7e1dfb66-1eff-4c8d-b3fe-d39f990b99c4",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ruff01",
+   "url_names": "Malcolm P. Ruff",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Marc Korman",
+   "politician_id": "e76d0654-b0c6-43dc-9159-e929e480d070",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/korman01",
+   "url_names": "Marc Korman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mark Edelson",
+   "politician_id": "bec4b395-bb4b-4740-ac1c-8e89f12608a2",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/edelson01",
+   "url_names": "Mark Edelson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mark N. Fisher",
+   "politician_id": "71542618-59c8-4b06-a765-e3df60cca763",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fisher?tab=2026RS-legislation",
+   "url_names": "Mark N. Fisher",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mark S. Chang",
+   "politician_id": "4a409af4-8568-42c3-bb72-7bb7500c96ce",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/chang01?tab=2026RS-legislation",
+   "url_names": "Mark S. Chang",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Marlon Amprey",
+   "politician_id": "62bed8b6-beb2-4c41-b234-dc6427bfc9c0",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/amprey01",
+   "url_names": "Marlon Amprey",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Marvin E. Holmes, Jr.",
+   "politician_id": "b8e331fa-d58e-479f-b076-8fda0b0604c5",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holmes",
+   "url_names": "Marvin E. Holmes, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mary A. Lehman",
+   "politician_id": "251a2047-372b-480e-aa09-231f9a5edeca",
+   "rows": 2,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lehman01?tab=2022RS-legislation",
+   "url_names": "Mary A. Lehman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mary A. Lehman",
+   "politician_id": "251a2047-372b-480e-aa09-231f9a5edeca",
+   "rows": 2,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lehman01?tab=2023RS-legislation",
+   "url_names": "Mary A. Lehman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mary A. Lehman",
+   "politician_id": "251a2047-372b-480e-aa09-231f9a5edeca",
+   "rows": 5,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lehman01?tab=2025RS-legislation",
+   "url_names": "Mary A. Lehman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mary A. Lehman",
+   "politician_id": "251a2047-372b-480e-aa09-231f9a5edeca",
+   "rows": 4,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lehman01?tab=2026RS-legislation",
+   "url_names": "Mary A. Lehman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mary Beth Carozza",
+   "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza02",
+   "url_names": "Mary Beth Carozza",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mary Washington",
+   "politician_id": "38404814-7be0-40e3-b044-062f98b2a5b0",
+   "rows": 16,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington01",
+   "url_names": "Mary Washington",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mary-Dulany James",
+   "politician_id": "18313901-28d8-464c-9368-2873577e9d44",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/james01",
+   "url_names": "Mary-Dulany James",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Matthew J. Schindler",
+   "politician_id": "18c6abb4-7b4b-4e21-a7fe-008e43d6f3e5",
+   "rows": 7,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/schindler01",
+   "url_names": "Matthew J. Schindler",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Matthew Morgan",
+   "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/morgan02",
+   "url_names": "Matthew Morgan",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Melissa Wells",
+   "politician_id": "7217c1b4-6fae-447d-9566-f2513319fa94",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wells02",
+   "url_names": "Melissa Wells",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Michele Guyton",
+   "politician_id": "bb180c23-b965-4bba-a2b9-73febd484d21",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guyton01",
+   "url_names": "Michele Guyton",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mike Griffith",
+   "politician_id": "0c789b27-d50c-4822-95ff-409ecb7db08a",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/griffith02",
+   "url_names": "Mike Griffith",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mike McKay",
+   "politician_id": "f88cd73d-1970-4da1-9bea-2142a25999a7",
+   "rows": 2,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mckay02",
+   "url_names": "Mike McKay",
+   "verdict": "OK"
+  },
+  {
+   "politician": "N. Scott Phillips",
+   "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/phillips02",
+   "url_names": "N. Scott Phillips",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Nancy J. King",
+   "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/king",
+   "url_names": "Nancy J. King",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Natalie Ziegler",
+   "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+   "rows": 6,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ziegler01",
+   "url_names": "Natalie Ziegler",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Nicholaus R. Kipke",
+   "politician_id": "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08",
+   "rows": 13,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kipke?tab=2026RS-legislation",
+   "url_names": "Nicholaus R. Kipke",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Nick Charles",
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+   "url_names": "Nick Charles",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Nicole A. Williams",
+   "politician_id": "5c24446e-c9d6-4dda-9703-e3c049798315",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/williams01",
+   "url_names": "Nicole A. Williams",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Pam Lanman Guzzone",
+   "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+   "rows": 5,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone01",
+   "url_names": "Pam Lanman Guzzone",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Pam Queen",
+   "politician_id": "a11c027a-ef25-4a09-8df7-e9b7c60bea90",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/queen01",
+   "url_names": "Pam Queen",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Pamela Beidle",
+   "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/beidle01",
+   "url_names": "Pamela Beidle",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Paul D. Corderman",
+   "politician_id": "5127f8d8-ca40-40aa-8773-4c1abad66f41",
+   "rows": 1,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/corderman02",
+   "url_names": "Paul D. Corderman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Regina T. Boyce",
+   "politician_id": "027a2610-1160-4525-a5c1-469fe85d46e1",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/boyce01",
+   "url_names": "Regina T. Boyce",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Ric Metzgar",
+   "politician_id": "ba85b633-32cf-4617-923c-3a325f39894e",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/metzgar01",
+   "url_names": "Ric Metzgar",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Robbyn Lewis",
+   "politician_id": "9285f590-79b5-48de-a1c0-a022629e6ebb",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lewis01",
+   "url_names": "Robbyn Lewis",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Robert B. Long",
+   "politician_id": "eadb65c9-74b6-40c3-b9e7-159c5734c59f",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/long01",
+   "url_names": "Robert B. Long",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Robin L. Grammer, Jr.",
+   "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/grammer01",
+   "url_names": "Robin L. Grammer, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Ron Watson",
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+   "url_names": "Ron Watson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Ryan Nawrocki",
+   "politician_id": "f5224e0c-0761-4ca7-a889-ed44517e2b91",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/nawrocki01",
+   "url_names": "Ryan Nawrocki",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Ryan Spiegel",
+   "politician_id": "203a0228-7a63-4a6a-b26d-fa45ba139472",
+   "rows": 16,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/spiegel01",
+   "url_names": "Ryan Spiegel",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Samuel I. Rosenberg",
+   "politician_id": "36eecaff-4677-441a-b36e-a323e87d9158",
+   "rows": 19,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosenberg",
+   "url_names": "Samuel I. Rosenberg",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Sara Love",
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "rows": 20,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+   "url_names": "Sara Love",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Sarah Wolek",
+   "politician_id": "4db476f3-bc84-484c-9440-666028942469",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wolek01",
+   "url_names": "Sarah Wolek",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Sean A. Stinnett",
+   "politician_id": "012af8f7-693a-4ddc-b0bc-953dae8d2bc2",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stinnett01",
+   "url_names": "Sean A. Stinnett",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Seth A. Howard",
+   "politician_id": "2fe3f655-c28e-40c3-a2f9-48ea9eb8b498",
+   "rows": 7,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/howard01",
+   "url_names": "Seth A. Howard",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Shaneka Henson",
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "rows": 13,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+   "url_names": "Shaneka Henson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Sheila Ruth",
+   "politician_id": "df1a05a1-2a70-4e40-a0c6-5b3f81632c7e",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ruth01",
+   "url_names": "Sheila Ruth",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Shelly Hettleman",
+   "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hettleman02?ys=2025RS",
+   "url_names": "Shelly Hettleman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Sheree Sample-Hughes",
+   "politician_id": "a1c2b55c-df7d-487c-ad90-7f7e2c2e6951",
+   "rows": 14,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sample01",
+   "url_names": "Sheree Sample-Hughes",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Stephanie Smith",
+   "politician_id": "848ac881-004b-436a-9a17-dfacbd33de5a",
+   "rows": 11,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith03",
+   "url_names": "Stephanie Smith",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Steve Johnson",
+   "politician_id": "dbb1c600-c87b-449c-bd3b-1c236287c00f",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01",
+   "url_names": "Steve Johnson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Steven J. Arentz",
+   "politician_id": "fee8a413-a3a8-4568-ad9b-db00f94f5ac2",
+   "rows": 7,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/arentz01",
+   "url_names": "Steven J. Arentz",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Stuart Michael Schmidt, Jr.",
+   "politician_id": "55d9d0b6-78a3-460b-97b9-87913ffc8e85",
+   "rows": 7,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/schmidt01?tab=2026RS-legislation",
+   "url_names": "Stuart Michael Schmidt, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Susan K. McComas",
+   "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07",
+   "rows": 9,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccomas",
+   "url_names": "Susan K. McComas",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Teresa E. Reilly",
+   "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/reilly01",
+   "url_names": "Teresa E. Reilly",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Teresa Woorman",
+   "politician_id": "36171e41-704b-4bf9-b300-755afe4ee06f",
+   "rows": 15,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/woorman01",
+   "url_names": "Teresa Woorman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Terri L. Hill",
+   "politician_id": "f6a237a0-34ff-4a93-b05a-335ec38b6da3",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hill02",
+   "url_names": "Terri L. Hill",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Terry L. Baker",
+   "politician_id": "d049cf3e-6577-4f8d-ba7e-768ac2b78d66",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/baker04",
+   "url_names": "Terry L. Baker",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Thomas S. Hutchinson",
+   "politician_id": "fb1fe811-b340-42d3-88ee-97b5364117cd",
+   "rows": 7,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hutchinson01",
+   "url_names": "Thomas S. Hutchinson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Tiffany T. Alston",
+   "politician_id": "2e809682-2d95-480c-885e-d2174b811cfe",
+   "rows": 1,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/alston01?tab=2022RS-legislation",
+   "url_names": "Tiffany T. Alston",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Tiffany T. Alston",
+   "politician_id": "2e809682-2d95-480c-885e-d2174b811cfe",
+   "rows": 2,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/alston01?tab=2023RS-legislation",
+   "url_names": "Tiffany T. Alston",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Tiffany T. Alston",
+   "politician_id": "2e809682-2d95-480c-885e-d2174b811cfe",
+   "rows": 5,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/alston01?tab=2025RS-legislation",
+   "url_names": "Tiffany T. Alston",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Tiffany T. Alston",
+   "politician_id": "2e809682-2d95-480c-885e-d2174b811cfe",
+   "rows": 4,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/alston01?tab=2026RS-legislation",
+   "url_names": "Tiffany T. Alston",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Vaughn Stewart",
+   "politician_id": "ac558ee8-ecae-47b6-a25e-46307521b4af",
+   "rows": 17,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stewart01",
+   "url_names": "Vaughn Stewart",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Veronica Turner",
+   "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16",
+   "rows": 12,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/turner01?tab=2026RS-legislation",
+   "url_names": "Veronica Turner",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Wayne A. Hartman",
+   "politician_id": "1ff2bb96-0e55-4893-8a4c-b675dfbb79f6",
+   "rows": 8,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hartman01",
+   "url_names": "Wayne A. Hartman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "William C. Smith, Jr.",
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "rows": 20,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+   "url_names": "William C. Smith, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "William J. Wivell",
+   "politician_id": "df6fe96f-7795-4934-9acc-2b9f8f0aa8f7",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wivell01",
+   "url_names": "William J. Wivell",
+   "verdict": "OK"
+  },
+  {
+   "politician": "William Valentine",
+   "politician_id": "cdf746c1-8311-416b-9ad3-2684a83b6992",
+   "rows": 10,
+   "cited_url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valentine01",
+   "url_names": "William Valentine",
+   "verdict": "OK"
+  }
+ ]
+}

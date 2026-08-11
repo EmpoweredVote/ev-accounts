@@ -1,0 +1,60 @@
+{
+ "audit": "remaining dead member slugs",
+ "rows": [
+  {
+   "who": "Antonio Hayes",
+   "dead": "hayes01",
+   "replacement": {
+    "slug": "hayes02",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes02",
+    "confirmed_as": "Antonio Hayes",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "who": "Chris West",
+   "dead": "west01",
+   "replacement": {
+    "slug": "west02",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/west02",
+    "confirmed_as": "Chris West",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "who": "Cory V. McCray",
+   "dead": "mccray01",
+   "replacement": {
+    "slug": "mccray02",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray02",
+    "confirmed_as": "Cory V. McCray",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "who": "Dalya Attar",
+   "dead": "attar01",
+   "replacement": {
+    "slug": "attar02",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar02",
+    "confirmed_as": "Dalya Attar",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "who": "Mary Beth Carozza",
+   "dead": "carozza01",
+   "replacement": {
+    "slug": "carozza02",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza02",
+    "confirmed_as": "Mary Beth Carozza",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  }
+ ]
+}

@@ -1,0 +1,559 @@
+{
+  "migration": "1693_repair_md_remaining_dead_member_slugs",
+  "generated": "pre-change snapshot from live DB",
+  "rule": "Replace dead mgaleg member-page citations with a URL confirmed, in its stored form, to name the right politician. Found by re-running the member-slug audit with a URL-exact cache after the original run's cache bug was fixed.",
+  "plan": [
+    {
+      "who": "Antonio Hayes",
+      "dead": "hayes01",
+      "replacement": {
+        "slug": "hayes02",
+        "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes02",
+        "confirmed_as": "Antonio Hayes",
+        "form": "BARE"
+      },
+      "final": "REPLACE"
+    },
+    {
+      "who": "Chris West",
+      "dead": "west01",
+      "replacement": {
+        "slug": "west02",
+        "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/west02",
+        "confirmed_as": "Chris West",
+        "form": "BARE"
+      },
+      "final": "REPLACE"
+    },
+    {
+      "who": "Cory V. McCray",
+      "dead": "mccray01",
+      "replacement": {
+        "slug": "mccray02",
+        "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray02",
+        "confirmed_as": "Cory V. McCray",
+        "form": "BARE"
+      },
+      "final": "REPLACE"
+    },
+    {
+      "who": "Dalya Attar",
+      "dead": "attar01",
+      "replacement": {
+        "slug": "attar02",
+        "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar02",
+        "confirmed_as": "Dalya Attar",
+        "form": "BARE"
+      },
+      "final": "REPLACE"
+    },
+    {
+      "who": "Mary Beth Carozza",
+      "dead": "carozza01",
+      "replacement": {
+        "slug": "carozza02",
+        "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza02",
+        "confirmed_as": "Mary Beth Carozza",
+        "form": "BARE"
+      },
+      "final": "REPLACE"
+    }
+  ],
+  "row_count": 49,
+  "rows": [
+    {
+      "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Antonio Hayes",
+      "topic": "Affordable Housing",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes01",
+        "https://ballotpedia.org/Antonio_Hayes"
+      ]
+    },
+    {
+      "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+      "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+      "full_name": "Antonio Hayes",
+      "topic": "Bail and Pretrial Decisions",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes01",
+        "https://ballotpedia.org/Antonio_Hayes"
+      ]
+    },
+    {
+      "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Antonio Hayes",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes01",
+        "https://ballotpedia.org/Antonio_Hayes"
+      ]
+    },
+    {
+      "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Antonio Hayes",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0528?ys=2022RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes02",
+        "https://ballotpedia.org/Antonio_Hayes"
+      ]
+    },
+    {
+      "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "full_name": "Antonio Hayes",
+      "topic": "Economic Development Incentives",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes01",
+        "https://ballotpedia.org/Antonio_Hayes"
+      ]
+    },
+    {
+      "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "full_name": "Antonio Hayes",
+      "topic": "Healthcare Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes01",
+        "https://ballotpedia.org/Antonio_Hayes"
+      ]
+    },
+    {
+      "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "full_name": "Antonio Hayes",
+      "topic": "Jail Capacity and Incarceration Alternatives",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes01",
+        "https://ballotpedia.org/Antonio_Hayes"
+      ]
+    },
+    {
+      "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "full_name": "Antonio Hayes",
+      "topic": "Reproductive Rights and Abortion Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes01",
+        "https://ballotpedia.org/Antonio_Hayes"
+      ]
+    },
+    {
+      "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Antonio Hayes",
+      "topic": "School Vouchers & Public Education Funding",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes01",
+        "https://ballotpedia.org/Antonio_Hayes"
+      ]
+    },
+    {
+      "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Antonio Hayes",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes01",
+        "https://ballotpedia.org/Antonio_Hayes"
+      ]
+    },
+    {
+      "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Antonio Hayes",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes01",
+        "https://ballotpedia.org/Antonio_Hayes"
+      ]
+    },
+    {
+      "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Chris West",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/west01",
+        "https://ballotpedia.org/Chris_West_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "full_name": "Chris West",
+      "topic": "Economic Development Incentives",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/west01",
+        "https://ballotpedia.org/Chris_West_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Chris West",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/west01",
+        "https://ballotpedia.org/Chris_West_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "full_name": "Chris West",
+      "topic": "Healthcare Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/west01",
+        "https://ballotpedia.org/Chris_West_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "Chris West",
+      "topic": "Public Safety Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/west01",
+        "https://ballotpedia.org/Chris_West_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "full_name": "Chris West",
+      "topic": "Reproductive Rights and Abortion Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/west01",
+        "https://ballotpedia.org/Chris_West_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Chris West",
+      "topic": "School Vouchers & Public Education Funding",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/west01",
+        "https://ballotpedia.org/Chris_West_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Chris West",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/west01",
+        "https://ballotpedia.org/Chris_West_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Chris West",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/west01",
+        "https://ballotpedia.org/Chris_West_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Cory V. McCray",
+      "topic": "Affordable Housing",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+        "https://ballotpedia.org/Cory_McCray"
+      ]
+    },
+    {
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Cory V. McCray",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+        "https://ballotpedia.org/Cory_McCray"
+      ]
+    },
+    {
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Cory V. McCray",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+        "https://ballotpedia.org/Cory_McCray"
+      ]
+    },
+    {
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "full_name": "Cory V. McCray",
+      "topic": "Economic Development Incentives",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+        "https://ballotpedia.org/Cory_McCray"
+      ]
+    },
+    {
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Cory V. McCray",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+        "https://ballotpedia.org/Cory_McCray"
+      ]
+    },
+    {
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "full_name": "Cory V. McCray",
+      "topic": "Healthcare Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+        "https://ballotpedia.org/Cory_McCray"
+      ]
+    },
+    {
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "full_name": "Cory V. McCray",
+      "topic": "Jail Capacity and Incarceration Alternatives",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+        "https://ballotpedia.org/Cory_McCray"
+      ]
+    },
+    {
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "Cory V. McCray",
+      "topic": "Public Safety Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+        "https://ballotpedia.org/Cory_McCray"
+      ]
+    },
+    {
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "full_name": "Cory V. McCray",
+      "topic": "Reproductive Rights and Abortion Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+        "https://ballotpedia.org/Cory_McCray"
+      ]
+    },
+    {
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Cory V. McCray",
+      "topic": "School Vouchers & Public Education Funding",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1030?ys=2019RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0915?ys=2021RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray02",
+        "https://ballotpedia.org/Cory_McCray"
+      ]
+    },
+    {
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Cory V. McCray",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+        "https://ballotpedia.org/Cory_McCray"
+      ]
+    },
+    {
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Cory V. McCray",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+        "https://ballotpedia.org/Cory_McCray"
+      ]
+    },
+    {
+      "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Dalya Attar",
+      "topic": "Affordable Housing",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar01",
+        "https://ballotpedia.org/Dalya_Attar"
+      ]
+    },
+    {
+      "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Dalya Attar",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar01",
+        "https://ballotpedia.org/Dalya_Attar"
+      ]
+    },
+    {
+      "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Dalya Attar",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar01",
+        "https://ballotpedia.org/Dalya_Attar"
+      ]
+    },
+    {
+      "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "full_name": "Dalya Attar",
+      "topic": "Economic Development Incentives",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar01",
+        "https://ballotpedia.org/Dalya_Attar"
+      ]
+    },
+    {
+      "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "full_name": "Dalya Attar",
+      "topic": "Healthcare Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar01",
+        "https://ballotpedia.org/Dalya_Attar"
+      ]
+    },
+    {
+      "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Dalya Attar",
+      "topic": "School Vouchers & Public Education Funding",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar01",
+        "https://ballotpedia.org/Dalya_Attar"
+      ]
+    },
+    {
+      "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Dalya Attar",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar01",
+        "https://ballotpedia.org/Dalya_Attar"
+      ]
+    },
+    {
+      "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Dalya Attar",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar01",
+        "https://ballotpedia.org/Dalya_Attar"
+      ]
+    },
+    {
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Mary Beth Carozza",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza01",
+        "https://ballotpedia.org/Mary_Beth_Carozza"
+      ]
+    },
+    {
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Mary Beth Carozza",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0779?ys=2025RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza02",
+        "https://ballotpedia.org/Mary_Beth_Carozza"
+      ]
+    },
+    {
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "full_name": "Mary Beth Carozza",
+      "topic": "Economic Development Incentives",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza01",
+        "https://ballotpedia.org/Mary_Beth_Carozza"
+      ]
+    },
+    {
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Mary Beth Carozza",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza01",
+        "https://ballotpedia.org/Mary_Beth_Carozza"
+      ]
+    },
+    {
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "full_name": "Mary Beth Carozza",
+      "topic": "Healthcare Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza01",
+        "https://ballotpedia.org/Mary_Beth_Carozza"
+      ]
+    },
+    {
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "full_name": "Mary Beth Carozza",
+      "topic": "Reproductive Rights and Abortion Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza01",
+        "https://ballotpedia.org/Mary_Beth_Carozza"
+      ]
+    },
+    {
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Mary Beth Carozza",
+      "topic": "School Vouchers & Public Education Funding",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza01",
+        "https://ballotpedia.org/Mary_Beth_Carozza"
+      ]
+    },
+    {
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Mary Beth Carozza",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza01",
+        "https://ballotpedia.org/Mary_Beth_Carozza"
+      ]
+    },
+    {
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Mary Beth Carozza",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza01",
+        "https://ballotpedia.org/Mary_Beth_Carozza"
+      ]
+    }
+  ]
+}
