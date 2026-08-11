@@ -1,0 +1,181 @@
+{
+ "pass": "MD pass 6 - in-tenure evidence for pre-tenure rows",
+ "tally": {
+  "RESOURCE_IN_TENURE": 4,
+  "NO_IN_TENURE_EVIDENCE": 3
+ },
+ "rows": [
+  {
+   "politician": "Ashanti Martinez",
+   "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+   "topic": "Immigration and Treatment of Immigrants",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "service_start": 2023,
+   "cited_slug": "martinez01",
+   "reasoning": "Supported Maryland RELIEF Act and immigration services legislation; backed language access and community support programs for immigrant communities.",
+   "pre_tenure_bills": [
+    "2013RS SB0639",
+    "2013RS HB1169",
+    "2014RS HB0326",
+    "2014RS HB1039",
+    "2015RS SB0590",
+    "2015RS SB0756",
+    "2015RS SB0835",
+    "2015RS HB0480"
+   ],
+   "candidates_checked": 16,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB0444",
+     "title": "Public Safety - Immigration Enforcement Agreements - Prohibition",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0444?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0630",
+     "title": "Correctional Services - Immigration Detention Facilities - Original Design and Construction",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0630?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB1575",
+     "title": "Correctional Services and Public Safety - Immigration Enforcement - Prohibitions (Community Trust Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1575?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Ashanti Martinez",
+   "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "service_start": 2023,
+   "cited_slug": "martinez01",
+   "reasoning": "Supported Maryland Abortion Care Access Act (2023) and reproductive rights legislation; backed expansion of abortion access and removal of barriers to reproductive healthcare.",
+   "pre_tenure_bills": [
+    "2022RS SB0890",
+    "2022RS HB0937"
+   ],
+   "candidates_checked": 42,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB1131",
+     "title": "Public Health - Pregnancy Loss - Prohibited Actions (Pregnancy Outcome Protection Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1131?ys=2026RS"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB0930",
+     "title": "Public Health Abortion Grant Program - Establishment",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0930?ys=2025RS"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0657",
+     "title": "Public Institutions of Higher Education - Pregnant and Parenting Students - Policy",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0657?ys=2024RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Denise Roberts",
+   "politician_id": "d5999df9-83b8-4870-a170-4d13f40473e2",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "service_start": 2024,
+   "cited_slug": "roberts01",
+   "reasoning": "Voted for Maryland Abortion Care Access Act (2023); backed reproductive rights legislation expanding abortion access in Maryland.",
+   "pre_tenure_bills": [
+    "2022RS SB0890",
+    "2022RS HB0937"
+   ],
+   "candidates_checked": 50,
+   "in_tenure_sponsorships": [],
+   "disposition": "NO_IN_TENURE_EVIDENCE"
+  },
+  {
+   "politician": "Derrick Coley",
+   "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "service_start": 2026,
+   "cited_slug": "coley01",
+   "reasoning": "Voted for Climate Solutions Now Act (2022); backed renewable energy mandates and emissions reduction targets.",
+   "pre_tenure_bills": [
+    "2021RS SB0414",
+    "2021RS HB0583",
+    "2022RS SB0528",
+    "2025RS SB0779"
+   ],
+   "candidates_checked": 24,
+   "in_tenure_sponsorships": [],
+   "disposition": "NO_IN_TENURE_EVIDENCE"
+  },
+  {
+   "politician": "Derrick Coley",
+   "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "service_start": 2026,
+   "cited_slug": "coley01",
+   "reasoning": "Voted for Maryland Abortion Care Access Act (2023); supported reproductive rights legislation and expansion of abortion access statewide.",
+   "pre_tenure_bills": [
+    "2022RS SB0890",
+    "2022RS HB0937"
+   ],
+   "candidates_checked": 20,
+   "in_tenure_sponsorships": [],
+   "disposition": "NO_IN_TENURE_EVIDENCE"
+  },
+  {
+   "politician": "Kent Roberson",
+   "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "service_start": 2024,
+   "cited_slug": "roberson01",
+   "reasoning": "Voted for Maryland Abortion Care Access Act (2023); supported reproductive rights legislation expanding abortion access.",
+   "pre_tenure_bills": [
+    "2022RS SB0890",
+    "2022RS HB0937"
+   ],
+   "candidates_checked": 50,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2025RS",
+     "number": "HB0930",
+     "title": "Public Health Abortion Grant Program - Establishment",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0930?ys=2025RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Kym Taylor",
+   "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "service_start": 2023,
+   "cited_slug": "taylor03",
+   "reasoning": "Voted for Maryland Abortion Care Access Act (2023); supported reproductive rights legislation expanding abortion access statewide.",
+   "pre_tenure_bills": [
+    "2022RS SB0890",
+    "2022RS HB0937"
+   ],
+   "candidates_checked": 70,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB0645",
+     "title": "Criminal Law - Fraud - Assisted Reproductive Treatment",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0645?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  }
+ ]
+}

@@ -73,7 +73,7 @@ async function sponsors(slug, session) {
 }
 
 const tenure = JSON.parse(fs.readFileSync(IN, 'utf8'));
-const rows = tenure.rows.filter((r) => r.verdict === 'PRE_TENURE_ALL_BILLS');
+const rows = tenure.rows.filter((r) => (r.verdict === 'PRE_TENURE_ALL_BILLS' || r.verdict === 'PRE_TENURE_CONFIRMED' || !r.verdict));
 
 const env = fs.readFileSync('C:/EV-Accounts/backend/.env', 'utf8');
 const dburl = env.split(/\r?\n/).find((l) => /^DATABASE_URL=/.test(l)).replace(/^DATABASE_URL=/, '').trim();

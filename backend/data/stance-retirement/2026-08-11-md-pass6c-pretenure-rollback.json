@@ -1,0 +1,98 @@
+{
+  "migration": "1701_dispose_md_pass6c_pretenure_rows",
+  "generated": "pre-change snapshot read from the live DB 2026-08-11",
+  "standard": "Guzzone, migs 1690 vs 1692: same politician, same pre-tenure prose, OPPOSITE dispositions, because the evidence differed. Search for in-tenure evidence FIRST; retire only where there is none.",
+  "cohort": "The 7 rows whose PRE_TENURE verdict SURVIVED the pass-6b re-screen (13 of the original 21 did not). Each names an instrument that exists only in sessions before the member was seated.",
+  "automated_vs_read": "The evidence search returned 4 RESOURCE / 3 NO_EVIDENCE. READING the candidates changed it to 3 RESOURCE / 4 RETIRE — Kym Taylor's only match was rejected. Same demotion pattern as mig 1697.",
+  "resourced": [
+    {
+      "politician": "Ashanti Martinez",
+      "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+      "topic": "Immigration and Treatment of Immigrants",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": "1.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01?tab=2025RS-legislation"],
+      "old_reasoning": "Supported Maryland RELIEF Act and immigration services legislation; backed language access and community support programs for immigrant communities.",
+      "why": "Seated 2023-02-24; the RELIEF Act is 2021RS SB0496, so that specific is impossible. He sponsors three in-tenure immigration bills that carry the chair honestly.",
+      "new_sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0444?ys=2026RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1575?ys=2026RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0630?ys=2026RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01"
+      ]
+    },
+    {
+      "politician": "Ashanti Martinez",
+      "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+      "topic": "Reproductive Rights and Abortion Access",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": "1.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01?tab=2023RS-legislation"],
+      "old_reasoning": "Supported Maryland Abortion Care Access Act (2023) and reproductive rights legislation; backed expansion of abortion access and removal of barriers to reproductive healthcare.",
+      "why": "The Abortion Care Access Act is 2022RS only and he was seated 2023-02-24. He sponsors the 2025 Public Health Abortion Grant Program and the 2026 Pregnancy Outcome Protection Act, both squarely on the chair.",
+      "new_sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0930?ys=2025RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1131?ys=2026RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01"
+      ]
+    },
+    {
+      "politician": "Kent Roberson",
+      "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+      "topic": "Reproductive Rights and Abortion Access",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": "1.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01?tab=2023RS-legislation"],
+      "old_reasoning": "Voted for Maryland Abortion Care Access Act (2023); supported reproductive rights legislation expanding abortion access.",
+      "why": "Seated 2023-05-30, AFTER the 2023 session adjourned, so his first session is 2024 and the 2022 ACAA is doubly impossible. He sponsors the 2025 Public Health Abortion Grant Program.",
+      "new_sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0930?ys=2025RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01"
+      ]
+    }
+  ],
+  "retired": [
+    {
+      "politician": "Denise Roberts",
+      "politician_id": "d5999df9-83b8-4870-a170-4d13f40473e2",
+      "topic": "Reproductive Rights and Abortion Access",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": "1.0",
+      "sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberts01"],
+      "reasoning": "Voted for Maryland Abortion Care Access Act (2023); backed reproductive rights legislation expanding abortion access in Maryland.",
+      "why": "Seated 2024-01-08; the ACAA is 2022RS. 50 in-tenure reproductive-rights candidates checked, she sponsors none."
+    },
+    {
+      "politician": "Derrick Coley",
+      "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+      "topic": "Climate Change and Environmental Protection",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": "1.0",
+      "sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2022RS-legislation"],
+      "reasoning": "Voted for Climate Solutions Now Act (2022); backed renewable energy mandates and emissions reduction targets.",
+      "why": "Seated 2026-01-13; the Climate Solutions Now Act is 2021/2022. 24 in-tenure climate candidates checked, he sponsors none."
+    },
+    {
+      "politician": "Derrick Coley",
+      "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+      "topic": "Reproductive Rights and Abortion Access",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": "1.0",
+      "sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2023RS-legislation"],
+      "reasoning": "Voted for Maryland Abortion Care Access Act (2023); supported reproductive rights legislation and expansion of abortion access statewide.",
+      "why": "Seated 2026-01-13; the ACAA is 2022RS. 20 in-tenure candidates checked, he sponsors none."
+    },
+    {
+      "politician": "Kym Taylor",
+      "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+      "topic": "Reproductive Rights and Abortion Access",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": "1.0",
+      "sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/taylor03"],
+      "reasoning": "Voted for Maryland Abortion Care Access Act (2023); supported reproductive rights legislation expanding abortion access statewide.",
+      "why": "Seated 2023-01-11; the ACAA is 2022RS. 70 candidates checked and the ONLY match was REJECTED ON READING: 2026RS HB0645 'Criminal Law - Fraud - Assisted Reproductive Treatment'. Fertility fraud is not abortion access. ⚠ This is the SAME BILL mig 1697 already rejected for the same reason, now firing on a different politician — the collision is a property of the bill title, not of one row."
+    }
+  ],
+  "not_emptied": "Martinez 12 rows, Roberts 11, Coley 11, Roberson 11, Taylor 12. Retiring 1-2 each leaves every one of them well populated. last_stances_researched_at is NULL for all five, so a retired topic resurfaces for re-research rather than reading as 'we looked and found nothing'.",
+  "expected_deltas": "context -4, answers -4, orphans 0"
+}
