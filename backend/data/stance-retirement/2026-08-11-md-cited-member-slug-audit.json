@@ -1,0 +1,1418 @@
+{
+ "audit": "MD cited member-slug identity",
+ "tally": {
+  "OK": 143,
+  "WRONG_PERSON_SAME_SURNAME": 11,
+  "DEAD_SLUG": 22
+ },
+ "rows": [
+  {
+   "politician": "Aaron M. Kaufman",
+   "politician_id": "bc703231-6af8-48c6-8ae6-4a93fc60b18f",
+   "rows": 19,
+   "cited_slug": "kaufman01",
+   "slug_belongs_to": "Aaron M. Kaufman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Adrian Boafo",
+   "politician_id": "1da26040-98b4-4eb0-aa1f-3ec05b297a29",
+   "rows": 3,
+   "cited_slug": "boafo01",
+   "slug_belongs_to": "Adrian Boafo",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Adrienne A. Jones",
+   "politician_id": "760cd4a7-235c-472f-a0ba-fb07098dfd57",
+   "rows": 17,
+   "cited_slug": "jones01",
+   "slug_belongs_to": "Dana Jones",
+   "verdict": "WRONG_PERSON_SAME_SURNAME"
+  },
+  {
+   "politician": "Aletheia McCaskill",
+   "politician_id": "fcfa1844-032e-4dba-9ae0-c52b82447fa8",
+   "rows": 11,
+   "cited_slug": "mccaskill01",
+   "slug_belongs_to": "Aletheia McCaskill",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Alonzo T. Washington",
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "rows": 14,
+   "cited_slug": "washington02",
+   "slug_belongs_to": "Alonzo T. Washington",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Andre V. Johnson, Jr.",
+   "politician_id": "b592e432-6411-48b3-bca3-d5596d0d81e9",
+   "rows": 9,
+   "cited_slug": "johnson02",
+   "slug_belongs_to": "Andre V. Johnson, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Andrea Fletcher Harrison",
+   "politician_id": "d61a670a-7626-4464-93dc-c1e21d7b26da",
+   "rows": 12,
+   "cited_slug": "harrison01",
+   "slug_belongs_to": "Andrea Fletcher Harrison",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Andrew C. Pruski",
+   "politician_id": "ddfd43d3-023d-417e-9b68-af5a693e601e",
+   "rows": 8,
+   "cited_slug": "pruski",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Anne Healey",
+   "politician_id": "4436b432-a63f-4946-919a-f30c41f899e4",
+   "rows": 13,
+   "cited_slug": "healey01",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Anne R. Kaiser",
+   "politician_id": "bfd0f15f-abb1-4d28-b1f4-e06875adce16",
+   "rows": 13,
+   "cited_slug": "kaiser",
+   "slug_belongs_to": "Anne R. Kaiser",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Antonio Hayes",
+   "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+   "rows": 11,
+   "cited_slug": "hayes01",
+   "slug_belongs_to": "Antonio L. Hayes",
+   "verdict": "OK"
+  },
+  {
+   "politician": "April Miller",
+   "politician_id": "b389687f-817b-4fda-8770-a888029f4629",
+   "rows": 7,
+   "cited_slug": "miller03",
+   "slug_belongs_to": "April Miller",
+   "verdict": "OK"
+  },
+  {
+   "politician": "April Rose",
+   "politician_id": "5967c703-2583-466f-a438-c3ac182111d5",
+   "rows": 8,
+   "cited_slug": "rose01",
+   "slug_belongs_to": "April Rose",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Arthur Ellis",
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "rows": 13,
+   "cited_slug": "ellis01",
+   "slug_belongs_to": "Arthur Ellis",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Aruna Miller",
+   "politician_id": "ea9fc2d6-3b26-469a-978c-e8c846d2d49a",
+   "rows": 11,
+   "cited_slug": "miller01",
+   "slug_belongs_to": "Ellen Willis Miller",
+   "verdict": "WRONG_PERSON_SAME_SURNAME"
+  },
+  {
+   "politician": "Ashanti Martinez",
+   "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+   "rows": 12,
+   "cited_slug": "martinez01",
+   "slug_belongs_to": "Ashanti Martinez",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Barrie S. Ciliberti",
+   "politician_id": "00a1eaeb-157c-42f8-a6e5-9a9d02decbe9",
+   "rows": 8,
+   "cited_slug": "ciliberti01",
+   "slug_belongs_to": "Barrie S. Ciliberti",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Barry Beauchamp",
+   "politician_id": "bc7ee014-a452-4eaf-81e9-2f4c55d3eaea",
+   "rows": 9,
+   "cited_slug": "beauchamp01",
+   "slug_belongs_to": "Barry Beauchamp",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Ben Barnes",
+   "politician_id": "590b56b2-1473-4e86-ba96-0490e172f6ff",
+   "rows": 16,
+   "cited_slug": "barnes01",
+   "slug_belongs_to": "Scherod C. Barnes",
+   "verdict": "WRONG_PERSON_SAME_SURNAME"
+  },
+  {
+   "politician": "Benjamin F. Kramer",
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "rows": 14,
+   "cited_slug": "kramer02",
+   "slug_belongs_to": "Benjamin F. Kramer",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Bernice Mireku-North",
+   "politician_id": "8abee534-5db0-4950-a2b9-d0d1e8088cc7",
+   "rows": 16,
+   "cited_slug": "mireku01",
+   "slug_belongs_to": "Bernice Mireku-North",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Bill Ferguson",
+   "politician_id": "6e3c30f5-52be-48b0-b5b4-383e5d745c57",
+   "rows": 20,
+   "cited_slug": "ferguson01",
+   "slug_belongs_to": "Timothy R. Ferguson",
+   "verdict": "WRONG_PERSON_SAME_SURNAME"
+  },
+  {
+   "politician": "Bonnie Cullison",
+   "politician_id": "17c22fec-63a4-4f5d-8607-0c364ddffd71",
+   "rows": 12,
+   "cited_slug": "cullison",
+   "slug_belongs_to": "Bonnie Cullison",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Brian Chisholm",
+   "politician_id": "cfc704da-dd6c-40b0-97fa-0c5ece8d3976",
+   "rows": 7,
+   "cited_slug": "chisholm",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Brian J. Feldman",
+   "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714",
+   "rows": 9,
+   "cited_slug": "feldman",
+   "slug_belongs_to": "Brian J. Feldman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Brian M. Crosby",
+   "politician_id": "898845f9-cb93-4162-b0ed-6842eacda5d6",
+   "rows": 8,
+   "cited_slug": "crosby01",
+   "slug_belongs_to": "Brian M. Crosby",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Brooke Lierman",
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "rows": 14,
+   "cited_slug": "lierman",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Bryan W. Simonaire",
+   "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b",
+   "rows": 14,
+   "cited_slug": "simonaire",
+   "slug_belongs_to": "Bryan W. Simonaire",
+   "verdict": "OK"
+  },
+  {
+   "politician": "C. Anthony Muse",
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "rows": 12,
+   "cited_slug": "muse01",
+   "slug_belongs_to": "C. Anthony Muse",
+   "verdict": "OK"
+  },
+  {
+   "politician": "C. T. Wilson",
+   "politician_id": "69870c10-cea2-43c2-8cf9-bfcaf0b82265",
+   "rows": 11,
+   "cited_slug": "wilson04",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Catherine M. Forbes",
+   "politician_id": "c017b328-4469-45c4-aa8a-7b9035c77e22",
+   "rows": 9,
+   "cited_slug": "forbes01",
+   "slug_belongs_to": "Catherine M. Forbes",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Caylin Young",
+   "politician_id": "92075c9b-6c7e-4763-981f-5a42a8afddf5",
+   "rows": 11,
+   "cited_slug": "young05",
+   "slug_belongs_to": "Caylin Young",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Chao Wu",
+   "politician_id": "7ced90a8-39dc-447e-ba33-e3af4cd47473",
+   "rows": 8,
+   "cited_slug": "wu01",
+   "slug_belongs_to": "Chao Wu",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Charlotte Crutchfield",
+   "politician_id": "98d6a17e-59dc-4d11-a342-869603862f10",
+   "rows": 17,
+   "cited_slug": "crutchfield01",
+   "slug_belongs_to": "Charlotte Crutchfield",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Cheryl C. Kagan",
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "rows": 16,
+   "cited_slug": "kagan01",
+   "slug_belongs_to": "Cheryl C. Kagan",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Cheryl E. Pasteur",
+   "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+   "rows": 9,
+   "cited_slug": "pasteur01",
+   "slug_belongs_to": "Cheryl E. Pasteur",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Chris Tomlinson",
+   "politician_id": "6e5ac4b7-73fd-497d-a4e9-7d5124c3d904",
+   "rows": 9,
+   "cited_slug": "tomlinson01",
+   "slug_belongs_to": "Chris Tomlinson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Chris West",
+   "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae",
+   "rows": 9,
+   "cited_slug": "west01",
+   "slug_belongs_to": "Chris West",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Christopher Eric Bouchat",
+   "politician_id": "c12bb600-318a-4541-bcdd-8260f1ba172e",
+   "rows": 9,
+   "cited_slug": "bouchat01",
+   "slug_belongs_to": "Christopher Eric Bouchat",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Christopher T. Adams",
+   "politician_id": "1eada938-f28c-46b9-bd21-df241656cd2b",
+   "rows": 7,
+   "cited_slug": "adams01",
+   "slug_belongs_to": "Christopher T. Adams",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Clarence K. Lam",
+   "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997",
+   "rows": 11,
+   "cited_slug": "lam02",
+   "slug_belongs_to": "Clarence K. Lam",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Cory V. McCray",
+   "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+   "rows": 12,
+   "cited_slug": "mccray01",
+   "slug_belongs_to": "Cory V. McCray",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Courtney Watson",
+   "politician_id": "a4b61b58-9006-4e58-952d-abeb2521cda0",
+   "rows": 9,
+   "cited_slug": "watson04",
+   "slug_belongs_to": "Ron Watson",
+   "verdict": "WRONG_PERSON_SAME_SURNAME"
+  },
+  {
+   "politician": "Craig J. Zucker",
+   "politician_id": "82145bc2-770a-421e-a2a1-0e79aae5b643",
+   "rows": 6,
+   "cited_slug": "zucker01",
+   "slug_belongs_to": "Craig J. Zucker",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Dalya Attar",
+   "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+   "rows": 8,
+   "cited_slug": "attar01",
+   "slug_belongs_to": "Dalya Attar",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Dan Cox",
+   "politician_id": "4a876d03-4e8f-4d0a-a236-4f594b59f29c",
+   "rows": 2,
+   "cited_slug": "cox01",
+   "slug_belongs_to": "Daniel L. Cox",
+   "verdict": "WRONG_PERSON_SAME_SURNAME"
+  },
+  {
+   "politician": "Dana Jones",
+   "politician_id": "d8eabd9b-2aa8-40de-94ce-06ce6ef167cf",
+   "rows": 7,
+   "cited_slug": "jones08",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Dana Stein",
+   "politician_id": "e94337e1-4776-4058-87b4-32dfeb7732a0",
+   "rows": 9,
+   "cited_slug": "stein01",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Darrell Odom",
+   "politician_id": "0e238dbf-5b4e-4e95-8a94-e02d97a136f5",
+   "rows": 9,
+   "cited_slug": "odom01",
+   "slug_belongs_to": "Darrell Odom",
+   "verdict": "OK"
+  },
+  {
+   "politician": "David Fraser-Hidalgo",
+   "politician_id": "ab8aa19a-42c3-445e-9632-a5c7f05458ee",
+   "rows": 11,
+   "cited_slug": "fraser01",
+   "slug_belongs_to": "David Fraser-Hidalgo",
+   "verdict": "OK"
+  },
+  {
+   "politician": "David Moon",
+   "politician_id": "96876928-53f8-4ed5-b2de-deab3a456d83",
+   "rows": 15,
+   "cited_slug": "moon01",
+   "slug_belongs_to": "David Moon",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Dawn Gile",
+   "politician_id": "ff266ecf-9ea5-4282-b729-9830cc8abfa3",
+   "rows": 13,
+   "cited_slug": "gile01",
+   "slug_belongs_to": "Dawn Gile",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Debra Davis",
+   "politician_id": "1cc5a555-4b8a-4573-8525-9ad2c7c0bf46",
+   "rows": 7,
+   "cited_slug": "davis01",
+   "slug_belongs_to": "Clarence Davis",
+   "verdict": "WRONG_PERSON_SAME_SURNAME"
+  },
+  {
+   "politician": "Deni Taveras",
+   "politician_id": "a92085b6-642a-4cf6-a73e-c985a6fd09fa",
+   "rows": 12,
+   "cited_slug": "taveras01",
+   "slug_belongs_to": "Deni Taveras",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Denise Roberts",
+   "politician_id": "d5999df9-83b8-4870-a170-4d13f40473e2",
+   "rows": 11,
+   "cited_slug": "roberts03",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Dereck E. Davis",
+   "politician_id": "75378a96-8886-46eb-b0c1-37cbe2579265",
+   "rows": 4,
+   "cited_slug": "davisd",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Derrick Coley",
+   "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+   "rows": 11,
+   "cited_slug": "coley01",
+   "slug_belongs_to": "Derrick Coley",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Diana M. Fennell",
+   "politician_id": "192e8ffb-e576-41f1-915a-dbc0c30d4769",
+   "rows": 9,
+   "cited_slug": "fennell01",
+   "slug_belongs_to": "Diana M. Fennell",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Dylan Behler",
+   "politician_id": "3f45bad5-b856-4d8e-b3d9-8c03623e030a",
+   "rows": 6,
+   "cited_slug": "behler",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Edith J. Patterson",
+   "politician_id": "b9c61fea-fcb1-45cc-8e2c-e5b3046b7266",
+   "rows": 9,
+   "cited_slug": "patterson03",
+   "slug_belongs_to": "Obie Patterson",
+   "verdict": "WRONG_PERSON_SAME_SURNAME"
+  },
+  {
+   "politician": "Elizabeth Embry",
+   "politician_id": "03a161cf-1da8-4c34-9c08-d91bbf958987",
+   "rows": 9,
+   "cited_slug": "embry01",
+   "slug_belongs_to": "Elizabeth Embry",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Emily Shetty",
+   "politician_id": "d1a30768-52e8-4a0d-badc-3e5f2f5792c7",
+   "rows": 13,
+   "cited_slug": "shetty01",
+   "slug_belongs_to": "Emily Shetty",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Eric Ebersole",
+   "politician_id": "22610d7f-eaca-4802-b486-0e48544e6e7d",
+   "rows": 10,
+   "cited_slug": "ebersole01",
+   "slug_belongs_to": "Eric Ebersole",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Frank M. Conaway, Jr.",
+   "politician_id": "94855fb3-0e08-45ac-8c67-ba668ef67c4b",
+   "rows": 7,
+   "cited_slug": "conaway",
+   "slug_belongs_to": "Frank M. Conaway, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Gabriel Acevero",
+   "politician_id": "e1b53b61-d4f7-4d10-bdb3-2a8dcfb12820",
+   "rows": 15,
+   "cited_slug": "acevero01",
+   "slug_belongs_to": "Gabriel Acevero",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Gabriel M. Moreno",
+   "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+   "rows": 9,
+   "cited_slug": "moreno01",
+   "slug_belongs_to": "Gabriel M. Moreno",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Greg Wims",
+   "politician_id": "b7e2aa8f-a301-4004-81e9-d1f857c81075",
+   "rows": 9,
+   "cited_slug": "wims01",
+   "slug_belongs_to": "Greg Wims",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Guy Guzzone",
+   "politician_id": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7",
+   "rows": 4,
+   "cited_slug": "guzzone",
+   "slug_belongs_to": "Guy Guzzone",
+   "verdict": "OK"
+  },
+  {
+   "politician": "H. Kevin Anderson",
+   "politician_id": "d17104a7-8a35-4bcd-8879-76ceb997df6a",
+   "rows": 8,
+   "cited_slug": "anderson01",
+   "slug_belongs_to": "H. Kevin Anderson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Harry Bhandari",
+   "politician_id": "6d95657c-6c46-4aab-886f-f9688adc7b33",
+   "rows": 9,
+   "cited_slug": "bhandari01",
+   "slug_belongs_to": "Harry Bhandari",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Heather Bagnall",
+   "politician_id": "41749b94-11b8-4047-8421-95db0900d4b2",
+   "rows": 12,
+   "cited_slug": "bagnall",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Jack Bailey",
+   "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f",
+   "rows": 10,
+   "cited_slug": "bailey01",
+   "slug_belongs_to": "Jack Bailey",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jackie Addison",
+   "politician_id": "01aaf4ba-c8ec-4a50-bd56-8d181d35e903",
+   "rows": 9,
+   "cited_slug": "addison01",
+   "slug_belongs_to": "Jackie Addison",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jamila J. Woods",
+   "politician_id": "916afe40-4061-476f-9a54-b271b32778d2",
+   "rows": 11,
+   "cited_slug": "woods01",
+   "slug_belongs_to": "Jamila J. Woods",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jared Solomon",
+   "politician_id": "c0bf0c64-6254-40a7-b810-8717977759dd",
+   "rows": 14,
+   "cited_slug": "solomon01",
+   "slug_belongs_to": "Jared Solomon",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jason C. Buckel",
+   "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf",
+   "rows": 10,
+   "cited_slug": "buckel01",
+   "slug_belongs_to": "Jason C. Buckel",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jason C. Gallion",
+   "politician_id": "e2ca1bfd-255d-417b-a9d7-424e6c10749d",
+   "rows": 8,
+   "cited_slug": "gallion01",
+   "slug_belongs_to": "Jason C. Gallion",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jay A. Jacobs",
+   "politician_id": "8b43dd9c-26c3-48bb-ac60-d95f8a39349a",
+   "rows": 8,
+   "cited_slug": "jacobs",
+   "slug_belongs_to": "Nancy Jacobs",
+   "verdict": "WRONG_PERSON_SAME_SURNAME"
+  },
+  {
+   "politician": "Jeff Waldstreicher",
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "rows": 20,
+   "cited_slug": "waldstreicher1",
+   "slug_belongs_to": "Jeff Waldstreicher",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jefferson L. Ghrist",
+   "politician_id": "eca530ff-628d-417d-a3dc-b858dc7c2376",
+   "rows": 8,
+   "cited_slug": "ghrist01",
+   "slug_belongs_to": "Jefferson L. Ghrist",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jeffrie E. Long, Jr.",
+   "politician_id": "70f63959-f51d-4411-adc1-f1c429bbc397",
+   "rows": 10,
+   "cited_slug": "long02",
+   "slug_belongs_to": "Jeffrie E. Long, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jen Terrasa",
+   "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+   "rows": 9,
+   "cited_slug": "terrasa01",
+   "slug_belongs_to": "Jen Terrasa",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jesse T. Pippy",
+   "politician_id": "ce2fc441-abd5-4d8f-9c56-114e31c4d43c",
+   "rows": 10,
+   "cited_slug": "pippy01",
+   "slug_belongs_to": "Jesse T. Pippy",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jessica Feldmark",
+   "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+   "rows": 9,
+   "cited_slug": "feldmark01",
+   "slug_belongs_to": "Jessica Feldmark",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jheanelle K. Wilkins",
+   "politician_id": "cf68a5cd-f375-4296-8a87-1828d903baea",
+   "rows": 17,
+   "cited_slug": "wilkins01",
+   "slug_belongs_to": "Jheanelle K. Wilkins",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jim Hinebaugh, Jr.",
+   "politician_id": "3817ad52-3f43-4bd3-8525-e7dcd0816153",
+   "rows": 10,
+   "cited_slug": "hinebaugh01",
+   "slug_belongs_to": "Jim Hinebaugh, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jim Rosapepe",
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "rows": 14,
+   "cited_slug": "rosapepe",
+   "slug_belongs_to": "Jim Rosapepe",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Joanne C. Benson",
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "rows": 12,
+   "cited_slug": "benson",
+   "slug_belongs_to": "Joanne C. Benson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Joe Vogel",
+   "politician_id": "458a60ba-a235-4b36-80bb-8b537375a4ff",
+   "rows": 18,
+   "cited_slug": "vogel01",
+   "slug_belongs_to": "Joe Vogel",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Johnny Mautz",
+   "politician_id": "34c94aa4-11b7-4594-9c3e-c506f10309f6",
+   "rows": 8,
+   "cited_slug": "mautz01",
+   "slug_belongs_to": "Johnny Mautz",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Jon S. Cardin",
+   "politician_id": "631dac5c-fb86-41f5-a82d-5963164a9142",
+   "rows": 10,
+   "cited_slug": "cardin01",
+   "slug_belongs_to": "Jon S. Cardin",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Joseline Peña-Melnyk",
+   "politician_id": "00cd05cc-75de-4d9a-ab23-9f53441bc186",
+   "rows": 18,
+   "cited_slug": "pena01",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Joshua J. Stonko",
+   "politician_id": "656a8bc9-348e-4ffc-819c-2f4611b3ddc8",
+   "rows": 7,
+   "cited_slug": "stonko01",
+   "slug_belongs_to": "Joshua J. Stonko",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Julian Ivey",
+   "politician_id": "69bf6043-4546-4804-ae04-311cff54a986",
+   "rows": 10,
+   "cited_slug": "ivey01",
+   "slug_belongs_to": "Julian Ivey",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Julie Palakovich Carr",
+   "politician_id": "70d58d4b-4203-4fc2-b36f-32e6231c4339",
+   "rows": 15,
+   "cited_slug": "palakovich01",
+   "slug_belongs_to": "Julie Palakovich Carr",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Karen Lewis Young",
+   "politician_id": "1f78b5e2-b192-4aae-8112-19338aaa891d",
+   "rows": 1,
+   "cited_slug": "young04",
+   "slug_belongs_to": "Karen Lewis Young",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Karen Simpson",
+   "politician_id": "5946ad0c-ddf5-4674-840e-6968105042cd",
+   "rows": 7,
+   "cited_slug": "simpson01",
+   "slug_belongs_to": "Karen Simpson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Karen Toles",
+   "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+   "rows": 11,
+   "cited_slug": "toles01",
+   "slug_belongs_to": "Karen Toles",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kathy Szeliga",
+   "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520",
+   "rows": 9,
+   "cited_slug": "szeliga",
+   "slug_belongs_to": "Kathy Szeliga",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kenneth Kerr",
+   "politician_id": "c0abb4fa-be8d-4fbe-9b6d-6319a8ecd255",
+   "rows": 8,
+   "cited_slug": "kerr01",
+   "slug_belongs_to": "Kenneth Kerr",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kent Roberson",
+   "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+   "rows": 11,
+   "cited_slug": "roberson01",
+   "slug_belongs_to": "Kent Roberson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kevin B. Hornberger",
+   "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716",
+   "rows": 8,
+   "cited_slug": "hornberger01",
+   "slug_belongs_to": "Kevin B. Hornberger",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kevin M. Harris",
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "rows": 14,
+   "cited_slug": "harris03",
+   "slug_belongs_to": "Kevin M. Harris",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kim Ross",
+   "politician_id": "5d17e3ea-9d63-4a96-8848-9e293ac05fdb",
+   "rows": 9,
+   "cited_slug": "ross01",
+   "slug_belongs_to": "Kim Ross",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kris Fair",
+   "politician_id": "dfb9ae21-4605-4c58-94e8-84b1eb1a30c1",
+   "rows": 9,
+   "cited_slug": "fair01",
+   "slug_belongs_to": "Kris Fair",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kriselda Valderrama",
+   "politician_id": "768ac1cf-a599-4ddb-943c-c985fafb2607",
+   "rows": 7,
+   "cited_slug": "valderrama",
+   "slug_belongs_to": "Kriselda Valderrama",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Kym Taylor",
+   "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+   "rows": 12,
+   "cited_slug": "taylor05",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "LaToya Nkongolo",
+   "politician_id": "13462ee2-0dd9-4f70-809f-a813c23951d4",
+   "rows": 5,
+   "cited_slug": "nkongolo",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Lauren Arikan",
+   "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5",
+   "rows": 9,
+   "cited_slug": "arikan01",
+   "slug_belongs_to": "Lauren Arikan",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Lesley J. Lopez",
+   "politician_id": "2fa68ca4-00b5-4518-a692-d12447d7fec3",
+   "rows": 11,
+   "cited_slug": "lopez01",
+   "slug_belongs_to": "Lesley J. Lopez",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Lily Qi",
+   "politician_id": "e00e72f9-6b53-46a7-a1e4-74ab7b91d68d",
+   "rows": 13,
+   "cited_slug": "qi01",
+   "slug_belongs_to": "Lily Qi",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Linda Foley",
+   "politician_id": "b80a680a-9f79-4d56-994b-00ce24ec7ef3",
+   "rows": 13,
+   "cited_slug": "foley01",
+   "slug_belongs_to": "Linda Foley",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Lorig Charkoudian",
+   "politician_id": "9c5e1ac7-8a39-4c6e-8b20-0788a92f8607",
+   "rows": 14,
+   "cited_slug": "charkoudian01",
+   "slug_belongs_to": "Lorig Charkoudian",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Luke Clippinger",
+   "politician_id": "ad1aaa25-0ef6-4c88-9d78-d75aec7398c7",
+   "rows": 13,
+   "cited_slug": "clippinger",
+   "slug_belongs_to": "Luke Clippinger",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Malcolm Augustine",
+   "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e",
+   "rows": 12,
+   "cited_slug": "augustine01",
+   "slug_belongs_to": "Malcolm Augustine",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Malcolm P. Ruff",
+   "politician_id": "7e1dfb66-1eff-4c8d-b3fe-d39f990b99c4",
+   "rows": 12,
+   "cited_slug": "ruff01",
+   "slug_belongs_to": "Malcolm P. Ruff",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Marc Korman",
+   "politician_id": "e76d0654-b0c6-43dc-9159-e929e480d070",
+   "rows": 11,
+   "cited_slug": "korman01",
+   "slug_belongs_to": "Marc Korman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mark Edelson",
+   "politician_id": "bec4b395-bb4b-4740-ac1c-8e89f12608a2",
+   "rows": 11,
+   "cited_slug": "edelson01",
+   "slug_belongs_to": "Mark Edelson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mark N. Fisher",
+   "politician_id": "71542618-59c8-4b06-a765-e3df60cca763",
+   "rows": 11,
+   "cited_slug": "fisher",
+   "slug_belongs_to": "Mark N. Fisher",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mark S. Chang",
+   "politician_id": "4a409af4-8568-42c3-bb72-7bb7500c96ce",
+   "rows": 11,
+   "cited_slug": "chang01",
+   "slug_belongs_to": "Mark S. Chang",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Marlon Amprey",
+   "politician_id": "62bed8b6-beb2-4c41-b234-dc6427bfc9c0",
+   "rows": 10,
+   "cited_slug": "amprey01",
+   "slug_belongs_to": "Marlon Amprey",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Marvin E. Holmes, Jr.",
+   "politician_id": "b8e331fa-d58e-479f-b076-8fda0b0604c5",
+   "rows": 11,
+   "cited_slug": "holmes01",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Mary A. Lehman",
+   "politician_id": "251a2047-372b-480e-aa09-231f9a5edeca",
+   "rows": 13,
+   "cited_slug": "lehman01",
+   "slug_belongs_to": "Mary A. Lehman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mary Beth Carozza",
+   "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+   "rows": 9,
+   "cited_slug": "carozza01",
+   "slug_belongs_to": "Mary Beth Carozza",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mary Washington",
+   "politician_id": "38404814-7be0-40e3-b044-062f98b2a5b0",
+   "rows": 16,
+   "cited_slug": "washington01",
+   "slug_belongs_to": "Mary Washington",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mary-Dulany James",
+   "politician_id": "18313901-28d8-464c-9368-2873577e9d44",
+   "rows": 9,
+   "cited_slug": "james06",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Matthew J. Schindler",
+   "politician_id": "18c6abb4-7b4b-4e21-a7fe-008e43d6f3e5",
+   "rows": 7,
+   "cited_slug": "schindler01",
+   "slug_belongs_to": "Matthew J. Schindler",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Matthew Morgan",
+   "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856",
+   "rows": 8,
+   "cited_slug": "morgan03",
+   "slug_belongs_to": "Todd B. Morgan",
+   "verdict": "WRONG_PERSON_SAME_SURNAME"
+  },
+  {
+   "politician": "Melissa Wells",
+   "politician_id": "7217c1b4-6fae-447d-9566-f2513319fa94",
+   "rows": 10,
+   "cited_slug": "wells02",
+   "slug_belongs_to": "Melissa Wells",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Michele Guyton",
+   "politician_id": "bb180c23-b965-4bba-a2b9-73febd484d21",
+   "rows": 9,
+   "cited_slug": "guyton01",
+   "slug_belongs_to": "Michele Guyton",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mike Griffith",
+   "politician_id": "0c789b27-d50c-4822-95ff-409ecb7db08a",
+   "rows": 8,
+   "cited_slug": "griffith02",
+   "slug_belongs_to": "Mike Griffith",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Mike McKay",
+   "politician_id": "f88cd73d-1970-4da1-9bea-2142a25999a7",
+   "rows": 2,
+   "cited_slug": "mckay02",
+   "slug_belongs_to": "Mike McKay",
+   "verdict": "OK"
+  },
+  {
+   "politician": "N. Scott Phillips",
+   "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+   "rows": 8,
+   "cited_slug": "phillips04",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Nancy J. King",
+   "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec",
+   "rows": 11,
+   "cited_slug": "king01",
+   "slug_belongs_to": "James M. King",
+   "verdict": "WRONG_PERSON_SAME_SURNAME"
+  },
+  {
+   "politician": "Natalie Ziegler",
+   "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+   "rows": 6,
+   "cited_slug": "ziegler02",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Nicholaus R. Kipke",
+   "politician_id": "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08",
+   "rows": 13,
+   "cited_slug": "kipke",
+   "slug_belongs_to": "Nicholaus R. Kipke",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Nick Charles",
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "rows": 12,
+   "cited_slug": "charles02",
+   "slug_belongs_to": "Nick Charles",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Nicole A. Williams",
+   "politician_id": "5c24446e-c9d6-4dda-9703-e3c049798315",
+   "rows": 12,
+   "cited_slug": "williams08",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Pam Lanman Guzzone",
+   "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+   "rows": 7,
+   "cited_slug": "guzzone03",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Pam Queen",
+   "politician_id": "a11c027a-ef25-4a09-8df7-e9b7c60bea90",
+   "rows": 10,
+   "cited_slug": "queen01",
+   "slug_belongs_to": "Pam Queen",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Pamela Beidle",
+   "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7",
+   "rows": 12,
+   "cited_slug": "beidle01",
+   "slug_belongs_to": "Pamela Beidle",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Paul D. Corderman",
+   "politician_id": "5127f8d8-ca40-40aa-8773-4c1abad66f41",
+   "rows": 1,
+   "cited_slug": "corderman02",
+   "slug_belongs_to": "Paul D. Corderman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Regina T. Boyce",
+   "politician_id": "027a2610-1160-4525-a5c1-469fe85d46e1",
+   "rows": 12,
+   "cited_slug": "boyce01",
+   "slug_belongs_to": "Regina T. Boyce",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Ric Metzgar",
+   "politician_id": "ba85b633-32cf-4617-923c-3a325f39894e",
+   "rows": 8,
+   "cited_slug": "metzgar01",
+   "slug_belongs_to": "Ric Metzgar",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Robbyn Lewis",
+   "politician_id": "9285f590-79b5-48de-a1c0-a022629e6ebb",
+   "rows": 10,
+   "cited_slug": "lewis01",
+   "slug_belongs_to": "Robbyn Lewis",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Robert B. Long",
+   "politician_id": "eadb65c9-74b6-40c3-b9e7-159c5734c59f",
+   "rows": 9,
+   "cited_slug": "long01",
+   "slug_belongs_to": "Robert B. Long",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Robin L. Grammer, Jr.",
+   "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1",
+   "rows": 10,
+   "cited_slug": "grammer01",
+   "slug_belongs_to": "Robin L. Grammer, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Ron Watson",
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "rows": 12,
+   "cited_slug": "watson04",
+   "slug_belongs_to": "Ron Watson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Ryan Nawrocki",
+   "politician_id": "f5224e0c-0761-4ca7-a889-ed44517e2b91",
+   "rows": 9,
+   "cited_slug": "nawrocki01",
+   "slug_belongs_to": "Ryan Nawrocki",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Ryan Spiegel",
+   "politician_id": "203a0228-7a63-4a6a-b26d-fa45ba139472",
+   "rows": 16,
+   "cited_slug": "spiegel01",
+   "slug_belongs_to": "Ryan Spiegel",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Samuel I. Rosenberg",
+   "politician_id": "36eecaff-4677-441a-b36e-a323e87d9158",
+   "rows": 19,
+   "cited_slug": "rosenberg",
+   "slug_belongs_to": "Samuel I. Rosenberg",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Sara Love",
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "rows": 20,
+   "cited_slug": "love02",
+   "slug_belongs_to": "Sara Love",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Sarah Wolek",
+   "politician_id": "4db476f3-bc84-484c-9440-666028942469",
+   "rows": 12,
+   "cited_slug": "wolek01",
+   "slug_belongs_to": "Sarah Wolek",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Sean A. Stinnett",
+   "politician_id": "012af8f7-693a-4ddc-b0bc-953dae8d2bc2",
+   "rows": 10,
+   "cited_slug": "stinnett01",
+   "slug_belongs_to": "Sean A. Stinnett",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Seth A. Howard",
+   "politician_id": "2fe3f655-c28e-40c3-a2f9-48ea9eb8b498",
+   "rows": 7,
+   "cited_slug": "howard02",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Shaneka Henson",
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "rows": 13,
+   "cited_slug": "henson02",
+   "slug_belongs_to": "Shaneka Henson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Sheila Ruth",
+   "politician_id": "df1a05a1-2a70-4e40-a0c6-5b3f81632c7e",
+   "rows": 11,
+   "cited_slug": "ruth01",
+   "slug_belongs_to": "Sheila Ruth",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Shelly Hettleman",
+   "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9",
+   "rows": 10,
+   "cited_slug": "hettleman02",
+   "slug_belongs_to": "Shelly Hettleman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Sheree Sample-Hughes",
+   "politician_id": "a1c2b55c-df7d-487c-ad90-7f7e2c2e6951",
+   "rows": 14,
+   "cited_slug": "sample01",
+   "slug_belongs_to": "Sheree Sample-Hughes",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Stephanie Smith",
+   "politician_id": "848ac881-004b-436a-9a17-dfacbd33de5a",
+   "rows": 11,
+   "cited_slug": "smith03",
+   "slug_belongs_to": "Stephanie Smith",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Steve Johnson",
+   "politician_id": "dbb1c600-c87b-449c-bd3b-1c236287c00f",
+   "rows": 8,
+   "cited_slug": "johnson01",
+   "slug_belongs_to": "Steve Johnson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Steven J. Arentz",
+   "politician_id": "fee8a413-a3a8-4568-ad9b-db00f94f5ac2",
+   "rows": 7,
+   "cited_slug": "arentz01",
+   "slug_belongs_to": "Steven J. Arentz",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Stuart Michael Schmidt, Jr.",
+   "politician_id": "55d9d0b6-78a3-460b-97b9-87913ffc8e85",
+   "rows": 7,
+   "cited_slug": "schmidt01",
+   "slug_belongs_to": "Stuart Michael Schmidt, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Susan K. McComas",
+   "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07",
+   "rows": 9,
+   "cited_slug": "mccomas",
+   "slug_belongs_to": "Susan K. McComas",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Teresa E. Reilly",
+   "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8",
+   "rows": 8,
+   "cited_slug": "reilly01",
+   "slug_belongs_to": "Teresa E. Reilly",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Teresa Woorman",
+   "politician_id": "36171e41-704b-4bf9-b300-755afe4ee06f",
+   "rows": 15,
+   "cited_slug": "woorman01",
+   "slug_belongs_to": "Teresa Woorman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Terri L. Hill",
+   "politician_id": "f6a237a0-34ff-4a93-b05a-335ec38b6da3",
+   "rows": 8,
+   "cited_slug": "hill04",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG"
+  },
+  {
+   "politician": "Terry L. Baker",
+   "politician_id": "d049cf3e-6577-4f8d-ba7e-768ac2b78d66",
+   "rows": 10,
+   "cited_slug": "baker04",
+   "slug_belongs_to": "Terry L. Baker",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Thomas S. Hutchinson",
+   "politician_id": "fb1fe811-b340-42d3-88ee-97b5364117cd",
+   "rows": 7,
+   "cited_slug": "hutchinson01",
+   "slug_belongs_to": "Thomas S. Hutchinson",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Tiffany T. Alston",
+   "politician_id": "2e809682-2d95-480c-885e-d2174b811cfe",
+   "rows": 12,
+   "cited_slug": "alston01",
+   "slug_belongs_to": "Tiffany T. Alston",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Vaughn Stewart",
+   "politician_id": "ac558ee8-ecae-47b6-a25e-46307521b4af",
+   "rows": 17,
+   "cited_slug": "stewart01",
+   "slug_belongs_to": "Vaughn Stewart",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Veronica Turner",
+   "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16",
+   "rows": 12,
+   "cited_slug": "turner01",
+   "slug_belongs_to": "Veronica Turner",
+   "verdict": "OK"
+  },
+  {
+   "politician": "Wayne A. Hartman",
+   "politician_id": "1ff2bb96-0e55-4893-8a4c-b675dfbb79f6",
+   "rows": 8,
+   "cited_slug": "hartman01",
+   "slug_belongs_to": "Wayne A. Hartman",
+   "verdict": "OK"
+  },
+  {
+   "politician": "William C. Smith, Jr.",
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "rows": 20,
+   "cited_slug": "smith02",
+   "slug_belongs_to": "William C. Smith, Jr.",
+   "verdict": "OK"
+  },
+  {
+   "politician": "William J. Wivell",
+   "politician_id": "df6fe96f-7795-4934-9acc-2b9f8f0aa8f7",
+   "rows": 10,
+   "cited_slug": "wivell01",
+   "slug_belongs_to": "William J. Wivell",
+   "verdict": "OK"
+  },
+  {
+   "politician": "William Valentine",
+   "politician_id": "cdf746c1-8311-416b-9ad3-2684a83b6992",
+   "rows": 10,
+   "cited_slug": "valentine01",
+   "slug_belongs_to": "William Valentine",
+   "verdict": "OK"
+  }
+ ]
+}

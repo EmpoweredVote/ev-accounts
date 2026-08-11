@@ -1,0 +1,42 @@
+{
+  "migration": "1686_fix_md_bill_citation_mismatches",
+  "generated": "pre-change snapshot from live DB",
+  "rule": "1685 attached 3 citations to real bills the legislator sponsored but which are NOT the instrument the reasoning names. 1 repointed (Valderrama -> 2026RS HB1059, sponsorship verified), 2 removed (Ross, Turner -- not sponsors of the actual named act).",
+  "row_count": 3,
+  "rows": [
+    {
+      "full_name": "Kim Ross",
+      "politician_id": "5d17e3ea-9d63-4a96-8848-9e293ac05fdb",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1533?ys=2026RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ross01",
+        "https://ballotpedia.org/Kim_Ross"
+      ],
+      "reasoning": "Ross co-sponsored the CROWN Act and has supported comprehensive civil rights legislation including anti-discrimination protections."
+    },
+    {
+      "full_name": "Kriselda Valderrama",
+      "politician_id": "768ac1cf-a599-4ddb-943c-c985fafb2607",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0993?ys=2018RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valderrama?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Asian American History accurate instruction bill (HB0993) and African American Heritage Preservation Program renaming; supports expansive civil rights and equity initiatives; PG County Democrat with strong equity record."
+    },
+    {
+      "full_name": "Veronica Turner",
+      "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0964?ys=2024RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/turner01?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored commission to review racial disparities in criminal justice (HB0810, 2026); sponsored Fair Housing Act reform (HB0480); supported Voting Rights Act 2026 and civil rights protections."
+    }
+  ]
+}
