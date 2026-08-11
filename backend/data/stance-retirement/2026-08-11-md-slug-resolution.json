@@ -1,0 +1,464 @@
+{
+ "audit": "MD correct member slug resolution",
+ "tally": {
+  "RESOLVED": 28,
+  "HOLD_NO_ROSTER_MATCH": 3,
+  "AUDIT_FALSE_POSITIVE_SAME_PERSON": 1,
+  "HOLD_UNCONFIRMED": 1
+ },
+ "rows": [
+  {
+   "politician": "Adrienne A. Jones",
+   "politician_id": "760cd4a7-235c-472f-a0ba-fb07098dfd57",
+   "rows": 17,
+   "cited_slug": "jones01",
+   "slug_belongs_to": "Dana Jones",
+   "verdict": "WRONG_PERSON_SAME_SURNAME",
+   "resolution": "RESOLVED",
+   "correct_slug": "jones",
+   "confirmed_as": "Adrienne A. Jones",
+   "roster_candidates": [
+    "jones"
+   ]
+  },
+  {
+   "politician": "Andrew C. Pruski",
+   "politician_id": "ddfd43d3-023d-417e-9b68-af5a693e601e",
+   "rows": 8,
+   "cited_slug": "pruski",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "pruski01",
+   "confirmed_as": "Andrew C. Pruski",
+   "roster_candidates": [
+    "pruski01"
+   ]
+  },
+  {
+   "politician": "Anne Healey",
+   "politician_id": "4436b432-a63f-4946-919a-f30c41f899e4",
+   "rows": 13,
+   "cited_slug": "healey01",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "healey",
+   "confirmed_as": "Anne Healey",
+   "roster_candidates": [
+    "healey"
+   ]
+  },
+  {
+   "politician": "Aruna Miller",
+   "politician_id": "ea9fc2d6-3b26-469a-978c-e8c846d2d49a",
+   "rows": 11,
+   "cited_slug": "miller01",
+   "slug_belongs_to": "Ellen Willis Miller",
+   "verdict": "WRONG_PERSON_SAME_SURNAME",
+   "resolution": "HOLD_NO_ROSTER_MATCH",
+   "correct_slug": null,
+   "confirmed_as": null,
+   "roster_candidates": []
+  },
+  {
+   "politician": "Ben Barnes",
+   "politician_id": "590b56b2-1473-4e86-ba96-0490e172f6ff",
+   "rows": 16,
+   "cited_slug": "barnes01",
+   "slug_belongs_to": "Scherod C. Barnes",
+   "verdict": "WRONG_PERSON_SAME_SURNAME",
+   "resolution": "RESOLVED",
+   "correct_slug": "barnes",
+   "confirmed_as": "Ben Barnes",
+   "roster_candidates": [
+    "barnes"
+   ]
+  },
+  {
+   "politician": "Bill Ferguson",
+   "politician_id": "6e3c30f5-52be-48b0-b5b4-383e5d745c57",
+   "rows": 20,
+   "cited_slug": "ferguson01",
+   "slug_belongs_to": "Timothy R. Ferguson",
+   "verdict": "WRONG_PERSON_SAME_SURNAME",
+   "resolution": "RESOLVED",
+   "correct_slug": "ferguson",
+   "confirmed_as": "Bill Ferguson",
+   "roster_candidates": [
+    "ferguson"
+   ]
+  },
+  {
+   "politician": "Brian Chisholm",
+   "politician_id": "cfc704da-dd6c-40b0-97fa-0c5ece8d3976",
+   "rows": 7,
+   "cited_slug": "chisholm",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "chisholm01",
+   "confirmed_as": "Brian Chisholm",
+   "roster_candidates": [
+    "chisholm01"
+   ]
+  },
+  {
+   "politician": "Brooke Lierman",
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "rows": 14,
+   "cited_slug": "lierman",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "HOLD_NO_ROSTER_MATCH",
+   "correct_slug": null,
+   "confirmed_as": null,
+   "roster_candidates": []
+  },
+  {
+   "politician": "C. T. Wilson",
+   "politician_id": "69870c10-cea2-43c2-8cf9-bfcaf0b82265",
+   "rows": 11,
+   "cited_slug": "wilson04",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "wilson",
+   "confirmed_as": "C. T. Wilson",
+   "roster_candidates": [
+    "wilson"
+   ]
+  },
+  {
+   "politician": "Courtney Watson",
+   "politician_id": "a4b61b58-9006-4e58-952d-abeb2521cda0",
+   "rows": 9,
+   "cited_slug": "watson04",
+   "slug_belongs_to": "Ron Watson",
+   "verdict": "WRONG_PERSON_SAME_SURNAME",
+   "resolution": "RESOLVED",
+   "correct_slug": "watson02",
+   "confirmed_as": "Courtney Watson",
+   "roster_candidates": [
+    "watson02"
+   ]
+  },
+  {
+   "politician": "Dan Cox",
+   "politician_id": "4a876d03-4e8f-4d0a-a236-4f594b59f29c",
+   "rows": 2,
+   "cited_slug": "cox01",
+   "slug_belongs_to": "Daniel L. Cox",
+   "verdict": "WRONG_PERSON_SAME_SURNAME",
+   "resolution": "AUDIT_FALSE_POSITIVE_SAME_PERSON",
+   "correct_slug": "cox01",
+   "confirmed_as": "Daniel L. Cox"
+  },
+  {
+   "politician": "Dana Jones",
+   "politician_id": "d8eabd9b-2aa8-40de-94ce-06ce6ef167cf",
+   "rows": 7,
+   "cited_slug": "jones08",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "jones01",
+   "confirmed_as": "Dana Jones",
+   "roster_candidates": [
+    "jones01"
+   ]
+  },
+  {
+   "politician": "Dana Stein",
+   "politician_id": "e94337e1-4776-4058-87b4-32dfeb7732a0",
+   "rows": 9,
+   "cited_slug": "stein01",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "stein",
+   "confirmed_as": "Dana Stein",
+   "roster_candidates": [
+    "stein"
+   ]
+  },
+  {
+   "politician": "Debra Davis",
+   "politician_id": "1cc5a555-4b8a-4573-8525-9ad2c7c0bf46",
+   "rows": 7,
+   "cited_slug": "davis01",
+   "slug_belongs_to": "Clarence Davis",
+   "verdict": "WRONG_PERSON_SAME_SURNAME",
+   "resolution": "RESOLVED",
+   "correct_slug": "davis02",
+   "confirmed_as": "Debra Davis",
+   "roster_candidates": [
+    "davis02"
+   ]
+  },
+  {
+   "politician": "Denise Roberts",
+   "politician_id": "d5999df9-83b8-4870-a170-4d13f40473e2",
+   "rows": 11,
+   "cited_slug": "roberts03",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "roberts01",
+   "confirmed_as": "Denise Roberts",
+   "roster_candidates": [
+    "roberts01"
+   ]
+  },
+  {
+   "politician": "Dereck E. Davis",
+   "politician_id": "75378a96-8886-46eb-b0c1-37cbe2579265",
+   "rows": 4,
+   "cited_slug": "davisd",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "HOLD_NO_ROSTER_MATCH",
+   "correct_slug": null,
+   "confirmed_as": null,
+   "roster_candidates": []
+  },
+  {
+   "politician": "Dylan Behler",
+   "politician_id": "3f45bad5-b856-4d8e-b3d9-8c03623e030a",
+   "rows": 6,
+   "cited_slug": "behler",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "behler01",
+   "confirmed_as": "Dylan Behler",
+   "roster_candidates": [
+    "behler01"
+   ]
+  },
+  {
+   "politician": "Edith J. Patterson",
+   "politician_id": "b9c61fea-fcb1-45cc-8e2c-e5b3046b7266",
+   "rows": 9,
+   "cited_slug": "patterson03",
+   "slug_belongs_to": "Obie Patterson",
+   "verdict": "WRONG_PERSON_SAME_SURNAME",
+   "resolution": "RESOLVED",
+   "correct_slug": "patterson02",
+   "confirmed_as": "Edith J. Patterson",
+   "roster_candidates": [
+    "patterson02"
+   ]
+  },
+  {
+   "politician": "Heather Bagnall",
+   "politician_id": "41749b94-11b8-4047-8421-95db0900d4b2",
+   "rows": 12,
+   "cited_slug": "bagnall",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "bagnall01",
+   "confirmed_as": "Heather Bagnall",
+   "roster_candidates": [
+    "bagnall01"
+   ]
+  },
+  {
+   "politician": "Jay A. Jacobs",
+   "politician_id": "8b43dd9c-26c3-48bb-ac60-d95f8a39349a",
+   "rows": 8,
+   "cited_slug": "jacobs",
+   "slug_belongs_to": "Nancy Jacobs",
+   "verdict": "WRONG_PERSON_SAME_SURNAME",
+   "resolution": "HOLD_UNCONFIRMED",
+   "correct_slug": null,
+   "confirmed_as": null,
+   "roster_candidates": [
+    "jacobs"
+   ]
+  },
+  {
+   "politician": "Joseline Peña-Melnyk",
+   "politician_id": "00cd05cc-75de-4d9a-ab23-9f53441bc186",
+   "rows": 18,
+   "cited_slug": "pena01",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "pena",
+   "confirmed_as": "Joseline A. Peña-Melnyk",
+   "roster_candidates": [
+    "pena"
+   ]
+  },
+  {
+   "politician": "Kym Taylor",
+   "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+   "rows": 12,
+   "cited_slug": "taylor05",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "taylor03",
+   "confirmed_as": "Kym Taylor",
+   "roster_candidates": [
+    "taylor03"
+   ]
+  },
+  {
+   "politician": "LaToya Nkongolo",
+   "politician_id": "13462ee2-0dd9-4f70-809f-a813c23951d4",
+   "rows": 5,
+   "cited_slug": "nkongolo",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "nkongolo01",
+   "confirmed_as": "LaToya Nkongolo",
+   "roster_candidates": [
+    "nkongolo01"
+   ]
+  },
+  {
+   "politician": "Marvin E. Holmes, Jr.",
+   "politician_id": "b8e331fa-d58e-479f-b076-8fda0b0604c5",
+   "rows": 11,
+   "cited_slug": "holmes01",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "holmes",
+   "confirmed_as": "Marvin E. Holmes, Jr.",
+   "roster_candidates": [
+    "holmes"
+   ]
+  },
+  {
+   "politician": "Mary-Dulany James",
+   "politician_id": "18313901-28d8-464c-9368-2873577e9d44",
+   "rows": 9,
+   "cited_slug": "james06",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "james01",
+   "confirmed_as": "Mary-Dulany James",
+   "roster_candidates": [
+    "james01"
+   ]
+  },
+  {
+   "politician": "Matthew Morgan",
+   "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856",
+   "rows": 8,
+   "cited_slug": "morgan03",
+   "slug_belongs_to": "Todd B. Morgan",
+   "verdict": "WRONG_PERSON_SAME_SURNAME",
+   "resolution": "RESOLVED",
+   "correct_slug": "morgan02",
+   "confirmed_as": "Matthew Morgan",
+   "roster_candidates": [
+    "morgan02"
+   ]
+  },
+  {
+   "politician": "N. Scott Phillips",
+   "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+   "rows": 8,
+   "cited_slug": "phillips04",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "phillips02",
+   "confirmed_as": "N. Scott Phillips",
+   "roster_candidates": [
+    "phillips02"
+   ]
+  },
+  {
+   "politician": "Nancy J. King",
+   "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec",
+   "rows": 11,
+   "cited_slug": "king01",
+   "slug_belongs_to": "James M. King",
+   "verdict": "WRONG_PERSON_SAME_SURNAME",
+   "resolution": "RESOLVED",
+   "correct_slug": "king",
+   "confirmed_as": "Nancy J. King",
+   "roster_candidates": [
+    "king"
+   ]
+  },
+  {
+   "politician": "Natalie Ziegler",
+   "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+   "rows": 6,
+   "cited_slug": "ziegler02",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "ziegler01",
+   "confirmed_as": "Natalie Ziegler",
+   "roster_candidates": [
+    "ziegler01"
+   ]
+  },
+  {
+   "politician": "Nicole A. Williams",
+   "politician_id": "5c24446e-c9d6-4dda-9703-e3c049798315",
+   "rows": 12,
+   "cited_slug": "williams08",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "williams01",
+   "confirmed_as": "Nicole A. Williams",
+   "roster_candidates": [
+    "williams01"
+   ]
+  },
+  {
+   "politician": "Pam Lanman Guzzone",
+   "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+   "rows": 7,
+   "cited_slug": "guzzone03",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "guzzone01",
+   "confirmed_as": "Pam Lanman Guzzone",
+   "roster_candidates": [
+    "guzzone01"
+   ]
+  },
+  {
+   "politician": "Seth A. Howard",
+   "politician_id": "2fe3f655-c28e-40c3-a2f9-48ea9eb8b498",
+   "rows": 7,
+   "cited_slug": "howard02",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "howard01",
+   "confirmed_as": "Seth A. Howard",
+   "roster_candidates": [
+    "howard01"
+   ]
+  },
+  {
+   "politician": "Terri L. Hill",
+   "politician_id": "f6a237a0-34ff-4a93-b05a-335ec38b6da3",
+   "rows": 8,
+   "cited_slug": "hill04",
+   "slug_belongs_to": null,
+   "verdict": "DEAD_SLUG",
+   "resolution": "RESOLVED",
+   "correct_slug": "hill02",
+   "confirmed_as": "Terri L. Hill",
+   "roster_candidates": [
+    "hill02"
+   ]
+  }
+ ]
+}

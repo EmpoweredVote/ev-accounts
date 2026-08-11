@@ -1,0 +1,533 @@
+{
+ "gate": "MD replacement slug verification",
+ "tally": {
+  "REPLACE": 32,
+  "NO_ACTION_SAME_PERSON": 1
+ },
+ "rows": [
+  {
+   "politician": "Adrienne A. Jones",
+   "politician_id": "760cd4a7-235c-472f-a0ba-fb07098dfd57",
+   "rows": 17,
+   "cited_slug": "jones01",
+   "stored_url_resolves_to": "Dana Jones",
+   "stored_verdict": "WRONG_PERSON",
+   "replacement": {
+    "slug": "jones",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jones",
+    "confirmed_as": "Adrienne A. Jones",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Andrew C. Pruski",
+   "politician_id": "ddfd43d3-023d-417e-9b68-af5a693e601e",
+   "rows": 8,
+   "cited_slug": "pruski",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "pruski01",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pruski01",
+    "confirmed_as": "Andrew C. Pruski",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Anne Healey",
+   "politician_id": "4436b432-a63f-4946-919a-f30c41f899e4",
+   "rows": 13,
+   "cited_slug": "healey01",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "healey",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/healey",
+    "confirmed_as": "Anne Healey",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Aruna Miller",
+   "politician_id": "ea9fc2d6-3b26-469a-978c-e8c846d2d49a",
+   "rows": 11,
+   "cited_slug": "miller01",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "miller a",
+    "ys": "2019RS",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/miller%20a?ys=2019RS",
+    "confirmed_as": "Aruna Miller",
+    "form": "SESSION_QUALIFIED"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Ben Barnes",
+   "politician_id": "590b56b2-1473-4e86-ba96-0490e172f6ff",
+   "rows": 16,
+   "cited_slug": "barnes01",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "barnes",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes",
+    "confirmed_as": "Ben Barnes",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Bill Ferguson",
+   "politician_id": "6e3c30f5-52be-48b0-b5b4-383e5d745c57",
+   "rows": 20,
+   "cited_slug": "ferguson01",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "ferguson",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ferguson",
+    "confirmed_as": "Bill Ferguson",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Brian Chisholm",
+   "politician_id": "cfc704da-dd6c-40b0-97fa-0c5ece8d3976",
+   "rows": 7,
+   "cited_slug": "chisholm",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "chisholm01",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/chisholm01",
+    "confirmed_as": "Brian Chisholm",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Brooke Lierman",
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "rows": 14,
+   "cited_slug": "lierman",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "lierman01",
+    "ys": "2025RS",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lierman01?ys=2025RS",
+    "confirmed_as": "Brooke E. Lierman",
+    "form": "SESSION_QUALIFIED"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "C. T. Wilson",
+   "politician_id": "69870c10-cea2-43c2-8cf9-bfcaf0b82265",
+   "rows": 11,
+   "cited_slug": "wilson04",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "wilson",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wilson",
+    "confirmed_as": "C. T. Wilson",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Courtney Watson",
+   "politician_id": "a4b61b58-9006-4e58-952d-abeb2521cda0",
+   "rows": 9,
+   "cited_slug": "watson04",
+   "stored_url_resolves_to": "Ron Watson",
+   "stored_verdict": "WRONG_PERSON",
+   "replacement": {
+    "slug": "watson02",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson02",
+    "confirmed_as": "Courtney Watson",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Dan Cox",
+   "politician_id": "4a876d03-4e8f-4d0a-a236-4f594b59f29c",
+   "rows": 2,
+   "cited_slug": "cox01",
+   "slug_belongs_to": "Daniel L. Cox",
+   "verdict": "WRONG_PERSON_SAME_SURNAME",
+   "resolution": "AUDIT_FALSE_POSITIVE_SAME_PERSON",
+   "correct_slug": "cox01",
+   "confirmed_as": "Daniel L. Cox",
+   "final": "NO_ACTION_SAME_PERSON"
+  },
+  {
+   "politician": "Dana Jones",
+   "politician_id": "d8eabd9b-2aa8-40de-94ce-06ce6ef167cf",
+   "rows": 7,
+   "cited_slug": "jones08",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "jones01",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jones01",
+    "confirmed_as": "Dana Jones",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Dana Stein",
+   "politician_id": "e94337e1-4776-4058-87b4-32dfeb7732a0",
+   "rows": 9,
+   "cited_slug": "stein01",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "stein",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stein",
+    "confirmed_as": "Dana Stein",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Debra Davis",
+   "politician_id": "1cc5a555-4b8a-4573-8525-9ad2c7c0bf46",
+   "rows": 7,
+   "cited_slug": "davis01",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "davis02",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/davis02",
+    "confirmed_as": "Debra Davis",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Denise Roberts",
+   "politician_id": "d5999df9-83b8-4870-a170-4d13f40473e2",
+   "rows": 11,
+   "cited_slug": "roberts03",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "roberts01",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberts01",
+    "confirmed_as": "Denise Roberts",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Dereck E. Davis",
+   "politician_id": "75378a96-8886-46eb-b0c1-37cbe2579265",
+   "rows": 4,
+   "cited_slug": "davisd",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "davis d",
+    "ys": "2025RS",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/davis%20d?ys=2025RS",
+    "confirmed_as": "Dereck E. Davis",
+    "form": "SESSION_QUALIFIED"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Dylan Behler",
+   "politician_id": "3f45bad5-b856-4d8e-b3d9-8c03623e030a",
+   "rows": 6,
+   "cited_slug": "behler",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "behler01",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/behler01",
+    "confirmed_as": "Dylan Behler",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Edith J. Patterson",
+   "politician_id": "b9c61fea-fcb1-45cc-8e2c-e5b3046b7266",
+   "rows": 9,
+   "cited_slug": "patterson03",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "patterson02",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/patterson02",
+    "confirmed_as": "Edith J. Patterson",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Heather Bagnall",
+   "politician_id": "41749b94-11b8-4047-8421-95db0900d4b2",
+   "rows": 12,
+   "cited_slug": "bagnall",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "bagnall01",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bagnall01",
+    "confirmed_as": "Heather Bagnall",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Jay A. Jacobs",
+   "politician_id": "8b43dd9c-26c3-48bb-ac60-d95f8a39349a",
+   "rows": 8,
+   "cited_slug": "jacobs",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "jacobs j",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jacobs%20j",
+    "confirmed_as": "Jay A. Jacobs",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Joseline Peña-Melnyk",
+   "politician_id": "00cd05cc-75de-4d9a-ab23-9f53441bc186",
+   "rows": 18,
+   "cited_slug": "pena01",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "pena",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena",
+    "confirmed_as": "Joseline A. Peña-Melnyk",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Kym Taylor",
+   "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+   "rows": 12,
+   "cited_slug": "taylor05",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "taylor03",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taylor03",
+    "confirmed_as": "Kym Taylor",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "LaToya Nkongolo",
+   "politician_id": "13462ee2-0dd9-4f70-809f-a813c23951d4",
+   "rows": 5,
+   "cited_slug": "nkongolo",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "nkongolo01",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/nkongolo01",
+    "confirmed_as": "LaToya Nkongolo",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Marvin E. Holmes, Jr.",
+   "politician_id": "b8e331fa-d58e-479f-b076-8fda0b0604c5",
+   "rows": 11,
+   "cited_slug": "holmes01",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "holmes",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holmes",
+    "confirmed_as": "Marvin E. Holmes, Jr.",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Mary-Dulany James",
+   "politician_id": "18313901-28d8-464c-9368-2873577e9d44",
+   "rows": 9,
+   "cited_slug": "james06",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "james01",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/james01",
+    "confirmed_as": "Mary-Dulany James",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Matthew Morgan",
+   "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856",
+   "rows": 8,
+   "cited_slug": "morgan03",
+   "stored_url_resolves_to": "Todd B. Morgan",
+   "stored_verdict": "WRONG_PERSON",
+   "replacement": {
+    "slug": "morgan02",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/morgan02",
+    "confirmed_as": "Matthew Morgan",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "N. Scott Phillips",
+   "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+   "rows": 8,
+   "cited_slug": "phillips04",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "phillips02",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/phillips02",
+    "confirmed_as": "N. Scott Phillips",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Nancy J. King",
+   "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec",
+   "rows": 11,
+   "cited_slug": "king01",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "king",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/king",
+    "confirmed_as": "Nancy J. King",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Natalie Ziegler",
+   "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+   "rows": 6,
+   "cited_slug": "ziegler02",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "ziegler01",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ziegler01",
+    "confirmed_as": "Natalie Ziegler",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Nicole A. Williams",
+   "politician_id": "5c24446e-c9d6-4dda-9703-e3c049798315",
+   "rows": 12,
+   "cited_slug": "williams08",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "williams01",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/williams01",
+    "confirmed_as": "Nicole A. Williams",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Pam Lanman Guzzone",
+   "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+   "rows": 7,
+   "cited_slug": "guzzone03",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "guzzone01",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone01",
+    "confirmed_as": "Pam Lanman Guzzone",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Seth A. Howard",
+   "politician_id": "2fe3f655-c28e-40c3-a2f9-48ea9eb8b498",
+   "rows": 7,
+   "cited_slug": "howard02",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "howard01",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/howard01",
+    "confirmed_as": "Seth A. Howard",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  },
+  {
+   "politician": "Terri L. Hill",
+   "politician_id": "f6a237a0-34ff-4a93-b05a-335ec38b6da3",
+   "rows": 8,
+   "cited_slug": "hill04",
+   "stored_url_resolves_to": null,
+   "stored_verdict": "DEAD",
+   "replacement": {
+    "slug": "hill02",
+    "ys": null,
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hill02",
+    "confirmed_as": "Terri L. Hill",
+    "form": "BARE"
+   },
+   "final": "REPLACE"
+  }
+ ]
+}
