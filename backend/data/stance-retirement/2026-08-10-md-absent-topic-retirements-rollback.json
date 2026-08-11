@@ -1,0 +1,1073 @@
+{
+  "migration": "1678_retire_md_absent_topic_stances",
+  "retired_on": "2026-08-10",
+  "rule": "ABSENT TOPIC = NO STANCE (precedent: migrations 1520/1521). A topic counts as absent only when its vocabulary occurs ZERO times in the RAW HTML of every page the stance cites — navigation, sidebars and infoboxes all count as present, so the test is strictly more conservative than searching the article body and is immune to extraction error.",
+  "method_note": "An earlier extraction-based pass reported 109 absent rows; it sliced Ballotpedia at the first \"See also\" and discarded the article body, and searched for the attribute mw-parser-output in tag-stripped text. That pass was discarded. This raw-HTML pass returns 82.",
+  "scope_note": "These politicians keep every stance whose topic vocabulary does appear. NONE is emptied. Rows are retired for having no support on the page they cite, never for reusing one source.",
+  "row_count": 82,
+  "rows": [
+    {
+      "full_name": "Alonzo T. Washington",
+      "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Washington represents a district with a large immigrant community including Central American families. He supports comprehensive immigration reform and immigrant protections in Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+        "https://ballotpedia.org/Alonzo_Washington"
+      ]
+    },
+    {
+      "full_name": "Andrew C. Pruski",
+      "politician_id": "ddfd43d3-023d-417e-9b68-af5a693e601e",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Pruski has supported abortion access legislation in Maryland including voting for the Abortion Care Access Act and co-sponsoring reproductive healthcare protection measures.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pruski?tab=2026RS-legislation",
+        "https://ballotpedia.org/Andrew_Pruski"
+      ]
+    },
+    {
+      "full_name": "Antonio Hayes",
+      "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Hayes has supported immigrant-friendly policies and sanctuary protections, backing services for undocumented residents in Baltimore City.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes01",
+        "https://ballotpedia.org/Antonio_Hayes"
+      ]
+    },
+    {
+      "full_name": "Antonio Hayes",
+      "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Hayes has supported LGBTQ+ rights and same-sex marriage recognition, consistent with his progressive Baltimore City Democratic record.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes01",
+        "https://ballotpedia.org/Antonio_Hayes"
+      ]
+    },
+    {
+      "full_name": "Arthur Ellis",
+      "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Ellis represents a district with some immigrant communities. He supports immigrant protections and comprehensive immigration reform.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+      ]
+    },
+    {
+      "full_name": "Arthur Ellis",
+      "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Ellis represents Charles County District 28 and voted YES on the Abortion Care Access Act. He is a consistent pro-choice vote in the Maryland Senate.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+      ]
+    },
+    {
+      "full_name": "Benjamin F. Kramer",
+      "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Kramer supports immigrant-friendly policies. His district includes many immigrant families and federal workers. He opposes harsh deportation policies and supports a path to legal status.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+        "https://ballotpedia.org/Benjamin_Kramer"
+      ]
+    },
+    {
+      "full_name": "Brian Chisholm",
+      "politician_id": "cfc704da-dd6c-40b0-97fa-0c5ece8d3976",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Chisholm has supported stricter immigration enforcement and opposed sanctuary policies in Maryland consistent with Anne Arundel County Republican voter priorities.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/chisholm?tab=2026RS-legislation",
+        "https://ballotpedia.org/Brian_Chisholm"
+      ]
+    },
+    {
+      "full_name": "Brian Chisholm",
+      "politician_id": "cfc704da-dd6c-40b0-97fa-0c5ece8d3976",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Chisholm is a Republican from Anne Arundel County who has voted against abortion access legislation in Maryland and has publicly opposed the Abortion Care Access Act on pro-life grounds.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/chisholm?tab=2026RS-legislation",
+        "https://ballotpedia.org/Brian_Chisholm"
+      ]
+    },
+    {
+      "full_name": "Brian M. Crosby",
+      "politician_id": "898845f9-cb93-4162-b0ed-6842eacda5d6",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Crosby has supported abortion access legislation in the Maryland House including co-sponsoring the Abortion Care Access Act (HB 1171 2023) and opposing gestational limits.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/crosby01?tab=2026RS-legislation",
+        "https://ballotpedia.org/Brian_Crosby"
+      ]
+    },
+    {
+      "full_name": "Bryan W. Simonaire",
+      "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Simonaire supports stricter immigration enforcement. He has backed measures like E-Verify requirements and opposed sanctuary jurisdictions in Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simonaire",
+        "https://ballotpedia.org/Bryan_Simonaire"
+      ]
+    },
+    {
+      "full_name": "C. Anthony Muse",
+      "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Muse represents a district with a large immigrant community. He generally supports immigrant protections and comprehensive immigration reform.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+        "https://ballotpedia.org/C._Anthony_Muse"
+      ]
+    },
+    {
+      "full_name": "C. Anthony Muse",
+      "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "3.0",
+      "write_in_text": null,
+      "reasoning": "Muse, as a pastor and Democrat, has expressed more conservative views on same-sex marriage than his Democratic colleagues. He has been noted for crossing party lines on LGBTQ-related legislation.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+        "https://ballotpedia.org/C._Anthony_Muse"
+      ]
+    },
+    {
+      "full_name": "Chao Wu",
+      "politician_id": "7ced90a8-39dc-447e-ba33-e3af4cd47473",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Wu co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) and has consistently voted for abortion access legislation in Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wu01",
+        "https://ballotpedia.org/Chao_Wu"
+      ]
+    },
+    {
+      "full_name": "Chao Wu",
+      "politician_id": "7ced90a8-39dc-447e-ba33-e3af4cd47473",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Wu strongly supports same-sex marriage and LGBTQ+ rights including protections for transgender youth.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wu01",
+        "https://ballotpedia.org/Chao_Wu"
+      ]
+    },
+    {
+      "full_name": "Cheryl C. Kagan",
+      "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic_title": "Transgender Athletes",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Kagan supports inclusive policies for transgender athletes. She voted for Maryland legislation protecting transgender student rights in schools.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+        "https://ballotpedia.org/Cheryl_C._Kagan"
+      ]
+    },
+    {
+      "full_name": "Cheryl E. Pasteur",
+      "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Pasteur co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) and has consistently voted for abortion access legislation in Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pasteur01",
+        "https://ballotpedia.org/Cheryl_Pasteur"
+      ]
+    },
+    {
+      "full_name": "Chris West",
+      "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "West has supported stricter immigration enforcement and opposed sanctuary policies in Maryland, consistent with Republican caucus positions.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/west01",
+        "https://ballotpedia.org/Chris_West_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Cory V. McCray",
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "McCray has supported immigrant-friendly policies and sanctuary protections, backing legislation that provides services to undocumented Baltimore City residents.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+        "https://ballotpedia.org/Cory_McCray"
+      ]
+    },
+    {
+      "full_name": "Cory V. McCray",
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "McCray has supported LGBTQ+ rights and same-sex marriage recognition, consistent with his progressive Baltimore City Democratic record.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray01",
+        "https://ballotpedia.org/Cory_McCray"
+      ]
+    },
+    {
+      "full_name": "Courtney Watson",
+      "politician_id": "a4b61b58-9006-4e58-952d-abeb2521cda0",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Watson co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) and has been a consistent supporter of abortion access rights in Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+        "https://ballotpedia.org/Courtney_Watson"
+      ]
+    },
+    {
+      "full_name": "Dalya Attar",
+      "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Attar has supported immigrant-friendly policies and sanctuary protections, backing legislation that provides services to undocumented Baltimore City residents.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar01",
+        "https://ballotpedia.org/Dalya_Attar"
+      ]
+    },
+    {
+      "full_name": "Dalya Attar",
+      "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Attar has supported abortion rights legislation as a progressive Baltimore City Democrat, voting for the Abortion Care Access Act (2023) and reproductive rights protections.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar01",
+        "https://ballotpedia.org/Dalya_Attar"
+      ]
+    },
+    {
+      "full_name": "Dalya Attar",
+      "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Attar has supported LGBTQ+ rights and same-sex marriage, consistent with her progressive Baltimore City Democratic record.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar01",
+        "https://ballotpedia.org/Dalya_Attar"
+      ]
+    },
+    {
+      "full_name": "Dana Jones",
+      "politician_id": "d8eabd9b-2aa8-40de-94ce-06ce6ef167cf",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Jones has co-sponsored abortion access legislation in Maryland and voted in favor of the Abortion Care Access Act supporting reproductive healthcare services for women in Anne Arundel County.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jones08?tab=2026RS-legislation",
+        "https://ballotpedia.org/Dana_Jones"
+      ]
+    },
+    {
+      "full_name": "Dana Stein",
+      "politician_id": "e94337e1-4776-4058-87b4-32dfeb7732a0",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Stein supports same-sex marriage and LGBTQ+ protections — consistent vote in favor of equal rights legislation.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stein01",
+        "https://ballotpedia.org/Dana_Stein"
+      ]
+    },
+    {
+      "full_name": "Darrell Odom",
+      "politician_id": "0e238dbf-5b4e-4e95-8a94-e02d97a136f5",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Sponsored Public Safety - State Law Enforcement Agencies - Hiring Restriction (ICE Breaker Act, 2026); prohibits state law enforcement from cooperating with federal immigration enforcement; strongly opposes ICE cooperation.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/odom01?tab=2026RS-legislation"
+      ]
+    },
+    {
+      "full_name": "Debra Davis",
+      "politician_id": "1cc5a555-4b8a-4573-8525-9ad2c7c0bf46",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Davis has been a consistent supporter of abortion access in Maryland. She co-sponsored HB 1171 (2023) the Abortion Care Access Act expanding access to reproductive healthcare services.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/davis01?tab=2026RS-legislation",
+        "https://ballotpedia.org/Debra_Davis"
+      ]
+    },
+    {
+      "full_name": "Dylan Behler",
+      "politician_id": "3f45bad5-b856-4d8e-b3d9-8c03623e030a",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Behler has supported abortion access legislation in Maryland including voting in favor of the Abortion Care Access Act and reproductive healthcare expansion measures.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/behler?tab=2026RS-legislation",
+        "https://ballotpedia.org/Dylan_Behler"
+      ]
+    },
+    {
+      "full_name": "Dylan Behler",
+      "politician_id": "3f45bad5-b856-4d8e-b3d9-8c03623e030a",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_title": "Taxation and Public Spending",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Behler has co-sponsored progressive revenue legislation to fund the Blueprint for Maryland's Future education reforms and healthcare expansion programs.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/behler?tab=2026RS-legislation",
+        "https://ballotpedia.org/Dylan_Behler"
+      ]
+    },
+    {
+      "full_name": "Gabriel M. Moreno",
+      "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Moreno supports same-sex marriage and LGBTQ+ protections including trans youth healthcare access.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moreno01",
+        "https://ballotpedia.org/Gabriel_Moreno_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Harry Bhandari",
+      "politician_id": "6d95657c-6c46-4aab-886f-f9688adc7b33",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Bhandari co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) and has consistently voted in favor of abortion access legislation in Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bhandari01",
+        "https://ballotpedia.org/Harry_Bhandari"
+      ]
+    },
+    {
+      "full_name": "Jack Bailey",
+      "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Bailey supports stricter immigration enforcement. He has backed measures to require E-Verify for employers and opposed sanctuary policies in Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bailey01",
+        "https://ballotpedia.org/Jack_Bailey_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Jack Bailey",
+      "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Bailey is a Republican representing St. Mary's County and Calvert County. He voted NO on the Abortion Care Access Act and opposes abortion rights legislation. He is a consistent pro-life vote in the MD Senate.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bailey01",
+        "https://ballotpedia.org/Jack_Bailey_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Jack Bailey",
+      "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Bailey, as a Southern Maryland Republican, has taken more conservative positions on LGBTQ-related legislation including same-sex marriage. He voted against LGBTQ anti-discrimination measures.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bailey01",
+        "https://ballotpedia.org/Jack_Bailey_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Jason C. Gallion",
+      "politician_id": "e2ca1bfd-255d-417b-a9d7-424e6c10749d",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Gallion has supported stricter immigration enforcement measures and opposed sanctuary policies, consistent with Republican positions in the Maryland Senate.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/gallion01",
+        "https://ballotpedia.org/Jason_Gallion"
+      ]
+    },
+    {
+      "full_name": "Jason C. Gallion",
+      "politician_id": "e2ca1bfd-255d-417b-a9d7-424e6c10749d",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Gallion is a Republican from a conservative Harford/Cecil County district and has opposed abortion access legislation, voting against the Abortion Care Access Act (2023) in the Maryland Senate.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/gallion01",
+        "https://ballotpedia.org/Jason_Gallion"
+      ]
+    },
+    {
+      "full_name": "Jen Terrasa",
+      "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Terrasa strongly supports same-sex marriage and LGBTQ+ protections including trans youth healthcare access.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/terrasa01",
+        "https://ballotpedia.org/Jen_Terrasa"
+      ]
+    },
+    {
+      "full_name": "Jessica Feldmark",
+      "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Feldmark strongly supports same-sex marriage and LGBTQ+ protections including protections for transgender youth.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldmark01",
+        "https://ballotpedia.org/Jessica_Feldmark"
+      ]
+    },
+    {
+      "full_name": "Jim Rosapepe",
+      "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Rosapepe represents Prince George's County with a large immigrant population including many Latino families. He supports comprehensive immigration reform and immigrant protections.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+        "https://ballotpedia.org/Jim_Rosapepe"
+      ]
+    },
+    {
+      "full_name": "Jim Rosapepe",
+      "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Rosapepe supported marriage equality in Maryland and has backed LGBTQ non-discrimination legislation throughout his career.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+        "https://ballotpedia.org/Jim_Rosapepe"
+      ]
+    },
+    {
+      "full_name": "Joanne C. Benson",
+      "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Benson represents a district with a significant immigrant community. She supports immigrant protections and comprehensive immigration reform.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+        "https://ballotpedia.org/Joanne_Benson"
+      ]
+    },
+    {
+      "full_name": "Joanne C. Benson",
+      "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Benson supports same-sex marriage and LGBTQ equality. She voted for LGBTQ non-discrimination legislation and has backed marriage equality throughout her career.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+        "https://ballotpedia.org/Joanne_Benson"
+      ]
+    },
+    {
+      "full_name": "Kevin M. Harris",
+      "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Harris represents Prince George's County District 27 and voted YES on the Abortion Care Access Act. He is a consistent pro-choice vote in the Maryland Senate.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+        "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Kim Ross",
+      "politician_id": "5d17e3ea-9d63-4a96-8848-9e293ac05fdb",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Ross supports same-sex marriage and LGBTQ+ protections including gender-affirming care protections for minors.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ross01",
+        "https://ballotpedia.org/Kim_Ross"
+      ]
+    },
+    {
+      "full_name": "LaToya Nkongolo",
+      "politician_id": "13462ee2-0dd9-4f70-809f-a813c23951d4",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Nkongolo has supported stricter immigration enforcement and opposed sanctuary policies in Maryland in line with the House Republican caucus agenda.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/nkongolo?tab=2026RS-legislation",
+        "https://ballotpedia.org/LaToya_Nkongolo"
+      ]
+    },
+    {
+      "full_name": "LaToya Nkongolo",
+      "politician_id": "13462ee2-0dd9-4f70-809f-a813c23951d4",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Nkongolo is a Republican from Anne Arundel County who has voted against abortion access legislation in Maryland including opposing the Abortion Care Access Act consistent with the House Republican caucus position.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/nkongolo?tab=2026RS-legislation",
+        "https://ballotpedia.org/LaToya_Nkongolo"
+      ]
+    },
+    {
+      "full_name": "LaToya Nkongolo",
+      "politician_id": "13462ee2-0dd9-4f70-809f-a813c23951d4",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic_title": "Transgender Athletes",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Nkongolo has voted in favor of legislation restricting transgender athletes from competing in female sports categories consistent with the Republican caucus social conservative platform.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/nkongolo?tab=2026RS-legislation",
+        "https://ballotpedia.org/LaToya_Nkongolo"
+      ]
+    },
+    {
+      "full_name": "Malcolm Augustine",
+      "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Augustine has supported immigrant-friendly policies and sanctuary measures, backing legislation that provides services to the large immigrant population in Prince George County.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/augustine01",
+        "https://ballotpedia.org/Malcolm_Augustine"
+      ]
+    },
+    {
+      "full_name": "Malcolm Augustine",
+      "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Augustine has supported abortion rights legislation including the Abortion Care Access Act (2023), consistent with his progressive Prince George County Democratic record.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/augustine01",
+        "https://ballotpedia.org/Malcolm_Augustine"
+      ]
+    },
+    {
+      "full_name": "Malcolm Augustine",
+      "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Augustine has supported LGBTQ+ rights and same-sex marriage recognition, consistent with his progressive Prince George County Democratic record.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/augustine01",
+        "https://ballotpedia.org/Malcolm_Augustine"
+      ]
+    },
+    {
+      "full_name": "Mary Beth Carozza",
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Carozza has opposed sanctuary policies and supported stricter immigration enforcement measures, consistent with conservative Republican positions in the Maryland Senate.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza01",
+        "https://ballotpedia.org/Mary_Beth_Carozza"
+      ]
+    },
+    {
+      "full_name": "Mary Beth Carozza",
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Carozza is a social conservative and has opposed LGBTQ+ rights expansions as a Republican from a conservative Eastern Shore district.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza01",
+        "https://ballotpedia.org/Mary_Beth_Carozza"
+      ]
+    },
+    {
+      "full_name": "Mary-Dulany James",
+      "politician_id": "18313901-28d8-464c-9368-2873577e9d44",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "James has supported immigrant-friendly policies in Maryland, backing state legislation that provides services to undocumented residents and opposing punitive immigration enforcement.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/james06",
+        "https://ballotpedia.org/Mary-Dulany_James"
+      ]
+    },
+    {
+      "full_name": "Mary-Dulany James",
+      "politician_id": "18313901-28d8-464c-9368-2873577e9d44",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "James has supported abortion rights legislation in the Maryland Senate, backing the Abortion Care Access Act and voting consistently for reproductive rights protections in Harford County and statewide.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/james06",
+        "https://ballotpedia.org/Mary-Dulany_James"
+      ]
+    },
+    {
+      "full_name": "Mary-Dulany James",
+      "politician_id": "18313901-28d8-464c-9368-2873577e9d44",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "James has supported LGBTQ+ rights and same-sex marriage recognition, aligned with Maryland Democratic caucus on all related civil rights legislation.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/james06",
+        "https://ballotpedia.org/Mary-Dulany_James"
+      ]
+    },
+    {
+      "full_name": "N. Scott Phillips",
+      "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Phillips co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) and has consistently voted for abortion access legislation in Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/phillips04",
+        "https://ballotpedia.org/N._Scott_Phillips"
+      ]
+    },
+    {
+      "full_name": "N. Scott Phillips",
+      "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Phillips supports same-sex marriage and full LGBTQ+ legal rights — consistent supporter of LGBTQ+ protections in Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/phillips04",
+        "https://ballotpedia.org/N._Scott_Phillips"
+      ]
+    },
+    {
+      "full_name": "Nancy J. King",
+      "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "King has supported immigrant-friendly policies in Maryland, backing legislation providing services to undocumented residents and opposing punitive enforcement measures.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/king01",
+        "https://ballotpedia.org/Nancy_King"
+      ]
+    },
+    {
+      "full_name": "Nancy J. King",
+      "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "topic_title": "Medicare / Medicaid",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "King has strongly supported Medicaid and Medicare as a Budget and Taxation Committee member, opposing cuts and backing expansion of these programs in the Maryland state budget.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/king01",
+        "https://ballotpedia.org/Nancy_King"
+      ]
+    },
+    {
+      "full_name": "Nancy J. King",
+      "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "King has supported LGBTQ+ rights including same-sex marriage recognition, aligned with Montgomery County Democratic values throughout her Senate career.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/king01",
+        "https://ballotpedia.org/Nancy_King"
+      ]
+    },
+    {
+      "full_name": "Natalie Ziegler",
+      "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Ziegler co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) and has consistently supported abortion access legislation in Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ziegler02",
+        "https://ballotpedia.org/Natalie_Ziegler"
+      ]
+    },
+    {
+      "full_name": "Natalie Ziegler",
+      "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Ziegler supports same-sex marriage and LGBTQ+ protections including trans youth healthcare access.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ziegler02",
+        "https://ballotpedia.org/Natalie_Ziegler"
+      ]
+    },
+    {
+      "full_name": "Nicholaus R. Kipke",
+      "politician_id": "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Kipke has opposed Maryland's recognition of same-sex marriage voting against the Civil Marriage Protection Act and has maintained socially conservative positions consistent with his district and party.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kipke?tab=2026RS-legislation",
+        "https://ballotpedia.org/Nicholaus_Kipke"
+      ]
+    },
+    {
+      "full_name": "Nicholaus R. Kipke",
+      "politician_id": "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic_title": "Transgender Athletes",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Kipke has co-sponsored legislation banning transgender athletes from competing in girls' and women's sports categories at Maryland schools consistent with the House Republican social conservative agenda.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kipke?tab=2026RS-legislation",
+        "https://ballotpedia.org/Nicholaus_Kipke"
+      ]
+    },
+    {
+      "full_name": "Nick Charles",
+      "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Charles represents a district with a large immigrant community. He supports immigrant protections and comprehensive immigration reform, opposing harsh enforcement measures.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+        "https://ballotpedia.org/Nick_Charles"
+      ]
+    },
+    {
+      "full_name": "Nick Charles",
+      "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Charles represents Prince George's County District 25 and is a consistent pro-choice vote. He voted YES on the Abortion Care Access Act and supports reproductive healthcare legislation.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+        "https://ballotpedia.org/Nick_Charles"
+      ]
+    },
+    {
+      "full_name": "Nick Charles",
+      "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Charles supports same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+        "https://ballotpedia.org/Nick_Charles"
+      ]
+    },
+    {
+      "full_name": "Pam Lanman Guzzone",
+      "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Lanman Guzzone co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) and has consistently supported abortion access legislation in Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone03",
+        "https://ballotpedia.org/Pam_Guzzone"
+      ]
+    },
+    {
+      "full_name": "Pam Lanman Guzzone",
+      "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Lanman Guzzone strongly supports same-sex marriage and LGBTQ+ protections including trans youth healthcare access.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone03",
+        "https://ballotpedia.org/Pam_Guzzone"
+      ]
+    },
+    {
+      "full_name": "Pamela Beidle",
+      "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Beidle has supported immigrant-friendly policies in Maryland, backing state legislation to provide services to undocumented residents and opposing punitive immigration measures.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/beidle01",
+        "https://ballotpedia.org/Pamela_Beidle"
+      ]
+    },
+    {
+      "full_name": "Pamela Beidle",
+      "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Beidle voted in favor of Maryland same-sex marriage law and has consistently supported LGBTQ+ civil rights protections throughout her tenure.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/beidle01",
+        "https://ballotpedia.org/Pamela_Beidle"
+      ]
+    },
+    {
+      "full_name": "Ron Watson",
+      "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Watson represents a district with significant immigrant communities. He supports immigrant protections and comprehensive immigration reform.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+        "https://ballotpedia.org/Ron_Watson_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Ron Watson",
+      "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+      "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+      "topic_title": "Police Accountability",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Watson backed the Maryland Police Accountability Act of 2021. He supports civilian oversight and officer accountability measures.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+        "https://ballotpedia.org/Ron_Watson_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Ron Watson",
+      "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Watson represents Prince George's County District 23 and is a consistent pro-choice vote. He voted YES on the Abortion Care Access Act and supports reproductive healthcare access.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+        "https://ballotpedia.org/Ron_Watson_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Seth A. Howard",
+      "politician_id": "2fe3f655-c28e-40c3-a2f9-48ea9eb8b498",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Howard has supported stricter immigration enforcement measures and opposed sanctuary policies in Maryland consistent with Republican district values in Anne Arundel County.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/howard02?tab=2026RS-legislation",
+        "https://ballotpedia.org/Seth_Howard"
+      ]
+    },
+    {
+      "full_name": "Shaneka Henson",
+      "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Henson supports immigrant protections and comprehensive immigration reform. Her district includes immigrant communities in the Annapolis area.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+        "https://ballotpedia.org/Shaneka_Henson"
+      ]
+    },
+    {
+      "full_name": "Shaneka Henson",
+      "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Henson represents Anne Arundel County District 30 (including Annapolis) and voted YES on the Abortion Care Access Act. She is a consistent pro-choice vote in the Maryland Senate.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+        "https://ballotpedia.org/Shaneka_Henson"
+      ]
+    },
+    {
+      "full_name": "Shaneka Henson",
+      "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Henson supports same-sex marriage and LGBTQ equality. She voted for LGBTQ non-discrimination legislation and supports transgender rights.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+        "https://ballotpedia.org/Shaneka_Henson"
+      ]
+    },
+    {
+      "full_name": "Stuart Michael Schmidt, Jr.",
+      "politician_id": "55d9d0b6-78a3-460b-97b9-87913ffc8e85",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Schmidt is a Republican from Anne Arundel County who has voted against abortion access legislation in Maryland including opposing the Abortion Care Access Act consistent with the House Republican pro-life position.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/schmidt01?tab=2026RS-legislation",
+        "https://ballotpedia.org/Stuart_Schmidt"
+      ]
+    },
+    {
+      "full_name": "Terri L. Hill",
+      "politician_id": "f6a237a0-34ff-4a93-b05a-335ec38b6da3",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "topic_title": "Medicare / Medicaid",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "As a physician Hill has been a leading advocate for expanding Medicare and Medicaid — strongly opposes any cuts to these programs and supports expanding eligibility.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hill04",
+        "https://ballotpedia.org/Terri_Hill"
+      ]
+    },
+    {
+      "full_name": "Terri L. Hill",
+      "politician_id": "f6a237a0-34ff-4a93-b05a-335ec38b6da3",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Hill supports same-sex marriage and LGBTQ+ protections including gender-affirming healthcare access — has spoken publicly about trans youth healthcare as medical care.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hill04",
+        "https://ballotpedia.org/Terri_Hill"
+      ]
+    }
+  ]
+}
