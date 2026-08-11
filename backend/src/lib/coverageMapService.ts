@@ -562,19 +562,66 @@ function stateBreakdown(jur: JurisdictionScore[], stateFips: string) {
   };
 }
 
+/**
+ * How many states may be built at once by getStateScores.
+ *
+ * The states are independent, so building them one at a time made the cold load the SUM of every
+ * state's cost — 24.7 s for 13 states, which overran the 30 s statement timeout and returned a 500.
+ * Nearly all of it is the PostGIS child→county assignment in buildJurisdictions (16.2 s of the 24.7,
+ * CA alone 5.8 s); statsByJurisdiction is only 1.5 s across all 13.
+ *
+ * Deliberately NOT unbounded. `pool` is `max: 10` and shared with every other API request, so
+ * fanning out 13 states x 4 queries would saturate the pool and starve live traffic for the whole
+ * cold build. 4 keeps the majority of the win — wall clock falls to roughly the slowest single state
+ * — while leaving connections free.
+ *
+ * The faster path would be to stop recomputing the child→county mapping at all (it only changes when
+ * boundaries are reloaded), but that needs somewhere to persist it. Rewriting the spatial query was
+ * tried and rejected: a DISTINCT ON spatial join is only ~20% faster and CHANGED the county assigned
+ * in ca/in/or/ut/wi, because area ties (a child merely touching a neighbouring county intersects it
+ * with area 0) resolve differently than the correlated `ORDER BY ... LIMIT 1`. Not worth 20%.
+ */
+const STATE_BUILD_CONCURRENCY = 4;
+
+/**
+ * Map over `items` with at most `limit` concurrent workers, preserving INPUT ORDER in the result.
+ * Order matters here: the choropleth list is rendered in listCoverageStates() order.
+ */
+async function mapWithConcurrency<T, R>(
+  items: readonly T[],
+  limit: number,
+  fn: (item: T, index: number) => Promise<R>,
+): Promise<R[]> {
+  const out = new Array<R>(items.length);
+  let next = 0;
+  const worker = async (): Promise<void> => {
+    for (;;) {
+      const i = next++;
+      if (i >= items.length) return;
+      out[i] = await fn(items[i]!, i);
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  return out;
+}
+
 /** US choropleth: one score per tracked state. Untracked states are omitted. */
 export async function getStateScores(
   opts: { refresh?: boolean; weights?: AxisWeights } = {},
 ): Promise<StateScore[]> {
   const weights = opts.weights ?? DEFAULT_WEIGHTS;
   return cached('us', !!opts.refresh, async () => {
-    const out: StateScore[] = [];
-    for (const code of listCoverageStates()) {
-      const file = readCoverageFile(code);
-      const fips = file.universe?.state_fips;
-      if (!fips) continue;
+    // Resolve the YAML synchronously first so the concurrent section is pure DB work, and so
+    // states without a state_fips are dropped BEFORE the ordered map (keeping index alignment).
+    const tracked = listCoverageStates()
+      .map((code) => ({ code, file: readCoverageFile(code) }))
+      .filter((t): t is { code: string; file: ReturnType<typeof readCoverageFile> & { universe: { state_fips: string } } } =>
+        Boolean(t.file.universe?.state_fips));
+
+    return mapWithConcurrency(tracked, STATE_BUILD_CONCURRENCY, async ({ code, file }) => {
+      const fips = file.universe.state_fips;
       const jur = await buildJurisdictions(fips, code, weights);
-      out.push({
+      return {
         fips,
         code,
         name: file.state_name,
@@ -582,8 +629,7 @@ export async function getStateScores(
         jurisdiction_count: jur.length,
         populated_count: jur.filter((j) => j.populated).length,
         ...stateBreakdown(jur, fips),
-      });
-    }
-    return out;
+      };
+    });
   });
 }
