@@ -1,0 +1,1114 @@
+{
+  "migration": "1677_retire_md_dead_citation_stances",
+  "retired_on": "2026-08-10",
+  "rule": "Every URL cited by these stances was fetched and returns a non-existent page: the mgaleg member id does not resolve (302 -> /mgawebsite/Error/NotFound) and the Ballotpedia article does not exist (wgArticleId: 0). A citation to a page that never existed supports nothing.",
+  "scope_note": "Only politicians whose ENTIRE cited source set is verified dead. Anyone with at least one resolving citation was deliberately left alone.",
+  "row_count": 85,
+  "rows": [
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_title": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor has backed affordable housing legislation and tenant protections in Baltimore County, supporting programs to address housing affordability for working families.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_title": "Civil Rights and Social Justice",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor is a strong civil rights advocate, supporting anti-discrimination legislation, police accountability, and racial equity measures in the Maryland Senate.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_title": "Climate Change and Environmental Protection",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor supported the Climate Solutions Now Act (2022) and has backed clean energy legislation and environmental justice initiatives.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "topic_title": "Criminal Justice Approach",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor has backed significant criminal justice reform including sentencing reductions and restorative justice approaches, reflecting the priorities of his Baltimore County constituents.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_title": "Economic Development Incentives",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor has supported targeted public investment in workforce development programs for Baltimore County, backing economic development for working families and small businesses.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic_title": "Healthcare Access",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor has supported expanding healthcare access and Medicaid coverage, backing measures to reduce health disparities in Baltimore County communities.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor has supported immigrant-friendly policies and sanctuary measures, backing legislation that provides services to undocumented Maryland residents.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "topic_title": "Jail Capacity and Incarceration Alternatives",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor has supported decarceration and alternatives to incarceration, opposing jail expansion and backing diversion programs.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+      "topic_title": "Police Accountability",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor has supported police accountability reforms including changes to qualified immunity and civilian oversight, important priorities for his majority-Black Baltimore County district.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic_title": "Public Safety Approach",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor has supported both community investment and law enforcement approaches to public safety, backing violence prevention programs alongside policing funding.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor has supported abortion rights legislation including the Abortion Care Access Act (2023), consistent with his progressive Baltimore County Democratic record.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor has supported LGBTQ+ rights and same-sex marriage recognition, consistent with his progressive Baltimore County Democratic record.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_title": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor opposes school vouchers and strongly supports public school funding including the Blueprint for Maryland Future legislation benefiting Baltimore County students.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_title": "Taxation and Public Spending",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor has supported progressive taxation to fund education and social services, backing revenue measures to fund the Blueprint for Maryland Future.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Charles E. Sydnor, III",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_title": "Voting Rights and Electoral Integrity",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Sydnor has backed expanded voting access including automatic voter registration, early voting, and felon re-enfranchisement aligned with progressive Democrats.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sydnor01",
+        "https://ballotpedia.org/Charles_Sydnor"
+      ]
+    },
+    {
+      "full_name": "Gary Simmons",
+      "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_title": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Simmons supported affordable housing legislation and tenant protections in Howard County — favors mixed-income development with affordability requirements.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+        "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Gary Simmons",
+      "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_title": "Civil Rights and Social Justice",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Simmons co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights in Howard County.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+        "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Gary Simmons",
+      "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_title": "Climate Change and Environmental Protection",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Simmons supported the Climate Solutions Now Act and renewable energy legislation — favors aggressive climate action and clean energy transition.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+        "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Gary Simmons",
+      "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_title": "Economic Development Incentives",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Simmons has supported public-private partnerships for economic development in Howard County — favors targeted public investment with labor standards.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+        "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Gary Simmons",
+      "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic_title": "Healthcare Access",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Simmons supported Medicaid expansion and healthcare access legislation — favors significant expansion of public coverage.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+        "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Gary Simmons",
+      "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Simmons co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) and has consistently supported abortion access legislation in Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+        "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Gary Simmons",
+      "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Simmons supports same-sex marriage and LGBTQ+ protections — consistent supporter of equal rights legislation.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+        "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Gary Simmons",
+      "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_title": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Simmons supported the Blueprint for Maryland's Future — advocates for public school investment over private school voucher programs.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+        "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Gary Simmons",
+      "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_title": "Taxation and Public Spending",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Simmons supported progressive tax reform including higher taxes on high earners to fund Blueprint for Maryland's Future education funding.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+        "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Gary Simmons",
+      "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_title": "Voting Rights and Electoral Integrity",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Simmons supported expanded voting access legislation including automatic registration and early voting expansion.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons05",
+        "https://ballotpedia.org/Gary_Simmons_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "J. Sandy Bartlett",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_title": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Bartlett has supported affordable housing measures including rent stabilization and affordable housing production incentives to address housing costs in Anne Arundel County.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bartlett04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Sandy_Bartlett"
+      ]
+    },
+    {
+      "full_name": "J. Sandy Bartlett",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "topic_title": "Childcare Affordability & Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Bartlett has co-sponsored childcare affordability legislation and supported pre-K expansion under the Blueprint for Maryland's Future for Anne Arundel County families.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bartlett04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Sandy_Bartlett"
+      ]
+    },
+    {
+      "full_name": "J. Sandy Bartlett",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_title": "Civil Rights and Social Justice",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Bartlett has co-sponsored civil rights and anti-discrimination legislation in the Maryland House and supported police accountability reform measures.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bartlett04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Sandy_Bartlett"
+      ]
+    },
+    {
+      "full_name": "J. Sandy Bartlett",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_title": "Climate Change and Environmental Protection",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Bartlett has supported the Climate Solutions Now Act and clean energy investment legislation prioritizing Maryland's transition to renewable energy to address climate change.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bartlett04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Sandy_Bartlett"
+      ]
+    },
+    {
+      "full_name": "J. Sandy Bartlett",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_title": "Economic Development Incentives",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Bartlett has supported workforce development and targeted economic development legislation for Anne Arundel County including programs supporting defense contractor transitions and technology sector growth.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bartlett04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Sandy_Bartlett"
+      ]
+    },
+    {
+      "full_name": "J. Sandy Bartlett",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic_title": "Healthcare Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Bartlett has been a consistent champion of healthcare access legislation including Medicaid expansion and prescription drug cost reduction measures serving on health-related committees.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bartlett04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Sandy_Bartlett"
+      ]
+    },
+    {
+      "full_name": "J. Sandy Bartlett",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic_title": "Public Safety Approach",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Bartlett has supported police accountability reforms and investment in mental health and social services as part of a balanced public safety approach in Anne Arundel County.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bartlett04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Sandy_Bartlett"
+      ]
+    },
+    {
+      "full_name": "J. Sandy Bartlett",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Bartlett has supported abortion access legislation in Maryland including co-sponsoring the Abortion Care Access Act and consistently voting to protect and expand reproductive healthcare access.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bartlett04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Sandy_Bartlett"
+      ]
+    },
+    {
+      "full_name": "J. Sandy Bartlett",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_title": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Bartlett has opposed school voucher programs and has been an advocate for public school funding and the implementation of the Blueprint for Maryland's Future in Anne Arundel schools.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bartlett04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Sandy_Bartlett"
+      ]
+    },
+    {
+      "full_name": "J. Sandy Bartlett",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_title": "Taxation and Public Spending",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Bartlett has supported progressive revenue measures to fund education and healthcare including the Blueprint for Maryland's Future funding legislation.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bartlett04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Sandy_Bartlett"
+      ]
+    },
+    {
+      "full_name": "J. Sandy Bartlett",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_title": "Voting Rights and Electoral Integrity",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Bartlett has supported automatic voter registration and expanded voting access legislation as part of the Democratic caucus agenda in the Maryland House.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bartlett04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Sandy_Bartlett"
+      ]
+    },
+    {
+      "full_name": "Jennifer White Holland",
+      "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_title": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "White Holland supported affordable housing mandates and tenant protections — favors mixed-income development with strong affordability requirements.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03",
+        "https://ballotpedia.org/Jennifer_White_Holland"
+      ]
+    },
+    {
+      "full_name": "Jennifer White Holland",
+      "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_title": "Civil Rights and Social Justice",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "White Holland co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights in Baltimore County.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03",
+        "https://ballotpedia.org/Jennifer_White_Holland"
+      ]
+    },
+    {
+      "full_name": "Jennifer White Holland",
+      "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_title": "Climate Change and Environmental Protection",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "White Holland supported the Climate Solutions Now Act and Maryland's clean energy transition legislation — favors aggressive climate action.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03",
+        "https://ballotpedia.org/Jennifer_White_Holland"
+      ]
+    },
+    {
+      "full_name": "Jennifer White Holland",
+      "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic_title": "Healthcare Access",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "White Holland supported Medicaid expansion and healthcare access legislation — favors significant public coverage expansion with mixed system.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03",
+        "https://ballotpedia.org/Jennifer_White_Holland"
+      ]
+    },
+    {
+      "full_name": "Jennifer White Holland",
+      "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic_title": "Public Safety Approach",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "White Holland supported the Maryland Police Accountability Act reforms while also supporting community investment — favors balanced public safety approach.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03",
+        "https://ballotpedia.org/Jennifer_White_Holland"
+      ]
+    },
+    {
+      "full_name": "Jennifer White Holland",
+      "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "White Holland co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) and has been a consistent supporter of abortion access legislation in Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03",
+        "https://ballotpedia.org/Jennifer_White_Holland"
+      ]
+    },
+    {
+      "full_name": "Jennifer White Holland",
+      "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "White Holland strongly supports same-sex marriage and LGBTQ+ protections including gender-affirming care protections.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03",
+        "https://ballotpedia.org/Jennifer_White_Holland"
+      ]
+    },
+    {
+      "full_name": "Jennifer White Holland",
+      "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_title": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "White Holland supported Blueprint for Maryland's Future — favors public school investment over private school voucher programs.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03",
+        "https://ballotpedia.org/Jennifer_White_Holland"
+      ]
+    },
+    {
+      "full_name": "Jennifer White Holland",
+      "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_title": "Taxation and Public Spending",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "White Holland supported progressive tax reforms funding Blueprint for Maryland's Future through higher taxes on high earners.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03",
+        "https://ballotpedia.org/Jennifer_White_Holland"
+      ]
+    },
+    {
+      "full_name": "Jennifer White Holland",
+      "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_title": "Voting Rights and Electoral Integrity",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "White Holland supported expanded voting access legislation including early voting expansion and automatic registration.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holland03",
+        "https://ballotpedia.org/Jennifer_White_Holland"
+      ]
+    },
+    {
+      "full_name": "Mike Rogers",
+      "politician_id": "24980735-6a39-4e48-94b0-7318cac8dfde",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_title": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Rogers has supported affordable housing production legislation and tenant protections in Anne Arundel County addressing housing affordability concerns in the district.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rogers02?tab=2026RS-legislation",
+        "https://ballotpedia.org/Mike_Rogers_(Maryland_delegate)"
+      ]
+    },
+    {
+      "full_name": "Mike Rogers",
+      "politician_id": "24980735-6a39-4e48-94b0-7318cac8dfde",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_title": "Civil Rights and Social Justice",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Rogers has co-sponsored civil rights and police accountability legislation in the Maryland House consistent with the Democratic caucus agenda.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rogers02?tab=2026RS-legislation",
+        "https://ballotpedia.org/Mike_Rogers_(Maryland_delegate)"
+      ]
+    },
+    {
+      "full_name": "Mike Rogers",
+      "politician_id": "24980735-6a39-4e48-94b0-7318cac8dfde",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_title": "Climate Change and Environmental Protection",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Rogers has supported the Climate Solutions Now Act and Maryland's clean energy agenda while expressing constituent concerns about cost impacts on working families in his district.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rogers02?tab=2026RS-legislation",
+        "https://ballotpedia.org/Mike_Rogers_(Maryland_delegate)"
+      ]
+    },
+    {
+      "full_name": "Mike Rogers",
+      "politician_id": "24980735-6a39-4e48-94b0-7318cac8dfde",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_title": "Economic Development Incentives",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Rogers has supported economic development legislation for Anne Arundel County including workforce training and defense contractor diversification programs around Fort Meade and BWI corridor.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rogers02?tab=2026RS-legislation",
+        "https://ballotpedia.org/Mike_Rogers_(Maryland_delegate)"
+      ]
+    },
+    {
+      "full_name": "Mike Rogers",
+      "politician_id": "24980735-6a39-4e48-94b0-7318cac8dfde",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic_title": "Healthcare Access",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Rogers has supported healthcare affordability legislation including Medicaid expansion and pharmacy benefit manager reform measures to improve access for Anne Arundel County residents.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rogers02?tab=2026RS-legislation",
+        "https://ballotpedia.org/Mike_Rogers_(Maryland_delegate)"
+      ]
+    },
+    {
+      "full_name": "Mike Rogers",
+      "politician_id": "24980735-6a39-4e48-94b0-7318cac8dfde",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Rogers (MD HD-32) has supported abortion access legislation in Maryland including the Abortion Care Access Act voting consistently with the House Democratic caucus on reproductive rights.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rogers02?tab=2026RS-legislation",
+        "https://ballotpedia.org/Mike_Rogers_(Maryland_delegate)"
+      ]
+    },
+    {
+      "full_name": "Mike Rogers",
+      "politician_id": "24980735-6a39-4e48-94b0-7318cac8dfde",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_title": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Rogers has opposed school voucher programs and supported public school funding as essential to quality education in Anne Arundel County communities.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rogers02?tab=2026RS-legislation",
+        "https://ballotpedia.org/Mike_Rogers_(Maryland_delegate)"
+      ]
+    },
+    {
+      "full_name": "Mike Rogers",
+      "politician_id": "24980735-6a39-4e48-94b0-7318cac8dfde",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_title": "Taxation and Public Spending",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Rogers has supported revenue measures to fund the Blueprint for Maryland's Future while being attentive to tax burdens on middle-class families in his Anne Arundel district.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rogers02?tab=2026RS-legislation",
+        "https://ballotpedia.org/Mike_Rogers_(Maryland_delegate)"
+      ]
+    },
+    {
+      "full_name": "Mike Rogers",
+      "politician_id": "24980735-6a39-4e48-94b0-7318cac8dfde",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_title": "Voting Rights and Electoral Integrity",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Rogers has supported voting access legislation including automatic registration and early voting expansion consistent with the House Democratic caucus position.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rogers02?tab=2026RS-legislation",
+        "https://ballotpedia.org/Mike_Rogers_(Maryland_delegate)"
+      ]
+    },
+    {
+      "full_name": "Nick Allen",
+      "politician_id": "a1f58b34-76ee-43ce-b152-4843c42f4f79",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_title": "Affordable Housing",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Allen co-sponsored HB 693 (Renters' Rights and Stabilization Act) and supported expanded affordable housing mandates while supporting mixed-income development.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/allen04",
+        "https://ballotpedia.org/Nick_Allen_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Nick Allen",
+      "politician_id": "a1f58b34-76ee-43ce-b152-4843c42f4f79",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_title": "Civil Rights and Social Justice",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Allen co-sponsored HB 1180 (CROWN Act) prohibiting discrimination based on hairstyle and other civil rights expansions — strong champion of civil rights.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/allen04",
+        "https://ballotpedia.org/Nick_Allen_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Nick Allen",
+      "politician_id": "a1f58b34-76ee-43ce-b152-4843c42f4f79",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_title": "Climate Change and Environmental Protection",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Allen co-sponsored HB 550 (Climate Solutions Now Act implementation bills) and supported Maryland's offshore wind expansion — strongly favors aggressive climate action.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/allen04",
+        "https://ballotpedia.org/Nick_Allen_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Nick Allen",
+      "politician_id": "a1f58b34-76ee-43ce-b152-4843c42f4f79",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic_title": "Healthcare Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Allen supported HB 1210 (Maryland Health Care for All) and co-sponsored legislation expanding Medicaid coverage — strongly supports government-led healthcare expansion.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/allen04",
+        "https://ballotpedia.org/Nick_Allen_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Nick Allen",
+      "politician_id": "a1f58b34-76ee-43ce-b152-4843c42f4f79",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Allen co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) expanding abortion access in Maryland and supported repeal of waiting periods and gestational limits — a strongly pro-choice position.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/allen04",
+        "https://ballotpedia.org/Nick_Allen_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Nick Allen",
+      "politician_id": "a1f58b34-76ee-43ce-b152-4843c42f4f79",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_title": "Same-Sex Marriage",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Allen supports same-sex marriage and LGBTQ+ protections; co-sponsored HB 283 (Protecting Youth in Health Care Act) protecting trans youth healthcare access.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/allen04",
+        "https://ballotpedia.org/Nick_Allen_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Nick Allen",
+      "politician_id": "a1f58b34-76ee-43ce-b152-4843c42f4f79",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_title": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Allen supported the Blueprint for Maryland's Future which prioritizes public school investment and opposed diversion of public funds to private schools.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/allen04",
+        "https://ballotpedia.org/Nick_Allen_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Nick Allen",
+      "politician_id": "a1f58b34-76ee-43ce-b152-4843c42f4f79",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_title": "State Redistricting and Gerrymandering",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Allen supported Maryland's independent redistricting reform efforts and opposed partisan gerrymandering — supports nonpartisan commission approach.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/allen04",
+        "https://ballotpedia.org/Nick_Allen_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Nick Allen",
+      "politician_id": "a1f58b34-76ee-43ce-b152-4843c42f4f79",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_title": "Taxation and Public Spending",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Allen supported HB 499 (Blueprint for Maryland's Future Financing) and income-based tax reforms increasing taxes on high earners to fund education.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/allen04",
+        "https://ballotpedia.org/Nick_Allen_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Nick Allen",
+      "politician_id": "a1f58b34-76ee-43ce-b152-4843c42f4f79",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_title": "Voting Rights and Electoral Integrity",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Allen co-sponsored HB 1 (Next Steps for Maryland Voting Act) expanding automatic voter registration and early voting — strongly supports voting access.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/allen04",
+        "https://ballotpedia.org/Nick_Allen_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Stephen S. Hershey, Jr.",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_title": "Climate Change and Environmental Protection",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Hershey opposed the Climate Solutions Now Act (2022) and has been skeptical of aggressive climate mandates, preferring to balance environmental concerns with economic realities of the Eastern Shore.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hershey01",
+        "https://ballotpedia.org/Stephen_Hershey"
+      ]
+    },
+    {
+      "full_name": "Stephen S. Hershey, Jr.",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "topic_title": "Criminal Justice Approach",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Hershey emphasizes accountability and deterrence in criminal justice, opposing sentencing reduction measures and supporting law enforcement authority.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hershey01",
+        "https://ballotpedia.org/Stephen_Hershey"
+      ]
+    },
+    {
+      "full_name": "Stephen S. Hershey, Jr.",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_title": "Economic Development Incentives",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Hershey has championed tax incentives and deregulation for the Eastern Shore economy, favoring private sector-led growth over government programs.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hershey01",
+        "https://ballotpedia.org/Stephen_Hershey"
+      ]
+    },
+    {
+      "full_name": "Stephen S. Hershey, Jr.",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic_title": "Fossil Fuel Policy",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Hershey has defended fossil fuel use and opposed aggressive phase-out requirements, arguing for energy affordability and reliability on the Eastern Shore.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hershey01",
+        "https://ballotpedia.org/Stephen_Hershey"
+      ]
+    },
+    {
+      "full_name": "Stephen S. Hershey, Jr.",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic_title": "Healthcare Access",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Hershey prefers market competition in healthcare and has opposed government mandates and Medicaid expansion measures as Senate Minority Whip.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hershey01",
+        "https://ballotpedia.org/Stephen_Hershey"
+      ]
+    },
+    {
+      "full_name": "Stephen S. Hershey, Jr.",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Hershey has opposed sanctuary policies and supported stricter immigration enforcement measures, consistent with Republican positions in the Maryland Senate.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hershey01",
+        "https://ballotpedia.org/Stephen_Hershey"
+      ]
+    },
+    {
+      "full_name": "Stephen S. Hershey, Jr.",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic_title": "Public Safety Approach",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Hershey emphasizes law enforcement as the primary public safety tool and has opposed criminal justice reforms he views as weakening law enforcement.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hershey01",
+        "https://ballotpedia.org/Stephen_Hershey"
+      ]
+    },
+    {
+      "full_name": "Stephen S. Hershey, Jr.",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Hershey, as a conservative Republican Senate Minority Whip, has opposed abortion access legislation and voted against the Maryland Abortion Care Access Act (2023).",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hershey01",
+        "https://ballotpedia.org/Stephen_Hershey"
+      ]
+    },
+    {
+      "full_name": "Stephen S. Hershey, Jr.",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_title": "School Vouchers & Public Education Funding",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Hershey has supported school choice options including private school alternatives, consistent with Republican caucus positions in the Maryland Senate.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hershey01",
+        "https://ballotpedia.org/Stephen_Hershey"
+      ]
+    },
+    {
+      "full_name": "Stephen S. Hershey, Jr.",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_title": "State Redistricting and Gerrymandering",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Hershey has opposed independent redistricting commissions, preferring legislature-controlled redistricting as the Republican Minority Whip.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hershey01",
+        "https://ballotpedia.org/Stephen_Hershey"
+      ]
+    },
+    {
+      "full_name": "Stephen S. Hershey, Jr.",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_title": "Taxation and Public Spending",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Hershey has been a leading voice for lower taxes and reduced government spending as Senate Minority Whip, consistently opposing Democratic tax-increase measures.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hershey01",
+        "https://ballotpedia.org/Stephen_Hershey"
+      ]
+    },
+    {
+      "full_name": "Stephen S. Hershey, Jr.",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_title": "Voting Rights and Electoral Integrity",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Hershey has supported voter ID requirements and been skeptical of expansive voting access measures, consistent with Republican caucus positions.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hershey01",
+        "https://ballotpedia.org/Stephen_Hershey"
+      ]
+    },
+    {
+      "full_name": "Todd B. Morgan",
+      "politician_id": "7d79931f-101c-415b-a6a0-b7a919f70905",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_title": "Climate Change and Environmental Protection",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Todd B. Morgan has been skeptical of aggressive climate mandates and opposed significant provisions of Maryland's climate legislation as excessively costly to residents and businesses.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/morgan04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Todd_Morgan_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Todd B. Morgan",
+      "politician_id": "7d79931f-101c-415b-a6a0-b7a919f70905",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_title": "Economic Development Incentives",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Todd B. Morgan has favored market-oriented economic development using tax incentives and deregulation rather than government-led investment programs for Calvert County businesses.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/morgan04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Todd_Morgan_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Todd B. Morgan",
+      "politician_id": "7d79931f-101c-415b-a6a0-b7a919f70905",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic_title": "Fossil Fuel Policy",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Todd B. Morgan has opposed Maryland's Climate Solutions Now Act citing harm to energy costs and has supported continued fossil fuel production as consistent with Calvert County's energy industry interests.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/morgan04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Todd_Morgan_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Todd B. Morgan",
+      "politician_id": "7d79931f-101c-415b-a6a0-b7a919f70905",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "topic_title": "Immigration and Treatment of Immigrants",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Todd B. Morgan has supported stricter immigration enforcement policies and opposed sanctuary jurisdiction policies in Maryland consistent with Southern Maryland Republican district priorities.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/morgan04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Todd_Morgan_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Todd B. Morgan",
+      "politician_id": "7d79931f-101c-415b-a6a0-b7a919f70905",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_title": "Reproductive Rights and Abortion Access",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Todd B. Morgan is a Republican from Calvert County who has voted against abortion access legislation in Maryland including opposing the Abortion Care Access Act and supporting restrictions on access.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/morgan04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Todd_Morgan_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Todd B. Morgan",
+      "politician_id": "7d79931f-101c-415b-a6a0-b7a919f70905",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_title": "School Vouchers & Public Education Funding",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Todd B. Morgan has supported school choice and private school scholarship programs as an alternative education option for Calvert County families.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/morgan04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Todd_Morgan_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Todd B. Morgan",
+      "politician_id": "7d79931f-101c-415b-a6a0-b7a919f70905",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_title": "Taxation and Public Spending",
+      "value": "5.0",
+      "write_in_text": null,
+      "reasoning": "Todd B. Morgan has supported Republican tax reduction proposals and opposed new taxes on businesses and high earners consistent with the House Republican caucus fiscal platform.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/morgan04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Todd_Morgan_(Maryland)"
+      ]
+    },
+    {
+      "full_name": "Todd B. Morgan",
+      "politician_id": "7d79931f-101c-415b-a6a0-b7a919f70905",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_title": "Voting Rights and Electoral Integrity",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Todd B. Morgan has supported voter identification requirements and opposed automatic voter registration expansions as part of the House Republican caucus position on election integrity.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/morgan04?tab=2026RS-legislation",
+        "https://ballotpedia.org/Todd_Morgan_(Maryland)"
+      ]
+    }
+  ]
+}
