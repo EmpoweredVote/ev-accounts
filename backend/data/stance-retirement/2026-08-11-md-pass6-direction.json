@@ -1,0 +1,651 @@
+{
+ "pass": "MD pass 5 step 3 - claim direction vs vote",
+ "tally": {
+  "DIRECTION_UNCLEAR": 1,
+  "CONSISTENT": 15,
+  "CONTRADICTED": 1,
+  "VOID_WRONG_BILL": 15
+ },
+ "rows": [
+  {
+   "politician": "Andrea Fletcher Harrison",
+   "politician_id": "d61a670a-7626-4464-93dc-c1e21d7b26da",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "vote": "YEA",
+   "claim_direction": "UNCLEAR",
+   "basis": "Voted against school voucher legislation; backed public education funding and Blueprint for Maryland's Future.",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Blueprint for Maryland's Future\" appears in the claim"
+   },
+   "bill": "2021RS HB1372",
+   "bill_title": "Blueprint for Maryland's Future - Revisions",
+   "action": "House 3/22/2021 3/10/2021 Third Reading Passed (94-37) 29 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2021RS/votes/house/0685.pdf",
+   "reasoning": "Voted against school voucher legislation; backed public education funding and Blueprint for Maryland's Future.",
+   "verdict": "DIRECTION_UNCLEAR"
+  },
+  {
+   "politician": "Anne Healey",
+   "politician_id": "4436b432-a63f-4946-919a-f30c41f899e4",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Voted for",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Climate Solutions Now Act of 2022\" appears in the claim"
+   },
+   "bill": "2022RS SB0528",
+   "bill_title": "Climate Solutions Now Act of 2022",
+   "action": "House 3/29/2022 3/21/2022 Third Reading Passed with Amendments (95-42) 42 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2022RS/votes/house/0795.pdf",
+   "reasoning": "Voted for Climate Solutions Now Act (2022) and related climate implementation bills; consistent supporter of renewable energy mandates and emissions reduction targets.",
+   "verdict": "CONSISTENT"
+  },
+  {
+   "politician": "Anne Healey",
+   "politician_id": "4436b432-a63f-4946-919a-f30c41f899e4",
+   "topic": "Fossil Fuel Policy",
+   "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Voted for",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Climate Solutions Now Act of 2022\" appears in the claim"
+   },
+   "bill": "2022RS SB0528",
+   "bill_title": "Climate Solutions Now Act of 2022",
+   "action": "House 3/29/2022 3/21/2022 Third Reading Passed with Amendments (95-42) 42 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2022RS/votes/house/0795.pdf",
+   "reasoning": "Voted for Climate Solutions Now Act renewable energy requirements; supports transition away from fossil fuels through state legislation and budget priorities.",
+   "verdict": "CONSISTENT"
+  },
+  {
+   "politician": "Anne Healey",
+   "politician_id": "4436b432-a63f-4946-919a-f30c41f899e4",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "vote": "NAY",
+   "claim_direction": "SUPPORT",
+   "basis": "voted for Maryland",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Abortion Care Access Act\" appears in the claim"
+   },
+   "bill": "2022RS HB0937",
+   "bill_title": "Abortion Care Access Act",
+   "action": "House 3/11/2022 3/05/2022 Third Reading Passed (89-47) 26 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2022RS/votes/house/0291.pdf",
+   "reasoning": "Consistent supporter of abortion access legislation; voted for Maryland Abortion Care Access Act (2023) and supported related reproductive rights bills in multiple sessions.",
+   "verdict": "CONTRADICTED"
+  },
+  {
+   "politician": "Anne Healey",
+   "politician_id": "4436b432-a63f-4946-919a-f30c41f899e4",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "strong public education advocate who backed",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Blueprint for Maryland's Future\" appears in the claim"
+   },
+   "bill": "2021RS HB1372",
+   "bill_title": "Blueprint for Maryland's Future - Revisions",
+   "action": "House 3/22/2021 3/10/2021 Third Reading Passed (94-37) 29 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2021RS/votes/house/0685.pdf",
+   "reasoning": "Voted against school voucher legislation; strong public education advocate who backed Blueprint for Maryland's Future funding throughout its implementation.",
+   "verdict": "CONSISTENT"
+  },
+  {
+   "politician": "Ben Barnes",
+   "politician_id": "590b56b2-1473-4e86-ba96-0490e172f6ff",
+   "topic": "Affordable Housing",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Supported HB 693 (2024) expanding affordable housing programs; backed inclusionary zoning incentives and rental assistan",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2024 but the vote is from 2020"
+   },
+   "bill": "2020RS HB0693",
+   "bill_title": "Paternity Proceedings – Court Orders – Legal Name Change of Child",
+   "action": "House 3/10/2020 3/07/2020 Third Reading Passed (136-2) 44 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2020RS/votes/house/0430.pdf",
+   "reasoning": "Supported HB 693 (2024) expanding affordable housing programs; backed inclusionary zoning incentives and rental assistance programs as Appropriations Chair setting budget priorities.",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "Ben Barnes",
+   "politician_id": "590b56b2-1473-4e86-ba96-0490e172f6ff",
+   "topic": "Fossil Fuel Policy",
+   "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Voted for Maryland",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Climate Solutions Now Act of 2022\" appears in the claim"
+   },
+   "bill": "2022RS SB0528",
+   "bill_title": "Climate Solutions Now Act of 2022",
+   "action": "House 3/29/2022 3/21/2022 Third Reading Passed with Amendments (95-42) 42 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2022RS/votes/house/0795.pdf",
+   "reasoning": "Voted for Maryland Climate Solutions Now Act (SB 528 2022) requiring 60% renewable electricity by 2030 and phasing out fossil fuel use; supported clean energy transition legislation.",
+   "verdict": "CONSISTENT"
+  },
+  {
+   "politician": "Brian J. Feldman",
+   "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714",
+   "topic": "Campaign Finance Reform",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Feldman sponsored the Public Ethics - Conflicts of Interest and Blind Trust - Governor bill (SB0723 2025) and Maryland P",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2025/2025 but the vote is from 2020"
+   },
+   "bill": "2020RS SB0109",
+   "bill_title": "Property Tax Exemption – Disabled Active Duty Service Members, Disabled Veterans, and Surviving Spouses – Refund",
+   "action": "Senate 3/16/2020 3/12/2020 Third Reading Passed (46-0) 51 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2020RS/votes/senate/0799.pdf",
+   "reasoning": "Feldman sponsored the Public Ethics - Conflicts of Interest and Blind Trust - Governor bill (SB0723 2025) and Maryland Public Ethics Law compliance bill (SB0109 2025), showing interest in government transparency and ethics enforcement.",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "Brooke Lierman",
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Comptroller Lierman has been a strong supporter of abortion rights throughout her career in the Maryland House of Delega",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2015/2022 but the vote is from 2018"
+   },
+   "bill": "2018RS HB1171",
+   "bill_title": "Gaming - State Lottery and Gaming Control Commission - Regulation of Reconciliation of Proceeds",
+   "action": "House 3/15/2018 3/12/2018 Third Reading Passed (102-34) 46AClick to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2018RS/votes/house/0448.pdf",
+   "reasoning": "Comptroller Lierman has been a strong supporter of abortion rights throughout her career in the Maryland House of Delegates (2015-2022). She voted for HB 1171 expanding abortion access and codifying protections. She has stated that abortion is healthcare and a fundamental right.",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "Clarence K. Lam",
+   "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997",
+   "topic": "Criminal Justice Approach",
+   "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Lam supports reducing racially biased policing, reforming mandatory minimums, eliminating crack/powder cocaine sentencin",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2025 but the vote is from 2019"
+   },
+   "bill": "2019RS SB0741",
+   "bill_title": "Secretary of Planning – Adaptive Reuse of Historic Properties – Study",
+   "action": "Senate 3/14/2019 3/14/2019 Third Reading Passed (46-0) 46AClick to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2019RS/votes/senate/0519.pdf",
+   "reasoning": "Lam supports reducing racially biased policing, reforming mandatory minimums, eliminating crack/powder cocaine sentencing disparities, and reducing three-strikes penalties. He also sponsored forensic mental health treatment reform (SB0741 2025).",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "Clarence K. Lam",
+   "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "As a progressive Democrat Lam supports voting rights protections; he sponsored a 2025 bill (SB0171) on general assembly ",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2025 but the vote is from 2018"
+   },
+   "bill": "2018RS SB0171",
+   "bill_title": "Talbot County Board of Education - Start Date of Term for Members",
+   "action": "House 4/09/2018 4/05/2018 Third Reading Passed (139-0) 70 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2018RS/votes/house/1532.pdf",
+   "reasoning": "As a progressive Democrat Lam supports voting rights protections; he sponsored a 2025 bill (SB0171) on general assembly vacancy procedures related to political party representation, consistent with fair electoral access.",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "Guy Guzzone",
+   "politician_id": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7",
+   "topic": "Childcare Affordability & Access",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Guzzone sponsored the Community Eligibility Provision Expansion Program (SB0769 2025) expanding free school meals to mor",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2025/2025 but the vote is from 2018"
+   },
+   "bill": "2018RS SB0769",
+   "bill_title": "Criminal Law - Sextortion and Revenge Porn",
+   "action": "Senate 3/14/2018 3/14/2018 Third Reading Passed (46-0) 46 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2018RS/votes/senate/0526.pdf",
+   "reasoning": "Guzzone sponsored the Community Eligibility Provision Expansion Program (SB0769 2025) expanding free school meals to more low-income children, and sponsored Community Action Agencies funding (SB0666 2025) for anti-poverty services.",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "Jeff Waldstreicher",
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "He voted YES on the",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Abortion Care Access Act\" appears in the claim"
+   },
+   "bill": "2022RS SB0890",
+   "bill_title": "Abortion Care Access Act",
+   "action": "Senate 3/28/2022 3/15/2022 Third Reading Passed (30-14) 55 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2022RS/votes/senate/0738.pdf",
+   "reasoning": "Waldstreicher is a strong pro-choice advocate representing Montgomery County District 18. He voted YES on the Abortion Care Access Act (SB 798, 2023) and co-sponsored reproductive rights legislation.",
+   "verdict": "CONSISTENT"
+  },
+  {
+   "politician": "Kriselda Valderrama",
+   "politician_id": "768ac1cf-a599-4ddb-943c-c985fafb2607",
+   "topic": "Affordable Housing",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Sponsored Real Property - Short-Term Rentals regulation (HB0997, 2026); supports consumer protections and housing market",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2026 but the vote is from 2019"
+   },
+   "bill": "2019RS HB0997",
+   "bill_title": "Cecil County – Special Taxing Districts – Internet Service",
+   "action": "House 3/12/2019 3/09/2019 Third Reading Passed (136-0) 44 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2019RS/votes/house/0386.pdf",
+   "reasoning": "Sponsored Real Property - Short-Term Rentals regulation (HB0997, 2026); supports consumer protections and housing market oversight; backed fair housing measures.",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "Kriselda Valderrama",
+   "politician_id": "768ac1cf-a599-4ddb-943c-c985fafb2607",
+   "topic": "Criminal Justice Approach",
+   "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Sponsored HB0935 (2026) — Correctional Services - Comprehensive Rehabilitative Prerelease Services for Female Incarcerat",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2026 but the vote is from 2020"
+   },
+   "bill": "2020RS HB0935",
+   "bill_title": "Health Facilities - Freestanding Ambulatory Care Facilities - Administration of Anesthesia",
+   "action": "House 3/11/2020 3/08/2020 Third Reading Passed (138-0) 45 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2020RS/votes/house/0494.pdf",
+   "reasoning": "Sponsored HB0935 (2026) — Correctional Services - Comprehensive Rehabilitative Prerelease Services for Female Incarcerated Individuals; supports rehabilitation-focused criminal justice reform.",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "Marvin E. Holmes, Jr.",
+   "politician_id": "b8e331fa-d58e-479f-b076-8fda0b0604c5",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Voted for",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Climate Solutions Now Act of 2022\" appears in the claim"
+   },
+   "bill": "2022RS SB0528",
+   "bill_title": "Climate Solutions Now Act of 2022",
+   "action": "House 3/29/2022 3/21/2022 Third Reading Passed with Amendments (95-42) 42 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2022RS/votes/house/0795.pdf",
+   "reasoning": "Voted for Climate Solutions Now Act (2022) and related clean energy legislation; supported state-level climate action and renewable energy standards.",
+   "verdict": "CONSISTENT"
+  },
+  {
+   "politician": "Marvin E. Holmes, Jr.",
+   "politician_id": "b8e331fa-d58e-479f-b076-8fda0b0604c5",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "voted for Maryland",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Abortion Care Access Act\" appears in the claim"
+   },
+   "bill": "2022RS HB0937",
+   "bill_title": "Abortion Care Access Act",
+   "action": "House 3/11/2022 3/05/2022 Third Reading Passed (89-47) 26 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2022RS/votes/house/0291.pdf",
+   "reasoning": "Veteran Prince George's County delegate; voted for Maryland Abortion Care Access Act (2023) and consistently supported reproductive rights legislation throughout legislative career.",
+   "verdict": "CONSISTENT"
+  },
+  {
+   "politician": "Marvin E. Holmes, Jr.",
+   "politician_id": "b8e331fa-d58e-479f-b076-8fda0b0604c5",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "long-time public education advocate who backed",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Blueprint for Maryland's Future\" appears in the claim"
+   },
+   "bill": "2021RS HB1372",
+   "bill_title": "Blueprint for Maryland's Future - Revisions",
+   "action": "House 3/22/2021 3/10/2021 Third Reading Passed (94-37) 29 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2021RS/votes/house/0685.pdf",
+   "reasoning": "Voted against school voucher legislation; long-time public education advocate who backed Blueprint for Maryland's Future funding measures.",
+   "verdict": "CONSISTENT"
+  },
+  {
+   "politician": "Mary A. Lehman",
+   "politician_id": "251a2047-372b-480e-aa09-231f9a5edeca",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "co-sponsored HB 528 (2022)",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Climate Solutions Now Act of 2022\" appears in the claim"
+   },
+   "bill": "2022RS SB0528",
+   "bill_title": "Climate Solutions Now Act of 2022",
+   "action": "House 3/29/2022 3/21/2022 Third Reading Passed with Amendments (95-42) 42 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2022RS/votes/house/0795.pdf",
+   "reasoning": "Sponsored and supported climate legislation including clean energy bills; co-sponsored HB 528 (2022) Climate Solutions Now Act establishing Maryland's GHG emission reduction targets.",
+   "verdict": "CONSISTENT"
+  },
+  {
+   "politician": "Mary A. Lehman",
+   "politician_id": "251a2047-372b-480e-aa09-231f9a5edeca",
+   "topic": "Fossil Fuel Policy",
+   "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Voted for",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Climate Solutions Now Act of 2022\" appears in the claim"
+   },
+   "bill": "2022RS SB0528",
+   "bill_title": "Climate Solutions Now Act of 2022",
+   "action": "House 3/29/2022 3/21/2022 Third Reading Passed with Amendments (95-42) 42 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2022RS/votes/house/0795.pdf",
+   "reasoning": "Voted for Climate Solutions Now Act (2022) establishing aggressive renewable energy targets and beginning phase-out of fossil fuel dependence in Maryland.",
+   "verdict": "CONSISTENT"
+  },
+  {
+   "politician": "Nicole A. Williams",
+   "politician_id": "5c24446e-c9d6-4dda-9703-e3c049798315",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Voted for",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Climate Solutions Now Act of 2022\" appears in the claim"
+   },
+   "bill": "2022RS SB0528",
+   "bill_title": "Climate Solutions Now Act of 2022",
+   "action": "House 3/29/2022 3/21/2022 Third Reading Passed with Amendments (95-42) 42 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2022RS/votes/house/0795.pdf",
+   "reasoning": "Voted for Climate Solutions Now Act (2022) and clean energy legislation; backed renewable energy mandates and emissions reduction targets.",
+   "verdict": "CONSISTENT"
+  },
+  {
+   "politician": "Nicole A. Williams",
+   "politician_id": "5c24446e-c9d6-4dda-9703-e3c049798315",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "strong public school funding advocate who backed",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Blueprint for Maryland's Future\" appears in the claim"
+   },
+   "bill": "2021RS HB1372",
+   "bill_title": "Blueprint for Maryland's Future - Revisions",
+   "action": "House 3/22/2021 3/10/2021 Third Reading Passed (94-37) 29 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2021RS/votes/house/0685.pdf",
+   "reasoning": "Voted against school voucher bills; strong public school funding advocate who backed Blueprint for Maryland's Future implementation.",
+   "verdict": "CONSISTENT"
+  },
+  {
+   "politician": "Shelly Hettleman",
+   "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9",
+   "topic": "Civil Rights and Social Justice",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Hettleman passed a 2021 law allowing transgender name changes without newspaper advertising and sponsored the 2025 antih",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2021/2025/2024 but the vote is from 2020"
+   },
+   "bill": "2020RS SB0847",
+   "bill_title": "Child Support – Guidelines",
+   "action": "Senate 3/15/2020 3/10/2020 Third Reading Passed (45-0) 49 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2020RS/votes/senate/0725.pdf",
+   "reasoning": "Hettleman passed a 2021 law allowing transgender name changes without newspaper advertising and sponsored the 2025 antihate and antidiscrimination bill (SB0847) for higher education. She co-founded the Maryland Jewish Legislative Caucus in 2024.",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "Shelly Hettleman",
+   "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Hettleman chairs the public safety transportation and environment subcommittee as of 2026 and sponsored the EV infrastru",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2026/2025 but the vote is from 2020"
+   },
+   "bill": "2020RS SB0395",
+   "bill_title": "State Board of Physicians and Allied Health Advisory Committees - Sunset Extension and Program Evaluation",
+   "action": "Senate 3/14/2020 3/09/2020 Third Reading Passed (45-0) 48 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2020RS/votes/senate/0685.pdf",
+   "reasoning": "Hettleman chairs the public safety transportation and environment subcommittee as of 2026 and sponsored the EV infrastructure regulation bill (SB0913) and highway impact assessment bill (SB0395) in 2025, consistent with a progressive-leaning climate policy orientation.",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "Shelly Hettleman",
+   "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9",
+   "topic": "Environmental Protection vs. Development",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Hettleman sponsored a 2025 bill (SB0395) requiring impact assessments for major highway capacity expansion projects, sig",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2025 but the vote is from 2020"
+   },
+   "bill": "2020RS SB0395",
+   "bill_title": "State Board of Physicians and Allied Health Advisory Committees - Sunset Extension and Program Evaluation",
+   "action": "Senate 3/14/2020 3/09/2020 Third Reading Passed (45-0) 48 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2020RS/votes/senate/0685.pdf",
+   "reasoning": "Hettleman sponsored a 2025 bill (SB0395) requiring impact assessments for major highway capacity expansion projects, signaling support for environmental review of transportation infrastructure, and also the Public EV Supply Equipment Regulation bill (SB0913).",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "Shelly Hettleman",
+   "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9",
+   "topic": "Misinformation and the Role of Algorithms in Democracy",
+   "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+   "vote": "YEA",
+   "claim_direction": "UNCLEAR",
+   "basis": "Hettleman sponsored the Courts - Strategic Lawsuits Against Public Participation (anti-SLAPP) bill (SB0167 2025), which ",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2025 but the vote is from 2020"
+   },
+   "bill": "2020RS SB0167",
+   "bill_title": "Insurance - Credit for Reinsurance Model Law - Revisions",
+   "action": "Senate 2/20/2020 2/20/2020 Third Reading Passed (46-0) 32 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2020RS/votes/senate/0315.pdf",
+   "reasoning": "Hettleman sponsored the Courts - Strategic Lawsuits Against Public Participation (anti-SLAPP) bill (SB0167 2025), which protects free speech and public participation against abusive litigation, consistent with protecting open public discourse.",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "Veronica Turner",
+   "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16",
+   "topic": "Deportation Priorities",
+   "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+   "vote": "YEA",
+   "claim_direction": "UNCLEAR",
+   "basis": "Sponsored HB0478 (2026) — Public Safety - Immigration Enforcement Agreements - Prohibition; opposes local law enforcemen",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2026 but the vote is from 2019"
+   },
+   "bill": "2019RS HB0478",
+   "bill_title": "Procurement - Qualification Based Selection - Land Surveying Services",
+   "action": "House 3/07/2019 3/07/2019 Third Reading Passed (140-0) 42 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2019RS/votes/house/0292.pdf",
+   "reasoning": "Sponsored HB0478 (2026) — Public Safety - Immigration Enforcement Agreements - Prohibition; opposes local law enforcement cooperation with ICE-style deportation enforcement.",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "Veronica Turner",
+   "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16",
+   "topic": "Healthcare Access",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Sponsored HB0720 (2026) — Maryland Medical Assistance Program Continuity of Care; sponsored HB0738 — Palliative Care Req",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2026 but the vote is from 2019"
+   },
+   "bill": "2019RS HB0720",
+   "bill_title": "Natural Resources - Fishery Management Plans - Oysters",
+   "action": "House 3/18/2019 3/14/2019 Third Reading Passed (96-39) 49 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2019RS/votes/house/0769.pdf",
+   "reasoning": "Sponsored HB0720 (2026) — Maryland Medical Assistance Program Continuity of Care; sponsored HB0738 — Palliative Care Required Access and Coverage; supports Medicaid and healthcare access expansion.",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "Veronica Turner",
+   "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16",
+   "topic": "Immigration and Treatment of Immigrants",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "vote": "YEA",
+   "claim_direction": "UNCLEAR",
+   "basis": "Sponsored HB0478 (2026) — prohibiting immigration enforcement agreements (sanctuary-type policy); clearly opposes state/",
+   "note": null,
+   "bill_identity": {
+    "ok": false,
+    "why": "claim says 2026 but the vote is from 2019"
+   },
+   "bill": "2019RS HB0478",
+   "bill_title": "Procurement - Qualification Based Selection - Land Surveying Services",
+   "action": "House 3/07/2019 3/07/2019 Third Reading Passed (140-0) 42 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2019RS/votes/house/0292.pdf",
+   "reasoning": "Sponsored HB0478 (2026) — prohibiting immigration enforcement agreements (sanctuary-type policy); clearly opposes state/local cooperation with federal immigration enforcement.",
+   "verdict": "VOID_WRONG_BILL"
+  },
+  {
+   "politician": "William C. Smith, Jr.",
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic": "Childcare Affordability & Access",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "Smith backed childcare investment as part of the",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Blueprint for Maryland's Future\" appears in the claim"
+   },
+   "bill": "2021RS HB1372",
+   "bill_title": "Blueprint for Maryland's Future - Revisions",
+   "action": "Senate 3/29/2021 3/07/2021 Third Readings Passed with Amendments (37-10) 34 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2021RS/votes/senate/0749.pdf",
+   "reasoning": "Smith backed childcare investment as part of the Blueprint for Maryland's Future. He supports universal pre-K and childcare subsidy programs.",
+   "verdict": "CONSISTENT"
+  },
+  {
+   "politician": "William C. Smith, Jr.",
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "He is a public education supporter who backed the",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Blueprint for Maryland's Future\" appears in the claim"
+   },
+   "bill": "2021RS HB1372",
+   "bill_title": "Blueprint for Maryland's Future - Revisions",
+   "action": "Senate 3/29/2021 3/07/2021 Third Readings Passed with Amendments (37-10) 34 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2021RS/votes/senate/0749.pdf",
+   "reasoning": "Smith opposes private school vouchers. He is a public education supporter who backed the Blueprint for Maryland's Future.",
+   "verdict": "CONSISTENT"
+  },
+  {
+   "politician": "William C. Smith, Jr.",
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "vote": "YEA",
+   "claim_direction": "SUPPORT",
+   "basis": "He backed the",
+   "note": null,
+   "bill_identity": {
+    "ok": true,
+    "why": "title act \"Blueprint for Maryland's Future\" appears in the claim"
+   },
+   "bill": "2021RS HB1372",
+   "bill_title": "Blueprint for Maryland's Future - Revisions",
+   "action": "Senate 3/29/2021 3/07/2021 Third Readings Passed with Amendments (37-10) 34 Click to view Recorded Media",
+   "vote_pdf": "https://mgaleg.maryland.gov/2021RS/votes/senate/0749.pdf",
+   "reasoning": "Smith supports progressive taxation. He backed the Blueprint for Maryland's Future funding and higher corporate tax rates to fund public investment.",
+   "verdict": "CONSISTENT"
+  }
+ ]
+}
