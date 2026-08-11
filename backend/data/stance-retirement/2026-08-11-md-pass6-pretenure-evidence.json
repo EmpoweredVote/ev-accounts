@@ -1,0 +1,866 @@
+{
+ "pass": "MD pass 6 - in-tenure evidence for pre-tenure rows",
+ "tally": {
+  "RESOURCE_IN_TENURE": 21,
+  "NO_IN_TENURE_EVIDENCE": 8
+ },
+ "rows": [
+  {
+   "politician": "Andrew C. Pruski",
+   "politician_id": "ddfd43d3-023d-417e-9b68-af5a693e601e",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "service_start": 2023,
+   "cited_slug": "pruski01",
+   "reasoning": "Pruski has opposed school voucher programs and supported full public school funding for Anne Arundel County schools through the Blueprint for Maryland's Future.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 35,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2023RS",
+     "number": "HB0185",
+     "title": "Nonpublic Schools and Child Care Providers - Corporal Punishment - Prohibition",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0185?ys=2023RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Chao Wu",
+   "politician_id": "7ced90a8-39dc-447e-ba33-e3af4cd47473",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "service_start": 2023,
+   "cited_slug": "wu01",
+   "reasoning": "Wu supported the Blueprint for Maryland's Future — strong advocate for public school funding over private school voucher programs.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 35,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2025RS",
+     "number": "HB1204",
+     "title": "Public and Nonpublic Schools - Student Elopement - Notice and Reporting Requirements (Ace's Law)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1204?ys=2025RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Cheryl E. Pasteur",
+   "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "service_start": 2023,
+   "cited_slug": "pasteur01",
+   "reasoning": "Pasteur supported the Maryland Police Accountability Act and community investment programs — favors social services and community-based public safety approaches.",
+   "pre_tenure_bills": [
+    "2021RS SB0071",
+    "2021RS SB0074",
+    "2021RS SB0166",
+    "2021RS SB0178",
+    "2021RS SB0419",
+    "2021RS SB0588"
+   ],
+   "candidates_checked": 50,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB0003",
+     "title": "Higher Education - Student Financial Assistance - Dependents of State or Local Public Safety Employees (Maryland Fallen Heroes Tuition Benefits Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0003?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0155",
+     "title": "Public Safety - Law Enforcement Officers - Prohibition on Face Coverings",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0155?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0444",
+     "title": "Public Safety - Immigration Enforcement Agreements - Prohibition",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0444?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Cheryl E. Pasteur",
+   "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "service_start": 2023,
+   "cited_slug": "pasteur01",
+   "reasoning": "Pasteur supported Blueprint for Maryland's Future — strongly advocates for public school investment over private school voucher diversion.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 35,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB1182",
+     "title": "Public and Nonpublic Schools - Student Elopement - Locative Devices",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1182?ys=2026RS"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0185",
+     "title": "Nonpublic Schools and Child Care Providers - Corporal Punishment - Prohibition",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0185?ys=2023RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Cheryl E. Pasteur",
+   "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "service_start": 2023,
+   "cited_slug": "pasteur01",
+   "reasoning": "Pasteur supported progressive tax reform funding Blueprint for Maryland's Future through higher taxes on high earners.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 62,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB0139",
+     "title": "Sales and Use Tax - Tax-Free Day - Veterans' Day",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0139?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0478",
+     "title": "Income Tax - Subtraction Modification for Classroom Supplies Purchased by Teachers - Alteration",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0478?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0745",
+     "title": "Income Tax - Senior Tax Credit - Refundability",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0745?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Darrell Odom",
+   "politician_id": "0e238dbf-5b4e-4e95-8a94-e02d97a136f5",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "service_start": 2026,
+   "cited_slug": "odom01",
+   "reasoning": "Co-sponsored Voting Rights Act of 2026 for counties and municipal corporations; supports expanding voting protections and anti-discrimination measures in elections.",
+   "pre_tenure_bills": [
+    "2017RS HB1160",
+    "2022RS SB0413",
+    "2023RS SB0878",
+    "2023RS HB1104",
+    "2024RS SB0660",
+    "2024RS HB0800"
+   ],
+   "candidates_checked": 51,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB0350",
+     "title": "Voting Rights Act of 2026 - Counties and Municipal Corporations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0350?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Dawn Gile",
+   "politician_id": "ff266ecf-9ea5-4282-b729-9830cc8abfa3",
+   "topic": "Childcare Affordability & Access",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "service_start": 2023,
+   "cited_slug": "gile01",
+   "reasoning": "Gile has backed expanded childcare access and subsidy programs in Maryland, supporting the childcare provisions within the Blueprint for Maryland Future.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 69,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2025RS",
+     "number": "SB0400",
+     "title": "Residential Child Care Programs - Transportation Companies - Regulation (Preventing Abduction in Youth Transport Act of 2025)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0400?ys=2025RS"
+    },
+    {
+     "session": "2023RS",
+     "number": "SB0280",
+     "title": "Child Care Providers - Registration and Licensing - Exemptions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0280?ys=2023RS"
+    },
+    {
+     "session": "2023RS",
+     "number": "SB0350",
+     "title": "Early Childhood Development - Child Care Scholarship Program - Alterations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0350?ys=2023RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Dawn Gile",
+   "politician_id": "ff266ecf-9ea5-4282-b729-9830cc8abfa3",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "service_start": 2023,
+   "cited_slug": "gile01",
+   "reasoning": "Gile has supported abortion access legislation in the Maryland Senate, voting for the Abortion Care Access Act (2023) and related bills protecting reproductive rights in Maryland.",
+   "pre_tenure_bills": [
+    "2022RS SB0890",
+    "2022RS HB0937"
+   ],
+   "candidates_checked": 22,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "SB0563",
+     "title": "Health Facilities - Confidentiality of Medical Records - Crisis Pregnancy Clinics",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0563?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "SB0794",
+     "title": "Health Insurance - Special Enrollment Period for Pregnancy - Coverage Effective Date",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0794?ys=2026RS"
+    },
+    {
+     "session": "2025RS",
+     "number": "SB0447",
+     "title": "Hospitals - Emergency Pregnancy-Related Medical Conditions - Procedures",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0447?ys=2025RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Dawn Gile",
+   "politician_id": "ff266ecf-9ea5-4282-b729-9830cc8abfa3",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "service_start": 2023,
+   "cited_slug": "gile01",
+   "reasoning": "Gile opposes public funds for private school vouchers, supporting full funding of public schools through the Blueprint for Maryland Future legislation.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 35,
+   "in_tenure_sponsorships": [],
+   "disposition": "NO_IN_TENURE_EVIDENCE"
+  },
+  {
+   "politician": "Dylan Behler",
+   "politician_id": "3f45bad5-b856-4d8e-b3d9-8c03623e030a",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "service_start": 2025,
+   "cited_slug": "behler01",
+   "reasoning": "Behler has opposed school voucher legislation and supported fully funding public education through the Blueprint for Maryland's Future in Anne Arundel County schools.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 13,
+   "in_tenure_sponsorships": [],
+   "disposition": "NO_IN_TENURE_EVIDENCE"
+  },
+  {
+   "politician": "Gabriel M. Moreno",
+   "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "service_start": 2026,
+   "cited_slug": "moreno01",
+   "reasoning": "Moreno supported the Climate Solutions Now Act and renewable energy legislation — favors aggressive climate action and clean energy transition.",
+   "pre_tenure_bills": [
+    "2021RS SB0414",
+    "2021RS HB0583",
+    "2022RS SB0528",
+    "2025RS SB0779"
+   ],
+   "candidates_checked": 24,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB0572",
+     "title": "Attorney General Actions and Climate Crimes Accountability Fund (Climate Crimes Accountability Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0572?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0620",
+     "title": "Commemorative Months - Maryland Climate Education Month",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0620?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Gabriel M. Moreno",
+   "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+   "topic": "Immigration and Treatment of Immigrants",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "service_start": 2026,
+   "cited_slug": "moreno01",
+   "reasoning": "Moreno supported protections for DACA recipients and Maryland's Trust Act limiting local enforcement cooperation with ICE — strongly supports immigrant rights.",
+   "pre_tenure_bills": [
+    "2013RS SB0753",
+    "2013RS HB0437",
+    "2014RS SB0240",
+    "2014RS SB0554",
+    "2014RS HB0029",
+    "2014RS HB0083"
+   ],
+   "candidates_checked": 15,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB0444",
+     "title": "Public Safety - Immigration Enforcement Agreements - Prohibition",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0444?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0630",
+     "title": "Correctional Services - Immigration Detention Facilities - Original Design and Construction",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0630?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB1341",
+     "title": "Immigration Enforcement - Expanding Sensitive Locations, Notification, and Guidance (Maryland Values Act of 2026)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1341?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Gabriel M. Moreno",
+   "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "service_start": 2026,
+   "cited_slug": "moreno01",
+   "reasoning": "Moreno co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) and has consistently supported abortion access legislation in Maryland.",
+   "pre_tenure_bills": [
+    "2013RS HB1171",
+    "2014RS HB1171",
+    "2015RS HB1171",
+    "2016RS HB1171",
+    "2017RS HB1171",
+    "2018RS HB1171",
+    "2022RS SB0669",
+    "2022RS HB0626"
+   ],
+   "candidates_checked": 20,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB0645",
+     "title": "Criminal Law - Fraud - Assisted Reproductive Treatment",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0645?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Gabriel M. Moreno",
+   "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "service_start": 2026,
+   "cited_slug": "moreno01",
+   "reasoning": "Moreno supported Blueprint for Maryland's Future — favors public school investment over private school voucher programs.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 7,
+   "in_tenure_sponsorships": [],
+   "disposition": "NO_IN_TENURE_EVIDENCE"
+  },
+  {
+   "politician": "Gabriel M. Moreno",
+   "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "service_start": 2026,
+   "cited_slug": "moreno01",
+   "reasoning": "Moreno supported progressive tax reform to fund public services and Blueprint for Maryland's Future education investment.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 67,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB0484",
+     "title": "Corporate Income Tax - Addition Modification - Direct-to-Consumer Pharmaceutical Advertising",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0484?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0560",
+     "title": "Sales and Use Tax and Property Tax - Exemptions for Data Centers - Repeal",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0560?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0903",
+     "title": "Income Tax - Subtraction Modification - Donations to Food Banks and Other Charitable Entities",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0903?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Kevin M. Harris",
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic": "Childcare Affordability & Access",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "service_start": 2023,
+   "cited_slug": "harris03",
+   "reasoning": "Harris supported childcare investment in the Blueprint for Maryland's Future. He backs pre-K expansion and childcare subsidies for working families.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 70,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "SB0402",
+     "title": "Residential Child Care Programs - Education of Children and Training of Child and Youth Care Practitioners",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0402?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "SB0664",
+     "title": "Child Care Scholarship Program - Priority for Child Care Providers",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0664?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Kevin M. Harris",
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic": "Police Accountability",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "service_start": 2023,
+   "cited_slug": "harris03",
+   "reasoning": "Harris backed the Maryland Police Accountability Act of 2021 and police reform measures. He supports civilian oversight boards and officer accountability.",
+   "pre_tenure_bills": [
+    "2021RS SB0071",
+    "2021RS SB0074",
+    "2021RS SB0166",
+    "2021RS SB0178",
+    "2021RS SB0419",
+    "2021RS SB0588"
+   ],
+   "candidates_checked": 31,
+   "in_tenure_sponsorships": [],
+   "disposition": "NO_IN_TENURE_EVIDENCE"
+  },
+  {
+   "politician": "Kevin M. Harris",
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "service_start": 2023,
+   "cited_slug": "harris03",
+   "reasoning": "Harris supports a community-centered public safety approach including prevention, mental health resources, and accountability. He backed the Maryland Police Accountability Act.",
+   "pre_tenure_bills": [
+    "2021RS SB0071",
+    "2021RS SB0074",
+    "2021RS SB0166",
+    "2021RS SB0178",
+    "2021RS SB0419",
+    "2021RS SB0588"
+   ],
+   "candidates_checked": 70,
+   "in_tenure_sponsorships": [],
+   "disposition": "NO_IN_TENURE_EVIDENCE"
+  },
+  {
+   "politician": "Kevin M. Harris",
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "service_start": 2023,
+   "cited_slug": "harris03",
+   "reasoning": "Harris opposes school vouchers. He backed the Blueprint for Maryland's Future and supports strong public education investment.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 35,
+   "in_tenure_sponsorships": [],
+   "disposition": "NO_IN_TENURE_EVIDENCE"
+  },
+  {
+   "politician": "Kevin M. Harris",
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "service_start": 2023,
+   "cited_slug": "harris03",
+   "reasoning": "Harris supports progressive taxation to fund public services. He backed the Blueprint for Maryland's Future funding structure and progressive tax reforms.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 70,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "SB0925",
+     "title": "Sales and Use Tax – Distribution of Cannabis Sales Tax Revenue – Maryland Veterans Trust Fund",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0925?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Kim Ross",
+   "politician_id": "5d17e3ea-9d63-4a96-8848-9e293ac05fdb",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "service_start": 2025,
+   "cited_slug": "ross01",
+   "reasoning": "Ross co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) and has strongly supported abortion access legislation throughout her tenure.",
+   "pre_tenure_bills": [
+    "2013RS HB1171",
+    "2014RS HB1171",
+    "2015RS HB1171",
+    "2016RS HB1171",
+    "2017RS HB1171",
+    "2018RS HB1171",
+    "2022RS SB0669",
+    "2022RS HB0626"
+   ],
+   "candidates_checked": 33,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2025RS",
+     "number": "HB0930",
+     "title": "Public Health Abortion Grant Program - Establishment",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0930?ys=2025RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Kim Ross",
+   "politician_id": "5d17e3ea-9d63-4a96-8848-9e293ac05fdb",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "service_start": 2025,
+   "cited_slug": "ross01",
+   "reasoning": "Ross supported the Blueprint for Maryland's Future prioritizing public education investment over private school voucher programs.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 13,
+   "in_tenure_sponsorships": [],
+   "disposition": "NO_IN_TENURE_EVIDENCE"
+  },
+  {
+   "politician": "Kim Ross",
+   "politician_id": "5d17e3ea-9d63-4a96-8848-9e293ac05fdb",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "service_start": 2025,
+   "cited_slug": "ross01",
+   "reasoning": "Ross supported progressive tax measures funding Blueprint for Maryland's Future including higher taxes on high earners.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 56,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB0472",
+     "title": "Income Tax - Theatrical Production Tax Credit - Alterations and Sunset Extension",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0472?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0478",
+     "title": "Income Tax - Subtraction Modification for Classroom Supplies Purchased by Teachers - Alteration",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0478?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0653",
+     "title": "Income Tax - Subtraction Modification for Public Safety Retirement Income - Amount",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0653?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "N. Scott Phillips",
+   "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+   "topic": "Public Safety Approach",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "service_start": 2023,
+   "cited_slug": "phillips02",
+   "reasoning": "Phillips supported the Maryland Police Accountability Act and community investment in public safety — favors balanced approach with police reform and social services.",
+   "pre_tenure_bills": [
+    "2021RS SB0071",
+    "2021RS SB0074",
+    "2021RS SB0166",
+    "2021RS SB0178",
+    "2021RS SB0419",
+    "2021RS SB0588"
+   ],
+   "candidates_checked": 68,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB0113",
+     "title": "Criminal Procedure - Expungement of Records - Resisting Arrest and Making a False Statement to a Law Enforcement Officer",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0113?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0444",
+     "title": "Public Safety - Immigration Enforcement Agreements - Prohibition",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0444?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0904",
+     "title": "Law Enforcement - Protective Body Armor - Requirements and Reporting",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0904?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "N. Scott Phillips",
+   "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "service_start": 2023,
+   "cited_slug": "phillips02",
+   "reasoning": "Phillips supported the Blueprint for Maryland's Future — advocates for public school investment over private school voucher programs.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 35,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2023RS",
+     "number": "HB0266",
+     "title": "Public and Nonpublic Schools - Bronchodilator Availability and Use - Policies",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0266?ys=2023RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "N. Scott Phillips",
+   "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "service_start": 2023,
+   "cited_slug": "phillips02",
+   "reasoning": "Phillips supported progressive tax reforms including higher taxes on high earners to fund Blueprint for Maryland's Future.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 70,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB0478",
+     "title": "Income Tax - Subtraction Modification for Classroom Supplies Purchased by Teachers - Alteration",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0478?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Natalie Ziegler",
+   "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "service_start": 2023,
+   "cited_slug": "ziegler01",
+   "reasoning": "Ziegler supported the Blueprint for Maryland's Future — advocates for public school investment over private school voucher programs.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 35,
+   "in_tenure_sponsorships": [],
+   "disposition": "NO_IN_TENURE_EVIDENCE"
+  },
+  {
+   "politician": "Natalie Ziegler",
+   "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "service_start": 2023,
+   "cited_slug": "ziegler01",
+   "reasoning": "Ziegler supported progressive tax reform including higher taxes on high earners to fund Blueprint for Maryland's Future education funding.",
+   "pre_tenure_bills": [
+    "2019RS SB1030",
+    "2019RS HB1413",
+    "2020RS SB0644",
+    "2020RS SB1000",
+    "2020RS HB1300",
+    "2021RS SB0915"
+   ],
+   "candidates_checked": 48,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB0175",
+     "title": "Income Tax Credit - Venison Donation - Alterations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0175?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0472",
+     "title": "Income Tax - Theatrical Production Tax Credit - Alterations and Sunset Extension",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0472?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0484",
+     "title": "Corporate Income Tax - Addition Modification - Direct-to-Consumer Pharmaceutical Advertising",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0484?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  },
+  {
+   "politician": "Sean A. Stinnett",
+   "politician_id": "012af8f7-693a-4ddc-b0bc-953dae8d2bc2",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "service_start": 2025,
+   "cited_slug": "stinnett01",
+   "reasoning": "Stinnett sponsored Voting Rights Act of 2026 - Counties and Municipal Corporations legislation — one of the strongest possible voting rights stances demonstrating commitment to expanded ballot access at local levels.",
+   "pre_tenure_bills": [
+    "2017RS HB1160",
+    "2022RS SB0413",
+    "2023RS SB0878",
+    "2023RS HB1104",
+    "2024RS SB0660",
+    "2024RS HB0800"
+   ],
+   "candidates_checked": 70,
+   "in_tenure_sponsorships": [
+    {
+     "session": "2026RS",
+     "number": "HB0350",
+     "title": "Voting Rights Act of 2026 - Counties and Municipal Corporations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0350?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0641",
+     "title": "Election Law - Curbside Voting - Pilot Program",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0641?ys=2026RS"
+    }
+   ],
+   "disposition": "RESOURCE_IN_TENURE"
+  }
+ ]
+}

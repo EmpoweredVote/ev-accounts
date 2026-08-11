@@ -1,0 +1,446 @@
+{
+  "migration": "1697_dispose_md_pretenure_rows",
+  "retired_on": "2026-08-11",
+  "authorised_by": "operator instruction 2026-08-11 (\"Then Pre-tenure 29\")",
+  "rule": "All 29 rows rest on an instrument predating the member's service, so the claim as written is impossible. 9 rows had genuinely on-chair in-tenure sponsorships and were RE-SOURCED with corrected reasoning; the other 20 had none (12 of them only vocabulary collisions, e.g. a venison tax credit for a progressive-taxation chair) and were RETIRED.",
+  "restore_note": "Retirement DELETED the answer and the context row; restoring is an INSERT into inform.politician_answers and inform.politician_context from the values below.",
+  "resourced": [
+    {
+      "politician": "Cheryl E. Pasteur",
+      "topic": "Public Safety Approach",
+      "bills": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0155?ys=2026RS"
+      ],
+      "reasoning": "Sponsored HB0155 (2026) prohibiting face coverings for law enforcement officers; favors police accountability and transparency over enforcement-first approaches."
+    },
+    {
+      "politician": "Darrell Odom",
+      "topic": "Voting Rights and Electoral Integrity",
+      "bills": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0350?ys=2026RS"
+      ],
+      "reasoning": "Co-sponsored HB0350 (2026), the Voting Rights Act of 2026 for counties and municipal corporations; supports expanding voting protections and local ballot access."
+    },
+    {
+      "politician": "Dawn Gile",
+      "topic": "Childcare Affordability & Access",
+      "bills": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0350?ys=2023RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0280?ys=2023RS"
+      ],
+      "reasoning": "Sponsored SB0350 (2023) altering the Child Care Scholarship Program and SB0280 (2023) on child care provider registration and licensing; backs expanded childcare access and subsidy programs."
+    },
+    {
+      "politician": "Dawn Gile",
+      "topic": "Reproductive Rights and Abortion Access",
+      "bills": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0447?ys=2025RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0563?ys=2026RS"
+      ],
+      "reasoning": "Sponsored SB0447 (2025) on hospital procedures for emergency pregnancy-related medical conditions and SB0563 (2026) on confidentiality of medical records at crisis pregnancy clinics; supports reproductive healthcare access."
+    },
+    {
+      "politician": "Gabriel M. Moreno",
+      "topic": "Climate Change and Environmental Protection",
+      "bills": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0572?ys=2026RS"
+      ],
+      "reasoning": "Sponsored HB0572 (2026), the Climate Crimes Accountability Act, creating Attorney General authority and a climate accountability fund; favors aggressive climate action."
+    },
+    {
+      "politician": "Gabriel M. Moreno",
+      "topic": "Immigration and Treatment of Immigrants",
+      "bills": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0444?ys=2026RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1341?ys=2026RS"
+      ],
+      "reasoning": "Sponsored HB0444 (2026) prohibiting immigration enforcement agreements and HB1341 (2026) expanding sensitive locations and notification requirements for immigration enforcement; opposes state and local cooperation with federal immigration enforcement."
+    },
+    {
+      "politician": "Kevin M. Harris",
+      "topic": "Childcare Affordability & Access",
+      "bills": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0664?ys=2026RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0402?ys=2026RS"
+      ],
+      "reasoning": "Sponsored SB0664 (2026) prioritising child care providers in the Child Care Scholarship Program and SB0402 (2026) on residential child care programs; backs childcare subsidy expansion."
+    },
+    {
+      "politician": "Kim Ross",
+      "topic": "Reproductive Rights and Abortion Access",
+      "bills": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0930?ys=2025RS"
+      ],
+      "reasoning": "Sponsored HB0930 (2025) establishing the Public Health Abortion Grant Program; supports public funding for abortion access."
+    },
+    {
+      "politician": "Sean A. Stinnett",
+      "topic": "Voting Rights and Electoral Integrity",
+      "bills": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0350?ys=2026RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0641?ys=2026RS"
+      ],
+      "reasoning": "Sponsored HB0350 (2026), the Voting Rights Act of 2026 for counties and municipal corporations, and HB0641 (2026) establishing a curbside voting pilot program; supports expanding ballot access."
+    }
+  ],
+  "retired_count": 20,
+  "retired_rows": [
+    {
+      "politician_id": "ddfd43d3-023d-417e-9b68-af5a693e601e",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Andrew C. Pruski",
+      "topic": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Pruski has opposed school voucher programs and supported full public school funding for Anne Arundel County schools through the Blueprint for Maryland's Future.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pruski01",
+        "https://ballotpedia.org/Andrew_Pruski"
+      ]
+    },
+    {
+      "politician_id": "7ced90a8-39dc-447e-ba33-e3af4cd47473",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Chao Wu",
+      "topic": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Wu supported the Blueprint for Maryland's Future — strong advocate for public school funding over private school voucher programs.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wu01",
+        "https://ballotpedia.org/Chao_Wu"
+      ]
+    },
+    {
+      "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Cheryl E. Pasteur",
+      "topic": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Pasteur supported Blueprint for Maryland's Future — strongly advocates for public school investment over private school voucher diversion.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pasteur01",
+        "https://ballotpedia.org/Cheryl_Pasteur"
+      ]
+    },
+    {
+      "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Cheryl E. Pasteur",
+      "topic": "Taxation and Public Spending",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Pasteur supported progressive tax reform funding Blueprint for Maryland's Future through higher taxes on high earners.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pasteur01",
+        "https://ballotpedia.org/Cheryl_Pasteur"
+      ]
+    },
+    {
+      "politician_id": "ff266ecf-9ea5-4282-b729-9830cc8abfa3",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Dawn Gile",
+      "topic": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Gile opposes public funds for private school vouchers, supporting full funding of public schools through the Blueprint for Maryland Future legislation.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/gile01",
+        "https://ballotpedia.org/Dawn_Gile"
+      ]
+    },
+    {
+      "politician_id": "3f45bad5-b856-4d8e-b3d9-8c03623e030a",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Dylan Behler",
+      "topic": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Behler has opposed school voucher legislation and supported fully funding public education through the Blueprint for Maryland's Future in Anne Arundel County schools.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/behler01",
+        "https://ballotpedia.org/Dylan_Behler"
+      ]
+    },
+    {
+      "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "full_name": "Gabriel M. Moreno",
+      "topic": "Reproductive Rights and Abortion Access",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Moreno co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) and has consistently supported abortion access legislation in Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moreno01",
+        "https://ballotpedia.org/Gabriel_Moreno_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Gabriel M. Moreno",
+      "topic": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Moreno supported Blueprint for Maryland's Future — favors public school investment over private school voucher programs.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moreno01",
+        "https://ballotpedia.org/Gabriel_Moreno_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Gabriel M. Moreno",
+      "topic": "Taxation and Public Spending",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Moreno supported progressive tax reform to fund public services and Blueprint for Maryland's Future education investment.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moreno01",
+        "https://ballotpedia.org/Gabriel_Moreno_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+      "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+      "full_name": "Kevin M. Harris",
+      "topic": "Police Accountability",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Harris backed the Maryland Police Accountability Act of 2021 and police reform measures. He supports civilian oversight boards and officer accountability.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+        "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "Kevin M. Harris",
+      "topic": "Public Safety Approach",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Harris supports a community-centered public safety approach including prevention, mental health resources, and accountability. He backed the Maryland Police Accountability Act.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+        "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Kevin M. Harris",
+      "topic": "School Vouchers & Public Education Funding",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Harris opposes school vouchers. He backed the Blueprint for Maryland's Future and supports strong public education investment.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+        "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Kevin M. Harris",
+      "topic": "Taxation and Public Spending",
+      "value": "4.0",
+      "write_in_text": null,
+      "reasoning": "Harris supports progressive taxation to fund public services. He backed the Blueprint for Maryland's Future funding structure and progressive tax reforms.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+        "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+      ]
+    },
+    {
+      "politician_id": "5d17e3ea-9d63-4a96-8848-9e293ac05fdb",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Kim Ross",
+      "topic": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Ross supported the Blueprint for Maryland's Future prioritizing public education investment over private school voucher programs.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ross01",
+        "https://ballotpedia.org/Kim_Ross"
+      ]
+    },
+    {
+      "politician_id": "5d17e3ea-9d63-4a96-8848-9e293ac05fdb",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Kim Ross",
+      "topic": "Taxation and Public Spending",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Ross supported progressive tax measures funding Blueprint for Maryland's Future including higher taxes on high earners.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ross01",
+        "https://ballotpedia.org/Kim_Ross"
+      ]
+    },
+    {
+      "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "N. Scott Phillips",
+      "topic": "Public Safety Approach",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Phillips supported the Maryland Police Accountability Act and community investment in public safety — favors balanced approach with police reform and social services.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/phillips02",
+        "https://ballotpedia.org/N._Scott_Phillips"
+      ]
+    },
+    {
+      "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "N. Scott Phillips",
+      "topic": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Phillips supported the Blueprint for Maryland's Future — advocates for public school investment over private school voucher programs.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/phillips02",
+        "https://ballotpedia.org/N._Scott_Phillips"
+      ]
+    },
+    {
+      "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "N. Scott Phillips",
+      "topic": "Taxation and Public Spending",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Phillips supported progressive tax reforms including higher taxes on high earners to fund Blueprint for Maryland's Future.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/phillips02",
+        "https://ballotpedia.org/N._Scott_Phillips"
+      ]
+    },
+    {
+      "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Natalie Ziegler",
+      "topic": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Ziegler supported the Blueprint for Maryland's Future — advocates for public school investment over private school voucher programs.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ziegler01",
+        "https://ballotpedia.org/Natalie_Ziegler"
+      ]
+    },
+    {
+      "politician_id": "38b5030a-aa8b-4363-8b62-3ec384d22088",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Natalie Ziegler",
+      "topic": "Taxation and Public Spending",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Ziegler supported progressive tax reform including higher taxes on high earners to fund Blueprint for Maryland's Future education funding.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ziegler01",
+        "https://ballotpedia.org/Natalie_Ziegler"
+      ]
+    }
+  ],
+  "vocabulary_only_note": [
+    {
+      "politician": "Andrew C. Pruski",
+      "topic": "School Vouchers & Public Education Funding",
+      "rejected_matches": [
+        "2023RS HB0185 Nonpublic Schools and Child Care Providers - Corporal Punishment - Prohibition"
+      ]
+    },
+    {
+      "politician": "Chao Wu",
+      "topic": "School Vouchers & Public Education Funding",
+      "rejected_matches": [
+        "2025RS HB1204 Public and Nonpublic Schools - Student Elopement - Notice and Reporting Requirements (Ace's Law)"
+      ]
+    },
+    {
+      "politician": "Cheryl E. Pasteur",
+      "topic": "School Vouchers & Public Education Funding",
+      "rejected_matches": [
+        "2026RS HB1182 Public and Nonpublic Schools - Student Elopement - Locative Devices",
+        "2023RS HB0185 Nonpublic Schools and Child Care Providers - Corporal Punishment - Prohibition"
+      ]
+    },
+    {
+      "politician": "Cheryl E. Pasteur",
+      "topic": "Taxation and Public Spending",
+      "rejected_matches": [
+        "2026RS HB0139 Sales and Use Tax - Tax-Free Day - Veterans' Day",
+        "2026RS HB0478 Income Tax - Subtraction Modification for Classroom Supplies Purchased by Teachers - Alteration",
+        "2026RS HB0745 Income Tax - Senior Tax Credit - Refundability"
+      ]
+    },
+    {
+      "politician": "Gabriel M. Moreno",
+      "topic": "Reproductive Rights and Abortion Access",
+      "rejected_matches": [
+        "2026RS HB0645 Criminal Law - Fraud - Assisted Reproductive Treatment"
+      ]
+    },
+    {
+      "politician": "Gabriel M. Moreno",
+      "topic": "Taxation and Public Spending",
+      "rejected_matches": [
+        "2026RS HB0484 Corporate Income Tax - Addition Modification - Direct-to-Consumer Pharmaceutical Advertising",
+        "2026RS HB0560 Sales and Use Tax and Property Tax - Exemptions for Data Centers - Repeal",
+        "2026RS HB0903 Income Tax - Subtraction Modification - Donations to Food Banks and Other Charitable Entities"
+      ]
+    },
+    {
+      "politician": "Kevin M. Harris",
+      "topic": "Taxation and Public Spending",
+      "rejected_matches": [
+        "2026RS SB0925 Sales and Use Tax – Distribution of Cannabis Sales Tax Revenue – Maryland Veterans Trust Fund"
+      ]
+    },
+    {
+      "politician": "Kim Ross",
+      "topic": "Taxation and Public Spending",
+      "rejected_matches": [
+        "2026RS HB0472 Income Tax - Theatrical Production Tax Credit - Alterations and Sunset Extension",
+        "2026RS HB0478 Income Tax - Subtraction Modification for Classroom Supplies Purchased by Teachers - Alteration",
+        "2026RS HB0653 Income Tax - Subtraction Modification for Public Safety Retirement Income - Amount"
+      ]
+    },
+    {
+      "politician": "N. Scott Phillips",
+      "topic": "Public Safety Approach",
+      "rejected_matches": [
+        "2026RS HB0113 Criminal Procedure - Expungement of Records - Resisting Arrest and Making a False Statement to a Law Enforcement Officer",
+        "2026RS HB0444 Public Safety - Immigration Enforcement Agreements - Prohibition",
+        "2026RS HB0904 Law Enforcement - Protective Body Armor - Requirements and Reporting"
+      ]
+    },
+    {
+      "politician": "N. Scott Phillips",
+      "topic": "School Vouchers & Public Education Funding",
+      "rejected_matches": [
+        "2023RS HB0266 Public and Nonpublic Schools - Bronchodilator Availability and Use - Policies"
+      ]
+    },
+    {
+      "politician": "N. Scott Phillips",
+      "topic": "Taxation and Public Spending",
+      "rejected_matches": [
+        "2026RS HB0478 Income Tax - Subtraction Modification for Classroom Supplies Purchased by Teachers - Alteration"
+      ]
+    },
+    {
+      "politician": "Natalie Ziegler",
+      "topic": "Taxation and Public Spending",
+      "rejected_matches": [
+        "2026RS HB0175 Income Tax Credit - Venison Donation - Alterations",
+        "2026RS HB0472 Income Tax - Theatrical Production Tax Credit - Alterations and Sunset Extension",
+        "2026RS HB0484 Corporate Income Tax - Addition Modification - Direct-to-Consumer Pharmaceutical Advertising"
+      ]
+    }
+  ]
+}

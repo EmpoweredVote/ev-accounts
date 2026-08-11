@@ -1,0 +1,33 @@
+{
+  "migration": "1695_retire_crosby_climate_contradicted",
+  "retired_on": "2026-08-11",
+  "authorised_by": "operator instruction 2026-08-11 (\"Retire Crosby Climate change stance for now\")",
+  "rule": "The stance asserts Crosby \"has supported the Climate Solutions Now Act\". The House roll call for 2022RS SB0528 (Third Reading Passed with Amendments, 95-42) records him in the Nay list. Contradicted by the primary record, not merely unsourced.",
+  "evidence": "https://mgaleg.maryland.gov/2022RS/votes/house/0795.pdf",
+  "restore_note": "Retirement DELETED the answer and the context row; restoring is an INSERT into inform.politician_answers and inform.politician_context from the values below.",
+  "politician_row_counts_before": {
+    "context": 8,
+    "answers": 8
+  },
+  "expected_after": {
+    "context": 7,
+    "answers": 7,
+    "emptied": false
+  },
+  "row_count": 1,
+  "rows": [
+    {
+      "full_name": "Brian M. Crosby",
+      "politician_id": "898845f9-cb93-4162-b0ed-6842eacda5d6",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic": "Climate Change and Environmental Protection",
+      "value": "2.0",
+      "write_in_text": null,
+      "reasoning": "Crosby has supported the Climate Solutions Now Act and clean energy investment while balancing concerns about economic impacts on the military-dependent economy of Southern Maryland.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/crosby01?tab=2026RS-legislation",
+        "https://ballotpedia.org/Brian_Crosby"
+      ]
+    }
+  ]
+}
