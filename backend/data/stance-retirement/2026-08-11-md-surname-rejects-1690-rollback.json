@@ -1,0 +1,90 @@
+{
+  "migration": "1690_resource_md_surname_rejects",
+  "generated": "pre-change snapshot from live DB",
+  "rule": "pass-4c REJECT rows that reading showed were correct; the tool had resolved a bare bill number across all sessions. Citation added at the stated session and the misstated bill number corrected in voter-facing reasoning.",
+  "plan": [
+    {
+      "who": "Caylin Young",
+      "topic": "Voting Rights and Electoral Integrity",
+      "bills": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0350?ys=2026RS"
+      ],
+      "note": "HB0350 (2026) \"Voting Rights Act of 2026 - Counties and Municipal Corporations\"; young05 IS a sponsor. The prose already named this title exactly; pass 4b had matched a 2017 bill of Pat Young.",
+      "reasoning": null
+    },
+    {
+      "who": "Veronica Turner",
+      "topic": "Affordable Housing",
+      "bills": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0573?ys=2026RS"
+      ],
+      "note": "Prose said \"HB0480 (2026)\"; 2026 HB0480 is \"Transportation Network Companies - Deactivation of Operators\". The bill she describes -- \"Fair Housing and Housing Discrimination - Regulations, Intent, and Discriminatory Effect\" -- is 2026 HB0573, and turner01 IS a sponsor.",
+      "reasoning": "Sponsored HB0573 (2026) — Fair Housing and Housing Discrimination - Regulations, Intent, and Discriminatory Effect; supports fair housing enforcement and anti-discrimination protections."
+    },
+    {
+      "who": "Veronica Turner",
+      "topic": "Criminal Justice Approach",
+      "bills": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0626?ys=2026RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1309?ys=2026RS"
+      ],
+      "note": "Both acts are real and she sponsors both, under different numbers than the prose gave: Exonerated 5 Act is 2026 HB0626 (not HB0574), and the racial-disparities commission is 2026 HB1309 (not HB0810).",
+      "reasoning": "Sponsored the Exonerated 5 Act (HB0626, 2026) restricting admissibility of statements from custodial interrogation of minors; also sponsored HB1309 (2026) establishing a commission to review and assess racial disparities in the State criminal justice system; supports rehabilitation-focused reforms."
+    },
+    {
+      "who": "Pam Lanman Guzzone",
+      "topic": "Climate Change and Environmental Protection",
+      "bills": [
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0347?ys=2023RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1279?ys=2024RS",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0340?ys=2025RS"
+      ],
+      "note": "Prose credited the Climate Solutions Now Act (2021/2022) -- PRE-TENURE, she took office 2023-01-11 -- and pass 4b matched it to Guy Guzzone. Her own in-tenure climate sponsorships carry the same position honestly.",
+      "reasoning": "Sponsored HB0347 (2023) authorizing Attorney General climate change actions, HB1279 (2024) on building performance standards and fossil fuel use, and HB0340 (2025) establishing a climate change restitution fund — consistently favors aggressive climate action."
+    }
+  ],
+  "row_count": 4,
+  "rows": [
+    {
+      "politician_id": "92075c9b-6c7e-4763-981f-5a42a8afddf5",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Caylin Young",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/young05"
+      ],
+      "reasoning": "Young sponsored Voting Rights Act of 2026 - Counties and Municipal Corporations — among the strongest possible voting rights stances demonstrating commitment to expanded local ballot access."
+    },
+    {
+      "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Pam Lanman Guzzone",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone01",
+        "https://ballotpedia.org/Pam_Guzzone"
+      ],
+      "reasoning": "Lanman Guzzone supported the Climate Solutions Now Act and Maryland's clean energy transition — consistently favors aggressive climate action."
+    },
+    {
+      "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Veronica Turner",
+      "topic": "Affordable Housing",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/turner01?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored HB0480 (2026) — Fair Housing and Housing Discrimination reform targeting discriminatory effect; supports fair housing enforcement and anti-discrimination protections."
+    },
+    {
+      "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "full_name": "Veronica Turner",
+      "topic": "Criminal Justice Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/turner01?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Exonerated 5 Act (HB0574, 2026) restricting admissibility of minor custodial interrogations; also sponsored HB0810 — commission on racial disparities in state criminal justice system; supports rehabilitation-focused reforms."
+    }
+  ]
+}

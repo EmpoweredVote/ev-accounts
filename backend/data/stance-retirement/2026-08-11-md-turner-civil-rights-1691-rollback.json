@@ -1,0 +1,16 @@
+{
+  "migration": "1691_fix_turner_civil_rights_bill_numbers",
+  "generated": "pre-change snapshot from live DB",
+  "rule": "All 3 claims true, 2 bill numbers wrong; corrected and cited. Verified turner01 sponsors HB1309, HB0573, HB0350 (2026).",
+  "row_count": 1,
+  "rows": [
+    {
+      "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/turner01?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored commission to review racial disparities in criminal justice (HB0810, 2026); sponsored Fair Housing Act reform (HB0480); supported Voting Rights Act 2026 and civil rights protections."
+    }
+  ]
+}
