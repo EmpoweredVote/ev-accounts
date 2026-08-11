@@ -134,6 +134,19 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+      # Shares this job rather than getting its own because it needs exactly the same three things:
+      # the live database, the DATABASE_URL secret, and the DAILY cadence. Same drift shape too —
+      # migration 1696 persisted the child->county spatial assignment into a materialized view, and
+      # 52 scripts insert into essentials.geofence_boundaries, so there is no single loader to hook a
+      # refresh onto. Without this, a boundary load silently leaves newly added cities sitting
+      # outside their county on the coverage dashboard until someone happens to look.
+      #
+      # Zero tolerance, no baseline: the correct value is 0 and the fix is one command.
+      - name: Check the persisted child→county mapping is not stale
+        run: npm run check:child-county
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
       # Migrations 1494, 1507 and 1508 retired 1,157 stance answers whose only citation was a
       # Ballotpedia bio that does not contain the claim. Nothing in the repo prevented writing them, so
       # without this gate the backlog regenerates on the next research wave. Baselined per state at 596

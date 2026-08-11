@@ -17,6 +17,8 @@
     "check:occupancy:all": "node scripts/check-office-occupancy.mjs --all",
     "check:reachability": "node scripts/check-address-reachability.mjs",
     "check:reachability:verbose": "node scripts/check-address-reachability.mjs --verbose",
+    "check:child-county": "node scripts/check-child-county-mapping.mjs",
+    "check:child-county:verbose": "node scripts/check-child-county-mapping.mjs --verbose",
     "check:stance-sources": "node scripts/check-stance-sources.mjs",
     "check:stance-sources:verbose": "node scripts/check-stance-sources.mjs --verbose",
     "audit:stance-citations": "node scripts/audit-stance-citations.mjs",
