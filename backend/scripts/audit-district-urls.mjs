@@ -87,8 +87,19 @@
  *   node scripts/audit-district-urls.mjs --state ca --type LOCAL,LOCAL_EXEC --json out.json
  *   node scripts/audit-district-urls.mjs --state or --no-candidates      # classify stored only
  *   node scripts/audit-district-urls.mjs --state ca --type LOCAL --plan-only   # show units, no probe
+ *   node scripts/audit-district-urls.mjs --state or --type COUNTY --geo 41069  # re-run one unit
+ *   node scripts/audit-district-urls.mjs --state ca --no-registry              # skip the .gov registry
  *
- * Requires DATABASE_URL and a Playwright chromium. Exits 0 always — it is a report, not a gate.
+ * ── THE .gov REGISTRY IS PART OF THE METHOD, NOT AN EXTRA ──────────────────────────────────────
+ * On every run this fetches CISA's dotgov-data (cached 7 days) and uses it twice: as a CANDIDATE
+ * SOURCE, because no hostname template reaches `lacity.gov` / `agourahillscity.gov` /
+ * `forestgrove-or.gov`; and as a VERIFICATION step, because the registrant name settles identity
+ * better than page vocabulary can and works even when a WAF blocks the page entirely. See the block
+ * above `candidatesFor()` for the four limits — silence is not "no .gov", owning is not serving,
+ * registered is not even resolving, and the org match must be exact.
+ *
+ * Requires DATABASE_URL and a Playwright chromium. Network is optional: without it the registry is
+ * skipped loudly and the audit continues with weaker evidence. Exits 0 always — a report, not a gate.
  */
 import 'dotenv/config';
 import { writeFileSync } from 'node:fs';
@@ -106,6 +117,10 @@ const JSON_OUT = arg('json');
 const NO_CAND = argv.includes('--no-candidates');
 const PLAN_ONLY = argv.includes('--plan-only');
 const NO_ROOT = argv.includes('--no-canonical');
+const NO_REGISTRY = argv.includes('--no-registry');
+// Loaded once in main(); null when unavailable or disabled. classify() reads it directly because the
+// registrant check applies to every probe, including candidates generated from it.
+let REGISTRY = null;
 // Re-run just the units a previous pass left unresolved, without re-rendering the ones it settled.
 const GEO = (arg('geo') || '').split(',').map(s => s.trim()).filter(Boolean);
 const CONC = parseInt(arg('concurrency', '4'), 10) || 4;
@@ -283,13 +298,125 @@ const STATE_NAMES = {
   wa: 'washington', wi: 'wisconsin', wv: 'westvirginia', wy: 'wyoming',
 };
 
-function candidatesFor(place, type, state) {
+// ── 🔴🔴 THE .gov REGISTRY: THE ONE AUTHORITY THAT BEATS READING THE PAGE ──────────────────────
+//
+// CISA publishes every federal `.gov` with its REGISTRANT ORGANISATION, city and state. Because the
+// namespace is administered, a domain listed as "City of Pomona / Pomona, CA" cannot belong to anyone
+// else — a stronger identity guarantee than any page read, and the property that makes the preference
+// order favour `.gov` at all (Sierra County's lapsed `.ws` had no such backstop).
+//
+// It answers the two failures that defeat rendering outright:
+//   1. **A WAF hides a live site.** `pomonaca.gov`, `monroviaca.gov`, `glendaleca.gov` return ~200
+//      bytes of "Access Denied" to headless. The registry names the owner with no page at all, so a
+//      blocked destination can be accepted on the registry rather than on the block — which the
+//      standing rule still forbids.
+//   2. **No template can invent a brand.** Los Angeles is `lacity.gov`, Agoura Hills is
+//      `agourahillscity.gov`, Pasadena is `pasadena.gov`, Forest Grove is `forestgrove-or.gov`. None
+//      is reachable from the place name by any pattern below. Searching by ORGANISATION finds them.
+//
+// 🔴 FOUR LIMITS, EVERY ONE LEARNED BY BEING WRONG. Do not quietly relax any of them:
+//
+//   a. **Silence is not "no .gov".** `.ca.gov` is administered by the STATE of California and is
+//      absent from this federal list — Duarte is `cityofduarte.ca.gov`, La Cañada Flintridge is
+//      `lcf.ca.gov`. Migration 1675 treated absence as proof a city had none; 1676 and 1680 are the
+//      counterexamples.
+//   b. **Owning a .gov is not serving from it.** Four CA cities own one that REDIRECTS BACK to their
+//      own non-.gov host (`weho.gov`->`weho.org`); `hawthorneca.gov` returns 522 and
+//      `paramountcity.gov` times out. Always check where a .gov actually goes.
+//   c. **Registered does not even mean RESOLVES.** `wheelercountyor.gov` is in this file and has no
+//      DNS at all — not bare, not `www`. So a registry hit is a claim about OWNERSHIP only; liveness
+//      still has to be probed.
+//   d. **Match the organisation EXACTLY (a `, <state>` suffix aside). NEVER substring.** "La Habra"
+//      is a strict prefix of "La Habra Heights", so a LIKE match hands `lahabraca.gov` to the wrong,
+//      adjacent city — confident and verifiable-looking and wrong. But strict `city of <name>` misses
+//      "City of Tigard, **Oregon**", so the trailing state is allowed and nothing else is.
+const DOTGOV_URL = 'https://raw.githubusercontent.com/cisagov/dotgov-data/main/current-full.csv';
+const DOTGOV_CACHE = 'data/.dotgov-cache.csv';
+const CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
+// Department domains are not a jurisdiction's homepage. El Segundo owns six (`elsegundopd.gov`,
+// `elsegundolibrary.gov`, …), Rolling Hills Estates four, Los Angeles a dozen.
+const DEPT_DOMAIN = /(pd|police|sheriff|fire|fd|library|recparks|parks|court|clerk|vote|votes|election|911|water|transit|airport|schools?|usd|health|dwp|ready|climate)\d*\.gov$/i;
+
+function parseCsvLine(line) {
+  const out = []; let cur = '', q = false;
+  for (const ch of line) {
+    if (ch === '"') q = !q;
+    else if (ch === ',' && !q) { out.push(cur); cur = ''; }
+    else cur += ch;
+  }
+  out.push(cur);
+  return out;
+}
+
+async function loadRegistry() {
+  const { readFileSync, writeFileSync, statSync, mkdirSync } = await import('node:fs');
+  const { dirname } = await import('node:path');
+  let csv = null;
+  try {
+    const age = Date.now() - statSync(DOTGOV_CACHE).mtimeMs;
+    if (age < CACHE_MAX_AGE_MS) csv = readFileSync(DOTGOV_CACHE, 'utf8');
+  } catch { /* no cache yet */ }
+  if (!csv) {
+    try {
+      const res = await fetch(DOTGOV_URL, { signal: AbortSignal.timeout(60000) });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      csv = await res.text();
+      try { mkdirSync(dirname(DOTGOV_CACHE), { recursive: true }); writeFileSync(DOTGOV_CACHE, csv); } catch { /* cache is optional */ }
+    } catch (e) {
+      // Offline is not fatal: the audit still runs, it just loses this instrument. Say so loudly
+      // rather than silently degrading, because the verdicts are weaker without it.
+      console.log(`🔴 could not load the .gov registry (${String(e.message).slice(0, 60)}).`);
+      console.log('   Continuing WITHOUT it: no registrant verification and no registry-sourced');
+      console.log('   candidates, so a WAF-blocked or oddly-branded destination may read as absent.');
+      return null;
+    }
+  }
+  const rows = [];
+  const lines = csv.split(/\r?\n/);
+  for (const line of lines.slice(1)) {
+    if (!line) continue;
+    const c = parseCsvLine(line);
+    rows.push({ domain: (c[0] || '').toLowerCase(), type: c[1] || '', org: c[2] || '', city: c[4] || '', state: (c[5] || '').toUpperCase() });
+  }
+  const byDomain = new Map(rows.map(r => [r.domain, r]));
+  const norm = (s) => String(s).toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+
+  /** Domains whose registrant IS this jurisdiction. Exact org match, `, <state>` suffix allowed. */
+  const forPlace = (place, type, state) => {
+    const st = String(state || STATE || '').toUpperCase();
+    const p = norm(place);
+    if (!p || !st) return [];
+    const full = norm(STATE_NAMES[st.toLowerCase()] || '');
+    const forms = type === 'COUNTY'
+      ? [`${p} county`, `county of ${p}`, p]
+      : [`city of ${p}`, `town of ${p}`, `village of ${p}`, `borough of ${p}`, `township of ${p}`, `city and county of ${p}`, p];
+    const want = new Set();
+    for (const f of forms) { want.add(f); want.add(`${f} ${st.toLowerCase()}`); if (full) want.add(`${f} ${full}`); }
+    const hits = rows.filter(r => r.state === st && want.has(norm(r.org)));
+    // Prefer a non-department domain; keep the rest so a caller can see the whole set.
+    return [...hits].sort((a, b) => (DEPT_DOMAIN.test(a.domain) ? 1 : 0) - (DEPT_DOMAIN.test(b.domain) ? 1 : 0));
+  };
+
+  const owner = (url) => {
+    try { return byDomain.get(new URL(url).host.toLowerCase().replace(/^www\./, '')) || null; }
+    catch { return null; }
+  };
+
+  return { size: rows.length, forPlace, owner };
+}
+
+function candidatesFor(place, type, state, registryDomains = []) {
   const slug = String(place || '').toLowerCase().replace(/[^a-z]/g, '');
-  if (!slug) return [];
+  if (!slug && !registryDomains.length) return [];
   const st = (state || STATE || 'ca').toLowerCase();
   const full = STATE_NAMES[st] || st;
+  // Registry-sourced hosts go FIRST: they are the only ones backed by a registrant name, and they
+  // reach brands no template can (lacity.gov, forestgrove-or.gov, agourahillscity.gov).
+  const fromRegistry = registryDomains.flatMap(d => [`https://www.${d}/`, `https://${d}/`]);
+  if (!slug) return fromRegistry;
   if (type === 'COUNTY') {
     return [
+      ...fromRegistry,
       `https://www.${slug}county.${st}.gov/`, `https://www.${slug}county${st}.gov/`,
       `https://www.${slug}county.gov/`, `https://www.countyof${slug}.gov/`,
       `https://www.countyof${slug}${st}.gov/`, `https://www.${slug}.${st}.gov/`,
@@ -301,6 +428,7 @@ function candidatesFor(place, type, state) {
     ];
   }
   return [
+    ...fromRegistry,
     `https://www.${slug}.${st}.gov/`, `https://www.cityof${slug}.gov/`,
     `https://www.${slug}.gov/`, `https://www.cityof${slug}.org/`,
     `https://www.${slug}${st}.gov/`, `https://www.ci.${slug}.${st}.us/`,
@@ -398,9 +526,28 @@ async function classify(page, url, place, type, st) {
     const nongov = NONGOV.test(hayText);
     rec.rightFromNavOnly = !rightText && rightNav;
 
-    const stEv = stateEvidence(hay, rec.finalUrl || url, (st || STATE || 'ca').toLowerCase(), place);
+    const want = (st || STATE || 'ca').toLowerCase();
+    const stEv = stateEvidence(hay, rec.finalUrl || url, want, place);
     rec.stateOwn = stEv.own;
     rec.stateOthers = stEv.others;
+
+    // 🔴 THE REGISTRANT OUTRANKS THE PAGE. If this host is a federal `.gov`, who owns it is a matter
+    // of record, not of vocabulary — so it settles the state question in both directions and does not
+    // care whether a WAF let us read anything. This is what separates `glendaleca.gov` from
+    // `glendaleaz.gov` and `lacity.gov` from `lacounty.gov`, neither of which page text can do.
+    const reg = REGISTRY ? REGISTRY.owner(rec.finalUrl || url) : null;
+    if (reg) {
+      rec.registrant = { org: reg.org, city: reg.city, state: reg.state, type: reg.type };
+      if (reg.state.toLowerCase() === want) {
+        rec.stateOwn = true;
+        stEv.own = true;
+        stEv.others = [];                       // a matching registrant overrides page-derived noise
+      } else {
+        rec.verdict = 'STATE_MISMATCH';
+        rec.why = `.gov registrant is ${reg.org} (${reg.city}, ${reg.state}), not ${want.toUpperCase()}`;
+        return rec;                             // record beats content; nothing else to weigh
+      }
+    }
 
     if (SPAM.test(hay)) { rec.verdict = 'SPAM'; rec.why = 'gambling/pharma keywords'; }
     else if (WAFTITLE.test(rec.title) || (rec.textLen < 400 && rec.status === 403)) {
@@ -467,7 +614,19 @@ async function main() {
   if (!rows.length) { console.log('No rows matched.'); return; }
 
   // 🔴 Collapse to one probe per place+host BEFORE opening a browser. --limit caps PROBES, not rows.
+  if (!NO_REGISTRY) {
+    REGISTRY = await loadRegistry();
+    if (REGISTRY) console.log(`.gov registry loaded: ${REGISTRY.size} domains (cached ${DOTGOV_CACHE}, 7d TTL).`);
+  }
+
   let units = buildUnits(rows);
+  // Attach each place's registry-owned domains: a candidate source no template can match, and the
+  // reason a WAF-blocked destination can still be identified.
+  for (const u of units) {
+    const hits = REGISTRY ? REGISTRY.forPlace(u.place, u.district_type, u.state) : [];
+    u.registryDomains = hits.map(h => h.domain);
+    u.registryEntries = hits;
+  }
   const allUnits = units.length;
   if (GEO.length) {
     units = units.filter(u => GEO.includes(u.geo_id));
@@ -552,7 +711,7 @@ async function main() {
       // "SEARCH INCOMPLETE". Only an actual break-out is truncation, so record that directly.
       let candidatesTried = 0, candidatesSkipped = 0, candidatesPlanned = 0, sweepTruncated = false;
       if (needsWork && !NO_CAND) {
-        const cands = candidatesFor(unit.place, unit.district_type, unit.state);
+        const cands = candidatesFor(unit.place, unit.district_type, unit.state, unit.registryDomains);
         candidatesPlanned = cands.length;
         for (const c of cands) {
           if (probes.filter(p => p.verdict.startsWith('VERIFIED')).length >= 2) break;
@@ -576,7 +735,34 @@ async function main() {
       // state-confirmed destinations win outright whenever any exist.
       const confirmed = verified.filter(p => p.stateOwn);
       const pool = confirmed.length ? confirmed : verified;
-      const settled = [...new Set(pool.map(p => p.finalUrl).filter(Boolean))].sort((a, b) => score(b) - score(a) || a.length - b.length);
+      let settled = [...new Set(pool.map(p => p.finalUrl).filter(Boolean))].sort((a, b) => score(b) - score(a) || a.length - b.length);
+
+      // ── 🔴 THE CASE THE REGISTRY EXISTS FOR: NOTHING RENDERED, BUT A REGISTRANT NAMES THE OWNER ──
+      //
+      // A WAF can hide a live site from headless on EVERY path, so the sweep verifies nothing and the
+      // unit reports `(none)` — which on this task reads as "no site exists". Pomona, Monrovia,
+      // Rolling Hills Estates, Calabasas and Glendale all did exactly that, and each was settled by
+      // hand against the registry in 1675/1676/1679. That is now automatic.
+      //
+      // The standing rule is intact: this is NOT repointing on the strength of a block. The basis is
+      // the registrant — an administered namespace saying this domain belongs to this jurisdiction —
+      // with the block noted only as evidence a server answered at all. Flagged for a human either
+      // way, and it never outranks something that actually rendered.
+      let registryFallback = null;
+      if (!settled.length && REGISTRY && (unit.registryDomains || []).length) {
+        const answered = probes.find(p =>
+          p.verdict === 'BLOCKED' && p.registrant && unit.registryDomains.includes(
+            (() => { try { return new URL(p.finalUrl || p.url).host.toLowerCase().replace(/^www\./, ''); } catch { return ''; } })()
+          ));
+        if (answered) {
+          const host = new URL(answered.finalUrl || answered.url).host.toLowerCase();
+          registryFallback = {
+            url: `https://${host}/`,
+            why: `WAF-blocked, accepted on the .gov registrant: ${answered.registrant.org} (${answered.registrant.city}, ${answered.registrant.state})`,
+          };
+          settled = [registryFallback.url];
+        }
+      }
 
       // ── 🔴 CANONICALISE THE DESTINATION. `finalUrl` IS WHERE A REDIRECT LANDED, NOT A HOMEPAGE. ──
       //
@@ -647,11 +833,15 @@ async function main() {
         blockedRecommendation, blockedOtherCandidates: blockedProbes.length - (blockedRecommendation ? 1 : 0),
         // A destination still on http, or one whose root refused to verify, is not ready to store.
         stillHttp: !!canonical && /^http:\/\//i.test(canonical),
+        registryDomains: unit.registryDomains || [],
+        registryFallback: registryFallback ? registryFallback.why : null,
+        registrant: (probes.find(p => (p.finalUrl || p.url) === settled[0]) || {}).registrant || null,
         needsHumanRead: !settled.length || verified.some(p => p.nameAmbiguous) || blockedMatters
           || unit.placeSource === 'NONE' || candidatesIncomplete
           || verified.some(p => p.stateUnconfirmed || p.rightFromNavOnly)
           || (!!canonicalNote && canonicalNote.includes('did NOT verify'))
-          || (!!canonical && /^http:\/\//i.test(canonical)),
+          || (!!canonical && /^http:\/\//i.test(canonical))
+          || !!registryFallback,   // registrant-only evidence always gets a human glance
         rejected: probes.filter(p => ['WRONG_ENTITY', 'NOT_GOVERNMENT', 'SPAM', 'STATE_MISMATCH'].includes(p.verdict))
           .map(p => ({ url: p.finalUrl || p.url, verdict: p.verdict, why: p.why, title: p.title })),
         probes,
@@ -662,6 +852,8 @@ async function main() {
         || (candidatesIncomplete ? `(SEARCH INCOMPLETE — ${candidatesTried}/${candidatesPlanned} candidates, ${lostProbes} lost; NOT evidence no site exists)` : '(none)');
       console.log(`${unit.district_type.padEnd(10)} ${unit.geo_id.padEnd(8)} ${String(unit.place || '(no name)').slice(0, 24).padEnd(24)} ` +
                   `${String(unit.rowCount ?? unit.rows.length).padStart(2)}r ${rec.storedVerdict.padEnd(14)} len=${String(rec.storedTextLen).padStart(6)} -> ${dest}${flag}`);
+      if (rec.registrant) console.log(`           ↳ .gov registrant: ${rec.registrant.org} (${rec.registrant.city}, ${rec.registrant.state})`);
+      if (rec.registryFallback) console.log(`           🔴 ${rec.registryFallback}`);
       if (rec.canonicalNote) console.log(`           ↳ ${rec.canonicalNote}`);
       if (rec.stillHttp) console.log('           🔴 destination is STILL http — not an upgrade, read it');
       for (const r of rec.rejected) console.log(`           🔴 rejected ${r.url} — ${r.verdict}: ${r.why}`);
