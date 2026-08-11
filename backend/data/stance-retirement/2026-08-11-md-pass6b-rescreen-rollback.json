@@ -1,0 +1,50 @@
+{
+  "migration": "1700_resource_md_pass6b_rescreened_rows",
+  "generated": "pre-change snapshot, values read from the live DB 2026-08-11",
+  "rule": "These two rows were wrongly verdicted PRE_TENURE by the pass-6 tenure screen, which judged tenure against bills the resolver had mis-attached AND read only the member's current-chamber page. Re-screened (pass 6b), both members ARE in tenure and sponsor the instrument their reasoning names. Citations re-sourced; Coley's reasoning corrected because it stated an impossible year (voter-facing, precedent 1524/1526/1690).",
+  "row_count": 2,
+  "rows": [
+    {
+      "politician": "Mark Edelson",
+      "politician_id": "bec4b395-bb4b-4740-ac1c-8e89f12608a2",
+      "topic": "Fossil Fuel Policy",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/edelson01"
+      ],
+      "reasoning": "Edelson sponsored Investor-Owned Electric Gas and Gas and Electric Companies - Cost Recovery - Limitations and Climate Alignment Act — supporting fossil fuel cost accountability and clean energy transition.",
+      "change": "citations only; reasoning UNCHANGED (it names both instruments correctly)"
+    },
+    {
+      "politician": "Derrick Coley",
+      "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+      "topic": "Voting Rights and Electoral Integrity",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2023RS-legislation"
+      ],
+      "reasoning": "Voted for Maryland Voting Rights Act (2023); supported voter registration expansion and early voting access.",
+      "change": "citation re-sourced to 2026RS HB0350; member-page URL normalised to the bare slug (the ?tab=2023RS-legislation variant points at a session three years before he was seated); reasoning corrected from an impossible 2023 vote to his confirmed 2026 sponsorship"
+    }
+  ],
+  "evidence": {
+    "Mark Edelson": {
+      "tenure": "House since 2023-01-11 (edelson01)",
+      "sponsors": [
+        "2026RS HB0001 Investor-Owned Electric, Gas, and Gas and Electric Companies - Cost Recovery - Limitations",
+        "2026RS HB0437 Transportation - Major Highway Capacity Expansion Projects and Impact Assessments (Transportation and Climate Alignment Act)",
+        "2025RS HB0084 same act",
+        "2024RS HB0836 same act"
+      ],
+      "note": "His prose names TWO instruments joined by 'and'; he sponsors both. The pass-6 screen had attached 2013RS bills and called him pre-tenure."
+    },
+    "Derrick Coley": {
+      "tenure": "House since 2026-01-13 (coley01)",
+      "sponsors": ["2026RS HB0350 Voting Rights Act of 2026 - Counties and Municipal Corporations"],
+      "note": "The stated 2023 vote is impossible — he was seated in 2026. A Voting Rights Act of 2023 does exist (SB0878/HB1104), which is why the year is wrong rather than the act being invented. Sponsorship of the 2026 Act is STRONGER than the 'voted for' the prose claimed. Same disposition as Odom and Stinnett in mig 1697."
+    }
+  },
+  "not_applied": {
+    "Karen Toles / School Vouchers & Public Education Funding": "HELD FOR AN OPERATOR. She sponsors 2024RS HB1082 (Blueprint for Maryland's Future Implementation - Funding for Implementation Coordinators), but her load-bearing claim is 'voted against school voucher legislation'. An implementation-coordinator funding bill is on-topic for the chair's TITLE and does not establish voucher opposition — the mig 1697 vocabulary-vs-rationale line."
+  }
+}

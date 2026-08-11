@@ -1,0 +1,576 @@
+{
+ "pass": "MD pass 6b - re-screen of contaminated PRE_TENURE verdicts",
+ "caveat": "A PRE_TENURE verdict claims the stance was IMPOSSIBLE. Confirmed only where the instrument exists in NO session inside the member's corrected tenure. Everything else needs evidence, not deletion. Sponsorship miss on a \"voted\" claim is UNVERIFIED, never false.",
+ "tally": {
+  "IN_TENURE_RESCREENED": 13,
+  "PRE_TENURE_CONFIRMED": 7,
+  "NEEDS_MANUAL": 1
+ },
+ "rows": [
+  {
+   "politician": "Adrian Boafo",
+   "politician_id": "1da26040-98b4-4eb0-aa1f-3ec05b297a29",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "cited_slug": "boafo01",
+   "tenure_from": "2023-01-11",
+   "instrument": "Blueprint for Maryland's Future",
+   "instrument_sessions": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "sessions_in_tenure": [
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "IN_TENURE_RESCREENED",
+   "sponsor_evidence": [],
+   "needs_rollcall": true,
+   "reasoning": "Voted against school voucher legislation; supported Blueprint for Maryland's Future public school funding and opposed diversion of funds to private schools."
+  },
+  {
+   "politician": "Ashanti Martinez",
+   "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+   "topic": "Immigration and Treatment of Immigrants",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "cited_slug": "martinez01",
+   "tenure_from": "2023-02-24",
+   "instrument": "Maryland RELIEF Act",
+   "instrument_sessions": [
+    "2021"
+   ],
+   "sessions_in_tenure": [],
+   "claim_verb": "supported/backed",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "PRE_TENURE_CONFIRMED",
+   "sponsor_evidence": [],
+   "needs_rollcall": false,
+   "reasoning": "Supported Maryland RELIEF Act and immigration services legislation; backed language access and community support programs for immigrant communities."
+  },
+  {
+   "politician": "Ashanti Martinez",
+   "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "cited_slug": "martinez01",
+   "tenure_from": "2023-02-24",
+   "instrument": "Maryland Abortion Care Access Act",
+   "instrument_sessions": [
+    "2022"
+   ],
+   "sessions_in_tenure": [],
+   "claim_verb": "supported/backed",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "PRE_TENURE_CONFIRMED",
+   "sponsor_evidence": [],
+   "needs_rollcall": false,
+   "reasoning": "Supported Maryland Abortion Care Access Act (2023) and reproductive rights legislation; backed expansion of abortion access and removal of barriers to reproductive healthcare."
+  },
+  {
+   "politician": "Ashanti Martinez",
+   "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "cited_slug": "martinez01",
+   "tenure_from": "2023-02-24",
+   "instrument": "Blueprint for Maryland's Future",
+   "instrument_sessions": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "sessions_in_tenure": [
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "IN_TENURE_RESCREENED",
+   "sponsor_evidence": [],
+   "needs_rollcall": true,
+   "reasoning": "Voted against school voucher legislation; backed Blueprint for Maryland's Future public school funding and opposed diversion of public funds to private schools."
+  },
+  {
+   "politician": "Denise Roberts",
+   "politician_id": "d5999df9-83b8-4870-a170-4d13f40473e2",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "cited_slug": "roberts01",
+   "tenure_from": "2024-01-08",
+   "instrument": "Maryland Abortion Care Access Act",
+   "instrument_sessions": [
+    "2022"
+   ],
+   "sessions_in_tenure": [],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "PRE_TENURE_CONFIRMED",
+   "sponsor_evidence": [],
+   "needs_rollcall": false,
+   "reasoning": "Voted for Maryland Abortion Care Access Act (2023); backed reproductive rights legislation expanding abortion access in Maryland."
+  },
+  {
+   "politician": "Denise Roberts",
+   "politician_id": "d5999df9-83b8-4870-a170-4d13f40473e2",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "cited_slug": "roberts01",
+   "tenure_from": "2024-01-08",
+   "instrument": "Blueprint for Maryland's Future",
+   "instrument_sessions": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "sessions_in_tenure": [
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "IN_TENURE_RESCREENED",
+   "sponsor_evidence": [],
+   "needs_rollcall": true,
+   "reasoning": "Voted against school voucher bills; backed Blueprint for Maryland's Future public school investment."
+  },
+  {
+   "politician": "Derrick Coley",
+   "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "cited_slug": "coley01",
+   "tenure_from": "2026-01-13",
+   "instrument": "Climate Solutions Now Act",
+   "instrument_sessions": [
+    "2021",
+    "2022",
+    "2025"
+   ],
+   "sessions_in_tenure": [],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "PRE_TENURE_CONFIRMED",
+   "sponsor_evidence": [],
+   "needs_rollcall": false,
+   "reasoning": "Voted for Climate Solutions Now Act (2022); backed renewable energy mandates and emissions reduction targets."
+  },
+  {
+   "politician": "Derrick Coley",
+   "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "cited_slug": "coley01",
+   "tenure_from": "2026-01-13",
+   "instrument": "Maryland Abortion Care Access Act",
+   "instrument_sessions": [
+    "2022"
+   ],
+   "sessions_in_tenure": [],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "PRE_TENURE_CONFIRMED",
+   "sponsor_evidence": [],
+   "needs_rollcall": false,
+   "reasoning": "Voted for Maryland Abortion Care Access Act (2023); supported reproductive rights legislation and expansion of abortion access statewide."
+  },
+  {
+   "politician": "Derrick Coley",
+   "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "cited_slug": "coley01",
+   "tenure_from": "2026-01-13",
+   "instrument": "Blueprint for Maryland's Future",
+   "instrument_sessions": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "sessions_in_tenure": [
+    "2026"
+   ],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "IN_TENURE_RESCREENED",
+   "sponsor_evidence": [],
+   "needs_rollcall": true,
+   "reasoning": "Voted against school voucher bills; backed public education funding and Blueprint for Maryland's Future implementation."
+  },
+  {
+   "politician": "Derrick Coley",
+   "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+   "topic": "Voting Rights and Electoral Integrity",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "cited_slug": "coley01",
+   "tenure_from": "2026-01-13",
+   "instrument": "Maryland Voting Rights Act",
+   "instrument_sessions": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "sessions_in_tenure": [
+    "2026"
+   ],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "IN_TENURE_RESCREENED",
+   "sponsor_evidence": [
+    {
+     "session": "2026RS",
+     "number": "HB0350",
+     "title": "Voting Rights Act of 2026 - Counties and Municipal Corporations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0350?ys=2026RS"
+    }
+   ],
+   "needs_rollcall": false,
+   "reasoning": "Voted for Maryland Voting Rights Act (2023); supported voter registration expansion and early voting access."
+  },
+  {
+   "politician": "Karen Toles",
+   "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "cited_slug": "toles01",
+   "tenure_from": "2022-01-12",
+   "instrument": "Maryland Abortion Care Access Act",
+   "instrument_sessions": [
+    "2022"
+   ],
+   "sessions_in_tenure": [
+    "2022"
+   ],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "IN_TENURE_RESCREENED",
+   "sponsor_evidence": [],
+   "needs_rollcall": true,
+   "reasoning": "Voted for Maryland Abortion Care Access Act (2023); backed reproductive rights legislation expanding abortion access statewide."
+  },
+  {
+   "politician": "Karen Toles",
+   "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "cited_slug": "toles01",
+   "tenure_from": "2022-01-12",
+   "instrument": "Blueprint for Maryland's Future",
+   "instrument_sessions": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "sessions_in_tenure": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "IN_TENURE_RESCREENED",
+   "sponsor_evidence": [
+    {
+     "session": "2024RS",
+     "number": "HB1082",
+     "title": "Blueprint for Maryland's Future Implementation - Funding for Implementation Coordinators",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1082?ys=2024RS"
+    }
+   ],
+   "needs_rollcall": false,
+   "reasoning": "Voted against school voucher legislation; backed Blueprint for Maryland's Future public school funding."
+  },
+  {
+   "politician": "Kent Roberson",
+   "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "cited_slug": "roberson01",
+   "tenure_from": "2023-05-30",
+   "instrument": "Maryland Abortion Care Access Act",
+   "instrument_sessions": [
+    "2022"
+   ],
+   "sessions_in_tenure": [],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "PRE_TENURE_CONFIRMED",
+   "sponsor_evidence": [],
+   "needs_rollcall": false,
+   "reasoning": "Voted for Maryland Abortion Care Access Act (2023); supported reproductive rights legislation expanding abortion access."
+  },
+  {
+   "politician": "Kent Roberson",
+   "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "cited_slug": "roberson01",
+   "tenure_from": "2023-05-30",
+   "instrument": "Blueprint for Maryland's Future",
+   "instrument_sessions": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "sessions_in_tenure": [
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "IN_TENURE_RESCREENED",
+   "sponsor_evidence": [],
+   "needs_rollcall": true,
+   "reasoning": "Voted against school voucher legislation; backed public education funding through Blueprint for Maryland's Future."
+  },
+  {
+   "politician": "Kym Taylor",
+   "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "cited_slug": "taylor03",
+   "tenure_from": "2023-01-11",
+   "instrument": "Maryland Abortion Care Access Act",
+   "instrument_sessions": [
+    "2022"
+   ],
+   "sessions_in_tenure": [],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "PRE_TENURE_CONFIRMED",
+   "sponsor_evidence": [],
+   "needs_rollcall": false,
+   "reasoning": "Voted for Maryland Abortion Care Access Act (2023); supported reproductive rights legislation expanding abortion access statewide."
+  },
+  {
+   "politician": "Kym Taylor",
+   "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "cited_slug": "taylor03",
+   "tenure_from": "2023-01-11",
+   "instrument": "Blueprint for Maryland's Future",
+   "instrument_sessions": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "sessions_in_tenure": [
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "IN_TENURE_RESCREENED",
+   "sponsor_evidence": [],
+   "needs_rollcall": true,
+   "reasoning": "Voted against school voucher legislation; backed public school funding through Blueprint for Maryland's Future implementation."
+  },
+  {
+   "politician": "Mark Edelson",
+   "politician_id": "bec4b395-bb4b-4740-ac1c-8e89f12608a2",
+   "topic": "Fossil Fuel Policy",
+   "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "cited_slug": "edelson01",
+   "tenure_from": "2023-01-11",
+   "instrument": "Limitations and Climate Alignment Act",
+   "instrument_sessions": [
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "sessions_in_tenure": [
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "claim_verb": "sponsored",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "IN_TENURE_RESCREENED",
+   "sponsor_evidence": [
+    {
+     "session": "2024RS",
+     "number": "HB0836",
+     "title": "Major Highway Capacity Expansion Projects - Impact Assessments and Workgroup (Transportation and Climate Alignment Act of 2024)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0836?ys=2024RS"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB0084",
+     "title": "Transportation – Major Highway Capacity Expansion Projects and Impact Assessments (Transportation and Climate Alignment Act of 2025)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0084?ys=2025RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0001",
+     "title": "Investor-Owned Electric, Gas, and Gas and Electric Companies - Cost Recovery - Limitations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0001?ys=2026RS"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0437",
+     "title": "Transportation - Major Highway Capacity Expansion Projects and Impact Assessments (Transportation and Climate Alignment Act of 2026)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0437?ys=2026RS"
+    }
+   ],
+   "needs_rollcall": false,
+   "reasoning": "Edelson sponsored Investor-Owned Electric Gas and Gas and Electric Companies - Cost Recovery - Limitations and Climate Alignment Act — supporting fossil fuel cost accountability and clean energy transition."
+  },
+  {
+   "politician": "Mary A. Lehman",
+   "politician_id": "251a2047-372b-480e-aa09-231f9a5edeca",
+   "topic": "Immigration and Treatment of Immigrants",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "cited_slug": "lehman01",
+   "tenure_from": "2019-01-09",
+   "instrument": "Maryland RELIEF Act",
+   "instrument_sessions": [
+    "2021"
+   ],
+   "sessions_in_tenure": [
+    "2021"
+   ],
+   "claim_verb": "supported/backed",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "IN_TENURE_RESCREENED",
+   "sponsor_evidence": [],
+   "needs_rollcall": true,
+   "reasoning": "Supported Maryland RELIEF Act and immigration services legislation; backed community college tuition equity for undocumented students (in-state tuition)."
+  },
+  {
+   "politician": "Sara Love",
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic": "Childcare Affordability & Access",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "cited_slug": "love02",
+   "tenure_from": "2019-01-09",
+   "instrument": "Blueprint for Maryland's Future",
+   "instrument_sessions": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "sessions_in_tenure": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "claim_verb": "supported/backed",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "IN_TENURE_RESCREENED",
+   "sponsor_evidence": [],
+   "needs_rollcall": true,
+   "reasoning": "Love has been a champion for childcare access and affordability. She supported the Blueprint for Maryland's Future which includes childcare investments and pre-K expansion."
+  },
+  {
+   "politician": "Sara Love",
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic": "Medicare / Medicaid",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "cited_slug": "love02",
+   "tenure_from": "2019-01-09",
+   "instrument_sessions": null,
+   "sessions_in_tenure": [],
+   "claim_verb": "voted",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "NEEDS_MANUAL",
+   "sponsor_evidence": [],
+   "needs_rollcall": false,
+   "reasoning": "Love supports protecting and expanding Medicaid. She voted YES on SB 539 (2023) expanding Medicaid access and has consistently backed healthcare safety net programs."
+  },
+  {
+   "politician": "Sara Love",
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "cited_slug": "love02",
+   "tenure_from": "2019-01-09",
+   "instrument": "Blueprint for Maryland's Future",
+   "instrument_sessions": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "sessions_in_tenure": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "claim_verb": "supported/backed",
+   "original_verdict": "PRE_TENURE_ALL_BILLS",
+   "verdict": "IN_TENURE_RESCREENED",
+   "sponsor_evidence": [],
+   "needs_rollcall": true,
+   "reasoning": "Love opposes school vouchers that divert public school funding to private institutions. She is a strong supporter of Maryland's public school system and the Blueprint for Maryland's Future."
+  }
+ ]
+}
