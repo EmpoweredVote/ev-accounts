@@ -1,0 +1,1528 @@
+{
+  "migration": "1685_resource_md_stances_to_named_bills",
+  "generated": "pre-change snapshot taken from the live DB",
+  "rule": "Each row named a Maryland Act/bill in its voter-facing reasoning; the legislator's own mgaleg slug was found in that bill's \"Sponsored by\" list on mgaleg. The specific bill page is prepended to sources. Stance values untouched.",
+  "row_count": 150,
+  "rows": [
+    {
+      "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Jack Bailey",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bailey01",
+        "https://ballotpedia.org/Jack_Bailey_(Maryland)"
+      ],
+      "reasoning": "Bailey represents a district dependent on agriculture and fossil fuel-adjacent industries. He has been skeptical of aggressive climate legislation and voted against aspects of Maryland's Climate Solutions Now Act."
+    },
+    {
+      "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "Joanne C. Benson",
+      "topic": "Public Safety Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+        "https://ballotpedia.org/Joanne_Benson"
+      ],
+      "reasoning": "Benson supports a balanced public safety approach emphasizing prevention, mental health resources, and accountability alongside enforcement. She backed the Maryland Police Accountability Act."
+    },
+    {
+      "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+      "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+      "full_name": "Joanne C. Benson",
+      "topic": "Police Accountability",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+        "https://ballotpedia.org/Joanne_Benson"
+      ],
+      "reasoning": "Benson supported the Maryland Police Accountability Act of 2021 and police reform legislation including officer discipline reforms and civilian oversight."
+    },
+    {
+      "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Cheryl C. Kagan",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+        "https://ballotpedia.org/Cheryl_C._Kagan"
+      ],
+      "reasoning": "Kagan backed the Climate Solutions Now Act and consistently votes for climate legislation as a Montgomery County Democrat. She supports renewable energy transition and emissions reduction mandates."
+    },
+    {
+      "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Cheryl C. Kagan",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+        "https://ballotpedia.org/Cheryl_C._Kagan"
+      ],
+      "reasoning": "Kagan opposes fossil fuel expansion and supports transitioning Maryland to clean energy. She voted for the Climate Solutions Now Act's carbon reduction requirements."
+    },
+    {
+      "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Benjamin F. Kramer",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+        "https://ballotpedia.org/Benjamin_Kramer"
+      ],
+      "reasoning": "Kramer backed Maryland's Climate Solutions Now Act and consistently supports climate action legislation. He is a Montgomery County Democrat with a strong environmental record."
+    },
+    {
+      "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Jim Rosapepe",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+        "https://ballotpedia.org/Jim_Rosapepe"
+      ],
+      "reasoning": "Rosapepe backed Maryland's Climate Solutions Now Act and supports clean energy transition. He has championed climate action as part of his broader economic development agenda."
+    },
+    {
+      "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Ron Watson",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+        "https://ballotpedia.org/Ron_Watson_(Maryland)"
+      ],
+      "reasoning": "Watson backed Maryland's Climate Solutions Now Act and supports clean energy transition. He supports environmental justice measures for communities of color in PG County."
+    },
+    {
+      "politician_id": "bec4b395-bb4b-4740-ac1c-8e89f12608a2",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Mark Edelson",
+      "topic": "Affordable Housing",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/edelson01"
+      ],
+      "reasoning": "Edelson sponsored Land Use - Permitting - Development Rights (Maryland Housing Certainty Act) — supports streamlining permitting for housing development; balanced market-rate plus affordability approach."
+    },
+    {
+      "politician_id": "bec4b395-bb4b-4740-ac1c-8e89f12608a2",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "Mark Edelson",
+      "topic": "Public Safety Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/edelson01"
+      ],
+      "reasoning": "Edelson sponsored Police Training - Autism and Dementia (LEAD Act of 2026) — investing in police training for special populations — balanced approach with accountability and de-escalation investment."
+    },
+    {
+      "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Malcolm Augustine",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/augustine01",
+        "https://ballotpedia.org/Malcolm_Augustine"
+      ],
+      "reasoning": "Augustine supported the Climate Solutions Now Act (2022) and has backed clean energy and environmental legislation, prioritizing environmental justice for Prince George County communities."
+    },
+    {
+      "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Malcolm Augustine",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/augustine01",
+        "https://ballotpedia.org/Malcolm_Augustine"
+      ],
+      "reasoning": "Augustine has backed Maryland clean energy transition and opposed fossil fuel expansion, consistent with his support for the Climate Solutions Now Act."
+    },
+    {
+      "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Pamela Beidle",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/beidle01",
+        "https://ballotpedia.org/Pamela_Beidle"
+      ],
+      "reasoning": "Beidle supported the Climate Solutions Now Act (SB528/HB1257, 2022) which set net-zero by 2045 greenhouse gas reduction goals for Maryland, and has backed clean energy legislation."
+    },
+    {
+      "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Pamela Beidle",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/beidle01",
+        "https://ballotpedia.org/Pamela_Beidle"
+      ],
+      "reasoning": "Beidle has backed Maryland clean energy transition legislation and opposed expansion of fossil fuel infrastructure, supporting the state Climate Solutions Now Act goals."
+    },
+    {
+      "politician_id": "e2ca1bfd-255d-417b-a9d7-424e6c10749d",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Jason C. Gallion",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/gallion01",
+        "https://ballotpedia.org/Jason_Gallion"
+      ],
+      "reasoning": "Gallion has been skeptical of aggressive climate mandates, opposing the Climate Solutions Now Act and preferring market-based approaches over government-imposed emissions standards."
+    },
+    {
+      "politician_id": "38404814-7be0-40e3-b044-062f98b2a5b0",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Mary Washington",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington01",
+        "https://ballotpedia.org/Mary_Washington"
+      ],
+      "reasoning": "Washington has been an environmental champion, supporting the Climate Solutions Now Act (2022) and pushing for stronger climate action including environmental justice for Baltimore City communities."
+    },
+    {
+      "politician_id": "03a161cf-1da8-4c34-9c08-d91bbf958987",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "Elizabeth Embry",
+      "topic": "Public Safety Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/embry01"
+      ],
+      "reasoning": "Embry sponsored Family and Law Enforcement Protection Act and handgun roster reform — balanced approach investing in community protection while also addressing gun safety; slightly services-oriented."
+    },
+    {
+      "politician_id": "192e8ffb-e576-41f1-915a-dbc0c30d4769",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "Diana M. Fennell",
+      "topic": "Public Safety Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fennell01"
+      ],
+      "reasoning": "Fennell sponsored Public Safety - Law Enforcement - Use of Body-Worn Cameras and Police Training - Autism and Dementia (LEAD Act) — police accountability and training investment; balanced approach."
+    },
+    {
+      "politician_id": "192e8ffb-e576-41f1-915a-dbc0c30d4769",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Diana M. Fennell",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fennell01"
+      ],
+      "reasoning": "Fennell sponsored Investor-Owned Electric Gas and Gas and Electric Companies - Utility Rate Changes (Public Service Company Transparency Act) — promoting utility rate transparency as a step toward clean energy accountability."
+    },
+    {
+      "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "full_name": "Lauren Arikan",
+      "topic": "Reproductive Rights and Abortion Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/arikan01"
+      ],
+      "reasoning": "Arikan co-sponsored the Women's Freedom From Coercion Act prohibiting causing ingestion of an abortion-inducing drug without consent — strongly opposing abortion access in line with House Republican caucus."
+    },
+    {
+      "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "full_name": "Lauren Arikan",
+      "topic": "Transgender Athletes",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/arikan01"
+      ],
+      "reasoning": "Arikan co-sponsored the Fairness in Girls' Sports Act designating athletic teams and locker rooms based on biological sex — strongly opposing transgender inclusion in women's sports."
+    },
+    {
+      "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Lauren Arikan",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/arikan01"
+      ],
+      "reasoning": "Arikan co-sponsored the cross-sex hormone therapy for minors restriction and Fairness in Girls' Sports Act — strongly opposing expansions of LGBTQ+ civil rights."
+    },
+    {
+      "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Lauren Arikan",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/arikan01"
+      ],
+      "reasoning": "Arikan co-sponsored the Energy Equality Act prohibiting energy source restrictions and electric/gas surcharge repeal and Freedom From Monopolies Act — strongly supporting fossil fuel access."
+    },
+    {
+      "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Lauren Arikan",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/arikan01"
+      ],
+      "reasoning": "Arikan co-sponsored the No Income Taxes on Tips Act and Corporate Income Tax Rate Reduction and income tax retirement income and overtime subtractions — strongly supporting tax cuts."
+    },
+    {
+      "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Lauren Arikan",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/arikan01"
+      ],
+      "reasoning": "Arikan co-sponsored the Secure the Vote Act of 2026 — supporting voter ID and election security requirements."
+    },
+    {
+      "politician_id": "d049cf3e-6577-4f8d-ba7e-768ac2b78d66",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "full_name": "Terry L. Baker",
+      "topic": "Reproductive Rights and Abortion Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/baker04"
+      ],
+      "reasoning": "Baker sponsored the Women's Freedom From Coercion Act (HB) prohibiting causing ingestion of an abortion-inducing drug without consent — indicating anti-abortion stance and aligning with House Republican caucus."
+    },
+    {
+      "politician_id": "d049cf3e-6577-4f8d-ba7e-768ac2b78d66",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Terry L. Baker",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/baker04"
+      ],
+      "reasoning": "Baker sponsored repeal of Maryland's Building Energy Performance Standards and co-sponsored Energy Performance Standards exemptions and the Energy Equality Act of 2026 prohibiting energy source restrictions — strongly opposing climate mandates."
+    },
+    {
+      "politician_id": "d049cf3e-6577-4f8d-ba7e-768ac2b78d66",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Terry L. Baker",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/baker04"
+      ],
+      "reasoning": "Baker co-sponsored prohibition on electric companies collecting environmental surcharges and sponsored the Energy Equality Act of 2026 prohibiting consumer goods restrictions based on energy source — strongly supporting fossil fuel access."
+    },
+    {
+      "politician_id": "d049cf3e-6577-4f8d-ba7e-768ac2b78d66",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Terry L. Baker",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/baker04"
+      ],
+      "reasoning": "Baker co-sponsored SAVE Our Elections Act (citizenship verification for voter registration) and in-person voting proof of identity requirements and the Secure the Vote Act of 2026 — strongly supporting voter ID laws."
+    },
+    {
+      "politician_id": "d049cf3e-6577-4f8d-ba7e-768ac2b78d66",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "full_name": "Terry L. Baker",
+      "topic": "State Redistricting and Gerrymandering",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/baker04"
+      ],
+      "reasoning": "Baker co-sponsored the Fair Districts for Maryland Act establishing an independent redistricting and apportionment commission."
+    },
+    {
+      "politician_id": "d049cf3e-6577-4f8d-ba7e-768ac2b78d66",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Terry L. Baker",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/baker04"
+      ],
+      "reasoning": "Baker co-sponsored the Corporate Income Tax Rate Reduction (Economic Competitiveness Act of 2026) — supporting tax cuts for businesses."
+    },
+    {
+      "politician_id": "d049cf3e-6577-4f8d-ba7e-768ac2b78d66",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "Terry L. Baker",
+      "topic": "Public Safety Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/baker04"
+      ],
+      "reasoning": "Baker co-sponsored the sanctuary policy prohibition and immigration enforcement notification bills alongside Juvenile Offender Protection Act — law enforcement-first approach to public safety."
+    },
+    {
+      "politician_id": "dfb9ae21-4605-4c58-94e8-84b1eb1a30c1",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "Kris Fair",
+      "topic": "Public Safety Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fair01"
+      ],
+      "reasoning": "Fair sponsored the Comprehensive Community Safety Funding Act — supporting investment in non-police public safety alternatives alongside enforcement."
+    },
+    {
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "full_name": "Robin L. Grammer, Jr.",
+      "topic": "Transgender Athletes",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/grammer01"
+      ],
+      "reasoning": "Grammer sponsored the Fairness in Girls' Sports Act designating interscholastic teams based on sex at birth and co-sponsored cross-sex hormone therapy for minors restrictions — strongly opposing transgender inclusion in sports."
+    },
+    {
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Robin L. Grammer, Jr.",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/grammer01"
+      ],
+      "reasoning": "Grammer co-sponsored the Energy Equality Act (prohibiting energy source restrictions on consumer goods) and electric/gas customer bill surcharge repeal — strongly supporting fossil fuel access."
+    },
+    {
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Robin L. Grammer, Jr.",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/grammer01"
+      ],
+      "reasoning": "Grammer co-sponsored the Corporate Income Tax Rate Reduction and sponsored No Income Taxes on Tips Act — strongly supporting tax cuts."
+    },
+    {
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Robin L. Grammer, Jr.",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/grammer01"
+      ],
+      "reasoning": "Grammer co-sponsored the Secure the Vote Act of 2026 — supporting voter ID and election integrity restrictions."
+    },
+    {
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "full_name": "Robin L. Grammer, Jr.",
+      "topic": "Economic Development Incentives",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/grammer01"
+      ],
+      "reasoning": "Grammer sponsored the Property Rights Protection Act repealing eminent domain and condemnation authority — strongly opposing government intervention in property markets."
+    },
+    {
+      "politician_id": "c0abb4fa-be8d-4fbe-9b6d-6319a8ecd255",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "full_name": "Kenneth Kerr",
+      "topic": "Reproductive Rights and Abortion Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kerr01"
+      ],
+      "reasoning": "Kerr sponsored the Pregnancy Outcome Protection Act prohibiting certain actions related to pregnancy loss — supporting reproductive protections consistent with a pro-choice Democratic position."
+    },
+    {
+      "politician_id": "c0abb4fa-be8d-4fbe-9b6d-6319a8ecd255",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Kenneth Kerr",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kerr01"
+      ],
+      "reasoning": "Kerr co-sponsored the Lower Bills and Local Power Act of 2026 reforming electricity transmission and expanding energy storage — supporting clean energy transition over fossil fuel continuation."
+    },
+    {
+      "politician_id": "c0abb4fa-be8d-4fbe-9b6d-6319a8ecd255",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Kenneth Kerr",
+      "topic": "Affordable Housing",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kerr01"
+      ],
+      "reasoning": "Kerr co-sponsored the Maryland Transit and Housing Opportunity Act on transit-oriented development — supporting increased density near transit while maintaining some affordability standards."
+    },
+    {
+      "politician_id": "c0abb4fa-be8d-4fbe-9b6d-6319a8ecd255",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "full_name": "Kenneth Kerr",
+      "topic": "Healthcare Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kerr01"
+      ],
+      "reasoning": "Kerr sponsored HIV prevention and treatment (Rapid Testing and Preventive Care Act) and the Public Health Reform Act — supporting expanded government healthcare access."
+    },
+    {
+      "politician_id": "ba85b633-32cf-4617-923c-3a325f39894e",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "full_name": "Ric Metzgar",
+      "topic": "Religious Freedom",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/metzgar01"
+      ],
+      "reasoning": "Metzgar sponsored the Ten Commandments Monument Display Act at the State House and school chaplain volunteer aide legislation — strongly supporting expansive religious expression in government settings."
+    },
+    {
+      "politician_id": "ba85b633-32cf-4617-923c-3a325f39894e",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Ric Metzgar",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/metzgar01"
+      ],
+      "reasoning": "Metzgar co-sponsored prohibition on electric company environmental surcharges and the Freedom From Monopolies Act for retail electricity and gas — supporting fossil fuel market access."
+    },
+    {
+      "politician_id": "ba85b633-32cf-4617-923c-3a325f39894e",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Ric Metzgar",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/metzgar01"
+      ],
+      "reasoning": "Metzgar co-sponsored the Secure the Vote Act of 2026 and in-person voting proof of identity — supporting voter ID and election integrity restrictions."
+    },
+    {
+      "politician_id": "ba85b633-32cf-4617-923c-3a325f39894e",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "full_name": "Ric Metzgar",
+      "topic": "State Redistricting and Gerrymandering",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/metzgar01"
+      ],
+      "reasoning": "Metzgar co-sponsored the Fair Districts for Maryland Act establishing an independent redistricting commission."
+    },
+    {
+      "politician_id": "ba85b633-32cf-4617-923c-3a325f39894e",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Ric Metzgar",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/metzgar01"
+      ],
+      "reasoning": "Metzgar co-sponsored the Corporate Income Tax Rate Reduction (Economic Competitiveness Act of 2026) — supporting business tax cuts."
+    },
+    {
+      "politician_id": "ba85b633-32cf-4617-923c-3a325f39894e",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "full_name": "Ric Metzgar",
+      "topic": "Criminal Justice Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/metzgar01"
+      ],
+      "reasoning": "Metzgar co-sponsored the first-degree murder diminution credit prohibition and Juvenile Justice Restoration Act but also co-sponsored the Incarcerated Individual Apprenticeship Pilot Program — primarily punishment-focused with some rehabilitation support."
+    },
+    {
+      "politician_id": "f5224e0c-0761-4ca7-a889-ed44517e2b91",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "full_name": "Ryan Nawrocki",
+      "topic": "Transgender Athletes",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/nawrocki01"
+      ],
+      "reasoning": "Nawrocki co-sponsored the Fairness in Girls' Sports Act designating interscholastic teams and locker rooms based on sex — strongly opposing transgender inclusion in athletics."
+    },
+    {
+      "politician_id": "f5224e0c-0761-4ca7-a889-ed44517e2b91",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Ryan Nawrocki",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/nawrocki01"
+      ],
+      "reasoning": "Nawrocki co-sponsored the cross-sex hormone therapy for minors restriction and Fairness in Girls' Sports Act — opposing LGBTQ+ civil rights expansions."
+    },
+    {
+      "politician_id": "f5224e0c-0761-4ca7-a889-ed44517e2b91",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Ryan Nawrocki",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/nawrocki01"
+      ],
+      "reasoning": "Nawrocki co-sponsored the Energy Equality Act prohibiting energy source restrictions and electric/gas surcharge repeal and the Freedom From Monopolies Act — strongly supporting fossil fuel market access."
+    },
+    {
+      "politician_id": "f5224e0c-0761-4ca7-a889-ed44517e2b91",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Ryan Nawrocki",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/nawrocki01"
+      ],
+      "reasoning": "Nawrocki sponsored the No Income Taxes on Tips Act and co-sponsored income tax retirement income subtraction and state transfer tax temporary suspension — strongly supporting tax cuts."
+    },
+    {
+      "politician_id": "f5224e0c-0761-4ca7-a889-ed44517e2b91",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Ryan Nawrocki",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/nawrocki01"
+      ],
+      "reasoning": "Nawrocki co-sponsored the Secure the Vote Act of 2026 — supporting voter ID and election security restrictions."
+    },
+    {
+      "politician_id": "f5224e0c-0761-4ca7-a889-ed44517e2b91",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Ryan Nawrocki",
+      "topic": "School Vouchers & Public Education Funding",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/nawrocki01"
+      ],
+      "reasoning": "Nawrocki sponsored the Right to Learn Act (alternative school options) — supporting school choice though not specifically voucher legislation."
+    },
+    {
+      "politician_id": "18c6abb4-7b4b-4e21-a7fe-008e43d6f3e5",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Matthew J. Schindler",
+      "topic": "Affordable Housing",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/schindler01"
+      ],
+      "reasoning": "Schindler co-sponsored the Maryland Housing Certainty Act on development rights and land use permitting — supporting measured housing development."
+    },
+    {
+      "politician_id": "5946ad0c-ddf5-4674-840e-6968105042cd",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "full_name": "Karen Simpson",
+      "topic": "Deportation Priorities",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simpson01"
+      ],
+      "reasoning": "Simpson co-sponsored both the immigration enforcement agreements prohibition bill and the Community Trust Act prohibiting correctional services from cooperating with immigration enforcement — strongly opposing deportation enforcement."
+    },
+    {
+      "politician_id": "5946ad0c-ddf5-4674-840e-6968105042cd",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "Karen Simpson",
+      "topic": "Public Safety Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simpson01"
+      ],
+      "reasoning": "Simpson sponsored the Youth Delinquency Prevention Fund and police training on autism and dementia (LEAD Act) — supporting social services and training alongside enforcement as a public safety approach."
+    },
+    {
+      "politician_id": "5946ad0c-ddf5-4674-840e-6968105042cd",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Karen Simpson",
+      "topic": "Affordable Housing",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simpson01"
+      ],
+      "reasoning": "Simpson co-sponsored the Maryland Transit and Housing Opportunity Act on transit-oriented development — supporting increased density near transit to address housing needs."
+    },
+    {
+      "politician_id": "5946ad0c-ddf5-4674-840e-6968105042cd",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Karen Simpson",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simpson01"
+      ],
+      "reasoning": "Simpson sponsored the African American Heritage Preservation Program alterations and Exonerated 5 Act and Survivor Reporting Reform Act — strongly championing civil rights and racial justice."
+    },
+    {
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "full_name": "Kathy Szeliga",
+      "topic": "Transgender Athletes",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/szeliga"
+      ],
+      "reasoning": "Szeliga co-sponsored the Fairness in Girls' Sports Act designating athletic teams and locker rooms based on biological sex — strongly opposing transgender inclusion in women's sports."
+    },
+    {
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Kathy Szeliga",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/szeliga"
+      ],
+      "reasoning": "Szeliga co-sponsored the cross-sex hormone therapy for minors restriction and Fairness in Girls' Sports Act — strongly opposing expansions of LGBTQ+ civil rights."
+    },
+    {
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Kathy Szeliga",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/szeliga"
+      ],
+      "reasoning": "Szeliga co-sponsored the Energy Equality Act prohibiting energy source restrictions and electric/gas surcharge repeal — strongly supporting fossil fuel access."
+    },
+    {
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Kathy Szeliga",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/szeliga"
+      ],
+      "reasoning": "Szeliga co-sponsored the No Income Taxes on Tips Act and Corporate Income Tax Rate Reduction and income tax overtime and retirement income subtractions — strongly supporting tax cuts."
+    },
+    {
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Kathy Szeliga",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/szeliga"
+      ],
+      "reasoning": "Szeliga co-sponsored the Secure the Vote Act of 2026 — supporting voter ID and election security requirements."
+    },
+    {
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Kathy Szeliga",
+      "topic": "School Vouchers & Public Education Funding",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/szeliga"
+      ],
+      "reasoning": "Szeliga co-sponsored the Right to Learn Act providing alternative school options — supporting school choice without specifically endorsing voucher programs."
+    },
+    {
+      "politician_id": "cdf746c1-8311-416b-9ad3-2684a83b6992",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "full_name": "William Valentine",
+      "topic": "Reproductive Rights and Abortion Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valentine01"
+      ],
+      "reasoning": "Valentine co-sponsored the Women's Freedom From Coercion Act prohibiting causing ingestion of an abortion-inducing drug without consent — aligning with House Republican anti-abortion caucus from Washington/Frederick Counties."
+    },
+    {
+      "politician_id": "cdf746c1-8311-416b-9ad3-2684a83b6992",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "William Valentine",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valentine01"
+      ],
+      "reasoning": "Valentine co-sponsored Building Energy Performance Standards repeal and Vehicle Emissions Inspection Program repeal and the Energy Equality Act of 2026 — strongly opposing climate mandates."
+    },
+    {
+      "politician_id": "cdf746c1-8311-416b-9ad3-2684a83b6992",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "William Valentine",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valentine01"
+      ],
+      "reasoning": "Valentine co-sponsored the Energy Equality Act (prohibiting energy source restrictions on consumer goods) and electric company environmental surcharge prohibition and natural gas discount legislation."
+    },
+    {
+      "politician_id": "cdf746c1-8311-416b-9ad3-2684a83b6992",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "full_name": "William Valentine",
+      "topic": "State Redistricting and Gerrymandering",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valentine01"
+      ],
+      "reasoning": "Valentine co-sponsored the Fair Districts for Maryland Act establishing an independent redistricting commission."
+    },
+    {
+      "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "full_name": "Jessica Feldmark",
+      "topic": "Reproductive Rights and Abortion Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldmark01",
+        "https://ballotpedia.org/Jessica_Feldmark"
+      ],
+      "reasoning": "Feldmark co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) and has consistently supported abortion access legislation throughout her Maryland House tenure."
+    },
+    {
+      "politician_id": "69bf6043-4546-4804-ae04-311cff54a986",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "full_name": "Julian Ivey",
+      "topic": "Healthcare Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ivey01"
+      ],
+      "reasoning": "Ivey sponsored Institutions of Higher Education - Provision of Menstrual Hygiene Products - Requirement and Civil Actions - Stop Silencing Survivors Act — expanding health and wellness access on campuses."
+    },
+    {
+      "politician_id": "9285f590-79b5-48de-a1c0-a022629e6ebb",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Robbyn Lewis",
+      "topic": "Affordable Housing",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lewis01"
+      ],
+      "reasoning": "Lewis sponsored Landlord and Tenant - Residential Leases - Prospective Tenant Criminal History Records Check (Maryland Fair Chance Housing Act) — banning criminal background check discrimination in housing; strong tenant protection stance."
+    },
+    {
+      "politician_id": "fcfa1844-032e-4dba-9ae0-c52b82447fa8",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "full_name": "Aletheia McCaskill",
+      "topic": "Healthcare Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccaskill01"
+      ],
+      "reasoning": "McCaskill sponsored Hospitals - Clinical Staffing Committees and Plans - Establishment (Safe Staffing Act of 2026) and Maryland Department of Health - Caregiver Resource Webpage — supports expanded healthcare standards and caregiver support."
+    },
+    {
+      "politician_id": "5d17e3ea-9d63-4a96-8848-9e293ac05fdb",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Kim Ross",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ross01",
+        "https://ballotpedia.org/Kim_Ross"
+      ],
+      "reasoning": "Ross co-sponsored the CROWN Act and has supported comprehensive civil rights legislation including anti-discrimination protections."
+    },
+    {
+      "politician_id": "df1a05a1-2a70-4e40-a0c6-5b3f81632c7e",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Sheila Ruth",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ruth01"
+      ],
+      "reasoning": "Ruth sponsored PFAS Chemicals phase-outs and Climate Crimes Accountability Act — strongly opposed to harmful industrial pollutants; consistent with opposing new fossil fuel infrastructure."
+    },
+    {
+      "politician_id": "848ac881-004b-436a-9a17-dfacbd33de5a",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "full_name": "Stephanie Smith",
+      "topic": "Criminal Justice Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith03"
+      ],
+      "reasoning": "Smith sponsored Criminal Procedure - Sentencing - Domestic Violence as Mitigating Factor (PATH Act) and Criminal Law - Drug Paraphernalia Repeal and Criminal Law - Self-Defense Prior Acts by Victim — comprehensive criminal justice reform."
+    },
+    {
+      "politician_id": "848ac881-004b-436a-9a17-dfacbd33de5a",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Stephanie Smith",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith03"
+      ],
+      "reasoning": "Smith sponsored Employment Discrimination - Reasonable Accommodations - Disabilities Due to Childbirth and Menopause and Civil Actions - Stop Silencing Survivors Act and Commission on House of Reformation — strong civil rights champion."
+    },
+    {
+      "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "full_name": "Jen Terrasa",
+      "topic": "Reproductive Rights and Abortion Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/terrasa01",
+        "https://ballotpedia.org/Jen_Terrasa"
+      ],
+      "reasoning": "Terrasa co-sponsored HB 1171 (Pregnant Person's Freedom Act of 2024) and has consistently supported abortion access legislation throughout her Maryland House tenure."
+    },
+    {
+      "politician_id": "a4b61b58-9006-4e58-952d-abeb2521cda0",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Courtney Watson",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+        "https://ballotpedia.org/Courtney_Watson"
+      ],
+      "reasoning": "Watson supported the Climate Solutions Now Act and Maryland's offshore wind expansion — favors aggressive climate action and clean energy transition."
+    },
+    {
+      "politician_id": "656a8bc9-348e-4ffc-819c-2f4611b3ddc8",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Joshua J. Stonko",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stonko01"
+      ],
+      "reasoning": "Stonko sponsored Corporate Income Tax - Rate Reduction (Economic Competitiveness Act of 2026) — directly advocating for corporate tax cuts; strong conservative tax reduction stance."
+    },
+    {
+      "politician_id": "656a8bc9-348e-4ffc-819c-2f4611b3ddc8",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "full_name": "Joshua J. Stonko",
+      "topic": "Economic Development Incentives",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stonko01"
+      ],
+      "reasoning": "Stonko sponsored Office of Regulatory Management and State Government Authorizations (regulatory reduction) and Economic Competitiveness Act — strongly favors deregulation and reducing government burden on business."
+    },
+    {
+      "politician_id": "a92085b6-642a-4cf6-a73e-c985a6fd09fa",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Deni Taveras",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taveras01"
+      ],
+      "reasoning": "Taveras sponsored Net Energy Metering Solar legislation and Affordable Solar Act and EV charging infrastructure — actively expanding renewable alternatives to fossil fuels."
+    },
+    {
+      "politician_id": "a92085b6-642a-4cf6-a73e-c985a6fd09fa",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "full_name": "Deni Taveras",
+      "topic": "Medicare / Medicaid",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taveras01"
+      ],
+      "reasoning": "Taveras sponsored Maryland Medical Assistance Program - Coverage for Orthoses and Prostheses (So Every Body Can Move Act) — expanding Medicaid coverage for prosthetics and mobility devices."
+    },
+    {
+      "politician_id": "92075c9b-6c7e-4763-981f-5a42a8afddf5",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "full_name": "Caylin Young",
+      "topic": "Healthcare Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/young05"
+      ],
+      "reasoning": "Young sponsored Maryland Medical Assistance Program - Coverage for Orthoses and Prostheses (So Every Body Can Move Act) — expanding Medicaid coverage for prosthetics and mobility devices."
+    },
+    {
+      "politician_id": "71542618-59c8-4b06-a765-e3df60cca763",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "full_name": "Mark N. Fisher",
+      "topic": "Transgender Athletes",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fisher?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Education - Fairness in Girls' Sports Act (2026) restricting transgender athletes from competing in gender-aligned teams and locker rooms; strongly opposes transgender inclusion in sports."
+    },
+    {
+      "politician_id": "71542618-59c8-4b06-a765-e3df60cca763",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Mark N. Fisher",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fisher?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored No Income Taxes on Tips Act; sponsored income tax subtraction for overtime; sponsored precious metal bullion sales tax exemption; sponsored property tax moratorium and state transfer tax suspension; strongly favors tax cuts and lower government revenue."
+    },
+    {
+      "politician_id": "71542618-59c8-4b06-a765-e3df60cca763",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Mark N. Fisher",
+      "topic": "School Vouchers & Public Education Funding",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fisher?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Right to Learn Act - Education Primary and Secondary Schools Alternative School Options (2026); supports school choice and alternatives to traditional public schools."
+    },
+    {
+      "politician_id": "71542618-59c8-4b06-a765-e3df60cca763",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Mark N. Fisher",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fisher?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Secure the Vote Act of 2026; sponsored Municipal Elections - Voter Registration - List and Qualifications; supports voter ID and stricter voter roll management rather than expanding access."
+    },
+    {
+      "politician_id": "71542618-59c8-4b06-a765-e3df60cca763",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Mark N. Fisher",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fisher?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Consumer Goods - Restrictions Based on Energy Source - Prohibition (Energy Equality Act of 2026) preventing appliance bans; sponsored electric company bill surcharge repeal; opposes clean energy mandates that restrict fossil fuel use."
+    },
+    {
+      "politician_id": "71542618-59c8-4b06-a765-e3df60cca763",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Mark N. Fisher",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fisher?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Moratorium on Construction of New Data Centers (conservative tech opposition); sponsored Freedom From Monopolies Act opposing utility energy monopolies; Environment and regulatory skeptic; no sponsored climate action bills."
+    },
+    {
+      "politician_id": "71542618-59c8-4b06-a765-e3df60cca763",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "full_name": "Mark N. Fisher",
+      "topic": "Economic Development Incentives",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fisher?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Freedom From Monopolies Act for retail energy supply; sponsored repeal of utility bill surcharges; strongly favors deregulation and market competition over government-directed energy and economic policy."
+    },
+    {
+      "politician_id": "70f63959-f51d-4411-adc1-f1c429bbc397",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Jeffrie E. Long, Jr.",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/long02?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Affordable Solar Act (HB0345, 2026) expanding solar energy; sponsored Green and Renewable Energy Efficiency for Nonprofits (GREEN) Loan Program; Environment and Transportation Committee member with strong clean energy record."
+    },
+    {
+      "politician_id": "70f63959-f51d-4411-adc1-f1c429bbc397",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Jeffrie E. Long, Jr.",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/long02?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Electricity Retail Energy Modernization and Consumer Choice Act; co-sponsored solar and renewable energy bills; Environment Committee member supporting clean energy transition over fossil fuels."
+    },
+    {
+      "politician_id": "70f63959-f51d-4411-adc1-f1c429bbc397",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Jeffrie E. Long, Jr.",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/long02?tab=2026RS-legislation"
+      ],
+      "reasoning": "Co-sponsored Voting Rights Act of 2026; sponsored Ballot Petition Modernization Act expanding voter access; consistently supports expanding voting access in Maryland."
+    },
+    {
+      "politician_id": "70f63959-f51d-4411-adc1-f1c429bbc397",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Jeffrie E. Long, Jr.",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/long02?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Property Tax Credit - Utility Service Expenses for Dwellings (Maryland Family Utility Tax Relief Act); supports tax relief targeted at working families and low-income residents."
+    },
+    {
+      "politician_id": "70f63959-f51d-4411-adc1-f1c429bbc397",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Jeffrie E. Long, Jr.",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/long02?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Commission on House of Reformation for Colored Children (historical racial justice); backed Fair Representation Act for county school board elections; consistent civil rights advocate."
+    },
+    {
+      "politician_id": "0e238dbf-5b4e-4e95-8a94-e02d97a136f5",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Darrell Odom",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/odom01?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Attorney General Actions and Climate Crimes Accountability Act (2026); sponsored Department of the Environment - Federal Environmental Policy Reporting; sponsored small solar incentive program; Environment and Transportation Committee member with strong climate record."
+    },
+    {
+      "politician_id": "0e238dbf-5b4e-4e95-8a94-e02d97a136f5",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "full_name": "Darrell Odom",
+      "topic": "Deportation Priorities",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/odom01?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored ICE Breaker Act (2026) restricting state law enforcement from working with federal deportation authorities; among the strongest anti-deportation enforcement stances in the MD House."
+    },
+    {
+      "politician_id": "0e238dbf-5b4e-4e95-8a94-e02d97a136f5",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "full_name": "Darrell Odom",
+      "topic": "Healthcare Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/odom01?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Veterans Mental Health Innovations Act (Ibogaine Clinical Research Grant Program, 2026); supports expanded healthcare access and innovative mental health treatments, particularly for veterans."
+    },
+    {
+      "politician_id": "0e238dbf-5b4e-4e95-8a94-e02d97a136f5",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "full_name": "Darrell Odom",
+      "topic": "Economic Development Incentives",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/odom01?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Maryland Transit Administration Reform Act; sponsored Maryland Agricultural Education Promise Fund; supports public investment in transit and agricultural/rural economic development."
+    },
+    {
+      "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Veronica Turner",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/turner01?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored HB0338 (2026) — Affordable Solar Act — expanding solar energy generating systems and solar renewable energy credits; signals strong support for clean energy transition."
+    },
+    {
+      "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Veronica Turner",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/turner01?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored commission to review racial disparities in criminal justice (HB0810, 2026); sponsored Fair Housing Act reform (HB0480); supported Voting Rights Act 2026 and civil rights protections."
+    },
+    {
+      "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Veronica Turner",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/turner01?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored HB0721 (2026) — Minimum Wage increase (Maryland Raise the Wage Act); supports progressive labor and tax policy benefiting working families."
+    },
+    {
+      "politician_id": "768ac1cf-a599-4ddb-943c-c985fafb2607",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Kriselda Valderrama",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valderrama?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored HB0706 — State Finance - Delinquent Federal Funds (Federal Obligations Enforcement Act); as Economic Matters Chair has consistently advanced progressive fiscal priorities including worker protections."
+    },
+    {
+      "politician_id": "768ac1cf-a599-4ddb-943c-c985fafb2607",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Kriselda Valderrama",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valderrama?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Asian American History accurate instruction bill (HB0993) and African American Heritage Preservation Program renaming; supports expansive civil rights and equity initiatives; PG County Democrat with strong equity record."
+    },
+    {
+      "politician_id": "916afe40-4061-476f-9a54-b271b32778d2",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Jamila J. Woods",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/woods01?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Stop Silencing Survivors Act; sponsored Commission on House of Reformation for Colored Children; sponsored African Heritage Month; Fair Housing reform co-sponsor; strong civil rights record."
+    },
+    {
+      "politician_id": "916afe40-4061-476f-9a54-b271b32778d2",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "full_name": "Jamila J. Woods",
+      "topic": "Healthcare Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/woods01?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Maryland Medical Assistance (Medicaid) maternal health pilot program; sponsored palliative care required coverage (Edna Neal Act); sponsored behavioral health AI oversight; supports expanded healthcare access."
+    },
+    {
+      "politician_id": "916afe40-4061-476f-9a54-b271b32778d2",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "full_name": "Jamila J. Woods",
+      "topic": "Economic Development Incentives",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/woods01?tab=2026RS-legislation"
+      ],
+      "reasoning": "Sponsored Maryland Broadband Opportunity and Fairness Act; sponsored property tax credits; supports targeted public investment and digital equity initiatives."
+    },
+    {
+      "politician_id": "b9c61fea-fcb1-45cc-8e2c-e5b3046b7266",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Edith J. Patterson",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/patterson03?tab=2026RS-legislation",
+        "https://ballotpedia.org/Edith_Patterson"
+      ],
+      "reasoning": "Patterson has supported the Climate Solutions Now Act and clean energy investment in Southern Maryland transitioning away from fossil fuel dependence."
+    },
+    {
+      "politician_id": "b592e432-6411-48b3-bca3-d5596d0d81e9",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Andre V. Johnson, Jr.",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson02"
+      ],
+      "reasoning": "Johnson sponsored a Maryland Energy Administration study on land-based wind energy and backed the Affordable Solar Act for solar renewable energy credits signaling preference for clean energy transition over fossil fuels."
+    },
+    {
+      "politician_id": "b592e432-6411-48b3-bca3-d5596d0d81e9",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Andre V. Johnson, Jr.",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson02"
+      ],
+      "reasoning": "Johnson co-sponsored the Attorney General Actions and Climate Crimes Accountability Act and backed renewable energy funding mechanisms — consistent with Democratic support for progressive taxation and public investment."
+    },
+    {
+      "politician_id": "b592e432-6411-48b3-bca3-d5596d0d81e9",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "full_name": "Andre V. Johnson, Jr.",
+      "topic": "Healthcare Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson02"
+      ],
+      "reasoning": "Co-sponsoring the Affordable Solar Act and correctional healthcare improvements — plus Democratic caucus alignment — reflects support for expanded government healthcare coverage."
+    },
+    {
+      "politician_id": "027a2610-1160-4525-a5c1-469fe85d46e1",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Regina T. Boyce",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/boyce01"
+      ],
+      "reasoning": "Boyce sponsored Civil Actions - Stop Silencing Survivors Act protecting sexual assault disclosure and Criminal Procedure - Protection of Identity of Victims — strong champion of civil protections for vulnerable populations."
+    },
+    {
+      "politician_id": "22610d7f-eaca-4802-b486-0e48544e6e7d",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "full_name": "Eric Ebersole",
+      "topic": "Deportation Priorities",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ebersole01"
+      ],
+      "reasoning": "Ebersole sponsored Immigration Enforcement - Expanding Sensitive Locations Notification and Guidance (Maryland Values Act of 2026) and Public Safety - Immigration Enforcement Agreements - Prohibition — strongest possible sanctuary stance."
+    },
+    {
+      "politician_id": "22610d7f-eaca-4802-b486-0e48544e6e7d",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "full_name": "Eric Ebersole",
+      "topic": "Immigration and Treatment of Immigrants",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ebersole01"
+      ],
+      "reasoning": "Ebersole sponsored two immigration protection bills (Maryland Values Act 2026 and immigration enforcement prohibition) — supports expansive immigration rights and sanctuary protections."
+    },
+    {
+      "politician_id": "22610d7f-eaca-4802-b486-0e48544e6e7d",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Eric Ebersole",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ebersole01"
+      ],
+      "reasoning": "Ebersole sponsored Affordable Solar Act and Maryland Beverage Container Recycling Program — strong support for clean energy transition and environmental programs."
+    },
+    {
+      "politician_id": "22610d7f-eaca-4802-b486-0e48544e6e7d",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Eric Ebersole",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ebersole01"
+      ],
+      "reasoning": "Ebersole sponsored Affordable Solar Act expanding solar renewable energy — favoring phasing out fossil fuel dependence through renewable energy expansion."
+    },
+    {
+      "politician_id": "22610d7f-eaca-4802-b486-0e48544e6e7d",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "full_name": "Eric Ebersole",
+      "topic": "Artificial Intelligence Oversight",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ebersole01"
+      ],
+      "reasoning": "Ebersole sponsored Education - Artificial Intelligence - Guidelines Professional Development and Collaborative (Artificial Intelligence Ready Schools Act) — supporting AI regulation and safety guidelines in education."
+    },
+    {
+      "politician_id": "bec4b395-bb4b-4740-ac1c-8e89f12608a2",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "full_name": "Mark Edelson",
+      "topic": "Deportation Priorities",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/edelson01"
+      ],
+      "reasoning": "Edelson sponsored Public Safety - Immigration Enforcement Agreements - Prohibition and Public Safety - State Law Enforcement Agencies - Hiring Restriction (ICE Breaker Act) — two separate immigration enforcement prohibition bills; the strongest possible sanctuary stance."
+    },
+    {
+      "politician_id": "bec4b395-bb4b-4740-ac1c-8e89f12608a2",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "full_name": "Mark Edelson",
+      "topic": "Immigration and Treatment of Immigrants",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/edelson01"
+      ],
+      "reasoning": "Edelson sponsored both immigration enforcement prohibition AND ICE Breaker Act preventing state agencies from cooperating with ICE — among the strongest pro-immigration stances possible."
+    },
+    {
+      "politician_id": "bec4b395-bb4b-4740-ac1c-8e89f12608a2",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Mark Edelson",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/edelson01"
+      ],
+      "reasoning": "Edelson sponsored Transportation - Major Highway Capacity Expansion Projects and Impact Assessments (Transportation and Climate Alignment Act of 2026) — directly limiting highway expansion for climate impact; very strong climate action stance."
+    },
+    {
+      "politician_id": "03a161cf-1da8-4c34-9c08-d91bbf958987",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Elizabeth Embry",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/embry01"
+      ],
+      "reasoning": "Embry sponsored Public Utilities - Solar Energy Generating Systems and Solar Renewable Energy Credits (Affordable Solar Act) and Maryland Beverage Container Recycling Refund and Litter Reduction Program — strong clean energy and environmental stance."
+    },
+    {
+      "politician_id": "03a161cf-1da8-4c34-9c08-d91bbf958987",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Elizabeth Embry",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/embry01"
+      ],
+      "reasoning": "Embry sponsored Affordable Solar Act expanding solar energy — consistent with a position favoring phasing out fossil fuels over a defined timeline by expanding renewable alternatives."
+    },
+    {
+      "politician_id": "03a161cf-1da8-4c34-9c08-d91bbf958987",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Elizabeth Embry",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/embry01"
+      ],
+      "reasoning": "Embry sponsored Civil Actions - Stop Silencing Survivors Act and Child Sexual Abuse Claims - Charitable Immunity Abrogation — strong champion of victim rights and civil protections; supports expanded civil rights enforcement."
+    },
+    {
+      "politician_id": "192e8ffb-e576-41f1-915a-dbc0c30d4769",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Diana M. Fennell",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/fennell01"
+      ],
+      "reasoning": "Fennell sponsored Fair Housing and Housing Discrimination - Discriminatory Effect legislation and Civil Actions - Stop Silencing Survivors Act and Public Schools - Ruby Bridges Walk to School Day — strong civil rights champion."
+    },
+    {
+      "politician_id": "c017b328-4469-45c4-aa8a-7b9035c77e22",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Catherine M. Forbes",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/forbes01"
+      ],
+      "reasoning": "Forbes sponsored Civil Actions - Stop Silencing Survivors Act and Child Abuse and Neglect - Survivor Reporting Reform Act and State Procurement - Constitutional Violations - Prohibited — supports comprehensive civil rights protections."
+    },
+    {
+      "politician_id": "69bf6043-4546-4804-ae04-311cff54a986",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Julian Ivey",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ivey01"
+      ],
+      "reasoning": "Ivey sponsored Attorney General Actions and Climate Crimes Accountability Fund (Climate Crimes Accountability Act) — holding polluters legally liable for climate crimes; among the strongest climate stances possible."
+    },
+    {
+      "politician_id": "69bf6043-4546-4804-ae04-311cff54a986",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Julian Ivey",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ivey01"
+      ],
+      "reasoning": "Ivey sponsored Affordable Solar Act expanding solar renewable energy and Electric Companies - Service Outages and Rate Increases - Report on Customer Impact — supporting clean energy transition and utility accountability."
+    },
+    {
+      "politician_id": "69bf6043-4546-4804-ae04-311cff54a986",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "Julian Ivey",
+      "topic": "Public Safety Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ivey01"
+      ],
+      "reasoning": "Ivey sponsored Maryland Violence Intervention and Prevention Program Fund (Community Safety and Intervention Funding Act) and Maryland Use of Force Statute accountability — balanced approach investing in violence prevention and police accountability."
+    },
+    {
+      "politician_id": "69bf6043-4546-4804-ae04-311cff54a986",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Julian Ivey",
+      "topic": "Affordable Housing",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ivey01"
+      ],
+      "reasoning": "Ivey sponsored Land Use - Permitting - Development Rights (Maryland Housing Certainty Act) and Fair Housing - Discriminatory Effect legislation — balanced development with anti-discrimination protections."
+    },
+    {
+      "politician_id": "69bf6043-4546-4804-ae04-311cff54a986",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "full_name": "Julian Ivey",
+      "topic": "Artificial Intelligence Oversight",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ivey01"
+      ],
+      "reasoning": "Ivey sponsored State Government - Data-Sharing Agreements and Personal Identifying Information - Prohibition and Reporting (Maryland Data Privacy and Federal Shield Act) — strong data privacy regulation advocating government accountability for personal data."
+    },
+    {
+      "politician_id": "fcfa1844-032e-4dba-9ae0-c52b82447fa8",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Aletheia McCaskill",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccaskill01"
+      ],
+      "reasoning": "McCaskill sponsored Attorney General Actions and Climate Crimes Accountability Fund (Climate Crimes Accountability Act) — strongest climate accountability stance possible; holding polluters legally liable for climate crimes."
+    },
+    {
+      "politician_id": "fcfa1844-032e-4dba-9ae0-c52b82447fa8",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Aletheia McCaskill",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccaskill01"
+      ],
+      "reasoning": "McCaskill sponsored Affordable Solar Act expanding solar energy — favoring phasing out fossil fuels through renewable energy expansion."
+    },
+    {
+      "politician_id": "df1a05a1-2a70-4e40-a0c6-5b3f81632c7e",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Sheila Ruth",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ruth01"
+      ],
+      "reasoning": "Ruth sponsored Attorney General Actions and Climate Crimes Accountability Fund (Climate Crimes Accountability Act) and PFAS Chemicals - Product Phase Outs — comprehensive climate accountability legislation; among the strongest climate stances."
+    },
+    {
+      "politician_id": "df1a05a1-2a70-4e40-a0c6-5b3f81632c7e",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "Sheila Ruth",
+      "topic": "Public Safety Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ruth01"
+      ],
+      "reasoning": "Ruth sponsored Police Pursuits of Fleeing Suspects - Standards (Dimeka Thornton Act) — police accountability reform focused on limiting dangerous pursuits; services-oriented with targeted policing accountability."
+    },
+    {
+      "politician_id": "df1a05a1-2a70-4e40-a0c6-5b3f81632c7e",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Sheila Ruth",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ruth01"
+      ],
+      "reasoning": "Ruth sponsored Election Law - Affiliating With a Party and Voting - Unaffiliated Voters (expanding voting access for independents) and Ballot Petition Modernization Act — strong voting access expansion stance."
+    },
+    {
+      "politician_id": "848ac881-004b-436a-9a17-dfacbd33de5a",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "Stephanie Smith",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith03"
+      ],
+      "reasoning": "Smith sponsored Maryland Voting Rights Act of 2026 - Voter Intimidation and Suppression — among the strongest voting rights stances possible; directly combating voter suppression."
+    },
+    {
+      "politician_id": "656a8bc9-348e-4ffc-819c-2f4611b3ddc8",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "full_name": "Joshua J. Stonko",
+      "topic": "Fossil Fuel Policy",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stonko01"
+      ],
+      "reasoning": "Stonko sponsored Retail Supply of Electricity and Gas (Energy Savings Act of 2026) and Maryland Co-Location Energy Innovation and Reliability Act — supports continued fossil fuel and gas use alongside emerging energy sources."
+    },
+    {
+      "politician_id": "92075c9b-6c7e-4763-981f-5a42a8afddf5",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "Caylin Young",
+      "topic": "Public Safety Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/young05"
+      ],
+      "reasoning": "Young sponsored Comprehensive Community Safety Funding Act — investing in community-based safety approaches — balanced stance supporting both community investment and law enforcement tools."
+    },
+    {
+      "politician_id": "01aaf4ba-c8ec-4a50-bd56-8d181d35e903",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Jackie Addison",
+      "topic": "Civil Rights and Social Justice",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/addison01"
+      ],
+      "reasoning": "Addison sponsored Commission on the House of Reformation and Instruction for Colored Children and Criminal Procedure - PACE Act protecting artists' expression — strong champion of racial equity and civil liberties."
+    },
+    {
+      "politician_id": "01aaf4ba-c8ec-4a50-bd56-8d181d35e903",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "full_name": "Jackie Addison",
+      "topic": "Healthcare Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/addison01"
+      ],
+      "reasoning": "Addison sponsored Hospitals - Clinical Staffing Committees (Safe Staffing Act 2026) and Income Tax Credit for Physician Preceptors in shortage areas — supports expanded healthcare access and hospital staffing standards."
+    },
+    {
+      "politician_id": "01aaf4ba-c8ec-4a50-bd56-8d181d35e903",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Jackie Addison",
+      "topic": "Affordable Housing",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/addison01"
+      ],
+      "reasoning": "Addison sponsored Land Use - Permitting - Development Rights (Maryland Housing Certainty Act) — supports streamlining housing development to address affordability crisis with mixed-income development approach."
+    },
+    {
+      "politician_id": "760cd4a7-235c-472f-a0ba-fb07098dfd57",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "full_name": "Adrienne A. Jones",
+      "topic": "Reproductive Rights and Abortion Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jones01",
+        "https://ballotpedia.org/Adrienne_A._Jones"
+      ],
+      "reasoning": "Speaker Jones championed HB 1171 (Pregnant Person's Freedom Act of 2024) and co-sponsored the Abortion Care Access Act — has made abortion access a legislative priority as Speaker."
+    },
+    {
+      "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Arthur Ellis",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+      ],
+      "reasoning": "Ellis backed Maryland's Climate Solutions Now Act and environmental protections for the Chesapeake Bay region which is critically important to Southern Maryland."
+    },
+    {
+      "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Arthur Ellis",
+      "topic": "Taxation and Public Spending",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+      ],
+      "reasoning": "Ellis supports progressive taxation to fund public services and education. He backed the Blueprint for Maryland's Future and public investment."
+    },
+    {
+      "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "full_name": "Arthur Ellis",
+      "topic": "School Vouchers & Public Education Funding",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+      ],
+      "reasoning": "Ellis opposes school vouchers. He backs strong public education investment through the Blueprint for Maryland's Future."
+    },
+    {
+      "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "full_name": "Arthur Ellis",
+      "topic": "Childcare Affordability & Access",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+      ],
+      "reasoning": "Ellis supported childcare investment and pre-K expansion in the Blueprint for Maryland's Future, helping working families in Charles County."
+    },
+    {
+      "politician_id": "b592e432-6411-48b3-bca3-d5596d0d81e9",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "full_name": "Andre V. Johnson, Jr.",
+      "topic": "Climate Change and Environmental Protection",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson02"
+      ],
+      "reasoning": "Johnson sponsored the Green and Renewable Energy Efficiency for Nonprofits (GREEN) Loan Program — supporting clean energy financing — and co-sponsored the Affordable Solar Act expanding solar energy access."
+    },
+    {
+      "politician_id": "cdf746c1-8311-416b-9ad3-2684a83b6992",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "full_name": "William Valentine",
+      "topic": "Public Safety Approach",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valentine01"
+      ],
+      "reasoning": "Valentine co-sponsored sanctuary policy prohibition, immigration enforcement notification, Juvenile Offender Protection Act — law enforcement-first approach to public safety."
+    },
+    {
+      "politician_id": "cdf746c1-8311-416b-9ad3-2684a83b6992",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "full_name": "William Valentine",
+      "topic": "Voting Rights and Electoral Integrity",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valentine01"
+      ],
+      "reasoning": "Valentine co-sponsored the SAVE Our Elections Act (citizenship verification), in-person voting proof of identity, absentee ballot signature verification, and the Secure the Vote Act of 2026."
+    }
+  ]
+}
