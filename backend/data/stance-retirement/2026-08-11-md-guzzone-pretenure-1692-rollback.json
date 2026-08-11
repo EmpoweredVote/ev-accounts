@@ -1,0 +1,45 @@
+{
+  "migration": "1692_retire_guzzone_pretenure_stances",
+  "retired_on": "2026-08-11",
+  "authorised_by": "operator instruction, 2026-08-11 (\"retire both\")",
+  "rule": "Both stances rest solely on the Blueprint for Maryland's Future (2019/2020). Pam Lanman Guzzone became a Delegate 2023-01-11, so she cannot have supported it -- the claim is impossible, not merely unsourced. No in-tenure substitute exists: she sponsors none of the 23 voucher/BOOST bills and none of the 14 progressive-tax bills from 2023 onward.",
+  "restore_note": "Retirement DELETED both the answer and the context row, so restoring is an INSERT into inform.politician_answers and inform.politician_context using the values below.",
+  "politician_row_counts_before": {
+    "context": 7,
+    "answers": 7
+  },
+  "expected_after": {
+    "context": 5,
+    "answers": 5,
+    "emptied": false
+  },
+  "row_count": 2,
+  "rows": [
+    {
+      "full_name": "Pam Lanman Guzzone",
+      "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic": "School Vouchers & Public Education Funding",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Lanman Guzzone supported Blueprint for Maryland's Future — favors public school investment over private school voucher programs.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone01",
+        "https://ballotpedia.org/Pam_Guzzone"
+      ]
+    },
+    {
+      "full_name": "Pam Lanman Guzzone",
+      "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic": "Taxation and Public Spending",
+      "value": "1.0",
+      "write_in_text": null,
+      "reasoning": "Lanman Guzzone supported progressive tax reform to fund public services and Blueprint for Maryland's Future education investment.",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone01",
+        "https://ballotpedia.org/Pam_Guzzone"
+      ]
+    }
+  ]
+}
