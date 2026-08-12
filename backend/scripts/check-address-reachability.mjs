@@ -137,6 +137,14 @@ const CLASSIFY = `
       FROM essentials.districts d
       LEFT JOIN essentials.geofence_boundaries gp ON gp.geo_id = d.geo_id
      WHERE d.district_type = ANY($1::text[])
+       -- 🔴 Membership-basis districts are NOT address-reachable BY DESIGN, and must be excluded
+       -- rather than baselined. Their constituency is a polity one belongs to, not a place: Maine's
+       -- three tribal House seats carry district_type STATE_LOWER (their holders really are House
+       -- members) but no geo_id, because enrollment cannot be inferred from an address. Leaving them
+       -- in makes UNREACHABLE fire for every filled tribal seat — a violation for a CORRECT state,
+       -- which is precisely the kind of noise that trains people to mute this gate. Same reasoning as
+       -- the ADDRESSABLE list above. See docs/adr/0003-non-residency-representation.md.
+       AND d.representation_basis = 'residency'
      GROUP BY d.id, lower(d.state), d.district_type, d.label, d.geo_id
   ), o AS (
     SELECT g.*,
@@ -189,6 +197,11 @@ async function roundTrip() {
          FROM essentials.districts d
          JOIN essentials.geofence_boundaries gp ON gp.geo_id = d.geo_id
         WHERE d.district_type = ANY($1::text[])
+          -- NOTE: membership-basis districts need no predicate here — they have no geo_id, so this
+          -- INNER JOIN on gp.geo_id already excludes them. Adding one anyway made this query time out
+          -- (it perturbs the ST_Covers plan), so the future risk that ADR 0003's discovery-only AIANNH
+          -- geometry makes them join is caught by membershipGeometryInvariant() below instead — a cheap
+          -- dedicated check rather than a predicate in the expensive query.
           AND ${GUARD}
           AND gp.geometry IS NOT NULL
           AND public.ST_IsValid(gp.geometry)
@@ -223,6 +236,32 @@ async function roundTrip() {
 
 const ZERO_TOLERANCE = new Set(['REPS_FILTER_HIDDEN', 'ST_COVERS_ROUNDTRIP']);
 
+/**
+ * ADR 0003's binding invariant, as a cheap standalone query rather than a predicate inside the
+ * expensive ST_Covers round trip (adding one there timed the query out).
+ *
+ * A `membership`-basis district represents a polity one BELONGS TO — an enrolled tribal member — not
+ * a place. Enrollment cannot be inferred from a street address. Today these districts carry no
+ * geo_id, which is what keeps them out of the address path. ADR 0003 anticipates attaching Census
+ * AIANNH geometry to them for DISCOVERY (surfacing the seat to people likely to care), and the moment
+ * that lands, geo_id stops being NULL and every geometry-driven join in this repo starts matching
+ * them — silently converting "additional representation you may have" into "your representative,
+ * assigned by where you live". That is the one thing the ADR forbids.
+ *
+ * So: attaching that geometry must be a deliberate act that also teaches the address path to skip
+ * these districts. Until then, a non-NULL geo_id on a membership district fails this gate.
+ */
+async function membershipGeometryInvariant() {
+  const { rows } = await pool.query(
+    `SELECT lower(d.state) AS st, d.district_type AS dt, d.label, d.geo_id
+       FROM essentials.districts d
+      WHERE d.representation_basis <> 'residency'
+        AND d.geo_id IS NOT NULL
+      ORDER BY 1, 3`,
+  );
+  return rows;
+}
+
 function bucketKey(r) {
   return `${r.st || '-'}|${r.dt}`;
 }
@@ -231,6 +270,23 @@ function bucketKey(r) {
   if (!process.env.DATABASE_URL) {
     console.log('SKIP: DATABASE_URL not set — this check needs a live database.');
     process.exit(0);
+  }
+
+  // Cheap and absolute: not baselined, not tolerated. Runs first so it fails fast.
+  const leaked = await membershipGeometryInvariant();
+  if (leaked.length) {
+    console.error(
+      '\nFAIL — a membership-basis district has geometry that the address path can reach:\n',
+    );
+    for (const r of leaked) console.error(`  ${r.st}|${r.dt}  ${r.label}  geo_id=${r.geo_id}`);
+    console.error(
+      '\nRepresentation by MEMBERSHIP must never be assigned by where someone lives — enrollment\n'
+      + 'is not inferable from an address (docs/adr/0003-non-residency-representation.md). If this\n'
+      + 'geometry is the intended discovery-only AIANNH boundary, the address path must be taught to\n'
+      + 'skip these districts in the SAME commit, and this check updated to match.',
+    );
+    await pool.end();
+    process.exit(1);
   }
 
   const findings = await classify();

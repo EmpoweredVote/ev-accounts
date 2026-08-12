@@ -99,6 +99,30 @@ trap: nothing errors, the row just stops existing as far as the worklist is conc
 hand-creating a politician, copy the peers' full column shape — not just the columns you happen to
 care about.
 
+## Tribal representatives ✅ IMPLEMENTED 2026-08-12 (migration 1718)
+
+All three Maine seats now exist. `roster-diff.mjs me` reads **lower 153 v 153, flagged 0** — the ME
+tribal findings are gone. `check:reachability` passes (`UNREACHABLE 40 / baseline 40`, and
+`DEAD_GEOGRAPHY` improved 20 → 19 from seating ME-29).
+
+- Passamaquoddy → **Aaron M. Dana** (`-232901`), Maliseet → **Brian Reynolds** (`-232902`), both with
+  official Maine House portraits. **Penobscot seat created and left vacant** — the fact the old model
+  could not hold.
+- 🔴 **The committed reachability gate DID fail exactly as ADR 0003 predicted** — `UNREACHABLE
+  me|STATE_LOWER observed 2 (NEW bucket)`, one per filled tribal seat. I verified that by running the
+  pre-change script from `origin/master`, which is how I knew the timeout that followed was mine and
+  not pre-existing.
+- 🔴 **Adding `representation_basis = 'residency'` to the ST_Covers round-trip query TIMES IT OUT.**
+  It was redundant there anyway (NULL `geo_id` can't match its inner join). The future risk — ADR 0003
+  wants AIANNH geometry attached for discovery, which would make them join — is covered by a cheap
+  standalone `membershipGeometryInvariant()` instead, **proven to fire** by planting a `geo_id` inside
+  a rolled-back transaction.
+- 🔴 **`FULL`, `FIRST` and `LAST` are reserved words** — a `VALUES ... AS v(id, ext, full, first, last)`
+  alias list is a syntax error.
+- 🔴 **Term ends are open-ended and expire this autumn** → `.planning/todos/2026-09-01-maine-tribal-seat-term-ends.md`.
+
+_Original decision record:_
+
 ## Tribal representatives → ADR 0003 (accepted 2026-08-12)
 
 Resolved as a **modelling decision**, not an exception:

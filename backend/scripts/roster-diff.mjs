@@ -173,6 +173,11 @@ async function fetchOurs(pool, stateList) {
 const DISTRICT_STOPWORDS = new Set([
   'state', 'house', 'senate', 'assembly', 'legislative', 'district', 'subdistrict', 'districts',
   'representative', 'representatives', 'general', 'court', 'and', 'of', 'the', 'in',
+  // Maine's tribal seats: our label is the legislature's own "Non-Voting Tribal Member - Passamaquoddy
+  // Tribe" while Open States' district is just "Passamaquoddy Tribe". Without these the keys differ,
+  // and because the NAMES match the per-district pass would report "right person, different district"
+  // for Dana and Reynolds — a false positive on two correct rows. See ADR 0003.
+  'non', 'voting', 'tribal', 'member',
   // state names leak into a few of our labels
   'california', 'texas', 'massachusetts', 'maryland', 'maine', 'virginia', 'wisconsin',
   'arizona', 'nevada', 'oregon', 'utah',

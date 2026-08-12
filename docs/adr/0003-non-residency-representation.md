@@ -2,6 +2,14 @@
 status: accepted
 ---
 
+> **Implemented 2026-08-12, migration 1718.** Both columns and all three CHECK constraints are live;
+> Maine's three tribal seats are the first instance (Dana seated, Reynolds seated, Penobscot vacant).
+> `check:reachability` excludes membership districts from address expectations and now fails outright
+> if one ever gains a `geo_id`. Two things below turned out differently in practice and are corrected
+> in place: the note requirement is only a CHECK on the **powers** axis, and adding a
+> `representation_basis` predicate to the round-trip query **times it out**, so the invariant is a
+> separate cheap check. The territories remain unbuilt.
+
 # Representation that is not based on residency
 
 Every seat we model assumes the same two things: that a constituency is *a place*, and that a

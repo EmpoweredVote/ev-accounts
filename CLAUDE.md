@@ -101,6 +101,12 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
 - **Not every seat is residency-based or full-voting.** Maine seats three non-voting *tribal*
   representatives; the territories and DC send non-voting delegates.
   [`docs/adr/0003-non-residency-representation.md`](docs/adr/0003-non-residency-representation.md)
-  splits those into `districts.representation_basis` and `offices.voting_powers`, and forbids
-  inferring membership in a polity from an address. **Accepted, not yet implemented** — those columns
-  do not exist yet, so don't write to them; read the ADR before modelling any such seat.
+  splits those into `districts.representation_basis` (`residency` | `membership`) and
+  `offices.voting_powers` (`full` | `committee_only` | `non_voting`). Live since migration 1718, whose
+  first instance is Maine's three tribal seats.
+  - **A `membership` district must never carry a `geo_id`.** Enrollment is not inferable from an
+    address, so these seats are *additional and explained*, never assigned. `check:reachability`
+    fails on a membership district with geometry, and excludes them from address expectations.
+  - `offices.representation_note` is **required** whenever `voting_powers <> 'full'` (a CHECK) or
+    `representation_basis <> 'residency'` (post-verify + read path — a CHECK can't cross tables).
+    **The read path must not render such a seat without the note.**
