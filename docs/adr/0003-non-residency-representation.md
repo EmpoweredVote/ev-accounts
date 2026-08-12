@@ -8,7 +8,14 @@ status: accepted
 > if one ever gains a `geo_id`. Two things below turned out differently in practice and are corrected
 > in place: the note requirement is only a CHECK on the **powers** axis, and adding a
 > `representation_basis` predicate to the round-trip query **times it out**, so the invariant is a
-> separate cheap check. The territories remain unbuilt.
+> separate cheap check.
+>
+> **Territories done 2026-08-12, migration 1719** — all six non-voting House seats (PR, VI, GU, AS, MP,
+> DC) carry `voting_powers = 'non_voting'` with required notes, plus DC's two shadow senators. An
+> address in each of the six now resolves end-to-end to its delegate.
+> 🔴 **"A powers-only change" below was true of the SEAT and wrong about the DATA**: we held nothing
+> at all for the five territories — no member, office, district or geometry — so five of six were a
+> full seed including Census TIGERweb polygons. Corrected in place in "Consequences".
 
 # Representation that is not based on residency
 
@@ -134,8 +141,15 @@ date containment via `essentials.current_office_holders` is.
   meaning. **Open question:** whether that belongs in `representation_note`, a new `vacancy_reason`,
   or `office_terms.how_ended` on a closed term. Not resolved here; do not paper over it by writing
   the Penobscot seat as an ordinary vacancy with no explanation.
-- Federal territory delegates are then a **powers-only** change: real polygons,
-  `voting_powers = 'non_voting'`, plus the required note. No new geography concepts.
+- ~~Federal territory delegates are then a **powers-only** change: real polygons,
+  `voting_powers = 'non_voting'`, plus the required note. No new geography concepts.~~
+  **Corrected 2026-08-12 (migration 1719).** Powers-only was right about the *seat* and wrong about
+  the *data*. We held **nothing** for Puerto Rico, the U.S. Virgin Islands, Guam, American Samoa or
+  the Northern Mariana Islands — no member, no office, no district, and crucially **no geometry**, so
+  "real polygons" was an assumption, not a fact. Five of the six were a full seed, with delegate-
+  district polygons loaded from Census TIGERweb (`scripts/load-territory-boundaries.mjs`). Only DC was
+  the flip this line imagined. The lesson generalizes: *check what is actually in the database before
+  writing down how small a change will be.*
 
 ## Not in scope
 

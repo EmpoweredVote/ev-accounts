@@ -102,8 +102,9 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   representatives; the territories and DC send non-voting delegates.
   [`docs/adr/0003-non-residency-representation.md`](docs/adr/0003-non-residency-representation.md)
   splits those into `districts.representation_basis` (`residency` | `membership`) and
-  `offices.voting_powers` (`full` | `committee_only` | `non_voting`). Live since migration 1718, whose
-  first instance is Maine's three tribal seats.
+  `offices.voting_powers` (`full` | `committee_only` | `non_voting`). Live since migration 1718
+  (Maine's three tribal seats) and 1719 (**all six territory/DC non-voting House seats** — PR, VI, GU,
+  AS, MP, DC — plus DC's two shadow senators, who hold no seat in Congress at all).
   - **A `membership` district must never carry a `geo_id`.** Enrollment is not inferable from an
     address, so these seats are *additional and explained*, never assigned. `check:reachability`
     fails on a membership district with geometry, and excludes them from address expectations.
