@@ -1,7 +1,6 @@
 # Chair/reasoning inversion — diagnosis (2026-08-12)
 
-Found while re-sourcing class C of [the 197](2026-08-12-the-197-disposition`2026-08-12-chair-inversion-{scan,batch,rescan,rollback}.json`, plus
-`gen-chair-inversion-fix.mjs` and `verify-1714-applied.mjs`.md). **Not a sourcing
+Found while re-sourcing class C of [the 197](2026-08-12-the-197-disposition.md). **Not a sourcing
 fault: a wrong chair is a wrong voter-facing position.** The compass dot and the "Why this position?"
 text say opposite things about the same person.
 
@@ -124,11 +123,46 @@ Explicit list: `backend/data/stance-retirement/2026-08-12-chair-fix-sourcing-owe
 🔑 **Only 24 of the 71 name an instrument, and they name just TWO acts between them.** The other 47
 name nothing at all — so "extend the crawl" is the right plan for one half and useless for the other.
 
-**(a) The 24 landmark rows — cheap and high-confidence.** Resolve each act ONCE, pull its full
-sponsor list from the bill page, match every member against it:
-- **Blueprint for Maryland's Future** ×11 (Childcare) — 2019 SB1030/HB1413 and 2020 SB1000/HB1300.
-  ⚠ Sponsored by "President"/"Speaker", so the *bill page* sponsor list is the only route.
-- **Climate Solutions Now Act** ×12 (Climate) — 2022, and the corpus will resolve it by title.
+### ✅ (a) THE LANDMARK ROWS — DONE, migration 1717 applied and verified
+23 rows (the 24th is Kevin Harris's SB0664/SB0402 row, which names bills rather than an act and was
+already sourced). **9 SPONSOR · 12 VOTE · 2 re-sourced from pre-tenure.** Verified in production:
+23/23 rewritten, 0 unsourced "backed" verbs left in scope, chairs untouched, corpus 33,083/32,542.
+Tools: `md-landmark-acts.mjs` → `md-landmark-disposition.mjs` → `gen-1717-landmark-sourcing.mjs`.
+Rollback: `data/stance-retirement/2026-08-12-landmark-1717-rollback.json`.
+
+🔴 **FIVE DEFECTS THE READING CAUGHT — four of them in the tooling, not the data:**
+1. **Two rows were PRE-TENURE.** Kevin M. Harris (House 2023-2025, Senate from Dec 2025) and
+   C. Anthony Muse (Senate 2007-2019, then from 2023) were both credited with backing an Act passed
+   in 2021/2022 while out of office. Retirement is what is left AFTER looking — both were re-sourced
+   to real in-tenure solar sponsorships (Harris SB0669/SB0923 2026; Muse SB0120 2025, Ch. 516).
+2. 🔴 **THE SPONSOR PARSER WAS DROPPING THE LEAD SPONSOR.** On a leadership-carried bill —
+   "The Speaker (By Request - …) **and Delegates McIntosh**, Kaiser, …" — the whole prefix plus the
+   first name landed in one over-long cell that the 40-char filter then discarded. Recovered sponsors:
+   SB1030 17→19, HB1300 5→7, SB0414 20→21, HB1413 2→4. ⚠ **The committed 882-bill CR sponsor index
+   was built with this bug**, so its POSITIVES stand but every "no on-topic bill" NEGATIVE from it is
+   unreliable — that includes reasoning used in earlier passes.
+3. 🔴 **A SENATE BILL'S SPONSOR CANNOT BE A DELEGATE.** Without a chamber gate the pass credited
+   Alonzo T. Washington with sponsoring SB0414/SB0528, whose "Washington" is Senator **Mary**
+   Washington. 🔑 The bill page **hyperlinks each sponsor to a member slug** — `washington01` vs
+   `washington02` — which is identity where a surname is a guess. ⚠ But slugs rot: HB1300's
+   `washington` now 404s, and treating a dead slug as a rival identity manufactured a false negative.
+   A mismatch only counts when the rival slug still resolves.
+4. 🔴 **A JANUARY-SWEARING-IN ASSUMPTION PUT RON WATSON IN THE WRONG CHAMBER.** He joined the Senate
+   on 31 Aug 2021, after the session adjourned, so his 2021 votes are HOUSE votes. Fixed with a new
+   month-aware `chamberForSession()`; `chamberFor()` is untouched. ⚠ **Pass 5 plausibly carries this
+   same defect on any appointed mid-year switch and is owed a re-check.**
+5. 🔴 **A MEMBER'S OWN mgaleg PAGE CAN HIDE PRIOR-CHAMBER SERVICE.** Sara Love's tenure field reads
+   only "Senate since June 13, 2024" though the corpus has "Delegate Love" sponsoring from 2019RS —
+   so her entire Blueprint-era service fell outside her tenure and the test silently never ran. There
+   is now a detector: any session where the corpus shows the surname sponsoring but tenure says
+   absent is flagged for reading.
+
+🔑 **Two judgement rules worth keeping.** A near-unanimous vote is not a position — SB1030/2019 passed
+the Senate 43-1 then 45-0, so those sheets are recorded and deliberately NOT cited; every vote cited
+had ≥10% against. And the bill is chosen by what the CLAIM says, not by what scores best: ranking by
+margin picked HB1372 "Revisions" for every childcare row, when the childcare claim lives in HB1300 —
+159 × "prekindergarten", 3 × "Child Care Scholarship" in the enacted text, and **none of it in the
+synopsis**, which is why the topic clause had to be quoted from the chapter text.
 
 **(b) The 47 instrument-free rows — needs the full class-C treatment**: crawl that topic's bill
 titles, build the co-sponsor reverse index, match, pick squarely on-topic bills.

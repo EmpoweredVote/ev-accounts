@@ -81,6 +81,46 @@ export function serviceStart(spans, tenure = null) {
  * If that still does not single one out, return null -- never guess a chamber, because surnames collide
  * across chambers (Alonzo Washington in the House, Mary Washington in the Senate, same session).
  */
+/**
+ * Chamber during the REGULAR SESSION of `year` — month-aware, and therefore correct where
+ * `chamberFor` is not.
+ *
+ * 🔴 WHY THIS EXISTS. `chamberFor` breaks a switch-year tie by preferring the chamber the member moved
+ * INTO, on the reasoning that members are sworn in the second Wednesday of January. That holds for an
+ * ELECTED switch and fails for an APPOINTED one. Ron Watson joined the Senate on August 31, 2021 —
+ * months AFTER the 2021 session adjourned — so every 2021 floor vote of his was cast in the HOUSE, and
+ * the January assumption credits him to the wrong chamber. Surnames collide across chambers, so a
+ * wrong chamber is a wrong person, not a near miss.
+ *
+ * Maryland's regular session runs from the second Wednesday of January to early April. A span that
+ * STARTS after April in `year` therefore did not cover that year's session.
+ *
+ * `chamberFor` is left exactly as it was: it is baked into a completed pass, and this is a new
+ * function rather than a silent change of that pass's meaning. ⚠ Pass 5 plausibly carries the same
+ * defect on any appointed mid-year switch and is owed a re-check.
+ */
+const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august',
+  'september', 'october', 'november', 'december'];
+
+export function chamberForSession(spans, year) {
+  const live = spans.filter((s) => {
+    if (year < s.from || year > s.to) return false;
+    if (s.from !== year) return true;
+    // the span STARTS in this year — did it start before the session adjourned?
+    const m = (s.src || '').match(/\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),\s*(\d{4})\b/);
+    if (!m || parseInt(m[3], 10) !== year) return true;      // no usable date — fall back to the year
+    const month = MONTHS.indexOf(m[1].toLowerCase());        // 0-based; April = 3
+    return month < 3 || (month === 3 && parseInt(m[2], 10) <= 15);
+  });
+  const chambers = [...new Set(live.map((s) => s.chamber))];
+  if (chambers.length === 1) return chambers[0];
+  if (chambers.length > 1) {
+    const starting = [...new Set(live.filter((s) => s.from === year).map((s) => s.chamber))];
+    if (starting.length === 1) return starting[0];
+  }
+  return null;
+}
+
 export function chamberFor(spans, year) {
   const inYear = spans.filter((s) => year >= s.from && year <= s.to);
   const chambers = [...new Set(inYear.map((s) => s.chamber))];
