@@ -1,4 +1,11 @@
--- 1722_puerto_rico_headshots.sql
+-- 1723_puerto_rico_headshots.sql
+--
+-- RENUMBERED 1722 -> 1723. It was authored, applied to prod and committed as 1722; a parallel
+-- session then pushed 1722_md_medicaid_template.sql onto the same number. This file moved rather
+-- than that one because that one's header cites an on-disk rollback artifact
+-- (data/stance-retirement/2026-08-12-medicaid-1722-rollback.json) whose name would have drifted.
+-- Nothing here embeds the number in written data — it appeared only in this header — so the
+-- rename is cosmetic and the applied rows are unaffected.
 --
 -- Portraits for all 82 Puerto Rico officeholders seated by migration 1720 — the Governor,
 -- 28 senators and 53 representatives. Every one of them had NO photograph of any kind:

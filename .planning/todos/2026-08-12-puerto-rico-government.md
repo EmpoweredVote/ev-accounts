@@ -46,7 +46,7 @@ That is genuinely how Puerto Rico is represented — it is not duplication.
   Federación de Alcaldes for PNP), which would have to be stitched and could not be trusted without
   cross-checking against CEE results. A wrong mayor is a false statement about a real person.
   Municipio *polygons* are easy when wanted — TIGER county-equivalents, FIPS `72xxx`.
-- ~~**No headshots** for any of the 82~~ — **✅ CLOSED 2026-08-12, migration 1722. All 82 imported,
+- ~~**No headshots** for any of the 82~~ — **✅ CLOSED 2026-08-12, migration 1723. All 82 imported,
   a clean sweep**: Governor 1/1, `STATE_UPPER` 28/28, `STATE_LOWER` 53/53. Gate proved to fire, dry-run
   rolled back and confirmed reverted, applied, re-applied for idempotency (`INSERT 0 0 / UPDATE 0`).
   `check:occupancy` and `check:reachability` both green (DEAD_GEOGRAPHY even improved 20 → 19).
@@ -56,7 +56,8 @@ That is genuinely how Puerto Rico is represented — it is not duplication.
 - No other executive officers (Secretary of State — who is next in line for the governorship, PR
   having no Lieutenant Governor — Treasury, Justice, etc.).
 
-## ✅ How the sweep actually went (migration 1722, 2026-08-12)
+## ✅ How the sweep actually went (migration 1723 — applied as 1722, renumbered after a
+## parallel session collided on that number; see the file header, 2026-08-12)
 
 **Sources — both answered a plain fetch, no browser needed.**
 - **House:** `camara.pr.gov` is WordPress and exposes its roster as the custom post type
@@ -141,7 +142,7 @@ Read this first; the existing sweep's guards are tuned for a population these pe
 - All 82 already have `politicians.is_vacant = false`, so they are visible to the headshot worklist
   (the NULL defect from migration 1715 is not repeated here).
 
-## Still open after 1722
+## Still open after 1723
 
 - **The 78 municipios and their mayors** — unchanged, and still the big remaining piece. See the
   sourcing caveat above: no non-partisan roster was found, and a wrong mayor is a false statement
