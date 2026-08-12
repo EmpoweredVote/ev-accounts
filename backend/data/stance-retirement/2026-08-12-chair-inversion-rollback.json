@@ -1,0 +1,1191 @@
+{
+ "pass": "chair inversion fix",
+ "rows": [
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Joanne C. Benson",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "4.0",
+   "old_reasoning": "Benson backed Maryland's Climate Solutions Now Act and supports environmental justice for communities disproportionately affected by pollution in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0528?ys=2022RS",
+    "https://mgaleg.maryland.gov/2022RS/votes/senate/0405.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Nick Charles",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "4.0",
+   "old_reasoning": "Charles backed Maryland's Climate Solutions Now Act and environmental justice measures for communities of color disproportionately affected by pollution.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0528?ys=2022RS",
+    "https://mgaleg.maryland.gov/2022RS/votes/house/0795.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Arthur Ellis",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "4.0",
+   "old_reasoning": "Ellis backed Maryland's Climate Solutions Now Act and environmental protections for the Chesapeake Bay region which is critically important to Southern Maryland.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0414?ys=2021RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0528?ys=2022RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Kevin M. Harris",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "4.0",
+   "old_reasoning": "Harris backed Maryland's Climate Solutions Now Act and environmental justice measures addressing pollution burdens in communities of color.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Shaneka Henson",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "5.0",
+   "old_reasoning": "Henson backed Maryland's Climate Solutions Now Act and supports strong climate action. Her Annapolis district on the Chesapeake Bay gives her a direct stake in climate impacts.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0528?ys=2022RS",
+    "https://mgaleg.maryland.gov/2022RS/votes/house/0795.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "William C. Smith, Jr.",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "5.0",
+   "old_reasoning": "Smith backed the Climate Solutions Now Act and supports aggressive climate action. His Montgomery County district expects strong environmental leadership.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Benjamin F. Kramer",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "5.0",
+   "old_reasoning": "Kramer backed Maryland's Climate Solutions Now Act and consistently supports climate action legislation. He is a Montgomery County Democrat with a strong environmental record.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0414?ys=2021RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0528?ys=2022RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "C. Anthony Muse",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "4.0",
+   "old_reasoning": "Muse backed Maryland's Climate Solutions Now Act and supports environmental protections for Prince George's County communities.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Jim Rosapepe",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "4.0",
+   "old_reasoning": "Rosapepe backed Maryland's Climate Solutions Now Act and supports clean energy transition. He has championed climate action as part of his broader economic development agenda.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0414?ys=2021RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Jeff Waldstreicher",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "5.0",
+   "old_reasoning": "Waldstreicher backed the Climate Solutions Now Act and consistently votes for aggressive climate action. He is a strong proponent of clean energy transition in Maryland.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Alonzo T. Washington",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "4.0",
+   "old_reasoning": "Washington has backed Maryland's Climate Solutions Now Act and environmental justice measures that address disproportionate pollution burdens in communities of color.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Ron Watson",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "4.0",
+   "old_reasoning": "Watson backed Maryland's Climate Solutions Now Act and supports clean energy transition. He supports environmental justice measures for communities of color in PG County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0528?ys=2022RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "0b16443e-fec4-4f33-abbc-eb1331e3b42d",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Vivian Moreno",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "5.0",
+   "old_reasoning": "Moreno co-proposed the Climate Equity Fund with Mayor Gloria in 2021 — the first dedicated fund in San Diego investing in historically disadvantaged communities to combat climate change. The measure passed unanimously 9-0 and directed $12M+ to District 8 environmental projects. Wikipedia confirms her authorship of this initiative as a core climate policy accomplishment, reflecting strong support for rapid transition to clean energy with an equity lens.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Vivian_Moreno",
+    "https://www.vivianmorenosd.com"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "dc3d8a98-07ce-4797-bc84-957a72fd854f",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Sean Elo-Rivera",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "5.0",
+   "old_reasoning": "As Council President in July 2022 Elo-Rivera said the Climate Action Plan targeting 100% renewable energy by 2030 and net-zero by 2035 was 'a very solid one' and stressed that the city must focus on 'actually taking action' with adequate planning and funding. He emphasized closing the implementation gap that caused the 2015 CAP to fail, reflecting strong support for rapid clean energy transition.",
+   "old_sources": [
+    "https://timesofsandiego.com/politics/2022/07/14/council-president-elo-rivera-says-climate-action-plan-must-stress-implementation/"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "name": "Igor Tregub",
+   "topic": "Climate Change and Environmental Protection",
+   "old_value": "5.0",
+   "old_reasoning": "Tregub chaired the 35,000-member Sierra Club San Francisco Bay Chapter (the youngest and first immigrant to hold the role) and serves as Co-Vice Chair of Sierra Club California. As a council member he co-sponsored a resolution supporting a feasibility study for Golden State Energy — a nonprofit public utility to replace PG&E (February 2025) — and co-sponsored the Zero NOx Emission Buildings ordinance requiring all new construction to be gas-free (October 2024). His career at Reimagine Power focuses on renewable energy advocacy.",
+   "old_sources": [
+    "https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-february-11-2025",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-october-15-2024"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Joanne C. Benson",
+   "topic": "Healthcare Access",
+   "old_value": "5.0",
+   "old_reasoning": "Benson is a strong healthcare access advocate. She backed Medicaid expansion, prescription drug affordability legislation, and healthcare safety net programs for Prince George's County residents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Nick Charles",
+   "topic": "Healthcare Access",
+   "old_value": "5.0",
+   "old_reasoning": "Charles supports expanding healthcare access in Prince George's County. He backed Medicaid expansion and healthcare affordability legislation for working families.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Arthur Ellis",
+   "topic": "Healthcare Access",
+   "old_value": "5.0",
+   "old_reasoning": "Ellis supports expanding healthcare access for Charles County residents. He backed Medicaid expansion and healthcare affordability legislation.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Kevin M. Harris",
+   "topic": "Healthcare Access",
+   "old_value": "5.0",
+   "old_reasoning": "Harris supports expanding healthcare access in Prince George's County. He backed Medicaid expansion and healthcare affordability legislation.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Shaneka Henson",
+   "topic": "Healthcare Access",
+   "old_value": "5.0",
+   "old_reasoning": "Henson supports expanding healthcare access. She backed Medicaid expansion and healthcare affordability legislation for Anne Arundel County residents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "William C. Smith, Jr.",
+   "topic": "Healthcare Access",
+   "old_value": "5.0",
+   "old_reasoning": "Smith supports universal healthcare access. He backs Medicaid expansion and prescription drug cost control legislation. His committee has processed healthcare-related criminal justice reforms.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Cheryl C. Kagan",
+   "topic": "Healthcare Access",
+   "old_value": "5.0",
+   "old_reasoning": "Kagan strongly supports healthcare access expansion. She votes for Medicaid expansion and healthcare affordability legislation representing a predominantly healthcare-aware Montgomery County district.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Sara Love",
+   "topic": "Healthcare Access",
+   "old_value": "5.0",
+   "old_reasoning": "Love strongly supports expanding healthcare access. She voted for Medicaid expansion measures and healthcare affordability legislation. Montgomery County includes large healthcare worker constituencies.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "C. Anthony Muse",
+   "topic": "Healthcare Access",
+   "old_value": "5.0",
+   "old_reasoning": "Muse supports expanding healthcare access for Prince George's County residents. He backed Medicaid expansion and healthcare affordability measures.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Jim Rosapepe",
+   "topic": "Healthcare Access",
+   "old_value": "4.0",
+   "old_reasoning": "Rosapepe supports expanding healthcare access including Medicaid expansion. He backs healthcare affordability for Prince George's County residents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Alonzo T. Washington",
+   "topic": "Healthcare Access",
+   "old_value": "5.0",
+   "old_reasoning": "Washington strongly supports expanding healthcare access in Prince George's County. He backed Medicaid expansion and healthcare affordability legislation for working families.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ron Watson",
+   "topic": "Healthcare Access",
+   "old_value": "5.0",
+   "old_reasoning": "Watson backs healthcare access expansion including Medicaid expansion and healthcare affordability for working families in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Todd Gloria",
+   "topic": "Healthcare Access",
+   "old_value": "4.0",
+   "old_reasoning": "Gloria authored multiple healthcare access bills as a California Assembly member, including AB-2119 requiring gender-affirming care for transgender foster youth and measures expanding Medi-Cal eligibility. As mayor he partnered with UCSD Health on city-level health services and launched COVID-19 testing and vaccination sites. His legislative record reflects expanding public healthcare access and coverage, consistent with supporting a public option and strengthening the ACA.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Todd_Gloria",
+    "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180AB2119"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Joanne C. Benson",
+   "topic": "Affordable Housing",
+   "old_value": "4.0",
+   "old_reasoning": "Benson has supported affordable housing legislation in Prince George's County. She backed tenant protection measures and affordable housing funding throughout her tenure.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Nick Charles",
+   "topic": "Affordable Housing",
+   "old_value": "4.0",
+   "old_reasoning": "Charles has supported affordable housing legislation and tenant protections addressing housing affordability challenges in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Arthur Ellis",
+   "topic": "Affordable Housing",
+   "old_value": "4.0",
+   "old_reasoning": "Ellis has supported affordable housing legislation. He backed measures to increase housing affordability in Charles County's growing suburban communities.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Kevin M. Harris",
+   "topic": "Affordable Housing",
+   "old_value": "4.0",
+   "old_reasoning": "Harris has supported affordable housing legislation and anti-displacement measures for renters in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Shaneka Henson",
+   "topic": "Affordable Housing",
+   "old_value": "4.0",
+   "old_reasoning": "Henson has supported affordable housing legislation addressing significant affordability challenges in the Annapolis area. She backed tenant protections and affordable housing funding.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "William C. Smith, Jr.",
+   "topic": "Affordable Housing",
+   "old_value": "4.0",
+   "old_reasoning": "Smith supports affordable housing expansion in Montgomery County. He backed legislation to increase housing supply and protect tenants in the high-cost DC suburbs.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Cheryl C. Kagan",
+   "topic": "Affordable Housing",
+   "old_value": "4.0",
+   "old_reasoning": "Kagan has supported housing affordability legislation including efforts to increase affordable housing in Montgomery County's high-cost real estate market.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Benjamin F. Kramer",
+   "topic": "Affordable Housing",
+   "old_value": "4.0",
+   "old_reasoning": "Kramer has supported housing affordability legislation in Maryland. He backed measures to increase affordable housing supply and tenant protections in Montgomery County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Sara Love",
+   "topic": "Affordable Housing",
+   "old_value": "4.0",
+   "old_reasoning": "Love has supported legislation to expand housing access and affordability in the Montgomery County/DC suburbs. She voted for zoning reform and affordable housing funding bills in the 2023-2025 sessions.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "C. Anthony Muse",
+   "topic": "Affordable Housing",
+   "old_value": "4.0",
+   "old_reasoning": "Muse has supported affordable housing legislation and community investment in Prince George's County, addressing housing needs of his working-class constituents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Jim Rosapepe",
+   "topic": "Affordable Housing",
+   "old_value": "4.0",
+   "old_reasoning": "Rosapepe has supported housing affordability legislation in Prince George's County. He backed measures to increase affordable housing supply and mixed-income development.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "new_value": 3
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Jeff Waldstreicher",
+   "topic": "Affordable Housing",
+   "old_value": "5.0",
+   "old_reasoning": "Waldstreicher has been a leading advocate for housing affordability in Montgomery County. He sponsored legislation to increase affordable housing supply and backed tenant protections.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Alonzo T. Washington",
+   "topic": "Affordable Housing",
+   "old_value": "5.0",
+   "old_reasoning": "Washington represents a district with significant housing affordability challenges. He has backed affordable housing funding, tenant protections, and anti-displacement measures.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Ron Watson",
+   "topic": "Affordable Housing",
+   "old_value": "4.0",
+   "old_reasoning": "Watson has supported affordable housing legislation and tenant protections in Prince George's County, addressing significant affordability challenges.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Rashi Kesarwani",
+   "topic": "Affordable Housing",
+   "old_value": "5.0",
+   "old_reasoning": "Kesarwani champions building more affordable and market-rate homes at all income levels: she secured a $4.9M Encampment Resolution Grant to convert a Super 8 Motel to transitional housing, championed the Golden Bear Inn Homekey conversion (43 studios for homeless individuals at 30% AMI), and led the BART transit-oriented development effort with a 35% affordable housing minimum goal. She frames her record as 'saying yes to more homes' across categories.",
+   "old_sources": [
+    "https://rashikesarwani.com",
+    "https://rashikesarwani.com/north-berkeley-bart",
+    "https://rashikesarwani.com/2023/07/summer-news-city-budget-staffing-addressing-encampments-bart-updates"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Terry Taplin",
+   "topic": "Affordable Housing",
+   "old_value": "5.0",
+   "old_reasoning": "Taplin introduced a resolution recognizing 'housing as a human right' in Berkeley and proposed an Affordable Housing Overlay permitting 'up to an additional 6 stories as-of-right for 100% affordable housing in some neighborhoods.' His homelessness response page notes Berkeley has opened or funded over 790 housing units and he advocates substantial public investment combined with prevention services and case management.",
+   "old_sources": [
+    "https://www.terrytaplin.com/affordable-housing",
+    "https://www.terrytaplin.com/legislation",
+    "https://www.terrytaplin.com/comprehensive-homeless-response"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Todd Gloria",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Gloria established the Office of Race and Equity as mayor per Wikipedia. He authored AB-2119 requiring gender-affirming healthcare for transgender foster youth. As Assembly Majority Whip he supported civil rights legislation across multiple sessions. The planning page confirms an equity-focused planning approach. His record reflects strengthening civil rights enforcement and addressing systemic discrimination through institutional mechanisms.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Todd_Gloria",
+    "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180AB2119"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Joanne C. Benson",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Benson has championed civil rights throughout her career as one of the longest-serving African American women in the Maryland Senate. She supports racial equity, LGBTQ protections, and anti-discrimination measures.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Nick Charles",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Charles consistently supports civil rights legislation including racial equity measures, LGBTQ protections, and anti-discrimination laws in his Prince George's County district.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Arthur Ellis",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Ellis consistently supports civil rights legislation including racial equity measures and LGBTQ protections. He represents a diverse Southern Maryland district.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Kevin M. Harris",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Harris consistently supports civil rights legislation including racial equity measures and LGBTQ protections. He is a strong advocate for his diverse Prince George's County constituents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Shaneka Henson",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Henson is a strong civil rights advocate representing a diverse Anne Arundel County district including Annapolis. She backs racial equity legislation, LGBTQ protections, and anti-discrimination measures.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "William C. Smith, Jr.",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Smith consistently supports civil rights legislation including LGBTQ protections, racial equity measures, and anti-discrimination laws. He has championed these issues through his committee chair position.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Cheryl C. Kagan",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Kagan has consistently backed civil rights legislation throughout her career. She supports LGBTQ protections, racial equity measures, and anti-discrimination laws.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Benjamin F. Kramer",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Kramer backs civil rights legislation including anti-discrimination measures, LGBTQ protections, and racial equity policies. He represents a diverse Montgomery County district.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Sara Love",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Love consistently backs civil rights legislation including anti-discrimination measures. She serves a diverse Montgomery County district and supports LGBTQ protections and racial equity bills.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "C. Anthony Muse",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "4.0",
+   "old_reasoning": "Muse supports civil rights and racial equity legislation. As an African American senator representing a predominantly Black district in Prince George's County, he is a strong advocate for racial justice.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Jim Rosapepe",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Rosapepe has consistently backed civil rights including LGBTQ protections, racial equity measures, and anti-discrimination laws throughout his legislative career.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Jeff Waldstreicher",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Waldstreicher consistently champions civil rights including LGBTQ protections, racial equity legislation, and anti-discrimination measures throughout his Senate tenure.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Alonzo T. Washington",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Washington has consistently supported civil rights legislation including racial equity measures, LGBTQ protections, and anti-discrimination laws. As an African American senator in PG County, he prioritizes racial justice.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Ron Watson",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Watson consistently supports civil rights legislation including racial equity measures and LGBTQ protections. He is a strong voice for his diverse Prince George's County constituents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Rashi Kesarwani",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "4.0",
+   "old_reasoning": "Kesarwani explicitly frames single-family zoning as a tool of racial and class segregation and argues her middle housing ordinance advances 'diversity, equity, and inclusion'; she advocates for equitable housing distribution 'affirmatively further[ing] fair housing' rather than concentrating development in historically redlined neighborhoods; she champions Office of Race, Equity, and Diversity funding and supports equitable tree canopy distribution targeting historically underserved West Berkeley.",
+   "old_sources": [
+    "https://rashikesarwani.com/2025/04/april-news-middle-housing-mtg-postponed-ohlone-park-mtg-more",
+    "https://rashikesarwani.com/2022/07/summer-news-marina-pier-state-funding-possible-ballot-measures-housing-element-more",
+    "https://rashikesarwani.com/2022/05/action-alert-council-to-make-important-public-safety-decisions-tonight"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Terry Taplin",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Taplin states there must be 'zero tolerance for racism, bigotry, and hate anywhere in our city, let alone among the first responders' and champions 'ending the era of racist policing.' He proposed workforce development services for the recently incarcerated and basic income pilots through the Office of Racial Equity, introduced a 'housing as a human right' resolution, and advocates for equitable distribution of transportation safety improvements prioritizing 'the most disadvantaged in our community.'",
+   "old_sources": [
+    "https://www.terrytaplin.com/post/cm-taplin-statement-on-police-misconduct-allegations",
+    "https://www.terrytaplin.com/legislation",
+    "https://www.terrytaplin.com/priorities/vision-2050"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Ben Bartlett",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "5.0",
+   "old_reasoning": "Bartlett's campaign credits him with supporting reparations initiatives, creating BenDex (racial equity in city contracting), making Berkeley a Cannabis Sanctuary City with racial equity priorities, enacting Paid Family Leave, and championing equity and inclusion as a '5th generation Berkeley native.' He frames his entire legislative record around racial equity and economic justice for disadvantaged communities, consistent with the most progressive civil rights stance including reparations support.",
+   "old_sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "424eb63b-9976-4059-8049-365c09719cc6",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "name": "Brent Blackaby",
+   "topic": "Civil Rights and Social Justice",
+   "old_value": "4.0",
+   "old_reasoning": "Blackaby authored the $200,000 Deportation Defense Legal and Education Fund (April 29, 2025) protecting immigrant residents' civil rights, and voted AYE on the urgency resolution condemning Islamophobia and reaffirming support for the Muslim community (March 11, 2025, All Ayes). His background in progressive digital politics for Democratic candidates including Senators Warren and Boxer reflects a consistent civil rights orientation. Served on Berkeley Police Accountability Board.",
+   "old_sources": [
+    "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-04-29%20Annotated%20Agenda%20-%20Council.pdf",
+    "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-03-11%20Annotated%20Agenda%20-%20Council.pdf",
+    "https://berkeleyca.gov/your-government/city-council/council-roster/brent-blackaby"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Todd Gloria",
+   "topic": "Same-Sex Marriage",
+   "old_value": "5.0",
+   "old_reasoning": "Gloria is the first openly gay mayor of San Diego per Wikipedia. He served as chairman of the San Diego LGBT Community Center and vice chair of the California Legislative LGBT Caucus. He has consistently supported full federal protections for same-sex marriage and LGBTQ rights in all legislative capacities and his election represented a historic milestone for same-sex marriage equality.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Todd_Gloria"
+   ],
+   "new_value": 1
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Arthur Ellis",
+   "topic": "Same-Sex Marriage",
+   "old_value": "5.0",
+   "old_reasoning": "Ellis supports same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "new_value": 1
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Kevin M. Harris",
+   "topic": "Same-Sex Marriage",
+   "old_value": "5.0",
+   "old_reasoning": "Harris supports same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "new_value": 1
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "William C. Smith, Jr.",
+   "topic": "Same-Sex Marriage",
+   "old_value": "5.0",
+   "old_reasoning": "Smith supports same-sex marriage and LGBTQ equality. He backed Maryland's marriage equality legislation and LGBTQ anti-discrimination measures.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "new_value": 1
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Cheryl C. Kagan",
+   "topic": "Same-Sex Marriage",
+   "old_value": "5.0",
+   "old_reasoning": "Kagan supported marriage equality in Maryland during the 2012 ballot initiative and has voted for LGBTQ non-discrimination legislation throughout her Senate tenure.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "new_value": 1
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Benjamin F. Kramer",
+   "topic": "Same-Sex Marriage",
+   "old_value": "5.0",
+   "old_reasoning": "Kramer supports same-sex marriage and LGBTQ equality. He voted for marriage equality and LGBTQ non-discrimination legislation.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "new_value": 1
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Sara Love",
+   "topic": "Same-Sex Marriage",
+   "old_value": "5.0",
+   "old_reasoning": "Love supports same-sex marriage and LGBTQ equality. As a Montgomery County Democrat, she voted for LGBTQ anti-discrimination legislation and consistently supports marriage equality.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "new_value": 1
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Ron Watson",
+   "topic": "Same-Sex Marriage",
+   "old_value": "5.0",
+   "old_reasoning": "Watson supports same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation and marriage equality.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "new_value": 1
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Joanne C. Benson",
+   "topic": "Childcare Affordability & Access",
+   "old_value": "5.0",
+   "old_reasoning": "Benson backed the Blueprint for Maryland's Future including childcare investment and pre-K expansion. She supports comprehensive early childhood education for working families.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/senate/0866.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Nick Charles",
+   "topic": "Childcare Affordability & Access",
+   "old_value": "5.0",
+   "old_reasoning": "Charles supported childcare investment in the Blueprint for Maryland's Future. He supports pre-K expansion and childcare subsidies for working families.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Arthur Ellis",
+   "topic": "Childcare Affordability & Access",
+   "old_value": "4.0",
+   "old_reasoning": "Ellis supported childcare investment and pre-K expansion in the Blueprint for Maryland's Future, helping working families in Charles County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1030?ys=2019RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Kevin M. Harris",
+   "topic": "Childcare Affordability & Access",
+   "old_value": "5.0",
+   "old_reasoning": "Sponsored SB0664 (2026) prioritising child care providers in the Child Care Scholarship Program and SB0402 (2026) on residential child care programs; backs childcare subsidy expansion.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0664?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0402?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Shaneka Henson",
+   "topic": "Childcare Affordability & Access",
+   "old_value": "5.0",
+   "old_reasoning": "Henson supported childcare investment in the Blueprint for Maryland's Future. She backs pre-K expansion and childcare subsidies for working families in her district.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "William C. Smith, Jr.",
+   "topic": "Childcare Affordability & Access",
+   "old_value": "5.0",
+   "old_reasoning": "Smith backed childcare investment as part of the Blueprint for Maryland's Future. He supports universal pre-K and childcare subsidy programs.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1372?ys=2021RS",
+    "https://mgaleg.maryland.gov/2021RS/votes/senate/0749.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Cheryl C. Kagan",
+   "topic": "Childcare Affordability & Access",
+   "old_value": "5.0",
+   "old_reasoning": "Kagan supports childcare access and early childhood education investment. She backed the Blueprint for Maryland's Future which includes significant pre-K and childcare funding.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/senate/0866.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Sara Love",
+   "topic": "Childcare Affordability & Access",
+   "old_value": "5.0",
+   "old_reasoning": "Love has been a champion for childcare access and affordability. She supported the Blueprint for Maryland's Future which includes childcare investments and pre-K expansion.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "C. Anthony Muse",
+   "topic": "Childcare Affordability & Access",
+   "old_value": "4.0",
+   "old_reasoning": "Muse supported childcare investment including early childhood education programs. He backs family support services for working parents in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Jim Rosapepe",
+   "topic": "Childcare Affordability & Access",
+   "old_value": "4.0",
+   "old_reasoning": "Rosapepe supported childcare investment including the Blueprint for Maryland's Future pre-K expansion to help working families in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/senate/0866.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Jeff Waldstreicher",
+   "topic": "Childcare Affordability & Access",
+   "old_value": "5.0",
+   "old_reasoning": "Waldstreicher has backed significant childcare access legislation and early childhood education investment. He supported the Blueprint for Maryland's Future pre-K expansion.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Alonzo T. Washington",
+   "topic": "Childcare Affordability & Access",
+   "old_value": "5.0",
+   "old_reasoning": "Washington supported childcare investment in the Blueprint for Maryland's Future, recognizing childcare access as critical for working families in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Ron Watson",
+   "topic": "Childcare Affordability & Access",
+   "old_value": "5.0",
+   "old_reasoning": "Watson supported childcare investment in the Blueprint for Maryland's Future, recognizing childcare as essential for working families in his district.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "85d27350-e1b6-45b8-aee3-509ca88c5af4",
+   "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+   "name": "Mark Warner",
+   "topic": "Ukraine - Russia Conflict",
+   "old_value": "5.0",
+   "old_reasoning": "Warner is among the most vocal Ukraine aid supporters in the Senate. As Senate Intelligence Committee Chair, he called congressional failure to pass Ukraine aid a 'tremendous gift' to Putin. He co-led Senate efforts to pass the 2024 foreign aid package (Senate voted 80-19 to advance it, signed April 24, 2024) — the Ukraine Security Supplemental Appropriations Act (H.R.8035) including billions in military funding. He stated military equipment would be 'in transit to Ukraine by next week' after passage and has supported all Ukraine supplemental appropriations from 2022 onward.",
+   "old_sources": [
+    "https://thehill.com/homenews/senate/4371927-warner-failure-to-pass-ukraine-aid-gift-putin/",
+    "https://thehill.com/homenews/senate/4609587-warner-military-equipment-will-be-in-transit-to-ukraine-by-next-week-if-biden-signs-bill/",
+    "https://www.congress.gov/bill/118th-congress/house-bill/8035/text"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "8cffe7a0-b56c-42fe-adbf-f57d63589973",
+   "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+   "name": "Tim Kaine",
+   "topic": "Ukraine - Russia Conflict",
+   "old_value": "5.0",
+   "old_reasoning": "Kaine is one of the Senate's strongest Ukraine supporters. He voted for the $95 billion Ukraine-Israel-Taiwan supplemental aid package (Senate vote, April 23, 2024, 79-18). As a Senate Foreign Relations Committee member he championed Ukraine aid legislation and co-sponsored war powers measures to maintain congressional oversight. In November 2024 he was pushing for additional lame-duck Ukraine funding before the Trump transition. His record consistently places him among Democrats' most vocal Ukraine advocates.",
+   "old_sources": [
+    "https://www.washingtonpost.com/politics/2024/04/23/senate-vote-foreign-aid-ukraine-israel/",
+    "https://thehill.com/policy/international/4989155-senate-democrat-sees-a-chance-of-more-ukraine-funding-in-lame-duck-session/",
+    "https://rollcall.com/2024/04/23/aid-finally-set-to-flow-as-senate-clears-95-3b-emergency-bill/"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+   "name": "Cheryl C. Kagan",
+   "topic": "Misinformation and the Role of Algorithms in Democracy",
+   "old_value": "4.0",
+   "old_reasoning": "Kagan has addressed election misinformation through her election law work, supporting legislation to combat false information about voting procedures and electoral processes.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "name": "Sara Love",
+   "topic": "Rent Regulation",
+   "old_value": "4.0",
+   "old_reasoning": "Love represents an urban/suburban district with significant renter populations. She has supported tenant protections and rent stabilization policies during her Senate tenure.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "new_value": 2
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "name": "Jeff Waldstreicher",
+   "topic": "Rent Regulation",
+   "old_value": "4.0",
+   "old_reasoning": "Waldstreicher supports rent stabilization measures to protect tenants in the high-cost Montgomery County housing market. He has backed local government authority to implement rent control.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "new_value": 2
+  }
+ ]
+}

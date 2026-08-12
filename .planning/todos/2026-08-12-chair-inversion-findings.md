@@ -70,7 +70,39 @@ correction has to be judged per row.
 | AI Oversight | 25 | **0** | object-ambiguous, excluded |
 | Climate / Healthcare / Affordable Housing | 67 | not yet read | same 14-politician batch dominates |
 
-## ▶ The open question: what is the remedy?
+## ✅ FIXED — migration 1714. 89 chairs corrected, 18 also re-sourced
+
+Operator chose: correct the chair and re-source where possible, across all calibrated topics.
+
+| topic | rows | new chair |
+|---|---|---|
+| Civil Rights | 19 | 2 |
+| Affordable Housing | 16 | 2 or 3 |
+| Climate Change | 15 | 3, or 2 where wording is stronger |
+| Healthcare Access | 13 | 2 |
+| Childcare | 13 | 2 |
+| Same-Sex Marriage | 8 | 1 |
+| Ukraine | 2 | 2 |
+| Rent Regulation | 2 | 2 |
+| Misinformation | 1 | 2 |
+
+**Target = the least extreme pro-side option the reasoning actually supports.** Generic "supports
+civil rights legislation … racial equity … anti-discrimination" becomes chair 2 (*strengthen civil
+rights enforcement and address systemic discrimination*), NOT chair 1, which demands reparations the
+row never claims. Ten rows with clearly stronger wording were overridden individually — the Sierra
+Club chapter chair, "aggressive climate action", "universal healthcare access", "housing as a human
+right".
+
+✅ **Verified after applying:** production matches the file; **0 of the 89 still sit at their topic's
+anti pole**; a full re-scan drops 194 → 105 and **the batch signature is gone — 0 politicians meet it,
+was 15**. The 105 remaining are exactly the 70 in the two excluded topics plus the 35 read and judged
+correct. Corpus 33,083 / 32,542 unchanged, orphans 0.
+
+⚠ **Sourcing is still owed on 71 of the 89.** Only Civil Rights and Same-Sex Marriage could be
+re-sourced from the Maryland index; climate, healthcare, housing and childcare bills were never
+crawled. The chair is right now, the citation is still a Ballotpedia bio.
+
+### The original open question (answered)
 The stored chair is **unambiguously wrong**; the right replacement is **not** mechanical.
 For *"supports civil rights legislation including racial equity measures and LGBTQ protections"*,
 chair **2** (*strengthen civil rights enforcement and address systemic discrimination*) fits, but

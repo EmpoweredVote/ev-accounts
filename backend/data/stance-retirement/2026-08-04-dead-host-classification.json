@@ -1,0 +1,692 @@
+{
+  "generated": "2026-08-04",
+  "method": "CDX exact-URL primary, availability fallback, exponential backoff",
+  "hosts": [
+    {
+      "host": "bilalmahmood.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 12,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 29,
+      "siblings_editorial": 29,
+      "sibling_sample": [
+        "http://bilalmahmood.com/",
+        "https://www.bilalmahmood.com/.well-known/ai-plugin.json",
+        "https://www.bilalmahmood.com/.well-known/assetlinks.json"
+      ],
+      "cited": [
+        {
+          "url": "https://bilalmahmood.com/platform",
+          "rows": 9,
+          "verdict": "ARCHIVED",
+          "captures": 8,
+          "first": "20231104212748"
+        },
+        {
+          "url": "https://bilalmahmood.com/",
+          "rows": 3,
+          "verdict": "ARCHIVED",
+          "captures": 8,
+          "first": "20110207113357"
+        },
+        {
+          "url": "https://bilalmahmood.com/about",
+          "rows": 2,
+          "verdict": "ARCHIVED",
+          "captures": 8,
+          "first": "20231109071107"
+        }
+      ]
+    },
+    {
+      "host": "davidredkey4congress.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 7,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 44,
+      "siblings_editorial": 44,
+      "sibling_sample": [
+        "http://www.davidredkey4congress.com/",
+        "https://www.davidredkey4congress.com/.well-known/ai-plugin.json",
+        "https://www.davidredkey4congress.com/.well-known/assetlinks.json"
+      ],
+      "cited": [
+        {
+          "url": "https://www.davidredkey4congress.com/economic-bill-of-rights",
+          "rows": 2,
+          "verdict": "ARCHIVED",
+          "captures": 3,
+          "first": "20260313011753"
+        },
+        {
+          "url": "https://www.davidredkey4congress.com/tricare-prime-for-all",
+          "rows": 2,
+          "verdict": "ARCHIVED",
+          "captures": 3,
+          "first": "20260209112553"
+        },
+        {
+          "url": "https://www.davidredkey4congress.com/federal-monies-for-school-funding",
+          "rows": 1,
+          "verdict": "ARCHIVED",
+          "captures": 3,
+          "first": "20260209122630"
+        },
+        {
+          "url": "https://www.davidredkey4congress.com/fights-for-reproductive-rights",
+          "rows": 1,
+          "verdict": "ARCHIVED",
+          "captures": 3,
+          "first": "20260209105434"
+        },
+        {
+          "url": "https://www.davidredkey4congress.com/stopping-the-trump-tariffs",
+          "rows": 1,
+          "verdict": "ARCHIVED",
+          "captures": 3,
+          "first": "20260209121136"
+        }
+      ]
+    },
+    {
+      "host": "chapmanforcongress.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 5,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 300,
+      "siblings_editorial": 300,
+      "sibling_sample": [
+        "http://www.chapmanforcongress.com:80/",
+        "https://chapmanforcongress.com/&themeRefresh=1",
+        "http://chapmanforcongress.com/1/"
+      ],
+      "cited": [
+        {
+          "url": "https://chapmanforcongress.com/issues/",
+          "rows": 5,
+          "verdict": "ARCHIVED",
+          "captures": 8,
+          "first": "20030211134459"
+        }
+      ]
+    },
+    {
+      "host": "tracinskiletter.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 4,
+      "class": "REPOINTABLE_SOME",
+      "siblings_total": 300,
+      "siblings_editorial": 300,
+      "sibling_sample": [
+        "http://www.tracinskiletter.com/",
+        "https://tracinskiletter.com/.well-known/ai-plugin.json",
+        "https://tracinskiletter.com/.well-known/assetlinks.json"
+      ],
+      "cited": [
+        {
+          "url": "https://www.tracinskiletter.com/p/so-much-for-originalism",
+          "rows": 2,
+          "verdict": "ABSENT"
+        },
+        {
+          "url": "https://www.tracinskiletter.com/p/the-borderline-constitution",
+          "rows": 2,
+          "verdict": "ABSENT"
+        },
+        {
+          "url": "https://www.tracinskiletter.com/about",
+          "rows": 1,
+          "verdict": "ARCHIVED",
+          "captures": 8,
+          "first": "20121013030840"
+        },
+        {
+          "url": "https://www.tracinskiletter.com/p/farmageddon",
+          "rows": 1,
+          "verdict": "ABSENT"
+        },
+        {
+          "url": "https://www.tracinskiletter.com/p/things-that-would-be-nice-if-they",
+          "rows": 1,
+          "verdict": "ABSENT"
+        }
+      ]
+    },
+    {
+      "host": "davidfbristol.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 4,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 29,
+      "siblings_editorial": 29,
+      "sibling_sample": [
+        "http://davidfbristol.com/",
+        "https://davidfbristol.com/favicon.ico",
+        "http://davidfbristol.com/robots.txt"
+      ],
+      "cited": [
+        {
+          "url": "https://davidfbristol.com/",
+          "rows": 4,
+          "verdict": "ARCHIVED",
+          "captures": 8,
+          "first": "20211201091036"
+        }
+      ]
+    },
+    {
+      "host": "kateforbloomington.org",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 4,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 53,
+      "siblings_editorial": 53,
+      "sibling_sample": [
+        "https://kateforbloomington.org/",
+        "https://kateforbloomington.org/.well-known/ai-plugin.json",
+        "https://kateforbloomington.org/.well-known/assetlinks.json"
+      ],
+      "cited": [
+        {
+          "url": "https://kateforbloomington.org/issues/",
+          "rows": 4,
+          "verdict": "ARCHIVED",
+          "captures": 6,
+          "first": "20190723180506"
+        }
+      ]
+    },
+    {
+      "host": "bradknott.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 3,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 249,
+      "siblings_editorial": 249,
+      "sibling_sample": [
+        "http://www.bradknott.com:80/",
+        "https://www.bradknott.com/.well-known/ai-plugin.json",
+        "https://www.bradknott.com/.well-known/assetlinks.json"
+      ],
+      "cited": [
+        {
+          "url": "https://www.bradknott.com/priorities",
+          "rows": 3,
+          "verdict": "ARCHIVED",
+          "captures": 1,
+          "first": "20260512171724"
+        }
+      ]
+    },
+    {
+      "host": "dutra4whittier.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 3,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 300,
+      "siblings_editorial": 300,
+      "sibling_sample": [
+        "http://dutra4whittier.com",
+        "https://www.dutra4whittier.com/.well-known/ai-plugin.json",
+        "https://dutra4whittier.com/.well-known/assetlinks.json"
+      ],
+      "cited": [
+        {
+          "url": "https://www.dutra4whittier.com/about/",
+          "rows": 3,
+          "verdict": "ARCHIVED",
+          "captures": 8,
+          "first": "20190717142033"
+        }
+      ]
+    },
+    {
+      "host": "boli.oregon.gov",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 3,
+      "class": "NO_ARCHIVE_OTHER",
+      "siblings_total": 0,
+      "siblings_editorial": 0,
+      "sibling_sample": [],
+      "cited": [
+        {
+          "url": "https://boli.oregon.gov/pages/news.aspx",
+          "rows": 3,
+          "verdict": "ABSENT"
+        }
+      ]
+    },
+    {
+      "host": "kennethforla.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 2,
+      "class": "NO_ARCHIVE_CAMPAIGN_WEAK",
+      "siblings_total": 0,
+      "siblings_editorial": 0,
+      "sibling_sample": [],
+      "cited": [
+        {
+          "url": "https://www.kennethforla.com/",
+          "rows": 2,
+          "verdict": "ABSENT"
+        }
+      ]
+    },
+    {
+      "host": "craigandresforprosper.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 2,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 3,
+      "siblings_editorial": 3,
+      "sibling_sample": [
+        "http://craigandresforprosper.com/",
+        "https://craigandresforprosper.com/favicon.ico",
+        "http://craigandresforprosper.com/robots.txt"
+      ],
+      "cited": [
+        {
+          "url": "https://craigandresforprosper.com/",
+          "rows": 2,
+          "verdict": "ARCHIVED",
+          "captures": 2,
+          "first": "20180808145709"
+        }
+      ]
+    },
+    {
+      "host": "act.juliabrownley.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 2,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 300,
+      "siblings_editorial": 300,
+      "sibling_sample": [
+        "http://act.juliabrownley.com/",
+        "http://act.juliabrownley.com/citizens-united",
+        "http://act.juliabrownley.com/citizens-united?&firstname=Walter&lastname=Jorgensen&zip=98501&email=waltjorgensen@comcast.net"
+      ],
+      "cited": [
+        {
+          "url": "https://act.juliabrownley.com/page/s/call-on-congress-to-pass-the-dream-act",
+          "rows": 2,
+          "verdict": "ARCHIVED",
+          "captures": 2,
+          "first": "20171223013806"
+        }
+      ]
+    },
+    {
+      "host": "octavioforwhittier.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 2,
+      "class": "NO_ARCHIVE_CAMPAIGN_WEAK",
+      "siblings_total": 0,
+      "siblings_editorial": 0,
+      "sibling_sample": [],
+      "cited": [
+        {
+          "url": "https://octavioforwhittier.com/",
+          "rows": 2,
+          "verdict": "ABSENT"
+        }
+      ]
+    },
+    {
+      "host": "markhenderson.org",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 2,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 260,
+      "siblings_editorial": 260,
+      "sibling_sample": [
+        "http://www.markhenderson.org:80/",
+        "https://www.markhenderson.org/.well-known/ai-plugin.json",
+        "https://www.markhenderson.org/.well-known/assetlinks.json"
+      ],
+      "cited": [
+        {
+          "url": "https://www.markhenderson.org/",
+          "rows": 2,
+          "verdict": "ARCHIVED",
+          "captures": 8,
+          "first": "20130126072321"
+        }
+      ]
+    },
+    {
+      "host": "maryannforwhittier.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 2,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 34,
+      "siblings_editorial": 34,
+      "sibling_sample": [
+        "http://www.maryannforwhittier.com/",
+        "https://www.maryannforwhittier.com/_api/communities-blog-api-web",
+        "https://www.maryannforwhittier.com/_api/communities-blog-node-api"
+      ],
+      "cited": [
+        {
+          "url": "https://www.maryannforwhittier.com/issues",
+          "rows": 2,
+          "verdict": "ARCHIVED",
+          "captures": 1,
+          "first": "20231215180833"
+        }
+      ]
+    },
+    {
+      "host": "monteiro4council2022.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 2,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 63,
+      "siblings_editorial": 63,
+      "sibling_sample": [
+        "https://www.monteiro4council2022.com/",
+        "https://www.monteiro4council2022.com/comments/feed/",
+        "https://www.monteiro4council2022.com/events/?ical=1"
+      ],
+      "cited": [
+        {
+          "url": "https://www.monteiro4council2022.com/",
+          "rows": 2,
+          "verdict": "ARCHIVED",
+          "captures": 6,
+          "first": "20220117232610"
+        }
+      ]
+    },
+    {
+      "host": "m.lasvegassun.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 1,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 300,
+      "siblings_editorial": 300,
+      "sibling_sample": [
+        "http://m.lasvegassun.com:80/",
+        "https://m.lasvegassun.com/.../as-las-vegas-rebounds-from.../",
+        "https://m.lasvegassun.com/.../in-humboldt-county.../"
+      ],
+      "cited": [
+        {
+          "url": "https://m.lasvegassun.com/news/2019/nov/06/tense-las-vegas-council-oks-homeless-ordinance/",
+          "rows": 1,
+          "verdict": "ARCHIVED",
+          "captures": 3,
+          "first": "20191107105922"
+        }
+      ]
+    },
+    {
+      "host": "metromayor.org",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 1,
+      "class": "NO_ARCHIVE_OTHER",
+      "siblings_total": 1,
+      "siblings_editorial": 1,
+      "sibling_sample": [
+        "http://metromayor.org/robots.txt"
+      ],
+      "cited": [
+        {
+          "url": "https://metromayor.org/climate-resolutions/",
+          "rows": 1,
+          "verdict": "ABSENT"
+        }
+      ]
+    },
+    {
+      "host": "downeylegend.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 1,
+      "class": "NO_ARCHIVE_OTHER",
+      "siblings_total": 2,
+      "siblings_editorial": 2,
+      "sibling_sample": [
+        "http://downeylegend.com",
+        "http://downeylegend.com/robots.txt"
+      ],
+      "cited": [
+        {
+          "url": "https://downeylegend.com/get-to-know-mayor-claudia-frometa/",
+          "rows": 1,
+          "verdict": "ABSENT"
+        }
+      ]
+    },
+    {
+      "host": "rightnowmn.org",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 1,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 300,
+      "siblings_editorial": 300,
+      "sibling_sample": [
+        "http://rightnowmn.org/",
+        "https://www.rightnowmn.org/.well-known/ai-plugin.json",
+        "https://www.rightnowmn.org/.well-known/assetlinks.json"
+      ],
+      "cited": [
+        {
+          "url": "https://www.rightnowmn.org/hughmctavish",
+          "rows": 1,
+          "verdict": "ARCHIVED",
+          "captures": 8,
+          "first": "20230401133928"
+        }
+      ]
+    },
+    {
+      "host": "cambridgeresidentsalliance.org",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 1,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 300,
+      "siblings_editorial": 300,
+      "sibling_sample": [
+        "http://www.cambridgeresidentsalliance.org:80/",
+        "http://www.cambridgeresidentsalliance.org/--",
+        "http://www.cambridgeresidentsalliance.org/--You"
+      ],
+      "cited": [
+        {
+          "url": "https://www.cambridgeresidentsalliance.org/",
+          "rows": 1,
+          "verdict": "ARCHIVED",
+          "captures": 8,
+          "first": "20121113155724"
+        }
+      ]
+    },
+    {
+      "host": "vivioforcongress.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 1,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 300,
+      "siblings_editorial": 300,
+      "sibling_sample": [
+        "https://vivioforcongress.com/",
+        "https://vivioforcongress.com/.well-known/ai-plugin.json",
+        "https://vivioforcongress.com/.well-known/assetlinks.json"
+      ],
+      "cited": [
+        {
+          "url": "https://vivioforcongress.com/about/",
+          "rows": 1,
+          "verdict": "ARCHIVED",
+          "captures": 6,
+          "first": "20251107155935"
+        }
+      ]
+    },
+    {
+      "host": "allenrwaters.com",
+      "dns": "NO_DNS",
+      "control": false,
+      "rows": 1,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 300,
+      "siblings_editorial": 300,
+      "sibling_sample": [
+        "http://www.allenrwaters.com/",
+        "https://www.allenrwaters.com/.well-known/ai-plugin.json",
+        "https://www.allenrwaters.com/.well-known/assetlinks.json"
+      ],
+      "cited": [
+        {
+          "url": "https://www.allenrwaters.com",
+          "rows": 1,
+          "verdict": "ARCHIVED",
+          "captures": 8,
+          "first": "20170329122320"
+        }
+      ]
+    },
+    {
+      "host": "willametteweek.com",
+      "dns": "ERRORED",
+      "control": false,
+      "rows": 57,
+      "class": "HOST_ARCHIVED_PATHS_NEVER_CAPTURED",
+      "siblings_total": 300,
+      "siblings_editorial": 300,
+      "sibling_sample": [
+        "http://www.willametteweek.com:80/",
+        "http://www.willametteweek.com:80/%23Web+Pages/pages/default.html",
+        "http://www.willametteweek.com/2008/arrow_icon2.gif"
+      ],
+      "cited": [
+        {
+          "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-3-candidates-answer-our-questions/",
+          "rows": 17,
+          "verdict": "ABSENT"
+        },
+        {
+          "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-1-candidates-answer-our-questions/",
+          "rows": 14,
+          "verdict": "ABSENT"
+        },
+        {
+          "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-2-candidates-answer-our-questions/",
+          "rows": 13,
+          "verdict": "ABSENT"
+        },
+        {
+          "url": "https://www.willametteweek.com/news/2024/10/30/portland-council-district-4-candidates-answer-our-questions/",
+          "rows": 8,
+          "verdict": "ABSENT"
+        },
+        {
+          "url": "https://www.willametteweek.com/news/2024/10/30/portland-mayor-candidates-answer-our-questions/",
+          "rows": 5,
+          "verdict": "ABSENT"
+        }
+      ]
+    },
+    {
+      "host": "walthampatch.com",
+      "dns": "ERRORED",
+      "control": false,
+      "rows": 5,
+      "class": "NO_ARCHIVE_OTHER",
+      "siblings_total": 3,
+      "siblings_editorial": 3,
+      "sibling_sample": [
+        "http://walthampatch.com/",
+        "http://walthampatch.com/favicon.ico",
+        "http://www.walthampatch.com/robots.txt"
+      ],
+      "cited": [
+        {
+          "url": "https://www.walthampatch.com/posts/waltham-city-council-mbta-zoning-vote-2024",
+          "rows": 4,
+          "verdict": "ABSENT"
+        },
+        {
+          "url": "https://www.walthampatch.com/posts/waltham-mbta-communities-zoning-compliance-2024",
+          "rows": 1,
+          "verdict": "ABSENT"
+        }
+      ]
+    },
+    {
+      "host": "publicleadershipinstitute.org",
+      "dns": "ERRORED",
+      "control": false,
+      "rows": 1,
+      "class": "REPOINTABLE_ALL",
+      "siblings_total": 300,
+      "siblings_editorial": 300,
+      "sibling_sample": [
+        "http://www.publicleadershipinstitute.org:80/",
+        "https://publicleadershipinstitute.org/.png",
+        "https://publicleadershipinstitute.org/.svg"
+      ],
+      "cited": [
+        {
+          "url": "https://publicleadershipinstitute.org/2019/09/25/proactive-abortion-rights-summary-of-2019/",
+          "rows": 1,
+          "verdict": "ARCHIVED",
+          "captures": 8,
+          "first": "20191016140756"
+        }
+      ]
+    },
+    {
+      "host": "figcitynews.com",
+      "dns": "NO_DNS",
+      "control": true,
+      "rows": 0,
+      "class": "CONTROL_OK",
+      "siblings_total": 300,
+      "siblings_editorial": 300,
+      "sibling_sample": [
+        "http://figcitynews.com/",
+        "https://figcitynews.com/.../increased-call-for-a-gas.../",
+        "https://figcitynews.com/.png"
+      ],
+      "cited": []
+    },
+    {
+      "host": "wweek.com",
+      "dns": "NO_DNS",
+      "control": true,
+      "rows": 0,
+      "class": "CONTROL_OK",
+      "siblings_total": 300,
+      "siblings_editorial": 300,
+      "sibling_sample": [
+        "http://www.wweek.com:80/",
+        "http://www.wweek.com:80/%22target=%22_blank",
+        "http://www.wweek.com:80/%20"
+      ],
+      "cited": []
+    }
+  ]
+}

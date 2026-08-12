@@ -1,0 +1,436 @@
+{
+ "pass": "MD civil-rights bill sponsor index (FULL sponsor lists, not just first sponsor)",
+ "caveat": "Maryland lists every sponsor under \"Sponsored by\"; there is no separate cosponsor block. A bare surname shared by two members is ambiguous and must not be credited to either.",
+ "n_bills": 6,
+ "failed": 0,
+ "bills": [
+  {
+   "session": "2013RS",
+   "number": "SB0262",
+   "slug": "sb0262",
+   "title": "Task Force to Study Implementing a Civil Right to Counsel in Maryland",
+   "chamber": "senate",
+   "sponsors": []
+  },
+  {
+   "session": "2013RS",
+   "number": "SB0335",
+   "slug": "sb0335",
+   "title": "Health Occupations - Funeral Establishments - Preparation and Holding Rooms",
+   "chamber": "senate",
+   "sponsors": [
+    "Klausmeier",
+    "Brinkley",
+    "Ferguson"
+   ]
+  },
+  {
+   "session": "2013RS",
+   "number": "SB0487",
+   "slug": "sb0487",
+   "title": "Human Relations - Housing Discrimination - Source of Income",
+   "chamber": "senate",
+   "sponsors": [
+    "Raskin",
+    "Benson",
+    "Conway",
+    "Currie",
+    "Ferguson",
+    "Forehand",
+    "Gladden",
+    "Jones-Rodwell",
+    "Kelley",
+    "King",
+    "Madaleno",
+    "Manno",
+    "McFadden",
+    "Montgomery",
+    "Muse",
+    "Peters",
+    "Pinsky",
+    "Pugh",
+    "Ramirez",
+    "Robey"
+   ]
+  },
+  {
+   "session": "2013RS",
+   "number": "SB0572",
+   "slug": "sb0572",
+   "title": "Maryland Early Learning Challenge and School Readiness Act (Race to the Tots)",
+   "chamber": "senate",
+   "sponsors": []
+  },
+  {
+   "session": "2013RS",
+   "number": "SB0581",
+   "slug": "sb0581",
+   "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms",
+   "chamber": "senate",
+   "sponsors": [
+    "Kelley",
+    "Benson",
+    "Brinkley",
+    "Forehand",
+    "Klausmeier",
+    "Madaleno",
+    "Middleton",
+    "Montgomery",
+    "Pinsky",
+    "Pugh",
+    "Astle",
+    "Garagiola",
+    "Glassman",
+    "Kittleman",
+    "Mathias"
+   ]
+  },
+  {
+   "session": "2013RS",
+   "number": "SB0582",
+   "slug": "sb0582",
+   "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards",
+   "chamber": "senate",
+   "sponsors": [
+    "Kelley",
+    "Benson",
+    "Brinkley",
+    "Forehand",
+    "Klausmeier",
+    "Madaleno",
+    "Middleton",
+    "Montgomery",
+    "Pinsky",
+    "Pugh",
+    "Astle",
+    "Garagiola",
+    "Glassman",
+    "Kittleman",
+    "Mathias"
+   ]
+  }
+ ],
+ "index": {
+  "klausmeier": [
+   {
+    "session": "2013RS",
+    "number": "SB0335",
+    "title": "Health Occupations - Funeral Establishments - Preparation and Holding Rooms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ],
+  "brinkley": [
+   {
+    "session": "2013RS",
+    "number": "SB0335",
+    "title": "Health Occupations - Funeral Establishments - Preparation and Holding Rooms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ],
+  "ferguson": [
+   {
+    "session": "2013RS",
+    "number": "SB0335",
+    "title": "Health Occupations - Funeral Establishments - Preparation and Holding Rooms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   }
+  ],
+  "raskin": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   }
+  ],
+  "benson": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ],
+  "conway": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   }
+  ],
+  "currie": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   }
+  ],
+  "forehand": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ],
+  "gladden": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   }
+  ],
+  "jones-rodwell": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   }
+  ],
+  "kelley": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ],
+  "king": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   }
+  ],
+  "madaleno": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ],
+  "manno": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   }
+  ],
+  "mcfadden": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   }
+  ],
+  "montgomery": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ],
+  "muse": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   }
+  ],
+  "peters": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   }
+  ],
+  "pinsky": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ],
+  "pugh": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ],
+  "ramirez": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   }
+  ],
+  "robey": [
+   {
+    "session": "2013RS",
+    "number": "SB0487",
+    "title": "Human Relations - Housing Discrimination - Source of Income"
+   }
+  ],
+  "middleton": [
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ],
+  "astle": [
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ],
+  "garagiola": [
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ],
+  "glassman": [
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ],
+  "kittleman": [
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ],
+  "mathias": [
+   {
+    "session": "2013RS",
+    "number": "SB0581",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Notice and Authorization Forms"
+   },
+   {
+    "session": "2013RS",
+    "number": "SB0582",
+    "title": "Health Insurance - Federal Mental Health Parity and Addiction Equity Act - Utilization Review Criteria and Standards"
+   }
+  ]
+ }
+}
