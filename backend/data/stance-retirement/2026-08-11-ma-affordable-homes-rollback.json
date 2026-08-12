@@ -1,0 +1,175 @@
+{
+  "migration": "1707_resource_ma_affordable_homes_act",
+  "generated": "pre-change snapshot read from the live DB",
+  "evidence": {
+    "bill": "193rd General Court H.4977 \"An Act relative to the Affordable Homes Act\" (Chapter 150, Acts of 2024)",
+    "vote": "Senate Roll Call #249 — Question on passing the bill to be enacted. YEAS 37 / NAYS 2, parse self-checked against both declared counts.",
+    "identity": "MA roll calls print \"Surname, First M.\", so each match is on surname AND first name. No surname-only match was accepted."
+  },
+  "caveats": {
+    "near_unanimous": "37-2 in a 40-seat Senate. By the rule applied to Mary Lehman's 130-1 vote, this cannot establish a DISTINCTIVE position — it is used only to verify the claim each row already makes, that the member supported the Act.",
+    "secondary_claims": "Several rows also assert MBTA Communities compliance or funding advocacy, which this citation does not support. Unlike the pass-6d voucher clause those were never searched for, and NOT SEARCHED is not NOT FOUND, so reasoning is left unchanged."
+  },
+  "not_applied": {
+    "Ronald Mariano": "Speaker of the House — not on a Senate roll call.",
+    "William J. Driscoll": "Representative — not on a Senate roll call.",
+    "Dylan A. Fernandes": "Was a Representative in the 193rd; elected to the Senate afterwards.",
+    "Karen E. Spilka": "Senate President. 37+2=39 of 40 seats, so the presiding officer is the one missing — UNKNOWN, never guessed (same rule as the MD Speaker/President case)."
+  },
+  "row_count": 17,
+  "rows": [
+    {
+      "politician_id": "11d73e67-bcd9-419a-8b0d-a26447eb0c0b",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Lydia M. Edwards",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/LME0"
+      ],
+      "reasoning": "Edwards has been one of the most vocal housing justice advocates in the Senate. As a former Boston City Councilor representing East Boston and Charlestown — neighborhoods that experienced rapid gentrification — she championed anti-displacement policies and tenant protections. She has backed mandatory inclusionary zoning, anti-speculation taxes, and right-to-counsel for tenants facing eviction. She supported the 2024 Affordable Homes Act while pushing for stronger tenant protections than the final bill included."
+    },
+    {
+      "politician_id": "2c53dc2c-38ae-4f39-873d-9ea1841b1c4c",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Nick Collins",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/N_C0"
+      ],
+      "reasoning": "Collins has supported affordable housing production and has been engaged with major development projects in South Boston and the South End. He supported the 2024 Affordable Homes Act and has backed MBTA Communities zoning requirements. South Boston has experienced dramatic gentrification and he has navigated between promoting development and protecting long-time residents. He has backed inclusionary zoning requirements and affordable unit mandates in new development in his district."
+    },
+    {
+      "politician_id": "2f7d598c-c3d7-48ba-ac9c-fb059e032bfe",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Liz Miranda",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/L%20M0"
+      ],
+      "reasoning": "Miranda has been a strong housing justice advocate representing Roxbury and Dorchester, communities facing massive displacement pressure from Boston development. She has backed affordable housing production, anti-displacement measures, community land trust models, and tenant protections. She supported the 2024 Affordable Homes Act and has pushed for stronger anti-displacement provisions. She has backed right-to-counsel for tenants in eviction proceedings and has been vocal about the need to prioritize existing residents when development occurs."
+    },
+    {
+      "politician_id": "5cd1c798-31dc-4e53-b578-7e2d81378478",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "John F. Keenan",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/JFK0"
+      ],
+      "reasoning": "Keenan supported the 2024 Affordable Homes Act and has backed affordable housing production in his district. Quincy has been a focus for transit-oriented development near Red Line stations and he has supported zoning reforms allowing more housing near transit. He has backed state funding for affordable housing preservation and new construction. His approach balances housing production with local community input on development scale."
+    },
+    {
+      "politician_id": "67ea7814-b7aa-42de-aba8-2230c181d15a",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Michael D. Brady",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/MDB0"
+      ],
+      "reasoning": "Brady supported the 2024 Affordable Homes Act and has backed affordable housing in Brockton and Randolph. Brockton is a Gateway City with significant affordable housing needs. He has supported state funding for affordable housing preservation and new construction in his district and backed homeownership programs for first-time buyers. He has been involved in securing housing investments for the Brockton community."
+    },
+    {
+      "politician_id": "6d8717ca-45f9-42cf-bd28-6786a50d254f",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Joan B. Lovely",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/JBL0"
+      ],
+      "reasoning": "Lovely has been a consistent supporter of affordable housing and housing production for Essex County. She voted for the 2024 Affordable Homes Act and has championed funding for affordable housing in Salem and Lynn. She has supported Chapter 40B affordable housing requirements and backed zoning reforms to allow more multi-family housing near transit. She secured funding for housing preservation in her district and has been a vocal advocate for increasing homeownership opportunities for moderate-income residents."
+    },
+    {
+      "politician_id": "6f66ea3f-d5a3-4a51-96be-58aa0097bfc0",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Mark C. Montigny",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/MCM0"
+      ],
+      "reasoning": "Montigny voted for the 2024 Affordable Homes Act and has backed affordable housing in New Bedford throughout his career. He championed anti-predatory lending legislation protecting homeowners from abusive mortgage practices. He has backed state funding for affordable housing preservation and new construction in New Bedford and has supported homeownership programs for working families. His consumer protection work has intersected with housing affordability."
+    },
+    {
+      "politician_id": "8a63eab9-1b32-48c6-ab4e-ba96c12ec5e7",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "William N. Brownsberger",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/WNB0"
+      ],
+      "reasoning": "Brownsberger supported the 2024 Affordable Homes Act and has backed affordable housing production in his district, which includes Brighton, Allston, Belmont, and Watertown — all areas facing housing cost pressure. He has supported MBTA Communities zoning compliance and by-right permitting reforms to increase housing supply. He has also been attentive to neighborhood concerns about development scale and quality, taking a somewhat more measured approach than the most aggressive housing advocates."
+    },
+    {
+      "politician_id": "99457307-afa4-4045-aebf-06ee8b39d28f",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Brendan P. Crighton",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/BPC0"
+      ],
+      "reasoning": "Crighton has been a strong advocate for affordable housing production in Essex County. He championed MBTA Communities zoning compliance for his district communities and backed the 2024 Affordable Homes Act. Lynn, the largest city in his district, faces significant housing affordability challenges and he has secured state funding for affordable housing preservation and new construction. He supported the 2024 housing bond and inclusionary zoning requirements for new developments."
+    },
+    {
+      "politician_id": "a40f234e-1790-4b52-8670-090b6379eb03",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Jason M. Lewis",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/jml0"
+      ],
+      "reasoning": "Lewis supported the 2024 Affordable Homes Act and has backed the MBTA Communities zoning law requiring multifamily housing near transit. He has advocated for increased affordable housing production, anti-displacement protections, and inclusionary zoning requirements. His district includes communities like Malden and Medford that have faced significant gentrification pressure, and he has backed local tenant protections and anti-displacement measures alongside housing production."
+    },
+    {
+      "politician_id": "b1bd9a21-a37e-49f4-907b-9fba480a1ca2",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Bruce E. Tarr",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/BET0"
+      ],
+      "reasoning": "Tarr has supported supply-side housing production measures as the primary solution to the housing crisis. He backed the 2024 Affordable Homes Act (Chapter 150, Acts of 2024) provisions expanding housing production and reducing permitting delays. He supports by-right zoning reform to streamline development. He has emphasized homeownership programs and opposed state mandates that he argues reduce local control over zoning, reflecting a market-and-supply approach over regulatory mandates."
+    },
+    {
+      "politician_id": "bd451748-111f-461d-9752-95e7c243769e",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Julian A. Cyr",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/JAC0"
+      ],
+      "reasoning": "Cyr has been a vocal housing advocate for Cape Cod and the Islands, where the housing affordability crisis is the most acute in the state. He backed the 2024 Affordable Homes Act and has championed year-round rental housing, workforce housing, and anti-speculation measures. He has worked on proposals to restrict short-term vacation rentals that remove housing from the year-round market. He has been a leading voice for ensuring that working people -- teachers, healthcare workers, fishermen -- can afford to live in the communities where they work."
+    },
+    {
+      "politician_id": "c435ab14-5d64-46e4-a59f-bba18ed483c9",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Paul R. Feeney",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/PRF0"
+      ],
+      "reasoning": "Feeney voted for the 2024 Affordable Homes Act and has backed affordable housing production in his district. He has supported prevailing wage requirements for affordable housing construction and backed homeownership programs for working families. His focus on housing has emphasized worker and family affordability over market-rate development. He has also supported veterans housing programs given the significant veteran population in his district."
+    },
+    {
+      "politician_id": "c7e94dda-1862-40fe-bda5-5fa2fe68f536",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Sal N. DiDomenico",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/SND0"
+      ],
+      "reasoning": "DiDomenico has supported affordable housing production in his district, which includes Everett and parts of Cambridge and Somerville — all cities with significant housing affordability pressures. He voted for the 2024 Affordable Homes Act and has backed MBTA Communities zoning compliance. He has supported state funding for affordable housing preservation and new construction in Everett, which has seen rapid development pressure in recent years."
+    },
+    {
+      "politician_id": "d40a0eda-36fc-4032-8382-20c76a36d6a6",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Patricia D. Jehlen",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/PDJ0"
+      ],
+      "reasoning": "Jehlen has been a strong housing justice advocate representing Somerville, one of the most expensive housing markets in the country. She has backed affordable housing production, anti-displacement protections, and tenant protections. She supported the 2024 Affordable Homes Act and has backed state funding for affordable housing in her district. She has championed right-to-counsel for tenants facing eviction and has backed inclusionary zoning requirements."
+    },
+    {
+      "politician_id": "e1f72270-5809-4d0e-969c-48d1ab34fbdc",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Patrick M. O'Connor",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/PMO"
+      ],
+      "reasoning": "O'Connor has had a mixed record on housing. He supported the 2024 Affordable Homes Act provisions focused on production but has raised concerns about MBTA Communities zoning mandates overriding local control. His district includes suburban communities protective of single-family neighborhood character. He has been more supportive of homeownership programs and less supportive of dense multifamily development mandates, reflecting tensions between housing production needs and local zoning preferences in his suburban district."
+    },
+    {
+      "politician_id": "f865995d-ad3a-4d2d-827f-ed8a1a67af18",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "full_name": "Michael J. Rodrigues",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/MJR0"
+      ],
+      "reasoning": "Rodrigues voted for the 2024 Affordable Homes Act and used his budget role to ensure housing investments were included in state budgets. His district includes Fall River and New Bedford, both Gateway Cities with significant affordable housing needs. He has backed state funding for affordable housing preservation and new construction and has supported homeownership programs for working families."
+    }
+  ]
+}
