@@ -1,0 +1,4474 @@
+{
+ "pass": "chair vs reasoning polarity — corpus-calibrated",
+ "caveat": "A READING QUEUE. Polarity is inferred per topic from the corpus majority; topics with a weak or inconsistent pattern are UNCALIBRATED and contribute no flags. Every flag must be read: \"supported removing the Confederate emblem\" is PRO-worded on a correctly ANTI row.",
+ "calibration": [
+  {
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxation and Public Spending",
+   "n": 1979,
+   "dist": {
+    "1": {
+     "PRO": 147,
+     "ANTI": 64
+    },
+    "2": {
+     "PRO": 318,
+     "ANTI": 140
+    },
+    "3": {
+     "PRO": 48,
+     "ANTI": 33
+    },
+    "4": {
+     "PRO": 283,
+     "ANTI": 276
+    },
+    "5": {
+     "PRO": 60,
+     "ANTI": 73
+    }
+   },
+   "share": {
+    "1": 0.6966824644549763,
+    "2": 0.6943231441048034,
+    "3": 0.5925925925925926,
+    "4": 0.5062611806797853,
+    "5": 0.45112781954887216
+   },
+   "dir": null,
+   "strength": 0.14
+  },
+  {
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "topic": "Reproductive Rights and Abortion Access",
+   "n": 1888,
+   "dist": {
+    "1": {
+     "PRO": 262,
+     "ANTI": 192
+    },
+    "2": {
+     "PRO": 273,
+     "ANTI": 143
+    },
+    "3": {
+     "PRO": 46,
+     "ANTI": 30
+    },
+    "4": {
+     "PRO": 204,
+     "ANTI": 218
+    },
+    "5": {
+     "PRO": 65,
+     "ANTI": 83
+    }
+   },
+   "share": {
+    "1": 0.5770925110132159,
+    "2": 0.65625,
+    "3": 0.6052631578947368,
+    "4": 0.4834123222748815,
+    "5": 0.4391891891891892
+   },
+   "dir": null,
+   "strength": 0.1
+  },
+  {
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "n": 1870,
+   "dist": {
+    "1": {
+     "PRO": 133,
+     "ANTI": 6
+    },
+    "2": {
+     "PRO": 332,
+     "ANTI": 89
+    },
+    "3": {
+     "PRO": 242,
+     "ANTI": 70
+    },
+    "4": {
+     "PRO": 51,
+     "ANTI": 172
+    },
+    "5": {
+     "PRO": 60,
+     "ANTI": 244
+    }
+   },
+   "share": {
+    "1": 0.9568345323741008,
+    "2": 0.7885985748218527,
+    "3": 0.7756410256410257,
+    "4": 0.22869955156950672,
+    "5": 0.19736842105263158
+   },
+   "dir": "LOW_IS_PRO",
+   "strength": 0.44
+  },
+  {
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "n": 1794,
+   "dist": {
+    "1": {
+     "PRO": 206,
+     "ANTI": 31
+    },
+    "2": {
+     "PRO": 439,
+     "ANTI": 136
+    },
+    "3": {
+     "PRO": 66,
+     "ANTI": 31
+    },
+    "4": {
+     "PRO": 70,
+     "ANTI": 214
+    },
+    "5": {
+     "PRO": 31,
+     "ANTI": 81
+    }
+   },
+   "share": {
+    "1": 0.869198312236287,
+    "2": 0.7634782608695653,
+    "3": 0.6804123711340206,
+    "4": 0.24647887323943662,
+    "5": 0.2767857142857143
+   },
+   "dir": "LOW_IS_PRO",
+   "strength": 0.37
+  },
+  {
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "topic": "Immigration and Treatment of Immigrants",
+   "n": 1684,
+   "dist": {
+    "1": {
+     "PRO": 107,
+     "ANTI": 76
+    },
+    "2": {
+     "PRO": 293,
+     "ANTI": 259
+    },
+    "3": {
+     "PRO": 50,
+     "ANTI": 47
+    },
+    "4": {
+     "PRO": 94,
+     "ANTI": 299
+    },
+    "5": {
+     "PRO": 47,
+     "ANTI": 59
+    }
+   },
+   "share": {
+    "1": 0.5846994535519126,
+    "2": 0.5307971014492754,
+    "3": 0.5154639175257731,
+    "4": 0.23918575063613232,
+    "5": 0.44339622641509435
+   },
+   "dir": null,
+   "strength": 0.14
+  },
+  {
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "n": 1656,
+   "dist": {
+    "1": {
+     "PRO": 71,
+     "ANTI": 4
+    },
+    "2": {
+     "PRO": 480,
+     "ANTI": 51
+    },
+    "3": {
+     "PRO": 281,
+     "ANTI": 56
+    },
+    "4": {
+     "PRO": 55,
+     "ANTI": 105
+    },
+    "5": {
+     "PRO": 5,
+     "ANTI": 9
+    }
+   },
+   "share": {
+    "1": 0.9466666666666667,
+    "2": 0.903954802259887,
+    "3": 0.8338278931750742,
+    "4": 0.34375,
+    "5": 0.35714285714285715
+   },
+   "dir": "LOW_IS_PRO",
+   "strength": 0.38
+  },
+  {
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "n": 1543,
+   "dist": {
+    "1": {
+     "PRO": 179,
+     "ANTI": 7
+    },
+    "2": {
+     "PRO": 438,
+     "ANTI": 123
+    },
+    "3": {
+     "PRO": 16,
+     "ANTI": 23
+    },
+    "4": {
+     "PRO": 11,
+     "ANTI": 113
+    },
+    "5": {
+     "PRO": 104,
+     "ANTI": 212
+    }
+   },
+   "share": {
+    "1": 0.9623655913978495,
+    "2": 0.7807486631016043,
+    "3": 0.41025641025641024,
+    "4": 0.08870967741935484,
+    "5": 0.3291139240506329
+   },
+   "dir": "LOW_IS_PRO",
+   "strength": 0.44
+  },
+  {
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights and Electoral Integrity",
+   "n": 1511,
+   "dist": {
+    "1": {
+     "PRO": 204,
+     "ANTI": 69
+    },
+    "2": {
+     "PRO": 257,
+     "ANTI": 173
+    },
+    "3": {
+     "PRO": 25,
+     "ANTI": 6
+    },
+    "4": {
+     "PRO": 158,
+     "ANTI": 224
+    },
+    "5": {
+     "PRO": 33,
+     "ANTI": 28
+    }
+   },
+   "share": {
+    "1": 0.7472527472527473,
+    "2": 0.5976744186046512,
+    "3": 0.8064516129032258,
+    "4": 0.41361256544502617,
+    "5": 0.5409836065573771
+   },
+   "dir": null,
+   "strength": 0.13
+  },
+  {
+   "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+   "topic": "Deportation Priorities",
+   "n": 1360,
+   "dist": {
+    "1": {
+     "PRO": 33,
+     "ANTI": 93
+    },
+    "2": {
+     "PRO": 129,
+     "ANTI": 317
+    },
+    "3": {
+     "PRO": 51,
+     "ANTI": 38
+    },
+    "4": {
+     "PRO": 175,
+     "ANTI": 141
+    },
+    "5": {
+     "PRO": 51,
+     "ANTI": 30
+    }
+   },
+   "share": {
+    "1": 0.2619047619047619,
+    "2": 0.289237668161435,
+    "3": 0.5730337078651685,
+    "4": 0.5537974683544303,
+    "5": 0.6296296296296297
+   },
+   "dir": null,
+   "strength": 0.21
+  },
+  {
+   "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "topic": "Fossil Fuel Policy",
+   "n": 1343,
+   "dist": {
+    "1": {
+     "PRO": 17,
+     "ANTI": 26
+    },
+    "2": {
+     "PRO": 177,
+     "ANTI": 243
+    },
+    "3": {
+     "PRO": 96,
+     "ANTI": 60
+    },
+    "4": {
+     "PRO": 130,
+     "ANTI": 198
+    },
+    "5": {
+     "PRO": 70,
+     "ANTI": 98
+    }
+   },
+   "share": {
+    "1": 0.3953488372093023,
+    "2": 0.42142857142857143,
+    "3": 0.6153846153846154,
+    "4": 0.39634146341463417,
+    "5": 0.4166666666666667
+   },
+   "dir": null,
+   "strength": 0
+  },
+  {
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "n": 1226,
+   "dist": {
+    "1": {
+     "PRO": 81,
+     "ANTI": 437
+    },
+    "2": {
+     "PRO": 13,
+     "ANTI": 44
+    },
+    "3": {
+     "PRO": 10,
+     "ANTI": 9
+    },
+    "4": {
+     "PRO": 181,
+     "ANTI": 74
+    },
+    "5": {
+     "PRO": 123,
+     "ANTI": 29
+    }
+   },
+   "share": {
+    "1": 0.15637065637065636,
+    "2": 0.22807017543859648,
+    "3": 0.5263157894736842,
+    "4": 0.7098039215686275,
+    "5": 0.8092105263157895
+   },
+   "dir": "HIGH_IS_PRO",
+   "strength": 0.38
+  },
+  {
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "topic": "Medicare / Medicaid",
+   "n": 1145,
+   "dist": {
+    "1": {
+     "PRO": 118,
+     "ANTI": 54
+    },
+    "2": {
+     "PRO": 142,
+     "ANTI": 128
+    },
+    "3": {
+     "PRO": 62,
+     "ANTI": 91
+    },
+    "4": {
+     "PRO": 81,
+     "ANTI": 140
+    },
+    "5": {
+     "PRO": 6,
+     "ANTI": 8
+    }
+   },
+   "share": {
+    "1": 0.686046511627907,
+    "2": 0.5259259259259259,
+    "3": 0.40522875816993464,
+    "4": 0.3665158371040724,
+    "5": 0.42857142857142855
+   },
+   "dir": null,
+   "strength": 0.14
+  },
+  {
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "n": 901,
+   "dist": {
+    "1": {
+     "PRO": 345,
+     "ANTI": 71
+    },
+    "2": {
+     "PRO": 97,
+     "ANTI": 34
+    },
+    "3": {
+     "PRO": 8,
+     "ANTI": 11
+    },
+    "4": {
+     "PRO": 10,
+     "ANTI": 46
+    },
+    "5": {
+     "PRO": 40,
+     "ANTI": 118
+    }
+   },
+   "share": {
+    "1": 0.8293269230769231,
+    "2": 0.7404580152671756,
+    "3": 0.42105263157894735,
+    "4": 0.17857142857142858,
+    "5": 0.25316455696202533
+   },
+   "dir": "LOW_IS_PRO",
+   "strength": 0.38
+  },
+  {
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "topic": "Transgender Athletes",
+   "n": 833,
+   "dist": {
+    "1": {
+     "PRO": 68,
+     "ANTI": 97
+    },
+    "2": {
+     "PRO": 69,
+     "ANTI": 66
+    },
+    "3": {
+     "PRO": 2,
+     "ANTI": 8
+    },
+    "4": {
+     "PRO": 80,
+     "ANTI": 136
+    },
+    "5": {
+     "PRO": 14,
+     "ANTI": 41
+    }
+   },
+   "share": {
+    "1": 0.4121212121212121,
+    "2": 0.5111111111111111,
+    "3": 0.2,
+    "4": 0.37037037037037035,
+    "5": 0.2545454545454545
+   },
+   "dir": null,
+   "strength": 0.1
+  },
+  {
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "topic": "Campaign Finance Reform",
+   "n": 831,
+   "dist": {
+    "1": {
+     "PRO": 55,
+     "ANTI": 17
+    },
+    "2": {
+     "PRO": 128,
+     "ANTI": 260
+    },
+    "3": {
+     "PRO": 35,
+     "ANTI": 32
+    },
+    "4": {
+     "PRO": 14,
+     "ANTI": 96
+    },
+    "5": {
+     "PRO": 1,
+     "ANTI": 9
+    }
+   },
+   "share": {
+    "1": 0.7638888888888888,
+    "2": 0.32989690721649484,
+    "3": 0.5223880597014925,
+    "4": 0.12727272727272726,
+    "5": 0.1
+   },
+   "dir": null,
+   "strength": 0.29
+  },
+  {
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "topic": "Childcare Affordability & Access",
+   "n": 795,
+   "dist": {
+    "1": {
+     "PRO": 67,
+     "ANTI": 0
+    },
+    "2": {
+     "PRO": 353,
+     "ANTI": 6
+    },
+    "3": {
+     "PRO": 54,
+     "ANTI": 6
+    },
+    "4": {
+     "PRO": 14,
+     "ANTI": 57
+    },
+    "5": {
+     "PRO": 10,
+     "ANTI": 16
+    }
+   },
+   "share": {
+    "1": 1,
+    "2": 0.9832869080779945,
+    "3": 0.9,
+    "4": 0.19718309859154928,
+    "5": 0.38461538461538464
+   },
+   "dir": "LOW_IS_PRO",
+   "strength": 0.47
+  },
+  {
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety Approach",
+   "n": 781,
+   "dist": {
+    "1": {
+     "PRO": 21,
+     "ANTI": 9
+    },
+    "2": {
+     "PRO": 157,
+     "ANTI": 36
+    },
+    "3": {
+     "PRO": 132,
+     "ANTI": 26
+    },
+    "4": {
+     "PRO": 150,
+     "ANTI": 44
+    },
+    "5": {
+     "PRO": 13,
+     "ANTI": 16
+    }
+   },
+   "share": {
+    "1": 0.7,
+    "2": 0.8134715025906736,
+    "3": 0.8354430379746836,
+    "4": 0.7731958762886598,
+    "5": 0.4482758620689655
+   },
+   "dir": null,
+   "strength": 0.1
+  },
+  {
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "topic": "Economic Development Incentives",
+   "n": 699,
+   "dist": {
+    "1": {
+     "PRO": 38,
+     "ANTI": 1
+    },
+    "2": {
+     "PRO": 241,
+     "ANTI": 13
+    },
+    "3": {
+     "PRO": 131,
+     "ANTI": 26
+    },
+    "4": {
+     "PRO": 72,
+     "ANTI": 11
+    },
+    "5": {
+     "PRO": 6,
+     "ANTI": 4
+    }
+   },
+   "share": {
+    "1": 0.9743589743589743,
+    "2": 0.9488188976377953,
+    "3": 0.8343949044585988,
+    "4": 0.8674698795180723,
+    "5": 0.6
+   },
+   "dir": null,
+   "strength": 0.15
+  },
+  {
+   "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+   "topic": "Religious Freedom",
+   "n": 698,
+   "dist": {
+    "1": {
+     "PRO": 4,
+     "ANTI": 19
+    },
+    "2": {
+     "PRO": 81,
+     "ANTI": 64
+    },
+    "3": {
+     "PRO": 30,
+     "ANTI": 25
+    },
+    "4": {
+     "PRO": 118,
+     "ANTI": 59
+    },
+    "5": {
+     "PRO": 87,
+     "ANTI": 44
+    }
+   },
+   "share": {
+    "1": 0.17391304347826086,
+    "2": 0.5586206896551724,
+    "3": 0.5454545454545454,
+    "4": 0.6666666666666666,
+    "5": 0.6641221374045801
+   },
+   "dir": null,
+   "strength": 0.2
+  },
+  {
+   "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+   "topic": "United States Tariff Policy",
+   "n": 663,
+   "dist": {
+    "1": {
+     "PRO": 14,
+     "ANTI": 40
+    },
+    "2": {
+     "PRO": 38,
+     "ANTI": 59
+    },
+    "3": {
+     "PRO": 160,
+     "ANTI": 141
+    },
+    "4": {
+     "PRO": 62,
+     "ANTI": 30
+    },
+    "5": {
+     "PRO": 5,
+     "ANTI": 1
+    }
+   },
+   "share": {
+    "1": 0.25925925925925924,
+    "2": 0.3917525773195876,
+    "3": 0.53156146179402,
+    "4": 0.6739130434782609,
+    "5": null
+   },
+   "dir": null,
+   "strength": 0.28
+  },
+  {
+   "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+   "topic": "Social Security",
+   "n": 657,
+   "dist": {
+    "1": {
+     "PRO": 27,
+     "ANTI": 49
+    },
+    "2": {
+     "PRO": 36,
+     "ANTI": 142
+    },
+    "3": {
+     "PRO": 39,
+     "ANTI": 74
+    },
+    "4": {
+     "PRO": 41,
+     "ANTI": 32
+    },
+    "5": {
+     "PRO": 38,
+     "ANTI": 7
+    }
+   },
+   "share": {
+    "1": 0.35526315789473684,
+    "2": 0.20224719101123595,
+    "3": 0.34513274336283184,
+    "4": 0.5616438356164384,
+    "5": 0.8444444444444444
+   },
+   "dir": null,
+   "strength": 0.28
+  },
+  {
+   "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+   "topic": "State Redistricting and Gerrymandering",
+   "n": 648,
+   "dist": {
+    "1": {
+     "PRO": 128,
+     "ANTI": 28
+    },
+    "2": {
+     "PRO": 163,
+     "ANTI": 38
+    },
+    "3": {
+     "PRO": 3,
+     "ANTI": 6
+    },
+    "4": {
+     "PRO": 25,
+     "ANTI": 51
+    },
+    "5": {
+     "PRO": 27,
+     "ANTI": 39
+    }
+   },
+   "share": {
+    "1": 0.8205128205128205,
+    "2": 0.8109452736318408,
+    "3": 0.3333333333333333,
+    "4": 0.32894736842105265,
+    "5": 0.4090909090909091
+   },
+   "dir": null,
+   "strength": 0.3
+  },
+  {
+   "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "topic": "Criminalization of Homelessness",
+   "n": 624,
+   "dist": {
+    "1": {
+     "PRO": 18,
+     "ANTI": 9
+    },
+    "2": {
+     "PRO": 165,
+     "ANTI": 42
+    },
+    "3": {
+     "PRO": 83,
+     "ANTI": 15
+    },
+    "4": {
+     "PRO": 51,
+     "ANTI": 38
+    },
+    "5": {
+     "PRO": 6,
+     "ANTI": 6
+    }
+   },
+   "share": {
+    "1": 0.6666666666666666,
+    "2": 0.7971014492753623,
+    "3": 0.8469387755102041,
+    "4": 0.5730337078651685,
+    "5": 0.5
+   },
+   "dir": null,
+   "strength": 0.13
+  },
+  {
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "n": 547,
+   "dist": {
+    "1": {
+     "PRO": 6,
+     "ANTI": 10
+    },
+    "2": {
+     "PRO": 42,
+     "ANTI": 60
+    },
+    "3": {
+     "PRO": 95,
+     "ANTI": 24
+    },
+    "4": {
+     "PRO": 93,
+     "ANTI": 40
+    }
+   },
+   "share": {
+    "1": 0.375,
+    "2": 0.4117647058823529,
+    "3": 0.7983193277310925,
+    "4": 0.6992481203007519
+   },
+   "dir": "HIGH_IS_PRO",
+   "strength": 0.36
+  },
+  {
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "topic": "Local Immigration Enforcement",
+   "n": 543,
+   "dist": {
+    "1": {
+     "PRO": 95,
+     "ANTI": 58
+    },
+    "2": {
+     "PRO": 31,
+     "ANTI": 54
+    },
+    "3": {
+     "PRO": 19,
+     "ANTI": 14
+    },
+    "4": {
+     "PRO": 14,
+     "ANTI": 47
+    },
+    "5": {
+     "PRO": 6,
+     "ANTI": 2
+    }
+   },
+   "share": {
+    "1": 0.6209150326797386,
+    "2": 0.36470588235294116,
+    "3": 0.5757575757575758,
+    "4": 0.22950819672131148,
+    "5": 0.75
+   },
+   "dir": null,
+   "strength": 0
+  },
+  {
+   "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+   "topic": "Ukraine - Russia Conflict",
+   "n": 468,
+   "dist": {
+    "1": {
+     "PRO": 17,
+     "ANTI": 4
+    },
+    "2": {
+     "PRO": 204,
+     "ANTI": 46
+    },
+    "3": {
+     "PRO": 19,
+     "ANTI": 15
+    },
+    "4": {
+     "PRO": 17,
+     "ANTI": 53
+    },
+    "5": {
+     "PRO": 7,
+     "ANTI": 24
+    }
+   },
+   "share": {
+    "1": 0.8095238095238095,
+    "2": 0.816,
+    "3": 0.5588235294117647,
+    "4": 0.24285714285714285,
+    "5": 0.22580645161290322
+   },
+   "dir": "LOW_IS_PRO",
+   "strength": 0.39
+  },
+  {
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "topic": "Transportation Priorities",
+   "n": 425,
+   "dist": {
+    "1": {
+     "PRO": 52,
+     "ANTI": 6
+    },
+    "2": {
+     "PRO": 104,
+     "ANTI": 16
+    },
+    "3": {
+     "PRO": 67,
+     "ANTI": 9
+    },
+    "4": {
+     "PRO": 18,
+     "ANTI": 9
+    },
+    "5": {
+     "PRO": 6,
+     "ANTI": 1
+    }
+   },
+   "share": {
+    "1": 0.896551724137931,
+    "2": 0.8666666666666667,
+    "3": 0.881578947368421,
+    "4": 0.6666666666666666,
+    "5": null
+   },
+   "dir": null,
+   "strength": 0.11
+  },
+  {
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "topic": "Homelessness Response",
+   "n": 420,
+   "dist": {
+    "1": {
+     "PRO": 8,
+     "ANTI": 11
+    },
+    "2": {
+     "PRO": 77,
+     "ANTI": 18
+    },
+    "3": {
+     "PRO": 91,
+     "ANTI": 14
+    },
+    "4": {
+     "PRO": 21,
+     "ANTI": 22
+    },
+    "5": {
+     "PRO": 4,
+     "ANTI": 3
+    }
+   },
+   "share": {
+    "1": 0.42105263157894735,
+    "2": 0.8105263157894737,
+    "3": 0.8666666666666667,
+    "4": 0.4883720930232558,
+    "5": null
+   },
+   "dir": null,
+   "strength": 0.06
+  },
+  {
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "topic": "Residential Zoning",
+   "n": 412,
+   "dist": {
+    "1": {
+     "PRO": 14,
+     "ANTI": 16
+    },
+    "2": {
+     "PRO": 47,
+     "ANTI": 42
+    },
+    "3": {
+     "PRO": 52,
+     "ANTI": 27
+    },
+    "4": {
+     "PRO": 63,
+     "ANTI": 48
+    },
+    "5": {
+     "PRO": 1,
+     "ANTI": 3
+    }
+   },
+   "share": {
+    "1": 0.4666666666666667,
+    "2": 0.5280898876404494,
+    "3": 0.6582278481012658,
+    "4": 0.5675675675675675,
+    "5": null
+   },
+   "dir": null,
+   "strength": 0.12
+  },
+  {
+   "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+   "topic": "Growth and Development Pace",
+   "n": 407,
+   "dist": {
+    "1": {
+     "PRO": 8,
+     "ANTI": 3
+    },
+    "2": {
+     "PRO": 47,
+     "ANTI": 24
+    },
+    "3": {
+     "PRO": 103,
+     "ANTI": 40
+    },
+    "4": {
+     "PRO": 41,
+     "ANTI": 18
+    },
+    "5": {
+     "PRO": 2,
+     "ANTI": 0
+    }
+   },
+   "share": {
+    "1": 0.7272727272727273,
+    "2": 0.6619718309859155,
+    "3": 0.7202797202797203,
+    "4": 0.6949152542372882,
+    "5": null
+   },
+   "dir": null,
+   "strength": 0.01
+  },
+  {
+   "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+   "topic": "Misinformation and the Role of Algorithms in Democracy",
+   "n": 368,
+   "dist": {
+    "1": {
+     "PRO": 1,
+     "ANTI": 0
+    },
+    "2": {
+     "PRO": 98,
+     "ANTI": 14
+    },
+    "3": {
+     "PRO": 30,
+     "ANTI": 13
+    },
+    "4": {
+     "PRO": 20,
+     "ANTI": 94
+    },
+    "5": {
+     "PRO": 3,
+     "ANTI": 26
+    }
+   },
+   "share": {
+    "1": null,
+    "2": 0.875,
+    "3": 0.6976744186046512,
+    "4": 0.17543859649122806,
+    "5": 0.10344827586206896
+   },
+   "dir": "LOW_IS_PRO",
+   "strength": 0.65
+  },
+  {
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "topic": "Environmental Protection vs. Development",
+   "n": 348,
+   "dist": {
+    "1": {
+     "PRO": 52,
+     "ANTI": 6
+    },
+    "2": {
+     "PRO": 99,
+     "ANTI": 12
+    },
+    "3": {
+     "PRO": 38,
+     "ANTI": 8
+    },
+    "4": {
+     "PRO": 8,
+     "ANTI": 3
+    },
+    "5": {
+     "PRO": 8,
+     "ANTI": 0
+    }
+   },
+   "share": {
+    "1": 0.896551724137931,
+    "2": 0.8918918918918919,
+    "3": 0.8260869565217391,
+    "4": 0.7272727272727273,
+    "5": 1
+   },
+   "dir": null,
+   "strength": 0.02
+  },
+  {
+   "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+   "topic": "Jail Capacity and Incarceration Alternatives",
+   "n": 299,
+   "dist": {
+    "1": {
+     "PRO": 37,
+     "ANTI": 13
+    },
+    "2": {
+     "PRO": 60,
+     "ANTI": 13
+    },
+    "3": {
+     "PRO": 47,
+     "ANTI": 2
+    },
+    "4": {
+     "PRO": 29,
+     "ANTI": 15
+    },
+    "5": {
+     "PRO": 1,
+     "ANTI": 7
+    }
+   },
+   "share": {
+    "1": 0.74,
+    "2": 0.821917808219178,
+    "3": 0.9591836734693877,
+    "4": 0.6590909090909091,
+    "5": 0.125
+   },
+   "dir": null,
+   "strength": 0.26
+  },
+  {
+   "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+   "topic": "Criminal Justice Approach",
+   "n": 265,
+   "dist": {
+    "1": {
+     "PRO": 50,
+     "ANTI": 8
+    },
+    "2": {
+     "PRO": 68,
+     "ANTI": 18
+    },
+    "3": {
+     "PRO": 13,
+     "ANTI": 3
+    },
+    "4": {
+     "PRO": 28,
+     "ANTI": 17
+    },
+    "5": {
+     "PRO": 11,
+     "ANTI": 14
+    }
+   },
+   "share": {
+    "1": 0.8620689655172413,
+    "2": 0.7906976744186046,
+    "3": 0.8125,
+    "4": 0.6222222222222222,
+    "5": 0.44
+   },
+   "dir": null,
+   "strength": 0.2
+  },
+  {
+   "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+   "topic": "Data Center Development & Energy Costs",
+   "n": 260,
+   "dist": {
+    "1": {
+     "PRO": 10,
+     "ANTI": 10
+    },
+    "2": {
+     "PRO": 69,
+     "ANTI": 2
+    },
+    "3": {
+     "PRO": 34,
+     "ANTI": 9
+    },
+    "4": {
+     "PRO": 11,
+     "ANTI": 9
+    },
+    "5": {
+     "PRO": 1,
+     "ANTI": 7
+    }
+   },
+   "share": {
+    "1": 0.5,
+    "2": 0.971830985915493,
+    "3": 0.7906976744186046,
+    "4": 0.55,
+    "5": 0.125
+   },
+   "dir": null,
+   "strength": 0.27
+  },
+  {
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "topic": "Rent Regulation",
+   "n": 202,
+   "dist": {
+    "1": {
+     "PRO": 27,
+     "ANTI": 3
+    },
+    "2": {
+     "PRO": 56,
+     "ANTI": 17
+    },
+    "3": {
+     "PRO": 9,
+     "ANTI": 7
+    },
+    "4": {
+     "PRO": 4,
+     "ANTI": 22
+    },
+    "5": {
+     "PRO": 3,
+     "ANTI": 9
+    }
+   },
+   "share": {
+    "1": 0.9,
+    "2": 0.7671232876712328,
+    "3": 0.5625,
+    "4": 0.15384615384615385,
+    "5": 0.25
+   },
+   "dir": "LOW_IS_PRO",
+   "strength": 0.42
+  },
+  {
+   "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+   "topic": "City Sanitation and Cleanliness",
+   "n": 112,
+   "dist": {
+    "1": {
+     "PRO": 3,
+     "ANTI": 1
+    },
+    "2": {
+     "PRO": 11,
+     "ANTI": 5
+    },
+    "3": {
+     "PRO": 18,
+     "ANTI": 3
+    },
+    "4": {
+     "PRO": 10,
+     "ANTI": 3
+    },
+    "5": {
+     "PRO": 1,
+     "ANTI": 0
+    }
+   },
+   "share": {
+    "1": null,
+    "2": 0.6875,
+    "3": 0.8571428571428571,
+    "4": 0.7692307692307693,
+    "5": null
+   },
+   "dir": null,
+   "strength": 0.04
+  },
+  {
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "topic": "Police Accountability",
+   "n": 86,
+   "dist": {
+    "1": {
+     "PRO": 8,
+     "ANTI": 2
+    },
+    "2": {
+     "PRO": 41,
+     "ANTI": 5
+    },
+    "3": {
+     "PRO": 1,
+     "ANTI": 0
+    },
+    "4": {
+     "PRO": 8,
+     "ANTI": 0
+    },
+    "5": {
+     "PRO": 1,
+     "ANTI": 0
+    }
+   },
+   "share": {
+    "1": 0.8,
+    "2": 0.8913043478260869,
+    "3": null,
+    "4": 1,
+    "5": null
+   },
+   "dir": null,
+   "strength": 0.1
+  },
+  {
+   "topic_id": "448b1c9a-b6f3-42b8-8f39-d3bbb5bfa9ee",
+   "topic": "Judicial Interpretation",
+   "n": 71,
+   "dist": {
+    "1": {
+     "PRO": 6,
+     "ANTI": 3
+    },
+    "2": {
+     "PRO": 8,
+     "ANTI": 10
+    },
+    "3": {
+     "PRO": 0,
+     "ANTI": 1
+    },
+    "4": {
+     "PRO": 1,
+     "ANTI": 4
+    },
+    "5": {
+     "PRO": 5,
+     "ANTI": 18
+    }
+   },
+   "share": {
+    "1": 0.6666666666666666,
+    "2": 0.4444444444444444,
+    "3": null,
+    "4": null,
+    "5": 0.21739130434782608
+   },
+   "dir": null,
+   "strength": 0.22
+  },
+  {
+   "topic_id": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+   "topic": "Access to Justice",
+   "n": 48,
+   "dist": {
+    "1": {
+     "PRO": 7,
+     "ANTI": 2
+    },
+    "2": {
+     "PRO": 12,
+     "ANTI": 6
+    },
+    "3": {
+     "PRO": 3,
+     "ANTI": 1
+    }
+   },
+   "share": {
+    "1": 0.7777777777777778,
+    "2": 0.6666666666666666,
+    "3": null
+   },
+   "dir": null,
+   "strength": 0
+  },
+  {
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "topic": "Prosecution Priorities",
+   "n": 41,
+   "dist": {
+    "1": {
+     "PRO": 3,
+     "ANTI": 1
+    },
+    "2": {
+     "PRO": 11,
+     "ANTI": 3
+    },
+    "3": {
+     "PRO": 0,
+     "ANTI": 1
+    },
+    "4": {
+     "PRO": 3,
+     "ANTI": 0
+    }
+   },
+   "share": {
+    "1": null,
+    "2": 0.7857142857142857,
+    "3": null,
+    "4": null
+   },
+   "dir": null,
+   "strength": 0
+  },
+  {
+   "topic_id": "6674d87e-999d-433a-aab7-3f626f59fd5f",
+   "topic": "Transparency in Legal Proceedings",
+   "n": 34,
+   "dist": {
+    "1": {
+     "PRO": 3,
+     "ANTI": 0
+    },
+    "2": {
+     "PRO": 12,
+     "ANTI": 2
+    },
+    "3": {
+     "PRO": 1,
+     "ANTI": 0
+    },
+    "4": {
+     "PRO": 1,
+     "ANTI": 0
+    }
+   },
+   "share": {
+    "1": null,
+    "2": 0.8571428571428571,
+    "3": null,
+    "4": null
+   },
+   "dir": null,
+   "strength": 0
+  },
+  {
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "topic": "Bail and Pretrial Decisions",
+   "n": 32,
+   "dist": {
+    "1": {
+     "PRO": 5,
+     "ANTI": 0
+    },
+    "2": {
+     "PRO": 12,
+     "ANTI": 4
+    },
+    "3": {
+     "PRO": 1,
+     "ANTI": 0
+    },
+    "4": {
+     "PRO": 3,
+     "ANTI": 0
+    }
+   },
+   "share": {
+    "1": null,
+    "2": 0.75,
+    "3": null,
+    "4": null
+   },
+   "dir": null,
+   "strength": 0
+  },
+  {
+   "topic_id": "e5e48f0e-8f3a-40e1-8080-889fea389603",
+   "topic": "Judicial & Prosecutorial Discretion",
+   "n": 22,
+   "dist": {
+    "1": {
+     "PRO": 2,
+     "ANTI": 2
+    },
+    "2": {
+     "PRO": 0,
+     "ANTI": 6
+    },
+    "3": {
+     "PRO": 1,
+     "ANTI": 0
+    }
+   },
+   "share": {
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "dir": null,
+   "strength": 0
+  }
+ ],
+ "n_flags": 194,
+ "flags": [
+  {
+   "politician_id": "44d86767-7041-4ce9-9d03-ce23dd663c95",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 4,
+   "reasoning": "Craddick chairs the Transportation Committee and serves on Energy Resources, overseeing oil/gas extraction policy. His website champions 'Texas energy independence across traditional and emerging sectors' and approved '$30 billion for road projects' — infrastructure over climate transition. He receives royalties from oil extraction as documented by Wikipedia. Aligns with stance 4 (let market forces drive any transition to cleaner energy).",
+   "sources": [
+    "https://www.tomcraddick.com",
+    "https://en.wikipedia.org/wiki/Tom_Craddick"
+   ],
+   "full_name": "Tom Craddick",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "let market forces drive any transition to cleaner energy sources"
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 4,
+   "reasoning": "Benson backed Maryland's Climate Solutions Now Act and supports environmental justice for communities disproportionately affected by pollution in Prince George's County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0528?ys=2022RS",
+    "https://mgaleg.maryland.gov/2022RS/votes/senate/0405.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "full_name": "Joanne C. Benson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "let market forces drive any transition to cleaner energy sources"
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 4,
+   "reasoning": "Charles backed Maryland's Climate Solutions Now Act and environmental justice measures for communities of color disproportionately affected by pollution.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0528?ys=2022RS",
+    "https://mgaleg.maryland.gov/2022RS/votes/house/0795.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "full_name": "Nick Charles",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "let market forces drive any transition to cleaner energy sources"
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 4,
+   "reasoning": "Ellis backed Maryland's Climate Solutions Now Act and environmental protections for the Chesapeake Bay region which is critically important to Southern Maryland.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0414?ys=2021RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0528?ys=2022RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "full_name": "Arthur Ellis",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "let market forces drive any transition to cleaner energy sources"
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 4,
+   "reasoning": "Harris backed Maryland's Climate Solutions Now Act and environmental justice measures addressing pollution burdens in communities of color.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "full_name": "Kevin M. Harris",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "let market forces drive any transition to cleaner energy sources"
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 5,
+   "reasoning": "Henson backed Maryland's Climate Solutions Now Act and supports strong climate action. Her Annapolis district on the Chesapeake Bay gives her a direct stake in climate impacts.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0528?ys=2022RS",
+    "https://mgaleg.maryland.gov/2022RS/votes/house/0795.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "full_name": "Shaneka Henson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "reject climate change policies and focus on economic growth instead"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 5,
+   "reasoning": "Smith backed the Climate Solutions Now Act and supports aggressive climate action. His Montgomery County district expects strong environmental leadership.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "full_name": "William C. Smith, Jr.",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "reject climate change policies and focus on economic growth instead"
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 5,
+   "reasoning": "Kramer backed Maryland's Climate Solutions Now Act and consistently supports climate action legislation. He is a Montgomery County Democrat with a strong environmental record.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0414?ys=2021RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0528?ys=2022RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "full_name": "Benjamin F. Kramer",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "reject climate change policies and focus on economic growth instead"
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 4,
+   "reasoning": "Muse backed Maryland's Climate Solutions Now Act and supports environmental protections for Prince George's County communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "full_name": "C. Anthony Muse",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "let market forces drive any transition to cleaner energy sources"
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 4,
+   "reasoning": "Rosapepe backed Maryland's Climate Solutions Now Act and supports clean energy transition. He has championed climate action as part of his broader economic development agenda.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0414?ys=2021RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "full_name": "Jim Rosapepe",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "let market forces drive any transition to cleaner energy sources"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 5,
+   "reasoning": "Waldstreicher backed the Climate Solutions Now Act and consistently votes for aggressive climate action. He is a strong proponent of clean energy transition in Maryland.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "full_name": "Jeff Waldstreicher",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "reject climate change policies and focus on economic growth instead"
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 4,
+   "reasoning": "Washington has backed Maryland's Climate Solutions Now Act and environmental justice measures that address disproportionate pollution burdens in communities of color.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "full_name": "Alonzo T. Washington",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "let market forces drive any transition to cleaner energy sources"
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 4,
+   "reasoning": "Watson backed Maryland's Climate Solutions Now Act and supports clean energy transition. He supports environmental justice measures for communities of color in PG County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0528?ys=2022RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "full_name": "Ron Watson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "let market forces drive any transition to cleaner energy sources"
+  },
+  {
+   "politician_id": "03ee06fb-9b51-41cc-8942-4632f3a724e3",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 5,
+   "reasoning": "Wikipedia documents Grove invited climate denier Lord Monckton to speak (2012), sponsored cap-and-trade exemptions for fossil fuels, and blamed the Endangered Species Act rather than climate for water shortages. She authored SB-375 (2025) exempting wildfire mitigation from CEQA review and SB-424 (2025) creating new CEQA exemptions for development — consistently weakening California's core environmental law.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Shannon_Grove",
+    "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB375",
+    "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB424"
+   ],
+   "full_name": "Shannon Grove",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "reject climate change policies and focus on economic growth instead"
+  },
+  {
+   "politician_id": "0b16443e-fec4-4f33-abbc-eb1331e3b42d",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 5,
+   "reasoning": "Moreno co-proposed the Climate Equity Fund with Mayor Gloria in 2021 — the first dedicated fund in San Diego investing in historically disadvantaged communities to combat climate change. The measure passed unanimously 9-0 and directed $12M+ to District 8 environmental projects. Wikipedia confirms her authorship of this initiative as a core climate policy accomplishment, reflecting strong support for rapid transition to clean energy with an equity lens.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vivian_Moreno",
+    "https://www.vivianmorenosd.com"
+   ],
+   "full_name": "Vivian Moreno",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "reject climate change policies and focus on economic growth instead"
+  },
+  {
+   "politician_id": "dc3d8a98-07ce-4797-bc84-957a72fd854f",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 5,
+   "reasoning": "As Council President in July 2022 Elo-Rivera said the Climate Action Plan targeting 100% renewable energy by 2030 and net-zero by 2035 was 'a very solid one' and stressed that the city must focus on 'actually taking action' with adequate planning and funding. He emphasized closing the implementation gap that caused the 2015 CAP to fail, reflecting strong support for rapid clean energy transition.",
+   "sources": [
+    "https://timesofsandiego.com/politics/2022/07/14/council-president-elo-rivera-says-climate-action-plan-must-stress-implementation/"
+   ],
+   "full_name": "Sean Elo-Rivera",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "reject climate change policies and focus on economic growth instead"
+  },
+  {
+   "politician_id": "f86591f9-4341-4e3a-a9cb-f284887ccf74",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 4,
+   "reasoning": "Whitburn represents District 3 (North Park/South Park/Golden Hill) — some of San Diego's most progressive neighborhoods — and serves on the Environment Committee overseeing Climate Action Plan implementation. He has supported the city's Climate Action Plan milestones targeting net-zero by 2035 and backed transit-oriented development policies. His district profile and committee role reflect strong support for rapid clean energy transition.",
+   "sources": [
+    "https://www.sandiego.gov/citycouncil/cd3",
+    "https://www.sandiego.gov/sustainability/climate-action-plan"
+   ],
+   "full_name": "Stephen Whitburn",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "let market forces drive any transition to cleaner energy sources"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 5,
+   "reasoning": "Tregub chaired the 35,000-member Sierra Club San Francisco Bay Chapter (the youngest and first immigrant to hold the role) and serves as Co-Vice Chair of Sierra Club California. As a council member he co-sponsored a resolution supporting a feasibility study for Golden State Energy — a nonprofit public utility to replace PG&E (February 2025) — and co-sponsored the Zero NOx Emission Buildings ordinance requiring all new construction to be gas-free (October 2024). His career at Reimagine Power focuses on renewable energy advocacy.",
+   "sources": [
+    "https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-february-11-2025",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-october-15-2024"
+   ],
+   "full_name": "Igor Tregub",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "reject climate change policies and focus on economic growth instead"
+  },
+  {
+   "politician_id": "ba76e9b6-3681-4d8e-8c74-9099555699e3",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 4,
+   "reasoning": "Hunsaker favors free market energy solutions and an all-of-the-above approach, stating 'Reliable and affordable energy is essential for families, businesses and Utah's future growth.' His energy platform prioritizes economic reliability and market-driven choices over government-mandated climate policies, consistent with letting market forces drive any energy transition.",
+   "sources": [
+    "https://www.sltrib.com/news/2026/06/03/2026-utah-primary-jake-hunsaker/",
+    "https://jakehunsakerforutah.com/issues/"
+   ],
+   "full_name": "Jake Hunsaker",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "let market forces drive any transition to cleaner energy sources"
+  },
+  {
+   "politician_id": "6f1ae594-1041-42aa-8378-94fd5fde04c2",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 5,
+   "reasoning": "In a December 2025 op-ed Ainsworth explicitly dismissed aggressive clean-energy timelines as 'dreamy timelines that make for compelling fundraising emails but abandon any chance of keeping the power grid reliable,' and characterized the Green New Deal approach as impractical idealism. He prioritizes economic growth and grid reliability over climate policy.",
+   "sources": [
+    "https://www.yellowhammernews.com/lt-governor-will-ainsworth-before-you-quote-energy-alabama-again-read-the-fine-print/"
+   ],
+   "full_name": "Will Ainsworth",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "reject climate change policies and focus on economic growth instead"
+  },
+  {
+   "politician_id": "04ff9d00-cf63-4d3b-875a-48c027a46a37",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 4,
+   "reasoning": "Energy platform champions 'market-based production including hydropower, solar, oil, natural gas and nuclear power' rather than mandated fossil-fuel phase-outs.",
+   "sources": [
+    "https://www.votebraun.com/issues"
+   ],
+   "full_name": "John Braun",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "let market forces drive any transition to cleaner energy sources"
+  },
+  {
+   "politician_id": "a969d5c4-056e-4f6d-b765-f656fbbb3a1a",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 4,
+   "reasoning": "In the same 2024 local candidate coverage, Jacob said 'we have GOT to get off coal somehow' but paired this with a preference for minimal government involvement in the transition, and supported approving a solar energy project permit, indicating he favors a market-driven shift to cleaner energy over an emergency mandate or the fossil-fuel status quo.",
+   "sources": [
+    "https://lawrencekstimes.com/2024/10/18/meet-dgcocomm-4-candidates-24/"
+   ],
+   "full_name": "Steven Jacob",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "let market forces drive any transition to cleaner energy sources"
+  },
+  {
+   "politician_id": "40e26806-48fe-492c-ac87-0be7715cc4b0",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change and Environmental Protection",
+   "value": 4,
+   "reasoning": "As Ranking Member of the House Energy, Utilities and Technology Committee, Foster criticized 2025's LD 1777 net-energy-billing reform as falling short, noting Maine ratepayers face roughly $240 million a year in NEB costs and that real reform has been needed since 2019; this reflects a preference for scaling back state-mandated renewable-energy subsidies in favor of a more market-tested approach to the clean energy transition.",
+   "sources": [
+    "https://www.themainewire.com/2025/06/national-pro-solar-group-works-to-kill-a-bipartisan-bill-to-reduce-some-of-the-harms-of-net-energy-billing/",
+    "https://legislature.maine.gov/LawMakerWeb/summary.asp?LD=1777"
+   ],
+   "full_name": "Steven Foster",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "let market forces drive any transition to cleaner energy sources"
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 5,
+   "reasoning": "Benson is a strong healthcare access advocate. She backed Medicaid expansion, prescription drug affordability legislation, and healthcare safety net programs for Prince George's County residents.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "full_name": "Joanne C. Benson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 5,
+   "reasoning": "Charles supports expanding healthcare access in Prince George's County. He backed Medicaid expansion and healthcare affordability legislation for working families.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "full_name": "Nick Charles",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 5,
+   "reasoning": "Ellis supports expanding healthcare access for Charles County residents. He backed Medicaid expansion and healthcare affordability legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "full_name": "Arthur Ellis",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 5,
+   "reasoning": "Harris supports expanding healthcare access in Prince George's County. He backed Medicaid expansion and healthcare affordability legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "full_name": "Kevin M. Harris",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 5,
+   "reasoning": "Henson supports expanding healthcare access. She backed Medicaid expansion and healthcare affordability legislation for Anne Arundel County residents.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "full_name": "Shaneka Henson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 5,
+   "reasoning": "Smith supports universal healthcare access. He backs Medicaid expansion and prescription drug cost control legislation. His committee has processed healthcare-related criminal justice reforms.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "full_name": "William C. Smith, Jr.",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 5,
+   "reasoning": "Kagan strongly supports healthcare access expansion. She votes for Medicaid expansion and healthcare affordability legislation representing a predominantly healthcare-aware Montgomery County district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "full_name": "Cheryl C. Kagan",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 5,
+   "reasoning": "Love strongly supports expanding healthcare access. She voted for Medicaid expansion measures and healthcare affordability legislation. Montgomery County includes large healthcare worker constituencies.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "full_name": "Sara Love",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 5,
+   "reasoning": "Muse supports expanding healthcare access for Prince George's County residents. He backed Medicaid expansion and healthcare affordability measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "full_name": "C. Anthony Muse",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 4,
+   "reasoning": "Rosapepe supports expanding healthcare access including Medicaid expansion. He backs healthcare affordability for Prince George's County residents.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "full_name": "Jim Rosapepe",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Only help the poorest people afford healthcare and leave everyone else to employers and private insurance"
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 5,
+   "reasoning": "Washington strongly supports expanding healthcare access in Prince George's County. He backed Medicaid expansion and healthcare affordability legislation for working families.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "full_name": "Alonzo T. Washington",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 5,
+   "reasoning": "Watson backs healthcare access expansion including Medicaid expansion and healthcare affordability for working families in Prince George's County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "full_name": "Ron Watson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+  },
+  {
+   "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 4,
+   "reasoning": "Szeliga sponsored multiple healthcare regulatory bills (nursing home requirements, pharmacy agreements, insurer provider panels) — favoring market-based healthcare regulation rather than government expansion of coverage.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/szeliga"
+   ],
+   "full_name": "Kathy Szeliga",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Only help the poorest people afford healthcare and leave everyone else to employers and private insurance"
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 4,
+   "reasoning": "Gloria authored multiple healthcare access bills as a California Assembly member, including AB-2119 requiring gender-affirming care for transgender foster youth and measures expanding Medi-Cal eligibility. As mayor he partnered with UCSD Health on city-level health services and launched COVID-19 testing and vaccination sites. His legislative record reflects expanding public healthcare access and coverage, consistent with supporting a public option and strengthening the ACA.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Todd_Gloria",
+    "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180AB2119"
+   ],
+   "full_name": "Todd Gloria",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Only help the poorest people afford healthcare and leave everyone else to employers and private insurance"
+  },
+  {
+   "politician_id": "dbb1c600-c87b-449c-bd3b-1c236287c00f",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 4,
+   "reasoning": "Johnson sponsored health-related bills focused on optometry board revisions and physician parity — procedural rather than expansionary — consistent with Republican preference for private market healthcare.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01"
+   ],
+   "full_name": "Steve Johnson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Only help the poorest people afford healthcare and leave everyone else to employers and private insurance"
+  },
+  {
+   "politician_id": "e8d0cb0c-a145-4483-860e-4e6af68f0a8b",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 5,
+   "reasoning": "As AG, Rutledge joined 19 Republican-led states in California v. Texas seeking to invalidate the entire ACA, saying it's time to \"remove the Affordable Care Act from the backs of the American people.\" Seeking full ACA invalidation — covering ~300,000 Arkansans — indicates preference for leaving healthcare entirely to private markets.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Leslie_Rutledge",
+    "https://www.ontheissues.org/Leslie_Rutledge.htm"
+   ],
+   "full_name": "Leslie Rutledge",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+  },
+  {
+   "politician_id": "8ef374f4-e74a-4f51-9733-c9c208856c8d",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 4,
+   "reasoning": "Campaign site advocates high-deductible catastrophic insurance paired with health savings accounts and price transparency from providers, keeping Medicare/Medicaid as optional backstops for those who need them — a model where government assists only the poorest while leaving most Americans to private markets.",
+   "sources": [
+    "https://www.davidpan4congress.com/issues"
+   ],
+   "full_name": "David Pan",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Only help the poorest people afford healthcare and leave everyone else to employers and private insurance"
+  },
+  {
+   "politician_id": "d37e2199-2df1-4658-b5d6-b5c92581955e",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 4,
+   "reasoning": "A Feb 2026 Daily Herald profile documents Conforti calling the ACA 'a disaster for Illinois' and supporting market competition, insurance portability across state lines, and family flexibility — a market-driven approach with minimal government role aligning with stance 4.",
+   "sources": [
+    "https://www.dailyherald.com/news/20260225/niki-conforti-2026-candidate-for-6th-congressional-district"
+   ],
+   "full_name": "Niki Conforti",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Only help the poorest people afford healthcare and leave everyone else to employers and private insurance"
+  },
+  {
+   "politician_id": "748ab4d4-9d92-4286-9488-46a0f38d6723",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 4,
+   "reasoning": "Cowan's issues page calls for fixing 'problems created by Obamacare — lower premiums, expand choices, and put patients back in charge of their own care.' This reflects a market-oriented approach that would scale back ACA-based public coverage, aligning with helping only the poorest and leaving others to private/employer insurance.",
+   "sources": [
+    "https://cowanforcongress.com/issues.html"
+   ],
+   "full_name": "John Cowan",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Only help the poorest people afford healthcare and leave everyone else to employers and private insurance"
+  },
+  {
+   "politician_id": "6e357a07-71c7-4654-826a-1e638925777e",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 4,
+   "reasoning": "Vaz's \"Affordable and Accessible Health Care\" plank would \"Require meaningful price transparency for hospitals, prescription drugs, and medical equipment\" and \"Create affordable bridge coverage and faster eligibility reassessments for workers who lose employer-sponsored insurance and cannot reasonably afford COBRA.\" That is market-based reform plus closing coverage gaps between jobs, rather than a new government program.",
+   "sources": [
+    "https://kenvazforwa.com/"
+   ],
+   "full_name": "Ken Vaz",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Only help the poorest people afford healthcare and leave everyone else to employers and private insurance"
+  },
+  {
+   "politician_id": "b58ef566-3cfd-4cef-ae4b-31f621e4b1cf",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 5,
+   "reasoning": "His campaign platform frames health care as an individual-choice/medical-freedom issue, supporting vaccine choice and a fully free-market system with competition-set pricing, directly matching the chair calling for government to stay out of healthcare entirely and leave coverage to private markets.",
+   "sources": [
+    "https://scott4ak.org/issues",
+    "https://scott4ak.org"
+   ],
+   "full_name": "Scott A. Kohlhaas",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+  },
+  {
+   "politician_id": "258fe60e-1d8b-4d8d-8ac9-0f9226fdab1b",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "value": 4,
+   "reasoning": "Campaign platform calls for \"bringing real competition back to healthcare and prescription drugs\" as the core affordability fix, favoring market competition over public coverage expansion while separately preserving Medicare for seniors — closest to stance 4 (help only the poorest, leave everyone else to employers and private insurance).",
+   "sources": [
+    "https://wittrockforcongress.com"
+   ],
+   "full_name": "Quentin Wittrock",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Only help the poorest people afford healthcare and leave everyone else to employers and private insurance"
+  },
+  {
+   "politician_id": "27578980-2e6c-4639-879a-70b510566d0f",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Council votes + statements: Cloutier unanimously supported an affordable multifamily project (March 2023) calling it \"a rare opportunity.\" He supported the 2024 housing voucher program, saying \"These people might be homeless if it weren't for this kind of program.\" He noted the \"real gap\" in affordable housing is at the lowest income levels and pushed for more dedicated affordable units in projects. Aligns with answer 3 (targeted subsidies, vouchers, and easier building permits).",
+   "sources": [
+    "https://communityimpact.com/dallas-fort-worth/mckinney/development/2023/03/08/new-affordable-multifamily-housing-project-gets-green-light-from-mckinney-officials/",
+    "https://communityimpact.com/dallas-fort-worth/mckinney/government/2024/05/24/mckinney-officials-establish-local-housing-voucher-program/",
+    "https://communityimpact.com/dallas-fort-worth/mckinney/government/2025/08/22/mckinney-council-approves-zoning-for-affordable-townhome-development/"
+   ],
+   "full_name": "Patrick Cloutier",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "a6e1a867-1e4e-449f-bb10-4f55449762bf",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Sponsored H.1527-H.1536 (multiple housing bills emphasizing local control over state mandates). Approach favors market solutions and local regulatory authority rather than state-mandated affordable housing.",
+   "sources": [
+    "https://malegislature.gov/Legislators/Profile/BHJ1/Bills"
+   ],
+   "full_name": "Bradley H. Jones",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Benson has supported affordable housing legislation in Prince George's County. She backed tenant protection measures and affordable housing funding throughout her tenure.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "full_name": "Joanne C. Benson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Charles has supported affordable housing legislation and tenant protections addressing housing affordability challenges in Prince George's County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "full_name": "Nick Charles",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Ellis has supported affordable housing legislation. He backed measures to increase housing affordability in Charles County's growing suburban communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "full_name": "Arthur Ellis",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Harris has supported affordable housing legislation and anti-displacement measures for renters in Prince George's County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "full_name": "Kevin M. Harris",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Henson has supported affordable housing legislation addressing significant affordability challenges in the Annapolis area. She backed tenant protections and affordable housing funding.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "full_name": "Shaneka Henson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Smith supports affordable housing expansion in Montgomery County. He backed legislation to increase housing supply and protect tenants in the high-cost DC suburbs.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "full_name": "William C. Smith, Jr.",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Kagan has supported housing affordability legislation including efforts to increase affordable housing in Montgomery County's high-cost real estate market.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "full_name": "Cheryl C. Kagan",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Kramer has supported housing affordability legislation in Maryland. He backed measures to increase affordable housing supply and tenant protections in Montgomery County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "full_name": "Benjamin F. Kramer",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Love has supported legislation to expand housing access and affordability in the Montgomery County/DC suburbs. She voted for zoning reform and affordable housing funding bills in the 2023-2025 sessions.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "full_name": "Sara Love",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Muse has supported affordable housing legislation and community investment in Prince George's County, addressing housing needs of his working-class constituents.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "full_name": "C. Anthony Muse",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Rosapepe has supported housing affordability legislation in Prince George's County. He backed measures to increase affordable housing supply and mixed-income development.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "full_name": "Jim Rosapepe",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 5,
+   "reasoning": "Waldstreicher has been a leading advocate for housing affordability in Montgomery County. He sponsored legislation to increase affordable housing supply and backed tenant protections.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "full_name": "Jeff Waldstreicher",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of housing entirely and let the market decide prices and supply"
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 5,
+   "reasoning": "Washington represents a district with significant housing affordability challenges. He has backed affordable housing funding, tenant protections, and anti-displacement measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "full_name": "Alonzo T. Washington",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of housing entirely and let the market decide prices and supply"
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Watson has supported affordable housing legislation and tenant protections in Prince George's County, addressing significant affordability challenges.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "full_name": "Ron Watson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "eadb65c9-74b6-40c3-b9e7-159c5734c59f",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Long sponsored a moratorium on property assessment increases and multiple first-time homebuyer exemptions — favoring market-oriented housing approaches with targeted tax relief rather than affordable mandates.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/long01"
+   ],
+   "full_name": "Robert B. Long",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "965de422-660e-4e24-9fe6-717cc0313403",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Ishii ran on a platform of building more affordable housing and received endorsements from East Bay YIMBY and the Housing Action Coalition; as mayor she supported Homekey+ applications for supportive affordable housing at People's Park and North Berkeley BART; she supports public investment in affordable housing and building on transit corridors.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Adena_Ishii",
+    "https://48hills.org/2024/12/how-a-yimby-candidate-with-little-experience-became-berkeleys-next-mayor/",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-may-19-2026"
+   ],
+   "full_name": "Adena Ishii",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 5,
+   "reasoning": "Kesarwani champions building more affordable and market-rate homes at all income levels: she secured a $4.9M Encampment Resolution Grant to convert a Super 8 Motel to transitional housing, championed the Golden Bear Inn Homekey conversion (43 studios for homeless individuals at 30% AMI), and led the BART transit-oriented development effort with a 35% affordable housing minimum goal. She frames her record as 'saying yes to more homes' across categories.",
+   "sources": [
+    "https://rashikesarwani.com",
+    "https://rashikesarwani.com/north-berkeley-bart",
+    "https://rashikesarwani.com/2023/07/summer-news-city-budget-staffing-addressing-encampments-bart-updates"
+   ],
+   "full_name": "Rashi Kesarwani",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of housing entirely and let the market decide prices and supply"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 5,
+   "reasoning": "Taplin introduced a resolution recognizing 'housing as a human right' in Berkeley and proposed an Affordable Housing Overlay permitting 'up to an additional 6 stories as-of-right for 100% affordable housing in some neighborhoods.' His homelessness response page notes Berkeley has opened or funded over 790 housing units and he advocates substantial public investment combined with prevention services and case management.",
+   "sources": [
+    "https://www.terrytaplin.com/affordable-housing",
+    "https://www.terrytaplin.com/legislation",
+    "https://www.terrytaplin.com/comprehensive-homeless-response"
+   ],
+   "full_name": "Terry Taplin",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Stay out of housing entirely and let the market decide prices and supply"
+  },
+  {
+   "politician_id": "8cc1c412-fe14-4bc6-b1e2-02d95997fd47",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "O'Keefe authored a May 20, 2025 council item directing the city to find locations for 24/7 staffed shelters and co-sponsored a transfer tax exemption study for 100% affordable housing; she abstained (rather than voting yes) on ADU ordinance amendments in September 2025, suggesting some caution on market-rate density increases but support for affordable housing production specifically.",
+   "sources": [
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-may-20-2025",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-march-11-2025",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-september-9-2025"
+   ],
+   "full_name": "Shoshana O'Keefe",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "e56b4563-2b84-452a-acb2-0be3ceba427e",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "value": 4,
+   "reasoning": "Supported market-rate single-family development pitched as affordable supply for first-time buyers rather than mandates or subsidies",
+   "sources": [
+    "https://journaltimes.com/news/local/business/development/article_75a0503e-53f9-11ee-94cb-b70956c395f6.html"
+   ],
+   "full_name": "Neal Czaplewski",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Cut regulations and zoning rules so private developers can build more housing"
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Gloria established the Office of Race and Equity as mayor per Wikipedia. He authored AB-2119 requiring gender-affirming healthcare for transgender foster youth. As Assembly Majority Whip he supported civil rights legislation across multiple sessions. The planning page confirms an equity-focused planning approach. His record reflects strengthening civil rights enforcement and addressing systemic discrimination through institutional mechanisms.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Todd_Gloria",
+    "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180AB2119"
+   ],
+   "full_name": "Todd Gloria",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Benson has championed civil rights throughout her career as one of the longest-serving African American women in the Maryland Senate. She supports racial equity, LGBTQ protections, and anti-discrimination measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "full_name": "Joanne C. Benson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Charles consistently supports civil rights legislation including racial equity measures, LGBTQ protections, and anti-discrimination laws in his Prince George's County district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "full_name": "Nick Charles",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Ellis consistently supports civil rights legislation including racial equity measures and LGBTQ protections. He represents a diverse Southern Maryland district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "full_name": "Arthur Ellis",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Harris consistently supports civil rights legislation including racial equity measures and LGBTQ protections. He is a strong advocate for his diverse Prince George's County constituents.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "full_name": "Kevin M. Harris",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Henson is a strong civil rights advocate representing a diverse Anne Arundel County district including Annapolis. She backs racial equity legislation, LGBTQ protections, and anti-discrimination measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "full_name": "Shaneka Henson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Smith consistently supports civil rights legislation including LGBTQ protections, racial equity measures, and anti-discrimination laws. He has championed these issues through his committee chair position.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "full_name": "William C. Smith, Jr.",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Kagan has consistently backed civil rights legislation throughout her career. She supports LGBTQ protections, racial equity measures, and anti-discrimination laws.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "full_name": "Cheryl C. Kagan",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Kramer backs civil rights legislation including anti-discrimination measures, LGBTQ protections, and racial equity policies. He represents a diverse Montgomery County district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "full_name": "Benjamin F. Kramer",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Love consistently backs civil rights legislation including anti-discrimination measures. She serves a diverse Montgomery County district and supports LGBTQ protections and racial equity bills.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "full_name": "Sara Love",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 4,
+   "reasoning": "Muse supports civil rights and racial equity legislation. As an African American senator representing a predominantly Black district in Prince George's County, he is a strong advocate for racial justice.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "full_name": "C. Anthony Muse",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "limit federal civil rights enforcement to clear cases of discrimination"
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Rosapepe has consistently backed civil rights including LGBTQ protections, racial equity measures, and anti-discrimination laws throughout his legislative career.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "full_name": "Jim Rosapepe",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Waldstreicher consistently champions civil rights including LGBTQ protections, racial equity legislation, and anti-discrimination measures throughout his Senate tenure.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "full_name": "Jeff Waldstreicher",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Washington has consistently supported civil rights legislation including racial equity measures, LGBTQ protections, and anti-discrimination laws. As an African American senator in PG County, he prioritizes racial justice.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "full_name": "Alonzo T. Washington",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Watson consistently supports civil rights legislation including racial equity measures and LGBTQ protections. He is a strong voice for his diverse Prince George's County constituents.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "full_name": "Ron Watson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 4,
+   "reasoning": "Kesarwani explicitly frames single-family zoning as a tool of racial and class segregation and argues her middle housing ordinance advances 'diversity, equity, and inclusion'; she advocates for equitable housing distribution 'affirmatively further[ing] fair housing' rather than concentrating development in historically redlined neighborhoods; she champions Office of Race, Equity, and Diversity funding and supports equitable tree canopy distribution targeting historically underserved West Berkeley.",
+   "sources": [
+    "https://rashikesarwani.com/2025/04/april-news-middle-housing-mtg-postponed-ohlone-park-mtg-more",
+    "https://rashikesarwani.com/2022/07/summer-news-marina-pier-state-funding-possible-ballot-measures-housing-element-more",
+    "https://rashikesarwani.com/2022/05/action-alert-council-to-make-important-public-safety-decisions-tonight"
+   ],
+   "full_name": "Rashi Kesarwani",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "limit federal civil rights enforcement to clear cases of discrimination"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Taplin states there must be 'zero tolerance for racism, bigotry, and hate anywhere in our city, let alone among the first responders' and champions 'ending the era of racist policing.' He proposed workforce development services for the recently incarcerated and basic income pilots through the Office of Racial Equity, introduced a 'housing as a human right' resolution, and advocates for equitable distribution of transportation safety improvements prioritizing 'the most disadvantaged in our community.'",
+   "sources": [
+    "https://www.terrytaplin.com/post/cm-taplin-statement-on-police-misconduct-allegations",
+    "https://www.terrytaplin.com/legislation",
+    "https://www.terrytaplin.com/priorities/vision-2050"
+   ],
+   "full_name": "Terry Taplin",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Bartlett's campaign credits him with supporting reparations initiatives, creating BenDex (racial equity in city contracting), making Berkeley a Cannabis Sanctuary City with racial equity priorities, enacting Paid Family Leave, and championing equity and inclusion as a '5th generation Berkeley native.' He frames his entire legislative record around racial equity and economic justice for disadvantaged communities, consistent with the most progressive civil rights stance including reparations support.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett"
+   ],
+   "full_name": "Ben Bartlett",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "424eb63b-9976-4059-8049-365c09719cc6",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 4,
+   "reasoning": "Blackaby authored the $200,000 Deportation Defense Legal and Education Fund (April 29, 2025) protecting immigrant residents' civil rights, and voted AYE on the urgency resolution condemning Islamophobia and reaffirming support for the Muslim community (March 11, 2025, All Ayes). His background in progressive digital politics for Democratic candidates including Senators Warren and Boxer reflects a consistent civil rights orientation. Served on Berkeley Police Accountability Board.",
+   "sources": [
+    "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-04-29%20Annotated%20Agenda%20-%20Council.pdf",
+    "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-03-11%20Annotated%20Agenda%20-%20Council.pdf",
+    "https://berkeleyca.gov/your-government/city-council/council-roster/brent-blackaby"
+   ],
+   "full_name": "Brent Blackaby",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "limit federal civil rights enforcement to clear cases of discrimination"
+  },
+  {
+   "politician_id": "8f1c9df6-5649-4b49-a18c-09864a2e9763",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "topic": "Civil Rights and Social Justice",
+   "value": 5,
+   "reasoning": "Voted YES on ending racial preferences in higher education admissions (1998) and received a 28% rating from the NAACP. Voted NAY on the Equal Rights Amendment deadline removal (2021) and has a 7% rating from the ACLU and 0% from the Human Rights Campaign across his career.",
+   "sources": [
+    "https://www.ontheissues.org/House/Hal_Rogers_Civil_Rights.htm",
+    "https://en.wikipedia.org/wiki/Hal_Rogers"
+   ],
+   "full_name": "Harold Rogers",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "eliminate affirmative action and all race-based government programs"
+  },
+  {
+   "politician_id": "6640a2dd-0f1d-4f3e-a794-23e3cc716ae6",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Hahn has been a consistent supporter of public education and opponent of school voucher programs that divert public school funding to private institutions. She supports strong public school investment particularly for underserved communities in LA County.",
+   "sources": [
+    "https://hahn.lacounty.gov/",
+    "https://en.wikipedia.org/wiki/Janice_Hahn"
+   ],
+   "full_name": "Janice Hahn",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "961506eb-3f00-4358-a9a3-1730e7004474",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act (Fully Funded Public Higher Ed), supporting full public education funding. Advocates for free community college as a great equalizer, arguing the state must increase investment in public institutions rather than divert funds.",
+   "sources": [
+    "https://web.archive.org/web/20241031001432/https://actonmass.org/legislators/joanne-comerford/",
+    "https://web.archive.org/web/20260310191126/https://actonmass.org/bills/cherish-act-fully-funded-public-higher-ed/",
+    "https://commonwealthbeacon.org/education/comerford-calls-free-community-college-one-of-the-great-equalizers/"
+   ],
+   "full_name": "Joanne M. Comerford",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "78ae3786-e71e-4dc4-8b84-0ab28b555632",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act (Fully Funded Public Higher Ed), supporting full public education funding. Represents an underserved district where public school investment is critical.",
+   "sources": [
+    "https://web.archive.org/web/20260212220607/https://actonmass.org/legislators/adam-gomez/",
+    "https://web.archive.org/web/20260310191126/https://actonmass.org/bills/cherish-act-fully-funded-public-higher-ed/"
+   ],
+   "full_name": "Adam Gómez",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "c947719a-cd1a-497a-8fc9-d9c4d434b18f",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act for fully funded public higher education, signaling strong commitment to public education funding over private alternatives.",
+   "sources": [
+    "https://web.archive.org/web/20260510015344/https://actonmass.org/legislators/vanna-howard/"
+   ],
+   "full_name": "Vanna Howard",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "2f7d598c-c3d7-48ba-ac9c-fb059e032bfe",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act for fully funded public higher education, indicating strong priority for public education investment.",
+   "sources": [
+    "https://web.archive.org/web/20260510015050/https://actonmass.org/legislators/liz-miranda/"
+   ],
+   "full_name": "Liz Miranda",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "2c53dc2c-38ae-4f39-873d-9ea1841b1c4c",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act for fully funded public higher education, indicating prioritization of public education investment over private alternatives.",
+   "sources": [
+    "https://web.archive.org/web/20260510023746/https://actonmass.org/legislators/nick-collins/"
+   ],
+   "full_name": "Nick Collins",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "bd451748-111f-461d-9752-95e7c243769e",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act for fully funded public higher education, indicating a clear preference for robust public education investment.",
+   "sources": [
+    "https://web.archive.org/web/20260510022634/https://actonmass.org/legislators/julian-cyr/"
+   ],
+   "full_name": "Julian A. Cyr",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "60e4da77-0c2b-4ca4-8d02-a4210bd91d90",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act for fully funded public higher education, prioritizing public education investment over private alternatives.",
+   "sources": [
+    "https://web.archive.org/web/20260510012356/https://actonmass.org/legislators/michael-barrett/"
+   ],
+   "full_name": "Michael J. Barrett",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "6d8717ca-45f9-42cf-bd28-6786a50d254f",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act for fully funded public higher education, indicating support for public school funding over private voucher diversion.",
+   "sources": [
+    "https://web.archive.org/web/20260510014603/https://actonmass.org/legislators/joan-lovely/"
+   ],
+   "full_name": "Joan B. Lovely",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "9b3c9aa8-d22a-4761-93e3-8054c762f4a5",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Moran co-sponsored the Cherish Act (Fully Funded Public Higher Education), signaling strong support for public institution funding over voucher programs.",
+   "sources": [
+    "https://web.archive.org/web/20250124162119/https://actonmass.org/legislators/michael-moran/"
+   ],
+   "full_name": "Michael J. Moran",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "853f0b26-a2b5-48b6-8dd6-f40ca48c87fd",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Sabadosa co-sponsored the Cherish Act (Fully Funded Public Higher Education), indicating strong support for fully funding public institutions rather than diverting funds to private schools via vouchers.",
+   "sources": [
+    "https://web.archive.org/web/20260510012513/https://actonmass.org/legislators/lindsay-sabadosa/"
+   ],
+   "full_name": "Lindsay Sabadosa",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "ecafa801-15b3-4777-9c38-95f5ded5cbe6",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Domb co-sponsored the Cherish Act (Fully Funded Public Higher Education) and chairs the Joint Committee on Higher Education. Her priorities center on increasing investment in public higher education.",
+   "sources": [
+    "https://web.archive.org/web/20250807044049/https://actonmass.org/legislators/mindy-domb/",
+    "https://en.wikipedia.org/wiki/Mindy_Domb"
+   ],
+   "full_name": "Mindy Domb",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "e2daa3aa-02b6-4a4d-859b-fb75f674625b",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act (Fully Funded Public Higher Ed) per Act on Mass. This bill prioritizes public education funding over voucher diversion.",
+   "sources": [
+    "https://web.archive.org/web/20250316115916/https://actonmass.org/legislators/aaron-saunders/"
+   ],
+   "full_name": "Aaron L. Saunders",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "a9ea7006-d595-45aa-a301-9c71d5a3af4d",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act, which would fully fund public higher education. Also sponsors legislation supporting public education broadly, including ranked choice voting reform.",
+   "sources": [
+    "https://web.archive.org/web/20260510022023/https://actonmass.org/legislators/carmine-gentile/"
+   ],
+   "full_name": "Carmine L. Gentile",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "ca6d9c06-e613-46a1-b938-0d89d488b583",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act (fully funded public higher ed) per Act on Mass tracker, signaling strong support for public education funding over private alternatives.",
+   "sources": [
+    "https://web.archive.org/web/20250316123842/https://actonmass.org/legislators/daniel-cahill/",
+    "https://malegislature.gov/Bills/193/H2288/Cosponsor"
+   ],
+   "full_name": "Daniel F. Cahill",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "f8986c05-2e32-4184-bfb2-9d4c244ffd3a",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored H.3760, a higher education access/fairness bill, consistent with prioritizing public education funding. Acts as a Middlesex Democrat supporting public institutions.",
+   "sources": [
+    "https://malegislature.gov/Bills/193/H3760/Cosponsor"
+   ],
+   "full_name": "Danillo Sena",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "3ca6c1b2-eec3-4e28-991d-fce8b6b67354",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act (fully funded public higher ed) per Act on Mass tracker.",
+   "sources": [
+    "https://web.archive.org/web/20251114014025/https://actonmass.org/legislators/david-leboeuf/"
+   ],
+   "full_name": "David A. LeBoeuf",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "a743a9a0-711c-40cf-b6e2-0ce2b587949a",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Surprisingly co-sponsored the Cherish Act (fully funded public higher ed) per Act on Mass despite being a Republican — this bill focuses on tuition-free public higher education rather than vouchers, which DeCoste may support as a local-control measure.",
+   "sources": [
+    "https://web.archive.org/web/20251114034234/https://actonmass.org/legislators/david-decoste/"
+   ],
+   "full_name": "David F. DeCoste",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "f8ae17d7-bc53-4b74-a92e-efa122cd5f04",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act (H.1260) for fully funded public higher education, signaling strong support for public education funding over private alternatives.",
+   "sources": [
+    "https://web.archive.org/web/20260510031346/https://actonmass.org/legislators/david-robertson/",
+    "https://web.archive.org/web/20260310191126/https://actonmass.org/bills/cherish-act-fully-funded-public-higher-ed/"
+   ],
+   "full_name": "David Robertson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "8e125ae2-3101-49b1-b228-f172ad9c70d9",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act (H.1260) for fully funded public higher education, demonstrating strong commitment to public education funding over private alternatives.",
+   "sources": [
+    "https://web.archive.org/web/20260510025509/https://actonmass.org/legislators/estela-reyes/",
+    "https://web.archive.org/web/20260310191126/https://actonmass.org/bills/cherish-act-fully-funded-public-higher-ed/"
+   ],
+   "full_name": "Estela A. Reyes",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "755d18f8-8c99-4d41-93eb-4f154d9bb7a9",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act (fully funded public higher education) per Act on Mass tracker, his only major progressive education co-sponsorship.",
+   "sources": [
+    "https://web.archive.org/web/20251114021146/https://actonmass.org/legislators/james-murphy/"
+   ],
+   "full_name": "James M. Murphy",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "6148f954-b8cc-4204-96ca-34f2afc1d24a",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act (fully funded public higher education) per Act on Mass tracker.",
+   "sources": [
+    "https://web.archive.org/web/20250613065544/https://actonmass.org/legislators/jennifer-armini/"
+   ],
+   "full_name": "Jennifer Balinsky Armini",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "502890e3-ad59-4d40-88a4-3cdee03f025e",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Co-sponsored the Cherish Act (fully funded public higher education) per Act on Mass tracker.",
+   "sources": [
+    "https://web.archive.org/web/20260510014441/https://actonmass.org/legislators/joan-meschino/"
+   ],
+   "full_name": "Joan Meschino",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Voted for the 2026 Blueprint for Maryland's Future revisions (SB0311), extending the compensatory-education funding calculation and preserving Concentration of Poverty Grant funding — supports sustained public school investment.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0311?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/votes/house/1271.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01"
+   ],
+   "full_name": "Ashanti Martinez",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "70b5e5a8-2ae4-454e-b75e-adb200b7b91d",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 2,
+   "reasoning": "Strongly supports increasing per-pupil public school funding — noting Utah ranks second-lowest nationally — and raising teacher pay. Sponsored SB189 (2026) providing $15M in grants for high-growth school districts' capital needs. Sponsored SB297 (2026) for school social worker amendments. Platform focuses on equitably funding public schools rather than redirecting public funds to private institutions.",
+   "sources": [
+    "https://le.utah.gov/bills/billSearch.jsp?sen=BUSSEM&year=2026&stype=2&sess=2026GS",
+    "https://www.fox13now.com/news/politics/could-this-idea-help-schools-in-some-of-utahs-fastest-growing-areas"
+   ],
+   "full_name": "Emily Buss",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Prioritizing public school funding while restricting vouchers to low-income families who lack adequate local options"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 2,
+   "reasoning": "Voted for the 2026 Blueprint for Maryland's Future revisions (SB0311) in the Senate, extending the compensatory-education funding calculation and preserving Concentration of Poverty Grant funding — supports sustained public school investment.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0311?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/votes/senate/0580.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "full_name": "Sara Love",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Prioritizing public school funding while restricting vouchers to low-income families who lack adequate local options"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Waldstreicher is a strong opponent of school vouchers that divert public school funding to private institutions. He champions Maryland's public school system including the Blueprint for Maryland's Future.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "full_name": "Jeff Waldstreicher",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "e94337e1-4776-4058-87b4-32dfeb7732a0",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Stein supported the Blueprint for Maryland's Future — advocates for public school investment over private school voucher programs.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stein",
+    "https://ballotpedia.org/Dana_Stein"
+   ],
+   "full_name": "Dana Stein",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Voted for the 2026 Blueprint for Maryland's Future revisions (SB0311), extending the compensatory-education funding calculation and preserving Concentration of Poverty Grant funding — supports sustained public school investment.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0311?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/votes/house/1271.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01"
+   ],
+   "full_name": "Kent Roberson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Voted for the 2026 Blueprint for Maryland's Future revisions (SB0311), extending the compensatory-education funding calculation and preserving Concentration of Poverty Grant funding — supports sustained public school investment.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0311?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/votes/house/1271.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taylor03"
+   ],
+   "full_name": "Kym Taylor",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Voted for the 2026 Blueprint for Maryland's Future revisions (SB0311), extending the compensatory-education funding calculation and preserving Concentration of Poverty Grant funding — supports sustained public school investment.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0311?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/votes/house/1271.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/toles01"
+   ],
+   "full_name": "Karen Toles",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Terrasa supported Blueprint for Maryland's Future — advocates for public school investment over private school voucher programs.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/terrasa01",
+    "https://ballotpedia.org/Jen_Terrasa"
+   ],
+   "full_name": "Jen Terrasa",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "631dac5c-fb86-41f5-a82d-5963164a9142",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Cardin supported the Blueprint for Maryland's Future — favors public school investment over private school voucher programs.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/cardin01",
+    "https://ballotpedia.org/Jon_Cardin"
+   ],
+   "full_name": "Jon S. Cardin",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Feldmark supported the Blueprint for Maryland's Future — strong advocate for public school investment over private school vouchers.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldmark01",
+    "https://ballotpedia.org/Jessica_Feldmark"
+   ],
+   "full_name": "Jessica Feldmark",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "f6a237a0-34ff-4a93-b05a-335ec38b6da3",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Hill supported the Blueprint for Maryland's Future — strongly favors public school investment over private school voucher diversion.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hill02",
+    "https://ballotpedia.org/Terri_Hill"
+   ],
+   "full_name": "Terri L. Hill",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Voted for the 2026 Blueprint for Maryland's Future revisions (SB0311), extending the compensatory-education funding calculation and preserving Concentration of Poverty Grant funding — supports sustained public school investment.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0311?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/votes/house/1271.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01"
+   ],
+   "full_name": "Derrick Coley",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "e39d94c7-99d5-4c1d-b8d9-11736637b1eb",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 2,
+   "reasoning": "Campaign site: Historic Public Education Investments — Ensured every Virginia child can access world-class education. Supports universal Pre-K, increased school funding, and competitive teacher wages. Focus on strengthening public education over vouchers.",
+   "sources": [
+    "https://www.rodwillett.com/issues"
+   ],
+   "full_name": "Rodney T. Willett",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Prioritizing public school funding while restricting vouchers to low-income families who lack adequate local options"
+  },
+  {
+   "politician_id": "0bac7849-1edb-46b4-b139-dcc759c0d626",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Received 2017 VEA Solid as a Rock Award for public education support; named Champion of College Affordability 2018 — record of consistent investment in public school funding and teacher support.",
+   "sources": [
+    "https://www.pricefordelegate.com/about_marcia"
+   ],
+   "full_name": "Marcia S. Price",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "57517048-31a9-4974-bb5a-f82c3563a514",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Advocates for quality public education as a core legislative priority; background as social entrepreneur focused on economic equity and educational opportunity.",
+   "sources": [
+    "https://www.wavy.com/news/politics/candidates/candidate-profile-jackie-hope-glass-va-district-93/"
+   ],
+   "full_name": "Jackie Hope Glass",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "e1f72270-5809-4d0e-969c-48d1ab34fbdc",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 2,
+   "reasoning": "O'Connor has supported school choice and parental rights in education. He backed the 2016 Question 2 charter school expansion and has supported education savings account proposals giving families more control over educational choices. He has advocated for expanded charter school availability as an option for families in districts with underperforming public schools. His school choice position aligns with Republican education priorities of parental choice and market competition in education.",
+   "sources": [
+    "https://malegislature.gov/Legislators/Profile/PMO",
+    "https://www.masslive.com/politics/2016/10/question_2_charter_schools_massachusetts.html"
+   ],
+   "full_name": "Patrick M. O'Connor",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Prioritizing public school funding while restricting vouchers to low-income families who lack adequate local options"
+  },
+  {
+   "politician_id": "a49af796-7961-4b82-8327-989691880a39",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Meng voted NAY on the SOAR Act (H.R. 10, October 2015) that would have funded private and religious school vouchers in Washington D.C. She supports fully funding public schools and has stated she will fight for funding to keep schools open.",
+   "sources": [
+    "https://www.ontheissues.org/NY/Grace_Meng_Education.htm",
+    "https://www.ontheissues.org/NY/Grace_Meng.htm"
+   ],
+   "full_name": "Grace Meng",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "e63791e7-3d09-4da1-a28c-b3e221491c15",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "Her survey repeatedly champions \"fully funded public schools\" and protecting public education from censorship -- prioritizing full public-school funding over diverting funds elsewhere.",
+   "sources": [
+    "https://ballotpedia.org/Chelsey_Hockett#Campaign_themes"
+   ],
+   "full_name": "Chelsey Hockett",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "edbf47c1-534d-4a9d-a22c-17450bf2d928",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 1,
+   "reasoning": "McDermott explicitly marked \"Disagree\" on the 2024 questionnaire statement supporting school choice, vouchers, tax credits, and charter schools, warning that expanding them would create a \"2 tier educational system\" that diverts taxpayer dollars away from public schools.",
+   "sources": [
+    "https://ivoterguide.com/candidate/19510/race/2054/election/1204"
+   ],
+   "full_name": "George McDermott",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"
+  },
+  {
+   "politician_id": "feecd8fc-b007-450a-8779-8e6f68e80dd6",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 2,
+   "reasoning": "Co-sponsored SB1264 (2026), which imposes a mandatory legislative program review, an Auditor General performance audit, and a hard July 1, 2034 termination date on Arizona's universal Empowerment Scholarship Account (ESA) voucher program (prime sponsor Miranda; co-sponsors include Epstein and Sears). Adding an accountability/sunset mechanism to the universal voucher program rather than expanding it aligns with stance 2. Scored on co-sponsorship of a substantive anchor bill, consistent with the AZ wave's established co-sponsorship standard and mirroring the identical SB1264-based row credited to co-sponsor Sears.",
+   "sources": [
+    "https://www.azleg.gov/legtext/57leg/2R/bills/SB1264P.pdf",
+    "https://www.azleg.gov/Senate/Senate-member/?legislature=57&session=130&legislator=2377"
+   ],
+   "full_name": "Denise \"Mitzi\" Epstein",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Prioritizing public school funding while restricting vouchers to low-income families who lack adequate local options"
+  },
+  {
+   "politician_id": "fef8eb85-8360-418d-8239-ccf3a823608b",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "topic": "School Vouchers & Public Education Funding",
+   "value": 2,
+   "reasoning": "Co-sponsored SB1264 (2026), which imposes a mandatory legislative program review, a performance audit by the Auditor General, and a hard termination date (July 1, 2034) on Arizona's universal Empowerment Scholarship Account (ESA) voucher program. Adding an accountability/sunset mechanism to the state's universal voucher program, rather than expanding it further, reflects a position favoring oversight and eventual reconsideration of vouchers over unconditional expansion, aligning with stance 2.",
+   "sources": [
+    "https://www.azleg.gov/legtext/57leg/2R/bills/SB1264P.pdf"
+   ],
+   "full_name": "Kiana Sears",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Prioritizing public school funding while restricting vouchers to low-income families who lack adequate local options"
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Gloria is the first openly gay mayor of San Diego per Wikipedia. He served as chairman of the San Diego LGBT Community Center and vice chair of the California Legislative LGBT Caucus. He has consistently supported full federal protections for same-sex marriage and LGBTQ rights in all legislative capacities and his election represented a historic milestone for same-sex marriage equality.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Todd_Gloria"
+   ],
+   "full_name": "Todd Gloria",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Ellis supports same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "full_name": "Arthur Ellis",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Harris supports same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "full_name": "Kevin M. Harris",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Smith supports same-sex marriage and LGBTQ equality. He backed Maryland's marriage equality legislation and LGBTQ anti-discrimination measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "full_name": "William C. Smith, Jr.",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Kagan supported marriage equality in Maryland during the 2012 ballot initiative and has voted for LGBTQ non-discrimination legislation throughout her Senate tenure.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "full_name": "Cheryl C. Kagan",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Kramer supports same-sex marriage and LGBTQ equality. He voted for marriage equality and LGBTQ non-discrimination legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "full_name": "Benjamin F. Kramer",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Love supports same-sex marriage and LGBTQ equality. As a Montgomery County Democrat, she voted for LGBTQ anti-discrimination legislation and consistently supports marriage equality.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "full_name": "Sara Love",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Watson supports same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation and marriage equality.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "full_name": "Ron Watson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "9325e98f-db12-4214-bae0-9898e9438fac",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Steube stated 'Marriages are one-man-one-woman; so are bathrooms' (Sep 2018) and voted for Florida's HB 7111 to allow adoption agencies to refuse same-sex couples on religious grounds. His clear 'one-man-one-woman' definition of marriage aligns with value 5 (make same-sex marriage illegal and define marriage as only between one man and one woman).",
+   "sources": [
+    "https://www.ontheissues.org/FL/Greg_Steube.htm",
+    "https://www.ontheissues.org/FL/Greg_Steube_Civil_Rights.htm"
+   ],
+   "full_name": "W. Gregory Steube",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "4c34d7a5-ceea-493f-a6a4-cb5d14763593",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Kelly voted NAY on the Respect for Marriage Act in 2022 and cosponsored the Federal Marriage Amendment in 2015, which would constitutionally define marriage as only between one man and one woman. He also cosponsored the State Marriage Defense Act. His record aligns with making same-sex marriage illegal and defining marriage as only between one man and one woman.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mike_Kelly_(Pennsylvania_politician)",
+    "https://www.ontheissues.org/PA/Mike_Kelly_Civil_Rights.htm"
+   ],
+   "full_name": "Mike Kelly",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "73816ba4-4235-400c-a0a1-00c67b762687",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Miller voted NAY on the Respect for Marriage Act and in the AFA survey (Sep 2020) she supports that \"marriage is only a union of one man and one woman.\" This aligns with stance 5: make same-sex marriage illegal and define marriage as only between one man and one woman.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mary_Miller_(politician)",
+    "https://www.ontheissues.org/IL/Mary_Miller_Families_+_Children.htm"
+   ],
+   "full_name": "Mary E. Miller",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "dbb2888a-78f8-4f86-b793-52e90a9a2826",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Fischbach voted in the Minnesota legislature to place a constitutional amendment on the ballot defining marriage as exclusively between one man and one woman (2012). She has stated in AFA surveys that marriage should be reserved for one man and one woman and supports protecting businesses from being required to participate in same-sex weddings.",
+   "sources": [
+    "https://www.ontheissues.org/House/Michelle_Fischbach_Families_+_Children.htm",
+    "https://www.ontheissues.org/House/Michelle_Fischbach.htm"
+   ],
+   "full_name": "Michelle Fischbach",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "fe96da99-4c28-42b7-841f-1d25b2c47406",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Graves voted YES on constitutional amendments defining marriage as between one man and one woman in 2004 (H.J.Res.106) and 2006 (H.J.Res.88), co-sponsored the Marriage Protection Amendment (2008), signed the First Amendment Defense Act (2015), and holds a 0% rating from the Human Rights Campaign. His record reflects support for making same-sex marriage illegal and defining marriage as only between one man and one woman.",
+   "sources": [
+    "https://www.ontheissues.org/House/Samuel_Graves_Civil_Rights.htm",
+    "https://www.ontheissues.org/House/Samuel_Graves.htm"
+   ],
+   "full_name": "Sam Graves",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "9298415e-b8e5-4ccf-9f2a-b9366dd8ca1a",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Stated 'Marriage should be between one man and one woman' (Nov 2010) and 'Supports amendment preventing same-sex marriage' (Aug 2010). The documented support for a constitutional amendment defining marriage as one man and one woman places him at value 5 — make same-sex marriage illegal.",
+   "sources": [
+    "https://www.ontheissues.org/Tim_Griffin.htm"
+   ],
+   "full_name": "Tim Griffin",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "a0ae5161-c204-47ab-a858-4a685ec51613",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "value": 5,
+   "reasoning": "Backed a bill defining marriage as between one man and one woman (Jun 2016) and defended clerks' religious right to refuse same-sex marriage licenses (May 2018). These are documented anti-recognition actions, satisfying the evidence bar for value 5.",
+   "sources": [
+    "https://www.ontheissues.org/Tate_Reeves.htm",
+    "https://en.wikipedia.org/wiki/Tate_Reeves"
+   ],
+   "full_name": "Tate Reeves",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "make same-sex marriage illegal and define marriage as only between one man and one woman."
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "topic": "Childcare Affordability & Access",
+   "value": 5,
+   "reasoning": "Benson backed the Blueprint for Maryland's Future including childcare investment and pre-K expansion. She supports comprehensive early childhood education for working families.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/senate/0866.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "full_name": "Joanne C. Benson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "topic": "Childcare Affordability & Access",
+   "value": 5,
+   "reasoning": "Charles supported childcare investment in the Blueprint for Maryland's Future. He supports pre-K expansion and childcare subsidies for working families.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "full_name": "Nick Charles",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "topic": "Childcare Affordability & Access",
+   "value": 4,
+   "reasoning": "Ellis supported childcare investment and pre-K expansion in the Blueprint for Maryland's Future, helping working families in Charles County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1030?ys=2019RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "full_name": "Arthur Ellis",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies reserved for the lowest-income families"
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "topic": "Childcare Affordability & Access",
+   "value": 5,
+   "reasoning": "Sponsored SB0664 (2026) prioritising child care providers in the Child Care Scholarship Program and SB0402 (2026) on residential child care programs; backs childcare subsidy expansion.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0664?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0402?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "full_name": "Kevin M. Harris",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "topic": "Childcare Affordability & Access",
+   "value": 5,
+   "reasoning": "Henson supported childcare investment in the Blueprint for Maryland's Future. She backs pre-K expansion and childcare subsidies for working families in her district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "full_name": "Shaneka Henson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "topic": "Childcare Affordability & Access",
+   "value": 5,
+   "reasoning": "Smith backed childcare investment as part of the Blueprint for Maryland's Future. He supports universal pre-K and childcare subsidy programs.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1372?ys=2021RS",
+    "https://mgaleg.maryland.gov/2021RS/votes/senate/0749.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "full_name": "William C. Smith, Jr.",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "topic": "Childcare Affordability & Access",
+   "value": 5,
+   "reasoning": "Kagan supports childcare access and early childhood education investment. She backed the Blueprint for Maryland's Future which includes significant pre-K and childcare funding.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/senate/0866.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "full_name": "Cheryl C. Kagan",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "topic": "Childcare Affordability & Access",
+   "value": 5,
+   "reasoning": "Love has been a champion for childcare access and affordability. She supported the Blueprint for Maryland's Future which includes childcare investments and pre-K expansion.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "full_name": "Sara Love",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "topic": "Childcare Affordability & Access",
+   "value": 4,
+   "reasoning": "Muse supported childcare investment including early childhood education programs. He backs family support services for working parents in Prince George's County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "full_name": "C. Anthony Muse",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies reserved for the lowest-income families"
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "topic": "Childcare Affordability & Access",
+   "value": 4,
+   "reasoning": "Rosapepe supported childcare investment including the Blueprint for Maryland's Future pre-K expansion to help working families in Prince George's County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/senate/0866.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "full_name": "Jim Rosapepe",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies reserved for the lowest-income families"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "topic": "Childcare Affordability & Access",
+   "value": 5,
+   "reasoning": "Waldstreicher has backed significant childcare access legislation and early childhood education investment. He supported the Blueprint for Maryland's Future pre-K expansion.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "full_name": "Jeff Waldstreicher",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "topic": "Childcare Affordability & Access",
+   "value": 5,
+   "reasoning": "Washington supported childcare investment in the Blueprint for Maryland's Future, recognizing childcare access as critical for working families in Prince George's County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "full_name": "Alonzo T. Washington",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "topic": "Childcare Affordability & Access",
+   "value": 5,
+   "reasoning": "Watson supported childcare investment in the Blueprint for Maryland's Future, recognizing childcare as essential for working families in his district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1300?ys=2020RS",
+    "https://mgaleg.maryland.gov/2020RS/votes/house/0397.pdf",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "full_name": "Ron Watson",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"
+  },
+  {
+   "politician_id": "18db5d61-6bce-4f55-ad45-bed01f329548",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Co-chaired the House AI Task Force (2024), stated 'regulation can't be rushed,' and explicitly criticized Europe's comprehensive AI regulatory approach. Advocates sector-specific frameworks over broad mandates and favors federal preemption of state AI laws with light-touch oversight. This positions him at new scale 2 — he promotes suggested guidelines and industry-led norms rather than mandated safety testing or liability requirements.",
+   "sources": [
+    "https://www.fastcompany.com/91117132/jay-obernolte-interview-house-ai-task-force",
+    "https://www.csis.org/podcasts/ai-policy-podcast/congressman-jay-obernolte-future-us-ai-regulation"
+   ],
+   "full_name": "Jay Obernolte",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "102b239c-0a3d-44b9-ae32-88d8179197e2",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Young co-introduced the Future of AI Innovation Act promoting voluntary NIST standards rather than mandates, stating his top priority is ensuring AI \"reflects American values and supports U.S. innovation.\" He also introduced the CREATE AI Act for the National AI Research Resource. His approach favors light self-regulatory oversight to maintain competitiveness rather than government approval requirements.",
+   "sources": [
+    "https://www.young.senate.gov/newsroom/press-releases/young-cantwell-reintroduce-future-of-ai-innovation-act/",
+    "https://www.young.senate.gov/newsroom/press-releases/young-colleagues-introduce-bill-to-advance-ai-innovation-reliability-for-americans/",
+    "https://en.wikipedia.org/wiki/Todd_Young"
+   ],
+   "full_name": "Todd Young",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Auchincloss authored legislation to raise the internet age of adulthood to 16 and co-sponsored the bipartisan TikTok forced-sale law. As a member of the House Intelligence Committee (and Foreign Affairs), he has focused on AI's national security implications, backing the AI Advancement and Reliability Act and supporting targeted safety standards — particularly for AI systems with national security and children's safety risks.",
+   "sources": [
+    "https://web.archive.org/web/20221209104046/https://auchincloss.house.gov/issues",
+    "https://en.wikipedia.org/wiki/Jake_Auchincloss"
+   ],
+   "full_name": "Jake Auchincloss",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "70d58d4b-4203-4fc2-b36f-32e6231c4339",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Sponsored/co-sponsored HB1057 (Education - Artificial Intelligence - Guidelines, Professional Development, and Collaborative (Artificial Intelligence Ready Schools Act)) on algorithmic/automated systems regulation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1057?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/palakovich01"
+   ],
+   "full_name": "Julie Palakovich Carr",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "bc703231-6af8-48c6-8ae6-4a93fc60b18f",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Sponsored/co-sponsored HB0510 (Motor Vehicles - Automated Speed Enforcement - Improper Registration) on algorithmic/automated systems regulation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0510?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kaufman01"
+   ],
+   "full_name": "Aaron M. Kaufman",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "d5740b38-9b65-431a-9e33-645d432dec61",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Husted cosponsored the CREATE AI Act to establish the NAIRR as shared national AI research infrastructure, stating the goal is to 'drive innovation and strengthen America's leadership in emerging technologies.' He also introduced the AI for Mainstreet Act and AI Talent Act. His framing emphasizes competition and access over government controls, consistent with light oversight allowing companies to mostly self-regulate.",
+   "sources": [
+    "https://husted.senate.gov/press-releases/husted-joins-bill-to-advance-ai-for-americans/",
+    "https://husted.senate.gov/about/"
+   ],
+   "full_name": "Jon Husted",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "0dd5daa6-87cf-43a7-a1ee-25349ae35e27",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Hagerty appeared on Fox Business in April 2026 discussing AI competition with China and advocates for light-touch AI oversight to maintain U.S. competitiveness. His approach favors allowing companies to self-regulate while government focuses on maintaining America's edge over China, aligning with value 2 — light oversight while letting companies mostly self-regulate.",
+   "sources": [
+    "https://hagerty.senate.gov/newsroom"
+   ],
+   "full_name": "Bill Hagerty",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "d04b548f-8655-40f6-8d27-9989f473a828",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Lummis is a leading crypto and digital-assets advocate and founding Freedom Caucus member with a strong free-market orientation. She introduced the Digital Asset Market Structure Clarity Act (2025) with minimal government interference as its premise. Her libertarian-leaning record on technology regulation aligns with value 2 - light oversight while letting companies mostly self-regulate.",
+   "sources": [
+    "https://www.lummis.senate.gov/press-releases/",
+    "https://en.wikipedia.org/wiki/Cynthia_Lummis"
+   ],
+   "full_name": "Cynthia Lummis",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "4f411143-634b-4e11-ab61-78acaf22ddfb",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "McCormick introduced the Liquid Cooling for AI Act (S.3269, 2025) and participated in the July 2025 Pittsburgh summit with Trump announcing $90B+ in AI and energy investments. His legislation and public statements promote AI development with light government oversight focused on infrastructure support rather than regulation, aligning with value 2.",
+   "sources": [
+    "https://mccormick.senate.gov/legislation/",
+    "https://mccormick.senate.gov/newsroom/in-the-news/"
+   ],
+   "full_name": "Dave McCormick",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 1,
+   "reasoning": "Lam sponsored the Artificial Intelligence - Health Software and Health Insurance Decision Making bill (SB0987 2025), requiring oversight and regulation of AI use in healthcare settings.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lam02?ys=2025RS"
+   ],
+   "full_name": "Clarence K. Lam",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Allow AI companies to develop and deploy technology freely without government interference"
+  },
+  {
+   "politician_id": "3bb72269-7f3b-42a5-bf48-4e1963844391",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Sheehy co-sponsored the AI Fraud Accountability Act (March 2026) targeting AI-enabled financial scams; his broader technology posture reflects a market-first light-touch regulatory approach rather than broad mandatory safety testing or government pre-approval of AI systems.",
+   "sources": [
+    "https://sheehy.senate.gov/newsroom/press-releases/",
+    "https://en.wikipedia.org/wiki/Tim_Sheehy"
+   ],
+   "full_name": "Tim Sheehy",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "8abee534-5db0-4950-a2b9-d0d1e8088cc7",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Sponsored/co-sponsored HB1057 (Education - Artificial Intelligence - Guidelines, Professional Development, and Collaborative (Artificial Intelligence Ready Schools Act)) on algorithmic/automated systems regulation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1057?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mireku01"
+   ],
+   "full_name": "Bernice Mireku-North",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "96876928-53f8-4ed5-b2de-deab3a456d83",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Sponsored/co-sponsored HB0510 (Motor Vehicles - Automated Speed Enforcement - Improper Registration) on algorithmic/automated systems regulation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0510?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moon01"
+   ],
+   "full_name": "David Moon",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "203a0228-7a63-4a6a-b26d-fa45ba139472",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Sponsored/co-sponsored HB0510 (Motor Vehicles - Automated Speed Enforcement - Improper Registration) on algorithmic/automated systems regulation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0510?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/spiegel01"
+   ],
+   "full_name": "Ryan Spiegel",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "458a60ba-a235-4b36-80bb-8b537375a4ff",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Sponsored/co-sponsored HB1057 (Education - Artificial Intelligence - Guidelines, Professional Development, and Collaborative (Artificial Intelligence Ready Schools Act)) on algorithmic/automated systems regulation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1057?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/vogel01"
+   ],
+   "full_name": "Joe Vogel",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "cf68a5cd-f375-4296-8a87-1828d903baea",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Sponsored/co-sponsored HB1261 (Consumer Protection - Artificial Intelligence Toys (Artificial Intelligence Toy Safety Act)) on algorithmic/automated systems regulation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1261?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wilkins01"
+   ],
+   "full_name": "Jheanelle K. Wilkins",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "36171e41-704b-4bf9-b300-755afe4ee06f",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Sponsored/co-sponsored HB0510 (Motor Vehicles - Automated Speed Enforcement - Improper Registration) on algorithmic/automated systems regulation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0510?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/woorman01"
+   ],
+   "full_name": "Teresa Woorman",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "4a409af4-8568-42c3-bb72-7bb7500c96ce",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Chang has supported AI regulation and transparency requirements citing the need to protect consumers and workers from harmful AI applications while supporting innovation in Maryland's technology sector.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/chang01?tab=2026RS-legislation",
+    "https://ballotpedia.org/Mark_Chang"
+   ],
+   "full_name": "Mark S. Chang",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "22610d7f-eaca-4802-b486-0e48544e6e7d",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Ebersole sponsored Education - Artificial Intelligence - Guidelines Professional Development and Collaborative (Artificial Intelligence Ready Schools Act) — supporting AI regulation and safety guidelines in education.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1057?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ebersole01"
+   ],
+   "full_name": "Eric Ebersole",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "36eecaff-4677-441a-b36e-a323e87d9158",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Rosenberg sponsored Algorithmic Addiction Fund establishment legislation — targeting harms from algorithmic social media on youth — indicating support for technology regulation and AI/platform accountability.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosenberg"
+   ],
+   "full_name": "Samuel I. Rosenberg",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "46c6ebb0-137a-46aa-b6fa-17af31aa4ef1",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Spanberger co-sponsored the AI Accountability Act (H.R. 4278, 2023) in the House, which required federal agencies to publish AI impact assessments and transparency reports. She also supported the DEEPFAKES Accountability Act to require disclosure of synthetic media. Her overall posture favors proactive regulatory guardrails on AI while allowing continued innovation.",
+   "sources": [
+    "https://www.congress.gov/bill/118th-congress/house-bill/4278",
+    "https://ballotpedia.org/Abigail_Spanberger",
+    "https://ontheissues.org/VA/Abigail_Spanberger.htm"
+   ],
+   "full_name": "Abigail Spanberger",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "7bf73fb2-1b31-412e-913d-835bfd3e326d",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Clark has focused on AI regulation from a consumer protection and children's safety lens — she backed legislation requiring algorithmic accountability on social media platforms and supported TikTok oversight. As Minority Whip she coordinated Democratic positions on AI safety standards in the 118th Congress. Her record supports strong AI safety guardrails, particularly for systems affecting children, privacy, and employment discrimination.",
+   "sources": [
+    "https://katherineclark.house.gov/issues",
+    "https://www.ontheissues.org/MA/Katherine_Clark.htm"
+   ],
+   "full_name": "Katherine Clark",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Pressley has been a strong advocate for regulating AI to prevent racial bias and discriminatory outcomes. She co-led the Facial Recognition and Biometric Technology Moratorium Act and has raised concerns about algorithmic discrimination in housing, healthcare, and criminal justice. She supported robust AI governance frameworks focused on civil rights protections and has testified about AI bias affecting communities of color. Her position is pro-regulation with an equity lens.",
+   "sources": [
+    "https://congress.gov/bill/117th-congress/house-bill/3907",
+    "https://www.govtrack.us/congress/members/ayanna_pressley/412786"
+   ],
+   "full_name": "Ayanna Pressley",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "a4e6e14a-46f7-4574-94c6-5b7edd484d91",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Ouellette serves on the Joint Committee on Advanced Information Technology, the Internet and Cybersecurity, the Massachusetts legislature's primary body overseeing technology policy, AI regulation, data privacy, and cybersecurity legislation. His committee assignment reflects active engagement with the regulation of emerging technologies. As a Democrat on this committee, he is positioned to support consumer-protective technology regulation and AI accountability measures. His 8th Bristol District (Westport area) includes residents and businesses impacted by emerging technology policy.",
+   "sources": [
+    "https://malegislature.gov/Legislators/Profile/SJO1"
+   ],
+   "full_name": "Steven J. Ouellette",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "19b7c45b-57a7-468c-9762-82b926080646",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "topic": "Artificial Intelligence Oversight",
+   "value": 2,
+   "reasoning": "Vargas co-sponsored H.96 relative to the use of biometric recognition technology and H.97 on consumers' interactions with artificial intelligence systems. He also co-sponsored H.103 to establish the Massachusetts Neural Data Privacy Protection Act and H.104 to establish the Massachusetts Data Privacy Act. This legislative portfolio of four AI and data privacy bills demonstrates a consistent pro-regulation stance on AI and emerging technologies.",
+   "sources": [
+    "https://malegislature.gov/Bills/194/H96",
+    "https://malegislature.gov/Bills/194/H97",
+    "https://malegislature.gov/Bills/194/H103",
+    "https://malegislature.gov/Bills/194/H104"
+   ],
+   "full_name": "Andres X. Vargas",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "HIGH_IS_PRO",
+   "chair_text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+  },
+  {
+   "politician_id": "85d27350-e1b6-45b8-aee3-509ca88c5af4",
+   "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+   "topic": "Ukraine - Russia Conflict",
+   "value": 5,
+   "reasoning": "Warner is among the most vocal Ukraine aid supporters in the Senate. As Senate Intelligence Committee Chair, he called congressional failure to pass Ukraine aid a 'tremendous gift' to Putin. He co-led Senate efforts to pass the 2024 foreign aid package (Senate voted 80-19 to advance it, signed April 24, 2024) — the Ukraine Security Supplemental Appropriations Act (H.R.8035) including billions in military funding. He stated military equipment would be 'in transit to Ukraine by next week' after passage and has supported all Ukraine supplemental appropriations from 2022 onward.",
+   "sources": [
+    "https://thehill.com/homenews/senate/4371927-warner-failure-to-pass-ukraine-aid-gift-putin/",
+    "https://thehill.com/homenews/senate/4609587-warner-military-equipment-will-be-in-transit-to-ukraine-by-next-week-if-biden-signs-bill/",
+    "https://www.congress.gov/bill/118th-congress/house-bill/8035/text"
+   ],
+   "full_name": "Mark Warner",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "end all aid to Ukraine immediately and stay completely out of the conflict."
+  },
+  {
+   "politician_id": "8cffe7a0-b56c-42fe-adbf-f57d63589973",
+   "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+   "topic": "Ukraine - Russia Conflict",
+   "value": 5,
+   "reasoning": "Kaine is one of the Senate's strongest Ukraine supporters. He voted for the $95 billion Ukraine-Israel-Taiwan supplemental aid package (Senate vote, April 23, 2024, 79-18). As a Senate Foreign Relations Committee member he championed Ukraine aid legislation and co-sponsored war powers measures to maintain congressional oversight. In November 2024 he was pushing for additional lame-duck Ukraine funding before the Trump transition. His record consistently places him among Democrats' most vocal Ukraine advocates.",
+   "sources": [
+    "https://www.washingtonpost.com/politics/2024/04/23/senate-vote-foreign-aid-ukraine-israel/",
+    "https://thehill.com/policy/international/4989155-senate-democrat-sees-a-chance-of-more-ukraine-funding-in-lame-duck-session/",
+    "https://rollcall.com/2024/04/23/aid-finally-set-to-flow-as-senate-clears-95-3b-emergency-bill/"
+   ],
+   "full_name": "Tim Kaine",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "end all aid to Ukraine immediately and stay completely out of the conflict."
+  },
+  {
+   "politician_id": "ff596d3f-3056-43e2-a80a-8c4b8fd9abde",
+   "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+   "topic": "Ukraine - Russia Conflict",
+   "value": 4,
+   "reasoning": "Voted Nay on the Ukraine Security Supplemental Appropriations Act, 2024 (H.R. 8035, Roll Call 151, April 20, 2024), which passed the House 311-112; a Republicans for Ukraine report card separately noted his support score 'dropped as the GOP has increasingly turned away from supporting Ukraine.'",
+   "sources": [
+    "https://clerk.house.gov/Votes/2024151"
+   ],
+   "full_name": "Andy Harris",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "reduce aid to Ukraine and focus American resources on domestic priorities instead."
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+   "topic": "Misinformation and the Role of Algorithms in Democracy",
+   "value": 4,
+   "reasoning": "Kagan has addressed election misinformation through her election law work, supporting legislation to combat false information about voting procedures and electoral processes.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "full_name": "Cheryl C. Kagan",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "protect free speech online and prevent government censorship"
+  },
+  {
+   "politician_id": "bdb92754-d3e8-4255-9c10-244ebea4380a",
+   "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+   "topic": "Misinformation and the Role of Algorithms in Democracy",
+   "value": 4,
+   "reasoning": "Haridopolos cosponsored the Anti-CBDC Surveillance State Act, which prevents federal government from issuing a digital currency that could track citizens' transactions, citing a 'firm commitment to freedom' from government overreach. His consistent framing of government intervention in private affairs — whether economic or informational — reflects a posture of protecting free speech online and preventing government censorship rather than mandating platform accountability.",
+   "sources": [
+    "https://spacecoastdaily.com/2025/07/congressman-mike-haridopolos-applauds-house-passage-of-key-cryptocurrency-bills-protect-americans-financial-freedoms/"
+   ],
+   "full_name": "Mike Haridopolos",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "protect free speech online and prevent government censorship"
+  },
+  {
+   "politician_id": "ef7d314c-bc47-4ed6-954c-77eb3d53eb69",
+   "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+   "topic": "Misinformation and the Role of Algorithms in Democracy",
+   "value": 4,
+   "reasoning": "Luna supports FEC regulation of social media platforms but frames this as protecting conservatives from censorship rather than combating misinformation. She accused Twitter and the federal government of jointly censoring Americans in 2020. Her stance prioritizes free speech protection over government-mandated content moderation, consistent with value 4.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Anna_Paulina_Luna"
+   ],
+   "full_name": "Anna Paulina Luna",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "protect free speech online and prevent government censorship"
+  },
+  {
+   "politician_id": "1dd50ca3-0010-430a-abbd-fb7230ab2a03",
+   "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+   "topic": "Misinformation and the Role of Algorithms in Democracy",
+   "value": 4,
+   "reasoning": "His Free Speech page advocates for \"legislation that shields Rhode Islanders from undue censorship by major online platforms\" and frames his campaign around countering \"mainstream censorship,\" prioritizing protecting free speech online over content moderation mandates, matching stance 4.",
+   "sources": [
+    "https://vicmellor.com/free-speech/"
+   ],
+   "full_name": "Victor Mellor",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "protect free speech online and prevent government censorship"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "topic": "Rent Regulation",
+   "value": 4,
+   "reasoning": "Love represents an urban/suburban district with significant renter populations. She has supported tenant protections and rent stabilization policies during her Senate tenure.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "full_name": "Sara Love",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Limit rent regulations to subsidized units; allow market rents broadly"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "topic": "Rent Regulation",
+   "value": 4,
+   "reasoning": "Waldstreicher supports rent stabilization measures to protect tenants in the high-cost Montgomery County housing market. He has backed local government authority to implement rent control.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "full_name": "Jeff Waldstreicher",
+   "reasoning_polarity": "CLEAN_PRO",
+   "topic_dir": "LOW_IS_PRO",
+   "chair_text": "Limit rent regulations to subsidized units; allow market rents broadly"
+  }
+ ]
+}
