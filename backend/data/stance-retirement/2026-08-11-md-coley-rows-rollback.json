@@ -1,0 +1,64 @@
+{
+  "migration": "1705_resource_md_coley_rows",
+  "generated": "pre-change snapshot read from the live DB 2026-08-11",
+  "politician": "Derrick Coley",
+  "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+  "tenure": "Maryland House of Delegates since 2026-01-13 — 2026RS is his ONLY session of record",
+  "correction_to_earlier_claim": "I previously recorded that 'all 10 of Coley's rows cite coley01?tab=2023RS-legislation'. That was WRONG — it came from reading a guard's match count on the pattern '%coley01?tab=%', which matches ANY session tab. The actual spread is 4 rows on ?tab=2025RS (a session before he was seated, so it lists nothing) and 3 on ?tab=2026RS (his real first session, so that tab is valid as a member page, though still a generic bill LIST rather than a per-topic source). A count is not a description.",
+  "method": "Fetched his 2026RS legislation tab (124 bills), resolved titles against the corpus, screened by topic, READ every candidate, then confirmed sponsorship on each bill actually cited by looking for coley01 in that bill's 'Sponsored by' list.",
+  "caveat": "Several of these are broadly co-sponsored bills (HB0444 has 81 sponsors, HB0637 has 55, HB0894 has 47). A co-sponsorship among dozens is a real recorded position but weaker than lead sponsorship, so the rewritten reasoning says 'co-sponsored' and claims nothing more.",
+  "resourced": [
+    {
+      "topic": "Immigration and Treatment of Immigrants", "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": "1.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2025RS-legislation"],
+      "old_reasoning": "Supported immigrant services and language access legislation; backed community support programs for immigrant families in Prince George's County.",
+      "evidence": "Sponsor of 2026RS HB0444 (Immigration Enforcement Agreements - Prohibition) and HB1575 (Community Trust Act)",
+      "note": "Strongest of the seven. The old prose claimed 'language access' and 'community support programs', neither of which these bills are, so it is rewritten."
+    },
+    {
+      "topic": "Economic Development Incentives", "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "value": "2.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2026RS-legislation"],
+      "old_reasoning": "Supported economic development and workforce programs in Prince George's County; backed job creation and community investment legislation.",
+      "evidence": "Sponsor of 2026RS HB0898 (DECADE Act) and HB0864 (Workforce Apprenticeship Utilization)"
+    },
+    {
+      "topic": "Affordable Housing", "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": "2.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2025RS-legislation"],
+      "old_reasoning": "Supported affordable housing development programs and rental assistance; backed bills reducing barriers to housing access in Prince George's County.",
+      "evidence": "Sponsor of 2026RS HB0894 (Transit-Oriented Development - Maryland Transit and Housing Opportunity Act)",
+      "note": "⚠ My first screen also returned 'Maryland Public Education Parental Partnership Act' for this chair — a SUBSTRING artifact, because 'Parental' contains 'rental'. Rejected. Same family as the Socrata 'Tran' -> 'Transportation' mislinks."
+    },
+    {
+      "topic": "Civil Rights and Social Justice", "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": "1.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2026RS-legislation"],
+      "old_reasoning": "Backed civil rights and anti-discrimination bills; supported racial equity and LGBTQ+ protection legislation in the Maryland House.",
+      "evidence": "Sponsor of 2026RS HB0536 (Employment Discrimination - Reasonable Accommodations - Disabilities Due to Childbirth and Menopause) — only 8 sponsors, so a meaningful signal",
+      "note": "The old prose claimed 'racial equity and LGBTQ+ protection' specifically. HB0536 is neither; it is employment anti-discrimination. Rewritten to what the bill shows."
+    },
+    {
+      "topic": "Healthcare Access", "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": "1.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2025RS-legislation"],
+      "old_reasoning": "Supported Medicaid expansion and state healthcare access legislation; backed health equity bills serving underserved communities.",
+      "evidence": "Sponsor of 2026RS HB0637 (pharmacist-administered immunizations, screenings and preventive services)",
+      "note": "Weakest of the five and labelled as such. It expands access to preventive care; it is NOT Medicaid expansion, so that claim is removed."
+    }
+  ],
+  "rejected": [
+    {
+      "topic": "Public Safety Approach", "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "reasoning_kept": "Backed mental health crisis response and violence prevention programs alongside law enforcement; supported balanced public safety investments.",
+      "why": "NOTHING in his 2026 record is mental-health crisis response or violence prevention. The public-safety bills he sponsors point in different directions — 'Eluding Police - Penalties' is enforcement-heavy while the 'ICE Breaker Act' restricts enforcement hiring — so the set establishes no coherent chair position. Citation would be vocabulary, not rationale. URL normalised only."
+    },
+    {
+      "topic": "Taxation and Public Spending", "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "reasoning_kept": "Backed progressive revenue measures and tax equity legislation funding education and social programs.",
+      "why": "His tax bills are a Veterans' Day tax-free day, a property tax credit for retail service station conversions, a classroom-supplies subtraction and the Theatrical Production Tax Credit. ⚠ These are the SAME CLASS mig 1697 explicitly rejected — Theatrical Production Tax Credit and Classroom Supplies were named there — for a PROGRESSIVE TAXATION chair. A narrow targeted credit does not pin 'tax the wealthy', and several are tax CUTS. URL normalised only."
+    }
+  ],
+  "url_normalisation": "All 7 rows move from coley01?tab=<session>-legislation to the bare coley01, which was verified to resolve to 'Members - Delegate Derrick Coley'. The ?tab=2025RS variant is affirmatively misleading — it points at a session before he held office."
+}
