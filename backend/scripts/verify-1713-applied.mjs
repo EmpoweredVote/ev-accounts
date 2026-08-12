@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Confirm the DB now matches migration 1712 EXACTLY — parsed out of the migration file, not retyped.
+ * Confirm the DB now matches migration 1713 EXACTLY — parsed out of the migration file, not retyped.
  *
  * 🔴 WHY: the migration was applied by pasting ~14k characters through a different channel than the
  * file on disk. "success: true" says the SQL ran, not that it was the SQL in the repo. Any drift
@@ -10,7 +10,7 @@
 import fs from 'node:fs';
 import pg from 'pg';
 
-const SQL = fs.readFileSync('migrations/1712_the197_class_c_md_cosponsorship.sql', 'utf8');
+const SQL = fs.readFileSync('migrations/1713_the197_class_c_md_cosponsorship.sql', 'utf8');
 const want = [];
 const re = /UPDATE inform\.politician_context SET sources = ARRAY\[([^\]]*)\]::text\[\], reasoning = '((?:[^']|'')*)'\s*\nWHERE politician_id = '([0-9a-f-]+)'::uuid AND topic_id = '([0-9a-f-]+)'::uuid;/g;
 for (const m of SQL.matchAll(re)) {
@@ -66,5 +66,5 @@ const { rows: [t] } = await pool.query(
              WHERE c.politician_id=a.politician_id AND c.topic_id=a.topic_id)) orphans`);
 console.log(`\ncorpus: context=${t.ctx} answers=${t.ans} orphans=${t.orphans}`);
 await pool.end();
-console.log(bad ? `\n🔴 ${bad} row(s) do NOT match the migration file` : '\n✅ production matches migration 1712 exactly');
+console.log(bad ? `\n🔴 ${bad} row(s) do NOT match the migration file` : '\n✅ production matches migration 1713 exactly');
 process.exit(bad ? 1 : 0);

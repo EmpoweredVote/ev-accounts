@@ -1,4 +1,4 @@
--- 1712_the197_class_c_md_cosponsorship.sql
+-- 1713_the197_class_c_md_cosponsorship.sql
 -- "The 197", class C — the Maryland TEMPLATE rows, re-sourced to each member's own bills.
 --
 -- 🔑🔑 THE RESULT REVERSES THE PREMISE. These looked like the most obviously fabricated rows in
