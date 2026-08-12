@@ -1,0 +1,282 @@
+{
+ "pass": "TX medicaid-template re-sourcing (1723)",
+ "rows": [
+  {
+   "politician_id": "136fc01b-f061-4e30-9aa7-d5735e0a4659",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ann Johnson",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Johnson's Wikipedia page and campaign record indicate she supports Medicaid expansion and access to quality healthcare. She served on committees investigating abuses of public trust and supports broader healthcare access. Her Houston Democratic district and campaign platform align with offering a public healthcare option alongside private insurance.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Ann_Johnson_(politician)"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "67a35228-1353-4044-90b2-cd8fcf48de7b",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Borris Miles",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Miles' Senate website documents he secured over $10 billion in federal funding for primary healthcare services to low-income Texans. He strengthened maternal mortality legislation (2017) and worked to expand healthcare access in Third Ward communities. Consistent advocate for Medicaid expansion and government-funded healthcare for underserved populations.",
+   "old_sources": [
+    "https://senate.texas.gov/member.php?d=13"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "6ed2b57e-4930-4099-8567-d5a6bf7b999f",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Carol Alvarado",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Serves on Senate Health and Human Services Committee. Senate profile emphasizes 'public health' as primary focus area. Texas Democratic minority has consistently called for Medicaid expansion every session. Aligns with lowering Medicare eligibility age and significantly expanding Medicaid.",
+   "old_sources": [
+    "https://senate.texas.gov/member.php?d=6"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "dd4cb2d3-41c7-498d-8a0c-94f988deb0eb",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Cassandra Garcia Hernandez",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Dallas Democrat on Appropriations committee, representing an urban majority-minority district. Co-sponsored SB 5 (dementia research institute) and as a first-term Democrat her party position is expansion of healthcare access. No authored healthcare expansion bills found, but Democratic caucus and district profile indicate support for a public option or Medicaid expansion.",
+   "old_sources": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB5",
+    "https://en.wikipedia.org/wiki/Cassandra_Garcia_Hernandez"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "32608fd7-5038-4474-bfa9-7392b5e0eb80",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "César Blanco",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Serves on Health and Human Services Committee. AARP Texas Legislative Champion (2023, 2025) — AARP specifically advocates for Medicare/Medicaid expansion and protecting existing benefits. Senate bio emphasizes improving healthcare access. Aligns with lowering Medicare eligibility age and expanding Medicaid.",
+   "old_sources": [
+    "https://senate.texas.gov/member.php?d=29"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "32608fd7-5038-4474-bfa9-7392b5e0eb80",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "César Blanco",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Senate bio explicitly states he has 'led initiatives to improve healthcare access.' Serves on Health and Human Services Committee. AARP Texas Legislative Champion (2023, 2025) — AARP advocates for Medicare/Medicaid expansion. Consistent with public option alongside private insurance.",
+   "old_sources": [
+    "https://senate.texas.gov/member.php?d=29"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "d45bbf56-7e43-4932-b536-fd73173eb295",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Claudia Ordaz",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Supports Medicaid expansion (explicitly per Wikipedia). El Paso district has high uninsured rate; she has publicly advocated for expanded Medicaid coverage. Score 2: significantly expand Medicaid.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Claudia_Ordaz"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "d45bbf56-7e43-4932-b536-fd73173eb295",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Claudia Ordaz",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Ordaz publicly supports Medicaid expansion, citing that 1 in 3 El Paso adults are uninsured. She advocates for Medicaid expansion as reducing taxpayer costs through reduced uncompensated care — a public option/expanded coverage stance.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Claudia_Ordaz"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "2be64a58-ae2c-4eee-b80d-6e673ef774bd",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "John Bucy III",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Has been outspoken on the need to accept Medicaid expansion, reduce maternal mortality, and expand mental health services. Appointed to House Select Committee on Health Care Reform (2022).",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/John_Bucy_III"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "ada67d5b-b7d5-4ab9-a751-59355715c3e1",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "José Menéndez",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Democrat advocating for healthcare access in a district with high uninsured rates; supported CHIP restoration. Opposed Republican Medicaid cut proposals. His 'over 200 bills benefiting children, seniors, and veterans' background includes Medicare and Medicaid preservation advocacy. No evidence found opposing Medicare/Medicaid expansion.",
+   "old_sources": [
+    "https://senate.texas.gov/member.php?d=26"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "1d0b1e50-5bd7-46f6-b9a9-6ca7cdfcebe6",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Judith Zaffirini",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Zaffirini co-authored SB 45 (2025) to expand Medicaid eligibility in Texas under the ACA. She has consistently championed health and human services funding and disability healthcare access throughout her 39+ year career. Medicaid expansion co-authorship is strong evidence for value 2.",
+   "old_sources": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB45",
+    "https://www.senate.texas.gov/member.php?d=21",
+    "https://en.wikipedia.org/wiki/Judith_Zaffirini"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "1d0b1e50-5bd7-46f6-b9a9-6ca7cdfcebe6",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Judith Zaffirini",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Co-authored SB 45 (2025) to expand Medicaid to eligible individuals under the ACA. This is direct evidence for Medicare/Medicaid expansion. Also authored SB 51 (2025) expanding mental health professional licensing. Consistent with value 2 (lower Medicare age and expand Medicaid significantly).",
+   "old_sources": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB45",
+    "https://www.senate.texas.gov/member.php?d=21"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "50d759c2-05cc-4769-a1d9-69b282745d0d",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mary Ann Perez",
+   "topic": "Healthcare Access",
+   "old_reasoning": "As a Texas House Democrat representing a working-class southeast Harris County district, Perez has consistently supported Medicaid expansion and affordable healthcare access. Texas is one of the last states without Medicaid expansion. Democrats in Texas uniformly support a public option or Medicaid expansion. Aligns with stance 2: public option alongside private insurance.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Mary_Ann_Perez",
+    "http://house.texas.gov/members/member-page?district=144"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "619ad301-d993-40b3-94fe-0eb956932dae",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mary Gonzalez",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Gonzalez has consistently supported Medicaid expansion and affordable healthcare in a border district with high uninsured rates. She supports a public healthcare option and has opposed Republican efforts to cut Medicaid. Aligns with stance 2: public option alongside private insurance.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Mary_Gonzalez",
+    "http://house.texas.gov/members/member-page?district=75"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "7d100649-77bc-4dd1-8845-d379ca466fa2",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Nathan Johnson",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Johnson is an active supporter of Medicaid expansion in Texas and healthcare access more broadly. His senate biography notes 'healthcare expansion resulting in hundreds of thousands of newly insured Texans.' This record of pushing for broader government healthcare coverage aligns with lowering the Medicare age and expanding Medicaid significantly.",
+   "old_sources": [
+    "https://senate.texas.gov/member.php?d=16",
+    "https://en.wikipedia.org/wiki/Nathan_Johnson_(Texas_politician)"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "7d100649-77bc-4dd1-8845-d379ca466fa2",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Nathan Johnson",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Johnson has 'frequently pushed for legislation related to expanding access to medical care' including Medicaid expansion in Texas. His senate biography explicitly lists 'healthcare' as a top priority and credits his work with 'hundreds of thousands of newly insured Texans.' He authored legislation to expand palliative care definitions and decriminalize fentanyl testing strips.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Nathan_Johnson_(Texas_politician)",
+    "https://senate.texas.gov/member.php?d=16"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "3aee54f8-89eb-425d-b850-19fff9f2c8ea",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Roland Gutierrez",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Texas Democrat supporting Medicaid expansion (Texas is #1 in uninsured) and consistent with expanding coverage; no Medicare-for-All bill authored but aligned with lowering eligibility age and expanding Medicaid.",
+   "old_sources": [
+    "https://senate.texas.gov/member.php?d=19"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "3aee54f8-89eb-425d-b850-19fff9f2c8ea",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Roland Gutierrez",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Campaign materials describe Gutierrez as fighting to 'lower the cost of healthcare' for working families; as a Texas Democrat he supports Medicaid expansion which Texas has refused; no single-payer bill authored but consistent with public option or Medicaid-expansion approach.",
+   "old_sources": [
+    "http://www.rolandfortexas.com/",
+    "https://senate.texas.gov/member.php?d=19"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "1ff93be4-a2d0-432b-af59-ef6ace1eb77b",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Royce West",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Dallas Democrat supporting Medicaid expansion and expanded financial aid for students; consistent with lowering Medicare eligibility age and expanding Medicaid coverage; no Medicare-for-All bill authored.",
+   "old_sources": [
+    "https://senate.texas.gov/member.php?d=23"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "1ff93be4-a2d0-432b-af59-ef6ace1eb77b",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Royce West",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Dallas Democrat representing an uninsured-heavy district; supports Medicaid expansion; childcare standards referenced in official bio; opposes Republican efforts to cut government health programs; no single-payer legislation authored.",
+   "old_sources": [
+    "https://senate.texas.gov/member.php?d=23"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "2775a1c4-d7e5-45ce-9633-f1ad137c546a",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Sarah Eckhardt",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Explicitly supports Medicaid expansion (website: 'Texas is #1 in uninsured people in the US'); authored SB 361 prohibiting employer discrimination based on reproductive health decisions; advocates telehealth and simplified CHIP/Medicaid enrollment.",
+   "old_sources": [
+    "https://www.saraheckhardt.com/issues",
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB361"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "2775a1c4-d7e5-45ce-9633-f1ad137c546a",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Sarah Eckhardt",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Supports Medicaid expansion explicitly on website; advocates simplified enrollment; co-authored SB 11 (88R) school safety legislation showing ability to work across party lines; consistent with lowering Medicare age and significantly expanding Medicaid.",
+   "old_sources": [
+    "https://www.saraheckhardt.com/issues",
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB11"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "b9cb31c9-15e0-405d-a8a0-d64850bf0955",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Terry Meza",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Meza's campaign website states: 'Every Texan deserves to have access to quality, affordable health coverage and care' and explicitly advocates accepting federal Medicaid funding to provide healthcare to uninsured Texas families. She has more than 20 years as an educator and is a Democrat representing District 105 (Irving area, Dallas County). Her unambiguous support for Medicaid expansion aligns with stance 2 (public option alongside private insurance to expand coverage).",
+   "old_sources": [
+    "https://www.terrymeza.com/",
+    "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A3455"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "43567dd1-db59-40af-928e-03708237eb98",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Toni Rose",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Rose serves as Vice Chair of the Health Care Affordability Select Committee and on Appropriations Article II (the health and human services budget subcommittee) and Human Services. She was a conferee on SB 457 (nursing facilities Medicaid participation and reimbursement requirements) — actively working to protect Medicaid reimbursement for care facilities. This Medicaid expansion and protection work aligns with stance 2 (offer a public healthcare option alongside private insurance plans).",
+   "old_sources": [
+    "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A2555",
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB457"
+   ],
+   "chair_untouched": 2
+  }
+ ]
+}

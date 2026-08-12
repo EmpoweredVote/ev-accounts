@@ -1,0 +1,4166 @@
+{
+ "pass": "TX member authored/coauthored bills, on-topic",
+ "rows": [
+  {
+   "politician_id": "bd563960-3aa8-4d4d-94cb-62b6c2ae0656",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ana-Maria Ramos",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Ramos supports Medicaid expansion in Texas and views healthcare as a right rather than a privilege. She emphasizes protecting those with preexisting conditions, increased prenatal and postpartum care funding for low-income women, and secured a 24.3% increase in women's healthcare funding in the prior session. Positions are consistent with a public option approach alongside private insurance.",
+   "sources": [
+    "https://ramos4texas.com/issues"
+   ],
+   "office": "Representative",
+   "code": null,
+   "how": "not found in H roster",
+   "wrong_stored_code": null,
+   "candidates": [],
+   "n_on_topic": 0
+  },
+  {
+   "politician_id": "136fc01b-f061-4e30-9aa7-d5735e0a4659",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ann Johnson",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Johnson's Wikipedia page and campaign record indicate she supports Medicaid expansion and access to quality healthcare. She served on committees investigating abuses of public trust and supports broader healthcare access. Her Houston Democratic district and campaign platform align with offering a public healthcare option alongside private insurance.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ann_Johnson_(politician)"
+   ],
+   "office": "Representative",
+   "code": "A3985",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 441,
+   "n_on_topic": 43,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "HB475",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for multisystemic therapy services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB475"
+    },
+    {
+     "session": "89R",
+     "bill": "HB488",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for functional family therapy services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB488"
+    },
+    {
+     "session": "89R",
+     "bill": "HB3940",
+     "kind": "author",
+     "caption": "Relating to the provision of certain information about Medicaid benefits in relation to newborn children.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3940"
+    },
+    {
+     "session": "89R",
+     "bill": "HB3943",
+     "kind": "author",
+     "caption": "Relating to prohibited conduct of a health benefit plan issuer in relation to affiliated and nonaffiliated providers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3943"
+    },
+    {
+     "session": "89R",
+     "bill": "HB5030",
+     "kind": "author",
+     "caption": "Relating to the provision of certain mental and behavioral health services under Medicaid, Medicaid coverage and reimbursement for those services, and the regulation of psychiatric residential treatment facilities; requiring an occupational license.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5030"
+    },
+    {
+     "session": "89R",
+     "bill": "HB2076",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage of anxiety and pain management in connection with insertion or removal of prescription contraceptive devices.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2076"
+    },
+    {
+     "session": "89R",
+     "bill": "HB2516",
+     "kind": "author",
+     "caption": "Relating to the eligibility of certain individuals younger than 65 years of age to purchase Medicare supplement benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2516"
+    },
+    {
+     "session": "89R",
+     "bill": "HB3814",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage for perimenopause and menopause medications.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3814"
+    },
+    {
+     "session": "89R",
+     "bill": "HB321",
+     "kind": "coauthor",
+     "caption": "Relating to implementing an express lane option under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB321"
+    },
+    {
+     "session": "88R",
+     "bill": "HB2404",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for functional family therapy services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2404"
+    },
+    {
+     "session": "88R",
+     "bill": "HB2638",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for multisystemic therapy services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2638"
+    },
+    {
+     "session": "88R",
+     "bill": "HB2641",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for the provision of rapid whole genome sequencing to certain infants with acute or complex illnesses.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2641"
+    },
+    {
+     "session": "88R",
+     "bill": "HB3098",
+     "kind": "author",
+     "caption": "Relating to prohibited conduct of a health benefit plan issuer in relation to affiliated and nonaffiliated providers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3098"
+    },
+    {
+     "session": "88R",
+     "bill": "HB3196",
+     "kind": "author",
+     "caption": "Relating to prompt payment deadlines for health benefit plan  claims affected by a catastrophic event.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3196"
+    },
+    {
+     "session": "88R",
+     "bill": "HB5085",
+     "kind": "author",
+     "caption": "Relating to a child's eligibility for the Medicaid buy-in program for children or the medically dependent children (MDCP) waiver program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB5085"
+    },
+    {
+     "session": "88R",
+     "bill": "HB1337",
+     "kind": "author",
+     "caption": "Relating to step therapy protocols required by health benefit plans for coverage of prescription drugs for serious mental illnesses.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB1337"
+    },
+    {
+     "session": "88R",
+     "bill": "HB3188",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage for certain biomarker testing.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3188"
+    },
+    {
+     "session": "88R",
+     "bill": "HB3942",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage of telemedicine, teledentistry, and telehealth appointments with an originating site or distant site located outside this state.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3942"
+    },
+    {
+     "session": "88R",
+     "bill": "HB652",
+     "kind": "coauthor",
+     "caption": "Relating to the development and implementation of the Live Well Texas program and the expansion of Medicaid eligibility to provide health benefit coverage to certain individuals; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB652"
+    },
+    {
+     "session": "87R",
+     "bill": "HB290",
+     "kind": "author",
+     "caption": "Relating to the period of continuous eligibility and a periodic eligibility review for a child for Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB290"
+    },
+    {
+     "session": "87R",
+     "bill": "HB2241",
+     "kind": "author",
+     "caption": "Relating to the definition of emergency care for purposes of certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB2241"
+    },
+    {
+     "session": "87R",
+     "bill": "HB82",
+     "kind": "coauthor",
+     "caption": "Relating to pricing of and health benefit plan cost-sharing requirements for prescription insulin.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB82"
+    },
+    {
+     "session": "87R",
+     "bill": "HB158",
+     "kind": "coauthor",
+     "caption": "Relating to a pilot program to provide Medicaid coverage of doula services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB158"
+    },
+    {
+     "session": "87R",
+     "bill": "HB359",
+     "kind": "coauthor",
+     "caption": "Relating to recovery under uninsured and underinsured motorist insurance coverage.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB359"
+    },
+    {
+     "session": "87R",
+     "bill": "HB2955",
+     "kind": "coauthor",
+     "caption": "Relating to the reimbursement of certain urban teaching hospitals  for the provision of inpatient hospital care under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB2955"
+    },
+    {
+     "session": "87R",
+     "bill": "HB3588",
+     "kind": "coauthor",
+     "caption": "Relating to health benefit plan coverage for colorectal cancer early detection.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB3588"
+    },
+    {
+     "session": "87R",
+     "bill": "HB4143",
+     "kind": "coauthor",
+     "caption": "Relating to health benefit plan coverage in this state.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB4143"
+    }
+   ]
+  },
+  {
+   "politician_id": "67a35228-1353-4044-90b2-cd8fcf48de7b",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Borris Miles",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Miles' Senate website documents he secured over $10 billion in federal funding for primary healthcare services to low-income Texans. He strengthened maternal mortality legislation (2017) and worked to expand healthcare access in Third Ward communities. Consistent advocate for Medicaid expansion and government-funded healthcare for underserved populations.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=13"
+   ],
+   "office": "Senator",
+   "code": "A1115",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 913,
+   "n_on_topic": 46,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB289",
+     "kind": "author",
+     "caption": "Relating to a \"Texas solution\" to reforming and addressing issues related to the Medicaid program, including the creation of an alternative program designed to ensure health benefit plan coverage to certain low-income individuals through the private marketplace; requiring a fee.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB289"
+    },
+    {
+     "session": "89R",
+     "bill": "SB374",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for emergency outpatient dialysis treatment provided to certain individuals with end stage renal disease.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB374"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1142",
+     "kind": "author",
+     "caption": "Relating to preauthorization of certain benefits by certain health benefit plan issuers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1142"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2088",
+     "kind": "author",
+     "caption": "Relating to the provision of counseling services by certain providers under Medicaid and reimbursement for those services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2088"
+    },
+    {
+     "session": "89R",
+     "bill": "SB255",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2483",
+     "kind": "coauthor",
+     "caption": "Relating to coverage for maternal depression screenings under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2483"
+    },
+    {
+     "session": "88R",
+     "bill": "SB504",
+     "kind": "author",
+     "caption": "Relating to a \"Texas solution\" to reforming and addressing issues related to the Medicaid program, including the creation of an alternative program designed to ensure health benefit plan coverage to certain low-income individuals through the private marketplace; requiring a fee.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB504"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1411",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for emergency outpatient dialysis treatment provided to certain individuals with end stage renal disease.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1411"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1458",
+     "kind": "author",
+     "caption": "Relating to the provision of certain information about Medicaid benefits in relation to newborn children.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1458"
+    },
+    {
+     "session": "88R",
+     "bill": "SB2132",
+     "kind": "author",
+     "caption": "Relating to the provision of counseling services by certain providers under Medicaid and reimbursement for those services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB2132"
+    },
+    {
+     "session": "88R",
+     "bill": "SB124",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women during and following a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB124"
+    },
+    {
+     "session": "88R",
+     "bill": "SB113",
+     "kind": "coauthor",
+     "caption": "Relating to the provision of on-campus mental health services by a school district and reimbursement under Medicaid for certain services provided to eligible students.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB113"
+    },
+    {
+     "session": "87R",
+     "bill": "SB73",
+     "kind": "author",
+     "caption": "Relating to providing access to local public health entities and certain health service regional offices under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB73"
+    },
+    {
+     "session": "87R",
+     "bill": "SB76",
+     "kind": "author",
+     "caption": "Relating to a limit on cost-sharing requirements imposed by a health benefit plan for certain prescription insulin.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB76"
+    },
+    {
+     "session": "87R",
+     "bill": "SB528",
+     "kind": "author",
+     "caption": "Relating to the contractual relationship between a pharmacist or pharmacy and a health benefit plan issuer or pharmacy benefit manager.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB528"
+    },
+    {
+     "session": "87R",
+     "bill": "SB827",
+     "kind": "author",
+     "caption": "Relating to health benefit plan cost-sharing requirements for prescription insulin.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB827"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2195",
+     "kind": "coauthor",
+     "caption": "Relating to the relationship between pharmacists or pharmacies and pharmacy benefit managers or health benefit plan issuers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2195"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1283",
+     "kind": "author",
+     "caption": "Relating to the availability under Medicaid of certain drugs used to treat human immunodeficiency virus or prevent acquired immune deficiency syndrome.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1283"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1321",
+     "kind": "author",
+     "caption": "Relating to a \"Texas solution\" to reforming and addressing issues related to the Medicaid program, including the creation of an alternative program designed to ensure health benefit plan coverage to certain low-income individuals through the private marketplace; requiring a fee.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1321"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1748",
+     "kind": "author",
+     "caption": "Relating to a pilot program for providing services to certain children under the Medicaid medical transportation program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1748"
+    },
+    {
+     "session": "86R",
+     "bill": "SB2021",
+     "kind": "author",
+     "caption": "Relating to providing access to local health departments and certain health service regional offices under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB2021"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1186",
+     "kind": "author",
+     "caption": "Relating to preauthorization of certain medical care and health care services by certain health benefit plan issuers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1186"
+    },
+    {
+     "session": "86R",
+     "bill": "SB147",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB147"
+    },
+    {
+     "session": "86R",
+     "bill": "SB308",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB308"
+    },
+    {
+     "session": "86R",
+     "bill": "SB327",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid in certain counties under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB327"
+    },
+    {
+     "session": "86R",
+     "bill": "SB556",
+     "kind": "coauthor",
+     "caption": "Relating to Medicaid reimbursement for dental services provided to adults with disabilities.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB556"
+    },
+    {
+     "session": "86R",
+     "bill": "SB937",
+     "kind": "coauthor",
+     "caption": "Relating to a pilot program for providing services to certain women and children under the Medicaid medical transportation program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB937"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1667",
+     "kind": "coauthor",
+     "caption": "Relating to the delivery of certain transportation services under Medicaid and certain other health and human services programs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1667"
+    },
+    {
+     "session": "85R",
+     "bill": "SB808",
+     "kind": "author",
+     "caption": "Relating to coverage for certain services related to maternal depression under the Medicaid and child health plan programs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB808"
+    },
+    {
+     "session": "85R",
+     "bill": "SB1265",
+     "kind": "author",
+     "caption": "Relating to HIV and AIDS tests and to health benefit plan coverage of HIV and AIDS tests.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB1265"
+    },
+    {
+     "session": "85R",
+     "bill": "SB1769",
+     "kind": "author",
+     "caption": "Relating to a pilot program for providing services to certain children under the Medicaid medical transportation program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB1769"
+    }
+   ]
+  },
+  {
+   "politician_id": "6ed2b57e-4930-4099-8567-d5a6bf7b999f",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Carol Alvarado",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Serves on Senate Health and Human Services Committee. Senate profile emphasizes 'public health' as primary focus area. Texas Democratic minority has consistently called for Medicaid expansion every session. Aligns with lowering Medicare eligibility age and significantly expanding Medicaid.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=6"
+   ],
+   "office": "Senator",
+   "code": "A1315",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 550,
+   "n_on_topic": 12,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB255",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1266",
+     "kind": "author",
+     "caption": "Relating to Medicaid provider enrollment and credentialing processes.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1266"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1500",
+     "kind": "author",
+     "caption": "Relating to written protocols for certain nonprescription drugs under Medicaid and civil liability related to those protocols.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1500"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2348",
+     "kind": "author",
+     "caption": "Relating to Medicare provider certification and enrollment prerequisites to Medicaid and child health plan program provider enrollment.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2348"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2483",
+     "kind": "author",
+     "caption": "Relating to coverage for maternal depression screenings under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2483"
+    },
+    {
+     "session": "89R",
+     "bill": "SB359",
+     "kind": "author",
+     "caption": "Relating to the coverage and provision of abortion, contraception, and sterilization under Medicaid and certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB359"
+    },
+    {
+     "session": "88R",
+     "bill": "SB124",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women during and following a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB124"
+    },
+    {
+     "session": "88R",
+     "bill": "SB125",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB125"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1186",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1186"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1187",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1187"
+    },
+    {
+     "session": "87R",
+     "bill": "SB674",
+     "kind": "coauthor",
+     "caption": "Relating to the availability of antipsychotic prescription drugs under the vendor drug program and Medicaid managed care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB674"
+    },
+    {
+     "session": "86R",
+     "bill": "SB327",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid in certain counties under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB327"
+    }
+   ]
+  },
+  {
+   "politician_id": "dd4cb2d3-41c7-498d-8a0c-94f988deb0eb",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Cassandra Garcia Hernandez",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Dallas Democrat on Appropriations committee, representing an urban majority-minority district. Co-sponsored SB 5 (dementia research institute) and as a first-term Democrat her party position is expansion of healthcare access. No authored healthcare expansion bills found, but Democratic caucus and district profile indicate support for a public option or Medicaid expansion.",
+   "sources": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB5",
+    "https://en.wikipedia.org/wiki/Cassandra_Garcia_Hernandez"
+   ],
+   "office": "Representative",
+   "code": "A4495",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 100,
+   "n_on_topic": 5,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "HB2119",
+     "kind": "author",
+     "caption": "Relating to preauthorization of certain benefits by certain health benefit plan issuers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2119"
+    },
+    {
+     "session": "89R",
+     "bill": "HB2150",
+     "kind": "author",
+     "caption": "Relating to telephone access for certain health benefit plan verifications and preauthorization requests and for utilization review requests.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2150"
+    },
+    {
+     "session": "89R",
+     "bill": "HB2627",
+     "kind": "author",
+     "caption": "Relating to the development and implementation of the Live Well Texas program and the expansion of Medicaid eligibility to provide health benefit coverage to certain individuals; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2627"
+    },
+    {
+     "session": "89R",
+     "bill": "HB2922",
+     "kind": "author",
+     "caption": "Relating to use of artificial intelligence in utilization review conducted for health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2922"
+    },
+    {
+     "session": "89R",
+     "bill": "HB3735",
+     "kind": "coauthor",
+     "caption": "Relating to health benefit plan coverage for prenatal care, childbirth, and postnatal care provided in a hospital, birthing center, or home setting.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3735"
+    }
+   ]
+  },
+  {
+   "politician_id": "32608fd7-5038-4474-bfa9-7392b5e0eb80",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "César Blanco",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Serves on Health and Human Services Committee. AARP Texas Legislative Champion (2023, 2025) — AARP specifically advocates for Medicare/Medicaid expansion and protecting existing benefits. Senate bio emphasizes improving healthcare access. Aligns with lowering Medicare eligibility age and expanding Medicaid.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=29"
+   ],
+   "office": "Senator",
+   "code": "A1330",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 850,
+   "n_on_topic": 38,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB999",
+     "kind": "author",
+     "caption": "Relating to the establishment of the case assistance affiliate program to provide certain assistance to Medicaid recipients and child health plan program enrollees.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB999"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1753",
+     "kind": "author",
+     "caption": "Relating to requiring contracts with Medicaid managed care organizations to permit the organizations to offer certain mental health or substance use services or food and nutrition assistance services in lieu of other state Medicaid plan services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1753"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2628",
+     "kind": "author",
+     "caption": "Relating to the provision and evaluation of Medicaid reimbursement for dental services provided to certain Medicaid recipients.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2628"
+    },
+    {
+     "session": "89R",
+     "bill": "SB255",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255"
+    },
+    {
+     "session": "89R",
+     "bill": "SB45",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB45"
+    },
+    {
+     "session": "89R",
+     "bill": "SB225",
+     "kind": "coauthor",
+     "caption": "Relating to implementation of an express lane option for  determining eligibility and enrolling certain individuals in Medicaid or the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB225"
+    },
+    {
+     "session": "89R",
+     "bill": "SB232",
+     "kind": "coauthor",
+     "caption": "Relating to the development and implementation of the Live Well Texas program and the expansion of Medicaid eligibility to provide health benefit coverage to certain individuals; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB232"
+    },
+    {
+     "session": "89R",
+     "bill": "SB469",
+     "kind": "coauthor",
+     "caption": "Relating to the provision of counseling services by certain providers under Medicaid and reimbursement for those services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB469"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1127",
+     "kind": "author",
+     "caption": "Relating to the Medicaid application form and communication with Medicaid recipients.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1127"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1692",
+     "kind": "author",
+     "caption": "Relating to the period of continuous eligibility for the medical assistance program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1692"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1694",
+     "kind": "author",
+     "caption": "Relating to the reimbursement rate for the provision of vagus nerve stimulation therapy system devices by certain health care providers under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1694"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1695",
+     "kind": "author",
+     "caption": "Relating to the establishment of the case assistance affiliate program to provide certain assistance to Medicaid recipients and child health plan program enrollees.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1695"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1696",
+     "kind": "author",
+     "caption": "Relating to the provision of certain attendant care services under Medicaid and other public benefits programs administered by the Health and Human Services Commission.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1696"
+    },
+    {
+     "session": "88R",
+     "bill": "SB2278",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for functional family therapy services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB2278"
+    },
+    {
+     "session": "88R",
+     "bill": "SB2279",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for multisystemic therapy services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB2279"
+    },
+    {
+     "session": "88R",
+     "bill": "SB2544",
+     "kind": "author",
+     "caption": "Relating to the reimbursement under Medicaid of local educational agencies for the provision of health care services to students.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB2544"
+    },
+    {
+     "session": "88R",
+     "bill": "SB71",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB71"
+    },
+    {
+     "session": "88R",
+     "bill": "SB72",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB72"
+    },
+    {
+     "session": "88R",
+     "bill": "SB124",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women during and following a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB124"
+    },
+    {
+     "session": "88R",
+     "bill": "SB125",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB125"
+    },
+    {
+     "session": "88R",
+     "bill": "SB195",
+     "kind": "author",
+     "caption": "Relating to the development and implementation of the Live Well Texas program and the expansion of Medicaid eligibility to provide health benefit coverage to certain individuals; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB195"
+    },
+    {
+     "session": "88R",
+     "bill": "SB74",
+     "kind": "coauthor",
+     "caption": "Relating to the use of community health workers in Medicaid managed care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB74"
+    },
+    {
+     "session": "88R",
+     "bill": "SB113",
+     "kind": "coauthor",
+     "caption": "Relating to the provision of on-campus mental health services by a school district and reimbursement under Medicaid for certain services provided to eligible students.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB113"
+    },
+    {
+     "session": "87R",
+     "bill": "SB171",
+     "kind": "author",
+     "caption": "Relating to a report regarding Medicaid reimbursement rates, supplemental payment amounts, and access to care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB171"
+    },
+    {
+     "session": "87R",
+     "bill": "SB521",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain persons who are lawfully present in the United States.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB521"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1707",
+     "kind": "author",
+     "caption": "Relating to certain group health care benefits and the promotion of telehealth services for certain persons who are eligible for Medicaid or the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1707"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1911",
+     "kind": "author",
+     "caption": "Relating to the content of an application for Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1911"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1915",
+     "kind": "author",
+     "caption": "Relating to the provision of recovery community organization peer-to-peer services under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1915"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2132",
+     "kind": "author",
+     "caption": "Relating to the inclusion of certain health care providers in the provider network of a Medicaid managed care organization.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2132"
+    },
+    {
+     "session": "87R",
+     "bill": "SB38",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB38"
+    },
+    {
+     "session": "87R",
+     "bill": "SB118",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB118"
+    },
+    {
+     "session": "87R",
+     "bill": "SB119",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB119"
+    },
+    {
+     "session": "87R",
+     "bill": "SB674",
+     "kind": "coauthor",
+     "caption": "Relating to the availability of antipsychotic prescription drugs under the vendor drug program and Medicaid managed care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB674"
+    }
+   ]
+  },
+  {
+   "politician_id": "32608fd7-5038-4474-bfa9-7392b5e0eb80",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "César Blanco",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Senate bio explicitly states he has 'led initiatives to improve healthcare access.' Serves on Health and Human Services Committee. AARP Texas Legislative Champion (2023, 2025) — AARP advocates for Medicare/Medicaid expansion. Consistent with public option alongside private insurance.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=29"
+   ],
+   "office": "Senator",
+   "code": "A1330",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 850,
+   "n_on_topic": 63,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB896",
+     "kind": "author",
+     "caption": "Relating to the enrollment period for newborns under certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB896"
+    },
+    {
+     "session": "89R",
+     "bill": "SB999",
+     "kind": "author",
+     "caption": "Relating to the establishment of the case assistance affiliate program to provide certain assistance to Medicaid recipients and child health plan program enrollees.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB999"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1753",
+     "kind": "author",
+     "caption": "Relating to requiring contracts with Medicaid managed care organizations to permit the organizations to offer certain mental health or substance use services or food and nutrition assistance services in lieu of other state Medicaid plan services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1753"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2628",
+     "kind": "author",
+     "caption": "Relating to the provision and evaluation of Medicaid reimbursement for dental services provided to certain Medicaid recipients.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2628"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2857",
+     "kind": "author",
+     "caption": "Relating to a prescription drug purchasing pool for certain health benefit plan issuers and employers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2857"
+    },
+    {
+     "session": "89R",
+     "bill": "SB255",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255"
+    },
+    {
+     "session": "89R",
+     "bill": "SB45",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB45"
+    },
+    {
+     "session": "89R",
+     "bill": "SB225",
+     "kind": "coauthor",
+     "caption": "Relating to implementation of an express lane option for  determining eligibility and enrolling certain individuals in Medicaid or the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB225"
+    },
+    {
+     "session": "89R",
+     "bill": "SB232",
+     "kind": "coauthor",
+     "caption": "Relating to the development and implementation of the Live Well Texas program and the expansion of Medicaid eligibility to provide health benefit coverage to certain individuals; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB232"
+    },
+    {
+     "session": "89R",
+     "bill": "SB469",
+     "kind": "coauthor",
+     "caption": "Relating to the provision of counseling services by certain providers under Medicaid and reimbursement for those services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB469"
+    },
+    {
+     "session": "89R",
+     "bill": "SB636",
+     "kind": "coauthor",
+     "caption": "Relating to coverage for mental health conditions and substance use disorders under certain governmental health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB636"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1118",
+     "kind": "coauthor",
+     "caption": "Relating to anesthesia coverage and patient assessment requirements for certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1118"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1380",
+     "kind": "coauthor",
+     "caption": "Relating to health benefit plan preauthorization requirements for participating physicians and providers providing certain health care services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1380"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1043",
+     "kind": "author",
+     "caption": "Relating to the reimbursement and payment of claims by certain health benefit plan issuers for telemedicine medical services, teledentistry dental services, and telehealth services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1043"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1127",
+     "kind": "author",
+     "caption": "Relating to the Medicaid application form and communication with Medicaid recipients.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1127"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1694",
+     "kind": "author",
+     "caption": "Relating to the reimbursement rate for the provision of vagus nerve stimulation therapy system devices by certain health care providers under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1694"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1695",
+     "kind": "author",
+     "caption": "Relating to the establishment of the case assistance affiliate program to provide certain assistance to Medicaid recipients and child health plan program enrollees.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1695"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1696",
+     "kind": "author",
+     "caption": "Relating to the provision of certain attendant care services under Medicaid and other public benefits programs administered by the Health and Human Services Commission.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1696"
+    },
+    {
+     "session": "88R",
+     "bill": "SB2278",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for functional family therapy services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB2278"
+    },
+    {
+     "session": "88R",
+     "bill": "SB2279",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for multisystemic therapy services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB2279"
+    },
+    {
+     "session": "88R",
+     "bill": "SB2544",
+     "kind": "author",
+     "caption": "Relating to the reimbursement under Medicaid of local educational agencies for the provision of health care services to students.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB2544"
+    },
+    {
+     "session": "88R",
+     "bill": "SB71",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB71"
+    },
+    {
+     "session": "88R",
+     "bill": "SB72",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB72"
+    },
+    {
+     "session": "88R",
+     "bill": "SB124",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women during and following a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB124"
+    },
+    {
+     "session": "88R",
+     "bill": "SB125",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB125"
+    },
+    {
+     "session": "88R",
+     "bill": "SB195",
+     "kind": "author",
+     "caption": "Relating to the development and implementation of the Live Well Texas program and the expansion of Medicaid eligibility to provide health benefit coverage to certain individuals; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB195"
+    },
+    {
+     "session": "88R",
+     "bill": "SB74",
+     "kind": "coauthor",
+     "caption": "Relating to the use of community health workers in Medicaid managed care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB74"
+    },
+    {
+     "session": "88R",
+     "bill": "SB113",
+     "kind": "coauthor",
+     "caption": "Relating to the provision of on-campus mental health services by a school district and reimbursement under Medicaid for certain services provided to eligible students.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB113"
+    },
+    {
+     "session": "87R",
+     "bill": "SB166",
+     "kind": "author",
+     "caption": "Relating to a limit on cost-sharing requirements imposed by a health benefit plan for certain prescription insulin.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB166"
+    },
+    {
+     "session": "87R",
+     "bill": "SB171",
+     "kind": "author",
+     "caption": "Relating to a report regarding Medicaid reimbursement rates, supplemental payment amounts, and access to care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB171"
+    },
+    {
+     "session": "87R",
+     "bill": "SB228",
+     "kind": "author",
+     "caption": "Relating to the reimbursement and payment of claims by certain health benefit plan issuers for telemedicine medical services and telehealth services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB228"
+    },
+    {
+     "session": "87R",
+     "bill": "SB436",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage of preexisting conditions including COVID-19.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB436"
+    },
+    {
+     "session": "87R",
+     "bill": "SB521",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain persons who are lawfully present in the United States.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB521"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1707",
+     "kind": "author",
+     "caption": "Relating to certain group health care benefits and the promotion of telehealth services for certain persons who are eligible for Medicaid or the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1707"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1911",
+     "kind": "author",
+     "caption": "Relating to the content of an application for Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1911"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1915",
+     "kind": "author",
+     "caption": "Relating to the provision of recovery community organization peer-to-peer services under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1915"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2124",
+     "kind": "author",
+     "caption": "Relating to the authority of a health benefit plan sponsor to consent to electronic delivery of certain communications on behalf of a party enrolled in the plan.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2124"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2132",
+     "kind": "author",
+     "caption": "Relating to the inclusion of certain health care providers in the provider network of a Medicaid managed care organization.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2132"
+    },
+    {
+     "session": "87R",
+     "bill": "SB528",
+     "kind": "author",
+     "caption": "Relating to the contractual relationship between a pharmacist or pharmacy and a health benefit plan issuer or pharmacy benefit manager.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB528"
+    },
+    {
+     "session": "87R",
+     "bill": "SB827",
+     "kind": "author",
+     "caption": "Relating to health benefit plan cost-sharing requirements for prescription insulin.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB827"
+    },
+    {
+     "session": "87R",
+     "bill": "SB38",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB38"
+    },
+    {
+     "session": "87R",
+     "bill": "SB118",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB118"
+    },
+    {
+     "session": "87R",
+     "bill": "SB119",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB119"
+    },
+    {
+     "session": "87R",
+     "bill": "SB674",
+     "kind": "coauthor",
+     "caption": "Relating to the availability of antipsychotic prescription drugs under the vendor drug program and Medicaid managed care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB674"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2195",
+     "kind": "coauthor",
+     "caption": "Relating to the relationship between pharmacists or pharmacies and pharmacy benefit managers or health benefit plan issuers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2195"
+    }
+   ]
+  },
+  {
+   "politician_id": "d45bbf56-7e43-4932-b536-fd73173eb295",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Claudia Ordaz",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Supports Medicaid expansion (explicitly per Wikipedia). El Paso district has high uninsured rate; she has publicly advocated for expanded Medicaid coverage. Score 2: significantly expand Medicaid.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Claudia_Ordaz"
+   ],
+   "office": "Representative",
+   "code": "A4015",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 525,
+   "n_on_topic": 3,
+   "candidates": [
+    {
+     "session": "88R",
+     "bill": "HB134",
+     "kind": "coauthor",
+     "caption": "Relating to Medicaid and child health plan program coverage and reimbursement for childhood cranial remolding orthosis.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB134"
+    },
+    {
+     "session": "87R",
+     "bill": "HB158",
+     "kind": "coauthor",
+     "caption": "Relating to a pilot program to provide Medicaid coverage of doula services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB158"
+    },
+    {
+     "session": "87R",
+     "bill": "HB389",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB389"
+    }
+   ]
+  },
+  {
+   "politician_id": "d45bbf56-7e43-4932-b536-fd73173eb295",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Claudia Ordaz",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Ordaz publicly supports Medicaid expansion, citing that 1 in 3 El Paso adults are uninsured. She advocates for Medicaid expansion as reducing taxpayer costs through reduced uncompensated care — a public option/expanded coverage stance.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Claudia_Ordaz"
+   ],
+   "office": "Representative",
+   "code": "A4015",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 525,
+   "n_on_topic": 15,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "HB2076",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage of anxiety and pain management in connection with insertion or removal of prescription contraceptive devices.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2076"
+    },
+    {
+     "session": "89R",
+     "bill": "HB2023",
+     "kind": "author",
+     "caption": "Relating to the coverage of emergency contraceptive drugs by health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2023"
+    },
+    {
+     "session": "88R",
+     "bill": "HB916",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage of prescription contraceptive drugs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB916"
+    },
+    {
+     "session": "88R",
+     "bill": "HB389",
+     "kind": "author",
+     "caption": "Relating to health benefit coverage for certain fertility preservation services under certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB389"
+    },
+    {
+     "session": "88R",
+     "bill": "HB134",
+     "kind": "coauthor",
+     "caption": "Relating to Medicaid and child health plan program coverage and reimbursement for childhood cranial remolding orthosis.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB134"
+    },
+    {
+     "session": "87R",
+     "bill": "HB82",
+     "kind": "coauthor",
+     "caption": "Relating to pricing of and health benefit plan cost-sharing requirements for prescription insulin.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB82"
+    },
+    {
+     "session": "87R",
+     "bill": "HB158",
+     "kind": "coauthor",
+     "caption": "Relating to a pilot program to provide Medicaid coverage of doula services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB158"
+    },
+    {
+     "session": "87R",
+     "bill": "HB359",
+     "kind": "coauthor",
+     "caption": "Relating to recovery under uninsured and underinsured motorist insurance coverage.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB359"
+    },
+    {
+     "session": "87R",
+     "bill": "HB389",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB389"
+    },
+    {
+     "session": "87R",
+     "bill": "HB1362",
+     "kind": "coauthor",
+     "caption": "Relating to the coverage and provision of abortion under a health benefit plan and certain programs administered by this state.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB1362"
+    }
+   ]
+  },
+  {
+   "politician_id": "2be64a58-ae2c-4eee-b80d-6e673ef774bd",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "John Bucy III",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Has been outspoken on the need to accept Medicaid expansion, reduce maternal mortality, and expand mental health services. Appointed to House Select Committee on Health Care Reform (2022).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/John_Bucy_III"
+   ],
+   "office": "Representative",
+   "code": "A3595",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 669,
+   "n_on_topic": 43,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "HB197",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB197"
+    },
+    {
+     "session": "89R",
+     "bill": "HB262",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB262"
+    },
+    {
+     "session": "89R",
+     "bill": "HB321",
+     "kind": "author",
+     "caption": "Relating to implementing an express lane option under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB321"
+    },
+    {
+     "session": "89R",
+     "bill": "HB616",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage for certain at-home testing kits.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB616"
+    },
+    {
+     "session": "89R",
+     "bill": "HB1796",
+     "kind": "author",
+     "caption": "Relating to the expedited credentialing of providers under the Medicaid managed care program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1796"
+    },
+    {
+     "session": "89R",
+     "bill": "HB2412",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage for certain obesity medications.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2412"
+    },
+    {
+     "session": "89R",
+     "bill": "HB2528",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage of prescription drugs for opioid and substance use disorders.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2528"
+    },
+    {
+     "session": "89R",
+     "bill": "HB2677",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for the treatment of obesity and certain diabetes prevention program services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2677"
+    },
+    {
+     "session": "88R",
+     "bill": "HB132",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB132"
+    },
+    {
+     "session": "88R",
+     "bill": "HB1599",
+     "kind": "author",
+     "caption": "Relating to implementation of an express lane option for determining eligibility and enrolling certain individuals in Medicaid or the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB1599"
+    },
+    {
+     "session": "88R",
+     "bill": "HB2773",
+     "kind": "author",
+     "caption": "Relating to the reimbursement under Medicaid of local educational agencies for the provision of health care services to students.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2773"
+    },
+    {
+     "session": "88R",
+     "bill": "HB2797",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage for laparoscopic removal of uterine fibroids.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2797"
+    },
+    {
+     "session": "88R",
+     "bill": "HB2798",
+     "kind": "author",
+     "caption": "Relating to the Department of State Health Services' purchase of health benefit plans for certain individuals infected with HIV.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2798"
+    },
+    {
+     "session": "88R",
+     "bill": "HB3566",
+     "kind": "author",
+     "caption": "Relating to statewide standards for the provision of and health benefit plan coverage of substance use and addiction treatment.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3566"
+    },
+    {
+     "session": "88R",
+     "bill": "HB5230",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage of prescription drugs for serious mental illnesses and opioid and substance use disorders.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB5230"
+    },
+    {
+     "session": "88R",
+     "bill": "HB5274",
+     "kind": "author",
+     "caption": "Relating to the expedited credentialing of providers under the Medicaid managed care program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB5274"
+    },
+    {
+     "session": "88R",
+     "bill": "HB652",
+     "kind": "coauthor",
+     "caption": "Relating to the development and implementation of the Live Well Texas program and the expansion of Medicaid eligibility to provide health benefit coverage to certain individuals; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB652"
+    },
+    {
+     "session": "88R",
+     "bill": "HB4713",
+     "kind": "coauthor",
+     "caption": "Relating to group health benefit plan coverage for early treatment of first episode psychosis.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB4713"
+    },
+    {
+     "session": "87R",
+     "bill": "HB398",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB398"
+    },
+    {
+     "session": "87R",
+     "bill": "HB82",
+     "kind": "coauthor",
+     "caption": "Relating to pricing of and health benefit plan cost-sharing requirements for prescription insulin.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB82"
+    },
+    {
+     "session": "87R",
+     "bill": "HB107",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB107"
+    },
+    {
+     "session": "87R",
+     "bill": "HB146",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB146"
+    },
+    {
+     "session": "87R",
+     "bill": "HB359",
+     "kind": "coauthor",
+     "caption": "Relating to recovery under uninsured and underinsured motorist insurance coverage.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB359"
+    },
+    {
+     "session": "87R",
+     "bill": "HB515",
+     "kind": "coauthor",
+     "caption": "Relating to the reimbursement and payment of claims by certain health benefit plan issuers for telemedicine medical services and telehealth services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB515"
+    },
+    {
+     "session": "87R",
+     "bill": "HB522",
+     "kind": "coauthor",
+     "caption": "Relating to the reimbursement and payment of claims by certain health benefit plan issuers for telemedicine medical services and telehealth services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB522"
+    },
+    {
+     "session": "86R",
+     "bill": "HB840",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB840"
+    },
+    {
+     "session": "86R",
+     "bill": "HB590",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB590"
+    },
+    {
+     "session": "86R",
+     "bill": "HB1110",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB1110"
+    },
+    {
+     "session": "86R",
+     "bill": "HB1739",
+     "kind": "coauthor",
+     "caption": "Relating to recovery under uninsured and underinsured motorist insurance coverage.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB1739"
+    },
+    {
+     "session": "86R",
+     "bill": "HB2453",
+     "kind": "coauthor",
+     "caption": "Relating to the operation and administration of Medicaid, including the Medicaid managed care program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB2453"
+    }
+   ]
+  },
+  {
+   "politician_id": "ada67d5b-b7d5-4ab9-a751-59355715c3e1",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "José Menéndez",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Democrat advocating for healthcare access in a district with high uninsured rates; supported CHIP restoration. Opposed Republican Medicaid cut proposals. His 'over 200 bills benefiting children, seniors, and veterans' background includes Medicare and Medicaid preservation advocacy. No evidence found opposing Medicare/Medicaid expansion.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=26"
+   ],
+   "office": "Senator",
+   "code": "A1110",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 1109,
+   "n_on_topic": 20,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB176",
+     "kind": "author",
+     "caption": "Relating to the provision of on-campus mental health services by a school district and reimbursement under Medicaid for certain services provided to eligible students.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB176"
+    },
+    {
+     "session": "89R",
+     "bill": "SB179",
+     "kind": "author",
+     "caption": "Relating to a public outreach and education campaign for mixed-status families regarding eligibility for Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB179"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2475",
+     "kind": "author",
+     "caption": "Relating to the disclosure and consideration of criminal conduct for purposes of certification as a peer specialist or peer specialist supervisor to provide Medicaid mental health and substance use services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2475"
+    },
+    {
+     "session": "89R",
+     "bill": "SB255",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255"
+    },
+    {
+     "session": "89R",
+     "bill": "SB359",
+     "kind": "author",
+     "caption": "Relating to the coverage and provision of abortion, contraception, and sterilization under Medicaid and certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB359"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1945",
+     "kind": "coauthor",
+     "caption": "Relating to the eligibility of certain individuals younger than 65 years of age to purchase Medicare supplement benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1945"
+    },
+    {
+     "session": "88R",
+     "bill": "SB113",
+     "kind": "author",
+     "caption": "Relating to the provision of on-campus mental health services by a school district and reimbursement under Medicaid for certain services provided to eligible students.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB113"
+    },
+    {
+     "session": "88R",
+     "bill": "SB630",
+     "kind": "author",
+     "caption": "Relating to a public outreach and education campaign for mixed-status families regarding eligibility for Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB630"
+    },
+    {
+     "session": "88R",
+     "bill": "SB124",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women during and following a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB124"
+    },
+    {
+     "session": "88R",
+     "bill": "SB125",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB125"
+    },
+    {
+     "session": "87R",
+     "bill": "SB96",
+     "kind": "author",
+     "caption": "Relating to the provision of on-campus mental health services by a school district and reimbursement under Medicaid for certain services provided to eligible students.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB96"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2069",
+     "kind": "author",
+     "caption": "Relating to a public outreach and education campaign for mixed-status families regarding eligibility for Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2069"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1177",
+     "kind": "author",
+     "caption": "Relating to offering certain evidence-based services in lieu of other mental health or substance use disorder services by a Medicaid managed care organization.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1177"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1534",
+     "kind": "author",
+     "caption": "Relating to demonstration projects to coordinate eligibility renewal and eligibility recertification for certain children in the Medicaid and child health plan programs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1534"
+    },
+    {
+     "session": "86R",
+     "bill": "SB2395",
+     "kind": "author",
+     "caption": "Relating to the provision of on-campus mental health services by a school district and reimbursement under Medicaid for certain services provided to eligible students.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB2395"
+    },
+    {
+     "session": "86R",
+     "bill": "SB147",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB147"
+    },
+    {
+     "session": "86R",
+     "bill": "SB556",
+     "kind": "coauthor",
+     "caption": "Relating to Medicaid reimbursement for dental services provided to adults with disabilities.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB556"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1667",
+     "kind": "coauthor",
+     "caption": "Relating to the delivery of certain transportation services under Medicaid and certain other health and human services programs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1667"
+    },
+    {
+     "session": "85R",
+     "bill": "SB235",
+     "kind": "author",
+     "caption": "Relating to the continuation of certain public benefits, including medical assistance, for individuals after release from confinement in a county jail.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB235"
+    }
+   ]
+  },
+  {
+   "politician_id": "1d0b1e50-5bd7-46f6-b9a9-6ca7cdfcebe6",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Judith Zaffirini",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Zaffirini co-authored SB 45 (2025) to expand Medicaid eligibility in Texas under the ACA. She has consistently championed health and human services funding and disability healthcare access throughout her 39+ year career. Medicaid expansion co-authorship is strong evidence for value 2.",
+   "sources": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB45",
+    "https://www.senate.texas.gov/member.php?d=21",
+    "https://en.wikipedia.org/wiki/Judith_Zaffirini"
+   ],
+   "office": "Senator",
+   "code": "A1700",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 1627,
+   "n_on_topic": 47,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB45",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB45"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2388",
+     "kind": "author",
+     "caption": "Relating to managed care contracts, including the procurement of managed care contracts, under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2388"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2886",
+     "kind": "author",
+     "caption": "Relating to the regulation of child life services and the coverage of child life services under Medicaid and health benefit plans; requiring an occupational license; authorizing a fee.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2886"
+    },
+    {
+     "session": "88R",
+     "bill": "SB39",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB39"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1220",
+     "kind": "author",
+     "caption": "Relating to group health benefit plan coverage for early treatment of first episode psychosis.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1220"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1221",
+     "kind": "author",
+     "caption": "Relating to modification of certain prescription drug benefits and coverage offered by certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1221"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1790",
+     "kind": "author",
+     "caption": "Relating to the eligibility of certain individuals to purchase Medicare supplement benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1790"
+    },
+    {
+     "session": "88R",
+     "bill": "SB2191",
+     "kind": "author",
+     "caption": "Relating to peer support specialists for individuals with an intellectual or developmental disability and peer services for those individuals under Medicaid living outside of state supported living centers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB2191"
+    },
+    {
+     "session": "87R",
+     "bill": "SB38",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB38"
+    },
+    {
+     "session": "87R",
+     "bill": "SB50",
+     "kind": "author",
+     "caption": "Relating to a competitive and integrated employment initiative for certain Medicaid recipients.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB50"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1141",
+     "kind": "author",
+     "caption": "Relating to group health benefit plan coverage for early treatment of first episode psychosis.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1141"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1142",
+     "kind": "author",
+     "caption": "Relating to modification of certain prescription drug benefits and coverage offered by certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1142"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1457",
+     "kind": "author",
+     "caption": "Relating to peer specialists for and the provision of peer services to individuals with an intellectual or developmental disability, including the provision of those services under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1457"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2104",
+     "kind": "author",
+     "caption": "Relating to the provision of peer services, including family partner peer support services by family partners, and the provision of those services under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2104"
+    },
+    {
+     "session": "87R",
+     "bill": "SB528",
+     "kind": "author",
+     "caption": "Relating to the contractual relationship between a pharmacist or pharmacy and a health benefit plan issuer or pharmacy benefit manager.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB528"
+    },
+    {
+     "session": "87R",
+     "bill": "SB827",
+     "kind": "author",
+     "caption": "Relating to health benefit plan cost-sharing requirements for prescription insulin.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB827"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1028",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage for colorectal cancer early detection.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1028"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2028",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid program, including the administration and operation of the Medicaid managed care program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2028"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2195",
+     "kind": "coauthor",
+     "caption": "Relating to the relationship between pharmacists or pharmacies and pharmacy benefit managers or health benefit plan issuers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2195"
+    },
+    {
+     "session": "86R",
+     "bill": "SB937",
+     "kind": "author",
+     "caption": "Relating to a pilot program for providing services to certain women and children under the Medicaid medical transportation program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB937"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1421",
+     "kind": "author",
+     "caption": "Relating to methods of notice from certain health benefit plan issuers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1421"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1784",
+     "kind": "author",
+     "caption": "Relating to the deduction from applied income of compensation paid to guardians of certain Medicaid recipients.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1784"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1818",
+     "kind": "author",
+     "caption": "Relating to a competitive and integrated employment initiative for certain Medicaid recipients.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1818"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1896",
+     "kind": "author",
+     "caption": "Relating to alternate health benefit plan contact information for victims of family violence.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1896"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1956",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage for early childhood intervention services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1956"
+    },
+    {
+     "session": "86R",
+     "bill": "SB2218",
+     "kind": "author",
+     "caption": "Relating to coverage for serious mental illness, other disorders, and chemical dependency under certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB2218"
+    },
+    {
+     "session": "85R",
+     "bill": "SB52",
+     "kind": "author",
+     "caption": "Relating to the reimbursement of providers for the provision of certain home telemonitoring services under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB52"
+    },
+    {
+     "session": "85R",
+     "bill": "SB861",
+     "kind": "author",
+     "caption": "Relating to coverage for serious mental illness, other disorders, and chemical dependency under certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB861"
+    },
+    {
+     "session": "85R",
+     "bill": "SB2040",
+     "kind": "author",
+     "caption": "Relating to the content of an application for Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB2040"
+    },
+    {
+     "session": "85R",
+     "bill": "SB2126",
+     "kind": "author",
+     "caption": "Relating to the development of a quality-based outcome measure for the child health plan program and Medicaid regarding certain persons with HIV.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB2126"
+    }
+   ]
+  },
+  {
+   "politician_id": "1d0b1e50-5bd7-46f6-b9a9-6ca7cdfcebe6",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Judith Zaffirini",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Co-authored SB 45 (2025) to expand Medicaid to eligible individuals under the ACA. This is direct evidence for Medicare/Medicaid expansion. Also authored SB 51 (2025) expanding mental health professional licensing. Consistent with value 2 (lower Medicare age and expand Medicaid significantly).",
+   "sources": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB45",
+    "https://www.senate.texas.gov/member.php?d=21"
+   ],
+   "office": "Senator",
+   "code": "A1700",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 1627,
+   "n_on_topic": 30,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB45",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB45"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2388",
+     "kind": "author",
+     "caption": "Relating to managed care contracts, including the procurement of managed care contracts, under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2388"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2886",
+     "kind": "author",
+     "caption": "Relating to the regulation of child life services and the coverage of child life services under Medicaid and health benefit plans; requiring an occupational license; authorizing a fee.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2886"
+    },
+    {
+     "session": "88R",
+     "bill": "SB39",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB39"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1790",
+     "kind": "author",
+     "caption": "Relating to the eligibility of certain individuals to purchase Medicare supplement benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1790"
+    },
+    {
+     "session": "88R",
+     "bill": "SB2191",
+     "kind": "author",
+     "caption": "Relating to peer support specialists for individuals with an intellectual or developmental disability and peer services for those individuals under Medicaid living outside of state supported living centers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB2191"
+    },
+    {
+     "session": "87R",
+     "bill": "SB38",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB38"
+    },
+    {
+     "session": "87R",
+     "bill": "SB39",
+     "kind": "author",
+     "caption": "Relating to the period of continuous eligibility for the medical assistance program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB39"
+    },
+    {
+     "session": "87R",
+     "bill": "SB50",
+     "kind": "author",
+     "caption": "Relating to a competitive and integrated employment initiative for certain Medicaid recipients.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB50"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1457",
+     "kind": "author",
+     "caption": "Relating to peer specialists for and the provision of peer services to individuals with an intellectual or developmental disability, including the provision of those services under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1457"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2104",
+     "kind": "author",
+     "caption": "Relating to the provision of peer services, including family partner peer support services by family partners, and the provision of those services under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2104"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2028",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid program, including the administration and operation of the Medicaid managed care program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2028"
+    },
+    {
+     "session": "86R",
+     "bill": "SB637",
+     "kind": "author",
+     "caption": "Relating to the period of continuous eligibility for the medical assistance program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB637"
+    },
+    {
+     "session": "86R",
+     "bill": "SB937",
+     "kind": "author",
+     "caption": "Relating to a pilot program for providing services to certain women and children under the Medicaid medical transportation program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB937"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1784",
+     "kind": "author",
+     "caption": "Relating to the deduction from applied income of compensation paid to guardians of certain Medicaid recipients.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1784"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1818",
+     "kind": "author",
+     "caption": "Relating to a competitive and integrated employment initiative for certain Medicaid recipients.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1818"
+    },
+    {
+     "session": "85R",
+     "bill": "SB52",
+     "kind": "author",
+     "caption": "Relating to the reimbursement of providers for the provision of certain home telemonitoring services under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB52"
+    },
+    {
+     "session": "85R",
+     "bill": "SB53",
+     "kind": "author",
+     "caption": "Relating to the period of continuous eligibility for the medical assistance program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB53"
+    },
+    {
+     "session": "85R",
+     "bill": "SB2040",
+     "kind": "author",
+     "caption": "Relating to the content of an application for Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB2040"
+    },
+    {
+     "session": "85R",
+     "bill": "SB2126",
+     "kind": "author",
+     "caption": "Relating to the development of a quality-based outcome measure for the child health plan program and Medicaid regarding certain persons with HIV.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB2126"
+    },
+    {
+     "session": "85R",
+     "bill": "SB235",
+     "kind": "coauthor",
+     "caption": "Relating to the continuation of certain public benefits, including medical assistance, for individuals after release from confinement in a county jail.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB235"
+    }
+   ]
+  },
+  {
+   "politician_id": "50d759c2-05cc-4769-a1d9-69b282745d0d",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mary Ann Perez",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "As a Texas House Democrat representing a working-class southeast Harris County district, Perez has consistently supported Medicaid expansion and affordable healthcare access. Texas is one of the last states without Medicaid expansion. Democrats in Texas uniformly support a public option or Medicaid expansion. Aligns with stance 2: public option alongside private insurance.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mary_Ann_Perez",
+    "http://house.texas.gov/members/member-page?district=144"
+   ],
+   "office": "Representative",
+   "code": "A2535",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 309,
+   "n_on_topic": 10,
+   "candidates": [
+    {
+     "session": "88R",
+     "bill": "HB4713",
+     "kind": "author",
+     "caption": "Relating to group health benefit plan coverage for early treatment of first episode psychosis.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB4713"
+    },
+    {
+     "session": "87R",
+     "bill": "HB82",
+     "kind": "coauthor",
+     "caption": "Relating to pricing of and health benefit plan cost-sharing requirements for prescription insulin.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB82"
+    },
+    {
+     "session": "87R",
+     "bill": "HB359",
+     "kind": "coauthor",
+     "caption": "Relating to recovery under uninsured and underinsured motorist insurance coverage.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB359"
+    },
+    {
+     "session": "86R",
+     "bill": "HB1739",
+     "kind": "coauthor",
+     "caption": "Relating to recovery under uninsured and underinsured motorist insurance coverage.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB1739"
+    },
+    {
+     "session": "85R",
+     "bill": "HB4179",
+     "kind": "author",
+     "caption": "Relating to establishing a program to allow school districts to assist certain children attending public schools in maintaining their Medicaid and child health plan program eligibility.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=HB4179"
+    }
+   ]
+  },
+  {
+   "politician_id": "619ad301-d993-40b3-94fe-0eb956932dae",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mary Gonzalez",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Gonzalez has consistently supported Medicaid expansion and affordable healthcare in a border district with high uninsured rates. She supports a public healthcare option and has opposed Republican efforts to cut Medicaid. Aligns with stance 2: public option alongside private insurance.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mary_Gonzalez",
+    "http://house.texas.gov/members/member-page?district=75"
+   ],
+   "office": "Representative",
+   "code": "A2410",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 914,
+   "n_on_topic": 21,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "HB2938",
+     "kind": "author",
+     "caption": "Relating to attendant care services under Medicaid and other programs administered by the Health and Human Services Commission, including establishing a minimum base wage for certain personal attendants providing those services and allowing family members to provide those services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2938"
+    },
+    {
+     "session": "89R",
+     "bill": "HB4046",
+     "kind": "author",
+     "caption": "Relating to an enrollee's cost-sharing liability for emergency care under a health benefit plan.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB4046"
+    },
+    {
+     "session": "88R",
+     "bill": "HB1571",
+     "kind": "author",
+     "caption": "Relating to the reimbursement under Medicaid of local educational agencies for the provision of health care services to students.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB1571"
+    },
+    {
+     "session": "88R",
+     "bill": "HB652",
+     "kind": "coauthor",
+     "caption": "Relating to the development and implementation of the Live Well Texas program and the expansion of Medicaid eligibility to provide health benefit coverage to certain individuals; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB652"
+    },
+    {
+     "session": "87R",
+     "bill": "HB3720",
+     "kind": "author",
+     "caption": "Relating to long-term care facilities for and Medicaid waiver programs available to certain individuals, including individuals with intellectual and developmental disabilities.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB3720"
+    },
+    {
+     "session": "87R",
+     "bill": "HB82",
+     "kind": "coauthor",
+     "caption": "Relating to pricing of and health benefit plan cost-sharing requirements for prescription insulin.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB82"
+    },
+    {
+     "session": "87R",
+     "bill": "HB359",
+     "kind": "coauthor",
+     "caption": "Relating to recovery under uninsured and underinsured motorist insurance coverage.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB359"
+    },
+    {
+     "session": "86R",
+     "bill": "HB25",
+     "kind": "author",
+     "caption": "Relating to a pilot program for providing services to certain women and children under the Medicaid medical transportation program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB25"
+    },
+    {
+     "session": "86R",
+     "bill": "HB1585",
+     "kind": "author",
+     "caption": "Relating to a study on interest or other waiting lists maintained for certain Medicaid programs providing services to persons with an intellectual or developmental disability.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB1585"
+    },
+    {
+     "session": "86R",
+     "bill": "HB3937",
+     "kind": "author",
+     "caption": "Relating to a report regarding Medicaid reimbursement rates and access to care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB3937"
+    },
+    {
+     "session": "86R",
+     "bill": "HB870",
+     "kind": "author",
+     "caption": "Relating to Medicaid telemedicine and telehealth services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB870"
+    },
+    {
+     "session": "86R",
+     "bill": "HB1063",
+     "kind": "author",
+     "caption": "Relating to telemedicine medical, telehealth, and home telemonitoring services under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB1063"
+    },
+    {
+     "session": "86R",
+     "bill": "HB1576",
+     "kind": "author",
+     "caption": "Relating to the delivery of certain transportation services under Medicaid and certain other health and human services programs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB1576"
+    },
+    {
+     "session": "86R",
+     "bill": "HB1739",
+     "kind": "coauthor",
+     "caption": "Relating to recovery under uninsured and underinsured motorist insurance coverage.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB1739"
+    },
+    {
+     "session": "85R",
+     "bill": "HB3146",
+     "kind": "author",
+     "caption": "Relating to a pilot program for providing services to certain children under the Medicaid medical transportation program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=HB3146"
+    }
+   ]
+  },
+  {
+   "politician_id": "7d100649-77bc-4dd1-8845-d379ca466fa2",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Nathan Johnson",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Johnson is an active supporter of Medicaid expansion in Texas and healthcare access more broadly. His senate biography notes 'healthcare expansion resulting in hundreds of thousands of newly insured Texans.' This record of pushing for broader government healthcare coverage aligns with lowering the Medicare age and expanding Medicaid significantly.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=16",
+    "https://en.wikipedia.org/wiki/Nathan_Johnson_(Texas_politician)"
+   ],
+   "office": "Senator",
+   "code": "A1265",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 723,
+   "n_on_topic": 35,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB232",
+     "kind": "author",
+     "caption": "Relating to the development and implementation of the Live Well Texas program and the expansion of Medicaid eligibility to provide health benefit coverage to certain individuals; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB232"
+    },
+    {
+     "session": "89R",
+     "bill": "SB236",
+     "kind": "author",
+     "caption": "Relating to certain evidence-based health-related non-medical services offered by a Medicaid managed care organization in lieu of other services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB236"
+    },
+    {
+     "session": "89R",
+     "bill": "SB238",
+     "kind": "author",
+     "caption": "Relating to implementing an express lane option under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB238"
+    },
+    {
+     "session": "89R",
+     "bill": "SB637",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB637"
+    },
+    {
+     "session": "89R",
+     "bill": "SB638",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB638"
+    },
+    {
+     "session": "89R",
+     "bill": "SB657",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to all individuals for whom federal matching money is available.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB657"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1342",
+     "kind": "author",
+     "caption": "Relating to the regulation of psychiatric residential treatment facilities and Medicaid reimbursement for the provision of treatment by those facilities; requiring an occupational license.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1342"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1661",
+     "kind": "author",
+     "caption": "Relating to the provision of nutrition support services to Medicaid recipients in lieu of other state Medicaid plan services and a report on the health outcomes of providing those services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1661"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2886",
+     "kind": "author",
+     "caption": "Relating to the regulation of child life services and the coverage of child life services under Medicaid and health benefit plans; requiring an occupational license; authorizing a fee.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2886"
+    },
+    {
+     "session": "88R",
+     "bill": "SB71",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB71"
+    },
+    {
+     "session": "88R",
+     "bill": "SB72",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB72"
+    },
+    {
+     "session": "88R",
+     "bill": "SB73",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women following a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB73"
+    },
+    {
+     "session": "88R",
+     "bill": "SB74",
+     "kind": "author",
+     "caption": "Relating to the use of community health workers in Medicaid managed care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB74"
+    },
+    {
+     "session": "88R",
+     "bill": "SB195",
+     "kind": "author",
+     "caption": "Relating to the development and implementation of the Live Well Texas program and the expansion of Medicaid eligibility to provide health benefit coverage to certain individuals; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB195"
+    },
+    {
+     "session": "88R",
+     "bill": "SB343",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to all individuals for whom federal matching money is available.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB343"
+    },
+    {
+     "session": "88R",
+     "bill": "SB550",
+     "kind": "author",
+     "caption": "Relating to implementation of an express lane option for  determining eligibility and enrolling certain individuals in Medicaid or the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB550"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1496",
+     "kind": "author",
+     "caption": "Relating to authorizing certain health benefit exchanges to make eligibility determinations under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1496"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1675",
+     "kind": "author",
+     "caption": "Relating to a pilot project to provide medical nutrition assistance to certain Medicaid recipients in this state.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1675"
+    },
+    {
+     "session": "88R",
+     "bill": "SB2244",
+     "kind": "author",
+     "caption": "Relating to certain evidence-based community support services offered by a Medicaid managed care organization in lieu of other services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB2244"
+    },
+    {
+     "session": "87R",
+     "bill": "SB118",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB118"
+    },
+    {
+     "session": "87R",
+     "bill": "SB119",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB119"
+    },
+    {
+     "session": "87R",
+     "bill": "SB121",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB121"
+    },
+    {
+     "session": "87R",
+     "bill": "SB136",
+     "kind": "author",
+     "caption": "Relating to the use of promotoras and community health workers in Medicaid managed care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB136"
+    },
+    {
+     "session": "87R",
+     "bill": "SB141",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB141"
+    },
+    {
+     "session": "87R",
+     "bill": "SB191",
+     "kind": "author",
+     "caption": "Relating to the use of social determinants of health in the Medicaid managed care program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB191"
+    },
+    {
+     "session": "87R",
+     "bill": "SB218",
+     "kind": "author",
+     "caption": "Relating to coverage for certain services relating to postpartum depression under the medical assistance and CHIP perinatal programs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB218"
+    },
+    {
+     "session": "87R",
+     "bill": "SB322",
+     "kind": "author",
+     "caption": "Relating to presumptive eligibility of certain elderly individuals for home and community-based services under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB322"
+    },
+    {
+     "session": "87R",
+     "bill": "SB651",
+     "kind": "author",
+     "caption": "Relating to a pilot project to improve health care outcomes and reduce costs under Medicaid by providing participating recipients with enhanced case management and other services to address certain social determinants of health.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB651"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1751",
+     "kind": "author",
+     "caption": "Relating to improvements to access to health care in this state, including increased access to and scope of coverage under health benefit plans and Medicaid, and to improvements in health outcomes; authorizing an assessment; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1751"
+    },
+    {
+     "session": "87R",
+     "bill": "SB39",
+     "kind": "coauthor",
+     "caption": "Relating to the period of continuous eligibility for the medical assistance program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB39"
+    },
+    {
+     "session": "86R",
+     "bill": "SB524",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB524"
+    },
+    {
+     "session": "86R",
+     "bill": "SB2251",
+     "kind": "author",
+     "caption": "Relating to the establishment of a pilot program to create additional housing for certain individuals with an intellectual or developmental disability through a Medicaid waiver program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB2251"
+    },
+    {
+     "session": "86R",
+     "bill": "SB147",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB147"
+    },
+    {
+     "session": "86R",
+     "bill": "SB637",
+     "kind": "coauthor",
+     "caption": "Relating to the period of continuous eligibility for the medical assistance program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB637"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1667",
+     "kind": "coauthor",
+     "caption": "Relating to the delivery of certain transportation services under Medicaid and certain other health and human services programs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1667"
+    }
+   ]
+  },
+  {
+   "politician_id": "7d100649-77bc-4dd1-8845-d379ca466fa2",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Nathan Johnson",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Johnson has 'frequently pushed for legislation related to expanding access to medical care' including Medicaid expansion in Texas. His senate biography explicitly lists 'healthcare' as a top priority and credits his work with 'hundreds of thousands of newly insured Texans.' He authored legislation to expand palliative care definitions and decriminalize fentanyl testing strips.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nathan_Johnson_(Texas_politician)",
+    "https://senate.texas.gov/member.php?d=16"
+   ],
+   "office": "Senator",
+   "code": "A1265",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 723,
+   "n_on_topic": 70,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB232",
+     "kind": "author",
+     "caption": "Relating to the development and implementation of the Live Well Texas program and the expansion of Medicaid eligibility to provide health benefit coverage to certain individuals; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB232"
+    },
+    {
+     "session": "89R",
+     "bill": "SB236",
+     "kind": "author",
+     "caption": "Relating to certain evidence-based health-related non-medical services offered by a Medicaid managed care organization in lieu of other services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB236"
+    },
+    {
+     "session": "89R",
+     "bill": "SB238",
+     "kind": "author",
+     "caption": "Relating to implementing an express lane option under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB238"
+    },
+    {
+     "session": "89R",
+     "bill": "SB636",
+     "kind": "author",
+     "caption": "Relating to coverage for mental health conditions and substance use disorders under certain governmental health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB636"
+    },
+    {
+     "session": "89R",
+     "bill": "SB637",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB637"
+    },
+    {
+     "session": "89R",
+     "bill": "SB638",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB638"
+    },
+    {
+     "session": "89R",
+     "bill": "SB657",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to all individuals for whom federal matching money is available.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB657"
+    },
+    {
+     "session": "89R",
+     "bill": "SB833",
+     "kind": "author",
+     "caption": "Relating to conditions applicable to health benefit plan coverage of in vitro fertilization procedures.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB833"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1342",
+     "kind": "author",
+     "caption": "Relating to the regulation of psychiatric residential treatment facilities and Medicaid reimbursement for the provision of treatment by those facilities; requiring an occupational license.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1342"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1661",
+     "kind": "author",
+     "caption": "Relating to the provision of nutrition support services to Medicaid recipients in lieu of other state Medicaid plan services and a report on the health outcomes of providing those services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1661"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1822",
+     "kind": "author",
+     "caption": "Relating to the use of artificial intelligence-based algorithms in utilization review conducted for certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1822"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2886",
+     "kind": "author",
+     "caption": "Relating to the regulation of child life services and the coverage of child life services under Medicaid and health benefit plans; requiring an occupational license; authorizing a fee.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2886"
+    },
+    {
+     "session": "88R",
+     "bill": "SB71",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB71"
+    },
+    {
+     "session": "88R",
+     "bill": "SB72",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB72"
+    },
+    {
+     "session": "88R",
+     "bill": "SB73",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women following a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB73"
+    },
+    {
+     "session": "88R",
+     "bill": "SB74",
+     "kind": "author",
+     "caption": "Relating to the use of community health workers in Medicaid managed care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB74"
+    },
+    {
+     "session": "88R",
+     "bill": "SB195",
+     "kind": "author",
+     "caption": "Relating to the development and implementation of the Live Well Texas program and the expansion of Medicaid eligibility to provide health benefit coverage to certain individuals; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB195"
+    },
+    {
+     "session": "88R",
+     "bill": "SB343",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to all individuals for whom federal matching money is available.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB343"
+    },
+    {
+     "session": "88R",
+     "bill": "SB344",
+     "kind": "author",
+     "caption": "Relating to the creation of the Texas Health Insurance Exchange and premium assistance and cost-sharing reduction programs; authorizing a fee.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB344"
+    },
+    {
+     "session": "88R",
+     "bill": "SB550",
+     "kind": "author",
+     "caption": "Relating to implementation of an express lane option for  determining eligibility and enrolling certain individuals in Medicaid or the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB550"
+    },
+    {
+     "session": "88R",
+     "bill": "SB676",
+     "kind": "author",
+     "caption": "Relating to conditions applicable to health benefit plan coverage of in vitro fertilization procedures.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB676"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1003",
+     "kind": "author",
+     "caption": "Relating to disclosure requirements for health care provider directories maintained by certain health benefit plan issuers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1003"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1496",
+     "kind": "author",
+     "caption": "Relating to authorizing certain health benefit exchanges to make eligibility determinations under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1496"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1675",
+     "kind": "author",
+     "caption": "Relating to a pilot project to provide medical nutrition assistance to certain Medicaid recipients in this state.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1675"
+    },
+    {
+     "session": "88R",
+     "bill": "SB2244",
+     "kind": "author",
+     "caption": "Relating to certain evidence-based community support services offered by a Medicaid managed care organization in lieu of other services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB2244"
+    },
+    {
+     "session": "88R",
+     "bill": "SB2247",
+     "kind": "author",
+     "caption": "Relating to limitations on health benefit plan cost-sharing requirements for preventive services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB2247"
+    },
+    {
+     "session": "87R",
+     "bill": "SB118",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB118"
+    },
+    {
+     "session": "87R",
+     "bill": "SB119",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB119"
+    },
+    {
+     "session": "87R",
+     "bill": "SB120",
+     "kind": "author",
+     "caption": "Relating to the creation of a health insurance risk pool for certain health benefit plan enrollees; authorizing an assessment.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB120"
+    },
+    {
+     "session": "87R",
+     "bill": "SB121",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB121"
+    },
+    {
+     "session": "87R",
+     "bill": "SB135",
+     "kind": "author",
+     "caption": "Relating to conditions applicable to health benefit plan coverage of in vitro fertilization procedures.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB135"
+    },
+    {
+     "session": "87R",
+     "bill": "SB136",
+     "kind": "author",
+     "caption": "Relating to the use of promotoras and community health workers in Medicaid managed care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB136"
+    },
+    {
+     "session": "87R",
+     "bill": "SB141",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB141"
+    },
+    {
+     "session": "87R",
+     "bill": "SB191",
+     "kind": "author",
+     "caption": "Relating to the use of social determinants of health in the Medicaid managed care program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB191"
+    },
+    {
+     "session": "87R",
+     "bill": "SB322",
+     "kind": "author",
+     "caption": "Relating to presumptive eligibility of certain elderly individuals for home and community-based services under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB322"
+    },
+    {
+     "session": "87R",
+     "bill": "SB459",
+     "kind": "author",
+     "caption": "Relating to availability of and benefits provided under health benefit plan coverage.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB459"
+    },
+    {
+     "session": "87R",
+     "bill": "SB651",
+     "kind": "author",
+     "caption": "Relating to a pilot project to improve health care outcomes and reduce costs under Medicaid by providing participating recipients with enhanced case management and other services to address certain social determinants of health.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB651"
+    },
+    {
+     "session": "87R",
+     "bill": "SB745",
+     "kind": "author",
+     "caption": "Relating to the creation of a health insurance risk pool for certain health benefit plan enrollees; authorizing an assessment.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB745"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1296",
+     "kind": "author",
+     "caption": "Relating to the authority of the commissioner of insurance to review rates and rate changes for certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1296"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1751",
+     "kind": "author",
+     "caption": "Relating to improvements to access to health care in this state, including increased access to and scope of coverage under health benefit plans and Medicaid, and to improvements in health outcomes; authorizing an assessment; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1751"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1807",
+     "kind": "author",
+     "caption": "Relating to the creation of the Texas Health Insurance Exchange and an exchange reinsurance program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1807"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2016",
+     "kind": "author",
+     "caption": "Relating to the applicability of certain provisions mandating the provision by certain health benefit plans of health benefits requiring cost defrayal by this state.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2016"
+    },
+    {
+     "session": "87R",
+     "bill": "SB91",
+     "kind": "coauthor",
+     "caption": "Relating to coverage for serious mental illness under certain group health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB91"
+    },
+    {
+     "session": "87R",
+     "bill": "SB228",
+     "kind": "coauthor",
+     "caption": "Relating to the reimbursement and payment of claims by certain health benefit plan issuers for telemedicine medical services and telehealth services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB228"
+    },
+    {
+     "session": "86R",
+     "bill": "SB524",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB524"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1087",
+     "kind": "author",
+     "caption": "Relating to the creation of a health insurance risk pool for certain health benefit plan enrollees; authorizing an assessment.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1087"
+    },
+    {
+     "session": "86R",
+     "bill": "SB2251",
+     "kind": "author",
+     "caption": "Relating to the establishment of a pilot program to create additional housing for certain individuals with an intellectual or developmental disability through a Medicaid waiver program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB2251"
+    },
+    {
+     "session": "86R",
+     "bill": "SB147",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB147"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1667",
+     "kind": "coauthor",
+     "caption": "Relating to the delivery of certain transportation services under Medicaid and certain other health and human services programs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1667"
+    }
+   ]
+  },
+  {
+   "politician_id": "3aee54f8-89eb-425d-b850-19fff9f2c8ea",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Roland Gutierrez",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Texas Democrat supporting Medicaid expansion (Texas is #1 in uninsured) and consistent with expanding coverage; no Medicare-for-All bill authored but aligned with lowering eligibility age and expanding Medicaid.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=19"
+   ],
+   "office": "Senator",
+   "code": "A1335",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 355,
+   "n_on_topic": 8,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB255",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255"
+    },
+    {
+     "session": "89R",
+     "bill": "SB359",
+     "kind": "author",
+     "caption": "Relating to the coverage and provision of abortion, contraception, and sterilization under Medicaid and certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB359"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2388",
+     "kind": "author",
+     "caption": "Relating to managed care contracts, including the procurement of managed care contracts, under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2388"
+    },
+    {
+     "session": "88R",
+     "bill": "SB124",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women during and following a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB124"
+    },
+    {
+     "session": "88R",
+     "bill": "SB125",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB125"
+    },
+    {
+     "session": "87R",
+     "bill": "SB119",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB119"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2028",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid program, including the administration and operation of the Medicaid managed care program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2028"
+    }
+   ]
+  },
+  {
+   "politician_id": "3aee54f8-89eb-425d-b850-19fff9f2c8ea",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Roland Gutierrez",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Campaign materials describe Gutierrez as fighting to 'lower the cost of healthcare' for working families; as a Texas Democrat he supports Medicaid expansion which Texas has refused; no single-payer bill authored but consistent with public option or Medicaid-expansion approach.",
+   "sources": [
+    "http://www.rolandfortexas.com/",
+    "https://senate.texas.gov/member.php?d=19"
+   ],
+   "office": "Senator",
+   "code": "A1335",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 355,
+   "n_on_topic": 19,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB255",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255"
+    },
+    {
+     "session": "89R",
+     "bill": "SB359",
+     "kind": "author",
+     "caption": "Relating to the coverage and provision of abortion, contraception, and sterilization under Medicaid and certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB359"
+    },
+    {
+     "session": "89R",
+     "bill": "SB2388",
+     "kind": "author",
+     "caption": "Relating to managed care contracts, including the procurement of managed care contracts, under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2388"
+    },
+    {
+     "session": "88R",
+     "bill": "SB124",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women during and following a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB124"
+    },
+    {
+     "session": "88R",
+     "bill": "SB125",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB125"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1221",
+     "kind": "coauthor",
+     "caption": "Relating to modification of certain prescription drug benefits and coverage offered by certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1221"
+    },
+    {
+     "session": "87R",
+     "bill": "SB528",
+     "kind": "author",
+     "caption": "Relating to the contractual relationship between a pharmacist or pharmacy and a health benefit plan issuer or pharmacy benefit manager.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB528"
+    },
+    {
+     "session": "87R",
+     "bill": "SB119",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB119"
+    },
+    {
+     "session": "87R",
+     "bill": "SB679",
+     "kind": "coauthor",
+     "caption": "Relating to the regulation of pharmacy benefit managers and health benefit plan issuers in relation to prescription drug coverage.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB679"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2028",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid program, including the administration and operation of the Medicaid managed care program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2028"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2195",
+     "kind": "coauthor",
+     "caption": "Relating to the relationship between pharmacists or pharmacies and pharmacy benefit managers or health benefit plan issuers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2195"
+    }
+   ]
+  },
+  {
+   "politician_id": "1ff93be4-a2d0-432b-af59-ef6ace1eb77b",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Royce West",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Dallas Democrat supporting Medicaid expansion and expanded financial aid for students; consistent with lowering Medicare eligibility age and expanding Medicaid coverage; no Medicare-for-All bill authored.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=23"
+   ],
+   "office": "Senator",
+   "code": "A1625",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 1458,
+   "n_on_topic": 14,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB225",
+     "kind": "author",
+     "caption": "Relating to implementation of an express lane option for  determining eligibility and enrolling certain individuals in Medicaid or the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB225"
+    },
+    {
+     "session": "88R",
+     "bill": "SB134",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB134"
+    },
+    {
+     "session": "88R",
+     "bill": "SB671",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB671"
+    },
+    {
+     "session": "87R",
+     "bill": "SB217",
+     "kind": "author",
+     "caption": "Relating to expanding eligibility for medical assistance to certain persons under the federal Patient Protection and Affordable Care Act and ensuring the provision of quality care under and the effectiveness of the medical assistance program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB217"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1275",
+     "kind": "author",
+     "caption": "Relating to provision of behavioral health services under Medicaid using audio-only technology and to reimbursement for those services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1275"
+    },
+    {
+     "session": "87R",
+     "bill": "SB39",
+     "kind": "coauthor",
+     "caption": "Relating to the period of continuous eligibility for the medical assistance program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB39"
+    },
+    {
+     "session": "87R",
+     "bill": "SB171",
+     "kind": "coauthor",
+     "caption": "Relating to a report regarding Medicaid reimbursement rates, supplemental payment amounts, and access to care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB171"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1191",
+     "kind": "author",
+     "caption": "Relating to certain requirements regarding Medicaid fair hearings.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1191"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1263",
+     "kind": "author",
+     "caption": "Relating to Medicaid reimbursement for dental services provided to certain Medicaid recipients.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1263"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1839",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain veterans and their families.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1839"
+    },
+    {
+     "session": "86R",
+     "bill": "SB307",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid eligibility of certain women for behavioral health services after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB307"
+    },
+    {
+     "session": "86R",
+     "bill": "SB556",
+     "kind": "coauthor",
+     "caption": "Relating to Medicaid reimbursement for dental services provided to adults with disabilities.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB556"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1667",
+     "kind": "coauthor",
+     "caption": "Relating to the delivery of certain transportation services under Medicaid and certain other health and human services programs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1667"
+    },
+    {
+     "session": "85R",
+     "bill": "SB1543",
+     "kind": "author",
+     "caption": "Relating to a local option exemption from ad valorem taxation by a county of a portion of the value of the residence homestead of a physician who provides health care services for which the physician agrees not to seek payment from any source, including the Medicaid program or otherwise from this state or the federal government, to indigent residents of the county.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB1543"
+    }
+   ]
+  },
+  {
+   "politician_id": "1ff93be4-a2d0-432b-af59-ef6ace1eb77b",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Royce West",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Dallas Democrat representing an uninsured-heavy district; supports Medicaid expansion; childcare standards referenced in official bio; opposes Republican efforts to cut government health programs; no single-payer legislation authored.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=23"
+   ],
+   "office": "Senator",
+   "code": "A1625",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 1458,
+   "n_on_topic": 27,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB225",
+     "kind": "author",
+     "caption": "Relating to implementation of an express lane option for  determining eligibility and enrolling certain individuals in Medicaid or the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB225"
+    },
+    {
+     "session": "89R",
+     "bill": "SB636",
+     "kind": "coauthor",
+     "caption": "Relating to coverage for mental health conditions and substance use disorders under certain governmental health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB636"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1380",
+     "kind": "coauthor",
+     "caption": "Relating to health benefit plan preauthorization requirements for participating physicians and providers providing certain health care services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1380"
+    },
+    {
+     "session": "88R",
+     "bill": "SB134",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB134"
+    },
+    {
+     "session": "88R",
+     "bill": "SB671",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB671"
+    },
+    {
+     "session": "87R",
+     "bill": "SB1275",
+     "kind": "author",
+     "caption": "Relating to provision of behavioral health services under Medicaid using audio-only technology and to reimbursement for those services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1275"
+    },
+    {
+     "session": "87R",
+     "bill": "SB528",
+     "kind": "author",
+     "caption": "Relating to the contractual relationship between a pharmacist or pharmacy and a health benefit plan issuer or pharmacy benefit manager.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB528"
+    },
+    {
+     "session": "87R",
+     "bill": "SB827",
+     "kind": "author",
+     "caption": "Relating to health benefit plan cost-sharing requirements for prescription insulin.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB827"
+    },
+    {
+     "session": "87R",
+     "bill": "SB171",
+     "kind": "coauthor",
+     "caption": "Relating to a report regarding Medicaid reimbursement rates, supplemental payment amounts, and access to care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB171"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1191",
+     "kind": "author",
+     "caption": "Relating to certain requirements regarding Medicaid fair hearings.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1191"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1263",
+     "kind": "author",
+     "caption": "Relating to Medicaid reimbursement for dental services provided to certain Medicaid recipients.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1263"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1839",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain veterans and their families.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1839"
+    },
+    {
+     "session": "86R",
+     "bill": "SB307",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid eligibility of certain women for behavioral health services after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB307"
+    },
+    {
+     "session": "86R",
+     "bill": "SB556",
+     "kind": "coauthor",
+     "caption": "Relating to Medicaid reimbursement for dental services provided to adults with disabilities.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB556"
+    },
+    {
+     "session": "86R",
+     "bill": "SB1667",
+     "kind": "coauthor",
+     "caption": "Relating to the delivery of certain transportation services under Medicaid and certain other health and human services programs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=SB1667"
+    },
+    {
+     "session": "85R",
+     "bill": "SB1543",
+     "kind": "author",
+     "caption": "Relating to a local option exemption from ad valorem taxation by a county of a portion of the value of the residence homestead of a physician who provides health care services for which the physician agrees not to seek payment from any source, including the Medicaid program or otherwise from this state or the federal government, to indigent residents of the county.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB1543"
+    }
+   ]
+  },
+  {
+   "politician_id": "2775a1c4-d7e5-45ce-9633-f1ad137c546a",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Sarah Eckhardt",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Explicitly supports Medicaid expansion (website: 'Texas is #1 in uninsured people in the US'); authored SB 361 prohibiting employer discrimination based on reproductive health decisions; advocates telehealth and simplified CHIP/Medicaid enrollment.",
+   "sources": [
+    "https://www.saraheckhardt.com/issues",
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB361"
+   ],
+   "office": "Senator",
+   "code": "A1325",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 770,
+   "n_on_topic": 30,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB359",
+     "kind": "author",
+     "caption": "Relating to the coverage and provision of abortion, contraception, and sterilization under Medicaid and certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB359"
+    },
+    {
+     "session": "89R",
+     "bill": "SB255",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255"
+    },
+    {
+     "session": "89R",
+     "bill": "SB1747",
+     "kind": "author",
+     "caption": "Relating to coverage for screening mammograms, diagnostic imaging, and supplemental breast examinations under certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1747"
+    },
+    {
+     "session": "88R",
+     "bill": "SB1623",
+     "kind": "author",
+     "caption": "Relating to the coverage and provision of abortion and contraception under a health benefit plan and certain programs administered by this state.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1623"
+    },
+    {
+     "session": "88R",
+     "bill": "SB124",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women during and following a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB124"
+    },
+    {
+     "session": "88R",
+     "bill": "SB125",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB125"
+    },
+    {
+     "session": "88R",
+     "bill": "SB73",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid eligibility of certain women following a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB73"
+    },
+    {
+     "session": "88R",
+     "bill": "SB113",
+     "kind": "coauthor",
+     "caption": "Relating to the provision of on-campus mental health services by a school district and reimbursement under Medicaid for certain services provided to eligible students.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB113"
+    },
+    {
+     "session": "88R",
+     "bill": "SB550",
+     "kind": "coauthor",
+     "caption": "Relating to implementation of an express lane option for  determining eligibility and enrolling certain individuals in Medicaid or the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB550"
+    },
+    {
+     "session": "88R",
+     "bill": "SB807",
+     "kind": "coauthor",
+     "caption": "Relating to health benefit plan coverage of prescription contraceptive drugs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB807"
+    },
+    {
+     "session": "87R",
+     "bill": "SB448",
+     "kind": "author",
+     "caption": "Relating to the coverage and provision of abortion under a health benefit plan and certain programs administered by this state.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB448"
+    },
+    {
+     "session": "87R",
+     "bill": "SB827",
+     "kind": "author",
+     "caption": "Relating to health benefit plan cost-sharing requirements for prescription insulin.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB827"
+    },
+    {
+     "session": "87R",
+     "bill": "SB118",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB118"
+    },
+    {
+     "session": "87R",
+     "bill": "SB119",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB119"
+    },
+    {
+     "session": "87R",
+     "bill": "SB136",
+     "kind": "coauthor",
+     "caption": "Relating to the use of promotoras and community health workers in Medicaid managed care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB136"
+    },
+    {
+     "session": "87R",
+     "bill": "SB141",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB141"
+    },
+    {
+     "session": "87R",
+     "bill": "SB171",
+     "kind": "coauthor",
+     "caption": "Relating to a report regarding Medicaid reimbursement rates, supplemental payment amounts, and access to care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB171"
+    },
+    {
+     "session": "87R",
+     "bill": "SB228",
+     "kind": "coauthor",
+     "caption": "Relating to the reimbursement and payment of claims by certain health benefit plan issuers for telemedicine medical services and telehealth services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB228"
+    },
+    {
+     "session": "87R",
+     "bill": "SB2195",
+     "kind": "coauthor",
+     "caption": "Relating to the relationship between pharmacists or pharmacies and pharmacy benefit managers or health benefit plan issuers.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB2195"
+    }
+   ]
+  },
+  {
+   "politician_id": "2775a1c4-d7e5-45ce-9633-f1ad137c546a",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Sarah Eckhardt",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Supports Medicaid expansion explicitly on website; advocates simplified enrollment; co-authored SB 11 (88R) school safety legislation showing ability to work across party lines; consistent with lowering Medicare age and significantly expanding Medicaid.",
+   "sources": [
+    "https://www.saraheckhardt.com/issues",
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB11"
+   ],
+   "office": "Senator",
+   "code": "A1325",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 770,
+   "n_on_topic": 13,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "SB359",
+     "kind": "author",
+     "caption": "Relating to the coverage and provision of abortion, contraception, and sterilization under Medicaid and certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB359"
+    },
+    {
+     "session": "89R",
+     "bill": "SB255",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255"
+    },
+    {
+     "session": "88R",
+     "bill": "SB124",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women during and following a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB124"
+    },
+    {
+     "session": "88R",
+     "bill": "SB125",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB125"
+    },
+    {
+     "session": "88R",
+     "bill": "SB73",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid eligibility of certain women following a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB73"
+    },
+    {
+     "session": "88R",
+     "bill": "SB113",
+     "kind": "coauthor",
+     "caption": "Relating to the provision of on-campus mental health services by a school district and reimbursement under Medicaid for certain services provided to eligible students.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB113"
+    },
+    {
+     "session": "88R",
+     "bill": "SB550",
+     "kind": "coauthor",
+     "caption": "Relating to implementation of an express lane option for  determining eligibility and enrolling certain individuals in Medicaid or the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB550"
+    },
+    {
+     "session": "87R",
+     "bill": "SB39",
+     "kind": "coauthor",
+     "caption": "Relating to the period of continuous eligibility for the medical assistance program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB39"
+    },
+    {
+     "session": "87R",
+     "bill": "SB118",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB118"
+    },
+    {
+     "session": "87R",
+     "bill": "SB119",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB119"
+    },
+    {
+     "session": "87R",
+     "bill": "SB136",
+     "kind": "coauthor",
+     "caption": "Relating to the use of promotoras and community health workers in Medicaid managed care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB136"
+    },
+    {
+     "session": "87R",
+     "bill": "SB141",
+     "kind": "coauthor",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB141"
+    },
+    {
+     "session": "87R",
+     "bill": "SB171",
+     "kind": "coauthor",
+     "caption": "Relating to a report regarding Medicaid reimbursement rates, supplemental payment amounts, and access to care.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB171"
+    }
+   ]
+  },
+  {
+   "politician_id": "b9cb31c9-15e0-405d-a8a0-d64850bf0955",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Terry Meza",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Meza's campaign website states: 'Every Texan deserves to have access to quality, affordable health coverage and care' and explicitly advocates accepting federal Medicaid funding to provide healthcare to uninsured Texas families. She has more than 20 years as an educator and is a Democrat representing District 105 (Irving area, Dallas County). Her unambiguous support for Medicaid expansion aligns with stance 2 (public option alongside private insurance to expand coverage).",
+   "sources": [
+    "https://www.terrymeza.com/",
+    "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A3455"
+   ],
+   "office": "Representative",
+   "code": "A3455",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 541,
+   "n_on_topic": 33,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "HB1920",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals diagnosed with certain mental health disorders.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1920"
+    },
+    {
+     "session": "89R",
+     "bill": "HB2784",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage for conversion therapy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2784"
+    },
+    {
+     "session": "89R",
+     "bill": "HB1423",
+     "kind": "coauthor",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1423"
+    },
+    {
+     "session": "89R",
+     "bill": "HB3105",
+     "kind": "coauthor",
+     "caption": "Relating to establishing a minimum base wage for certain personal attendants under Medicaid and other programs administered by the Health and Human Services Commission.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3105"
+    },
+    {
+     "session": "88R",
+     "bill": "HB496",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage for conversion therapy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB496"
+    },
+    {
+     "session": "88R",
+     "bill": "HB1111",
+     "kind": "author",
+     "caption": "Relating to a study on the provision of applied behavior analysis services to children with autism under Medicaid and other public benefits programs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB1111"
+    },
+    {
+     "session": "88R",
+     "bill": "HB1430",
+     "kind": "author",
+     "caption": "Relating to establishing a minimum wage for certain personal attendants under Medicaid and other programs administered by the Health and Human Services Commission.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB1430"
+    },
+    {
+     "session": "88R",
+     "bill": "HB1641",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals diagnosed with certain mental health disorders for whom federal matching money is available.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB1641"
+    },
+    {
+     "session": "88R",
+     "bill": "HB652",
+     "kind": "coauthor",
+     "caption": "Relating to the development and implementation of the Live Well Texas program and the expansion of Medicaid eligibility to provide health benefit coverage to certain individuals; imposing penalties.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB652"
+    },
+    {
+     "session": "88R",
+     "bill": "HB3586",
+     "kind": "coauthor",
+     "caption": "Relating to the coverage and provision of abortion and contraception under a health benefit plan and certain programs administered by this state.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3586"
+    },
+    {
+     "session": "87R",
+     "bill": "HB2516",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage for conversion therapy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB2516"
+    },
+    {
+     "session": "87R",
+     "bill": "HB2753",
+     "kind": "author",
+     "caption": "Relating to coverage for conversion therapy by a health benefit plan offered by a public employer.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB2753"
+    },
+    {
+     "session": "87R",
+     "bill": "HB3396",
+     "kind": "author",
+     "caption": "Relating to provision of behavioral health services under Medicaid using audio-only technology and to reimbursement for those services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB3396"
+    },
+    {
+     "session": "87R",
+     "bill": "HB4053",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons diagnosed with certain mental health disorders for whom federal matching money is available.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB4053"
+    },
+    {
+     "session": "87R",
+     "bill": "HB4058",
+     "kind": "author",
+     "caption": "Relating to a study on the provision of applied behavior analysis services to children with autism under Medicaid and other public benefits programs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB4058"
+    },
+    {
+     "session": "87R",
+     "bill": "HB705",
+     "kind": "author",
+     "caption": "Relating to the provision of recovery community organization peer-to-peer services under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB705"
+    },
+    {
+     "session": "87R",
+     "bill": "HB2955",
+     "kind": "author",
+     "caption": "Relating to the reimbursement of certain urban teaching hospitals  for the provision of inpatient hospital care under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB2955"
+    },
+    {
+     "session": "87R",
+     "bill": "HB293",
+     "kind": "coauthor",
+     "caption": "Relating to health benefit coverage for certain fertility preservation services under certain health benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB293"
+    },
+    {
+     "session": "87R",
+     "bill": "HB359",
+     "kind": "coauthor",
+     "caption": "Relating to recovery under uninsured and underinsured motorist insurance coverage.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB359"
+    },
+    {
+     "session": "87R",
+     "bill": "HB1362",
+     "kind": "coauthor",
+     "caption": "Relating to the coverage and provision of abortion under a health benefit plan and certain programs administered by this state.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB1362"
+    },
+    {
+     "session": "87R",
+     "bill": "HB4365",
+     "kind": "coauthor",
+     "caption": "Relating to a pilot project to improve health care outcomes and reduce costs under Medicaid by providing participating recipients with enhanced case management and other services to address certain social determinants of health.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB4365"
+    },
+    {
+     "session": "86R",
+     "bill": "HB72",
+     "kind": "author",
+     "caption": "Relating to the provision of Medicaid benefits to certain children formerly in the conservatorship of the Department of Family and Protective Services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB72"
+    },
+    {
+     "session": "86R",
+     "bill": "HB241",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB241"
+    },
+    {
+     "session": "86R",
+     "bill": "HB1739",
+     "kind": "coauthor",
+     "caption": "Relating to recovery under uninsured and underinsured motorist insurance coverage.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB1739"
+    }
+   ]
+  },
+  {
+   "politician_id": "43567dd1-db59-40af-928e-03708237eb98",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Toni Rose",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Rose serves as Vice Chair of the Health Care Affordability Select Committee and on Appropriations Article II (the health and human services budget subcommittee) and Human Services. She was a conferee on SB 457 (nursing facilities Medicaid participation and reimbursement requirements) — actively working to protect Medicaid reimbursement for care facilities. This Medicaid expansion and protection work aligns with stance 2 (offer a public healthcare option alongside private insurance plans).",
+   "sources": [
+    "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A2555",
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB457"
+   ],
+   "office": "Representative",
+   "code": "A2555",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 527,
+   "n_on_topic": 64,
+   "candidates": [
+    {
+     "session": "89R",
+     "bill": "HB2402",
+     "kind": "author",
+     "caption": "Relating to the determination of fees, charges, and rates for certain benefits under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2402"
+    },
+    {
+     "session": "89R",
+     "bill": "HB3902",
+     "kind": "author",
+     "caption": "Relating to the continued reimbursement under Medicaid for nursing facilities after a change in ownership.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3902"
+    },
+    {
+     "session": "89R",
+     "bill": "HB3917",
+     "kind": "author",
+     "caption": "Relating to coverage for maternal depression screenings under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3917"
+    },
+    {
+     "session": "89R",
+     "bill": "HB3981",
+     "kind": "author",
+     "caption": "Relating to the establishment of the case assistance affiliate program to provide certain assistance to Medicaid recipients and child health plan program enrollees.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3981"
+    },
+    {
+     "session": "89R",
+     "bill": "HB4422",
+     "kind": "author",
+     "caption": "Relating to discriminatory practices by a health benefit plan issuer, pharmacy benefit manager, and third-party payor with respect to certain entities participating in a federal drug discount program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB4422"
+    },
+    {
+     "session": "89R",
+     "bill": "HB5152",
+     "kind": "author",
+     "caption": "Relating to Medicaid reimbursement for services provided to certain recipients under a nurse home visiting program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5152"
+    },
+    {
+     "session": "89R",
+     "bill": "HB5155",
+     "kind": "author",
+     "caption": "Relating to the continuation of the maternal opioid misuse model of care for certain Medicaid recipients.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5155"
+    },
+    {
+     "session": "89R",
+     "bill": "HB26",
+     "kind": "author",
+     "caption": "Relating to authorizing Medicaid managed care organizations to offer nutrition support services in lieu of other state Medicaid plan services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB26"
+    },
+    {
+     "session": "89R",
+     "bill": "HB136",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for lactation consultation services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB136"
+    },
+    {
+     "session": "89R",
+     "bill": "HB321",
+     "kind": "author",
+     "caption": "Relating to implementing an express lane option under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB321"
+    },
+    {
+     "session": "89R",
+     "bill": "HB475",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for multisystemic therapy services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB475"
+    },
+    {
+     "session": "89R",
+     "bill": "HB2076",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage of anxiety and pain management in connection with insertion or removal of prescription contraceptive devices.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2076"
+    },
+    {
+     "session": "89R",
+     "bill": "HB2946",
+     "kind": "author",
+     "caption": "Relating to the provision of nutrition support services to Medicaid recipients in lieu of other state Medicaid plan services and a report on the health outcomes of providing those services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2946"
+    },
+    {
+     "session": "89R",
+     "bill": "HB3265",
+     "kind": "author",
+     "caption": "Relating to discriminatory practices by a health benefit plan issuer, pharmacy benefit manager, and third-party payor and certain prescription drug manufacturers, distributors, and related persons with respect to certain entities participating in a federal drug discount program; providing a civil penalty.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3265"
+    },
+    {
+     "session": "88R",
+     "bill": "HB12",
+     "kind": "author",
+     "caption": "Relating to the duration of services provided under Medicaid to women following a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB12"
+    },
+    {
+     "session": "88R",
+     "bill": "HB1293",
+     "kind": "author",
+     "caption": "Relating to the reimbursement of prescription drugs under Medicaid and the child health plan program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB1293"
+    },
+    {
+     "session": "88R",
+     "bill": "HB1803",
+     "kind": "author",
+     "caption": "Relating to the eligibility of certain individuals to purchase Medicare supplement benefit plans.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB1803"
+    },
+    {
+     "session": "88R",
+     "bill": "HB2802",
+     "kind": "author",
+     "caption": "Relating to the Medicaid application form and communication with Medicaid recipients.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2802"
+    },
+    {
+     "session": "88R",
+     "bill": "HB3550",
+     "kind": "author",
+     "caption": "Relating to standards for and services provided by prescribed pediatric extended care centers, including Medicaid reimbursement for those services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3550"
+    },
+    {
+     "session": "88R",
+     "bill": "HB4951",
+     "kind": "author",
+     "caption": "Relating to the Medicare Primacy Coordination Audit and Assistance Program to assist eligible individuals in obtaining certain Medicare benefits.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB4951"
+    },
+    {
+     "session": "88R",
+     "bill": "HB54",
+     "kind": "author",
+     "caption": "Relating to the personal needs allowance for certain Medicaid recipients who are residents of long-term care facilities.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB54"
+    },
+    {
+     "session": "88R",
+     "bill": "HB465",
+     "kind": "author",
+     "caption": "Relating to a pilot program to provide Medicaid coverage of doula services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB465"
+    },
+    {
+     "session": "88R",
+     "bill": "HB916",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage of prescription contraceptive drugs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB916"
+    },
+    {
+     "session": "88R",
+     "bill": "HB1571",
+     "kind": "author",
+     "caption": "Relating to the reimbursement under Medicaid of local educational agencies for the provision of health care services to students.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB1571"
+    },
+    {
+     "session": "88R",
+     "bill": "HB1575",
+     "kind": "author",
+     "caption": "Relating to improving health outcomes for pregnant women under Medicaid and certain other public benefits programs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB1575"
+    },
+    {
+     "session": "88R",
+     "bill": "HB2404",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for functional family therapy services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2404"
+    },
+    {
+     "session": "88R",
+     "bill": "HB2638",
+     "kind": "author",
+     "caption": "Relating to Medicaid coverage and reimbursement for multisystemic therapy services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2638"
+    },
+    {
+     "session": "88R",
+     "bill": "HB2983",
+     "kind": "author",
+     "caption": "Relating to a pilot project to provide medical nutrition assistance to certain Medicaid recipients in this state.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2983"
+    },
+    {
+     "session": "88R",
+     "bill": "HB3188",
+     "kind": "author",
+     "caption": "Relating to health benefit plan coverage for certain biomarker testing.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3188"
+    },
+    {
+     "session": "88R",
+     "bill": "HB4713",
+     "kind": "author",
+     "caption": "Relating to group health benefit plan coverage for early treatment of first episode psychosis.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB4713"
+    },
+    {
+     "session": "87R",
+     "bill": "HB133",
+     "kind": "author",
+     "caption": "Relating to the provision of certain benefits under Medicaid and the Healthy Texas Women program, including the transition of case management for children and pregnant women program services and Healthy Texas Women program services to a managed care program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB133"
+    },
+    {
+     "session": "87R",
+     "bill": "HB4265",
+     "kind": "author",
+     "caption": "Relating to the provision of peer services, including family partner peer support services by family partners, and the provision of those services under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB4265"
+    },
+    {
+     "session": "87R",
+     "bill": "HB4343",
+     "kind": "author",
+     "caption": "Relating to the content of an application for Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB4343"
+    },
+    {
+     "session": "87R",
+     "bill": "HB158",
+     "kind": "author",
+     "caption": "Relating to a pilot program to provide Medicaid coverage of doula services.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB158"
+    },
+    {
+     "session": "87R",
+     "bill": "HB290",
+     "kind": "author",
+     "caption": "Relating to the period of continuous eligibility and a periodic eligibility review for a child for Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB290"
+    },
+    {
+     "session": "87R",
+     "bill": "HB389",
+     "kind": "author",
+     "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB389"
+    },
+    {
+     "session": "87R",
+     "bill": "HB2504",
+     "kind": "author",
+     "caption": "Relating to step therapy protocols required by health benefit plans for coverage of prescription drugs for serious mental illnesses.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB2504"
+    },
+    {
+     "session": "87R",
+     "bill": "HB4365",
+     "kind": "author",
+     "caption": "Relating to a pilot project to improve health care outcomes and reduce costs under Medicaid by providing participating recipients with enhanced case management and other services to address certain social determinants of health.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB4365"
+    },
+    {
+     "session": "87R",
+     "bill": "HB82",
+     "kind": "coauthor",
+     "caption": "Relating to pricing of and health benefit plan cost-sharing requirements for prescription insulin.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB82"
+    },
+    {
+     "session": "87R",
+     "bill": "HB359",
+     "kind": "coauthor",
+     "caption": "Relating to recovery under uninsured and underinsured motorist insurance coverage.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB359"
+    },
+    {
+     "session": "87R",
+     "bill": "HB4040",
+     "kind": "coauthor",
+     "caption": "Relating to the provision of certain benefits under Medicaid, including the coordination of private health benefits, and to reimbursement for some of those benefits.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB4040"
+    },
+    {
+     "session": "86R",
+     "bill": "HB744",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB744"
+    },
+    {
+     "session": "86R",
+     "bill": "HB3548",
+     "kind": "author",
+     "caption": "Relating to managing Medicaid recipient and provider complaints and appeals.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB3548"
+    },
+    {
+     "session": "86R",
+     "bill": "HB3549",
+     "kind": "author",
+     "caption": "Relating to a prohibition on certain inpatient hospital care limitations under the STAR+PLUS Medicaid managed care program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB3549"
+    },
+    {
+     "session": "86R",
+     "bill": "HB1063",
+     "kind": "author",
+     "caption": "Relating to telemedicine medical, telehealth, and home telemonitoring services under Medicaid.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB1063"
+    },
+    {
+     "session": "86R",
+     "bill": "HB1110",
+     "kind": "author",
+     "caption": "Relating to the Medicaid eligibility of certain women after a pregnancy.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB1110"
+    },
+    {
+     "session": "86R",
+     "bill": "HB1576",
+     "kind": "author",
+     "caption": "Relating to the delivery of certain transportation services under Medicaid and certain other health and human services programs.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB1576"
+    },
+    {
+     "session": "86R",
+     "bill": "HB4055",
+     "kind": "author",
+     "caption": "Relating to the availability under Medicaid of certain drugs used to treat human immunodeficiency virus or prevent acquired immune deficiency syndrome.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB4055"
+    },
+    {
+     "session": "86R",
+     "bill": "HB1739",
+     "kind": "coauthor",
+     "caption": "Relating to recovery under uninsured and underinsured motorist insurance coverage.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB1739"
+    },
+    {
+     "session": "85R",
+     "bill": "HB18",
+     "kind": "author",
+     "caption": "Relating to oversight of and requirements applicable to state contracts and other state financial and accounting issues, including the delivery of certain Medicaid medical transportation program services; authorizing a fee.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=HB18"
+    },
+    {
+     "session": "85R",
+     "bill": "HB3675",
+     "kind": "author",
+     "caption": "Relating to the provision of eye health care by certain professionals and institutions as providers in the Medicaid managed care program.",
+     "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=HB3675"
+    }
+   ]
+  }
+ ]
+}

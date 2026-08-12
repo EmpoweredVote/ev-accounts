@@ -1,0 +1,757 @@
+{
+ "pass": "TX medicaid-template proposals",
+ "rows": [
+  {
+   "politician_id": "bd563960-3aa8-4d4d-94cb-62b6c2ae0656",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ana-Maria Ramos",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Ramos supports Medicaid expansion in Texas and views healthcare as a right rather than a privilege. She emphasizes protecting those with preexisting conditions, increased prenatal and postpartum care funding for low-income women, and secured a 24.3% increase in women's healthcare funding in the prior session. Positions are consistent with a public option approach alongside private insurance.",
+   "sources": [
+    "https://ramos4texas.com/issues"
+   ],
+   "office": "Representative",
+   "code": null,
+   "how": "not found in H roster",
+   "wrong_stored_code": null,
+   "candidates": [],
+   "n_on_topic": 0,
+   "proposal": null,
+   "blocked_reason": "not found in H roster"
+  },
+  {
+   "politician_id": "136fc01b-f061-4e30-9aa7-d5735e0a4659",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ann Johnson",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Johnson's Wikipedia page and campaign record indicate she supports Medicaid expansion and access to quality healthcare. She served on committees investigating abuses of public trust and supports broader healthcare access. Her Houston Democratic district and campaign platform align with offering a public healthcare option alongside private insurance.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ann_Johnson_(politician)"
+   ],
+   "office": "Representative",
+   "code": "A3985",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 441,
+   "n_on_topic": 43,
+   "n_candidates": 27,
+   "header_name": "Rep. Ann  Johnson",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "HB475",
+    "kind": "author",
+    "caption": "Relating to Medicaid coverage and reimbursement for multisystemic therapy services.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB475",
+    "isExpansion": false
+   },
+   "blocked_reason": null,
+   "n_expansion": 0
+  },
+  {
+   "politician_id": "67a35228-1353-4044-90b2-cd8fcf48de7b",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Borris Miles",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Miles' Senate website documents he secured over $10 billion in federal funding for primary healthcare services to low-income Texans. He strengthened maternal mortality legislation (2017) and worked to expand healthcare access in Third Ward communities. Consistent advocate for Medicaid expansion and government-funded healthcare for underserved populations.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=13"
+   ],
+   "office": "Senator",
+   "code": "A1115",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 913,
+   "n_on_topic": 46,
+   "n_candidates": 31,
+   "header_name": "Sen. Borris L. Miles",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "SB255",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 2
+  },
+  {
+   "politician_id": "6ed2b57e-4930-4099-8567-d5a6bf7b999f",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Carol Alvarado",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Serves on Senate Health and Human Services Committee. Senate profile emphasizes 'public health' as primary focus area. Texas Democratic minority has consistently called for Medicaid expansion every session. Aligns with lowering Medicare eligibility age and significantly expanding Medicaid.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=6"
+   ],
+   "office": "Senator",
+   "code": "A1315",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 550,
+   "n_on_topic": 12,
+   "n_candidates": 12,
+   "header_name": "Sen. Carol  Alvarado",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "SB255",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 4
+  },
+  {
+   "politician_id": "dd4cb2d3-41c7-498d-8a0c-94f988deb0eb",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Cassandra Garcia Hernandez",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Dallas Democrat on Appropriations committee, representing an urban majority-minority district. Co-sponsored SB 5 (dementia research institute) and as a first-term Democrat her party position is expansion of healthcare access. No authored healthcare expansion bills found, but Democratic caucus and district profile indicate support for a public option or Medicaid expansion.",
+   "sources": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB5",
+    "https://en.wikipedia.org/wiki/Cassandra_Garcia_Hernandez"
+   ],
+   "office": "Representative",
+   "code": "A4495",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 100,
+   "n_on_topic": 5,
+   "n_candidates": 5,
+   "header_name": "Rep. Cassandra  Garcia Hernandez",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "HB2119",
+    "kind": "author",
+    "caption": "Relating to preauthorization of certain benefits by certain health benefit plan issuers.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2119",
+    "isExpansion": false
+   },
+   "blocked_reason": null,
+   "n_expansion": 0
+  },
+  {
+   "politician_id": "32608fd7-5038-4474-bfa9-7392b5e0eb80",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "César Blanco",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Serves on Health and Human Services Committee. AARP Texas Legislative Champion (2023, 2025) — AARP specifically advocates for Medicare/Medicaid expansion and protecting existing benefits. Senate bio emphasizes improving healthcare access. Aligns with lowering Medicare eligibility age and expanding Medicaid.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=29"
+   ],
+   "office": "Senator",
+   "code": "A1330",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 850,
+   "n_on_topic": 38,
+   "n_candidates": 33,
+   "header_name": "Sen. César  Blanco",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "SB255",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 8
+  },
+  {
+   "politician_id": "32608fd7-5038-4474-bfa9-7392b5e0eb80",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "César Blanco",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Senate bio explicitly states he has 'led initiatives to improve healthcare access.' Serves on Health and Human Services Committee. AARP Texas Legislative Champion (2023, 2025) — AARP advocates for Medicare/Medicaid expansion. Consistent with public option alongside private insurance.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=29"
+   ],
+   "office": "Senator",
+   "code": "A1330",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 850,
+   "n_on_topic": 63,
+   "n_candidates": 45,
+   "header_name": "Sen. César  Blanco",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "SB255",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 8
+  },
+  {
+   "politician_id": "d45bbf56-7e43-4932-b536-fd73173eb295",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Claudia Ordaz",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Supports Medicaid expansion (explicitly per Wikipedia). El Paso district has high uninsured rate; she has publicly advocated for expanded Medicaid coverage. Score 2: significantly expand Medicaid.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Claudia_Ordaz"
+   ],
+   "office": "Representative",
+   "code": "A4015",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 525,
+   "n_on_topic": 3,
+   "n_candidates": 3,
+   "header_name": "Rep. Claudia  Ordaz",
+   "name_confirms": true,
+   "proposal": {
+    "session": "87R",
+    "bill": "HB389",
+    "kind": "coauthor",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB389",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 1
+  },
+  {
+   "politician_id": "d45bbf56-7e43-4932-b536-fd73173eb295",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Claudia Ordaz",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Ordaz publicly supports Medicaid expansion, citing that 1 in 3 El Paso adults are uninsured. She advocates for Medicaid expansion as reducing taxpayer costs through reduced uncompensated care — a public option/expanded coverage stance.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Claudia_Ordaz"
+   ],
+   "office": "Representative",
+   "code": "A4015",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 525,
+   "n_on_topic": 15,
+   "n_candidates": 10,
+   "header_name": "Rep. Claudia  Ordaz",
+   "name_confirms": true,
+   "proposal": {
+    "session": "87R",
+    "bill": "HB389",
+    "kind": "coauthor",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB389",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 1
+  },
+  {
+   "politician_id": "2be64a58-ae2c-4eee-b80d-6e673ef774bd",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "John Bucy III",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Has been outspoken on the need to accept Medicaid expansion, reduce maternal mortality, and expand mental health services. Appointed to House Select Committee on Health Care Reform (2022).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/John_Bucy_III"
+   ],
+   "office": "Representative",
+   "code": "A3595",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 669,
+   "n_on_topic": 43,
+   "n_candidates": 30,
+   "header_name": "Rep. John H. Bucy III",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "HB197",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB197",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 6
+  },
+  {
+   "politician_id": "ada67d5b-b7d5-4ab9-a751-59355715c3e1",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "José Menéndez",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Democrat advocating for healthcare access in a district with high uninsured rates; supported CHIP restoration. Opposed Republican Medicaid cut proposals. His 'over 200 bills benefiting children, seniors, and veterans' background includes Medicare and Medicaid preservation advocacy. No evidence found opposing Medicare/Medicaid expansion.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=26"
+   ],
+   "office": "Senator",
+   "code": "A1110",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 1109,
+   "n_on_topic": 20,
+   "n_candidates": 19,
+   "header_name": "Sen. José  Menéndez",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "SB255",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 2
+  },
+  {
+   "politician_id": "1d0b1e50-5bd7-46f6-b9a9-6ca7cdfcebe6",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Judith Zaffirini",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Zaffirini co-authored SB 45 (2025) to expand Medicaid eligibility in Texas under the ACA. She has consistently championed health and human services funding and disability healthcare access throughout her 39+ year career. Medicaid expansion co-authorship is strong evidence for value 2.",
+   "sources": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB45",
+    "https://www.senate.texas.gov/member.php?d=21",
+    "https://en.wikipedia.org/wiki/Judith_Zaffirini"
+   ],
+   "office": "Senator",
+   "code": "A1700",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 1627,
+   "n_on_topic": 47,
+   "n_candidates": 30,
+   "header_name": "Sen. Judith  Zaffirini",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "SB45",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB45",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 3
+  },
+  {
+   "politician_id": "1d0b1e50-5bd7-46f6-b9a9-6ca7cdfcebe6",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Judith Zaffirini",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Co-authored SB 45 (2025) to expand Medicaid to eligible individuals under the ACA. This is direct evidence for Medicare/Medicaid expansion. Also authored SB 51 (2025) expanding mental health professional licensing. Consistent with value 2 (lower Medicare age and expand Medicaid significantly).",
+   "sources": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB45",
+    "https://www.senate.texas.gov/member.php?d=21"
+   ],
+   "office": "Senator",
+   "code": "A1700",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 1627,
+   "n_on_topic": 30,
+   "n_candidates": 21,
+   "header_name": "Sen. Judith  Zaffirini",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "SB45",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB45",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 3
+  },
+  {
+   "politician_id": "50d759c2-05cc-4769-a1d9-69b282745d0d",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mary Ann Perez",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "As a Texas House Democrat representing a working-class southeast Harris County district, Perez has consistently supported Medicaid expansion and affordable healthcare access. Texas is one of the last states without Medicaid expansion. Democrats in Texas uniformly support a public option or Medicaid expansion. Aligns with stance 2: public option alongside private insurance.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mary_Ann_Perez",
+    "http://house.texas.gov/members/member-page?district=144"
+   ],
+   "office": "Representative",
+   "code": "A2535",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 309,
+   "n_on_topic": 10,
+   "n_candidates": 5,
+   "header_name": "Rep. Mary Ann  Perez",
+   "name_confirms": true,
+   "proposal": {
+    "session": "88R",
+    "bill": "HB4713",
+    "kind": "author",
+    "caption": "Relating to group health benefit plan coverage for early treatment of first episode psychosis.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB4713",
+    "isExpansion": false
+   },
+   "blocked_reason": null,
+   "n_expansion": 0
+  },
+  {
+   "politician_id": "619ad301-d993-40b3-94fe-0eb956932dae",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mary Gonzalez",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Gonzalez has consistently supported Medicaid expansion and affordable healthcare in a border district with high uninsured rates. She supports a public healthcare option and has opposed Republican efforts to cut Medicaid. Aligns with stance 2: public option alongside private insurance.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mary_Gonzalez",
+    "http://house.texas.gov/members/member-page?district=75"
+   ],
+   "office": "Representative",
+   "code": "A2410",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 914,
+   "n_on_topic": 21,
+   "n_candidates": 15,
+   "header_name": "Rep. Mary E. González",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "HB2938",
+    "kind": "author",
+    "caption": "Relating to attendant care services under Medicaid and other programs administered by the Health and Human Services Commission, including establishing a minimum base wage for certain personal attendants providing those services and allowing family members to provide those services.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2938",
+    "isExpansion": false
+   },
+   "blocked_reason": null,
+   "n_expansion": 0
+  },
+  {
+   "politician_id": "7d100649-77bc-4dd1-8845-d379ca466fa2",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Nathan Johnson",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Johnson is an active supporter of Medicaid expansion in Texas and healthcare access more broadly. His senate biography notes 'healthcare expansion resulting in hundreds of thousands of newly insured Texans.' This record of pushing for broader government healthcare coverage aligns with lowering the Medicare age and expanding Medicaid significantly.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=16",
+    "https://en.wikipedia.org/wiki/Nathan_Johnson_(Texas_politician)"
+   ],
+   "office": "Senator",
+   "code": "A1265",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 723,
+   "n_on_topic": 35,
+   "n_candidates": 35,
+   "header_name": "Sen. Nathan  Johnson",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "SB637",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB637",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 9
+  },
+  {
+   "politician_id": "7d100649-77bc-4dd1-8845-d379ca466fa2",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Nathan Johnson",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Johnson has 'frequently pushed for legislation related to expanding access to medical care' including Medicaid expansion in Texas. His senate biography explicitly lists 'healthcare' as a top priority and credits his work with 'hundreds of thousands of newly insured Texans.' He authored legislation to expand palliative care definitions and decriminalize fentanyl testing strips.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nathan_Johnson_(Texas_politician)",
+    "https://senate.texas.gov/member.php?d=16"
+   ],
+   "office": "Senator",
+   "code": "A1265",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 723,
+   "n_on_topic": 70,
+   "n_candidates": 49,
+   "header_name": "Sen. Nathan  Johnson",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "SB637",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB637",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 9
+  },
+  {
+   "politician_id": "3aee54f8-89eb-425d-b850-19fff9f2c8ea",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Roland Gutierrez",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Texas Democrat supporting Medicaid expansion (Texas is #1 in uninsured) and consistent with expanding coverage; no Medicare-for-All bill authored but aligned with lowering eligibility age and expanding Medicaid.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=19"
+   ],
+   "office": "Senator",
+   "code": "A1335",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 355,
+   "n_on_topic": 8,
+   "n_candidates": 7,
+   "header_name": "Sen. Roland  Gutierrez",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "SB255",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 3
+  },
+  {
+   "politician_id": "3aee54f8-89eb-425d-b850-19fff9f2c8ea",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Roland Gutierrez",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Campaign materials describe Gutierrez as fighting to 'lower the cost of healthcare' for working families; as a Texas Democrat he supports Medicaid expansion which Texas has refused; no single-payer bill authored but consistent with public option or Medicaid-expansion approach.",
+   "sources": [
+    "http://www.rolandfortexas.com/",
+    "https://senate.texas.gov/member.php?d=19"
+   ],
+   "office": "Senator",
+   "code": "A1335",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 355,
+   "n_on_topic": 19,
+   "n_candidates": 11,
+   "header_name": "Sen. Roland  Gutierrez",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "SB255",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 3
+  },
+  {
+   "politician_id": "1ff93be4-a2d0-432b-af59-ef6ace1eb77b",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Royce West",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Dallas Democrat supporting Medicaid expansion and expanded financial aid for students; consistent with lowering Medicare eligibility age and expanding Medicaid coverage; no Medicare-for-All bill authored.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=23"
+   ],
+   "office": "Senator",
+   "code": "A1625",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 1458,
+   "n_on_topic": 14,
+   "n_candidates": 14,
+   "header_name": "Sen. Royce  West",
+   "name_confirms": true,
+   "proposal": {
+    "session": "88R",
+    "bill": "SB671",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB671",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 2
+  },
+  {
+   "politician_id": "1ff93be4-a2d0-432b-af59-ef6ace1eb77b",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Royce West",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Dallas Democrat representing an uninsured-heavy district; supports Medicaid expansion; childcare standards referenced in official bio; opposes Republican efforts to cut government health programs; no single-payer legislation authored.",
+   "sources": [
+    "https://senate.texas.gov/member.php?d=23"
+   ],
+   "office": "Senator",
+   "code": "A1625",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 1458,
+   "n_on_topic": 27,
+   "n_candidates": 16,
+   "header_name": "Sen. Royce  West",
+   "name_confirms": true,
+   "proposal": {
+    "session": "88R",
+    "bill": "SB671",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB671",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 2
+  },
+  {
+   "politician_id": "2775a1c4-d7e5-45ce-9633-f1ad137c546a",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Sarah Eckhardt",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Explicitly supports Medicaid expansion (website: 'Texas is #1 in uninsured people in the US'); authored SB 361 prohibiting employer discrimination based on reproductive health decisions; advocates telehealth and simplified CHIP/Medicaid enrollment.",
+   "sources": [
+    "https://www.saraheckhardt.com/issues",
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB361"
+   ],
+   "office": "Senator",
+   "code": "A1325",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 770,
+   "n_on_topic": 30,
+   "n_candidates": 19,
+   "header_name": "Sen. Sarah  Eckhardt",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "SB255",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 4
+  },
+  {
+   "politician_id": "2775a1c4-d7e5-45ce-9633-f1ad137c546a",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Sarah Eckhardt",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "reasoning": "Supports Medicaid expansion explicitly on website; advocates simplified enrollment; co-authored SB 11 (88R) school safety legislation showing ability to work across party lines; consistent with lowering Medicare age and significantly expanding Medicaid.",
+   "sources": [
+    "https://www.saraheckhardt.com/issues",
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB11"
+   ],
+   "office": "Senator",
+   "code": "A1325",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 770,
+   "n_on_topic": 13,
+   "n_candidates": 13,
+   "header_name": "Sen. Sarah  Eckhardt",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "SB255",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB255",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 4
+  },
+  {
+   "politician_id": "b9cb31c9-15e0-405d-a8a0-d64850bf0955",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Terry Meza",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Meza's campaign website states: 'Every Texan deserves to have access to quality, affordable health coverage and care' and explicitly advocates accepting federal Medicaid funding to provide healthcare to uninsured Texas families. She has more than 20 years as an educator and is a Democrat representing District 105 (Irving area, Dallas County). Her unambiguous support for Medicaid expansion aligns with stance 2 (public option alongside private insurance to expand coverage).",
+   "sources": [
+    "https://www.terrymeza.com/",
+    "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A3455"
+   ],
+   "office": "Representative",
+   "code": "A3455",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 541,
+   "n_on_topic": 33,
+   "n_candidates": 24,
+   "header_name": "Rep. Thresa \"Terry\"  Meza",
+   "name_confirms": true,
+   "proposal": {
+    "session": "89R",
+    "bill": "HB1920",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain individuals diagnosed with certain mental health disorders.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1920",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 4
+  },
+  {
+   "politician_id": "43567dd1-db59-40af-928e-03708237eb98",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Toni Rose",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Rose serves as Vice Chair of the Health Care Affordability Select Committee and on Appropriations Article II (the health and human services budget subcommittee) and Human Services. She was a conferee on SB 457 (nursing facilities Medicaid participation and reimbursement requirements) — actively working to protect Medicaid reimbursement for care facilities. This Medicaid expansion and protection work aligns with stance 2 (offer a public healthcare option alongside private insurance plans).",
+   "sources": [
+    "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A2555",
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB457"
+   ],
+   "office": "Representative",
+   "code": "A2555",
+   "how": "roster full-name match",
+   "wrong_stored_code": null,
+   "n_bills_seen": 527,
+   "n_on_topic": 64,
+   "n_candidates": 51,
+   "header_name": "Rep. Toni  Rose",
+   "name_confirms": true,
+   "proposal": {
+    "session": "87R",
+    "bill": "HB389",
+    "kind": "author",
+    "caption": "Relating to the expansion of eligibility for Medicaid to certain persons under the federal Patient Protection and Affordable Care Act.",
+    "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB389",
+    "isExpansion": true
+   },
+   "blocked_reason": null,
+   "n_expansion": 1
+  }
+ ]
+}
