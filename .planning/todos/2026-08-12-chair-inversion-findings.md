@@ -164,7 +164,53 @@ margin picked HB1372 "Revisions" for every childcare row, when the childcare cla
 159 × "prekindergarten", 3 × "Child Care Scholarship" in the enacted text, and **none of it in the
 synopsis**, which is why the topic clause had to be quoted from the chapter text.
 
-**(b) The 47 instrument-free rows — needs the full class-C treatment**: crawl that topic's bill
+### ✅ (b) THE INSTRUMENT-FREE ROWS — Maryland DONE, migration 1721 applied and verified
+The 48 rows left after 1717 are **three different jobs**, only one of which mgaleg can reach:
+**MD 35 · CA 11 · VA 2**. The CA and VA rows are NOT unsourced — they already carry council agendas,
+leginfo bill pages, congress.gov and news citations, so they need VERIFICATION, not a crawl. ▶ owed.
+
+**MD 35 → 25 re-sourced · 9 left owed · 1 verified unchanged.** Chairs untouched; corpus 33,083/32,542.
+Pipeline: `md-member-legislation.mjs` → `md-member-dossier.mjs` → `gen-1721-md-classc-sourcing.mjs`
+(+ `md-member-legislation-queue.mjs` for reading, `lib/md-topic-nets.mjs` for the nets).
+
+🔑 **THE CRAWL WAS THE WRONG PLAN.** Fetching every healthcare/housing/rent bill to read its sponsor
+list is **4,713 pages, ~86 minutes, and identifies people by SURNAME**. mgaleg will instead list a
+member's own sponsored legislation per session — `/Members/Details/<slug>?ys=<session>` — which is
+~150 fetches and is mgaleg's OWN attribution, so it cannot mis-credit a surname twin.
+🔴🔴 **BUT A MEMBER RECORD IS CHAMBER-SCOPED.** Ask a current senator's record for a session when they
+sat in the House and mgaleg returns a page of exactly **56,073 bytes with ZERO bills** — not an error.
+Alonzo T. Washington's ten House sessions read as "sponsored nothing". Treating that as absence would
+manufacture a false negative for every chamber-switcher, so it is recorded as UNAVAILABLE_SESSION and
+those rows are reported **owed**, never absent.
+🔴🔴 **THE NETS HAD SUBSTRING COLLISIONS AND THEY REACHED THE TOP OF THE QUEUE.** Before `\b` bounding,
+the best-ranked evidence included *"App-**rent**-iceships in Licensed Occupations Act"* for Rosapepe on
+housing, *"2nd Lieu-**tenant** Richard Collins Hate Crimes Act"* for Benson on housing, *"**Premium**
+Cigar Lounge Alcoholic Beverages License"* for Harris on healthcare, and **rental-car spare-tire bills**
+as Kagan's top three housing bills. Same defect as the Socrata "Tran"→"Transportation" pass.
+⚠ Word boundaries are not enough — `TOPIC_EXCLUDE` also drops *"Correctional Services – **Restrictive
+Housing**"* (solitary confinement), which is a real word match and a nonsense citation.
+
+🔑 **RANK BY LEAD SPONSORSHIP.** Being one of 30 co-sponsors on a consensus bill is weak; leading the
+bill is a position. Benson's healthcare net matched 308 bills — unreadable — and lead-sponsorship plus
+a tighter core pattern cut it to something that could actually be read.
+
+🔴 **The 9 left OWED, deliberately, rather than sourced to something weak:** 4 × Same-Sex Marriage
+(Ellis, Harris, Kramer, Watson — MD settled it in 2012; **Ellis's entire tenure is readable and holds
+no such bill**, an absence that evidences nothing because there was nothing left to vote on; Harris's
+only hit is a financial-disclosure ethics bill mentioning domestic partners); Harris/Love/Watson on
+Healthcare and Watson on Housing (**Watson's health leads are paternity testing and sickle cell —
+public health, not coverage**); Muse on Childcare.
+✓ Harris/Childcare was **verified already correct** (SB0664 he leads, SB0402 enacted Ch. 641) — no change.
+
+### 🔴🔴 NEW, MUCH LARGER FINDING: "backed Medicaid expansion" IS A NATIONAL TEMPLATE
+Every one of the 12 MD healthcare rows said the member "backed Medicaid expansion". Maryland expanded
+Medicaid in **2013**, before most of them were seated — so the claim was not merely unsourced, it was
+impossible. Querying the corpus for the phrase:
+**368 rows · 288 politicians · 44 states · 360 of them with NO bill citation of any kind.**
+The 1714 cohort was a slice of this, exactly as pass 6 found the cohort itself was the defect.
+▶▶ **This is its own queue and is NOT started.**
+
+**(b-remaining) The CA 11 + VA 2, and the 47 elsewhere — needs the full class-C treatment**: crawl that topic's bill
 titles, build the co-sponsor reverse index, match, pick squarely on-topic bills.
 Healthcare Access 13 · Affordable Housing 16 · Same-Sex Marriage 5 · Civil Rights 4 · Climate 3 ·
 Childcare 2 · Ukraine 1 · Rent Regulation 1 · Misinformation 1.

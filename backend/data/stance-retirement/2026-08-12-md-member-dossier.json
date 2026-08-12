@@ -1,0 +1,4464 @@
+{
+ "pass": "MD member bill dossiers for reading",
+ "rows": [
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Joanne C. Benson",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Benson is a strong healthcare access advocate. She backed Medicaid expansion, prescription drug affordability legislation, and healthcare safety net programs for Prince George's County residents.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "member_slug": "benson",
+   "tenure": "First elected to the Senate in 2010. Member of the Senate since 2011. Member of the Maryland House of Delegates, 1991-2011.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2011,
+     "to": 9999,
+     "src": "Member of the Senate since 2011."
+    },
+    {
+     "chamber": "house",
+     "from": 1991,
+     "to": 2011,
+     "src": "Member of the Maryland House of Delegates, 1991-2011."
+    }
+   ],
+   "sessions_read": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS",
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [],
+   "n_bills_seen": 2409,
+   "n_on_topic": 306,
+   "n_candidates": 306,
+   "picks": [
+    {
+     "key": "2024RS:sb0208",
+     "title": "Maryland Medical Assistance Program - Provider Agencies and Personal Care Aides - Reimbursement and Wages",
+     "number": "SB0208",
+     "chamber": "senate",
+     "session": "2024RS",
+     "slug": "sb0208",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0208?ys=2024RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring the Maryland Department of Health to increase the hourly reimbursement rate for certain personal assistance services under the Maryland Medical Assistance Program to a minimum of $25 per hour; requiring provider agencies to pay the greater of $16 per hour or 64% of the hourly reimbursement rate to personal care aides and to provide a written notice regarding the wage to personal care aides; requiring provider agencies to submit annual cost reports to the Department; etc.",
+     "status": "In the Senate - Withdrawn by Sponsor",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Benson",
+     "all_sponsor_slugs": [
+      "benson"
+     ],
+     "lead_sponsor_field": "Senator Benson"
+    },
+    {
+     "key": "2023RS:sb0604",
+     "title": "Maryland Medical Assistance Program – Provider Agencies and Personal Care Aides – Reimbursement and Wages",
+     "number": "SB0604",
+     "chamber": "senate",
+     "session": "2023RS",
+     "slug": "sb0604",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0604?ys=2023RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring the Maryland Department of Health to increase the hourly reimbursement rate for certain personal assistance services under the Maryland Medical Assistance Program to a minimum of $25 per hour; requiring provider agencies to pay the greater of $16 per hour or 64% of the hourly reimbursement rate to personal care aides and to provide a written notice regarding the wage to personal care aides; requiring provider agencies to submit annual cost reports to the Department; etc.",
+     "status": "In the Senate - Hearing 3/07 at 1:00 p.m. (Finance)",
+     "sponsor_count": 3,
+     "slug_confirms": true,
+     "slug_label": "Benson",
+     "all_sponsor_slugs": [
+      "benson",
+      "lam02",
+      "klausmeier"
+     ],
+     "lead_sponsor_field": "Senator Benson"
+    },
+    {
+     "key": "2023RS:sb0965",
+     "title": "Cancer Screening - Health Insurance and Assessment of Outreach, Education, and Health Disparities",
+     "number": "SB0965",
+     "chamber": "senate",
+     "session": "2023RS",
+     "slug": "sb0965",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0965?ys=2023RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring insurers, nonprofit health service plans, and health maintenance organizations to provide coverage for certain lung cancer diagnostic imaging and limiting the copayment, coinsurance, or deductible requirement that the entities can require for lung cancer screening and diagnosis; and requiring the Maryland Department of Health to conduct an assessment on certain outreach, education, and health disparities in cancer screening and report the results of the assessment to the General Assembly on or before January 1, 2024.",
+     "status": "Approved by the Governor - Chapter 353",
+     "sponsor_count": 3,
+     "slug_confirms": true,
+     "slug_label": "Benson",
+     "all_sponsor_slugs": [
+      "benson",
+      "carter01",
+      "young04"
+     ],
+     "lead_sponsor_field": "Senator Benson"
+    },
+    {
+     "key": "2022RS:sb0659",
+     "title": "Maryland Medical Assistance Program - Psychiatric Inpatient Care - Admissions Restrictions (Psychiatric Hospital Admissions Equity Act)",
+     "number": "SB0659",
+     "chamber": "senate",
+     "session": "2022RS",
+     "slug": "sb0659",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0659?ys=2022RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Prohibiting the Maryland Department of Health from limiting or restricting admission of a Maryland Medical Assistance Program recipient for inpatient care at a special psychiatric hospital or an acute general care hospital with separately identified inpatient psychiatric service except under certain circumstances; and requiring the Department by July 1 each year, beginning in 2024, to report certain information and data to the Senate Finance Committee and the House Health and Government Operations Committee.",
+     "status": "In the House - First Reading House Rules and Executive Nominations",
+     "sponsor_count": 5,
+     "slug_confirms": true,
+     "slug_label": "Benson",
+     "all_sponsor_slugs": [
+      "benson",
+      "sydnor02",
+      "smith02",
+      "jackson03",
+      "kelley"
+     ],
+     "lead_sponsor_field": "Senator Benson"
+    }
+   ]
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Nick Charles",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Charles supports expanding healthcare access in Prince George's County. He backed Medicaid expansion and healthcare affordability legislation for working families.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "member_slug": "charles02",
+   "tenure": "Member of the Maryland Senate since December 5, 2023. Member of the Maryland House of Delegates 2019-2023.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2023,
+     "to": 9999,
+     "src": "Member of the Maryland Senate since December 5, 2023."
+    },
+    {
+     "chamber": "house",
+     "from": 2019,
+     "to": 2023,
+     "src": "Member of the Maryland House of Delegates 2019-2023."
+    }
+   ],
+   "sessions_read": [
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS"
+   ],
+   "n_bills_seen": 244,
+   "n_on_topic": 13,
+   "n_candidates": 13,
+   "picks": [
+    {
+     "key": "2026RS:sb0551",
+     "title": "Health Insurance - Ovarian Cancer Prevention With Salpingectomy - Required Coverage and Prohibited Cost Sharing",
+     "number": "SB0551",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0551",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0551?ys=2026RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring certain insurers, nonprofit health service plans, and health maintenance organizations to provide individuals with salpingectomy coverage for ovarian cancer prevention; and prohibiting the insurers, nonprofit health service plans, and health maintenance organizations from imposing a copayment, coinsurance, or deductible requirement on the salpingectomy coverage.",
+     "status": "In the House - Third Reading Passed with Amendments (128-6)",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Charles",
+     "all_sponsor_slugs": [
+      "charles02"
+     ],
+     "lead_sponsor_field": "Senator Charles"
+    },
+    {
+     "key": "2025RS:sb0518",
+     "title": "Health Insurance - Screening for Ovarian Cancer - Required Coverage and Prohibited Cost Sharing",
+     "number": "SB0518",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0518",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0518?ys=2025RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring certain insurers, nonprofit health service plans, and health maintenance organizations to provide individuals over at least 45 years of age with coverage for certain preventive screenings for ovarian cancer, including MRI and CT scans; and prohibiting the insurers, nonprofit health service plans, and health maintenance organizations from imposing a copayment, coinsurance, or deductible requirement on coverage for the preventive screenings.",
+     "status": "In the Senate - Hearing 2/12 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Charles",
+     "all_sponsor_slugs": [
+      "charles02"
+     ],
+     "lead_sponsor_field": "Senator Charles"
+    },
+    {
+     "key": "2026RS:sb0549",
+     "title": "Mental Health - Treatment Plans for Individuals in Facilities - Participation of Family Members or Other Individuals",
+     "number": "SB0549",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0549",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0549?ys=2026RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Requiring certain facilities to inform individuals of certain rights relating to the participation of a family member or other authorized individual in the individual's plan of treatment; requiring facilities to recognize certain documents as an individual's formal request to allow a certain individual to participate in a certain plan; limiting the reasons for which a treating provider is authorized to withhold information on an individual's plan of treatment from certain third parties; etc.",
+     "status": "In the Senate - Hearing 3/10 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Charles",
+     "all_sponsor_slugs": [
+      "charles02"
+     ],
+     "lead_sponsor_field": "Senator Charles"
+    },
+    {
+     "key": "2026RS:sb0550",
+     "title": "Health Care Decisions Act - Surrogate Decision Making - Mental Disorders",
+     "number": "SB0550",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0550",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0550?ys=2026RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Repealing the prohibition against a surrogate authorizing treatment for a mental disorder for a person who has been certified to be incapable of making an informed decision.",
+     "status": "In the Senate - Hearing 2/24 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Charles",
+     "all_sponsor_slugs": [
+      "charles02"
+     ],
+     "lead_sponsor_field": "Senator Charles"
+    }
+   ]
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Arthur Ellis",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Ellis supports expanding healthcare access for Charles County residents. He backed Medicaid expansion and healthcare affordability legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "member_slug": "ellis01",
+   "tenure": "First elected to the Maryland Senate in 2018. Member of the Senate since January 9, 2019.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2019,
+     "to": 9999,
+     "src": "Member of the Senate since January 9, 2019."
+    }
+   ],
+   "sessions_read": [
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [],
+   "n_bills_seen": 703,
+   "n_on_topic": 101,
+   "n_candidates": 101,
+   "picks": [
+    {
+     "key": "2026RS:sb0120",
+     "title": "Health Insurance - Required Benefits for Dental Preventive Care - Frequency Limitation Interval (Healthy Moms and Family Smiles Act)",
+     "number": "SB0120",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0120",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0120?ys=2026RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Shortening, from 120 to 90, the maximum interval of days that certain carriers may impose as a frequency limitation on dental preventive care; and applying the Act to all policies, contracts, and health benefit plans issued, delivered, or renewed in the State on or after January 1, 2027.",
+     "status": "In the Senate - Hearing 2/04 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Ellis",
+     "all_sponsor_slugs": [
+      "ellis01"
+     ],
+     "lead_sponsor_field": "Senator Ellis"
+    },
+    {
+     "key": "2025RS:sb0094",
+     "title": "Maryland Medical Assistance Program - Maternal Health Self-Measured Blood Pressure Monitoring",
+     "number": "SB0094",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0094",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0094?ys=2025RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring, beginning January 1, 2026, the Maryland Medical Assistance Program to provide coverage for self-measured blood pressure monitoring for certain eligible Program recipients; and requiring reimbursement of health care provider and other staff time used for patient training, transmission of blood pressure data, interpretation of blood pressure readings and reporting, remote patient monitoring, and the delivery of co-interventions, including educational materials or classes.",
+     "status": "Approved by the Governor - Chapter 715",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Ellis",
+     "all_sponsor_slugs": [
+      "ellis01"
+     ],
+     "lead_sponsor_field": "Senator Ellis"
+    },
+    {
+     "key": "2025RS:sb0129",
+     "title": "Public Health - Maryland Commission on Health Equity - Advisory Committee and Hospital Reporting",
+     "number": "SB0129",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0129",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0129?ys=2025RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring the Maryland Commission on Health Equity, in coordination with the Maryland Department of Health, to establish a health equity measures advisory committee to determine the 10 widest disparities in health care quality, access, or outcomes for vulnerable populations; and requiring the health equity advisory committee to review the health equity reports submitted annually to the Department by licensed hospitals in the State.",
+     "status": "In the Senate - Hearing 1/30 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Ellis",
+     "all_sponsor_slugs": [
+      "ellis01"
+     ],
+     "lead_sponsor_field": "Senator Ellis"
+    },
+    {
+     "key": "2025RS:sb0367",
+     "title": "Maryland Medical Assistance Program - Supportive Housing and Health Services",
+     "number": "SB0367",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0367",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0367?ys=2025RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring the Maryland Medical Assistance Program, beginning July 1, 2026, to provide supportive housing and health services to certain Program recipients; establishing requirements for professionals seeking certification as a certified supportive housing and health services professional and entities that employ or contract with supportive housing and health services professionals; requiring, by January 1, 2026, the Department to approve at least one accredited training and certification program; etc.",
+     "status": "In the Senate - Hearing 2/04 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Ellis",
+     "all_sponsor_slugs": [
+      "ellis01"
+     ],
+     "lead_sponsor_field": "Senator Ellis"
+    }
+   ]
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Kevin M. Harris",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Harris supports expanding healthcare access in Prince George's County. He backed Medicaid expansion and healthcare affordability legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "member_slug": "harris03",
+   "tenure": "Member of the Maryland House of Delegates 2023-2025. Member of the Maryland Senate since December 9, 2025",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 2023,
+     "to": 2025,
+     "src": "Member of the Maryland House of Delegates 2023-2025."
+    },
+    {
+     "chamber": "senate",
+     "from": 2025,
+     "to": 9999,
+     "src": "Member of the Maryland Senate since December 9, 2025"
+    }
+   ],
+   "sessions_read": [
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2023RS",
+    "2024RS",
+    "2025RS"
+   ],
+   "n_bills_seen": 109,
+   "n_on_topic": 4,
+   "n_candidates": 4,
+   "picks": [
+    {
+     "key": "2026RS:sb0527",
+     "title": "Public Health - Ibogaine Clinical Research Grant Program - Establishment (Veterans Mental Health Innovations Act)",
+     "number": "SB0527",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0527",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0527?ys=2026RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Establishing the Ibogaine Clinical Research Grant Program to provide grants to certain research institutions to conduct certain clinical drug development trials on the use of ibogaine; and including the Program as an authorized use of funding from the Opioid Restitution Fund.",
+     "status": "In the Senate - Hearing 2/24 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Harris",
+     "all_sponsor_slugs": [
+      "harris03"
+     ],
+     "lead_sponsor_field": "Senator Harris"
+    },
+    {
+     "key": "2026RS:sb0385",
+     "title": "Public Health - Recommendations for Immunizations, Screenings, and Preventive Services - Pharmacist Administration and Required Health Insurance Coverage (The Vax Act)",
+     "number": "SB0385",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0385",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0385?ys=2026RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring the Secretary of Health to issue recommendations for certain immunizations, screenings, and preventive services based on certain evidence-based scientific and clinical guidance; requiring the Secretary, before adopting a recommendation for a certain preventive service to hold a notice and comments period, obtain a certain analysis from the Maryland Health Care Commission, and cite the basis for the recommendation; altering the authority of pharmacists to administer certain vaccinations; etc.",
+     "status": "Approved by the Governor - Chapter 8",
+     "sponsor_count": 10,
+     "slug_confirms": true,
+     "slug_label": "Harris",
+     "all_sponsor_slugs": [
+      "augustine01",
+      "beidle01",
+      "harris03",
+      "hettleman02",
+      "kagan01",
+      "king",
+      "lam02",
+      "young04",
+      "love02",
+      "zucker01"
+     ],
+     "lead_sponsor_field": "President"
+    },
+    {
+     "key": "2026RS:hb0637",
+     "title": "Public Health - Recommendations for Immunizations, Screenings, and Preventive Services - Pharmacist Administration and Required Health Insurance Coverage (The Vax Act)",
+     "number": "HB0637",
+     "chamber": "house",
+     "session": "2026RS",
+     "slug": "hb0637",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0637?ys=2026RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring the Secretary of Health to issue recommendations for certain immunizations, screenings, and preventive services based on certain evidence-based scientific and clinical guidance; requiring the Secretary, before adopting a recommendation for a certain preventive service, to hold a notice and comment period, obtain a certain analysis from the Maryland Health Care Commission, and cite the basis for the recommendation; altering the health insurance coverage requirements for certain immunizations, screenings, and services; etc.",
+     "status": "Approved by the Governor - Chapter 7",
+     "sponsor_count": 39,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "acevero01",
+      "allen01",
+      "amprey01",
+      "behler01",
+      "bhandari01",
+      "boafo01",
+      "boyce01",
+      "coley01",
+      "ebersole01",
+      "edelson01",
+      "fennell01",
+      "foley01",
+      "forbes01",
+      "guyton01",
+      "harrison01",
+      "hill02",
+      "holmes",
+      "ivey01",
+      "jones01",
+      "kaufman01",
+      "lewis01",
+      "mireku01",
+      "moon01",
+      "moreno01",
+      "odom01",
+      "palakovich01",
+      "pasteur01",
+      "patterson02",
+      "phillips02",
+      "pruski01",
+      "qi01",
+      "roberts01",
+      "rogers01",
+      "ross01",
+      "ruff01",
+      "simmons01",
+      "solomon01",
+      "spiegel01",
+      "stewart01",
+      "taveras01",
+      "turner01",
+      "vogel01",
+      "watson02",
+      "white01",
+      "wims01",
+      "woods01",
+      "wu01",
+      "ziegler01",
+      "bagnall01",
+      "cullison",
+      "guzzone01",
+      "lopez01"
+     ],
+     "lead_sponsor_field": "Speaker"
+    },
+    {
+     "key": "2026RS:hb1477",
+     "title": "Public Health - Ibogaine Clinical Research Grant Program - Establishment (Veterans Mental Health Innovations Act)",
+     "number": "HB1477",
+     "chamber": "house",
+     "session": "2026RS",
+     "slug": "hb1477",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1477?ys=2026RS",
+     "lead": false,
+     "isCore": false,
+     "synopsis": "Establishing the Ibogaine Clinical Research Grant Program to provide grants to certain research institutions to conduct certain clinical drug development trials on the use of ibogaine; and including the Program as an authorized use of funding from the Opioid Restitution Fund.",
+     "status": "In the House - Hearing 3/10 at 1:00 p.m.",
+     "sponsor_count": 10,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "odom01",
+      "behler01",
+      "boafo01",
+      "fennell01",
+      "holmes",
+      "lehman01",
+      "long02",
+      "phillips02",
+      "rogers01",
+      "simmons01"
+     ],
+     "lead_sponsor_field": "Delegate Odom"
+    }
+   ]
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Shaneka Henson",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Henson supports expanding healthcare access. She backed Medicaid expansion and healthcare affordability legislation for Anne Arundel County residents.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "member_slug": "henson02",
+   "tenure": "Sworn into the Maryland Senate on January 8, 2025. Member of the Maryland House of Delegates May 16, 2019 to January 8, 2025.",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 2019,
+     "to": 2025,
+     "src": "Member of the Maryland House of Delegates May 16, 2019 to January 8, 2025."
+    }
+   ],
+   "sessions_read": [
+    "2025RS"
+   ],
+   "sessions_unreadable": [
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS"
+   ],
+   "n_bills_seen": 83,
+   "n_on_topic": 4,
+   "n_candidates": 4,
+   "picks": [
+    {
+     "key": "2025RS:sb0506",
+     "title": "Maryland Medical Assistance Program - Use of Reimbursement Funds by Schools",
+     "number": "SB0506",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0506",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0506?ys=2025RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring elementary schools, secondary schools, and county school systems to use certain funds received for services provided under the Maryland Medical Assistance Program or the Maryland Children's Health Insurance Program to provide additional positions for providers, paid internships for students seeking to become providers, stipends designed to address problems in provider recruitment and retention, and stipends for providers working in low-performing schools designed to encourage provider recruitment and retention.",
+     "status": "In the Senate - Hearing 3/05 at 1:00 p.m. (Education, Energy, and the Environment)",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Henson",
+     "all_sponsor_slugs": [
+      "henson02"
+     ],
+     "lead_sponsor_field": "Senator Henson"
+    },
+    {
+     "key": "2025RS:sb0508",
+     "title": "Maryland Medical Assistance Program and Health Insurance - Required Coverage for Aesthetic Services and Restorative Care for Victims of Domestic Violence (Healing Our Scars Act)",
+     "number": "SB0508",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0508",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0508?ys=2025RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring the Maryland Medical Assistance Program and certain insurers, nonprofit health service plans, health maintenance organizations, and managed care organizations to provide coverage to victims of domestic violence for aesthetic services and restorative care determined to be medically necessary for the treatment of physical injuries caused by domestic violence.",
+     "status": "In the Senate - Hearing 2/11 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Henson",
+     "all_sponsor_slugs": [
+      "henson02"
+     ],
+     "lead_sponsor_field": "Senator Henson"
+    },
+    {
+     "key": "2025RS:hb0689",
+     "title": "Maryland Medical Assistance Program – Use of Reimbursement Funds by Schools",
+     "number": "HB0689",
+     "chamber": "house",
+     "session": "2025RS",
+     "slug": "hb0689",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0689?ys=2025RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring elementary schools, secondary schools, and county school systems to use certain funds received for services provided under the Maryland Medical Assistance Program or the Maryland Children's Health Insurance Program to provide additional positions for providers, paid internships for students seeking to become providers, stipends for providers that are designed to address problems in provider recruitment and retention, and stipends for providers working in low-performing schools that are designed to address retention.",
+     "status": "In the House - Hearing 2/25 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "atterbeary01"
+     ],
+     "lead_sponsor_field": "Delegate Atterbeary"
+    },
+    {
+     "key": "2025RS:hb0381",
+     "title": "Maryland Medical Assistance Program and Health Insurance - Required Coverage for Aesthetic Services and Restorative Care for Victims of Domestic Violence (Healing Our Scars Act)",
+     "number": "HB0381",
+     "chamber": "house",
+     "session": "2025RS",
+     "slug": "hb0381",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0381?ys=2025RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring the Maryland Medical Assistance Program and certain insurers, nonprofit health service plans, health maintenance organizations, and managed care organizations to provide coverage to victims of domestic violence for aesthetic services and restorative care determined to be medically necessary for the treatment of physical injuries caused by domestic violence.",
+     "status": "In the House - Hearing 1/30 at 1:00 p.m.",
+     "sponsor_count": 8,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "martinez01",
+      "acevero01",
+      "lehman01",
+      "lewis01",
+      "roberts01",
+      "taylor03",
+      "woods01",
+      "young05"
+     ],
+     "lead_sponsor_field": "Delegate Martinez"
+    }
+   ]
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "William C. Smith, Jr.",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Smith supports universal healthcare access. He backs Medicaid expansion and prescription drug cost control legislation. His committee has processed healthcare-related criminal justice reforms.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "member_slug": "smith02",
+   "tenure": "Member of the Maryland House of Delegates 2014-2016. Appointed to the Maryland Senate on December 13, 2016. Member of the Maryland Senate since December 21, 2016.",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 2014,
+     "to": 2016,
+     "src": "Member of the Maryland House of Delegates 2014-2016."
+    },
+    {
+     "chamber": "senate",
+     "from": 2016,
+     "to": 9999,
+     "src": "Member of the Maryland Senate since December 21, 2016."
+    }
+   ],
+   "sessions_read": [
+    "2017RS",
+    "2018RS",
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2014RS",
+    "2015RS",
+    "2016RS"
+   ],
+   "n_bills_seen": 1764,
+   "n_on_topic": 93,
+   "n_candidates": 93,
+   "picks": [
+    {
+     "key": "2019RS:sb0765",
+     "title": "Health Insurance - Continuation Coverage - Change in Employment Status",
+     "number": "SB0765",
+     "chamber": "senate",
+     "session": "2019RS",
+     "slug": "sb0765",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0765?ys=2019RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Extending from 18 to 36 months, under certain circumstances, the period of time for which certain group contracts are required to provide continuation coverage for insureds who have experienced a change in status as the result of termination of employment other than for cause; and applying the Act to all policies, contracts, and health benefit plans issued, delivered, or renewed in the State on or after January 1, 2020.",
+     "status": "In the Senate - Withdrawn by Sponsor",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Smith",
+     "all_sponsor_slugs": [
+      "smith02"
+     ],
+     "lead_sponsor_field": "Senator Smith"
+    },
+    {
+     "key": "2025RS:sb0356",
+     "title": "Public Health - Repeal of Prohibition on Transfer of Human Immunodeficiency Virus (Carlton R. Smith Act)",
+     "number": "SB0356",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0356",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0356?ys=2025RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Repealing the prohibition on an individual from knowingly transferring or attempting to transfer the human immunodeficiency virus to another individual.",
+     "status": "Approved by the Governor - Chapter 652",
+     "sponsor_count": 3,
+     "slug_confirms": true,
+     "slug_label": "Smith",
+     "all_sponsor_slugs": [
+      "smith02",
+      "waldstreicher1",
+      "love02"
+     ],
+     "lead_sponsor_field": "Senator Smith"
+    },
+    {
+     "key": "2020RS:sb0903",
+     "title": "Immigration Enforcement - Public Schools, Hospitals, and Courthouses - Policies",
+     "number": "SB0903",
+     "chamber": "senate",
+     "session": "2020RS",
+     "slug": "sb0903",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0903?ys=2020RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Requiring the Attorney General, in consultation with certain stakeholders, to develop guidelines to assist public schools, hospitals, and courthouses to draft policies that limit civil immigration enforcement activities on their premises in order to ensure these facilities remain safe and accessible to all; and authorizing public schools, hospitals, and courthouses to establish and publish policies that limit immigration enforcement on their premises to the fullest extent possible.",
+     "status": "In the Senate - Hearing 2/26 at 12:00 p.m. (Judicial Proceedings)",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Smith",
+     "all_sponsor_slugs": [
+      "smith02"
+     ],
+     "lead_sponsor_field": "Senator Smith"
+    },
+    {
+     "key": "2020RS:sb0904",
+     "title": "Sheila E. Hixson Behavioral Health Services Matching Grant Program for Service Members and Veterans - Establishment",
+     "number": "SB0904",
+     "chamber": "senate",
+     "session": "2020RS",
+     "slug": "sb0904",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0904?ys=2020RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Establishing the Sheila E. Hixson Behavioral Health Services Matching Grant Program for Service Members and Veterans; providing for the purpose of the Program; requiring the Maryland Department of Health to administer the Program; requiring the Program to award certain grants to nonprofit organizations to establish and expand certain community behavioral health programs; establishing a certain eligibility requirement; requiring an eligible nonprofit organization to secure certain contributions for the proposal; etc.",
+     "status": "In the Senate - Hearing 2/18 at 1:00 p.m. (Finance)",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Smith",
+     "all_sponsor_slugs": [
+      "smith02"
+     ],
+     "lead_sponsor_field": "Senator Smith"
+    }
+   ]
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Cheryl C. Kagan",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Kagan strongly supports healthcare access expansion. She votes for Medicaid expansion and healthcare affordability legislation representing a predominantly healthcare-aware Montgomery County district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "member_slug": "kagan01",
+   "tenure": "Member of the House of Delegates January 11, 1995 to January 8, 2003, representing District 17, Montgomery County. First elected to the Maryland Senate in 2014. Member of the Senate since 2015.",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 1995,
+     "to": 2003,
+     "src": "Member of the House of Delegates January 11, 1995 to January 8, 2003, representing District 17, Montgomery County."
+    },
+    {
+     "chamber": "senate",
+     "from": 2015,
+     "to": 9999,
+     "src": "Member of the Senate since 2015."
+    }
+   ],
+   "sessions_read": [
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS",
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [],
+   "n_bills_seen": 1590,
+   "n_on_topic": 85,
+   "n_candidates": 85,
+   "picks": [
+    {
+     "key": "2024RS:sb0492",
+     "title": "Public Schools - Student Telehealth Appointments - State Guidelines, Policies, and Access",
+     "number": "SB0492",
+     "chamber": "senate",
+     "session": "2024RS",
+     "slug": "sb0492",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0492?ys=2024RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring the State Department of Education and the Maryland Department of Health jointly to adopt certain State guidelines for school health services regarding student access to telehealth appointments during the school day in public middle and high schools in the State; and requiring each county board of education to establish a certain student telehealth policy.",
+     "status": "In the House - Rereferred to Ways and Means",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Kagan",
+     "all_sponsor_slugs": [
+      "kagan01"
+     ],
+     "lead_sponsor_field": "Senator Kagan"
+    },
+    {
+     "key": "2021RS:sb0278",
+     "title": "State Department of Education and Maryland Department of Health - Maryland School-Based Health Center Standards - Telehealth",
+     "number": "SB0278",
+     "chamber": "senate",
+     "session": "2021RS",
+     "slug": "sb0278",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0278?ys=2021RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring the State Department of Education and the Maryland Department of Health to authorize a certain health care practitioner at an approved school-based health center to provide health care services through telehealth under certain circumstances; prohibiting the State Department of Education and the Maryland Department of Health from establishing certain requirements for a certain school-based health center to provide health care services through telehealth; etc.",
+     "status": "Approved by the Governor - Chapter 348",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Kagan",
+     "all_sponsor_slugs": [
+      "kagan01"
+     ],
+     "lead_sponsor_field": "Senator Kagan"
+    },
+    {
+     "key": "2020RS:sb0402",
+     "title": "Health Care Practitioners – Telehealth and Shortage",
+     "number": "SB0402",
+     "chamber": "senate",
+     "session": "2020RS",
+     "slug": "sb0402",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0402?ys=2020RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Authorizing certain health care practitioners to establish a practitioner-patient relationship through certain telehealth interactions under certain circumstances; requiring a health care practitioner providing telehealth services to be held to the same standards of practice that are applicable to in-person settings and, if clinically appropriate, provide or refer a patient for in-patient services or another type of telehealth service; requiring a health care practitioner to perform a certain evaluation; etc.",
+     "status": "Approved by the Governor - Chapter 16",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Kagan",
+     "all_sponsor_slugs": [
+      "kagan01",
+      "lam02"
+     ],
+     "lead_sponsor_field": "Senator Kagan"
+    },
+    {
+     "key": "2016RS:sb0001",
+     "title": "Health Insurance - In Vitro Fertilization - Use of Spouse's Sperm - Exception",
+     "number": "SB0001",
+     "chamber": "senate",
+     "session": "2016RS",
+     "slug": "sb0001",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0001?ys=2016RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Altering the circumstances under which insurers, nonprofit health service plans, and health maintenance organizations must provide benefits for expenses arising from in vitro fertilization procedures; providing an exception to the required use of a spouse's sperm to fertilize the oocytes of a patient whose spouse is of the opposite sex; and providing the Act shall apply to all policies, contracts, and health benefit plans issued, delivered, renewed, or in force in the State on or after July 1, 2016.",
+     "status": "Approved by the Governor - Chapter 325",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Kagan",
+     "all_sponsor_slugs": [
+      "kagan01"
+     ],
+     "lead_sponsor_field": "Senator Kagan"
+    }
+   ]
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Sara Love",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Love strongly supports expanding healthcare access. She voted for Medicaid expansion measures and healthcare affordability legislation. Montgomery County includes large healthcare worker constituencies.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "member_slug": "love02",
+   "tenure": "Member of the Maryland Senate since June 13, 2024.",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 2019,
+     "to": 2024,
+     "src": "corpus: \"Delegate Love\" 2019RS-2024RS (mgaleg tenure field omits it)"
+    },
+    {
+     "chamber": "senate",
+     "from": 2024,
+     "to": 9999,
+     "src": "mgaleg: Member of the Maryland Senate since June 13, 2024"
+    }
+   ],
+   "sessions_read": [
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS"
+   ],
+   "n_bills_seen": 186,
+   "n_on_topic": 11,
+   "n_candidates": 11,
+   "picks": [
+    {
+     "key": "2026RS:sb0907",
+     "title": "Public Health - Female Genital Mutilation",
+     "number": "SB0907",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0907",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0907?ys=2026RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Altering the definition of &quot;abuse&quot; to include female genital mutilation for the purposes of a provision of law requiring certain persons to provide notice of suspected abuse or neglect of a child or make a written report of suspected abuse or neglect of a child; altering the actions regarding female genital mutilation in which a person is prohibited from engaging; increasing the penalties for a violation of certain provisions related to female genital mutilation; etc.",
+     "status": "Approved by the Governor - Chapter 28",
+     "sponsor_count": 11,
+     "slug_confirms": true,
+     "slug_label": "Love",
+     "all_sponsor_slugs": [
+      "love02",
+      "beidle01",
+      "gile01",
+      "hayes02",
+      "hershey",
+      "jackson04",
+      "kramer02",
+      "lam02",
+      "mautz02",
+      "ready01",
+      "washington02"
+     ],
+     "lead_sponsor_field": "Senator Love"
+    },
+    {
+     "key": "2026RS:sb0892",
+     "title": "Health Occupations, Public Health, and Insurance - Menopause - Provider Training Coverage Requirements, Policy Initiatives, and Access to Care",
+     "number": "SB0892",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0892",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0892?ys=2026RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Altering the membership of the State Advisory Council on Health and Wellness; requiring health occupations boards that require licensees or certificate holders to complete certain continuing education to grant at least 2 hours for every hour of continuing education for menopause and menopause-associated symptoms; requiring certain insurers, nonprofit health service plans, and health maintenance organizations to provide coverage for the evaluation and management of menopause and menopause-associated conditions; etc.",
+     "status": "Approved by the Governor - Chapter 605",
+     "sponsor_count": 6,
+     "slug_confirms": true,
+     "slug_label": "Love",
+     "all_sponsor_slugs": [
+      "gile01",
+      "beidle01",
+      "hester01",
+      "king",
+      "love02",
+      "hettleman02"
+     ],
+     "lead_sponsor_field": "Senator Gile"
+    },
+    {
+     "key": "2026RS:sb0385",
+     "title": "Public Health - Recommendations for Immunizations, Screenings, and Preventive Services - Pharmacist Administration and Required Health Insurance Coverage (The Vax Act)",
+     "number": "SB0385",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0385",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0385?ys=2026RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring the Secretary of Health to issue recommendations for certain immunizations, screenings, and preventive services based on certain evidence-based scientific and clinical guidance; requiring the Secretary, before adopting a recommendation for a certain preventive service to hold a notice and comments period, obtain a certain analysis from the Maryland Health Care Commission, and cite the basis for the recommendation; altering the authority of pharmacists to administer certain vaccinations; etc.",
+     "status": "Approved by the Governor - Chapter 8",
+     "sponsor_count": 10,
+     "slug_confirms": true,
+     "slug_label": "Love",
+     "all_sponsor_slugs": [
+      "augustine01",
+      "beidle01",
+      "harris03",
+      "hettleman02",
+      "kagan01",
+      "king",
+      "lam02",
+      "young04",
+      "love02",
+      "zucker01"
+     ],
+     "lead_sponsor_field": "President"
+    },
+    {
+     "key": "2026RS:hb0637",
+     "title": "Public Health - Recommendations for Immunizations, Screenings, and Preventive Services - Pharmacist Administration and Required Health Insurance Coverage (The Vax Act)",
+     "number": "HB0637",
+     "chamber": "house",
+     "session": "2026RS",
+     "slug": "hb0637",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0637?ys=2026RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring the Secretary of Health to issue recommendations for certain immunizations, screenings, and preventive services based on certain evidence-based scientific and clinical guidance; requiring the Secretary, before adopting a recommendation for a certain preventive service, to hold a notice and comment period, obtain a certain analysis from the Maryland Health Care Commission, and cite the basis for the recommendation; altering the health insurance coverage requirements for certain immunizations, screenings, and services; etc.",
+     "status": "Approved by the Governor - Chapter 7",
+     "sponsor_count": 39,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "acevero01",
+      "allen01",
+      "amprey01",
+      "behler01",
+      "bhandari01",
+      "boafo01",
+      "boyce01",
+      "coley01",
+      "ebersole01",
+      "edelson01",
+      "fennell01",
+      "foley01",
+      "forbes01",
+      "guyton01",
+      "harrison01",
+      "hill02",
+      "holmes",
+      "ivey01",
+      "jones01",
+      "kaufman01",
+      "lewis01",
+      "mireku01",
+      "moon01",
+      "moreno01",
+      "odom01",
+      "palakovich01",
+      "pasteur01",
+      "patterson02",
+      "phillips02",
+      "pruski01",
+      "qi01",
+      "roberts01",
+      "rogers01",
+      "ross01",
+      "ruff01",
+      "simmons01",
+      "solomon01",
+      "spiegel01",
+      "stewart01",
+      "taveras01",
+      "turner01",
+      "vogel01",
+      "watson02",
+      "white01",
+      "wims01",
+      "woods01",
+      "wu01",
+      "ziegler01",
+      "bagnall01",
+      "cullison",
+      "guzzone01",
+      "lopez01"
+     ],
+     "lead_sponsor_field": "Speaker"
+    }
+   ]
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "C. Anthony Muse",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Muse supports expanding healthcare access for Prince George's County residents. He backed Medicaid expansion and healthcare affordability measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "member_slug": "muse01",
+   "tenure": "Elected to the Maryland Senate in November 2022. Member of the Senate since January 11, 2023. Member of the Senate 2007-2019.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2023,
+     "to": 9999,
+     "src": "Member of the Senate since January 11, 2023."
+    },
+    {
+     "chamber": "senate",
+     "from": 2007,
+     "to": 2019,
+     "src": "Member of the Senate 2007-2019."
+    }
+   ],
+   "sessions_read": [
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS",
+    "2019RS"
+   ],
+   "n_bills_seen": 409,
+   "n_on_topic": 16,
+   "n_candidates": 16,
+   "picks": [
+    {
+     "key": "2025RS:sb0646",
+     "title": "Health Insurance - Insulin - Prohibition on Step Therapy or Fail-First Protocols",
+     "number": "SB0646",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0646",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0646?ys=2025RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Prohibiting certain insurers, nonprofit health service plans, and health maintenance organizations from imposing a step therapy or fail-first protocol for insulin or an insulin analog used to treat an insured's or enrollee's diabetes.",
+     "status": "Approved by the Governor - Chapter 689",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Muse",
+     "all_sponsor_slugs": [
+      "muse01"
+     ],
+     "lead_sponsor_field": "Senator Muse"
+    },
+    {
+     "key": "2025RS:hb0970",
+     "title": "Health Insurance - Insulin - Prohibition on Step Therapy or Fail-First Protocols",
+     "number": "HB0970",
+     "chamber": "house",
+     "session": "2025RS",
+     "slug": "hb0970",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0970?ys=2025RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Prohibiting certain insurers, nonprofit health service plans, and health maintenance organizations from imposing a step therapy or fail-first protocol for insulin or an insulin analog used to treat an insured's or enrollee's Type 1, Type 2, or gestational diabetes; and applying the Act to all policies, contracts, and health benefit plans issued, delivered, or renewed in the State on or after January 1, 2026.",
+     "status": "Approved by the Governor - Chapter 688",
+     "sponsor_count": 39,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "woods01",
+      "alston01",
+      "bagnall01",
+      "bhandari01",
+      "chisholm01",
+      "davis02",
+      "fisher",
+      "ghrist01",
+      "guzzone01",
+      "harris02",
+      "harrison01",
+      "kaufman01",
+      "kerr01",
+      "long02",
+      "lopez01",
+      "martinez01",
+      "mccaskill01",
+      "morgan02",
+      "patterson02",
+      "roberts01",
+      "rosenberg",
+      "schmidt01",
+      "simmons01",
+      "szeliga",
+      "taveras01",
+      "taylor03",
+      "terrasa01",
+      "wilkins01",
+      "cullison",
+      "hill02",
+      "hutchinson01",
+      "johnson01",
+      "kaiser",
+      "kipke",
+      "pena",
+      "reilly01",
+      "ross01",
+      "white01",
+      "woorman01"
+     ],
+     "lead_sponsor_field": "Delegate Woods"
+    },
+    {
+     "key": "2024RS:sb0989",
+     "title": "Health Insurance - Epinephrine Injectors - Limits on Cost Sharing (Epinephrine Cost Reduction Act of 2024)",
+     "number": "SB0989",
+     "chamber": "senate",
+     "session": "2024RS",
+     "slug": "sb0989",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0989?ys=2024RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring insurers, nonprofit health service plans, and health maintenance organizations to limit the amount a covered individual is required to pay in copayments, coinsurance, and deductibles for a covered prescription epinephrine injector to not more than $60.",
+     "status": "In the Senate - Hearing 3/06 at 1:00 p.m.",
+     "sponsor_count": 4,
+     "slug_confirms": true,
+     "slug_label": "Muse",
+     "all_sponsor_slugs": [
+      "lam02",
+      "muse01",
+      "brooks02",
+      "washington01"
+     ],
+     "lead_sponsor_field": "Senator Lam"
+    },
+    {
+     "key": "2024RS:hb0939",
+     "title": "Health Insurance - Epinephrine Injectors - Limits on Cost Sharing (Epinephrine Cost Reduction Act of 2024)",
+     "number": "HB0939",
+     "chamber": "house",
+     "session": "2024RS",
+     "slug": "hb0939",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0939?ys=2024RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring insurers, nonprofit health service plans, and health maintenance organizations to limit the amount a covered individual is required to pay in copayments, coinsurance, and deductibles for a covered prescription epinephrine injector to not more than $60.",
+     "status": "In the House - Hearing 2/22 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "palakovich01"
+     ],
+     "lead_sponsor_field": "Delegate Palakovich Carr"
+    }
+   ]
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Jim Rosapepe",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Rosapepe supports expanding healthcare access including Medicaid expansion. He backs healthcare affordability for Prince George's County residents.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "member_slug": "rosapepe",
+   "tenure": "First elected to the Senate in 2006. Member of the Senate since 2007.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2007,
+     "to": 9999,
+     "src": "Member of the Senate since 2007."
+    }
+   ],
+   "sessions_read": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS",
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [],
+   "n_bills_seen": 2252,
+   "n_on_topic": 183,
+   "n_candidates": 183,
+   "picks": [
+    {
+     "key": "2021RS:sb0893",
+     "title": "Unemployment - Insurance Revisions and Special Enrollment Period for Health Benefits",
+     "number": "SB0893",
+     "chamber": "senate",
+     "session": "2021RS",
+     "slug": "sb0893",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0893?ys=2021RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring the Maryland Health Benefit Exchange to open a special or other enrollment period for an individual who consents to share information through a certain system; establishing certain requirements for a certain enrollment period; authorizing the Maryland Health Benefit Exchange to conduct outreach to an individual who consents to share information using certain methods; requiring the Maryland Department of Labor to take certain actions to carry out the State's unemployment insurance law; etc.",
+     "status": "Enacted under Article II, Section 17(b) of the Maryland Constitution - Chapter 65",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Rosapepe",
+     "all_sponsor_slugs": [
+      "rosapepe"
+     ],
+     "lead_sponsor_field": "Senator Rosapepe"
+    },
+    {
+     "key": "2018RS:sb0858",
+     "title": "Health Insurance – Access to Local Health Departments",
+     "number": "SB0858",
+     "chamber": "senate",
+     "session": "2018RS",
+     "slug": "sb0858",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0858?ys=2018RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring a carrier that is an insurer, a nonprofit health service plan, or a health maintenance organization, except for a group model health maintenance organization, to ensure in certain standards that certain enrollees have access to local health departments and certain services provided through local health departments to the extent that local health departments are willing to participate on a carrier's provider panel; applying the Act to all policies and contracts issued, delivered, or renewed in the State on or after January 1, 2019; etc.",
+     "status": "Approved by the Governor - Chapter 488",
+     "sponsor_count": 10,
+     "slug_confirms": true,
+     "slug_label": "Rosapepe",
+     "all_sponsor_slugs": [
+      "rosapepe",
+      "astle",
+      "benson",
+      "feldman",
+      "hershey",
+      "jennings",
+      "klausmeier",
+      "mathias",
+      "middleton",
+      "reilly"
+     ],
+     "lead_sponsor_field": "Senator Rosapepe"
+    },
+    {
+     "key": "2017RS:sb0814",
+     "title": "Pharmacists - Dispensing of Prescription Drugs - Single Dispensing of Dosage Units",
+     "number": "SB0814",
+     "chamber": "senate",
+     "session": "2017RS",
+     "slug": "sb0814",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0814?ys=2017RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Authorizing a pharmacist to dispense, in a single dispensing and exercising the pharmacist's professional judgment, a quantity of a prescription drug that is up to a specified number of authorized dosage units and does not exceed a 90-day supply of the prescription drug; providing an exception for a contraceptive which may be dispensed, on and after January 1, 2018, for up to a 6-month supply; and providing that the Act does not apply to specified drugs.",
+     "status": "In the House - Withdrawn by Sponsor",
+     "sponsor_count": 6,
+     "slug_confirms": true,
+     "slug_label": "Rosapepe",
+     "all_sponsor_slugs": [
+      "rosapepe",
+      "benson",
+      "hershey",
+      "jennings",
+      "klausmeier",
+      "mathias"
+     ],
+     "lead_sponsor_field": "Senator Rosapepe"
+    },
+    {
+     "key": "2025RS:sb0678",
+     "title": "Electronic Health Networks and Electronic Medical Record Vendors of Nursing Homes - Release of Records - Enforcement",
+     "number": "SB0678",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0678",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0678?ys=2025RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Authorizing the Office of the Attorney General to enforce and certain persons to bring a certain civil action regarding a certain provision of law authorizing a nursing home that contracts with or uses an electronic health network or electronic medical record vendor to direct the network or vendor to release electronic medical records or electronic health care transactions to a business associate of the nursing home.",
+     "status": "In the Senate - Hearing 3/06 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Rosapepe",
+     "all_sponsor_slugs": [
+      "rosapepe"
+     ],
+     "lead_sponsor_field": "Senator Rosapepe"
+    }
+   ]
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Alonzo T. Washington",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Washington strongly supports expanding healthcare access in Prince George's County. He backed Medicaid expansion and healthcare affordability legislation for working families.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "member_slug": "washington02",
+   "tenure": "Member of the Maryland House of Delegates December 19, 2012 to January 30, 2023. Member of the Maryland Senate since January 30, 2023",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 2012,
+     "to": 2023,
+     "src": "Member of the Maryland House of Delegates December 19, 2012 to January 30, 2023."
+    },
+    {
+     "chamber": "senate",
+     "from": 2023,
+     "to": 9999,
+     "src": "Member of the Maryland Senate since January 30, 2023"
+    }
+   ],
+   "sessions_read": [
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS",
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS"
+   ],
+   "n_bills_seen": 230,
+   "n_on_topic": 35,
+   "n_candidates": 35,
+   "picks": [
+    {
+     "key": "2025RS:sb0372",
+     "title": "Preserve Telehealth Access Act of 2025",
+     "number": "SB0372",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0372",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0372?ys=2025RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Repealing the limitation on the period during which the Maryland Medical Assistance Program and certain insurers, nonprofit health service plans, and health maintenance organizations are required to provide reimbursement for certain health care services provided through telehealth on a certain basis and at a certain rate; altering the circumstances under which health care practitioners are authorized to prescribe certain controlled dangerous substances for the treatment of pain through telehealth; etc.",
+     "status": "Approved by the Governor - Chapter 481",
+     "sponsor_count": 11,
+     "slug_confirms": true,
+     "slug_label": "A. Washington",
+     "all_sponsor_slugs": [
+      "beidle01",
+      "gile01",
+      "kramer02",
+      "lam02",
+      "mautz02",
+      "ellis01",
+      "hayes02",
+      "hershey",
+      "jackson04",
+      "ready01",
+      "washington02"
+     ],
+     "lead_sponsor_field": "Senator Beidle"
+    },
+    {
+     "key": "2025RS:hb0869",
+     "title": "Preserve Telehealth Access Act of 2025",
+     "number": "HB0869",
+     "chamber": "house",
+     "session": "2025RS",
+     "slug": "hb0869",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0869?ys=2025RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Repealing the limitation on the period during which the Maryland Medical Assistance Program and certain insurers, nonprofit health service plans, and health maintenance organizations are required to provide reimbursement for certain health care services provided through telehealth on a certain basis and at a certain rate; altering the circumstances under which health care practitioners are authorized to prescribe certain controlled dangerous substances for the treatment of pain through telehealth; etc.",
+     "status": "Approved by the Governor - Chapter 482",
+     "sponsor_count": 23,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "pena",
+      "bagnall01",
+      "cullison",
+      "kerr01",
+      "rosenberg",
+      "alston01",
+      "bhandari01",
+      "chisholm01",
+      "guzzone01",
+      "hill02",
+      "hutchinson01",
+      "johnson01",
+      "kaiser",
+      "kipke",
+      "lopez01",
+      "martinez01",
+      "morgan02",
+      "reilly01",
+      "szeliga",
+      "taveras01",
+      "white01",
+      "woods01",
+      "woorman01"
+     ],
+     "lead_sponsor_field": "Delegate Pena-Melnyk"
+    },
+    {
+     "key": "2025RS:sb0547",
+     "title": "Commission to Study Health Insurance Pooling - Establishment",
+     "number": "SB0547",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0547",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0547?ys=2025RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Establishing the Commission to Study Health Insurance Pooling to study the pooling of public employee health insurance purchasing between the State, counties, municipal corporations, and county boards of education in the State to maximize value and efficiency while maintaining a broad package of benefits and reasonable premiums for public employees; and requiring the Commission to report its findings and recommendations to the Governor and the General Assembly by December 1, 2026.",
+     "status": "Approved by the Governor - Chapter 741",
+     "sponsor_count": 12,
+     "slug_confirms": true,
+     "slug_label": "A. Washington",
+     "all_sponsor_slugs": [
+      "james01",
+      "beidle01",
+      "ellis01",
+      "gile01",
+      "hayes02",
+      "hershey",
+      "jackson04",
+      "kramer02",
+      "lam02",
+      "mautz02",
+      "ready01",
+      "washington02"
+     ],
+     "lead_sponsor_field": "Senator James"
+    },
+    {
+     "key": "2024RS:sb0876",
+     "title": "Maryland Medical Assistance Program – Limited Behavioral Health Services",
+     "number": "SB0876",
+     "chamber": "senate",
+     "session": "2024RS",
+     "slug": "sb0876",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0876?ys=2024RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring, beginning January 1, 2025, the Maryland Medical Assistance Program to provide limited behavioral health services to individuals under the age of 18 years regardless of whether the individual has a behavioral health diagnosis; and requiring the Maryland Department of Health to seek input from stakeholders in determining the limited behavioral health services to be covered.",
+     "status": "In the Senate - Hearing 3/12 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "A. Washington",
+     "all_sponsor_slugs": [
+      "washington02"
+     ],
+     "lead_sponsor_field": "Senator Washington, A."
+    }
+   ]
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ron Watson",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "reasoning": "Watson backs healthcare access expansion including Medicaid expansion and healthcare affordability for working families in Prince George's County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "member_slug": "watson04",
+   "tenure": "Member of the Senate since August 31, 2021. Member of the House of Delegates representing District 23B from January 9, 2019 to August 31, 2021.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2021,
+     "to": 9999,
+     "src": "Member of the Senate since August 31, 2021."
+    },
+    {
+     "chamber": "house",
+     "from": 2019,
+     "to": 2021,
+     "src": "Member of the House of Delegates representing District 23B from January 9, 2019 to August 31, 2021."
+    }
+   ],
+   "sessions_read": [
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2019RS",
+    "2020RS",
+    "2021RS"
+   ],
+   "n_bills_seen": 402,
+   "n_on_topic": 14,
+   "n_candidates": 14,
+   "picks": [
+    {
+     "key": "2024RS:sb0201",
+     "title": "Public Health - Childbirth - Paternity Test",
+     "number": "SB0201",
+     "chamber": "senate",
+     "session": "2024RS",
+     "slug": "sb0201",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0201?ys=2024RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Requiring, when a child is born at a health care facility, the attending physician to offer to the presumed father of the child the option to take a paternity test; requiring that the offer to take a paternity test be made orally and in writing and before a birth certificate form for the child is completed; allowing the presumed father the option to waive the right to take a paternity test or elect to take a paternity test at any time before completion of the child's birth certificate; etc.",
+     "status": "In the Senate - Hearing 2/08 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Watson",
+     "all_sponsor_slugs": [
+      "watson04"
+     ],
+     "lead_sponsor_field": "Senator Watson"
+    },
+    {
+     "key": "2023RS:sb0410",
+     "title": "Public Health - Childbirth - Paternity Test",
+     "number": "SB0410",
+     "chamber": "senate",
+     "session": "2023RS",
+     "slug": "sb0410",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0410?ys=2023RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Requiring, when a child is born at a health care facility, the attending physician to offer to the presumed father of the child the option to take a paternity test; requiring the offer to take a paternity test be made orally and in writing and before a birth certificate form is completed for the child; etc.",
+     "status": "In the Senate - Hearing 2/15 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Watson",
+     "all_sponsor_slugs": [
+      "watson04"
+     ],
+     "lead_sponsor_field": "Senator Watson"
+    },
+    {
+     "key": "2022RS:sb0859",
+     "title": "Public Health - Sickle Cell Disease",
+     "number": "SB0859",
+     "chamber": "senate",
+     "session": "2022RS",
+     "slug": "sb0859",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0859?ys=2022RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Renaming the Statewide Steering Committee on Services for Adults with Sickle Cell Disease to be the Statewide Steering Committee on Sickle Cell Disease; requiring the Maryland Department of Health to establish and implement a system of providing information on the sickle cell trait or the thalassemia trait to certain individuals; and requiring the Department to maintain on its website a certain list of resources for health care practitioners and establish a plan for updating its website to meet certain requirements.",
+     "status": "Approved by the Governor - Chapter 280",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Watson",
+     "all_sponsor_slugs": [
+      "watson04"
+     ],
+     "lead_sponsor_field": "Senator Watson"
+    },
+    {
+     "key": "2022RS:sb0883",
+     "title": "Public Health – Sickle Cell Disease – Testing at a Community–Based Health Fair",
+     "number": "SB0883",
+     "chamber": "senate",
+     "session": "2022RS",
+     "slug": "sb0883",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0883?ys=2022RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Requiring the Maryland Department of Health to authorize qualified persons to offer and perform testing for detecting sickle cell disease at a community-based health fair; and authorizing the person to provide information on and resources for living with sickle cell disease while performing testing at a community-based health fair.",
+     "status": "In the Senate - Hearing 3/16 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Watson",
+     "all_sponsor_slugs": [
+      "watson04"
+     ],
+     "lead_sponsor_field": "Senator Watson"
+    }
+   ]
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Joanne C. Benson",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "reasoning": "Benson has supported affordable housing legislation in Prince George's County. She backed tenant protection measures and affordable housing funding throughout her tenure.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "member_slug": "benson",
+   "tenure": "First elected to the Senate in 2010. Member of the Senate since 2011. Member of the Maryland House of Delegates, 1991-2011.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2011,
+     "to": 9999,
+     "src": "Member of the Senate since 2011."
+    },
+    {
+     "chamber": "house",
+     "from": 1991,
+     "to": 2011,
+     "src": "Member of the Maryland House of Delegates, 1991-2011."
+    }
+   ],
+   "sessions_read": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS",
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [],
+   "n_bills_seen": 2409,
+   "n_on_topic": 53,
+   "n_candidates": 53,
+   "picks": [
+    {
+     "key": "2024RS:sb0992",
+     "title": "Real Property - Landlord and Tenant - Procedures for Failure to Pay Rent, Breach of Lease, and Tenant Holding Over",
+     "number": "SB0992",
+     "chamber": "senate",
+     "session": "2024RS",
+     "slug": "sb0992",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0992?ys=2024RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring a landlord to provide certain notice to a tenant when a court has issued a warrant of restitution for a failure of a tenant to pay rent, a breach of lease, or a tenant holding over under certain circumstances; establishing certain procedures and requirements for the execution of a warrant for repossession; providing for the disposition of certain personal property following the execution of a warrant of restitution; etc.",
+     "status": "In the Senate - Hearing 3/07 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Benson",
+     "all_sponsor_slugs": [
+      "benson"
+     ],
+     "lead_sponsor_field": "Senator Benson"
+    },
+    {
+     "key": "2022RS:sb0529",
+     "title": "Real Property – Landlord and Tenant – Bedbugs",
+     "number": "SB0529",
+     "chamber": "senate",
+     "session": "2022RS",
+     "slug": "sb0529",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0529?ys=2022RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring a tenant to promptly notify the landlord in a certain manner when the tenant knows or reasonably suspects that the tenant's dwelling unit contains bed bugs; requiring a landlord notified of the presence or suspected presence of bed bugs to obtain an inspection within 96 hours; authorizing a landlord to enter a dwelling unit for purposes of a certain inspection; establishing that a landlord is responsible for costs associated with inspection of and treatment for bedbugs; etc.",
+     "status": "In the Senate - Hearing 2/15 at 1:00 p.m.",
+     "sponsor_count": 4,
+     "slug_confirms": true,
+     "slug_label": "Benson",
+     "all_sponsor_slugs": [
+      "benson",
+      "patterson03",
+      "lee",
+      "sydnor02"
+     ],
+     "lead_sponsor_field": "Senator Benson"
+    },
+    {
+     "key": "2019RS:sb0724",
+     "title": "Cooperative Housing Corporations - Dispute Settlement and Eviction Procedures",
+     "number": "SB0724",
+     "chamber": "senate",
+     "session": "2019RS",
+     "slug": "sb0724",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0724?ys=2019RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Specifying that a certain dispute settlement mechanism does not apply to complaints or demands arising out of a cooperative housing member's failure to pay certain assessments owed to the cooperative housing corporation; repealing a requirement that the governing body of a cooperative housing corporation hold a hearing on a certain alleged violation under certain circumstances; requiring the governing body of a cooperative housing corporation to give certain notice of a member's right to request a hearing on a certain alleged violation; etc.",
+     "status": "In the Senate - Unfavorable Report by Judicial Proceedings",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Benson",
+     "all_sponsor_slugs": [
+      "benson"
+     ],
+     "lead_sponsor_field": "Senator Benson"
+    },
+    {
+     "key": "2018RS:sb0021",
+     "title": "Maryland Cooperative Housing Act - Dispute Settlement and Eviction Procedures",
+     "number": "SB0021",
+     "chamber": "senate",
+     "session": "2018RS",
+     "slug": "sb0021",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0021?ys=2018RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Specifying that a certain dispute settlement mechanism does not apply to complaints or demands arising out of a cooperative housing member's failure to pay certain assessments owed to the cooperative housing corporation; repealing a requirement that the governing body of a cooperative housing corporation hold a hearing on a certain alleged violation under certain circumstances; authorizing a member to request a hearing on a certain alleged violation within a certain time frame; etc.",
+     "status": "In the Senate - Unfavorable Report by Judicial Proceedings",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Benson",
+     "all_sponsor_slugs": [
+      "benson"
+     ],
+     "lead_sponsor_field": "Senator Benson"
+    }
+   ]
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Nick Charles",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "reasoning": "Charles has supported affordable housing legislation and tenant protections addressing housing affordability challenges in Prince George's County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "member_slug": "charles02",
+   "tenure": "Member of the Maryland Senate since December 5, 2023. Member of the Maryland House of Delegates 2019-2023.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2023,
+     "to": 9999,
+     "src": "Member of the Maryland Senate since December 5, 2023."
+    },
+    {
+     "chamber": "house",
+     "from": 2019,
+     "to": 2023,
+     "src": "Member of the Maryland House of Delegates 2019-2023."
+    }
+   ],
+   "sessions_read": [
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS"
+   ],
+   "n_bills_seen": 244,
+   "n_on_topic": 14,
+   "n_candidates": 14,
+   "picks": [
+    {
+     "key": "2026RS:sb0353",
+     "title": "Real Property - Residential Foreclosures - Commencement Restrictions",
+     "number": "SB0353",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0353",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0353?ys=2026RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Establishing certain restrictions for the commencement of a foreclosure and an order to docket or a complaint to foreclose a mortgage or deed of trust on residential property.",
+     "status": "In the Senate - Favorable with Amendments Report by Judicial Proceedings",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Charles",
+     "all_sponsor_slugs": [
+      "charles02"
+     ],
+     "lead_sponsor_field": "Senator Charles"
+    },
+    {
+     "key": "2025RS:sb0682",
+     "title": "Real Property - Residential Foreclosures - Materially Delinquent Mortgages",
+     "number": "SB0682",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0682",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0682?ys=2025RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Altering certain requirements for an order to docket or a complaint to foreclose a mortgage or deed of trust on residential property; requiring a secured party to provide certain loan-related correspondence in order to enforce a materially delinquent mortgage, subject to certain exceptions; and permitting a mortgagor to raise a defense of laches in an action to enforce a materially delinquent mortgage.",
+     "status": "In the Senate - Hearing 2/25 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Charles",
+     "all_sponsor_slugs": [
+      "charles02"
+     ],
+     "lead_sponsor_field": "Senator Charles"
+    },
+    {
+     "key": "2024RS:sb0671",
+     "title": "Foreclosure Proceedings - Residential Mortgagors and Grantors - Access to Counsel",
+     "number": "SB0671",
+     "chamber": "senate",
+     "session": "2024RS",
+     "slug": "sb0671",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0671?ys=2024RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring that individuals have access to legal representation in certain foreclosure proceedings; establishing the Access to Counsel in Foreclosure Proceedings Program to organize and direct services and resources to provide covered individuals with access to certain legal representation; establishing a Special Fund to provide funding to fully implement access to legal representation in foreclosure proceedings; requiring the Maryland Legal Services Corporation to provide access to legal representation under the Program; etc.",
+     "status": "In the Senate - Hearing 2/20 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Charles",
+     "all_sponsor_slugs": [
+      "charles02"
+     ],
+     "lead_sponsor_field": "Senator Charles"
+    },
+    {
+     "key": "2025RS:sb0832",
+     "title": "Prince George's County - District Council Zoning Laws - Override by Municipal Corporation",
+     "number": "SB0832",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0832",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0832?ys=2025RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Authorizing a municipal corporation in Prince George's County that is in the regional district to override, by a majority vote of the governing body of the municipal corporation, a certain zoning law made by the district council if the zoning law affects land within the jurisdiction of the municipal corporation.",
+     "status": "In the Senate - Hearing 2/25 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Charles",
+     "all_sponsor_slugs": [
+      "charles02"
+     ],
+     "lead_sponsor_field": "Senator Charles"
+    }
+   ]
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Arthur Ellis",
+   "topic": "Affordable Housing",
+   "chair": "3.0",
+   "reasoning": "Ellis has supported affordable housing legislation. He backed measures to increase housing affordability in Charles County's growing suburban communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "member_slug": "ellis01",
+   "tenure": "First elected to the Maryland Senate in 2018. Member of the Senate since January 9, 2019.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2019,
+     "to": 9999,
+     "src": "Member of the Senate since January 9, 2019."
+    }
+   ],
+   "sessions_read": [
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [],
+   "n_bills_seen": 703,
+   "n_on_topic": 13,
+   "n_candidates": 13,
+   "picks": [
+    {
+     "key": "2021RS:sb0130",
+     "title": "Landlord and Tenant – Failure to Pay Rent – Fee Limit During Emergencies",
+     "number": "SB0130",
+     "chamber": "senate",
+     "session": "2021RS",
+     "slug": "sb0130",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0130?ys=2021RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Prohibiting a landlord from assessing certain late fees for the failure of a tenant to pay rent under certain circumstances and following certain notice from the tenant; requiring a tenant to provide certain documents to a landlord for a certain purpose; requiring a tenant to provide written notice with each missed rent payment in order to avoid an assessment of certain late fees; authorizing a landlord to reasonably request documents supporting a tenant's claim from a tenant for a certain purpose; etc.",
+     "status": "In the Senate - Hearing 1/28 at 11:00 a.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Ellis",
+     "all_sponsor_slugs": [
+      "ellis01"
+     ],
+     "lead_sponsor_field": "Senator Ellis"
+    },
+    {
+     "key": "2021RS:sb0937",
+     "title": "Housing and Community Development – Mortgage, Down Payment, and Settlement Expense Assistance",
+     "number": "SB0937",
+     "chamber": "senate",
+     "session": "2021RS",
+     "slug": "sb0937",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0937?ys=2021RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring the Secretary of Housing and Community Development to take into consideration a family's student loan debt in developing eligibility requirements for certain financial assistance related to residential mortgages; clarifying that the Community Development Administration may purchase notes, mortgages, or partial interests in notes or mortgages that evidence certain new residential mortgage loans for the refinancing of existing residential mortgage loans; etc.",
+     "status": "In the Senate - Hearing 3/23 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Ellis",
+     "all_sponsor_slugs": [
+      "ellis01"
+     ],
+     "lead_sponsor_field": "Senator Ellis"
+    },
+    {
+     "key": "2025RS:sb0367",
+     "title": "Maryland Medical Assistance Program - Supportive Housing and Health Services",
+     "number": "SB0367",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0367",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0367?ys=2025RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Requiring the Maryland Medical Assistance Program, beginning July 1, 2026, to provide supportive housing and health services to certain Program recipients; establishing requirements for professionals seeking certification as a certified supportive housing and health services professional and entities that employ or contract with supportive housing and health services professionals; requiring, by January 1, 2026, the Department to approve at least one accredited training and certification program; etc.",
+     "status": "In the Senate - Hearing 2/04 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Ellis",
+     "all_sponsor_slugs": [
+      "ellis01"
+     ],
+     "lead_sponsor_field": "Senator Ellis"
+    },
+    {
+     "key": "2025RS:hb0503",
+     "title": "Housing Development Act",
+     "number": "HB0503",
+     "chamber": "house",
+     "session": "2025RS",
+     "slug": "hb0503",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0503?ys=2025RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring the Department of Housing and Community Development to periodically establish housing production targets for the State and certain local jurisdictions; requiring the Department to publish housing production targets on its website and notify certain local jurisdictions; requiring the Department to publish an annual report assessing the progress of the State and certain local jurisdictions with meeting specified housing targets; establishing the Housing Opportunities Made Equitable Commission; etc.",
+     "status": "In the Senate - Rereferred to Education, Energy, and the Environment",
+     "sponsor_count": 18,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "allen01",
+      "amprey01",
+      "boafo01",
+      "fennell01",
+      "foley01",
+      "hornberger01",
+      "jones01",
+      "kerr01",
+      "long02",
+      "palakovich01",
+      "phillips02",
+      "ruff01",
+      "schindler01",
+      "simpson01",
+      "taylor03",
+      "turner01",
+      "vogel01",
+      "woods01"
+     ],
+     "lead_sponsor_field": "Speaker"
+    }
+   ]
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Kevin M. Harris",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "reasoning": "Harris has supported affordable housing legislation and anti-displacement measures for renters in Prince George's County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "member_slug": "harris03",
+   "tenure": "Member of the Maryland House of Delegates 2023-2025. Member of the Maryland Senate since December 9, 2025",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 2023,
+     "to": 2025,
+     "src": "Member of the Maryland House of Delegates 2023-2025."
+    },
+    {
+     "chamber": "senate",
+     "from": 2025,
+     "to": 9999,
+     "src": "Member of the Maryland Senate since December 9, 2025"
+    }
+   ],
+   "sessions_read": [
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2023RS",
+    "2024RS",
+    "2025RS"
+   ],
+   "n_bills_seen": 109,
+   "n_on_topic": 2,
+   "n_candidates": 2,
+   "picks": [
+    {
+     "key": "2026RS:sb0389",
+     "title": "Land Use - Transit-Oriented Development - Alterations (Maryland Transit and Housing Opportunity Act)",
+     "number": "SB0389",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0389",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0389?ys=2026RS",
+     "lead": false,
+     "isCore": false,
+     "synopsis": "Providing for the automatic designation of certain transit-oriented developments as enterprise zones, subject to certain conditions; requiring the Maryland Economic Development Corporation to prioritize certain redevelopment projects when making loans under the Strategic Infrastructure Revolving Loan Program; altering the authority of local legislative bodies to regulate land use planning on land located near certain transit stations; delaying the collection of certain development excise taxes and certain development impact fees; etc.",
+     "status": "In the Senate - Conference Committee Appointed",
+     "sponsor_count": 11,
+     "slug_confirms": true,
+     "slug_label": "Harris",
+     "all_sponsor_slugs": [
+      "augustine01",
+      "beidle01",
+      "brooks02",
+      "charles02",
+      "harris03",
+      "hettleman02",
+      "king",
+      "lam02",
+      "love02",
+      "gile01",
+      "zucker01"
+     ],
+     "lead_sponsor_field": "President"
+    },
+    {
+     "key": "2026RS:hb0894",
+     "title": "Land Use - Transit-Oriented Development - Alterations (Maryland Transit and Housing Opportunity Act)",
+     "number": "HB0894",
+     "chamber": "house",
+     "session": "2026RS",
+     "slug": "hb0894",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0894?ys=2026RS",
+     "lead": false,
+     "isCore": false,
+     "synopsis": "Providing for the automatic designation of certain transit-oriented developments as enterprise zones, subject to certain conditions; requiring the Maryland Economic Development Corporation to prioritize certain redevelopment projects when making loans under the Strategic Infrastructure Revolving Loan Program; altering the authority of local legislative bodies to regulate land use planning on land near certain transit stations; delaying the collection of certain development excise taxes and impact fees, subject to a certain exception; etc.",
+     "status": "Approved by the Governor - Chapter 592",
+     "sponsor_count": 47,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "acevero01",
+      "allen01",
+      "amprey01",
+      "behler01",
+      "bhandari01",
+      "boafo01",
+      "boyce01",
+      "coley01",
+      "ebersole01",
+      "edelson01",
+      "fennell01",
+      "foley01",
+      "guyton01",
+      "harrison01",
+      "hill02",
+      "holmes",
+      "hornberger01",
+      "ivey01",
+      "jones01",
+      "kaufman01",
+      "kerr01",
+      "lewis01",
+      "mireku01",
+      "moon01",
+      "moreno01",
+      "odom01",
+      "palakovich01",
+      "pasteur01",
+      "patterson02",
+      "phillips02",
+      "pruski01",
+      "qi01",
+      "roberts01",
+      "rogers01",
+      "ruff01",
+      "simmons01",
+      "simpson01",
+      "solomon01",
+      "stewart01",
+      "taveras01",
+      "taylor03",
+      "turner01",
+      "vogel01",
+      "white01",
+      "wims01",
+      "woods01",
+      "ziegler01"
+     ],
+     "lead_sponsor_field": "Speaker"
+    }
+   ]
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Shaneka Henson",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "reasoning": "Henson has supported affordable housing legislation addressing significant affordability challenges in the Annapolis area. She backed tenant protections and affordable housing funding.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "member_slug": "henson02",
+   "tenure": "Sworn into the Maryland Senate on January 8, 2025. Member of the Maryland House of Delegates May 16, 2019 to January 8, 2025.",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 2019,
+     "to": 2025,
+     "src": "Member of the Maryland House of Delegates May 16, 2019 to January 8, 2025."
+    }
+   ],
+   "sessions_read": [
+    "2025RS"
+   ],
+   "sessions_unreadable": [
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS"
+   ],
+   "n_bills_seen": 83,
+   "n_on_topic": 4,
+   "n_candidates": 4,
+   "picks": [
+    {
+     "key": "2025RS:sb0514",
+     "title": "Landlord and Tenant - Residential Leases - Prospective Tenant Criminal History Records Check (Maryland Fair Chance Housing Act)",
+     "number": "SB0514",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0514",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0514?ys=2025RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Prohibiting a landlord from requiring or requesting from a prospective tenant certain information relating to criminal history and prohibiting a landlord from considering certain information when evaluating the prospective tenant; permitting a landlord to consider certain criminal history information prior to extending a conditional offer to a prospective tenant and requiring the landlord to consider certain information provided by a prospective tenant relating to a criminal history records check; etc.",
+     "status": "In the Senate - Hearing 2/06 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Henson",
+     "all_sponsor_slugs": [
+      "henson02"
+     ],
+     "lead_sponsor_field": "Senator Henson"
+    },
+    {
+     "key": "2025RS:sb0856",
+     "title": "Mold - Landlord Requirements and Regulations (Maryland Tenant Mold Protection Act)",
+     "number": "SB0856",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0856",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0856?ys=2025RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring the Department of the Environment, the Maryland Department of Health, the Department of Housing and Community Development, the Maryland Department of Labor, and the Department of General Services to develop a certain pamphlet and website; requiring a landlord to provide a tenant with certain information at certain times and in a certain manner; requiring a landlord to perform a mold assessment and mold remediation within 15 days after receipt of a written notice regarding the detection of mold; etc.",
+     "status": "Approved by the Governor - Chapter 539",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Henson",
+     "all_sponsor_slugs": [
+      "henson02"
+     ],
+     "lead_sponsor_field": "Senator Henson"
+    },
+    {
+     "key": "2025RS:hb0503",
+     "title": "Housing Development Act",
+     "number": "HB0503",
+     "chamber": "house",
+     "session": "2025RS",
+     "slug": "hb0503",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0503?ys=2025RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring the Department of Housing and Community Development to periodically establish housing production targets for the State and certain local jurisdictions; requiring the Department to publish housing production targets on its website and notify certain local jurisdictions; requiring the Department to publish an annual report assessing the progress of the State and certain local jurisdictions with meeting specified housing targets; establishing the Housing Opportunities Made Equitable Commission; etc.",
+     "status": "In the Senate - Rereferred to Education, Energy, and the Environment",
+     "sponsor_count": 18,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "allen01",
+      "amprey01",
+      "boafo01",
+      "fennell01",
+      "foley01",
+      "hornberger01",
+      "jones01",
+      "kerr01",
+      "long02",
+      "palakovich01",
+      "phillips02",
+      "ruff01",
+      "schindler01",
+      "simpson01",
+      "taylor03",
+      "turner01",
+      "vogel01",
+      "woods01"
+     ],
+     "lead_sponsor_field": "Speaker"
+    },
+    {
+     "key": "2025RS:sb0430",
+     "title": "Land Use - Regional Housing Infrastructure Gap (Housing for Jobs Act)",
+     "number": "SB0430",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0430",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0430?ys=2025RS",
+     "lead": false,
+     "isCore": false,
+     "synopsis": "Requiring the Department of Housing and Community Development and the Department of Planning to calculate certain regional housing infrastructure gaps; providing for the apportionment of regional housing infrastructure gaps to counties and incorporated municipalities; authorizing local jurisdictions to reduce local housing infrastructure gaps in a certain manner; establishing that certain local jurisdictions have an affirmative obligation to expeditiously approve housing development project applications; etc.",
+     "status": "In the Senate - Hearing 3/04 at 1:00 p.m.",
+     "sponsor_count": 7,
+     "slug_confirms": true,
+     "slug_label": "Henson",
+     "all_sponsor_slugs": [
+      "augustine01",
+      "charles02",
+      "ellis01",
+      "gile01",
+      "henson02",
+      "kagan01",
+      "lam02"
+     ],
+     "lead_sponsor_field": "President"
+    }
+   ]
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "William C. Smith, Jr.",
+   "topic": "Affordable Housing",
+   "chair": "3.0",
+   "reasoning": "Smith supports affordable housing expansion in Montgomery County. He backed legislation to increase housing supply and protect tenants in the high-cost DC suburbs.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "member_slug": "smith02",
+   "tenure": "Member of the Maryland House of Delegates 2014-2016. Appointed to the Maryland Senate on December 13, 2016. Member of the Maryland Senate since December 21, 2016.",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 2014,
+     "to": 2016,
+     "src": "Member of the Maryland House of Delegates 2014-2016."
+    },
+    {
+     "chamber": "senate",
+     "from": 2016,
+     "to": 9999,
+     "src": "Member of the Maryland Senate since December 21, 2016."
+    }
+   ],
+   "sessions_read": [
+    "2017RS",
+    "2018RS",
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2014RS",
+    "2015RS",
+    "2016RS"
+   ],
+   "n_bills_seen": 1764,
+   "n_on_topic": 47,
+   "n_candidates": 47,
+   "picks": [
+    {
+     "key": "2021RS:sb0910",
+     "title": "COVID-19 Eviction and Housing Relief Act of 2021",
+     "number": "SB0910",
+     "chamber": "senate",
+     "session": "2021RS",
+     "slug": "sb0910",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0910?ys=2021RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring the Department of Housing and Community Development, in consultation with the Maryland Judiciary and local sheriffs and constables, to collect, maintain, and provide certain access to certain information on eviction actions; requiring certain information be reported to the Department monthly; requiring certain local sheriffs and constables to provide at least 48 hours notice before executing a warrant; prohibiting a landlord from filing a complaint if a tenant owes less than $600 of unpaid rent; etc.",
+     "status": "In the Senate - Favorable with Amendments Report by Judicial Proceedings",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Smith",
+     "all_sponsor_slugs": [
+      "smith02"
+     ],
+     "lead_sponsor_field": "Senator Smith"
+    },
+    {
+     "key": "2018RS:sb1218",
+     "title": "Ending Youth Homelessness Act of 2018",
+     "number": "SB1218",
+     "chamber": "senate",
+     "session": "2018RS",
+     "slug": "sb1218",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1218?ys=2018RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Establishing the Ending Youth Homelessness Grant Program to focus on preventing and ending youth homelessness in the State and addressing disparities based on race, ethnicity, sexual orientation, and gender identity; requiring the Department of Housing and Community Development to administer the Program; establishing the Ending Youth Homelessness Grant Fund; requiring, in and after the third year of funding, the Department to allocate 50% of the money appropriated to the Fund for certain housing programs; etc.",
+     "status": "Approved by the Governor - Chapter 748",
+     "sponsor_count": 11,
+     "slug_confirms": true,
+     "slug_label": "Smith",
+     "all_sponsor_slugs": [
+      "smith02",
+      "middleton",
+      "astle",
+      "benson",
+      "feldman",
+      "hershey",
+      "jennings",
+      "klausmeier",
+      "mathias",
+      "reilly",
+      "rosapepe"
+     ],
+     "lead_sponsor_field": "Senator Smith"
+    },
+    {
+     "key": "2017RS:sb0936",
+     "title": "Residential Property - Foreclosure Timelines and Procedures",
+     "number": "SB0936",
+     "chamber": "senate",
+     "session": "2017RS",
+     "slug": "sb0936",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0936?ys=2017RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Altering requirements for a specified final loss mitigation affidavit; altering the timeline for filing an action to foreclose a mortgage or deed of trust on residential property; requiring a specified notice of intent to foreclose to be accompanied by a loss mitigation application for specific loss mitigation programs that are applicable to a specified loan; requiring an order to docket or a complaint to foreclose a mortgage or deed of trust on residential property to include a specified affidavit; etc.",
+     "status": "In the Senate - Hearing 2/28 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Smith",
+     "all_sponsor_slugs": [
+      "smith02"
+     ],
+     "lead_sponsor_field": "Senator Smith"
+    },
+    {
+     "key": "2026RS:sb0511",
+     "title": "Corporations and Associations - Cooperative Limited Equity Housing Corporations - Establishment",
+     "number": "SB0511",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0511",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0511?ys=2026RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Authorizing a Maryland nonstock corporation to convert to a cooperative limited equity housing corporation subject to certain requirements; requiring a cooperative limited equity housing corporation to provide a certain notice and offer to certain households under certain circumstances; requiring a cooperative limited equity housing corporation to reimburse certain households for moving expenses; etc.",
+     "status": "In the House - First Reading House Rules and Executive Nominations",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Smith",
+     "all_sponsor_slugs": [
+      "smith02"
+     ],
+     "lead_sponsor_field": "Senator Smith"
+    }
+   ]
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Cheryl C. Kagan",
+   "topic": "Affordable Housing",
+   "chair": "3.0",
+   "reasoning": "Kagan has supported housing affordability legislation including efforts to increase affordable housing in Montgomery County's high-cost real estate market.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "member_slug": "kagan01",
+   "tenure": "Member of the House of Delegates January 11, 1995 to January 8, 2003, representing District 17, Montgomery County. First elected to the Maryland Senate in 2014. Member of the Senate since 2015.",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 1995,
+     "to": 2003,
+     "src": "Member of the House of Delegates January 11, 1995 to January 8, 2003, representing District 17, Montgomery County."
+    },
+    {
+     "chamber": "senate",
+     "from": 2015,
+     "to": 9999,
+     "src": "Member of the Senate since 2015."
+    }
+   ],
+   "sessions_read": [
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS",
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [],
+   "n_bills_seen": 1590,
+   "n_on_topic": 21,
+   "n_candidates": 21,
+   "picks": [
+    {
+     "key": "2025RS:hb0503",
+     "title": "Housing Development Act",
+     "number": "HB0503",
+     "chamber": "house",
+     "session": "2025RS",
+     "slug": "hb0503",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0503?ys=2025RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring the Department of Housing and Community Development to periodically establish housing production targets for the State and certain local jurisdictions; requiring the Department to publish housing production targets on its website and notify certain local jurisdictions; requiring the Department to publish an annual report assessing the progress of the State and certain local jurisdictions with meeting specified housing targets; establishing the Housing Opportunities Made Equitable Commission; etc.",
+     "status": "In the Senate - Rereferred to Education, Energy, and the Environment",
+     "sponsor_count": 18,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "allen01",
+      "amprey01",
+      "boafo01",
+      "fennell01",
+      "foley01",
+      "hornberger01",
+      "jones01",
+      "kerr01",
+      "long02",
+      "palakovich01",
+      "phillips02",
+      "ruff01",
+      "schindler01",
+      "simpson01",
+      "taylor03",
+      "turner01",
+      "vogel01",
+      "woods01"
+     ],
+     "lead_sponsor_field": "Speaker"
+    },
+    {
+     "key": "2023RS:sb0848",
+     "title": "Statewide Rental Assistance Voucher Program - Establishment",
+     "number": "SB0848",
+     "chamber": "senate",
+     "session": "2023RS",
+     "slug": "sb0848",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0848?ys=2023RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Establishing a Statewide Rental Assistance Voucher Program in the Department of Housing and Community Development to provide vouchers and housing assistance payments for low-income families that are currently on a waiting list under the federal Housing Choice Voucher Program for housing in units approved by the Department or a public housing agency, in accordance with guidelines under the federal program; and requiring the Department and public housing agencies to administer the State Program.",
+     "status": "Approved by the Governor - Chapter 446",
+     "sponsor_count": 9,
+     "slug_confirms": true,
+     "slug_label": "Kagan",
+     "all_sponsor_slugs": [
+      "guzzone",
+      "smith02",
+      "augustine01",
+      "brooks02",
+      "hester01",
+      "kagan01",
+      "young04"
+     ],
+     "lead_sponsor_field": "Senator Guzzone"
+    },
+    {
+     "key": "2023RS:hb0826",
+     "title": "Statewide Rental Assistance Voucher Program – Establishment",
+     "number": "HB0826",
+     "chamber": "house",
+     "session": "2023RS",
+     "slug": "hb0826",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0826?ys=2023RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Establishing a Statewide Rental Assistance Voucher Program in the Department of Housing and Community Development to provide vouchers and housing assistance payments for low-income families that are on a waiting list under the federal Housing Choice Voucher Program; requiring the Department and public housing agencies to administer the State Program; requiring the Governor, for fiscal years 2025, 2026, and 2027, to include in the annual budget bill $10,000,000 for the State Program; etc.",
+     "status": "In the Senate - Rereferred to Education, Energy, and the Environment and Budget and Taxation",
+     "sponsor_count": 1,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "wilkins01",
+      "stewart01"
+     ],
+     "lead_sponsor_field": "Delegate Wilkins"
+    },
+    {
+     "key": "2019RS:sb0326",
+     "title": "State Lottery - Instant Ticket Lottery Machines - Fraternal Organizations (\"Slots\" for Homeless Veterans Act)",
+     "number": "SB0326",
+     "chamber": "senate",
+     "session": "2019RS",
+     "slug": "sb0326",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0326?ys=2019RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Authorizing the Director of the State Lottery and Gaming Control Agency to issue certain fraternal organizations a license for not more than five instant ticket lottery machines; providing that proceeds from instant ticket lottery machine sales by a fraternal organization are to be distributed in a certain manner; and authorizing certain fraternal organizations to purchase or lease instant ticket lottery machines from any vendor approved by the Agency to sell or lease the machines to fraternal organizations.",
+     "status": "In the Senate - Unfavorable Report by Budget and Taxation",
+     "sponsor_count": 39,
+     "slug_confirms": true,
+     "slug_label": "Kagan",
+     "all_sponsor_slugs": [
+      "young",
+      "smith02",
+      "augustine01",
+      "bailey01",
+      "benson",
+      "carozza02",
+      "carter01",
+      "eckardt",
+      "edwards",
+      "elfreth01",
+      "ellis01",
+      "feldman",
+      "gallion01",
+      "griffith01",
+      "guzzone",
+      "hayes02",
+      "hershey",
+      "hester01",
+      "hough",
+      "jennings",
+      "kagan01",
+      "kelley",
+      "king",
+      "klausmeier",
+      "kramer02",
+      "lam02",
+      "mccray02",
+      "nathan",
+      "patterson03",
+      "peters",
+      "ready01",
+      "reilly",
+      "rosapepe",
+      "salling01",
+      "serafini01",
+      "waldstreicher1",
+      "west02",
+      "zirkin",
+      "zucker01"
+     ],
+     "lead_sponsor_field": "Senator Young"
+    }
+   ]
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Benjamin F. Kramer",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "reasoning": "Kramer has supported housing affordability legislation in Maryland. He backed measures to increase affordable housing supply and tenant protections in Montgomery County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "member_slug": "kramer02",
+   "tenure": "First elected to the Maryland Senate in 2018. Member of the Senate since January 9, 2019. Member of the Maryland House of Delegates 2007-2019.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2019,
+     "to": 9999,
+     "src": "Member of the Senate since January 9, 2019."
+    },
+    {
+     "chamber": "house",
+     "from": 2007,
+     "to": 2019,
+     "src": "Member of the Maryland House of Delegates 2007-2019."
+    }
+   ],
+   "sessions_read": [
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS"
+   ],
+   "n_bills_seen": 799,
+   "n_on_topic": 10,
+   "n_candidates": 10,
+   "picks": [
+    {
+     "key": "2022RS:sb0065",
+     "title": "Cooperative Housing Corporations and Condominium Associations – Evidence of Insurance",
+     "number": "SB0065",
+     "chamber": "senate",
+     "session": "2022RS",
+     "slug": "sb0065",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0065?ys=2022RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Authorizing a cooperative housing corporation to require through its governing documents that members maintain an insurance policy on their unit and mandating that governing documents with the requirement also require the member to provide evidence of the insurance on request of the governing body; and requiring the governing documents of a condominium association that require a unit owner to maintain insurance on their unit to require the unit owner to provide evidence of the insurance on the request of the counsel of unit owners.",
+     "status": "In the Senate - Hearing 2/03 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Kramer",
+     "all_sponsor_slugs": [
+      "kramer02"
+     ],
+     "lead_sponsor_field": "Senator Kramer"
+    },
+    {
+     "key": "2022RS:sb0145",
+     "title": "Cooperative Housing Corporations – Property Insurance Deductibles – Member Responsibility",
+     "number": "SB0145",
+     "chamber": "senate",
+     "session": "2022RS",
+     "slug": "sb0145",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0145?ys=2022RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Requiring a member of a cooperative housing corporation to pay up to $10,000 of the corporation's property or liability insurance deductible if damage to a common element originated in the member's unit; requiring the governing body to inform each member annually of the member's responsibility regarding the insurance deductible and the amount; and applying the Act prospectively.",
+     "status": "In the Senate - Hearing 2/02 at 2:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Kramer",
+     "all_sponsor_slugs": [
+      "kramer02"
+     ],
+     "lead_sponsor_field": "Senator Kramer"
+    },
+    {
+     "key": "2022RS:sb0592",
+     "title": "Landlord and Tenant – Right to Redemption of Leased Premises – Form of Payment",
+     "number": "SB0592",
+     "chamber": "senate",
+     "session": "2022RS",
+     "slug": "sb0592",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0592?ys=2022RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Providing that, in an action of summary ejectment for failure to pay rent where a landlord or park owner is awarded a judgment giving restitution of the leased premises, a tenant or resident who has the right to redemption of the leased premises by tendering all past due amounts plus court awarded costs and fees may tender those amounts, costs, and fees in an electronic or written check issued by a political subdivision or on behalf of a governmental entity.",
+     "status": "Enacted under Article II, Section 17(c) of the Maryland Constitution - Chapter 672",
+     "sponsor_count": 3,
+     "slug_confirms": true,
+     "slug_label": "Kramer",
+     "all_sponsor_slugs": [
+      "lee",
+      "smith02",
+      "kramer02"
+     ],
+     "lead_sponsor_field": "Senator Lee"
+    },
+    {
+     "key": "2022RS:hb0932",
+     "title": "Landlord and Tenant – Right to Redemption of Leased Premises – Form of Payment",
+     "number": "HB0932",
+     "chamber": "house",
+     "session": "2022RS",
+     "slug": "hb0932",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0932?ys=2022RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Providing that, in an action of summary ejectment for failure to pay rent where a landlord or park owner is awarded a judgment giving restitution of the leased premises, a tenant or resident who has the right to redemption of the leased premises by tendering all past due amounts plus court awarded costs and fees may tender those amounts, costs, and fees in an electronic or written check issued by a political subdivision or on behalf of a governmental entity.",
+     "status": "Enacted under Article II, Section 17(c) of the Maryland Constitution - Chapter 671",
+     "sponsor_count": 15,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "stewart01",
+      "amprey01",
+      "barve",
+      "boyce01",
+      "foley01",
+      "fraser01",
+      "healey",
+      "holmes",
+      "lehman01",
+      "love01",
+      "prettyman01",
+      "ruth01",
+      "stein",
+      "terrasa01",
+      "wells02"
+     ],
+     "lead_sponsor_field": "Delegate Stewart"
+    }
+   ]
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Sara Love",
+   "topic": "Affordable Housing",
+   "chair": "3.0",
+   "reasoning": "Love has supported legislation to expand housing access and affordability in the Montgomery County/DC suburbs. She voted for zoning reform and affordable housing funding bills in the 2023-2025 sessions.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "member_slug": "love02",
+   "tenure": "Member of the Maryland Senate since June 13, 2024.",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 2019,
+     "to": 2024,
+     "src": "corpus: \"Delegate Love\" 2019RS-2024RS (mgaleg tenure field omits it)"
+    },
+    {
+     "chamber": "senate",
+     "from": 2024,
+     "to": 9999,
+     "src": "mgaleg: Member of the Maryland Senate since June 13, 2024"
+    }
+   ],
+   "sessions_read": [
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS"
+   ],
+   "n_bills_seen": 186,
+   "n_on_topic": 8,
+   "n_candidates": 8,
+   "picks": [
+    {
+     "key": "2026RS:sb0335",
+     "title": "Landlord and Tenant - Discrimination in Housing for Income-Based Housing Subsidies and Positive Rental History Reporting",
+     "number": "SB0335",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0335",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0335?ys=2026RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Providing that a certain landlord may not refuse to rent to a prospective tenant who pays rent with the assistance of an income-based housing subsidy under certain circumstances; providing that a violation of a provision of the Act is a discriminatory housing practice and is subject to enforcement by the Maryland Commission on Civil Rights; requiring that a certain landlord of residential real property offer a certain tenant the option of having positive rental payment history reported to a certain consumer reporting agency; etc.",
+     "status": "Approved by the Governor - Chapter 773",
+     "sponsor_count": 7,
+     "slug_confirms": true,
+     "slug_label": "Love",
+     "all_sponsor_slugs": [
+      "love02",
+      "charles02",
+      "henson02",
+      "hettleman02",
+      "lam02",
+      "muse01",
+      "sydnor02"
+     ],
+     "lead_sponsor_field": "Senator Love"
+    },
+    {
+     "key": "2026RS:sb0434",
+     "title": "Maryland Strategic Energy Investment Fund - Uses - Cooperative Housing Corporations and Condominiums (Co-Op and Condo Energy Refund Equity Act)",
+     "number": "SB0434",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0434",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0434?ys=2026RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Altering the authorized uses of certain compliance fee revenue paid into the Maryland Strategic Energy Investment Fund; and requiring certain funds in the Fund be used as refunds or credits to residential customers for electric service in fiscal year 2027.",
+     "status": "In the Senate - Hearing 2/25 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Love",
+     "all_sponsor_slugs": [
+      "love02"
+     ],
+     "lead_sponsor_field": "Senator Love"
+    },
+    {
+     "key": "2025RS:sb0609",
+     "title": "Residential Leases - Use of Algorithmic Device by Landlord to Determine Rent - Prohibition",
+     "number": "SB0609",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0609",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0609?ys=2025RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Prohibiting a landlord from using certain algorithmic devices to determine the amount of rent to charge a residential tenant; making a violation of the Act an unfair, abusive, or deceptive trade practice under the Maryland Consumer Protection Act; and applying the Act prospectively.",
+     "status": "In the Senate - Hearing 2/11 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Love",
+     "all_sponsor_slugs": [
+      "love02",
+      "hester01"
+     ],
+     "lead_sponsor_field": "Senator Love"
+    },
+    {
+     "key": "2026RS:hb0315",
+     "title": "Landlord and Tenant - Discrimination in Housing for Income-Based Housing Subsidies and Positive Rental History Reporting",
+     "number": "HB0315",
+     "chamber": "house",
+     "session": "2026RS",
+     "slug": "hb0315",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0315?ys=2026RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Providing that a certain landlord may not refuse to rent to a prospective tenant who pays rent with the assistance of an income-based housing subsidy under certain circumstances, subject to a certain exception; establishing that a violation of the Act is a discriminatory housing practice and is subject to enforcement by the Maryland Commission on Civil Rights; and requiring that a certain landlord offer a certain tenant the option of having positive rental payment history reported to a certain consumer reporting agency.",
+     "status": "Approved by the Governor - Chapter 772",
+     "sponsor_count": 1,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "stewart01"
+     ],
+     "lead_sponsor_field": "Delegate Stewart"
+    }
+   ]
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "C. Anthony Muse",
+   "topic": "Affordable Housing",
+   "chair": "3.0",
+   "reasoning": "Muse has supported affordable housing legislation and community investment in Prince George's County, addressing housing needs of his working-class constituents.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "member_slug": "muse01",
+   "tenure": "Elected to the Maryland Senate in November 2022. Member of the Senate since January 11, 2023. Member of the Senate 2007-2019.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2023,
+     "to": 9999,
+     "src": "Member of the Senate since January 11, 2023."
+    },
+    {
+     "chamber": "senate",
+     "from": 2007,
+     "to": 2019,
+     "src": "Member of the Senate 2007-2019."
+    }
+   ],
+   "sessions_read": [
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS",
+    "2019RS"
+   ],
+   "n_bills_seen": 409,
+   "n_on_topic": 16,
+   "n_candidates": 16,
+   "picks": [
+    {
+     "key": "2026RS:sb0462",
+     "title": "Landlord and Tenant - Residential Leases and Holdover Tenancies - Local Good Cause Termination (Good Cause Eviction)",
+     "number": "SB0462",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0462",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0462?ys=2026RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Authorizing a county to adopt, by local law or ordinance, provisions prohibiting certain landlords of residential property from failing to renew a lease during the lease period or from terminating a holdover tenancy without good cause; establishing certain requirements and prohibitions for a local law or ordinance adopted in accordance with the Act; etc.",
+     "status": "In the Senate - Hearing 2/12 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Muse",
+     "all_sponsor_slugs": [
+      "muse01"
+     ],
+     "lead_sponsor_field": "Senator Muse"
+    },
+    {
+     "key": "2025RS:sb0651",
+     "title": "Landlord and Tenant - Residential Leases and Holdover Tenancies - Local Good Cause Termination (Good Cause Eviction)",
+     "number": "SB0651",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0651",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0651?ys=2025RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Authorizing a county to enact, by local law or ordinance, provisions prohibiting certain landlords of residential property from failing to renew a lease during the lease period or from terminating a holdover tenancy without good cause; establishing certain requirements and prohibitions for a local law or ordinance adopted in accordance with the Act; etc.",
+     "status": "In the Senate - Hearing 2/18 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Muse",
+     "all_sponsor_slugs": [
+      "muse01",
+      "lam02"
+     ],
+     "lead_sponsor_field": "Senator Muse"
+    },
+    {
+     "key": "2024RS:sb0356",
+     "title": "Land Use – Expedited Development Review Processes for Affordable Housing – Requirements",
+     "number": "SB0356",
+     "chamber": "senate",
+     "session": "2024RS",
+     "slug": "sb0356",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0356?ys=2024RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring local jurisdictions to establish and implement an expedited development review process for certain proposed affordable housing developments; applying the process to a charitable organization seeking to develop affordable housing on its own land and a public housing authority proposing to develop affordable housing on land owned by a charity or a government entity; and establishing a good-faith waiver for local jurisdictions that cannot implement an expedited development review process.",
+     "status": "In the Senate - Hearing 2/01 at 1:30 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Muse",
+     "all_sponsor_slugs": [
+      "muse01"
+     ],
+     "lead_sponsor_field": "Senator Muse"
+    },
+    {
+     "key": "2024RS:sb0644",
+     "title": "Landlord and Tenant - Residential Leases and Holdover Tenancies - Local Just Cause Termination Provisions",
+     "number": "SB0644",
+     "chamber": "senate",
+     "session": "2024RS",
+     "slug": "sb0644",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0644?ys=2024RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Authorizing a county to adopt by local law or ordinance provisions prohibiting a landlord of residential property from failing to renew a lease or from terminating a holdover tenancy without just cause; and establishing certain requirements for a local law or ordinance adopted in accordance with the Act.",
+     "status": "In the Senate - Hearing 2/16 at 10:00 a.m.",
+     "sponsor_count": 3,
+     "slug_confirms": true,
+     "slug_label": "Muse",
+     "all_sponsor_slugs": [
+      "muse01",
+      "carter01",
+      "sydnor02"
+     ],
+     "lead_sponsor_field": "Senator Muse"
+    }
+   ]
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Jim Rosapepe",
+   "topic": "Affordable Housing",
+   "chair": "3.0",
+   "reasoning": "Rosapepe has supported housing affordability legislation in Prince George's County. He backed measures to increase affordable housing supply and mixed-income development.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "member_slug": "rosapepe",
+   "tenure": "First elected to the Senate in 2006. Member of the Senate since 2007.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2007,
+     "to": 9999,
+     "src": "Member of the Senate since 2007."
+    }
+   ],
+   "sessions_read": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS",
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [],
+   "n_bills_seen": 2252,
+   "n_on_topic": 34,
+   "n_candidates": 34,
+   "picks": [
+    {
+     "key": "2016RS:sb0779",
+     "title": "Land Use - Proposed Development Project - Transit and Traffic Adequacy Studies",
+     "number": "SB0779",
+     "chamber": "senate",
+     "session": "2016RS",
+     "slug": "sb0779",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0779?ys=2016RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Requiring a local jurisdiction to require that a specified transit adequacy study be prepared for a specified proposed development project if the local jurisdiction also requires that a traffic study be prepared for the proposed development project.",
+     "status": "In the Senate - Hearing 3/01 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Rosapepe",
+     "all_sponsor_slugs": [
+      "rosapepe"
+     ],
+     "lead_sponsor_field": "Senator Rosapepe"
+    },
+    {
+     "key": "2016RS:sb0780",
+     "title": "Prince George's County - School Facilities Surcharge - Student Housing Exemptions PG 439-16",
+     "number": "SB0780",
+     "chamber": "senate",
+     "session": "2016RS",
+     "slug": "sb0780",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0780?ys=2016RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Altering the areas within which multifamily housing designated as student housing is exempt from the Prince George's County school facilities surcharge; and establishing an exemption from the school facilities surcharge for specified multifamily housing designated as graduate student housing by the City of College Park.",
+     "status": "In the Senate - Hearing 3/01 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Rosapepe",
+     "all_sponsor_slugs": [
+      "rosapepe"
+     ],
+     "lead_sponsor_field": "Senator Rosapepe"
+    },
+    {
+     "key": "2015RS:sb0551",
+     "title": "Land Use - Plans - Development and Adoption",
+     "number": "SB0551",
+     "chamber": "senate",
+     "session": "2015RS",
+     "slug": "sb0551",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0551?ys=2015RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Authorizing the legislative body of a local jurisdiction to adopt, modify, remand, or disapprove a specified plan or part of a plan, a plan for one or more geographic sections or divisions of the local jurisdiction, or an amendment to the plan; authorizing and requiring the legislative body to hold a public hearing before taking specified actions; requiring a planning commission to hold a public hearing before submitting a new recommended plan under specified circumstances; etc.",
+     "status": "Veto sustained (0-46)",
+     "sponsor_count": 20,
+     "slug_confirms": true,
+     "slug_label": "Rosapepe",
+     "all_sponsor_slugs": [
+      "rosapepe",
+      "astle",
+      "bates",
+      "cassilly02",
+      "eckardt",
+      "edwards",
+      "feldman",
+      "guzzone",
+      "hershey",
+      "hough",
+      "kagan01",
+      "king",
+      "manno",
+      "mathias",
+      "montgomery",
+      "norman",
+      "peters",
+      "pinsky",
+      "raskin",
+      "young"
+     ],
+     "lead_sponsor_field": "Senator Rosapepe"
+    },
+    {
+     "key": "2022RS:sb0347",
+     "title": "Anne Arundel County - Landlord and Tenant - Procedures for Failure to Pay Rent",
+     "number": "SB0347",
+     "chamber": "senate",
+     "session": "2022RS",
+     "slug": "sb0347",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0347?ys=2022RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Authorizing a landlord in Anne Arundel County to repossess property in a certain manner for the failure of a tenant to pay rent under certain circumstances and subject to certain requirements; establishing certain procedures and requirements for the execution of a warrant for repossession in Anne Arundel County; providing for the disposition of certain personal property; establishing that the Act does not restrict the authority of Anne Arundel County to enact certain legislation; and applying the Act prospectively.",
+     "status": "In the Senate - Hearing 2/09 at 1:00 p.m.",
+     "sponsor_count": 3,
+     "slug_confirms": true,
+     "slug_label": "Rosapepe",
+     "all_sponsor_slugs": [
+      "beidle01",
+      "elfreth01",
+      "rosapepe"
+     ],
+     "lead_sponsor_field": "Senator Beidle"
+    }
+   ]
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Jeff Waldstreicher",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "reasoning": "Waldstreicher has been a leading advocate for housing affordability in Montgomery County. He sponsored legislation to increase affordable housing supply and backed tenant protections.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "member_slug": "waldstreicher1",
+   "tenure": "First elected to the Maryland Senate in 2018. Member of the Senate since January 9, 2019. Member of the Maryland House of Delegates 2007-2019.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2019,
+     "to": 9999,
+     "src": "Member of the Senate since January 9, 2019."
+    },
+    {
+     "chamber": "house",
+     "from": 2007,
+     "to": 2019,
+     "src": "Member of the Maryland House of Delegates 2007-2019."
+    }
+   ],
+   "sessions_read": [
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS"
+   ],
+   "n_bills_seen": 1017,
+   "n_on_topic": 33,
+   "n_candidates": 33,
+   "picks": [
+    {
+     "key": "2026RS:sb0635",
+     "title": "Residential Real Property - Notice of Landlord Entry - Tenant Consent",
+     "number": "SB0635",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0635",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0635?ys=2026RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Authorizing a landlord to enter a leased premises without providing certain written notice on written request of a tenant to complete a repair or perform maintenance within 7 days after the tenant's request or if a repair is in progress and is being completed in a timely manner.",
+     "status": "In the Senate - Hearing 2/19 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Waldstreicher",
+     "all_sponsor_slugs": [
+      "waldstreicher1"
+     ],
+     "lead_sponsor_field": "Senator Waldstreicher"
+    },
+    {
+     "key": "2024RS:sb0162",
+     "title": "Landlord and Tenant - Termination of Residential Lease - Limitation of Liability for Rent",
+     "number": "SB0162",
+     "chamber": "senate",
+     "session": "2024RS",
+     "slug": "sb0162",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0162?ys=2024RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Limiting a tenant's liability for rent under a residential lease to not more than 2 months' rent after the date on which the tenant vacates a leased premises if a physician or psychologist completes a form specifying that the tenant has a mental disorder that causes the continued habitation of the leased premises to be unfeasible or unsustainable and requires the tenant to move to a home, facility, or institution to obtain a higher level of care than can be provided at the leased premises and the tenant vacates the leased premises.",
+     "status": "Approved by the Governor - Chapter 289",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Waldstreicher",
+     "all_sponsor_slugs": [
+      "waldstreicher1"
+     ],
+     "lead_sponsor_field": "Senator Waldstreicher"
+    },
+    {
+     "key": "2024RS:sb0199",
+     "title": "Residential Property - Affordable Housing Land Trusts - Authority to Establish Condominium Regimes",
+     "number": "SB0199",
+     "chamber": "senate",
+     "session": "2024RS",
+     "slug": "sb0199",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0199?ys=2024RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Authorizing a condominium regime to be established on certain land owned by an affordable housing land trust.",
+     "status": "Approved by the Governor - Chapter 288",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Waldstreicher",
+     "all_sponsor_slugs": [
+      "waldstreicher1"
+     ],
+     "lead_sponsor_field": "Senator Waldstreicher"
+    },
+    {
+     "key": "2022RS:sb0006",
+     "title": "Landlord and Tenant – Residential Leases – Tenant Rights and Protections (Tenant Protection Act of 2022)",
+     "number": "SB0006",
+     "chamber": "senate",
+     "session": "2022RS",
+     "slug": "sb0006",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0006?ys=2022RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring a landlord to make a certain disclosure to prospective tenants if the landlord uses a ratio utility billing system; making a certain lease provision unenforceable if the landlord fails to make the disclosure; requiring a landlord to document a bill for certain utilities; providing that a tenant organization has the right of free assembly during reasonable hours and on reasonable notice to the landlord; expanding certain provisions of law regarding the rights of certain tenants to include certain victims of stalking; etc.",
+     "status": "Enacted under Article II, Section 17(b) of the Maryland Constitution - Chapter 34",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Waldstreicher",
+     "all_sponsor_slugs": [
+      "waldstreicher1"
+     ],
+     "lead_sponsor_field": "Senator Waldstreicher"
+    }
+   ]
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Alonzo T. Washington",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "reasoning": "Washington represents a district with significant housing affordability challenges. He has backed affordable housing funding, tenant protections, and anti-displacement measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "member_slug": "washington02",
+   "tenure": "Member of the Maryland House of Delegates December 19, 2012 to January 30, 2023. Member of the Maryland Senate since January 30, 2023",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 2012,
+     "to": 2023,
+     "src": "Member of the Maryland House of Delegates December 19, 2012 to January 30, 2023."
+    },
+    {
+     "chamber": "senate",
+     "from": 2023,
+     "to": 9999,
+     "src": "Member of the Maryland Senate since January 30, 2023"
+    }
+   ],
+   "sessions_read": [
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS",
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS"
+   ],
+   "n_bills_seen": 230,
+   "n_on_topic": 6,
+   "n_candidates": 6,
+   "picks": [
+    {
+     "key": "2023RS:sb0807",
+     "title": "Landlord and Tenant - Failure to Repair Serious and Dangerous Defects - Tenant Remedies (Tenant Safety Act)",
+     "number": "SB0807",
+     "chamber": "senate",
+     "session": "2023RS",
+     "slug": "sb0807",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0807?ys=2023RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Establishing that a landlord that offers a dwelling for rent is deemed to warrant the dwelling fit for human habitation; authorizing a single tenant or tenants' organization to seek remedies on behalf of a group of tenants for a landlord's failure to repair serious and dangerous defects on the leased premises; authorizing a tenant, a group of tenants, or a tenants' organization to bring a civil action for money damages if a landlord fails to repair certain defects within 90 days of the court finding the conditions complained of exist; etc.",
+     "status": "In the Senate - Hearing 2/28 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "A. Washington",
+     "all_sponsor_slugs": [
+      "washington02"
+     ],
+     "lead_sponsor_field": "Senator Washington, A."
+    },
+    {
+     "key": "2023RS:hb0691",
+     "title": "Landlord and Tenant - Failure to Repair Serious and Dangerous Defects - Tenant Remedies (Tenant Safety Act)",
+     "number": "HB0691",
+     "chamber": "house",
+     "session": "2023RS",
+     "slug": "hb0691",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0691?ys=2023RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Establishing that a landlord that offers a dwelling for rent is deemed to warrant the dwelling fit for human habitation; adding certain mold hazards to the list of dangerous conditions and defects for which a tenant may obtain relief under the State's rent escrow statute; authorizing a single tenant serving as the lead petitioner for a group of tenants to seek remedies on behalf of a group of tenants for a landlord's failure to repair serious and dangerous defects on the leased premises; etc.",
+     "status": "In the Senate - Hearing 4/04 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "stewart01"
+     ],
+     "lead_sponsor_field": "Delegate Stewart"
+    },
+    {
+     "key": "2023RS:sb0903",
+     "title": "Land Use – Expedited Development Review Processes for Affordable Housing – Application to Religious Organizations",
+     "number": "SB0903",
+     "chamber": "senate",
+     "session": "2023RS",
+     "slug": "sb0903",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0903?ys=2023RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring, on or after July 1, 2024, a county that uses an expedited development review process for proposed affordable housing developments to consider certain applications from bona fide religious organizations under the expedited development review process; and authorizing a county to opt out of the provisions of the Act by adopting a certain local law on or before June 30, 2024.",
+     "status": "In the Senate - First Reading Senate Rules",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "A. Washington",
+     "all_sponsor_slugs": [
+      "washington02"
+     ],
+     "lead_sponsor_field": "Senator Washington, A."
+    },
+    {
+     "key": "2023RS:hb0852",
+     "title": "Land Use - Expedited Development Review Processes for Affordable Housing - Application to Religious Organizations",
+     "number": "HB0852",
+     "chamber": "house",
+     "session": "2023RS",
+     "slug": "hb0852",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0852?ys=2023RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring, on or after July 1, 2024, a county that uses an expedited development review process for proposed affordable housing developments to consider certain applications from bona fide religious organizations under the expedited development review process; and authorizing a county to opt out of the provisions of the Act by establishing an expedited development review process and by adopting a local law prohibiting the consideration of applications from religious organizations on or before June 30, 2024.",
+     "status": "In the House - Hearing 2/28 at 1:00 p.m.",
+     "sponsor_count": 12,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "stewart01",
+      "long02",
+      "holmes",
+      "hornberger01",
+      "lewis01",
+      "moon01",
+      "qi01",
+      "ruth01",
+      "solomon01",
+      "wilkins01",
+      "woods01",
+      "young05"
+     ],
+     "lead_sponsor_field": "Delegate Stewart"
+    }
+   ]
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Ron Watson",
+   "topic": "Affordable Housing",
+   "chair": "2.0",
+   "reasoning": "Watson has supported affordable housing legislation and tenant protections in Prince George's County, addressing significant affordability challenges.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "member_slug": "watson04",
+   "tenure": "Member of the Senate since August 31, 2021. Member of the House of Delegates representing District 23B from January 9, 2019 to August 31, 2021.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2021,
+     "to": 9999,
+     "src": "Member of the Senate since August 31, 2021."
+    },
+    {
+     "chamber": "house",
+     "from": 2019,
+     "to": 2021,
+     "src": "Member of the House of Delegates representing District 23B from January 9, 2019 to August 31, 2021."
+    }
+   ],
+   "sessions_read": [
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2019RS",
+    "2020RS",
+    "2021RS"
+   ],
+   "n_bills_seen": 402,
+   "n_on_topic": 0,
+   "n_candidates": 0,
+   "picks": []
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Arthur Ellis",
+   "topic": "Same-Sex Marriage",
+   "chair": "1.0",
+   "reasoning": "Ellis supports same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "member_slug": "ellis01",
+   "tenure": "First elected to the Maryland Senate in 2018. Member of the Senate since January 9, 2019.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2019,
+     "to": 9999,
+     "src": "Member of the Senate since January 9, 2019."
+    }
+   ],
+   "sessions_read": [
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [],
+   "n_bills_seen": 703,
+   "n_on_topic": 0,
+   "n_candidates": 0,
+   "picks": []
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Kevin M. Harris",
+   "topic": "Same-Sex Marriage",
+   "chair": "1.0",
+   "reasoning": "Harris supports same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "member_slug": "harris03",
+   "tenure": "Member of the Maryland House of Delegates 2023-2025. Member of the Maryland Senate since December 9, 2025",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 2023,
+     "to": 2025,
+     "src": "Member of the Maryland House of Delegates 2023-2025."
+    },
+    {
+     "chamber": "senate",
+     "from": 2025,
+     "to": 9999,
+     "src": "Member of the Maryland Senate since December 9, 2025"
+    }
+   ],
+   "sessions_read": [
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2023RS",
+    "2024RS",
+    "2025RS"
+   ],
+   "n_bills_seen": 109,
+   "n_on_topic": 2,
+   "n_candidates": 2,
+   "picks": [
+    {
+     "key": "2026RS:sb0931",
+     "title": "Maryland Public Ethics Law - Virtual Currency and Domestic Partners",
+     "number": "SB0931",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0931",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0931?ys=2026RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Altering the contents of a certain financial disclosure statement to include a schedule of certain interests in a virtual currency held by certain officials and candidates for office; and adding domestic partners and registered domestic partners to provisions of law regarding spouses under the Maryland Public Ethics Law.",
+     "status": "In the Senate - Hearing 2/25 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Harris",
+     "all_sponsor_slugs": [
+      "harris03"
+     ],
+     "lead_sponsor_field": "Senator Harris"
+    },
+    {
+     "key": "2026RS:hb0549",
+     "title": "Maryland Public Ethics Law - Virtual Currency and Domestic Partners",
+     "number": "HB0549",
+     "chamber": "house",
+     "session": "2026RS",
+     "slug": "hb0549",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0549?ys=2026RS",
+     "lead": false,
+     "isCore": false,
+     "synopsis": "Altering the contents of a certain financial disclosure statement to include a schedule of certain interests in a virtual currency held by certain officials and candidates for office; and adding domestic partners and registered domestic partners to provisions of law regarding spouses under the Maryland Public Ethics Law.",
+     "status": "In the House - Hearing 2/24 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "palakovich01"
+     ],
+     "lead_sponsor_field": "Delegate Palakovich Carr"
+    }
+   ]
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Benjamin F. Kramer",
+   "topic": "Same-Sex Marriage",
+   "chair": "1.0",
+   "reasoning": "Kramer supports same-sex marriage and LGBTQ equality. He voted for marriage equality and LGBTQ non-discrimination legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "member_slug": "kramer02",
+   "tenure": "First elected to the Maryland Senate in 2018. Member of the Senate since January 9, 2019. Member of the Maryland House of Delegates 2007-2019.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2019,
+     "to": 9999,
+     "src": "Member of the Senate since January 9, 2019."
+    },
+    {
+     "chamber": "house",
+     "from": 2007,
+     "to": 2019,
+     "src": "Member of the Maryland House of Delegates 2007-2019."
+    }
+   ],
+   "sessions_read": [
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS"
+   ],
+   "n_bills_seen": 799,
+   "n_on_topic": 0,
+   "n_candidates": 0,
+   "picks": []
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Ron Watson",
+   "topic": "Same-Sex Marriage",
+   "chair": "1.0",
+   "reasoning": "Watson supports same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation and marriage equality.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "member_slug": "watson04",
+   "tenure": "Member of the Senate since August 31, 2021. Member of the House of Delegates representing District 23B from January 9, 2019 to August 31, 2021.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2021,
+     "to": 9999,
+     "src": "Member of the Senate since August 31, 2021."
+    },
+    {
+     "chamber": "house",
+     "from": 2019,
+     "to": 2021,
+     "src": "Member of the House of Delegates representing District 23B from January 9, 2019 to August 31, 2021."
+    }
+   ],
+   "sessions_read": [
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2019RS",
+    "2020RS",
+    "2021RS"
+   ],
+   "n_bills_seen": 402,
+   "n_on_topic": 0,
+   "n_candidates": 0,
+   "picks": []
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "Kevin M. Harris",
+   "topic": "Childcare Affordability & Access",
+   "chair": "2.0",
+   "reasoning": "Sponsored SB0664 (2026) prioritising child care providers in the Child Care Scholarship Program and SB0402 (2026) on residential child care programs; backs childcare subsidy expansion.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0664?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0402?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "member_slug": "harris03",
+   "tenure": "Member of the Maryland House of Delegates 2023-2025. Member of the Maryland Senate since December 9, 2025",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 2023,
+     "to": 2025,
+     "src": "Member of the Maryland House of Delegates 2023-2025."
+    },
+    {
+     "chamber": "senate",
+     "from": 2025,
+     "to": 9999,
+     "src": "Member of the Maryland Senate since December 9, 2025"
+    }
+   ],
+   "sessions_read": [
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2023RS",
+    "2024RS",
+    "2025RS"
+   ],
+   "n_bills_seen": 109,
+   "n_on_topic": 4,
+   "n_candidates": 4,
+   "picks": [
+    {
+     "key": "2026RS:sb0664",
+     "title": "Child Care Scholarship Program - Priority for Child Care Providers",
+     "number": "SB0664",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0664",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0664?ys=2026RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring the State Department of Education to establish a framework, for applications received after July 1, 2026, to prioritize the children of individuals who provide care for children in licensed child care centers, registered family child care homes, and registered large family child care homes for scholarships under the Child Care Scholarship Program.",
+     "status": "In the Senate - Hearing 3/04 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Harris",
+     "all_sponsor_slugs": [
+      "harris03"
+     ],
+     "lead_sponsor_field": "Senator Harris"
+    },
+    {
+     "key": "2026RS:hb0910",
+     "title": "Child Care Scholarship Program - Priority for Child Care Providers",
+     "number": "HB0910",
+     "chamber": "house",
+     "session": "2026RS",
+     "slug": "hb0910",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0910?ys=2026RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring the State Department of Education, for applications received after July 1, 2026, to establish a framework to prioritize the children of individuals who provide care for children in licensed child care centers, registered family child care homes, and registered large family child care homes for scholarships under the Child Care Scholarship Program.",
+     "status": "In the House - Withdrawn by Sponsor",
+     "sponsor_count": 1,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "mccaskill01"
+     ],
+     "lead_sponsor_field": "Delegate McCaskill"
+    },
+    {
+     "key": "2026RS:sb0402",
+     "title": "Residential Child Care Programs - Education of Children and Training of Child and Youth Care Practitioners",
+     "number": "SB0402",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0402",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0402?ys=2026RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Repealing the maximum age for children in certain residential child care programs who receive educational support; requiring operators of certain residential child care programs to provide certain educational opportunities to the children for whom they have legal custody or care and control; requiring that applicants to be child and youth care practitioners undergo certain training; prohibiting an individual who holds a certificate as a residential child and youth care practitioner from being required to complete certain training; etc.",
+     "status": "Approved by the Governor - Chapter 641",
+     "sponsor_count": 6,
+     "slug_confirms": true,
+     "slug_label": "Harris",
+     "all_sponsor_slugs": [
+      "brooks02",
+      "benson",
+      "harris03",
+      "salling01",
+      "washington01",
+      "west02"
+     ],
+     "lead_sponsor_field": "Senator Brooks"
+    },
+    {
+     "key": "2026RS:hb0396",
+     "title": "Residential Child Care Programs - Education of Children and Training of Child and Youth Care Practitioners",
+     "number": "HB0396",
+     "chamber": "house",
+     "session": "2026RS",
+     "slug": "hb0396",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0396?ys=2026RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Repealing the maximum age for children in certain residential child care programs who receive educational support; requiring operators of certain residential child care programs to provide certain educational opportunities to the children for whom they have legal custody or care and control; requiring that applicants to be child and youth care practitioners undergo certain training; prohibiting an individual who holds a certificate as a residential child and youth care practitioner from being required to complete certain training; etc.",
+     "status": "Approved by the Governor - Chapter 640",
+     "sponsor_count": 33,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "pasteur01",
+      "acevero01",
+      "addison01",
+      "alston01",
+      "amprey01",
+      "boyce01",
+      "conaway",
+      "crutchfield01",
+      "ebersole01",
+      "embry01",
+      "forbes01",
+      "hill02",
+      "holmes",
+      "lewis01",
+      "long02",
+      "martinez01",
+      "mccaskill01",
+      "mireku01",
+      "patterson02",
+      "phillips02",
+      "pruski01",
+      "ruff01",
+      "schmidt01",
+      "simmons01",
+      "stein",
+      "stinnett01",
+      "taveras01",
+      "toles01",
+      "white01",
+      "williams01",
+      "wilson",
+      "wims01",
+      "young05"
+     ],
+     "lead_sponsor_field": "Delegate Pasteur"
+    }
+   ]
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "name": "C. Anthony Muse",
+   "topic": "Childcare Affordability & Access",
+   "chair": "2.0",
+   "reasoning": "Muse supported childcare investment including early childhood education programs. He backs family support services for working parents in Prince George's County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "member_slug": "muse01",
+   "tenure": "Elected to the Maryland Senate in November 2022. Member of the Senate since January 11, 2023. Member of the Senate 2007-2019.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2023,
+     "to": 9999,
+     "src": "Member of the Senate since January 11, 2023."
+    },
+    {
+     "chamber": "senate",
+     "from": 2007,
+     "to": 2019,
+     "src": "Member of the Senate 2007-2019."
+    }
+   ],
+   "sessions_read": [
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS",
+    "2019RS"
+   ],
+   "n_bills_seen": 409,
+   "n_on_topic": 0,
+   "n_candidates": 0,
+   "picks": []
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+   "name": "Cheryl C. Kagan",
+   "topic": "Misinformation and the Role of Algorithms in Democracy",
+   "chair": "2.0",
+   "reasoning": "Kagan has addressed election misinformation through her election law work, supporting legislation to combat false information about voting procedures and electoral processes.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "member_slug": "kagan01",
+   "tenure": "Member of the House of Delegates January 11, 1995 to January 8, 2003, representing District 17, Montgomery County. First elected to the Maryland Senate in 2014. Member of the Senate since 2015.",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 1995,
+     "to": 2003,
+     "src": "Member of the House of Delegates January 11, 1995 to January 8, 2003, representing District 17, Montgomery County."
+    },
+    {
+     "chamber": "senate",
+     "from": 2015,
+     "to": 9999,
+     "src": "Member of the Senate since 2015."
+    }
+   ],
+   "sessions_read": [
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS",
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [],
+   "n_bills_seen": 1590,
+   "n_on_topic": 12,
+   "n_candidates": 12,
+   "picks": [
+    {
+     "key": "2024RS:sb1068",
+     "title": "Department of Information Technology - Evaluation and Development of a 3-1-1 Portal Using Artificial Intelligence",
+     "number": "SB1068",
+     "chamber": "senate",
+     "session": "2024RS",
+     "slug": "sb1068",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1068?ys=2024RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Stating the intent of the General Assembly that the Department of Information Technology evaluate the feasibility of creating a 3-1-1 portal utilizing artificial intelligence and that the Department prioritize the creation of the portal if feasible.",
+     "status": "Approved by the Governor - Chapter 450",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Kagan",
+     "all_sponsor_slugs": [
+      "kagan01"
+     ],
+     "lead_sponsor_field": "Senator Kagan"
+    },
+    {
+     "key": "2026RS:sb0141",
+     "title": "Election Law - Election Misinformation, Election Disinformation, and Deepfakes",
+     "number": "SB0141",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0141",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0141?ys=2026RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring and authorizing the State Administrator of Elections to take certain actions if the State Administrator receives a credible report that election misinformation or election disinformation, including a deepfake, has been or is being communicated, disseminated, or distributed; requiring the Administrator to publicly communicate correct information; prohibiting a person from knowingly or with reckless disregard creating, using, or disseminating a deepfake to produce materially false information; etc.",
+     "status": "Approved by the Governor - Chapter 444",
+     "sponsor_count": 6,
+     "slug_confirms": true,
+     "slug_label": "Kagan",
+     "all_sponsor_slugs": [
+      "hester01",
+      "brooks02",
+      "feldman",
+      "harris03",
+      "kagan01",
+      "washington01"
+     ],
+     "lead_sponsor_field": "Senator Hester"
+    },
+    {
+     "key": "2026RS:hb0145",
+     "title": "Election Law - Election Misinformation, Election Disinformation, and Deepfakes",
+     "number": "HB0145",
+     "chamber": "house",
+     "session": "2026RS",
+     "slug": "hb0145",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0145?ys=2026RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Requiring and authorizing the State Administrator of Elections to take certain actions if the State Administrator receives a credible report that election misinformation or election disinformation, including a deepfake, has been or is being communicated, disseminated, or distributed; requiring the Administrator to communicate accurate information to the public; and prohibiting a person, under certain circumstances, from knowingly or with reckless disregard using or disseminating a deepfake to produce materially false information.",
+     "status": "In the Senate - First Reading Senate Rules",
+     "sponsor_count": 5,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "feldmark01",
+      "fair01",
+      "lehman01",
+      "ruth01",
+      "terrasa01"
+     ],
+     "lead_sponsor_field": "Delegate Feldmark"
+    },
+    {
+     "key": "2026RS:sb0597",
+     "title": "Higher Education - Maryland Artificial Intelligence Partnership",
+     "number": "SB0597",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0597",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0597?ys=2026RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Establishing the Maryland Artificial Intelligence Partnership in the University System of Maryland to provide a single nexus for certain stakeholders in artificial intelligence initiatives to advance artificial intelligence in the State; establishing the Artificial Intelligence Public Services Fellowship in the University System of Maryland; establishing, subject to a certain condition, the Artificial Intelligence Incubation Lab in the University System of Maryland to assist State agencies for certain purposes; etc.",
+     "status": "Approved by the Governor - Chapter 633",
+     "sponsor_count": 8,
+     "slug_confirms": true,
+     "slug_label": "Kagan",
+     "all_sponsor_slugs": [
+      "hester01",
+      "attar02",
+      "brooks02",
+      "feldman",
+      "harris03",
+      "kagan01",
+      "simonaire",
+      "watson04"
+     ],
+     "lead_sponsor_field": "Senator Hester"
+    }
+   ]
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "name": "Sara Love",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "reasoning": "Love represents an urban/suburban district with significant renter populations. She has supported tenant protections and rent stabilization policies during her Senate tenure.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "member_slug": "love02",
+   "tenure": "Member of the Maryland Senate since June 13, 2024.",
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 2019,
+     "to": 2024,
+     "src": "corpus: \"Delegate Love\" 2019RS-2024RS (mgaleg tenure field omits it)"
+    },
+    {
+     "chamber": "senate",
+     "from": 2024,
+     "to": 9999,
+     "src": "mgaleg: Member of the Maryland Senate since June 13, 2024"
+    }
+   ],
+   "sessions_read": [
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS"
+   ],
+   "n_bills_seen": 186,
+   "n_on_topic": 4,
+   "n_candidates": 4,
+   "picks": [
+    {
+     "key": "2025RS:sb0609",
+     "title": "Residential Leases - Use of Algorithmic Device by Landlord to Determine Rent - Prohibition",
+     "number": "SB0609",
+     "chamber": "senate",
+     "session": "2025RS",
+     "slug": "sb0609",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0609?ys=2025RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Prohibiting a landlord from using certain algorithmic devices to determine the amount of rent to charge a residential tenant; making a violation of the Act an unfair, abusive, or deceptive trade practice under the Maryland Consumer Protection Act; and applying the Act prospectively.",
+     "status": "In the Senate - Hearing 2/11 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Love",
+     "all_sponsor_slugs": [
+      "love02",
+      "hester01"
+     ],
+     "lead_sponsor_field": "Senator Love"
+    },
+    {
+     "key": "2026RS:sb0335",
+     "title": "Landlord and Tenant - Discrimination in Housing for Income-Based Housing Subsidies and Positive Rental History Reporting",
+     "number": "SB0335",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0335",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0335?ys=2026RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Providing that a certain landlord may not refuse to rent to a prospective tenant who pays rent with the assistance of an income-based housing subsidy under certain circumstances; providing that a violation of a provision of the Act is a discriminatory housing practice and is subject to enforcement by the Maryland Commission on Civil Rights; requiring that a certain landlord of residential real property offer a certain tenant the option of having positive rental payment history reported to a certain consumer reporting agency; etc.",
+     "status": "Approved by the Governor - Chapter 773",
+     "sponsor_count": 7,
+     "slug_confirms": true,
+     "slug_label": "Love",
+     "all_sponsor_slugs": [
+      "love02",
+      "charles02",
+      "henson02",
+      "hettleman02",
+      "lam02",
+      "muse01",
+      "sydnor02"
+     ],
+     "lead_sponsor_field": "Senator Love"
+    },
+    {
+     "key": "2025RS:hb0817",
+     "title": "Residential Leases - Use of Algorithmic Device by Landlord to Determine Rent - Prohibition",
+     "number": "HB0817",
+     "chamber": "house",
+     "session": "2025RS",
+     "slug": "hb0817",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0817?ys=2025RS",
+     "lead": false,
+     "isCore": true,
+     "synopsis": "Prohibiting a landlord from using certain algorithmic devices to determine the amount of rent to charge a residential tenant; making a violation of the Act an unfair, abusive, or deceptive trade practice under the Maryland Consumer Protection Act; and applying the Act prospectively.",
+     "status": "In the House - Hearing 2/18 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "palakovich01",
+      "stewart01"
+     ],
+     "lead_sponsor_field": "Delegate Palakovich Carr"
+    },
+    {
+     "key": "2026RS:hb0315",
+     "title": "Landlord and Tenant - Discrimination in Housing for Income-Based Housing Subsidies and Positive Rental History Reporting",
+     "number": "HB0315",
+     "chamber": "house",
+     "session": "2026RS",
+     "slug": "hb0315",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0315?ys=2026RS",
+     "lead": false,
+     "isCore": false,
+     "synopsis": "Providing that a certain landlord may not refuse to rent to a prospective tenant who pays rent with the assistance of an income-based housing subsidy under certain circumstances, subject to a certain exception; establishing that a violation of the Act is a discriminatory housing practice and is subject to enforcement by the Maryland Commission on Civil Rights; and requiring that a certain landlord offer a certain tenant the option of having positive rental payment history reported to a certain consumer reporting agency.",
+     "status": "Approved by the Governor - Chapter 772",
+     "sponsor_count": 1,
+     "slug_confirms": false,
+     "slug_label": null,
+     "all_sponsor_slugs": [
+      "stewart01"
+     ],
+     "lead_sponsor_field": "Delegate Stewart"
+    }
+   ]
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "name": "Jeff Waldstreicher",
+   "topic": "Rent Regulation",
+   "chair": "2.0",
+   "reasoning": "Waldstreicher supports rent stabilization measures to protect tenants in the high-cost Montgomery County housing market. He has backed local government authority to implement rent control.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "member_slug": "waldstreicher1",
+   "tenure": "First elected to the Maryland Senate in 2018. Member of the Senate since January 9, 2019. Member of the Maryland House of Delegates 2007-2019.",
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2019,
+     "to": 9999,
+     "src": "Member of the Senate since January 9, 2019."
+    },
+    {
+     "chamber": "house",
+     "from": 2007,
+     "to": 2019,
+     "src": "Member of the Maryland House of Delegates 2007-2019."
+    }
+   ],
+   "sessions_read": [
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS"
+   ],
+   "n_bills_seen": 1017,
+   "n_on_topic": 14,
+   "n_candidates": 14,
+   "picks": [
+    {
+     "key": "2024RS:sb0162",
+     "title": "Landlord and Tenant - Termination of Residential Lease - Limitation of Liability for Rent",
+     "number": "SB0162",
+     "chamber": "senate",
+     "session": "2024RS",
+     "slug": "sb0162",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0162?ys=2024RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Limiting a tenant's liability for rent under a residential lease to not more than 2 months' rent after the date on which the tenant vacates a leased premises if a physician or psychologist completes a form specifying that the tenant has a mental disorder that causes the continued habitation of the leased premises to be unfeasible or unsustainable and requires the tenant to move to a home, facility, or institution to obtain a higher level of care than can be provided at the leased premises and the tenant vacates the leased premises.",
+     "status": "Approved by the Governor - Chapter 289",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Waldstreicher",
+     "all_sponsor_slugs": [
+      "waldstreicher1"
+     ],
+     "lead_sponsor_field": "Senator Waldstreicher"
+    },
+    {
+     "key": "2022RS:sb0006",
+     "title": "Landlord and Tenant – Residential Leases – Tenant Rights and Protections (Tenant Protection Act of 2022)",
+     "number": "SB0006",
+     "chamber": "senate",
+     "session": "2022RS",
+     "slug": "sb0006",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0006?ys=2022RS",
+     "lead": true,
+     "isCore": true,
+     "synopsis": "Requiring a landlord to make a certain disclosure to prospective tenants if the landlord uses a ratio utility billing system; making a certain lease provision unenforceable if the landlord fails to make the disclosure; requiring a landlord to document a bill for certain utilities; providing that a tenant organization has the right of free assembly during reasonable hours and on reasonable notice to the landlord; expanding certain provisions of law regarding the rights of certain tenants to include certain victims of stalking; etc.",
+     "status": "Enacted under Article II, Section 17(b) of the Maryland Constitution - Chapter 34",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Waldstreicher",
+     "all_sponsor_slugs": [
+      "waldstreicher1"
+     ],
+     "lead_sponsor_field": "Senator Waldstreicher"
+    },
+    {
+     "key": "2026RS:sb0635",
+     "title": "Residential Real Property - Notice of Landlord Entry - Tenant Consent",
+     "number": "SB0635",
+     "chamber": "senate",
+     "session": "2026RS",
+     "slug": "sb0635",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0635?ys=2026RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Authorizing a landlord to enter a leased premises without providing certain written notice on written request of a tenant to complete a repair or perform maintenance within 7 days after the tenant's request or if a repair is in progress and is being completed in a timely manner.",
+     "status": "In the Senate - Hearing 2/19 at 1:00 p.m.",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Waldstreicher",
+     "all_sponsor_slugs": [
+      "waldstreicher1"
+     ],
+     "lead_sponsor_field": "Senator Waldstreicher"
+    },
+    {
+     "key": "2024RS:sb0354",
+     "title": "Montgomery County and Prince George's County - Rent Court Workforce Solutions Pilot Program",
+     "number": "SB0354",
+     "chamber": "senate",
+     "session": "2024RS",
+     "slug": "sb0354",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0354?ys=2024RS",
+     "lead": true,
+     "isCore": false,
+     "synopsis": "Establishing the Rent Court Workforce Solutions Pilot Program in Montgomery County and Prince George's County to provide defendant tenants in failure to pay rent cases with workforce resources and information on workforce development, registered apprenticeships, and other employment opportunities; and requiring, by January 1, 2026, and each January 1 thereafter, a designated organization to report to the Governor and the General Assembly on the number of individuals that were connected to certain opportunities through the Program.",
+     "status": "Approved by the Governor - Chapter 295",
+     "sponsor_count": 1,
+     "slug_confirms": true,
+     "slug_label": "Waldstreicher",
+     "all_sponsor_slugs": [
+      "waldstreicher1",
+      "jackson03"
+     ],
+     "lead_sponsor_field": "Senator Waldstreicher"
+    }
+   ]
+  }
+ ]
+}

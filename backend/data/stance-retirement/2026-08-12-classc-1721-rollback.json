@@ -1,0 +1,303 @@
+{
+ "pass": "MD class-C sourcing (1720)",
+ "rows": [
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Joanne C. Benson",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Benson is a strong healthcare access advocate. She backed Medicaid expansion, prescription drug affordability legislation, and healthcare safety net programs for Prince George's County residents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Nick Charles",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Charles supports expanding healthcare access in Prince George's County. He backed Medicaid expansion and healthcare affordability legislation for working families.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Arthur Ellis",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Ellis supports expanding healthcare access for Charles County residents. He backed Medicaid expansion and healthcare affordability legislation.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Shaneka Henson",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Henson supports expanding healthcare access. She backed Medicaid expansion and healthcare affordability legislation for Anne Arundel County residents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "William C. Smith, Jr.",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Smith supports universal healthcare access. He backs Medicaid expansion and prescription drug cost control legislation. His committee has processed healthcare-related criminal justice reforms.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Cheryl C. Kagan",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Kagan strongly supports healthcare access expansion. She votes for Medicaid expansion and healthcare affordability legislation representing a predominantly healthcare-aware Montgomery County district.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "C. Anthony Muse",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Muse supports expanding healthcare access for Prince George's County residents. He backed Medicaid expansion and healthcare affordability measures.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Jim Rosapepe",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Rosapepe supports expanding healthcare access including Medicaid expansion. He backs healthcare affordability for Prince George's County residents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Alonzo T. Washington",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Washington strongly supports expanding healthcare access in Prince George's County. He backed Medicaid expansion and healthcare affordability legislation for working families.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Joanne C. Benson",
+   "topic": "Affordable Housing",
+   "old_reasoning": "Benson has supported affordable housing legislation in Prince George's County. She backed tenant protection measures and affordable housing funding throughout her tenure.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Nick Charles",
+   "topic": "Affordable Housing",
+   "old_reasoning": "Charles has supported affordable housing legislation and tenant protections addressing housing affordability challenges in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/charles02",
+    "https://ballotpedia.org/Nick_Charles"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Arthur Ellis",
+   "topic": "Affordable Housing",
+   "old_reasoning": "Ellis has supported affordable housing legislation. He backed measures to increase housing affordability in Charles County's growing suburban communities.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+   ],
+   "chair_untouched": 3
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Kevin M. Harris",
+   "topic": "Affordable Housing",
+   "old_reasoning": "Harris has supported affordable housing legislation and anti-displacement measures for renters in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Shaneka Henson",
+   "topic": "Affordable Housing",
+   "old_reasoning": "Henson has supported affordable housing legislation addressing significant affordability challenges in the Annapolis area. She backed tenant protections and affordable housing funding.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/henson02",
+    "https://ballotpedia.org/Shaneka_Henson"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "William C. Smith, Jr.",
+   "topic": "Affordable Housing",
+   "old_reasoning": "Smith supports affordable housing expansion in Montgomery County. He backed legislation to increase housing supply and protect tenants in the high-cost DC suburbs.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith02",
+    "https://ballotpedia.org/William_C._Smith"
+   ],
+   "chair_untouched": 3
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Cheryl C. Kagan",
+   "topic": "Affordable Housing",
+   "old_reasoning": "Kagan has supported housing affordability legislation including efforts to increase affordable housing in Montgomery County's high-cost real estate market.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "chair_untouched": 3
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Benjamin F. Kramer",
+   "topic": "Affordable Housing",
+   "old_reasoning": "Kramer has supported housing affordability legislation in Maryland. He backed measures to increase affordable housing supply and tenant protections in Montgomery County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Sara Love",
+   "topic": "Affordable Housing",
+   "old_reasoning": "Love has supported legislation to expand housing access and affordability in the Montgomery County/DC suburbs. She voted for zoning reform and affordable housing funding bills in the 2023-2025 sessions.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "chair_untouched": 3
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "C. Anthony Muse",
+   "topic": "Affordable Housing",
+   "old_reasoning": "Muse has supported affordable housing legislation and community investment in Prince George's County, addressing housing needs of his working-class constituents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "chair_untouched": 3
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Jim Rosapepe",
+   "topic": "Affordable Housing",
+   "old_reasoning": "Rosapepe has supported housing affordability legislation in Prince George's County. He backed measures to increase affordable housing supply and mixed-income development.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "chair_untouched": 3
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Jeff Waldstreicher",
+   "topic": "Affordable Housing",
+   "old_reasoning": "Waldstreicher has been a leading advocate for housing affordability in Montgomery County. He sponsored legislation to increase affordable housing supply and backed tenant protections.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "name": "Alonzo T. Washington",
+   "topic": "Affordable Housing",
+   "old_reasoning": "Washington represents a district with significant housing affordability challenges. He has backed affordable housing funding, tenant protections, and anti-displacement measures.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "name": "Sara Love",
+   "topic": "Rent Regulation",
+   "old_reasoning": "Love represents an urban/suburban district with significant renter populations. She has supported tenant protections and rent stabilization policies during her Senate tenure.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "name": "Jeff Waldstreicher",
+   "topic": "Rent Regulation",
+   "old_reasoning": "Waldstreicher supports rent stabilization measures to protect tenants in the high-cost Montgomery County housing market. He has backed local government authority to implement rent control.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+   "name": "Cheryl C. Kagan",
+   "topic": "Misinformation and the Role of Algorithms in Democracy",
+   "old_reasoning": "Kagan has addressed election misinformation through her election law work, supporting legislation to combat false information about voting procedures and electoral processes.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ],
+   "chair_untouched": 2
+  }
+ ]
+}
