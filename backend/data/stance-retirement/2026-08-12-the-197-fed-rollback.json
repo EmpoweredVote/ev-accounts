@@ -1,0 +1,237 @@
+{
+ "pass": "the-197 federal re-source",
+ "rows": [
+  {
+   "name": "Derek Tran",
+   "topic": "Transgender Athletes",
+   "pid": "b7612f49-c914-4ea7-a6da-559d71f313c2",
+   "tid": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "sources": [
+    "https://clerk.house.gov/Votes/202512"
+   ],
+   "why": "Voted NAY on H.R.28, the Protection of Women and Girls in Sports Act, on 14-Jan-2025 (roll call 12, 218-206). The bill would have barred transgender girls and women from female school athletic programs receiving federal funds; Tran voted against it.",
+   "note": "replaces caucus-membership inference with the recorded vote",
+   "old_reasoning": "Tran is a member of the Congressional Equality Caucus, which advances LGBTQ+ rights including protections for transgender individuals. House Democrats nearly unanimously opposed the Protection of Women and Girls in Sports Act, which would ban transgender athletes from competing consistent with their gender identity in federally funded programs. His Equality Caucus membership and Democratic voting pattern indicate he supports allowing transgender athletes to compete on teams matching their gender identity after completing basic transition documentation.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Congressional_Equality_Caucus",
+    "https://en.wikipedia.org/wiki/Derek_Tran",
+    "https://en.wikipedia.org/wiki/Equality_Act_(United_States)"
+   ],
+   "old_value": "2.0"
+  },
+  {
+   "name": "Dina Titus",
+   "topic": "Same-Sex Marriage",
+   "pid": "786af5d2-9502-401c-a3ed-61de88e589e9",
+   "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "sources": [
+    "https://clerk.house.gov/Votes/2022373",
+    "https://clerk.house.gov/Votes/2022513"
+   ],
+   "why": "Voted YEA on H.R.8404, the Respect for Marriage Act, at House passage on 19-Jul-2022 (roll call 373, 267-157) and YEA again on the motion to concur in the Senate amendment on 8-Dec-2022 (roll call 513, 258-169). The Act requires federal and interstate recognition of same-sex marriages.",
+   "note": "replaces caucus-membership inference with two recorded votes",
+   "old_reasoning": "Titus is a member of the Congressional Equality Caucus, which championed the Respect for Marriage Act signed into law in 2022 codifying federal same-sex marriage protections. The caucus advocates for full LGBTQ+ rights including requiring federal recognition of same-sex marriages.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Dina_Titus",
+    "https://en.wikipedia.org/wiki/Congressional_Equality_Caucus"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "name": "Lisa C. McClain",
+   "topic": "Same-Sex Marriage",
+   "pid": "e04094d1-247c-40c8-8829-c7cb8654d0ed",
+   "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "sources": [
+    "https://clerk.house.gov/Votes/2022373",
+    "https://clerk.house.gov/Votes/2022513"
+   ],
+   "why": "Voted NAY on H.R.8404, the Respect for Marriage Act, at House passage on 19-Jul-2022 (roll call 373, 267-157) and NAY again on the motion to concur in the Senate amendment on 8-Dec-2022 (roll call 513, 258-169). The Act would require all states to recognise same-sex marriages. No record was found of her seeking to prohibit same-sex marriage or impose penalties.",
+   "note": "claim was already right; only the citation was an encyclopaedia bio",
+   "old_reasoning": "McClain was among the 157 House members who voted against the Respect for Marriage Act in 2022, which would have required all states to recognize same-sex marriages and provided full federal protections. Her vote opposes federally mandated recognition across all states; no evidence was found of her advocating to make same-sex marriage illegal or imposing criminal penalties.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Lisa_McClain",
+    "https://en.wikipedia.org/wiki/Respect_for_Marriage_Act"
+   ],
+   "old_value": "4.0"
+  },
+  {
+   "name": "James Risch",
+   "topic": "Jail Capacity and Incarceration Alternatives",
+   "pid": "9a41971c-1e38-41b8-a6ec-bec6055a00b3",
+   "tid": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+   "sources": [
+    "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=115&session=2&vote=00271"
+   ],
+   "why": "Voted NAY on S.756, the First Step Act, on 18 December 2018 (Senate roll call 271, 87-12). The Act reduced mandatory minimums and expanded earned-time credit and diversion for federal prisoners; Risch was one of the twelve senators opposing it.",
+   "note": "one of 12 nays — a lopsided vote, but being in the 12 is the distinctive fact",
+   "old_reasoning": "Risch voted against the First Step Act, a bipartisan criminal justice reform bill that passed 87-12 in December 2018. He was among the 12 senators opposing sentencing reform and reduced sentences for nonviolent offenders, reflecting a preference for expanded incarceration and enforcement over diversion or treatment alternatives.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/James_Risch"
+   ],
+   "old_value": "5.0"
+  },
+  {
+   "name": "Juan Ciscomani",
+   "topic": "Taxation and Public Spending",
+   "pid": "c84bc9f3-6398-4d58-92b8-bbe6f6d1cdd3",
+   "tid": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "sources": [
+    "https://clerk.house.gov/Votes/2025145",
+    "https://clerk.house.gov/Votes/2025190"
+   ],
+   "why": "Voted YEA on H.R.1, the One Big Beautiful Bill Act, at House passage on 22-May-2025 (roll call 145, 215-214) and again on the motion to concur in the Senate amendment on 3-Jul-2025 (roll call 190, 218-214). The Act makes the 2017 individual tax rates permanent and adds further deductions, reducing federal revenue.",
+   "note": "both passage votes recorded; each was decided by a single-digit margin",
+   "old_reasoning": "Ciscomani voted for the One Big Beautiful Bill (May 2025), which permanently extends the 2017 Tax Cuts and Jobs Act, raises the SALT deduction cap to $40,000, and creates new deductions for tips and overtime pay — a broad tax-cutting agenda that reduces federal revenues.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/One_Big_Beautiful_Bill_Act",
+    "https://en.wikipedia.org/wiki/Juan_Ciscomani"
+   ],
+   "old_value": "4.0"
+  },
+  {
+   "name": "Brad Finstad",
+   "topic": "Healthcare Access",
+   "pid": "dc0a717a-67ef-4ca2-9c43-4896fad03392",
+   "tid": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "sources": [
+    "https://clerk.house.gov/Votes/2022420"
+   ],
+   "why": "Voted NAY on H.R.5376, the Inflation Reduction Act, on 12-Aug-2022 (roll call 420, 220-207). Its health provisions included Medicare drug-price negotiation and a three-year extension of the enhanced ACA premium subsidies.",
+   "note": "a vote against a package; it evidences opposition to those provisions, not a stated healthcare philosophy",
+   "old_reasoning": "Finstad voted against the Inflation Reduction Act (August 12 2022) which contained significant healthcare provisions including Medicare drug price negotiation and a three-year extension of ACA premium subsidies. His opposition to these expansions of government-subsidized healthcare access is consistent with a stance of limiting assistance to the poorest and leaving others to employers and private insurance.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Brad_Finstad"
+   ],
+   "old_value": "4.0"
+  },
+  {
+   "name": "Norma Torres",
+   "topic": "Childcare Affordability & Access",
+   "pid": "e4d5cd69-0a54-48d6-9d8c-11da8f091cb6",
+   "tid": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "sources": [
+    "https://clerk.house.gov/Votes/2021385",
+    "https://clerk.house.gov/Votes/202172"
+   ],
+   "why": "Voted YEA on H.R.5376, the Build Back Better Act, on 19-Nov-2021 (roll call 385, 220-213), which carried universal pre-kindergarten and capped childcare costs as a share of family income, and YEA on H.R.1319, the American Rescue Plan Act, on 10-Mar-2021 (roll call 72, 220-211), which expanded the child and dependent care tax credit.",
+   "note": "both are omnibus votes; they evidence support for the packages containing childcare expansion",
+   "old_reasoning": "Torres voted YES on the Build Back Better Act (Nov 2021, 220–213), which included $400 billion for universal pre-K and subsidized childcare capped at 7% of income for families up to 250% of state median income. She also voted YES on the American Rescue Plan (Feb 2021), which expanded the child and dependent care tax credit to $4,000 per child and allocated $5B for housing support. Her record aligns with stance 2 — significantly expanding subsidies to make childcare affordable for low- and middle-income families.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Build_Back_Better_Act",
+    "https://en.wikipedia.org/wiki/American_Rescue_Plan_Act_of_2021",
+    "https://en.wikipedia.org/wiki/Norma_Torres"
+   ],
+   "old_value": "2.0"
+  },
+  {
+   "name": "Norma Torres",
+   "topic": "Economic Development Incentives",
+   "pid": "e4d5cd69-0a54-48d6-9d8c-11da8f091cb6",
+   "tid": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "sources": [
+    "https://clerk.house.gov/Votes/2022404",
+    "https://clerk.house.gov/Votes/2022420",
+    "https://clerk.house.gov/Votes/2021369"
+   ],
+   "why": "Voted YEA on H.R.4346, the CHIPS and Science Act, on 28-Jul-2022 (roll call 404, 243-187); YEA on H.R.5376, the Inflation Reduction Act, on 12-Aug-2022 (roll call 420, 220-207); and YEA on H.R.3684, the Infrastructure Investment and Jobs Act, on 5-Nov-2021 (roll call 369, 228-206). All three direct targeted federal investment into named industries and infrastructure.",
+   "note": "IIJA cited at the concurrence vote that enacted it, not the earlier INVEST Act passage",
+   "old_reasoning": "Torres voted YES on the CHIPS and Science Act (2022), the Inflation Reduction Act's $370 billion in clean energy and manufacturing investment, and the Infrastructure Investment and Jobs Act (2021). As a New Democrat Coalition member she supports targeted government investment in strategic industries through public-private partnerships rather than either full public ownership or pure deregulation. Her consistent support for federal industrial policy investments aligns with stance 2.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/CHIPS_and_Science_Act",
+    "https://en.wikipedia.org/wiki/Inflation_Reduction_Act",
+    "https://en.wikipedia.org/wiki/Norma_Torres"
+   ],
+   "old_value": "2.0"
+  },
+  {
+   "name": "Elaine Luria",
+   "topic": "Ukraine - Russia Conflict",
+   "pid": "2a22bd69-fd7a-4782-9057-4647fdb4e7cb",
+   "tid": "24e9212c-b011-422a-865c-093e35050901",
+   "sources": [
+    "https://clerk.house.gov/Votes/2022145"
+   ],
+   "why": "Voted YEA on H.R.7691, the Additional Ukraine Supplemental Appropriations Act, on 10-May-2022 (roll call 145, 368-57). The vote was lopsided, so it confirms that she supported the aid rather than distinguishing her from colleagues.",
+   "note": "near-unanimous 368-57 — stated in the reasoning rather than glossed",
+   "old_reasoning": "Luria is a 20-year Navy veteran and vice chair of the House Armed Services Committee who consistently supported Ukraine aid packages throughout her tenure. She voted for Ukraine supplemental aid legislation in 2022, aligning with continuing current levels of military and economic aid to help Ukraine defend itself.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Elaine_Luria",
+    "https://ballotpedia.org/Elaine_Luria"
+   ],
+   "old_value": "2.0"
+  },
+  {
+   "name": "Dusty Johnson",
+   "topic": "Ukraine - Russia Conflict",
+   "pid": "4ec42691-0ce1-4f29-a6ba-0835fe35a963",
+   "tid": "24e9212c-b011-422a-865c-093e35050901",
+   "sources": [
+    "https://clerk.house.gov/Votes/2024151"
+   ],
+   "why": "Voted YEA on H.R.8035, the Ukraine Security Supplemental Appropriations Act, on 20-Apr-2024 (roll call 151, 311-112). Republicans split 101 yes to 112 no on that vote, so his yes was against the majority of his own conference.",
+   "note": "the 101-112 Republican split was counted off the roll-call sheet itself",
+   "old_reasoning": "Johnson voted for the April 2024 Ukraine aid package, one of a minority of Republicans to do so. His membership in the bipartisan Problem Solvers Caucus and his history of crossing party lines on select issues (e.g., certifying the 2020 election, supporting the January 6 commission) is consistent with continuing current levels of aid to Ukraine.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Dusty_Johnson",
+    "https://ballotpedia.org/Dusty_Johnson"
+   ],
+   "old_value": "2.0"
+  },
+  {
+   "name": "Rick Larsen",
+   "topic": "Ukraine - Russia Conflict",
+   "pid": "3a2bf7c8-5a49-4d53-88c4-0d4bc6ad17b0",
+   "tid": "24e9212c-b011-422a-865c-093e35050901",
+   "sources": [
+    "https://clerk.house.gov/Votes/2024151"
+   ],
+   "why": "Voted YEA on H.R.8035, the Ukraine Security Supplemental Appropriations Act, on 20-Apr-2024 (roll call 151, 311-112).",
+   "note": "replaces a FiveThirtyEight presidential-alignment score, which is not a Ukraine position",
+   "old_reasoning": "Voted with President Biden's stated position 100% of the time during the 117th Congress (per FiveThirtyEight), which included votes for Ukraine military and economic aid packages. This consistent alignment with Biden's Ukraine policy places him in the category of continuing current aid levels.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Rick_Larsen"
+   ],
+   "old_value": "2.0"
+  },
+  {
+   "name": "Frank J. Mrvan",
+   "topic": "Ukraine - Russia Conflict",
+   "pid": "e08ec276-3194-41d4-833b-953f27454857",
+   "tid": "24e9212c-b011-422a-865c-093e35050901",
+   "sources": [
+    "https://clerk.house.gov/Votes/2024151"
+   ],
+   "why": "Voted YEA on H.R.8035, the Ukraine Security Supplemental Appropriations Act, on 20-Apr-2024 (roll call 151, 311-112).",
+   "note": "replaces a vote on Syria war powers, which is a different conflict",
+   "old_reasoning": "Mrvan voted against H.Con.Res. 21 in March 2023, which would have directed removal of U.S. troops from Syria — indicating support for U.S. military engagement abroad. His New Democrat Coalition membership and consistent alignment with the Biden administration's foreign policy positions indicate support for continuing current levels of military and economic aid to Ukraine.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Frank_J._Mrvan"
+   ],
+   "old_value": "2.0"
+  },
+  {
+   "name": "Lisa C. McClain",
+   "topic": "Ukraine - Russia Conflict",
+   "pid": "e04094d1-247c-40c8-8829-c7cb8654d0ed",
+   "tid": "24e9212c-b011-422a-865c-093e35050901",
+   "from_value": 2,
+   "to_value": 4,
+   "sources": [
+    "https://clerk.house.gov/Votes/2024151",
+    "https://clerk.house.gov/Votes/2024145",
+    "https://clerk.house.gov/Votes/2024152",
+    "https://clerk.house.gov/Votes/2022141"
+   ],
+   "why": "Voted NAY on H.R.8035, the Ukraine Security Supplemental Appropriations Act, on 20-Apr-2024 (roll call 151, 311-112) — the April 2024 bill that funded continued military assistance to Ukraine. On the same day she voted YEA on H.R.8038, the 21st Century Peace through Strength Act (roll call 145, 360-58), and YEA on H.R.8034, the Israel Security Supplemental (roll call 152, 366-58), so she supported the other bills in that package while opposing the Ukraine appropriation specifically. She had earlier voted YEA on S.3522, the Ukraine Democracy Defense Lend-Lease Act (roll call 141, 417-10), a near-unanimous vote that does not distinguish her position.",
+   "note": "stored reasoning asserted she \"supported the 2024 Ukraine-Israel-Taiwan foreign aid package (360-58)\"; 360-58 is H.R.8038, and her vote on the Ukraine bill itself was NAY",
+   "old_reasoning": "McClain was not among the 10 Republicans who voted against the Ukraine Lend-Lease Act (April 2022, 417-10) and supported the 2024 Ukraine-Israel-Taiwan foreign aid package (360-58). As House Republican Conference Chair she aligns with mainstream Republican leadership that has voted to continue providing military and economic aid to Ukraine.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Ukraine_Democracy_Defense_Lend-Lease_Act_of_2022",
+    "https://en.wikipedia.org/wiki/21st_Century_Peace_through_Strength_Act",
+    "https://en.wikipedia.org/wiki/Lisa_McClain"
+   ],
+   "old_value": "2.0"
+  }
+ ]
+}

@@ -1,0 +1,244 @@
+[
+ {
+  "label": "McClain / Same-Sex Marriage (RFMA)",
+  "chamber": "house",
+  "year": 2022,
+  "roll": 513,
+  "scan": 0,
+  "expect_bill": "H R 8404",
+  "surname": "McClain",
+  "state": "MI"
+ },
+ {
+  "label": "Titus / Same-Sex Marriage (RFMA)",
+  "chamber": "house",
+  "year": 2022,
+  "roll": 513,
+  "scan": 0,
+  "expect_bill": "H R 8404",
+  "surname": "Titus",
+  "state": "NV"
+ },
+ {
+  "label": "Risch / First Step Act",
+  "chamber": "senate",
+  "congress": 115,
+  "sess": 2,
+  "roll": 271,
+  "scan": 0,
+  "expect_bill": "S. 756",
+  "surname": "Risch",
+  "state": "ID"
+ },
+ {
+  "label": "Grassley / First Step Act",
+  "chamber": "senate",
+  "congress": 115,
+  "sess": 2,
+  "roll": 271,
+  "scan": 0,
+  "expect_bill": "S. 756",
+  "surname": "Grassley",
+  "state": "IA"
+ },
+ {
+  "label": "Tran / Protection of Women and Girls in Sports Act",
+  "chamber": "house",
+  "year": 2025,
+  "roll": 14,
+  "scan": 20,
+  "expect_bill": "H R 28",
+  "surname": "Tran",
+  "state": "CA"
+ },
+ {
+  "label": "Ciscomani / One Big Beautiful Bill",
+  "chamber": "house",
+  "year": 2025,
+  "roll": 190,
+  "scan": 20,
+  "expect_bill": "H R 1",
+  "surname": "Ciscomani",
+  "state": "AZ"
+ },
+ {
+  "label": "Finstad / Inflation Reduction Act",
+  "chamber": "house",
+  "year": 2022,
+  "roll": 420,
+  "scan": 20,
+  "expect_bill": "H R 5376",
+  "surname": "Finstad",
+  "state": "MN"
+ },
+ {
+  "label": "Torres / Build Back Better",
+  "chamber": "house",
+  "year": 2021,
+  "roll": 385,
+  "scan": 20,
+  "expect_bill": "H R 5376",
+  "surname": "Torres",
+  "state": "CA"
+ },
+ {
+  "label": "Torres / American Rescue Plan",
+  "chamber": "house",
+  "year": 2021,
+  "roll": 72,
+  "scan": 20,
+  "expect_bill": "H R 1319",
+  "surname": "Torres",
+  "state": "CA"
+ },
+ {
+  "label": "Torres / CHIPS and Science Act",
+  "chamber": "house",
+  "year": 2022,
+  "roll": 404,
+  "scan": 20,
+  "expect_bill": "H R 4346",
+  "surname": "Torres",
+  "state": "CA"
+ },
+ {
+  "label": "Torres / IIJA",
+  "chamber": "house",
+  "year": 2021,
+  "roll": 369,
+  "scan": 20,
+  "expect_bill": "H R 3684",
+  "surname": "Torres",
+  "state": "CA"
+ },
+ {
+  "label": "Torres / Inflation Reduction Act",
+  "chamber": "house",
+  "year": 2022,
+  "roll": 420,
+  "scan": 20,
+  "expect_bill": "H R 5376",
+  "surname": "Torres",
+  "state": "CA"
+ },
+ {
+  "label": "McClain / Ukraine Lend-Lease",
+  "chamber": "house",
+  "year": 2022,
+  "roll": 130,
+  "scan": 20,
+  "expect_bill": "S 3522",
+  "surname": "McClain",
+  "state": "MI"
+ },
+ {
+  "label": "McClain / Apr-2024 Ukraine aid",
+  "chamber": "house",
+  "year": 2024,
+  "roll": 143,
+  "scan": 40,
+  "expect_bill": "H R 8035",
+  "surname": "McClain",
+  "state": "MI"
+ },
+ {
+  "label": "Dusty Johnson / Apr-2024 Ukraine aid",
+  "chamber": "house",
+  "year": 2024,
+  "roll": 143,
+  "scan": 40,
+  "expect_bill": "H R 8035",
+  "surname": "Johnson",
+  "state": "SD"
+ },
+ {
+  "label": "Luria / May-2022 Ukraine supplemental",
+  "chamber": "house",
+  "year": 2022,
+  "roll": 209,
+  "scan": 40,
+  "expect_bill": "H R 7691",
+  "surname": "Luria",
+  "state": "VA"
+ },
+ {
+  "label": "Larsen / Apr-2024 Ukraine aid",
+  "chamber": "house",
+  "year": 2024,
+  "roll": 143,
+  "scan": 40,
+  "expect_bill": "H R 8035",
+  "surname": "Larsen",
+  "state": "WA"
+ },
+ {
+  "label": "Mrvan / Apr-2024 Ukraine aid",
+  "chamber": "house",
+  "year": 2024,
+  "roll": 143,
+  "scan": 40,
+  "expect_bill": "H R 8035",
+  "surname": "Mrvan",
+  "state": "IN"
+ },
+ {
+  "label": "Mrvan / H.Con.Res.21 Syria",
+  "chamber": "house",
+  "year": 2023,
+  "roll": 152,
+  "scan": 40,
+  "expect_bill": "H CON RES 21",
+  "surname": "Mrvan",
+  "state": "IN"
+ },
+ {
+  "label": "Newhouse / USMCA",
+  "chamber": "house",
+  "year": 2019,
+  "roll": 701,
+  "scan": 20,
+  "expect_bill": "H R 5430",
+  "surname": "Newhouse",
+  "state": "WA"
+ },
+ {
+  "label": "Landsman / Apr-2024 Ukraine aid",
+  "chamber": "house",
+  "year": 2024,
+  "roll": 143,
+  "scan": 40,
+  "expect_bill": "H R 8035",
+  "surname": "Landsman",
+  "state": "OH"
+ },
+ {
+  "label": "McClain / 21st Century Peace through Strength Act",
+  "chamber": "house",
+  "year": 2024,
+  "roll": 145,
+  "scan": 40,
+  "expect_bill": "H R 8038",
+  "surname": "McClain",
+  "state": "MI"
+ },
+ {
+  "label": "McClain / Israel supplemental",
+  "chamber": "house",
+  "year": 2024,
+  "roll": 145,
+  "scan": 40,
+  "expect_bill": "H R 8034",
+  "surname": "McClain",
+  "state": "MI"
+ },
+ {
+  "label": "Ezell / H.Res.106 defund police",
+  "chamber": "house",
+  "year": 2023,
+  "roll": 1,
+  "scan": 0,
+  "expect_bill": "H RES 106",
+  "surname": "Ezell",
+  "state": "MS"
+ }
+]
