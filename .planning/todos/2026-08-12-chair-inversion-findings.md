@@ -117,8 +117,27 @@ Tools: `scripts/chair-inversion-scan.mjs`, `scripts/chair-inversion-batch.mjs`,
 Records: `2026-08-12-chair-inversion-{scan,batch,rescan,rollback}.json`.
 
 ## ▶ What is left
-1. **Sourcing on 71 of the 89 corrected rows** — extend the Maryland bill crawl to climate,
-   healthcare, housing and childcare titles, then re-source the same way class C was.
+
+### 1. Sourcing on 71 of the 89 corrected rows — and it is TWO jobs, not one
+Explicit list: `backend/data/stance-retirement/2026-08-12-chair-fix-sourcing-owed.json` (71 rows).
+
+🔑 **Only 24 of the 71 name an instrument, and they name just TWO acts between them.** The other 47
+name nothing at all — so "extend the crawl" is the right plan for one half and useless for the other.
+
+**(a) The 24 landmark rows — cheap and high-confidence.** Resolve each act ONCE, pull its full
+sponsor list from the bill page, match every member against it:
+- **Blueprint for Maryland's Future** ×11 (Childcare) — 2019 SB1030/HB1413 and 2020 SB1000/HB1300.
+  ⚠ Sponsored by "President"/"Speaker", so the *bill page* sponsor list is the only route.
+- **Climate Solutions Now Act** ×12 (Climate) — 2022, and the corpus will resolve it by title.
+
+**(b) The 47 instrument-free rows — needs the full class-C treatment**: crawl that topic's bill
+titles, build the co-sponsor reverse index, match, pick squarely on-topic bills.
+Healthcare Access 13 · Affordable Housing 16 · Same-Sex Marriage 5 · Civil Rights 4 · Climate 3 ·
+Childcare 2 · Ukraine 1 · Rent Regulation 1 · Misinformation 1.
+⚠ **Same-Sex Marriage will not resolve** — Maryland settled it in 2012 and 2012RS has zero usable
+bills in the corpus. Expect those 5 to stay unsourced by this route.
+⚠ Reuse `md-cr-sponsor-index.mjs`; **add the topic's vocabulary to its `CR` regex first** — the net
+IS the extractor, and omitting "religio"/"immigra" already manufactured three false absences once.
 2. **The 4 uncalibrated-topic blind spots.** Fossil Fuel Policy, Reproductive Rights, Immigration and
    Voting Rights all scored UNCALIBRATED, so **they were never tested at all** — the true national
    total is unknown and may be larger than 194. Measuring them needs a test that can see the object
