@@ -98,3 +98,9 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   a voter requests), never on `race_candidates`.
 - `geofence_boundaries.state` holds **2-digit FIPS**, not USPS codes.
 - The `essentials` frontend never queries `essentials.*` tables directly — it goes through this API.
+- **Not every seat is residency-based or full-voting.** Maine seats three non-voting *tribal*
+  representatives; the territories and DC send non-voting delegates.
+  [`docs/adr/0003-non-residency-representation.md`](docs/adr/0003-non-residency-representation.md)
+  splits those into `districts.representation_basis` and `offices.voting_powers`, and forbids
+  inferring membership in a polity from an address. **Accepted, not yet implemented** — those columns
+  do not exist yet, so don't write to them; read the ADR before modelling any such seat.

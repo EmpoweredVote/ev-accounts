@@ -73,6 +73,43 @@ now have a sitting representative.
    `is_vacant` and `vacant_since` in the same migration, and post-verify both.
 3. Neither has a headshot; both are candidates for the next sweep.
 
+## Headshots ✅ 2026-08-12 (migration 1716)
+
+Both from the chambers' own official portraits, `public_domain`, mirrored to `politician_photos` at
+600x750 like their seatmates:
+
+- **Harlan** — `mgaleg.maryland.gov/2026RS/images/harlan01.jpg` (250x300). Alt text "Harlan,
+  Alexander M." and a Maryland-flag lapel pin both corroborate identity. Top crop is **tight** — hair
+  at the frame edge, tighter than the usual one-ear-above-hair; accepted because the source frames it
+  that way.
+- **Theriault** — `legislature.maine.gov/house/Repository/MemberProfiles/c4c60e9c…_Theriault.jpg`
+  (152x202). Soft at 600x750, and **that is the chamber standard, not a shortfall**: seatmate Irene
+  Gifford's source is the same 152x202 stored at 600x750.
+
+🔴 **Identity was established PAGE-BOUND, not by filename.** A *Timothy* Theriault also exists in
+Maine politics; filename matching is exactly what fails there. Both renders were then pulled back
+from the CDN and viewed at the pid they were stored under — a byte-count match cannot catch a
+pid-to-face swap, which is the defect a contact sheet has caught in prior waves.
+
+🔴 **Migration 1715 had a defect, fixed in 1716.** It created both politician rows without setting
+`politicians.is_vacant`, leaving NULL where all 1,338 seated state legislators carry `false`. The
+headshot tooling filters `AND p.is_vacant = false`, and **NULL fails that**, so both members were
+invisible to the very sweep meant to find people without photos. Same family as the missing-`office_terms`
+trap: nothing errors, the row just stops existing as far as the worklist is concerned. When
+hand-creating a politician, copy the peers' full column shape — not just the columns you happen to
+care about.
+
+## Tribal representatives → ADR 0003 (accepted 2026-08-12)
+
+Resolved as a **modelling decision**, not an exception:
+[`docs/adr/0003-non-residency-representation.md`](../../docs/adr/0003-non-residency-representation.md).
+Maine reserves **three** non-voting tribal seats (Penobscot Nation, Passamaquoddy, Houlton Band of
+Maliseet); two are filled and **Penobscot's is vacant because the Nation has not sent anyone** — a
+political act the current model cannot record at all. Two new fields, `districts.representation_basis`
+and `offices.voting_powers`, plus a binding rule that membership in a polity is **never inferred from
+an address** (so these seats are additive and explained, never assigned). Not yet implemented; Maine's
+three seats are the first instance and the territories follow as a powers-only change.
+
 ## Also surfaced, needing a decision rather than a fix
 
 **Maine seats two tribal representatives** the diff reports as unheld: **Aaron Dana**
