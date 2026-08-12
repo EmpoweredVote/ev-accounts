@@ -39,6 +39,7 @@ export const TOPIC_EXCLUDE = {
  */
 export const TOPIC_CORE = {
   'Healthcare Access': /\bhealth insurance\b|\bmedicaid\b|\bmedical assistance\b|\bhealth benefit|\bcoverage\b|\buninsured\b|\bpremiums?\b|\bcost.sharing\b|\bcopay|\baffordable care\b|\bprescription drug|\binsulin\b|\btelehealth\b|\bhealth equity\b|\bcommunity health\b/i,
+  'Medicare / Medicaid': /\bmedicaid\b|\bmedicare\b|\bmedical assistance\b|\bnursing homes?\b|\blong.term care\b|\bwaiver\b/i,
   'Affordable Housing': /\baffordable housing\b|\bhousing trust\b|\brental assistance\b|\bhomeless|\bfirst.time\b|\bdown payment\b|\binclusionary\b|\bhousing voucher\b|\beviction\b|\btenants?\b|\bhousing development\b|\bworkforce housing\b|\bforeclosur/i,
   'Rent Regulation': /\brent stabiliz|\brent control\b|\brent increase|\brent gouging\b|\bjust cause\b|\bsecurity deposit\b|\btenant protection|\beviction\b|\bleases?\b/i,
   'Childcare Affordability & Access': /\bchild care\b|\bchildcare\b|\bprekindergarten\b|\bearly childhood\b/i,
@@ -48,8 +49,29 @@ export const TOPIC_CORE = {
   'Climate Change and Environmental Protection': /\bclimate\b|\bgreenhouse\b|\bclean energy\b|\brenewable\b|\bsolar\b|\bemissions\b|\bcarbon\b|\bnet.zero\b|\bfossil fuel|\belectric vehicle/i,
 };
 
+/**
+ * STRICT: a title-SHAPE test, used to decide whether a bill may actually be CITED.
+ *
+ * 🔴 CORE WAS STILL TOO LOOSE TO CITE FROM. Ranking by it proposed, as the single best healthcare
+ * evidence for real members: "Agriculture - Cost-Sharing Program - Fixed Natural Filter Practices"
+ * (agricultural cost-share, not insurance cost-sharing), "Public Health - Food and Milk Product
+ * Labeling", and "Health Occupations - Grounds for Discipline". All are on-topic by vocabulary and
+ * none of them evidences a HEALTHCARE ACCESS position.
+ *
+ * Maryland titles its bills predictably, so requiring the recognised program/instrument name is a
+ * far better filter than any keyword list. A row with no STRICT match gets NO citation and stays
+ * owed — precision over coverage, because a weak citation is worse than an honest gap.
+ */
+export const TOPIC_STRICT = {
+  'Healthcare Access': /\bhealth insurance\b|\bmaryland medical assistance program\b|\bmedicaid\b|\bhealth benefit plans?\b|\bhealth benefit exchange\b|\bhealth care coverage\b|\bmedicare\b|\bchildren'?s health (insurance )?program\b|\bhealth insurance carriers?\b/i,
+  'Medicare / Medicaid': /\bmaryland medical assistance program\b|\bmedicaid\b|\bmedicare\b|\bmedical assistance\b|\bdevelopmental disabilities administration\b|\bhome- and community-based\b|\bchildren'?s health (insurance )?program\b/i,
+};
+
 export const TOPIC_NETS = {
   'Healthcare Access': /\bhealth insurance\b|\bhealth care\b|\bhealthcare\b|\bmedicaid\b|\bmedical assistance\b|\bhealth benefit|\bprescription drug|\binsulin\b|\buninsured\b|\bhealth equity\b|\bpublic health\b|\bhospitals?\b|\btelehealth\b|\bhealth coverage\b|\baffordable care\b|\bcopay|\bcost.sharing\b|\bmental health\b|\bbehavioral health\b|\bmaternal health\b|\bdental care\b|\bvision care\b|\blong.term care\b|\bnursing homes?\b|\bhealth occupations\b|\bcommunity health\b|\bhealth maintenance organization/i,
+
+  // ⚠ a distinct compass topic from Healthcare Access, and narrower: it is about the PROGRAMS.
+  'Medicare / Medicaid': /\bmedicaid\b|\bmedicare\b|\bmedical assistance\b|\bdual.eligible\b|\blong.term care\b|\bnursing homes?\b|\bhome and community.based\b|\bwaiver\b|\bmanaged care organization|\bMCO\b|\bchildren'?s health insurance\b|\bCHIP\b/i,
 
   'Affordable Housing': /\baffordable housing\b|\bhousing\b|\bhomeless|\beviction\b|\bforeclosur|\brental assistance\b|\bhousing trust\b|\bfirst.time (home)?buyer\b|\bdown payment\b|\binclusionary\b|\bzoning\b|\bland use\b|\baccessory dwelling\b|\bmanufactured home|\bmobile home|\btenants?\b|\blandlords?\b|\bhabitability\b|\bhousing voucher\b|\brents?\b/i,
 

@@ -34,6 +34,7 @@ const argv = process.argv.slice(2);
 const flag = (n, d = null) => { const i = argv.indexOf(n); return i > -1 ? argv[i + 1] : d; };
 const OUT = flag('--out', 'data/stance-retirement/2026-08-12-md-member-legislation.json');
 const ONLY = flag('--only');
+const IN = flag('--in', 'data/stance-retirement/2026-08-12-instrument-free-remaining.json');
 
 const CACHE = 'C:/Users/Chris/AppData/Local/Temp/ev-stance-cache/mdcorpus';
 const MEMBERS = path.join(CACHE, 'member-cache');
@@ -65,7 +66,7 @@ async function memberSession(slug, ys) {
   return { status: 'OK', bills: found };
 }
 
-const REMAINING = JSON.parse(fs.readFileSync('data/stance-retirement/2026-08-12-instrument-free-remaining.json', 'utf8'));
+const REMAINING = JSON.parse(fs.readFileSync(IN, 'utf8'));
 let rows = REMAINING.rows.filter((r) => r.state === 'MD');
 if (ONLY) rows = rows.filter((r) => r.name === ONLY);
 console.log(`${rows.length} Maryland row(s) across ${new Set(rows.map((r) => r.name)).size} members\n`);

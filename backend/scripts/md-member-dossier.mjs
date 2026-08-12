@@ -24,6 +24,7 @@ const argv = process.argv.slice(2);
 const flag = (n, d = null) => { const i = argv.indexOf(n); return i > -1 ? argv[i + 1] : d; };
 const OUT = flag('--out', 'data/stance-retirement/2026-08-12-md-member-dossier.json');
 const PER_ROW = parseInt(flag('--per-row', '4'), 10);
+const IN = flag('--in', 'data/stance-retirement/2026-08-12-md-member-legislation.json');
 
 const CACHE = 'C:/Users/Chris/AppData/Local/Temp/ev-stance-cache/mdcorpus';
 const BILLS = path.join(CACHE, 'bill-cache');
@@ -48,7 +49,7 @@ async function billHtml(slug, session) {
 }
 const textOf = (h) => h.replace(/<[^>]*>/g, ' ').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ');
 
-const R = JSON.parse(fs.readFileSync('data/stance-retirement/2026-08-12-md-member-legislation.json', 'utf8'));
+const R = JSON.parse(fs.readFileSync(IN, 'utf8'));
 const out = [];
 for (const r of R.rows) {
   const sur = surnameOf(r.name);

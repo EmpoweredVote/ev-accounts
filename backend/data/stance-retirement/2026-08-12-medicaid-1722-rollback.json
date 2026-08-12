@@ -1,0 +1,468 @@
+{
+ "pass": "MD medicaid-template re-sourcing (1722)",
+ "rows": [
+  {
+   "politician_id": "d61a670a-7626-4464-93dc-c1e21d7b26da",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Andrea Fletcher Harrison",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Supported Medicaid expansion and health equity legislation; backed expanded healthcare access for underserved communities in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harrison01?tab=2025RS-legislation"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "4436b432-a63f-4946-919a-f30c41f899e4",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Anne Healey",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Supported Medicaid expansion and state healthcare access legislation; backed HB 768 (2024) expanding reproductive healthcare coverage under state Medicaid program.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/healey"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ashanti Martinez",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Supported Medicaid expansion and state health equity legislation; backed bills expanding healthcare access for underserved communities in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01?tab=2025RS-legislation"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "590b56b2-1473-4e86-ba96-0490e172f6ff",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ben Barnes",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Supported Medicaid expansion bills and state health equity legislation; backed HB 768 (2024) expanding Medicaid coverage for reproductive healthcare services.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Brooke Lierman",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Comptroller Lierman voted for Medicaid expansion and healthcare access legislation during her time in the House of Delegates. She supports government-provided healthcare and expanding coverage to all Marylanders.",
+   "old_sources": [
+    "https://ballotpedia.org/Brooke_Lierman",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lierman01?ys=2025RS"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "7ced90a8-39dc-447e-ba33-e3af4cd47473",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Chao Wu",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Wu co-sponsored healthcare expansion legislation and has supported Medicaid expansion — strongly supports government-led healthcare coverage.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wu01",
+    "https://ballotpedia.org/Chao_Wu"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Cheryl E. Pasteur",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Pasteur supported Medicaid expansion and healthcare access legislation; co-sponsored bills expanding public health coverage — strongly supports government-led healthcare.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pasteur01",
+    "https://ballotpedia.org/Cheryl_Pasteur"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "a4b61b58-9006-4e58-952d-abeb2521cda0",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Courtney Watson",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Watson supported Medicaid expansion and healthcare access legislation — favors significant expansion of public health coverage with mixed public/private approach.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson02",
+    "https://ballotpedia.org/Courtney_Watson"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "e94337e1-4776-4058-87b4-32dfeb7732a0",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Dana Stein",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Stein supported Medicaid expansion and healthcare access legislation — favors significant public coverage expansion.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stein",
+    "https://ballotpedia.org/Dana_Stein"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "d5999df9-83b8-4870-a170-4d13f40473e2",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Denise Roberts",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Supported Medicaid expansion and state health equity legislation; backed healthcare access bills serving Prince George's County communities.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberts01"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "b9c61fea-fcb1-45cc-8e2c-e5b3046b7266",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Edith J. Patterson",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Patterson has supported healthcare expansion legislation including Medicaid expansion and pharmacy benefit manager reform bills to lower drug costs for Maryland residents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/patterson02",
+    "https://ballotpedia.org/Edith_Patterson"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Gabriel M. Moreno",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Moreno supported Medicaid expansion and healthcare access legislation — favors significant public health coverage expansion.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moreno01",
+    "https://ballotpedia.org/Gabriel_Moreno_(Maryland)"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Jen Terrasa",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Terrasa supported Medicaid expansion and healthcare access legislation — favors significant public coverage expansion with mixed system.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/terrasa01",
+    "https://ballotpedia.org/Jen_Terrasa"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Jessica Feldmark",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Feldmark supported Medicaid expansion and healthcare access legislation — favors significant expansion of public health coverage.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldmark01",
+    "https://ballotpedia.org/Jessica_Feldmark"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "631dac5c-fb86-41f5-a82d-5963164a9142",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Jon S. Cardin",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Cardin supported Medicaid expansion and healthcare access legislation — favors significant expansion of public coverage with mixed system approach.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/cardin01",
+    "https://ballotpedia.org/Jon_Cardin"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "00cd05cc-75de-4d9a-ab23-9f53441bc186",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Joseline Peña-Melnyk",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Former Health & Government Operations committee vice chair; sponsored numerous healthcare access bills including Medicaid expansion and behavioral health legislation over multiple sessions.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Kent Roberson",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Supported Medicaid expansion and state health equity legislation; backed healthcare access for underserved communities in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01?tab=2025RS-legislation"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Kevin M. Harris",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Harris supports expanding healthcare access in Prince George's County. He backed Medicaid expansion and healthcare affordability legislation.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Kym Taylor",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Supported Medicaid expansion and health equity legislation; backed expanded healthcare access for Prince George's County communities.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taylor03"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "4a409af4-8568-42c3-bb72-7bb7500c96ce",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mark S. Chang",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Chang has co-sponsored healthcare affordability legislation including prescription drug pricing reform and Medicaid expansion measures to improve healthcare access for Anne Arundel County residents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/chang01?tab=2026RS-legislation",
+    "https://ballotpedia.org/Mark_Chang"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "b8e331fa-d58e-479f-b076-8fda0b0604c5",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Marvin E. Holmes, Jr.",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Supported Medicaid expansion and state healthcare access legislation; backed health equity bills serving Prince George's County communities over many legislative sessions.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holmes"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "251a2047-372b-480e-aa09-231f9a5edeca",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mary A. Lehman",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Supported Medicaid expansion and state healthcare access bills; voted for HB 768 (2024) expanding reproductive healthcare coverage under Medicaid.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lehman01?tab=2025RS-legislation"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "38404814-7be0-40e3-b044-062f98b2a5b0",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mary Washington",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Washington supports single-payer or Medicare for All-style approaches and has backed significant Medicaid expansion and universal coverage measures in Maryland.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington01",
+    "https://ballotpedia.org/Mary_Washington"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "18313901-28d8-464c-9368-2873577e9d44",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mary-Dulany James",
+   "topic": "Healthcare Access",
+   "old_reasoning": "James has supported Medicaid expansion and healthcare access legislation, voting for measures to expand insurance coverage and protect the ACA in Maryland.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/james01",
+    "https://ballotpedia.org/Mary-Dulany_James"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "N. Scott Phillips",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Phillips supported Medicaid expansion and healthcare access legislation; favors significant expansion of public coverage while retaining mixed public/private system.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/phillips02",
+    "https://ballotpedia.org/N._Scott_Phillips"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Nancy J. King",
+   "topic": "Healthcare Access",
+   "old_reasoning": "King has supported Medicaid expansion and healthcare access, serving on the Budget and Taxation Committee and backing health funding in state budgets.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/king",
+    "https://ballotpedia.org/Nancy_King"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "5c24446e-c9d6-4dda-9703-e3c049798315",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Nicole A. Williams",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Supported Medicaid expansion and state health equity bills; backed expanded healthcare access for underserved communities in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/williams01"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Pam Lanman Guzzone",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Lanman Guzzone supported Medicaid expansion and healthcare access legislation — favors significant public health coverage expansion.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone01",
+    "https://ballotpedia.org/Pam_Guzzone"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Pamela Beidle",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Beidle has supported Medicaid expansion and access to healthcare including voting for the Maryland Health Benefit Exchange and insurance market reforms.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/beidle01",
+    "https://ballotpedia.org/Pamela_Beidle"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "9285f590-79b5-48de-a1c0-a022629e6ebb",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Robbyn Lewis",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Lewis sponsored Maryland Medical Assistance Program - Individuals With Intellectual and Developmental Disabilities - Provider Reimbursement and Income Tax Credit for Physician Preceptors in shortage areas — supports Medicaid expansion and healthcare access.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lewis01"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ron Watson",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Watson backs healthcare access expansion including Medicaid expansion and healthcare affordability for working families in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Sara Love",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Love strongly supports expanding healthcare access. She voted for Medicaid expansion measures and healthcare affordability legislation. Montgomery County includes large healthcare worker constituencies.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "f6a237a0-34ff-4a93-b05a-335ec38b6da3",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Terri L. Hill",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Hill is a practicing physician and has been Maryland's leading advocate for healthcare expansion including Medicaid expansion and co-sponsored legislation supporting Maryland Health Care for All.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hill02",
+    "https://ballotpedia.org/Terri_Hill"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "2e809682-2d95-480c-885e-d2174b811cfe",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Tiffany T. Alston",
+   "topic": "Healthcare Access",
+   "old_reasoning": "Supported Medicaid expansion and state health equity legislation; backed healthcare access bills for underserved communities in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/alston01?tab=2025RS-legislation"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "760cd4a7-235c-472f-a0ba-fb07098dfd57",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Adrienne A. Jones",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Jones supported Medicare and Medicaid expansion efforts and has consistently opposed cuts to these programs throughout her legislative career.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jones",
+    "https://ballotpedia.org/Adrienne_A._Jones"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "590b56b2-1473-4e86-ba96-0490e172f6ff",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Ben Barnes",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Supported Medicaid expansion and defended state healthcare programs against cuts; backed HB 768 (2024) expanding Medicaid coverage scope.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "6e3c30f5-52be-48b0-b5b4-383e5d745c57",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Bill Ferguson",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Ferguson has strongly supported Medicaid and Medicare as Senate President, opposing cuts and backing Medicaid expansion to cover more Maryland residents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ferguson",
+    "https://ballotpedia.org/Bill_Ferguson"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "00cd05cc-75de-4d9a-ab23-9f53441bc186",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Joseline Peña-Melnyk",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Healthcare committee leader who supported Medicaid expansion; backed bills expanding state health insurance programs and protecting existing Medicare/Medicaid beneficiaries.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena"
+   ],
+   "chair_untouched": 1
+  },
+  {
+   "politician_id": "7e1dfb66-1eff-4c8d-b3fe-d39f990b99c4",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Malcolm P. Ruff",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Ruff sponsored Maryland Medical Assistance Program reimbursement legislation for disabled individuals — consistent support for Medicaid expansion and public insurance programs.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ruff01"
+   ],
+   "chair_untouched": 2
+  },
+  {
+   "politician_id": "36eecaff-4677-441a-b36e-a323e87d9158",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Samuel I. Rosenberg",
+   "topic": "Medicare / Medicaid",
+   "old_reasoning": "Rosenberg sponsored Maryland Medical Assistance Program (Medicaid) and Maryland Children's Health Program transfers legislation — consistent support for Medicaid expansion and public health insurance programs.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosenberg"
+   ],
+   "chair_untouched": 2
+  }
+ ]
+}

@@ -1,0 +1,1457 @@
+{
+ "pass": "MD medicaid-template citation proposals",
+ "rows": [
+  {
+   "politician_id": "d61a670a-7626-4464-93dc-c1e21d7b26da",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Andrea Fletcher Harrison",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "harrison01",
+   "old_reasoning": "Supported Medicaid expansion and health equity legislation; backed expanded healthcare access for underserved communities in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harrison01?tab=2025RS-legislation"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 31,
+   "proposal": {
+    "key": "2026RS:hb0637",
+    "session": "2026RS",
+    "number": "HB0637",
+    "title": "Public Health - Recommendations for Immunizations, Screenings, and Preventive Services - Pharmacist Administration and Required Health Insurance Coverage (The Vax Act)",
+    "role": "cosp",
+    "chapter": 7,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Secretary of Health to issue recommendations for certain immunizations, screenings, and preventive services based on certain evidence-based scientific and clinical guidance; requiring the Secretary, before adopting a recommendation for a certain preventive service, to hold a notice and comment period, obtain a certain analysis from the Maryland Health Care Commission, and cite the basis for the recommendation; altering the health insurance coverage requirements for certain immunizations, screenings, and services; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0637?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "cosp 2026RS HB1291 Public Health - Maryland Medical Assistance Program - Contin"
+   ]
+  },
+  {
+   "politician_id": "4436b432-a63f-4946-919a-f30c41f899e4",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Anne Healey",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "healey",
+   "old_reasoning": "Supported Medicaid expansion and state healthcare access legislation; backed HB 768 (2024) expanding reproductive healthcare coverage under state Medicaid program.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/healey"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 65,
+   "proposal": {
+    "key": "2024RS:hb0728",
+    "session": "2024RS",
+    "number": "HB0728",
+    "title": "Health Insurance - Qualified Resident Enrollment Program (Access to Care Act)",
+    "role": "cosp",
+    "chapter": 842,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Maryland Health Benefit Exchange to establish and implement the Qualified Resident Enrollment Program to facilitate the enrollment of qualified residents in qualified plans; providing that the operation and administration of the Program may include functions delegated by the Exchange to a third party; and providing that the implementation of the Program is contingent on approval of a certain waiver application amendment.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0728?ys=2024RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "ea9fc2d6-3b26-469a-978c-e8c846d2d49a",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Aruna Miller",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "miller",
+   "old_reasoning": "Lt. Governor Miller voted for healthcare expansion bills during her legislative career including Medicaid expansion and coverage for low-income Marylanders. She supports government-provided healthcare and has advocated for universal coverage.",
+   "old_sources": [
+    "https://ballotpedia.org/Aruna_Miller",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/miller%20a?ys=2019RS"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 0,
+   "proposal": null,
+   "blocked_reason": "no bill passed the STRICT title test with a confirmed sponsor slug",
+   "alternates": []
+  },
+  {
+   "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ashanti Martinez",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "martinez01",
+   "old_reasoning": "Supported Medicaid expansion and state health equity legislation; backed bills expanding healthcare access for underserved communities in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01?tab=2025RS-legislation"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 335,
+   "proposal": {
+    "key": "2026RS:hb0445",
+    "session": "2026RS",
+    "number": "HB0445",
+    "title": "Maryland Medical Assistance Program and Health Insurance - Coverage for Orthoses and Prostheses (So Every Body Can Move Act)",
+    "role": "lead",
+    "chapter": 628,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Maryland Medical Assistance Program and certain insurers, nonprofit health service plans, and health maintenance organizations to provide certain coverage related to orthoses beginning January 1, 2027; clarifying that certain mandated benefits related to prostheses include all prostheses determined by a treating health care provider to be medically necessary for completing daily living activities, essential job-related activities, or performing certain other physical activities; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0445?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "LEAD 2026RS HB0739 Health Insurance - Prompt Payment of Claims - Requirements",
+    "LEAD 2026RS HB0813 Maryland Medical Assistance Program - Coverage for the Treat"
+   ]
+  },
+  {
+   "politician_id": "590b56b2-1473-4e86-ba96-0490e172f6ff",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ben Barnes",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "barnes",
+   "old_reasoning": "Supported Medicaid expansion bills and state health equity legislation; backed HB 768 (2024) expanding Medicaid coverage for reproductive healthcare services.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 75,
+   "proposal": {
+    "key": "2025RS:hb1315",
+    "session": "2025RS",
+    "number": "HB1315",
+    "title": "Vaccinations by Pharmacists and Health Insurance Coverage for Immunizations",
+    "role": "cosp",
+    "chapter": 738,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Altering the vaccinations that a pharmacist may administer, subject to certain requirements, to an individual of at least a certain age; and altering the vaccinations included in the minimum package of child wellness services for which certain health insurers and nonprofit health service plans are required to provide coverage to include those recommended by the Advisory Committee on Immunization Practices of the Centers for Disease Control and Prevention as of December 31, 2024.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1315?ys=2025RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "cosp 2026RS HB1445 Maryland Medical Assistance Program and Developmental Disabi"
+   ]
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Benjamin F. Kramer",
+   "topic": "Healthcare Access",
+   "chair": "5.0",
+   "member_slug": "kramer02",
+   "old_reasoning": "Kramer consistently votes for healthcare access expansion including Medicaid expansion, prescription drug cost controls, and healthcare affordability measures.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS"
+   ],
+   "n_candidates": 121,
+   "proposal": null,
+   "blocked_reason": "chair 5.0 is at or past the anti pole — sponsorship cannot evidence it",
+   "alternates": [
+    "LEAD 2024RS SB0600 Maryland Medical Assistance Program - Dental Services - Cove"
+   ]
+  },
+  {
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Brooke Lierman",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "lierman01",
+   "old_reasoning": "Comptroller Lierman voted for Medicaid expansion and healthcare access legislation during her time in the House of Delegates. She supports government-provided healthcare and expanding coverage to all Marylanders.",
+   "old_sources": [
+    "https://ballotpedia.org/Brooke_Lierman",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lierman01?ys=2025RS"
+   ],
+   "sessions_unreadable": [
+    "2023RS",
+    "2024RS",
+    "2025RS",
+    "2026RS"
+   ],
+   "n_candidates": 76,
+   "proposal": null,
+   "blocked_reason": "no bill passed the STRICT title test with a confirmed sponsor slug",
+   "alternates": []
+  },
+  {
+   "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Bryan W. Simonaire",
+   "topic": "Healthcare Access",
+   "chair": "3.0",
+   "member_slug": "simonaire",
+   "old_reasoning": "Simonaire supports some healthcare access improvements in rural and suburban settings but has opposed Medicaid expansion funded by tax increases. He prefers market-based healthcare solutions.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simonaire",
+    "https://ballotpedia.org/Bryan_Simonaire"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 50,
+   "proposal": null,
+   "blocked_reason": "chair 3.0 is at or past the anti pole — sponsorship cannot evidence it",
+   "alternates": []
+  },
+  {
+   "politician_id": "7ced90a8-39dc-447e-ba33-e3af4cd47473",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Chao Wu",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "wu01",
+   "old_reasoning": "Wu co-sponsored healthcare expansion legislation and has supported Medicaid expansion — strongly supports government-led healthcare coverage.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wu01",
+    "https://ballotpedia.org/Chao_Wu"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 20,
+   "proposal": {
+    "key": "2026RS:hb0795",
+    "session": "2026RS",
+    "number": "HB0795",
+    "title": "Health Insurance - Artificial Intelligence - Grievance Process and Reporting (AI Health Insurance Accountability Act of 2026)",
+    "role": "lead",
+    "chapter": null,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring that a carrier's internal grievance process provide for human review of grievances resulting from adverse decisions made using artificial intelligence, algorithm, or other software tools; requiring carriers to report certain information on grievances resulting from adverse decisions made using artificial intelligence, algorithm, or other software tools; requiring a carrier to provide a model review process under certain circumstances; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0795?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "cosp 2026RS HB0637 Public Health - Recommendations for Immunizations, Screening",
+    "cosp 2026RS HB1385 Health Insurance - Use of Artificial Intelligence - Human Ev"
+   ]
+  },
+  {
+   "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Cheryl E. Pasteur",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "pasteur01",
+   "old_reasoning": "Pasteur supported Medicaid expansion and healthcare access legislation; co-sponsored bills expanding public health coverage — strongly supports government-led healthcare.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pasteur01",
+    "https://ballotpedia.org/Cheryl_Pasteur"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 41,
+   "proposal": {
+    "key": "2026RS:hb1118",
+    "session": "2026RS",
+    "number": "HB1118",
+    "title": "Health, Health Insurance, and Health Occupations - Perinatal Behavioral Health Conditions",
+    "role": "cosp",
+    "chapter": 637,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Maryland Medical Assistance Program and certain insurers, nonprofit health service plans, and health maintenance organizations to provide coverage for screening for perinatal behavioral health conditions at certain times; requiring the Maryland Department of Health to identify certain screening tools and to assist certain health care providers with accessing resources and referral services related to screening for perinatal behavioral health conditions; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1118?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "cosp 2026RS HB1291 Public Health - Maryland Medical Assistance Program - Contin"
+   ]
+  },
+  {
+   "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Chris West",
+   "topic": "Healthcare Access",
+   "chair": "4.0",
+   "member_slug": "west02",
+   "old_reasoning": "West prefers market-based healthcare solutions and has opposed government mandates and Medicaid expansion measures in the Maryland Senate.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/west02",
+    "https://ballotpedia.org/Chris_West_(Maryland)"
+   ],
+   "sessions_unreadable": [
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS"
+   ],
+   "n_candidates": 79,
+   "proposal": null,
+   "blocked_reason": "chair 4.0 is at or past the anti pole — sponsorship cannot evidence it",
+   "alternates": [
+    "LEAD 2023RS SB0500 Health Insurance – Health Benefit Plans Issued Through Profe"
+   ]
+  },
+  {
+   "politician_id": "a4b61b58-9006-4e58-952d-abeb2521cda0",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Courtney Watson",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "watson02",
+   "old_reasoning": "Watson supported Medicaid expansion and healthcare access legislation — favors significant expansion of public health coverage with mixed public/private approach.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson02",
+    "https://ballotpedia.org/Courtney_Watson"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 47,
+   "proposal": {
+    "key": "2026RS:hb1153",
+    "session": "2026RS",
+    "number": "HB1153",
+    "title": "Maryland Medical Assistance Program and Health Insurance - Claims for Reimbursement - Downcoding",
+    "role": "cosp",
+    "chapter": null,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Prohibiting insurers, nonprofit health service plans, health maintenance organizations, and managed care organization from downcoding a claim for reimbursement under certain circumstances; establishing certain procedures that insurers, nonprofit health service plans, health maintenance organizations, and managed care organizations are required to follow if the insurer, nonprofit health service plan, or health maintenance organization intends or makes a final decision to downcode a claim; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1153?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "cosp 2026RS HB1157 Health Insurance - Plan Benefits and Coverage - Annual Repor"
+   ]
+  },
+  {
+   "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Dalya Attar",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "attar02",
+   "old_reasoning": "Attar has supported expanding healthcare access and reducing health disparities in Baltimore City, backing Medicaid expansion and community health initiatives.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar02",
+    "https://ballotpedia.org/Dalya_Attar"
+   ],
+   "sessions_unreadable": [
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS"
+   ],
+   "n_candidates": 2,
+   "proposal": null,
+   "blocked_reason": "no bill passed the STRICT title test with a confirmed sponsor slug",
+   "alternates": []
+  },
+  {
+   "politician_id": "e94337e1-4776-4058-87b4-32dfeb7732a0",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Dana Stein",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "stein",
+   "old_reasoning": "Stein supported Medicaid expansion and healthcare access legislation — favors significant public coverage expansion.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stein",
+    "https://ballotpedia.org/Dana_Stein"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 82,
+   "proposal": {
+    "key": "2024RS:hb0728",
+    "session": "2024RS",
+    "number": "HB0728",
+    "title": "Health Insurance - Qualified Resident Enrollment Program (Access to Care Act)",
+    "role": "cosp",
+    "chapter": 842,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Maryland Health Benefit Exchange to establish and implement the Qualified Resident Enrollment Program to facilitate the enrollment of qualified residents in qualified plans; providing that the operation and administration of the Program may include functions delegated by the Exchange to a third party; and providing that the implementation of the Program is contingent on approval of a certain waiver application amendment.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0728?ys=2024RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "d5999df9-83b8-4870-a170-4d13f40473e2",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Denise Roberts",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "roberts01",
+   "old_reasoning": "Supported Medicaid expansion and state health equity legislation; backed healthcare access bills serving Prince George's County communities.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberts01"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 37,
+   "proposal": {
+    "key": "2026RS:hb1291",
+    "session": "2026RS",
+    "number": "HB1291",
+    "title": "Public Health - Maryland Medical Assistance Program - Continuity of Care",
+    "role": "lead",
+    "chapter": null,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Maryland Department of Health to adopt regulations to establish a procedure to provide for the temporary continuation of services and maintain the continuity of care for certain Maryland Medical Assistance Program recipients over the age of 65 facing a lapse in services due to an administrative or technical error; prohibiting the Department from altering appeal and hearing rights to accommodate the temporary continuation of services procedures; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1291?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "cosp 2026RS HB1118 Health, Health Insurance, and Health Occupations - Perinatal",
+    "cosp 2026RS HB0971 Maryland Medical Advisory Committee - Duties and Workgroup t"
+   ]
+  },
+  {
+   "politician_id": "b9c61fea-fcb1-45cc-8e2c-e5b3046b7266",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Edith J. Patterson",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "patterson02",
+   "old_reasoning": "Patterson has supported healthcare expansion legislation including Medicaid expansion and pharmacy benefit manager reform bills to lower drug costs for Maryland residents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/patterson02",
+    "https://ballotpedia.org/Edith_Patterson"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 127,
+   "proposal": null,
+   "blocked_reason": "no bill passed the STRICT title test with a confirmed sponsor slug",
+   "alternates": []
+  },
+  {
+   "politician_id": "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Gabriel M. Moreno",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "moreno01",
+   "old_reasoning": "Moreno supported Medicaid expansion and healthcare access legislation — favors significant public health coverage expansion.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moreno01",
+    "https://ballotpedia.org/Gabriel_Moreno_(Maryland)"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 5,
+   "proposal": {
+    "key": "2026RS:hb1153",
+    "session": "2026RS",
+    "number": "HB1153",
+    "title": "Maryland Medical Assistance Program and Health Insurance - Claims for Reimbursement - Downcoding",
+    "role": "cosp",
+    "chapter": null,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Prohibiting insurers, nonprofit health service plans, health maintenance organizations, and managed care organization from downcoding a claim for reimbursement under certain circumstances; establishing certain procedures that insurers, nonprofit health service plans, health maintenance organizations, and managed care organizations are required to follow if the insurer, nonprofit health service plan, or health maintenance organization intends or makes a final decision to downcode a claim; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1153?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "cosp 2026RS HB1385 Health Insurance - Use of Artificial Intelligence - Human Ev"
+   ]
+  },
+  {
+   "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Jack Bailey",
+   "topic": "Healthcare Access",
+   "chair": "3.0",
+   "member_slug": "bailey01",
+   "old_reasoning": "Bailey has mixed views on healthcare expansion. While supporting access in rural areas, he has opposed Medicaid expansion funded by tax increases.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bailey01",
+    "https://ballotpedia.org/Jack_Bailey_(Maryland)"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 35,
+   "proposal": null,
+   "blocked_reason": "chair 3.0 is at or past the anti pole — sponsorship cannot evidence it",
+   "alternates": []
+  },
+  {
+   "politician_id": "e2ca1bfd-255d-417b-a9d7-424e6c10749d",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Jason C. Gallion",
+   "topic": "Healthcare Access",
+   "chair": "4.0",
+   "member_slug": "gallion01",
+   "old_reasoning": "Gallion prefers market-based healthcare solutions and has opposed Medicaid expansion measures and government mandates in the healthcare sector.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/gallion01",
+    "https://ballotpedia.org/Jason_Gallion"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 34,
+   "proposal": null,
+   "blocked_reason": "chair 4.0 is at or past the anti pole — sponsorship cannot evidence it",
+   "alternates": [
+    "LEAD 2024RS SB0778 Health Insurance - Hearing Aids for Adults - Coverage",
+    "LEAD 2023RS SB0397 Health Insurance - Hearing Aids for Adults - Coverage"
+   ]
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Jeff Waldstreicher",
+   "topic": "Healthcare Access",
+   "chair": "5.0",
+   "member_slug": "waldstreicher1",
+   "old_reasoning": "Waldstreicher is a strong advocate for universal healthcare access. He backed Medicaid expansion and has supported legislation to reduce prescription drug costs.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS"
+   ],
+   "n_candidates": 42,
+   "proposal": null,
+   "blocked_reason": "chair 5.0 is at or past the anti pole — sponsorship cannot evidence it",
+   "alternates": [
+    "LEAD 2020RS SB0634 Maryland Medical Assistance Program - Provision of School Ps"
+   ]
+  },
+  {
+   "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Jen Terrasa",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "terrasa01",
+   "old_reasoning": "Terrasa supported Medicaid expansion and healthcare access legislation — favors significant public coverage expansion with mixed system.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/terrasa01",
+    "https://ballotpedia.org/Jen_Terrasa"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 107,
+   "proposal": {
+    "key": "2026RS:hb0633",
+    "session": "2026RS",
+    "number": "HB0633",
+    "title": "Health Insurance - Ovarian Cancer Prevention With Salpingectomy - Required Coverage",
+    "role": "cosp",
+    "chapter": null,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring certain insurers, nonprofit health service plans, and health maintenance organizations to provide coverage for opportunistic salpingectomy for ovarian cancer prevention; and requiring the Maryland Health Care Commission to conduct a mandated benefits study of coverage of salpingectomy that is not opportunistic for individuals who are not at high risk of ovarian cancer and report the findings of the study to the Senate Finance Committee and the House Health Committee by December 1, 2026.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0633?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Jessica Feldmark",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "feldmark01",
+   "old_reasoning": "Feldmark supported Medicaid expansion and healthcare access legislation — favors significant expansion of public health coverage.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldmark01",
+    "https://ballotpedia.org/Jessica_Feldmark"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 66,
+   "proposal": {
+    "key": "2023RS:hb0726",
+    "session": "2023RS",
+    "number": "HB0726",
+    "title": "Maryland Medical Assistance Program - Autism Waiver - Military Families",
+    "role": "lead",
+    "chapter": 620,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring, unless the child's family requests that the child be removed, that a child on the registry for the Autism Waiver remain on the registry if the child's family relocates out of the State for military service; and providing that if a child on the registry for the Waiver becomes eligible for services while the child's family is out of the State for military service, the child shall be eligible for services through the Waiver if the family relocates to the State.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0726?ys=2023RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "34c94aa4-11b7-4594-9c3e-c506f10309f6",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Johnny Mautz",
+   "topic": "Healthcare Access",
+   "chair": "4.0",
+   "member_slug": "mautz01",
+   "old_reasoning": "Mautz has opposed government-led healthcare expansion and prefers market-based healthcare solutions, voting against Medicaid expansion measures in the Maryland Senate.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mautz01",
+    "https://ballotpedia.org/Johnny_Mautz"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 0,
+   "proposal": null,
+   "blocked_reason": "chair 4.0 is at or past the anti pole — sponsorship cannot evidence it",
+   "alternates": []
+  },
+  {
+   "politician_id": "631dac5c-fb86-41f5-a82d-5963164a9142",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Jon S. Cardin",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "cardin01",
+   "old_reasoning": "Cardin supported Medicaid expansion and healthcare access legislation — favors significant expansion of public coverage with mixed system approach.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/cardin01",
+    "https://ballotpedia.org/Jon_Cardin"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS"
+   ],
+   "n_candidates": 31,
+   "proposal": {
+    "key": "2023RS:hb0583",
+    "session": "2023RS",
+    "number": "HB0583",
+    "title": "Health Insurance – Podiatrists – Reimbursement for Infusion of Medication",
+    "role": "lead",
+    "chapter": null,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring that certain health insurance policies and contracts delivered or issued for delivery in the State provide for adjustments to reimbursement for the infusion of medication by podiatrists on the first day of January, April, July, and October each year.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0583?ys=2023RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "00cd05cc-75de-4d9a-ab23-9f53441bc186",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Joseline Peña-Melnyk",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "pena",
+   "old_reasoning": "Former Health & Government Operations committee vice chair; sponsored numerous healthcare access bills including Medicaid expansion and behavioral health legislation over multiple sessions.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 680,
+   "proposal": {
+    "key": "2025RS:hb0848",
+    "session": "2025RS",
+    "number": "HB0848",
+    "title": "Health Insurance - Adverse Decisions - Notices, Reporting, and Examinations",
+    "role": "cosp",
+    "chapter": 669,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring that certain adverse decision and grievance decision notices include certain information in a certain manner; requiring that the information regarding criteria and standards for utilization review that a private review agent is required to post on its website or the carrier's website be posted on the member's and provider's pages of the websites; requiring that certain information submitted to the Maryland Insurance Commissioner be aggregated by zip code; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0848?ys=2025RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Karen Toles",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "toles01",
+   "old_reasoning": "Supported Medicaid expansion and health equity legislation; backed expanded healthcare access for communities in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/toles01?tab=2025RS-legislation"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 0,
+   "proposal": null,
+   "blocked_reason": "no bill passed the STRICT title test with a confirmed sponsor slug",
+   "alternates": []
+  },
+  {
+   "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Kent Roberson",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "roberson01",
+   "old_reasoning": "Supported Medicaid expansion and state health equity legislation; backed healthcare access for underserved communities in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01?tab=2025RS-legislation"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 29,
+   "proposal": {
+    "key": "2026RS:hb1118",
+    "session": "2026RS",
+    "number": "HB1118",
+    "title": "Health, Health Insurance, and Health Occupations - Perinatal Behavioral Health Conditions",
+    "role": "cosp",
+    "chapter": 637,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Maryland Medical Assistance Program and certain insurers, nonprofit health service plans, and health maintenance organizations to provide coverage for screening for perinatal behavioral health conditions at certain times; requiring the Maryland Department of Health to identify certain screening tools and to assist certain health care providers with accessing resources and referral services related to screening for perinatal behavioral health conditions; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1118?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "cosp 2026RS HB0971 Maryland Medical Advisory Committee - Duties and Workgroup t"
+   ]
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Kevin M. Harris",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "harris03",
+   "old_reasoning": "Harris supports expanding healthcare access in Prince George's County. He backed Medicaid expansion and healthcare affordability legislation.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harris03",
+    "https://ballotpedia.org/Kevin_Harris_(Maryland)"
+   ],
+   "sessions_unreadable": [
+    "2023RS",
+    "2024RS",
+    "2025RS"
+   ],
+   "n_candidates": 4,
+   "proposal": {
+    "key": "2026RS:sb0385",
+    "session": "2026RS",
+    "number": "SB0385",
+    "title": "Public Health - Recommendations for Immunizations, Screenings, and Preventive Services - Pharmacist Administration and Required Health Insurance Coverage (The Vax Act)",
+    "role": "cosp",
+    "chapter": 8,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Secretary of Health to issue recommendations for certain immunizations, screenings, and preventive services based on certain evidence-based scientific and clinical guidance; requiring the Secretary, before adopting a recommendation for a certain preventive service to hold a notice and comments period, obtain a certain analysis from the Maryland Health Care Commission, and cite the basis for the recommendation; altering the authority of pharmacists to administer certain vaccinations; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0385?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Kym Taylor",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "taylor03",
+   "old_reasoning": "Supported Medicaid expansion and health equity legislation; backed expanded healthcare access for Prince George's County communities.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taylor03"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 49,
+   "proposal": {
+    "key": "2026RS:hb1118",
+    "session": "2026RS",
+    "number": "HB1118",
+    "title": "Health, Health Insurance, and Health Occupations - Perinatal Behavioral Health Conditions",
+    "role": "cosp",
+    "chapter": 637,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Maryland Medical Assistance Program and certain insurers, nonprofit health service plans, and health maintenance organizations to provide coverage for screening for perinatal behavioral health conditions at certain times; requiring the Maryland Department of Health to identify certain screening tools and to assist certain health care providers with accessing resources and referral services related to screening for perinatal behavioral health conditions; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1118?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "cosp 2026RS HB0917 Health Insurance - Retroactive Denial of Reimbursement"
+   ]
+  },
+  {
+   "politician_id": "4a409af4-8568-42c3-bb72-7bb7500c96ce",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mark S. Chang",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "chang01",
+   "old_reasoning": "Chang has co-sponsored healthcare affordability legislation including prescription drug pricing reform and Medicaid expansion measures to improve healthcare access for Anne Arundel County residents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/chang01?tab=2026RS-legislation",
+    "https://ballotpedia.org/Mark_Chang"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 49,
+   "proposal": null,
+   "blocked_reason": "no bill passed the STRICT title test with a confirmed sponsor slug",
+   "alternates": []
+  },
+  {
+   "politician_id": "b8e331fa-d58e-479f-b076-8fda0b0604c5",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Marvin E. Holmes, Jr.",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "holmes",
+   "old_reasoning": "Supported Medicaid expansion and state healthcare access legislation; backed health equity bills serving Prince George's County communities over many legislative sessions.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holmes"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 50,
+   "proposal": {
+    "key": "2026RS:hb0637",
+    "session": "2026RS",
+    "number": "HB0637",
+    "title": "Public Health - Recommendations for Immunizations, Screenings, and Preventive Services - Pharmacist Administration and Required Health Insurance Coverage (The Vax Act)",
+    "role": "cosp",
+    "chapter": 7,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Secretary of Health to issue recommendations for certain immunizations, screenings, and preventive services based on certain evidence-based scientific and clinical guidance; requiring the Secretary, before adopting a recommendation for a certain preventive service, to hold a notice and comment period, obtain a certain analysis from the Maryland Health Care Commission, and cite the basis for the recommendation; altering the health insurance coverage requirements for certain immunizations, screenings, and services; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0637?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "cosp 2026RS HB1291 Public Health - Maryland Medical Assistance Program - Contin"
+   ]
+  },
+  {
+   "politician_id": "251a2047-372b-480e-aa09-231f9a5edeca",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mary A. Lehman",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "lehman01",
+   "old_reasoning": "Supported Medicaid expansion and state healthcare access bills; voted for HB 768 (2024) expanding reproductive healthcare coverage under Medicaid.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lehman01?tab=2025RS-legislation"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 115,
+   "proposal": {
+    "key": "2026RS:hb1153",
+    "session": "2026RS",
+    "number": "HB1153",
+    "title": "Maryland Medical Assistance Program and Health Insurance - Claims for Reimbursement - Downcoding",
+    "role": "cosp",
+    "chapter": null,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Prohibiting insurers, nonprofit health service plans, health maintenance organizations, and managed care organization from downcoding a claim for reimbursement under certain circumstances; establishing certain procedures that insurers, nonprofit health service plans, health maintenance organizations, and managed care organizations are required to follow if the insurer, nonprofit health service plan, or health maintenance organization intends or makes a final decision to downcode a claim; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1153?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mary Beth Carozza",
+   "topic": "Healthcare Access",
+   "chair": "4.0",
+   "member_slug": "carozza02",
+   "old_reasoning": "Carozza prefers private market solutions to healthcare and has opposed government mandates and Medicaid expansion in Maryland, favoring deregulation of the insurance market.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza02",
+    "https://ballotpedia.org/Mary_Beth_Carozza"
+   ],
+   "sessions_unreadable": [
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS"
+   ],
+   "n_candidates": 53,
+   "proposal": null,
+   "blocked_reason": "chair 4.0 is at or past the anti pole — sponsorship cannot evidence it",
+   "alternates": []
+  },
+  {
+   "politician_id": "38404814-7be0-40e3-b044-062f98b2a5b0",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mary Washington",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "washington01",
+   "old_reasoning": "Washington supports single-payer or Medicare for All-style approaches and has backed significant Medicaid expansion and universal coverage measures in Maryland.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington01",
+    "https://ballotpedia.org/Mary_Washington"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS"
+   ],
+   "n_candidates": 94,
+   "proposal": {
+    "key": "2022RS:sb0682",
+    "session": "2022RS",
+    "number": "SB0682",
+    "title": "Maryland Medical Assistance Program - Gender-Affirming Treatment (Trans Health Equity Act of 2022)",
+    "role": "lead",
+    "chapter": null,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring, beginning on January 1, 2023, the Maryland Medical Assistance Program to provide gender-affirming treatment in a nondiscriminatory manner; requiring that the gender-affirming treatment be assessed according to nondiscriminatory criteria that are consistent with current clinical standards; prohibiting the issuance of an adverse benefit determination related to gender-affirming treatment unless a certain experienced health care provider has reviewed and confirmed the appropriateness of the determination; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0682?ys=2022RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "LEAD 2022RS SB0743 Maryland Medical Assistance Program - Affordable Assisted Li"
+   ]
+  },
+  {
+   "politician_id": "18313901-28d8-464c-9368-2873577e9d44",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Mary-Dulany James",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "james01",
+   "old_reasoning": "James has supported Medicaid expansion and healthcare access legislation, voting for measures to expand insurance coverage and protect the ACA in Maryland.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/james01",
+    "https://ballotpedia.org/Mary-Dulany_James"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS"
+   ],
+   "n_candidates": 7,
+   "proposal": {
+    "key": "2025RS:sb0547",
+    "session": "2025RS",
+    "number": "SB0547",
+    "title": "Commission to Study Health Insurance Pooling - Establishment",
+    "role": "lead",
+    "chapter": 741,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Establishing the Commission to Study Health Insurance Pooling to study the pooling of public employee health insurance purchasing between the State, counties, municipal corporations, and county boards of education in the State to maximize value and efficiency while maintaining a broad package of benefits and reasonable premiums for public employees; and requiring the Commission to report its findings and recommendations to the Governor and the General Assembly by December 1, 2026.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0547?ys=2025RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "N. Scott Phillips",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "phillips02",
+   "old_reasoning": "Phillips supported Medicaid expansion and healthcare access legislation; favors significant expansion of public coverage while retaining mixed public/private system.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/phillips02",
+    "https://ballotpedia.org/N._Scott_Phillips"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 37,
+   "proposal": {
+    "key": "2026RS:hb1118",
+    "session": "2026RS",
+    "number": "HB1118",
+    "title": "Health, Health Insurance, and Health Occupations - Perinatal Behavioral Health Conditions",
+    "role": "cosp",
+    "chapter": 637,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Maryland Medical Assistance Program and certain insurers, nonprofit health service plans, and health maintenance organizations to provide coverage for screening for perinatal behavioral health conditions at certain times; requiring the Maryland Department of Health to identify certain screening tools and to assist certain health care providers with accessing resources and referral services related to screening for perinatal behavioral health conditions; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1118?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "cosp 2026RS HB0637 Public Health - Recommendations for Immunizations, Screening"
+   ]
+  },
+  {
+   "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Nancy J. King",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "king",
+   "old_reasoning": "King has supported Medicaid expansion and healthcare access, serving on the Budget and Taxation Committee and backing health funding in state budgets.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/king",
+    "https://ballotpedia.org/Nancy_King"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 102,
+   "proposal": {
+    "key": "2026RS:sb0808",
+    "session": "2026RS",
+    "number": "SB0808",
+    "title": "Health Insurance - Provider Panels - Requirements",
+    "role": "lead",
+    "chapter": 706,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Altering the process through which health care providers apply to participate on a carrier's provider panel, including certain notice requirements; repealing the authorization for a carrier to charge a certain application fee; requiring carriers to use certain information to update the carrier's provider directory at a certain frequency; altering the credentialing applications that the Maryland Insurance Commissioner may designate for a certain credentialing system and the circumstances under which the designation may be made; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0808?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "LEAD 2013RS SB0658 Estate Tax and Income Tax - Marital Deduction and Subtractio",
+    "LEAD 2025RS SB0611 Access to Health Insurance for Child Care Professionals - Ou"
+   ]
+  },
+  {
+   "politician_id": "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Nicholaus R. Kipke",
+   "topic": "Healthcare Access",
+   "chair": "4.0",
+   "member_slug": "kipke",
+   "old_reasoning": "Kipke has opposed government healthcare expansion favoring market-based solutions and opposing Maryland's Medicaid expansion provisions as overly costly to state taxpayers.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kipke?tab=2026RS-legislation",
+    "https://ballotpedia.org/Nicholaus_Kipke"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 93,
+   "proposal": null,
+   "blocked_reason": "chair 4.0 is at or past the anti pole — sponsorship cannot evidence it",
+   "alternates": [
+    "LEAD 2015RS HB1190 Health Insurance and Discount Medical Plans - Vision Care Se",
+    "LEAD 2013RS HB0736 Health Insurance - Pharmacy Benefits Managers - Specialty Dr"
+   ]
+  },
+  {
+   "politician_id": "5c24446e-c9d6-4dda-9703-e3c049798315",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Nicole A. Williams",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "williams01",
+   "old_reasoning": "Supported Medicaid expansion and state health equity bills; backed expanded healthcare access for underserved communities in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/williams01"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 57,
+   "proposal": {
+    "key": "2026RS:hb1291",
+    "session": "2026RS",
+    "number": "HB1291",
+    "title": "Public Health - Maryland Medical Assistance Program - Continuity of Care",
+    "role": "cosp",
+    "chapter": null,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Maryland Department of Health to adopt regulations to establish a procedure to provide for the temporary continuation of services and maintain the continuity of care for certain Maryland Medical Assistance Program recipients over the age of 65 facing a lapse in services due to an administrative or technical error; prohibiting the Department from altering appeal and hearing rights to accommodate the temporary continuation of services procedures; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1291?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Pam Lanman Guzzone",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "guzzone01",
+   "old_reasoning": "Lanman Guzzone supported Medicaid expansion and healthcare access legislation — favors significant public health coverage expansion.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone01",
+    "https://ballotpedia.org/Pam_Guzzone"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 324,
+   "proposal": {
+    "key": "2026RS:hb1153",
+    "session": "2026RS",
+    "number": "HB1153",
+    "title": "Maryland Medical Assistance Program and Health Insurance - Claims for Reimbursement - Downcoding",
+    "role": "lead",
+    "chapter": null,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Prohibiting insurers, nonprofit health service plans, health maintenance organizations, and managed care organization from downcoding a claim for reimbursement under certain circumstances; establishing certain procedures that insurers, nonprofit health service plans, health maintenance organizations, and managed care organizations are required to follow if the insurer, nonprofit health service plan, or health maintenance organization intends or makes a final decision to downcode a claim; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1153?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "LEAD 2026RS HB1157 Health Insurance - Plan Benefits and Coverage - Annual Repor",
+    "LEAD 2026RS HB1464 Health Insurance - Third-Party Administrators - Verification"
+   ]
+  },
+  {
+   "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Pamela Beidle",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "beidle01",
+   "old_reasoning": "Beidle has supported Medicaid expansion and access to healthcare including voting for the Maryland Health Benefit Exchange and insurance market reforms.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/beidle01",
+    "https://ballotpedia.org/Pamela_Beidle"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS"
+   ],
+   "n_candidates": 175,
+   "proposal": {
+    "key": "2026RS:sb0276",
+    "session": "2026RS",
+    "number": "SB0276",
+    "title": "Maryland Medical Assistance Program and Health Insurance - Coverage for Orthoses and Prostheses (So Every Body Can Move Act)",
+    "role": "lead",
+    "chapter": 629,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Maryland Medical Assistance Program and certain insurers, nonprofit health service plans, and health maintenance organizations to provide certain coverage related to orthoses beginning January 1, 2027; clarifying that certain mandated benefits related to prostheses include all prostheses determined by a treating health care provider to be medically necessary for completing daily living activities, essential job-related activities, or performing certain other physical activities; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0276?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "9285f590-79b5-48de-a1c0-a022629e6ebb",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Robbyn Lewis",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "lewis01",
+   "old_reasoning": "Lewis sponsored Maryland Medical Assistance Program - Individuals With Intellectual and Developmental Disabilities - Provider Reimbursement and Income Tax Credit for Physician Preceptors in shortage areas — supports Medicaid expansion and healthcare access.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lewis01"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 419,
+   "proposal": {
+    "key": "2026RS:hb0637",
+    "session": "2026RS",
+    "number": "HB0637",
+    "title": "Public Health - Recommendations for Immunizations, Screenings, and Preventive Services - Pharmacist Administration and Required Health Insurance Coverage (The Vax Act)",
+    "role": "cosp",
+    "chapter": 7,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Secretary of Health to issue recommendations for certain immunizations, screenings, and preventive services based on certain evidence-based scientific and clinical guidance; requiring the Secretary, before adopting a recommendation for a certain preventive service, to hold a notice and comment period, obtain a certain analysis from the Maryland Health Care Commission, and cite the basis for the recommendation; altering the health insurance coverage requirements for certain immunizations, screenings, and services; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0637?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "cosp 2026RS HB0440 Maryland Medical Assistance Program - Individuals With Intel"
+   ]
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Ron Watson",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "watson04",
+   "old_reasoning": "Watson backs healthcare access expansion including Medicaid expansion and healthcare affordability for working families in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson04",
+    "https://ballotpedia.org/Ron_Watson_(Maryland)"
+   ],
+   "sessions_unreadable": [
+    "2019RS",
+    "2020RS",
+    "2021RS"
+   ],
+   "n_candidates": 14,
+   "proposal": null,
+   "blocked_reason": "no bill passed the STRICT title test with a confirmed sponsor slug",
+   "alternates": []
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Sara Love",
+   "topic": "Healthcare Access",
+   "chair": "2.0",
+   "member_slug": "love02",
+   "old_reasoning": "Love strongly supports expanding healthcare access. She voted for Medicaid expansion measures and healthcare affordability legislation. Montgomery County includes large healthcare worker constituencies.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "sessions_unreadable": [
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS",
+    "2023RS",
+    "2024RS"
+   ],
+   "n_candidates": 11,
+   "proposal": {
+    "key": "2026RS:sb0385",
+    "session": "2026RS",
+    "number": "SB0385",
+    "title": "Public Health - Recommendations for Immunizations, Screenings, and Preventive Services - Pharmacist Administration and Required Health Insurance Coverage (The Vax Act)",
+    "role": "cosp",
+    "chapter": 8,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Secretary of Health to issue recommendations for certain immunizations, screenings, and preventive services based on certain evidence-based scientific and clinical guidance; requiring the Secretary, before adopting a recommendation for a certain preventive service to hold a notice and comments period, obtain a certain analysis from the Maryland Health Care Commission, and cite the basis for the recommendation; altering the authority of pharmacists to administer certain vaccinations; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0385?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "f6a237a0-34ff-4a93-b05a-335ec38b6da3",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Terri L. Hill",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "hill02",
+   "old_reasoning": "Hill is a practicing physician and has been Maryland's leading advocate for healthcare expansion including Medicaid expansion and co-sponsored legislation supporting Maryland Health Care for All.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hill02",
+    "https://ballotpedia.org/Terri_Hill"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 695,
+   "proposal": {
+    "key": "2026RS:hb0633",
+    "session": "2026RS",
+    "number": "HB0633",
+    "title": "Health Insurance - Ovarian Cancer Prevention With Salpingectomy - Required Coverage",
+    "role": "lead",
+    "chapter": null,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring certain insurers, nonprofit health service plans, and health maintenance organizations to provide coverage for opportunistic salpingectomy for ovarian cancer prevention; and requiring the Maryland Health Care Commission to conduct a mandated benefits study of coverage of salpingectomy that is not opportunistic for individuals who are not at high risk of ovarian cancer and report the findings of the study to the Senate Finance Committee and the House Health Committee by December 1, 2026.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0633?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "LEAD 2026RS HB0917 Health Insurance - Retroactive Denial of Reimbursement",
+    "LEAD 2026RS HB1385 Health Insurance - Use of Artificial Intelligence - Human Ev"
+   ]
+  },
+  {
+   "politician_id": "2e809682-2d95-480c-885e-d2174b811cfe",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "name": "Tiffany T. Alston",
+   "topic": "Healthcare Access",
+   "chair": "1.0",
+   "member_slug": "alston01",
+   "old_reasoning": "Supported Medicaid expansion and state health equity legislation; backed healthcare access bills for underserved communities in Prince George's County.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/alston01?tab=2025RS-legislation"
+   ],
+   "sessions_unreadable": [
+    "2013RS",
+    "2014RS",
+    "2015RS",
+    "2016RS",
+    "2017RS",
+    "2018RS",
+    "2019RS",
+    "2020RS",
+    "2021RS",
+    "2022RS"
+   ],
+   "n_candidates": 293,
+   "proposal": {
+    "key": "2024RS:hb1259",
+    "session": "2024RS",
+    "number": "HB1259",
+    "title": "Health Insurance - Breast and Lung Cancer Screening - Coverage Requirements",
+    "role": "lead",
+    "chapter": 868,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Including image-guided breast biopsy in the definition of &quot;supplemental breast examination&quot; for the purpose of certain provisions of law requiring insurers, health service plans, and health maintenance organizations to provide coverage for supplemental breast examinations; clarifying that coverage requirements for lung cancer screening apply to follow-up diagnostic imaging; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1259?ys=2024RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "760cd4a7-235c-472f-a0ba-fb07098dfd57",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Adrienne A. Jones",
+   "topic": "Medicare / Medicaid",
+   "chair": "1.0",
+   "member_slug": "jones",
+   "old_reasoning": "Jones supported Medicare and Medicaid expansion efforts and has consistently opposed cuts to these programs throughout her legislative career.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jones",
+    "https://ballotpedia.org/Adrienne_A._Jones"
+   ],
+   "sessions_unreadable": [
+    "2021RS"
+   ],
+   "n_candidates": 8,
+   "proposal": null,
+   "blocked_reason": "no bill passed the STRICT title test with a confirmed sponsor slug",
+   "alternates": []
+  },
+  {
+   "politician_id": "590b56b2-1473-4e86-ba96-0490e172f6ff",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Ben Barnes",
+   "topic": "Medicare / Medicaid",
+   "chair": "1.0",
+   "member_slug": "barnes",
+   "old_reasoning": "Supported Medicaid expansion and defended state healthcare programs against cuts; backed HB 768 (2024) expanding Medicaid coverage scope.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 20,
+   "proposal": {
+    "key": "2023RS:hb0283",
+    "session": "2023RS",
+    "number": "HB0283",
+    "title": "Maryland Medical Assistance Program - Gender-Affirming Treatment (Trans Health Equity Act)",
+    "role": "cosp",
+    "chapter": 253,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring, beginning on January 1, 2024, the Maryland Medical Assistance Program to provide gender-affirming treatment in a nondiscriminatory manner; requiring that the gender-affirming treatment be assessed according to nondiscriminatory criteria that are consistent with current clinical standards; prohibiting the issuance of an adverse benefit determination related to gender-affirming treatment unless a certain experienced health care provider has reviewed and confirmed the appropriateness of the determination; etc.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0283?ys=2023RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "cosp 2026RS HB1445 Maryland Medical Assistance Program and Developmental Disabi"
+   ]
+  },
+  {
+   "politician_id": "6e3c30f5-52be-48b0-b5b4-383e5d745c57",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Bill Ferguson",
+   "topic": "Medicare / Medicaid",
+   "chair": "1.0",
+   "member_slug": "ferguson",
+   "old_reasoning": "Ferguson has strongly supported Medicaid and Medicare as Senate President, opposing cuts and backing Medicaid expansion to cover more Maryland residents.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ferguson",
+    "https://ballotpedia.org/Bill_Ferguson"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 10,
+   "proposal": null,
+   "blocked_reason": "no bill passed the STRICT title test with a confirmed sponsor slug",
+   "alternates": []
+  },
+  {
+   "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Brian J. Feldman",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "member_slug": null,
+   "old_reasoning": "Feldman's healthcare work has focused on private insurance affordability and drug pricing rather than direct Medicaid expansion, though his 2019 Prescription Drug Affordability Board legislation affects Medicaid drug costs as well.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Brian_Feldman_(politician)"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 0,
+   "proposal": null,
+   "blocked_reason": "no bill passed the STRICT title test with a confirmed sponsor slug",
+   "alternates": []
+  },
+  {
+   "politician_id": "00cd05cc-75de-4d9a-ab23-9f53441bc186",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Joseline Peña-Melnyk",
+   "topic": "Medicare / Medicaid",
+   "chair": "1.0",
+   "member_slug": "pena",
+   "old_reasoning": "Healthcare committee leader who supported Medicaid expansion; backed bills expanding state health insurance programs and protecting existing Medicare/Medicaid beneficiaries.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 117,
+   "proposal": {
+    "key": "2025RS:hb0553",
+    "session": "2025RS",
+    "number": "HB0553",
+    "title": "Maryland Medical Assistance Program - Maternal Health Self-Measured Blood Pressure Monitoring",
+    "role": "cosp",
+    "chapter": 714,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring, beginning on January 1, 2026, the Maryland Medical Assistance Program to provide coverage for self-measured blood pressure monitoring for certain eligible Program recipients; and requiring reimbursement of health care provider and other staff time used for patient training, transmission of blood pressure data, interpretation of blood pressure readings and reporting, remote patient monitoring, and the delivery of co-interventions, including educational materials or classes.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0553?ys=2025RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "7e1dfb66-1eff-4c8d-b3fe-d39f990b99c4",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Malcolm P. Ruff",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "member_slug": "ruff01",
+   "old_reasoning": "Ruff sponsored Maryland Medical Assistance Program reimbursement legislation for disabled individuals — consistent support for Medicaid expansion and public insurance programs.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ruff01"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 10,
+   "proposal": {
+    "key": "2026RS:hb0440",
+    "session": "2026RS",
+    "number": "HB0440",
+    "title": "Maryland Medical Assistance Program - Individuals With Intellectual and Developmental Disabilities - Provider Reimbursement",
+    "role": "cosp",
+    "chapter": null,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Maryland Department of Health to establish an enhanced reimbursement structure for Maryland Medicaid Assistance Program providers that deliver medical services to individuals with intellectual and developmental disabilities; and providing the Act is contingent on the availability of federal funds through the federal Health Equity for Adults with Disabilities (HEADs UP) Act or any other federal law or funding stream supporting health care equity for individuals with intellectual or developmental disabilities.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0440?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": []
+  },
+  {
+   "politician_id": "36eecaff-4677-441a-b36e-a323e87d9158",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Samuel I. Rosenberg",
+   "topic": "Medicare / Medicaid",
+   "chair": "2.0",
+   "member_slug": "rosenberg",
+   "old_reasoning": "Rosenberg sponsored Maryland Medical Assistance Program (Medicaid) and Maryland Children's Health Program transfers legislation — consistent support for Medicaid expansion and public health insurance programs.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosenberg"
+   ],
+   "sessions_unreadable": [],
+   "n_candidates": 112,
+   "proposal": {
+    "key": "2026RS:hb1376",
+    "session": "2026RS",
+    "number": "HB1376",
+    "title": "Maryland Medical Assistance Program, Maryland Children's Health Program, and Health Insurance - Transfers to Special Pediatric Hospitals - Requirements",
+    "role": "lead",
+    "chapter": 325,
+    "isCore": true,
+    "slug_confirms": true,
+    "synopsis": "Requiring the Maryland Medical Assistance Program and the Maryland Children's Health Program to provide a prior authorization determination regarding a transfer on request of a special pediatric hospital within 3 business days after the request is received; and requiring the Maryland Department of Health to adopt regulations on or before December 31, 2026, establishing a retrospective review process for special pediatric hospitals.",
+    "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1376?ys=2026RS"
+   },
+   "blocked_reason": null,
+   "alternates": [
+    "LEAD 2025RS HB1301 Maryland Medical Assistance Program, Maryland Children’s Hea",
+    "LEAD 2024RS HB1376 Maryland Medical Assistance Program, Maryland Children's Hea"
+   ]
+  }
+ ]
+}
