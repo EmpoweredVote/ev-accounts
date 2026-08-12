@@ -112,12 +112,24 @@ pass: when the ideal crop runs off an edge, **shrink the box, never clamp its po
 slides the face off its mark. After both fixes, face-height/frame-height across all 82 measures a
 median 0.333 with no outliers.
 
-**🔴 DATA FLAG, NOT FIXED HERE — Wandy Soto's party.** We hold her as `Partido Popular Democrático`;
-`senado.pr.gov` says **`Partido Nuevo Progresista`** on two independent surfaces (profile page and
-roster card), and her bio's "entró en Minoría" in 2020 is consistent with PNP given the PPD majority
-that term. Identity is not in doubt. **A party is a factual claim about a real person and needs its
-own sourced pass** — it was deliberately left out of a photo migration. Note this also means SD 7
-would be two PNP senators; confirm against CEE results before changing anything.
+**✅ Wandy Soto's party — FIXED 2026-08-12, migration 1725** (found here, fixed separately: a party is
+a factual claim about a real person and does not belong in a photo import). She was `Partido Popular
+Democrático`, she is **`Partido Nuevo Progresista`**. Four agreeing sources: the senado.pr.gov roster
+card; her profile page (states PNP twice, zero PPD); the **2024 general result for senatorial district
+VII — Wanda Soto Tolentino (PNP) 60,403, re-elected alongside Luis Daniel Colón La Santa (PNP) 59,032**,
+so the district genuinely returns two PNP senators; and her bio's "entró en Minoría" in 2020, which is
+consistent with PNP under that term's PPD majority.
+
+**The aggregate is what made it certain.** The 28th Senate was elected **PNP 19 / PPD 5 / PIP 2 /
+Proyecto Dignidad 1 / independent 1**. We held PNP 18 / PPD 6 — this one row reconciles both exactly.
+The House was already clean (PNP 36 / PPD 13 / PIP 3 / PD 1 = 53, matching the camara taxonomy).
+
+**🔴 THE REMAINING DIFFERENCE IS NOT AN ERROR — DO NOT "FIX" IT.** We hold **two** senators as
+`Independent` (Joanne M. Rodríguez Veve, Eliezer Molina Pérez) where the election result says PD 1 +
+Ind 1. Rodríguez Veve was **elected under Proyecto Dignidad but sits as an independent**:
+senado.pr.gov says "Senadora por Acumulación Independiente" twice on her page with no mention of
+Dignidad, and her Wikipedia article gives her current status in this Senate as Independent. That is
+**party-elected-under vs current affiliation**, and our column holds the latter. Both values are right.
 
 ## 🔴 Guard notes for this cohort (kept — still true)
 
@@ -147,7 +159,7 @@ Read this first; the existing sweep's guards are tuned for a population these pe
 - **The 78 municipios and their mayors** — unchanged, and still the big remaining piece. See the
   sourcing caveat above: no non-partisan roster was found, and a wrong mayor is a false statement
   about a real person.
-- **Wandy Soto's party** (above) — a sourced pass against CEE results.
+- ~~**Wandy Soto's party**~~ — ✅ fixed, migration 1725 (see above).
 - **No `term_end`** on any of the 82; the re-seating pass is still due after the November 2028 general.
 
 ## Unrelated finding, checked and closed
