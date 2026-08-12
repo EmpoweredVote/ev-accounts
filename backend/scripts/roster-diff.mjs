@@ -173,6 +173,10 @@ async function fetchOurs(pool, stateList) {
 const DISTRICT_STOPWORDS = new Set([
   'state', 'house', 'senate', 'assembly', 'legislative', 'district', 'subdistrict', 'districts',
   'representative', 'representatives', 'general', 'court', 'and', 'of', 'the', 'in',
+  // Puerto Rico's upper-chamber districts are "Senatorial District N"; Open States says just "N".
+  // Without this the key is "3 senatorial" vs "3" and all 16 district senators report as
+  // "right person, different district" — 16 false positives on 16 correct rows.
+  'senatorial',
   // Maine's tribal seats: our label is the legislature's own "Non-Voting Tribal Member - Passamaquoddy
   // Tribe" while Open States' district is just "Passamaquoddy Tribe". Without these the keys differ,
   // and because the NAMES match the per-district pass would report "right person, different district"
