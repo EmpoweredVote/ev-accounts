@@ -46,15 +46,79 @@ That is genuinely how Puerto Rico is represented — it is not duplication.
   Federación de Alcaldes for PNP), which would have to be stitched and could not be trusted without
   cross-checking against CEE results. A wrong mayor is a false statement about a real person.
   Municipio *polygons* are easy when wanted — TIGER county-equivalents, FIPS `72xxx`.
-- **No headshots** for any of the 82 — verified, not assumed: `STATE_EXEC` 0/1, `STATE_UPPER` 0/28,
-  `STATE_LOWER` 0/53. Only the Resident Commissioner has one (Bioguide, migration 1719). This is now
-  the single largest headshot gap in the database. See the sweep notes below before starting it.
+- ~~**No headshots** for any of the 82~~ — **✅ CLOSED 2026-08-12, migration 1722. All 82 imported,
+  a clean sweep**: Governor 1/1, `STATE_UPPER` 28/28, `STATE_LOWER` 53/53. Gate proved to fire, dry-run
+  rolled back and confirmed reverted, applied, re-applied for idempotency (`INSERT 0 0 / UPDATE 0`).
+  `check:occupancy` and `check:reachability` both green (DEAD_GEOGRAPHY even improved 20 → 19).
+  See "How the sweep actually went" below.
 - **No `term_end`.** PR terms run to 2029-01-01 (elections November 2028), but the seats are recorded
   open-ended, so the usual re-seating pass applies after the 2028 general.
 - No other executive officers (Secretary of State — who is next in line for the governorship, PR
   having no Lieutenant Governor — Treasury, Justice, etc.).
 
-## 🔴 Before running the headshot sweep on these 82
+## ✅ How the sweep actually went (migration 1722, 2026-08-12)
+
+**Sources — both answered a plain fetch, no browser needed.**
+- **House:** `camara.pr.gov` is WordPress and exposes its roster as the custom post type
+  `representantes_team` — `/wp-json/wp/v2/representantes_team?per_page=100` returns **exactly 53**
+  with a `featured_media` id per member. Resolve those through `/wp-json/wp/v2/media?include=`.
+  43 members' portraits are ~1900×2560; **10 are `overN.png` at a uniform 287×417** — that uniform
+  size looks exactly like a template asset and is **not**: all 10 are genuine individual Capitol
+  portraits, just downsized on upload. Checked by eye, do not re-litigate.
+- **Senate:** `senado.pr.gov/senadores` (no trailing slash; `/index.cfm?module=senadores` is a 404).
+  Cards carry `alt="foto de Hon. <formal name>"` — a free second factor. Files are 500×500 webp.
+- **Governor:** **`fortaleza.pr.gov` publishes NO biography page** — that is a verified negative, not
+  a crawler failure: the sitemap has 384 URLs of which only 20 are not press releases. Her portrait
+  came from her service as Resident Commissioner: bioguide **G000582**, looked up in
+  `congress-legislators` (never guessed), public domain, U.S. House Office of Photography.
+  🔴 A Commons file `Jenniffer_González_Colon_Portrait.png` (4500×5625) is *current* and better, but
+  is credited to user "PoliticsPR20" as **"own work"** — Chris ruled to take the verifiable
+  U.S. House file instead. Revisit only if a real licence appears.
+
+**🔴🔴 THE TWO-SURNAME WARNING BELOW IS REAL AND IT CAUGHT ME MID-SWEEP.** A token-overlap search of
+the House media library for higher-res originals proposed `rep-roberto-lopez-roman` for **Wilson J.
+Román López** and `rep-jose-aponte-hernandez` for **José Hernández Concepción**. All four are sitting
+representatives; the surnames simply collide or reverse. Both were rejected on sight. **Any scoring
+scheme that counts shared surname tokens will pair the wrong people in this cohort.** Only 2 of 4
+proposed upgrades were genuine (Ricardo "Chino" Rey Ocasio, Ángel Morey Noble) — both confirmed by
+putting the two images side by side, which is the only check that worked.
+
+**Matching that did work:** require EVERY token of our name to appear in the roster entry, demand a
+UNIQUE hit within the chamber, and check party independently. That resolved **74 of 81**. The other 7
+are pure-nickname cases and were resolved individually on each member's own profile page:
+| ours | roster | independent evidence |
+|---|---|---|
+| Gaby González | Héctor Gabriel González López | "Distrito de Arecibo" = SD 3 |
+| Rafy Santos | Rafael Santos Ortiz | "Distrito de Guayama" = SD 6 |
+| Wandy Soto | Wanda M. Soto Tolentino | "Distrito de Humacao" = SD 7 + nickname "Wandy" |
+| Javy Hernández Ortiz | Luis Javier Hernández Ortiz | Por Acumulación + nickname "Javy" |
+| María de Lourdes Santiago Negrón | María De L. Santiago Negrón | Por Acumulación |
+| Josian Santiago Rivera | José A. Santiago Rivera | Por Acumulación |
+| Cheíto Hernández | José Hernández Concepción | "Distrito: 3 - San Juan" |
+
+**The camara profile pages state `Distrito: N - Municipio` and the senado ones state
+`Distrito de <Municipio>` or `Por Acumulación`** — a district oracle for the whole chamber. All 81
+were re-verified against it: 78/81 clean, the 3 misses were my own regex (`ü` missing from a
+character class; "Distrito Humacao" without the "de"). **Senatorial districts are named by their head
+municipality:** 1 San Juan, 2 Bayamón, 3 Arecibo, 4 Mayagüez-Aguadilla, 5 Ponce, 6 Guayama,
+7 Humacao, 8 Carolina.
+
+**🔴 CROPPING: "largest face wins" IS WRONG and shipped two bad crops before the contact sheet caught
+them.** Haar's biggest box was a false hit on Ensol Rodríguez's clasped hands (926px, cy/h=0.59) and
+on the flag behind Estrella Martínez Soto (cx/w=0.85). In a posed portrait the head is upper-centre —
+**score position as well as size** and let a smaller, better-placed box win. Second bug in the same
+pass: when the ideal crop runs off an edge, **shrink the box, never clamp its position** — clamping
+slides the face off its mark. After both fixes, face-height/frame-height across all 82 measures a
+median 0.333 with no outliers.
+
+**🔴 DATA FLAG, NOT FIXED HERE — Wandy Soto's party.** We hold her as `Partido Popular Democrático`;
+`senado.pr.gov` says **`Partido Nuevo Progresista`** on two independent surfaces (profile page and
+roster card), and her bio's "entró en Minoría" in 2020 is consistent with PNP given the PPD majority
+that term. Identity is not in doubt. **A party is a factual claim about a real person and needs its
+own sourced pass** — it was deliberately left out of a photo migration. Note this also means SD 7
+would be two PNP senators; confirm against CEE results before changing anything.
+
+## 🔴 Guard notes for this cohort (kept — still true)
 
 Read this first; the existing sweep's guards are tuned for a population these people are not.
 
@@ -76,6 +140,14 @@ Read this first; the existing sweep's guards are tuned for a population these pe
   surnames returns large volumes of FEC ALLCAPS committee junk.
 - All 82 already have `politicians.is_vacant = false`, so they are visible to the headshot worklist
   (the NULL defect from migration 1715 is not repeated here).
+
+## Still open after 1722
+
+- **The 78 municipios and their mayors** — unchanged, and still the big remaining piece. See the
+  sourcing caveat above: no non-partisan roster was found, and a wrong mayor is a false statement
+  about a real person.
+- **Wandy Soto's party** (above) — a sourced pass against CEE results.
+- **No `term_end`** on any of the 82; the re-seating pass is still due after the November 2028 general.
 
 ## Unrelated finding, checked and closed
 
