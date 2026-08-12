@@ -1,0 +1,80 @@
+{
+  "migration": "1704_resource_md_pass6d_intenure_rollcalls",
+  "generated": "pre-change snapshot read from the live DB 2026-08-11",
+  "cohort": "The 11 IN_TENURE rows left by pass 6b after mig 1700 applied 2. Settled by PASSAGE roll calls.",
+  "applied": 7,
+  "not_applied": 4,
+  "identity_check": "Bare-surname vote matches were verified against the MGA House roster: Taylor, Coley, Roberson, Toles, Martinez, Boafo, Roberts and Lehman are each unique in the House. The real collisions there are Johnson, Jones, Long and Morgan, none of which appear in this cohort.",
+  "rows": [
+    {
+      "politician": "Karen Toles", "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+      "topic": "Reproductive Rights and Abortion Access", "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": "1.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/toles01?tab=2023RS-legislation"],
+      "old_reasoning": "Voted for Maryland Abortion Care Access Act (2023); backed reproductive rights legislation expanding abortion access statewide.",
+      "evidence": "YEA on 2022RS HB0937 Abortion Care Access Act, House Third Reading Passed 89-47 (a contested vote, so it discriminates). Seated 2022-01-12, i.e. during that session.",
+      "change": "re-sourced to the bill + vote sheet; reasoning year corrected 2023 -> 2022 (the ACAA exists in 2022RS only)"
+    },
+    {
+      "politician": "Ashanti Martinez", "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+      "topic": "School Vouchers & Public Education Funding", "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": "1.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01?tab=2026RS-legislation"],
+      "old_reasoning": "Voted against school voucher legislation; backed Blueprint for Maryland's Future public school funding and opposed diversion of public funds to private schools.",
+      "evidence": "YEA on 2026RS SB0311, House Third Reading Passed 96-37",
+      "change": "re-sourced; reasoning rewritten to the sourced fact — the voucher-vote clause could not be sourced and was removed"
+    },
+    {
+      "politician": "Derrick Coley", "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+      "topic": "School Vouchers & Public Education Funding", "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": "1.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01?tab=2026RS-legislation"],
+      "old_reasoning": "Voted against school voucher bills; backed public education funding and Blueprint for Maryland's Future implementation.",
+      "evidence": "YEA on 2026RS SB0311, House Third Reading Passed 96-37",
+      "change": "re-sourced; voucher-vote clause removed as unsourceable"
+    },
+    {
+      "politician": "Kent Roberson", "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+      "topic": "School Vouchers & Public Education Funding", "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": "1.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01?tab=2026RS-legislation"],
+      "old_reasoning": "Voted against school voucher legislation; backed public education funding through Blueprint for Maryland's Future.",
+      "evidence": "YEA on 2026RS SB0311, House Third Reading Passed 96-37",
+      "change": "re-sourced; voucher-vote clause removed as unsourceable"
+    },
+    {
+      "politician": "Kym Taylor", "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+      "topic": "School Vouchers & Public Education Funding", "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": "1.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/taylor03"],
+      "old_reasoning": "Voted against school voucher legislation; backed public school funding through Blueprint for Maryland's Future implementation.",
+      "evidence": "YEA on 2026RS SB0311, House Third Reading Passed 96-37",
+      "change": "re-sourced; voucher-vote clause removed as unsourceable"
+    },
+    {
+      "politician": "Karen Toles", "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+      "topic": "School Vouchers & Public Education Funding", "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": "1.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/toles01?tab=2026RS-legislation"],
+      "old_reasoning": "Voted against school voucher legislation; backed Blueprint for Maryland's Future public school funding.",
+      "evidence": "YEA on 2026RS SB0311, House Third Reading Passed 96-37",
+      "change": "re-sourced; voucher-vote clause removed as unsourceable. Supersedes the HOLD recorded in mig 1700 — that hold was on a sponsorship of an implementation-coordinator funding bill; this is a recorded floor vote on the Blueprint revisions themselves."
+    },
+    {
+      "politician": "Sara Love", "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+      "topic": "School Vouchers & Public Education Funding", "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": "2.0",
+      "old_sources": ["https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02", "https://ballotpedia.org/Sara_Love"],
+      "old_reasoning": "Love opposes school vouchers that divert public school funding to private institutions. She is a strong supporter of Maryland's public school system and the Blueprint for Maryland's Future.",
+      "evidence": "YEA on 2026RS SB0311, SENATE Third Reading Passed 30-11 (she moved to the Senate in June 2024)",
+      "change": "re-sourced; voucher clause removed as unsourceable. Ballotpedia bio retained."
+    }
+  ],
+  "not_applied_detail": {
+    "Sara Love / Childcare Affordability & Access": "YEA on 2026RS SB0311, but SB0311's synopsis is compensatory-education enrollment, the Concentration of Poverty Grant, teacher certification and the Expert Review Team — NO childcare content. Her prose claims the Blueprint 'includes childcare investments and pre-K expansion', which may be true of the Blueprint overall but is not what THIS bill does. On-topic by vocabulary, not by rationale (mig 1697 line). REJECTED.",
+    "Mary A. Lehman / Immigration and Treatment of Immigrants": "YEA on 2021RS SB0496, the RELIEF Act — but the vote was 130-1. ⚠ A near-unanimous vote cannot evidence a DISTINCTIVE position; essentially the whole chamber voted for COVID relief. And the RELIEF Act is economic relief, not immigration policy. REJECTED on both counts.",
+    "Adrian Boafo / School Vouchers": "NOT_VOTING on 2026RS SB0311. A non-vote is UNKNOWN, never evidence in either direction.",
+    "Denise Roberts / School Vouchers": "ABSENT for 2026RS SB0311. Same — UNKNOWN."
+  },
+  "judgement_recorded": "SB0311 is 'Blueprint for Maryland's Future - REVISIONS'. A revisions bill's direction is not self-evident, so its synopsis was read before any citation was written: it extends the compensatory-education enrollment calculation through FY2028 and repeals the termination date on Concentration of Poverty Grant funding (both preserve targeted public-school funding), while suspending the Expert Review Team Program. It carries the 'public education funding' half of the chair. It says NOTHING about vouchers, which is why every voucher-vote clause was removed rather than cited."
+}

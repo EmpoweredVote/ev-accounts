@@ -1,0 +1,403 @@
+{
+ "pass": "MD pass 5 step 2 - roll calls",
+ "tally": {
+  "NOT_VOTING": 1,
+  "YEA": 7,
+  "ABSENT": 1,
+  "UNRESOLVED": 2
+ },
+ "rows": [
+  {
+   "politician": "Adrian Boafo",
+   "politician_id": "1da26040-98b4-4eb0-aa1f-3ec05b297a29",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "claim_verb": "voted",
+   "reasoning": "Voted against school voucher legislation; supported Blueprint for Maryland's Future public school funding and opposed diversion of funds to private schools.",
+   "service_lines": [
+    "Elected to the Maryland House of Delegates in November 2022. Member of the House of Delegates since January 11, 2023."
+   ],
+   "result": "NOT_VOTING",
+   "settled_on": {
+    "bill": "2026RS SB0311",
+    "title": "Education - The Blueprint for Maryland's Future - Revisions",
+    "chamber": "house",
+    "action": "House 4/09/2026 3/24/2026 Third Reading Passed (96-37) 61 Click to view Recorded Media",
+    "vote": "/2026RS/votes/house/1271.pdf",
+    "verdict": "NOT_VOTING",
+    "matched": "Boafo",
+    "candidates": null
+   },
+   "attempts": [
+    {
+     "bill": "2026RS SB0311",
+     "title": "Education - The Blueprint for Maryland's Future - Revisions",
+     "chamber": "house",
+     "action": "House 4/09/2026 3/24/2026 Third Reading Passed (96-37) 61 Click to view Recorded Media",
+     "vote": "/2026RS/votes/house/1271.pdf",
+     "verdict": "NOT_VOTING",
+     "matched": "Boafo",
+     "candidates": null
+    }
+   ]
+  },
+  {
+   "politician": "Ashanti Martinez",
+   "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "claim_verb": "voted",
+   "reasoning": "Voted against school voucher legislation; backed Blueprint for Maryland's Future public school funding and opposed diversion of public funds to private schools.",
+   "service_lines": [
+    "Member of the Maryland House of Delegates since February 24, 2023."
+   ],
+   "result": "YEA",
+   "settled_on": {
+    "bill": "2026RS SB0311",
+    "title": "Education - The Blueprint for Maryland's Future - Revisions",
+    "chamber": "house",
+    "action": "House 4/09/2026 3/24/2026 Third Reading Passed (96-37) 61 Click to view Recorded Media",
+    "vote": "/2026RS/votes/house/1271.pdf",
+    "verdict": "YEA",
+    "matched": "Martinez",
+    "candidates": null
+   },
+   "attempts": [
+    {
+     "bill": "2026RS SB0311",
+     "title": "Education - The Blueprint for Maryland's Future - Revisions",
+     "chamber": "house",
+     "action": "House 4/09/2026 3/24/2026 Third Reading Passed (96-37) 61 Click to view Recorded Media",
+     "vote": "/2026RS/votes/house/1271.pdf",
+     "verdict": "YEA",
+     "matched": "Martinez",
+     "candidates": null
+    }
+   ]
+  },
+  {
+   "politician": "Denise Roberts",
+   "politician_id": "d5999df9-83b8-4870-a170-4d13f40473e2",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "claim_verb": "voted",
+   "reasoning": "Voted against school voucher bills; backed Blueprint for Maryland's Future public school investment.",
+   "service_lines": [
+    "Member of the Maryland House of Delegates since January 8, 2024."
+   ],
+   "result": "ABSENT",
+   "settled_on": {
+    "bill": "2026RS SB0311",
+    "title": "Education - The Blueprint for Maryland's Future - Revisions",
+    "chamber": "house",
+    "action": "House 4/09/2026 3/24/2026 Third Reading Passed (96-37) 61 Click to view Recorded Media",
+    "vote": "/2026RS/votes/house/1271.pdf",
+    "verdict": "ABSENT",
+    "matched": "Roberts",
+    "candidates": null
+   },
+   "attempts": [
+    {
+     "bill": "2026RS SB0311",
+     "title": "Education - The Blueprint for Maryland's Future - Revisions",
+     "chamber": "house",
+     "action": "House 4/09/2026 3/24/2026 Third Reading Passed (96-37) 61 Click to view Recorded Media",
+     "vote": "/2026RS/votes/house/1271.pdf",
+     "verdict": "ABSENT",
+     "matched": "Roberts",
+     "candidates": null
+    }
+   ]
+  },
+  {
+   "politician": "Derrick Coley",
+   "politician_id": "8fab5ff7-603d-4ab0-a05c-a7070d187a48",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "claim_verb": "voted",
+   "reasoning": "Voted against school voucher bills; backed public education funding and Blueprint for Maryland's Future implementation.",
+   "service_lines": [
+    "Member of the Maryland House of Delegates since January 13, 2026."
+   ],
+   "result": "YEA",
+   "settled_on": {
+    "bill": "2026RS SB0311",
+    "title": "Education - The Blueprint for Maryland's Future - Revisions",
+    "chamber": "house",
+    "action": "House 4/09/2026 3/24/2026 Third Reading Passed (96-37) 61 Click to view Recorded Media",
+    "vote": "/2026RS/votes/house/1271.pdf",
+    "verdict": "YEA",
+    "matched": "Coley",
+    "candidates": null
+   },
+   "attempts": [
+    {
+     "bill": "2026RS SB0311",
+     "title": "Education - The Blueprint for Maryland's Future - Revisions",
+     "chamber": "house",
+     "action": "House 4/09/2026 3/24/2026 Third Reading Passed (96-37) 61 Click to view Recorded Media",
+     "vote": "/2026RS/votes/house/1271.pdf",
+     "verdict": "YEA",
+     "matched": "Coley",
+     "candidates": null
+    }
+   ]
+  },
+  {
+   "politician": "Karen Toles",
+   "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "claim_verb": "voted",
+   "reasoning": "Voted for Maryland Abortion Care Access Act (2023); backed reproductive rights legislation expanding abortion access statewide.",
+   "service_lines": [
+    "Member of the Maryland General Assembly since January 12, 2022. First elected to the House in November 2022."
+   ],
+   "result": "UNRESOLVED",
+   "settled_on": null,
+   "attempts": [
+    {
+     "bill": "2022RS SB0890",
+     "note": "chamber undetermined for that session"
+    },
+    {
+     "bill": "2022RS HB0937",
+     "note": "chamber undetermined for that session"
+    }
+   ]
+  },
+  {
+   "politician": "Karen Toles",
+   "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "claim_verb": "voted",
+   "reasoning": "Voted against school voucher legislation; backed Blueprint for Maryland's Future public school funding.",
+   "service_lines": [
+    "Member of the Maryland General Assembly since January 12, 2022. First elected to the House in November 2022."
+   ],
+   "result": "UNRESOLVED",
+   "settled_on": null,
+   "attempts": [
+    {
+     "bill": "2026RS SB0311",
+     "note": "chamber undetermined for that session"
+    },
+    {
+     "bill": "2026RS HB0490",
+     "note": "chamber undetermined for that session"
+    },
+    {
+     "bill": "2026RS HB1555",
+     "note": "chamber undetermined for that session"
+    },
+    {
+     "bill": "2025RS SB0852",
+     "note": "chamber undetermined for that session"
+    },
+    {
+     "bill": "2025RS HB1245",
+     "note": "chamber undetermined for that session"
+    },
+    {
+     "bill": "2025RS HB1461",
+     "note": "chamber undetermined for that session"
+    },
+    {
+     "bill": "2024RS SB0984",
+     "note": "chamber undetermined for that session"
+    },
+    {
+     "bill": "2024RS SB1102",
+     "note": "chamber undetermined for that session"
+    },
+    {
+     "bill": "2024RS HB1082",
+     "note": "chamber undetermined for that session"
+    },
+    {
+     "bill": "2024RS HB1426",
+     "note": "chamber undetermined for that session"
+    },
+    {
+     "bill": "2023RS HB0770",
+     "note": "chamber undetermined for that session"
+    },
+    {
+     "bill": "2023RS HB1196",
+     "note": "chamber undetermined for that session"
+    }
+   ]
+  },
+  {
+   "politician": "Kent Roberson",
+   "politician_id": "338210ee-b9ab-4820-bfce-98f5354837af",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "claim_verb": "voted",
+   "reasoning": "Voted against school voucher legislation; backed public education funding through Blueprint for Maryland's Future.",
+   "service_lines": [
+    "Member of the Maryland House of Delegates since May 30, 2023."
+   ],
+   "result": "YEA",
+   "settled_on": {
+    "bill": "2026RS SB0311",
+    "title": "Education - The Blueprint for Maryland's Future - Revisions",
+    "chamber": "house",
+    "action": "House 4/09/2026 3/24/2026 Third Reading Passed (96-37) 61 Click to view Recorded Media",
+    "vote": "/2026RS/votes/house/1271.pdf",
+    "verdict": "YEA",
+    "matched": "Roberson",
+    "candidates": null
+   },
+   "attempts": [
+    {
+     "bill": "2026RS SB0311",
+     "title": "Education - The Blueprint for Maryland's Future - Revisions",
+     "chamber": "house",
+     "action": "House 4/09/2026 3/24/2026 Third Reading Passed (96-37) 61 Click to view Recorded Media",
+     "vote": "/2026RS/votes/house/1271.pdf",
+     "verdict": "YEA",
+     "matched": "Roberson",
+     "candidates": null
+    }
+   ]
+  },
+  {
+   "politician": "Kym Taylor",
+   "politician_id": "9273ed81-2052-428a-b39d-849abeef270b",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "claim_verb": "voted",
+   "reasoning": "Voted against school voucher legislation; backed public school funding through Blueprint for Maryland's Future implementation.",
+   "service_lines": [
+    "Elected to the Maryland House of Delegates in November 2022. Member of the House of Delegates since January 11, 2023."
+   ],
+   "result": "YEA",
+   "settled_on": {
+    "bill": "2026RS SB0311",
+    "title": "Education - The Blueprint for Maryland's Future - Revisions",
+    "chamber": "house",
+    "action": "House 4/09/2026 3/24/2026 Third Reading Passed (96-37) 61 Click to view Recorded Media",
+    "vote": "/2026RS/votes/house/1271.pdf",
+    "verdict": "YEA",
+    "matched": "Taylor",
+    "candidates": null
+   },
+   "attempts": [
+    {
+     "bill": "2026RS SB0311",
+     "title": "Education - The Blueprint for Maryland's Future - Revisions",
+     "chamber": "house",
+     "action": "House 4/09/2026 3/24/2026 Third Reading Passed (96-37) 61 Click to view Recorded Media",
+     "vote": "/2026RS/votes/house/1271.pdf",
+     "verdict": "YEA",
+     "matched": "Taylor",
+     "candidates": null
+    }
+   ]
+  },
+  {
+   "politician": "Mary A. Lehman",
+   "politician_id": "251a2047-372b-480e-aa09-231f9a5edeca",
+   "topic": "Immigration and Treatment of Immigrants",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "claim_verb": "supported/backed",
+   "reasoning": "Supported Maryland RELIEF Act and immigration services legislation; backed community college tuition equity for undocumented students (in-state tuition).",
+   "service_lines": [
+    "First elected to the Maryland House of Delegates in 2018. Member of the House since January 9, 2019."
+   ],
+   "result": "YEA",
+   "settled_on": {
+    "bill": "2021RS SB0496",
+    "title": "Recovery for the Economy, Livelihoods, Industries, Entrepreneurs, and Families (RELIEF) Act",
+    "chamber": "house",
+    "action": "House 2/12/2021 2/12/2021 Third Reading Passed (130-1) 11AClick to view Recorded Media",
+    "vote": "/2021RS/votes/house/0094.pdf",
+    "verdict": "YEA",
+    "matched": "Lehman",
+    "candidates": null
+   },
+   "attempts": [
+    {
+     "bill": "2021RS SB0496",
+     "title": "Recovery for the Economy, Livelihoods, Industries, Entrepreneurs, and Families (RELIEF) Act",
+     "chamber": "house",
+     "action": "House 2/12/2021 2/12/2021 Third Reading Passed (130-1) 11AClick to view Recorded Media",
+     "vote": "/2021RS/votes/house/0094.pdf",
+     "verdict": "YEA",
+     "matched": "Lehman",
+     "candidates": null
+    }
+   ]
+  },
+  {
+   "politician": "Sara Love",
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic": "Childcare Affordability & Access",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "claim_verb": "supported/backed",
+   "reasoning": "Love has been a champion for childcare access and affordability. She supported the Blueprint for Maryland's Future which includes childcare investments and pre-K expansion.",
+   "service_lines": [
+    "Member of the Maryland Senate since June 13, 2024."
+   ],
+   "result": "YEA",
+   "settled_on": {
+    "bill": "2026RS SB0311",
+    "title": "Education - The Blueprint for Maryland's Future - Revisions",
+    "chamber": "senate",
+    "action": "Senate 3/20/2026 3/05/2026 Third Reading Passed (30-11) 44 Click to view Recorded Media",
+    "vote": "/2026RS/votes/senate/0580.pdf",
+    "verdict": "YEA",
+    "matched": "Love",
+    "candidates": null
+   },
+   "attempts": [
+    {
+     "bill": "2026RS SB0311",
+     "title": "Education - The Blueprint for Maryland's Future - Revisions",
+     "chamber": "senate",
+     "action": "Senate 3/20/2026 3/05/2026 Third Reading Passed (30-11) 44 Click to view Recorded Media",
+     "vote": "/2026RS/votes/senate/0580.pdf",
+     "verdict": "YEA",
+     "matched": "Love",
+     "candidates": null
+    }
+   ]
+  },
+  {
+   "politician": "Sara Love",
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "claim_verb": "supported/backed",
+   "reasoning": "Love opposes school vouchers that divert public school funding to private institutions. She is a strong supporter of Maryland's public school system and the Blueprint for Maryland's Future.",
+   "service_lines": [
+    "Member of the Maryland Senate since June 13, 2024."
+   ],
+   "result": "YEA",
+   "settled_on": {
+    "bill": "2026RS SB0311",
+    "title": "Education - The Blueprint for Maryland's Future - Revisions",
+    "chamber": "senate",
+    "action": "Senate 3/20/2026 3/05/2026 Third Reading Passed (30-11) 44 Click to view Recorded Media",
+    "vote": "/2026RS/votes/senate/0580.pdf",
+    "verdict": "YEA",
+    "matched": "Love",
+    "candidates": null
+   },
+   "attempts": [
+    {
+     "bill": "2026RS SB0311",
+     "title": "Education - The Blueprint for Maryland's Future - Revisions",
+     "chamber": "senate",
+     "action": "Senate 3/20/2026 3/05/2026 Third Reading Passed (30-11) 44 Click to view Recorded Media",
+     "vote": "/2026RS/votes/senate/0580.pdf",
+     "verdict": "YEA",
+     "matched": "Love",
+     "candidates": null
+    }
+   ]
+  }
+ ]
+}

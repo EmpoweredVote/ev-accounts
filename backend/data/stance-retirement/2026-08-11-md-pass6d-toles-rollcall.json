@@ -1,0 +1,81 @@
+{
+ "pass": "MD pass 5 step 2 - roll calls",
+ "tally": {
+  "YEA": 2
+ },
+ "rows": [
+  {
+   "politician": "Karen Toles",
+   "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+   "topic": "Reproductive Rights and Abortion Access",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "claim_verb": "voted",
+   "reasoning": "Voted for Maryland Abortion Care Access Act (2023); backed reproductive rights legislation expanding abortion access statewide.",
+   "service_lines": [
+    "Member of the Maryland House of Delegates since January 12, 2022."
+   ],
+   "result": "YEA",
+   "settled_on": {
+    "bill": "2022RS HB0937",
+    "title": "Abortion Care Access Act",
+    "chamber": "house",
+    "action": "House 3/11/2022 3/05/2022 Third Reading Passed (89-47) 26 Click to view Recorded Media",
+    "vote": "/2022RS/votes/house/0291.pdf",
+    "verdict": "YEA",
+    "matched": "Toles",
+    "candidates": null
+   },
+   "attempts": [
+    {
+     "bill": "2022RS SB0890",
+     "chamber": "house",
+     "note": "no passage vote recorded for that chamber"
+    },
+    {
+     "bill": "2022RS HB0937",
+     "title": "Abortion Care Access Act",
+     "chamber": "house",
+     "action": "House 3/11/2022 3/05/2022 Third Reading Passed (89-47) 26 Click to view Recorded Media",
+     "vote": "/2022RS/votes/house/0291.pdf",
+     "verdict": "YEA",
+     "matched": "Toles",
+     "candidates": null
+    }
+   ]
+  },
+  {
+   "politician": "Karen Toles",
+   "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85",
+   "topic": "School Vouchers & Public Education Funding",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "claim_verb": "voted",
+   "reasoning": "Voted against school voucher legislation; backed Blueprint for Maryland's Future public school funding.",
+   "service_lines": [
+    "Member of the Maryland House of Delegates since January 12, 2022."
+   ],
+   "result": "YEA",
+   "settled_on": {
+    "bill": "2026RS SB0311",
+    "title": "Education - The Blueprint for Maryland's Future - Revisions",
+    "chamber": "house",
+    "action": "House 4/09/2026 3/24/2026 Third Reading Passed (96-37) 61 Click to view Recorded Media",
+    "vote": "/2026RS/votes/house/1271.pdf",
+    "verdict": "YEA",
+    "matched": "Toles",
+    "candidates": null
+   },
+   "attempts": [
+    {
+     "bill": "2026RS SB0311",
+     "title": "Education - The Blueprint for Maryland's Future - Revisions",
+     "chamber": "house",
+     "action": "House 4/09/2026 3/24/2026 Third Reading Passed (96-37) 61 Click to view Recorded Media",
+     "vote": "/2026RS/votes/house/1271.pdf",
+     "verdict": "YEA",
+     "matched": "Toles",
+     "candidates": null
+    }
+   ]
+  }
+ ]
+}
