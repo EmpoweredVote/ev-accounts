@@ -1,5 +1,34 @@
 # Two successors never seated — MD 42A and ME 29 (found 2026-08-12)
 
+## RESOLVED 2026-08-12 (same day) — both seated on prod, migration 1715
+
+- **MD 42A → Alexander M. Harlan** (R), `external_id -2420142`, term_start **2026-08-03**,
+  `how_started = 'appointed'`, `start_precision = 'day'`, `is_appointed = true`,
+  `appointment_date = 2026-08-03`.
+- **ME 29 → Nancy J. Theriault** (R), `external_id -232029`, term_start **2026-07-14**,
+  `how_started = 'elected'`, `start_precision = 'day'`.
+- Both offices had `is_vacant` and `vacant_since` **cleared in the same migration** — see the
+  `seat_officeholder` note below; the post-verify asserts it explicitly.
+- `roster-diff.mjs md me` now returns **MD lower 141 v 141** and **ME lower 151 v 153** (the 2 tribal
+  seats), with zero seat gaps. `check:occupancy` and `check:migrations` both green.
+
+**No vacancy span was written for either seat**, deliberately. Neither office had a predecessor term
+(0 rows) and neither predecessor exists as a politician. MD 42A's `vacant_since` read 2026-06-01, but
+that date's provenance is unknown to us and the sources say only "June 2026" — so per ADR 0002 we did
+not invent a span start. The record now reads "Harlan from 2026-08-03, nothing asserted before".
+
+**🔴 The MD `external_id` slot was a trap.** The band is district-ordered and the slot where 42A
+belongs (`-2420124`) was already occupied — by an inactive politician row literally named **"Vacant"**
+that the MD seed parked there. Reasoning from the gap in the *seated* rows would have picked it and
+collided; `external_id` is uniquely indexed, so it would have failed the insert rather than
+mis-seating, but only because that index exists. Harlan extends the band to `-2420142` instead and the
+placeholder is left inert (4 such rows exist repo-wide, none active, none seated — their own cleanup
+question). ME's band is district-keyed (`-232000 - district`), so ME 29 took the `-232029` slot its
+own seed had left empty.
+
+---
+_Original findings below._
+
 Found by `backend/scripts/roster-diff.mjs`, the multi-state roster diff built after TX SD-22
 (migration 1712). All 11 states where we hold a full chamber were swept — 22 chambers, 1,338 seated
 rows. **These two are the entire actionable result.**
