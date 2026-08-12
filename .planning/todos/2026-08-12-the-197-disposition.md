@@ -168,6 +168,55 @@ same-sex marriage illegal" to choose between chairs 4 and 5, on a row backed by 
 on *the row's only claim being an absence*, never on the phrase.
 </details>
 
+### ✅ C. DONE — migration 1712. 27 re-sourced, 0 retired, 6 held, 9 untestable
+
+🔑🔑 **THE RESULT REVERSES THE PREMISE. THE TEMPLATE CLAIMS ARE TRUE.** These looked like the most
+obviously fabricated rows in the whole set — one sentence, filled in per legislator, over a
+Ballotpedia bio that never mentions the topic. **35 of 47 members really did co-sponsor the
+anti-discrimination and hate-crime legislation their row asserts.** The template was a bad way to
+write a true thing. **Nothing in class C was retired.**
+
+🔴 **WHY THE CACHED CORPUS COULD NOT ANSWER THIS — AND WOULD HAVE SAID "NO" TO ALL 47.** It indexes
+only the **FIRST sponsor** of each bill, and every row claims **CO**-sponsorship. Maryland puts the
+whole list on the bill page (*"Sponsored by Delegates A. Washington, Afzali, Branch, Clippinger…"*),
+so **882 bill pages were fetched** to build a real reverse index —
+`scripts/md-cr-sponsor-index.mjs` → `2026-08-12-md-cr-sponsor-index.json`.
+
+🔴🔴 **A NEW DEFECT CLASS FOUND HERE: THE CHAIR IS THE OPPOSITE POLE FROM THE ROW'S OWN REASONING.**
+On this scale chair 5 is *"eliminate affirmative action and all race-based government programs"* —
+yet **Alonzo Washington's row reads "As an African American senator in PG County, he prioritizes
+racial justice" AT CHAIR 5.** Same for Kramer, Waldstreicher, Rosapepe, Benson and Sara Love. On
+Same-Sex Marriage chair 5 reads *"make same-sex marriage illegal"*, and **Sara Love sits there
+saying she supports it.** This is not a sourcing fault, and **re-sourcing makes it worse** — the
+citation would then actively contradict the position on display.
+📊 **Corpus-wide, Civil Rights alone has 28 rows at chair 5 and 20 at chair 4 with pro-worded
+reasoning.** ▶ **This deserves its own pass** and is probably the highest-value thing left in the
+whole workstream — a wrong chair is a wrong voter-facing position, worse than a weak citation.
+
+⚠ **I SCOPED THE INVERSION CHECK TO ONE TOPIC AND THAT WAS WRONG — it shipped, and I reverted it.**
+The first cut only tested Civil Rights, so **Sara Love / Same-Sex Marriage was re-sourced at chair 5**
+before the mistake was caught, and reverted. The correct rule is not per-topic: on every one of
+these scales **1-2 is the PRO pole and 4-5 the ANTI pole, and a citation to bills the member
+CO-SPONSORED can only ever evidence a PRO chair**, so no chair ≥ 4 may be re-sourced this way.
+That also caught **Mary Beth Carozza**, whose row is correctly anti (chair 4) but was about to be
+cited to hate-crime bills — one of them *"Hate Crimes – Law Enforcement Officers"*, a
+police-protection bill that points the other way again. **Both reverted; production re-verified.**
+
+**🔴 THE 9 NON-MATCHES ARE NOT ABSENCES — EVERY ONE IS A LIMIT OF MY OWN NET**
+| rows | why the miss proves nothing |
+|---|---|
+| 5 × Same-Sex Marriage (Kramer, Pasteur, Gile, Bhandari, A. Jones) | 🔴 **Maryland settled it with the 2012 Civil Marriage Protection Act, and 2012RS has ZERO usable bills in the corpus** — only 2 same-sex-titled bills exist across 2013-2026. A corpus-period artefact. |
+| 2 × Religious Freedom (Muse, Bailey) | my first crawl net **had no "religio" term at all** — 59 religion bills were never fetched. Re-crawled; they are now genuinely tested and absent, but MD's religion bills are almost all corporate/tax/administrative, so the category is thin. |
+| 1 × Immigration (Lierman) | net **had no "immigra" term** — 102 bills never fetched. ✅ Re-crawled → **she matched**, and is in the 27. |
+| 1 × Transgender Athletes (Lierman) | her row claims she **VOTED** for protections. **A sponsorship index cannot test a voting claim.** |
+| 1 × C. T. Wilson | index carries `b wilson`; his initial is `c`. **AMBIGUOUS — credited to nobody.** |
+
+🔑 **The general lesson: the crawl net IS the extractor.** Three times in this pass an absence was
+manufactured by what I chose to fetch rather than by the record. Whenever a topic joins the row set
+it must join the net first.
+
+<details><summary>original class C sketch (superseded)</summary>
+
 ### C. The Maryland template class (~20 rows) — one sentence, filled in per legislator
 "X co-sponsored civil rights legislation including anti-discrimination protections — strong
 supporter of civil rights expansion in <County>." Pruski, Crosby, Dana Jones, Dana Stein, Terrasa,
@@ -176,6 +225,8 @@ Mark Chang, Dalya Attar, Nancy King, Mary-Dulany James, Cory McCray …
 A template claim over a generic source. **Each names no instrument, so no tool moves them** — this
 is the human reading queue. The corpus can test them: search each sponsor's own bill list for an
 anti-discrimination bill before retiring.
+
+</details>
 
 ### D. Verified-but-not-acted (2 rows, deliberately left)
 - **Risch / Civil Rights** cites the First Step Act vote (confirmed NAY, 87-12) for a *civil rights*

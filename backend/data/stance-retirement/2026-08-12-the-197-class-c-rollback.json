@@ -1,0 +1,2492 @@
+{
+ "pass": "the-197 class C re-source",
+ "rows": [
+  {
+   "politician_id": "ddfd43d3-023d-417e-9b68-af5a693e601e",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Pruski has co-sponsored civil rights and anti-discrimination legislation in the Maryland House consistent with his record as a progressive suburban Democrat.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0598?ys=2024RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Andrew C. Pruski",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Andrew_Pruski",
+   "has_positions_section": true,
+   "why": "Co-sponsored the following bill in the Maryland General Assembly: HB0598 (2024) \"Discrimination - Military Status - Prohibition\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 21,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "pruski"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 2,
+   "bills": [
+    {
+     "session": "2024RS",
+     "number": "HB0598",
+     "title": "Discrimination - Military Status - Prohibition"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2024RS",
+     "number": "HB0598",
+     "title": "Discrimination - Military Status - Prohibition",
+     "score": 4
+    }
+   ],
+   "old_reasoning": "Co-sponsored the following bill in the Maryland General Assembly: HB0598 (2024) \"Discrimination - Military Status - Prohibition\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0598?ys=2024RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Hayes has been a strong civil rights champion, supporting anti-discrimination legislation, reparations discussions, and expansions of civil rights protections for Black Marylanders.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0161?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0473?ys=2019RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0511?ys=2018RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Antonio Hayes",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Antonio_Hayes",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: SB0161 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; SB0473 (2019) \"Hate Crimes - Civil Remedy\"; HB0511 (2018) \"Public Institutions of Higher Education - Hate-Bias Incident Prevention\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 22,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "hayes"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 28,
+   "bills": [
+    {
+     "session": "2016RS",
+     "number": "HB0173",
+     "title": "Commission on the Solemn Remembrance of the Victims of Lynching"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0511",
+     "title": "Public Institutions of Higher Education - Hate-Bias Incident Prevention"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1342",
+     "title": "State Government – Discrimination and Harassment"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1496",
+     "title": "Labor and Employment - Discrimination Against Medical Cannabis Patients and Caregivers - Prohibition (Medical Cannabis Patient and Caregiver Antidiscrimination Act)"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1565",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0233",
+     "title": "Motor Vehicle Insurance - Discrimination in Underwriting and Rating - Use of Occupation or Education Level"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0531",
+     "title": "Discrimination – Definition of Race – Hair Texture and Hairstyles"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate",
+     "score": 0
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy",
+     "score": 0
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0511",
+     "title": "Public Institutions of Higher Education - Hate-Bias Incident Prevention",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: SB0161 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; SB0473 (2019) \"Hate Crimes - Civil Remedy\"; HB0511 (2018) \"Public Institutions of Higher Education - Hate-Bias Incident Prevention\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0161?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0473?ys=2019RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0511?ys=2018RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "898845f9-cb93-4162-b0ed-6842eacda5d6",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Crosby has supported civil rights and anti-discrimination legislation in the Maryland House consistent with the House Democratic caucus agenda.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0339?ys=2023RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Brian M. Crosby",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Brian_Crosby",
+   "has_positions_section": true,
+   "why": "Co-sponsored the following bill in the Maryland General Assembly: HB0339 (2023) \"Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 19,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "crosby"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 4,
+   "bills": [
+    {
+     "session": "2023RS",
+     "number": "HB0339",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2023RS",
+     "number": "HB0339",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension",
+     "score": 3
+    }
+   ],
+   "old_reasoning": "Co-sponsored the following bill in the Maryland General Assembly: HB0339 (2023) \"Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0339?ys=2023RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "reasoning": "Comptroller Lierman supported immigration-protective legislation during her time in the House of Delegates, including sanctuary policies and protections for immigrant communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0388?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0403?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0272?ys=2017RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Brooke Lierman",
+   "last_stances_researched_at": null,
+   "topic": "Immigration and Treatment of Immigrants",
+   "question_text": "How welcoming or restrictive should government be toward immigrants?",
+   "article": "https://ballotpedia.org/Brooke_Lierman",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB0388 (2020) \"Criminal Procedure - Civil Immigration Enforcement - Restrictions\"; HB0403 (2020) \"Immigration Enforcement - Public Schools, Hospitals, and Courthouses - Policies\"; HB0272 (2017) \"Higher Education - Public Institutions of Higher Education - Sanctuary Campus Status\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 21,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "lierman"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 37,
+   "bills": [
+    {
+     "session": "2016RS",
+     "number": "HB0493",
+     "title": "Criminal Law - Extortion - Immigration Status"
+    },
+    {
+     "session": "2017RS",
+     "number": "HB0272",
+     "title": "Higher Education - Public Institutions of Higher Education - Sanctuary Campus Status"
+    },
+    {
+     "session": "2017RS",
+     "number": "HB1208",
+     "title": "Victims and Witnesses - U Nonimmigrant Status - Certification of Victim Helpfulness"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0461",
+     "title": "Victims and Witnesses - U Nonimmigrant Status - Certification of Victim Helpfulness"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1461",
+     "title": "Criminal Procedure – Immigration – Supporting All Families Everywhere (SAFE Act)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0388",
+     "title": "Criminal Procedure - Civil Immigration Enforcement - Restrictions"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0403",
+     "title": "Immigration Enforcement - Public Schools, Hospitals, and Courthouses - Policies"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0677",
+     "title": "Correctional Services - Immigration Detention - Prohibition (Dignity Not Detention Act)"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2020RS",
+     "number": "HB0388",
+     "title": "Criminal Procedure - Civil Immigration Enforcement - Restrictions",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0403",
+     "title": "Immigration Enforcement - Public Schools, Hospitals, and Courthouses - Policies",
+     "score": 0
+    },
+    {
+     "session": "2017RS",
+     "number": "HB0272",
+     "title": "Higher Education - Public Institutions of Higher Education - Sanctuary Campus Status",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB0388 (2020) \"Criminal Procedure - Civil Immigration Enforcement - Restrictions\"; HB0403 (2020) \"Immigration Enforcement - Public Schools, Hospitals, and Courthouses - Policies\"; HB0272 (2017) \"Higher Education - Public Institutions of Higher Education - Sanctuary Campus Status\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0388?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0403?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0272?ys=2017RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Comptroller Lierman is a strong supporter of same-sex marriage and LGBTQ+ rights. She has voted for anti-discrimination protections for LGBTQ+ Marylanders and supported inclusive policies.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1380?ys=2022RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0706?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1010?ys=2020RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Brooke Lierman",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Brooke_Lierman",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB1380 (2022) \"General Provisions - LGBTQ Veterans - Honorable Discharge (Restoration of Honor Act)\"; HB0706 (2020) \"Commission on LGBTQ Affairs - Established\"; HB1010 (2020) \"Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 25,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "lierman"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 37,
+   "bills": [
+    {
+     "session": "2020RS",
+     "number": "HB0706",
+     "title": "Commission on LGBTQ Affairs - Established"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1010",
+     "title": "Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)"
+    },
+    {
+     "session": "2022RS",
+     "number": "HB1380",
+     "title": "General Provisions - LGBTQ Veterans - Honorable Discharge (Restoration of Honor Act)"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2022RS",
+     "number": "HB1380",
+     "title": "General Provisions - LGBTQ Veterans - Honorable Discharge (Restoration of Honor Act)",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0706",
+     "title": "Commission on LGBTQ Affairs - Established",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1010",
+     "title": "Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB1380 (2022) \"General Provisions - LGBTQ Veterans - Honorable Discharge (Restoration of Honor Act)\"; HB0706 (2020) \"Commission on LGBTQ Affairs - Established\"; HB1010 (2020) \"Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1380?ys=2022RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0706?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1010?ys=2020RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "McCray is a strong civil rights advocate, backing anti-discrimination legislation and racial equity measures, serving on the Senate Finance Committee with a focus on economic justice.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0161?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0473?ys=2019RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0511?ys=2018RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Cory V. McCray",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Cory_McCray",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: SB0161 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; SB0473 (2019) \"Hate Crimes - Civil Remedy\"; HB0511 (2018) \"Public Institutions of Higher Education - Hate-Bias Incident Prevention\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 26,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "mccray"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 16,
+   "bills": [
+    {
+     "session": "2017RS",
+     "number": "HB0696",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0511",
+     "title": "Public Institutions of Higher Education - Hate-Bias Incident Prevention"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1565",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0233",
+     "title": "Motor Vehicle Insurance - Discrimination in Underwriting and Rating - Use of Occupation or Education Level"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0848",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0531",
+     "title": "Discrimination – Definition of Race – Hair Texture and Hairstyles"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate",
+     "score": 0
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy",
+     "score": 0
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0511",
+     "title": "Public Institutions of Higher Education - Hate-Bias Incident Prevention",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: SB0161 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; SB0473 (2019) \"Hate Crimes - Civil Remedy\"; HB0511 (2018) \"Public Institutions of Higher Education - Hate-Bias Incident Prevention\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0161?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0473?ys=2019RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0511?ys=2018RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "a4b61b58-9006-4e58-952d-abeb2521cda0",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Watson supports same-sex marriage and LGBTQ+ protections — consistent vote in favor of full legal recognition and anti-discrimination laws.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0488?ys=2020RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Courtney Watson",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Courtney_Watson",
+   "has_positions_section": true,
+   "why": "Co-sponsored the following bill in the Maryland General Assembly: HB0488 (2020) \"Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 19,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "c watson"
+   ],
+   "id_note": "initial 'c' disambiguates among c/r",
+   "n_all": 5,
+   "bills": [
+    {
+     "session": "2020RS",
+     "number": "HB0488",
+     "title": "Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2020RS",
+     "number": "HB0488",
+     "title": "Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored the following bill in the Maryland General Assembly: HB0488 (2020) \"Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0488?ys=2020RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Attar is a strong civil rights advocate, supporting anti-discrimination legislation and expansions of protections for Baltimore City communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0748?ys=2024RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0763?ys=2024RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1041?ys=2024RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Dalya Attar",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Dalya_Attar",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB0748 (2024) \"State Government – Commission on Hate Crime Response and Prevention – Code of Conduct\"; HB0763 (2024) \"Commission on Hate Crime Response and Prevention - Membership\"; HB1041 (2024) \"Criminal Law - Hate Crimes - Religion and Disability\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 18,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "attar"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 17,
+   "bills": [
+    {
+     "session": "2019RS",
+     "number": "HB0240",
+     "title": "Hate Crimes – Threats"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0699",
+     "title": "Maryland Police Training and Standards Commission - Training Requirements - Hate Crimes"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0541",
+     "title": "Maryland Police Training and Standards Commission - Training Requirements - Hate Crimes"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1201",
+     "title": "State Government - Maryland Reparations Commission - Establishment (Harriet Tubman Community Investment Act)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1444",
+     "title": "Discrimination - Definition of Race - Hair Texture and Hairstyles"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1066",
+     "title": "Hate Crimes - Commission on Hate Crime Response and Prevention - Establishment"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1243",
+     "title": "Public Safety - Protecting Against Hate Crimes Grant Fund - Establishment"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0748",
+     "title": "State Government – Commission on Hate Crime Response and Prevention – Code of Conduct"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0763",
+     "title": "Commission on Hate Crime Response and Prevention - Membership"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB1041",
+     "title": "Criminal Law - Hate Crimes - Religion and Disability"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2024RS",
+     "number": "HB0748",
+     "title": "State Government – Commission on Hate Crime Response and Prevention – Code of Conduct",
+     "score": 0
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0763",
+     "title": "Commission on Hate Crime Response and Prevention - Membership",
+     "score": 0
+    },
+    {
+     "session": "2024RS",
+     "number": "HB1041",
+     "title": "Criminal Law - Hate Crimes - Religion and Disability",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB0748 (2024) \"State Government – Commission on Hate Crime Response and Prevention – Code of Conduct\"; HB0763 (2024) \"Commission on Hate Crime Response and Prevention - Membership\"; HB1041 (2024) \"Criminal Law - Hate Crimes - Religion and Disability\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0748?ys=2024RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0763?ys=2024RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1041?ys=2024RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "d8eabd9b-2aa8-40de-94ce-06ce6ef167cf",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Jones has co-sponsored civil rights and anti-discrimination legislation in the Maryland House and supported police accountability reforms.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1462?ys=2025RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1066?ys=2023RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0339?ys=2023RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Dana Jones",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Dana_Jones",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB1462 (2025) \"Higher Education - Antihate and Antidiscrimination Policies and Workgroup (Maryland Campus Accountability and Modernization to Protect University Students Act)\"; HB1066 (2023) \"Hate Crimes - Commission on Hate Crime Response and Prevention - Establishment\"; HB0339 (2023) \"Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 17,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "d jones"
+   ],
+   "id_note": "initial 'd' disambiguates among r/d/a",
+   "n_all": 13,
+   "bills": [
+    {
+     "session": "2023RS",
+     "number": "HB0339",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0888",
+     "title": "Education - Prekindergarten Alternative Teacher Preparation Program - Authorization and Reporting"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1066",
+     "title": "Hate Crimes - Commission on Hate Crime Response and Prevention - Establishment"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0598",
+     "title": "Discrimination - Military Status - Prohibition"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB1462",
+     "title": "Higher Education - Antihate and Antidiscrimination Policies and Workgroup (Maryland Campus Accountability and Modernization to Protect University Students Act)"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2025RS",
+     "number": "HB1462",
+     "title": "Higher Education - Antihate and Antidiscrimination Policies and Workgroup (Maryland Campus Accountability and Modernization to Protect University Students Act)",
+     "score": 0
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1066",
+     "title": "Hate Crimes - Commission on Hate Crime Response and Prevention - Establishment",
+     "score": 0
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0339",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension",
+     "score": 3
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB1462 (2025) \"Higher Education - Antihate and Antidiscrimination Policies and Workgroup (Maryland Campus Accountability and Modernization to Protect University Students Act)\"; HB1066 (2023) \"Hate Crimes - Commission on Hate Crime Response and Prevention - Establishment\"; HB0339 (2023) \"Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1462?ys=2025RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1066?ys=2023RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0339?ys=2023RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "e94337e1-4776-4058-87b4-32dfeb7732a0",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Stein co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights in Baltimore County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0748?ys=2024RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0240?ys=2019RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0700?ys=2018RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Dana Stein",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Dana_Stein",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB0748 (2024) \"State Government – Commission on Hate Crime Response and Prevention – Code of Conduct\"; HB0240 (2019) \"Hate Crimes – Threats\"; HB0700 (2018) \"Criminal Law - Hate Crimes - Group Victim\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 17,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "stein"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 14,
+   "bills": [
+    {
+     "session": "2017RS",
+     "number": "HB0916",
+     "title": "Motor Vehicle Insurance - Discrimination in Underwriting and Rating - Prohibitions"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0240",
+     "title": "Hate Crimes – Threats"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0312",
+     "title": "Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0748",
+     "title": "State Government – Commission on Hate Crime Response and Prevention – Code of Conduct"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2024RS",
+     "number": "HB0748",
+     "title": "State Government – Commission on Hate Crime Response and Prevention – Code of Conduct",
+     "score": 0
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0240",
+     "title": "Hate Crimes – Threats",
+     "score": 0
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB0748 (2024) \"State Government – Commission on Hate Crime Response and Prevention – Code of Conduct\"; HB0240 (2019) \"Hate Crimes – Threats\"; HB0700 (2018) \"Criminal Law - Hate Crimes - Group Victim\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0748?ys=2024RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0240?ys=2019RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0700?ys=2018RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "ff266ecf-9ea5-4282-b729-9830cc8abfa3",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Gile has consistently supported civil rights and anti-discrimination legislation in the Maryland General Assembly, backing expansions of protections for minority communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0413?ys=2024RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Dawn Gile",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Dawn_Gile",
+   "has_positions_section": true,
+   "why": "Co-sponsored the following bill in the Maryland General Assembly: SB0413 (2024) \"Discrimination - Military Status - Prohibition\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 21,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "gile"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 3,
+   "bills": [
+    {
+     "session": "2024RS",
+     "number": "SB0413",
+     "title": "Discrimination - Military Status - Prohibition"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2024RS",
+     "number": "SB0413",
+     "title": "Discrimination - Military Status - Prohibition",
+     "score": 4
+    }
+   ],
+   "old_reasoning": "Co-sponsored the following bill in the Maryland General Assembly: SB0413 (2024) \"Discrimination - Military Status - Prohibition\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0413?ys=2024RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "1cc5a555-4b8a-4573-8525-9ad2c7c0bf46",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Davis has been a vocal champion of civil rights legislation and has co-sponsored police accountability measures and anti-discrimination bills in the Maryland General Assembly.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0917?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0005?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0700?ys=2018RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Debra Davis",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Debra_Davis",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB0917 (2020) \"Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)\"; HB0005 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; HB0700 (2018) \"Criminal Law - Hate Crimes - Group Victim\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 24,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "davis",
+    "de davis",
+    "dm davis"
+   ],
+   "id_note": "tokens davis / de davis / dm davis all read as one person",
+   "n_all": 38,
+   "bills": [
+    {
+     "session": "2015RS",
+     "number": "HB1072",
+     "title": "Labor and Employment - Discrimination Based on Engagement in Lawful Activities - Prohibition"
+    },
+    {
+     "session": "2016RS",
+     "number": "HB1003",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2016RS",
+     "number": "HB1004",
+     "title": "Equal Pay Commission - Establishment"
+    },
+    {
+     "session": "2017RS",
+     "number": "HB0214",
+     "title": "Discrimination in Employment - Conditions Related to Pregnancy or Childbirth"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0656",
+     "title": "Motor Vehicle Insurance – Discrimination in Underwriting and Rating – Use of Occupation or Education Level"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0657",
+     "title": "Motor Vehicle Insurance – Discrimination in Underwriting and Rating – Use of Marital Status or Gender"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0307",
+     "title": "Maryland Lynching Truth and Reconciliation Commission"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0329",
+     "title": "Motor Vehicle Insurance - Discrimination in Underwriting and Rating - Use of Occupation or Education Level"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0917",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1201",
+     "title": "State Government - Maryland Reparations Commission - Establishment (Harriet Tubman Community Investment Act)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0005",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1010",
+     "title": "Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1444",
+     "title": "Discrimination - Definition of Race - Hair Texture and Hairstyles"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0339",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0788",
+     "title": "Human Relations - Protections Against Discrimination - Criminal Records"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB1422",
+     "title": "State Government - Maryland Reparations Commission"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB1309",
+     "title": "Commission to Review and Assess Racial Disparities in the State Criminal Justice System - Establishment"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2020RS",
+     "number": "HB0917",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0005",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate",
+     "score": 0
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB0917 (2020) \"Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)\"; HB0005 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; HB0700 (2018) \"Criminal Law - Hate Crimes - Group Victim\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0917?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0005?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0700?ys=2018RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "b9c61fea-fcb1-45cc-8e2c-e5b3046b7266",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Patterson has co-sponsored anti-discrimination legislation and police accountability measures reflecting her commitments to civil rights protections in Maryland.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0495?ys=2025RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0161?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0606?ys=2020RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Edith J. Patterson",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Edith_Patterson",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB0495 (2025) \"Education - Antidiscrimination Policies - Policy and Notice Requirements\"; SB0161 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; SB0606 (2020) \"Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 18,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "patterson"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 40,
+   "bills": [
+    {
+     "session": "2016RS",
+     "number": "HB0106",
+     "title": "Human Relations - Discrimination in Housing - Reentry-Into-Society Status"
+    },
+    {
+     "session": "2017RS",
+     "number": "HB0696",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0511",
+     "title": "Public Institutions of Higher Education - Hate-Bias Incident Prevention"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1109",
+     "title": "State Government - Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1565",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0233",
+     "title": "Motor Vehicle Insurance - Discrimination in Underwriting and Rating - Use of Occupation or Education Level"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0312",
+     "title": "Life Insurance - Prohibition on Discrimination - Opioid Overdose Reversal Drug"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0661",
+     "title": "Employment Discrimination - Definition of Employer"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0790",
+     "title": "Equal Pay for Equal Work - Enforcement - Civil Penalties (Equal Pay Remedies and Enforcement Act)"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0473",
+     "title": "Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0531",
+     "title": "Discrimination – Definition of Race – Hair Texture and Hairstyles"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0606",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0312",
+     "title": "Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1201",
+     "title": "State Government - Maryland Reparations Commission - Establishment (Harriet Tubman Community Investment Act)"
+    },
+    {
+     "session": "2022RS",
+     "number": "HB0594",
+     "title": "State Government - Maryland Reparations Commission - Establishment (Harriet Tubman Community Investment Act)"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0598",
+     "title": "Discrimination - Military Status - Prohibition"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0649",
+     "title": "Labor and Employment - Equal Pay for Equal Work - Wage Range Transparency"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB0495",
+     "title": "Education - Antidiscrimination Policies - Policy and Notice Requirements"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB1422",
+     "title": "State Government - Maryland Reparations Commission"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB1309",
+     "title": "Commission to Review and Assess Racial Disparities in the State Criminal Justice System - Establishment"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2025RS",
+     "number": "HB0495",
+     "title": "Education - Antidiscrimination Policies - Policy and Notice Requirements",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0606",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB0495 (2025) \"Education - Antidiscrimination Policies - Policy and Notice Requirements\"; SB0161 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; SB0606 (2020) \"Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0495?ys=2025RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0161?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0606?ys=2020RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "41749b94-11b8-4047-8421-95db0900d4b2",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Bagnall has supported LGBTQ+ civil rights and same-sex marriage protections as part of her progressive legislative agenda in the Maryland House.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1283?ys=2024RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0141?ys=2023RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0706?ys=2020RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Heather Bagnall",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Heather_Bagnall",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB1283 (2024) \"Insurance - Discrimination - Sexual Orientation and Gender Identity\"; HB0141 (2023) \"State Government – Commission on LGBTQIA+ Affairs – Alterations\"; HB0706 (2020) \"Commission on LGBTQ Affairs - Established\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 21,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "bagnall"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 29,
+   "bills": [
+    {
+     "session": "2020RS",
+     "number": "HB0706",
+     "title": "Commission on LGBTQ Affairs - Established"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0141",
+     "title": "State Government – Commission on LGBTQIA+ Affairs – Alterations"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB1283",
+     "title": "Insurance - Discrimination - Sexual Orientation and Gender Identity"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2024RS",
+     "number": "HB1283",
+     "title": "Insurance - Discrimination - Sexual Orientation and Gender Identity",
+     "score": 0
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0141",
+     "title": "State Government – Commission on LGBTQIA+ Affairs – Alterations",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0706",
+     "title": "Commission on LGBTQ Affairs - Established",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB1283 (2024) \"Insurance - Discrimination - Sexual Orientation and Gender Identity\"; HB0141 (2023) \"State Government – Commission on LGBTQIA+ Affairs – Alterations\"; HB0706 (2020) \"Commission on LGBTQ Affairs - Established\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1283?ys=2024RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0141?ys=2023RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0706?ys=2020RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Terrasa co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion in Howard County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0573?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0429?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0312?ys=2020RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Jen Terrasa",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Jen_Terrasa",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB0573 (2026) \"Fair Housing and Housing Discrimination - Regulations, Intent, and Discriminatory Effect\"; HB0429 (2020) \"Human Relations - Places of Public Accommodation - Pricing of Goods and Services\"; HB0312 (2020) \"Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 18,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "terrasa"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 23,
+   "bills": [
+    {
+     "session": "2019RS",
+     "number": "HB1107",
+     "title": "Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0255",
+     "title": "Health Care Facilities - Hospitals and Related Institutions - Discrimination Protections"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0312",
+     "title": "Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0429",
+     "title": "Human Relations - Places of Public Accommodation - Pricing of Goods and Services"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0573",
+     "title": "Fair Housing and Housing Discrimination - Regulations, Intent, and Discriminatory Effect"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0807",
+     "title": "Education - Teacher Preparation Programs - English Language Learner Teacher Competency Requirements"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2026RS",
+     "number": "HB0573",
+     "title": "Fair Housing and Housing Discrimination - Regulations, Intent, and Discriminatory Effect",
+     "score": 1
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0429",
+     "title": "Human Relations - Places of Public Accommodation - Pricing of Goods and Services",
+     "score": 1
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0312",
+     "title": "Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities",
+     "score": 2
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB0573 (2026) \"Fair Housing and Housing Discrimination - Regulations, Intent, and Discriminatory Effect\"; HB0429 (2020) \"Human Relations - Places of Public Accommodation - Pricing of Goods and Services\"; HB0312 (2020) \"Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0573?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0429?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0312?ys=2020RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Feldmark co-sponsored civil rights legislation including anti-discrimination protections in Howard County — strong supporter of civil rights expansion.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0495?ys=2025RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0429?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0312?ys=2020RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Jessica Feldmark",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Jessica_Feldmark",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB0495 (2025) \"Education - Antidiscrimination Policies - Policy and Notice Requirements\"; HB0429 (2020) \"Human Relations - Places of Public Accommodation - Pricing of Goods and Services\"; HB0312 (2020) \"Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 18,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "feldmark"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 35,
+   "bills": [
+    {
+     "session": "2019RS",
+     "number": "HB0295",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0661",
+     "title": "Employment Discrimination - Definition of Employer"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0255",
+     "title": "Health Care Facilities - Hospitals and Related Institutions - Discrimination Protections"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0312",
+     "title": "Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0429",
+     "title": "Human Relations - Places of Public Accommodation - Pricing of Goods and Services"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1204",
+     "title": "County Boards and Public and Nonpublic Prekindergarten Programs and Schools – Discrimination – Prohibition"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1444",
+     "title": "Discrimination - Definition of Race - Hair Texture and Hairstyles"
+    },
+    {
+     "session": "2022RS",
+     "number": "HB0594",
+     "title": "State Government - Maryland Reparations Commission - Establishment (Harriet Tubman Community Investment Act)"
+    },
+    {
+     "session": "2022RS",
+     "number": "HB0850",
+     "title": "Schools, Prekindergarten Programs, and County Boards of Education - Discrimination"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0339",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0598",
+     "title": "Discrimination - Military Status - Prohibition"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB0495",
+     "title": "Education - Antidiscrimination Policies - Policy and Notice Requirements"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB1422",
+     "title": "State Government - Maryland Reparations Commission"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2025RS",
+     "number": "HB0495",
+     "title": "Education - Antidiscrimination Policies - Policy and Notice Requirements",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0429",
+     "title": "Human Relations - Places of Public Accommodation - Pricing of Goods and Services",
+     "score": 1
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0312",
+     "title": "Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities",
+     "score": 2
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB0495 (2025) \"Education - Antidiscrimination Policies - Policy and Notice Requirements\"; HB0429 (2020) \"Human Relations - Places of Public Accommodation - Pricing of Goods and Services\"; HB0312 (2020) \"Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0495?ys=2025RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0429?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0312?ys=2020RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "631dac5c-fb86-41f5-a82d-5963164a9142",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Cardin co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion in Baltimore County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0495?ys=2025RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1462?ys=2025RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0748?ys=2024RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Jon S. Cardin",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Jon_Cardin",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB0495 (2025) \"Education - Antidiscrimination Policies - Policy and Notice Requirements\"; HB1462 (2025) \"Higher Education - Antihate and Antidiscrimination Policies and Workgroup (Maryland Campus Accountability and Modernization to Protect University Students Act)\"; HB0748 (2024) \"State Government – Commission on Hate Crime Response and Prevention – Code of Conduct\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 18,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "cardin"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 20,
+   "bills": [
+    {
+     "session": "2013RS",
+     "number": "HB1169",
+     "title": "Civil Rights Tax Relief Act"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0240",
+     "title": "Hate Crimes – Threats"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB1107",
+     "title": "Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0005",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1243",
+     "title": "Public Safety - Protecting Against Hate Crimes Grant Fund - Establishment"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0748",
+     "title": "State Government – Commission on Hate Crime Response and Prevention – Code of Conduct"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0763",
+     "title": "Commission on Hate Crime Response and Prevention - Membership"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB1041",
+     "title": "Criminal Law - Hate Crimes - Religion and Disability"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB1397",
+     "title": "Civil Rights - Discrimination Based on Protected Characteristics and Reproductive Freedom"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB0495",
+     "title": "Education - Antidiscrimination Policies - Policy and Notice Requirements"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB1462",
+     "title": "Higher Education - Antihate and Antidiscrimination Policies and Workgroup (Maryland Campus Accountability and Modernization to Protect University Students Act)"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2025RS",
+     "number": "HB0495",
+     "title": "Education - Antidiscrimination Policies - Policy and Notice Requirements",
+     "score": 0
+    },
+    {
+     "session": "2025RS",
+     "number": "HB1462",
+     "title": "Higher Education - Antihate and Antidiscrimination Policies and Workgroup (Maryland Campus Accountability and Modernization to Protect University Students Act)",
+     "score": 0
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0748",
+     "title": "State Government – Commission on Hate Crime Response and Prevention – Code of Conduct",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB0495 (2025) \"Education - Antidiscrimination Policies - Policy and Notice Requirements\"; HB1462 (2025) \"Higher Education - Antihate and Antidiscrimination Policies and Workgroup (Maryland Campus Accountability and Modernization to Protect University Students Act)\"; HB0748 (2024) \"State Government – Commission on Hate Crime Response and Prevention – Code of Conduct\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0495?ys=2025RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1462?ys=2025RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0748?ys=2024RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "631dac5c-fb86-41f5-a82d-5963164a9142",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Cardin supports same-sex marriage and LGBTQ+ protections — has consistently voted for LGBTQ+ rights legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0488?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0706?ys=2020RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Jon S. Cardin",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Jon_Cardin",
+   "has_positions_section": true,
+   "why": "Co-sponsored 2 bills in the Maryland General Assembly: HB0488 (2020) \"Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation\"; HB0706 (2020) \"Commission on LGBTQ Affairs - Established\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 15,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "cardin"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 20,
+   "bills": [
+    {
+     "session": "2020RS",
+     "number": "HB0488",
+     "title": "Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0706",
+     "title": "Commission on LGBTQ Affairs - Established"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2020RS",
+     "number": "HB0488",
+     "title": "Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0706",
+     "title": "Commission on LGBTQ Affairs - Established",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 2 bills in the Maryland General Assembly: HB0488 (2020) \"Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation\"; HB0706 (2020) \"Commission on LGBTQ Affairs - Established\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0488?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0706?ys=2020RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "ad1aaa25-0ef6-4c88-9d78-d75aec7398c7",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Clippinger sponsored Conversion Therapy - Prohibitions and Causes of Action and HIV Prevention Drugs - Prescribing Dispensing and Insurance Coverage — comprehensive LGBTQ+ and civil rights champion as Judiciary Chair.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0005?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0917?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0229?ys=2015RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Luke Clippinger",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Luke_Clippinger",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB0005 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; HB0917 (2020) \"Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)\"; HB0229 (2015) \"Human Relations - Employment Discrimination - Protection for Interns\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 30,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "clippinger"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 25,
+   "bills": [
+    {
+     "session": "2015RS",
+     "number": "HB0229",
+     "title": "Human Relations - Employment Discrimination - Protection for Interns"
+    },
+    {
+     "session": "2015RS",
+     "number": "HB1051",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2016RS",
+     "number": "HB1003",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2016RS",
+     "number": "HB1004",
+     "title": "Equal Pay Commission - Establishment"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1109",
+     "title": "State Government - Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1154",
+     "title": "Teachers and Teacher Preparation Programs - Bilingual Certification and Instruction"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0005",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0917",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1010",
+     "title": "Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2020RS",
+     "number": "HB0005",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0917",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)",
+     "score": 0
+    },
+    {
+     "session": "2015RS",
+     "number": "HB0229",
+     "title": "Human Relations - Employment Discrimination - Protection for Interns",
+     "score": 1
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB0005 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; HB0917 (2020) \"Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)\"; HB0229 (2015) \"Human Relations - Employment Discrimination - Protection for Interns\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0005?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0917?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0229?ys=2015RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "ad1aaa25-0ef6-4c88-9d78-d75aec7398c7",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Clippinger sponsored Conversion Therapy - Prohibitions and Causes of Action legislation directly prohibiting conversion therapy and creating civil liability — strong LGBTQ+ rights champion; consistent with strong support for same-sex marriage and full LGBTQ+ civil rights.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1209?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0706?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1010?ys=2020RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Luke Clippinger",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Luke_Clippinger",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB1209 (2026) \"Conversion Therapy - Prohibitions and Causes of Action\"; HB0706 (2020) \"Commission on LGBTQ Affairs - Established\"; HB1010 (2020) \"Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 36,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "clippinger"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 25,
+   "bills": [
+    {
+     "session": "2018RS",
+     "number": "HB0902",
+     "title": "Health Occupations - Conversion Therapy for Minors - Prohibition (Youth Mental Health Protection Act)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0706",
+     "title": "Commission on LGBTQ Affairs - Established"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1010",
+     "title": "Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB1209",
+     "title": "Conversion Therapy - Prohibitions and Causes of Action"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2026RS",
+     "number": "HB1209",
+     "title": "Conversion Therapy - Prohibitions and Causes of Action",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0706",
+     "title": "Commission on LGBTQ Affairs - Established",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1010",
+     "title": "Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB1209 (2026) \"Conversion Therapy - Prohibitions and Causes of Action\"; HB0706 (2020) \"Commission on LGBTQ Affairs - Established\"; HB1010 (2020) \"Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1209?ys=2026RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0706?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1010?ys=2020RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Augustine has supported civil rights and anti-discrimination legislation, backing expansions of protections for minority communities in Maryland.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0161?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0335?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0606?ys=2020RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Malcolm Augustine",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Malcolm_Augustine",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: SB0161 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; SB0335 (2020) \"Criminal Law - Hate Crimes - Harassment and Destruction of Property\"; SB0606 (2020) \"Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 17,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "augustine"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 18,
+   "bills": [
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0705",
+     "title": "Organ Donation – Prohibition on Discrimination by Insurer and Unpaid Leave"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0335",
+     "title": "Criminal Law - Hate Crimes - Harassment and Destruction of Property"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0531",
+     "title": "Discrimination – Definition of Race – Hair Texture and Hairstyles"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0606",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)"
+    },
+    {
+     "session": "2025RS",
+     "number": "SB0587",
+     "title": "State Government - Maryland Reparations Commission"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0335",
+     "title": "Criminal Law - Hate Crimes - Harassment and Destruction of Property",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0606",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: SB0161 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; SB0335 (2020) \"Criminal Law - Hate Crimes - Harassment and Destruction of Property\"; SB0606 (2020) \"Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0161?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0335?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0606?ys=2020RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "4a409af4-8568-42c3-bb72-7bb7500c96ce",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Chang has co-sponsored civil rights and anti-discrimination legislation in the Maryland House and has been active on AAPI community issues and anti-hate crime measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0005?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0240?ys=2019RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0700?ys=2018RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Mark S. Chang",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Mark_Chang",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB0005 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; HB0240 (2019) \"Hate Crimes – Threats\"; HB0700 (2018) \"Criminal Law - Hate Crimes - Group Victim\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 24,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "chang"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 17,
+   "bills": [
+    {
+     "session": "2016RS",
+     "number": "HB1003",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2017RS",
+     "number": "HB0540",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1154",
+     "title": "Teachers and Teacher Preparation Programs - Bilingual Certification and Instruction"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1342",
+     "title": "State Government – Discrimination and Harassment"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0240",
+     "title": "Hate Crimes – Threats"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0307",
+     "title": "Maryland Lynching Truth and Reconciliation Commission"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB1107",
+     "title": "Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0005",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0339",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2020RS",
+     "number": "HB0005",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate",
+     "score": 0
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0240",
+     "title": "Hate Crimes – Threats",
+     "score": 0
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB0005 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; HB0240 (2019) \"Hate Crimes – Threats\"; HB0700 (2018) \"Criminal Law - Hate Crimes - Group Victim\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0005?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0240?ys=2019RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0700?ys=2018RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "18313901-28d8-464c-9368-2873577e9d44",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "James has backed civil rights and anti-discrimination legislation in Maryland, supporting expansions of protections for minority and LGBTQ+ communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0050?ys=2024RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0478?ys=2023RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0413?ys=2024RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Mary-Dulany James",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Mary-Dulany_James",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: SB0050 (2024) \"Human Relations - Commission on Civil Rights - Appeal of Final Orders\"; SB0478 (2023) \"Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension\"; SB0413 (2024) \"Discrimination - Military Status - Prohibition\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 19,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "james"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 4,
+   "bills": [
+    {
+     "session": "2023RS",
+     "number": "SB0478",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    },
+    {
+     "session": "2024RS",
+     "number": "SB0050",
+     "title": "Human Relations - Commission on Civil Rights - Appeal of Final Orders"
+    },
+    {
+     "session": "2024RS",
+     "number": "SB0413",
+     "title": "Discrimination - Military Status - Prohibition"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2024RS",
+     "number": "SB0050",
+     "title": "Human Relations - Commission on Civil Rights - Appeal of Final Orders",
+     "score": 1
+    },
+    {
+     "session": "2023RS",
+     "number": "SB0478",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension",
+     "score": 3
+    },
+    {
+     "session": "2024RS",
+     "number": "SB0413",
+     "title": "Discrimination - Military Status - Prohibition",
+     "score": 4
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: SB0050 (2024) \"Human Relations - Commission on Civil Rights - Appeal of Final Orders\"; SB0478 (2023) \"Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension\"; SB0413 (2024) \"Discrimination - Military Status - Prohibition\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0050?ys=2024RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0478?ys=2023RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0413?ys=2024RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Phillips co-sponsored civil rights legislation including anti-discrimination protections in Baltimore County — strong supporter of civil rights.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0495?ys=2025RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1066?ys=2023RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1243?ys=2023RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "N. Scott Phillips",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/N._Scott_Phillips",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: HB0495 (2025) \"Education - Antidiscrimination Policies - Policy and Notice Requirements\"; HB1066 (2023) \"Hate Crimes - Commission on Hate Crime Response and Prevention - Establishment\"; HB1243 (2023) \"Public Safety - Protecting Against Hate Crimes Grant Fund - Establishment\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 17,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "phillips"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 18,
+   "bills": [
+    {
+     "session": "2023RS",
+     "number": "HB0875",
+     "title": "State Government - Maryland Reparations Commission - Establishment"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1066",
+     "title": "Hate Crimes - Commission on Hate Crime Response and Prevention - Establishment"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1243",
+     "title": "Public Safety - Protecting Against Hate Crimes Grant Fund - Establishment"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB1397",
+     "title": "Civil Rights - Discrimination Based on Protected Characteristics and Reproductive Freedom"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB0495",
+     "title": "Education - Antidiscrimination Policies - Policy and Notice Requirements"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB1422",
+     "title": "State Government - Maryland Reparations Commission"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB1309",
+     "title": "Commission to Review and Assess Racial Disparities in the State Criminal Justice System - Establishment"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2025RS",
+     "number": "HB0495",
+     "title": "Education - Antidiscrimination Policies - Policy and Notice Requirements",
+     "score": 0
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1066",
+     "title": "Hate Crimes - Commission on Hate Crime Response and Prevention - Establishment",
+     "score": 0
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1243",
+     "title": "Public Safety - Protecting Against Hate Crimes Grant Fund - Establishment",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: HB0495 (2025) \"Education - Antidiscrimination Policies - Policy and Notice Requirements\"; HB1066 (2023) \"Hate Crimes - Commission on Hate Crime Response and Prevention - Establishment\"; HB1243 (2023) \"Public Safety - Protecting Against Hate Crimes Grant Fund - Establishment\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0495?ys=2025RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1066?ys=2023RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1243?ys=2023RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "King has backed civil rights legislation and anti-discrimination protections as a senior Montgomery County Democrat, supporting expansions of civil rights categories.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0335?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0606?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0473?ys=2019RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Nancy J. King",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Nancy_King",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: SB0335 (2020) \"Criminal Law - Hate Crimes - Harassment and Destruction of Property\"; SB0606 (2020) \"Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)\"; SB0473 (2019) \"Hate Crimes - Civil Remedy\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 21,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "king"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 34,
+   "bills": [
+    {
+     "session": "2013RS",
+     "number": "SB0487",
+     "title": "Human Relations - Housing Discrimination - Source of Income"
+    },
+    {
+     "session": "2013RS",
+     "number": "SB0639",
+     "title": "Civil Rights Tax Relief Act"
+    },
+    {
+     "session": "2014RS",
+     "number": "SB0237",
+     "title": "Human Relations - Employment Discrimination - Protections for Interns"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0256",
+     "title": "Maryland Shoreline Risk Assessment, Preparation, and Adaptation Act"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0424",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0604",
+     "title": "Human Relations - Employment Discrimination - Protection for Interns"
+    },
+    {
+     "session": "2016RS",
+     "number": "SB0223",
+     "title": "Human Relations - Discrimination by a Place of Public Accommodation - Enforcement and Remedies"
+    },
+    {
+     "session": "2016RS",
+     "number": "SB0481",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0404",
+     "title": "Labor and Employment - Equal Pay - Job Announcement and Salary History Information Disclosures"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0834",
+     "title": "Human Relations - Discrimination by a Place of Public Accommodation - Enforcement and Remedies"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0849",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0335",
+     "title": "Criminal Law - Hate Crimes - Harassment and Destruction of Property"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0606",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2020RS",
+     "number": "SB0335",
+     "title": "Criminal Law - Hate Crimes - Harassment and Destruction of Property",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0606",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)",
+     "score": 0
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: SB0335 (2020) \"Criminal Law - Hate Crimes - Harassment and Destruction of Property\"; SB0606 (2020) \"Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)\"; SB0473 (2019) \"Hate Crimes - Civil Remedy\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0335?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0606?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0473?ys=2019RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Lanman Guzzone co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0335?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0606?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0473?ys=2019RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Pam Lanman Guzzone",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Pam_Guzzone",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: SB0335 (2020) \"Criminal Law - Hate Crimes - Harassment and Destruction of Property\"; SB0606 (2020) \"Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)\"; SB0473 (2019) \"Hate Crimes - Civil Remedy\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 16,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "guzzone"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 53,
+   "bills": [
+    {
+     "session": "2015RS",
+     "number": "SB0256",
+     "title": "Maryland Shoreline Risk Assessment, Preparation, and Adaptation Act"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0424",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0604",
+     "title": "Human Relations - Employment Discrimination - Protection for Interns"
+    },
+    {
+     "session": "2016RS",
+     "number": "SB0481",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0404",
+     "title": "Labor and Employment - Equal Pay - Job Announcement and Salary History Information Disclosures"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0834",
+     "title": "Human Relations - Discrimination by a Place of Public Accommodation - Enforcement and Remedies"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0849",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2018RS",
+     "number": "SB0978",
+     "title": "Career Preparation Expansion Act"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0705",
+     "title": "Organ Donation – Prohibition on Discrimination by Insurer and Unpaid Leave"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0335",
+     "title": "Criminal Law - Hate Crimes - Harassment and Destruction of Property"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0531",
+     "title": "Discrimination – Definition of Race – Hair Texture and Hairstyles"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0606",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0339",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0368",
+     "title": "Maryland Commission on Civil Rights - Monetary Relief"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0394",
+     "title": "Human Relations - Commission on Civil Rights - Appeal of Final Orders"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0598",
+     "title": "Discrimination - Military Status - Prohibition"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0649",
+     "title": "Labor and Employment - Equal Pay for Equal Work - Wage Range Transparency"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB1056",
+     "title": "State Board of Pharmacy - Prohibition on Discrimination Against 340B Drug Distribution"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2020RS",
+     "number": "SB0335",
+     "title": "Criminal Law - Hate Crimes - Harassment and Destruction of Property",
+     "score": 0
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0606",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)",
+     "score": 0
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: SB0335 (2020) \"Criminal Law - Hate Crimes - Harassment and Destruction of Property\"; SB0606 (2020) \"Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)\"; SB0473 (2019) \"Hate Crimes - Civil Remedy\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0335?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0606?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0473?ys=2019RS"
+   ],
+   "old_value": "1.0"
+  },
+  {
+   "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Beidle has backed civil rights legislation in Maryland, supporting anti-discrimination protections and measures to address racial equity in the justice system.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0161?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0473?ys=2019RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0700?ys=2018RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Pamela Beidle",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Pamela_Beidle",
+   "has_positions_section": true,
+   "why": "Co-sponsored 3 bills in the Maryland General Assembly: SB0161 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; SB0473 (2019) \"Hate Crimes - Civil Remedy\"; HB0700 (2018) \"Criminal Law - Hate Crimes - Group Victim\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "instruments": [],
+   "words": 21,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "beidle"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 16,
+   "bills": [
+    {
+     "session": "2015RS",
+     "number": "HB1051",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2016RS",
+     "number": "HB1003",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1342",
+     "title": "State Government – Discrimination and Harassment"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0518",
+     "title": "Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2024RS",
+     "number": "SB0413",
+     "title": "Discrimination - Military Status - Prohibition"
+    }
+   ],
+   "picked": [
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate",
+     "score": 0
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy",
+     "score": 0
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim",
+     "score": 0
+    }
+   ],
+   "old_reasoning": "Co-sponsored 3 bills in the Maryland General Assembly: SB0161 (2020) \"Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate\"; SB0473 (2019) \"Hate Crimes - Civil Remedy\"; HB0700 (2018) \"Criminal Law - Hate Crimes - Group Victim\". Maryland lists every sponsor on the bill page, and this member's name appears on each.",
+   "old_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0161?ys=2020RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0473?ys=2019RS",
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0700?ys=2018RS"
+   ],
+   "old_value": "1.0"
+  }
+ ]
+}

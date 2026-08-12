@@ -1,0 +1,2722 @@
+{
+ "pass": "class C rows vs their own MD sponsorship record",
+ "tally": {
+  "NO_ON_TOPIC_BILL": 8,
+  "SPONSORED_ON_TOPIC": 35,
+  "AMBIGUOUS_SURNAME": 1,
+  "NOT_MARYLAND": 3
+ },
+ "rows": [
+  {
+   "politician_id": "760cd4a7-235c-472f-a0ba-fb07098dfd57",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Jones strongly supports same-sex marriage and has championed LGBTQ+ protections in Maryland including protections for transgender youth healthcare access.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jones",
+    "https://ballotpedia.org/Adrienne_A._Jones"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Adrienne A. Jones",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Adrienne_A._Jones",
+   "has_positions_section": true,
+   "why": "Jones strongly supports same-sex marriage and has championed LGBTQ+ protections in Maryland including protections for transgender youth healthcare access.",
+   "instruments": [],
+   "words": 19,
+   "verdict": "NO_ON_TOPIC_BILL",
+   "tokens": [
+    "a jones"
+   ],
+   "id_note": "initial 'a' disambiguates among r/d/a",
+   "n_all": 1,
+   "bills": []
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Washington has consistently supported civil rights legislation including racial equity measures, LGBTQ protections, and anti-discrimination laws. As an African American senator in PG County, he prioritizes racial justice.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Alonzo T. Washington",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Alonzo_Washington",
+   "has_positions_section": true,
+   "why": "Washington has consistently supported civil rights legislation including racial equity measures, LGBTQ protections, and anti-discrimination laws. As an African American senator in PG County, he prioritizes racial justice.",
+   "instruments": [],
+   "words": 28,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "a washington"
+   ],
+   "id_note": "initial 'a' disambiguates among a/m",
+   "n_all": 11,
+   "bills": [
+    {
+     "session": "2016RS",
+     "number": "HB1478",
+     "title": "Employment Discrimination - Sexual Harassment - Definition of Employer"
+    },
+    {
+     "session": "2017RS",
+     "number": "HB0696",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0511",
+     "title": "Public Institutions of Higher Education - Hate-Bias Incident Prevention"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1565",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2023RS",
+     "number": "SB0478",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    }
+   ]
+  },
+  {
+   "politician_id": "ddfd43d3-023d-417e-9b68-af5a693e601e",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Pruski has co-sponsored civil rights and anti-discrimination legislation in the Maryland House consistent with his record as a progressive suburban Democrat.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pruski01",
+    "https://ballotpedia.org/Andrew_Pruski"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Andrew C. Pruski",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Andrew_Pruski",
+   "has_positions_section": true,
+   "why": "Pruski has co-sponsored civil rights and anti-discrimination legislation in the Maryland House consistent with his record as a progressive suburban Democrat.",
+   "instruments": [],
+   "words": 21,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "pruski"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 2,
+   "bills": [
+    {
+     "session": "2024RS",
+     "number": "HB0598",
+     "title": "Discrimination - Military Status - Prohibition"
+    }
+   ]
+  },
+  {
+   "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Hayes has been a strong civil rights champion, supporting anti-discrimination legislation, reparations discussions, and expansions of civil rights protections for Black Marylanders.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes02",
+    "https://ballotpedia.org/Antonio_Hayes"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Antonio Hayes",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Antonio_Hayes",
+   "has_positions_section": true,
+   "why": "Hayes has been a strong civil rights champion, supporting anti-discrimination legislation, reparations discussions, and expansions of civil rights protections for Black Marylanders.",
+   "instruments": [],
+   "words": 22,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "hayes"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 28,
+   "bills": [
+    {
+     "session": "2016RS",
+     "number": "HB0173",
+     "title": "Commission on the Solemn Remembrance of the Victims of Lynching"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0511",
+     "title": "Public Institutions of Higher Education - Hate-Bias Incident Prevention"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1342",
+     "title": "State Government – Discrimination and Harassment"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1496",
+     "title": "Labor and Employment - Discrimination Against Medical Cannabis Patients and Caregivers - Prohibition (Medical Cannabis Patient and Caregiver Antidiscrimination Act)"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1565",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0233",
+     "title": "Motor Vehicle Insurance - Discrimination in Underwriting and Rating - Use of Occupation or Education Level"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0531",
+     "title": "Discrimination – Definition of Race – Hair Texture and Hairstyles"
+    }
+   ]
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Kramer backs civil rights legislation including anti-discrimination measures, LGBTQ protections, and racial equity policies. He represents a diverse Montgomery County district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Benjamin F. Kramer",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Benjamin_Kramer",
+   "has_positions_section": true,
+   "why": "Kramer backs civil rights legislation including anti-discrimination measures, LGBTQ protections, and racial equity policies. He represents a diverse Montgomery County district.",
+   "instruments": [],
+   "words": 21,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "kramer"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 23,
+   "bills": [
+    {
+     "session": "2015RS",
+     "number": "HB0229",
+     "title": "Human Relations - Employment Discrimination - Protection for Interns"
+    },
+    {
+     "session": "2015RS",
+     "number": "HB1072",
+     "title": "Labor and Employment - Discrimination Based on Engagement in Lawful Activities - Prohibition"
+    },
+    {
+     "session": "2017RS",
+     "number": "HB0540",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1154",
+     "title": "Teachers and Teacher Preparation Programs - Bilingual Certification and Instruction"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0232",
+     "title": "Hate Crimes – Threats"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2022RS",
+     "number": "SB0071",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2023RS",
+     "number": "SB0840",
+     "title": "Public Safety - Protecting Against Hate Crimes Grant Fund - Establishment"
+    }
+   ]
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Kramer supports same-sex marriage and LGBTQ equality. He voted for marriage equality and LGBTQ non-discrimination legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Benjamin F. Kramer",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Benjamin_Kramer",
+   "has_positions_section": true,
+   "why": "Kramer supports same-sex marriage and LGBTQ equality. He voted for marriage equality and LGBTQ non-discrimination legislation.",
+   "instruments": [],
+   "words": 16,
+   "verdict": "NO_ON_TOPIC_BILL",
+   "tokens": [
+    "kramer"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 23,
+   "bills": []
+  },
+  {
+   "politician_id": "898845f9-cb93-4162-b0ed-6842eacda5d6",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Crosby has supported civil rights and anti-discrimination legislation in the Maryland House consistent with the House Democratic caucus agenda.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/crosby01?tab=2026RS-legislation",
+    "https://ballotpedia.org/Brian_Crosby"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Brian M. Crosby",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Brian_Crosby",
+   "has_positions_section": true,
+   "why": "Crosby has supported civil rights and anti-discrimination legislation in the Maryland House consistent with the House Democratic caucus agenda.",
+   "instruments": [],
+   "words": 19,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "crosby"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 4,
+   "bills": [
+    {
+     "session": "2023RS",
+     "number": "HB0339",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    }
+   ]
+  },
+  {
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "reasoning": "Comptroller Lierman supported immigration-protective legislation during her time in the House of Delegates, including sanctuary policies and protections for immigrant communities.",
+   "sources": [
+    "https://ballotpedia.org/Brooke_Lierman",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lierman01?ys=2025RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Brooke Lierman",
+   "last_stances_researched_at": null,
+   "topic": "Immigration and Treatment of Immigrants",
+   "question_text": "How welcoming or restrictive should government be toward immigrants?",
+   "article": "https://ballotpedia.org/Brooke_Lierman",
+   "has_positions_section": true,
+   "why": "Comptroller Lierman supported immigration-protective legislation during her time in the House of Delegates, including sanctuary policies and protections for immigrant communities.",
+   "instruments": [],
+   "words": 21,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "lierman"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 37,
+   "bills": [
+    {
+     "session": "2016RS",
+     "number": "HB0493",
+     "title": "Criminal Law - Extortion - Immigration Status"
+    },
+    {
+     "session": "2017RS",
+     "number": "HB0272",
+     "title": "Higher Education - Public Institutions of Higher Education - Sanctuary Campus Status"
+    },
+    {
+     "session": "2017RS",
+     "number": "HB1208",
+     "title": "Victims and Witnesses - U Nonimmigrant Status - Certification of Victim Helpfulness"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0461",
+     "title": "Victims and Witnesses - U Nonimmigrant Status - Certification of Victim Helpfulness"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1461",
+     "title": "Criminal Procedure – Immigration – Supporting All Families Everywhere (SAFE Act)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0388",
+     "title": "Criminal Procedure - Civil Immigration Enforcement - Restrictions"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0403",
+     "title": "Immigration Enforcement - Public Schools, Hospitals, and Courthouses - Policies"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0677",
+     "title": "Correctional Services - Immigration Detention - Prohibition (Dignity Not Detention Act)"
+    }
+   ]
+  },
+  {
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Comptroller Lierman is a strong supporter of same-sex marriage and LGBTQ+ rights. She has voted for anti-discrimination protections for LGBTQ+ Marylanders and supported inclusive policies.",
+   "sources": [
+    "https://ballotpedia.org/Brooke_Lierman",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lierman01?ys=2025RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Brooke Lierman",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Brooke_Lierman",
+   "has_positions_section": true,
+   "why": "Comptroller Lierman is a strong supporter of same-sex marriage and LGBTQ+ rights. She has voted for anti-discrimination protections for LGBTQ+ Marylanders and supported inclusive policies.",
+   "instruments": [],
+   "words": 25,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "lierman"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 37,
+   "bills": [
+    {
+     "session": "2020RS",
+     "number": "HB0706",
+     "title": "Commission on LGBTQ Affairs - Established"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1010",
+     "title": "Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)"
+    },
+    {
+     "session": "2022RS",
+     "number": "HB1380",
+     "title": "General Provisions - LGBTQ Veterans - Honorable Discharge (Restoration of Honor Act)"
+    }
+   ]
+  },
+  {
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "reasoning": "Comptroller Lierman has supported transgender rights and inclusion policies throughout her career. She voted for anti-discrimination protections for transgender Marylanders.",
+   "sources": [
+    "https://ballotpedia.org/Brooke_Lierman",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lierman01?ys=2025RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Brooke Lierman",
+   "last_stances_researched_at": null,
+   "topic": "Transgender Athletes",
+   "question_text": "How should sports leagues determine eligibility for transgender athletes?",
+   "article": "https://ballotpedia.org/Brooke_Lierman",
+   "has_positions_section": true,
+   "why": "Comptroller Lierman has supported transgender rights and inclusion policies throughout her career. She voted for anti-discrimination protections for transgender Marylanders.",
+   "instruments": [],
+   "words": 20,
+   "verdict": "NO_ON_TOPIC_BILL",
+   "tokens": [
+    "lierman"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 37,
+   "bills": []
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+   "reasoning": "Muse is an ordained minister who has championed religious freedom in the Maryland Senate. He has supported protections for religious institutions and faith-based organizations.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "C. Anthony Muse",
+   "last_stances_researched_at": null,
+   "topic": "Religious Freedom",
+   "question_text": "What role should religion play in government, public institutions, and policymaking?",
+   "article": "https://ballotpedia.org/C._Anthony_Muse",
+   "has_positions_section": true,
+   "why": "Muse is an ordained minister who has championed religious freedom in the Maryland Senate. He has supported protections for religious institutions and faith-based organizations.",
+   "instruments": [],
+   "words": 24,
+   "verdict": "NO_ON_TOPIC_BILL",
+   "tokens": [
+    "muse"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 19,
+   "bills": []
+  },
+  {
+   "politician_id": "69870c10-cea2-43c2-8cf9-bfcaf0b82265",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Wilson has been an active supporter of civil rights and anti-discrimination legislation and led efforts to reform the Maryland Lynching Memorial to address racial injustice.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wilson",
+    "https://ballotpedia.org/C.T._Wilson"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "C. T. Wilson",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/C.T._Wilson",
+   "has_positions_section": true,
+   "why": "Wilson has been an active supporter of civil rights and anti-discrimination legislation and led efforts to reform the Maryland Lynching Memorial to address racial injustice.",
+   "instruments": [],
+   "words": 25,
+   "verdict": "AMBIGUOUS_SURNAME",
+   "tokens": [
+    "b wilson",
+    "wilson"
+   ],
+   "bills": [],
+   "id_note": "index carries 'b wilson' but this politician's initial is 'c'"
+  },
+  {
+   "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Pasteur strongly supports same-sex marriage and LGBTQ+ protections — consistent supporter of equal rights.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pasteur01",
+    "https://ballotpedia.org/Cheryl_Pasteur"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Cheryl E. Pasteur",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Cheryl_Pasteur",
+   "has_positions_section": true,
+   "why": "Pasteur strongly supports same-sex marriage and LGBTQ+ protections — consistent supporter of equal rights.",
+   "instruments": [],
+   "words": 14,
+   "verdict": "NO_ON_TOPIC_BILL",
+   "tokens": [
+    "pasteur"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 20,
+   "bills": []
+  },
+  {
+   "politician_id": "c20345d9-e451-4813-8645-985734fedba3",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Deluzio serves as Deputy Whip of the Congressional Progressive Caucus and is a member of the Congressional Equality Caucus, positions consistent with strengthening civil rights enforcement and addressing systemic discrimination, though no specific reparations or racial equity mandate legislation was found.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chris_Deluzio"
+   ],
+   "answer_value": "2.0",
+   "write_in_text": null,
+   "full_name": "Christopher R. Deluzio",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://en.wikipedia.org/wiki/Chris_Deluzio",
+   "has_positions_section": true,
+   "why": "Deluzio serves as Deputy Whip of the Congressional Progressive Caucus and is a member of the Congressional Equality Caucus, positions consistent with strengthening civil rights enforcement and addressing systemic discrimination, though no specific reparations or racial equity mandate legislation was found.",
+   "instruments": [],
+   "words": 41,
+   "verdict": "NOT_MARYLAND"
+  },
+  {
+   "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "McCray is a strong civil rights advocate, backing anti-discrimination legislation and racial equity measures, serving on the Senate Finance Committee with a focus on economic justice.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray02",
+    "https://ballotpedia.org/Cory_McCray"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Cory V. McCray",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Cory_McCray",
+   "has_positions_section": true,
+   "why": "McCray is a strong civil rights advocate, backing anti-discrimination legislation and racial equity measures, serving on the Senate Finance Committee with a focus on economic justice.",
+   "instruments": [],
+   "words": 26,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "mccray"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 16,
+   "bills": [
+    {
+     "session": "2017RS",
+     "number": "HB0696",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0511",
+     "title": "Public Institutions of Higher Education - Hate-Bias Incident Prevention"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1565",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0233",
+     "title": "Motor Vehicle Insurance - Discrimination in Underwriting and Rating - Use of Occupation or Education Level"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0848",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0531",
+     "title": "Discrimination – Definition of Race – Hair Texture and Hairstyles"
+    }
+   ]
+  },
+  {
+   "politician_id": "a4b61b58-9006-4e58-952d-abeb2521cda0",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Watson supports same-sex marriage and LGBTQ+ protections — consistent vote in favor of full legal recognition and anti-discrimination laws.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson02",
+    "https://ballotpedia.org/Courtney_Watson"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Courtney Watson",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Courtney_Watson",
+   "has_positions_section": true,
+   "why": "Watson supports same-sex marriage and LGBTQ+ protections — consistent vote in favor of full legal recognition and anti-discrimination laws.",
+   "instruments": [],
+   "words": 19,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "c watson"
+   ],
+   "id_note": "initial 'c' disambiguates among c/r",
+   "n_all": 5,
+   "bills": [
+    {
+     "session": "2020RS",
+     "number": "HB0488",
+     "title": "Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation"
+    }
+   ]
+  },
+  {
+   "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Attar is a strong civil rights advocate, supporting anti-discrimination legislation and expansions of protections for Baltimore City communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar02",
+    "https://ballotpedia.org/Dalya_Attar"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Dalya Attar",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Dalya_Attar",
+   "has_positions_section": true,
+   "why": "Attar is a strong civil rights advocate, supporting anti-discrimination legislation and expansions of protections for Baltimore City communities.",
+   "instruments": [],
+   "words": 18,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "attar"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 17,
+   "bills": [
+    {
+     "session": "2019RS",
+     "number": "HB0240",
+     "title": "Hate Crimes – Threats"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0699",
+     "title": "Maryland Police Training and Standards Commission - Training Requirements - Hate Crimes"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0541",
+     "title": "Maryland Police Training and Standards Commission - Training Requirements - Hate Crimes"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1201",
+     "title": "State Government - Maryland Reparations Commission - Establishment (Harriet Tubman Community Investment Act)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1444",
+     "title": "Discrimination - Definition of Race - Hair Texture and Hairstyles"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1066",
+     "title": "Hate Crimes - Commission on Hate Crime Response and Prevention - Establishment"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1243",
+     "title": "Public Safety - Protecting Against Hate Crimes Grant Fund - Establishment"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0748",
+     "title": "State Government – Commission on Hate Crime Response and Prevention – Code of Conduct"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0763",
+     "title": "Commission on Hate Crime Response and Prevention - Membership"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB1041",
+     "title": "Criminal Law - Hate Crimes - Religion and Disability"
+    }
+   ]
+  },
+  {
+   "politician_id": "d8eabd9b-2aa8-40de-94ce-06ce6ef167cf",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Jones has co-sponsored civil rights and anti-discrimination legislation in the Maryland House and supported police accountability reforms.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jones01",
+    "https://ballotpedia.org/Dana_Jones"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Dana Jones",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Dana_Jones",
+   "has_positions_section": true,
+   "why": "Jones has co-sponsored civil rights and anti-discrimination legislation in the Maryland House and supported police accountability reforms.",
+   "instruments": [],
+   "words": 17,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "d jones"
+   ],
+   "id_note": "initial 'd' disambiguates among r/d/a",
+   "n_all": 13,
+   "bills": [
+    {
+     "session": "2023RS",
+     "number": "HB0339",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0888",
+     "title": "Education - Prekindergarten Alternative Teacher Preparation Program - Authorization and Reporting"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1066",
+     "title": "Hate Crimes - Commission on Hate Crime Response and Prevention - Establishment"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0598",
+     "title": "Discrimination - Military Status - Prohibition"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB1462",
+     "title": "Higher Education - Antihate and Antidiscrimination Policies and Workgroup (Maryland Campus Accountability and Modernization to Protect University Students Act)"
+    }
+   ]
+  },
+  {
+   "politician_id": "e94337e1-4776-4058-87b4-32dfeb7732a0",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Stein co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights in Baltimore County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stein",
+    "https://ballotpedia.org/Dana_Stein"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Dana Stein",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Dana_Stein",
+   "has_positions_section": true,
+   "why": "Stein co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights in Baltimore County.",
+   "instruments": [],
+   "words": 17,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "stein"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 14,
+   "bills": [
+    {
+     "session": "2017RS",
+     "number": "HB0916",
+     "title": "Motor Vehicle Insurance - Discrimination in Underwriting and Rating - Prohibitions"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0240",
+     "title": "Hate Crimes – Threats"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0312",
+     "title": "Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0748",
+     "title": "State Government – Commission on Hate Crime Response and Prevention – Code of Conduct"
+    }
+   ]
+  },
+  {
+   "politician_id": "ff266ecf-9ea5-4282-b729-9830cc8abfa3",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Gile has consistently supported civil rights and anti-discrimination legislation in the Maryland General Assembly, backing expansions of protections for minority communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/gile01",
+    "https://ballotpedia.org/Dawn_Gile"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Dawn Gile",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Dawn_Gile",
+   "has_positions_section": true,
+   "why": "Gile has consistently supported civil rights and anti-discrimination legislation in the Maryland General Assembly, backing expansions of protections for minority communities.",
+   "instruments": [],
+   "words": 21,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "gile"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 3,
+   "bills": [
+    {
+     "session": "2024RS",
+     "number": "SB0413",
+     "title": "Discrimination - Military Status - Prohibition"
+    }
+   ]
+  },
+  {
+   "politician_id": "ff266ecf-9ea5-4282-b729-9830cc8abfa3",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Gile has supported LGBTQ+ rights and recognition of same-sex marriage, aligned with the Maryland Democratic caucus on all LGBTQ+ civil rights legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/gile01",
+    "https://ballotpedia.org/Dawn_Gile"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Dawn Gile",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Dawn_Gile",
+   "has_positions_section": true,
+   "why": "Gile has supported LGBTQ+ rights and recognition of same-sex marriage, aligned with the Maryland Democratic caucus on all LGBTQ+ civil rights legislation.",
+   "instruments": [],
+   "words": 22,
+   "verdict": "NO_ON_TOPIC_BILL",
+   "tokens": [
+    "gile"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 3,
+   "bills": []
+  },
+  {
+   "politician_id": "1cc5a555-4b8a-4573-8525-9ad2c7c0bf46",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Davis has been a vocal champion of civil rights legislation and has co-sponsored police accountability measures and anti-discrimination bills in the Maryland General Assembly.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/davis02",
+    "https://ballotpedia.org/Debra_Davis"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Debra Davis",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Debra_Davis",
+   "has_positions_section": true,
+   "why": "Davis has been a vocal champion of civil rights legislation and has co-sponsored police accountability measures and anti-discrimination bills in the Maryland General Assembly.",
+   "instruments": [],
+   "words": 24,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "davis",
+    "de davis",
+    "dm davis"
+   ],
+   "id_note": "tokens davis / de davis / dm davis all read as one person",
+   "n_all": 38,
+   "bills": [
+    {
+     "session": "2015RS",
+     "number": "HB1072",
+     "title": "Labor and Employment - Discrimination Based on Engagement in Lawful Activities - Prohibition"
+    },
+    {
+     "session": "2016RS",
+     "number": "HB1003",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2016RS",
+     "number": "HB1004",
+     "title": "Equal Pay Commission - Establishment"
+    },
+    {
+     "session": "2017RS",
+     "number": "HB0214",
+     "title": "Discrimination in Employment - Conditions Related to Pregnancy or Childbirth"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0656",
+     "title": "Motor Vehicle Insurance – Discrimination in Underwriting and Rating – Use of Occupation or Education Level"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0657",
+     "title": "Motor Vehicle Insurance – Discrimination in Underwriting and Rating – Use of Marital Status or Gender"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0307",
+     "title": "Maryland Lynching Truth and Reconciliation Commission"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0329",
+     "title": "Motor Vehicle Insurance - Discrimination in Underwriting and Rating - Use of Occupation or Education Level"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0917",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1201",
+     "title": "State Government - Maryland Reparations Commission - Establishment (Harriet Tubman Community Investment Act)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0005",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1010",
+     "title": "Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1444",
+     "title": "Discrimination - Definition of Race - Hair Texture and Hairstyles"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0339",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0788",
+     "title": "Human Relations - Protections Against Discrimination - Criminal Records"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB1422",
+     "title": "State Government - Maryland Reparations Commission"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB1309",
+     "title": "Commission to Review and Assess Racial Disparities in the State Criminal Justice System - Establishment"
+    }
+   ]
+  },
+  {
+   "politician_id": "b9c61fea-fcb1-45cc-8e2c-e5b3046b7266",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Patterson has co-sponsored anti-discrimination legislation and police accountability measures reflecting her commitments to civil rights protections in Maryland.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/patterson02",
+    "https://ballotpedia.org/Edith_Patterson"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Edith J. Patterson",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Edith_Patterson",
+   "has_positions_section": true,
+   "why": "Patterson has co-sponsored anti-discrimination legislation and police accountability measures reflecting her commitments to civil rights protections in Maryland.",
+   "instruments": [],
+   "words": 18,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "patterson"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 40,
+   "bills": [
+    {
+     "session": "2016RS",
+     "number": "HB0106",
+     "title": "Human Relations - Discrimination in Housing - Reentry-Into-Society Status"
+    },
+    {
+     "session": "2017RS",
+     "number": "HB0696",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0511",
+     "title": "Public Institutions of Higher Education - Hate-Bias Incident Prevention"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1109",
+     "title": "State Government - Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1565",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0233",
+     "title": "Motor Vehicle Insurance - Discrimination in Underwriting and Rating - Use of Occupation or Education Level"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0312",
+     "title": "Life Insurance - Prohibition on Discrimination - Opioid Overdose Reversal Drug"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0661",
+     "title": "Employment Discrimination - Definition of Employer"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0790",
+     "title": "Equal Pay for Equal Work - Enforcement - Civil Penalties (Equal Pay Remedies and Enforcement Act)"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0473",
+     "title": "Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0531",
+     "title": "Discrimination – Definition of Race – Hair Texture and Hairstyles"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0606",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0312",
+     "title": "Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1201",
+     "title": "State Government - Maryland Reparations Commission - Establishment (Harriet Tubman Community Investment Act)"
+    },
+    {
+     "session": "2022RS",
+     "number": "HB0594",
+     "title": "State Government - Maryland Reparations Commission - Establishment (Harriet Tubman Community Investment Act)"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0598",
+     "title": "Discrimination - Military Status - Prohibition"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0649",
+     "title": "Labor and Employment - Equal Pay for Equal Work - Wage Range Transparency"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB0495",
+     "title": "Education - Antidiscrimination Policies - Policy and Notice Requirements"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB1422",
+     "title": "State Government - Maryland Reparations Commission"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB1309",
+     "title": "Commission to Review and Assess Racial Disparities in the State Criminal Justice System - Establishment"
+    }
+   ]
+  },
+  {
+   "politician_id": "6d95657c-6c46-4aab-886f-f9688adc7b33",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Bhandari strongly supports LGBTQ+ rights including same-sex marriage and gender-affirming care protections for minors.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bhandari01",
+    "https://ballotpedia.org/Harry_Bhandari"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Harry Bhandari",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Harry_Bhandari",
+   "has_positions_section": true,
+   "why": "Bhandari strongly supports LGBTQ+ rights including same-sex marriage and gender-affirming care protections for minors.",
+   "instruments": [],
+   "words": 14,
+   "verdict": "NO_ON_TOPIC_BILL",
+   "tokens": [
+    "bhandari"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 12,
+   "bills": []
+  },
+  {
+   "politician_id": "41749b94-11b8-4047-8421-95db0900d4b2",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Bagnall has supported LGBTQ+ civil rights and same-sex marriage protections as part of her progressive legislative agenda in the Maryland House.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bagnall01",
+    "https://ballotpedia.org/Heather_Bagnall"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Heather Bagnall",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Heather_Bagnall",
+   "has_positions_section": true,
+   "why": "Bagnall has supported LGBTQ+ civil rights and same-sex marriage protections as part of her progressive legislative agenda in the Maryland House.",
+   "instruments": [],
+   "words": 21,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "bagnall"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 29,
+   "bills": [
+    {
+     "session": "2020RS",
+     "number": "HB0706",
+     "title": "Commission on LGBTQ Affairs - Established"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0141",
+     "title": "State Government – Commission on LGBTQIA+ Affairs – Alterations"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB1283",
+     "title": "Insurance - Discrimination - Sexual Orientation and Gender Identity"
+    }
+   ]
+  },
+  {
+   "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f",
+   "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+   "reasoning": "Bailey has championed religious freedom protections for faith-based organizations and individuals. He supports robust conscience protections for religious institutions.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bailey01",
+    "https://ballotpedia.org/Jack_Bailey_(Maryland)"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Jack Bailey",
+   "last_stances_researched_at": null,
+   "topic": "Religious Freedom",
+   "question_text": "What role should religion play in government, public institutions, and policymaking?",
+   "article": "https://ballotpedia.org/Jack_Bailey_(Maryland)",
+   "has_positions_section": true,
+   "why": "Bailey has championed religious freedom protections for faith-based organizations and individuals. He supports robust conscience protections for religious institutions.",
+   "instruments": [],
+   "words": 19,
+   "verdict": "NO_ON_TOPIC_BILL",
+   "tokens": [
+    "bailey"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 4,
+   "bills": []
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Waldstreicher consistently champions civil rights including LGBTQ protections, racial equity legislation, and anti-discrimination measures throughout his Senate tenure.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Jeff Waldstreicher",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Jeff_Waldstreicher",
+   "has_positions_section": true,
+   "why": "Waldstreicher consistently champions civil rights including LGBTQ protections, racial equity legislation, and anti-discrimination measures throughout his Senate tenure.",
+   "instruments": [],
+   "words": 18,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "waldstreicher"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 32,
+   "bills": [
+    {
+     "session": "2013RS",
+     "number": "HB1334",
+     "title": "Employment Discrimination - Leave for Pregnancy and Childbirth"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0511",
+     "title": "Public Institutions of Higher Education - Hate-Bias Incident Prevention"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1109",
+     "title": "State Government - Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1496",
+     "title": "Labor and Employment - Discrimination Against Medical Cannabis Patients and Caregivers - Prohibition (Medical Cannabis Patient and Caregiver Antidiscrimination Act)"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0232",
+     "title": "Hate Crimes – Threats"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0531",
+     "title": "Discrimination – Definition of Race – Hair Texture and Hairstyles"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0606",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0633",
+     "title": "Maryland Police Training and Standards Commission - Training Requirements - Hate Crimes"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0989",
+     "title": "Criminal Law - Hate Crimes - Penalty (Educate Against Hate Act)"
+    },
+    {
+     "session": "2023RS",
+     "number": "SB0840",
+     "title": "Public Safety - Protecting Against Hate Crimes Grant Fund - Establishment"
+    },
+    {
+     "session": "2024RS",
+     "number": "SB0050",
+     "title": "Human Relations - Commission on Civil Rights - Appeal of Final Orders"
+    },
+    {
+     "session": "2024RS",
+     "number": "SB0413",
+     "title": "Discrimination - Military Status - Prohibition"
+    }
+   ]
+  },
+  {
+   "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Terrasa co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion in Howard County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/terrasa01",
+    "https://ballotpedia.org/Jen_Terrasa"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Jen Terrasa",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Jen_Terrasa",
+   "has_positions_section": true,
+   "why": "Terrasa co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion in Howard County.",
+   "instruments": [],
+   "words": 18,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "terrasa"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 23,
+   "bills": [
+    {
+     "session": "2019RS",
+     "number": "HB1107",
+     "title": "Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0255",
+     "title": "Health Care Facilities - Hospitals and Related Institutions - Discrimination Protections"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0312",
+     "title": "Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0429",
+     "title": "Human Relations - Places of Public Accommodation - Pricing of Goods and Services"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0573",
+     "title": "Fair Housing and Housing Discrimination - Regulations, Intent, and Discriminatory Effect"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB0807",
+     "title": "Education - Teacher Preparation Programs - English Language Learner Teacher Competency Requirements"
+    }
+   ]
+  },
+  {
+   "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Feldmark co-sponsored civil rights legislation including anti-discrimination protections in Howard County — strong supporter of civil rights expansion.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldmark01",
+    "https://ballotpedia.org/Jessica_Feldmark"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Jessica Feldmark",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Jessica_Feldmark",
+   "has_positions_section": true,
+   "why": "Feldmark co-sponsored civil rights legislation including anti-discrimination protections in Howard County — strong supporter of civil rights expansion.",
+   "instruments": [],
+   "words": 18,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "feldmark"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 35,
+   "bills": [
+    {
+     "session": "2019RS",
+     "number": "HB0295",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0661",
+     "title": "Employment Discrimination - Definition of Employer"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0255",
+     "title": "Health Care Facilities - Hospitals and Related Institutions - Discrimination Protections"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0312",
+     "title": "Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0429",
+     "title": "Human Relations - Places of Public Accommodation - Pricing of Goods and Services"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1204",
+     "title": "County Boards and Public and Nonpublic Prekindergarten Programs and Schools – Discrimination – Prohibition"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1444",
+     "title": "Discrimination - Definition of Race - Hair Texture and Hairstyles"
+    },
+    {
+     "session": "2022RS",
+     "number": "HB0594",
+     "title": "State Government - Maryland Reparations Commission - Establishment (Harriet Tubman Community Investment Act)"
+    },
+    {
+     "session": "2022RS",
+     "number": "HB0850",
+     "title": "Schools, Prekindergarten Programs, and County Boards of Education - Discrimination"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0339",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0598",
+     "title": "Discrimination - Military Status - Prohibition"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB0495",
+     "title": "Education - Antidiscrimination Policies - Policy and Notice Requirements"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB1422",
+     "title": "State Government - Maryland Reparations Commission"
+    }
+   ]
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Rosapepe has consistently backed civil rights including LGBTQ protections, racial equity measures, and anti-discrimination laws throughout his legislative career.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Jim Rosapepe",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Jim_Rosapepe",
+   "has_positions_section": true,
+   "why": "Rosapepe has consistently backed civil rights including LGBTQ protections, racial equity measures, and anti-discrimination laws throughout his legislative career.",
+   "instruments": [],
+   "words": 19,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "rosapepe"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 23,
+   "bills": [
+    {
+     "session": "2014RS",
+     "number": "SB0237",
+     "title": "Human Relations - Employment Discrimination - Protections for Interns"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0256",
+     "title": "Maryland Shoreline Risk Assessment, Preparation, and Adaptation Act"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0424",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0604",
+     "title": "Human Relations - Employment Discrimination - Protection for Interns"
+    },
+    {
+     "session": "2016RS",
+     "number": "SB0481",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2018RS",
+     "number": "SB0978",
+     "title": "Career Preparation Expansion Act"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0312",
+     "title": "Life Insurance - Prohibition on Discrimination - Opioid Overdose Reversal Drug"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2024RS",
+     "number": "SB0413",
+     "title": "Discrimination - Military Status - Prohibition"
+    }
+   ]
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Benson has championed civil rights throughout her career as one of the longest-serving African American women in the Maryland Senate. She supports racial equity, LGBTQ protections, and anti-discrimination measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Joanne C. Benson",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Joanne_Benson",
+   "has_positions_section": true,
+   "why": "Benson has championed civil rights throughout her career as one of the longest-serving African American women in the Maryland Senate. She supports racial equity, LGBTQ protections, and anti-discrimination measures.",
+   "instruments": [],
+   "words": 29,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "benson"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 40,
+   "bills": [
+    {
+     "session": "2013RS",
+     "number": "SB0487",
+     "title": "Human Relations - Housing Discrimination - Source of Income"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0256",
+     "title": "Maryland Shoreline Risk Assessment, Preparation, and Adaptation Act"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0424",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0604",
+     "title": "Human Relations - Employment Discrimination - Protection for Interns"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0792",
+     "title": "Public Health - Nondiscrimination in Access to Anatomical Gifts and Organ Transplantation"
+    },
+    {
+     "session": "2016RS",
+     "number": "SB0223",
+     "title": "Human Relations - Discrimination by a Place of Public Accommodation - Enforcement and Remedies"
+    },
+    {
+     "session": "2016RS",
+     "number": "SB0481",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0404",
+     "title": "Labor and Employment - Equal Pay - Job Announcement and Salary History Information Disclosures"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0534",
+     "title": "Motor Vehicle Insurance - Discrimination in Underwriting and Rating - Prohibitions"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0849",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0947",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2018RS",
+     "number": "SB0978",
+     "title": "Career Preparation Expansion Act"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0233",
+     "title": "Motor Vehicle Insurance - Discrimination in Underwriting and Rating - Use of Occupation or Education Level"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0518",
+     "title": "Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0607",
+     "title": "Homeowner's Insurance - Discrimination in Underwriting and Rating - Status as Surviving Spouse"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0531",
+     "title": "Discrimination – Definition of Race – Hair Texture and Hairstyles"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0606",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)"
+    },
+    {
+     "session": "2023RS",
+     "number": "SB0964",
+     "title": "Human Relations - Protections Against Discrimination - Criminal Records"
+    },
+    {
+     "session": "2024RS",
+     "number": "SB0050",
+     "title": "Human Relations - Commission on Civil Rights - Appeal of Final Orders"
+    }
+   ]
+  },
+  {
+   "politician_id": "631dac5c-fb86-41f5-a82d-5963164a9142",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Cardin co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion in Baltimore County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/cardin01",
+    "https://ballotpedia.org/Jon_Cardin"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Jon S. Cardin",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Jon_Cardin",
+   "has_positions_section": true,
+   "why": "Cardin co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion in Baltimore County.",
+   "instruments": [],
+   "words": 18,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "cardin"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 20,
+   "bills": [
+    {
+     "session": "2013RS",
+     "number": "HB1169",
+     "title": "Civil Rights Tax Relief Act"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0240",
+     "title": "Hate Crimes – Threats"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB1107",
+     "title": "Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0005",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1243",
+     "title": "Public Safety - Protecting Against Hate Crimes Grant Fund - Establishment"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0748",
+     "title": "State Government – Commission on Hate Crime Response and Prevention – Code of Conduct"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0763",
+     "title": "Commission on Hate Crime Response and Prevention - Membership"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB1041",
+     "title": "Criminal Law - Hate Crimes - Religion and Disability"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB1397",
+     "title": "Civil Rights - Discrimination Based on Protected Characteristics and Reproductive Freedom"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB0495",
+     "title": "Education - Antidiscrimination Policies - Policy and Notice Requirements"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB1462",
+     "title": "Higher Education - Antihate and Antidiscrimination Policies and Workgroup (Maryland Campus Accountability and Modernization to Protect University Students Act)"
+    }
+   ]
+  },
+  {
+   "politician_id": "631dac5c-fb86-41f5-a82d-5963164a9142",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Cardin supports same-sex marriage and LGBTQ+ protections — has consistently voted for LGBTQ+ rights legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/cardin01",
+    "https://ballotpedia.org/Jon_Cardin"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Jon S. Cardin",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Jon_Cardin",
+   "has_positions_section": true,
+   "why": "Cardin supports same-sex marriage and LGBTQ+ protections — has consistently voted for LGBTQ+ rights legislation.",
+   "instruments": [],
+   "words": 15,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "cardin"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 20,
+   "bills": [
+    {
+     "session": "2020RS",
+     "number": "HB0488",
+     "title": "Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0706",
+     "title": "Commission on LGBTQ Affairs - Established"
+    }
+   ]
+  },
+  {
+   "politician_id": "ad1aaa25-0ef6-4c88-9d78-d75aec7398c7",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Clippinger sponsored Conversion Therapy - Prohibitions and Causes of Action and HIV Prevention Drugs - Prescribing Dispensing and Insurance Coverage — comprehensive LGBTQ+ and civil rights champion as Judiciary Chair.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/clippinger",
+    "https://ballotpedia.org/Luke_Clippinger"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Luke Clippinger",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Luke_Clippinger",
+   "has_positions_section": true,
+   "why": "Clippinger sponsored Conversion Therapy - Prohibitions and Causes of Action and HIV Prevention Drugs - Prescribing Dispensing and Insurance Coverage — comprehensive LGBTQ+ and civil rights champion as Judiciary Chair.",
+   "instruments": [],
+   "words": 30,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "clippinger"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 25,
+   "bills": [
+    {
+     "session": "2015RS",
+     "number": "HB0229",
+     "title": "Human Relations - Employment Discrimination - Protection for Interns"
+    },
+    {
+     "session": "2015RS",
+     "number": "HB1051",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2016RS",
+     "number": "HB1003",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2016RS",
+     "number": "HB1004",
+     "title": "Equal Pay Commission - Establishment"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1109",
+     "title": "State Government - Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1154",
+     "title": "Teachers and Teacher Preparation Programs - Bilingual Certification and Instruction"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0005",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0917",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1010",
+     "title": "Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)"
+    }
+   ]
+  },
+  {
+   "politician_id": "ad1aaa25-0ef6-4c88-9d78-d75aec7398c7",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Clippinger sponsored Conversion Therapy - Prohibitions and Causes of Action legislation directly prohibiting conversion therapy and creating civil liability — strong LGBTQ+ rights champion; consistent with strong support for same-sex marriage and full LGBTQ+ civil rights.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/clippinger",
+    "https://ballotpedia.org/Luke_Clippinger"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Luke Clippinger",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Luke_Clippinger",
+   "has_positions_section": true,
+   "why": "Clippinger sponsored Conversion Therapy - Prohibitions and Causes of Action legislation directly prohibiting conversion therapy and creating civil liability — strong LGBTQ+ rights champion; consistent with strong support for same-sex marriage and full LGBTQ+ civil rights.",
+   "instruments": [],
+   "words": 36,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "clippinger"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 25,
+   "bills": [
+    {
+     "session": "2018RS",
+     "number": "HB0902",
+     "title": "Health Occupations - Conversion Therapy for Minors - Prohibition (Youth Mental Health Protection Act)"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0706",
+     "title": "Commission on LGBTQ Affairs - Established"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1010",
+     "title": "Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB1209",
+     "title": "Conversion Therapy - Prohibitions and Causes of Action"
+    }
+   ]
+  },
+  {
+   "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Augustine has supported civil rights and anti-discrimination legislation, backing expansions of protections for minority communities in Maryland.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/augustine01",
+    "https://ballotpedia.org/Malcolm_Augustine"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Malcolm Augustine",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Malcolm_Augustine",
+   "has_positions_section": true,
+   "why": "Augustine has supported civil rights and anti-discrimination legislation, backing expansions of protections for minority communities in Maryland.",
+   "instruments": [],
+   "words": 17,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "augustine"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 18,
+   "bills": [
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0705",
+     "title": "Organ Donation – Prohibition on Discrimination by Insurer and Unpaid Leave"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0335",
+     "title": "Criminal Law - Hate Crimes - Harassment and Destruction of Property"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0531",
+     "title": "Discrimination – Definition of Race – Hair Texture and Hairstyles"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0606",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)"
+    },
+    {
+     "session": "2025RS",
+     "number": "SB0587",
+     "title": "State Government - Maryland Reparations Commission"
+    }
+   ]
+  },
+  {
+   "politician_id": "4a409af4-8568-42c3-bb72-7bb7500c96ce",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Chang has co-sponsored civil rights and anti-discrimination legislation in the Maryland House and has been active on AAPI community issues and anti-hate crime measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/chang01?tab=2026RS-legislation",
+    "https://ballotpedia.org/Mark_Chang"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Mark S. Chang",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Mark_Chang",
+   "has_positions_section": true,
+   "why": "Chang has co-sponsored civil rights and anti-discrimination legislation in the Maryland House and has been active on AAPI community issues and anti-hate crime measures.",
+   "instruments": [],
+   "words": 24,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "chang"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 17,
+   "bills": [
+    {
+     "session": "2016RS",
+     "number": "HB1003",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2017RS",
+     "number": "HB0540",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1154",
+     "title": "Teachers and Teacher Preparation Programs - Bilingual Certification and Instruction"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1342",
+     "title": "State Government – Discrimination and Harassment"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0240",
+     "title": "Hate Crimes – Threats"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0307",
+     "title": "Maryland Lynching Truth and Reconciliation Commission"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB1107",
+     "title": "Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0005",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0339",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    }
+   ]
+  },
+  {
+   "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Carozza has opposed expansions of civil rights categories and affirmative action measures, consistent with conservative Republican positions on civil rights in Maryland.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza02",
+    "https://ballotpedia.org/Mary_Beth_Carozza"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Mary Beth Carozza",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Mary_Beth_Carozza",
+   "has_positions_section": true,
+   "why": "Carozza has opposed expansions of civil rights categories and affirmative action measures, consistent with conservative Republican positions on civil rights in Maryland.",
+   "instruments": [],
+   "words": 22,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "carozza"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 9,
+   "bills": [
+    {
+     "session": "2017RS",
+     "number": "HB0025",
+     "title": "Criminal Law - Hate Crimes - Law Enforcement Officers (Blue Lives Matter Act of 2017)"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1342",
+     "title": "State Government – Discrimination and Harassment"
+    },
+    {
+     "session": "2024RS",
+     "number": "SB0609",
+     "title": "Criminal Law - Hate Crimes - Law Enforcement Officers"
+    }
+   ]
+  },
+  {
+   "politician_id": "18313901-28d8-464c-9368-2873577e9d44",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "James has backed civil rights and anti-discrimination legislation in Maryland, supporting expansions of protections for minority and LGBTQ+ communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/james01",
+    "https://ballotpedia.org/Mary-Dulany_James"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Mary-Dulany James",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Mary-Dulany_James",
+   "has_positions_section": true,
+   "why": "James has backed civil rights and anti-discrimination legislation in Maryland, supporting expansions of protections for minority and LGBTQ+ communities.",
+   "instruments": [],
+   "words": 19,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "james"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 4,
+   "bills": [
+    {
+     "session": "2023RS",
+     "number": "SB0478",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    },
+    {
+     "session": "2024RS",
+     "number": "SB0050",
+     "title": "Human Relations - Commission on Civil Rights - Appeal of Final Orders"
+    },
+    {
+     "session": "2024RS",
+     "number": "SB0413",
+     "title": "Discrimination - Military Status - Prohibition"
+    }
+   ]
+  },
+  {
+   "politician_id": "0fd6132b-eb62-461d-98f7-8449fb3adbf2",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Ezell sponsored House Resolution 106 condemning efforts to defund police, which passed the House in the 118th Congress. His platform emphasizes law enforcement protection and American family values, consistent with limiting federal civil rights enforcement to clear cases of discrimination rather than addressing systemic discrimination.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mike_Ezell"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Mike Ezell",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://en.wikipedia.org/wiki/Mike_Ezell",
+   "has_positions_section": true,
+   "why": "Ezell sponsored House Resolution 106 condemning efforts to defund police, which passed the House in the 118th Congress. His platform emphasizes law enforcement protection and American family values, consistent with limiting federal civil rights enforcement to clear cases of discrimination rather than addressing systemic discrimination.",
+   "instruments": [],
+   "words": 45,
+   "verdict": "NOT_MARYLAND"
+  },
+  {
+   "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Phillips co-sponsored civil rights legislation including anti-discrimination protections in Baltimore County — strong supporter of civil rights.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/phillips02",
+    "https://ballotpedia.org/N._Scott_Phillips"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "N. Scott Phillips",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/N._Scott_Phillips",
+   "has_positions_section": true,
+   "why": "Phillips co-sponsored civil rights legislation including anti-discrimination protections in Baltimore County — strong supporter of civil rights.",
+   "instruments": [],
+   "words": 17,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "phillips"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 18,
+   "bills": [
+    {
+     "session": "2023RS",
+     "number": "HB0875",
+     "title": "State Government - Maryland Reparations Commission - Establishment"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1066",
+     "title": "Hate Crimes - Commission on Hate Crime Response and Prevention - Establishment"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1243",
+     "title": "Public Safety - Protecting Against Hate Crimes Grant Fund - Establishment"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB1397",
+     "title": "Civil Rights - Discrimination Based on Protected Characteristics and Reproductive Freedom"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB0495",
+     "title": "Education - Antidiscrimination Policies - Policy and Notice Requirements"
+    },
+    {
+     "session": "2025RS",
+     "number": "HB1422",
+     "title": "State Government - Maryland Reparations Commission"
+    },
+    {
+     "session": "2026RS",
+     "number": "HB1309",
+     "title": "Commission to Review and Assess Racial Disparities in the State Criminal Justice System - Establishment"
+    }
+   ]
+  },
+  {
+   "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "King has backed civil rights legislation and anti-discrimination protections as a senior Montgomery County Democrat, supporting expansions of civil rights categories.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/king",
+    "https://ballotpedia.org/Nancy_King"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Nancy J. King",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Nancy_King",
+   "has_positions_section": true,
+   "why": "King has backed civil rights legislation and anti-discrimination protections as a senior Montgomery County Democrat, supporting expansions of civil rights categories.",
+   "instruments": [],
+   "words": 21,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "king"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 34,
+   "bills": [
+    {
+     "session": "2013RS",
+     "number": "SB0487",
+     "title": "Human Relations - Housing Discrimination - Source of Income"
+    },
+    {
+     "session": "2013RS",
+     "number": "SB0639",
+     "title": "Civil Rights Tax Relief Act"
+    },
+    {
+     "session": "2014RS",
+     "number": "SB0237",
+     "title": "Human Relations - Employment Discrimination - Protections for Interns"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0256",
+     "title": "Maryland Shoreline Risk Assessment, Preparation, and Adaptation Act"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0424",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0604",
+     "title": "Human Relations - Employment Discrimination - Protection for Interns"
+    },
+    {
+     "session": "2016RS",
+     "number": "SB0223",
+     "title": "Human Relations - Discrimination by a Place of Public Accommodation - Enforcement and Remedies"
+    },
+    {
+     "session": "2016RS",
+     "number": "SB0481",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0404",
+     "title": "Labor and Employment - Equal Pay - Job Announcement and Salary History Information Disclosures"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0834",
+     "title": "Human Relations - Discrimination by a Place of Public Accommodation - Enforcement and Remedies"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0849",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0335",
+     "title": "Criminal Law - Hate Crimes - Harassment and Destruction of Property"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0606",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)"
+    }
+   ]
+  },
+  {
+   "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Lanman Guzzone co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone01",
+    "https://ballotpedia.org/Pam_Guzzone"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Pam Lanman Guzzone",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Pam_Guzzone",
+   "has_positions_section": true,
+   "why": "Lanman Guzzone co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion.",
+   "instruments": [],
+   "words": 16,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "guzzone"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 53,
+   "bills": [
+    {
+     "session": "2015RS",
+     "number": "SB0256",
+     "title": "Maryland Shoreline Risk Assessment, Preparation, and Adaptation Act"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0424",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2015RS",
+     "number": "SB0604",
+     "title": "Human Relations - Employment Discrimination - Protection for Interns"
+    },
+    {
+     "session": "2016RS",
+     "number": "SB0481",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0404",
+     "title": "Labor and Employment - Equal Pay - Job Announcement and Salary History Information Disclosures"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0834",
+     "title": "Human Relations - Discrimination by a Place of Public Accommodation - Enforcement and Remedies"
+    },
+    {
+     "session": "2017RS",
+     "number": "SB0849",
+     "title": "Nonpublic Elementary and Secondary Schools - Discrimination - Prohibition"
+    },
+    {
+     "session": "2018RS",
+     "number": "SB0978",
+     "title": "Career Preparation Expansion Act"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0705",
+     "title": "Organ Donation – Prohibition on Discrimination by Insurer and Unpaid Leave"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0335",
+     "title": "Criminal Law - Hate Crimes - Harassment and Destruction of Property"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0531",
+     "title": "Discrimination – Definition of Race – Hair Texture and Hairstyles"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0606",
+     "title": "Criminal Law - Hate Crimes - Basis (2nd Lieutenant Richard Collins, III's Law)"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0339",
+     "title": "Maryland Lynching Truth and Reconciliation Commission - Reporting and Sunset Extension"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0368",
+     "title": "Maryland Commission on Civil Rights - Monetary Relief"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0394",
+     "title": "Human Relations - Commission on Civil Rights - Appeal of Final Orders"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0598",
+     "title": "Discrimination - Military Status - Prohibition"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB0649",
+     "title": "Labor and Employment - Equal Pay for Equal Work - Wage Range Transparency"
+    },
+    {
+     "session": "2024RS",
+     "number": "HB1056",
+     "title": "State Board of Pharmacy - Prohibition on Discrimination Against 340B Drug Distribution"
+    }
+   ]
+  },
+  {
+   "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Beidle has backed civil rights legislation in Maryland, supporting anti-discrimination protections and measures to address racial equity in the justice system.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/beidle01",
+    "https://ballotpedia.org/Pamela_Beidle"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Pamela Beidle",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Pamela_Beidle",
+   "has_positions_section": true,
+   "why": "Beidle has backed civil rights legislation in Maryland, supporting anti-discrimination protections and measures to address racial equity in the justice system.",
+   "instruments": [],
+   "words": 21,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "beidle"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 16,
+   "bills": [
+    {
+     "session": "2015RS",
+     "number": "HB1051",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2016RS",
+     "number": "HB1003",
+     "title": "Labor and Employment - Equal Pay for Equal Work"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB0700",
+     "title": "Criminal Law - Hate Crimes - Group Victim"
+    },
+    {
+     "session": "2018RS",
+     "number": "HB1342",
+     "title": "State Government – Discrimination and Harassment"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0473",
+     "title": "Hate Crimes - Civil Remedy"
+    },
+    {
+     "session": "2019RS",
+     "number": "SB0518",
+     "title": "Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2020RS",
+     "number": "SB0161",
+     "title": "Crimes - Hate Crimes - Use of an Item or a Symbol to Threaten or Intimidate"
+    },
+    {
+     "session": "2024RS",
+     "number": "SB0413",
+     "title": "Discrimination - Military Status - Prohibition"
+    }
+   ]
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Love consistently backs civil rights legislation including anti-discrimination measures. She serves a diverse Montgomery County district and supports LGBTQ protections and racial equity bills.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Sara Love",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Sara_Love",
+   "has_positions_section": true,
+   "why": "Love consistently backs civil rights legislation including anti-discrimination measures. She serves a diverse Montgomery County district and supports LGBTQ protections and racial equity bills.",
+   "instruments": [],
+   "words": 24,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "love"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 27,
+   "bills": [
+    {
+     "session": "2013RS",
+     "number": "HB0795",
+     "title": "Maryland Occupational Safety and Health Act - Discrimination Against Employee - Complaints"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB0699",
+     "title": "Maryland Police Training and Standards Commission - Training Requirements - Hate Crimes"
+    },
+    {
+     "session": "2019RS",
+     "number": "HB1107",
+     "title": "Discrimination in Employment - Pregnancy and Childbirth"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0255",
+     "title": "Health Care Facilities - Hospitals and Related Institutions - Discrimination Protections"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0312",
+     "title": "Discrimination in Employment - Reasonable Accommodations for Applicants With Disabilities"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0429",
+     "title": "Human Relations - Places of Public Accommodation - Pricing of Goods and Services"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0541",
+     "title": "Maryland Police Training and Standards Commission - Training Requirements - Hate Crimes"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1010",
+     "title": "Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB0888",
+     "title": "Education - Prekindergarten Alternative Teacher Preparation Program - Authorization and Reporting"
+    },
+    {
+     "session": "2023RS",
+     "number": "HB1066",
+     "title": "Hate Crimes - Commission on Hate Crime Response and Prevention - Establishment"
+    },
+    {
+     "session": "2026RS",
+     "number": "SB0335",
+     "title": "Landlord and Tenant - Discrimination in Housing for Income-Based Housing Subsidies and Positive Rental History Reporting"
+    }
+   ]
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Love supports same-sex marriage and LGBTQ equality. As a Montgomery County Democrat, she voted for LGBTQ anti-discrimination legislation and consistently supports marriage equality.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Sara Love",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Sara_Love",
+   "has_positions_section": true,
+   "why": "Love supports same-sex marriage and LGBTQ equality. As a Montgomery County Democrat, she voted for LGBTQ anti-discrimination legislation and consistently supports marriage equality.",
+   "instruments": [],
+   "words": 23,
+   "verdict": "SPONSORED_ON_TOPIC",
+   "tokens": [
+    "love"
+   ],
+   "id_note": "single token, no collision",
+   "n_all": 27,
+   "bills": [
+    {
+     "session": "2020RS",
+     "number": "HB0488",
+     "title": "Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB0706",
+     "title": "Commission on LGBTQ Affairs - Established"
+    },
+    {
+     "session": "2020RS",
+     "number": "HB1010",
+     "title": "Health Care Facilities – Discrimination (LGBTQ Senior Bill of Rights)"
+    }
+   ]
+  },
+  {
+   "politician_id": "42b655c0-7eef-4dc1-8d5d-b4a77977a7f4",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Magaziner served on the board of Marriage Equality Rhode Island and actively supported the successful campaign to legalize same-sex marriage in Rhode Island. He is a member of the Congressional Equality Caucus, which advocates for full federal recognition and benefits for same-sex marriages.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Seth_Magaziner",
+    "https://ballotpedia.org/Seth_Magaziner"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Seth Magaziner",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Seth_Magaziner",
+   "has_positions_section": true,
+   "why": "Magaziner served on the board of Marriage Equality Rhode Island and actively supported the successful campaign to legalize same-sex marriage in Rhode Island. He is a member of the Congressional Equality Caucus, which advocates for full federal recognition and benefits for same-sex marriages.",
+   "instruments": [],
+   "words": 43,
+   "verdict": "NOT_MARYLAND"
+  }
+ ]
+}

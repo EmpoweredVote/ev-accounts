@@ -1,0 +1,1655 @@
+{
+ "pass": "class C — template rows",
+ "caveat": "A READING QUEUE. The shape catches honest short rows too, and the MD corpus indexes SPONSORS ONLY, so it cannot disprove a CO-sponsorship claim.",
+ "n_template": 47,
+ "n_near_miss": 36,
+ "class_c": [
+  {
+   "politician_id": "760cd4a7-235c-472f-a0ba-fb07098dfd57",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Jones strongly supports same-sex marriage and has championed LGBTQ+ protections in Maryland including protections for transgender youth healthcare access.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jones",
+    "https://ballotpedia.org/Adrienne_A._Jones"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Adrienne A. Jones",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Adrienne_A._Jones",
+   "has_positions_section": true,
+   "why": "Jones strongly supports same-sex marriage and has championed LGBTQ+ protections in Maryland including protections for transgender youth healthcare access.",
+   "instruments": [],
+   "words": 19
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Washington has consistently supported civil rights legislation including racial equity measures, LGBTQ protections, and anti-discrimination laws. As an African American senator in PG County, he prioritizes racial justice.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Alonzo T. Washington",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Alonzo_Washington",
+   "has_positions_section": true,
+   "why": "Washington has consistently supported civil rights legislation including racial equity measures, LGBTQ protections, and anti-discrimination laws. As an African American senator in PG County, he prioritizes racial justice.",
+   "instruments": [],
+   "words": 28
+  },
+  {
+   "politician_id": "ddfd43d3-023d-417e-9b68-af5a693e601e",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Pruski has co-sponsored civil rights and anti-discrimination legislation in the Maryland House consistent with his record as a progressive suburban Democrat.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pruski01",
+    "https://ballotpedia.org/Andrew_Pruski"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Andrew C. Pruski",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Andrew_Pruski",
+   "has_positions_section": true,
+   "why": "Pruski has co-sponsored civil rights and anti-discrimination legislation in the Maryland House consistent with his record as a progressive suburban Democrat.",
+   "instruments": [],
+   "words": 21
+  },
+  {
+   "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Hayes has been a strong civil rights champion, supporting anti-discrimination legislation, reparations discussions, and expansions of civil rights protections for Black Marylanders.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes02",
+    "https://ballotpedia.org/Antonio_Hayes"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Antonio Hayes",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Antonio_Hayes",
+   "has_positions_section": true,
+   "why": "Hayes has been a strong civil rights champion, supporting anti-discrimination legislation, reparations discussions, and expansions of civil rights protections for Black Marylanders.",
+   "instruments": [],
+   "words": 22
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Kramer backs civil rights legislation including anti-discrimination measures, LGBTQ protections, and racial equity policies. He represents a diverse Montgomery County district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Benjamin F. Kramer",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Benjamin_Kramer",
+   "has_positions_section": true,
+   "why": "Kramer backs civil rights legislation including anti-discrimination measures, LGBTQ protections, and racial equity policies. He represents a diverse Montgomery County district.",
+   "instruments": [],
+   "words": 21
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Kramer supports same-sex marriage and LGBTQ equality. He voted for marriage equality and LGBTQ non-discrimination legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Benjamin F. Kramer",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Benjamin_Kramer",
+   "has_positions_section": true,
+   "why": "Kramer supports same-sex marriage and LGBTQ equality. He voted for marriage equality and LGBTQ non-discrimination legislation.",
+   "instruments": [],
+   "words": 16
+  },
+  {
+   "politician_id": "898845f9-cb93-4162-b0ed-6842eacda5d6",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Crosby has supported civil rights and anti-discrimination legislation in the Maryland House consistent with the House Democratic caucus agenda.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/crosby01?tab=2026RS-legislation",
+    "https://ballotpedia.org/Brian_Crosby"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Brian M. Crosby",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Brian_Crosby",
+   "has_positions_section": true,
+   "why": "Crosby has supported civil rights and anti-discrimination legislation in the Maryland House consistent with the House Democratic caucus agenda.",
+   "instruments": [],
+   "words": 19
+  },
+  {
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "reasoning": "Comptroller Lierman supported immigration-protective legislation during her time in the House of Delegates, including sanctuary policies and protections for immigrant communities.",
+   "sources": [
+    "https://ballotpedia.org/Brooke_Lierman",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lierman01?ys=2025RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Brooke Lierman",
+   "last_stances_researched_at": null,
+   "topic": "Immigration and Treatment of Immigrants",
+   "question_text": "How welcoming or restrictive should government be toward immigrants?",
+   "article": "https://ballotpedia.org/Brooke_Lierman",
+   "has_positions_section": true,
+   "why": "Comptroller Lierman supported immigration-protective legislation during her time in the House of Delegates, including sanctuary policies and protections for immigrant communities.",
+   "instruments": [],
+   "words": 21
+  },
+  {
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Comptroller Lierman is a strong supporter of same-sex marriage and LGBTQ+ rights. She has voted for anti-discrimination protections for LGBTQ+ Marylanders and supported inclusive policies.",
+   "sources": [
+    "https://ballotpedia.org/Brooke_Lierman",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lierman01?ys=2025RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Brooke Lierman",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Brooke_Lierman",
+   "has_positions_section": true,
+   "why": "Comptroller Lierman is a strong supporter of same-sex marriage and LGBTQ+ rights. She has voted for anti-discrimination protections for LGBTQ+ Marylanders and supported inclusive policies.",
+   "instruments": [],
+   "words": 25
+  },
+  {
+   "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "reasoning": "Comptroller Lierman has supported transgender rights and inclusion policies throughout her career. She voted for anti-discrimination protections for transgender Marylanders.",
+   "sources": [
+    "https://ballotpedia.org/Brooke_Lierman",
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lierman01?ys=2025RS"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Brooke Lierman",
+   "last_stances_researched_at": null,
+   "topic": "Transgender Athletes",
+   "question_text": "How should sports leagues determine eligibility for transgender athletes?",
+   "article": "https://ballotpedia.org/Brooke_Lierman",
+   "has_positions_section": true,
+   "why": "Comptroller Lierman has supported transgender rights and inclusion policies throughout her career. She voted for anti-discrimination protections for transgender Marylanders.",
+   "instruments": [],
+   "words": 20
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+   "reasoning": "Muse is an ordained minister who has championed religious freedom in the Maryland Senate. He has supported protections for religious institutions and faith-based organizations.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "C. Anthony Muse",
+   "last_stances_researched_at": null,
+   "topic": "Religious Freedom",
+   "question_text": "What role should religion play in government, public institutions, and policymaking?",
+   "article": "https://ballotpedia.org/C._Anthony_Muse",
+   "has_positions_section": true,
+   "why": "Muse is an ordained minister who has championed religious freedom in the Maryland Senate. He has supported protections for religious institutions and faith-based organizations.",
+   "instruments": [],
+   "words": 24
+  },
+  {
+   "politician_id": "69870c10-cea2-43c2-8cf9-bfcaf0b82265",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Wilson has been an active supporter of civil rights and anti-discrimination legislation and led efforts to reform the Maryland Lynching Memorial to address racial injustice.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wilson",
+    "https://ballotpedia.org/C.T._Wilson"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "C. T. Wilson",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/C.T._Wilson",
+   "has_positions_section": true,
+   "why": "Wilson has been an active supporter of civil rights and anti-discrimination legislation and led efforts to reform the Maryland Lynching Memorial to address racial injustice.",
+   "instruments": [],
+   "words": 25
+  },
+  {
+   "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Pasteur strongly supports same-sex marriage and LGBTQ+ protections — consistent supporter of equal rights.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pasteur01",
+    "https://ballotpedia.org/Cheryl_Pasteur"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Cheryl E. Pasteur",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Cheryl_Pasteur",
+   "has_positions_section": true,
+   "why": "Pasteur strongly supports same-sex marriage and LGBTQ+ protections — consistent supporter of equal rights.",
+   "instruments": [],
+   "words": 14
+  },
+  {
+   "politician_id": "c20345d9-e451-4813-8645-985734fedba3",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Deluzio serves as Deputy Whip of the Congressional Progressive Caucus and is a member of the Congressional Equality Caucus, positions consistent with strengthening civil rights enforcement and addressing systemic discrimination, though no specific reparations or racial equity mandate legislation was found.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chris_Deluzio"
+   ],
+   "answer_value": "2.0",
+   "write_in_text": null,
+   "full_name": "Christopher R. Deluzio",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://en.wikipedia.org/wiki/Chris_Deluzio",
+   "has_positions_section": true,
+   "why": "Deluzio serves as Deputy Whip of the Congressional Progressive Caucus and is a member of the Congressional Equality Caucus, positions consistent with strengthening civil rights enforcement and addressing systemic discrimination, though no specific reparations or racial equity mandate legislation was found.",
+   "instruments": [],
+   "words": 41
+  },
+  {
+   "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "McCray is a strong civil rights advocate, backing anti-discrimination legislation and racial equity measures, serving on the Senate Finance Committee with a focus on economic justice.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray02",
+    "https://ballotpedia.org/Cory_McCray"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Cory V. McCray",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Cory_McCray",
+   "has_positions_section": true,
+   "why": "McCray is a strong civil rights advocate, backing anti-discrimination legislation and racial equity measures, serving on the Senate Finance Committee with a focus on economic justice.",
+   "instruments": [],
+   "words": 26
+  },
+  {
+   "politician_id": "a4b61b58-9006-4e58-952d-abeb2521cda0",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Watson supports same-sex marriage and LGBTQ+ protections — consistent vote in favor of full legal recognition and anti-discrimination laws.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/watson02",
+    "https://ballotpedia.org/Courtney_Watson"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Courtney Watson",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Courtney_Watson",
+   "has_positions_section": true,
+   "why": "Watson supports same-sex marriage and LGBTQ+ protections — consistent vote in favor of full legal recognition and anti-discrimination laws.",
+   "instruments": [],
+   "words": 19
+  },
+  {
+   "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Attar is a strong civil rights advocate, supporting anti-discrimination legislation and expansions of protections for Baltimore City communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/attar02",
+    "https://ballotpedia.org/Dalya_Attar"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Dalya Attar",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Dalya_Attar",
+   "has_positions_section": true,
+   "why": "Attar is a strong civil rights advocate, supporting anti-discrimination legislation and expansions of protections for Baltimore City communities.",
+   "instruments": [],
+   "words": 18
+  },
+  {
+   "politician_id": "d8eabd9b-2aa8-40de-94ce-06ce6ef167cf",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Jones has co-sponsored civil rights and anti-discrimination legislation in the Maryland House and supported police accountability reforms.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jones01",
+    "https://ballotpedia.org/Dana_Jones"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Dana Jones",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Dana_Jones",
+   "has_positions_section": true,
+   "why": "Jones has co-sponsored civil rights and anti-discrimination legislation in the Maryland House and supported police accountability reforms.",
+   "instruments": [],
+   "words": 17
+  },
+  {
+   "politician_id": "e94337e1-4776-4058-87b4-32dfeb7732a0",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Stein co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights in Baltimore County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stein",
+    "https://ballotpedia.org/Dana_Stein"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Dana Stein",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Dana_Stein",
+   "has_positions_section": true,
+   "why": "Stein co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights in Baltimore County.",
+   "instruments": [],
+   "words": 17
+  },
+  {
+   "politician_id": "ff266ecf-9ea5-4282-b729-9830cc8abfa3",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Gile has consistently supported civil rights and anti-discrimination legislation in the Maryland General Assembly, backing expansions of protections for minority communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/gile01",
+    "https://ballotpedia.org/Dawn_Gile"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Dawn Gile",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Dawn_Gile",
+   "has_positions_section": true,
+   "why": "Gile has consistently supported civil rights and anti-discrimination legislation in the Maryland General Assembly, backing expansions of protections for minority communities.",
+   "instruments": [],
+   "words": 21
+  },
+  {
+   "politician_id": "ff266ecf-9ea5-4282-b729-9830cc8abfa3",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Gile has supported LGBTQ+ rights and recognition of same-sex marriage, aligned with the Maryland Democratic caucus on all LGBTQ+ civil rights legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/gile01",
+    "https://ballotpedia.org/Dawn_Gile"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Dawn Gile",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Dawn_Gile",
+   "has_positions_section": true,
+   "why": "Gile has supported LGBTQ+ rights and recognition of same-sex marriage, aligned with the Maryland Democratic caucus on all LGBTQ+ civil rights legislation.",
+   "instruments": [],
+   "words": 22
+  },
+  {
+   "politician_id": "1cc5a555-4b8a-4573-8525-9ad2c7c0bf46",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Davis has been a vocal champion of civil rights legislation and has co-sponsored police accountability measures and anti-discrimination bills in the Maryland General Assembly.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/davis02",
+    "https://ballotpedia.org/Debra_Davis"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Debra Davis",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Debra_Davis",
+   "has_positions_section": true,
+   "why": "Davis has been a vocal champion of civil rights legislation and has co-sponsored police accountability measures and anti-discrimination bills in the Maryland General Assembly.",
+   "instruments": [],
+   "words": 24
+  },
+  {
+   "politician_id": "b9c61fea-fcb1-45cc-8e2c-e5b3046b7266",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Patterson has co-sponsored anti-discrimination legislation and police accountability measures reflecting her commitments to civil rights protections in Maryland.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/patterson02",
+    "https://ballotpedia.org/Edith_Patterson"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Edith J. Patterson",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Edith_Patterson",
+   "has_positions_section": true,
+   "why": "Patterson has co-sponsored anti-discrimination legislation and police accountability measures reflecting her commitments to civil rights protections in Maryland.",
+   "instruments": [],
+   "words": 18
+  },
+  {
+   "politician_id": "6d95657c-6c46-4aab-886f-f9688adc7b33",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Bhandari strongly supports LGBTQ+ rights including same-sex marriage and gender-affirming care protections for minors.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bhandari01",
+    "https://ballotpedia.org/Harry_Bhandari"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Harry Bhandari",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Harry_Bhandari",
+   "has_positions_section": true,
+   "why": "Bhandari strongly supports LGBTQ+ rights including same-sex marriage and gender-affirming care protections for minors.",
+   "instruments": [],
+   "words": 14
+  },
+  {
+   "politician_id": "41749b94-11b8-4047-8421-95db0900d4b2",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Bagnall has supported LGBTQ+ civil rights and same-sex marriage protections as part of her progressive legislative agenda in the Maryland House.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bagnall01",
+    "https://ballotpedia.org/Heather_Bagnall"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Heather Bagnall",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Heather_Bagnall",
+   "has_positions_section": true,
+   "why": "Bagnall has supported LGBTQ+ civil rights and same-sex marriage protections as part of her progressive legislative agenda in the Maryland House.",
+   "instruments": [],
+   "words": 21
+  },
+  {
+   "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f",
+   "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+   "reasoning": "Bailey has championed religious freedom protections for faith-based organizations and individuals. He supports robust conscience protections for religious institutions.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bailey01",
+    "https://ballotpedia.org/Jack_Bailey_(Maryland)"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Jack Bailey",
+   "last_stances_researched_at": null,
+   "topic": "Religious Freedom",
+   "question_text": "What role should religion play in government, public institutions, and policymaking?",
+   "article": "https://ballotpedia.org/Jack_Bailey_(Maryland)",
+   "has_positions_section": true,
+   "why": "Bailey has championed religious freedom protections for faith-based organizations and individuals. He supports robust conscience protections for religious institutions.",
+   "instruments": [],
+   "words": 19
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Waldstreicher consistently champions civil rights including LGBTQ protections, racial equity legislation, and anti-discrimination measures throughout his Senate tenure.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Jeff Waldstreicher",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Jeff_Waldstreicher",
+   "has_positions_section": true,
+   "why": "Waldstreicher consistently champions civil rights including LGBTQ protections, racial equity legislation, and anti-discrimination measures throughout his Senate tenure.",
+   "instruments": [],
+   "words": 18
+  },
+  {
+   "politician_id": "f45e2178-2a05-4974-8af8-379662412060",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Terrasa co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion in Howard County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/terrasa01",
+    "https://ballotpedia.org/Jen_Terrasa"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Jen Terrasa",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Jen_Terrasa",
+   "has_positions_section": true,
+   "why": "Terrasa co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion in Howard County.",
+   "instruments": [],
+   "words": 18
+  },
+  {
+   "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Feldmark co-sponsored civil rights legislation including anti-discrimination protections in Howard County — strong supporter of civil rights expansion.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/feldmark01",
+    "https://ballotpedia.org/Jessica_Feldmark"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Jessica Feldmark",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Jessica_Feldmark",
+   "has_positions_section": true,
+   "why": "Feldmark co-sponsored civil rights legislation including anti-discrimination protections in Howard County — strong supporter of civil rights expansion.",
+   "instruments": [],
+   "words": 18
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Rosapepe has consistently backed civil rights including LGBTQ protections, racial equity measures, and anti-discrimination laws throughout his legislative career.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Jim Rosapepe",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Jim_Rosapepe",
+   "has_positions_section": true,
+   "why": "Rosapepe has consistently backed civil rights including LGBTQ protections, racial equity measures, and anti-discrimination laws throughout his legislative career.",
+   "instruments": [],
+   "words": 19
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Benson has championed civil rights throughout her career as one of the longest-serving African American women in the Maryland Senate. She supports racial equity, LGBTQ protections, and anti-discrimination measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/benson",
+    "https://ballotpedia.org/Joanne_Benson"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Joanne C. Benson",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Joanne_Benson",
+   "has_positions_section": true,
+   "why": "Benson has championed civil rights throughout her career as one of the longest-serving African American women in the Maryland Senate. She supports racial equity, LGBTQ protections, and anti-discrimination measures.",
+   "instruments": [],
+   "words": 29
+  },
+  {
+   "politician_id": "631dac5c-fb86-41f5-a82d-5963164a9142",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Cardin co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion in Baltimore County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/cardin01",
+    "https://ballotpedia.org/Jon_Cardin"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Jon S. Cardin",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Jon_Cardin",
+   "has_positions_section": true,
+   "why": "Cardin co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion in Baltimore County.",
+   "instruments": [],
+   "words": 18
+  },
+  {
+   "politician_id": "631dac5c-fb86-41f5-a82d-5963164a9142",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Cardin supports same-sex marriage and LGBTQ+ protections — has consistently voted for LGBTQ+ rights legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/cardin01",
+    "https://ballotpedia.org/Jon_Cardin"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Jon S. Cardin",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Jon_Cardin",
+   "has_positions_section": true,
+   "why": "Cardin supports same-sex marriage and LGBTQ+ protections — has consistently voted for LGBTQ+ rights legislation.",
+   "instruments": [],
+   "words": 15
+  },
+  {
+   "politician_id": "ad1aaa25-0ef6-4c88-9d78-d75aec7398c7",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Clippinger sponsored Conversion Therapy - Prohibitions and Causes of Action and HIV Prevention Drugs - Prescribing Dispensing and Insurance Coverage — comprehensive LGBTQ+ and civil rights champion as Judiciary Chair.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/clippinger",
+    "https://ballotpedia.org/Luke_Clippinger"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Luke Clippinger",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Luke_Clippinger",
+   "has_positions_section": true,
+   "why": "Clippinger sponsored Conversion Therapy - Prohibitions and Causes of Action and HIV Prevention Drugs - Prescribing Dispensing and Insurance Coverage — comprehensive LGBTQ+ and civil rights champion as Judiciary Chair.",
+   "instruments": [],
+   "words": 30
+  },
+  {
+   "politician_id": "ad1aaa25-0ef6-4c88-9d78-d75aec7398c7",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Clippinger sponsored Conversion Therapy - Prohibitions and Causes of Action legislation directly prohibiting conversion therapy and creating civil liability — strong LGBTQ+ rights champion; consistent with strong support for same-sex marriage and full LGBTQ+ civil rights.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/clippinger",
+    "https://ballotpedia.org/Luke_Clippinger"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Luke Clippinger",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Luke_Clippinger",
+   "has_positions_section": true,
+   "why": "Clippinger sponsored Conversion Therapy - Prohibitions and Causes of Action legislation directly prohibiting conversion therapy and creating civil liability — strong LGBTQ+ rights champion; consistent with strong support for same-sex marriage and full LGBTQ+ civil rights.",
+   "instruments": [],
+   "words": 36
+  },
+  {
+   "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Augustine has supported civil rights and anti-discrimination legislation, backing expansions of protections for minority communities in Maryland.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/augustine01",
+    "https://ballotpedia.org/Malcolm_Augustine"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Malcolm Augustine",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Malcolm_Augustine",
+   "has_positions_section": true,
+   "why": "Augustine has supported civil rights and anti-discrimination legislation, backing expansions of protections for minority communities in Maryland.",
+   "instruments": [],
+   "words": 17
+  },
+  {
+   "politician_id": "4a409af4-8568-42c3-bb72-7bb7500c96ce",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Chang has co-sponsored civil rights and anti-discrimination legislation in the Maryland House and has been active on AAPI community issues and anti-hate crime measures.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/chang01?tab=2026RS-legislation",
+    "https://ballotpedia.org/Mark_Chang"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Mark S. Chang",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Mark_Chang",
+   "has_positions_section": true,
+   "why": "Chang has co-sponsored civil rights and anti-discrimination legislation in the Maryland House and has been active on AAPI community issues and anti-hate crime measures.",
+   "instruments": [],
+   "words": 24
+  },
+  {
+   "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Carozza has opposed expansions of civil rights categories and affirmative action measures, consistent with conservative Republican positions on civil rights in Maryland.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/carozza02",
+    "https://ballotpedia.org/Mary_Beth_Carozza"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Mary Beth Carozza",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Mary_Beth_Carozza",
+   "has_positions_section": true,
+   "why": "Carozza has opposed expansions of civil rights categories and affirmative action measures, consistent with conservative Republican positions on civil rights in Maryland.",
+   "instruments": [],
+   "words": 22
+  },
+  {
+   "politician_id": "18313901-28d8-464c-9368-2873577e9d44",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "James has backed civil rights and anti-discrimination legislation in Maryland, supporting expansions of protections for minority and LGBTQ+ communities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/james01",
+    "https://ballotpedia.org/Mary-Dulany_James"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Mary-Dulany James",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Mary-Dulany_James",
+   "has_positions_section": true,
+   "why": "James has backed civil rights and anti-discrimination legislation in Maryland, supporting expansions of protections for minority and LGBTQ+ communities.",
+   "instruments": [],
+   "words": 19
+  },
+  {
+   "politician_id": "0fd6132b-eb62-461d-98f7-8449fb3adbf2",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Ezell sponsored House Resolution 106 condemning efforts to defund police, which passed the House in the 118th Congress. His platform emphasizes law enforcement protection and American family values, consistent with limiting federal civil rights enforcement to clear cases of discrimination rather than addressing systemic discrimination.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mike_Ezell"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Mike Ezell",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://en.wikipedia.org/wiki/Mike_Ezell",
+   "has_positions_section": true,
+   "why": "Ezell sponsored House Resolution 106 condemning efforts to defund police, which passed the House in the 118th Congress. His platform emphasizes law enforcement protection and American family values, consistent with limiting federal civil rights enforcement to clear cases of discrimination rather than addressing systemic discrimination.",
+   "instruments": [],
+   "words": 45
+  },
+  {
+   "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Phillips co-sponsored civil rights legislation including anti-discrimination protections in Baltimore County — strong supporter of civil rights.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/phillips02",
+    "https://ballotpedia.org/N._Scott_Phillips"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "N. Scott Phillips",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/N._Scott_Phillips",
+   "has_positions_section": true,
+   "why": "Phillips co-sponsored civil rights legislation including anti-discrimination protections in Baltimore County — strong supporter of civil rights.",
+   "instruments": [],
+   "words": 17
+  },
+  {
+   "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "King has backed civil rights legislation and anti-discrimination protections as a senior Montgomery County Democrat, supporting expansions of civil rights categories.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/king",
+    "https://ballotpedia.org/Nancy_King"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Nancy J. King",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Nancy_King",
+   "has_positions_section": true,
+   "why": "King has backed civil rights legislation and anti-discrimination protections as a senior Montgomery County Democrat, supporting expansions of civil rights categories.",
+   "instruments": [],
+   "words": 21
+  },
+  {
+   "politician_id": "589ed7af-602a-4ec9-8072-448b05446772",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Lanman Guzzone co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guzzone01",
+    "https://ballotpedia.org/Pam_Guzzone"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Pam Lanman Guzzone",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Pam_Guzzone",
+   "has_positions_section": true,
+   "why": "Lanman Guzzone co-sponsored civil rights legislation including anti-discrimination protections — strong supporter of civil rights expansion.",
+   "instruments": [],
+   "words": 16
+  },
+  {
+   "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Beidle has backed civil rights legislation in Maryland, supporting anti-discrimination protections and measures to address racial equity in the justice system.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/beidle01",
+    "https://ballotpedia.org/Pamela_Beidle"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Pamela Beidle",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Pamela_Beidle",
+   "has_positions_section": true,
+   "why": "Beidle has backed civil rights legislation in Maryland, supporting anti-discrimination protections and measures to address racial equity in the justice system.",
+   "instruments": [],
+   "words": 21
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Love consistently backs civil rights legislation including anti-discrimination measures. She serves a diverse Montgomery County district and supports LGBTQ protections and racial equity bills.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Sara Love",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/Sara_Love",
+   "has_positions_section": true,
+   "why": "Love consistently backs civil rights legislation including anti-discrimination measures. She serves a diverse Montgomery County district and supports LGBTQ protections and racial equity bills.",
+   "instruments": [],
+   "words": 24
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Love supports same-sex marriage and LGBTQ equality. As a Montgomery County Democrat, she voted for LGBTQ anti-discrimination legislation and consistently supports marriage equality.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Sara Love",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Sara_Love",
+   "has_positions_section": true,
+   "why": "Love supports same-sex marriage and LGBTQ equality. As a Montgomery County Democrat, she voted for LGBTQ anti-discrimination legislation and consistently supports marriage equality.",
+   "instruments": [],
+   "words": 23
+  },
+  {
+   "politician_id": "42b655c0-7eef-4dc1-8d5d-b4a77977a7f4",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Magaziner served on the board of Marriage Equality Rhode Island and actively supported the successful campaign to legalize same-sex marriage in Rhode Island. He is a member of the Congressional Equality Caucus, which advocates for full federal recognition and benefits for same-sex marriages.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Seth_Magaziner",
+    "https://ballotpedia.org/Seth_Magaziner"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Seth Magaziner",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Seth_Magaziner",
+   "has_positions_section": true,
+   "why": "Magaziner served on the board of Marriage Equality Rhode Island and actively supported the successful campaign to legalize same-sex marriage in Rhode Island. He is a member of the Congressional Equality Caucus, which advocates for full federal recognition and benefits for same-sex marriages.",
+   "instruments": [],
+   "words": 43
+  }
+ ],
+ "near_miss": [
+  {
+   "politician_id": "760cd4a7-235c-472f-a0ba-fb07098dfd57",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "reasoning": "Jones supported Medicare and Medicaid expansion efforts and has consistently opposed cuts to these programs throughout her legislative career.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jones",
+    "https://ballotpedia.org/Adrienne_A._Jones"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Adrienne A. Jones",
+   "last_stances_researched_at": null,
+   "topic": "Medicare / Medicaid",
+   "question_text": "How should Medicare and Medicaid be funded and structured?",
+   "article": "https://ballotpedia.org/Adrienne_A._Jones",
+   "has_positions_section": true,
+   "why": "Jones supported Medicare and Medicaid expansion efforts and has consistently opposed cuts to these programs throughout her legislative career.",
+   "instruments": [],
+   "words": 19
+  },
+  {
+   "politician_id": "8118811a-aadd-4eb9-9208-de0f5d3b29ad",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "reasoning": "Biggs has consistently opposed government regulation across all sectors and is a strong free-market advocate. His opposition to net neutrality regulations and general anti-regulatory posture are consistent with allowing AI companies to develop and deploy technology freely without government interference.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Andy_Biggs"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Andy Biggs",
+   "last_stances_researched_at": null,
+   "topic": "Artificial Intelligence Oversight",
+   "question_text": "How much should government oversee artificial intelligence development and deployment?",
+   "article": "https://en.wikipedia.org/wiki/Andy_Biggs",
+   "has_positions_section": true,
+   "why": "Biggs has consistently opposed government regulation across all sectors and is a strong free-market advocate. His opposition to net neutrality regulations and general anti-regulatory posture are consistent with allowing AI companies to develop and deploy technology freely without government interference.",
+   "instruments": [],
+   "words": 40
+  },
+  {
+   "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96",
+   "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+   "reasoning": "Hayes has supported decarceration and alternatives to incarceration, opposing jail expansion and backing diversion programs in Baltimore City.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes02",
+    "https://ballotpedia.org/Antonio_Hayes"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Antonio Hayes",
+   "last_stances_researched_at": null,
+   "topic": "Jail Capacity and Incarceration Alternatives",
+   "question_text": "How should government respond to jail overcrowding and criminal justice demand?",
+   "article": "https://ballotpedia.org/Antonio_Hayes",
+   "has_positions_section": true,
+   "why": "Hayes has supported decarceration and alternatives to incarceration, opposing jail expansion and backing diversion programs in Baltimore City.",
+   "instruments": [],
+   "words": 18
+  },
+  {
+   "politician_id": "202729e0-489b-40d4-8ce8-ef58f4f22b22",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "reasoning": "Vermont Conservation Voters gave Balint a 100% lifetime environmental score for her work on climate and environmental justice legislation. This level of consistent environmental voting reflects rapid-transition advocacy well beyond incremental clean energy investment.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Becca_Balint"
+   ],
+   "answer_value": "2.0",
+   "write_in_text": null,
+   "full_name": "Becca Balint",
+   "last_stances_researched_at": null,
+   "topic": "Climate Change and Environmental Protection",
+   "question_text": "What priority should climate change receive in energy and economic policy?",
+   "article": "https://en.wikipedia.org/wiki/Becca_Balint",
+   "has_positions_section": true,
+   "why": "Vermont Conservation Voters gave Balint a 100% lifetime environmental score for her work on climate and environmental justice legislation. This level of consistent environmental voting reflects rapid-transition advocacy well beyond incremental clean energy investment.",
+   "instruments": [],
+   "words": 34
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "reasoning": "Kramer supports expanding Medicaid and protecting Medicare. He has backed healthcare safety net programs serving vulnerable populations in his district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Benjamin F. Kramer",
+   "last_stances_researched_at": null,
+   "topic": "Medicare / Medicaid",
+   "question_text": "How should Medicare and Medicaid be funded and structured?",
+   "article": "https://ballotpedia.org/Benjamin_Kramer",
+   "has_positions_section": true,
+   "why": "Kramer supports expanding Medicaid and protecting Medicare. He has backed healthcare safety net programs serving vulnerable populations in his district.",
+   "instruments": [],
+   "words": 20
+  },
+  {
+   "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "reasoning": "Simonaire has opposed transgender-inclusive athletic policies. He supported or co-sponsored legislation restricting transgender athletes from competing in women's sports categories.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simonaire",
+    "https://ballotpedia.org/Bryan_Simonaire"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Bryan W. Simonaire",
+   "last_stances_researched_at": null,
+   "topic": "Transgender Athletes",
+   "question_text": "How should sports leagues determine eligibility for transgender athletes?",
+   "article": "https://ballotpedia.org/Bryan_Simonaire",
+   "has_positions_section": true,
+   "why": "Simonaire has opposed transgender-inclusive athletic policies. He supported or co-sponsored legislation restricting transgender athletes from competing in women's sports categories.",
+   "instruments": [],
+   "words": 20
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Muse supports civil rights and racial equity legislation. As an African American senator representing a predominantly Black district in Prince George's County, he is a strong advocate for racial justice.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "C. Anthony Muse",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://ballotpedia.org/C._Anthony_Muse",
+   "has_positions_section": true,
+   "why": "Muse supports civil rights and racial equity legislation. As an African American senator representing a predominantly Black district in Prince George's County, he is a strong advocate for racial justice.",
+   "instruments": [],
+   "words": 30
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "reasoning": "Muse supported childcare investment including early childhood education programs. He backs family support services for working parents in Prince George's County.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/muse01",
+    "https://ballotpedia.org/C._Anthony_Muse"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "C. Anthony Muse",
+   "last_stances_researched_at": null,
+   "topic": "Childcare Affordability & Access",
+   "question_text": "How should government address the cost and availability of childcare?",
+   "article": "https://ballotpedia.org/C._Anthony_Muse",
+   "has_positions_section": true,
+   "why": "Muse supported childcare investment including early childhood education programs. He backs family support services for working parents in Prince George's County.",
+   "instruments": [],
+   "words": 21
+  },
+  {
+   "politician_id": "2fbad601-c2da-4f99-b04f-d28ae30b80f7",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Jackson introduced legislation banning registered sex offenders from public schools and championed community access to swimming facilities to address historical racial exclusion in public amenities.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Carl_W._Jackson"
+   ],
+   "answer_value": "2.0",
+   "write_in_text": null,
+   "full_name": "Carl Jackson",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://en.wikipedia.org/wiki/Carl_W._Jackson",
+   "has_positions_section": true,
+   "why": "Jackson introduced legislation banning registered sex offenders from public schools and championed community access to swimming facilities to address historical racial exclusion in public amenities.",
+   "instruments": [],
+   "words": 25
+  },
+  {
+   "politician_id": "3030383b-2aaf-40fd-9dfb-8867d1d02f99",
+   "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+   "reasoning": "ISideWith records Gimenez as opposing military supplies and funding to Ukraine. He consistently opposes foreign aid spending. His record reflects a preference for reducing aid and focusing on domestic priorities rather than an immediate total cut-off, placing him at value 4.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Carlos_A._Gimenez"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Carlos A. Gimenez",
+   "last_stances_researched_at": null,
+   "topic": "Ukraine - Russia Conflict",
+   "question_text": "What level of military and financial support should be provided to Ukraine?",
+   "article": "https://en.wikipedia.org/wiki/Carlos_A._Gimenez",
+   "has_positions_section": true,
+   "why": "ISideWith records Gimenez as opposing military supplies and funding to Ukraine. He consistently opposes foreign aid spending. His record reflects a preference for reducing aid and focusing on domestic priorities rather than an immediate total cut-off, placing him at value 4.",
+   "instruments": [],
+   "words": 41
+  },
+  {
+   "politician_id": "1d67c8ad-ef38-47d6-8dae-691d0bc7bf9e",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "reasoning": "His survey lists \"bodily autonomy\" among the Democratic priorities he will fight for -- supporting legal, accessible reproductive choice.",
+   "sources": [
+    "https://ballotpedia.org/Casey_Shepard"
+   ],
+   "answer_value": "2.0",
+   "write_in_text": null,
+   "full_name": "Casey Shepard",
+   "last_stances_researched_at": null,
+   "topic": "Reproductive Rights and Abortion Access",
+   "question_text": "What legal framework should govern abortion access?",
+   "article": "https://ballotpedia.org/Casey_Shepard",
+   "has_positions_section": true,
+   "why": "His survey lists \"bodily autonomy\" among the Democratic priorities he will fight for -- supporting legal, accessible reproductive choice.",
+   "instruments": [],
+   "words": 19
+  },
+  {
+   "politician_id": "c20345d9-e451-4813-8645-985734fedba3",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Deluzio is a member of the Congressional Equality Caucus, which advocates for full LGBTQ equality under federal law; his consistent support for LGBTQ rights aligns with allowing same-sex marriage nationwide while protecting some organizations' right to decline participation.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chris_Deluzio"
+   ],
+   "answer_value": "2.0",
+   "write_in_text": null,
+   "full_name": "Christopher R. Deluzio",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://en.wikipedia.org/wiki/Chris_Deluzio",
+   "has_positions_section": true,
+   "why": "Deluzio is a member of the Congressional Equality Caucus, which advocates for full LGBTQ equality under federal law; his consistent support for LGBTQ rights aligns with allowing same-sex marriage nationwide while protecting some organizations' right to decline participation.",
+   "instruments": [],
+   "words": 38
+  },
+  {
+   "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd",
+   "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+   "reasoning": "McCray has opposed jail expansion and supported decarceration and diversion programs as alternatives to incarceration for Baltimore City residents.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/mccray02",
+    "https://ballotpedia.org/Cory_McCray"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Cory V. McCray",
+   "last_stances_researched_at": null,
+   "topic": "Jail Capacity and Incarceration Alternatives",
+   "question_text": "How should government respond to jail overcrowding and criminal justice demand?",
+   "article": "https://ballotpedia.org/Cory_McCray",
+   "has_positions_section": true,
+   "why": "McCray has opposed jail expansion and supported decarceration and diversion programs as alternatives to incarceration for Baltimore City residents.",
+   "instruments": [],
+   "words": 19
+  },
+  {
+   "politician_id": "82145bc2-770a-421e-a2a1-0e79aae5b643",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "reasoning": "Zucker supported requiring social media platforms to record political advertisement data (2018 law), indicating interest in transparency but his overall campaign finance reform record is moderate.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Craig_Zucker"
+   ],
+   "answer_value": "2.0",
+   "write_in_text": null,
+   "full_name": "Craig J. Zucker",
+   "last_stances_researched_at": null,
+   "topic": "Campaign Finance Reform",
+   "question_text": "What rules should govern money in political campaigns and elections?",
+   "article": "https://en.wikipedia.org/wiki/Craig_Zucker",
+   "has_positions_section": true,
+   "why": "Zucker supported requiring social media platforms to record political advertisement data (2018 law), indicating interest in transparency but his overall campaign finance reform record is moderate.",
+   "instruments": [],
+   "words": 26
+  },
+  {
+   "politician_id": "82145bc2-770a-421e-a2a1-0e79aae5b643",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "reasoning": "Zucker is a suburban Democratic senator but direct abortion bill sponsorship is limited in the available record. He has consistently voted with Democratic caucus on reproductive rights and co-signed letters against defunding healthcare organizations.",
+   "sources": [
+    "https://ballotpedia.org/Craig_Zucker",
+    "https://en.wikipedia.org/wiki/Craig_Zucker"
+   ],
+   "answer_value": "2.0",
+   "write_in_text": null,
+   "full_name": "Craig J. Zucker",
+   "last_stances_researched_at": null,
+   "topic": "Reproductive Rights and Abortion Access",
+   "question_text": "What legal framework should govern abortion access?",
+   "article": "https://en.wikipedia.org/wiki/Craig_Zucker",
+   "has_positions_section": true,
+   "why": "Zucker is a suburban Democratic senator but direct abortion bill sponsorship is limited in the available record. He has consistently voted with Democratic caucus on reproductive rights and co-signed letters against defunding healthcare organizations.",
+   "instruments": [],
+   "words": 34
+  },
+  {
+   "politician_id": "155a62d8-9e8e-4231-94dc-823b9f15b30b",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "reasoning": "Democrat representing a low-income rural border district with 11 counties. Wikipedia notes Morales supports expanding economic investment and job opportunities in his district. As a Democrat, he aligns with modestly raising taxes on high earners to fund expanded public services in underserved border communities.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Eddie_Morales"
+   ],
+   "answer_value": "2.0",
+   "write_in_text": null,
+   "full_name": "Eddie Morales",
+   "last_stances_researched_at": null,
+   "topic": "Taxation and Public Spending",
+   "question_text": "How should government balance what it collects in taxes against what it spends on public services?",
+   "article": "https://en.wikipedia.org/wiki/Eddie_Morales",
+   "has_positions_section": true,
+   "why": "Democrat representing a low-income rural border district with 11 counties. Wikipedia notes Morales supports expanding economic investment and job opportunities in his district. As a Democrat, he aligns with modestly raising taxes on high earners to fund expanded public services in underserved border communities.",
+   "instruments": [],
+   "words": 44
+  },
+  {
+   "politician_id": "9a41971c-1e38-41b8-a6ec-bec6055a00b3",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "reasoning": "Risch has an American Conservative Union lifetime rating of 91.54 and consistently opposes government regulation of political spending. He has voted against campaign finance disclosure legislation and favors reducing restrictions on political donations rather than eliminating all limits.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/James_Risch"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "James Risch",
+   "last_stances_researched_at": null,
+   "topic": "Campaign Finance Reform",
+   "question_text": "What rules should govern money in political campaigns and elections?",
+   "article": "https://en.wikipedia.org/wiki/James_Risch",
+   "has_positions_section": true,
+   "why": "Risch has an American Conservative Union lifetime rating of 91.54 and consistently opposes government regulation of political spending. He has voted against campaign finance disclosure legislation and favors reducing restrictions on political donations rather than eliminating all limits.",
+   "instruments": [],
+   "words": 38
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "reasoning": "Waldstreicher represents a district with many immigrants and federal workers. He strongly supports comprehensive immigration reform and state-level immigrant protections.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Jeff Waldstreicher",
+   "last_stances_researched_at": null,
+   "topic": "Immigration and Treatment of Immigrants",
+   "question_text": "How welcoming or restrictive should government be toward immigrants?",
+   "article": "https://ballotpedia.org/Jeff_Waldstreicher",
+   "has_positions_section": true,
+   "why": "Waldstreicher represents a district with many immigrants and federal workers. He strongly supports comprehensive immigration reform and state-level immigrant protections.",
+   "instruments": [],
+   "words": 20
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "Waldstreicher has been a vocal supporter of same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation and opposed anti-trans bills.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Jeff Waldstreicher",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://ballotpedia.org/Jeff_Waldstreicher",
+   "has_positions_section": true,
+   "why": "Waldstreicher has been a vocal supporter of same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation and opposed anti-trans bills.",
+   "instruments": [],
+   "words": 22
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "reasoning": "Waldstreicher strongly supports transgender student rights including fair access to school sports. He opposed restrictions on transgender athletes in Maryland legislation.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/waldstreicher1",
+    "https://ballotpedia.org/Jeff_Waldstreicher"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Jeff Waldstreicher",
+   "last_stances_researched_at": null,
+   "topic": "Transgender Athletes",
+   "question_text": "How should sports leagues determine eligibility for transgender athletes?",
+   "article": "https://ballotpedia.org/Jeff_Waldstreicher",
+   "has_positions_section": true,
+   "why": "Waldstreicher strongly supports transgender student rights including fair access to school sports. He opposed restrictions on transgender athletes in Maryland legislation.",
+   "instruments": [],
+   "words": 21
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+   "reasoning": "Rosapepe served as US Ambassador to Romania under President Clinton, giving him strong Eastern European security awareness. He supports US assistance to Ukraine defending against Russian aggression.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Jim Rosapepe",
+   "last_stances_researched_at": null,
+   "topic": "Ukraine - Russia Conflict",
+   "question_text": "What level of military and financial support should be provided to Ukraine?",
+   "article": "https://ballotpedia.org/Jim_Rosapepe",
+   "has_positions_section": true,
+   "why": "Rosapepe served as US Ambassador to Romania under President Clinton, giving him strong Eastern European security awareness. He supports US assistance to Ukraine defending against Russian aggression.",
+   "instruments": [],
+   "words": 27
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "reasoning": "Rosapepe, as a tech sector veteran, has engaged with AI regulation questions. He supports thoughtful oversight of AI systems while fostering innovation in Maryland's tech economy.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosapepe",
+    "https://ballotpedia.org/Jim_Rosapepe"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Jim Rosapepe",
+   "last_stances_researched_at": null,
+   "topic": "Artificial Intelligence Oversight",
+   "question_text": "How much should government oversee artificial intelligence development and deployment?",
+   "article": "https://ballotpedia.org/Jim_Rosapepe",
+   "has_positions_section": true,
+   "why": "Rosapepe, as a tech sector veteran, has engaged with AI regulation questions. He supports thoughtful oversight of AI systems while fostering innovation in Maryland's tech economy.",
+   "instruments": [],
+   "words": 26
+  },
+  {
+   "politician_id": "1f78b5e2-b192-4aae-8112-19338aaa891d",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Young advocated repealing Maryland's official state song \"Maryland My Maryland\" for its racist content and supported removing the Roger B. Taney monument from the State House.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Karen_Lewis_Young"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Karen Lewis Young",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://en.wikipedia.org/wiki/Karen_Lewis_Young",
+   "has_positions_section": true,
+   "why": "Young advocated repealing Maryland's official state song \"Maryland My Maryland\" for its racist content and supported removing the Roger B. Taney monument from the State House.",
+   "instruments": [],
+   "words": 26
+  },
+  {
+   "politician_id": "ad1aaa25-0ef6-4c88-9d78-d75aec7398c7",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "reasoning": "Consistent with his Judiciary Chair role and Baltimore City Democratic profile — Clippinger supports expanded immigration rights and pathways to citizenship and opposes restrictive immigration enforcement.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/clippinger",
+    "https://ballotpedia.org/Luke_Clippinger"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Luke Clippinger",
+   "last_stances_researched_at": null,
+   "topic": "Immigration and Treatment of Immigrants",
+   "question_text": "How welcoming or restrictive should government be toward immigrants?",
+   "article": "https://ballotpedia.org/Luke_Clippinger",
+   "has_positions_section": true,
+   "why": "Consistent with his Judiciary Chair role and Baltimore City Democratic profile — Clippinger supports expanded immigration rights and pathways to citizenship and opposes restrictive immigration enforcement.",
+   "instruments": [],
+   "words": 26
+  },
+  {
+   "politician_id": "ad1aaa25-0ef6-4c88-9d78-d75aec7398c7",
+   "topic_id": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+   "reasoning": "As Judiciary Chair Clippinger leads criminal justice reform legislation including ID access for incarcerated individuals and labor law reform — strongly supports government investment in legal access and equal justice.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/clippinger",
+    "https://ballotpedia.org/Luke_Clippinger"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Luke Clippinger",
+   "last_stances_researched_at": null,
+   "topic": "Access to Justice",
+   "question_text": "Should it be easy or hard to take someone to court?",
+   "article": "https://ballotpedia.org/Luke_Clippinger",
+   "has_positions_section": true,
+   "why": "As Judiciary Chair Clippinger leads criminal justice reform legislation including ID access for incarcerated individuals and labor law reform — strongly supports government investment in legal access and equal justice.",
+   "instruments": [],
+   "words": 30
+  },
+  {
+   "politician_id": "4a409af4-8568-42c3-bb72-7bb7500c96ce",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "reasoning": "Chang has supported AI regulation and transparency requirements citing the need to protect consumers and workers from harmful AI applications while supporting innovation in Maryland's technology sector.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/chang01?tab=2026RS-legislation",
+    "https://ballotpedia.org/Mark_Chang"
+   ],
+   "answer_value": "2.0",
+   "write_in_text": null,
+   "full_name": "Mark S. Chang",
+   "last_stances_researched_at": null,
+   "topic": "Artificial Intelligence Oversight",
+   "question_text": "How much should government oversee artificial intelligence development and deployment?",
+   "article": "https://ballotpedia.org/Mark_Chang",
+   "has_positions_section": true,
+   "why": "Chang has supported AI regulation and transparency requirements citing the need to protect consumers and workers from harmful AI applications while supporting innovation in Maryland's technology sector.",
+   "instruments": [],
+   "words": 27
+  },
+  {
+   "politician_id": "62bed8b6-beb2-4c41-b234-dc6427bfc9c0",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "reasoning": "Amprey co-sponsored the Public Safety - Immigration Enforcement Agreements - Prohibition bill banning local police cooperation with ICE — a sanctuary-aligned immigration stance.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/amprey01",
+    "https://ballotpedia.org/Marlon_Amprey"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Marlon Amprey",
+   "last_stances_researched_at": null,
+   "topic": "Immigration and Treatment of Immigrants",
+   "question_text": "How welcoming or restrictive should government be toward immigrants?",
+   "article": "https://ballotpedia.org/Marlon_Amprey",
+   "has_positions_section": true,
+   "why": "Amprey co-sponsored the Public Safety - Immigration Enforcement Agreements - Prohibition bill banning local police cooperation with ICE — a sanctuary-aligned immigration stance.",
+   "instruments": [],
+   "words": 23
+  },
+  {
+   "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec",
+   "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+   "reasoning": "King has supported expanded childcare access and subsidy programs in the Maryland budget, using her Budget and Taxation Committee role to fund early childhood programs.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/king",
+    "https://ballotpedia.org/Nancy_King"
+   ],
+   "answer_value": "2.0",
+   "write_in_text": null,
+   "full_name": "Nancy J. King",
+   "last_stances_researched_at": null,
+   "topic": "Childcare Affordability & Access",
+   "question_text": "How should government address the cost and availability of childcare?",
+   "article": "https://ballotpedia.org/Nancy_King",
+   "has_positions_section": true,
+   "why": "King has supported expanded childcare access and subsidy programs in the Maryland budget, using her Budget and Taxation Committee role to fund early childhood programs.",
+   "instruments": [],
+   "words": 25
+  },
+  {
+   "politician_id": "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "reasoning": "Kipke has strongly opposed sanctuary policies in Maryland and supported strict immigration enforcement as a signature issue for the House Republican caucus he led.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kipke?tab=2026RS-legislation",
+    "https://ballotpedia.org/Nicholaus_Kipke"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Nicholaus R. Kipke",
+   "last_stances_researched_at": null,
+   "topic": "Immigration and Treatment of Immigrants",
+   "question_text": "How welcoming or restrictive should government be toward immigrants?",
+   "article": "https://ballotpedia.org/Nicholaus_Kipke",
+   "has_positions_section": true,
+   "why": "Kipke has strongly opposed sanctuary policies in Maryland and supported strict immigration enforcement as a signature issue for the House Republican caucus he led.",
+   "instruments": [],
+   "words": 24
+  },
+  {
+   "politician_id": "2f16bdad-8486-48c7-94f2-cbe7ea6853c9",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "reasoning": "Reynolds proposed raising the minimum wage to $15/hour and authored reparations legislation — consistent with a stance of modestly increasing taxes on higher earners to fund social programs while protecting working-class families. As founder of the Progressive Caucus, aligns with stance 2.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ron_Reynolds_(politician)"
+   ],
+   "answer_value": "2.0",
+   "write_in_text": null,
+   "full_name": "Ron Reynolds",
+   "last_stances_researched_at": null,
+   "topic": "Taxation and Public Spending",
+   "question_text": "How should government balance what it collects in taxes against what it spends on public services?",
+   "article": "https://en.wikipedia.org/wiki/Ron_Reynolds_(politician)",
+   "has_positions_section": true,
+   "why": "Reynolds proposed raising the minimum wage to $15/hour and authored reparations legislation — consistent with a stance of modestly increasing taxes on higher earners to fund social programs while protecting working-class families. As founder of the Progressive Caucus, aligns with stance 2.",
+   "instruments": [],
+   "words": 42
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "reasoning": "Love represents a district with significant immigrant populations. She supports comprehensive immigration reform and opposes harsh enforcement-only approaches.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Sara Love",
+   "last_stances_researched_at": null,
+   "topic": "Immigration and Treatment of Immigrants",
+   "question_text": "How welcoming or restrictive should government be toward immigrants?",
+   "article": "https://ballotpedia.org/Sara_Love",
+   "has_positions_section": true,
+   "why": "Love represents a district with significant immigrant populations. She supports comprehensive immigration reform and opposes harsh enforcement-only approaches.",
+   "instruments": [],
+   "words": 18
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "reasoning": "Love supports inclusive policies for transgender athletes. She backed Maryland legislation protecting transgender student rights and opposed restrictive bills targeting trans youth.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Sara Love",
+   "last_stances_researched_at": null,
+   "topic": "Transgender Athletes",
+   "question_text": "How should sports leagues determine eligibility for transgender athletes?",
+   "article": "https://ballotpedia.org/Sara_Love",
+   "has_positions_section": true,
+   "why": "Love supports inclusive policies for transgender athletes. She backed Maryland legislation protecting transgender student rights and opposed restrictive bills targeting trans youth.",
+   "instruments": [],
+   "words": 22
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+   "reasoning": "Love has supported zoning reform to allow more housing density and mixed-use development in Montgomery County, consistent with her housing access priorities.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Sara Love",
+   "last_stances_researched_at": null,
+   "topic": "Residential Zoning",
+   "question_text": "What should guide decisions about housing density and neighborhood character in your community?",
+   "article": "https://ballotpedia.org/Sara_Love",
+   "has_positions_section": true,
+   "why": "Love has supported zoning reform to allow more housing density and mixed-use development in Montgomery County, consistent with her housing access priorities.",
+   "instruments": [],
+   "words": 22
+  },
+  {
+   "politician_id": "3a39c313-b994-447b-b3fd-592e4994769b",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "reasoning": "Cosponsored H.Res.1058 (119th Congress, Feb 2026), a resolution recognizing the duty to develop a Transgender Bill of Rights. Authored California's conversion therapy ban and consistently opposes anti-trans legislation. His 100% rating from LGBTQ organizations reflects support for transgender inclusion including in athletics.",
+   "sources": [
+    "https://www.congress.gov/member/ted-lieu/L000582",
+    "https://en.wikipedia.org/wiki/Ted_Lieu"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Ted W. Lieu",
+   "last_stances_researched_at": null,
+   "topic": "Transgender Athletes",
+   "question_text": "How should sports leagues determine eligibility for transgender athletes?",
+   "article": "https://en.wikipedia.org/wiki/Ted_Lieu",
+   "has_positions_section": true,
+   "why": "Cosponsored H.Res.1058 (119th Congress, Feb 2026), a resolution recognizing the duty to develop a Transgender Bill of Rights. Authored California's conversion therapy ban and consistently opposes anti-trans legislation. His 100% rating from LGBTQ organizations reflects support for transgender inclusion including in athletics.",
+   "instruments": [],
+   "words": 42
+  },
+  {
+   "politician_id": "ac732037-2172-4899-95c9-ca42ea69c4a0",
+   "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "reasoning": "Rokita's 4% lifetime LCV rating and his joining a multistate lawsuit against Biden's Executive Order 13990—which addressed fossil fuel permitting and environmental protections—reflect opposition to restricting fossil fuel extraction. His stated rejection of climate change consensus supports maximizing fossil fuel production.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Todd_Rokita"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Todd Rokita",
+   "last_stances_researched_at": null,
+   "topic": "Fossil Fuel Policy",
+   "question_text": "What role should fossil fuels play in the nation's energy future?",
+   "article": "https://en.wikipedia.org/wiki/Todd_Rokita",
+   "has_positions_section": true,
+   "why": "Rokita's 4% lifetime LCV rating and his joining a multistate lawsuit against Biden's Executive Order 13990—which addressed fossil fuel permitting and environmental protections—reflect opposition to restricting fossil fuel extraction. His stated rejection of climate change consensus supports maximizing fossil fuel production.",
+   "instruments": [],
+   "words": 41
+  },
+  {
+   "politician_id": "21e534c8-c0c0-42f5-b52b-5eb2f246d632",
+   "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "reasoning": "Governor Moore launched a statewide plan to address homelessness rooted in a housing-first approach, investing in permanent supportive housing and outreach services. He views homelessness as a systemic failure requiring significant government investment in housing and services.",
+   "sources": [
+    "https://ballotpedia.org/Wes_Moore"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "Wes Moore",
+   "last_stances_researched_at": null,
+   "topic": "Criminalization of Homelessness",
+   "question_text": "How should government address people sleeping or camping in public spaces?",
+   "article": "https://ballotpedia.org/Wes_Moore",
+   "has_positions_section": true,
+   "why": "Governor Moore launched a statewide plan to address homelessness rooted in a housing-first approach, investing in permanent supportive housing and outreach services. He views homelessness as a systemic failure requiring significant government investment in housing and services.",
+   "instruments": [],
+   "words": 37
+  }
+ ]
+}
