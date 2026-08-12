@@ -1,0 +1,38 @@
+{
+ "pass": "chair corrections in the \"backed Medicaid expansion\" class — the MISALIGNED slice",
+ "migration": "1726_medicaid_class_chair_misalignment.sql",
+ "note": "Restores the pre-1726 chair values. inform.politician_context (reasoning + sources) is NOT touched by 1726, so nothing there needs restoring.",
+ "n": 3,
+ "rows": [
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "state": "MD",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "chair_before": 5,
+   "chair_after": 2,
+   "defect": "pole inversion — pro-worded reasoning at the anti pole"
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "state": "MD",
+   "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+   "topic": "Healthcare Access",
+   "chair_before": 5,
+   "chair_after": 2,
+   "defect": "pole inversion — pro-worded reasoning at the anti pole"
+  },
+  {
+   "politician_id": "822966a7-5f09-4151-ba43-630afbd676c2",
+   "name": "Pete Aguilar",
+   "state": "CA",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "topic": "Medicare / Medicaid",
+   "chair_before": 1,
+   "chair_after": 2,
+   "defect": "self-contradiction — the row's own reasoning names stance 2 and rules out stance 1"
+  }
+ ]
+}
