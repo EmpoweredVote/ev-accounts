@@ -1,6 +1,7 @@
 # Chair/reasoning inversion — diagnosis (2026-08-12)
 
-Found while re-sourcing class C of [the 197](2026-08-12-the-197-disposition.md). **Not a sourcing
+Found while re-sourcing class C of [the 197](2026-08-12-the-197-disposition`2026-08-12-chair-inversion-{scan,batch,rescan,rollback}.json`, plus
+`gen-chair-inversion-fix.mjs` and `verify-1714-applied.mjs`.md). **Not a sourcing
 fault: a wrong chair is a wrong voter-facing position.** The compass dot and the "Why this position?"
 text say opposite things about the same person.
 
@@ -68,7 +69,9 @@ correction has to be judged per row.
 | Misinformation | 4 | **1** | |
 | School Vouchers | 45 | **0** | object-ambiguous, excluded |
 | AI Oversight | 25 | **0** | object-ambiguous, excluded |
-| Climate / Healthcare / Affordable Housing | 67 | not yet read | same 14-politician batch dominates |
+| Climate Change | 23 | **15** | Grove, Ainsworth, Hunsaker, Braun, Foster, Craddick correct; Whitburn and Jacob too vague |
+| Healthcare Access | 22 | **13** | Rutledge, Kohlhaas, Pan, Cowan, Conforti, Wittrock, Vaz correct; Szeliga and Johnson vague |
+| Affordable Housing | 22 | **16** | Jones, Czaplewski, Long, Ishii correct; Cloutier and O'Keefe too vague |
 
 ## ✅ FIXED — migration 1714. 89 chairs corrected, 18 also re-sourced
 
@@ -109,5 +112,16 @@ chair **2** (*strengthen civil rights enforcement and address systemic discrimin
 chair **1** (*mandate racial equity requirements in all institutions and provide reparations*) is a
 stronger claim the reasoning does not make. Choosing between them is a research judgement, per row.
 
-Nothing has been changed. Tools: `scripts/chair-inversion-scan.mjs`,
-`scripts/chair-inversion-batch.mjs`; records `2026-08-12-chair-inversion-{scan,batch}.json`.
+Tools: `scripts/chair-inversion-scan.mjs`, `scripts/chair-inversion-batch.mjs`,
+`scripts/gen-chair-inversion-fix.mjs`, `scripts/verify-1714-applied.mjs`.
+Records: `2026-08-12-chair-inversion-{scan,batch,rescan,rollback}.json`.
+
+## ▶ What is left
+1. **Sourcing on 71 of the 89 corrected rows** — extend the Maryland bill crawl to climate,
+   healthcare, housing and childcare titles, then re-source the same way class C was.
+2. **The 4 uncalibrated-topic blind spots.** Fossil Fuel Policy, Reproductive Rights, Immigration and
+   Voting Rights all scored UNCALIBRATED, so **they were never tested at all** — the true national
+   total is unknown and may be larger than 194. Measuring them needs a test that can see the object
+   of a verb, which a regex cannot.
+3. **Terry Taplin (Berkeley)** was the one non-Maryland member of the batch — worth checking whether
+   a second, smaller batch exists in California local rows.
