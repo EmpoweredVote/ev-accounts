@@ -1,0 +1,464 @@
+{
+ "pass": "class B candidates — self-declared absence",
+ "n": 17,
+ "caveat": "A READING QUEUE. 1678 retired 82 of 1,055 on this same test.",
+ "class_b": [
+  {
+   "politician_id": "3030383b-2aaf-40fd-9dfb-8867d1d02f99",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "reasoning": "Gimenez is pro-life and opposes abortion access and Planned Parenthood funding. ISideWith records him as supporting abortion bans, aligning with a restrictive framework. No evidence of support for a complete ban with criminal penalties for providers or patients, placing him at value 4 (restrict to rape, incest, or serious threats to the mother's life).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Carlos_A._Gimenez"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Carlos A. Gimenez",
+   "last_stances_researched_at": null,
+   "topic": "Reproductive Rights and Abortion Access",
+   "question_text": "What legal framework should govern abortion access?",
+   "article": "https://en.wikipedia.org/wiki/Carlos_A._Gimenez",
+   "has_positions_section": true,
+   "why": "Gimenez is pro-life and opposes abortion access and Planned Parenthood funding. ISideWith records him as supporting abortion bans, aligning with a restrictive framework. No evidence of support for a complete ban with criminal penalties for providers or patients, placing him at value 4 (restrict to rape, incest, or serious threats to the mother's life).",
+   "instruments": [],
+   "absence": true,
+   "infers": false,
+   "page_class": "WEAK_ONLY",
+   "strong_hits": []
+  },
+  {
+   "politician_id": "42370d1a-2ffd-480b-a24f-b2a39405c929",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Wikipedia documents her opposition to critical race theory in school curricula and advocacy for conservative education policy. Texas Freedom Caucus membership aligns with opposition to affirmative action and race-based programs. No authored civil rights legislation found; her stated education priorities reflect an anti-DEI stance.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Carrie_Isaac"
+   ],
+   "answer_value": "5.0",
+   "write_in_text": null,
+   "full_name": "Carrie Isaac",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://en.wikipedia.org/wiki/Carrie_Isaac",
+   "has_positions_section": true,
+   "why": "Wikipedia documents her opposition to critical race theory in school curricula and advocacy for conservative education policy. Texas Freedom Caucus membership aligns with opposition to affirmative action and race-based programs. No authored civil rights legislation found; her stated education priorities reflect an anti-DEI stance.",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "PAGE_NOT_SILENT",
+   "strong_hits": [
+    "propernoun:Texas Freedom Caucus"
+   ]
+  },
+  {
+   "politician_id": "4d83f985-9248-4905-a9b6-5742e2df77a8",
+   "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+   "reasoning": "Hyde-Smith is a conservative Republican from Mississippi and voted to object to electoral college certification on January 6. Her overall record shows alignment with Republican positions on electoral integrity, which typically includes state legislative control over redistricting. No direct stance found on independent redistricting commissions but her voting pattern and party alignment indicate support for state legislature control with court oversight.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cindy_Hyde-Smith"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Cindy Hyde-Smith",
+   "last_stances_researched_at": null,
+   "topic": "State Redistricting and Gerrymandering",
+   "question_text": "Who should draw electoral district boundaries and how should they be determined?",
+   "article": "https://en.wikipedia.org/wiki/Cindy_Hyde-Smith",
+   "has_positions_section": true,
+   "why": "Hyde-Smith is a conservative Republican from Mississippi and voted to object to electoral college certification on January 6. Her overall record shows alignment with Republican positions on electoral integrity, which typically includes state legislative control over redistricting. No direct stance found on independent redistricting commissions but her voting pattern and party alignment indicate support for state legislature control with court oversight.",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "WEAK_ONLY",
+   "strong_hits": []
+  },
+  {
+   "politician_id": "811f725f-1eaa-4e67-9dbc-389698615e00",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "reasoning": "As a moderate Republican in the Main Street Partnership and Problem Solvers Caucus, Joyce has not advocated for Medicare privatization or phase-out; his record reflects support for improving current programs while controlling costs rather than radical restructuring in either direction.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/David_P._Joyce",
+    "https://en.wikipedia.org/wiki/Republican_Main_Street_Partnership"
+   ],
+   "answer_value": "3.0",
+   "write_in_text": null,
+   "full_name": "David P. Joyce",
+   "last_stances_researched_at": null,
+   "topic": "Medicare / Medicaid",
+   "question_text": "How should Medicare and Medicaid be funded and structured?",
+   "article": "https://en.wikipedia.org/wiki/David_P._Joyce",
+   "has_positions_section": true,
+   "why": "As a moderate Republican in the Main Street Partnership and Problem Solvers Caucus, Joyce has not advocated for Medicare privatization or phase-out; his record reflects support for improving current programs while controlling costs rather than radical restructuring in either direction.",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "PAGE_NOT_SILENT",
+   "strong_hits": [
+    "propernoun:Main Street Partnership",
+    "propernoun:Problem Solvers Caucus"
+   ]
+  },
+  {
+   "politician_id": "17e59190-17e2-4a90-8353-b5ea8d083480",
+   "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+   "reasoning": "Schweikert's fiscal conservatism and Ways & Means Committee work centers on free-market principles. Ballotpedia and Wikipedia document no support for broad tariffs or protectionist trade policy; his economic philosophy is rooted in reducing barriers to trade and growth. Free trade aligns with stance 1 (eliminate all tariffs and pursue completely free trade).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/David_Schweikert",
+    "https://ballotpedia.org/David_Schweikert"
+   ],
+   "answer_value": "1.0",
+   "write_in_text": null,
+   "full_name": "David Schweikert",
+   "last_stances_researched_at": null,
+   "topic": "United States Tariff Policy",
+   "question_text": "How should trade policy balance domestic industry with global commerce?",
+   "article": "https://ballotpedia.org/David_Schweikert",
+   "has_positions_section": true,
+   "why": "Schweikert's fiscal conservatism and Ways & Means Committee work centers on free-market principles. Ballotpedia and Wikipedia document no support for broad tariffs or protectionist trade policy; his economic philosophy is rooted in reducing barriers to trade and growth. Free trade aligns with stance 1 (eliminate all tariffs and pursue completely free trade).",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "PAGE_NOT_SILENT",
+   "strong_hits": [
+    "propernoun:Means Committee"
+   ]
+  },
+  {
+   "politician_id": "b7612f49-c914-4ea7-a6da-559d71f313c2",
+   "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+   "reasoning": "No evidence of Derek Tran supporting school voucher programs was found. He grew up in a family that relied on federal public assistance programs and has emphasized expanding economic opportunity through public institutions. His Democratic affiliation, New Democrat Coalition membership, and support for public programs over private alternatives suggest he would prioritize public school funding while potentially allowing limited, means-tested voucher access for low-income families without adequate local options.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Derek_Tran",
+    "https://en.wikipedia.org/wiki/New_Democrat_Coalition",
+    "https://en.wikipedia.org/wiki/California%27s_45th_congressional_district"
+   ],
+   "answer_value": "2.0",
+   "write_in_text": null,
+   "full_name": "Derek Tran",
+   "last_stances_researched_at": null,
+   "topic": "School Vouchers & Public Education Funding",
+   "question_text": "What role should vouchers and school choice play in the public education system?",
+   "article": "https://en.wikipedia.org/wiki/Derek_Tran",
+   "has_positions_section": true,
+   "why": "No evidence of Derek Tran supporting school voucher programs was found. He grew up in a family that relied on federal public assistance programs and has emphasized expanding economic opportunity through public institutions. His Democratic affiliation, New Democrat Coalition membership, and support for public programs over private alternatives suggest he would prioritize public school funding while potentially allowing limited, means-tested voucher access for low-income families without adequate local options.",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "PAGE_NOT_SILENT",
+   "strong_hits": [
+    "propernoun:New Democrat Coalition"
+   ]
+  },
+  {
+   "politician_id": "b7612f49-c914-4ea7-a6da-559d71f313c2",
+   "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+   "reasoning": "No direct statement by Tran on data center policy was found. As a member of the Fusion Energy Caucus and the New Democrat Coalition's pro-technology wing, Tran generally supports energy innovation and technology investment. His Lowering Costs Caucus co-chair role suggests sensitivity to consumer cost impacts from infrastructure development. A balanced approach — allowing development with impact assessments and cost-sharing agreements — is consistent with his pro-growth but consumer-conscious policy profile.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Derek_Tran",
+    "https://en.wikipedia.org/wiki/New_Democrat_Coalition",
+    "https://en.wikipedia.org/wiki/California%27s_45th_congressional_district"
+   ],
+   "answer_value": "3.0",
+   "write_in_text": null,
+   "full_name": "Derek Tran",
+   "last_stances_researched_at": null,
+   "topic": "Data Center Development & Energy Costs",
+   "question_text": "How should government manage the growth of large-scale data centers?",
+   "article": "https://en.wikipedia.org/wiki/Derek_Tran",
+   "has_positions_section": true,
+   "why": "No direct statement by Tran on data center policy was found. As a member of the Fusion Energy Caucus and the New Democrat Coalition's pro-technology wing, Tran generally supports energy innovation and technology investment. His Lowering Costs Caucus co-chair role suggests sensitivity to consumer cost impacts from infrastructure development. A balanced approach — allowing development with impact assessments and cost-sharing agreements — is consistent with his pro-growth but consumer-conscious policy profile.",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "PAGE_NOT_SILENT",
+   "strong_hits": [
+    "propernoun:Fusion Energy Caucus"
+   ]
+  },
+  {
+   "politician_id": "b7612f49-c914-4ea7-a6da-559d71f313c2",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "reasoning": "Tran is a member of the New Democrat Coalition, which promotes responsible innovation and a pro-technology agenda while supporting accountability measures for emerging industries. As Ranking Member on the House Small Business Subcommittee on Oversight, Investigations, and Regulations, he has jurisdiction over regulatory policy affecting small businesses including AI-adjacent industries. No specific AI safety bill sponsorship found, but his caucus alignment and regulatory subcommittee role suggest support for basic safety standards rather than laissez-faire or heavy-handed approaches.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/New_Democrat_Coalition",
+    "https://en.wikipedia.org/wiki/Derek_Tran",
+    "https://en.wikipedia.org/wiki/House_Committee_on_Small_Business"
+   ],
+   "answer_value": "3.0",
+   "write_in_text": null,
+   "full_name": "Derek Tran",
+   "last_stances_researched_at": null,
+   "topic": "Artificial Intelligence Oversight",
+   "question_text": "How much should government oversee artificial intelligence development and deployment?",
+   "article": "https://en.wikipedia.org/wiki/Derek_Tran",
+   "has_positions_section": true,
+   "why": "Tran is a member of the New Democrat Coalition, which promotes responsible innovation and a pro-technology agenda while supporting accountability measures for emerging industries. As Ranking Member on the House Small Business Subcommittee on Oversight, Investigations, and Regulations, he has jurisdiction over regulatory policy affecting small businesses including AI-adjacent industries. No specific AI safety bill sponsorship found, but his caucus alignment and regulatory subcommittee role suggest support for basic safety standards rather than laissez-faire or heavy-handed approaches.",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "PAGE_NOT_SILENT",
+   "strong_hits": [
+    "propernoun:New Democrat Coalition",
+    "propernoun:House Small Business Subcommittee"
+   ]
+  },
+  {
+   "politician_id": "ebe10065-0025-46e5-897e-7a81e4c77ecf",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "reasoning": "Slotkin has not introduced major AI governance legislation and holds no clear public position staking out heavy regulation or a fully hands-off approach; her background as a CIA analyst and national security focus suggests awareness of AI risks, placing her at the basic safety-testing middle ground.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Elissa_Slotkin"
+   ],
+   "answer_value": "3.0",
+   "write_in_text": null,
+   "full_name": "Elissa Slotkin",
+   "last_stances_researched_at": null,
+   "topic": "Artificial Intelligence Oversight",
+   "question_text": "How much should government oversee artificial intelligence development and deployment?",
+   "article": "https://en.wikipedia.org/wiki/Elissa_Slotkin",
+   "has_positions_section": true,
+   "why": "Slotkin has not introduced major AI governance legislation and holds no clear public position staking out heavy regulation or a fully hands-off approach; her background as a CIA analyst and national security focus suggests awareness of AI risks, placing her at the basic safety-testing middle ground.",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "WEAK_ONLY",
+   "strong_hits": []
+  },
+  {
+   "politician_id": "247cf8e5-426a-4104-9027-6a2a0b1b61c9",
+   "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+   "reasoning": "Republican who has not co-sponsored civil rights expansion bills. Her sponsored legislation (S.121-123 on EBT verification, S.972-976 restricting migrant housing) reflects a limiting-federal-programs approach consistent with restricting civil rights enforcement to clear discrimination cases.",
+   "sources": [
+    "https://malegislature.gov/Legislators/Profile/KAD0/Bills",
+    "https://en.wikipedia.org/wiki/Kelly_Dooner"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Kelly A. Dooner",
+   "last_stances_researched_at": null,
+   "topic": "Civil Rights and Social Justice",
+   "question_text": "What role should government play in addressing racial and social inequality?",
+   "article": "https://en.wikipedia.org/wiki/Kelly_Dooner",
+   "has_positions_section": true,
+   "why": "Republican who has not co-sponsored civil rights expansion bills. Her sponsored legislation (S.121-123 on EBT verification, S.972-976 restricting migrant housing) reflects a limiting-federal-programs approach consistent with restricting civil rights enforcement to clear discrimination cases.",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "WEAK_ONLY",
+   "strong_hits": []
+  },
+  {
+   "politician_id": "247cf8e5-426a-4104-9027-6a2a0b1b61c9",
+   "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+   "reasoning": "Republican with no evidence of restricting religious exemptions. Conservative Republican positions in Massachusetts align with protecting faith-based exemptions from laws that conflict with sincere religious beliefs.",
+   "sources": [
+    "https://malegislature.gov/Legislators/Profile/KAD0",
+    "https://en.wikipedia.org/wiki/Kelly_Dooner"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Kelly A. Dooner",
+   "last_stances_researched_at": null,
+   "topic": "Religious Freedom",
+   "question_text": "What role should religion play in government, public institutions, and policymaking?",
+   "article": "https://en.wikipedia.org/wiki/Kelly_Dooner",
+   "has_positions_section": true,
+   "why": "Republican with no evidence of restricting religious exemptions. Conservative Republican positions in Massachusetts align with protecting faith-based exemptions from laws that conflict with sincere religious beliefs.",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "WEAK_ONLY",
+   "strong_hits": []
+  },
+  {
+   "politician_id": "247cf8e5-426a-4104-9027-6a2a0b1b61c9",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "reasoning": "Republican Assistant Minority Leader with no evidence of support for campaign finance restrictions. Republican party positions nationally align with reducing restrictions on political donations and spending.",
+   "sources": [
+    "https://malegislature.gov/Legislators/Profile/KAD0",
+    "https://en.wikipedia.org/wiki/Kelly_Dooner"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Kelly A. Dooner",
+   "last_stances_researched_at": null,
+   "topic": "Campaign Finance Reform",
+   "question_text": "What rules should govern money in political campaigns and elections?",
+   "article": "https://en.wikipedia.org/wiki/Kelly_Dooner",
+   "has_positions_section": true,
+   "why": "Republican Assistant Minority Leader with no evidence of support for campaign finance restrictions. Republican party positions nationally align with reducing restrictions on political donations and spending.",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "WEAK_ONLY",
+   "strong_hits": []
+  },
+  {
+   "politician_id": "247cf8e5-426a-4104-9027-6a2a0b1b61c9",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "reasoning": "As a Republican Assistant Minority Leader, Dooner has not publicly supported abortion access bills. Her sponsored legislation (S.972-976) focuses on restricting migrant access to emergency housing and EBT verification (S.121-123), consistent with conservative social positions. No MA legislative record of supporting abortion access; Republican affiliation and district profile indicate restriction to rape/incest/serious health risk cases.",
+   "sources": [
+    "https://malegislature.gov/Legislators/Profile/KAD0/Bills",
+    "https://en.wikipedia.org/wiki/Kelly_Dooner"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Kelly A. Dooner",
+   "last_stances_researched_at": null,
+   "topic": "Reproductive Rights and Abortion Access",
+   "question_text": "What legal framework should govern abortion access?",
+   "article": "https://en.wikipedia.org/wiki/Kelly_Dooner",
+   "has_positions_section": true,
+   "why": "As a Republican Assistant Minority Leader, Dooner has not publicly supported abortion access bills. Her sponsored legislation (S.972-976) focuses on restricting migrant access to emergency housing and EBT verification (S.121-123), consistent with conservative social positions. No MA legislative record of supporting abortion access; Republican affiliation and district profile indicate restriction to rape/incest/serious health risk cases.",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "WEAK_ONLY",
+   "strong_hits": []
+  },
+  {
+   "politician_id": "247cf8e5-426a-4104-9027-6a2a0b1b61c9",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "No evidence of Dooner publicly opposing same-sex marriage, which has been settled law in Massachusetts since 2004. As a more pragmatic Republican in a state where SSM has wide public support, she most likely defers to state-level decisions rather than seeking a federal mandate or pursuing a ban.",
+   "sources": [
+    "https://malegislature.gov/Legislators/Profile/KAD0",
+    "https://en.wikipedia.org/wiki/Kelly_Dooner"
+   ],
+   "answer_value": "3.0",
+   "write_in_text": null,
+   "full_name": "Kelly A. Dooner",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://en.wikipedia.org/wiki/Kelly_Dooner",
+   "has_positions_section": true,
+   "why": "No evidence of Dooner publicly opposing same-sex marriage, which has been settled law in Massachusetts since 2004. As a more pragmatic Republican in a state where SSM has wide public support, she most likely defers to state-level decisions rather than seeking a federal mandate or pursuing a ban.",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "WEAK_ONLY",
+   "strong_hits": []
+  },
+  {
+   "politician_id": "d0ce1d94-216a-46ed-acc8-6febccfe1844",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "reasoning": "Paxton initiated and led California v. Texas (2021) seeking to strike down the entire ACA, including its Medicaid expansion covering millions of low-income Americans; he frames government healthcare as a 'massive government takeover.' This sourced action supports reducing Medicaid coverage and rolling back the public role in health coverage (value 4), but there is no evidence he seeks to phase out Medicare and Medicaid entirely (value 5), so the value is set to 4 on the evidence available.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ken_Paxton",
+    "https://en.wikipedia.org/wiki/California_v._Texas"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Ken Paxton",
+   "last_stances_researched_at": null,
+   "topic": "Medicare / Medicaid",
+   "question_text": "How should Medicare and Medicaid be funded and structured?",
+   "article": "https://en.wikipedia.org/wiki/Ken_Paxton",
+   "has_positions_section": true,
+   "why": "Paxton initiated and led California v. Texas (2021) seeking to strike down the entire ACA, including its Medicaid expansion covering millions of low-income Americans; he frames government healthcare as a 'massive government takeover.' This sourced action supports reducing Medicaid coverage and rolling back the public role in health coverage (value 4), but there is no evidence he seeks to phase out Medicare and Medicaid entirely (value 5), so the value is set to 4 on the evidence available.",
+   "instruments": [],
+   "absence": true,
+   "infers": false,
+   "page_class": "WEAK_ONLY",
+   "strong_hits": []
+  },
+  {
+   "politician_id": "d53cbad2-d166-4f8d-87a2-f7e5ddc7a237",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "reasoning": "Wicker has not advocated for campaign finance reform and as a conservative Republican has consistently opposed Democratic legislation that would tighten political spending rules. His Heritage Foundation lifetime conservative score (59%) and record of opposing progressive legislation place him in the reduce-restrictions camp rather than the reform camp. No bill sponsorships or floor statements on tightening campaign finance were found.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Roger_Wicker"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Roger Wicker",
+   "last_stances_researched_at": null,
+   "topic": "Campaign Finance Reform",
+   "question_text": "What rules should govern money in political campaigns and elections?",
+   "article": "https://en.wikipedia.org/wiki/Roger_Wicker",
+   "has_positions_section": true,
+   "why": "Wicker has not advocated for campaign finance reform and as a conservative Republican has consistently opposed Democratic legislation that would tighten political spending rules. His Heritage Foundation lifetime conservative score (59%) and record of opposing progressive legislation place him in the reduce-restrictions camp rather than the reform camp. No bill sponsorships or floor statements on tightening campaign finance were found.",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "WEAK_ONLY",
+   "strong_hits": []
+  },
+  {
+   "politician_id": "2f16bdad-8486-48c7-94f2-cbe7ea6853c9",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "reasoning": "Reynolds's progressive caucus record and consistent environmental-justice advocacy (serving majority-minority Fort Bend County) align with rapidly transitioning to renewable energy. No direct climate bill evidence found but stance inferred from strong progressive baseline and coalition.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ron_Reynolds_(politician)"
+   ],
+   "answer_value": "2.0",
+   "write_in_text": null,
+   "full_name": "Ron Reynolds",
+   "last_stances_researched_at": null,
+   "topic": "Climate Change and Environmental Protection",
+   "question_text": "What priority should climate change receive in energy and economic policy?",
+   "article": "https://en.wikipedia.org/wiki/Ron_Reynolds_(politician)",
+   "has_positions_section": true,
+   "why": "Reynolds's progressive caucus record and consistent environmental-justice advocacy (serving majority-minority Fort Bend County) align with rapidly transitioning to renewable energy. No direct climate bill evidence found but stance inferred from strong progressive baseline and coalition.",
+   "instruments": [],
+   "absence": true,
+   "infers": true,
+   "page_class": "PAGE_NOT_SILENT",
+   "strong_hits": [
+    "propernoun:Fort Bend County"
+   ]
+  }
+ ],
+ "absence_with_instrument": [
+  {
+   "politician_id": "4d83f985-9248-4905-a9b6-5742e2df77a8",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "reasoning": "Hyde-Smith is a consistent conservative Republican who received an 'A' rating from the NRA and has not advocated for campaign finance restrictions. Her general position aligns with reducing restrictions on political donations and spending. No specific co-sponsorship of campaign finance reform legislation found; her record suggests opposition to DISCLOSE Act and similar transparency requirements.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cindy_Hyde-Smith"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Cindy Hyde-Smith",
+   "last_stances_researched_at": null,
+   "topic": "Campaign Finance Reform",
+   "question_text": "What rules should govern money in political campaigns and elections?",
+   "article": "https://en.wikipedia.org/wiki/Cindy_Hyde-Smith",
+   "has_positions_section": true,
+   "why": "Hyde-Smith is a consistent conservative Republican who received an 'A' rating from the NRA and has not advocated for campaign finance restrictions. Her general position aligns with reducing restrictions on political donations and spending. No specific co-sponsorship of campaign finance reform legislation found; her record suggests opposition to DISCLOSE Act and similar transparency requirements.",
+   "instruments": [
+    "DISCLOSE Act"
+   ],
+   "absence": true,
+   "infers": true,
+   "page_class": "WEAK_ONLY",
+   "strong_hits": []
+  },
+  {
+   "politician_id": "e04094d1-247c-40c8-8829-c7cb8654d0ed",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reasoning": "McClain was among the 157 House members who voted against the Respect for Marriage Act in 2022, which would have required all states to recognize same-sex marriages and provided full federal protections. Her vote opposes federally mandated recognition across all states; no evidence was found of her advocating to make same-sex marriage illegal or imposing criminal penalties.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lisa_McClain",
+    "https://en.wikipedia.org/wiki/Respect_for_Marriage_Act"
+   ],
+   "answer_value": "4.0",
+   "write_in_text": null,
+   "full_name": "Lisa C. McClain",
+   "last_stances_researched_at": null,
+   "topic": "Same-Sex Marriage",
+   "question_text": "What legal recognition should same-sex marriages receive?",
+   "article": "https://en.wikipedia.org/wiki/Lisa_McClain",
+   "has_positions_section": true,
+   "why": "McClain was among the 157 House members who voted against the Respect for Marriage Act in 2022, which would have required all states to recognize same-sex marriages and provided full federal protections. Her vote opposes federally mandated recognition across all states; no evidence was found of her advocating to make same-sex marriage illegal or imposing criminal penalties.",
+   "instruments": [
+    "Respect for Marriage Act"
+   ],
+   "absence": true,
+   "infers": true,
+   "page_class": "PAGE_NOT_SILENT",
+   "strong_hits": [
+    "propernoun:Respect for Marriage Act"
+   ]
+  }
+ ]
+}

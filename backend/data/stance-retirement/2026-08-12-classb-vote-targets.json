@@ -1,0 +1,8 @@
+[
+ { "label": "Hyde-Smith / DISCLOSE Act cloture", "chamber": "senate", "congress": 117, "sess": 2, "roll": 346, "scan": 0, "expect_bill": "S. 4822", "expect_question": "cloture", "surname": "Hyde-Smith", "state": "MS" },
+ { "label": "Wicker / DISCLOSE Act cloture", "chamber": "senate", "congress": 117, "sess": 2, "roll": 346, "scan": 0, "expect_bill": "S. 4822", "expect_question": "cloture", "surname": "Wicker", "state": "MS" },
+ { "label": "Hyde-Smith / Freedom to Vote Act cloture", "chamber": "senate", "congress": 117, "sess": 1, "roll": 420, "scan": 0, "expect_bill": "S. 2747", "expect_question": "cloture", "surname": "Hyde-Smith", "state": "MS" },
+ { "label": "Wicker / Freedom to Vote Act cloture", "chamber": "senate", "congress": 117, "sess": 1, "roll": 420, "scan": 0, "expect_bill": "S. 2747", "expect_question": "cloture", "surname": "Wicker", "state": "MS" },
+ { "label": "Hyde-Smith / For the People Act cloture", "chamber": "senate", "congress": 117, "sess": 1, "roll": 246, "scan": 0, "expect_bill": "S. 2093", "expect_question": "cloture", "surname": "Hyde-Smith", "state": "MS" },
+ { "label": "Hyde-Smith / S.1 motion to discharge", "chamber": "senate", "congress": 117, "sess": 1, "roll": 358, "scan": 0, "expect_bill": "S. 1", "expect_question": "discharge", "surname": "Hyde-Smith", "state": "MS" }
+]

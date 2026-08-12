@@ -90,6 +90,67 @@ office since **2019**, so the 2020 Blueprint is **in tenure and not retirable on
 ⚠ Her current mgaleg page (`love02`) shows only 2024–2025 and would have "confirmed" the wrong
 answer — the pass-6b trap exactly: **a member's current mgaleg page hides prior-chamber service.**
 
+### ✅ B. DONE — migration 1711. 3 re-sourced, 9 retired, 5 left alone
+
+🔑 **This looked like the cleanest retirement class in the set, because the author had already
+searched and reported the absence. Searching independently moved 3 of 14 OUT of it.** Retirement is
+what is left after looking, not the first move.
+
+⚠ **My hand-count of "~12" was wrong** — the detector found **19 rows** carrying an absence phrase,
+17 of them naming no instrument. Detector: `scripts/the-197-class-b.mjs`.
+
+🔑 **THE TEST IS NOT THE PHRASE, IT IS WHAT THE PHRASE DOES.** "No evidence" appears in two opposite
+kinds of row:
+- **NARROWING and legitimate** — Paxton / Medicare says "no evidence he seeks to phase out Medicare
+  and Medicaid entirely (value 5), so the value is set to 4", on a row carried by *California v.
+  Texas*, which IS cited. McClain / Same-Sex Marriage does the same on a row carried by a recorded
+  NAY. **These are the opposite of the defect.**
+- **LOAD-BEARING and the defect** — Wicker / Campaign Finance: "No bill sponsorships or floor
+  statements on tightening campaign finance were found", then a chair anyway.
+
+**✅ RE-SOURCED (3) — the search found what the row said did not exist**
+| row | evidence |
+|---|---|
+| Hyde-Smith / Campaign Finance | NAY on cloture, **S.4822 DISCLOSE Act**, 117-2 roll 346, 49-49, 2022-09-22; NAY on cloture, S.2747 Freedom to Vote, 117-1 roll 420. The row had said her record *"suggests opposition to DISCLOSE Act"* — she voted against it. |
+| Wicker / Campaign Finance | the same two NAYs |
+| Hyde-Smith / Redistricting | NAY on cloture S.2093 (For the People Act) 117-1 roll 246; NAY on discharging S.1, roll 358. Both mandate independent commissions. ⚠ Omnibus — the reasoning says so rather than over-claiming a 4-vs-5 distinction the votes cannot make. |
+🔑 Found via the **Senate's own vote menu** (`vote_menu_<congress>_<session>.htm`) — searching for
+"DISCLOSE" fails, because the menu prints the **formal title**: *"A bill to amend the Federal
+Election Campaign Act of 1971…"*. Search the formal title, not the popular name.
+
+**🔴 RETIRED (9)** — chair rests on a party/caucus/district prior plus a declared absence, and an
+independent search of the member's own record found nothing on topic:
+Schweikert / Tariffs · Tran / School Vouchers · Tran / Data Centers · Tran / AI ·
+Slotkin / AI · Dooner / Religious Freedom · Dooner / Campaign Finance · Dooner / Same-Sex Marriage ·
+Dooner / Reproductive Rights.
+Nobody emptied: Schweikert 17→16, Tran 29→26, Slotkin 24→23, Dooner 22→18. Corpus 33,092→33,083.
+- **Schweikert** is the worst of them: chair **1**, *"eliminate all tariffs and pursue completely
+  free trade"* — the most absolute position on the scale — inferred from an absence.
+- **Dooner**: her complete 194th General Court record (**49 sponsored + 40 cosponsored**) contains
+  nothing on religion, marriage, abortion, or campaign finance. Her one election bill is about
+  vote-by-mail administration, which says nothing about donations or spending.
+
+**⚠ LEFT ALONE (5), and why**
+- **Carrie Isaac / Civil Rights** — 🔴 **"critical race theory" IS on her cited page, in prose**
+  ("Isaac is a supporter of charter schools and opposes uncensored education, labeling it as critical
+  race theory"). The lexicon missed it because **"race" is not "racial"** — a *near-miss stem*, a
+  second false-positive vector distinct from the Casey Shepard different-vocabulary one.
+- **Gimenez / Reproductive Rights** — its affirmative claim cites **ISideWith**, which is not in the
+  sources array and not on the cited page. A **citation gap needing re-sourcing**, not an absent stance.
+- **Paxton / Medicare** and **McClain / Same-Sex Marriage** — narrowing, as above.
+- **Joyce / Medicare** — real votes exist (IRA **Nay** 2022 roll 420; OBBBA **Aye** 2025 rolls 145/190)
+  but they are omnibus votes that pin no chair and, if anything, cut *against* the stored chair 3.
+  A partial sample is not a search. ▶ Needs a proper record search.
+- **Ron Reynolds / Climate** — 🔴 `capitol.texas.gov` **now redirects every BillSearchResults query to
+  its search form** (140-byte "Object moved"), so his bill record could not be read at all.
+  **UNASSESSED IS NOT VERIFIED-ABSENT.** ▶ Needs a working TX route.
+
+⚠ Also found: **two `David Schweikert` politician rows** — `17e59190…` (incumbent, 17 answers) and
+`0f95f4c1…` (0 answers, 0 context). The empty one is a harmless shell but belongs in
+[[project_dedup_name_collisions]].
+
+<details><summary>original class B sketch (superseded)</summary>
+
 ### B. The self-declared-no-evidence class (~12 rows) — the cleanest retirement candidates
 Rows whose own reasoning states that nothing was found, cited to a bio that never mentions the topic:
 Hyde-Smith/Campaign Finance ("No specific co-sponsorship … found"), Hyde-Smith/Redistricting,
@@ -105,6 +166,7 @@ and reported the absence.** The stance is a party prior wearing a citation.
 "no evidence" is legitimate — McClain/Same-Sex Marriage says "no evidence … of advocating to make
 same-sex marriage illegal" to choose between chairs 4 and 5, on a row backed by a real vote. Match
 on *the row's only claim being an absence*, never on the phrase.
+</details>
 
 ### C. The Maryland template class (~20 rows) — one sentence, filled in per legislator
 "X co-sponsored civil rights legislation including anti-discrimination protections — strong

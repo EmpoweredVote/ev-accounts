@@ -1,0 +1,199 @@
+{
+ "pass": "the-197 class B",
+ "rows": [
+  {
+   "name": "Cindy Hyde-Smith",
+   "topic": "Campaign Finance Reform",
+   "pid": "4d83f985-9248-4905-a9b6-5742e2df77a8",
+   "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "sources": [
+    "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=117&session=2&vote=00346",
+    "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=117&session=1&vote=00420"
+   ],
+   "why": "Voted NAY on cloture to proceed to S.4822, the DISCLOSE Act, on 22 September 2022 (Senate roll call 346, 49-49); the bill would have added disclosure requirements for corporate and dark-money political spending. Also voted NAY on cloture to proceed to S.2747, the Freedom to Vote Act, on 20 October 2021 (roll call 420, 49-51), which carried further political-spending disclosure provisions.",
+   "note": "stored text said her record \"suggests opposition to DISCLOSE Act\" — she voted against cloture on it",
+   "action": "re-source",
+   "old_reasoning": "Hyde-Smith is a consistent conservative Republican who received an 'A' rating from the NRA and has not advocated for campaign finance restrictions. Her general position aligns with reducing restrictions on political donations and spending. No specific co-sponsorship of campaign finance reform legislation found; her record suggests opposition to DISCLOSE Act and similar transparency requirements.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Cindy_Hyde-Smith"
+   ],
+   "old_value": "4.0",
+   "total_answers_before": 17
+  },
+  {
+   "name": "Roger Wicker",
+   "topic": "Campaign Finance Reform",
+   "pid": "d53cbad2-d166-4f8d-87a2-f7e5ddc7a237",
+   "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "sources": [
+    "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=117&session=2&vote=00346",
+    "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=117&session=1&vote=00420"
+   ],
+   "why": "Voted NAY on cloture to proceed to S.4822, the DISCLOSE Act, on 22 September 2022 (Senate roll call 346, 49-49); the bill would have added disclosure requirements for corporate and dark-money political spending. Also voted NAY on cloture to proceed to S.2747, the Freedom to Vote Act, on 20 October 2021 (roll call 420, 49-51), which carried further political-spending disclosure provisions.",
+   "note": "stored text said \"No bill sponsorships or floor statements … were found\"; two recorded votes exist",
+   "action": "re-source",
+   "old_reasoning": "Wicker has not advocated for campaign finance reform and as a conservative Republican has consistently opposed Democratic legislation that would tighten political spending rules. His Heritage Foundation lifetime conservative score (59%) and record of opposing progressive legislation place him in the reduce-restrictions camp rather than the reform camp. No bill sponsorships or floor statements on tightening campaign finance were found.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Roger_Wicker"
+   ],
+   "old_value": "4.0",
+   "total_answers_before": 19
+  },
+  {
+   "name": "Cindy Hyde-Smith",
+   "topic": "State Redistricting and Gerrymandering",
+   "pid": "4d83f985-9248-4905-a9b6-5742e2df77a8",
+   "tid": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+   "sources": [
+    "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=117&session=1&vote=00246",
+    "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=117&session=1&vote=00358"
+   ],
+   "why": "Voted NAY on cloture to proceed to S.2093, the For the People Act, on 22 June 2021 (Senate roll call 246, 50-50), and NAY on the motion to discharge S.1 on 11 August 2021 (roll call 358, 50-49). Both bills would have required states to draw congressional districts through independent commissions. These are omnibus voting bills, so the votes show opposition to a federal mandate for independent commissions rather than a stated preference between legislature-drawn maps with court oversight and unrestricted legislative control.",
+   "note": "omnibus votes — they evidence opposition to mandated commissions, and the reasoning says so rather than over-claiming",
+   "action": "re-source",
+   "old_reasoning": "Hyde-Smith is a conservative Republican from Mississippi and voted to object to electoral college certification on January 6. Her overall record shows alignment with Republican positions on electoral integrity, which typically includes state legislative control over redistricting. No direct stance found on independent redistricting commissions but her voting pattern and party alignment indicate support for state legislature control with court oversight.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Cindy_Hyde-Smith"
+   ],
+   "old_value": "4.0",
+   "total_answers_before": 17
+  },
+  {
+   "name": "David Schweikert",
+   "topic": "United States Tariff Policy",
+   "pid": "17e59190-17e2-4a90-8353-b5ea8d083480",
+   "tid": "683c8084-2281-4920-a07c-18439b2dd413",
+   "reason": "chair 1 is \"eliminate all tariffs and pursue completely free trade\" — the most absolute position on the scale — and rested on \"Ballotpedia and Wikipedia document no support for broad tariffs\". The cited page contains no occurrence of \"tariff\"; its only \"trade\" hit is the word \"trademark\" in the Wikipedia footer. No tariff vote appears in the Clerk indexes for 2019, 2022, 2025 or 2026; his one trade vote is USMCA (385-41), near-unanimous and not tariff elimination.",
+   "action": "retire",
+   "old_reasoning": "Schweikert's fiscal conservatism and Ways & Means Committee work centers on free-market principles. Ballotpedia and Wikipedia document no support for broad tariffs or protectionist trade policy; his economic philosophy is rooted in reducing barriers to trade and growth. Free trade aligns with stance 1 (eliminate all tariffs and pursue completely free trade).",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/David_Schweikert",
+    "https://ballotpedia.org/David_Schweikert"
+   ],
+   "old_value": "1.0",
+   "total_answers_before": 17
+  },
+  {
+   "name": "Derek Tran",
+   "topic": "School Vouchers & Public Education Funding",
+   "pid": "b7612f49-c914-4ea7-a6da-559d71f313c2",
+   "tid": "00b95a6a-75db-4521-b523-3326bba938de",
+   "reason": "the row opens \"No evidence of Derek Tran supporting school voucher programs was found\" and derives the chair from New Democrat Coalition membership. Caucus membership is not a position. No recorded House vote on vouchers or school choice in 2025 or 2026.",
+   "action": "retire",
+   "old_reasoning": "No evidence of Derek Tran supporting school voucher programs was found. He grew up in a family that relied on federal public assistance programs and has emphasized expanding economic opportunity through public institutions. His Democratic affiliation, New Democrat Coalition membership, and support for public programs over private alternatives suggest he would prioritize public school funding while potentially allowing limited, means-tested voucher access for low-income families without adequate local options.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Derek_Tran",
+    "https://en.wikipedia.org/wiki/New_Democrat_Coalition",
+    "https://en.wikipedia.org/wiki/California%27s_45th_congressional_district"
+   ],
+   "old_value": "2.0",
+   "total_answers_before": 29
+  },
+  {
+   "name": "Derek Tran",
+   "topic": "Data Center Development & Energy Costs",
+   "pid": "b7612f49-c914-4ea7-a6da-559d71f313c2",
+   "tid": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+   "reason": "the row opens \"No direct statement by Tran on data center policy was found\" and derives the chair from Fusion Energy Caucus and New Democrat Coalition membership. No recorded House vote on data centers in 2025 or 2026.",
+   "action": "retire",
+   "old_reasoning": "No direct statement by Tran on data center policy was found. As a member of the Fusion Energy Caucus and the New Democrat Coalition's pro-technology wing, Tran generally supports energy innovation and technology investment. His Lowering Costs Caucus co-chair role suggests sensitivity to consumer cost impacts from infrastructure development. A balanced approach — allowing development with impact assessments and cost-sharing agreements — is consistent with his pro-growth but consumer-conscious policy profile.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Derek_Tran",
+    "https://en.wikipedia.org/wiki/New_Democrat_Coalition",
+    "https://en.wikipedia.org/wiki/California%27s_45th_congressional_district"
+   ],
+   "old_value": "3.0",
+   "total_answers_before": 29
+  },
+  {
+   "name": "Derek Tran",
+   "topic": "Artificial Intelligence Oversight",
+   "pid": "b7612f49-c914-4ea7-a6da-559d71f313c2",
+   "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "reason": "the row states \"No specific AI safety bill sponsorship found\" and rests on caucus membership plus a subcommittee role. No recorded House vote on artificial intelligence in 2025 or 2026.",
+   "action": "retire",
+   "old_reasoning": "Tran is a member of the New Democrat Coalition, which promotes responsible innovation and a pro-technology agenda while supporting accountability measures for emerging industries. As Ranking Member on the House Small Business Subcommittee on Oversight, Investigations, and Regulations, he has jurisdiction over regulatory policy affecting small businesses including AI-adjacent industries. No specific AI safety bill sponsorship found, but his caucus alignment and regulatory subcommittee role suggest support for basic safety standards rather than laissez-faire or heavy-handed approaches.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/New_Democrat_Coalition",
+    "https://en.wikipedia.org/wiki/Derek_Tran",
+    "https://en.wikipedia.org/wiki/House_Committee_on_Small_Business"
+   ],
+   "old_value": "3.0",
+   "total_answers_before": 29
+  },
+  {
+   "name": "Elissa Slotkin",
+   "topic": "Artificial Intelligence Oversight",
+   "pid": "ebe10065-0025-46e5-897e-7a81e4c77ecf",
+   "tid": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "reason": "the row states she \"has not introduced major AI governance legislation and holds no clear public position\", then places her at the midpoint anyway on the basis of a CIA background. Her cited page contains no occurrence of \"artificial intelligence\" or \"algorithm\"; no recorded AI vote in 2025 or 2026.",
+   "action": "retire",
+   "old_reasoning": "Slotkin has not introduced major AI governance legislation and holds no clear public position staking out heavy regulation or a fully hands-off approach; her background as a CIA analyst and national security focus suggests awareness of AI risks, placing her at the basic safety-testing middle ground.",
+   "old_sources": [
+    "https://en.wikipedia.org/wiki/Elissa_Slotkin"
+   ],
+   "old_value": "3.0",
+   "total_answers_before": 24
+  },
+  {
+   "name": "Kelly A. Dooner",
+   "topic": "Religious Freedom",
+   "pid": "247cf8e5-426a-4104-9027-6a2a0b1b61c9",
+   "tid": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+   "reason": "the whole row is \"Republican with no evidence of restricting religious exemptions\" plus national party positions. Her complete 194th General Court record — 49 sponsored and 40 cosponsored bills — contains nothing on religion, faith, conscience or clergy.",
+   "action": "retire",
+   "old_reasoning": "Republican with no evidence of restricting religious exemptions. Conservative Republican positions in Massachusetts align with protecting faith-based exemptions from laws that conflict with sincere religious beliefs.",
+   "old_sources": [
+    "https://malegislature.gov/Legislators/Profile/KAD0",
+    "https://en.wikipedia.org/wiki/Kelly_Dooner"
+   ],
+   "old_value": "4.0",
+   "total_answers_before": 22
+  },
+  {
+   "name": "Kelly A. Dooner",
+   "topic": "Campaign Finance Reform",
+   "pid": "247cf8e5-426a-4104-9027-6a2a0b1b61c9",
+   "tid": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "reason": "the whole row is \"Republican Assistant Minority Leader with no evidence of support for campaign finance restrictions\" plus national party positions. Her 89 bills include one election bill, on uniform treatment of vote-by-mail ballots, which is election administration and says nothing about donations or spending.",
+   "action": "retire",
+   "old_reasoning": "Republican Assistant Minority Leader with no evidence of support for campaign finance restrictions. Republican party positions nationally align with reducing restrictions on political donations and spending.",
+   "old_sources": [
+    "https://malegislature.gov/Legislators/Profile/KAD0",
+    "https://en.wikipedia.org/wiki/Kelly_Dooner"
+   ],
+   "old_value": "4.0",
+   "total_answers_before": 22
+  },
+  {
+   "name": "Kelly A. Dooner",
+   "topic": "Same-Sex Marriage",
+   "pid": "247cf8e5-426a-4104-9027-6a2a0b1b61c9",
+   "tid": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "reason": "the row reasons from an absence to a guess — \"No evidence of Dooner publicly opposing same-sex marriage … she most likely defers to state-level decisions\". Her 89 bills contain nothing on marriage, sexual orientation or gender identity.",
+   "action": "retire",
+   "old_reasoning": "No evidence of Dooner publicly opposing same-sex marriage, which has been settled law in Massachusetts since 2004. As a more pragmatic Republican in a state where SSM has wide public support, she most likely defers to state-level decisions rather than seeking a federal mandate or pursuing a ban.",
+   "old_sources": [
+    "https://malegislature.gov/Legislators/Profile/KAD0",
+    "https://en.wikipedia.org/wiki/Kelly_Dooner"
+   ],
+   "old_value": "3.0",
+   "total_answers_before": 22
+  },
+  {
+   "name": "Kelly A. Dooner",
+   "topic": "Reproductive Rights and Abortion Access",
+   "pid": "247cf8e5-426a-4104-9027-6a2a0b1b61c9",
+   "tid": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "reason": "the chair rests on \"Republican affiliation and district profile\" after stating \"No MA legislative record of supporting abortion access\". The bills the row does name (S.972-976, S.121-123) are emergency-housing and EBT measures. Her 89 bills contain nothing on abortion, reproduction, pregnancy or contraception.",
+   "action": "retire",
+   "old_reasoning": "As a Republican Assistant Minority Leader, Dooner has not publicly supported abortion access bills. Her sponsored legislation (S.972-976) focuses on restricting migrant access to emergency housing and EBT verification (S.121-123), consistent with conservative social positions. No MA legislative record of supporting abortion access; Republican affiliation and district profile indicate restriction to rape/incest/serious health risk cases.",
+   "old_sources": [
+    "https://malegislature.gov/Legislators/Profile/KAD0/Bills",
+    "https://en.wikipedia.org/wiki/Kelly_Dooner"
+   ],
+   "old_value": "4.0",
+   "total_answers_before": 22
+  }
+ ]
+}
