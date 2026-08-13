@@ -1,0 +1,1267 @@
+{
+ "pass": "whole-politician sweep of the migration-1714 bad batch",
+ "migration": "1727_batch_inversion_whole_politician.sql",
+ "note": "Restores pre-1727 chairs. inform.politician_context is NOT touched by 1727.",
+ "n": 142,
+ "n_read_and_kept": 20,
+ "rows": [
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "topic": "Abortion",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "topic": "Police Accountability",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+   "topic": "Criminal Justice",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "topic": "Economic Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "topic": "Environment vs. Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "name": "Arthur Ellis",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "topic": "Environment vs. Development",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "name": "Arthur Ellis",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "name": "Arthur Ellis",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "topic": "Economic Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "name": "Arthur Ellis",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "name": "Arthur Ellis",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "topic": "Abortion",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "topic": "Medicare / Medicaid",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "topic": "Economic Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "topic": "Environment vs. Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "name": "C. Anthony Muse",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "name": "C. Anthony Muse",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "topic": "Economic Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "name": "C. Anthony Muse",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "name": "C. Anthony Muse",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "topic": "Abortion",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "topic": "Campaign Finance",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change",
+   "chair_before": 5,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "topic": "Economic Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "topic": "Immigration",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "topic": "Abortion",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "topic": "Immigration",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "topic": "Same-Sex Marriage",
+   "chair_before": 5,
+   "chair_after": 1
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxes",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "topic": "Trans Athletes",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "topic": "Bail & Pretrial",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "topic": "Campaign Finance",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+   "topic": "Criminal Justice",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "topic": "Economic Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "topic": "Police Accountability",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "name": "Jeff Waldstreicher",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "name": "Jim Rosapepe",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "topic": "Abortion",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "name": "Jim Rosapepe",
+   "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+   "topic": "Ukraine Support",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "name": "Jim Rosapepe",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "name": "Jim Rosapepe",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "name": "Jim Rosapepe",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "name": "Joanne C. Benson",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "topic": "Abortion",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "name": "Joanne C. Benson",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "name": "Joanne C. Benson",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "topic": "Economic Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "name": "Joanne C. Benson",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "topic": "Police Accountability",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "name": "Joanne C. Benson",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "name": "Joanne C. Benson",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "name": "Kevin M. Harris",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "name": "Kevin M. Harris",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "topic": "Economic Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "name": "Kevin M. Harris",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "topic": "Environment vs. Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "name": "Kevin M. Harris",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "topic": "Immigration",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "name": "Nick Charles",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "name": "Nick Charles",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "topic": "Economic Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "name": "Nick Charles",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "topic": "Police Accountability",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "name": "Nick Charles",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "name": "Nick Charles",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "name": "Ron Watson",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "name": "Ron Watson",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "topic": "Economic Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "name": "Ron Watson",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "name": "Ron Watson",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "topic": "Abortion",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change",
+   "chair_before": 5,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "topic": "Environment vs. Development",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "topic": "Medicare / Medicaid",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "topic": "Economic Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "topic": "Immigration",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+   "topic": "Redistricting",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "topic": "Trans Athletes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "name": "Shaneka Henson",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "topic": "Environment vs. Development",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "name": "Shaneka Henson",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "name": "Shaneka Henson",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "topic": "Economic Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "name": "Shaneka Henson",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "topic": "Police Accountability",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "name": "Shaneka Henson",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "name": "Shaneka Henson",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+   "topic": "Abortion",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "topic": "Voting Rights",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "topic": "Bail & Pretrial",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+   "topic": "Criminal Justice",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "topic": "Economic Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "topic": "Immigration",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "topic_id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+   "topic": "Police Accountability",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "topic": "Prosecution",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+   "topic": "Redistricting",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "name": "William C. Smith, Jr.",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "topic": "Trans Athletes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "topic": "Environment vs. Development",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "topic": "Homelessness Response",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+   "topic": "Jail Capacity",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "topic": "Local Immigration Enforcement",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "topic": "Rent Regulation",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "topic": "Criminalization of Homelessness",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "topic": "Transportation",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "424eb63b-9976-4059-8049-365c09719cc6",
+   "name": "Brent Blackaby",
+   "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+   "topic": "Deportation",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "424eb63b-9976-4059-8049-365c09719cc6",
+   "name": "Brent Blackaby",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "topic": "Local Immigration Enforcement",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "424eb63b-9976-4059-8049-365c09719cc6",
+   "name": "Brent Blackaby",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "topic": "Transportation",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "424eb63b-9976-4059-8049-365c09719cc6",
+   "name": "Brent Blackaby",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "topic": "Environment vs. Development",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "424eb63b-9976-4059-8049-365c09719cc6",
+   "name": "Brent Blackaby",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "topic": "Rent Regulation",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "topic": "Environment vs. Development",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+   "topic": "Fossil Fuels",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "topic": "Local Immigration Enforcement",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "topic": "Rent Regulation",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "topic": "Transportation",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "topic": "Criminalization of Homelessness",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "topic": "Homelessness Response",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "name": "Rashi Kesarwani",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "topic": "Local Immigration Enforcement",
+   "chair_before": 5,
+   "chair_after": 1
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "name": "Rashi Kesarwani",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "topic": "Transportation",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "name": "Rashi Kesarwani",
+   "topic_id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+   "topic": "City Sanitation",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "name": "Rashi Kesarwani",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "d2013613-769f-4374-809e-a018dbc1e683",
+   "name": "Rashi Kesarwani",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "topic": "Rent Regulation",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "dc3d8a98-07ce-4797-bc84-957a72fd854f",
+   "name": "Sean Elo-Rivera",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "dc3d8a98-07ce-4797-bc84-957a72fd854f",
+   "name": "Sean Elo-Rivera",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "topic": "Taxes",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change",
+   "chair_before": 5,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "topic": "Homelessness Response",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "topic": "Local Immigration Enforcement",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+   "topic": "Rent Regulation",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "topic": "Transportation",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "topic": "Criminalization of Homelessness",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "topic": "Public Safety",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "0b16443e-fec4-4f33-abbc-eb1331e3b42d",
+   "name": "Vivian Moreno",
+   "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+   "topic": "Affordable Housing",
+   "chair_before": 4,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "name": "Todd Gloria",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "topic": "Climate Change",
+   "chair_before": 5,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "name": "Todd Gloria",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "topic": "Environment vs. Development",
+   "chair_before": 5,
+   "chair_after": 3
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "name": "Todd Gloria",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "topic": "Trans Athletes",
+   "chair_before": 5,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "name": "Todd Gloria",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "topic": "Immigration",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "name": "Todd Gloria",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "topic": "Medicare / Medicaid",
+   "chair_before": 4,
+   "chair_after": 2
+  },
+  {
+   "politician_id": "a975b943-f3e0-492a-bd26-9f5993a5c094",
+   "name": "Todd Gloria",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "topic": "Transportation",
+   "chair_before": 4,
+   "chair_after": 2
+  }
+ ],
+ "read_and_kept": [
+  {
+   "name": "Jim Rosapepe",
+   "topic": "Economic Development",
+   "chair": 5,
+   "why": "he IS an economic-development champion; the row is not inverted"
+  },
+  {
+   "name": "Jim Rosapepe",
+   "topic": "AI Oversight",
+   "chair": 4,
+   "why": "AI Oversight polarity is reversed — chair 4 is the pro-regulation option"
+  },
+  {
+   "name": "C. Anthony Muse",
+   "topic": "Religious Freedom",
+   "chair": 4,
+   "why": "an ordained minister who champions faith-based protections — chair 4 is what the row says"
+  },
+  {
+   "name": "Sara Love",
+   "topic": "Residential Zoning",
+   "chair": 4,
+   "why": "zoning reform for more density IS the chair-4 upzoning option"
+  },
+  {
+   "name": "Ben Bartlett",
+   "topic": "AI Oversight",
+   "chair": 5,
+   "why": "chair 5 is strict AI regulation — correct"
+  },
+  {
+   "name": "Ben Bartlett",
+   "topic": "Residential Zoning",
+   "chair": 4,
+   "why": "ADU upzoning + transit village — correct"
+  },
+  {
+   "name": "Brent Blackaby",
+   "topic": "Climate Change",
+   "chair": 4,
+   "why": "a wildfire tax credit is adaptation, not a ladder position; no clear inversion"
+  },
+  {
+   "name": "Brent Blackaby",
+   "topic": "Affordable Housing",
+   "chair": 4,
+   "why": "voted for a 166-unit dense development — chair 4 is deregulate-to-build"
+  },
+  {
+   "name": "Brent Blackaby",
+   "topic": "Residential Zoning",
+   "chair": 4,
+   "why": "upheld a 10-story approval — correct"
+  },
+  {
+   "name": "Igor Tregub",
+   "topic": "Residential Zoning",
+   "chair": 4,
+   "why": "voted for the Middle Housing Ordinance — correct"
+  },
+  {
+   "name": "Rashi Kesarwani",
+   "topic": "Residential Zoning",
+   "chair": 4,
+   "why": "authored the middle housing ordinance — correct"
+  },
+  {
+   "name": "Sean Elo-Rivera",
+   "topic": "AI Oversight",
+   "chair": 4,
+   "why": "banned algorithmic rent-setting — chair 4 is ban high-risk AI uses"
+  },
+  {
+   "name": "Sean Elo-Rivera",
+   "topic": "Residential Zoning",
+   "chair": 4,
+   "why": "ADU incentives and pro-density — correct"
+  },
+  {
+   "name": "Terry Taplin",
+   "topic": "Residential Zoning",
+   "chair": 4,
+   "why": "Affordable Housing Overlay, +6 stories as-of-right — correct"
+  },
+  {
+   "name": "Vivian Moreno",
+   "topic": "Residential Zoning",
+   "chair": 4,
+   "why": "Land Use chair, BOMA award for development support — correct"
+  },
+  {
+   "name": "Todd Gloria",
+   "topic": "City Sanitation",
+   "chair": 4,
+   "why": "Clean SD genuinely pairs sanitation staffing WITH enforcement"
+  },
+  {
+   "name": "Todd Gloria",
+   "topic": "Growth and Development Pace",
+   "chair": 4,
+   "why": "reducing Land Development Code barriers IS chair 4"
+  },
+  {
+   "name": "Todd Gloria",
+   "topic": "Affordable Housing",
+   "chair": 4,
+   "why": "Housing Action Packages are supply-side zoning reform — correct"
+  },
+  {
+   "name": "Todd Gloria",
+   "topic": "Rent Regulation",
+   "chair": 4,
+   "why": "the row says he prioritises building over rent control — chair 4 is what he holds"
+  },
+  {
+   "name": "Todd Gloria",
+   "topic": "Residential Zoning",
+   "chair": 4,
+   "why": "AB-2372 density bonuses and parking caps — correct"
+  }
+ ]
+}

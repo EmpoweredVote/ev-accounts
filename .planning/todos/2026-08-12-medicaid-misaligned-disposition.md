@@ -83,3 +83,47 @@ Climate) sit correctly at 1-2.
 **The real question this raises:** the batch was 15 politicians. If two of them still carry ~18
 uncorrected rows each in untested topics, the other 13 need the same whole-politician read — the
 1714 cohort was topic-scoped, so per-politician completeness was never established.
+
+## ✅ ANSWERED — mig **1727**, applied and verified. 142 chairs corrected, 20 read and kept
+
+Swept **all 24 politicians 1714 touched**, not just the 15-politician batch — same defective run.
+Every anti-pole row read: **162 rows → 142 corrected · 20 kept**. Mark Warner and Tim Kaine hold
+**zero** rows at a pole and needed nothing.
+
+| | |
+|---|---|
+| Maryland (14 politicians) | 97 corrections |
+| California (8: Berkeley, San Diego) | 45 corrections |
+| Read and kept | 20 |
+
+🔑 **CALIBRATION CHANGED THE ANSWER FOUR TIMES.** Polarity was read from `compass_stances` per
+topic, never assumed, and four topics have their PRO end at the HIGH chair:
+- **AI Oversight is REVERSED** — chair 1 is "allow AI companies to develop freely", chair 5 is
+  "ban AI systems that could cause serious harm". Three rows at 4-5 are correct, including Sean
+  Elo-Rivera's, whose evidence is that he *authored* the algorithmic-rent-setting ban.
+- **Residential Zoning 4-5 is the upzoning end** — six Berkeley/San Diego rows correct.
+- **Growth and Development Pace 4** is streamlined permitting — correct for Todd Gloria.
+- **Affordable Housing 4** is "cut regulations so private developers can build" — correct for the
+  YIMBY members, wrong for the tenant-protection ones. **Same chair, opposite verdicts.**
+
+🔑 **The 20 kept rows are the proof it was not mechanical.** Todd Gloria's Rent Regulation stays at
+4 because the row says he "prioritizes building new units over rent control". Muse's Religious
+Freedom stays at 4 — an ordained minister championing faith-based protections. Rosapepe's Economic
+Development stays at 5 — he really is a development champion. Reasons for all 20 in the rollback JSON.
+
+🔑 **Targets, by the least-extreme-pro rule:** Voting Rights → 2 (chair 1 also demands online
+voting); Public Safety → 3 for the Maryland "prevention alongside enforcement" rows but **2** for
+Terry Taplin, whose row quotes chair 2's unarmed-co-responder option almost verbatim; Economic
+Development → 3 (the rows never take a position on subsidies at all); Same-Sex Marriage → 1,
+matching 1714.
+
+✅ **Verified:** the 20 rows still at a pole are exactly the 20 read and kept, name for name;
+corpus 33,083 / 32,542; orphans 0; no off-ladder values.
+
+⚠ **Sourcing is still owed** on these 142 rows and on 71 of 1714's — most are Ballotpedia bios.
+The chairs are right; the citations are not yet.
+
+▶ **Still open:** the scan that produced 1714 was calibrated per topic, and the four topics it
+scored UNCALIBRATED were never tested corpus-wide — only for these 24 people. A national re-scan
+using the now-known polarity of Voting Rights, Reproductive Rights, Immigration and Fossil Fuel is
+the next measurement.
