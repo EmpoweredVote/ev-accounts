@@ -1,0 +1,56 @@
+{
+ "pass": "MD Taxation re-examination — the 13 rows blanked by mig 1736 on a magnitude premise",
+ "migration": "1741_md_taxation_reexamined.sql",
+ "standard": "To sit in a chair you need evidence describing that chair, with sources. Direction is not a chair.",
+ "note": "Pre-1741 state. BOTH rows below were BLANK (politician_answers row absent, politician_context kept) as left by mig 1736. 1741 RESTORES them with an answer. To roll back: DELETE the two politician_answers rows and write the reasoning/sources below back to inform.politician_context. The other 11 taxation rows were NOT touched by 1741 and remain blank.",
+ "n": 2,
+ "rows": [
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "name": "Alonzo T. Washington",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_before_1741": null,
+   "chair_seated_before_1736": 2,
+   "disposition": "RESTORED AND RE-SEATED to chair 1 (a chair he was never seated at)",
+   "answer_row_existed": false,
+   "reasoning": "Washington supports progressive taxation to fund public services in underserved communities. He backed the Blueprint for Maryland's Future funding structure.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/washington02",
+    "https://ballotpedia.org/Alonzo_Washington"
+   ],
+   "from_migration": "1727 seated; 1736 blanked"
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "state": "MD",
+   "topic": "Taxation and Public Spending",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "chair_before_1741": null,
+   "chair_seated_before_1736": 2,
+   "disposition": "RESTORED at chair 2 (her original chair)",
+   "answer_row_existed": false,
+   "reasoning": "Love supports progressive tax policy. She backs higher taxes on corporations and high earners to fund public services, consistent with her Montgomery County Democratic district.",
+   "sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/love02",
+    "https://ballotpedia.org/Sara_Love"
+   ],
+   "from_migration": "1727 seated; 1736 blanked"
+  }
+ ],
+ "confirmed_blank_unchanged": [
+  {"politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7", "name": "Arthur Ellis", "reason": "Corporate Tax Fairness Act 2020 co-sponsorship only — combined reporting is anti-avoidance, so it under-determines ch2 vs ch3"},
+  {"politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33", "name": "Benjamin F. Kramer", "reason": "his only candidate, SB0523 (2020), is the pass-through entity ELECTION — a SALT-cap workaround benefit, not a tax increase at all"},
+  {"politician_id": "47823046-7dea-4a4f-a11b-0c5890539891", "name": "C. Anthony Muse", "reason": "no tax-increase-on-wealthy-or-corporate instrument in 127 on-topic candidates"},
+  {"politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1", "name": "Cheryl C. Kagan", "reason": "carried interest + Corporate Tax Fairness co-sponsorships — anti-avoidance, under-determines ch2 vs ch3"},
+  {"politician_id": "da75c207-bb23-477e-b3c0-7c462394b570", "name": "Jeff Waldstreicher", "reason": "no tax-increase-on-wealthy-or-corporate instrument in 151 on-topic candidates"},
+  {"politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e", "name": "Jim Rosapepe", "reason": "carried interest + combined reporting co-sponsorships — anti-avoidance, under-determines ch2 vs ch3"},
+  {"politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029", "name": "Joanne C. Benson", "reason": "Corporate Tax Fairness Act co-sponsorship only — anti-avoidance"},
+  {"politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c", "name": "Nick Charles", "reason": "no tax-increase-on-wealthy-or-corporate instrument"},
+  {"politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c", "name": "Ron Watson", "reason": "Corporate Tax Fairness Act 2022 co-sponsorship only — anti-avoidance"},
+  {"politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac", "name": "Shaneka Henson", "reason": "no tax-increase-on-wealthy-or-corporate instrument"},
+  {"politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc", "name": "William C. Smith, Jr.", "reason": "the deepest record in the cohort (carried interest x3, throwback x2, combined reporting x2) but every instrument is anti-avoidance and every one a co-sponsorship — under-determines ch2 vs ch3"}
+ ]
+}
