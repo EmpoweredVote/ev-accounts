@@ -1,0 +1,40 @@
+{
+ "pass": "reversed-ladder audit — all 44 live topics, then the off-convention ones scanned",
+ "migration": "1730_reversed_ladder_audit.sql",
+ "note": "Restores pre-1730 chairs. inform.politician_context is NOT touched by 1730.",
+ "ladder_audit": {
+  "topics_audited": 44,
+  "convention": "chair 1 = maximum government action, chair 5 = minimum. 42 of 44 follow it.",
+  "reversed": [
+   { "topic": "Artificial Intelligence Oversight", "chair_1": "allow AI companies to develop and deploy technology freely without government interference", "chair_5": "impose strict approval requirements and ban AI systems that could cause serious harm", "status": "fixed in mig 1729 (9 rows)" },
+   { "topic": "Tariffs", "chair_1": "eliminate all tariffs and pursue completely free trade with every country", "chair_5": "impose high tariffs on all imports to bring manufacturing back to America", "rows": 3315, "status": "scanned here, 1 inversion" }
+  ],
+  "off_axis_not_reversed": [
+   { "topic": "Residential Zoning", "why": "chair 5 (eliminate single-family-only zoning) is deregulatory AND progressive — both a pro-government lexicon and a progressive lexicon point the wrong way", "status": "scanned here, 7 inversions" },
+   { "topic": "Growth and Development Pace", "why": "same shape: chair 1 imposes growth limits, chair 5 removes barriers", "status": "scanned here, 2 inversions" },
+   { "topic": "Government Deference", "why": "chair 1 is 'side with the citizen against government' — not an intervention axis at all", "rows": 110, "status": "no lexicon applies; not scanned" },
+   { "topic": "Affordable Housing", "why": "mid-ladder divergence only — chair 4 is 'cut regulations so private developers can build', right for YIMBYs and wrong for tenant-protection rows", "status": "documented in mig 1727" },
+   { "topic": "Misinformation", "why": "conventional on intervention, but chair 5 'ban any government involvement in content moderation' is a free-speech position held across the spectrum", "status": "flagged only" }
+  ]
+ },
+ "n": 10,
+ "rows": [
+  { "politician_id": "9edc0c37-f213-4aae-9212-c9cb4780d854", "name": "Laura Richardson", "state": "CA", "topic": "Tariffs", "topic_id": "683c8084-2281-4920-a07c-18439b2dd413", "chair_before": 4, "chair_after": 3, "why": "voted YES on SJR 7, California's resolution opposing Trump's broad tariffs; opposing BROAD tariffs supports 'use tariffs selectively', not elimination" },
+  { "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c", "name": "Maura Healey", "state": "MA", "topic": "Residential Zoning", "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d", "chair_before": 1, "chair_after": 4, "why": "'the most aggressive governor in Massachusetts history on upzoning'; enforced the MBTA Communities Act" },
+  { "politician_id": "41945b74-325e-4fa2-9cc9-edd11ead9ed3", "name": "Jake Auchincloss", "state": "MA", "topic": "Residential Zoning", "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d", "chair_before": 2, "chair_after": 4, "why": "'the most prominent YIMBY in the MA delegation … explicitly advocated for ending single-family-only zoning'" },
+  { "politician_id": "41ced04d-7403-4170-a267-c339191e6fcd", "name": "Jake Wilson", "state": "MA", "topic": "Residential Zoning", "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d", "chair_before": 1, "chair_after": 3, "why": "championed the MBTA Communities law mandating by-right multifamily zoning near transit" },
+  { "politician_id": "c7c8d91f-156b-42ea-93f1-7dac0c4080a4", "name": "Kevin G. Honan", "state": "MA", "topic": "Residential Zoning", "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d", "chair_before": 2, "chair_after": 3, "why": "co-authored the 2021 MBTA Communities Act (H.4933 Section 3A)" },
+  { "politician_id": "ad28f54e-0639-4005-ade9-3be3b90c3d39", "name": "Cassie Julia", "state": "ME", "topic": "Residential Zoning", "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d", "chair_before": 1, "chair_after": 2, "why": "voted Yea on LD 427 eliminating mandatory parking minimums statewide" },
+  { "politician_id": "21f45688-4e19-42bb-b1c0-e17b5dba2d3a", "name": "Flavia DeBrito", "state": "ME", "topic": "Residential Zoning", "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d", "chair_before": 1, "chair_after": 2, "why": "voted Yea on LD 427 eliminating mandatory parking minimums statewide" },
+  { "politician_id": "4e485d3a-79a0-40ce-a52f-f84d187bf5de", "name": "Drew Boyles", "state": "CA", "topic": "Residential Zoning", "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d", "chair_before": 4, "chair_after": 1, "why": "advocated regionally and statewide to protect single-family housing neighborhoods — the inversion running the OTHER way" },
+  { "politician_id": "2d47a965-81a2-4508-865c-06d45bf6ff42", "name": "Christine Parra", "state": null, "topic": "Growth and Development Pace", "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4", "chair_before": 4, "chair_after": 2, "why": "platform centers slow growth and opposition to residential encroachment" },
+  { "politician_id": "7714b7c6-9283-4ab8-802e-cbcfba5ddc96", "name": "Phil Brock", "state": null, "topic": "Growth and Development Pace", "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4", "chair_before": 4, "chair_after": 2, "why": "supports slow growth; concerned developers and the State want tall buildings in the heart of the city" }
+ ],
+ "read_and_kept_notable": [
+  { "name": "24 of 25 Tariffs candidates", "why": "genuine tariff supporters whose rows contain 'free trade' only as the object of what they oppose — 'opposes free trade', 'fair trade not free trade', 'voted NO on SJR 7'" },
+  { "name": "Patrick Cloutier, Steven Deffibaugh, Tim Flaherty, Victor M. Gordo", "topic": "Residential Zoning", "chair": 2, "why": "restrictive rows (development moratorium, wider setbacks, objecting to state upzoning mandates) at a chair already on the restrictive half — understated at worst, not inverted. Only midpoint-crossing rows were changed." },
+  { "name": "Roxanne Ziegler, Joyce Jones-Ivey", "topic": "Growth and Development Pace", "chair": 4, "why": "both APPROVED large-scale development; the detector matched the description of what they approved" },
+  { "name": "Chris Null", "topic": "Residential Zoning", "chair": 4, "why": "'market-based approaches to housing supply' IS the chair-4 upzoning end" },
+  { "name": "Darrel Sharpe", "topic": "Residential Zoning", "chair": 1, "why": "platform lists 'maintaining low density / large lots' — correct at chair 1" }
+ ]
+}
