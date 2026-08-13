@@ -163,9 +163,16 @@ portraits, all imported. What is left is the municipal/subdomain sweep and the F
    sites. Weigh against the measured ~10% portrait yield from the 30 sites already found —
    the WP `/wp-json/wp/v2/media?search=alcalde` enumeration makes each site much cheaper to check
    than a render-and-crawl.
-3. **Facebook / press photos** would cover most of the island (PR municipios are very active on
-   Facebook and the alcalde is usually pictured) but sit **outside the current source policy**:
-   licence is unclear and FB CDN URLs expire. **Needs Chris's explicit ruling before use.**
+3. ~~**Facebook photos**~~ — 🔴🔴 **RULED OUT BY CHRIS, 2026-08-12: "we do not use facebook photos —
+   just press."** Do not re-open this and do not ask again. It applies to **every** cohort, not just
+   the alcaldes: no Facebook, no social-platform profile or page imagery, regardless of how much
+   coverage it would buy. **Press photos remain in scope** — official/government portraits, campaign
+   press kits, news-outlet press images, Commons/PD, Ballotpedia.
+
+   Consequence to accept honestly: Facebook was the only source that could plausibly have covered
+   most of the remaining 70. Without it, the in-policy ceiling is the municipal/subdomain sweep at a
+   measured ~10% yield, so **expect single digits more, not 70.** A partly-covered cohort is the
+   correct outcome; a face taken from an unclear licence is not.
 
 ## Method that worked, keep it
 
