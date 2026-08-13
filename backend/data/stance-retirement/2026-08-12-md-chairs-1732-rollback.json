@@ -1,0 +1,18 @@
+{
+ "pass": "correction to mig 1731 — two blanks were decided on an incomplete record",
+ "migration": "1732_md_chairs_unreadable_session_correction.sql",
+ "rule_established": "Never blank a row whose member has unreadable sessions. Only Ellis, Kagan, Rosapepe and Benson have 0 unreadable sessions among the 16 MD members.",
+ "restored": [
+  {"politician_id":"8c8b0896-dfd0-4d3c-8492-e594d93b78ca","name":"Alonzo T. Washington","topic":"Voting Rights and Electoral Integrity","topic_id":"d1792200-1d3b-4955-a0b7-0e6980d7a7b2","chair_restored":2,"unreadable_sessions":10,"sessions_read":4},
+  {"politician_id":"47823046-7dea-4a4f-a11b-0c5890539891","name":"C. Anthony Muse","topic":"Voting Rights and Electoral Integrity","topic_id":"d1792200-1d3b-4955-a0b7-0e6980d7a7b2","chair_restored":2,"unreadable_sessions":7,"sessions_read":4}
+ ],
+ "blank_stands": [
+  {"name":"Arthur Ellis","topic":"Voting Rights and Electoral Integrity","unreadable_sessions":0,"candidates_read":32}
+ ],
+ "blanked": [
+  {"politician_id":"9c400214-f007-4a8d-92fe-5f5d23b3838e","name":"Jim Rosapepe","topic":"Voting Rights and Electoral Integrity","topic_id":"d1792200-1d3b-4955-a0b7-0e6980d7a7b2","chair_removed":2,"unreadable_sessions":0,"candidates_read":50,"why":"deep election-law record but nothing expanding early voting or no-excuse mail; his Universal Voter Registration Act is chair 1's language, a re-seat to consider on evidence later"}
+ ],
+ "rows": [
+  {"politician_id":"9aef8bfb-8e0c-4f00-9898-c738abe4970c","name":"Ron Watson","topic":"Voting Rights and Electoral Integrity","topic_id":"d1792200-1d3b-4955-a0b7-0e6980d7a7b2","chair":2,"bill":"SB0991 2025RS","why":"extends absentee voting to pretrial detainees; positive evidence is unaffected by an unread session"}
+ ]
+}
