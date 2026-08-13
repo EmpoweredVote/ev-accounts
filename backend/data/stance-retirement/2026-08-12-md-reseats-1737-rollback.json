@@ -1,0 +1,64 @@
+{
+ "pass": "MD re-seat candidates from mig 1736 resolved by reading the rest of each record",
+ "migration": "1737_md_reseats_and_restore.sql",
+ "note": "rows = the 3 now seated + sourced (the --check gate reads these). not_seated = deliberately left blank.",
+ "correction": "Hester chair 4 was CORRECT. The earlier \"re-seat to ch3\" rested on 3 fetched bills; the 2 unfetched ones (SB0905, SB0141) are prohibitions on high-risk AI uses. An absence built on an unread record is not a finding.",
+ "n_rows": 3,
+ "n_not_seated": 1,
+ "rows": [
+  {
+   "politician_id": "6da20195-1b0c-43f2-b1b3-7a3954326fe6",
+   "name": "Katie Fry Hester",
+   "topic": "Artificial Intelligence Oversight",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "chair_before_1736": "4.0",
+   "chair_after": 4,
+   "action": "RESTORE",
+   "bill": "SB0936+SB0905+SB0141",
+   "prior_reasoning": "Hester introduced 2026 bills to ban election-related deepfakes, criminalize deepfake impersonation causing serious harm, and restrict minors from unsafe AI chatbots. Her deepfake election bill passed the Senate unanimously.",
+   "prior_sources": [
+    "https://en.wikipedia.org/wiki/Katie_Fry_Hester"
+   ]
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "name": "Cheryl C. Kagan",
+   "topic": "Campaign Finance Reform",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "chair_before_1736": "2.0",
+   "chair_after": 3,
+   "action": "RESEAT 2->3",
+   "bill": "SB0633+SB0458",
+   "prior_reasoning": "Kagan has been a consistent advocate for campaign finance transparency and reform, supporting disclosure requirements and limits on dark money in Maryland elections.",
+   "prior_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kagan01",
+    "https://ballotpedia.org/Cheryl_C._Kagan"
+   ]
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "name": "Benjamin F. Kramer",
+   "topic": "Medicare / Medicaid",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "chair_before_1736": "2.0",
+   "chair_after": 3,
+   "action": "RESEAT 2->3",
+   "bill": "SB0600+SB1057",
+   "prior_reasoning": "Kramer supports expanding Medicaid and protecting Medicare. He has backed healthcare safety net programs serving vulnerable populations in his district.",
+   "prior_sources": [
+    "https://mgaleg.maryland.gov/mgawebsite/Members/Details/kramer02",
+    "https://ballotpedia.org/Benjamin_Kramer"
+   ]
+  }
+ ],
+ "not_seated": [
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "name": "Sara Love",
+   "topic": "State Redistricting and Gerrymandering",
+   "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+   "chair_before_1736": "2.0",
+   "why": "The ladder asks WHO draws the maps; her bills (HB0463 2019, HB1431 2020) set district STANDARDS and an open hearing process and leave the General Assembly drawing. No commission, no supermajority committee, no court-oversight mechanism — no chair is described."
+  }
+ ]
+}
