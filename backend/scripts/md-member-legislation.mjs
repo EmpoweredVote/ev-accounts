@@ -20,8 +20,16 @@
  * ⚠ A title match is topical, not directional — see lib/md-topic-nets.mjs. Everything this emits is a
  * READING QUEUE. Nothing here decides a chair or writes a citation.
  *
+ * ✅ THE FALLBACK EXISTS NOW: `--slugmap` (md-session-rosters.mjs) supplies the session-correct slug,
+ * so a chamber-switcher's earlier sessions are read under the slug that session actually used and
+ * stop reporting as UNAVAILABLE_SESSION. Sessions still unreadable after that are the genuine ones.
+ * ⚠ The comment above about Alonzo Washington's House record living under the retired `washington`
+ * slug is WRONG and was never true: `washington` is MARY L. Washington. His House slug is
+ * `washington a` — with a space. Kept here because the defect it describes is real; only the slug
+ * was misattributed, which is itself the surname trap firing.
+ *
  * 🔴 Reads only.
- *   node scripts/md-member-legislation.mjs --out <report.json> [--only "Name"]
+ *   node scripts/md-member-legislation.mjs --out <report.json> [--only "Name"] [--slugmap <map.json>]
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -35,6 +43,7 @@ const flag = (n, d = null) => { const i = argv.indexOf(n); return i > -1 ? argv[
 const OUT = flag('--out', 'data/stance-retirement/2026-08-12-md-member-legislation.json');
 const ONLY = flag('--only');
 const IN = flag('--in', 'data/stance-retirement/2026-08-12-instrument-free-remaining.json');
+const SLUGMAP = flag('--slugmap');
 
 const CACHE = 'C:/Users/Chris/AppData/Local/Temp/ev-stance-cache/mdcorpus';
 const MEMBERS = path.join(CACHE, 'member-cache');
@@ -53,7 +62,8 @@ async function memberSession(slug, ys) {
   const f = path.join(SESS, `${slug}-${ys}.html`);
   let h = fs.existsSync(f) && fs.statSync(f).size > 5000 ? fs.readFileSync(f, 'utf8') : null;
   if (!h) {
-    const res = await fetch(`https://mgaleg.maryland.gov/mgawebsite/Members/Details/${slug}?ys=${ys}`, { headers: { 'User-Agent': UA } });
+    // ⚠ a session-correct slug can contain a SPACE ("washington a", "kramer b") — encode it
+    const res = await fetch(`https://mgaleg.maryland.gov/mgawebsite/Members/Details/${encodeURIComponent(slug)}?ys=${ys}`, { headers: { 'User-Agent': UA } });
     const body = await res.text();
     await sleep(1100);
     if (!res.ok || body.length < 5000) return { status: 'FETCH_FAILED', bills: [] };
@@ -64,6 +74,30 @@ async function memberSession(slug, ys) {
   // 🔴 zero bills is NOT "sponsored nothing" — see the header
   if (!found.length) return { status: 'UNAVAILABLE_SESSION', bills: [] };
   return { status: 'OK', bills: found };
+}
+
+/** {name: {session: slug}} from md-session-rosters.mjs; empty when the flag is absent. */
+const SLUG_BY_SESSION = SLUGMAP ? JSON.parse(fs.readFileSync(SLUGMAP, 'utf8')).slugmap : {};
+/**
+ * 🔑 A REAL ABSENCE IS NOT AN UNREAD SESSION. md-session-rosters.mjs separates the two: a session it
+ * proves the member did not sit for (a year-granular tenure boundary, or outside the spans entirely,
+ * with no record under ANY known slug) is SESSION_ABSENT and must not go on blocking the row the way
+ * an unread session does. Every other unresolved reason stays unreadable, deliberately.
+ */
+const ABSENT_REASONS = new Set(['ABSENT_AT_YEAR_GRANULAR_SPAN_BOUNDARY', 'NOT_IN_OFFICE']);
+const ABSENT_BY_SESSION = {};
+/** {name: slug} for members whose `sources` carry no Members/Details URL at all — see §2b there. */
+const BASE_SLUG = SLUGMAP ? Object.fromEntries(Object.entries(
+  JSON.parse(fs.readFileSync(SLUGMAP, 'utf8')).base_slugs || {}).map(([n, v]) => [n, v.slug])) : {};
+if (SLUGMAP) {
+  for (const u of JSON.parse(fs.readFileSync(SLUGMAP, 'utf8')).unresolved || []) {
+    if (ABSENT_REASONS.has(u.reason)) (ABSENT_BY_SESSION[u.name] ??= {})[u.session] = u.reason;
+  }
+  const n = Object.values(SLUG_BY_SESSION).reduce((a, v) => a + Object.keys(v).length, 0);
+  const na = Object.values(ABSENT_BY_SESSION).reduce((a, v) => a + Object.keys(v).length, 0);
+  console.log(`slug map: ${n} session-correct slug(s) for ${Object.keys(SLUG_BY_SESSION).length} member(s); `
+    + `${na} session(s) recorded as a genuine absence; `
+    + `${Object.keys(BASE_SLUG).length} base slug(s) for members with none in sources\n`);
 }
 
 const REMAINING = JSON.parse(fs.readFileSync(IN, 'utf8'));
@@ -81,8 +115,11 @@ for (const r of rows) {
   if (members[r.name]) continue;
   const slug = ((r.sources || []).map((s) => (s.match(/Members\/Details\/([A-Za-z0-9_-]+)/) || [])[1]).filter(Boolean))[0]
     || ((REMAINING.rows.find((x) => x.name === r.name && (x.sources || []).some((s) => /Members\/Details\//.test(s))) || {}).sources || [])
-      .map((s) => (s.match(/Members\/Details\/([A-Za-z0-9_-]+)/) || [])[1]).filter(Boolean)[0] || null;
-  members[r.name] = { slug, sessions: {}, spans: [], tenure: null };
+      .map((s) => (s.match(/Members\/Details\/([A-Za-z0-9_-]+)/) || [])[1]).filter(Boolean)[0]
+    // 🔑 no Members/Details URL anywhere in this member's sources — fall back to the base slug the
+    // session sponsor index resolved BY FULL NAME and verified against the member page.
+    || BASE_SLUG[r.name] || null;
+  members[r.name] = { slug, slug_from_base: !!BASE_SLUG[r.name], sessions: {}, spans: [], tenure: null };
 }
 // Sara Love's page hides her House service; the landmark pass recorded why.
 const TENURE_OVERRIDE = {
@@ -104,9 +141,18 @@ for (const [name, m] of Object.entries(members)) {
   const inTenure = SESSIONS.filter((s) => chamberForSession(m.spans, parseInt(s, 10)));
   process.stdout.write(`  ${name} [${m.slug}] ${inTenure.length} in-tenure session(s): `);
   for (const s of inTenure) {
-    const r = await memberSession(m.slug, s);
-    m.sessions[s] = r;
-    process.stdout.write(r.status === 'OK' ? `${s.slice(0, 4)}✓ ` : `${s.slice(0, 4)}✗ `);
+    // 🔑 the session-correct slug wins where one was resolved — the member's CURRENT slug returns an
+    // empty list for any session before a chamber switch, and that empty list is not an absence.
+    const absent = (ABSENT_BY_SESSION[name] || {})[s];
+    if (absent) {   // proven not to have sat — do not fetch, and do not count as unread
+      m.sessions[s] = { status: 'SESSION_ABSENT', reason: absent, bills: [] };
+      process.stdout.write(`${s.slice(0, 4)}∅ `);
+      continue;
+    }
+    const slug = (SLUG_BY_SESSION[name] || {})[s] || m.slug;
+    const r = await memberSession(slug, s);
+    m.sessions[s] = { ...r, slug, remapped: slug !== m.slug };
+    process.stdout.write(r.status === 'OK' ? `${s.slice(0, 4)}${slug !== m.slug ? '⇄' : '✓'} ` : `${s.slice(0, 4)}✗ `);
   }
   console.log('');
 }
@@ -118,7 +164,11 @@ for (const r of rows) {
   const net = TOPIC_NETS[r.topic];
   if (!net) throw new Error(`no topic net for "${r.topic}" — the net is the extractor, add it first`);
   const readable = Object.entries(m.sessions).filter(([, v]) => v.status === 'OK').map(([s]) => s);
-  const unreadable = Object.entries(m.sessions).filter(([, v]) => v.status !== 'OK').map(([s]) => s);
+  // ⚠ SESSION_ABSENT is a proven non-membership, not an unread page — it must not sit in the list
+  // that blocks a row, or a real absence would block the row forever.
+  const absentSessions = Object.entries(m.sessions).filter(([, v]) => v.status === 'SESSION_ABSENT').map(([s]) => s);
+  const unreadable = Object.entries(m.sessions)
+    .filter(([, v]) => v.status !== 'OK' && v.status !== 'SESSION_ABSENT').map(([s]) => s);
   const all = readable.flatMap((s) => m.sessions[s].bills);
   const hits = all.map((k) => ({ key: k, ...(titleOf[k] || {}) }))
     .filter((b) => b.title && net.test(b.title) && !(TOPIC_EXCLUDE[r.topic] || /$^/).test(b.title))
@@ -127,7 +177,8 @@ for (const r of rows) {
   out.push({
     politician_id: r.politician_id, topic_id: r.topic_id, name: r.name, topic: r.topic, chair: r.chair,
     reasoning: r.reasoning, sources: r.sources, member_slug: m.slug, tenure: m.tenure, spans: m.spans,
-    sessions_read: readable, sessions_unreadable: unreadable,
+    sessions_read: readable, sessions_unreadable: unreadable, sessions_absent: absentSessions,
+    slugs_used: Object.fromEntries(Object.entries(m.sessions).filter(([, v]) => v.remapped).map(([s, v]) => [s, v.slug])),
     n_bills_seen: all.length, n_on_topic: hits.length, candidates: hits,
   });
   console.log(`  ${String(hits.length).padStart(3)} on-topic / ${String(all.length).padStart(4)} seen   ${r.name} / ${r.topic}`
@@ -138,7 +189,9 @@ await pool.end();
 const noCandidates = out.filter((r) => !r.n_on_topic);
 console.log(`\n${out.length} rows; ${out.length - noCandidates.length} with candidates, ${noCandidates.length} without.`);
 if (noCandidates.length) {
-  console.log('⚠ rows with NO on-topic bill from readable sessions (NOT a finding until the unreadable sessions are crawled):');
+  console.log('⚠ rows with NO on-topic bill from readable sessions'
+    + (SLUGMAP ? ' (a row still listing unreadable sessions is NOT a finding — resolve them first):'
+      : ' (NOT a finding until --slugmap has resolved the unreadable sessions):'));
   for (const r of noCandidates) console.log(`   ${r.name} / ${r.topic}  (unreadable: ${r.sessions_unreadable.join(',') || 'none'})`);
 }
 fs.writeFileSync(OUT, JSON.stringify({ pass: 'MD member sponsored legislation, on-topic candidates', rows: out }, null, 1));

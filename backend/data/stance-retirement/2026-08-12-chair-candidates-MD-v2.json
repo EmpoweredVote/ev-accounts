@@ -1,0 +1,3933 @@
+{
+ "pass": "chair-specific candidate ranking — MD",
+ "n": 71,
+ "rows": [
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+   "name": "Alonzo T. Washington",
+   "topic": "Criminal Justice Approach",
+   "chair": 2,
+   "chair_text": "Giving the person a fair chance to make things right — through treatment, community service, or restitution.",
+   "refuse_chair_gate": false,
+   "reasoning": "Washington has supported criminal justice reforms including sentencing reform and reducing mass incarceration. He backed legislation creating pathways for formerly incarcerated individuals.",
+   "n_candidates": 52,
+   "n_discriminating": 7,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB1514",
+     "session": "2020RS",
+     "title": "State Personnel and Pensions - Maryland Whistleblower Law - Department of Juvenile Services Employees",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1514?ys=2020RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1166",
+     "session": "2014RS",
+     "title": "Maryland Second Chance Act of 2014",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1166?ys=2014RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0804",
+     "session": "2014RS",
+     "title": "Maryland Second Chance Act of 2014",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0804?ys=2014RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0797",
+     "session": "2018RS",
+     "title": "Correctional Services - Inmates - Menstrual Hygiene Products",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0797?ys=2018RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0598",
+     "session": "2018RS",
+     "title": "Correctional Services - Inmates - Menstrual Hygiene Products",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0598?ys=2018RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "name": "Alonzo T. Washington",
+   "topic": "Economic Development Incentives",
+   "chair": 3,
+   "chair_text": "Targeted incentives for specific industries with community benefit agreements and job quality requirements",
+   "refuse_chair_gate": false,
+   "reasoning": "Washington supports economic development through public investment in Prince George's County. He backs job creation programs and workforce development for historically underinvested communities.",
+   "n_candidates": 147,
+   "n_discriminating": 5,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB1012",
+     "session": "2016RS",
+     "title": "Tax Credit - Commuter Benefits - Eligibility and Credit Amount",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1012?ys=2016RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0900",
+     "session": "2017RS",
+     "title": "Income Tax Credit - Payment of Tuition at a Community College",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0900?ys=2017RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB1268",
+     "session": "2018RS",
+     "title": "Income Tax Credit – Donations to Endowment Funds – Community Foundations and Historically Black Colleges and Universities",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1268?ys=2018RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB1162",
+     "session": "2019RS",
+     "title": "Heritage Structure Rehabilitation Tax Credit - Alterations - Opportunity Zones, Targeted Projects, and Transferability",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1162?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0656",
+     "session": "2019RS",
+     "title": "Heritage Structure Rehabilitation Tax Credit - Alterations - Opportunity Zones, Targeted Projects, and Transferability",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0656?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "name": "Alonzo T. Washington",
+   "topic": "Environmental Protection vs. Development",
+   "chair": 3,
+   "chair_text": "Apply consistent environmental standards while giving developers reasonable flexibility on implementation",
+   "refuse_chair_gate": false,
+   "reasoning": "Washington has backed environmental justice measures addressing disproportionate pollution burdens in PG County communities. He supports Chesapeake Bay protection and clean air standards.",
+   "n_candidates": 32,
+   "n_discriminating": 2,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB1540",
+     "session": "2020RS",
+     "title": "Environment - Mold Inspections - Standards, Reporting, and Penalties",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1540?ys=2020RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB1067",
+     "session": "2020RS",
+     "title": "Environment - Mold Inspections - Standards, Reporting, and Penalties",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1067?ys=2020RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "name": "Alonzo T. Washington",
+   "topic": "Public Safety Approach",
+   "chair": 3,
+   "chair_text": "Keep current public safety funding while adding crisis response teams for mental health and addiction calls",
+   "refuse_chair_gate": false,
+   "reasoning": "Washington supports community-centered public safety including prevention programs, mental health resources, and police accountability. He represents communities with both safety needs and police reform concerns.",
+   "n_candidates": 169,
+   "n_discriminating": 26,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0367",
+     "session": "2019RS",
+     "title": "Public Safety - Education - Firearm Funding",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0367?ys=2019RS",
+     "seated": 2,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0536",
+     "session": "2019RS",
+     "title": "Public Safety - Education - Firearm Funding",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0536?ys=2019RS",
+     "seated": 2,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB1210",
+     "session": "2019RS",
+     "title": "Public Safety - Crisis Intervention Team Technical Assistance Center",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1210?ys=2019RS",
+     "seated": 2,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0815",
+     "session": "2019RS",
+     "title": "Public Safety - Crisis Intervention Team Technical Assistance Center",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0815?ys=2019RS",
+     "seated": 2,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB1077",
+     "session": "2013RS",
+     "title": "Public Safety - Regulated Firearms - Reporting Lost or Stolen",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1077?ys=2013RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "8c8b0896-dfd0-4d3c-8492-e594d93b78ca",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Alonzo T. Washington",
+   "topic": "Taxation and Public Spending",
+   "chair": 2,
+   "chair_text": "Moderately raise taxes on wealthy people and large companies to fund existing services",
+   "refuse_chair_gate": false,
+   "reasoning": "Washington supports progressive taxation to fund public services in underserved communities. He backed the Blueprint for Maryland's Future funding structure.",
+   "n_candidates": 293,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB1259",
+     "session": "2014RS",
+     "title": "Income Tax Checkoff - Developmental Disabilities Services and Support Fund - Designation",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1259?ys=2014RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0909",
+     "session": "2014RS",
+     "title": "Income Tax Checkoff - Developmental Disabilities Services and Support Fund - Designation",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0909?ys=2014RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0785",
+     "session": "2013RS",
+     "title": "Commercial Law - Maryland Credit Services Businesses Act - Scope",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0785?ys=2013RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0375",
+     "session": "2013RS",
+     "title": "Commercial Law - Maryland Credit Services Businesses Act - Scope",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0375?ys=2013RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0372",
+     "session": "2013RS",
+     "title": "Recordation and Transfer Taxes - Transfer of Property Between Related Entities - Exemption",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0372?ys=2013RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "name": "Arthur Ellis",
+   "topic": "Environmental Protection vs. Development",
+   "chair": 2,
+   "chair_text": "Protect existing parks and tree canopy strictly; require developers to fully offset any environmental impact",
+   "refuse_chair_gate": false,
+   "reasoning": "Ellis is a strong advocate for Chesapeake Bay protection and clean water standards. His Southern Maryland district directly depends on the health of the Bay ecosystem.",
+   "n_candidates": 24,
+   "n_discriminating": 1,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0686",
+     "session": "2022RS",
+     "title": "Department of the Environment - Study on Environmental Impacts of Lead-Based Fuel Use by Aviation Industry",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0686?ys=2022RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "name": "Arthur Ellis",
+   "topic": "Economic Development Incentives",
+   "chair": 3,
+   "chair_text": "Targeted incentives for specific industries with community benefit agreements and job quality requirements",
+   "refuse_chair_gate": false,
+   "reasoning": "Ellis supports economic development in Charles County including workforce training and attracting businesses to his growing suburban district.",
+   "n_candidates": 55,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0496",
+     "session": "2021RS",
+     "title": "Recovery for the Economy, Livelihoods, Industries, Entrepreneurs, and Families (RELIEF) Act",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0496?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 2
+    },
+    {
+     "number": "HB0612",
+     "session": "2021RS",
+     "title": "Recovery for the Economy, Livelihoods, Industries, Entrepreneurs, and Families (RELIEF) Act",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0612?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 2
+    },
+    {
+     "number": "SB0547",
+     "session": "2023RS",
+     "title": "Office of Statewide Broadband - Study of Broadband Expansion Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0547?ys=2023RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0551",
+     "session": "2023RS",
+     "title": "Office of Statewide Broadband - Study of Broadband Expansion Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0551?ys=2023RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0263",
+     "session": "2019RS",
+     "title": "Earned Income Tax Credit - Individuals Without Qualifying Children - Eligibility and Refundability",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0263?ys=2019RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "name": "Arthur Ellis",
+   "topic": "Public Safety Approach",
+   "chair": 3,
+   "chair_text": "Keep current public safety funding while adding crisis response teams for mental health and addiction calls",
+   "refuse_chair_gate": false,
+   "reasoning": "Ellis supports a balanced public safety approach combining prevention programs and enforcement. He backed police accountability legislation while supporting community policing.",
+   "n_candidates": 50,
+   "n_discriminating": 18,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB1091",
+     "session": "2024RS",
+     "title": "Public Safety - Reproductive Health Care Clinic Security Grant Program - Establishment (Protecting Reproductive Health Care Clinics Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1091?ys=2024RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0982",
+     "session": "2019RS",
+     "title": "Commission to Study Non-Emergency Medical Transportation Funding",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0982?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0366",
+     "session": "2019RS",
+     "title": "Commission to Study Non-Emergency Medical Transportation Funding",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0366?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0292",
+     "session": "2019RS",
+     "title": "Property Tax Credit - Public Safety Officer - Definition",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0292?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0477",
+     "session": "2019RS",
+     "title": "Property Tax Credit - Public Safety Officer - Definition",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0477?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Arthur Ellis",
+   "topic": "Taxation and Public Spending",
+   "chair": 2,
+   "chair_text": "Moderately raise taxes on wealthy people and large companies to fund existing services",
+   "refuse_chair_gate": false,
+   "reasoning": "Ellis supports progressive taxation to fund public services and education. He backed the Blueprint for Maryland's Future and public investment.",
+   "n_candidates": 56,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0263",
+     "session": "2019RS",
+     "title": "Earned Income Tax Credit - Individuals Without Qualifying Children - Eligibility and Refundability",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0263?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0584",
+     "session": "2019RS",
+     "title": "Earned Income Tax Credit - Individuals Without Qualifying Children - Eligibility and Refundability",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0584?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0506",
+     "session": "2019RS",
+     "title": "Maryland Department of Health - Mental Health and Substance Use Disorder Services - Needs Assessment Study",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0506?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0621",
+     "session": "2019RS",
+     "title": "Correctional Services - Diminution Credits - Education",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0621?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0294",
+     "session": "2019RS",
+     "title": "Correctional Services - Diminution Credits - Education",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0294?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+   "name": "Benjamin F. Kramer",
+   "topic": "Medicare / Medicaid",
+   "chair": 2,
+   "chair_text": "lower Medicare age to 55 and expand Medicaid significantly",
+   "refuse_chair_gate": false,
+   "reasoning": "Kramer supports expanding Medicaid and protecting Medicare. He has backed healthcare safety net programs serving vulnerable populations in his district.",
+   "n_candidates": 62,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0659",
+     "session": "2020RS",
+     "title": "Insurance - Medicare Supplement Policy Plans - Open Enrollment Period Following Birthday",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0659?ys=2020RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0653",
+     "session": "2020RS",
+     "title": "Insurance - Medicare Supplement Policy Plans - Open Enrollment Period Following Birthday",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0653?ys=2020RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0682",
+     "session": "2021RS",
+     "title": "Insurance - Medicare Supplement Policy Plans - Open Enrollment Period Following Birthday",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0682?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1063",
+     "session": "2021RS",
+     "title": "Insurance - Medicare Supplement Policy Plans - Open Enrollment Period Following Birthday",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1063?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1267",
+     "session": "2013RS",
+     "title": "Nursing Homes and Assisted Living Facilities - Sex Offenders",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1267?ys=2013RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "name": "Benjamin F. Kramer",
+   "topic": "Economic Development Incentives",
+   "chair": 3,
+   "chair_text": "Targeted incentives for specific industries with community benefit agreements and job quality requirements",
+   "refuse_chair_gate": false,
+   "reasoning": "Kramer supports economic development through public investment in infrastructure, education, and workforce development. He backs tech sector growth and small business support.",
+   "n_candidates": 67,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0303",
+     "session": "2018RS",
+     "title": "Housing and Community Development - Neighborhood and Community Assistance Program Tax Credit - Maximum Contributions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0303?ys=2018RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 5
+    },
+    {
+     "number": "SB0430",
+     "session": "2019RS",
+     "title": "Maryland Health Care Commission - Authorized Prescribers - Reporting of Financial Gratuities or Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0430?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0696",
+     "session": "2019RS",
+     "title": "Maryland Health Care Commission - Authorized Prescribers - Reporting of Financial Gratuities or Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0696?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0496",
+     "session": "2021RS",
+     "title": "Recovery for the Economy, Livelihoods, Industries, Entrepreneurs, and Families (RELIEF) Act",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0496?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 2
+    },
+    {
+     "number": "HB0612",
+     "session": "2021RS",
+     "title": "Recovery for the Economy, Livelihoods, Industries, Entrepreneurs, and Families (RELIEF) Act",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0612?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 2
+    }
+   ]
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "name": "Benjamin F. Kramer",
+   "topic": "Environmental Protection vs. Development",
+   "chair": 3,
+   "chair_text": "Apply consistent environmental standards while giving developers reasonable flexibility on implementation",
+   "refuse_chair_gate": false,
+   "reasoning": "Kramer has supported Chesapeake Bay protection, clean water standards, and local environmental legislation. He serves on committees overseeing environmental policy.",
+   "n_candidates": 35,
+   "n_discriminating": 1,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0807",
+     "session": "2025RS",
+     "title": "Environment - Local Building Energy Performance Standards - Authorization",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0807?ys=2025RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Benjamin F. Kramer",
+   "topic": "Taxation and Public Spending",
+   "chair": 2,
+   "chair_text": "Moderately raise taxes on wealthy people and large companies to fund existing services",
+   "refuse_chair_gate": false,
+   "reasoning": "Kramer supports progressive taxation to fund public education and services. He voted for the Blueprint for Maryland's Future funding mechanisms including higher corporate and income taxes.",
+   "n_candidates": 150,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0683",
+     "session": "2013RS",
+     "title": "Tobacco Taxes - Healthy Maryland Initiative",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0683?ys=2013RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0700",
+     "session": "2013RS",
+     "title": "Tobacco Taxes - Healthy Maryland Initiative",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0700?ys=2013RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1521",
+     "session": "2014RS",
+     "title": "Income Tax Checkoff - Maryland Veterans Trust Fund",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1521?ys=2014RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0686",
+     "session": "2015RS",
+     "title": "Income Tax Checkoff - Maryland Veterans Trust Fund",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0686?ys=2015RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0991",
+     "session": "2015RS",
+     "title": "Interest Rate on Tax Deficiencies and Refunds",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0991?ys=2015RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "name": "C. Anthony Muse",
+   "topic": "Economic Development Incentives",
+   "chair": 3,
+   "chair_text": "Targeted incentives for specific industries with community benefit agreements and job quality requirements",
+   "refuse_chair_gate": false,
+   "reasoning": "Muse supports economic development investment in Prince George's County including job creation and community reinvestment programs.",
+   "n_candidates": 73,
+   "n_discriminating": 3,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0756",
+     "session": "2014RS",
+     "title": "Commission on Kidney Disease - End-Stage Renal Disease Quality Incentive Program - Regulations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0756?ys=2014RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0869",
+     "session": "2017RS",
+     "title": "Higher Education - Community Colleges - Workforce Development Sequence Grants and Scholarships",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0869?ys=2017RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0868",
+     "session": "2017RS",
+     "title": "Higher Education - Community Colleges - Workforce Development Sequence Grants and Scholarships",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0868?ys=2017RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "name": "C. Anthony Muse",
+   "topic": "Public Safety Approach",
+   "chair": 3,
+   "chair_text": "Keep current public safety funding while adding crisis response teams for mental health and addiction calls",
+   "refuse_chair_gate": false,
+   "reasoning": "Muse supports strong public safety in Prince George's County including community policing and crime prevention programs. He takes a balanced approach to public safety and criminal justice.",
+   "n_candidates": 265,
+   "n_discriminating": 37,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0589",
+     "session": "2016RS",
+     "title": "Public Safety - SWAT Teams - Reporting and Limitations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0589?ys=2016RS",
+     "seated": 2,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0521",
+     "session": "2016RS",
+     "title": "Public Safety - SWAT Teams - Reporting and Limitations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0521?ys=2016RS",
+     "seated": 2,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0941",
+     "session": "2017RS",
+     "title": "Public Safety - SWAT Teams - Standards",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0941?ys=2017RS",
+     "seated": 2,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0739",
+     "session": "2017RS",
+     "title": "Public Safety - SWAT Teams - Standards",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0739?ys=2017RS",
+     "seated": 2,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0544",
+     "session": "2013RS",
+     "title": "Public Safety - Ammunition - Sales Records",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0544?ys=2013RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "C. Anthony Muse",
+   "topic": "Taxation and Public Spending",
+   "chair": 2,
+   "chair_text": "Moderately raise taxes on wealthy people and large companies to fund existing services",
+   "refuse_chair_gate": false,
+   "reasoning": "Muse supports progressive taxation to fund public services and education. He backed the Blueprint for Maryland's Future and public investment in his district.",
+   "n_candidates": 127,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0640",
+     "session": "2013RS",
+     "title": "Civil Cases - Maryland Legal Services Corporation Fund - Surcharges - Extension of Termination Date",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0640?ys=2013RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0838",
+     "session": "2013RS",
+     "title": "Civil Cases - Maryland Legal Services Corporation Fund - Surcharges - Extension of Termination Date",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0838?ys=2013RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0811",
+     "session": "2017RS",
+     "title": "Civil Cases - Maryland Legal Services Corporation Fund - Surcharges - Repeal of Sunset",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0811?ys=2017RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0972",
+     "session": "2017RS",
+     "title": "Civil Cases - Maryland Legal Services Corporation Fund - Surcharges - Repeal of Sunset",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0972?ys=2017RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0589",
+     "session": "2014RS",
+     "title": "Tobacco Taxes - Healthy Maryland Initiative",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0589?ys=2014RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "name": "Cheryl C. Kagan",
+   "topic": "Campaign Finance Reform",
+   "chair": 2,
+   "chair_text": "strictly limit corporate donations and dark money groups",
+   "refuse_chair_gate": false,
+   "reasoning": "Kagan has been a consistent advocate for campaign finance transparency and reform, supporting disclosure requirements and limits on dark money in Maryland elections.",
+   "n_candidates": 39,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0674",
+     "session": "2016RS",
+     "title": "Teachers' Retirement and Pension System - Employer Contribution for Local Employees",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0674?ys=2016RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0934",
+     "session": "2016RS",
+     "title": "Teachers' Retirement and Pension System - Employer Contribution for Local Employees",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0934?ys=2016RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0650",
+     "session": "2018RS",
+     "title": "Income Tax Subtraction Modification - College Savings Plan Accounts - Contributions (College Savings Tax Enhancement Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0650?ys=2018RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0131",
+     "session": "2018RS",
+     "title": "Income Tax Subtraction Modification - College Savings Plan Accounts - Contributions (College Savings Tax Enhancement Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0131?ys=2018RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0202",
+     "session": "2020RS",
+     "title": "Public Ethics - Executive Branch - Lobbying by Former Secretaries of Principal Departments (Shut the Revolving Door Act of 2020)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0202?ys=2020RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "name": "Cheryl C. Kagan",
+   "topic": "Economic Development Incentives",
+   "chair": 3,
+   "chair_text": "Targeted incentives for specific industries with community benefit agreements and job quality requirements",
+   "refuse_chair_gate": false,
+   "reasoning": "Kagan supports economic development through public investment and supports workforce development programs that benefit Montgomery County's technology and government contractor economy.",
+   "n_candidates": 66,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0496",
+     "session": "2021RS",
+     "title": "Recovery for the Economy, Livelihoods, Industries, Entrepreneurs, and Families (RELIEF) Act",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0496?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 2
+    },
+    {
+     "number": "HB0612",
+     "session": "2021RS",
+     "title": "Recovery for the Economy, Livelihoods, Industries, Entrepreneurs, and Families (RELIEF) Act",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0612?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 2
+    },
+    {
+     "number": "SB0547",
+     "session": "2023RS",
+     "title": "Office of Statewide Broadband - Study of Broadband Expansion Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0547?ys=2023RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0551",
+     "session": "2023RS",
+     "title": "Office of Statewide Broadband - Study of Broadband Expansion Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0551?ys=2023RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0294",
+     "session": "2016RS",
+     "title": "Earned Income Tax Credit - Expansion",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0294?ys=2016RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Cheryl C. Kagan",
+   "topic": "Immigration and Treatment of Immigrants",
+   "chair": 2,
+   "chair_text": "Keep legal immigration open and let most residents use public services regardless of legal status",
+   "refuse_chair_gate": false,
+   "reasoning": "Kagan represents a district with significant immigrant communities including many federal workers. She supports comprehensive immigration reform and opposes harsh immigration enforcement.",
+   "n_candidates": 13,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0850",
+     "session": "2020RS",
+     "title": "Correctional Services - Immigration Detention - Prohibition (Dignity Not Detention Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0850?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    },
+    {
+     "number": "HB0677",
+     "session": "2020RS",
+     "title": "Correctional Services - Immigration Detention - Prohibition (Dignity Not Detention Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0677?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    },
+    {
+     "number": "HB1362",
+     "session": "2017RS",
+     "title": "Criminal Procedure - Immigration - Community Trust",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1362?ys=2017RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 3
+    },
+    {
+     "number": "SB0144",
+     "session": "2019RS",
+     "title": "Victims and Witnesses - U Nonimmigrant Status - Certification of Victim Helpfulness",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0144?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 4
+    },
+    {
+     "number": "HB0214",
+     "session": "2019RS",
+     "title": "Victims and Witnesses - U Nonimmigrant Status - Certification of Victim Helpfulness",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0214?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 4
+    }
+   ]
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "name": "Cheryl C. Kagan",
+   "topic": "Public Safety Approach",
+   "chair": 3,
+   "chair_text": "Keep current public safety funding while adding crisis response teams for mental health and addiction calls",
+   "refuse_chair_gate": false,
+   "reasoning": "Kagan supports a community-centered approach to public safety, including criminal justice reforms and addressing root causes of crime through investment in communities.",
+   "n_candidates": 163,
+   "n_discriminating": 55,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB1091",
+     "session": "2024RS",
+     "title": "Public Safety - Reproductive Health Care Clinic Security Grant Program - Establishment (Protecting Reproductive Health Care Clinics Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1091?ys=2024RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB1090",
+     "session": "2024RS",
+     "title": "Maryland Center for School Safety - Secure Schools Emergency Response Grant Program - Established",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1090?ys=2024RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 4
+    },
+    {
+     "number": "HB1167",
+     "session": "2024RS",
+     "title": "Maryland Center for School Safety - Secure Schools Emergency Response Grant Program - Established",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1167?ys=2024RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 4
+    },
+    {
+     "number": "SB0498",
+     "session": "2015RS",
+     "title": "Public Safety - Statewide Accounting of Sexual Assault Evidence Kits",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0498?ys=2015RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0462",
+     "session": "2015RS",
+     "title": "Public Safety - Statewide Accounting of Sexual Assault Evidence Kits",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0462?ys=2015RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Cheryl C. Kagan",
+   "topic": "Taxation and Public Spending",
+   "chair": 2,
+   "chair_text": "Moderately raise taxes on wealthy people and large companies to fund existing services",
+   "refuse_chair_gate": false,
+   "reasoning": "Kagan supports progressive taxation to fund public services. She backs higher taxes on corporations and wealthy individuals to fund education and healthcare.",
+   "n_candidates": 129,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0115",
+     "session": "2015RS",
+     "title": "Income Tax Subtraction Modification - Retirement Income of Law Enforcement, Correctional Officer, Fire, Rescue, and Emergency Services Personnel (Hometown Heroes)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0115?ys=2015RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0099",
+     "session": "2015RS",
+     "title": "Income Tax Subtraction Modification - Retirement Income of Law Enforcement, Correctional Officer, Fire, Rescue, and Emergency Services Personnel (Hometown Heroes)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0099?ys=2015RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0263",
+     "session": "2016RS",
+     "title": "Payment in Lieu of Taxes - State Forests, State Parks, and Wildlife Management Areas",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0263?ys=2016RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1409",
+     "session": "2016RS",
+     "title": "Payment in Lieu of Taxes - State Forest and State Park Land",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1409?ys=2016RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0295",
+     "session": "2016RS",
+     "title": "Income Tax - Earned Income Credit - Refundability",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0295?ys=2016RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Jeff Waldstreicher",
+   "topic": "Immigration and Treatment of Immigrants",
+   "chair": 2,
+   "chair_text": "Keep legal immigration open and let most residents use public services regardless of legal status",
+   "refuse_chair_gate": false,
+   "reasoning": "Waldstreicher represents a district with many immigrants and federal workers. He strongly supports comprehensive immigration reform and state-level immigrant protections.",
+   "n_candidates": 14,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0493",
+     "session": "2016RS",
+     "title": "Criminal Law - Extortion - Immigration Status",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0493?ys=2016RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    },
+    {
+     "number": "SB0178",
+     "session": "2016RS",
+     "title": "Criminal Law - Extortion - Immigration Status",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0178?ys=2016RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    },
+    {
+     "number": "SB0817",
+     "session": "2019RS",
+     "title": "Correctional Facilities and Police Officers - Procedures - Immigration Status",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0817?ys=2019RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    },
+    {
+     "number": "HB0913",
+     "session": "2019RS",
+     "title": "Correctional Facilities and Police Officers – Procedures – Immigration Status",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0913?ys=2019RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    },
+    {
+     "number": "SB0875",
+     "session": "2022RS",
+     "title": "Discrimination in Housing – Citizenship, Immigration Status, and National Origin",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0875?ys=2022RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    }
+   ]
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+   "name": "Jeff Waldstreicher",
+   "topic": "Same-Sex Marriage",
+   "chair": 1,
+   "chair_text": "require all states to recognize same-sex marriages and provide full federal benefits and protections.",
+   "refuse_chair_gate": false,
+   "reasoning": "Waldstreicher has been a vocal supporter of same-sex marriage and LGBTQ equality. He voted for LGBTQ non-discrimination legislation and opposed anti-trans bills.",
+   "n_candidates": 2,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0554",
+     "session": "2020RS",
+     "title": "Crimes - Mitigation - Sex, Gender Identity, or Sexual Orientation",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0554?ys=2020RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0488",
+     "session": "2020RS",
+     "title": "Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0488?ys=2020RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Jeff Waldstreicher",
+   "topic": "Taxation and Public Spending",
+   "chair": 2,
+   "chair_text": "Moderately raise taxes on wealthy people and large companies to fund existing services",
+   "refuse_chair_gate": false,
+   "reasoning": "Waldstreicher supports progressive tax reform including higher taxes on corporations and wealthy individuals to fund the Blueprint for Maryland's Future education investments.",
+   "n_candidates": 151,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0838",
+     "session": "2013RS",
+     "title": "Civil Cases - Maryland Legal Services Corporation Fund - Surcharges - Extension of Termination Date",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0838?ys=2013RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0640",
+     "session": "2013RS",
+     "title": "Civil Cases - Maryland Legal Services Corporation Fund - Surcharges - Extension of Termination Date",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0640?ys=2013RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0198",
+     "session": "2014RS",
+     "title": "Income Tax - Earned Income Credit - Refundable Amount",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0198?ys=2014RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0727",
+     "session": "2014RS",
+     "title": "Income Tax - Earned Income Credit - Refundable Amount",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0727?ys=2014RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0443",
+     "session": "2014RS",
+     "title": "Tobacco Taxes - Healthy Maryland Initiative",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0443?ys=2014RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "name": "Jeff Waldstreicher",
+   "topic": "Transgender Athletes",
+   "chair": 2,
+   "chair_text": "should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition.",
+   "refuse_chair_gate": false,
+   "reasoning": "Waldstreicher strongly supports transgender student rights including fair access to school sports. He opposed restrictions on transgender athletes in Maryland legislation.",
+   "n_candidates": 5,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0554",
+     "session": "2020RS",
+     "title": "Crimes - Mitigation - Sex, Gender Identity, or Sexual Orientation",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0554?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0488",
+     "session": "2020RS",
+     "title": "Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0488?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0505",
+     "session": "2018RS",
+     "title": "Use of Public Funds - Playground and Athletic Field Surfaces - Preferences and Prohibitions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0505?ys=2018RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0763",
+     "session": "2018RS",
+     "title": "Use of Public Funds - Playground and Athletic Field Surfaces - Preferences and Prohibitions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0763?ys=2018RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0086",
+     "session": "2025RS",
+     "title": "Online Sports Wagering - Problem Gambling Resources - Required Contact Information",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0086?ys=2025RS",
+     "seated": 0,
+     "rival": 1,
+     "rival_chair": 3
+    }
+   ]
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "name": "Jeff Waldstreicher",
+   "topic": "Bail and Pretrial Decisions",
+   "chair": 2,
+   "chair_text": "Be skeptical. Hold prosecution to strict standards — especially on evidence handling and plea deals.",
+   "refuse_chair_gate": false,
+   "reasoning": "As a Judicial Proceedings Committee member, Waldstreicher has voted to reform Maryland's cash bail system to reduce pretrial detention for nonviolent offenders.",
+   "n_candidates": 37,
+   "n_discriminating": 2,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0999",
+     "session": "2020RS",
+     "title": "Correctional Services - Restrictive Housing - Direct Release",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0999?ys=2020RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0740",
+     "session": "2020RS",
+     "title": "Correctional Services - Restrictive Housing - Direct Release",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0740?ys=2020RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+   "name": "Jeff Waldstreicher",
+   "topic": "Campaign Finance Reform",
+   "chair": 2,
+   "chair_text": "strictly limit corporate donations and dark money groups",
+   "refuse_chair_gate": false,
+   "reasoning": "Waldstreicher supports campaign finance reform and transparency. He has backed disclosure requirements for dark money spending in Maryland elections.",
+   "n_candidates": 21,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0358",
+     "session": "2022RS",
+     "title": "Public Financing Act – State Senate and House of Delegates",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0358?ys=2022RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0412",
+     "session": "2025RS",
+     "title": "Income Tax - Subtraction Modification - Maryland 529 Plan Contributions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0412?ys=2025RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB1481",
+     "session": "2013RS",
+     "title": "Medical Records - Disclosure in Response to Compulsory Process",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1481?ys=2013RS",
+     "seated": 0,
+     "rival": 1,
+     "rival_chair": 3
+    },
+    {
+     "number": "SB0557",
+     "session": "2013RS",
+     "title": "Medical Records - Disclosure in Response to Compulsory Process",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0557?ys=2013RS",
+     "seated": 0,
+     "rival": 1,
+     "rival_chair": 3
+    },
+    {
+     "number": "HB0331",
+     "session": "2014RS",
+     "title": "Electricity - Smart Meters - Disclosure of Usage Data",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0331?ys=2014RS",
+     "seated": 0,
+     "rival": 1,
+     "rival_chair": 3
+    }
+   ]
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+   "name": "Jeff Waldstreicher",
+   "topic": "Criminal Justice Approach",
+   "chair": 2,
+   "chair_text": "Giving the person a fair chance to make things right — through treatment, community service, or restitution.",
+   "refuse_chair_gate": false,
+   "reasoning": "Waldstreicher serves on the Judicial Proceedings Committee and has supported criminal justice reform measures including sentencing reform and second-chance opportunities for formerly incarcerated individuals.",
+   "n_candidates": 110,
+   "n_discriminating": 28,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0829",
+     "session": "2013RS",
+     "title": "Correctional Services - Pregnant Detainees and Inmates - Restraint Restrictions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0829?ys=2013RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0952",
+     "session": "2013RS",
+     "title": "Correctional Services - Inmate Telephone Services - Legal Counsel",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0952?ys=2013RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0782",
+     "session": "2013RS",
+     "title": "Correctional Services - Inmate Telephone Services - Contracts",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0782?ys=2013RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB1138",
+     "session": "2013RS",
+     "title": "Correctional Services - Inmate Welfare Fund - Telephone Financial Assistance",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1138?ys=2013RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0778",
+     "session": "2013RS",
+     "title": "Correctional Services - Inmate Welfare Fund - Telephone Financial Assistance",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0778?ys=2013RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "name": "Jeff Waldstreicher",
+   "topic": "Economic Development Incentives",
+   "chair": 3,
+   "chair_text": "Targeted incentives for specific industries with community benefit agreements and job quality requirements",
+   "refuse_chair_gate": false,
+   "reasoning": "Waldstreicher supports economic development through public investment and innovation economy support. He backs workforce training and technology sector growth in Montgomery County.",
+   "n_candidates": 77,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0430",
+     "session": "2019RS",
+     "title": "Maryland Health Care Commission - Authorized Prescribers - Reporting of Financial Gratuities or Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0430?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0696",
+     "session": "2019RS",
+     "title": "Maryland Health Care Commission - Authorized Prescribers - Reporting of Financial Gratuities or Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0696?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0496",
+     "session": "2021RS",
+     "title": "Recovery for the Economy, Livelihoods, Industries, Entrepreneurs, and Families (RELIEF) Act",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0496?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 2
+    },
+    {
+     "number": "HB0612",
+     "session": "2021RS",
+     "title": "Recovery for the Economy, Livelihoods, Industries, Entrepreneurs, and Families (RELIEF) Act",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0612?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 2
+    },
+    {
+     "number": "HB0462",
+     "session": "2022RS",
+     "title": "Health Occupations - Authorized Prescribers - Reporting of Financial Gratuities or Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0462?ys=2022RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "name": "Jeff Waldstreicher",
+   "topic": "Public Safety Approach",
+   "chair": 3,
+   "chair_text": "Keep current public safety funding while adding crisis response teams for mental health and addiction calls",
+   "refuse_chair_gate": false,
+   "reasoning": "Waldstreicher supports a holistic public safety approach including criminal justice reform and community investment. He backed police accountability legislation while supporting community policing.",
+   "n_candidates": 398,
+   "n_discriminating": 48,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0677",
+     "session": "2023RS",
+     "title": "Maryland Center for School Safety – Statewide Secure Schools Emergency Response Program – Established",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0677?ys=2023RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 4
+    },
+    {
+     "number": "SB1090",
+     "session": "2024RS",
+     "title": "Maryland Center for School Safety - Secure Schools Emergency Response Grant Program - Established",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1090?ys=2024RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 4
+    },
+    {
+     "number": "HB1167",
+     "session": "2024RS",
+     "title": "Maryland Center for School Safety - Secure Schools Emergency Response Grant Program - Established",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1167?ys=2024RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 4
+    },
+    {
+     "number": "HB1251",
+     "session": "2013RS",
+     "title": "Public Safety - Firearms - Firearms Sales Prohibition",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1251?ys=2013RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB1200",
+     "session": "2014RS",
+     "title": "Public Safety - Eyewitness Identification - Procedures",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1200?ys=2014RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+   "name": "Jim Rosapepe",
+   "topic": "Ukraine - Russia Conflict",
+   "chair": 2,
+   "chair_text": "continue providing current levels of military and economic aid to help Ukraine defend itself.",
+   "refuse_chair_gate": false,
+   "reasoning": "Rosapepe served as US Ambassador to Romania under President Clinton, giving him strong Eastern European security awareness. He supports US assistance to Ukraine defending against Russian aggression.",
+   "n_candidates": 5,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0526",
+     "session": "2018RS",
+     "title": "Labor and Employment - Regulation of Farm Labor Contractors and Foreign Labor Contractors",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0526?ys=2018RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB1493",
+     "session": "2018RS",
+     "title": "Labor and Employment - Regulation of Farm Labor Contractors and Foreign Labor Contractors",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1493?ys=2018RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0422",
+     "session": "2024RS",
+     "title": "Income Tax - Subtraction Modification - Foreign Service Retirement Income",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0422?ys=2024RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB1005",
+     "session": "2022RS",
+     "title": "State Retirement and Pension System - Divestment From Russia",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1005?ys=2022RS",
+     "seated": 0,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1482",
+     "session": "2022RS",
+     "title": "State Retirement and Pension System - Divestment From Russia",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1482?ys=2022RS",
+     "seated": 0,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "name": "Jim Rosapepe",
+   "topic": "Voting Rights and Electoral Integrity",
+   "chair": 2,
+   "chair_text": "expand early voting periods and make mail-in voting available to all voters without requiring an excuse",
+   "refuse_chair_gate": false,
+   "reasoning": "Rosapepe is a consistent voting rights supporter including automatic voter registration and early voting expansion. As a former Democratic leader, he strongly backs voter access.",
+   "n_candidates": 50,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0757",
+     "session": "2020RS",
+     "title": "Election Law - Voting Systems - Accessibility for Voters With Disabilities",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0757?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1314",
+     "session": "2020RS",
+     "title": "Election Law - Voting Systems - Accessibility for Voters With Disabilities",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1314?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0132",
+     "session": "2026RS",
+     "title": "Election Law - Affiliating With a Party and Voting - Unaffiliated Voters",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0132?ys=2026RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0156",
+     "session": "2026RS",
+     "title": "Election Law - Affiliating With a Party and Voting - Unaffiliated Voters",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0156?ys=2026RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0279",
+     "session": "2013RS",
+     "title": "Election Law - Improving Access to Voting",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0279?ys=2013RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "name": "Jim Rosapepe",
+   "topic": "Public Safety Approach",
+   "chair": 3,
+   "chair_text": "Keep current public safety funding while adding crisis response teams for mental health and addiction calls",
+   "refuse_chair_gate": false,
+   "reasoning": "Rosapepe supports a balanced public safety approach combining enforcement with prevention and mental health resources. He backed police accountability reforms.",
+   "n_candidates": 190,
+   "n_discriminating": 54,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0454",
+     "session": "2020RS",
+     "title": "Public Safety – Mandatory Mental Health Training – First Responders and Law Enforcement Officers",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0454?ys=2020RS",
+     "seated": 3,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0540",
+     "session": "2013RS",
+     "title": "Public Safety - Regulated Firearms - Reporting Lost or Stolen",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0540?ys=2013RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0281",
+     "session": "2013RS",
+     "title": "Firearm Safety Act of 2013",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0281?ys=2013RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0294",
+     "session": "2013RS",
+     "title": "Firearm Safety Act of 2013",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0294?ys=2013RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0254",
+     "session": "2014RS",
+     "title": "Public Safety - Fire, Rescue, and Ambulance Funds - Distribution",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0254?ys=2014RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Jim Rosapepe",
+   "topic": "Taxation and Public Spending",
+   "chair": 2,
+   "chair_text": "Moderately raise taxes on wealthy people and large companies to fund existing services",
+   "refuse_chair_gate": false,
+   "reasoning": "Rosapepe supports progressive taxation to fund public investment. He backed the Blueprint for Maryland's Future funding mechanisms.",
+   "n_candidates": 328,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0700",
+     "session": "2013RS",
+     "title": "Tobacco Taxes - Healthy Maryland Initiative",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0700?ys=2013RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0683",
+     "session": "2013RS",
+     "title": "Tobacco Taxes - Healthy Maryland Initiative",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0683?ys=2013RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0589",
+     "session": "2014RS",
+     "title": "Tobacco Taxes - Healthy Maryland Initiative",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0589?ys=2014RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0443",
+     "session": "2014RS",
+     "title": "Tobacco Taxes - Healthy Maryland Initiative",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0443?ys=2014RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0604",
+     "session": "2014RS",
+     "title": "Income Tax Forms - Graphical Representation of General Fund Expenditures",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0604?ys=2014RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "name": "Joanne C. Benson",
+   "topic": "Economic Development Incentives",
+   "chair": 3,
+   "chair_text": "Targeted incentives for specific industries with community benefit agreements and job quality requirements",
+   "refuse_chair_gate": false,
+   "reasoning": "Benson supports economic development investment in Prince George's County including job training programs and infrastructure investment for underserved communities.",
+   "n_candidates": 156,
+   "n_discriminating": 9,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0515",
+     "session": "2019RS",
+     "title": "Community Colleges - Workforce Readiness Grant Program - Established",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0515?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB1115",
+     "session": "2019RS",
+     "title": "Community Colleges - Workforce Readiness Grant Program - Established",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1115?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0267",
+     "session": "2022RS",
+     "title": "Income Tax – Healthy Indoor Air Quality Tax Credit",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0267?ys=2022RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0085",
+     "session": "2022RS",
+     "title": "Income Tax – Healthy Indoor Air Quality Tax Credit",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0085?ys=2022RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB1138",
+     "session": "2024RS",
+     "title": "Public Works Contracts - Apprenticeship Requirements (Maryland Workforce Apprenticeship Utilization Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1138?ys=2024RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Joanne C. Benson",
+   "topic": "Taxation and Public Spending",
+   "chair": 2,
+   "chair_text": "Moderately raise taxes on wealthy people and large companies to fund existing services",
+   "refuse_chair_gate": false,
+   "reasoning": "Benson supports progressive taxation to fund public education and services. She voted for the Blueprint for Maryland's Future funding mechanisms and progressive tax reforms.",
+   "n_candidates": 259,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0700",
+     "session": "2013RS",
+     "title": "Tobacco Taxes - Healthy Maryland Initiative",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0700?ys=2013RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0683",
+     "session": "2013RS",
+     "title": "Tobacco Taxes - Healthy Maryland Initiative",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0683?ys=2013RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0703",
+     "session": "2013RS",
+     "title": "Income Tax - Refundable Earned Income Credit",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0703?ys=2013RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0845",
+     "session": "2013RS",
+     "title": "Income Tax - Refundable Earned Income Credit",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0845?ys=2013RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0589",
+     "session": "2014RS",
+     "title": "Tobacco Taxes - Healthy Maryland Initiative",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0589?ys=2014RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "name": "Kevin M. Harris",
+   "topic": "Voting Rights and Electoral Integrity",
+   "chair": 2,
+   "chair_text": "expand early voting periods and make mail-in voting available to all voters without requiring an excuse",
+   "refuse_chair_gate": false,
+   "reasoning": "Harris is a consistent voting rights supporter backing automatic voter registration and early voting expansion.",
+   "n_candidates": 17,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0255",
+     "session": "2026RS",
+     "title": "Voting Rights Act of 2026 - Counties and Municipal Corporations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0255?ys=2026RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0350",
+     "session": "2026RS",
+     "title": "Voting Rights Act of 2026 - Counties and Municipal Corporations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0350?ys=2026RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0292",
+     "session": "2023RS",
+     "title": "Child Care Providers - Registration and Licensing - Exemptions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0292?ys=2023RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0280",
+     "session": "2023RS",
+     "title": "Child Care Providers - Registration and Licensing - Exemptions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0280?ys=2023RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0412",
+     "session": "2024RS",
+     "title": "General Assembly – Special Election to Fill a Vacancy in Office",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0412?ys=2024RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "name": "Kevin M. Harris",
+   "topic": "Economic Development Incentives",
+   "chair": 3,
+   "chair_text": "Targeted incentives for specific industries with community benefit agreements and job quality requirements",
+   "refuse_chair_gate": false,
+   "reasoning": "Harris supports economic development investment in Prince George's County including workforce training and job creation for underserved communities.",
+   "n_candidates": 36,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0551",
+     "session": "2023RS",
+     "title": "Office of Statewide Broadband - Study of Broadband Expansion Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0551?ys=2023RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0547",
+     "session": "2023RS",
+     "title": "Office of Statewide Broadband - Study of Broadband Expansion Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0547?ys=2023RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1281",
+     "session": "2024RS",
+     "title": "Economic Development - Tourism Zones - Designation and Benefits",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1281?ys=2024RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 5
+    },
+    {
+     "number": "SB0014",
+     "session": "2024RS",
+     "title": "Economic Development - Tourism Zones - Designation and Benefits",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0014?ys=2024RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 5
+    },
+    {
+     "number": "HB1258",
+     "session": "2023RS",
+     "title": "Property Tax Credit for Disabled Veterans - Established",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1258?ys=2023RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "name": "Kevin M. Harris",
+   "topic": "Environmental Protection vs. Development",
+   "chair": 3,
+   "chair_text": "Apply consistent environmental standards while giving developers reasonable flexibility on implementation",
+   "refuse_chair_gate": false,
+   "reasoning": "Harris supports environmental justice for communities of color disproportionately affected by pollution in Prince George's County. He backed Chesapeake Bay protections.",
+   "n_candidates": 19,
+   "n_discriminating": 2,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0973",
+     "session": "2025RS",
+     "title": "Maryland Building Performance Standards - Fossil Fuel Use, Energy Conservation, and Electric- and Solar-Ready Standards (Better Buildings Act of 2025)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0973?ys=2025RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0804",
+     "session": "2025RS",
+     "title": "Maryland Building Performance Standards - Fossil Fuel Use, Energy Conservation, and Electric- and Solar-Ready Standards (Better Buildings Act of 2025)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0804?ys=2025RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Kevin M. Harris",
+   "topic": "Immigration and Treatment of Immigrants",
+   "chair": 2,
+   "chair_text": "Keep legal immigration open and let most residents use public services regardless of legal status",
+   "refuse_chair_gate": false,
+   "reasoning": "Harris represents a district with significant immigrant communities. He supports immigrant protections and comprehensive immigration reform.",
+   "n_candidates": 4,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB1006",
+     "session": "2025RS",
+     "title": "Immigration Enforcement - Sensitive Locations - Guidelines and Policies (Protecting Sensitive Locations Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1006?ys=2025RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 3
+    },
+    {
+     "number": "HB1222",
+     "session": "2025RS",
+     "title": "Public Safety - Immigration Enforcement (Maryland Values Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1222?ys=2025RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 3
+    },
+    {
+     "number": "SB0810",
+     "session": "2026RS",
+     "title": "Immigration Enforcement - Expanding Sensitive Locations, Notification, and Guidance (Maryland Values Act of 2026)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0810?ys=2026RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 3
+    },
+    {
+     "number": "HB1341",
+     "session": "2026RS",
+     "title": "Immigration Enforcement - Expanding Sensitive Locations, Notification, and Guidance (Maryland Values Act of 2026)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1341?ys=2026RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 3
+    }
+   ]
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "name": "Nick Charles",
+   "topic": "Voting Rights and Electoral Integrity",
+   "chair": 2,
+   "chair_text": "expand early voting periods and make mail-in voting available to all voters without requiring an excuse",
+   "refuse_chair_gate": false,
+   "reasoning": "Charles is a consistent supporter of voting rights including automatic voter registration and early voting expansion to increase ballot access.",
+   "n_candidates": 32,
+   "n_discriminating": 1,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0616",
+     "session": "2023RS",
+     "title": "Election Law – Early Voting – Number of Days",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0616?ys=2023RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "name": "Nick Charles",
+   "topic": "Economic Development Incentives",
+   "chair": 3,
+   "chair_text": "Targeted incentives for specific industries with community benefit agreements and job quality requirements",
+   "refuse_chair_gate": false,
+   "reasoning": "Charles supports economic development investment in Prince George's County including workforce training and small business support in his district.",
+   "n_candidates": 49,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0551",
+     "session": "2023RS",
+     "title": "Office of Statewide Broadband - Study of Broadband Expansion Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0551?ys=2023RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0547",
+     "session": "2023RS",
+     "title": "Office of Statewide Broadband - Study of Broadband Expansion Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0547?ys=2023RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0313",
+     "session": "2019RS",
+     "title": "State Income and Property Tax Credits - Purple Line Construction Zone",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0313?ys=2019RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0810",
+     "session": "2019RS",
+     "title": "Income Tax - Child and Dependent Care Tax Credit - Alterations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0810?ys=2019RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0870",
+     "session": "2019RS",
+     "title": "Income Tax - Child and Dependent Care Tax Credit - Alterations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0870?ys=2019RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "name": "Nick Charles",
+   "topic": "Public Safety Approach",
+   "chair": 3,
+   "chair_text": "Keep current public safety funding while adding crisis response teams for mental health and addiction calls",
+   "refuse_chair_gate": false,
+   "reasoning": "Charles supports community-centered public safety combining prevention, mental health resources, and police accountability alongside enforcement.",
+   "n_candidates": 87,
+   "n_discriminating": 18,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0786",
+     "session": "2019RS",
+     "title": "Public Safety – Rifles and Shotguns – Secondary Transactions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0786?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0737",
+     "session": "2019RS",
+     "title": "Public Safety – Rifles and Shotguns – Sales, Rentals, Transfers, and Loans",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0737?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0397",
+     "session": "2019RS",
+     "title": "Public Safety - 9-1-1 Emergency Telephone System (Carl Henn's Law)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0397?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0339",
+     "session": "2019RS",
+     "title": "Public Safety - 9-1-1 Emergency Telephone System (Carl Henn's Law)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0339?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0461",
+     "session": "2022RS",
+     "title": "Income Tax Subtraction Modification - Military and Public Safety Retirement Income",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0461?ys=2022RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "cf190bac-9369-4175-bd4b-8ba776697d9c",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Nick Charles",
+   "topic": "Taxation and Public Spending",
+   "chair": 2,
+   "chair_text": "Moderately raise taxes on wealthy people and large companies to fund existing services",
+   "refuse_chair_gate": false,
+   "reasoning": "Charles supports progressive taxation to fund public services and education. He backed the Blueprint for Maryland's Future funding structure.",
+   "n_candidates": 54,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0389",
+     "session": "2020RS",
+     "title": "Income Tax Checkoff - Maryland Veterans Trust Fund",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0389?ys=2020RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0203",
+     "session": "2020RS",
+     "title": "Income Tax Checkoff - Maryland Veterans Trust Fund",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0203?ys=2020RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1104",
+     "session": "2022RS",
+     "title": "Affordable Housing Land Trusts - Funding and Property Tax Exemption",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1104?ys=2022RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0076",
+     "session": "2022RS",
+     "title": "Community Solar Energy Generating Systems - Exemption From Property Taxes",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0076?ys=2022RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0264",
+     "session": "2022RS",
+     "title": "Community Solar Energy Generating Systems - Exemption From Property Taxes",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0264?ys=2022RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "name": "Ron Watson",
+   "topic": "Voting Rights and Electoral Integrity",
+   "chair": 2,
+   "chair_text": "expand early voting periods and make mail-in voting available to all voters without requiring an excuse",
+   "refuse_chair_gate": false,
+   "reasoning": "Watson is a consistent supporter of voting rights including automatic voter registration and early voting expansion in Prince George's County.",
+   "n_candidates": 17,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB1314",
+     "session": "2020RS",
+     "title": "Election Law - Voting Systems - Accessibility for Voters With Disabilities",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1314?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0757",
+     "session": "2020RS",
+     "title": "Election Law - Voting Systems - Accessibility for Voters With Disabilities",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0757?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0342",
+     "session": "2025RS",
+     "title": "Voting Rights Act of 2025 - Counties and Municipal Corporations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0342?ys=2025RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1348",
+     "session": "2020RS",
+     "title": "Criminal Procedure - Sex Offender Registration - Indecent Exposure by Inmate",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1348?ys=2020RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0379",
+     "session": "2023RS",
+     "title": "Election Law - Ballot Issuance, Processing, and Reporting Procedures and 2024 Primary Date",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0379?ys=2023RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "name": "Ron Watson",
+   "topic": "Economic Development Incentives",
+   "chair": 3,
+   "chair_text": "Targeted incentives for specific industries with community benefit agreements and job quality requirements",
+   "refuse_chair_gate": false,
+   "reasoning": "Watson supports economic development through public investment in Prince George's County. He backs job creation and workforce development programs for his constituents.",
+   "n_candidates": 18,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0547",
+     "session": "2023RS",
+     "title": "Office of Statewide Broadband - Study of Broadband Expansion Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0547?ys=2023RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0551",
+     "session": "2023RS",
+     "title": "Office of Statewide Broadband - Study of Broadband Expansion Incentives",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0551?ys=2023RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0810",
+     "session": "2019RS",
+     "title": "Income Tax - Child and Dependent Care Tax Credit - Alterations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0810?ys=2019RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0870",
+     "session": "2019RS",
+     "title": "Income Tax - Child and Dependent Care Tax Credit - Alterations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0870?ys=2019RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0664",
+     "session": "2022RS",
+     "title": "Income Tax – Film Production Activity Tax Credit – Filming Locations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0664?ys=2022RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "name": "Ron Watson",
+   "topic": "Public Safety Approach",
+   "chair": 3,
+   "chair_text": "Keep current public safety funding while adding crisis response teams for mental health and addiction calls",
+   "refuse_chair_gate": false,
+   "reasoning": "Watson supports community-centered public safety including prevention programs, mental health resources, and police accountability alongside enforcement.",
+   "n_candidates": 95,
+   "n_discriminating": 11,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0786",
+     "session": "2019RS",
+     "title": "Public Safety – Rifles and Shotguns – Secondary Transactions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0786?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0737",
+     "session": "2019RS",
+     "title": "Public Safety – Rifles and Shotguns – Sales, Rentals, Transfers, and Loans",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0737?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0397",
+     "session": "2019RS",
+     "title": "Public Safety - 9-1-1 Emergency Telephone System (Carl Henn's Law)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0397?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0339",
+     "session": "2019RS",
+     "title": "Public Safety - 9-1-1 Emergency Telephone System (Carl Henn's Law)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0339?ys=2019RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0001",
+     "session": "2023RS",
+     "title": "Criminal Law - Wearing, Carrying, or Transporting Firearms - Restrictions (Gun Safety Act of 2023)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0001?ys=2023RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Ron Watson",
+   "topic": "Taxation and Public Spending",
+   "chair": 2,
+   "chair_text": "Moderately raise taxes on wealthy people and large companies to fund existing services",
+   "refuse_chair_gate": false,
+   "reasoning": "Watson supports progressive taxation to fund public services. He backed the Blueprint for Maryland's Future funding and higher corporate taxes.",
+   "n_candidates": 43,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0294",
+     "session": "2019RS",
+     "title": "Correctional Services - Diminution Credits - Education",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0294?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0621",
+     "session": "2019RS",
+     "title": "Correctional Services - Diminution Credits - Education",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0621?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB1010",
+     "session": "2022RS",
+     "title": "Motor Fuel Taxes - Tax-Free Period",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1010?ys=2022RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1486",
+     "session": "2022RS",
+     "title": "Motor Fuel Taxes – Tax–Free Period",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1486?ys=2022RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0273",
+     "session": "2023RS",
+     "title": "National Capital Strategic Economic Development Fund - Annual Appropriation and Authorized Uses",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0273?ys=2023RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "name": "Sara Love",
+   "topic": "Environmental Protection vs. Development",
+   "chair": 2,
+   "chair_text": "Protect existing parks and tree canopy strictly; require developers to fully offset any environmental impact",
+   "refuse_chair_gate": false,
+   "reasoning": "As Environment and Transportation Committee member, Love is a strong local environmental advocate. She backs Chesapeake Bay protections, stormwater management, and clean air measures.",
+   "n_candidates": 113,
+   "n_discriminating": 11,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0246",
+     "session": "2019RS",
+     "title": "General Assembly - Fiscal Notes - Environmental Impact Statements",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0246?ys=2019RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0866",
+     "session": "2020RS",
+     "title": "General Assembly - Environmental Impact Statements - Pilot Program",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0866?ys=2020RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1101",
+     "session": "2024RS",
+     "title": "Standing - Environmental and Natural Resources Protection Proceedings (Clean Water Justice Act of 2024)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1101?ys=2024RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0653",
+     "session": "2024RS",
+     "title": "Standing - Environmental and Natural Resources Protection Proceedings (Clean Water Justice Act of 2024)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0653?ys=2024RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0096",
+     "session": "2024RS",
+     "title": "Environment - Impact of Environmental Permits and State Agency Actions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0096?ys=2024RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "name": "Sara Love",
+   "topic": "Voting Rights and Electoral Integrity",
+   "chair": 2,
+   "chair_text": "expand early voting periods and make mail-in voting available to all voters without requiring an excuse",
+   "refuse_chair_gate": false,
+   "reasoning": "Love is a strong supporter of voting access and election integrity from the pro-voter perspective. She backed automatic voter registration and mail voting expansion in Maryland.",
+   "n_candidates": 33,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB1314",
+     "session": "2020RS",
+     "title": "Election Law - Voting Systems - Accessibility for Voters With Disabilities",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1314?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0757",
+     "session": "2020RS",
+     "title": "Election Law - Voting Systems - Accessibility for Voters With Disabilities",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0757?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0269",
+     "session": "2019RS",
+     "title": "Election Law - Voting by Absentee Ballot - Prepaid Postage for the Return of Ballots",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0269?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0343",
+     "session": "2019RS",
+     "title": "Election Law - Voting by Absentee Ballot - Prepaid Postage for Return of Ballots",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0343?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0286",
+     "session": "2019RS",
+     "title": "Election Law - Registration and Voting at Precinct Polling Places",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0286?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "name": "Sara Love",
+   "topic": "Economic Development Incentives",
+   "chair": 3,
+   "chair_text": "Targeted incentives for specific industries with community benefit agreements and job quality requirements",
+   "refuse_chair_gate": false,
+   "reasoning": "Love supports economic development through public investment in education and workforce development. She backed economic development legislation benefiting Montgomery County businesses and workers.",
+   "n_candidates": 20,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0810",
+     "session": "2019RS",
+     "title": "Income Tax - Child and Dependent Care Tax Credit - Alterations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0810?ys=2019RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0870",
+     "session": "2019RS",
+     "title": "Income Tax - Child and Dependent Care Tax Credit - Alterations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0870?ys=2019RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0912",
+     "session": "2020RS",
+     "title": "Maryland Child Tax Credit",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0912?ys=2020RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0638",
+     "session": "2020RS",
+     "title": "Maryland Child Tax Credit",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0638?ys=2020RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0689",
+     "session": "2024RS",
+     "title": "Electric Vehicles – Repeal of Excise Tax Credit and Establishment of Rebate Program",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0689?ys=2024RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "Sara Love",
+   "topic": "Immigration and Treatment of Immigrants",
+   "chair": 2,
+   "chair_text": "Keep legal immigration open and let most residents use public services regardless of legal status",
+   "refuse_chair_gate": false,
+   "reasoning": "Love represents a district with significant immigrant populations. She supports comprehensive immigration reform and opposes harsh enforcement-only approaches.",
+   "n_candidates": 14,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0913",
+     "session": "2019RS",
+     "title": "Correctional Facilities and Police Officers – Procedures – Immigration Status",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0913?ys=2019RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    },
+    {
+     "number": "SB0817",
+     "session": "2019RS",
+     "title": "Correctional Facilities and Police Officers - Procedures - Immigration Status",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0817?ys=2019RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    },
+    {
+     "number": "HB0677",
+     "session": "2020RS",
+     "title": "Correctional Services - Immigration Detention - Prohibition (Dignity Not Detention Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0677?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    },
+    {
+     "number": "SB0850",
+     "session": "2020RS",
+     "title": "Correctional Services - Immigration Detention - Prohibition (Dignity Not Detention Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0850?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    },
+    {
+     "number": "HB0214",
+     "session": "2019RS",
+     "title": "Victims and Witnesses - U Nonimmigrant Status - Certification of Victim Helpfulness",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0214?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 4
+    }
+   ]
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "name": "Sara Love",
+   "topic": "Public Safety Approach",
+   "chair": 3,
+   "chair_text": "Keep current public safety funding while adding crisis response teams for mental health and addiction calls",
+   "refuse_chair_gate": false,
+   "reasoning": "Love supports a balanced public safety approach emphasizing prevention and community investment alongside enforcement. She has backed criminal justice reform while supporting community policing.",
+   "n_candidates": 142,
+   "n_discriminating": 29,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0367",
+     "session": "2019RS",
+     "title": "Public Safety - Education - Firearm Funding",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0367?ys=2019RS",
+     "seated": 2,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0536",
+     "session": "2019RS",
+     "title": "Public Safety - Education - Firearm Funding",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0536?ys=2019RS",
+     "seated": 2,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB1210",
+     "session": "2019RS",
+     "title": "Public Safety - Crisis Intervention Team Technical Assistance Center",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1210?ys=2019RS",
+     "seated": 2,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0815",
+     "session": "2019RS",
+     "title": "Public Safety - Crisis Intervention Team Technical Assistance Center",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0815?ys=2019RS",
+     "seated": 2,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB1078",
+     "session": "2020RS",
+     "title": "Public Safety - Education - Firearm Funding (No Funding for Firearms Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1078?ys=2020RS",
+     "seated": 2,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+   "name": "Sara Love",
+   "topic": "State Redistricting and Gerrymandering",
+   "chair": 2,
+   "chair_text": "independent redistricting commissions with equal representation from both major parties.",
+   "refuse_chair_gate": false,
+   "reasoning": "Love supported independent redistricting reform to reduce partisan gerrymandering in Maryland. She backed efforts to create more transparent and fair district mapping processes.",
+   "n_candidates": 5,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0463",
+     "session": "2019RS",
+     "title": "Congressional Districts - Standards (Anti-Gerrymandering of Maryland's Congressional Districts)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0463?ys=2019RS",
+     "seated": 0,
+     "rival": 1,
+     "rival_chair": 3
+    },
+    {
+     "number": "SB0110",
+     "session": "2019RS",
+     "title": "Congressional Districts - Standards",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0110?ys=2019RS",
+     "seated": 0,
+     "rival": 1,
+     "rival_chair": 3
+    },
+    {
+     "number": "HB1491",
+     "session": "2020RS",
+     "title": "Congressional Districts - Standards (Anti-Gerrymandering of Maryland's Congressional Districts)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1491?ys=2020RS",
+     "seated": 0,
+     "rival": 1,
+     "rival_chair": 3
+    },
+    {
+     "number": "HB1431",
+     "session": "2020RS",
+     "title": "Legislative and Congressional Districts – Criteria and Open Hearing Process (Fair Maps Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1431?ys=2020RS",
+     "seated": 0,
+     "rival": 2,
+     "rival_chair": 3
+    },
+    {
+     "number": "SB0967",
+     "session": "2020RS",
+     "title": "Legislative and Congressional Districts – Criteria and Open Hearing Process (Fair Maps Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0967?ys=2020RS",
+     "seated": 0,
+     "rival": 2,
+     "rival_chair": 3
+    }
+   ]
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Sara Love",
+   "topic": "Taxation and Public Spending",
+   "chair": 2,
+   "chair_text": "Moderately raise taxes on wealthy people and large companies to fund existing services",
+   "refuse_chair_gate": false,
+   "reasoning": "Love supports progressive tax policy. She backs higher taxes on corporations and high earners to fund public services, consistent with her Montgomery County Democratic district.",
+   "n_candidates": 47,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0694",
+     "session": "2025RS",
+     "title": "Correctional Services - Assessment of State Correctional System",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0694?ys=2025RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1157",
+     "session": "2025RS",
+     "title": "Correctional Services - Assessment of State Correctional System",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1157?ys=2025RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0246",
+     "session": "2019RS",
+     "title": "General Assembly - Fiscal Notes - Environmental Impact Statements",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0246?ys=2019RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0262",
+     "session": "2019RS",
+     "title": "Higher Education - Tuition Rates - Exemptions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0262?ys=2019RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0537",
+     "session": "2019RS",
+     "title": "Higher Education - Tuition Rates - Exemptions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0537?ys=2019RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "name": "Sara Love",
+   "topic": "Transgender Athletes",
+   "chair": 2,
+   "chair_text": "should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition.",
+   "refuse_chair_gate": false,
+   "reasoning": "Love supports inclusive policies for transgender athletes. She backed Maryland legislation protecting transgender student rights and opposed restrictive bills targeting trans youth.",
+   "n_candidates": 11,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0488",
+     "session": "2020RS",
+     "title": "Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0488?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0554",
+     "session": "2020RS",
+     "title": "Crimes - Mitigation - Sex, Gender Identity, or Sexual Orientation",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0554?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0548",
+     "session": "2019RS",
+     "title": "Collective Bargaining - Student Athletes",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0548?ys=2019RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0533",
+     "session": "2020RS",
+     "title": "Higher Education – Council on the Fair Treatment of Student Athletes (Jordan McNair Safe and Fair Play Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0533?ys=2020RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0518",
+     "session": "2020RS",
+     "title": "Higher Education – Council on the Fair Treatment of Student Athletes (Jordan McNair Safe and Fair Play Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0518?ys=2020RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "name": "Shaneka Henson",
+   "topic": "Environmental Protection vs. Development",
+   "chair": 2,
+   "chair_text": "Protect existing parks and tree canopy strictly; require developers to fully offset any environmental impact",
+   "refuse_chair_gate": false,
+   "reasoning": "Henson represents the Annapolis area on the Chesapeake Bay and is a strong advocate for Bay protection, clean water standards, and stormwater management.",
+   "n_candidates": 24,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0596",
+     "session": "2022RS",
+     "title": "Constitutional Amendment - Environmental Rights",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0596?ys=2022RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0783",
+     "session": "2022RS",
+     "title": "Constitutional Amendment - Environmental Rights",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0783?ys=2022RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1083",
+     "session": "2022RS",
+     "title": "County and Municipal Street Lighting Investment Act",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1083?ys=2022RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0376",
+     "session": "2022RS",
+     "title": "County and Municipal Street Lighting Investment Act",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0376?ys=2022RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1428",
+     "session": "2020RS",
+     "title": "Environment - Higher Education Facilities - Mold Hazards and Mold or Moisture Problems",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1428?ys=2020RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+   "name": "Shaneka Henson",
+   "topic": "Voting Rights and Electoral Integrity",
+   "chair": 2,
+   "chair_text": "expand early voting periods and make mail-in voting available to all voters without requiring an excuse",
+   "refuse_chair_gate": false,
+   "reasoning": "Henson consistently backs voting rights including automatic voter registration and early voting expansion.",
+   "n_candidates": 23,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0881",
+     "session": "2020RS",
+     "title": "Election Law - Voting by Absentee Ballot - Prepaid Postage for Return of Ballots",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0881?ys=2020RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0033",
+     "session": "2020RS",
+     "title": "Election Law - Voting by Absentee Ballot - Prepaid Postage for Return of Ballots",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0033?ys=2020RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0053",
+     "session": "2021RS",
+     "title": "Election Law - Voting Rights - Imprisoned Felons",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0053?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0342",
+     "session": "2025RS",
+     "title": "Voting Rights Act of 2025 - Counties and Municipal Corporations",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0342?ys=2025RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0200",
+     "session": "2020RS",
+     "title": "Vehicle Laws - Registration Plate Frames and Borders - Enforcement",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0200?ys=2020RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "name": "Shaneka Henson",
+   "topic": "Economic Development Incentives",
+   "chair": 3,
+   "chair_text": "Targeted incentives for specific industries with community benefit agreements and job quality requirements",
+   "refuse_chair_gate": false,
+   "reasoning": "Henson supports economic development for Annapolis and Anne Arundel County including small business support and workforce development programs.",
+   "n_candidates": 34,
+   "n_discriminating": 2,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0897",
+     "session": "2023RS",
+     "title": "Homeowners' Property Tax Credit - Qualified Homeowner - Application and Certification Requirements",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0897?ys=2023RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0826",
+     "session": "2023RS",
+     "title": "Homeowners' Property Tax Credit - Qualified Homeowner - Application and Certification Requirements",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0826?ys=2023RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+   "name": "Shaneka Henson",
+   "topic": "Public Safety Approach",
+   "chair": 3,
+   "chair_text": "Keep current public safety funding while adding crisis response teams for mental health and addiction calls",
+   "refuse_chair_gate": false,
+   "reasoning": "Henson supports a balanced public safety approach combining prevention, mental health resources, and community policing alongside accountability measures.",
+   "n_candidates": 76,
+   "n_discriminating": 20,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB1167",
+     "session": "2024RS",
+     "title": "Maryland Center for School Safety - Secure Schools Emergency Response Grant Program - Established",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1167?ys=2024RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 4
+    },
+    {
+     "number": "SB1090",
+     "session": "2024RS",
+     "title": "Maryland Center for School Safety - Secure Schools Emergency Response Grant Program - Established",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1090?ys=2024RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 4
+    },
+    {
+     "number": "HB1501",
+     "session": "2020RS",
+     "title": "Public Safety – Regulated Firearms – Reporting Loss or Theft",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1501?ys=2020RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0093",
+     "session": "2021RS",
+     "title": "Public Safety - Local Youth Violence Review Committees",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0093?ys=2021RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0406",
+     "session": "2021RS",
+     "title": "Public Safety - Local Youth Violence Review Committees",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0406?ys=2021RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "Shaneka Henson",
+   "topic": "Taxation and Public Spending",
+   "chair": 2,
+   "chair_text": "Moderately raise taxes on wealthy people and large companies to fund existing services",
+   "refuse_chair_gate": false,
+   "reasoning": "Henson supports progressive taxation to fund public services and education. She backed the Blueprint for Maryland's Future funding structure.",
+   "n_candidates": 60,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0582",
+     "session": "2025RS",
+     "title": "Sale of Residential Property - Taxes and Offers to Purchase (End Hedge Fund Control of Maryland Homes Act of 2025)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0582?ys=2025RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1428",
+     "session": "2025RS",
+     "title": "Sale of Residential Property - Taxes and Offers to Purchase (End Hedge Fund Control of Maryland Homes Act of 2025)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1428?ys=2025RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0158",
+     "session": "2021RS",
+     "title": "Property Tax – Homeowners’ Property Tax Credit – Calculation and Refunds",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0158?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0593",
+     "session": "2021RS",
+     "title": "Property Tax - Homeowners' Property Tax Credit - Calculation and Refunds",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0593?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB1104",
+     "session": "2022RS",
+     "title": "Affordable Housing Land Trusts - Funding and Property Tax Exemption",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1104?ys=2022RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+   "name": "William C. Smith, Jr.",
+   "topic": "Bail and Pretrial Decisions",
+   "chair": 2,
+   "chair_text": "Be skeptical. Hold prosecution to strict standards — especially on evidence handling and plea deals.",
+   "refuse_chair_gate": false,
+   "reasoning": "As Judicial Proceedings Committee chair, Smith has advanced pretrial detention reform. He supported legislation to shift Maryland toward risk-based assessments over cash bail for nonviolent offenders.",
+   "n_candidates": 46,
+   "n_discriminating": 2,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0985",
+     "session": "2026RS",
+     "title": "Correctional Services - Immigration Detention Facilities - Minimum Mandatory Standards",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0985?ys=2026RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB1018",
+     "session": "2026RS",
+     "title": "Correctional Services - Correctional Facilities and Immigration Detention Facilities - Minimum Mandatory Standards",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1018?ys=2026RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+   "name": "William C. Smith, Jr.",
+   "topic": "Criminal Justice Approach",
+   "chair": 2,
+   "chair_text": "Giving the person a fair chance to make things right — through treatment, community service, or restitution.",
+   "refuse_chair_gate": false,
+   "reasoning": "Smith chairs the Senate Judicial Proceedings Committee, overseeing criminal law reform. He has supported sentencing reform, second chance legislation, and reentry programs for formerly incarcerated individuals.",
+   "n_candidates": 181,
+   "n_discriminating": 61,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0099",
+     "session": "2015RS",
+     "title": "Income Tax Subtraction Modification - Retirement Income of Law Enforcement, Correctional Officer, Fire, Rescue, and Emergency Services Personnel (Hometown Heroes)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0099?ys=2015RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0115",
+     "session": "2015RS",
+     "title": "Income Tax Subtraction Modification - Retirement Income of Law Enforcement, Correctional Officer, Fire, Rescue, and Emergency Services Personnel (Hometown Heroes)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0115?ys=2015RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0244",
+     "session": "2015RS",
+     "title": "Maryland Second Chance Act of 2015",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0244?ys=2015RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0526",
+     "session": "2015RS",
+     "title": "Maryland Second Chance Act of 2015",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0526?ys=2015RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0337",
+     "session": "2015RS",
+     "title": "Correctional Services - Sentencing Review and Parole Eligibility - Juvenile Offenders Sentenced as Adults",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0337?ys=2015RS",
+     "seated": 1,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+   "name": "William C. Smith, Jr.",
+   "topic": "Economic Development Incentives",
+   "chair": 3,
+   "chair_text": "Targeted incentives for specific industries with community benefit agreements and job quality requirements",
+   "refuse_chair_gate": false,
+   "reasoning": "Smith supports economic development through public investment and innovation. He backs workforce development programs and small business support in Montgomery County.",
+   "n_candidates": 90,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0496",
+     "session": "2021RS",
+     "title": "Recovery for the Economy, Livelihoods, Industries, Entrepreneurs, and Families (RELIEF) Act",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0496?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 2
+    },
+    {
+     "number": "HB0612",
+     "session": "2021RS",
+     "title": "Recovery for the Economy, Livelihoods, Industries, Entrepreneurs, and Families (RELIEF) Act",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0612?ys=2021RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 2
+    },
+    {
+     "number": "HB0858",
+     "session": "2016RS",
+     "title": "Enterprise Zone Income Tax Credit - Expansion",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0858?ys=2016RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0371",
+     "session": "2016RS",
+     "title": "Independent Living Tax Credit Act",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0371?ys=2016RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0819",
+     "session": "2016RS",
+     "title": "Independent Living Tax Credit Act",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0819?ys=2016RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+   "name": "William C. Smith, Jr.",
+   "topic": "Immigration and Treatment of Immigrants",
+   "chair": 2,
+   "chair_text": "Keep legal immigration open and let most residents use public services regardless of legal status",
+   "refuse_chair_gate": false,
+   "reasoning": "Smith represents a district with many immigrant families. He supports comprehensive immigration reform and state immigrant protections, opposing harsh enforcement measures.",
+   "n_candidates": 26,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "HB0493",
+     "session": "2016RS",
+     "title": "Criminal Law - Extortion - Immigration Status",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0493?ys=2016RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    },
+    {
+     "number": "SB0178",
+     "session": "2016RS",
+     "title": "Criminal Law - Extortion - Immigration Status",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0178?ys=2016RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    },
+    {
+     "number": "SB0817",
+     "session": "2019RS",
+     "title": "Correctional Facilities and Police Officers - Procedures - Immigration Status",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0817?ys=2019RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    },
+    {
+     "number": "HB0913",
+     "session": "2019RS",
+     "title": "Correctional Facilities and Police Officers – Procedures – Immigration Status",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0913?ys=2019RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    },
+    {
+     "number": "SB0850",
+     "session": "2020RS",
+     "title": "Correctional Services - Immigration Detention - Prohibition (Dignity Not Detention Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0850?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 5
+    }
+   ]
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+   "name": "William C. Smith, Jr.",
+   "topic": "Prosecution Priorities",
+   "chair": 3,
+   "chair_text": "Strong cases get prosecuted. Diversion is used when there's a clear benefit — it's a judgment call every time.",
+   "refuse_chair_gate": false,
+   "reasoning": "Smith has used the Judicial Proceedings chair role to prioritize balanced prosecution approaches, supporting reforms to reduce mass incarceration while maintaining public safety.",
+   "n_candidates": 22,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0669",
+     "session": "2018RS",
+     "title": "Juvenile Law - Juvenile Diversion Program",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0669?ys=2018RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 2
+    },
+    {
+     "number": "HB0827",
+     "session": "2018RS",
+     "title": "Juvenile Law - Juvenile Diversion Program",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0827?ys=2018RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 2
+    },
+    {
+     "number": "SB0301",
+     "session": "2017RS",
+     "title": "Real Property - Installation and Use of Electric Vehicle Recharging Equipment",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0301?ys=2017RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0699",
+     "session": "2017RS",
+     "title": "Real Property - Installation and Use of Electric Vehicle Recharging Equipment",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0699?ys=2017RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0323",
+     "session": "2026RS",
+     "title": "Juvenile Court - Jurisdiction, Detention, and Confinement (Youth Charging Reform Act)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0323?ys=2026RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+   "name": "William C. Smith, Jr.",
+   "topic": "State Redistricting and Gerrymandering",
+   "chair": 2,
+   "chair_text": "independent redistricting commissions with equal representation from both major parties.",
+   "refuse_chair_gate": false,
+   "reasoning": "Smith has supported independent redistricting reform efforts to reduce partisan gerrymandering in Maryland's legislative districts.",
+   "n_candidates": 4,
+   "n_discriminating": 1,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB1023",
+     "session": "2017RS",
+     "title": "Independent Congressional Redistricting Commission - Mid-Atlantic States Regional Districting Process",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1023?ys=2017RS",
+     "seated": 2,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+   "name": "William C. Smith, Jr.",
+   "topic": "Taxation and Public Spending",
+   "chair": 2,
+   "chair_text": "Moderately raise taxes on wealthy people and large companies to fund existing services",
+   "refuse_chair_gate": false,
+   "reasoning": "Smith supports progressive taxation. He backed the Blueprint for Maryland's Future funding and higher corporate tax rates to fund public investment.",
+   "n_candidates": 200,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0811",
+     "session": "2017RS",
+     "title": "Civil Cases - Maryland Legal Services Corporation Fund - Surcharges - Repeal of Sunset",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0811?ys=2017RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0972",
+     "session": "2017RS",
+     "title": "Civil Cases - Maryland Legal Services Corporation Fund - Surcharges - Repeal of Sunset",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0972?ys=2017RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0099",
+     "session": "2015RS",
+     "title": "Income Tax Subtraction Modification - Retirement Income of Law Enforcement, Correctional Officer, Fire, Rescue, and Emergency Services Personnel (Hometown Heroes)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0099?ys=2015RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0115",
+     "session": "2015RS",
+     "title": "Income Tax Subtraction Modification - Retirement Income of Law Enforcement, Correctional Officer, Fire, Rescue, and Emergency Services Personnel (Hometown Heroes)",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0115?ys=2015RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0686",
+     "session": "2015RS",
+     "title": "Income Tax Checkoff - Maryland Veterans Trust Fund",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0686?ys=2015RS",
+     "seated": 1,
+     "rival": 1,
+     "rival_chair": 1
+    }
+   ]
+  },
+  {
+   "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc",
+   "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+   "name": "William C. Smith, Jr.",
+   "topic": "Transgender Athletes",
+   "chair": 2,
+   "chair_text": "should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition.",
+   "refuse_chair_gate": false,
+   "reasoning": "Smith has supported transgender student rights including inclusive school sports policies, opposing restrictive bills targeting trans youth.",
+   "n_candidates": 6,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0554",
+     "session": "2020RS",
+     "title": "Crimes - Mitigation - Sex, Gender Identity, or Sexual Orientation",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0554?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "HB0488",
+     "session": "2020RS",
+     "title": "Crimes – Mitigation – Race, Color, National Origin, Sex, Gender Identity, or Sexual Orientation",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0488?ys=2020RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0151",
+     "session": "2018RS",
+     "title": "Health Occupations - Athletic Trainers Act - Revisions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0151?ys=2018RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0497",
+     "session": "2018RS",
+     "title": "Health Occupations – Athletic Trainers Act – Revisions",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0497?ys=2018RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0840",
+     "session": "2018RS",
+     "title": "Youth Sports Programs - Concussion Risk and Management Training - Requirements",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0840?ys=2018RS",
+     "seated": 0,
+     "rival": 2,
+     "rival_chair": 3
+    }
+   ]
+  },
+  {
+   "politician_id": "6da20195-1b0c-43f2-b1b3-7a3954326fe6",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "name": "Katie Fry Hester",
+   "topic": "Artificial Intelligence Oversight",
+   "chair": 4,
+   "chair_text": "Require safety testing and ban high-risk AI uses in areas like hiring, healthcare, and policing",
+   "refuse_chair_gate": false,
+   "reasoning": "Hester introduced 2026 bills to ban election-related deepfakes, criminalize deepfake impersonation causing serious harm, and restrict minors from unsafe AI chatbots. Her deepfake election bill passed the Senate unanimously.",
+   "n_candidates": 35,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0936",
+     "session": "2025RS",
+     "title": "Consumer Protection - High-Risk Artificial Intelligence - Developer and Deployer Requirements",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0936?ys=2025RS",
+     "seated": 2,
+     "rival": 2,
+     "rival_chair": 1
+    },
+    {
+     "number": "SB0325",
+     "session": "2022RS",
+     "title": "Student Data Privacy - Protections, Digital Tools, and Student Data Privacy Council",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0325?ys=2022RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0769",
+     "session": "2022RS",
+     "title": "Student Data Privacy - Protections, Digital Tools, and Student Data Privacy Council",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0769?ys=2022RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0739",
+     "session": "2024RS",
+     "title": "Algorithmic Addiction Fund - Establishment",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0739?ys=2024RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB1119",
+     "session": "2024RS",
+     "title": "Algorithmic Addiction Fund - Establishment",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1119?ys=2024RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  },
+  {
+   "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714",
+   "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+   "name": "Brian J. Feldman",
+   "topic": "Artificial Intelligence Oversight",
+   "chair": 3,
+   "chair_text": "Require AI developers to disclose risks and be held responsible when their systems cause harm",
+   "refuse_chair_gate": false,
+   "reasoning": "Feldman signed a June 2025 state policymaker coalition letter opposing federal AI preemption in the reconciliation bill — specifically opposing the proposed 10-year freeze on state and local regulation of AI and automated decision systems.",
+   "n_candidates": 14,
+   "n_discriminating": 0,
+   "sessions_unreadable": [],
+   "top": [
+    {
+     "number": "SB0335",
+     "session": "2022RS",
+     "title": "Commercial Law – Consumer Protection – Biometric Identifiers Privacy",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0335?ys=2022RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0259",
+     "session": "2022RS",
+     "title": "Commercial Law - Consumer Protection - Biometric Data Privacy",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0259?ys=2022RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0169",
+     "session": "2023RS",
+     "title": "Commercial Law – Consumer Protection – Biometric Data Privacy",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0169?ys=2023RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "HB0033",
+     "session": "2023RS",
+     "title": "Commercial Law - Consumer Protection - Biometric Data Privacy",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0033?ys=2023RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    },
+    {
+     "number": "SB0541",
+     "session": "2024RS",
+     "title": "Maryland Online Data Privacy Act of 2024",
+     "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0541?ys=2024RS",
+     "seated": 0,
+     "rival": 0,
+     "rival_chair": null
+    }
+   ]
+  }
+ ]
+}

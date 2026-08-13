@@ -1,0 +1,807 @@
+{
+ "pass": "MD session-correct member slugs, from the session-scoped sponsor index",
+ "mechanism": "Search/Legislation?session=<session> #valueSponsors — the Members/Index ys= roster is NOT session-scoped and must not be used; see the header of this script",
+ "caveat": "The sponsor index lists members who sponsored at least one bill. NOT_IN_SPONSOR_INDEX is not evidence of absence from the chamber — only the tenure spans decide that.",
+ "n_resolved": 52,
+ "n_unresolved": 2,
+ "n_base_slugs": 2,
+ "base_slugs": {
+  "Katie Fry Hester": {
+   "slug": "hester01",
+   "chamber": "senate",
+   "from_session": "2026RS",
+   "roster_name": "Hester, Katie Fry, Senator",
+   "match": "EXACT",
+   "page_name": "Katie Fry Hester",
+   "rival_slugs": []
+  },
+  "Brian J. Feldman": {
+   "slug": "feldman",
+   "chamber": "senate",
+   "from_session": "2026RS",
+   "roster_name": "Feldman, Brian J., Senator",
+   "match": "EXACT",
+   "page_name": "Brian J. Feldman",
+   "rival_slugs": []
+  }
+ },
+ "slugmap": {
+  "Benjamin F. Kramer": {
+   "2013RS": "kramer b",
+   "2014RS": "kramer b",
+   "2015RS": "kramer b",
+   "2016RS": "kramer b",
+   "2017RS": "kramer b",
+   "2018RS": "kramer b"
+  },
+  "Jeff Waldstreicher": {
+   "2013RS": "waldstreicher",
+   "2014RS": "waldstreicher",
+   "2015RS": "waldstreicher",
+   "2016RS": "waldstreicher",
+   "2017RS": "waldstreicher",
+   "2018RS": "waldstreicher"
+  },
+  "Alonzo T. Washington": {
+   "2013RS": "washington a",
+   "2014RS": "washington a",
+   "2015RS": "washington a",
+   "2016RS": "washington a",
+   "2017RS": "washington a",
+   "2018RS": "washington a",
+   "2019RS": "washington a",
+   "2020RS": "washington a",
+   "2021RS": "washington a",
+   "2022RS": "washington a"
+  },
+  "C. Anthony Muse": {
+   "2013RS": "muse",
+   "2014RS": "muse",
+   "2015RS": "muse",
+   "2016RS": "muse",
+   "2017RS": "muse",
+   "2018RS": "muse"
+  },
+  "Kevin M. Harris": {
+   "2023RS": "harris02",
+   "2024RS": "harris02",
+   "2025RS": "harris02"
+  },
+  "Nick Charles": {
+   "2019RS": "charles01",
+   "2020RS": "charles01",
+   "2021RS": "charles01",
+   "2022RS": "charles01",
+   "2023RS": "charles01"
+  },
+  "Ron Watson": {
+   "2019RS": "watson03",
+   "2020RS": "watson03",
+   "2021RS": "watson03"
+  },
+  "Sara Love": {
+   "2019RS": "love01",
+   "2020RS": "love01",
+   "2021RS": "love01",
+   "2022RS": "love01",
+   "2023RS": "love01",
+   "2024RS": "love01"
+  },
+  "Shaneka Henson": {
+   "2020RS": "henson01",
+   "2021RS": "henson01",
+   "2022RS": "henson01",
+   "2023RS": "henson01",
+   "2024RS": "henson01"
+  },
+  "William C. Smith, Jr.": {
+   "2015RS": "smith01",
+   "2016RS": "smith01"
+  }
+ },
+ "resolutions": [
+  {
+   "name": "Benjamin F. Kramer",
+   "session": "2013RS",
+   "slug": "kramer b",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Kramer, Benjamin F., Delegate",
+   "page_name": "Benjamin F. Kramer",
+   "n_bills": 89,
+   "zero_bills": false
+  },
+  {
+   "name": "Benjamin F. Kramer",
+   "session": "2014RS",
+   "slug": "kramer b",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Kramer, Benjamin F., Delegate",
+   "page_name": "Benjamin F. Kramer",
+   "n_bills": 139,
+   "zero_bills": false
+  },
+  {
+   "name": "Benjamin F. Kramer",
+   "session": "2015RS",
+   "slug": "kramer b",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Kramer, Benjamin F., Delegate",
+   "page_name": "Benjamin F. Kramer",
+   "n_bills": 137,
+   "zero_bills": false
+  },
+  {
+   "name": "Benjamin F. Kramer",
+   "session": "2016RS",
+   "slug": "kramer b",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Kramer, Benjamin F., Delegate",
+   "page_name": "Benjamin F. Kramer",
+   "n_bills": 148,
+   "zero_bills": false
+  },
+  {
+   "name": "Benjamin F. Kramer",
+   "session": "2017RS",
+   "slug": "kramer b",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Kramer, Benjamin F., Delegate",
+   "page_name": "Benjamin F. Kramer",
+   "n_bills": 157,
+   "zero_bills": false
+  },
+  {
+   "name": "Benjamin F. Kramer",
+   "session": "2018RS",
+   "slug": "kramer b",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Kramer, Benjamin F., Delegate",
+   "page_name": "Benjamin F. Kramer",
+   "n_bills": 124,
+   "zero_bills": false
+  },
+  {
+   "name": "Jeff Waldstreicher",
+   "session": "2013RS",
+   "slug": "waldstreicher",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Waldstreicher, Jeff, Delegate",
+   "page_name": "Jeff Waldstreicher",
+   "n_bills": 129,
+   "zero_bills": false
+  },
+  {
+   "name": "Jeff Waldstreicher",
+   "session": "2014RS",
+   "slug": "waldstreicher",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Waldstreicher, Jeff, Delegate",
+   "page_name": "Jeff Waldstreicher",
+   "n_bills": 150,
+   "zero_bills": false
+  },
+  {
+   "name": "Jeff Waldstreicher",
+   "session": "2015RS",
+   "slug": "waldstreicher",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Waldstreicher, Jeff, Delegate",
+   "page_name": "Jeff Waldstreicher",
+   "n_bills": 149,
+   "zero_bills": false
+  },
+  {
+   "name": "Jeff Waldstreicher",
+   "session": "2016RS",
+   "slug": "waldstreicher",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Waldstreicher, Jeff, Delegate",
+   "page_name": "Jeff Waldstreicher",
+   "n_bills": 175,
+   "zero_bills": false
+  },
+  {
+   "name": "Jeff Waldstreicher",
+   "session": "2017RS",
+   "slug": "waldstreicher",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Waldstreicher, Jeff, Delegate",
+   "page_name": "Jeff Waldstreicher",
+   "n_bills": 165,
+   "zero_bills": false
+  },
+  {
+   "name": "Jeff Waldstreicher",
+   "session": "2018RS",
+   "slug": "waldstreicher",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Waldstreicher, Jeff, Delegate",
+   "page_name": "Jeff Waldstreicher",
+   "n_bills": 130,
+   "zero_bills": false
+  },
+  {
+   "name": "Alonzo T. Washington",
+   "session": "2013RS",
+   "slug": "washington a",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Washington, Alonzo T., Delegate",
+   "page_name": "Alonzo T. Washington",
+   "n_bills": 75,
+   "zero_bills": false
+  },
+  {
+   "name": "Alonzo T. Washington",
+   "session": "2014RS",
+   "slug": "washington a",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Washington, Alonzo T., Delegate",
+   "page_name": "Alonzo T. Washington",
+   "n_bills": 182,
+   "zero_bills": false
+  },
+  {
+   "name": "Alonzo T. Washington",
+   "session": "2015RS",
+   "slug": "washington a",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Washington, Alonzo T., Delegate",
+   "page_name": "Alonzo T. Washington",
+   "n_bills": 163,
+   "zero_bills": false
+  },
+  {
+   "name": "Alonzo T. Washington",
+   "session": "2016RS",
+   "slug": "washington a",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Washington, Alonzo T., Delegate",
+   "page_name": "Alonzo T. Washington",
+   "n_bills": 185,
+   "zero_bills": false
+  },
+  {
+   "name": "Alonzo T. Washington",
+   "session": "2017RS",
+   "slug": "washington a",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Washington, Alonzo T., Delegate",
+   "page_name": "Alonzo T. Washington",
+   "n_bills": 179,
+   "zero_bills": false
+  },
+  {
+   "name": "Alonzo T. Washington",
+   "session": "2018RS",
+   "slug": "washington a",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Washington, Alonzo T., Delegate",
+   "page_name": "Alonzo T. Washington",
+   "n_bills": 216,
+   "zero_bills": false
+  },
+  {
+   "name": "Alonzo T. Washington",
+   "session": "2019RS",
+   "slug": "washington a",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Washington, Alonzo T., Delegate",
+   "page_name": "Alonzo T. Washington",
+   "n_bills": 163,
+   "zero_bills": false
+  },
+  {
+   "name": "Alonzo T. Washington",
+   "session": "2020RS",
+   "slug": "washington a",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Washington, Alonzo T., Delegate",
+   "page_name": "Alonzo T. Washington",
+   "n_bills": 133,
+   "zero_bills": false
+  },
+  {
+   "name": "Alonzo T. Washington",
+   "session": "2021RS",
+   "slug": "washington a",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Washington, Alonzo T., Delegate",
+   "page_name": "Alonzo T. Washington",
+   "n_bills": 31,
+   "zero_bills": false
+  },
+  {
+   "name": "Alonzo T. Washington",
+   "session": "2022RS",
+   "slug": "washington a",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Washington, Alonzo T., Delegate",
+   "page_name": "Alonzo T. Washington",
+   "n_bills": 49,
+   "zero_bills": false
+  },
+  {
+   "name": "C. Anthony Muse",
+   "session": "2013RS",
+   "slug": "muse",
+   "chamber": "senate",
+   "expected_chamber": "senate",
+   "resolved_via": "INDEX",
+   "roster_name": "Muse, C. Anthony, Senator",
+   "page_name": "C. Anthony Muse",
+   "n_bills": 121,
+   "zero_bills": false
+  },
+  {
+   "name": "C. Anthony Muse",
+   "session": "2014RS",
+   "slug": "muse",
+   "chamber": "senate",
+   "expected_chamber": "senate",
+   "resolved_via": "INDEX",
+   "roster_name": "Muse, C. Anthony, Senator",
+   "page_name": "C. Anthony Muse",
+   "n_bills": 128,
+   "zero_bills": false
+  },
+  {
+   "name": "C. Anthony Muse",
+   "session": "2015RS",
+   "slug": "muse",
+   "chamber": "senate",
+   "expected_chamber": "senate",
+   "resolved_via": "INDEX",
+   "roster_name": "Muse, C. Anthony, Senator",
+   "page_name": "C. Anthony Muse",
+   "n_bills": 164,
+   "zero_bills": false
+  },
+  {
+   "name": "C. Anthony Muse",
+   "session": "2016RS",
+   "slug": "muse",
+   "chamber": "senate",
+   "expected_chamber": "senate",
+   "resolved_via": "INDEX",
+   "roster_name": "Muse, C. Anthony, Senator",
+   "page_name": "C. Anthony Muse",
+   "n_bills": 178,
+   "zero_bills": false
+  },
+  {
+   "name": "C. Anthony Muse",
+   "session": "2017RS",
+   "slug": "muse",
+   "chamber": "senate",
+   "expected_chamber": "senate",
+   "resolved_via": "INDEX",
+   "roster_name": "Muse, C. Anthony, Senator",
+   "page_name": "C. Anthony Muse",
+   "n_bills": 209,
+   "zero_bills": false
+  },
+  {
+   "name": "C. Anthony Muse",
+   "session": "2018RS",
+   "slug": "muse",
+   "chamber": "senate",
+   "expected_chamber": "senate",
+   "resolved_via": "INDEX",
+   "roster_name": "Muse, C. Anthony, Senator",
+   "page_name": "C. Anthony Muse",
+   "n_bills": 195,
+   "zero_bills": false
+  },
+  {
+   "name": "Kevin M. Harris",
+   "session": "2023RS",
+   "slug": "harris02",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Harris, Kevin M., Delegate",
+   "page_name": "Kevin M. Harris",
+   "n_bills": 87,
+   "zero_bills": false
+  },
+  {
+   "name": "Kevin M. Harris",
+   "session": "2024RS",
+   "slug": "harris02",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Harris, Kevin M., Delegate",
+   "page_name": "Kevin M. Harris",
+   "n_bills": 128,
+   "zero_bills": false
+  },
+  {
+   "name": "Kevin M. Harris",
+   "session": "2025RS",
+   "slug": "harris02",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Harris, Kevin M., Delegate",
+   "page_name": "Kevin M. Harris",
+   "n_bills": 82,
+   "zero_bills": false
+  },
+  {
+   "name": "Nick Charles",
+   "session": "2019RS",
+   "slug": "charles01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Charles, Nick, Delegate",
+   "page_name": "Nick Charles",
+   "n_bills": 160,
+   "zero_bills": false
+  },
+  {
+   "name": "Nick Charles",
+   "session": "2020RS",
+   "slug": "charles01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Charles, Nick, Delegate",
+   "page_name": "Nick Charles",
+   "n_bills": 207,
+   "zero_bills": false
+  },
+  {
+   "name": "Nick Charles",
+   "session": "2021RS",
+   "slug": "charles01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Charles, Nick, Delegate",
+   "page_name": "Nick Charles",
+   "n_bills": 13,
+   "zero_bills": false
+  },
+  {
+   "name": "Nick Charles",
+   "session": "2022RS",
+   "slug": "charles01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Charles, Nick, Delegate",
+   "page_name": "Nick Charles",
+   "n_bills": 88,
+   "zero_bills": false
+  },
+  {
+   "name": "Nick Charles",
+   "session": "2023RS",
+   "slug": "charles01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Charles, Nick, Delegate",
+   "page_name": "Nick Charles",
+   "n_bills": 109,
+   "zero_bills": false
+  },
+  {
+   "name": "Ron Watson",
+   "session": "2019RS",
+   "slug": "watson03",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Watson, Ron, Delegate",
+   "page_name": "Ron Watson",
+   "n_bills": 91,
+   "zero_bills": false
+  },
+  {
+   "name": "Ron Watson",
+   "session": "2020RS",
+   "slug": "watson03",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Watson, Ron, Delegate",
+   "page_name": "Ron Watson",
+   "n_bills": 70,
+   "zero_bills": false
+  },
+  {
+   "name": "Ron Watson",
+   "session": "2021RS",
+   "slug": "watson03",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "CROSS_SESSION",
+   "roster_name": "Watson, Ron, Delegate",
+   "match": "EXACT",
+   "page_name": "Ron Watson",
+   "n_bills": 14,
+   "zero_bills": false
+  },
+  {
+   "name": "Sara Love",
+   "session": "2019RS",
+   "slug": "love01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Love, Sara, Delegate",
+   "page_name": "Sara Love",
+   "n_bills": 185,
+   "zero_bills": false
+  },
+  {
+   "name": "Sara Love",
+   "session": "2020RS",
+   "slug": "love01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Love, Sara, Delegate",
+   "page_name": "Sara Love",
+   "n_bills": 199,
+   "zero_bills": false
+  },
+  {
+   "name": "Sara Love",
+   "session": "2021RS",
+   "slug": "love01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Love, Sara, Delegate",
+   "page_name": "Sara Love",
+   "n_bills": 21,
+   "zero_bills": false
+  },
+  {
+   "name": "Sara Love",
+   "session": "2022RS",
+   "slug": "love01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Love, Sara, Delegate",
+   "page_name": "Sara Love",
+   "n_bills": 102,
+   "zero_bills": false
+  },
+  {
+   "name": "Sara Love",
+   "session": "2023RS",
+   "slug": "love01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Love, Sara, Delegate",
+   "page_name": "Sara Love",
+   "n_bills": 128,
+   "zero_bills": false
+  },
+  {
+   "name": "Sara Love",
+   "session": "2024RS",
+   "slug": "love01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Love, Sara, Delegate",
+   "page_name": "Sara Love",
+   "n_bills": 134,
+   "zero_bills": false
+  },
+  {
+   "name": "Shaneka Henson",
+   "session": "2020RS",
+   "slug": "henson01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Henson, Shaneka",
+   "page_name": "Shaneka Henson",
+   "n_bills": 84,
+   "zero_bills": false
+  },
+  {
+   "name": "Shaneka Henson",
+   "session": "2021RS",
+   "slug": "henson01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Henson, Shaneka",
+   "page_name": "Shaneka Henson",
+   "n_bills": 34,
+   "zero_bills": false
+  },
+  {
+   "name": "Shaneka Henson",
+   "session": "2022RS",
+   "slug": "henson01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Henson, Shaneka, Delegate",
+   "page_name": "Shaneka Henson",
+   "n_bills": 110,
+   "zero_bills": false
+  },
+  {
+   "name": "Shaneka Henson",
+   "session": "2023RS",
+   "slug": "henson01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Henson, Shaneka, Delegate",
+   "page_name": "Shaneka Henson",
+   "n_bills": 128,
+   "zero_bills": false
+  },
+  {
+   "name": "Shaneka Henson",
+   "session": "2024RS",
+   "slug": "henson01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Henson, Shaneka, Delegate",
+   "page_name": "Shaneka Henson",
+   "n_bills": 101,
+   "zero_bills": false
+  },
+  {
+   "name": "William C. Smith, Jr.",
+   "session": "2015RS",
+   "slug": "smith01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Smith, William C., Jr., Delegate",
+   "page_name": "William C. Smith, Jr.",
+   "n_bills": 259,
+   "zero_bills": false
+  },
+  {
+   "name": "William C. Smith, Jr.",
+   "session": "2016RS",
+   "slug": "smith01",
+   "chamber": "house",
+   "expected_chamber": "house",
+   "resolved_via": "INDEX",
+   "roster_name": "Smith, William C., Jr., Delegate",
+   "page_name": "William C. Smith, Jr.",
+   "n_bills": 293,
+   "zero_bills": false
+  }
+ ],
+ "unresolved": [
+  {
+   "name": "C. Anthony Muse",
+   "session": "2019RS",
+   "reason": "ABSENT_AT_YEAR_GRANULAR_SPAN_BOUNDARY",
+   "expected_chamber": "senate",
+   "boundary_spans": [
+    "Member of the Senate 2007-2019."
+   ],
+   "spans": [
+    {
+     "chamber": "senate",
+     "from": 2023,
+     "to": 9999,
+     "src": "Member of the Senate since January 11, 2023."
+    },
+    {
+     "chamber": "senate",
+     "from": 2007,
+     "to": 2019,
+     "src": "Member of the Senate 2007-2019."
+    }
+   ],
+   "slugs_probed": [
+    {
+     "slug": "muse",
+     "status": "SLUG_EXISTS_OTHER_SESSION",
+     "page_name": "C. Anthony Muse",
+     "n_bills": 0
+    },
+    {
+     "slug": "muse01",
+     "status": "NO_RECORD",
+     "page_name": null,
+     "n_bills": 0
+    }
+   ],
+   "note": "The session year sits on a YEAR-GRANULAR tenure boundary (no month/day in the span), and no record exists under any known slug: consistent with a REAL absence — the member was not seated for this session. Confirm against the quoted span."
+  },
+  {
+   "name": "William C. Smith, Jr.",
+   "session": "2014RS",
+   "reason": "ABSENT_AT_YEAR_GRANULAR_SPAN_BOUNDARY",
+   "expected_chamber": "house",
+   "boundary_spans": [
+    "Member of the Maryland House of Delegates 2014-2016."
+   ],
+   "spans": [
+    {
+     "chamber": "house",
+     "from": 2014,
+     "to": 2016,
+     "src": "Member of the Maryland House of Delegates 2014-2016."
+    },
+    {
+     "chamber": "senate",
+     "from": 2016,
+     "to": 9999,
+     "src": "Member of the Maryland Senate since December 21, 2016."
+    }
+   ],
+   "slugs_probed": [
+    {
+     "slug": "smith01",
+     "status": "NO_RECORD",
+     "page_name": null,
+     "n_bills": 0
+    },
+    {
+     "slug": "smith02",
+     "status": "NO_RECORD",
+     "page_name": null,
+     "n_bills": 0
+    }
+   ],
+   "note": "The session year sits on a YEAR-GRANULAR tenure boundary (no month/day in the span), and no record exists under any known slug: consistent with a REAL absence — the member was not seated for this session. Confirm against the quoted span."
+  }
+ ]
+}
