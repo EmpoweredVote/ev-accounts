@@ -1,0 +1,132 @@
+{
+ "pass": "chairs seated by inference — owed evidence describing THAT chair",
+ "migration": "1739_ca_berkeley_bartlett_taplin_chairs.sql",
+ "standard": "To sit in a chair you need evidence describing that chair, with sources. Direction is not a chair.",
+ "note": "Pre-1739 state of the 8 rows. 7 re-sourced (2 with a chair move, 1 restored chair), 1 blanked. Restore by writing chair_seated back to inform.politician_answers.value and reasoning/sources back to inform.politician_context; for the blanked row re-INSERT the politician_answers row (its context was never deleted).",
+ "n": 8,
+ "rows": [
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "chair_seated": 2,
+   "disposition": "re-sourced, chair 2 kept",
+   "reasoning": "Bartlett championed Berkeley's natural gas ban in new construction, EV charging infrastructure, plastic bag ban, and toxic paper receipts ban. His forward agenda includes the Berkeley Green New Deal. He authored a Disaster Preparedness Fire Plan and endorsed by Sierra Club and 350 Bay Area Action. Strong climate action record but not declaring a full emergency or banning all carbon-emitting activities.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.ben2024.com/endorsements",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Environmental Protection vs. Development",
+   "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+   "chair_seated": 2,
+   "disposition": "re-sourced, chair 2 kept",
+   "reasoning": "Bartlett championed Berkeley's plastic bag ban, banned single-use plastics and toxic paper receipts, advocated natural gas ban in new construction, and lists the Adeline Greenway Park in his forward agenda. He served as Vice-Chair of the Zero Waste Commission. Endorsed by Sierra Club and 350 Bay Area Action. Strong environmental protection record requiring developers to meet significant environmental standards.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett",
+    "https://www.ben2024.com/endorsements"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Criminalization of Homelessness",
+   "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+   "chair_seated": 2,
+   "disposition": "RE-SEATED 2 -> 3",
+   "reasoning": "Bartlett's campaign reports homelessness down 45% during his tenure through the Step Up Housing initiative — 39 modular units with onsite care and health technology integration — and the Specialized Care Unit dispatching healthcare workers instead of police to mental health and homelessness-related calls. His approach is service-and-housing-first rather than enforcement-first; no evidence of camping ban sponsorship.",
+   "sources": [
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett",
+    "https://www.ben2024.com/issues"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Homelessness Response",
+   "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+   "chair_seated": 2,
+   "disposition": "re-sourced, chair 2 kept",
+   "reasoning": "Bartlett authored the Specialized Care Unit (dispatches healthcare workers instead of police for mental health and unhoused resident calls) and developed Step Up Housing as a supportive housing model with wrap-around services. His forward agenda includes expanding the Specialized Care Unit to 24/7 service. No evidence of sponsoring camping bans; his documented approach prioritizes services and shelter over enforcement.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Local Immigration Enforcement",
+   "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+   "chair_seated": 2,
+   "disposition": "RE-SEATED 2 -> 1",
+   "reasoning": "Berkeley is a sanctuary city. Bartlett's campaign credits making Berkeley a 'Cannabis Sanctuary City' with racial equity policies. No evidence of ICE cooperation or detainer compliance. He sits on Berkeley's Health, Life Enrichment, Equity & Community Committee and his overall record of racial equity advocacy is consistent with full sanctuary protections — refusing ICE detainers and protecting immigrant information.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "eaab41f8-71c8-47db-bd0b-62da46b5607b",
+   "name": "Ben Bartlett",
+   "state": "CA",
+   "topic": "Transportation Priorities",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "chair_seated": 2,
+   "disposition": "re-sourced, chair 2 kept",
+   "reasoning": "Bartlett championed bike lanes on Adeline Street, the MLK Street redesign for pedestrian and cyclist safety, and the Vision Zero Initiative. He served on Berkeley's Transportation Commission working on EV infrastructure. His BerkDOT program also involved redesigning how traffic enforcement operates. His campaign emphasizes pedestrian and cycling infrastructure alongside road safety — consistent with equal investment in roads and multimodal options.",
+   "sources": [
+    "https://www.ben2024.com/issues",
+    "https://www.berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "bcdb549a-48bf-400f-9d23-c93e2e71007c",
+   "name": "Terry Taplin",
+   "state": "CA",
+   "topic": "Climate Change and Environmental Protection",
+   "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+   "chair_seated": 3,
+   "disposition": "RE-SEATED 3 -> 2",
+   "reasoning": "Taplin advocates a Vision 2050 framework for 'climate-smart, technologically-advanced, integrated and efficient infrastructure' and states that 'California cannot meet its climate goals without curbing growth in single-occupancy vehicle activity.' He chairs Berkeley's Facilities, Infrastructure, Transportation, Environment, and Sustainability Committee and frames transportation — responsible for 60% of Berkeley's emissions — as the central climate battleground.",
+   "sources": [
+    "https://www.terrytaplin.com/priorities/vision-2050",
+    "https://www.terrytaplin.com"
+   ],
+   "from_migration": "1727"
+  },
+  {
+   "politician_id": "9f9a35a9-0226-45f0-9fd8-ef46163f7245",
+   "name": "Igor Tregub",
+   "state": "CA",
+   "topic": "Transportation Priorities",
+   "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+   "chair_seated": 2,
+   "disposition": "BLANKED — answer deleted, politician_context kept",
+   "reasoning": "Tregub authored two pedestrian safety budget referrals in November 2024: $50,000 for a traffic study and pedestrian improvements at Shattuck/Delaware, and $30,000 for an Accessible Pedestrian Signal at Sacramento/Allston. He supported council consent items funding Southwest Berkeley Bike Boulevards ($4 million) and the Adeline Street Quick-Build active transportation project ($1 million) in October 2024, and a Bay Trail Extension grant ($4 million) in October 2024. His Sierra Club background and energy career emphasize reducing car dependence.",
+   "sources": [
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-november-12-2024",
+    "https://berkeleyca.gov/city-council-regular-meeting-eagenda-october-15-2024",
+    "https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub"
+   ],
+   "from_migration": "1727"
+  }
+ ]
+}

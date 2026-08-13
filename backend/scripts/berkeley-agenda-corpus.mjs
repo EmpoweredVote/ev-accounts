@@ -87,8 +87,19 @@ if (argv.includes('--index')) {
     // "From:" line to log public correspondence. Left in, those reprints bleed into the PRECEDING
     // item's chunk, and a co-sponsor named in the reprint gets attributed to the wrong item —
     // a fabricated sponsorship, not merely a duplicate. It also double-counts every member's record.
-    const commIdx = raw.search(/\n\s*Adjourn(ed|ment)[\s\S]{0,400}?\n\s*Communications\s*\n/);
-    if (commIdx > -1) raw = raw.slice(0, raw.indexOf('\nCommunications', commIdx));
+    // 🔴🔴 DO NOT TRUNCATE THE DOCUMENT TO DROP THE REPRINTS — IDENTIFY THE REPRINTS THEMSELVES.
+    // The previous fix cut everything from the first "Adjourn…Communications" boundary onward. But
+    // Berkeley consent calendars carry early items titled "Adjourned in Memory of <resident>", and a
+    // longer agenda packet APPENDS the prior meeting's full minutes, so that boundary is usually not
+    // the end of the record. Truncating there discarded 96 legitimate items across 4 meetings
+    // WITHOUT AN ERROR — among them Res. No. 70,171-N.S. ("Commit the City of Berkeley to a Just
+    // Transition from the Fossil Fuel Economy", Taplin author / Bartlett co-sponsor, adopted
+    // 2021-12-14) and Res. No. 70,172-N.S. A fix for one silent under-read had become another.
+    // Reprints are instead dropped per chunk below, by their own heading. Regressions that must
+    // hold: 2025-02-11 #12 carries NO role (it used to inherit Blackaby from the Item #7 reprint),
+    // 2025-02-11 #69 ("Russbumper Supplemental Communications") carries no role, and Res. 70,171
+    // is present with Bartlett as co-sponsor.
+    const REPRINT = /Supplemental Communications|Communications and Reports|Item #\d|Reports? \d+ Item/i;
     const chunks = raw.split(/\n(?=\s{0,8}\d{1,3}\.\s+\S)/);
     for (const c of chunks) {
       const num = c.match(/^\s{0,8}(\d{1,3})\.\s+(.+)/);
@@ -97,13 +108,33 @@ if (argv.includes('--index')) {
       // A real item always carries a From:/Recommendation:/Action: block; a speaker name never does.
       if (!/\b(From:|Recommendation:|Action:|Contact:)/.test(c)) continue;
       const title = num[2].trim() + ' ' + (c.split('\n')[1] || '').trim();
-      const from = (c.match(/From:\s*([\s\S]*?)(?=\n\s*(Recommendation|Financial|Contact|Submitted)|$)/) || [])[1] || '';
+      // A Communications reprint echoes an item's heading AND its From: line to log public
+      // correspondence. Skip the reprint itself...
+      if (REPRINT.test(title.replace(/\s+/g, ' '))) continue;
+      let from = (c.match(/From:\s*([\s\S]*?)(?=\n\s*(Recommendation|Financial|Contact|Submitted)|$)/) || [])[1] || '';
       const roles = {};
+      let from1 = from.replace(/\s+/g, ' ');
+      // ...and refuse a From: block that sits AFTER an embedded reprint marker, which is how a
+      // reprint bleeds its sponsors into the PRECEDING item — the fabricated-sponsorship case.
+      const flat = c.replace(/\s+/g, ' ');
+      const rIdx = flat.search(REPRINT);
+      if (rIdx > -1 && flat.indexOf('From:') > rIdx) { from = ''; from1 = ''; }
+      // 🔴 THE PLURAL CO-SPONSOR SERIES. Most items tag each name individually — "Councilmember Hahn
+      // (Co-Sponsor)" — but 5 items write a SERIES with one trailing plural instead:
+      // "Councilmember Taplin (Author), Councilmember Bartlett, Councilmember Hahn, and Mayor
+      // Arreguin (Co-Sponsors)". A per-name anchor matches only the LAST name and silently drops the
+      // rest, which is how Bartlett's co-sponsorship of the adopted Res. No. 70,171-N.S. ("Commit
+      // the City of Berkeley to a Just Transition from the Fossil Fuel Economy") read as absent.
+      // When the plural form is present, every member named in the co-sponsor run counts.
+      const plural = from1.match(/\(Author\)\s*,?(.*?)\(Co-\s*Sponsors\)/i)
+        || from1.match(/^(.*?)\(Co-\s*Sponsors\)/i);
+      const pluralRun = plural ? plural[1] : '';
       for (const m of MEMBERS) {
         // "Councilmember Tregub (Author)" / "(Co-Sponsor)" — authorship is stated on the From: line.
-        const re = new RegExp(`${m}\\s*\\((Author|Co-?Sponsor)\\)`, 'i');
-        const hit = from.replace(/\s+/g, ' ').match(re);
+        const re = new RegExp(`${m}\\s*\\((Author|Co-?Sponsors?)\\)`, 'i');
+        const hit = from1.match(re);
         if (hit) roles[m] = /author/i.test(hit[1]) ? 'author' : 'cosponsor';
+        else if (pluralRun && new RegExp(`\\b${m}\\b`, 'i').test(pluralRun)) roles[m] = 'cosponsor';
         // Late co-sponsorship is recorded in the Action line, not the From: line.
         else if (new RegExp(`Councilmembers?[^.]{0,80}\\b${m}\\b[^.]{0,60}added as (a )?co-sponsors?`, 'i').test(c.replace(/\s+/g, ' '))) roles[m] = 'cosponsor';
       }

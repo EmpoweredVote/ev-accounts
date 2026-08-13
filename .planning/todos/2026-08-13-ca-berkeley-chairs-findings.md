@@ -3,6 +3,37 @@
 Continues `.planning/todos/2026-08-13-ca-chairs-owed-handoff.md`. Standard: [[chair_needs_evidence_for_that_chair]].
 Worklist regenerated: **42 rows** — CA 31, MD 3, MA 2, MI 1, 5 unattributed.
 
+## ✅✅ BERKELEY IS CLOSED — **mig 1738 then mig 1739**. Debt **42 → 25 → 17**, CA **31 → 14 → 6**.
+The 6 CA rows left are **not Berkeley**: Gloria 2 (San Diego), Elo-Rivera 1, Boyles 1 — plus
+**Kesarwani 2, deliberately LEFT OWED** because she is not blankable and has no instrument (below).
+Mig 1739 = Bartlett's 6 + Taplin/Climate re-seated + Tregub/Transportation blanked. Gate exit 0;
+answers 32,367 → 32,366 (−1, exactly the blank); context unchanged; **debt fell by exactly 8, the
+number of rows touched**, which is what proves nothing unread was greened.
+
+### 🔴🔴 THE CORPUS ITSELF WAS DEFECTIVE, AND REPAIRING IT CHANGED AN ANSWER
+Two *more* silent under-reads in `berkeley-agenda-corpus.mjs`, both fixed (3,423 → **3,649 items**):
+1. **THE PLURAL CO-SPONSOR SERIES.** Most items tag each name — `Councilmember Hahn (Co-Sponsor)` —
+   but some write a series with ONE TRAILING PLURAL: `Councilmember Taplin (Author), Councilmember
+   Bartlett, Councilmember Hahn, and Mayor Arreguin (Co-Sponsors)`. A per-name anchor matches only
+   the LAST name and drops the rest.
+2. **MY OWN 1738 FIX OVER-CUT.** Truncating at the first `Adjourn…Communications` boundary killed 96
+   legitimate items across 4 meetings, because consent calendars carry early items titled *"Adjourned
+   in Memory of <resident>"* and long packets APPEND the prior meeting's full minutes. Replaced with a
+   per-chunk **reprint filter**, which keeps the items and still refuses the reprints.
+🔑 **The cost of those two bugs was the decisive instrument: Res. No. 70,171-N.S., "Commit the City
+of Berkeley to a Just Transition from the Fossil Fuel Economy" (Taplin author, Bartlett co-sponsor,
+adopted 2021-12-14) read as ABSENT under both bugs at once.** A tool's own gap is indistinguishable
+from a politician having no record; only re-reading the source told them apart.
+✅ **Re-verified after the repair: all 3 blanks from 1738 STILL STAND** on the larger record, and both
+regressions held (2025-02-11 #12 carries no role; the `Russbumper Supplemental Communications`
+reprint at #69 carries none either).
+⚠ **Two of my own detectors over-fired before I trusted them** — worth the reflex: `/ICE\b/i` matched
+"Serv**ice**"/"Off**ice**"/"Pol**ice**", and a tail-truncation scan reported "10 meetings, 275 items
+missing" that were really **public-speaker lists**. The true figure was 97 chunks in 4 meetings.
+⚠ The corpus also indexes **appended prior-meeting minutes under the later date** (Res. 70,171 is
+filed under 2022-01-25 but was adopted 2021-12-14). Duplicates, not fabrications — the author/
+co-sponsor totals in this file are inflated by it. Cite the TRUE meeting date, not the file's.
+
 ## 🔴🔴 THE GATE CANNOT SEE MUNICIPAL INSTRUMENTS — 14 of the 31 CA rows are in the worklist partly for a LEXICAL reason
 `audit-chair-evidence.mjs`'s `NAMES_INSTRUMENT` regex was built for state legislatures: it matches
 `HB/SB/AB`, `\bAct\b`, `\bOrdinance\b` (**case-sensitive**) and `voted YES/NO`. It does **not** match
@@ -139,7 +170,29 @@ removed. **Proof it greened nothing unread: the debt fell by exactly 17, the num
   chair 2 is contradicted by his record, but chair 1's "reduce parking requirements communitywide"
   has no instrument of his behind it. Neither chair is evidenced.
 
-## 🔴 STILL OPEN — the record cuts against the seated chair, so this is a decision, not a citation
+## ✅ THE FOUR "STILL OPEN" ITEMS ARE NOW CLOSED — decided with the user, applied in **mig 1739**
+1. **Taplin / Rent Regulation ch2 — KEPT** (already decided in 1738; the later vote governs, and the
+   2026 measure preserves the same golden duplex exemption he protected in 2022). Not owed.
+2. **Tregub / Transportation ch2 → BLANKED.** Chair 2 is contradicted by his pedestrian/cycling/
+   transit record; chair 1's "reduce parking requirements communitywide" has **no instrument of his**
+   anywhere in the repaired corpus. Contradicted at 2, incomplete at 1 → neither chair is described.
+   ✅ Safe as an absence finding: seated Dec 2024, and **none of the 96 recovered items falls inside
+   his tenure**, so this rests on a complete record.
+3. **Taplin / Transportation ch2 — KEPT** (decided in 1738 after I had to withdraw a re-seat).
+4. **Taplin / Climate ch3 → 2, and Bartlett / Climate ch2 KEPT** — one shared record, decided on the
+   **END-STATE reading**: chairs 2 and 3 differ in end state, not only pace ("phase out fossil fuels"
+   vs "gradually reducing **reliance**"). Res. 70,171-N.S. commits the city to a Just Transition
+   **FROM** the fossil fuel economy = elimination in kind; Res. 70,348-N.S. supports fossil-fuel
+   **divestment**. Taplin authored 70,171 and also Res. 70,172-N.S. (carbon fee and dividend).
+   ⚠ The losing reading is recorded in the row itself, not hidden: **chair 2's "by 2030" is pinned by
+   no adopted instrument** — the only 2030 figure is a 25% VMT-per-capita target sitting in a referral
+   of *concepts*, and C40 Race to Zero runs to **2050**. On a pace reading these rows would be
+   unevidenced, exactly as all 13 MD Taxation rows were.
+   🔑 **Three members co-sponsored ONE instrument and sat at THREE different chairs** (Bartlett 2,
+   Taplin 3, Kesarwani 3). The same evidence cannot support two chairs — that inconsistency was the
+   finding that forced this decision.
+
+## 🔴 SUPERSEDED — the original open list, kept for the reasoning
 1. **Taplin / Rent Regulation ch2 — a recorded vote CONTRADICTS the seated chair.**
    2022-07-12 Item 20, on amending the Rent Stabilization Ordinance, split three ways and Taplin is
    on the record **against extending coverage**: he voted **Aye to "take no action on the golden
@@ -164,15 +217,56 @@ removed. **Proof it greened nothing unread: the debt fell by exactly 17, the num
    (Res. 70,171), "**accelerate the fossil-free economy**", and a 2030 VMT target — chair 2's
    "rapidly transition … by 2030", not chair 3's "**gradually** reducing".
 
-## ▶ NOT YET READ
-- **Kesarwani / City Sanitation ch2** and **/ Climate ch3** — both look thin (her sanitation-adjacent
-  items are a park bathroom and a council-fund grant to a litter non-profit), **but she is not
-  blankable** — see coverage above. Positive sourcing only, or leave.
-- **Bartlett, 6 rows** — corpus is built and he is in it (64 authored / 127 co-sponsored). His rows
-  mix `ben2024.com` with `berkeleyca.gov`. ⚠ He was **recused** from the 2022 rent votes (resides in
-  a golden duplex) — check recusals before reading any vote of his as a position.
+## ✅ BARTLETT — ALL 6 ROWS READ AND APPLIED (mig 1739)
+🔴 **HE IS NOT BLANKABLE, and that was settled before anything else was read.** berkeleyca.gov's
+roster page states **"Elected: November 2016"**; the corpus begins 2021-01-21, so **2017-2020 — four
+years, more than half his tenure — is UNREAD.** Positive sourcing only, same bar as Kesarwani.
+⚠ **Two claims in his seated reasoning did not survive the record and were REMOVED, not re-cited:**
+every **Specialized Care Unit** item in the readable corpus is a **City Manager contract with no
+council sponsor**, and **"Step Up Housing" appears NOWHERE** in 3,649 items. Both sit in the unread
+window; both came from `ben2024.com`. A campaign site can corroborate an instrument, never be one.
+
+| row | was | now | instrument |
+|---|---|---|---|
+| Local Immigration Enforcement | 2 | **1** | Ord. 7,984-N.S.; roll call names him **Present / Absent: None**, All Ayes |
+| Criminalization of Homelessness | 2 | **3** | Ord. 7,935-N.S., named individually in the Aye roll |
+| Homelessness Response | 2 | 2 | **his own authored $200k Homeless Outreach Coordinator** (approved 2021-11-09) + 7,935's sequencing clause |
+| Transportation Priorities | 2 | 2 | Vision 2050 Complete Streets + 50-50 Sidewalk Repair (both approved, co-sponsor on the record) |
+| Environmental Protection vs. Development | 2 | 2 | **Res. 71,118-N.S.** permanent linear City park dedication under BMC 6.42 + SB 954 habitat review |
+| Climate Change | 2 | 2 | **Res. 70,171-N.S.** Just Transition FROM fossil fuels + Res. 70,348-N.S. divestment |
+
+🔑 **I re-verified the ordinance TEXT myself rather than inheriting 1738's reading**, and the
+discriminator is a deliberate internal contrast I can now state exactly: **(C)(4) and (C)(8) each
+carve out "a valid judicial warrant", and (C)(5) — detainer compliance — does NOT.**
+⚠ **Counter-evidence cited in the row rather than omitted** (the Ellis rule): he AUTHORS the PITCH
+upzoning (8 stories on Telegraph) — which is what rules out chair 1 — and he co-sponsored support for
+**SB 922, which would permanently EXEMPT transportation projects from CEQA**. The park dedication, not
+the review provisions, is what carries the Env-vs-Dev chair.
+⚠ Chair 3's second clause on Criminalization ("citations diverting people to services") is **NOT** in
+Ord. 7,935. Chair 3 is seated because it **beats every rival**, not because both clauses are evidenced.
+⚠ The recusal warning did not bite: Bartlett has no rent-regulation row.
+
+## ▶ KESARWANI — READ, AND DELIBERATELY LEFT OWED (no migration touches her; guard 6 proves it)
+- **City Sanitation ch2** — chair 2 needs "increase sanitation crews" AND "prioritize historically
+  underserved neighborhoods". **NO matching item exists in her complete repaired record.** Her
+  campaign claim to have funded the **Downtown Streets Team** expansion is not an instrument of hers:
+  **all four Downtown Streets Team items are City Manager contracts with no council sponsor.**
+- **Climate ch3** — her only climate instrument in 96 role entries is the co-sponsorship of the
+  2024-12-03 Green New Deal referral. She is **not** on Res. 70,171, so she did not move with Taplin
+  and Bartlett.
+🔴 **She is NOT BLANKABLE** (2019-2020 unpublished), so "no instrument" cannot become a blank. Owed is
+the honest state. ⚠ Her seated Climate reasoning contains a pure non-argument worth deleting whenever
+this row is next touched: *"served on the council in 2019 when Berkeley passed the natural gas ban"* —
+**presence at a vote is not a position.**
+## ▶▶ NEXT — the 17 rows left, and Berkeley tooling does NOT transfer to any of them
 - **San Diego 3** (Gloria 2, Elo-Rivera 1) and **El Segundo 1** (Boyles). ⚠ Elo-Rivera / Taxation ch2
   is the magnitude-bound ladder that killed all 13 MD Taxation rows — expect the same.
+  ⚠ Gloria's 2 rows (Climate ch3, Env-vs-Dev ch3) rest on **Wikipedia + a sandiego.gov landing page**;
+  "authored the draft Climate Action Plan as interim mayor" needs the CAP itself, and note
+  [[landing_pages_not_coverage]] — `sandiego.gov/planning` is a nav page, not an instrument.
+  🔑 Gloria is a **mayor**, so the Berkeley model (author/co-sponsor lines on an annotated agenda) does
+  not apply — a mayor signs and proposes rather than co-sponsors. Expect council resolutions *he
+  transmitted* plus the CAP's own adopted targets.
 - **Non-CA 11**: MD 3 (Washington, Muse — **both restored to chair 2 by mig 1732 and still owed, so
   MD debt is 3, not the 1 the previous handoff recorded**; plus Waldstreicher / Same-Sex Marriage,
   which needs the **2012** Civil Marriage Protection Act roll call, outside the 2013+ corpus),
