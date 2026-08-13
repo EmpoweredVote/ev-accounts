@@ -123,7 +123,48 @@ corpus 33,083 / 32,542; orphans 0; no off-ladder values.
 ⚠ **Sourcing is still owed** on these 142 rows and on 71 of 1714's — most are Ballotpedia bios.
 The chairs are right; the citations are not yet.
 
-▶ **Still open:** the scan that produced 1714 was calibrated per topic, and the four topics it
-scored UNCALIBRATED were never tested corpus-wide — only for these 24 people. A national re-scan
-using the now-known polarity of Voting Rights, Reproductive Rights, Immigration and Fossil Fuel is
-the next measurement.
+## ✅ THE NATIONAL RE-SCAN — mig **1729**, applied and verified. 3,166 rows scanned, 185 read, 14 fixed
+
+Six topics 1714's scan never judged: the four it scored **UNCALIBRATED**, plus the two it excluded
+**by hand** as object-ambiguous. Polarity for all six was established in 1727; this applies it
+corpus-wide.
+
+| topic | anti-pole rows | pro-worded | candidates | **inversions** |
+|---|---|---|---|---|
+| Voting Rights | 574 | 126 | 30 | **0** |
+| Reproductive Rights | 691 | 63 | 26 | **0** |
+| Immigration | 638 | 194 | 103 | **1** |
+| Fossil Fuel | 578 | 9 | 9 | **2** |
+| School Vouchers | 534 | 3 | 2 | **2** |
+| AI Oversight *(pole = 1-2)* | 151 | 19 | 15 | **9** |
+
+### 🔑🔑 The four UNCALIBRATED topics are essentially clean — 3 in 2,481 rows
+**The calibration step was right to refuse them, and the reason is now legible.** In exactly these
+topics the pro-side owns the *bill names*, so a pro-lexicon matches the **object of an opposing
+verb**: "voted against the For the People Act", "voted NO on the John Lewis Voting Rights
+Advancement Act", "voted against the Women's Health Protection Act", "opposed the Abortion Care
+Access Act". **0 for 56** across Voting Rights and Reproductive Rights — every candidate a genuine
+opponent. Immigration is the same shape: 10 of its 11 clean candidates are restrictionists whose
+rows name sanctuary law, DACA and in-state tuition as the things they are *repealing*.
+
+### 🔴🔴 The yield is in the two HAND-EXCLUDED topics — 11 of the 14
+**AI Oversight's ladder is REVERSED**: chair 1 is *"allow AI companies to develop and deploy
+technology freely without government interference"*, chair 5 is *"ban AI systems that could cause
+serious harm"*. Its anti pole is **1-2**, which no scan looking at 4-5 could ever reach. Nine
+legislators who wrote AI-safety law sat at the laissez-faire end — Katie Fry Hester (election
+deepfake bans), Lindsay Sabadosa (banned algorithmic rent-fixing), Ayanna Pressley (Facial
+Recognition and Biometric Technology Moratorium Act), Haley Stevens (pre-deployment safety review).
+**Excluding a topic is not neutral — it hides a defective set behind a "we can't tell".**
+
+⚠ **And the same topic proves the reading was necessary.** Raul Campillo's row also matched
+"banning algorithmic" — he cast the **sole dissenting vote against** San Diego's ban. Rosilicie
+Ochoa Bogh voted NO on SB 1047. Both KEPT, and guarded in the migration so a later pass cannot
+sweep them without noticing.
+
+✅ Verified: all 14 hold the intended chair; corpus 33,083 / 32,542; orphans 0; no off-ladder
+values; both deliberately-kept AI rows intact.
+
+▶ **Still open:** the remaining ~40 topics were scanned by 1714 under its own calibration and are
+not re-tested here. The AI Oversight result means the right next question is not "which topics have
+inversions" but **"which other ladders are reversed"** — a cheap check: for every topic, does its
+chair-1 text describe the permissive or the restrictive pole?

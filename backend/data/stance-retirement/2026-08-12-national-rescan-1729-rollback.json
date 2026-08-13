@@ -1,0 +1,43 @@
+{
+ "pass": "national re-scan of the six topics migration 1714's scan never judged",
+ "migration": "1729_national_rescan_uncalibrated_topics.sql",
+ "note": "Restores pre-1728 chairs. inform.politician_context is NOT touched by 1728.",
+ "scanned": {
+  "anti_pole_rows_across_six_topics": 3166,
+  "candidates_read": 185,
+  "corrected": 14
+ },
+ "per_topic": [
+  { "topic": "Voting Rights and Electoral Integrity", "anti_pole": 574, "pro_worded": 126, "candidates": 30, "inversions": 0 },
+  { "topic": "Reproductive Rights and Abortion Access", "anti_pole": 691, "pro_worded": 63, "candidates": 26, "inversions": 0 },
+  { "topic": "Immigration and Treatment of Immigrants", "anti_pole": 638, "pro_worded": 194, "candidates": 103, "inversions": 1 },
+  { "topic": "Fossil Fuel Policy", "anti_pole": 578, "pro_worded": 9, "candidates": 9, "inversions": 2 },
+  { "topic": "School Vouchers & Public Education Funding", "anti_pole": 534, "pro_worded": 3, "candidates": 2, "inversions": 2 },
+  { "topic": "Artificial Intelligence Oversight", "anti_pole_is": "1-2 (ladder reversed)", "anti_pole": 151, "pro_worded": 19, "candidates": 15, "inversions": 9 }
+ ],
+ "n": 14,
+ "rows": [
+  { "politician_id": "6da20195-1b0c-43f2-b1b3-7a3954326fe6", "name": "Katie Fry Hester", "state": "MD", "topic": "Artificial Intelligence Oversight", "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023", "chair_before": 2, "chair_after": 4, "why": "bills banning election deepfakes, criminalizing deepfake impersonation, restricting minors from unsafe AI chatbots" },
+  { "politician_id": "853f0b26-a2b5-48b6-8dd6-f40ca48c87fd", "name": "Lindsay Sabadosa", "state": "MA", "topic": "Artificial Intelligence Oversight", "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023", "chair_before": 2, "chair_after": 4, "why": "sponsored H.1564 banning algorithmic rent-fixing AI software" },
+  { "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464", "name": "Ayanna Pressley", "state": "MA", "topic": "Artificial Intelligence Oversight", "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023", "chair_before": 2, "chair_after": 4, "why": "co-led the Facial Recognition and Biometric Technology Moratorium Act" },
+  { "politician_id": "5b642054-504c-46c8-a68b-324e7b593587", "name": "Haley M. Stevens", "state": "MI", "topic": "Artificial Intelligence Oversight", "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023", "chair_before": 2, "chair_after": 4, "why": "backs requiring AI systems to undergo safety and ethics review before deployment" },
+  { "politician_id": "46c6ebb0-137a-46aa-b6fa-17af31aa4ef1", "name": "Abigail Spanberger", "state": "VA", "topic": "Artificial Intelligence Oversight", "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023", "chair_before": 2, "chair_after": 3, "why": "co-sponsored the AI Accountability Act requiring impact assessments and transparency reports" },
+  { "politician_id": "77ceaab2-846e-4bc8-b09d-faff40ddbc60", "name": "Francisco E. Paulino", "state": "MA", "topic": "Artificial Intelligence Oversight", "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023", "chair_before": 2, "chair_after": 3, "why": "sponsored H.1931 on misuse of emerging technology and child exploitation" },
+  { "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714", "name": "Brian J. Feldman", "state": "MD", "topic": "Artificial Intelligence Oversight", "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023", "chair_before": 1, "chair_after": 3, "why": "signed the June 2025 coalition letter opposing a federal 10-year freeze on state AI law" },
+  { "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997", "name": "Clarence K. Lam", "state": "MD", "topic": "Artificial Intelligence Oversight", "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023", "chair_before": 1, "chair_after": 3, "why": "sponsored SB0987 (2025) requiring oversight of AI in health insurance decision-making" },
+  { "politician_id": "85d27350-e1b6-45b8-aee3-509ca88c5af4", "name": "Mark Warner", "state": "VA", "topic": "Artificial Intelligence Oversight", "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023", "chair_before": 1, "chair_after": 3, "why": "lead sponsor of the RESTRICT Act (S.686)" },
+  { "politician_id": "c61baf45-dc2a-4d78-b4b7-21b1e9d79464", "name": "Ayanna Pressley", "state": "MA", "topic": "Fossil Fuel Policy", "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570", "chair_before": 5, "chair_after": 2, "why": "co-sponsored the Keep It in the Ground Act ending new federal fossil fuel leases" },
+  { "politician_id": "e1f72270-5809-4d0e-969c-48d1ab34fbdc", "name": "Patrick M. O'Connor", "state": "MA", "topic": "Fossil Fuel Policy", "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570", "chair_before": 4, "chair_after": 2, "why": "co-sponsored 100% Renewable Energy by 2045" },
+  { "politician_id": "30b6b674-509f-46f6-a9aa-aa3dbefc2f42", "name": "Diana DiZoglio", "state": "MA", "topic": "School Vouchers & Public Education Funding", "topic_id": "00b95a6a-75db-4521-b523-3326bba938de", "chair_before": 5, "chair_after": 1, "why": "consistently opposed vouchers and diversion of public education funds" },
+  { "politician_id": "98291d86-d42d-49d0-a5b2-d689a8154b15", "name": "Erika Uyterhoeven", "state": "MA", "topic": "School Vouchers & Public Education Funding", "topic_id": "00b95a6a-75db-4521-b523-3326bba938de", "chair_before": 5, "chair_after": 1, "why": "opposed charter expansion and vouchers, supports fully funded public schools" },
+  { "politician_id": "116aace8-9440-498b-bf1d-ebb196727c85", "name": "Cecilia Lunaparra", "state": "CA", "topic": "Immigration and Treatment of Immigrants", "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390", "chair_before": 5, "chair_after": 2, "why": "authored the Sanctuary City Contracting Ordinance updates and co-sponsored the $200,000 deportation defense fund" }
+ ],
+ "read_and_kept_notable": [
+  { "name": "Raul Campillo", "topic": "Artificial Intelligence Oversight", "chair": 2, "why": "cast the SOLE dissenting vote against San Diego's ban on algorithmic rent-setting software — the detector matched 'banning algorithmic', but he opposed it" },
+  { "name": "Rosilicie Ochoa Bogh", "topic": "Artificial Intelligence Oversight", "chair": 2, "why": "voted NO on SB 1047, the AI safety-testing bill" },
+  { "name": "Tim Kaine", "topic": "Artificial Intelligence Oversight", "chair": 2, "why": "attending a hearing on AI and workforce is not a position" },
+  { "name": "Steven J. Ouellette", "topic": "Artificial Intelligence Oversight", "chair": 2, "why": "committee membership is not a position" },
+  { "name": "Rick Scott", "topic": "Immigration and Treatment of Immigrants", "chair": 4, "why": "an immigration hardliner who 'at times moderated — opposing family separation'; the opposition verb attaches to a restrictive object" },
+  { "name": "56 Voting Rights and Reproductive Rights candidates", "topic": "both topics", "chair": "4-5", "why": "every one names a pro-side BILL as the object of an opposing verb: voted against the For the People Act, the John Lewis VRAA, the Women's Health Protection Act, the Abortion Care Access Act" }
+ ]
+}
