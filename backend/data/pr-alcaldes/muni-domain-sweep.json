@@ -1,0 +1,158 @@
+{
+ "found": {
+  "Aguada": {
+   "muni": "Aguada",
+   "url": "https://www.poraguadaes.com/",
+   "status": 200,
+   "has_alcalde": false,
+   "bytes": 373662,
+   "imgs": 25
+  },
+  "Aibonito": {
+   "muni": "Aibonito",
+   "url": "https://aibonitopr.net/",
+   "status": 200,
+   "has_alcalde": false,
+   "bytes": 19465,
+   "imgs": 3
+  },
+  "Barranquitas": {
+   "muni": "Barranquitas",
+   "url": "http://barranquitaspr.net/pueblo/",
+   "status": 200,
+   "has_alcalde": false,
+   "bytes": 224228,
+   "imgs": 21
+  },
+  "Cabo Rojo": {
+   "muni": "Cabo Rojo",
+   "url": "https://ciudadcaborojo.com/",
+   "status": 200,
+   "has_alcalde": true,
+   "bytes": 525741,
+   "imgs": 6
+  },
+  "Carolina": {
+   "muni": "Carolina",
+   "url": "https://www.municipiocarolina.com/",
+   "status": 200,
+   "has_alcalde": true,
+   "bytes": 299058,
+   "imgs": 37
+  },
+  "Gurabo": {
+   "muni": "Gurabo",
+   "url": "https://www.pr.gov/directorio-municipos/gurabo",
+   "status": 200,
+   "has_alcalde": false,
+   "bytes": 19212,
+   "imgs": 6
+  },
+  "Humacao": {
+   "muni": "Humacao",
+   "url": "https://www.humacao.gov.pr/",
+   "status": 200,
+   "has_alcalde": false,
+   "bytes": 7294,
+   "imgs": 2
+  },
+  "Maunabo": {
+   "muni": "Maunabo",
+   "url": "https://www.maunabopr.com/",
+   "status": 200,
+   "has_alcalde": false,
+   "bytes": 57909,
+   "imgs": 4
+  },
+  "Naranjito": {
+   "muni": "Naranjito",
+   "url": "https://municipiodenaranjito.com/",
+   "status": 200,
+   "has_alcalde": true,
+   "bytes": 825073,
+   "imgs": 47
+  },
+  "San Lorenzo": {
+   "muni": "San Lorenzo",
+   "url": "https://municipiodesanlorenzo.com/",
+   "status": 200,
+   "has_alcalde": true,
+   "bytes": 48217,
+   "imgs": 3
+  },
+  "Santa Isabel": {
+   "muni": "Santa Isabel",
+   "url": "https://santaisabel.org/",
+   "status": 200,
+   "has_alcalde": true,
+   "bytes": 150475,
+   "imgs": 15
+  },
+  "Vega Baja": {
+   "muni": "Vega Baja",
+   "url": "https://vegabaja.org/",
+   "status": 200,
+   "has_alcalde": false,
+   "bytes": 88066,
+   "imgs": 33
+  },
+  "Yauco": {
+   "muni": "Yauco",
+   "url": "https://yaucopr.com/",
+   "status": 200,
+   "has_alcalde": true,
+   "bytes": 199350,
+   "imgs": 14
+  }
+ },
+ "still_missing": [
+  "Aguas Buenas",
+  "Añasco",
+  "Arecibo",
+  "Barceloneta",
+  "Camuy",
+  "Canóvanas",
+  "Cataño",
+  "Cayey",
+  "Ceiba",
+  "Ciales",
+  "Cidra",
+  "Coamo",
+  "Comerío",
+  "Culebra",
+  "Dorado",
+  "Florida",
+  "Guánica",
+  "Guayama",
+  "Guayanilla",
+  "Hatillo",
+  "Hormigueros",
+  "Isabela",
+  "Jayuya",
+  "Lajas",
+  "Lares",
+  "Las Marías",
+  "Las Piedras",
+  "Loíza",
+  "Luquillo",
+  "Manatí",
+  "Maricao",
+  "Moca",
+  "Morovis",
+  "Naguabo",
+  "Orocovis",
+  "Patillas",
+  "Ponce",
+  "Quebradillas",
+  "Río Grande",
+  "Sabana Grande",
+  "Salinas",
+  "San Germán",
+  "Toa Alta",
+  "Utuado",
+  "Vega Alta",
+  "Vieques",
+  "Villalba",
+  "Yabucoa"
+ ]
+}
